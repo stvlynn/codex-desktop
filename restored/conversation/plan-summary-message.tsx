@@ -17,10 +17,27 @@ export function setPlanSummaryMessagePeers(
   peers = next;
 }
 
+/** Plan-card item shape rendered by `PlanSummaryMessage` (consumer-facing). */
+export type PlanSummaryMessageItem = {
+  type: string;
+  content: string;
+  sentAtMs: number | null;
+  completed: boolean;
+  phase: string | null;
+  structuredOutput: unknown;
+};
+
+export type PlanSummaryMessageProps = {
+  item: PlanSummaryMessageItem;
+  conversationId: string;
+  cwd: string | null;
+  showOpenButton?: boolean;
+};
+
 /**
  * Bundle export `yc` / internal `ufl`.
  */
-export function PlanSummaryMessage(props: unknown) {
+export function PlanSummaryMessage(props: PlanSummaryMessageProps) {
   const Ffl = peers.ffl;
   const Hk = peers.hk;
   const Dfl = peers.dfl;

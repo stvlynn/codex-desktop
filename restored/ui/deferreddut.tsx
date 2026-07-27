@@ -14,7 +14,7 @@ export function setBindDeferreddutPeers(next: BindDeferreddutPeers): void {
 /**
  * Bundle export `dut` / internal `mm`.
  */
-export const bindDeferreddut = (e, t) => {
+export const bindDeferreddut = (e: unknown, t: unknown) => {
   if (peers == null) {
     throw new Error("bindDeferreddut peers are not configured");
   }

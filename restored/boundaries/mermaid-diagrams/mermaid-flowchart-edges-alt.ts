@@ -46,11 +46,7 @@ import {
   getSubGraphTitleMargins as chunkZZ45TVLEN,
   initSubGraphTitleMarginsAlt as chunkZZ45TVLER,
 } from "../../diagrams/subgraph-title-margins-alt";
-import {
-  a as chunkX2U36JSPA,
-  n as chunkX2U36JSPN,
-  r as chunkX2U36JSPR,
-} from "../../diagrams/style-helpers-alt";
+import { styles2String as chunkX2U36JSPA, initStyleHelpersChunk as chunkX2U36JSPN, isLabelStyle as chunkX2U36JSPR } from "../../diagrams/style-helpers-alt";
 import { chunk5FUZZQ4RD, chunk5FUZZQ4RR } from "./mermaid-flowchart-nodes-alt";
 function chunkENJZ2VHEHelper1(chunkENJZ2VHEInput116, chunkENJZ2VHEInput117) {
   w(b()) &&

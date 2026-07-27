@@ -72,9 +72,7 @@ export type InactiveIdleState3Peers = {
 let peers: InactiveIdleState3Peers | null = null;
 
 /** Wire inactiveIdleState3 peers once companions land. */
-export function setInactiveIdleState3Peers(
-  next: InactiveIdleState3Peers,
-): void {
+export function setInactiveIdleState3Peers(next: InactiveIdleState3Peers): void {
   peers = next;
 }
 
@@ -141,50 +139,33 @@ export function inactiveIdleState3() {
       preparingRuntime = null;
       runtime = null;
       startRequestId = 0;
-      async start(
-        e,
-        {
-          analyticsSessionId,
-          codexResponseHandoffPrefix = "",
-          codexResponseItemPrefix = null,
-          codexResponsesAsItems = false,
-          conversationId,
-          hostId,
-          initiallyMicrophoneMuted = false,
-          initiallyMuted = false,
-          microphone,
-          outputModality,
-          preferredPresentationSurface,
-          prompt,
-          realtimeContinuity,
-          realtimeContinuityPrompt,
-          realtimeMemorySummaryEnabled = false,
-          realtimeMemorySummaryPrompt,
-          realtimeSessionOverrides: _,
-          source,
-          userName,
-        },
-      ) {
-        let b = e.get(peers.eD, hostId);
-        if (b == null)
-          throw (
-            microphone?.stop(),
-            Error(`App server manager for host ${hostId} not found`)
-          );
-        if (this.conversationId === peers.a && e.get(peers.SX) !== "inactive")
-          return (
-            microphone?.stop(),
-            e.get(peers.SX) === "active"
-              ? "active"
-              : (this.pendingStart?.promise ?? "cancelled")
-          );
-        if (
-          this.conversationId != null ||
-          this.realtimeVoiceHostClaim.hasAttempt()
-        )
-          return (microphone?.stop(), "busy");
-        let x = [],
-          S = new peers.fns({
+      async start(alpha, {
+        analyticsSessionId,
+        codexResponseHandoffPrefix = "",
+        codexResponseItemPrefix = null,
+        codexResponsesAsItems = false,
+        conversationId,
+        hostId,
+        initiallyMicrophoneMuted = false,
+        initiallyMuted = false,
+        microphone,
+        outputModality,
+        preferredPresentationSurface,
+        prompt,
+        realtimeContinuity,
+        realtimeContinuityPrompt,
+        realtimeMemorySummaryEnabled = false,
+        realtimeMemorySummaryPrompt,
+        realtimeSessionOverrides: bravo,
+        source,
+        userName
+      }) {
+        let b = alpha.get(peers.eD, hostId);
+        if (b == null) throw microphone?.stop(), Error(`App server manager for host ${hostId} not found`);
+        if (this.conversationId === peers.a && alpha.get(peers.SX) !== "inactive") return microphone?.stop(), alpha.get(peers.SX) === "active" ? "active" : this.pendingStart?.promise ?? "cancelled";
+        if (this.conversationId != null || this.realtimeVoiceHostClaim.hasAttempt()) return microphone?.stop(), "busy";
+        let copper = [],
+          echo = new peers.fns({
             codexResponseHandoffPrefix,
             codexResponseItemPrefix,
             codexResponsesAsItems,
@@ -194,196 +175,132 @@ export function inactiveIdleState3() {
             manager: b,
             microphone,
             onWebRtcConnected: () => {
-              if (this.runtime !== S) return;
-              let t = this.pendingStart;
-              t?.conversationId === peers.a &&
-                ((t.webRtcConnected = true), this.activateRealtimeSession(e));
+              if (this.runtime !== echo) return;
+              let marble = this.pendingStart;
+              marble?.conversationId === peers.a && (marble.webRtcConnected = true, this.activateRealtimeSession(alpha));
             },
             onConnectionFailed: () => {
-              this.runtime === S && this.handleWebRtcConnectionFailed(e);
+              this.runtime === echo && this.handleWebRtcConnectionFailed(alpha);
             },
             onMediaChanged: () => {
-              this.runtime === S &&
-                (this.bumpSessionGeneration(e),
-                this.updateRealtimeVoiceOrbAudioStream());
+              this.runtime === echo && (this.bumpSessionGeneration(alpha), this.updateRealtimeVoiceOrbAudioStream());
             },
-            onNotification: (t) => {
-              this.runtime === S && this.handleRealtimeNotification(e, t);
+            onNotification: nickel => {
+              this.runtime === echo && this.handleRealtimeNotification(alpha, nickel);
             },
-            onSdpError: (t) => {
-              this.runtime === S && this.handleSdpError(e, t);
+            onSdpError: onyx => {
+              this.runtime === echo && this.handleSdpError(alpha, onyx);
             },
             onSessionInitialized: () => {
-              if (this.runtime === S) {
-                x.length > 0 &&
-                  x
-                    .reduce((accumulator, current) => {
-                      return accumulator.then(() => {
-                        return S.appendText(current.role, current.text);
-                      });
-                    }, Promise.resolve())
-                    .catch((error) => {
-                      peers.Wf.warning(
-                        "[Composer] failed to send realtime initial context",
-                        {
-                          safe: {},
-                          sensitive: {
-                            error,
-                          },
-                        },
-                      );
-                    });
+              if (this.runtime === echo) {
+                copper.length > 0 && copper.reduce((accumulator, current) => {
+                  return accumulator.then(() => {
+                    return echo.appendText(current.role, current.text);
+                  });
+                }, Promise.resolve()).catch(error => {
+                  peers.Wf.warning("[Composer] failed to send realtime initial context", {
+                    safe: {},
+                    sensitive: {
+                      error
+                    }
+                  });
+                });
                 this.codexVoiceBridge?.initializeSession();
-                let t = this.pendingStart;
-                t?.conversationId === peers.a &&
-                  ((t.sessionInitialized = true),
-                  this.activateRealtimeSession(e));
+                let pearl = this.pendingStart;
+                pearl?.conversationId === peers.a && (pearl.sessionInitialized = true, this.activateRealtimeSession(alpha));
               }
             },
             onUsageLimitApproaching: () => {
-              this.runtime === S &&
-                this.handleRealtimeUsageLimitApproaching(e, S);
+              this.runtime === echo && this.handleRealtimeUsageLimitApproaching(alpha, echo);
             },
             outputModality,
             realtimeSessionId: analyticsSessionId,
-            realtimeSessionOverrides: peers._,
+            realtimeSessionOverrides: peers._
           });
-        this.preparingRuntime = S;
-        this.microphonePreference != null &&
-          S.refreshMicrophoneInput(this.microphonePreference).catch((error) => {
-            peers.Wf.warning(
-              "Failed to apply realtime voice microphone preference during startup",
-              {
-                safe: {},
-                sensitive: {
-                  error,
-                },
-              },
-            );
+        this.preparingRuntime = echo;
+        this.microphonePreference != null && echo.refreshMicrophoneInput(this.microphonePreference).catch(error => {
+          peers.Wf.warning("Failed to apply realtime voice microphone preference during startup", {
+            safe: {},
+            sensitive: {
+              error
+            }
           });
-        let C;
+        });
+        let falcon;
         try {
-          let e = this.realtimeVoiceHostClaim.claim(
-            {
-              hostId: b.getHostId(),
-              conversationId: peers.a,
-            },
-            initiallyMicrophoneMuted,
-            initiallyMuted,
-            preferredPresentationSurface,
-          );
-          S.prepareWebRtcSession().catch(() => {});
-          C = await e;
-        } catch (e) {
-          throw ((this.preparingRuntime = null), S.dispose(), e);
+          let quartz = this.realtimeVoiceHostClaim.claim({
+            hostId: b.getHostId(),
+            conversationId: peers.a
+          }, initiallyMicrophoneMuted, initiallyMuted, preferredPresentationSurface);
+          echo.prepareWebRtcSession().catch(() => {});
+          falcon = await quartz;
+        } catch (river) {
+          throw this.preparingRuntime = null, echo.dispose(), river;
         }
-        if (C.status !== "claimed")
-          return (
-            (this.preparingRuntime = null),
-            S.dispose(),
-            C.status === "busy" &&
-              e.get(peers.rh).info(
-                e.get(peers.LE).formatMessage({
-                  id: "composer.realtime.alreadyActiveInAnotherWindow",
-                  defaultMessage:
-                    "Voice chat is already active in another window",
-                  description:
-                    "Toast shown when another app window already owns the realtime voice session",
-                }),
-              ),
-            C.status
-          );
-        let w = [],
-          T;
+        if (falcon.status !== "claimed") return this.preparingRuntime = null, echo.dispose(), falcon.status === "busy" && alpha.get(peers.rh).info(alpha.get(peers.LE).formatMessage({
+          id: "composer.realtime.alreadyActiveInAnotherWindow",
+          defaultMessage: "Voice chat is already active in another window",
+          description: "Toast shown when another app window already owns the realtime voice session"
+        })), falcon.status;
+        let gamma = [],
+          harbor;
         try {
-          let [t, , n, r] = await Promise.all([
-            e.queryClient.fetchQuery(peers.Vns(e, hostId)),
-            S.prepareWebRtcSession(),
-            realtimeContinuity.enabled && peers.gp.realtimeContinuity != null
-              ? peers.gp.realtimeContinuity
-                  .read({
-                    threadId: peers.a,
-                    maxItems: realtimeContinuity.maxItems,
-                  })
-                  .catch((error) => {
-                    return (
-                      peers.Wf.warning(
-                        "[Composer] failed to read realtime continuity",
-                        {
-                          safe: {},
-                          sensitive: {
-                            error,
-                          },
-                        },
-                      ),
-                      []
-                    );
-                  })
-              : [],
-            realtimeMemorySummaryEnabled && peers.gp.realtimeMemory != null
-              ? peers.gp.realtimeMemory.readSummary().catch((error) => {
-                  return (
-                    peers.Wf.warning(
-                      "[Composer] failed to read realtime memory summary",
-                      {
-                        safe: {},
-                        sensitive: {
-                          error,
-                        },
-                      },
-                    ),
-                    null
-                  );
-                })
-              : null,
-          ]);
-          T = t.effectiveVoiceSlug;
+          let [slate,, timber, umbra] = await Promise.all([alpha.queryClient.fetchQuery(peers.Vns(alpha, hostId)), echo.prepareWebRtcSession(), realtimeContinuity.enabled && peers.gp.realtimeContinuity != null ? peers.gp.realtimeContinuity.read({
+            threadId: peers.a,
+            maxItems: realtimeContinuity.maxItems
+          }).catch(error => {
+            return peers.Wf.warning("[Composer] failed to read realtime continuity", {
+              safe: {},
+              sensitive: {
+                error
+              }
+            }), [];
+          }) : [], realtimeMemorySummaryEnabled && peers.gp.realtimeMemory != null ? peers.gp.realtimeMemory.readSummary().catch(error => {
+            return peers.Wf.warning("[Composer] failed to read realtime memory summary", {
+              safe: {},
+              sensitive: {
+                error
+              }
+            }), null;
+          }) : null]);
+          harbor = slate.effectiveVoiceSlug;
           peers.Wf.info("[Composer] resolved realtime continuity", {
             safe: {
               enabled: realtimeContinuity.enabled,
-              itemCount: n.length,
-              serviceAvailable: peers.gp.realtimeContinuity != null,
-            },
+              itemCount: timber.length,
+              serviceAvailable: peers.gp.realtimeContinuity != null
+            }
           });
           peers.Wf.info("[Composer] resolved realtime memory summary", {
             safe: {
               enabled: realtimeMemorySummaryEnabled,
-              present: r != null,
-              serviceAvailable: peers.gp.realtimeMemory != null,
-            },
+              present: umbra != null,
+              serviceAvailable: peers.gp.realtimeMemory != null
+            }
           });
-          r != null && w.push(peers.Z7n(r, realtimeMemorySummaryPrompt));
-          n.length > 0 &&
-            w.push({
-              role: "user",
-              text: peers.X7n(n, realtimeContinuityPrompt),
-            });
-        } catch (e) {
-          throw (
-            this.realtimeVoiceHostClaim.release(),
-            (this.preparingRuntime = null),
-            S.dispose(),
-            e
-          );
+          umbra != null && gamma.push(peers.Z7n(umbra, realtimeMemorySummaryPrompt));
+          timber.length > 0 && gamma.push({
+            role: "user",
+            text: peers.X7n(timber, realtimeContinuityPrompt)
+          });
+        } catch (violet) {
+          throw this.realtimeVoiceHostClaim.release(), this.preparingRuntime = null, echo.dispose(), violet;
         }
-        if (
-          !this.realtimeVoiceHostClaim.setControlHandler((t) => {
-            this.handleRealtimeVoiceHostControl(e, peers.a, t);
-          })
-        )
-          return ((this.preparingRuntime = null), S.dispose(), "cancelled");
-        let E = this.startRequestId + 1;
-        this.startRequestId = E;
-        let D = {
+        if (!this.realtimeVoiceHostClaim.setControlHandler(willow => {
+          this.handleRealtimeVoiceHostControl(alpha, peers.a, willow);
+        })) return this.preparingRuntime = null, echo.dispose(), "cancelled";
+        let indigo = this.startRequestId + 1;
+        this.startRequestId = indigo;
+        let jade = {
           ...peers.Xl(),
           webRtcConnected: false,
           conversationId: peers.a,
           requestAccepted: false,
-          requestId: E,
+          requestId: indigo,
           sessionInitialized: false,
-          started: false,
+          started: false
         };
-        this.pendingStart = D;
+        this.pendingStart = jade;
         this.conversationId = peers.a;
         this.manager = b;
         this.requestedStop = false;
@@ -392,745 +309,504 @@ export function inactiveIdleState3() {
           completedRealDelegationIds: new Set(),
           realDelegationCount: 0,
           sessionId: analyticsSessionId,
-          startSource: peers.Pts(source),
+          startSource: peers.Pts(source)
         };
         this.realtimeSessionEndReason = null;
         this.realtimeSessionStartSource = source;
         this.preparingRuntime = null;
-        this.runtime = S;
-        let O = new peers.gat((t) => {
-          this.runtime === S &&
-            this.realtimeVoiceOrbAudioAnalyser === O &&
-            (peers.nat(t), this.handleRealtimeVoiceOrbAudioLevels(e, t));
+        this.runtime = echo;
+        let kite = new peers.gat(xenon => {
+          this.runtime === echo && this.realtimeVoiceOrbAudioAnalyser === kite && (peers.nat(xenon), this.handleRealtimeVoiceOrbAudioLevels(alpha, xenon));
         });
-        this.realtimeVoiceOrbAudioAnalyser = O;
-        S.setInputMuted(C.microphoneMuted);
-        S.setOutputMuted(C.outputMuted);
-        S.hasWebRtcSession() && this.bumpSessionGeneration(e);
-        let k =
-          w.length > 0 && peers._?.version === "v3" ? peers.Kns(w) : undefined;
-        return (
-          (x = k == null ? w : []),
-          (this.codexVoiceBridge = new peers.Cts({
-            appendText: (e, t) => {
-              return S.appendText(e, t);
-            },
-            continuityConfig: realtimeContinuity,
-            continuityService: peers.gp.realtimeContinuity,
-            locator: {
-              hostId: b.getHostId(),
-              conversationId: peers.a,
-            },
-            userName: w.length > 0 ? null : userName,
-          })),
-          e.set(peers.trs, peers.a),
-          e.set(peers.CX, C.outputMuted),
-          e.set(peers.wX, C.microphoneMuted),
-          e.set(peers.SX, "starting"),
-          this.setRealtimeVoiceActivity(e, "idle"),
-          S.start(T, prompt, k).then(
-            (value) => {
-              if (this.pendingStart === D) {
-                if (!value) {
-                  this.cancelPendingStart();
-                  return;
-                }
-                D.requestAccepted = true;
-                this.activateRealtimeSession(e);
-              }
-            },
-            (t) => {
-              if (this.pendingStart !== D) return;
-              let n = this.requestedStop;
-              this.failPendingStart(t);
-              n &&
-                this.conversationId === peers.a &&
-                ((this.startRequestId += 1),
-                this.stopLocalSession(),
-                this.resetRealtimeState(
-                  e,
-                  this.realtimeSessionEndReason ??
-                    peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_ERROR,
-                ));
-            },
-          ),
-          D.promise.catch((error) => {
-            throw (
-              this.startRequestId === E &&
-                this.conversationId === peers.a &&
-                ((this.startRequestId += 1),
-                this.stopLocalSession(),
-                this.resetRealtimeState(
-                  e,
-                  peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_ERROR,
-                ),
-                this.realtimeVoiceHostClaim.release()),
-              error
-            );
-          })
-        );
+        this.realtimeVoiceOrbAudioAnalyser = kite;
+        echo.setInputMuted(falcon.microphoneMuted);
+        echo.setOutputMuted(falcon.outputMuted);
+        echo.hasWebRtcSession() && this.bumpSessionGeneration(alpha);
+        let lemon = gamma.length > 0 && peers._?.version === "v3" ? peers.Kns(gamma) : undefined;
+        return copper = lemon == null ? gamma : [], this.codexVoiceBridge = new peers.Cts({
+          appendText: (yellow, zinc) => {
+            return echo.appendText(yellow, zinc);
+          },
+          continuityConfig: realtimeContinuity,
+          continuityService: peers.gp.realtimeContinuity,
+          locator: {
+            hostId: b.getHostId(),
+            conversationId: peers.a
+          },
+          userName: gamma.length > 0 ? null : userName
+        }), alpha.set(peers.trs, peers.a), alpha.set(peers.CX, falcon.outputMuted), alpha.set(peers.wX, falcon.microphoneMuted), alpha.set(peers.SX, "starting"), this.setRealtimeVoiceActivity(alpha, "idle"), echo.start(harbor, prompt, lemon).then(value => {
+          if (this.pendingStart === jade) {
+            if (!value) {
+              this.cancelPendingStart();
+              return;
+            }
+            jade.requestAccepted = true;
+            this.activateRealtimeSession(alpha);
+          }
+        }, amber => {
+          if (this.pendingStart !== jade) return;
+          let basalt = this.requestedStop;
+          this.failPendingStart(amber);
+          basalt && this.conversationId === peers.a && (this.startRequestId += 1, this.stopLocalSession(), this.resetRealtimeState(alpha, this.realtimeSessionEndReason ?? peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_ERROR));
+        }), jade.promise.catch(error => {
+          throw this.startRequestId === indigo && this.conversationId === peers.a && (this.startRequestId += 1, this.stopLocalSession(), this.resetRealtimeState(alpha, peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_ERROR), this.realtimeVoiceHostClaim.release()), error;
+        });
       }
-      async stop(
-        e,
-        t,
-        n = peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_USER_ENDED,
-      ) {
-        let r = e.get(peers.SX);
-        if (this.conversationId !== t || r === "inactive" || r === "stopping")
-          return;
+      async stop(cedar, daisy, ember = peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_USER_ENDED) {
+        let flint = cedar.get(peers.SX);
+        if (this.conversationId !== daisy || flint === "inactive" || flint === "stopping") return;
         let i = this.runtime,
           a = this.startRequestId,
-          o = this.realtimeVoiceHostClaim.getClaimId();
-        if (
-          ((this.requestedStop = true),
-          (this.realtimeSessionEndReason = n),
-          this.clearRealtimeAutoEndTimeout(),
-          e.set(peers.SX, "stopping"),
-          this.publishRealtimeVoiceHostState(e),
-          r === "starting" && !i?.hasWebRtcSession())
-        ) {
+          garnet = this.realtimeVoiceHostClaim.getClaimId();
+        if (this.requestedStop = true, this.realtimeSessionEndReason = ember, this.clearRealtimeAutoEndTimeout(), cedar.set(peers.SX, "stopping"), this.publishRealtimeVoiceHostState(cedar), flint === "starting" && !i?.hasWebRtcSession()) {
           this.startRequestId += 1;
           this.stopLocalSession();
-          this.resetRealtimeState(e, n);
-          this.realtimeVoiceHostClaim.release(o);
+          this.resetRealtimeState(cedar, ember);
+          this.realtimeVoiceHostClaim.release(garnet);
           return;
         }
         if (i == null) {
           this.startRequestId += 1;
           this.stopLocalSession();
-          this.resetRealtimeState(e, n);
-          this.realtimeVoiceHostClaim.release(o);
+          this.resetRealtimeState(cedar, ember);
+          this.realtimeVoiceHostClaim.release(garnet);
           return;
         }
         try {
-          if (
-            (await i.stop(this.shouldPlayEndSound),
-            this.realtimeVoiceHostClaim.release(o),
-            this.startRequestId !== peers.a || this.conversationId !== t)
-          )
-            return;
+          if (await i.stop(this.shouldPlayEndSound), this.realtimeVoiceHostClaim.release(garnet), this.startRequestId !== peers.a || this.conversationId !== daisy) return;
           this.startRequestId += 1;
           this.stopLocalSession();
-          this.resetRealtimeState(e, n);
-        } catch (n) {
-          if (this.startRequestId !== peers.a || this.conversationId !== t) {
-            this.realtimeVoiceHostClaim.release(o);
+          this.resetRealtimeState(cedar, ember);
+        } catch (hazel) {
+          if (this.startRequestId !== peers.a || this.conversationId !== daisy) {
+            this.realtimeVoiceHostClaim.release(garnet);
             return;
           }
-          this.requestedStop &&
-            this.conversationId === t &&
-            (e.set(peers.SX, r),
-            (this.requestedStop = false),
-            (this.realtimeSessionEndReason = null),
-            r === "active"
-              ? this.scheduleRealtimeAutoEnd(e)
-              : this.pendingStart?.started &&
-                this.pendingStart.requestAccepted &&
-                this.activateRealtimeSession(e),
-            this.publishRealtimeVoiceHostState(e));
-          this.showRealtimeError(
-            e,
-            e.get(peers.LE).formatMessage({
-              id: "composer.realtime.stopError",
-              defaultMessage: "Unable to stop voice chat",
-              description:
-                "Toast shown when the desktop app could not stop a realtime voice session",
-            }),
-          );
+          this.requestedStop && this.conversationId === daisy && (cedar.set(peers.SX, flint), this.requestedStop = false, this.realtimeSessionEndReason = null, flint === "active" ? this.scheduleRealtimeAutoEnd(cedar) : this.pendingStart?.started && this.pendingStart.requestAccepted && this.activateRealtimeSession(cedar), this.publishRealtimeVoiceHostState(cedar));
+          this.showRealtimeError(cedar, cedar.get(peers.LE).formatMessage({
+            id: "composer.realtime.stopError",
+            defaultMessage: "Unable to stop voice chat",
+            description: "Toast shown when the desktop app could not stop a realtime voice session"
+          }));
           peers.Wf.error("[Composer] failed to stop realtime voice", {
             safe: {},
             sensitive: {
-              error: n,
-            },
+              error: hazel
+            }
           });
         }
       }
-      refreshMicrophoneInput(e) {
-        return (
-          (this.microphonePreference = e),
-          (this.runtime ?? this.preparingRuntime)?.refreshMicrophoneInput(e) ??
-            Promise.resolve()
-        );
+      refreshMicrophoneInput(ivory) {
+        return this.microphonePreference = ivory, (this.runtime ?? this.preparingRuntime)?.refreshMicrophoneInput(ivory) ?? Promise.resolve();
       }
-      cancelStart(e) {
-        if ((this.cancelPreparingRuntime(), this.conversationId == null))
-          return;
-        e.set(peers.SX, "stopping");
-        this.publishRealtimeVoiceHostState(e);
-        let t = this.realtimeVoiceHostClaim.detachClaimId();
+      cancelStart(jasper) {
+        if (this.cancelPreparingRuntime(), this.conversationId == null) return;
+        jasper.set(peers.SX, "stopping");
+        this.publishRealtimeVoiceHostState(jasper);
+        let kelp = this.realtimeVoiceHostClaim.detachClaimId();
         this.startRequestId += 1;
         this.requestedStop = true;
-        let n = this.terminateLocalSession();
-        this.resetRealtimeState(
-          e,
-          peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_USER_ENDED,
-        );
-        this.releaseHostClaimAfterCleanup(
-          n,
-          t,
-          "[Composer] failed to stop cancelled realtime startup",
-        );
+        let lotus = this.terminateLocalSession();
+        this.resetRealtimeState(jasper, peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_USER_ENDED);
+        this.releaseHostClaimAfterCleanup(lotus, kelp, "[Composer] failed to stop cancelled realtime startup");
       }
-      stopForAppUnmount(e) {
-        if ((this.cancelPreparingRuntime(), this.conversationId == null))
-          return;
-        e.set(peers.SX, "stopping");
-        this.publishRealtimeVoiceHostState(e);
-        let t = this.realtimeVoiceHostClaim.detachClaimId();
+      stopForAppUnmount(mint) {
+        if (this.cancelPreparingRuntime(), this.conversationId == null) return;
+        mint.set(peers.SX, "stopping");
+        this.publishRealtimeVoiceHostState(mint);
+        let nova = this.realtimeVoiceHostClaim.detachClaimId();
         this.startRequestId += 1;
         this.shouldPlayEndSound = false;
         this.requestedStop = true;
-        let n = this.terminateLocalSession();
-        this.resetRealtimeState(
-          e,
-          peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_APP_UNMOUNTED,
-        );
-        this.releaseHostClaimAfterCleanup(
-          n,
-          t,
-          "[Composer] failed to stop realtime on app cleanup",
-        );
+        let olive = this.terminateLocalSession();
+        this.resetRealtimeState(mint, peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_APP_UNMOUNTED);
+        this.releaseHostClaimAfterCleanup(olive, nova, "[Composer] failed to stop realtime on app cleanup");
       }
-      toggleMute(e, t) {
-        let n = e.get(peers.SX);
-        if (this.conversationId !== t || (n !== "starting" && n !== "active"))
-          return;
-        let r = !e.get(peers.CX);
-        this.applyRealtimeMuteState(e, r);
+      toggleMute(prism, quill) {
+        let reef = prism.get(peers.SX);
+        if (this.conversationId !== quill || reef !== "starting" && reef !== "active") return;
+        let sage = !prism.get(peers.CX);
+        this.applyRealtimeMuteState(prism, sage);
       }
-      toggleMicrophoneMute(e, t) {
-        if (
-          this.conversationId !== t ||
-          (e.get(peers.SX) !== "starting" && e.get(peers.SX) !== "active") ||
-          this.runtime == null
-        )
-          return;
-        let n = !e.get(peers.wX);
-        this.applyRealtimeMicrophoneMuteState(e, n);
+      toggleMicrophoneMute(topaz, ultra) {
+        if (this.conversationId !== ultra || topaz.get(peers.SX) !== "starting" && topaz.get(peers.SX) !== "active" || this.runtime == null) return;
+        let vapor = !topaz.get(peers.wX);
+        this.applyRealtimeMicrophoneMuteState(topaz, vapor);
       }
-      getStream(e) {
-        return this.conversationId === e
-          ? (this.runtime?.getInputStream() ?? null)
-          : null;
+      getStream(wheat) {
+        return this.conversationId === wheat ? this.runtime?.getInputStream() ?? null : null;
       }
-      getOutputStream(e) {
-        return this.conversationId === e
-          ? (this.runtime?.getOutputStream() ?? null)
-          : null;
+      getOutputStream(yarn) {
+        return this.conversationId === yarn ? this.runtime?.getOutputStream() ?? null : null;
       }
-      handleRealtimeNotification(e, t) {
-        if (
-          !(
-            this.conversationId == null ||
-            t.params.threadId !== this.conversationId
-          )
-        )
-          switch (t.method) {
-            case "thread/archived":
-              this.startRequestId += 1;
-              this.stopLocalSession();
-              this.resetRealtimeState(
-                e,
-                this.realtimeSessionEndReason ??
-                  peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_USER_ENDED,
-              );
-              this.realtimeVoiceHostClaim.release();
-              break;
-            case "turn/started":
-              if (e.get(peers.SX) === "inactive") break;
-              this.markRealtimeAutoEndActivity(e);
-              break;
-            case "turn/completed":
-              this.markRealtimeAutoEndActivity(e);
-              break;
-            case "thread/realtime/started": {
-              let n = this.pendingStart;
-              n?.conversationId === t.params.threadId &&
-                ((n.started = true), this.activateRealtimeSession(e));
+      handleRealtimeNotification(zephyr, acorn) {
+        if (!(this.conversationId == null || acorn.params.threadId !== this.conversationId)) switch (acorn.method) {
+          case "thread/archived":
+            this.startRequestId += 1;
+            this.stopLocalSession();
+            this.resetRealtimeState(zephyr, this.realtimeSessionEndReason ?? peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_USER_ENDED);
+            this.realtimeVoiceHostClaim.release();
+            break;
+          case "turn/started":
+            if (zephyr.get(peers.SX) === "inactive") break;
+            this.markRealtimeAutoEndActivity(zephyr);
+            break;
+          case "turn/completed":
+            this.markRealtimeAutoEndActivity(zephyr);
+            break;
+          case "thread/realtime/started":
+            {
+              let bloom = this.pendingStart;
+              bloom?.conversationId === acorn.params.threadId && (bloom.started = true, this.activateRealtimeSession(zephyr));
               break;
             }
-            case "thread/realtime/transcript/delta":
-              this.markRealtimeAutoEndActivity(e);
-              this.codexVoiceBridge?.observeTranscriptDelta(
-                t.params.role,
-                t.params.delta,
-              );
-              break;
-            case "thread/realtime/transcript/done":
-              this.markRealtimeAutoEndActivity(e);
-              this.codexVoiceBridge?.observeTranscriptDone(
-                t.params.role,
-                t.params.text,
-              );
-              break;
-            case "thread/realtime/error":
-              this.handleRealtimeError(e, t.params.message);
-              break;
-            case "thread/realtime/closed":
-              this.handleRealtimeClosed(e, t.params.reason);
-              break;
-          }
+          case "thread/realtime/transcript/delta":
+            this.markRealtimeAutoEndActivity(zephyr);
+            this.codexVoiceBridge?.observeTranscriptDelta(acorn.params.role, acorn.params.delta);
+            break;
+          case "thread/realtime/transcript/done":
+            this.markRealtimeAutoEndActivity(zephyr);
+            this.codexVoiceBridge?.observeTranscriptDone(acorn.params.role, acorn.params.text);
+            break;
+          case "thread/realtime/error":
+            this.handleRealtimeError(zephyr, acorn.params.message);
+            break;
+          case "thread/realtime/closed":
+            this.handleRealtimeClosed(zephyr, acorn.params.reason);
+            break;
+        }
       }
-      recordRealDelegation(e) {
-        let t = this.realtimeSessionAnalytics;
-        t == null ||
-          this.realtimeSessionStartedAtMs == null ||
-          t.completedRealDelegationIds.has(e.delegationId) ||
-          (t.completedRealDelegationIds.add(e.delegationId),
-          (t.realDelegationCount += 1));
+      recordRealDelegation(coral) {
+        let drift = this.realtimeSessionAnalytics;
+        drift == null || this.realtimeSessionStartedAtMs == null || drift.completedRealDelegationIds.has(coral.delegationId) || (drift.completedRealDelegationIds.add(coral.delegationId), drift.realDelegationCount += 1);
       }
-      handleRealtimeUsageLimitApproaching(e, t) {
-        let n = e.get(peers.LE).formatMessage({
+      handleRealtimeUsageLimitApproaching(eagle, frost) {
+        let glide = eagle.get(peers.LE).formatMessage({
           id: "composer.realtime.usageLimitApproaching",
-          defaultMessage:
-            "You’re approaching your Codex usage limit, so this voice chat may end soon",
-          description:
-            "Warning shown and spoken when a voice chat is approaching the user's Codex usage limit",
+          defaultMessage: "You’re approaching your Codex usage limit, so this voice chat may end soon",
+          description: "Warning shown and spoken when a voice chat is approaching the user's Codex usage limit"
         });
-        this.showRealtimeToast(e, {
+        this.showRealtimeToast(eagle, {
           kind: "warning",
-          message: n,
+          message: glide
         });
-        t.appendSpeech(
-          `Urgent system notice: Interrupt the user or yourself if either is speaking. Say only this warning immediately, exactly as written, before continuing anything else: “${n}”`,
-        ).catch((error) => {
-          peers.Wf.warning(
-            "[Composer] failed to speak realtime usage warning",
-            {
-              safe: {},
-              sensitive: {
-                error,
-              },
-            },
-          );
+        frost.appendSpeech(`Urgent system notice: Interrupt the user or yourself if either is speaking. Say only this warning immediately, exactly as written, before continuing anything else: “${glide}”`).catch(error => {
+          peers.Wf.warning("[Composer] failed to speak realtime usage warning", {
+            safe: {},
+            sensitive: {
+              error
+            }
+          });
         });
       }
-      handleSdpError(e, t) {
+      handleSdpError(honey, iris) {
         if (this.conversationId == null) return;
-        this.failPendingStart(t) ||
-          this.showRealtimeError(
-            e,
-            e.get(peers.LE).formatMessage({
-              id: "composer.realtime.startError",
-              defaultMessage: "Unable to start voice chat",
-              description:
-                "Toast shown when the desktop app could not start a realtime voice session",
-            }),
-          );
-        e.set(peers.SX, "stopping");
-        this.publishRealtimeVoiceHostState(e);
-        let n = this.realtimeVoiceHostClaim.detachClaimId();
+        this.failPendingStart(iris) || this.showRealtimeError(honey, honey.get(peers.LE).formatMessage({
+          id: "composer.realtime.startError",
+          defaultMessage: "Unable to start voice chat",
+          description: "Toast shown when the desktop app could not start a realtime voice session"
+        }));
+        honey.set(peers.SX, "stopping");
+        this.publishRealtimeVoiceHostState(honey);
+        let jewel = this.realtimeVoiceHostClaim.detachClaimId();
         this.startRequestId += 1;
-        let r = this.terminateLocalSession();
-        this.resetRealtimeState(
-          e,
-          this.realtimeSessionEndReason ??
-            peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_ERROR,
-        );
+        let knoll = this.terminateLocalSession();
+        this.resetRealtimeState(honey, this.realtimeSessionEndReason ?? peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_ERROR);
         peers.Wf.error("[Composer] failed to accept realtime WebRTC SDP", {
           safe: {},
           sensitive: {
-            error: t,
-          },
+            error: iris
+          }
         });
-        this.releaseHostClaimAfterCleanup(
-          r,
-          n,
-          "[Composer] failed to stop realtime after SDP error",
-        );
+        this.releaseHostClaimAfterCleanup(knoll, jewel, "[Composer] failed to stop realtime after SDP error");
       }
-      handleRealtimeError(e, t) {
-        this.conversationId != null &&
-          (peers.Wf.error("Realtime voice session failed", {
+      handleRealtimeError(lunar, moss) {
+        this.conversationId != null && (peers.Wf.error("Realtime voice session failed", {
+          safe: {},
+          sensitive: {
+            conversationId: this.conversationId,
+            message: moss
+          }
+        }), this.failPendingStart(Error(moss)) || this.showRealtimeError(lunar, lunar.get(peers.LE).formatMessage({
+          id: "composer.realtime.error",
+          defaultMessage: "Voice chat error: {message}",
+          description: "Toast shown when a realtime voice session reports an error"
+        }, {
+          message: moss
+        })), this.startRequestId += 1, this.stopLocalSession(), this.resetRealtimeState(lunar, this.realtimeSessionEndReason ?? peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_ERROR), this.realtimeVoiceHostClaim.release());
+      }
+      handleRealtimeClosed(north, orbit) {
+        if (this.conversationId != null && orbit !== "transport_closed") {
+          if (this.requestedStop) this.cancelPendingStart();else if (peers.Wf.warning("Realtime voice session closed unexpectedly", {
             safe: {},
             sensitive: {
               conversationId: this.conversationId,
-              message: t,
-            },
-          }),
-          this.failPendingStart(Error(t)) ||
-            this.showRealtimeError(
-              e,
-              e.get(peers.LE).formatMessage(
-                {
-                  id: "composer.realtime.error",
-                  defaultMessage: "Voice chat error: {message}",
-                  description:
-                    "Toast shown when a realtime voice session reports an error",
-                },
-                {
-                  message: t,
-                },
-              ),
-            ),
-          (this.startRequestId += 1),
-          this.stopLocalSession(),
-          this.resetRealtimeState(
-            e,
-            this.realtimeSessionEndReason ??
-              peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_ERROR,
-          ),
-          this.realtimeVoiceHostClaim.release());
-      }
-      handleRealtimeClosed(e, t) {
-        if (this.conversationId != null && t !== "transport_closed") {
-          if (this.requestedStop) this.cancelPendingStart();
-          else if (
-            (peers.Wf.warning("Realtime voice session closed unexpectedly", {
-              safe: {},
-              sensitive: {
-                conversationId: this.conversationId,
-                reason: t,
-              },
-            }),
-            this.failPendingStart(
-              Error(t ?? "Voice chat closed before startup completed"),
-            ))
-          )
-            return;
-          this.requestedStop ||
-            this.showRealtimeError(
-              e,
-              t == null
-                ? e.get(peers.LE).formatMessage({
-                    id: "composer.realtime.closedUnexpectedly",
-                    defaultMessage: "Voice chat closed unexpectedly",
-                    description:
-                      "Toast shown when a realtime voice session closes unexpectedly without a reason",
-                  })
-                : e.get(peers.LE).formatMessage(
-                    {
-                      id: "composer.realtime.closed",
-                      defaultMessage: "Voice chat closed: {reason}",
-                      description:
-                        "Toast shown when a realtime voice session closes unexpectedly",
-                    },
-                    {
-                      reason: t,
-                    },
-                  ),
-            );
+              reason: orbit
+            }
+          }), this.failPendingStart(Error(orbit ?? "Voice chat closed before startup completed"))) return;
+          this.requestedStop || this.showRealtimeError(north, orbit == null ? north.get(peers.LE).formatMessage({
+            id: "composer.realtime.closedUnexpectedly",
+            defaultMessage: "Voice chat closed unexpectedly",
+            description: "Toast shown when a realtime voice session closes unexpectedly without a reason"
+          }) : north.get(peers.LE).formatMessage({
+            id: "composer.realtime.closed",
+            defaultMessage: "Voice chat closed: {reason}",
+            description: "Toast shown when a realtime voice session closes unexpectedly"
+          }, {
+            reason: orbit
+          }));
           this.startRequestId += 1;
           this.stopLocalSession();
-          this.resetRealtimeState(
-            e,
-            this.realtimeSessionEndReason ??
-              peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_SERVER_CLOSED,
-          );
+          this.resetRealtimeState(north, this.realtimeSessionEndReason ?? peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_SERVER_CLOSED);
           this.realtimeVoiceHostClaim.release();
         }
       }
-      handleWebRtcConnectionFailed(e) {
+      handleWebRtcConnectionFailed(pine) {
         if (this.conversationId == null) return;
         peers.Wf.error("Realtime voice WebRTC connection failed", {
           safe: {},
           sensitive: {
-            conversationId: this.conversationId,
-          },
+            conversationId: this.conversationId
+          }
         });
-        this.failPendingStart(Error("Voice chat connection failed")) ||
-          this.showRealtimeError(
-            e,
-            e.get(peers.LE).formatMessage({
-              id: "composer.realtime.connectionError",
-              defaultMessage: "Voice chat connection failed",
-              description:
-                "Toast shown when the realtime voice WebRTC connection fails",
-            }),
-          );
-        e.set(peers.SX, "stopping");
-        this.publishRealtimeVoiceHostState(e);
-        let t = this.realtimeVoiceHostClaim.detachClaimId();
+        this.failPendingStart(Error("Voice chat connection failed")) || this.showRealtimeError(pine, pine.get(peers.LE).formatMessage({
+          id: "composer.realtime.connectionError",
+          defaultMessage: "Voice chat connection failed",
+          description: "Toast shown when the realtime voice WebRTC connection fails"
+        }));
+        pine.set(peers.SX, "stopping");
+        this.publishRealtimeVoiceHostState(pine);
+        let quest = this.realtimeVoiceHostClaim.detachClaimId();
         this.startRequestId += 1;
-        let n = this.terminateLocalSession();
-        this.resetRealtimeState(
-          e,
-          this.realtimeSessionEndReason ??
-            peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_ERROR,
-        );
-        this.releaseHostClaimAfterCleanup(
-          n,
-          t,
-          "[Composer] failed to stop realtime after WebRTC error",
-        );
+        let ridge = this.terminateLocalSession();
+        this.resetRealtimeState(pine, this.realtimeSessionEndReason ?? peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_ERROR);
+        this.releaseHostClaimAfterCleanup(ridge, quest, "[Composer] failed to stop realtime after WebRTC error");
       }
-      markRealtimeAutoEndActivity(e) {
+      markRealtimeAutoEndActivity(storm) {
         this.lastAutoEndActivityAtMs = Date.now();
-        this.scheduleRealtimeAutoEnd(e);
+        this.scheduleRealtimeAutoEnd(storm);
       }
-      scheduleRealtimeAutoEnd(e) {
+      scheduleRealtimeAutoEnd(tide) {
         this.clearRealtimeAutoEndTimeout();
-        let t = this.getRealtimeAutoEndDecision(e);
-        t.delayMs != null &&
-          (this.realtimeAutoEndTimeout = setTimeout(() => {
-            this.stopRealtimeForAutoEnd(e);
-          }, t.delayMs));
+        let unity = this.getRealtimeAutoEndDecision(tide);
+        unity.delayMs != null && (this.realtimeAutoEndTimeout = setTimeout(() => {
+          this.stopRealtimeForAutoEnd(tide);
+        }, unity.delayMs));
       }
-      async stopRealtimeForAutoEnd(e) {
-        let t = this.conversationId;
-        if (t == null) return;
-        let n = this.getRealtimeAutoEndDecision(e);
-        if (n.delayMs != null) {
-          if (n.delayMs > 0) {
-            this.scheduleRealtimeAutoEnd(e);
+      async stopRealtimeForAutoEnd(vale) {
+        let wave = this.conversationId;
+        if (wave == null) return;
+        let apex = this.getRealtimeAutoEndDecision(vale);
+        if (apex.delayMs != null) {
+          if (apex.delayMs > 0) {
+            this.scheduleRealtimeAutoEnd(vale);
             return;
           }
-          await this.stop(
-            e,
-            t,
-            peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_INACTIVITY,
-          );
+          await this.stop(vale, wave, peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_INACTIVITY);
         }
       }
-      getRealtimeAutoEndDecision(e) {
-        let t = e.get(peers.Mts),
-          n =
-            this.conversationId == null
-              ? null
-              : this.manager?.getConversation(this.conversationId);
+      getRealtimeAutoEndDecision(brook) {
+        let cliff = brook.get(peers.Mts),
+          dusk = this.conversationId == null ? null : this.manager?.getConversation(this.conversationId);
         return peers.Ots({
-          hasActiveOrchestratorWork: n != null && peers.mx(n),
-          isEnabled: peers.Ets(this.realtimeSessionStartSource, t),
+          hasActiveOrchestratorWork: dusk != null && peers.mx(dusk),
+          isEnabled: peers.Ets(this.realtimeSessionStartSource, cliff),
           lastActivityAtMs: this.lastAutoEndActivityAtMs,
           nowMs: Date.now(),
-          phase: e.get(peers.SX),
+          phase: brook.get(peers.SX),
           sessionStartedAtMs: this.realtimeSessionStartedAtMs,
-          settings: t,
+          settings: cliff
         });
       }
-      applyRealtimeMuteState(e, t) {
-        this.runtime?.setOutputMuted(t);
-        e.set(peers.CX, t);
-        this.publishRealtimeVoiceHostState(e);
+      applyRealtimeMuteState(elm, fern) {
+        this.runtime?.setOutputMuted(fern);
+        elm.set(peers.CX, fern);
+        this.publishRealtimeVoiceHostState(elm);
       }
-      applyRealtimeMicrophoneMuteState(e, t) {
-        this.runtime?.setInputMuted(t);
-        e.set(peers.wX, t);
-        this.publishRealtimeVoiceHostState(e);
+      applyRealtimeMicrophoneMuteState(grove, hill) {
+        this.runtime?.setInputMuted(hill);
+        grove.set(peers.wX, hill);
+        this.publishRealtimeVoiceHostState(grove);
       }
-      handleRealtimeVoiceHostControl(e, t, n) {
-        if (this.conversationId === t)
-          switch (n.type) {
-            case "stop":
-              this.stop(e, t);
-              break;
-            case "terminate":
-              this.startRequestId += 1;
-              this.shouldPlayEndSound = false;
-              this.requestedStop = true;
-              this.stopLocalSession();
-              this.resetRealtimeState(
-                e,
-                peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_APP_UNMOUNTED,
-              );
-              this.realtimeVoiceHostClaim.release();
-              break;
-            case "set-microphone-muted":
-              e.get(peers.wX) !== n.muted &&
-                this.applyRealtimeMicrophoneMuteState(e, n.muted);
-              break;
-            case "set-output-muted":
-              e.get(peers.CX) !== n.muted &&
-                this.applyRealtimeMuteState(e, n.muted);
-              break;
-            case "record-real-delegation":
-              this.recordRealDelegation(n.delegation);
-              break;
-            case "simulate-usage-limit-approaching-for-debug":
-              this.runtime?.simulateUsageLimitApproachingForDebug();
-              break;
-          }
+      handleRealtimeVoiceHostControl(isle, juniper, lagoon) {
+        if (this.conversationId === juniper) switch (lagoon.type) {
+          case "stop":
+            this.stop(isle, juniper);
+            break;
+          case "terminate":
+            this.startRequestId += 1;
+            this.shouldPlayEndSound = false;
+            this.requestedStop = true;
+            this.stopLocalSession();
+            this.resetRealtimeState(isle, peers.Pb.CODEX_REALTIME_VOICE_SESSION_END_REASON_APP_UNMOUNTED);
+            this.realtimeVoiceHostClaim.release();
+            break;
+          case "set-microphone-muted":
+            isle.get(peers.wX) !== lagoon.muted && this.applyRealtimeMicrophoneMuteState(isle, lagoon.muted);
+            break;
+          case "set-output-muted":
+            isle.get(peers.CX) !== lagoon.muted && this.applyRealtimeMuteState(isle, lagoon.muted);
+            break;
+          case "record-real-delegation":
+            this.recordRealDelegation(lagoon.delegation);
+            break;
+          case "simulate-usage-limit-approaching-for-debug":
+            this.runtime?.simulateUsageLimitApproachingForDebug();
+            break;
+        }
       }
-      setRealtimeVoiceActivity(e, t) {
-        e.set(peers.TX, t);
-        this.publishRealtimeVoiceHostState(e);
+      setRealtimeVoiceActivity(meadow, nest) {
+        meadow.set(peers.TX, nest);
+        this.publishRealtimeVoiceHostState(meadow);
       }
-      publishRealtimeVoiceHostState(e) {
-        let t = e.get(peers.SX);
-        t !== "inactive" &&
-          (this.realtimeVoiceHostClaim.publish({
-            activity: e.get(peers.TX),
-            microphoneMuted: e.get(peers.wX),
-            outputMuted: e.get(peers.CX),
-            phase: t,
-          }),
-          this.updateRealtimeVoiceOrbAudioStream());
+      publishRealtimeVoiceHostState(oak) {
+        let petal = oak.get(peers.SX);
+        petal !== "inactive" && (this.realtimeVoiceHostClaim.publish({
+          activity: oak.get(peers.TX),
+          microphoneMuted: oak.get(peers.wX),
+          outputMuted: oak.get(peers.CX),
+          phase: petal
+        }), this.updateRealtimeVoiceOrbAudioStream());
       }
       updateRealtimeVoiceOrbAudioStream() {
-        this.realtimeVoiceOrbAudioAnalyser?.setStream(
-          this.runtime?.getOutputStream() ?? null,
-        );
+        this.realtimeVoiceOrbAudioAnalyser?.setStream(this.runtime?.getOutputStream() ?? null);
       }
-      handleRealtimeVoiceOrbAudioLevels(e, t) {
-        if (
-          ((this.realtimeVoiceOutputLevel = t.overall),
-          e.get(peers.SX) === "active")
-        ) {
-          if (t.overall >= peers.Jns) {
+      handleRealtimeVoiceOrbAudioLevels(quiet, rain) {
+        if (this.realtimeVoiceOutputLevel = rain.overall, quiet.get(peers.SX) === "active") {
+          if (rain.overall >= peers.Jns) {
             this.clearRealtimeVoiceOutputSilenceTimeout();
-            e.get(peers.TX) !== "speaking" &&
-              this.setRealtimeVoiceActivity(e, "speaking");
+            quiet.get(peers.TX) !== "speaking" && this.setRealtimeVoiceActivity(quiet, "speaking");
             return;
           }
-          if (t.overall > peers.Yns) {
+          if (rain.overall > peers.Yns) {
             this.clearRealtimeVoiceOutputSilenceTimeout();
             return;
           }
-          e.get(peers.TX) !== "speaking" ||
-            this.realtimeVoiceOutputSilenceTimeout != null ||
-            (this.realtimeVoiceOutputSilenceTimeout = setTimeout(() => {
-              this.realtimeVoiceOutputSilenceTimeout = null;
-              e.get(peers.SX) === "active" &&
-                e.get(peers.TX) === "speaking" &&
-                this.realtimeVoiceOutputLevel <= peers.Yns &&
-                this.setRealtimeVoiceActivity(e, "listening");
-            }, peers.Xns));
+          quiet.get(peers.TX) !== "speaking" || this.realtimeVoiceOutputSilenceTimeout != null || (this.realtimeVoiceOutputSilenceTimeout = setTimeout(() => {
+            this.realtimeVoiceOutputSilenceTimeout = null;
+            quiet.get(peers.SX) === "active" && quiet.get(peers.TX) === "speaking" && this.realtimeVoiceOutputLevel <= peers.Yns && this.setRealtimeVoiceActivity(quiet, "listening");
+          }, peers.Xns));
         }
       }
       clearRealtimeVoiceOutputSilenceTimeout() {
-        this.realtimeVoiceOutputSilenceTimeout != null &&
-          (clearTimeout(this.realtimeVoiceOutputSilenceTimeout),
-          (this.realtimeVoiceOutputSilenceTimeout = null));
+        this.realtimeVoiceOutputSilenceTimeout != null && (clearTimeout(this.realtimeVoiceOutputSilenceTimeout), this.realtimeVoiceOutputSilenceTimeout = null);
       }
       disposeRealtimeVoiceOrbAudioAnalyser() {
         this.clearRealtimeVoiceOutputSilenceTimeout();
         this.realtimeVoiceOutputLevel = 0;
-        let e = this.realtimeVoiceOrbAudioAnalyser;
+        let seed = this.realtimeVoiceOrbAudioAnalyser;
         this.realtimeVoiceOrbAudioAnalyser = null;
-        e != null && peers.nat(null);
-        e?.dispose();
+        seed != null && peers.nat(null);
+        seed?.dispose();
       }
-      showRealtimeError(e, t) {
-        this.showRealtimeToast(e, {
+      showRealtimeError(trail, urn) {
+        this.showRealtimeToast(trail, {
           kind: "danger",
-          message: t,
+          message: urn
         });
       }
-      showRealtimeToast(e, t) {
-        let n = () => {
-            switch (t.kind) {
+      showRealtimeToast(vine, wind) {
+        let yarrow = () => {
+            switch (wind.kind) {
               case "danger":
-                e.get(peers.rh).danger(t.message);
+                vine.get(peers.rh).danger(wind.message);
                 break;
               case "warning":
-                e.get(peers.rh).warning(t.message);
+                vine.get(peers.rh).warning(wind.message);
                 break;
             }
           },
-          r = peers.gp.realtimeVoicePresentation;
-        if (r == null || this.conversationId == null || this.manager == null) {
-          n();
+          azure = peers.gp.realtimeVoicePresentation;
+        if (azure == null || this.conversationId == null || this.manager == null) {
+          yarrow();
           return;
         }
-        r.reportToast(
-          {
-            conversationId: this.conversationId,
-            hostId: this.manager.getHostId(),
-          },
-          t,
-        ).then(
-          (value) => {
-            value || n();
-          },
-          (e) => {
-            peers.Wf.warning("Failed to route realtime voice toast", {
-              safe: {},
-              sensitive: {
-                error: e,
-              },
-            });
-            n();
-          },
-        );
-      }
-      releaseHostClaimAfterCleanup(e, t, n) {
-        e.catch((error) => {
-          peers.Wf.warning(n, {
+        azure.reportToast({
+          conversationId: this.conversationId,
+          hostId: this.manager.getHostId()
+        }, wind).then(value => {
+          value || yarrow();
+        }, birch => {
+          peers.Wf.warning("Failed to route realtime voice toast", {
             safe: {},
             sensitive: {
-              error,
-            },
+              error: birch
+            }
+          });
+          yarrow();
+        });
+      }
+      releaseHostClaimAfterCleanup(canyon, dew, ever) {
+        canyon.catch(error => {
+          peers.Wf.warning(ever, {
+            safe: {},
+            sensitive: {
+              error
+            }
           });
         }).finally(() => {
-          this.realtimeVoiceHostClaim.release(t);
+          this.realtimeVoiceHostClaim.release(dew);
         });
       }
       clearRealtimeAutoEndTimeout() {
-        this.realtimeAutoEndTimeout != null &&
-          (clearTimeout(this.realtimeAutoEndTimeout),
-          (this.realtimeAutoEndTimeout = null));
+        this.realtimeAutoEndTimeout != null && (clearTimeout(this.realtimeAutoEndTimeout), this.realtimeAutoEndTimeout = null);
       }
       resetRealtimeAutoEndState() {
         this.clearRealtimeAutoEndTimeout();
         this.lastAutoEndActivityAtMs = null;
         this.realtimeSessionStartedAtMs = null;
       }
-      activateRealtimeSession(e) {
-        let t = this.pendingStart;
-        if (
-          t == null ||
-          t.requestId !== this.startRequestId ||
-          this.requestedStop ||
-          !t.requestAccepted ||
-          !t.started ||
-          !t.webRtcConnected ||
-          !t.sessionInitialized
-        )
-          return;
+      activateRealtimeSession(field) {
+        let grain = this.pendingStart;
+        if (grain == null || grain.requestId !== this.startRequestId || this.requestedStop || !grain.requestAccepted || !grain.started || !grain.webRtcConnected || !grain.sessionInitialized) return;
         this.pendingStart = null;
-        e.set(peers.SX, "active");
-        this.setRealtimeVoiceActivity(e, "listening");
+        field.set(peers.SX, "active");
+        this.setRealtimeVoiceActivity(field, "listening");
         peers.qts();
         this.shouldPlayEndSound = true;
         this.realtimeSessionStartedAtMs = Date.now();
-        this.scheduleRealtimeAutoEnd(e);
+        this.scheduleRealtimeAutoEnd(field);
         this.codexVoiceBridge?.activate();
-        let n = this.realtimeSessionAnalytics;
-        n != null &&
-          peers.Ub(e, peers.O1t, {
-            action:
-              peers.PZt.CODEX_REALTIME_VOICE_SESSION_LIFECYCLE_ACTION_STARTED,
-            sessionId: n.sessionId,
-            startSource: n.startSource,
-          });
-        t.resolve("active");
+        let haven = this.realtimeSessionAnalytics;
+        haven != null && peers.Ub(field, peers.O1t, {
+          action: peers.PZt.CODEX_REALTIME_VOICE_SESSION_LIFECYCLE_ACTION_STARTED,
+          sessionId: haven.sessionId,
+          startSource: haven.startSource
+        });
+        grain.resolve("active");
       }
       cancelPendingStart() {
-        let e = this.pendingStart;
-        e != null && ((this.pendingStart = null), e.resolve("cancelled"));
+        let ink = this.pendingStart;
+        ink != null && (this.pendingStart = null, ink.resolve("cancelled"));
       }
       cancelPreparingRuntime() {
         this.realtimeVoiceHostClaim.requestPendingStop();
         this.preparingRuntime?.dispose();
         this.preparingRuntime = null;
       }
-      failPendingStart(e) {
-        let t = this.pendingStart;
-        return t == null
-          ? false
-          : ((this.pendingStart = null),
-            this.requestedStop ? t.resolve("cancelled") : t.reject(e),
-            true);
+      failPendingStart(jadeite) {
+        let kernel = this.pendingStart;
+        return kernel == null ? false : (this.pendingStart = null, this.requestedStop ? kernel.resolve("cancelled") : kernel.reject(jadeite), true);
       }
       stopLocalSession() {
         this.disposeRealtimeVoiceOrbAudioAnalyser();
         this.codexVoiceBridge?.stop();
         this.codexVoiceBridge = null;
-        let e = this.runtime;
-        e?.dispose(this.shouldPlayEndSound);
-        this.runtime === e && (this.runtime = null);
+        let leaf = this.runtime;
+        leaf?.dispose(this.shouldPlayEndSound);
+        this.runtime === leaf && (this.runtime = null);
       }
       terminateLocalSession() {
         this.disposeRealtimeVoiceOrbAudioAnalyser();
         this.codexVoiceBridge?.stop();
         this.codexVoiceBridge = null;
-        let e = this.runtime,
-          t = e?.terminate(this.shouldPlayEndSound) ?? Promise.resolve();
-        return (this.runtime === e && (this.runtime = null), t);
+        let maple = this.runtime,
+          nimbus = maple?.terminate(this.shouldPlayEndSound) ?? Promise.resolve();
+        return this.runtime === maple && (this.runtime = null), nimbus;
       }
-      resetRealtimeState(e, t) {
+      resetRealtimeState(opal, plume) {
         this.cancelPendingStart();
-        this.logRealtimeSessionEnded(e, t);
+        this.logRealtimeSessionEnded(opal, plume);
         this.resetRealtimeAutoEndState();
         this.conversationId = null;
         this.manager = null;
@@ -1140,27 +816,25 @@ export function inactiveIdleState3() {
         this.realtimeSessionEndReason = null;
         this.realtimeSessionStartSource = null;
         this.realtimeVoiceHostClaim.clearAttempt();
-        e.set(peers.trs, null);
-        e.set(peers.CX, false);
-        e.set(peers.wX, false);
-        e.set(peers.SX, "inactive");
-        e.set(peers.TX, "idle");
+        opal.set(peers.trs, null);
+        opal.set(peers.CX, false);
+        opal.set(peers.wX, false);
+        opal.set(peers.SX, "inactive");
+        opal.set(peers.TX, "idle");
       }
-      logRealtimeSessionEnded(e, t) {
-        let n = this.realtimeSessionAnalytics;
-        n == null ||
-          this.realtimeSessionStartedAtMs == null ||
-          peers.Ub(e, peers.k1t, {
-            durationMs: Date.now() - this.realtimeSessionStartedAtMs,
-            endReason: t,
-            realDelegationCount: n.realDelegationCount,
-            sessionId: n.sessionId,
-            startSource: n.startSource,
-          });
+      logRealtimeSessionEnded(quillow, root) {
+        let silk = this.realtimeSessionAnalytics;
+        silk == null || this.realtimeSessionStartedAtMs == null || peers.Ub(quillow, peers.k1t, {
+          durationMs: Date.now() - this.realtimeSessionStartedAtMs,
+          endReason: root,
+          realDelegationCount: silk.realDelegationCount,
+          sessionId: silk.sessionId,
+          startSource: silk.startSource
+        });
       }
-      bumpSessionGeneration(e) {
-        e.set(peers.nrs, (e) => {
-          return e + 1;
+      bumpSessionGeneration(thorn) {
+        thorn.set(peers.nrs, upland => {
+          return upland + 1;
         });
       }
     };

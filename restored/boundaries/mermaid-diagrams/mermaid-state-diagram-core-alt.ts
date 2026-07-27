@@ -25,11 +25,8 @@ import {
   chunk5PVQY5BWO,
   chunk5PVQY5BWU,
 } from "./mermaid-common-utils-alt";
-import { n, t } from "../../diagrams/get-diagram-element-alt";
-import {
-  n as chunkEDXVE4YYN,
-  t as chunkEDXVE4YYT,
-} from "../../diagrams/setup-viewport-for-svg-alt";
+import { initGetDiagramElementChunk as n, getDiagramElement as t } from "../../diagrams/get-diagram-element-alt";
+import { setupViewPortForSVG as chunkEDXVE4YYN, initSetupViewPortForSvgChunk as chunkEDXVE4YYT } from "../../diagrams/setup-viewport-for-svg-alt";
 import {
   chunk336JU56OI,
   chunk336JU56ON,

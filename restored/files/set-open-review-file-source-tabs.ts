@@ -1,24 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `LWi`) / export `eH`.
+// Materialized via extractFn(internal `LWi`) / export `setOpenReviewFileSourceTabs`.
 
-export type EHPeers = {
+export type OpenReviewFileSourceTabsPeers = {
   Bf: (...args: unknown[]) => unknown;
   Mor: (...args: unknown[]) => unknown;
   OWi: (...args: unknown[]) => unknown;
 };
-let peers: EHPeers | null = null;
+let peers: OpenReviewFileSourceTabsPeers | null = null;
 
-/** Wire eH peers once companions land. */
-export function setEHPeers(next: EHPeers): void {
+/** Wire setOpenReviewFileSourceTabs peers once companions land. */
+export function setOpenReviewFileSourceTabsPeers(next: OpenReviewFileSourceTabsPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `eH` / internal `LWi`.
+ * Bundle export `setOpenReviewFileSourceTabs` / internal `LWi`.
  */
-export function eH(e: unknown, t: unknown = {}) {
+export function setOpenReviewFileSourceTabs(e: unknown, t: unknown = {}) {
   if (peers == null) {
-    throw new Error("eH peers are not configured");
+    throw new Error("setOpenReviewFileSourceTabs peers are not configured");
   }
   e.value.routeKind === "local-thread" &&
     peers.Bf("set-open-review-file-source-tabs", {

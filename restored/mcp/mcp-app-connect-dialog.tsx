@@ -65,21 +65,22 @@ export function setBindMcpAppConnectDialogPeers(
  * Bundle export `tz` / internal `r6i`.
  */
 export function bindMcpAppConnectDialog(props: unknown) {
-  const PD = peers.PD;
-  const Oz = peers.Oz;
-  const Jp = peers.jp;
-  const Z = peers.Z;
-  const ID = peers.ID;
-  const Mz = peers.Mz;
-  const P2 = peers._P;
-  const Zk = peers.Zk;
-  const Az = peers.Az;
+  const Alpha = peers.PD;
+  const Bravo = peers.Oz;
+  const Copper = peers.jp;
+  const FormattedMessage = peers.Z;
+  const Echo = peers.ID;
+  const Falcon = peers.Mz;
+  const Gamma = peers._P;
+  const Harbor = peers.Zk;
+  const Indigo = peers.Az;
   const C3i = peers.$3i;
   const T6i = peers.t6i;
   const V3i = peers.V3i;
-  const Np = peers.Np;
-  const NA = peers.nA;
-  const Xk = peers.Xk;
+  const Jade = peers.Np;
+  const Kite = peers.nA;
+  const Lemon = peers.Xk;
+  const LogoMark = peers.Pz;
   if (peers == null) {
     throw new Error("bindMcpAppConnectDialog peers are not configured");
   }
@@ -97,18 +98,18 @@ export function bindMcpAppConnectDialog(props: unknown) {
       onOAuthStarted,
       showResultToasts = true,
     } = props,
-    v = peers.Io(peers.Q),
-    y = peers.Ju(),
+    value = peers.Io(peers.Q),
+    marble = peers.Ju(),
     b = peers.rt(),
-    x = app != null,
-    S = app?.id ?? "",
-    C = (e) => {
-      onOpenChange(e);
+    nickel = app != null,
+    onyx = app?.id ?? "",
+    pearl = (wind) => {
+      onOpenChange(wind);
     };
-  let w = C,
-    T = ["mcp-settings", "app-connect", S];
-  let E = x && app != null,
-    D = async () => {
+  let quartz = pearl,
+    river = ["mcp-settings", "app-connect", onyx];
+  let slate = nickel && app != null,
+    timber = async () => {
       if (app == null) throw Error("Expected app metadata to be present.");
       return peers.Uh.safeGet("/aip/connectors/{connector_id}", {
         parameters: {
@@ -125,17 +126,17 @@ export function bindMcpAppConnectDialog(props: unknown) {
         },
       });
     };
-  let O = {
-    queryKey: T,
-    enabled: E,
+  let umbra = {
+    queryKey: river,
+    enabled: slate,
     staleTime: peers.Hf.FIVE_MINUTES,
-    queryFn: D,
+    queryFn: timber,
   };
-  let k = peers.jt(O),
-    A = k.data,
-    j = ["mcp-settings", "app-connect", "tos", S];
-  let M = x && app != null,
-    N = async () => {
+  let violet = peers.jt(umbra),
+    willow = violet.data,
+    xenon = ["mcp-settings", "app-connect", "tos", onyx];
+  let yellow = nickel && app != null,
+    zinc = async () => {
       if (app == null) throw Error("Expected app metadata to be present.");
       return peers.Uh.safeGet("/aip/connectors/{connector_id}/tos", {
         parameters: {
@@ -148,53 +149,53 @@ export function bindMcpAppConnectDialog(props: unknown) {
         },
       });
     };
-  let P = {
-    queryKey: j,
-    enabled: M,
+  let amber = {
+    queryKey: xenon,
+    enabled: yellow,
     staleTime: peers.Hf.FIVE_MINUTES,
-    queryFn: N,
+    queryFn: zinc,
   };
-  let F = peers.jt(P),
-    I = k.isPending,
-    L = A == null ? "UNSUPPORTED" : peers.X3i(A);
-  let R = L,
-    z = A == null ? false : peers.Y3i(A.link_params_schema);
-  let B = z,
-    V =
+  let basalt = peers.jt(amber),
+    cedar = violet.isPending,
+    daisy = willow == null ? "UNSUPPORTED" : peers.X3i(willow);
+  let ember = daisy,
+    flint = willow == null ? false : peers.Y3i(willow.link_params_schema);
+  let garnet = flint,
+    hazel =
       connectApp == null &&
-      !I &&
-      (k.isError || A == null || B || R === "UNSUPPORTED"),
-    H = (e) => {
-      let t = app?.installUrl?.trim();
-      return t
+      !cedar &&
+      (violet.isError || willow == null || garnet || ember === "UNSUPPORTED"),
+    ivory = (yarrow) => {
+      let azure = app?.installUrl?.trim();
+      return azure
         ? (peers.lb({
-            event: e,
-            href: t,
+            event: yarrow,
+            href: azure,
             initiator: "open_in_browser_bridge",
             openTarget: "external-browser",
           }),
-          w(false),
+          quartz(false),
           true)
-        : (v.get(peers.rh).danger(peers.q5r(y)), false);
+        : (value.get(peers.rh).danger(peers.q5r(marble)), false);
     };
-  let U = H,
-    W = (e) => {
+  let jasper = ivory,
+    kelp = (birch) => {
       if (app == null) return;
-      let t = peers.V5r(app);
-      if (!t) {
-        v.get(peers.rh).danger(peers.q5r(y));
+      let canyon = peers.V5r(app);
+      if (!canyon) {
+        value.get(peers.rh).danger(peers.q5r(marble));
         return;
       }
       peers.lb({
-        event: e,
-        href: t,
+        event: birch,
+        href: canyon,
         initiator: "open_in_browser_bridge",
         openTarget: "external-browser",
       });
       onOpenChange(false);
     };
-  let G = W,
-    K = async () => {
+  let lotus = kelp,
+    mint = async () => {
       if (app == null) throw Error("Expected app metadata to be present.");
       return (
         onConnectStarted?.(),
@@ -205,7 +206,7 @@ export function bindMcpAppConnectDialog(props: unknown) {
                 installUrl: app.installUrl,
                 name: app.name,
               },
-              connector: A,
+              connector: willow,
               openInBrowser: peers.i6i,
               queryClient: b,
             })
@@ -220,25 +221,25 @@ export function bindMcpAppConnectDialog(props: unknown) {
               }
       );
     };
-  let q = (e) => {
-    switch (e.kind) {
+  let q = (dew) => {
+    switch (dew.kind) {
       case "connected-directly":
         showResultToasts &&
-          v.get(peers.rh).success(
+          value.get(peers.rh).success(
             peers.G5r({
               appName:
                 app?.name ??
-                y.formatMessage({
+                marble.formatMessage({
                   id: "settings.mcp.appConnectModal.fallbackAppName",
                   defaultMessage: "App",
                   description:
                     "Fallback app name used in app connect success toasts",
                 }),
-              intl: y,
+              intl: marble,
             }),
           );
         onConnected && Promise.resolve(onConnected());
-        w(false);
+        quartz(false);
         return;
       case "oauth-started":
         app != null &&
@@ -247,235 +248,238 @@ export function bindMcpAppConnectDialog(props: unknown) {
               id: app.id,
               name: app.name,
             },
-            redirectUrl: e.redirectUrl,
+            redirectUrl: dew.redirectUrl,
           });
-        v.get(peers.rh).info(
+        value.get(peers.rh).info(
           peers.W5r({
-            intl: y,
+            intl: marble,
           }),
         );
-        closeOnOAuthStarted && w(false);
+        closeOnOAuthStarted && quartz(false);
         return;
       case "browser-fallback":
         onExternalConnectStarted?.();
-        w(false);
+        quartz(false);
         return;
       case "failed":
         onConnectFailed?.("connect_failed");
         showResultToasts &&
-          v
+          value
             .get(peers.rh)
-            .danger(app?.installUrl?.trim() ? peers.K5r(y) : peers.q5r(y));
-        closeOnFailedConnect && w(false);
+            .danger(
+              app?.installUrl?.trim() ? peers.K5r(marble) : peers.q5r(marble),
+            );
+        closeOnFailedConnect && quartz(false);
         return;
     }
   };
-  let ee = (e) => {
+  let Nova = (ever) => {
     onConnectFailed?.("request_failed");
     peers.Wf.error("Failed to connect app {}", {
       safe: {
         templateArgs: [app?.id ?? "unknown"],
       },
       sensitive: {
-        error: e,
+        error: ever,
       },
     });
-    v.get(peers.rh).danger(peers.K5r(y));
+    value.get(peers.rh).danger(peers.K5r(marble));
   };
-  let te = {
-    mutationFn: K,
+  let Olive = {
+    mutationFn: mint,
     onSuccess: q,
-    onError: ee,
+    onError: Nova,
   };
-  let ne = peers.qt(te),
-    re = ne.isPending || isCompletingConnection;
+  let Prism = peers.qt(Olive),
+    Quill = Prism.isPending || isCompletingConnection;
   if (app == null) return null;
-  let ie = A?.status === peers.o6i,
-    ae = A != null && !ie,
-    oe = app.isAccessible && !isCompletingConnection,
-    se = app.installUrl?.trim() || null;
-  let ce = se,
-    le = peers.V5r(app);
-  let ue = le,
-    de = null;
-  oe ? (de = ue) : V && (de = ce);
-  let fe = A?.name ?? app.name,
-    pe = peers.Z3i(A);
-  let me = pe,
-    he = y.formatMessage({
+  let Reef = willow?.status === peers.o6i,
+    Sage = willow != null && !Reef,
+    Topaz = app.isAccessible && !isCompletingConnection,
+    Ultra = app.installUrl?.trim() || null;
+  let Vapor = Ultra,
+    Wheat = peers.V5r(app);
+  let Yarn = Wheat,
+    Zephyr = null;
+  Topaz ? (Zephyr = Yarn) : hazel && (Zephyr = Vapor);
+  let Acorn = willow?.name ?? app.name,
+    Bloom = peers.Z3i(willow);
+  let Coral = Bloom,
+    Drift = marble.formatMessage({
       id: "settings.mcp.appConnectModal.permissionsTitle",
       defaultMessage: "Permissions always respected",
       description: "Fallback permissions blurb title",
     });
-  let ge = y.formatMessage({
+  let Eagle = marble.formatMessage({
     id: "settings.mcp.appConnectModal.permissionsDescription",
     defaultMessage:
       "ChatGPT is strictly limited to permissions you've explicitly set. Disable access anytime to revoke permissions.",
     description: "Fallback permissions blurb description",
   });
   let _e = {
-    title: he,
-    description: ge,
+    title: Drift,
+    description: Eagle,
   };
-  let ve = y.formatMessage({
+  let Frost = marble.formatMessage({
     id: "settings.mcp.appConnectModal.dataTitle",
     defaultMessage: "How ChatGPT uses data",
     description: "Fallback data usage blurb title",
   });
-  let ye = y.formatMessage({
+  let Glide = marble.formatMessage({
     id: "settings.mcp.appConnectModal.dataDescription",
     defaultMessage:
       "By default, we do not train on your data. Data from this connector may be used to provide you relevant and useful information.",
     description: "Fallback data usage blurb description",
   });
   let be = {
-    title: ve,
-    description: ye,
+    title: Frost,
+    description: Glide,
   };
-  let xe = y.formatMessage({
+  let Honey = marble.formatMessage({
     id: "settings.mcp.appConnectModal.riskTitle",
     defaultMessage: "Connectors may introduce risk",
     description: "Fallback risk blurb title",
   });
-  let Se = y.formatMessage({
+  let Iris = marble.formatMessage({
     id: "settings.mcp.appConnectModal.riskDescription",
     defaultMessage:
       "Connectors are designed to respect your privacy, but sites may attempt to steal your data.",
     description: "Fallback risk blurb description",
   });
-  let Ce = {
-    title: xe,
-    description: Se,
+  let Jewel = {
+    title: Honey,
+    description: Iris,
   };
-  let we = [_e, be, Ce];
-  let Te = we,
-    Ee = F.data?.blurbs ?? [];
-  let De = Ee,
-    Oe = De.length > 0 ? De : Te,
-    ke = (e) => {
-      if (!(I || re) && !ie) {
-        if (oe) {
-          G(e);
+  let Knoll = [_e, be, Jewel];
+  let Lunar = Knoll,
+    Moss = basalt.data?.blurbs ?? [];
+  let North = Moss,
+    Orbit = North.length > 0 ? North : Lunar,
+    Pine = (field) => {
+      if (!(cedar || Quill) && !Reef) {
+        if (Topaz) {
+          lotus(field);
           return;
         }
-        if (V) {
-          U(e) && onExternalConnectStarted?.();
+        if (hazel) {
+          jasper(field) && onExternalConnectStarted?.();
           return;
         }
-        ne.mutate();
+        Prism.mutate();
       }
     };
-  let Ae = ke,
-    je = !ie && !oe && !isCompletingConnection && !V && R === "OAUTH",
-    Me = null;
-  if (de != null) {
-    let e = oe ? undefined : "external-browser",
-      n;
-    n = <PD className="icon-xs" href={de} openTarget={e} />;
-    Me = n;
-  } else if (je) {
-    let e;
-    e = <Oz className="icon-xs" />;
-    Me = e;
+  let Quest = Pine,
+    Ridge =
+      !Reef && !Topaz && !isCompletingConnection && !hazel && ember === "OAUTH",
+    Storm = null;
+  if (Zephyr != null) {
+    let grain = Topaz ? undefined : "external-browser",
+      haven;
+    haven = <Alpha className="icon-xs" href={Zephyr} openTarget={grain} />;
+    Storm = haven;
+  } else if (Ridge) {
+    let ink;
+    ink = <Bravo className="icon-xs" />;
+    Storm = ink;
   }
-  let Ne = I ? (
+  let Tide = cedar ? (
     <span className="flex items-center justify-center gap-2">
-      {<Jp className="icon-xs" />}
+      {<Copper className="icon-xs" />}
       {
-        <Z
+        <FormattedMessage
           id="settings.mcp.appConnectModal.loading"
           defaultMessage="Loading connection details..."
           description="Message shown while app connector details are loading in the app connect modal"
         />
       }
     </span>
-  ) : k.isError && connectApp == null ? (
-    <Z
+  ) : violet.isError && connectApp == null ? (
+    <FormattedMessage
       id="settings.mcp.appConnectModal.loadError"
       defaultMessage="Could not load this app's connection details. Continue in browser."
       description="Message shown when app connector details fail to load in app connect modal"
     />
-  ) : B && connectApp == null ? (
-    <Z
+  ) : garnet && connectApp == null ? (
+    <FormattedMessage
       id="settings.mcp.appConnectModal.browserRequiredLinkParams"
       defaultMessage="This app needs extra setup fields, so connection continues in browser."
       description="Message shown when app requires link params and must connect in browser"
     />
-  ) : R === "UNSUPPORTED" && connectApp == null ? (
-    <Z
+  ) : ember === "UNSUPPORTED" && connectApp == null ? (
+    <FormattedMessage
       id="settings.mcp.appConnectModal.browserRequiredAuth"
       defaultMessage="This app uses an auth method that currently opens in browser."
       description="Message shown when app auth type is not supported in modal flow"
     />
   ) : null;
-  let Pe = Ne,
-    Fe = isCompletingConnection ? (
-      <Z
+  let Unity = Tide,
+    Vale = isCompletingConnection ? (
+      <FormattedMessage
         id="settings.mcp.appConnectModal.completingConnectionButton"
         defaultMessage="Finishing connection…"
         description="Primary button label shown while an app connection OAuth callback is still completing in the background"
       />
-    ) : ie ? (
-      <Z
+    ) : Reef ? (
+      <FormattedMessage
         id="settings.mcp.appConnectModal.disabledByAdminButton"
         defaultMessage="Disabled by admin"
         description="Primary button label shown when the app is unavailable because it is disabled by admin"
       />
-    ) : oe ? (
-      <Z
+    ) : Topaz ? (
+      <FormattedMessage
         id="settings.mcp.appConnectModal.manageOnChatGpt"
         defaultMessage="Manage on ChatGPT"
         description="Primary button label shown when an app is already connected and can be managed on ChatGPT"
       />
-    ) : V ? (
-      <Z
+    ) : hazel ? (
+      <FormattedMessage
         id="settings.mcp.appConnectModal.openInBrowser"
         defaultMessage="Open in browser"
         description="Primary button label when app connect needs to continue in browser"
       />
-    ) : R === "OAUTH" ? (
-      <Z
+    ) : ember === "OAUTH" ? (
+      <FormattedMessage
         id="settings.mcp.appConnectModal.continueToApp"
         defaultMessage={"Continue to {appName}"}
         description="Primary button label for OAuth connectors in app connect modal"
         values={{
-          appName: fe,
+          appName: Acorn,
         }}
       />
     ) : (
-      <Z
+      <FormattedMessage
         id="settings.mcp.appConnectModal.connectToApp"
         defaultMessage={"Connect {appName}"}
         description="Primary button label for no-auth connectors in app connect modal"
         values={{
-          appName: fe,
+          appName: Acorn,
         }}
       />
     );
-  let Ie = Fe,
-    Le = {
+  let Wave = Vale,
+    Apex = {
       "aria-describedby": undefined,
       style: {
         maxHeight: peers.d6i,
         width: peers.u6i,
       },
     };
-  let Re = {
+  let Brook = {
     maxHeight: peers.d6i,
   };
-  let ze = (
+  let Cliff = (
     <span className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-black text-white shadow-sm">
-      {<ID className="size-12" />}
+      {<Echo className="size-12" />}
     </span>
   );
-  let Be = (
+  let Dusk = (
     <span className="flex items-center gap-1">
       <span className="size-1.5 rounded-full bg-token-border-default" />
       <span className="size-1.5 rounded-full bg-token-border-default" />
       <span className="size-1.5 rounded-full bg-token-border-default" />
     </span>
   );
-  let Ve = y.formatMessage(
+  let Elm = marble.formatMessage(
     {
       id: "settings.mcp.appConnectModal.logoAlt",
       defaultMessage: "{appName} logo",
@@ -485,63 +489,63 @@ export function bindMcpAppConnectDialog(props: unknown) {
       appName: app.name,
     },
   );
-  let He = app.logoUrl ?? A?.logo_url ?? null,
-    Ue = app.logoUrlDark ?? A?.logo_url_dark ?? null,
-    We = <Mz className="icon-sm text-token-text-secondary" />;
-  let Ge = (
+  let Fern = app.logoUrl ?? willow?.logo_url ?? null,
+    Grove = app.logoUrlDark ?? willow?.logo_url_dark ?? null,
+    Hill = <Falcon className="icon-sm text-token-text-secondary" />;
+  let Isle = (
     <div className="flex items-center gap-3">
-      {ze}
-      {Be}
+      {Cliff}
+      {Dusk}
       <span className="bg-token-surface-tertiary flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-token-border-default shadow-sm">
         {
-          <P2
-            alt={Ve}
+          <LogoMark
+            alt={Elm}
             className="size-full object-contain"
-            logoUrl={He}
-            logoDarkUrl={Ue}
-            fallback={We}
+            logoUrl={Fern}
+            logoDarkUrl={Grove}
+            fallback={Hill}
           />
         }
       </span>
     </div>
   );
-  let Ke = (
-    <Zk className="heading-dialog font-semibold">
-      <Z
+  let Juniper = (
+    <Harbor className="heading-dialog font-semibold">
+      <FormattedMessage
         id="settings.mcp.appConnectModal.title"
         defaultMessage={"Connect {appName}"}
         description="Title for the modal that connects an app from MCP settings"
         values={{
-          appName: fe,
+          appName: Acorn,
         }}
       />
-    </Zk>
+    </Harbor>
   );
-  let qe = me ? (
+  let Lagoon = Coral ? (
     <div className="text-sm text-token-text-secondary">
       {
-        <Z
+        <FormattedMessage
           id="settings.mcp.appConnectModal.developedBy"
           defaultMessage={"Developed by {developer}"}
           description="Developer subtitle shown in app connect modal"
           values={{
-            developer: me,
+            developer: Coral,
           }}
         />
       }
     </div>
   ) : null;
-  let Je = (
+  let Meadow = (
     <div className="flex flex-col items-center gap-1 text-center">
-      {Ke}
-      {qe}
+      {Juniper}
+      {Lagoon}
     </div>
   );
-  let Ye = ae ? (
+  let Nest = Sage ? (
     <div className="flex items-center gap-2 text-base text-token-charts-green">
-      {<Az className="icon-sm shrink-0" />}
+      {<Indigo className="icon-sm shrink-0" />}
       {
-        <Z
+        <FormattedMessage
           id="settings.mcp.appConnectModal.adminApproved"
           defaultMessage="Approved by your admin"
           description="Admin approval stamp text shown in app connect modal"
@@ -549,17 +553,17 @@ export function bindMcpAppConnectDialog(props: unknown) {
       }
     </div>
   ) : null;
-  let Xe = (
+  let Oak = (
     <div className="flex flex-col items-center gap-4">
-      {Ge}
-      {Je}
-      {Ye}
+      {Isle}
+      {Meadow}
+      {Nest}
     </div>
   );
-  let Ze = I || F.isPending ? <C3i /> : <T6i blurbs={Oe} />;
-  let Qe = Pe ? (
+  let Petal = cedar || basalt.isPending ? <C3i /> : <T6i blurbs={Orbit} />;
+  let Quiet = Unity ? (
     <div className="text-center text-sm text-token-description-foreground">
-      {Pe}
+      {Unity}
     </div>
   ) : null;
   let $e = (
@@ -569,39 +573,39 @@ export function bindMcpAppConnectDialog(props: unknown) {
       scrollClassName="min-h-0 overflow-y-auto group-data-[can-scroll-down=true]:pb-3"
     >
       <div className="flex flex-col gap-4">
-        {Ze}
-        {Qe}
+        {Petal}
+        {Quiet}
       </div>
     </V3i>
   );
-  let J = I || isCompletingConnection || ie,
-    et = (
+  let rain = cedar || isCompletingConnection || Reef,
+    Seed = (
       <span className="flex items-center gap-1">
-        {Ie}
-        {Me}
+        {Wave}
+        {Storm}
       </span>
     );
-  let tt = (
+  let Trail = (
     <div className="flex flex-col gap-2">
       {
-        <Np
+        <Jade
           color="primary"
           size="large"
           className="w-full justify-center"
-          loading={re}
-          disabled={J}
-          onClick={Ae}
+          loading={Quill}
+          disabled={rain}
+          onClick={Quest}
         >
-          {et}
-        </Np>
+          {Seed}
+        </Jade>
       }
     </div>
   );
-  let nt =
-    V && !I ? (
+  let Urn =
+    hazel && !cedar ? (
       <div className="text-center text-xs text-token-description-foreground">
         {
-          <Z
+          <FormattedMessage
             id="settings.mcp.appConnectModal.browserFallbackDescription"
             defaultMessage="This connector needs setup in your browser."
             description="Helper text shown when app connect falls back to browser flow"
@@ -609,23 +613,23 @@ export function bindMcpAppConnectDialog(props: unknown) {
         }
       </div>
     ) : null;
-  let it = (
-    <NA className="gap-6 overflow-hidden px-6 pt-8 pb-6" style={Re}>
-      {Xe}
+  let Vine = (
+    <Kite className="gap-6 overflow-hidden px-6 pt-8 pb-6" style={Brook}>
+      {Oak}
       {$e}
-      {tt}
-      {nt}
-    </NA>
+      {Trail}
+      {Urn}
+    </Kite>
   );
   return (
-    <Xk
-      open={x}
-      onOpenChange={w}
+    <Lemon
+      open={nickel}
+      onOpenChange={quartz}
       size="default"
       contentClassName="h-fit max-w-[calc(100vw-2rem)] overflow-hidden"
-      contentProps={Le}
+      contentProps={Apex}
     >
-      {it}
-    </Xk>
+      {Vine}
+    </Lemon>
   );
 }

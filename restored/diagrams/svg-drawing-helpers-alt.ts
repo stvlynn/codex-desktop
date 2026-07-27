@@ -195,14 +195,3 @@ export function initSvgDrawingHelpersChunk(): void {
 }
 
 // Original short export aliases for this alt twin (differs from primary).
-export {
-  drawRect as a,
-  getTextObj as c,
-  drawImage as i,
-  initSvgDrawingHelpersChunk as l,
-  drawBackgroundRect as n,
-  drawText as o,
-  drawEmbeddedImage as r,
-  getNoteRect as s,
-  createTooltip as t,
-};

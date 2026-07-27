@@ -17,7 +17,7 @@ export function setBindDeferredUiWoPeers(next: BindDeferredUiWoPeers): void {
 /**
  * Bundle export `wo` / internal `HBl`.
  */
-export const bindDeferredUiWo = function (e) {
+export const bindDeferredUiWo = function (e: unknown) {
   if (peers == null) {
     throw new Error("bindDeferredUiWo peers are not configured");
   }

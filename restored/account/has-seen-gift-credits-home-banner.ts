@@ -1,26 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Pi / H$l
+// Materialized via extractFn(internal `H$l`) / export `Pi`.
 
 export type HasSeenGiftCreditsHomeBannerPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ap: (...args: unknown[]) => unknown;
+  B$l: (...args: unknown[]) => unknown;
+  V$l: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  kp: (...args: unknown[]) => unknown;
 };
 
 let peers: HasSeenGiftCreditsHomeBannerPeers | null = null;
 
-/** Wire hasSeenGiftCreditsHomeBanner once companions land. */
+/** Wire hasSeenGiftCreditsHomeBanner peers once companions land. */
 export function setHasSeenGiftCreditsHomeBannerPeers(next: HasSeenGiftCreditsHomeBannerPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Pi` / internal `H$l`.
- * Stage-3 fill for bundle export Pi / H$l
  */
-export function hasSeenGiftCreditsHomeBanner(...args: unknown[]): unknown {
+export function hasSeenGiftCreditsHomeBanner() {
   if (peers == null) {
     throw new Error("hasSeenGiftCreditsHomeBanner peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.e(() => {
+    peers.Ap(), B$l = peers.kp(`has-seen-gift-credits-home-banner`, !1), V$l = peers.kp(`gift-credits-profile-coachmark-pending`, !1);
+  });
 }

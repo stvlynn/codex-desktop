@@ -36,10 +36,7 @@ import {
   select as srcR,
   ensureD3SelectionRuntimeT as srcT,
 } from "../../vendor/d3-axis-current-runtime";
-import {
-  n as chunkEXTU4WIEN,
-  t as chunkEXTU4WIET,
-} from "../../diagrams/select-svg-element";
+import { selectSvgElement as chunkEXTU4WIEN, initSelectSvgElementChunk as chunkEXTU4WIET } from "../../diagrams/select-svg-element";
 import {
   chunkS3R3BYOJR,
   chunkS3R3BYOJS,
@@ -52,10 +49,7 @@ import {
   chunkJA3XYJ7ZR,
   chunkJA3XYJ7ZS,
 } from "./mermaid-create-text";
-import {
-  n as chunk4BX2VUABN,
-  t as chunk4BX2VUABT,
-} from "../../diagrams/populate-common-db-alt";
+import { populateCommonDb as chunk4BX2VUABN, initPopulateCommonDbChunk as chunk4BX2VUABT } from "../../diagrams/populate-common-db-alt";
 import {
   mermaidParserCoreN,
   mermaidParserCoreT,

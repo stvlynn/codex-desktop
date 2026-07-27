@@ -16,7 +16,7 @@ export function setBindDeferredUiIMPeers(next: BindDeferredUiIMPeers): void {
 /**
  * Bundle export `iM` / internal `cU`.
  */
-export const bindDeferredUiIM = (e, t) => {
+export const bindDeferredUiIM = (e: unknown, t: unknown) => {
   if (peers == null) {
     throw new Error("bindDeferredUiIM peers are not configured");
   }

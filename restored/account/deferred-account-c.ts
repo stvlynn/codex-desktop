@@ -1,26 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export c / RCu
+// Materialized via extractFn(internal `RCu`) / export `c`.
 
-export type BindDeferredAccountCPeers = {
-  impl: (...args: unknown[]) => unknown;
+export type DeferredAccountCPeers = {
+  ICu: (...args: unknown[]) => unknown;
+  LCu: (...args: unknown[]) => unknown;
+  Pm: (...args: unknown[]) => unknown;
 };
 
-let peers: BindDeferredAccountCPeers | null = null;
+let peers: DeferredAccountCPeers | null = null;
 
-/** Wire bindDeferredAccountC once companions land. */
-export function setBindDeferredAccountCPeers(next: BindDeferredAccountCPeers): void {
+/** Wire deferredAccountC peers once companions land. */
+export function setDeferredAccountCPeers(next: DeferredAccountCPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `c` / internal `RCu`.
- * Stage-3 fill for bundle export c / RCu
  */
-export function bindDeferredAccountC(...args: unknown[]): unknown {
+export function deferredAccountC() {
   if (peers == null) {
-    throw new Error("bindDeferredAccountC peers are not configured");
+    throw new Error("deferredAccountC peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.Pm(peers.ICu, peers.LCu);
 }

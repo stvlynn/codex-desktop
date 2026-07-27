@@ -38,269 +38,163 @@ export function bindDeferredUiNnt() {
     throw new Error("bindDeferredUiNnt peers are not configured");
   }
   return class {
-    static makeHexColor(e, t, n) {
+    static makeHexColor(alpha, bravo, copper) {
       return `#${peers.$Kt[peers.e]}${peers.$Kt[peers.t]}${peers.$Kt[peers.n]}`;
     }
-    static domMatrixToTransform(e) {
+    static domMatrixToTransform(delta) {
       return [peers.e.a, peers.e.b, peers.e.c, peers.e.d, peers.e.e, peers.e.f];
     }
-    static scaleMinMax(e, t) {
-      let n;
-      peers.e[0]
-        ? (peers.e[0] < 0 &&
-            ((n = peers.t[0]),
-            (peers.t[0] = peers.t[2]),
-            (peers.t[2] = peers.n)),
-          (peers.t[0] *= peers.e[0]),
-          (peers.t[2] *= peers.e[0]),
-          peers.e[3] < 0 &&
-            ((n = peers.t[1]),
-            (peers.t[1] = peers.t[3]),
-            (peers.t[3] = peers.n)),
-          (peers.t[1] *= peers.e[3]),
-          (peers.t[3] *= peers.e[3]))
-        : ((n = peers.t[0]),
-          (peers.t[0] = peers.t[1]),
-          (peers.t[1] = peers.n),
-          (n = peers.t[2]),
-          (peers.t[2] = peers.t[3]),
-          (peers.t[3] = peers.n),
-          peers.e[1] < 0 &&
-            ((n = peers.t[1]),
-            (peers.t[1] = peers.t[3]),
-            (peers.t[3] = peers.n)),
-          (peers.t[1] *= peers.e[1]),
-          (peers.t[3] *= peers.e[1]),
-          peers.e[2] < 0 &&
-            ((n = peers.t[0]),
-            (peers.t[0] = peers.t[2]),
-            (peers.t[2] = peers.n)),
-          (peers.t[0] *= peers.e[2]),
-          (peers.t[2] *= peers.e[2]));
+    static scaleMinMax(echo, falcon) {
+      let gamma;
+      peers.e[0] ? (peers.e[0] < 0 && (gamma = peers.t[0], peers.t[0] = peers.t[2], peers.t[2] = peers.n), peers.t[0] *= peers.e[0], peers.t[2] *= peers.e[0], peers.e[3] < 0 && (gamma = peers.t[1], peers.t[1] = peers.t[3], peers.t[3] = peers.n), peers.t[1] *= peers.e[3], peers.t[3] *= peers.e[3]) : (gamma = peers.t[0], peers.t[0] = peers.t[1], peers.t[1] = peers.n, gamma = peers.t[2], peers.t[2] = peers.t[3], peers.t[3] = peers.n, peers.e[1] < 0 && (gamma = peers.t[1], peers.t[1] = peers.t[3], peers.t[3] = peers.n), peers.t[1] *= peers.e[1], peers.t[3] *= peers.e[1], peers.e[2] < 0 && (gamma = peers.t[0], peers.t[0] = peers.t[2], peers.t[2] = peers.n), peers.t[0] *= peers.e[2], peers.t[2] *= peers.e[2]);
       peers.t[0] += peers.e[4];
       peers.t[1] += peers.e[5];
       peers.t[2] += peers.e[4];
       peers.t[3] += peers.e[5];
     }
-    static transform(e, t) {
-      return [
-        peers.e[0] * peers.t[0] + peers.e[2] * peers.t[1],
-        peers.e[1] * peers.t[0] + peers.e[3] * peers.t[1],
-        peers.e[0] * peers.t[2] + peers.e[2] * peers.t[3],
-        peers.e[1] * peers.t[2] + peers.e[3] * peers.t[3],
-        peers.e[0] * peers.t[4] + peers.e[2] * peers.t[5] + peers.e[4],
-        peers.e[1] * peers.t[4] + peers.e[3] * peers.t[5] + peers.e[5],
-      ];
+    static transform(harbor, indigo) {
+      return [peers.e[0] * peers.t[0] + peers.e[2] * peers.t[1], peers.e[1] * peers.t[0] + peers.e[3] * peers.t[1], peers.e[0] * peers.t[2] + peers.e[2] * peers.t[3], peers.e[1] * peers.t[2] + peers.e[3] * peers.t[3], peers.e[0] * peers.t[4] + peers.e[2] * peers.t[5] + peers.e[4], peers.e[1] * peers.t[4] + peers.e[3] * peers.t[5] + peers.e[5]];
     }
-    static multiplyByDOMMatrix(e, t) {
-      return [
-        peers.e[0] * peers.t.a + peers.e[2] * peers.t.b,
-        peers.e[1] * peers.t.a + peers.e[3] * peers.t.b,
-        peers.e[0] * peers.t.c + peers.e[2] * peers.t.d,
-        peers.e[1] * peers.t.c + peers.e[3] * peers.t.d,
-        peers.e[0] * peers.t.e + peers.e[2] * peers.t.f + peers.e[4],
-        peers.e[1] * peers.t.e + peers.e[3] * peers.t.f + peers.e[5],
-      ];
+    static multiplyByDOMMatrix(jade, kite) {
+      return [peers.e[0] * peers.t.a + peers.e[2] * peers.t.b, peers.e[1] * peers.t.a + peers.e[3] * peers.t.b, peers.e[0] * peers.t.c + peers.e[2] * peers.t.d, peers.e[1] * peers.t.c + peers.e[3] * peers.t.d, peers.e[0] * peers.t.e + peers.e[2] * peers.t.f + peers.e[4], peers.e[1] * peers.t.e + peers.e[3] * peers.t.f + peers.e[5]];
     }
-    static applyTransform(e, t, n = 0) {
-      let r = peers.e[peers.n],
+    static applyTransform(lemon, marble, nickel = 0) {
+      let onyx = peers.e[peers.n],
         i = peers.e[peers.n + 1];
-      peers.e[peers.n] = r * peers.t[0] + i * peers.t[2] + peers.t[4];
-      peers.e[peers.n + 1] = r * peers.t[1] + i * peers.t[3] + peers.t[5];
+      peers.e[peers.n] = onyx * peers.t[0] + i * peers.t[2] + peers.t[4];
+      peers.e[peers.n + 1] = onyx * peers.t[1] + i * peers.t[3] + peers.t[5];
     }
-    static applyTransformToBezier(e, t, n = 0) {
-      let r = peers.t[0],
+    static applyTransformToBezier(pearl, quartz, river = 0) {
+      let slate = peers.t[0],
         i = peers.t[1],
         a = peers.t[2],
-        o = peers.t[3],
+        timber = peers.t[3],
         s = peers.t[4],
-        c = peers.t[5];
-      for (let t = 0; peers.t < 6; t += 2) {
-        let l = peers.e[peers.n + peers.t],
+        umbra = peers.t[5];
+      for (let violet = 0; peers.t < 6; violet += 2) {
+        let willow = peers.e[peers.n + peers.t],
           u = peers.e[peers.n + peers.t + 1];
-        peers.e[peers.n + peers.t] = l * r + u * a + s;
-        peers.e[peers.n + peers.t + 1] = l * i + u * o + c;
+        peers.e[peers.n + peers.t] = willow * slate + u * a + s;
+        peers.e[peers.n + peers.t + 1] = willow * i + u * timber + umbra;
       }
     }
-    static applyInverseTransform(e, t) {
-      let n = peers.e[0],
-        r = peers.e[1],
+    static applyInverseTransform(xenon, yellow) {
+      let zinc = peers.e[0],
+        amber = peers.e[1],
         i = peers.t[0] * peers.t[3] - peers.t[1] * peers.t[2];
-      peers.e[0] =
-        (peers.n * peers.t[3] -
-          r * peers.t[2] +
-          peers.t[2] * peers.t[5] -
-          peers.t[4] * peers.t[3]) /
-        i;
-      peers.e[1] =
-        (-peers.n * peers.t[1] +
-          r * peers.t[0] +
-          peers.t[4] * peers.t[1] -
-          peers.t[5] * peers.t[0]) /
-        i;
+      peers.e[0] = (peers.n * peers.t[3] - amber * peers.t[2] + peers.t[2] * peers.t[5] - peers.t[4] * peers.t[3]) / i;
+      peers.e[1] = (-peers.n * peers.t[1] + amber * peers.t[0] + peers.t[4] * peers.t[1] - peers.t[5] * peers.t[0]) / i;
     }
-    static axialAlignedBoundingBox(e, t, n) {
-      let r = peers.t[0],
+    static axialAlignedBoundingBox(basalt, cedar, daisy) {
+      let ember = peers.t[0],
         i = peers.t[1],
         a = peers.t[2],
-        o = peers.t[3],
+        flint = peers.t[3],
         s = peers.t[4],
-        c = peers.t[5],
-        l = peers.e[0],
+        garnet = peers.t[5],
+        hazel = peers.e[0],
         u = peers.e[1],
-        d = peers.e[2],
-        f = peers.e[3],
-        p = r * l + s,
-        m = p,
-        h = r * d + s,
-        g = h,
-        _ = o * u + c,
-        v = _,
-        y = o * f + c,
-        b = y;
+        ivory = peers.e[2],
+        jasper = peers.e[3],
+        p = ember * hazel + s,
+        kelp = p,
+        lotus = ember * ivory + s,
+        mint = lotus,
+        nova = flint * u + garnet,
+        value = nova,
+        olive = flint * jasper + garnet,
+        b = olive;
       if (i !== 0 || a !== 0) {
-        let e = i * l,
-          t = i * d,
-          n = a * u,
-          r = a * f;
+        let prism = i * hazel,
+          quill = i * ivory,
+          reef = a * u,
+          sage = a * jasper;
         p += peers.n;
-        g += peers.n;
-        h += r;
-        m += r;
-        _ += peers.e;
+        mint += peers.n;
+        lotus += sage;
+        kelp += sage;
+        nova += peers.e;
         b += peers.e;
-        y += peers.t;
-        v += peers.t;
+        olive += peers.t;
+        value += peers.t;
       }
-      peers.n[0] = Math.min(peers.n[0], p, h, m, g);
-      peers.n[1] = Math.min(peers.n[1], _, y, v, b);
-      peers.n[2] = Math.max(peers.n[2], p, h, m, g);
-      peers.n[3] = Math.max(peers.n[3], _, y, v, b);
+      peers.n[0] = Math.min(peers.n[0], p, lotus, kelp, mint);
+      peers.n[1] = Math.min(peers.n[1], nova, olive, value, b);
+      peers.n[2] = Math.max(peers.n[2], p, lotus, kelp, mint);
+      peers.n[3] = Math.max(peers.n[3], nova, olive, value, b);
     }
-    static inverseTransform(e) {
-      let t = peers.e[0] * peers.e[3] - peers.e[1] * peers.e[2];
-      return [
-        peers.e[3] / peers.t,
-        -peers.e[1] / peers.t,
-        -peers.e[2] / peers.t,
-        peers.e[0] / peers.t,
-        (peers.e[2] * peers.e[5] - peers.e[4] * peers.e[3]) / peers.t,
-        (peers.e[4] * peers.e[1] - peers.e[5] * peers.e[0]) / peers.t,
-      ];
+    static inverseTransform(topaz) {
+      let ultra = peers.e[0] * peers.e[3] - peers.e[1] * peers.e[2];
+      return [peers.e[3] / peers.t, -peers.e[1] / peers.t, -peers.e[2] / peers.t, peers.e[0] / peers.t, (peers.e[2] * peers.e[5] - peers.e[4] * peers.e[3]) / peers.t, (peers.e[4] * peers.e[1] - peers.e[5] * peers.e[0]) / peers.t];
     }
-    static singularValueDecompose2dScale(e, t) {
-      let n = peers.e[0],
-        r = peers.e[1],
+    static singularValueDecompose2dScale(vapor, wheat) {
+      let yarn = peers.e[0],
+        zephyr = peers.e[1],
         i = peers.e[2],
         a = peers.e[3],
-        o = peers.n ** 2 + r ** 2,
-        s = peers.n * i + r * a,
-        c = i ** 2 + a ** 2,
-        l = (o + c) / 2,
-        u = Math.sqrt(l ** 2 - (o * c - s ** 2));
-      peers.t[0] = Math.sqrt(l + u || 1);
-      peers.t[1] = Math.sqrt(l - u || 1);
+        acorn = peers.n ** 2 + zephyr ** 2,
+        s = peers.n * i + zephyr * a,
+        bloom = i ** 2 + a ** 2,
+        coral = (acorn + bloom) / 2,
+        u = Math.sqrt(coral ** 2 - (acorn * bloom - s ** 2));
+      peers.t[0] = Math.sqrt(coral + u || 1);
+      peers.t[1] = Math.sqrt(coral - u || 1);
     }
-    static normalizeRect(e) {
-      let t = peers.e.slice(0);
-      return (
-        peers.e[0] > peers.e[2] &&
-          ((peers.t[0] = peers.e[2]), (peers.t[2] = peers.e[0])),
-        peers.e[1] > peers.e[3] &&
-          ((peers.t[1] = peers.e[3]), (peers.t[3] = peers.e[1])),
-        peers.t
-      );
+    static normalizeRect(drift) {
+      let eagle = peers.e.slice(0);
+      return peers.e[0] > peers.e[2] && (peers.t[0] = peers.e[2], peers.t[2] = peers.e[0]), peers.e[1] > peers.e[3] && (peers.t[1] = peers.e[3], peers.t[3] = peers.e[1]), peers.t;
     }
-    static intersect(e, t) {
-      let n = Math.max(
-          Math.min(peers.e[0], peers.e[2]),
-          Math.min(peers.t[0], peers.t[2]),
-        ),
-        r = Math.min(
-          Math.max(peers.e[0], peers.e[2]),
-          Math.max(peers.t[0], peers.t[2]),
-        );
-      if (peers.n > r) return null;
-      let i = Math.max(
-          Math.min(peers.e[1], peers.e[3]),
-          Math.min(peers.t[1], peers.t[3]),
-        ),
-        a = Math.min(
-          Math.max(peers.e[1], peers.e[3]),
-          Math.max(peers.t[1], peers.t[3]),
-        );
-      return i > a ? null : [peers.n, i, r, a];
+    static intersect(frost, glide) {
+      let honey = Math.max(Math.min(peers.e[0], peers.e[2]), Math.min(peers.t[0], peers.t[2])),
+        iris = Math.min(Math.max(peers.e[0], peers.e[2]), Math.max(peers.t[0], peers.t[2]));
+      if (peers.n > iris) return null;
+      let i = Math.max(Math.min(peers.e[1], peers.e[3]), Math.min(peers.t[1], peers.t[3])),
+        a = Math.min(Math.max(peers.e[1], peers.e[3]), Math.max(peers.t[1], peers.t[3]));
+      return i > a ? null : [peers.n, i, iris, a];
     }
-    static pointBoundingBox(e, t, n) {
+    static pointBoundingBox(jewel, knoll, lunar) {
       peers.n[0] = Math.min(peers.n[0], peers.e);
       peers.n[1] = Math.min(peers.n[1], peers.t);
       peers.n[2] = Math.max(peers.n[2], peers.e);
       peers.n[3] = Math.max(peers.n[3], peers.t);
     }
-    static rectBoundingBox(e, t, n, r, i) {
+    static rectBoundingBox(moss, north, orbit, pine, i) {
       i[0] = Math.min(i[0], peers.e, peers.n);
-      i[1] = Math.min(i[1], peers.t, r);
+      i[1] = Math.min(i[1], peers.t, pine);
       i[2] = Math.max(i[2], peers.e, peers.n);
-      i[3] = Math.max(i[3], peers.t, r);
+      i[3] = Math.max(i[3], peers.t, pine);
     }
-    static #e(e, t, n, r, i, a, o, s, c, l) {
-      if (c <= 0 || c >= 1) return;
-      let u = 1 - c,
-        d = c * c,
-        f = d * c,
-        p = u * (u * (u * peers.e + 3 * c * peers.t) + 3 * d * peers.n) + f * r,
-        m = u * (u * (u * i + 3 * c * a) + 3 * d * o) + f * s;
-      l[0] = Math.min(l[0], p);
-      l[1] = Math.min(l[1], m);
-      l[2] = Math.max(l[2], p);
-      l[3] = Math.max(l[3], m);
+    static #e(quest, ridge, storm, tide, i, a, unity, s, vale, wave) {
+      if (vale <= 0 || vale >= 1) return;
+      let u = 1 - vale,
+        apex = vale * vale,
+        brook = apex * vale,
+        p = u * (u * (u * peers.e + 3 * vale * peers.t) + 3 * apex * peers.n) + brook * tide,
+        cliff = u * (u * (u * i + 3 * vale * a) + 3 * apex * unity) + brook * s;
+      wave[0] = Math.min(wave[0], p);
+      wave[1] = Math.min(wave[1], cliff);
+      wave[2] = Math.max(wave[2], p);
+      wave[3] = Math.max(wave[3], cliff);
     }
-    static #t(e, t, n, r, i, a, o, s, c, l, u, d) {
-      if (Math.abs(c) < 1e-12) {
-        Math.abs(l) >= 1e-12 &&
-          this.#e(peers.e, peers.t, peers.n, r, i, a, o, s, -u / l, d);
+    static #t(dusk, elm, fern, grove, i, a, hill, s, isle, juniper, u, lagoon) {
+      if (Math.abs(isle) < 1e-12) {
+        Math.abs(juniper) >= 1e-12 && this.#e(peers.e, peers.t, peers.n, grove, i, a, hill, s, -u / juniper, lagoon);
         return;
       }
-      let f = l ** 2 - 4 * u * c;
-      if (f < 0) return;
-      let p = Math.sqrt(f),
-        m = 2 * c;
-      this.#e(peers.e, peers.t, peers.n, r, i, a, o, s, (-l + p) / m, d);
-      this.#e(peers.e, peers.t, peers.n, r, i, a, o, s, (-l - p) / m, d);
+      let meadow = juniper ** 2 - 4 * u * isle;
+      if (meadow < 0) return;
+      let p = Math.sqrt(meadow),
+        nest = 2 * isle;
+      this.#e(peers.e, peers.t, peers.n, grove, i, a, hill, s, (-juniper + p) / nest, lagoon);
+      this.#e(peers.e, peers.t, peers.n, grove, i, a, hill, s, (-juniper - p) / nest, lagoon);
     }
-    static bezierBoundingBox(e, t, n, r, i, a, o, s, c) {
-      c[0] = Math.min(c[0], peers.e, o);
-      c[1] = Math.min(c[1], peers.t, s);
-      c[2] = Math.max(c[2], peers.e, o);
-      c[3] = Math.max(c[3], peers.t, s);
-      this.#t(
-        peers.e,
-        peers.n,
-        i,
-        o,
-        peers.t,
-        r,
-        a,
-        s,
-        3 * (-peers.e + 3 * (peers.n - i) + o),
-        6 * (peers.e - 2 * peers.n + i),
-        3 * (peers.n - peers.e),
-        c,
-      );
-      this.#t(
-        peers.e,
-        peers.n,
-        i,
-        o,
-        peers.t,
-        r,
-        a,
-        s,
-        3 * (-peers.t + 3 * (r - a) + s),
-        6 * (peers.t - 2 * r + a),
-        3 * (r - peers.t),
-        c,
-      );
+    static bezierBoundingBox(oak, petal, quiet, rain, i, a, seed, s, trail) {
+      trail[0] = Math.min(trail[0], peers.e, seed);
+      trail[1] = Math.min(trail[1], peers.t, s);
+      trail[2] = Math.max(trail[2], peers.e, seed);
+      trail[3] = Math.max(trail[3], peers.t, s);
+      this.#t(peers.e, peers.n, i, seed, peers.t, rain, a, s, 3 * (-peers.e + 3 * (peers.n - i) + seed), 6 * (peers.e - 2 * peers.n + i), 3 * (peers.n - peers.e), trail);
+      this.#t(peers.e, peers.n, i, seed, peers.t, rain, a, s, 3 * (-peers.t + 3 * (rain - a) + s), 6 * (peers.t - 2 * rain + a), 3 * (rain - peers.t), trail);
     }
   };
 }

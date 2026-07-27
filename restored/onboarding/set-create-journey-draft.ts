@@ -1,25 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `Sti`) / export `gG`.
+// Materialized via extractFn(internal `Sti`) / export `setCreateJourneyDraft`.
 
-export type GGPeers = {
+export type CreateJourneyDraftPeers = {
   Ati: (...args: unknown[]) => unknown;
   Ub: (...args: unknown[]) => unknown;
   bP: (...args: unknown[]) => unknown;
   tQn: (...args: unknown[]) => unknown;
 };
-let peers: GGPeers | null = null;
+let peers: CreateJourneyDraftPeers | null = null;
 
-/** Wire gG peers once companions land. */
-export function setGGPeers(next: GGPeers): void {
+/** Wire setCreateJourneyDraft peers once companions land. */
+export function setCreateJourneyDraftPeers(next: CreateJourneyDraftPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `gG` / internal `Sti`.
+ * Bundle export `setCreateJourneyDraft` / internal `Sti`.
  */
-export function gG(e: unknown, t: unknown) {
+export function setCreateJourneyDraft(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("gG peers are not configured");
+    throw new Error("setCreateJourneyDraft peers are not configured");
   }
   let n = e.get(peers.bP);
   n != null &&

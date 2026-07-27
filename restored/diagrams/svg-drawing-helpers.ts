@@ -167,14 +167,3 @@ export function initSvgDrawingHelpersChunk(): void {
   sanitizeUrl = sanitizeUrlModule().sanitizeUrl;
 }
 
-// Original short export aliases for mermaid consumers.
-export {
-  drawText as a,
-  initSvgDrawingHelpersChunk as c,
-  drawRect as i,
-  drawEmbeddedImage as n,
-  getNoteRect as o,
-  drawImage as r,
-  getTextObj as s,
-  drawBackgroundRect as t,
-};

@@ -93,3 +93,6 @@ export function bindWorktreeSetupActivityFeed(props: unknown) {
   }
   return <div className="flex w-full max-w-3xl flex-col gap-2">{o}</div>;
 }
+
+/** `Ic` is genuinely a component (renders the feed); alias to the PascalCase name consumers import. */
+export { bindWorktreeSetupActivityFeed as WorktreeSetupActivityFeed };

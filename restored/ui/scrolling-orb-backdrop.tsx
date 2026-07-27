@@ -40,344 +40,304 @@ export type ScrollingOrbBackdropPeers = {
 let peers: ScrollingOrbBackdropPeers | null = null;
 
 /** Wire ScrollingOrbBackdrop peers once companions land. */
-export function setScrollingOrbBackdropPeers(
-  next: ScrollingOrbBackdropPeers,
-): void {
+export function setScrollingOrbBackdropPeers(next: ScrollingOrbBackdropPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Pct` / internal `$rt`.
  */
-export function ScrollingOrbBackdrop(e: unknown) {
+export function ScrollingOrbBackdrop(alpha: unknown) {
   if (peers == null) {
     throw new Error("ScrollingOrbBackdrop peers are not configured");
   }
-  let n = e === undefined ? {} : e;
-  let { bufferDurationSecs = 10, variant = "scrolling" } = n,
-    [s, c] = peers.Gh.useState(0),
-    l = peers.Gh.useRef(null),
+  let bravo = alpha === undefined ? {} : alpha;
+  let {
+      bufferDurationSecs = 10,
+      variant = "scrolling"
+    } = bravo,
+    [s, copper] = peers.Gh.useState(0),
+    delta = peers.Gh.useRef(null),
     u = peers.Gh.useRef(null),
-    d = peers.Gh.useRef(null),
-    f = peers.Gh.useRef(null),
+    echo = peers.Gh.useRef(null),
+    falcon = peers.Gh.useRef(null),
     p = peers.Gh.useRef(null),
-    m = [];
-  let h = peers.Gh.useRef(m),
-    g = peers.Gh.useRef(0),
-    _ = peers.Gh.useRef(0),
-    v = peers.Gh.useRef(0),
-    y = peers.Gh.useRef(null),
+    gamma = [];
+  let harbor = peers.Gh.useRef(gamma),
+    indigo = peers.Gh.useRef(0),
+    jade = peers.Gh.useRef(0),
+    value = peers.Gh.useRef(0),
+    kite = peers.Gh.useRef(null),
     b = peers.Gh.useRef(null),
-    x = peers.Gh.useRef(0),
-    S = peers.Gh.useRef(0),
-    C = new peers.Float32Array();
-  let w = peers.Gh.useRef(C),
-    T = peers.Gh.useRef(1),
-    E = peers.Gh.useRef(-1),
-    D = (e) => {
-      if (e == null) return false;
-      let t = peers.nit(e.clientWidth, variant);
-      return (
-        (h.current = Array.from(
-          {
-            length: t,
-          },
-          peers.eit,
-        )),
-        (T.current = Math.max(
-          1,
-          Math.floor((peers.zet * bufferDurationSecs) / t),
-        )),
-        (w.current = new peers.Float32Array()),
-        true
-      );
+    lemon = peers.Gh.useRef(0),
+    marble = peers.Gh.useRef(0),
+    nickel = new peers.Float32Array();
+  let onyx = peers.Gh.useRef(nickel),
+    pearl = peers.Gh.useRef(1),
+    quartz = peers.Gh.useRef(-1),
+    river = jasper => {
+      if (jasper == null) return false;
+      let kelp = peers.nit(jasper.clientWidth, variant);
+      return harbor.current = Array.from({
+        length: kelp
+      }, peers.eit), pearl.current = Math.max(1, Math.floor(peers.zet * bufferDurationSecs / kelp)), onyx.current = new peers.Float32Array(), true;
     };
-  let O = D,
-    k = () => {
-      let e = p.current;
-      e?.getContext("2d")?.clearRect(0, 0, e.width, e.height);
+  let slate = river,
+    timber = () => {
+      let lotus = p.current;
+      lotus?.getContext("2d")?.clearRect(0, 0, lotus.width, lotus.height);
     };
-  let A = k,
-    j = () => {
-      d.current != null &&
-        ((d.current.onaudioprocess = null),
-        d.current.disconnect(),
-        (d.current = null));
-      u.current != null && (u.current.disconnect(), (u.current = null));
-      l.current != null && l.current.close();
-      l.current = null;
-      f.current = null;
-      h.current = [];
-      g.current = 0;
-      _.current = 0;
-      v.current = 0;
-      y.current != null && peers.cancelAnimationFrame(y.current);
-      y.current = null;
+  let umbra = timber,
+    violet = () => {
+      echo.current != null && (echo.current.onaudioprocess = null, echo.current.disconnect(), echo.current = null);
+      u.current != null && (u.current.disconnect(), u.current = null);
+      delta.current != null && delta.current.close();
+      delta.current = null;
+      falcon.current = null;
+      harbor.current = [];
+      indigo.current = 0;
+      jade.current = 0;
+      value.current = 0;
+      kite.current != null && peers.cancelAnimationFrame(kite.current);
+      kite.current = null;
       b.current = null;
-      x.current = 0;
-      S.current = 0;
-      w.current = new peers.Float32Array();
-      T.current = 1;
-      E.current = -1;
-      A();
+      lemon.current = 0;
+      marble.current = 0;
+      onyx.current = new peers.Float32Array();
+      pearl.current = 1;
+      quartz.current = -1;
+      umbra();
     };
-  let M = j,
-    N = () => {
-      h.current = [];
-      g.current = 0;
-      _.current = 0;
-      v.current = 0;
+  let willow = violet,
+    xenon = () => {
+      harbor.current = [];
+      indigo.current = 0;
+      jade.current = 0;
+      value.current = 0;
       b.current = null;
-      x.current = 0;
-      S.current = 0;
-      w.current = new peers.Float32Array();
-      T.current = 1;
-      c(0);
-      E.current = -1;
+      lemon.current = 0;
+      marble.current = 0;
+      onyx.current = new peers.Float32Array();
+      pearl.current = 1;
+      copper(0);
+      quartz.current = -1;
     };
-  let P = N,
-    F = () => {
-      let e = p.current;
-      if (e == null) return;
-      let t = e.getContext("2d");
-      if (t == null) return;
-      let { clientHeight, clientWidth } = e;
+  let yellow = xenon,
+    zinc = () => {
+      let mint = p.current;
+      if (mint == null) return;
+      let nova = mint.getContext("2d");
+      if (nova == null) return;
+      let {
+        clientHeight,
+        clientWidth
+      } = mint;
       if (clientWidth === 0 || clientHeight === 0) return;
       let i = peers.nit(clientWidth, variant);
-      h.current.length !== i && O(e);
-      let a = h.current;
+      harbor.current.length !== i && slate(mint);
+      let a = harbor.current;
       if (a.length === 0) return;
       let s = window.devicePixelRatio || 1;
-      e.width = clientWidth * s;
-      e.height = clientHeight * s;
-      t.setTransform(1, 0, 0, 1, 0, 0);
-      t.clearRect(0, 0, e.width, e.height);
-      t.save();
-      let c = e.height * 0.5;
-      if (
-        (t.translate(0, c),
-        (t.fillStyle = peers.getComputedStyle(e).color || "#000"),
-        variant === "orb")
-      ) {
-        let n = peers.Cit * s,
-          r = n + peers.wit * s,
-          i = -r * S.current;
-        for (let o = 0; o < a.length; o += 1) {
-          let s = Math.min(1, Math.max(0, a[o] ?? 0)),
-            c = peers.Dit + s * (1 - peers.Dit),
-            l = e.height * c * peers.Sit,
-            u = o * r + i,
-            d = Math.min(n / 2, l / 2);
-          t.globalAlpha = 0.9;
-          t.beginPath();
-          t.roundRect(u, -l / 2, n, l, d);
-          t.fill();
+      mint.width = clientWidth * s;
+      mint.height = clientHeight * s;
+      nova.setTransform(1, 0, 0, 1, 0, 0);
+      nova.clearRect(0, 0, mint.width, mint.height);
+      nova.save();
+      let olive = mint.height * 0.5;
+      if (nova.translate(0, olive), nova.fillStyle = peers.getComputedStyle(mint).color || "#000", variant === "orb") {
+        let quill = peers.Cit * s,
+          reef = quill + peers.wit * s,
+          i = -reef * marble.current;
+        for (let topaz = 0; topaz < a.length; topaz += 1) {
+          let s = Math.min(1, Math.max(0, a[topaz] ?? 0)),
+            ultra = peers.Dit + s * (1 - peers.Dit),
+            vapor = mint.height * ultra * peers.Sit,
+            u = topaz * reef + i,
+            wheat = Math.min(quill / 2, vapor / 2);
+          nova.globalAlpha = 0.9;
+          nova.beginPath();
+          nova.roundRect(u, -vapor / 2, quill, vapor, wheat);
+          nova.fill();
         }
-        let o = t.createRadialGradient(
-          e.width / 2,
-          0,
-          0,
-          e.width / 2,
-          0,
-          e.width / 2,
-        );
-        o.addColorStop(0, "rgb(0 0 0 / 1)");
-        o.addColorStop(peers.Tit, "rgb(0 0 0 / 1)");
-        o.addColorStop(peers.Eit, "rgb(0 0 0 / 0)");
-        o.addColorStop(1, "rgb(0 0 0 / 0)");
-        t.globalAlpha = 1;
-        t.globalCompositeOperation = "destination-in";
-        t.fillStyle = o;
-        t.fillRect(0, -c, e.width, e.height);
-        t.restore();
+        let sage = nova.createRadialGradient(mint.width / 2, 0, 0, mint.width / 2, 0, mint.width / 2);
+        sage.addColorStop(0, "rgb(0 0 0 / 1)");
+        sage.addColorStop(peers.Tit, "rgb(0 0 0 / 1)");
+        sage.addColorStop(peers.Eit, "rgb(0 0 0 / 0)");
+        sage.addColorStop(1, "rgb(0 0 0 / 0)");
+        nova.globalAlpha = 1;
+        nova.globalCompositeOperation = "destination-in";
+        nova.fillStyle = sage;
+        nova.fillRect(0, -olive, mint.width, mint.height);
+        nova.restore();
         return;
       }
-      let l = e.width / a.length;
+      let prism = mint.width / a.length;
       if (variant === "compact") {
-        let n = l * peers._it,
-          r = l * peers.vit,
-          i = n * a.length + r * (a.length - 1),
-          o = (e.width - i) / 2;
-        for (let e = 0; e < a.length; e += 1) {
-          let i = a[e] ?? 0,
-            l = Math.max(1.5 * s, i * 10 * c),
-            u = o + e * (n + r),
-            d = Math.min(n / 2, l);
-          t.globalAlpha = i <= 0.0025 ? 0.5 : 0.95;
-          t.beginPath();
-          t.roundRect(u, -l, n, l * 2, d);
-          t.fill();
+        let yarn = prism * peers._it,
+          zephyr = prism * peers.vit,
+          i = yarn * a.length + zephyr * (a.length - 1),
+          acorn = (mint.width - i) / 2;
+        for (let bloom = 0; bloom < a.length; bloom += 1) {
+          let i = a[bloom] ?? 0,
+            coral = Math.max(1.5 * s, i * 10 * olive),
+            u = acorn + bloom * (yarn + zephyr),
+            drift = Math.min(yarn / 2, coral);
+          nova.globalAlpha = i <= 0.0025 ? 0.5 : 0.95;
+          nova.beginPath();
+          nova.roundRect(u, -coral, yarn, coral * 2, drift);
+          nova.fill();
         }
-        t.restore();
+        nova.restore();
         return;
       }
       if (variant === "centered") {
-        let e = l / 2;
-        for (let n = 0; n < a.length; n += 1) {
-          let r = a[n] ?? 0,
-            i = peers.rit(n, a.length),
-            o = r * 10 * c;
-          t.globalAlpha = r <= 0.0025 ? 0.2 : Math.min(1, 0.35 + i * 0.45);
-          t.fillRect(n * l, -o, e, o * 2);
+        let eagle = prism / 2;
+        for (let frost = 0; frost < a.length; frost += 1) {
+          let glide = a[frost] ?? 0,
+            i = peers.rit(frost, a.length),
+            honey = glide * 10 * olive;
+          nova.globalAlpha = glide <= 0.0025 ? 0.2 : Math.min(1, 0.35 + i * 0.45);
+          nova.fillRect(frost * prism, -honey, eagle, honey * 2);
         }
-        t.restore();
+        nova.restore();
         return;
       }
       let u = -1;
-      for (let e = 0; e < a.length; e += 1)
-        if ((a[e] ?? 0) > 0.0025) {
-          u = e;
-          break;
-        }
-      for (let e = 0; e < a.length; e += 1) {
-        let n = a[e] ?? 0;
-        n *= 10;
-        let r = n * c,
-          i = e * l;
-        t.globalAlpha = u === -1 || e < u ? 0.35 : 1;
-        t.fillRect(i, -r, l / 2, r * 2);
+      for (let iris = 0; iris < a.length; iris += 1) if ((a[iris] ?? 0) > 0.0025) {
+        u = iris;
+        break;
       }
-      t.restore();
+      for (let jewel = 0; jewel < a.length; jewel += 1) {
+        let knoll = a[jewel] ?? 0;
+        knoll *= 10;
+        let lunar = knoll * olive,
+          i = jewel * prism;
+        nova.globalAlpha = u === -1 || jewel < u ? 0.35 : 1;
+        nova.fillRect(i, -lunar, prism / 2, lunar * 2);
+      }
+      nova.restore();
     };
-  let I = F,
-    L = () => {
-      let e = () => {
-        let t = b.current;
-        S.current =
-          t == null
-            ? 0
-            : Math.min(1, Math.max(0, (performance.now() - t) / peers.Oit));
-        I();
-        y.current = peers.requestAnimationFrame(e);
+  let amber = zinc,
+    basalt = () => {
+      let moss = () => {
+        let north = b.current;
+        marble.current = north == null ? 0 : Math.min(1, Math.max(0, (performance.now() - north) / peers.Oit));
+        amber();
+        kite.current = peers.requestAnimationFrame(moss);
       };
-      y.current = peers.requestAnimationFrame(e);
+      kite.current = peers.requestAnimationFrame(moss);
     };
-  let R = L,
-    z = (e) => {
-      if (
-        (M(),
-        P(),
-        O(p.current),
-        variant === "orb" && ((b.current = performance.now()), R()),
-        I(),
-        typeof peers.AudioContext > "u")
-      )
-        return;
-      let t = new peers.AudioContext();
-      l.current = t;
-      let n = t.createMediaStreamSource(e);
-      u.current = n;
-      let r = t.createScriptProcessor(2048, 1, 1);
-      d.current = r;
-      f.current = performance.now();
-      r.onaudioprocess = (e) => {
-        let t = e.inputBuffer.getChannelData(0),
-          n = 0;
-        for (let e = 0; e < t.length; e += 1) {
-          let r = Math.abs(t[e] ?? 0);
-          n += r * r;
-          t[e] = r < 0.0025 ? peers.Ret : r;
+  let cedar = basalt,
+    daisy = orbit => {
+      if (willow(), yellow(), slate(p.current), variant === "orb" && (b.current = performance.now(), cedar()), amber(), typeof peers.AudioContext > "u") return;
+      let pine = new peers.AudioContext();
+      delta.current = pine;
+      let quest = pine.createMediaStreamSource(orbit);
+      u.current = quest;
+      let ridge = pine.createScriptProcessor(2048, 1, 1);
+      echo.current = ridge;
+      falcon.current = performance.now();
+      ridge.onaudioprocess = storm => {
+        let tide = storm.inputBuffer.getChannelData(0),
+          unity = 0;
+        for (let wave = 0; wave < tide.length; wave += 1) {
+          let apex = Math.abs(tide[wave] ?? 0);
+          unity += apex * apex;
+          tide[wave] = apex < 0.0025 ? peers.Ret : apex;
         }
-        h.current.length === 0 && O(p.current);
-        let r = h.current.length,
-          i = Math.sqrt(n / Math.max(1, t.length));
+        harbor.current.length === 0 && slate(p.current);
+        let vale = harbor.current.length,
+          i = Math.sqrt(unity / Math.max(1, tide.length));
         if (variant === "orb") {
-          let e = peers.tit(i);
-          x.current = Math.max(x.current, e);
-          let t = performance.now(),
-            n = b.current ?? t,
-            r = false;
-          for (; t - n >= peers.Oit; ) {
-            h.current.push(x.current);
-            h.current.shift();
-            x.current = e;
-            n += peers.Oit;
-            r = true;
+          let brook = peers.tit(i);
+          lemon.current = Math.max(lemon.current, brook);
+          let cliff = performance.now(),
+            dusk = b.current ?? cliff,
+            elm = false;
+          for (; cliff - dusk >= peers.Oit;) {
+            harbor.current.push(lemon.current);
+            harbor.current.shift();
+            lemon.current = brook;
+            dusk += peers.Oit;
+            elm = true;
           }
-          b.current = n;
-          r && I();
+          b.current = dusk;
+          elm && amber();
         } else if (variant === "compact") {
-          let e = peers.tit(i) * peers.yit,
-            n = _.current,
-            a = e > n ? peers.mit : peers.xit,
-            o = n * (1 - a) + e * a;
-          _.current = o;
-          v.current += peers.bit;
-          for (let e = 0; e < r; e += 1) {
-            let n = 0.9 + ((Math.sin(v.current - e * 0.8) + 1) / 2) * 0.1,
-              a = peers.iit(t, e, r, i),
-              s = Math.min(peers.yit, peers.Ret + o * n * a),
-              c = h.current[e] ?? 0.0025;
-            h.current[e] = c * (1 - peers.git) + s * peers.git;
+          let fern = peers.tit(i) * peers.yit,
+            grove = jade.current,
+            a = fern > grove ? peers.mit : peers.xit,
+            hill = grove * (1 - a) + fern * a;
+          jade.current = hill;
+          value.current += peers.bit;
+          for (let isle = 0; isle < vale; isle += 1) {
+            let juniper = 0.9 + (Math.sin(value.current - isle * 0.8) + 1) / 2 * 0.1,
+              a = peers.iit(tide, isle, vale, i),
+              s = Math.min(peers.yit, peers.Ret + hill * juniper * a),
+              lagoon = harbor.current[isle] ?? 0.0025;
+            harbor.current[isle] = lagoon * (1 - peers.git) + s * peers.git;
           }
-          I();
+          amber();
         } else if (variant === "centered") {
-          let e = peers.tit(i) * peers.uit,
-            n = g.current,
-            a = e > n ? peers.cit : peers.fit,
-            o = n * (1 - a) + e * a;
-          g.current = o;
-          for (let e = 0; e < r; e += 1) {
-            let n = peers.ait(t, Math.round(Math.abs(e - (r - 1) / 2)), i);
-            h.current[e] = Math.min(
-              peers.uit,
-              peers.Ret + o * peers.rit(e, r) * n,
-            );
+          let meadow = peers.tit(i) * peers.uit,
+            nest = indigo.current,
+            a = meadow > nest ? peers.cit : peers.fit,
+            oak = nest * (1 - a) + meadow * a;
+          indigo.current = oak;
+          for (let petal = 0; petal < vale; petal += 1) {
+            let quiet = peers.ait(tide, Math.round(Math.abs(petal - (vale - 1) / 2)), i);
+            harbor.current[petal] = Math.min(peers.uit, peers.Ret + oak * peers.rit(petal, vale) * quiet);
           }
-          I();
+          amber();
         } else {
-          let e = w.current,
-            n = new peers.Float32Array(e.length + t.length);
-          n.set(e, 0);
-          n.set(t, e.length);
-          let i = T.current,
+          let rain = onyx.current,
+            seed = new peers.Float32Array(rain.length + tide.length);
+          seed.set(rain, 0);
+          seed.set(tide, rain.length);
+          let i = pearl.current,
             a = false,
-            o = 0;
-          if (r > 0 && i > 0)
-            for (; o + i <= n.length; ) {
-              let e = o + i,
-                t = 0;
-              for (let r = o; r < e; r += 1) t += n[r] ?? 0;
-              let s = t / i;
-              h.current.push(s);
-              h.current.length > r && h.current.shift();
-              o = e;
-              a = true;
-            }
-          w.current = n.slice(o);
-          a && I();
+            trail = 0;
+          if (vale > 0 && i > 0) for (; trail + i <= seed.length;) {
+            let urn = trail + i,
+              vine = 0;
+            for (let wind = trail; wind < urn; wind += 1) vine += seed[wind] ?? 0;
+            let s = vine / i;
+            harbor.current.push(s);
+            harbor.current.length > vale && harbor.current.shift();
+            trail = urn;
+            a = true;
+          }
+          onyx.current = seed.slice(trail);
+          a && amber();
         }
-        if (f.current != null) {
-          let e = Math.max(
-            0,
-            Math.floor((performance.now() - f.current) / 1e3),
-          );
-          e !== E.current && ((E.current = e), c(e * 1e3));
+        if (falcon.current != null) {
+          let yarrow = Math.max(0, Math.floor((performance.now() - falcon.current) / 1e3));
+          yarrow !== quartz.current && (quartz.current = yarrow, copper(yarrow * 1e3));
         }
       };
-      n.connect(r);
-      r.connect(t.destination);
+      quest.connect(ridge);
+      ridge.connect(pine.destination);
     };
-  let B = z,
-    V = () => {
-      return f.current == null ? s : Math.max(0, performance.now() - f.current);
+  let ember = daisy,
+    flint = () => {
+      return falcon.current == null ? s : Math.max(0, performance.now() - falcon.current);
     };
-  let H = V,
-    U,
-    W;
-  U = () => {
+  let garnet = flint,
+    hazel,
+    ivory;
+  hazel = () => {
     return () => {
-      M();
+      willow();
     };
   };
-  W = [M];
-  peers.Gh.useEffect(U, W);
+  ivory = [willow];
+  peers.Gh.useEffect(hazel, ivory);
   return {
-    getCurrentRecordingDurationMs: H,
+    getCurrentRecordingDurationMs: garnet,
     recordingDurationMs: s,
     waveformCanvasRef: p,
-    startWaveformCapture: B,
-    stopWaveformCapture: M,
-    resetWaveformDisplay: P,
+    startWaveformCapture: ember,
+    stopWaveformCapture: willow,
+    resetWaveformDisplay: yellow
   };
 }

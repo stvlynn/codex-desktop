@@ -1,26 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export qq / DN
+// Materialized via extractFn(internal `DN`) / export `qq`.
 
 export type AccountInfoPeers = {
-  impl: (...args: unknown[]) => unknown;
+  ap: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  f2r: (...args: unknown[]) => unknown;
+  xM: (...args: unknown[]) => unknown;
 };
 
 let peers: AccountInfoPeers | null = null;
 
-/** Wire accountInfo once companions land. */
+/** Wire accountInfo peers once companions land. */
 export function setAccountInfoPeers(next: AccountInfoPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `qq` / internal `DN`.
- * Stage-3 fill for bundle export qq / DN
  */
-export function accountInfo(...args: unknown[]): unknown {
+export function accountInfo() {
   if (peers == null) {
     throw new Error("accountInfo peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.e(() => {
+    f2r = peers.c(), peers.ap(), peers.xM();
+  });
 }

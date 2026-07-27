@@ -39,15 +39,9 @@ import { chunk5PVQY5BWU } from "./mermaid-common-utils-alt";
 import { chunkU2HBQHQKA as chunkU2HBQHQKI } from "./mermaid-create-text-alt";
 import { initMermaidLineOffsetAltChunk as chunkBSJP7CBPR } from "../../diagrams/line-offset-helpers-alt";
 import { initSubGraphTitleMarginsAlt as chunkZZ45TVLER } from "../../diagrams/subgraph-title-margins-alt";
-import {
-  n as chunk55IACEB6N,
-  t as chunk55IACEB6T,
-} from "../../diagrams/get-diagram-element-alt";
-import {
-  n as chunkEDXVE4YYN,
-  t as chunkEDXVE4YYT,
-} from "../../diagrams/setup-viewport-for-svg-alt";
-import { n as chunkX2U36JSPN } from "../../diagrams/style-helpers-alt";
+import { initGetDiagramElementChunk as chunk55IACEB6N, getDiagramElement as chunk55IACEB6T } from "../../diagrams/get-diagram-element-alt";
+import { setupViewPortForSVG as chunkEDXVE4YYN, initSetupViewPortForSvgChunk as chunkEDXVE4YYT } from "../../diagrams/setup-viewport-for-svg-alt";
+import { initStyleHelpersChunk as chunkX2U36JSPN } from "../../diagrams/style-helpers-alt";
 import { chunk5FUZZQ4RI } from "./mermaid-flowchart-nodes-alt";
 import { chunkENJZ2VHEN } from "./mermaid-flowchart-edges-alt";
 import {

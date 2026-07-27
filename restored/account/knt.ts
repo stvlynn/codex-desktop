@@ -1,26 +1,39 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Knt / $Gt
+// Materialized via extractFn(internal `$Gt`) / export `Knt`.
 
-export type BindKntPeers = {
-  impl: (...args: unknown[]) => unknown;
+export type KntPeers = {
+  aqt: (...args: unknown[]) => unknown;
+  parseInt: (...args: unknown[]) => unknown;
 };
 
-let peers: BindKntPeers | null = null;
+let peers: KntPeers | null = null;
 
-/** Wire bindKnt once companions land. */
-export function setBindKntPeers(next: BindKntPeers): void {
+/** Wire knt peers once companions land. */
+export function setKntPeers(next: KntPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Knt` / internal `$Gt`.
- * Stage-3 fill for bundle export Knt / $Gt
  */
-export function bindKnt(...args: unknown[]): unknown {
+export function knt(
+  e: unknown,
+  {
+    scale: t = 1,
+    rotation: n = 0,
+  }: { scale?: number; rotation?: number },
+) {
   if (peers == null) {
-    throw new Error("bindKnt peers are not configured");
+    throw new Error("knt peers are not configured");
   }
-  return peers.impl(...args);
+  let {
+    width: r,
+    height: i
+  } = e.attributes.style;
+  return new peers.aqt({
+    viewBox: [0, 0, peers.parseInt(r), peers.parseInt(i)],
+    userUnit: 1,
+    scale: t,
+    rotation: n
+  });
 }

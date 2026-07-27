@@ -22,4 +22,3 @@ defineFunctionName(ImperativeState, "ImperativeState");
 export function initImperativeStateChunk(): void {
   initDayjsLoggerRuntime();
 }
-export { initImperativeStateChunk as n, ImperativeState as t };

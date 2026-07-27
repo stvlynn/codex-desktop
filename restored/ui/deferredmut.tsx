@@ -14,7 +14,7 @@ export function setBindDeferredmutPeers(next: BindDeferredmutPeers): void {
 /**
  * Bundle export `mut` / internal `pm`.
  */
-export const bindDeferredmut = (e, t) => {
+export const bindDeferredmut = (e: unknown, t: unknown) => {
   if (peers == null) {
     throw new Error("bindDeferredmut peers are not configured");
   }

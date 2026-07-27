@@ -17,7 +17,7 @@ export function setBindUseQueryClientPeers(
 /**
  * Bundle export `Avt` / internal `rt`.
  */
-export const bindUseQueryClient = (e) => {
+export const bindUseQueryClient = (e?: unknown) => {
   if (peers == null) {
     throw new Error("bindUseQueryClient peers are not configured");
   }
@@ -26,3 +26,6 @@ export const bindUseQueryClient = (e) => {
   if (!t) throw Error("No QueryClient set, use QueryClientProvider to set one");
   return t;
 };
+
+/** Consumers import this under the bundle's original camelCase name. */
+export const useQueryClient = bindUseQueryClient;

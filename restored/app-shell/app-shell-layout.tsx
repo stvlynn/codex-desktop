@@ -71,3 +71,18 @@ export function bindAppShellLayout() {
     DetailPanelOutlet: (0, peers.lM.memo)(peers.zWr),
   };
 }
+
+/**
+ * `aZ` is consumed elsewhere as a compound-component namespace
+ * (`AppShellLayout.HeaderAction`, `AppShellLayout.Root`, …), not as a call —
+ * proxy each property access through `bindAppShellLayout()` so the peers
+ * indirection stays lazy until a companion is actually read.
+ */
+export const AppShellLayout: ReturnType<typeof bindAppShellLayout> = new Proxy(
+  {} as ReturnType<typeof bindAppShellLayout>,
+  {
+    get(_target, prop) {
+      return bindAppShellLayout()[prop as keyof ReturnType<typeof bindAppShellLayout>];
+    },
+  },
+);

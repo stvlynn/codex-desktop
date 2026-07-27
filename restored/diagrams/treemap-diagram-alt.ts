@@ -39,25 +39,15 @@ import {
   select as d3Select,
   ensureD3SelectionRuntimeT as ensureD3SelectionRuntimeT,
 } from "../vendor/d3-axis-current-runtime";
-import { n as chunkEXTU4WIEN, t as chunkEXTU4WIET } from "./select-svg-element";
+import { initSelectSvgElementChunk as chunkEXTU4WIEN, selectSvgElement as chunkEXTU4WIET } from "./select-svg-element";
 import { chunkS3R3BYOJR, chunkS3R3BYOJU } from "./mermaid-common-utils";
-import {
-  n as chunk4BX2VUABN,
-  t as chunk4BX2VUABT,
-} from "./populate-common-db-alt";
+import { initPopulateCommonDbChunk as chunk4BX2VUABN, populateCommonDb as chunk4BX2VUABT } from "./populate-common-db-alt";
 import {
   mermaidParserCoreN,
   mermaidParserCoreT,
 } from "./mermaid-parser-core-alt";
-import {
-  n as chunkQN33PNHLN,
-  t as chunkQN33PNHLT,
-} from "./setup-viewport-for-svg";
-import {
-  a as chunkATLVNIR6A,
-  n as chunkATLVNIR6N,
-  r as chunkATLVNIR6R,
-} from "./style-helpers";
+import { initSetupViewPortForSvgChunk as chunkQN33PNHLN, setupViewPortForSVG as chunkQN33PNHLT } from "./setup-viewport-for-svg";
+import { styles2String as chunkATLVNIR6A, initStyleHelpersChunk as chunkATLVNIR6N, isLabelStyle as chunkATLVNIR6R } from "./style-helpers";
 function diagramPSM6KHXKHelper1(treemapAltSlot10) {
   if (!treemapAltSlot10.length) return [];
   let treemapAltItem60 = [],

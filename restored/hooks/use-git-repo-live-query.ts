@@ -19,6 +19,16 @@ export function setUseGitRepoLiveQueryPeers(next: UseGitRepoLiveQueryPeers): voi
   peers = next;
 }
 
+export type GitRepoLiveQueryHostConfig = Record<string, unknown>;
+
+export type GitRepoLiveQueryOptions = {
+  enabled?: boolean;
+  retainRepoWatch?: boolean;
+  liveQuery?: unknown;
+  select?: (data: unknown) => unknown;
+  staleTime?: number;
+} & Record<string, unknown>;
+
 /**
  * Bundle export `N3` / internal `t6n`.
  */

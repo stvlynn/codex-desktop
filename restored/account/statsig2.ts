@@ -1,26 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export y4 / ger
+// Materialized via extractFn(internal `ger`) / export `y4`.
 
 export type Statsig2Peers = {
-  impl: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  mer: (...args: unknown[]) => unknown;
 };
 
 let peers: Statsig2Peers | null = null;
 
-/** Wire statsig2 once companions land. */
+/** Wire statsig2 peers once companions land. */
 export function setStatsig2Peers(next: Statsig2Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `y4` / internal `ger`.
- * Stage-3 fill for bundle export y4 / ger
  */
-export function statsig2(...args: unknown[]): unknown {
+export function statsig2() {
   if (peers == null) {
     throw new Error("statsig2 peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.Ta(peers.Q, null, {
+    isEqual: peers.mer.default
+  });
 }

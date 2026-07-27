@@ -40,7 +40,7 @@ import {
   chunkS3R3BYOJU,
   chunkS3R3BYOJUnderscore,
 } from "./mermaid-common-utils";
-import { c as chunkTZMSLE5BC, i, o } from "../../diagrams/svg-drawing-helpers";
+import { initSvgDrawingHelpersChunk as chunkTZMSLE5BC, drawRect as i, getNoteRect as o } from "../../diagrams/svg-drawing-helpers";
 function c4DiagramYG6GDRKOHelper1(
   c4DiagramYG6GDRKOInput135,
   c4DiagramYG6GDRKOInput136,

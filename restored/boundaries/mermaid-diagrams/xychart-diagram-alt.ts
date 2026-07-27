@@ -36,10 +36,7 @@ import {
   v as _chunkICPOFSXXV,
   y as chunkICPOFSXXY,
 } from "../../diagrams/mermaid-config-alt";
-import {
-  n as chunk426QAEUCN,
-  t as chunk426QAEUCT,
-} from "../../diagrams/select-svg-element-alt";
+import { selectSvgElement as chunk426QAEUCN, initSelectSvgElementChunk as chunk426QAEUCT } from "../../diagrams/select-svg-element-alt";
 import { chunk5PVQY5BWR, chunk5PVQY5BWU } from "./mermaid-common-utils-alt";
 import {
   chunkU2HBQHQKA as chunkU2HBQHQKI,

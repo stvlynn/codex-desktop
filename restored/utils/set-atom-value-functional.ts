@@ -1,23 +1,23 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `hN`) / export `pJ`.
+// Materialized via extractFn(internal `hN`) / export `setAtomValueFunctional`.
 
-export type PJPeers = {
+export type AtomValueFunctionalPeers = {
   k0r: (...args: unknown[]) => unknown;
   xN: (...args: unknown[]) => unknown;
 };
-let peers: PJPeers | null = null;
+let peers: AtomValueFunctionalPeers | null = null;
 
-/** Wire pJ peers once companions land. */
-export function setPJPeers(next: PJPeers): void {
+/** Wire setAtomValueFunctional peers once companions land. */
+export function setAtomValueFunctionalPeers(next: AtomValueFunctionalPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `pJ` / internal `hN`.
+ * Bundle export `setAtomValueFunctional` / internal `hN`.
  */
-export function pJ(e: unknown, t: unknown) {
+export function setAtomValueFunctional(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("pJ peers are not configured");
+    throw new Error("setAtomValueFunctional peers are not configured");
   }
   let n = e.get(peers.xN),
     r = typeof t == "function" ? t(n) : t;

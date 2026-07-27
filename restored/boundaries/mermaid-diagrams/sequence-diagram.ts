@@ -48,24 +48,9 @@ import {
   chunkS3R3BYOJP,
   chunkS3R3BYOJU,
 } from "./mermaid-common-utils";
-import {
-  c,
-  i as chunkTZMSLE5BI,
-  n,
-  o,
-  r as chunkTZMSLE5BR,
-  s as chunkTZMSLE5BS,
-  t,
-} from "../../diagrams/svg-drawing-helpers";
-import {
-  n as chunkMI3HLSF2N,
-  r as chunkMI3HLSF2R,
-  t as chunkMI3HLSF2T,
-} from "../../utils/mermaid-js-yaml-alt";
-import {
-  n as chunkQZHKN3VNN,
-  t as chunkQZHKN3VNT,
-} from "../../diagrams/imperative-state-alt";
+import { initSvgDrawingHelpersChunk as c, drawRect as chunkTZMSLE5BI, drawEmbeddedImage as n, getNoteRect as o, drawImage as chunkTZMSLE5BR, getTextObj as chunkTZMSLE5BS, drawBackgroundRect as t } from "../../diagrams/svg-drawing-helpers";
+import { initMermaidJsYamlAlt as chunkMI3HLSF2N, yamlLoad as chunkMI3HLSF2R, yamlCoreSchema as chunkMI3HLSF2T } from "../../utils/mermaid-js-yaml-alt";
+import { initImperativeStateChunk as chunkQZHKN3VNN, ImperativeState as chunkQZHKN3VNT } from "../../diagrams/imperative-state-alt";
 async function sequenceDiagramWL72ISMWHelper1(
   sequenceDiagramWL72ISMWInput119,
   sequenceDiagramWL72ISMWInput120,

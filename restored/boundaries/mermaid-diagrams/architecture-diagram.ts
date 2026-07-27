@@ -38,10 +38,7 @@ import {
   v as _chunkICPOFSXXV,
   y as chunkICPOFSXXY,
 } from "../../diagrams/mermaid-config-alt";
-import {
-  n as chunk426QAEUCN,
-  t as chunk426QAEUCT,
-} from "../../diagrams/select-svg-element-alt";
+import { selectSvgElement as chunk426QAEUCN, initSelectSvgElementChunk as chunk426QAEUCT } from "../../diagrams/select-svg-element-alt";
 import {
   chunk5PVQY5BWR,
   chunk5PVQY5BWS,
@@ -54,10 +51,7 @@ import {
   chunkU2HBQHQKO,
   chunkU2HBQHQKR,
 } from "./mermaid-create-text-alt";
-import {
-  n as chunk4BX2VUABN,
-  t as chunk4BX2VUABT,
-} from "../../diagrams/populate-common-db";
+import { populateCommonDb as chunk4BX2VUABN, initPopulateCommonDbChunk as chunk4BX2VUABT } from "../../diagrams/populate-common-db";
 import {
   mermaidParserCoreN,
   mermaidParserCoreT,

@@ -75,3 +75,6 @@ export function workingDotsActionButton(props: unknown) {
     </button>
   );
 }
+
+/** Bundle path ESM init retained as no-op. */
+export function ensureQuickChatFormattedMessageInit(): void {}

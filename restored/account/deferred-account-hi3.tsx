@@ -1,44 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Hi / l$l
+// Materialized via extractFn(internal `l$l`) / export `Hi`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BinddeferredAccountHi3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type DeferredAccountHi3Peers = {
+  constructor: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  uploadError: (...args: unknown[]) => unknown;
 };
 
-type BinddeferredAccountHi3Impl = (
-  props: BinddeferredAccountHi3Props,
-) => ReactNode;
-let impl: BinddeferredAccountHi3Impl | null = null;
+let peers: DeferredAccountHi3Peers | null = null;
 
-/** Wire the full BinddeferredAccountHi3 once deeper restore lands. */
-export function bindBinddeferredAccountHi3(next: BinddeferredAccountHi3Impl): void {
-  impl = next;
+/** Wire DeferredAccountHi3 peers once companions land. */
+export function setDeferredAccountHi3Peers(next: DeferredAccountHi3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Hi` / internal `l$l`.
- * Stage-3 fill for bundle export Hi / l$l; heavy UI via bind.
  */
-export function BinddeferredAccountHi3(props: BinddeferredAccountHi3Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="Hi"
-      aria-label="BinddeferredAccountHi3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Hi / l$l
-        </div>
-      )}
-    </div>
-  );
+export function DeferredAccountHi3() {
+  if (peers == null) {
+    throw new Error("DeferredAccountHi3 peers are not configured");
+  }
+  return class extends Error {
+    uploadError;
+    constructor(e) {
+      super(`Profile photo upload failed`), this.uploadError = peers.e;
+    }
+  };
 }

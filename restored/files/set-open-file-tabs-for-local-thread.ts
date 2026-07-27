@@ -1,24 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `xho`) / export `ij`.
+// Materialized via extractFn(internal `xho`) / export `setOpenFileTabsForLocalThread`.
 
-export type IjPeers = {
+export type OpenFileTabsForLocalThreadPeers = {
   Bf: (...args: unknown[]) => unknown;
   Mor: (...args: unknown[]) => unknown;
   Sho: (...args: unknown[]) => unknown;
 };
-let peers: IjPeers | null = null;
+let peers: OpenFileTabsForLocalThreadPeers | null = null;
 
-/** Wire ij peers once companions land. */
-export function setIjPeers(next: IjPeers): void {
+/** Wire setOpenFileTabsForLocalThread peers once companions land. */
+export function setOpenFileTabsForLocalThreadPeers(next: OpenFileTabsForLocalThreadPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `ij` / internal `xho`.
+ * Bundle export `setOpenFileTabsForLocalThread` / internal `xho`.
  */
-export function ij(e: unknown, t: unknown = {}) {
+export function setOpenFileTabsForLocalThread(e: unknown, t: unknown = {}) {
   if (peers == null) {
-    throw new Error("ij peers are not configured");
+    throw new Error("setOpenFileTabsForLocalThread peers are not configured");
   }
   e.value.routeKind === "local-thread" &&
     peers.Bf("set-open-file-tabs", {

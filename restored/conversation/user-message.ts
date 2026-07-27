@@ -31,6 +31,14 @@ export function bindUserMessage() {
   }
 
   return peers.e(() => {
-    cAl = peers.c(), lAl = peers.r(peers.o(), 1), peers.$u(), peers.Xna(), peers.aAl(), uAl = peers.J();
+    ((cAl = peers.c()),
+      (lAl = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.Xna(),
+      peers.aAl(),
+      (uAl = peers.J()));
   });
 }
+
+/** Alias: bundle export `uc` is consumed elsewhere as `UserMessage`. */
+export const UserMessage = bindUserMessage;

@@ -14,4 +14,3 @@ defineFunctionName(getIconStyles, "getIconStyles");
 export function initGetIconStylesChunk(): void {
   initDayjsLoggerRuntime();
 }
-export { initGetIconStylesChunk as n, getIconStyles as t };

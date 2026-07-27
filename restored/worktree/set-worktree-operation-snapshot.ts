@@ -1,24 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `$xo`) / export `hA`.
+// Materialized via extractFn(internal `$xo`) / export `setWorktreeOperationSnapshot`.
 
-export type HAPeers = {
+export type WorktreeOperationSnapshotPeers = {
   F3n: (...args: unknown[]) => unknown;
   Wxo: (...args: unknown[]) => unknown;
   jxe: (...args: unknown[]) => unknown;
 };
-let peers: HAPeers | null = null;
+let peers: WorktreeOperationSnapshotPeers | null = null;
 
-/** Wire hA peers once companions land. */
-export function setHAPeers(next: HAPeers): void {
+/** Wire setWorktreeOperationSnapshot peers once companions land. */
+export function setWorktreeOperationSnapshotPeers(next: WorktreeOperationSnapshotPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `hA` / internal `$xo`.
+ * Bundle export `setWorktreeOperationSnapshot` / internal `$xo`.
  */
-export function hA(e: unknown, t: unknown, n: unknown, r: unknown, i: unknown) {
+export function setWorktreeOperationSnapshot(e: unknown, t: unknown, n: unknown, r: unknown, i: unknown) {
   if (peers == null) {
-    throw new Error("hA peers are not configured");
+    throw new Error("setWorktreeOperationSnapshot peers are not configured");
   }
   let a = e.query.snapshot(peers.Wxo, {
     commonDir: t.commonDir,

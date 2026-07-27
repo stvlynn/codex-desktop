@@ -195,3 +195,6 @@ export function useInstalledPluginsQuery(e: unknown, t: unknown, n: unknown) {
     forceReload: ae,
   };
 }
+
+/** Bundle path ESM init retained as no-op. */
+export function ensureInstalledPluginsQueryInit(): void {}

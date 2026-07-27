@@ -42,18 +42,12 @@ import {
   chunk5PVQY5BWR,
   chunk5PVQY5BWU,
 } from "./mermaid-common-utils-alt";
-import {
-  n as chunk4BX2VUABN,
-  t as chunk4BX2VUABT,
-} from "../../diagrams/populate-common-db";
+import { populateCommonDb as chunk4BX2VUABN, initPopulateCommonDbChunk as chunk4BX2VUABT } from "../../diagrams/populate-common-db";
 import {
   mermaidParserCoreN,
   mermaidParserCoreT,
 } from "../../diagrams/mermaid-parser-core";
-import {
-  n as chunkQZHKN3VNN,
-  t as chunkQZHKN3VNT,
-} from "../../diagrams/imperative-state";
+import { initImperativeStateChunk as chunkQZHKN3VNN, ImperativeState as chunkQZHKN3VNT } from "../../diagrams/imperative-state";
 function gitGraphDiagramUUTBAWPFHelper1() {
   return chunk5PVQY5BWM({
     length: 7,

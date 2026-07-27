@@ -30,14 +30,8 @@ import {
   c as _chunkICPOFSXXC,
   v as _chunkICPOFSXXV,
 } from "../../diagrams/mermaid-config-alt";
-import {
-  n as chunk426QAEUCN,
-  t as chunk426QAEUCT,
-} from "../../diagrams/select-svg-element-alt";
-import {
-  n as chunk4BX2VUABN,
-  t as chunk4BX2VUABT,
-} from "../../diagrams/populate-common-db";
+import { selectSvgElement as chunk426QAEUCN, initSelectSvgElementChunk as chunk426QAEUCT } from "../../diagrams/select-svg-element-alt";
+import { populateCommonDb as chunk4BX2VUABN, initPopulateCommonDbChunk as chunk4BX2VUABT } from "../../diagrams/populate-common-db";
 import {
   mermaidParserCoreN,
   mermaidParserCoreT,

@@ -71,7 +71,7 @@ export function bindBindDeferredUiKR() {
     e5i = peers.w8i(() => {
       return peers.Ql(
         () => {
-          return import("./highlight-code-IUEcEehV.js");
+          return import("../markdown/highlight-code");
         },
         peers.__vite__mapDeps([438, 1, 439]),
         import.meta.url,

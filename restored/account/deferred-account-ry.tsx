@@ -1,44 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ry / zws
+// Materialized via extractFn(internal `zws`) / export `Ry`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredAccountRyProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type DeferredAccountRyPeers = {
+  Au: (...args: unknown[]) => unknown;
+  Fh: (...args: unknown[]) => unknown;
+  Iws: (...args: unknown[]) => unknown;
+  Lws: (...args: unknown[]) => unknown;
+  Rws: (...args: unknown[]) => unknown;
+  URL: (...args: unknown[]) => unknown;
+  Uo: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredAccountRyImpl = (
-  props: BindDeferredAccountRyProps,
-) => ReactNode;
-let impl: BindDeferredAccountRyImpl | null = null;
+let peers: DeferredAccountRyPeers | null = null;
 
-/** Wire the full BindDeferredAccountRy once deeper restore lands. */
-export function bindBindDeferredAccountRy(next: BindDeferredAccountRyImpl): void {
-  impl = next;
+/** Wire DeferredAccountRy peers once companions land. */
+export function setDeferredAccountRyPeers(next: DeferredAccountRyPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Ry` / internal `zws`.
- * Stage-3 fill for bundle export Ry / zws; heavy UI via bind.
  */
-export function BindDeferredAccountRy(props: BindDeferredAccountRyProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="Ry"
-      aria-label="BindDeferredAccountRy"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Ry / zws
-        </div>
-      )}
-    </div>
-  );
+export function DeferredAccountRy() {
+  if (peers == null) {
+    throw new Error("DeferredAccountRy peers are not configured");
+  }
+  return peers.e(() => {
+    peers.Au(), peers.Fh(), Iws = new peers.URL(peers.Uo), Lws = `${peers.Iws.pathname}/purchase/`, Rws = `3800100299`;
+  });
 }

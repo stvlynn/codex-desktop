@@ -102,17 +102,17 @@ export function home() {
       "from-left": ["Home", "PageDown", "ArrowDown", "ArrowLeft"],
       "from-right": ["Home", "PageDown", "ArrowDown", "ArrowRight"],
       "from-bottom": ["Home", "PageDown", "ArrowDown", "ArrowLeft"],
-      "from-top": ["Home", "PageDown", "ArrowUp", "ArrowLeft"],
+      "from-top": ["Home", "PageDown", "ArrowUp", "ArrowLeft"]
     };
     $el = "Slider";
     [etl, ttl, ntl] = peers.A$e(peers.$el);
     [rtl, itl] = peers.Lp(peers.$el, [peers.ntl]);
     [atl, otl] = peers.rtl(peers.$el);
-    stl = peers.i6.forwardRef((e, t) => {
+    stl = peers.i6.forwardRef((alpha, bravo) => {
       const Atl = peers.atl;
       const Provider = peers.etl.Provider;
       const Slot = peers.etl.Slot;
-      const V = v;
+      const copper = OrientationRoot;
       let {
           name,
           min = 0,
@@ -129,122 +129,82 @@ export function home() {
           form,
           ...rest
         } = peers.e,
-        g = peers.i6.useRef(new Set()),
-        _ = peers.i6.useRef(0),
-        v = orientation === "horizontal" ? peers.utl : peers.dtl,
-        [y = [], b] = peers.ym({
+        delta = peers.i6.useRef(new Set()),
+        echo = peers.i6.useRef(0),
+        OrientationRoot = orientation === "horizontal" ? peers.utl : peers.dtl,
+        [gamma = [], b] = peers.ym({
           prop: value,
           defaultProp: defaultValue,
-          onChange: (e) => {
-            [...g.current][_.current]?.focus();
+          onChange: marble => {
+            [...delta.current][echo.current]?.focus();
             onValueChange(peers.e);
-          },
+          }
         }),
-        x = peers.i6.useRef(y);
-      function S(e) {
-        peers.T(peers.e, peers.Uel(y, peers.e));
+        harbor = peers.i6.useRef(gamma);
+      function indigo(nickel) {
+        peers.T(peers.e, peers.Uel(gamma, peers.e));
       }
-      function C(e) {
-        peers.T(peers.e, _.current);
+      function jade(onyx) {
+        peers.T(peers.e, echo.current);
       }
-      function w() {
-        let e = x.current[_.current];
-        y[_.current] !== peers.e && onValueCommit(y);
+      function kite() {
+        let pearl = harbor.current[echo.current];
+        gamma[echo.current] !== peers.e && onValueCommit(gamma);
       }
-      function T(
-        e,
-        t,
-        { commit } = {
-          commit: false,
-        },
-      ) {
-        let o = peers.Jel(step),
-          s = peers.Rel(
-            peers.Yel(Math.round((peers.e - min) / step) * step + min, o),
-            [min, max],
-          );
-        b((e = []) => {
-          let r = peers.Bel(peers.e, s, t);
-          if (peers.Kel(r, minStepsBetweenThumbs * step)) {
-            _.current = r.indexOf(s);
-            let t = String(r) !== String(peers.e);
-            return (t && commit && onValueCommit(r), t ? r : peers.e);
+      function lemon(quartz, river, {
+        commit
+      } = {
+        commit: false
+      }) {
+        let slate = peers.Jel(step),
+          s = peers.Rel(peers.Yel(Math.round((peers.e - min) / step) * step + min, slate), [min, max]);
+        b((timber = []) => {
+          let umbra = peers.Bel(peers.e, s, river);
+          if (peers.Kel(umbra, minStepsBetweenThumbs * step)) {
+            echo.current = umbra.indexOf(s);
+            let violet = String(umbra) !== String(peers.e);
+            return violet && commit && onValueCommit(umbra), violet ? umbra : peers.e;
           } else return peers.e;
         });
       }
-      return (
-        <Atl
-          scope={peers.e.__scopeSlider}
-          name={name}
-          disabled={disabled}
-          min={min}
-          max={max}
-          valueIndexToChangeRef={_}
-          thumbs={g.current}
-          values={y}
-          orientation={orientation}
-          form={form}
-        >
+      return <Atl scope={peers.e.__scopeSlider} name={name} disabled={disabled} min={min} max={max} valueIndexToChangeRef={echo} thumbs={delta.current} values={gamma} orientation={orientation} form={form}>
           <Provider scope={peers.e.__scopeSlider}>
             <Slot scope={peers.e.__scopeSlider}>
-              <V
-                aria-disabled={disabled}
-                data-disabled={disabled ? "" : undefined}
-                {...rest}
-                ref={t}
-                onPointerDown={peers.Fp(rest.onPointerDown, () => {
-                  disabled || (x.current = y);
-                })}
-                min={min}
-                max={max}
-                inverted={inverted}
-                onSlideStart={disabled ? undefined : peers.S}
-                onSlideMove={disabled ? undefined : peers.C}
-                onSlideEnd={disabled ? undefined : w}
-                onHomeKeyDown={() => {
-                  return (
-                    !disabled &&
-                    peers.T(min, 0, {
-                      commit: true,
-                    })
-                  );
-                }}
-                onEndKeyDown={() => {
-                  return (
-                    !disabled &&
-                    peers.T(max, y.length - 1, {
-                      commit: true,
-                    })
-                  );
-                }}
-                onStepKeyDown={({ event, direction }) => {
-                  if (!disabled) {
-                    let n =
-                        peers.Xel.includes(peers.e.key) ||
-                        (peers.e.shiftKey && peers.Zel.includes(peers.e.key))
-                          ? 10
-                          : 1,
-                      r = _.current,
-                      i = y[r];
-                    peers.T(i + step * n * direction, r, {
-                      commit: true,
-                    });
-                  }
-                }}
-              />
+              <OrientationRoot aria-disabled={disabled} data-disabled={disabled ? "" : undefined} {...rest} ref={bravo} onPointerDown={peers.Fp(rest.onPointerDown, () => {
+              disabled || (harbor.current = gamma);
+            })} min={min} max={max} inverted={inverted} onSlideStart={disabled ? undefined : peers.S} onSlideMove={disabled ? undefined : peers.C} onSlideEnd={disabled ? undefined : kite} onHomeKeyDown={() => {
+              return !disabled && peers.T(min, 0, {
+                commit: true
+              });
+            }} onEndKeyDown={() => {
+              return !disabled && peers.T(max, gamma.length - 1, {
+                commit: true
+              });
+            }} onStepKeyDown={({
+              event,
+              direction
+            }) => {
+              if (!disabled) {
+                let willow = peers.Xel.includes(peers.e.key) || peers.e.shiftKey && peers.Zel.includes(peers.e.key) ? 10 : 1,
+                  xenon = echo.current,
+                  i = gamma[xenon];
+                peers.T(i + step * willow * direction, xenon, {
+                  commit: true
+                });
+              }
+            }} />
             </Slot>
           </Provider>
-        </Atl>
-      );
+        </Atl>;
     });
     peers.stl.displayName = peers.$el;
     [ctl, ltl] = peers.rtl(peers.$el, {
       startEdge: "left",
       endEdge: "right",
       size: "width",
-      direction: 1,
+      direction: 1
     });
-    utl = peers.i6.forwardRef((e, t) => {
+    utl = peers.i6.forwardRef((yellow, zinc) => {
       const Ctl = peers.ctl;
       const Ftl = peers.ftl;
       let {
@@ -258,62 +218,42 @@ export function home() {
           onStepKeyDown,
           ...rest
         } = peers.e,
-        [d, f] = peers.i6.useState(null),
-        p = peers.Vp(t, (e) => {
-          return f(peers.e);
+        [amber, basalt] = peers.i6.useState(null),
+        p = peers.Vp(zinc, hazel => {
+          return basalt(peers.e);
         }),
-        m = peers.i6.useRef(undefined),
-        h = peers.N$e(dir),
-        g = h === "ltr",
-        _ = (g && !inverted) || (!g && inverted);
-      function v(e) {
-        let t = m.current || d.getBoundingClientRect(),
-          i = peers.qel([0, t.width], _ ? [min, max] : [max, min]);
-        return ((m.current = t), i(peers.e - t.left));
+        cedar = peers.i6.useRef(undefined),
+        daisy = peers.N$e(dir),
+        ember = daisy === "ltr",
+        flint = ember && !inverted || !ember && inverted;
+      function garnet(ivory) {
+        let jasper = cedar.current || amber.getBoundingClientRect(),
+          i = peers.qel([0, jasper.width], flint ? [min, max] : [max, min]);
+        return cedar.current = jasper, i(peers.e - jasper.left);
       }
-      return (
-        <Ctl
-          scope={peers.e.__scopeSlider}
-          startEdge={_ ? "left" : "right"}
-          endEdge={_ ? "right" : "left"}
-          direction={_ ? 1 : -1}
-          size="width"
-        >
-          <Ftl
-            dir={h}
-            data-orientation="horizontal"
-            {...rest}
-            ref={p}
-            style={{
-              ...rest.style,
-              "--radix-slider-thumb-transform": "translateX(-50%)",
-            }}
-            onSlideStart={(e) => {
-              let t = v(peers.e.clientX);
-              onSlideStart?.(t);
-            }}
-            onSlideMove={(e) => {
-              let t = v(peers.e.clientX);
-              onSlideMove?.(t);
-            }}
-            onSlideEnd={() => {
-              m.current = undefined;
-              onSlideEnd?.();
-            }}
-            onStepKeyDown={(e) => {
-              let t = peers.Qel[_ ? "from-left" : "from-right"].includes(
-                peers.e.key,
-              );
-              onStepKeyDown?.({
-                event: peers.e,
-                direction: t ? -1 : 1,
-              });
-            }}
-          />
-        </Ctl>
-      );
+      return <Ctl scope={peers.e.__scopeSlider} startEdge={flint ? "left" : "right"} endEdge={flint ? "right" : "left"} direction={flint ? 1 : -1} size="width">
+          <Ftl dir={daisy} data-orientation="horizontal" {...rest} ref={p} style={{
+          ...rest.style,
+          "--radix-slider-thumb-transform": "translateX(-50%)"
+        }} onSlideStart={kelp => {
+          let lotus = garnet(peers.e.clientX);
+          onSlideStart?.(lotus);
+        }} onSlideMove={mint => {
+          let nova = garnet(peers.e.clientX);
+          onSlideMove?.(nova);
+        }} onSlideEnd={() => {
+          cedar.current = undefined;
+          onSlideEnd?.();
+        }} onStepKeyDown={olive => {
+          let prism = peers.Qel[flint ? "from-left" : "from-right"].includes(peers.e.key);
+          onStepKeyDown?.({
+            event: peers.e,
+            direction: prism ? -1 : 1
+          });
+        }} />
+        </Ctl>;
     });
-    dtl = peers.i6.forwardRef((e, t) => {
+    dtl = peers.i6.forwardRef((quill, reef) => {
       const Ctl = peers.ctl;
       const Ftl = peers.ftl;
       let {
@@ -327,56 +267,37 @@ export function home() {
           ...rest
         } = peers.e,
         u = peers.i6.useRef(null),
-        d = peers.Vp(t, u),
-        f = peers.i6.useRef(undefined),
+        sage = peers.Vp(reef, u),
+        topaz = peers.i6.useRef(undefined),
         p = !inverted;
-      function m(e) {
-        let t = f.current || u.current.getBoundingClientRect(),
-          i = peers.qel([0, t.height], p ? [max, min] : [min, max]);
-        return ((f.current = t), i(peers.e - t.top));
+      function ultra(vapor) {
+        let wheat = topaz.current || u.current.getBoundingClientRect(),
+          i = peers.qel([0, wheat.height], p ? [max, min] : [min, max]);
+        return topaz.current = wheat, i(peers.e - wheat.top);
       }
-      return (
-        <Ctl
-          scope={peers.e.__scopeSlider}
-          startEdge={p ? "bottom" : "top"}
-          endEdge={p ? "top" : "bottom"}
-          size="height"
-          direction={p ? 1 : -1}
-        >
-          <Ftl
-            data-orientation="vertical"
-            {...rest}
-            ref={d}
-            style={{
-              ...rest.style,
-              "--radix-slider-thumb-transform": "translateY(50%)",
-            }}
-            onSlideStart={(e) => {
-              let t = m(peers.e.clientY);
-              onSlideStart?.(t);
-            }}
-            onSlideMove={(e) => {
-              let t = m(peers.e.clientY);
-              onSlideMove?.(t);
-            }}
-            onSlideEnd={() => {
-              f.current = undefined;
-              onSlideEnd?.();
-            }}
-            onStepKeyDown={(e) => {
-              let t = peers.Qel[p ? "from-bottom" : "from-top"].includes(
-                peers.e.key,
-              );
-              onStepKeyDown?.({
-                event: peers.e,
-                direction: t ? -1 : 1,
-              });
-            }}
-          />
-        </Ctl>
-      );
+      return <Ctl scope={peers.e.__scopeSlider} startEdge={p ? "bottom" : "top"} endEdge={p ? "top" : "bottom"} size="height" direction={p ? 1 : -1}>
+          <Ftl data-orientation="vertical" {...rest} ref={sage} style={{
+          ...rest.style,
+          "--radix-slider-thumb-transform": "translateY(50%)"
+        }} onSlideStart={yarn => {
+          let zephyr = ultra(peers.e.clientY);
+          onSlideStart?.(zephyr);
+        }} onSlideMove={acorn => {
+          let bloom = ultra(peers.e.clientY);
+          onSlideMove?.(bloom);
+        }} onSlideEnd={() => {
+          topaz.current = undefined;
+          onSlideEnd?.();
+        }} onStepKeyDown={coral => {
+          let drift = peers.Qel[p ? "from-bottom" : "from-top"].includes(peers.e.key);
+          onStepKeyDown?.({
+            event: peers.e,
+            direction: drift ? -1 : 1
+          });
+        }} />
+        </Ctl>;
     });
-    ftl = peers.i6.forwardRef((e, t) => {
+    ftl = peers.i6.forwardRef((eagle, frost) => {
       const Span = peers.Wp.span;
       let {
           __scopeSlider,
@@ -389,208 +310,137 @@ export function home() {
           ...rest
         } = peers.e,
         u = peers.otl(peers.$el, __scopeSlider);
-      return (
-        <Span
-          {...rest}
-          ref={t}
-          onKeyDown={peers.Fp(peers.e.onKeyDown, (e) => {
-            peers.e.key === "Home"
-              ? (onHomeKeyDown(peers.e), peers.e.preventDefault())
-              : peers.e.key === "End"
-                ? (onEndKeyDown(peers.e), peers.e.preventDefault())
-                : peers.Xel.concat(peers.Zel).includes(peers.e.key) &&
-                  (onStepKeyDown(peers.e), peers.e.preventDefault());
-          })}
-          onPointerDown={peers.Fp(peers.e.onPointerDown, (e) => {
-            let t = peers.e.target;
-            t.setPointerCapture(peers.e.pointerId);
-            peers.e.preventDefault();
-            u.thumbs.has(t) ? t.focus() : onSlideStart(peers.e);
-          })}
-          onPointerMove={peers.Fp(peers.e.onPointerMove, (e) => {
-            peers.e.target.hasPointerCapture(peers.e.pointerId) &&
-              onSlideMove(peers.e);
-          })}
-          onPointerUp={peers.Fp(peers.e.onPointerUp, (e) => {
-            let t = peers.e.target;
-            t.hasPointerCapture(peers.e.pointerId) &&
-              (t.releasePointerCapture(peers.e.pointerId), onSlideEnd(peers.e));
-          })}
-        />
-      );
+      return <Span {...rest} ref={frost} onKeyDown={peers.Fp(peers.e.onKeyDown, glide => {
+        peers.e.key === "Home" ? (onHomeKeyDown(peers.e), peers.e.preventDefault()) : peers.e.key === "End" ? (onEndKeyDown(peers.e), peers.e.preventDefault()) : peers.Xel.concat(peers.Zel).includes(peers.e.key) && (onStepKeyDown(peers.e), peers.e.preventDefault());
+      })} onPointerDown={peers.Fp(peers.e.onPointerDown, honey => {
+        let iris = peers.e.target;
+        iris.setPointerCapture(peers.e.pointerId);
+        peers.e.preventDefault();
+        u.thumbs.has(iris) ? iris.focus() : onSlideStart(peers.e);
+      })} onPointerMove={peers.Fp(peers.e.onPointerMove, jewel => {
+        peers.e.target.hasPointerCapture(peers.e.pointerId) && onSlideMove(peers.e);
+      })} onPointerUp={peers.Fp(peers.e.onPointerUp, knoll => {
+        let lunar = peers.e.target;
+        lunar.hasPointerCapture(peers.e.pointerId) && (lunar.releasePointerCapture(peers.e.pointerId), onSlideEnd(peers.e));
+      })} />;
     });
     ptl = "SliderTrack";
-    mtl = peers.i6.forwardRef((e, t) => {
+    mtl = peers.i6.forwardRef((moss, north) => {
       const Span = peers.Wp.span;
-      let { __scopeSlider, ...rest } = peers.e,
+      let {
+          __scopeSlider,
+          ...rest
+        } = peers.e,
         i = peers.otl(peers.ptl, __scopeSlider);
-      return (
-        <Span
-          data-disabled={i.disabled ? "" : undefined}
-          data-orientation={i.orientation}
-          {...rest}
-          ref={t}
-        />
-      );
+      return <Span data-disabled={i.disabled ? "" : undefined} data-orientation={i.orientation} {...rest} ref={north} />;
     });
     peers.mtl.displayName = peers.ptl;
     htl = "SliderRange";
-    gtl = peers.i6.forwardRef((e, t) => {
+    gtl = peers.i6.forwardRef((orbit, pine) => {
       const Span = peers.Wp.span;
-      let { __scopeSlider, ...rest } = peers.e,
+      let {
+          __scopeSlider,
+          ...rest
+        } = peers.e,
         i = peers.otl(peers.htl, __scopeSlider),
         a = peers.ltl(peers.htl, __scopeSlider),
-        o = peers.Vp(t, peers.i6.useRef(null)),
+        quest = peers.Vp(pine, peers.i6.useRef(null)),
         s = i.values.length,
-        c = i.values.map((item) => {
+        ridge = i.values.map(item => {
           return peers.Vel(peers.e, i.min, i.max);
         }),
-        l = s > 1 ? Math.min(...c) : 0,
-        u = 100 - Math.max(...c);
-      return (
-        <Span
-          data-orientation={i.orientation}
-          data-disabled={i.disabled ? "" : undefined}
-          {...rest}
-          ref={o}
-          style={{
-            ...peers.e.style,
-            [a.startEdge]: l + "%",
-            [a.endEdge]: u + "%",
-          }}
-        />
-      );
+        storm = s > 1 ? Math.min(...ridge) : 0,
+        u = 100 - Math.max(...ridge);
+      return <Span data-orientation={i.orientation} data-disabled={i.disabled ? "" : undefined} {...rest} ref={quest} style={{
+        ...peers.e.style,
+        [a.startEdge]: storm + "%",
+        [a.endEdge]: u + "%"
+      }} />;
     });
     peers.gtl.displayName = peers.htl;
     _tl = "SliderThumb";
-    vtl = peers.i6.forwardRef((e, t) => {
+    vtl = peers.i6.forwardRef((tide, unity) => {
       const Ytl = peers.ytl;
-      let n = peers.ttl(peers.e.__scopeSlider),
-        [r, i] = peers.i6.useState(null),
-        a = peers.Vp(t, (e) => {
+      let vale = peers.ttl(peers.e.__scopeSlider),
+        [wave, i] = peers.i6.useState(null),
+        a = peers.Vp(unity, brook => {
           return i(peers.e);
         }),
-        o = peers.i6.useMemo(() => {
-          return r
-            ? n().findIndex((item) => {
-                return peers.e.ref.current === r;
-              })
-            : -1;
-        }, [n, r]);
-      return <Ytl {...peers.e} ref={a} index={o} />;
+        apex = peers.i6.useMemo(() => {
+          return wave ? vale().findIndex(item => {
+            return peers.e.ref.current === wave;
+          }) : -1;
+        }, [vale, wave]);
+      return <Ytl {...peers.e} ref={a} index={apex} />;
     });
-    ytl = peers.i6.forwardRef((e, t) => {
+    ytl = peers.i6.forwardRef((cliff, dusk) => {
       const ItemSlot = peers.etl.ItemSlot;
       const Span = peers.Wp.span;
       const Xtl = peers.xtl;
-      let { __scopeSlider, index, name, ...rest } = peers.e,
-        o = peers.otl(peers._tl, __scopeSlider),
+      let {
+          __scopeSlider,
+          index,
+          name,
+          ...rest
+        } = peers.e,
+        elm = peers.otl(peers._tl, __scopeSlider),
         s = peers.ltl(peers._tl, __scopeSlider),
-        [c, l] = peers.i6.useState(null),
-        u = peers.Vp(t, (e) => {
-          return l(peers.e);
+        [fern, grove] = peers.i6.useState(null),
+        u = peers.Vp(dusk, oak => {
+          return grove(peers.e);
         }),
-        d = c ? o.form || !!c.closest("form") : true,
-        f = peers.K2e(c),
-        p = o.values[index],
-        m = p === undefined ? 0 : peers.Vel(p, o.min, o.max),
-        h = peers.Hel(index, o.values.length),
-        g = f?.[s.size],
-        _ = g ? peers.Wel(g, m, s.direction) : 0;
-      return (
-        peers.i6.useEffect(() => {
-          if (c)
-            return (
-              o.thumbs.add(c),
-              () => {
-                o.thumbs.delete(c);
-              }
-            );
-        }, [c, o.thumbs]),
-        (
-          <span
-            style={{
-              transform: "var(--radix-slider-thumb-transform)",
-              position: "absolute",
-              [s.startEdge]: `calc(${m}% + ${_}px)`,
-            }}
-          >
-            {
-              <ItemSlot scope={peers.e.__scopeSlider}>
-                <Span
-                  role="slider"
-                  aria-label={peers.e["aria-label"] || h}
-                  aria-valuemin={o.min}
-                  aria-valuenow={p}
-                  aria-valuemax={o.max}
-                  aria-orientation={o.orientation}
-                  data-orientation={o.orientation}
-                  data-disabled={o.disabled ? "" : undefined}
-                  tabIndex={o.disabled ? undefined : 0}
-                  {...rest}
-                  ref={u}
-                  style={
-                    p === undefined
-                      ? {
-                          display: "none",
-                        }
-                      : peers.e.style
-                  }
-                  onFocus={peers.Fp(peers.e.onFocus, () => {
-                    o.valueIndexToChangeRef.current = index;
-                  })}
-                />
-              </ItemSlot>
-            }
-            {d && (
-              <Xtl
-                key={index}
-                name={
-                  name ??
-                  (o.name
-                    ? o.name + (o.values.length > 1 ? "[]" : "")
-                    : undefined)
-                }
-                form={o.form}
-                value={p}
-              />
-            )}
-          </span>
-        )
-      );
+        hill = fern ? elm.form || !!fern.closest("form") : true,
+        isle = peers.K2e(fern),
+        p = elm.values[index],
+        juniper = p === undefined ? 0 : peers.Vel(p, elm.min, elm.max),
+        lagoon = peers.Hel(index, elm.values.length),
+        meadow = isle?.[s.size],
+        nest = meadow ? peers.Wel(meadow, juniper, s.direction) : 0;
+      return peers.i6.useEffect(() => {
+        if (fern) return elm.thumbs.add(fern), () => {
+          elm.thumbs.delete(fern);
+        };
+      }, [fern, elm.thumbs]), <span style={{
+        transform: "var(--radix-slider-thumb-transform)",
+        position: "absolute",
+        [s.startEdge]: `calc(${juniper}% + ${nest}px)`
+      }}>
+            {<ItemSlot scope={peers.e.__scopeSlider}>
+                <Span role="slider" aria-label={peers.e["aria-label"] || lagoon} aria-valuemin={elm.min} aria-valuenow={p} aria-valuemax={elm.max} aria-orientation={elm.orientation} data-orientation={elm.orientation} data-disabled={elm.disabled ? "" : undefined} tabIndex={elm.disabled ? undefined : 0} {...rest} ref={u} style={p === undefined ? {
+            display: "none"
+          } : peers.e.style} onFocus={peers.Fp(peers.e.onFocus, () => {
+            elm.valueIndexToChangeRef.current = index;
+          })} />
+              </ItemSlot>}
+            {hill && <Xtl key={index} name={name ?? (elm.name ? elm.name + (elm.values.length > 1 ? "[]" : "") : undefined)} form={elm.form} value={p} />}
+          </span>;
     });
     peers.vtl.displayName = peers._tl;
     btl = "RadioBubbleInput";
-    xtl = peers.i6.forwardRef(({ __scopeSlider, value, ...rest }, r) => {
+    xtl = peers.i6.forwardRef(({
+      __scopeSlider,
+      value,
+      ...rest
+    }, petal) => {
       const Input = peers.Wp.input;
       let i = peers.i6.useRef(null),
-        a = peers.Vp(i, r),
-        o = peers.DJi(value);
-      return (
-        peers.i6.useEffect(() => {
-          let e = i.current;
-          if (!peers.e) return;
-          let n = window.HTMLInputElement.prototype,
-            r = Object.getOwnPropertyDescriptor(n, "value").set;
-          if (o !== value && r) {
-            let n = new peers.Event("input", {
-              bubbles: true,
-            });
-            r.call(peers.e, value);
-            peers.e.dispatchEvent(n);
-          }
-        }, [o, value]),
-        (
-          <Input
-            style={{
-              display: "none",
-            }}
-            {...rest}
-            ref={a}
-            defaultValue={value}
-          />
-        )
-      );
+        a = peers.Vp(i, petal),
+        quiet = peers.DJi(value);
+      return peers.i6.useEffect(() => {
+        let rain = i.current;
+        if (!peers.e) return;
+        let seed = window.HTMLInputElement.prototype,
+          trail = Object.getOwnPropertyDescriptor(seed, "value").set;
+        if (quiet !== value && trail) {
+          let urn = new peers.Event("input", {
+            bubbles: true
+          });
+          trail.call(peers.e, value);
+          peers.e.dispatchEvent(urn);
+        }
+      }, [quiet, value]), <Input style={{
+        display: "none"
+      }} {...rest} ref={a} defaultValue={value} />;
     });
     peers.xtl.displayName = peers.btl;
     Stl = peers.stl;

@@ -1,26 +1,43 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export _3 / mE
+// Materialized via extractFn(internal `mE`) / export `_3`.
 
 export type DeferredAccount3Peers = {
-  impl: (...args: unknown[]) => unknown;
+  Ia: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Xf: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  Hf: { ONE_MINUTE: number; FIVE_MINUTES?: number; [k: string]: unknown };
+  Uh: { safeGet: (...args: unknown[]) => Promise<unknown>; [k: string]: unknown };
 };
 
 let peers: DeferredAccount3Peers | null = null;
 
-/** Wire deferredAccount3 once companions land. */
+/** Wire deferredAccount3 peers once companions land. */
 export function setDeferredAccount3Peers(next: DeferredAccount3Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `_3` / internal `mE`.
- * Stage-3 fill for bundle export _3 / mE
  */
-export function deferredAccount3(...args: unknown[]): unknown {
+export function deferredAccount3() {
   if (peers == null) {
     throw new Error("deferredAccount3 peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.Ia(peers.Q, () => ({
+    queryKey: [`rate-limit-status`],
+    queryFn: async () => {
+      try {
+        return await peers.Uh.safeGet(`/wham/usage`);
+      } catch (e) {
+        if (peers.e instanceof peers.Xf && (peers.e.status === 401 || peers.e.status === 403 || peers.e.status === 404)) return null;
+        throw peers.e;
+      }
+    },
+    retry: !1,
+    refetchInterval: peers.Hf.ONE_MINUTE,
+    refetchIntervalInBackground: !1,
+    refetchOnWindowFocus: !0,
+    staleTime: peers.Hf.ONE_MINUTE
+  }));
 }

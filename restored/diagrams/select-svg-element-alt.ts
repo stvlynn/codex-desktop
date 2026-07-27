@@ -36,4 +36,3 @@ export function initSelectSvgElementChunk(): void {
   initDayjsLoggerRuntime();
   initD3Bundle();
 }
-export { initSelectSvgElementChunk as t, selectSvgElement as n };

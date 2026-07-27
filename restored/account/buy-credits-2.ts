@@ -1,26 +1,45 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export $p / arc
+// Materialized via extractFn(internal `arc`) / export `$p`.
 
-export type BuyCreditsPeers = {
-  impl: (...args: unknown[]) => unknown;
+export type BuyCredits2Peers = {
+  Fh: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  PZ: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  gEs: (...args: unknown[]) => unknown;
+  irc: (...args: unknown[]) => unknown;
+  nrc: (...args: unknown[]) => unknown;
+  qx: (...args: unknown[]) => unknown;
+  rrc: (...args: unknown[]) => unknown;
+  trc: (...args: unknown[]) => unknown;
 };
 
-let peers: BuyCreditsPeers | null = null;
+let peers: BuyCredits2Peers | null = null;
 
-/** Wire buyCredits once companions land. */
-export function setBuyCreditsPeers(next: BuyCreditsPeers): void {
+/** Wire buyCredits2 peers once companions land. */
+export function setBuyCredits2Peers(next: BuyCredits2Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `$p` / internal `arc`.
- * Stage-3 fill for bundle export $p / arc
  */
-export function buyCredits(...args: unknown[]): unknown {
+export function buyCredits2() {
   if (peers == null) {
-    throw new Error("buyCredits peers are not configured");
+    throw new Error("buyCredits2 peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.e(() => {
+    peers.Ho(), peers.gEs(), peers.ed(), peers.Fh(), peers.PZ(), peers.qx(), trc = {
+      personal: `3605558075`,
+      workspace_owner: `1385051397`,
+      workspace_member: `2673725514`
+    }, nrc = {
+      enabled: !1,
+      remainingThresholdPercent: 20,
+      ctaVariant: `default`
+    }, rrc = peers.Ta(peers.Q, () => new Set()), irc = peers.Ta(peers.Q, () => new Set());
+  });
 }

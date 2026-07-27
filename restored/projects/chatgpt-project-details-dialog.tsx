@@ -46,9 +46,7 @@ export type BindChatGptProjectDetailsDialogPeers = {
 let peers: BindChatGptProjectDetailsDialogPeers | null = null;
 
 /** Wire bindChatGptProjectDetailsDialog peers once companions land. */
-export function setBindChatGptProjectDetailsDialogPeers(
-  next: BindChatGptProjectDetailsDialogPeers,
-): void {
+export function setBindChatGptProjectDetailsDialogPeers(next: BindChatGptProjectDetailsDialogPeers): void {
   peers = next;
 }
 
@@ -58,329 +56,236 @@ export function setBindChatGptProjectDetailsDialogPeers(
 export function bindChatGptProjectDetailsDialog(props: unknown) {
   const NUl = peers.NUl;
   const BUl = peers.BUl;
-  const NA = peers.nA;
-  const Xk = peers.Xk;
+  const Alpha = peers.nA;
+  const Bravo = peers.Xk;
   if (peers == null) {
     throw new Error("bindChatGptProjectDetailsDialog peers are not configured");
   }
-  let { onOpenChange, project, projectCrudStatus } = props,
+  let {
+      onOpenChange,
+      project,
+      projectCrudStatus
+    } = props,
     a = peers.Io(peers.Q),
-    o = peers.Ju(),
+    copper = peers.Ju(),
     s = peers.rt(),
-    c = a.get(peers.MV);
-  let l = c,
+    delta = a.get(peers.MV);
+  let echo = delta,
     u = peers.x5.useRef(null),
-    d = peers.V8i(),
-    f = peers.x5.useId(),
+    falcon = peers.V8i(),
+    gamma = peers.x5.useId(),
     p = peers.x5.useId(),
-    m = peers.x5.useId(),
-    [h, g] = peers.x5.useState("main"),
-    [_, v] = peers.x5.useState(false),
-    y = [];
-  let [b, x] = peers.x5.useState(y),
-    [S, C] = peers.x5.useState(""),
-    w = project.gizmo.id,
-    T = project.gizmo.display.emoji ?? null,
-    E = project.gizmo.display.name,
-    D = project.gizmo.display.theme ?? null,
-    O = project.gizmo.instructions ?? null,
-    k = project.gizmo.memory_scope,
-    A = h === "advanced" && (O == null || k == null),
-    j = ["chatgpt-project-details", w];
-  let M = () => {
-    return l.getGizmo(w);
+    harbor = peers.x5.useId(),
+    [indigo, jade] = peers.x5.useState("main"),
+    [kite, lemon] = peers.x5.useState(false),
+    marble = [];
+  let [b, nickel] = peers.x5.useState(marble),
+    [onyx, pearl] = peers.x5.useState(""),
+    quartz = project.gizmo.id,
+    river = project.gizmo.display.emoji ?? null,
+    slate = project.gizmo.display.name,
+    timber = project.gizmo.display.theme ?? null,
+    umbra = project.gizmo.instructions ?? null,
+    violet = project.gizmo.memory_scope,
+    willow = indigo === "advanced" && (umbra == null || violet == null),
+    xenon = ["chatgpt-project-details", quartz];
+  let yellow = () => {
+    return echo.getGizmo(quartz);
   };
-  let N = {
-    queryKey: j,
-    queryFn: M,
-    enabled: A,
-    staleTime: peers.Hf.ONE_MINUTE,
+  let zinc = {
+    queryKey: xenon,
+    queryFn: yellow,
+    enabled: willow,
+    staleTime: peers.Hf.ONE_MINUTE
   };
-  let P = peers.jt(N),
-    F = O ?? P.data?.gizmo.instructions ?? "",
-    I = F.slice(0, peers.jWl);
-  let L = I,
-    [R, z] = peers.x5.useState(T),
-    [B, V] = peers.x5.useState(E),
-    [H, U] = peers.x5.useState(D),
-    [W, G] = peers.x5.useState(null),
-    [K, q] = peers.x5.useState(false),
-    [ee, te] = peers.x5.useState(false),
-    ne = B.trim();
-  let re = ne,
-    ie = re.length === 0,
-    ae = re.length > peers.AWl,
-    oe = ie || ae,
-    se = project.gizmo.current_user_permission?.can_write,
-    ce = peers.cja(se, projectCrudStatus);
-  let le = ce,
-    ue = le,
-    de = E.trim();
-  let fe = re !== de,
-    pe = R !== T || H !== D,
-    me = W ?? L,
-    he = me !== L,
-    ge = O == null && P.isPending,
-    _e = O == null && P.isError,
-    ve =
-      k ??
-      (P.data != null && "memory_scope" in P.data.gizmo
-        ? P.data.gizmo.memory_scope
-        : undefined),
-    ye,
+  let amber = peers.jt(zinc),
+    basalt = umbra ?? amber.data?.gizmo.instructions ?? "",
+    cedar = basalt.slice(0, peers.jWl);
+  let daisy = cedar,
+    [ember, flint] = peers.x5.useState(river),
+    [garnet, hazel] = peers.x5.useState(slate),
+    [ivory, jasper] = peers.x5.useState(timber),
+    [kelp, lotus] = peers.x5.useState(null),
+    [mint, q] = peers.x5.useState(false),
+    [Nova, Olive] = peers.x5.useState(false),
+    Prism = garnet.trim();
+  let Quill = Prism,
+    Reef = Quill.length === 0,
+    Sage = Quill.length > peers.AWl,
+    Topaz = Reef || Sage,
+    Ultra = project.gizmo.current_user_permission?.can_write,
+    Vapor = peers.cja(Ultra, projectCrudStatus);
+  let Wheat = Vapor,
+    Yarn = Wheat,
+    Zephyr = slate.trim();
+  let Acorn = Quill !== Zephyr,
+    Bloom = ember !== river || ivory !== timber,
+    Coral = kelp ?? daisy,
+    Drift = Coral !== daisy,
+    Eagle = umbra == null && amber.isPending,
+    _e = umbra == null && amber.isError,
+    Frost = violet ?? (amber.data != null && "memory_scope" in amber.data.gizmo ? amber.data.gizmo.memory_scope : undefined),
+    Glide,
     be;
-  ye = ve == null ? null : peers.uja(ve);
-  be = ye == null ? null : peers.dja(ye, project.gizmo.gizmo_snorlax_type);
-  let xe = be,
-    Se = peers.wWl(project);
-  let Ce = Se,
-    we = ["chatgpt-project-connector-scopes", w];
-  let Te = () => {
-    return peers.TWl(l, w);
+  Glide = Frost == null ? null : peers.uja(Frost);
+  be = Glide == null ? null : peers.dja(Glide, project.gizmo.gizmo_snorlax_type);
+  let Honey = be,
+    Iris = peers.wWl(project);
+  let Jewel = Iris,
+    Knoll = ["chatgpt-project-connector-scopes", quartz];
+  let Lunar = () => {
+    return peers.TWl(echo, quartz);
   };
-  let Ee = {
-    queryKey: we,
-    queryFn: Te,
-    enabled: Ce,
-    staleTime: peers.Hf.ONE_MINUTE,
+  let Moss = {
+    queryKey: Knoll,
+    queryFn: Lunar,
+    enabled: Jewel,
+    staleTime: peers.Hf.ONE_MINUTE
   };
-  let De = peers.jt(Ee),
-    Oe = peers.yUl(w);
-  let ke = () => {
-    return peers.EWl(l, w);
+  let North = peers.jt(Moss),
+    Orbit = peers.yUl(quartz);
+  let Pine = () => {
+    return peers.EWl(echo, quartz);
   };
-  let Ae = {
-    queryKey: Oe,
-    queryFn: ke,
-    staleTime: peers.Hf.ONE_MINUTE,
+  let Quest = {
+    queryKey: Orbit,
+    queryFn: Pine,
+    staleTime: peers.Hf.ONE_MINUTE
   };
-  let je = peers.jt(Ae),
-    Me = {
-      projectId: w,
+  let Ridge = peers.jt(Quest),
+    Storm = {
+      projectId: quartz
     };
-  let Ne = peers.CUl(Me),
-    Pe = {
-      projectId: w,
+  let Tide = peers.CUl(Storm),
+    Unity = {
+      projectId: quartz
     };
-  let Fe = peers.wUl(Pe),
-    Ie = (Ce && De.isPending) || je.isPending,
-    Le = (Ce && De.isError) || je.isError,
-    Re = ue && !Ne.isPending,
-    ze = le && !K && !oe && (fe || pe || he),
-    Be = (e, t, n) => {
-      let r = peers.dUl(e)?.trim() || n;
-      a.get(peers.rh).danger(t, {
-        description: r,
+  let Vale = peers.wUl(Unity),
+    Wave = Jewel && North.isPending || Ridge.isPending,
+    Apex = Jewel && North.isError || Ridge.isError,
+    Brook = Yarn && !Tide.isPending,
+    Cliff = Wheat && !mint && !Topaz && (Acorn || Bloom || Drift),
+    Dusk = (dew, ever, field) => {
+      let grain = peers.dUl(dew)?.trim() || field;
+      a.get(peers.rh).danger(ever, {
+        description: grain
       });
-      d() && C(`${t}: ${r}`);
+      falcon() && pearl(`${ever}: ${grain}`);
     };
-  let Ve = Be,
-    He = (e) => {
-      e.length === 0 ||
-        !ue ||
-        Ne.isPending ||
-        (x(e),
-        C(""),
-        Ne.mutateAsync(e)
-          .catch((error) => {
-            Ve(
-              error,
-              o.formatMessage({
-                id: "chatgptConversations.sidebar.projectSettings.addSourceError",
-                defaultMessage: "Could not add sources",
-                description:
-                  "Error state for adding sources to a ChatGPT project",
-              }),
-              o.formatMessage({
-                id: "chatgptConversations.sidebar.projectSettings.addSourceErrorDescription",
-                defaultMessage: "Try again",
-                description:
-                  "Fallback toast description when adding sources to a ChatGPT project fails without a user-facing server message",
-              }),
-            );
-          })
-          .finally(() => {
-            d() && x([]);
-          }));
+  let Elm = Dusk,
+    Fern = haven => {
+      haven.length === 0 || !Yarn || Tide.isPending || (nickel(haven), pearl(""), Tide.mutateAsync(haven).catch(error => {
+        Elm(error, copper.formatMessage({
+          id: "chatgptConversations.sidebar.projectSettings.addSourceError",
+          defaultMessage: "Could not add sources",
+          description: "Error state for adding sources to a ChatGPT project"
+        }), copper.formatMessage({
+          id: "chatgptConversations.sidebar.projectSettings.addSourceErrorDescription",
+          defaultMessage: "Try again",
+          description: "Fallback toast description when adding sources to a ChatGPT project fails without a user-facing server message"
+        }));
+      }).finally(() => {
+        falcon() && nickel([]);
+      }));
     };
-  let Ue = He,
-    We = (e) => {
-      C("");
-      Fe.mutateAsync(e).catch((error) => {
-        Ve(
-          error,
-          o.formatMessage({
-            id: "chatgptConversations.sidebar.projectSettings.deleteSourceError",
-            defaultMessage: "Could not delete source",
-            description:
-              "Error state for deleting a source from a ChatGPT project",
-          }),
-          o.formatMessage({
-            id: "chatgptConversations.sidebar.projectSettings.deleteSourceErrorDescription",
-            defaultMessage: "Try again",
-            description:
-              "Fallback toast description when deleting a source from a ChatGPT project fails without a user-facing server message",
-          }),
-        );
+  let Grove = Fern,
+    Hill = ink => {
+      pearl("");
+      Vale.mutateAsync(ink).catch(error => {
+        Elm(error, copper.formatMessage({
+          id: "chatgptConversations.sidebar.projectSettings.deleteSourceError",
+          defaultMessage: "Could not delete source",
+          description: "Error state for deleting a source from a ChatGPT project"
+        }), copper.formatMessage({
+          id: "chatgptConversations.sidebar.projectSettings.deleteSourceErrorDescription",
+          defaultMessage: "Try again",
+          description: "Fallback toast description when deleting a source from a ChatGPT project fails without a user-facing server message"
+        }));
       });
     };
-  let Ge = We,
-    Ke = (event) => {
-      let t = Array.from(event.currentTarget.files ?? []);
+  let Isle = Hill,
+    Juniper = event => {
+      let jadeite = Array.from(event.currentTarget.files ?? []);
       event.currentTarget.value = "";
-      Ue(t);
+      Grove(jadeite);
     };
-  let qe = Ke,
-    Je = (event) => {
-      peers.mU(event.dataTransfer) && (peers.CWl(event, Re), Re && v(true));
+  let Lagoon = Juniper,
+    Meadow = event => {
+      peers.mU(event.dataTransfer) && (peers.CWl(event, Brook), Brook && lemon(true));
     };
-  let Ye = Je,
-    Xe = (event) => {
-      peers.mU(event.dataTransfer) && (peers.CWl(event, Re), Re && v(true));
+  let Nest = Meadow,
+    Oak = event => {
+      peers.mU(event.dataTransfer) && (peers.CWl(event, Brook), Brook && lemon(true));
     };
-  let Ze = Xe,
-    Qe = (event) => {
-      (event.relatedTarget instanceof peers.Node &&
-        event.currentTarget.contains(event.relatedTarget)) ||
-        v(false);
+  let Petal = Oak,
+    Quiet = event => {
+      event.relatedTarget instanceof peers.Node && event.currentTarget.contains(event.relatedTarget) || lemon(false);
     };
-  let $e = Qe,
-    J = (event) => {
-      peers.mU(event.dataTransfer) &&
-        (peers.CWl(event, Re),
-        v(false),
-        Re && Ue(peers.q6o(event.dataTransfer)));
+  let $e = Quiet,
+    rain = event => {
+      peers.mU(event.dataTransfer) && (peers.CWl(event, Brook), lemon(false), Brook && Grove(peers.q6o(event.dataTransfer)));
     };
-  let et = J,
-    tt = async () => {
-      te(false);
+  let Seed = rain,
+    Trail = async () => {
+      Olive(false);
       q(true);
       try {
         await peers.bUl({
-          emoji: R,
-          instructions: he ? me : null,
-          name: B,
+          emoji: ember,
+          instructions: Drift ? Coral : null,
+          name: garnet,
           project,
           queryClient: s,
           scope: a,
-          theme: H,
+          theme: ivory
         });
         q(false);
         onOpenChange(false);
       } catch {
-        te(true);
+        Olive(true);
         q(false);
       }
     };
-  let nt = tt,
-    it = (event) => {
+  let Urn = Trail,
+    Vine = event => {
       event.preventDefault();
-      !(h === "advanced" || !ze) && nt();
+      !(indigo === "advanced" || !Cliff) && Urn();
     };
-  let at = it,
-    ot = (e) => {
-      (!e && K) || onOpenChange(e);
+  let at = Vine,
+    Wind = kernel => {
+      !kernel && mint || onOpenChange(kernel);
     };
-  let st = ot,
-    ct = {
-      "aria-describedby": undefined,
+  let Yarrow = Wind,
+    Azure = {
+      "aria-describedby": undefined
     };
-  let lt = (
-    <span aria-atomic="true" aria-live="assertive" className="sr-only">
-      {S}
-    </span>
-  );
-  let ut =
-    h === "advanced" ? (
-      <NUl
-        canEditProject={le}
-        didLoadInstructionsFail={_e}
-        instructions={me}
-        instructionsInputId={m}
-        isLoadingInstructions={ge}
-        isSaving={K}
-        libraryAccess={xe}
-        memoryAccess={ye}
-        maxInstructionsLength={peers.jWl}
-        onBack={() => {
-          g("main");
-        }}
-        onInstructionsChange={(e) => {
-          G(e);
-          te(false);
-        }}
-      />
-    ) : (
-      <BUl
-        canAddSources={ue}
-        canDeleteFileSources={ue}
-        canEditProject={le}
-        canOpenAdvanced={!oe && !K}
-        canSave={ze}
-        connectorScopes={Ce ? (De.data?.items ?? []) : []}
-        didSaveFail={ee}
-        editDisabledStatus={le ? undefined : projectCrudStatus}
-        emoji={R}
-        fileInputRef={u}
-        hasNameError={oe}
-        isAddingSources={Ne.isPending}
-        isError={Le}
-        isLoading={Ie}
-        isNameEmpty={ie}
-        isNameTooLong={ae}
-        isSaving={K}
-        isSourceDragActive={_}
-        maxNameLength={peers.AWl}
-        mayHaveUnfetchedProjectSaves={je.data?.cursor != null}
-        name={B}
-        nameErrorId={p}
-        nameInputId={f}
-        optimisticallyDeletedFileIds={Fe.optimisticallyDeletedFileIds}
-        pendingSourceFiles={b}
-        projectId={w}
-        projectFiles={project.files ?? []}
-        projectShortUrl={project.gizmo.short_url}
-        projectSaves={je.data?.items ?? []}
-        theme={H}
-        onAddSourceClick={() => {
-          return u.current?.click();
-        }}
-        onAdvanced={() => {
-          g("advanced");
-        }}
-        onDeleteFileSource={Ge}
-        onEmojiChange={(e) => {
-          z(e);
-          te(false);
-        }}
-        onFileInputChange={qe}
-        onNameChange={(event) => {
-          V(event.target.value);
-          te(false);
-        }}
-        onSourcesDragEnter={Ye}
-        onSourcesDragLeave={$e}
-        onSourcesDragOver={Ze}
-        onSourcesDrop={et}
-        onThemeChange={(e) => {
-          U(e);
-          te(false);
-        }}
-      />
-    );
-  let dt = (
-    <NA
-      as="form"
-      className="max-h-[calc(100vh-6rem)] min-h-0 gap-4 overflow-hidden"
-      onSubmit={at}
-    >
+  let lt = <span aria-atomic="true" aria-live="assertive" className="sr-only">
+      {onyx}
+    </span>;
+  let Birch = indigo === "advanced" ? <NUl canEditProject={Wheat} didLoadInstructionsFail={_e} instructions={Coral} instructionsInputId={harbor} isLoadingInstructions={Eagle} isSaving={mint} libraryAccess={Honey} memoryAccess={Glide} maxInstructionsLength={peers.jWl} onBack={() => {
+    jade("main");
+  }} onInstructionsChange={leaf => {
+    lotus(leaf);
+    Olive(false);
+  }} /> : <BUl canAddSources={Yarn} canDeleteFileSources={Yarn} canEditProject={Wheat} canOpenAdvanced={!Topaz && !mint} canSave={Cliff} connectorScopes={Jewel ? North.data?.items ?? [] : []} didSaveFail={Nova} editDisabledStatus={Wheat ? undefined : projectCrudStatus} emoji={ember} fileInputRef={u} hasNameError={Topaz} isAddingSources={Tide.isPending} isError={Apex} isLoading={Wave} isNameEmpty={Reef} isNameTooLong={Sage} isSaving={mint} isSourceDragActive={kite} maxNameLength={peers.AWl} mayHaveUnfetchedProjectSaves={Ridge.data?.cursor != null} name={garnet} nameErrorId={p} nameInputId={gamma} optimisticallyDeletedFileIds={Vale.optimisticallyDeletedFileIds} pendingSourceFiles={b} projectId={quartz} projectFiles={project.files ?? []} projectShortUrl={project.gizmo.short_url} projectSaves={Ridge.data?.items ?? []} theme={ivory} onAddSourceClick={() => {
+    return u.current?.click();
+  }} onAdvanced={() => {
+    jade("advanced");
+  }} onDeleteFileSource={Isle} onEmojiChange={maple => {
+    flint(maple);
+    Olive(false);
+  }} onFileInputChange={Lagoon} onNameChange={event => {
+    hazel(event.target.value);
+    Olive(false);
+  }} onSourcesDragEnter={Nest} onSourcesDragLeave={$e} onSourcesDragOver={Petal} onSourcesDrop={Seed} onThemeChange={nimbus => {
+    jasper(nimbus);
+    Olive(false);
+  }} />;
+  let Canyon = <Alpha as="form" className="max-h-[calc(100vh-6rem)] min-h-0 gap-4 overflow-hidden" onSubmit={at}>
       {lt}
-      {ut}
-    </NA>
-  );
-  return (
-    <Xk open={true} contentProps={ct} onOpenChange={st} size="default">
-      {dt}
-    </Xk>
-  );
+      {Birch}
+    </Alpha>;
+  return <Bravo open={true} contentProps={Azure} onOpenChange={Yarrow} size="default">
+      {Canyon}
+    </Bravo>;
 }

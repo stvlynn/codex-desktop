@@ -1,42 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export $L / Wna
+// Materialized via extractFn(internal `Wna`) / export `$L`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type WindowsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type WindowsPeers = {
+  Uf: (...args: unknown[]) => unknown;
+  Una: (...args: unknown[]) => unknown;
+  ap: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  dk: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
-type WindowsImpl = (props: WindowsProps) => ReactNode;
-let impl: WindowsImpl | null = null;
+let peers: WindowsPeers | null = null;
 
-/** Wire the full Windows once deeper restore lands. */
-export function bindWindows(next: WindowsImpl): void {
-  impl = next;
+/** Wire Windows peers once companions land. */
+export function setWindowsPeers(next: WindowsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `$L` / internal `Wna`.
- * Stage-3 fill for bundle export $L / Wna; heavy UI via bind.
  */
-export function Windows(props: WindowsProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="$L"
-      aria-label="Windows"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export $L / Wna
-        </div>
-      )}
-    </div>
-  );
+export function Windows() {
+  if (peers == null) {
+    throw new Error("Windows peers are not configured");
+  }
+  return peers.e(() => {
+    Una = peers.c(), peers.dk(), peers.Uf(), peers.ap();
+  });
 }

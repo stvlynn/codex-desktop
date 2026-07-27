@@ -56,10 +56,7 @@ import {
   x as _chunkICPOFSXXX,
   y as _chunkICPOFSXXY,
 } from "../../diagrams/mermaid-config-alt";
-import {
-  n as chunk426QAEUCN,
-  t as chunk426QAEUCT,
-} from "../../diagrams/select-svg-element-alt";
+import { selectSvgElement as chunk426QAEUCN, initSelectSvgElementChunk as chunk426QAEUCT } from "../../diagrams/select-svg-element-alt";
 import {
   chunk5PVQY5BWA,
   chunk5PVQY5BWF,
@@ -75,18 +72,14 @@ import {
 } from "./mermaid-create-text-alt";
 import { initMermaidLineOffsetAltChunk as chunkBSJP7CBPR } from "../../diagrams/line-offset-helpers-alt";
 import { initSubGraphTitleMarginsAlt as chunkZZ45TVLER } from "../../diagrams/subgraph-title-margins-alt";
-import { n as chunkX2U36JSPN } from "../../diagrams/style-helpers-alt";
+import { initStyleHelpersChunk as chunkX2U36JSPN } from "../../diagrams/style-helpers-alt";
 import { chunk5FUZZQ4RI } from "./mermaid-flowchart-nodes-alt";
 import { chunkENJZ2VHEN } from "./mermaid-flowchart-edges-alt";
 import {
   chunk336JU56ON,
   chunk336JU56OR,
 } from "../../diagrams/mermaid-layout-loaders-alt";
-import {
-  n as chunkXPW4576IN,
-  r as chunkXPW4576IR,
-  t as chunkXPW4576IT,
-} from "../../utils/mermaid-js-yaml-core";
+import { initMermaidJsYamlCore as chunkXPW4576IN, yamlLoad as chunkXPW4576IR, yamlCoreSchema as chunkXPW4576IT } from "../../utils/mermaid-js-yaml-core";
 import {
   compile as mermaidCoreImport1,
   stringify as mermaidCoreImport2,

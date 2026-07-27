@@ -29,12 +29,9 @@ import {
   v as _chunkABZYJK2DV,
   y as chunkABZYJK2DY,
 } from "./mermaid-config";
-import { n as chunkEXTU4WIEN, t as chunkEXTU4WIET } from "./select-svg-element";
+import { initSelectSvgElementChunk as chunkEXTU4WIEN, selectSvgElement as chunkEXTU4WIET } from "./select-svg-element";
 import { chunkS3R3BYOJR, chunkS3R3BYOJU } from "./mermaid-common-utils";
-import {
-  n as chunk4BX2VUABN,
-  t as chunk4BX2VUABT,
-} from "./populate-common-db-alt";
+import { initPopulateCommonDbChunk as chunk4BX2VUABN, populateCommonDb as chunk4BX2VUABT } from "./populate-common-db-alt";
 import {
   mermaidParserCoreN,
   mermaidParserCoreT,

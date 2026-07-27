@@ -40,22 +40,12 @@ import {
   v as _chunkICPOFSXXV,
   y as chunkICPOFSXXY,
 } from "./mermaid-config-alt";
-import {
-  n as chunk426QAEUCN,
-  t as chunk426QAEUCT,
-} from "./select-svg-element-alt";
+import { initSelectSvgElementChunk as chunk426QAEUCN, selectSvgElement as chunk426QAEUCT } from "./select-svg-element-alt";
 import { chunk5PVQY5BWR, chunk5PVQY5BWU } from "./mermaid-common-utils-alt";
-import { n as chunk4BX2VUABN, t as chunk4BX2VUABT } from "./populate-common-db";
+import { initPopulateCommonDbChunk as chunk4BX2VUABN, populateCommonDb as chunk4BX2VUABT } from "./populate-common-db";
 import { mermaidParserCoreN, mermaidParserCoreT } from "./mermaid-parser-core";
-import {
-  n as chunkEDXVE4YYN,
-  t as chunkEDXVE4YYT,
-} from "./setup-viewport-for-svg-alt";
-import {
-  a as chunkX2U36JSPA,
-  n as chunkX2U36JSPN,
-  r as chunkX2U36JSPR,
-} from "./style-helpers-alt";
+import { initSetupViewPortForSvgChunk as chunkEDXVE4YYN, setupViewPortForSVG as chunkEDXVE4YYT } from "./setup-viewport-for-svg-alt";
+import { styles2String as chunkX2U36JSPA, initStyleHelpersChunk as chunkX2U36JSPN, isLabelStyle as chunkX2U36JSPR } from "./style-helpers-alt";
 function diagramG4DWMVQ6Helper1(treemapSlot10) {
   if (!treemapSlot10.length) return [];
   let treemapItem65 = [],

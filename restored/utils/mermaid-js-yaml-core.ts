@@ -16,4 +16,3 @@ export const yamlCoreSchema: Schema = CORE_SCHEMA;
 export function yamlLoad(source: string, options?: LoadOptions): unknown {
   return yaml.load(source, options);
 }
-export { initMermaidJsYamlCore as n, yamlLoad as r, yamlCoreSchema as t };

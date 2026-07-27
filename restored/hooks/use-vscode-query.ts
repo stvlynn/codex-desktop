@@ -8,6 +8,7 @@ export type UseVscodeQueryPeers = {
   IZe: (...args: unknown[]) => unknown;
   Zf: (...args: unknown[]) => unknown;
   jt: (...args: unknown[]) => unknown;
+  qt: (...args: unknown[]) => unknown;
   select: (...args: unknown[]) => unknown;
 };
 let peers: UseVscodeQueryPeers | null = null;
@@ -70,4 +71,36 @@ export function useVscodeQuery(...e: unknown) {
     }),
     peers.jt(w)
   );
+}
+
+export type UseVscodeMutationOptions = { source?: unknown } & Record<
+  string,
+  unknown
+>;
+
+/**
+ * Bundle export `rdt` / internal `ip`.
+ */
+export function useVscodeMutation(
+  method: string,
+  options?: UseVscodeMutationOptions,
+): unknown {
+  if (peers == null) {
+    throw new Error("useVscodeMutation peers are not configured");
+  }
+  const { source, ...rest } = options ?? {};
+  const mutationFn = async (params: unknown) => {
+    return (
+      await peers.Zf.getInstance().post(
+        `vscode://codex/${method}`,
+        JSON.stringify(params),
+        peers.FZe(source),
+      )
+    ).body;
+  };
+  return peers.qt({
+    mutationFn,
+    ...rest,
+    networkMode: `always`,
+  });
 }

@@ -102,7 +102,7 @@ export function bindDeferredUiT() {
   const ESu = peers.ESu;
   const Uou = peers.uou;
   const Umu = peers.Umu;
-  const Hk = peers.hk;
+  const Alpha = peers.hk;
   const P5l = peers.P5l;
   const M3l = peers.M3l;
   const Kuu = peers.kuu;
@@ -122,7 +122,7 @@ export function bindDeferredUiT() {
   const Nwu = peers.nwu;
   const KCu = peers.kCu;
   const Biu = peers.biu;
-  const Ku = peers.K_u;
+  const Bravo = peers.K_u;
   const N5l = peers.n5l;
   const YCu = peers.YCu;
   const Sxu = peers.Sxu;
@@ -140,7 +140,7 @@ export function bindDeferredUiT() {
   const Pwu = peers.pwu;
   const PEu = peers.PEu;
   const B5l = peers.b5l;
-  const Nu = peers.N_u;
+  const Copper = peers.N_u;
   const Sou = peers.sou;
   const Fbu = peers.Fbu;
   const W3l = peers.w3l;
@@ -152,7 +152,7 @@ export function bindDeferredUiT() {
   const CCu = peers.CCu;
   const Mau = peers.mau;
   const Oau = peers.Oau;
-  const Zu = peers.Z_u;
+  const Delta = peers.Z_u;
   const VEu = peers.VEu;
   const Mfu = peers.mfu;
   const Abu = peers.abu;
@@ -170,7 +170,11 @@ export function bindDeferredUiT() {
   const Bmu = peers.bmu;
   const Atu = peers.atu;
   const Rdu = peers.rdu;
-  const Vk = peers.vk;
+  const Echo = peers.vk;
+  const PlatformGate = peers.hk;
+  const NuIcon = peers.N_u;
+  const KuIcon = peers.kuu;
+  const ZuIcon = peers.Zuu;
   const U6l = peers.U6l;
   const Rou = peers.rou;
   const Q7e = peers.Q7e;
@@ -183,218 +187,149 @@ export function bindDeferredUiT() {
   if (peers == null) {
     throw new Error("bindDeferredUiT peers are not configured");
   }
-  let t, n;
-  t = <ESu />;
-  n = <Uou />;
-  let r = <Umu />;
+  let falcon, gamma;
+  falcon = <ESu />;
+  gamma = <Uou />;
+  let harbor = <Umu />;
   let i, a;
-  i = (
-    <Hk electron={true}>
+  i = <Alpha electron={true}>
       <P5l />
-    </Hk>
-  );
+    </Alpha>;
   a = peers.Q9 ? null : <M3l />;
-  let o, s, c, l, u, d;
-  s = <Hk electron={true}>{peers.Q9 ? null : <Kuu />}</Hk>;
-  c = <BCu />;
-  l = <Wbu />;
+  let indigo, s, jade, kite, u, lemon;
+  s = <Alpha electron={true}>{peers.Q9 ? null : <Kuu />}</Alpha>;
+  jade = <BCu />;
+  kite = <Wbu />;
   u = <Txu />;
-  d = null;
-  o = peers.Q9 || peers.$9 ? null : <O3o />;
-  let f, p, m, h, g, _, v, y, b, x, S, C;
-  f = (
-    <Hk electron={true}>
+  lemon = null;
+  indigo = peers.Q9 || peers.$9 ? null : <O3o />;
+  let marble, p, nickel, onyx, pearl, quartz, value, river, b, slate, timber, umbra;
+  marble = <Alpha electron={true}>
       <V6l logFocusEvents={!peers.Q9 && !peers.$9} />
       {peers.$9 ? <H5l /> : null}
       <OSu />
-    </Hk>
-  );
-  p =
-    peers.Q9 || peers.$9 ? null : (
-      <Hk electron={true}>
+    </Alpha>;
+  p = peers.Q9 || peers.$9 ? null : <Alpha electron={true}>
         <Vxu />
         <Wxu />
-      </Hk>
-    );
-  m = <Hdu />;
-  h = peers.Q9 ? null : (
-    <Hk electron={true}>
+      </Alpha>;
+  nickel = <Hdu />;
+  onyx = peers.Q9 ? null : <Alpha electron={true}>
       <Lwu />
-    </Hk>
-  );
-  g = peers.Q9 ? null : (
-    <Hk electron={true}>
+    </Alpha>;
+  pearl = peers.Q9 ? null : <Alpha electron={true}>
       <Ofu />
-    </Hk>
-  );
-  _ = peers.Q9 ? null : (
-    <Hk electron={true}>
+    </Alpha>;
+  quartz = peers.Q9 ? null : <Alpha electron={true}>
       <QCu />
-    </Hk>
-  );
-  v = peers.Q9 ? null : (
-    <Hk electron={true}>
+    </Alpha>;
+  value = peers.Q9 ? null : <Alpha electron={true}>
       <Nwu />
-    </Hk>
-  );
-  y = peers.Q9 ? null : (
-    <Hk electron={true}>
+    </Alpha>;
+  river = peers.Q9 ? null : <Alpha electron={true}>
       <KCu />
-    </Hk>
-  );
-  b = peers.Q9 ? null : (
-    <Hk electron={true}>
+    </Alpha>;
+  b = peers.Q9 ? null : <Alpha electron={true}>
       <Biu />
-    </Hk>
-  );
-  x = peers.Q9 ? null : (
-    <Hk electron={true}>
-      <Ku />
-    </Hk>
-  );
-  S = peers.Q9 ? null : (
-    <Hk electron={true}>
+    </Alpha>;
+  slate = peers.Q9 ? null : <Alpha electron={true}>
+      <Kuu />
+    </Alpha>;
+  timber = peers.Q9 ? null : <Alpha electron={true}>
       <N5l />
-    </Hk>
-  );
-  C = peers.Q9 ? null : (
-    <Hk electron={true}>
+    </Alpha>;
+  umbra = peers.Q9 ? null : <Alpha electron={true}>
       <YCu />
-    </Hk>
-  );
-  let w = (
-    <Hk browser={true} electron={true}>
+    </Alpha>;
+  let violet = <Alpha browser={true} electron={true}>
       <Sxu />
-    </Hk>
-  );
-  let T = (
-    <Hk electron={true}>
+    </Alpha>;
+  let willow = <Alpha electron={true}>
       <Kxu />
-    </Hk>
-  );
-  let E, D;
-  E = (
-    <Hk electron={true}>
+    </Alpha>;
+  let xenon, yellow;
+  xenon = <Alpha electron={true}>
       <R3l />
-    </Hk>
-  );
-  D = peers.Q9 ? null : (
-    <Hk electron={true}>
+    </Alpha>;
+  yellow = peers.Q9 ? null : <Alpha electron={true}>
       <R3l2 />
-    </Hk>
-  );
-  let O = (
-    <Hk electron={true}>
+    </Alpha>;
+  let zinc = <Alpha electron={true}>
       <HSu />
-    </Hk>
-  );
-  let k, A, j;
-  k = <Pfu />;
-  A = <W4l />;
-  j = <Ddu />;
-  let N, P;
-  N = peers.Q9 ? null : (
-    <Hk electron={true}>
+    </Alpha>;
+  let amber, basalt, cedar;
+  amber = <Pfu />;
+  basalt = <W4l />;
+  cedar = <Ddu />;
+  let daisy, ember;
+  daisy = peers.Q9 ? null : <Alpha electron={true}>
       <F6l />
-    </Hk>
-  );
-  P = peers.Q9 ? null : (
-    <Hk electron={true}>
+    </Alpha>;
+  ember = peers.Q9 ? null : <Alpha electron={true}>
       <UCu />
-    </Hk>
-  );
-  let F = <Fmu />;
-  let I, L;
-  I = (
-    <Hk extension={true}>
+    </Alpha>;
+  let flint = <Fmu />;
+  let garnet, hazel;
+  garnet = <Alpha extension={true}>
       <Ywu />
-    </Hk>
-  );
-  L = <Pwu />;
-  let R = (
-    <Hk electron={true}>
+    </Alpha>;
+  hazel = <Pwu />;
+  let ivory = <Alpha electron={true}>
       <PEu />
-    </Hk>
-  );
-  let z, B, V;
-  z = (
-    <Hk electron={true}>
+    </Alpha>;
+  let jasper, kelp, lotus;
+  jasper = <Alpha electron={true}>
       <B5l />
-    </Hk>
-  );
-  B = peers.$9 ? null : <Nu />;
-  V = peers.$9 ? null : <Sou />;
-  let H, U;
-  H = (
-    <Hk electron={true}>
+    </Alpha>;
+  kelp = peers.$9 ? null : <Copper />;
+  lotus = peers.$9 ? null : <Sou />;
+  let mint, nova;
+  mint = <Alpha electron={true}>
       <Fbu prefetchVoiceCatalog={peers.$9} />
-    </Hk>
-  );
-  U = <W3l />;
-  let W, G;
-  W = (
-    <Hk electron={true}>
+    </Alpha>;
+  nova = <W3l />;
+  let olive, prism;
+  olive = <Alpha electron={true}>
       <Vxu2 />
-    </Hk>
-  );
-  G = peers.Q9 ? null : (
-    <>
+    </Alpha>;
+  prism = peers.Q9 ? null : <>
       {<JEu />}
       {<Qmu />}
       {<Phu />}
       {<Zmu />}
-      {
-        <Hk electron={true}>
+      {<Alpha electron={true}>
           <CCu />
-        </Hk>
-      }
-      {
-        <Hk electron={true}>
+        </Alpha>}
+      {<Alpha electron={true}>
           <Mau />
-        </Hk>
-      }
-      {
-        <Hk electron={true}>
+        </Alpha>}
+      {<Alpha electron={true}>
           <Oau />
-        </Hk>
-      }
-      {<Zu />}
-      {
-        <Hk electron={true}>
+        </Alpha>}
+      {<Zuu />}
+      {<Alpha electron={true}>
           <VEu />
-        </Hk>
-      }
-      {
-        <Hk electron={true}>
+        </Alpha>}
+      {<Alpha electron={true}>
           <Mfu />
-        </Hk>
-      }
+        </Alpha>}
       {<Abu />}
-      {
-        <Hk electron={true}>
+      {<Alpha electron={true}>
           <Qlu />
-        </Hk>
-      }
+        </Alpha>}
       {<Qxu />}
-      {
-        <Buu
-          includeDesktopLogArchive={true}
-          nativeHostDiagnosticsAvailable={true}
-        />
-      }
-    </>
-  );
-  let K, q;
-  K = <U8l />;
+      {<Buu includeDesktopLogArchive={true} nativeHostDiagnosticsAvailable={true} />}
+    </>;
+  let quill, q;
+  quill = <U8l />;
   q = <Lau />;
-  return (
-    <Twu>
+  return <Twu>
       <SEu>
-        {t}
-        {n}
+        {falcon}
+        {gamma}
         <GCu>
           <BEu>
-            {r}
+            {harbor}
             <Kuu2>
               <M8l>
                 <Bmu>
@@ -402,69 +337,69 @@ export function bindDeferredUiT() {
                     {i}
                     {a}
                     {s}
-                    {c}
-                    {l}
+                    {jade}
+                    {kite}
                     {u}
-                    {d}
-                    {o}
-                    {f}
+                    {lemon}
+                    {indigo}
+                    {marble}
                     {p}
-                    {m}
-                    {h}
-                    {g}
-                    {_}
-                    {v}
-                    {y}
+                    {nickel}
+                    {onyx}
+                    {pearl}
+                    {quartz}
+                    {value}
+                    {river}
                     {b}
-                    {x}
-                    {S}
-                    {C}
-                    {w}
-                    {T}
-                    {E}
-                    {D}
-                    {O}
+                    {slate}
+                    {timber}
+                    {umbra}
+                    {violet}
+                    {willow}
+                    {xenon}
+                    {yellow}
+                    {zinc}
                     <Rdu>
-                      <Vk name="AppIntl">
-                        {k}
-                        {A}
-                        {j}
+                      <Echo name="AppIntl">
+                        {amber}
+                        {basalt}
+                        {cedar}
                         <U6l>
                           {null}
                           <Rou>
                             <Q7e>
                               <Jxu>
-                                {N}
-                                {P}
+                                {daisy}
+                                {ember}
                                 <K3l>
                                   <Ouu>
-                                    <Vk name="AppRoutes">
-                                      {F}
-                                      {I}
-                                      {L}
-                                      {R}
-                                      {z}
-                                      {B}
-                                      {V}
-                                      {H}
-                                      {U}
-                                      {W}
-                                      {G}
+                                    <Echo name="AppRoutes">
+                                      {flint}
+                                      {garnet}
+                                      {hazel}
+                                      {ivory}
+                                      {jasper}
+                                      {kelp}
+                                      {lotus}
+                                      {mint}
+                                      {nova}
+                                      {olive}
+                                      {prism}
                                       <Luu>
-                                        {K}
+                                        {quill}
                                         {q}
                                         <Zuu>
                                           <HEu />
                                         </Zuu>
                                       </Luu>
-                                    </Vk>
+                                    </Echo>
                                   </Ouu>
                                 </K3l>
                               </Jxu>
                             </Q7e>
                           </Rou>
                         </U6l>
-                      </Vk>
+                      </Echo>
                     </Rdu>
                   </Atu>
                 </Bmu>
@@ -473,6 +408,5 @@ export function bindDeferredUiT() {
           </BEu>
         </GCu>
       </SEu>
-    </Twu>
-  );
+    </Twu>;
 }

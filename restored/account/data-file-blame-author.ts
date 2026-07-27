@@ -1,26 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export GA / Syo
+// Materialized via extractFn(internal `Syo`) / export `GA`.
 
-export type BindDataFileBlameAuthorPeers = {
-  impl: (...args: unknown[]) => unknown;
+export type DataFileBlameAuthorPeers = {
+  byo: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  hyo: (...args: unknown[]) => unknown;
+  xyo: (...args: unknown[]) => unknown;
+  yyo: (...args: unknown[]) => unknown;
 };
 
-let peers: BindDataFileBlameAuthorPeers | null = null;
+let peers: DataFileBlameAuthorPeers | null = null;
 
-/** Wire bindDataFileBlameAuthor once companions land. */
-export function setBindDataFileBlameAuthorPeers(next: BindDataFileBlameAuthorPeers): void {
+/** Wire dataFileBlameAuthor peers once companions land. */
+export function setDataFileBlameAuthorPeers(next: DataFileBlameAuthorPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `GA` / internal `Syo`.
- * Stage-3 fill for bundle export GA / Syo
  */
-export function bindDataFileBlameAuthor(...args: unknown[]): unknown {
+export function dataFileBlameAuthor() {
   if (peers == null) {
-    throw new Error("bindDataFileBlameAuthor peers are not configured");
+    throw new Error("dataFileBlameAuthor peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.e(() => {
+    yyo = 12, byo = 18, xyo = peers.hyo(peers.yyo);
+  });
 }

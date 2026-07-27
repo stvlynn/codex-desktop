@@ -36,4 +36,3 @@ export function initGetDiagramElementChunk(): void {
   initDayjsLoggerRuntime();
   initD3Bundle();
 }
-export { initGetDiagramElementChunk as n, getDiagramElement as t };

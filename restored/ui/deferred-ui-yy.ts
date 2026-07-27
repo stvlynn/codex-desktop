@@ -46,208 +46,209 @@ export function deferredUiYY() {
     throw new Error("deferredUiYY peers are not configured");
   }
   return class {
-    constructor(e, t = {}, n) {
+    constructor(alpha, bravo = {}, copper) {
       this.options = {
         ...peers.ZM,
-        ...peers.t,
+        ...peers.t
       };
       this.options.useExtendedSearch;
       this._keyStore = new peers.hZr(this.options.keys);
       this.setCollection(peers.e, peers.n);
     }
-    setCollection(e, t) {
-      if (((this._docs = peers.e), peers.t && !(peers.t instanceof peers.xZr)))
-        throw Error(peers.lZr);
-      this._myIndex =
-        peers.t ||
-        peers.JXr(this.options.keys, this._docs, {
-          getFn: this.options.getFn,
-          fieldNormWeight: this.options.fieldNormWeight,
-        });
+    setCollection(delta, echo) {
+      if (this._docs = peers.e, peers.t && !(peers.t instanceof peers.xZr)) throw Error(peers.lZr);
+      this._myIndex = peers.t || peers.JXr(this.options.keys, this._docs, {
+        getFn: this.options.getFn,
+        fieldNormWeight: this.options.fieldNormWeight
+      });
     }
-    add(e) {
-      peers.XM(peers.e) &&
-        (this._docs.push(peers.e), this._myIndex.add(peers.e));
+    add(falcon) {
+      peers.XM(peers.e) && (this._docs.push(peers.e), this._myIndex.add(peers.e));
     }
-    remove(
-      e = () => {
-        return false;
-      },
-    ) {
-      let t = [];
-      for (let n = 0, r = this._docs.length; peers.n < r; n += 1) {
+    remove(gamma = () => {
+      return false;
+    }) {
+      let harbor = [];
+      for (let indigo = 0, jade = this._docs.length; peers.n < jade; indigo += 1) {
         let i = this._docs[peers.n];
-        peers.e(i, peers.n) &&
-          (this.removeAt(peers.n), --peers.n, --r, peers.t.push(i));
+        peers.e(i, peers.n) && (this.removeAt(peers.n), --peers.n, --jade, peers.t.push(i));
       }
       return peers.t;
     }
-    removeAt(e) {
+    removeAt(kite) {
       this._docs.splice(peers.e, 1);
       this._myIndex.removeAt(peers.e);
     }
     getIndex() {
       return this._myIndex;
     }
-    search(e, { limit = -1 } = {}) {
+    search(lemon, {
+      limit = -1
+    } = {}) {
       let {
           includeMatches,
           includeScore,
           shouldSort,
           sortFn,
-          ignoreFieldNorm,
+          ignoreFieldNorm
         } = this.options,
-        s = peers.YM(peers.e)
-          ? peers.YM(this._docs[0])
-            ? this._searchStringList(peers.e)
-            : this._searchObjectList(peers.e)
-          : this._searchLogical(peers.e);
-      return (
-        peers.aZr(s, {
-          ignoreFieldNorm,
-        }),
-        shouldSort && s.sort(sortFn),
-        peers.LXr(peers.t) && peers.t > -1 && (s = s.slice(0, peers.t)),
-        peers.cZr(s, this._docs, {
-          includeMatches: peers.n,
-          includeScore,
-        })
-      );
+        s = peers.YM(peers.e) ? peers.YM(this._docs[0]) ? this._searchStringList(peers.e) : this._searchObjectList(peers.e) : this._searchLogical(peers.e);
+      return peers.aZr(s, {
+        ignoreFieldNorm
+      }), shouldSort && s.sort(sortFn), peers.LXr(peers.t) && peers.t > -1 && (s = s.slice(0, peers.t)), peers.cZr(s, this._docs, {
+        includeMatches: peers.n,
+        includeScore
+      });
     }
-    _searchStringList(e) {
-      let t = peers.rZr(peers.e, this.options),
-        { records } = this._myIndex,
-        r = [];
-      return (
-        peers.n.forEach(({ v, i, n }) => {
-          if (!peers.XM(peers.e)) return;
-          let { isMatch, score, indices } = peers.t.searchIn(peers.e);
-          isMatch &&
-            r.push({
-              item: peers.e,
-              idx: peers.n,
-              matches: [
-                {
-                  score,
-                  value: peers.e,
-                  norm: n,
-                  indices,
-                },
-              ],
-            });
-        }),
-        r
-      );
+    _searchStringList(marble) {
+      let nickel = peers.rZr(peers.e, this.options),
+        {
+          records
+        } = this._myIndex,
+        onyx = [];
+      return peers.n.forEach(({
+        v: pearl,
+        i,
+        n: quartz
+      }) => {
+        if (!peers.XM(peers.e)) return;
+        let {
+          isMatch,
+          score,
+          indices
+        } = peers.t.searchIn(peers.e);
+        isMatch && onyx.push({
+          item: peers.e,
+          idx: peers.n,
+          matches: [{
+            score,
+            value: peers.e,
+            norm: quartz,
+            indices
+          }]
+        });
+      }), onyx;
     }
-    _searchLogical(e) {
-      let t = peers.iZr(peers.e, this.options),
-        n = (e, t, r) => {
+    _searchLogical(river) {
+      let slate = peers.iZr(peers.e, this.options),
+        timber = (violet, willow, xenon) => {
           if (!peers.e.children) {
-            let { keyId, searcher } = peers.e,
+            let {
+                keyId,
+                searcher
+              } = peers.e,
               a = this._findMatches({
                 key: this._keyStore.get(peers.n),
                 value: this._myIndex.getValueForItemAtKeyId(peers.t, peers.n),
-                searcher,
+                searcher
               });
-            return a && a.length
-              ? [
-                  {
-                    idx: r,
-                    item: peers.t,
-                    matches: a,
-                  },
-                ]
-              : [];
+            return a && a.length ? [{
+              idx: xenon,
+              item: peers.t,
+              matches: a
+            }] : [];
           }
           let i = [];
-          for (let a = 0, o = peers.e.children.length; a < o; a += 1) {
-            let o = peers.e.children[a],
-              s = peers.n(o, peers.t, r);
-            if (s.length) i.push(...s);
-            else if (peers.e.operator === peers.zZr.AND) return [];
+          for (let a = 0, yellow = peers.e.children.length; a < yellow; a += 1) {
+            let zinc = peers.e.children[a],
+              s = peers.n(zinc, peers.t, xenon);
+            if (s.length) i.push(...s);else if (peers.e.operator === peers.zZr.AND) return [];
           }
           return i;
         },
-        r = this._myIndex.records,
+        umbra = this._myIndex.records,
         i = {},
         a = [];
-      return (
-        r.forEach(({ $, i: __i }) => {
-          if (peers.XM(peers.e)) {
-            let o = peers.n(peers.t, peers.e, __i);
-            o.length &&
-              (i[__i] ||
-                ((i[__i] = {
-                  idx: __i,
-                  item: peers.e,
-                  matches: [],
-                }),
-                a.push(i[__i])),
-              o.forEach(({ matches }) => {
-                i[__i].matches.push(...peers.e);
-              }));
-          }
-        }),
-        a
-      );
+      return umbra.forEach(({
+        $,
+        i: __i
+      }) => {
+        if (peers.XM(peers.e)) {
+          let amber = peers.n(peers.t, peers.e, __i);
+          amber.length && (i[__i] || (i[__i] = {
+            idx: __i,
+            item: peers.e,
+            matches: []
+          }, a.push(i[__i])), amber.forEach(({
+            matches
+          }) => {
+            i[__i].matches.push(...peers.e);
+          }));
+        }
+      }), a;
     }
-    _searchObjectList(e) {
-      let t = peers.rZr(peers.e, this.options),
-        { keys, records } = this._myIndex,
+    _searchObjectList(basalt) {
+      let cedar = peers.rZr(peers.e, this.options),
+        {
+          keys,
+          records
+        } = this._myIndex,
         i = [];
-      return (
-        records.forEach(({ $, i: __i }) => {
-          if (!peers.XM(peers.e)) return;
-          let a = [];
-          peers.n.forEach((item, index) => {
-            a.push(
-              ...this._findMatches({
-                key: peers.n,
-                value: peers.e[index],
-                searcher: peers.t,
-              }),
-            );
-          });
-          a.length &&
-            i.push({
-              idx: __i,
-              item: peers.e,
-              matches: a,
-            });
-        }),
-        i
-      );
-    }
-    _findMatches({ key, value, searcher }) {
-      if (!peers.XM(peers.t)) return [];
-      let r = [];
-      if (peers.JM(peers.t))
-        peers.t.forEach(({ v, i, n }) => {
-          if (!peers.XM(peers.t)) return;
-          let { isMatch, score, indices } = peers.n.searchIn(peers.t);
-          isMatch &&
-            r.push({
-              score,
-              key: peers.e,
-              value: peers.t,
-              idx: i,
-              norm: n,
-              indices,
-            });
+      return records.forEach(({
+        $,
+        i: __i
+      }) => {
+        if (!peers.XM(peers.e)) return;
+        let a = [];
+        peers.n.forEach((item, index) => {
+          a.push(...this._findMatches({
+            key: peers.n,
+            value: peers.e[index],
+            searcher: peers.t
+          }));
         });
-      else {
-        let { v, n } = peers.t,
-          { isMatch, score, indices } = peers.n.searchIn(v);
-        isMatch &&
-          r.push({
+        a.length && i.push({
+          idx: __i,
+          item: peers.e,
+          matches: a
+        });
+      }), i;
+    }
+    _findMatches({
+      key,
+      value,
+      searcher
+    }) {
+      if (!peers.XM(peers.t)) return [];
+      let daisy = [];
+      if (peers.JM(peers.t)) peers.t.forEach(({
+        v: ember,
+        i,
+        n: flint
+      }) => {
+        if (!peers.XM(peers.t)) return;
+        let {
+          isMatch,
+          score,
+          indices
+        } = peers.n.searchIn(peers.t);
+        isMatch && daisy.push({
+          score,
+          key: peers.e,
+          value: peers.t,
+          idx: i,
+          norm: flint,
+          indices
+        });
+      });else {
+        let {
+            v: garnet,
+            n: hazel
+          } = peers.t,
+          {
+            isMatch,
             score,
-            key: peers.e,
-            value: v,
-            norm: n,
-            indices,
-          });
+            indices
+          } = peers.n.searchIn(garnet);
+        isMatch && daisy.push({
+          score,
+          key: peers.e,
+          value: garnet,
+          norm: hazel,
+          indices
+        });
       }
-      return r;
+      return daisy;
     }
   };
 }

@@ -1,26 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Uv / bEs
+// Materialized via extractFn(internal `bEs`) / export `Uv`.
 
-export type BindDeferredAccountUvPeers = {
-  impl: (...args: unknown[]) => unknown;
+export type DeferredAccountUvPeers = {
+  Fh: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  rQ: (...args: unknown[]) => unknown;
+  vEs: (...args: unknown[]) => unknown;
+  yEs: (...args: unknown[]) => unknown;
 };
 
-let peers: BindDeferredAccountUvPeers | null = null;
+let peers: DeferredAccountUvPeers | null = null;
 
-/** Wire bindDeferredAccountUv once companions land. */
-export function setBindDeferredAccountUvPeers(next: BindDeferredAccountUvPeers): void {
+/** Wire deferredAccountUv peers once companions land. */
+export function setDeferredAccountUvPeers(next: DeferredAccountUvPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Uv` / internal `bEs`.
- * Stage-3 fill for bundle export Uv / bEs
  */
-export function bindDeferredAccountUv(...args: unknown[]): unknown {
+export function deferredAccountUv() {
   if (peers == null) {
-    throw new Error("bindDeferredAccountUv peers are not configured");
+    throw new Error("deferredAccountUv peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.e(() => {
+    vEs = peers.c(), peers.rQ(), peers.Fh(), yEs = `show_logged_in_pricing_page`;
+  });
 }

@@ -17,7 +17,7 @@ import {
   initDayjsLoggerRuntime as chunkAGHRB4JFR,
 } from "../utils/dayjs-core-alt-dup";
 import { c as chunkABZYJK2DC, k as chunkABZYJK2DK } from "./mermaid-config";
-import { n as chunkEXTU4WIEN, t as chunkEXTU4WIET } from "./select-svg-element";
+import { initSelectSvgElementChunk as chunkEXTU4WIEN, selectSvgElement as chunkEXTU4WIET } from "./select-svg-element";
 import {
   mermaidParserCoreN,
   mermaidParserCoreT,

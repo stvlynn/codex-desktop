@@ -1,44 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Nv / lOs
+// Materialized via extractFn(internal `lOs`) / export `Nv`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type ReferralInviteEligibilityProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type ReferralInviteEligibilityPeers = {
+  $u: (...args: unknown[]) => unknown;
+  Hb: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Kb: (...args: unknown[]) => unknown;
+  aN: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  cOs: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  iOs: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  oOs: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  sOs: (...args: unknown[]) => unknown;
+  tOs: (...args: unknown[]) => unknown;
 };
 
-type ReferralInviteEligibilityImpl = (
-  props: ReferralInviteEligibilityProps,
-) => ReactNode;
-let impl: ReferralInviteEligibilityImpl | null = null;
+let peers: ReferralInviteEligibilityPeers | null = null;
 
-/** Wire the full ReferralInviteEligibility once deeper restore lands. */
-export function bindReferralInviteEligibility(next: ReferralInviteEligibilityImpl): void {
-  impl = next;
+/** Wire ReferralInviteEligibility peers once companions land. */
+export function setReferralInviteEligibilityPeers(next: ReferralInviteEligibilityPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Nv` / internal `lOs`.
- * Stage-3 fill for bundle export Nv / lOs; heavy UI via bind.
  */
-export function ReferralInviteEligibility(props: ReferralInviteEligibilityProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="Nv"
-      aria-label="ReferralInviteEligibility"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Nv / lOs
-        </div>
-      )}
-    </div>
-  );
+export function ReferralInviteEligibility() {
+  if (peers == null) {
+    throw new Error("ReferralInviteEligibility peers are not configured");
+  }
+  return peers.e(() => {
+    oOs = peers.c(), peers.Hb(), peers.Ho(), sOs = peers.r(peers.o(), 1), peers.$u(), peers.aN(), peers.Kb(), peers.ed(), peers.tOs(), peers.iOs(), cOs = peers.J();
+  });
 }

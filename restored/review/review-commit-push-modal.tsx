@@ -53,9 +53,7 @@ export type BindReviewCommitPushModalPeers = {
 let peers: BindReviewCommitPushModalPeers | null = null;
 
 /** Wire bindReviewCommitPushModal peers once companions land. */
-export function setBindReviewCommitPushModalPeers(
-  next: BindReviewCommitPushModalPeers,
-): void {
+export function setBindReviewCommitPushModalPeers(next: BindReviewCommitPushModalPeers): void {
   peers = next;
 }
 
@@ -63,23 +61,23 @@ export function setBindReviewCommitPushModalPeers(
  * Bundle export `bD` / internal `uKo`.
  */
 export function bindReviewCommitPushModal(props: unknown) {
-  const Zk = peers.Zk;
-  const VR = peers.VR;
-  const IP = peers.iP;
-  const Z = peers.Z;
-  const Cd = peers.cd;
+  const Alpha = peers.Zk;
+  const Bravo = peers.VR;
+  const Copper = peers.iP;
+  const FormattedMessage = peers.Z;
+  const Echo = peers.cd;
   const SectionLabel = peers.KR.SectionLabel;
   const Item = peers.KR.Item;
-  const Jp = peers.jp;
+  const Falcon = peers.jp;
   const FKo = peers.fKo;
   const NKo = peers.nKo;
-  const NR = peers.NR;
+  const Gamma = peers.NR;
   const SUo = peers.sUo;
   const PKo = peers.pKo;
   const CUo = peers.cUo;
   const List = peers.JH.List;
-  const JH = peers.JH;
-  const Xk = peers.Xk;
+  const Harbor = peers.JH;
+  const Indigo = peers.Xk;
   if (peers == null) {
     throw new Error("bindReviewCommitPushModal peers are not configured");
   }
@@ -92,412 +90,246 @@ export function bindReviewCommitPushModal(props: unknown) {
       enablePushActions = false,
       operationSource = "commit_modal",
       onStatusChange,
-      onRequestReset,
+      onRequestReset
     } = props,
-    m = peers.Io(peers.Q),
-    h = peers.Ju(),
-    { cwd, hostConfig: _ } = target,
-    [v, y] = peers.hKo.useState(null),
-    [b, x] = peers.hKo.useState(null),
-    S = peers.bp(peers.wu.branchPrefix),
-    C = peers.Fo(peers._D, conversationId),
-    w = peers.Y(peers.yWo),
-    E,
-    D;
-  D = {
+    jade = peers.Io(peers.Q),
+    kite = peers.Ju(),
+    {
+      cwd,
+      hostConfig: lemon
+    } = target,
+    [marble, nickel] = peers.hKo.useState(null),
+    [b, onyx] = peers.hKo.useState(null),
+    pearl = peers.bp(peers.wu.branchPrefix),
+    quartz = peers.Fo(peers._D, conversationId),
+    river = peers.Y(peers.yWo),
+    slate,
+    timber;
+  timber = {
     ...target,
     codexWorktree,
-    conversationId,
+    conversationId
   };
-  E = peers.fJ(D);
-  let O = E,
-    k = peers.Fo(peers.mJ, O),
-    A = peers.Fo(peers.SJ, D),
-    j = peers.Fo(peers.NWo, D),
-    M = {
+  slate = peers.fJ(timber);
+  let umbra = slate,
+    violet = peers.Fo(peers.mJ, umbra),
+    willow = peers.Fo(peers.SJ, timber),
+    xenon = peers.Fo(peers.NWo, timber),
+    yellow = {
       cwd,
-      hostConfig: _,
+      hostConfig: lemon
     };
-  let N = peers.Fo(peers.lWo, M),
-    P = {
+  let zinc = peers.Fo(peers.lWo, yellow),
+    amber = {
       cwd,
-      hostConfig: _,
+      hostConfig: lemon
     };
-  let F = peers.Fo(peers.uWo, P),
-    I = {
-      ...D,
-      operationSource,
+  let basalt = peers.Fo(peers.uWo, amber),
+    cedar = {
+      ...timber,
+      operationSource
     };
-  let L = peers.Fo(peers.eKo, I),
-    R = {
+  let daisy = peers.Fo(peers.eKo, cedar),
+    ember = {
       cwd,
-      hostConfig: _,
-      operationSource,
+      hostConfig: lemon,
+      operationSource
     };
-  let z = peers.Fo(peers.aJ, R),
-    B = z.type === "success" ? z.data : undefined,
-    V = peers.Fo(peers.pJ, O),
-    H = L.isPending || V != null,
-    U = {
+  let flint = peers.Fo(peers.aJ, ember),
+    garnet = flint.type === "success" ? flint.data : undefined,
+    hazel = peers.Fo(peers.pJ, umbra),
+    ivory = daisy.isPending || hazel != null,
+    jasper = {
       cwd,
-      hostConfig: _,
-      includeUnstaged: w,
+      hostConfig: lemon,
+      includeUnstaged: river
     };
-  let W = peers.Fo(peers.sWo, U),
-    G = {
+  let kelp = peers.Fo(peers.sWo, jasper),
+    lotus = {
       cwd,
-      hostConfig: _,
-      includeUnstaged: w,
+      hostConfig: lemon,
+      includeUnstaged: river
     };
-  let K = peers.Fo(peers.cWo, G),
+  let mint = peers.Fo(peers.cWo, lotus),
     q = {
       cwd,
-      hostConfig: _,
-      includeUnstaged: true,
+      hostConfig: lemon,
+      includeUnstaged: true
     };
-  let ee = peers.Fo(peers.cWo, q),
-    te = null;
-  B && (te = B.branch ?? B.upstreamRef ?? null);
-  let ne = !j && A?.trim() ? A.trim() : j ? null : te;
-  let re = ne,
-    ie = enablePushActions,
-    ae = ie && (v ?? j),
-    oe = peers.jJ({
-      branchPrefix: S,
-      conversationTitle: C,
+  let Nova = peers.Fo(peers.cWo, q),
+    Olive = null;
+  garnet && (Olive = garnet.branch ?? garnet.upstreamRef ?? null);
+  let Prism = !xenon && willow?.trim() ? willow.trim() : xenon ? null : Olive;
+  let Quill = Prism,
+    Reef = enablePushActions,
+    Sage = Reef && (marble ?? xenon),
+    Topaz = peers.jJ({
+      branchPrefix: pearl,
+      conversationTitle: quartz
     });
-  let se = b ?? oe,
-    ce = se.trim();
-  let le = ce,
-    ue = peers.tN(le, 200),
-    de = open && ae && ue.length > 0 && !ue.endsWith("/");
-  let fe = de,
-    pe = {
+  let Ultra = b ?? Topaz,
+    Vapor = Ultra.trim();
+  let Wheat = Vapor,
+    Yarn = peers.tN(Wheat, 200),
+    Zephyr = open && Sage && Yarn.length > 0 && !Yarn.endsWith("/");
+  let Acorn = Zephyr,
+    Bloom = {
       cwd,
-      hostConfig: _,
+      hostConfig: lemon
     };
-  let me = {
-    branch: ue,
-    enabled: fe,
+  let Coral = {
+    branch: Yarn,
+    enabled: Acorn,
     operationSource,
-    lookup: pe,
+    lookup: Bloom
   };
-  let { data } = peers.Fo(peers.KHo, me),
-    ge = ue === le && data === true,
-    _e = ae && (le.length === 0 || le.endsWith("/") || ge);
-  let ve = _e,
-    ye = ee == null || ee === "changes-loading",
-    be = K == null && !H && !ve,
-    xe = !H && !ve && (ae ? (B?.commitsAhead ?? 0) > 0 : N == null),
-    Se = be && (ae || F == null),
-    Ce = enablePushActions
-      ? h.formatMessage({
-          id: "review.commit.form.commitAndPushTitle",
-          defaultMessage: "Commit or push",
-          description:
-            "Title for the commit modal when commit and push actions are available",
-        })
-      : h.formatMessage({
-          id: "review.commit.form.commitTitle",
-          defaultMessage: "Commit",
-          description:
-            "Title for the commit modal when only commit is available",
-        });
-  let we = Ce,
-    Te = (e) => {
-      if (H || ve || (e !== "push" && K != null)) return;
+  let {
+      data
+    } = peers.Fo(peers.KHo, Coral),
+    Drift = Yarn === Wheat && data === true,
+    _e = Sage && (Wheat.length === 0 || Wheat.endsWith("/") || Drift);
+  let Eagle = _e,
+    Frost = Nova == null || Nova === "changes-loading",
+    be = mint == null && !ivory && !Eagle,
+    Glide = !ivory && !Eagle && (Sage ? (garnet?.commitsAhead ?? 0) > 0 : zinc == null),
+    Honey = be && (Sage || basalt == null),
+    Iris = enablePushActions ? kite.formatMessage({
+      id: "review.commit.form.commitAndPushTitle",
+      defaultMessage: "Commit or push",
+      description: "Title for the commit modal when commit and push actions are available"
+    }) : kite.formatMessage({
+      id: "review.commit.form.commitTitle",
+      defaultMessage: "Commit",
+      description: "Title for the commit modal when only commit is available"
+    });
+  let Jewel = Iris,
+    Knoll = grove => {
+      if (ivory || Eagle || grove !== "push" && mint != null) return;
       onOpenChange(false);
       onStatusChange?.("loading");
-      let t = ae
-        ? {
-            kind: "commit",
-            newBranch: le,
-            nextStep: e,
-          }
-        : {
-            kind: "commit",
-            nextStep: e,
-          };
-      L.mutate(t, {
-        onSuccess: (e) => {
-          onStatusChange?.(e ? "success" : "error");
+      let hill = Sage ? {
+        kind: "commit",
+        newBranch: Wheat,
+        nextStep: grove
+      } : {
+        kind: "commit",
+        nextStep: grove
+      };
+      daisy.mutate(hill, {
+        onSuccess: isle => {
+          onStatusChange?.(isle ? "success" : "error");
         },
-        onSettled: onRequestReset,
+        onSettled: onRequestReset
       });
     };
-  let Ee = Te,
-    De = (e) => {
-      if (!e && !H) {
+  let Lunar = Knoll,
+    Moss = juniper => {
+      if (!juniper && !ivory) {
         onRequestReset();
         return;
       }
-      onOpenChange(e);
+      onOpenChange(juniper);
     };
-  let Oe = De,
-    ke = <Zk className="sr-only">{we}</Zk>;
-  let Ae = (
-    <span className="flex min-w-0 items-center gap-2 text-token-description-foreground">
-      {ie ? (
-        <VR
-          align="start"
-          contentWidth="xs"
-          disabled={H}
-          triggerButton={
-            <button
-              type="button"
-              className="flex min-w-0 cursor-interaction items-center gap-2 text-token-description-foreground"
-            >
-              {<IP className="icon-xs shrink-0" />}
+  let North = Moss,
+    Orbit = <Alpha className="sr-only">{Jewel}</Alpha>;
+  let Pine = <span className="flex min-w-0 items-center gap-2 text-token-description-foreground">
+      {Reef ? <Bravo align="start" contentWidth="xs" disabled={ivory} triggerButton={<button type="button" className="flex min-w-0 cursor-interaction items-center gap-2 text-token-description-foreground">
+              {<Copper className="icon-xs shrink-0" />}
               <span className="truncate">
-                {ae ? (
-                  <Z
-                    id="review.commit.branchTarget.newBranch"
-                    defaultMessage="New branch"
-                    description="Label for selecting a new commit branch"
-                  />
-                ) : (
-                  (re ?? (
-                    <Z
-                      id="review.commit.form.commitTo.none"
-                      defaultMessage="-"
-                      description="Placeholder shown when no commit target is available"
-                    />
-                  ))
-                )}
+                {Sage ? <FormattedMessage id="review.commit.branchTarget.newBranch" defaultMessage="New branch" description="Label for selecting a new commit branch" /> : Quill ?? <FormattedMessage id="review.commit.form.commitTo.none" defaultMessage="-" description="Placeholder shown when no commit target is available" />}
               </span>
-              {<Cd className="icon-2xs shrink-0" />}
-            </button>
-          }
-        >
+              {<Echo className="icon-2xs shrink-0" />}
+            </button>}>
           <SectionLabel>
-            <Z
-              id="review.commit.branchTarget.title"
-              defaultMessage="Commit to"
-              description="Heading for commit branch target options"
-            />
+            <FormattedMessage id="review.commit.branchTarget.title" defaultMessage="Commit to" description="Heading for commit branch target options" />
           </SectionLabel>
-          {re == null ? null : (
-            <Item
-              LeftIcon={peers.iP}
-              RightIcon={ae ? undefined : peers.Bm}
-              onSelect={() => {
-                y(false);
-              }}
-            >
-              {re}
-            </Item>
-          )}
-          <Item
-            LeftIcon={peers.ph}
-            RightIcon={ae ? peers.Bm : undefined}
-            onSelect={() => {
-              y(true);
-            }}
-          >
-            <Z
-              id="review.commit.branchTarget.newBranch"
-              defaultMessage="New branch"
-              description="Label for selecting a new commit branch"
-            />
+          {Quill == null ? null : <Item LeftIcon={peers.iP} RightIcon={Sage ? undefined : peers.Bm} onSelect={() => {
+        nickel(false);
+      }}>
+              {Quill}
+            </Item>}
+          <Item LeftIcon={peers.ph} RightIcon={Sage ? peers.Bm : undefined} onSelect={() => {
+        nickel(true);
+      }}>
+            <FormattedMessage id="review.commit.branchTarget.newBranch" defaultMessage="New branch" description="Label for selecting a new commit branch" />
           </Item>
-        </VR>
-      ) : (
-        <>
-          {<IP className="icon-xs shrink-0" />}
+        </Bravo> : <>
+          {<Copper className="icon-xs shrink-0" />}
           <span className="truncate">
-            {te ?? (
-              <Z
-                id="review.commit.form.commitTo.none"
-                defaultMessage="-"
-                description="Placeholder shown when no commit target is available"
-              />
-            )}
+            {Olive ?? <FormattedMessage id="review.commit.form.commitTo.none" defaultMessage="-" description="Placeholder shown when no commit target is available" />}
           </span>
-        </>
-      )}
-    </span>
-  );
-  let je = ye ? (
-    <span className="flex shrink-0 items-center gap-2">
+        </>}
+    </span>;
+  let Quest = Frost ? <span className="flex shrink-0 items-center gap-2">
       <span className="inline-flex size-4 shrink-0 items-center justify-center">
-        {W.isLoading || W.isFetching ? (
-          <Jp className="icon-xs text-token-description-foreground" />
-        ) : null}
+        {kelp.isLoading || kelp.isFetching ? <Falcon className="icon-xs text-token-description-foreground" /> : null}
       </span>
-      {
-        <FKo
-          isLoading={W.isLoading}
-          isUnavailable={W.isUnavailable}
-          selectionSummary={W.selectionSummary}
-        />
-      }
-    </span>
-  ) : null;
-  let Me = (
-    <div className="flex h-9 items-center justify-between gap-3 px-3">
-      {Ae}
-      {je}
-    </div>
-  );
-  let Ne = ae ? (
-    <NKo
-      branchAlreadyExists={ge}
-      disabled={H}
-      placeholder={S?.trim()}
-      value={se}
-      onChange={x}
-    />
-  ) : null;
-  let Pe = ye ? (
-    <>
-      <textarea
-        autoFocus={!ae}
-        rows={3}
-        className="h-20 w-full resize-none bg-transparent px-3 py-2 text-token-input-foreground outline-none"
-        aria-label={h.formatMessage({
-          id: "review.commit.messageLabel",
-          defaultMessage: "Commit message",
-          description: "Label for commit message textarea",
-        })}
-        placeholder={h.formatMessage({
-          id: "review.commit.autoGeneratePlaceholder",
-          defaultMessage: "Commit message (leave blank to generate)…",
-          description:
-            "Placeholder for commit message fields that can be generated automatically",
-        })}
-        value={k}
-        disabled={H}
-        onKeyDown={peers.dKo}
-        onChange={(event) => {
-          m.set(peers.mJ, O, event.target.value);
-        }}
-      />
+      {<FKo isLoading={kelp.isLoading} isUnavailable={kelp.isUnavailable} selectionSummary={kelp.selectionSummary} />}
+    </span> : null;
+  let Ridge = <div className="flex h-9 items-center justify-between gap-3 px-3">
+      {Pine}
+      {Quest}
+    </div>;
+  let Storm = Sage ? <NKo branchAlreadyExists={Drift} disabled={ivory} placeholder={pearl?.trim()} value={Ultra} onChange={onyx} /> : null;
+  let Tide = Frost ? <>
+      <textarea autoFocus={!Sage} rows={3} className="h-20 w-full resize-none bg-transparent px-3 py-2 text-token-input-foreground outline-none" aria-label={kite.formatMessage({
+      id: "review.commit.messageLabel",
+      defaultMessage: "Commit message",
+      description: "Label for commit message textarea"
+    })} placeholder={kite.formatMessage({
+      id: "review.commit.autoGeneratePlaceholder",
+      defaultMessage: "Commit message (leave blank to generate)…",
+      description: "Placeholder for commit message fields that can be generated automatically"
+    })} value={violet} disabled={ivory} onKeyDown={peers.dKo} onChange={event => {
+      jade.set(peers.mJ, umbra, event.target.value);
+    }} />
       <div className="relative flex items-center gap-2 px-3 pt-2 pb-3">
-        {
-          <NR
-            id="commit-include-unstaged-changes"
-            checked={w}
-            disabled={H}
-            onCheckedChange={(e) => {
-              m.set(peers.yWo, e);
-            }}
-          />
-        }
-        <label
-          htmlFor="commit-include-unstaged-changes"
-          className="text-token-foreground"
-        >
-          {
-            <Z
-              id="review.commit.selection.includeUnstagedChanges"
-              defaultMessage="Include unstaged changes"
-              description="Label for selecting unstaged changes in the commit modal"
-            />
-          }
+        {<Gamma id="commit-include-unstaged-changes" checked={river} disabled={ivory} onCheckedChange={lagoon => {
+        jade.set(peers.yWo, lagoon);
+      }} />}
+        <label htmlFor="commit-include-unstaged-changes" className="text-token-foreground">
+          {<FormattedMessage id="review.commit.selection.includeUnstagedChanges" defaultMessage="Include unstaged changes" description="Label for selecting unstaged changes in the commit modal" />}
         </label>
       </div>
-    </>
-  ) : null;
-  let Fe = !be,
-    Ie = <SUo reason={K} />;
-  let Le = () => {
-    return Ee("commit");
+    </> : null;
+  let Unity = !be,
+    Vale = <SUo reason={mint} />;
+  let Wave = () => {
+    return Lunar("commit");
   };
-  let Re = (
-    <Z
-      id="review.commit.nextSteps.commit"
-      defaultMessage="Commit"
-      description="Label for the commit-only option"
-    />
-  );
-  let ze = (
-    <PKo
-      Icon={peers.sJ}
-      disabled={Fe}
-      loading={H}
-      tooltipContent={Ie}
-      value="commit"
-      onSelect={Le}
-    >
-      {Re}
-    </PKo>
-  );
-  let Be = enablePushActions ? (
-    <PKo
-      Icon={peers.cJ}
-      disabled={!Se}
-      loading={false}
-      tooltipContent={K == null ? <CUo reason={F} /> : <SUo reason={K} />}
-      value="commit-and-push"
-      onSelect={() => {
-        return Ee("commit-and-push");
-      }}
-    >
-      <Z
-        id="review.commit.nextSteps.commitAndPush"
-        defaultMessage="Commit and push"
-        description="Label for the commit and push option"
-      />
-    </PKo>
-  ) : null;
-  let Ve = enablePushActions ? (
-    <PKo
-      Icon={peers.cJ}
-      disabled={!xe}
-      loading={false}
-      tooltipContent={<CUo reason={N} />}
-      value="push"
-      onSelect={() => {
-        return Ee("push");
-      }}
-    >
-      <Z
-        id="review.commit.nextSteps.push"
-        defaultMessage="Push"
-        description="Label for the push-only option"
-      />
-    </PKo>
-  ) : null;
-  let He = (
-    <div className="border-t border-token-border py-1">
-      {
-        <List>
+  let Apex = <FormattedMessage id="review.commit.nextSteps.commit" defaultMessage="Commit" description="Label for the commit-only option" />;
+  let Brook = <PKo Icon={peers.sJ} disabled={Unity} loading={ivory} tooltipContent={Vale} value="commit" onSelect={Wave}>
+      {Apex}
+    </PKo>;
+  let Cliff = enablePushActions ? <PKo Icon={peers.cJ} disabled={!Honey} loading={false} tooltipContent={mint == null ? <CUo reason={basalt} /> : <SUo reason={mint} />} value="commit-and-push" onSelect={() => {
+    return Lunar("commit-and-push");
+  }}>
+      <FormattedMessage id="review.commit.nextSteps.commitAndPush" defaultMessage="Commit and push" description="Label for the commit and push option" />
+    </PKo> : null;
+  let Dusk = enablePushActions ? <PKo Icon={peers.cJ} disabled={!Glide} loading={false} tooltipContent={<CUo reason={zinc} />} value="push" onSelect={() => {
+    return Lunar("push");
+  }}>
+      <FormattedMessage id="review.commit.nextSteps.push" defaultMessage="Push" description="Label for the push-only option" />
+    </PKo> : null;
+  let Elm = <div className="border-t border-token-border py-1">
+      {<List>
           <div className="flex flex-col gap-1">
-            {ze}
-            {Be}
-            {Ve}
+            {Brook}
+            {Cliff}
+            {Dusk}
           </div>
-        </List>
-      }
-    </div>
-  );
-  let Ue = (
-    <div className="command-menu-dialog contents">
-      {
-        <JH
-          data-codex-shortcut-capture={true}
-          className="w-[420px] max-w-[92vw]"
-          label={we}
-          shouldFilter={false}
-          loop={true}
-        >
-          {Me}
-          {Ne}
-          {Pe}
-          {He}
-        </JH>
-      }
-    </div>
-  );
-  return (
-    <Xk
-      open={open}
-      showDialogClose={false}
-      unstyledContent={true}
-      onOpenChange={Oe}
-    >
-      {ke}
-      {Ue}
-    </Xk>
-  );
+        </List>}
+    </div>;
+  let Fern = <div className="command-menu-dialog contents">
+      {<Harbor data-codex-shortcut-capture={true} className="w-[420px] max-w-[92vw]" label={Jewel} shouldFilter={false} loop={true}>
+          {Ridge}
+          {Storm}
+          {Tide}
+          {Elm}
+        </Harbor>}
+    </div>;
+  return <Indigo open={open} showDialogClose={false} unstyledContent={true} onOpenChange={North}>
+      {Orbit}
+      {Fern}
+    </Indigo>;
 }

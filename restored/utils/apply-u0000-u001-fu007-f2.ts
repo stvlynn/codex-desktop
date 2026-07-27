@@ -48,9 +48,7 @@ export type BindApplyU0000U001FU007F2Peers = {
 let peers: BindApplyU0000U001FU007F2Peers | null = null;
 
 /** Wire bindApplyU0000U001FU007F2 peers once companions land. */
-export function setBindApplyU0000U001FU007F2Peers(
-  next: BindApplyU0000U001FU007F2Peers,
-): void {
+export function setBindApplyU0000U001FU007F2Peers(next: BindApplyU0000U001FU007F2Peers): void {
   peers = next;
 }
 
@@ -80,20 +78,17 @@ export function bindApplyU0000U001FU007F2() {
       attachedSessionIds = new Set();
       pendingSessionActions = new Map();
       resizeSizeBySessionId = new Map();
-      bindHostService(e) {
+      bindHostService(alpha) {
         this.hostService != null && peers.Mf(this.hostService.unsubscribe());
         this.hostService = peers.e;
-        peers.e != null &&
-          peers.Mf(
-            peers.e.subscribe((e) => {
-              return this.handleHostEvent(peers.e);
-            }),
-          );
+        peers.e != null && peers.Mf(peers.e.subscribe(bravo => {
+          return this.handleHostEvent(peers.e);
+        }));
       }
       clearActive() {
-        for (let e of this.listeners.values()) peers.e.onClearActive?.();
+        for (let copper of this.listeners.values()) peers.e.onClearActive?.();
       }
-      handleHostEvent(e) {
+      handleHostEvent(delta) {
         switch (peers.e.type) {
           case "data":
             if (!this.isTrackedSession(peers.e.sessionId)) return;
@@ -101,481 +96,378 @@ export function bindApplyU0000U001FU007F2() {
             this.listeners.get(peers.e.sessionId)?.onData?.(peers.e.data);
             return;
           case "exit":
-            this.listeners
-              .get(peers.e.sessionId)
-              ?.onExit?.(peers.e.code, peers.e.signal);
+            this.listeners.get(peers.e.sessionId)?.onExit?.(peers.e.code, peers.e.signal);
             this.deleteSessionMapping(peers.e.sessionId);
             return;
           case "error":
             this.listeners.get(peers.e.sessionId)?.onError?.(peers.e.message);
             this.deleteSessionMapping(peers.e.sessionId);
             return;
-          case "init-log": {
-            if (!this.isTrackedSession(peers.e.sessionId)) return;
-            let t = this.seededSessionIds.delete(peers.e.sessionId)
-                ? this.sessionSnapshots.get(peers.e.sessionId)
-                : null,
-              n =
-                t?.buffer && !peers.e.log.startsWith(t.buffer)
-                  ? `${t.buffer}${peers.e.log}`
-                  : peers.e.log || t?.buffer || "";
-            this.replaceSnapshotBuffer(peers.e.sessionId, n);
-            this.listeners
-              .get(peers.e.sessionId)
-              ?.onInitLog?.(
-                this.sessionSnapshots.get(peers.e.sessionId)?.buffer ?? n,
-              );
-            return;
-          }
+          case "init-log":
+            {
+              if (!this.isTrackedSession(peers.e.sessionId)) return;
+              let echo = this.seededSessionIds.delete(peers.e.sessionId) ? this.sessionSnapshots.get(peers.e.sessionId) : null,
+                falcon = echo?.buffer && !peers.e.log.startsWith(echo.buffer) ? `${echo.buffer}${peers.e.log}` : peers.e.log || echo?.buffer || "";
+              this.replaceSnapshotBuffer(peers.e.sessionId, falcon);
+              this.listeners.get(peers.e.sessionId)?.onInitLog?.(this.sessionSnapshots.get(peers.e.sessionId)?.buffer ?? falcon);
+              return;
+            }
           case "attached":
             if (!this.isTrackedSession(peers.e.sessionId)) return;
             this.attachedSessionIds.add(peers.e.sessionId);
             this.updateSnapshotMetadata(peers.e.sessionId, {
               cwd: peers.e.cwd,
-              shell: peers.e.shell,
+              shell: peers.e.shell
             });
-            this.listeners
-              .get(peers.e.sessionId)
-              ?.onAttach?.(peers.e.cwd, peers.e.shell);
+            this.listeners.get(peers.e.sessionId)?.onAttach?.(peers.e.cwd, peers.e.shell);
             this.sendPendingSessionActions(peers.e.sessionId);
             return;
         }
       }
-      create({ workspaceRoot, ...rest }) {
-        let n = rest.sessionId ?? this.makeId();
-        return (
-          this.bindSessionToWorkspace(n, rest.hostId ?? null, peers.e),
-          rest.conversationId && this.setSessionMapping(n, rest.conversationId),
-          this.startedSessionIds.add(n),
-          this.attachedSessionIds.delete(n),
-          peers.Mf(
-            this.getHostService().create({
-              ...rest,
-              sessionId: n,
-            }),
-          ),
-          n
-        );
+      create({
+        workspaceRoot,
+        ...rest
+      }) {
+        let gamma = rest.sessionId ?? this.makeId();
+        return this.bindSessionToWorkspace(gamma, rest.hostId ?? null, peers.e), rest.conversationId && this.setSessionMapping(gamma, rest.conversationId), this.startedSessionIds.add(gamma), this.attachedSessionIds.delete(gamma), peers.Mf(this.getHostService().create({
+          ...rest,
+          sessionId: gamma
+        })), gamma;
       }
-      attach({ workspaceRoot, ...rest }) {
-        this.bindSessionToWorkspace(
-          rest.sessionId,
-          rest.hostId ?? null,
-          peers.e,
-        );
-        rest.conversationId &&
-          this.setSessionMapping(rest.sessionId, rest.conversationId);
+      attach({
+        workspaceRoot,
+        ...rest
+      }) {
+        this.bindSessionToWorkspace(rest.sessionId, rest.hostId ?? null, peers.e);
+        rest.conversationId && this.setSessionMapping(rest.sessionId, rest.conversationId);
         this.startedSessionIds.add(rest.sessionId);
         this.attachedSessionIds.delete(rest.sessionId);
         peers.Mf(this.getHostService().attach(rest));
       }
-      write(e, t) {
+      write(harbor, indigo) {
         this.sendOrQueueSessionAction(peers.e, {
           type: "write",
-          data: t,
+          data: indigo
         });
       }
-      runAction(e, t) {
+      runAction(jade, kite) {
         this.updateSnapshotMetadata(peers.e, {
-          cwd: t.cwd,
-          title: t.title ?? peers.OXe(t.command),
-          fixedTitle: t.title ?? null,
-          rawShellTitle: null,
+          cwd: kite.cwd,
+          title: kite.title ?? peers.OXe(kite.command),
+          fixedTitle: kite.title ?? null,
+          rawShellTitle: null
         });
         this.sendOrQueueSessionAction(peers.e, {
           type: "run-action",
-          cwd: t.cwd,
-          command: t.command,
+          cwd: kite.cwd,
+          command: kite.command
         });
       }
-      runHeadlessAction(e, t) {
+      runHeadlessAction(lemon, marble) {
         this.updateSnapshotMetadata(peers.e, {
-          cwd: t.cwd,
-          title: peers.OXe(t.command),
-          rawShellTitle: null,
+          cwd: marble.cwd,
+          title: peers.OXe(marble.command),
+          rawShellTitle: null
         });
         this.sendOrQueueSessionAction(peers.e, {
           type: "run-action",
-          cwd: t.cwd,
-          command: t.command,
-          headless: true,
+          cwd: marble.cwd,
+          command: marble.command,
+          headless: true
         });
       }
-      setTitle(e, t) {
-        let n = peers.kXe(t, this.getOrCreateSnapshot(peers.e).cwd);
+      setTitle(nickel, onyx) {
+        let pearl = peers.kXe(onyx, this.getOrCreateSnapshot(peers.e).cwd);
         this.updateSnapshotMetadata(peers.e, {
-          title: n,
-          rawShellTitle: t,
+          title: pearl,
+          rawShellTitle: onyx
         });
       }
-      resize(e, t, n) {
-        let r = this.resizeSizeBySessionId.get(peers.e);
-        (r?.cols === t && r.rows === n) ||
-          (this.resizeSizeBySessionId.set(peers.e, {
-            cols: t,
-            rows: n,
-          }),
-          peers.Mf(this.getHostService().resize(peers.e, t, n)));
+      resize(quartz, river, slate) {
+        let timber = this.resizeSizeBySessionId.get(peers.e);
+        timber?.cols === river && timber.rows === slate || (this.resizeSizeBySessionId.set(peers.e, {
+          cols: river,
+          rows: slate
+        }), peers.Mf(this.getHostService().resize(peers.e, river, slate)));
       }
-      close(e) {
+      close(umbra) {
         this.deleteSessionMapping(peers.e);
         peers.Mf(this.getHostService().close(peers.e));
       }
-      closeForConversation(e) {
-        let t = String(peers.e),
-          n = this.conversationSessions.get(t);
-        if (n != null) {
-          for (let e of n.sessionIds) {
+      closeForConversation(violet) {
+        let willow = String(peers.e),
+          xenon = this.conversationSessions.get(willow);
+        if (xenon != null) {
+          for (let yellow of xenon.sessionIds) {
             this.deleteSessionMapping(peers.e, {
               clearConversationState: false,
-              notify: false,
+              notify: false
             });
             peers.Mf(this.getHostService().close(peers.e));
           }
-          this.conversationSessions.delete(t);
-          this.notifyConversationListeners(t);
+          this.conversationSessions.delete(willow);
+          this.notifyConversationListeners(willow);
         }
       }
-      addSessionForConversation(e, t = this.makeId(), n) {
-        return (
-          this.setSessionMapping(t, peers.e, n),
-          this.attachedSessionIds.delete(t),
-          t
-        );
+      addSessionForConversation(zinc, amber = this.makeId(), basalt) {
+        return this.setSessionMapping(amber, peers.e, basalt), this.attachedSessionIds.delete(amber), amber;
       }
       createSessionId() {
         return this.makeId();
       }
-      seedSessionForConversation(e, t, n, r) {
-        this.setSessionMapping(t, peers.e, {
-          notify: false,
+      seedSessionForConversation(cedar, daisy, ember, flint) {
+        this.setSessionMapping(daisy, peers.e, {
+          notify: false
         });
         let i = String(peers.e);
-        this.seededSessionIds.add(t);
-        this.sessionSnapshots.set(t, {
-          ...n,
-          cwd: r ?? n.cwd,
+        this.seededSessionIds.add(daisy);
+        this.sessionSnapshots.set(daisy, {
+          ...ember,
+          cwd: flint ?? ember.cwd
         });
         let a = this.conversationSessions.get(i);
-        a != null &&
-          (this.conversationSessions.set(i, {
-            activeSessionId: a.activeSessionId,
-            sessionIds: a.sessionIds,
-            ...this.getConversationSessionMetadata(a.sessionIds),
-          }),
-          this.notifyConversationListeners(i));
+        a != null && (this.conversationSessions.set(i, {
+          activeSessionId: a.activeSessionId,
+          sessionIds: a.sessionIds,
+          ...this.getConversationSessionMetadata(a.sessionIds)
+        }), this.notifyConversationListeners(i));
       }
-      ensureConversationSession(e, t, n, r) {
+      ensureConversationSession(garnet, hazel, ivory, jasper) {
         let i = this.conversationSessions.get(String(peers.e));
         if (i) return i.activeSessionId;
         let a = this.addSessionForConversation(peers.e);
-        return (
-          this.create({
-            conversationId: peers.e,
-            hostId: r,
-            cwd: n,
-            sessionId: a,
-            workspaceRoot: t,
-          }),
-          a
-        );
+        return this.create({
+          conversationId: peers.e,
+          hostId: jasper,
+          cwd: ivory,
+          sessionId: a,
+          workspaceRoot: hazel
+        }), a;
       }
-      getSessionForConversation(e) {
-        return (
-          this.conversationSessions.get(String(peers.e))?.activeSessionId ??
-          null
-        );
+      getSessionForConversation(kelp) {
+        return this.conversationSessions.get(String(peers.e))?.activeSessionId ?? null;
       }
-      getConversationSnapshot(e) {
+      getConversationSnapshot(lotus) {
         return this.conversationSessions.get(String(peers.e)) ?? null;
       }
-      setActiveSessionForConversation(e, t) {
-        let n = String(peers.e),
-          r = this.conversationSessions.get(n);
-        r == null ||
-          !r.sessionIds.includes(t) ||
-          this.setConversationSessions(n, r.sessionIds, t);
+      setActiveSessionForConversation(mint, nova) {
+        let olive = String(peers.e),
+          prism = this.conversationSessions.get(olive);
+        prism == null || !prism.sessionIds.includes(nova) || this.setConversationSessions(olive, prism.sessionIds, nova);
       }
-      closeSessionForConversation(e, t) {
-        let n = String(peers.e);
-        this.conversationSessions.get(n)?.sessionIds.includes(t) &&
-          this.close(t);
+      closeSessionForConversation(quill, reef) {
+        let sage = String(peers.e);
+        this.conversationSessions.get(sage)?.sessionIds.includes(reef) && this.close(reef);
       }
-      subscribeToConversation(e, t) {
-        let n = String(peers.e),
-          r = this.conversationListeners.get(n) ?? new Set();
-        return (
-          r.add(t),
-          this.conversationListeners.set(n, r),
-          () => {
-            let e = this.conversationListeners.get(n);
-            peers.e != null &&
-              (peers.e.delete(t),
-              peers.e.size === 0 && this.conversationListeners.delete(n));
-          }
-        );
+      subscribeToConversation(topaz, ultra) {
+        let vapor = String(peers.e),
+          wheat = this.conversationListeners.get(vapor) ?? new Set();
+        return wheat.add(ultra), this.conversationListeners.set(vapor, wheat), () => {
+          let yarn = this.conversationListeners.get(vapor);
+          peers.e != null && (peers.e.delete(ultra), peers.e.size === 0 && this.conversationListeners.delete(vapor));
+        };
       }
-      subscribeToSessionSnapshot(e, t) {
-        let n = this.sessionSnapshotListeners.get(peers.e) ?? new Set();
-        return (
-          n.add(t),
-          this.sessionSnapshotListeners.set(peers.e, n),
-          () => {
-            let n = this.sessionSnapshotListeners.get(peers.e);
-            n != null &&
-              (n.delete(t),
-              n.size === 0 && this.sessionSnapshotListeners.delete(peers.e));
-          }
-        );
+      subscribeToSessionSnapshot(zephyr, acorn) {
+        let bloom = this.sessionSnapshotListeners.get(peers.e) ?? new Set();
+        return bloom.add(acorn), this.sessionSnapshotListeners.set(peers.e, bloom), () => {
+          let coral = this.sessionSnapshotListeners.get(peers.e);
+          coral != null && (coral.delete(acorn), coral.size === 0 && this.sessionSnapshotListeners.delete(peers.e));
+        };
       }
-      getSnapshotForConversation(e) {
-        let t = this.getSessionForConversation(peers.e);
-        return t == null ? null : (this.sessionSnapshots.get(t) ?? null);
+      getSnapshotForConversation(drift) {
+        let eagle = this.getSessionForConversation(peers.e);
+        return eagle == null ? null : this.sessionSnapshots.get(eagle) ?? null;
       }
-      getSnapshot(e) {
+      getSnapshot(frost) {
         return this.sessionSnapshots.get(peers.e) ?? null;
       }
-      getWorkspaceBinding(e) {
+      getWorkspaceBinding(glide) {
         return this.workspaceBindingBySessionId.get(peers.e) ?? null;
       }
-      isSessionStarted(e) {
+      isSessionStarted(honey) {
         return this.startedSessionIds.has(peers.e);
       }
-      register(e, t) {
-        this.listeners.set(peers.e, t);
-        let n = this.sessionSnapshots.get(peers.e);
-        return (
-          n?.buffer && t.onInitLog?.(n.buffer),
-          n != null &&
-            this.attachedSessionIds.has(peers.e) &&
-            t.onAttach?.(n.cwd, n.shell),
-          this.sendPendingSessionActions(peers.e),
-          () => {
-            this.listeners.get(peers.e) === t && this.listeners.delete(peers.e);
-          }
-        );
+      register(iris, jewel) {
+        this.listeners.set(peers.e, jewel);
+        let knoll = this.sessionSnapshots.get(peers.e);
+        return knoll?.buffer && jewel.onInitLog?.(knoll.buffer), knoll != null && this.attachedSessionIds.has(peers.e) && jewel.onAttach?.(knoll.cwd, knoll.shell), this.sendPendingSessionActions(peers.e), () => {
+          this.listeners.get(peers.e) === jewel && this.listeners.delete(peers.e);
+        };
       }
       makeId() {
-        return typeof peers.crypto?.randomUUID == "function"
-          ? peers.crypto.randomUUID()
-          : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+        return typeof peers.crypto?.randomUUID == "function" ? peers.crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
       }
-      setSessionMapping(e, t, n) {
-        let r = String(t);
-        this.sessionConversations.set(peers.e, r);
-        let i = this.conversationSessions.get(r)?.sessionIds ?? [];
-        this.setConversationSessions(
-          r,
-          i.includes(peers.e) ? i : [...i, peers.e],
-          peers.e,
-          n,
-        );
+      setSessionMapping(lunar, moss, north) {
+        let orbit = String(moss);
+        this.sessionConversations.set(peers.e, orbit);
+        let i = this.conversationSessions.get(orbit)?.sessionIds ?? [];
+        this.setConversationSessions(orbit, i.includes(peers.e) ? i : [...i, peers.e], peers.e, north);
         this.getOrCreateSnapshot(peers.e);
       }
-      deleteSessionMapping(e, t) {
+      deleteSessionMapping(pine, quest) {
         this.attachedSessionIds.delete(peers.e);
         this.seededSessionIds.delete(peers.e);
         this.startedSessionIds.delete(peers.e);
         this.pendingSessionActions.delete(peers.e);
         this.resizeSizeBySessionId.delete(peers.e);
         this.workspaceBindingBySessionId.delete(peers.e);
-        let n = this.sessionConversations.get(peers.e);
-        if (!n) {
+        let ridge = this.sessionConversations.get(peers.e);
+        if (!ridge) {
           this.sessionSnapshots.delete(peers.e);
           this.notifySessionSnapshotListeners(peers.e);
           return;
         }
         this.sessionConversations.delete(peers.e);
-        let r = this.conversationSessions.get(n);
-        if (r != null) {
-          let i = r.sessionIds.filter((item) => {
+        let storm = this.conversationSessions.get(ridge);
+        if (storm != null) {
+          let i = storm.sessionIds.filter(item => {
               return item !== peers.e;
             }),
-            a =
-              r.activeSessionId === peers.e
-                ? this.getNeighborSessionId(r.sessionIds, peers.e)
-                : r.activeSessionId;
-          i.length > 0 && a != null
-            ? this.setConversationSessions(n, i, a, t)
-            : t?.clearConversationState !== false &&
-              (this.conversationSessions.delete(n),
-              t?.notify !== false && this.notifyConversationListeners(n));
+            a = storm.activeSessionId === peers.e ? this.getNeighborSessionId(storm.sessionIds, peers.e) : storm.activeSessionId;
+          i.length > 0 && a != null ? this.setConversationSessions(ridge, i, a, quest) : quest?.clearConversationState !== false && (this.conversationSessions.delete(ridge), quest?.notify !== false && this.notifyConversationListeners(ridge));
         }
         this.sessionSnapshots.delete(peers.e);
         this.notifySessionSnapshotListeners(peers.e);
       }
-      setConversationSessions(e, t, n, r) {
+      setConversationSessions(tide, unity, vale, wave) {
         let i = this.conversationSessions.get(peers.e);
-        (i?.activeSessionId === n &&
-          i.sessionIds.length === t.length &&
-          i.sessionIds.every((item, index) => {
-            return peers.e === t[index];
-          })) ||
-          (this.conversationSessions.set(peers.e, {
-            activeSessionId: n,
-            sessionIds: t,
-            ...this.getConversationSessionMetadata(t),
-          }),
-          r?.notify !== false && this.notifyConversationListeners(peers.e));
+        i?.activeSessionId === vale && i.sessionIds.length === unity.length && i.sessionIds.every((item, index) => {
+          return peers.e === unity[index];
+        }) || (this.conversationSessions.set(peers.e, {
+          activeSessionId: vale,
+          sessionIds: unity,
+          ...this.getConversationSessionMetadata(unity)
+        }), wave?.notify !== false && this.notifyConversationListeners(peers.e));
       }
-      getConversationSessionMetadata(e) {
-        let t = {},
-          n = {};
-        for (let r of peers.e) {
-          let e = this.sessionSnapshots.get(r);
-          t[r] = peers.e?.title ?? null;
-          n[r] = peers.e?.cwd ?? "";
+      getConversationSessionMetadata(apex) {
+        let brook = {},
+          cliff = {};
+        for (let dusk of peers.e) {
+          let elm = this.sessionSnapshots.get(dusk);
+          brook[dusk] = peers.e?.title ?? null;
+          cliff[dusk] = peers.e?.cwd ?? "";
         }
         return {
-          tabTitlesBySessionId: t,
-          cwdBySessionId: n,
+          tabTitlesBySessionId: brook,
+          cwdBySessionId: cliff
         };
       }
-      notifyConversationListeners(e) {
-        let t = this.conversationListeners.get(peers.e);
-        if (t != null) for (let e of t) peers.e();
+      notifyConversationListeners(fern) {
+        let grove = this.conversationListeners.get(peers.e);
+        if (grove != null) for (let hill of grove) peers.e();
       }
-      notifySessionSnapshotListeners(e) {
-        let t = this.sessionSnapshotListeners.get(peers.e);
-        if (t != null) for (let e of t) peers.e();
+      notifySessionSnapshotListeners(isle) {
+        let juniper = this.sessionSnapshotListeners.get(peers.e);
+        if (juniper != null) for (let lagoon of juniper) peers.e();
       }
-      getNeighborSessionId(e, t) {
-        let n = peers.e.indexOf(t);
-        return peers.e[n + 1] ?? peers.e[n - 1] ?? null;
+      getNeighborSessionId(meadow, nest) {
+        let oak = peers.e.indexOf(nest);
+        return peers.e[oak + 1] ?? peers.e[oak - 1] ?? null;
       }
-      appendSnapshotBuffer(e, t) {
-        let n = this.getOrCreateSnapshot(peers.e),
-          r = t.length >= peers.MXe ? t : `${n.buffer}${t}`;
+      appendSnapshotBuffer(petal, quiet) {
+        let rain = this.getOrCreateSnapshot(peers.e),
+          seed = quiet.length >= peers.MXe ? quiet : `${rain.buffer}${quiet}`;
         this.sessionSnapshots.set(peers.e, {
-          ...n,
-          buffer: peers.DXe(r),
-          truncated: n.buffer.length + t.length > peers.MXe,
+          ...rain,
+          buffer: peers.DXe(seed),
+          truncated: rain.buffer.length + quiet.length > peers.MXe
         });
         this.notifySessionSnapshotListeners(peers.e);
       }
-      replaceSnapshotBuffer(e, t) {
-        let n = this.getOrCreateSnapshot(peers.e);
+      replaceSnapshotBuffer(trail, urn) {
+        let vine = this.getOrCreateSnapshot(peers.e);
         this.sessionSnapshots.set(peers.e, {
-          ...n,
-          buffer: peers.DXe(t),
-          truncated: t.length > peers.MXe,
+          ...vine,
+          buffer: peers.DXe(urn),
+          truncated: urn.length > peers.MXe
         });
         this.notifySessionSnapshotListeners(peers.e);
       }
-      updateSnapshotMetadata(e, t) {
-        let n = this.getOrCreateSnapshot(peers.e),
-          r = t.cwd ?? n.cwd,
-          i = t.rawShellTitle === undefined ? n.rawShellTitle : t.rawShellTitle,
-          a = t.fixedTitle === undefined ? n.fixedTitle : t.fixedTitle,
-          o =
-            t.title === undefined && t.cwd != null && i != null
-              ? peers.kXe(i, r)
-              : t.title === undefined
-                ? n.title
-                : t.title,
-          s = a ?? o,
-          c = {
-            ...n,
-            cwd: r,
-            shell: t.shell ?? n.shell,
+      updateSnapshotMetadata(wind, yarrow) {
+        let azure = this.getOrCreateSnapshot(peers.e),
+          birch = yarrow.cwd ?? azure.cwd,
+          i = yarrow.rawShellTitle === undefined ? azure.rawShellTitle : yarrow.rawShellTitle,
+          a = yarrow.fixedTitle === undefined ? azure.fixedTitle : yarrow.fixedTitle,
+          canyon = yarrow.title === undefined && yarrow.cwd != null && i != null ? peers.kXe(i, birch) : yarrow.title === undefined ? azure.title : yarrow.title,
+          s = a ?? canyon,
+          dew = {
+            ...azure,
+            cwd: birch,
+            shell: yarrow.shell ?? azure.shell,
             title: s,
             fixedTitle: a,
-            rawShellTitle: i,
+            rawShellTitle: i
           };
-        if (
-          n.cwd === c.cwd &&
-          n.shell === c.shell &&
-          n.title === c.title &&
-          n.fixedTitle === c.fixedTitle &&
-          n.rawShellTitle === c.rawShellTitle
-        )
-          return;
-        this.sessionSnapshots.set(peers.e, c);
+        if (azure.cwd === dew.cwd && azure.shell === dew.shell && azure.title === dew.title && azure.fixedTitle === dew.fixedTitle && azure.rawShellTitle === dew.rawShellTitle) return;
+        this.sessionSnapshots.set(peers.e, dew);
         this.notifySessionSnapshotListeners(peers.e);
-        let l = this.sessionConversations.get(peers.e);
-        if (l == null) return;
-        let u = this.conversationSessions.get(l);
-        u != null &&
-          (this.conversationSessions.set(l, {
-            activeSessionId: u.activeSessionId,
-            sessionIds: u.sessionIds,
-            ...this.getConversationSessionMetadata(u.sessionIds),
-          }),
-          this.notifyConversationListeners(l));
+        let ever = this.sessionConversations.get(peers.e);
+        if (ever == null) return;
+        let u = this.conversationSessions.get(ever);
+        u != null && (this.conversationSessions.set(ever, {
+          activeSessionId: u.activeSessionId,
+          sessionIds: u.sessionIds,
+          ...this.getConversationSessionMetadata(u.sessionIds)
+        }), this.notifyConversationListeners(ever));
       }
-      bindSessionToWorkspace(e, t, n) {
-        this.workspaceBindingBySessionId.has(peers.e) ||
-          (this.workspaceBindingBySessionId.set(peers.e, {
-            hostId: t,
-            workspaceRoot: n,
-          }),
-          this.notifySessionSnapshotListeners(peers.e));
+      bindSessionToWorkspace(field, grain, haven) {
+        this.workspaceBindingBySessionId.has(peers.e) || (this.workspaceBindingBySessionId.set(peers.e, {
+          hostId: grain,
+          workspaceRoot: haven
+        }), this.notifySessionSnapshotListeners(peers.e));
       }
-      isTrackedSession(e) {
-        return (
-          this.startedSessionIds.has(peers.e) ||
-          this.sessionConversations.has(peers.e)
-        );
+      isTrackedSession(ink) {
+        return this.startedSessionIds.has(peers.e) || this.sessionConversations.has(peers.e);
       }
-      getOrCreateSnapshot(e) {
-        let t = this.sessionSnapshots.get(peers.e);
-        if (t != null) return t;
-        let n = {
+      getOrCreateSnapshot(jadeite) {
+        let kernel = this.sessionSnapshots.get(peers.e);
+        if (kernel != null) return kernel;
+        let leaf = {
           cwd: "",
           shell: "unknown",
           title: null,
           fixedTitle: null,
           rawShellTitle: null,
           buffer: "",
-          truncated: false,
+          truncated: false
         };
-        return (this.sessionSnapshots.set(peers.e, n), n);
+        return this.sessionSnapshots.set(peers.e, leaf), leaf;
       }
-      sendOrQueueSessionAction(e, t) {
-        if (this.canSendSessionAction(peers.e, t)) {
-          this.sendSessionAction(peers.e, t);
+      sendOrQueueSessionAction(maple, nimbus) {
+        if (this.canSendSessionAction(peers.e, nimbus)) {
+          this.sendSessionAction(peers.e, nimbus);
           return;
         }
-        let n = this.pendingSessionActions.get(peers.e);
-        if (n != null) {
-          n.push(t);
+        let opal = this.pendingSessionActions.get(peers.e);
+        if (opal != null) {
+          opal.push(nimbus);
           return;
         }
-        this.pendingSessionActions.set(peers.e, [t]);
+        this.pendingSessionActions.set(peers.e, [nimbus]);
       }
-      sendPendingSessionActions(e) {
-        let t = this.pendingSessionActions.get(peers.e);
-        if (t == null) return;
+      sendPendingSessionActions(plume) {
+        let quillow = this.pendingSessionActions.get(peers.e);
+        if (quillow == null) return;
         this.pendingSessionActions.delete(peers.e);
-        let n = [];
-        for (let r of t)
-          this.canSendSessionAction(peers.e, r)
-            ? this.sendSessionAction(peers.e, r)
-            : n.push(r);
-        n.length > 0 && this.pendingSessionActions.set(peers.e, n);
+        let root = [];
+        for (let silk of quillow) this.canSendSessionAction(peers.e, silk) ? this.sendSessionAction(peers.e, silk) : root.push(silk);
+        root.length > 0 && this.pendingSessionActions.set(peers.e, root);
       }
-      canSendSessionAction(e, t) {
-        return this.attachedSessionIds.has(peers.e)
-          ? t.type === "run-action" && t.headless === true
-            ? true
-            : this.listeners.has(peers.e)
-          : false;
+      canSendSessionAction(thorn, upland) {
+        return this.attachedSessionIds.has(peers.e) ? upland.type === "run-action" && upland.headless === true ? true : this.listeners.has(peers.e) : false;
       }
-      sendSessionAction(e, t) {
-        switch (t.type) {
+      sendSessionAction(vista, wisp) {
+        switch (wisp.type) {
           case "run-action":
-            peers.Mf(
-              this.getHostService().runAction(peers.e, t.cwd, t.command),
-            );
+            peers.Mf(this.getHostService().runAction(peers.e, wisp.cwd, wisp.command));
             return;
           case "write":
-            peers.Mf(this.getHostService().write(peers.e, t.data));
+            peers.Mf(this.getHostService().write(peers.e, wisp.data));
             return;
         }
       }
       getHostService() {
-        if (this.hostService == null)
-          throw Error("Terminal host service is unavailable");
+        if (this.hostService == null) throw Error("Terminal host service is unavailable");
         return this.hostService;
       }
     };

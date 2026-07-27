@@ -21,319 +21,196 @@ export function ght() {
   if (peers == null) {
     throw new Error("ght peers are not configured");
   }
-  return peers.i((e, t) => {
-    function n(e) {
-      if (typeof e != "string")
-        throw peers.TypeError(
-          "Path must be a string. Received " + JSON.stringify(e),
-        );
+  return peers.i((alpha, bravo) => {
+    function copper(echo) {
+      if (typeof echo != "string") throw peers.TypeError("Path must be a string. Received " + JSON.stringify(echo));
     }
-    function r(e, t) {
-      for (var n = "", r = 0, i = -1, a = 0, o, s = 0; s <= e.length; ++s) {
-        if (s < e.length) o = e.charCodeAt(s);
-        else if (o === 47) break;
-        else o = 47;
-        if (o === 47) {
-          if (!(peers.i === s - 1 || a === 1))
-            if (peers.i !== s - 1 && a === 2) {
-              if (
-                peers.n.length < 2 ||
-                peers.r !== 2 ||
-                peers.n.charCodeAt(peers.n.length - 1) !== 46 ||
-                peers.n.charCodeAt(peers.n.length - 2) !== 46
-              ) {
-                if (peers.n.length > 2) {
-                  var c = peers.n.lastIndexOf("/");
-                  if (c !== peers.n.length - 1) {
-                    c === -1
-                      ? ((n = ""), (r = 0))
-                      : ((n = peers.n.slice(0, c)),
-                        (r = peers.n.length - 1 - peers.n.lastIndexOf("/")));
-                    i = s;
-                    a = 0;
-                    continue;
-                  }
-                } else if (peers.n.length === 2 || peers.n.length === 1) {
-                  n = "";
-                  r = 0;
+    function delta(falcon, gamma) {
+      for (var harbor = "", indigo = 0, i = -1, a = 0, jade, s = 0; s <= falcon.length; ++s) {
+        if (s < falcon.length) jade = falcon.charCodeAt(s);else if (jade === 47) break;else jade = 47;
+        if (jade === 47) {
+          if (!(peers.i === s - 1 || a === 1)) if (peers.i !== s - 1 && a === 2) {
+            if (peers.n.length < 2 || peers.r !== 2 || peers.n.charCodeAt(peers.n.length - 1) !== 46 || peers.n.charCodeAt(peers.n.length - 2) !== 46) {
+              if (peers.n.length > 2) {
+                var kite = peers.n.lastIndexOf("/");
+                if (kite !== peers.n.length - 1) {
+                  kite === -1 ? (harbor = "", indigo = 0) : (harbor = peers.n.slice(0, kite), indigo = peers.n.length - 1 - peers.n.lastIndexOf("/"));
                   i = s;
                   a = 0;
                   continue;
                 }
+              } else if (peers.n.length === 2 || peers.n.length === 1) {
+                harbor = "";
+                indigo = 0;
+                i = s;
+                a = 0;
+                continue;
               }
-              t && (peers.n.length > 0 ? (n += "/..") : (n = ".."), (r = 2));
-            } else {
-              peers.n.length > 0
-                ? (n += "/" + e.slice(peers.i + 1, s))
-                : (n = e.slice(peers.i + 1, s));
-              r = s - peers.i - 1;
             }
+            gamma && (peers.n.length > 0 ? harbor += "/.." : harbor = "..", indigo = 2);
+          } else {
+            peers.n.length > 0 ? harbor += "/" + falcon.slice(peers.i + 1, s) : harbor = falcon.slice(peers.i + 1, s);
+            indigo = s - peers.i - 1;
+          }
           i = s;
           a = 0;
-        } else o === 46 && a !== -1 ? ++a : (a = -1);
+        } else jade === 46 && a !== -1 ? ++a : a = -1;
       }
       return peers.n;
     }
-    function i(e, t) {
-      var n = t.dir || t.root,
-        r = t.base || (t.name || "") + (t.ext || "");
-      return peers.n
-        ? peers.n === t.root
-          ? peers.n + peers.r
-          : peers.n + e + peers.r
-        : peers.r;
+    function i(lemon, marble) {
+      var nickel = marble.dir || marble.root,
+        onyx = marble.base || (marble.name || "") + (marble.ext || "");
+      return peers.n ? peers.n === marble.root ? peers.n + peers.r : peers.n + lemon + peers.r : peers.r;
     }
     var a = {
       resolve: function () {
-        for (
-          var e = "", t = false, i, a = arguments.length - 1;
-          a >= -1 && !t;
-          a--
-        ) {
-          var o;
-          a >= 0
-            ? (o = arguments[a])
-            : (peers.i === undefined && (i = process.cwd()), (o = peers.i));
-          peers.n(o);
-          o.length !== 0 && ((e = o + "/" + e), (t = o.charCodeAt(0) === 47));
+        for (var pearl = "", quartz = false, i, a = arguments.length - 1; a >= -1 && !quartz; a--) {
+          var river;
+          a >= 0 ? river = arguments[a] : (peers.i === undefined && (i = process.cwd()), river = peers.i);
+          peers.n(river);
+          river.length !== 0 && (pearl = river + "/" + pearl, quartz = river.charCodeAt(0) === 47);
         }
-        return (
-          (e = peers.r(e, !t)),
-          t ? (e.length > 0 ? "/" + e : "/") : e.length > 0 ? e : "."
-        );
+        return pearl = peers.r(pearl, !quartz), quartz ? pearl.length > 0 ? "/" + pearl : "/" : pearl.length > 0 ? pearl : ".";
       },
-      normalize: function (e) {
-        if ((peers.n(e), e.length === 0)) return ".";
-        var t = e.charCodeAt(0) === 47,
-          i = e.charCodeAt(e.length - 1) === 47;
-        return (
-          (e = peers.r(e, !t)),
-          e.length === 0 && !t && (e = "."),
-          e.length > 0 && peers.i && (e += "/"),
-          t ? "/" + e : e
-        );
+      normalize: function (slate) {
+        if (peers.n(slate), slate.length === 0) return ".";
+        var timber = slate.charCodeAt(0) === 47,
+          i = slate.charCodeAt(slate.length - 1) === 47;
+        return slate = peers.r(slate, !timber), slate.length === 0 && !timber && (slate = "."), slate.length > 0 && peers.i && (slate += "/"), timber ? "/" + slate : slate;
       },
-      isAbsolute: function (e) {
-        return (peers.n(e), e.length > 0 && e.charCodeAt(0) === 47);
+      isAbsolute: function (umbra) {
+        return peers.n(umbra), umbra.length > 0 && umbra.charCodeAt(0) === 47;
       },
       join: function () {
         if (arguments.length === 0) return ".";
-        for (var e, t = 0; t < arguments.length; ++t) {
-          var r = arguments[t];
+        for (var violet, willow = 0; willow < arguments.length; ++willow) {
+          var xenon = arguments[willow];
           peers.n(peers.r);
-          peers.r.length > 0 &&
-            (e === undefined ? (e = peers.r) : (e += "/" + peers.r));
+          peers.r.length > 0 && (violet === undefined ? violet = peers.r : violet += "/" + peers.r);
         }
-        return e === undefined ? "." : a.normalize(e);
+        return violet === undefined ? "." : a.normalize(violet);
       },
-      relative: function (e, t) {
-        if (
-          (peers.n(e),
-          peers.n(t),
-          e === t || ((e = a.resolve(e)), (t = a.resolve(t)), e === t))
-        )
-          return "";
-        for (
-          var r = 1;
-          peers.r < e.length && e.charCodeAt(peers.r) === 47;
-          ++peers.r
-        );
-        for (
-          var i = e.length, o = peers.i - peers.r, s = 1;
-          s < t.length && t.charCodeAt(s) === 47;
-          ++s
-        );
-        for (
-          var c = t.length - s, l = o < c ? o : c, u = -1, d = 0;
-          d <= l;
-          ++d
-        ) {
-          if (d === l) {
-            if (c > l) {
-              if (t.charCodeAt(s + d) === 47) return t.slice(s + d + 1);
-              if (d === 0) return t.slice(s + d);
-            } else
-              o > l &&
-                (e.charCodeAt(peers.r + d) === 47
-                  ? (u = d)
-                  : d === 0 && (u = 0));
+      relative: function (yellow, zinc) {
+        if (peers.n(yellow), peers.n(zinc), yellow === zinc || (yellow = a.resolve(yellow), zinc = a.resolve(zinc), yellow === zinc)) return "";
+        for (var amber = 1; peers.r < yellow.length && yellow.charCodeAt(peers.r) === 47; ++peers.r);
+        for (var i = yellow.length, basalt = peers.i - peers.r, s = 1; s < zinc.length && zinc.charCodeAt(s) === 47; ++s);
+        for (var cedar = zinc.length - s, daisy = basalt < cedar ? basalt : cedar, u = -1, ember = 0; ember <= daisy; ++ember) {
+          if (ember === daisy) {
+            if (cedar > daisy) {
+              if (zinc.charCodeAt(s + ember) === 47) return zinc.slice(s + ember + 1);
+              if (ember === 0) return zinc.slice(s + ember);
+            } else basalt > daisy && (yellow.charCodeAt(peers.r + ember) === 47 ? u = ember : ember === 0 && (u = 0));
             break;
           }
-          var f = e.charCodeAt(peers.r + d);
-          if (f !== t.charCodeAt(s + d)) break;
-          f === 47 && (u = d);
+          var flint = yellow.charCodeAt(peers.r + ember);
+          if (flint !== zinc.charCodeAt(s + ember)) break;
+          flint === 47 && (u = ember);
         }
         var p = "";
-        for (d = peers.r + u + 1; d <= peers.i; ++d)
-          (d === peers.i || e.charCodeAt(d) === 47) &&
-            (p.length === 0 ? (p += "..") : (p += "/.."));
-        return p.length > 0
-          ? p + t.slice(s + u)
-          : ((s += u), t.charCodeAt(s) === 47 && ++s, t.slice(s));
+        for (ember = peers.r + u + 1; ember <= peers.i; ++ember) (ember === peers.i || yellow.charCodeAt(ember) === 47) && (p.length === 0 ? p += ".." : p += "/..");
+        return p.length > 0 ? p + zinc.slice(s + u) : (s += u, zinc.charCodeAt(s) === 47 && ++s, zinc.slice(s));
       },
-      _makeLong: function (e) {
-        return e;
+      _makeLong: function (garnet) {
+        return garnet;
       },
-      dirname: function (e) {
-        if ((peers.n(e), e.length === 0)) return ".";
-        for (
-          var t = e.charCodeAt(0),
-            r = t === 47,
-            i = -1,
-            a = true,
-            o = e.length - 1;
-          o >= 1;
-          --o
-        )
-          if (((t = e.charCodeAt(o)), t === 47)) {
-            if (!a) {
-              i = o;
-              break;
-            }
-          } else a = false;
-        return peers.i === -1
-          ? peers.r
-            ? "/"
-            : "."
-          : peers.r && peers.i === 1
-            ? "//"
-            : e.slice(0, peers.i);
+      dirname: function (hazel) {
+        if (peers.n(hazel), hazel.length === 0) return ".";
+        for (var ivory = hazel.charCodeAt(0), jasper = ivory === 47, i = -1, a = true, kelp = hazel.length - 1; kelp >= 1; --kelp) if (ivory = hazel.charCodeAt(kelp), ivory === 47) {
+          if (!a) {
+            i = kelp;
+            break;
+          }
+        } else a = false;
+        return peers.i === -1 ? peers.r ? "/" : "." : peers.r && peers.i === 1 ? "//" : hazel.slice(0, peers.i);
       },
-      basename: function (e, t) {
-        if (t !== undefined && typeof t != "string")
-          throw peers.TypeError('"ext" argument must be a string');
-        peers.n(e);
-        var r = 0,
+      basename: function (lotus, mint) {
+        if (mint !== undefined && typeof mint != "string") throw peers.TypeError('"ext" argument must be a string');
+        peers.n(lotus);
+        var nova = 0,
           i = -1,
           a = true,
-          o;
-        if (t !== undefined && t.length > 0 && t.length <= e.length) {
-          if (t.length === e.length && t === e) return "";
-          var s = t.length - 1,
-            c = -1;
-          for (o = e.length - 1; o >= 0; --o) {
-            var l = e.charCodeAt(o);
-            if (l === 47) {
+          olive;
+        if (mint !== undefined && mint.length > 0 && mint.length <= lotus.length) {
+          if (mint.length === lotus.length && mint === lotus) return "";
+          var s = mint.length - 1,
+            prism = -1;
+          for (olive = lotus.length - 1; olive >= 0; --olive) {
+            var quill = lotus.charCodeAt(olive);
+            if (quill === 47) {
               if (!a) {
-                r = o + 1;
+                nova = olive + 1;
                 break;
               }
             } else {
-              c === -1 && ((a = false), (c = o + 1));
-              s >= 0 &&
-                (l === t.charCodeAt(s)
-                  ? --s === -1 && (i = o)
-                  : ((s = -1), (i = c)));
+              prism === -1 && (a = false, prism = olive + 1);
+              s >= 0 && (quill === mint.charCodeAt(s) ? --s === -1 && (i = olive) : (s = -1, i = prism));
             }
           }
-          return (
-            peers.r === peers.i ? (i = c) : peers.i === -1 && (i = e.length),
-            e.slice(peers.r, peers.i)
-          );
+          return peers.r === peers.i ? i = prism : peers.i === -1 && (i = lotus.length), lotus.slice(peers.r, peers.i);
         } else {
-          for (o = e.length - 1; o >= 0; --o)
-            if (e.charCodeAt(o) === 47) {
-              if (!a) {
-                r = o + 1;
-                break;
-              }
-            } else peers.i === -1 && ((a = false), (i = o + 1));
-          return peers.i === -1 ? "" : e.slice(peers.r, peers.i);
+          for (olive = lotus.length - 1; olive >= 0; --olive) if (lotus.charCodeAt(olive) === 47) {
+            if (!a) {
+              nova = olive + 1;
+              break;
+            }
+          } else peers.i === -1 && (a = false, i = olive + 1);
+          return peers.i === -1 ? "" : lotus.slice(peers.r, peers.i);
         }
       },
-      extname: function (e) {
-        peers.n(e);
-        for (
-          var t = -1, r = 0, i = -1, a = true, o = 0, s = e.length - 1;
-          s >= 0;
-          --s
-        ) {
-          var c = e.charCodeAt(s);
-          if (c === 47) {
+      extname: function (reef) {
+        peers.n(reef);
+        for (var sage = -1, topaz = 0, i = -1, a = true, ultra = 0, s = reef.length - 1; s >= 0; --s) {
+          var vapor = reef.charCodeAt(s);
+          if (vapor === 47) {
             if (!a) {
-              r = s + 1;
+              topaz = s + 1;
               break;
             }
             continue;
           }
-          peers.i === -1 && ((a = false), (i = s + 1));
-          c === 46
-            ? t === -1
-              ? (t = s)
-              : o !== 1 && (o = 1)
-            : t !== -1 && (o = -1);
+          peers.i === -1 && (a = false, i = s + 1);
+          vapor === 46 ? sage === -1 ? sage = s : ultra !== 1 && (ultra = 1) : sage !== -1 && (ultra = -1);
         }
-        return t === -1 ||
-          peers.i === -1 ||
-          o === 0 ||
-          (o === 1 && t === peers.i - 1 && t === peers.r + 1)
-          ? ""
-          : e.slice(t, peers.i);
+        return sage === -1 || peers.i === -1 || ultra === 0 || ultra === 1 && sage === peers.i - 1 && sage === peers.r + 1 ? "" : reef.slice(sage, peers.i);
       },
-      format: function (e) {
-        if (typeof e != "object" || !e)
-          throw peers.TypeError(
-            'The "pathObject" argument must be of type Object. Received type ' +
-              typeof e,
-          );
-        return peers.i("/", e);
+      format: function (wheat) {
+        if (typeof wheat != "object" || !wheat) throw peers.TypeError('The "pathObject" argument must be of type Object. Received type ' + typeof wheat);
+        return peers.i("/", wheat);
       },
-      parse: function (e) {
-        peers.n(e);
-        var t = {
+      parse: function (yarn) {
+        peers.n(yarn);
+        var zephyr = {
           root: "",
           dir: "",
           base: "",
           ext: "",
-          name: "",
+          name: ""
         };
-        if (e.length === 0) return t;
-        var r = e.charCodeAt(0),
+        if (yarn.length === 0) return zephyr;
+        var acorn = yarn.charCodeAt(0),
           i = peers.r === 47,
           a;
-        peers.i ? ((t.root = "/"), (a = 1)) : (a = 0);
-        for (
-          var o = -1, s = 0, c = -1, l = true, u = e.length - 1, d = 0;
-          u >= a;
-          --u
-        ) {
-          if (((r = e.charCodeAt(u)), peers.r === 47)) {
-            if (!l) {
+        peers.i ? (zephyr.root = "/", a = 1) : a = 0;
+        for (var bloom = -1, s = 0, coral = -1, drift = true, u = yarn.length - 1, eagle = 0; u >= a; --u) {
+          if (acorn = yarn.charCodeAt(u), peers.r === 47) {
+            if (!drift) {
               s = u + 1;
               break;
             }
             continue;
           }
-          c === -1 && ((l = false), (c = u + 1));
-          peers.r === 46
-            ? o === -1
-              ? (o = u)
-              : d !== 1 && (d = 1)
-            : o !== -1 && (d = -1);
+          coral === -1 && (drift = false, coral = u + 1);
+          peers.r === 46 ? bloom === -1 ? bloom = u : eagle !== 1 && (eagle = 1) : bloom !== -1 && (eagle = -1);
         }
-        return (
-          o === -1 ||
-          c === -1 ||
-          d === 0 ||
-          (d === 1 && o === c - 1 && o === s + 1)
-            ? c !== -1 &&
-              (s === 0 && peers.i
-                ? (t.base = t.name = e.slice(1, c))
-                : (t.base = t.name = e.slice(s, c)))
-            : (s === 0 && peers.i
-                ? ((t.name = e.slice(1, o)), (t.base = e.slice(1, c)))
-                : ((t.name = e.slice(s, o)), (t.base = e.slice(s, c))),
-              (t.ext = e.slice(o, c))),
-          s > 0 ? (t.dir = e.slice(0, s - 1)) : peers.i && (t.dir = "/"),
-          t
-        );
+        return bloom === -1 || coral === -1 || eagle === 0 || eagle === 1 && bloom === coral - 1 && bloom === s + 1 ? coral !== -1 && (s === 0 && peers.i ? zephyr.base = zephyr.name = yarn.slice(1, coral) : zephyr.base = zephyr.name = yarn.slice(s, coral)) : (s === 0 && peers.i ? (zephyr.name = yarn.slice(1, bloom), zephyr.base = yarn.slice(1, coral)) : (zephyr.name = yarn.slice(s, bloom), zephyr.base = yarn.slice(s, coral)), zephyr.ext = yarn.slice(bloom, coral)), s > 0 ? zephyr.dir = yarn.slice(0, s - 1) : peers.i && (zephyr.dir = "/"), zephyr;
       },
       sep: "/",
       delimiter: ":",
       win32: null,
-      posix: null,
+      posix: null
     };
     a.posix = a;
-    t.exports = a;
+    bravo.exports = a;
   });
 }

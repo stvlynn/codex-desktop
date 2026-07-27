@@ -97,3 +97,6 @@ export function DropdownMenuPopover(props: unknown) {
     </AYi>
   );
 }
+
+/** Bundle path ESM init retained as no-op. */
+export function ensureDropdownMenuPopoverInit(): void {}

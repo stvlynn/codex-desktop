@@ -18,7 +18,7 @@ export function setBindPopcornElectronPresentationPanelPeers(
 /**
  * Bundle export `vrt` / internal `Xv`.
  */
-export const bindPopcornElectronPresentationPanel = (e) => {
+export const bindPopcornElectronPresentationPanel = (e: unknown) => {
   if (peers == null) {
     throw new Error(
       "bindPopcornElectronPresentationPanel peers are not configured",

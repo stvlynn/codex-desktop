@@ -33,14 +33,8 @@ import {
   _,
   V,
 } from "../../diagrams/mermaid-config-alt";
-import { n, t } from "../../diagrams/get-icon-styles";
-import {
-  a,
-  l,
-  n as chunkYZCP3GAMN,
-  o,
-  s,
-} from "../../diagrams/svg-drawing-helpers-alt";
+import { initGetIconStylesChunk as n, getIconStyles as t } from "../../diagrams/get-icon-styles";
+import { drawRect as a, initSvgDrawingHelpersChunk as l, drawBackgroundRect as chunkYZCP3GAMN, drawText as o, getNoteRect as s } from "../../diagrams/svg-drawing-helpers-alt";
 function journeyDiagramVCZTEJTYHelper1(journeyDiagramVCZTEJTYInput11) {
   let journeyDiagramVCZTEJTYBinding98 = b().journey,
     journeyDiagramVCZTEJTYBinding99 =

@@ -1,23 +1,23 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `QYn`) / export `u8`.
+// Materialized via extractFn(internal `QYn`) / export `setStickyFlagAtomTrue`.
 
-export type U8Peers = {
+export type StickyFlagAtomTruePeers = {
   $Yn: (...args: unknown[]) => unknown;
   HYn: (...args: unknown[]) => unknown;
 };
-let peers: U8Peers | null = null;
+let peers: StickyFlagAtomTruePeers | null = null;
 
-/** Wire u8 peers once companions land. */
-export function setU8Peers(next: U8Peers): void {
+/** Wire setStickyFlagAtomTrue peers once companions land. */
+export function setStickyFlagAtomTruePeers(next: StickyFlagAtomTruePeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `u8` / internal `QYn`.
+ * Bundle export `setStickyFlagAtomTrue` / internal `QYn`.
  */
-export function u8(e: unknown, t: unknown) {
+export function setStickyFlagAtomTrue(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("u8 peers are not configured");
+    throw new Error("setStickyFlagAtomTrue peers are not configured");
   }
   peers.HYn(t);
   e.set(peers.$Yn, t, true);

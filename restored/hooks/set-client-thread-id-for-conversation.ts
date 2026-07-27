@@ -1,25 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `VJn`) / export `A8`.
+// Materialized via extractFn(internal `VJn`) / export `setClientThreadIdForConversation`.
 
-export type A8Peers = {
+export type ClientThreadIdForConversationPeers = {
   JJn: (...args: unknown[]) => unknown;
 };
-let peers: A8Peers | null = null;
+let peers: ClientThreadIdForConversationPeers | null = null;
 
-/** Wire A8 peers once companions land. */
-export function setA8Peers(next: A8Peers): void {
+/** Wire setClientThreadIdForConversation peers once companions land. */
+export function setClientThreadIdForConversationPeers(next: ClientThreadIdForConversationPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `A8` / internal `VJn`.
+ * Bundle export `setClientThreadIdForConversation` / internal `VJn`.
  */
-export function A8(
+export function setClientThreadIdForConversation(
   e: unknown,
   { clientThreadId, conversationId }: Record<string, unknown>,
 ) {
   if (peers == null) {
-    throw new Error("A8 peers are not configured");
+    throw new Error("setClientThreadIdForConversation peers are not configured");
   }
   peers.JJn(e, conversationId, clientThreadId);
 }

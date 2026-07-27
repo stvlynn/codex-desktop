@@ -105,70 +105,63 @@ export function chats2() {
     peers.mrn();
     peers.$A();
     Hrc = [];
-    Urc = peers.Ma(peers.Q, ({ get }) => {
+    Urc = peers.Ma(peers.Q, ({
+      get
+    }) => {
       return get(peers.qA) != null;
     });
-    F1 = peers.Oa(peers.Q, (e, { get }) => {
-      let n = get(peers.kY),
-        r = e.localProjectActionsEnabled || n,
+    F1 = peers.Oa(peers.Q, (alpha, {
+      get
+    }) => {
+      let bravo = get(peers.kY),
+        copper = alpha.localProjectActionsEnabled || bravo,
         i = get(peers.r0o, {
-          localProjectActionsEnabled: e.localProjectActionsEnabled,
+          localProjectActionsEnabled: alpha.localProjectActionsEnabled
         }),
         a = get(peers.GA),
-        o = i === "recent",
-        s = o && !a,
-        c = get(peers.XMr) ? ["chats", "threads"] : ["threads", "chats"],
-        { allSidebarThreadKeys, pinnedThreadKeys, unpinnedThreadKeys } = get(
-          peers.X0o,
-        ),
-        f = peers.Hrc,
+        delta = i === "recent",
+        s = delta && !a,
+        echo = get(peers.XMr) ? ["chats", "threads"] : ["threads", "chats"],
+        {
+          allSidebarThreadKeys,
+          pinnedThreadKeys,
+          unpinnedThreadKeys
+        } = get(peers.X0o),
+        falcon = peers.Hrc,
         p = allSidebarThreadKeys,
-        m = unpinnedThreadKeys,
-        h = get(peers.PY, pinnedThreadKeys),
-        g = peers.Q0o({
+        gamma = unpinnedThreadKeys,
+        harbor = get(peers.PY, pinnedThreadKeys),
+        indigo = peers.Q0o({
           get,
           pinnedThreadKeys,
-          sortMode: get(peers.IY),
+          sortMode: get(peers.IY)
         }),
-        _ = h;
-      g !== pinnedThreadKeys &&
-        (_ = peers.v0o(
-          g,
-          new Map(
-            h.map((item) => {
-              return [item.task.key, item];
-            }),
-          ),
-        ));
-      let v = get(peers.PY, m),
-        y = get(peers.PY, f),
+        jade = harbor;
+      indigo !== pinnedThreadKeys && (jade = peers.v0o(indigo, new Map(harbor.map(item => {
+        return [item.task.key, item];
+      }))));
+      let value = get(peers.PY, gamma),
+        kite = get(peers.PY, falcon),
         b = get(peers.PY, allSidebarThreadKeys),
-        x = b.flatMap((item) => {
-          return item.task.kind === "local" && item.task.conversation != null
-            ? [item.task.conversation.id]
-            : [];
+        lemon = b.flatMap(item => {
+          return item.task.kind === "local" && item.task.conversation != null ? [item.task.conversation.id] : [];
         }),
-        S = new Map(
-          v.map((item) => {
-            return [item.task.key, item];
-          }),
-        ),
-        C = get(peers.zNr).filter((item) => {
+        marble = new Map(value.map(item => {
+          return [item.task.key, item];
+        })),
+        nickel = get(peers.zNr).filter(item => {
           return item.launchMode === "create-stable-worktree";
         }),
-        w = peers.sp(get, peers.Fl.PINNED_PROJECT_IDS),
-        { projectlessThreadIds, threadProjectAssignments } = peers.crn(get, {
-          conversationIds: x,
+        onyx = peers.sp(get, peers.Fl.PINNED_PROJECT_IDS),
+        {
+          projectlessThreadIds,
+          threadProjectAssignments
+        } = peers.crn(get, {
+          conversationIds: lemon,
           projectlessThreadIds: peers.sp(get, peers.Fl.PROJECTLESS_THREAD_IDS),
-          threadProjectAssignments: peers.sp(
-            get,
-            peers.Fl.THREAD_PROJECT_ASSIGNMENTS,
-          ),
+          threadProjectAssignments: peers.sp(get, peers.Fl.THREAD_PROJECT_ASSIGNMENTS)
         }),
-        D =
-          projectlessThreadIds == null
-            ? undefined
-            : new Set(projectlessThreadIds);
+        pearl = projectlessThreadIds == null ? undefined : new Set(projectlessThreadIds);
       get(peers.ej);
       get(peers.XNr, allSidebarThreadKeys);
       let {
@@ -176,366 +169,291 @@ export function chats2() {
           hasLoadedWorkspaceRootOptions,
           isWorkspaceRootOptionsLoading,
           workspaceRootOptions,
-          discoveredThreadWorkspaceRootHints,
+          discoveredThreadWorkspaceRootHints
         } = get(peers.az, {
           threadKeys: p,
-          enabled:
-            !s ||
-            (w != null && w.length > 0) ||
-            allSidebarThreadKeys.length > 0 ||
-            get(peers.Urc),
+          enabled: !s || onyx != null && onyx.length > 0 || allSidebarThreadKeys.length > 0 || get(peers.Urc)
         }),
-        { projectGroups, chatGptProjectMirrorThreadKeys } = peers.kZi(
-          groups,
-          e.sidebarMode,
-        ),
-        F = peers.FZi({
+        {
+          projectGroups,
+          chatGptProjectMirrorThreadKeys
+        } = peers.kZi(groups, alpha.sidebarMode),
+        quartz = peers.FZi({
           groups: projectGroups,
-          hiddenTaskKeys: new Set(pinnedThreadKeys),
+          hiddenTaskKeys: new Set(pinnedThreadKeys)
         }),
-        I = peers.Brc({
+        river = peers.Brc({
           explicitChatThreadKeys: chatGptProjectMirrorThreadKeys,
           allSidebarItems: get(peers.PY, p),
           groups: projectGroups,
-          projectlessThreadIds: D,
+          projectlessThreadIds: pearl
         }),
-        { pinnedGroups, unpinnedGroups } = peers.PZi(F, w),
-        z = o && a ? peers.g0o(unpinnedGroups, S) : unpinnedGroups,
-        B = peers.Irc({
+        {
+          pinnedGroups,
+          unpinnedGroups
+        } = peers.PZi(quartz, onyx),
+        slate = delta && a ? peers.g0o(unpinnedGroups, marble) : unpinnedGroups,
+        timber = peers.Irc({
           pinnedProjectGroups: pinnedGroups,
-          unpinnedItems: v,
+          unpinnedItems: value
         }),
-        V = [];
+        umbra = [];
       if (!s) {
-        let e = new Set(
-          projectGroups.flatMap((item) => {
-            return item.threadKeys;
-          }),
-        );
-        V = peers
-          .FSo({
-            explicitChatThreadKeys: chatGptProjectMirrorThreadKeys,
-            items: B,
-            projectlessThreadIds: D,
-          })
-          .filter((item) => {
-            return !e.has(item.task.key);
-          });
+        let kelp = new Set(projectGroups.flatMap(item => {
+          return item.threadKeys;
+        }));
+        umbra = peers.FSo({
+          explicitChatThreadKeys: chatGptProjectMirrorThreadKeys,
+          items: timber,
+          projectlessThreadIds: pearl
+        }).filter(item => {
+          return !kelp.has(item.task.key);
+        });
       }
-      let H = r ? V : [],
-        U = H.map((item) => {
+      let violet = copper ? umbra : [],
+        willow = violet.map(item => {
           return item.task.key;
         }),
-        W =
-          !s &&
-          i !== "connection" &&
-          (H.length > 0 || e.canStartProjectlessChat),
-        G = get(
-          peers.ZQi,
-          B.filter((item) => {
-            return true;
-          }).map((item) => {
-            return item.task.key;
-          }),
-        ),
-        K =
-          i === "connection"
-            ? peers.eZi({
-                connectionGroupOrder: peers.sp(
-                  get,
-                  peers.Fl.CONNECTION_GROUP_ORDER,
-                ),
-                groups: G,
-                includeEmptyGroup: e.canStartProjectlessChat,
-              })
-            : [],
-        q = (i === "connection" ? K.length : z.length) > 0 || C.length > 0,
-        ee = peers.sp(get, peers.Fl.REMOTE_PROJECTS) ?? [],
-        te =
-          q ||
-          pinnedGroups.length > 0 ||
-          (workspaceRootOptions?.length ?? 0) > 0 ||
-          peers.Lrc(ee, get(peers.tj)),
-        ne =
-          q ||
-          pinnedGroups.length > 0 ||
-          (workspaceRootOptions?.length ?? 0) > 0,
-        re = s || q || pinnedGroups.length > 0,
-        ie = c.filter((item) => {
-          return item === "threads" ? re : item === "chats" ? W : true;
+        xenon = !s && i !== "connection" && (violet.length > 0 || alpha.canStartProjectlessChat),
+        yellow = get(peers.ZQi, timber.filter(item => {
+          return true;
+        }).map(item => {
+          return item.task.key;
+        })),
+        zinc = i === "connection" ? peers.eZi({
+          connectionGroupOrder: peers.sp(get, peers.Fl.CONNECTION_GROUP_ORDER),
+          groups: yellow,
+          includeEmptyGroup: alpha.canStartProjectlessChat
+        }) : [],
+        q = (i === "connection" ? zinc.length : slate.length) > 0 || nickel.length > 0,
+        Amber = peers.sp(get, peers.Fl.REMOTE_PROJECTS) ?? [],
+        Basalt = q || pinnedGroups.length > 0 || (workspaceRootOptions?.length ?? 0) > 0 || peers.Lrc(Amber, get(peers.tj)),
+        Cedar = q || pinnedGroups.length > 0 || (workspaceRootOptions?.length ?? 0) > 0,
+        Daisy = s || q || pinnedGroups.length > 0,
+        Ember = echo.filter(item => {
+          return item === "threads" ? Daisy : item === "chats" ? xenon : true;
         }),
-        ae = v,
-        oe = pinnedGroups.flatMap((item) => {
-          return peers.PSo(peers.y0o(item.threadKeys, S));
+        Flint = value,
+        Garnet = pinnedGroups.flatMap(item => {
+          return peers.PSo(peers.y0o(item.threadKeys, marble));
         }),
-        se =
-          i === "connection"
-            ? K.flatMap((item) => {
-                return peers.v0o(item.threadKeys, S);
-              })
-            : z.flatMap((item) => {
-                return peers.PSo(peers.y0o(item.threadKeys, S));
-              }),
-        ce = B.filter((item) => {
+        Hazel = i === "connection" ? zinc.flatMap(item => {
+          return peers.v0o(item.threadKeys, marble);
+        }) : slate.flatMap(item => {
+          return peers.PSo(peers.y0o(item.threadKeys, marble));
+        }),
+        Ivory = timber.filter(item => {
           return false;
         }),
-        le = peers
-          .Nrc({
-            additionalItemsBeforeSections: y,
-            cloudThreadItems: ce,
-            groupedThreadItems: se,
-            pinnedItems: _,
-            pinnedProjectThreadItems: oe,
-            recentRenderableItems: ae,
-            showRecent: s,
-            visibleRecentChatItems: H,
-            visibleSidebarSectionKeys: ie,
-          })
-          .map((item) => {
-            return item.task.key;
-          });
+        Jasper = peers.Nrc({
+          additionalItemsBeforeSections: kite,
+          cloudThreadItems: Ivory,
+          groupedThreadItems: Hazel,
+          pinnedItems: jade,
+          pinnedProjectThreadItems: Garnet,
+          recentRenderableItems: Flint,
+          showRecent: s,
+          visibleRecentChatItems: violet,
+          visibleSidebarSectionKeys: Ember
+        }).map(item => {
+          return item.task.key;
+        });
       return {
         allSidebarItems: b,
         allProjectGroups: projectGroups,
-        connectionGroups: K,
+        connectionGroups: zinc,
         discoveredThreadWorkspaceRootHints,
         effectiveSidebarOrganizeMode: i,
-        hasAnyProjectRows: te,
-        hasAnyRecentSectionProjectRows: ne,
-        hasConnectedRemoteHosts: n,
+        hasAnyProjectRows: Basalt,
+        hasAnyRecentSectionProjectRows: Cedar,
+        hasConnectedRemoteHosts: bravo,
         hasLoadedProjectSources: hasLoadedWorkspaceRootOptions,
         hasUnpinnedProjectRows: q,
-        isChronologicalList: o,
+        isChronologicalList: delta,
         isWorkspaceRootOptionsLoading,
-        navigationThreadKeys: le,
-        pendingStableWorktrees: C,
+        navigationThreadKeys: Jasper,
+        pendingStableWorktrees: nickel,
         pinnedProjectGroups: pinnedGroups,
-        pinnedThreadKeys: g,
-        projectSidebarEnabled: r,
-        recentRenderableThreadKeys: ae.map((item) => {
+        pinnedThreadKeys: indigo,
+        projectSidebarEnabled: copper,
+        recentRenderableThreadKeys: Flint.map(item => {
           return item.task.key;
         }),
         showProjectsEmptyState: !s && !q && pinnedGroups.length > 0,
-        showProjectsSection: re,
+        showProjectsSection: Daisy,
         showRecent: s,
-        showRecentChatsSection: W,
-        shortcutThreadKeys: le.slice(0, 9),
+        showRecentChatsSection: xenon,
+        shortcutThreadKeys: Jasper.slice(0, 9),
         threadProjectAssignments,
-        homeContainerIdByThreadId: I,
-        visibleRecentChatThreadKeys: U,
-        visibleCloudThreadKeys: ce.map((item) => {
+        homeContainerIdByThreadId: river,
+        visibleRecentChatThreadKeys: willow,
+        visibleCloudThreadKeys: Ivory.map(item => {
           return item.task.key;
         }),
-        visibleSidebarSectionKeys: ie,
-        visibleUnpinnedProjectGroups: z,
-        workspaceRootOptions,
+        visibleSidebarSectionKeys: Ember,
+        visibleUnpinnedProjectGroups: slate,
+        workspaceRootOptions
       };
     });
-    Wrc = peers.Ea(peers.Q, (e) => {
-      let t = (e) => {
+    Wrc = peers.Ea(peers.Q, lotus => {
+      let mint = olive => {
           return {
-            discoveredThreadWorkspaceRootHints:
-              e.discoveredThreadWorkspaceRootHints,
-            hasLoadedProjectSources: e.hasLoadedProjectSources,
-            isWorkspaceRootOptionsLoading: e.isWorkspaceRootOptionsLoading,
-            shortcutThreadKeys: e.shortcutThreadKeys,
-            homeContainerIdByThreadId: e.homeContainerIdByThreadId,
-            visibleSidebarSectionKeys: e.visibleSidebarSectionKeys,
+            discoveredThreadWorkspaceRootHints: olive.discoveredThreadWorkspaceRootHints,
+            hasLoadedProjectSources: olive.hasLoadedProjectSources,
+            isWorkspaceRootOptionsLoading: olive.isWorkspaceRootOptionsLoading,
+            shortcutThreadKeys: olive.shortcutThreadKeys,
+            homeContainerIdByThreadId: olive.homeContainerIdByThreadId,
+            visibleSidebarSectionKeys: olive.visibleSidebarSectionKeys
           };
         },
-        n = null;
-      return peers.Ma(peers.Q, ({ get }) => {
-        let i = get(peers.F1, e),
-          a = t(i);
-        return (
-          (n = peers.Vrc(n, {
-            ...a,
-            homeContainerIdByThreadId: peers.Rrc(
-              n?.homeContainerIdByThreadId ?? new Map(),
-              a.homeContainerIdByThreadId,
-            ),
-            visibleSidebarSectionKeys: peers.P1(
-              n?.visibleSidebarSectionKeys ?? [],
-              a.visibleSidebarSectionKeys,
-            ),
-            shortcutThreadKeys: peers.P1(
-              n?.shortcutThreadKeys ?? [],
-              a.shortcutThreadKeys,
-            ),
-          })),
-          n
-        );
+        nova = null;
+      return peers.Ma(peers.Q, ({
+        get
+      }) => {
+        let i = get(peers.F1, lotus),
+          a = mint(i);
+        return nova = peers.Vrc(nova, {
+          ...a,
+          homeContainerIdByThreadId: peers.Rrc(nova?.homeContainerIdByThreadId ?? new Map(), a.homeContainerIdByThreadId),
+          visibleSidebarSectionKeys: peers.P1(nova?.visibleSidebarSectionKeys ?? [], a.visibleSidebarSectionKeys),
+          shortcutThreadKeys: peers.P1(nova?.shortcutThreadKeys ?? [], a.shortcutThreadKeys)
+        }), nova;
       });
     });
-    Grc = peers.Ea(peers.Q, (e) => {
-      let t = (e) => {
+    Grc = peers.Ea(peers.Q, prism => {
+      let quill = sage => {
           return {
-            allProjectGroups: e.allProjectGroups,
-            allSidebarItems: e.allSidebarItems,
-            threadProjectAssignments: e.threadProjectAssignments,
+            allProjectGroups: sage.allProjectGroups,
+            allSidebarItems: sage.allSidebarItems,
+            threadProjectAssignments: sage.threadProjectAssignments
           };
         },
-        n = null;
-      return peers.Ma(peers.Q, ({ get }) => {
-        let i = get(peers.F1, e),
-          a = t(i);
-        return (
-          (n = peers.Vrc(n, {
-            ...a,
-            allProjectGroups: peers.zrc(
-              n?.allProjectGroups ?? [],
-              a.allProjectGroups,
-            ),
-            allSidebarItems: peers.P1(
-              n?.allSidebarItems ?? [],
-              a.allSidebarItems,
-            ),
-          })),
-          n
-        );
+        reef = null;
+      return peers.Ma(peers.Q, ({
+        get
+      }) => {
+        let i = get(peers.F1, prism),
+          a = quill(i);
+        return reef = peers.Vrc(reef, {
+          ...a,
+          allProjectGroups: peers.zrc(reef?.allProjectGroups ?? [], a.allProjectGroups),
+          allSidebarItems: peers.P1(reef?.allSidebarItems ?? [], a.allSidebarItems)
+        }), reef;
       });
     });
-    Krc = peers.Ea(peers.Q, (e) => {
-      let t = (e) => {
+    Krc = peers.Ea(peers.Q, topaz => {
+      let ultra = wheat => {
           return {
-            connectionGroups: e.connectionGroups,
-            effectiveSidebarOrganizeMode: e.effectiveSidebarOrganizeMode,
-            hasAnyProjectRows: e.hasAnyProjectRows,
-            hasConnectedRemoteHosts: e.hasConnectedRemoteHosts,
-            hasUnpinnedProjectRows: e.hasUnpinnedProjectRows,
-            isChronologicalList: e.isChronologicalList,
-            isWorkspaceRootOptionsLoading: e.isWorkspaceRootOptionsLoading,
-            pendingStableWorktrees: e.pendingStableWorktrees,
-            projectSidebarEnabled: e.projectSidebarEnabled,
-            recentRenderableThreadKeys: e.recentRenderableThreadKeys,
-            showProjectsEmptyState: e.showProjectsEmptyState,
-            showProjectsSection: e.showProjectsSection,
-            showRecent: e.showRecent,
-            showRecentChatsSection: e.showRecentChatsSection,
-            visibleCloudThreadKeys: e.visibleCloudThreadKeys,
-            visibleRecentChatThreadKeys: e.visibleRecentChatThreadKeys,
-            visibleUnpinnedProjectGroups: e.visibleUnpinnedProjectGroups,
+            connectionGroups: wheat.connectionGroups,
+            effectiveSidebarOrganizeMode: wheat.effectiveSidebarOrganizeMode,
+            hasAnyProjectRows: wheat.hasAnyProjectRows,
+            hasConnectedRemoteHosts: wheat.hasConnectedRemoteHosts,
+            hasUnpinnedProjectRows: wheat.hasUnpinnedProjectRows,
+            isChronologicalList: wheat.isChronologicalList,
+            isWorkspaceRootOptionsLoading: wheat.isWorkspaceRootOptionsLoading,
+            pendingStableWorktrees: wheat.pendingStableWorktrees,
+            projectSidebarEnabled: wheat.projectSidebarEnabled,
+            recentRenderableThreadKeys: wheat.recentRenderableThreadKeys,
+            showProjectsEmptyState: wheat.showProjectsEmptyState,
+            showProjectsSection: wheat.showProjectsSection,
+            showRecent: wheat.showRecent,
+            showRecentChatsSection: wheat.showRecentChatsSection,
+            visibleCloudThreadKeys: wheat.visibleCloudThreadKeys,
+            visibleRecentChatThreadKeys: wheat.visibleRecentChatThreadKeys,
+            visibleUnpinnedProjectGroups: wheat.visibleUnpinnedProjectGroups
           };
         },
-        n = null;
-      return peers.Ma(peers.Q, ({ get }) => {
-        let i = get(peers.F1, e),
-          a = t(i);
-        return (
-          (n = peers.Vrc(n, {
-            ...a,
-            connectionGroups: peers.tZi(
-              n?.connectionGroups ?? [],
-              a.connectionGroups,
-            ),
-            pendingStableWorktrees: peers.P1(
-              n?.pendingStableWorktrees ?? [],
-              a.pendingStableWorktrees,
-            ),
-            recentRenderableThreadKeys: peers.P1(
-              n?.recentRenderableThreadKeys ?? [],
-              a.recentRenderableThreadKeys,
-            ),
-            visibleRecentChatThreadKeys: peers.P1(
-              n?.visibleRecentChatThreadKeys ?? [],
-              a.visibleRecentChatThreadKeys,
-            ),
-            visibleCloudThreadKeys: peers.P1(
-              n?.visibleCloudThreadKeys ?? [],
-              a.visibleCloudThreadKeys,
-            ),
-            visibleUnpinnedProjectGroups: peers.zrc(
-              n?.visibleUnpinnedProjectGroups ?? [],
-              a.visibleUnpinnedProjectGroups,
-            ),
-          })),
-          n
-        );
+        vapor = null;
+      return peers.Ma(peers.Q, ({
+        get
+      }) => {
+        let i = get(peers.F1, topaz),
+          a = ultra(i);
+        return vapor = peers.Vrc(vapor, {
+          ...a,
+          connectionGroups: peers.tZi(vapor?.connectionGroups ?? [], a.connectionGroups),
+          pendingStableWorktrees: peers.P1(vapor?.pendingStableWorktrees ?? [], a.pendingStableWorktrees),
+          recentRenderableThreadKeys: peers.P1(vapor?.recentRenderableThreadKeys ?? [], a.recentRenderableThreadKeys),
+          visibleRecentChatThreadKeys: peers.P1(vapor?.visibleRecentChatThreadKeys ?? [], a.visibleRecentChatThreadKeys),
+          visibleCloudThreadKeys: peers.P1(vapor?.visibleCloudThreadKeys ?? [], a.visibleCloudThreadKeys),
+          visibleUnpinnedProjectGroups: peers.zrc(vapor?.visibleUnpinnedProjectGroups ?? [], a.visibleUnpinnedProjectGroups)
+        }), vapor;
       });
     });
-    qrc = peers.Ea(peers.Q, (e) => {
-      let t = (e) => {
+    qrc = peers.Ea(peers.Q, yarn => {
+      let zephyr = bloom => {
           return {
-            isWorkspaceRootOptionsLoading: e.isWorkspaceRootOptionsLoading,
-            pinnedProjectGroups: e.pinnedProjectGroups,
-            pinnedThreadKeys: e.pinnedThreadKeys,
+            isWorkspaceRootOptionsLoading: bloom.isWorkspaceRootOptionsLoading,
+            pinnedProjectGroups: bloom.pinnedProjectGroups,
+            pinnedThreadKeys: bloom.pinnedThreadKeys
           };
         },
-        n = null;
-      return peers.Ma(peers.Q, ({ get }) => {
-        let i = get(peers.F1, e),
-          a = t(i);
-        return (
-          (n = peers.Vrc(n, {
-            ...a,
-            pinnedProjectGroups: peers.zrc(
-              n?.pinnedProjectGroups ?? [],
-              a.pinnedProjectGroups,
-            ),
-            pinnedThreadKeys: peers.P1(
-              n?.pinnedThreadKeys ?? [],
-              a.pinnedThreadKeys,
-            ),
-          })),
-          n
-        );
+        acorn = null;
+      return peers.Ma(peers.Q, ({
+        get
+      }) => {
+        let i = get(peers.F1, yarn),
+          a = zephyr(i);
+        return acorn = peers.Vrc(acorn, {
+          ...a,
+          pinnedProjectGroups: peers.zrc(acorn?.pinnedProjectGroups ?? [], a.pinnedProjectGroups),
+          pinnedThreadKeys: peers.P1(acorn?.pinnedThreadKeys ?? [], a.pinnedThreadKeys)
+        }), acorn;
       });
     });
-    Jrc = peers.Ea(peers.Q, (e) => {
-      let t = (e) => {
+    Jrc = peers.Ea(peers.Q, coral => {
+      let drift = frost => {
           return {
-            effectiveSidebarOrganizeMode: e.effectiveSidebarOrganizeMode,
-            projectSidebarEnabled: e.projectSidebarEnabled,
-            showProjectsSection: e.showProjectsSection,
-            showRecent: e.showRecent,
-            showRecentChatsSection: e.showRecentChatsSection,
+            effectiveSidebarOrganizeMode: frost.effectiveSidebarOrganizeMode,
+            projectSidebarEnabled: frost.projectSidebarEnabled,
+            showProjectsSection: frost.showProjectsSection,
+            showRecent: frost.showRecent,
+            showRecentChatsSection: frost.showRecentChatsSection
           };
         },
-        n = null;
-      return peers.Ma(peers.Q, ({ get }) => {
-        let i = get(peers.F1, e);
-        return ((n = peers.Vrc(n, t(i))), n);
+        eagle = null;
+      return peers.Ma(peers.Q, ({
+        get
+      }) => {
+        let i = get(peers.F1, coral);
+        return eagle = peers.Vrc(eagle, drift(i)), eagle;
       });
     });
-    Yrc = peers.Ea(peers.Q, (e) => {
-      let t = (e) => {
+    Yrc = peers.Ea(peers.Q, glide => {
+      let honey = jewel => {
           return {
-            effectiveSidebarOrganizeMode: e.effectiveSidebarOrganizeMode,
-            hasAnyProjectRows: e.hasAnyProjectRows,
-            hasConnectedRemoteHosts: e.hasConnectedRemoteHosts,
-            projectSidebarEnabled: e.projectSidebarEnabled,
-            showProjectsSection: e.showProjectsSection,
-            showRecentChatsSection: e.showRecentChatsSection,
-            visibleRecentChatThreadKeys: e.visibleRecentChatThreadKeys,
+            effectiveSidebarOrganizeMode: jewel.effectiveSidebarOrganizeMode,
+            hasAnyProjectRows: jewel.hasAnyProjectRows,
+            hasConnectedRemoteHosts: jewel.hasConnectedRemoteHosts,
+            projectSidebarEnabled: jewel.projectSidebarEnabled,
+            showProjectsSection: jewel.showProjectsSection,
+            showRecentChatsSection: jewel.showRecentChatsSection,
+            visibleRecentChatThreadKeys: jewel.visibleRecentChatThreadKeys
           };
         },
-        n = null;
-      return peers.Ma(peers.Q, ({ get }) => {
-        let i = get(peers.F1, e),
-          a = t(i);
-        return (
-          (n = peers.Vrc(n, {
-            ...a,
-            visibleRecentChatThreadKeys: peers.P1(
-              n?.visibleRecentChatThreadKeys ?? [],
-              a.visibleRecentChatThreadKeys,
-            ),
-          })),
-          n
-        );
+        iris = null;
+      return peers.Ma(peers.Q, ({
+        get
+      }) => {
+        let i = get(peers.F1, glide),
+          a = honey(i);
+        return iris = peers.Vrc(iris, {
+          ...a,
+          visibleRecentChatThreadKeys: peers.P1(iris?.visibleRecentChatThreadKeys ?? [], a.visibleRecentChatThreadKeys)
+        }), iris;
       });
     });
-    Xrc = peers.Oa(peers.Q, (e, { get }) => {
-      return !get(peers.F1, e).hasAnyProjectRows;
+    Xrc = peers.Oa(peers.Q, (knoll, {
+      get
+    }) => {
+      return !get(peers.F1, knoll).hasAnyProjectRows;
     });
-    Zrc = peers.Oa(
-      peers.Q,
-      (e, { get }) => {
-        return get(peers.F1, e).navigationThreadKeys;
-      },
-      {
-        isEqual: peers.QA,
-      },
-    );
+    Zrc = peers.Oa(peers.Q, (lunar, {
+      get
+    }) => {
+      return get(peers.F1, lunar).navigationThreadKeys;
+    }, {
+      isEqual: peers.QA
+    });
   });
 }

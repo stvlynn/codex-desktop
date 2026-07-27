@@ -62,3 +62,17 @@ export function bindPopoverMenuParts() {
     SectionCount: peers.OJo
   };
 }
+
+/**
+ * `XE` is consumed as a compound-component namespace (`PopoverMenu.Item`,
+ * `PopoverMenu.Content`, …) — proxy each property access through
+ * `bindPopoverMenuParts()` so the peers indirection stays lazy.
+ */
+export const PopoverMenu: ReturnType<typeof bindPopoverMenuParts> = new Proxy(
+  {} as ReturnType<typeof bindPopoverMenuParts>,
+  {
+    get(_target, prop) {
+      return bindPopoverMenuParts()[prop as keyof ReturnType<typeof bindPopoverMenuParts>];
+    },
+  },
+);

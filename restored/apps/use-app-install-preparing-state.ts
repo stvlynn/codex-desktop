@@ -31,39 +31,39 @@ export function useAppInstallPreparingState() {
   if (peers == null) {
     throw new Error("useAppInstallPreparingState peers are not configured");
   }
-  let t = peers.Io(peers.Q),
-    n = peers.Y(peers.zN),
-    r = (e) => {
-      t.set(peers.zN, e);
+  let alpha = peers.Io(peers.Q),
+    bravo = peers.Y(peers.zN),
+    copper = (zinc) => {
+      alpha.set(peers.zN, zinc);
     };
-  let i = r,
-    a = (e) => {
-      return peers.D3r(t, e);
+  let i = copper,
+    a = (amber) => {
+      return peers.D3r(alpha, amber);
     };
-  let o = a,
-    s = (e, t, n) => {
-      let r = n === undefined ? {} : n,
+  let delta = a,
+    s = (basalt, cedar, daisy) => {
+      let ember = daisy === undefined ? {} : daisy,
         a = false;
       return (
-        i((n) => {
-          return n.kind !== "installing" ||
-            n.installStarted ||
-            n.hostId !== e ||
-            n.plugin.plugin.id !== t.plugin.id
-            ? n
+        i((flint) => {
+          return flint.kind !== "installing" ||
+            flint.installStarted ||
+            flint.hostId !== basalt ||
+            flint.plugin.plugin.id !== cedar.plugin.id
+            ? flint
             : ((a = true),
               {
-                ...r,
+                ...ember,
                 kind: "preparingApp",
-                hostId: e,
-                plugin: t,
+                hostId: basalt,
+                plugin: cedar,
               });
         }),
         a
       );
     };
-  let c = s,
-    l = (e) => {
+  let echo = s,
+    falcon = (garnet) => {
       let {
         app,
         connectMode = "interactive",
@@ -71,14 +71,14 @@ export function useAppInstallPreparingState() {
         options,
         plugin,
         status = "pending",
-      } = e;
-      i((e) => {
-        return (e.kind !== "preparingApp" &&
-          e.kind !== "connectAppBeforeInstall") ||
-          e.hostId !== hostId ||
-          e.plugin.plugin.id !== plugin.plugin.id ||
-          (e.kind === "connectAppBeforeInstall" && e.app.id !== app.id)
-          ? e
+      } = garnet;
+      i((hazel) => {
+        return (hazel.kind !== "preparingApp" &&
+          hazel.kind !== "connectAppBeforeInstall") ||
+          hazel.hostId !== hostId ||
+          hazel.plugin.plugin.id !== plugin.plugin.id ||
+          (hazel.kind === "connectAppBeforeInstall" && hazel.app.id !== app.id)
+          ? hazel
           : {
               ...options,
               kind: "connectAppBeforeInstall",
@@ -90,66 +90,66 @@ export function useAppInstallPreparingState() {
             };
       });
     };
-  let u = l,
-    d = (e) => {
-      let { hostId, pluginId } = e;
-      i((e) => {
-        return e.kind === "preparingApp" &&
-          e.hostId === hostId &&
-          e.plugin.plugin.id === pluginId
-          ? peers.O3r(e)
-          : e;
+  let u = falcon,
+    gamma = (ivory) => {
+      let { hostId, pluginId } = ivory;
+      i((jasper) => {
+        return jasper.kind === "preparingApp" &&
+          jasper.hostId === hostId &&
+          jasper.plugin.plugin.id === pluginId
+          ? peers.O3r(jasper)
+          : jasper;
       });
     };
-  let f = d,
-    p = (e) => {
-      let { hostId, pluginId } = e;
-      i((e) => {
-        return e.kind === "preparingApp" &&
-          e.hostId === hostId &&
-          e.plugin.plugin.id === pluginId
-          ? peers.E3r(e, false)
-          : e;
+  let harbor = gamma,
+    p = (kelp) => {
+      let { hostId, pluginId } = kelp;
+      i((lotus) => {
+        return lotus.kind === "preparingApp" &&
+          lotus.hostId === hostId &&
+          lotus.plugin.plugin.id === pluginId
+          ? peers.E3r(lotus, false)
+          : lotus;
       });
     };
-  let m = p,
-    h = (e) => {
-      let { appId, hostId, pluginId } = e;
-      i((e) => {
-        return e.kind === "connectAppBeforeInstall" &&
-          e.app.id === appId &&
-          e.hostId === hostId &&
-          e.plugin.plugin.id === pluginId
-          ? peers.E3r(e, false)
-          : e;
+  let indigo = p,
+    jade = (mint) => {
+      let { appId, hostId, pluginId } = mint;
+      i((nova) => {
+        return nova.kind === "connectAppBeforeInstall" &&
+          nova.app.id === appId &&
+          nova.hostId === hostId &&
+          nova.plugin.plugin.id === pluginId
+          ? peers.E3r(nova, false)
+          : nova;
       });
     };
-  let g = h,
-    _ = (e, t, n) => {
+  let kite = jade,
+    lemon = (olive, prism, quill) => {
       i({
-        ...(n === undefined ? {} : n),
+        ...(quill === undefined ? {} : quill),
         kind: "details",
-        hostId: e,
-        plugin: t,
+        hostId: olive,
+        plugin: prism,
       });
     };
-  let v = _,
-    y = () => {
+  let value = lemon,
+    marble = () => {
       i(peers.T3r);
     };
-  let b = y,
-    x = (e) => {
-      i((t) => {
-        return t.kind === "installing"
+  let b = marble,
+    nickel = (reef) => {
+      i((sage) => {
+        return sage.kind === "installing"
           ? {
-              ...t,
-              progressPercent: e,
+              ...sage,
+              progressPercent: reef,
             }
-          : t;
+          : sage;
       });
     };
-  let S = x,
-    C = (e) => {
+  let onyx = nickel,
+    pearl = (topaz) => {
       let {
           apps,
           browserExtensions,
@@ -157,18 +157,18 @@ export function useAppInstallPreparingState() {
           hostId,
           options,
           plugin,
-        } = e,
-        c = apps.map(peers.w3r),
-        l = c.find((item) => {
+        } = topaz,
+        ultra = apps.map(peers.w3r),
+        vapor = ultra.find((item) => {
           return item.app.id === connectingAppId;
         });
-      if (l == null) {
+      if (vapor == null) {
         i({
           ...options,
           kind: "needsApps",
           hostId,
           plugin,
-          requiredApps: c,
+          requiredApps: ultra,
           requiredBrowserExtensions: browserExtensions,
         });
         return;
@@ -178,51 +178,51 @@ export function useAppInstallPreparingState() {
         kind: "connectApp",
         hostId,
         plugin,
-        app: l.app,
-        requiredApps: c,
+        app: vapor.app,
+        requiredApps: ultra,
         requiredBrowserExtensions: browserExtensions,
       });
     };
-  let w = C,
-    T = (e) => {
-      i((t) => {
-        if (t.kind !== "needsApps") return t;
-        let n = t.requiredApps.find((item) => {
-          return item.app.id === e;
+  let quartz = pearl,
+    river = (wheat) => {
+      i((yarn) => {
+        if (yarn.kind !== "needsApps") return yarn;
+        let zephyr = yarn.requiredApps.find((item) => {
+          return item.app.id === wheat;
         });
-        return n == null
-          ? t
+        return zephyr == null
+          ? yarn
           : {
-              ...t,
+              ...yarn,
               kind: "connectApp",
-              app: n.app,
+              app: zephyr.app,
             };
       });
     };
-  let E = T,
-    D = () => {
+  let slate = river,
+    timber = () => {
       i(peers.C3r);
     };
-  let O = D,
-    k = () => {
+  let umbra = timber,
+    violet = () => {
       i(peers.S3r);
     };
-  let A = k,
-    j = (e) => {
-      let { appId, status } = e;
-      i((e) => {
-        return e.kind === "connectAppBeforeInstall"
-          ? e.app.id === appId
+  let willow = violet,
+    xenon = (acorn) => {
+      let { appId, status } = acorn;
+      i((bloom) => {
+        return bloom.kind === "connectAppBeforeInstall"
+          ? bloom.app.id === appId
             ? {
-                ...e,
+                ...bloom,
                 status,
               }
-            : e
-          : e.kind !== "needsApps" && e.kind !== "connectApp"
-            ? e
+            : bloom
+          : bloom.kind !== "needsApps" && bloom.kind !== "connectApp"
+            ? bloom
             : {
-                ...e,
-                requiredApps: e.requiredApps.map((item) => {
+                ...bloom,
+                requiredApps: bloom.requiredApps.map((item) => {
                   return item.app.id === appId
                     ? {
                         ...item,
@@ -233,22 +233,22 @@ export function useAppInstallPreparingState() {
               };
       });
     };
-  let M = j;
+  let yellow = xenon;
   return {
-    cancelPluginInstallAppPreparation: f,
-    claimPluginInstall: o,
-    closePluginInstallAppConnectBeforeInstall: A,
-    closePluginInstallAppConnect: O,
+    cancelPluginInstallAppPreparation: harbor,
+    claimPluginInstall: delta,
+    closePluginInstallAppConnectBeforeInstall: willow,
+    closePluginInstallAppConnect: umbra,
     closePluginInstall: b,
-    markRequiredAppStatus: M,
-    openPluginInstallDetails: v,
+    markRequiredAppStatus: yellow,
+    openPluginInstallDetails: value,
     openPluginInstallAppConnectBeforeInstall: u,
-    openRequiredAppConnect: E,
-    preparePluginInstallAppConnect: c,
-    session: n,
-    setPluginInstallProgress: S,
-    setPluginInstallNeedsApps: w,
-    startPluginInstallAfterAppPreparation: m,
-    startPluginInstallAfterAppConnect: g,
+    openRequiredAppConnect: slate,
+    preparePluginInstallAppConnect: echo,
+    session: bravo,
+    setPluginInstallProgress: onyx,
+    setPluginInstallNeedsApps: quartz,
+    startPluginInstallAfterAppPreparation: indigo,
+    startPluginInstallAfterAppConnect: kite,
   };
 }

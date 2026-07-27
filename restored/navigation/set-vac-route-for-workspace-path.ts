@@ -1,26 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `cac`) / export `Vp`.
+// Materialized via extractFn(internal `cac`) / export `setVacRouteForWorkspacePath`.
 
-export type VpPeers = {
+export type VacRouteForWorkspacePathPeers = {
   A8s: (...args: unknown[]) => unknown;
   M8s: (...args: unknown[]) => unknown;
   N8s: (...args: unknown[]) => unknown;
   _ac: (...args: unknown[]) => unknown;
   vac: (...args: unknown[]) => unknown;
 };
-let peers: VpPeers | null = null;
+let peers: VacRouteForWorkspacePathPeers | null = null;
 
-/** Wire Vp peers once companions land. */
-export function setVpPeers(next: VpPeers): void {
+/** Wire setVacRouteForWorkspacePath peers once companions land. */
+export function setVacRouteForWorkspacePathPeers(next: VacRouteForWorkspacePathPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `Vp` / internal `cac`.
+ * Bundle export `setVacRouteForWorkspacePath` / internal `cac`.
  */
-export function Vp(e: unknown, t: unknown, n: unknown) {
+export function setVacRouteForWorkspacePath(e: unknown, t: unknown, n: unknown) {
   if (peers == null) {
-    throw new Error("Vp peers are not configured");
+    throw new Error("setVacRouteForWorkspacePath peers are not configured");
   }
   let r = peers.N8s(t);
   e.get(peers._ac, r);

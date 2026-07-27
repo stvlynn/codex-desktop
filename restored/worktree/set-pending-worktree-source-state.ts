@@ -1,21 +1,21 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `Sxo`) / export `kA`.
+// Materialized via extractFn(internal `Sxo`) / export `setPendingWorktreeSourceState`.
 
-export type KAPeers = {
+export type PendingWorktreeSourceStatePeers = {
   Bxo: (...args: unknown[]) => unknown;
   Exo: (...args: unknown[]) => unknown;
 };
-let peers: KAPeers | null = null;
+let peers: PendingWorktreeSourceStatePeers | null = null;
 
-/** Wire kA peers once companions land. */
-export function setKAPeers(next: KAPeers): void {
+/** Wire setPendingWorktreeSourceState peers once companions land. */
+export function setPendingWorktreeSourceStatePeers(next: PendingWorktreeSourceStatePeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `kA` / internal `Sxo`.
+ * Bundle export `setPendingWorktreeSourceState` / internal `Sxo`.
  */
-export function kA(
+export function setPendingWorktreeSourceState(
   e: unknown,
   {
     pendingWorktreeId,
@@ -24,7 +24,7 @@ export function kA(
   }: Record<string, unknown>,
 ) {
   if (peers == null) {
-    throw new Error("kA peers are not configured");
+    throw new Error("setPendingWorktreeSourceState peers are not configured");
   }
   e.set(peers.Bxo, pendingWorktreeId, {
     sourceWorkspaceRoot,

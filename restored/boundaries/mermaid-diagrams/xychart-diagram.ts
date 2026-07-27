@@ -36,10 +36,7 @@ import {
   y as chunkABZYJK2DY,
 } from "../../diagrams/mermaid-config";
 import { ensureD3SelectionRuntimeT as srcT } from "../../vendor/d3-axis-current-runtime";
-import {
-  n as chunkEXTU4WIEN,
-  t as chunkEXTU4WIET,
-} from "../../diagrams/select-svg-element";
+import { selectSvgElement as chunkEXTU4WIEN, initSelectSvgElementChunk as chunkEXTU4WIET } from "../../diagrams/select-svg-element";
 import { chunkS3R3BYOJR, chunkS3R3BYOJU } from "./mermaid-common-utils";
 import {
   chunkJA3XYJ7ZA as chunkJA3XYJ7ZI,

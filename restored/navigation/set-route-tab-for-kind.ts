@@ -1,25 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `aor`) / export `s0`.
+// Materialized via extractFn(internal `aor`) / export `setRouteTabForKind`.
 
-export type S0Peers = {
+export type RouteTabForKindPeers = {
   Ub: (...args: unknown[]) => unknown;
   a0t: (...args: unknown[]) => unknown;
   nor: (...args: unknown[]) => unknown;
   ror: (...args: unknown[]) => unknown;
 };
-let peers: S0Peers | null = null;
+let peers: RouteTabForKindPeers | null = null;
 
-/** Wire s0 peers once companions land. */
-export function setS0Peers(next: S0Peers): void {
+/** Wire setRouteTabForKind peers once companions land. */
+export function setRouteTabForKindPeers(next: RouteTabForKindPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `s0` / internal `aor`.
+ * Bundle export `setRouteTabForKind` / internal `aor`.
  */
-export function s0(e: unknown, t: unknown) {
+export function setRouteTabForKind(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("s0 peers are not configured");
+    throw new Error("setRouteTabForKind peers are not configured");
   }
   let n = peers.nor(t);
   n != null &&

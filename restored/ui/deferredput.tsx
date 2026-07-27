@@ -14,7 +14,7 @@ export function setBindDeferredputPeers(next: BindDeferredputPeers): void {
 /**
  * Bundle export `put` / internal `fm`.
  */
-export const bindDeferredput = (e, t) => {
+export const bindDeferredput = (e: unknown, t: unknown) => {
   if (peers == null) {
     throw new Error("bindDeferredput peers are not configured");
   }

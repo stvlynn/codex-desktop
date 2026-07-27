@@ -25,11 +25,8 @@ import {
   chunkS3R3BYOJO,
   chunkS3R3BYOJU,
 } from "./mermaid-common-utils";
-import { n, t } from "../../diagrams/get-diagram-element";
-import {
-  n as chunkQN33PNHLN,
-  t as chunkQN33PNHLT,
-} from "../../diagrams/setup-viewport-for-svg";
+import { initGetDiagramElementChunk as n, getDiagramElement as t } from "../../diagrams/get-diagram-element";
+import { setupViewPortForSVG as chunkQN33PNHLN, initSetupViewPortForSvgChunk as chunkQN33PNHLT } from "../../diagrams/setup-viewport-for-svg";
 import {
   chunkN4CR4FBYI,
   chunkN4CR4FBYN,

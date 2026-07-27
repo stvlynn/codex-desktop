@@ -1,28 +1,54 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
 // Materialized via extractFn(internal `Dqr`) / export `SX`.
 
-export type BindMcpCapabilityHostViewPeers = {
-  Eqr: (...args: unknown[]) => unknown;
-  Ma: (...args: unknown[]) => unknown;
-  Q: (...args: unknown[]) => unknown;
+import {
+  createAppScopeQueryAtom,
+  type BindableAtom,
+} from "../boundaries/composer-appscope-atoms";
+
+export type McpCapabilityCatalogEntry = {
+  entrypoint: string;
+  server: string;
+  tool: { name: string };
+  [key: string]: unknown;
 };
 
-let peers: BindMcpCapabilityHostViewPeers | null = null;
+/** Rolldown ESM init shim — module side effects now run on import. */
+export function ensureMcpCapabilityCatalogInit(): void {}
 
-/** Wire bindMcpCapabilityHostView peers once companions land. */
-export function setBindMcpCapabilityHostViewPeers(next: BindMcpCapabilityHostViewPeers): void {
+/** Rolldown ESM init shim — module side effects now run on import. */
+export function ensureMcpCapabilityHostViewInit(): void {}
+
+/**
+ * Bundle export `SX` / internal `Dqr` — global-entrypoint MCP capability
+ * catalog, open boundary placeholder until wired to the real catalog source.
+ */
+export const mcpGlobalCapabilityCatalogAtom: BindableAtom<
+  McpCapabilityCatalogEntry[]
+> = createAppScopeQueryAtom<McpCapabilityCatalogEntry[]>([]);
+
+import type { ReactNode } from "react";
+
+export type McpCapabilityHostViewPeers = {
+  render: (view: McpCapabilityCatalogEntry) => ReactNode;
+};
+let peers: McpCapabilityHostViewPeers | null = null;
+
+/** Wire McpCapabilityHostView peers once companions land. */
+export function setMcpCapabilityHostViewPeers(
+  next: McpCapabilityHostViewPeers,
+): void {
   peers = next;
 }
 
 /**
- * Bundle export `SX` / internal `Dqr`.
+ * Bundle export — hosts a single MCP capability's tool/server view.
  */
-export function bindMcpCapabilityHostView() {
+export function McpCapabilityHostView(props: {
+  view: McpCapabilityCatalogEntry;
+}): ReactNode {
   if (peers == null) {
-    throw new Error("bindMcpCapabilityHostView peers are not configured");
+    throw new Error("McpCapabilityHostView peers are not configured");
   }
-
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => e(peers.Eqr).filter(e => e.entrypoint === `global`));
+  return peers.render(props.view);
 }

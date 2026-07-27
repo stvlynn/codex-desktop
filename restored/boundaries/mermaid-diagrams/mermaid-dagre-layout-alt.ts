@@ -23,7 +23,7 @@ import {
   r as dagreKV5264BTImport2,
   t as dagreKV5264BTImport3,
 } from "../../vendor/graphlib";
-import { n as chunkX2U36JSPN } from "../../diagrams/style-helpers-alt";
+import { initStyleHelpersChunk as chunkX2U36JSPN } from "../../diagrams/style-helpers-alt";
 import {
   chunk5FUZZQ4RI,
   chunk5FUZZQ4RC,

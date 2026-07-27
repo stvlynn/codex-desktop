@@ -14,8 +14,8 @@ export function setBindDeferredUiE1Peers(next: BindDeferredUiE1Peers): void {
 /**
  * Bundle export `E1` / internal `Ak`.
  */
-export const bindDeferredUiE1 = (...e) => {
-  return (t) => {
+export const bindDeferredUiE1 = (...e: unknown[]) => {
+  return (t: unknown) => {
     if (peers == null) {
       throw new Error("bindDeferredUiE1 peers are not configured");
     }

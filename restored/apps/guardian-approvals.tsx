@@ -37,3 +37,10 @@ export function bindGuardianApprovals() {
     });
   });
 }
+
+/**
+ * `Fq` is an ESM module-init thunk (registers atoms as a side effect), not a
+ * component — consumers only import it to keep the chunk's import graph
+ * live, so alias the real export under the name they expect.
+ */
+export { bindGuardianApprovals as GuardianApprovals };

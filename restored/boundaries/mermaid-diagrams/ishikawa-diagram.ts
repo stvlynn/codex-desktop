@@ -30,7 +30,7 @@ import {
   _,
   V,
 } from "../../diagrams/mermaid-config-alt";
-import { n, t } from "../../diagrams/select-svg-element-alt";
+import { selectSvgElement as n, initSelectSvgElementChunk as t } from "../../diagrams/select-svg-element-alt";
 import { chunk5PVQY5BWP, chunk5PVQY5BWU } from "./mermaid-common-utils-alt";
 var ishikawaDiagramUXIWVN3ABinding1,
   ishikawaDiagramUXIWVN3ABinding2,

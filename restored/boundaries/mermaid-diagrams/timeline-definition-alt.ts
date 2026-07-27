@@ -31,7 +31,7 @@ import {
   q,
   y,
 } from "../../diagrams/mermaid-config-alt";
-import { n, t as chunk426QAEUCT } from "../../diagrams/select-svg-element-alt";
+import { selectSvgElement as n, initSelectSvgElementChunk as chunk426QAEUCT } from "../../diagrams/select-svg-element-alt";
 import { chunk5PVQY5BWP, chunk5PVQY5BWU } from "./mermaid-common-utils-alt";
 function timelineDefinitionGMOUNBTQHelper1(
   timelineDefinitionGMOUNBTQInput58,

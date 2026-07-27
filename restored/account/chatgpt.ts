@@ -1,26 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Zq / u2r
+// Materialized via extractFn(internal `u2r`) / export `Zq`.
 
 export type ChatgptPeers = {
-  impl: (...args: unknown[]) => unknown;
+  GM: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  KM: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  TN: (...args: unknown[]) => unknown;
+  bXr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gXr: (...args: unknown[]) => unknown;
+  kXr: (...args: unknown[]) => unknown;
+  l2r: (...args: unknown[]) => unknown;
+  qM: (...args: unknown[]) => unknown;
+  xN: (...args: unknown[]) => unknown;
 };
 
 let peers: ChatgptPeers | null = null;
 
-/** Wire chatgpt once companions land. */
+/** Wire chatgpt peers once companions land. */
 export function setChatgptPeers(next: ChatgptPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Zq` / internal `u2r`.
- * Stage-3 fill for bundle export Zq / u2r
  */
-export function chatgpt(...args: unknown[]): unknown {
+export function chatgpt() {
   if (peers == null) {
     throw new Error("chatgpt peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.e(() => {
+    peers.Ho(), peers.TN(), peers.KM(), peers.bXr(), peers.kXr(), l2r = peers.Ma(peers.GM, ({
+      get: e
+    }) => peers.e(peers.qM) && peers.gXr(peers.e(peers.xN)) != null);
+  });
 }

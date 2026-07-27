@@ -29,4 +29,3 @@ defineFunctionName(populateCommonDb, "populateCommonDb");
 export function initPopulateCommonDbChunk(): void {
   initDayjsLoggerRuntime();
 }
-export { populateCommonDb as n, initPopulateCommonDbChunk as t };

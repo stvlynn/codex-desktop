@@ -1,6 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
 // Materialized via extractFn(internal `LFi`) / export `aW`.
 
+/** Rolldown ESM init shim — module side effects now run on import. */
+export function ensureGitMethodQueryAtomsInit(): void {}
+
+/** Rolldown ESM init shim — module side effects now run on import. */
+export function ensureGitRepoWatchAtomsInit(): void {}
+
+export type GitMethodQueryOptionsInput = {
+  enabled?: boolean;
+  liveQuery?: boolean;
+  retainRepoWatch?: boolean;
+  staleTime?: number;
+};
+
+/**
+ * Bundle-neighborhood `I3` — merges caller-supplied live-query options with
+ * a per-call default `staleTime`.
+ */
+export function mergeGitLiveQueryOptions(
+  options: GitMethodQueryOptionsInput | null | undefined,
+  defaultStaleTime: number | null,
+): GitMethodQueryOptionsInput {
+  return {
+    enabled: options?.enabled ?? true,
+    liveQuery: options?.liveQuery,
+    retainRepoWatch: options?.retainRepoWatch,
+    staleTime: options?.staleTime ?? defaultStaleTime ?? undefined,
+  };
+}
+
 export type CreateGitMethodQueryAtomsPeers = {
   $T: (...args: unknown[]) => unknown;
   N3n: (...args: unknown[]) => unknown;
@@ -20,6 +49,39 @@ export function setCreateGitMethodQueryAtomsPeers(
   next: CreateGitMethodQueryAtomsPeers,
 ): void {
   peers = next;
+}
+
+/** Bundle export `oW` — Rolldown ESM init retained as no-op. */
+export function ensureGitMethodQueryAtomsInit(): void {}
+
+/** Bundle export `L3` — Rolldown ESM init retained as no-op. */
+export function ensureGitRepoWatchAtomsInit(): void {}
+
+export type GitMethodQueryOptionsInput = {
+  enabled?: boolean;
+  retainRepoWatch?: boolean;
+  staleTime?: number;
+  liveQuery?: unknown;
+  select?: (data: unknown) => unknown;
+} & Record<string, unknown>;
+
+/**
+ * Bundle export `I3` / internal `F3n` — merge caller-supplied live-query
+ * options with a per-hook default `staleTime`.
+ */
+export function mergeGitLiveQueryOptions(
+  options: GitMethodQueryOptionsInput | null | undefined,
+  defaultStaleTime: number | null,
+): {
+  enabled: boolean;
+  retainRepoWatch: boolean | undefined;
+  staleTime: number | null | undefined;
+} {
+  return {
+    enabled: options?.enabled ?? true,
+    retainRepoWatch: options?.retainRepoWatch,
+    staleTime: options?.staleTime ?? defaultStaleTime,
+  };
 }
 
 /**

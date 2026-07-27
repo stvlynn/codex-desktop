@@ -1,22 +1,22 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `QFo`) / export `xO`.
+// Materialized via extractFn(internal `QFo`) / export `setStableWorktreeStatusAtom`.
 
-export type XOPeers = {
+export type StableWorktreeStatusAtomPeers = {
   eIo: (...args: unknown[]) => unknown;
 };
-let peers: XOPeers | null = null;
+let peers: StableWorktreeStatusAtomPeers | null = null;
 
-/** Wire xO peers once companions land. */
-export function setXOPeers(next: XOPeers): void {
+/** Wire setStableWorktreeStatusAtom peers once companions land. */
+export function setStableWorktreeStatusAtomPeers(next: StableWorktreeStatusAtomPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `xO` / internal `QFo`.
+ * Bundle export `setStableWorktreeStatusAtom` / internal `QFo`.
  */
-export function xO(e: unknown, t: unknown) {
+export function setStableWorktreeStatusAtom(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("xO peers are not configured");
+    throw new Error("setStableWorktreeStatusAtom peers are not configured");
   }
   e.set(peers.eIo, t);
 }

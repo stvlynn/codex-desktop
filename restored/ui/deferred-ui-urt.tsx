@@ -35,9 +35,7 @@ export type BindBindDeferredUiUrtPeers = {
 let peers: BindBindDeferredUiUrtPeers | null = null;
 
 /** Wire bindBindDeferredUiUrt peers once companions land. */
-export function setBindBindDeferredUiUrtPeers(
-  next: BindBindDeferredUiUrtPeers,
-): void {
+export function setBindBindDeferredUiUrtPeers(next: BindBindDeferredUiUrtPeers): void {
   peers = next;
 }
 
@@ -59,288 +57,184 @@ export function bindBindDeferredUiUrt() {
     Lexer = peers.oy;
     Tokenizer = peers.YWt;
     Hooks = peers.QWt;
-    constructor(...e) {
+    constructor(...alpha) {
       this.use(...peers.e);
     }
-    walkTokens(e, t) {
-      let n = [];
-      for (let r of peers.e)
-        switch (((n = n.concat(peers.t.call(this, r))), r.type)) {
-          case "table": {
-            let e = r;
-            for (let r of peers.e.header)
-              n = n.concat(this.walkTokens(r.tokens, peers.t));
-            for (let r of peers.e.rows)
-              for (let e of r)
-                n = n.concat(this.walkTokens(peers.e.tokens, peers.t));
+    walkTokens(bravo, copper) {
+      let delta = [];
+      for (let echo of peers.e) switch (delta = delta.concat(peers.t.call(this, echo)), echo.type) {
+        case "table":
+          {
+            let falcon = echo;
+            for (let gamma of peers.e.header) delta = delta.concat(this.walkTokens(gamma.tokens, peers.t));
+            for (let harbor of peers.e.rows) for (let indigo of harbor) delta = delta.concat(this.walkTokens(peers.e.tokens, peers.t));
             break;
           }
-          case "list": {
-            let e = r;
-            n = n.concat(this.walkTokens(peers.e.items, peers.t));
+        case "list":
+          {
+            let jade = echo;
+            delta = delta.concat(this.walkTokens(peers.e.items, peers.t));
             break;
           }
-          default: {
-            let e = r;
-            this.defaults.extensions?.childTokens?.[peers.e.type]
-              ? this.defaults.extensions.childTokens[peers.e.type].forEach(
-                  (item) => {
-                    let i = peers.e[item].flat(1 / 0);
-                    n = n.concat(this.walkTokens(i, peers.t));
-                  },
-                )
-              : peers.e.tokens &&
-                (n = n.concat(this.walkTokens(peers.e.tokens, peers.t)));
+        default:
+          {
+            let kite = echo;
+            this.defaults.extensions?.childTokens?.[peers.e.type] ? this.defaults.extensions.childTokens[peers.e.type].forEach(item => {
+              let i = peers.e[item].flat(1 / 0);
+              delta = delta.concat(this.walkTokens(i, peers.t));
+            }) : peers.e.tokens && (delta = delta.concat(this.walkTokens(peers.e.tokens, peers.t)));
           }
-        }
-      return n;
+      }
+      return delta;
     }
-    use(...e) {
-      let t = this.defaults.extensions || {
+    use(...lemon) {
+      let marble = this.defaults.extensions || {
         renderers: {},
-        childTokens: {},
+        childTokens: {}
       };
-      return (
-        peers.e.forEach((item) => {
-          let n = {
-            ...peers.e,
-          };
-          if (
-            ((n.async = this.defaults.async || n.async || false),
-            peers.e.extensions &&
-              (peers.e.extensions.forEach((_item) => {
-                if (!peers.e.name) throw Error("extension name required");
-                if ("renderer" in peers.e) {
-                  let n = peers.t.renderers[peers.e.name];
-                  n
-                    ? (peers.t.renderers[peers.e.name] = function (...t) {
-                        let r = peers.e.renderer.apply(this, peers.t);
-                        return (r === false && (r = n.apply(this, peers.t)), r);
-                      })
-                    : (peers.t.renderers[peers.e.name] = peers.e.renderer);
-                }
-                if ("tokenizer" in peers.e) {
-                  if (
-                    !peers.e.level ||
-                    (peers.e.level !== "block" && peers.e.level !== "inline")
-                  )
-                    throw Error("extension level must be 'block' or 'inline'");
-                  let n = peers.t[peers.e.level];
-                  n
-                    ? n.unshift(peers.e.tokenizer)
-                    : (peers.t[peers.e.level] = [peers.e.tokenizer]);
-                  peers.e.start &&
-                    (peers.e.level === "block"
-                      ? peers.t.startBlock
-                        ? peers.t.startBlock.push(peers.e.start)
-                        : (peers.t.startBlock = [peers.e.start])
-                      : peers.e.level === "inline" &&
-                        (peers.t.startInline
-                          ? peers.t.startInline.push(peers.e.start)
-                          : (peers.t.startInline = [peers.e.start])));
-                }
-                "childTokens" in peers.e &&
-                  peers.e.childTokens &&
-                  (peers.t.childTokens[peers.e.name] = peers.e.childTokens);
-              }),
-              (n.extensions = peers.t)),
-            peers.e.renderer)
-          ) {
-            let t = this.defaults.renderer || new peers.XWt(this.defaults);
-            for (let n in peers.e.renderer) {
-              if (!(n in peers.t))
-                throw Error(`renderer '${n}' does not exist`);
-              if (["options", "parser"].includes(n)) continue;
-              let r = n,
-                i = peers.e.renderer[r],
-                a = peers.t[r];
-              peers.t[r] = (...e) => {
-                let n = i.apply(peers.t, peers.e);
-                return (
-                  n === false && (n = a.apply(peers.t, peers.e)),
-                  n || ""
-                );
-              };
-            }
-            n.renderer = peers.t;
+      return peers.e.forEach(item => {
+        let nickel = {
+          ...peers.e
+        };
+        if (nickel.async = this.defaults.async || nickel.async || false, peers.e.extensions && (peers.e.extensions.forEach(_item => {
+          if (!peers.e.name) throw Error("extension name required");
+          if ("renderer" in peers.e) {
+            let onyx = peers.t.renderers[peers.e.name];
+            onyx ? peers.t.renderers[peers.e.name] = function (...pearl) {
+              let quartz = peers.e.renderer.apply(this, peers.t);
+              return quartz === false && (quartz = onyx.apply(this, peers.t)), quartz;
+            } : peers.t.renderers[peers.e.name] = peers.e.renderer;
           }
-          if (peers.e.tokenizer) {
-            let t = this.defaults.tokenizer || new peers.YWt(this.defaults);
-            for (let n in peers.e.tokenizer) {
-              if (!(n in peers.t))
-                throw Error(`tokenizer '${n}' does not exist`);
-              if (["options", "rules", "lexer"].includes(n)) continue;
-              let r = n,
-                i = peers.e.tokenizer[r],
-                a = peers.t[r];
-              peers.t[r] = (...e) => {
-                let n = i.apply(peers.t, peers.e);
-                return (n === false && (n = a.apply(peers.t, peers.e)), n);
-              };
-            }
-            n.tokenizer = peers.t;
+          if ("tokenizer" in peers.e) {
+            if (!peers.e.level || peers.e.level !== "block" && peers.e.level !== "inline") throw Error("extension level must be 'block' or 'inline'");
+            let river = peers.t[peers.e.level];
+            river ? river.unshift(peers.e.tokenizer) : peers.t[peers.e.level] = [peers.e.tokenizer];
+            peers.e.start && (peers.e.level === "block" ? peers.t.startBlock ? peers.t.startBlock.push(peers.e.start) : peers.t.startBlock = [peers.e.start] : peers.e.level === "inline" && (peers.t.startInline ? peers.t.startInline.push(peers.e.start) : peers.t.startInline = [peers.e.start]));
           }
-          if (peers.e.hooks) {
-            let t = this.defaults.hooks || new peers.QWt();
-            for (let n in peers.e.hooks) {
-              if (!(n in peers.t)) throw Error(`hook '${n}' does not exist`);
-              if (["options", "block"].includes(n)) continue;
-              let r = n,
-                i = peers.e.hooks[r],
-                a = peers.t[r];
-              peers.QWt.passThroughHooks.has(n)
-                ? (peers.t[r] = (e) => {
-                    if (
-                      this.defaults.async &&
-                      peers.QWt.passThroughHooksRespectAsync.has(n)
-                    )
-                      return (async () => {
-                        let n = await i.call(peers.t, peers.e);
-                        return a.call(peers.t, n);
-                      })();
-                    let r = i.call(peers.t, peers.e);
-                    return a.call(peers.t, r);
-                  })
-                : (peers.t[r] = (...e) => {
-                    if (this.defaults.async)
-                      return (async () => {
-                        let n = await i.apply(peers.t, peers.e);
-                        return (
-                          n === false && (n = await a.apply(peers.t, peers.e)),
-                          n
-                        );
-                      })();
-                    let n = i.apply(peers.t, peers.e);
-                    return (n === false && (n = a.apply(peers.t, peers.e)), n);
-                  });
-            }
-            n.hooks = peers.t;
-          }
-          if (peers.e.walkTokens) {
-            let t = this.defaults.walkTokens,
-              r = peers.e.walkTokens;
-            n.walkTokens = function (e) {
-              let n = [];
-              return (
-                n.push(r.call(this, peers.e)),
-                peers.t && (n = n.concat(peers.t.call(this, peers.e))),
-                n
-              );
+          "childTokens" in peers.e && peers.e.childTokens && (peers.t.childTokens[peers.e.name] = peers.e.childTokens);
+        }), nickel.extensions = peers.t), peers.e.renderer) {
+          let slate = this.defaults.renderer || new peers.XWt(this.defaults);
+          for (let timber in peers.e.renderer) {
+            if (!(timber in peers.t)) throw Error(`renderer '${timber}' does not exist`);
+            if (["options", "parser"].includes(timber)) continue;
+            let umbra = timber,
+              i = peers.e.renderer[umbra],
+              a = peers.t[umbra];
+            peers.t[umbra] = (...violet) => {
+              let willow = i.apply(peers.t, peers.e);
+              return willow === false && (willow = a.apply(peers.t, peers.e)), willow || "";
             };
           }
-          this.defaults = {
-            ...this.defaults,
-            ...n,
+          nickel.renderer = peers.t;
+        }
+        if (peers.e.tokenizer) {
+          let xenon = this.defaults.tokenizer || new peers.YWt(this.defaults);
+          for (let yellow in peers.e.tokenizer) {
+            if (!(yellow in peers.t)) throw Error(`tokenizer '${yellow}' does not exist`);
+            if (["options", "rules", "lexer"].includes(yellow)) continue;
+            let zinc = yellow,
+              i = peers.e.tokenizer[zinc],
+              a = peers.t[zinc];
+            peers.t[zinc] = (...amber) => {
+              let basalt = i.apply(peers.t, peers.e);
+              return basalt === false && (basalt = a.apply(peers.t, peers.e)), basalt;
+            };
+          }
+          nickel.tokenizer = peers.t;
+        }
+        if (peers.e.hooks) {
+          let cedar = this.defaults.hooks || new peers.QWt();
+          for (let daisy in peers.e.hooks) {
+            if (!(daisy in peers.t)) throw Error(`hook '${daisy}' does not exist`);
+            if (["options", "block"].includes(daisy)) continue;
+            let ember = daisy,
+              i = peers.e.hooks[ember],
+              a = peers.t[ember];
+            peers.QWt.passThroughHooks.has(daisy) ? peers.t[ember] = flint => {
+              if (this.defaults.async && peers.QWt.passThroughHooksRespectAsync.has(daisy)) return (async () => {
+                let hazel = await i.call(peers.t, peers.e);
+                return a.call(peers.t, hazel);
+              })();
+              let garnet = i.call(peers.t, peers.e);
+              return a.call(peers.t, garnet);
+            } : peers.t[ember] = (...ivory) => {
+              if (this.defaults.async) return (async () => {
+                let kelp = await i.apply(peers.t, peers.e);
+                return kelp === false && (kelp = await a.apply(peers.t, peers.e)), kelp;
+              })();
+              let jasper = i.apply(peers.t, peers.e);
+              return jasper === false && (jasper = a.apply(peers.t, peers.e)), jasper;
+            };
+          }
+          nickel.hooks = peers.t;
+        }
+        if (peers.e.walkTokens) {
+          let lotus = this.defaults.walkTokens,
+            mint = peers.e.walkTokens;
+          nickel.walkTokens = function (nova) {
+            let olive = [];
+            return olive.push(mint.call(this, peers.e)), peers.t && (olive = olive.concat(peers.t.call(this, peers.e))), olive;
           };
-        }),
-        this
-      );
-    }
-    setOptions(e) {
-      return (
-        (this.defaults = {
+        }
+        this.defaults = {
           ...this.defaults,
-          ...peers.e,
-        }),
-        this
-      );
+          ...nickel
+        };
+      }), this;
     }
-    lexer(e, t) {
+    setOptions(prism) {
+      return this.defaults = {
+        ...this.defaults,
+        ...peers.e
+      }, this;
+    }
+    lexer(quill, reef) {
       return peers.oy.lex(peers.e, peers.t ?? this.defaults);
     }
-    parser(e, t) {
+    parser(sage, topaz) {
       return peers.sy.parse(peers.e, peers.t ?? this.defaults);
     }
-    parseMarkdown(e) {
-      return (t, n) => {
-        let r = {
-            ...n,
+    parseMarkdown(ultra) {
+      return (vapor, wheat) => {
+        let yarn = {
+            ...wheat
           },
           i = {
             ...this.defaults,
-            ...r,
+            ...yarn
           },
           a = this.onError(!!i.silent, !!i.async);
-        if (this.defaults.async === true && r.async === false)
-          return a(
-            Error(
-              "marked(): The async option was set to true by an extension. Remove async: false from the parse options object to return a Promise.",
-            ),
-          );
-        if (typeof peers.t > "u" || peers.t === null)
-          return a(Error("marked(): input parameter is undefined or null"));
-        if (typeof peers.t != "string")
-          return a(
-            Error(
-              "marked(): input parameter is of type " +
-                Object.prototype.toString.call(peers.t) +
-                ", string expected",
-            ),
-          );
-        if (
-          (i.hooks && ((i.hooks.options = i), (i.hooks.block = peers.e)),
-          i.async)
-        )
-          return (async () => {
-            let n = i.hooks ? await i.hooks.preprocess(peers.t) : peers.t,
-              r = await (
-                i.hooks
-                  ? await i.hooks.provideLexer()
-                  : peers.e
-                    ? peers.oy.lex
-                    : peers.oy.lexInline
-              )(n, i),
-              a = i.hooks ? await i.hooks.processAllTokens(r) : r;
-            i.walkTokens &&
-              (await Promise.all(this.walkTokens(a, i.walkTokens)));
-            let o = await (
-              i.hooks
-                ? await i.hooks.provideParser()
-                : peers.e
-                  ? peers.sy.parse
-                  : peers.sy.parseInline
-            )(a, i);
-            return i.hooks ? await i.hooks.postprocess(o) : o;
-          })().catch(a);
+        if (this.defaults.async === true && yarn.async === false) return a(Error("marked(): The async option was set to true by an extension. Remove async: false from the parse options object to return a Promise."));
+        if (typeof peers.t > "u" || peers.t === null) return a(Error("marked(): input parameter is undefined or null"));
+        if (typeof peers.t != "string") return a(Error("marked(): input parameter is of type " + Object.prototype.toString.call(peers.t) + ", string expected"));
+        if (i.hooks && (i.hooks.options = i, i.hooks.block = peers.e), i.async) return (async () => {
+          let zephyr = i.hooks ? await i.hooks.preprocess(peers.t) : peers.t,
+            acorn = await (i.hooks ? await i.hooks.provideLexer() : peers.e ? peers.oy.lex : peers.oy.lexInline)(zephyr, i),
+            a = i.hooks ? await i.hooks.processAllTokens(acorn) : acorn;
+          i.walkTokens && (await Promise.all(this.walkTokens(a, i.walkTokens)));
+          let bloom = await (i.hooks ? await i.hooks.provideParser() : peers.e ? peers.sy.parse : peers.sy.parseInline)(a, i);
+          return i.hooks ? await i.hooks.postprocess(bloom) : bloom;
+        })().catch(a);
         try {
-          i.hooks && (t = i.hooks.preprocess(peers.t));
-          let n = (
-            i.hooks
-              ? i.hooks.provideLexer()
-              : peers.e
-                ? peers.oy.lex
-                : peers.oy.lexInline
-          )(peers.t, i);
-          i.hooks && (n = i.hooks.processAllTokens(n));
-          i.walkTokens && this.walkTokens(n, i.walkTokens);
-          let r = (
-            i.hooks
-              ? i.hooks.provideParser()
-              : peers.e
-                ? peers.sy.parse
-                : peers.sy.parseInline
-          )(n, i);
-          return (i.hooks && (r = i.hooks.postprocess(r)), r);
-        } catch (e) {
+          i.hooks && (vapor = i.hooks.preprocess(peers.t));
+          let coral = (i.hooks ? i.hooks.provideLexer() : peers.e ? peers.oy.lex : peers.oy.lexInline)(peers.t, i);
+          i.hooks && (coral = i.hooks.processAllTokens(coral));
+          i.walkTokens && this.walkTokens(coral, i.walkTokens);
+          let drift = (i.hooks ? i.hooks.provideParser() : peers.e ? peers.sy.parse : peers.sy.parseInline)(coral, i);
+          return i.hooks && (drift = i.hooks.postprocess(drift)), drift;
+        } catch (eagle) {
           return a(peers.e);
         }
       };
     }
-    onError(e, t) {
-      return (n) => {
-        if (
-          ((n.message +=
-            "\nPlease report this to https://github.com/markedjs/marked."),
-          peers.e)
-        ) {
-          let e =
-            "<p>An error occurred:</p><pre>" +
-            peers.ny(n.message + "", true) +
-            "</pre>";
+    onError(frost, glide) {
+      return honey => {
+        if (honey.message += "\nPlease report this to https://github.com/markedjs/marked.", peers.e) {
+          let iris = "<p>An error occurred:</p><pre>" + peers.ny(honey.message + "", true) + "</pre>";
           return peers.t ? Promise.resolve(peers.e) : peers.e;
         }
-        if (peers.t) return Promise.reject(n);
-        throw n;
+        if (peers.t) return Promise.reject(honey);
+        throw honey;
       };
     }
   };

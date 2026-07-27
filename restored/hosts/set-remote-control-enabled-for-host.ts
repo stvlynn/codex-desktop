@@ -1,23 +1,23 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `axu`) / export `V`.
+// Materialized via extractFn(internal `axu`) / export `setRemoteControlEnabledForHost`.
 
-export type VPeers = {
+export type RemoteControlEnabledForHostPeers = {
   Bf: (...args: unknown[]) => unknown;
   O6n: (...args: unknown[]) => unknown;
   sE: (...args: unknown[]) => unknown;
   status: (...args: unknown[]) => unknown;
 };
-let peers: VPeers | null = null;
+let peers: RemoteControlEnabledForHostPeers | null = null;
 
-/** Wire V peers once companions land. */
-export function setVPeers(next: VPeers): void {
+/** Wire setRemoteControlEnabledForHost peers once companions land. */
+export function setRemoteControlEnabledForHostPeers(next: RemoteControlEnabledForHostPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `V` / internal `axu`.
+ * Bundle export `setRemoteControlEnabledForHost` / internal `axu`.
  */
-export async function V(
+export async function setRemoteControlEnabledForHost(
   e: unknown,
   t: unknown,
   n: unknown,
@@ -28,7 +28,7 @@ export async function V(
   }: Record<string, unknown> = {},
 ) {
   if (peers == null) {
-    throw new Error("V peers are not configured");
+    throw new Error("setRemoteControlEnabledForHost peers are not configured");
   }
   let i = e.get(peers.sE, t),
     a = await peers.Bf("set-remote-control-enabled-for-host", {

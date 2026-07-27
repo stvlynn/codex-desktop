@@ -55,7 +55,7 @@ export function setBindEditorDiffPagePeers(
 export function bindEditorDiffPage(props: unknown) {
   const JBo = peers.jBo;
   const FBo = peers.FBo;
-  const Je2 = je;
+  const Je2 = Echo;
   const Tyo = peers.tyo;
   if (peers == null) {
     throw new Error("bindEditorDiffPage peers are not configured");
@@ -76,7 +76,7 @@ export function bindEditorDiffPage(props: unknown) {
       onCommentsChange,
       commentAuthorLabel,
       commentAuthorAvatarUrl,
-      onReadonlyCommentReply: _,
+      onReadonlyCommentReply: alpha,
       renderReadonlyCommentActions,
       renderReadonlyCommentBody,
       open,
@@ -118,99 +118,104 @@ export function bindEditorDiffPage(props: unknown) {
       showHeaderDiffStats = true,
       preserveHeaderPositionOnToggle = false,
     } = props,
-    de = allowCommentDrafts === undefined ? enableComments : allowCommentDrafts,
-    me = showFileActions === undefined ? showHunkActions : showFileActions,
-    Ae = peers.Io(peers.Q),
-    je = peers.mla() == null ? peers.Gd : peers.Jq.Fragment,
-    Me = headerVariant === "full-review",
-    [Ne, Pe] = peers.Jq.useState(diffViewWrap),
-    Fe = peers.Jq.useRef(null),
-    Ie = peers.Jq.useRef(null),
-    Le = peers.Jq.useRef(peers.ABo),
+    Bravo =
+      allowCommentDrafts === undefined ? enableComments : allowCommentDrafts,
+    Copper = showFileActions === undefined ? showHunkActions : showFileActions,
+    Delta = peers.Io(peers.Q),
+    Echo = peers.mla() == null ? peers.Gd : peers.Jq.Fragment,
+    Falcon = headerVariant === "full-review",
+    [Gamma, Harbor] = peers.Jq.useState(diffViewWrap),
+    Indigo = peers.Jq.useRef(null),
+    Jade = peers.Jq.useRef(null),
+    Kite = peers.Jq.useRef(peers.ABo),
     { platform } = peers.uk(),
-    ze = peers.CBo(onOpenChange, expandScope),
-    Be = peers.Ju(),
-    Ve = peers.Lm(),
-    He = diff.metadata.type === "deleted",
-    Ue = diff.metadata.name,
-    We = Ue && Ue !== "/dev/null" ? peers.o_(Ue, cwd ?? undefined) : Ue;
-  let Ge = We,
-    Ke = displayPathOverride ?? Ge ?? Ue ?? "",
-    qe = Ke && !peers.Af(Ke) ? Ke : null;
-  let Je = qe,
-    Ye,
-    Xe;
-  Ye =
+    Lemon = peers.CBo(onOpenChange, expandScope),
+    Marble = peers.Ju(),
+    Nickel = peers.Lm(),
+    Onyx = diff.metadata.type === "deleted",
+    Pearl = diff.metadata.name,
+    Quartz =
+      Pearl && Pearl !== "/dev/null"
+        ? peers.o_(Pearl, cwd ?? undefined)
+        : Pearl;
+  let River = Quartz,
+    Slate = displayPathOverride ?? River ?? Pearl ?? "",
+    Timber = Slate && !peers.Af(Slate) ? Slate : null;
+  let Umbra = Timber,
+    Violet,
+    Willow;
+  Violet =
     (diff.metadata.type === "rename-pure" ||
       diff.metadata.type === "rename-changed") &&
     diff.metadata.prevName != null
       ? peers.o_(diff.metadata.prevName, cwd ?? undefined)
       : null;
-  Xe = Ye == null ? null : (peers.Tf(Ye).split("/").pop() ?? Ye);
-  let Ze = Xe,
-    Qe;
+  Willow =
+    Violet == null ? null : (peers.Tf(Violet).split("/").pop() ?? Violet);
+  let Xenon = Willow,
+    Yellow;
   bb0: {
     if (openFilePathOverride !== undefined) {
       if (openFilePathOverride == null) {
-        Qe = null;
+        Yellow = null;
         break bb0;
       }
-      let e = platform === "windows",
-        n;
-      n = peers.EXe("", openFilePathOverride, e);
-      Qe = n;
+      let cliff = platform === "windows",
+        dusk;
+      dusk = peers.EXe("", openFilePathOverride, cliff);
+      Yellow = dusk;
       break bb0;
     }
-    if (Ge === "/dev/null" || !cwd) {
-      Qe = Ge;
+    if (River === "/dev/null" || !cwd) {
+      Yellow = River;
       break bb0;
     }
-    let e = platform === "windows",
-      n;
-    n = peers.EXe(cwd, Ge, e);
-    Qe = n;
+    let apex = platform === "windows",
+      brook;
+    brook = peers.EXe(cwd, River, apex);
+    Yellow = brook;
   }
-  let $e = Qe,
-    J = peers.Tf(Ke).split("/").pop() ?? Ke;
-  let et = J,
-    tt = Ye == null ? Ke : `${Ye}${peers.iVo}${Ke}`,
-    nt = Ze == null ? et : `${Ze}${peers.iVo}${et}`,
-    rt =
-      Ye == null || Ze == null
+  let $e = Yellow,
+    zinc = peers.Tf(Slate).split("/").pop() ?? Slate;
+  let Amber = zinc,
+    Basalt = Violet == null ? Slate : `${Violet}${peers.iVo}${Slate}`,
+    Cedar = Xenon == null ? Amber : `${Xenon}${peers.iVo}${Amber}`,
+    Daisy =
+      Violet == null || Xenon == null
         ? [
             {
-              fileName: et,
-              path: Ke,
+              fileName: Amber,
+              path: Slate,
             },
           ]
         : [
             {
-              fileName: Ze,
-              path: Ye,
+              fileName: Xenon,
+              path: Violet,
             },
             {
-              fileName: et,
-              path: Ke,
+              fileName: Amber,
+              path: Slate,
             },
           ];
-  let it = rt,
+  let Ember = Daisy,
     at = hostConfig?.id,
-    ot,
-    st;
-  ot = () => {
-    Pe(diffViewWrap);
+    Flint,
+    Garnet;
+  Flint = () => {
+    Harbor(diffViewWrap);
   };
-  st = [diffViewWrap];
-  peers.Jq.useEffect(ot, st);
+  Garnet = [diffViewWrap];
+  peers.Jq.useEffect(Flint, Garnet);
   let lt = {
     cwd,
     hostId: at,
     openPath: $e,
   };
-  let ut = peers.Fo(peers.Zvo, lt),
-    dt = async () => {
+  let Hazel = peers.Fo(peers.Zvo, lt),
+    Ivory = async () => {
       try {
-        return await peers.Yvo(Ae, {
+        return await peers.Yvo(Delta, {
           cwd: cwd ?? null,
           hostId: at,
           openPath: $e,
@@ -219,9 +224,9 @@ export function bindEditorDiffPage(props: unknown) {
         return null;
       }
     };
-  let ft = peers.Wm(dt),
-    pt = !!$e && $e !== "/dev/null",
-    mt = () => {
+  let Jasper = peers.Wm(Ivory),
+    Kelp = !!$e && $e !== "/dev/null",
+    Lotus = () => {
       if (!(!$e || $e === "/dev/null")) {
         if (onCopyPath) {
           onCopyPath($e);
@@ -230,55 +235,55 @@ export function bindEditorDiffPage(props: unknown) {
         peers.BL($e);
       }
     };
-  let ht = mt,
+  let Mint = Lotus,
     gt = () => {
       if (onToggleWrap) {
         onToggleWrap();
         return;
       }
-      Pe(peers.kBo);
+      Harbor(peers.kBo);
     };
   let _t = gt,
-    vt = He ? (diff.firstDeletionLine ?? 1) : (diff.firstAdditionLine ?? 1),
-    yt = (e) => {
-      let { lineNumber, event } = e;
+    Nova = Onyx ? (diff.firstDeletionLine ?? 1) : (diff.firstAdditionLine ?? 1),
+    Olive = (elm) => {
+      let { lineNumber, event } = elm;
       $e &&
         peers.$Bo(event) &&
-        peers.Jvo(Ae, {
+        peers.Jvo(Delta, {
           path: $e,
           line: lineNumber,
           cwd: cwd ?? null,
           hostId: at,
         });
     };
-  let bt = peers.Wm(yt),
-    xt = (e, t, n) => {
+  let Prism = peers.Wm(Olive),
+    Quill = (fern, grove, hill) => {
       if (!$e) return;
-      let r = Fe.current ?? vt;
-      Fe.current = null;
-      peers.Xvo(Ae, {
+      let isle = Indigo.current ?? Nova;
+      Indigo.current = null;
+      peers.Xvo(Delta, {
         cwd: cwd ?? null,
         hostId: at,
-        line: r,
+        line: isle,
         openPath: $e,
-        appPath: n,
-        persistPreferred: t,
-        target: e,
+        appPath: hill,
+        persistPreferred: grove,
+        target: fern,
       });
     };
-  let St = peers.Wm(xt),
-    Ct = () => {
+  let Reef = peers.Wm(Quill),
+    Sage = () => {
       $e &&
         (async () => {
           let { primaryTarget } = peers.qvo({
-            data: await ft(),
-            preferredTargetOverride: ut,
+            data: await Jasper(),
+            preferredTargetOverride: Hazel,
           });
           if (primaryTarget != null) {
-            peers.Xvo(Ae, {
+            peers.Xvo(Delta, {
               cwd: cwd ?? null,
               hostId: at,
-              line: vt,
+              line: Nova,
               openPath: $e,
               persistPreferred: false,
               target: primaryTarget.target,
@@ -286,133 +291,133 @@ export function bindEditorDiffPage(props: unknown) {
             });
             return;
           }
-          peers.Jvo(Ae, {
+          peers.Jvo(Delta, {
             cwd: cwd ?? null,
             hostId: at,
-            line: vt,
+            line: Nova,
             path: $e,
           });
         })();
     };
-  let wt = Ct,
-    Tt = (e) => {
-      bt(e);
+  let Topaz = Sage,
+    Ultra = (juniper) => {
+      Prism(juniper);
     };
-  let Et = Tt,
-    Dt = (e) => {
-      bt(e);
+  let Vapor = Ultra,
+    Wheat = (lagoon) => {
+      Prism(lagoon);
     };
-  let Ot = Dt,
-    kt = (event) => {
-      let t = !open;
+  let Yarn = Wheat,
+    Zephyr = (event) => {
+      let meadow = !open;
       if (
         (preserveHeaderPositionOnToggle &&
           event != null &&
-          peers.Rzo(event.currentTarget, Ve),
+          peers.Rzo(event.currentTarget, Nickel),
         event?.altKey)
       ) {
-        ze(t);
+        Lemon(meadow);
         return;
       }
-      onOpenChange(t);
-      onDirectFileToggle?.(t);
+      onOpenChange(meadow);
+      onDirectFileToggle?.(meadow);
     };
-  let At = peers.Wm(kt),
-    jt = (event) => {
+  let Acorn = peers.Wm(Zephyr),
+    Bloom = (event) => {
       event.stopPropagation();
-      At(event);
+      Acorn(event);
     };
-  let Mt = peers.Wm(jt),
-    Nt = () => {
-      Le.current();
+  let Coral = peers.Wm(Bloom),
+    Drift = () => {
+      Kite.current();
     };
-  let Pt = Nt,
-    Ft = (event) => {
-      let t =
+  let Eagle = Drift,
+    Frost = (event) => {
+      let nest =
         typeof event.nativeEvent.composedPath == "function"
           ? event.nativeEvent.composedPath()
           : [event.target];
-      Fe.current = peers.Pla(t);
+      Indigo.current = peers.Pla(nest);
     };
-  let It = Ft,
-    Lt =
-      !He && cwd != null && hostConfig != null && $e != null
+  let Glide = Frost,
+    Honey =
+      !Onyx && cwd != null && hostConfig != null && $e != null
         ? {
             cwd,
             hostConfig,
             path: $e,
           }
         : null;
-  let Rt =
-    Je == null
+  let Iris =
+    Umbra == null
       ? undefined
       : () => {
-          peers.BL(Je);
+          peers.BL(Umbra);
         };
-  let zt = roundedCorners && "rounded-lg",
-    Bt = Me && open && "pb-0.5",
-    Vt = peers.$(
+  let Jewel = roundedCorners && "rounded-lg",
+    Knoll = Falcon && open && "pb-0.5",
+    Lunar = peers.$(
       "group/file-diff flex flex-col overflow-clip",
-      zt,
-      Bt,
+      Jewel,
+      Knoll,
       containerClassName,
     );
-  let Ht = peers.Lla(background, diffSurface);
-  let Ut = `var(--codex-diffs-surface-override, ${Ht})`,
-    Wt = background ? "var(--codex-diffs-surface)" : undefined,
-    Gt = {
-      "--codex-diffs-surface": Ut,
-      backgroundColor: Wt,
+  let Moss = peers.Lla(background, diffSurface);
+  let North = `var(--codex-diffs-surface-override, ${Moss})`,
+    Orbit = background ? "var(--codex-diffs-surface)" : undefined,
+    Pine = {
+      "--codex-diffs-surface": North,
+      backgroundColor: Orbit,
     };
-  let Kt = (event) => {
+  let Quest = (event) => {
     event.stopPropagation();
     headerEndContentOpenOnClick != null &&
       (onOpenChange(headerEndContentOpenOnClick),
       headerEndContentOpenOnClick !== open &&
         onDirectFileToggle?.(headerEndContentOpenOnClick));
   };
-  let qt = (e) => {
+  let Ridge = (oak) => {
     onHunkAction?.({
       path: diff.metadata.name,
-      action: e,
+      action: oak,
       scope: "file",
     });
   };
-  let Jt = pt,
-    Yt = Be.formatMessage({
+  let Storm = Kelp,
+    Tide = Marble.formatMessage({
       id: "diff.fileHeader.toggle",
       defaultMessage: "Toggle file diff",
       description: "Button label for toggling the file diff section",
     });
-  let Xt = (
+  let Unity = (
     <JBo
       diff={diff}
-      displayFileName={nt}
-      displayPath={tt}
-      displayPathParts={it}
-      onFileNameClick={Mt}
-      onOpenInEditor={wt}
+      displayFileName={Cedar}
+      displayPath={Basalt}
+      displayPathParts={Ember}
+      onFileNameClick={Coral}
+      onOpenInEditor={Topaz}
       headerEndContent={headerEndContent}
-      onHeaderEndContentClick={Kt}
+      onHeaderEndContentClick={Quest}
       headerOpenAction={headerOpenAction}
       fileActionsDisabled={fileActionsDisabled}
-      onFileToggle={At}
-      onFileAction={qt}
+      onFileToggle={Acorn}
+      onFileAction={Ridge}
       open={open}
       stickyHeader={stickyHeader}
-      showOpenInButton={Jt}
+      showOpenInButton={Storm}
       showDiffStats={showHeaderDiffStats}
-      toggleAriaLabel={Yt}
-      workspaceRelativePath={Ge}
-      showFileActions={me}
+      toggleAriaLabel={Tide}
+      workspaceRelativePath={River}
+      showFileActions={Copper}
       hunkActionsVariant={hunkActionsVariant}
       headerVariant={headerVariant}
       isLoading={isLoading}
     />
   );
-  let Zt = open ? (
+  let Vale = open ? (
     <FBo
-      canOpenFile={pt}
+      canOpenFile={Kelp}
       comments={comments}
       modelComments={modelComments}
       conversationId={conversationId}
@@ -420,11 +425,11 @@ export function bindEditorDiffPage(props: unknown) {
       diff={diff}
       diffViewClassName={diffViewClassName}
       enableComments={enableComments}
-      allowCommentDrafts={de}
-      handleLineClick={Et}
-      handleLineNumberClick={Ot}
+      allowCommentDrafts={Bravo}
+      handleLineClick={Vapor}
+      handleLineNumberClick={Yarn}
       hostConfig={hostConfig}
-      hoveredLineRef={Ie}
+      hoveredLineRef={Jade}
       hunkActionsVariant={hunkActionsVariant}
       hunkSeparators={hunkSeparators}
       loadFullContent={loadFullContent}
@@ -437,44 +442,44 @@ export function bindEditorDiffPage(props: unknown) {
       commentAuthorLabel={commentAuthorLabel}
       commentAuthorAvatarUrl={commentAuthorAvatarUrl}
       isLoading={isLoading}
-      onReadonlyCommentReply={_}
+      onReadonlyCommentReply={alpha}
       renderReadonlyCommentActions={renderReadonlyCommentActions}
       renderReadonlyCommentBody={renderReadonlyCommentBody}
       onLoadRetry={onLoadRetry}
       onHunkAction={onHunkAction}
       onPostRender={onPostRender}
-      onOpenInEditor={wt}
+      onOpenInEditor={Topaz}
       onRequestChanges={onRequestChanges}
       openFilePath={$e ?? null}
       open={open}
-      requestChangesRef={Le}
+      requestChangesRef={Kite}
       richPreviewEnabled={richPreviewEnabled}
       showHunkActions={showHunkActions}
       showLoadError={showLoadError}
-      useReviewLineInfoSeparators={Me}
+      useReviewLineInfoSeparators={Falcon}
       viewType={viewType}
-      wrapLines={Ne}
+      wrapLines={Gamma}
       metrics={metrics}
     />
   ) : null;
-  let Qt = <Je2>{Zt}</Je2>;
+  let Wave = <Je2>{Vale}</Je2>;
   let $t = (
-    <div onContextMenu={It} className={Vt} style={Gt}>
-      {Xt}
-      {Qt}
+    <div onContextMenu={Glide} className={Lunar} style={Pine}>
+      {Unity}
+      {Wave}
     </div>
   );
   return (
     <Tyo
-      canOpenFile={pt}
-      githubFileLookup={Lt}
-      loadOpenTargets={ft}
-      preferredTargetOverride={ut}
-      onRequestChanges={Pt}
-      onCopyPath={ht}
-      onCopyRelativePath={Rt}
+      canOpenFile={Kelp}
+      githubFileLookup={Honey}
+      loadOpenTargets={Jasper}
+      preferredTargetOverride={Hazel}
+      onRequestChanges={Eagle}
+      onCopyPath={Mint}
+      onCopyRelativePath={Iris}
       onToggleWrap={_t}
-      handleOpenInTarget={St}
+      handleOpenInTarget={Reef}
       disableNative={disableNativeContextMenu}
     >
       {$t}

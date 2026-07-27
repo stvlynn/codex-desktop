@@ -24,3 +24,6 @@ export function useIsRemoteHost() {
 
   return peers.W_(peers.Y(peers.SD)).kind !== `local`;
 }
+
+/** Bundle path ESM init retained as no-op. */
+export function ensureUseIsRemoteHostInit(): void {}

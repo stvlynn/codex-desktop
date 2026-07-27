@@ -50,10 +50,7 @@ import {
   chunkU2HBQHQKA as chunkU2HBQHQKI,
   chunkU2HBQHQKN,
 } from "./mermaid-create-text-alt";
-import {
-  n as chunkFMBD7UC4N,
-  t as chunkFMBD7UC4T,
-} from "../../diagrams/get-icon-styles";
+import { initGetIconStylesChunk as chunkFMBD7UC4N, getIconStyles as chunkFMBD7UC4T } from "../../diagrams/get-icon-styles";
 import {
   getLineFunctionsWithOffset as chunkBSJP7CBPN,
   initMermaidLineOffsetAltChunk as chunkBSJP7CBPR,

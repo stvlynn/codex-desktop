@@ -196,3 +196,6 @@ export function AnnouncementModal(props: unknown) {
     </Xk>
   );
 }
+
+/** Bundle path ESM init retained as no-op. */
+export function ensureAnnouncementModalInit(): void {}

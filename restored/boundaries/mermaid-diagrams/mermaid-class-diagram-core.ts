@@ -31,15 +31,9 @@ import {
   chunkS3R3BYOJS,
   chunkS3R3BYOJU,
 } from "./mermaid-common-utils";
-import { n, t } from "../../diagrams/get-icon-styles-alt";
-import {
-  n as chunk55IACEB6N,
-  t as chunk55IACEB6T,
-} from "../../diagrams/get-diagram-element";
-import {
-  n as chunkQN33PNHLN,
-  t as chunkQN33PNHLT,
-} from "../../diagrams/setup-viewport-for-svg";
+import { initGetIconStylesChunk as n, getIconStyles as t } from "../../diagrams/get-icon-styles-alt";
+import { initGetDiagramElementChunk as chunk55IACEB6N, getDiagramElement as chunk55IACEB6T } from "../../diagrams/get-diagram-element";
+import { setupViewPortForSVG as chunkQN33PNHLN, initSetupViewPortForSvgChunk as chunkQN33PNHLT } from "../../diagrams/setup-viewport-for-svg";
 import {
   chunkN4CR4FBYI,
   chunkN4CR4FBYN,

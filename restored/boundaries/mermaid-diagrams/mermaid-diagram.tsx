@@ -60,10 +60,7 @@ import {
   select as srcR,
   ensureD3SelectionRuntimeT as srcT,
 } from "../../vendor/d3-axis-current-runtime";
-import {
-  n as chunkEXTU4WIEN,
-  t as chunkEXTU4WIET,
-} from "../../diagrams/select-svg-element";
+import { selectSvgElement as chunkEXTU4WIEN, initSelectSvgElementChunk as chunkEXTU4WIET } from "../../diagrams/select-svg-element";
 import {
   chunkS3R3BYOJA,
   chunkS3R3BYOJF,
@@ -80,18 +77,14 @@ import {
 } from "./mermaid-create-text";
 import { initMermaidLineOffsetChunk as chunkHN2XXSSUN } from "../../diagrams/line-offset-helpers";
 import { initSubGraphTitleMarginsChunk as chunkCVBHYZKIN } from "../../diagrams/subgraph-title-margins";
-import { n as chunkATLVNIR6N } from "../../diagrams/style-helpers";
+import { initStyleHelpersChunk as chunkATLVNIR6N } from "../../diagrams/style-helpers";
 import { chunkJZLCHNYAI } from "./mermaid-flowchart-nodes";
 import { chunkQXUST7PYN } from "./mermaid-flowchart-edges";
 import {
   chunkN4CR4FBYN,
   chunkN4CR4FBYR,
 } from "../../diagrams/mermaid-layout-loaders";
-import {
-  n as chunkMI3HLSF2N,
-  r as chunkMI3HLSF2R,
-  t as chunkMI3HLSF2T,
-} from "../../utils/mermaid-js-yaml-alt";
+import { initMermaidJsYamlAlt as chunkMI3HLSF2N, yamlLoad as chunkMI3HLSF2R, yamlCoreSchema as chunkMI3HLSF2T } from "../../utils/mermaid-js-yaml-alt";
 import {
   mermaidPackageJson as chunkKS23V3DPN,
   initMermaidPackageJson as chunkKS23V3DPT,

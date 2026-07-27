@@ -12,20 +12,29 @@ export function setInvokeDesktopRpcPeers(next: InvokeDesktopRpcPeers): void {
   peers = next;
 }
 
+export type InvokeDesktopRpcOptions = {
+  params?: unknown;
+  select?: unknown;
+  signal?: AbortSignal;
+  source?: unknown;
+};
+
+export type InvokeDesktopRpc = (
+  method: string,
+  options?: InvokeDesktopRpcOptions,
+) => Promise<unknown>;
+
 /**
  * Bundle export `Zut` / internal `rp`.
  */
-async function invokeDesktopRpc(...e) {
+export const invokeDesktopRpc: InvokeDesktopRpc = async (
+  method: string,
+  options?: InvokeDesktopRpcOptions,
+) => {
   if (peers == null) {
     throw new Error("invokeDesktopRpc peers are not configured");
   }
 
-  let [t, n] = e,
-    {
-      params: r,
-      select: i,
-      signal: a,
-      source: o
-    } = n ?? {};
-  return peers.PZe(t, r, i, a, o);
-}
+  const { params: r, select: i, signal: a, source: o } = options ?? {};
+  return peers.PZe(method, r, i, a, o);
+};

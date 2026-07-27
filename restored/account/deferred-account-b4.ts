@@ -1,26 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export b4 / _er
+// Materialized via extractFn(internal `_er`) / export `b4`.
 
-export type BindDeferredAccountB4Peers = {
-  impl: (...args: unknown[]) => unknown;
+export type DeferredAccountB4Peers = {
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  her: (...args: unknown[]) => unknown;
+  mer: (...args: unknown[]) => unknown;
 };
 
-let peers: BindDeferredAccountB4Peers | null = null;
+let peers: DeferredAccountB4Peers | null = null;
 
-/** Wire bindDeferredAccountB4 once companions land. */
-export function setBindDeferredAccountB4Peers(next: BindDeferredAccountB4Peers): void {
+/** Wire deferredAccountB4 peers once companions land. */
+export function setDeferredAccountB4Peers(next: DeferredAccountB4Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `b4` / internal `_er`.
- * Stage-3 fill for bundle export b4 / _er
  */
-export function bindDeferredAccountB4(...args: unknown[]): unknown {
+export function deferredAccountB4() {
   if (peers == null) {
-    throw new Error("bindDeferredAccountB4 peers are not configured");
+    throw new Error("deferredAccountB4 peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.Ta(peers.Q, peers.her, {
+    isEqual: peers.mer.default
+  });
 }

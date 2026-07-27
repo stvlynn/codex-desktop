@@ -40,11 +40,7 @@ import {
   initSubGraphTitleMarginsChunk as chunkCVBHYZKIN,
   getSubGraphTitleMargins as chunkCVBHYZKIT,
 } from "../../diagrams/subgraph-title-margins";
-import {
-  a,
-  n as chunkATLVNIR6N,
-  r as chunkATLVNIR6R,
-} from "../../diagrams/style-helpers";
+import { styles2String as a, initStyleHelpersChunk as chunkATLVNIR6N, isLabelStyle as chunkATLVNIR6R } from "../../diagrams/style-helpers";
 import rough from "roughjs";
 import { chunkJZLCHNYAD, chunkJZLCHNYAR } from "./mermaid-flowchart-nodes";
 function chunkQXUST7PYHelper1(chunkQXUST7PYInput92, chunkQXUST7PYInput93) {

@@ -1,23 +1,23 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `MPc`) / export `Ef`.
+// Materialized via extractFn(internal `MPc`) / export `setDesktopPermissionStatus`.
 
-export type EfPeers = {
+export type DesktopPermissionStatusPeers = {
   A2: (...args: unknown[]) => unknown;
   k2: (...args: unknown[]) => unknown;
 };
-let peers: EfPeers | null = null;
+let peers: DesktopPermissionStatusPeers | null = null;
 
-/** Wire Ef peers once companions land. */
-export function setEfPeers(next: EfPeers): void {
+/** Wire setDesktopPermissionStatus peers once companions land. */
+export function setDesktopPermissionStatusPeers(next: DesktopPermissionStatusPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `Ef` / internal `MPc`.
+ * Bundle export `setDesktopPermissionStatus` / internal `MPc`.
  */
-export function Ef(e: unknown, t: unknown) {
+export function setDesktopPermissionStatus(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("Ef peers are not configured");
+    throw new Error("setDesktopPermissionStatus peers are not configured");
   }
   e.set(peers.A2, {
     ...peers.k2(e),

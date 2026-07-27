@@ -10,7 +10,9 @@ export type BindHomeDirectoryQueryAtomPeers = {
 let peers: BindHomeDirectoryQueryAtomPeers | null = null;
 
 /** Wire bindHomeDirectoryQueryAtom peers once companions land. */
-export function setBindHomeDirectoryQueryAtomPeers(next: BindHomeDirectoryQueryAtomPeers): void {
+export function setBindHomeDirectoryQueryAtomPeers(
+  next: BindHomeDirectoryQueryAtomPeers,
+): void {
   peers = next;
 }
 
@@ -26,3 +28,29 @@ export function bindHomeDirectoryQueryAtom() {
     staleTime: peers.Hf.FIVE_SECONDS,
   }));
 }
+
+let cachedHomeDirectoryQueryAtom: ReturnType<
+  typeof bindHomeDirectoryQueryAtom
+> | null = null;
+
+/**
+ * `Q4` is consumed directly as an atom reference (`useAppScopeAtomValue(Q4,
+ * …)`), not as a call — proxy each property access through
+ * `bindHomeDirectoryQueryAtom()`, memoized after first resolution once peers
+ * are wired, so the atom object keeps a stable identity.
+ */
+export const homeDirectoryQueryAtom: ReturnType<
+  typeof bindHomeDirectoryQueryAtom
+> = new Proxy({} as ReturnType<typeof bindHomeDirectoryQueryAtom>, {
+  get(_target, prop) {
+    if (cachedHomeDirectoryQueryAtom == null) {
+      cachedHomeDirectoryQueryAtom = bindHomeDirectoryQueryAtom();
+    }
+    return cachedHomeDirectoryQueryAtom[
+      prop as keyof typeof cachedHomeDirectoryQueryAtom
+    ];
+  },
+});
+
+/** Bundle path ESM init retained as no-op. */
+export function ensureHomeDirectoryQueriesInit(): void {}

@@ -1,44 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export tX / qJr
+// Materialized via extractFn(internal `qJr`) / export `tX`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BinddeferredAccountTX3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type DeferredAccountTx3Peers = {
+  Ma: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  xp: (...args: unknown[]) => unknown;
+  Tu: { enabledReasoningEfforts: unknown; [k: string]: unknown };
 };
 
-type BinddeferredAccountTX3Impl = (
-  props: BinddeferredAccountTX3Props,
-) => ReactNode;
-let impl: BinddeferredAccountTX3Impl | null = null;
+let peers: DeferredAccountTx3Peers | null = null;
 
-/** Wire the full BinddeferredAccountTX3 once deeper restore lands. */
-export function bindBinddeferredAccountTX3(next: BinddeferredAccountTX3Impl): void {
-  impl = next;
+/** Wire DeferredAccountTx3 peers once companions land. */
+export function setDeferredAccountTx3Peers(next: DeferredAccountTx3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `tX` / internal `qJr`.
- * Stage-3 fill for bundle export tX / qJr; heavy UI via bind.
  */
-export function BinddeferredAccountTX3(props: BinddeferredAccountTX3Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="tX"
-      aria-label="BinddeferredAccountTX3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export tX / qJr
-        </div>
-      )}
-    </div>
-  );
+export function DeferredAccountTx3() {
+  if (peers == null) {
+    throw new Error("DeferredAccountTx3 peers are not configured");
+  }
+  return peers.Ma(peers.Q, ({
+    get: e
+  }) => new Set(peers.xp(e, peers.Tu.enabledReasoningEfforts)));
 }

@@ -1,26 +1,23 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export v4 / yer
+// Materialized via extractFn(internal `yer`) / export `v4`.
 
-export type BindDeferredAccountV4Peers = {
-  impl: (...args: unknown[]) => unknown;
+export type DeferredAccountV4Peers = {
+  Pm: (...args: unknown[]) => unknown;
 };
 
-let peers: BindDeferredAccountV4Peers | null = null;
+let peers: DeferredAccountV4Peers | null = null;
 
-/** Wire bindDeferredAccountV4 once companions land. */
-export function setBindDeferredAccountV4Peers(next: BindDeferredAccountV4Peers): void {
+/** Wire deferredAccountV4 peers once companions land. */
+export function setDeferredAccountV4Peers(next: DeferredAccountV4Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `v4` / internal `yer`.
- * Stage-3 fill for bundle export v4 / yer
  */
-export function bindDeferredAccountV4(...args: unknown[]): unknown {
+export function deferredAccountV4() {
   if (peers == null) {
-    throw new Error("bindDeferredAccountV4 peers are not configured");
+    throw new Error("deferredAccountV4 peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.Pm(`realtime-voice-mode-debug-disabled`, !1);
 }

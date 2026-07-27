@@ -18,13 +18,13 @@ import {
 import { A } from "./mermaid-config-alt";
 import { chunk5PVQY5BWU } from "./mermaid-common-utils-alt";
 import { chunkU2HBQHQKA } from "./mermaid-create-text-alt";
-import { n } from "./get-icon-styles";
+import { initGetIconStylesChunk as n } from "./get-icon-styles";
 import { initMermaidLineOffsetAltChunk } from "./line-offset-helpers-alt";
 import { initSubGraphTitleMarginsAlt as chunkZZ45TVLER } from "./subgraph-title-margins-alt";
-import { l } from "./svg-drawing-helpers-alt";
-import { n as chunk55IACEB6N } from "./get-diagram-element-alt";
-import { t } from "./setup-viewport-for-svg-alt";
-import { n as chunkX2U36JSPN } from "./style-helpers-alt";
+import { initSvgDrawingHelpersChunk as l } from "./svg-drawing-helpers-alt";
+import { initGetDiagramElementChunk as chunk55IACEB6N } from "./get-diagram-element-alt";
+import { setupViewPortForSVG as t } from "./setup-viewport-for-svg-alt";
+import { initStyleHelpersChunk as chunkX2U36JSPN } from "./style-helpers-alt";
 import { chunk5FUZZQ4RI } from "./mermaid-flowchart-nodes-alt";
 import { chunkENJZ2VHEN } from "./mermaid-flowchart-edges-alt";
 import { chunk336JU56ON } from "./mermaid-layout-loaders-alt";

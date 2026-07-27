@@ -71,9 +71,7 @@ export type BindCmdkItemSelectPeers = {
 let peers: BindCmdkItemSelectPeers | null = null;
 
 /** Wire bindCmdkItemSelect peers once companions land. */
-export function setBindCmdkItemSelectPeers(
-  next: BindCmdkItemSelectPeers,
-): void {
+export function setBindCmdkItemSelectPeers(next: BindCmdkItemSelectPeers): void {
   peers = next;
 }
 
@@ -98,8 +96,8 @@ export function bindCmdkItemSelect() {
     iHa = `${peers.rHa}:not([aria-disabled="true"])`;
     aHa = "cmdk-item-select";
     oHa = "data-value";
-    sHa = (e, t, n) => {
-      return peers.NVa(peers.e, t, n);
+    sHa = (alpha, bravo, copper) => {
+      return peers.NVa(peers.e, bravo, copper);
     };
     cHa = peers.qH.createContext(undefined);
     lHa = () => {
@@ -110,8 +108,8 @@ export function bindCmdkItemSelect() {
       return peers.qH.useContext(peers.uHa);
     };
     fHa = peers.qH.createContext(undefined);
-    pHa = peers.qH.forwardRef((e, t) => {
-      let n = peers.XVa(() => {
+    pHa = peers.qH.forwardRef((delta, echo) => {
+      let falcon = peers.XVa(() => {
           return {
             search: "",
             value: peers.e.value ?? peers.e.defaultValue ?? "",
@@ -119,11 +117,11 @@ export function bindCmdkItemSelect() {
             filtered: {
               count: 0,
               items: new Map(),
-              groups: new Set(),
-            },
+              groups: new Set()
+            }
           };
         }),
-        r = peers.XVa(() => {
+        gamma = peers.XVa(() => {
           return new Set();
         }),
         i = peers.XVa(() => {
@@ -132,7 +130,7 @@ export function bindCmdkItemSelect() {
         a = peers.XVa(() => {
           return new Map();
         }),
-        o = peers.XVa(() => {
+        harbor = peers.XVa(() => {
           return new Set();
         }),
         s = peers.YVa(peers.e),
@@ -146,125 +144,98 @@ export function bindCmdkItemSelect() {
           loop,
           disablePointerSelection = false,
           vimBindings = true,
-          ..._
+          ...indigo
         } = peers.e,
-        v = peers.Qp(),
-        y = peers.Qp(),
+        jade = peers.Qp(),
+        kite = peers.Qp(),
         b = peers.Qp(),
-        x = peers.qH.useRef(null),
-        S = peers.SHa();
+        lemon = peers.qH.useRef(null),
+        marble = peers.SHa();
       peers.YH(() => {
         if (value !== undefined) {
-          let e = value.trim();
-          n.current.value = peers.e;
-          C.emit();
+          let cedar = value.trim();
+          falcon.current.value = peers.e;
+          nickel.emit();
         }
       }, [value]);
       peers.YH(() => {
-        S(6, k);
+        marble(6, timber);
       }, []);
-      let C = peers.qH.useMemo(() => {
+      let nickel = peers.qH.useMemo(() => {
           return {
-            subscribe: (e) => {
-              return (
-                o.current.add(peers.e),
-                () => {
-                  return o.current.delete(peers.e);
-                }
-              );
+            subscribe: daisy => {
+              return harbor.current.add(peers.e), () => {
+                return harbor.current.delete(peers.e);
+              };
             },
             snapshot: () => {
-              return n.current;
+              return falcon.current;
             },
-            setState: (e, t, r) => {
-              var i, a, o;
-              if (!Object.is(n.current[peers.e], t)) {
-                if (((n.current[peers.e] = t), peers.e === "search")) {
+            setState: (ember, flint, garnet) => {
+              var i, a, hazel;
+              if (!Object.is(falcon.current[peers.e], flint)) {
+                if (falcon.current[peers.e] = flint, peers.e === "search") {
                   peers.O();
                   peers.E();
-                  S(1, peers.D);
+                  marble(1, peers.D);
                 } else if (peers.e === "value") {
-                  if (
-                    document.activeElement.hasAttribute("cmdk-input") ||
-                    document.activeElement.hasAttribute("cmdk-root")
-                  ) {
-                    let e = document.getElementById(b);
-                    peers.e
-                      ? peers.e.focus()
-                      : (i = document.getElementById(v)) == null || i.focus();
+                  if (document.activeElement.hasAttribute("cmdk-input") || document.activeElement.hasAttribute("cmdk-root")) {
+                    let ivory = document.getElementById(b);
+                    peers.e ? peers.e.focus() : (i = document.getElementById(jade)) == null || i.focus();
                   }
-                  if (
-                    (S(7, () => {
-                      n.current.selectedItemId = peers.A()?.id;
-                      C.emit();
-                    }),
-                    r || S(5, k),
-                    s.current?.value !== undefined)
-                  ) {
-                    let e = t ?? "";
-                    (o = (a = s.current).onValueChange) == null ||
-                      o.call(a, peers.e);
+                  if (marble(7, () => {
+                    falcon.current.selectedItemId = peers.A()?.id;
+                    nickel.emit();
+                  }), garnet || marble(5, timber), s.current?.value !== undefined) {
+                    let jasper = flint ?? "";
+                    (hazel = (a = s.current).onValueChange) == null || hazel.call(a, peers.e);
                     return;
                   }
                 }
-                C.emit();
+                nickel.emit();
               }
             },
             emit: () => {
-              o.current.forEach((item) => {
+              harbor.current.forEach(item => {
                 return peers.e();
               });
-            },
+            }
           };
         }, []),
-        w = peers.qH.useMemo(() => {
+        onyx = peers.qH.useMemo(() => {
           return {
-            value: (e, t, r) => {
-              t !== a.current.get(peers.e)?.value &&
-                (a.current.set(peers.e, {
-                  value: t,
-                  keywords: r,
-                }),
-                n.current.filtered.items.set(peers.e, peers.T(t, r)),
-                S(2, () => {
-                  peers.E();
-                  C.emit();
-                }));
+            value: (kelp, lotus, mint) => {
+              lotus !== a.current.get(peers.e)?.value && (a.current.set(peers.e, {
+                value: lotus,
+                keywords: mint
+              }), falcon.current.filtered.items.set(peers.e, peers.T(lotus, mint)), marble(2, () => {
+                peers.E();
+                nickel.emit();
+              }));
             },
-            item: (e, t) => {
-              return (
-                r.current.add(peers.e),
-                t &&
-                  (i.current.has(t)
-                    ? i.current.get(t).add(peers.e)
-                    : i.current.set(t, new Set([peers.e]))),
-                S(3, () => {
+            item: (nova, olive) => {
+              return gamma.current.add(peers.e), olive && (i.current.has(olive) ? i.current.get(olive).add(peers.e) : i.current.set(olive, new Set([peers.e]))), marble(3, () => {
+                peers.O();
+                peers.E();
+                falcon.current.value || peers.D();
+                nickel.emit();
+              }), () => {
+                a.current.delete(peers.e);
+                gamma.current.delete(peers.e);
+                falcon.current.filtered.items.delete(peers.e);
+                let prism = peers.A();
+                marble(4, () => {
                   peers.O();
-                  peers.E();
-                  n.current.value || peers.D();
-                  C.emit();
-                }),
-                () => {
-                  a.current.delete(peers.e);
-                  r.current.delete(peers.e);
-                  n.current.filtered.items.delete(peers.e);
-                  let t = peers.A();
-                  S(4, () => {
-                    peers.O();
-                    t?.getAttribute("id") === peers.e && peers.D();
-                    C.emit();
-                  });
-                }
-              );
+                  prism?.getAttribute("id") === peers.e && peers.D();
+                  nickel.emit();
+                });
+              };
             },
-            group: (e) => {
-              return (
-                i.current.has(peers.e) || i.current.set(peers.e, new Set()),
-                () => {
-                  a.current.delete(peers.e);
-                  i.current.delete(peers.e);
-                }
-              );
+            group: quill => {
+              return i.current.has(peers.e) || i.current.set(peers.e, new Set()), () => {
+                a.current.delete(peers.e);
+                i.current.delete(peers.e);
+              };
             },
             filter: () => {
               return s.current.shouldFilter;
@@ -273,475 +244,375 @@ export function bindCmdkItemSelect() {
             getDisablePointerSelection: () => {
               return s.current.disablePointerSelection;
             },
-            listId: v,
+            listId: jade,
             inputId: b,
-            labelId: y,
-            listInnerRef: x,
+            labelId: kite,
+            listInnerRef: lemon
           };
         }, []);
-      function T(e, t) {
-        let r = s.current?.filter ?? peers.sHa;
-        return peers.e ? r(peers.e, n.current.search, t) : 0;
+      function pearl(reef, sage) {
+        let topaz = s.current?.filter ?? peers.sHa;
+        return peers.e ? topaz(peers.e, falcon.current.search, sage) : 0;
       }
-      function E() {
-        if (!n.current.search || s.current.shouldFilter === false) return;
-        let e = n.current.filtered.items,
-          t = [];
-        n.current.filtered.groups.forEach((item) => {
-          let r = i.current.get(item),
+      function quartz() {
+        if (!falcon.current.search || s.current.shouldFilter === false) return;
+        let ultra = falcon.current.filtered.items,
+          vapor = [];
+        falcon.current.filtered.groups.forEach(item => {
+          let yarn = i.current.get(item),
             a = 0;
-          r.forEach((_item) => {
-            let n = peers.e.get(_item);
-            a = Math.max(n, a);
+          yarn.forEach(_item => {
+            let zephyr = peers.e.get(_item);
+            a = Math.max(zephyr, a);
           });
-          t.push([item, a]);
+          vapor.push([item, a]);
         });
-        let r = x.current;
-        j()
-          .sort((t, n) => {
-            let r = t.getAttribute("id"),
-              i = n.getAttribute("id");
-            return (peers.e.get(i) ?? 0) - (peers.e.get(r) ?? 0);
-          })
-          .forEach((item) => {
-            let t = peers.e.closest(peers.tHa);
-            t
-              ? t.appendChild(
-                  peers.e.parentElement === t
-                    ? peers.e
-                    : peers.e.closest(`${peers.tHa} > *`),
-                )
-              : r.appendChild(
-                  peers.e.parentElement === r
-                    ? peers.e
-                    : peers.e.closest(`${peers.tHa} > *`),
-                );
-          });
-        t.sort((e, t) => {
-          return t[1] - peers.e[1];
-        }).forEach((item) => {
-          let t = x.current?.querySelector(
-            `${peers.eHa}[${peers.oHa}="${peers.encodeURIComponent(peers.e[0])}"]`,
-          );
-          t?.parentElement.appendChild(t);
+        let wheat = lemon.current;
+        violet().sort((acorn, bloom) => {
+          let coral = acorn.getAttribute("id"),
+            i = bloom.getAttribute("id");
+          return (peers.e.get(i) ?? 0) - (peers.e.get(coral) ?? 0);
+        }).forEach(item => {
+          let drift = peers.e.closest(peers.tHa);
+          drift ? drift.appendChild(peers.e.parentElement === drift ? peers.e : peers.e.closest(`${peers.tHa} > *`)) : wheat.appendChild(peers.e.parentElement === wheat ? peers.e : peers.e.closest(`${peers.tHa} > *`));
+        });
+        vapor.sort((eagle, frost) => {
+          return frost[1] - peers.e[1];
+        }).forEach(item => {
+          let glide = lemon.current?.querySelector(`${peers.eHa}[${peers.oHa}="${peers.encodeURIComponent(peers.e[0])}"]`);
+          glide?.parentElement.appendChild(glide);
         });
       }
-      function D() {
-        let e = j()
-          .find((item) => {
-            return peers.e.getAttribute("aria-disabled") !== "true";
-          })
-          ?.getAttribute(peers.oHa);
-        C.setState("value", peers.e || undefined);
+      function river() {
+        let honey = violet().find(item => {
+          return peers.e.getAttribute("aria-disabled") !== "true";
+        })?.getAttribute(peers.oHa);
+        nickel.setState("value", peers.e || undefined);
       }
-      function O() {
-        if (!n.current.search || s.current.shouldFilter === false) {
-          n.current.filtered.count = r.current.size;
+      function slate() {
+        if (!falcon.current.search || s.current.shouldFilter === false) {
+          falcon.current.filtered.count = gamma.current.size;
           return;
         }
-        n.current.filtered.groups = new Set();
-        let e = 0;
-        for (let t of r.current) {
-          let r = peers.T(
-            a.current.get(t)?.value ?? "",
-            a.current.get(t)?.keywords ?? [],
-          );
-          n.current.filtered.items.set(t, r);
-          r > 0 && peers.e++;
+        falcon.current.filtered.groups = new Set();
+        let iris = 0;
+        for (let jewel of gamma.current) {
+          let knoll = peers.T(a.current.get(jewel)?.value ?? "", a.current.get(jewel)?.keywords ?? []);
+          falcon.current.filtered.items.set(jewel, knoll);
+          knoll > 0 && peers.e++;
         }
-        for (let [e, t] of i.current)
-          for (let r of t)
-            if (n.current.filtered.items.get(r) > 0) {
-              n.current.filtered.groups.add(peers.e);
-              break;
-            }
-        n.current.filtered.count = peers.e;
+        for (let [lunar, moss] of i.current) for (let north of moss) if (falcon.current.filtered.items.get(north) > 0) {
+          falcon.current.filtered.groups.add(peers.e);
+          break;
+        }
+        falcon.current.filtered.count = peers.e;
       }
-      function k() {
-        var e;
-        let t = peers.A();
-        t &&
-          (t.parentElement?.firstChild === t &&
-            ((e = t.closest(peers.eHa)?.querySelector(peers.nHa)) == null ||
-              peers.e.scrollIntoView({
-                block: "nearest",
-              })),
-          t.scrollIntoView({
-            block: "nearest",
-          }));
+      function timber() {
+        var orbit;
+        let pine = peers.A();
+        pine && (pine.parentElement?.firstChild === pine && ((orbit = pine.closest(peers.eHa)?.querySelector(peers.nHa)) == null || peers.e.scrollIntoView({
+          block: "nearest"
+        })), pine.scrollIntoView({
+          block: "nearest"
+        }));
       }
-      function A() {
-        return x.current?.querySelector(`${peers.rHa}[aria-selected="true"]`);
+      function umbra() {
+        return lemon.current?.querySelector(`${peers.rHa}[aria-selected="true"]`);
       }
-      function j() {
-        return Array.from(x.current?.querySelectorAll(peers.iHa) || []);
+      function violet() {
+        return Array.from(lemon.current?.querySelectorAll(peers.iHa) || []);
       }
-      function M(e) {
-        let t = j()[peers.e];
-        t && C.setState("value", t.getAttribute(peers.oHa));
+      function willow(quest) {
+        let ridge = violet()[peers.e];
+        ridge && nickel.setState("value", ridge.getAttribute(peers.oHa));
       }
-      function N(e) {
-        var t;
-        let n = peers.A(),
-          r = j(),
-          i = r.findIndex((item) => {
-            return peers.e === n;
+      function xenon(storm) {
+        var tide;
+        let unity = peers.A(),
+          vale = violet(),
+          i = vale.findIndex(item => {
+            return peers.e === unity;
           }),
-          a = r[i + peers.e];
-        (t = s.current) != null &&
-          t.loop &&
-          (a =
-            i + peers.e < 0
-              ? r[r.length - 1]
-              : i + peers.e === r.length
-                ? r[0]
-                : r[i + peers.e]);
-        a && C.setState("value", a.getAttribute(peers.oHa));
+          a = vale[i + peers.e];
+        (tide = s.current) != null && tide.loop && (a = i + peers.e < 0 ? vale[vale.length - 1] : i + peers.e === vale.length ? vale[0] : vale[i + peers.e]);
+        a && nickel.setState("value", a.getAttribute(peers.oHa));
       }
-      function P(e) {
-        let t = peers.A()?.closest(peers.eHa),
-          n;
-        for (; t && !n; ) {
-          t = peers.e > 0 ? peers.qVa(t, peers.eHa) : peers.JVa(t, peers.eHa);
-          n = t?.querySelector(peers.iHa);
+      function yellow(wave) {
+        let apex = peers.A()?.closest(peers.eHa),
+          brook;
+        for (; apex && !brook;) {
+          apex = peers.e > 0 ? peers.qVa(apex, peers.eHa) : peers.JVa(apex, peers.eHa);
+          brook = apex?.querySelector(peers.iHa);
         }
-        n ? C.setState("value", n.getAttribute(peers.oHa)) : peers.N(peers.e);
+        brook ? nickel.setState("value", brook.getAttribute(peers.oHa)) : peers.N(peers.e);
       }
-      let F = () => {
-          return peers.M(j().length - 1);
+      let zinc = () => {
+          return peers.M(violet().length - 1);
         },
-        I = (e) => {
+        amber = cliff => {
           peers.e.preventDefault();
-          peers.e.metaKey ? F() : peers.e.altKey ? peers.P(1) : peers.N(1);
+          peers.e.metaKey ? zinc() : peers.e.altKey ? peers.P(1) : peers.N(1);
         },
-        L = (e) => {
+        basalt = dusk => {
           peers.e.preventDefault();
-          peers.e.metaKey
-            ? peers.M(0)
-            : peers.e.altKey
-              ? peers.P(-1)
-              : peers.N(-1);
+          peers.e.metaKey ? peers.M(0) : peers.e.altKey ? peers.P(-1) : peers.N(-1);
         };
-      return peers.qH.createElement(
-        peers.Wp.div,
-        {
-          ref: t,
-          tabIndex: -1,
-          ..._,
-          "cmdk-root": "",
-          onKeyDown: (e) => {
-            var t;
-            (t = _.onKeyDown) == null || t.call(_, peers.e);
-            let n = peers.e.nativeEvent.isComposing || peers.e.keyCode === 229;
-            if (!(peers.e.defaultPrevented || n))
-              switch (peers.e.key) {
-                case "n":
-                case "j":
-                  vimBindings && peers.e.ctrlKey && I(peers.e);
-                  break;
-                case "ArrowDown":
-                  I(peers.e);
-                  break;
-                case "p":
-                case "k":
-                  vimBindings && peers.e.ctrlKey && L(peers.e);
-                  break;
-                case "ArrowUp":
-                  L(peers.e);
-                  break;
-                case "Home":
-                  peers.e.preventDefault();
-                  peers.M(0);
-                  break;
-                case "End":
-                  peers.e.preventDefault();
-                  F();
-                  break;
-                case "Enter": {
-                  peers.e.preventDefault();
-                  let t = peers.A();
-                  if (t) {
-                    let e = new peers.Event(peers.aHa);
-                    t.dispatchEvent(peers.e);
-                  }
+      return peers.qH.createElement(peers.Wp.div, {
+        ref: echo,
+        tabIndex: -1,
+        ...indigo,
+        "cmdk-root": "",
+        onKeyDown: elm => {
+          var fern;
+          (fern = indigo.onKeyDown) == null || fern.call(indigo, peers.e);
+          let grove = peers.e.nativeEvent.isComposing || peers.e.keyCode === 229;
+          if (!(peers.e.defaultPrevented || grove)) switch (peers.e.key) {
+            case "n":
+            case "j":
+              vimBindings && peers.e.ctrlKey && amber(peers.e);
+              break;
+            case "ArrowDown":
+              amber(peers.e);
+              break;
+            case "p":
+            case "k":
+              vimBindings && peers.e.ctrlKey && basalt(peers.e);
+              break;
+            case "ArrowUp":
+              basalt(peers.e);
+              break;
+            case "Home":
+              peers.e.preventDefault();
+              peers.M(0);
+              break;
+            case "End":
+              peers.e.preventDefault();
+              zinc();
+              break;
+            case "Enter":
+              {
+                peers.e.preventDefault();
+                let hill = peers.A();
+                if (hill) {
+                  let isle = new peers.Event(peers.aHa);
+                  hill.dispatchEvent(peers.e);
                 }
               }
-          },
-        },
-        peers.qH.createElement(
-          "label",
-          {
-            "cmdk-label": "",
-            htmlFor: w.inputId,
-            id: w.labelId,
-            style: peers.CHa,
-          },
-          label,
-        ),
-        peers.$Va(peers.e, (e) => {
-          return peers.qH.createElement(
-            peers.uHa.Provider,
-            {
-              value: C,
-            },
-            peers.qH.createElement(
-              peers.cHa.Provider,
-              {
-                value: w,
-              },
-              peers.e,
-            ),
-          );
-        }),
-      );
+          }
+        }
+      }, peers.qH.createElement("label", {
+        "cmdk-label": "",
+        htmlFor: onyx.inputId,
+        id: onyx.labelId,
+        style: peers.CHa
+      }, label), peers.$Va(peers.e, juniper => {
+        return peers.qH.createElement(peers.uHa.Provider, {
+          value: nickel
+        }, peers.qH.createElement(peers.cHa.Provider, {
+          value: onyx
+        }, peers.e));
+      }));
     });
-    mHa = peers.qH.forwardRef((e, t) => {
-      let n = peers.Qp(),
-        r = peers.qH.useRef(null),
+    mHa = peers.qH.forwardRef((lagoon, meadow) => {
+      let nest = peers.Qp(),
+        oak = peers.qH.useRef(null),
         i = peers.qH.useContext(peers.fHa),
         a = peers.lHa(),
-        o = peers.YVa(peers.e),
-        s = o.current?.forceMount ?? i?.forceMount;
+        petal = peers.YVa(peers.e),
+        s = petal.current?.forceMount ?? i?.forceMount;
       peers.YH(() => {
-        if (!s) return a.item(n, i?.id);
+        if (!s) return a.item(nest, i?.id);
       }, [s]);
-      let c = peers.ZVa(
-          n,
-          r,
-          [peers.e.value, peers.e.children, r],
-          peers.e.keywords,
-        ),
-        l = peers.dHa(),
-        u = peers.KH((e) => {
-          return peers.e.value && peers.e.value === c.current;
+      let quiet = peers.ZVa(nest, oak, [peers.e.value, peers.e.children, oak], peers.e.keywords),
+        rain = peers.dHa(),
+        u = peers.KH(vine => {
+          return peers.e.value && peers.e.value === quiet.current;
         }),
-        d = peers.KH((e) => {
-          return s || a.filter() === false
-            ? true
-            : peers.e.search
-              ? peers.e.filtered.items.get(n) > 0
-              : true;
+        seed = peers.KH(wind => {
+          return s || a.filter() === false ? true : peers.e.search ? peers.e.filtered.items.get(nest) > 0 : true;
         });
       peers.qH.useEffect(() => {
-        let t = r.current;
-        if (!(!t || peers.e.disabled))
-          return (
-            t.addEventListener(peers.aHa, peers.f),
-            () => {
-              return t.removeEventListener(peers.aHa, peers.f);
-            }
-          );
-      }, [d, peers.e.onSelect, peers.e.disabled]);
-      function f() {
-        var e, t;
+        let yarrow = oak.current;
+        if (!(!yarrow || peers.e.disabled)) return yarrow.addEventListener(peers.aHa, peers.f), () => {
+          return yarrow.removeEventListener(peers.aHa, peers.f);
+        };
+      }, [seed, peers.e.onSelect, peers.e.disabled]);
+      function trail() {
+        var azure, birch;
         p();
-        (t = (e = o.current).onSelect) == null || t.call(peers.e, c.current);
+        (birch = (azure = petal.current).onSelect) == null || birch.call(peers.e, quiet.current);
       }
       function p() {
-        l.setState("value", c.current, true);
+        rain.setState("value", quiet.current, true);
       }
-      if (!d) return null;
+      if (!seed) return null;
       let {
         disabled,
         value,
         onSelect,
-        forceMount: _,
+        forceMount: urn,
         keywords,
         ...rest
       } = peers.e;
-      return peers.qH.createElement(
-        peers.Wp.div,
-        {
-          ref: peers.Bp(r, t),
-          ...rest,
-          id: n,
-          "cmdk-item": "",
-          role: "option",
-          "aria-disabled": !!disabled,
-          "aria-selected": !!u,
-          "data-disabled": !!disabled,
-          "data-selected": !!u,
-          onPointerMove:
-            disabled || a.getDisablePointerSelection() ? undefined : p,
-          onClick: disabled ? undefined : peers.f,
-        },
-        peers.e.children,
-      );
+      return peers.qH.createElement(peers.Wp.div, {
+        ref: peers.Bp(oak, meadow),
+        ...rest,
+        id: nest,
+        "cmdk-item": "",
+        role: "option",
+        "aria-disabled": !!disabled,
+        "aria-selected": !!u,
+        "data-disabled": !!disabled,
+        "data-selected": !!u,
+        onPointerMove: disabled || a.getDisablePointerSelection() ? undefined : p,
+        onClick: disabled ? undefined : peers.f
+      }, peers.e.children);
     });
-    hHa = peers.qH.forwardRef((e, t) => {
-      let { heading, children, forceMount, ...rest } = peers.e,
-        o = peers.Qp(),
+    hHa = peers.qH.forwardRef((canyon, dew) => {
+      let {
+          heading,
+          children,
+          forceMount,
+          ...rest
+        } = peers.e,
+        ever = peers.Qp(),
         s = peers.qH.useRef(null),
-        c = peers.qH.useRef(null),
-        l = peers.Qp(),
+        field = peers.qH.useRef(null),
+        grain = peers.Qp(),
         u = peers.lHa(),
-        d = peers.KH((e) => {
-          return forceMount || u.filter() === false
-            ? true
-            : peers.e.search
-              ? peers.e.filtered.groups.has(o)
-              : true;
+        haven = peers.KH(jadeite => {
+          return forceMount || u.filter() === false ? true : peers.e.search ? peers.e.filtered.groups.has(ever) : true;
         });
       peers.YH(() => {
-        return u.group(o);
+        return u.group(ever);
       }, []);
-      peers.ZVa(o, s, [peers.e.value, peers.e.heading, c]);
-      let f = peers.qH.useMemo(() => {
+      peers.ZVa(ever, s, [peers.e.value, peers.e.heading, field]);
+      let ink = peers.qH.useMemo(() => {
         return {
-          id: o,
-          forceMount,
+          id: ever,
+          forceMount
         };
       }, [forceMount]);
-      return peers.qH.createElement(
-        peers.Wp.div,
-        {
-          ref: peers.Bp(s, t),
-          ...rest,
-          "cmdk-group": "",
-          role: "presentation",
-          hidden: d ? undefined : true,
-        },
-        heading &&
-          peers.qH.createElement(
-            "div",
-            {
-              ref: c,
-              "cmdk-group-heading": "",
-              "aria-hidden": true,
-              id: l,
-            },
-            heading,
-          ),
-        peers.$Va(peers.e, (e) => {
-          return peers.qH.createElement(
-            "div",
-            {
-              "cmdk-group-items": "",
-              role: "group",
-              "aria-labelledby": heading ? l : undefined,
-            },
-            peers.qH.createElement(
-              peers.fHa.Provider,
-              {
-                value: peers.f,
-              },
-              peers.e,
-            ),
-          );
-        }),
-      );
+      return peers.qH.createElement(peers.Wp.div, {
+        ref: peers.Bp(s, dew),
+        ...rest,
+        "cmdk-group": "",
+        role: "presentation",
+        hidden: haven ? undefined : true
+      }, heading && peers.qH.createElement("div", {
+        ref: field,
+        "cmdk-group-heading": "",
+        "aria-hidden": true,
+        id: grain
+      }, heading), peers.$Va(peers.e, kernel => {
+        return peers.qH.createElement("div", {
+          "cmdk-group-items": "",
+          role: "group",
+          "aria-labelledby": heading ? grain : undefined
+        }, peers.qH.createElement(peers.fHa.Provider, {
+          value: peers.f
+        }, peers.e));
+      }));
     });
-    gHa = peers.qH.forwardRef((e, t) => {
-      let { alwaysRender, ...rest } = peers.e,
+    gHa = peers.qH.forwardRef((leaf, maple) => {
+      let {
+          alwaysRender,
+          ...rest
+        } = peers.e,
         i = peers.qH.useRef(null),
-        a = peers.KH((e) => {
+        a = peers.KH(nimbus => {
           return !peers.e.search;
         });
-      return !alwaysRender && !a
-        ? null
-        : peers.qH.createElement(peers.Wp.div, {
-            ref: peers.Bp(i, t),
-            ...rest,
-            "cmdk-separator": "",
-            role: "separator",
-          });
+      return !alwaysRender && !a ? null : peers.qH.createElement(peers.Wp.div, {
+        ref: peers.Bp(i, maple),
+        ...rest,
+        "cmdk-separator": "",
+        role: "separator"
+      });
     });
-    _Ha = peers.qH.forwardRef((e, t) => {
-      let { onValueChange, ...rest } = peers.e,
+    _Ha = peers.qH.forwardRef((opal, plume) => {
+      let {
+          onValueChange,
+          ...rest
+        } = peers.e,
         i = peers.e.value != null,
         a = peers.dHa(),
-        o = peers.KH((e) => {
+        quillow = peers.KH(silk => {
           return peers.e.search;
         }),
-        s = peers.KH((e) => {
+        s = peers.KH(thorn => {
           return peers.e.selectedItemId;
         }),
-        c = peers.lHa();
-      return (
-        peers.qH.useEffect(() => {
-          peers.e.value != null && a.setState("search", peers.e.value);
-        }, [peers.e.value]),
-        peers.qH.createElement(peers.Wp.input, {
-          ref: t,
-          ...rest,
-          "cmdk-input": "",
-          autoComplete: "off",
-          autoCorrect: "off",
-          spellCheck: false,
-          "aria-autocomplete": "list",
-          role: "combobox",
-          "aria-expanded": true,
-          "aria-controls": c.listId,
-          "aria-labelledby": c.labelId,
-          "aria-activedescendant": s,
-          id: c.inputId,
-          type: "text",
-          value: i ? peers.e.value : o,
-          onChange: (e) => {
-            i || a.setState("search", peers.e.target.value);
-            onValueChange?.(peers.e.target.value);
-          },
-        })
-      );
+        root = peers.lHa();
+      return peers.qH.useEffect(() => {
+        peers.e.value != null && a.setState("search", peers.e.value);
+      }, [peers.e.value]), peers.qH.createElement(peers.Wp.input, {
+        ref: plume,
+        ...rest,
+        "cmdk-input": "",
+        autoComplete: "off",
+        autoCorrect: "off",
+        spellCheck: false,
+        "aria-autocomplete": "list",
+        role: "combobox",
+        "aria-expanded": true,
+        "aria-controls": root.listId,
+        "aria-labelledby": root.labelId,
+        "aria-activedescendant": s,
+        id: root.inputId,
+        type: "text",
+        value: i ? peers.e.value : quillow,
+        onChange: upland => {
+          i || a.setState("search", peers.e.target.value);
+          onValueChange?.(peers.e.target.value);
+        }
+      });
     });
-    vHa = peers.qH.forwardRef((e, t) => {
-      let { children, label = "Suggestions", ...rest } = peers.e,
+    vHa = peers.qH.forwardRef((vista, wisp) => {
+      let {
+          children,
+          label = "Suggestions",
+          ...rest
+        } = peers.e,
         a = peers.qH.useRef(null),
-        o = peers.qH.useRef(null),
-        s = peers.KH((e) => {
+        yonder = peers.qH.useRef(null),
+        s = peers.KH(anvil => {
           return peers.e.selectedItemId;
         }),
-        c = peers.lHa();
-      return (
-        peers.qH.useEffect(() => {
-          if (o.current && a.current) {
-            let e = o.current,
-              t = a.current,
-              n,
-              r = new peers.ResizeObserver(() => {
-                n = requestAnimationFrame(() => {
-                  let n = peers.e.offsetHeight;
-                  t.style.setProperty(
-                    "--cmdk-list-height",
-                    n.toFixed(1) + "px",
-                  );
-                });
+        zenith = peers.lHa();
+      return peers.qH.useEffect(() => {
+        if (yonder.current && a.current) {
+          let beacon = yonder.current,
+            crag = a.current,
+            dome,
+            eddy = new peers.ResizeObserver(() => {
+              dome = requestAnimationFrame(() => {
+                let fjord = peers.e.offsetHeight;
+                crag.style.setProperty("--cmdk-list-height", fjord.toFixed(1) + "px");
               });
-            return (
-              r.observe(peers.e),
-              () => {
-                peers.cancelAnimationFrame(n);
-                r.unobserve(peers.e);
-              }
-            );
-          }
-        }, []),
-        peers.qH.createElement(
-          peers.Wp.div,
-          {
-            ref: peers.Bp(a, t),
-            ...rest,
-            "cmdk-list": "",
-            role: "listbox",
-            tabIndex: -1,
-            "aria-activedescendant": s,
-            "aria-label": label,
-            id: c.listId,
-          },
-          peers.$Va(peers.e, (e) => {
-            return peers.qH.createElement(
-              "div",
-              {
-                ref: peers.Bp(o, c.listInnerRef),
-                "cmdk-list-sizer": "",
-              },
-              peers.e,
-            );
-          }),
-        )
-      );
+            });
+          return eddy.observe(peers.e), () => {
+            peers.cancelAnimationFrame(dome);
+            eddy.unobserve(peers.e);
+          };
+        }
+      }, []), peers.qH.createElement(peers.Wp.div, {
+        ref: peers.Bp(a, wisp),
+        ...rest,
+        "cmdk-list": "",
+        role: "listbox",
+        tabIndex: -1,
+        "aria-activedescendant": s,
+        "aria-label": label,
+        id: zenith.listId
+      }, peers.$Va(peers.e, glen => {
+        return peers.qH.createElement("div", {
+          ref: peers.Bp(yonder, zenith.listInnerRef),
+          "cmdk-list-sizer": ""
+        }, peers.e);
+      }));
     });
-    yHa = peers.qH.forwardRef((e, t) => {
+    yHa = peers.qH.forwardRef((hearth, inlet) => {
       let {
         open,
         onOpenChange,
@@ -750,72 +621,54 @@ export function bindCmdkItemSelect() {
         container,
         ...rest
       } = peers.e;
-      return peers.qH.createElement(
-        peers.tDr,
-        {
-          open,
-          onOpenChange,
-        },
-        peers.qH.createElement(
-          peers.rDr,
-          {
-            container,
-          },
-          peers.qH.createElement(peers.iDr, {
-            "cmdk-overlay": "",
-            className: overlayClassName,
-          }),
-          peers.qH.createElement(
-            peers.aDr,
-            {
-              "aria-label": peers.e.label,
-              "cmdk-dialog": "",
-              className: contentClassName,
-            },
-            peers.qH.createElement(peers.pHa, {
-              ref: t,
-              ...rest,
-            }),
-          ),
-        ),
-      );
+      return peers.qH.createElement(peers.tDr, {
+        open,
+        onOpenChange
+      }, peers.qH.createElement(peers.rDr, {
+        container
+      }, peers.qH.createElement(peers.iDr, {
+        "cmdk-overlay": "",
+        className: overlayClassName
+      }), peers.qH.createElement(peers.aDr, {
+        "aria-label": peers.e.label,
+        "cmdk-dialog": "",
+        className: contentClassName
+      }, peers.qH.createElement(peers.pHa, {
+        ref: inlet,
+        ...rest
+      }))));
     });
-    bHa = peers.qH.forwardRef((e, t) => {
-      return peers.KH((e) => {
+    bHa = peers.qH.forwardRef((jetty, knob) => {
+      return peers.KH(ledge => {
         return peers.e.filtered.count === 0;
-      })
-        ? peers.qH.createElement(peers.Wp.div, {
-            ref: t,
-            ...peers.e,
-            "cmdk-empty": "",
-            role: "presentation",
-          })
-        : null;
+      }) ? peers.qH.createElement(peers.Wp.div, {
+        ref: knob,
+        ...peers.e,
+        "cmdk-empty": "",
+        role: "presentation"
+      }) : null;
     });
-    xHa = peers.qH.forwardRef((e, t) => {
-      let { progress, children, label = "Loading...", ...rest } = peers.e;
-      return peers.qH.createElement(
-        peers.Wp.div,
-        {
-          ref: t,
-          ...rest,
-          "cmdk-loading": "",
-          role: "progressbar",
-          "aria-valuenow": progress,
-          "aria-valuemin": 0,
-          "aria-valuemax": 100,
-          "aria-label": label,
-        },
-        peers.$Va(peers.e, (e) => {
-          return peers.qH.createElement(
-            "div",
-            {
-              "aria-hidden": true,
-            },
-            peers.e,
-          );
-        }),
-      );
+    xHa = peers.qH.forwardRef((mire, nook) => {
+      let {
+        progress,
+        children,
+        label = "Loading...",
+        ...rest
+      } = peers.e;
+      return peers.qH.createElement(peers.Wp.div, {
+        ref: nook,
+        ...rest,
+        "cmdk-loading": "",
+        role: "progressbar",
+        "aria-valuenow": progress,
+        "aria-valuemin": 0,
+        "aria-valuemax": 100,
+        "aria-label": label
+      }, peers.$Va(peers.e, oxbow => {
+        return peers.qH.createElement("div", {
+          "aria-hidden": true
+        }, peers.e);
+      }));
     });
     JH = Object.assign(peers.pHa, {
       List: peers.vHa,
@@ -825,26 +678,23 @@ export function bindCmdkItemSelect() {
       Separator: peers.gHa,
       Dialog: peers.yHa,
       Empty: peers.bHa,
-      Loading: peers.xHa,
+      Loading: peers.xHa
     });
     YH = typeof window > "u" ? peers.qH.useEffect : peers.qH.useLayoutEffect;
     SHa = () => {
-      let [e, t] = peers.qH.useState(),
-        n = peers.XVa(() => {
+      let [pond, quarry] = peers.qH.useState(),
+        rapids = peers.XVa(() => {
           return new Map();
         });
-      return (
-        peers.YH(() => {
-          n.current.forEach((item) => {
-            return peers.e();
-          });
-          n.current = new Map();
-        }, [peers.e]),
-        (e, r) => {
-          n.current.set(peers.e, r);
-          t({});
-        }
-      );
+      return peers.YH(() => {
+        rapids.current.forEach(item => {
+          return peers.e();
+        });
+        rapids.current = new Map();
+      }, [peers.e]), (spur, tor) => {
+        rapids.current.set(peers.e, tor);
+        quarry({});
+      };
     };
     CHa = {
       position: "absolute",
@@ -855,7 +705,7 @@ export function bindCmdkItemSelect() {
       overflow: "hidden",
       clip: "rect(0, 0, 0, 0)",
       whiteSpace: "nowrap",
-      borderWidth: "0",
+      borderWidth: "0"
     };
   });
 }

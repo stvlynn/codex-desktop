@@ -1,26 +1,39 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export ZQ / ujr
+// Materialized via extractFn(internal `ujr`) / export `ZQ`.
 
-export type BindSelfServeBusinessUsageBasedPeers = {
-  impl: (...args: unknown[]) => unknown;
+export type SelfServeBusinessUsageBasedPeers = {
+  Sl: (...args: unknown[]) => unknown;
+  X: (...args: unknown[]) => unknown;
+  cjr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ljr: (...args: unknown[]) => unknown;
+  pl: (...args: unknown[]) => unknown;
+  sl: (...args: unknown[]) => unknown;
 };
 
-let peers: BindSelfServeBusinessUsageBasedPeers | null = null;
+let peers: SelfServeBusinessUsageBasedPeers | null = null;
 
-/** Wire bindSelfServeBusinessUsageBased once companions land. */
-export function setBindSelfServeBusinessUsageBasedPeers(next: BindSelfServeBusinessUsageBasedPeers): void {
+/** Wire selfServeBusinessUsageBased peers once companions land. */
+export function setSelfServeBusinessUsageBasedPeers(next: SelfServeBusinessUsageBasedPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `ZQ` / internal `ujr`.
- * Stage-3 fill for bundle export ZQ / ujr
  */
-export function bindSelfServeBusinessUsageBased(...args: unknown[]): unknown {
+export function selfServeBusinessUsageBased() {
   if (peers == null) {
-    throw new Error("bindSelfServeBusinessUsageBased peers are not configured");
+    throw new Error("selfServeBusinessUsageBased peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.e(() => {
+    peers.Sl(), cjr = peers.pl([`free`, `go`, `plus`, `pro`, `prolite`, `team`, `self_serve_business_usage_based`, `business`, `enterprise_cbp_usage_based`, `enterprise_cbp_automation`, `enterprise`, `edu`, `edu_plus`, `edu_pro`, `unknown`]), peers.sl({
+      accessToken: peers.X(),
+      accountId: peers.X(),
+      accountUserId: peers.X().nullable().default(null),
+      userId: peers.X().nullable(),
+      email: peers.X().nullable(),
+      planType: peers.cjr,
+      computeResidency: peers.X().nullable().default(null)
+    }), ljr = !1;
+  });
 }

@@ -1,26 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Qf / Gsc
+// Materialized via extractFn(internal `Gsc`) / export `Qf`.
 
 export type OnboardingChecklistPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Bsc: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  Wsc: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
 };
 
 let peers: OnboardingChecklistPeers | null = null;
 
-/** Wire onboardingChecklist once companions land. */
+/** Wire onboardingChecklist peers once companions land. */
 export function setOnboardingChecklistPeers(next: OnboardingChecklistPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Qf` / internal `Gsc`.
- * Stage-3 fill for bundle export Qf / Gsc
  */
-export function onboardingChecklist(...args: unknown[]): unknown {
+export function onboardingChecklist() {
   if (peers == null) {
     throw new Error("onboardingChecklist peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.e(() => {
+    peers.Ho(), peers.ed(), peers.Bsc(), Wsc = peers.Ta(peers.Q, `not-determined`);
+  });
 }

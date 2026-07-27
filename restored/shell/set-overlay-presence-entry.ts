@@ -1,23 +1,23 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `Gvu`) / export `rt`.
+// Materialized via extractFn(internal `Gvu`) / export `setOverlayPresenceEntry`.
 
-export type RtPeers = {
+export type OverlayPresenceEntryPeers = {
   Jvu: (...args: unknown[]) => unknown;
   P9: (...args: unknown[]) => unknown;
 };
-let peers: RtPeers | null = null;
+let peers: OverlayPresenceEntryPeers | null = null;
 
-/** Wire rt peers once companions land. */
-export function setRtPeers(next: RtPeers): void {
+/** Wire setOverlayPresenceEntry peers once companions land. */
+export function setOverlayPresenceEntryPeers(next: OverlayPresenceEntryPeers): void {
   peers = next;
 }
 
 /**
- * Bundle export `rt` / internal `Gvu`.
+ * Bundle export `setOverlayPresenceEntry` / internal `Gvu`.
  */
-export function rt(e: unknown, t: unknown, n: unknown) {
+export function setOverlayPresenceEntry(e: unknown, t: unknown, n: unknown) {
   if (peers == null) {
-    throw new Error("rt peers are not configured");
+    throw new Error("setOverlayPresenceEntry peers are not configured");
   }
   e.set(peers.P9, peers.Jvu(e.get(peers.P9), t, n));
 }

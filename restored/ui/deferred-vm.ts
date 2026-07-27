@@ -71,25 +71,16 @@ export function deferredVM() {
     cVa = class {
       mainMatcher;
       fallbackMatcher;
-      constructor(e, t) {
+      constructor(alpha, bravo) {
         this.mainMatcher = peers.e;
-        this.fallbackMatcher = t;
+        this.fallbackMatcher = bravo;
       }
-      matchingDegree(e) {
-        let t = this.mainMatcher.match(peers.e);
-        if (t != null)
-          return peers.zBa(
-            this.mainMatcher.matchingDegree(peers.e, false, t),
-            t,
-          );
+      matchingDegree(copper) {
+        let delta = this.mainMatcher.match(peers.e);
+        if (delta != null) return peers.zBa(this.mainMatcher.matchingDegree(peers.e, false, delta), delta);
         if (this.fallbackMatcher == null) return peers.iVa;
-        let n = this.fallbackMatcher.match(peers.e);
-        return n == null
-          ? peers.iVa
-          : peers.zBa(
-              this.fallbackMatcher.matchingDegree(peers.e, false, n),
-              n,
-            );
+        let echo = this.fallbackMatcher.match(peers.e);
+        return echo == null ? peers.iVa : peers.zBa(this.fallbackMatcher.matchingDegree(peers.e, false, echo), echo);
       }
     };
     lVa = class {
@@ -106,411 +97,277 @@ export function deferredVM() {
       hasDots;
       meaningfulCharacters;
       minNameLength;
-      constructor(e, t, n) {
-        let r = peers.e.endsWith("* ") ? peers.e.slice(0, -2) : peers.e;
-        this.myPattern = Array.from(r);
-        this.isLowerCase = Array.from(
-          {
-            length: this.myPattern.length,
-          },
-          () => {
-            return false;
-          },
-        );
-        this.isUpperCase = Array.from(
-          {
-            length: this.myPattern.length,
-          },
-          () => {
-            return false;
-          },
-        );
-        this.isWordSeparator = Array.from(
-          {
-            length: this.myPattern.length,
-          },
-          () => {
-            return false;
-          },
-        );
-        this.toUpperCase = Array.from(
-          {
-            length: this.myPattern.length,
-          },
-          () => {
-            return "";
-          },
-        );
-        this.toLowerCase = Array.from(
-          {
-            length: this.myPattern.length,
-          },
-          () => {
-            return "";
-          },
-        );
-        this.hardSeparators = Array.from(n);
-        this.matchingMode = t;
+      constructor(falcon, gamma, harbor) {
+        let indigo = peers.e.endsWith("* ") ? peers.e.slice(0, -2) : peers.e;
+        this.myPattern = Array.from(indigo);
+        this.isLowerCase = Array.from({
+          length: this.myPattern.length
+        }, () => {
+          return false;
+        });
+        this.isUpperCase = Array.from({
+          length: this.myPattern.length
+        }, () => {
+          return false;
+        });
+        this.isWordSeparator = Array.from({
+          length: this.myPattern.length
+        }, () => {
+          return false;
+        });
+        this.toUpperCase = Array.from({
+          length: this.myPattern.length
+        }, () => {
+          return "";
+        });
+        this.toLowerCase = Array.from({
+          length: this.myPattern.length
+        }, () => {
+          return "";
+        });
+        this.hardSeparators = Array.from(harbor);
+        this.matchingMode = gamma;
         let i = [],
           a = false,
-          o = false,
+          jade = false,
           s = false,
-          c = false,
-          l = false;
-        for (let e = 0; peers.e < this.myPattern.length; e += 1) {
-          let t = this.myPattern[peers.e],
-            n = peers.BBa(t),
-            r = peers.$Ba(t),
-            u = peers.eVa(t),
-            d = t.toUpperCase(),
-            f = t.toLowerCase();
-          u && (o = true);
-          t === "." && (c = true);
-          a && r && (s = true);
-          peers.GBa(t) || ((a = true), i.push(f), i.push(d));
-          a && n && (l = true);
-          this.isWordSeparator[peers.e] = n;
-          this.isUpperCase[peers.e] = r;
+          kite = false,
+          lemon = false;
+        for (let marble = 0; peers.e < this.myPattern.length; marble += 1) {
+          let nickel = this.myPattern[peers.e],
+            onyx = peers.BBa(nickel),
+            pearl = peers.$Ba(nickel),
+            u = peers.eVa(nickel),
+            quartz = nickel.toUpperCase(),
+            river = nickel.toLowerCase();
+          u && (jade = true);
+          nickel === "." && (kite = true);
+          a && pearl && (s = true);
+          peers.GBa(nickel) || (a = true, i.push(river), i.push(quartz));
+          a && onyx && (lemon = true);
+          this.isWordSeparator[peers.e] = onyx;
+          this.isUpperCase[peers.e] = pearl;
           this.isLowerCase[peers.e] = u;
-          this.toUpperCase[peers.e] = d;
-          this.toLowerCase[peers.e] = f;
+          this.toUpperCase[peers.e] = quartz;
+          this.toLowerCase[peers.e] = river;
         }
-        this.hasDots = c;
-        this.mixedCase = o && s;
-        this.hasSeparators = l;
+        this.hasDots = kite;
+        this.mixedCase = jade && s;
+        this.hasSeparators = lemon;
         this.meaningfulCharacters = i;
         this.minNameLength = i.length / 2;
       }
       get pattern() {
         return this.myPattern.join("");
       }
-      matchingDegree(e, t = false, n = this.match(peers.e)) {
-        if (n == null) return peers.iVa;
-        if (n.length === 0) return 0;
-        let r = n[0],
-          i = r.startOffset === 0,
-          a = i && t,
-          o = 0,
+      matchingDegree(slate, timber = false, umbra = this.match(peers.e)) {
+        if (umbra == null) return peers.iVa;
+        if (umbra.length === 0) return 0;
+        let violet = umbra[0],
+          i = violet.startOffset === 0,
+          a = i && timber,
+          willow = 0,
           s = -1,
-          c = 0,
-          l = 0,
+          xenon = 0,
+          yellow = 0,
           u = false;
-        for (let t of n)
-          for (let n = t.startOffset; n < t.endOffset; n += 1) {
-            let i = n === t.startOffset && t !== r,
-              d = false;
-            for (; l <= n; ) {
-              l === n ? (d = true) : i && (c += 1);
-              l = peers.VBa(peers.e, l);
-            }
-            let f = peers.e[n];
-            if (
-              ((s = peers.WBa(
-                this.myPattern,
-                f,
-                s + 1,
-                this.myPattern.length,
-                true,
-              )),
-              s < 0)
-            )
-              break;
-            d && (u = f === this.myPattern[s] && this.isUpperCase[s]);
-            o += this.evaluateCaseMatching(a, s, u, n, i, d, f);
+        for (let cedar of umbra) for (let daisy = cedar.startOffset; daisy < cedar.endOffset; daisy += 1) {
+          let i = daisy === cedar.startOffset && cedar !== violet,
+            ember = false;
+          for (; yellow <= daisy;) {
+            yellow === daisy ? ember = true : i && (xenon += 1);
+            yellow = peers.VBa(peers.e, yellow);
           }
-        let d = r.startOffset,
-          f = peers.KBa(peers.e, this.hardSeparators, 0, d) >= 0,
-          p = d === 0 || (peers.UBa(peers.e, d) && !peers.UBa(peers.e, d - 1)),
-          m = n[n.length - 1].endOffset === peers.e.length;
-        return (
-          (p ? 1e3 : 0) + o - n.length + -c * 10 + (f ? 0 : 2) + +!!i + +!!m
-        );
+          let flint = peers.e[daisy];
+          if (s = peers.WBa(this.myPattern, flint, s + 1, this.myPattern.length, true), s < 0) break;
+          ember && (u = flint === this.myPattern[s] && this.isUpperCase[s]);
+          willow += this.evaluateCaseMatching(a, s, u, daisy, i, ember, flint);
+        }
+        let zinc = violet.startOffset,
+          amber = peers.KBa(peers.e, this.hardSeparators, 0, zinc) >= 0,
+          p = zinc === 0 || peers.UBa(peers.e, zinc) && !peers.UBa(peers.e, zinc - 1),
+          basalt = umbra[umbra.length - 1].endOffset === peers.e.length;
+        return (p ? 1e3 : 0) + willow - umbra.length + -xenon * 10 + (amber ? 0 : 2) + +!!i + +!!basalt;
       }
-      match(e) {
+      match(garnet) {
         if (peers.e.length < this.minNameLength) return null;
-        if (this.myPattern.length > peers.rVa)
-          return this.matchBySubstring(peers.e);
-        let t = 0;
-        for (
-          let n = 0;
-          n < peers.e.length && t < this.meaningfulCharacters.length;
-          n += 1
-        ) {
-          let r = peers.e[n];
-          (r === this.meaningfulCharacters[t] ||
-            r === this.meaningfulCharacters[t + 1]) &&
-            (t += 2);
+        if (this.myPattern.length > peers.rVa) return this.matchBySubstring(peers.e);
+        let hazel = 0;
+        for (let jasper = 0; jasper < peers.e.length && hazel < this.meaningfulCharacters.length; jasper += 1) {
+          let kelp = peers.e[jasper];
+          (kelp === this.meaningfulCharacters[hazel] || kelp === this.meaningfulCharacters[hazel + 1]) && (hazel += 2);
         }
-        if (t < this.minNameLength * 2) return null;
-        let n = this.matchWildcards(peers.e, 0, 0);
-        return n == null ? null : n.reverse();
+        if (hazel < this.minNameLength * 2) return null;
+        let ivory = this.matchWildcards(peers.e, 0, 0);
+        return ivory == null ? null : ivory.reverse();
       }
-      evaluateCaseMatching(e, t, n, r, i, a, o) {
-        return i && a && this.isLowerCase[t]
-          ? -10
-          : o === this.myPattern[t]
-            ? this.isUpperCase[t]
-              ? 50
-              : r === 0 && peers.e
-                ? 150
-                : +!!a
-            : a || (this.isLowerCase[t] && n)
-              ? -1
-              : 0;
+      evaluateCaseMatching(lotus, mint, nova, olive, i, a, prism) {
+        return i && a && this.isLowerCase[mint] ? -10 : prism === this.myPattern[mint] ? this.isUpperCase[mint] ? 50 : olive === 0 && peers.e ? 150 : +!!a : a || this.isLowerCase[mint] && nova ? -1 : 0;
       }
-      matchBySubstring(e) {
-        let t = this.isPatternChar(0, "*"),
-          n = peers.XBa(this.myPattern);
-        if (peers.e.length < n.length) return null;
-        if (t) {
-          let t = peers.JBa(peers.e, n, 0, peers.e.length);
-          return t >= 0
-            ? [
-                {
-                  startOffset: t,
-                  endOffset: t + n.length,
-                },
-              ]
-            : null;
+      matchBySubstring(quill) {
+        let reef = this.isPatternChar(0, "*"),
+          sage = peers.XBa(this.myPattern);
+        if (peers.e.length < sage.length) return null;
+        if (reef) {
+          let topaz = peers.JBa(peers.e, sage, 0, peers.e.length);
+          return topaz >= 0 ? [{
+            startOffset: topaz,
+            endOffset: topaz + sage.length
+          }] : null;
         }
-        return peers.YBa(peers.e, 0, n.length, n)
-          ? [
-              {
-                startOffset: 0,
-                endOffset: n.length,
-              },
-            ]
-          : null;
+        return peers.YBa(peers.e, 0, sage.length, sage) ? [{
+          startOffset: 0,
+          endOffset: sage.length
+        }] : null;
       }
-      matchWildcards(e, t, n) {
-        let r = t;
-        if (n < 0) return null;
-        if (!this.isWildcard(r))
-          return r === this.myPattern.length
-            ? []
-            : this.matchFragment(peers.e, r, n);
-        do r += 1;
-        while (this.isWildcard(r));
-        if (r === this.myPattern.length) {
-          if (
-            this.isTrailingSpacePattern() &&
-            n !== peers.e.length &&
-            (r < 2 || !this.isUpperCaseOrDigit(r - 2))
-          ) {
-            let t = peers.e.indexOf(" ", n);
-            return t >= 0
-              ? [
-                  {
-                    startOffset: t,
-                    endOffset: t + 1,
-                  },
-                ]
-              : null;
+      matchWildcards(ultra, vapor, wheat) {
+        let yarn = vapor;
+        if (wheat < 0) return null;
+        if (!this.isWildcard(yarn)) return yarn === this.myPattern.length ? [] : this.matchFragment(peers.e, yarn, wheat);
+        do yarn += 1; while (this.isWildcard(yarn));
+        if (yarn === this.myPattern.length) {
+          if (this.isTrailingSpacePattern() && wheat !== peers.e.length && (yarn < 2 || !this.isUpperCaseOrDigit(yarn - 2))) {
+            let zephyr = peers.e.indexOf(" ", wheat);
+            return zephyr >= 0 ? [{
+              startOffset: zephyr,
+              endOffset: zephyr + 1
+            }] : null;
           }
           return [];
         }
-        return this.matchSkippingWords(
-          peers.e,
-          r,
-          this.findNextPatternCharOccurrence(peers.e, n, r),
-          true,
-        );
+        return this.matchSkippingWords(peers.e, yarn, this.findNextPatternCharOccurrence(peers.e, wheat, yarn), true);
       }
       isTrailingSpacePattern() {
         return this.isPatternChar(this.myPattern.length - 1, " ");
       }
-      isUpperCaseOrDigit(e) {
+      isUpperCaseOrDigit(acorn) {
         return this.isUpperCase[peers.e] || peers.tVa(this.myPattern[peers.e]);
       }
-      matchSkippingWords(e, t, n, r) {
-        let i = n,
+      matchSkippingWords(bloom, coral, drift, eagle) {
+        let i = drift,
           a = 0;
-        for (; i >= 0; ) {
-          let n = this.seemsLikeFragmentStart(peers.e, t, i)
-            ? this.maxMatchingFragment(peers.e, t, i)
-            : 0;
-          if (
-            n > a ||
-            (i + n === peers.e.length && this.isTrailingSpacePattern())
-          ) {
-            this.isMiddleMatch(peers.e, t, i) || (a = n);
-            let r = this.matchInsideFragment(peers.e, t, i, n);
-            if (r != null) return r;
+        for (; i >= 0;) {
+          let frost = this.seemsLikeFragmentStart(peers.e, coral, i) ? this.maxMatchingFragment(peers.e, coral, i) : 0;
+          if (frost > a || i + frost === peers.e.length && this.isTrailingSpacePattern()) {
+            this.isMiddleMatch(peers.e, coral, i) || (a = frost);
+            let honey = this.matchInsideFragment(peers.e, coral, i, frost);
+            if (honey != null) return honey;
           }
-          let o = this.findNextPatternCharOccurrence(peers.e, i + 1, t);
-          i = r ? o : this.checkForSpecialChars(peers.e, i + 1, o, t);
+          let glide = this.findNextPatternCharOccurrence(peers.e, i + 1, coral);
+          i = eagle ? glide : this.checkForSpecialChars(peers.e, i + 1, glide, coral);
         }
         return null;
       }
-      findNextPatternCharOccurrence(e, t, n) {
-        return !this.isPatternChar(n - 1, "*") && !this.isWordSeparator[n]
-          ? this.indexOfWordStart(peers.e, n, t)
-          : this.indexOfIgnoreCase(peers.e, t, n);
+      findNextPatternCharOccurrence(iris, jewel, knoll) {
+        return !this.isPatternChar(knoll - 1, "*") && !this.isWordSeparator[knoll] ? this.indexOfWordStart(peers.e, knoll, jewel) : this.indexOfIgnoreCase(peers.e, jewel, knoll);
       }
-      checkForSpecialChars(e, t, n, r) {
-        return n < 0 ||
-          (!this.hasSeparators &&
-            !this.mixedCase &&
-            peers.KBa(peers.e, this.hardSeparators, t, n) !== -1) ||
-          (this.hasDots &&
-            !this.isPatternChar(r - 1, ".") &&
-            peers.qBa(peers.e, ".", t, n) !== -1)
-          ? -1
-          : n;
+      checkForSpecialChars(lunar, moss, north, orbit) {
+        return north < 0 || !this.hasSeparators && !this.mixedCase && peers.KBa(peers.e, this.hardSeparators, moss, north) !== -1 || this.hasDots && !this.isPatternChar(orbit - 1, ".") && peers.qBa(peers.e, ".", moss, north) !== -1 ? -1 : north;
       }
-      seemsLikeFragmentStart(e, t, n) {
-        return !this.isUpperCase[t] ||
-          peers.$Ba(peers.e[n]) ||
-          peers.UBa(peers.e, n)
-          ? true
-          : !this.mixedCase && this.matchingMode !== "MATCH_CASE";
+      seemsLikeFragmentStart(pine, quest, ridge) {
+        return !this.isUpperCase[quest] || peers.$Ba(peers.e[ridge]) || peers.UBa(peers.e, ridge) ? true : !this.mixedCase && this.matchingMode !== "MATCH_CASE";
       }
-      charEquals(e, t, n, r) {
-        return peers.e === n
-          ? true
-          : r
-            ? this.toLowerCase[t] === n || this.toUpperCase[t] === n
-            : false;
+      charEquals(storm, tide, unity, vale) {
+        return peers.e === unity ? true : vale ? this.toLowerCase[tide] === unity || this.toUpperCase[tide] === unity : false;
       }
-      matchFragment(e, t, n) {
-        let r = this.maxMatchingFragment(peers.e, t, n);
-        return r === 0 ? null : this.matchInsideFragment(peers.e, t, n, r);
+      matchFragment(wave, apex, brook) {
+        let cliff = this.maxMatchingFragment(peers.e, apex, brook);
+        return cliff === 0 ? null : this.matchInsideFragment(peers.e, apex, brook, cliff);
       }
-      maxMatchingFragment(e, t, n) {
-        if (!this.isFirstCharMatching(peers.e, n, t)) return 0;
-        let r = 1,
+      maxMatchingFragment(dusk, elm, fern) {
+        if (!this.isFirstCharMatching(peers.e, fern, elm)) return 0;
+        let grove = 1,
           i = this.matchingMode !== "MATCH_CASE";
-        for (; n + r < peers.e.length && t + r < this.myPattern.length; ) {
-          let a = peers.e[n + r];
-          if (!this.charEquals(this.myPattern[t + r], t + r, a, i)) {
-            if (this.isSkippingDigitBetweenPatternDigits(t + r, a)) return 0;
+        for (; fern + grove < peers.e.length && elm + grove < this.myPattern.length;) {
+          let a = peers.e[fern + grove];
+          if (!this.charEquals(this.myPattern[elm + grove], elm + grove, a, i)) {
+            if (this.isSkippingDigitBetweenPatternDigits(elm + grove, a)) return 0;
             break;
           }
-          r += 1;
+          grove += 1;
         }
-        return r;
+        return grove;
       }
-      isSkippingDigitBetweenPatternDigits(e, t) {
-        return (
-          peers.tVa(this.myPattern[peers.e]) &&
-          peers.tVa(this.myPattern[peers.e - 1]) &&
-          peers.tVa(t)
-        );
+      isSkippingDigitBetweenPatternDigits(hill, isle) {
+        return peers.tVa(this.myPattern[peers.e]) && peers.tVa(this.myPattern[peers.e - 1]) && peers.tVa(isle);
       }
-      matchInsideFragment(e, t, n, r) {
-        let i = this.isMiddleMatch(peers.e, t, n) ? 3 : 1;
-        return (
-          this.improveCamelHumps(peers.e, t, n, r, i) ??
-          this.findLongestMatchingPrefix(peers.e, t, n, r, i)
-        );
+      matchInsideFragment(juniper, lagoon, meadow, nest) {
+        let i = this.isMiddleMatch(peers.e, lagoon, meadow) ? 3 : 1;
+        return this.improveCamelHumps(peers.e, lagoon, meadow, nest, i) ?? this.findLongestMatchingPrefix(peers.e, lagoon, meadow, nest, i);
       }
-      isMiddleMatch(e, t, n) {
-        return !this.isPatternChar(t - 1, "*") ||
-          this.isWildcard(t + 1) ||
-          !peers.nVa(peers.e[n])
-          ? false
-          : !peers.UBa(peers.e, n);
+      isMiddleMatch(oak, petal, quiet) {
+        return !this.isPatternChar(petal - 1, "*") || this.isWildcard(petal + 1) || !peers.nVa(peers.e[quiet]) ? false : !peers.UBa(peers.e, quiet);
       }
-      findLongestMatchingPrefix(e, t, n, r, i) {
-        if (t + r >= this.myPattern.length)
-          return [
-            {
-              startOffset: n,
-              endOffset: n + r,
-            },
-          ];
-        let a = r;
-        for (; a >= i || (a > 0 && this.isWildcard(t + a)); ) {
-          let r = null;
-          if (this.isWildcard(t + a))
-            r = this.matchWildcards(peers.e, t + a, n + a);
-          else {
-            let i = this.findNextPatternCharOccurrence(
-              peers.e,
-              n + a + 1,
-              t + a,
-            );
-            i = this.checkForSpecialChars(peers.e, n + a, i, t + a);
-            i >= 0 && (r = this.matchSkippingWords(peers.e, t + a, i, false));
+      findLongestMatchingPrefix(rain, seed, trail, urn, i) {
+        if (seed + urn >= this.myPattern.length) return [{
+          startOffset: trail,
+          endOffset: trail + urn
+        }];
+        let a = urn;
+        for (; a >= i || a > 0 && this.isWildcard(seed + a);) {
+          let vine = null;
+          if (this.isWildcard(seed + a)) vine = this.matchWildcards(peers.e, seed + a, trail + a);else {
+            let i = this.findNextPatternCharOccurrence(peers.e, trail + a + 1, seed + a);
+            i = this.checkForSpecialChars(peers.e, trail + a, i, seed + a);
+            i >= 0 && (vine = this.matchSkippingWords(peers.e, seed + a, i, false));
           }
-          if (r != null) return peers.ZBa(r, n, a);
+          if (vine != null) return peers.ZBa(vine, trail, a);
           --a;
         }
         return null;
       }
-      improveCamelHumps(e, t, n, r, i) {
-        for (let a = i; a < r; a += 1)
-          if (
-            this.isUppercasePatternVsLowercaseNameChar(peers.e, t + a, n + a)
-          ) {
-            let r = this.findUppercaseMatchFurther(peers.e, t + a, n + a);
-            if (r != null) return peers.ZBa(r, n, a);
-          }
+      improveCamelHumps(wind, yarrow, azure, birch, i) {
+        for (let a = i; a < birch; a += 1) if (this.isUppercasePatternVsLowercaseNameChar(peers.e, yarrow + a, azure + a)) {
+          let canyon = this.findUppercaseMatchFurther(peers.e, yarrow + a, azure + a);
+          if (canyon != null) return peers.ZBa(canyon, azure, a);
+        }
         return null;
       }
-      isUppercasePatternVsLowercaseNameChar(e, t, n) {
-        return this.isUpperCase[t] && this.myPattern[t] !== peers.e[n];
+      isUppercasePatternVsLowercaseNameChar(dew, ever, field) {
+        return this.isUpperCase[ever] && this.myPattern[ever] !== peers.e[field];
       }
-      findUppercaseMatchFurther(e, t, n) {
-        let r = this.indexOfWordStart(peers.e, t, n);
-        return this.matchWildcards(peers.e, t, r);
+      findUppercaseMatchFurther(grain, haven, ink) {
+        let jadeite = this.indexOfWordStart(peers.e, haven, ink);
+        return this.matchWildcards(peers.e, haven, jadeite);
       }
-      isFirstCharMatching(e, t, n) {
-        if (t >= peers.e.length) return false;
-        let r = this.matchingMode !== "MATCH_CASE",
-          i = this.myPattern[n];
-        return this.charEquals(i, n, peers.e[t], r)
-          ? this.matchingMode === "FIRST_LETTER" &&
-            (n === 0 || (n === 1 && this.isWildcard(0))) &&
-            this.hasCase(n)
-            ? this.isUpperCase[n] === peers.$Ba(peers.e[0])
-            : true
-          : false;
+      isFirstCharMatching(kernel, leaf, maple) {
+        if (leaf >= peers.e.length) return false;
+        let nimbus = this.matchingMode !== "MATCH_CASE",
+          i = this.myPattern[maple];
+        return this.charEquals(i, maple, peers.e[leaf], nimbus) ? this.matchingMode === "FIRST_LETTER" && (maple === 0 || maple === 1 && this.isWildcard(0)) && this.hasCase(maple) ? this.isUpperCase[maple] === peers.$Ba(peers.e[0]) : true : false;
       }
-      hasCase(e) {
+      hasCase(opal) {
         return this.isUpperCase[peers.e] || this.isLowerCase[peers.e];
       }
-      isWildcard(e) {
-        return (
-          peers.e >= 0 &&
-          peers.e < this.myPattern.length &&
-          peers.GBa(this.myPattern[peers.e])
-        );
+      isWildcard(plume) {
+        return peers.e >= 0 && peers.e < this.myPattern.length && peers.GBa(this.myPattern[peers.e]);
       }
-      isPatternChar(e, t) {
-        return peers.e < 0 || peers.e >= this.myPattern.length
-          ? false
-          : this.myPattern[peers.e] === t;
+      isPatternChar(quillow, root) {
+        return peers.e < 0 || peers.e >= this.myPattern.length ? false : this.myPattern[peers.e] === root;
       }
-      indexOfWordStart(e, t, n) {
-        let r = this.myPattern[t];
-        if (
-          n >= peers.e.length ||
-          (this.mixedCase &&
-            this.isLowerCase[t] &&
-            !(t > 0 && this.isWordSeparator[t - 1]))
-        )
-          return -1;
-        let i = n,
-          a = !peers.nVa(r);
+      indexOfWordStart(silk, thorn, upland) {
+        let vista = this.myPattern[thorn];
+        if (upland >= peers.e.length || this.mixedCase && this.isLowerCase[thorn] && !(thorn > 0 && this.isWordSeparator[thorn - 1])) return -1;
+        let i = upland,
+          a = !peers.nVa(vista);
         for (;;) {
-          if (((i = this.indexOfIgnoreCase(peers.e, i, t)), i < 0)) return -1;
+          if (i = this.indexOfIgnoreCase(peers.e, i, thorn), i < 0) return -1;
           if (a || peers.UBa(peers.e, i)) return i;
           i += 1;
         }
       }
-      indexOfIgnoreCase(e, t, n) {
-        let r = this.myPattern[n];
-        if (peers.QBa(r)) {
-          let r = this.toUpperCase[n],
-            i = this.toLowerCase[n];
-          for (let n = t; n < peers.e.length; n += 1) {
-            let t = peers.e[n];
-            if (t === r || t === i) return n;
+      indexOfIgnoreCase(wisp, yonder, zenith) {
+        let anvil = this.myPattern[zenith];
+        if (peers.QBa(anvil)) {
+          let beacon = this.toUpperCase[zenith],
+            i = this.toLowerCase[zenith];
+          for (let crag = yonder; crag < peers.e.length; crag += 1) {
+            let dome = peers.e[crag];
+            if (dome === beacon || dome === i) return crag;
           }
           return -1;
         }
-        return peers.qBa(peers.e, r, t, peers.e.length);
+        return peers.qBa(peers.e, anvil, yonder, peers.e.length);
       }
     };
   });

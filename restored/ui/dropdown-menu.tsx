@@ -50,3 +50,20 @@ export function bindDropdownMenuParts() {
     Section: peers.gXi
   };
 }
+
+/**
+ * `JB` is consumed as a compound-component namespace (`DropdownMenu.Item`,
+ * `DropdownMenu.Content`, …) — proxy each property access through
+ * `bindDropdownMenuParts()` so the peers indirection stays lazy.
+ */
+export const DropdownMenu: ReturnType<typeof bindDropdownMenuParts> = new Proxy(
+  {} as ReturnType<typeof bindDropdownMenuParts>,
+  {
+    get(_target, prop) {
+      return bindDropdownMenuParts()[prop as keyof ReturnType<typeof bindDropdownMenuParts>];
+    },
+  },
+);
+
+/** Bundle path ESM init retained as no-op. */
+export function ensureDropdownMenuInit(): void {}

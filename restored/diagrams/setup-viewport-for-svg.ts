@@ -79,4 +79,3 @@ export function initSetupViewPortForSvgChunk(): void {
   initMermaidConfig();
   initDayjsLoggerRuntime();
 }
-export { initSetupViewPortForSvgChunk as t, setupViewPortForSVG as n };

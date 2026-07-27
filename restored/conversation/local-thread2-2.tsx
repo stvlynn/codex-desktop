@@ -30,3 +30,12 @@ export function bindBindLocalThread2() {
     N6i = peers.c(), peers.Ho(), peers.Uf(), peers.iE(), peers.HFi();
   });
 }
+
+export type BindLocalThread2Props = Record<string, unknown>;
+
+/**
+ * `P6i` is an ESM module-init thunk (registers atoms as a side effect), not a
+ * component — consumers only import it to keep the chunk's import graph
+ * live, so alias the real export under the name they expect.
+ */
+export { bindBindLocalThread2 as BindLocalThread2 };

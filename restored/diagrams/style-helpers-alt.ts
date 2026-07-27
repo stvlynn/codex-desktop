@@ -163,11 +163,3 @@ export function initStyleHelpersChunk(): void {
   initMermaidConfigChunk();
   initDayjsLoggerRuntime();
 }
-export {
-  styles2String as a,
-  solidStateFill as i,
-  initStyleHelpersChunk as n,
-  userNodeOverrides as o,
-  isLabelStyle as r,
-  compileStyles as t,
-};

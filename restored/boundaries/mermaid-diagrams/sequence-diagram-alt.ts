@@ -48,21 +48,9 @@ import {
   chunk5PVQY5BWP,
   chunk5PVQY5BWU,
 } from "./mermaid-common-utils-alt";
-import {
-  a,
-  c,
-  i as chunkYZCP3GAMI,
-  l,
-  n,
-  r,
-  s as chunkYZCP3GAMS,
-} from "../../diagrams/svg-drawing-helpers-alt";
-import { n as chunkQZHKN3VNN, t } from "../../diagrams/imperative-state";
-import {
-  n as chunkXPW4576IN,
-  r as chunkXPW4576IR,
-  t as chunkXPW4576IT,
-} from "../../utils/mermaid-js-yaml-core";
+import { drawRect as a, getTextObj as c, drawImage as chunkYZCP3GAMI, initSvgDrawingHelpersChunk as l, drawBackgroundRect as n, drawEmbeddedImage as r, getNoteRect as chunkYZCP3GAMS } from "../../diagrams/svg-drawing-helpers-alt";
+import { initImperativeStateChunk as chunkQZHKN3VNN, ImperativeState as t } from "../../diagrams/imperative-state";
+import { initMermaidJsYamlCore as chunkXPW4576IN, yamlLoad as chunkXPW4576IR, yamlCoreSchema as chunkXPW4576IT } from "../../utils/mermaid-js-yaml-core";
 async function sequenceDiagramFGHM5R23Helper1(
   sequenceDiagramFGHM5R23Input141,
   sequenceDiagramFGHM5R23Input142,

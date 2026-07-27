@@ -38,9 +38,9 @@ import {
   Graph as stateDiagramFHFEXIEXImport1,
   t as stateDiagramFHFEXIEXImport2,
 } from "../../vendor/graphlib";
-import { n as chunk55IACEB6N } from "../../diagrams/get-diagram-element-alt";
-import { t as chunkEDXVE4YYT } from "../../diagrams/setup-viewport-for-svg-alt";
-import { n as chunkX2U36JSPN } from "../../diagrams/style-helpers-alt";
+import { initGetDiagramElementChunk as chunk55IACEB6N } from "../../diagrams/get-diagram-element-alt";
+import { initSetupViewPortForSvgChunk as chunkEDXVE4YYT } from "../../diagrams/setup-viewport-for-svg-alt";
+import { initStyleHelpersChunk as chunkX2U36JSPN } from "../../diagrams/style-helpers-alt";
 import { chunk5FUZZQ4RI } from "./mermaid-flowchart-nodes-alt";
 import { chunkENJZ2VHEN } from "./mermaid-flowchart-edges-alt";
 import { chunk336JU56ON } from "../../diagrams/mermaid-layout-loaders-alt";

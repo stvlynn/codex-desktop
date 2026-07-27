@@ -30,13 +30,7 @@ import {
   initSubGraphTitleMarginsAlt,
   configureLabelImages,
 } from "../../diagrams/subgraph-title-margins-alt";
-import {
-  a,
-  i,
-  n as chunkX2U36JSPN,
-  o,
-  t as chunkX2U36JSPT,
-} from "../../diagrams/style-helpers-alt";
+import { styles2String as a, solidStateFill as i, initStyleHelpersChunk as chunkX2U36JSPN, userNodeOverrides as o, compileStyles as chunkX2U36JSPT } from "../../diagrams/style-helpers-alt";
 function chunk5FUZZQ4RHelper1(chunk5FUZZQ4RInput314) {
   let chunk5FUZZQ4RBinding1212 = chunk5FUZZQ4RInput314.map(
     (item, index) => `${index === 0 ? "M" : "L"}${item.x},${item.y}`,

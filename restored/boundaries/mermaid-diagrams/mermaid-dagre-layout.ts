@@ -22,7 +22,7 @@ import {
   r as dagre6UL2VRFPImport2,
   t as dagre6UL2VRFPImport3,
 } from "../../vendor/graphlib";
-import { n as chunkATLVNIR6N } from "../../diagrams/style-helpers";
+import { initStyleHelpersChunk as chunkATLVNIR6N } from "../../diagrams/style-helpers";
 import {
   chunkJZLCHNYAI,
   chunkJZLCHNYAC,

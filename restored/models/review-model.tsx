@@ -133,547 +133,452 @@ export function bindReviewModel() {
     BIi = peers.Ta(peers.hT, null);
     VIi = peers.Ta(peers.hT, null);
     RI = peers.Ta(peers.rT, null);
-    HIi = peers.Ma(peers.hT, ({ get }) => {
+    HIi = peers.Ma(peers.hT, ({
+      get
+    }) => {
       return get(peers.VIi);
     });
-    UIi = peers.Da(peers.Q, (e) => {
+    UIi = peers.Da(peers.Q, alpha => {
       return null;
     });
-    WIi = peers.Ma(peers.hT, ({ get, scope }) => {
+    WIi = peers.Ma(peers.hT, ({
+      get,
+      scope
+    }) => {
       return get(peers.UIi, peers.mT(scope.value));
     });
     GIi = 3;
     KIi = 300;
     qIi = 30;
     JIi = peers.Ta(peers.hT, false);
-    zI = peers.Ma(peers.hT, ({ get }) => {
+    zI = peers.Ma(peers.hT, ({
+      get
+    }) => {
       return get(peers.gE) === "last-turn-only" ? peers.tE() : get(peers.qFi);
     });
-    YIi = peers.Ia(peers.hT, ({ get }) => {
-      return peers.T3n(
-        get(peers.gE) === "full" ? get(peers.VIi) : null,
-        get(peers.AI),
-        get(peers.kI),
-        "review_model",
-        {
-          watchForGitInit: true,
-        },
-      );
-    });
-    XIi = peers.Ma(peers.hT, ({ get }) => {
-      return get(peers.YIi).data?.root ?? get(peers.VIi);
-    });
-    ZIi = peers.ka(peers.Q, (e) => {
-      let t = {
-        operationSource: "review_model",
-        root: e.root,
-      };
-      return peers.rE(
-        "base-branch",
-        {
-          commonDir: e.commonDir,
-          root: e.root,
-        },
-        t,
-        peers.$T(e.hostConfig),
-        e.hostConfig,
-        {
-          liveQuery: {
-            method: "base-branch",
-            params: t,
-          },
-          staleTime: 1 / 0,
-        },
-      );
-    });
-    QIi = peers.Ma(peers.hT, ({ get }) => {
-      if (get(peers.gE) === "last-turn-only") return peers.tE();
-      let t = get(peers.zI),
-        n = t.data ?? null;
-      return n == null
-        ? peers.N3n(t)
-        : get(peers.ZIi, {
-            commonDir: n.commonDir,
-            hostConfig: get(peers.kI),
-            root: n.root,
-          });
-    });
-    $Ii = peers.Ma(peers.hT, ({ get }) => {
-      return get(peers.gE) === "last-turn-only" ? peers.tE() : get(peers.JFi);
-    });
-    eLi = peers.Ia(peers.hT, ({ get }) => {
-      if (get(peers.gE) === "last-turn-only")
-        return peers.rE(
-          "recent-branches",
-          null,
-          null,
-          get(peers.AI),
-          get(peers.kI),
-        );
-      let t = get(peers.kI),
-        n = get(peers.AI),
-        r = get(peers.zI).data ?? null,
-        i =
-          r == null
-            ? null
-            : {
-                limit: peers.qIi,
-                operationSource: "review_model",
-                root: r.root,
-              };
-      return peers.rE("recent-branches", r, i, n, t, {
-        liveQuery:
-          i == null
-            ? undefined
-            : {
-                method: "recent-branches",
-                params: i,
-              },
-        staleTime: 1 / 0,
+    YIi = peers.Ia(peers.hT, ({
+      get
+    }) => {
+      return peers.T3n(get(peers.gE) === "full" ? get(peers.VIi) : null, get(peers.AI), get(peers.kI), "review_model", {
+        watchForGitInit: true
       });
     });
-    BI = peers.Ma(peers.hT, ({ get }) => {
+    XIi = peers.Ma(peers.hT, ({
+      get
+    }) => {
+      return get(peers.YIi).data?.root ?? get(peers.VIi);
+    });
+    ZIi = peers.ka(peers.Q, bravo => {
+      let copper = {
+        operationSource: "review_model",
+        root: bravo.root
+      };
+      return peers.rE("base-branch", {
+        commonDir: bravo.commonDir,
+        root: bravo.root
+      }, copper, peers.$T(bravo.hostConfig), bravo.hostConfig, {
+        liveQuery: {
+          method: "base-branch",
+          params: copper
+        },
+        staleTime: 1 / 0
+      });
+    });
+    QIi = peers.Ma(peers.hT, ({
+      get
+    }) => {
+      if (get(peers.gE) === "last-turn-only") return peers.tE();
+      let delta = get(peers.zI),
+        echo = delta.data ?? null;
+      return echo == null ? peers.N3n(delta) : get(peers.ZIi, {
+        commonDir: echo.commonDir,
+        hostConfig: get(peers.kI),
+        root: echo.root
+      });
+    });
+    $Ii = peers.Ma(peers.hT, ({
+      get
+    }) => {
+      return get(peers.gE) === "last-turn-only" ? peers.tE() : get(peers.JFi);
+    });
+    eLi = peers.Ia(peers.hT, ({
+      get
+    }) => {
+      if (get(peers.gE) === "last-turn-only") return peers.rE("recent-branches", null, null, get(peers.AI), get(peers.kI));
+      let falcon = get(peers.kI),
+        gamma = get(peers.AI),
+        harbor = get(peers.zI).data ?? null,
+        i = harbor == null ? null : {
+          limit: peers.qIi,
+          operationSource: "review_model",
+          root: harbor.root
+        };
+      return peers.rE("recent-branches", harbor, i, gamma, falcon, {
+        liveQuery: i == null ? undefined : {
+          method: "recent-branches",
+          params: i
+        },
+        staleTime: 1 / 0
+      });
+    });
+    BI = peers.Ma(peers.hT, ({
+      get
+    }) => {
       return peers.TIi(get(peers.QIi).data ?? null, get(peers.WIi));
     });
-    tLi = peers.Ia(peers.hT, ({ get }) => {
-      if (get(peers.gE) === "last-turn-only")
-        return peers.rE(
-          "branch-commits",
-          null,
-          null,
-          get(peers.AI),
-          get(peers.kI),
-        );
-      let t = get(peers.kI),
-        n = get(peers.AI),
-        r = get(peers.zI).data ?? null,
+    tLi = peers.Ia(peers.hT, ({
+      get
+    }) => {
+      if (get(peers.gE) === "last-turn-only") return peers.rE("branch-commits", null, null, get(peers.AI), get(peers.kI));
+      let indigo = get(peers.kI),
+        jade = get(peers.AI),
+        kite = get(peers.zI).data ?? null,
         i = get(peers.BI);
-      return peers.rE(
-        "branch-commits",
-        r,
-        r == null
-          ? null
-          : {
-              baseBranch: i ?? undefined,
-              operationSource: "review_model",
-              root: r.root,
-            },
-        n,
-        t,
-        {
-          liveQuery: (e) => {
-            return {
-              method: "branch-commits",
-              params: e,
-            };
-          },
-          staleTime: 1 / 0,
-        },
-      );
-    });
-    nLi = peers.ka(peers.Q, (e) => {
-      let t = {
-        ...peers._Ii({
-          cwd: e.cwd,
-          hideWhitespace: e.hideWhitespace,
-          source: e.source,
-          baseBranch: e.baseBranch,
-          commitSha: e.commitSha,
-        }),
-        includeUntrackedFiles: true,
-      };
-      return peers.rE(
-        "review-summary",
-        {
-          commonDir: e.commonDir,
-          root: e.root,
-        },
-        {
-          ...t,
-          includeUntrackedFiles: false,
-        },
-        peers.$T(e.hostConfig),
-        e.hostConfig,
-        {
-          enabled: e.enabled,
-          liveQuery: {
-            method: "review-summary",
-            params: t,
-          },
-          refetchOnMount: false,
-          staleTime: 1 / 0,
-        },
-      );
-    });
-    rLi = peers.ka(peers.Q, (e) => {
-      let t = {
-        cwd: peers.eu(e.cwd),
-        baseBranch: e.baseBranch ?? undefined,
-        ...(e.hideWhitespace
-          ? {
-              hideWhitespace: true,
-            }
-          : {}),
-        includeUntrackedFiles: e.includeUntrackedFiles,
+      return peers.rE("branch-commits", kite, kite == null ? null : {
+        baseBranch: i ?? undefined,
         operationSource: "review_model",
-      };
-      return peers.rE(
-        "branch-diff-stats",
-        {
-          commonDir: e.commonDir,
-          root: e.root,
+        root: kite.root
+      }, jade, indigo, {
+        liveQuery: lemon => {
+          return {
+            method: "branch-commits",
+            params: lemon
+          };
         },
-        {
-          ...t,
-          includeUntrackedFiles: false,
-        },
-        peers.$T(e.hostConfig),
-        e.hostConfig,
-        {
-          enabled: e.enabled,
-          liveQuery: {
-            method: "branch-diff-stats",
-            params: t,
-          },
-          staleTime: 1 / 0,
-        },
-      );
+        staleTime: 1 / 0
+      });
     });
-    iLi = peers.Ma(peers.hT, ({ get }) => {
+    nLi = peers.ka(peers.Q, marble => {
+      let nickel = {
+        ...peers._Ii({
+          cwd: marble.cwd,
+          hideWhitespace: marble.hideWhitespace,
+          source: marble.source,
+          baseBranch: marble.baseBranch,
+          commitSha: marble.commitSha
+        }),
+        includeUntrackedFiles: true
+      };
+      return peers.rE("review-summary", {
+        commonDir: marble.commonDir,
+        root: marble.root
+      }, {
+        ...nickel,
+        includeUntrackedFiles: false
+      }, peers.$T(marble.hostConfig), marble.hostConfig, {
+        enabled: marble.enabled,
+        liveQuery: {
+          method: "review-summary",
+          params: nickel
+        },
+        refetchOnMount: false,
+        staleTime: 1 / 0
+      });
+    });
+    rLi = peers.ka(peers.Q, onyx => {
+      let pearl = {
+        cwd: peers.eu(onyx.cwd),
+        baseBranch: onyx.baseBranch ?? undefined,
+        ...(onyx.hideWhitespace ? {
+          hideWhitespace: true
+        } : {}),
+        includeUntrackedFiles: onyx.includeUntrackedFiles,
+        operationSource: "review_model"
+      };
+      return peers.rE("branch-diff-stats", {
+        commonDir: onyx.commonDir,
+        root: onyx.root
+      }, {
+        ...pearl,
+        includeUntrackedFiles: false
+      }, peers.$T(onyx.hostConfig), onyx.hostConfig, {
+        enabled: onyx.enabled,
+        liveQuery: {
+          method: "branch-diff-stats",
+          params: pearl
+        },
+        staleTime: 1 / 0
+      });
+    });
+    iLi = peers.Ma(peers.hT, ({
+      get
+    }) => {
       if (get(peers.gE) === "last-turn-only") return peers.tE();
       if (get(peers.LP) === "branch") {
-        let t = get(peers.VI),
-          n = t.data;
-        if (
-          n?.type === "success" ||
-          (n?.type !== "error" &&
-            get(peers.UI) &&
-            !t.isError &&
-            (t.isFetching || t.isPending))
-        )
-          return peers.tE();
+        let umbra = get(peers.VI),
+          violet = umbra.data;
+        if (violet?.type === "success" || violet?.type !== "error" && get(peers.UI) && !umbra.isError && (umbra.isFetching || umbra.isPending)) return peers.tE();
       }
-      let t = get(peers.zI),
-        n = t.data ?? null,
-        r = get(peers.DI),
+      let quartz = get(peers.zI),
+        river = quartz.data ?? null,
+        slate = get(peers.DI),
         i = get(peers.QIi),
         a = i.data == null && i.isFetching;
-      if (n == null) return peers.N3n(t);
-      if (r == null || get(peers.HI) === "cloud") return peers.tE();
-      let o = {
+      if (river == null) return peers.N3n(quartz);
+      if (slate == null || get(peers.HI) === "cloud") return peers.tE();
+      let timber = {
         baseBranch: get(peers.BI),
-        commonDir: n.commonDir,
-        cwd: r,
+        commonDir: river.commonDir,
+        cwd: slate,
         enabled: !a,
         hideWhitespace: get(peers.NI),
         hostConfig: get(peers.kI),
         includeUntrackedFiles: true,
-        root: n.root,
+        root: river.root
       };
-      return get(peers.rLi, o);
+      return get(peers.rLi, timber);
     });
-    VI = peers.Ma(peers.hT, ({ get }) => {
+    VI = peers.Ma(peers.hT, ({
+      get
+    }) => {
       if (get(peers.gE) === "last-turn-only") return peers.tE();
-      let t = get(peers.zI),
-        n = t.data ?? null,
-        r = get(peers.oLi),
+      let willow = get(peers.zI),
+        xenon = willow.data ?? null,
+        yellow = get(peers.oLi),
         i = get(peers.QIi),
-        a = r === "branch" && i.data == null && i.isFetching,
-        o = peers.gIi({
+        a = yellow === "branch" && i.data == null && i.isFetching,
+        zinc = peers.gIi({
           baseBranch: get(peers.BI),
           commitSha: get(peers.RI),
           cwd: get(peers.DI),
           enabled: get(peers.UI) && !a,
           hideWhitespace: get(peers.NI),
           hostConfig: get(peers.kI),
-          metadata: n,
-          source: r,
+          metadata: xenon,
+          source: yellow
         });
-      return o == null
-        ? n == null
-          ? peers.N3n(t)
-          : peers.tE()
-        : get(peers.nLi, o);
+      return zinc == null ? xenon == null ? peers.N3n(willow) : peers.tE() : get(peers.nLi, zinc);
     });
-    aLi = peers.Ma(peers.hT, ({ get }) => {
-      let t = get(peers.VI).data;
-      if (t?.type !== "success") return null;
-      let n = get(peers.zI).data?.root ?? null,
-        r = new Map();
-      for (let e of t.files) {
-        let t = peers.dIi({
-          gitRoot: n,
-          gitPath: e.path,
+    aLi = peers.Ma(peers.hT, ({
+      get
+    }) => {
+      let amber = get(peers.VI).data;
+      if (amber?.type !== "success") return null;
+      let basalt = get(peers.zI).data?.root ?? null,
+        cedar = new Map();
+      for (let daisy of amber.files) {
+        let ember = peers.dIi({
+          gitRoot: basalt,
+          gitPath: daisy.path
         });
-        r.has(t) || r.set(t, e);
+        cedar.has(ember) || cedar.set(ember, daisy);
       }
-      return r;
+      return cedar;
     });
-    HI = peers.Ma(peers.hT, ({ get, scope }) => {
-      return get(peers.gE) === "last-turn-only"
-        ? "local"
-        : scope.value.routeKind === "remote-thread"
-          ? "cloud"
-          : get(peers.YFi).isCodexWorktree
-            ? "worktree"
-            : "local";
+    HI = peers.Ma(peers.hT, ({
+      get,
+      scope
+    }) => {
+      return get(peers.gE) === "last-turn-only" ? "local" : scope.value.routeKind === "remote-thread" ? "cloud" : get(peers.YFi).isCodexWorktree ? "worktree" : "local";
     });
-    UI = peers.Ma(peers.hT, ({ get }) => {
+    UI = peers.Ma(peers.hT, ({
+      get
+    }) => {
       if (get(peers.gE) === "last-turn-only") return false;
-      let t = get(peers.LP);
-      return (
-        get(peers.DI) != null &&
-        get(peers.HI) !== "cloud" &&
-        t !== "last-turn" &&
-        (t !== "commit" || get(peers.RI) != null)
-      );
+      let flint = get(peers.LP);
+      return get(peers.DI) != null && get(peers.HI) !== "cloud" && flint !== "last-turn" && (flint !== "commit" || get(peers.RI) != null);
     });
-    oLi = peers.Ma(peers.hT, ({ get }) => {
-      let t = get(peers.LP);
-      return t === "last-turn" || (t === "commit" && get(peers.RI) == null)
-        ? null
-        : t;
+    oLi = peers.Ma(peers.hT, ({
+      get
+    }) => {
+      let garnet = get(peers.LP);
+      return garnet === "last-turn" || garnet === "commit" && get(peers.RI) == null ? null : garnet;
     });
-    sLi = peers.ka(peers.hT, (e, { get }) => {
-      let n = get(peers.zI).data,
-        r = get(peers.VI).data,
+    sLi = peers.ka(peers.hT, (hazel, {
+      get
+    }) => {
+      let ivory = get(peers.zI).data,
+        jasper = get(peers.VI).data,
         i = [...(get(peers.aLi)?.entries() ?? [])],
-        a = i.filter(([, t]) => {
-          return peers.vIi(t.changeKind) === e;
+        a = i.filter(([, prism]) => {
+          return peers.vIi(prism.changeKind) === hazel;
         }),
-        o = get(peers.DI),
+        kelp = get(peers.DI),
         s = get(peers.BI),
-        c = get(peers.RI),
-        l = get(peers.kI),
+        lotus = get(peers.RI),
+        mint = get(peers.kI),
         u = get(peers.AI),
-        d = get(peers.NI),
-        f = JSON.stringify({
+        nova = get(peers.NI),
+        olive = JSON.stringify({
           baseBranch: s,
-          commitSha: c,
-          commonDir: n?.commonDir ?? null,
-          cwd: o,
-          group: e,
-          hideWhitespace: d,
+          commitSha: lotus,
+          commonDir: ivory?.commonDir ?? null,
+          cwd: kelp,
+          group: hazel,
+          hideWhitespace: nova,
           hostKey: u,
-          root: n?.root ?? null,
-          source: r?.type === "success" ? r.source : null,
+          root: ivory?.root ?? null,
+          source: jasper?.type === "success" ? jasper.source : null
         });
       return {
-        queryKey:
-          n != null && r?.type === "success" && o != null && a.length > 0
-            ? [
-                ...peers.K3n(n.commonDir, n.root, u),
-                "review-diff",
-                "initial",
-                f,
-              ]
-            : ["git", "disabled", "review-diff", "initial", e],
-        queryFn: async ({ signal }) => {
-          if (r?.type !== "success" || o == null)
-            throw Error("Missing review diff metadata");
-          let t = await Promise.all(
-            a.map(async ([t, n]) => {
-              try {
-                let i = await peers.ZFi({
-                    baseBranch: s,
-                    changeKind: n.changeKind,
-                    commitSha: c,
-                    cwd: o,
-                    hideWhitespace: d,
-                    hostConfig: l,
-                    path: t,
-                    previousPath: n.previousPath,
-                    signal,
-                    snapshotGeneration: r.snapshotGeneration,
-                    source: r.source,
-                  }),
-                  a = i.type === "success" ? i.diff : "";
-                return [
-                  t,
-                  {
-                    changeKind: n.changeKind,
-                    diff: a.trim().length > 0 ? (peers.wI(a)[0] ?? null) : null,
-                    entry: i,
-                    error: null,
-                    previousPath: n.previousPath,
-                    revision: n.revision,
-                  },
-                ];
-              } catch (r) {
-                if (signal.aborted) throw r;
-                return [
-                  t,
-                  {
-                    changeKind: n.changeKind,
-                    diff: null,
-                    entry: null,
-                    error: r instanceof Error ? r : Error(String(r)),
-                    previousPath: n.previousPath,
-                    revision: n.revision,
-                  },
-                ];
-              }
-            }),
-          );
-          return new Map(t);
+        queryKey: ivory != null && jasper?.type === "success" && kelp != null && a.length > 0 ? [...peers.K3n(ivory.commonDir, ivory.root, u), "review-diff", "initial", olive] : ["git", "disabled", "review-diff", "initial", hazel],
+        queryFn: async ({
+          signal
+        }) => {
+          if (jasper?.type !== "success" || kelp == null) throw Error("Missing review diff metadata");
+          let quill = await Promise.all(a.map(async ([reef, sage]) => {
+            try {
+              let i = await peers.ZFi({
+                  baseBranch: s,
+                  changeKind: sage.changeKind,
+                  commitSha: lotus,
+                  cwd: kelp,
+                  hideWhitespace: nova,
+                  hostConfig: mint,
+                  path: reef,
+                  previousPath: sage.previousPath,
+                  signal,
+                  snapshotGeneration: jasper.snapshotGeneration,
+                  source: jasper.source
+                }),
+                a = i.type === "success" ? i.diff : "";
+              return [reef, {
+                changeKind: sage.changeKind,
+                diff: a.trim().length > 0 ? peers.wI(a)[0] ?? null : null,
+                entry: i,
+                error: null,
+                previousPath: sage.previousPath,
+                revision: sage.revision
+              }];
+            } catch (topaz) {
+              if (signal.aborted) throw topaz;
+              return [reef, {
+                changeKind: sage.changeKind,
+                diff: null,
+                entry: null,
+                error: topaz instanceof Error ? topaz : Error(String(topaz)),
+                previousPath: sage.previousPath,
+                revision: sage.revision
+              }];
+            }
+          }));
+          return new Map(quill);
         },
-        enabled:
-          get(peers.UI) &&
-          n != null &&
-          r?.type === "success" &&
-          o != null &&
-          a.length > 0 &&
-          !peers.jmi({
-            fileCount: i.length,
-            totalChangedBytes: 0,
-            totalChangedLines: i.reduce((accumulator, [, t]) => {
-              return accumulator + (t.additions ?? 0) + (t.deletions ?? 0);
-            }, 0),
-          }),
+        enabled: get(peers.UI) && ivory != null && jasper?.type === "success" && kelp != null && a.length > 0 && !peers.jmi({
+          fileCount: i.length,
+          totalChangedBytes: 0,
+          totalChangedLines: i.reduce((accumulator, [, ultra]) => {
+            return accumulator + (ultra.additions ?? 0) + (ultra.deletions ?? 0);
+          }, 0)
+        }),
         staleTime: 1 / 0,
-        placeholderData: (e, t) => {
-          if (t?.queryKey.at(-1) === f) return e;
-        },
+        placeholderData: (vapor, wheat) => {
+          if (wheat?.queryKey.at(-1) === olive) return vapor;
+        }
       };
     });
-    cLi = peers.ka(peers.hT, (e, { get, scope }) => {
-      let r = get(peers.zI).data,
+    cLi = peers.ka(peers.hT, (yarn, {
+      get,
+      scope
+    }) => {
+      let zephyr = get(peers.zI).data,
         i = get(peers.VI).data,
-        a = get(peers.aLi)?.get(e) ?? null,
-        o = get(peers.DI),
+        a = get(peers.aLi)?.get(yarn) ?? null,
+        acorn = get(peers.DI),
         s = get(peers.BI),
-        c = get(peers.RI),
-        l = get(peers.kI),
+        bloom = get(peers.RI),
+        coral = get(peers.kI),
         u = get(peers.AI),
-        d = get(peers.NI),
-        f = JSON.stringify({
+        drift = get(peers.NI),
+        eagle = JSON.stringify({
           baseBranch: s,
           changeKind: a?.changeKind ?? null,
-          commitSha: c,
-          commonDir: r?.commonDir ?? null,
-          cwd: o,
-          hideWhitespace: d,
+          commitSha: bloom,
+          commonDir: zephyr?.commonDir ?? null,
+          cwd: acorn,
+          hideWhitespace: drift,
           hostKey: u,
-          path: e,
+          path: yarn,
           previousPath: a?.previousPath ?? null,
-          root: r?.root ?? null,
-          source: i?.type === "success" ? i.source : null,
+          root: zephyr?.root ?? null,
+          source: i?.type === "success" ? i.source : null
         }),
-        p = get(
-          peers.sLi,
-          a?.changeKind === "untracked" ? "untracked" : "tracked",
-        ),
-        m = p.data?.get(e),
-        h =
-          (!p.isEnabled || p.data != null || p.isError) &&
-          (m?.changeKind !== a?.changeKind ||
-            m?.previousPath !== a?.previousPath ||
-            m?.revision !== a?.revision ||
-            m?.entry?.type !== "success");
+        p = get(peers.sLi, a?.changeKind === "untracked" ? "untracked" : "tracked"),
+        frost = p.data?.get(yarn),
+        glide = (!p.isEnabled || p.data != null || p.isError) && (frost?.changeKind !== a?.changeKind || frost?.previousPath !== a?.previousPath || frost?.revision !== a?.revision || frost?.entry?.type !== "success");
       return {
-        queryKey:
-          r != null && i?.type === "success" && a != null && o != null
-            ? [
-                ...peers.q3n({
-                  metadata: r,
-                  method: "review-diff",
-                  params: {
-                    ...peers._Ii({
-                      cwd: o,
-                      hideWhitespace: d,
-                      source: i.source,
-                      baseBranch: s,
-                      commitSha: c,
-                    }),
-                    files: [
-                      {
-                        path: e,
-                        changeKind: a.changeKind,
-                        previousPath: a.previousPath ?? undefined,
-                      },
-                    ],
-                    snapshotGeneration: i.snapshotGeneration,
-                  },
-                  hostKey: u,
-                }),
-                a.revision,
-              ]
-            : ["git", "disabled", "review-diff", e],
-        queryFn: async ({ signal }) => {
-          if (r == null || i?.type !== "success" || a == null || o == null)
-            throw Error("Missing review diff metadata");
-          let f = [...peers.K3n(r.commonDir, r.root, u), "review-diff"],
-            p = JSON.stringify([...f, i.snapshotGeneration]);
-          peers.zIi.get(scope) !== p &&
-            (peers.zIi.set(scope, p),
-            queueMicrotask(() => {
-              peers.zIi.get(scope) === p &&
-                scope.queryClient.removeQueries({
-                  predicate: ({ meta }) => {
-                    return (
-                      typeof meta?.reviewDiffSnapshotGeneration == "number" &&
-                      meta.reviewDiffSnapshotGeneration !== i.snapshotGeneration
-                    );
-                  },
-                  queryKey: f,
-                  type: "inactive",
-                });
-            }));
-          let m = async (r) => {
+        queryKey: zephyr != null && i?.type === "success" && a != null && acorn != null ? [...peers.q3n({
+          metadata: zephyr,
+          method: "review-diff",
+          params: {
+            ...peers._Ii({
+              cwd: acorn,
+              hideWhitespace: drift,
+              source: i.source,
+              baseBranch: s,
+              commitSha: bloom
+            }),
+            files: [{
+              path: yarn,
+              changeKind: a.changeKind,
+              previousPath: a.previousPath ?? undefined
+            }],
+            snapshotGeneration: i.snapshotGeneration
+          },
+          hostKey: u
+        }), a.revision] : ["git", "disabled", "review-diff", yarn],
+        queryFn: async ({
+          signal
+        }) => {
+          if (zephyr == null || i?.type !== "success" || a == null || acorn == null) throw Error("Missing review diff metadata");
+          let honey = [...peers.K3n(zephyr.commonDir, zephyr.root, u), "review-diff"],
+            p = JSON.stringify([...honey, i.snapshotGeneration]);
+          peers.zIi.get(scope) !== p && (peers.zIi.set(scope, p), queueMicrotask(() => {
+            peers.zIi.get(scope) === p && scope.queryClient.removeQueries({
+              predicate: ({
+                meta
+              }) => {
+                return typeof meta?.reviewDiffSnapshotGeneration == "number" && meta.reviewDiffSnapshotGeneration !== i.snapshotGeneration;
+              },
+              queryKey: honey,
+              type: "inactive"
+            });
+          }));
+          let iris = async jewel => {
             try {
               return await peers.ZFi({
                 baseBranch: s,
-                commitSha: c,
+                commitSha: bloom,
                 changeKind: a.changeKind,
-                cwd: o,
-                hideWhitespace: d,
-                hostConfig: l,
-                path: e,
+                cwd: acorn,
+                hideWhitespace: drift,
+                hostConfig: coral,
+                path: yarn,
                 previousPath: a.previousPath,
                 signal,
                 snapshotGeneration: i.snapshotGeneration,
-                source: i.source,
+                source: i.source
               });
-            } catch (e) {
-              if (!(e instanceof peers.cIi)) throw e;
-              if (
-                (await peers.jIi(scope, {
-                  invalidateWorkerSnapshot: false,
-                  staleSnapshotGeneration: i.snapshotGeneration,
-                })) &&
-                r
-              )
-                return m(false);
+            } catch (knoll) {
+              if (!(knoll instanceof peers.cIi)) throw knoll;
+              if ((await peers.jIi(scope, {
+                invalidateWorkerSnapshot: false,
+                staleSnapshotGeneration: i.snapshotGeneration
+              })) && jewel) return iris(false);
               throw new peers.ue({
-                silent: true,
+                silent: true
               });
             }
           };
-          return m(true);
+          return iris(true);
         },
-        enabled:
-          get(peers.UI) &&
-          r != null &&
-          i?.type === "success" &&
-          a != null &&
-          o != null &&
-          h,
+        enabled: get(peers.UI) && zephyr != null && i?.type === "success" && a != null && acorn != null && glide,
         retry: peers.FIi,
         retryDelay: peers.IIi,
         gcTime: peers.Hf.FIVE_SECONDS,
         staleTime: peers.Hf.FIVE_SECONDS,
         meta: {
-          reviewDiffComparisonIdentity: f,
-          reviewDiffSnapshotGeneration:
-            i?.type === "success" ? i.snapshotGeneration : undefined,
+          reviewDiffComparisonIdentity: eagle,
+          reviewDiffSnapshotGeneration: i?.type === "success" ? i.snapshotGeneration : undefined
         },
-        placeholderData: (e, t) => {
-          if (!(t == null || t.meta?.reviewDiffComparisonIdentity !== f))
-            return e;
-        },
+        placeholderData: (lunar, moss) => {
+          if (!(moss == null || moss.meta?.reviewDiffComparisonIdentity !== eagle)) return lunar;
+        }
       };
     });
-    lLi = peers.Ma(peers.hT, ({ get }) => {
+    lLi = peers.Ma(peers.hT, ({
+      get
+    }) => {
       return peers.PIi(get(peers.BIi));
     });
   });

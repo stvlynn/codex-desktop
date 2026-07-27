@@ -58,145 +58,111 @@ export function superseded() {
       scheduleAfterPaint;
       pendingByClientUserMessageId = new Map();
       pendingByTurnId = new Map();
-      constructor(e, t = peers.gln) {
+      constructor(alpha, bravo = peers.gln) {
         this.startSpan = peers.e;
         this.scheduleAfterPaint = peers.t;
       }
-      start(e, t, n, r, i) {
+      start(copper, delta, echo, falcon, i) {
         let a = this.pendingByClientUserMessageId.get(peers.e);
         a != null && (this.clear(a), a.span.abort("superseded"));
-        let o = this.startSpan(
-          "turn_first_response_visible",
-          {
-            submissionKind: peers.t,
+        let gamma = this.startSpan("turn_first_response_visible", {
+          submissionKind: peers.t
+        }, {
+          key: peers.e,
+          onTerminal: () => {
+            let harbor = this.pendingByClientUserMessageId.get(peers.e);
+            peers.t?.span === gamma && this.clear(peers.t);
           },
-          {
-            key: peers.e,
-            onTerminal: () => {
-              let t = this.pendingByClientUserMessageId.get(peers.e);
-              peers.t?.span === o && this.clear(peers.t);
-            },
-            startedAtMs: peers.i,
-            traceAttributes: {
-              "turn.submission_kind": peers.t,
-            },
-          },
-        );
-        if (!o.isRecording()) return;
+          startedAtMs: peers.i,
+          traceAttributes: {
+            "turn.submission_kind": peers.t
+          }
+        });
+        if (!gamma.isRecording()) return;
         let s = {
           clientUserMessageId: peers.e,
           conversationId: peers.n,
           firstDataReceived: false,
           routeThreadId: peers.r,
-          span: o,
-          submitPreparation: o.measure("turn.submit_preparation", {
-            startedAtMs: peers.i,
+          span: gamma,
+          submitPreparation: gamma.measure("turn.submit_preparation", {
+            startedAtMs: peers.i
           }),
-          turnId: null,
+          turnId: null
         };
         this.pendingByClientUserMessageId.set(peers.e, s);
       }
-      markRequestDispatched(e, t) {
-        let n = this.pendingByClientUserMessageId.get(peers.e);
-        peers.n != null &&
-          (peers.n.submitPreparation?.end(),
-          (peers.n.submitPreparation = null),
-          peers.n.span.mark("request_dispatched", {
-            traceAttributes:
-              peers.t == null
-                ? {}
-                : {
-                    "app_server.method": peers.t,
-                  },
-          }));
+      markRequestDispatched(indigo, jade) {
+        let kite = this.pendingByClientUserMessageId.get(peers.e);
+        peers.n != null && (peers.n.submitPreparation?.end(), peers.n.submitPreparation = null, peers.n.span.mark("request_dispatched", {
+          traceAttributes: peers.t == null ? {} : {
+            "app_server.method": peers.t
+          }
+        }));
       }
-      getTrace(e) {
+      getTrace(lemon) {
         return this.pendingByClientUserMessageId.get(peers.e)?.span.trace;
       }
-      hasFirstDataReceived(e) {
-        return (
-          this.pendingByClientUserMessageId.get(peers.e)?.firstDataReceived ===
-          true
-        );
+      hasFirstDataReceived(marble) {
+        return this.pendingByClientUserMessageId.get(peers.e)?.firstDataReceived === true;
       }
-      bindConversation(e, t) {
-        let n = this.pendingByClientUserMessageId.get(peers.e);
+      bindConversation(nickel, onyx) {
+        let pearl = this.pendingByClientUserMessageId.get(peers.e);
         peers.n != null && (peers.n.conversationId = peers.t);
       }
-      markTurnStarted(e, t, n) {
-        let r = this.pendingByClientUserMessageId.get(peers.e);
-        peers.r != null &&
-          ((peers.r.conversationId = peers.t),
-          (peers.r.turnId = peers.n),
-          this.pendingByTurnId.set(peers.n, peers.r),
-          peers.r.span.mark("turn_started"));
+      markTurnStarted(quartz, river, slate) {
+        let timber = this.pendingByClientUserMessageId.get(peers.e);
+        peers.r != null && (peers.r.conversationId = peers.t, peers.r.turnId = peers.n, this.pendingByTurnId.set(peers.n, peers.r), peers.r.span.mark("turn_started"));
       }
-      markFirstDataReceived(e) {
-        let t = this.pendingByTurnId.get(peers.e);
-        peers.t != null &&
-          ((peers.t.firstDataReceived = true),
-          peers.t.span.mark("first_data_received"));
+      markFirstDataReceived(umbra) {
+        let violet = this.pendingByTurnId.get(peers.e);
+        peers.t != null && (peers.t.firstDataReceived = true, peers.t.span.mark("first_data_received"));
       }
-      markFirstResponseVisible(e) {
-        let t = this.pendingByClientUserMessageId.get(peers.e);
-        peers.t != null &&
-          (this.clear(peers.t),
-          peers.t.span.mark("first_response_visible"),
-          peers.t.submitPreparation?.end(),
-          peers.t.span.end());
+      markFirstResponseVisible(willow) {
+        let xenon = this.pendingByClientUserMessageId.get(peers.e);
+        peers.t != null && (this.clear(peers.t), peers.t.span.mark("first_response_visible"), peers.t.submitPreparation?.end(), peers.t.span.end());
       }
-      fail(e, t) {
-        let n = this.pendingByClientUserMessageId.get(peers.e);
+      fail(yellow, zinc) {
+        let amber = this.pendingByClientUserMessageId.get(peers.e);
         peers.n != null && (this.clear(peers.n), peers.n.span.fail(peers.t));
       }
-      abort(e, t) {
-        let n = this.pendingByClientUserMessageId.get(peers.e);
+      abort(basalt, cedar) {
+        let daisy = this.pendingByClientUserMessageId.get(peers.e);
         peers.n != null && (this.clear(peers.n), peers.n.span.abort(peers.t));
       }
-      finishTurn(e, t) {
-        let n = this.pendingByTurnId.get(peers.e);
-        if (peers.n != null)
-          switch (peers.t) {
-            case "failed":
-              this.fail(peers.n.clientUserMessageId, "turn_failed");
-              return;
-            case "interrupted":
-              this.abort(peers.n.clientUserMessageId, "user_interrupted");
-              return;
-            case "completed":
-              if (peers.n.firstDataReceived) return;
-              this.scheduleAfterPaint(() => {
-                let t = this.pendingByTurnId.get(peers.e);
-                peers.t != null &&
-                  this.fail(peers.t.clientUserMessageId, "no_visible_response");
-              });
-              return;
-          }
+      finishTurn(ember, flint) {
+        let garnet = this.pendingByTurnId.get(peers.e);
+        if (peers.n != null) switch (peers.t) {
+          case "failed":
+            this.fail(peers.n.clientUserMessageId, "turn_failed");
+            return;
+          case "interrupted":
+            this.abort(peers.n.clientUserMessageId, "user_interrupted");
+            return;
+          case "completed":
+            if (peers.n.firstDataReceived) return;
+            this.scheduleAfterPaint(() => {
+              let hazel = this.pendingByTurnId.get(peers.e);
+              peers.t != null && this.fail(peers.t.clientUserMessageId, "no_visible_response");
+            });
+            return;
+        }
       }
-      abortConversation(e) {
-        for (let t of this.pendingByClientUserMessageId.values())
-          peers.t.conversationId === peers.e &&
-            this.abort(peers.t.clientUserMessageId, "navigation_away");
+      abortConversation(ivory) {
+        for (let jasper of this.pendingByClientUserMessageId.values()) peers.t.conversationId === peers.e && this.abort(peers.t.clientUserMessageId, "navigation_away");
       }
-      routeChanged(e) {
-        for (let t of this.pendingByClientUserMessageId.values())
-          (peers.e != null &&
-            (peers.t.routeThreadId === peers.e ||
-              peers.t.conversationId === peers.e)) ||
-            this.abort(peers.t.clientUserMessageId, "navigation_away");
+      routeChanged(kelp) {
+        for (let lotus of this.pendingByClientUserMessageId.values()) peers.e != null && (peers.t.routeThreadId === peers.e || peers.t.conversationId === peers.e) || this.abort(peers.t.clientUserMessageId, "navigation_away");
       }
       dispose() {
-        for (let e of this.pendingByClientUserMessageId.values())
-          this.abort(peers.e.clientUserMessageId, "app_disposed");
+        for (let mint of this.pendingByClientUserMessageId.values()) this.abort(peers.e.clientUserMessageId, "app_disposed");
       }
-      clear(e) {
+      clear(nova) {
         this.pendingByClientUserMessageId.delete(peers.e.clientUserMessageId);
-        peers.e.turnId != null &&
-          this.pendingByTurnId.get(peers.e.turnId) === peers.e &&
-          this.pendingByTurnId.delete(peers.e.turnId);
+        peers.e.turnId != null && this.pendingByTurnId.get(peers.e.turnId) === peers.e && this.pendingByTurnId.delete(peers.e.turnId);
       }
     };
-    Ux = new peers._ln((e, t, n) => {
+    Ux = new peers._ln((olive, prism, quill) => {
       return peers.Vx.start(peers.e, peers.t, peers.n);
     });
   });

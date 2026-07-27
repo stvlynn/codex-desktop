@@ -1,26 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Xq / l2r
+// Materialized via extractFn(internal `l2r`) / export `Xq`.
 
 export type DeferredAccountXqPeers = {
-  impl: (...args: unknown[]) => unknown;
+  GM: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  gXr: (...args: unknown[]) => unknown;
+  qM: (...args: unknown[]) => unknown;
+  xN: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredAccountXqPeers | null = null;
 
-/** Wire deferredAccountXq once companions land. */
+/** Wire deferredAccountXq peers once companions land. */
 export function setDeferredAccountXqPeers(next: DeferredAccountXqPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Xq` / internal `l2r`.
- * Stage-3 fill for bundle export Xq / l2r
  */
-export function deferredAccountXq(...args: unknown[]): unknown {
+export function deferredAccountXq() {
   if (peers == null) {
     throw new Error("deferredAccountXq peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.Ma(peers.GM, ({
+    get: e
+  }) => e(peers.qM) && peers.gXr(e(peers.xN)) != null);
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notes": "Wave DR: +2 Gut→usingCtx (babel usingCtx npm), fJ→deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop → index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path → composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite)",
+  "notes": "Wave DR: +2 Gut→usingCtx (babel usingCtx npm), fJ→deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop → index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path → composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite) | diagram-export-alias-semantic: IMPORT_MAP exports n/t/a/… → semantic public names after dropping cryptic re-export aliases",
   "chunks": {
     "app-initial-C-fROkKo": {
       "status": "in-progress",
@@ -1241,7 +1241,7 @@
         "skills/skill-scope-labels.ts",
         "skills/skill-scope-messages.ts",
         "skills/skills-appspage-apps-messages.ts",
-        "skills/skills-page-helpers.ts",
+        "skills/skills-page-helpers.tsx",
         "terminal/last-non-shell-command.ts",
         "themes/get-code-theme-registration.ts",
         "thread/remote-connection-status-messages.ts",
@@ -7212,29 +7212,29 @@
         "Vj": "skills/skill-scope-labels.ts",
         "Hj": "skills/skill-scope-labels.ts",
         "ni": "settings/settings-panel-loading.tsx",
-        "RK": "skills/skills-page-helpers.ts",
-        "fS": "skills/skills-page-helpers.ts",
-        "fvt": "skills/skills-page-helpers.ts",
-        "iO": "skills/skills-page-helpers.ts",
-        "rY": "skills/skills-page-helpers.ts",
-        "wm": "skills/skills-page-helpers.ts",
-        "ah": "skills/skills-page-helpers.ts",
-        "MQ": "skills/skills-page-helpers.ts",
-        "Ntt": "skills/skills-page-helpers.ts",
-        "$y": "skills/skills-page-helpers.ts",
-        "AJ": "skills/skills-page-helpers.ts",
-        "CJ": "skills/skills-page-helpers.ts",
-        "LK": "skills/skills-page-helpers.ts",
-        "Tlt": "skills/skills-page-helpers.ts",
-        "Tm": "skills/skills-page-helpers.ts",
-        "aO": "skills/skills-page-helpers.ts",
-        "cvt": "skills/skills-page-helpers.ts",
-        "dS": "skills/skills-page-helpers.ts",
-        "jQ": "skills/skills-page-helpers.ts",
-        "jlt": "skills/skills-page-helpers.ts",
-        "oh": "skills/skills-page-helpers.ts",
-        "wO": "skills/skills-page-helpers.ts",
-        "zB": "skills/skills-page-helpers.ts",
+        "RK": "skills/skills-page-helpers.tsx",
+        "fS": "skills/skills-page-helpers.tsx",
+        "fvt": "skills/skills-page-helpers.tsx",
+        "iO": "skills/skills-page-helpers.tsx",
+        "rY": "skills/skills-page-helpers.tsx",
+        "wm": "skills/skills-page-helpers.tsx",
+        "ah": "skills/skills-page-helpers.tsx",
+        "MQ": "skills/skills-page-helpers.tsx",
+        "Ntt": "skills/skills-page-helpers.tsx",
+        "$y": "skills/skills-page-helpers.tsx",
+        "AJ": "skills/skills-page-helpers.tsx",
+        "CJ": "skills/skills-page-helpers.tsx",
+        "LK": "skills/skills-page-helpers.tsx",
+        "Tlt": "skills/skills-page-helpers.tsx",
+        "Tm": "skills/skills-page-helpers.tsx",
+        "aO": "skills/skills-page-helpers.tsx",
+        "cvt": "skills/skills-page-helpers.tsx",
+        "dS": "skills/skills-page-helpers.tsx",
+        "jQ": "skills/skills-page-helpers.tsx",
+        "jlt": "skills/skills-page-helpers.tsx",
+        "oh": "skills/skills-page-helpers.tsx",
+        "wO": "skills/skills-page-helpers.tsx",
+        "zB": "skills/skills-page-helpers.tsx",
         "Bot": "utils/quote-shell-args.ts",
         "Gdt": "utils/workspace-paths.ts",
         "Jdt": "utils/workspace-paths.ts",
@@ -18459,48 +18459,48 @@
     "chunk-4BX2VUAB-DTGlfXuH": {
       "restored": "diagrams/populate-common-db.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initPopulateCommonDbChunk",
+        "t": "populateCommonDb"
       },
       "status": "done"
     },
     "chunk-FMBD7UC4-Gf0hySpu": {
       "restored": "diagrams/get-icon-styles.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initGetIconStylesChunk",
+        "t": "getIconStyles"
       },
       "status": "done"
     },
     "chunk-QZHKN3VN-CPhnPk8a": {
       "restored": "diagrams/imperative-state.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initImperativeStateChunk",
+        "t": "ImperativeState"
       },
       "status": "done"
     },
     "chunk-4BX2VUAB-Dauv5mOB": {
       "restored": "diagrams/populate-common-db-alt.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initPopulateCommonDbChunk",
+        "t": "populateCommonDb"
       },
       "status": "done"
     },
     "chunk-FMBD7UC4-DXlVnBF9": {
       "restored": "diagrams/get-icon-styles-alt.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initGetIconStylesChunk",
+        "t": "getIconStyles"
       },
       "status": "done"
     },
     "chunk-QZHKN3VN-DrP8xepp": {
       "restored": "diagrams/imperative-state-alt.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initImperativeStateChunk",
+        "t": "ImperativeState"
       },
       "status": "done"
     },
@@ -18756,9 +18756,9 @@
     "chunk-XPW4576I-D2l7hhLl": {
       "restored": "utils/mermaid-js-yaml-core.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "initMermaidJsYamlCore",
+        "r": "yamlLoad",
+        "t": "yamlCoreSchema"
       },
       "status": "done"
     },
@@ -18781,9 +18781,9 @@
     "chunk-MI3HLSF2-BVJpT9C8": {
       "restored": "utils/mermaid-js-yaml-alt.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "initMermaidJsYamlAlt",
+        "r": "yamlLoad",
+        "t": "yamlCoreSchema"
       },
       "status": "done"
     },
@@ -21491,101 +21491,101 @@
     "chunk-55IACEB6-CEXn3bFg": {
       "restored": "diagrams/get-diagram-element-alt.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initGetDiagramElementChunk",
+        "t": "getDiagramElement"
       },
       "status": "done"
     },
     "chunk-55IACEB6-DSTmhE9K": {
       "restored": "diagrams/get-diagram-element.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initGetDiagramElementChunk",
+        "t": "getDiagramElement"
       },
       "status": "done"
     },
     "chunk-QN33PNHL-fLNR_LAd": {
       "restored": "diagrams/setup-viewport-for-svg.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initSetupViewPortForSvgChunk",
+        "t": "setupViewPortForSVG"
       },
       "status": "done"
     },
     "chunk-TZMSLE5B-CaTfcsvn": {
       "restored": "diagrams/svg-drawing-helpers.ts",
       "exports": {
-        "a": "a",
-        "c": "c",
-        "i": "i",
-        "n": "n",
-        "o": "o",
-        "r": "r",
-        "s": "s",
-        "t": "t"
+        "a": "drawText",
+        "c": "initSvgDrawingHelpersChunk",
+        "i": "drawRect",
+        "n": "drawEmbeddedImage",
+        "o": "getNoteRect",
+        "r": "drawImage",
+        "s": "getTextObj",
+        "t": "drawBackgroundRect"
       },
       "status": "done"
     },
     "chunk-ATLVNIR6-tgYJRZ75": {
       "restored": "diagrams/style-helpers.ts",
       "exports": {
-        "a": "a",
-        "i": "i",
-        "n": "n",
-        "o": "o",
-        "r": "r",
-        "t": "t"
+        "a": "styles2String",
+        "i": "solidStateFill",
+        "n": "initStyleHelpersChunk",
+        "o": "userNodeOverrides",
+        "r": "isLabelStyle",
+        "t": "compileStyles"
       },
       "status": "done"
     },
     "chunk-EXTU4WIE-DCR2S2HQ": {
       "restored": "diagrams/select-svg-element.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initSelectSvgElementChunk",
+        "t": "selectSvgElement"
       },
       "status": "done"
     },
     "chunk-EDXVE4YY-D2GuGG6J": {
       "restored": "diagrams/setup-viewport-for-svg-alt.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initSetupViewPortForSvgChunk",
+        "t": "setupViewPortForSVG"
       },
       "status": "done"
     },
     "chunk-YZCP3GAM-BKlGBSlB": {
       "restored": "diagrams/svg-drawing-helpers-alt.ts",
       "exports": {
-        "a": "a",
-        "c": "c",
-        "i": "i",
-        "l": "l",
-        "n": "n",
-        "o": "o",
-        "r": "r",
-        "s": "s",
-        "t": "t"
+        "a": "drawRect",
+        "c": "getTextObj",
+        "i": "drawImage",
+        "l": "initSvgDrawingHelpersChunk",
+        "n": "drawBackgroundRect",
+        "o": "drawText",
+        "r": "drawEmbeddedImage",
+        "s": "getNoteRect",
+        "t": "createTooltip"
       },
       "status": "done"
     },
     "chunk-426QAEUC-Ba0rbZj9": {
       "restored": "diagrams/select-svg-element-alt.ts",
       "exports": {
-        "n": "n",
-        "t": "t"
+        "n": "initSelectSvgElementChunk",
+        "t": "selectSvgElement"
       },
       "status": "done"
     },
     "chunk-X2U36JSP-CWOrW9Mm": {
       "restored": "diagrams/style-helpers-alt.ts",
       "exports": {
-        "a": "a",
-        "i": "i",
-        "n": "n",
-        "o": "o",
-        "r": "r",
-        "t": "t"
+        "a": "styles2String",
+        "i": "solidStateFill",
+        "n": "initStyleHelpersChunk",
+        "o": "userNodeOverrides",
+        "r": "isLabelStyle",
+        "t": "compileStyles"
       },
       "status": "done"
     },

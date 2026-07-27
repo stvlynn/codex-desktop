@@ -1,26 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ii / z$l
+// Materialized via extractFn(internal `z$l`) / export `Ii`.
 
 export type OpenInBrowserPeers = {
-  impl: (...args: unknown[]) => unknown;
+  L$l: (...args: unknown[]) => unknown;
+  R$l: (...args: unknown[]) => unknown;
+  Yf: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: OpenInBrowserPeers | null = null;
 
-/** Wire openInBrowser once companions land. */
+/** Wire openInBrowser peers once companions land. */
 export function setOpenInBrowserPeers(next: OpenInBrowserPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Ii` / internal `z$l`.
- * Stage-3 fill for bundle export Ii / z$l
  */
-export function openInBrowser(...args: unknown[]): unknown {
+export function openInBrowser() {
   if (peers == null) {
     throw new Error("openInBrowser peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.e(() => {
+    peers.Yf(), L$l = `1728613635`, R$l = `https://chatgpt.com/gifts/credits`;
+  });
 }

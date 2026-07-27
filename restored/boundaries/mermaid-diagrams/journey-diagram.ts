@@ -33,14 +33,8 @@ import {
   select,
   ensureD3SelectionRuntimeT,
 } from "../../vendor/d3-axis-current-runtime";
-import { n, t } from "../../diagrams/get-icon-styles-alt";
-import {
-  a as chunkTZMSLE5BA,
-  c,
-  i,
-  o,
-  t as chunkTZMSLE5BT,
-} from "../../diagrams/svg-drawing-helpers";
+import { initGetIconStylesChunk as n, getIconStyles as t } from "../../diagrams/get-icon-styles-alt";
+import { drawText as chunkTZMSLE5BA, initSvgDrawingHelpersChunk as c, drawRect as i, getNoteRect as o, drawBackgroundRect as chunkTZMSLE5BT } from "../../diagrams/svg-drawing-helpers";
 function journeyDiagramXKPGCS4QHelper1(journeyDiagramXKPGCS4QInput11) {
   let journeyDiagramXKPGCS4QBinding98 = _chunkABZYJK2DB().journey,
     journeyDiagramXKPGCS4QBinding99 =

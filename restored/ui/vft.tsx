@@ -21,7 +21,15 @@ export function setVftPeers(next: VftPeers): void {
 /**
  * Bundle export `vft` / internal `jBe`.
  */
-export const vft = ({ children, id, inherit = true }) => {
+export const vft = ({
+  children,
+  id,
+  inherit = true,
+}: {
+  children?: unknown;
+  id?: unknown;
+  inherit?: boolean;
+}) => {
   const Provider = peers.FMe.Provider;
   if (peers == null) {
     throw new Error("vft peers are not configured");

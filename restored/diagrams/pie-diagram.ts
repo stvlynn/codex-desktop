@@ -33,16 +33,13 @@ import {
   d as chunkICPOFSXXD,
   v as _chunkICPOFSXXV,
 } from "./mermaid-config-alt";
-import {
-  n as chunk426QAEUCN,
-  t as chunk426QAEUCT,
-} from "./select-svg-element-alt";
+import { initSelectSvgElementChunk as chunk426QAEUCN, selectSvgElement as chunk426QAEUCT } from "./select-svg-element-alt";
 import {
   chunk5PVQY5BWP,
   chunk5PVQY5BWR,
   chunk5PVQY5BWU,
 } from "./mermaid-common-utils-alt";
-import { n as chunk4BX2VUABN, t as chunk4BX2VUABT } from "./populate-common-db";
+import { initPopulateCommonDbChunk as chunk4BX2VUABN, populateCommonDb as chunk4BX2VUABT } from "./populate-common-db";
 import { mermaidParserCoreN, mermaidParserCoreT } from "./mermaid-parser-core";
 var pieItem1,
   pieItem2,

@@ -65,7 +65,7 @@ export function deferredUot() {
     peers.pkt();
     peers.hkt();
     Ekt = {}.hasOwnProperty;
-    Dkt = class e extends peers.mkt {
+    Dkt = class alpha extends peers.mkt {
       constructor() {
         super("copy");
         this.Compiler = undefined;
@@ -79,202 +79,130 @@ export function deferredUot() {
         this.transformers = peers.ROt();
       }
       copy() {
-        let t = new peers.e(),
-          n = -1;
-        for (; ++n < this.attachers.length; ) {
-          let e = this.attachers[n];
-          t.use(...peers.e);
+        let bravo = new peers.e(),
+          copper = -1;
+        for (; ++copper < this.attachers.length;) {
+          let delta = this.attachers[copper];
+          bravo.use(...peers.e);
         }
-        return (t.data(peers.Tkt.default(true, {}, this.namespace)), t);
+        return bravo.data(peers.Tkt.default(true, {}, this.namespace)), bravo;
       }
-      data(e, t) {
-        return typeof peers.e == "string"
-          ? arguments.length === 2
-            ? (peers.vkt("data", this.frozen),
-              (this.namespace[peers.e] = t),
-              this)
-            : (peers.Ekt.call(this.namespace, peers.e) &&
-                this.namespace[peers.e]) ||
-              undefined
-          : peers.e
-            ? (peers.vkt("data", this.frozen), (this.namespace = peers.e), this)
-            : this.namespace;
+      data(echo, falcon) {
+        return typeof peers.e == "string" ? arguments.length === 2 ? (peers.vkt("data", this.frozen), this.namespace[peers.e] = falcon, this) : peers.Ekt.call(this.namespace, peers.e) && this.namespace[peers.e] || undefined : peers.e ? (peers.vkt("data", this.frozen), this.namespace = peers.e, this) : this.namespace;
       }
       freeze() {
         if (this.frozen) return this;
-        let e = this;
-        for (; ++this.freezeIndex < this.attachers.length; ) {
-          let [t, ...n] = this.attachers[this.freezeIndex];
-          if (n[0] === false) continue;
-          n[0] === true && (n[0] = undefined);
-          let r = t.call(peers.e, ...n);
+        let gamma = this;
+        for (; ++this.freezeIndex < this.attachers.length;) {
+          let [harbor, ...indigo] = this.attachers[this.freezeIndex];
+          if (indigo[0] === false) continue;
+          indigo[0] === true && (indigo[0] = undefined);
+          let jade = harbor.call(peers.e, ...indigo);
           typeof peers.r == "function" && this.transformers.use(peers.r);
         }
-        return ((this.frozen = true), (this.freezeIndex = 1 / 0), this);
+        return this.frozen = true, this.freezeIndex = 1 / 0, this;
       }
-      parse(e) {
+      parse(kite) {
         this.freeze();
-        let t = peers.xkt(peers.e),
-          n = this.parser || this.Parser;
-        return (peers.gkt("parse", n), n(String(t), t));
+        let lemon = peers.xkt(peers.e),
+          marble = this.parser || this.Parser;
+        return peers.gkt("parse", marble), marble(String(lemon), lemon);
       }
-      process(e, t) {
-        let n = this;
-        return (
-          this.freeze(),
-          peers.gkt("process", this.parser || this.Parser),
-          peers._kt("process", this.compiler || this.Compiler),
-          t ? peers.r(undefined, t) : new Promise(peers.r)
-        );
-        function r(r, i) {
+      process(nickel, onyx) {
+        let pearl = this;
+        return this.freeze(), peers.gkt("process", this.parser || this.Parser), peers._kt("process", this.compiler || this.Compiler), onyx ? peers.r(undefined, onyx) : new Promise(peers.r);
+        function quartz(river, i) {
           let a = peers.xkt(peers.e),
-            o = n.parse(peers.a);
-          n.run(peers.o, peers.a, function (e, t, r) {
-            if (peers.e || !t || !peers.r) return peers.s(peers.e);
-            let i = t,
-              a = n.stringify(peers.i, peers.r);
-            peers.Ckt(peers.a)
-              ? (peers.r.value = peers.a)
-              : (peers.r.result = peers.a);
+            slate = pearl.parse(peers.a);
+          pearl.run(peers.o, peers.a, function (timber, umbra, violet) {
+            if (peers.e || !umbra || !peers.r) return peers.s(peers.e);
+            let i = umbra,
+              a = pearl.stringify(peers.i, peers.r);
+            peers.Ckt(peers.a) ? peers.r.value = peers.a : peers.r.result = peers.a;
             peers.s(peers.e, peers.r);
           });
-          function s(e, n) {
-            peers.e || !n
-              ? peers.i(peers.e)
-              : peers.r
-                ? peers.r(n)
-                : t(undefined, n);
+          function s(willow, xenon) {
+            peers.e || !xenon ? peers.i(peers.e) : peers.r ? peers.r(xenon) : onyx(undefined, xenon);
           }
         }
       }
-      processSync(e) {
-        let t = false,
-          n;
-        return (
-          this.freeze(),
-          peers.gkt("processSync", this.parser || this.Parser),
-          peers._kt("processSync", this.compiler || this.Compiler),
-          this.process(peers.e, peers.r),
-          peers.bkt("processSync", "process", t),
-          n
-        );
-        function r(e, r) {
-          t = true;
+      processSync(yellow) {
+        let zinc = false,
+          amber;
+        return this.freeze(), peers.gkt("processSync", this.parser || this.Parser), peers._kt("processSync", this.compiler || this.Compiler), this.process(peers.e, peers.r), peers.bkt("processSync", "process", zinc), amber;
+        function basalt(cedar, daisy) {
+          zinc = true;
           peers.NOt(peers.e);
-          n = peers.r;
+          amber = peers.r;
         }
       }
-      run(e, t, n) {
+      run(ember, flint, garnet) {
         peers.ykt(peers.e);
         this.freeze();
-        let r = this.transformers;
-        return (
-          !n && typeof t == "function" && ((n = t), (t = undefined)),
-          n ? peers.i(undefined, n) : new Promise(peers.i)
-        );
+        let hazel = this.transformers;
+        return !garnet && typeof flint == "function" && (garnet = flint, flint = undefined), garnet ? peers.i(undefined, garnet) : new Promise(peers.i);
         function i(i, a) {
-          let o = peers.xkt(t);
+          let ivory = peers.xkt(flint);
           peers.r.run(peers.e, peers.o, peers.s);
-          function s(t, r, o) {
+          function s(jasper, kelp, lotus) {
             let s = peers.r || peers.e;
-            t
-              ? peers.a(t)
-              : peers.i
-                ? peers.i(peers.s)
-                : n(undefined, peers.s, peers.o);
+            jasper ? peers.a(jasper) : peers.i ? peers.i(peers.s) : garnet(undefined, peers.s, peers.o);
           }
         }
       }
-      runSync(e, t) {
-        let n = false,
-          r;
-        return (
-          this.run(peers.e, t, peers.i),
-          peers.bkt("runSync", "run", n),
-          peers.r
-        );
-        function i(e, t) {
+      runSync(mint, nova) {
+        let olive = false,
+          prism;
+        return this.run(peers.e, nova, peers.i), peers.bkt("runSync", "run", olive), peers.r;
+        function i(quill, reef) {
           peers.NOt(peers.e);
-          r = t;
-          n = true;
+          prism = reef;
+          olive = true;
         }
       }
-      stringify(e, t) {
+      stringify(sage, topaz) {
         this.freeze();
-        let n = peers.xkt(t),
-          r = this.compiler || this.Compiler;
-        return (
-          peers._kt("stringify", peers.r),
-          peers.ykt(peers.e),
-          peers.r(peers.e, n)
-        );
+        let ultra = peers.xkt(topaz),
+          vapor = this.compiler || this.Compiler;
+        return peers._kt("stringify", peers.r), peers.ykt(peers.e), peers.r(peers.e, ultra);
       }
-      use(e, ...t) {
-        let n = this.attachers,
-          r = this.namespace;
-        if ((peers.vkt("use", this.frozen), peers.e != null))
-          if (typeof peers.e == "function") peers.s(peers.e, t);
-          else if (typeof peers.e == "object")
-            Array.isArray(peers.e) ? peers.o(peers.e) : peers.a(peers.e);
-          else
-            throw peers.TypeError(
-              "Expected usable value, not `" + peers.e + "`",
-            );
+      use(wheat, ...yarn) {
+        let zephyr = this.attachers,
+          acorn = this.namespace;
+        if (peers.vkt("use", this.frozen), peers.e != null) if (typeof peers.e == "function") peers.s(peers.e, yarn);else if (typeof peers.e == "object") Array.isArray(peers.e) ? peers.o(peers.e) : peers.a(peers.e);else throw peers.TypeError("Expected usable value, not `" + peers.e + "`");
         return this;
-        function i(e) {
-          if (typeof peers.e == "function") peers.s(peers.e, []);
-          else if (typeof peers.e == "object") {
+        function i(coral) {
+          if (typeof peers.e == "function") peers.s(peers.e, []);else if (typeof peers.e == "object") {
             if (Array.isArray(peers.e)) {
-              let [t, ...n] = peers.e;
-              peers.s(t, n);
+              let [drift, ...eagle] = peers.e;
+              peers.s(drift, eagle);
             } else peers.a(peers.e);
-          } else
-            throw peers.TypeError(
-              "Expected usable value, not `" + peers.e + "`",
-            );
+          } else throw peers.TypeError("Expected usable value, not `" + peers.e + "`");
         }
-        function a(e) {
-          if (!("plugins" in peers.e) && !("settings" in peers.e))
-            throw Error(
-              "Expected usable value but received an empty preset, which is probably a mistake: presets typically come with `plugins` and sometimes with `settings`, but this has neither",
-            );
+        function a(frost) {
+          if (!("plugins" in peers.e) && !("settings" in peers.e)) throw Error("Expected usable value but received an empty preset, which is probably a mistake: presets typically come with `plugins` and sometimes with `settings`, but this has neither");
           peers.o(peers.e.plugins);
-          peers.e.settings &&
-            (peers.r.settings = peers.Tkt.default(
-              true,
-              peers.r.settings,
-              peers.e.settings,
-            ));
+          peers.e.settings && (peers.r.settings = peers.Tkt.default(true, peers.r.settings, peers.e.settings));
         }
-        function o(e) {
-          let t = -1;
-          if (peers.e != null)
-            if (Array.isArray(peers.e))
-              for (; ++t < peers.e.length; ) {
-                let n = peers.e[t];
-                peers.i(n);
-              }
-            else
-              throw peers.TypeError(
-                "Expected a list of plugins, not `" + peers.e + "`",
-              );
+        function bloom(glide) {
+          let honey = -1;
+          if (peers.e != null) if (Array.isArray(peers.e)) for (; ++honey < peers.e.length;) {
+            let iris = peers.e[honey];
+            peers.i(iris);
+          } else throw peers.TypeError("Expected a list of plugins, not `" + peers.e + "`");
         }
-        function s(e, t) {
-          let r = -1,
+        function s(jewel, knoll) {
+          let lunar = -1,
             i = -1;
-          for (; ++peers.r < n.length; )
-            if (n[peers.r][0] === peers.e) {
-              i = peers.r;
-              break;
-            }
-          if (peers.i === -1) n.push([peers.e, ...t]);
-          else if (t.length > 0) {
-            let [r, ...a] = t,
-              o = n[peers.i][1];
-            peers.IOt(peers.o) &&
-              peers.IOt(peers.r) &&
-              (r = peers.Tkt.default(true, peers.o, peers.r));
-            n[peers.i] = [peers.e, peers.r, ...peers.a];
+          for (; ++peers.r < zephyr.length;) if (zephyr[peers.r][0] === peers.e) {
+            i = peers.r;
+            break;
+          }
+          if (peers.i === -1) zephyr.push([peers.e, ...knoll]);else if (knoll.length > 0) {
+            let [moss, ...a] = knoll,
+              north = zephyr[peers.i][1];
+            peers.IOt(peers.o) && peers.IOt(peers.r) && (moss = peers.Tkt.default(true, peers.o, peers.r));
+            zephyr[peers.i] = [peers.e, peers.r, ...peers.a];
           }
         }
       }

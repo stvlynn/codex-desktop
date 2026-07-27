@@ -25,26 +25,19 @@ import {
   K,
   L,
 } from "../../diagrams/mermaid-config";
-import { n, t as chunkEXTU4WIET } from "../../diagrams/select-svg-element";
+import { selectSvgElement as n, initSelectSvgElementChunk as chunkEXTU4WIET } from "../../diagrams/select-svg-element";
 import { chunkS3R3BYOJU } from "./mermaid-common-utils";
 import { chunkJA3XYJ7ZA } from "./mermaid-create-text";
-import {
-  n as chunkFMBD7UC4N,
-  t as chunkFMBD7UC4T,
-} from "../../diagrams/get-icon-styles-alt";
+import { initGetIconStylesChunk as chunkFMBD7UC4N, getIconStyles as chunkFMBD7UC4T } from "../../diagrams/get-icon-styles-alt";
 import { initSubGraphTitleMarginsChunk as chunkCVBHYZKIN } from "../../diagrams/subgraph-title-margins";
-import { n as chunkATLVNIR6N } from "../../diagrams/style-helpers";
+import { initStyleHelpersChunk as chunkATLVNIR6N } from "../../diagrams/style-helpers";
 import {
   chunkJZLCHNYAI,
   chunkJZLCHNYAD,
   chunkJZLCHNYAL,
   chunkJZLCHNYAO,
 } from "./mermaid-flowchart-nodes";
-import {
-  n as chunkMI3HLSF2N,
-  r,
-  t as chunkMI3HLSF2T,
-} from "../../utils/mermaid-js-yaml-alt";
+import { initMermaidJsYamlAlt as chunkMI3HLSF2N, yamlLoad as r, yamlCoreSchema as chunkMI3HLSF2T } from "../../utils/mermaid-js-yaml-alt";
 var kanbanDefinition3W4ZIXB7Binding1,
   kanbanDefinition3W4ZIXB7Binding2,
   kanbanDefinition3W4ZIXB7Binding3,

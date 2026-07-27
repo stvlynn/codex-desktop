@@ -115,3 +115,6 @@ export function openArtifactPreview(e: unknown, t: unknown, n: unknown) {
     !0
   );
 }
+
+/** Bundle path ESM init retained as no-op. */
+export function ensureHomePrefillArtifactPreviewDepsInit(): void {}

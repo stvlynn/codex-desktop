@@ -1,26 +1,23 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ni / B$l
+// Materialized via extractFn(internal `B$l`) / export `Ni`.
 
-export type BindDeferredAccountNiPeers = {
-  impl: (...args: unknown[]) => unknown;
+export type DeferredAccountNiPeers = {
+  kp: (...args: unknown[]) => unknown;
 };
 
-let peers: BindDeferredAccountNiPeers | null = null;
+let peers: DeferredAccountNiPeers | null = null;
 
-/** Wire bindDeferredAccountNi once companions land. */
-export function setBindDeferredAccountNiPeers(next: BindDeferredAccountNiPeers): void {
+/** Wire deferredAccountNi peers once companions land. */
+export function setDeferredAccountNiPeers(next: DeferredAccountNiPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Ni` / internal `B$l`.
- * Stage-3 fill for bundle export Ni / B$l
  */
-export function bindDeferredAccountNi(...args: unknown[]): unknown {
+export function deferredAccountNi() {
   if (peers == null) {
-    throw new Error("bindDeferredAccountNi peers are not configured");
+    throw new Error("deferredAccountNi peers are not configured");
   }
-  return peers.impl(...args);
+  return peers.kp(`has-seen-gift-credits-home-banner`, !1);
 }

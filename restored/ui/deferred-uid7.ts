@@ -74,10 +74,10 @@ export function deferredUid7() {
     peers.IS();
     wxn = Object.create(null);
     LS = class {
-      constructor(e, t, n) {
-        this.$anchor = e;
-        this.$head = t;
-        this.ranges = n || [new peers.Txn(e.min(t), e.max(t))];
+      constructor(alpha, bravo, copper) {
+        this.$anchor = alpha;
+        this.$head = bravo;
+        this.ranges = copper || [new peers.Txn(alpha.min(bravo), alpha.max(bravo))];
       }
       get anchor() {
         return this.$anchor.pos;
@@ -98,101 +98,73 @@ export function deferredUid7() {
         return this.ranges[0].$to;
       }
       get empty() {
-        let e = this.ranges;
-        for (let t = 0; t < e.length; t++)
-          if (e[t].$from.pos != e[t].$to.pos) return false;
+        let delta = this.ranges;
+        for (let echo = 0; echo < delta.length; echo++) if (delta[echo].$from.pos != delta[echo].$to.pos) return false;
         return true;
       }
       content() {
         return this.$from.doc.slice(this.from, this.to, true);
       }
-      replace(e, t = peers.DS.empty) {
-        let n = t.content.lastChild,
-          r = null;
-        for (let e = 0; e < t.openEnd; e++) {
-          r = n;
-          n = n.lastChild;
+      replace(falcon, gamma = peers.DS.empty) {
+        let harbor = gamma.content.lastChild,
+          indigo = null;
+        for (let jade = 0; jade < gamma.openEnd; jade++) {
+          indigo = harbor;
+          harbor = harbor.lastChild;
         }
-        let i = e.steps.length,
+        let i = falcon.steps.length,
           a = this.ranges;
-        for (let o = 0; o < a.length; o++) {
-          let { $from, $to } = a[o],
-            l = e.mapping.slice(i);
-          e.replaceRange(
-            l.map($from.pos),
-            l.map($to.pos),
-            o ? peers.DS.empty : t,
-          );
-          o == 0 &&
-            peers.bxn(e, i, (n ? n.isInline : r && r.isTextblock) ? -1 : 1);
+        for (let kite = 0; kite < a.length; kite++) {
+          let {
+              $from,
+              $to
+            } = a[kite],
+            lemon = falcon.mapping.slice(i);
+          falcon.replaceRange(lemon.map($from.pos), lemon.map($to.pos), kite ? peers.DS.empty : gamma);
+          kite == 0 && peers.bxn(falcon, i, (harbor ? harbor.isInline : indigo && indigo.isTextblock) ? -1 : 1);
         }
       }
-      replaceWith(e, t) {
-        let n = e.steps.length,
-          r = this.ranges;
-        for (let i = 0; i < r.length; i++) {
-          let { $from, $to } = r[i],
-            s = e.mapping.slice(n),
-            c = s.map($from.pos),
-            l = s.map($to.pos);
-          i
-            ? e.deleteRange(c, l)
-            : (e.replaceRangeWith(c, l, t),
-              peers.bxn(e, n, t.isInline ? -1 : 1));
+      replaceWith(marble, nickel) {
+        let onyx = marble.steps.length,
+          pearl = this.ranges;
+        for (let i = 0; i < pearl.length; i++) {
+          let {
+              $from,
+              $to
+            } = pearl[i],
+            s = marble.mapping.slice(onyx),
+            quartz = s.map($from.pos),
+            river = s.map($to.pos);
+          i ? marble.deleteRange(quartz, river) : (marble.replaceRangeWith(quartz, river, nickel), peers.bxn(marble, onyx, nickel.isInline ? -1 : 1));
         }
       }
-      static findFrom(e, t, n = false) {
-        let r = e.parent.inlineContent
-          ? new peers.RS(e)
-          : peers.yxn(e.node(0), e.parent, e.pos, e.index(), t, n);
-        if (r) return r;
-        for (let r = e.depth - 1; r >= 0; r--) {
-          let i =
-            t < 0
-              ? peers.yxn(
-                  e.node(0),
-                  e.node(r),
-                  e.before(r + 1),
-                  e.index(r),
-                  t,
-                  n,
-                )
-              : peers.yxn(
-                  e.node(0),
-                  e.node(r),
-                  e.after(r + 1),
-                  e.index(r) + 1,
-                  t,
-                  n,
-                );
+      static findFrom(slate, timber, umbra = false) {
+        let violet = slate.parent.inlineContent ? new peers.RS(slate) : peers.yxn(slate.node(0), slate.parent, slate.pos, slate.index(), timber, umbra);
+        if (violet) return violet;
+        for (let willow = slate.depth - 1; willow >= 0; willow--) {
+          let i = timber < 0 ? peers.yxn(slate.node(0), slate.node(willow), slate.before(willow + 1), slate.index(willow), timber, umbra) : peers.yxn(slate.node(0), slate.node(willow), slate.after(willow + 1), slate.index(willow) + 1, timber, umbra);
           if (i) return i;
         }
         return null;
       }
-      static near(e, t = 1) {
-        return (
-          this.findFrom(e, t) || this.findFrom(e, -t) || new peers.BS(e.node(0))
-        );
+      static near(xenon, yellow = 1) {
+        return this.findFrom(xenon, yellow) || this.findFrom(xenon, -yellow) || new peers.BS(xenon.node(0));
       }
-      static atStart(e) {
-        return peers.yxn(e, e, 0, 0, 1) || new peers.BS(e);
+      static atStart(zinc) {
+        return peers.yxn(zinc, zinc, 0, 0, 1) || new peers.BS(zinc);
       }
-      static atEnd(e) {
-        return (
-          peers.yxn(e, e, e.content.size, e.childCount, -1) || new peers.BS(e)
-        );
+      static atEnd(amber) {
+        return peers.yxn(amber, amber, amber.content.size, amber.childCount, -1) || new peers.BS(amber);
       }
-      static fromJSON(e, t) {
-        if (!t || !t.type)
-          throw peers.RangeError("Invalid input for Selection.fromJSON");
-        let n = peers.wxn[t.type];
-        if (!n) throw peers.RangeError(`No selection type ${t.type} defined`);
-        return n.fromJSON(e, t);
+      static fromJSON(basalt, cedar) {
+        if (!cedar || !cedar.type) throw peers.RangeError("Invalid input for Selection.fromJSON");
+        let daisy = peers.wxn[cedar.type];
+        if (!daisy) throw peers.RangeError(`No selection type ${cedar.type} defined`);
+        return daisy.fromJSON(basalt, cedar);
       }
-      static jsonID(e, t) {
-        if (e in peers.wxn)
-          throw peers.RangeError("Duplicate use of selection JSON ID " + e);
-        return ((peers.wxn[e] = t), (t.prototype.jsonID = e), t);
+      static jsonID(ember, flint) {
+        if (ember in peers.wxn) throw peers.RangeError("Duplicate use of selection JSON ID " + ember);
+        return peers.wxn[ember] = flint, flint.prototype.jsonID = ember, flint;
       }
       getBookmark() {
         return peers.RS.between(this.$anchor, this.$head).getBookmark();
@@ -200,35 +172,35 @@ export function deferredUid7() {
     };
     peers.LS.prototype.visible = true;
     Txn = class {
-      constructor(e, t) {
-        this.$from = e;
-        this.$to = t;
+      constructor(garnet, hazel) {
+        this.$from = garnet;
+        this.$to = hazel;
       }
     };
     Exn = false;
-    RS = class e extends peers.LS {
-      constructor(e, t = e) {
-        peers.vxn(e);
-        peers.vxn(t);
-        super(e, t);
+    RS = class ivory extends peers.LS {
+      constructor(jasper, kelp = jasper) {
+        peers.vxn(jasper);
+        peers.vxn(kelp);
+        super(jasper, kelp);
       }
       get $cursor() {
         return this.$anchor.pos == this.$head.pos ? this.$head : null;
       }
-      map(t, n) {
-        let r = t.resolve(n.map(this.head));
-        if (!r.parent.inlineContent) return peers.LS.near(r);
-        let i = t.resolve(n.map(this.anchor));
-        return new e(i.parent.inlineContent ? i : r, r);
+      map(lotus, mint) {
+        let nova = lotus.resolve(mint.map(this.head));
+        if (!nova.parent.inlineContent) return peers.LS.near(nova);
+        let i = lotus.resolve(mint.map(this.anchor));
+        return new ivory(i.parent.inlineContent ? i : nova, nova);
       }
-      replace(e, t = peers.DS.empty) {
-        if ((super.replace(e, t), t == peers.DS.empty)) {
-          let t = this.$from.marksAcross(this.$to);
-          t && e.ensureMarks(t);
+      replace(olive, prism = peers.DS.empty) {
+        if (super.replace(olive, prism), prism == peers.DS.empty) {
+          let quill = this.$from.marksAcross(this.$to);
+          quill && olive.ensureMarks(quill);
         }
       }
-      eq(t) {
-        return t instanceof e && t.anchor == this.anchor && t.head == this.head;
+      eq(reef) {
+        return reef instanceof ivory && reef.anchor == this.anchor && reef.head == this.head;
       }
       getBookmark() {
         return new peers.Dxn(this.anchor, this.head);
@@ -237,133 +209,123 @@ export function deferredUid7() {
         return {
           type: "text",
           anchor: this.anchor,
-          head: this.head,
+          head: this.head
         };
       }
-      static fromJSON(t, n) {
-        if (typeof n.anchor != "number" || typeof n.head != "number")
-          throw peers.RangeError("Invalid input for TextSelection.fromJSON");
-        return new e(t.resolve(n.anchor), t.resolve(n.head));
+      static fromJSON(sage, topaz) {
+        if (typeof topaz.anchor != "number" || typeof topaz.head != "number") throw peers.RangeError("Invalid input for TextSelection.fromJSON");
+        return new ivory(sage.resolve(topaz.anchor), sage.resolve(topaz.head));
       }
-      static create(e, t, n = t) {
-        let r = e.resolve(t);
-        return new this(r, n == t ? r : e.resolve(n));
+      static create(ultra, vapor, wheat = vapor) {
+        let yarn = ultra.resolve(vapor);
+        return new this(yarn, wheat == vapor ? yarn : ultra.resolve(wheat));
       }
-      static between(t, n, r) {
-        let i = t.pos - n.pos;
-        if (((!r || i) && (r = i >= 0 ? 1 : -1), !n.parent.inlineContent)) {
-          let e =
-            peers.LS.findFrom(n, r, true) || peers.LS.findFrom(n, -r, true);
-          if (e) n = e.$head;
-          else return peers.LS.near(n, r);
+      static between(zephyr, acorn, bloom) {
+        let i = zephyr.pos - acorn.pos;
+        if ((!bloom || i) && (bloom = i >= 0 ? 1 : -1), !acorn.parent.inlineContent) {
+          let coral = peers.LS.findFrom(acorn, bloom, true) || peers.LS.findFrom(acorn, -bloom, true);
+          if (coral) acorn = coral.$head;else return peers.LS.near(acorn, bloom);
         }
-        return (
-          t.parent.inlineContent ||
-            (i == 0
-              ? (t = n)
-              : ((t = (
-                  peers.LS.findFrom(t, -r, true) ||
-                  peers.LS.findFrom(t, r, true)
-                ).$anchor),
-                t.pos < n.pos != i < 0 && (t = n))),
-          new e(t, n)
-        );
+        return zephyr.parent.inlineContent || (i == 0 ? zephyr = acorn : (zephyr = (peers.LS.findFrom(zephyr, -bloom, true) || peers.LS.findFrom(zephyr, bloom, true)).$anchor, zephyr.pos < acorn.pos != i < 0 && (zephyr = acorn))), new ivory(zephyr, acorn);
       }
     };
     peers.LS.jsonID("text", peers.RS);
-    Dxn = class e {
-      constructor(e, t) {
-        this.anchor = e;
-        this.head = t;
+    Dxn = class drift {
+      constructor(eagle, frost) {
+        this.anchor = eagle;
+        this.head = frost;
       }
-      map(t) {
-        return new e(t.map(this.anchor), t.map(this.head));
+      map(glide) {
+        return new drift(glide.map(this.anchor), glide.map(this.head));
       }
-      resolve(e) {
-        return peers.RS.between(e.resolve(this.anchor), e.resolve(this.head));
+      resolve(honey) {
+        return peers.RS.between(honey.resolve(this.anchor), honey.resolve(this.head));
       }
     };
-    zS = class e extends peers.LS {
-      constructor(e) {
-        let t = e.nodeAfter,
-          n = e.node(0).resolve(e.pos + t.nodeSize);
-        super(e, n);
-        this.node = t;
+    zS = class iris extends peers.LS {
+      constructor(jewel) {
+        let knoll = jewel.nodeAfter,
+          lunar = jewel.node(0).resolve(jewel.pos + knoll.nodeSize);
+        super(jewel, lunar);
+        this.node = knoll;
       }
-      map(t, n) {
-        let { deleted, pos } = n.mapResult(this.anchor),
-          a = t.resolve(pos);
-        return deleted ? peers.LS.near(a) : new e(a);
+      map(moss, north) {
+        let {
+            deleted,
+            pos
+          } = north.mapResult(this.anchor),
+          a = moss.resolve(pos);
+        return deleted ? peers.LS.near(a) : new iris(a);
       }
       content() {
         return new peers.DS(peers.TS.from(this.node), 0, 0);
       }
-      eq(t) {
-        return t instanceof e && t.anchor == this.anchor;
+      eq(orbit) {
+        return orbit instanceof iris && orbit.anchor == this.anchor;
       }
       toJSON() {
         return {
           type: "node",
-          anchor: this.anchor,
+          anchor: this.anchor
         };
       }
       getBookmark() {
         return new peers.Oxn(this.anchor);
       }
-      static fromJSON(t, n) {
-        if (typeof n.anchor != "number")
-          throw peers.RangeError("Invalid input for NodeSelection.fromJSON");
-        return new e(t.resolve(n.anchor));
+      static fromJSON(pine, quest) {
+        if (typeof quest.anchor != "number") throw peers.RangeError("Invalid input for NodeSelection.fromJSON");
+        return new iris(pine.resolve(quest.anchor));
       }
-      static create(t, n) {
-        return new e(t.resolve(n));
+      static create(ridge, storm) {
+        return new iris(ridge.resolve(storm));
       }
-      static isSelectable(e) {
-        return !e.isText && e.type.spec.selectable !== false;
+      static isSelectable(tide) {
+        return !tide.isText && tide.type.spec.selectable !== false;
       }
     };
     peers.zS.prototype.visible = false;
     peers.LS.jsonID("node", peers.zS);
-    Oxn = class e {
-      constructor(e) {
-        this.anchor = e;
+    Oxn = class unity {
+      constructor(vale) {
+        this.anchor = vale;
       }
-      map(t) {
-        let { deleted, pos } = t.mapResult(this.anchor);
-        return deleted ? new peers.Dxn(pos, pos) : new e(pos);
+      map(wave) {
+        let {
+          deleted,
+          pos
+        } = wave.mapResult(this.anchor);
+        return deleted ? new peers.Dxn(pos, pos) : new unity(pos);
       }
-      resolve(e) {
-        let t = e.resolve(this.anchor),
-          n = t.nodeAfter;
-        return n && peers.zS.isSelectable(n)
-          ? new peers.zS(t)
-          : peers.LS.near(t);
+      resolve(apex) {
+        let brook = apex.resolve(this.anchor),
+          cliff = brook.nodeAfter;
+        return cliff && peers.zS.isSelectable(cliff) ? new peers.zS(brook) : peers.LS.near(brook);
       }
     };
-    BS = class e extends peers.LS {
-      constructor(e) {
-        super(e.resolve(0), e.resolve(e.content.size));
+    BS = class dusk extends peers.LS {
+      constructor(elm) {
+        super(elm.resolve(0), elm.resolve(elm.content.size));
       }
-      replace(e, t = peers.DS.empty) {
-        if (t == peers.DS.empty) {
-          e.delete(0, e.doc.content.size);
-          let t = peers.LS.atStart(e.doc);
-          t.eq(e.selection) || e.setSelection(t);
-        } else super.replace(e, t);
+      replace(fern, grove = peers.DS.empty) {
+        if (grove == peers.DS.empty) {
+          fern.delete(0, fern.doc.content.size);
+          let hill = peers.LS.atStart(fern.doc);
+          hill.eq(fern.selection) || fern.setSelection(hill);
+        } else super.replace(fern, grove);
       }
       toJSON() {
         return {
-          type: "all",
+          type: "all"
         };
       }
-      static fromJSON(t) {
-        return new e(t);
+      static fromJSON(isle) {
+        return new dusk(isle);
       }
-      map(t) {
-        return new e(t);
+      map(juniper) {
+        return new dusk(juniper);
       }
-      eq(t) {
-        return t instanceof e;
+      eq(lagoon) {
+        return lagoon instanceof dusk;
       }
       getBookmark() {
         return peers.kxn;
@@ -374,210 +336,149 @@ export function deferredUid7() {
       map() {
         return this;
       },
-      resolve(e) {
-        return new peers.BS(e);
-      },
+      resolve(meadow) {
+        return new peers.BS(meadow);
+      }
     };
     Axn = 1;
     jxn = 2;
     Mxn = 4;
     Nxn = class extends peers._xn {
-      constructor(e) {
-        super(e.doc);
+      constructor(nest) {
+        super(nest.doc);
         this.curSelectionFor = 0;
         this.updated = 0;
         this.meta = Object.create(null);
         this.time = Date.now();
-        this.curSelection = e.selection;
-        this.storedMarks = e.storedMarks;
+        this.curSelection = nest.selection;
+        this.storedMarks = nest.storedMarks;
       }
       get selection() {
-        return (
-          this.curSelectionFor < this.steps.length &&
-            ((this.curSelection = this.curSelection.map(
-              this.doc,
-              this.mapping.slice(this.curSelectionFor),
-            )),
-            (this.curSelectionFor = this.steps.length)),
-          this.curSelection
-        );
+        return this.curSelectionFor < this.steps.length && (this.curSelection = this.curSelection.map(this.doc, this.mapping.slice(this.curSelectionFor)), this.curSelectionFor = this.steps.length), this.curSelection;
       }
-      setSelection(e) {
-        if (e.$from.doc != this.doc)
-          throw peers.RangeError(
-            "Selection passed to setSelection must point at the current document",
-          );
-        return (
-          (this.curSelection = e),
-          (this.curSelectionFor = this.steps.length),
-          (this.updated = (this.updated | peers.Axn) & -3),
-          (this.storedMarks = null),
-          this
-        );
+      setSelection(oak) {
+        if (oak.$from.doc != this.doc) throw peers.RangeError("Selection passed to setSelection must point at the current document");
+        return this.curSelection = oak, this.curSelectionFor = this.steps.length, this.updated = (this.updated | peers.Axn) & -3, this.storedMarks = null, this;
       }
       get selectionSet() {
         return (this.updated & peers.Axn) > 0;
       }
-      setStoredMarks(e) {
-        return ((this.storedMarks = e), (this.updated |= peers.jxn), this);
+      setStoredMarks(petal) {
+        return this.storedMarks = petal, this.updated |= peers.jxn, this;
       }
-      ensureMarks(e) {
-        return (
-          peers.ES.sameSet(
-            this.storedMarks || this.selection.$from.marks(),
-            e,
-          ) || this.setStoredMarks(e),
-          this
-        );
+      ensureMarks(quiet) {
+        return peers.ES.sameSet(this.storedMarks || this.selection.$from.marks(), quiet) || this.setStoredMarks(quiet), this;
       }
-      addStoredMark(e) {
-        return this.ensureMarks(
-          e.addToSet(this.storedMarks || this.selection.$head.marks()),
-        );
+      addStoredMark(rain) {
+        return this.ensureMarks(rain.addToSet(this.storedMarks || this.selection.$head.marks()));
       }
-      removeStoredMark(e) {
-        return this.ensureMarks(
-          e.removeFromSet(this.storedMarks || this.selection.$head.marks()),
-        );
+      removeStoredMark(seed) {
+        return this.ensureMarks(seed.removeFromSet(this.storedMarks || this.selection.$head.marks()));
       }
       get storedMarksSet() {
         return (this.updated & peers.jxn) > 0;
       }
-      addStep(e, t) {
-        super.addStep(e, t);
+      addStep(trail, urn) {
+        super.addStep(trail, urn);
         this.updated &= -3;
         this.storedMarks = null;
       }
-      setTime(e) {
-        return ((this.time = e), this);
+      setTime(vine) {
+        return this.time = vine, this;
       }
-      replaceSelection(e) {
-        return (this.selection.replace(this, e), this);
+      replaceSelection(wind) {
+        return this.selection.replace(this, wind), this;
       }
-      replaceSelectionWith(e, t = true) {
-        let n = this.selection;
-        return (
-          t &&
-            (e = e.mark(
-              this.storedMarks ||
-                (n.empty
-                  ? n.$from.marks()
-                  : n.$from.marksAcross(n.$to) || peers.ES.none),
-            )),
-          n.replaceWith(this, e),
-          this
-        );
+      replaceSelectionWith(yarrow, azure = true) {
+        let birch = this.selection;
+        return azure && (yarrow = yarrow.mark(this.storedMarks || (birch.empty ? birch.$from.marks() : birch.$from.marksAcross(birch.$to) || peers.ES.none))), birch.replaceWith(this, yarrow), this;
       }
       deleteSelection() {
-        return (this.selection.replace(this), this);
+        return this.selection.replace(this), this;
       }
-      insertText(e, t, n) {
-        let r = this.doc.type.schema;
-        if (t == null)
-          return e
-            ? this.replaceSelectionWith(r.text(e), true)
-            : this.deleteSelection();
+      insertText(canyon, dew, ever) {
+        let field = this.doc.type.schema;
+        if (dew == null) return canyon ? this.replaceSelectionWith(field.text(canyon), true) : this.deleteSelection();
         {
-          if (((n ??= t), !e)) return this.deleteRange(t, n);
+          if (ever ??= dew, !canyon) return this.deleteRange(dew, ever);
           let i = this.storedMarks;
           if (!i) {
-            let e = this.doc.resolve(t);
-            i = n == t ? e.marks() : e.marksAcross(this.doc.resolve(n));
+            let grain = this.doc.resolve(dew);
+            i = ever == dew ? grain.marks() : grain.marksAcross(this.doc.resolve(ever));
           }
-          return (
-            this.replaceRangeWith(t, n, r.text(e, i)),
-            !this.selection.empty &&
-              this.selection.to == t + e.length &&
-              this.setSelection(peers.LS.near(this.selection.$to)),
-            this
-          );
+          return this.replaceRangeWith(dew, ever, field.text(canyon, i)), !this.selection.empty && this.selection.to == dew + canyon.length && this.setSelection(peers.LS.near(this.selection.$to)), this;
         }
       }
-      setMeta(event, t) {
-        return (
-          (this.meta[typeof event == "string" ? event : event.key] = t),
-          this
-        );
+      setMeta(event, haven) {
+        return this.meta[typeof event == "string" ? event : event.key] = haven, this;
       }
       getMeta(event) {
         return this.meta[typeof event == "string" ? event : event.key];
       }
       get isGeneric() {
-        for (let e in this.meta) return false;
+        for (let ink in this.meta) return false;
         return true;
       }
       scrollIntoView() {
-        return ((this.updated |= peers.Mxn), this);
+        return this.updated |= peers.Mxn, this;
       }
       get scrolledIntoView() {
         return (this.updated & peers.Mxn) > 0;
       }
     };
     Pxn = class {
-      constructor(e, t, n) {
-        this.name = e;
-        this.init = peers.xxn(t.init, n);
-        this.apply = peers.xxn(t.apply, n);
+      constructor(jadeite, kernel, leaf) {
+        this.name = jadeite;
+        this.init = peers.xxn(kernel.init, leaf);
+        this.apply = peers.xxn(kernel.apply, leaf);
       }
     };
-    Fxn = [
-      new peers.Pxn("doc", {
-        init(e) {
-          return e.doc || e.schema.topNodeType.createAndFill();
-        },
-        apply(e) {
-          return e.doc;
-        },
-      }),
-      new peers.Pxn("selection", {
-        init(e, t) {
-          return e.selection || peers.LS.atStart(t.doc);
-        },
-        apply(e) {
-          return e.selection;
-        },
-      }),
-      new peers.Pxn("storedMarks", {
-        init(e) {
-          return e.storedMarks || null;
-        },
-        apply(e, t, n, r) {
-          return r.selection.$cursor ? e.storedMarks : null;
-        },
-      }),
-      new peers.Pxn("scrollToSelection", {
-        init() {
-          return 0;
-        },
-        apply(e, t) {
-          return e.scrolledIntoView ? t + 1 : t;
-        },
-      }),
-    ];
+    Fxn = [new peers.Pxn("doc", {
+      init(maple) {
+        return maple.doc || maple.schema.topNodeType.createAndFill();
+      },
+      apply(nimbus) {
+        return nimbus.doc;
+      }
+    }), new peers.Pxn("selection", {
+      init(opal, plume) {
+        return opal.selection || peers.LS.atStart(plume.doc);
+      },
+      apply(quillow) {
+        return quillow.selection;
+      }
+    }), new peers.Pxn("storedMarks", {
+      init(root) {
+        return root.storedMarks || null;
+      },
+      apply(silk, thorn, upland, vista) {
+        return vista.selection.$cursor ? silk.storedMarks : null;
+      }
+    }), new peers.Pxn("scrollToSelection", {
+      init() {
+        return 0;
+      },
+      apply(wisp, yonder) {
+        return wisp.scrolledIntoView ? yonder + 1 : yonder;
+      }
+    })];
     Ixn = class {
-      constructor(e, t) {
-        this.schema = e;
+      constructor(zenith, anvil) {
+        this.schema = zenith;
         this.plugins = [];
         this.pluginsByKey = Object.create(null);
         this.fields = peers.Fxn.slice();
-        t &&
-          t.forEach((item) => {
-            if (this.pluginsByKey[item.key])
-              throw peers.RangeError(
-                "Adding different instances of a keyed plugin (" +
-                  item.key +
-                  ")",
-              );
-            this.plugins.push(item);
-            this.pluginsByKey[item.key] = item;
-            item.spec.state &&
-              this.fields.push(new peers.Pxn(item.key, item.spec.state, item));
-          });
+        anvil && anvil.forEach(item => {
+          if (this.pluginsByKey[item.key]) throw peers.RangeError("Adding different instances of a keyed plugin (" + item.key + ")");
+          this.plugins.push(item);
+          this.pluginsByKey[item.key] = item;
+          item.spec.state && this.fields.push(new peers.Pxn(item.key, item.spec.state, item));
+        });
       }
     };
-    Lxn = class e {
-      constructor(e) {
-        this.config = e;
+    Lxn = class beacon {
+      constructor(crag) {
+        this.config = crag;
       }
       get schema() {
         return this.config.schema;
@@ -585,163 +486,121 @@ export function deferredUid7() {
       get plugins() {
         return this.config.plugins;
       }
-      apply(e) {
-        return this.applyTransaction(e).state;
+      apply(dome) {
+        return this.applyTransaction(dome).state;
       }
-      filterTransaction(e, t = -1) {
-        for (let n = 0; n < this.config.plugins.length; n++)
-          if (n != t) {
-            let t = this.config.plugins[n];
-            if (
-              t.spec.filterTransaction &&
-              !t.spec.filterTransaction.call(t, e, this)
-            )
-              return false;
-          }
+      filterTransaction(eddy, fjord = -1) {
+        for (let glen = 0; glen < this.config.plugins.length; glen++) if (glen != fjord) {
+          let hearth = this.config.plugins[glen];
+          if (hearth.spec.filterTransaction && !hearth.spec.filterTransaction.call(hearth, eddy, this)) return false;
+        }
         return true;
       }
-      applyTransaction(e) {
-        if (!this.filterTransaction(e))
-          return {
-            state: this,
-            transactions: [],
-          };
-        let t = [e],
-          n = this.applyInner(e),
-          r = null;
+      applyTransaction(inlet) {
+        if (!this.filterTransaction(inlet)) return {
+          state: this,
+          transactions: []
+        };
+        let jetty = [inlet],
+          knob = this.applyInner(inlet),
+          ledge = null;
         for (;;) {
           let i = false;
           for (let a = 0; a < this.config.plugins.length; a++) {
-            let o = this.config.plugins[a];
-            if (o.spec.appendTransaction) {
-              let s = r ? r[a].n : 0,
-                c = r ? r[a].state : this,
-                l =
-                  s < t.length &&
-                  o.spec.appendTransaction.call(o, s ? t.slice(s) : t, c, n);
-              if (l && n.filterTransaction(l, a)) {
-                if ((l.setMeta("appendedTransaction", e), !r)) {
-                  r = [];
-                  for (let e = 0; e < this.config.plugins.length; e++)
-                    r.push(
-                      e < a
-                        ? {
-                            state: n,
-                            n: t.length,
-                          }
-                        : {
-                            state: this,
-                            n: 0,
-                          },
-                    );
+            let mire = this.config.plugins[a];
+            if (mire.spec.appendTransaction) {
+              let s = ledge ? ledge[a].n : 0,
+                nook = ledge ? ledge[a].state : this,
+                oxbow = s < jetty.length && mire.spec.appendTransaction.call(mire, s ? jetty.slice(s) : jetty, nook, knob);
+              if (oxbow && knob.filterTransaction(oxbow, a)) {
+                if (oxbow.setMeta("appendedTransaction", inlet), !ledge) {
+                  ledge = [];
+                  for (let pond = 0; pond < this.config.plugins.length; pond++) ledge.push(pond < a ? {
+                    state: knob,
+                    n: jetty.length
+                  } : {
+                    state: this,
+                    n: 0
+                  });
                 }
-                t.push(l);
-                n = n.applyInner(l);
+                jetty.push(oxbow);
+                knob = knob.applyInner(oxbow);
                 i = true;
               }
-              r &&
-                (r[a] = {
-                  state: n,
-                  n: t.length,
-                });
+              ledge && (ledge[a] = {
+                state: knob,
+                n: jetty.length
+              });
             }
           }
-          if (!i)
-            return {
-              state: n,
-              transactions: t,
-            };
+          if (!i) return {
+            state: knob,
+            transactions: jetty
+          };
         }
       }
-      applyInner(t) {
-        if (!t.before.eq(this.doc))
-          throw peers.RangeError("Applying a mismatched transaction");
-        let n = new e(this.config),
-          r = this.config.fields;
-        for (let e = 0; e < r.length; e++) {
-          let i = r[e];
-          n[i.name] = i.apply(t, this[i.name], this, n);
+      applyInner(quarry) {
+        if (!quarry.before.eq(this.doc)) throw peers.RangeError("Applying a mismatched transaction");
+        let rapids = new beacon(this.config),
+          spur = this.config.fields;
+        for (let tor = 0; tor < spur.length; tor++) {
+          let i = spur[tor];
+          rapids[i.name] = i.apply(quarry, this[i.name], this, rapids);
         }
-        return n;
+        return rapids;
       }
       get tr() {
         return new peers.Nxn(this);
       }
-      static create(t) {
-        let n = new peers.Ixn(t.doc ? t.doc.type.schema : t.schema, t.plugins),
-          r = new e(n);
-        for (let e = 0; e < n.fields.length; e++)
-          r[n.fields[e].name] = n.fields[e].init(t, r);
-        return r;
+      static create(updraft) {
+        let verge = new peers.Ixn(updraft.doc ? updraft.doc.type.schema : updraft.schema, updraft.plugins),
+          weir = new beacon(verge);
+        for (let yard = 0; yard < verge.fields.length; yard++) weir[verge.fields[yard].name] = verge.fields[yard].init(updraft, weir);
+        return weir;
       }
-      reconfigure(t) {
-        let n = new peers.Ixn(this.schema, t.plugins),
-          r = n.fields,
-          i = new e(n);
-        for (let e = 0; e < r.length; e++) {
-          let n = r[e].name;
-          i[n] = this.hasOwnProperty(n) ? this[n] : r[e].init(t, i);
+      reconfigure(bolt) {
+        let cog = new peers.Ixn(this.schema, bolt.plugins),
+          disc = cog.fields,
+          i = new beacon(cog);
+        for (let edge = 0; edge < disc.length; edge++) {
+          let forge = disc[edge].name;
+          i[forge] = this.hasOwnProperty(forge) ? this[forge] : disc[edge].init(bolt, i);
         }
         return i;
       }
-      toJSON(e) {
-        let t = {
+      toJSON(gear) {
+        let hinge = {
           doc: this.doc.toJSON(),
-          selection: this.selection.toJSON(),
+          selection: this.selection.toJSON()
         };
-        if (
-          (this.storedMarks &&
-            (t.storedMarks = this.storedMarks.map((item) => {
-              return item.toJSON();
-            })),
-          e && typeof e == "object")
-        )
-          for (let n in e) {
-            if (n == "doc" || n == "selection")
-              throw peers.RangeError(
-                "The JSON fields `doc` and `selection` are reserved",
-              );
-            let r = e[n],
-              i = r.spec.state;
-            i && i.toJSON && (t[n] = i.toJSON.call(r, this[r.key]));
-          }
-        return t;
+        if (this.storedMarks && (hinge.storedMarks = this.storedMarks.map(item => {
+          return item.toJSON();
+        })), gear && typeof gear == "object") for (let iron in gear) {
+          if (iron == "doc" || iron == "selection") throw peers.RangeError("The JSON fields `doc` and `selection` are reserved");
+          let joint = gear[iron],
+            i = joint.spec.state;
+          i && i.toJSON && (hinge[iron] = i.toJSON.call(joint, this[joint.key]));
+        }
+        return hinge;
       }
-      static fromJSON(t, n, r) {
-        if (!n)
-          throw peers.RangeError("Invalid input for EditorState.fromJSON");
-        if (!t.schema)
-          throw peers.RangeError("Required config field 'schema' missing");
-        let i = new peers.Ixn(t.schema, t.plugins),
-          a = new e(i);
-        return (
-          i.fields.forEach((item) => {
-            if (item.name == "doc") a.doc = peers.OS.fromJSON(t.schema, n.doc);
-            else if (item.name == "selection")
-              a.selection = peers.LS.fromJSON(a.doc, n.selection);
-            else if (item.name == "storedMarks")
-              n.storedMarks &&
-                (a.storedMarks = n.storedMarks.map(t.schema.markFromJSON));
-            else {
-              if (r)
-                for (let i in r) {
-                  let o = r[i],
-                    s = o.spec.state;
-                  if (
-                    o.key == item.name &&
-                    s &&
-                    s.fromJSON &&
-                    Object.prototype.hasOwnProperty.call(n, i)
-                  ) {
-                    a[item.name] = s.fromJSON.call(o, t, n[i], a);
-                    return;
-                  }
-                }
-              a[item.name] = item.init(t, a);
+      static fromJSON(keystone, latch, motor) {
+        if (!latch) throw peers.RangeError("Invalid input for EditorState.fromJSON");
+        if (!keystone.schema) throw peers.RangeError("Required config field 'schema' missing");
+        let i = new peers.Ixn(keystone.schema, keystone.plugins),
+          a = new beacon(i);
+        return i.fields.forEach(item => {
+          if (item.name == "doc") a.doc = peers.OS.fromJSON(keystone.schema, latch.doc);else if (item.name == "selection") a.selection = peers.LS.fromJSON(a.doc, latch.selection);else if (item.name == "storedMarks") latch.storedMarks && (a.storedMarks = latch.storedMarks.map(keystone.schema.markFromJSON));else {
+            if (motor) for (let i in motor) {
+              let nut = motor[i],
+                s = nut.spec.state;
+              if (nut.key == item.name && s && s.fromJSON && Object.prototype.hasOwnProperty.call(latch, i)) {
+                a[item.name] = s.fromJSON.call(nut, keystone, latch[i], a);
+                return;
+              }
             }
-          }),
-          a
-        );
+            a[item.name] = item.init(keystone, a);
+          }
+        }), a;
       }
     };
     VS = class {
@@ -751,20 +610,20 @@ export function deferredUid7() {
         event.props && peers.Sxn(event.props, this, this.props);
         this.key = event.key ? event.key.key : peers.Cxn("plugin");
       }
-      getState(e) {
-        return e[this.key];
+      getState(piston) {
+        return piston[this.key];
       }
     };
     Rxn = Object.create(null);
     HS = class {
-      constructor(e = "key") {
-        this.key = peers.Cxn(e);
+      constructor(rivet = "key") {
+        this.key = peers.Cxn(rivet);
       }
-      get(e) {
-        return e.config.pluginsByKey[this.key];
+      get(screw) {
+        return screw.config.pluginsByKey[this.key];
       }
-      getState(e) {
-        return e[this.key];
+      getState(torque) {
+        return torque[this.key];
       }
     };
   });

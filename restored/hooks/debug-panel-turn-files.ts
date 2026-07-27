@@ -20,10 +20,26 @@ export function setCollectDebugPanelTurnFilesPeers(next: CollectDebugPanelTurnFi
   peers = next;
 }
 
+export type DebugPanelTurnLike = {
+  status?: string;
+  items: Array<{
+    type: string;
+    text?: string;
+    [key: string]: unknown;
+  } | null>;
+  [key: string]: unknown;
+};
+
+/** Bundle path ESM init retained as no-op. */
+export function ensureDebugPanelParsersInit(): void {}
+
+/** Bundle path ESM init retained as no-op. */
+export function ensureDebugPanelTurnFilesInit(): void {}
+
 /**
  * Bundle export `J8` / internal `Hqn`.
  */
-export function collectDebugPanelTurnFiles(e: unknown) {
+export function collectDebugPanelTurnFiles(e: DebugPanelTurnLike) {
   if (peers == null) {
     throw new Error("collectDebugPanelTurnFiles peers are not configured");
   }

@@ -1,42 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Hm / Y6s
+// Materialized via extractFn(internal `Y6s`) / export `Hm`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type Chatgpt3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type Chatgpt3Peers = {
+  J: (...args: unknown[]) => unknown;
+  J6s: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  q6s: (...args: unknown[]) => unknown;
+  uir: (...args: unknown[]) => unknown;
 };
 
-type Chatgpt3Impl = (props: Chatgpt3Props) => ReactNode;
-let impl: Chatgpt3Impl | null = null;
+let peers: Chatgpt3Peers | null = null;
 
-/** Wire the full Chatgpt3 once deeper restore lands. */
-export function bindChatgpt3(next: Chatgpt3Impl): void {
-  impl = next;
+/** Wire Chatgpt3 peers once companions land. */
+export function setChatgpt3Peers(next: Chatgpt3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Hm` / internal `Y6s`.
- * Stage-3 fill for bundle export Hm / Y6s; heavy UI via bind.
  */
-export function Chatgpt3(props: Chatgpt3Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-er-scaffold="Hm"
-      aria-label="Chatgpt3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Hm / Y6s
-        </div>
-      )}
-    </div>
-  );
+export function Chatgpt3() {
+  if (peers == null) {
+    throw new Error("Chatgpt3 peers are not configured");
+  }
+  return peers.e(() => {
+    q6s = peers.c(), peers.uir(), J6s = peers.J();
+  });
 }
