@@ -1,0 +1,3 @@
+import { n as e, t } from "./skull-BK0kgoCY-DymOYALJ.js";
+e();
+export { t as default };

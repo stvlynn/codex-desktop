@@ -1,0 +1,3 @@
+import { n as e, t } from "./file-digit-BMkRnMB6-OLyWnLw-.js";
+e();
+export { t as default };

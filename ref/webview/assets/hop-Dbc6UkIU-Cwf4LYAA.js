@@ -1,0 +1,3 @@
+import { n as e, t } from "./hop-Dbc6UkIU-rh8DDhRz.js";
+t();
+export { e as default };

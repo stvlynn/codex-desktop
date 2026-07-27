@@ -1,0 +1,3 @@
+import { n as e, t } from "./milk-off-ZueUMwI1-CKE-VUT0.js";
+t();
+export { e as default };

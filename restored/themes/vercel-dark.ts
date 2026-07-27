@@ -1,0 +1,174 @@
+// Restored from ref/webview/assets/vercel-dark-DqypS-8A.js
+// Editor theme data: Vercel Dark.
+
+export type ThemeType = "dark" | "light";
+export type TokenColorSettings = {
+  foreground?: string;
+  background?: string;
+  fontStyle?: string;
+};
+export type TokenColorRule = {
+  scope: string | string[];
+  settings: TokenColorSettings;
+};
+export type ThemeChromeTheme = {
+  accent?: string;
+  contrast?: number;
+  fonts?: {
+    code?: string;
+    ui?: string;
+  };
+  ink?: string;
+  opaqueWindows?: boolean;
+  semanticColors?: {
+    diffAdded?: string;
+    diffRemoved?: string;
+    skill?: string;
+  };
+  surface?: string;
+  [key: string]: unknown;
+};
+export type EditorTheme = {
+  bg: string;
+  colors: Record<string, string>;
+  fg: string;
+  name: string;
+  settings: TokenColorRule[];
+  type?: ThemeType;
+  chromeTheme?: ThemeChromeTheme;
+};
+export const bg: string = "#000000";
+export const colors: Record<string, string> = {
+  "activityBar.activeBorder": "#006efe",
+  "activityBar.background": "#000000",
+  "activityBarBadge.background": "#006efe",
+  "button.background": "#006efe",
+  "editor.background": "#000000",
+  "editor.foreground": "#ededed",
+  "editorCursor.foreground": "#006efe",
+  "editorGroupHeader.tabsBackground": "#000000",
+  focusBorder: "#006efe",
+  foreground: "#ededed",
+  "panel.background": "#000000",
+  "sideBar.background": "#000000",
+  "sideBar.foreground": "#a1a1a1",
+  "sideBarTitle.foreground": "#ededed",
+  "textLink.foreground": "#006efe",
+};
+export const chromeTheme: ThemeChromeTheme = {
+  accent: "#006efe",
+  contrast: 50,
+  fonts: {
+    code: '"Geist Mono", ui-monospace, "SFMono-Regular"',
+    ui: "Geist, Inter",
+  },
+  ink: "#ededed",
+  opaqueWindows: true,
+  semanticColors: {
+    diffAdded: "#00AD3A",
+    diffRemoved: "#F13342",
+    skill: "#9540D5",
+  },
+  surface: "#000000",
+};
+export const fg: string = "#ededed";
+export const name: string = "Vercel Dark";
+export const settings: TokenColorRule[] = [
+  {
+    scope: ["comment", "punctuation.definition.comment"],
+    settings: {
+      foreground: "#666666",
+    },
+  },
+  {
+    scope: [
+      "string",
+      "string.quoted",
+      "constant.other.symbol",
+      "entity.other.attribute-name",
+    ],
+    settings: {
+      foreground: "#00AD3A",
+    },
+  },
+  {
+    scope: [
+      "constant.numeric",
+      "constant.language",
+      "constant.language.boolean",
+      "constant.character.escape",
+      "regexp",
+      "string.regexp",
+    ],
+    settings: {
+      foreground: "#9540D5",
+    },
+  },
+  {
+    scope: [
+      "keyword",
+      "keyword.control",
+      "storage",
+      "storage.type",
+      "storage.modifier",
+    ],
+    settings: {
+      foreground: "#006efe",
+    },
+  },
+  {
+    scope: [
+      "entity.name.type",
+      "entity.other.inherited-class",
+      "support.class",
+      "support.type",
+    ],
+    settings: {
+      foreground: "#52A8FF",
+    },
+  },
+  {
+    scope: [
+      "entity.name.function",
+      "support.function",
+      "variable.function",
+      "meta.function-call",
+    ],
+    settings: {
+      foreground: "#9540D5",
+    },
+  },
+  {
+    scope: [
+      "keyword.operator",
+      "punctuation.accessor",
+      "punctuation.definition.tag",
+      "punctuation",
+      "punctuation.bracket",
+      "punctuation.separator",
+    ],
+    settings: {
+      foreground: "#a1a1a1",
+    },
+  },
+  {
+    scope: [
+      "variable",
+      "meta.object-literal.key",
+      "meta.object.member",
+      "meta.property-name",
+    ],
+    settings: {
+      foreground: "#ededed",
+    },
+  },
+];
+export const vercelDarkTheme: EditorTheme = {
+  bg,
+  colors,
+  chromeTheme,
+  fg,
+  name,
+  settings,
+};
+export default vercelDarkTheme;

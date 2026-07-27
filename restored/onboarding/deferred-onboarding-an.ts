@@ -1,0 +1,28 @@
+// Restored from ref/webview/assets/app-initial-C-fROkKo.js
+// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
+// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
+// Stage-3 fill for bundle export An / $ou
+
+export type BindDeferredOnboardingAnPeers = {
+  impl: (...args: unknown[]) => unknown;
+};
+
+let peers: BindDeferredOnboardingAnPeers | null = null;
+
+/** Wire bindDeferredOnboardingAn once companions land. */
+export function setBindDeferredOnboardingAnPeers(
+  next: BindDeferredOnboardingAnPeers,
+): void {
+  peers = next;
+}
+
+/**
+ * Bundle export `An` / internal `$ou`.
+ * Stage-3 fill for bundle export An / $ou
+ */
+export function bindDeferredOnboardingAn(...args: unknown[]): unknown {
+  if (peers == null) {
+    throw new Error("bindDeferredOnboardingAn peers are not configured");
+  }
+  return peers.impl(...args);
+}

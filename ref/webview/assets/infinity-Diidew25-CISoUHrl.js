@@ -1,0 +1,3 @@
+import { n as e, t } from "./infinity-Diidew25-BLY3J51Z.js";
+t();
+export { e as default };

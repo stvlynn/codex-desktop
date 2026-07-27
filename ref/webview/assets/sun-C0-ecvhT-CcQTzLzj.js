@@ -1,0 +1,3 @@
+import { n as e, t } from "./sun-C0-ecvhT-Dyoio-F5.js";
+e();
+export { t as default };

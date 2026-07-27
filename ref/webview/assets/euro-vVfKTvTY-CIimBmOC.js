@@ -1,0 +1,3 @@
+import { n as e, t } from "./euro-vVfKTvTY-DR2pwvu6.js";
+e();
+export { t as default };

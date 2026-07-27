@@ -1,0 +1,3 @@
+import { n as e, t } from "./boom-box-MKIdSwgb-C1Cp7pcv.js";
+e();
+export { t as default };

@@ -1,0 +1,15 @@
+// Restored from ref/webview/assets/app-initial-C-fROkKo.js
+// Bundle `RT` / export `x6` — protobuf analytics enum.
+
+export const CodexPluginActionResult = {
+  CODEX_PLUGIN_ACTION_RESULT_UNSPECIFIED:
+    "CODEX_PLUGIN_ACTION_RESULT_UNSPECIFIED",
+  CODEX_PLUGIN_ACTION_RESULT_INITIATED: "CODEX_PLUGIN_ACTION_RESULT_INITIATED",
+  CODEX_PLUGIN_ACTION_RESULT_SUCCESS: "CODEX_PLUGIN_ACTION_RESULT_SUCCESS",
+  CODEX_PLUGIN_ACTION_RESULT_FAILURE: "CODEX_PLUGIN_ACTION_RESULT_FAILURE",
+  CODEX_PLUGIN_ACTION_RESULT_BLOCKED: "CODEX_PLUGIN_ACTION_RESULT_BLOCKED",
+  UNRECOGNIZED: "UNRECOGNIZED",
+} as const;
+
+export type CodexPluginActionResult =
+  (typeof CodexPluginActionResult)[keyof typeof CodexPluginActionResult];

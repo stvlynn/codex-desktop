@@ -1,0 +1,3 @@
+import { n as e, t } from "./youtube-BnlxJxx0-BNHGxliH.js";
+e();
+export { t as default };

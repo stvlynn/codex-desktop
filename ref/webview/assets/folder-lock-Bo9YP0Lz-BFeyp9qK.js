@@ -1,0 +1,3 @@
+import { n as e, t } from "./folder-lock-Bo9YP0Lz-C4w-L6gs.js";
+t();
+export { e as default };

@@ -1,0 +1,3 @@
+import { n as e, t } from "./luggage-DRUZTZlg-D-ayZU01.js";
+e();
+export { t as default };

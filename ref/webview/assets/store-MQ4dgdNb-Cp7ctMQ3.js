@@ -1,0 +1,3 @@
+import { n as e, t } from "./store-MQ4dgdNb-CictoD2X.js";
+t();
+export { e as default };

@@ -1,0 +1,3 @@
+import { n as e, t } from "./wallet-minimal-DMOz2YUg-7JaPyDlr.js";
+t();
+export { e as default };

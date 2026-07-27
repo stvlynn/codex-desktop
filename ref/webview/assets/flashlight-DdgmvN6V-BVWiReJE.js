@@ -1,0 +1,3 @@
+import { n as e, t } from "./flashlight-DdgmvN6V-QF0M3Q0T.js";
+e();
+export { t as default };

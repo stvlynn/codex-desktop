@@ -1,0 +1,3 @@
+import { n as e, t } from "./bell-ring-PpC2Mlun-CudENMoK.js";
+t();
+export { e as default };

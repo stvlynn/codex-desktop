@@ -1,0 +1,6 @@
+import {
+  n as e,
+  t,
+} from "./chart-no-axes-column-decreasing-FWUtv9oq-B4KpY1yC.js";
+t();
+export { e as default };

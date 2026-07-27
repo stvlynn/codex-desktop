@@ -1,0 +1,3 @@
+import { n as e, t } from "./calendar-BGJyV18g-ClDHpI1R.js";
+e();
+export { t as default };

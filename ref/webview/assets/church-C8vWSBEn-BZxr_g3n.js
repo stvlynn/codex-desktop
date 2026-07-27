@@ -1,0 +1,3 @@
+import { n as e, t } from "./church-C8vWSBEn-tpEklV65.js";
+e();
+export { t as default };

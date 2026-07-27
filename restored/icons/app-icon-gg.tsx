@@ -1,0 +1,27 @@
+// Restored from ref/webview/assets/app-initial-C-fROkKo.js
+// SVG icon (bundle `T$` / export `Gg`).
+
+import type { SVGProps, ReactElement } from "react";
+export type AppIconGgProps = SVGProps<SVGSVGElement>;
+export function AppIconGg({ ...props }: AppIconGgProps): ReactElement {
+  const e = props;
+  return (
+    <svg
+      xmlns={`http://www.w3.org/2000/svg`}
+      width={20}
+      height={20}
+      fill={`currentColor`}
+      viewBox={`0 0 20 20`}
+      {...e}
+    >
+      <path
+        d={`M7.231 7.231a.665.665 0 0 1 .94 0L10 9.06l1.828-1.829.104-.085a.666.666 0 0 1 .921.922l-.084.104L10.94 10l1.829 1.828a.665.665 0 0 1-.94.94L10 10.94l-1.828 1.83a.665.665 0 0 1-.94-.94L9.06 10 7.23 8.172a.665.665 0 0 1 0-.94Z`}
+      />
+      <path
+        fillRule={`evenodd`}
+        d={`M10 2.085a7.915 7.915 0 1 1 0 15.83 7.915 7.915 0 0 1 0-15.83Zm0 1.33a6.585 6.585 0 1 0 0 13.17 6.585 6.585 0 0 0 0-13.17Z`}
+        clipRule={`evenodd`}
+      />
+    </svg>
+  );
+}

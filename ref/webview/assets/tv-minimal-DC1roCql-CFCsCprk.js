@@ -1,0 +1,3 @@
+import { n as e, t } from "./tv-minimal-DC1roCql-BSTuos3R.js";
+t();
+export { e as default };

@@ -1,0 +1,3 @@
+import { n as e, r as t } from "./appgen-settings-page-8V-xKkmK.js";
+t();
+export { e as AppgenSettingsPage };

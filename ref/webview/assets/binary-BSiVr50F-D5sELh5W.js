@@ -1,0 +1,3 @@
+import { n as e, t } from "./binary-BSiVr50F-DLY_Y5ZC.js";
+e();
+export { t as default };

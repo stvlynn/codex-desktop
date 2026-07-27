@@ -1,0 +1,3 @@
+import { n as e, t } from "./user-minus-CvMQ6bzD-DipSpnw8.js";
+t();
+export { e as default };

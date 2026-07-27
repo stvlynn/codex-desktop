@@ -1,0 +1,3 @@
+import { n as e, t } from "./landmark-xXTaqM_v-DHig05s4.js";
+t();
+export { e as default };

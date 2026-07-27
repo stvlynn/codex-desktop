@@ -1,0 +1,3 @@
+import { n as e, t } from "./square-pilcrow-3nh5pLAg-BBQ3jid0.js";
+t();
+export { e as default };

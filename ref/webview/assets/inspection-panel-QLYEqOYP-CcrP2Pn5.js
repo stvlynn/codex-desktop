@@ -1,0 +1,3 @@
+import { n as e, t } from "./inspection-panel-QLYEqOYP-CM8az-gx.js";
+e();
+export { t as default };

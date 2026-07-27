@@ -1,0 +1,3 @@
+import { n as e, t } from "./sword-DRyx-WTi-CAGoXfwd.js";
+t();
+export { e as default };

@@ -1,0 +1,3 @@
+import { n as e, t } from "./search-check-DfDwIo7W-CUFS4oOg.js";
+e();
+export { t as default };

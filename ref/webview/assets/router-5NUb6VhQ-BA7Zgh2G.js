@@ -1,0 +1,3 @@
+import { n as e, t } from "./router-5NUb6VhQ-GpjIb_pP.js";
+e();
+export { t as default };

@@ -1,0 +1,3 @@
+import { n as e, t } from "./mail-warning-mQkLJwbK-BYExvHsm.js";
+t();
+export { e as default };

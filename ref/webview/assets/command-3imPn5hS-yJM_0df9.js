@@ -1,0 +1,3 @@
+import { n as e, t } from "./command-3imPn5hS-kttl3g9P.js";
+t();
+export { e as default };

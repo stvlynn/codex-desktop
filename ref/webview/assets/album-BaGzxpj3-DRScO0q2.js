@@ -1,0 +1,3 @@
+import { n as e, t } from "./album-BaGzxpj3-ChRysNbx.js";
+e();
+export { t as default };

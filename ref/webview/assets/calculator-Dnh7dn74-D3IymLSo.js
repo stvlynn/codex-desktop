@@ -1,0 +1,3 @@
+import { n as e, t } from "./calculator-Dnh7dn74-3sMgSEkY.js";
+e();
+export { t as default };

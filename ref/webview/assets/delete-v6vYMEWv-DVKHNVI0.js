@@ -1,0 +1,3 @@
+import { n as e, t } from "./delete-v6vYMEWv-BohXy1BZ.js";
+t();
+export { e as default };

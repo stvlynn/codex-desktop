@@ -1,0 +1,3 @@
+import { n as e, t } from "./space-BvsuNnwg-BsY3ssgF.js";
+e();
+export { t as default };

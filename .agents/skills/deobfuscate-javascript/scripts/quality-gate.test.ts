@@ -1,0 +1,6560 @@
+import { afterEach, describe, expect, test } from "bun:test";
+import * as fs from "node:fs";
+import * as os from "node:os";
+import * as path from "node:path";
+import { spawnSync } from "node:child_process";
+import {
+  analyzeFullRestorationCoverage,
+  analyzePublicNpmVendorShimDependencies,
+  analyzeSource,
+  checkFormatting,
+  collectBoundaryCheckpointImportFiles,
+  collectImportMapBoundaryFiles,
+  collectManifestVendoredFiles,
+  DEFAULT_OPTIONS,
+} from "./quality-gate.ts";
+
+const tmpRoots: string[] = [];
+
+function makeTmpRoot(): string {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "quality-gate-"));
+  tmpRoots.push(dir);
+  return dir;
+}
+
+afterEach(() => {
+  while (tmpRoots.length > 0) {
+    fs.rmSync(tmpRoots.pop()!, { recursive: true, force: true });
+  }
+});
+
+describe("quality-gate", () => {
+  test("passes a small readable TSX module", () => {
+    const source = `
+      import React from "react";
+      export interface ButtonProps { label: string }
+      export function Button({ label }: ButtonProps) {
+        return <button>{label}</button>;
+      }
+    `;
+    const report = analyzeSource(source, "button.tsx");
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails missing provenance headers when required", () => {
+    const source = `
+      export function Toolbar() {
+        return null;
+      }
+    `;
+    const report = analyzeSource(source, "toolbar.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      requireProvenanceHeader: true,
+    });
+    expect(report.hasProvenanceHeader).toBe(false);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "missing-provenance-header",
+    );
+  });
+
+  test("passes provenance headers when required", () => {
+    const source = `
+      // Restored from ref/webview/assets/toolbar-ABC123.js
+      export function Toolbar() {
+        return null;
+      }
+    `.trimStart();
+    const report = analyzeSource(source, "toolbar.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      requireProvenanceHeader: true,
+    });
+    expect(report.hasProvenanceHeader).toBe(true);
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written cmdk vendor compatibility shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/dist-BLGenw3M.js
+      export function Command(props) {
+        return props.children ?? null;
+      }
+      export function useCommandState(selector) {
+        return selector({});
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/cmdk.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes cmdk vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/dist-BLGenw3M.js
+      export { Command, useCommandState } from "cmdk";
+    `;
+    const report = analyzeSource(source, "restored/vendor/cmdk.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written Highlight.js core vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/core-DMiaGTKr.js
+      export const loadHighlightJsCore = () => ({
+        highlight(code, language) {
+          return { value: code, language };
+        },
+        registerLanguage() {},
+      });
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/highlight-js-core.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes Highlight.js core loader shims backed by the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/core-DMiaGTKr.js
+      import highlightJsCore from "highlight.js/lib/core";
+      export const loadHighlightJsCore = () => highlightJsCore;
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/highlight-js-core.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails Highlight.js core shims when package dependency is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: {} }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "highlight-js-core.ts"),
+      `
+        // Restored from ref/webview/assets/core-DMiaGTKr.js
+        import highlightJsCore from "highlight.js/lib/core";
+        export const loadHighlightJsCore = () => highlightJsCore;
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["highlight.js"],
+    });
+  });
+
+  test("fails hand-written Cytoscape runtime vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/cytoscape.esm-gCnb3XbU.js
+      export function initCytoscapeRuntimeChunk() {}
+      export function cytoscape(options) {
+        return { options, nodes() { return []; }, edges() { return []; } };
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/cytoscape-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("fails renamed Cytoscape source chunks that do not re-export npm", () => {
+    const source = `
+      // Restored from ref/webview/assets/cytoscape.esm-CPPPPA7s.js
+      export function cytoscape(options) {
+        return { options };
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/graph-runtime.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["cytoscape"] });
+  });
+
+  test("passes Cytoscape runtime shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/cytoscape.esm-gCnb3XbU.js
+      export { default, default as cytoscape } from "cytoscape";
+      export function initCytoscapeRuntimeChunk(): void {}
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/cytoscape-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written Cytoscape layout plugin shims", () => {
+    const fcoseSource = `
+      // Restored from ref/webview/assets/cytoscape-fcose-q4BaAAiB.js
+      export function loadCytoscapeFcose() {
+        return function fcoseLayoutPlugin(cytoscape) {
+          cytoscape("layout", "fcose", function Layout() {});
+        };
+      }
+    `;
+    const coseBilkentSource = `
+      // Restored from ref/webview/assets/cytoscape-cose-bilkent-Cew5xac-.js
+      export function loadCytoscapeCoseBilkent() {
+        return function coseBilkentLayoutPlugin(cytoscape) {
+          cytoscape("layout", "cose-bilkent", function Layout() {});
+        };
+      }
+    `;
+
+    const fcoseReport = analyzeSource(
+      fcoseSource,
+      "restored/vendor/cytoscape-fcose.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    const coseBilkentReport = analyzeSource(
+      coseBilkentSource,
+      "restored/vendor/cytoscape-cose-bilkent.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(fcoseReport.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(coseBilkentReport.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes Cytoscape layout plugin shims that re-export npm packages", () => {
+    const fcoseSource = `
+      // Restored from ref/webview/assets/cytoscape-fcose-q4BaAAiB.js
+      import cytoscapeFcose from "cytoscape-fcose";
+      export { default, default as cytoscapeFcose } from "cytoscape-fcose";
+      export function loadCytoscapeFcose(): typeof cytoscapeFcose {
+        return cytoscapeFcose;
+      }
+    `;
+    const coseBilkentSource = `
+      // Restored from ref/webview/assets/cytoscape-cose-bilkent-Cew5xac-.js
+      import cytoscapeCoseBilkent from "cytoscape-cose-bilkent";
+      export { default, default as cytoscapeCoseBilkent } from "cytoscape-cose-bilkent";
+      export function loadCytoscapeCoseBilkent(): typeof cytoscapeCoseBilkent {
+        return cytoscapeCoseBilkent;
+      }
+    `;
+
+    const fcoseReport = analyzeSource(
+      fcoseSource,
+      "restored/vendor/cytoscape-fcose.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    const coseBilkentReport = analyzeSource(
+      coseBilkentSource,
+      "restored/vendor/cytoscape-cose-bilkent.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(fcoseReport.issues).toEqual([]);
+    expect(coseBilkentReport.issues).toEqual([]);
+  });
+
+  test("fails Cytoscape shims when package dependencies are not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: { cytoscape: "3.33.1" } }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "cytoscape-cose-bilkent.ts"),
+      `
+        // Restored from ref/webview/assets/cytoscape-cose-bilkent-Cew5xac-.js
+        export { default, default as cytoscapeCoseBilkent } from "cytoscape-cose-bilkent";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["cytoscape-cose-bilkent"],
+    });
+  });
+
+  test("fails hand-written Graphlib/Dagre vendor shims", () => {
+    const graphlibSource = `
+      // Restored from ref/webview/assets/graphlib-DGNlaJmK.js
+      export class Graphlib {
+        constructor(options) {
+          this.options = options;
+        }
+        setNode(id, value) {
+          return { id, value };
+        }
+      }
+    `;
+    const dagreSource = `
+      // Restored from ref/webview/assets/dagre-BqhzN4_p.js
+      export function Dagre(graph) {
+        graph.setGraph?.({});
+        return graph;
+      }
+      export function initDagre() {}
+    `;
+
+    for (const [source, file, expectedSpecifiers] of [
+      [graphlibSource, "restored/vendor/graphlib.ts", ["graphlib"]],
+      [dagreSource, "restored/vendor/dagre.ts", ["dagre"]],
+    ] as const) {
+      const report = analyzeSource(source, file, {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      });
+      expect(report.issues.map((issue) => issue.code)).toContain(
+        "third-party-npm-shim-not-reexport",
+      );
+      expect(
+        report.issues.find(
+          (issue) => issue.code === "third-party-npm-shim-not-reexport",
+        )?.detail,
+      ).toMatchObject({ expectedSpecifiers });
+    }
+  });
+
+  test("fails renamed Graphlib/Dagre source chunks that do not re-export npm", () => {
+    const graphlibSource = `
+      // Restored from ref/webview/assets/graphlib-CU4GKOO2.js
+      export class Graphlib {
+        setEdge(edge, value) {
+          return { edge, value };
+        }
+      }
+    `;
+    const dagreSource = `
+      // Restored from ref/webview/assets/dagre-5oTtyBe6.js
+      export function layout(graph) {
+        return graph;
+      }
+    `;
+
+    for (const [source, file, expectedSpecifiers] of [
+      [graphlibSource, "restored/vendor/graph-runtime.ts", ["graphlib"]],
+      [dagreSource, "restored/vendor/layout-runtime.ts", ["dagre"]],
+    ] as const) {
+      const report = analyzeSource(source, file, {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      });
+      expect(report.issues.map((issue) => issue.code)).toContain(
+        "third-party-npm-shim-not-reexport",
+      );
+      expect(
+        report.issues.find(
+          (issue) => issue.code === "third-party-npm-shim-not-reexport",
+        )?.detail,
+      ).toMatchObject({ expectedSpecifiers });
+    }
+  });
+
+  test("passes Graphlib/Dagre shims that re-export npm packages", () => {
+    const root = makeTmpRoot();
+    const vendorDir = path.join(root, "restored", "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({
+        dependencies: {
+          dagre: "^0.8.5",
+          graphlib: "^2.1.8",
+        },
+      }),
+    );
+
+    const shimSources = new Map<string, string>([
+      [
+        path.join(vendorDir, "graphlib.ts"),
+        `
+          // Restored from ref/webview/assets/graphlib-DGNlaJmK.js
+          import graphlib from "graphlib";
+          export type { Edge as GraphlibEdge } from "graphlib";
+          export const Graphlib = graphlib.Graph;
+        `,
+      ],
+      [
+        path.join(vendorDir, "graphlib-alt.ts"),
+        `
+          // Restored from ref/webview/assets/graphlib-ichArG6F.js
+          import graphlib from "graphlib";
+          export type { Edge as GraphlibEdge } from "graphlib";
+          export const Graphlib = graphlib.Graph;
+          export function initGraphlibAltChunk(): void {}
+        `,
+      ],
+      [
+        path.join(vendorDir, "dagre.ts"),
+        `
+          // Restored from ref/webview/assets/dagre-BqhzN4_p.js
+          import dagre from "dagre";
+          export type { GraphLabel as DagreGraphLabel } from "dagre";
+          export const Dagre = dagre.layout;
+          export function initDagre(): void {}
+        `,
+      ],
+      [
+        path.join(vendorDir, "dagre-alt.ts"),
+        `
+          // Restored from ref/webview/assets/dagre-Ba2O9HBx.js
+          import dagre from "dagre";
+          export type { GraphLabel as DagreGraphLabel } from "dagre";
+          export const Dagre = dagre.layout;
+        `,
+      ],
+    ]);
+
+    for (const [file, source] of shimSources) {
+      const report = analyzeSource(source, file, {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      });
+      expect(report.issues).toEqual([]);
+    }
+    expect(
+      analyzePublicNpmVendorShimDependencies(path.join(root, "restored")),
+    ).toEqual([]);
+  });
+
+  test("fails Graphlib/Dagre shims when package dependencies are not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: { graphlib: "^2.1.8" } }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "dagre.ts"),
+      `
+        // Restored from ref/webview/assets/dagre-BqhzN4_p.js
+        export { layout as Dagre } from "dagre";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["dagre"],
+    });
+  });
+
+  test("fails hand-written PDF.js vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/pdf-CaT3Fa-k.js
+      export const GlobalWorkerOptions = { workerSrc: "" };
+      export function getDocument(source) {
+        return { promise: Promise.resolve(source), destroy() {} };
+      }
+      export class AnnotationLayer {}
+      export class TextLayer {}
+      export const version = "5.4.296";
+    `;
+    const report = analyzeSource(source, "restored/vendor/pdfjs.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["pdfjs-dist"] });
+  });
+
+  test("fails renamed PDF.js source chunks that do not re-export npm", () => {
+    const source = `
+      // Restored from ref/webview/assets/pdf-CEc0zmuq.js
+      export function getDocument(source) {
+        return { source };
+      }
+      export const GlobalWorkerOptions = {};
+      export class TextLayer {}
+    `;
+    const report = analyzeSource(source, "restored/vendor/pdf-runtime.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["pdfjs-dist"] });
+  });
+
+  test("passes PDF.js shims that re-export pdfjs-dist", () => {
+    const root = makeTmpRoot();
+    const vendorDir = path.join(root, "restored", "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: { "pdfjs-dist": "5.4.296" } }),
+    );
+
+    const shimSources = new Map<string, string>([
+      [
+        path.join(vendorDir, "pdfjs.ts"),
+        `
+          // Restored from ref/webview/assets/pdf-CaT3Fa-k.js
+          export {
+            AnnotationLayer,
+            GlobalWorkerOptions,
+            PDFWorker,
+            TextLayer,
+            getDocument,
+            version,
+          } from "pdfjs-dist";
+        `,
+      ],
+      [
+        path.join(vendorDir, "pdfjs-entry.ts"),
+        `
+          // Restored from ref/webview/assets/pdf-CEc0zmuq.js
+          export {
+            AnnotationLayer,
+            GlobalWorkerOptions,
+            TextLayer,
+            getDocument,
+          } from "pdfjs-dist";
+        `,
+      ],
+    ]);
+
+    for (const [file, source] of shimSources) {
+      const report = analyzeSource(source, file, {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      });
+      expect(report.issues).toEqual([]);
+    }
+    expect(
+      analyzePublicNpmVendorShimDependencies(path.join(root, "restored")),
+    ).toEqual([]);
+  });
+
+  test("fails PDF.js shims when the package dependency is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(path.join(root, "package.json"), JSON.stringify({}));
+    fs.writeFileSync(
+      path.join(vendorDir, "pdfjs.ts"),
+      `
+        // Restored from ref/webview/assets/pdf-CaT3Fa-k.js
+        export { getDocument, GlobalWorkerOptions } from "pdfjs-dist";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["pdfjs-dist"],
+    });
+  });
+
+  test("fails hand-written sanitize-url vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/dist-CD74BDfk.js
+      export function sanitizeUrl(url) {
+        if (!url) return "about:blank";
+        return String(url).replace(/javascript:/gi, "");
+      }
+      export const dist = { sanitizeUrl };
+    `;
+    const report = analyzeSource(source, "restored/vendor/entities-escape.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["@braintree/sanitize-url"] });
+  });
+
+  test("fails renamed sanitize-url source chunks that do not re-export npm", () => {
+    const source = `
+      // Restored from ref/webview/assets/dist-WEF1yh7f.js
+      export function sanitizeUrl(url) {
+        return url == null ? "about:blank" : String(url);
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/url-sanitizer.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["@braintree/sanitize-url"] });
+  });
+
+  test("passes sanitize-url shims that re-export the npm package", () => {
+    const root = makeTmpRoot();
+    const runtimeDir = path.join(root, "restored", "runtime");
+    const vendorDir = path.join(root, "restored", "vendor");
+    fs.mkdirSync(runtimeDir, { recursive: true });
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(runtimeDir, "commonjs-interop.ts"),
+      `
+        export function createCommonJsModule<T>(factory: (exports: T) => void): T {
+          const exports = {} as T;
+          factory(exports);
+          return exports;
+        }
+      `,
+    );
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({
+        dependencies: { "@braintree/sanitize-url": "^7.1.2" },
+      }),
+    );
+    const source = `
+      // Restored from ref/webview/assets/dist-CD74BDfk.js
+      import { sanitizeUrl } from "@braintree/sanitize-url";
+      import { createCommonJsModule } from "../runtime/commonjs-interop";
+      export { sanitizeUrl } from "@braintree/sanitize-url";
+      export const dist = createCommonJsModule((exports) => {
+        Object.defineProperty(exports, "__esModule", { value: true });
+        exports.sanitizeUrl = sanitizeUrl;
+      });
+    `;
+    const report = analyzeSource(
+      source,
+      path.join(vendorDir, "entities-escape.ts"),
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+    expect(
+      analyzePublicNpmVendorShimDependencies(path.join(root, "restored")),
+    ).toEqual([]);
+  });
+
+  test("fails sanitize-url shims when the package dependency is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(path.join(root, "package.json"), JSON.stringify({}));
+    fs.writeFileSync(
+      path.join(vendorDir, "entities-escape.ts"),
+      `
+        // Restored from ref/webview/assets/dist-CD74BDfk.js
+        export { sanitizeUrl } from "@braintree/sanitize-url";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["@braintree/sanitize-url"],
+    });
+  });
+
+  test("fails hand-written docx-preview vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/docx-preview-G1XqxLZP.js
+      export async function renderAsync(data, bodyContainer) {
+        bodyContainer.textContent = String(data);
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/docx-preview.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["docx-preview"] });
+  });
+
+  test("passes docx-preview shims that re-export the npm package", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: { "docx-preview": "0.3.7" } }),
+    );
+    const source = `
+      // Restored from ref/webview/assets/docx-preview-G1XqxLZP.js
+      export { renderAsync } from "docx-preview";
+    `;
+    const report = analyzeSource(
+      source,
+      path.join(vendorDir, "docx-preview.ts"),
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+    fs.writeFileSync(path.join(vendorDir, "docx-preview.ts"), source);
+    expect(analyzePublicNpmVendorShimDependencies(restoredDir)).toEqual([]);
+  });
+
+  test("fails docx-preview shims when the package dependency is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(path.join(root, "package.json"), JSON.stringify({}));
+    fs.writeFileSync(
+      path.join(vendorDir, "docx-preview.ts"),
+      `
+        // Restored from ref/webview/assets/docx-preview-G1XqxLZP.js
+        export { renderAsync } from "docx-preview";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["docx-preview"],
+    });
+  });
+
+  test("fails hand-written Stylis vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/stylis-CNWqMcUo.js
+      export function compile(styles) {
+        return String(styles).split("{}");
+      }
+      export function serialize(children, callback) {
+        return children.map(callback).join("");
+      }
+      export function stringify(node) {
+        return node.value;
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/stylis.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["stylis"] });
+  });
+
+  test("passes Stylis shims that re-export the npm package", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: { stylis: "^4.3.6" } }),
+    );
+    const source = `
+      // Restored from ref/webview/assets/stylis-CNWqMcUo.js
+      export { compile, serialize, stringify } from "stylis";
+    `;
+    const report = analyzeSource(source, path.join(vendorDir, "stylis.ts"), {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+    fs.writeFileSync(path.join(vendorDir, "stylis.ts"), source);
+    expect(analyzePublicNpmVendorShimDependencies(restoredDir)).toEqual([]);
+  });
+
+  test("fails Stylis shims when the package dependency is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(path.join(root, "package.json"), JSON.stringify({}));
+    fs.writeFileSync(
+      path.join(vendorDir, "stylis.ts"),
+      `
+        // Restored from ref/webview/assets/stylis-CNWqMcUo.js
+        export { compile, serialize, stringify } from "stylis";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["stylis"],
+    });
+  });
+
+  test("fails hand-written react-style-singleton vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+      export function styleSingleton() {
+        let count = 0;
+        return {
+          add(styles) {
+            count += styles.length;
+          },
+          remove() {
+            count -= 1;
+          },
+        };
+      }
+      export function styleHookSingleton() {
+        return () => null;
+      }
+      export function stylesheetSingleton() {
+        return styleSingleton();
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/react-style-singleton.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes react-style-singleton vendor shims that re-export npm", () => {
+    const source = `
+      // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+      export {
+        styleHookSingleton,
+        styleSingleton,
+        stylesheetSingleton,
+      } from "react-style-singleton";
+      export function initStyleSingletonRuntime(): void {}
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/react-style-singleton.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("flags renamed react-style-singleton API shims by fingerprint", () => {
+    const source = `
+      // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+      export function styleSingleton() {
+        return { add() {}, remove() {} };
+      }
+      export function stylesheetSingleton() {
+        return styleSingleton();
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/style-runtime.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("fails hand-written TanStack React Form vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/esm-BrsRQYxN.js
+      export function useForm(options) {
+        return { options, Field: () => null, Subscribe: () => null };
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/tanstack-react-form.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes TanStack React Form shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/esm-BrsRQYxN.js
+      export { useForm } from "@tanstack/react-form";
+      export function initTanstackReactFormChunk(): void {}
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/tanstack-react-form.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written D3 axis/selection vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/src-CTe_6Jg1.js
+      export function d3AxisTop(scale) {
+        return { scale, orient: "top" };
+      }
+      export function d3Select(node) {
+        return node;
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/d3-axis-current-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes D3 axis/selection shims that re-export the npm packages", () => {
+    const source = `
+      // Restored from ref/webview/assets/src-CTe_6Jg1.js
+      export { axisBottom as d3AxisBottom, axisTop as d3AxisTop } from "d3-axis";
+      export { select as d3Select } from "d3-selection";
+      export function initD3AxisSelectionRuntime(): void {}
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/d3-axis-current-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written legacy D3 axis/time vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/axis-BWiM9Kg7.js
+      export function axisR() {
+        return { domain() { return this; }, rangeRound() { return this; } };
+      }
+      export function axisN(scale) {
+        return { scale, orient: "top" };
+      }
+      export function axisT(scale) {
+        return { scale, orient: "bottom" };
+      }
+      export function axisI(format) {
+        return format;
+      }
+      export function axisV(start, end) {
+        return () => start ?? end;
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/d3-axis.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({
+      expectedSpecifiers: [
+        "d3-axis",
+        "d3-scale",
+        "d3-time",
+        "d3-time-format",
+        "d3-interpolate",
+      ],
+    });
+  });
+
+  test("passes legacy D3 axis/time shims that re-export npm packages", () => {
+    const source = `
+      // Restored from ref/webview/assets/axis-BWiM9Kg7.js
+      export { axisTop as axisN, axisBottom as axisT } from "d3-axis";
+      export { scaleTime as axisR } from "d3-scale";
+      export { timeFormat as axisI } from "d3-time-format";
+      export {
+        timeDay as axisP,
+        timeFriday as axisO,
+        timeHour as axisM,
+        timeMillisecond as axisUnderscore,
+        timeMonday as axisS,
+        timeMonth as axisA,
+        timeSaturday as axisC,
+        timeSecond as axisG,
+        timeSunday as axisL,
+        timeThursday as axisU,
+        timeTuesday as axisD,
+        timeWednesday as axisF,
+      } from "d3-time";
+      export { interpolateHcl as axisV } from "d3-interpolate";
+    `;
+    const report = analyzeSource(source, "restored/vendor/d3-axis.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written D3 hierarchy/treemap vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/treemap-CMHfdOyb.js
+      export function treemap(data) {
+        return { data, tile() { return this; } };
+      }
+      export function treemapSquarify(node) {
+        return node;
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/d3-hierarchy-treemap.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes D3 hierarchy/treemap shims that re-export npm packages", () => {
+    const source = `
+      // Restored from ref/webview/assets/src-BhkLFyc4.js
+      export { hierarchy, partition, treemap, treemapSquarify } from "d3-hierarchy";
+      export { schemeSet2, schemeTableau10 } from "d3-scale-chromatic";
+      export function initD3HierarchyChunk(): void {}
+    `;
+    const report = analyzeSource(source, "restored/vendor/d3-hierarchy.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written D3 sankey vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/sankeyLinkHorizontal-DCfEjaVP.js
+      export function sankey() {
+        return { nodeWidth() { return this; }, links() { return this; } };
+      }
+      export function sankeyLinkHorizontal() {
+        return () => "M0,0";
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/d3-sankey-link-horizontal.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes D3 sankey shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/src-6yFswxVy.js
+      export {
+        sankey,
+        sankeyCenter,
+        sankeyJustify,
+        sankeyLeft,
+        sankeyLinkHorizontal,
+        sankeyRight,
+      } from "d3-sankey";
+      export function initD3SankeyChunk(): void {}
+    `;
+    const report = analyzeSource(source, "restored/vendor/d3-sankey.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written D3 shape vendor shims", () => {
+    const shimSources = new Map<string, string>([
+      [
+        "restored/vendor/d3-shape-curves.ts",
+        `
+          // Restored from ref/webview/assets/step-K6tEdR0Q.js
+          export function stepH(context) {
+            return {
+              lineStart() {},
+              lineEnd() {},
+              point(x, y) {
+                context.lineTo(x, y);
+              },
+            };
+          }
+          export function stepR(context) {
+            return stepH(context);
+          }
+        `,
+      ],
+      [
+        "restored/vendor/d3-shape-curve-cardinal.ts",
+        `
+          // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+          export function curveCardinal(context) {
+            return { lineStart() {}, lineEnd() {}, point(x, y) { context.lineTo(x, y); } };
+          }
+        `,
+      ],
+      [
+        "restored/vendor/d3-shape-curve-catmull-rom.ts",
+        `
+          // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+          export function curveCatmullRom(context) {
+            return { lineStart() {}, lineEnd() {}, point(x, y) { context.lineTo(x, y); } };
+          }
+        `,
+      ],
+      [
+        "restored/vendor/d3-shape-curve-context.ts",
+        `
+          // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+          export interface CurveContext {
+            moveTo(x: number, y: number): void;
+            lineTo(x: number, y: number): void;
+          }
+        `,
+      ],
+    ]);
+
+    for (const [file, source] of shimSources) {
+      const report = analyzeSource(source, file, {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+        vendored: true,
+      });
+      expect(report.issues.map((issue) => issue.code)).toContain(
+        "third-party-npm-shim-not-reexport",
+      );
+      expect(
+        report.issues.find(
+          (issue) => issue.code === "third-party-npm-shim-not-reexport",
+        )?.detail,
+      ).toMatchObject({ expectedSpecifiers: ["d3-shape"] });
+    }
+  });
+
+  test("fails renamed D3 shape source chunks that do not re-export npm", () => {
+    const source = `
+      // Restored from ref/webview/assets/arc-D3MQZVTw.js
+      export function createArc() {
+        return () => "M0,0";
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/diagram-arc.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes D3 shape shims that re-export the npm package", () => {
+    const root = makeTmpRoot();
+    const vendorDir = path.join(root, "restored", "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: { "d3-shape": "^3.2.0" } }),
+    );
+    fs.mkdirSync(path.join(vendorDir, "d3-shape-curves"), {
+      recursive: true,
+    });
+    fs.writeFileSync(
+      path.join(vendorDir, "d3-shape-curves", "bump-curves.ts"),
+      `
+        // Restored from ref/webview/assets/step-K6tEdR0Q.js
+        export const curveBumpX = () => {};
+        export const curveBumpY = () => {};
+      `,
+    );
+
+    const source = `
+      // Restored from ref/webview/assets/step-K6tEdR0Q.js
+      export {
+        curveBumpX as stepG,
+        curveBumpY as stepUnderscore,
+      } from "./d3-shape-curves/bump-curves";
+      export {
+        curveBasis as stepH,
+        curveBasisClosed as stepM,
+        curveBasisOpen as stepP,
+        curveBundle as stepF,
+        curveCardinal as stepD,
+        curveCardinalClosed as stepU,
+        curveCardinalOpen as stepL,
+        curveCatmullRom as stepC,
+        curveCatmullRomClosed as stepS,
+        curveCatmullRomOpen as stepO,
+        curveLinearClosed as stepA,
+        curveNatural as stepI,
+        curveStep as stepR,
+        curveStepAfter as stepT,
+        curveStepBefore as stepN,
+      } from "d3-shape";
+    `;
+    const report = analyzeSource(
+      source,
+      path.join(vendorDir, "d3-shape-curves.ts"),
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+
+    const extraShimSources = new Map<string, string>([
+      [
+        path.join(vendorDir, "d3-shape-curve-cardinal.ts"),
+        `
+          // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+          export {
+            curveCardinal,
+            curveCardinalClosed,
+            curveCardinalOpen,
+          } from "d3-shape";
+          export type { CurveCardinalFactory } from "d3-shape";
+        `,
+      ],
+      [
+        path.join(vendorDir, "d3-shape-curve-catmull-rom.ts"),
+        `
+          // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+          export {
+            curveCatmullRom,
+            curveCatmullRomClosed,
+            curveCatmullRomOpen,
+          } from "d3-shape";
+          export type { CurveCatmullRomFactory } from "d3-shape";
+        `,
+      ],
+      [
+        path.join(vendorDir, "d3-shape-curve-context.ts"),
+        `
+          // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+          export type {
+            CurveFactory,
+            CurveGenerator as Curve,
+            CurveGeneratorLineOnly,
+          } from "d3-shape";
+        `,
+      ],
+    ]);
+
+    for (const [file, source] of extraShimSources) {
+      const extraReport = analyzeSource(source, file, {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      });
+      expect(extraReport.issues).toEqual([]);
+    }
+  });
+
+  test("fails hand-written D3 utility vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/min-BVs4UoI0.js
+      export function minT(values) {
+        return values[0];
+      }
+      export function minN(values) {
+        return values[values.length - 1];
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/d3-array-min.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["d3-array"] });
+  });
+
+  test("fails renamed D3 utility source chunks that do not re-export npm", () => {
+    const source = `
+      // Restored from ref/webview/assets/defaultLocale-gPb_B8uX.js
+      export function defaultLocaleT(format) {
+        return String(format);
+      }
+      export function defaultLocaleI(format) {
+        return { format };
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/diagram-format.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["d3-format"] });
+  });
+
+  test("passes D3 utility shims that re-export npm packages", () => {
+    const shimSources = new Map<string, string>([
+      [
+        "restored/vendor/d3-array-min.ts",
+        `
+          // Restored from ref/webview/assets/min-BVs4UoI0.js
+          export {
+            max as maxValue,
+            max as minN,
+            min as minT,
+            min as minValue,
+          } from "d3-array";
+        `,
+      ],
+      [
+        "restored/vendor/d3-format-default-locale.ts",
+        `
+          // Restored from ref/webview/assets/defaultLocale-I5DW1pOv.js
+          export {
+            format as defaultLocaleT,
+            formatLocale as defaultLocaleR,
+            formatPrefix as defaultLocaleN,
+            formatSpecifier as defaultLocaleI,
+          } from "d3-format";
+          export function defaultLocaleA(value: number): number {
+            return Number(value);
+          }
+        `,
+      ],
+      [
+        "restored/vendor/d3-path.ts",
+        `
+          // Restored from ref/webview/assets/path-DSoH76MG.js
+          export { path } from "d3-path";
+          export type { Path } from "d3-path";
+          export function constantAccessor<Value>(value: Value): () => Value {
+            return () => value;
+          }
+          export const pathN = constantAccessor;
+        `,
+      ],
+      [
+        "restored/vendor/d3-tableau10.ts",
+        `
+          // Restored from ref/webview/assets/Tableau10-BYZHCNVA.js
+          export {
+            schemeTableau10,
+            schemeTableau10 as tableau10T,
+          } from "d3-scale-chromatic";
+          export function decodeHexPalette(encodedPalette: string): string[] {
+            return encodedPalette.match(/.{6}/g)?.map((hex) => "#" + hex) ?? [];
+          }
+          export const tableau10N = decodeHexPalette;
+        `,
+      ],
+    ]);
+
+    for (const [file, source] of shimSources) {
+      const report = analyzeSource(source, file, {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      });
+      expect(report.issues).toEqual([]);
+    }
+  });
+
+  test("fails hand-written D3 scale/interpolate vendor shims", () => {
+    const shimSources = new Map<string, string>([
+      [
+        "restored/vendor/d3-scale-band.ts",
+        `
+          // Restored from ref/webview/assets/band-DVYrpIoC.js
+          export function scaleBand() {
+            return { domain() { return this; }, range() { return this; } };
+          }
+          export const bandT = scaleBand;
+        `,
+      ],
+      [
+        "restored/vendor/d3-scale-linear.ts",
+        `
+          // Restored from ref/webview/assets/linear-C3CxBvdt.js
+          export function linearT() {
+            return { domain() { return this; }, range() { return this; } };
+          }
+          export function linearS(start, stop, count) {
+            return (stop - start) / count;
+          }
+        `,
+      ],
+      [
+        "restored/vendor/d3-interpolate-string.ts",
+        `
+          // Restored from ref/webview/assets/string-CKccV857.js
+          export function stringN(start, end) {
+            return (t) => start * (1 - t) + end * t;
+          }
+          export function stringT(start, end) {
+            return () => String(end);
+          }
+        `,
+      ],
+      [
+        "restored/vendor/d3-interpolate-transform.ts",
+        `
+          // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+          export function interpolateTransformCss() {
+            return () => "translate(0px, 0px)";
+          }
+        `,
+      ],
+    ]);
+
+    for (const [file, source] of shimSources) {
+      const report = analyzeSource(source, file, {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      });
+      expect(report.issues.map((issue) => issue.code)).toContain(
+        "third-party-npm-shim-not-reexport",
+      );
+    }
+  });
+
+  test("passes D3 scale/interpolate shims that re-export npm packages", () => {
+    const shimSources = new Map<string, string>([
+      [
+        "restored/vendor/d3-scale-band.ts",
+        `
+          // Restored from ref/webview/assets/band-DVYrpIoC.js
+          export { range, range as bandR } from "d3-array";
+          export {
+            scaleBand,
+            scaleBand as bandT,
+            scalePoint,
+            scalePoint as bandN,
+          } from "d3-scale";
+        `,
+      ],
+      [
+        "restored/vendor/d3-scale-linear.ts",
+        `
+          // Restored from ref/webview/assets/linear-C3CxBvdt.js
+          export { bisector as linearL, tickStep as linearS } from "d3-array";
+          export { scaleLinear as linearT } from "d3-scale";
+          export function linearA<Value>(value: Value): Value {
+            return value;
+          }
+        `,
+      ],
+      [
+        "restored/vendor/d3-interpolate-string.ts",
+        `
+          // Restored from ref/webview/assets/string-CKccV857.js
+          export {
+            color as stringL,
+            color as stringS,
+            rgb as stringC,
+            rgb as stringU,
+          } from "d3-color";
+          export {
+            interpolateNumber as stringN,
+            interpolateRgb as stringR,
+            interpolateString as stringT,
+          } from "d3-interpolate";
+          export function stringO<Value>(value: Value): () => Value {
+            return () => value;
+          }
+        `,
+      ],
+      [
+        "restored/vendor/d3-interpolate-transform.ts",
+        `
+          // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+          export { interpolateTransformCss } from "d3-interpolate";
+        `,
+      ],
+    ]);
+
+    for (const [file, source] of shimSources) {
+      const report = analyzeSource(source, file, {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      });
+      expect(report.issues).toEqual([]);
+    }
+  });
+
+  test("fails D3 scale/interpolate shims when package dependencies are not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({
+        dependencies: {
+          "d3-array": "^3.2.4",
+          "d3-interpolate": "^3.0.1",
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "d3-scale-band.ts"),
+      `
+        // Restored from ref/webview/assets/band-DVYrpIoC.js
+        export { range as bandR } from "d3-array";
+        export { scaleBand as bandT } from "d3-scale";
+      `,
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "d3-interpolate-string.ts"),
+      `
+        // Restored from ref/webview/assets/string-CKccV857.js
+        export { color as stringL } from "d3-color";
+        export { interpolateString as stringT } from "d3-interpolate";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(2);
+    expect(
+      reports.flatMap((report) =>
+        report.issues.flatMap((issue) => issue.detail?.missingPackages ?? []),
+      ),
+    ).toEqual(["d3-color", "d3-scale"]);
+  });
+
+  test("passes D3 scale/interpolate dependency checks when package roots are declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({
+        dependencies: {
+          "d3-array": "^3.2.4",
+          "d3-color": "^3.1.0",
+          "d3-interpolate": "^3.0.1",
+          "d3-scale": "^4.0.2",
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "d3-scale-linear.ts"),
+      `
+        // Restored from ref/webview/assets/linear-C3CxBvdt.js
+        export { tickStep as linearS } from "d3-array";
+        export { scaleLinear as linearT } from "d3-scale";
+      `,
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "d3-interpolate-string.ts"),
+      `
+        // Restored from ref/webview/assets/string-CKccV857.js
+        export { color as stringL } from "d3-color";
+        export { interpolateString as stringT } from "d3-interpolate";
+      `,
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "d3-interpolate-transform.ts"),
+      `
+        // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-BUwCKIcU.js
+        export { interpolateTransformCss } from "d3-interpolate";
+      `,
+    );
+
+    expect(analyzePublicNpmVendorShimDependencies(restoredDir)).toEqual([]);
+  });
+
+  test("fails D3 utility shims when package dependencies are not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({
+        dependencies: {
+          "d3-array": "^3.2.4",
+          "d3-path": "^3.1.0",
+          "d3-scale-chromatic": "^3.1.0",
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "d3-format-default-locale.ts"),
+      `
+        // Restored from ref/webview/assets/defaultLocale-I5DW1pOv.js
+        export { format as defaultLocaleT } from "d3-format";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["d3-format"],
+    });
+  });
+
+  test("passes D3 utility shim dependency checks when package roots are declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({
+        dependencies: {
+          "d3-array": "^3.2.4",
+          "d3-format": "^3.1.2",
+          "d3-path": "^3.1.0",
+          "d3-scale-chromatic": "^3.1.0",
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "d3-array-min.ts"),
+      `
+        // Restored from ref/webview/assets/min-BVs4UoI0.js
+        export { max as minN, min as minT } from "d3-array";
+      `,
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "d3-format-default-locale.ts"),
+      `
+        // Restored from ref/webview/assets/defaultLocale-I5DW1pOv.js
+        export { format as defaultLocaleT } from "d3-format";
+      `,
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "d3-path.ts"),
+      `
+        // Restored from ref/webview/assets/path-BiIEs4Yy.js
+        export { path } from "d3-path";
+      `,
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "d3-tableau10.ts"),
+      `
+        // Restored from ref/webview/assets/Tableau10-BYZHCNVA.js
+        export { schemeTableau10 as tableau10T } from "d3-scale-chromatic";
+      `,
+    );
+
+    expect(analyzePublicNpmVendorShimDependencies(restoredDir)).toEqual([]);
+  });
+
+  test("fails hand-written Lodash current vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/lodash-BhBwOd7I.js
+      export function lodashA(value) {
+        return value && value.length ? value[0] : undefined;
+      }
+      export function _lodashK(collection, iteratee) {
+        return collection.map(iteratee);
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/lodash-current-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes Lodash current shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/lodash-BhBwOd7I.js
+      export {
+        head as lodashA,
+        map as _lodashK,
+      } from "lodash";
+      export function lodashW(): void {}
+      export function _lodashT(): void {}
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/lodash-current-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written Lodash merge runtime shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/merge-jSBXKSH5.js
+      export function mergeT(target, ...sources) {
+        for (const source of sources) {
+          for (const key in source) target[key] = source[key];
+        }
+        return target;
+      }
+      export function initLodashMergeRuntime() {}
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/lodash-merge-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+        vendored: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes Lodash merge runtime shims that re-export lodash/merge", () => {
+    const source = `
+      // Restored from ref/webview/assets/merge-jSBXKSH5.js
+      export {
+        default as _mergeN,
+        default as mergeT,
+      } from "lodash/merge";
+      export function initLodashMergeRuntime(): void {}
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/lodash-merge-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        vendored: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written React DOM client vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/client-C1mrATqU.js
+      export function createRoot(container) {
+        return { render() {}, unmount() {}, container };
+      }
+      export function hydrateRoot(container, children) {
+        return createRoot(container);
+      }
+      export function loadReactDomClient() {
+        return { createRoot, hydrateRoot };
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/react-dom-client.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes React DOM client shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/client-C1mrATqU.js
+      import * as reactDomClient from "react-dom/client";
+      export { createRoot, hydrateRoot } from "react-dom/client";
+      export type { Root } from "react-dom/client";
+      export function loadReactDomClient(): typeof reactDomClient {
+        return reactDomClient;
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/react-dom-client.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written react-intl vendor compatibility shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/lib-BWT6A3Q0.js
+      export function useIntl() {
+        return {
+          formatMessage(descriptor) {
+            return descriptor.defaultMessage ?? descriptor.id ?? "";
+          },
+        };
+      }
+      export function FormattedMessage(props) {
+        return props.defaultMessage ?? props.id ?? "";
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/react-intl.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("fails hand-written react-intl shims even when the file is renamed", () => {
+    const source = `
+      // Restored from ref/webview/assets/lib-BWT6A3Q0.js
+      export function useIntl() {
+        return {
+          formatMessage(descriptor) {
+            return descriptor.defaultMessage ?? descriptor.id ?? "";
+          },
+        };
+      }
+      export function FormattedMessage(props) {
+        return props.defaultMessage ?? props.id ?? "";
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/formatjs-runtime.tsx",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("fails react-intl-compatible vendor shims by API fingerprint", () => {
+    const source = `
+      export function useIntl() {
+        return {
+          formatMessage(descriptor) {
+            return descriptor.defaultMessage ?? descriptor.id ?? "";
+          },
+        };
+      }
+      export function FormattedMessage(props) {
+        return props.defaultMessage ?? props.id ?? "";
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/i18n-formatting.tsx",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["react-intl"] });
+  });
+
+  test("does not let vendored mode bypass known npm shim re-export rules", () => {
+    const source = `
+      // Restored from ref/webview/assets/lib-BWT6A3Q0.js
+      export function useIntl() {
+        return {
+          formatMessage(descriptor) {
+            return descriptor.defaultMessage ?? descriptor.id ?? "";
+          },
+        };
+      }
+      export function FormattedMessage(props) {
+        return props.defaultMessage ?? props.id ?? "";
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/react-intl.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+      vendored: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes react-intl vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/lib-BWT6A3Q0.js
+      export {
+        FormattedMessage,
+        IntlProvider,
+        RawIntlProvider,
+        createIntl,
+        createIntlCache,
+        defineMessage,
+        defineMessages,
+        useIntl,
+      } from "react-intl";
+      export type {
+        IntlShape,
+        MessageDescriptor,
+        PrimitiveType,
+        ReactIntlConfig,
+        ResolvedIntlConfig,
+      } from "react-intl";
+      export {
+        createIntl as libA,
+        createIntlCache as libC,
+        defineMessages as libI,
+        useIntl as libL,
+        FormattedMessage as libS,
+      } from "react-intl";
+    `;
+    const report = analyzeSource(source, "restored/vendor/react-intl.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
+  test("passes renamed react-intl source chunk shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/lib-BWT6A3Q0.js
+      export {
+        FormattedMessage,
+        IntlProvider,
+        useIntl,
+      } from "react-intl";
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/formatjs-runtime.tsx",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("passes react-intl API fingerprint shims that re-export the npm package", () => {
+    const source = `
+      export {
+        FormattedMessage,
+        IntlProvider,
+        useIntl,
+      } from "react-intl";
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/i18n-formatting.tsx",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written vendor shims whose filename matches a declared dependency", () => {
+    const root = makeTmpRoot();
+    const vendorDir = path.join(root, "restored", "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({
+        dependencies: {
+          "acme-widget": "^1.0.0",
+        },
+      }),
+    );
+
+    const source = `
+      // Restored from ref/webview/assets/acme-widget-ABC123.js
+      export function createWidget(options) {
+        return { options };
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      path.join(vendorDir, "acme-widget.ts"),
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["acme-widget"] });
+  });
+
+  test("passes filename-matched declared dependency vendor shims that re-export npm", () => {
+    const root = makeTmpRoot();
+    const vendorDir = path.join(root, "restored", "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({
+        dependencies: {
+          "acme-widget": "^1.0.0",
+        },
+      }),
+    );
+
+    const source = `
+      // Restored from ref/webview/assets/acme-widget-ABC123.js
+      export { createWidget } from "acme-widget";
+      export type { WidgetOptions } from "acme-widget";
+    `;
+    const report = analyzeSource(
+      source,
+      path.join(vendorDir, "acme-widget.ts"),
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails npm vendor shims when package dependency is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: {} }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "react-intl.tsx"),
+      `
+        // Restored from ref/webview/assets/lib-BWT6A3Q0.js
+        export { FormattedMessage, useIntl } from "react-intl";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["react-intl"],
+    });
+  });
+
+  test("fails renamed npm vendor source chunk shims when package dependency is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: {} }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "formatjs-runtime.tsx"),
+      `
+        // Restored from ref/webview/assets/lib-BWT6A3Q0.js
+        export { FormattedMessage, useIntl } from "react-intl";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["react-intl"],
+    });
+  });
+
+  test("fails react-intl API fingerprint shims when package dependency is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: {} }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "i18n-formatting.tsx"),
+      `
+        export { FormattedMessage, IntlProvider, useIntl } from "react-intl";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["react-intl"],
+    });
+  });
+
+  test("passes npm vendor subpath shims when package root is declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({
+        dependencies: {
+          "use-sync-external-store": "^1.0.0",
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "use-sync-external-store-with-selector.ts"),
+      `
+        // Restored from ref/webview/assets/with-selector-DgGZ42Vj.js
+        export { useSyncExternalStoreWithSelector } from "use-sync-external-store/shim/with-selector";
+      `,
+    );
+
+    expect(analyzePublicNpmVendorShimDependencies(restoredDir)).toEqual([]);
+  });
+
+  test("fails hand-written Segment analytics vendor runtimes", () => {
+    const source = `
+      // Restored from ref/webview/assets/pkg-CsBnWPsQ.js
+      export class AnalyticsBrowser {
+        static load(settings) {
+          return new AnalyticsBrowser(settings);
+        }
+        constructor(settings) {
+          this.settings = settings;
+        }
+      }
+      export class Context {
+        constructor(event) {
+          this.event = event;
+        }
+      }
+      export const segmentio = { name: "Segment.io" };
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/segment-analytics.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("fails hand-written Segment analytics shims by source chunk when renamed", () => {
+    const source = `
+      // Restored from ref/webview/assets/esm-Bs7-NtHW.js
+      export function Context(event) {
+        return { event };
+      }
+      export function segmentEventEmitter() {
+        return { emit() {}, on() {} };
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/analytics-core.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["@segment/analytics-core"] });
+  });
+
+  test("fails Segment analytics-compatible vendor shims by API fingerprint", () => {
+    const source = `
+      export class AnalyticsBrowser {
+        static load(settings) {
+          return new AnalyticsBrowser(settings);
+        }
+      }
+      export const segmentio = { name: "Segment.io" };
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/browser-analytics.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["@segment/analytics-next"] });
+  });
+
+  test("passes Segment analytics vendor shims that re-export npm packages", () => {
+    const source = `
+      // Restored from ref/webview/assets/pkg-CsBnWPsQ.js
+      export {
+        Analytics,
+        AnalyticsBrowser,
+        AnalyticsNode,
+        Context,
+        ContextCancelation,
+        EventFactory,
+        Group,
+        UniversalStorage,
+        User,
+        getGlobalAnalytics,
+        isDestinationPluginWithAddMiddleware,
+        resolveAliasArguments,
+        resolveArguments,
+        resolvePageArguments,
+        resolveUserArguments,
+        segmentio,
+      } from "@segment/analytics-next";
+      export {
+        Context as CoreContext,
+        ContextCancelation as CoreContextCancelation,
+      } from "@segment/analytics-core";
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/segment-analytics.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails Segment analytics shims when package dependencies are not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: { "@segment/analytics-next": "^1.0.0" } }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "segment-analytics.ts"),
+      `
+        // Restored from ref/webview/assets/pkg-CsBnWPsQ.js
+        export { AnalyticsBrowser } from "@segment/analytics-next";
+        export { Context } from "@segment/analytics-core";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["@segment/analytics-core"],
+    });
+  });
+
+  test("fails Segment AJS destination shims that re-export the wrong package", () => {
+    const source = `
+      // Restored from ref/webview/assets/ajs-destination-BeM_T5LQ.js
+      export { ajsDestinations } from "@segment/analytics.js-integration";
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/segment-analytics-integration.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({
+      expectedSpecifiers: [
+        "@segment/analytics-next/dist/cjs/plugins/ajs-destination",
+      ],
+    });
+  });
+
+  test("passes Segment AJS destination shims backed by the analytics-next internal plugin", () => {
+    const source = `
+      // Restored from ref/webview/assets/ajs-destination-BeM_T5LQ.js
+      export {
+        LegacyDestination,
+        ajsDestinations,
+      } from "@segment/analytics-next/dist/cjs/plugins/ajs-destination";
+      export type {
+        ClassicIntegrationSource,
+        LegacyIntegration,
+      } from "@segment/analytics-next/dist/types/plugins/ajs-destination/types";
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/segment-analytics-integration.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails Segment AJS destination shims when analytics-next is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(path.join(root, "package.json"), JSON.stringify({}));
+    fs.writeFileSync(
+      path.join(vendorDir, "segment-analytics-integration.ts"),
+      `
+        // Restored from ref/webview/assets/ajs-destination-BeM_T5LQ.js
+        export {
+          LegacyDestination,
+          ajsDestinations,
+        } from "@segment/analytics-next/dist/cjs/plugins/ajs-destination";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["@segment/analytics-next"],
+    });
+  });
+
+  test("fails hand-written Segment middleware vendor runtimes", () => {
+    const source = `
+      // Restored from ref/webview/assets/middleware-CcPovR3s.js
+      export class middlewareA {
+        constructor(event, id) {
+          this.event = event;
+          this.id = id;
+        }
+      }
+      export class middlewareF extends Error {}
+      export function middlewareR(event) {
+        return {
+          obj: event,
+          rawEvent() {
+            return event;
+          },
+        };
+      }
+      export async function middlewareT(_, event) {
+        return event;
+      }
+      export function middlewareN(sourceMiddleware) {
+        return {
+          name: "Source Middleware",
+          type: "before",
+          isLoaded: () => true,
+          load: () => Promise.resolve(),
+          track: sourceMiddleware,
+        };
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/segment-middleware.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({
+      expectedSpecifiers: [
+        "@segment/analytics-next",
+        "@segment/analytics-core",
+        "@segment/facade",
+      ],
+    });
+  });
+
+  test("passes Segment middleware shims that re-export npm packages", () => {
+    const source = `
+      // Restored from ref/webview/assets/middleware-CcPovR3s.js
+      import { Facade } from "@segment/facade";
+      export { Context as middlewareA } from "@segment/analytics-next";
+      export {
+        ContextCancelation as middlewareF,
+        CoreContext as middlewareP,
+      } from "@segment/analytics-core";
+      export { Facade as segmentFacadeBase } from "@segment/facade";
+      export function middlewareR(event) {
+        return new Facade(event);
+      }
+      export async function middlewareT(_, event) {
+        return event;
+      }
+      export function middlewareN(sourceMiddleware) {
+        return {
+          name: "Source Middleware",
+          type: "before",
+          isLoaded: () => true,
+          load: () => Promise.resolve(),
+          track: sourceMiddleware,
+        };
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/segment-middleware.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails Segment middleware shims when facade dependency is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({
+        dependencies: {
+          "@segment/analytics-core": "^1.0.0",
+          "@segment/analytics-next": "^1.0.0",
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "segment-middleware.ts"),
+      `
+        // Restored from ref/webview/assets/middleware-BDgBoOJW.js
+        export { Context as middlewareA } from "@segment/analytics-next";
+        export { CoreContext as middlewareP } from "@segment/analytics-core";
+        export { Facade as segmentFacadeBase } from "@segment/facade";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["@segment/facade"],
+    });
+  });
+
+  test("fails hand-written Segment metric helper vendor runtimes", () => {
+    const source = `
+      // Restored from ref/webview/assets/metric-helpers-7nP-wnaS.js
+      export class metricHelpersD {
+        constructor() {
+          this.callbacks = {};
+        }
+        on(event, callback) {
+          (this.callbacks[event] ??= []).push(callback);
+          return this;
+        }
+      }
+      export function metricHelpersF() {
+        let resolve;
+        const promise = new Promise((done) => {
+          resolve = done;
+        });
+        return { resolve, promise };
+      }
+      export class metricHelpersU {
+        constructor(maxAttempts, queue) {
+          this.maxAttempts = maxAttempts;
+          this.queue = queue;
+        }
+      }
+      export function metricHelpersS(ctx) {
+        return Promise.resolve(ctx);
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/segment-metric-helpers.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({
+      expectedSpecifiers: [
+        "@segment/analytics-core",
+        "@segment/analytics-generic-utils",
+      ],
+    });
+  });
+
+  test("passes Segment metric helper shims that re-export npm packages", () => {
+    const source = `
+      // Restored from ref/webview/assets/metric-helpers-DG5zp00d.js
+      export {
+        ON_REMOVE_FROM_FUTURE as metricHelpersL,
+        PriorityQueue as metricHelpersU,
+        attempt as metricHelpersS,
+        ensure as metricHelpersC,
+      } from "@segment/analytics-core";
+      export {
+        Emitter as metricHelpersD,
+        createDeferred as metricHelpersF,
+      } from "@segment/analytics-generic-utils";
+      export class metricHelpersI {}
+      export function metricHelpersA() {
+        return !metricHelpersO();
+      }
+      export function metricHelpersO() {
+        return true;
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/segment-metric-helpers.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("allows split Segment metric helper wrapper modules under the npm-backed shim", () => {
+    const source = `
+      // Restored from ref/webview/assets/metric-helpers-DG5zp00d.js
+      export function isOnline(): boolean {
+        if (typeof window === "undefined") return true;
+        return window.navigator.onLine;
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/segment-metric-helpers/connection.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("fails Segment metric helper shims when generic-utils dependency is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({
+        dependencies: {
+          "@segment/analytics-core": "^1.0.0",
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "segment-metric-helpers.ts"),
+      `
+        // Restored from ref/webview/assets/metric-helpers-DG5zp00d.js
+        export { PriorityQueue as metricHelpersU } from "@segment/analytics-core";
+        export { Emitter as metricHelpersD } from "@segment/analytics-generic-utils";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["@segment/analytics-generic-utils"],
+    });
+  });
+
+  test("fails hand-written Jotai vendor compatibility runtimes", () => {
+    const source = `
+      // Restored from ref/webview/assets/jotai-react-DpDsdUHx.js
+      import * as React from "react";
+      export function createAtom(initialValue) {
+        return { init: initialValue, read: () => initialValue };
+      }
+      export function useAtomValue(atom) {
+        return atom.read();
+      }
+      export function useSetAtom() {
+        return () => undefined;
+      }
+      export function useAtom(atom) {
+        return [useAtomValue(atom), useSetAtom(atom)];
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/jotai-runtime.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes Jotai vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/jotai-react-DpDsdUHx.js
+      export {
+        atom as createAtom,
+        Provider as JotaiProvider,
+        useAtom,
+        useAtomValue,
+        useSetAtom,
+        useStore,
+      } from "jotai";
+      export type {
+        Atom,
+        Getter,
+        PrimitiveAtom,
+        Setter,
+        WritableAtom,
+      } from "jotai";
+    `;
+    const report = analyzeSource(source, "restored/vendor/jotai-runtime.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written React companion vendor runtimes", () => {
+    const reactIsSource = `
+      // Restored from ref/webview/assets/react-is-AbCdEf12.js
+      const reactFragmentType = Symbol.for("react.fragment");
+      export const reactIsRuntime = {
+        isFragment(value) {
+          return value?.type === reactFragmentType;
+        },
+      };
+      export function requireReactIsRuntime() {
+        return reactIsRuntime;
+      }
+    `;
+    const useSyncSource = `
+      // Restored from ref/webview/assets/use-sync-external-store-with-selector-AbCdEf12.js
+      import * as React from "react";
+      export function useSyncExternalStoreWithSelector(subscribe, getSnapshot, getServerSnapshot, selector) {
+        return selector(React.useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot));
+      }
+      export const useSyncExternalStoreWithSelectorRuntime = { useSyncExternalStoreWithSelector };
+    `;
+    const reactReduxSource = `
+      // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-AbCdEf12.js
+      import React, { createContext, useMemo } from "react";
+      const ReactReduxContext = createContext(null);
+      export function ReactReduxProvider({ children, store }) {
+        const value = useMemo(() => ({ store }), [store]);
+        return <ReactReduxContext.Provider value={value}>{children}</ReactReduxContext.Provider>;
+      }
+      export function initReactReduxProviderRuntimeChunk() {}
+    `;
+
+    const reactIsReport = analyzeSource(
+      reactIsSource,
+      "restored/vendor/react-is-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    const useSyncReport = analyzeSource(
+      useSyncSource,
+      "restored/vendor/use-sync-external-store-selector-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    const reactReduxReport = analyzeSource(
+      reactReduxSource,
+      "restored/vendor/react-redux-provider-runtime.tsx",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(reactIsReport.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(useSyncReport.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(reactReduxReport.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes React companion vendor shims that re-export npm packages", () => {
+    const reactIsSource = `
+      // Restored from ref/webview/assets/react-is-AbCdEf12.js
+      import { isFragment } from "react-is";
+      export const reactIsRuntime = { isFragment };
+      export function requireReactIsRuntime() {
+        return reactIsRuntime;
+      }
+      export { isFragment } from "react-is";
+    `;
+    const useSyncSource = `
+      // Restored from ref/webview/assets/use-sync-external-store-with-selector-AbCdEf12.js
+      import { useSyncExternalStoreWithSelector } from "use-sync-external-store/shim/with-selector";
+      export { useSyncExternalStoreWithSelector } from "use-sync-external-store/shim/with-selector";
+      export const useSyncExternalStoreWithSelectorRuntime = { useSyncExternalStoreWithSelector };
+    `;
+    const reactReduxSource = `
+      // Restored from ref/webview/assets/app-initial~app-main~onboarding-page-AbCdEf12.js
+      export {
+        Provider as ReactReduxProvider,
+        ReactReduxContext,
+      } from "react-redux";
+      export type { ProviderProps as ReactReduxProviderProps } from "react-redux";
+      export function initReactReduxProviderRuntimeChunk() {}
+    `;
+
+    const reactIsReport = analyzeSource(
+      reactIsSource,
+      "restored/vendor/react-is-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    const useSyncReport = analyzeSource(
+      useSyncSource,
+      "restored/vendor/use-sync-external-store-selector-runtime.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    const reactReduxReport = analyzeSource(
+      reactReduxSource,
+      "restored/vendor/react-redux-provider-runtime.tsx",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(reactIsReport.issues).toEqual([]);
+    expect(useSyncReport.issues).toEqual([]);
+    expect(reactReduxReport.issues).toEqual([]);
+  });
+
+  test("fails hand-written react-colorful vendor picker bodies", () => {
+    const source = `
+      // Restored from ref/webview/assets/dist-BDOgluP9.js
+      import React from "react";
+      export const Dist = function HexColorPickerBody(props) {
+        return React.createElement("div", { className: "react-colorful" });
+      };
+    `;
+    const report = analyzeSource(source, "restored/vendor/react-colorful.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes react-colorful vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/dist-BDOgluP9.js
+      export { HexColorPicker, HexColorPicker as Dist } from "react-colorful";
+    `;
+    const report = analyzeSource(source, "restored/vendor/react-colorful.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written react-colorful hex picker facades", () => {
+    const source = `
+      // Restored from ref/webview/assets/app-initial~app-main~projects-index-page~appearance-settings~general-settings-BpwP5uUa.js
+      import * as ReactColorfulVendor from "./react-colorful";
+      export const HexColorPicker = ReactColorfulVendor.Dist;
+      export function initReactColorfulHexPickerChunk(): void {}
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/react-colorful-hex-picker.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes react-colorful hex picker shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/app-initial~app-main~projects-index-page~appearance-settings~general-settings-BpwP5uUa.js
+      export { HexColorPicker } from "react-colorful";
+      export function initReactColorfulHexPickerChunk(): void {}
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/react-colorful-hex-picker.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written Framer Motion single-value vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/single-value-sCXpwjXj.js
+      export class singleValueK {
+        constructor(initialValue) {
+          this.latest = initialValue;
+        }
+        get() {
+          return this.latest;
+        }
+        set(value) {
+          this.latest = value;
+        }
+      }
+      export function singleValueJ(initialValue) {
+        return new singleValueK(initialValue);
+      }
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/framer-motion-single-value.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes Framer Motion single-value shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/single-value-sCXpwjXj.js
+      export {
+        MotionValue as singleValueK,
+        motionValue as singleValueJ,
+      } from "framer-motion";
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/framer-motion-single-value.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written Framer Motion animate sequence vendor shims", () => {
+    const source = `
+      // Restored from ref/webview/assets/app-shell-state-QDRlZ5bT.js
+      export function animateSequence() {
+        return { finished: Promise.resolve(), stop() {} };
+      }
+      export const appShellStateMtState = animateSequence;
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/framer-motion-animate-sequence.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes Framer Motion animate sequence shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/app-shell-state-QDRlZ5bT.js
+      export {
+        animate as animateSequence,
+        animate as appShellStateMtState,
+        createScopedAnimate,
+      } from "framer-motion";
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/framer-motion-animate-sequence.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written dotLottie React vendor bodies", () => {
+    const source = `
+      // Restored from ref/webview/assets/browser-4rTfxlUZ.js
+      import React from "react";
+      export const DotLottieReact = function DotLottieReactBody() {
+        return React.createElement("canvas");
+      };
+      export const DotLottieWorkerReact = DotLottieReact;
+      export const setWasmUrl = (url: string) => url;
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/dotlottie-react.tsx",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowUntyped: true,
+      },
+    );
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes dotLottie React vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/browser-4rTfxlUZ.js
+      export {
+        DotLottieReact,
+        DotLottieReact as browserDotLottieReact,
+        DotLottieWorkerReact,
+        DotLottieWorkerReact as browserDotLottieWorkerReact,
+        setWasmUrl,
+        setWasmUrl as browserSetWasmUrl,
+      } from "@lottiefiles/dotlottie-react";
+    `;
+    const report = analyzeSource(
+      source,
+      "restored/vendor/dotlottie-react.tsx",
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+      },
+    );
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written Day.js vendor bodies", () => {
+    const source = `
+      // Restored from ref/webview/assets/dayjs-AbCdEf12.js
+      export default function dayjs(input?: unknown) {
+        return {
+          format() {
+            return String(input ?? "");
+          },
+        };
+      }
+    `;
+    const report = analyzeSource(source, "restored/vendor/dayjs.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes Day.js vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/dayjs-AbCdEf12.js
+      export { default } from "dayjs";
+      export type { Dayjs, ConfigType, OpUnitType } from "dayjs";
+    `;
+    const report = analyzeSource(source, "restored/vendor/dayjs.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written KaTeX vendor bodies", () => {
+    const source = `
+      // Restored from ref/webview/assets/katex-BvHNzFYT.js
+      export const katexC = {
+        version: "0.16.45",
+        render() {},
+        renderToString() {
+          return "<span class='katex'></span>";
+        },
+        ParseError: Error,
+        SETTINGS_SCHEMA: {},
+        __parse() {},
+        __defineMacro() {},
+      };
+      export const katexF = katexC.renderToString;
+      export default katexC;
+    `;
+    const report = analyzeSource(source, "restored/vendor/katex.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("passes KaTeX vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/katex-BvHNzFYT.js
+      import katex from "katex";
+      export { default, ParseError, render, renderToString } from "katex";
+      export const katexC = katex;
+    `;
+    const report = analyzeSource(source, "restored/vendor/katex.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hand-written RoughJS vendor bodies", () => {
+    const source = `
+      // Restored from ref/webview/assets/rough.esm-BmcJJgrn.js
+      export const roughjs = {
+        canvas() {
+          return {};
+        },
+        svg() {
+          return {};
+        },
+        generator() {
+          return {};
+        },
+      };
+      export default roughjs;
+    `;
+    const report = analyzeSource(source, "restored/vendor/roughjs.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+  });
+
+  test("fails renamed RoughJS-compatible vendor shims by API fingerprint", () => {
+    const source = `
+      export const roughjs = {
+        canvas() {
+          return {};
+        },
+        svg() {
+          return {};
+        },
+        generator() {
+          return {};
+        },
+      };
+    `;
+    const report = analyzeSource(source, "restored/vendor/drawing-runtime.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowUntyped: true,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-not-reexport",
+    );
+    expect(
+      report.issues.find(
+        (issue) => issue.code === "third-party-npm-shim-not-reexport",
+      )?.detail,
+    ).toMatchObject({ expectedSpecifiers: ["roughjs"] });
+  });
+
+  test("passes RoughJS vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/rough.esm-BmcJJgrn.js
+      export { default, default as roughjs } from "roughjs";
+      export function initRoughjsChunk(): void {}
+    `;
+    const report = analyzeSource(source, "restored/vendor/roughjs.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails RoughJS shims when package dependency is not declared", () => {
+    const root = makeTmpRoot();
+    const restoredDir = path.join(root, "restored");
+    const vendorDir = path.join(restoredDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: {} }),
+    );
+    fs.writeFileSync(
+      path.join(vendorDir, "roughjs.ts"),
+      `
+        // Restored from ref/webview/assets/rough.esm-BmcJJgrn.js
+        export { default, default as roughjs } from "roughjs";
+      `,
+    );
+
+    const reports = analyzePublicNpmVendorShimDependencies(restoredDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "third-party-npm-shim-dependency-missing",
+    );
+    expect(reports[0]!.issues[0]!.detail).toMatchObject({
+      missingPackages: ["roughjs"],
+    });
+  });
+
+  test("passes Electron main build provenance headers when required", () => {
+    const source = `
+      // Restored from ref/.vite/build/preload.js
+      export const preloadBridge = true;
+    `.trimStart();
+    const report = analyzeSource(source, "preload.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      requireProvenanceHeader: true,
+    });
+    expect(report.hasProvenanceHeader).toBe(true);
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails repeated provenance headers", () => {
+    const source = `// Restored from ref/webview/assets/toolbar-ABC123.js
+// Restored from ref/webview/assets/toolbar-ABC123.js
+export function Toolbar() {
+  return null;
+}
+`;
+    const report = analyzeSource(source, "toolbar.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      requireProvenanceHeader: true,
+    });
+    expect(report.duplicateProvenanceHeaders).toBe(1);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "duplicate-provenance-headers",
+    );
+  });
+
+  test("CLI requires provenance unless explicitly allowed", () => {
+    const root = makeTmpRoot();
+    const targetFile = path.join(root, "toolbar.ts");
+    fs.writeFileSync(targetFile, "export const toolbar = true;\n");
+
+    const strict = spawnSync(
+      "bun",
+      [path.join(import.meta.dir, "quality-gate.ts"), targetFile, "--json"],
+      { encoding: "utf8" },
+    );
+    expect(strict.status).toBe(1);
+    expect(JSON.parse(strict.stdout)[0].issues[0].code).toBe(
+      "missing-provenance-header",
+    );
+
+    const allowed = spawnSync(
+      "bun",
+      [
+        path.join(import.meta.dir, "quality-gate.ts"),
+        targetFile,
+        "--json",
+        "--allow-missing-provenance",
+      ],
+      { encoding: "utf8" },
+    );
+    expect(allowed.status).toBe(0);
+  });
+
+  test("fails when cryptic params exceed the threshold", () => {
+    const source = `
+      export function A(e) { return e + 1; }
+      export function B(t) { return t + 1; }
+    `;
+    const report = analyzeSource(source, "many-params.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      maxCrypticParams: 1,
+      maxCrypticBindings: 100,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "cryptic-params",
+    );
+  });
+
+  test("fails generated fallback names even when they are not short", () => {
+    const source = `
+      import { Button as ImportedBinding1 } from "./button";
+      const local274 = "legacy";
+      const callbackValue1 = () => "label";
+      const localValue1 = callbackValue1();
+      const restoredHelper1 = (argument8) => <ImportedBinding1 title={local274}>{localValue1}{argument8}</ImportedBinding1>;
+      export function Toolbar() {
+        return restoredHelper1("ok");
+      }
+    `;
+    const report = analyzeSource(source, "toolbar.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.mechanicalNames).toEqual([
+      "ImportedBinding1",
+      "argument8",
+      "callbackValue1",
+      "local274",
+      "localValue1",
+      "restoredHelper1",
+    ]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "mechanical-names",
+    );
+  });
+
+  test("fails mechanical domain-prefixed data/arg/value placeholders", () => {
+    const source = `
+      import React from "react";
+      const DialogValue7 = React.createContext(null);
+      const dialogData123 = "dialog-title";
+      export function DialogShell(dialogArg44: { children: React.ReactNode }) {
+        return <DialogValue7.Provider value={dialogData123}>{dialogArg44.children}</DialogValue7.Provider>;
+      }
+    `;
+    const report = analyzeSource(source, "DialogLayoutImpl.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.mechanicalNames).toEqual([
+      "DialogValue7",
+      "dialogArg44",
+      "dialogData123",
+    ]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "mechanical-names",
+    );
+  });
+
+  test("allows generated fallback names only for explicit intermediate checks", () => {
+    const source = `
+      const callbackValue1 = () => "draft";
+      export const Toolbar = callbackValue1;
+    `;
+    const report = analyzeSource(source, "toolbar.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowMechanicalNames: true,
+    });
+    expect(report.mechanicalNames).toEqual(["callbackValue1"]);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "mechanical-names",
+    );
+  });
+
+  test("flags _Array/__Array (a global underscore-prefixed by collision)", () => {
+    const source = `// Restored from ref/webview/assets/array-Hq6MvHot.js
+export function _Array(__Array) {
+  return typeof __Array == "object" ? __Array : Array.from(__Array);
+}
+`;
+    const report = analyzeSource(source, "utils/array.ts");
+    expect(report.mechanicalNames).toContain("_Array");
+    expect(report.mechanicalNames).toContain("__Array");
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "mechanical-names",
+    );
+  });
+
+  test("does NOT flag real tslib helpers or _React shim bindings", () => {
+    const source = `// Restored from ref/webview/assets/helpers-Aa11Bb22.js
+export function __assign(target, source) {
+  return Object.assign(target, source);
+}
+export function __rest(value) {
+  return value;
+}
+`;
+    const report = analyzeSource(source, "utils/helpers.ts");
+    expect(report.mechanicalNames).not.toContain("__assign");
+    expect(report.mechanicalNames).not.toContain("__rest");
+  });
+
+  test("fails cryptic public export names even when counts are low", () => {
+    const source = `
+      function commandShortcutLabels(commandId) {
+        return [commandId];
+      }
+      export { commandShortcutLabels as i };
+    `;
+    const report = analyzeSource(source, "command-keybindings.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.publicCrypticNames).toEqual(["i"]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "public-cryptic-names",
+    );
+  });
+
+  test("passes semantic command-keybinding export names", () => {
+    const source = `
+      export const commandShortcutLabels = {};
+      export function hasCommandShortcut(commandId: string): boolean {
+        return commandId.length > 0;
+      }
+    `;
+    const report = analyzeSource(source, "command-keybindings.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.publicCrypticNames).toEqual([]);
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails hook-shaped exports that alias React context values", () => {
+    const source = `
+      import React from "react";
+      const BottomPanelScrollSyncContext = React.createContext(null);
+      export const useAppShellBottomPanelScrollSync = BottomPanelScrollSyncContext;
+    `;
+    const report = analyzeSource(source, "BottomPanelScrollSyncContext.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.misleadingHookExports).toEqual([
+      "useAppShellBottomPanelScrollSync",
+    ]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "misleading-hook-exports",
+    );
+  });
+
+  test("fails exported functions with untyped parameters", () => {
+    const source = `
+      export function formatCommand(commandId) {
+        return commandId;
+      }
+      export const normalizeCommand = (commandId: string): string => commandId;
+    `;
+    const report = analyzeSource(source, "command-keybindings.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.untypedPublicFunctionParams).toEqual([
+      "formatCommand:commandId",
+    ]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "untyped-public-function-params",
+    );
+  });
+
+  test("fails suspicious lowercase JSX component tags", () => {
+    const source = `
+      export function Broken() {
+        return <j title="tooltip">content</j>;
+      }
+    `;
+    const report = analyzeSource(source, "Broken.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.invalidJsxTags).toEqual(["j"]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "invalid-jsx-tags",
+    );
+  });
+
+  test("fails unbound JSX component identifiers", () => {
+    const source = `
+      export function Broken() {
+        return <SettingH id="title" defaultMessage="Title" />;
+      }
+    `;
+    const report = analyzeSource(source, "Broken.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.unboundJsxTags).toEqual(["SettingH"]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "unbound-jsx-tags",
+    );
+  });
+
+  test("passes bound JSX component identifiers", () => {
+    const source = `
+      import { FormattedMessage } from "./i18n";
+      function Title() {
+        return <FormattedMessage id="title" defaultMessage="Title" />;
+      }
+      export function DialogTitle() {
+        return <Title />;
+      }
+    `;
+    const report = analyzeSource(source, "dialog-title.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.unboundJsxTags).toEqual([]);
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails unbound JSX member roots", () => {
+    const source = `
+      export function Broken() {
+        return <motion.div />;
+      }
+    `;
+    const report = analyzeSource(source, "Broken.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.unboundJsxTags).toEqual(["motion"]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "unbound-jsx-tags",
+    );
+  });
+
+  test("passes bound JSX member roots", () => {
+    const source = `
+      import { t as motion } from "./proxy";
+      export function Animated() {
+        return <motion.div />;
+      }
+    `;
+    const report = analyzeSource(source, "animated.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.unboundJsxTags).toEqual([]);
+    expect(report.issues).toEqual([]);
+  });
+
+  test("fails unbound ordinary identifiers", () => {
+    const source = `
+      export function Broken(value) {
+        return settingX(value);
+      }
+    `;
+    const report = analyzeSource(source, "Broken.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.unboundIdentifiers).toEqual(["settingX"]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "unbound-identifiers",
+    );
+  });
+
+  test("ordinary identifier binding check ignores object keys, member properties, and known globals", () => {
+    const source = `
+      import { useAtomValue } from "./storeRuntime";
+      const value = { h: 1 };
+      export function Read(atom: unknown) {
+        console.log(window.location.href);
+        const escaped = CSS.escape("project/id");
+        const nodes = new NodeList();
+        const bytes = new TextEncoder().encode("ok");
+        return { bytes, escaped, h: value.h, nodes, result: useAtomValue(atom) };
+      }
+    `;
+    const report = analyzeSource(source, "read.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.unboundIdentifiers).toEqual([]);
+    expect(report.issues).toEqual([]);
+  });
+
+  test("ordinary identifier binding check ignores type-only export specifiers", () => {
+    const source = `
+      interface RightPanelWidthConfig {
+        width: number;
+      }
+      type AppShellPanelWidthMode = "full" | "regular";
+      export type {
+        AppShellPanelWidthMode,
+        RightPanelWidthConfig as AppShellRightPanelWidthConfig,
+      };
+      export function clampWidth(config: RightPanelWidthConfig): number {
+        return Math.max(0, config.width);
+      }
+    `;
+    const report = analyzeSource(source, "state.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.unboundIdentifiers).toEqual([]);
+    expect(report.issues).toEqual([]);
+  });
+
+  test("ordinary identifier binding check rejects nonstandard helper namespaces", () => {
+    const source = `
+      export function DraggedTab(transform) {
+        return CssTransformHelpers.Translate.toString(transform);
+      }
+    `;
+    const report = analyzeSource(source, "DraggedTab.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.unboundIdentifiers).toEqual(["CssTransformHelpers"]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "unbound-identifiers",
+    );
+  });
+
+  test("fails exported components with untyped props parameters", () => {
+    const source = `
+      import type { ReactNode } from "react";
+      export function AppShellHeader(props) {
+        return <div>{props.children}</div>;
+      }
+      export function HeaderSlotless() {
+        return <div />;
+      }
+      export function TypedHeader(props: { children?: ReactNode }) {
+        return <div>{props.children}</div>;
+      }
+    `;
+    const report = analyzeSource(source, "Header.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.untypedComponentProps).toEqual(["AppShellHeader"]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "untyped-component-props",
+    );
+  });
+
+  test("fails duplicated named imports with different local aliases", () => {
+    const source = `
+      import { appShellW, appShellW as bottomPanelSlot } from "./app-shell-state";
+      export function Broken(store) {
+        appShellW(store, "main");
+        return store.get(bottomPanelSlot);
+      }
+    `;
+    const report = analyzeSource(source, "duplicate-import.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.duplicateImportNames).toEqual([
+      {
+        source: "./app-shell-state",
+        imported: "appShellW",
+        locals: ["appShellW", "bottomPanelSlot"],
+      },
+    ]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "duplicate-imported-names",
+    );
+  });
+
+  test("fails mechanical facade import bindings", () => {
+    const source = `
+      import { appServerManagerT as conversationHostId$, appServerManagerK } from "./app-server-manager";
+      import { chromeR as resolveChromeTheme } from "./chrome-theme";
+      import { singleC as SvgVisualElement, _singleOt as mixNumber } from "./motion-runtime";
+      import { srcDi as schemaObject } from "./schema";
+      import { distA as composeEventHandlers } from "./vendor/radix/primitives";
+      import { libT as fromMarkdown } from "./markdown/runtime";
+      import { settingQ as atomFamily } from "./store-runtime";
+      import { windowAppActionG as appActionSelectors } from "./window-app-actions";
+      export function readThreadHost(routeScope, conversationId) {
+        new SvgVisualElement({});
+        resolveChromeTheme({}, "dark");
+        mixNumber(0, 1, 0.5);
+        schemaObject({});
+        composeEventHandlers();
+        fromMarkdown("");
+        atomFamily(routeScope, () => null);
+        appActionSelectors.sidebarProjectRow;
+        return routeScope.get(routeScope.get(conversationHostId$, conversationId)) ??
+          routeScope.get(routeScope.get(appServerManagerK, conversationId));
+      }
+    `;
+    const report = analyzeSource(source, "app-server-consumer.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.mechanicalImportBindings).toEqual([
+      {
+        source: "./app-server-manager",
+        imported: "appServerManagerK",
+        local: "appServerManagerK",
+      },
+      {
+        source: "./app-server-manager",
+        imported: "appServerManagerT",
+        local: "conversationHostId$",
+      },
+      {
+        source: "./chrome-theme",
+        imported: "chromeR",
+        local: "resolveChromeTheme",
+      },
+      {
+        source: "./markdown/runtime",
+        imported: "libT",
+        local: "fromMarkdown",
+      },
+      {
+        source: "./motion-runtime",
+        imported: "_singleOt",
+        local: "mixNumber",
+      },
+      {
+        source: "./motion-runtime",
+        imported: "singleC",
+        local: "SvgVisualElement",
+      },
+      {
+        source: "./schema",
+        imported: "srcDi",
+        local: "schemaObject",
+      },
+      {
+        source: "./store-runtime",
+        imported: "settingQ",
+        local: "atomFamily",
+      },
+      {
+        source: "./vendor/radix/primitives",
+        imported: "distA",
+        local: "composeEventHandlers",
+      },
+      {
+        source: "./window-app-actions",
+        imported: "windowAppActionG",
+        local: "appActionSelectors",
+      },
+    ]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "mechanical-import-bindings",
+    );
+  });
+
+  test("fails mechanical re-export bindings from public facades", () => {
+    const source = `
+      export {
+        _settingF as createSettingQuery,
+        __settingT as readSettingValue,
+        settingX as useSettingQuery,
+      } from "../state/storeRuntime";
+      export {
+        singleC as SvgVisualElement,
+        _singleOt as mixNumber,
+      } from "../motion/motionRuntime";
+      export {
+        chromeR as resolveChromeTheme,
+      } from "../lazyAppActions/chromeTheme";
+    `;
+    const report = analyzeSource(source, "settingsQueries.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.mechanicalImportBindings).toContainEqual({
+      source: "../state/storeRuntime",
+      imported: "_settingF",
+      local: "createSettingQuery",
+    });
+    expect(report.mechanicalImportBindings).toContainEqual({
+      source: "../state/storeRuntime",
+      imported: "__settingT",
+      local: "readSettingValue",
+    });
+    expect(report.mechanicalImportBindings).toContainEqual({
+      source: "../state/storeRuntime",
+      imported: "settingX",
+      local: "useSettingQuery",
+    });
+    expect(report.mechanicalImportBindings).toContainEqual({
+      source: "../motion/motionRuntime",
+      imported: "singleC",
+      local: "SvgVisualElement",
+    });
+    expect(report.mechanicalImportBindings).toContainEqual({
+      source: "../motion/motionRuntime",
+      imported: "_singleOt",
+      local: "mixNumber",
+    });
+    expect(report.mechanicalImportBindings).toContainEqual({
+      source: "../lazyAppActions/chromeTheme",
+      imported: "chromeR",
+      local: "resolveChromeTheme",
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "mechanical-import-bindings",
+    );
+  });
+
+  test("fails relative imports that do not resolve from a real restored file", () => {
+    const targetDir = makeTmpRoot();
+    const filePath = path.join(targetDir, "consumer.ts");
+    fs.writeFileSync(
+      filePath,
+      `export { missingThing } from "./missing-helper";\n`,
+    );
+    const report = analyzeSource(fs.readFileSync(filePath, "utf-8"), filePath, {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.unresolvedRelativeImports).toEqual([
+      {
+        source: "./missing-helper",
+        resolvedFrom: targetDir,
+      },
+    ]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "unresolved-relative-imports",
+    );
+  });
+
+  test("passes extensionless relative imports that resolve to index files", () => {
+    const targetDir = makeTmpRoot();
+    fs.mkdirSync(path.join(targetDir, "helpers"));
+    fs.writeFileSync(path.join(targetDir, "helpers", "index.ts"), "\n");
+    const filePath = path.join(targetDir, "consumer.ts");
+    fs.writeFileSync(filePath, `import { ok } from "./helpers";\n`);
+    const report = analyzeSource(fs.readFileSync(filePath, "utf-8"), filePath, {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.unresolvedRelativeImports).toEqual([]);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "unresolved-relative-imports",
+    );
+  });
+
+  test("fails relative named imports that target missing exports", () => {
+    const targetDir = makeTmpRoot();
+    fs.writeFileSync(
+      path.join(targetDir, "helpers.ts"),
+      `export const existingHelper = 1;\n`,
+    );
+    const filePath = path.join(targetDir, "consumer.ts");
+    fs.writeFileSync(
+      filePath,
+      `import { missingHelper } from "./helpers";\nexport const value = missingHelper;\n`,
+    );
+    const report = analyzeSource(fs.readFileSync(filePath, "utf-8"), filePath, {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.missingRelativeExports).toEqual([
+      {
+        source: "./helpers",
+        imported: "missingHelper",
+        resolvedFile: path.join(targetDir, "helpers.ts"),
+      },
+    ]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "missing-relative-exports",
+    );
+  });
+
+  test("checks relative re-export specifiers against the source file", () => {
+    const targetDir = makeTmpRoot();
+    fs.writeFileSync(
+      path.join(targetDir, "helpers.ts"),
+      `export const existingHelper = 1;\n`,
+    );
+    const filePath = path.join(targetDir, "consumer.ts");
+    fs.writeFileSync(
+      filePath,
+      `export { missingHelper as publicHelper } from "./helpers";\n`,
+    );
+    const report = analyzeSource(fs.readFileSync(filePath, "utf-8"), filePath, {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.missingRelativeExports).toEqual([
+      {
+        source: "./helpers",
+        imported: "missingHelper",
+        resolvedFile: path.join(targetDir, "helpers.ts"),
+      },
+    ]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "missing-relative-exports",
+    );
+  });
+
+  test("resolves relative exports through export-star facades", () => {
+    const targetDir = makeTmpRoot();
+    fs.mkdirSync(path.join(targetDir, "runtime"));
+    fs.writeFileSync(
+      path.join(targetDir, "runtime", "internal.ts"),
+      `export const helper = 1;\n`,
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "runtime", "index.ts"),
+      `export * from "./internal";\n`,
+    );
+    const filePath = path.join(targetDir, "consumer.ts");
+    fs.writeFileSync(
+      filePath,
+      `import { helper } from "./runtime";\nexport const value = helper;\n`,
+    );
+    const report = analyzeSource(fs.readFileSync(filePath, "utf-8"), filePath, {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.missingRelativeExports).toEqual([]);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "missing-relative-exports",
+    );
+  });
+
+  test("fails public files that re-export hidden mechanical checkpoints", () => {
+    const targetDir = makeTmpRoot();
+    const hiddenDir = path.join(
+      targetDir,
+      ".deobfuscate-javascript",
+      "_full",
+      "checkpoints",
+    );
+    fs.mkdirSync(hiddenDir, { recursive: true });
+    fs.writeFileSync(path.join(hiddenDir, "helper.ts"), "export const ok = 1;");
+
+    const filePath = path.join(targetDir, "publicHelper.ts");
+    fs.writeFileSync(
+      filePath,
+      `export * from "./.deobfuscate-javascript/_full/checkpoints/helper";\n`,
+    );
+
+    const report = analyzeSource(fs.readFileSync(filePath, "utf-8"), filePath, {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+
+    expect(report.unfinalizedCheckpointImports).toEqual([
+      "./.deobfuscate-javascript/_full/checkpoints/helper",
+    ]);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "unfinalized-checkpoint-imports",
+    );
+  });
+
+  test("allows hidden checkpoint files to reference hidden checkpoint internals", () => {
+    const targetDir = makeTmpRoot();
+    const hiddenDir = path.join(
+      targetDir,
+      ".deobfuscate-javascript",
+      "_full",
+      "checkpoints",
+    );
+    fs.mkdirSync(hiddenDir, { recursive: true });
+    fs.writeFileSync(path.join(hiddenDir, "helper.ts"), "export const ok = 1;");
+
+    const filePath = path.join(hiddenDir, "publicTrace.ts");
+    fs.writeFileSync(filePath, `export * from "../checkpoints/helper";\n`);
+
+    const report = analyzeSource(fs.readFileSync(filePath, "utf-8"), filePath, {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowMechanicalNames: true,
+    });
+
+    expect(report.unfinalizedCheckpointImports).toEqual([]);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "unfinalized-checkpoint-imports",
+    );
+  });
+
+  test("allows hidden checkpoint imports only for explicit dependency-boundary public files", () => {
+    const targetDir = makeTmpRoot();
+    const hiddenDir = path.join(
+      targetDir,
+      ".deobfuscate-javascript",
+      "_full",
+      "checkpoints",
+    );
+    fs.mkdirSync(hiddenDir, { recursive: true });
+    fs.writeFileSync(path.join(hiddenDir, "vendor.ts"), "export const ok = 1;");
+
+    const boundaryFile = path.join(targetDir, "vendorBoundary.ts");
+    fs.writeFileSync(
+      boundaryFile,
+      `export * from "./.deobfuscate-javascript/_full/checkpoints/vendor";\n`,
+    );
+
+    const report = analyzeSource(
+      fs.readFileSync(boundaryFile, "utf-8"),
+      boundaryFile,
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowedCheckpointImportFiles: new Set([path.resolve(boundaryFile)]),
+      },
+    );
+
+    expect(report.unfinalizedCheckpointImports).toEqual([]);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "unfinalized-checkpoint-imports",
+    );
+  });
+
+  test("allows dependency-boundary facades without allowing sibling business facades", () => {
+    const targetDir = makeTmpRoot();
+    const hiddenDir = path.join(
+      targetDir,
+      ".deobfuscate-javascript",
+      "_full",
+      "checkpoints",
+    );
+    fs.mkdirSync(hiddenDir, { recursive: true });
+    fs.writeFileSync(path.join(hiddenDir, "mixed.ts"), "export const ok = 1;");
+
+    const vendorFacade = path.join(targetDir, "schema.ts");
+    const businessFacade = path.join(targetDir, "routePatterns.ts");
+    fs.writeFileSync(
+      vendorFacade,
+      `export * from "./.deobfuscate-javascript/_full/checkpoints/mixed";\n`,
+    );
+    fs.writeFileSync(
+      businessFacade,
+      `export * from "./.deobfuscate-javascript/_full/checkpoints/mixed";\n`,
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({
+        publicOutputs: {
+          "mixed-runtime-AbCdEf12": {
+            publicFacades: {
+              [vendorFacade]: "./schema",
+              [businessFacade]: "./routePatterns",
+            },
+            dependencyBoundaryFacades: {
+              [vendorFacade]: "Zod schema runtime",
+            },
+          },
+        },
+      }),
+    );
+
+    const allowedCheckpointImportFiles =
+      collectBoundaryCheckpointImportFiles(targetDir);
+    const vendorReport = analyzeSource(
+      fs.readFileSync(vendorFacade, "utf-8"),
+      vendorFacade,
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowedCheckpointImportFiles,
+      },
+    );
+    const businessReport = analyzeSource(
+      fs.readFileSync(businessFacade, "utf-8"),
+      businessFacade,
+      {
+        ...DEFAULT_OPTIONS,
+        allowFlat: true,
+        allowedCheckpointImportFiles,
+      },
+    );
+
+    expect(vendorReport.unfinalizedCheckpointImports).toEqual([]);
+    expect(businessReport.issues.map((issue) => issue.code)).toContain(
+      "unfinalized-checkpoint-imports",
+    );
+  });
+
+  test("short identifier density ignores object keys and member properties", () => {
+    const noisyObject = Array.from(
+      { length: 80 },
+      (_, index) => `h${index}: value.h`,
+    ).join(",\n");
+    const source = `
+      const value = { h: 1 };
+      export const readableRegistry = {
+        ${noisyObject}
+      };
+    `;
+    const report = analyzeSource(source, "registry.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      maxShortRefCount: 10,
+    });
+    expect(report.shortIdentifierOffenders).toEqual([]);
+  });
+
+  test("bundle residue check ignores dependency-list strings", () => {
+    const source = `
+      const __vite__mapDeps = () => ["./jsx-runtime-CiQ1k8xo.js"];
+      export function runCommand() {
+        return __vite__mapDeps();
+      }
+    `;
+    const report = analyzeSource(source, "run-command.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.residueMatches).toEqual([]);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "bundle-residue",
+    );
+  });
+
+  test("bundle residue check does not treat React loader import as JSX factory residue", () => {
+    const source = `
+      import { n as loadReact } from "./jsx-runtime-CiQ1k8xo.js";
+      export const internals = loadReact().__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+    `;
+    const report = analyzeSource(source, "react-loader.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.residueMatches).toEqual([]);
+  });
+
+  test("bundle residue check allows JSX runtime residue for vendored modules", () => {
+    const source = `
+      import { t as runtimeFactory } from "react/jsx-runtime";
+      const runtimeValue = runtimeFactory();
+      export const DotLottieWorkerReact = () => runtimeValue.jsx("canvas", {});
+    `;
+    const report = analyzeSource(source, "vendor/schema-runtime.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowMechanicalNames: true,
+      vendored: true,
+    });
+    expect(report.residueMatches).toEqual([]);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "bundle-residue",
+    );
+  });
+
+  test("requires a split for large flat deliverables", () => {
+    const source = [
+      `export function Root() { return <div />; }`,
+      ...Array(1005).fill(`const readableName = 1;`),
+    ].join("\n");
+    const report = analyzeSource(source, "app-shell.tsx", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 1000,
+      maxFlatExports: 99,
+    });
+    expect(report.splitRequired).toBe(true);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "split-required",
+    );
+  });
+
+  test("rejects relocated bundle bodies disguised as implementation files", () => {
+    const source = [
+      `// Restored from ref/webview/assets/settings-page-ABC123.js`,
+      `// Current settings page implementation with restored dependency imports.`,
+      `import { currentAppInitialSharedCompatSlotUpperD } from "../runtime/current-app-initial/current-app-initial-shared-backing";`,
+      `export function SettingsPage() { return currentAppInitialSharedCompatSlotUpperD; }`,
+      ...Array(1005).fill(`const settingsPageValue = 1;`),
+    ].join("\n");
+    const report = analyzeSource(source, "settings/settings-page-current.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      maxFlatLines: 1000,
+      maxFlatExports: 99,
+    });
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "relocated-bundle-body",
+    );
+  });
+
+  test("requires a split for registry-object deliverables", () => {
+    const source = `
+      export function Root() { return <div />; }
+      export function Header() { return <header />; }
+      export function Content() { return <main />; }
+      export const AppShell = { Root, Header, Content };
+    `;
+    const report = analyzeSource(source, "app-shell.tsx", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 9999,
+      maxFlatExports: 99,
+    });
+    expect(report.registryObjectExport).toBe(true);
+    expect(report.splitRequired).toBe(true);
+    expect(report.issues.map((issue) => issue.code)).toContain(
+      "split-required",
+    );
+  });
+
+  test("does not treat function-table config objects as registry exports", () => {
+    const source = `
+      export const productLogger = {
+        logProductEvent: () => {},
+        trackStructuredEvent: async () => {},
+        trackCounter: async () => {},
+        flush: async () => {},
+        submitCodexAnalyticsEvent: null,
+      };
+      export const recordProductEvent = atom(productLogger);
+      export function logProductEvent(store, event) {
+        store.get(recordProductEvent).logProductEvent(event);
+      }
+    `;
+    const report = analyzeSource(source, "productLogger.ts", {
+      ...DEFAULT_OPTIONS,
+    });
+    expect(report.registryObjectExport).toBe(false);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "split-required",
+    );
+  });
+
+  test("allows small cohesive utility modules with several public exports", () => {
+    const source = `
+      export const altKeyPressedAtom = atom(false);
+      export const ctrlKeyPressedAtom = atom(false);
+      export const metaKeyPressedAtom = atom(false);
+      export const shiftKeyPressedAtom = atom(false);
+      export function clearKeyboardModifierState(store) {
+        store.set(altKeyPressedAtom, false);
+        store.set(ctrlKeyPressedAtom, false);
+        store.set(metaKeyPressedAtom, false);
+        store.set(shiftKeyPressedAtom, false);
+      }
+      export function updateKeyboardModifierState(store, event) {
+        store.set(altKeyPressedAtom, event.altKey);
+        store.set(ctrlKeyPressedAtom, event.ctrlKey);
+        store.set(metaKeyPressedAtom, event.metaKey);
+        store.set(shiftKeyPressedAtom, event.shiftKey);
+      }
+    `;
+    const report = analyzeSource(source, "keyboardModifierState.ts", {
+      ...DEFAULT_OPTIONS,
+      maxFlatExports: 2,
+    });
+    expect(report.exportCount).toBeGreaterThan(2);
+    expect(report.lineCount).toBeLessThan(200);
+    expect(report.splitRequired).toBe(false);
+  });
+
+  test("allows formatted cohesive utility modules slightly over 200 lines", () => {
+    const source = [
+      `export const connectionStateRank = { connected: 0, disconnected: 1 } as const;`,
+      `export function sortRemoteConnectionsByStatus(connections, statusByHostId) {`,
+      `  return [...connections].sort((left, right) => connectionStateRank[statusByHostId[left.hostId] ?? "disconnected"] - connectionStateRank[statusByHostId[right.hostId] ?? "disconnected"]);`,
+      `}`,
+      `export function reconcileSelectedRemoteConnection(selection) {`,
+      `  return selection.persistedSelectedRemoteHostId ?? selection.remoteConnections[0]?.hostId ?? null;`,
+      `}`,
+      `export function resolveWebviewExecutionTarget({ activeWorkspaceRoot, conversationCwd, conversationHostId, selectedRemoteProject }) {`,
+      `  return conversationCwd ? { cwd: conversationCwd, hostId: conversationHostId } : selectedRemoteProject ?? { cwd: activeWorkspaceRoot, hostId: "local" };`,
+      `}`,
+      ...Array(205).fill(
+        `// Keeps prettier-expanded cohesive modules below the split threshold.`,
+      ),
+    ].join("\n");
+    const report = analyzeSource(source, "useWebviewExecutionTarget.ts", {
+      ...DEFAULT_OPTIONS,
+      maxFlatExports: 2,
+    });
+    expect(report.exportCount).toBeGreaterThan(2);
+    expect(report.lineCount).toBeGreaterThan(200);
+    expect(report.lineCount).toBeLessThan(300);
+    expect(report.splitRequired).toBe(false);
+  });
+
+  test("allows cohesive semantic Impl modules to expose named runtime exports", () => {
+    const source = [
+      `// Restored from ref/webview/assets/app-shell-tab-controller-ABC123.js.`,
+      `// Semantic implementation promoted from the mechanical checkpoint.`,
+      `const appShellTabKinds = { browser: "browser" } as const;`,
+      `function createTabController() { return { panelId: "right" }; }`,
+      `function trackSidePanelOpened() {}`,
+      `function trackSidePanelClosed() {}`,
+      `const bottomPanelTabController = createTabController();`,
+      `const rightPanelTabController = createTabController();`,
+      `export {`,
+      `  appShellTabKinds,`,
+      `  bottomPanelTabController,`,
+      `  rightPanelTabController,`,
+      `  trackSidePanelClosed,`,
+      `  trackSidePanelOpened,`,
+      `};`,
+      ...Array(320).fill(`// cohesive controller implementation detail`),
+    ].join("\n");
+    const report = analyzeSource(source, "tabControllersImpl.tsx", {
+      ...DEFAULT_OPTIONS,
+      maxFlatExports: 2,
+    });
+    expect(report.exportCount).toBeGreaterThan(2);
+    expect(report.lineCount).toBeGreaterThan(300);
+    expect(report.splitRequired).toBe(false);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "split-required",
+    );
+  });
+
+  test("still splits oversized semantic Impl modules", () => {
+    const source = [
+      `// Restored from ref/webview/assets/app-shell-tab-controller-ABC123.js.`,
+      `// Semantic implementation promoted from the mechanical checkpoint.`,
+      `function trackSidePanelOpened() {}`,
+      `function trackSidePanelClosed() {}`,
+      `export { trackSidePanelClosed, trackSidePanelOpened };`,
+      ...Array(1005).fill(`// oversized controller implementation detail`),
+    ].join("\n");
+    const report = analyzeSource(source, "tabControllersImpl.tsx", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 1000,
+      maxFlatExports: 2,
+    });
+    expect(report.lineCount).toBeGreaterThan(DEFAULT_OPTIONS.maxFlatLines);
+    expect(report.splitRequired).toBe(true);
+  });
+
+  test("allows semantic Button recipe modules with variant-table exports", () => {
+    const source = `
+      import type { ButtonHTMLAttributes, ForwardedRef } from "react";
+      import { forwardRef } from "react";
+      import clsx from "clsx";
+      import { Spinner } from "./Spinner";
+
+      export const buttonRadiusClassNames = { default: "rounded-full", icon: "rounded-full" } as const;
+      export const buttonColorClassNames = { primary: "bg-token-foreground", secondary: "text-token-foreground" } as const;
+      export const buttonSizeClassNames = { default: "px-2", icon: "p-0.5" } as const;
+
+      export type ButtonColor = keyof typeof buttonColorClassNames;
+      export type ButtonSize = keyof typeof buttonSizeClassNames;
+
+      export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+        color?: ButtonColor;
+        loading?: boolean;
+        size?: ButtonSize;
+      }
+
+      function ButtonRender(
+        { children, className, color = "primary", loading = false, size = "default", ...buttonProps }: ButtonProps,
+        ref: ForwardedRef<HTMLButtonElement>,
+      ) {
+        return (
+          <button ref={ref} className={clsx(buttonRadiusClassNames[size], buttonColorClassNames[color], buttonSizeClassNames[size], className)} {...buttonProps}>
+            {loading ? <Spinner className="icon-xxs" /> : null}
+            {children}
+          </button>
+        );
+      }
+
+      export const Button = forwardRef<HTMLButtonElement, ButtonProps>(ButtonRender);
+      Button.displayName = "Button";
+
+      export default Button;
+    `;
+    const report = analyzeSource(source, "Button.tsx", {
+      ...DEFAULT_OPTIONS,
+      maxFlatExports: 2,
+    });
+    expect(report.exportCount).toBeGreaterThan(2);
+    expect(report.splitRequired).toBe(false);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "split-required",
+    );
+  });
+
+  test("allows semantic theme data modules with registry-shaped objects", () => {
+    const source = `
+      const codexName = "Codex Dark";
+      const codexType = "dark";
+      const codexColors = { foreground: "#fff", background: "#111" };
+      const codexTokenColors = [{ scope: "comment", settings: { foreground: "#999" } }];
+      const codexSemanticTokenColors = { comment: "#999" };
+
+      export const codexDarkTheme = {
+        name: codexName,
+        type: codexType,
+        colors: codexColors,
+        tokenColors: codexTokenColors,
+        semanticTokenColors: codexSemanticTokenColors,
+      };
+
+      export default codexDarkTheme;
+    `;
+    const report = analyzeSource(
+      source,
+      path.join("restored", "themes", "codexDark.ts"),
+      {
+        ...DEFAULT_OPTIONS,
+        maxFlatExports: 1,
+      },
+    );
+    expect(report.registryObjectExport).toBe(true);
+    expect(report.splitRequired).toBe(false);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "split-required",
+    );
+  });
+
+  test("allows large semantic command metadata modules", () => {
+    const commandRows = Array.from(
+      { length: 1100 },
+      (_, index) =>
+        `{ id: "command${index}", electron: { defaultKeybindings: [{ key: "CmdOrCtrl+${index % 10}" }] } }`,
+    ).join(",\n");
+    const source = `
+      const defaultKeymapStaleTimeMs = 1000;
+      const commandDefinitions = [${commandRows}];
+      function formatAcceleratorLabel(accelerator) {
+        return accelerator;
+      }
+      export default {
+        commandDefinitions,
+        defaultKeymapStaleTimeMs,
+        formatAcceleratorLabel,
+      };
+    `;
+    const report = analyzeSource(
+      source,
+      path.join("restored", "commands", "electronMenuShortcutsImpl.ts"),
+      {
+        ...DEFAULT_OPTIONS,
+      },
+    );
+    expect(report.lineCount).toBeGreaterThan(DEFAULT_OPTIONS.maxFlatLines);
+    expect(report.splitRequired).toBe(false);
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "split-required",
+    );
+  });
+
+  test("allows a large flat file only when explicitly requested", () => {
+    const source = [
+      `export function Root() { return <div />; }`,
+      ...Array(1005).fill(`const readableName = 1;`),
+    ].join("\n");
+    const report = analyzeSource(source, "app-shell.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      maxFlatLines: 1000,
+      maxFlatExports: 99,
+    });
+    expect(report.issues.map((issue) => issue.code)).not.toContain(
+      "split-required",
+    );
+  });
+
+  test("full-restoration coverage fails when a local chunk is not mapped publicly", () => {
+    const targetDir = makeTmpRoot();
+    fs.mkdirSync(path.join(targetDir, ".deobfuscate-javascript", "_full"), {
+      recursive: true,
+    });
+    fs.writeFileSync(
+      path.join(targetDir, ".deobfuscate-javascript", "_full", "manifest.json"),
+      JSON.stringify({
+        files: {
+          "entry-AbCdEf12": {
+            basename: "entry-AbCdEf12",
+            kind: "local",
+          },
+          "react-CiQ1k8xo": {
+            basename: "react-CiQ1k8xo",
+            kind: "npm-leaf",
+          },
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({ publicOutputs: {} }),
+    );
+
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    expect(reports).toHaveLength(1);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "full-restoration-missing-public-output",
+    );
+    expect(reports[0]!.issues[0]!.detail).toEqual(["entry-AbCdEf12"]);
+  });
+
+  test("full-restoration coverage reads legacy chunks entries", () => {
+    const targetDir = makeTmpRoot();
+    fs.mkdirSync(path.join(targetDir, ".deobfuscate-javascript", "_full"), {
+      recursive: true,
+    });
+    fs.mkdirSync(path.join(targetDir, "utils"), { recursive: true });
+    fs.writeFileSync(
+      path.join(targetDir, "utils", "copyToClipboard.ts"),
+      "export function copyToClipboard(text: string) { return text; }\n",
+    );
+    fs.writeFileSync(
+      path.join(targetDir, ".deobfuscate-javascript", "_full", "manifest.json"),
+      JSON.stringify({
+        files: {
+          "copy-to-clipboard-C9EKP1fU": {
+            basename: "copy-to-clipboard-C9EKP1fU",
+            kind: "local",
+            stages: {},
+          },
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({
+        chunks: {
+          "copy-to-clipboard-C9EKP1fU": {
+            restored: "utils/copyToClipboard.ts",
+            status: "done",
+          },
+        },
+      }),
+    );
+
+    expect(analyzeFullRestorationCoverage(targetDir)).toEqual([]);
+  });
+
+  function writeBuwAliasMapCase(
+    targetDir: string,
+    restoredSemanticExport: boolean,
+  ): void {
+    const basename = "app-initial~app-main~onboarding-page-BUwCKIcU";
+    fs.mkdirSync(path.join(targetDir, ".deobfuscate-javascript", "_full"), {
+      recursive: true,
+    });
+    fs.mkdirSync(
+      path.join(
+        targetDir,
+        "vendor",
+        "app-main-legacy-buw-runtime",
+        "stable-exports",
+      ),
+      { recursive: true },
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "vendor", "app-main-legacy-buw-runtime", "index.ts"),
+      'export * from "./stable-exports/upper-a-f";\n',
+    );
+    fs.writeFileSync(
+      path.join(
+        targetDir,
+        "vendor",
+        "app-main-legacy-buw-runtime",
+        "stable-exports",
+        "upper-a-f.ts",
+      ),
+      restoredSemanticExport
+        ? [
+            "export function computePointerVelocity() { return 1; }",
+            "export { computePointerVelocity as legacyAppMainBuwUpperALowerDExport };",
+            "",
+          ].join("\n")
+        : "export const legacyAppMainBuwUpperALowerDExport = 1;\n",
+    );
+    fs.writeFileSync(
+      path.join(targetDir, ".deobfuscate-javascript", "_full", "manifest.json"),
+      JSON.stringify({
+        files: {
+          [basename]: {
+            basename,
+            kind: "local",
+            stages: { finalized: true, promoted: true },
+          },
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({
+        chunks: {
+          [basename]: {
+            restored: "vendor/app-main-legacy-buw-runtime/index.ts",
+            exports: { Ad: "computePointerVelocity" },
+            status: "done",
+            stage3Accepted: true,
+          },
+        },
+      }),
+    );
+  }
+
+  test("full-restoration coverage rejects import-map exports missing from the public barrel", () => {
+    const targetDir = makeTmpRoot();
+    writeBuwAliasMapCase(targetDir, false);
+
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    expect(reports).toHaveLength(1);
+    const issues = reports[0]!.issues;
+    expect(issues.map((issue) => issue.code)).toContain(
+      "full-restoration-import-map-export-missing",
+    );
+    expect(
+      issues.find(
+        (issue) => issue.code === "full-restoration-import-map-export-missing",
+      )?.detail,
+    ).toEqual([
+      {
+        basename: "app-initial~app-main~onboarding-page-BUwCKIcU",
+        missing: ["computePointerVelocity"],
+      },
+    ]);
+  });
+
+  test("full-restoration coverage accepts import-map exports once the public barrel re-exports them", () => {
+    const targetDir = makeTmpRoot();
+    writeBuwAliasMapCase(targetDir, true);
+
+    expect(analyzeFullRestorationCoverage(targetDir)).toEqual([]);
+  });
+
+  function writeFullManifest(
+    targetDir: string,
+    files: Record<string, unknown>,
+  ): void {
+    fs.mkdirSync(path.join(targetDir, ".deobfuscate-javascript", "_full"), {
+      recursive: true,
+    });
+    fs.writeFileSync(
+      path.join(targetDir, ".deobfuscate-javascript", "_full", "manifest.json"),
+      JSON.stringify({ files }),
+    );
+  }
+
+  function writeCheckpoints(targetDir: string, basenames: string[]): void {
+    const dir = path.join(
+      targetDir,
+      ".deobfuscate-javascript",
+      "_full",
+      "checkpoints",
+    );
+    fs.mkdirSync(dir, { recursive: true });
+    for (const b of basenames) {
+      fs.writeFileSync(path.join(dir, `${b}.tsx`), "export const x = 1;\n");
+    }
+  }
+
+  test("anti-stall: checkpoints-not-drained fires when checkpoints exist but nothing is promoted", () => {
+    const targetDir = makeTmpRoot();
+    writeFullManifest(targetDir, {
+      "foo-AbCdEf12": { basename: "foo-AbCdEf12", kind: "local", stages: {} },
+      "bar-Gh1jKl34": { basename: "bar-Gh1jKl34", kind: "local", stages: {} },
+    });
+    writeCheckpoints(targetDir, ["foo-AbCdEf12", "bar-Gh1jKl34"]);
+    // No IMPORT_MAP.json — the exact state a stalled restore is left in.
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    expect(reports).toHaveLength(1);
+    const codes = reports[0]!.issues.map((i) => i.code);
+    expect(codes).toContain("full-restoration-checkpoints-not-drained");
+  });
+
+  test("anti-stall: ignores stale checkpoints outside the current manifest", () => {
+    const targetDir = makeTmpRoot();
+    writeFullManifest(targetDir, {
+      "foo-AbCdEf12": {
+        basename: "foo-AbCdEf12",
+        kind: "local",
+        stages: { promoted: true },
+      },
+    });
+    writeCheckpoints(targetDir, ["foo-AbCdEf12", "old-ZzYyXx99"]);
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({
+        chunks: {
+          "foo-AbCdEf12": {
+            restored: "utils/foo.ts",
+            status: "done",
+            stage3Accepted: true,
+          },
+        },
+      }),
+    );
+
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain("full-restoration-checkpoints-not-drained");
+  });
+
+  test("anti-stall: organize-incomplete fires when a chunk is finalized but not promoted", () => {
+    const targetDir = makeTmpRoot();
+    writeFullManifest(targetDir, {
+      "foo-AbCdEf12": {
+        basename: "foo-AbCdEf12",
+        kind: "local",
+        stages: { finalized: true },
+      },
+    });
+    writeCheckpoints(targetDir, ["foo-AbCdEf12"]);
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports[0]!.issues.map((i) => i.code);
+    expect(codes).toContain("full-restoration-organize-incomplete");
+  });
+
+  test("anti-stall: --allow-organize-incomplete suppresses the drain checks", () => {
+    const targetDir = makeTmpRoot();
+    writeFullManifest(targetDir, {
+      "foo-AbCdEf12": {
+        basename: "foo-AbCdEf12",
+        kind: "local",
+        stages: { finalized: true },
+      },
+    });
+    writeCheckpoints(targetDir, ["foo-AbCdEf12"]);
+    const reports = analyzeFullRestorationCoverage(targetDir, {
+      allowOrganizeIncomplete: true,
+    });
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain("full-restoration-checkpoints-not-drained");
+    expect(codes).not.toContain("full-restoration-organize-incomplete");
+  });
+
+  function writePromotedFile(
+    targetDir: string,
+    relPath: string,
+    contents: string,
+  ): void {
+    const abs = path.join(targetDir, relPath);
+    fs.mkdirSync(path.dirname(abs), { recursive: true });
+    fs.writeFileSync(abs, contents);
+  }
+
+  const BARREL_FACADE =
+    "// Restored from ref/webview/assets/app-initial~app-main~automations-page-Bc0ZtIBr.js\n" +
+    "// Current automations-page compatibility facade.\n" +
+    'export { CodexApp, initCodexAppChunk } from "../app-shell/codex-app";\n' +
+    'export { AppFallback } from "../app-shell/app-fallback";\n';
+
+  test("aggregator-body-not-restored fires: large app-feature chunk promoted to a re-export barrel", () => {
+    const targetDir = makeTmpRoot();
+    writePromotedFile(
+      targetDir,
+      "vendor/automations-page-current-runtime.ts",
+      BARREL_FACADE,
+    );
+    writeFullManifest(targetDir, {
+      "app-initial~app-main~automations-page-Bc0ZtIBr": {
+        basename: "app-initial~app-main~automations-page-Bc0ZtIBr",
+        kind: "local",
+        lineCount: 43136,
+        stages: {
+          extracted: true,
+          renamed: true,
+          polished: true,
+          finalized: true,
+          organized: true,
+          promoted: true,
+        },
+        organization: {
+          domain: "vendor",
+          semanticPath: "vendor/automations-page-current-runtime.ts",
+          classification: "app-feature",
+        },
+      },
+    });
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).toContain("full-restoration-aggregator-body-not-restored");
+  });
+
+  test("aggregator-body-not-restored does NOT fire: promoted file has a real body", () => {
+    const targetDir = makeTmpRoot();
+    writePromotedFile(
+      targetDir,
+      "app-shell/codex-app.tsx",
+      "// Restored from ref/webview/assets/app-initial~app-main~automations-page-Bc0ZtIBr.js\n" +
+        "export function CodexApp() {\n  return null;\n}\n",
+    );
+    writeFullManifest(targetDir, {
+      "app-initial~app-main~automations-page-Bc0ZtIBr": {
+        basename: "app-initial~app-main~automations-page-Bc0ZtIBr",
+        kind: "local",
+        lineCount: 43136,
+        stages: { promoted: true },
+        organization: {
+          domain: "app-shell",
+          semanticPath: "app-shell/codex-app.tsx",
+          classification: "app-feature",
+        },
+      },
+    });
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain(
+      "full-restoration-aggregator-body-not-restored",
+    );
+  });
+
+  test("aggregator-body-not-restored does NOT fire: large app-feature split barrel re-exports semantic parts", () => {
+    const targetDir = makeTmpRoot();
+    writePromotedFile(
+      targetDir,
+      "conversations/local-conversation-thread.tsx",
+      "// Restored from ref/webview/assets/local-conversation-thread-BvhTyO40.js\n" +
+        'export { LocalConversationThread } from "./local-conversation-thread-parts/local-conversation-thread-route";\n' +
+        'export type { LocalConversationThreadProps } from "./local-conversation-thread-parts/local-conversation-thread-route";\n',
+    );
+    writePromotedFile(
+      targetDir,
+      "conversations/local-conversation-thread-parts/local-conversation-thread-route.tsx",
+      "// Restored from ref/webview/assets/local-conversation-thread-BvhTyO40.js\n" +
+        "export type LocalConversationThreadProps = { threadId: string };\n" +
+        "export function LocalConversationThread(\n" +
+        "  _props: LocalConversationThreadProps,\n" +
+        ") {\n" +
+        "  return null;\n" +
+        "}\n",
+    );
+    writeFullManifest(targetDir, {
+      "local-conversation-thread-BvhTyO40": {
+        basename: "local-conversation-thread-BvhTyO40",
+        kind: "local",
+        lineCount: 17602,
+        stages: { promoted: true },
+        organization: {
+          domain: "conversations",
+          semanticPath: "conversations/local-conversation-thread.tsx",
+          classification: "app-feature",
+        },
+      },
+    });
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain(
+      "full-restoration-aggregator-body-not-restored",
+    );
+  });
+
+  test("aggregator-body-not-restored does NOT fire: large app-feature fanout barrel re-exports semantic modules", () => {
+    const targetDir = makeTmpRoot();
+    const sourceModules = [
+      ["app-shell/app-fallback.tsx", "AppFallback"],
+      ["app-shell/codex-app.tsx", "CodexApp"],
+      ["automation/eligibility.ts", "heartbeatAutomationEligibilitySignal"],
+      ["composer/project-selector.tsx", "ComposerProjectSelector"],
+      ["features/keyboard-shortcuts.ts", "initKeyboardShortcutsDialogChunk"],
+      ["github/pull-request-helper.ts", "startPullRequestMergeHelper"],
+      ["onboarding/chronicle-setup-state.ts", "buildChronicleSetupState"],
+      ["settings/local-environment-create-route.ts", "buildRoute"],
+    ] as const;
+    writePromotedFile(
+      targetDir,
+      "vendor/automations-page-current-runtime.ts",
+      "// Restored from ref/webview/assets/app-initial~app-main~automations-page-Bc0ZtIBr.js\n" +
+        sourceModules
+          .map(
+            ([modulePath, exportName]) =>
+              `export { ${exportName} } from "../${modulePath.replace(/\.[cm]?[jt]sx?$/i, "")}";`,
+          )
+          .join("\n") +
+        "\n",
+    );
+    for (const [modulePath, exportName] of sourceModules) {
+      writePromotedFile(
+        targetDir,
+        modulePath,
+        "// Restored from ref/webview/assets/app-initial~app-main~automations-page-Bc0ZtIBr.js\n" +
+          `export const ${exportName} = {};\n`,
+      );
+    }
+    writeFullManifest(targetDir, {
+      "app-initial~app-main~automations-page-Bc0ZtIBr": {
+        basename: "app-initial~app-main~automations-page-Bc0ZtIBr",
+        kind: "local",
+        lineCount: 43136,
+        stages: { promoted: true },
+        organization: {
+          domain: "vendor",
+          semanticPath: "vendor/automations-page-current-runtime.ts",
+          classification: "app-feature",
+        },
+      },
+    });
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain(
+      "full-restoration-aggregator-body-not-restored",
+    );
+  });
+
+  test("aggregator-body-not-restored does NOT fire: genuine vendor-runtime barrel is exempt", () => {
+    const targetDir = makeTmpRoot();
+    writePromotedFile(
+      targetDir,
+      "vendor/mermaid-parser-runtime.ts",
+      BARREL_FACADE,
+    );
+    writeFullManifest(targetDir, {
+      "chunk-K5T4RW27-B7ZoXjZA": {
+        basename: "chunk-K5T4RW27-B7ZoXjZA",
+        kind: "local",
+        lineCount: 21062,
+        stages: { promoted: true },
+        organization: {
+          domain: "vendor",
+          semanticPath: "vendor/mermaid-parser-runtime.ts",
+          classification: "vendor-runtime",
+        },
+      },
+    });
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain(
+      "full-restoration-aggregator-body-not-restored",
+    );
+  });
+
+  test("aggregator-body-not-restored does NOT fire: generated-runtime barrel is exempt", () => {
+    const targetDir = makeTmpRoot();
+    writePromotedFile(
+      targetDir,
+      "runtime/current-app-initial/popcorn-electron-document-panel-current-runtime.ts",
+      BARREL_FACADE,
+    );
+    writeFullManifest(targetDir, {
+      "PopcornElectronDocumentPanel-BJYIlWEb": {
+        basename: "PopcornElectronDocumentPanel-BJYIlWEb",
+        kind: "local",
+        lineCount: 23090,
+        stages: { promoted: true },
+        organization: {
+          domain: "runtime",
+          semanticPath:
+            "runtime/current-app-initial/popcorn-electron-document-panel-current-runtime.ts",
+          classification: "generated-runtime",
+        },
+      },
+    });
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain(
+      "full-restoration-aggregator-body-not-restored",
+    );
+  });
+
+  test("aggregator-body-not-restored does NOT fire: small chunk promoted to a barrel is fine", () => {
+    const targetDir = makeTmpRoot();
+    writePromotedFile(targetDir, "utils/small-index.ts", BARREL_FACADE);
+    writeFullManifest(targetDir, {
+      "small-index-AbCdEf12": {
+        basename: "small-index-AbCdEf12",
+        kind: "local",
+        lineCount: 120,
+        stages: { promoted: true },
+        organization: {
+          domain: "utils",
+          semanticPath: "utils/small-index.ts",
+          classification: "app-feature",
+        },
+      },
+    });
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain(
+      "full-restoration-aggregator-body-not-restored",
+    );
+  });
+
+  test("aggregator-body-not-restored: --allow-organize-incomplete suppresses it", () => {
+    const targetDir = makeTmpRoot();
+    writePromotedFile(
+      targetDir,
+      "vendor/automations-page-current-runtime.ts",
+      BARREL_FACADE,
+    );
+    writeFullManifest(targetDir, {
+      "app-initial~app-main~automations-page-Bc0ZtIBr": {
+        basename: "app-initial~app-main~automations-page-Bc0ZtIBr",
+        kind: "local",
+        lineCount: 43136,
+        stages: { promoted: true },
+        organization: {
+          domain: "vendor",
+          semanticPath: "vendor/automations-page-current-runtime.ts",
+          classification: "app-feature",
+        },
+      },
+    });
+    const reports = analyzeFullRestorationCoverage(targetDir, {
+      allowOrganizeIncomplete: true,
+    });
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain(
+      "full-restoration-aggregator-body-not-restored",
+    );
+  });
+
+  test("anti-stall: public-file-in-hash-dir flags a promoted file in a hash-named dir", () => {
+    const targetDir = makeTmpRoot();
+    writeFullManifest(targetDir, {
+      "button-bq66r8jD": {
+        basename: "button-bq66r8jD",
+        kind: "local",
+        stages: { promoted: true },
+      },
+    });
+    fs.mkdirSync(path.join(targetDir, "button-bq66r8jD"), { recursive: true });
+    fs.writeFileSync(
+      path.join(targetDir, "button-bq66r8jD", "button.tsx"),
+      "export const Button = () => null;\n",
+    );
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).toContain("full-restoration-public-file-in-hash-dir");
+  });
+
+  test("anti-stall: public-file-in-hash-dir ignores semantic dirs matching non-hashed chunk names", () => {
+    const targetDir = makeTmpRoot();
+    writeFullManifest(targetDir, {
+      preload: {
+        basename: "preload",
+        kind: "local",
+        stages: { promoted: true },
+      },
+    });
+    fs.mkdirSync(path.join(targetDir, "preload"), { recursive: true });
+    fs.writeFileSync(
+      path.join(targetDir, "preload", "electron-bridge-preload.ts"),
+      "export const preloadBridge = true;\n",
+    );
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain("full-restoration-public-file-in-hash-dir");
+  });
+
+  test("anti-stall: a fully promoted tree passes the drain checks", () => {
+    const targetDir = makeTmpRoot();
+    fs.mkdirSync(path.join(targetDir, "ui"), { recursive: true });
+    fs.writeFileSync(
+      path.join(targetDir, "ui", "button.tsx"),
+      "// Restored from ref/webview/assets/button-bq66r8jD.js\nexport const Button = () => null;\n",
+    );
+    writeFullManifest(targetDir, {
+      "button-bq66r8jD": {
+        basename: "button-bq66r8jD",
+        kind: "local",
+        stages: { promoted: true },
+      },
+    });
+    writeCheckpoints(targetDir, ["button-bq66r8jD"]);
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({
+        chunks: {
+          "button-bq66r8jD": { restored: "ui/button.tsx", status: "done" },
+        },
+      }),
+    );
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports.flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain("full-restoration-checkpoints-not-drained");
+    expect(codes).not.toContain("full-restoration-organize-incomplete");
+    expect(codes).not.toContain("full-restoration-public-file-in-hash-dir");
+  });
+
+  test("generated barrel/types files are exempt from the provenance-header requirement", () => {
+    const opts = { ...DEFAULT_OPTIONS, requireProvenanceHeader: true };
+    const barrel = analyzeSource(
+      `export { SpeakerIcon } from "./speaker-icon";\n`,
+      "icons/speaker/index.ts",
+      opts,
+    );
+    expect(barrel.issues.map((i) => i.code)).not.toContain(
+      "missing-provenance-header",
+    );
+    const types = analyzeSource(
+      `import type { SVGProps } from "react";\nexport type IconProps = SVGProps<SVGSVGElement>;\n`,
+      "icons/speaker/types.ts",
+      opts,
+    );
+    expect(types.issues.map((i) => i.code)).not.toContain(
+      "missing-provenance-header",
+    );
+    // A real restored file with no header still fails.
+    const real = analyzeSource(
+      `export function speakerIcon() {}\n`,
+      "icons/speaker/speaker-icon.tsx",
+      opts,
+    );
+    expect(real.issues.map((i) => i.code)).toContain(
+      "missing-provenance-header",
+    );
+  });
+
+  test("allowUntyped suppresses the typing checks (readable tier)", () => {
+    const src =
+      "// Restored from ref/webview/assets/widget-AbCdEf12.js\nexport function Widget(props) {\n  return props.label;\n}\n";
+    const deep = analyzeSource(src, "widget.tsx", DEFAULT_OPTIONS);
+    expect(deep.issues.map((i) => i.code)).toContain("untyped-component-props");
+    const readable = analyzeSource(src, "widget.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowUntyped: true,
+    });
+    expect(readable.issues.map((i) => i.code)).not.toContain(
+      "untyped-component-props",
+    );
+  });
+
+  test("full-restoration coverage rejects mechanical app feature checkpoints", () => {
+    const targetDir = makeTmpRoot();
+    fs.mkdirSync(path.join(targetDir, ".deobfuscate-javascript", "_full"), {
+      recursive: true,
+    });
+    fs.mkdirSync(path.join(targetDir, "boundaries"), { recursive: true });
+    fs.writeFileSync(
+      path.join(targetDir, "boundaries", "composer.tsx"),
+      "// @ts-nocheck\nexport function Composer() { return null; }\n",
+    );
+    fs.writeFileSync(
+      path.join(targetDir, ".deobfuscate-javascript", "_full", "manifest.json"),
+      JSON.stringify({
+        files: {
+          "composer-CCuv6v-2": {
+            basename: "composer-CCuv6v-2",
+            kind: "local",
+            stages: { finalized: false },
+          },
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({
+        boundaries: {
+          "composer-CCuv6v-2": {
+            restored: "boundaries/composer.tsx",
+            boundary: false,
+            status: "mechanical-readable-restored",
+          },
+        },
+      }),
+    );
+
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports[0]!.issues.map((issue) => issue.code);
+    expect(codes).toContain("full-restoration-mechanical-app-feature");
+    expect(codes).toContain("full-restoration-app-feature-not-accepted");
+    expect(codes).toContain("full-restoration-app-feature-ts-nocheck");
+  });
+
+  test("full-restoration coverage rejects app panel empty boundary placeholders", () => {
+    const targetDir = makeTmpRoot();
+    fs.mkdirSync(path.join(targetDir, ".deobfuscate-javascript", "_full"), {
+      recursive: true,
+    });
+    fs.mkdirSync(path.join(targetDir, "boundaries"), { recursive: true });
+    fs.writeFileSync(
+      path.join(targetDir, "boundaries", "pdf-preview-panel.ts"),
+      "// Restored from ref/webview/assets/pdf-preview-panel-Bo4vARUp.js\nexport {};\n",
+    );
+    fs.writeFileSync(
+      path.join(targetDir, ".deobfuscate-javascript", "_full", "manifest.json"),
+      JSON.stringify({
+        files: {
+          "pdf-preview-panel-Bo4vARUp": {
+            basename: "pdf-preview-panel-Bo4vARUp",
+            kind: "local",
+            stages: { finalized: false },
+          },
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({
+        boundaries: {
+          "pdf-preview-panel-Bo4vARUp": {
+            restored: "boundaries/pdf-preview-panel.ts",
+            boundary: true,
+            vendor: "diagram/doc",
+          },
+        },
+      }),
+    );
+
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    const codes = reports[0]!.issues.map((issue) => issue.code);
+    expect(codes).toContain("full-restoration-app-feature-boundary");
+    expect(codes).toContain("full-restoration-app-feature-empty-placeholder");
+    expect(codes).toContain("full-restoration-app-feature-not-accepted");
+  });
+
+  test("full-restoration coverage rejects app feature typed facades", () => {
+    const targetDir = makeTmpRoot();
+    fs.mkdirSync(path.join(targetDir, ".deobfuscate-javascript", "_full"), {
+      recursive: true,
+    });
+    fs.mkdirSync(path.join(targetDir, "review"), { recursive: true });
+    fs.writeFileSync(
+      path.join(targetDir, "review", "ReviewFileSourceTab.tsx"),
+      [
+        "// Restored from ref/webview/assets/review-file-source-tab-C96M0tZ-.js",
+        "// TYPED BOUNDARY FACADE (generated by scripts/make-facade.ts).",
+        "export declare const ReviewFileSourceTab: any;",
+        "",
+      ].join("\n"),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, ".deobfuscate-javascript", "_full", "manifest.json"),
+      JSON.stringify({
+        files: {
+          "review-file-source-tab-C96M0tZ-": {
+            basename: "review-file-source-tab-C96M0tZ-",
+            kind: "local",
+            stages: { finalized: true },
+          },
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({
+        chunks: {
+          "review-file-source-tab-C96M0tZ-": {
+            restored: "review/ReviewFileSourceTab.tsx",
+            status: "accepted",
+          },
+        },
+      }),
+    );
+
+    const reports = analyzeFullRestorationCoverage(targetDir);
+    expect(reports[0]!.issues.map((issue) => issue.code)).toContain(
+      "full-restoration-app-feature-facade",
+    );
+  });
+
+  function writeHomeFacadeCase(targetDir: string, facadeEntry: string): void {
+    fs.mkdirSync(path.join(targetDir, ".deobfuscate-javascript", "_full"), {
+      recursive: true,
+    });
+    fs.mkdirSync(path.join(targetDir, "home"), { recursive: true });
+    fs.mkdirSync(path.join(targetDir, "boundaries"), { recursive: true });
+    fs.writeFileSync(
+      path.join(targetDir, "boundaries", "app-externals.facade.ts"),
+      [
+        "// TYPED BOUNDARY FACADE (generated by scripts/make-facade.ts).",
+        facadeEntry,
+        "",
+      ].join("\n"),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "home", "home-page-body.tsx"),
+      [
+        "// Restored from ref/webview/assets/home-page-body-Ab12Cd34.js",
+        'import { HomeComposer } from "../boundaries/app-externals.facade";',
+        "export function HomePageBody() {",
+        "  return <HomeComposer />;",
+        "}",
+        "",
+      ].join("\n"),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, ".deobfuscate-javascript", "_full", "manifest.json"),
+      JSON.stringify({
+        files: {
+          "home-page-body-Ab12Cd34": {
+            basename: "home-page-body-Ab12Cd34",
+            kind: "local",
+            stages: { finalized: true },
+          },
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({
+        chunks: {
+          "home-page-body-Ab12Cd34": {
+            restored: "home/home-page-body.tsx",
+            status: "accepted",
+            stage3Accepted: true,
+          },
+        },
+      }),
+    );
+  }
+
+  test("app-feature-imports-any-facade fires when a deliverable imports an any-placeholder", () => {
+    const targetDir = makeTmpRoot();
+    writeHomeFacadeCase(
+      targetDir,
+      "export const HomeComposer: any = undefined as any;",
+    );
+    const codes = analyzeFullRestorationCoverage(targetDir).flatMap((r) =>
+      r.issues.map((i) => i.code),
+    );
+    expect(codes).toContain("full-restoration-app-feature-imports-any-facade");
+  });
+
+  test("app-feature-imports-any-facade does NOT fire once the facade entry is a real re-export", () => {
+    const targetDir = makeTmpRoot();
+    writeHomeFacadeCase(
+      targetDir,
+      'export { HomeComposer } from "../composer/home-composer";',
+    );
+    const codes = analyzeFullRestorationCoverage(targetDir).flatMap((r) =>
+      r.issues.map((i) => i.code),
+    );
+    expect(codes).not.toContain(
+      "full-restoration-app-feature-imports-any-facade",
+    );
+  });
+
+  test("app-feature-imports-any-facade: --allow-open-boundaries suppresses it", () => {
+    const targetDir = makeTmpRoot();
+    writeHomeFacadeCase(
+      targetDir,
+      "export const HomeComposer: any = undefined as any;",
+    );
+    const codes = analyzeFullRestorationCoverage(targetDir, {
+      allowOpenBoundaries: true,
+    }).flatMap((r) => r.issues.map((i) => i.code));
+    expect(codes).not.toContain(
+      "full-restoration-app-feature-imports-any-facade",
+    );
+  });
+
+  test("full-restoration coverage permits explicit vendor boundaries", () => {
+    const targetDir = makeTmpRoot();
+    fs.mkdirSync(path.join(targetDir, ".deobfuscate-javascript", "_full"), {
+      recursive: true,
+    });
+    fs.mkdirSync(path.join(targetDir, "assets"), { recursive: true });
+    fs.writeFileSync(
+      path.join(targetDir, "assets", "browser.ts"),
+      "export declare const DotLottieWorkerReact: any;\n",
+    );
+    fs.writeFileSync(
+      path.join(targetDir, ".deobfuscate-javascript", "_full", "manifest.json"),
+      JSON.stringify({
+        files: {
+          "browser-BQH2qCja": {
+            basename: "browser-BQH2qCja",
+            kind: "local",
+            stages: { finalized: false },
+          },
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({
+        boundaries: {
+          "browser-BQH2qCja": {
+            restored: "assets/browser.ts",
+            boundary: true,
+            vendor: "npm",
+            note: "@lottiefiles/dotlottie-web",
+          },
+        },
+      }),
+    );
+
+    expect(analyzeFullRestorationCoverage(targetDir)).toEqual([]);
+  });
+
+  test("full-restoration coverage accepts public facades and dependency boundaries", () => {
+    const targetDir = makeTmpRoot();
+    fs.mkdirSync(path.join(targetDir, ".deobfuscate-javascript", "_full"), {
+      recursive: true,
+    });
+    fs.mkdirSync(path.join(targetDir, "state"));
+    fs.writeFileSync(path.join(targetDir, "state", "storeRuntime.ts"), "\n");
+    fs.writeFileSync(
+      path.join(targetDir, ".deobfuscate-javascript", "_full", "manifest.json"),
+      JSON.stringify({
+        files: {
+          "setting-storage-EK1Te68s": {
+            basename: "setting-storage-EK1Te68s",
+            kind: "local",
+          },
+          "bundler-runtime-AbCdEf12": {
+            basename: "bundler-runtime-AbCdEf12",
+            kind: "local",
+          },
+        },
+      }),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify({
+        publicOutputs: {
+          "setting-storage-EK1Te68s": {
+            publicFacades: {
+              [path.join(targetDir, "state", "storeRuntime.ts")]:
+                "./state/storeRuntime",
+            },
+          },
+          "bundler-runtime-AbCdEf12": {
+            dependencyBoundary: "Vite bundler helper runtime",
+          },
+        },
+      }),
+    );
+
+    expect(analyzeFullRestorationCoverage(targetDir)).toEqual([]);
+  });
+});
+
+describe("vendored / facade relaxation", () => {
+  const codes = (r: { issues: Array<{ code: string }> }) =>
+    r.issues.map((i) => i.code);
+
+  test("lodash canonical short names are allowlisted", () => {
+    const src =
+      `// Restored from ref/webview/assets/cmp-XXXXXXXX.js\n` +
+      `export const eq = (a, b) => a === b;\n` +
+      `export const gt = (a, b) => a > b;\n` +
+      `export const lt = (a, b) => a < b;\n`;
+    const r = analyzeSource(src, "compare.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(codes(r)).not.toContain("public-cryptic-names");
+  });
+
+  test("--vendored suppresses public-cryptic-names and split-required", () => {
+    const src =
+      `// Restored from ref/webview/assets/lib-XXXXXXXX.js\n` +
+      `export const z1 = 1;\n` +
+      `export const z2 = 2;\n` +
+      `export const z3 = 3;\n` +
+      Array.from({ length: 8 }, (_, i) => `const v${i} = ${i};`).join("\n") +
+      "\n";
+    const ctrl = analyzeSource(src, "lib.ts", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 3,
+    });
+    expect(codes(ctrl)).toContain("public-cryptic-names");
+    expect(codes(ctrl)).toContain("split-required");
+
+    const vend = analyzeSource(src, "lib.ts", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 3,
+      vendored: true,
+    });
+    expect(codes(vend)).not.toContain("public-cryptic-names");
+    expect(codes(vend)).not.toContain("split-required");
+  });
+
+  test("CLI relaxes import-map open boundaries outside boundaries directory", () => {
+    const targetDir = makeTmpRoot();
+    const workspaceDir = path.join(targetDir, "workspace");
+    fs.mkdirSync(workspaceDir, { recursive: true });
+    const boundaryFile = path.join(workspaceDir, "workspace-root.ts");
+    fs.writeFileSync(
+      boundaryFile,
+      [
+        "// Restored from ref/.vite/build/workspace-root-ABC123.js",
+        "// Typed open boundary for a mixed runtime chunk.",
+        "export const A = 1;",
+        "export const b = 2;",
+        "export const c = 3;",
+        "export const d = 4;",
+        "",
+      ].join("\n"),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify(
+        {
+          chunks: {
+            "workspace-root-ABC123": {
+              restored: "workspace/workspace-root.ts",
+              status: "faced",
+              boundary: true,
+              openBoundary: true,
+              vendor: "runtime",
+            },
+          },
+        },
+        null,
+        2,
+      ),
+    );
+
+    expect(collectImportMapBoundaryFiles(targetDir)).toContain(
+      path.resolve(boundaryFile),
+    );
+
+    const result = spawnSync(
+      "bun",
+      [
+        path.join(import.meta.dir, "quality-gate.ts"),
+        targetDir,
+        "--json",
+        "--max-flat-lines",
+        "3",
+      ],
+      { encoding: "utf8" },
+    );
+    expect(result.status).toBe(0);
+    const reports = JSON.parse(result.stdout) as Array<{
+      issues: Array<{ code: string }>;
+    }>;
+    expect(reports.flatMap((report) => codes(report))).not.toContain(
+      "public-cryptic-names",
+    );
+    expect(reports.flatMap((report) => codes(report))).not.toContain(
+      "split-required",
+    );
+  });
+
+  test("CLI relaxes current manifest vendor/generated outputs but not app-feature outputs", () => {
+    const targetDir = makeTmpRoot();
+    const vendorDir = path.join(targetDir, "vendor");
+    const generatedDir = path.join(targetDir, "generated");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.mkdirSync(generatedDir, { recursive: true });
+    const vendorFile = path.join(vendorDir, "vendor-runtime.ts");
+    const generatedFile = path.join(generatedDir, "popcorn-runtime.ts");
+    const appFeatureFile = path.join(vendorDir, "docx-preview-panel.ts");
+    const mechanicalSource = [
+      "// Restored from ref/webview/assets/vendor-runtime-AbCdEf12.js",
+      "function vendorRuntimeHelper1(vendorRuntimeParam1) {",
+      "  const vendorRuntimeValue1 = vendorRuntimeParam1.value;",
+      "  return vendorRuntimeValue1;",
+      "}",
+      "export const a = vendorRuntimeHelper1;",
+      "export const b = vendorRuntimeHelper1;",
+      "export const c = vendorRuntimeHelper1;",
+      "",
+    ].join("\n");
+    fs.writeFileSync(vendorFile, mechanicalSource);
+    fs.writeFileSync(generatedFile, mechanicalSource);
+    fs.writeFileSync(appFeatureFile, mechanicalSource);
+    fs.mkdirSync(path.join(targetDir, ".deobfuscate-javascript", "_full"), {
+      recursive: true,
+    });
+    fs.writeFileSync(
+      path.join(targetDir, ".deobfuscate-javascript", "_full", "manifest.json"),
+      JSON.stringify(
+        {
+          files: {
+            "vendor-runtime-AbCdEf12": {
+              basename: "vendor-runtime-AbCdEf12",
+              kind: "local",
+              stages: { finalized: true, promoted: true },
+              organization: {
+                domain: "vendor",
+                semanticPath: "vendor/vendor-runtime.ts",
+                classification: "vendor-runtime",
+              },
+            },
+            "docx-preview-panel-GhIjKl34": {
+              basename: "docx-preview-panel-GhIjKl34",
+              kind: "local",
+              stages: { finalized: true, promoted: true },
+              organization: {
+                domain: "vendor",
+                semanticPath: "vendor/docx-preview-panel.ts",
+                classification: "app-feature",
+              },
+            },
+            "popcorn-runtime-MnOpQr56": {
+              basename: "popcorn-runtime-MnOpQr56",
+              kind: "local",
+              stages: { finalized: true, promoted: true },
+              organization: {
+                domain: "generated",
+                semanticPath: "generated/popcorn-runtime.ts",
+                classification: "generated-runtime",
+              },
+            },
+          },
+        },
+        null,
+        2,
+      ),
+    );
+    fs.writeFileSync(
+      path.join(targetDir, "IMPORT_MAP.json"),
+      JSON.stringify(
+        {
+          chunks: {
+            "vendor-runtime-AbCdEf12": {
+              restored: "vendor/vendor-runtime.ts",
+              status: "done",
+            },
+            "docx-preview-panel-GhIjKl34": {
+              restored: "vendor/docx-preview-panel.ts",
+              status: "done",
+              stage3Accepted: true,
+            },
+            "popcorn-runtime-MnOpQr56": {
+              restored: "generated/popcorn-runtime.ts",
+              status: "done",
+            },
+          },
+        },
+        null,
+        2,
+      ),
+    );
+
+    const vendoredFiles = collectManifestVendoredFiles(targetDir);
+    expect(vendoredFiles).toContain(path.resolve(vendorFile));
+    expect(vendoredFiles).toContain(path.resolve(generatedFile));
+    expect(vendoredFiles).not.toContain(path.resolve(appFeatureFile));
+
+    const result = spawnSync(
+      "bun",
+      [
+        path.join(import.meta.dir, "quality-gate.ts"),
+        targetDir,
+        "--json",
+        "--max-flat-lines",
+        "3",
+      ],
+      { encoding: "utf8" },
+    );
+    expect(result.status).toBe(1);
+    const reports = JSON.parse(result.stdout) as Array<{
+      file: string;
+      issues: Array<{ code: string }>;
+    }>;
+    const vendorCodes = reports
+      .filter(
+        (report) => path.resolve(report.file) === path.resolve(vendorFile),
+      )
+      .flatMap((report) => codes(report));
+    const appFeatureCodes = reports
+      .filter(
+        (report) => path.resolve(report.file) === path.resolve(appFeatureFile),
+      )
+      .flatMap((report) => codes(report));
+    const generatedCodes = reports
+      .filter(
+        (report) => path.resolve(report.file) === path.resolve(generatedFile),
+      )
+      .flatMap((report) => codes(report));
+    expect(vendorCodes).not.toContain("mechanical-names");
+    expect(vendorCodes).not.toContain("split-required");
+    expect(generatedCodes).not.toContain("mechanical-names");
+    expect(generatedCodes).not.toContain("split-required");
+    expect(appFeatureCodes).toContain("mechanical-names");
+    expect(appFeatureCodes).toContain("split-required");
+  });
+
+  test("a generated facade is auto-relaxed by its marker (no --vendored)", () => {
+    const facade =
+      `// Restored from ref/webview/assets/zod-XXXXXXXX.js\n` +
+      `//\n` +
+      `// TYPED BOUNDARY FACADE (generated by scripts/make-facade.ts).\n` +
+      `/* eslint-disable @typescript-eslint/no-explicit-any */\n` +
+      `export declare const a: any;\n` +
+      `export declare const i: any;\n` +
+      `export declare const n: any;\n`;
+    const r = analyzeSource(facade, "zod.facade.ts", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 1,
+    });
+    expect(codes(r)).not.toContain("public-cryptic-names");
+    expect(codes(r)).not.toContain("split-required");
+  });
+
+  test("legacy vendored flat boundary facades are auto-relaxed", () => {
+    const cases = [
+      {
+        file: "restored/app-main/boundaries/react.ts",
+        header:
+          "// Restored from ref/webview/assets/react-XXXXXXXX.js — vendored npm package (bundled). Flat boundary facade.",
+      },
+      {
+        file: "restored/app-main/boundaries/chunk-5FUZZQ4R.ts",
+        header:
+          "// Restored from ref/webview/assets/chunk-5FUZZQ4R.js — diagram/doc vendor chunk. Flat boundary.",
+      },
+      {
+        file: "restored/app-main/boundaries/jotaiReact.ts",
+        header:
+          "// Restored from ref/webview/assets/jotai-react-XXXXXXXX.js — Bare Jotai React re-export boundary split out of the app-scope bundle.",
+      },
+      {
+        file: "restored/app-main/boundaries/request.ts",
+        header:
+          "// Restored from ref/webview/assets/request-XXXXXXXX.js — i18n/locale request; boundary.",
+      },
+    ];
+
+    for (const testCase of cases) {
+      const facade =
+        `${testCase.header}\n` +
+        `/* eslint-disable @typescript-eslint/no-explicit-any */\n` +
+        `export declare const t: any;\n` +
+        `export declare const n: any;\n`;
+      const r = analyzeSource(facade, testCase.file, {
+        ...DEFAULT_OPTIONS,
+      });
+      expect(codes(r)).not.toContain("public-cryptic-names");
+    }
+  });
+
+  test("unfinished app flat boundary facades are not auto-relaxed", () => {
+    const facade =
+      `// Restored from ref/webview/assets/composer-XXXXXXXX.js — composer chunk (not yet semantically restored). Flat boundary facade.\n` +
+      `/* eslint-disable @typescript-eslint/no-explicit-any */\n` +
+      `export declare const t: any;\n`;
+    const r = analyzeSource(
+      facade,
+      "restored/app-main/boundaries/composer.ts",
+      {
+        ...DEFAULT_OPTIONS,
+      },
+    );
+    expect(codes(r)).toContain("public-cryptic-names");
+  });
+
+  test("unfinished current app backing bundles are not auto-relaxed as vendor", () => {
+    const bundle =
+      `// Restored from ref/webview/assets/automations-page-CXHLOmAw.js\n` +
+      `// Flat boundary. Vendored current automations page backing bundle with restored dependency imports.\n` +
+      `export function AutomationsPage() {\n` +
+      Array.from(
+        { length: 6 },
+        (_, i) => `  const automationsPageHelper${i} = ${i};`,
+      ).join("\n") +
+      `\n  return automationsPageHelper0;\n}\n`;
+    const r = analyzeSource(bundle, "restored/vendor/automations-page.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      vendoredHeaderExemptAllowed: true,
+    });
+    expect(r.vendored).toBe(false);
+    expect(codes(r)).toContain("flat-boundary-app-bundle");
+    expect(codes(r)).toContain("mechanical-name-family");
+  });
+
+  test("restored bundler interop runtime modules are auto-relaxed", () => {
+    const runtime =
+      `// Restored from ref/webview/assets/chunk-Cq_f4orQ.js\n` +
+      `const create = Object.create;\n` +
+      `const commonJsFactory = (fn: any, mod?: any) => () => mod || fn;\n` +
+      `const toESM = (mod: any) => create(mod);\n` +
+      `export { toESM as s, commonJsFactory as t };\n`;
+    const r = analyzeSource(runtime, "restored/app-main/utils/cjsInterop.ts", {
+      ...DEFAULT_OPTIONS,
+    });
+    expect(codes(r)).not.toContain("public-cryptic-names");
+  });
+
+  test("restored Lottie animation data modules are auto-relaxed", () => {
+    const lottieData =
+      `// Restored from ref/webview/assets/automation-DUugu_pi.js\n` +
+      `/* eslint-disable @typescript-eslint/no-explicit-any */\n` +
+      `const animationData: any = {\n` +
+      `  v: "5.7.0",\n` +
+      `  ip: 0,\n` +
+      `  op: 90,\n` +
+      `  fr: 60,\n` +
+      `  w: 500,\n` +
+      `  h: 500,\n` +
+      `  assets: [],\n` +
+      `  layers: [],\n` +
+      Array.from({ length: 8 }, (_, i) => `  frame${i}: ${i},`).join("\n") +
+      `\n};\n` +
+      `export default animationData;\n`;
+
+    const ordinary = analyzeSource(lottieData, "widgets/LargeAnimation.ts", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 5,
+    });
+    expect(codes(ordinary)).toContain("split-required");
+
+    const asset = analyzeSource(
+      lottieData,
+      "restored/app-main/assets/automationAnimation.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        maxFlatLines: 5,
+      },
+    );
+    expect(codes(asset)).not.toContain("split-required");
+  });
+
+  test("restored locale message data modules are auto-relaxed", () => {
+    const entries = Array.from(
+      { length: 12 },
+      (_, i) => `  "message.${i}": "Message ${i}",`,
+    ).join("\n");
+    const localeData =
+      `// Restored from ref/webview/assets/am-CjqvPkLf.js\n` +
+      `// Am locale messages restored from the current Codex webview bundle.\n` +
+      `const amGreeting = "Fallback";\n` +
+      `export const amDefault = {\n${entries}\n};\n` +
+      `export { amGreeting as greeting };\n`;
+
+    const ordinary = analyzeSource(localeData, "widgets/am.ts", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 5,
+    });
+    expect(codes(ordinary)).toContain("split-required");
+
+    const locale = analyzeSource(localeData, "restored/locales/am.ts", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 5,
+    });
+    expect(codes(locale)).not.toContain("split-required");
+  });
+
+  test("restored home use-case data module is auto-relaxed", () => {
+    const entries = Array.from(
+      { length: 8 },
+      (_, i) => `  { id: "use-case-${i}", isAutomation: ${i % 2 === 0} },`,
+    ).join("\n");
+    const homeUseCasesData =
+      `// Restored from ref/webview/assets/home-use-cases-data-B74wpFte.js\n` +
+      `// Home use-case data restored from the current Codex webview bundle.\n` +
+      `const HOME_USE_CASES = [\n${entries}\n];\n` +
+      `function getAutomationHomeUseCases() {\n` +
+      `  return HOME_USE_CASES.filter((item) => item.isAutomation === true);\n` +
+      `}\n` +
+      `function initHomeUseCasesDataChunk(): void {}\n\n` +
+      `export { getAutomationHomeUseCases, HOME_USE_CASES, initHomeUseCasesDataChunk };\n`;
+
+    const ordinary = analyzeSource(homeUseCasesData, "widgets/home-data.ts", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 5,
+    });
+    expect(codes(ordinary)).toContain("split-required");
+
+    const dataModule = analyzeSource(
+      homeUseCasesData,
+      "restored/home/home-use-cases-data.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        maxFlatLines: 5,
+      },
+    );
+    expect(codes(dataModule)).not.toContain("split-required");
+  });
+
+  test("restored generated schema runtimes are auto-relaxed as vendored output", () => {
+    const schemaRuntime =
+      `// Restored from ref/webview/assets/document-Cpom6Lb8.js\n` +
+      `// Vendored document protobuf runtime restored from the Codex webview bundle.\n` +
+      `function documentHelper1(documentParam1) {\n` +
+      `  const documentValue1 = documentParam1.value;\n` +
+      `  return documentValue1;\n` +
+      `}\n` +
+      `export const documentA = documentHelper1;\n` +
+      `export const documentB = documentHelper1;\n` +
+      `export const documentC = documentHelper1;\n`;
+
+    const ordinary = analyzeSource(
+      schemaRuntime,
+      "widgets/document-schema.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        maxFlatLines: 5,
+      },
+    );
+    expect(codes(ordinary)).toContain("mechanical-names");
+    expect(codes(ordinary)).toContain("split-required");
+
+    const vendoredSchema = analyzeSource(
+      schemaRuntime,
+      "restored/vendor/document-schema-current.ts",
+      {
+        ...DEFAULT_OPTIONS,
+        maxFlatLines: 5,
+      },
+    );
+    expect(codes(vendoredSchema)).not.toContain("mechanical-names");
+    expect(codes(vendoredSchema)).not.toContain("split-required");
+  });
+});
+
+describe("kebab filename gate", () => {
+  const codes = (file: string): string[] =>
+    analyzeSource("export const x = 1;\n", file, {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    }).issues.map((issue) => issue.code);
+
+  test("flags PascalCase and camelCase public file names", () => {
+    for (const file of [
+      "Button.tsx",
+      "DownloadIcon.tsx",
+      "settingsQueries.ts",
+    ]) {
+      expect(codes(file)).toContain("non-kebab-filename");
+    }
+  });
+
+  test("accepts kebab, index, types, *.d.ts, *.facade.ts", () => {
+    for (const file of [
+      "button.tsx",
+      "download-icon.tsx",
+      "app-shell.tsx",
+      "index.ts",
+      "types.ts",
+      "globals.d.ts",
+      "zod.facade.ts",
+    ]) {
+      expect(codes(file)).not.toContain("non-kebab-filename");
+    }
+  });
+
+  test("suppressed for vendored modules", () => {
+    const issues = analyzeSource("export const x = 1;\n", "Button.tsx", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      vendored: true,
+    }).issues.map((issue) => issue.code);
+    expect(issues).not.toContain("non-kebab-filename");
+  });
+});
+
+describe("checkFormatting", () => {
+  test("checks only public source files for directory inputs", () => {
+    const root = makeTmpRoot();
+    const publicFile = path.join(root, "ui", "button.tsx");
+    const hiddenFile = path.join(
+      root,
+      ".deobfuscate-javascript",
+      "_full",
+      "files",
+      "button",
+      "candidate.tsx",
+    );
+    fs.mkdirSync(path.dirname(publicFile), { recursive: true });
+    fs.mkdirSync(path.dirname(hiddenFile), { recursive: true });
+    fs.writeFileSync(publicFile, "export const Button = () => null;\n");
+    fs.writeFileSync(hiddenFile, "export const Hidden = () => null;\n");
+
+    let checkedPaths: string[] = [];
+    const reports = checkFormatting(root, (paths) => {
+      checkedPaths = paths;
+      return {
+        ok: true,
+        stdout: "All matched files use Prettier code style!\n",
+        stderr: "",
+      };
+    });
+
+    expect(reports).toEqual([]);
+    expect(checkedPaths.map((p) => path.relative(root, p))).toEqual([
+      path.join("ui", "button.tsx"),
+    ]);
+  });
+
+  test("flags each file prettier --check reports as unformatted", () => {
+    const root = makeTmpRoot();
+    const buttonFile = path.join(root, "ui", "button.tsx");
+    const badgeFile = path.join(root, "ui", "badge.tsx");
+    fs.mkdirSync(path.dirname(buttonFile), { recursive: true });
+    fs.writeFileSync(buttonFile, "export const Button = () => null;\n");
+    fs.writeFileSync(badgeFile, "export const Badge = () => null;\n");
+
+    const fakeRun = () => ({
+      ok: false,
+      stdout: `Checking formatting...\n[warn] ${buttonFile}\n[warn] ${badgeFile}\n[warn] Code style issues found in 2 files. Run Prettier with --write to fix.\n`,
+      stderr: "",
+    });
+    const reports = checkFormatting(root, fakeRun);
+    expect(reports.map((r) => r.file)).toEqual([buttonFile, badgeFile]);
+    expect(reports.every((r) => r.issues[0]!.code === "unformatted")).toBe(
+      true,
+    );
+  });
+
+  test("ignores unformatted files under the hidden restoration workspace", () => {
+    const root = makeTmpRoot();
+    const publicFile = path.join(root, "preload", "electron-bridge-preload.ts");
+    const hiddenFile = path.join(
+      root,
+      ".deobfuscate-javascript",
+      "_full",
+      "files",
+      "preload",
+      "candidate.ts",
+    );
+    fs.mkdirSync(path.dirname(publicFile), { recursive: true });
+    fs.mkdirSync(path.dirname(hiddenFile), { recursive: true });
+    fs.writeFileSync(publicFile, "export const Preload = true;\n");
+    fs.writeFileSync(hiddenFile, "export const Hidden = true;\n");
+
+    const fakeRun = () => ({
+      ok: false,
+      stdout: `Checking formatting...\n[warn] ${hiddenFile}\n[warn] ${publicFile}\n[warn] Code style issues found in 2 files.\n`,
+      stderr: "",
+    });
+    const reports = checkFormatting(root, fakeRun);
+    expect(reports.map((r) => r.file)).toEqual([publicFile]);
+  });
+
+  test("returns no issues when everything is prettier-clean", () => {
+    const reports = checkFormatting("restored", () => ({
+      ok: true,
+      stdout: "All matched files use Prettier code style!\n",
+      stderr: "",
+    }));
+    expect(reports).toEqual([]);
+  });
+
+  test("does not soft-skip when every formatting batch is prettier-clean", () => {
+    const root = makeTmpRoot();
+    for (let i = 0; i < 201; i++) {
+      const targetFile = path.join(root, `module-${i}.ts`);
+      fs.writeFileSync(targetFile, "export const value = true;\n");
+    }
+
+    const batchSizes: number[] = [];
+    const errors: unknown[][] = [];
+    const originalError = console.error;
+    console.error = (...args: unknown[]) => {
+      errors.push(args);
+    };
+    try {
+      const reports = checkFormatting(root, (paths) => {
+        batchSizes.push(paths.length);
+        return {
+          ok: true,
+          stdout: "All matched files use Prettier code style!\n",
+          stderr: "",
+        };
+      });
+
+      expect(reports).toEqual([]);
+      expect(batchSizes).toEqual([200, 1]);
+      expect(errors).toEqual([]);
+    } finally {
+      console.error = originalError;
+    }
+  });
+
+  test("soft-skips (no failures) when prettier is unavailable", () => {
+    const errors: unknown[][] = [];
+    const originalError = console.error;
+    console.error = (...args: unknown[]) => {
+      errors.push(args);
+    };
+    try {
+      const reports = checkFormatting("restored", () => ({
+        ok: false,
+        stdout: "",
+        stderr: "bunx: prettier: command not found\n",
+      }));
+      expect(reports).toEqual([]);
+      expect(String(errors[0]?.[0])).toContain(
+        "prettier --check could not run",
+      );
+    } finally {
+      console.error = originalError;
+    }
+  });
+});
+
+describe("mechanical-name family detection", () => {
+  const codes = (r: { issues: Array<{ code: string }> }) =>
+    r.issues.map((i) => i.code);
+
+  test("fails on a dense <prefix>Helper<N> / <prefix>Input<N> family", () => {
+    const src =
+      `export function initAppShellState() {\n` +
+      Array.from(
+        { length: 6 },
+        (_, i) => `  const appShellStateHelper${i} = ${i};`,
+      ).join("\n") +
+      `\n  const appShellStateInput7 = 7;\n` +
+      `  return appShellStateHelper0 + appShellStateInput7;\n}\n`;
+    const report = analyzeSource(src, "app-shell-state.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(codes(report)).toContain("mechanical-name-family");
+    expect(report.mechanicalNameFamily).toContain("appShellStateHelper0");
+    expect(report.mechanicalNameFamily).toContain("appShellStateInput7");
+  });
+
+  test("stays silent below the density threshold", () => {
+    const src =
+      `export function initAppShellState() {\n` +
+      Array.from(
+        { length: 4 },
+        (_, i) => `  const appShellStateHelper${i} = ${i};`,
+      ).join("\n") +
+      `\n  return appShellStateHelper0;\n}\n`;
+    const report = analyzeSource(src, "app-shell-state.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(codes(report)).not.toContain("mechanical-name-family");
+    expect(report.mechanicalNameFamily).toEqual([]);
+  });
+
+  test("does not flag bundler use<Hook><N> aliases or legit step names", () => {
+    const src =
+      `export function useThing() {\n` +
+      Array.from({ length: 6 }, (_, i) => `  const useState${i} = ${i};`).join(
+        "\n",
+      ) +
+      `\n  const formStep2 = 2;\n` +
+      `  return useState0 + formStep2;\n}\n`;
+    const report = analyzeSource(src, "use-thing.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(codes(report)).not.toContain("mechanical-name-family");
+    expect(report.mechanicalNameFamily).toEqual([]);
+  });
+
+  test("fails on a dense <prefix>Routine<N> family", () => {
+    const src =
+      `export function initStore() {\n` +
+      Array.from(
+        { length: 6 },
+        (_, i) => `  const storeRoutine${i} = ${i};`,
+      ).join("\n") +
+      `\n  return storeRoutine0;\n}\n`;
+    const report = analyzeSource(src, "store.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(codes(report)).toContain("mechanical-name-family");
+    expect(report.mechanicalNameFamily).toContain("storeRoutine0");
+  });
+
+  test("bare lowercase input<N>/helper<N>/routine<N> hit the mechanical-names check", () => {
+    const src =
+      `export function score() {\n` +
+      `  const input27 = 1;\n  const helper3 = 2;\n  const routine4 = 3;\n` +
+      `  return input27 + helper3 + routine4;\n}\n`;
+    const report = analyzeSource(src, "score.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(codes(report)).toContain("mechanical-names");
+  });
+
+  test("--allow-mechanical-names suppresses the family finding", () => {
+    const src =
+      `export function initAppShellState() {\n` +
+      Array.from(
+        { length: 6 },
+        (_, i) => `  const appShellStateHelper${i} = ${i};`,
+      ).join("\n") +
+      `\n  return appShellStateHelper0;\n}\n`;
+    const report = analyzeSource(src, "app-shell-state.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+      allowMechanicalNames: true,
+    });
+    expect(codes(report)).not.toContain("mechanical-name-family");
+  });
+});
+
+describe("header-based vendored exemption is path-gated", () => {
+  const codes = (r: { issues: Array<{ code: string }> }) =>
+    r.issues.map((i) => i.code);
+  const selfCertifiedAppPage = () =>
+    `// Restored from ref/.vite/build/appgen-analytics-XYZ.js\n` +
+    `// Flat boundary facade — vendored alternate build of the same module.\n` +
+    Array.from(
+      { length: 30 },
+      (_, i) => `export const publicThing${i}: any = undefined as any;`,
+    ).join("\n") +
+    `\nfunction q(e) { return e + 1; }\nexport const z1 = q(1);\n`;
+
+  test("honors the exemption for single-file callers (no target root)", () => {
+    const report = analyzeSource(selfCertifiedAppPage(), "analytics-page.tsx", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 3,
+    });
+    expect(report.vendored).toBe(true);
+    expect(report.issues).toEqual([]);
+  });
+
+  test("honors the exemption when eligible by path", () => {
+    const report = analyzeSource(selfCertifiedAppPage(), "analytics-page.tsx", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 3,
+      vendoredHeaderExemptAllowed: true,
+    });
+    expect(report.vendored).toBe(true);
+    expect(report.issues).toEqual([]);
+  });
+
+  test("ignores the exemption for files outside boundary dirs", () => {
+    const report = analyzeSource(selfCertifiedAppPage(), "analytics-page.tsx", {
+      ...DEFAULT_OPTIONS,
+      maxFlatLines: 3,
+      vendoredHeaderExemptAllowed: false,
+    });
+    expect(report.vendored).toBe(false);
+    expect(codes(report)).toContain("public-cryptic-names");
+    expect(codes(report)).toContain("split-required");
+  });
+
+  test("CLI: app-feature page self-certifying as vendored fails; same file under vendor/ passes", () => {
+    const targetDir = makeTmpRoot();
+    const header =
+      `// Restored from ref/.vite/build/appgen-analytics-XYZ.js\n` +
+      `// Flat boundary facade — vendored alternate build of the same module.\n`;
+    const body =
+      `export function initAppShellState() {\n` +
+      Array.from(
+        { length: 6 },
+        (_, i) => `  const appShellStateHelper${i} = ${i};`,
+      ).join("\n") +
+      `\n  return appShellStateHelper0;\n}\n`;
+
+    fs.mkdirSync(path.join(targetDir, "appgen"), { recursive: true });
+    fs.writeFileSync(
+      path.join(targetDir, "appgen", "analytics-page.tsx"),
+      header + body,
+    );
+    fs.mkdirSync(path.join(targetDir, "vendor"), { recursive: true });
+    fs.writeFileSync(
+      path.join(targetDir, "vendor", "analytics-page.tsx"),
+      header + body,
+    );
+
+    const run = spawnSync(
+      "bun",
+      [
+        path.join(import.meta.dir, "quality-gate.ts"),
+        targetDir,
+        "--json",
+        "--allow-flat",
+        "--no-cache",
+      ],
+      { encoding: "utf8" },
+    );
+    expect(run.status).toBe(1);
+    const reports = JSON.parse(run.stdout) as Array<{
+      file: string;
+      issues: Array<{ code: string }>;
+    }>;
+    const appReport = reports.find((r) => r.file.includes("appgen/"));
+    const vendorReport = reports.find((r) => r.file.includes("vendor/"));
+    expect(appReport?.issues.map((i) => i.code)).toContain(
+      "mechanical-name-family",
+    );
+    expect(vendorReport?.issues ?? []).toEqual([]);
+    expect(run.stderr).toContain("vendored-exempt coverage:");
+  });
+
+  test("CLI: direct vendor-subtree runs still honor vendored flat-boundary headers", () => {
+    const targetDir = makeTmpRoot();
+    const vendorDir = path.join(targetDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(vendorDir, "diagram-runtime.ts"),
+      `// Restored from ref/webview/assets/diagram-runtime-XYZ.js\n` +
+        `// Flat boundary. Vendored diagram/doc vendor chunk.\n` +
+        `export function initDiagramRuntime() {\n` +
+        Array.from(
+          { length: 6 },
+          (_, i) => `  const diagramRuntimeHelper${i} = ${i};`,
+        ).join("\n") +
+        `\n  return diagramRuntimeHelper0;\n}\n`,
+    );
+
+    const run = spawnSync(
+      "bun",
+      [
+        path.join(import.meta.dir, "quality-gate.ts"),
+        vendorDir,
+        "--json",
+        "--allow-flat",
+        "--no-cache",
+      ],
+      { encoding: "utf8" },
+    );
+    expect(run.status).toBe(0);
+    const reports = JSON.parse(run.stdout) as Array<{
+      issues: Array<{ code: string }>;
+    }>;
+    expect(reports[0]?.issues ?? []).toEqual([]);
+    expect(run.stderr).toContain("vendored-exempt coverage: 1 files");
+  });
+
+  test("CLI: direct vendor-subtree run rejects parked current app backing bundles", () => {
+    const targetDir = makeTmpRoot();
+    const vendorDir = path.join(targetDir, "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(vendorDir, "automations-page-current-bundle.tsx"),
+      `// Restored from ref/webview/assets/automations-page-CXHLOmAw.js\n` +
+        `// Flat boundary. Vendored current automations page backing bundle with restored dependency imports.\n` +
+        `export function AutomationsPage() {\n` +
+        Array.from(
+          { length: 6 },
+          (_, i) => `  const automationsPageHelper${i} = ${i};`,
+        ).join("\n") +
+        `\n  return automationsPageHelper0;\n}\n`,
+    );
+
+    const run = spawnSync(
+      "bun",
+      [
+        path.join(import.meta.dir, "quality-gate.ts"),
+        vendorDir,
+        "--json",
+        "--allow-flat",
+        "--no-cache",
+      ],
+      { encoding: "utf8" },
+    );
+    expect(run.status).toBe(1);
+    const reports = JSON.parse(run.stdout) as Array<{
+      issues: Array<{ code: string }>;
+    }>;
+    expect(reports[0]?.issues.map((issue) => issue.code)).toContain(
+      "flat-boundary-app-bundle",
+    );
+  });
+
+  test("CLI checks every positional input instead of only the first", () => {
+    const targetDir = makeTmpRoot();
+    const goodFile = path.join(targetDir, "good.ts");
+    const badFile = path.join(targetDir, "bad.ts");
+    fs.writeFileSync(
+      goodFile,
+      `// Restored from ref/webview/assets/good-ABC.js\n` +
+        `export const goodValue = 1;\n`,
+    );
+    fs.writeFileSync(badFile, `export const badValue = 1;\n`);
+
+    const run = spawnSync(
+      "bun",
+      [
+        path.join(import.meta.dir, "quality-gate.ts"),
+        goodFile,
+        badFile,
+        "--json",
+        "--allow-flat",
+      ],
+      { encoding: "utf8" },
+    );
+    expect(run.status).toBe(1);
+    const reports = JSON.parse(run.stdout) as Array<{
+      file: string;
+      issues: Array<{ code: string }>;
+    }>;
+    expect(reports.map((report) => report.file)).toContain(goodFile);
+    expect(reports.map((report) => report.file)).toContain(badFile);
+    expect(
+      reports
+        .find((report) => report.file === badFile)
+        ?.issues.map((issue) => issue.code),
+    ).toContain("missing-provenance-header");
+  });
+});
+
+describe("per-file analysis cache", () => {
+  const gateArgs = (dir: string, extra: string[] = []) => [
+    path.join(import.meta.dir, "quality-gate.ts"),
+    dir,
+    "--json",
+    "--allow-flat",
+    ...extra,
+  ];
+
+  test("directory run writes a cache and a warm run reproduces the verdict", () => {
+    const targetDir = makeTmpRoot();
+    fs.writeFileSync(
+      path.join(targetDir, "widget.tsx"),
+      `// Restored from ref/.vite/build/widget-ABC.js\n` +
+        `export interface WidgetProps { label: string }\n` +
+        `export function Widget({ label }: WidgetProps) { return <button>{label}</button>; }\n`,
+    );
+
+    const cachePath = path.join(
+      targetDir,
+      ".deobfuscate-javascript",
+      "gate-cache.json",
+    );
+    expect(fs.existsSync(cachePath)).toBe(false);
+
+    const cold = spawnSync("bun", gateArgs(targetDir), { encoding: "utf8" });
+    expect(cold.status).toBe(0);
+    expect(fs.existsSync(cachePath)).toBe(true);
+    const cache = JSON.parse(fs.readFileSync(cachePath, "utf8"));
+    expect(typeof cache.signature).toBe("string");
+    expect(Object.keys(cache.entries)).toContain("widget.tsx");
+
+    const warm = spawnSync("bun", gateArgs(targetDir), { encoding: "utf8" });
+    expect(warm.status).toBe(0);
+    expect(JSON.parse(warm.stdout)).toEqual(JSON.parse(cold.stdout));
+  });
+
+  test("--no-cache does not write a cache file", () => {
+    const targetDir = makeTmpRoot();
+    fs.writeFileSync(
+      path.join(targetDir, "widget.tsx"),
+      `// Restored from ref/.vite/build/widget-ABC.js\n` +
+        `export const value = 1;\n`,
+    );
+    const run = spawnSync("bun", gateArgs(targetDir, ["--no-cache"]), {
+      encoding: "utf8",
+    });
+    expect(run.status).toBe(0);
+    expect(
+      fs.existsSync(
+        path.join(targetDir, ".deobfuscate-javascript", "gate-cache.json"),
+      ),
+    ).toBe(false);
+  });
+
+  test("editing a file invalidates its cache entry and re-detects issues", () => {
+    const targetDir = makeTmpRoot();
+    const file = path.join(targetDir, "widget.ts");
+    fs.writeFileSync(
+      file,
+      `// Restored from ref/.vite/build/widget-ABC.js\nexport const value = 1;\n`,
+    );
+    const cold = spawnSync("bun", gateArgs(targetDir), { encoding: "utf8" });
+    expect(cold.status).toBe(0);
+
+    // Rewrite the file with a dense mechanical-name family; bump mtime.
+    const later = new Date(Date.now() + 4000);
+    fs.writeFileSync(
+      file,
+      `// Restored from ref/.vite/build/widget-ABC.js\n` +
+        `export function initAppShellState() {\n` +
+        Array.from(
+          { length: 6 },
+          (_, i) => `  const appShellStateHelper${i} = ${i};`,
+        ).join("\n") +
+        `\n  return appShellStateHelper0;\n}\n`,
+    );
+    fs.utimesSync(file, later, later);
+
+    const warm = spawnSync("bun", gateArgs(targetDir), { encoding: "utf8" });
+    expect(warm.status).toBe(1);
+    const reports = JSON.parse(warm.stdout) as Array<{
+      issues: Array<{ code: string }>;
+    }>;
+    expect(reports.flatMap((r) => r.issues.map((i) => i.code))).toContain(
+      "mechanical-name-family",
+    );
+  });
+});

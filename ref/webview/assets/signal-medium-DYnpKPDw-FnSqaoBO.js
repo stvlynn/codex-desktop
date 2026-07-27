@@ -1,0 +1,3 @@
+import { n as e, t } from "./signal-medium-DYnpKPDw-B3G93CgT.js";
+t();
+export { e as default };

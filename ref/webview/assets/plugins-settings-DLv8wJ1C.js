@@ -1,0 +1,3 @@
+import { n as e, t } from "./plugins-settings-DERISQVS.js";
+e();
+export { t as PluginsSettings };

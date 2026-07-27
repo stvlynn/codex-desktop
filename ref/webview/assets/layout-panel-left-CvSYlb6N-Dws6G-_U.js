@@ -1,0 +1,3 @@
+import { n as e, t } from "./layout-panel-left-CvSYlb6N-h92-K4et.js";
+e();
+export { t as default };

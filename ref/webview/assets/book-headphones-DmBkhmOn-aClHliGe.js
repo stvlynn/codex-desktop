@@ -1,0 +1,3 @@
+import { n as e, t } from "./book-headphones-DmBkhmOn-CH_j7L2-.js";
+e();
+export { t as default };

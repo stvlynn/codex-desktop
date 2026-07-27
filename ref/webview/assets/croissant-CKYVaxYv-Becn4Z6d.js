@@ -1,0 +1,3 @@
+import { n as e, t } from "./croissant-CKYVaxYv-C1u1qVwo.js";
+e();
+export { t as default };

@@ -1,0 +1,3 @@
+import { n as e, t } from "./ear-off-biV1032g-BvyRMecI.js";
+t();
+export { e as default };

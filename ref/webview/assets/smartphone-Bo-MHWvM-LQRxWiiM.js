@@ -1,0 +1,3 @@
+import { n as e, t } from "./smartphone-Bo-MHWvM-BNNTUh5P.js";
+t();
+export { e as default };

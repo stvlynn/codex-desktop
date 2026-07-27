@@ -1,0 +1,3 @@
+import { n as e, t } from "./panel-right-2tvWPBSr-C0Zj3zXi.js";
+e();
+export { t as default };

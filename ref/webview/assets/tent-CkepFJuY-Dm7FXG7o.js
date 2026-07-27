@@ -1,0 +1,3 @@
+import { n as e, t } from "./tent-CkepFJuY-CMpCyyhR.js";
+e();
+export { t as default };

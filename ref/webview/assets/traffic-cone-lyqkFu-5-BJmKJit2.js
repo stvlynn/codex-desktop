@@ -1,0 +1,3 @@
+import { n as e, t } from "./traffic-cone-lyqkFu-5-DE51CAYe.js";
+e();
+export { t as default };

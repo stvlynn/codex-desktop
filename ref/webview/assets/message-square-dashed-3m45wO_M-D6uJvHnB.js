@@ -1,0 +1,3 @@
+import { n as e, t } from "./message-square-dashed-3m45wO_M-Bg299-On.js";
+t();
+export { e as default };

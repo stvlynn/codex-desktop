@@ -1,0 +1,19 @@
+// Restored from ref/webview/assets/app-initial-C-fROkKo.js
+// Bundle `dvs` / export `Fb` — protobuf analytics enum.
+
+export const CodexPluginDirectoryEntrypoint = {
+  CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_UNSPECIFIED:
+    "CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_UNSPECIFIED",
+  CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_DIRECT:
+    "CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_DIRECT",
+  CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_SETTINGS:
+    "CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_SETTINGS",
+  CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_SIDEBAR:
+    "CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_SIDEBAR",
+  CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_OTHER:
+    "CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_OTHER",
+  UNRECOGNIZED: "UNRECOGNIZED",
+} as const;
+
+export type CodexPluginDirectoryEntrypoint =
+  (typeof CodexPluginDirectoryEntrypoint)[keyof typeof CodexPluginDirectoryEntrypoint];

@@ -1,0 +1,3 @@
+import { n as e, t } from "./file-clock-DzMrlWOe-7PW2rdJs.js";
+e();
+export { t as default };

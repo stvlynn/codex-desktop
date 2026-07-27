@@ -1,0 +1,3 @@
+import { n as e, t } from "./antenna-Cdswm8-o-CNtZygB4.js";
+e();
+export { t as default };

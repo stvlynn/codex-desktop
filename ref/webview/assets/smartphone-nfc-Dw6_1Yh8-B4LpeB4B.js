@@ -1,0 +1,3 @@
+import { n as e, t } from "./smartphone-nfc-Dw6_1Yh8-Dfi-DIMs.js";
+e();
+export { t as default };

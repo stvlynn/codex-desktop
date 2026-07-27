@@ -1,0 +1,3 @@
+import { n as e, t } from "./table-cells-merge-BHWOV9Fo-BuLKPeAH.js";
+e();
+export { t as default };

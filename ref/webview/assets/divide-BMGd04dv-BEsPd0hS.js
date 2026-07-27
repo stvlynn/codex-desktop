@@ -1,0 +1,3 @@
+import { n as e, t } from "./divide-BMGd04dv-U7pCOeO6.js";
+e();
+export { t as default };

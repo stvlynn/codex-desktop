@@ -1,0 +1,3 @@
+import { n as e, t } from "./book-dashed-DTUqcLEj-DYeaxsvN.js";
+e();
+export { t as default };

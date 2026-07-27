@@ -1,0 +1,3 @@
+import { n as e, t } from "./loader-pinwheel-Caa8Dpsa-DjiorCnh.js";
+e();
+export { t as default };

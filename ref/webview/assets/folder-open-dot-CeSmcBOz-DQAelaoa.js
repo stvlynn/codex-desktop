@@ -1,0 +1,3 @@
+import { n as e, t } from "./folder-open-dot-CeSmcBOz-BTCRwdak.js";
+e();
+export { t as default };

@@ -1,0 +1,3 @@
+import { n as e, t } from "./tag-CVMJ2Gmo-BgXKBBTi.js";
+e();
+export { t as default };

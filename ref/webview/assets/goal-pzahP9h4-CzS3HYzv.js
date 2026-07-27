@@ -1,0 +1,3 @@
+import { n as e, t } from "./goal-pzahP9h4-FIFYUoLO.js";
+t();
+export { e as default };

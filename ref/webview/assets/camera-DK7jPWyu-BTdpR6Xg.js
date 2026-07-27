@@ -1,0 +1,3 @@
+import { n as e, t } from "./camera-DK7jPWyu-BNLFwK6V.js";
+e();
+export { t as default };

@@ -1,0 +1,3 @@
+import { n as e, t } from "./milk-DVFyAm9L-CIqmKHF0.js";
+t();
+export { e as default };

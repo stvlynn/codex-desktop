@@ -1,0 +1,3 @@
+import { n as e, t } from "./trash-D1oBWshS-DIBlERKB.js";
+e();
+export { t as default };

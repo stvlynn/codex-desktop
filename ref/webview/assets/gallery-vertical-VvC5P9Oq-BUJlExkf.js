@@ -1,0 +1,3 @@
+import { n as e, t } from "./gallery-vertical-VvC5P9Oq-Tt-xzKpI.js";
+t();
+export { e as default };

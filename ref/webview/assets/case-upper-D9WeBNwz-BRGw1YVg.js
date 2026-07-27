@@ -1,0 +1,3 @@
+import { n as e, t } from "./case-upper-D9WeBNwz-DiYxcVce.js";
+t();
+export { e as default };

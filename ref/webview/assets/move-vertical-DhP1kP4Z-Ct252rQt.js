@@ -1,0 +1,3 @@
+import { n as e, t } from "./move-vertical-DhP1kP4Z-BhufpitX.js";
+e();
+export { t as default };

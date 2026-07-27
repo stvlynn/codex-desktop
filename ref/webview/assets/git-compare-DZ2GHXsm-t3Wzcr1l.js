@@ -1,0 +1,3 @@
+import { n as e, t } from "./git-compare-DZ2GHXsm-Ckve-TuN.js";
+t();
+export { e as default };

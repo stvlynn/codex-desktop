@@ -1,0 +1,3 @@
+import { n as e, t } from "./wand-cN34kVkv-Wo3S_Dtl.js";
+t();
+export { e as default };

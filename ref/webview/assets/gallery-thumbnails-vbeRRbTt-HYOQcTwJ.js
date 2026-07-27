@@ -1,0 +1,3 @@
+import { n as e, t } from "./gallery-thumbnails-vbeRRbTt-WNuUA9sQ.js";
+e();
+export { t as default };

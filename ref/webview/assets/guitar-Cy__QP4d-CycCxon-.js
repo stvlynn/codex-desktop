@@ -1,0 +1,3 @@
+import { n as e, t } from "./guitar-Cy__QP4d-Wt_Te2C7.js";
+e();
+export { t as default };

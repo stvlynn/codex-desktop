@@ -1,0 +1,3 @@
+import { n as e, t } from "./move-up-right-BMHrdIEs-Bt0_hQtk.js";
+t();
+export { e as default };

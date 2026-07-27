@@ -1,0 +1,3 @@
+import { n as e, t } from "./brain-COpYhaFZ-DriUHnxx.js";
+t();
+export { e as default };

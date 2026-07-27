@@ -1,0 +1,17 @@
+// Restored from ref/webview/assets/app-initial-C-fROkKo.js
+// Bundle `Gvs` / export `Ob` — protobuf analytics enum.
+
+export const CodexGoogleWorkspaceResourceKind = {
+  CODEX_GOOGLE_WORKSPACE_RESOURCE_KIND_UNSPECIFIED:
+    "CODEX_GOOGLE_WORKSPACE_RESOURCE_KIND_UNSPECIFIED",
+  CODEX_GOOGLE_WORKSPACE_RESOURCE_KIND_DOCUMENT:
+    "CODEX_GOOGLE_WORKSPACE_RESOURCE_KIND_DOCUMENT",
+  CODEX_GOOGLE_WORKSPACE_RESOURCE_KIND_SPREADSHEET:
+    "CODEX_GOOGLE_WORKSPACE_RESOURCE_KIND_SPREADSHEET",
+  CODEX_GOOGLE_WORKSPACE_RESOURCE_KIND_PRESENTATION:
+    "CODEX_GOOGLE_WORKSPACE_RESOURCE_KIND_PRESENTATION",
+  UNRECOGNIZED: "UNRECOGNIZED",
+} as const;
+
+export type CodexGoogleWorkspaceResourceKind =
+  (typeof CodexGoogleWorkspaceResourceKind)[keyof typeof CodexGoogleWorkspaceResourceKind];

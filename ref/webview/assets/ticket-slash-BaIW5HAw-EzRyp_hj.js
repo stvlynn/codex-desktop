@@ -1,0 +1,3 @@
+import { n as e, t } from "./ticket-slash-BaIW5HAw-Dm6pCIwy.js";
+t();
+export { e as default };

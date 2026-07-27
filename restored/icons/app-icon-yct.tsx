@@ -1,0 +1,27 @@
+// Restored from ref/webview/assets/app-initial-C-fROkKo.js
+// SVG icon (bundle `Qh` / export `yct`).
+
+import type { SVGProps, ReactElement } from "react";
+export type AppIconyctProps = SVGProps<SVGSVGElement>;
+export function AppIconyct({ ...props }: AppIconyctProps): ReactElement {
+  const e = props;
+  return (
+    <svg
+      xmlns={`http://www.w3.org/2000/svg`}
+      width={20}
+      height={20}
+      fill={`currentColor`}
+      viewBox={`0 0 20 20`}
+      {...e}
+    >
+      <path
+        d={`M9.995 12.315c.489 0 .875.37.875.842 0 .473-.386.843-.875.843-.488 0-.875-.37-.875-.843 0-.472.387-.842.875-.842ZM10.001 6c.478 0 .778.295.778.79 0 .042 0 .107-.006.16l-.08 3.716c-.016.456-.252.725-.698.725-.445 0-.681-.269-.692-.725L9.217 6.95c0-.053-.006-.118-.006-.16 0-.495.307-.79.79-.79Z`}
+      />
+      <path
+        fillRule={`evenodd`}
+        d={`M10 2.085a7.915 7.915 0 1 1 0 15.83 7.915 7.915 0 0 1 0-15.83Zm0 1.33a6.585 6.585 0 1 0 0 13.17 6.585 6.585 0 0 0 0-13.17Z`}
+        clipRule={`evenodd`}
+      />
+    </svg>
+  );
+}

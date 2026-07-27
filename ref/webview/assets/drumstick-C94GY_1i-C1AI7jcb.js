@@ -1,0 +1,3 @@
+import { n as e, t } from "./drumstick-C94GY_1i-DXUwNDkH.js";
+e();
+export { t as default };

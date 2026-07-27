@@ -1,0 +1,3 @@
+import { n as e, t } from "./microscope-BXSlz9ru-abYBLX8u.js";
+e();
+export { t as default };

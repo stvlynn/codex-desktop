@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChatGPT App Ref Refresh"
+  short_description: "Refresh ChatGPT app asar into ./ref"
+  default_prompt: "Use $codex-app-ref-refresh to refresh ./ref from the installed ChatGPT.app asar and format extracted JS/CSS."

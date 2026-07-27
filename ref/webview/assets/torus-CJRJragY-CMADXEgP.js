@@ -1,0 +1,3 @@
+import { n as e, t } from "./torus-CJRJragY-CtZ03E8q.js";
+e();
+export { t as default };

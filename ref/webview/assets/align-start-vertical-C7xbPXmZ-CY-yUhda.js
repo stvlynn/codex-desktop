@@ -1,0 +1,3 @@
+import { n as e, t } from "./align-start-vertical-C7xbPXmZ-BhVZu8hh.js";
+t();
+export { e as default };

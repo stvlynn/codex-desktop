@@ -1,0 +1,3 @@
+import { n as e, t } from "./clock-6-Dw1GPQ6R-D4Kb8WbI.js";
+t();
+export { e as default };

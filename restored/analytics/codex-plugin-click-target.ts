@@ -1,0 +1,18 @@
+// Restored from ref/webview/assets/app-initial-C-fROkKo.js
+// Bundle `LZt` / export `Bet` — protobuf analytics enum.
+
+export const CodexPluginClickTarget = {
+  CODEX_PLUGIN_CLICK_TARGET_UNSPECIFIED:
+    "CODEX_PLUGIN_CLICK_TARGET_UNSPECIFIED",
+  CODEX_PLUGIN_CLICK_TARGET_PLUGIN_ROW: "CODEX_PLUGIN_CLICK_TARGET_PLUGIN_ROW",
+  CODEX_PLUGIN_CLICK_TARGET_SUBMIT_SEARCH:
+    "CODEX_PLUGIN_CLICK_TARGET_SUBMIT_SEARCH",
+  CODEX_PLUGIN_CLICK_TARGET_STARTER_PROMPT:
+    "CODEX_PLUGIN_CLICK_TARGET_STARTER_PROMPT",
+  CODEX_PLUGIN_CLICK_TARGET_TRY_IN_TASK:
+    "CODEX_PLUGIN_CLICK_TARGET_TRY_IN_TASK",
+  UNRECOGNIZED: "UNRECOGNIZED",
+} as const;
+
+export type CodexPluginClickTarget =
+  (typeof CodexPluginClickTarget)[keyof typeof CodexPluginClickTarget];

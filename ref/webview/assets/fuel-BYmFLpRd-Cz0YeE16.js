@@ -1,0 +1,3 @@
+import { n as e, t } from "./fuel-BYmFLpRd-Cnr420Xl.js";
+t();
+export { e as default };

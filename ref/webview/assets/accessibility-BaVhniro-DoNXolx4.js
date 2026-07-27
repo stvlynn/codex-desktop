@@ -1,0 +1,3 @@
+import { n as e, t } from "./accessibility-BaVhniro-DrG6YoQj.js";
+t();
+export { e as default };

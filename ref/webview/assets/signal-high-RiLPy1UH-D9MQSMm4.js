@@ -1,0 +1,3 @@
+import { n as e, t } from "./signal-high-RiLPy1UH-MYHSlLzc.js";
+e();
+export { t as default };
