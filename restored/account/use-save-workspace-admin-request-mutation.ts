@@ -20,9 +20,7 @@ export type UseSaveWorkspaceAdminRequestMutationPeers = {
 let peers: UseSaveWorkspaceAdminRequestMutationPeers | null = null;
 
 /** Wire useSaveWorkspaceAdminRequestMutation peers once companions land. */
-export function setUseSaveWorkspaceAdminRequestMutationPeers(
-  next: UseSaveWorkspaceAdminRequestMutationPeers,
-): void {
+export function setUseSaveWorkspaceAdminRequestMutationPeers(next: UseSaveWorkspaceAdminRequestMutationPeers): void {
   peers = next;
 }
 

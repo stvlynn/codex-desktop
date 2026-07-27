@@ -1,29 +1,46 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export d4 / GE
+// Materialized via extractFn(internal `GE`) / export `d4`.
 
 export type AppInfoQueryAtomPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Ia: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Uf: (...args: unknown[]) => unknown;
+  WE: (...args: unknown[]) => unknown;
+  _p: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  gp: (...args: unknown[]) => unknown;
 };
 
 let peers: AppInfoQueryAtomPeers | null = null;
 
-/** Wire appInfoQueryAtom once companions land. */
+/** Wire appInfoQueryAtom peers once companions land. */
 export function setAppInfoQueryAtomPeers(next: AppInfoQueryAtomPeers): void {
   peers = next;
 }
 
+/** Rolldown ESM init shim — module side effects now run on import. */
+export function ensureAppInfoQueryAtomInit(): void {}
+
 /**
  * Bundle export `d4` / internal `GE`.
- * Stage-3 fill for bundle export d4 / GE
  */
-export function appInfoQueryAtom(...args: unknown[]): unknown {
+export function appInfoQueryAtom() {
   if (peers == null) {
     throw new Error("appInfoQueryAtom peers are not configured");
   }
-  return peers.impl(...args);
-}
 
-// --- qg-full-green: missing-relative-exports stubs (open-runtime wiring) ---
-export const ensureAppInfoQueryAtomInit: any = undefined;
+  return peers.e(() => {
+    (peers.Ho(),
+      peers._p(),
+      peers.ed(),
+      peers.Uf(),
+      (WE = peers.Ia(peers.Q, () => ({
+        queryKey: [`app-info`],
+        queryFn: () => peers.gp.appInfo.get(),
+        staleTime: peers.Hf.INFINITE,
+      }))));
+  });
+}

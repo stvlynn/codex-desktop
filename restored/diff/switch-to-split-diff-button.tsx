@@ -1,25 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `$Qo`) / export `TE`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `$Qo`) / export `TE`.
 
 export type SwitchToSplitDiffButtonPeers = {
-  useIntl: () => {
-    formatMessage: (descriptor: {
-      id: string;
-      defaultMessage: string;
-      description: string;
-    }) => string;
-  };
-  unifiedIcon: unknown;
-  splitIcon: unknown;
-  renderButton: (props: {
-    Icon: unknown;
-    label: string;
-    onClick: () => void;
-  }) => ReactNode;
+  IQo: (...args: unknown[]) => unknown;
+  Ju: (...args: unknown[]) => unknown;
+  e$o: (...args: unknown[]) => unknown;
+  mY: (...args: unknown[]) => unknown;
+  n$o: (...args: unknown[]) => unknown;
+  zQo: (...args: unknown[]) => unknown;
 };
-
 let peers: SwitchToSplitDiffButtonPeers | null = null;
 
 /** Wire SwitchToSplitDiffButton peers once companions land. */
@@ -31,37 +20,30 @@ export function setSwitchToSplitDiffButtonPeers(
 
 /**
  * Bundle export `TE` / internal `$Qo`.
- * Toggle button between unified and split diff modes.
  */
-export type SwitchToSplitDiffButtonProps = {
-  diffMode: "unified" | "right" | "left" | string;
-  onSelectDiffMode: (mode: "right" | "left") => void;
-};
-
-export function SwitchToSplitDiffButton(
-  props: SwitchToSplitDiffButtonProps,
-): ReactElement {
+export function SwitchToSplitDiffButton(props: unknown) {
+  const Eo = peers.e$o;
   if (peers == null) {
     throw new Error("SwitchToSplitDiffButton peers are not configured");
   }
-  const { diffMode, onSelectDiffMode } = props;
-  const intl = peers.useIntl();
-  const label =
-    diffMode === "unified"
-      ? intl.formatMessage({
-          id: "codex.review.switchToSplit",
-          defaultMessage: "Switch to split diff",
-          description: "Button label to switch to split diff view",
-        })
-      : intl.formatMessage({
-          id: "codex.review.switchToUnified",
-          defaultMessage: "Switch to unified diff",
-          description: "Button label to switch to unified diff view",
-        });
-  const Icon = diffMode === "unified" ? peers.splitIcon : peers.unifiedIcon;
-  return peers.renderButton({
-    Icon,
-    label,
-    onClick: () => onSelectDiffMode(diffMode === "unified" ? "right" : "left"),
-  }) as ReactElement;
+  let { diffMode, onSelectDiffMode } = props,
+    i = peers.Ju(),
+    a =
+      diffMode === "unified"
+        ? i.formatMessage({
+            id: "codex.review.switchToSplit",
+            defaultMessage: "Switch to split diff",
+            description: "Button label to switch to split diff view",
+          })
+        : i.formatMessage({
+            id: "codex.review.switchToUnified",
+            defaultMessage: "Switch to unified diff",
+            description: "Button label to switch to unified diff view",
+          });
+  let o = a,
+    s = diffMode === "unified" ? peers.IQo : peers.zQo,
+    c = () => {
+      return onSelectDiffMode(diffMode === "unified" ? "right" : "left");
+    };
+  return <Eo Icon={s} label={o} onClick={c} />;
 }

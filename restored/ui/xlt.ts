@@ -1,25 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export xlt / Iet
+// Materialized via extractFn(internal `Iet`) / export `xlt`.
 
 export type XltPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Fet: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Pet: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  jet: (...args: unknown[]) => unknown;
+  sd: (...args: unknown[]) => unknown;
 };
 
 let peers: XltPeers | null = null;
 
-/** Wire xlt once companions land. */
+/** Wire xlt peers once companions land. */
 export function setXltPeers(next: XltPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `xlt` / internal `Iet`.
- * Stage-3 fill for bundle export xlt / Iet
  */
-export function xlt(...args: unknown[]): unknown {
+export function xlt() {
   if (peers == null) {
     throw new Error("xlt peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    Pet = peers.c(), peers.sd(), peers.jet(), Fet = peers.J();
+  });
 }

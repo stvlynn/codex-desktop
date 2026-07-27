@@ -1,32 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Xh / l1s
+// Materialized via extractFn(internal `l1s`) / export `Xh`.
 
 export type BindDataLocalConversationItemTargetIdsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Da: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  c1s: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gT: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
+  o1s: (...args: unknown[]) => unknown;
+  s1s: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDataLocalConversationItemTargetIdsPeers | null = null;
 
-/** Wire bindDataLocalConversationItemTargetIds once companions land. */
-export function setBindDataLocalConversationItemTargetIdsPeers(
-  next: BindDataLocalConversationItemTargetIdsPeers,
-): void {
+/** Wire bindDataLocalConversationItemTargetIds peers once companions land. */
+export function setBindDataLocalConversationItemTargetIdsPeers(next: BindDataLocalConversationItemTargetIdsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Xh` / internal `l1s`.
- * Stage-3 fill for bundle export Xh / l1s
  */
-export function bindDataLocalConversationItemTargetIds(
-  ...args: unknown[]
-): unknown {
+export function bindDataLocalConversationItemTargetIds() {
   if (peers == null) {
-    throw new Error(
-      "bindDataLocalConversationItemTargetIds peers are not configured",
-    );
+    throw new Error("bindDataLocalConversationItemTargetIds peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ho(), peers.gT(), o1s = `data-local-conversation-item-target-ids`, s1s = 1e3, c1s = peers.Da(peers.hT, e => null);
+  });
 }

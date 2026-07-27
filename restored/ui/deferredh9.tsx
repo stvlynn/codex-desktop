@@ -1,41 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export h9 / Unn
+// Materialized via extractFn(internal `Unn`) / export `h9`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type Deferredh9Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredh9Peers = {
+  Hnn: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  Ox: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Vnn: (...args: unknown[]) => unknown;
 };
 
-type Deferredh9Impl = (props: Deferredh9Props) => ReactNode;
-let impl: Deferredh9Impl | null = null;
+let peers: BindDeferredh9Peers | null = null;
 
-/** Wire the full Deferredh9 once deeper restore lands. */
-export function bindDeferredh9(next: Deferredh9Impl): void {
-  impl = next;
+/** Wire bindDeferredh9 peers once companions land. */
+export function setBindDeferredh9Peers(next: BindDeferredh9Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `h9` / internal `Unn`.
- * Stage-3 fill for bundle export h9 / Unn; heavy UI via bind.
  */
-export function Deferredh9(props: Deferredh9Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fq-scaffold="h9"
-      aria-label="Deferredh9"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export h9 / Unn
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredh9() {
+  if (peers == null) {
+    throw new Error("bindDeferredh9 peers are not configured");
+  }
+
+  return peers.Ma(peers.Q, ({
+    get: e
+  }) => {
+    let t = e(peers.Ox);
+    return t.phase === `inactive` ? peers.Vnn : e(peers.Hnn, t.locator);
+  });
 }

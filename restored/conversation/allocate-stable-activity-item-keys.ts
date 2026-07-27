@@ -61,9 +61,6 @@ export function allocateStableActivityItemKeys(
 }
 
 /** Bundle `IEa` — prefix an activity key with a conversation id. */
-export function activityItemKeyForConversation(
-  key: string,
-  conversationId: string | number,
-): string {
+export function activityItemKeyForConversation(key: string, conversationId: string | number): string {
   return `${String(conversationId)}:${key}`;
 }

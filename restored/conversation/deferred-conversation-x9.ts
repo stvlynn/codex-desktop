@@ -1,15 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export x9 / nnn
+// Materialized via extractFn(internal `nnn`) / export `x9`.
 
 export type DeferredConversationX9Peers = {
-  impl: (...args: unknown[]) => unknown;
+  inn: (...args: unknown[]) => unknown;
+  v_: (...args: unknown[]) => unknown;
 };
-
 let peers: DeferredConversationX9Peers | null = null;
 
-/** Wire deferredConversationX9 once companions land. */
+/** Wire deferredConversationX9 peers once companions land. */
 export function setDeferredConversationX9Peers(
   next: DeferredConversationX9Peers,
 ): void {
@@ -18,11 +16,26 @@ export function setDeferredConversationX9Peers(
 
 /**
  * Bundle export `x9` / internal `nnn`.
- * Stage-3 fill for bundle export x9 / nnn
  */
-export function deferredConversationX9(...args: unknown[]): unknown {
+export function deferredConversationX9(
+  e: unknown,
+  t: unknown,
+  {
+    acceptMissingImageInputs = false,
+    commentAttachments = e.restoreMessage.context.commentAttachments,
+    shouldStripImageDisplayPlaceholderLines = false,
+  }: Record<string, unknown> = {},
+) {
   if (peers == null) {
     throw new Error("deferredConversationX9 peers are not configured");
   }
-  return peers.impl(...args);
+  let a = peers.v_({
+    input: t,
+    commentAttachments,
+    shouldStripImageDisplayPlaceholderLines,
+    sentAtMs: null,
+  });
+  return peers.inn(e.compareKey, a.compareKey, {
+    acceptMissingImageInputs,
+  });
 }

@@ -1,59 +1,46 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `voc`) / export `xp`.
+// Materialized via extractFn(internal `voc`) / export `xp`.
 
-import type { ReactElement, ReactNode } from "react";
-import { FormattedMessage } from "react-intl";
-
-import { cx } from "../ui/cx";
-
-export type ThinkingShimmerMessageProps = {
-  className?: string;
-  message?: ReactNode;
-  [key: string]: unknown;
+export type ThinkingShimmerMessagePeers = {
+  $: (...args: unknown[]) => unknown;
+  G1: (...args: unknown[]) => unknown;
+  W1: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
+  yoc: (...args: unknown[]) => unknown;
 };
+let peers: ThinkingShimmerMessagePeers | null = null;
 
-export type ThinkingShimmerMessageParts = {
-  Shimmer: (props: {
-    className?: string;
-    children?: ReactNode;
-    [key: string]: unknown;
-  }) => ReactElement;
-};
-
-let parts: ThinkingShimmerMessageParts | null = null;
-
-/** Wire shimmer surface once companions land. */
-export function setThinkingShimmerMessageParts(
-  next: ThinkingShimmerMessageParts,
+/** Wire ThinkingShimmerMessage peers once companions land. */
+export function setThinkingShimmerMessagePeers(
+  next: ThinkingShimmerMessagePeers,
 ): void {
-  parts = next;
+  peers = next;
 }
 
 /**
  * Bundle export `xp` / internal `voc`.
- * Placeholder shimmer shown while the assistant is thinking.
  */
-export function ThinkingShimmerMessage(
-  props: ThinkingShimmerMessageProps,
-): ReactElement {
-  if (parts == null) {
-    throw new Error("ThinkingShimmerMessage parts are not configured");
+export function ThinkingShimmerMessage(props: unknown) {
+  const Z = peers.Z;
+  const W1 = peers.W1;
+  if (peers == null) {
+    throw new Error("ThinkingShimmerMessage peers are not configured");
   }
-  const { className, message, ...rest } = props;
-  const mergedClassName = cx(
+  let { className, message, ...rest } = props;
+  let a = peers.$(
     "text-size-chat leading-[calc(var(--codex-chat-font-size)_+_8px)] select-none truncate",
     className,
   );
-  const content = message ?? (
-    <FormattedMessage
+  let o = message ?? (
+    <Z
       id="thinkingShimmer.default"
       defaultMessage="Thinking"
       description="Default placeholder shown while the assistant is thinking"
     />
   );
   return (
-    <parts.Shimmer className={mergedClassName} {...rest}>
-      {content}
-    </parts.Shimmer>
+    <W1 className={a} {...rest}>
+      {o}
+    </W1>
   );
 }

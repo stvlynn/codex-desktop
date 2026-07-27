@@ -1,41 +1,42 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Lat / xMt
+// Materialized via extractFn(internal `xMt`) / export `Lat`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredLatProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredLatPeers = {
+  $jt: (...args: unknown[]) => unknown;
+  Bjt: (...args: unknown[]) => unknown;
+  Djt: (...args: unknown[]) => unknown;
+  Ejt: (...args: unknown[]) => unknown;
+  Fjt: (...args: unknown[]) => unknown;
+  Gjt: (...args: unknown[]) => unknown;
+  Hjt: (...args: unknown[]) => unknown;
+  Ljt: (...args: unknown[]) => unknown;
+  Tjt: (...args: unknown[]) => unknown;
+  Wjt: (...args: unknown[]) => unknown;
+  bMt: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  hMt: (...args: unknown[]) => unknown;
+  qjt: (...args: unknown[]) => unknown;
+  rMt: (...args: unknown[]) => unknown;
+  tMt: (...args: unknown[]) => unknown;
+  vMt: (...args: unknown[]) => unknown;
 };
 
-type DeferredLatImpl = (props: DeferredLatProps) => ReactNode;
-let impl: DeferredLatImpl | null = null;
+let peers: BindDeferredLatPeers | null = null;
 
-/** Wire the full DeferredLat once deeper restore lands. */
-export function bindDeferredLat(next: DeferredLatImpl): void {
-  impl = next;
+/** Wire bindDeferredLat peers once companions land. */
+export function setBindDeferredLatPeers(next: BindDeferredLatPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Lat` / internal `xMt`.
- * Stage-3 fill for bundle export Lat / xMt; heavy UI via bind.
  */
-export function DeferredLat(props: DeferredLatProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="Lat"
-      aria-label="DeferredLat"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Lat / xMt
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredLat() {
+  if (peers == null) {
+    throw new Error("bindDeferredLat peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.tMt(), peers.Hjt(), peers.Ejt(), peers.Djt(), peers.Wjt(), peers.Fjt(), peers.Gjt(), peers.Bjt(), peers.qjt(), peers.rMt(), peers.$jt(), peers.hMt(), peers.Ljt(), peers.Tjt(), peers.vMt(), peers.bMt();
+  });
 }

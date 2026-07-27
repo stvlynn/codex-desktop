@@ -8,9 +8,7 @@ export type PreviewableArtifactType =
   | "pdf";
 
 /** Whether an artifact type can open in the in-app preview surface. */
-export function isPreviewableArtifactType(
-  value: string | null | undefined,
-): value is PreviewableArtifactType {
+export function isPreviewableArtifactType(value: string | null | undefined): value is PreviewableArtifactType {
   return (
     value === "document" ||
     value === "slides" ||

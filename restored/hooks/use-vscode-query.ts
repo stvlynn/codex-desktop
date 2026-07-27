@@ -1,19 +1,15 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EL — real body via extractFn(internal `np`) / export `ndt`.
+// Materialized via extractFn(internal `np`) / export `ndt`.
 
 export type UseVscodeQueryPeers = {
-  useQuery: (opts: Record<string, unknown>) => unknown;
-  useMutation: (opts: Record<string, unknown>) => unknown;
-  buildQueryOptions: (
-    method: unknown,
-    options: Record<string, unknown>,
-  ) => Record<string, unknown>;
-  buildMutationOptions: (
-    method: unknown,
-    options: Record<string, unknown>,
-  ) => Record<string, unknown>;
+  $f: (...args: unknown[]) => unknown;
+  FZe: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  IZe: (...args: unknown[]) => unknown;
+  Zf: (...args: unknown[]) => unknown;
+  jt: (...args: unknown[]) => unknown;
+  select: (...args: unknown[]) => unknown;
 };
-
 let peers: UseVscodeQueryPeers | null = null;
 
 /** Wire useVscodeQuery peers once companions land. */
@@ -23,36 +19,55 @@ export function setUseVscodeQueryPeers(next: UseVscodeQueryPeers): void {
 
 /**
  * Bundle export `ndt` / internal `np`.
- * VS Code host query with cache key / interval options.
  */
-export type VscodeQueryConfig = Record<string, unknown>;
-export type VscodeQueryOptions = {
-  params?: unknown;
-  queryConfig?: VscodeQueryConfig;
-  placeholderData?: unknown;
-  source?: unknown;
-};
-
-export function useVscodeQuery(
-  method: unknown,
-  options?: VscodeQueryOptions,
-): unknown {
+export function useVscodeQuery(...e: unknown) {
   if (peers == null) {
-    throw new Error("UseVscodeQuery peers are not configured");
+    throw new Error("useVscodeQuery peers are not configured");
   }
-  const opts = options ?? {};
-  return peers.useQuery(peers.buildQueryOptions(method, opts));
+  let [n, r] = e,
+    i = r ?? {};
+  let { params, queryConfig = {}, placeholderData, source } = i;
+  let {
+      cacheKey,
+      intervalMs,
+      refetchIntervalInBackground,
+      enabled,
+      gcTime,
+      refetchOnMount,
+      refetchOnWindowFocus,
+      staleTime: _,
+      structuralSharing,
+      initialData,
+    } = queryConfig,
+    b = _ ?? peers.Hf.FIVE_SECONDS,
+    x = peers.$f(n, params, cacheKey);
+  let S = async () => {
+    return (
+      await peers.Zf.getInstance().post(
+        `vscode://codex/${n}`,
+        JSON.stringify(params),
+        peers.FZe(source),
+      )
+    ).body;
+  };
+  let C = r?.select,
+    w;
+  return (
+    (w = {
+      queryKey: x,
+      queryFn: S,
+      select: C,
+      refetchInterval: intervalMs,
+      refetchIntervalInBackground,
+      refetchOnMount,
+      refetchOnWindowFocus,
+      enabled,
+      gcTime,
+      staleTime: b,
+      structuralSharing,
+      initialData,
+      placeholderData,
+    }),
+    peers.jt(w)
+  );
 }
-
-export function useVscodeMutation(
-  method: unknown,
-  options?: Record<string, unknown>,
-): unknown {
-  if (peers == null) {
-    throw new Error("UseVscodeQuery peers are not configured");
-  }
-  return peers.useMutation(peers.buildMutationOptions(method, options ?? {}));
-}
-
-export function bindUseVscodeQuery(_next: unknown): void {}
-export function bindUseVscodeMutation(_next: unknown): void {}

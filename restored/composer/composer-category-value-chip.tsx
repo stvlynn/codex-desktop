@@ -1,12 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `Fos`) / export `IS`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `Fos`) / export `IS`.
 
 export type ComposerCategoryValueChipPeers = {
-  renderChip: (props: Record<string, unknown>) => ReactNode;
+  $: (...args: unknown[]) => unknown;
+  GX: (...args: unknown[]) => unknown;
+  Los: (...args: unknown[]) => unknown;
+  Np: (...args: unknown[]) => unknown;
+  gh: (...args: unknown[]) => unknown;
+  zos: (...args: unknown[]) => unknown;
 };
-
 let peers: ComposerCategoryValueChipPeers | null = null;
 
 /** Wire ComposerCategoryValueChip peers once companions land. */
@@ -18,24 +20,38 @@ export function setComposerCategoryValueChipPeers(
 
 /**
  * Bundle export `IS` / internal `Fos`.
- * Render a composer utility-bar category/value chip button.
  */
-export type ComposerCategoryValueChipProps = {
-  categoryLabel?: ReactNode;
-  className?: string;
-  collapse?: unknown;
-  icon?: ReactNode;
-  indicator?: unknown;
-  value?: ReactNode;
-  valueClassName?: string;
-  [key: string]: unknown;
-};
-
-export function ComposerCategoryValueChip(
-  props: ComposerCategoryValueChipProps,
-): ReactElement {
+export function ComposerCategoryValueChip(props: unknown) {
+  const Los = peers.Los;
+  const Np = peers.Np;
   if (peers == null) {
     throw new Error("ComposerCategoryValueChip peers are not configured");
   }
-  return peers.renderChip(props) as ReactElement;
+  let {
+    categoryLabel,
+    className,
+    collapse,
+    icon,
+    indicator,
+    value,
+    valueClassName,
+    ...rest
+  } = props;
+  let u = peers.$(peers.gh.utilityBarLabel, "min-w-0 items-center", className);
+  let d = (
+    <Los
+      categoryLabel={categoryLabel}
+      collapse={collapse}
+      icon={icon}
+      indicator={indicator}
+      selectedValue={value}
+      selectedValueClassName={valueClassName}
+      foreground="primary"
+    />
+  );
+  return (
+    <Np className={u} color="ghost" size="composerSm" {...rest}>
+      {d}
+    </Np>
+  );
 }

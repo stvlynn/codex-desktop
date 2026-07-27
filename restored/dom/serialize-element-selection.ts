@@ -19,9 +19,7 @@ export function setRangeSelectionSerializer(fn: SerializeRange): void {
   serializeRange = fn;
 }
 
-export function serializeElementSelection(
-  element: Element,
-): SerializedSelection | null {
+export function serializeElementSelection(element: Element): SerializedSelection | null {
   const range = element.ownerDocument.createRange();
   range.selectNodeContents(element);
   return serializeRange?.(element, range) ?? null;

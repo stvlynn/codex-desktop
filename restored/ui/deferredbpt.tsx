@@ -1,41 +1,43 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export bpt / Eu
+// Materialized via extractFn(internal `Eu`) / export `bpt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredbptProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredbptPeers = {
+  JEe: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  XEe: (...args: unknown[]) => unknown;
+  YEe: (...args: unknown[]) => unknown;
+  _u: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  hu: (...args: unknown[]) => unknown;
+  pl: (...args: unknown[]) => unknown;
+  vu: (...args: unknown[]) => unknown;
+  xu: (...args: unknown[]) => unknown;
 };
 
-type DeferredbptImpl = (props: DeferredbptProps) => ReactNode;
-let impl: DeferredbptImpl | null = null;
+let peers: BindDeferredbptPeers | null = null;
 
-/** Wire the full Deferredbpt once deeper restore lands. */
-export function bindDeferredbpt(next: DeferredbptImpl): void {
-  impl = next;
+/** Wire bindDeferredbpt peers once companions land. */
+export function setBindDeferredbptPeers(next: BindDeferredbptPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `bpt` / internal `Eu`.
- * Stage-3 fill for bundle export bpt / Eu; heavy UI via bind.
  */
-export function Deferredbpt(props: DeferredbptProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fo-scaffold="bpt"
-      aria-label="Deferredbpt"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export bpt / Eu
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredbpt() {
+  if (peers == null) {
+    throw new Error("bindDeferredbpt peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Sl(), peers._u(), peers.xu(), JEe = [`juniper`, `maple`, `spruce`, `ember`, `vale`, `breeze`, `arbor`, `sol`, `cove`], YEe = peers.pl(peers.JEe), XEe = {
+      screenContextEnabled: peers.vu({
+        agentAccess: `hidden`,
+        default: !0,
+        description: `Whether realtime voice can inspect the foreground app when the user refers to screen content`,
+        key: `realtimeVoiceScreenContextEnabled`,
+        schema: peers.hu
+      })
+    };
+  });
 }

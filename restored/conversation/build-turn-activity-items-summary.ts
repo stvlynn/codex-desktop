@@ -1,33 +1,17 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `lcl`) / export `Wc`.
-
-export type TurnActivityItem = {
-  agentThreadId: unknown;
-  displayName?: unknown;
-  displayStatus?: string;
-};
-
-export type BackgroundAgentLike = {
-  conversationId: string;
-  parentTurnKey?: unknown;
-  status?: string;
-  statusSummary?: unknown;
-  showInlineActivity?: boolean;
-};
+// Materialized via extractFn(internal `lcl`) / export `Wc`.
 
 export type BuildTurnActivityItemsSummaryPeers = {
-  normalizeAgentThreadId: (value: unknown) => string;
-  formatDisplayName: (intl: unknown, displayName: unknown) => unknown;
-  fallbackStatusSummary: (
-    intl: unknown,
-    displayName: unknown,
-    displayStatus: unknown,
-  ) => unknown;
+  acl: (...args: unknown[]) => unknown;
+  icl: (...args: unknown[]) => unknown;
+  kl: (...args: unknown[]) => unknown;
+  parentTurnKey: (...args: unknown[]) => unknown;
+  showInlineActivity: (...args: unknown[]) => unknown;
+  statusSummary: (...args: unknown[]) => unknown;
 };
-
 let peers: BuildTurnActivityItemsSummaryPeers | null = null;
 
-/** Wire turn activity summary peers once companions land. */
+/** Wire buildTurnActivityItemsSummary peers once companions land. */
 export function setBuildTurnActivityItemsSummaryPeers(
   next: BuildTurnActivityItemsSummaryPeers,
 ): void {
@@ -36,60 +20,51 @@ export function setBuildTurnActivityItemsSummaryPeers(
 
 /**
  * Bundle export `Wc` / internal `lcl`.
- * Build per-agent activity summary rows for a turn.
  */
-export function buildTurnActivityItemsSummary(args: {
-  activityItems: TurnActivityItem[];
-  backgroundAgents: BackgroundAgentLike[];
-  laterActivityItems: TurnActivityItem[];
-  turnKey: unknown;
-  intl: unknown;
-}): Array<{
-  activityStatus: unknown;
-  conversationId: string;
-  displayName: unknown;
-  showInlineActivity: boolean;
-  status: unknown;
-  statusSummary: unknown;
-}> {
+export function buildTurnActivityItemsSummary({
+  activityItems,
+  backgroundAgents,
+  laterActivityItems,
+  turnKey,
+  intl,
+}: Record<string, unknown>) {
   if (peers == null) {
-    throw new Error("BuildTurnActivityItemsSummary peers are not configured");
+    throw new Error("buildTurnActivityItemsSummary peers are not configured");
   }
-  const { activityItems, backgroundAgents, laterActivityItems, turnKey, intl } =
-    args;
-  const agentsById = new Map(
-    backgroundAgents.map((agent) => [agent.conversationId, agent]),
-  );
-  const itemsById = new Map<string, TurnActivityItem>();
-  for (const item of activityItems) {
-    itemsById.set(peers.normalizeAgentThreadId(item.agentThreadId), item);
-  }
-  return Array.from(itemsById, ([conversationId, item]) => {
-    const agent = agentsById.get(conversationId);
-    const appearsLater = laterActivityItems.some(
-      (later) => later.agentThreadId === item.agentThreadId,
+  let a = new Map(
+      backgroundAgents.map((item) => {
+        return [item.conversationId, item];
+      }),
+    ),
+    o = new Map();
+  for (let t of activityItems) o.set(peers.kl(t.agentThreadId), t);
+  return Array.from(o, ([e, t]) => {
+    let o = a.get(e),
+      s = laterActivityItems.some((item) => {
+        return item.agentThreadId === t.agentThreadId;
+      }),
+      c = o?.parentTurnKey === turnKey,
+      l = c && !s,
+      u = peers.icl(intl, t.displayName),
+      d;
+    return (
+      (d =
+        o == null
+          ? t.displayStatus === "interrupted"
+            ? "done"
+            : "active"
+          : c
+            ? o.status
+            : "done"),
+      {
+        activityStatus: d === "done" && l ? "done" : t.displayStatus,
+        conversationId: e,
+        displayName: u,
+        showInlineActivity: o?.showInlineActivity ?? true,
+        status: d,
+        statusSummary:
+          (c ? o?.statusSummary : null) ?? peers.acl(intl, u, t.displayStatus),
+      }
     );
-    const isParentTurn = agent?.parentTurnKey === turnKey;
-    const doneInline = isParentTurn && !appearsLater;
-    const displayName = peers!.formatDisplayName(intl, item.displayName);
-    const status =
-      agent == null
-        ? item.displayStatus === "interrupted"
-          ? "done"
-          : "active"
-        : isParentTurn
-          ? agent.status
-          : "done";
-    return {
-      activityStatus:
-        status === "done" && doneInline ? "done" : item.displayStatus,
-      conversationId,
-      displayName,
-      showInlineActivity: agent?.showInlineActivity ?? true,
-      status,
-      statusSummary:
-        (isParentTurn ? agent?.statusSummary : null) ??
-        peers!.fallbackStatusSummary(intl, displayName, item.displayStatus),
-    };
   });
 }

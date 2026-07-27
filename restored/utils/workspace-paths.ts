@@ -58,10 +58,7 @@ function ensureLeadingSlashForWinDrive(pathValue: string): string {
 }
 
 /** Bundle `Of` / export `Kdt`. */
-export function joinRelativePathSegments(
-  root: string,
-  relative: string,
-): string {
+export function joinRelativePathSegments(root: string, relative: string): string {
   return joinRelative(root, relative);
 }
 

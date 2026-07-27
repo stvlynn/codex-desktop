@@ -1,48 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export u0 / qar
+// Materialized via extractFn(internal `qar`) / export `u0`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindAppShellBottomPanelLauncherVisible3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindAppShellBottomPanelLauncherVisible3Peers = {
+  JRe: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  rT: (...args: unknown[]) => unknown;
 };
 
-type BindAppShellBottomPanelLauncherVisible3Impl = (
-  props: BindAppShellBottomPanelLauncherVisible3Props,
-) => ReactNode;
-let impl: BindAppShellBottomPanelLauncherVisible3Impl | null = null;
+let peers: BindBindAppShellBottomPanelLauncherVisible3Peers | null = null;
 
-/** Wire the full BindAppShellBottomPanelLauncherVisible3 once deeper restore lands. */
-export function bindBindAppShellBottomPanelLauncherVisible3(
-  next: BindAppShellBottomPanelLauncherVisible3Impl,
-): void {
-  impl = next;
+/** Wire bindBindAppShellBottomPanelLauncherVisible3 peers once companions land. */
+export function setBindBindAppShellBottomPanelLauncherVisible3Peers(next: BindBindAppShellBottomPanelLauncherVisible3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `u0` / internal `qar`.
- * Stage-3 fill for bundle export u0 / qar; heavy UI via bind.
  */
-export function BindAppShellBottomPanelLauncherVisible3(
-  props: BindAppShellBottomPanelLauncherVisible3Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="u0"
-      aria-label="BindAppShellBottomPanelLauncherVisible3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export u0 / qar
-        </div>
-      )}
-    </div>
-  );
+export function bindBindAppShellBottomPanelLauncherVisible3() {
+  if (peers == null) {
+    throw new Error("bindBindAppShellBottomPanelLauncherVisible3 peers are not configured");
+  }
+
+  return peers.Ta(peers.rT, () => new peers.JRe(0));
 }

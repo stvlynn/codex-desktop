@@ -115,10 +115,7 @@ export type HighlightCodeResult = {
  * Highlight source with an optional language; falls back to highlightAuto.
  * Export name matches the bundle's `highlightCode` / `HighlightCode` surface.
  */
-export function HighlightCode(
-  code: string,
-  language?: string,
-): HighlightCodeResult {
+export function HighlightCode(code: string, language?: string): HighlightCodeResult {
   ensureLanguagesRegistered();
   if (language) {
     const { value } = hljs.highlight(code, {

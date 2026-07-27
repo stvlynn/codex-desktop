@@ -11,10 +11,7 @@ type IntlShape = {
 };
 
 /** Format profile day-streak count (pluralized). */
-export function formatDayStreakValue(
-  intl: IntlShape,
-  days: number | null | undefined,
-): string {
+export function formatDayStreakValue(intl: IntlShape, days: number | null | undefined): string {
   return intl.formatMessage(
     {
       id: "profile.stats.dayStreakValue",

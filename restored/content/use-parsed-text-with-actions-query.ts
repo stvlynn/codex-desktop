@@ -1,41 +1,53 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `X7r`) / export `sK`.
+// Materialized via extractFn(internal `X7r`) / export `sK`.
 
 export type UseParsedTextWithActionsQueryPeers = {
-  buildParseQuery: (
-    text: string,
-    options: { includeActions: boolean },
-  ) => Record<string, unknown>;
-  useQuery: (options: Record<string, unknown>) => unknown;
-  fiveMinutesMs: number;
-  selectParsed: (data: unknown) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Z7r: (...args: unknown[]) => unknown;
+  eP: (...args: unknown[]) => unknown;
+  jt: (...args: unknown[]) => unknown;
+  z5r: (...args: unknown[]) => unknown;
 };
 
 let peers: UseParsedTextWithActionsQueryPeers | null = null;
 
-/** Wire parsed-text query peers once companions land. */
-export function setUseParsedTextWithActionsQueryPeers(
-  next: UseParsedTextWithActionsQueryPeers,
-): void {
+/** Wire useParsedTextWithActionsQuery peers once companions land. */
+export function setUseParsedTextWithActionsQueryPeers(next: UseParsedTextWithActionsQueryPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `sK` / internal `X7r`.
- * Query parsed text including action tokens when text is present.
  */
-export function useParsedTextWithActionsQuery(
-  text: string | null | undefined,
-): unknown {
+export function useParsedTextWithActionsQuery(e: unknown) {
   if (peers == null) {
-    throw new Error("UseParsedTextWithActionsQuery peers are not configured");
+    throw new Error("useParsedTextWithActionsQuery peers are not configured");
   }
-  const value = text ?? "";
-  const base = peers.buildParseQuery(value, { includeActions: true });
-  return peers.useQuery({
-    ...base,
-    enabled: text != null,
-    staleTime: peers.fiveMinutesMs,
-    select: peers.selectParsed,
-  });
+
+  let t = (0, peers.eP.c)(5),
+    n = e ?? ``,
+    r;
+  t[0] === n
+    ? (r = t[1])
+    : ((r = peers.z5r(n, {
+        includeActions: !0,
+      })),
+      (t[0] = n),
+      (t[1] = r));
+  let i = e != null,
+    a;
+  return (
+    t[2] !== r || t[3] !== i
+      ? ((a = {
+          ...r,
+          enabled: i,
+          staleTime: peers.Hf.FIVE_MINUTES,
+          select: peers.Z7r,
+        }),
+        (t[2] = r),
+        (t[3] = i),
+        (t[4] = a))
+      : (a = t[4]),
+    peers.jt(a)
+  );
 }

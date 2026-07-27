@@ -18,9 +18,7 @@ let Fallback: ComponentType<{ resetError: () => void }> | null = null;
 export function setSafeMarkdownImpl(impl: ComponentType<AnyProps>): void {
   MarkdownImpl = impl;
 }
-export function setSafeMarkdownErrorBoundary(
-  impl: ComponentType<BoundaryProps>,
-): void {
+export function setSafeMarkdownErrorBoundary(impl: ComponentType<BoundaryProps>): void {
   ErrorBoundary = impl;
 }
 export function setSafeMarkdownFallback(

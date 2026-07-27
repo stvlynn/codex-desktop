@@ -17,9 +17,7 @@ type LocalEnvironmentsSettingsImpl = (
 let impl: LocalEnvironmentsSettingsImpl | null = null;
 
 /** Wire the full LocalEnvironmentsSettings once deeper companion restore lands. */
-export function bindLocalEnvironmentsSettings(
-  next: LocalEnvironmentsSettingsImpl,
-): void {
+export function bindLocalEnvironmentsSettings(next: LocalEnvironmentsSettingsImpl): void {
   impl = next;
 }
 

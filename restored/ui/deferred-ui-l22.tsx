@@ -1,41 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export l2 / ED
+// Materialized via extractFn(internal `ED`) / export `l2`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiL22Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiL22Peers = {
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  TD: (...args: unknown[]) => unknown;
+  hD: (...args: unknown[]) => unknown;
+  iD: (...args: unknown[]) => unknown;
+  mrr: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiL22Impl = (props: BindDeferredUiL22Props) => ReactNode;
-let impl: BindDeferredUiL22Impl | null = null;
+let peers: BindBindDeferredUiL22Peers | null = null;
 
-/** Wire the full BindDeferredUiL22 once deeper restore lands. */
-export function bindBindDeferredUiL22(next: BindDeferredUiL22Impl): void {
-  impl = next;
+/** Wire bindBindDeferredUiL22 peers once companions land. */
+export function setBindBindDeferredUiL22Peers(next: BindBindDeferredUiL22Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `l2` / internal `ED`.
- * Stage-3 fill for bundle export l2 / ED; heavy UI via bind.
  */
-export function BindDeferredUiL22(props: BindDeferredUiL22Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fg-scaffold="l2"
-      aria-label="BindDeferredUiL22"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export l2 / ED
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiL22() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiL22 peers are not configured");
+  }
+
+  return peers.Oa(peers.Q, (e, {
+    get: t
+  }) => e == null || t(peers.mrr, e) ? !1 : !t(peers.iD, e) || t(peers.hD, e) === `needs_resume` || t(peers.TD, e) == null);
 }

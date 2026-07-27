@@ -1,20 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `tXs`) / export `vg`.
+// Materialized via extractFn(internal `tXs`) / export `vg`.
 
 export type ScalePdfEditorMarkerPointPeers = {
-  getLayerSize: (layer: unknown) => { width: number; height: number };
-  clampX: (value: number, min: number, max: number) => number;
-  clampY: (
-    value: number,
-    scale: number,
-    windowHeight?: number,
-    cap?: number,
-  ) => number;
-  maxX: (width: number, scale: number) => number;
-  maxY: (height: number, scale: number, cap?: number) => number;
-  defaultWindowHeight: number;
+  $Ys: (...args: unknown[]) => unknown;
+  aXs: (...args: unknown[]) => unknown;
+  hXs: (...args: unknown[]) => unknown;
+  iXs: (...args: unknown[]) => unknown;
+  oXs: (...args: unknown[]) => unknown;
+  rXs: (...args: unknown[]) => unknown;
 };
-
 let peers: ScalePdfEditorMarkerPointPeers | null = null;
 
 /** Wire scalePdfEditorMarkerPoint peers once companions land. */
@@ -26,48 +20,48 @@ export function setScalePdfEditorMarkerPointPeers(
 
 /**
  * Bundle export `vg` / internal `tXs`.
- * Scale a PDF editor marker point into a clamped layer position.
  */
-export function scalePdfEditorMarkerPoint(args: {
-  editorScale?: number;
-  editorWindowHeight?: number;
-  layer: unknown;
-  markerPoint: { x: number; y: number };
-  pageSize: { width: number; height: number };
-}): { x: number; y: number } | null {
+export function scalePdfEditorMarkerPoint({
+  editorScale = 1,
+  editorWindowHeight = peers.hXs,
+  layer,
+  markerPoint,
+  pageSize,
+}: Record<string, unknown>) {
   if (peers == null) {
-    throw new Error("ScalePdfEditorMarkerPoint peers are not configured");
+    throw new Error("scalePdfEditorMarkerPoint peers are not configured");
   }
-  const {
-    editorScale = 1,
-    editorWindowHeight = peers.defaultWindowHeight,
-    layer,
-    markerPoint,
-    pageSize,
-  } = args;
   if (layer == null || pageSize.width <= 0 || pageSize.height <= 0) return null;
-  const layerSize = peers.getLayerSize(layer);
-  if (layerSize.width <= 0 || layerSize.height <= 0) return null;
-  const x = (markerPoint.x / pageSize.width) * layerSize.width;
-  const y = (markerPoint.y / pageSize.height) * layerSize.height;
-  const scale = Math.max(editorScale, 2 ** -52);
-  const cap = Math.min(120, editorWindowHeight);
-  const half = editorWindowHeight === peers.defaultWindowHeight ? 44 : cap;
-  const mapY = (value: number) =>
-    peers!.clampY(value, scale, editorWindowHeight, cap);
-  const maxX = peers.maxX(layerSize.width, scale);
-  const maxY = peers.maxY(layerSize.height, scale, cap);
-  const centeredY = peers.clampX(y - (half * scale) / 2, 16, maxY);
-  for (const candidateX of [x + 27, x - 27 - 294 * scale]) {
-    if (candidateX >= 16 && candidateX <= maxX) {
-      return { x: candidateX, y: mapY(centeredY) };
-    }
-  }
-  const centeredX = peers.clampX(x - (294 * scale) / 2, 16, maxX);
-  const below = y + 27;
-  if (below <= maxY) return { x: centeredX, y: mapY(below) };
-  return {
-    x: centeredX,
-    y: mapY(peers.clampX(y - 27 - cap * scale, 16, maxY)),
-  };
+  let a = peers.$Ys(layer);
+  if (a.width <= 0 || a.height <= 0) return null;
+  let o = (markerPoint.x / pageSize.width) * a.width,
+    s = (markerPoint.y / pageSize.height) * a.height,
+    c = Math.max(editorScale, 2.220446049250313e-16),
+    l = Math.min(120, editorWindowHeight),
+    u = editorWindowHeight === peers.hXs ? 44 : l,
+    d = (e) => {
+      return peers.aXs(e, c, editorWindowHeight, l);
+    },
+    f = peers.rXs(a.width, c),
+    p = peers.iXs(a.height, c, l),
+    m = peers.oXs(s - (u * c) / 2, 16, p),
+    h = o + 27,
+    g = o - 27 - 294 * c;
+  for (let e of [h, g])
+    if (e >= 16 && e <= f)
+      return {
+        x: e,
+        y: d(m),
+      };
+  let _ = peers.oXs(o - (294 * c) / 2, 16, f),
+    v = s + 27;
+  return v <= p
+    ? {
+        x: _,
+        y: d(v),
+      }
+    : {
+        x: _,
+        y: d(peers.oXs(s - 27 - l * c, 16, p)),
+      };
 }

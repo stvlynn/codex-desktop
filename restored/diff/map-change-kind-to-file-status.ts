@@ -2,9 +2,7 @@
 // Bundle `zLi` / export `WU`.
 
 /** Map internal diff change kinds onto file-status labels. */
-export function mapChangeKindToFileStatus(
-  kind: string | null | undefined,
-): "modified" | "renamed" | "added" | "deleted" | undefined {
+export function mapChangeKindToFileStatus(kind: string | null | undefined): "modified" | "renamed" | "added" | "deleted" | undefined {
   switch (kind) {
     case "change":
       return "modified";

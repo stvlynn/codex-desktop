@@ -1,25 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Nt / Ahu
+// Materialized via extractFn(internal `Ahu`) / export `Nt`.
 
 export type RoundPeers = {
-  impl: (...args: unknown[]) => unknown;
+  C9: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fh: (...args: unknown[]) => unknown;
+  khu: (...args: unknown[]) => unknown;
+  sd: (...args: unknown[]) => unknown;
 };
 
 let peers: RoundPeers | null = null;
 
-/** Wire round once companions land. */
+/** Wire round peers once companions land. */
 export function setRoundPeers(next: RoundPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Nt` / internal `Ahu`.
- * Stage-3 fill for bundle export Nt / Ahu
  */
-export function round(...args: unknown[]): unknown {
+export function round() {
   if (peers == null) {
     throw new Error("round peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    khu = peers.c(), peers.sd(), peers.fh(), C9 = peers.J();
+  });
 }

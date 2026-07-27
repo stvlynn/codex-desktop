@@ -1,42 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export uA / sSo
+// Materialized via extractFn(internal `sSo`) / export `uA`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferreduAProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferreduAPeers = {
+  Au: (...args: unknown[]) => unknown;
+  ZT: (...args: unknown[]) => unknown;
+  ap: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  jf: (...args: unknown[]) => unknown;
+  yK: (...args: unknown[]) => unknown;
 };
 
-type BindDeferreduAImpl = (props: BindDeferreduAProps) => ReactNode;
-let impl: BindDeferreduAImpl | null = null;
+let peers: BindBindDeferreduAPeers | null = null;
 
-/** Wire the full BindDeferreduA once deeper restore lands. */
-export function bindBindDeferreduA(next: BindDeferreduAImpl): void {
-  impl = next;
+/** Wire bindBindDeferreduA peers once companions land. */
+export function setBindBindDeferreduAPeers(next: BindBindDeferreduAPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `uA` / internal `sSo`.
- * Stage-3 fill for bundle export uA / sSo; heavy UI via bind.
  */
-export function BindDeferreduA(props: BindDeferreduAProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="uA"
-      aria-label="BindDeferreduA"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export uA / sSo
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferreduA() {
+  if (peers == null) {
+    throw new Error("bindBindDeferreduA peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Au(), peers.jf(), peers.ap(), peers.ZT(), peers.yK();
+  });
 }

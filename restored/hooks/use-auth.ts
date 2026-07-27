@@ -1,9 +1,9 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `yM`) / export `RX`.
+// Materialized via extractFn(internal `yM`) / export `RX`.
 
 export type UseAuthPeers = {
-  useContext: (context: unknown) => unknown;
-  authContext: unknown;
+  VGr: (...args: unknown[]) => unknown;
+  lKr: (...args: unknown[]) => unknown;
 };
 
 let peers: UseAuthPeers | null = null;
@@ -13,18 +13,18 @@ export function setUseAuthPeers(next: UseAuthPeers): void {
   peers = next;
 }
 
+/** Rolldown ESM init shim — module side effects now run on import. */
+export function ensureAuthProviderInit(): void {}
+
 /**
  * Bundle export `RX` / internal `yM`.
- * Read AuthProvider context; throws outside the provider.
  */
-export function useAuth(): unknown {
+export function useAuth() {
   if (peers == null) {
-    throw new Error("UseAuth peers are not configured");
+    throw new Error("useAuth peers are not configured");
   }
-  const value = peers.useContext(peers.authContext);
-  if (!value) throw new Error("useAuth must be used within AuthProvider");
-  return value;
-}
 
-// --- qg-full-green: missing-relative-exports stubs (open-runtime wiring) ---
-export const ensureAuthProviderInit: any = undefined;
+  let e = (0, peers.lKr.useContext)(peers.VGr);
+  if (!e) throw Error(`useAuth must be used within AuthProvider`);
+  return e;
+}

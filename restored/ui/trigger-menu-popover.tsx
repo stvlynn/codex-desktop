@@ -1,23 +1,19 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EO — real body via extractFn(internal `YYo`) / export `LE`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `YYo`) / export `LE`.
 
 export type TriggerMenuPopoverPeers = {
-  useIsMobile: () => boolean;
-  useControllableOpen: (
-    open: boolean | undefined,
-    onOpenChange: ((open: boolean) => void) | undefined,
-  ) => { handleOpenChange: (open: boolean) => void; open: boolean };
-  Trigger: unknown;
-  Root: unknown;
-  Portal: unknown;
-  Content: unknown;
-  renderNode: (type: unknown, props: Record<string, unknown>) => ReactNode;
-  renderNodes: (type: unknown, props: Record<string, unknown>) => ReactNode;
-  cx: (...parts: Array<string | false | null | undefined>) => string;
+  $: (...args: unknown[]) => unknown;
+  GYi: (...args: unknown[]) => unknown;
+  HYi: (...args: unknown[]) => unknown;
+  Lm: (...args: unknown[]) => unknown;
+  QJ: (...args: unknown[]) => unknown;
+  UYi: (...args: unknown[]) => unknown;
+  VDr: (...args: unknown[]) => unknown;
+  WYi: (...args: unknown[]) => unknown;
+  ZJ: (...args: unknown[]) => unknown;
+  gA: (...args: unknown[]) => unknown;
+  zDr: (...args: unknown[]) => unknown;
 };
-
 let peers: TriggerMenuPopoverPeers | null = null;
 
 /** Wire TriggerMenuPopover peers once companions land. */
@@ -29,91 +25,76 @@ export function setTriggerMenuPopoverPeers(
 
 /**
  * Bundle export `LE` / internal `YYo`.
- * Popover menu driven by a trigger button and controlled open state.
  */
-export type TriggerMenuPopoverProps = {
-  triggerButton: ReactNode;
-  disabled?: boolean;
-  children?: ReactNode;
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
-  side?: unknown;
-  align?: unknown;
-  sideOffset?: number;
-  alignOffset?: number;
-  contentRef?: unknown;
-  onCloseAutoFocus?: (event: unknown) => void;
-  onEscapeKeyDown?: (event: unknown) => void;
-  contentClassName?: string;
-  contentStyle?: Record<string, unknown>;
-  surface?: string;
-  contentWidth?: unknown;
-  contentMaxHeight?: unknown;
-  portalContainer?: unknown;
-};
-
-export function TriggerMenuPopover(
-  props: TriggerMenuPopoverProps,
-): ReactElement {
+export function TriggerMenuPopover(props: unknown) {
+  const VDr = peers.VDr;
+  const GA = peers.gA;
+  const ZDr = peers.zDr;
   if (peers == null) {
     throw new Error("TriggerMenuPopover peers are not configured");
   }
-  const {
-    triggerButton,
-    disabled,
-    children,
-    open,
-    onOpenChange,
-    side,
-    align,
-    sideOffset,
-    alignOffset,
-    contentRef,
-    onCloseAutoFocus,
-    onEscapeKeyDown,
-    contentClassName,
-    contentStyle,
-    surface = "menu",
-    contentWidth,
-    contentMaxHeight,
-    portalContainer,
-  } = props;
-  void peers.useIsMobile();
-  const { handleOpenChange, open: resolvedOpen } = peers.useControllableOpen(
-    open,
-    onOpenChange,
+  let {
+      triggerButton,
+      disabled,
+      children,
+      open,
+      onOpenChange,
+      side,
+      align,
+      sideOffset,
+      alignOffset,
+      contentRef,
+      onCloseAutoFocus,
+      onEscapeKeyDown,
+      contentClassName,
+      contentStyle,
+      surface = "menu",
+      contentWidth: _,
+      contentMaxHeight,
+      portalContainer,
+    } = props,
+    x = peers.Lm(),
+    { handleOpenChange, open: _open } = peers.GYi(open, onOpenChange),
+    w = (
+      <VDr asChild={true} disabled={disabled}>
+        {triggerButton}
+      </VDr>
+    );
+  let T = disabled ? null : (
+    <GA
+      ref={contentRef}
+      align={align}
+      alignOffset={alignOffset}
+      className={peers.$(
+        "no-drag z-50 m-px flex select-none flex-col overflow-y-auto px-1 py-1",
+        peers.HYi(surface),
+        peers.UYi(_),
+        contentClassName,
+      )}
+      onCloseAutoFocus={onCloseAutoFocus}
+      onEscapeKeyDown={onEscapeKeyDown}
+      portalContainer={portalContainer}
+      side={side}
+      sideOffset={sideOffset ?? 1}
+      style={{
+        ...contentStyle,
+        maxHeight:
+          peers.WYi(
+            contentMaxHeight,
+            "var(--radix-popover-content-available-height)",
+          ) ??
+          "min(var(--radix-popover-content-available-height), calc(100vh - 16px))",
+        zoom: portalContainer == null && x !== 1 ? x : undefined,
+      }}
+      unstyled={true}
+    >
+      {children}
+    </GA>
   );
-  const trigger = peers.renderNode(peers.Trigger, {
-    asChild: true,
-    disabled,
-    children: triggerButton,
-  });
-  const content = peers.renderNode(peers.Content, {
-    ref: contentRef,
-    side,
-    align,
-    sideOffset,
-    alignOffset,
-    onCloseAutoFocus,
-    onEscapeKeyDown,
-    className: peers.cx(contentClassName),
-    style: {
-      ...contentStyle,
-      width: contentWidth,
-      maxHeight: contentMaxHeight,
-    },
-    "data-surface": surface,
-    children,
-  });
-  return peers.renderNodes(peers.Root, {
-    open: resolvedOpen,
-    onOpenChange: handleOpenChange,
-    children: [
-      trigger,
-      peers.renderNode(peers.Portal, {
-        container: portalContainer,
-        children: content,
-      }),
-    ],
-  }) as ReactElement;
+  return (
+    <ZDr modal={false} open={_open} onOpenChange={handleOpenChange}>
+      {w}
+      {T}
+    </ZDr>
+  );
 }

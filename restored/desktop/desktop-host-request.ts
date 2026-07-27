@@ -3,7 +3,6 @@
 // Accepts the abortController-shaped options used by auth URL helpers.
 
 import { invokeDesktopRpc, type InvokeDesktopRpc } from "./invoke-desktop-rpc";
-
 export type DesktopHostRequestOptions = {
   abortController?: AbortController;
   params?: unknown;
@@ -12,7 +11,6 @@ export type DesktopHostRequestOptions = {
   source?: unknown;
   [key: string]: unknown;
 };
-
 let requestImpl:
   | ((method: string, options?: DesktopHostRequestOptions) => Promise<unknown>)
   | null = null;

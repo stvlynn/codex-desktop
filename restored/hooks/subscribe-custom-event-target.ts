@@ -1,37 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `SP`) / export `UW`.
+// Materialized via extractFn(internal `SP`) / export `UW`.
 
 export type SubscribeCustomEventTargetPeers = {
-  getState: (state: unknown) => { eventTarget: EventTarget };
-  eventName: string;
+  CustomEvent: (...args: unknown[]) => unknown;
+  cni: (...args: unknown[]) => unknown;
+  sni: (...args: unknown[]) => unknown;
 };
 
 let peers: SubscribeCustomEventTargetPeers | null = null;
 
 /** Wire subscribeCustomEventTarget peers once companions land. */
-export function setSubscribeCustomEventTargetPeers(
-  next: SubscribeCustomEventTargetPeers,
-): void {
+export function setSubscribeCustomEventTargetPeers(next: SubscribeCustomEventTargetPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `UW` / internal `SP`.
- * Subscribe to a custom event on the store event target.
  */
-export function subscribeCustomEventTarget(
-  store: { state: unknown },
-  onDetailTrue: (isTrue: boolean) => void,
-): () => void {
+export function subscribeCustomEventTarget(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("SubscribeCustomEventTarget peers are not configured");
+    throw new Error("subscribeCustomEventTarget peers are not configured");
   }
-  const { eventTarget } = peers.getState(store.state);
-  const listener = (event: Event) => {
-    onDetailTrue(event instanceof CustomEvent && event.detail === true);
-  };
-  eventTarget.addEventListener(peers.eventName, listener);
-  return () => {
-    eventTarget.removeEventListener(peers.eventName, listener);
-  };
+
+  let { eventTarget: n } = peers.sni.getState(e.state),
+    r = (e) => {
+      t(e instanceof peers.CustomEvent && e.detail === !0);
+    };
+  return (
+    n.addEventListener(peers.cni, r),
+    () => {
+      n.removeEventListener(peers.cni, r);
+    }
+  );
 }

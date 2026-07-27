@@ -4,10 +4,7 @@
 import { LOCALE_DISPLAY_OVERRIDES } from "./locale-display-overrides";
 
 /** Resolve a human language label for `locale` in `displayLocale`. */
-export function displayLanguageName(
-  locale: string,
-  displayLocale: string,
-): string {
+export function displayLanguageName(locale: string, displayLocale: string): string {
   try {
     return (
       new Intl.DisplayNames([displayLocale], {

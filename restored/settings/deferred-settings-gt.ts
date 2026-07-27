@@ -1,28 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export gt / m_u
+// Materialized via extractFn(internal `m_u`) / export `gt`.
 
 export type BindDeferredSettingsGtPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Ia: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  gp: (...args: unknown[]) => unknown;
+  wM: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredSettingsGtPeers | null = null;
 
-/** Wire bindDeferredSettingsGt once companions land. */
-export function setBindDeferredSettingsGtPeers(
-  next: BindDeferredSettingsGtPeers,
-): void {
+/** Wire bindDeferredSettingsGt peers once companions land. */
+export function setBindDeferredSettingsGtPeers(next: BindDeferredSettingsGtPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `gt` / internal `m_u`.
- * Stage-3 fill for bundle export gt / m_u
  */
-export function bindDeferredSettingsGt(...args: unknown[]): unknown {
+export function bindDeferredSettingsGt() {
   if (peers == null) {
     throw new Error("bindDeferredSettingsGt peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ia(peers.Q, () => ({
+    queryFn: ({ signal: e }) =>
+      peers.wM(peers.gp.computerUseSettings.getSoundMode(), e),
+    queryKey: [`computer-use-sound-mode`],
+    refetchOnMount: `always`,
+    refetchOnWindowFocus: !0,
+    staleTime: peers.Hf.FIVE_SECONDS,
+  }));
 }

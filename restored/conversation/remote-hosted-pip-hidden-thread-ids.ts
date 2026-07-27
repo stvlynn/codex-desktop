@@ -1,32 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export M / Bxu
+// Materialized via extractFn(internal `Bxu`) / export `M`.
 
 export type BindRemoteHostedPipHiddenThreadIdsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Da: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Im: (...args: unknown[]) => unknown;
+  Lxu: (...args: unknown[]) => unknown;
+  Oa: (...args: unknown[]) => unknown;
+  Pm: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Rxu: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  zxu: (...args: unknown[]) => unknown;
 };
 
 let peers: BindRemoteHostedPipHiddenThreadIdsPeers | null = null;
 
-/** Wire bindRemoteHostedPipHiddenThreadIds once companions land. */
-export function setBindRemoteHostedPipHiddenThreadIdsPeers(
-  next: BindRemoteHostedPipHiddenThreadIdsPeers,
-): void {
+/** Wire bindRemoteHostedPipHiddenThreadIds peers once companions land. */
+export function setBindRemoteHostedPipHiddenThreadIdsPeers(next: BindRemoteHostedPipHiddenThreadIdsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `M` / internal `Bxu`.
- * Stage-3 fill for bundle export M / Bxu
  */
-export function bindRemoteHostedPipHiddenThreadIds(
-  ...args: unknown[]
-): unknown {
+export function bindRemoteHostedPipHiddenThreadIds() {
   if (peers == null) {
-    throw new Error(
-      "bindRemoteHostedPipHiddenThreadIds peers are not configured",
-    );
+    throw new Error("bindRemoteHostedPipHiddenThreadIds peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ho(), peers.ed(), peers.Im(), Lxu = peers.Pm(`remote-hosted-pip-hidden-thread-ids`, []), Rxu = peers.Oa(peers.Q, (e, {
+      get: t
+    }) => peers.e == null || !(t(peers.Lxu) ?? []).includes(peers.e)), zxu = peers.Da(peers.Q, e => !1);
+  });
 }

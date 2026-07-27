@@ -1,42 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export p9 / Ix
+// Materialized via extractFn(internal `Ix`) / export `p9`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredp9Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredp9Peers = {
+  Pan: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  X: (...args: unknown[]) => unknown;
+  _l: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fl: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredp9Impl = (props: BindDeferredp9Props) => ReactNode;
-let impl: BindDeferredp9Impl | null = null;
+let peers: BindBindDeferredp9Peers | null = null;
 
-/** Wire the full BindDeferredp9 once deeper restore lands. */
-export function bindBindDeferredp9(next: BindDeferredp9Impl): void {
-  impl = next;
+/** Wire bindBindDeferredp9 peers once companions land. */
+export function setBindBindDeferredp9Peers(next: BindBindDeferredp9Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `p9` / internal `Ix`.
- * Stage-3 fill for bundle export p9 / Ix; heavy UI via bind.
  */
-export function BindDeferredp9(props: BindDeferredp9Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-et-scaffold="p9"
-      aria-label="BindDeferredp9"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export p9 / Ix
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredp9() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredp9 peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Sl(), Pan = peers.fl(peers.X(), peers._l());
+  });
 }

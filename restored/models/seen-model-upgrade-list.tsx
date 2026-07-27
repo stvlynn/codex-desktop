@@ -1,48 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export UY / jYr
+// Materialized via extractFn(internal `jYr`) / export `UY`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindSeenModelUpgradeListProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindSeenModelUpgradeListPeers = {
+  AYr: (...args: unknown[]) => unknown;
+  DD: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  IE: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  xM: (...args: unknown[]) => unknown;
 };
 
-type BindSeenModelUpgradeListImpl = (
-  props: BindSeenModelUpgradeListProps,
-) => ReactNode;
-let impl: BindSeenModelUpgradeListImpl | null = null;
+let peers: BindBindSeenModelUpgradeListPeers | null = null;
 
-/** Wire the full BindSeenModelUpgradeList once deeper restore lands. */
-export function bindBindSeenModelUpgradeList(
-  next: BindSeenModelUpgradeListImpl,
-): void {
-  impl = next;
+/** Wire bindBindSeenModelUpgradeList peers once companions land. */
+export function setBindBindSeenModelUpgradeListPeers(next: BindBindSeenModelUpgradeListPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `UY` / internal `jYr`.
- * Stage-3 fill for bundle export UY / jYr; heavy UI via bind.
  */
-export function BindSeenModelUpgradeList(
-  props: BindSeenModelUpgradeListProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-et-scaffold="UY"
-      aria-label="BindSeenModelUpgradeList"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export UY / jYr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindSeenModelUpgradeList() {
+  if (peers == null) {
+    throw new Error("bindBindSeenModelUpgradeList peers are not configured");
+  }
+
+  return peers.e(() => {
+    AYr = peers.c(), peers.Ho(), peers.DD(), peers.xM(), peers.IE();
+  });
 }

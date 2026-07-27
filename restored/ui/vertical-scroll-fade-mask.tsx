@@ -1,14 +1,11 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-
-import type { ReactElement, ReactNode } from "react";
-
-export type VerticalScrollFadeMaskProps = Record<string, unknown>;
+// Materialized via extractFn(internal `zHa`) / export `MM`.
 
 export type VerticalScrollFadeMaskPeers = {
-  render: (props: VerticalScrollFadeMaskProps) => ReactNode;
+  $: (...args: unknown[]) => unknown;
+  GHa: (...args: unknown[]) => unknown;
+  WHa: (...args: unknown[]) => unknown;
 };
-
 let peers: VerticalScrollFadeMaskPeers | null = null;
 
 /** Wire VerticalScrollFadeMask peers once companions land. */
@@ -21,11 +18,19 @@ export function setVerticalScrollFadeMaskPeers(
 /**
  * Bundle export `MM` / internal `zHa`.
  */
-export function VerticalScrollFadeMask(
-  props: VerticalScrollFadeMaskProps,
-): ReactElement {
+export function VerticalScrollFadeMask(props: unknown) {
   if (peers == null) {
     throw new Error("VerticalScrollFadeMask peers are not configured");
   }
-  return peers.render(props) as ReactElement;
+  let { children, className, fadeMaskVariant = "both", listRef } = props,
+    s = "vertical-scroll-fade-mask";
+  fadeMaskVariant === "bottom"
+    ? (s = "vertical-scroll-fade-mask-bottom")
+    : fadeMaskVariant === "top" && (s = "vertical-scroll-fade-mask-top");
+  let c = peers.$(s, "flex w-full flex-1 flex-col overflow-y-auto", className);
+  return (
+    <div ref={listRef} className={c}>
+      {children}
+    </div>
+  );
 }

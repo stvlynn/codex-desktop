@@ -1,18 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EO — real body via extractFn(internal `fWa`) / export `CM`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `fWa`) / export `CM`.
 
 export type SeededActiveSvgIconPeers = {
-  resolveIcon: (args: {
-    seed: unknown;
-    active: boolean;
-    className?: string;
-  }) => ReactNode;
-  cx: (...parts: Array<string | false | null | undefined>) => string;
-  jsx: (type: unknown, props: Record<string, unknown>) => ReactNode;
+  $: (...args: unknown[]) => unknown;
+  WUa: (...args: unknown[]) => unknown;
+  eU: (...args: unknown[]) => unknown;
+  mWa: (...args: unknown[]) => unknown;
+  pWa: (...args: unknown[]) => unknown;
+  uWa: (...args: unknown[]) => unknown;
 };
-
 let peers: SeededActiveSvgIconPeers | null = null;
 
 /** Wire SeededActiveSvgIcon peers once companions land. */
@@ -24,23 +20,64 @@ export function setSeededActiveSvgIconPeers(
 
 /**
  * Bundle export `CM` / internal `fWa`.
- * Render a seeded SVG icon with active/inactive presentation.
  */
-export type SeededActiveSvgIconProps = {
-  seed: unknown;
-  active?: boolean;
-  className?: string;
-};
-
-export function SeededActiveSvgIcon(
-  props: SeededActiveSvgIconProps,
-): ReactElement {
-  if (peers == null)
+export function SeededActiveSvgIcon(props: unknown) {
+  if (peers == null) {
     throw new Error("SeededActiveSvgIcon peers are not configured");
-  const { seed, active = false, className } = props;
-  return peers.resolveIcon({
-    seed,
-    active,
-    className: peers.cx(className),
-  }) as ReactElement;
+  }
+  let { active = false, className, seed, ...rest } = props;
+  let s, c, l, u, d, f, p, m;
+  {
+    let e = peers.WUa(seed);
+    s = rest;
+    c = peers.$("shrink-0", className);
+    l = "-2 -1 24 24";
+    u = "none";
+    d = "crispEdges";
+    f = "http://www.w3.org/2000/svg";
+    p = e.cells.map((item) => {
+      return (
+        <rect
+          key={`${item.row}:${item.column}`}
+          className={active ? peers.uWa.filledScanCell : undefined}
+          x={item.column * peers.eU}
+          y={item.row * peers.eU}
+          width={peers.eU}
+          height={peers.eU}
+          fill={e.color}
+          style={
+            active
+              ? {
+                  animationDelay: `${item.animationDelayMs}ms`,
+                }
+              : undefined
+          }
+        />
+      );
+    });
+    m = active
+      ? e.scanCells.map((item) => {
+          return item.filled ? null : (
+            <rect
+              key={`scan:${item.row}:${item.column}`}
+              className={peers.uWa.emptyScanCell}
+              x={item.column * peers.eU}
+              y={item.row * peers.eU}
+              width={peers.eU}
+              height={peers.eU}
+              fill={e.color}
+              style={{
+                animationDelay: `${item.animationDelayMs}ms`,
+              }}
+            />
+          );
+        })
+      : null;
+  }
+  return (
+    <svg {...s} className={c} viewBox={l} fill={u} shapeRendering={d} xmlns={f}>
+      {p}
+      {m}
+    </svg>
+  );
 }

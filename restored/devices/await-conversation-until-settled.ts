@@ -1,18 +1,18 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `A6n`) / export `w3`.
+// Materialized via extractFn(internal `A6n`) / export `w3`.
 
 export type AwaitConversationUntilSettledPeers = {
-  conversationAtomFamily: unknown;
-  resolveSettledValue: (
-    conversation: unknown,
-    ignoreErrorSnapshot: unknown,
-  ) => unknown;
-  timeoutMs: number;
+  I6n: (...args: unknown[]) => unknown;
+  N6n: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  clearTimeout: (...args: unknown[]) => unknown;
+  sE: (...args: unknown[]) => unknown;
+  setTimeout: (...args: unknown[]) => unknown;
+  status: (...args: unknown[]) => unknown;
 };
-
 let peers: AwaitConversationUntilSettledPeers | null = null;
 
-/** Wire await-conversation-until-settled peers once companions land. */
+/** Wire awaitConversationUntilSettled peers once companions land. */
 export function setAwaitConversationUntilSettledPeers(
   next: AwaitConversationUntilSettledPeers,
 ): void {
@@ -21,54 +21,39 @@ export function setAwaitConversationUntilSettledPeers(
 
 /**
  * Bundle export `w3` / internal `A6n`.
- * Resolve when a conversation settles, or reject on timeout/error.
  */
 export function awaitConversationUntilSettled(
-  store: {
-    get: (atom: unknown, key: unknown) => unknown;
-    watch: (
-      selector: (api: {
-        get: (atom: unknown, key: unknown) => unknown;
-      }) => void,
-    ) => () => void;
-  },
-  conversationId: unknown,
-  options: { ignoreCurrentError?: boolean } = {},
-): Promise<unknown> {
+  e: unknown,
+  t: unknown,
+  { ignoreCurrentError = false }: Record<string, unknown> = {},
+) {
   if (peers == null) {
-    throw new Error("AwaitConversationUntilSettled peers are not configured");
+    throw new Error("awaitConversationUntilSettled peers are not configured");
   }
-  const { ignoreCurrentError = false } = options;
-  const current = store.get(peers.conversationAtomFamily, conversationId);
-  const ignoreSnapshot =
-    ignoreCurrentError &&
-    (current as { status?: string } | null)?.status === "errored"
-      ? current
-      : null;
-  const settled = peers.resolveSettledValue(current, ignoreSnapshot);
-  if (settled instanceof Error) return Promise.reject(settled);
-  if (settled != null) return Promise.resolve(settled);
-  return new Promise((resolve, reject) => {
-    let done = false;
-    let unwatch: (() => void) | undefined;
-    const finish = (value: unknown) => {
-      if (done) return;
-      done = true;
-      clearTimeout(timer);
-      unwatch?.();
-      if (value instanceof Error) reject(value);
-      else resolve(value);
-    };
-    const timer = setTimeout(() => {
-      finish(Error("Timed out waiting for remote control to connect"));
-    }, peers!.timeoutMs);
-    unwatch = store.watch(({ get }) => {
-      const next = peers!.resolveSettledValue(
-        get(peers!.conversationAtomFamily, conversationId),
-        ignoreSnapshot,
-      );
-      if (next != null) finish(next);
-    });
-    if (done) unwatch();
-  });
+  let r = e.get(peers.sE, t),
+    i = ignoreCurrentError && r?.status === "errored" ? r : null,
+    a = peers.N6n(r, i);
+  return a instanceof Error
+    ? Promise.reject(a)
+    : a == null
+      ? new Promise((n, r) => {
+          let a = false,
+            o,
+            s = (e) => {
+              a ||
+                ((a = true),
+                peers.clearTimeout(peers.c),
+                o?.(),
+                e instanceof Error ? r(e) : n(e));
+            },
+            c = peers.setTimeout(() => {
+              s(Error("Timed out waiting for remote control to connect"));
+            }, peers.I6n);
+          o = e.watch(({ get }) => {
+            let n = peers.N6n(get(peers.sE, t), i);
+            n != null && s(n);
+          });
+          a && o();
+        })
+      : Promise.resolve(a);
 }

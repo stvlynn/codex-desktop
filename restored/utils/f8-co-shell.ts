@@ -1,26 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export F8 / tYn
+// Materialized via extractFn(internal `tYn`) / export `F8`.
 
 export type F8CoShellPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  rT: (...args: unknown[]) => unknown;
 };
 
 let peers: F8CoShellPeers | null = null;
 
-/** Wire f8CoShell once companions land. */
+/** Wire f8CoShell peers once companions land. */
 export function setF8CoShellPeers(next: F8CoShellPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `F8` / internal `tYn`.
- * Stage-3 fill for bundle export F8 / tYn
  */
-export function f8CoShell(...args: unknown[]): unknown {
+export function f8CoShell() {
   if (peers == null) {
     throw new Error("f8CoShell peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ta(peers.rT, null);
 }

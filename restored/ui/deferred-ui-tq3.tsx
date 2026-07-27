@@ -1,41 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export tq / g3r
+// Materialized via extractFn(internal `g3r`) / export `tq`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BinddeferredUiTq3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBinddeferredUiTq3Peers = {
+  Hf: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  tp: (...args: unknown[]) => unknown;
 };
 
-type BinddeferredUiTq3Impl = (props: BinddeferredUiTq3Props) => ReactNode;
-let impl: BinddeferredUiTq3Impl | null = null;
+let peers: BindBinddeferredUiTq3Peers | null = null;
 
-/** Wire the full BinddeferredUiTq3 once deeper restore lands. */
-export function bindBinddeferredUiTq3(next: BinddeferredUiTq3Impl): void {
-  impl = next;
+/** Wire bindBinddeferredUiTq3 peers once companions land. */
+export function setBindBinddeferredUiTq3Peers(next: BindBinddeferredUiTq3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `tq` / internal `g3r`.
- * Stage-3 fill for bundle export tq / g3r; heavy UI via bind.
  */
-export function BinddeferredUiTq3(props: BinddeferredUiTq3Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fh-scaffold="tq"
-      aria-label="BinddeferredUiTq3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export tq / g3r
-        </div>
-      )}
-    </div>
-  );
+export function bindBinddeferredUiTq3() {
+  if (peers == null) {
+    throw new Error("bindBinddeferredUiTq3 peers are not configured");
+  }
+
+  return peers.tp(peers.Q, `email-domain-mail-provider`, (e) => ({
+    enabled: e != null,
+    params:
+      e == null
+        ? void 0
+        : {
+            domain: e,
+          },
+    retry: 2,
+    staleTime: peers.Hf.FIVE_MINUTES,
+  }));
 }

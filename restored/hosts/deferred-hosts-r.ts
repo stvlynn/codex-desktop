@@ -1,26 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export r / jEu
+// Materialized via extractFn(internal `jEu`) / export `r`.
 
 export type DeferredHostsRPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  C2r: (...args: unknown[]) => unknown;
+  Gf: (...args: unknown[]) => unknown;
+  NSo: (...args: unknown[]) => unknown;
+  Vf: (...args: unknown[]) => unknown;
+  __: (...args: unknown[]) => unknown;
+  ap: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredHostsRPeers | null = null;
 
-/** Wire deferredHostsR once companions land. */
+/** Wire deferredHostsR peers once companions land. */
 export function setDeferredHostsRPeers(next: DeferredHostsRPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `r` / internal `jEu`.
- * Stage-3 fill for bundle export r / jEu
  */
-export function deferredHostsR(...args: unknown[]): unknown {
+export function deferredHostsR() {
   if (peers == null) {
     throw new Error("deferredHostsR peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Au(), peers.Vf(), peers.C2r(), peers.__(), peers.NSo(), peers.Gf(), peers.ap();
+  });
 }

@@ -6,9 +6,7 @@ import { OPENAI_BUNDLED_ID } from "./openai-bundled-id";
 /**
  * Bundle `j_e` / export `Fht` — whether a marketplace name is openai-bundled.
  */
-export function isOpenaiBundledId(
-  marketplaceName: string | null | undefined,
-): boolean {
+export function isOpenaiBundledId(marketplaceName: string | null | undefined): boolean {
   return marketplaceName === OPENAI_BUNDLED_ID;
 }
 

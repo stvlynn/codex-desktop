@@ -1,48 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Sgt / pge
+// Materialized via extractFn(internal `pge`) / export `Sgt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredConversationSgtProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredConversationSgtPeers = {
+  e: (...args: unknown[]) => unknown;
+  fge: (...args: unknown[]) => unknown;
 };
 
-type DeferredConversationSgtImpl = (
-  props: DeferredConversationSgtProps,
-) => ReactNode;
-let impl: DeferredConversationSgtImpl | null = null;
+let peers: BindDeferredConversationSgtPeers | null = null;
 
-/** Wire the full DeferredConversationSgt once deeper restore lands. */
-export function bindDeferredConversationSgt(
-  next: DeferredConversationSgtImpl,
-): void {
-  impl = next;
+/** Wire bindDeferredConversationSgt peers once companions land. */
+export function setBindDeferredConversationSgtPeers(next: BindDeferredConversationSgtPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Sgt` / internal `pge`.
- * Stage-3 fill for bundle export Sgt / pge; heavy UI via bind.
  */
-export function DeferredConversationSgt(
-  props: DeferredConversationSgtProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="Sgt"
-      aria-label="DeferredConversationSgt"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Sgt / pge
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredConversationSgt() {
+  if (peers == null) {
+    throw new Error("bindDeferredConversationSgt peers are not configured");
+  }
+
+  return peers.e(() => {
+    fge = 256 * 1024 * 1024;
+  });
 }

@@ -1,26 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Xst / Pot
+// Materialized via extractFn(internal `Pot`) / export `Xst`.
 
 export type BindSubAgent2Peers = {
-  impl: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  Not: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindSubAgent2Peers | null = null;
 
-/** Wire bindSubAgent2 once companions land. */
+/** Wire bindSubAgent2 peers once companions land. */
 export function setBindSubAgent2Peers(next: BindSubAgent2Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Xst` / internal `Pot`.
- * Stage-3 fill for bundle export Xst / Pot
  */
-export function bindSubAgent2(...args: unknown[]): unknown {
+export function bindSubAgent2() {
   if (peers == null) {
     throw new Error("bindSubAgent2 peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Au(), Not = [`final`];
+  });
 }

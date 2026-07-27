@@ -1,42 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export XQ / Tjr
+// Materialized via extractFn(internal `Tjr`) / export `XQ`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindBrowser2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindBrowser2Peers = {
+  Au: (...args: unknown[]) => unknown;
+  Cjr: (...args: unknown[]) => unknown;
+  Qf: (...args: unknown[]) => unknown;
+  Sjr: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  Wh: (...args: unknown[]) => unknown;
+  bjr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  il: (...args: unknown[]) => unknown;
+  sl: (...args: unknown[]) => unknown;
+  ujr: (...args: unknown[]) => unknown;
+  wjr: (...args: unknown[]) => unknown;
+  xjr: (...args: unknown[]) => unknown;
 };
 
-type BindBrowser2Impl = (props: BindBrowser2Props) => ReactNode;
-let impl: BindBrowser2Impl | null = null;
+let peers: BindBindBrowser2Peers | null = null;
 
-/** Wire the full BindBrowser2 once deeper restore lands. */
-export function bindBindBrowser2(next: BindBrowser2Impl): void {
-  impl = next;
+/** Wire bindBindBrowser2 peers once companions land. */
+export function setBindBindBrowser2Peers(next: BindBindBrowser2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `XQ` / internal `Tjr`.
- * Stage-3 fill for bundle export XQ / Tjr; heavy UI via bind.
  */
-export function BindBrowser2(props: BindBrowser2Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="XQ"
-      aria-label="BindBrowser2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export XQ / Tjr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindBrowser2() {
+  if (peers == null) {
+    throw new Error("bindBindBrowser2 peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Au(), peers.Sl(), peers.ujr(), peers.Wh(), peers.Qf(), bjr = 100, xjr = peers.sl({
+      mfa_enabled_v2: peers.il()
+    }), Sjr = class extends Error {}, Cjr = class extends Error {}, wjr = class extends Error {};
+  });
 }

@@ -1,41 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Yot / M_
+// Materialized via extractFn(internal `M_`) / export `Yot`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredYotProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredYotPeers = {
+  GEt: (...args: unknown[]) => unknown;
+  KEt: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  qEt: (...args: unknown[]) => unknown;
 };
 
-type DeferredYotImpl = (props: DeferredYotProps) => ReactNode;
-let impl: DeferredYotImpl | null = null;
+let peers: BindDeferredYotPeers | null = null;
 
-/** Wire the full DeferredYot once deeper restore lands. */
-export function bindDeferredYot(next: DeferredYotImpl): void {
-  impl = next;
+/** Wire bindDeferredYot peers once companions land. */
+export function setBindDeferredYotPeers(next: BindDeferredYotPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Yot` / internal `M_`.
- * Stage-3 fill for bundle export Yot / M_; heavy UI via bind.
  */
-export function DeferredYot(props: DeferredYotProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fo-scaffold="Yot"
-      aria-label="DeferredYot"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Yot / M_
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredYot() {
+  if (peers == null) {
+    throw new Error("bindDeferredYot peers are not configured");
+  }
+
+  return peers.e(() => {
+    GEt = `PLEASE IMPLEMENT THIS PLAN:`, KEt = `item/plan/requestImplementation`, qEt = `implement-plan:`;
+  });
 }

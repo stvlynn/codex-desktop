@@ -17,9 +17,7 @@ type HiddenBrowserUseWebviewHostImpl = (
 let impl: HiddenBrowserUseWebviewHostImpl | null = null;
 
 /** Wire the full HiddenBrowserUseWebviewHost once deeper companion restore lands. */
-export function bindHiddenBrowserUseWebviewHost(
-  next: HiddenBrowserUseWebviewHostImpl,
-): void {
+export function bindHiddenBrowserUseWebviewHost(next: HiddenBrowserUseWebviewHostImpl): void {
   impl = next;
 }
 

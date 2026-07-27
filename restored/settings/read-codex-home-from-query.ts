@@ -13,8 +13,6 @@ export function bindReadCodexHomeFromQuery(next: ReadCodexHomeQuery): void {
 }
 
 /** Read `codexHome` from the bound query hook result. */
-export function readCodexHomeFromQuery(
-  input: unknown,
-): string | null | undefined {
+export function readCodexHomeFromQuery(input: unknown): string | null | undefined {
   return readCodexHomeQuery?.(input).data?.codexHome;
 }

@@ -1,48 +1,48 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DY — real body via extractFn(internal `bXs`) / export `dg`.
+// Materialized via extractFn(internal `bXs`) / export `dg`.
 
-import type { CSSProperties, ReactElement } from "react";
-
-export type PageRelativeRect = {
-  height: number;
-  width: number;
-  x: number;
-  y: number;
+export type PageRelativeRectOverlayPeers = {
+  M$: (...args: unknown[]) => unknown;
+  OXs: (...args: unknown[]) => unknown;
+  dXs: (...args: unknown[]) => unknown;
+  fXs: (...args: unknown[]) => unknown;
 };
+let peers: PageRelativeRectOverlayPeers | null = null;
 
-export type PageRelativeRectOverlayProps = {
-  pageSize: { height: number; width: number };
-  rect: PageRelativeRect;
-  testId?: string;
-};
-
-const OVERLAY_BACKGROUND =
-  "color-mix(in srgb, var(--color-text-accent, var(--color-accent-blue)) 20%, transparent)";
-const OVERLAY_BORDER = "var(--color-text-accent, var(--color-accent-blue))";
+/** Wire PageRelativeRectOverlay peers once companions land. */
+export function setPageRelativeRectOverlayPeers(
+  next: PageRelativeRectOverlayPeers,
+): void {
+  peers = next;
+}
 
 /**
  * Bundle export `dg` / internal `bXs`.
- * Percent-positioned dashed rect overlay relative to pageSize.
  */
-export function PageRelativeRectOverlay(
-  props: PageRelativeRectOverlayProps,
-): ReactElement {
-  const { pageSize, rect, testId } = props;
-  const style: CSSProperties = {
-    backgroundColor: OVERLAY_BACKGROUND,
-    borderColor: OVERLAY_BORDER,
-    borderStyle: "dashed",
-    borderWidth: 2,
-    height: `${(rect.height / pageSize.height) * 100}%`,
-    left: `${(rect.x / pageSize.width) * 100}%`,
-    top: `${(rect.y / pageSize.height) * 100}%`,
-    width: `${(rect.width / pageSize.width) * 100}%`,
-  };
+export function PageRelativeRectOverlay(props: unknown) {
+  if (peers == null) {
+    throw new Error("PageRelativeRectOverlay peers are not configured");
+  }
+  let { pageSize, rect, testId } = props,
+    a = `${(rect.height / pageSize.height) * 100}%`,
+    o = `${(rect.x / pageSize.width) * 100}%`,
+    s = `${(rect.y / pageSize.height) * 100}%`,
+    c = `${(rect.width / pageSize.width) * 100}%`,
+    l = {
+      backgroundColor: peers.fXs,
+      borderColor: peers.dXs,
+      borderStyle: "dashed",
+      borderWidth: 2,
+      height: a,
+      left: o,
+      top: s,
+      width: c,
+    };
   return (
     <div
       className="pointer-events-none absolute box-border shadow-[inset_0_0_0_1px_rgba(255,255,255,0.28)]"
       data-testid={testId}
-      style={style}
+      style={l}
     />
   );
 }

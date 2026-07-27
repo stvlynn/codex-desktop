@@ -17,9 +17,7 @@ const WELCOME_V2_ROLE_ID_SET: ReadonlySet<string> = new Set(
  * `"default"` → engineering; unknown roles → `something_else`; known catalog
  * keys pass through.
  */
-export function normalizeWelcomeV2Role(
-  role: WelcomeV2RoleInput,
-): WelcomeV2RoleId {
+export function normalizeWelcomeV2Role(role: WelcomeV2RoleInput): WelcomeV2RoleId {
   if (role === "default") {
     return DEFAULT_WELCOME_V2_ROLE_ID;
   }

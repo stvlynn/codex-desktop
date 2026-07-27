@@ -7,9 +7,6 @@ import {
 } from "./credits-usage-week-helpers";
 
 /** Add UTC days to the credits-usage chart start date for `todayIso`. */
-export function addUtcDaysToCreditsUsageStart(
-  days: number,
-  todayIso: string,
-): string {
+export function addUtcDaysToCreditsUsageStart(days: number, todayIso: string): string {
   return addUtcDaysIso(creditsUsageStartDateIso(todayIso), days);
 }

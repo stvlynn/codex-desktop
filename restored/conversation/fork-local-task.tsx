@@ -1,42 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export yv / ejs
+// Materialized via extractFn(internal `ejs`) / export `yv`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindForkLocalTaskProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindForkLocalTaskPeers = {
+  $As: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  Gf: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Mo: (...args: unknown[]) => unknown;
+  PXr: (...args: unknown[]) => unknown;
+  QAs: (...args: unknown[]) => unknown;
+  SA: (...args: unknown[]) => unknown;
+  ZAs: (...args: unknown[]) => unknown;
+  ap: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  lQr: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
-type BindForkLocalTaskImpl = (props: BindForkLocalTaskProps) => ReactNode;
-let impl: BindForkLocalTaskImpl | null = null;
+let peers: BindBindForkLocalTaskPeers | null = null;
 
-/** Wire the full BindForkLocalTask once deeper restore lands. */
-export function bindBindForkLocalTask(next: BindForkLocalTaskImpl): void {
-  impl = next;
+/** Wire bindBindForkLocalTask peers once companions land. */
+export function setBindBindForkLocalTaskPeers(next: BindBindForkLocalTaskPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `yv` / internal `ejs`.
- * Stage-3 fill for bundle export yv / ejs; heavy UI via bind.
  */
-export function BindForkLocalTask(props: BindForkLocalTaskProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fc-scaffold="yv"
-      aria-label="BindForkLocalTask"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export yv / ejs
-        </div>
-      )}
-    </div>
-  );
+export function bindBindForkLocalTask() {
+  if (peers == null) {
+    throw new Error("bindBindForkLocalTask peers are not configured");
+  }
+
+  return peers.e(() => {
+    ZAs = peers.c(), QAs = peers.r(peers.Mo(), 1), peers.Ho(), peers.Au(), $As = peers.r(peers.o(), 1), peers.SA(), peers.ap(), peers.Gf(), peers.lQr(), peers.PXr();
+  });
 }

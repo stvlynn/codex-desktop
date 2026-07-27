@@ -1,42 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export TC / AX
+// Materialized via extractFn(internal `AX`) / export `TC`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredTCProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredTCPeers = {
+  Ho: (...args: unknown[]) => unknown;
+  KM: (...args: unknown[]) => unknown;
+  Kj: (...args: unknown[]) => unknown;
+  Xrs: (...args: unknown[]) => unknown;
+  Yrs: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  hj: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredTCImpl = (props: BindDeferredTCProps) => ReactNode;
-let impl: BindDeferredTCImpl | null = null;
+let peers: BindBindDeferredTCPeers | null = null;
 
-/** Wire the full BindDeferredTC once deeper restore lands. */
-export function bindBindDeferredTC(next: BindDeferredTCImpl): void {
-  impl = next;
+/** Wire bindBindDeferredTC peers once companions land. */
+export function setBindBindDeferredTCPeers(next: BindBindDeferredTCPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `TC` / internal `AX`.
- * Stage-3 fill for bundle export TC / AX; heavy UI via bind.
  */
-export function BindDeferredTC(props: BindDeferredTCProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="TC"
-      aria-label="BindDeferredTC"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export TC / AX
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredTC() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredTC peers are not configured");
+  }
+
+  return peers.e(() => {
+    Yrs = peers.c(), peers.Ho(), Xrs = peers.r(peers.o(), 1), peers.hj(), peers.Kj(), peers.KM();
+  });
 }

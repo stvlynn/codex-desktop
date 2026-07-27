@@ -1,48 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Sgt / pge
+// Materialized via extractFn(internal `pge`) / export `Sgt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindVscodeCapnRpcMessageProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindVscodeCapnRpcMessagePeers = {
+  e: (...args: unknown[]) => unknown;
+  fge: (...args: unknown[]) => unknown;
 };
 
-type BindVscodeCapnRpcMessageImpl = (
-  props: BindVscodeCapnRpcMessageProps,
-) => ReactNode;
-let impl: BindVscodeCapnRpcMessageImpl | null = null;
+let peers: BindBindVscodeCapnRpcMessagePeers | null = null;
 
-/** Wire the full BindVscodeCapnRpcMessage once deeper restore lands. */
-export function bindBindVscodeCapnRpcMessage(
-  next: BindVscodeCapnRpcMessageImpl,
-): void {
-  impl = next;
+/** Wire bindBindVscodeCapnRpcMessage peers once companions land. */
+export function setBindBindVscodeCapnRpcMessagePeers(next: BindBindVscodeCapnRpcMessagePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Sgt` / internal `pge`.
- * Stage-3 fill for bundle export Sgt / pge; heavy UI via bind.
  */
-export function BindVscodeCapnRpcMessage(
-  props: BindVscodeCapnRpcMessageProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fp-scaffold="Sgt"
-      aria-label="BindVscodeCapnRpcMessage"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Sgt / pge
-        </div>
-      )}
-    </div>
-  );
+export function bindBindVscodeCapnRpcMessage() {
+  if (peers == null) {
+    throw new Error("bindBindVscodeCapnRpcMessage peers are not configured");
+  }
+
+  return peers.e(() => {
+    fge = 256 * 1024 * 1024;
+  });
 }

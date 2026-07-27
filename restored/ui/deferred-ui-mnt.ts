@@ -1,25 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export mnt / uYt
+// Materialized via extractFn(internal `uYt`) / export `mnt`.
 
 export type BindDeferredUiMntPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Vy: (...args: unknown[]) => unknown;
+  _createSVG: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  lYt: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiMntPeers | null = null;
 
-/** Wire bindDeferredUiMnt once companions land. */
+/** Wire bindDeferredUiMnt peers once companions land. */
 export function setBindDeferredUiMntPeers(next: BindDeferredUiMntPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `mnt` / internal `uYt`.
- * Stage-3 fill for bundle export mnt / uYt
  */
-export function bindDeferredUiMnt(...args: unknown[]): unknown {
+export function bindDeferredUiMnt() {
   if (peers == null) {
     throw new Error("bindDeferredUiMnt peers are not configured");
   }
-  return peers.impl(...args);
+
+  return class extends peers.lYt {
+    _createSVG(e) {
+      return document.createElementNS(peers.Vy, peers.e);
+    }
+  };
 }

@@ -1,27 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `Ica`) / export `jL`.
+// Materialized via extractFn(internal `Ica`) / export `jL`.
 
 export type UseShikiHighlightContextPeers = {
-  useContext: (context: unknown) => unknown;
-  shikiHighlightContext: unknown;
+  Lca: (...args: unknown[]) => unknown;
+  zca: (...args: unknown[]) => unknown;
 };
 
 let peers: UseShikiHighlightContextPeers | null = null;
 
-/** Wire Shiki highlight context peers once companions land. */
-export function setUseShikiHighlightContextPeers(
-  next: UseShikiHighlightContextPeers,
-): void {
+/** Wire useShikiHighlightContext peers once companions land. */
+export function setUseShikiHighlightContextPeers(next: UseShikiHighlightContextPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `jL` / internal `Ica`.
- * Read the Shiki highlight React context.
  */
-export function useShikiHighlightContext(): unknown {
+export function useShikiHighlightContext() {
   if (peers == null) {
-    throw new Error("UseShikiHighlightContext peers are not configured");
+    throw new Error("useShikiHighlightContext peers are not configured");
   }
-  return peers.useContext(peers.shikiHighlightContext);
+
+  return (0, peers.Lca.useContext)(peers.zca);
 }

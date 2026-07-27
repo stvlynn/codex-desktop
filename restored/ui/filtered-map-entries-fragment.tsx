@@ -1,20 +1,18 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `P1i`) / export `mB`.
-
-import type { ReactElement, ReactNode } from "react";
-import { Fragment } from "react";
+// Materialized via extractFn(internal `P1i`) / export `mB`.
 
 export type FilteredMapEntriesFragmentPeers = {
-  mapAtom: unknown;
-  useAtomValue: (atom: unknown) => Map<unknown, unknown>;
-  filterEntry: (entry: [unknown, unknown]) => boolean;
-  mapEntry: (entry: [unknown, unknown]) => unknown;
-  renderEntry: (mapped: unknown) => ReactNode;
+  F1i: (...args: unknown[]) => unknown;
+  I1i: (...args: unknown[]) => unknown;
+  L1i: (...args: unknown[]) => unknown;
+  Y: (...args: unknown[]) => unknown;
+  _z: (...args: unknown[]) => unknown;
+  hz: (...args: unknown[]) => unknown;
+  uz: (...args: unknown[]) => unknown;
 };
-
 let peers: FilteredMapEntriesFragmentPeers | null = null;
 
-/** Wire filtered map-entry peers once companions land. */
+/** Wire FilteredMapEntriesFragment peers once companions land. */
 export function setFilteredMapEntriesFragmentPeers(
   next: FilteredMapEntriesFragmentPeers,
 ): void {
@@ -23,19 +21,15 @@ export function setFilteredMapEntriesFragmentPeers(
 
 /**
  * Bundle export `mB` / internal `P1i`.
- * Render filtered map entries as a Fragment.
  */
-export function FilteredMapEntriesFragment(): ReactElement {
+export function FilteredMapEntriesFragment() {
   if (peers == null) {
     throw new Error("FilteredMapEntriesFragment peers are not configured");
   }
-  const map = peers.useAtomValue(peers.mapAtom);
+  let t = peers.Y(peers.uz);
   return (
-    <Fragment>
-      {Array.from(map.entries())
-        .filter(peers.filterEntry)
-        .map(peers.mapEntry)
-        .map(peers.renderEntry)}
-    </Fragment>
+    <>
+      {Array.from(t.entries()).filter(peers.L1i).map(peers.I1i).map(peers.F1i)}
+    </>
   );
 }

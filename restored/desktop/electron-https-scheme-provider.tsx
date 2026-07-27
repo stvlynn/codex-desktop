@@ -1,13 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `dFa`) / export `yN`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `dFa`) / export `yN`.
 
 export type ElectronHttpsSchemeProviderPeers = {
-  electronScheme: unknown;
-  renderProviders: (props: Record<string, unknown>) => ReactNode;
+  DH: (...args: unknown[]) => unknown;
+  EFa: (...args: unknown[]) => unknown;
+  cSe: (...args: unknown[]) => unknown;
+  fFa: (...args: unknown[]) => unknown;
+  hk: (...args: unknown[]) => unknown;
 };
-
 let peers: ElectronHttpsSchemeProviderPeers | null = null;
 
 /** Wire ElectronHttpsSchemeProvider peers once companions land. */
@@ -19,18 +19,27 @@ export function setElectronHttpsSchemeProviderPeers(
 
 /**
  * Bundle export `yN` / internal `dFa`.
- * Provide electron custom-scheme and browser https children.
  */
-export type ElectronHttpsSchemeProviderProps = Record<string, unknown>;
-
-export function ElectronHttpsSchemeProvider(
-  props: ElectronHttpsSchemeProviderProps,
-): ReactElement {
+export function ElectronHttpsSchemeProvider(props: unknown) {
+  const Hk = peers.hk;
+  const FFa = peers.fFa;
   if (peers == null) {
     throw new Error("ElectronHttpsSchemeProvider peers are not configured");
   }
-  return peers.renderProviders({
-    ...props,
-    electronScheme: peers.electronScheme,
-  }) as ReactElement;
+  let n = (
+    <Hk electron={true}>
+      <FFa {...props} scheme={peers.cSe} />
+    </Hk>
+  );
+  let r = (
+    <Hk browser={true} chromeExtension={true} extension={true}>
+      <FFa {...props} scheme="https" />
+    </Hk>
+  );
+  return (
+    <>
+      {n}
+      {r}
+    </>
+  );
 }

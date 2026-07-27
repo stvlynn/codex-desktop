@@ -9,9 +9,7 @@ export type PluginMarketplaceQuery = {
 };
 
 /** Parse plugin marketplace query-string (`x4i` / `Uz`). */
-export function parsePluginMarketplaceQuery(
-  search: string,
-): PluginMarketplaceQuery | null {
+export function parsePluginMarketplaceQuery(search: string): PluginMarketplaceQuery | null {
   const params = new URLSearchParams(search);
   const marketplacePath = params.get("marketplacePath")?.trim() || null;
   const remoteMarketplaceName =

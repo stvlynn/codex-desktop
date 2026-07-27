@@ -19,15 +19,12 @@ export type StringOrIntlMessage = string | IntlMessageDescriptor;
  */
 let impl: ((value: StringOrIntlMessage) => ReactNode) | null = null;
 
-export function bindRenderStringOrIntlMessage(
-  next: (value: StringOrIntlMessage) => ReactNode,
+export function bindRenderStringOrIntlMessage(next: (value: StringOrIntlMessage) => ReactNode,
 ): void {
   impl = next;
 }
 
-export function renderStringOrIntlMessage(
-  value: StringOrIntlMessage,
-): ReactElement {
+export function renderStringOrIntlMessage(value: StringOrIntlMessage): ReactElement {
   if (impl != null) return impl(value) as ReactElement;
   if (typeof value === "string") {
     return value as unknown as ReactElement;

@@ -4,9 +4,6 @@
 import isEqual from "lodash/isEqual";
 
 /** True when automation-like values differ under deep equality. */
-export function automationsNotShallowEqual(
-  left: unknown,
-  right: unknown,
-): boolean {
+export function automationsNotShallowEqual(left: unknown, right: unknown): boolean {
   return !isEqual(left, right);
 }

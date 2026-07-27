@@ -1,28 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export x3 / R6n
+// Materialized via extractFn(internal `R6n`) / export `x3`.
 
 export type BindDeferredHostsX3Peers = {
-  impl: (...args: unknown[]) => unknown;
+  L6n: (...args: unknown[]) => unknown;
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  sE: (...args: unknown[]) => unknown;
+  status: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredHostsX3Peers | null = null;
 
-/** Wire bindDeferredHostsX3 once companions land. */
-export function setBindDeferredHostsX3Peers(
-  next: BindDeferredHostsX3Peers,
-): void {
+/** Wire bindDeferredHostsX3 peers once companions land. */
+export function setBindDeferredHostsX3Peers(next: BindDeferredHostsX3Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `x3` / internal `R6n`.
- * Stage-3 fill for bundle export x3 / R6n
  */
-export function bindDeferredHostsX3(...args: unknown[]): unknown {
+export function bindDeferredHostsX3() {
   if (peers == null) {
     throw new Error("bindDeferredHostsX3 peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Oa(peers.Q, (e, {
+    get: t
+  }) => {
+    let n = t(peers.sE, e);
+    return !t(peers.L6n, e) && (n?.status === `connecting` || n?.status === `connected`);
+  });
 }

@@ -16,9 +16,7 @@ type AvatarOverlayNativePageImpl = (
 ) => ReactNode;
 let impl: AvatarOverlayNativePageImpl | null = null;
 
-export function bindAvatarOverlayNativePage(
-  next: AvatarOverlayNativePageImpl,
-): void {
+export function bindAvatarOverlayNativePage(next: AvatarOverlayNativePageImpl): void {
   impl = next;
 }
 

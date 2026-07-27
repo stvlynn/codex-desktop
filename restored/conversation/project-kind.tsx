@@ -1,42 +1,49 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export upt / RDe
+// Materialized via extractFn(internal `RDe`) / export `upt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindProjectKindProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindProjectKindPeers = {
+  IDe: (...args: unknown[]) => unknown;
+  LDe: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  X: (...args: unknown[]) => unknown;
+  al: (...args: unknown[]) => unknown;
+  dl: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fl: (...args: unknown[]) => unknown;
+  il: (...args: unknown[]) => unknown;
+  ml: (...args: unknown[]) => unknown;
+  sl: (...args: unknown[]) => unknown;
 };
 
-type BindProjectKindImpl = (props: BindProjectKindProps) => ReactNode;
-let impl: BindProjectKindImpl | null = null;
+let peers: BindBindProjectKindPeers | null = null;
 
-/** Wire the full BindProjectKind once deeper restore lands. */
-export function bindBindProjectKind(next: BindProjectKindImpl): void {
-  impl = next;
+/** Wire bindBindProjectKind peers once companions land. */
+export function setBindBindProjectKindPeers(next: BindBindProjectKindPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `upt` / internal `RDe`.
- * Stage-3 fill for bundle export upt / RDe; heavy UI via bind.
  */
-export function BindProjectKind(props: BindProjectKindProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="upt"
-      aria-label="BindProjectKind"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export upt / RDe
-        </div>
-      )}
-    </div>
-  );
+export function bindBindProjectKind() {
+  if (peers == null) {
+    throw new Error("bindBindProjectKind peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Sl(), IDe = peers.dl(`projectKind`, [peers.sl({
+      projectKind: peers.ml(`local`),
+      projectId: peers.X(),
+      path: peers.X().optional(),
+      cwd: peers.X().optional(),
+      pendingCoreUpdate: peers.il()
+    }), peers.sl({
+      projectKind: peers.ml(`remote`),
+      projectId: peers.X(),
+      path: peers.X(),
+      cwd: peers.X().optional(),
+      hostId: peers.X().optional(),
+      pendingCoreUpdate: peers.il()
+    })]), LDe = peers.fl(peers.X(), peers.al());
+  });
 }

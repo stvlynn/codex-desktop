@@ -14,9 +14,7 @@ type PopcornPageNumberNavigationImpl = (
 let impl: PopcornPageNumberNavigationImpl | null = null;
 
 /** Wire the full PopcornPageNumberNavigation once deeper restore lands. */
-export function bindPopcornPageNumberNavigation(
-  next: PopcornPageNumberNavigationImpl,
-): void {
+export function bindPopcornPageNumberNavigation(next: PopcornPageNumberNavigationImpl): void {
   impl = next;
 }
 
@@ -24,9 +22,7 @@ export function bindPopcornPageNumberNavigation(
  * Bindable PopcornPageNumberNavigation.
  * Alias ownership unresolved — do not invent extractFn body.
  */
-export function PopcornPageNumberNavigation(
-  props: PopcornPageNumberNavigationProps,
-): ReactElement {
+export function PopcornPageNumberNavigation(props: PopcornPageNumberNavigationProps): ReactElement {
   if (impl == null) {
     return (
       <div

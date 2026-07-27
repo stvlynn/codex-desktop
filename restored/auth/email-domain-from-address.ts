@@ -2,9 +2,7 @@
 // Bundle `d3r` / export `nq`.
 
 /** Domain part after `@`, lowercased; null when missing/empty. */
-export function emailDomainFromAddress(
-  value: string | null | undefined,
-): string | null {
+export function emailDomainFromAddress(value: string | null | undefined): string | null {
   if (value == null) return null;
   const at = value.lastIndexOf("@");
   if (at <= 0) return null;

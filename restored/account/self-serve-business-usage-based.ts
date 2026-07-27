@@ -10,9 +10,7 @@ export type BindSelfServeBusinessUsageBasedPeers = {
 let peers: BindSelfServeBusinessUsageBasedPeers | null = null;
 
 /** Wire bindSelfServeBusinessUsageBased once companions land. */
-export function setBindSelfServeBusinessUsageBasedPeers(
-  next: BindSelfServeBusinessUsageBasedPeers,
-): void {
+export function setBindSelfServeBusinessUsageBasedPeers(next: BindSelfServeBusinessUsageBasedPeers): void {
   peers = next;
 }
 

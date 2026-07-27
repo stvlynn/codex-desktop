@@ -1,42 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export l5 / oKn
+// Materialized via extractFn(internal `oKn`) / export `l5`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type GithubProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindGithubPeers = {
+  aKn: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  iKn: (...args: unknown[]) => unknown;
+  rKn: (...args: unknown[]) => unknown;
 };
 
-type GithubImpl = (props: GithubProps) => ReactNode;
-let impl: GithubImpl | null = null;
+let peers: BindGithubPeers | null = null;
 
-/** Wire the full Github once deeper restore lands. */
-export function bindGithub(next: GithubImpl): void {
-  impl = next;
+/** Wire bindGithub peers once companions land. */
+export function setBindGithubPeers(next: BindGithubPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `l5` / internal `oKn`.
- * Stage-3 fill for bundle export l5 / oKn; heavy UI via bind.
  */
-export function Github(props: GithubProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="l5"
-      aria-label="Github"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export l5 / oKn
-        </div>
-      )}
-    </div>
-  );
+export function bindGithub() {
+  if (peers == null) {
+    throw new Error("bindGithub peers are not configured");
+  }
+
+  return peers.e(() => {
+    rKn = new Set([`GH`, `IA`, `MCP`, `API`, `CI`, `CLI`, `LLM`, `PDF`, `PR`, `UI`, `URL`, `SQL`, `TW`, `GPU`, `CPU`]), iKn = new Map([[`openai`, `OpenAI`], [`openaideveloperdocs`, `OpenAI Developer Docs`], [`openapi`, `OpenAPI`], [`github`, `GitHub`], [`pagerduty`, `PagerDuty`], [`datadog`, `DataDog`], [`sharepoint`, `SharePoint`], [`sqlite`, `SQLite`], [`fastapi`, `FastAPI`]]), aKn = new Set([`and`, `or`, `to`, `up`, `with`]);
+  });
 }

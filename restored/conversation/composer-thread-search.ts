@@ -1,28 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export mM / Rqa
+// Materialized via extractFn(internal `Rqa`) / export `mM`.
 
 export type BindComposerThreadSearchPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  HA: (...args: unknown[]) => unknown;
+  K_: (...args: unknown[]) => unknown;
+  WH: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  oT: (...args: unknown[]) => unknown;
+  x_: (...args: unknown[]) => unknown;
 };
 
 let peers: BindComposerThreadSearchPeers | null = null;
 
-/** Wire bindComposerThreadSearch once companions land. */
-export function setBindComposerThreadSearchPeers(
-  next: BindComposerThreadSearchPeers,
-): void {
+/** Wire bindComposerThreadSearch peers once companions land. */
+export function setBindComposerThreadSearchPeers(next: BindComposerThreadSearchPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `mM` / internal `Rqa`.
- * Stage-3 fill for bundle export mM / Rqa
  */
-export function bindComposerThreadSearch(...args: unknown[]): unknown {
+export function bindComposerThreadSearch() {
   if (peers == null) {
     throw new Error("bindComposerThreadSearch peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Au(), peers.WH(), peers.x_(), peers.oT(), peers.K_(), peers.HA();
+  });
 }

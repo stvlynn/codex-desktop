@@ -1,48 +1,45 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export vrt / Xv
+// Materialized via extractFn(internal `Xv`) / export `vrt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type PopcornElectronPresentationPanelProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindPopcornElectronPresentationPanelPeers = {
+  fVt: (...args: unknown[]) => unknown;
+  mVt: (...args: unknown[]) => unknown;
+  vVt: (...args: unknown[]) => unknown;
 };
+let peers: BindPopcornElectronPresentationPanelPeers | null = null;
 
-type PopcornElectronPresentationPanelImpl = (
-  props: PopcornElectronPresentationPanelProps,
-) => ReactNode;
-let impl: PopcornElectronPresentationPanelImpl | null = null;
-
-/** Wire the full PopcornElectronPresentationPanel once deeper restore lands. */
-export function bindPopcornElectronPresentationPanel(
-  next: PopcornElectronPresentationPanelImpl,
+/** Wire bindPopcornElectronPresentationPanel peers once companions land. */
+export function setBindPopcornElectronPresentationPanelPeers(
+  next: BindPopcornElectronPresentationPanelPeers,
 ): void {
-  impl = next;
+  peers = next;
 }
 
 /**
  * Bundle export `vrt` / internal `Xv`.
- * Stage-3 fill for bundle export vrt / Xv; heavy UI via bind.
  */
-export function PopcornElectronPresentationPanel(
-  props: PopcornElectronPresentationPanelProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-es-scaffold="vrt"
-      aria-label="PopcornElectronPresentationPanel"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export vrt / Xv
-        </div>
-      )}
-    </div>
-  );
-}
+export const bindPopcornElectronPresentationPanel = (e) => {
+  if (peers == null) {
+    throw new Error(
+      "bindPopcornElectronPresentationPanel peers are not configured",
+    );
+  }
+  let { collisionRect, droppableRects, droppableContainers } = e,
+    i = peers.vVt(collisionRect, collisionRect.left, collisionRect.top),
+    a = [];
+  for (let e of droppableContainers) {
+    let { id } = e,
+      r = droppableRects.get(id);
+    if (r) {
+      let n = peers.fVt(peers.vVt(r), i);
+      a.push({
+        id,
+        data: {
+          droppableContainer: e,
+          value: n,
+        },
+      });
+    }
+  }
+  return a.sort(peers.mVt);
+};

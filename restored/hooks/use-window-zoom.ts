@@ -12,10 +12,7 @@ export function useWindowZoom(): number {
 }
 
 /** Bundle `Rm` / export `eut` — convert layout px → CSS px under window zoom. */
-export function divideByWindowZoom(
-  valuePx: number,
-  windowZoom: number,
-): number {
+export function divideByWindowZoom(valuePx: number, windowZoom: number): number {
   return valuePx / windowZoom;
 }
 

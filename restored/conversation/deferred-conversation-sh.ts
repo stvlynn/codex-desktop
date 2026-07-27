@@ -1,28 +1,39 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Sh / z4s
+// Materialized via extractFn(internal `z4s`) / export `Sh`.
 
 export type DeferredConversationShPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Fh: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  L4s: (...args: unknown[]) => unknown;
+  NN: (...args: unknown[]) => unknown;
+  O4s: (...args: unknown[]) => unknown;
+  OE: (...args: unknown[]) => unknown;
+  R4s: (...args: unknown[]) => unknown;
+  aN: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fr: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  zZ: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredConversationShPeers | null = null;
 
-/** Wire deferredConversationSh once companions land. */
-export function setDeferredConversationShPeers(
-  next: DeferredConversationShPeers,
-): void {
+/** Wire deferredConversationSh peers once companions land. */
+export function setDeferredConversationShPeers(next: DeferredConversationShPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Sh` / internal `z4s`.
- * Stage-3 fill for bundle export Sh / z4s
  */
-export function deferredConversationSh(...args: unknown[]): unknown {
+export function deferredConversationSh() {
   if (peers == null) {
     throw new Error("deferredConversationSh peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    L4s = peers.c(), peers.fr(), peers.Ho(), R4s = peers.r(peers.o(), 1), peers.aN(), peers.zZ(), peers.OE(), peers.Fh(), peers.NN(), peers.O4s();
+  });
 }

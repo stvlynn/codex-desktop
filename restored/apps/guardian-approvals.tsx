@@ -1,42 +1,39 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Fq / n4r
+// Materialized via extractFn(internal `n4r`) / export `Fq`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type GuardianApprovalsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindGuardianApprovalsPeers = {
+  Ap: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  X2r: (...args: unknown[]) => unknown;
+  Z2r: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  e4r: (...args: unknown[]) => unknown;
+  ime: (...args: unknown[]) => unknown;
+  kp: (...args: unknown[]) => unknown;
+  od: (...args: unknown[]) => unknown;
+  t4r: (...args: unknown[]) => unknown;
 };
 
-type GuardianApprovalsImpl = (props: GuardianApprovalsProps) => ReactNode;
-let impl: GuardianApprovalsImpl | null = null;
+let peers: BindGuardianApprovalsPeers | null = null;
 
-/** Wire the full GuardianApprovals once deeper restore lands. */
-export function bindGuardianApprovals(next: GuardianApprovalsImpl): void {
-  impl = next;
+/** Wire bindGuardianApprovals peers once companions land. */
+export function setBindGuardianApprovalsPeers(next: BindGuardianApprovalsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Fq` / internal `n4r`.
- * Stage-3 fill for bundle export Fq / n4r; heavy UI via bind.
  */
-export function GuardianApprovals(props: GuardianApprovalsProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-er-scaffold="Fq"
-      aria-label="GuardianApprovals"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Fq / n4r
-        </div>
-      )}
-    </div>
-  );
+export function bindGuardianApprovals() {
+  if (peers == null) {
+    throw new Error("bindGuardianApprovals peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Au(), peers.Ap(), peers.od(), peers.Z2r(), e4r = peers.kp(peers.ime, {}, {
+      getOnInit: !1
+    }), t4r = peers.kp(peers.X2r, {}, {
+      getOnInit: !1
+    });
+  });
 }

@@ -30,8 +30,7 @@ let findNextMention:
 let unescapeMentionPath: ((path: string) => string) | null = null;
 
 /** Wire markdown mention scanner (`n_` in the bundle). */
-export function setMentionScanner(
-  fn: (text: string, from: number) => MentionMatch | null,
+export function setMentionScanner(fn: (text: string, from: number) => MentionMatch | null,
 ): void {
   findNextMention = fn;
 }

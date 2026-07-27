@@ -13,9 +13,7 @@ export type UseCreditAutoReloadSettingsQueryPeers = {
 let peers: UseCreditAutoReloadSettingsQueryPeers | null = null;
 
 /** Wire useCreditAutoReloadSettingsQuery peers once companions land. */
-export function setUseCreditAutoReloadSettingsQueryPeers(
-  next: UseCreditAutoReloadSettingsQueryPeers,
-): void {
+export function setUseCreditAutoReloadSettingsQueryPeers(next: UseCreditAutoReloadSettingsQueryPeers): void {
   peers = next;
 }
 

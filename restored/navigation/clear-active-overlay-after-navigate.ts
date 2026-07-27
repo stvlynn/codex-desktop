@@ -1,42 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `J1o`) / export `ZT`.
+// Materialized via extractFn(internal `J1o`) / export `ZT`.
 
 export type ClearActiveOverlayAfterNavigatePeers = {
-  clearOverlayState: (
-    store: { set: (atom: unknown, value: unknown) => void },
-    route: unknown,
-    overlay: unknown,
-  ) => void;
-  defaultOverlayFromRoute: (routeKind: unknown) => unknown;
-  activeOverlayAtom: unknown;
+  EY: (...args: unknown[]) => unknown;
+  Y1o: (...args: unknown[]) => unknown;
+  zcn: (...args: unknown[]) => unknown;
 };
 
 let peers: ClearActiveOverlayAfterNavigatePeers | null = null;
 
-/** Wire overlay-clear peers once companions land. */
-export function setClearActiveOverlayAfterNavigatePeers(
-  next: ClearActiveOverlayAfterNavigatePeers,
-): void {
+/** Wire clearActiveOverlayAfterNavigate peers once companions land. */
+export function setClearActiveOverlayAfterNavigatePeers(next: ClearActiveOverlayAfterNavigatePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `ZT` / internal `J1o`.
- * Clear the active overlay after a navigation completes.
  */
-export function clearActiveOverlayAfterNavigate(
-  store: { set: (atom: unknown, value: unknown) => void },
-  route: unknown,
-  overlay: unknown | null | undefined,
-  routeKind: unknown,
-): void {
+export function clearActiveOverlayAfterNavigate(e: unknown, t: unknown, n: unknown, r: unknown) {
   if (peers == null) {
-    throw new Error("ClearActiveOverlayAfterNavigate peers are not configured");
+    throw new Error("clearActiveOverlayAfterNavigate peers are not configured");
   }
-  peers.clearOverlayState(
-    store,
-    route,
-    overlay ?? peers.defaultOverlayFromRoute(routeKind),
-  );
-  store.set(peers.activeOverlayAtom, null);
+
+  peers.Y1o(e, t, n ?? peers.zcn(r)), e.set(peers.EY, null);
 }

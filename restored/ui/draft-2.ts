@@ -1,25 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export co / gHl
+// Materialized via extractFn(internal `gHl`) / export `co`.
 
 export type DraftPeers = {
-  impl: (...args: unknown[]) => unknown;
+  $u: (...args: unknown[]) => unknown;
+  FK: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Zh: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  jz: (...args: unknown[]) => unknown;
+  p5: (...args: unknown[]) => unknown;
+  pHl: (...args: unknown[]) => unknown;
+  uHl: (...args: unknown[]) => unknown;
 };
 
 let peers: DraftPeers | null = null;
 
-/** Wire draft once companions land. */
+/** Wire draft peers once companions land. */
 export function setDraftPeers(next: DraftPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `co` / internal `gHl`.
- * Stage-3 fill for bundle export co / gHl
  */
-export function draft(...args: unknown[]): unknown {
+export function draft() {
   if (peers == null) {
     throw new Error("draft peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.$u(), peers.jz(), peers.pHl(), peers.Zh(), peers.FK(), peers.uHl(), p5 = peers.J();
+  });
 }

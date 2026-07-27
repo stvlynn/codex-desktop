@@ -1,44 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export vj / Hpo
+// Materialized via extractFn(internal `Hpo`) / export `vj`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredReviewVjProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredReviewVjPeers = {
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  R_: (...args: unknown[]) => unknown;
+  Vpo: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredReviewVjImpl = (props: BindDeferredReviewVjProps) => ReactNode;
-let impl: BindDeferredReviewVjImpl | null = null;
+let peers: BindBindDeferredReviewVjPeers | null = null;
 
-/** Wire the full BindDeferredReviewVj once deeper restore lands. */
-export function bindBindDeferredReviewVj(next: BindDeferredReviewVjImpl): void {
-  impl = next;
+/** Wire bindBindDeferredReviewVj peers once companions land. */
+export function setBindBindDeferredReviewVjPeers(next: BindBindDeferredReviewVjPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `vj` / internal `Hpo`.
- * Stage-3 fill for bundle export vj / Hpo; heavy UI via bind.
  */
-export function BindDeferredReviewVj(
-  props: BindDeferredReviewVjProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="vj"
-      aria-label="BindDeferredReviewVj"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export vj / Hpo
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredReviewVj() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredReviewVj peers are not configured");
+  }
+
+  return peers.Oa(peers.Q, (e, {
+    get: t
+  }) => e == null ? peers.Vpo : peers.R_(t, `diff_comments`)?.[e] ?? peers.Vpo);
 }

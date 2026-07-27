@@ -1,28 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export b9 / Ex
+// Materialized via extractFn(internal `Ex`) / export `b9`.
 
 export type CollabAgentToolCallPeers = {
-  impl: (...args: unknown[]) => unknown;
+  ann: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  g_: (...args: unknown[]) => unknown;
+  onn: (...args: unknown[]) => unknown;
+  wSt: (...args: unknown[]) => unknown;
 };
 
 let peers: CollabAgentToolCallPeers | null = null;
 
-/** Wire collabAgentToolCall once companions land. */
-export function setCollabAgentToolCallPeers(
-  next: CollabAgentToolCallPeers,
-): void {
+/** Wire collabAgentToolCall peers once companions land. */
+export function setCollabAgentToolCallPeers(next: CollabAgentToolCallPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `b9` / internal `Ex`.
- * Stage-3 fill for bundle export b9 / Ex
  */
-export function collabAgentToolCall(...args: unknown[]): unknown {
+export function collabAgentToolCall() {
   if (peers == null) {
     throw new Error("collabAgentToolCall peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.wSt(), peers.g_(), ann = `Interrupted before the steer was accepted.`, onn = `Run ended before the steer was accepted.`;
+  });
 }

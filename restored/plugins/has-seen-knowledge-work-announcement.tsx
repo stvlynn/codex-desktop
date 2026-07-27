@@ -1,48 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export HY / QYr
+// Materialized via extractFn(internal `QYr`) / export `HY`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindHasSeenKnowledgeWorkAnnouncementProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindHasSeenKnowledgeWorkAnnouncementPeers = {
+  Ap: (...args: unknown[]) => unknown;
+  JYr: (...args: unknown[]) => unknown;
+  Pn: (...args: unknown[]) => unknown;
+  XYr: (...args: unknown[]) => unknown;
+  YYr: (...args: unknown[]) => unknown;
+  ZYr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fr: (...args: unknown[]) => unknown;
+  kp: (...args: unknown[]) => unknown;
+  qYr: (...args: unknown[]) => unknown;
 };
 
-type BindHasSeenKnowledgeWorkAnnouncementImpl = (
-  props: BindHasSeenKnowledgeWorkAnnouncementProps,
-) => ReactNode;
-let impl: BindHasSeenKnowledgeWorkAnnouncementImpl | null = null;
+let peers: BindBindHasSeenKnowledgeWorkAnnouncementPeers | null = null;
 
-/** Wire the full BindHasSeenKnowledgeWorkAnnouncement once deeper restore lands. */
-export function bindBindHasSeenKnowledgeWorkAnnouncement(
-  next: BindHasSeenKnowledgeWorkAnnouncementImpl,
-): void {
-  impl = next;
+/** Wire bindBindHasSeenKnowledgeWorkAnnouncement peers once companions land. */
+export function setBindBindHasSeenKnowledgeWorkAnnouncementPeers(next: BindBindHasSeenKnowledgeWorkAnnouncementPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `HY` / internal `QYr`.
- * Stage-3 fill for bundle export HY / QYr; heavy UI via bind.
  */
-export function BindHasSeenKnowledgeWorkAnnouncement(
-  props: BindHasSeenKnowledgeWorkAnnouncementProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fa-scaffold="HY"
-      aria-label="BindHasSeenKnowledgeWorkAnnouncement"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export HY / QYr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindHasSeenKnowledgeWorkAnnouncement() {
+  if (peers == null) {
+    throw new Error("bindBindHasSeenKnowledgeWorkAnnouncement peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.fr(), peers.Ap(), qYr = peers.Pn(!1), JYr = peers.kp(`has-seen-knowledge-work-announcement`, !1), YYr = peers.kp(`has-seen-fast-mode-announcement`, !1), XYr = peers.kp(`has-seen-work-plugins-announcement`, !1), ZYr = peers.kp(`workspace-message-last-seen-at-by-account`, {});
+  });
 }

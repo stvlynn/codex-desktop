@@ -1,65 +1,44 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `_6n`) / export `E3`.
+// Materialized via extractFn(internal `_6n`) / export `E3`.
 
 export type ExtractColonPrefixedNamedTokensPeers = {
-  tokenNames: string[];
-  parseTokens: (text: string) => Array<{ name: string; attributes: unknown }>;
-  mapTokenName: (name: string) => string | null | undefined;
-  parseAttributes: (attributes: unknown) => {
-    success: boolean;
-    data: {
-      cwd?: unknown;
-      branch?: unknown;
-      url?: unknown;
-      isDraft?: unknown;
-    };
-  };
+  $Kn: (...args: unknown[]) => unknown;
+  S6n: (...args: unknown[]) => unknown;
+  g6n: (...args: unknown[]) => unknown;
+  x6n: (...args: unknown[]) => unknown;
 };
 
 let peers: ExtractColonPrefixedNamedTokensPeers | null = null;
 
-/** Wire colon-prefixed token peers once companions land. */
-export function setExtractColonPrefixedNamedTokensPeers(
-  next: ExtractColonPrefixedNamedTokensPeers,
-): void {
+/** Wire extractColonPrefixedNamedTokens peers once companions land. */
+export function setExtractColonPrefixedNamedTokensPeers(next: ExtractColonPrefixedNamedTokensPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `E3` / internal `_6n`.
- * Extract named `:token` mentions with validated attributes.
  */
-export function extractColonPrefixedNamedTokens(text: string): Array<{
-  type: string;
-  cwd: unknown;
-  branch: unknown;
-  url: unknown;
-  isDraft: unknown;
-}> {
+export function extractColonPrefixedNamedTokens(e: unknown) {
   if (peers == null) {
-    throw new Error("ExtractColonPrefixedNamedTokens peers are not configured");
+    throw new Error("extractColonPrefixedNamedTokens peers are not configured");
   }
-  if (!peers.tokenNames.some((name) => text.includes(`:${name}`))) return [];
-  const out: Array<{
-    type: string;
-    cwd: unknown;
-    branch: unknown;
-    url: unknown;
-    isDraft: unknown;
-  }> = [];
-  for (const token of peers.parseTokens(text)) {
-    if (!peers.tokenNames.includes(token.name)) continue;
-    const type = peers.mapTokenName(token.name);
-    if (type == null) continue;
-    const parsed = peers.parseAttributes(token.attributes);
-    if (!parsed.success) continue;
-    out.push({
-      type,
-      cwd: parsed.data.cwd,
-      branch: parsed.data.branch,
-      url: parsed.data.url,
-      isDraft: parsed.data.isDraft,
-    });
+
+  if (!peers.S6n.some((t) => e.includes(`:${t}`))) return [];
+  let t = peers.$Kn(e),
+    n = [];
+  for (let e of t) {
+    if (!peers.S6n.includes(e.name)) continue;
+    let t = peers.g6n(e.name);
+    if (t == null) continue;
+    let r = peers.x6n.safeParse(e.attributes);
+    r.success &&
+      n.push({
+        type: t,
+        cwd: r.data.cwd,
+        branch: r.data.branch,
+        url: r.data.url,
+        isDraft: r.data.isDraft,
+      });
   }
-  return out;
+  return n;
 }

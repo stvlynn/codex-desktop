@@ -1,65 +1,127 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EL — real body via extractFn(internal `EHt`) / export `Crt`.
+// Materialized via extractFn(internal `EHt`) / export `Crt`.
 
 export type UseDroppableResizeObserverPeers = {
-  useContext: (context: unknown) => {
-    active: unknown;
-    dispatch: (action: unknown) => void;
-    over: unknown;
-    measureDroppableContainers: (ids: unknown[]) => void;
-  };
-  useRef: <T>(init: T) => { current: T };
-  useEffect: (effect: () => void | (() => void), deps: unknown[]) => void;
-  droppableContext: unknown;
-  sensorContext: unknown;
-  register: (args: Record<string, unknown>) => () => void;
+  BBt: (...args: unknown[]) => unknown;
+  HBt: (...args: unknown[]) => unknown;
+  Jv: (...args: unknown[]) => unknown;
+  RBt: (...args: unknown[]) => unknown;
+  TUt: (...args: unknown[]) => unknown;
+  aHt: (...args: unknown[]) => unknown;
+  clearTimeout: (...args: unknown[]) => unknown;
+  gUt: (...args: unknown[]) => unknown;
+  id: (...args: unknown[]) => unknown;
+  qv: (...args: unknown[]) => unknown;
+  setTimeout: (...args: unknown[]) => unknown;
+  wUt: (...args: unknown[]) => unknown;
 };
 
 let peers: UseDroppableResizeObserverPeers | null = null;
 
 /** Wire useDroppableResizeObserver peers once companions land. */
-export function setUseDroppableResizeObserverPeers(
-  next: UseDroppableResizeObserverPeers,
-): void {
+export function setUseDroppableResizeObserverPeers(next: UseDroppableResizeObserverPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Crt` / internal `EHt`.
- * Register a droppable and observe size changes for DnD.
  */
-export function useDroppableResizeObserver(args: {
-  data?: unknown;
-  disabled?: boolean;
-  id: unknown;
-  resizeObserverConfig?: unknown;
-}): {
-  setNodeRef: (node: Element | null) => void;
-  active: unknown;
-  over: unknown;
-} {
+export function useDroppableResizeObserver(e: unknown) {
   if (peers == null) {
-    throw new Error("UseDroppableResizeObserver peers are not configured");
+    throw new Error("useDroppableResizeObserver peers are not configured");
   }
-  const disabled = args.disabled ?? false;
-  const ctx = peers.useContext(peers.droppableContext);
-  const nodeRef = peers.useRef<Element | null>(null);
-  peers.useEffect(() => {
-    return peers!.register({
-      id: args.id,
-      data: args.data,
-      disabled,
-      node: nodeRef.current,
-      resizeObserverConfig: args.resizeObserverConfig,
-      dispatch: ctx.dispatch,
-      measureDroppableContainers: ctx.measureDroppableContainers,
-    });
-  }, [args.id, args.data, disabled, args.resizeObserverConfig, ctx]);
-  return {
-    setNodeRef: (node) => {
-      nodeRef.current = node;
+
+  let { data: t, disabled: n = !1, id: r, resizeObserverConfig: i } = e,
+    a = peers.HBt(peers.wUt),
+    {
+      active: o,
+      dispatch: s,
+      over: c,
+      measureDroppableContainers: l,
+    } = (0, peers.qv.useContext)(peers.gUt),
+    u = (0, peers.qv.useRef)({
+      disabled: n,
+    }),
+    d = (0, peers.qv.useRef)(!1),
+    f = (0, peers.qv.useRef)(null),
+    p = (0, peers.qv.useRef)(null),
+    {
+      disabled: m,
+      updateMeasurementsFor: h,
+      timeout: g,
+    } = {
+      ...peers.TUt,
+      ...i,
     },
-    active: ctx.active,
-    over: ctx.over,
-  };
+    _ = peers.RBt(h ?? r),
+    v = peers.aHt({
+      callback: (0, peers.qv.useCallback)(() => {
+        if (!d.current) {
+          d.current = !0;
+          return;
+        }
+        (p.current != null && peers.clearTimeout(p.current),
+          (p.current = peers.setTimeout(() => {
+            (l(Array.isArray(_.current) ? _.current : [_.current]),
+              (p.current = null));
+          }, g)));
+      }, [g]),
+      disabled: m || !o,
+    }),
+    [y, b] = peers.BBt(
+      (0, peers.qv.useCallback)(
+        (e, t) => {
+          v && (t && (v.unobserve(t), (d.current = !1)), e && v.observe(e));
+        },
+        [v],
+      ),
+    ),
+    x = peers.RBt(t);
+  return (
+    (0, peers.qv.useEffect)(() => {
+      !v ||
+        !y.current ||
+        (v.disconnect(), (d.current = !1), v.observe(y.current));
+    }, [y, v]),
+    (0, peers.qv.useEffect)(
+      () => (
+        s({
+          type: peers.Jv.RegisterDroppable,
+          element: {
+            id: r,
+            key: a,
+            disabled: n,
+            node: y,
+            rect: f,
+            data: x,
+          },
+        }),
+        () =>
+          s({
+            type: peers.Jv.UnregisterDroppable,
+            key: a,
+            id: r,
+          })
+      ),
+      [r],
+    ),
+    (0, peers.qv.useEffect)(() => {
+      n !== u.current.disabled &&
+        (s({
+          type: peers.Jv.SetDroppableDisabled,
+          id: r,
+          key: a,
+          disabled: n,
+        }),
+        (u.current.disabled = n));
+    }, [r, a, n, s]),
+    {
+      active: o,
+      rect: f,
+      isOver: c?.id === r,
+      node: y,
+      over: c,
+      setNodeRef: b,
+    }
+  );
 }

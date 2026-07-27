@@ -1,26 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export lot / Akt
+// Materialized via extractFn(internal `Akt`) / export `lot`.
 
 export type BindSettingsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  kkt: (...args: unknown[]) => unknown;
 };
 
 let peers: BindSettingsPeers | null = null;
 
-/** Wire bindSettings once companions land. */
+/** Wire bindSettings peers once companions land. */
 export function setBindSettingsPeers(next: BindSettingsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `lot` / internal `Akt`.
- * Stage-3 fill for bundle export lot / Akt
  */
-export function bindSettings(...args: unknown[]): unknown {
+export function bindSettings() {
   if (peers == null) {
     throw new Error("bindSettings peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.kkt();
+  });
 }

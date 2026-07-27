@@ -1,28 +1,47 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Y0 / OD
+// Materialized via extractFn(internal `OD`) / export `Y0`.
 
 export type BindDeferredBrowserY0Peers = {
-  impl: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Trr: (...args: unknown[]) => unknown;
+  Wf: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
+  krr: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredBrowserY0Peers | null = null;
 
-/** Wire bindDeferredBrowserY0 once companions land. */
-export function setBindDeferredBrowserY0Peers(
-  next: BindDeferredBrowserY0Peers,
-): void {
+/** Wire bindDeferredBrowserY0 peers once companions land. */
+export function setBindDeferredBrowserY0Peers(next: BindDeferredBrowserY0Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Y0` / internal `OD`.
- * Stage-3 fill for bundle export Y0 / OD
  */
-export function bindDeferredBrowserY0(...args: unknown[]): unknown {
+export function bindDeferredBrowserY0() {
   if (peers == null) {
     throw new Error("bindDeferredBrowserY0 peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.ka(peers.Q, (e) => ({
+    queryKey: [...peers.krr, e],
+    queryFn: async () => {
+      try {
+        return await peers.Trr(e);
+      } catch (e) {
+        return (
+          peers.Wf.error(`Failed to load experimental features`, {
+            safe: {
+              error: String(e),
+            },
+            sensitive: {},
+          }),
+          []
+        );
+      }
+    },
+    staleTime: peers.Hf.ONE_MINUTE,
+  }));
 }

@@ -1,45 +1,60 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `S4r`) / export `jq`.
+// Materialized via extractFn(internal `S4r`) / export `jq`.
 
 export type UsePreferredNonAgentModeForHostPeers = {
-  useAtom: (
-    atom: unknown,
-  ) => [Record<string, unknown>, (next: unknown) => void];
-  preferencesAtom: unknown;
-  resolvePreferredMode: (
-    hostId: unknown,
-    preferences: Record<string, unknown>,
-  ) => unknown;
+  $2r: (...args: unknown[]) => unknown;
+  rr: (...args: unknown[]) => unknown;
+  t4r: (...args: unknown[]) => unknown;
+  w4r: (...args: unknown[]) => unknown;
 };
 
 let peers: UsePreferredNonAgentModeForHostPeers | null = null;
 
 /** Wire usePreferredNonAgentModeForHost peers once companions land. */
-export function setUsePreferredNonAgentModeForHostPeers(
-  next: UsePreferredNonAgentModeForHostPeers,
-): void {
+export function setUsePreferredNonAgentModeForHostPeers(next: UsePreferredNonAgentModeForHostPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `jq` / internal `S4r`.
- * Read/write preferred non-full-access mode for a host.
  */
-export function usePreferredNonAgentModeForHost(args: { hostId: string }): {
-  preferredNonFullAccessMode: unknown;
-  setPreferredNonFullAccessMode: (mode: unknown) => void;
-} {
+export function usePreferredNonAgentModeForHost(e: unknown) {
   if (peers == null) {
-    throw new Error("UsePreferredNonAgentModeForHost peers are not configured");
+    throw new Error("usePreferredNonAgentModeForHost peers are not configured");
   }
-  const { hostId } = args;
-  const [preferences, setPreferences] = peers.useAtom(peers.preferencesAtom);
-  const preferredNonFullAccessMode = peers.resolvePreferredMode(
-    hostId,
-    preferences,
+
+  let t = (0, peers.w4r.c)(10),
+    { hostId: n } = e,
+    [r, i] = peers.rr(peers.t4r),
+    a;
+  t[0] !== n || t[1] !== r
+    ? ((a = peers.$2r(n, r)), (t[0] = n), (t[1] = r), (t[2] = a))
+    : (a = t[2]);
+  let o = a,
+    s;
+  t[3] !== n || t[4] !== r || t[5] !== i
+    ? ((s = (e) => {
+        i({
+          ...r,
+          [n]: e,
+        });
+      }),
+      (t[3] = n),
+      (t[4] = r),
+      (t[5] = i),
+      (t[6] = s))
+    : (s = t[6]);
+  let c;
+  return (
+    t[7] !== o || t[8] !== s
+      ? ((c = {
+          preferredNonFullAccessMode: o,
+          setPreferredNonFullAccessMode: s,
+        }),
+        (t[7] = o),
+        (t[8] = s),
+        (t[9] = c))
+      : (c = t[9]),
+    c
   );
-  const setPreferredNonFullAccessMode = (mode: unknown) => {
-    setPreferences({ ...preferences, [hostId]: mode });
-  };
-  return { preferredNonFullAccessMode, setPreferredNonFullAccessMode };
 }

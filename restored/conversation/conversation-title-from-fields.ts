@@ -24,10 +24,7 @@ function plain(value: string): string {
  * Resolve a display title from explicit title text.
  * First-turn body extraction deferred (needs composer payload parser).
  */
-export function conversationTitleFromFields(
-  conversation: TitleConversationLike | null | undefined,
-  _collabItems?: unknown,
-): string | null {
+export function conversationTitleFromFields(conversation: TitleConversationLike | null | undefined, _collabItems?: unknown): string | null {
   if (conversation == null) return null;
   const titled = conversation.title?.trim() ?? "";
   if (titled.length > 0) {
@@ -38,19 +35,14 @@ export function conversationTitleFromFields(
 }
 
 /** Title with ellipsis when derived (not when explicit title present). */
-export function conversationTitleMaybeTruncated(
-  conversation: TitleConversationLike | null | undefined,
-  collabItems?: unknown,
-): string | null {
+export function conversationTitleMaybeTruncated(conversation: TitleConversationLike | null | undefined, collabItems?: unknown): string | null {
   const title = conversationTitleFromFields(conversation, collabItems);
   if (title == null || conversation?.title?.trim()) return title;
   return truncateWithEllipsis(title, 60) ?? "";
 }
 
 /** Bundle `jSt` — slim conversation fields for title helpers. */
-export function conversationTitleSource(
-  conversation: TitleConversationLike | null | undefined,
-): TitleConversationLike | null {
+export function conversationTitleSource(conversation: TitleConversationLike | null | undefined): TitleConversationLike | null {
   return conversation == null
     ? null
     : {

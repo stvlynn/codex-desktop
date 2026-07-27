@@ -7,27 +7,28 @@ import {
   createScopedSignal,
 } from "../boundaries/app-scope-runtime";
 import { invokeDesktopRpc } from "../desktop/invoke-desktop-rpc";
-
 export type PetInstallPreviewParams = {
   name: string;
   description?: string;
   imageUrl?: string;
   [key: string]: unknown;
 };
-
 export type PetInstallPreview = {
   spriteVersionNumber: number;
   [key: string]: unknown;
 };
-
 export type PetInstallState =
   | null
-  | (PetInstallPreviewParams & { status: "loading" })
+  | (PetInstallPreviewParams & {
+      status: "loading";
+    })
   | (PetInstallPreviewParams & {
       status: "ready";
       preview: PetInstallPreview;
     })
-  | (PetInstallPreviewParams & { status: "previewError" })
+  | (PetInstallPreviewParams & {
+      status: "previewError";
+    })
   | (PetInstallPreviewParams & {
       status: "installing";
       preview: PetInstallPreview;
@@ -41,7 +42,6 @@ export type PetInstallState =
       preview: PetInstallPreview;
       installedAvatarId: string;
     });
-
 type ScopeLike = {
   get: (atom: unknown) => unknown;
   set: (atom: unknown, value: unknown) => void;
@@ -61,22 +61,33 @@ export async function loadPetInstallPreview(
   params: PetInstallPreviewParams,
   invoke: (params: PetInstallPreviewParams) => Promise<PetInstallPreview> = (
     p,
-  ) =>
-    invokeDesktopRpc("pet-install-preview", {
+  ) => {
+    return invokeDesktopRpc("pet-install-preview", {
       params: p,
-    }) as Promise<PetInstallPreview>,
+    }) as Promise<PetInstallPreview>;
+  },
 ): Promise<void> {
   const current = scope.get(petInstallStateAtom) as PetInstallState;
   if (current?.status === "installing") return;
-  const loading = { ...params, status: "loading" as const };
+  const loading = {
+    ...params,
+    status: "loading" as const,
+  };
   scope.set(petInstallStateAtom, loading);
   try {
     const preview = await invoke(params);
     if (scope.get(petInstallStateAtom) !== loading) return;
-    scope.set(petInstallStateAtom, { ...params, status: "ready", preview });
+    scope.set(petInstallStateAtom, {
+      ...params,
+      status: "ready",
+      preview,
+    });
   } catch {
     if (scope.get(petInstallStateAtom) !== loading) return;
-    scope.set(petInstallStateAtom, { ...params, status: "previewError" });
+    scope.set(petInstallStateAtom, {
+      ...params,
+      status: "previewError",
+    });
   }
 }
 
@@ -86,14 +97,26 @@ export async function loadPetInstallPreview(
 export async function installPetFromPreview(
   scope: ScopeLike,
   refresh: () => Promise<unknown>,
-  invoke: (params: Record<string, unknown>) => Promise<{ id: string }> = (p) =>
-    invokeDesktopRpc("pet-install", { params: p }) as Promise<{ id: string }>,
+  invoke: (params: Record<string, unknown>) => Promise<{
+    id: string;
+  }> = (p) => {
+    return invokeDesktopRpc("pet-install", {
+      params: p,
+    }) as Promise<{
+      id: string;
+    }>;
+  },
 ): Promise<void> {
   const current = scope.get(petInstallStateAtom) as PetInstallState;
   if (current?.status !== "ready" && current?.status !== "installError") return;
-  const installing = { ...current, status: "installing" as const };
+  const installing = {
+    ...current,
+    status: "installing" as const,
+  };
   scope.set(petInstallStateAtom, installing);
-  let installed: { id: string };
+  let installed: {
+    id: string;
+  };
   try {
     installed = await invoke({
       name: current.name,
@@ -103,7 +126,10 @@ export async function installPetFromPreview(
     });
   } catch {
     if (scope.get(petInstallStateAtom) !== installing) return;
-    scope.set(petInstallStateAtom, { ...current, status: "installError" });
+    scope.set(petInstallStateAtom, {
+      ...current,
+      status: "installError",
+    });
     return;
   }
   if (scope.get(petInstallStateAtom) === installing) {
@@ -112,7 +138,9 @@ export async function installPetFromPreview(
       status: "installed",
       installedAvatarId: installed.id,
     });
-    await refresh().catch(() => undefined);
+    await refresh().catch(() => {
+      return undefined;
+    });
   }
 }
 

@@ -17,9 +17,7 @@ type WorkspaceSettingsWebviewHostImpl = (
 let impl: WorkspaceSettingsWebviewHostImpl | null = null;
 
 /** Wire the full WorkspaceSettingsWebviewHost once deeper companion restore lands. */
-export function bindWorkspaceSettingsWebviewHost(
-  next: WorkspaceSettingsWebviewHostImpl,
-): void {
+export function bindWorkspaceSettingsWebviewHost(next: WorkspaceSettingsWebviewHostImpl): void {
   impl = next;
 }
 

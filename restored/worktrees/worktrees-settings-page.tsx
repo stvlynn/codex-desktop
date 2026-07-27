@@ -17,9 +17,7 @@ type WorktreesSettingsPageImpl = (
 let impl: WorktreesSettingsPageImpl | null = null;
 
 /** Wire the full WorktreesSettingsPage once deeper companion restore lands. */
-export function bindWorktreesSettingsPage(
-  next: WorktreesSettingsPageImpl,
-): void {
+export function bindWorktreesSettingsPage(next: WorktreesSettingsPageImpl): void {
   impl = next;
 }
 

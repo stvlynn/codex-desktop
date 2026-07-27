@@ -1,42 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export uK / H7r
+// Materialized via extractFn(internal `H7r`) / export `uK`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindAppsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindAppsPeers = {
+  Ho: (...args: unknown[]) => unknown;
+  V7r: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  kD: (...args: unknown[]) => unknown;
 };
 
-type BindAppsImpl = (props: BindAppsProps) => ReactNode;
-let impl: BindAppsImpl | null = null;
+let peers: BindBindAppsPeers | null = null;
 
-/** Wire the full BindApps once deeper restore lands. */
-export function bindBindApps(next: BindAppsImpl): void {
-  impl = next;
+/** Wire bindBindApps peers once companions land. */
+export function setBindBindAppsPeers(next: BindBindAppsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `uK` / internal `H7r`.
- * Stage-3 fill for bundle export uK / H7r; heavy UI via bind.
  */
-export function BindApps(props: BindAppsProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="uK"
-      aria-label="BindApps"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export uK / H7r
-        </div>
-      )}
-    </div>
-  );
+export function bindBindApps() {
+  if (peers == null) {
+    throw new Error("bindBindApps peers are not configured");
+  }
+
+  return peers.e(() => {
+    V7r = peers.c(), peers.Ho(), peers.kD();
+  });
 }

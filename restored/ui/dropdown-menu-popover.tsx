@@ -1,23 +1,19 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EO — real body via extractFn(internal `VR`) / export `KB`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `VR`) / export `KB`.
 
 export type DropdownMenuPopoverPeers = {
-  useControllableOpen: (
-    open: boolean | undefined,
-    onOpenChange: ((open: boolean) => void) | undefined,
-  ) => { handleOpenChange: (open: boolean) => void; open: boolean };
-  ensureInit: () => void;
-  Root: unknown;
-  Trigger: unknown;
-  Portal: unknown;
-  Content: unknown;
-  renderNode: (type: unknown, props: Record<string, unknown>) => ReactNode;
-  renderNodes: (type: unknown, props: Record<string, unknown>) => ReactNode;
-  cx: (...parts: Array<string | false | null | undefined>) => string;
+  $: (...args: unknown[]) => unknown;
+  AYi: (...args: unknown[]) => unknown;
+  GYi: (...args: unknown[]) => unknown;
+  HR: (...args: unknown[]) => unknown;
+  KR: (...args: unknown[]) => unknown;
+  Lm: (...args: unknown[]) => unknown;
+  MYi: (...args: unknown[]) => unknown;
+  UYi: (...args: unknown[]) => unknown;
+  WR: (...args: unknown[]) => unknown;
+  WYi: (...args: unknown[]) => unknown;
+  _Xi: (...args: unknown[]) => unknown;
 };
-
 let peers: DropdownMenuPopoverPeers | null = null;
 
 /** Wire DropdownMenuPopover peers once companions land. */
@@ -29,78 +25,75 @@ export function setDropdownMenuPopoverPeers(
 
 /**
  * Bundle export `KB` / internal `VR`.
- * Dropdown menu popover with trigger and portal content.
  */
-export type DropdownMenuPopoverProps = {
-  triggerButton: ReactNode;
-  disabled?: boolean;
-  children?: ReactNode;
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
-  dir?: unknown;
-  side?: unknown;
-  align?: unknown;
-  sideOffset?: number;
-  alignOffset?: number;
-  contentRef?: unknown;
-  contentClassName?: string;
-  contentStyle?: Record<string, unknown>;
-  portalContainer?: unknown;
-};
-
-export function DropdownMenuPopover(
-  props: DropdownMenuPopoverProps,
-): ReactElement {
+export function DropdownMenuPopover(props: unknown) {
+  const Trigger = peers.KR.Trigger;
+  const MYi = peers.MYi;
+  const Content = peers.KR.Content;
+  const AYi = peers.AYi;
   if (peers == null) {
     throw new Error("DropdownMenuPopover peers are not configured");
   }
-  peers.ensureInit();
-  const {
-    triggerButton,
-    disabled,
-    children,
-    open,
-    onOpenChange,
-    dir,
-    side,
-    align,
-    sideOffset,
-    alignOffset,
-    contentRef,
-    contentClassName,
-    contentStyle,
-    portalContainer,
-  } = props;
-  const { handleOpenChange, open: resolvedOpen } = peers.useControllableOpen(
-    open,
-    onOpenChange,
+  let {
+      triggerButton,
+      disabled,
+      children,
+      open,
+      onOpenChange,
+      dir,
+      side,
+      align,
+      sideOffset,
+      alignOffset,
+      contentRef,
+      onContentFocus,
+      onCloseAutoFocus,
+      onEscapeKeyDown,
+      contentClassName,
+      contentStyle: _,
+      surface = "menu",
+      contentWidth,
+      contentMaxHeight,
+      portalContainer,
+    } = props,
+    C = peers.Lm(),
+    { handleOpenChange, open: _open } = peers.GYi(open, onOpenChange),
+    E = (
+      <Trigger asChild={true} disabled={disabled}>
+        {triggerButton}
+      </Trigger>
+    );
+  let D = !disabled && (
+    <MYi container={portalContainer ?? undefined}>
+      <Content
+        ref={contentRef}
+        side={side}
+        align={align}
+        sideOffset={sideOffset}
+        alignOffset={alignOffset}
+        onFocus={onContentFocus}
+        onCloseAutoFocus={onCloseAutoFocus}
+        onEscapeKeyDown={onEscapeKeyDown}
+        surface={surface}
+        className={peers.$(peers.UYi(contentWidth), contentClassName)}
+        style={{
+          ..._,
+          maxHeight:
+            peers.WYi(
+              contentMaxHeight,
+              "var(--radix-dropdown-menu-content-available-height)",
+            ) ?? peers._Xi.maxHeight,
+          zoom: portalContainer == null && C !== 1 ? C : undefined,
+        }}
+      >
+        {children}
+      </Content>
+    </MYi>
   );
-  return peers.renderNodes(peers.Root, {
-    open: resolvedOpen,
-    onOpenChange: handleOpenChange,
-    dir,
-    children: [
-      peers.renderNode(peers.Trigger, {
-        asChild: true,
-        disabled,
-        children: triggerButton,
-      }),
-      peers.renderNode(peers.Portal, {
-        container: portalContainer,
-        children: peers.renderNode(peers.Content, {
-          ref: contentRef,
-          side,
-          align,
-          sideOffset,
-          alignOffset,
-          className: peers.cx(contentClassName),
-          style: contentStyle,
-          children,
-        }),
-      }),
-    ],
-  }) as ReactElement;
+  return (
+    <AYi dir={dir} modal={false} open={_open} onOpenChange={handleOpenChange}>
+      {E}
+      {D}
+    </AYi>
+  );
 }
-
-// --- qg-full-green: missing-relative-exports stubs (open-runtime wiring) ---
-export const ensureDropdownMenuPopoverInit: any = undefined;

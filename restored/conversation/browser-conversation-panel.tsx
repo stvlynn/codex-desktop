@@ -67,9 +67,7 @@ export type BrowserConversationPanelDeps = {
 
 let deps: BrowserConversationPanelDeps | null = null;
 
-export function setBrowserConversationPanelDeps(
-  next: BrowserConversationPanelDeps,
-): void {
+export function setBrowserConversationPanelDeps(next: BrowserConversationPanelDeps): void {
   deps = next;
 }
 

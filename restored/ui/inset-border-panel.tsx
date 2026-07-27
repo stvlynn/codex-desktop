@@ -1,93 +1,72 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DU — real body via extractFn(internal `oXi`) / export `XB`.
-// Search input + icon peers bind via setInsetBorderPanelParts.
+// Materialized via extractFn(internal `oXi`) / export `XB`.
 
-import type {
-  InputHTMLAttributes,
-  KeyboardEvent,
-  ReactElement,
-  ReactNode,
-} from "react";
-import { cx } from "./cx";
-
-export type InsetBorderPanelProps = {
-  className?: string;
-  inputClassName?: string;
-  onKeyDown?: InputHTMLAttributes<HTMLInputElement>["onKeyDown"];
-  trailingContent?: ReactNode;
-  variant?: "default" | "inset" | string;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, "className" | "onKeyDown">;
-
-export type InsetBorderPanelParts = {
-  SearchIcon: (props: { className?: string }) => ReactElement | null;
-  contentClassName: string;
-  focusNeighbor: (
-    current: EventTarget & HTMLElement,
-    direction: "next" | "previous",
-  ) => HTMLElement | null;
+export type InsetBorderPanelPeers = {
+  $: (...args: unknown[]) => unknown;
+  GR: (...args: unknown[]) => unknown;
+  HR: (...args: unknown[]) => unknown;
+  RR: (...args: unknown[]) => unknown;
+  WR: (...args: unknown[]) => unknown;
+  aXi: (...args: unknown[]) => unknown;
+  sXi: (...args: unknown[]) => unknown;
 };
+let peers: InsetBorderPanelPeers | null = null;
 
-let parts: InsetBorderPanelParts | null = null;
-
-/** Wire search icon / content class / focus neighbor once companions land. */
-export function setInsetBorderPanelParts(next: InsetBorderPanelParts): void {
-  parts = next;
+/** Wire InsetBorderPanel peers once companions land. */
+export function setInsetBorderPanelPeers(next: InsetBorderPanelPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `XB` / internal `oXi`.
- * Inset-bordered search/input panel chrome.
  */
-export function InsetBorderPanel(props: InsetBorderPanelProps): ReactElement {
-  const {
+export function InsetBorderPanel(props: unknown) {
+  const RR = peers.RR;
+  const AXi = peers.aXi;
+  if (peers == null) {
+    throw new Error("InsetBorderPanel peers are not configured");
+  }
+  let {
     className,
     inputClassName,
     onKeyDown,
     trailingContent,
-    variant = "default",
-    ...inputProps
+    variant,
+    ...rest
   } = props;
-  if (parts == null) {
-    throw new Error("InsetBorderPanel parts are not configured");
-  }
-  const insetClass =
-    variant === "inset"
-      ? "m-2 !w-auto rounded-lg border border-token-input-border"
-      : false;
-  const rootClassName = cx(
-    parts.contentClassName,
-    "px-[var(--padding-row-x)] py-[var(--padding-row-y)]",
-    insetClass,
-    className,
-  );
-  const fieldClassName = cx(
+  let c =
+      (variant === undefined ? "default" : variant) === "inset" &&
+      "m-2 !w-auto rounded-lg border border-token-input-border",
+    l = peers.$(
+      peers.GR.content,
+      "px-[var(--padding-row-x)] py-[var(--padding-row-y)]",
+      c,
+      className,
+    );
+  let u = <RR className="icon-2xs shrink-0 text-token-text-tertiary" />;
+  let d = peers.$(
     "!w-auto flex-1 appearance-none !rounded-none !border-none bg-transparent !px-0 !py-0 text-token-foreground placeholder:text-token-input-placeholder-foreground",
     inputClassName,
   );
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
+  let f = (event) => {
     onKeyDown?.(event);
-    if (
-      !event.defaultPrevented &&
+    !event.defaultPrevented &&
       (event.key === "ArrowDown" || event.key === "ArrowUp") &&
-      parts.focusNeighbor(
+      peers.sXi(
         event.currentTarget,
         event.key === "ArrowDown" ? "next" : "previous",
-      )
-    ) {
+      ) &&
       event.preventDefault();
-    }
   };
+  let p = <AXi className={d} onKeyDown={f} {...rest} />;
+  let m = trailingContent ? (
+    <div className="shrink-0">{trailingContent}</div>
+  ) : null;
   return (
-    <div className={rootClassName}>
-      <parts.SearchIcon className="icon-2xs shrink-0 text-token-text-tertiary" />
-      <input
-        className={fieldClassName}
-        onKeyDown={handleKeyDown}
-        {...inputProps}
-      />
-      {trailingContent ? (
-        <div className="shrink-0">{trailingContent}</div>
-      ) : null}
+    <div className={l}>
+      {u}
+      {p}
+      {m}
     </div>
   );
 }

@@ -14,10 +14,8 @@ import {
   mcpGlobalCapabilityCatalogAtom,
   type McpCapabilityCatalogEntry,
 } from "../mcp/mcp-capability-host";
-
 ensureMcpCapabilityCatalogInit();
 ensureMcpCapabilityHostViewInit();
-
 function McpCapabilityViewNotFound(): ReactElement {
   return (
     <div className="flex h-full min-h-0 items-center justify-center">
@@ -48,9 +46,9 @@ export function McpCapabilityViewPage(): ReactElement {
   const view =
     server == null || toolName == null
       ? null
-      : (catalog.find(
-          (entry) => entry.server === server && entry.tool.name === toolName,
-        ) ?? null);
+      : (catalog.find((entry) => {
+          return entry.server === server && entry.tool.name === toolName;
+        }) ?? null);
   if (view == null) return <McpCapabilityViewNotFound />;
   return <McpCapabilityHostView view={view} />;
 }

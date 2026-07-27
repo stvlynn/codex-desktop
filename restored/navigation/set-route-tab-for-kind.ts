@@ -1,41 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `aor`) / export `s0`.
+// Materialized via extractFn(internal `aor`) / export `s0`.
 
-export type SetRouteTabForKindPeers = {
-  resolveTabForKind: (kind: unknown) => unknown;
-  normalizeRouteKind: (routeKind: unknown) => unknown;
-  writeRouteOverlay: (
-    store: unknown,
-    atom: unknown,
-    value: { routeKind: unknown; tab: unknown },
-  ) => void;
-  routeOverlayAtom: unknown;
+export type S0Peers = {
+  Ub: (...args: unknown[]) => unknown;
+  a0t: (...args: unknown[]) => unknown;
+  nor: (...args: unknown[]) => unknown;
+  ror: (...args: unknown[]) => unknown;
 };
+let peers: S0Peers | null = null;
 
-let peers: SetRouteTabForKindPeers | null = null;
-
-/** Wire set-route-tab peers once companions land. */
-export function setSetRouteTabForKindPeers(
-  next: SetRouteTabForKindPeers,
-): void {
+/** Wire s0 peers once companions land. */
+export function setS0Peers(next: S0Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `s0` / internal `aor`.
- * Set the route tab for the current route kind when resolvable.
  */
-export function setRouteTabForKind(
-  store: { value: { routeKind: unknown } },
-  kind: unknown,
-): void {
+export function s0(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("SetRouteTabForKind peers are not configured");
+    throw new Error("s0 peers are not configured");
   }
-  const tab = peers.resolveTabForKind(kind);
-  if (tab == null) return;
-  peers.writeRouteOverlay(store, peers.routeOverlayAtom, {
-    routeKind: peers.normalizeRouteKind(store.value.routeKind),
-    tab,
-  });
+  let n = peers.nor(t);
+  n != null &&
+    peers.Ub(e, peers.a0t, {
+      routeKind: peers.ror(e.value.routeKind),
+      tab: n,
+    });
 }

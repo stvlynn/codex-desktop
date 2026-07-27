@@ -1,26 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Llt / rh
+// Materialized via extractFn(internal `rh`) / export `Llt`.
 
 export type ToastAtomPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  W9e: (...args: unknown[]) => unknown;
 };
 
 let peers: ToastAtomPeers | null = null;
 
-/** Wire toastAtom once companions land. */
+/** Wire toastAtom peers once companions land. */
 export function setToastAtomPeers(next: ToastAtomPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Llt` / internal `rh`.
- * Stage-3 fill for bundle export Llt / rh
  */
-export function toastAtom(...args: unknown[]): unknown {
+export function toastAtom() {
   if (peers == null) {
     throw new Error("toastAtom peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ta(peers.Q, peers.W9e);
 }

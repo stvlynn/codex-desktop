@@ -1,35 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `LWi`) / export `eH`.
+// Materialized via extractFn(internal `LWi`) / export `eH`.
 
-export type SetOpenReviewFileSourceTabsPeers = {
-  invokeHost: (method: string, payload: Record<string, unknown>) => unknown;
-  collectOpenFiles: (route: unknown, options: unknown) => unknown;
-  serializeOpenFiles: (files: unknown) => unknown;
+export type EHPeers = {
+  Bf: (...args: unknown[]) => unknown;
+  Mor: (...args: unknown[]) => unknown;
+  OWi: (...args: unknown[]) => unknown;
 };
+let peers: EHPeers | null = null;
 
-let peers: SetOpenReviewFileSourceTabsPeers | null = null;
-
-/** Wire review file-source tabs peers once companions land. */
-export function setSetOpenReviewFileSourceTabsPeers(
-  next: SetOpenReviewFileSourceTabsPeers,
-): void {
+/** Wire eH peers once companions land. */
+export function setEHPeers(next: EHPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `eH` / internal `LWi`.
- * Persist review file-source tabs for a local-thread route.
  */
-export function setOpenReviewFileSourceTabs(
-  route: { value: { routeKind: string; conversationId: unknown } },
-  options: Record<string, unknown> = {},
-): void {
+export function eH(e: unknown, t: unknown = {}) {
   if (peers == null) {
-    throw new Error("SetOpenReviewFileSourceTabs peers are not configured");
+    throw new Error("eH peers are not configured");
   }
-  if (route.value.routeKind !== "local-thread") return;
-  peers.invokeHost("set-open-review-file-source-tabs", {
-    conversationId: route.value.conversationId,
-    openFiles: peers.serializeOpenFiles(peers.collectOpenFiles(route, options)),
-  });
+  e.value.routeKind === "local-thread" &&
+    peers.Bf("set-open-review-file-source-tabs", {
+      conversationId: e.value.conversationId,
+      openFiles: peers.OWi(peers.Mor(e, t)),
+    });
 }

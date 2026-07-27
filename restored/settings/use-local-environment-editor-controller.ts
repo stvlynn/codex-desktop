@@ -1,41 +1,16 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `tSo`) / export `gA`.
+// Materialized via extractFn(internal `tSo`) / export `gA`.
 
 export type UseLocalEnvironmentEditorControllerPeers = {
-  useStore: () => {
-    get: (atom: unknown) => unknown;
-    set: (atom: unknown, value: unknown) => void;
-  };
-  useSelectionsByWorkspace: () => unknown;
-  resolveWorkspaceKey: (workspaceRoot: unknown, hostId: unknown) => unknown;
-  queryLocalEnvironments: (input: {
-    params: { hostId: unknown; workspaceRoot: string };
-    queryConfig: { enabled: boolean };
-    select: unknown;
-  }) => {
-    data: unknown[] | undefined;
-    isLoading: boolean;
-    isFetching: boolean;
-    error: unknown;
-  };
-  selectEnvironments: unknown;
-  selectionsAtom: unknown;
-  resolveEditorState: (input: {
-    canValidateSelection: boolean;
-    environments: unknown[];
-    hostId: unknown;
-    selectionsByWorkspace: unknown;
-    workspaceRoot: unknown;
-  }) => {
-    defaultEnvironment: unknown;
-    defaultEnvironmentNormalized: unknown;
-    availableEnvironments: unknown;
-    resolvedConfigPath: unknown;
-    normalizedResolvedConfigPath: unknown;
-    repairConfigPath: unknown;
-  };
+  $n: (...args: unknown[]) => unknown;
+  Qxo: (...args: unknown[]) => unknown;
+  eSo: (...args: unknown[]) => unknown;
+  iSo: (...args: unknown[]) => unknown;
+  nSo: (...args: unknown[]) => unknown;
+  np: (...args: unknown[]) => unknown;
+  tr: (...args: unknown[]) => unknown;
+  vK: (...args: unknown[]) => unknown;
 };
-
 let peers: UseLocalEnvironmentEditorControllerPeers | null = null;
 
 /** Wire useLocalEnvironmentEditorController peers once companions land. */
@@ -47,61 +22,72 @@ export function setUseLocalEnvironmentEditorControllerPeers(
 
 /**
  * Bundle export `gA` / internal `tSo`.
- * Controller for local environment editor selection + query state.
  */
-export function useLocalEnvironmentEditorController(options: {
-  hostId: unknown;
-  workspaceRoot: unknown;
-}): Record<string, unknown> {
+export function useLocalEnvironmentEditorController(e: unknown) {
   if (peers == null) {
     throw new Error(
-      "UseLocalEnvironmentEditorController peers are not configured",
+      "useLocalEnvironmentEditorController peers are not configured",
     );
   }
-  const { hostId, workspaceRoot } = options;
-  const store = peers.useStore();
-  const selectionsByWorkspace = peers.useSelectionsByWorkspace();
-  const workspaceKey = peers.resolveWorkspaceKey(workspaceRoot, hostId);
-  const workspaceRootKey = workspaceRoot ?? "";
-  const params = { hostId, workspaceRoot: workspaceRootKey };
-  const queryConfig = { enabled: workspaceKey != null };
-  const query = peers.queryLocalEnvironments({
-    params,
-    queryConfig,
-    select: peers.selectEnvironments,
-  });
-  const environments = query.data ?? [];
-  const resolved = peers.resolveEditorState({
-    canValidateSelection:
-      !query.isLoading && !query.isFetching && query.error == null,
-    environments,
+  let { hostId, workspaceRoot = "" } = e,
+    i = peers.$n(),
+    a = peers.tr(peers.vK),
+    o = peers.Qxo(workspaceRoot, hostId),
+    c = {
+      hostId,
+      workspaceRoot,
+    };
+  let l = o != null,
+    u = {
+      enabled: l,
+    };
+  let d = {
+    params: c,
+    queryConfig: u,
+    select: peers.nSo,
+  };
+  let { data, isLoading, isFetching, error } = peers.np(
+      "local-environments",
+      d,
+    ),
+    g,
+    _;
+  g = data ?? [];
+  _ = peers.eSo({
+    canValidateSelection: !isLoading && !isFetching && error == null,
+    environments: g,
     hostId,
-    selectionsByWorkspace,
+    selectionsByWorkspace: a,
     workspaceRoot,
   });
-  const updateSelection = (next: unknown) => {
-    if (workspaceKey == null) return;
-    const current = peers!.useStore().get(peers!.selectionsAtom) as Record<
-      string,
-      unknown
-    >;
-    store.set(peers!.selectionsAtom, {
-      ...current,
-      [String(workspaceKey)]: next,
-    });
-  };
+  let {
+      defaultEnvironment,
+      defaultEnvironmentNormalized,
+      availableEnvironments,
+      resolvedConfigPath,
+      normalizedResolvedConfigPath,
+      repairConfigPath,
+    } = _,
+    w = (e) => {
+      o != null &&
+        i.set(peers.vK, {
+          ...i.get(peers.vK),
+          [o]: e,
+        });
+    };
+  let T = w;
   return {
-    workspaceKey,
-    environments,
-    isLoading: query.isLoading,
-    isFetching: query.isFetching,
-    error: query.error,
-    defaultEnvironment: resolved.defaultEnvironment,
-    defaultEnvironmentNormalized: resolved.defaultEnvironmentNormalized,
-    availableEnvironments: resolved.availableEnvironments,
-    resolvedConfigPath: resolved.resolvedConfigPath,
-    normalizedResolvedConfigPath: resolved.normalizedResolvedConfigPath,
-    repairConfigPath: resolved.repairConfigPath,
-    updateSelection,
+    workspaceKey: o,
+    environments: g,
+    isLoading,
+    isFetching,
+    error,
+    defaultEnvironment,
+    defaultEnvironmentNormalized,
+    availableEnvironments,
+    resolvedConfigPath,
+    normalizedResolvedConfigPath,
+    repairConfigPath,
+    updateSelection: T,
   };
 }

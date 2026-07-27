@@ -17,9 +17,7 @@ type ComposerWorkHomePluginsControlImpl = (
 let impl: ComposerWorkHomePluginsControlImpl | null = null;
 
 /** Wire the full ComposerWorkHomePluginsControl once deeper restore lands. */
-export function bindComposerWorkHomePluginsControl(
-  next: ComposerWorkHomePluginsControlImpl,
-): void {
+export function bindComposerWorkHomePluginsControl(next: ComposerWorkHomePluginsControlImpl): void {
   impl = next;
 }
 
@@ -27,9 +25,7 @@ export function bindComposerWorkHomePluginsControl(
  * Bundle export `ComposerWorkHomePluginsControl`.
  * Gap aliases ($o/IS/PY/Qo/RS/bM/bS/iM/kY/mw/nM/uw/yM/yS) stay in app-initial until drain.
  */
-export function ComposerWorkHomePluginsControl(
-  props: ComposerWorkHomePluginsControlProps,
-): ReactNode {
+export function ComposerWorkHomePluginsControl(props: ComposerWorkHomePluginsControlProps): ReactNode {
   if (impl == null) {
     return null;
   }

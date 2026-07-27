@@ -1,28 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Bz / g4i
+// Materialized via extractFn(internal `g4i`) / export `Bz`.
 
 export type BindBuildPluginInstallQueryPeers = {
-  impl: (...args: unknown[]) => unknown;
+  GN: (...args: unknown[]) => unknown;
+  Iwe: (...args: unknown[]) => unknown;
+  hostId: (...args: unknown[]) => unknown;
 };
 
 let peers: BindBuildPluginInstallQueryPeers | null = null;
 
-/** Wire bindBuildPluginInstallQuery once companions land. */
-export function setBindBuildPluginInstallQueryPeers(
-  next: BindBuildPluginInstallQueryPeers,
-): void {
+/** Wire bindBuildPluginInstallQuery peers once companions land. */
+export function setBindBuildPluginInstallQueryPeers(next: BindBuildPluginInstallQueryPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Bz` / internal `g4i`.
- * Stage-3 fill for bundle export Bz / g4i
  */
-export function bindBuildPluginInstallQuery(...args: unknown[]): unknown {
+export function bindBuildPluginInstallQuery(e: unknown, t: unknown) {
   if (peers == null) {
     throw new Error("bindBuildPluginInstallQuery peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Iwe({
+    hostId: t?.hostId,
+    pluginId: e.plugin.id,
+    ...peers.GN(e)
+  });
 }

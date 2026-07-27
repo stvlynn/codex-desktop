@@ -1,25 +1,37 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export llt / Eh
+// Materialized via extractFn(internal `Eh`) / export `llt`.
 
 export type BindDeferredUiLltPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Da: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Th: (...args: unknown[]) => unknown;
+  bnt: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiLltPeers | null = null;
 
-/** Wire bindDeferredUiLlt once companions land. */
+/** Wire bindDeferredUiLlt peers once companions land. */
 export function setBindDeferredUiLltPeers(next: BindDeferredUiLltPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `llt` / internal `Eh`.
- * Stage-3 fill for bundle export llt / Eh
  */
-export function bindDeferredUiLlt(...args: unknown[]): unknown {
+export function bindDeferredUiLlt() {
   if (peers == null) {
     throw new Error("bindDeferredUiLlt peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Da(peers.Q, e => !1, {
+    onMount: (e, t) => {
+      let {
+          key: n
+        } = t,
+        r = t.get(peers.Th);
+      return r != null && e(r.checkGate(n)), t.set(peers.bnt, e => e.includes(n) ? e : [...e, n]), () => {
+        t.set(peers.bnt, e => e.filter(e => e !== n));
+      };
+    }
+  });
 }

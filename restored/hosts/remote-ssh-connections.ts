@@ -1,28 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Aot / V_
+// Materialized via extractFn(internal `V_`) / export `Aot`.
 
 export type BindRemoteSshConnectionsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  aOt: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  z_: (...args: unknown[]) => unknown;
 };
 
 let peers: BindRemoteSshConnectionsPeers | null = null;
 
-/** Wire bindRemoteSshConnections once companions land. */
-export function setBindRemoteSshConnectionsPeers(
-  next: BindRemoteSshConnectionsPeers,
-): void {
+/** Wire bindRemoteSshConnections peers once companions land. */
+export function setBindRemoteSshConnectionsPeers(next: BindRemoteSshConnectionsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Aot` / internal `V_`.
- * Stage-3 fill for bundle export Aot / V_
  */
-export function bindRemoteSshConnections(...args: unknown[]): unknown {
+export function bindRemoteSshConnections() {
   if (peers == null) {
     throw new Error("bindRemoteSshConnections peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    aOt = peers.c(), peers.Ho(), peers.ed(), peers.z_();
+  });
 }

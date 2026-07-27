@@ -12,9 +12,7 @@ export type SandboxModeId =
  * Bundle `kpe` (co-located with `Dpe` / `resolveAgentModeFromPolicy`).
  * `externalSandbox` maps to `null`.
  */
-export function sandboxPolicyToModeId(
-  policy: SandboxPolicyLike,
-): SandboxModeId | null {
+export function sandboxPolicyToModeId(policy: SandboxPolicyLike): SandboxModeId | null {
   switch (policy.type) {
     case "dangerFullAccess":
       return "danger-full-access";
@@ -37,9 +35,7 @@ export type AgentPermissionSnapshot = {
 /**
  * Bundle `Ape` (co-located) — wire format preferring profile id over sandbox mode.
  */
-export function agentConfigToPermissionWire(
-  config: AgentPermissionSnapshot,
-): { permissions: string } | { sandbox: SandboxModeId | null } {
+export function agentConfigToPermissionWire(config: AgentPermissionSnapshot): { permissions: string } | { sandbox: SandboxModeId | null } {
   return config.activePermissionProfile == null
     ? { sandbox: sandboxPolicyToModeId(config.sandboxPolicy) }
     : { permissions: config.activePermissionProfile.id };
@@ -48,9 +44,7 @@ export function agentConfigToPermissionWire(
 /**
  * Bundle `jpe` (co-located) — local config shape preferring profile id.
  */
-export function agentConfigToLocalPermissionRef(
-  config: AgentPermissionSnapshot,
-): { permissions: string } | { sandboxPolicy: SandboxPolicyLike } {
+export function agentConfigToLocalPermissionRef(config: AgentPermissionSnapshot): { permissions: string } | { sandboxPolicy: SandboxPolicyLike } {
   return config.activePermissionProfile == null
     ? { sandboxPolicy: config.sandboxPolicy }
     : { permissions: config.activePermissionProfile.id };
@@ -64,9 +58,7 @@ export type WorkspaceRootsConfig = {
 /**
  * Bundle `Mpe` (co-located) — runtime roots, else workspaceWrite.writableRoots.
  */
-export function resolveWorkspaceRoots(
-  config: WorkspaceRootsConfig,
-): readonly string[] {
+export function resolveWorkspaceRoots(config: WorkspaceRootsConfig): readonly string[] {
   if (config.runtimeWorkspaceRoots != null) {
     return config.runtimeWorkspaceRoots;
   }

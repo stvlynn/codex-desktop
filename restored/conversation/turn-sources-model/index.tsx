@@ -5,7 +5,6 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import type { ReactElement, ReactNode } from "react";
-
 import {
   appScopeAtom,
   ensureAppScopeHostInit,
@@ -29,13 +28,11 @@ import {
 import { QueryStaleTimes } from "../../config/query-stale-times";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { cx } from "../../ui/cx";
-
 export type TurnSourceLink = {
   label: string;
   title: string | null;
   url: string;
 };
-
 type ConnectorAssetRequest = {
   arguments: Record<string, string>;
   cacheKey: string;
@@ -43,15 +40,13 @@ type ConnectorAssetRequest = {
   sourceAppId: string;
   tool: string;
 };
-
 type ConnectorAssetTitleCache = Record<
   string,
-  { resolvedAt: number; title: string | null }
+  {
+    resolvedAt: number;
+    title: string | null;
+  }
 >;
-
-const GOOGLE_DRIVE_FIELDS = "id,name,mimeType,webViewLink";
-const TITLE_CACHE_TTL_MS = 86_400_000;
-
 type ConnectorAdapter = {
   getRequest: (url: URL) => ConnectorAssetRequest | null;
   getTitle: (
@@ -59,7 +54,6 @@ type ConnectorAdapter = {
     toolResult: McpToolResult,
   ) => string | null;
 };
-
 function resolveConnectorAssetRequest(
   url: string,
 ): ConnectorAssetRequest | null {
@@ -73,7 +67,6 @@ function resolveConnectorAssetRequest(
   }
   return connectorAdapters[app.appId]?.getRequest(parsed) ?? null;
 }
-
 function titleFromResourceActivities(
   request: ConnectorAssetRequest,
   toolResult: McpToolResult,
@@ -89,7 +82,6 @@ function titleFromResourceActivities(
   }
   return null;
 }
-
 const connectorAdapters: Record<string, ConnectorAdapter> = {
   "google-drive": {
     getRequest(url) {
@@ -107,7 +99,10 @@ const connectorAdapters: Record<string, ConnectorAdapter> = {
       if (fileId == null) return null;
       if (kind === "document") {
         return {
-          arguments: { fields: GOOGLE_DRIVE_FIELDS, fileId },
+          arguments: {
+            fields: "id,name,mimeType,webViewLink",
+            fileId,
+          },
           cacheKey: `google-drive:document:${fileId}`,
           server: "codex_apps",
           sourceAppId: "google-drive",
@@ -116,7 +111,10 @@ const connectorAdapters: Record<string, ConnectorAdapter> = {
       }
       if (kind === "spreadsheets") {
         return {
-          arguments: { fields: GOOGLE_DRIVE_FIELDS, fileId },
+          arguments: {
+            fields: "id,name,mimeType,webViewLink",
+            fileId,
+          },
           cacheKey: `google-drive:spreadsheet:${fileId}`,
           server: "codex_apps",
           sourceAppId: "google-drive",
@@ -134,7 +132,6 @@ const connectorAdapters: Record<string, ConnectorAdapter> = {
     },
   },
 };
-
 function resolveConnectorAssetTitle(
   request: ConnectorAssetRequest,
   toolResult: McpToolResult,
@@ -144,7 +141,6 @@ function resolveConnectorAssetTitle(
     null
   );
 }
-
 let connectorAssetTitleAtom: BindableAtom | null = null;
 let titleCacheSignal: ReturnType<
   typeof createPersistedScopeSignal<ConnectorAssetTitleCache>
@@ -152,13 +148,11 @@ let titleCacheSignal: ReturnType<
 
 /** Rolldown ESM init for visibility helpers (bundle export `a`). */
 export function ensureTurnSourcesVisibilityInit(): void {}
-
 export type TurnSourcesVisibilityProps = {
   className?: string;
   children?: ReactNode;
   isVisible: boolean;
 };
-
 const VISIBILITY_TRANSITION = {
   duration: 0.22,
   ease: [0.23, 1, 0.32, 1] as const,
@@ -177,11 +171,17 @@ export function TurnSourcesVisibility({
       animate={{
         height: "auto",
         opacity: 1,
-        transitionEnd: { overflow: "visible" },
+        transitionEnd: {
+          overflow: "visible",
+        },
       }}
       exit={
         prefersReducedMotion
-          ? { opacity: 0, overflow: "hidden", pointerEvents: "none" }
+          ? {
+              opacity: 0,
+              overflow: "hidden",
+              pointerEvents: "none",
+            }
           : {
               height: 0,
               opacity: 0,
@@ -194,7 +194,6 @@ export function TurnSourcesVisibility({
       {children}
     </motion.div>
   ) : null;
-
   return <AnimatePresence initial={false}>{content}</AnimatePresence>;
 }
 
@@ -232,9 +231,19 @@ export function ensureTurnSourcesConnectorTitleAtom(): void {
   connectorAssetTitleAtom ??= createAppScopeSelectAtom(
     appScopeAtom,
     (
-      { hostId, url }: { hostId: string; url: string },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      { scope }: { get: (atom: unknown) => unknown; scope: any },
+      {
+        hostId,
+        url,
+      }: {
+        hostId: string;
+        url: string;
+      },
+      {
+        scope,
+      }: {
+        get: (atom: unknown) => unknown;
+        scope: any;
+      },
     ) => {
       const request = resolveConnectorAssetRequest(url);
       const cacheKey =
@@ -245,10 +254,7 @@ export function ensureTurnSourcesConnectorTitleAtom(): void {
           const cache = scope.get(titleCacheSignal) as ConnectorAssetTitleCache;
           if (request == null || cacheKey == null || cache == null) return null;
           const cached = cache[cacheKey];
-          if (
-            cached != null &&
-            Date.now() - cached.resolvedAt < TITLE_CACHE_TTL_MS
-          ) {
+          if (cached != null && Date.now() - cached.resolvedAt < 86_400_000) {
             return cached.title;
           }
           try {
@@ -266,7 +272,10 @@ export function ensureTurnSourcesConnectorTitleAtom(): void {
             if (title != null) {
               scope.set(titleCacheSignal, {
                 ...scope.get(titleCacheSignal),
-                [cacheKey]: { resolvedAt: Date.now(), title },
+                [cacheKey]: {
+                  resolvedAt: Date.now(),
+                  title,
+                },
               });
             }
             return title;
@@ -283,11 +292,12 @@ export function ensureTurnSourcesConnectorTitleAtom(): void {
       };
     },
     {
-      key: ({ hostId, url }: { hostId: string; url: string }) =>
-        JSON.stringify([
+      key: ({ hostId, url }: { hostId: string; url: string }) => {
+        return JSON.stringify([
           hostId,
           resolveConnectorAssetRequest(url)?.cacheKey ?? url,
-        ]),
+        ]);
+      },
     },
   );
 }

@@ -49,10 +49,7 @@ function pagesItems(data: unknown): ConversationListItem[] {
 }
 
 /** Bundle `Bja` / export `FN`. */
-export function findCachedConversationItem(
-  queryClient: QueryClientLike,
-  conversationId: string,
-): CachedConversationHit | null {
+export function findCachedConversationItem(queryClient: QueryClientLike, conversationId: string): CachedConversationHit | null {
   if (deps == null) {
     throw new Error("findCachedConversationItem deps have not been configured");
   }

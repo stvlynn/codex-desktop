@@ -1,41 +1,55 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export ma / PQl
+// Materialized via extractFn(internal `PQl`) / export `ma`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredmaProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredmaPeers = {
+  AQl: (...args: unknown[]) => unknown;
+  DQl: (...args: unknown[]) => unknown;
+  EQl: (...args: unknown[]) => unknown;
+  MQl: (...args: unknown[]) => unknown;
+  NQl: (...args: unknown[]) => unknown;
+  OQl: (...args: unknown[]) => unknown;
+  constructor: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  jQl: (...args: unknown[]) => unknown;
+  kQl: (...args: unknown[]) => unknown;
+  reason: (...args: unknown[]) => unknown;
 };
 
-type DeferredmaImpl = (props: DeferredmaProps) => ReactNode;
-let impl: DeferredmaImpl | null = null;
+let peers: BindDeferredmaPeers | null = null;
 
-/** Wire the full Deferredma once deeper restore lands. */
-export function bindDeferredma(next: DeferredmaImpl): void {
-  impl = next;
+/** Wire bindDeferredma peers once companions land. */
+export function setBindDeferredmaPeers(next: BindDeferredmaPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `ma` / internal `PQl`.
- * Stage-3 fill for bundle export ma / PQl; heavy UI via bind.
  */
-export function Deferredma(props: DeferredmaProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fq-scaffold="ma"
-      aria-label="Deferredma"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export ma / PQl
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredma() {
+  if (peers == null) {
+    throw new Error("bindDeferredma peers are not configured");
+  }
+
+  return peers.e(() => {
+    EQl = class extends Error {
+      reason;
+      constructor(e) {
+        super(peers.e), this.reason = peers.e;
+      }
+    }, DQl = 52, OQl = `2025-07-13`, kQl = 3, AQl = 20, jQl = /^[a-z0-9._-]+$/, MQl = /\s/g, NQl = {
+      business: `Enterprise`,
+      enterprise: `Enterprise`,
+      enterprise_cbp_automation: `Enterprise`,
+      enterprise_cbp_usage_based: `Enterprise`,
+      free: `Free`,
+      free_workspace: `Free`,
+      go: `Go`,
+      guest: `Free`,
+      plus: `Plus`,
+      pro: `Pro`,
+      prolite: `Pro`,
+      self_serve_business_usage_based: `Business`,
+      team: `Business`
+    };
+  });
 }

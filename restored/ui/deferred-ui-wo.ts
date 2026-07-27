@@ -1,25 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export wo / HBl
+// Materialized via extractFn(internal `HBl`) / export `wo`.
 
 export type BindDeferredUiWoPeers = {
-  impl: (...args: unknown[]) => unknown;
+  BBl: (...args: unknown[]) => unknown;
+  VBl: (...args: unknown[]) => unknown;
+  i5: (...args: unknown[]) => unknown;
+  uBl: (...args: unknown[]) => unknown;
 };
-
 let peers: BindDeferredUiWoPeers | null = null;
 
-/** Wire bindDeferredUiWo once companions land. */
+/** Wire bindDeferredUiWo peers once companions land. */
 export function setBindDeferredUiWoPeers(next: BindDeferredUiWoPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `wo` / internal `HBl`.
- * Stage-3 fill for bundle export wo / HBl
  */
-export function bindDeferredUiWo(...args: unknown[]): unknown {
+export const bindDeferredUiWo = function (e) {
   if (peers == null) {
     throw new Error("bindDeferredUiWo peers are not configured");
   }
-  return peers.impl(...args);
-}
+  return peers.i5.createElement(
+    peers.BBl,
+    peers.uBl({}, e, {
+      colorModel: peers.VBl,
+    }),
+  );
+};

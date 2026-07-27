@@ -1,48 +1,41 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export $U / JFi
+// Materialized via extractFn(internal `JFi`) / export `$U`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredConversationU3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredConversationU3Peers = {
+  BFi: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  N3n: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
+  kI: (...args: unknown[]) => unknown;
+  qFi: (...args: unknown[]) => unknown;
 };
 
-type DeferredConversationU3Impl = (
-  props: DeferredConversationU3Props,
-) => ReactNode;
-let impl: DeferredConversationU3Impl | null = null;
+let peers: BindDeferredConversationU3Peers | null = null;
 
-/** Wire the full DeferredConversationU3 once deeper restore lands. */
-export function bindDeferredConversationU3(
-  next: DeferredConversationU3Impl,
-): void {
-  impl = next;
+/** Wire bindDeferredConversationU3 peers once companions land. */
+export function setBindDeferredConversationU3Peers(next: BindDeferredConversationU3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `$U` / internal `JFi`.
- * Stage-3 fill for bundle export $U / JFi; heavy UI via bind.
  */
-export function DeferredConversationU3(
-  props: DeferredConversationU3Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="$U"
-      aria-label="DeferredConversationU3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export $U / JFi
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredConversationU3() {
+  if (peers == null) {
+    throw new Error("bindDeferredConversationU3 peers are not configured");
+  }
+
+  return peers.Ma(peers.hT, ({
+    get: e
+  }) => {
+    let t = e(peers.qFi),
+      n = t.data ?? null;
+    return n == null ? peers.N3n(t) : e(peers.BFi, {
+      commonDir: n.commonDir,
+      enabled: !0,
+      hostConfig: e(peers.kI),
+      operationSource: `local_conversation_thread`,
+      root: n.root
+    });
+  });
 }

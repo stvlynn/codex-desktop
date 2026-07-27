@@ -1,34 +1,39 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `hQa`) / export `Bj`.
+// Materialized via extractFn(internal `hQa`) / export `Bj`.
 
 export type MemoizedValueBridgePeers = {
-  subscribe: (value: unknown, onStoreChange: () => void) => () => void;
-  getSnapshot: (value: unknown) => unknown;
-  useSyncExternalStore: (
-    subscribe: (onStoreChange: () => void) => () => void,
-    getSnapshot: () => unknown,
-  ) => unknown;
+  _Qa: (...args: unknown[]) => unknown;
+  dQa: (...args: unknown[]) => unknown;
+  gQa: (...args: unknown[]) => unknown;
+  vQa: (...args: unknown[]) => unknown;
 };
 
 let peers: MemoizedValueBridgePeers | null = null;
 
-/** Wire memoized value-bridge peers once companions land. */
-export function setMemoizedValueBridgePeers(
-  next: MemoizedValueBridgePeers,
-): void {
+/** Wire MemoizedValueBridge peers once companions land. */
+export function setMemoizedValueBridgePeers(next: MemoizedValueBridgePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Bj` / internal `hQa`.
- * Subscribe to an external memoized value via useSyncExternalStore.
  */
-export function MemoizedValueBridge(value: unknown): unknown {
+export function MemoizedValueBridge(e: unknown) {
   if (peers == null) {
     throw new Error("MemoizedValueBridge peers are not configured");
   }
-  const subscribe = (onStoreChange: () => void) =>
-    peers!.subscribe(value, onStoreChange);
-  const getSnapshot = () => peers!.getSnapshot(value);
-  return peers.useSyncExternalStore(subscribe, getSnapshot);
+
+  let t = (0, peers._Qa.c)(4),
+    n;
+  t[0] === e
+    ? (n = t[1])
+    : ((n = (t) => peers.gQa(e, t)), (t[0] = e), (t[1] = n));
+  let r = n,
+    i;
+  return (
+    t[2] === e
+      ? (i = t[3])
+      : ((i = () => peers.dQa(e)), (t[2] = e), (t[3] = i)),
+    (0, peers.vQa.useSyncExternalStore)(r, i)
+  );
 }

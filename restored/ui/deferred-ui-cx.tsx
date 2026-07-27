@@ -1,41 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export CX / Cqr
+// Materialized via extractFn(internal `Cqr`) / export `CX`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiCXProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiCXPeers = {
+  H_: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Sqr: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiCXImpl = (props: BindDeferredUiCXProps) => ReactNode;
-let impl: BindDeferredUiCXImpl | null = null;
+let peers: BindBindDeferredUiCXPeers | null = null;
 
-/** Wire the full BindDeferredUiCX once deeper restore lands. */
-export function bindBindDeferredUiCX(next: BindDeferredUiCXImpl): void {
-  impl = next;
+/** Wire bindBindDeferredUiCX peers once companions land. */
+export function setBindBindDeferredUiCXPeers(next: BindBindDeferredUiCXPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `CX` / internal `Cqr`.
- * Stage-3 fill for bundle export CX / Cqr; heavy UI via bind.
  */
-export function BindDeferredUiCX(props: BindDeferredUiCXProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="CX"
-      aria-label="BindDeferredUiCX"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export CX / Cqr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiCX() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiCX peers are not configured");
+  }
+
+  return peers.Ma(peers.Q, ({
+    get: e
+  }) => e(peers.Sqr, peers.H_));
 }

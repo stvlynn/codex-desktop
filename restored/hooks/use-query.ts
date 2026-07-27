@@ -1,9 +1,9 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `jt`) / export `Tvt`.
+// Materialized via extractFn(internal `jt`) / export `Tvt`.
 
 export type UseQueryPeers = {
-  runQuery: (options: unknown, flag: unknown, extra?: unknown) => unknown;
-  queryFlag: unknown;
+  Ot: (...args: unknown[]) => unknown;
+  we: (...args: unknown[]) => unknown;
 };
 
 let peers: UseQueryPeers | null = null;
@@ -15,11 +15,11 @@ export function setUseQueryPeers(next: UseQueryPeers): void {
 
 /**
  * Bundle export `Tvt` / internal `jt`.
- * Thin wrapper around the shared query helper.
  */
-export function useQuery(options: unknown, extra?: unknown): unknown {
+export function useQuery(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("UseQuery peers are not configured");
+    throw new Error("useQuery peers are not configured");
   }
-  return peers.runQuery(options, peers.queryFlag, extra);
+
+  return peers.Ot(e, peers.we, t);
 }

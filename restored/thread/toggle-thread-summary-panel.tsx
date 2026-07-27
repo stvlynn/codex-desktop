@@ -102,10 +102,7 @@ function preventFocusOutsideRightTabPanel(event: {
 /**
  * Bundle export `n` — toggle summary pin / overlay popover open state.
  */
-export function toggleThreadSummaryPanel(
-  scope: ScopeLike,
-  next: ShellPanelPinKey | boolean = true,
-): void {
+export function toggleThreadSummaryPanel(scope: ScopeLike, next: ShellPanelPinKey | boolean = true): void {
   const display = scope.get(conversationSourceS) as SummaryDisplayState;
   const pinKey = next as ShellPanelPinKey;
   const pinned = shouldKeepPanelPinned(

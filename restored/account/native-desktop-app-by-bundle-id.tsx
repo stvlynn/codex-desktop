@@ -17,9 +17,7 @@ type NativeDesktopAppByBundleIdImpl = (
 let impl: NativeDesktopAppByBundleIdImpl | null = null;
 
 /** Wire the full NativeDesktopAppByBundleId once deeper restore lands. */
-export function bindNativeDesktopAppByBundleId(
-  next: NativeDesktopAppByBundleIdImpl,
-): void {
+export function bindNativeDesktopAppByBundleId(next: NativeDesktopAppByBundleIdImpl): void {
   impl = next;
 }
 
@@ -27,9 +25,7 @@ export function bindNativeDesktopAppByBundleId(
  * Bundle export `Md` / internal `ZHc`.
  * Stage-3 fill for bundle export Md / ZHc; heavy UI via bind.
  */
-export function NativeDesktopAppByBundleId(
-  props: NativeDesktopAppByBundleIdProps,
-): ReactElement {
+export function NativeDesktopAppByBundleId(props: NativeDesktopAppByBundleIdProps): ReactElement {
   if (impl != null) return impl(props) as ReactElement;
   const { className, children } = props;
   return (

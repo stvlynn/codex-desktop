@@ -14,9 +14,7 @@ type ArtifactTabContentElectronImpl = (
 let impl: ArtifactTabContentElectronImpl | null = null;
 
 /** Wire the full ArtifactTabContentElectron once deeper restore lands. */
-export function bindArtifactTabContentElectron(
-  next: ArtifactTabContentElectronImpl,
-): void {
+export function bindArtifactTabContentElectron(next: ArtifactTabContentElectronImpl): void {
   impl = next;
 }
 
@@ -24,9 +22,7 @@ export function bindArtifactTabContentElectron(
  * Bindable ArtifactTabContentElectron.
  * Alias ownership unresolved — do not invent extractFn body.
  */
-export function ArtifactTabContentElectron(
-  props: ArtifactTabContentElectronProps,
-): ReactElement {
+export function ArtifactTabContentElectron(props: ArtifactTabContentElectronProps): ReactElement {
   if (impl == null) {
     return (
       <div

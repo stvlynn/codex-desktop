@@ -1,31 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EL — real body via extractFn(internal `Tt`) / export `Dvt`.
+// Materialized via extractFn(internal `Tt`) / export `Dvt`.
 
 export type UseDvtBindablePeers = {
-  useQueryClient: (queryClient?: unknown) => {
-    defaultQueryOptions: (opts: unknown) => Record<string, unknown>;
-  };
-  useIsRestoring: () => boolean;
-  useQueryCacheNotify: () => unknown;
-  useMemo: <T>(factory: () => T, deps: unknown[]) => T;
-  useState: <T>(init: () => T) => [T, (next: T) => void];
-  useSyncExternalStore: (
-    subscribe: (onStoreChange: () => void) => () => void,
-    getSnapshot: () => unknown,
-  ) => unknown;
-  prepareOptions: (opts: Record<string, unknown>) => void;
-  track: (opts: Record<string, unknown>, notify: unknown) => void;
-  flush: (notify: unknown) => void;
-  QueriesObserver: new (
-    client: unknown,
-    options: unknown[],
-  ) => {
-    subscribe: (listener: () => void) => () => void;
-    getCurrentResult: () => unknown;
-    setQueries: (options: unknown[]) => void;
-  };
+  Ct: (...args: unknown[]) => unknown;
+  Et: (...args: unknown[]) => unknown;
+  St: (...args: unknown[]) => unknown;
+  We: (...args: unknown[]) => unknown;
+  _t: (...args: unknown[]) => unknown;
+  bt: (...args: unknown[]) => unknown;
+  ct: (...args: unknown[]) => unknown;
+  error: (...args: unknown[]) => unknown;
+  g: (...args: unknown[]) => unknown;
+  gt: (...args: unknown[]) => unknown;
+  ne: (...args: unknown[]) => unknown;
+  pt: (...args: unknown[]) => unknown;
+  rt: (...args: unknown[]) => unknown;
+  vt: (...args: unknown[]) => unknown;
+  we: (...args: unknown[]) => unknown;
+  xt: (...args: unknown[]) => unknown;
 };
-
 let peers: UseDvtBindablePeers | null = null;
 
 /** Wire useDvtBindable peers once companions land. */
@@ -35,42 +28,77 @@ export function setUseDvtBindablePeers(next: UseDvtBindablePeers): void {
 
 /**
  * Bundle export `Dvt` / internal `Tt`.
- * TanStack useQueries-style multi-query observer hook.
  */
 export function useDvtBindable(
-  options: { queries: unknown[] } & Record<string, unknown>,
-  queryClient?: unknown,
-): unknown {
+  { queries, ...rest }: Record<string, unknown>,
+  n: unknown,
+) {
   if (peers == null) {
-    throw new Error("UseDvtBindable peers are not configured");
+    throw new Error("useDvtBindable peers are not configured");
   }
-  const { queries, ...rest } = options;
-  const client = peers.useQueryClient(queryClient);
-  const isRestoring = peers.useIsRestoring();
-  const notify = peers.useQueryCacheNotify();
-  const defaulted = peers.useMemo(
-    () =>
-      queries.map((query) => {
-        const opts = client.defaultQueryOptions(query);
-        opts._optimisticResults = isRestoring ? "isRestoring" : "optimistic";
-        return opts;
-      }),
-    [queries, client, isRestoring],
-  );
-  defaulted.forEach((opts) => {
-    peers!.prepareOptions(opts);
-    peers!.track(opts, notify);
+  let r = peers.rt(n),
+    i = peers.ct(),
+    a = peers.pt(),
+    o = peers.Et.useMemo(() => {
+      return queries.map((item) => {
+        let t = r.defaultQueryOptions(item);
+        return ((t._optimisticResults = i ? "isRestoring" : "optimistic"), t);
+      });
+    }, [queries, r, i]);
+  o.forEach((item) => {
+    peers.bt(item);
+    peers.gt(item, a);
   });
-  peers.flush(notify);
-  const [observer] = peers.useState(
-    () => new peers!.QueriesObserver(client, defaulted),
+  peers._t(a);
+  let [s] = peers.Et.useState(() => {
+      return new peers.We(r, o, rest);
+    }),
+    [c, l, u] = s.getOptimisticResult(o, rest.combine),
+    d = !i && rest.subscribed !== false;
+  peers.Et.useSyncExternalStore(
+    peers.Et.useCallback(
+      (e) => {
+        return d ? s.subscribe(peers.ne.batchCalls(e)) : peers.g;
+      },
+      [s, d],
+    ),
+    () => {
+      return s.getCurrentResult();
+    },
+    () => {
+      return s.getCurrentResult();
+    },
   );
-  peers.useMemo(() => {
-    observer.setQueries(defaulted);
-    return null;
-  }, [observer, defaulted, rest]);
-  return peers.useSyncExternalStore(
-    (onStoreChange) => observer.subscribe(onStoreChange),
-    () => observer.getCurrentResult(),
-  );
+  peers.Et.useEffect(() => {
+    s.setQueries(o, rest);
+  }, [o, rest, s]);
+  let f = c.some((item, index) => {
+    return peers.St(o[index], item);
+  })
+    ? c.flatMap((item, index) => {
+        let n = o[index];
+        if (n) {
+          let t = new peers.we(r, n);
+          if (peers.St(n, item)) return peers.Ct(n, t, a);
+          peers.xt(item, i) && peers.Ct(n, t, a);
+        }
+        return [];
+      })
+    : [];
+  if (f.length > 0) throw Promise.all(f);
+  let p = c.find((item, index) => {
+    let n = o[index];
+    return (
+      n &&
+      peers.vt({
+        result: item,
+        errorResetBoundary: a,
+        throwOnError: n.throwOnError,
+        query: r.getQueryCache().get(n.queryHash),
+        suspense: n.suspense,
+      })
+    );
+  });
+  if (p?.error) throw p.error;
+  return l(u());
 }

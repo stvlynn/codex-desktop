@@ -1,67 +1,141 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EA — Stage-3 scaffold via extractFn(internal `m$a`) / export `Nj`.
-// Diff/theme peers bind via setCodeSymbolOutlinePanelParts.
+// Materialized via extractFn(internal `m$a`) / export `Nj`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type CodeSymbolOutlinePanelProps = {
-  fileDiff?: unknown;
-  className?: string;
-  hunkSeparators?: "line-info" | string;
-  lineAnnotations?: unknown;
-  lineDiffType?: unknown;
-  metrics?: unknown;
-  onGutterUtilityClick?: unknown;
-  onPostRender?: unknown;
-  renderAnnotation?: unknown;
-  selectedLines?: unknown;
-  overflow?: "scroll" | string;
-  useReviewLineInfoSeparators?: boolean;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindCodeSymbolOutlinePanelPeers = {
+  Ila: (...args: unknown[]) => unknown;
+  Su: (...args: unknown[]) => unknown;
+  Xni: (...args: unknown[]) => unknown;
+  bp: (...args: unknown[]) => unknown;
+  g$a: (...args: unknown[]) => unknown;
+  h$a: (...args: unknown[]) => unknown;
+  hP: (...args: unknown[]) => unknown;
+  jP: (...args: unknown[]) => unknown;
+  jla: (...args: unknown[]) => unknown;
+  lL: (...args: unknown[]) => unknown;
+  length: (...args: unknown[]) => unknown;
+  querySelectorAll: (...args: unknown[]) => unknown;
+  replaceChildren: (...args: unknown[]) => unknown;
+  s$a: (...args: unknown[]) => unknown;
+  uL: (...args: unknown[]) => unknown;
+  v$a: (...args: unknown[]) => unknown;
+  y$a: (...args: unknown[]) => unknown;
 };
+let peers: BindCodeSymbolOutlinePanelPeers | null = null;
 
-export type CodeSymbolOutlinePanelParts = {
-  render: (props: CodeSymbolOutlinePanelProps) => ReactNode;
-};
-
-let parts: CodeSymbolOutlinePanelParts | null = null;
-
-/** Wire full outline/diff panel once companions land. */
-export function setCodeSymbolOutlinePanelParts(
-  next: CodeSymbolOutlinePanelParts,
+/** Wire bindCodeSymbolOutlinePanel peers once companions land. */
+export function setBindCodeSymbolOutlinePanelPeers(
+  next: BindCodeSymbolOutlinePanelPeers,
 ): void {
-  parts = next;
-}
-
-/** @deprecated Prefer setCodeSymbolOutlinePanelParts */
-export function bindCodeSymbolOutlinePanel(
-  next: (props: CodeSymbolOutlinePanelProps) => ReactNode,
-): void {
-  parts = { render: next };
+  peers = next;
 }
 
 /**
  * Bundle export `Nj` / internal `m$a`.
- * Editor line-info/scroll/symbols outline panel scaffold.
  */
-export function CodeSymbolOutlinePanel(
-  props: CodeSymbolOutlinePanelProps,
-): ReactElement {
-  if (parts != null) return parts.render(props) as ReactElement;
-  const {
+export function bindCodeSymbolOutlinePanel(props: unknown) {
+  const Ha = peers.h$a;
+  if (peers == null) {
+    throw new Error("bindCodeSymbolOutlinePanel peers are not configured");
+  }
+  let {
+    fileDiff,
     className,
-    overflow = "scroll",
     hunkSeparators = "line-info",
-    children,
+    lineAnnotations,
+    lineDiffType,
+    metrics,
+    onGutterUtilityClick,
+    onPostRender,
+    renderAnnotation,
+    selectedLines,
+    overflow = "scroll",
+    useReviewLineInfoSeparators = false,
+    ...rest
   } = props;
+  let v = peers.uL(peers.lL()),
+    y = peers.bp(peers.Su.lightCodeThemeId),
+    b = peers.bp(peers.Su.darkCodeThemeId),
+    x = peers.bp(peers.Su.diffMarkerStyle),
+    S = peers.hP(),
+    C = x === "symbols",
+    w = v === "light" ? peers.jP(y, "light") : peers.jP(b, "dark");
+  let T = w,
+    E,
+    D,
+    O,
+    k,
+    A,
+    j,
+    M,
+    N,
+    P,
+    F,
+    I,
+    L,
+    R;
+  peers.Xni(undefined);
+  D = peers.s$a;
+  N = lineDiffType == null ? null : <Ha lineDiffType={lineDiffType} />;
+  M = className;
+  E = peers.jla;
+  R = fileDiff;
+  O = lineAnnotations;
+  k = metrics;
+  A = renderAnnotation;
+  j = selectedLines;
+  P = overflow;
+  F = hunkSeparators;
+  I = v;
+  L = T.name;
+  let z = C ? "classic" : "bars",
+    B = onGutterUtilityClick != null,
+    V = (e, t, n) => {
+      let r = e.shadowRoot?.querySelectorAll("[data-placeholder]");
+      if (n === "unmount") {
+        r?.length === 0 && e.shadowRoot?.replaceChildren();
+        return;
+      }
+      r != null &&
+        r.length > 1 &&
+        e.shadowRoot?.replaceChildren(r.item(r.length - 1));
+      onPostRender?.(e);
+    };
+  let H = peers.Ila({
+    includeDiffHeader: true,
+    includeSimpleLineSeparators: true,
+    rootSelector: peers.y$a,
+    surface: "var(--codex-diffs-surface)",
+    useReviewLineInfoSeparators,
+  });
+  let U = {
+    overflow: P,
+    hunkSeparators: F,
+    themeType: I,
+    theme: L,
+    disableFileHeader: true,
+    diffIndicators: z,
+    enableGutterUtility: B,
+    lineDiffType,
+    onGutterUtilityClick,
+    onPostRender: V,
+    unsafeCSS: H,
+    ...rest,
+  };
+  let W = (
+    <E
+      fileDiff={R}
+      lineAnnotations={O}
+      metrics={k}
+      renderAnnotation={A}
+      selectedLines={j}
+      options={U}
+    />
+  );
+  let G = <div className={M}>{W}</div>;
   return (
-    <div
-      className={className ?? "min-h-0 flex-1 overflow-auto"}
-      data-hunk-separators={hunkSeparators}
-      data-overflow={overflow}
-    >
-      {children}
-    </div>
+    <D>
+      {N}
+      {G}
+    </D>
   );
 }

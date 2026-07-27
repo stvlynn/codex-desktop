@@ -1,26 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Pg / TJs
+// Materialized via extractFn(internal `TJs`) / export `Pg`.
 
 export type BindMoveThreadPeers = {
-  impl: (...args: unknown[]) => unknown;
+  $u: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  ND: (...args: unknown[]) => unknown;
+  SJs: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  wJs: (...args: unknown[]) => unknown;
 };
 
 let peers: BindMoveThreadPeers | null = null;
 
-/** Wire bindMoveThread once companions land. */
+/** Wire bindMoveThread peers once companions land. */
 export function setBindMoveThreadPeers(next: BindMoveThreadPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Pg` / internal `TJs`.
- * Stage-3 fill for bundle export Pg / TJs
  */
-export function bindMoveThread(...args: unknown[]): unknown {
+export function bindMoveThread() {
   if (peers == null) {
     throw new Error("bindMoveThread peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    wJs = peers.c(), peers.Ho(), peers.Au(), peers.$u(), peers.SJs(), peers.ND();
+  });
 }

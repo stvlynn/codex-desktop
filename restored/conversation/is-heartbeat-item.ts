@@ -6,8 +6,6 @@ export type HeartbeatLike = {
 };
 
 /** Bundle `Tl` / export `Rgt`. */
-export function isHeartbeatItem(
-  item: HeartbeatLike | null | undefined,
-): boolean {
+export function isHeartbeatItem(item: HeartbeatLike | null | undefined): boolean {
   return item?.kind === "heartbeat";
 }

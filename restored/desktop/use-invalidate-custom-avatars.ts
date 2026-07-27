@@ -1,35 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EM — real body via extractFn(internal `vE`) / export `l3`.
+// Materialized via extractFn(internal `vE`) / export `l3`.
 
 export type UseInvalidateCustomAvatarsPeers = {
-  useQueryClient: () => unknown;
-  invalidateQueryKeyAndNotify: (
-    queryClient: unknown,
-    queryKey: unknown,
-  ) => Promise<unknown>;
+  U8n: (...args: unknown[]) => unknown;
+  W8n: (...args: unknown[]) => unknown;
+  rt: (...args: unknown[]) => unknown;
 };
 
 let peers: UseInvalidateCustomAvatarsPeers | null = null;
 
 /** Wire useInvalidateCustomAvatars peers once companions land. */
-export function setUseInvalidateCustomAvatarsPeers(
-  next: UseInvalidateCustomAvatarsPeers,
-): void {
+export function setUseInvalidateCustomAvatarsPeers(next: UseInvalidateCustomAvatarsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `l3` / internal `vE`.
- * Return an async invalidator for custom-avatar query keys.
  */
-export function useInvalidateCustomAvatars(): (
-  queryKey: unknown,
-) => Promise<unknown> {
+export function useInvalidateCustomAvatars() {
   if (peers == null) {
-    throw new Error("UseInvalidateCustomAvatars peers are not configured");
+    throw new Error("useInvalidateCustomAvatars peers are not configured");
   }
-  const queryClient = peers.useQueryClient();
-  return async (queryKey: unknown) => {
-    await peers!.invalidateQueryKeyAndNotify(queryClient, queryKey);
-  };
+
+  let e = (0, peers.W8n.c)(2),
+    t = peers.rt(),
+    n;
+  return (
+    e[0] === t
+      ? (n = e[1])
+      : ((n = async (e) => {
+          await peers.U8n(t, e);
+        }),
+        (e[0] = t),
+        (e[1] = n)),
+    n
+  );
 }

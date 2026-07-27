@@ -3,7 +3,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import type { BindableAtom } from "../boundaries/composer-appscope-atoms";
-
 function placeholder(brand: string): BindableAtom {
   return {
     __brand: brand,
@@ -40,7 +39,6 @@ export let workspaceRootOptionsQueryAtom: BindableAtom = placeholder(
 export let selectedRemoteProjectAtom: BindableAtom = placeholder(
   "selectedRemoteProjectAtom",
 );
-
 export function bindHooksQueryAtoms(next: {
   writeHooksStateMutationAtom?: BindableAtom;
   listHooksForHostQueryAtom?: BindableAtom;
@@ -64,12 +62,10 @@ export function bindHooksQueryAtoms(next: {
     selectedRemoteProjectAtom = next.selectedRemoteProjectAtom;
   }
 }
-
 export type InvalidateHooksQueriesPeers = {
   hooksQueryKeyPrefix: readonly unknown[];
   broadcastInvalidation: (key: readonly unknown[]) => void;
 };
-
 let invalidatePeers: InvalidateHooksQueriesPeers | null = null;
 
 /** Wire hooks query invalidation peers once companions land. */
@@ -91,16 +87,22 @@ export async function invalidateHooksQueries(
     }) => Promise<unknown>;
   },
   hostId: string,
-  options: { broadcast?: boolean; refetchType?: string } = {},
+  options: {
+    broadcast?: boolean;
+    refetchType?: string;
+  } = {},
 ): Promise<void> {
   if (invalidatePeers == null) {
     throw new Error("InvalidateHooksQueries peers are not configured");
   }
   const { broadcast = false, refetchType } = options;
   await queryClient.invalidateQueries({
-    predicate: ({ queryKey }) =>
-      queryKey[0] === invalidatePeers!.hooksQueryKeyPrefix[0] &&
-      queryKey[1] === hostId,
+    predicate: ({ queryKey }) => {
+      return (
+        queryKey[0] === invalidatePeers!.hooksQueryKeyPrefix[0] &&
+        queryKey[1] === hostId
+      );
+    },
     refetchType,
   });
   if (broadcast) {

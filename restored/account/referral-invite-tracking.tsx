@@ -17,9 +17,7 @@ type ReferralInviteTrackingImpl = (
 let impl: ReferralInviteTrackingImpl | null = null;
 
 /** Wire the full ReferralInviteTracking once deeper restore lands. */
-export function bindReferralInviteTracking(
-  next: ReferralInviteTrackingImpl,
-): void {
+export function bindReferralInviteTracking(next: ReferralInviteTrackingImpl): void {
   impl = next;
 }
 
@@ -27,9 +25,7 @@ export function bindReferralInviteTracking(
  * Bundle export `Av` / internal `gOs`.
  * Stage-3 fill for bundle export Av / gOs; heavy UI via bind.
  */
-export function ReferralInviteTracking(
-  props: ReferralInviteTrackingProps,
-): ReactElement {
+export function ReferralInviteTracking(props: ReferralInviteTrackingProps): ReactElement {
   if (impl != null) return impl(props) as ReactElement;
   const { className, children } = props;
   return (

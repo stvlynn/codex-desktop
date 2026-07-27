@@ -19,9 +19,7 @@ export type SubGraphTitleMargins = {
   subGraphTitleBottomMargin: number;
   subGraphTitleTotalMargin: number;
 };
-export function getSubGraphTitleMargins(
-  config: FlowchartConfigSlice,
-): SubGraphTitleMargins {
+export function getSubGraphTitleMargins(config: FlowchartConfigSlice): SubGraphTitleMargins {
   const top = config.flowchart?.subGraphTitleMargin?.top ?? 0;
   const bottom = config.flowchart?.subGraphTitleMargin?.bottom ?? 0;
   return {

@@ -9,12 +9,10 @@ import {
   PlanSummaryMessage,
   type PlanSummaryMessageItem,
 } from "./plan-summary-message";
-
 type PlanSummaryLocationState = {
   planContent?: string;
   conversationId?: string;
 };
-
 function PlanSummarySkeleton(): ReactNode {
   return (
     <div className="p-[var(--padding-panel)]">
@@ -32,7 +30,6 @@ function PlanSummarySkeleton(): ReactNode {
     </div>
   );
 }
-
 function PlanSummaryBody({
   planContent,
   conversationId,

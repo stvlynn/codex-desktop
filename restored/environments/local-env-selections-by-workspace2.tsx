@@ -1,48 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export fA / vK
+// Materialized via extractFn(internal `vK`) / export `fA`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindLocalEnvSelectionsByWorkspace2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindLocalEnvSelectionsByWorkspace2Peers = {
+  kp: (...args: unknown[]) => unknown;
 };
 
-type BindLocalEnvSelectionsByWorkspace2Impl = (
-  props: BindLocalEnvSelectionsByWorkspace2Props,
-) => ReactNode;
-let impl: BindLocalEnvSelectionsByWorkspace2Impl | null = null;
+let peers: BindBindLocalEnvSelectionsByWorkspace2Peers | null = null;
 
-/** Wire the full BindLocalEnvSelectionsByWorkspace2 once deeper restore lands. */
-export function bindBindLocalEnvSelectionsByWorkspace2(
-  next: BindLocalEnvSelectionsByWorkspace2Impl,
-): void {
-  impl = next;
+/** Wire bindBindLocalEnvSelectionsByWorkspace2 peers once companions land. */
+export function setBindBindLocalEnvSelectionsByWorkspace2Peers(next: BindBindLocalEnvSelectionsByWorkspace2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `fA` / internal `vK`.
- * Stage-3 fill for bundle export fA / vK; heavy UI via bind.
  */
-export function BindLocalEnvSelectionsByWorkspace2(
-  props: BindLocalEnvSelectionsByWorkspace2Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="fA"
-      aria-label="BindLocalEnvSelectionsByWorkspace2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export fA / vK
-        </div>
-      )}
-    </div>
-  );
+export function bindBindLocalEnvSelectionsByWorkspace2() {
+  if (peers == null) {
+    throw new Error("bindBindLocalEnvSelectionsByWorkspace2 peers are not configured");
+  }
+
+  return peers.kp(`local-env-selections-by-workspace`, {});
 }

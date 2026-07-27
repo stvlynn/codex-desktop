@@ -1,44 +1,50 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export xj / jpo
+// Materialized via extractFn(internal `jpo`) / export `xj`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BinddeferredGitXj3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBinddeferredGitXj3Peers = {
+  $f: (...args: unknown[]) => unknown;
+  HG: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  gp: (...args: unknown[]) => unknown;
+  isInstalled: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
 };
 
-type BinddeferredGitXj3Impl = (props: BinddeferredGitXj3Props) => ReactNode;
-let impl: BinddeferredGitXj3Impl | null = null;
+let peers: BindBinddeferredGitXj3Peers | null = null;
 
-/** Wire the full BinddeferredGitXj3 once deeper restore lands. */
-export function bindBinddeferredGitXj3(next: BinddeferredGitXj3Impl): void {
-  impl = next;
+/** Wire bindBinddeferredGitXj3 peers once companions land. */
+export function setBindBinddeferredGitXj3Peers(next: BindBinddeferredGitXj3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `xj` / internal `jpo`.
- * Stage-3 fill for bundle export xj / jpo; heavy UI via bind.
  */
-export function BinddeferredGitXj3(
-  props: BinddeferredGitXj3Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ey-scaffold="xj"
-      aria-label="BinddeferredGitXj3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export xj / jpo
-        </div>
-      )}
-    </div>
-  );
+export function bindBinddeferredGitXj3() {
+  if (peers == null) {
+    throw new Error("bindBinddeferredGitXj3 peers are not configured");
+  }
+
+  return peers.ka(peers.Q, (e) => ({
+    gcTime: peers.Hf.INFINITE,
+    meta: {
+      hostId: e.hostId ?? `local`,
+    },
+    queryFn: async ({ signal: t }) =>
+      peers.gp.github == null
+        ? {
+            isInstalled: !1,
+            isAuthenticated: !1,
+          }
+        : peers.HG(`gh-cli-status`, e, {
+            signal: t,
+            source: `git_direct_call`,
+          }),
+    queryKey: peers.$f(`gh-cli-status`, e),
+    staleTime: (e) =>
+      e.state.data?.isInstalled === !0 && e.state.data.isAuthenticated === !0
+        ? peers.Hf.INFINITE
+        : peers.Hf.FIVE_SECONDS,
+  }));
 }

@@ -17,9 +17,7 @@ type ReferralInviteEligibilityImpl = (
 let impl: ReferralInviteEligibilityImpl | null = null;
 
 /** Wire the full ReferralInviteEligibility once deeper restore lands. */
-export function bindReferralInviteEligibility(
-  next: ReferralInviteEligibilityImpl,
-): void {
+export function bindReferralInviteEligibility(next: ReferralInviteEligibilityImpl): void {
   impl = next;
 }
 
@@ -27,9 +25,7 @@ export function bindReferralInviteEligibility(
  * Bundle export `Nv` / internal `lOs`.
  * Stage-3 fill for bundle export Nv / lOs; heavy UI via bind.
  */
-export function ReferralInviteEligibility(
-  props: ReferralInviteEligibilityProps,
-): ReactElement {
+export function ReferralInviteEligibility(props: ReferralInviteEligibilityProps): ReactElement {
   if (impl != null) return impl(props) as ReactElement;
   const { className, children } = props;
   return (

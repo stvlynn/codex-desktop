@@ -1,48 +1,41 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export zT / X0o
+// Materialized via extractFn(internal `X0o`) / export `zT`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredConversationZTProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredConversationZTPeers = {
+  E0o: (...args: unknown[]) => unknown;
+  H0o: (...args: unknown[]) => unknown;
+  J0o: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  W0o: (...args: unknown[]) => unknown;
+  ij: (...args: unknown[]) => unknown;
+  q0o: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredConversationZTImpl = (
-  props: BindDeferredConversationZTProps,
-) => ReactNode;
-let impl: BindDeferredConversationZTImpl | null = null;
+let peers: BindBindDeferredConversationZTPeers | null = null;
 
-/** Wire the full BindDeferredConversationZT once deeper restore lands. */
-export function bindBindDeferredConversationZT(
-  next: BindDeferredConversationZTImpl,
-): void {
-  impl = next;
+/** Wire bindBindDeferredConversationZT peers once companions land. */
+export function setBindBindDeferredConversationZTPeers(next: BindBindDeferredConversationZTPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `zT` / internal `X0o`.
- * Stage-3 fill for bundle export zT / X0o; heavy UI via bind.
  */
-export function BindDeferredConversationZT(
-  props: BindDeferredConversationZTProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="zT"
-      aria-label="BindDeferredConversationZT"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export zT / X0o
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredConversationZT() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredConversationZT peers are not configured");
+  }
+
+  return peers.Ma(peers.Q, ({ get: e, scope: t }) => {
+    let n = peers.H0o(
+      peers.J0o.get(t.node) ?? peers.q0o,
+      peers.W0o({
+        get: e,
+        threadKeys: e(peers.ij),
+        pinnedThreadIds: e(peers.E0o),
+      }),
+    );
+    return (peers.J0o.set(t.node, n), n);
+  });
 }

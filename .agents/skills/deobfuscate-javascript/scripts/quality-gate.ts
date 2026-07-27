@@ -162,6 +162,8 @@ const INTRINSIC_JSX_TAGS = new Set([
   "var",
   "video",
   "wbr",
+  // Electron custom element (BrowserWindow-embedded page)
+  "webview",
   // SVG
   "animate",
   "animateMotion",

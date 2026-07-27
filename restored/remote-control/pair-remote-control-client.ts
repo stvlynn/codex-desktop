@@ -1,14 +1,10 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EL — real body via extractFn(internal `fjr`) / export `YQ`.
+// Materialized via extractFn(internal `fjr`) / export `YQ`.
 
 export type PairRemoteControlClientPeers = {
-  run: (fn: () => unknown) => unknown;
-  safePost: (
-    path: string,
-    body: { requestBody: Record<string, unknown> },
-  ) => unknown;
+  Uh: (...args: unknown[]) => unknown;
+  yjr: (...args: unknown[]) => unknown;
 };
-
 let peers: PairRemoteControlClientPeers | null = null;
 
 /** Wire pairRemoteControlClient peers once companions land. */
@@ -20,21 +16,20 @@ export function setPairRemoteControlClientPeers(
 
 /**
  * Bundle export `YQ` / internal `fjr`.
- * POST remote-control client pair with manual pairing code.
  */
-export function pairRemoteControlClient(args: {
-  clientId: string;
-  manualPairingCode: string;
-}): unknown {
+export async function pairRemoteControlClient({
+  clientId,
+  manualPairingCode,
+}: Record<string, unknown>) {
   if (peers == null) {
-    throw new Error("PairRemoteControlClient peers are not configured");
+    throw new Error("pairRemoteControlClient peers are not configured");
   }
-  return peers.run(() =>
-    peers!.safePost("/wham/remote/control/client/pair", {
+  return peers.yjr(() => {
+    return peers.Uh.safePost("/wham/remote/control/client/pair", {
       requestBody: {
-        client_id: args.clientId,
-        manual_pairing_code: args.manualPairingCode,
+        client_id: clientId,
+        manual_pairing_code: manualPairingCode,
       },
-    }),
-  );
+    });
+  });
 }

@@ -1,41 +1,49 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export mQ / nj
+// Materialized via extractFn(internal `nj`) / export `mQ`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiMQProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiMQPeers = {
+  GNr: (...args: unknown[]) => unknown;
+  KNr: (...args: unknown[]) => unknown;
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  WNr: (...args: unknown[]) => unknown;
+  dNr: (...args: unknown[]) => unknown;
+  kind: (...args: unknown[]) => unknown;
+  pNr: (...args: unknown[]) => unknown;
+  zA: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiMQImpl = (props: BindDeferredUiMQProps) => ReactNode;
-let impl: BindDeferredUiMQImpl | null = null;
+let peers: BindBindDeferredUiMQPeers | null = null;
 
-/** Wire the full BindDeferredUiMQ once deeper restore lands. */
-export function bindBindDeferredUiMQ(next: BindDeferredUiMQImpl): void {
-  impl = next;
+/** Wire bindBindDeferredUiMQ peers once companions land. */
+export function setBindBindDeferredUiMQPeers(next: BindBindDeferredUiMQPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `mQ` / internal `nj`.
- * Stage-3 fill for bundle export mQ / nj; heavy UI via bind.
  */
-export function BindDeferredUiMQ(props: BindDeferredUiMQProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fp-scaffold="mQ"
-      aria-label="BindDeferredUiMQ"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export mQ / nj
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiMQ() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiMQ peers are not configured");
+  }
+
+  return peers.Oa(peers.Q, (e, {
+    get: t
+  }) => {
+    let n = peers.zA(e);
+    switch (n?.kind) {
+      case `local`:
+        {
+          let e = peers.pNr(t, n.threadId);
+          if (e != null) return t(peers.KNr, e.clientThreadId);
+          let r = peers.dNr(t, n.threadId);
+          return r == null ? null : t(t(peers.WNr, r));
+        }
+      case `remote`:
+        return t(peers.GNr, n.taskId);
+      case void 0:
+        return null;
+    }
+  });
 }

@@ -1,20 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `Ofl`) / export `_c`.
-
-import type { ReactElement, ReactNode } from "react";
-
-export type DriveResourceKindIconProps = {
-  className?: string;
-  resourceKind?: string;
-};
+// Materialized via extractFn(internal `Ofl`) / export `_c`.
 
 export type DriveResourceKindIconPeers = {
-  DocumentIcon: (props: { className?: string }) => ReactNode;
-  SpreadsheetIcon: (props: { className?: string }) => ReactNode;
-  PresentationIcon: (props: { className?: string }) => ReactNode;
-  DriveIcon: (props: { className?: string }) => ReactNode;
+  Afl: (...args: unknown[]) => unknown;
+  E9r: (...args: unknown[]) => unknown;
+  K9r: (...args: unknown[]) => unknown;
+  S9r: (...args: unknown[]) => unknown;
+  kfl: (...args: unknown[]) => unknown;
+  w9r: (...args: unknown[]) => unknown;
 };
-
 let peers: DriveResourceKindIconPeers | null = null;
 
 /** Wire DriveResourceKindIcon peers once companions land. */
@@ -26,25 +20,32 @@ export function setDriveResourceKindIconPeers(
 
 /**
  * Bundle export `_c` / internal `Ofl`.
- * Render an icon for a drive resource kind.
  */
-export function DriveResourceKindIcon(
-  props: DriveResourceKindIconProps,
-): ReactElement | null {
+export function DriveResourceKindIcon(props: unknown) {
+  const S9r = peers.S9r;
+  const W9r = peers.w9r;
+  const E9r = peers.E9r;
+  const K9r = peers.K9r;
   if (peers == null) {
     throw new Error("DriveResourceKindIcon peers are not configured");
   }
-  const { className, resourceKind } = props;
+  let { className, resourceKind } = props;
   switch (resourceKind) {
-    case "document":
-      return peers.DocumentIcon({ className }) as ReactElement;
-    case "spreadsheet":
-      return peers.SpreadsheetIcon({ className }) as ReactElement;
-    case "presentation":
-      return peers.PresentationIcon({ className }) as ReactElement;
-    case "drive":
-      return peers.DriveIcon({ className }) as ReactElement;
-    default:
-      return null;
+    case "document": {
+      let e;
+      return <S9r className={className} />;
+    }
+    case "spreadsheet": {
+      let e;
+      return <W9r className={className} />;
+    }
+    case "presentation": {
+      let e;
+      return <E9r className={className} />;
+    }
+    case "drive": {
+      let e;
+      return <K9r className={className} />;
+    }
   }
 }

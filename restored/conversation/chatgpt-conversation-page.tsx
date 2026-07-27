@@ -17,9 +17,7 @@ type ChatGptConversationPageImpl = (
 let impl: ChatGptConversationPageImpl | null = null;
 
 /** Wire the full ChatGptConversationPage once deeper companion restore lands. */
-export function bindChatGptConversationPage(
-  next: ChatGptConversationPageImpl,
-): void {
+export function bindChatGptConversationPage(next: ChatGptConversationPageImpl): void {
   impl = next;
 }
 

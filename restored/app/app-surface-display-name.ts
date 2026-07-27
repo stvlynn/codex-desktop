@@ -4,9 +4,7 @@
 import { AppSurfaceId } from "./app-surface-ids";
 
 /** Bundle `Ume` / export `Pgt`. */
-export function getAppSurfaceDisplayName(
-  surface: AppSurfaceId,
-): "Codex" | "ChatGPT" | undefined {
+export function getAppSurfaceDisplayName(surface: AppSurfaceId): "Codex" | "ChatGPT" | undefined {
   switch (surface) {
     case AppSurfaceId.Codex:
       return "Codex";

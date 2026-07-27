@@ -7,11 +7,11 @@ import {
   ensureHomeDirectoryQueriesInit,
   homeDirectoryQueryAtom,
 } from "./home-directory-query";
-
 ensureHomeDirectoryQueriesInit();
-
 type HomeDirectoryQueryResult = {
-  data?: { homeDirectory?: string | null } | null;
+  data?: {
+    homeDirectory?: string | null;
+  } | null;
 };
 
 /**
@@ -21,7 +21,13 @@ export function useHomeDirectoryQuery(
   hostId: string | null | undefined,
 ): HomeDirectoryQueryResult {
   const params =
-    hostId == null ? undefined : ({ hostId } as { hostId: string });
+    hostId == null
+      ? undefined
+      : ({
+          hostId,
+        } as {
+          hostId: string;
+        });
   return useAppScopeAtomValue(
     homeDirectoryQueryAtom,
     params,

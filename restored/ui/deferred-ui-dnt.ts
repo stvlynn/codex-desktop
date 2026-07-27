@@ -1,25 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Dnt / oqt
+// Materialized via extractFn(internal `oqt`) / export `Dnt`.
 
 export type BindDeferredUiDntPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Iy: (...args: unknown[]) => unknown;
+  constructor: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  t: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiDntPeers | null = null;
 
-/** Wire bindDeferredUiDnt once companions land. */
+/** Wire bindDeferredUiDnt peers once companions land. */
 export function setBindDeferredUiDntPeers(next: BindDeferredUiDntPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Dnt` / internal `oqt`.
- * Stage-3 fill for bundle export Dnt / oqt
  */
-export function bindDeferredUiDnt(...args: unknown[]): unknown {
+export function bindDeferredUiDnt() {
   if (peers == null) {
     throw new Error("bindDeferredUiDnt peers are not configured");
   }
-  return peers.impl(...args);
+
+  return class extends peers.Iy {
+    constructor(e, t = 0) {
+      super(peers.e, `RenderingCancelledException`), this.extraDelay = peers.t;
+    }
+  };
 }

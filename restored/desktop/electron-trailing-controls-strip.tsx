@@ -1,48 +1,49 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Electron trailing controls strip
+// Materialized via extractFn(internal `J8o`) / export `aT`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type ElectronTrailingControlsStripProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindElectronTrailingControlsStripPeers = {
+  $: (...args: unknown[]) => unknown;
+  Met: (...args: unknown[]) => unknown;
+  U8o: (...args: unknown[]) => unknown;
+  X8o: (...args: unknown[]) => unknown;
+  Y8o: (...args: unknown[]) => unknown;
+  gh: (...args: unknown[]) => unknown;
 };
+let peers: BindElectronTrailingControlsStripPeers | null = null;
 
-type ElectronTrailingControlsStripImpl = (
-  props: ElectronTrailingControlsStripProps,
-) => ReactNode;
-let impl: ElectronTrailingControlsStripImpl | null = null;
-
-/** Wire the full ElectronTrailingControlsStrip once deeper restore lands. */
-export function bindElectronTrailingControlsStrip(
-  next: ElectronTrailingControlsStripImpl,
+/** Wire bindElectronTrailingControlsStrip peers once companions land. */
+export function setBindElectronTrailingControlsStripPeers(
+  next: BindElectronTrailingControlsStripPeers,
 ): void {
-  impl = next;
+  peers = next;
 }
 
 /**
  * Bundle export `aT` / internal `J8o`.
- * Electron trailing controls strip; heavy UI via bind.
  */
-export function ElectronTrailingControlsStrip(
-  props: ElectronTrailingControlsStripProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
+export function bindElectronTrailingControlsStrip(props: unknown) {
+  const U8o = peers.U8o;
+  const Met = peers.Met;
+  if (peers == null) {
+    throw new Error(
+      "bindElectronTrailingControlsStrip peers are not configured",
+    );
+  }
+  let { children, position, trailingControls } = props,
+    a =
+      (position === undefined ? "above" : position) === "above"
+        ? "-mb-4.5 rounded-t-2xl pt-2 pb-[27px] electron:top-1 electron:pt-1.5"
+        : "rounded-b-2xl py-1.5",
+    o = peers.$(
+      "-mx-px flex flex-nowrap items-center gap-2 overflow-hidden bg-token-side-bar-background px-2 dark:bg-token-bg-fog electron:relative electron:mx-[var(--home-composer-inline-inset)] electron:px-1.5 [&_button:enabled:hover]:!bg-token-foreground/5",
+      a,
+      peers.gh.homeUtilityBar,
+    );
+  let s = <U8o>{children}</U8o>;
   return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-em-scaffold="aT"
-      aria-label="ElectronTrailingControlsStrip"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Electron trailing controls strip
-        </div>
-      )}
-    </div>
+    <Met className={o} responsive={false}>
+      {s}
+      {trailingControls}
+    </Met>
   );
 }

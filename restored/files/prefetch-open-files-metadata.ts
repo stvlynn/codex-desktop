@@ -1,19 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `PWi`) / export `oH`.
+// Materialized via extractFn(internal `PWi`) / export `oH`.
 
 export type PrefetchOpenFilesMetadataPeers = {
-  buildQueryKey: (
-    method: string,
-    params: Record<string, unknown>,
-    cacheKey: unknown,
-  ) => unknown;
-  contentSampleByteLimit: unknown;
-  contentSampleMaxFileBytes: unknown;
+  $f: (...args: unknown[]) => unknown;
+  Oqr: (...args: unknown[]) => unknown;
+  exe: (...args: unknown[]) => unknown;
 };
-
 let peers: PrefetchOpenFilesMetadataPeers | null = null;
 
-/** Wire open-files metadata prefetch peers once companions land. */
+/** Wire prefetchOpenFilesMetadata peers once companions land. */
 export function setPrefetchOpenFilesMetadataPeers(
   next: PrefetchOpenFilesMetadataPeers,
 ): void {
@@ -22,63 +17,91 @@ export function setPrefetchOpenFilesMetadataPeers(
 
 /**
  * Bundle export `oH` / internal `PWi`.
- * Prefetch metadata/binary/latex queries for open files.
  */
-export async function prefetchOpenFilesMetadata(args: {
-  cacheKey: unknown;
-  openFiles: Array<{ hostId: unknown; path: unknown }>;
-  queryClient: {
-    refetchQueries: (
-      filters: Record<string, unknown>,
-      options: { throwOnError: boolean },
-    ) => Promise<unknown>;
-  };
-  throwOnError?: boolean;
-}): Promise<void> {
+export async function prefetchOpenFilesMetadata({
+  cacheKey,
+  openFiles,
+  queryClient,
+  throwOnError = false,
+}: Record<string, unknown>) {
   if (peers == null) {
-    throw new Error("PrefetchOpenFilesMetadata peers are not configured");
+    throw new Error("prefetchOpenFilesMetadata peers are not configured");
   }
-  const { cacheKey, openFiles, queryClient, throwOnError = false } = args;
-  const keys = openFiles.flatMap(({ hostId, path: filePath }) => [
-    peers!.buildQueryKey(
-      "read-file-metadata",
-      {
-        contentSampleByteLimit: peers!.contentSampleByteLimit,
-        contentSampleMaxFileBytes: peers!.contentSampleMaxFileBytes,
-        hostId,
-        path: filePath,
-      },
-      cacheKey,
-    ),
-    peers!.buildQueryKey("read-file", { hostId, path: filePath }, cacheKey),
-    peers!.buildQueryKey("read-file", { path: filePath, hostId }, cacheKey),
-    peers!.buildQueryKey(
-      "read-file-binary",
-      { path: filePath, hostId },
-      cacheKey,
-    ),
-    peers!.buildQueryKey(
-      "read-file-binary",
-      { hostId, path: filePath },
-      cacheKey,
-    ),
-    peers!.buildQueryKey(
-      "compile-latex-artifact",
-      { path: filePath, hostId },
-      cacheKey,
-    ),
-    peers!.buildQueryKey(
-      "compile-latex-artifact",
-      { hostId, path: filePath },
-      cacheKey,
-    ),
-  ]);
   await Promise.all(
-    keys.map((queryKey) =>
-      queryClient.refetchQueries(
-        { exact: true, queryKey, type: "all" },
-        { throwOnError },
-      ),
-    ),
+    openFiles
+      .flatMap(({ hostId, path }) => {
+        return [
+          peers.$f(
+            "read-file-metadata",
+            {
+              contentSampleByteLimit: peers.exe,
+              contentSampleMaxFileBytes: peers.Oqr,
+              hostId,
+              path,
+            },
+            cacheKey,
+          ),
+          peers.$f(
+            "read-file",
+            {
+              hostId,
+              path,
+            },
+            cacheKey,
+          ),
+          peers.$f(
+            "read-file",
+            {
+              path,
+              hostId,
+            },
+            cacheKey,
+          ),
+          peers.$f(
+            "read-file-binary",
+            {
+              path,
+              hostId,
+            },
+            cacheKey,
+          ),
+          peers.$f(
+            "read-file-binary",
+            {
+              hostId,
+              path,
+            },
+            cacheKey,
+          ),
+          peers.$f(
+            "compile-latex-artifact",
+            {
+              path,
+              hostId,
+            },
+            cacheKey,
+          ),
+          peers.$f(
+            "compile-latex-artifact",
+            {
+              hostId,
+              path,
+            },
+            cacheKey,
+          ),
+        ];
+      })
+      .map((item) => {
+        return queryClient.refetchQueries(
+          {
+            exact: true,
+            queryKey: item,
+            type: "all",
+          },
+          {
+            throwOnError,
+          },
+        );
+      }),
   );
 }

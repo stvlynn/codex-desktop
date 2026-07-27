@@ -1,42 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export F9 / i9t
+// Materialized via extractFn(internal `i9t`) / export `F9`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindThreadProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindThreadPeers = {
+  Au: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  n9t: (...args: unknown[]) => unknown;
+  r9t: (...args: unknown[]) => unknown;
 };
 
-type BindThreadImpl = (props: BindThreadProps) => ReactNode;
-let impl: BindThreadImpl | null = null;
+let peers: BindBindThreadPeers | null = null;
 
-/** Wire the full BindThread once deeper restore lands. */
-export function bindBindThread(next: BindThreadImpl): void {
-  impl = next;
+/** Wire bindBindThread peers once companions land. */
+export function setBindBindThreadPeers(next: BindBindThreadPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `F9` / internal `i9t`.
- * Stage-3 fill for bundle export F9 / i9t; heavy UI via bind.
  */
-export function BindThread(props: BindThreadProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fd-scaffold="F9"
-      aria-label="BindThread"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export F9 / i9t
-        </div>
-      )}
-    </div>
-  );
+export function bindBindThread() {
+  if (peers == null) {
+    throw new Error("bindBindThread peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Au(), n9t = /^(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)(?:-(?<prerelease>[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/, r9t = `updated_at`;
+  });
 }

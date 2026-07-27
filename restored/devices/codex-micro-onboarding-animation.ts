@@ -7,9 +7,7 @@ type trackCodexMicroOnboardingLifecycleImpl = (...args: unknown[]) => unknown;
 let impl: trackCodexMicroOnboardingLifecycleImpl | null = null;
 
 /** Wire trackCodexMicroOnboardingLifecycle once companions land. */
-export function bindTrackCodexMicroOnboardingLifecycle(
-  next: trackCodexMicroOnboardingLifecycleImpl,
-): void {
+export function bindTrackCodexMicroOnboardingLifecycle(next: trackCodexMicroOnboardingLifecycleImpl): void {
   impl = next;
 }
 

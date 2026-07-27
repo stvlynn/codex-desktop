@@ -1,48 +1,42 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Iq / kN
+// Materialized via extractFn(internal `kN`) / export `Iq`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type ListPermissionProfilesProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindListPermissionProfilesPeers = {
+  DD: (...args: unknown[]) => unknown;
+  Gf: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  I2r: (...args: unknown[]) => unknown;
+  Kg: (...args: unknown[]) => unknown;
+  L2r: (...args: unknown[]) => unknown;
+  R2r: (...args: unknown[]) => unknown;
+  VM: (...args: unknown[]) => unknown;
+  Vf: (...args: unknown[]) => unknown;
+  Ym: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fr: (...args: unknown[]) => unknown;
+  k2r: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  vM: (...args: unknown[]) => unknown;
 };
 
-type ListPermissionProfilesImpl = (
-  props: ListPermissionProfilesProps,
-) => ReactNode;
-let impl: ListPermissionProfilesImpl | null = null;
+let peers: BindListPermissionProfilesPeers | null = null;
 
-/** Wire the full ListPermissionProfiles once deeper restore lands. */
-export function bindListPermissionProfiles(
-  next: ListPermissionProfilesImpl,
-): void {
-  impl = next;
+/** Wire bindListPermissionProfiles peers once companions land. */
+export function setBindListPermissionProfilesPeers(next: BindListPermissionProfilesPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Iq` / internal `kN`.
- * Stage-3 fill for bundle export Iq / kN; heavy UI via bind.
  */
-export function ListPermissionProfiles(
-  props: ListPermissionProfilesProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="Iq"
-      aria-label="ListPermissionProfiles"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Iq / kN
-        </div>
-      )}
-    </div>
-  );
+export function bindListPermissionProfiles() {
+  if (peers == null) {
+    throw new Error("bindListPermissionProfiles peers are not configured");
+  }
+
+  return peers.e(() => {
+    L2r = peers.c(), peers.fr(), peers.Ho(), R2r = peers.r(peers.o(), 1), peers.vM(), peers.DD(), peers.Vf(), peers.Kg(), peers.Ym(), peers.k2r(), peers.VM(), peers.I2r(), peers.Gf();
+  });
 }

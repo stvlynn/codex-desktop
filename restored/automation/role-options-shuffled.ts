@@ -17,8 +17,7 @@ export const AUTOMATION_ROLE_OPTIONS = [
 ] as const;
 
 /** Shuffle role options, keeping `something_else` last. */
-export function roleOptionsShuffled(
-  random: () => number = Math.random,
+export function roleOptionsShuffled(random: () => number = Math.random,
 ): string[] {
   const roles = AUTOMATION_ROLE_OPTIONS.filter(
     (role) => role !== "something_else",

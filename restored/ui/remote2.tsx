@@ -1,41 +1,47 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export hM / Tqa
+// Materialized via extractFn(internal `Tqa`) / export `hM`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type Remote2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindRemote2Peers = {
+  $u: (...args: unknown[]) => unknown;
+  AUa: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  BGa: (...args: unknown[]) => unknown;
+  DM: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  IE: (...args: unknown[]) => unknown;
+  TKa: (...args: unknown[]) => unknown;
+  UUa: (...args: unknown[]) => unknown;
+  VUa: (...args: unknown[]) => unknown;
+  aqa: (...args: unknown[]) => unknown;
+  bVa: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  cKa: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gqa: (...args: unknown[]) => unknown;
+  hGa: (...args: unknown[]) => unknown;
+  nN: (...args: unknown[]) => unknown;
+  uUa: (...args: unknown[]) => unknown;
+  wqa: (...args: unknown[]) => unknown;
+  xGa: (...args: unknown[]) => unknown;
+  zUa: (...args: unknown[]) => unknown;
 };
 
-type Remote2Impl = (props: Remote2Props) => ReactNode;
-let impl: Remote2Impl | null = null;
+let peers: BindRemote2Peers | null = null;
 
-/** Wire the full Remote2 once deeper restore lands. */
-export function bindRemote2(next: Remote2Impl): void {
-  impl = next;
+/** Wire bindRemote2 peers once companions land. */
+export function setBindRemote2Peers(next: BindRemote2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `hM` / internal `Tqa`.
- * Stage-3 fill for bundle export hM / Tqa; heavy UI via bind.
  */
-export function Remote2(props: Remote2Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fn-scaffold="hM"
-      aria-label="Remote2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export hM / Tqa
-        </div>
-      )}
-    </div>
-  );
+export function bindRemote2() {
+  if (peers == null) {
+    throw new Error("bindRemote2 peers are not configured");
+  }
+
+  return peers.e(() => {
+    wqa = peers.c(), peers.Ho(), peers.Au(), peers.$u(), peers.AUa(), peers.zUa(), peers.VUa(), peers.bVa(), peers.DM(), peers.IE(), peers.nN(), peers.uUa(), peers.UUa(), peers.hGa(), peers.xGa(), peers.BGa(), peers.cKa(), peers.TKa(), peers.aqa(), peers.gqa();
+  });
 }

@@ -25,10 +25,7 @@ export type SubGraphTitleMargins = {
 };
 
 /** Size label <img> nodes inside a mermaid HTML label element. */
-export async function configureLabelImages(
-  labelEl: Element,
-  labelHtml: string,
-): Promise<void> {
+export async function configureLabelImages(labelEl: Element, labelHtml: string): Promise<void> {
   const images = labelEl.getElementsByTagName("img");
   if (!images || images.length === 0) return;
   const imageOnly = labelHtml.replace(/<img[^>]*>/g, "").trim() === "";
@@ -63,9 +60,7 @@ export async function configureLabelImages(
     ),
   );
 }
-export function getSubGraphTitleMargins(
-  config: FlowchartConfigSlice,
-): SubGraphTitleMargins {
+export function getSubGraphTitleMargins(config: FlowchartConfigSlice): SubGraphTitleMargins {
   const top = config.flowchart?.subGraphTitleMargin?.top ?? 0;
   const bottom = config.flowchart?.subGraphTitleMargin?.bottom ?? 0;
   return {

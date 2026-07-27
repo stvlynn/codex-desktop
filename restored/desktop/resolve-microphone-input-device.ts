@@ -1,15 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `trt`) / export `qct`.
+// Materialized via extractFn(internal `trt`) / export `qct`.
 
 export type ResolveMicrophoneInputDevicePeers = {
-  microphoneInputDeviceIdKey: unknown;
-  readDesktopSetting: (key: unknown) => Promise<unknown>;
-  resolveDevice: (deviceId: unknown, options: unknown) => unknown;
+  Cu: (...args: unknown[]) => unknown;
+  NQe: (...args: unknown[]) => unknown;
+  irt: (...args: unknown[]) => unknown;
 };
-
 let peers: ResolveMicrophoneInputDevicePeers | null = null;
 
-/** Wire microphone device resolution peers once companions land. */
+/** Wire resolveMicrophoneInputDevice peers once companions land. */
 export function setResolveMicrophoneInputDevicePeers(
   next: ResolveMicrophoneInputDevicePeers,
 ): void {
@@ -18,16 +17,10 @@ export function setResolveMicrophoneInputDevicePeers(
 
 /**
  * Bundle export `qct` / internal `trt`.
- * Resolve the configured microphone input device.
  */
-export async function resolveMicrophoneInputDevice(
-  options: Record<string, unknown> = {},
-): Promise<unknown> {
+export async function resolveMicrophoneInputDevice(e: unknown = {}) {
   if (peers == null) {
-    throw new Error("ResolveMicrophoneInputDevice peers are not configured");
+    throw new Error("resolveMicrophoneInputDevice peers are not configured");
   }
-  const deviceId = await peers.readDesktopSetting(
-    peers.microphoneInputDeviceIdKey,
-  );
-  return peers.resolveDevice(deviceId, options);
+  return peers.irt(await peers.NQe(peers.Cu.microphoneInputDeviceId), e);
 }

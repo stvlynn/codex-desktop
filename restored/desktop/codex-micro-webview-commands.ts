@@ -23,9 +23,7 @@ export function getCodexMicroWebviewCommands(): CodexMicroCommand[] {
 /**
  * Bundle export `n` — look up a webview command by id (`newThread`→`newTask`).
  */
-export function findCodexMicroWebviewCommand(
-  id: string,
-): CodexMicroCommand | null {
+export function findCodexMicroWebviewCommand(id: string): CodexMicroCommand | null {
   const normalized = id === "newThread" ? "newTask" : id;
   return webviewCommands.find((command) => command.id === normalized) ?? null;
 }

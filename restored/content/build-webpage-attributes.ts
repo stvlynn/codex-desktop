@@ -10,10 +10,7 @@ export type WebpageAttributes = {
   supporting_count?: string;
 };
 
-export function buildWebpageAttributes(
-  primary: WebpageSource,
-  supportingCount: number,
-): WebpageAttributes {
+export function buildWebpageAttributes(primary: WebpageSource, supportingCount: number): WebpageAttributes {
   return {
     label: primary.label,
     url: primary.url,

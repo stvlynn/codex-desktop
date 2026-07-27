@@ -1,48 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export J / Ebu
+// Materialized via extractFn(internal `Ebu`) / export `J`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindRealtimeVoiceHostIdProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindRealtimeVoiceHostIdPeers = {
+  Au: (...args: unknown[]) => unknown;
+  Tbu: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
-type BindRealtimeVoiceHostIdImpl = (
-  props: BindRealtimeVoiceHostIdProps,
-) => ReactNode;
-let impl: BindRealtimeVoiceHostIdImpl | null = null;
+let peers: BindBindRealtimeVoiceHostIdPeers | null = null;
 
-/** Wire the full BindRealtimeVoiceHostId once deeper restore lands. */
-export function bindBindRealtimeVoiceHostId(
-  next: BindRealtimeVoiceHostIdImpl,
-): void {
-  impl = next;
+/** Wire bindBindRealtimeVoiceHostId peers once companions land. */
+export function setBindBindRealtimeVoiceHostIdPeers(next: BindBindRealtimeVoiceHostIdPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `J` / internal `Ebu`.
- * Stage-3 fill for bundle export J / Ebu; heavy UI via bind.
  */
-export function BindRealtimeVoiceHostId(
-  props: BindRealtimeVoiceHostIdProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="J"
-      aria-label="BindRealtimeVoiceHostId"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export J / Ebu
-        </div>
-      )}
-    </div>
-  );
+export function bindBindRealtimeVoiceHostId() {
+  if (peers == null) {
+    throw new Error("bindBindRealtimeVoiceHostId peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Au(), Tbu = `realtimeVoiceHostId`;
+  });
 }

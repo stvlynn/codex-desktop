@@ -17,9 +17,7 @@ type KeyboardShortcutsSettingsImpl = (
 let impl: KeyboardShortcutsSettingsImpl | null = null;
 
 /** Wire the full KeyboardShortcutsSettings once deeper companion restore lands. */
-export function bindKeyboardShortcutsSettings(
-  next: KeyboardShortcutsSettingsImpl,
-): void {
+export function bindKeyboardShortcutsSettings(next: KeyboardShortcutsSettingsImpl): void {
   impl = next;
 }
 

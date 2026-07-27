@@ -16,9 +16,7 @@ type HotkeyWindowThreadPageImpl = (
 ) => ReactNode;
 let impl: HotkeyWindowThreadPageImpl | null = null;
 
-export function bindHotkeyWindowThreadPage(
-  next: HotkeyWindowThreadPageImpl,
-): void {
+export function bindHotkeyWindowThreadPage(next: HotkeyWindowThreadPageImpl): void {
   impl = next;
 }
 

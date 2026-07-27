@@ -1,26 +1,46 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ys / uMl
+// Materialized via extractFn(internal `uMl`) / export `Ys`.
 
 export type BindMicrosoftPeers = {
-  impl: (...args: unknown[]) => unknown;
+  BPc: (...args: unknown[]) => unknown;
+  Gf: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  LPc: (...args: unknown[]) => unknown;
+  Njl: (...args: unknown[]) => unknown;
+  Rjl: (...args: unknown[]) => unknown;
+  T8: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  alc: (...args: unknown[]) => unknown;
+  cMl: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  j2: (...args: unknown[]) => unknown;
+  lMl: (...args: unknown[]) => unknown;
+  oMl: (...args: unknown[]) => unknown;
+  pjl: (...args: unknown[]) => unknown;
+  qjl: (...args: unknown[]) => unknown;
+  sMl: (...args: unknown[]) => unknown;
+  w8: (...args: unknown[]) => unknown;
 };
 
 let peers: BindMicrosoftPeers | null = null;
 
-/** Wire bindMicrosoft once companions land. */
+/** Wire bindMicrosoft peers once companions land. */
 export function setBindMicrosoftPeers(next: BindMicrosoftPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Ys` / internal `uMl`.
- * Stage-3 fill for bundle export Ys / uMl
  */
-export function bindMicrosoft(...args: unknown[]): unknown {
+export function bindMicrosoft() {
   if (peers == null) {
     throw new Error("bindMicrosoft peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ho(), peers.Gf(), peers.alc(), peers.Njl(), peers.pjl(), peers.LPc(), peers.BPc(), peers.Rjl(), peers.qjl(), sMl = `Conversational onboarding start was cancelled`, cMl = 2e3, lMl = {
+      app: null,
+      phase: `failed`
+    }, w8 = new WeakMap(), T8 = peers.Ta(peers.j2, peers.oMl());
+  });
 }

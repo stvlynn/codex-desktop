@@ -1,36 +1,37 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `MXi`) / export `HB`.
-
-import type { ReactNode } from "react";
+// Materialized via extractFn(internal `MXi`) / export `HB`.
 
 export type MemoizedPropBridgePeers = {
-  mapProps: (entries: unknown[]) => unknown;
-  defaultMemo: (value: unknown) => unknown;
-  useBridgedValue: (atom: unknown, value: unknown) => ReactNode;
-  bridgeAtom: unknown;
+  FXi: (...args: unknown[]) => unknown;
+  Fo: (...args: unknown[]) => unknown;
+  IXi: (...args: unknown[]) => unknown;
+  NXi: (...args: unknown[]) => unknown;
+  PXi: (...args: unknown[]) => unknown;
 };
-
-/** Prop entries bridged through a memoized atom. */
-export type MemoizedPropBridgeProps = unknown[] | null | undefined;
 
 let peers: MemoizedPropBridgePeers | null = null;
 
-/** Wire memoized prop-bridge peers once companions land. */
-export function setMemoizedPropBridgePeers(
-  next: MemoizedPropBridgePeers,
-): void {
+/** Wire MemoizedPropBridge peers once companions land. */
+export function setMemoizedPropBridgePeers(next: MemoizedPropBridgePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `HB` / internal `MXi`.
- * Bridge mapped props through a memoized atom value.
  */
-export function MemoizedPropBridge(props: MemoizedPropBridgeProps): ReactNode {
+export function MemoizedPropBridge(e: unknown) {
   if (peers == null) {
     throw new Error("MemoizedPropBridge peers are not configured");
   }
-  const mapped =
-    props == null ? undefined : peers.defaultMemo(peers.mapProps(props));
-  return peers.useBridgedValue(peers.bridgeAtom, mapped);
+
+  let t = (0, peers.PXi.c)(2),
+    n;
+  return (
+    t[0] === e
+      ? (n = t[1])
+      : ((n = e == null ? void 0 : (0, peers.FXi.default)(e.map(peers.NXi))),
+        (t[0] = e),
+        (t[1] = n)),
+    peers.Fo(peers.IXi, n)
+  );
 }

@@ -1,48 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export XW / nni
+// Materialized via extractFn(internal `nni`) / export `XW`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindTransactionEventPluginProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindTransactionEventPluginPeers = {
+  Qt: (...args: unknown[]) => unknown;
+  Uf: (...args: unknown[]) => unknown;
+  _p: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  tni: (...args: unknown[]) => unknown;
 };
 
-type BindTransactionEventPluginImpl = (
-  props: BindTransactionEventPluginProps,
-) => ReactNode;
-let impl: BindTransactionEventPluginImpl | null = null;
+let peers: BindBindTransactionEventPluginPeers | null = null;
 
-/** Wire the full BindTransactionEventPlugin once deeper restore lands. */
-export function bindBindTransactionEventPlugin(
-  next: BindTransactionEventPluginImpl,
-): void {
-  impl = next;
+/** Wire bindBindTransactionEventPlugin peers once companions land. */
+export function setBindBindTransactionEventPluginPeers(next: BindBindTransactionEventPluginPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `XW` / internal `nni`.
- * Stage-3 fill for bundle export XW / nni; heavy UI via bind.
  */
-export function BindTransactionEventPlugin(
-  props: BindTransactionEventPluginProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fa-scaffold="XW"
-      aria-label="BindTransactionEventPlugin"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export XW / nni
-        </div>
-      )}
-    </div>
-  );
+export function bindBindTransactionEventPlugin() {
+  if (peers == null) {
+    throw new Error("bindBindTransactionEventPlugin peers are not configured");
+  }
+
+  return peers.e(() => {
+    tni = peers.c(), peers.Qt(), peers._p(), peers.Uf();
+  });
 }

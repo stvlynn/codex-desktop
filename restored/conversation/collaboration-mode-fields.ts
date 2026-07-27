@@ -10,9 +10,7 @@ export type CollaborationModeFields = {
 };
 
 /** Extract collaboration-mode fields when the three policies are present. */
-export function collaborationModeFieldsFromParams(
-  params: Record<string, unknown> | null | undefined,
-): CollaborationModeFields | null {
+export function collaborationModeFieldsFromParams(params: Record<string, unknown> | null | undefined): CollaborationModeFields | null {
   if (
     params?.approvalPolicy == null ||
     params.approvalsReviewer == null ||

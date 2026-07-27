@@ -1,50 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EA — real body via extractFn(internal `T4i`) / export `Hz`.
-
-export type PluginProductEventContext = {
-  referrer: unknown;
-  source: unknown;
-  [key: string]: unknown;
-};
+// Materialized via extractFn(internal `T4i`) / export `Hz`.
 
 export type ParsePluginProductEventContextPeers = {
-  safeParse: (value: unknown) => {
-    success: boolean;
-    data?: { pluginProductEventContext?: PluginProductEventContext };
-  };
-  deepLinkReferrerFromState: (value: unknown) => unknown | null | undefined;
-  referrerUnspecified: unknown;
-  referrerDeepLink: unknown;
-  sourceOther: unknown;
+  Lb: (...args: unknown[]) => unknown;
+  M4i: (...args: unknown[]) => unknown;
+  Rb: (...args: unknown[]) => unknown;
+  S4i: (...args: unknown[]) => unknown;
 };
 
 let peers: ParsePluginProductEventContextPeers | null = null;
 
-/** Wire zod schema + referrer enums once companions land. */
-export function setParsePluginProductEventContextPeers(
-  next: ParsePluginProductEventContextPeers,
-): void {
+/** Wire parsePluginProductEventContext peers once companions land. */
+export function setParsePluginProductEventContextPeers(next: ParsePluginProductEventContextPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Hz` / internal `T4i`.
- * Zod-safe plugin analytics context with deep-link referrer fallback.
  */
-export function parsePluginProductEventContext(
-  value: unknown,
-): PluginProductEventContext {
+export function parsePluginProductEventContext(e: unknown) {
   if (peers == null) {
-    throw new Error("ParsePluginProductEventContext peers are not configured");
+    throw new Error("parsePluginProductEventContext peers are not configured");
   }
-  const parsed = peers.safeParse(value);
+
+  let t = peers.M4i.safeParse(e);
   return (
-    (parsed.success ? parsed.data?.pluginProductEventContext : undefined) ?? {
+    (t.success ? t.data.pluginProductEventContext : void 0) ?? {
       referrer:
-        peers.deepLinkReferrerFromState(value) == null
-          ? peers.referrerUnspecified
-          : peers.referrerDeepLink,
-      source: peers.sourceOther,
+        peers.S4i(e) == null
+          ? peers.Lb.CODEX_PLUGIN_PAGE_REFERRER_UNSPECIFIED
+          : peers.Lb.CODEX_PLUGIN_PAGE_REFERRER_DEEP_LINK,
+      source: peers.Rb.CODEX_PLUGIN_SOURCE_OTHER,
     }
   );
 }

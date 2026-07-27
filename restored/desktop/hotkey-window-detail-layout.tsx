@@ -17,9 +17,7 @@ type HotkeyWindowDetailLayoutImpl = (
 let impl: HotkeyWindowDetailLayoutImpl | null = null;
 
 /** Wire the full HotkeyWindowDetailLayout once deeper companion restore lands. */
-export function bindHotkeyWindowDetailLayout(
-  next: HotkeyWindowDetailLayoutImpl,
-): void {
+export function bindHotkeyWindowDetailLayout(next: HotkeyWindowDetailLayoutImpl): void {
   impl = next;
 }
 

@@ -1,42 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export lM / cJa
+// Materialized via extractFn(internal `cJa`) / export `lM`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindSkillMentionProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindSkillMentionPeers = {
+  $u: (...args: unknown[]) => unknown;
+  DM: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  MBa: (...args: unknown[]) => unknown;
+  Tqa: (...args: unknown[]) => unknown;
+  Xqa: (...args: unknown[]) => unknown;
+  _Ua: (...args: unknown[]) => unknown;
+  bVa: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  lUa: (...args: unknown[]) => unknown;
+  rU: (...args: unknown[]) => unknown;
+  sJa: (...args: unknown[]) => unknown;
+  sd: (...args: unknown[]) => unknown;
 };
 
-type BindSkillMentionImpl = (props: BindSkillMentionProps) => ReactNode;
-let impl: BindSkillMentionImpl | null = null;
+let peers: BindBindSkillMentionPeers | null = null;
 
-/** Wire the full BindSkillMention once deeper restore lands. */
-export function bindBindSkillMention(next: BindSkillMentionImpl): void {
-  impl = next;
+/** Wire bindBindSkillMention peers once companions land. */
+export function setBindBindSkillMentionPeers(next: BindBindSkillMentionPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `lM` / internal `cJa`.
- * Stage-3 fill for bundle export lM / cJa; heavy UI via bind.
  */
-export function BindSkillMention(props: BindSkillMentionProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ey-scaffold="lM"
-      aria-label="BindSkillMention"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export lM / cJa
-        </div>
-      )}
-    </div>
-  );
+export function bindBindSkillMention() {
+  if (peers == null) {
+    throw new Error("bindBindSkillMention peers are not configured");
+  }
+
+  return peers.e(() => {
+    sJa = peers.c(), peers.sd(), peers.Ho(), peers.$u(), peers.MBa(), peers.bVa(), peers.DM(), peers.lUa(), peers._Ua(), peers.Tqa(), peers.Xqa(), rU = peers.J();
+  });
 }

@@ -10,10 +10,7 @@ export type FormatMessageIntl = {
 };
 
 /** Localized label for an external-agent import provider id. */
-export function formatExternalAgentImportProviderLabel(
-  intl: FormatMessageIntl,
-  provider: string,
-): string | undefined {
+export function formatExternalAgentImportProviderLabel(intl: FormatMessageIntl, provider: string): string | undefined {
   switch (provider) {
     case "claude-code":
       return intl.formatMessage({

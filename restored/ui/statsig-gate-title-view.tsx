@@ -1,12 +1,15 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EP — real body via extractFn(internal `vnl`) / export `cl`.
+// Materialized via extractFn(internal `vnl`) / export `cl`.
 
 export type StatsigGateTitleViewPeers = {
-  useGate: (gateId: string) => boolean;
-  buildImageRef: () => string;
-  openTitleView: (args: Record<string, unknown>) => unknown;
+  VD: (...args: unknown[]) => unknown;
+  eO: (...args: unknown[]) => unknown;
+  p7c: (...args: unknown[]) => unknown;
+  qGi: (...args: unknown[]) => unknown;
+  wh: (...args: unknown[]) => unknown;
+  xnl: (...args: unknown[]) => unknown;
+  ynl: (...args: unknown[]) => unknown;
 };
-
 let peers: StatsigGateTitleViewPeers | null = null;
 
 /** Wire statsigGateTitleView peers once companions land. */
@@ -18,29 +21,40 @@ export function setStatsigGateTitleViewPeers(
 
 /**
  * Bundle export `cl` / internal `vnl`.
- * Gate a title/view payload behind Statsig gate 120995366.
  */
 export function statsigGateTitleView(
-  gateEnabledInput: unknown,
-  args: {
-    initialView?: string;
-    title?: unknown;
-    [key: string]: unknown;
-  },
-): unknown {
+  e: unknown,
+  { initialView = "single", title, ...rest }: Record<string, unknown>,
+) {
   if (peers == null) {
-    throw new Error("StatsigGateTitleView peers are not configured");
+    throw new Error("statsigGateTitleView peers are not configured");
   }
-  const enabled =
-    typeof gateEnabledInput === "boolean"
-      ? gateEnabledInput
-      : peers.useGate("120995366");
-  if (!enabled) return false;
-  const imageRef = peers.buildImageRef();
-  return peers.openTitleView({
-    initialView: args.initialView ?? "single",
-    title: args.title,
-    imageRef,
-    ...args,
-  });
+  if (!peers.wh(e, "120995366")) return false;
+  let i = `image:${crypto.randomUUID()}`,
+    a =
+      rest.generatedImages != null &&
+      rest.initialImageId != null &&
+      peers.wh(e, "4176837627"),
+    o = initialView === "playground" && a ? "playground" : "single";
+  return (
+    e.set(peers.VD, o === "playground"),
+    peers.eO.openTab(e, peers.ynl, {
+      defaultState: () => {
+        return o;
+      },
+      icon: peers.xnl.createElement(peers.p7c, {
+        className: "icon-xs shrink-0",
+      }),
+      id: i,
+      isPreview: true,
+      props: {
+        ...rest,
+        playgroundEnabled: a,
+      },
+      title,
+      tooltip: title,
+    }),
+    peers.qGi(e),
+    true
+  );
 }

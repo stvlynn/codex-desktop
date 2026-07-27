@@ -1,26 +1,53 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export s / cwu
+// Materialized via extractFn(internal `cwu`) / export `s`.
 
 export type ListAutomationsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Ia: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  _p: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  gp: (...args: unknown[]) => unknown;
+  owu: (...args: unknown[]) => unknown;
+  swu: (...args: unknown[]) => unknown;
 };
 
 let peers: ListAutomationsPeers | null = null;
 
-/** Wire listAutomations once companions land. */
+/** Wire listAutomations peers once companions land. */
 export function setListAutomationsPeers(next: ListAutomationsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `s` / internal `cwu`.
- * Stage-3 fill for bundle export s / cwu
  */
-export function listAutomations(...args: unknown[]): unknown {
+export function listAutomations() {
   if (peers == null) {
     throw new Error("listAutomations peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    (peers.Ho(),
+      peers._p(),
+      peers.ed(),
+      (owu = [`hotkey-window-hotkey-state`]),
+      (swu = peers.Ia(peers.Q, () => ({
+        queryKey: peers.owu,
+        queryFn: async () => {
+          let e = peers.gp.hotkeyWindowHotkeys;
+          return peers.e == null
+            ? {
+                supported: !1,
+                configuredHotkey: null,
+                isGateEnabled: !1,
+                isDevMode: !1,
+                isDevOverrideEnabled: !1,
+                isActive: !1,
+              }
+            : peers.e.getState();
+        },
+      }))));
+  });
 }

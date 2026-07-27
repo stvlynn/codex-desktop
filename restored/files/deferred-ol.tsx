@@ -1,42 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export OL / _la
+// Materialized via extractFn(internal `_la`) / export `OL`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredOLProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredOLPeers = {
+  J: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gla: (...args: unknown[]) => unknown;
+  hla: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredOLImpl = (props: BindDeferredOLProps) => ReactNode;
-let impl: BindDeferredOLImpl | null = null;
+let peers: BindBindDeferredOLPeers | null = null;
 
-/** Wire the full BindDeferredOL once deeper restore lands. */
-export function bindBindDeferredOL(next: BindDeferredOLImpl): void {
-  impl = next;
+/** Wire bindBindDeferredOL peers once companions land. */
+export function setBindBindDeferredOLPeers(next: BindBindDeferredOLPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `OL` / internal `_la`.
- * Stage-3 fill for bundle export OL / _la; heavy UI via bind.
  */
-export function BindDeferredOL(props: BindDeferredOLProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="OL"
-      aria-label="BindDeferredOL"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export OL / _la
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredOL() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredOL peers are not configured");
+  }
+
+  return peers.e(() => {
+    hla = peers.r(peers.o(), 1), peers.J(), gla = (0, peers.hla.createContext)(void 0);
+  });
 }

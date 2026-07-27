@@ -1,42 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Lct / Grt
+// Materialized via extractFn(internal `Grt`) / export `Lct`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredLctProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredLctPeers = {
+  Au: (...args: unknown[]) => unknown;
+  Hrt: (...args: unknown[]) => unknown;
+  Lrt: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  Urt: (...args: unknown[]) => unknown;
+  Vrt: (...args: unknown[]) => unknown;
+  Wrt: (...args: unknown[]) => unknown;
+  X: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ol: (...args: unknown[]) => unknown;
+  wp: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredLctImpl = (props: BindDeferredLctProps) => ReactNode;
-let impl: BindDeferredLctImpl | null = null;
+let peers: BindBindDeferredLctPeers | null = null;
 
-/** Wire the full BindDeferredLct once deeper restore lands. */
-export function bindBindDeferredLct(next: BindDeferredLctImpl): void {
-  impl = next;
+/** Wire bindBindDeferredLct peers once companions land. */
+export function setBindBindDeferredLctPeers(next: BindBindDeferredLctPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Lct` / internal `Grt`.
- * Stage-3 fill for bundle export Lct / Grt; heavy UI via bind.
  */
-export function BindDeferredLct(props: BindDeferredLctProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ew-scaffold="Lct"
-      aria-label="BindDeferredLct"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Lct / Grt
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredLct() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredLct peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Au(), peers.Sl(), peers.wp(), peers.Lrt(), Vrt = 4e3, Hrt = 2e3, Urt = peers.ol(peers.X()), Wrt = `Clean up dictation transcripts. Fix likely speech recognition mistakes, punctuation, capitalization, and formatting. Remove filler words and disfluencies when they do not add meaning. When the user clearly self-corrects or backtracks, keep the corrected intent. Use surrounding text only as context. Dictionary entries are canonical spellings, names, file paths, and code symbols; when the transcript likely refers to one, copy the dictionary entry exactly, including casing and punctuation. Preserve the user's meaning, wording, and flow unless a small cleanup makes the transcript more coherent. Do not answer the user or add new content. Return only the cleaned transcript.`;
+  });
 }

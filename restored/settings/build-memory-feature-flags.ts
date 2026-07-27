@@ -1,29 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Stage 3: Wave BY — small real body for memory feature flag projection.
+// Materialized via extractFn(internal `Mfu`) / export `Ut`.
 
-export type MemoryConfigLike = {
-  generateMemories?: boolean;
-  useMemories?: boolean;
-  [key: string]: unknown;
+export type BuildMemoryFeatureFlagsPeers = {
+  /* no free peers */
 };
+let peers: BuildMemoryFeatureFlagsPeers | null = null;
 
-export type MemoryFeatureFlags = {
-  memoryFeatureEnabled: boolean;
-  generateMemoriesEnabled: boolean | undefined;
-  useMemoriesEnabled: boolean | undefined;
-};
+/** Wire buildMemoryFeatureFlags peers once companions land. */
+export function setBuildMemoryFeatureFlagsPeers(
+  next: BuildMemoryFeatureFlagsPeers,
+): void {
+  peers = next;
+}
 
 /**
- * Project memory settings into a flat feature-flag bag.
  * Bundle export `Ut` / internal `Mfu`.
  */
-export function buildMemoryFeatureFlags(input: {
-  isMemoryFeatureEnabled: boolean;
-  memoryConfig: MemoryConfigLike;
-}): MemoryFeatureFlags {
+export function buildMemoryFeatureFlags({
+  isMemoryFeatureEnabled,
+  memoryConfig,
+}: Record<string, unknown>) {
+  if (peers == null) {
+    throw new Error("buildMemoryFeatureFlags peers are not configured");
+  }
   return {
-    memoryFeatureEnabled: input.isMemoryFeatureEnabled,
-    generateMemoriesEnabled: input.memoryConfig.generateMemories,
-    useMemoriesEnabled: input.memoryConfig.useMemories,
+    memoryFeatureEnabled: isMemoryFeatureEnabled,
+    generateMemoriesEnabled: memoryConfig.generateMemories,
+    useMemoriesEnabled: memoryConfig.useMemories,
+    memoriesEnabled:
+      isMemoryFeatureEnabled &&
+      memoryConfig.generateMemories &&
+      memoryConfig.useMemories,
   };
 }

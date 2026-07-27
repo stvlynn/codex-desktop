@@ -1,83 +1,102 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `Z3r`) / export `WK`.
+// Materialized via extractFn(internal `Z3r`) / export `WK`.
 
 export type UseComputerUseWindowsGatePeers = {
-  useHostPlatform: () => { isLoading: boolean; platform: string | undefined };
-  readComputerUseGate: (gateId: string) => boolean;
-  useComputerUseFeature: (input: {
-    featureName: "computer_use";
-    hostId: unknown;
-  }) => { isLoading: boolean; enabled: boolean };
-  useWindowsCompatibility: (input: { enabled: boolean }) => {
-    isLoading: boolean;
-    enabled: boolean;
-  };
-  isHostCompatiblePlatform: (platform: string | undefined) => boolean;
-  resolveAvailability: (input: {
-    areRequiredFeaturesEnabled: boolean;
-    enabled: boolean;
-    isAnyFeatureLoading: boolean;
-    isComputerUseGateEnabled: boolean;
-    isHostCompatiblePlatform: boolean;
-    isPlatformLoading: boolean;
-    windowType: "electron";
-  }) => "available" | "loading" | "unavailable" | string;
+  Q3r: (...args: unknown[]) => unknown;
+  X3r: (...args: unknown[]) => unknown;
+  e6r: (...args: unknown[]) => unknown;
+  kh: (...args: unknown[]) => unknown;
+  q3r: (...args: unknown[]) => unknown;
+  t6r: (...args: unknown[]) => unknown;
+  uk: (...args: unknown[]) => unknown;
 };
 
 let peers: UseComputerUseWindowsGatePeers | null = null;
 
-/** Wire computer-use windows gate peers once companions land. */
-export function setUseComputerUseWindowsGatePeers(
-  next: UseComputerUseWindowsGatePeers,
-): void {
+/** Wire useComputerUseWindowsGate peers once companions land. */
+export function setUseComputerUseWindowsGatePeers(next: UseComputerUseWindowsGatePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `WK` / internal `Z3r`.
- * Resolve computer-use availability on Windows Electron hosts.
  */
-export function useComputerUseWindowsGate(options: {
-  enabled?: boolean;
-  hostId: unknown;
-}): {
-  availability: string;
-  isAvailable: boolean;
-  isLoading: boolean;
-  isSoftLoading: boolean;
-} {
+export function useComputerUseWindowsGate(e: unknown) {
   if (peers == null) {
-    throw new Error("UseComputerUseWindowsGate peers are not configured");
+    throw new Error("useComputerUseWindowsGate peers are not configured");
   }
-  const enabled = options.enabled === undefined ? true : options.enabled;
-  const { isLoading: isPlatformLoading, platform } = peers.useHostPlatform();
-  const isComputerUseGateEnabled = peers.readComputerUseGate("1506311413");
-  const feature = peers.useComputerUseFeature({
-    featureName: "computer_use",
-    hostId: options.hostId,
-  });
-  const isWindowsReady = platform === "windows" && !isPlatformLoading;
-  const windowsGateEnabled = enabled && isWindowsReady;
-  const windowsCompat = peers.useWindowsCompatibility({
-    enabled: windowsGateEnabled,
-  });
-  const isAnyFeatureLoading =
-    feature.isLoading || (isWindowsReady && windowsCompat.isLoading);
-  const areRequiredFeaturesEnabled =
-    feature.enabled && (!isWindowsReady || windowsCompat.enabled);
-  const availability = peers.resolveAvailability({
-    areRequiredFeaturesEnabled,
-    enabled,
-    isAnyFeatureLoading,
-    isComputerUseGateEnabled,
-    isHostCompatiblePlatform: peers.isHostCompatiblePlatform(platform),
-    isPlatformLoading,
-    windowType: "electron",
-  });
-  return {
-    availability,
-    isAvailable: availability === "available",
-    isLoading: availability === "loading" && isAnyFeatureLoading,
-    isSoftLoading: availability === "loading",
-  };
+
+  let t = (0, peers.t6r.c)(16),
+    { enabled: n, hostId: r } = e,
+    i = n === void 0 ? !0 : n,
+    { isLoading: a, platform: o } = peers.uk(),
+    s = peers.kh(`1506311413`),
+    c;
+  t[0] === r
+    ? (c = t[1])
+    : ((c = {
+        featureName: `computer_use`,
+        hostId: r,
+      }),
+      (t[0] = r),
+      (t[1] = c));
+  let l = peers.q3r(c),
+    u = o === `windows` && !a,
+    d = i && u,
+    f;
+  t[2] === d
+    ? (f = t[3])
+    : ((f = {
+        enabled: d,
+      }),
+      (t[2] = d),
+      (t[3] = f));
+  let p = peers.Q3r(f),
+    m = l.isLoading || (u && p.isLoading),
+    h = l.enabled && (!u || p.enabled),
+    g;
+  t[4] !== h ||
+  t[5] !== i ||
+  t[6] !== m ||
+  t[7] !== s ||
+  t[8] !== a ||
+  t[9] !== o
+    ? ((g = peers.e6r({
+        areRequiredFeaturesEnabled: h,
+        enabled: i,
+        isAnyFeatureLoading: m,
+        isComputerUseGateEnabled: s,
+        isHostCompatiblePlatform: peers.X3r(o),
+        isPlatformLoading: a,
+        windowType: `electron`,
+      })),
+      (t[4] = h),
+      (t[5] = i),
+      (t[6] = m),
+      (t[7] = s),
+      (t[8] = a),
+      (t[9] = o),
+      (t[10] = g))
+    : (g = t[10]);
+  let _ = g,
+    v = _ === `available`,
+    y = _ === `loading` && m,
+    b = _ === `loading`,
+    x;
+  return (
+    t[11] !== _ || t[12] !== v || t[13] !== y || t[14] !== b
+      ? ((x = {
+          available: v,
+          isFetching: y,
+          isLoading: b,
+          reason: _,
+        }),
+        (t[11] = _),
+        (t[12] = v),
+        (t[13] = y),
+        (t[14] = b),
+        (t[15] = x))
+      : (x = t[15]),
+    x
+  );
 }

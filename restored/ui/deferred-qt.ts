@@ -1,25 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Q_t / Ha
+// Materialized via extractFn(internal `Ha`) / export `Q_t`.
 
 export type BindDeferredQtPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ai: (...args: unknown[]) => unknown;
+  Ca: (...args: unknown[]) => unknown;
+  Hn: (...args: unknown[]) => unknown;
+  Ni: (...args: unknown[]) => unknown;
+  Oi: (...args: unknown[]) => unknown;
+  Qn: (...args: unknown[]) => unknown;
+  Qr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ui: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredQtPeers | null = null;
 
-/** Wire bindDeferredQt once companions land. */
+/** Wire bindDeferredQt peers once companions land. */
 export function setBindDeferredQtPeers(next: BindDeferredQtPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Q_t` / internal `Ha`.
- * Stage-3 fill for bundle export Q_t / Ha
  */
-export function bindDeferredQt(...args: unknown[]): unknown {
+export function bindDeferredQt() {
   if (peers == null) {
     throw new Error("bindDeferredQt peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Qn(), peers.Hn(), peers.ui(), peers.Oi(), peers.Qr(), peers.Ca(), peers.Ai(), peers.Ni();
+  });
 }

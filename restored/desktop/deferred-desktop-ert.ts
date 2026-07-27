@@ -1,28 +1,61 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ert / Gv
+// Materialized via extractFn(internal `Gv`) / export `Ert`.
 
 export type BindDeferredDesktopErtPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Gv: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredDesktopErtPeers | null = null;
 
-/** Wire bindDeferredDesktopErt once companions land. */
-export function setBindDeferredDesktopErtPeers(
-  next: BindDeferredDesktopErtPeers,
-): void {
+/** Wire bindDeferredDesktopErt peers once companions land. */
+export function setBindDeferredDesktopErtPeers(next: BindDeferredDesktopErtPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Ert` / internal `Gv`.
- * Stage-3 fill for bundle export Ert / Gv
  */
-export function bindDeferredDesktopErt(...args: unknown[]): unknown {
+export function bindDeferredDesktopErt() {
   if (peers == null) {
     throw new Error("bindDeferredDesktopErt peers are not configured");
   }
-  return peers.impl(...args);
+
+  return Object.freeze({
+    Translate: {
+      toString(e) {
+        if (!peers.e) return;
+        let { x: t, y: n } = peers.e;
+        return (
+          `translate3d(` +
+          (t ? Math.round(t) : 0) +
+          `px, ` +
+          (n ? Math.round(n) : 0) +
+          `px, 0)`
+        );
+      },
+    },
+    Scale: {
+      toString(e) {
+        if (!peers.e) return;
+        let { scaleX: t, scaleY: n } = peers.e;
+        return `scaleX(` + t + `) scaleY(` + n + `)`;
+      },
+    },
+    Transform: {
+      toString(e) {
+        if (peers.e)
+          return [
+            peers.Gv.Translate.toString(peers.e),
+            peers.Gv.Scale.toString(peers.e),
+          ].join(` `);
+      },
+    },
+    Transition: {
+      toString(e) {
+        let { property: t, duration: n, easing: r } = peers.e;
+        return t + ` ` + n + `ms ` + r;
+      },
+    },
+  });
 }

@@ -1,18 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EP — real body via extractFn(internal `Zqa`) / export `sM`.
-
-import type { ReactElement } from "react";
+// Materialized via extractFn(internal `Zqa`) / export `sM`.
 
 export type PrimaryAtMentionListContentPeers = {
-  createElement: (
-    type: unknown,
-    props: Record<string, unknown> | null,
-    ...children: unknown[]
-  ) => unknown;
-  render: (props: Record<string, unknown>) => unknown;
-  useTranslations?: () => (key: string) => string;
+  $qa: (...args: unknown[]) => unknown;
+  Qqa: (...args: unknown[]) => unknown;
+  fVa: (...args: unknown[]) => unknown;
+  rU: (...args: unknown[]) => unknown;
+  sJa: (...args: unknown[]) => unknown;
 };
-
 let peers: PrimaryAtMentionListContentPeers | null = null;
 
 /** Wire PrimaryAtMentionListContent peers once companions land. */
@@ -24,17 +19,74 @@ export function setPrimaryAtMentionListContentPeers(
 
 /**
  * Bundle export `sM` / internal `Zqa`.
- * UI body restored from extractFn(internal `Zqa`).
  */
-export type PrimaryAtMentionListContentProps = {
-  [key: string]: unknown;
-};
-
-export function PrimaryAtMentionListContent(
-  props: PrimaryAtMentionListContentProps,
-): ReactElement {
+export function PrimaryAtMentionListContent(props: unknown) {
+  const Qa = peers.$qa;
+  const Qqa = peers.Qqa;
   if (peers == null) {
     throw new Error("PrimaryAtMentionListContent peers are not configured");
   }
-  return peers.render(props as Record<string, unknown>) as ReactElement;
+  let {
+    backgroundAgents = [],
+    className,
+    chromeVariant = "default",
+    excludedAgentConversationIds = [],
+    excludedThreadIds = [],
+    hostId,
+    isHomeMenu = false,
+    keyboardEventTarget,
+    leadingItems = [],
+    onAddContext,
+    onRequestClose,
+    onUpdateSelectedMention,
+    placement = "top",
+    query,
+    fileSearchRootPaths,
+    skillRoots: _,
+    source,
+    threadSearchRoots,
+  } = props;
+  let x = backgroundAgents;
+  let w = excludedAgentConversationIds;
+  let E = excludedThreadIds;
+  let k = leadingItems;
+  if (peers.fVa(source)) {
+    let e;
+    return (
+      <Qa
+        className={className}
+        chromeVariant={chromeVariant}
+        hostId={hostId}
+        isHomeMenu={isHomeMenu}
+        keyboardEventTarget={keyboardEventTarget}
+        onAddContext={onAddContext}
+        onRequestClose={onRequestClose}
+        onUpdateSelectedMention={onUpdateSelectedMention}
+        placement={placement}
+        query={query}
+        source={source}
+      />
+    );
+  }
+  return (
+    <Qqa
+      backgroundAgents={x}
+      className={className}
+      chromeVariant={chromeVariant}
+      excludedAgentConversationIds={w}
+      excludedThreadIds={E}
+      hostId={hostId}
+      isHomeMenu={isHomeMenu}
+      keyboardEventTarget={keyboardEventTarget}
+      leadingItems={k}
+      onAddContext={onAddContext}
+      onRequestClose={onRequestClose}
+      onUpdateSelectedMention={onUpdateSelectedMention}
+      placement={placement}
+      query={query}
+      fileSearchRootPaths={fileSearchRootPaths}
+      skillRoots={_}
+      threadSearchRoots={threadSearchRoots}
+    />
+  );
 }

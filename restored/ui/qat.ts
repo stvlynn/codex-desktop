@@ -1,25 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Qat / CAt
+// Materialized via extractFn(internal `CAt`) / export `Qat`.
 
 export type QatPeers = {
-  impl: (...args: unknown[]) => unknown;
+  SAt: (...args: unknown[]) => unknown;
+  Xkt: (...args: unknown[]) => unknown;
+  bAt: (...args: unknown[]) => unknown;
+  dAt: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gAt: (...args: unknown[]) => unknown;
+  vAt: (...args: unknown[]) => unknown;
 };
 
 let peers: QatPeers | null = null;
 
-/** Wire qat once companions land. */
+/** Wire qat peers once companions land. */
 export function setQatPeers(next: QatPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Qat` / internal `CAt`.
- * Stage-3 fill for bundle export Qat / CAt
  */
-export function qat(...args: unknown[]): unknown {
+export function qat() {
   if (peers == null) {
     throw new Error("qat peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.gAt(), peers.dAt(), peers.Xkt(), peers.vAt(), peers.bAt(), peers.SAt();
+  });
 }

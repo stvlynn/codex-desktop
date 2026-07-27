@@ -22,8 +22,6 @@ import {
 ensureHasSeenRealtimeVoiceNuxAtomInit();
 ensureRealtimeVoiceStartHandlerInit();
 ensureRealtimeVoiceNuxInit();
-const DEFAULT_ORB_SRC =
-  "https://persistent.oaistatic.com/voice/bidi-homepage-banner-orb.21107572.webp";
 export type RealtimeVoiceHomeAnnouncementProps = {
   entryPoint: string;
 };
@@ -33,7 +31,12 @@ function RealtimeVoiceHomeAnnouncementCard(props: {
   onStart: () => void;
   orbSrc?: string;
 }): ReactElement {
-  const { entryPoint, onDismiss, onStart, orbSrc = DEFAULT_ORB_SRC } = props;
+  const {
+    entryPoint,
+    onDismiss,
+    onStart,
+    orbSrc = "https://persistent.oaistatic.com/voice/bidi-homepage-banner-orb.21107572.webp",
+  } = props;
   const intl = useIntl();
   const title = (
     <MemoizedFormattedMessage
@@ -105,7 +108,9 @@ export function RealtimeVoiceHomeAnnouncement(
   return (
     <RealtimeVoiceHomeAnnouncementCard
       entryPoint={entryPoint}
-      onDismiss={() => markRealtimeVoiceNuxSeen(store)}
+      onDismiss={() => {
+        return markRealtimeVoiceNuxSeen(store);
+      }}
       onStart={() => {
         onStart();
       }}

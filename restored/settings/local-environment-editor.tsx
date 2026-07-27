@@ -17,9 +17,7 @@ type localEnvironmentEditor_UnderscoreImpl = (
 let impl: localEnvironmentEditor_UnderscoreImpl | null = null;
 
 /** Wire the full localEnvironmentEditor_Underscore once deeper companion restore lands. */
-export function bindlocalEnvironmentEditor_Underscore(
-  next: localEnvironmentEditor_UnderscoreImpl,
-): void {
+export function bindlocalEnvironmentEditor_Underscore(next: localEnvironmentEditor_UnderscoreImpl): void {
   impl = next;
 }
 

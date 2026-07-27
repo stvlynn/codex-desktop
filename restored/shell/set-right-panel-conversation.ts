@@ -21,18 +21,12 @@ type PanelConversationDeps = {
 
 let deps: PanelConversationDeps | null = null;
 
-export function setRightPanelConversationDeps(
-  next: PanelConversationDeps,
-): void {
+export function setRightPanelConversationDeps(next: PanelConversationDeps): void {
   deps = next;
 }
 
 /** Bundle `qBi` / export `KH`. */
-export function setRightPanelConversation(
-  scope: ScopeLike,
-  domain: unknown,
-  title?: unknown,
-): void {
+export function setRightPanelConversation(scope: ScopeLike, domain: unknown, title?: unknown): void {
   if (deps == null) {
     throw new Error("setRightPanelConversation deps have not been configured");
   }

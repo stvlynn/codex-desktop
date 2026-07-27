@@ -1,25 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Uat / $jt
+// Materialized via extractFn(internal `$jt`) / export `Uat`.
 
 export type BindDeferredUatPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Gjt: (...args: unknown[]) => unknown;
+  Qjt: (...args: unknown[]) => unknown;
+  Zjt: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUatPeers | null = null;
 
-/** Wire bindDeferredUat once companions land. */
+/** Wire bindDeferredUat peers once companions land. */
 export function setBindDeferredUatPeers(next: BindDeferredUatPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Uat` / internal `$jt`.
- * Stage-3 fill for bundle export Uat / $jt
  */
-export function bindDeferredUat(...args: unknown[]): unknown {
+export function bindDeferredUat() {
   if (peers == null) {
     throw new Error("bindDeferredUat peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Gjt(), Zjt = /[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g, Qjt = new RegExp(peers.Zjt.source, `g`);
+  });
 }

@@ -41,10 +41,7 @@ function parseUrlLenient(raw: string): URL | null {
 }
 
 /** Best-effort PDF filename extraction from a URL (or data-URL fallback). */
-export function getPdfFilenameFromUrl(
-  url: unknown,
-  fallback: string = "document.pdf",
-): string {
+export function getPdfFilenameFromUrl(url: unknown, fallback: string = "document.pdf"): string {
   if (typeof url !== "string") return fallback;
   if (startsWithDataUrl(url)) {
     warnPdfFilename(

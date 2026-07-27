@@ -1,33 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `Sic`) / export `Up`.
+// Materialized via extractFn(internal `Sic`) / export `Up`.
 
 export type UseIsComputerUseNativeAppAllowedPeers = {
-  useGate: (gate: unknown) => boolean;
-  computerUseNativeAppGate: unknown;
-  statusAtom: unknown;
-  useAtomValue: (atom: unknown) => { status?: string };
+  Y: (...args: unknown[]) => unknown;
+  kh: (...args: unknown[]) => unknown;
+  qln: (...args: unknown[]) => unknown;
+  wic: (...args: unknown[]) => unknown;
 };
 
 let peers: UseIsComputerUseNativeAppAllowedPeers | null = null;
 
-/** Wire computer-use native-app gate peers once companions land. */
-export function setUseIsComputerUseNativeAppAllowedPeers(
-  next: UseIsComputerUseNativeAppAllowedPeers,
-): void {
+/** Wire useIsComputerUseNativeAppAllowed peers once companions land. */
+export function setUseIsComputerUseNativeAppAllowedPeers(next: UseIsComputerUseNativeAppAllowedPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Up` / internal `Sic`.
- * Whether computer-use native app is allowed (gate + status).
  */
-export function useIsComputerUseNativeAppAllowed(): boolean {
+export function useIsComputerUseNativeAppAllowed() {
   if (peers == null) {
-    throw new Error(
-      "UseIsComputerUseNativeAppAllowed peers are not configured",
-    );
+    throw new Error("useIsComputerUseNativeAppAllowed peers are not configured");
   }
-  const gated = peers.useGate(peers.computerUseNativeAppGate);
-  const status = peers.useAtomValue(peers.statusAtom);
-  return gated && (status.status === "allowed" || status.status === "loading");
+
+  let e = peers.kh(peers.wic),
+    t = peers.Y(peers.qln);
+  return e && (t.status === `allowed` || t.status === `loading`);
 }

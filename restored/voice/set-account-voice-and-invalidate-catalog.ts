@@ -1,44 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `Hns`) / export `HC`.
+// Materialized via extractFn(internal `Hns`) / export `HC`.
 
-export type SetAccountVoiceAndInvalidateCatalogPeers = {
-  accountScopeAtom: unknown;
-  normalizeVoicePayload: (voice: unknown) => unknown;
-  invalidateQueries: (
-    queryClient: unknown,
-    queryKey: unknown[],
-  ) => Promise<unknown>;
+export type HCPeers = {
+  Ins: (...args: unknown[]) => unknown;
+  MV: (...args: unknown[]) => unknown;
+  U8n: (...args: unknown[]) => unknown;
 };
 
-let peers: SetAccountVoiceAndInvalidateCatalogPeers | null = null;
+let peers: HCPeers | null = null;
 
-/** Wire account-voice write peers once companions land. */
-export function setSetAccountVoiceAndInvalidateCatalogPeers(
-  next: SetAccountVoiceAndInvalidateCatalogPeers,
-): void {
+/** Wire HC peers once companions land. */
+export function setHCPeers(next: HCPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `HC` / internal `Hns`.
- * Set account voice then invalidate realtime-voice catalog queries.
  */
-export async function setAccountVoiceAndInvalidateCatalog(
-  scope: {
-    get: (atom: unknown) => {
-      setAccountVoice: (v: unknown) => Promise<unknown>;
-    };
-    queryClient: unknown;
-  },
-  voice: unknown,
-): Promise<void> {
+async function HC(e, t) {
   if (peers == null) {
-    throw new Error(
-      "SetAccountVoiceAndInvalidateCatalog peers are not configured",
-    );
+    throw new Error("HC peers are not configured");
   }
-  await scope
-    .get(peers.accountScopeAtom)
-    .setAccountVoice(peers.normalizeVoicePayload(voice));
-  await peers.invalidateQueries(scope.queryClient, ["realtime-voice-catalog"]);
+
+  await e.get(peers.MV).setAccountVoice(peers.Ins(t)), await peers.U8n(e.queryClient, [`realtime-voice-catalog`]);
 }

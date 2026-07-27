@@ -1,14 +1,22 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EL — real body via extractFn(internal `rUl`) / export `Ya`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `rUl`) / export `Ya`.
 
 export type ProjectPinnedActionsMenuPeers = {
-  useTranslations: () => (key: string) => string;
-  Menu: (props: Record<string, unknown>) => ReactNode;
-  MenuItem: (props: Record<string, unknown>) => ReactNode;
+  G7s: (...args: unknown[]) => unknown;
+  Ju: (...args: unknown[]) => unknown;
+  KR: (...args: unknown[]) => unknown;
+  RRl: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
+  aUl: (...args: unknown[]) => unknown;
+  g5: (...args: unknown[]) => unknown;
+  h5: (...args: unknown[]) => unknown;
+  hk: (...args: unknown[]) => unknown;
+  iUl: (...args: unknown[]) => unknown;
+  m3: (...args: unknown[]) => unknown;
+  qL: (...args: unknown[]) => unknown;
+  qh: (...args: unknown[]) => unknown;
+  tUl: (...args: unknown[]) => unknown;
 };
-
 let peers: ProjectPinnedActionsMenuPeers | null = null;
 
 /** Wire ProjectPinnedActionsMenu peers once companions land. */
@@ -20,60 +28,107 @@ export function setProjectPinnedActionsMenuPeers(
 
 /**
  * Bundle export `Ya` / internal `rUl`.
- * Pinned-project overflow menu (new task / settings / delete).
  */
-export type ProjectPinnedActionsMenuProps = {
-  align?: string;
-  canDeleteProject?: boolean;
-  deleteDisabledMessage?: string;
-  isPinned?: boolean;
-  onDelete?: () => void;
-  onNewLocalTask?: () => void;
-  onOpenChange?: (open: boolean) => void;
-  onPinnedChange?: (pinned: boolean) => void;
-  onSettings?: () => void;
-  open?: boolean;
-  projectTitle?: string;
-  triggerButton?: ReactNode;
-};
-
-export function ProjectPinnedActionsMenu(
-  props: ProjectPinnedActionsMenuProps,
-): ReactElement {
+export function ProjectPinnedActionsMenu(props: unknown) {
+  const RRl = peers.RRl;
   if (peers == null) {
     throw new Error("ProjectPinnedActionsMenu peers are not configured");
   }
-  const t = peers.useTranslations();
-  return peers.Menu({
-    align: props.align,
-    open: props.open,
-    onOpenChange: props.onOpenChange,
-    trigger: props.triggerButton,
-    children: [
-      peers.MenuItem({
-        key: "new",
-        onSelect: props.onNewLocalTask,
-        children: t("codex.projectPinnedActions.newLocalTask"),
-      }),
-      peers.MenuItem({
-        key: "settings",
-        onSelect: props.onSettings,
-        children: t("codex.projectPinnedActions.settings"),
-      }),
-      peers.MenuItem({
-        key: "pin",
-        onSelect: () => props.onPinnedChange?.(!(props.isPinned ?? false)),
-        children: props.isPinned
-          ? t("codex.projectPinnedActions.unpin")
-          : t("codex.projectPinnedActions.pin"),
-      }),
-      peers.MenuItem({
-        key: "delete",
-        disabled: props.canDeleteProject === false,
-        title: props.deleteDisabledMessage,
-        onSelect: props.onDelete,
-        children: t("codex.projectPinnedActions.delete"),
-      }),
-    ],
-  }) as ReactElement;
+  let {
+      align,
+      canDeleteProject,
+      deleteDisabledMessage,
+      isPinned,
+      onDelete,
+      onNewLocalTask,
+      onOpenChange,
+      onPinnedChange,
+      onSettings,
+      open,
+      projectTitle,
+      triggerButton,
+    } = props,
+    m = peers.Ju(),
+    h = peers.aUl.useRef(false),
+    g = (event) => {
+      h.current && ((h.current = false), event.preventDefault(), onSettings());
+    };
+  let _ = m.formatMessage(peers.h5.actions, {
+    projectName: projectTitle,
+  });
+  let v = (e) => {
+    return (
+      <>
+        {
+          <peers.hk electron={true}>
+            {onNewLocalTask == null ? null : (
+              <peers.KR.Item
+                LeftIcon={peers.G7s}
+                onSelect={() => {
+                  e(false);
+                  onNewLocalTask();
+                }}
+              >
+                <peers.Z {...peers.h5.newLocalTask} />
+              </peers.KR.Item>
+            )}
+          </peers.hk>
+        }
+        {
+          <peers.KR.Item
+            LeftIcon={isPinned ? peers.tUl : peers.m3}
+            onSelect={() => {
+              onPinnedChange(!isPinned);
+              e(false);
+            }}
+          >
+            {isPinned ? (
+              <peers.Z {...peers.h5.unpin} />
+            ) : (
+              <peers.Z {...peers.h5.pin} />
+            )}
+          </peers.KR.Item>
+        }
+        {
+          <peers.KR.Item
+            LeftIcon={peers.qL}
+            onSelect={() => {
+              h.current = true;
+            }}
+          >
+            <peers.Z {...peers.h5.settings} />
+          </peers.KR.Item>
+        }
+        {
+          <peers.KR.Item
+            LeftIcon={peers.qh}
+            disabled={!canDeleteProject}
+            onSelect={() => {
+              e(false);
+              onDelete();
+            }}
+            tooltipText={
+              deleteDisabledMessage == null ? undefined : (
+                <peers.Z {...deleteDisabledMessage} />
+              )
+            }
+          >
+            <peers.Z {...peers.h5.delete} />
+          </peers.KR.Item>
+        }
+      </>
+    );
+  };
+  return (
+    <RRl
+      align={align}
+      open={open}
+      onOpenChange={onOpenChange}
+      onCloseAutoFocus={g}
+      triggerAriaLabel={_}
+      triggerButton={triggerButton}
+    >
+      {v}
+    </RRl>
+  );
 }

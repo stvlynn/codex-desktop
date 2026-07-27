@@ -1,18 +1,12 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EP — real body via extractFn(internal `Tsl`) / export `Yc`.
-
-import type { ReactElement } from "react";
+// Materialized via extractFn(internal `Tsl`) / export `Yc`.
 
 export type PreviewExpandCollapseListPeers = {
-  createElement: (
-    type: unknown,
-    props: Record<string, unknown> | null,
-    ...children: unknown[]
-  ) => unknown;
-  render: (props: Record<string, unknown>) => unknown;
-  useTranslations?: () => (key: string) => string;
+  $: (...args: unknown[]) => unknown;
+  Dsl: (...args: unknown[]) => unknown;
+  Esl: (...args: unknown[]) => unknown;
+  Osl: (...args: unknown[]) => unknown;
 };
-
 let peers: PreviewExpandCollapseListPeers | null = null;
 
 /** Wire PreviewExpandCollapseList peers once companions land. */
@@ -24,17 +18,47 @@ export function setPreviewExpandCollapseListPeers(
 
 /**
  * Bundle export `Yc` / internal `Tsl`.
- * UI body restored from extractFn(internal `Tsl`).
  */
-export type PreviewExpandCollapseListProps = {
-  [key: string]: unknown;
-};
-
-export function PreviewExpandCollapseList(
-  props: PreviewExpandCollapseListProps,
-): ReactElement {
+export function PreviewExpandCollapseList(props: unknown) {
   if (peers == null) {
     throw new Error("PreviewExpandCollapseList peers are not configured");
   }
-  return peers.render(props as Record<string, unknown>) as ReactElement;
+  let {
+      items,
+      className,
+      contentClassName,
+      maxHeightByState,
+      viewState = "preview",
+      autoScrollToBottom = true,
+      disableMaxHeight = false,
+      allowHorizontalScroll = false,
+    } = props,
+    m =
+      viewState === "expanded"
+        ? maxHeightByState.expanded
+        : viewState === "collapsed"
+          ? maxHeightByState.collapsed
+          : maxHeightByState.preview,
+    h = autoScrollToBottom && "flex flex-col-reverse",
+    g = !allowHorizontalScroll && "overflow-x-hidden",
+    _ = peers.$(
+      "vertical-scroll-fade-mask [--edge-fade-distance:1.5rem] overflow-y-auto",
+      h,
+      g,
+      className,
+    );
+  let v = disableMaxHeight
+    ? undefined
+    : {
+        maxHeight: m,
+      };
+  let y = viewState === "preview" && "pb-1",
+    b = peers.$("flex flex-col gap-1", contentClassName, y);
+  let x = viewState === "collapsed" ? null : items.map(peers.Esl);
+  let S = <div className={b}>{x}</div>;
+  return (
+    <div className={_} style={v}>
+      {S}
+    </div>
+  );
 }

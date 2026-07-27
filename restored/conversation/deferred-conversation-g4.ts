@@ -1,28 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export g4 / Ner
+// Materialized via extractFn(internal `Ner`) / export `g4`.
 
 export type BindDeferredConversationG4Peers = {
-  impl: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  Mer: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  aD: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredConversationG4Peers | null = null;
 
-/** Wire bindDeferredConversationG4 once companions land. */
-export function setBindDeferredConversationG4Peers(
-  next: BindDeferredConversationG4Peers,
-): void {
+/** Wire bindDeferredConversationG4 peers once companions land. */
+export function setBindDeferredConversationG4Peers(next: BindDeferredConversationG4Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `g4` / internal `Ner`.
- * Stage-3 fill for bundle export g4 / Ner
  */
-export function bindDeferredConversationG4(...args: unknown[]): unknown {
+export function bindDeferredConversationG4() {
   if (peers == null) {
     throw new Error("bindDeferredConversationG4 peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ma(peers.Q, ({
+    get: e
+  }) => {
+    let t = e(peers.Mer);
+    return t == null || !e(peers.aD, t.hostId).includes(t.conversationId) ? null : t;
+  });
 }

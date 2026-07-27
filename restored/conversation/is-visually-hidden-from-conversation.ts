@@ -7,9 +7,7 @@ export type MessageLike = {
   metadata?: unknown;
 };
 
-export function isVisuallyHiddenFromConversation(
-  message: MessageLike,
-): boolean {
+export function isVisuallyHiddenFromConversation(message: MessageLike): boolean {
   return (
     asRecord(message.metadata)?.is_visually_hidden_from_conversation === true
   );

@@ -1,22 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `Aqi`) / export `pV`.
-
-export type CodexAppsToolResult = {
-  type?: string;
-  structuredContent?: unknown;
-};
+// Materialized via extractFn(internal `Aqi`) / export `pV`.
 
 export type IsCodexAppsServerToolResultErrorPeers = {
-  parseSuccessBody: (value: unknown) => {
-    success: boolean;
-    data?: { isError?: boolean; structuredContent?: unknown };
-  };
-  parseNestedError: (value: unknown) => { success: boolean };
+  $qi: (...args: unknown[]) => unknown;
+  eJi: (...args: unknown[]) => unknown;
+  type: (...args: unknown[]) => unknown;
 };
-
 let peers: IsCodexAppsServerToolResultErrorPeers | null = null;
 
-/** Wire Codex apps error schemas once companions land. */
+/** Wire isCodexAppsServerToolResultError peers once companions land. */
 export function setIsCodexAppsServerToolResultErrorPeers(
   next: IsCodexAppsServerToolResultErrorPeers,
 ): void {
@@ -25,27 +17,23 @@ export function setIsCodexAppsServerToolResultErrorPeers(
 
 /**
  * Bundle export `pV` / internal `Aqi`.
- * True when a Codex apps server tool result represents an error.
  */
-export function isCodexAppsServerToolResultError(args: {
-  isCodexAppsServer: boolean;
-  result?: CodexAppsToolResult | null;
-}): boolean {
+export function isCodexAppsServerToolResultError({
+  isCodexAppsServer,
+  result,
+}: Record<string, unknown>) {
   if (peers == null) {
     throw new Error(
-      "IsCodexAppsServerToolResultError peers are not configured",
+      "isCodexAppsServerToolResultError peers are not configured",
     );
   }
-  const { isCodexAppsServer, result } = args;
   if (result?.type === "error") return true;
   if (result?.type !== "success" || !isCodexAppsServer) return false;
-  const parsed = peers.parseSuccessBody(result.structuredContent);
+  let n = peers.$qi.safeParse(result.structuredContent);
   return (
-    (parsed.success && parsed.data?.isError === true) ||
-    peers.parseNestedError(
-      parsed.success
-        ? parsed.data?.structuredContent
-        : result.structuredContent,
+    (n.success && n.data.isError) ||
+    peers.eJi.safeParse(
+      n.success ? n.data.structuredContent : result.structuredContent,
     ).success
   );
 }

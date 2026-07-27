@@ -17,9 +17,7 @@ type AppConnectOAuthCallbackPageImpl = (
 let impl: AppConnectOAuthCallbackPageImpl | null = null;
 
 /** Wire the full AppConnectOAuthCallbackPage once deeper companion restore lands. */
-export function bindAppConnectOAuthCallbackPage(
-  next: AppConnectOAuthCallbackPageImpl,
-): void {
+export function bindAppConnectOAuthCallbackPage(next: AppConnectOAuthCallbackPageImpl): void {
   impl = next;
 }
 

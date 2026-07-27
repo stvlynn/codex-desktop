@@ -1,24 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EA — real body via extractFn(internal `Tz`) / export `yz`.
-
-export type PluginLike = {
-  id: string;
-  [key: string]: unknown;
-};
+// Materialized via extractFn(internal `Tz`) / export `yz`.
 
 export type LogConnectorPluginActionPeers = {
-  logProductEvent: (
-    store: unknown,
-    event: unknown,
-    payload: Record<string, unknown>,
-  ) => void;
-  actionEvent: unknown;
-  remotePluginId: (plugin: PluginLike) => unknown;
+  U$n: (...args: unknown[]) => unknown;
+  Ub: (...args: unknown[]) => unknown;
+  h3i: (...args: unknown[]) => unknown;
 };
-
 let peers: LogConnectorPluginActionPeers | null = null;
 
-/** Wire connector-plugin analytics once companions land. */
+/** Wire logConnectorPluginAction peers once companions land. */
 export function setLogConnectorPluginActionPeers(
   next: LogConnectorPluginActionPeers,
 ): void {
@@ -27,31 +17,30 @@ export function setLogConnectorPluginActionPeers(
 
 /**
  * Bundle export `yz` / internal `Tz`.
- * Analytics for connector/plugin action.
  */
 export function logConnectorPluginAction(
-  store: unknown,
-  args: {
-    action: unknown;
-    connectorId?: unknown;
-    errorType?: unknown;
-    plugin: PluginLike;
-    result?: unknown;
-    source?: unknown;
-    surface?: unknown;
-  },
-): void {
+  e: unknown,
+  {
+    action,
+    connectorId,
+    errorType,
+    plugin,
+    result,
+    source,
+    surface,
+  }: Record<string, unknown>,
+) {
   if (peers == null) {
-    throw new Error("LogConnectorPluginAction peers are not configured");
+    throw new Error("logConnectorPluginAction peers are not configured");
   }
-  peers.logProductEvent(store, peers.actionEvent, {
-    action: args.action,
-    connectorId: args.connectorId,
-    errorType: args.errorType,
-    pluginId: args.plugin.id,
-    remotePluginId: peers.remotePluginId(args.plugin),
-    result: args.result,
-    source: args.source,
-    surface: args.surface,
+  peers.Ub(e, peers.U$n, {
+    action,
+    connectorId,
+    errorType,
+    pluginId: plugin.id,
+    remotePluginId: peers.h3i(plugin),
+    result,
+    source,
+    surface,
   });
 }

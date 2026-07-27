@@ -1,44 +1,70 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EP — real body via extractFn(internal `kYr`) / export `WY`.
+// Materialized via extractFn(internal `kYr`) / export `WY`.
 
 export type UseHostChatgptAuthMethodPeers = {
-  useAtomValue: (atom: unknown) => unknown;
-  selectedHostIdAtom: unknown;
-  resolveHostConfig: (
-    hostId: unknown,
-  ) => { authMethod?: string } | null | undefined;
+  AYr: (...args: unknown[]) => unknown;
+  Fo: (...args: unknown[]) => unknown;
+  PE: (...args: unknown[]) => unknown;
+  SD: (...args: unknown[]) => unknown;
+  Y: (...args: unknown[]) => unknown;
+  authMethod: (...args: unknown[]) => unknown;
+  bM: (...args: unknown[]) => unknown;
+  fast_mode: (...args: unknown[]) => unknown;
+  featureRequirements: (...args: unknown[]) => unknown;
+  hostId: (...args: unknown[]) => unknown;
+  isLoading: (...args: unknown[]) => unknown;
+  requirements: (...args: unknown[]) => unknown;
 };
 
 let peers: UseHostChatgptAuthMethodPeers | null = null;
 
 /** Wire useHostChatgptAuthMethod peers once companions land. */
-export function setUseHostChatgptAuthMethodPeers(
-  next: UseHostChatgptAuthMethodPeers,
-): void {
+export function setUseHostChatgptAuthMethodPeers(next: UseHostChatgptAuthMethodPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `WY` / internal `kYr`.
- * Detect whether a host config uses ChatGPT auth.
  */
-export function useHostChatgptAuthMethod(options?: {
-  hostId?: string | null;
-}): {
-  authMethod: string | null | undefined;
-  isChatgpt: boolean;
-  hostId: unknown;
-} {
+export function useHostChatgptAuthMethod(e: unknown) {
   if (peers == null) {
-    throw new Error("UseHostChatgptAuthMethod peers are not configured");
+    throw new Error("useHostChatgptAuthMethod peers are not configured");
   }
-  const selectedHostId = peers.useAtomValue(peers.selectedHostIdAtom);
-  const hostId = options?.hostId ?? selectedHostId;
-  const config = peers.resolveHostConfig(hostId);
-  const authMethod = config?.authMethod ?? null;
-  return {
-    authMethod,
-    isChatgpt: authMethod === "chatgpt",
-    hostId,
-  };
+
+  let t = (0, peers.AYr.c)(6),
+    n = peers.Y(peers.SD),
+    r = e?.hostId ?? n,
+    i = peers.bM(r),
+    a = i?.authMethod === `chatgpt`,
+    o = i?.authMethod ?? null,
+    s;
+  t[0] !== r || t[1] !== o
+    ? ((s = {
+        authMethod: o,
+        hostId: r,
+      }),
+      (t[0] = r),
+      (t[1] = o),
+      (t[2] = s))
+    : (s = t[2]);
+  let { data: c, isPending: l } = peers.Fo(peers.PE, s),
+    u = !!i?.isLoading || (a && l),
+    d =
+      a &&
+      !u &&
+      c != null &&
+      c?.requirements?.featureRequirements?.fast_mode !== !1,
+    f;
+  return (
+    t[3] !== u || t[4] !== d
+      ? ((f = {
+          isServiceTierAllowed: d,
+          isLoading: u,
+        }),
+        (t[3] = u),
+        (t[4] = d),
+        (t[5] = f))
+      : (f = t[5]),
+    f
+  );
 }

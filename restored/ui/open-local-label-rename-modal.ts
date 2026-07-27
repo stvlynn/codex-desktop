@@ -1,69 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DY — real body via extractFn(internal `Rql`) / export `Ea`.
-
-export type LocalLabelTarget = {
-  label?: string;
-  projectKind?: string;
-};
+// Materialized via extractFn(internal `Rql`) / export `Ea`.
 
 export type OpenLocalLabelRenameModalPeers = {
-  canRename: (target: LocalLabelTarget) => boolean;
-  openModal: (
-    store: unknown,
-    kind: unknown,
-    payload: {
-      initialValue?: string;
-      messages: unknown;
-      onSave: (nextLabel: string) => void;
-      requireNonEmpty: boolean;
-      trimOnSave: boolean;
-    },
-  ) => void;
-  modalKind: unknown;
-  messages: { error?: unknown };
-  saveLabel: (
-    store: unknown,
-    target: LocalLabelTarget,
-    nextLabel: string,
-  ) => Promise<void>;
-  toastAtom: unknown;
-  intlAtom: unknown;
+  H5: (...args: unknown[]) => unknown;
+  Iql: (...args: unknown[]) => unknown;
+  LE: (...args: unknown[]) => unknown;
+  Pql: (...args: unknown[]) => unknown;
+  URl: (...args: unknown[]) => unknown;
+  Wk: (...args: unknown[]) => unknown;
+  rh: (...args: unknown[]) => unknown;
 };
 
 let peers: OpenLocalLabelRenameModalPeers | null = null;
 
-/** Wire rename modal peers once companions land. */
-export function setOpenLocalLabelRenameModalPeers(
-  next: OpenLocalLabelRenameModalPeers,
-): void {
+/** Wire openLocalLabelRenameModal peers once companions land. */
+export function setOpenLocalLabelRenameModalPeers(next: OpenLocalLabelRenameModalPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Ea` / internal `Rql`.
- * Open the local label rename modal for a project/workspace target.
  */
-export function openLocalLabelRenameModal(
-  store: { get: (atom: unknown) => any },
-  target: LocalLabelTarget,
-): void {
+export function openLocalLabelRenameModal(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("OpenLocalLabelRenameModal peers are not configured");
+    throw new Error("openLocalLabelRenameModal peers are not configured");
   }
-  if (!peers.canRename(target)) return;
-  peers.openModal(store, peers.modalKind, {
-    initialValue: target.label,
-    messages: peers.messages,
-    onSave: (nextLabel) => {
-      peers!.saveLabel(store, target, nextLabel).catch(() => {
-        const toast = store.get(peers!.toastAtom);
-        const intl = store.get(peers!.intlAtom);
-        toast?.danger?.(
-          intl?.formatMessage?.(peers!.messages?.error ?? { id: "error" }),
-        );
+
+  peers.H5(t) && peers.Wk(e, peers.URl, {
+    initialValue: t.label,
+    messages: peers.Iql,
+    onSave: n => {
+      peers.Pql(e, t, n).catch(() => {
+        e.get(peers.rh).danger(e.get(peers.LE).formatMessage(peers.Iql.error));
       });
     },
-    requireNonEmpty: target.projectKind === "local",
-    trimOnSave: true,
+    requireNonEmpty: t.projectKind === `local`,
+    trimOnSave: !0
   });
 }

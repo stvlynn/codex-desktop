@@ -1,41 +1,54 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export z2 / aD
+// Materialized via extractFn(internal `aD`) / export `z2`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredUiZ2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredUiZ2Peers = {
+  Da: (...args: unknown[]) => unknown;
+  Otr: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  eD: (...args: unknown[]) => unknown;
+  getRecentConversations: (...args: unknown[]) => unknown;
+  map: (...args: unknown[]) => unknown;
 };
 
-type DeferredUiZ2Impl = (props: DeferredUiZ2Props) => ReactNode;
-let impl: DeferredUiZ2Impl | null = null;
+let peers: BindDeferredUiZ2Peers | null = null;
 
-/** Wire the full DeferredUiZ2 once deeper restore lands. */
-export function bindDeferredUiZ2(next: DeferredUiZ2Impl): void {
-  impl = next;
+/** Wire bindDeferredUiZ2 peers once companions land. */
+export function setBindDeferredUiZ2Peers(next: BindDeferredUiZ2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `z2` / internal `aD`.
- * Stage-3 fill for bundle export z2 / aD; heavy UI via bind.
  */
-export function DeferredUiZ2(props: DeferredUiZ2Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fj-scaffold="z2"
-      aria-label="DeferredUiZ2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export z2 / aD
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredUiZ2() {
+  if (peers == null) {
+    throw new Error("bindDeferredUiZ2 peers are not configured");
+  }
+
+  return peers.Da(peers.Q, e => [], {
+    onMount: (e, t) => {
+      let {
+          key: n
+        } = t,
+        r = [],
+        i = t.watch(({
+          get: i
+        }) => {
+          let a = i(peers.eD, n),
+            o = i => {
+              e(i), peers.Otr(t, n, r, i), r = i;
+            };
+          if (o(a?.getRecentConversations().map(({
+            id: e
+          }) => e) ?? []), a != null) return a.addAnyConversationMetaCallback(e => {
+            o(e.map(({
+              id: e
+            }) => e));
+          });
+        });
+      return () => {
+        i(), peers.Otr(t, n, r, []);
+      };
+    }
+  });
 }

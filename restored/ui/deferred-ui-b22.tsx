@@ -1,41 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export B2 / $E
+// Materialized via extractFn(internal `$E`) / export `B2`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiB22Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiB22Peers = {
+  H_: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiB22Impl = (props: BindDeferredUiB22Props) => ReactNode;
-let impl: BindDeferredUiB22Impl | null = null;
+let peers: BindBindDeferredUiB22Peers | null = null;
 
-/** Wire the full BindDeferredUiB22 once deeper restore lands. */
-export function bindBindDeferredUiB22(next: BindDeferredUiB22Impl): void {
-  impl = next;
+/** Wire bindBindDeferredUiB22 peers once companions land. */
+export function setBindBindDeferredUiB22Peers(next: BindBindDeferredUiB22Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `B2` / internal `$E`.
- * Stage-3 fill for bundle export B2 / $E; heavy UI via bind.
  */
-export function BindDeferredUiB22(props: BindDeferredUiB22Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fc-scaffold="B2"
-      aria-label="BindDeferredUiB22"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export B2 / $E
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiB22() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiB22 peers are not configured");
+  }
+
+  return peers.Ta(peers.Q, () => [peers.H_]);
 }

@@ -1,28 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Xz / W2i
+// Materialized via extractFn(internal `W2i`) / export `Xz`.
 
 export type BindFormatLocationHrefPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Fh: (...args: unknown[]) => unknown;
+  H2i: (...args: unknown[]) => unknown;
+  K_: (...args: unknown[]) => unknown;
+  Nw: (...args: unknown[]) => unknown;
+  R2i: (...args: unknown[]) => unknown;
+  U2i: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fb: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
 let peers: BindFormatLocationHrefPeers | null = null;
 
-/** Wire bindFormatLocationHref once companions land. */
-export function setBindFormatLocationHrefPeers(
-  next: BindFormatLocationHrefPeers,
-): void {
+/** Wire bindFormatLocationHref peers once companions land. */
+export function setBindFormatLocationHrefPeers(next: BindFormatLocationHrefPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Xz` / internal `W2i`.
- * Stage-3 fill for bundle export Xz / W2i
  */
-export function bindFormatLocationHref(...args: unknown[]): unknown {
+export function bindFormatLocationHref() {
   if (peers == null) {
     throw new Error("bindFormatLocationHref peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    H2i = peers.c(), U2i = peers.r(peers.o(), 1), peers.Nw(), peers.R2i(), peers.fb(), peers.K_(), peers.Fh();
+  });
 }

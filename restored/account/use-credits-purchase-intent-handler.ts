@@ -27,9 +27,7 @@ export type UseCreditsPurchaseIntentHandlerPeers = {
 let peers: UseCreditsPurchaseIntentHandlerPeers | null = null;
 
 /** Wire useCreditsPurchaseIntentHandler peers once companions land. */
-export function setUseCreditsPurchaseIntentHandlerPeers(
-  next: UseCreditsPurchaseIntentHandlerPeers,
-): void {
+export function setUseCreditsPurchaseIntentHandlerPeers(next: UseCreditsPurchaseIntentHandlerPeers): void {
   peers = next;
 }
 

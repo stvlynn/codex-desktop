@@ -1,41 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Zd / KIc
+// Materialized via extractFn(internal `KIc`) / export `Zd`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredZdProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredZdPeers = {
+  $u: (...args: unknown[]) => unknown;
+  Bzo: (...args: unknown[]) => unknown;
+  GIc: (...args: unknown[]) => unknown;
+  HIc: (...args: unknown[]) => unknown;
+  Hb: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Kb: (...args: unknown[]) => unknown;
+  Um: (...args: unknown[]) => unknown;
+  W2: (...args: unknown[]) => unknown;
+  _hs: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  sd: (...args: unknown[]) => unknown;
+  zm: (...args: unknown[]) => unknown;
 };
 
-type DeferredZdImpl = (props: DeferredZdProps) => ReactNode;
-let impl: DeferredZdImpl | null = null;
+let peers: BindDeferredZdPeers | null = null;
 
-/** Wire the full DeferredZd once deeper restore lands. */
-export function bindDeferredZd(next: DeferredZdImpl): void {
-  impl = next;
+/** Wire bindDeferredZd peers once companions land. */
+export function setBindDeferredZdPeers(next: BindDeferredZdPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Zd` / internal `KIc`.
- * Stage-3 fill for bundle export Zd / KIc; heavy UI via bind.
  */
-export function DeferredZd(props: DeferredZdProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fo-scaffold="Zd"
-      aria-label="DeferredZd"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Zd / KIc
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredZd() {
+  if (peers == null) {
+    throw new Error("bindDeferredZd peers are not configured");
+  }
+
+  return peers.e(() => {
+    GIc = peers.c(), peers.Hb(), peers.sd(), peers.Ho(), peers.$u(), peers.zm(), peers.Um(), peers.Kb(), peers.Bzo(), peers._hs(), peers.HIc(), W2 = peers.J();
+  });
 }

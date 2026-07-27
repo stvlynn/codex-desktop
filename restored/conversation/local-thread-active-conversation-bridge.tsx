@@ -1,48 +1,77 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// conversationId/hostId route bridge
+// Materialized via extractFn(internal `zFc`) / export `lf`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type LocalThreadActiveConversationBridgeProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type LocalThreadActiveConversationBridgePeers = {
+  BFc: (...args: unknown[]) => unknown;
+  Bf: (...args: unknown[]) => unknown;
+  HFc: (...args: unknown[]) => unknown;
+  Io: (...args: unknown[]) => unknown;
+  UFc: (...args: unknown[]) => unknown;
+  VFc: (...args: unknown[]) => unknown;
+  WFc: (...args: unknown[]) => unknown;
+  Y: (...args: unknown[]) => unknown;
+  gp: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
+  ztr: (...args: unknown[]) => unknown;
 };
+let peers: LocalThreadActiveConversationBridgePeers | null = null;
 
-type LocalThreadActiveConversationBridgeImpl = (
-  props: LocalThreadActiveConversationBridgeProps,
-) => ReactNode;
-let impl: LocalThreadActiveConversationBridgeImpl | null = null;
-
-/** Wire the full LocalThreadActiveConversationBridge once deeper restore lands. */
-export function bindLocalThreadActiveConversationBridge(
-  next: LocalThreadActiveConversationBridgeImpl,
+/** Wire LocalThreadActiveConversationBridge peers once companions land. */
+export function setLocalThreadActiveConversationBridgePeers(
+  next: LocalThreadActiveConversationBridgePeers,
 ): void {
-  impl = next;
+  peers = next;
 }
 
 /**
- * Bundle export `lf` / export `lf` / internal `zFc`.
- * conversationId/hostId route bridge; heavy UI via bind.
+ * Bundle export `lf` / internal `zFc`.
  */
-export function LocalThreadActiveConversationBridge(
-  props: LocalThreadActiveConversationBridgeProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ee-scaffold="lf"
-      aria-label="LocalThreadActiveConversationBridge"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          conversationId/hostId route bridge
-        </div>
-      )}
-    </div>
-  );
+export function LocalThreadActiveConversationBridge(e: unknown) {
+  const BFc = peers.BFc;
+  if (peers == null) {
+    throw new Error(
+      "LocalThreadActiveConversationBridge peers are not configured",
+    );
+  }
+  let n = e === undefined ? {} : e;
+  let { conversationId, hostId } = n,
+    a = peers.Io(peers.hT),
+    o = peers.Y(peers.WFc),
+    s = a.value.routeKind === "local-thread" ? a.value.conversationId : null,
+    c = conversationId ?? s,
+    l = conversationId == null ? o : hostId,
+    u,
+    d;
+  u = () => {
+    if (!(c == null || l == null))
+      return (
+        peers.ztr(a, c, l),
+        peers.Bf("set-active-conversation", {
+          hostId: l,
+          conversationId: c,
+          active: true,
+        }),
+        peers.gp.requestUserInputAutoResolution.setConversationPresented?.({
+          conversationId: c,
+          hostId: l,
+          presented: true,
+        }),
+        () => {
+          peers.ztr(a, c, null);
+          peers.Bf("set-active-conversation", {
+            hostId: l,
+            conversationId: c,
+            active: false,
+          });
+          peers.gp.requestUserInputAutoResolution.setConversationPresented?.({
+            conversationId: c,
+            hostId: l,
+            presented: false,
+          });
+        }
+      );
+  };
+  d = [c, l, a];
+  peers.HFc.useLayoutEffect(u, d);
+  return c != null && l != null ? <BFc conversationId={c} hostId={l} /> : null;
 }

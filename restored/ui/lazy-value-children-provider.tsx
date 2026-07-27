@@ -1,22 +1,16 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `kza`) / export `JM`.
-
-import type { ReactElement, ReactNode } from "react";
-import { useState, type ComponentType } from "react";
-
-export type LazyValueChildrenProviderProps = {
-  children?: ReactNode;
-  [key: string]: unknown;
-};
+// Materialized via extractFn(internal `kza`) / export `JM`.
 
 export type LazyValueChildrenProviderPeers = {
-  createInitialValue: () => unknown;
-  Provider: ComponentType<{ value: unknown; children?: ReactNode }>;
+  Aza: (...args: unknown[]) => unknown;
+  Hza: (...args: unknown[]) => unknown;
+  Lza: (...args: unknown[]) => unknown;
+  VH: (...args: unknown[]) => unknown;
+  zza: (...args: unknown[]) => unknown;
 };
-
 let peers: LazyValueChildrenProviderPeers | null = null;
 
-/** Wire lazy value provider peers once companions land. */
+/** Wire LazyValueChildrenProvider peers once companions land. */
 export function setLazyValueChildrenProviderPeers(
   next: LazyValueChildrenProviderPeers,
 ): void {
@@ -25,15 +19,13 @@ export function setLazyValueChildrenProviderPeers(
 
 /**
  * Bundle export `JM` / internal `kza`.
- * Provider that lazily initializes a stable value for children.
  */
-export function LazyValueChildrenProvider(
-  props: LazyValueChildrenProviderProps,
-): ReactElement {
+export function LazyValueChildrenProvider(props: unknown) {
+  const Hza = peers.Hza;
   if (peers == null) {
     throw new Error("LazyValueChildrenProvider peers are not configured");
   }
-  const { children } = props;
-  const [value] = useState(peers.createInitialValue);
-  return <peers.Provider value={value}>{children}</peers.Provider>;
+  let { children } = props,
+    [r] = peers.zza.useState(peers.Aza);
+  return <Hza value={r}>{children}</Hza>;
 }

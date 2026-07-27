@@ -1,23 +1,15 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `oMe`) / export `Nft`.
-
-import type { ReactElement, ReactNode } from "react";
-
-export type AppQueryClientProviderProps = {
-  children?: ReactNode;
-};
+// Materialized via extractFn(internal `oMe`) / export `Nft`.
 
 export type AppQueryClientProviderPeers = {
-  useAppQueryClient: () => unknown;
-  QueryClientProvider: (props: {
-    queryClient: unknown;
-    children?: ReactNode;
-  }) => ReactNode;
+  Zee: (...args: unknown[]) => unknown;
+  cMe: (...args: unknown[]) => unknown;
+  rt: (...args: unknown[]) => unknown;
+  sMe: (...args: unknown[]) => unknown;
 };
-
 let peers: AppQueryClientProviderPeers | null = null;
 
-/** Wire query-client provider peers once companions land. */
+/** Wire AppQueryClientProvider peers once companions land. */
 export function setAppQueryClientProviderPeers(
   next: AppQueryClientProviderPeers,
 ): void {
@@ -26,17 +18,13 @@ export function setAppQueryClientProviderPeers(
 
 /**
  * Bundle export `Nft` / internal `oMe`.
- * Provide the app QueryClient to children.
  */
-export function AppQueryClientProvider(
-  props: AppQueryClientProviderProps,
-): ReactElement {
+export function AppQueryClientProvider(props: unknown) {
+  const Zee = peers.Zee;
   if (peers == null) {
     throw new Error("AppQueryClientProvider peers are not configured");
   }
-  const queryClient = peers.useAppQueryClient();
-  return peers.QueryClientProvider({
-    queryClient,
-    children: props.children,
-  }) as ReactElement;
+  let { children } = props,
+    r = peers.rt();
+  return <Zee queryClient={r}>{children}</Zee>;
 }

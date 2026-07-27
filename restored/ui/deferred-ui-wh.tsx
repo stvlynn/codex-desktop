@@ -1,0 +1,49 @@
+// Restored from ref/webview/assets/app-initial-C-fROkKo.js
+// Materialized via extractFn(internal `x0s`) / export `Wh`.
+
+export type BindDeferredUiWhPeers = {
+  J: (...args: unknown[]) => unknown;
+  b0s: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  y0s: (...args: unknown[]) => unknown;
+};
+let peers: BindDeferredUiWhPeers | null = null;
+
+/** Wire bindDeferredUiWh peers once companions land. */
+export function setBindDeferredUiWhPeers(next: BindDeferredUiWhPeers): void {
+  peers = next;
+}
+
+/**
+ * Bundle export `Wh` / internal `x0s`.
+ */
+export function bindDeferredUiWh() {
+  if (peers == null) {
+    throw new Error("bindDeferredUiWh peers are not configured");
+  }
+  return peers.e(() => {
+    peers.o();
+    y0s = peers.J();
+    b0s = (e) => {
+      return (
+        <svg
+          width={20}
+          height={20}
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          {...peers.e}
+        >
+          <circle cx={10} cy={10} r={3.125} fill="currentColor" />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M10 2.08496C14.3713 2.08496 17.915 5.62867 17.915 10C17.915 14.3713 14.3713 17.915 10 17.915C5.62867 17.915 2.08496 14.3713 2.08496 10C2.08496 5.62867 5.62867 2.08496 10 2.08496ZM10 3.41504C6.3632 3.41504 3.41504 6.3632 3.41504 10C3.41504 13.6368 6.3632 16.585 10 16.585C13.6368 16.585 16.585 13.6368 16.585 10C16.585 6.3632 13.6368 3.41504 10 3.41504Z"
+            fill="currentColor"
+          />
+        </svg>
+      );
+    };
+  });
+}

@@ -7,9 +7,7 @@ export function normalizeMarketplacePhrase(value: string): string {
 }
 
 /** True for spaced official/curated marketplace phrases. */
-export function isOfficialSpacedMarketplaceName(
-  value: string | null | undefined,
-): boolean {
+export function isOfficialSpacedMarketplaceName(value: string | null | undefined): boolean {
   if (value == null) return false;
   switch (normalizeMarketplacePhrase(value)) {
     case "codex official":

@@ -1,44 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export gh / J4s
+// Materialized via extractFn(internal `J4s`) / export `gh`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindToggleDiffPanelProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindToggleDiffPanelPeers = {
+  Yf: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  q4s: (...args: unknown[]) => unknown;
 };
 
-type BindToggleDiffPanelImpl = (props: BindToggleDiffPanelProps) => ReactNode;
-let impl: BindToggleDiffPanelImpl | null = null;
+let peers: BindBindToggleDiffPanelPeers | null = null;
 
-/** Wire the full BindToggleDiffPanel once deeper restore lands. */
-export function bindBindToggleDiffPanel(next: BindToggleDiffPanelImpl): void {
-  impl = next;
+/** Wire bindBindToggleDiffPanel peers once companions land. */
+export function setBindBindToggleDiffPanelPeers(next: BindBindToggleDiffPanelPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `gh` / internal `J4s`.
- * Stage-3 fill for bundle export gh / J4s; heavy UI via bind.
  */
-export function BindToggleDiffPanel(
-  props: BindToggleDiffPanelProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ew-scaffold="gh"
-      aria-label="BindToggleDiffPanel"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export gh / J4s
-        </div>
-      )}
-    </div>
-  );
+export function bindBindToggleDiffPanel() {
+  if (peers == null) {
+    throw new Error("bindBindToggleDiffPanel peers are not configured");
+  }
+
+  return peers.e(() => {
+    q4s = peers.c(), peers.Yf();
+  });
 }

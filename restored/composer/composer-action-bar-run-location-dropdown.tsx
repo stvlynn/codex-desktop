@@ -17,13 +17,10 @@ import { AppIcond } from "../icons/app-icon-d";
 import { AppIconZlt } from "../icons/app-icon-zlt";
 import { cx } from "../ui/cx";
 import { ensureComposerEsm_IB_Init } from "../boundaries/composer-esm-inits";
-
 ensureDropdownMenuInit();
 ensureDropdownMenuPopoverInit();
 ensureComposerEsm_IB_Init();
-
 export type ComposerRunLocation = "local" | "cloud";
-
 export type ComposerActionBarRunLocationDropdownProps = {
   cloudDisabled?: boolean;
   cloudUsesLocalExecutor?: boolean;
@@ -43,7 +40,6 @@ export function ComposerActionBarRunLocationDropdown({
   onRunLocationChange,
 }: ComposerActionBarRunLocationDropdownProps): ReactElement {
   const intl = useIntl();
-
   const triggerLabel = isLocalExecutorStarting
     ? intl.formatMessage({
         id: "composer.runLocation.triggerLabel.localExecutorStarting",
@@ -57,7 +53,6 @@ export function ComposerActionBarRunLocationDropdown({
         defaultMessage: "Choose where to run this chat",
         description: "Accessible label and tooltip for the run location menu",
       });
-
   const triggerTooltip = isLocalExecutorStarting
     ? intl.formatMessage({
         id: "composer.runLocation.triggerTooltip.localExecutorStarting",
@@ -66,7 +61,6 @@ export function ComposerActionBarRunLocationDropdown({
           "Tooltip on the composer run-location button shown while Desktop starts local execution for a Cloud Work task",
       })
     : triggerLabel;
-
   const triggerIcon =
     runLocation === "cloud" ? (
       <AppIcond
@@ -78,7 +72,6 @@ export function ComposerActionBarRunLocationDropdown({
     ) : (
       <AppIconFB className="icon-xs" />
     );
-
   const triggerButton = (
     <Button
       aria-busy={isLocalExecutorStarting}
@@ -91,7 +84,6 @@ export function ComposerActionBarRunLocationDropdown({
       {triggerIcon}
     </Button>
   );
-
   const cloudTooltip = cloudDisabled
     ? intl.formatMessage({
         id: "composer.runLocation.cloud.tooltip.projectOnlyMemory",
@@ -101,7 +93,6 @@ export function ComposerActionBarRunLocationDropdown({
           "Tooltip explaining why cloud Work cannot be selected for a project with project-only memory",
       })
     : undefined;
-
   return (
     <DropdownMenuPopover
       align="end"
@@ -123,7 +114,9 @@ export function ComposerActionBarRunLocationDropdown({
       <DropdownMenu.Item
         LeftIcon={AppIconFB}
         RightIcon={runLocation === "local" ? AppIconZlt : undefined}
-        onClick={() => onRunLocationChange("local")}
+        onClick={() => {
+          return onRunLocationChange("local");
+        }}
         allowWrap
         SubText={
           <span className="text-token-description-foreground">
@@ -146,7 +139,9 @@ export function ComposerActionBarRunLocationDropdown({
         RightIcon={runLocation === "cloud" ? AppIconZlt : undefined}
         disabled={cloudDisabled}
         focusableWhenDisabled={cloudDisabled}
-        onClick={() => onRunLocationChange("cloud")}
+        onClick={() => {
+          return onRunLocationChange("cloud");
+        }}
         allowWrap
         SubText={
           <span className="text-token-description-foreground">

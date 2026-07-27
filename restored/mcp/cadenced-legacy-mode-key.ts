@@ -1,28 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export yp / Eoc
+// Materialized via extractFn(internal `Eoc`) / export `yp`.
 
 export type CadencedLegacyModeKeyPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Toc: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: CadencedLegacyModeKeyPeers | null = null;
 
-/** Wire cadencedLegacyModeKey once companions land. */
-export function setCadencedLegacyModeKeyPeers(
-  next: CadencedLegacyModeKeyPeers,
-): void {
+/** Wire cadencedLegacyModeKey peers once companions land. */
+export function setCadencedLegacyModeKeyPeers(next: CadencedLegacyModeKeyPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `yp` / internal `Eoc`.
- * Stage-3 fill for bundle export yp / Eoc
  */
-export function cadencedLegacyModeKey(...args: unknown[]): unknown {
+export function cadencedLegacyModeKey() {
   if (peers == null) {
     throw new Error("cadencedLegacyModeKey peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    Toc = `3278809559`;
+  });
 }

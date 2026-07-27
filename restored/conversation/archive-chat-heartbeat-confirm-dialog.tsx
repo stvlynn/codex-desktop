@@ -1,142 +1,166 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DY — real body via extractFn(internal `Zzl`) / export `Oo`.
+// Materialized via extractFn(internal `Zzl`) / export `Oo`.
 
-import type { FormEvent, ReactElement, ReactNode } from "react";
-import { FormattedMessage } from "react-intl";
-
-import { Button } from "../ui/button";
-import { DialogBody } from "../ui/dialog-body";
-import { DialogFooter } from "../ui/dialog-footer";
-import { DialogHeader } from "../ui/dialog-header";
-import { DialogSection } from "../ui/dialog-section";
-import { cx } from "../ui/cx";
-
-export type ArchiveChatHeartbeatConfirmDialogProps = {
-  heartbeatAutomationName?: string | null;
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  onConfirm: () => void;
+export type ArchiveChatHeartbeatConfirmDialogPeers = {
+  $zl: (...args: unknown[]) => unknown;
+  Np: (...args: unknown[]) => unknown;
+  Qzl: (...args: unknown[]) => unknown;
+  Xk: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
+  Zk: (...args: unknown[]) => unknown;
+  iA: (...args: unknown[]) => unknown;
+  nA: (...args: unknown[]) => unknown;
+  r5: (...args: unknown[]) => unknown;
+  rA: (...args: unknown[]) => unknown;
+  tA: (...args: unknown[]) => unknown;
 };
+let peers: ArchiveChatHeartbeatConfirmDialogPeers | null = null;
+
+/** Wire ArchiveChatHeartbeatConfirmDialog peers once companions land. */
+export function setArchiveChatHeartbeatConfirmDialogPeers(
+  next: ArchiveChatHeartbeatConfirmDialogPeers,
+): void {
+  peers = next;
+}
 
 /**
  * Bundle export `Oo` / internal `Zzl`.
- * Confirm archiving a chat, optionally removing a scheduled heartbeat task.
  */
-export function ArchiveChatHeartbeatConfirmDialog(
-  props: ArchiveChatHeartbeatConfirmDialogProps,
-): ReactElement | null {
-  const {
-    heartbeatAutomationName = null,
-    open,
-    onOpenChange,
-    onConfirm,
-  } = props;
-  if (!open) return null;
-
-  const hasHeartbeat = heartbeatAutomationName != null;
-  const hasNamedHeartbeat =
-    heartbeatAutomationName != null &&
-    heartbeatAutomationName.trim().length > 0;
-
-  const title: ReactNode = hasHeartbeat ? (
-    <FormattedMessage
-      id="threadHeader.archiveConfirmHeartbeatTitle"
-      defaultMessage="Archive chat and remove scheduled task?"
-      description="Title for archive chat confirmation dialog when the chat has an active scheduled task"
-    />
-  ) : (
-    <FormattedMessage
-      id="threadHeader.archiveConfirmTitle"
-      defaultMessage="Archive chat?"
-      description="Title for archive chat confirmation dialog"
-    />
-  );
-
-  const subtitle: ReactNode = hasHeartbeat ? (
-    hasNamedHeartbeat ? (
-      <FormattedMessage
-        id="threadHeader.archiveConfirmHeartbeatSubtitleNamed"
-        defaultMessage="This chat has an active scheduled task, {name}. Archiving the chat will also remove it and stop future runs."
-        description="Subtitle for archive chat confirmation dialog when the chat has a named active scheduled task"
-        values={{
-          name: (
-            <strong className="font-semibold text-token-text-primary">
-              {heartbeatAutomationName}
-            </strong>
-          ),
-        }}
+export function ArchiveChatHeartbeatConfirmDialog(props: unknown) {
+  const Z = peers.Z;
+  const Zk = peers.Zk;
+  const IA = peers.iA;
+  const TA = peers.tA;
+  const Np = peers.Np;
+  const RA = peers.rA;
+  const NA = peers.nA;
+  const Xk = peers.Xk;
+  if (peers == null) {
+    throw new Error(
+      "ArchiveChatHeartbeatConfirmDialog peers are not configured",
+    );
+  }
+  let { heartbeatAutomationName = null, open, onOpenChange, onConfirm } = props,
+    s = heartbeatAutomationName != null,
+    c =
+      heartbeatAutomationName != null &&
+      heartbeatAutomationName.trim().length > 0;
+  let l = c,
+    u = s ? (
+      <Z
+        id="threadHeader.archiveConfirmHeartbeatTitle"
+        defaultMessage="Archive chat and remove scheduled task?"
+        description="Title for archive chat confirmation dialog when the chat has an active scheduled task"
       />
     ) : (
-      <FormattedMessage
-        id="threadHeader.archiveConfirmHeartbeatSubtitleUnnamed"
-        defaultMessage="This chat has an active scheduled task. Archiving the chat will also remove it and stop future runs."
-        description="Subtitle for archive chat confirmation dialog when the chat has an unnamed active scheduled task"
+      <Z
+        id="threadHeader.archiveConfirmTitle"
+        defaultMessage="Archive chat?"
+        description="Title for archive chat confirmation dialog"
       />
-    )
-  ) : (
-    <FormattedMessage
-      id="threadHeader.archiveConfirmSubtitle"
-      defaultMessage="You can find it later in your archived chats."
-      description="Subtitle for archive chat confirmation dialog"
-    />
-  );
-
-  const handleSubmit = (event: FormEvent): void => {
+    );
+  let d = u,
+    f = s ? (
+      l ? (
+        <Z
+          id="threadHeader.archiveConfirmHeartbeatSubtitleNamed"
+          defaultMessage={
+            "This chat has an active scheduled task, {name}. Archiving the chat will also remove it and stop future runs."
+          }
+          description="Subtitle for archive chat confirmation dialog when the chat has a named active scheduled task"
+          values={{
+            name: (
+              <strong
+                key="automation-name"
+                className="font-semibold text-token-text-primary"
+              >
+                {heartbeatAutomationName}
+              </strong>
+            ),
+          }}
+        />
+      ) : (
+        <Z
+          id="threadHeader.archiveConfirmHeartbeatSubtitleUnnamed"
+          defaultMessage="This chat has an active scheduled task. Archiving the chat will also remove it and stop future runs."
+          description="Subtitle for archive chat confirmation dialog when the chat has an unnamed active scheduled task"
+        />
+      )
+    ) : (
+      <Z
+        id="threadHeader.archiveConfirmSubtitle"
+        defaultMessage="You can find it later in your archived chats."
+        description="Subtitle for archive chat confirmation dialog"
+      />
+    );
+  let p = f,
+    m = {
+      "aria-describedby": undefined,
+      onOpenAutoFocus: peers.Qzl,
+      onEscapeKeyDown: () => {
+        onOpenChange(false);
+      },
+    };
+  let h = (event) => {
     event.preventDefault();
     onConfirm();
   };
-
-  return (
-    <div
-      className={cx(
-        "fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4",
+  let g = <Zk className="sr-only">{d}</Zk>;
+  let _ = (
+    <IA>
+      <TA title={d} subtitle={p} />
+    </IA>
+  );
+  let v = () => {
+    return onOpenChange(false);
+  };
+  let y = (
+    <Z
+      id="threadHeader.archiveConfirmCancel"
+      defaultMessage="Cancel"
+      description="Cancel button label for archive chat confirmation dialog"
+    />
+  );
+  let b = (
+    <Np color="ghost" type="button" onClick={v}>
+      {y}
+    </Np>
+  );
+  let x = (
+    <Np data-archive-confirm-button={true} color="danger" type="submit">
+      {s ? (
+        <Z
+          id="threadHeader.archiveConfirmHeartbeatConfirm"
+          defaultMessage="Archive and remove"
+          description="Confirm button label for archive chat confirmation dialog when the chat has an active heartbeat automation"
+        />
+      ) : (
+        <Z
+          id="threadHeader.archiveConfirmConfirm"
+          defaultMessage="Archive"
+          description="Confirm button label for archive chat confirmation dialog"
+        />
       )}
-      role="presentation"
-      onClick={() => onOpenChange(false)}
-    >
-      <div
-        role="dialog"
-        aria-modal="true"
-        className="w-[min(420px,92vw)] overflow-hidden rounded-2xl bg-token-dropdown-background shadow-lg"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <span className="sr-only">{title}</span>
-        <DialogBody as="form" onSubmit={handleSubmit} className="gap-0">
-          <DialogSection>
-            <DialogHeader title={title} subtitle={subtitle} />
-          </DialogSection>
-          <DialogSection>
-            <DialogFooter>
-              <Button
-                color="ghost"
-                type="button"
-                onClick={() => onOpenChange(false)}
-              >
-                <FormattedMessage
-                  id="threadHeader.archiveConfirmCancel"
-                  defaultMessage="Cancel"
-                  description="Cancel button label for archive chat confirmation dialog"
-                />
-              </Button>
-              <Button data-archive-confirm-button color="danger" type="submit">
-                {hasHeartbeat ? (
-                  <FormattedMessage
-                    id="threadHeader.archiveConfirmHeartbeatConfirm"
-                    defaultMessage="Archive and remove"
-                    description="Confirm button label for archive chat confirmation dialog when the chat has an active heartbeat automation"
-                  />
-                ) : (
-                  <FormattedMessage
-                    id="threadHeader.archiveConfirmConfirm"
-                    defaultMessage="Archive"
-                    description="Confirm button label for archive chat confirmation dialog"
-                  />
-                )}
-              </Button>
-            </DialogFooter>
-          </DialogSection>
-        </DialogBody>
-      </div>
-    </div>
+    </Np>
+  );
+  let S = (
+    <IA>
+      <RA>
+        {b}
+        {x}
+      </RA>
+    </IA>
+  );
+  let C = (
+    <NA as="form" onSubmit={h}>
+      {g}
+      {_}
+      {S}
+    </NA>
+  );
+  return (
+    <Xk open={open} onOpenChange={onOpenChange} size="compact" contentProps={m}>
+      {C}
+    </Xk>
   );
 }

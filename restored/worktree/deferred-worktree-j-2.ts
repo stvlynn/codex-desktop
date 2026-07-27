@@ -1,28 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export J_ / WPs
+// Materialized via extractFn(internal `WPs`) / export `J_`.
 
 export type BindDeferredWorktreeJPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  UPs: (...args: unknown[]) => unknown;
+  oD: (...args: unknown[]) => unknown;
+  wD: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredWorktreeJPeers | null = null;
 
-/** Wire bindDeferredWorktreeJ once companions land. */
-export function setBindDeferredWorktreeJPeers(
-  next: BindDeferredWorktreeJPeers,
-): void {
+/** Wire bindDeferredWorktreeJ peers once companions land. */
+export function setBindDeferredWorktreeJPeers(next: BindDeferredWorktreeJPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `J_` / internal `WPs`.
- * Stage-3 fill for bundle export J_ / WPs
  */
-export function bindDeferredWorktreeJ(...args: unknown[]): unknown {
+export function bindDeferredWorktreeJ() {
   if (peers == null) {
     throw new Error("bindDeferredWorktreeJ peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Oa(peers.Q, (e, {
+    get: t
+  }) => t(peers.UPs, {
+    conversationId: e,
+    cwd: t(peers.oD, e),
+    hostId: t(peers.wD, e)
+  }));
 }

@@ -12,10 +12,7 @@ export type PanelOpenState = {
 /**
  * Bundle `rRi` / export `AU`.
  */
-export function resolvePanelSide(
-  focusArea: string | null | undefined,
-  open: PanelOpenState,
-): PanelSide | null {
+export function resolvePanelSide(focusArea: string | null | undefined, open: PanelOpenState): PanelSide | null {
   if (focusArea === "bottom-panel" && open.bottom) return "bottom";
   if ((focusArea === "right-panel" && open.right) || open.right) {
     return "right";

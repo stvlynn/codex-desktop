@@ -2,9 +2,7 @@
 // Bundle `LTr` / export `p1`.
 
 /** OS-global shortcut that also allows bare modifiers. */
-export function isOsGlobalShortcutAllowingBareModifiers(
-  binding: object,
-): boolean {
+export function isOsGlobalShortcutAllowingBareModifiers(binding: object): boolean {
   return (
     "shortcutScope" in binding &&
     (binding as { shortcutScope?: unknown }).shortcutScope === "os-global" &&

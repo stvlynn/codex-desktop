@@ -1,27 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export j_t / dte
+// Materialized via extractFn(internal `dte`) / export `j_t`.
 
 export type BindHttpsChatgptComCodexPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Uo: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindHttpsChatgptComCodexPeers | null = null;
 
-/** Wire bindHttpsChatgptComCodex once companions land. */
-export function setBindHttpsChatgptComCodexPeers(
-  next: BindHttpsChatgptComCodexPeers,
-): void {
+/** Wire bindHttpsChatgptComCodex peers once companions land. */
+export function setBindHttpsChatgptComCodexPeers(next: BindHttpsChatgptComCodexPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `j_t` / internal `dte`.
- * Stage-3 fill for bundle export j_t / dte
  */
-export function bindHttpsChatgptComCodex(...args: unknown[]): unknown {
+export function bindHttpsChatgptComCodex() {
   if (peers == null) {
     throw new Error("bindHttpsChatgptComCodex peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    Uo = `https://chatgpt.com/codex`;
+  });
 }

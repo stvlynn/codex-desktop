@@ -1,29 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export uc / dAl
+// Materialized via extractFn(internal `dAl`) / export `uc`.
 
 export type BindUserMessagePeers = {
-  impl: (...args: unknown[]) => unknown;
+  $u: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Xna: (...args: unknown[]) => unknown;
+  aAl: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  cAl: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  lAl: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  uAl: (...args: unknown[]) => unknown;
 };
 
 let peers: BindUserMessagePeers | null = null;
 
-/** Wire bindUserMessage once companions land. */
+/** Wire bindUserMessage peers once companions land. */
 export function setBindUserMessagePeers(next: BindUserMessagePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `uc` / internal `dAl`.
- * Stage-3 fill for bundle export uc / dAl
  */
-export function bindUserMessage(...args: unknown[]): unknown {
+export function bindUserMessage() {
   if (peers == null) {
     throw new Error("bindUserMessage peers are not configured");
   }
-  return peers.impl(...args);
-}
 
-// --- qg-full-green: missing-relative-exports stubs (open-runtime wiring) ---
-export const UserMessage: any = undefined;
+  return peers.e(() => {
+    cAl = peers.c(), lAl = peers.r(peers.o(), 1), peers.$u(), peers.Xna(), peers.aAl(), uAl = peers.J();
+  });
+}

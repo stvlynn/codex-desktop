@@ -1,32 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `Ers`) / export `DC`.
+// Materialized via extractFn(internal `Ers`) / export `DC`.
 
 export type ParseUrlOrFallbackPeers = {
-  urlSchema: {
-    safeParse: (value: unknown) => { success: boolean; data?: unknown };
-  };
+  Drs: (...args: unknown[]) => unknown;
 };
 
 let peers: ParseUrlOrFallbackPeers | null = null;
 
 /** Wire parseUrlOrFallback peers once companions land. */
-export function setParseUrlOrFallbackPeers(
-  next: ParseUrlOrFallbackPeers,
-): void {
+export function setParseUrlOrFallbackPeers(next: ParseUrlOrFallbackPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `DC` / internal `Ers`.
- * Parse a URL field or return the provided fallback.
  */
-export function parseUrlOrFallback(
-  input: { url: unknown },
-  fallback: unknown,
-): unknown {
+export function parseUrlOrFallback(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("ParseUrlOrFallback peers are not configured");
+    throw new Error("parseUrlOrFallback peers are not configured");
   }
-  const parsed = peers.urlSchema.safeParse(input.url);
-  return parsed.success ? parsed.data : fallback;
+
+  let n = peers.Drs.safeParse(e.url);
+  return n.success ? n.data : t;
 }

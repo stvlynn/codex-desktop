@@ -33,8 +33,6 @@ export {
 } from "../composer/conversation-composer-host";
 
 /** @deprecated r5 drained — use set*Deps on the real modules. */
-export function bindConversationPageComponents(
-  _next: Partial<Record<string, unknown>>,
-): void {
+export function bindConversationPageComponents(_next: Partial<Record<string, unknown>>): void {
   // No-op: components are real modules; bind peers via each module's set*Deps.
 }

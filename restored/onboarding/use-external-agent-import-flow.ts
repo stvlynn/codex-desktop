@@ -1,44 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EI — real body via extractFn(internal `Gsu`) / export `gn`.
+// Materialized via extractFn(internal `Gsu`) / export `gn`.
 
 export type UseExternalAgentImportFlowPeers = {
-  useStore: (atom: unknown) => unknown;
-  storeAtom: unknown;
-  useIntl: () => unknown;
-  useQueryClient: () => {
-    /* opaque */
-  };
-  useProviderConfig: (atom: unknown) => unknown;
-  providerConfigAtom: unknown;
-  normalizeProviders: (raw: unknown) => unknown;
-  useSessionLimits: () => unknown;
-  useImportController: (args: Record<string, unknown>) => {
-    detectedItems: unknown[];
-    getSelectedItems: (selection: unknown) => unknown[];
-    hasImportableItems: boolean;
-    importItems: (items: unknown[]) => Promise<{ projectRoots: unknown[] }>;
-    importSelected: (
-      selection: unknown,
-    ) => Promise<{ projectRoots: unknown[] }>;
-    isDetecting: boolean;
-    isImporting: boolean;
-  };
-  providerIdsFromItems: (items: unknown[]) => string[];
-  buildMigration: (args: {
-    detectedItems: unknown[];
-    intl: unknown;
-    providerIds: string[];
-  }) => unknown;
-  selectItems: (args: {
-    detectedItems: unknown[];
-    providerIds: string[];
-    selection: unknown;
-  }) => unknown[];
-  logImportStart: (args: { items: unknown[]; surface: string }) => void;
-  invalidateAfterImport: (queryClient: unknown) => Promise<void>;
-  completeImport: (args: Record<string, unknown>) => Promise<void>;
+  $f: (...args: unknown[]) => unknown;
+  Bsu: (...args: unknown[]) => unknown;
+  Cz: (...args: unknown[]) => unknown;
+  H_: (...args: unknown[]) => unknown;
+  Io: (...args: unknown[]) => unknown;
+  JNl: (...args: unknown[]) => unknown;
+  Jsu: (...args: unknown[]) => unknown;
+  Ju: (...args: unknown[]) => unknown;
+  Ksu: (...args: unknown[]) => unknown;
+  LMr: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Rsu: (...args: unknown[]) => unknown;
+  Vsu: (...args: unknown[]) => unknown;
+  Xsu: (...args: unknown[]) => unknown;
+  YNl: (...args: unknown[]) => unknown;
+  Ysu: (...args: unknown[]) => unknown;
+  _Pl: (...args: unknown[]) => unknown;
+  bb0: (...args: unknown[]) => unknown;
+  chatChoiceKey: (...args: unknown[]) => unknown;
+  ePl: (...args: unknown[]) => unknown;
+  jsu: (...args: unknown[]) => unknown;
+  kh: (...args: unknown[]) => unknown;
+  rt: (...args: unknown[]) => unknown;
+  wcu: (...args: unknown[]) => unknown;
 };
-
 let peers: UseExternalAgentImportFlowPeers | null = null;
 
 /** Wire useExternalAgentImportFlow peers once companions land. */
@@ -50,80 +38,153 @@ export function setUseExternalAgentImportFlowPeers(
 
 /**
  * Bundle export `gn` / internal `Gsu`.
- * Orchestrate external-agent detect/import flow for first-time onboarding.
  */
-export function useExternalAgentImportFlow(args: {
-  enabled: boolean;
-}): Record<string, unknown> {
+export function useExternalAgentImportFlow(e: unknown) {
   if (peers == null) {
-    throw new Error("UseExternalAgentImportFlow peers are not configured");
+    throw new Error("useExternalAgentImportFlow peers are not configured");
   }
-  const { enabled } = args;
-  const store = peers.useStore(peers.storeAtom);
-  const intl = peers.useIntl();
-  const queryClient = peers.useQueryClient();
-  const providerRaw = peers.useProviderConfig(peers.providerConfigAtom);
-  const providers = peers.normalizeProviders(providerRaw);
-  const sessionLimits = peers.useSessionLimits();
-  const controller = peers.useImportController({
-    enabled,
-    providers,
-    sessionLimits,
-  });
-  const providerIds = peers.providerIdsFromItems(controller.detectedItems);
-  const migration = enabled
-    ? peers.buildMigration({
-        detectedItems: controller.detectedItems,
-        intl,
-        providerIds,
-      })
-    : null;
-  const runImport = async (
-    selection: unknown,
-    overrideProviderIds?: string[],
-  ) => {
-    if (
-      !enabled ||
-      (overrideProviderIds == null && !controller.hasImportableItems)
-    ) {
-      return;
+  let { enabled } = e,
+    r = peers.Io(peers.Q),
+    i = peers.Ju(),
+    a = peers.rt(),
+    o = peers.kh(peers.YNl),
+    s = peers.JNl(o);
+  let c = s,
+    l = peers.ePl(),
+    u = {
+      enabled,
+      providers: c,
+      sessionLimits: l,
+    };
+  let {
+      detectedItems,
+      getSelectedItems,
+      hasImportableItems,
+      importItems,
+      importSelected,
+      isDetecting,
+      isImporting: _,
+    } = peers._Pl(u),
+    v = peers.Jsu(detectedItems);
+  let y = v,
+    b;
+  bb0: {
+    if (!enabled) {
+      b = null;
+      break bb0;
     }
-    const activeMigration =
-      overrideProviderIds == null
-        ? migration
-        : peers!.buildMigration({
-            detectedItems: controller.detectedItems,
-            intl,
-            providerIds: overrideProviderIds,
-          });
-    const items =
-      overrideProviderIds == null
-        ? controller.getSelectedItems(selection)
-        : peers!.selectItems({
-            detectedItems: controller.detectedItems,
-            providerIds: overrideProviderIds,
-            selection,
-          });
-    peers!.logImportStart({ items, surface: "first_time_onboarding" });
-    const { projectRoots } =
-      overrideProviderIds == null
-        ? await controller.importSelected(selection)
-        : await controller.importItems(items);
-    await peers!.invalidateAfterImport(queryClient);
-    await peers!.completeImport({
-      store,
-      migration: activeMigration,
-      projectRoots,
-      selection,
+    let e;
+    e = peers.Ysu({
+      detectedItems,
+      intl: i,
+      providerIds: y,
     });
+    b = e;
+  }
+  let x = b,
+    S = enabled && isDetecting,
+    C = enabled && _,
+    w = enabled && x != null,
+    T = (e) => {
+      return peers.Ysu({
+        detectedItems,
+        intl: i,
+        providerIds: e,
+      });
+    };
+  let E = async (e, t) => {
+    if (!enabled || (t == null && !hasImportableItems)) return;
+    let o =
+        t == null
+          ? x
+          : peers.Ysu({
+              detectedItems,
+              intl: i,
+              providerIds: t,
+            }),
+      s =
+        t == null
+          ? getSelectedItems(e)
+          : peers.Xsu({
+              detectedItems,
+              providerIds: t,
+              selection: e,
+            }),
+      c = Date.now(),
+      l = "import",
+      u = 0;
+    peers.Bsu({
+      items: s,
+      surface: "first_time_onboarding",
+    });
+    let g = o?.chatChoiceKey != null && e[o.chatChoiceKey];
+    try {
+      l = "import";
+      let { projectRoots } =
+        t == null ? await importSelected(e) : await importItems(s);
+      u = projectRoots.length;
+      l = "invalidate_queries";
+      await peers.Rsu(a);
+      l = "complete_import";
+      await peers.jsu({
+        hostId: peers.H_,
+        onImportedProjectRootsReady: (e) => {
+          peers.LMr(r, {
+            importedProjectRoots: e,
+          });
+        },
+        projectRoots,
+        invalidateWorkspaceRootQueries: async () => {
+          await Promise.all([
+            a.invalidateQueries({
+              queryKey: peers.$f("workspace-root-options"),
+            }),
+            a.invalidateQueries({
+              queryKey: peers.$f("active-workspace-roots"),
+            }),
+          ]);
+        },
+        refreshRecentConversations: g ? peers.Ksu : undefined,
+      });
+      l = "invalidate_queries";
+      await Promise.all([
+        a.invalidateQueries({
+          queryKey: peers.$f("codex-agents-md"),
+        }),
+        a.invalidateQueries({
+          queryKey: peers.Cz,
+        }),
+      ]);
+      peers.Vsu({
+        durationMs: Date.now() - c,
+        items: s,
+        projectRootsReturnedCount: u,
+        status: "success",
+        surface: "first_time_onboarding",
+      });
+    } catch (e) {
+      let t = e;
+      throw (
+        peers.Vsu({
+          durationMs: Date.now() - c,
+          error: t,
+          failedStage: l,
+          items: s,
+          projectRootsReturnedCount: u,
+          status: "failure",
+          surface: "first_time_onboarding",
+        }),
+        t
+      );
+    }
   };
   return {
-    detectedItems: controller.detectedItems,
-    hasImportableItems: enabled && controller.hasImportableItems,
-    isDetecting: enabled && controller.isDetecting,
-    isImporting: enabled && controller.isImporting,
-    migration,
-    providerIds,
-    runImport,
+    isLoading: S,
+    isImporting: C,
+    providerIds: y,
+    shouldShowImportStep: w,
+    summary: x,
+    getSummaryForProviders: T,
+    importSelection: E,
   };
 }

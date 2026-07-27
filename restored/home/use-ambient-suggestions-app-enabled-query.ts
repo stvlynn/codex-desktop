@@ -1,53 +1,62 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `Yti`) / export `ZW`.
+// Materialized via extractFn(internal `Yti`) / export `ZW`.
 
 export type UseAmbientSuggestionsAppEnabledQueryPeers = {
-  buildQueryKey: (hostId: unknown, accountId: unknown) => unknown;
-  getDesktopBridge: () => {
-    ambientSuggestions?: {
-      hasAccessibleAndEnabledApp: (args: {
-        hostId: unknown;
-      }) => Promise<boolean>;
-    };
-  };
-  useQuery: (options: Record<string, unknown>) => unknown;
-  fiveMinutesMs: number;
+  Hf: (...args: unknown[]) => unknown;
+  Xti: (...args: unknown[]) => unknown;
+  gp: (...args: unknown[]) => unknown;
+  hasAccessibleAndEnabledApp: (...args: unknown[]) => unknown;
+  jt: (...args: unknown[]) => unknown;
+  tni: (...args: unknown[]) => unknown;
 };
 
 let peers: UseAmbientSuggestionsAppEnabledQueryPeers | null = null;
 
-/** Wire ambient-suggestions app-enabled query peers once companions land. */
-export function setUseAmbientSuggestionsAppEnabledQueryPeers(
-  next: UseAmbientSuggestionsAppEnabledQueryPeers,
-): void {
+/** Wire useAmbientSuggestionsAppEnabledQuery peers once companions land. */
+export function setUseAmbientSuggestionsAppEnabledQueryPeers(next: UseAmbientSuggestionsAppEnabledQueryPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `ZW` / internal `Yti`.
- * Query whether ambient-suggestions app is accessible and enabled for a host.
  */
-export function useAmbientSuggestionsAppEnabledQuery(args: {
-  accountId: unknown;
-  enabled: boolean;
-  hostId: unknown;
-}): unknown {
+export function useAmbientSuggestionsAppEnabledQuery(e: unknown) {
   if (peers == null) {
     throw new Error(
-      "UseAmbientSuggestionsAppEnabledQuery peers are not configured",
+      "useAmbientSuggestionsAppEnabledQuery peers are not configured",
     );
   }
-  const { accountId, enabled, hostId } = args;
-  const queryKey = peers.buildQueryKey(hostId, accountId);
-  const queryFn = async () =>
-    (await peers!
-      .getDesktopBridge()
-      .ambientSuggestions?.hasAccessibleAndEnabledApp({ hostId })) ?? false;
-  return peers.useQuery({
-    queryKey,
-    queryFn,
-    enabled,
-    retry: false,
-    staleTime: peers.fiveMinutesMs,
-  });
+
+  let t = (0, peers.tni.c)(9),
+    { accountId: n, enabled: r, hostId: i } = e,
+    a;
+  t[0] !== n || t[1] !== i
+    ? ((a = peers.Xti(i, n)), (t[0] = n), (t[1] = i), (t[2] = a))
+    : (a = t[2]);
+  let o;
+  t[3] === i
+    ? (o = t[4])
+    : ((o = async () =>
+        (await peers.gp.ambientSuggestions?.hasAccessibleAndEnabledApp({
+          hostId: i,
+        })) ?? !1),
+      (t[3] = i),
+      (t[4] = o));
+  let s;
+  return (
+    t[5] !== r || t[6] !== a || t[7] !== o
+      ? ((s = {
+          queryKey: a,
+          queryFn: o,
+          enabled: r,
+          retry: !1,
+          staleTime: peers.Hf.FIVE_MINUTES,
+        }),
+        (t[5] = r),
+        (t[6] = a),
+        (t[7] = o),
+        (t[8] = s))
+      : (s = t[8]),
+    peers.jt(s)
+  );
 }

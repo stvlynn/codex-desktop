@@ -18,17 +18,11 @@ export function bindOpenFileCacheAtom(atom: unknown): void {
 }
 
 /** Bundle `NWi` / export `aH` — mark open-file cache entry inactive. */
-export function setOpenFileCacheEntryInactive(
-  store: StoreSet,
-  args: OpenFileCacheKeyArgs,
-): void {
+export function setOpenFileCacheEntryInactive(store: StoreSet, args: OpenFileCacheKeyArgs): void {
   store.set(openFileCacheAtom, buildOpenFileCacheKey(args), false);
 }
 
 /** Bundle `MWi` / export `iH` — mark open-file cache entry active. */
-export function setOpenFileCacheEntryActive(
-  store: StoreSet,
-  args: OpenFileCacheKeyArgs,
-): void {
+export function setOpenFileCacheEntryActive(store: StoreSet, args: OpenFileCacheKeyArgs): void {
   store.set(openFileCacheAtom, buildOpenFileCacheKey(args), true);
 }

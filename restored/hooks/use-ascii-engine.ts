@@ -11,9 +11,7 @@ type useAsciiEngineControlsImpl = (args: UseAsciiEngineControlsArgs) => unknown;
 let impl: useAsciiEngineControlsImpl | null = null;
 
 /** Wire useAsciiEngineControls once companions land. */
-export function bindUseAsciiEngineControls(
-  next: useAsciiEngineControlsImpl,
-): void {
+export function bindUseAsciiEngineControls(next: useAsciiEngineControlsImpl): void {
   impl = next;
 }
 

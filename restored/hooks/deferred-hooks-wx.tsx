@@ -1,44 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export wX / Eqr
+// Materialized via extractFn(internal `Eqr`) / export `wX`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredHooksWXProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredHooksWXPeers = {
+  Ma: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  bqr: (...args: unknown[]) => unknown;
+  eqr: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredHooksWXImpl = (props: BindDeferredHooksWXProps) => ReactNode;
-let impl: BindDeferredHooksWXImpl | null = null;
+let peers: BindBindDeferredHooksWXPeers | null = null;
 
-/** Wire the full BindDeferredHooksWX once deeper restore lands. */
-export function bindBindDeferredHooksWX(next: BindDeferredHooksWXImpl): void {
-  impl = next;
+/** Wire bindBindDeferredHooksWX peers once companions land. */
+export function setBindBindDeferredHooksWXPeers(next: BindBindDeferredHooksWXPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `wX` / internal `Eqr`.
- * Stage-3 fill for bundle export wX / Eqr; heavy UI via bind.
  */
-export function BindDeferredHooksWX(
-  props: BindDeferredHooksWXProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="wX"
-      aria-label="BindDeferredHooksWX"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export wX / Eqr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredHooksWX() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredHooksWX peers are not configured");
+  }
+
+  return peers.Ma(peers.Q, ({
+    get: e
+  }) => peers.eqr(e(peers.bqr)));
 }

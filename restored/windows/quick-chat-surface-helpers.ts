@@ -50,9 +50,7 @@ export type QuickChatSurfaceHelperDeps = {
 
 let deps: QuickChatSurfaceHelperDeps | null = null;
 
-export function setQuickChatSurfaceHelperDeps(
-  next: QuickChatSurfaceHelperDeps,
-): void {
+export function setQuickChatSurfaceHelperDeps(next: QuickChatSurfaceHelperDeps): void {
   deps = next;
 }
 
@@ -64,9 +62,7 @@ function requireDeps(): QuickChatSurfaceHelperDeps {
 }
 
 /** Bundle `qps` / export `Gx` — map UI surface mode → analytics enum. */
-export function mapQuickChatSurfaceMode(
-  mode: "floating" | "window" | string,
-): string | undefined {
+export function mapQuickChatSurfaceMode(mode: "floating" | "window" | string): string | undefined {
   switch (mode) {
     case "floating":
       return CodexQuickChatSurface.CODEX_QUICK_CHAT_SURFACE_POPOVER;
@@ -78,9 +74,7 @@ export function mapQuickChatSurfaceMode(
 }
 
 /** Bundle `Jps` — map dock UI value → analytics enum. */
-export function mapQuickChatDockPosition(
-  position: QuickChatDockPosition | null | undefined,
-): string | undefined {
+export function mapQuickChatDockPosition(position: QuickChatDockPosition | null | undefined): string | undefined {
   switch (position) {
     case "bottom-left":
       return CodexQuickChatDockPosition.CODEX_QUICK_CHAT_DOCK_POSITION_BOTTOM_LEFT;
@@ -105,10 +99,7 @@ type LifecyclePayload = {
 };
 
 /** Bundle `bZ` / export `qx` — emit quick-chat lifecycle analytics. */
-export function emitQuickChatLifecycle(
-  scope: ScopeLike,
-  payload: LifecyclePayload,
-): void {
+export function emitQuickChatLifecycle(scope: ScopeLike, payload: LifecyclePayload): void {
   const d = requireDeps();
   const event = d.analyticsEventName ?? "codex_quick_chat_lifecycle";
   d.emitAnalytics?.(scope, event, {
@@ -176,11 +167,7 @@ export function setQuickChatSize(
 }
 
 /** Bundle `ims` / export `Hx` — attach project metadata to empty surface. */
-export function attachQuickChatProject(
-  scope: ScopeLike,
-  projectId: string | null,
-  projectName: string | null,
-): void {
+export function attachQuickChatProject(scope: ScopeLike, projectId: string | null, projectName: string | null): void {
   const d = requireDeps();
   const session = scope.get(d.surfaceAtom);
   if (session == null || session.hasConversation) return;
@@ -276,10 +263,7 @@ export function ensureOpenOrFocusQuickChatInit(): void {}
  * Bundle `Qps` / export `Ax` — open quick-chat from a background/subagent
  * conversation reference.
  */
-export function openQuickChatFromSourceConversation(
-  scope: ScopeLike,
-  sourceConversationId: unknown,
-): unknown {
+export function openQuickChatFromSourceConversation(scope: ScopeLike, sourceConversationId: unknown): unknown {
   const d = requireDeps();
   return d.openBackgroundSubagent?.(scope, {
     isBackgroundSubagentsEnabled:

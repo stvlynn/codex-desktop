@@ -1,25 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export a$ / KAr
+// Materialized via extractFn(internal `KAr`) / export `a$`.
 
 export type BindDeferredUiAPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Knr: (...args: unknown[]) => unknown;
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  WAr: (...args: unknown[]) => unknown;
+  hD: (...args: unknown[]) => unknown;
+  mD: (...args: unknown[]) => unknown;
+  pD: (...args: unknown[]) => unknown;
+  type: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiAPeers | null = null;
 
-/** Wire bindDeferredUiA once companions land. */
+/** Wire bindDeferredUiA peers once companions land. */
 export function setBindDeferredUiAPeers(next: BindDeferredUiAPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `a$` / internal `KAr`.
- * Stage-3 fill for bundle export a$ / KAr
  */
-export function bindDeferredUiA(...args: unknown[]): unknown {
+export function bindDeferredUiA() {
   if (peers == null) {
     throw new Error("bindDeferredUiA peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Oa(peers.Q, (e, {
+    get: t
+  }) => peers.WAr({
+    pendingRequestType: t(peers.mD, e)?.type ?? null,
+    requests: t(peers.pD, e),
+    resumeState: t(peers.hD, e),
+    threadRuntimeStatus: t(peers.Knr, e)
+  }));
 }

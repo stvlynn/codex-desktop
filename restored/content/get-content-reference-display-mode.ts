@@ -8,9 +8,7 @@ import { pickContentReferenceTitle } from "./pick-content-reference-title";
 
 export type ContentReferenceDisplayMode = "hidden" | "alt" | "inline" | "block";
 
-export function getContentReferenceDisplayMode(
-  ref: Record<string, unknown>,
-): ContentReferenceDisplayMode {
+export function getContentReferenceDisplayMode(ref: Record<string, unknown>): ContentReferenceDisplayMode {
   const type = nonEmptyStringOrNull(ref.type);
   if (type == null) {
     return pickContentReferenceTitle(ref) == null ? "hidden" : "alt";

@@ -1,41 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Jh / w1s
+// Materialized via extractFn(internal `w1s`) / export `Jh`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type IdeContextProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindIdeContextPeers = {
+  C1s: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  KM: (...args: unknown[]) => unknown;
+  S1s: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  pQa: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
-type IdeContextImpl = (props: IdeContextProps) => ReactNode;
-let impl: IdeContextImpl | null = null;
+let peers: BindIdeContextPeers | null = null;
 
-/** Wire the full IdeContext once deeper restore lands. */
-export function bindIdeContext(next: IdeContextImpl): void {
-  impl = next;
+/** Wire bindIdeContext peers once companions land. */
+export function setBindIdeContextPeers(next: BindIdeContextPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Jh` / internal `w1s`.
- * Stage-3 fill for bundle export Jh / w1s; heavy UI via bind.
  */
-export function IdeContext(props: IdeContextProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fm-scaffold="Jh"
-      aria-label="IdeContext"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Jh / w1s
-        </div>
-      )}
-    </div>
-  );
+export function bindIdeContext() {
+  if (peers == null) {
+    throw new Error("bindIdeContext peers are not configured");
+  }
+
+  return peers.e(() => {
+    S1s = peers.c(), peers.Ho(), C1s = peers.r(peers.o(), 1), peers.pQa(), peers.KM();
+  });
 }

@@ -1,48 +1,45 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export L9 / sx
+// Materialized via extractFn(internal `sx`) / export `L9`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDesktopWorkspaceDiscoveryProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDesktopWorkspaceDiscoveryPeers = {
+  Au: (...args: unknown[]) => unknown;
+  C5t: (...args: unknown[]) => unknown;
+  F7t: (...args: unknown[]) => unknown;
+  I7t: (...args: unknown[]) => unknown;
+  L5t: (...args: unknown[]) => unknown;
+  L7t: (...args: unknown[]) => unknown;
+  N7t: (...args: unknown[]) => unknown;
+  P7t: (...args: unknown[]) => unknown;
+  X5t: (...args: unknown[]) => unknown;
+  _p: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ex: (...args: unknown[]) => unknown;
+  ix: (...args: unknown[]) => unknown;
+  m8t: (...args: unknown[]) => unknown;
+  nx: (...args: unknown[]) => unknown;
+  ox: (...args: unknown[]) => unknown;
+  w7t: (...args: unknown[]) => unknown;
 };
 
-type BindDesktopWorkspaceDiscoveryImpl = (
-  props: BindDesktopWorkspaceDiscoveryProps,
-) => ReactNode;
-let impl: BindDesktopWorkspaceDiscoveryImpl | null = null;
+let peers: BindBindDesktopWorkspaceDiscoveryPeers | null = null;
 
-/** Wire the full BindDesktopWorkspaceDiscovery once deeper restore lands. */
-export function bindBindDesktopWorkspaceDiscovery(
-  next: BindDesktopWorkspaceDiscoveryImpl,
-): void {
-  impl = next;
+/** Wire bindBindDesktopWorkspaceDiscovery peers once companions land. */
+export function setBindBindDesktopWorkspaceDiscoveryPeers(next: BindBindDesktopWorkspaceDiscoveryPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `L9` / internal `sx`.
- * Stage-3 fill for bundle export L9 / sx; heavy UI via bind.
  */
-export function BindDesktopWorkspaceDiscovery(
-  props: BindDesktopWorkspaceDiscoveryProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-eu-scaffold="L9"
-      aria-label="BindDesktopWorkspaceDiscovery"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export L9 / sx
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDesktopWorkspaceDiscovery() {
+  if (peers == null) {
+    throw new Error("bindBindDesktopWorkspaceDiscovery peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.ex(), peers.nx(), peers.L5t(), peers.C5t(), peers.w7t(), peers.Au(), peers.ix(), peers._p(), N7t = new peers.m8t(), P7t = 4, ox = null, F7t = new peers.X5t(0), I7t = [], L7t = {
+      shouldSample: (e, t) => peers.F7t.shouldSample(peers.e, t),
+      toString: () => peers.F7t.toString()
+    };
+  });
 }

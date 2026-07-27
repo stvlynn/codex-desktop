@@ -1,42 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export uk / TDo
+// Materialized via extractFn(internal `TDo`) / export `uk`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindFile2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindFile2Peers = {
+  Au: (...args: unknown[]) => unknown;
+  BKn: (...args: unknown[]) => unknown;
+  CDo: (...args: unknown[]) => unknown;
+  KEo: (...args: unknown[]) => unknown;
+  Uat: (...args: unknown[]) => unknown;
+  aDo: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  oKn: (...args: unknown[]) => unknown;
+  tGt: (...args: unknown[]) => unknown;
+  wDo: (...args: unknown[]) => unknown;
+  yS: (...args: unknown[]) => unknown;
 };
 
-type BindFile2Impl = (props: BindFile2Props) => ReactNode;
-let impl: BindFile2Impl | null = null;
+let peers: BindBindFile2Peers | null = null;
 
-/** Wire the full BindFile2 once deeper restore lands. */
-export function bindBindFile2(next: BindFile2Impl): void {
-  impl = next;
+/** Wire bindBindFile2 peers once companions land. */
+export function setBindBindFile2Peers(next: BindBindFile2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `uk` / internal `TDo`.
- * Stage-3 fill for bundle export uk / TDo; heavy UI via bind.
  */
-export function BindFile2(props: BindFile2Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="uk"
-      aria-label="BindFile2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export uk / TDo
-        </div>
-      )}
-    </div>
-  );
+export function bindBindFile2() {
+  if (peers == null) {
+    throw new Error("bindBindFile2 peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.tGt(), peers.Au(), peers.Uat(), peers.yS(), peers.BKn(), peers.oKn(), peers.KEo(), peers.aDo(), CDo = [`provided`, `read`, `created`, `updated`], wDo = /h\t*t\t*t\t*p|www\./iu;
+  });
 }

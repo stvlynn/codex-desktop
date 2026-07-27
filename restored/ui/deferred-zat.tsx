@@ -1,41 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export zat / vMt
+// Materialized via extractFn(internal `vMt`) / export `zat`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredZatProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredZatPeers = {
+  Fjt: (...args: unknown[]) => unknown;
+  Mjt: (...args: unknown[]) => unknown;
+  Tjt: (...args: unknown[]) => unknown;
+  _Mt: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gMt: (...args: unknown[]) => unknown;
 };
 
-type DeferredZatImpl = (props: DeferredZatProps) => ReactNode;
-let impl: DeferredZatImpl | null = null;
+let peers: BindDeferredZatPeers | null = null;
 
-/** Wire the full DeferredZat once deeper restore lands. */
-export function bindDeferredZat(next: DeferredZatImpl): void {
-  impl = next;
+/** Wire bindDeferredZat peers once companions land. */
+export function setBindDeferredZatPeers(next: BindDeferredZatPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `zat` / internal `vMt`.
- * Stage-3 fill for bundle export zat / vMt; heavy UI via bind.
  */
-export function DeferredZat(props: DeferredZatProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fo-scaffold="zat"
-      aria-label="DeferredZat"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export zat / vMt
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredZat() {
+  if (peers == null) {
+    throw new Error("bindDeferredZat peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Tjt(), peers.Fjt(), _Mt = peers.gMt(peers.Mjt);
+  });
 }

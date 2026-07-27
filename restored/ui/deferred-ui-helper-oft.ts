@@ -1,27 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export oft / OJe
+// Materialized via extractFn(internal `OJe`) / export `oft`.
 
 export type BindDeferredUiHelperOftPeers = {
-  impl: (...args: unknown[]) => unknown;
+  DJe: (...args: unknown[]) => unknown;
+  TJe: (...args: unknown[]) => unknown;
+  Ud: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  vJe: (...args: unknown[]) => unknown;
+  zze: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiHelperOftPeers | null = null;
 
-/** Wire bindDeferredUiHelperOft once companions land. */
-export function setBindDeferredUiHelperOftPeers(
-  next: BindDeferredUiHelperOftPeers,
-): void {
+/** Wire bindDeferredUiHelperOft peers once companions land. */
+export function setBindDeferredUiHelperOftPeers(next: BindDeferredUiHelperOftPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `oft` / internal `OJe`.
- * Stage-3 fill for bundle export oft / OJe
  */
-export function bindDeferredUiHelperOft(...args: unknown[]): unknown {
+export function bindDeferredUiHelperOft() {
   if (peers == null) {
     throw new Error("bindDeferredUiHelperOft peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ud(), DJe = peers.r(peers.o(), 1), peers.zze(), peers.vJe(), peers.TJe();
+  });
 }

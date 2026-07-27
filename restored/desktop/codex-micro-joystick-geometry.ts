@@ -14,10 +14,7 @@ const DEFAULT_DEADZONE = 0.5;
  * Bundle export `Ww` — map a normalized joystick event to a cardinal direction.
  * Angles are in [0, 1) turns; deadzone uses `distance`.
  */
-export function analogDirectionFromJoystick(
-  event: AnalogJoystickEvent,
-  deadzone: number = DEFAULT_DEADZONE,
-): AnalogDirection | null {
+export function analogDirectionFromJoystick(event: AnalogJoystickEvent, deadzone: number = DEFAULT_DEADZONE): AnalogDirection | null {
   if (event.distance < deadzone) return null;
   if (event.angle >= 0.625 && event.angle < 0.875) return "up";
   if (event.angle >= 0.125 && event.angle < 0.375) return "down";

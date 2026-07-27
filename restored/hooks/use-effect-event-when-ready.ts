@@ -1,39 +1,44 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `TZ`) / export `Sx`.
+// Materialized via extractFn(internal `TZ`) / export `Sx`.
 
 export type UseEffectEventWhenReadyPeers = {
-  useEffectEvent: <T extends (...args: never[]) => unknown>(fn: T) => T;
-  useEffect: (effect: () => void | (() => void), deps: unknown[]) => void;
+  vhs: (...args: unknown[]) => unknown;
+  yhs: (...args: unknown[]) => unknown;
 };
 
 let peers: UseEffectEventWhenReadyPeers | null = null;
 
-/** Wire effect-event-when-ready peers once companions land. */
-export function setUseEffectEventWhenReadyPeers(
-  next: UseEffectEventWhenReadyPeers,
-): void {
+/** Wire useEffectEventWhenReady peers once companions land. */
+export function setUseEffectEventWhenReadyPeers(next: UseEffectEventWhenReadyPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Sx` / internal `TZ`.
- * Poll an effect-event callback on an interval while delay is set.
  */
-export function useEffectEventWhenReady(
-  callback: () => void,
-  delayMs: number | null | undefined,
-): void {
+export function useEffectEventWhenReady(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("UseEffectEventWhenReady peers are not configured");
+    throw new Error("useEffectEventWhenReady peers are not configured");
   }
-  const stable = peers.useEffectEvent(callback);
-  peers.useEffect(() => {
-    if (delayMs == null) return;
-    const id = window.setInterval(() => {
-      stable();
-    }, delayMs);
-    return () => {
-      window.clearInterval(id);
-    };
-  }, [delayMs]);
+
+  let n = (0, peers.vhs.c)(5),
+    r = (0, peers.yhs.useEffectEvent)(e),
+    i;
+  n[0] !== t || n[1] !== r
+    ? ((i = () => {
+        if (t == null) return;
+        let e = window.setInterval(() => {
+          r();
+        }, t);
+        return () => {
+          window.clearInterval(e);
+        };
+      }),
+      (n[0] = t),
+      (n[1] = r),
+      (n[2] = i))
+    : (i = n[2]);
+  let a;
+  (n[3] === t ? (a = n[4]) : ((a = [t]), (n[3] = t), (n[4] = a)),
+    (0, peers.yhs.useEffect)(i, a));
 }

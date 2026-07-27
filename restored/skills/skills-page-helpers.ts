@@ -1,31 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export RK / BN
+// Materialized via extractFn(internal `BN`) / export `RK`.
 
 export type BindSkillsPageHelpersPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Fo: (...args: unknown[]) => unknown;
+  OD: (...args: unknown[]) => unknown;
+  enabled: (...args: unknown[]) => unknown;
+  f6r: (...args: unknown[]) => unknown;
+  p6r: (...args: unknown[]) => unknown;
 };
 
 let peers: BindSkillsPageHelpersPeers | null = null;
 
-/** Wire bindSkillsPageHelpers once companions land. */
-export function setBindSkillsPageHelpersPeers(
-  next: BindSkillsPageHelpersPeers,
-): void {
+/** Wire bindSkillsPageHelpers peers once companions land. */
+export function setBindSkillsPageHelpersPeers(next: BindSkillsPageHelpersPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `RK` / internal `BN`.
- * Stage-3 fill for bundle export RK / BN
  */
-export function bindSkillsPageHelpers(...args: unknown[]): unknown {
+export function bindSkillsPageHelpers(e: unknown) {
   if (peers == null) {
     throw new Error("bindSkillsPageHelpers peers are not configured");
   }
-  return peers.impl(...args);
-}
 
-// --- qg-full-green: missing-relative-exports stubs (open-runtime wiring) ---
-export const EmptyState: any = undefined;
+  let t = (0, peers.p6r.c)(4),
+    { hostId: n } = e,
+    { data: r } = peers.Fo(peers.OD, n),
+    i;
+  t[0] === r
+    ? (i = t[1])
+    : ((i = r === void 0 ? [] : r), (t[0] = r), (t[1] = i));
+  let a = i,
+    o;
+  return (
+    t[2] === a ? (o = t[3]) : ((o = a.find(peers.f6r)), (t[2] = a), (t[3] = o)),
+    o?.enabled ?? !0
+  );
+}

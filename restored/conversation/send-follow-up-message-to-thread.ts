@@ -1,53 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `FNa`) / export `AN`.
-
-export type SendFollowUpMessageToThreadArgs = {
-  hostId?: unknown;
-  messageMetadata?: unknown;
-  model?: unknown;
-  preferredHostId?: unknown;
-  prompt: unknown;
-  scope: {
-    get: (atom: unknown) => Array<{
-      getHostId: () => unknown;
-      getConversation: (id: unknown) => {
-        sideConversation?: boolean;
-        forkedFromId?: unknown;
-      } | null;
-    }>;
-  };
-  sourceThreadId?: unknown;
-  threadId: unknown;
-  thinking?: unknown;
-};
+// Materialized via extractFn(internal `FNa`) / export `AN`.
 
 export type SendFollowUpMessageToThreadPeers = {
-  hostsAtom: unknown;
-  canonicalizeThreadId: (id: unknown) => unknown;
-  resolveHostForThread: (args: {
-    scope: SendFollowUpMessageToThreadArgs["scope"];
-    threadId: unknown;
-    preferredHostId: unknown;
-  }) => Promise<{ hostId: unknown }>;
-  fallbackSend: (args: {
-    prompt: unknown;
-    scope: SendFollowUpMessageToThreadArgs["scope"];
-    threadId: unknown;
-  }) => Promise<unknown>;
-  sendFollowUp: (args: {
-    hostId: unknown;
-    messageMetadata: unknown;
-    model: unknown;
-    prompt: unknown;
-    scope: SendFollowUpMessageToThreadArgs["scope"];
-    threadId: unknown;
-    thinking: unknown;
-  }) => Promise<unknown>;
+  Bf: (...args: unknown[]) => unknown;
+  CH: (...args: unknown[]) => unknown;
+  Fbt: (...args: unknown[]) => unknown;
+  INa: (...args: unknown[]) => unknown;
+  Nbt: (...args: unknown[]) => unknown;
+  Ox: (...args: unknown[]) => unknown;
+  eR: (...args: unknown[]) => unknown;
+  forkedFromId: (...args: unknown[]) => unknown;
+  gNa: (...args: unknown[]) => unknown;
+  getConversation: (...args: unknown[]) => unknown;
+  input: (...args: unknown[]) => unknown;
+  kl: (...args: unknown[]) => unknown;
+  nD: (...args: unknown[]) => unknown;
+  sideConversation: (...args: unknown[]) => unknown;
+  znn: (...args: unknown[]) => unknown;
 };
-
 let peers: SendFollowUpMessageToThreadPeers | null = null;
 
-/** Wire follow-up send peers once companions land. */
+/** Wire sendFollowUpMessageToThread peers once companions land. */
 export function setSendFollowUpMessageToThreadPeers(
   next: SendFollowUpMessageToThreadPeers,
 ): void {
@@ -56,72 +29,99 @@ export function setSendFollowUpMessageToThreadPeers(
 
 /**
  * Bundle export `AN` / internal `FNa`.
- * Send a follow-up message, rewriting side-conversation thread targets.
  */
-export async function sendFollowUpMessageToThread(
-  args: SendFollowUpMessageToThreadArgs,
-): Promise<unknown> {
+export async function sendFollowUpMessageToThread({
+  hostId,
+  messageMetadata,
+  model,
+  preferredHostId,
+  prompt,
+  scope,
+  sourceThreadId,
+  threadId,
+  thinking,
+}: Record<string, unknown>) {
   if (peers == null) {
-    throw new Error("SendFollowUpMessageToThread peers are not configured");
+    throw new Error("sendFollowUpMessageToThread peers are not configured");
   }
-  const {
-    hostId,
-    messageMetadata,
-    model,
-    preferredHostId,
-    prompt,
-    scope,
-    sourceThreadId,
-    threadId,
-    thinking,
-  } = args;
-  let targetThreadId = threadId;
+  let l = threadId;
   if (
     sourceThreadId != null &&
     sourceThreadId !== threadId &&
     preferredHostId != null &&
     (hostId == null || hostId === preferredHostId)
   ) {
-    const host = scope
-      .get(peers.hostsAtom)
-      .find((entry) => entry.getHostId() === preferredHostId);
-    const conversation = host?.getConversation(
-      peers.canonicalizeThreadId(sourceThreadId),
-    );
-    if (
-      conversation?.sideConversation === true &&
-      conversation.forkedFromId != null &&
-      host?.getConversation(conversation.forkedFromId)?.forkedFromId ===
-        peers.canonicalizeThreadId(threadId)
-    ) {
-      targetThreadId = conversation.forkedFromId;
-    }
+    let e = scope.get(peers.nD).find((item) => {
+        return item.getHostId() === preferredHostId;
+      }),
+      t = e?.getConversation(peers.kl(sourceThreadId));
+    t?.sideConversation === true &&
+      t.forkedFromId != null &&
+      e?.getConversation(t.forkedFromId)?.forkedFromId === peers.kl(threadId) &&
+      (l = t.forkedFromId);
   }
-  let resolvedHostId = hostId;
-  if (resolvedHostId == null) {
+  let u = hostId;
+  if (u == null)
     try {
-      resolvedHostId = (
-        await peers.resolveHostForThread({
+      u = (
+        await peers.CH({
           scope,
-          threadId: targetThreadId,
+          threadId: l,
           preferredHostId,
         })
       ).hostId;
-    } catch {
-      return peers.fallbackSend({
+    } catch (e) {
+      let t = await peers.gNa({
         prompt,
         scope,
-        threadId: targetThreadId,
+        threadId: l,
       });
+      if (t != null) return t;
+      throw e;
     }
+  let d = peers.kl(l),
+    f =
+      sourceThreadId == null
+        ? prompt
+        : peers.Nbt({
+            sourceThreadId,
+            input: prompt,
+          });
+  if (
+    (await peers.Bf("send-follow-up-message", {
+      hostId: u,
+      conversationId: d,
+      messageMetadata,
+      prompt: f,
+      model,
+      reasoningEffort: thinking,
+      serviceTier: await peers.eR(scope, u, model ?? null),
+    }),
+    sourceThreadId != null)
+  ) {
+    let e = scope.get(peers.Ox);
+    if (e.phase === "inactive")
+      return {
+        threadId: l,
+      };
+    let t = e.locator.conversationId,
+      n = peers.kl(sourceThreadId),
+      r = t === d ? n : t === n ? d : null,
+      i = t === d ? "from-task" : t === n ? "to-task" : null;
+    if (r == null || i == null)
+      return {
+        threadId: l,
+      };
+    peers.znn({
+      direction: i,
+      hostId: u,
+      message: peers.Fbt(f)?.input ?? f,
+      realtimeThread: e.locator,
+      threadId: r,
+      threadTitle: peers.INa(scope, r),
+    });
   }
-  return peers.sendFollowUp({
-    hostId: resolvedHostId,
-    messageMetadata,
-    model,
-    prompt,
-    scope,
-    threadId: targetThreadId,
-    thinking,
-  });
+  return {
+    threadId: l,
+  };
 }

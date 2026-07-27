@@ -31,11 +31,7 @@ export function setOpenModalDeps(next: OpenModalDeps): void {
 }
 
 /** Bundle `Wk` / export `Z$`. */
-export function openModal(
-  store: StoreLike,
-  ModalComponent: unknown,
-  props?: unknown,
-): void {
+export function openModal(store: StoreLike, ModalComponent: unknown, props?: unknown): void {
   if (deps == null) {
     throw new Error("openModal deps have not been configured");
   }

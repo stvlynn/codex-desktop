@@ -19,10 +19,7 @@ export function legacyConversationBrowserTabId(conversationId: string): string {
 /**
  * Bundle `ST` — map an open panel tab to a browser-tab id for `conversationId`.
  */
-export function browserTabIdFromPanelTab(
-  tab: PanelTabForBrowserId,
-  conversationId: string | null | undefined,
-): string | null {
+export function browserTabIdFromPanelTab(tab: PanelTabForBrowserId, conversationId: string | null | undefined): string | null {
   if (tab == null) return null;
   const tabId = tab.tabId;
   if (tabId === ThreadSidePanelTab.BROWSER) {

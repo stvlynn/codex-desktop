@@ -1,41 +1,42 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export go / QVl
+// Materialized via extractFn(internal `QVl`) / export `go`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindAriaLabelProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindAriaLabelPeers = {
+  $u: (...args: unknown[]) => unknown;
+  CM: (...args: unknown[]) => unknown;
+  Dzl: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  JVl: (...args: unknown[]) => unknown;
+  OK: (...args: unknown[]) => unknown;
+  XVl: (...args: unknown[]) => unknown;
+  YB: (...args: unknown[]) => unknown;
+  ZVl: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  gR: (...args: unknown[]) => unknown;
+  vzl: (...args: unknown[]) => unknown;
+  wRl: (...args: unknown[]) => unknown;
+  x_: (...args: unknown[]) => unknown;
 };
 
-type BindAriaLabelImpl = (props: BindAriaLabelProps) => ReactNode;
-let impl: BindAriaLabelImpl | null = null;
+let peers: BindBindAriaLabelPeers | null = null;
 
-/** Wire the full BindAriaLabel once deeper restore lands. */
-export function bindBindAriaLabel(next: BindAriaLabelImpl): void {
-  impl = next;
+/** Wire bindBindAriaLabel peers once companions land. */
+export function setBindBindAriaLabelPeers(next: BindBindAriaLabelPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `go` / internal `QVl`.
- * Stage-3 fill for bundle export go / QVl; heavy UI via bind.
  */
-export function BindAriaLabel(props: BindAriaLabelProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ey-scaffold="go"
-      aria-label="BindAriaLabel"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export go / QVl
-        </div>
-      )}
-    </div>
-  );
+export function bindBindAriaLabel() {
+  if (peers == null) {
+    throw new Error("bindBindAriaLabel peers are not configured");
+  }
+
+  return peers.e(() => {
+    XVl = peers.c(), peers.Ho(), peers.$u(), peers.YB(), peers.CM(), peers.x_(), peers.OK(), peers.ed(), peers.JVl(), peers.gR(), peers.wRl(), peers.vzl(), peers.Dzl(), ZVl = peers.J();
+  });
 }

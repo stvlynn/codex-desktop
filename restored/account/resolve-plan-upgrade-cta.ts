@@ -21,9 +21,7 @@ export type PersonalPlanUpgradeDisplay =
     };
 
 /** Bundle `rEs` (co-located with `sQ`). */
-export function isPersonalChatGptPlan(
-  plan: string | null | undefined,
-): plan is
+export function isPersonalChatGptPlan(plan: string | null | undefined): plan is
   | typeof ChatGptPlanId.FREE
   | typeof ChatGptPlanId.GO
   | typeof ChatGptPlanId.PLUS
@@ -39,9 +37,7 @@ export function isPersonalChatGptPlan(
 }
 
 /** Bundle `eEs` (co-located) — paid personal excluding Go. */
-export function isPaidPersonalPlanExcludingGo(
-  plan: string | null | undefined,
-): boolean {
+export function isPaidPersonalPlanExcludingGo(plan: string | null | undefined): boolean {
   return isPaidPersonalPlan(plan) && plan !== ChatGptPlanId.GO;
 }
 
@@ -49,9 +45,7 @@ export function isPaidPersonalPlanExcludingGo(
  * Bundle `sQ` / export `ey`.
  * Returns null for non-personal plans; otherwise display slug + CTA kind.
  */
-export function resolvePlanUpgradeCta(
-  plan: string | null | undefined,
-): PersonalPlanUpgradeDisplay | null {
+export function resolvePlanUpgradeCta(plan: string | null | undefined): PersonalPlanUpgradeDisplay | null {
   if (!isPersonalChatGptPlan(plan)) return null;
   switch (plan) {
     case ChatGptPlanId.FREE:

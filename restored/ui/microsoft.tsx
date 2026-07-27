@@ -1,41 +1,55 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export oq / IN
+// Materialized via extractFn(internal `IN`) / export `oq`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type MicrosoftProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindMicrosoftPeers = {
+  Hf: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Uf: (...args: unknown[]) => unknown;
+  ap: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  g3r: (...args: unknown[]) => unknown;
+  h3r: (...args: unknown[]) => unknown;
+  qx: (...args: unknown[]) => unknown;
+  tp: (...args: unknown[]) => unknown;
 };
 
-type MicrosoftImpl = (props: MicrosoftProps) => ReactNode;
-let impl: MicrosoftImpl | null = null;
+let peers: BindMicrosoftPeers | null = null;
 
-/** Wire the full Microsoft once deeper restore lands. */
-export function bindMicrosoft(next: MicrosoftImpl): void {
-  impl = next;
+/** Wire bindMicrosoft peers once companions land. */
+export function setBindMicrosoftPeers(next: BindMicrosoftPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `oq` / internal `IN`.
- * Stage-3 fill for bundle export oq / IN; heavy UI via bind.
  */
-export function Microsoft(props: MicrosoftProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fm-scaffold="oq"
-      aria-label="Microsoft"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export oq / IN
-        </div>
-      )}
-    </div>
-  );
+export function bindMicrosoft() {
+  if (peers == null) {
+    throw new Error("bindMicrosoft peers are not configured");
+  }
+
+  return peers.e(() => {
+    (peers.ed(),
+      peers.Uf(),
+      peers.qx(),
+      peers.ap(),
+      (h3r = {
+        gmail: `outlook-email`,
+        "google-calendar": `outlook-calendar`,
+        "google-drive": `sharepoint`,
+        slack: `teams`,
+      }),
+      (g3r = peers.tp(peers.Q, `email-domain-mail-provider`, (e) => ({
+        enabled: peers.e != null,
+        params:
+          peers.e == null
+            ? void 0
+            : {
+                domain: peers.e,
+              },
+        retry: 2,
+        staleTime: peers.Hf.FIVE_MINUTES,
+      }))));
+  });
 }

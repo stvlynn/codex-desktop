@@ -57,9 +57,7 @@ export const APPGEN_ACCESS_SHORT_STATE_MESSAGES = {
 } as const satisfies Record<AppgenAccessStateKey, AppgenAccessShortMessage>;
 
 /** Short access-state message descriptor for an AppGen site. */
-export function appgenAccessShortStateMessage(
-  access: AppgenAccessLike,
-): AppgenAccessShortMessage | undefined {
+export function appgenAccessShortStateMessage(access: AppgenAccessLike): AppgenAccessShortMessage | undefined {
   const key = appgenAccessStateKey(access);
   return key == null ? undefined : APPGEN_ACCESS_SHORT_STATE_MESSAGES[key];
 }

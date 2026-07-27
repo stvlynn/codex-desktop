@@ -25,9 +25,7 @@ export function initOnboardingLoginContent(): void {}
 /**
  * Bundle export `t` — onboarding login controls (ChatGPT / API key).
  */
-export function OnboardingLoginContent(
-  props: OnboardingLoginContentProps,
-): ReactNode {
+export function OnboardingLoginContent(props: OnboardingLoginContentProps): ReactNode {
   const {
     apiKeyValue,
     isApiKeyEntryVisible,

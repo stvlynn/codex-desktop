@@ -7,9 +7,7 @@ import { normalizeAcceleratorToken } from "./normalize-accelerator-token";
 import { splitWhitespaceTokens } from "./split-whitespace-tokens";
 
 /** Human-readable accelerator label (bundle `i1`). */
-export function formatAcceleratorLabel(
-  accelerator: string,
-  isMac: boolean = isMacPlatform(),
+export function formatAcceleratorLabel(accelerator: string, isMac: boolean = isMacPlatform(),
   isLinux: boolean = !isMac && isLinuxPlatform(),
 ): string {
   const parts = accelerator.includes("+")

@@ -1,28 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export YC / hts
+// Materialized via extractFn(internal `hts`) / export `YC`.
 
 export type BindDeferredHostsYCPeers = {
-  impl: (...args: unknown[]) => unknown;
+  $x: (...args: unknown[]) => unknown;
+  Fh: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  VE: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredHostsYCPeers | null = null;
 
-/** Wire bindDeferredHostsYC once companions land. */
-export function setBindDeferredHostsYCPeers(
-  next: BindDeferredHostsYCPeers,
-): void {
+/** Wire bindDeferredHostsYC peers once companions land. */
+export function setBindDeferredHostsYCPeers(next: BindDeferredHostsYCPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `YC` / internal `hts`.
- * Stage-3 fill for bundle export YC / hts
  */
-export function bindDeferredHostsYC(...args: unknown[]): unknown {
+export function bindDeferredHostsYC() {
   if (peers == null) {
     throw new Error("bindDeferredHostsYC peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ho(), peers.$x(), peers.Fh(), peers.VE();
+  });
 }

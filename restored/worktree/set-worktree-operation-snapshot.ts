@@ -1,54 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EI — real body via extractFn(internal `$xo`) / export `hA`.
+// Materialized via extractFn(internal `$xo`) / export `hA`.
 
-export type SetWorktreeOperationSnapshotPeers = {
-  snapshotQuery: (
-    queryClient: {
-      query: { snapshot: (...args: unknown[]) => SnapshotHandle };
-    },
-    params: Record<string, unknown>,
-  ) => SnapshotHandle;
-  commonParams: (a?: unknown, b?: unknown) => Record<string, unknown>;
-  queryKey: unknown;
+export type HAPeers = {
+  F3n: (...args: unknown[]) => unknown;
+  Wxo: (...args: unknown[]) => unknown;
+  jxe: (...args: unknown[]) => unknown;
 };
+let peers: HAPeers | null = null;
 
-let peers: SetWorktreeOperationSnapshotPeers | null = null;
-
-/** Wire setWorktreeOperationSnapshot peers once companions land. */
-export function setSetWorktreeOperationSnapshotPeers(
-  next: SetWorktreeOperationSnapshotPeers,
-): void {
+/** Wire hA peers once companions land. */
+export function setHAPeers(next: HAPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `hA` / internal `$xo`.
- * Write a worktree operation snapshot into the query cache and invalidate.
  */
-export type SnapshotHandle = {
-  setData: (data: { value: unknown }) => void;
-  invalidate: () => void;
-};
-
-export function setWorktreeOperationSnapshot(
-  queryClient: { query: { snapshot: (...args: unknown[]) => SnapshotHandle } },
-  dirs: { commonDir: unknown; root: unknown },
-  hostConfig: unknown,
-  value: unknown,
-  operationSource: unknown,
-): void {
+export function hA(e: unknown, t: unknown, n: unknown, r: unknown, i: unknown) {
   if (peers == null) {
-    throw new Error("SetWorktreeOperationSnapshot peers are not configured");
+    throw new Error("hA peers are not configured");
   }
-  const handle = peers.snapshotQuery(queryClient, {
-    commonDir: dirs.commonDir,
-    root: dirs.root,
-    hostConfig,
-    key: peers.queryKey,
-    operationSource,
+  let a = e.query.snapshot(peers.Wxo, {
+    commonDir: t.commonDir,
+    root: t.root,
+    hostConfig: n,
+    key: peers.jxe,
+    operationSource: i,
     scope: "worktree",
-    ...peers.commonParams(undefined, null),
+    ...peers.F3n(undefined, null),
   });
-  handle.setData({ value });
-  handle.invalidate();
+  a.setData({
+    value: r,
+  });
+  a.invalidate();
 }

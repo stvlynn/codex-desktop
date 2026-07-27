@@ -61213,7 +61213,7 @@ function chartWidgetStoresHelper928(chartWidgetStoresInput2595) {
     chartWidgetStoresInput2595.chartY == null
   );
 }
-export function _chartWidgetStoresS(chartWidgetStoresInput4) {
+export function _chartWidgetStoresS(chartWidgetStoresInput4: unknown) {
   let {
       data = [],
       series = [],

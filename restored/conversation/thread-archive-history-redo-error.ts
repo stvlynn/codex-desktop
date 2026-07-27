@@ -1,30 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export eA / QSo
+// Materialized via extractFn(internal `QSo`) / export `eA`.
 
 export type BindThreadArchiveHistoryRedoErrorPeers = {
-  impl: (...args: unknown[]) => unknown;
+  ASo: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  Gf: (...args: unknown[]) => unknown;
+  HA: (...args: unknown[]) => unknown;
+  IA: (...args: unknown[]) => unknown;
+  NSo: (...args: unknown[]) => unknown;
+  TK: (...args: unknown[]) => unknown;
+  ZA: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  oT: (...args: unknown[]) => unknown;
 };
 
 let peers: BindThreadArchiveHistoryRedoErrorPeers | null = null;
 
-/** Wire bindThreadArchiveHistoryRedoError once companions land. */
-export function setBindThreadArchiveHistoryRedoErrorPeers(
-  next: BindThreadArchiveHistoryRedoErrorPeers,
-): void {
+/** Wire bindThreadArchiveHistoryRedoError peers once companions land. */
+export function setBindThreadArchiveHistoryRedoErrorPeers(next: BindThreadArchiveHistoryRedoErrorPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `eA` / internal `QSo`.
- * Stage-3 fill for bundle export eA / QSo
  */
-export function bindThreadArchiveHistoryRedoError(...args: unknown[]): unknown {
+export function bindThreadArchiveHistoryRedoError() {
   if (peers == null) {
-    throw new Error(
-      "bindThreadArchiveHistoryRedoError peers are not configured",
-    );
+    throw new Error("bindThreadArchiveHistoryRedoError peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Au(), peers.ASo(), peers.IA(), peers.oT(), peers.NSo(), peers.ZA(), peers.HA(), peers.TK(), peers.Gf();
+  });
 }

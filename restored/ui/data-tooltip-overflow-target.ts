@@ -1,27 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export vD / yKo
+// Materialized via extractFn(internal `yKo`) / export `vD`.
 
 export type DataTooltipOverflowTargetPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  XHo: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  vKo: (...args: unknown[]) => unknown;
 };
 
 let peers: DataTooltipOverflowTargetPeers | null = null;
 
-/** Wire dataTooltipOverflowTarget once companions land. */
-export function setDataTooltipOverflowTargetPeers(
-  next: DataTooltipOverflowTargetPeers,
-): void {
+/** Wire dataTooltipOverflowTarget peers once companions land. */
+export function setDataTooltipOverflowTargetPeers(next: DataTooltipOverflowTargetPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `vD` / internal `yKo`.
- * Stage-3 fill for bundle export vD / yKo
  */
-export function dataTooltipOverflowTarget(...args: unknown[]): unknown {
+export function dataTooltipOverflowTarget() {
   if (peers == null) {
     throw new Error("dataTooltipOverflowTarget peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    vKo = peers.c(), peers.Ho(), peers.XHo();
+  });
 }

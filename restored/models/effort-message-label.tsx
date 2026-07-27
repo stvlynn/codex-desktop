@@ -1,20 +1,15 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `$Qc`) / export `pu`.
-
-import type { ReactElement, ReactNode } from "react";
-
-export type EffortMessageLabelProps = {
-  effort: string | number;
-};
+// Materialized via extractFn(internal `$Qc`) / export `pu`.
 
 export type EffortMessageLabelPeers = {
-  FormattedMessage: (props: Record<string, unknown>) => ReactNode;
-  messageByEffort: Record<string | number, Record<string, unknown>>;
+  JX: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
+  e$c: (...args: unknown[]) => unknown;
+  t$c: (...args: unknown[]) => unknown;
 };
-
 let peers: EffortMessageLabelPeers | null = null;
 
-/** Wire effort message label peers once companions land. */
+/** Wire EffortMessageLabel peers once companions land. */
 export function setEffortMessageLabelPeers(
   next: EffortMessageLabelPeers,
 ): void {
@@ -23,14 +18,13 @@ export function setEffortMessageLabelPeers(
 
 /**
  * Bundle export `pu` / internal `$Qc`.
- * Render an intl message label for a reasoning-effort enum.
  */
-export function EffortMessageLabel(
-  props: EffortMessageLabelProps,
-): ReactElement {
+export function EffortMessageLabel(props: unknown) {
+  const Z = peers.Z;
   if (peers == null) {
     throw new Error("EffortMessageLabel peers are not configured");
   }
-  const message = peers.messageByEffort[props.effort];
-  return peers.FormattedMessage({ ...message }) as ReactElement;
+  let { effort } = props,
+    r = peers.JX[effort];
+  return <Z {...r} />;
 }

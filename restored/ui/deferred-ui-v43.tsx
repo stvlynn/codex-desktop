@@ -1,41 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export V4 / FE
+// Materialized via extractFn(internal `FE`) / export `V4`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BinddeferredUiV43Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBinddeferredUiV43Peers = {
+  C5n: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
 };
 
-type BinddeferredUiV43Impl = (props: BinddeferredUiV43Props) => ReactNode;
-let impl: BinddeferredUiV43Impl | null = null;
+let peers: BindBinddeferredUiV43Peers | null = null;
 
-/** Wire the full BinddeferredUiV43 once deeper restore lands. */
-export function bindBinddeferredUiV43(next: BinddeferredUiV43Impl): void {
-  impl = next;
+/** Wire bindBinddeferredUiV43 peers once companions land. */
+export function setBindBinddeferredUiV43Peers(next: BindBinddeferredUiV43Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `V4` / internal `FE`.
- * Stage-3 fill for bundle export V4 / FE; heavy UI via bind.
  */
-export function BinddeferredUiV43(props: BinddeferredUiV43Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fi-scaffold="V4"
-      aria-label="BinddeferredUiV43"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export V4 / FE
-        </div>
-      )}
-    </div>
-  );
+export function bindBinddeferredUiV43() {
+  if (peers == null) {
+    throw new Error("bindBinddeferredUiV43 peers are not configured");
+  }
+
+  return peers.ka(peers.Q, e => peers.C5n(e, `full`));
 }

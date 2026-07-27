@@ -18,9 +18,7 @@ export function bindStatsigDynamicConfigReader(options: {
 }
 
 /** Read + normalize a Statsig dynamic config value from a client. */
-export function readStatsigDynamicConfigValue(
-  client: StatsigClientLike | null | undefined,
-): unknown {
+export function readStatsigDynamicConfigValue(client: StatsigClientLike | null | undefined): unknown {
   return normalizeConfigValue(
     client?.getDynamicConfig?.(dynamicConfigName)?.value ?? {},
   );

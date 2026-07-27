@@ -1,28 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export ZV / qWi
+// Materialized via extractFn(internal `qWi`) / export `ZV`.
 
 export type ArtifactTabLoadingPeers = {
-  impl: (...args: unknown[]) => unknown;
+  KWi: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: ArtifactTabLoadingPeers | null = null;
 
-/** Wire artifactTabLoading once companions land. */
-export function setArtifactTabLoadingPeers(
-  next: ArtifactTabLoadingPeers,
-): void {
+/** Wire artifactTabLoading peers once companions land. */
+export function setArtifactTabLoadingPeers(next: ArtifactTabLoadingPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `ZV` / internal `qWi`.
- * Stage-3 fill for bundle export ZV / qWi
  */
-export function artifactTabLoading(...args: unknown[]): unknown {
+export function artifactTabLoading() {
   if (peers == null) {
     throw new Error("artifactTabLoading peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    KWi = new Map();
+  });
 }

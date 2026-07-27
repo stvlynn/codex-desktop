@@ -2,9 +2,7 @@
 // Bundle `oCe` (companion) + `aCe` / export `fmt`.
 
 /** Split `pluginId/scheduledTaskKey` path pairs. */
-export function parsePluginScheduledTaskKey(
-  value: string,
-): { pluginId: string; scheduledTaskKey: string } | null {
+export function parsePluginScheduledTaskKey(value: string): { pluginId: string; scheduledTaskKey: string } | null {
   const slash = value.lastIndexOf("/");
   return slash <= 0 || slash === value.length - 1
     ? null
@@ -15,10 +13,7 @@ export function parsePluginScheduledTaskKey(
 }
 
 /** Build `pluginId/scheduledTaskKey` composite key (bundle `iCe`). */
-export function buildPluginScheduledTaskKey(
-  pluginId: string,
-  scheduledTaskKey: string,
-): string {
+export function buildPluginScheduledTaskKey(pluginId: string, scheduledTaskKey: string): string {
   return `${pluginId}/${scheduledTaskKey}`;
 }
 

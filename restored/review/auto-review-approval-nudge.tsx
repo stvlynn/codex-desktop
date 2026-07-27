@@ -1,48 +1,52 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export ib / KSs
+// Materialized via extractFn(internal `KSs`) / export `ib`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindAutoReviewApprovalNudgeProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindAutoReviewApprovalNudgePeers = {
+  Da: (...args: unknown[]) => unknown;
+  GSs: (...args: unknown[]) => unknown;
+  HSs: (...args: unknown[]) => unknown;
+  Hb: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Im: (...args: unknown[]) => unknown;
+  Iw: (...args: unknown[]) => unknown;
+  Kb: (...args: unknown[]) => unknown;
+  Lw: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  Pm: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  USs: (...args: unknown[]) => unknown;
+  VSs: (...args: unknown[]) => unknown;
+  Vf: (...args: unknown[]) => unknown;
+  WSs: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  nUn: (...args: unknown[]) => unknown;
+  rl: (...args: unknown[]) => unknown;
+  sl: (...args: unknown[]) => unknown;
+  type: (...args: unknown[]) => unknown;
 };
 
-type BindAutoReviewApprovalNudgeImpl = (
-  props: BindAutoReviewApprovalNudgeProps,
-) => ReactNode;
-let impl: BindAutoReviewApprovalNudgeImpl | null = null;
+let peers: BindBindAutoReviewApprovalNudgePeers | null = null;
 
-/** Wire the full BindAutoReviewApprovalNudge once deeper restore lands. */
-export function bindBindAutoReviewApprovalNudge(
-  next: BindAutoReviewApprovalNudgeImpl,
-): void {
-  impl = next;
+/** Wire bindBindAutoReviewApprovalNudge peers once companions land. */
+export function setBindBindAutoReviewApprovalNudgePeers(next: BindBindAutoReviewApprovalNudgePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `ib` / internal `KSs`.
- * Stage-3 fill for bundle export ib / KSs; heavy UI via bind.
  */
-export function BindAutoReviewApprovalNudge(
-  props: BindAutoReviewApprovalNudgeProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="ib"
-      aria-label="BindAutoReviewApprovalNudge"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export ib / KSs
-        </div>
-      )}
-    </div>
-  );
+export function bindBindAutoReviewApprovalNudge() {
+  if (peers == null) {
+    throw new Error("bindBindAutoReviewApprovalNudge peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Hb(), peers.Ho(), peers.Sl(), peers.Vf(), peers.nUn(), peers.Kb(), peers.ed(), peers.Im(), VSs = `994057110`, HSs = peers.Ma(peers.Q, ({
+      get: e
+    }) => peers.e(peers.Iw).filter(t => peers.e(peers.Lw, t)?.type === `autoReviewApprovalNudge`)), USs = peers.sl({
+      manual_approval_threshold: peers.rl().int().positive()
+    }), WSs = peers.Pm(`auto-review-approval-nudge-dismissed-v1`, !1), GSs = peers.Da(peers.Q, e => 0);
+  });
 }

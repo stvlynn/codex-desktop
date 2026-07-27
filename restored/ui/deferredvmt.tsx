@@ -1,41 +1,43 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export vmt / LSe
+// Materialized via extractFn(internal `LSe`) / export `vmt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredvmtProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredvmtPeers = {
+  FSe: (...args: unknown[]) => unknown;
+  ISe: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  X: (...args: unknown[]) => unknown;
+  al: (...args: unknown[]) => unknown;
+  au: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fl: (...args: unknown[]) => unknown;
+  jSe: (...args: unknown[]) => unknown;
+  ol: (...args: unknown[]) => unknown;
+  rl: (...args: unknown[]) => unknown;
+  sl: (...args: unknown[]) => unknown;
 };
 
-type DeferredvmtImpl = (props: DeferredvmtProps) => ReactNode;
-let impl: DeferredvmtImpl | null = null;
+let peers: BindDeferredvmtPeers | null = null;
 
-/** Wire the full Deferredvmt once deeper restore lands. */
-export function bindDeferredvmt(next: DeferredvmtImpl): void {
-  impl = next;
+/** Wire bindDeferredvmt peers once companions land. */
+export function setBindDeferredvmtPeers(next: BindDeferredvmtPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `vmt` / internal `LSe`.
- * Stage-3 fill for bundle export vmt / LSe; heavy UI via bind.
  */
-export function Deferredvmt(props: DeferredvmtProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fl-scaffold="vmt"
-      aria-label="Deferredvmt"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export vmt / LSe
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredvmt() {
+  if (peers == null) {
+    throw new Error("bindDeferredvmt peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Sl(), peers.jSe(), FSe = peers.sl({
+      id: peers.X().transform(peers.au),
+      name: peers.X(),
+      rootPaths: peers.ol(peers.X()),
+      createdAt: peers.rl(),
+      updatedAt: peers.rl()
+    }), ISe = peers.fl(peers.X(), peers.al());
+  });
 }

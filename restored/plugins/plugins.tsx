@@ -1,42 +1,37 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Mz / U4i
+// Materialized via extractFn(internal `U4i`) / export `Mz`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindPluginsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindPluginsPeers = {
+  H4i: (...args: unknown[]) => unknown;
+  K_: (...args: unknown[]) => unknown;
+  Qt: (...args: unknown[]) => unknown;
+  UN: (...args: unknown[]) => unknown;
+  Uf: (...args: unknown[]) => unknown;
+  V4i: (...args: unknown[]) => unknown;
+  Vf: (...args: unknown[]) => unknown;
+  YN: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  h6r: (...args: unknown[]) => unknown;
+  r6r: (...args: unknown[]) => unknown;
 };
 
-type BindPluginsImpl = (props: BindPluginsProps) => ReactNode;
-let impl: BindPluginsImpl | null = null;
+let peers: BindBindPluginsPeers | null = null;
 
-/** Wire the full BindPlugins once deeper restore lands. */
-export function bindBindPlugins(next: BindPluginsImpl): void {
-  impl = next;
+/** Wire bindBindPlugins peers once companions land. */
+export function setBindBindPluginsPeers(next: BindBindPluginsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Mz` / internal `U4i`.
- * Stage-3 fill for bundle export Mz / U4i; heavy UI via bind.
  */
-export function BindPlugins(props: BindPluginsProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fa-scaffold="Mz"
-      aria-label="BindPlugins"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Mz / U4i
-        </div>
-      )}
-    </div>
-  );
+export function bindBindPlugins() {
+  if (peers == null) {
+    throw new Error("bindBindPlugins peers are not configured");
+  }
+
+  return peers.e(() => {
+    V4i = peers.c(), peers.Qt(), peers.Vf(), peers.r6r(), peers.h6r(), peers.UN(), peers.YN(), peers.K_(), peers.Uf(), H4i = [`plugins`, `detail`];
+  });
 }

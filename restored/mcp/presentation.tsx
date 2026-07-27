@@ -1,42 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Yz / Y2i
+// Materialized via extractFn(internal `Y2i`) / export `Yz`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type PresentationProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindPresentationPeers = {
+  $m: (...args: unknown[]) => unknown;
+  $u: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  J2i: (...args: unknown[]) => unknown;
+  Pp: (...args: unknown[]) => unknown;
+  bz: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ld: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  q2i: (...args: unknown[]) => unknown;
+  qR: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  sd: (...args: unknown[]) => unknown;
+  t$e: (...args: unknown[]) => unknown;
 };
 
-type PresentationImpl = (props: PresentationProps) => ReactNode;
-let impl: PresentationImpl | null = null;
+let peers: BindPresentationPeers | null = null;
 
-/** Wire the full Presentation once deeper restore lands. */
-export function bindPresentation(next: PresentationImpl): void {
-  impl = next;
+/** Wire bindPresentation peers once companions land. */
+export function setBindPresentationPeers(next: BindPresentationPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Yz` / internal `Y2i`.
- * Stage-3 fill for bundle export Yz / Y2i; heavy UI via bind.
  */
-export function Presentation(props: PresentationProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-es-scaffold="Yz"
-      aria-label="Presentation"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Yz / Y2i
-        </div>
-      )}
-    </div>
-  );
+export function bindPresentation() {
+  if (peers == null) {
+    throw new Error("bindPresentation peers are not configured");
+  }
+
+  return peers.e(() => {
+    q2i = peers.c(), peers.sd(), J2i = peers.r(peers.o(), 1), peers.$u(), peers.qR(), peers.ld(), peers.Pp(), peers.t$e(), peers.$m(), bz = peers.J();
+  });
 }

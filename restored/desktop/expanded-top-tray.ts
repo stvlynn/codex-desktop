@@ -1,28 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export zj / yQa
+// Materialized via extractFn(internal `yQa`) / export `zj`.
 
 export type BindExpandedTopTrayPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  KM: (...args: unknown[]) => unknown;
+  _Qa: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  pQa: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  vQa: (...args: unknown[]) => unknown;
 };
 
 let peers: BindExpandedTopTrayPeers | null = null;
 
-/** Wire bindExpandedTopTray once companions land. */
-export function setBindExpandedTopTrayPeers(
-  next: BindExpandedTopTrayPeers,
-): void {
+/** Wire bindExpandedTopTray peers once companions land. */
+export function setBindExpandedTopTrayPeers(next: BindExpandedTopTrayPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `zj` / internal `yQa`.
- * Stage-3 fill for bundle export zj / yQa
  */
-export function bindExpandedTopTray(...args: unknown[]): unknown {
+export function bindExpandedTopTray() {
   if (peers == null) {
     throw new Error("bindExpandedTopTray peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    _Qa = peers.c(), peers.Ho(), vQa = peers.r(peers.o(), 1), peers.pQa(), peers.KM();
+  });
 }

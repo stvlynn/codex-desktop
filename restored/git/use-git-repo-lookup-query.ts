@@ -1,43 +1,60 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `A6i`) / export `ez`.
+// Materialized via extractFn(internal `A6i`) / export `ez`.
 
 export type UseGitRepoLookupQueryPeers = {
-  runGitRepoLookupQuery: (options: {
-    enabled: boolean;
-    operationSource: unknown;
-    lookup: { cwd: unknown; hostConfig: unknown } | null;
-    retainRepoWatch: unknown;
-  }) => unknown;
+  Fo: (...args: unknown[]) => unknown;
+  N6i: (...args: unknown[]) => unknown;
+  VFi: (...args: unknown[]) => unknown;
+  enabled: (...args: unknown[]) => unknown;
+  retainRepoWatch: (...args: unknown[]) => unknown;
 };
 
 let peers: UseGitRepoLookupQueryPeers | null = null;
 
-/** Wire git repo lookup query peers once companions land. */
-export function setUseGitRepoLookupQueryPeers(
-  next: UseGitRepoLookupQueryPeers,
-): void {
+/** Wire useGitRepoLookupQuery peers once companions land. */
+export function setUseGitRepoLookupQueryPeers(next: UseGitRepoLookupQueryPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `ez` / internal `A6i`.
- * Build and run a git repo lookup query for cwd + host.
  */
-export function useGitRepoLookupQuery(
-  cwd: unknown,
-  hostConfig: unknown,
-  operationSource: unknown,
-  options?: { enabled?: boolean; retainRepoWatch?: unknown },
-): unknown {
+export function useGitRepoLookupQuery(e: unknown, t: unknown, n: unknown, r: unknown) {
   if (peers == null) {
-    throw new Error("UseGitRepoLookupQuery peers are not configured");
+    throw new Error("useGitRepoLookupQuery peers are not configured");
   }
-  const enabled = options?.enabled ?? true;
-  const lookup = cwd == null ? null : { cwd, hostConfig };
-  return peers.runGitRepoLookupQuery({
-    enabled,
-    operationSource,
-    lookup,
-    retainRepoWatch: options?.retainRepoWatch,
-  });
+
+  let i = (0, peers.N6i.c)(8),
+    a = r?.enabled ?? !0,
+    o;
+  i[0] !== e || i[1] !== t
+    ? ((o =
+        e == null
+          ? null
+          : {
+              cwd: e,
+              hostConfig: t,
+            }),
+      (i[0] = e),
+      (i[1] = t),
+      (i[2] = o))
+    : (o = i[2]);
+  let s = r?.retainRepoWatch,
+    c;
+  return (
+    i[3] !== n || i[4] !== a || i[5] !== o || i[6] !== s
+      ? ((c = {
+          enabled: a,
+          operationSource: n,
+          lookup: o,
+          retainRepoWatch: s,
+        }),
+        (i[3] = n),
+        (i[4] = a),
+        (i[5] = o),
+        (i[6] = s),
+        (i[7] = c))
+      : (c = i[7]),
+    peers.Fo(peers.VFi, c)
+  );
 }

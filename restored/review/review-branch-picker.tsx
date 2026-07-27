@@ -1,118 +1,251 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage 3: ReviewBranchPicker bindable + searchable branch chrome scaffold.
+// Materialized via extractFn(internal `dQo`) / export `NE`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type ReviewBranchPickerProps = {
-  branches?: unknown[];
-  selectedBranch?: unknown;
-  disabled?: boolean;
-  isError?: boolean;
-  isLoading?: boolean;
-  isSearchError?: boolean;
-  isSearchLoading?: boolean;
-  onClose?: () => void;
-  onRetry?: () => void;
-  onRetrySearch?: () => void;
-  onSearchQueryChange?: (query: string) => void;
-  onSelectCustomBranch?: (branch: string) => void;
-  onSelectBranch?: (branch: unknown) => void;
-  renderBranchSubText?: (branch: unknown) => ReactNode;
-  searchedBranches?: unknown[];
-  searchQuery?: string;
-  className?: string;
-  [key: string]: unknown;
+export type BindReviewBranchPickerPeers = {
+  Ju: (...args: unknown[]) => unknown;
+  KR: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
+  fQo: (...args: unknown[]) => unknown;
+  find: (...args: unknown[]) => unknown;
+  jp: (...args: unknown[]) => unknown;
+  lY: (...args: unknown[]) => unknown;
+  mQo: (...args: unknown[]) => unknown;
+  pQo: (...args: unknown[]) => unknown;
 };
+let peers: BindReviewBranchPickerPeers | null = null;
 
-type ReviewBranchPickerImpl = (props: ReviewBranchPickerProps) => ReactNode;
-let impl: ReviewBranchPickerImpl | null = null;
-
-/** Wire the full ReviewBranchPicker once deeper restore lands. */
-export function bindReviewBranchPicker(next: ReviewBranchPickerImpl): void {
-  impl = next;
+/** Wire bindReviewBranchPicker peers once companions land. */
+export function setBindReviewBranchPickerPeers(
+  next: BindReviewBranchPickerPeers,
+): void {
+  peers = next;
 }
 
 /**
  * Bundle export `NE` / internal `dQo`.
- * Provides a Stage-3 searchable branch picker scaffold; heavy UI via bind.
  */
-export function ReviewBranchPicker(
-  props: ReviewBranchPickerProps,
-): ReactElement {
-  if (impl != null) {
-    return impl(props) as ReactElement;
+export function bindReviewBranchPicker(props: unknown) {
+  const Item = peers.KR.Item;
+  const Z = peers.Z;
+  const Jp = peers.jp;
+  const SectionLabel = peers.KR.SectionLabel;
+  const Section = peers.KR.Section;
+  const SearchInput = peers.KR.SearchInput;
+  if (peers == null) {
+    throw new Error("bindReviewBranchPicker peers are not configured");
   }
-  const {
-    branches = [],
-    selectedBranch,
-    disabled = false,
-    isLoading = false,
-    isSearchLoading = false,
-    onClose,
-    onSearchQueryChange,
-    onSelectBranch,
-    searchQuery = "",
-    className,
-  } = props;
-  return (
-    <div
-      className={
-        className ??
-        "flex min-h-0 w-full flex-col gap-2 rounded-xl border border-token-border bg-token-dropdown-background p-3"
-      }
-      role="dialog"
-      aria-label="Review branch picker"
-    >
-      <div className="flex items-center gap-2">
-        <input
-          className="min-w-0 flex-1 rounded-md border border-token-border bg-transparent px-2 py-1 text-sm"
+  let {
+      branches,
+      selectedBranch,
+      disabled = false,
+      isError,
+      isLoading,
+      isSearchError = false,
+      isSearchLoading = false,
+      onClose,
+      onRetry,
+      onRetrySearch,
+      onSearchQueryChange,
+      onSelectCustomBranch,
+      onSelectBranch,
+      renderBranchSubText,
+      searchedBranches,
+      searchQuery: _,
+    } = props,
+    x = peers.Ju(),
+    [S, C] = peers.mQo.useState(""),
+    w = _ ?? S,
+    T,
+    E,
+    D,
+    O,
+    k,
+    A;
+  {
+    A = w.trim();
+    let e = A.toLowerCase();
+    O = e.length > 0;
+    D =
+      branches == null
+        ? undefined
+        : O
+          ? (searchedBranches ??
+            branches.filter((item) => {
+              return item.toLowerCase().includes(e);
+            }))
+          : branches;
+    k = O ? isSearchLoading : isLoading;
+    let i = O ? isSearchError : isError,
+      s = O ? onRetrySearch : onRetry;
+    E = D?.find((e) => {
+      return e === A;
+    });
+    let c =
+      O && onSelectCustomBranch != null && E == null ? (
+        <Item
           disabled={disabled}
-          placeholder="Search branches"
-          value={searchQuery}
-          onChange={(event) => onSearchQueryChange?.(event.target.value)}
-        />
-        {onClose != null ? (
-          <button type="button" className="text-sm" onClick={onClose}>
-            Close
-          </button>
-        ) : null}
-      </div>
-      <div className="min-h-0 flex-1 overflow-y-auto text-sm">
-        {isLoading || isSearchLoading ? (
-          <div className="px-1 py-2 text-token-text-secondary">Loading…</div>
-        ) : (
-          <ul className="flex flex-col gap-1">
-            {branches.map((branch, index) => {
-              const label =
-                typeof branch === "string"
-                  ? branch
-                  : String((branch as { name?: unknown })?.name ?? branch);
-              const selected =
-                branch === selectedBranch ||
-                (typeof selectedBranch === "string" &&
-                  selectedBranch === label);
-              return (
-                <li key={`${label}-${index}`}>
-                  <button
-                    type="button"
-                    disabled={disabled}
-                    className={
-                      selected
-                        ? "w-full rounded-md bg-token-main-surface-secondary px-2 py-1 text-left"
-                        : "w-full rounded-md px-2 py-1 text-left hover:bg-token-main-surface-secondary"
-                    }
-                    onClick={() => onSelectBranch?.(branch)}
-                  >
-                    {label}
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-      </div>
+          onSelect={() => {
+            onSelectCustomBranch?.(A);
+          }}
+        >
+          <Z
+            id="composer.reviewMode.branches.useExactRef"
+            defaultMessage={"Use {branch}"}
+            description="Action to use an exact Git ref typed into the branch search field"
+            values={{
+              branch: A,
+            }}
+          />
+        </Item>
+      ) : null;
+    if (k) {
+      let e;
+      e = (
+        <Item disabled={true}>
+          <span className="inline-flex items-center gap-2">
+            {<Jp className="icon-xxs" />}
+            {
+              <Z
+                id="localConversation.syncSetup.branchesLoading"
+                defaultMessage="Loading branches…"
+                description="Label shown while loading branches"
+              />
+            }
+          </span>
+        </Item>
+      );
+      T = e;
+    } else if (i) {
+      let e = (
+        <SectionLabel>
+          <Z
+            id="composer.reviewMode.branches.error"
+            defaultMessage="Unable to load branches"
+            description="Error message when branch list could not be loaded"
+          />
+        </SectionLabel>
+      );
+      let n =
+        s == null ? null : (
+          <Item
+            onSelect={() => {
+              s();
+            }}
+          >
+            <Z
+              id="composer.reviewMode.branches.retry"
+              defaultMessage="Retry"
+              description="Retry button for branch list error"
+            />
+          </Item>
+        );
+      let r;
+      r = (
+        <Section className="flex flex-col gap-1">
+          {e}
+          {n}
+        </Section>
+      );
+      T = r;
+    } else if (c != null && (D == null || D.length === 0)) T = c;
+    else if (D == null || D.length === 0) {
+      let e;
+      e = (
+        <Item disabled={true}>
+          <Z
+            id="localConversation.syncSetup.noBranches"
+            defaultMessage="No branches found"
+            description="Label shown when no branches are available"
+          />
+        </Item>
+      );
+      T = e;
+    } else {
+      let e;
+      e = (e) => {
+        return (
+          <peers.fQo
+            key={e}
+            branch={e}
+            disabled={disabled}
+            selected={e === selectedBranch}
+            subText={renderBranchSubText?.(e) ?? null}
+            onSelect={() => {
+              return onSelectBranch(e);
+            }}
+          />
+        );
+      };
+      T = (
+        <Section className="flex flex-col">
+          {c}
+          {D.map(e)}
+        </Section>
+      );
+    }
+  }
+  let j = x.formatMessage({
+    id: "codex.composer.searchBranches",
+    defaultMessage: "Search branches",
+    description: "Placeholder for the branch search input",
+  });
+  let M = (event) => {
+    let t = event.currentTarget.value;
+    C(t);
+    onSearchQueryChange?.(t);
+  };
+  let N = (event) => {
+    if (event.key !== "Enter") return;
+    if ((event.preventDefault(), !O)) {
+      onClose?.();
+      return;
+    }
+    if (disabled || k) return;
+    if (E != null) {
+      onSelectBranch(E);
+      return;
+    }
+    if (onSelectCustomBranch != null) {
+      onSelectCustomBranch(A);
+      return;
+    }
+    let t =
+      D?.find((e) => {
+        return e !== selectedBranch;
+      }) ?? D?.[0];
+    if (t != null) {
+      onSelectBranch(t);
+      return;
+    }
+  };
+  let P = (
+    <SearchInput
+      autoFocus={false}
+      placeholder={j}
+      value={w}
+      onChange={M}
+      onKeyDown={N}
+    />
+  );
+  let F = (
+    <SectionLabel>
+      <Z
+        id="composer.remote.branchesSectionHeading"
+        defaultMessage="Branches"
+        description="Section heading for remote branch search results"
+      />
+    </SectionLabel>
+  );
+  let I = (
+    <div className="vertical-scroll-fade-mask flex h-[200px] flex-col gap-1.5 overflow-y-auto">
+      {F}
+      {T}
+    </div>
+  );
+  return (
+    <div className="flex w-72 flex-col gap-1.5 overflow-hidden">
+      {P}
+      {I}
     </div>
   );
 }

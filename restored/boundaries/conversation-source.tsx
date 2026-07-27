@@ -101,9 +101,7 @@ export function conversationSourceD(
         ? null
         : (conversationSourceBinding106?.id ?? null),
     conversationSourceBinding109 = React.useRef(null),
-    { schedule, cancel } = conversationSourceHelper1(
-      conversationSourceBinding4,
-    ),
+    { schedule, cancel } = conversationSourceHelper1(80),
     conversationSourceBinding110 = () => {
       let conversationSourceBinding132 = containerRef.current;
       if (conversationSourceBinding132 == null) return;
@@ -208,7 +206,6 @@ export function conversationSourceD(
   ];
   React.useEffect(conversationSourceBinding112, conversationSourceBinding114);
 }
-var conversationSourceBinding4 = 80;
 export type ConversationSourceListProps = {
   entries: Array<{
     turnKey: string;
@@ -242,7 +239,7 @@ export function conversationSourceC({
   onApiChange,
   onVisibleContentReady,
   className,
-  gapPx = conversationSourceBinding9,
+  gapPx = 12,
   getBottomScrollPaddingPx,
   onLatestTurnHeightChange,
   preserveMeasuredTurnViewport = false,
@@ -290,15 +287,13 @@ export function conversationSourceC({
     conversationSourceBinding37 = React.useRef(null),
     conversationSourceBinding38 = React.useRef(null),
     conversationSourceBinding39 = React.useRef(false),
-    conversationSourceBinding40 = React.useMemo(
-      () =>
-        buildThreadVirtualizerLayout({
-          entries,
-          gapPx,
-          measuredHeightsByKey: conversationSourceBinding22,
-        }),
-      [entries, gapPx, conversationSourceBinding22],
-    ),
+    conversationSourceBinding40 = React.useMemo(() => {
+      return buildThreadVirtualizerLayout({
+        entries,
+        gapPx,
+        measuredHeightsByKey: conversationSourceBinding22,
+      });
+    }, [entries, gapPx, conversationSourceBinding22]),
     conversationSourceBinding41 = React.useRef(conversationSourceBinding40),
     conversationSourceBinding42 = React.useRef(null),
     conversationSourceBinding43 = conversationSourceBinding26.renderedRange;
@@ -312,7 +307,7 @@ export function conversationSourceC({
       (conversationSourceBinding43 = visibleRangeFromDistance({
         distanceFromBottomPx: conversationSourceBinding220,
         layout: conversationSourceBinding40,
-        overscanCount: conversationSourceBinding11,
+        overscanCount: 2,
         viewportHeightPx: conversationSourceBinding26.viewportHeightPx,
       }));
   } else if (
@@ -391,11 +386,11 @@ export function conversationSourceC({
           conversationSourceBinding30.current === conversationSourceInput39 &&
             (conversationSourceInput39.complete(),
             (conversationSourceBinding30.current = null));
-          conversationSourceBinding29((conversationSourceInput61) =>
-            conversationSourceInput61 === conversationSourceInput39
+          conversationSourceBinding29((conversationSourceInput61) => {
+            return conversationSourceInput61 === conversationSourceInput39
               ? null
-              : conversationSourceInput61,
-          );
+              : conversationSourceInput61;
+          });
         });
       },
     ),
@@ -404,19 +399,21 @@ export function conversationSourceC({
         conversationSourceInput26,
         conversationSourceInput27,
         conversationSourceInput28,
-      ) => (
-        conversationSourceBinding30.current?.complete(),
-        new Promise((conversationSourceInput34) => {
-          let conversationSourceBinding229 = {
-            align: conversationSourceInput28?.align ?? "center",
-            complete: conversationSourceInput34,
-            getTargetElement: conversationSourceInput27,
-            turnKey: conversationSourceInput26,
-          };
-          conversationSourceBinding30.current = conversationSourceBinding229;
-          conversationSourceBinding29(conversationSourceBinding229);
-        })
-      ),
+      ) => {
+        return (
+          conversationSourceBinding30.current?.complete(),
+          new Promise((conversationSourceInput34) => {
+            let conversationSourceBinding229 = {
+              align: conversationSourceInput28?.align ?? "center",
+              complete: conversationSourceInput34,
+              getTargetElement: conversationSourceInput27,
+              turnKey: conversationSourceInput26,
+            };
+            conversationSourceBinding30.current = conversationSourceBinding229;
+            conversationSourceBinding29(conversationSourceBinding229);
+          })
+        );
+      },
     ),
     conversationSourceBinding50 = useEventCallback(
       (conversationSourceInput33) => {
@@ -898,10 +895,13 @@ export function conversationSourceC({
   React.useLayoutEffect(() => {
     let conversationSourceBinding188 = _conversationSourceD();
     if (conversationSourceBinding188 == null) return;
-    let conversationSourceBinding189 = () =>
-        conversationSourceBinding188.clientHeight ||
-        conversationSourceBinding32.current.viewportHeightPx ||
-        conversationSourceBinding10,
+    let conversationSourceBinding189 = () => {
+        return (
+          conversationSourceBinding188.clientHeight ||
+          conversationSourceBinding32.current.viewportHeightPx ||
+          800
+        );
+      },
       conversationSourceBinding190 = addScrollListener(
         (conversationSourceInput51) => {
           let conversationSourceBinding254 = conversationSourceHelper9(
@@ -1172,8 +1172,9 @@ function conversationSourceHelper2(conversationSourceInput7) {
       observeTurnElement,
     } = conversationSourceInput7,
     { turnKey } = entry,
-    conversationSourceBinding116 = (conversationSourceInput62) =>
-      observeTurnElement(turnKey, conversationSourceInput62);
+    conversationSourceBinding116 = (conversationSourceInput62) => {
+      return observeTurnElement(turnKey, conversationSourceInput62);
+    };
   let conversationSourceBinding117 = useEventCallback(
       conversationSourceBinding116,
     ),
@@ -1219,7 +1220,6 @@ function conversationSourceHelper3(
         conversationSourceInput14?.turnHeightsByKey ??
         conversationSourceBinding13,
     }),
-    conversationSourceBinding156 = conversationSourceBinding10,
     conversationSourceBinding157 = Math.min(
       conversationSourceInput12,
       conversationSourceBinding155.totalHeightPx,
@@ -1227,8 +1227,8 @@ function conversationSourceHelper3(
     conversationSourceBinding158 = visibleRangeFromDistance({
       distanceFromBottomPx: conversationSourceBinding157,
       layout: conversationSourceBinding155,
-      overscanCount: conversationSourceBinding11,
-      viewportHeightPx: conversationSourceBinding156,
+      overscanCount: 2,
+      viewportHeightPx: 800,
     });
   return {
     distanceFromBottomPx: conversationSourceBinding157,
@@ -1248,7 +1248,7 @@ function conversationSourceHelper3(
             },
           })) ?? conversationSourceBinding158,
     turnKeys: conversationSourceBinding155.turnKeys,
-    viewportHeightPx: conversationSourceBinding156,
+    viewportHeightPx: 800,
   };
 }
 function conversationSourceHelper4({
@@ -1264,7 +1264,7 @@ function conversationSourceHelper4({
     conversationSourceBinding161 = visibleRangeFromDistance({
       distanceFromBottomPx: conversationSourceBinding160,
       layout,
-      overscanCount: conversationSourceBinding11,
+      overscanCount: 2,
       viewportHeightPx,
     }),
     conversationSourceBinding162 = conversationSourceHelper5(
@@ -1333,9 +1333,9 @@ function conversationSourceHelper7(
   return (
     conversationSourceInput43 === conversationSourceInput44 ||
     (conversationSourceInput43.length === conversationSourceInput44.length &&
-      conversationSourceInput43.every(
-        (item, index) => item === conversationSourceInput44[index],
-      ))
+      conversationSourceInput43.every((item, index) => {
+        return item === conversationSourceInput44[index];
+      }))
   );
 }
 function conversationSourceHelper8(conversationSourceInput54) {
@@ -1413,7 +1413,7 @@ function conversationSourceHelper13({
         0,
         (layout.bottomOffsetsPx[conversationSourceBinding219] ?? 0) +
           (layout.heightsPx[conversationSourceBinding219] ?? 0) -
-          conversationSourceBinding12,
+          10,
       );
 }
 function conversationSourceHelper14({
@@ -1442,7 +1442,7 @@ function conversationSourceHelper14({
       (layout.heightsPx[conversationSourceBinding199] ?? 0) -
       conversationSourceBinding202;
   return align === "top"
-    ? Math.max(0, conversationSourceBinding204 - conversationSourceBinding12)
+    ? Math.max(0, conversationSourceBinding204 - 10)
     : Math.max(
         0,
         conversationSourceBinding204 -
@@ -1450,10 +1450,6 @@ function conversationSourceHelper14({
           viewportHeightPx / 2,
       );
 }
-var conversationSourceBinding9 = 12;
-var conversationSourceBinding10 = 800;
-var conversationSourceBinding11 = 2;
-var conversationSourceBinding12 = 10;
 var conversationSourceBinding13: Record<string, number> = {};
 var conversationSourceBinding14: unknown;
 export const conversationSourceL = esmInit(() => {
@@ -1535,11 +1531,13 @@ export function conversationSourceA(conversationSourceInput10: {
     conversationSourceBinding145,
   );
   let conversationSourceBinding146, conversationSourceBinding147;
-  conversationSourceBinding146 = () => () => {
-    conversationSourceInput10.set(
-      conversationSourceS,
-      conversationSourceHelper18,
-    );
+  conversationSourceBinding146 = () => {
+    return () => {
+      conversationSourceInput10.set(
+        conversationSourceS,
+        conversationSourceHelper18,
+      );
+    };
   };
   conversationSourceBinding147 = [conversationSourceInput10];
   React.useLayoutEffect(
@@ -1671,8 +1669,10 @@ export function conversationSourceI(
   ];
   React.useEffect(conversationSourceBinding76, conversationSourceBinding77);
   let conversationSourceBinding78, conversationSourceBinding79;
-  conversationSourceBinding78 = () => () => {
-    conversationSourceBinding68.current?.stop();
+  conversationSourceBinding78 = () => {
+    return () => {
+      conversationSourceBinding68.current?.stop();
+    };
   };
   conversationSourceBinding79 = [];
   React.useEffect(conversationSourceBinding78, conversationSourceBinding79);

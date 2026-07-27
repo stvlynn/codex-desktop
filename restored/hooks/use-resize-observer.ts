@@ -14,9 +14,7 @@ export type ResizeObserverCallback = (
  * Returns a ref callback that observes the assigned element.
  * Bundle export `N1`.
  */
-export function useResizeObserver(
-  onResize: ResizeObserverCallback,
-): (element: Element | null) => void {
+export function useResizeObserver(onResize: ResizeObserverCallback): (element: Element | null) => void {
   const callback = useEventCallback(onResize);
   const elementRef = useRef<Element | null>(null);
   const observerRef = useRef<ResizeObserver | null>(null);

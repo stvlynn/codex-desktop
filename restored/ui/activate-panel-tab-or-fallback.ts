@@ -1,76 +1,51 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DU — real body via extractFn(internal `QI`) / export `VU`.
-// Panel tab atom peers bind via setPanelTabController (conversation-page style).
+// Materialized via extractFn(internal `QI`) / export `VU`.
 
-export type PanelSide = "bottom" | "right" | string;
-
-export type PanelTabController = {
-  activateTab: (store: PanelStore, tabId: string | null) => void;
-  activeTab$: unknown;
-  tabs$: unknown;
+export type ActivatePanelTabOrFallbackPeers = {
+  BD: (...args: unknown[]) => unknown;
+  Ear: (...args: unknown[]) => unknown;
+  HD: (...args: unknown[]) => unknown;
+  Jir: (...args: unknown[]) => unknown;
+  XI: (...args: unknown[]) => unknown;
+  jar: (...args: unknown[]) => unknown;
+  tabId: (...args: unknown[]) => unknown;
 };
+let peers: ActivatePanelTabOrFallbackPeers | null = null;
 
-export type PanelTabPeers = {
-  bottomSurfaceAtom: unknown;
-  closeOverlay: (store: PanelStore) => void;
-  focusChrome: () => void;
-  openBottom: (store: PanelStore, open: boolean) => void;
-  openRight: (store: PanelStore, open: boolean) => void;
-  previousBottomSurfaceAtom: unknown;
-  resolveController: (side: PanelSide) => PanelTabController;
-  setSurface: (store: PanelStore, surface: string) => void;
-  surfaceAtom: unknown;
-};
-
-export type PanelStore = {
-  get: (atom: unknown) => unknown;
-  set: (atom: unknown, value: unknown) => void;
-};
-
-let peers: PanelTabPeers | null = null;
-
-/** Wire panel tab atoms / open-close helpers once companions land. */
-export function setPanelTabController(next: PanelTabPeers): void {
+/** Wire activatePanelTabOrFallback peers once companions land. */
+export function setActivatePanelTabOrFallbackPeers(
+  next: ActivatePanelTabOrFallbackPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `VU` / internal `QI`.
- * Activate a panel side, optionally selecting the first tab when empty.
  */
 export function activatePanelTabOrFallback(
-  store: PanelStore,
-  side: PanelSide,
-  options: { activateFallbackTab?: boolean; allowEmpty?: boolean } = {},
-): boolean {
+  e: unknown,
+  t: unknown,
+  { activateFallbackTab, allowEmpty }: Record<string, unknown> = {},
+) {
   if (peers == null) {
-    throw new Error("Panel tab controller is not configured");
+    throw new Error("activatePanelTabOrFallback peers are not configured");
   }
-  const { activateFallbackTab, allowEmpty } = options;
-  const controller = peers.resolveController(side);
-  const tabs = store.get(controller.tabs$) as Array<{ tabId?: string }> | null;
-  const list = Array.isArray(tabs) ? tabs : [];
-  let previousSurface: string | null = null;
-  if (side === "bottom") {
-    const surface = store.get(peers.surfaceAtom);
-    previousSurface = surface === "bottom-panel" ? null : (surface as string);
+  let i = peers.XI(t),
+    a = e.get(i.tabs$),
+    o = null;
+  if (t === "bottom") {
+    let t = e.get(peers.HD);
+    o = t === "bottom-panel" ? null : t;
   }
-  if (list.length === 0 && allowEmpty !== true) return false;
-  if (
-    activateFallbackTab === true &&
-    store.get(controller.activeTab$) == null
-  ) {
-    controller.activateTab(store, list[0]?.tabId ?? null);
-  }
-  if (side === "bottom") {
-    if (previousSurface != null) {
-      store.set(peers.previousBottomSurfaceAtom, previousSurface);
-    }
-    peers.openBottom(store, true);
-    peers.setSurface(store, "bottom-panel");
-  } else {
-    peers.openRight(store, true);
-    peers.setSurface(store, "right-panel");
-  }
-  return true;
+  return a.length === 0 && allowEmpty !== true
+    ? false
+    : (activateFallbackTab === true &&
+        e.get(i.activeTab$) == null &&
+        i.activateTab(e, a[0]?.tabId ?? null),
+      t === "bottom"
+        ? (o != null && e.set(peers.Jir, o),
+          peers.Ear(e, true),
+          peers.BD(e, "bottom-panel"))
+        : (peers.jar(e, true), peers.BD(e, "right-panel")),
+      true);
 }

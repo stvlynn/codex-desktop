@@ -1,25 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export uft / vJe
+// Materialized via extractFn(internal `vJe`) / export `uft`.
 
 export type Uft2Peers = {
-  impl: (...args: unknown[]) => unknown;
+  Ud: (...args: unknown[]) => unknown;
+  _Je: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  ud: (...args: unknown[]) => unknown;
+  zze: (...args: unknown[]) => unknown;
 };
 
 let peers: Uft2Peers | null = null;
 
-/** Wire uft2 once companions land. */
+/** Wire uft2 peers once companions land. */
 export function setUft2Peers(next: Uft2Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `uft` / internal `vJe`.
- * Stage-3 fill for bundle export uft / vJe
  */
-export function uft2(...args: unknown[]): unknown {
+export function uft2() {
   if (peers == null) {
     throw new Error("uft2 peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ud(), _Je = peers.r(peers.o(), 1), peers.zze(), peers.ud();
+  });
 }

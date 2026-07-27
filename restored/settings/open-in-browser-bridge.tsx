@@ -1,48 +1,39 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export uy / oQ
+// Materialized via extractFn(internal `oQ`) / export `uy`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindOpenInBrowserBridgeProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindOpenInBrowserBridgePeers = {
+  ATs: (...args: unknown[]) => unknown;
+  Fh: (...args: unknown[]) => unknown;
+  Hb: (...args: unknown[]) => unknown;
+  Kb: (...args: unknown[]) => unknown;
+  OTs: (...args: unknown[]) => unknown;
+  bTs: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fb: (...args: unknown[]) => unknown;
+  kTs: (...args: unknown[]) => unknown;
+  qx: (...args: unknown[]) => unknown;
+  rQ: (...args: unknown[]) => unknown;
 };
 
-type BindOpenInBrowserBridgeImpl = (
-  props: BindOpenInBrowserBridgeProps,
-) => ReactNode;
-let impl: BindOpenInBrowserBridgeImpl | null = null;
+let peers: BindBindOpenInBrowserBridgePeers | null = null;
 
-/** Wire the full BindOpenInBrowserBridge once deeper restore lands. */
-export function bindBindOpenInBrowserBridge(
-  next: BindOpenInBrowserBridgeImpl,
-): void {
-  impl = next;
+/** Wire bindBindOpenInBrowserBridge peers once companions land. */
+export function setBindBindOpenInBrowserBridgePeers(next: BindBindOpenInBrowserBridgePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `uy` / internal `oQ`.
- * Stage-3 fill for bundle export uy / oQ; heavy UI via bind.
  */
-export function BindOpenInBrowserBridge(
-  props: BindOpenInBrowserBridgeProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="uy"
-      aria-label="BindOpenInBrowserBridge"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export uy / oQ
-        </div>
-      )}
-    </div>
-  );
+export function bindBindOpenInBrowserBridge() {
+  if (peers == null) {
+    throw new Error("bindBindOpenInBrowserBridge peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Hb(), peers.fb(), peers.rQ(), peers.Kb(), peers.Fh(), peers.qx(), peers.bTs(), OTs = {
+      personal: `2336405413`,
+      workspace: `3431030460`
+    }, kTs = `3291298264`, ATs = `allow_free_users_to_use_credits`;
+  });
 }

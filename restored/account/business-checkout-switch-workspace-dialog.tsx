@@ -17,9 +17,7 @@ type BusinessCheckoutSwitchWorkspaceDialogImpl = (
 let impl: BusinessCheckoutSwitchWorkspaceDialogImpl | null = null;
 
 /** Wire the full BusinessCheckoutSwitchWorkspaceDialog once deeper companion restore lands. */
-export function bindBusinessCheckoutSwitchWorkspaceDialog(
-  next: BusinessCheckoutSwitchWorkspaceDialogImpl,
-): void {
+export function bindBusinessCheckoutSwitchWorkspaceDialog(next: BusinessCheckoutSwitchWorkspaceDialogImpl): void {
   impl = next;
 }
 

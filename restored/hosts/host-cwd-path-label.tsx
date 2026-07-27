@@ -1,49 +1,45 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `SYr`) / export `KY`.
-
-import type { ReactElement, ReactNode } from "react";
-
-export type HostCwdPathLabelProps = {
-  hostId: unknown;
-  cwd: unknown;
-  [key: string]: unknown;
-};
+// Materialized via extractFn(internal `SYr`) / export `KY`.
 
 export type HostCwdPathLabelPeers = {
-  isHostRegisteredAtom: unknown;
-  useAtomValue: (atom: unknown, hostId: unknown) => boolean;
-  renderLabel: (args: {
-    hostId: unknown;
-    cwd: unknown;
-    isHostRegistered: boolean;
-    waitForModelList: true;
-  }) => ReactNode;
+  DYr: (...args: unknown[]) => unknown;
+  Fo: (...args: unknown[]) => unknown;
+  OYr: (...args: unknown[]) => unknown;
+  xYr: (...args: unknown[]) => unknown;
 };
 
 let peers: HostCwdPathLabelPeers | null = null;
 
-/** Wire host cwd path label peers once companions land. */
+/** Wire HostCwdPathLabel peers once companions land. */
 export function setHostCwdPathLabelPeers(next: HostCwdPathLabelPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `KY` / internal `SYr`.
- * Path label for a host cwd, waiting for model list when registered.
  */
-export function HostCwdPathLabel(props: HostCwdPathLabelProps): ReactElement {
+export function HostCwdPathLabel(e: unknown) {
   if (peers == null) {
     throw new Error("HostCwdPathLabel peers are not configured");
   }
-  const { hostId, cwd } = props;
-  const isHostRegistered = peers.useAtomValue(
-    peers.isHostRegisteredAtom,
-    hostId,
+
+  let t = (0, peers.DYr.c)(4),
+    { hostId: n, cwd: r } = e,
+    i = peers.Fo(peers.OYr, n),
+    a;
+  return (
+    t[0] !== r || t[1] !== n || t[2] !== i
+      ? ((a = {
+          hostId: n,
+          cwd: r,
+          isHostRegistered: i,
+          waitForModelList: !0,
+        }),
+        (t[0] = r),
+        (t[1] = n),
+        (t[2] = i),
+        (t[3] = a))
+      : (a = t[3]),
+    peers.xYr(a)
   );
-  return peers.renderLabel({
-    hostId,
-    cwd,
-    isHostRegistered,
-    waitForModelList: true,
-  }) as ReactElement;
 }

@@ -59,9 +59,7 @@ export const APPGEN_ACCESS_STATE_MESSAGES = {
 } as const satisfies Record<AppgenAccessStateKey, AppgenAccessMessage>;
 
 /** Full access-state message descriptor for an AppGen site. */
-export function appgenAccessStateMessage(
-  access: AppgenAccessLike,
-): AppgenAccessMessage | undefined {
+export function appgenAccessStateMessage(access: AppgenAccessLike): AppgenAccessMessage | undefined {
   const key = appgenAccessStateKey(access);
   return key == null ? undefined : APPGEN_ACCESS_STATE_MESSAGES[key];
 }

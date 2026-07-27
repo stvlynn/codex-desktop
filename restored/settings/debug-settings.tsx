@@ -163,32 +163,34 @@ function GpuTearingDebugSettingsGroup() {
       />
       <SettingsGroup.Content>
         <SettingsPanel>
-          {rows.map((item) => (
-            <SettingsRow
-              key={item.settingKey}
-              label={item.label}
-              description={item.description}
-              control={
-                <Switch
-                  checked={Boolean(settings?.[item.settingKey])}
-                  onChange={(next) => {
-                    setGpuTearingDebugSetting(store, item.settingKey, next);
-                  }}
-                  ariaLabel={intl.formatMessage(
-                    {
-                      id: "settings.general.gpuTearingDebug.toggle",
-                      defaultMessage: "Toggle {settingName}",
-                      description:
-                        "Aria label for toggling a GPU tearing debug setting",
-                    },
-                    {
-                      settingName: item.label,
-                    },
-                  )}
-                />
-              }
-            />
-          ))}
+          {rows.map((item) => {
+            return (
+              <SettingsRow
+                key={item.settingKey}
+                label={item.label}
+                description={item.description}
+                control={
+                  <Switch
+                    checked={Boolean(settings?.[item.settingKey])}
+                    onChange={(next) => {
+                      setGpuTearingDebugSetting(store, item.settingKey, next);
+                    }}
+                    ariaLabel={intl.formatMessage(
+                      {
+                        id: "settings.general.gpuTearingDebug.toggle",
+                        defaultMessage: "Toggle {settingName}",
+                        description:
+                          "Aria label for toggling a GPU tearing debug setting",
+                      },
+                      {
+                        settingName: item.label,
+                      },
+                    )}
+                  />
+                }
+              />
+            );
+          })}
         </SettingsPanel>
       </SettingsGroup.Content>
     </SettingsGroup>

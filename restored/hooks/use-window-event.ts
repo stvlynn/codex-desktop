@@ -1,15 +1,10 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EL — real body via extractFn(internal `Kf`) / export `ldt`.
+// Materialized via extractFn(internal `Kf`) / export `ldt`.
 
 export type UseWindowEventPeers = {
-  useEffect: (effect: () => void | (() => void), deps: unknown[]) => void;
-  useEffectEvent: <T extends (...args: never[]) => unknown>(fn: T) => T;
-  getBus: () => {
-    subscribe: (
-      eventName: string,
-      listener: (...args: unknown[]) => void,
-    ) => () => void;
-  };
+  MZe: (...args: unknown[]) => unknown;
+  jZe: (...args: unknown[]) => unknown;
+  qf: (...args: unknown[]) => unknown;
 };
 
 let peers: UseWindowEventPeers | null = null;
@@ -21,20 +16,37 @@ export function setUseWindowEventPeers(next: UseWindowEventPeers): void {
 
 /**
  * Bundle export `ldt` / internal `Kf`.
- * Subscribe to a named window event bus channel.
  */
-export function useWindowEvent(
-  eventName: string,
-  listener: (...args: unknown[]) => void,
-  extraDeps: unknown[] = [],
-): void {
+export function useWindowEvent(e: unknown, t: unknown, n: unknown) {
   if (peers == null) {
-    throw new Error("UseWindowEvent peers are not configured");
+    throw new Error("useWindowEvent peers are not configured");
   }
-  const onEvent = peers.useEffectEvent(listener);
-  const deps = extraDeps === undefined ? [] : extraDeps;
-  peers.useEffect(() => {
-    const bus = peers!.getBus();
-    return bus.subscribe(eventName, onEvent);
-  }, [eventName, onEvent, ...deps]);
+
+  let r = (0, peers.jZe.c)(9),
+    i;
+  r[0] === n
+    ? (i = r[1])
+    : ((i = n === void 0 ? [] : n), (r[0] = n), (r[1] = i));
+  let a = i,
+    o;
+  r[2] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((o = peers.qf.getInstance()), (r[2] = o))
+    : (o = r[2]);
+  let s = o,
+    c = (0, peers.MZe.useEffectEvent)(t),
+    l;
+  r[3] !== c || r[4] !== e
+    ? ((l = () => {
+        let t = s.subscribe(e, c);
+        return () => t();
+      }),
+      (r[3] = c),
+      (r[4] = e),
+      (r[5] = l))
+    : (l = r[5]);
+  let u;
+  (r[6] !== a || r[7] !== e
+    ? ((u = [s, e, ...a]), (r[6] = a), (r[7] = e), (r[8] = u))
+    : (u = r[8]),
+    (0, peers.MZe.useEffect)(l, u));
 }

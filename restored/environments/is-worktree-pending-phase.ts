@@ -2,9 +2,7 @@
 // Bundle `RKi` / export `yV`.
 
 /** True while a worktree is still being prepared. */
-export function isWorktreePendingPhase(
-  phase: string | null | undefined,
-): boolean {
+export function isWorktreePendingPhase(phase: string | null | undefined): boolean {
   switch (phase) {
     case "queued":
     case "creating":

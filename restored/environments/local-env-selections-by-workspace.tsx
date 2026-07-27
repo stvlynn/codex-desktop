@@ -1,48 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export mA / yK
+// Materialized via extractFn(internal `yK`) / export `mA`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindLocalEnvSelectionsByWorkspaceProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindLocalEnvSelectionsByWorkspacePeers = {
+  Ap: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  Gxo: (...args: unknown[]) => unknown;
+  Xxo: (...args: unknown[]) => unknown;
+  ap: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fr: (...args: unknown[]) => unknown;
+  iSo: (...args: unknown[]) => unknown;
+  jf: (...args: unknown[]) => unknown;
+  kp: (...args: unknown[]) => unknown;
+  nE: (...args: unknown[]) => unknown;
+  vK: (...args: unknown[]) => unknown;
 };
 
-type BindLocalEnvSelectionsByWorkspaceImpl = (
-  props: BindLocalEnvSelectionsByWorkspaceProps,
-) => ReactNode;
-let impl: BindLocalEnvSelectionsByWorkspaceImpl | null = null;
+let peers: BindBindLocalEnvSelectionsByWorkspacePeers | null = null;
 
-/** Wire the full BindLocalEnvSelectionsByWorkspace once deeper restore lands. */
-export function bindBindLocalEnvSelectionsByWorkspace(
-  next: BindLocalEnvSelectionsByWorkspaceImpl,
-): void {
-  impl = next;
+/** Wire bindBindLocalEnvSelectionsByWorkspace peers once companions land. */
+export function setBindBindLocalEnvSelectionsByWorkspacePeers(next: BindBindLocalEnvSelectionsByWorkspacePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `mA` / internal `yK`.
- * Stage-3 fill for bundle export mA / yK; heavy UI via bind.
  */
-export function BindLocalEnvSelectionsByWorkspace(
-  props: BindLocalEnvSelectionsByWorkspaceProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="mA"
-      aria-label="BindLocalEnvSelectionsByWorkspace"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export mA / yK
-        </div>
-      )}
-    </div>
-  );
+export function bindBindLocalEnvSelectionsByWorkspace() {
+  if (peers == null) {
+    throw new Error("bindBindLocalEnvSelectionsByWorkspace peers are not configured");
+  }
+
+  return peers.e(() => {
+    iSo = peers.c(), peers.fr(), peers.Au(), peers.Gxo(), peers.nE(), peers.Xxo(), peers.jf(), peers.Ap(), peers.ap(), vK = peers.kp(`local-env-selections-by-workspace`, {});
+  });
 }

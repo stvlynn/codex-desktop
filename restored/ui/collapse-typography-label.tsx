@@ -1,14 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-
-import type { ReactElement, ReactNode } from "react";
-
-export type CollapseTypographyLabelProps = Record<string, unknown>;
+// Materialized via extractFn(internal `Net`) / export `blt`.
 
 export type CollapseTypographyLabelPeers = {
-  render: (props: CollapseTypographyLabelProps) => ReactNode;
+  $: (...args: unknown[]) => unknown;
+  Fet: (...args: unknown[]) => unknown;
+  Pet: (...args: unknown[]) => unknown;
+  bb0: (...args: unknown[]) => unknown;
+  gh: (...args: unknown[]) => unknown;
 };
-
 let peers: CollapseTypographyLabelPeers | null = null;
 
 /** Wire CollapseTypographyLabel peers once companions land. */
@@ -21,11 +20,28 @@ export function setCollapseTypographyLabelPeers(
 /**
  * Bundle export `blt` / internal `Net`.
  */
-export function CollapseTypographyLabel(
-  props: CollapseTypographyLabelProps,
-): ReactElement {
+export function CollapseTypographyLabel(props: unknown) {
   if (peers == null) {
     throw new Error("CollapseTypographyLabel peers are not configured");
   }
-  return peers.render(props) as ReactElement;
+  let { className, collapse, ...rest } = props;
+  let a;
+  {
+    let e;
+    bb0: switch (collapse) {
+      case "none":
+        e = undefined;
+        break bb0;
+      case "sm":
+        e = peers.gh.labelSm;
+        break bb0;
+      case "xs":
+        e = peers.gh.labelXs;
+        break bb0;
+      case "secondary":
+        e = peers.$(peers.gh.labelSm, peers.gh.secondaryLabel);
+    }
+    a = peers.$(e, className);
+  }
+  return <span className={a} {...rest} />;
 }

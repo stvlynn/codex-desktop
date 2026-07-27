@@ -17,9 +17,7 @@ type AvatarOverlayFeatureGatePageImpl = (
 let impl: AvatarOverlayFeatureGatePageImpl | null = null;
 
 /** Wire the full AvatarOverlayFeatureGatePage once deeper companion restore lands. */
-export function bindAvatarOverlayFeatureGatePage(
-  next: AvatarOverlayFeatureGatePageImpl,
-): void {
+export function bindAvatarOverlayFeatureGatePage(next: AvatarOverlayFeatureGatePageImpl): void {
   impl = next;
 }
 

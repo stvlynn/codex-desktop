@@ -1,43 +1,39 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export X2 / TD
+// Materialized via extractFn(internal `TD`) / export `X2`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiX232Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiX232Peers = {
+  CD: (...args: unknown[]) => unknown;
+  Da: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  getStreamRole: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiX232Impl = (props: BindDeferredUiX232Props) => ReactNode;
-let impl: BindDeferredUiX232Impl | null = null;
+let peers: BindBindDeferredUiX232Peers | null = null;
 
-/** Wire the full BindDeferredUiX232 once deeper restore lands. */
-export function bindBindDeferredUiX232(next: BindDeferredUiX232Impl): void {
-  impl = next;
+/** Wire bindBindDeferredUiX232 peers once companions land. */
+export function setBindBindDeferredUiX232Peers(next: BindBindDeferredUiX232Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `X2` / internal `TD`.
- * Stage-3 fill for bundle export X2 / TD; heavy UI via bind.
  */
-export function BindDeferredUiX232(
-  props: BindDeferredUiX232Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fi-scaffold="X2"
-      aria-label="BindDeferredUiX232"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export X2 / TD
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiX232() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiX232 peers are not configured");
+  }
+
+  return peers.Da(peers.Q, e => null, {
+    onMount: (e, t) => {
+      let {
+        key: n
+      } = t;
+      if (n != null) return t.watch(({
+        get: t
+      }) => {
+        let r = t(peers.CD, n);
+        if (e(r?.getStreamRole(n) ?? null), r != null) return r.addStreamRoleCallback(n, e);
+      });
+    }
+  });
 }

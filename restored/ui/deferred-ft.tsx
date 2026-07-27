@@ -1,41 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export _ft / eVe
+// Materialized via extractFn(internal `eVe`) / export `_ft`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredFtProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredFtPeers = {
+  $Be: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  QBe: (...args: unknown[]) => unknown;
+  XBe: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  ud: (...args: unknown[]) => unknown;
+  zze: (...args: unknown[]) => unknown;
 };
 
-type DeferredFtImpl = (props: DeferredFtProps) => ReactNode;
-let impl: DeferredFtImpl | null = null;
+let peers: BindDeferredFtPeers | null = null;
 
-/** Wire the full DeferredFt once deeper restore lands. */
-export function bindDeferredFt(next: DeferredFtImpl): void {
-  impl = next;
+/** Wire bindDeferredFt peers once companions land. */
+export function setBindDeferredFtPeers(next: BindDeferredFtPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `_ft` / internal `eVe`.
- * Stage-3 fill for bundle export _ft / eVe; heavy UI via bind.
  */
-export function DeferredFt(props: DeferredFtProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="_ft"
-      aria-label="DeferredFt"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export _ft / eVe
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredFt() {
+  if (peers == null) {
+    throw new Error("bindDeferredFt peers are not configured");
+  }
+
+  return peers.e(() => {
+    QBe = peers.J(), $Be = peers.r(peers.o(), 1), peers.zze(), peers.XBe(), peers.ud();
+  });
 }

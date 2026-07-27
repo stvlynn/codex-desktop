@@ -1,25 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Mst / Xg
+// Materialized via extractFn(internal `Xg`) / export `Mst`.
 
 export type LocalImagePeers = {
-  impl: (...args: unknown[]) => unknown;
+  Jg: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ivt: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
 let peers: LocalImagePeers | null = null;
 
-/** Wire localImage once companions land. */
+/** Wire localImage peers once companions land. */
 export function setLocalImagePeers(next: LocalImagePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Mst` / internal `Xg`.
- * Stage-3 fill for bundle export Mst / Xg
  */
-export function localImage(...args: unknown[]): unknown {
+export function localImage() {
   if (peers == null) {
     throw new Error("localImage peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    ivt = peers.r(peers.Jg(), 1);
+  });
 }

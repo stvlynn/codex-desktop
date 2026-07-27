@@ -1,41 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export mgt / jge
+// Materialized via extractFn(internal `jge`) / export `mgt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredmgtProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredmgtPeers = {
+  Dge: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
-type DeferredmgtImpl = (props: DeferredmgtProps) => ReactNode;
-let impl: DeferredmgtImpl | null = null;
+let peers: BindDeferredmgtPeers | null = null;
 
-/** Wire the full Deferredmgt once deeper restore lands. */
-export function bindDeferredmgt(next: DeferredmgtImpl): void {
-  impl = next;
+/** Wire bindDeferredmgt peers once companions land. */
+export function setBindDeferredmgtPeers(next: BindDeferredmgtPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `mgt` / internal `jge`.
- * Stage-3 fill for bundle export mgt / jge; heavy UI via bind.
  */
-export function Deferredmgt(props: DeferredmgtProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fq-scaffold="mgt"
-      aria-label="Deferredmgt"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export mgt / jge
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredmgt() {
+  if (peers == null) {
+    throw new Error("bindDeferredmgt peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Dge();
+  });
 }

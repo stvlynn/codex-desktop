@@ -1,41 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export lO / CLo
+// Materialized via extractFn(internal `CLo`) / export `lO`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredlOProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredlOPeers = {
+  Mq: (...args: unknown[]) => unknown;
+  SLo: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ju: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  zj: (...args: unknown[]) => unknown;
 };
 
-type DeferredlOImpl = (props: DeferredlOProps) => ReactNode;
-let impl: DeferredlOImpl | null = null;
+let peers: BindDeferredlOPeers | null = null;
 
-/** Wire the full DeferredlO once deeper restore lands. */
-export function bindDeferredlO(next: DeferredlOImpl): void {
-  impl = next;
+/** Wire bindDeferredlO peers once companions land. */
+export function setBindDeferredlOPeers(next: BindDeferredlOPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `lO` / internal `CLo`.
- * Stage-3 fill for bundle export lO / CLo; heavy UI via bind.
  */
-export function DeferredlO(props: DeferredlOProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fq-scaffold="lO"
-      aria-label="DeferredlO"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export lO / CLo
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredlO() {
+  if (peers == null) {
+    throw new Error("bindDeferredlO peers are not configured");
+  }
+
+  return peers.e(() => {
+    Mq = peers.r(peers.o(), 1), SLo = peers.r(peers.ju(), 1), peers.zj();
+  });
 }

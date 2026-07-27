@@ -1,26 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export tw / pts
+// Materialized via extractFn(internal `pts`) / export `tw`.
 
 export type DeferredTwPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  Gf: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  _p: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  yX: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredTwPeers | null = null;
 
-/** Wire deferredTw once companions land. */
+/** Wire deferredTw peers once companions land. */
 export function setDeferredTwPeers(next: DeferredTwPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `tw` / internal `pts`.
- * Stage-3 fill for bundle export tw / pts
  */
-export function deferredTw(...args: unknown[]): unknown {
+export function deferredTw() {
   if (peers == null) {
     throw new Error("deferredTw peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ho(), peers.Au(), peers._p(), peers.ed(), peers.Gf(), yX = peers.Ta(peers.Q, null);
+  });
 }

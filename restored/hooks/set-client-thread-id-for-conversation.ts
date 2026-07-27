@@ -1,31 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EA — real body via extractFn(internal `VJn`) / export `A8`.
+// Materialized via extractFn(internal `VJn`) / export `A8`.
 
-export type SetClientThreadIdPeers = {
-  writeMapping: (
-    store: unknown,
-    conversationId: unknown,
-    clientThreadId: unknown,
-  ) => void;
+export type A8Peers = {
+  JJn: (...args: unknown[]) => unknown;
 };
+let peers: A8Peers | null = null;
 
-let peers: SetClientThreadIdPeers | null = null;
-
-/** Wire clientThreadId mapping writer once companions land. */
-export function setSetClientThreadIdPeers(next: SetClientThreadIdPeers): void {
+/** Wire A8 peers once companions land. */
+export function setA8Peers(next: A8Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `A8` / internal `VJn`.
- * Associate clientThreadId with conversationId in store.
  */
-export function setClientThreadIdForConversation(
-  store: unknown,
-  args: { clientThreadId: unknown; conversationId: unknown },
-): void {
+export function A8(
+  e: unknown,
+  { clientThreadId, conversationId }: Record<string, unknown>,
+) {
   if (peers == null) {
-    throw new Error("SetClientThreadId peers are not configured");
+    throw new Error("A8 peers are not configured");
   }
-  peers.writeMapping(store, args.conversationId, args.clientThreadId);
+  peers.JJn(e, conversationId, clientThreadId);
 }

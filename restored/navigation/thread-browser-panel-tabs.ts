@@ -18,19 +18,14 @@ type ExtraBrowserTabIds = (conversationId: string) => string[];
 let extraBrowserTabIds: ExtraBrowserTabIds = () => [];
 
 /** Host may bind Popcorn / docs tab id source (bundle `Nj` map). */
-export function bindExtraConversationBrowserTabIds(
-  next: ExtraBrowserTabIds,
-): void {
+export function bindExtraConversationBrowserTabIds(next: ExtraBrowserTabIds): void {
   extraBrowserTabIds = next;
 }
 
 /**
  * Bundle export `getConversationBrowserTabIdsForTransfer` (`wU` / `QLi`).
  */
-export function getConversationBrowserTabIdsForTransfer(
-  scope: AppActionScope,
-  conversationId: string,
-): string[] {
+export function getConversationBrowserTabIdsForTransfer(scope: AppActionScope, conversationId: string): string[] {
   const ids: string[] = [];
   const seen = new Set<string>();
 
@@ -83,10 +78,7 @@ const PANEL_SIDES: Array<{
  * Prefers last-focused atom when still in the transfer set; else active panel
  * tabs; else last transfer id.
  */
-export function getLastFocusedBrowserTabId(
-  scope: AppActionScope,
-  conversationId: string,
-): string | null {
+export function getLastFocusedBrowserTabId(scope: AppActionScope, conversationId: string): string | null {
   const transferIds = getConversationBrowserTabIdsForTransfer(
     scope,
     conversationId,

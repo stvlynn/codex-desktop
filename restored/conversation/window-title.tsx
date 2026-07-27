@@ -1,42 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Fst / Kg
+// Materialized via extractFn(internal `Kg`) / export `Fst`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindWindowTitleProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindWindowTitlePeers = {
+  C_t: (...args: unknown[]) => unknown;
+  D_t: (...args: unknown[]) => unknown;
+  E_t: (...args: unknown[]) => unknown;
+  Gg: (...args: unknown[]) => unknown;
+  O_t: (...args: unknown[]) => unknown;
+  S_t: (...args: unknown[]) => unknown;
+  T_t: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  w_t: (...args: unknown[]) => unknown;
 };
 
-type BindWindowTitleImpl = (props: BindWindowTitleProps) => ReactNode;
-let impl: BindWindowTitleImpl | null = null;
+let peers: BindBindWindowTitlePeers | null = null;
 
-/** Wire the full BindWindowTitle once deeper restore lands. */
-export function bindBindWindowTitle(next: BindWindowTitleImpl): void {
-  impl = next;
+/** Wire bindBindWindowTitle peers once companions land. */
+export function setBindBindWindowTitlePeers(next: BindBindWindowTitlePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Fst` / internal `Kg`.
- * Stage-3 fill for bundle export Fst / Kg; heavy UI via bind.
  */
-export function BindWindowTitle(props: BindWindowTitleProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fe-scaffold="Fst"
-      aria-label="BindWindowTitle"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Fst / Kg
-        </div>
-      )}
-    </div>
-  );
+export function bindBindWindowTitle() {
+  if (peers == null) {
+    throw new Error("bindBindWindowTitle peers are not configured");
+  }
+
+  return peers.e(() => {
+    S_t = `Please continue this conversation on the window where it was started.`, Gg = 3e4, C_t = 2e3, w_t = 5e3, T_t = 12e5, E_t = 3e5, D_t = `default`, O_t = `explicitRequestOnly`;
+  });
 }

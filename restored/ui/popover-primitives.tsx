@@ -1,41 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Frt / SBt
+// Materialized via extractFn(internal `SBt`) / export `Frt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type PopoverPrimitivesProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindPopoverPrimitivesPeers = {
+  rBt: (...args: unknown[]) => unknown;
 };
 
-type PopoverPrimitivesImpl = (props: PopoverPrimitivesProps) => ReactNode;
-let impl: PopoverPrimitivesImpl | null = null;
+let peers: BindPopoverPrimitivesPeers | null = null;
 
-/** Wire the full PopoverPrimitives once deeper restore lands. */
-export function bindPopoverPrimitives(next: PopoverPrimitivesImpl): void {
-  impl = next;
+/** Wire bindPopoverPrimitives peers once companions land. */
+export function setBindPopoverPrimitivesPeers(next: BindPopoverPrimitivesPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Frt` / internal `SBt`.
- * Stage-3 fill for bundle export Frt / SBt; heavy UI via bind.
  */
-export function PopoverPrimitives(props: PopoverPrimitivesProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fn-scaffold="Frt"
-      aria-label="PopoverPrimitives"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Frt / SBt
-        </div>
-      )}
-    </div>
-  );
+export function bindPopoverPrimitives() {
+  if (peers == null) {
+    throw new Error("bindPopoverPrimitives peers are not configured");
+  }
+
+  return peers.rBt;
 }

@@ -1,49 +1,41 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `axu`) / export `V`.
+// Materialized via extractFn(internal `axu`) / export `V`.
 
-export type SetRemoteControlEnabledForHostPeers = {
-  statusAtom: unknown;
-  invoke: (
-    channel: "set-remote-control-enabled-for-host",
-    payload: { enabled: boolean; hostId: unknown },
-  ) => Promise<unknown>;
-  applyStatus: (store: any, hostId: unknown, result: unknown) => void;
+export type VPeers = {
+  Bf: (...args: unknown[]) => unknown;
+  O6n: (...args: unknown[]) => unknown;
+  sE: (...args: unknown[]) => unknown;
+  status: (...args: unknown[]) => unknown;
 };
+let peers: VPeers | null = null;
 
-let peers: SetRemoteControlEnabledForHostPeers | null = null;
-
-/** Wire set-remote-control-enabled peers once companions land. */
-export function setSetRemoteControlEnabledForHostPeers(
-  next: SetRemoteControlEnabledForHostPeers,
-): void {
+/** Wire V peers once companions land. */
+export function setVPeers(next: VPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `V` / internal `axu`.
- * Enable/disable remote control for a host and optionally apply status.
  */
-export async function setRemoteControlEnabledForHost(
-  store: { get: (atom: unknown, hostId: unknown) => any },
-  hostId: unknown,
-  enabled: boolean,
-  options: { shouldApplyStatus?: () => boolean } = {},
-): Promise<unknown> {
+export async function V(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+  {
+    shouldApplyStatus = () => {
+      return true;
+    },
+  }: Record<string, unknown> = {},
+) {
   if (peers == null) {
-    throw new Error("SetRemoteControlEnabledForHost peers are not configured");
+    throw new Error("V peers are not configured");
   }
-  const { shouldApplyStatus = () => true } = options;
-  const before = store.get(peers.statusAtom, hostId);
-  const result = await peers.invoke("set-remote-control-enabled-for-host", {
-    enabled,
-    hostId,
-  });
-  const after = store.get(peers.statusAtom, hostId);
-  const statusChanged =
-    after !== before &&
-    (after?.status === "connected" || after?.status === "errored");
-  if (shouldApplyStatus() && (!enabled || !statusChanged)) {
-    peers.applyStatus(store, hostId, result);
-  }
-  return result;
+  let i = e.get(peers.sE, t),
+    a = await peers.Bf("set-remote-control-enabled-for-host", {
+      enabled: n,
+      hostId: t,
+    }),
+    o = e.get(peers.sE, t),
+    s = o !== i && (o?.status === "connected" || o?.status === "errored");
+  return (shouldApplyStatus() && (!n || !s) && peers.O6n(e, t, a), a);
 }

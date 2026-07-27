@@ -10,9 +10,7 @@ export type StatsigDefaultEnableFeaturesPeers = {
 let peers: StatsigDefaultEnableFeaturesPeers | null = null;
 
 /** Wire statsigDefaultEnableFeatures once companions land. */
-export function setStatsigDefaultEnableFeaturesPeers(
-  next: StatsigDefaultEnableFeaturesPeers,
-): void {
+export function setStatsigDefaultEnableFeaturesPeers(next: StatsigDefaultEnableFeaturesPeers): void {
   peers = next;
 }
 

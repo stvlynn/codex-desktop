@@ -1,15 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `rSt`) / export `cst`.
+// Materialized via extractFn(internal `rSt`) / export `cst`.
 
 export type ParseStoredContextEntriesPeers = {
-  extractStoredJson: (raw: unknown) => { json: string } | null;
-  requireCompanion: (raw: unknown) => unknown;
-  parseEntries: { parse: (value: unknown) => unknown[] };
+  nyt: (...args: unknown[]) => unknown;
+  u_: (...args: unknown[]) => unknown;
+  xSt: (...args: unknown[]) => unknown;
 };
-
 let peers: ParseStoredContextEntriesPeers | null = null;
 
-/** Wire stored context entry parse peers once companions land. */
+/** Wire parseStoredContextEntries peers once companions land. */
 export function setParseStoredContextEntriesPeers(
   next: ParseStoredContextEntriesPeers,
 ): void {
@@ -18,25 +17,18 @@ export function setParseStoredContextEntriesPeers(
 
 /**
  * Bundle export `cst` / internal `rSt`.
- * Parse stored context entries JSON, optionally requiring a companion field.
  */
 export function parseStoredContextEntries(
-  raw: unknown,
-  options: { contextOnly?: boolean } = {},
-): unknown[] {
+  e: unknown,
+  { contextOnly = false }: Record<string, unknown> = {},
+) {
   if (peers == null) {
-    throw new Error("ParseStoredContextEntries peers are not configured");
+    throw new Error("parseStoredContextEntries peers are not configured");
   }
-  const { contextOnly = false } = options;
-  const extracted = peers.extractStoredJson(raw);
-  if (
-    extracted == null ||
-    (!contextOnly && peers.requireCompanion(raw) == null)
-  ) {
-    return [];
-  }
+  let n = peers.nyt(e);
+  if (n == null || (!contextOnly && peers.u_(e) == null)) return [];
   try {
-    return peers.parseEntries.parse(JSON.parse(extracted.json));
+    return peers.xSt.parse(JSON.parse(n.json));
   } catch {
     return [];
   }

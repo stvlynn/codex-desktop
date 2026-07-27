@@ -1,30 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ig / vJs
+// Materialized via extractFn(internal `vJs`) / export `Ig`.
 
 export type BindPendingPastedTextAttachmentsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Pn: (...args: unknown[]) => unknown;
+  _Js: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  dy: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fr: (...args: unknown[]) => unknown;
+  gJs: (...args: unknown[]) => unknown;
+  px: (...args: unknown[]) => unknown;
 };
 
 let peers: BindPendingPastedTextAttachmentsPeers | null = null;
 
-/** Wire bindPendingPastedTextAttachments once companions land. */
-export function setBindPendingPastedTextAttachmentsPeers(
-  next: BindPendingPastedTextAttachmentsPeers,
-): void {
+/** Wire bindPendingPastedTextAttachments peers once companions land. */
+export function setBindPendingPastedTextAttachmentsPeers(next: BindPendingPastedTextAttachmentsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Ig` / internal `vJs`.
- * Stage-3 fill for bundle export Ig / vJs
  */
-export function bindPendingPastedTextAttachments(...args: unknown[]): unknown {
+export function bindPendingPastedTextAttachments() {
   if (peers == null) {
-    throw new Error(
-      "bindPendingPastedTextAttachments peers are not configured",
-    );
+    throw new Error("bindPendingPastedTextAttachments peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    gJs = peers.c(), peers.px(), peers.fr(), peers.dy(), _Js = peers.Pn({
+      activeOperationId: null,
+      operations: []
+    });
+  });
 }

@@ -1,26 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export PY / KM
+// Materialized via extractFn(internal `KM`) / export `PY`.
 
 export type BindComposerScopePeers = {
-  impl: (...args: unknown[]) => unknown;
+  GM: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  WM: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gT: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
+  oT: (...args: unknown[]) => unknown;
+  tT: (...args: unknown[]) => unknown;
+  wa: (...args: unknown[]) => unknown;
 };
 
 let peers: BindComposerScopePeers | null = null;
 
-/** Wire bindComposerScope once companions land. */
+/** Wire bindComposerScope peers once companions land. */
 export function setBindComposerScopePeers(next: BindComposerScopePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `PY` / internal `KM`.
- * Stage-3 fill for bundle export PY / KM
  */
-export function bindComposerScope(...args: unknown[]): unknown {
+export function bindComposerScope() {
   if (peers == null) {
     throw new Error("bindComposerScope peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ho(), peers.tT(), peers.gT(), peers.oT(), GM = peers.wa(`ComposerScope`, {
+      key: e => peers.e.kind === `new` && peers.e.entrypoint === `home` && peers.e.focusComposerNonce != null ? `${peers.WM(peers.e)}:${peers.e.focusComposerNonce}` : peers.WM(peers.e),
+      parent: peers.hT,
+      retain: {
+        max: 100
+      }
+    });
+  });
 }

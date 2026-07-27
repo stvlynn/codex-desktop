@@ -19,9 +19,7 @@ export type UseCurrentAccountExposureGatePeers = {
 let peers: UseCurrentAccountExposureGatePeers | null = null;
 
 /** Wire current-account exposure gate peers once companions land. */
-export function setUseCurrentAccountExposureGatePeers(
-  next: UseCurrentAccountExposureGatePeers,
-): void {
+export function setUseCurrentAccountExposureGatePeers(next: UseCurrentAccountExposureGatePeers): void {
   peers = next;
 }
 

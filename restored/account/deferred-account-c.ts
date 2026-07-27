@@ -10,9 +10,7 @@ export type BindDeferredAccountCPeers = {
 let peers: BindDeferredAccountCPeers | null = null;
 
 /** Wire bindDeferredAccountC once companions land. */
-export function setBindDeferredAccountCPeers(
-  next: BindDeferredAccountCPeers,
-): void {
+export function setBindDeferredAccountCPeers(next: BindDeferredAccountCPeers): void {
   peers = next;
 }
 

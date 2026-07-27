@@ -99,9 +99,7 @@ const apiToolCallSchema = z.object({
   path: z.string(),
 });
 
-export function setClassifyTurnApprovalStateDeps(
-  next: ClassifyTurnApprovalStateDeps,
-): void {
+export function setClassifyTurnApprovalStateDeps(next: ClassifyTurnApprovalStateDeps): void {
   deps = next;
 }
 
@@ -199,9 +197,7 @@ function completedToolResourceFallback(
 }
 
 /** Bundle `cTa` / export `wF`. */
-export function classifyTurnApprovalState(
-  message: TurnMessageLike,
-): TurnApprovalState {
+export function classifyTurnApprovalState(message: TurnMessageLike): TurnApprovalState {
   const d = requireDeps();
   const rawPayload = d.rawPayload(message);
   const parts = d.contentParts(message);

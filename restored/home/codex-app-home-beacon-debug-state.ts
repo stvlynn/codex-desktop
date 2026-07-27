@@ -6,7 +6,6 @@ import {
   createPersistedScopeSignal,
   ensurePersistedScopeSignalInit,
 } from "../boundaries/turn-sources-runtime";
-
 ensurePersistedScopeSignalInit();
 
 /** Bundle export `t` — Statsig / debug gate id. */
@@ -20,7 +19,7 @@ export const codexAppHomeBeaconDebugEnabled = createPersistedScopeSignal(
 
 /** Bundle export `i` — whether a gate id matches the beacon debug id. */
 export function isCodexAppHomeBeaconDebugId(id: string): boolean {
-  return id === CODEX_APP_HOME_BEACON_DEBUG_ID;
+  return id === "codex_app_home_beacon_debug";
 }
 
 /** Bundle export `r` — Rolldown ESM init retained as no-op. */

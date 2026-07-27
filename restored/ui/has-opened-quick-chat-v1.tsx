@@ -1,43 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export jx / xms
+// Materialized via extractFn(internal `xms`) / export `jx`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type HasOpenedQuickChatV1Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindHasOpenedQuickChatV1Peers = {
+  Pm: (...args: unknown[]) => unknown;
 };
 
-type HasOpenedQuickChatV1Impl = (props: HasOpenedQuickChatV1Props) => ReactNode;
-let impl: HasOpenedQuickChatV1Impl | null = null;
+let peers: BindHasOpenedQuickChatV1Peers | null = null;
 
-/** Wire the full HasOpenedQuickChatV1 once deeper restore lands. */
-export function bindHasOpenedQuickChatV1(next: HasOpenedQuickChatV1Impl): void {
-  impl = next;
+/** Wire bindHasOpenedQuickChatV1 peers once companions land. */
+export function setBindHasOpenedQuickChatV1Peers(next: BindHasOpenedQuickChatV1Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `jx` / internal `xms`.
- * Stage-3 fill for bundle export jx / xms; heavy UI via bind.
  */
-export function HasOpenedQuickChatV1(
-  props: HasOpenedQuickChatV1Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fm-scaffold="jx"
-      aria-label="HasOpenedQuickChatV1"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export jx / xms
-        </div>
-      )}
-    </div>
-  );
+export function bindHasOpenedQuickChatV1() {
+  if (peers == null) {
+    throw new Error("bindHasOpenedQuickChatV1 peers are not configured");
+  }
+
+  return peers.Pm(`has-opened-quick-chat-v1`, !1);
 }

@@ -16,9 +16,7 @@ type PrimaryComposerAtMentionListImpl = (
 ) => ReactNode;
 let impl: PrimaryComposerAtMentionListImpl | null = null;
 
-export function bindPrimaryComposerAtMentionList(
-  next: PrimaryComposerAtMentionListImpl,
-): void {
+export function bindPrimaryComposerAtMentionList(next: PrimaryComposerAtMentionListImpl): void {
   impl = next;
 }
 

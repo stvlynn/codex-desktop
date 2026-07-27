@@ -1,41 +1,37 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export wR / u7i
+// Materialized via extractFn(internal `u7i`) / export `wR`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiWRProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiWRPeers = {
+  J: (...args: unknown[]) => unknown;
+  Jz: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  c7i: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gP: (...args: unknown[]) => unknown;
+  l7i: (...args: unknown[]) => unknown;
+  m5i: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  s7i: (...args: unknown[]) => unknown;
+  sd: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiWRImpl = (props: BindDeferredUiWRProps) => ReactNode;
-let impl: BindDeferredUiWRImpl | null = null;
+let peers: BindBindDeferredUiWRPeers | null = null;
 
-/** Wire the full BindDeferredUiWR once deeper restore lands. */
-export function bindBindDeferredUiWR(next: BindDeferredUiWRImpl): void {
-  impl = next;
+/** Wire bindBindDeferredUiWR peers once companions land. */
+export function setBindBindDeferredUiWRPeers(next: BindBindDeferredUiWRPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `wR` / internal `u7i`.
- * Stage-3 fill for bundle export wR / u7i; heavy UI via bind.
  */
-export function BindDeferredUiWR(props: BindDeferredUiWRProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fi-scaffold="wR"
-      aria-label="BindDeferredUiWR"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export wR / u7i
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiWR() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiWR peers are not configured");
+  }
+
+  return peers.e(() => {
+    s7i = peers.c(), peers.sd(), c7i = peers.r(peers.o(), 1), peers.gP(), peers.m5i(), peers.Jz(), l7i = peers.J();
+  });
 }

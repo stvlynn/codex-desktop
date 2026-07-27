@@ -1,25 +1,15 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EG — real body via extractFn(internal `xBi`) / export `eU`.
-
-export type FindDiffLineElementInContainerArgs = {
-  container: ParentNode;
-  lineNumber: number | string;
-  side?: "additions" | "deletions" | string;
-  includeShadowRoots?: boolean;
-};
+// Materialized via extractFn(internal `xBi`) / export `eU`.
 
 export type FindDiffLineElementInContainerPeers = {
-  lineAttr: (line: string) => string;
-  walkRoots: (
-    container: ParentNode,
-    opts: { includeShadowRoots?: boolean },
-  ) => Iterable<ParentNode>;
-  queryInRoot: (opts: { root: ParentNode; selector: string }) => Element | null;
+  CBi: (...args: unknown[]) => unknown;
+  DBi: (...args: unknown[]) => unknown;
+  PBi: (...args: unknown[]) => unknown;
+  SBi: (...args: unknown[]) => unknown;
 };
-
 let peers: FindDiffLineElementInContainerPeers | null = null;
 
-/** Wire diff line element lookup peers once companions land. */
+/** Wire findDiffLineElementInContainer peers once companions land. */
 export function setFindDiffLineElementInContainerPeers(
   next: FindDiffLineElementInContainerPeers,
 ): void {
@@ -28,33 +18,48 @@ export function setFindDiffLineElementInContainerPeers(
 
 /**
  * Bundle export `eU` / internal `xBi`.
- * Find a diff line element inside a container (optional shadow roots).
  */
-export function findDiffLineElementInContainer(
-  args: FindDiffLineElementInContainerArgs,
-): Element | null {
+export function findDiffLineElementInContainer({
+  container,
+  lineNumber,
+  side,
+  includeShadowRoots,
+}: Record<string, unknown>) {
   if (peers == null) {
-    throw new Error("FindDiffLineElementInContainer peers are not configured");
+    throw new Error("findDiffLineElementInContainer peers are not configured");
   }
-  const { container, lineNumber, side, includeShadowRoots } = args;
-  const lineSel = peers.lineAttr(`${lineNumber}`);
-  const sideSel =
-    side === "additions"
-      ? "[data-additions]"
-      : side === "deletions"
-        ? "[data-deletions]"
-        : null;
-  for (const root of peers.walkRoots(container, { includeShadowRoots })) {
-    if (sideSel != null) {
-      const el = peers.queryInRoot({
-        root,
-        selector: `${sideSel}${lineSel}`,
-      });
-      if (el) return el;
-    } else {
-      const el = peers.queryInRoot({ root, selector: lineSel });
-      if (el) return el;
+  let i = peers.PBi(`${lineNumber}`),
+    a =
+      side === "additions"
+        ? "[data-additions]"
+        : side === "deletions"
+          ? "[data-deletions]"
+          : null;
+  for (let t of peers.DBi(container, {
+    includeShadowRoots,
+  })) {
+    if (a != null) {
+      let e =
+        peers.CBi({
+          root: t,
+          selector: `${a}[data-line="${i}"]`,
+        }) ??
+        peers.CBi({
+          root: t,
+          selector: `${a} [data-line="${i}"]`,
+        }) ??
+        peers.CBi({
+          root: t,
+          selector: `[data-line="${i}"] ${a}`,
+        });
+      if (e != null) return e;
+      if (peers.SBi(t)) continue;
     }
+    let e = peers.CBi({
+      root: t,
+      selector: `[data-line="${i}"]`,
+    });
+    if (e != null) return e;
   }
   return null;
 }

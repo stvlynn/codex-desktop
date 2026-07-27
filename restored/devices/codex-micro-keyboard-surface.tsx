@@ -17,9 +17,7 @@ type CodexMicroKeyboardSurfacePanelImpl = (
 let impl: CodexMicroKeyboardSurfacePanelImpl | null = null;
 
 /** Wire the full CodexMicroKeyboardSurfacePanel once deeper companion restore lands. */
-export function bindCodexMicroKeyboardSurfacePanel(
-  next: CodexMicroKeyboardSurfacePanelImpl,
-): void {
+export function bindCodexMicroKeyboardSurfacePanel(next: CodexMicroKeyboardSurfacePanelImpl): void {
   impl = next;
 }
 

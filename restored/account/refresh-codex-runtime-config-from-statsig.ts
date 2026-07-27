@@ -8,9 +8,7 @@ export type RefreshCodexRuntimeConfigFromStatsigPeers = {
 let peers: RefreshCodexRuntimeConfigFromStatsigPeers | null = null;
 
 /** Wire refreshCodexRuntimeConfigFromStatsig peers once companions land. */
-export function setRefreshCodexRuntimeConfigFromStatsigPeers(
-  next: RefreshCodexRuntimeConfigFromStatsigPeers,
-): void {
+export function setRefreshCodexRuntimeConfigFromStatsigPeers(next: RefreshCodexRuntimeConfigFromStatsigPeers): void {
   peers = next;
 }
 

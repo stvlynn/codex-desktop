@@ -17,9 +17,7 @@ type BinddeferredAccountTX3Impl = (
 let impl: BinddeferredAccountTX3Impl | null = null;
 
 /** Wire the full BinddeferredAccountTX3 once deeper restore lands. */
-export function bindBinddeferredAccountTX3(
-  next: BinddeferredAccountTX3Impl,
-): void {
+export function bindBinddeferredAccountTX3(next: BinddeferredAccountTX3Impl): void {
   impl = next;
 }
 
@@ -27,9 +25,7 @@ export function bindBinddeferredAccountTX3(
  * Bundle export `tX` / internal `qJr`.
  * Stage-3 fill for bundle export tX / qJr; heavy UI via bind.
  */
-export function BinddeferredAccountTX3(
-  props: BinddeferredAccountTX3Props,
-): ReactElement {
+export function BinddeferredAccountTX3(props: BinddeferredAccountTX3Props): ReactElement {
   if (impl != null) return impl(props) as ReactElement;
   const { className, children } = props;
   return (

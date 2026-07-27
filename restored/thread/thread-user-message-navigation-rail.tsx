@@ -16,9 +16,7 @@ type ThreadUserMessageNavigationRailImpl = (
 ) => ReactNode;
 let impl: ThreadUserMessageNavigationRailImpl | null = null;
 
-export function bindThreadUserMessageNavigationRail(
-  next: ThreadUserMessageNavigationRailImpl,
-): void {
+export function bindThreadUserMessageNavigationRail(next: ThreadUserMessageNavigationRailImpl): void {
   impl = next;
 }
 

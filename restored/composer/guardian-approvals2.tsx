@@ -1,48 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export nv / hNs
+// Materialized via extractFn(internal `hNs`) / export `nv`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindGuardianApprovals2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindGuardianApprovals2Peers = {
+  Pm: (...args: unknown[]) => unknown;
+  mNs: (...args: unknown[]) => unknown;
 };
 
-type BindGuardianApprovals2Impl = (
-  props: BindGuardianApprovals2Props,
-) => ReactNode;
-let impl: BindGuardianApprovals2Impl | null = null;
+let peers: BindBindGuardianApprovals2Peers | null = null;
 
-/** Wire the full BindGuardianApprovals2 once deeper restore lands. */
-export function bindBindGuardianApprovals2(
-  next: BindGuardianApprovals2Impl,
-): void {
-  impl = next;
+/** Wire bindBindGuardianApprovals2 peers once companions land. */
+export function setBindBindGuardianApprovals2Peers(next: BindBindGuardianApprovals2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `nv` / internal `hNs`.
- * Stage-3 fill for bundle export nv / hNs; heavy UI via bind.
  */
-export function BindGuardianApprovals2(
-  props: BindGuardianApprovals2Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="nv"
-      aria-label="BindGuardianApprovals2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export nv / hNs
-        </div>
-      )}
-    </div>
-  );
+export function bindBindGuardianApprovals2() {
+  if (peers == null) {
+    throw new Error("bindBindGuardianApprovals2 peers are not configured");
+  }
+
+  return peers.Pm(`composer-permission-mode-visibility`, peers.mNs);
 }

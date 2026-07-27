@@ -107,10 +107,7 @@ export function buildAccessModeOptions(args: {
  * Bundle export `gO` / `NIo` — drop one account user from an access policy
  * while preserving mode + remaining emails.
  */
-export function accessPolicyEmailsWithoutUser(
-  policy: SiteAccessPolicy,
-  accountUserId: string,
-): {
+export function accessPolicyEmailsWithoutUser(policy: SiteAccessPolicy, accountUserId: string): {
   access_mode: SiteAccessMode;
   allowed_user_emails: string[];
 } {

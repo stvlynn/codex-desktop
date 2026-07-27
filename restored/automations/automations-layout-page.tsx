@@ -14,9 +14,7 @@ type AutomationsLayoutPageImpl = (
 let impl: AutomationsLayoutPageImpl | null = null;
 
 /** Wire the full AutomationsLayoutPage once deeper restore lands. */
-export function bindAutomationsLayoutPage(
-  next: AutomationsLayoutPageImpl,
-): void {
+export function bindAutomationsLayoutPage(next: AutomationsLayoutPageImpl): void {
   impl = next;
 }
 
@@ -24,9 +22,7 @@ export function bindAutomationsLayoutPage(
  * Bindable AutomationsLayoutPage.
  * Alias ownership unresolved — do not invent extractFn body.
  */
-export function AutomationsLayoutPage(
-  props: AutomationsLayoutPageProps,
-): ReactElement {
+export function AutomationsLayoutPage(props: AutomationsLayoutPageProps): ReactElement {
   if (impl == null) {
     return (
       <div

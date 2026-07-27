@@ -1,28 +1,47 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export VJ / w$r
+// Materialized via extractFn(internal `w$r`) / export `VJ`.
 
 export type BindDeferredConversationVJPeers = {
-  impl: (...args: unknown[]) => unknown;
+  C$r: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  b$r: (...args: unknown[]) => unknown;
+  c$r: (...args: unknown[]) => unknown;
+  current_assistant_turn: (...args: unknown[]) => unknown;
+  d$r: (...args: unknown[]) => unknown;
+  f$r: (...args: unknown[]) => unknown;
+  h$r: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
+  u$r: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredConversationVJPeers | null = null;
 
-/** Wire bindDeferredConversationVJ once companions land. */
-export function setBindDeferredConversationVJPeers(
-  next: BindDeferredConversationVJPeers,
-): void {
+/** Wire bindDeferredConversationVJ peers once companions land. */
+export function setBindDeferredConversationVJPeers(next: BindDeferredConversationVJPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `VJ` / internal `w$r`.
- * Stage-3 fill for bundle export VJ / w$r
  */
-export function bindDeferredConversationVJ(...args: unknown[]): unknown {
+export function bindDeferredConversationVJ() {
   if (peers == null) {
     throw new Error("bindDeferredConversationVJ peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ma(peers.hT, ({
+    get: e
+  }) => {
+    let {
+        data: t
+      } = e(peers.b$r),
+      n = t?.current_assistant_turn;
+    if (n && !n.discarded) return n;
+    let r = e(peers.C$r);
+    if (!n) {
+      let e = peers.h$r(peers.u$r(r), peers.d$r(r)).at(-1);
+      return e ? peers.f$r(e.node.assistantTurns, e.activeId) : null;
+    }
+    return peers.f$r(r.filter(e => !peers.c$r(e) && e.previous_turn_id === n.previous_turn_id), n.id) ?? n;
+  });
 }

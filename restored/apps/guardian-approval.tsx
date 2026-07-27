@@ -1,42 +1,79 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Jgt / rme
+// Materialized via extractFn(internal `rme`) / export `Jgt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type GuardianApprovalProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindGuardianApprovalPeers = {
+  $pe: (...args: unknown[]) => unknown;
+  Jpe: (...args: unknown[]) => unknown;
+  Mo: (...args: unknown[]) => unknown;
+  Qpe: (...args: unknown[]) => unknown;
+  Xpe: (...args: unknown[]) => unknown;
+  Ype: (...args: unknown[]) => unknown;
+  Zpe: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  eme: (...args: unknown[]) => unknown;
+  nme: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  tme: (...args: unknown[]) => unknown;
 };
 
-type GuardianApprovalImpl = (props: GuardianApprovalProps) => ReactNode;
-let impl: GuardianApprovalImpl | null = null;
+let peers: BindGuardianApprovalPeers | null = null;
 
-/** Wire the full GuardianApproval once deeper restore lands. */
-export function bindGuardianApproval(next: GuardianApprovalImpl): void {
-  impl = next;
+/** Wire bindGuardianApproval peers once companions land. */
+export function setBindGuardianApprovalPeers(next: BindGuardianApprovalPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Jgt` / internal `rme`.
- * Stage-3 fill for bundle export Jgt / rme; heavy UI via bind.
  */
-export function GuardianApproval(props: GuardianApprovalProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-er-scaffold="Jgt"
-      aria-label="GuardianApproval"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Jgt / rme
-        </div>
-      )}
-    </div>
-  );
+export function bindGuardianApproval() {
+  if (peers == null) {
+    throw new Error("bindGuardianApproval peers are not configured");
+  }
+
+  return peers.e(() => {
+    Jpe = peers.r(peers.Mo()), Ype = `guardian_approval`, Xpe = `read-only`, Zpe = [`read-only`, `auto`, `granular`, `guardian-approvals`, `full-access`, `custom`], Qpe = [`read-only`, `auto`, `granular`, `guardian-approvals`, `full-access`], $pe = [`custom`, `auto`, `granular`, `guardian-approvals`, `read-only`], eme = {
+      type: `readOnly`,
+      networkAccess: !1
+    }, tme = {
+      granular: {
+        sandbox_approval: !1,
+        rules: !1,
+        skill_approval: !1,
+        request_permissions: !0,
+        mcp_elicitations: !0
+      }
+    }, nme = {
+      "read-only": {
+        permissionProfileId: `:read-only`,
+        sandboxMode: `read-only`,
+        approvalPolicy: `on-request`,
+        approvalsReviewer: `user`
+      },
+      auto: {
+        permissionProfileId: `:workspace`,
+        sandboxMode: `workspace-write`,
+        approvalPolicy: `on-request`,
+        approvalsReviewer: `user`
+      },
+      granular: {
+        permissionProfileId: `:workspace`,
+        sandboxMode: `workspace-write`,
+        approvalPolicy: peers.tme,
+        approvalsReviewer: `user`
+      },
+      "guardian-approvals": {
+        permissionProfileId: `:workspace`,
+        sandboxMode: `workspace-write`,
+        approvalPolicy: `on-request`,
+        approvalsReviewer: `guardian_subagent`
+      },
+      "full-access": {
+        permissionProfileId: `:danger-full-access`,
+        sandboxMode: `danger-full-access`,
+        approvalPolicy: `never`,
+        approvalsReviewer: `user`
+      }
+    };
+  });
 }

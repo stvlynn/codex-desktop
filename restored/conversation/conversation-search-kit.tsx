@@ -1,48 +1,39 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Lh / B2s
+// Materialized via extractFn(internal `B2s`) / export `Lh`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindConversationSearchKitProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindConversationSearchKitPeers = {
+  C2s: (...args: unknown[]) => unknown;
+  D2s: (...args: unknown[]) => unknown;
+  M2s: (...args: unknown[]) => unknown;
+  N2s: (...args: unknown[]) => unknown;
+  j2s: (...args: unknown[]) => unknown;
+  n2s: (...args: unknown[]) => unknown;
+  o2s: (...args: unknown[]) => unknown;
+  y2s: (...args: unknown[]) => unknown;
 };
 
-type BindConversationSearchKitImpl = (
-  props: BindConversationSearchKitProps,
-) => ReactNode;
-let impl: BindConversationSearchKitImpl | null = null;
+let peers: BindBindConversationSearchKitPeers | null = null;
 
-/** Wire the full BindConversationSearchKit once deeper restore lands. */
-export function bindBindConversationSearchKit(
-  next: BindConversationSearchKitImpl,
-): void {
-  impl = next;
+/** Wire bindBindConversationSearchKit peers once companions land. */
+export function setBindBindConversationSearchKitPeers(next: BindBindConversationSearchKitPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Lh` / internal `B2s`.
- * Stage-3 fill for bundle export Lh / B2s; heavy UI via bind.
  */
-export function BindConversationSearchKit(
-  props: BindConversationSearchKitProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-et-scaffold="Lh"
-      aria-label="BindConversationSearchKit"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Lh / B2s
-        </div>
-      )}
-    </div>
-  );
+export function bindBindConversationSearchKit() {
+  if (peers == null) {
+    throw new Error("bindBindConversationSearchKit peers are not configured");
+  }
+
+  return Object.assign(peers.M2s, {
+    Frame: peers.j2s,
+    Surface: peers.N2s,
+    Input: peers.y2s,
+    DomainToggle: peers.o2s,
+    Navigation: peers.C2s,
+    ResultLabel: peers.D2s,
+    Close: peers.n2s
+  });
 }

@@ -1,113 +1,85 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DY — real body via extractFn(internal `TIa`) / export `cN`.
-// Markdown fetch peers bind via setRemotePluginSkillDialogParts.
+// Materialized via extractFn(internal `TIa`) / export `cN`.
 
-import type { ReactElement, ReactNode } from "react";
-import { FormattedMessage } from "react-intl";
-
-export type RemotePluginSkillDialogProps = {
-  hostId?: unknown;
-  isOpen?: boolean;
-  remotePluginSkill?: unknown;
-  skillPath?: string | null;
-  titleText?: ReactNode;
-  children?: ReactNode;
+export type RemotePluginSkillDialogPeers = {
+  AH: (...args: unknown[]) => unknown;
+  DIa: (...args: unknown[]) => unknown;
+  EIa: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
+  jp: (...args: unknown[]) => unknown;
+  kH: (...args: unknown[]) => unknown;
+  kga: (...args: unknown[]) => unknown;
+  mIa: (...args: unknown[]) => unknown;
+  vS: (...args: unknown[]) => unknown;
+  wIa: (...args: unknown[]) => unknown;
 };
+let peers: RemotePluginSkillDialogPeers | null = null;
 
-export type RemotePluginSkillDialogParts = {
-  useSkillMarkdown: (args: {
-    hostId?: unknown;
-    path?: string | null;
-    remotePluginSkill?: unknown;
-    expectedTitle?: ReactNode;
-    enabled: boolean;
-  }) => { markdown?: string | null; isFetching?: boolean; error?: unknown };
-  ScrollSurface: (props: {
-    scrollClassName?: string;
-    children?: ReactNode;
-  }) => ReactNode;
-  Markdown: (props: Record<string, unknown>) => ReactNode;
-  Spinner?: (props: { className?: string }) => ReactNode;
-};
-
-let parts: RemotePluginSkillDialogParts | null = null;
-
-/** Wire skill markdown fetch / renderer once companions land. */
-export function setRemotePluginSkillDialogParts(
-  next: RemotePluginSkillDialogParts,
+/** Wire RemotePluginSkillDialog peers once companions land. */
+export function setRemotePluginSkillDialogPeers(
+  next: RemotePluginSkillDialogPeers,
 ): void {
-  parts = next;
+  peers = next;
 }
 
 /**
  * Bundle export `cN` / internal `TIa`.
- * Remote plugin skill preview dialog body.
  */
-export function RemotePluginSkillDialog(
-  props: RemotePluginSkillDialogProps,
-): ReactElement {
-  const {
-    hostId,
-    isOpen = false,
-    remotePluginSkill,
-    skillPath = null,
-    titleText,
-    children,
-  } = props;
-  const hasSource = skillPath != null || remotePluginSkill != null;
-  const enabled = isOpen && hasSource;
-
-  if (parts == null) {
-    return (
-      <div className="p-4 text-sm text-token-text-secondary">
-        {titleText}
-        {children ?? (
-          <FormattedMessage
-            id="skills.card.loadingContents"
-            defaultMessage="Loading skill contents..."
-            description="Loading label when fetching a skill file preview"
-          />
-        )}
-      </div>
-    );
+export function RemotePluginSkillDialog(props: unknown) {
+  const WIa = peers.wIa;
+  const Jp = peers.jp;
+  const Z = peers.Z;
+  const Kga = peers.kga;
+  if (peers == null) {
+    throw new Error("RemotePluginSkillDialog peers are not configured");
   }
-
-  const { markdown, isFetching, error } = parts.useSkillMarkdown({
-    hostId,
-    path: skillPath,
-    remotePluginSkill,
-    expectedTitle: titleText,
-    enabled,
-  });
-  const showError = error != null || (isOpen && !hasSource);
-
+  let { hostId, isOpen, remotePluginSkill, skillPath, titleText } = props,
+    s = skillPath != null || remotePluginSkill != null,
+    c = isOpen && s,
+    l = {
+      hostId,
+      path: skillPath,
+      remotePluginSkill,
+      expectedTitle: titleText,
+      enabled: c,
+    };
+  let { markdown, isFetching, error } = peers.mIa(l),
+    p = error != null || (isOpen && !s);
   return (
-    <parts.ScrollSurface scrollClassName="p-4">
+    <WIa scrollClassName="p-4">
       {isFetching ? (
         <div className="flex items-center gap-2 text-sm text-token-text-secondary">
-          {parts.Spinner != null ? <parts.Spinner className="icon-xs" /> : null}
-          <FormattedMessage
-            id="skills.card.loadingContents"
-            defaultMessage="Loading skill contents..."
-            description="Loading label when fetching a skill file preview"
-          />
+          {<Jp className="icon-xs" />}
+          {
+            <Z
+              id="skills.card.loadingContents"
+              defaultMessage="Loading skill contents..."
+              description="Loading label when fetching a skill file preview"
+            />
+          }
         </div>
-      ) : showError ? (
+      ) : p ? (
         <div className="text-sm text-token-text-secondary">
-          <FormattedMessage
-            id="skills.card.contentsError"
-            defaultMessage="Unable to load skill contents."
-            description="Error message when a skill file preview fails"
-          />
+          {
+            <Z
+              id="skills.card.contentsError"
+              defaultMessage="Unable to load skill contents."
+              description="Error message when a skill file preview fails"
+            />
+          }
         </div>
       ) : (
-        <parts.Markdown
+        <Kga
           className="text-sm"
+          components={{
+            h1: peers.EIa,
+            h2: peers.DIa,
+          }}
           cwd={null}
           textClassName="text-sm"
-          text={markdown}
+          tokens={peers.vS(markdown, undefined)}
         />
       )}
-    </parts.ScrollSurface>
-  ) as ReactElement;
+    </WIa>
+  );
 }

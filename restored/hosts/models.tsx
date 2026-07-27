@@ -1,42 +1,105 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export QY / PM
+// Materialized via extractFn(internal `PM`) / export `QY`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindModelsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindModelsPeers = {
+  $E: (...args: unknown[]) => unknown;
+  $Jr: (...args: unknown[]) => unknown;
+  BJr: (...args: unknown[]) => unknown;
+  Bf: (...args: unknown[]) => unknown;
+  DD: (...args: unknown[]) => unknown;
+  Dh: (...args: unknown[]) => unknown;
+  Eh: (...args: unknown[]) => unknown;
+  HJr: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  JJr: (...args: unknown[]) => unknown;
+  K_: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  QJr: (...args: unknown[]) => unknown;
+  UJr: (...args: unknown[]) => unknown;
+  Uf: (...args: unknown[]) => unknown;
+  VJr: (...args: unknown[]) => unknown;
+  Vf: (...args: unknown[]) => unknown;
+  YJr: (...args: unknown[]) => unknown;
+  ZJr: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  eYr: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
+  qJr: (...args: unknown[]) => unknown;
+  xM: (...args: unknown[]) => unknown;
 };
 
-type BindModelsImpl = (props: BindModelsProps) => ReactNode;
-let impl: BindModelsImpl | null = null;
+let peers: BindBindModelsPeers | null = null;
 
-/** Wire the full BindModels once deeper restore lands. */
-export function bindBindModels(next: BindModelsImpl): void {
-  impl = next;
+/** Wire bindBindModels peers once companions land. */
+export function setBindBindModelsPeers(next: BindBindModelsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `QY` / internal `PM`.
- * Stage-3 fill for bundle export QY / PM; heavy UI via bind.
  */
-export function BindModels(props: BindModelsProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="QY"
-      aria-label="BindModels"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export QY / PM
-        </div>
-      )}
-    </div>
-  );
+export function bindBindModels() {
+  if (peers == null) {
+    throw new Error("bindBindModels peers are not configured");
+  }
+
+  return peers.e(() => {
+    ((ZJr = peers.c()),
+      peers.Ho(),
+      peers.DD(),
+      peers.Vf(),
+      peers.xM(),
+      peers.ed(),
+      peers.K_(),
+      peers.Dh(),
+      peers.Uf(),
+      peers.VJr(),
+      peers.UJr(),
+      peers.JJr(),
+      (QJr = 100),
+      ($Jr = [`models`, `list`]),
+      (eYr = peers.ka(
+        peers.Q,
+        (
+          {
+            additionalAvailableModels: e,
+            authMethod: t,
+            hostId: n,
+            includeUltraReasoningEffort: r,
+            limit: i,
+          },
+          { get: a },
+        ) => {
+          let o = a(peers.qJr),
+            s = a(peers.BJr),
+            c = r && a(peers.Eh, `1186680773`);
+          return {
+            queryKey: peers.YJr(n, t, i),
+            enabled: a(peers.$E).includes(n),
+            staleTime: peers.Hf.FIVE_MINUTES,
+            queryFn: () =>
+              peers.Bf(`list-models-for-host`, {
+                hostId: n,
+                includeHidden: !0,
+                cursor: null,
+                limit: i,
+              }),
+            select: ({ data: n }) =>
+              peers.HJr({
+                additionalAvailableModels: new Set(peers.e),
+                authMethod: t,
+                availableModels: s.availableModels,
+                defaultModel: s.defaultModel,
+                enabledReasoningEfforts: o,
+                includeUltraReasoningEffort: peers.c,
+                models: n,
+                useHiddenModels: s.useHiddenModels,
+              }),
+          };
+        },
+      )));
+  });
 }

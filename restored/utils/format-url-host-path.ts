@@ -3,9 +3,7 @@
 // (bundle `vUa` / export `DM`).
 
 /** Format a URL for compact display (host/path/search/hash; no protocol). */
-export function formatUrlHostPath(
-  url: string | null | undefined,
-): string | null {
+export function formatUrlHostPath(url: string | null | undefined): string | null {
   if (url == null) return null;
   const parsed = new URL(url);
   const path = parsed.pathname === "/" ? "" : parsed.pathname;

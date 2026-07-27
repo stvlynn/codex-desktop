@@ -1,12 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `Ios`) / export `LS`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `Ios`) / export `LS`.
 
 export type UtilityBarCategoryValuePeers = {
-  renderValue: (props: Record<string, unknown>) => ReactNode;
+  $: (...args: unknown[]) => unknown;
+  GX: (...args: unknown[]) => unknown;
+  Los: (...args: unknown[]) => unknown;
+  gh: (...args: unknown[]) => unknown;
+  zos: (...args: unknown[]) => unknown;
 };
-
 let peers: UtilityBarCategoryValuePeers | null = null;
 
 /** Wire UtilityBarCategoryValue peers once companions land. */
@@ -18,23 +19,29 @@ export function setUtilityBarCategoryValuePeers(
 
 /**
  * Bundle export `LS` / internal `Ios`.
- * Render a utility-bar category/value row.
  */
-export type UtilityBarCategoryValueProps = {
-  categoryLabel?: ReactNode;
-  className?: string;
-  collapse?: unknown;
-  icon?: ReactNode;
-  value?: ReactNode;
-  valueClassName?: string;
-  [key: string]: unknown;
-};
-
-export function UtilityBarCategoryValue(
-  props: UtilityBarCategoryValueProps,
-): ReactElement {
+export function UtilityBarCategoryValue(props: unknown) {
+  const Los = peers.Los;
   if (peers == null) {
     throw new Error("UtilityBarCategoryValue peers are not configured");
   }
-  return peers.renderValue(props) as ReactElement;
+  let { categoryLabel, className, collapse, icon, value, valueClassName } =
+      props,
+    c = peers.$(
+      peers.gh.utilityBarLabel,
+      "flex min-w-0 items-center gap-1",
+      className,
+    );
+  let l = (
+    <Los
+      categoryLabel={categoryLabel}
+      collapse={collapse}
+      icon={icon}
+      indicator="none"
+      selectedValue={value}
+      selectedValueClassName={valueClassName}
+      foreground="primary"
+    />
+  );
+  return <div className={c}>{l}</div>;
 }

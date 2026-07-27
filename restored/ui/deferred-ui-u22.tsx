@@ -1,41 +1,56 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export u2 / drr
+// Materialized via extractFn(internal `drr`) / export `u2`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiU22Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiU22Peers = {
+  CD: (...args: unknown[]) => unknown;
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Qtr: (...args: unknown[]) => unknown;
+  eD: (...args: unknown[]) => unknown;
+  kind: (...args: unknown[]) => unknown;
+  rD: (...args: unknown[]) => unknown;
+  turnHistory: (...args: unknown[]) => unknown;
+  urr: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiU22Impl = (props: BindDeferredUiU22Props) => ReactNode;
-let impl: BindDeferredUiU22Impl | null = null;
+let peers: BindBindDeferredUiU22Peers | null = null;
 
-/** Wire the full BindDeferredUiU22 once deeper restore lands. */
-export function bindBindDeferredUiU22(next: BindDeferredUiU22Impl): void {
-  impl = next;
+/** Wire bindBindDeferredUiU22 peers once companions land. */
+export function setBindBindDeferredUiU22Peers(next: BindBindDeferredUiU22Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `u2` / internal `drr`.
- * Stage-3 fill for bundle export u2 / drr; heavy UI via bind.
  */
-export function BindDeferredUiU22(props: BindDeferredUiU22Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fh-scaffold="u2"
-      aria-label="BindDeferredUiU22"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export u2 / drr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiU22() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiU22 peers are not configured");
+  }
+
+  return peers.Oa(peers.Q, (e, { get: t, scope: n }) => {
+    let { conversationId: r, entityKey: i } = e,
+      a = peers.Qtr.get(n.node);
+    a ?? ((a = new Map()), peers.Qtr.set(n.node, a));
+    let o = a.get(r);
+    if ((o ?? ((o = new Set()), a.set(r, o)), o.add(e), i == null)) return null;
+    let s = t(peers.rD, r),
+      c = (s == null ? null : t(peers.eD, s)) ?? t(peers.CD, r);
+    if (c == null) return null;
+    let { entityVersionByKey$: l, fullResetVersionByConversationId$: u } = t(
+      peers.urr,
+      c.getHostId(),
+    );
+    (t(u(r)),
+      t(
+        l({
+          conversationId: r,
+          entityKey: i,
+        }),
+      ));
+    let d = c.getConversation(r);
+    return d?.turnHistory?.kind === `canonical`
+      ? (d.turnHistory.history.entitiesByKey[i] ?? null)
+      : null;
+  });
 }

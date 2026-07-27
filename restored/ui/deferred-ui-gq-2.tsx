@@ -1,41 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export gQ / qNr
+// Materialized via extractFn(internal `qNr`) / export `gQ`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiGQProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiGQPeers = {
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  kind: (...args: unknown[]) => unknown;
+  nj: (...args: unknown[]) => unknown;
+  xnr: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiGQImpl = (props: BindDeferredUiGQProps) => ReactNode;
-let impl: BindDeferredUiGQImpl | null = null;
+let peers: BindBindDeferredUiGQPeers | null = null;
 
-/** Wire the full BindDeferredUiGQ once deeper restore lands. */
-export function bindBindDeferredUiGQ(next: BindDeferredUiGQImpl): void {
-  impl = next;
+/** Wire bindBindDeferredUiGQ peers once companions land. */
+export function setBindBindDeferredUiGQPeers(next: BindBindDeferredUiGQPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `gQ` / internal `qNr`.
- * Stage-3 fill for bundle export gQ / qNr; heavy UI via bind.
  */
-export function BindDeferredUiGQ(props: BindDeferredUiGQProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fe-scaffold="gQ"
-      aria-label="BindDeferredUiGQ"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export gQ / qNr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiGQ() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiGQ peers are not configured");
+  }
+
+  return peers.Oa(peers.Q, (e, {
+    get: t
+  }) => {
+    let n = t(peers.nj, e);
+    switch (n?.kind) {
+      case `local`:
+        return n.conversation == null ? n.pendingWorktree.createdAt : t(peers.xnr, n.conversation.id) ?? n.conversation.updatedAt;
+      case `remote`:
+        return (n.task.updated_at ?? n.task.created_at ?? 0) * 1e3;
+      case void 0:
+        return 0;
+    }
+  });
 }

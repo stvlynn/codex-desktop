@@ -1,28 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Vh / w0s
+// Materialized via extractFn(internal `w0s`) / export `Vh`.
 
 export type BindDeferredHostsVhPeers = {
-  impl: (...args: unknown[]) => unknown;
+  B3i: (...args: unknown[]) => unknown;
+  C0s: (...args: unknown[]) => unknown;
+  K3r: (...args: unknown[]) => unknown;
+  RN: (...args: unknown[]) => unknown;
+  Zes: (...args: unknown[]) => unknown;
+  _Z: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  cFa: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  mes: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredHostsVhPeers | null = null;
 
-/** Wire bindDeferredHostsVh once companions land. */
-export function setBindDeferredHostsVhPeers(
-  next: BindDeferredHostsVhPeers,
-): void {
+/** Wire bindDeferredHostsVh peers once companions land. */
+export function setBindDeferredHostsVhPeers(next: BindDeferredHostsVhPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Vh` / internal `w0s`.
- * Stage-3 fill for bundle export Vh / w0s
  */
-export function bindDeferredHostsVh(...args: unknown[]): unknown {
+export function bindDeferredHostsVh() {
   if (peers == null) {
     throw new Error("bindDeferredHostsVh peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    C0s = peers.c(), peers._Z(), peers.mes(), peers.RN(), peers.K3r(), peers.cFa(), peers.B3i(), peers.Zes();
+  });
 }

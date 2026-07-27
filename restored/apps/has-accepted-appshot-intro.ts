@@ -1,28 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export xC / Sis
+// Materialized via extractFn(internal `Sis`) / export `xC`.
 
 export type HasAcceptedAppshotIntroPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Gk: (...args: unknown[]) => unknown;
+  Im: (...args: unknown[]) => unknown;
+  Pm: (...args: unknown[]) => unknown;
+  Yf: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  xis: (...args: unknown[]) => unknown;
+  yis: (...args: unknown[]) => unknown;
 };
 
 let peers: HasAcceptedAppshotIntroPeers | null = null;
 
-/** Wire hasAcceptedAppshotIntro once companions land. */
-export function setHasAcceptedAppshotIntroPeers(
-  next: HasAcceptedAppshotIntroPeers,
-): void {
+/** Wire hasAcceptedAppshotIntro peers once companions land. */
+export function setHasAcceptedAppshotIntroPeers(next: HasAcceptedAppshotIntroPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `xC` / internal `Sis`.
- * Stage-3 fill for bundle export xC / Sis
  */
-export function hasAcceptedAppshotIntro(...args: unknown[]): unknown {
+export function hasAcceptedAppshotIntro() {
   if (peers == null) {
     throw new Error("hasAcceptedAppshotIntro peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Gk(), peers.Yf(), peers.Im(), peers.yis(), xis = peers.Pm(`has-accepted-appshot-intro`, !1);
+  });
 }

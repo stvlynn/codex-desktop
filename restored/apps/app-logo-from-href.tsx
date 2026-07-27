@@ -20,16 +20,13 @@ let FallbackLogo: ComponentType<FallbackLogoProps> | null = null;
 let KnownAppLogo: ComponentType<KnownAppLogoProps> | null = null;
 let parseAppId: ((href: string) => { appId?: string } | null) | null = null;
 
-export function setAppLogoFallback(
-  impl: ComponentType<FallbackLogoProps>,
-): void {
+export function setAppLogoFallback(impl: ComponentType<FallbackLogoProps>): void {
   FallbackLogo = impl;
 }
 export function setKnownAppLogo(impl: ComponentType<KnownAppLogoProps>): void {
   KnownAppLogo = impl;
 }
-export function setAppIdFromHrefParser(
-  fn: (href: string) => { appId?: string } | null,
+export function setAppIdFromHrefParser(fn: (href: string) => { appId?: string } | null,
 ): void {
   parseAppId = fn;
 }

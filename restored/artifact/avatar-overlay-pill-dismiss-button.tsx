@@ -17,9 +17,7 @@ type AvatarOverlayPillDismissButtonActionImpl = (
 let impl: AvatarOverlayPillDismissButtonActionImpl | null = null;
 
 /** Wire the full AvatarOverlayPillDismissButtonAction once deeper companion restore lands. */
-export function bindAvatarOverlayPillDismissButtonAction(
-  next: AvatarOverlayPillDismissButtonActionImpl,
-): void {
+export function bindAvatarOverlayPillDismissButtonAction(next: AvatarOverlayPillDismissButtonActionImpl): void {
   impl = next;
 }
 

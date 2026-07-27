@@ -1,28 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Stage 3: Wave BZ — small real body for RPC method-not-found detection.
+// Materialized via extractFn(internal `Ten`) / export `j9`.
 
-type RpcErrorLike = {
-  code?: number;
-  message?: string;
+export type IsUnknownRpcMethodErrorPeers = {
+  Een: (...args: unknown[]) => unknown;
+  includes: (...args: unknown[]) => unknown;
+  toLowerCase: (...args: unknown[]) => unknown;
 };
 
+let peers: IsUnknownRpcMethodErrorPeers | null = null;
+
+/** Wire isUnknownRpcMethodError peers once companions land. */
+export function setIsUnknownRpcMethodErrorPeers(next: IsUnknownRpcMethodErrorPeers): void {
+  peers = next;
+}
+
 /**
- * True when an RPC error indicates an unknown/unsupported method.
  * Bundle export `j9` / internal `Ten`.
  */
-export function isUnknownRpcMethodError(
-  error: unknown,
-  methodName: string,
-): boolean {
-  if (error == null || typeof error !== "object") return false;
-  const parsed = error as RpcErrorLike;
-  if (parsed.code === -32601) return true;
-  const message = parsed.message?.toLowerCase();
-  if (message == null) return false;
-  const method = methodName.toLowerCase();
+export function isUnknownRpcMethodError(e: unknown, t: unknown) {
+  if (peers == null) {
+    throw new Error("isUnknownRpcMethodError peers are not configured");
+  }
+
+  let n = peers.Een.safeParse(e);
+  if (!n.success) return !1;
+  if (n.data.code === -32601) return !0;
+  let r = n.data.message?.toLowerCase();
   return (
-    message.includes("method not found") ||
-    (message.includes("unknown method") && message.includes(method)) ||
-    (message.includes("unknown variant") && message.includes(method))
+    r?.includes(`method not found`) ||
+    (r?.includes(`unknown method`) && r.includes(t.toLowerCase())) ||
+    (r?.includes(`unknown variant`) && r.includes(t.toLowerCase())) ||
+    !1
   );
 }

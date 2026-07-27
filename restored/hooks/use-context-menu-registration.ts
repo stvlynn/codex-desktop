@@ -45,9 +45,7 @@ type ContextMenuRegistrationDeps = {
 
 let deps: ContextMenuRegistrationDeps | null = null;
 
-export function setContextMenuRegistrationDeps(
-  next: ContextMenuRegistrationDeps,
-): void {
+export function setContextMenuRegistrationDeps(next: ContextMenuRegistrationDeps): void {
   deps = next;
 }
 
@@ -55,9 +53,7 @@ export function setContextMenuRegistrationDeps(
  * Bundle `mj` / export `KZ`.
  * Hook-shaped: `(id, onSelect, options?) => void`.
  */
-export function useContextMenuRegistration(
-  id: string,
-  onSelect: () => void,
+export function useContextMenuRegistration(id: string, onSelect: () => void,
   options: ContextMenuRegistrationOptions = {},
 ): void {
   if (deps == null) {

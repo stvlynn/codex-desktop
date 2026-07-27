@@ -1,25 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export uJ / m0r
+// Materialized via extractFn(internal `m0r`) / export `uJ`.
 
 export type DeferredUiUJPeers = {
-  impl: (...args: unknown[]) => unknown;
+  P$r: (...args: unknown[]) => unknown;
+  h0r: (...args: unknown[]) => unknown;
+  k$r: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredUiUJPeers | null = null;
 
-/** Wire deferredUiUJ once companions land. */
+/** Wire deferredUiUJ peers once companions land. */
 export function setDeferredUiUJPeers(next: DeferredUiUJPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `uJ` / internal `m0r`.
- * Stage-3 fill for bundle export uJ / m0r
  */
-export function deferredUiUJ(...args: unknown[]): unknown {
+export function deferredUiUJ(e: unknown, t: unknown, n: unknown) {
   if (peers == null) {
     throw new Error("deferredUiUJ peers are not configured");
   }
-  return peers.impl(...args);
+
+  t == null ? peers.k$r(e, n) : peers.P$r(e, t, n), peers.h0r(e, n);
 }

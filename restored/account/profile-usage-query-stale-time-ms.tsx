@@ -17,9 +17,7 @@ type ProfileUsageQueryStaleTimeMsImpl = (
 let impl: ProfileUsageQueryStaleTimeMsImpl | null = null;
 
 /** Wire the full ProfileUsageQueryStaleTimeMs once deeper restore lands. */
-export function bindProfileUsageQueryStaleTimeMs(
-  next: ProfileUsageQueryStaleTimeMsImpl,
-): void {
+export function bindProfileUsageQueryStaleTimeMs(next: ProfileUsageQueryStaleTimeMsImpl): void {
   impl = next;
 }
 
@@ -27,9 +25,7 @@ export function bindProfileUsageQueryStaleTimeMs(
  * Bundle export `Ui` / internal `u$l`.
  * Stage-3 fill for bundle export Ui / u$l; heavy UI via bind.
  */
-export function ProfileUsageQueryStaleTimeMs(
-  props: ProfileUsageQueryStaleTimeMsProps,
-): ReactElement {
+export function ProfileUsageQueryStaleTimeMs(props: ProfileUsageQueryStaleTimeMsProps): ReactElement {
   if (impl != null) return impl(props) as ReactElement;
   const { className, children } = props;
   return (

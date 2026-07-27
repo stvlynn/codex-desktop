@@ -4,9 +4,7 @@
 export type OfficeDocKind = "document" | "spreadsheet" | "presentation";
 
 /** Map Google/Office MIME types onto a coarse document kind. */
-export function mimeTypeToOfficeKind(
-  mimeType: string | null,
-): OfficeDocKind | null {
+export function mimeTypeToOfficeKind(mimeType: string | null): OfficeDocKind | null {
   switch (mimeType) {
     case null:
       return null;

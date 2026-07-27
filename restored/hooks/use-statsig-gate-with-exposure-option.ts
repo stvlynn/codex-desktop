@@ -1,37 +1,49 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EP — real body via extractFn(internal `gsc`) / export `op`.
+// Materialized via extractFn(internal `gsc`) / export `op`.
 
 export type UseStatsigGateWithExposureOptionPeers = {
-  useGateValue: (
-    gateId: unknown,
-    options?: { disableExposureLog?: boolean },
-  ) => boolean;
+  Mh: (...args: unknown[]) => unknown;
+  _sc: (...args: unknown[]) => unknown;
+  bsc: (...args: unknown[]) => unknown;
+  xsc: (...args: unknown[]) => unknown;
 };
 
 let peers: UseStatsigGateWithExposureOptionPeers | null = null;
 
 /** Wire useStatsigGateWithExposureOption peers once companions land. */
-export function setUseStatsigGateWithExposureOptionPeers(
-  next: UseStatsigGateWithExposureOptionPeers,
-): void {
+export function setUseStatsigGateWithExposureOptionPeers(next: UseStatsigGateWithExposureOptionPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `op` / internal `gsc`.
- * Statsig gate hook with optional exposure disable.
  */
-export function useStatsigGateWithExposureOption(
-  gateId: unknown,
-  options?: { disableExposureLog?: boolean },
-): boolean {
+export function useStatsigGateWithExposureOption(e: unknown) {
   if (peers == null) {
     throw new Error(
-      "UseStatsigGateWithExposureOption peers are not configured",
+      "useStatsigGateWithExposureOption peers are not configured",
     );
   }
-  const opts = options ?? {};
-  return peers.useGateValue(gateId, {
-    disableExposureLog: opts.disableExposureLog,
-  });
+
+  let t = (0, peers.bsc.c)(6),
+    n;
+  t[0] === e
+    ? (n = t[1])
+    : ((n = e === void 0 ? {} : e), (t[0] = e), (t[1] = n));
+  let { disableExposureLog: r } = n,
+    i = r === void 0 ? !1 : r,
+    a;
+  t[2] === i
+    ? (a = t[3])
+    : ((a = {
+        disableExposureLog: i,
+      }),
+      (t[2] = i),
+      (t[3] = a));
+  let { value: o } = peers.Mh(peers.xsc, a),
+    s;
+  return (
+    t[4] === o ? (s = t[5]) : ((s = peers._sc(o)), (t[4] = o), (t[5] = s)),
+    s
+  );
 }

@@ -51,9 +51,7 @@ export type ResolvedAgentMode =
   | null;
 
 /** Bundle `Epe` (co-located). */
-export function isGuardianApprovalsReviewer(
-  reviewer: string | null | undefined,
-): boolean {
+export function isGuardianApprovalsReviewer(reviewer: string | null | undefined): boolean {
   return reviewer === "auto_review" || reviewer === "guardian_subagent";
 }
 
@@ -63,9 +61,7 @@ export function isStrictReadOnlySandbox(policy: SandboxPolicyLike): boolean {
 }
 
 /** Bundle `Ppe` (co-located). */
-export function isDefaultWorkspaceWriteSandbox(
-  policy: SandboxPolicyLike,
-): boolean {
+export function isDefaultWorkspaceWriteSandbox(policy: SandboxPolicyLike): boolean {
   return (
     policy.type === "workspaceWrite" &&
     policy.excludeSlashTmp === false &&

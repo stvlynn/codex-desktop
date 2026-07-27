@@ -16,9 +16,7 @@ export type UseUpdateAccountUserMutationPeers = {
 let peers: UseUpdateAccountUserMutationPeers | null = null;
 
 /** Wire useUpdateAccountUserMutation peers once companions land. */
-export function setUseUpdateAccountUserMutationPeers(
-  next: UseUpdateAccountUserMutationPeers,
-): void {
+export function setUseUpdateAccountUserMutationPeers(next: UseUpdateAccountUserMutationPeers): void {
   peers = next;
 }
 

@@ -1,23 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `Dqa`) / export `pM`.
-
-export type MergeChatSearchResultsArgs = {
-  asyncResults: unknown[];
-  chatGptResults?: unknown[];
-  loadedChatSearchResults: unknown[];
-  limit: number;
-  query: string;
-};
+// Materialized via extractFn(internal `Dqa`) / export `pM`.
 
 export type MergeChatSearchResultsPeers = {
-  mapAsyncResult: (item: unknown) => unknown;
-  mergeLists: (loaded: unknown[], asyncMapped: unknown[]) => unknown[];
-  rankAndLimit: (merged: unknown[], query: string, limit: number) => unknown[];
+  Aqa: (...args: unknown[]) => unknown;
+  Lqa: (...args: unknown[]) => unknown;
+  jqa: (...args: unknown[]) => unknown;
 };
-
 let peers: MergeChatSearchResultsPeers | null = null;
 
-/** Wire chat-search merge peers once companions land. */
+/** Wire mergeChatSearchResults peers once companions land. */
 export function setMergeChatSearchResultsPeers(
   next: MergeChatSearchResultsPeers,
 ): void {
@@ -26,24 +17,20 @@ export function setMergeChatSearchResultsPeers(
 
 /**
  * Bundle export `pM` / internal `Dqa`.
- * Merge async + ChatGPT + loaded chat search results with limit/query.
  */
-export function mergeChatSearchResults(
-  args: MergeChatSearchResultsArgs,
-): unknown[] {
+export function mergeChatSearchResults({
+  asyncResults,
+  chatGptResults = [],
+  loadedChatSearchResults,
+  limit,
+  query,
+}: Record<string, unknown>) {
   if (peers == null) {
-    throw new Error("MergeChatSearchResults peers are not configured");
+    throw new Error("mergeChatSearchResults peers are not configured");
   }
-  const {
-    asyncResults,
-    chatGptResults = [],
-    loadedChatSearchResults,
-    limit,
-    query,
-  } = args;
-  const mapped = asyncResults.map(peers.mapAsyncResult);
-  return peers.rankAndLimit(
-    peers.mergeLists([...loadedChatSearchResults, ...chatGptResults], mapped),
+  let a = asyncResults.map(peers.jqa);
+  return peers.Aqa(
+    peers.Lqa([...loadedChatSearchResults, ...chatGptResults], a),
     query,
     limit,
   );

@@ -1,80 +1,45 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EG — real body via extractFn(internal `yI`) / export `TW`.
+// Materialized via extractFn(internal `yI`) / export `TW`.
 
 export type ParseDiffFromFilePeers = {
-  emptyFile: () => {
-    name: string;
-    contents: string;
-    header?: string;
-    cacheKey?: string;
-  };
-  buildPatch: (
-    oldName: string,
-    newName: string,
-    oldContents: string,
-    newContents: string,
-    oldHeader: unknown,
-    newHeader: unknown,
-    options: unknown,
-  ) => unknown;
-  parsePatch: (
-    patch: unknown,
-    opts: { cacheKey?: string; force?: boolean },
-  ) => unknown;
+  Eji: (...args: unknown[]) => unknown;
+  cacheKey: (...args: unknown[]) => unknown;
+  dAi: (...args: unknown[]) => unknown;
+  jji: (...args: unknown[]) => unknown;
+  lang: (...args: unknown[]) => unknown;
+  name: (...args: unknown[]) => unknown;
 };
 
 let peers: ParseDiffFromFilePeers | null = null;
 
-/** Wire parse-diff-from-file peers once companions land. */
+/** Wire parseDiffFromFile peers once companions land. */
 export function setParseDiffFromFilePeers(next: ParseDiffFromFilePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `TW` / internal `yI`.
- * Parse a unified diff from old/new file snapshots.
  */
-export function parseDiffFromFile(
-  oldFile: {
-    name: string;
-    contents: string;
-    header?: string;
-    cacheKey?: string;
-  } | null,
-  newFile: {
-    name: string;
-    contents: string;
-    header?: string;
-    cacheKey?: string;
-  } | null,
-  options: unknown,
-  force: boolean = false,
-): unknown {
+export function parseDiffFromFile(e: unknown, t: unknown, n: unknown, r: unknown= !1) {
   if (peers == null) {
-    throw new Error("ParseDiffFromFile peers are not configured");
+    throw new Error("parseDiffFromFile peers are not configured");
   }
-  if (oldFile === null && newFile === null) {
-    throw new Error(
-      "parseDiffFromFile: You must pass oldFile, newFile, or both",
-    );
-  }
-  const left = oldFile ?? peers.emptyFile();
-  const right = newFile ?? peers.emptyFile();
-  const cacheKey = (() => {
-    const a = oldFile?.cacheKey ?? oldFile?.name;
-    const b = newFile?.cacheKey ?? newFile?.name;
-    return a != null || b != null ? `${a ?? ""}|${b ?? ""}` : undefined;
-  })();
-  return peers.parsePatch(
-    peers.buildPatch(
-      left.name,
-      right.name,
-      left.contents,
-      right.contents,
-      left.header,
-      right.header,
-      options,
-    ),
-    { cacheKey, force },
-  );
+
+  if (e === null && t === null) throw Error(`parseDiffFromFile: You must pass oldFile, newFile, or both`);
+  let i = e ?? peers.jji(),
+    a = t ?? peers.jji(),
+    o = peers.dAi(peers.Eji(i.name, a.name, i.contents, a.contents, i.header, a.header, n), {
+      cacheKey: (() => {
+        let n = e?.cacheKey ?? e?.name,
+          r = t?.cacheKey ?? t?.name;
+        return n != null && r != null ? n + `:` + r : n ?? r;
+      })(),
+      oldFile: i,
+      newFile: a,
+      throwOnError: r
+    });
+  if (o == null) throw Error(`parseDiffFrom: FileInvalid diff -- probably need to fix something -- if the files are the same maybe?`);
+  e === null ? (o.type = `new`, o.prevName = void 0) : t === null && (o.type = `deleted`, o.prevName = void 0);
+  let s = t?.lang ?? (t === null ? e?.lang : void 0);
+  return s != null && (o.lang = s), o;
 }

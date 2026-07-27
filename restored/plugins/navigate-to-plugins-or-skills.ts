@@ -1,42 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EA — real body via extractFn(internal `AIl`) / export `$o`.
+// Materialized via extractFn(internal `AIl`) / export `$o`.
 
 export type NavigateToPluginsOrSkillsPeers = {
-  logProductEvent: (
-    store: unknown,
-    event: unknown,
-    payload: { item: "plugins" | "skills" },
-  ) => void;
-  navigateEvent: unknown;
+  Ub: (...args: unknown[]) => unknown;
+  Vb: (...args: unknown[]) => unknown;
 };
 
 let peers: NavigateToPluginsOrSkillsPeers | null = null;
 
-/** Wire navigation analytics once companions land. */
-export function setNavigateToPluginsOrSkillsPeers(
-  next: NavigateToPluginsOrSkillsPeers,
-): void {
+/** Wire navigateToPluginsOrSkills peers once companions land. */
+export function setNavigateToPluginsOrSkillsPeers(next: NavigateToPluginsOrSkillsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `$o` / internal `AIl`.
- * Log plugins/skills entry then navigate to /skills with directory state.
  */
-export function navigateToPluginsOrSkills(
-  store: unknown,
-  navigate: (path: string, opts: { state: Record<string, unknown> }) => void,
-  preferPlugins: boolean,
-  pluginDirectoryEntrypoint: unknown,
-  initialHostId: unknown,
-): void {
+export function navigateToPluginsOrSkills(e: unknown, t: unknown, n: unknown, r: unknown, i: unknown) {
   if (peers == null) {
-    throw new Error("NavigateToPluginsOrSkills peers are not configured");
+    throw new Error("navigateToPluginsOrSkills peers are not configured");
   }
-  peers.logProductEvent(store, peers.navigateEvent, {
-    item: preferPlugins ? "plugins" : "skills",
-  });
-  navigate("/skills", {
-    state: { initialHostId, pluginDirectoryEntrypoint },
+
+  peers.Ub(e, peers.Vb, {
+    item: n ? `plugins` : `skills`
+  }), t(`/skills`, {
+    state: {
+      initialHostId: i,
+      pluginDirectoryEntrypoint: r
+    }
   });
 }

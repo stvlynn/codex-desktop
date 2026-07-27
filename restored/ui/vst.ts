@@ -1,25 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Vst / hg
+// Materialized via extractFn(internal `hg`) / export `Vst`.
 
 export type VstPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Got: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: VstPeers | null = null;
 
-/** Wire vst once companions land. */
+/** Wire vst peers once companions land. */
 export function setVstPeers(next: VstPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Vst` / internal `hg`.
- * Stage-3 fill for bundle export Vst / hg
  */
-export function vst(...args: unknown[]): unknown {
+export function vst() {
   if (peers == null) {
     throw new Error("vst peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Got();
+  });
 }

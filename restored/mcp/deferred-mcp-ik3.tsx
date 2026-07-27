@@ -1,42 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export iK / g9r
+// Materialized via extractFn(internal `g9r`) / export `iK`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredMcpIK3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredMcpIK3Peers = {
+  Q: (...args: unknown[]) => unknown;
+  U7r: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
 };
 
-type DeferredMcpIK3Impl = (props: DeferredMcpIK3Props) => ReactNode;
-let impl: DeferredMcpIK3Impl | null = null;
+let peers: BindDeferredMcpIK3Peers | null = null;
 
-/** Wire the full DeferredMcpIK3 once deeper restore lands. */
-export function bindDeferredMcpIK3(next: DeferredMcpIK3Impl): void {
-  impl = next;
+/** Wire bindDeferredMcpIK3 peers once companions land. */
+export function setBindDeferredMcpIK3Peers(next: BindDeferredMcpIK3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `iK` / internal `g9r`.
- * Stage-3 fill for bundle export iK / g9r; heavy UI via bind.
  */
-export function DeferredMcpIK3(props: DeferredMcpIK3Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-es-scaffold="iK"
-      aria-label="DeferredMcpIK3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export iK / g9r
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredMcpIK3() {
+  if (peers == null) {
+    throw new Error("bindDeferredMcpIK3 peers are not configured");
+  }
+
+  return peers.ka(peers.Q, e => peers.U7r(e));
 }

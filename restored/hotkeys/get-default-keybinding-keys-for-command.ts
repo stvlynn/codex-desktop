@@ -1,18 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `VTr`) / export `m1`.
+// Materialized via extractFn(internal `VTr`) / export `m1`.
 
 export type GetDefaultKeybindingKeysForCommandPeers = {
-  resolveCommand: (commandId: unknown) => unknown;
-  isKeybindableCommand: (command: unknown) => boolean;
-  getKeybindingSpec: (command: unknown) => {
-    platformDefaultKeybindings?: {
-      macOS?: Array<{ key: string }>;
-      default?: Array<{ key: string }>;
-    };
-    defaultKeybindings?: Array<{ key: string }> | null;
-  } | null;
+  ATr: (...args: unknown[]) => unknown;
+  FTr: (...args: unknown[]) => unknown;
+  UTr: (...args: unknown[]) => unknown;
+  default: (...args: unknown[]) => unknown;
+  macOS: (...args: unknown[]) => unknown;
 };
-
 let peers: GetDefaultKeybindingKeysForCommandPeers | null = null;
 
 /** Wire getDefaultKeybindingKeysForCommand peers once companions land. */
@@ -24,30 +19,32 @@ export function setGetDefaultKeybindingKeysForCommandPeers(
 
 /**
  * Bundle export `m1` / internal `VTr`.
- * Return default keybinding keys for a command id / platform.
  */
-export function getDefaultKeybindingKeysForCommand(args: {
-  commandId: unknown;
-  isMacOS?: boolean;
-}): string[] {
+export function getDefaultKeybindingKeysForCommand({
+  commandId,
+  isMacOS,
+}: Record<string, unknown>) {
   if (peers == null) {
     throw new Error(
-      "GetDefaultKeybindingKeysForCommand peers are not configured",
+      "getDefaultKeybindingKeysForCommand peers are not configured",
     );
   }
-  const command = peers.resolveCommand(args.commandId);
-  if (command == null || !peers.isKeybindableCommand(command)) return [];
-  const spec = peers.getKeybindingSpec(command);
-  if (spec == null) return [];
-  if (args.isMacOS === true && spec.platformDefaultKeybindings?.macOS != null) {
-    return spec.platformDefaultKeybindings.macOS.map((entry) => entry.key);
-  }
-  if (
-    args.isMacOS === false &&
-    spec.platformDefaultKeybindings?.default != null
-  ) {
-    return spec.platformDefaultKeybindings.default.map((entry) => entry.key);
-  }
-  if (spec.defaultKeybindings == null) return [];
-  return spec.defaultKeybindings.map((entry) => entry.key);
+  let n = peers.ATr(commandId);
+  if (n == null || !peers.FTr(n)) return [];
+  let r = peers.UTr(n);
+  return r == null
+    ? []
+    : isMacOS === true && r.platformDefaultKeybindings?.macOS != null
+      ? r.platformDefaultKeybindings.macOS.map((item) => {
+          return item.key;
+        })
+      : isMacOS === false && r.platformDefaultKeybindings?.default != null
+        ? r.platformDefaultKeybindings.default.map((item) => {
+            return item.key;
+          })
+        : r.defaultKeybindings == null
+          ? []
+          : r.defaultKeybindings.map((item) => {
+              return item.key;
+            });
 }

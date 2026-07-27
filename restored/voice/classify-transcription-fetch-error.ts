@@ -1,109 +1,87 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EI — real body via extractFn(internal `Vit`) / export `Tct`.
+// Materialized via extractFn(internal `Vit`) / export `Tct`.
 
 export type ClassifyTranscriptionFetchErrorPeers = {
-  HttpError: new (...args: unknown[]) => { status: number; message: string };
-  rateLimitMessage: (error: {
-    status: number;
-    message: string;
-  }) => { message: string } | null;
-  messages: {
-    connectionError: unknown;
-    transcribeError: unknown;
-    microphonePermissionDenied: unknown;
-    microphoneMissing: unknown;
-    microphoneUnavailable: unknown;
-    unsupported: unknown;
-    startError: unknown;
-  };
+  DOMException: (...args: unknown[]) => unknown;
+  Rit: (...args: unknown[]) => unknown;
+  Xf: (...args: unknown[]) => unknown;
+  Yh: (...args: unknown[]) => unknown;
 };
 
 let peers: ClassifyTranscriptionFetchErrorPeers | null = null;
 
 /** Wire classifyTranscriptionFetchError peers once companions land. */
-export function setClassifyTranscriptionFetchErrorPeers(
-  next: ClassifyTranscriptionFetchErrorPeers,
-): void {
+export function setClassifyTranscriptionFetchErrorPeers(next: ClassifyTranscriptionFetchErrorPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Tct` / internal `Vit`.
- * Map transcription / microphone errors to user-facing retry copy.
  */
-export type IntlLike = {
-  formatMessage: (desc: unknown) => string;
-};
-
-export function classifyTranscriptionFetchError(
-  intl: IntlLike,
-  kind: string,
-  error: unknown,
-): { message: string; canRetry: boolean } {
+export function classifyTranscriptionFetchError(e: unknown, t: unknown, n: unknown) {
   if (peers == null) {
-    throw new Error("ClassifyTranscriptionFetchError peers are not configured");
+    throw new Error("classifyTranscriptionFetchError peers are not configured");
   }
-  if (kind === "transcription") {
-    if (error instanceof peers.HttpError) {
-      if (error.status === 429) {
-        const limited = peers.rateLimitMessage(error);
-        if (limited != null)
-          return { message: limited.message, canRetry: false };
+
+  if (t === `transcription`) {
+    if (n instanceof peers.Xf) {
+      if (n.status === 429) {
+        let e = peers.Rit(n);
+        if (e != null)
+          return {
+            message: e.message,
+            canRetry: !1,
+          };
       }
-      const lower = error.message.toLowerCase();
+      let t = n.message.toLowerCase();
       if (
-        error.status === 0 ||
-        lower.includes("fetch failed") ||
-        lower.includes("failed to fetch") ||
-        lower.includes("network")
-      ) {
+        n.status === 0 ||
+        t.includes(`fetch failed`) ||
+        t.includes(`failed to fetch`) ||
+        t.includes(`network`)
+      )
         return {
-          message: intl.formatMessage(peers.messages.connectionError),
-          canRetry: true,
+          message: e.formatMessage(peers.Yh.connectionError),
+          canRetry: !0,
         };
-      }
     }
     return {
-      message: intl.formatMessage(peers.messages.transcribeError),
-      canRetry: true,
+      message: e.formatMessage(peers.Yh.transcribeError),
+      canRetry: !0,
     };
   }
-  let name: string | null = null;
-  if (error instanceof Error) name = error.name;
-  if (typeof DOMException !== "undefined" && error instanceof DOMException) {
-    name = error.name;
-  }
-  if (name === "NotAllowedError" || name === "SecurityError") {
-    return {
-      message: intl.formatMessage(peers.messages.microphonePermissionDenied),
-      canRetry: false,
-    };
-  }
-  if (
-    name === "NotFoundError" ||
-    name === "DevicesNotFoundError" ||
-    name === "OverconstrainedError" ||
-    name === "ConstraintNotSatisfiedError"
-  ) {
-    return {
-      message: intl.formatMessage(peers.messages.microphoneMissing),
-      canRetry: false,
-    };
-  }
-  if (name === "NotReadableError" || name === "TrackStartError") {
-    return {
-      message: intl.formatMessage(peers.messages.microphoneUnavailable),
-      canRetry: false,
-    };
-  }
-  if (name === "NotSupportedError" || name === "TypeError") {
-    return {
-      message: intl.formatMessage(peers.messages.unsupported),
-      canRetry: false,
-    };
-  }
-  return {
-    message: intl.formatMessage(peers.messages.startError),
-    canRetry: false,
-  };
+  let r = null;
+  return (
+    n instanceof Error && (r = n.name),
+    typeof peers.DOMException < `u` &&
+      n instanceof peers.DOMException &&
+      (r = n.name),
+    r === `NotAllowedError` || r === `SecurityError`
+      ? {
+          message: e.formatMessage(peers.Yh.microphonePermissionDenied),
+          canRetry: !1,
+        }
+      : r === `NotFoundError` ||
+          r === `DevicesNotFoundError` ||
+          r === `OverconstrainedError` ||
+          r === `ConstraintNotSatisfiedError`
+        ? {
+            message: e.formatMessage(peers.Yh.microphoneMissing),
+            canRetry: !1,
+          }
+        : r === `NotReadableError` || r === `TrackStartError`
+          ? {
+              message: e.formatMessage(peers.Yh.microphoneUnavailable),
+              canRetry: !1,
+            }
+          : r === `NotSupportedError` || r === `TypeError`
+            ? {
+                message: e.formatMessage(peers.Yh.unsupported),
+                canRetry: !1,
+              }
+            : {
+                message: e.formatMessage(peers.Yh.startError),
+                canRetry: !1,
+              }
+  );
 }

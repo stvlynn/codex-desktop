@@ -1,28 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export gW / DI
+// Materialized via extractFn(internal `DI`) / export `gW`.
 
 export type BindDeferredConversationGWPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
+  pFi: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredConversationGWPeers | null = null;
 
-/** Wire bindDeferredConversationGW once companions land. */
-export function setBindDeferredConversationGWPeers(
-  next: BindDeferredConversationGWPeers,
-): void {
+/** Wire bindDeferredConversationGW peers once companions land. */
+export function setBindDeferredConversationGWPeers(next: BindDeferredConversationGWPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `gW` / internal `DI`.
- * Stage-3 fill for bundle export gW / DI
  */
-export function bindDeferredConversationGW(...args: unknown[]): unknown {
+export function bindDeferredConversationGW() {
   if (peers == null) {
     throw new Error("bindDeferredConversationGW peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ma(peers.hT, ({
+    get: e
+  }) => e(peers.pFi).cwd);
 }

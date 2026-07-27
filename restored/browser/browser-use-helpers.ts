@@ -9,9 +9,7 @@ export function isStrictFalse(value: unknown): value is false {
 /**
  * Bundle `oFa` / export `SN` — first non-empty trimmed string from a list.
  */
-export function firstNonEmptyTrimmedString(
-  values: Array<string | null | undefined> | null | undefined,
-): string | null {
+export function firstNonEmptyTrimmedString(values: Array<string | null | undefined> | null | undefined): string | null {
   return values?.map((v) => v?.trim() ?? "").find((v) => v.length > 0) ?? null;
 }
 
@@ -36,9 +34,7 @@ export function bindPluginMentionPromptDeps(next: {
 /**
  * Bundle `sFa` / export `xN` — `[@Name](plugin-uri) prompt` mention string.
  */
-export function buildPluginMentionPrompt(
-  args: PluginMentionPromptArgs,
-): string {
+export function buildPluginMentionPrompt(args: PluginMentionPromptArgs): string {
   const uri =
     buildPluginUriImpl?.(args.pluginId) ?? `plugin://${args.pluginId}`;
   const mention =
@@ -77,16 +73,12 @@ export function resolvePluginRequestId(plugin: {
 let marketplacePathsEqualImpl: ((a: string, b: string) => boolean) | null =
   null;
 
-export function bindMarketplacePathsEqual(
-  next: (a: string, b: string) => boolean,
+export function bindMarketplacePathsEqual(next: (a: string, b: string) => boolean,
 ): void {
   marketplacePathsEqualImpl = next;
 }
 
-export function marketplacePathsEqual(
-  left: string | null | undefined,
-  right: string | null | undefined,
-): boolean {
+export function marketplacePathsEqual(left: string | null | undefined, right: string | null | undefined): boolean {
   if (left == null || right == null) return false;
   if (marketplacePathsEqualImpl != null) {
     return marketplacePathsEqualImpl(left, right);

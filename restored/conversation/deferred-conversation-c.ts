@@ -1,28 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export c$ / EA
+// Materialized via extractFn(internal `EA`) / export `c$`.
 
 export type BindDeferredConversationCPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  ep: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredConversationCPeers | null = null;
 
-/** Wire bindDeferredConversationC once companions land. */
-export function setBindDeferredConversationCPeers(
-  next: BindDeferredConversationCPeers,
-): void {
+/** Wire bindDeferredConversationC peers once companions land. */
+export function setBindDeferredConversationCPeers(next: BindDeferredConversationCPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `c$` / internal `EA`.
- * Stage-3 fill for bundle export c$ / EA
  */
-export function bindDeferredConversationC(...args: unknown[]): unknown {
+export function bindDeferredConversationC() {
   if (peers == null) {
     throw new Error("bindDeferredConversationC peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.ep(peers.Q, `list-automations`, {
+    enabled: !0,
+    refetchInterval: peers.Hf.ONE_MINUTE,
+    staleTime: peers.Hf.ONE_MINUTE,
+  });
 }

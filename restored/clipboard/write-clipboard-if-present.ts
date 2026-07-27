@@ -7,8 +7,6 @@ import {
 } from "./write-clipboard-contents.ts";
 
 /** Write clipboard contents when value is truthy (fire-and-forget). */
-export function writeClipboardIfPresent(
-  contents: ClipboardContents | null | undefined,
-): void {
+export function writeClipboardIfPresent(contents: ClipboardContents | null | undefined): void {
   if (contents) void writeClipboardContents(contents);
 }

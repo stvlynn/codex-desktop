@@ -1,26 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `wI`) / export `bW`.
+// Materialized via extractFn(internal `wI`) / export `bW`.
 
 export type ParseDiffPatchIntoFileEntriesPeers = {
-  smallPatchLimit: number;
-  cache: Map<string, Map<string, unknown>>;
-  collectBinaryPaths: (patch: string) => Set<string>;
-  collectSubmodulePaths: (patch: string) => Set<string>;
-  preparePatch: (patch: string) => { diff: unknown };
-  parseOptions: (patch: string) => unknown;
-  parseFiles: (diff: unknown, options: unknown) => unknown[];
-  logError: (message: string, context: unknown) => void;
-  toEntries: (args: {
-    files: unknown[];
-    binaryPaths: Set<string>;
-    submodulePaths: Set<string>;
-    maxFiles: unknown;
-  }) => unknown;
+  QPi: (...args: unknown[]) => unknown;
+  TI: (...args: unknown[]) => unknown;
+  Wf: (...args: unknown[]) => unknown;
+  additionStart: (...args: unknown[]) => unknown;
+  cFi: (...args: unknown[]) => unknown;
+  dFi: (...args: unknown[]) => unknown;
+  deletionStart: (...args: unknown[]) => unknown;
+  eFi: (...args: unknown[]) => unknown;
+  get: (...args: unknown[]) => unknown;
+  lFi: (...args: unknown[]) => unknown;
+  nFi: (...args: unknown[]) => unknown;
+  oFi: (...args: unknown[]) => unknown;
+  pAi: (...args: unknown[]) => unknown;
+  sFi: (...args: unknown[]) => unknown;
+  tFi: (...args: unknown[]) => unknown;
+  uFi: (...args: unknown[]) => unknown;
 };
-
 let peers: ParseDiffPatchIntoFileEntriesPeers | null = null;
 
-/** Wire parse-diff-patch peers once companions land. */
+/** Wire parseDiffPatchIntoFileEntries peers once companions land. */
 export function setParseDiffPatchIntoFileEntriesPeers(
   next: ParseDiffPatchIntoFileEntriesPeers,
 ): void {
@@ -29,52 +30,95 @@ export function setParseDiffPatchIntoFileEntriesPeers(
 
 /**
  * Bundle export `bW` / internal `wI`.
- * Parse a git diff patch into file entries (cached for small patches).
  */
 export function parseDiffPatchIntoFileEntries(
-  patch: string,
-  options: { maxFiles?: number } = {},
-): unknown {
+  e: unknown,
+  { maxFiles }: Record<string, unknown> = {},
+) {
   if (peers == null) {
-    throw new Error("ParseDiffPatchIntoFileEntries peers are not configured");
+    throw new Error("parseDiffPatchIntoFileEntries peers are not configured");
   }
-  const { maxFiles } = options;
-  const cacheable = patch.length <= peers.smallPatchLimit;
-  const cacheKey = `${maxFiles ?? "all"}`;
-  let bucket = cacheable ? peers.cache.get(patch) : undefined;
-  const cached = bucket?.get(cacheKey);
-  if (bucket) {
-    peers.cache.delete(patch);
-    peers.cache.set(patch, bucket);
-  }
-  if (cached) return cached;
-  const binaryPaths = patch.includes("GIT binary patch")
-    ? peers.collectBinaryPaths(patch)
-    : new Set<string>();
-  const submodulePaths = patch.includes("160000")
-    ? peers.collectSubmodulePaths(patch)
-    : new Set<string>();
-  let files: unknown[] = [];
-  const prepared = peers.preparePatch(patch);
+  let n = e.length <= peers.lFi,
+    r = `${maxFiles ?? "all"}`,
+    i = n ? peers.TI.get(e) : undefined,
+    a = i?.get(r);
+  if ((i && (peers.TI.delete(e), peers.TI.set(e, i)), a)) return a;
+  let o = e.includes("GIT binary patch") ? peers.uFi(e) : new Set(),
+    s = e.includes("160000") ? peers.dFi(e) : new Set(),
+    c,
+    l = peers.tFi(e);
   try {
-    files = peers.parseFiles(prepared.diff, peers.parseOptions(patch));
-  } catch (error) {
-    peers.logError("Failed to parse diff", {
+    c = peers.pAi(l.diff, peers.QPi(e));
+  } catch (e) {
+    peers.Wf.error("Failed to parse diff", {
       safe: {},
-      sensitive: { error },
+      sensitive: {
+        error: e,
+      },
     });
-    files = [];
+    c = [];
   }
-  const result = peers.toEntries({
-    files,
-    binaryPaths,
-    submodulePaths,
-    maxFiles,
-  });
-  if (cacheable) {
-    bucket = peers.cache.get(patch) ?? new Map();
-    bucket.set(cacheKey, result);
-    peers.cache.set(patch, bucket);
+  let u = [],
+    d = 0;
+  for (let e of c)
+    for (let n of e.files) {
+      if (maxFiles !== undefined && u.length >= maxFiles) return u;
+      try {
+        let e = peers.nFi(n, l.pathsByFileIndex.get(d)),
+          { oldPath, newPath } = peers.eFi(e),
+          i = peers.oFi(e),
+          a = e.hunks,
+          c = peers.sFi.default(a, (e) => {
+            return e.additionLines;
+          }),
+          f = peers.sFi.default(a, (e) => {
+            return e.deletionLines;
+          }),
+          p = a.find((item) => {
+            return item.additionCount > 0;
+          })?.additionStart,
+          m = a.find((item) => {
+            return item.deletionLines > 0;
+          })?.deletionStart;
+        u.push({
+          metadata: e,
+          oldPath,
+          newPath,
+          additions: c,
+          deletions: f,
+          get changedBytes() {
+            return i().changedBytes;
+          },
+          get maxChangedLineBytes() {
+            return i().maxChangedLineBytes;
+          },
+          firstAdditionLine: p,
+          firstDeletionLine: m,
+          isBinary: o.has(d),
+          isGitlink: s.has(d),
+        });
+      } catch (e) {
+        peers.Wf.error("Failed to parse diff", {
+          safe: {},
+          sensitive: {
+            name: n.name,
+            error: e,
+          },
+        });
+      }
+      d += 1;
+    }
+  if (n) {
+    let t = i ?? new Map();
+    if (
+      (t.set(r, u),
+      peers.TI.delete(e),
+      peers.TI.set(e, t),
+      peers.TI.size > peers.cFi)
+    ) {
+      let e = peers.TI.keys().next().value;
+      e && peers.TI.delete(e);
+    }
   }
-  return result;
+  return u;
 }

@@ -16,9 +16,7 @@ export type UseUpgradePlanCopyVariantPeers = {
 let peers: UseUpgradePlanCopyVariantPeers | null = null;
 
 /** Wire upgrade-plan copy variant peers once companions land. */
-export function setUseUpgradePlanCopyVariantPeers(
-  next: UseUpgradePlanCopyVariantPeers,
-): void {
+export function setUseUpgradePlanCopyVariantPeers(next: UseUpgradePlanCopyVariantPeers): void {
   peers = next;
 }
 

@@ -30,10 +30,7 @@ function tabsFromController(
 /**
  * Bundle `rL` / export `DU`.
  */
-export function listConversationBrowserTabMatches(
-  scope: AppActionScope,
-  conversationId: string,
-): ConversationBrowserTabMatch[] {
+export function listConversationBrowserTabMatches(scope: AppActionScope, conversationId: string): ConversationBrowserTabMatch[] {
   const panels: Array<{ side: PanelSide; controller: PanelControllerAtoms }> = [
     { side: "right", controller: rightPanelController },
     { side: "bottom", controller: bottomPanelController },

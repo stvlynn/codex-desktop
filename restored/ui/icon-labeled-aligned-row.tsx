@@ -1,47 +1,52 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Icon labeled aligned row
+// Materialized via extractFn(internal `wFs`) / export `V_`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type IconLabeledAlignedRowProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindIconLabeledAlignedRowPeers = {
+  $: (...args: unknown[]) => unknown;
+  EFs: (...args: unknown[]) => unknown;
+  TFs: (...args: unknown[]) => unknown;
 };
+let peers: BindIconLabeledAlignedRowPeers | null = null;
 
-type IconLabeledAlignedRowImpl = (
-  props: IconLabeledAlignedRowProps,
-) => ReactNode;
-let impl: IconLabeledAlignedRowImpl | null = null;
-
-/** Wire the full IconLabeledAlignedRow once deeper restore lands. */
-export function bindIconLabeledAlignedRow(
-  next: IconLabeledAlignedRowImpl,
+/** Wire bindIconLabeledAlignedRow peers once companions land. */
+export function setBindIconLabeledAlignedRowPeers(
+  next: BindIconLabeledAlignedRowPeers,
 ): void {
-  impl = next;
+  peers = next;
 }
 
 /**
  * Bundle export `V_` / internal `wFs`.
- * Icon labeled aligned row; heavy UI via bind.
  */
-export function IconLabeledAlignedRow(
-  props: IconLabeledAlignedRowProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
+export function bindIconLabeledAlignedRow(props: unknown) {
+  if (peers == null) {
+    throw new Error("bindIconLabeledAlignedRow peers are not configured");
+  }
+  let { align, children, className, icon, label } = props,
+    s =
+      (align === undefined ? "center" : align) === "start"
+        ? "[@container_(min-width:24rem)]:items-start"
+        : "[@container_(min-width:24rem)]:items-center",
+    c = peers.$(
+      "grid min-h-[var(--height-token-row)] grid-cols-1 items-start gap-x-3 gap-y-0.5 py-row-y text-[length:var(--detail-row-font-size,var(--text-base))] leading-5 [@container_(min-width:24rem)]:grid-cols-[var(--detail-property-label-width,120px)_minmax(0,1fr)]",
+      s,
+      className,
+    );
+  let l = (
+    <dt className="flex min-w-0 items-center gap-2 wrap-anywhere text-token-description-foreground">
+      {icon}
+      {label}
+    </dt>
+  );
+  let u = (
+    <dd className="m-0 flex min-w-0 items-center wrap-anywhere text-token-foreground">
+      {children}
+    </dd>
+  );
   return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-em-scaffold="V_"
-      aria-label="IconLabeledAlignedRow"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Icon labeled aligned row
-        </div>
-      )}
+    <div className={c}>
+      {l}
+      {u}
     </div>
   );
 }

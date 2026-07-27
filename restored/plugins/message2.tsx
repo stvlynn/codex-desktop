@@ -1,42 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Vht / p_e
+// Materialized via extractFn(internal `p_e`) / export `Vht`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindMessage2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindMessage2Peers = {
+  d_e: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  f_e: (...args: unknown[]) => unknown;
+  l_e: (...args: unknown[]) => unknown;
+  u_e: (...args: unknown[]) => unknown;
 };
 
-type BindMessage2Impl = (props: BindMessage2Props) => ReactNode;
-let impl: BindMessage2Impl | null = null;
+let peers: BindBindMessage2Peers | null = null;
 
-/** Wire the full BindMessage2 once deeper restore lands. */
-export function bindBindMessage2(next: BindMessage2Impl): void {
-  impl = next;
+/** Wire bindBindMessage2 peers once companions land. */
+export function setBindBindMessage2Peers(next: BindBindMessage2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Vht` / internal `p_e`.
- * Stage-3 fill for bundle export Vht / p_e; heavy UI via bind.
  */
-export function BindMessage2(props: BindMessage2Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fa-scaffold="Vht"
-      aria-label="BindMessage2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Vht / p_e
-        </div>
-      )}
-    </div>
-  );
+export function bindBindMessage2() {
+  if (peers == null) {
+    throw new Error("bindBindMessage2 peers are not configured");
+  }
+
+  return peers.e(() => {
+    l_e = /^[A-Za-z]:[\\/]/, u_e = /^\/[A-Za-z]:[\\/]/, d_e = /^\\\\[^\\]+\\[^\\]+/, f_e = /^\/\/[^/]+\/[^/]+/;
+  });
 }

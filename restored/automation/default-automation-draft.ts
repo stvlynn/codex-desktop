@@ -38,9 +38,7 @@ export const DEFAULT_AUTOMATION_DRAFT: AutomationDraft = {
 };
 
 /** Heartbeat variant of the default draft when `asHeartbeat` is true. Bundle `xQc` / `ju`. */
-export function automationDraftWithHeartbeatKind(
-  asHeartbeat: boolean,
-): AutomationDraft {
+export function automationDraftWithHeartbeatKind(asHeartbeat: boolean): AutomationDraft {
   return asHeartbeat
     ? { ...DEFAULT_AUTOMATION_DRAFT, kind: "heartbeat" }
     : DEFAULT_AUTOMATION_DRAFT;

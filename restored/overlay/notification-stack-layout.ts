@@ -21,10 +21,7 @@ export const NOTIFICATION_STACK_SCALE_STEPS: readonly NotificationStackScaleStep
 export const NOTIFICATION_STACK_BASE_CARD_HEIGHT = 54;
 
 /** Bundle `Pge` (co-located). */
-export function notificationStackOffsetY(
-  height: number,
-  step: NotificationStackScaleStep,
-): number {
+export function notificationStackOffsetY(height: number, step: NotificationStackScaleStep): number {
   return (
     step.offsetY +
     (height - NOTIFICATION_STACK_BASE_CARD_HEIGHT) * (1 - step.scaleY)
@@ -35,10 +32,7 @@ export function notificationStackOffsetY(
  * Bundle `Mge` / export `ugt`.
  * Total height occupied by `count` stacked cards (minimum `minHeight`).
  */
-export function notificationStackContentHeight(
-  count: number,
-  minHeight: number = NOTIFICATION_STACK_BASE_CARD_HEIGHT,
-): number {
+export function notificationStackContentHeight(count: number, minHeight: number = NOTIFICATION_STACK_BASE_CARD_HEIGHT): number {
   if (count <= 0) return 0;
   const step =
     NOTIFICATION_STACK_SCALE_STEPS[
@@ -61,10 +55,7 @@ export type RectLike = {
  * Bundle `Nge` / export `dgt`.
  * Apply a stack scale step to a card rect (centered horizontally).
  */
-export function scaleNotificationStackRect(
-  rect: RectLike,
-  step: NotificationStackScaleStep,
-): RectLike {
+export function scaleNotificationStackRect(rect: RectLike, step: NotificationStackScaleStep): RectLike {
   const width = rect.width * step.scaleX;
   return {
     height: rect.height * step.scaleY,

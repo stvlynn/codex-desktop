@@ -12,9 +12,7 @@ type FeatureGateCheck = (gateId: string) => boolean;
 let checkFeatureGate: FeatureGateCheck | null = null;
 
 /** Wire the Statsig/feature-gate reader (`kh` in the bundle). */
-export function setVisualizationFeatureGateChecker(
-  checker: FeatureGateCheck,
-): void {
+export function setVisualizationFeatureGateChecker(checker: FeatureGateCheck): void {
   checkFeatureGate = checker;
 }
 

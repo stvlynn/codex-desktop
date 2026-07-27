@@ -1,33 +1,22 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `QFo`) / export `xO`.
+// Materialized via extractFn(internal `QFo`) / export `xO`.
 
-export type AtomStoreSet = {
-  set: (atom: unknown, value: unknown) => void;
+export type XOPeers = {
+  eIo: (...args: unknown[]) => unknown;
 };
+let peers: XOPeers | null = null;
 
-export type SetStableWorktreeStatusAtomPeers = {
-  stableWorktreeStatusAtom: unknown;
-};
-
-let peers: SetStableWorktreeStatusAtomPeers | null = null;
-
-/** Wire stable worktree status write peers once companions land. */
-export function setSetStableWorktreeStatusAtomPeers(
-  next: SetStableWorktreeStatusAtomPeers,
-): void {
+/** Wire xO peers once companions land. */
+export function setXOPeers(next: XOPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `xO` / internal `QFo`.
- * Write the stable-worktree status atom.
  */
-export function setStableWorktreeStatusAtom(
-  store: AtomStoreSet,
-  value: unknown,
-): void {
+export function xO(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("SetStableWorktreeStatusAtom peers are not configured");
+    throw new Error("xO peers are not configured");
   }
-  store.set(peers.stableWorktreeStatusAtom, value);
+  e.set(peers.eIo, t);
 }

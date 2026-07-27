@@ -1,25 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export cE / h1o
+// Materialized via extractFn(internal `h1o`) / export `cE`.
 
 export type LanguagePeers = {
-  impl: (...args: unknown[]) => unknown;
+  Nqr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  hxo: (...args: unknown[]) => unknown;
+  mHi: (...args: unknown[]) => unknown;
+  p1o: (...args: unknown[]) => unknown;
 };
 
 let peers: LanguagePeers | null = null;
 
-/** Wire language once companions land. */
+/** Wire language peers once companions land. */
 export function setLanguagePeers(next: LanguagePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `cE` / internal `h1o`.
- * Stage-3 fill for bundle export cE / h1o
  */
-export function language(...args: unknown[]): unknown {
+export function language() {
   if (peers == null) {
     throw new Error("language peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.mHi(), peers.Nqr(), peers.hxo(), peers.p1o();
+  });
 }

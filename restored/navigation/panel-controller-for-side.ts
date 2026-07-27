@@ -8,8 +8,6 @@ import {
   type PanelSide,
 } from "./app-shell-atoms";
 
-export function panelControllerForSide(
-  side: PanelSide | string,
-): PanelControllerAtoms {
+export function panelControllerForSide(side: PanelSide | string): PanelControllerAtoms {
   return side === "bottom" ? bottomPanelController : rightPanelController;
 }

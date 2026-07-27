@@ -1,48 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Fz / F4i
+// Materialized via extractFn(internal `F4i`) / export `Fz`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindPluginScheduledTasksProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindPluginScheduledTasksPeers = {
+  P4i: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
-type BindPluginScheduledTasksImpl = (
-  props: BindPluginScheduledTasksProps,
-) => ReactNode;
-let impl: BindPluginScheduledTasksImpl | null = null;
+let peers: BindBindPluginScheduledTasksPeers | null = null;
 
-/** Wire the full BindPluginScheduledTasks once deeper restore lands. */
-export function bindBindPluginScheduledTasks(
-  next: BindPluginScheduledTasksImpl,
-): void {
-  impl = next;
+/** Wire bindBindPluginScheduledTasks peers once companions land. */
+export function setBindBindPluginScheduledTasksPeers(next: BindBindPluginScheduledTasksPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Fz` / internal `F4i`.
- * Stage-3 fill for bundle export Fz / F4i; heavy UI via bind.
  */
-export function BindPluginScheduledTasks(
-  props: BindPluginScheduledTasksProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fa-scaffold="Fz"
-      aria-label="BindPluginScheduledTasks"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Fz / F4i
-        </div>
-      )}
-    </div>
-  );
+export function bindBindPluginScheduledTasks() {
+  if (peers == null) {
+    throw new Error("bindBindPluginScheduledTasks peers are not configured");
+  }
+
+  return peers.e(() => {
+    P4i = [`plugin-scheduled-tasks`];
+  });
 }

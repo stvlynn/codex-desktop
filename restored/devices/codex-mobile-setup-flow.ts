@@ -7,9 +7,7 @@ type codexMobileSetupFlow_aImpl = (...args: unknown[]) => unknown;
 let impl: codexMobileSetupFlow_aImpl | null = null;
 
 /** Wire codexMobileSetupFlow_a once companions land. */
-export function bindCodexMobileSetupFlow_a(
-  next: codexMobileSetupFlow_aImpl,
-): void {
+export function bindCodexMobileSetupFlow_a(next: codexMobileSetupFlow_aImpl): void {
   impl = next;
 }
 

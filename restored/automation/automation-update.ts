@@ -1,26 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export q8 / Qqn
+// Materialized via extractFn(internal `Qqn`) / export `q8`.
 
 export type AutomationUpdatePeers = {
-  impl: (...args: unknown[]) => unknown;
+  Il: (...args: unknown[]) => unknown;
+  Zqn: (...args: unknown[]) => unknown;
+  c_: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
 let peers: AutomationUpdatePeers | null = null;
 
-/** Wire automationUpdate once companions land. */
+/** Wire automationUpdate peers once companions land. */
 export function setAutomationUpdatePeers(next: AutomationUpdatePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `q8` / internal `Qqn`.
- * Stage-3 fill for bundle export q8 / Qqn
  */
-export function automationUpdate(...args: unknown[]): unknown {
+export function automationUpdate() {
   if (peers == null) {
     throw new Error("automationUpdate peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    Zqn = peers.r(peers.Il(), 1), peers.c_();
+  });
 }

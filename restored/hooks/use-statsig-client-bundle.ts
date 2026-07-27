@@ -1,28 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export ilt / Ah
+// Materialized via extractFn(internal `Ah`) / export `ilt`.
 
 export type UseStatsigClientBundlePeers = {
-  impl: (...args: unknown[]) => unknown;
+  jnt: (...args: unknown[]) => unknown;
+  knt: (...args: unknown[]) => unknown;
 };
 
 let peers: UseStatsigClientBundlePeers | null = null;
 
-/** Wire useStatsigClientBundle once companions land. */
-export function setUseStatsigClientBundlePeers(
-  next: UseStatsigClientBundlePeers,
-): void {
+/** Wire useStatsigClientBundle peers once companions land. */
+export function setUseStatsigClientBundlePeers(next: UseStatsigClientBundlePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `ilt` / internal `Ah`.
- * Stage-3 fill for bundle export ilt / Ah
  */
-export function useStatsigClientBundle(...args: unknown[]): unknown {
+export function useStatsigClientBundle() {
   if (peers == null) {
     throw new Error("useStatsigClientBundle peers are not configured");
   }
-  return peers.impl(...args);
+
+  return (peers.knt(), (0, peers.jnt.useStatsigClient)());
 }

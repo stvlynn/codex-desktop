@@ -22,10 +22,7 @@ type AutomationLike = {
 };
 
 /** Clone an automation row with a replacement status. */
-export function automationWithStatus(
-  automation: AutomationLike,
-  status: AutomationStatus,
-): AutomationLike {
+export function automationWithStatus(automation: AutomationLike, status: AutomationStatus): AutomationLike {
   if (isHeartbeatItem(automation)) {
     return {
       id: automation.id,

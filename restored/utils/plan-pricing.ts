@@ -45,9 +45,7 @@ function planCurrencyFormatOptions(
  * shows the ISO code, try `narrowSymbol`; if that yields a distinct symbol,
  * use it and clear `currencyCodeLabel`.
  */
-export function formatPlanPriceParts(
-  options: PlanPricingAmountOptions,
-): PlanPricingPartsResult | null {
+export function formatPlanPriceParts(options: PlanPricingAmountOptions): PlanPricingPartsResult | null {
   const { intl, amount, currencyCode, minorUnitExponent } = options;
   if (amount == null) return null;
 
@@ -88,9 +86,7 @@ export function formatPlanPriceParts(
 export function initPlanPricing(): void {}
 
 /** Format a plan amount as a currency string, or `null` when amount is missing. */
-export function formatPlanPrice(
-  options: PlanPricingAmountOptions,
-): string | null {
+export function formatPlanPrice(options: PlanPricingAmountOptions): string | null {
   const { intl, amount, currencyCode, minorUnitExponent } = options;
   return amount == null
     ? null

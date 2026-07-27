@@ -2,11 +2,7 @@
 // Bundle `nEr` companion for export `i1`.
 
 /** Normalize one accelerator token for display. */
-export function normalizeAcceleratorToken(
-  token: string,
-  isMac: boolean,
-  isLinux: boolean,
-): string {
+export function normalizeAcceleratorToken(token: string, isMac: boolean, isLinux: boolean): string {
   const upper = token.trim();
   if (/^cmd(?:orctrl)?$/i.test(upper) || /^command$/i.test(upper)) {
     return isMac ? "⌘" : "Ctrl";

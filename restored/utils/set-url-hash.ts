@@ -5,11 +5,7 @@
  * Set the hash on an absolute URL. When `allowRelative` is true, also rewrite
  * relative strings that parse against a dummy base.
  */
-export function setUrlHash(
-  href: string,
-  hash: string,
-  allowRelative?: boolean,
-): string {
+export function setUrlHash(href: string, hash: string, allowRelative?: boolean): string {
   const parsed = URL.parse(href);
   if (parsed) {
     parsed.hash = hash;

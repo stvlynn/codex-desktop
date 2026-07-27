@@ -1,28 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export KW / ani
+// Materialized via extractFn(internal `ani`) / export `KW`.
 
 export type BindTransactionEventPluginPeers = {
-  impl: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ini: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  rni: (...args: unknown[]) => unknown;
 };
 
 let peers: BindTransactionEventPluginPeers | null = null;
 
-/** Wire bindTransactionEventPlugin once companions land. */
-export function setBindTransactionEventPluginPeers(
-  next: BindTransactionEventPluginPeers,
-): void {
+/** Wire bindTransactionEventPlugin peers once companions land. */
+export function setBindTransactionEventPluginPeers(next: BindTransactionEventPluginPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `KW` / internal `ani`.
- * Stage-3 fill for bundle export KW / ani
  */
-export function bindTransactionEventPlugin(...args: unknown[]): unknown {
+export function bindTransactionEventPlugin() {
   if (peers == null) {
     throw new Error("bindTransactionEventPlugin peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    rni = peers.r(peers.o(), 1), ini = (0, peers.rni.createContext)(null);
+  });
 }

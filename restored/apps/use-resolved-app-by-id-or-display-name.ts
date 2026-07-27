@@ -1,39 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `JHc`) / export `Nd`.
-
-export type ResolvedAppLookup =
-  | { kind: "appId"; appId: string }
-  | { kind: "displayName"; displayName: string }
-  | null
-  | undefined;
+// Materialized via extractFn(internal `JHc`) / export `Nd`.
 
 export type UseResolvedAppByIdOrDisplayNamePeers = {
-  useAppById: (appId: string | null) => { data?: unknown };
-  useAppByDisplayName: (displayName: string | null) => { data?: unknown };
+  Fo: (...args: unknown[]) => unknown;
+  XHc: (...args: unknown[]) => unknown;
+  YHc: (...args: unknown[]) => unknown;
+  kind: (...args: unknown[]) => unknown;
 };
 
 let peers: UseResolvedAppByIdOrDisplayNamePeers | null = null;
 
-/** Wire app lookup hooks once companions land. */
-export function setUseResolvedAppByIdOrDisplayNamePeers(
-  next: UseResolvedAppByIdOrDisplayNamePeers,
-): void {
+/** Wire useResolvedAppByIdOrDisplayName peers once companions land. */
+export function setUseResolvedAppByIdOrDisplayNamePeers(next: UseResolvedAppByIdOrDisplayNamePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Nd` / internal `JHc`.
- * Resolve an app by id or display name query.
  */
-export function useResolvedAppByIdOrDisplayName(
-  lookup: ResolvedAppLookup,
-): unknown {
+export function useResolvedAppByIdOrDisplayName(e: unknown) {
   if (peers == null) {
-    throw new Error("UseResolvedAppByIdOrDisplayName peers are not configured");
+    throw new Error("useResolvedAppByIdOrDisplayName peers are not configured");
   }
-  const byId = peers.useAppById(lookup?.kind === "appId" ? lookup.appId : null);
-  const byName = peers.useAppByDisplayName(
-    lookup?.kind === "displayName" ? lookup.displayName : null,
-  );
-  return byId.data ?? byName.data ?? null;
+
+  let {
+      data: t
+    } = peers.Fo(peers.YHc, e?.kind === `appId` ? e.appId : null),
+    {
+      data: n
+    } = peers.Fo(peers.XHc, e?.kind === `displayName` ? e.displayName : null);
+  return t ?? n ?? null;
 }

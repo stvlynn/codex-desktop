@@ -107,10 +107,7 @@ function mergeSemanticColors(
 /**
  * Bundle `wP` / export `IW` — merge a stored chrome theme with variant defaults.
  */
-export function mergeChromeThemeWithDefaults(
-  stored: ChromeThemePatch | null | undefined,
-  variant: ChromeThemeVariant,
-): ChromeTheme {
+export function mergeChromeThemeWithDefaults(stored: ChromeThemePatch | null | undefined, variant: ChromeThemeVariant): ChromeTheme {
   const defaults = CHROME_THEME_DEFAULTS[variant];
   return {
     accent: normalizeHexColor(stored?.accent) ?? defaults.accent,

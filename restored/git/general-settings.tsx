@@ -1,44 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export xT / e6o
+// Materialized via extractFn(internal `e6o`) / export `xT`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindGeneralSettingsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindGeneralSettingsPeers = {
+  $3o: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
-type BindGeneralSettingsImpl = (props: BindGeneralSettingsProps) => ReactNode;
-let impl: BindGeneralSettingsImpl | null = null;
+let peers: BindBindGeneralSettingsPeers | null = null;
 
-/** Wire the full BindGeneralSettings once deeper restore lands. */
-export function bindBindGeneralSettings(next: BindGeneralSettingsImpl): void {
-  impl = next;
+/** Wire bindBindGeneralSettings peers once companions land. */
+export function setBindBindGeneralSettingsPeers(next: BindBindGeneralSettingsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `xT` / internal `e6o`.
- * Stage-3 fill for bundle export xT / e6o; heavy UI via bind.
  */
-export function BindGeneralSettings(
-  props: BindGeneralSettingsProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="xT"
-      aria-label="BindGeneralSettings"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export xT / e6o
-        </div>
-      )}
-    </div>
-  );
+export function bindBindGeneralSettings() {
+  if (peers == null) {
+    throw new Error("bindBindGeneralSettings peers are not configured");
+  }
+
+  return peers.e(() => {
+    $3o = `general-settings.import.profile.keyboard-shortcuts.codex-micro.appshots.appearance.voice.pets.chronicle.agent.git-settings.data-controls.cloud-settings.cloud-environments.code-review.personalization.usage.debug.browser-use.computer-use.local-environments.worktrees.environments.mcp-settings.hooks-settings.connections.plugins-settings.skills-settings`.split(`.`);
+  });
 }

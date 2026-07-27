@@ -1,26 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ct / hgu
+// Materialized via extractFn(internal `hgu`) / export `Ct`.
 
 export type BindNeedsAppsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  $u: (...args: unknown[]) => unknown;
+  D9: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Vm: (...args: unknown[]) => unknown;
+  Yrr: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fh: (...args: unknown[]) => unknown;
+  mgu: (...args: unknown[]) => unknown;
 };
 
 let peers: BindNeedsAppsPeers | null = null;
 
-/** Wire bindNeedsApps once companions land. */
+/** Wire bindNeedsApps peers once companions land. */
 export function setBindNeedsAppsPeers(next: BindNeedsAppsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Ct` / internal `hgu`.
- * Stage-3 fill for bundle export Ct / hgu
  */
-export function bindNeedsApps(...args: unknown[]): unknown {
+export function bindNeedsApps() {
   if (peers == null) {
     throw new Error("bindNeedsApps peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    mgu = peers.c(), peers.$u(), peers.fh(), peers.Vm(), peers.Yrr(), D9 = peers.J();
+  });
 }

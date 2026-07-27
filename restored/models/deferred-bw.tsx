@@ -1,42 +1,51 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Bw / U9o
+// Materialized via extractFn(internal `U9o`) / export `Bw`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredBwProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredBwPeers = {
+  A9o: (...args: unknown[]) => unknown;
+  B9o: (...args: unknown[]) => unknown;
+  H9o: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  O9o: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  R9o: (...args: unknown[]) => unknown;
+  S9o: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  V9o: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  gX: (...args: unknown[]) => unknown;
+  x9o: (...args: unknown[]) => unknown;
+  z9o: (...args: unknown[]) => unknown;
 };
 
-type DeferredBwImpl = (props: DeferredBwProps) => ReactNode;
-let impl: DeferredBwImpl | null = null;
+let peers: BindDeferredBwPeers | null = null;
 
-/** Wire the full DeferredBw once deeper restore lands. */
-export function bindDeferredBw(next: DeferredBwImpl): void {
-  impl = next;
+/** Wire bindDeferredBw peers once companions land. */
+export function setBindDeferredBwPeers(next: BindDeferredBwPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Bw` / internal `U9o`.
- * Stage-3 fill for bundle export Bw / U9o; heavy UI via bind.
  */
-export function DeferredBw(props: DeferredBwProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-es-scaffold="Bw"
-      aria-label="DeferredBw"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Bw / U9o
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredBw() {
+  if (peers == null) {
+    throw new Error("bindDeferredBw peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Ho(), peers.ed(), peers.S9o(), peers.A9o(), R9o = peers.Ta(peers.Q, {
+      status: `not-detected`,
+      transport: null,
+      model: null,
+      error: null,
+      battery: null
+    }), z9o = peers.Ma(peers.Q, ({
+      get: e
+    }) => peers.e(peers.R9o).model ?? peers.e(peers.x9o) ?? null), gX = peers.Ta(peers.Q, peers.O9o), B9o = peers.Ma(peers.Q, ({
+      get: e
+    }) => peers.e(peers.gX).joystick), V9o = peers.Ta(peers.Q, !1), H9o = peers.Ta(peers.Q, `idle`);
+  });
 }

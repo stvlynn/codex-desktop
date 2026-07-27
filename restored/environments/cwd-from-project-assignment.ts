@@ -9,9 +9,7 @@ export type ProjectAssignmentLike = {
 };
 
 /** Cwd/path from a local/remote project assignment. */
-export function cwdFromProjectAssignment(
-  assignment: ProjectAssignmentLike,
-): string | null | undefined {
+export function cwdFromProjectAssignment(assignment: ProjectAssignmentLike): string | null | undefined {
   switch (assignment.projectKind) {
     case "local":
       return assignment.cwd ?? assignment.path ?? null;

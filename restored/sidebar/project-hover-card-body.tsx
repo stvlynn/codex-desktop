@@ -60,9 +60,7 @@ export type ProjectHoverCardBodyDeps = {
 
 let deps: ProjectHoverCardBodyDeps | null = null;
 
-export function setProjectHoverCardBodyDeps(
-  next: ProjectHoverCardBodyDeps,
-): void {
+export function setProjectHoverCardBodyDeps(next: ProjectHoverCardBodyDeps): void {
   deps = next;
 }
 

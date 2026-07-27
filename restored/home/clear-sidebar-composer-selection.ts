@@ -50,9 +50,7 @@ export function clearSidebarComposerSelection(store: StoreSet): void {
 }
 
 /** Bundle `Mti` / export `uG` — clear selection/flags and empty composer prompt. */
-export function clearSidebarComposerSelectionAndPrompt(
-  store: StoreGetSet,
-): void {
+export function clearSidebarComposerSelectionAndPrompt(store: StoreGetSet): void {
   if (atoms == null || setComposerPrompt == null) {
     throw new Error("sidebar selection clear unbound");
   }

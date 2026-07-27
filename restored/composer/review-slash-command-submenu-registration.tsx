@@ -16,9 +16,7 @@ type ReviewSlashCommandSubmenuRegistrationImpl = (
 ) => ReactNode;
 let impl: ReviewSlashCommandSubmenuRegistrationImpl | null = null;
 
-export function bindReviewSlashCommandSubmenuRegistration(
-  next: ReviewSlashCommandSubmenuRegistrationImpl,
-): void {
+export function bindReviewSlashCommandSubmenuRegistration(next: ReviewSlashCommandSubmenuRegistrationImpl): void {
   impl = next;
 }
 

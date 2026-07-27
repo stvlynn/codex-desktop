@@ -16,9 +16,7 @@ type ModelPickerPowerSliderImplImpl = (
 ) => ReactNode;
 let impl: ModelPickerPowerSliderImplImpl | null = null;
 
-export function bindModelPickerPowerSliderImpl(
-  next: ModelPickerPowerSliderImplImpl,
-): void {
+export function bindModelPickerPowerSliderImpl(next: ModelPickerPowerSliderImplImpl): void {
   impl = next;
 }
 

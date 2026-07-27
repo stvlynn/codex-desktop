@@ -1,42 +1,45 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export fgt / Uge
+// Materialized via extractFn(internal `Uge`) / export `fgt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindActivitySlot0Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindActivitySlot0Peers = {
+  Bge: (...args: unknown[]) => unknown;
+  Hge: (...args: unknown[]) => unknown;
+  Lge: (...args: unknown[]) => unknown;
+  Nl: (...args: unknown[]) => unknown;
+  Rge: (...args: unknown[]) => unknown;
+  Vge: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  zge: (...args: unknown[]) => unknown;
 };
 
-type BindActivitySlot0Impl = (props: BindActivitySlot0Props) => ReactNode;
-let impl: BindActivitySlot0Impl | null = null;
+let peers: BindBindActivitySlot0Peers | null = null;
 
-/** Wire the full BindActivitySlot0 once deeper restore lands. */
-export function bindBindActivitySlot0(next: BindActivitySlot0Impl): void {
-  impl = next;
+/** Wire bindBindActivitySlot0 peers once companions land. */
+export function setBindBindActivitySlot0Peers(next: BindBindActivitySlot0Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `fgt` / internal `Uge`.
- * Stage-3 fill for bundle export fgt / Uge; heavy UI via bind.
  */
-export function BindActivitySlot0(props: BindActivitySlot0Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ew-scaffold="fgt"
-      aria-label="BindActivitySlot0"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export fgt / Uge
-        </div>
-      )}
-    </div>
-  );
+export function bindBindActivitySlot0() {
+  if (peers == null) {
+    throw new Error("bindBindActivitySlot0 peers are not configured");
+  }
+
+  return peers.e(() => {
+    Nl = [`activity-slot-0`, `activity-slot-1`, `activity-slot-2`, `activity-slot-3`, `activity-slot-4`, `activity-slot-5`, `activity-slot-6`, `activity-slot-7`], Lge = `activity-slot-8`, Rge = [...peers.Nl, peers.Lge], zge = [{
+      offsetY: 0,
+      scaleX: 1,
+      scaleY: 1
+    }, {
+      offsetY: 23,
+      scaleX: 0.918,
+      scaleY: 0.78
+    }, {
+      offsetY: 30,
+      scaleX: 268 / 310,
+      scaleY: 44 / 56
+    }], Bge = 8, Vge = 56, Hge = 4;
+  });
 }

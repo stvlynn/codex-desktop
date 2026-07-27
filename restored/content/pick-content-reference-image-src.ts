@@ -4,9 +4,7 @@
 import { nonEmptyStringOrNull } from "../utils/non-empty-string-or-null";
 import { asRecord } from "../utils/as-record";
 
-export function pickContentReferenceImageSrc(
-  image: Record<string, unknown> | null | undefined,
-): string | null {
+export function pickContentReferenceImageSrc(image: Record<string, unknown> | null | undefined): string | null {
   const result = asRecord(image?.image_result);
   return (
     nonEmptyStringOrNull(image?.content_url) ??

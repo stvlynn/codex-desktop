@@ -1,42 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DY — real body via extractFn(internal `Y$o`) / export `xE`.
-// Diff/review panel peers bind via setCloseDiffSidePanelIfOpenPeers.
-
-export type PanelStore = {
-  get: (atom: unknown) => unknown;
-};
+// Materialized via extractFn(internal `Y$o`) / export `xE`.
 
 export type CloseDiffSidePanelIfOpenPeers = {
-  isRightPanelOpenAtom: unknown;
-  getActiveSidePanelTab: (store: PanelStore) => unknown;
-  diffTabId: unknown;
-  closeRightPanel: (store: PanelStore, animated: boolean) => void;
-  collapseReviewPanel: (store: PanelStore) => unknown;
+  J$o: (...args: unknown[]) => unknown;
+  ZD: (...args: unknown[]) => unknown;
+  _T: (...args: unknown[]) => unknown;
+  o1o: (...args: unknown[]) => unknown;
+  s1o: (...args: unknown[]) => unknown;
 };
 
 let peers: CloseDiffSidePanelIfOpenPeers | null = null;
 
-/** Wire diff/review panel atoms once companions land. */
-export function setCloseDiffSidePanelIfOpenPeers(
-  next: CloseDiffSidePanelIfOpenPeers,
-): void {
+/** Wire closeDiffSidePanelIfOpen peers once companions land. */
+export function setCloseDiffSidePanelIfOpenPeers(next: CloseDiffSidePanelIfOpenPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `xE` / internal `Y$o`.
- * Close the diff side panel when active; otherwise collapse review panel.
  */
-export function closeDiffSidePanelIfOpen(store: PanelStore): unknown {
+export function closeDiffSidePanelIfOpen(e: unknown) {
   if (peers == null) {
-    throw new Error("CloseDiffSidePanelIfOpen peers are not configured");
+    throw new Error("closeDiffSidePanelIfOpen peers are not configured");
   }
-  if (
-    store.get(peers.isRightPanelOpenAtom) &&
-    peers.getActiveSidePanelTab(store) === peers.diffTabId
-  ) {
-    peers.closeRightPanel(store, false);
-    return true;
-  }
-  return peers.collapseReviewPanel(store);
+
+  return e.get(peers.ZD) && peers.s1o(e) === peers._T.DIFF
+    ? (peers.o1o(e, !1), !0)
+    : peers.J$o(e);
 }

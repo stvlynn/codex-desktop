@@ -1,32 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Kn / fiu
+// Materialized via extractFn(internal `fiu`) / export `Kn`.
 
 export type BindSetPrimaryRuntimeInstallReleasePeers = {
-  impl: (...args: unknown[]) => unknown;
+  Gf: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  K_: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  diu: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  riu: (...args: unknown[]) => unknown;
+  uiu: (...args: unknown[]) => unknown;
 };
 
 let peers: BindSetPrimaryRuntimeInstallReleasePeers | null = null;
 
-/** Wire bindSetPrimaryRuntimeInstallRelease once companions land. */
-export function setBindSetPrimaryRuntimeInstallReleasePeers(
-  next: BindSetPrimaryRuntimeInstallReleasePeers,
-): void {
+/** Wire bindSetPrimaryRuntimeInstallRelease peers once companions land. */
+export function setBindSetPrimaryRuntimeInstallReleasePeers(next: BindSetPrimaryRuntimeInstallReleasePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Kn` / internal `fiu`.
- * Stage-3 fill for bundle export Kn / fiu
  */
-export function bindSetPrimaryRuntimeInstallRelease(
-  ...args: unknown[]
-): unknown {
+export function bindSetPrimaryRuntimeInstallRelease() {
   if (peers == null) {
-    throw new Error(
-      "bindSetPrimaryRuntimeInstallRelease peers are not configured",
-    );
+    throw new Error("bindSetPrimaryRuntimeInstallRelease peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ho(), peers.ed(), peers.K_(), peers.Gf(), peers.riu(), uiu = peers.Ta(peers.Q, null), diu = peers.Ta(peers.Q, `latest`);
+  });
 }

@@ -1,42 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export l8 / eXn
+// Materialized via extractFn(internal `eXn`) / export `l8`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindTodoListProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindTodoListPeers = {
+  $Yn: (...args: unknown[]) => unknown;
+  Da: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  ZYn: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
 };
 
-type BindTodoListImpl = (props: BindTodoListProps) => ReactNode;
-let impl: BindTodoListImpl | null = null;
+let peers: BindBindTodoListPeers | null = null;
 
-/** Wire the full BindTodoList once deeper restore lands. */
-export function bindBindTodoList(next: BindTodoListImpl): void {
-  impl = next;
+/** Wire bindBindTodoList peers once companions land. */
+export function setBindBindTodoListPeers(next: BindBindTodoListPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `l8` / internal `eXn`.
- * Stage-3 fill for bundle export l8 / eXn; heavy UI via bind.
  */
-export function BindTodoList(props: BindTodoListProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fd-scaffold="l8"
-      aria-label="BindTodoList"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export l8 / eXn
-        </div>
-      )}
-    </div>
-  );
+export function bindBindTodoList() {
+  if (peers == null) {
+    throw new Error("bindBindTodoList peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Ho(), peers.ZYn(), peers.ed(), $Yn = peers.Da(peers.Q, e => null);
+  });
 }

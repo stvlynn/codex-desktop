@@ -1,42 +1,51 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export kQ / PA
+// Materialized via extractFn(internal `PA`) / export `kQ`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type InboxItemsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindInboxItemsPeers = {
+  Au: (...args: unknown[]) => unknown;
+  Da: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  MA: (...args: unknown[]) => unknown;
+  Mo: (...args: unknown[]) => unknown;
+  NA: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  dMr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  fMr: (...args: unknown[]) => unknown;
+  jA: (...args: unknown[]) => unknown;
+  mMr: (...args: unknown[]) => unknown;
+  pMr: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  uMr: (...args: unknown[]) => unknown;
 };
 
-type InboxItemsImpl = (props: InboxItemsProps) => ReactNode;
-let impl: InboxItemsImpl | null = null;
+let peers: BindInboxItemsPeers | null = null;
 
-/** Wire the full InboxItems once deeper restore lands. */
-export function bindInboxItems(next: InboxItemsImpl): void {
-  impl = next;
+/** Wire bindInboxItems peers once companions land. */
+export function setBindInboxItemsPeers(next: BindInboxItemsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `kQ` / internal `PA`.
- * Stage-3 fill for bundle export kQ / PA; heavy UI via bind.
  */
-export function InboxItems(props: InboxItemsProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-es-scaffold="kQ"
-      aria-label="InboxItems"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export kQ / PA
-        </div>
-      )}
-    </div>
-  );
+export function bindInboxItems() {
+  if (peers == null) {
+    throw new Error("bindInboxItems peers are not configured");
+  }
+
+  return peers.e(() => {
+    uMr = peers.r(peers.Mo(), 1), peers.Ho(), peers.Au(), peers.ed(), dMr = {
+      initialized: !1,
+      revision: 0,
+      isComplete: !1,
+      hostsById: new Map(),
+      entries: [],
+      entriesByKey: new Map()
+    }, jA = peers.Ta(peers.Q, !1), fMr = peers.Ta(peers.Q, !1), MA = peers.Ta(peers.Q, null), pMr = peers.Ta(peers.Q, []), NA = peers.Ta(peers.Q, peers.dMr), mMr = peers.Da(peers.Q, e => null, {
+      isEqual: peers.uMr.default
+    });
+  });
 }

@@ -1,42 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export c1 / $Tr
+// Materialized via extractFn(internal `$Tr`) / export `c1`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindLinuxProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindLinuxPeers = {
+  QTr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
-type BindLinuxImpl = (props: BindLinuxProps) => ReactNode;
-let impl: BindLinuxImpl | null = null;
+let peers: BindBindLinuxPeers | null = null;
 
-/** Wire the full BindLinux once deeper restore lands. */
-export function bindBindLinux(next: BindLinuxImpl): void {
-  impl = next;
+/** Wire bindBindLinux peers once companions land. */
+export function setBindBindLinuxPeers(next: BindBindLinuxPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `c1` / internal `$Tr`.
- * Stage-3 fill for bundle export c1 / $Tr; heavy UI via bind.
  */
-export function BindLinux(props: BindLinuxProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="c1"
-      aria-label="BindLinux"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export c1 / $Tr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindLinux() {
+  if (peers == null) {
+    throw new Error("bindBindLinux peers are not configured");
+  }
+
+  return peers.e(() => {
+    QTr = 1e3;
+  });
 }

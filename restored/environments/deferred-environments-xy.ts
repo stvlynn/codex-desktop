@@ -1,28 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export xY / MXr
+// Materialized via extractFn(internal `MXr`) / export `xY`.
 
 export type BindDeferredEnvironmentsXYPeers = {
-  impl: (...args: unknown[]) => unknown;
+  kp: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredEnvironmentsXYPeers | null = null;
 
-/** Wire bindDeferredEnvironmentsXY once companions land. */
-export function setBindDeferredEnvironmentsXYPeers(
-  next: BindDeferredEnvironmentsXYPeers,
-): void {
+/** Wire bindDeferredEnvironmentsXY peers once companions land. */
+export function setBindDeferredEnvironmentsXYPeers(next: BindDeferredEnvironmentsXYPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `xY` / internal `MXr`.
- * Stage-3 fill for bundle export xY / MXr
  */
-export function bindDeferredEnvironmentsXY(...args: unknown[]): unknown {
+export function bindDeferredEnvironmentsXY() {
   if (peers == null) {
     throw new Error("bindDeferredEnvironmentsXY peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.kp(`environment`, null);
 }

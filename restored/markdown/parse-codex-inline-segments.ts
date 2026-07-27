@@ -28,8 +28,6 @@ export function bindParseCodexInlineSegments(next: InlineParser): void {
 }
 
 /** Parse Codex realtime inline / visualization segments from markdown. */
-export function parseCodexInlineSegments(
-  markdown: string,
-): CodexInlineSegment[] {
+export function parseCodexInlineSegments(markdown: string): CodexInlineSegment[] {
   return parseImpl?.(markdown) ?? [];
 }

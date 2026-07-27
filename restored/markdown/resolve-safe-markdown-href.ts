@@ -12,16 +12,12 @@ let filePathFromHref: FilePathFromHref | null = null;
 let isAllowedAbsoluteUrl: IsAllowedAbsoluteUrl | null = null;
 
 /** Wire file: / absolute-path extractor (`gS` in the bundle). */
-export function setMarkdownHrefFilePathResolver(
-  resolver: FilePathFromHref,
-): void {
+export function setMarkdownHrefFilePathResolver(resolver: FilePathFromHref): void {
   filePathFromHref = resolver;
 }
 
 /** Wire absolute-URL allowlist (`H_e` in the bundle). */
-export function setMarkdownHrefAbsoluteUrlChecker(
-  checker: IsAllowedAbsoluteUrl,
-): void {
+export function setMarkdownHrefAbsoluteUrlChecker(checker: IsAllowedAbsoluteUrl): void {
   isAllowedAbsoluteUrl = checker;
 }
 

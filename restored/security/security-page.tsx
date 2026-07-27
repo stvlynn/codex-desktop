@@ -3,7 +3,6 @@
 // Stage 3: Lb/rlt/jK/es mapped; Ib/OK/rs/ts inits dropped.
 
 import type { ReactNode } from "react";
-
 import { FEATURE_GATE_NUMERIC_ID_NS } from "../config/feature-gate-numeric-id-ns";
 import { useFeatureGateEnabled } from "../feature-gates/use-feature-gate-enabled";
 import {
@@ -25,12 +24,10 @@ import {
   resolveSecurityShellState,
   type SecurityShellState,
 } from "./resolve-security-shell-state";
-
 ensureUseIsRemoteHostInit();
 ensureInstalledPluginsQueryInit();
 ensureSecurityShellStateInit();
 ensureSecurityShellIconsInit();
-
 function securityUnavailableDescription(
   state: Exclude<SecurityShellState, "loading" | "ready">,
 ): ReactNode {
@@ -81,7 +78,9 @@ export function SecurityPage(): ReactNode {
   const { installedPlugins, isLoading } = useInstalledPluginsQuery(
     LOCAL_HOST_ID,
     undefined,
-    { enabled },
+    {
+      enabled,
+    },
   );
   const state = resolveSecurityShellState({
     installedPlugins,
@@ -89,7 +88,6 @@ export function SecurityPage(): ReactNode {
     isLoading,
     isRemoteHost,
   });
-
   const unavailable = state !== "loading" && state !== "ready";
   const title = unavailable ? (
     <MemoizedFormattedMessage
@@ -104,7 +102,6 @@ export function SecurityPage(): ReactNode {
       description="Title for the native Codex Security workbench"
     />
   );
-
   return (
     <EmptyState
       description={

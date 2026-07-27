@@ -1,25 +1,42 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Rs / qMl
+// Materialized via extractFn(internal `qMl`) / export `Rs`.
 
 export type BindDeferredUiRsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  D8: (...args: unknown[]) => unknown;
+  LMl: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  RMl: (...args: unknown[]) => unknown;
+  j2: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiRsPeers | null = null;
 
-/** Wire bindDeferredUiRs once companions land. */
+/** Wire bindDeferredUiRs peers once companions land. */
 export function setBindDeferredUiRsPeers(next: BindDeferredUiRsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Rs` / internal `qMl`.
- * Stage-3 fill for bundle export Rs / qMl
  */
-export function bindDeferredUiRs(...args: unknown[]): unknown {
+export function bindDeferredUiRs() {
   if (peers == null) {
     throw new Error("bindDeferredUiRs peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ma(peers.j2, ({
+    get: e
+  }) => {
+    let t = new Map(),
+      n = e(peers.LMl);
+    if (n == null) return t;
+    let r = e(peers.RMl),
+      i = e(peers.D8);
+    for (let [e, a] of i.pluginNames) {
+      let o = i.pluginIds.get(e),
+        s = n.find(e => r ? o != null && e.plugin.remotePluginId === o : e.plugin.name === a);
+      s != null && t.set(e, s);
+    }
+    return t;
+  });
 }

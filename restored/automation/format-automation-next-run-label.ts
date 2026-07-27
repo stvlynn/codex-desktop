@@ -1,30 +1,12 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `XRl`) / export `Ho`.
-
-import type { ReactNode } from "react";
-
-export type FormatAutomationNextRunLabelArgs = {
-  intl: {
-    formatMessage: (descriptor: {
-      id: string;
-      defaultMessage: string;
-      description?: string;
-    }) => string;
-  };
-  nextRunAt?: string | number | Date | null;
-  status?: string | null;
-};
+// Materialized via extractFn(internal `XRl`) / export `Ho`.
 
 export type FormatAutomationNextRunLabelPeers = {
-  formatRelativeTimestamp: (args: {
-    intl: FormatAutomationNextRunLabelArgs["intl"];
-    timestamp: string | number | Date;
-  }) => ReactNode | string;
+  ZRl: (...args: unknown[]) => unknown;
 };
-
 let peers: FormatAutomationNextRunLabelPeers | null = null;
 
-/** Wire next-run label peers once companions land. */
+/** Wire formatAutomationNextRunLabel peers once companions land. */
 export function setFormatAutomationNextRunLabelPeers(
   next: FormatAutomationNextRunLabelPeers,
 ): void {
@@ -33,23 +15,26 @@ export function setFormatAutomationNextRunLabelPeers(
 
 /**
  * Bundle export `Ho` / internal `XRl`.
- * Format the next-run label for an automation row.
  */
-export function formatAutomationNextRunLabel(
-  args: FormatAutomationNextRunLabelArgs,
-): ReactNode | string {
+export function formatAutomationNextRunLabel({
+  intl,
+  nextRunAt,
+  status,
+}: Record<string, unknown>) {
   if (peers == null) {
-    throw new Error("FormatAutomationNextRunLabel peers are not configured");
+    throw new Error("formatAutomationNextRunLabel peers are not configured");
   }
-  const { intl, nextRunAt, status } = args;
-  if (status === "PAUSED") return "-";
-  if (nextRunAt == null) {
-    return intl.formatMessage({
-      id: "inbox.automations.nextRun.none",
-      defaultMessage: "Not scheduled",
-      description:
-        "Fallback label when an automation does not have a next run time",
-    });
-  }
-  return peers.formatRelativeTimestamp({ intl, timestamp: nextRunAt });
+  return status === "PAUSED"
+    ? "-"
+    : nextRunAt == null
+      ? intl.formatMessage({
+          id: "inbox.automations.nextRun.none",
+          defaultMessage: "Not scheduled",
+          description:
+            "Fallback label when an automation does not have a next run time",
+        })
+      : peers.ZRl({
+          intl,
+          timestamp: nextRunAt,
+        });
 }

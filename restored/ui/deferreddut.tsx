@@ -1,41 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export dut / mm
+// Materialized via extractFn(internal `mm`) / export `dut`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferreddutProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferreddutPeers = {
+  y2e: (...args: unknown[]) => unknown;
 };
+let peers: BindDeferreddutPeers | null = null;
 
-type DeferreddutImpl = (props: DeferreddutProps) => ReactNode;
-let impl: DeferreddutImpl | null = null;
-
-/** Wire the full Deferreddut once deeper restore lands. */
-export function bindDeferreddut(next: DeferreddutImpl): void {
-  impl = next;
+/** Wire bindDeferreddut peers once companions land. */
+export function setBindDeferreddutPeers(next: BindDeferreddutPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `dut` / internal `mm`.
- * Stage-3 fill for bundle export dut / mm; heavy UI via bind.
  */
-export function Deferreddut(props: DeferreddutProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fo-scaffold="dut"
-      aria-label="Deferreddut"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export dut / mm
-        </div>
-      )}
-    </div>
-  );
-}
+export const bindDeferreddut = (e, t) => {
+  if (peers == null) {
+    throw new Error("bindDeferreddut peers are not configured");
+  }
+  return {
+    ...peers.y2e(e),
+    options: [e, t],
+  };
+};

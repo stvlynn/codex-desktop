@@ -1,48 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export cZ / JHr
+// Materialized via extractFn(internal `JHr`) / export `cZ`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DataAppShellFocusAreaProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDataAppShellFocusAreaPeers = {
+  GHr: (...args: unknown[]) => unknown;
+  KHr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  qHr: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
-type DataAppShellFocusAreaImpl = (
-  props: DataAppShellFocusAreaProps,
-) => ReactNode;
-let impl: DataAppShellFocusAreaImpl | null = null;
+let peers: BindDataAppShellFocusAreaPeers | null = null;
 
-/** Wire the full DataAppShellFocusArea once deeper restore lands. */
-export function bindDataAppShellFocusArea(
-  next: DataAppShellFocusAreaImpl,
-): void {
-  impl = next;
+/** Wire bindDataAppShellFocusArea peers once companions land. */
+export function setBindDataAppShellFocusAreaPeers(next: BindDataAppShellFocusAreaPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `cZ` / internal `JHr`.
- * Stage-3 fill for bundle export cZ / JHr; heavy UI via bind.
  */
-export function DataAppShellFocusArea(
-  props: DataAppShellFocusAreaProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-er-scaffold="cZ"
-      aria-label="DataAppShellFocusArea"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export cZ / JHr
-        </div>
-      )}
-    </div>
-  );
+export function bindDataAppShellFocusArea() {
+  if (peers == null) {
+    throw new Error("bindDataAppShellFocusArea peers are not configured");
+  }
+
+  return peers.e(() => {
+    GHr = peers.r(peers.o(), 1), KHr = (0, peers.GHr.createContext)({
+      current: null
+    }), qHr = (0, peers.GHr.createContext)(null);
+  });
 }

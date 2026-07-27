@@ -1,16 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `dVt`) / export `Trt`.
+// Materialized via extractFn(internal `dVt`) / export `Trt`.
 
-import { useMemo } from "react";
+export type UseDndSensorsPeers = {
+  qv: (...args: unknown[]) => unknown;
+};
+
+let peers: UseDndSensorsPeers | null = null;
+
+/** Wire useDndSensors peers once companions land. */
+export function setUseDndSensorsPeers(next: UseDndSensorsPeers): void {
+  peers = next;
+}
 
 /**
  * Bundle export `Trt` / internal `dVt`.
- * Memoize a filtered list of DnD sensors.
  */
-export function useDndSensors(...sensors: unknown[]): unknown[] {
-  return useMemo(
-    () => [...sensors].filter((sensor) => sensor != null),
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- mirrors bundle deps on args
-    [...sensors],
-  );
+export function useDndSensors() {
+  if (peers == null) {
+    throw new Error("useDndSensors peers are not configured");
+  }
+
+  var e = [...arguments];
+  return (0, peers.qv.useMemo)(() => [...e].filter((e) => e != null), [...e]);
 }

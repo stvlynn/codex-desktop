@@ -1,26 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export eht / obe
+// Materialized via extractFn(internal `obe`) / export `eht`.
 
 export type BindCodexPricingPeers = {
-  impl: (...args: unknown[]) => unknown;
+  abe: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindCodexPricingPeers | null = null;
 
-/** Wire bindCodexPricing once companions land. */
+/** Wire bindCodexPricing peers once companions land. */
 export function setBindCodexPricingPeers(next: BindCodexPricingPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `eht` / internal `obe`.
- * Stage-3 fill for bundle export eht / obe
  */
-export function bindCodexPricing(...args: unknown[]): unknown {
+export function bindCodexPricing() {
   if (peers == null) {
     throw new Error("bindCodexPricing peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    abe = `codex-workspace-settings-`;
+  });
 }

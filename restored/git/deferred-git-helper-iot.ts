@@ -1,28 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export iot / Ikt
+// Materialized via extractFn(internal `Ikt`) / export `iot`.
 
 export type BindDeferredGitHelperIotPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Fkt: (...args: unknown[]) => unknown;
+  Lmt: (...args: unknown[]) => unknown;
+  Vht: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredGitHelperIotPeers | null = null;
 
-/** Wire bindDeferredGitHelperIot once companions land. */
-export function setBindDeferredGitHelperIotPeers(
-  next: BindDeferredGitHelperIotPeers,
-): void {
+/** Wire bindDeferredGitHelperIot peers once companions land. */
+export function setBindDeferredGitHelperIotPeers(next: BindDeferredGitHelperIotPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `iot` / internal `Ikt`.
- * Stage-3 fill for bundle export iot / Ikt
  */
-export function bindDeferredGitHelperIot(...args: unknown[]): unknown {
+export function bindDeferredGitHelperIot() {
   if (peers == null) {
     throw new Error("bindDeferredGitHelperIot peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Lmt(), peers.Vht(), Fkt = {};
+  });
 }

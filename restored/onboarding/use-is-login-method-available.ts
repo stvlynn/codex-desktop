@@ -1,28 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `IGr`) / export `UX`.
+// Materialized via extractFn(internal `IGr`) / export `UX`.
 
 export type UseIsLoginMethodAvailablePeers = {
-  useAtomValue: (atom: unknown) => { available?: boolean } | null | undefined;
-  loginMethodAvailableAtom: unknown;
+  RGr: (...args: unknown[]) => unknown;
+  Y: (...args: unknown[]) => unknown;
+  available: (...args: unknown[]) => unknown;
 };
 
 let peers: UseIsLoginMethodAvailablePeers | null = null;
 
-/** Wire login-method availability peers once companions land. */
-export function setUseIsLoginMethodAvailablePeers(
-  next: UseIsLoginMethodAvailablePeers,
-): void {
+/** Wire useIsLoginMethodAvailable peers once companions land. */
+export function setUseIsLoginMethodAvailablePeers(next: UseIsLoginMethodAvailablePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `UX` / internal `IGr`.
- * Whether a login/auth method is available.
  */
-export function useIsLoginMethodAvailable(): boolean {
+export function useIsLoginMethodAvailable() {
   if (peers == null) {
-    throw new Error("UseIsLoginMethodAvailable peers are not configured");
+    throw new Error("useIsLoginMethodAvailable peers are not configured");
   }
-  const data = peers.useAtomValue(peers.loginMethodAvailableAtom);
-  return data?.available ?? false;
+
+  let {
+    data: e
+  } = peers.Y(peers.RGr);
+  return e?.available ?? !1;
 }

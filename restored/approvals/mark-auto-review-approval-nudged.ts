@@ -1,40 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `zSs`) / export `nb`.
+// Materialized via extractFn(internal `zSs`) / export `nb`.
 
 export type MarkAutoReviewApprovalNudgedPeers = {
-  nudgedAtom: unknown;
-  persistNudge: (store: AtomStore, conversationId: unknown) => void;
-  conversationIdsAtom: unknown;
-};
-
-export type AtomStore = {
-  set: (atom: unknown, value: unknown) => void;
-  get: (atom: unknown) => Iterable<unknown>;
+  BSs: (...args: unknown[]) => unknown;
+  Iw: (...args: unknown[]) => unknown;
+  WSs: (...args: unknown[]) => unknown;
 };
 
 let peers: MarkAutoReviewApprovalNudgedPeers | null = null;
 
-/** Wire auto-review nudge peers once companions land. */
-export function setMarkAutoReviewApprovalNudgedPeers(
-  next: MarkAutoReviewApprovalNudgedPeers,
-): void {
+/** Wire markAutoReviewApprovalNudged peers once companions land. */
+export function setMarkAutoReviewApprovalNudgedPeers(next: MarkAutoReviewApprovalNudgedPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `nb` / internal `zSs`.
- * Mark the auto-review approval nudge as shown and persist for all ids.
  */
-export function markAutoReviewApprovalNudged(
-  store: AtomStore,
-  conversationId: unknown,
-): void {
+export function markAutoReviewApprovalNudged(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("MarkAutoReviewApprovalNudged peers are not configured");
+    throw new Error("markAutoReviewApprovalNudged peers are not configured");
   }
-  store.set(peers.nudgedAtom, true);
-  peers.persistNudge(store, conversationId);
-  for (const id of store.get(peers.conversationIdsAtom)) {
-    peers.persistNudge(store, id);
-  }
+
+  e.set(peers.WSs, !0), peers.BSs(e, t);
+  for (let t of e.get(peers.Iw)) peers.BSs(e, t);
 }

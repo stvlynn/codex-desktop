@@ -1,41 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export $x / Mps
+// Materialized via extractFn(internal `Mps`) / export `$x`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiXProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiXPeers = {
+  Jfs: (...args: unknown[]) => unknown;
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Sps: (...args: unknown[]) => unknown;
+  jps: (...args: unknown[]) => unknown;
+  lps: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiXImpl = (props: BindDeferredUiXProps) => ReactNode;
-let impl: BindDeferredUiXImpl | null = null;
+let peers: BindBindDeferredUiXPeers | null = null;
 
-/** Wire the full BindDeferredUiX once deeper restore lands. */
-export function bindBindDeferredUiX(next: BindDeferredUiXImpl): void {
-  impl = next;
+/** Wire bindBindDeferredUiX peers once companions land. */
+export function setBindBindDeferredUiXPeers(next: BindBindDeferredUiXPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `$x` / internal `Mps`.
- * Stage-3 fill for bundle export $x / Mps; heavy UI via bind.
  */
-export function BindDeferredUiX(props: BindDeferredUiXProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fi-scaffold="$x"
-      aria-label="BindDeferredUiX"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export $x / Mps
-        </div>
-      )}
-    </div>
+export function bindBindDeferredUiX() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiX peers are not configured");
+  }
+
+  return peers.Oa(
+    peers.Q,
+    (e, { get: t }) => {
+      let n = e.conversationId == null ? null : t(peers.Jfs, e.conversationId);
+      return peers.lps(t(peers.jps, e), n != null);
+    },
+    {
+      isEqual: peers.Sps.default,
+    },
   );
 }

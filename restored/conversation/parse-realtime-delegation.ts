@@ -12,9 +12,7 @@ export type RealtimeDelegationPayload = {
 };
 
 /** Parse a `<realtime_delegation>` XML payload. */
-export function parseRealtimeDelegation(
-  text: string,
-): RealtimeDelegationPayload | null {
+export function parseRealtimeDelegation(text: string): RealtimeDelegationPayload | null {
   const trimmed = text.trim();
   if (
     !trimmed.startsWith("<realtime_delegation>") ||

@@ -1,52 +1,70 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `ffs`) / export `sS`.
+// Materialized via extractFn(internal `ffs`) / export `sS`.
 
 export type UseAppServerVersionBundlePeers = {
-  readConnection: (hostId: unknown) => unknown;
-  readState: (hostId: unknown) => unknown;
-  readAppServerVersion: (hostId: unknown) => unknown;
-  readError: (hostId: unknown) => unknown;
-  readInstalledCodexVersion: (hostId: unknown) => unknown;
+  Fo: (...args: unknown[]) => unknown;
+  QE: (...args: unknown[]) => unknown;
+  eD: (...args: unknown[]) => unknown;
+  inr: (...args: unknown[]) => unknown;
+  nnr: (...args: unknown[]) => unknown;
+  pfs: (...args: unknown[]) => unknown;
+  rnr: (...args: unknown[]) => unknown;
 };
 
 let peers: UseAppServerVersionBundlePeers | null = null;
 
 /** Wire useAppServerVersionBundle peers once companions land. */
-export function setUseAppServerVersionBundlePeers(
-  next: UseAppServerVersionBundlePeers,
-): void {
+export function setUseAppServerVersionBundlePeers(next: UseAppServerVersionBundlePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `sS` / internal `ffs`.
- * Aggregate app-server version/state/error atoms for a host.
  */
-export function useAppServerVersionBundle(hostId: unknown): {
-  appServerVersion: unknown;
-  error: unknown;
-  installedCodexVersion: unknown;
-  state: unknown;
-} {
+export function useAppServerVersionBundle(e: unknown) {
   if (peers == null) {
-    throw new Error("UseAppServerVersionBundle peers are not configured");
+    throw new Error("useAppServerVersionBundle peers are not configured");
   }
-  const connection = peers.readConnection(hostId);
-  const appServerVersion = peers.readAppServerVersion(hostId);
-  const error = peers.readError(hostId);
-  const installedCodexVersion = peers.readInstalledCodexVersion(hostId);
-  if (connection == null) {
-    return {
-      appServerVersion,
-      error,
-      installedCodexVersion,
-      state: null,
-    };
+
+  let t = (0, peers.pfs.c)(9),
+    n = peers.Fo(peers.eD, e),
+    r = peers.Fo(peers.QE, e),
+    i = peers.Fo(peers.rnr, e),
+    a = peers.Fo(peers.nnr, e),
+    o = peers.Fo(peers.inr, e);
+  if (n == null) {
+    let e;
+    return (
+      t[0] !== i || t[1] !== a || t[2] !== o
+        ? ((e = {
+            appServerVersion: i,
+            error: a,
+            installedCodexVersion: o,
+            state: null,
+          }),
+          (t[0] = i),
+          (t[1] = a),
+          (t[2] = o),
+          (t[3] = e))
+        : (e = t[3]),
+      e
+    );
   }
-  return {
-    appServerVersion,
-    error,
-    installedCodexVersion,
-    state: peers.readState(hostId),
-  };
+  let s;
+  return (
+    t[4] !== i || t[5] !== a || t[6] !== o || t[7] !== r
+      ? ((s = {
+          appServerVersion: i,
+          error: a,
+          installedCodexVersion: o,
+          state: r,
+        }),
+        (t[4] = i),
+        (t[5] = a),
+        (t[6] = o),
+        (t[7] = r),
+        (t[8] = s))
+      : (s = t[8]),
+    s
+  );
 }

@@ -1,48 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export ws / WNl
+// Materialized via extractFn(internal `WNl`) / export `ws`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BinddeferredOnboardingWs3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBinddeferredOnboardingWs3Peers = {
+  Bf: (...args: unknown[]) => unknown;
+  HNl: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
 };
 
-type BinddeferredOnboardingWs3Impl = (
-  props: BinddeferredOnboardingWs3Props,
-) => ReactNode;
-let impl: BinddeferredOnboardingWs3Impl | null = null;
+let peers: BindBinddeferredOnboardingWs3Peers | null = null;
 
-/** Wire the full BinddeferredOnboardingWs3 once deeper restore lands. */
-export function bindBinddeferredOnboardingWs3(
-  next: BinddeferredOnboardingWs3Impl,
-): void {
-  impl = next;
+/** Wire bindBinddeferredOnboardingWs3 peers once companions land. */
+export function setBindBinddeferredOnboardingWs3Peers(next: BindBinddeferredOnboardingWs3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `ws` / internal `WNl`.
- * Stage-3 fill for bundle export ws / WNl; heavy UI via bind.
  */
-export function BinddeferredOnboardingWs3(
-  props: BinddeferredOnboardingWs3Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-et-scaffold="ws"
-      aria-label="BinddeferredOnboardingWs3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export ws / WNl
-        </div>
-      )}
-    </div>
-  );
+export function bindBinddeferredOnboardingWs3() {
+  if (peers == null) {
+    throw new Error("bindBinddeferredOnboardingWs3 peers are not configured");
+  }
+
+  return peers.ka(peers.Q, (e) => ({
+    queryKey: [...peers.HNl, e],
+    queryFn: () =>
+      peers.Bf(`read-external-agent-config-import-histories`, {
+        hostId: e,
+      }),
+    select: (e) =>
+      [...e.data].sort(
+        (e, t) => Number(t.completedAtMs) - Number(e.completedAtMs),
+      ),
+    refetchOnMount: `always`,
+    staleTime: peers.Hf.FIVE_MINUTES,
+  }));
 }

@@ -1,25 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export SS / fZ
+// Materialized via extractFn(internal `fZ`) / export `SS`.
 
 export type IconXsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Aus: (...args: unknown[]) => unknown;
+  Cus: (...args: unknown[]) => unknown;
+  Eus: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  kus: (...args: unknown[]) => unknown;
+  uZ: (...args: unknown[]) => unknown;
 };
 
 let peers: IconXsPeers | null = null;
 
-/** Wire iconXs once companions land. */
+/** Wire iconXs peers once companions land. */
 export function setIconXsPeers(next: IconXsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `SS` / internal `fZ`.
- * Stage-3 fill for bundle export SS / fZ
  */
-export function iconXs(...args: unknown[]): unknown {
+export function iconXs() {
   if (peers == null) {
     throw new Error("iconXs peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    kus = peers.c(), peers.Ho(), peers.Cus(), peers.Eus(), peers.uZ(), Aus = peers.J();
+  });
 }

@@ -8,9 +8,7 @@ let navigateArtifact:
   | ((args: { reference: unknown; artifactNavigationTarget?: unknown }) => void)
   | null = null;
 
-export function setArtifactReferenceLinkNavigate(
-  fn: NonNullable<typeof navigateArtifact>,
-): void {
+export function setArtifactReferenceLinkNavigate(fn: NonNullable<typeof navigateArtifact>): void {
   navigateArtifact = fn;
 }
 

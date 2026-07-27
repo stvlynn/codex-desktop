@@ -16,9 +16,7 @@ type PopcornElectronDocumentPanelImpl = (
 ) => ReactNode;
 let impl: PopcornElectronDocumentPanelImpl | null = null;
 
-export function bindPopcornElectronDocumentPanel(
-  next: PopcornElectronDocumentPanelImpl,
-): void {
+export function bindPopcornElectronDocumentPanel(next: PopcornElectronDocumentPanelImpl): void {
   impl = next;
 }
 

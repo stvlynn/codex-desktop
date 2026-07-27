@@ -1,44 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Kft / Hje
+// Materialized via extractFn(internal `Hje`) / export `Kft`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindFormattedMessageProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindFormattedMessagePeers = {
+  Bje: (...args: unknown[]) => unknown;
+  Dje: (...args: unknown[]) => unknown;
+  Iu: (...args: unknown[]) => unknown;
+  Vje: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gje: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  zje: (...args: unknown[]) => unknown;
 };
 
-type BindFormattedMessageImpl = (props: BindFormattedMessageProps) => ReactNode;
-let impl: BindFormattedMessageImpl | null = null;
+let peers: BindBindFormattedMessagePeers | null = null;
 
-/** Wire the full BindFormattedMessage once deeper restore lands. */
-export function bindBindFormattedMessage(next: BindFormattedMessageImpl): void {
-  impl = next;
+/** Wire bindBindFormattedMessage peers once companions land. */
+export function setBindBindFormattedMessagePeers(next: BindBindFormattedMessagePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Kft` / internal `Hje`.
- * Stage-3 fill for bundle export Kft / Hje; heavy UI via bind.
  */
-export function BindFormattedMessage(
-  props: BindFormattedMessageProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fc-scaffold="Kft"
-      aria-label="BindFormattedMessage"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Kft / Hje
-        </div>
-      )}
-    </div>
-  );
+export function bindBindFormattedMessage() {
+  if (peers == null) {
+    throw new Error("bindBindFormattedMessage peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Iu(), Vje = peers.r(peers.o()), peers.gje(), peers.Dje(), peers.Bje.displayName = `FormattedMessage`, Z = peers.Vje.memo(peers.Bje, peers.zje), peers.Z.displayName = `MemoizedFormattedMessage`;
+  });
 }

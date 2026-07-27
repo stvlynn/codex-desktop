@@ -8,10 +8,7 @@ import { normalizePosixPathSlashes } from "./normalize-posix-path-slashes";
 const CODEX_WORKTREES_MARKER = ".codex/worktrees/";
 
 /** Path segments of `worktreePath` under the codex worktrees root. */
-export function worktreePathSegmentsUnderHome(
-  worktreePath: string,
-  codexHome?: string | null,
-): string[] | null {
+export function worktreePathSegmentsUnderHome(worktreePath: string, codexHome?: string | null): string[] | null {
   const normalized = normalizePosixPathSlashes(worktreePath).replace(
     /\/+$/,
     "",

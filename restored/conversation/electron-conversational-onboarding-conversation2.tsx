@@ -1,48 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export rc / FAl
+// Materialized via extractFn(internal `FAl`) / export `rc`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindElectronConversationalOnboardingConversation2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindElectronConversationalOnboardingConversation2Peers = {
+  Da: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
 };
 
-type BindElectronConversationalOnboardingConversation2Impl = (
-  props: BindElectronConversationalOnboardingConversation2Props,
-) => ReactNode;
-let impl: BindElectronConversationalOnboardingConversation2Impl | null = null;
+let peers: BindBindElectronConversationalOnboardingConversation2Peers | null = null;
 
-/** Wire the full BindElectronConversationalOnboardingConversation2 once deeper restore lands. */
-export function bindBindElectronConversationalOnboardingConversation2(
-  next: BindElectronConversationalOnboardingConversation2Impl,
-): void {
-  impl = next;
+/** Wire bindBindElectronConversationalOnboardingConversation2 peers once companions land. */
+export function setBindBindElectronConversationalOnboardingConversation2Peers(next: BindBindElectronConversationalOnboardingConversation2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `rc` / internal `FAl`.
- * Stage-3 fill for bundle export rc / FAl; heavy UI via bind.
  */
-export function BindElectronConversationalOnboardingConversation2(
-  props: BindElectronConversationalOnboardingConversation2Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fc-scaffold="rc"
-      aria-label="BindElectronConversationalOnboardingConversation2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export rc / FAl
-        </div>
-      )}
-    </div>
-  );
+export function bindBindElectronConversationalOnboardingConversation2() {
+  if (peers == null) {
+    throw new Error("bindBindElectronConversationalOnboardingConversation2 peers are not configured");
+  }
+
+  return peers.Da(peers.Q, e => null, void 0, {
+    key: ({
+      hostId: e,
+      threadId: t
+    }) => `${e}:${t}`
+  });
 }

@@ -1,48 +1,48 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export hpt / eDe
+// Materialized via extractFn(internal `eDe`) / export `hpt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindWorktreeAutoCleanupEnabledProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindWorktreeAutoCleanupEnabledPeers = {
+  $Ee: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  _u: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  hu: (...args: unknown[]) => unknown;
+  rl: (...args: unknown[]) => unknown;
+  xu: (...args: unknown[]) => unknown;
+  yu: (...args: unknown[]) => unknown;
 };
 
-type BindWorktreeAutoCleanupEnabledImpl = (
-  props: BindWorktreeAutoCleanupEnabledProps,
-) => ReactNode;
-let impl: BindWorktreeAutoCleanupEnabledImpl | null = null;
+let peers: BindBindWorktreeAutoCleanupEnabledPeers | null = null;
 
-/** Wire the full BindWorktreeAutoCleanupEnabled once deeper restore lands. */
-export function bindBindWorktreeAutoCleanupEnabled(
-  next: BindWorktreeAutoCleanupEnabledImpl,
-): void {
-  impl = next;
+/** Wire bindBindWorktreeAutoCleanupEnabled peers once companions land. */
+export function setBindBindWorktreeAutoCleanupEnabledPeers(next: BindBindWorktreeAutoCleanupEnabledPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `hpt` / internal `eDe`.
- * Stage-3 fill for bundle export hpt / eDe; heavy UI via bind.
  */
-export function BindWorktreeAutoCleanupEnabled(
-  props: BindWorktreeAutoCleanupEnabledProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fa-scaffold="hpt"
-      aria-label="BindWorktreeAutoCleanupEnabled"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export hpt / eDe
-        </div>
-      )}
-    </div>
-  );
+export function bindBindWorktreeAutoCleanupEnabled() {
+  if (peers == null) {
+    throw new Error("bindBindWorktreeAutoCleanupEnabled peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Sl(), peers._u(), peers.xu(), $Ee = {
+      autoCleanupEnabled: peers.yu({
+        agentAccess: `read-write`,
+        default: !0,
+        description: `Whether Codex automatically cleans up old worktrees`,
+        key: `worktree-auto-cleanup-enabled`,
+        schema: peers.hu
+      }),
+      keepCount: peers.yu({
+        agentAccess: `read-write`,
+        default: 15,
+        description: `How many recent worktrees Codex keeps`,
+        key: `worktree-keep-count`,
+        schema: peers.rl().int().min(1)
+      })
+    };
+  });
 }

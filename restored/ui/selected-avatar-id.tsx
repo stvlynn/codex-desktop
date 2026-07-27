@@ -1,41 +1,57 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export xpt / KEe
+// Materialized via extractFn(internal `KEe`) / export `xpt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type SelectedAvatarIdProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindSelectedAvatarIdPeers = {
+  GEe: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  _Ee: (...args: unknown[]) => unknown;
+  _u: (...args: unknown[]) => unknown;
+  bEe: (...args: unknown[]) => unknown;
+  bu: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gEe: (...args: unknown[]) => unknown;
+  rl: (...args: unknown[]) => unknown;
+  xu: (...args: unknown[]) => unknown;
 };
 
-type SelectedAvatarIdImpl = (props: SelectedAvatarIdProps) => ReactNode;
-let impl: SelectedAvatarIdImpl | null = null;
+let peers: BindSelectedAvatarIdPeers | null = null;
 
-/** Wire the full SelectedAvatarId once deeper restore lands. */
-export function bindSelectedAvatarId(next: SelectedAvatarIdImpl): void {
-  impl = next;
+/** Wire bindSelectedAvatarId peers once companions land. */
+export function setBindSelectedAvatarIdPeers(next: BindSelectedAvatarIdPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `xpt` / internal `KEe`.
- * Stage-3 fill for bundle export xpt / KEe; heavy UI via bind.
  */
-export function SelectedAvatarId(props: SelectedAvatarIdProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fn-scaffold="xpt"
-      aria-label="SelectedAvatarId"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export xpt / KEe
-        </div>
-      )}
-    </div>
-  );
+export function bindSelectedAvatarId() {
+  if (peers == null) {
+    throw new Error("bindSelectedAvatarId peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Sl(), peers._Ee(), peers._u(), peers.xu(), GEe = {
+      defaultServiceTier: peers.bu({
+        agentAccess: `read-write`,
+        default: null,
+        description: `Preferred model speed tier`,
+        key: peers.gEe,
+        schema: peers.bEe
+      }),
+      selectedAvatarId: peers.bu({
+        agentAccess: `read-write`,
+        default: null,
+        description: `Selected Codex avatar`,
+        key: `selected-avatar-id`,
+        schema: peers.bEe
+      }),
+      petSize: peers.bu({
+        agentAccess: `read-write`,
+        default: 112,
+        description: `Size of the floating Codex pet`,
+        key: `avatar-overlay-mascot-width-px`,
+        schema: peers.rl().int().min(80).max(224)
+      })
+    };
+  });
 }

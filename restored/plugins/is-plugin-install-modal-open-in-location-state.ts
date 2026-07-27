@@ -1,34 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DY — real body via extractFn(internal `E4i`) / export `Wz`.
+// Materialized via extractFn(internal `E4i`) / export `Wz`.
 
-export type LocationStateParseResult = {
-  success: boolean;
-  data?: { openInstallModal?: boolean };
+export type IsPluginInstallModalOpenInLocationStatePeers = {
+  M4i: (...args: unknown[]) => unknown;
 };
 
-export type PluginInstallModalLocationStatePeers = {
-  safeParse: (value: unknown) => LocationStateParseResult;
-};
+let peers: IsPluginInstallModalOpenInLocationStatePeers | null = null;
 
-let peers: PluginInstallModalLocationStatePeers | null = null;
-
-/** Wire zod/location-state schema once companions land. */
-export function setPluginInstallModalLocationStatePeers(
-  next: PluginInstallModalLocationStatePeers,
-): void {
+/** Wire isPluginInstallModalOpenInLocationState peers once companions land. */
+export function setIsPluginInstallModalOpenInLocationStatePeers(next: IsPluginInstallModalOpenInLocationStatePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Wz` / internal `E4i`.
- * True when location state requests openInstallModal.
  */
-export function isPluginInstallModalOpenInLocationState(
-  value: unknown,
-): boolean {
+export function isPluginInstallModalOpenInLocationState(e: unknown) {
   if (peers == null) {
-    throw new Error("PluginInstallModalLocationState peers are not configured");
+    throw new Error(
+      "isPluginInstallModalOpenInLocationState peers are not configured",
+    );
   }
-  const parsed = peers.safeParse(value);
-  return parsed.success && parsed.data?.openInstallModal === true;
+
+  let t = peers.M4i.safeParse(e);
+  return t.success && t.data.openInstallModal === !0;
 }

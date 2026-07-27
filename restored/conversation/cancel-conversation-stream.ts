@@ -40,10 +40,7 @@ export function setCancelConversationStreamDeps(args: {
   getHandle = args.getHandle ?? null;
 }
 
-export function cancelConversationStream(
-  store: StoreLike,
-  conversationId: string,
-): void {
+export function cancelConversationStream(store: StoreLike, conversationId: string): void {
   if (clearLocal == null || markIdle == null) {
     throw new Error("cancelConversationStream deps have not been configured");
   }

@@ -1,28 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export ZK / P3r
+// Materialized via extractFn(internal `P3r`) / export `ZK`.
 
 export type ClosedConnectionStatePeers = {
-  impl: (...args: unknown[]) => unknown;
+  A3r: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  M3r: (...args: unknown[]) => unknown;
+  N3r: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  j3r: (...args: unknown[]) => unknown;
+  zN: (...args: unknown[]) => unknown;
 };
 
 let peers: ClosedConnectionStatePeers | null = null;
 
-/** Wire closedConnectionState once companions land. */
-export function setClosedConnectionStatePeers(
-  next: ClosedConnectionStatePeers,
-): void {
+/** Wire closedConnectionState peers once companions land. */
+export function setClosedConnectionStatePeers(next: ClosedConnectionStatePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `ZK` / internal `P3r`.
- * Stage-3 fill for bundle export ZK / P3r
  */
-export function closedConnectionState(...args: unknown[]): unknown {
+export function closedConnectionState() {
   if (peers == null) {
     throw new Error("closedConnectionState peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    A3r = peers.c(), peers.Ho(), peers.ed(), j3r = {
+      kind: `closed`
+    }, zN = peers.Ta(peers.Q, peers.j3r), M3r = 0, N3r = new Map();
+  });
 }

@@ -13,9 +13,7 @@ type useChronicleConfigQueryImpl = (
 let impl: useChronicleConfigQueryImpl | null = null;
 
 /** Wire useChronicleConfigQuery once companions land. */
-export function bindUseChronicleConfigQuery(
-  next: useChronicleConfigQueryImpl,
-): void {
+export function bindUseChronicleConfigQuery(next: useChronicleConfigQueryImpl): void {
   impl = next;
 }
 

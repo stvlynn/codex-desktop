@@ -1,43 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export U2 / wD
+// Materialized via extractFn(internal `wD`) / export `U2`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiU232Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiU232Peers = {
+  CD: (...args: unknown[]) => unknown;
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  SD: (...args: unknown[]) => unknown;
+  Vtr: (...args: unknown[]) => unknown;
+  getHostId: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiU232Impl = (props: BindDeferredUiU232Props) => ReactNode;
-let impl: BindDeferredUiU232Impl | null = null;
+let peers: BindBindDeferredUiU232Peers | null = null;
 
-/** Wire the full BindDeferredUiU232 once deeper restore lands. */
-export function bindBindDeferredUiU232(next: BindDeferredUiU232Impl): void {
-  impl = next;
+/** Wire bindBindDeferredUiU232 peers once companions land. */
+export function setBindBindDeferredUiU232Peers(next: BindBindDeferredUiU232Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `U2` / internal `wD`.
- * Stage-3 fill for bundle export U2 / wD; heavy UI via bind.
  */
-export function BindDeferredUiU232(
-  props: BindDeferredUiU232Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fh-scaffold="U2"
-      aria-label="BindDeferredUiU232"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export U2 / wD
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiU232() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiU232 peers are not configured");
+  }
+
+  return peers.Oa(peers.Q, (e, {
+    get: t
+  }) => peers.Vtr(t, e) ?? t(peers.CD, e)?.getHostId() ?? t(peers.SD));
 }

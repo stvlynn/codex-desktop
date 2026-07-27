@@ -1,42 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export mK / XN
+// Materialized via extractFn(internal `XN`) / export `mK`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindCODEXProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindCODEXPeers = {
+  Gf: (...args: unknown[]) => unknown;
+  Uf: (...args: unknown[]) => unknown;
+  Wh: (...args: unknown[]) => unknown;
+  a7r: (...args: unknown[]) => unknown;
+  ap: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  i7r: (...args: unknown[]) => unknown;
+  o7r: (...args: unknown[]) => unknown;
+  s7r: (...args: unknown[]) => unknown;
 };
 
-type BindCODEXImpl = (props: BindCODEXProps) => ReactNode;
-let impl: BindCODEXImpl | null = null;
+let peers: BindBindCODEXPeers | null = null;
 
-/** Wire the full BindCODEX once deeper restore lands. */
-export function bindBindCODEX(next: BindCODEXImpl): void {
-  impl = next;
+/** Wire bindBindCODEX peers once companions land. */
+export function setBindBindCODEXPeers(next: BindBindCODEXPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `mK` / internal `XN`.
- * Stage-3 fill for bundle export mK / XN; heavy UI via bind.
  */
-export function BindCODEX(props: BindCODEXProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="mK"
-      aria-label="BindCODEX"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export mK / XN
-        </div>
-      )}
-    </div>
-  );
+export function bindBindCODEX() {
+  if (peers == null) {
+    throw new Error("bindBindCODEX peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Gf(), peers.Uf(), peers.Wh(), peers.ap(), i7r = `OAI-Product-Sku`, a7r = `CODEX`, o7r = `codex`, s7r = [`mcp-settings`, `app-connect`];
+  });
 }

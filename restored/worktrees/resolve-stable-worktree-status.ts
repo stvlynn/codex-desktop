@@ -1,80 +1,55 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `eR`) / export `GV`.
+// Materialized via extractFn(internal `eR`) / export `GV`.
 
 export type ResolveStableWorktreeStatusPeers = {
-  resolveWorktreeRequest: (store: unknown, hostId: unknown) => Promise<unknown>;
-  statusAtom: unknown;
-  buildStatus: (
-    model: unknown,
-    serviceTier: unknown,
-    request: unknown,
-  ) => unknown;
-  deriveServiceTier: (status: unknown, fallback: unknown) => unknown;
-  readConfigForHost: (
-    method: string,
-    payload: Record<string, unknown>,
-  ) => Promise<{ config: unknown }>;
-  parseConfig: (config: unknown) => {
-    service_tier?: unknown;
-    model?: unknown;
-  };
-  resolveModelForTier: (hostId: unknown, model: unknown) => Promise<unknown>;
-  logger: {
-    error: (message: string, meta: Record<string, unknown>) => void;
-  };
+  Bf: (...args: unknown[]) => unknown;
+  Fx: (...args: unknown[]) => unknown;
+  Wf: (...args: unknown[]) => unknown;
+  cnr: (...args: unknown[]) => unknown;
+  gtr: (...args: unknown[]) => unknown;
+  lGi: (...args: unknown[]) => unknown;
+  uGi: (...args: unknown[]) => unknown;
+  ytr: (...args: unknown[]) => unknown;
 };
 
 let peers: ResolveStableWorktreeStatusPeers | null = null;
 
-/** Wire stable worktree status resolve peers once companions land. */
-export function setResolveStableWorktreeStatusPeers(
-  next: ResolveStableWorktreeStatusPeers,
-): void {
+/** Wire resolveStableWorktreeStatus peers once companions land. */
+export function setResolveStableWorktreeStatusPeers(next: ResolveStableWorktreeStatusPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `GV` / internal `eR`.
- * Resolve stable worktree status from config + host request.
  */
-export async function resolveStableWorktreeStatus(
-  store: { get: (atom: unknown, hostId: unknown) => { type: string } },
-  hostId: unknown,
-  modelOverride?: unknown,
-): Promise<unknown> {
+async function resolveStableWorktreeStatus(e, t, n) {
   if (peers == null) {
-    throw new Error("ResolveStableWorktreeStatus peers are not configured");
+    throw new Error("resolveStableWorktreeStatus peers are not configured");
   }
+
   try {
-    const request = await peers.resolveWorktreeRequest(store, hostId);
-    const status = store.get(peers.statusAtom, hostId);
-    if (status.type !== "fromConfig") {
-      return peers.buildStatus(
-        null,
-        peers.deriveServiceTier(status, null),
-        request,
-      );
-    }
-    const { config } = await peers.readConfigForHost("read-config-for-host", {
-      hostId,
-      includeLayers: false,
-      cwd: null,
-      priority: "critical",
-    });
-    const parsed = peers.parseConfig(config);
-    if (parsed.service_tier == null) {
-      return peers.buildStatus(
-        await peers.resolveModelForTier(hostId, modelOverride ?? parsed.model),
-        parsed.service_tier,
-        request,
-      );
-    }
-    return peers.buildStatus(null, parsed.service_tier, request);
-  } catch (error) {
-    peers.logger.error("Failed to read service tier for request", {
-      safe: {},
-      sensitive: { error },
-    });
-    return null;
+    let r = await peers.lGi(e, t),
+      i = e.get(peers.cnr, t);
+    if (i.type !== `fromConfig`) return peers.gtr(null, peers.ytr(i, null), r);
+    let { config: a } = await peers.Bf(`read-config-for-host`, {
+        hostId: t,
+        includeLayers: !1,
+        cwd: null,
+        priority: `critical`,
+      }),
+      o = peers.Fx(a);
+    return o.service_tier == null
+      ? peers.gtr(await peers.uGi(t, n ?? o.model), o.service_tier, r)
+      : peers.gtr(null, o.service_tier, r);
+  } catch (e) {
+    return (
+      peers.Wf.error(`Failed to read service tier for request`, {
+        safe: {},
+        sensitive: {
+          error: e,
+        },
+      }),
+      null
+    );
   }
 }

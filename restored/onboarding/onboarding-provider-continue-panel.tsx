@@ -1,273 +1,256 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DY — real body via extractFn(internal `csu`) / export `Tn`.
-// Provider row / brand header peers bind via setOnboardingProviderContinuePanelParts.
+// Materialized via extractFn(internal `csu`) / export `Tn`.
 
-import type { FormEvent, ReactElement, ReactNode } from "react";
-import { useState } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
-
-import { Button } from "../ui/button";
-import { DialogBody } from "../ui/dialog-body";
-import { DialogFooter } from "../ui/dialog-footer";
-import { DialogHeader } from "../ui/dialog-header";
-import { DialogSection } from "../ui/dialog-section";
-import { cx } from "../ui/cx";
-
-export type OnboardingProviderContinuePanelProps = {
-  appBrand?: ReactNode;
-  providerIds: string[];
-  variant?: "onboarding" | "dialog" | string;
-  onContinue: (providerIds: string[]) => void;
-  onSkip: () => void;
+export type OnboardingProviderContinuePanelPeers = {
+  Ju: (...args: unknown[]) => unknown;
+  Np: (...args: unknown[]) => unknown;
+  Qk: (...args: unknown[]) => unknown;
+  XNl: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
+  Zk: (...args: unknown[]) => unknown;
+  dsu: (...args: unknown[]) => unknown;
+  fsu: (...args: unknown[]) => unknown;
+  iA: (...args: unknown[]) => unknown;
+  isu: (...args: unknown[]) => unknown;
+  lsu: (...args: unknown[]) => unknown;
+  nA: (...args: unknown[]) => unknown;
+  rA: (...args: unknown[]) => unknown;
+  s9: (...args: unknown[]) => unknown;
+  tA: (...args: unknown[]) => unknown;
+  usu: (...args: unknown[]) => unknown;
 };
+let peers: OnboardingProviderContinuePanelPeers | null = null;
 
-export type OnboardingProviderContinuePanelParts = {
-  isStandardChatsUnsupported?: (providerId: string) => boolean;
-  ProviderRow: (props: {
-    providerId: string;
-    selected: boolean;
-    onToggle: () => void;
-  }) => ReactNode;
-  BrandHeader?: (props: {
-    appBrand?: ReactNode;
-    title: ReactNode;
-    subtitle: ReactNode;
-  }) => ReactNode;
-  knownProviderIds: string[];
-};
-
-let parts: OnboardingProviderContinuePanelParts | null = null;
-
-/** Wire provider rows / brand header once companions land. */
-export function setOnboardingProviderContinuePanelParts(
-  next: OnboardingProviderContinuePanelParts,
+/** Wire OnboardingProviderContinuePanel peers once companions land. */
+export function setOnboardingProviderContinuePanelPeers(
+  next: OnboardingProviderContinuePanelPeers,
 ): void {
-  parts = next;
+  peers = next;
 }
 
 /**
  * Bundle export `Tn` / internal `csu`.
- * External-agent provider selection continue/skip panel.
  */
-export function OnboardingProviderContinuePanel(
-  props: OnboardingProviderContinuePanelProps,
-): ReactElement {
-  const {
-    appBrand,
-    providerIds,
-    variant = "onboarding",
-    onContinue,
-    onSkip,
-  } = props;
-  const intl = useIntl();
-  const [selected, setSelected] = useState(providerIds);
-  const isDialog = variant === "dialog";
-  const unsupported = providerIds.some(
-    (id) => parts?.isStandardChatsUnsupported?.(id) ?? false,
-  );
-
-  const title = isDialog ? (
-    <FormattedMessage
-      id="electron.onboarding.welcomeV2.externalAgentImport.providers.dialogTitle"
-      defaultMessage="Import from other AI apps"
-      description="Title for the external agent provider selection dialog"
-    />
-  ) : (
-    <FormattedMessage
-      id="electron.onboarding.welcomeV2.externalAgentImport.providers.title"
-      defaultMessage="Import work from other AI apps"
-      description="Title for the external agent provider selection step"
-    />
-  );
-
-  const subtitle = (
-    <FormattedMessage
-      id="electron.onboarding.welcomeV2.externalAgentImport.providers.subtitle"
-      defaultMessage="Bring over your setup, projects, and recent chats"
-      description="Subtitle for the external agent provider selection step"
-    />
-  );
-
-  const handleContinue = (): void => {
-    if (selected.length === 0) {
-      onSkip();
-      return;
-    }
-    onContinue(selected);
-  };
-
-  const toggle = (providerId: string): void => {
-    setSelected((current) =>
-      current.includes(providerId)
-        ? current.filter((id) => id !== providerId)
-        : [...current, providerId],
+export function OnboardingProviderContinuePanel(props: unknown) {
+  const Z = peers.Z;
+  const IA = peers.iA;
+  const TA = peers.tA;
+  const Zk = peers.Zk;
+  const Qk = peers.Qk;
+  const Isu = peers.isu;
+  const RA = peers.rA;
+  const Np = peers.Np;
+  const NA = peers.nA;
+  if (peers == null) {
+    throw new Error("OnboardingProviderContinuePanel peers are not configured");
+  }
+  let {
+      appBrand,
+      providerIds,
+      variant = "onboarding",
+      onContinue,
+      onSkip,
+    } = props,
+    c = peers.Ju(),
+    [l, u] = peers.fsu.useState(providerIds),
+    d = variant === "dialog",
+    f = providerIds.some(peers.lsu);
+  let p = f,
+    m = d ? (
+      <Z
+        id="electron.onboarding.welcomeV2.externalAgentImport.providers.dialogTitle"
+        defaultMessage="Import from other AI apps"
+        description="Title for the external agent provider selection dialog"
+      />
+    ) : (
+      <Z
+        id="electron.onboarding.welcomeV2.externalAgentImport.providers.title"
+        defaultMessage="Import work from other AI apps"
+        description="Title for the external agent provider selection step"
+      />
     );
-  };
-
-  const handleSubmit = (event: FormEvent): void => {
-    event.preventDefault();
-    handleContinue();
-  };
-
-  const knownIds = parts?.knownProviderIds ?? providerIds;
-  const rows = knownIds
-    .filter((id) => providerIds.includes(id))
-    .map((providerId) =>
-      parts?.ProviderRow != null ? (
-        <parts.ProviderRow
-          key={providerId}
-          providerId={providerId}
-          selected={selected.includes(providerId)}
-          onToggle={() => toggle(providerId)}
+  let h = m,
+    g = (
+      <Z
+        id="electron.onboarding.welcomeV2.externalAgentImport.providers.subtitle"
+        defaultMessage="Bring over your setup, projects, and recent chats"
+        description="Subtitle for the external agent provider selection step"
+      />
+    );
+  let _ = g,
+    v = () => {
+      if (l.length === 0) {
+        onSkip();
+        return;
+      }
+      onContinue(l);
+    };
+  let y = v,
+    b = (e) => {
+      u((t) => {
+        return t.includes(e)
+          ? t.filter((item) => {
+              return item !== e;
+            })
+          : [...t, e];
+      });
+    };
+  let x = b,
+    S = (event) => {
+      event.preventDefault();
+      y();
+    };
+  let C = S,
+    w = d ? (
+      <IA>
+        <TA
+          title={<Zk className="contents">{h}</Zk>}
+          subtitle={<Qk className="sr-only">{_}</Qk>}
+        />
+      </IA>
+    ) : (
+      <Isu
+        appBrand={appBrand}
+        sourceIconVariant="neutral"
+        title={h}
+        subtitle={_}
+      />
+    );
+  let T = d
+      ? "mt-4 flex w-full flex-col"
+      : "mt-8 flex w-full max-w-xs flex-col",
+    E = (
+      <div className="mb-2 text-xs leading-4 font-medium text-token-description-foreground">
+        {
+          <Z
+            id="electron.onboarding.welcomeV2.externalAgentImport.providers.appsFound"
+            defaultMessage="Apps found"
+            description="Label above the external agent apps found list"
+          />
+        }
+      </div>
+    );
+  let D = c.formatMessage({
+    id: "electron.onboarding.welcomeV2.externalAgentImport.providers.list",
+    defaultMessage: "Apps found",
+    description: "Accessible label for the external agent provider list",
+  });
+  let O;
+  {
+    let e = (e) => {
+      return providerIds.includes(e);
+    };
+    let n;
+    n = (e) => {
+      return (
+        <peers.usu
+          key={e}
+          providerId={e}
+          selected={l.includes(e)}
+          onToggle={() => {
+            return x(e);
+          }}
+        />
+      );
+    };
+    O = peers.XNl.filter(e).map(n);
+  }
+  let k = (
+    <div
+      role="list"
+      aria-label={D}
+      className="overflow-hidden rounded-2xl border border-token-border bg-token-main-surface-primary"
+    >
+      {O}
+    </div>
+  );
+  let A = (
+    <div className="mt-2 text-center text-xs leading-4 text-token-text-secondary">
+      {p ? (
+        <Z
+          id="electron.onboarding.welcomeV2.externalAgentImport.providers.standardChatsUnsupported"
+          defaultMessage="Your existing Claude setup won’t be affected. Standard Claude Chat data cannot be imported."
+          description="Note below the external agent provider selection list"
         />
       ) : (
-        <label
-          key={providerId}
-          className="flex cursor-pointer items-center gap-3 px-4 py-3 text-sm"
-        >
-          <input
-            type="checkbox"
-            checked={selected.includes(providerId)}
-            onChange={() => toggle(providerId)}
-          />
-          <span>{providerId}</span>
-        </label>
-      ),
-    );
-
-  const header = isDialog ? (
-    <DialogSection>
-      <DialogHeader
-        title={<span className="contents">{title}</span>}
-        subtitle={<span className="sr-only">{subtitle}</span>}
-      />
-    </DialogSection>
-  ) : parts?.BrandHeader != null ? (
-    <parts.BrandHeader appBrand={appBrand} title={title} subtitle={subtitle} />
-  ) : (
-    <div className="mb-6 flex flex-col items-center gap-2 text-center">
-      {appBrand}
-      <h1 className="heading-dialog font-semibold">{title}</h1>
-      <p className="text-sm text-token-description-foreground">{subtitle}</p>
-    </div>
-  );
-
-  const listBlock = (
-    <div
-      className={
-        isDialog
-          ? "mt-4 flex w-full flex-col"
-          : "mt-8 flex w-full max-w-xs flex-col"
-      }
-    >
-      <div className="mb-2 text-xs leading-4 font-medium text-token-description-foreground">
-        <FormattedMessage
-          id="electron.onboarding.welcomeV2.externalAgentImport.providers.appsFound"
-          defaultMessage="Apps found"
-          description="Label above the external agent apps found list"
+        <Z
+          id="electron.onboarding.welcomeV2.externalAgentImport.providers.setupPreserved"
+          defaultMessage="Your existing app setup won’t be affected"
+          description="Note below the external agent provider selection list explaining that source apps are unchanged"
         />
-      </div>
-      <div
-        role="list"
-        aria-label={intl.formatMessage({
-          id: "electron.onboarding.welcomeV2.externalAgentImport.providers.list",
-          defaultMessage: "Apps found",
-          description: "Accessible label for the external agent provider list",
-        })}
-        className="overflow-hidden rounded-2xl border border-token-border bg-token-main-surface-primary"
-      >
-        {rows}
-      </div>
-      <div className="mt-2 text-center text-xs leading-4 text-token-text-secondary">
-        {unsupported ? (
-          <FormattedMessage
-            id="electron.onboarding.welcomeV2.externalAgentImport.providers.standardChatsUnsupported"
-            defaultMessage="Your existing Claude setup won’t be affected. Standard Claude Chat data cannot be imported."
-            description="Note below the external agent provider selection list"
-          />
-        ) : (
-          <FormattedMessage
-            id="electron.onboarding.welcomeV2.externalAgentImport.providers.setupPreserved"
-            defaultMessage="Your existing app setup won’t be affected"
-            description="Note below the external agent provider selection list explaining that source apps are unchanged"
-          />
-        )}
-      </div>
+      )}
     </div>
   );
-
-  const actions = isDialog ? (
+  let j = (
+    <div className={T}>
+      {E}
+      {k}
+      {A}
+    </div>
+  );
+  let M = d ? (
     <div className="mt-4">
-      <DialogFooter>
-        <Button color="ghost" onClick={onSkip} type="button">
-          <FormattedMessage
-            id="common.cancel"
-            defaultMessage="Cancel"
-            description="Cancel button label"
-          />
-        </Button>
-        <Button type="submit" color="primary">
-          <FormattedMessage
+      {
+        <RA>
+          <Np color="ghost" onClick={onSkip}>
+            <Z
+              id="common.cancel"
+              defaultMessage="Cancel"
+              description="Cancel button label"
+            />
+          </Np>
+          <Np type="submit" color="primary">
+            <Z
+              id="electron.onboarding.welcomeV2.continue"
+              defaultMessage="Continue"
+              description="Welcome v2 continue button label"
+            />
+          </Np>
+        </RA>
+      }
+    </div>
+  ) : (
+    <div className="mt-8 flex w-full max-w-xs flex-col items-center gap-2">
+      {
+        <Np className="w-full justify-center" size="large" onClick={y}>
+          <Z
             id="electron.onboarding.welcomeV2.continue"
             defaultMessage="Continue"
             description="Welcome v2 continue button label"
           />
-        </Button>
-      </DialogFooter>
-    </div>
-  ) : (
-    <div className="mt-8 flex w-full max-w-xs flex-col items-center gap-2">
-      <Button
-        className="w-full justify-center"
-        size="large"
-        onClick={handleContinue}
-        type="button"
-      >
-        <FormattedMessage
-          id="electron.onboarding.welcomeV2.continue"
-          defaultMessage="Continue"
-          description="Welcome v2 continue button label"
-        />
-      </Button>
-      <Button
-        className="w-full justify-center"
-        color="ghost"
-        size="large"
-        onClick={onSkip}
-        type="button"
-      >
-        <FormattedMessage
-          id="electron.onboarding.welcomeV2.skip"
-          defaultMessage="Skip"
-          description="Welcome v2 skip button label"
-        />
-      </Button>
+        </Np>
+      }
+      {
+        <Np
+          className="w-full justify-center"
+          color="ghost"
+          size="large"
+          onClick={onSkip}
+        >
+          <Z
+            id="electron.onboarding.welcomeV2.skip"
+            defaultMessage="Skip"
+            description="Welcome v2 skip button label"
+          />
+        </Np>
+      }
     </div>
   );
-
-  const content = (
+  let N = (
     <>
-      {header}
-      {listBlock}
-      {actions}
+      {w}
+      {j}
+      {M}
     </>
   );
-
-  if (isDialog) {
-    return (
-      <DialogBody as="form" className="gap-0" onSubmit={handleSubmit}>
-        {content}
-      </DialogBody>
-    );
-  }
-
-  return (
-    <div
-      className={cx(
-        "flex w-full max-w-lg flex-col items-center overflow-hidden rounded-2xl p-10",
-      )}
-    >
-      {content}
+  let P = N;
+  return d ? (
+    <NA as="form" className="gap-0" onSubmit={C}>
+      {P}
+    </NA>
+  ) : (
+    <div className="flex w-full max-w-lg flex-col items-center overflow-hidden rounded-2xl p-10">
+      {P}
     </div>
   );
 }

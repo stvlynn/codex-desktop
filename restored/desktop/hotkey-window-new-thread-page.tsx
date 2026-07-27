@@ -17,9 +17,7 @@ type HotkeyWindowNewThreadPageImpl = (
 let impl: HotkeyWindowNewThreadPageImpl | null = null;
 
 /** Wire the full HotkeyWindowNewThreadPage once deeper companion restore lands. */
-export function bindHotkeyWindowNewThreadPage(
-  next: HotkeyWindowNewThreadPageImpl,
-): void {
+export function bindHotkeyWindowNewThreadPage(next: HotkeyWindowNewThreadPageImpl): void {
   impl = next;
 }
 

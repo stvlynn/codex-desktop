@@ -26,9 +26,7 @@ let pinnedOverrideAtom: unknown = Symbol.for("codex.review.pinned-override");
 let explicitFilterAtom: unknown = Symbol.for("codex.review.explicit-filter");
 let persistedFilterAtom: unknown = Symbol.for("codex.review.persisted-filter");
 
-export function bindReviewDiffFilterAtoms(
-  bindings: ReviewDiffFilterAtoms,
-): void {
+export function bindReviewDiffFilterAtoms(bindings: ReviewDiffFilterAtoms): void {
   if (bindings.reviewModeAtom != null) reviewModeAtom = bindings.reviewModeAtom;
   if (bindings.pinnedOverrideAtom != null) {
     pinnedOverrideAtom = bindings.pinnedOverrideAtom;
@@ -54,10 +52,7 @@ function applyFilter(scope: AppActionScope, filter: ReviewDiffFilter): void {
 /**
  * Bundle `Wri` / export `OW`.
  */
-export function setReviewDiffFilter(
-  scope: AppActionScope,
-  filter: ReviewDiffFilter,
-): void {
+export function setReviewDiffFilter(scope: AppActionScope, filter: ReviewDiffFilter): void {
   if (scope.get(reviewModeAtom) === "last-turn-only") {
     scope.set(pinnedOverrideAtom, null);
     applyFilter(scope, "last-turn");

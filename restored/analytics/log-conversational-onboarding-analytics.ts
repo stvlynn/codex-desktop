@@ -59,10 +59,7 @@ function conversationalOnboardingAccessType(
 }
 
 /** Bundle `Qcc` / `Wf`. */
-export function logConversationalOnboardingRoleSelected(
-  store: StoreLike,
-  roleType: unknown,
-): void {
+export function logConversationalOnboardingRoleSelected(store: StoreLike, roleType: unknown): void {
   logProductEvent(store, CODEX_CONVERSATIONAL_ONBOARDING_ROLE_EVENT_TYPE, {
     action:
       CodexConversationalOnboardingRoleAction.CODEX_CONVERSATIONAL_ONBOARDING_ROLE_ACTION_SELECTED,
@@ -71,10 +68,7 @@ export function logConversationalOnboardingRoleSelected(
 }
 
 /** Bundle `$cc` / `qf`. */
-export function logConversationalOnboardingTaskSelected(
-  store: StoreLike,
-  task: string,
-): void {
+export function logConversationalOnboardingTaskSelected(store: StoreLike, task: string): void {
   logProductEvent(store, CODEX_CONVERSATIONAL_ONBOARDING_TASK_EVENT_TYPE, {
     action:
       CodexConversationalOnboardingTaskAction.CODEX_CONVERSATIONAL_ONBOARDING_TASK_ACTION_SELECTED,
@@ -99,19 +93,14 @@ function logLifecycle(
 }
 
 /** Bundle `Ncc` / `Kf`. */
-export function logConversationalOnboardingLifecycleStarted(
-  store: StoreLike,
-): void {
+export function logConversationalOnboardingLifecycleStarted(store: StoreLike): void {
   logLifecycle(
     store,
     CodexConversationalOnboardingLifecycleAction.CODEX_CONVERSATIONAL_ONBOARDING_LIFECYCLE_ACTION_STARTED,
   );
 }
 /** Bundle `Pcc` / `Bf`. */
-export function logConversationalOnboardingLifecycleCompleted(
-  store: StoreLike,
-  selectedTask: string,
-): void {
+export function logConversationalOnboardingLifecycleCompleted(store: StoreLike, selectedTask: string): void {
   logLifecycle(
     store,
     CodexConversationalOnboardingLifecycleAction.CODEX_CONVERSATIONAL_ONBOARDING_LIFECYCLE_ACTION_COMPLETED,
@@ -119,10 +108,7 @@ export function logConversationalOnboardingLifecycleCompleted(
   );
 }
 /** Bundle `Fcc` / `Gf`. */
-export function logConversationalOnboardingLifecycleSkipped(
-  store: StoreLike,
-  selectedTask: string,
-): void {
+export function logConversationalOnboardingLifecycleSkipped(store: StoreLike, selectedTask: string): void {
   logLifecycle(
     store,
     CodexConversationalOnboardingLifecycleAction.CODEX_CONVERSATIONAL_ONBOARDING_LIFECYCLE_ACTION_SKIPPED,
@@ -144,10 +130,7 @@ function logExecution(
 }
 
 /** Bundle `Ycc` / `Vf`. */
-export function logConversationalOnboardingExecutionCancelled(
-  store: StoreLike,
-  task: string,
-): void {
+export function logConversationalOnboardingExecutionCancelled(store: StoreLike, task: string): void {
   logExecution(
     store,
     CodexConversationalOnboardingExecutionAction.CODEX_CONVERSATIONAL_ONBOARDING_EXECUTION_ACTION_CANCELLED,
@@ -155,10 +138,7 @@ export function logConversationalOnboardingExecutionCancelled(
   );
 }
 /** Bundle `Jcc` / `Hf`. */
-export function logConversationalOnboardingExecutionCompletionMissing(
-  store: StoreLike,
-  task: string,
-): void {
+export function logConversationalOnboardingExecutionCompletionMissing(store: StoreLike, task: string): void {
   logExecution(
     store,
     CodexConversationalOnboardingExecutionAction.CODEX_CONVERSATIONAL_ONBOARDING_EXECUTION_ACTION_FAILED,
@@ -168,10 +148,7 @@ export function logConversationalOnboardingExecutionCompletionMissing(
 }
 
 /** Bundle `Bcc` / `zf`. */
-export function logConversationalOnboardingAccessDenied(
-  store: StoreLike,
-  task: string,
-): void {
+export function logConversationalOnboardingAccessDenied(store: StoreLike, task: string): void {
   logProductEvent(store, CODEX_CONVERSATIONAL_ONBOARDING_ACCESS_EVENT_TYPE, {
     accessType: conversationalOnboardingAccessType(task),
     action:

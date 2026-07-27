@@ -1,119 +1,78 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Stage 3: Wave CA — small real body merging local conversations + cloud tasks
-// into sidebar/home search rows. Deferred companion of home thread lists.
+// Materialized via extractFn(internal `Eqa`) / export `fM`.
 
-import { asThreadId } from "../conversation/as-thread-id";
-import {
-  resolveConversationTitle,
-  resolveConversationTitleRaw,
-} from "../conversation/resolve-conversation-title";
-import {
-  toLocalSidebarThreadKey,
-  toRemoteSidebarThreadKey,
-} from "../conversation/sidebar-thread-keys";
-
-type ConversationMeta = {
-  id: string;
-  hostId?: string | null;
-  cwd?: string | null;
-  updatedAt?: number;
-  recencyAt?: number;
-  gitInfo?: { branch?: string | null } | null;
-  [key: string]: unknown;
+export type BuildLocalAndRemoteThreadSearchItemsPeers = {
+  DSt: (...args: unknown[]) => unknown;
+  LA: (...args: unknown[]) => unknown;
+  RA: (...args: unknown[]) => unknown;
+  b_: (...args: unknown[]) => unknown;
+  branch: (...args: unknown[]) => unknown;
+  environment_label: (...args: unknown[]) => unknown;
+  get: (...args: unknown[]) => unknown;
+  kl: (...args: unknown[]) => unknown;
+  map: (...args: unknown[]) => unknown;
 };
+let peers: BuildLocalAndRemoteThreadSearchItemsPeers | null = null;
 
-type CloudTask = {
-  id: string;
-  title?: string | null;
-  updated_at?: number | null;
-  created_at?: number | null;
-  task_status_display?: { environment_label?: string | null } | null;
-  [key: string]: unknown;
-};
-
-export type LocalThreadSearchItem = {
-  kind: "local";
-  threadKey: string;
-  conversationId: string;
-  threadId: string;
-  title: string | null;
-  searchTitle: string;
-  cwd: string;
-  branch: string;
-  projectLabel: string | undefined;
-  updatedAt: number | undefined;
-  searchPreview: null;
-};
-
-export type RemoteThreadSearchItem = {
-  kind: "remote";
-  threadKey: string;
-  taskId: string;
-  title: string | null | undefined;
-  searchTitle: string;
-  environmentLabel: string;
-  projectLabel: string | undefined;
-  updatedAt: number;
-  searchPreview: null;
-};
-
-export type ThreadSearchItem = LocalThreadSearchItem | RemoteThreadSearchItem;
+/** Wire buildLocalAndRemoteThreadSearchItems peers once companions land. */
+export function setBuildLocalAndRemoteThreadSearchItemsPeers(
+  next: BuildLocalAndRemoteThreadSearchItemsPeers,
+): void {
+  peers = next;
+}
 
 /**
- * Merge local conversation metas and remote cloud tasks into searchable rows.
  * Bundle export `fM` / internal `Eqa`.
  */
-export function buildLocalAndRemoteThreadSearchItems(args: {
-  cloudTasks?: CloudTask[] | null;
-  conversationsMeta: ConversationMeta[];
-  hostIds: Set<string>;
-  projectLabelByThreadKey?: Map<string, string> | null;
-}): ThreadSearchItem[] {
-  const {
-    cloudTasks: cloud,
-    conversationsMeta: metas,
-    hostIds,
-    projectLabelByThreadKey: labels,
-  } = args;
-
-  const local: LocalThreadSearchItem[] = metas
-    .filter((row) => hostIds.has(row.hostId ?? "local"))
-    .map((row) => {
-      const cwd = row.cwd ?? "";
-      const title = resolveConversationTitle(row);
-      const searchTitle = (resolveConversationTitleRaw(row) ?? cwd) || row.id;
-      const conversationId = asThreadId(row.id);
-      const threadKey = toLocalSidebarThreadKey(conversationId);
-      return {
-        kind: "local",
-        threadKey,
-        conversationId,
-        threadId: row.id,
-        title,
-        searchTitle,
-        cwd,
-        branch: row.gitInfo?.branch ?? "",
-        projectLabel: labels?.get(threadKey),
-        updatedAt: row.recencyAt ?? row.updatedAt,
-        searchPreview: null,
-      };
-    });
-
-  const remote: RemoteThreadSearchItem[] =
-    cloud?.map((task) => {
-      const threadKey = toRemoteSidebarThreadKey(task.id);
+export function buildLocalAndRemoteThreadSearchItems({
+  cloudTasks,
+  conversationsMeta,
+  hostIds,
+  projectLabelByThreadKey,
+}: Record<string, unknown>) {
+  if (peers == null) {
+    throw new Error(
+      "buildLocalAndRemoteThreadSearchItems peers are not configured",
+    );
+  }
+  return [
+    ...conversationsMeta
+      .filter((item) => {
+        return hostIds.has(item.hostId ?? "local");
+      })
+      .map((item) => {
+        let t = item.cwd ?? "",
+          n = peers.b_(item),
+          i = (peers.DSt(item) ?? t) || item.id,
+          a = peers.kl(item.id),
+          o = peers.LA(a);
+        return {
+          kind: "local",
+          threadKey: o,
+          conversationId: a,
+          threadId: item.id,
+          title: n,
+          searchTitle: i,
+          cwd: t,
+          branch: item.gitInfo?.branch ?? "",
+          projectLabel: projectLabelByThreadKey?.get(o),
+          updatedAt: item.recencyAt ?? item.updatedAt,
+          searchPreview: null,
+        };
+      }),
+    ...(cloudTasks?.map((e) => {
+      let t = peers.RA(e.id);
       return {
         kind: "remote",
-        threadKey,
-        taskId: task.id,
-        title: task.title,
-        searchTitle: task.title ?? task.id,
-        environmentLabel: task.task_status_display?.environment_label ?? "",
-        projectLabel: labels?.get(threadKey),
-        updatedAt: (task.updated_at ?? task.created_at ?? 0) * 1000,
+        threadKey: t,
+        taskId: e.id,
+        title: e.title,
+        searchTitle: e.title ?? e.id,
+        environmentLabel: e.task_status_display?.environment_label ?? "",
+        projectLabel: projectLabelByThreadKey?.get(t),
+        updatedAt: (e.updated_at ?? e.created_at ?? 0) * 1e3,
         searchPreview: null,
       };
-    }) ?? [];
-
-  return [...local, ...remote];
+    }) ?? []),
+  ];
 }

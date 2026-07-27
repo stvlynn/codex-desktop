@@ -1,25 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export eT / $5o
+// Materialized via extractFn(internal `$5o`) / export `eT`.
 
 export type BindDeferredUiETPeers = {
-  impl: (...args: unknown[]) => unknown;
+  FHa: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Q5o: (...args: unknown[]) => unknown;
+  SQa: (...args: unknown[]) => unknown;
+  X5o: (...args: unknown[]) => unknown;
+  Z5o: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ju: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiETPeers | null = null;
 
-/** Wire bindDeferredUiET once companions land. */
+/** Wire bindDeferredUiET peers once companions land. */
 export function setBindDeferredUiETPeers(next: BindDeferredUiETPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `eT` / internal `$5o`.
- * Stage-3 fill for bundle export eT / $5o
  */
-export function bindDeferredUiET(...args: unknown[]): unknown {
+export function bindDeferredUiET() {
   if (peers == null) {
     throw new Error("bindDeferredUiET peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    X5o = peers.c(), Z5o = peers.r(peers.ju(), 1), peers.FHa(), peers.SQa(), Q5o = peers.J();
+  });
 }

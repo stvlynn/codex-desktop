@@ -15,9 +15,7 @@ export type UseResolvedAccountIdPeers = {
 let peers: UseResolvedAccountIdPeers | null = null;
 
 /** Wire useResolvedAccountId peers once companions land. */
-export function setUseResolvedAccountIdPeers(
-  next: UseResolvedAccountIdPeers,
-): void {
+export function setUseResolvedAccountIdPeers(next: UseResolvedAccountIdPeers): void {
   peers = next;
 }
 

@@ -1,19 +1,10 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EI — real body via extractFn(internal `xti`) / export `pG`.
+// Materialized via extractFn(internal `xti`) / export `pG`.
 
 export type StartAttachmentJourneyPeers = {
-  startJourney: (
-    store: unknown,
-    draft: {
-      templateId: unknown;
-      templateOrigin: unknown;
-      inclusion: { type: "attachment"; path: unknown };
-    },
-    journey: unknown,
-  ) => void;
-  builtInOrigin: unknown;
+  XZn: (...args: unknown[]) => unknown;
+  wti: (...args: unknown[]) => unknown;
 };
-
 let peers: StartAttachmentJourneyPeers | null = null;
 
 /** Wire startAttachmentJourney peers once companions land. */
@@ -25,22 +16,24 @@ export function setStartAttachmentJourneyPeers(
 
 /**
  * Bundle export `pG` / internal `xti`.
- * Start an artifact template journey with an attachment inclusion.
  */
 export function startAttachmentJourney(
-  store: unknown,
-  args: { attachmentPath: unknown; journey: unknown; templateId: unknown },
-): void {
+  e: unknown,
+  { attachmentPath, journey, templateId }: Record<string, unknown>,
+) {
   if (peers == null) {
-    throw new Error("StartAttachmentJourney peers are not configured");
+    throw new Error("startAttachmentJourney peers are not configured");
   }
-  peers.startJourney(
-    store,
+  peers.wti(
+    e,
     {
-      templateId: args.templateId,
-      templateOrigin: peers.builtInOrigin,
-      inclusion: { type: "attachment", path: args.attachmentPath },
+      templateId,
+      templateOrigin: peers.XZn.CODEX_ARTIFACT_TEMPLATE_ORIGIN_BUILT_IN_ASSET,
+      inclusion: {
+        type: "attachment",
+        path: attachmentPath,
+      },
     },
-    args.journey,
+    journey,
   );
 }

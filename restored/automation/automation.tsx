@@ -1,42 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ql / W1c
+// Materialized via extractFn(internal `W1c`) / export `Ql`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type AutomationProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindAutomationPeers = {
+  $u: (...args: unknown[]) => unknown;
+  HAr: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Mp: (...args: unknown[]) => unknown;
+  PM: (...args: unknown[]) => unknown;
+  QQc: (...args: unknown[]) => unknown;
+  R1c: (...args: unknown[]) => unknown;
+  U1c: (...args: unknown[]) => unknown;
+  Zh: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gT: (...args: unknown[]) => unknown;
+  nO: (...args: unknown[]) => unknown;
+  w3: (...args: unknown[]) => unknown;
 };
 
-type AutomationImpl = (props: AutomationProps) => ReactNode;
-let impl: AutomationImpl | null = null;
+let peers: BindAutomationPeers | null = null;
 
-/** Wire the full Automation once deeper restore lands. */
-export function bindAutomation(next: AutomationImpl): void {
-  impl = next;
+/** Wire bindAutomation peers once companions land. */
+export function setBindAutomationPeers(next: BindAutomationPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Ql` / internal `W1c`.
- * Stage-3 fill for bundle export Ql / W1c; heavy UI via bind.
  */
-export function Automation(props: AutomationProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-eq-scaffold="Ql"
-      aria-label="Automation"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Ql / W1c
-        </div>
-      )}
-    </div>
-  );
+export function bindAutomation() {
+  if (peers == null) {
+    throw new Error("bindAutomation peers are not configured");
+  }
+
+  return peers.e(() => {
+    U1c = peers.c(), peers.Ho(), peers.$u(), peers.nO(), peers.Mp(), peers.Zh(), peers.PM(), peers.gT(), peers.HAr(), peers.R1c(), peers.QQc(), w3 = peers.J();
+  });
 }

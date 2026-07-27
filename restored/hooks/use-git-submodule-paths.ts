@@ -11,23 +11,25 @@ import {
   mergeGitLiveQueryOptions,
   type GitMethodQueryOptionsInput,
 } from "./git-method-query-atoms";
-
 ensureGitMethodQueryAtomsInit();
-
 const submodulePathsAtoms = createGitMethodQueryAtoms({
   method: "submodule-paths",
-  getParams: (input) => ({
-    operationSource: input.operationSource,
-    root: input.root,
-  }),
-  getOptions: (input) => ({
-    select: (data: { paths?: unknown }) => data.paths,
-    staleTime: input.staleTime,
-  }),
+  getParams: (input) => {
+    return {
+      operationSource: input.operationSource,
+      root: input.root,
+    };
+  },
+  getOptions: (input) => {
+    return {
+      select: (data: { paths?: unknown }) => {
+        return data.paths;
+      },
+      staleTime: input.staleTime,
+    };
+  },
 });
-
 const submodulePathsFromTargetAtom = submodulePathsAtoms.fromTarget$;
-
 export type UseGitSubmodulePathsHostConfig = Record<string, unknown>;
 
 /**
@@ -41,7 +43,12 @@ export function useGitSubmodulePaths(
 ): unknown {
   const merged = mergeGitLiveQueryOptions(options, QueryStaleTimes.ONE_MINUTE);
   const lookup =
-    cwd == null ? null : ({ cwd, hostConfig } as Record<string, unknown>);
+    cwd == null
+      ? null
+      : ({
+          cwd,
+          hostConfig,
+        } as Record<string, unknown>);
   return useAppScopeAtomValue(submodulePathsFromTargetAtom, {
     ...merged,
     operationSource,

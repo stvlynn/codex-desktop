@@ -1,25 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export iM / cU
+// Materialized via extractFn(internal `cU`) / export `iM`.
 
 export type BindDeferredUiIMPeers = {
-  impl: (...args: unknown[]) => unknown;
+  BJa: (...args: unknown[]) => unknown;
+  SP: (...args: unknown[]) => unknown;
+  zJa: (...args: unknown[]) => unknown;
 };
-
 let peers: BindDeferredUiIMPeers | null = null;
 
-/** Wire bindDeferredUiIM once companions land. */
+/** Wire bindDeferredUiIM peers once companions land. */
 export function setBindDeferredUiIMPeers(next: BindDeferredUiIMPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `iM` / internal `cU`.
- * Stage-3 fill for bundle export iM / cU
  */
-export function bindDeferredUiIM(...args: unknown[]): unknown {
+export const bindDeferredUiIM = (e, t) => {
   if (peers == null) {
     throw new Error("bindDeferredUiIM peers are not configured");
   }
-  return peers.impl(...args);
-}
+  let r = (t) => {
+    return peers.SP(e.view, t);
+  };
+  let i, a;
+  return (
+    (i = () => {
+      return t(e);
+    }),
+    (a = () => {
+      return t(e);
+    }),
+    peers.BJa.useSyncExternalStore(r, i, a)
+  );
+};

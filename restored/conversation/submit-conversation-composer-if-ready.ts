@@ -41,9 +41,7 @@ type SubmitDeps = {
 
 let deps: SubmitDeps | null = null;
 
-export function setSubmitConversationComposerIfReadyDeps(
-  next: SubmitDeps,
-): void {
+export function setSubmitConversationComposerIfReadyDeps(next: SubmitDeps): void {
   deps = next;
 }
 

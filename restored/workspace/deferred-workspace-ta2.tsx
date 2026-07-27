@@ -1,48 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export TA / zxo
+// Materialized via extractFn(internal `zxo`) / export `TA`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredWorkspaceTA2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredWorkspaceTA2Peers = {
+  Da: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredWorkspaceTA2Impl = (
-  props: BindDeferredWorkspaceTA2Props,
-) => ReactNode;
-let impl: BindDeferredWorkspaceTA2Impl | null = null;
+let peers: BindBindDeferredWorkspaceTA2Peers | null = null;
 
-/** Wire the full BindDeferredWorkspaceTA2 once deeper restore lands. */
-export function bindBindDeferredWorkspaceTA2(
-  next: BindDeferredWorkspaceTA2Impl,
-): void {
-  impl = next;
+/** Wire bindBindDeferredWorkspaceTA2 peers once companions land. */
+export function setBindBindDeferredWorkspaceTA2Peers(next: BindBindDeferredWorkspaceTA2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `TA` / internal `zxo`.
- * Stage-3 fill for bundle export TA / zxo; heavy UI via bind.
  */
-export function BindDeferredWorkspaceTA2(
-  props: BindDeferredWorkspaceTA2Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ew-scaffold="TA"
-      aria-label="BindDeferredWorkspaceTA2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export TA / zxo
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredWorkspaceTA2() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredWorkspaceTA2 peers are not configured");
+  }
+
+  return peers.Da(peers.Q, e => null);
 }

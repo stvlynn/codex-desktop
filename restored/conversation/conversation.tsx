@@ -1,42 +1,43 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export cX / yJr
+// Materialized via extractFn(internal `yJr`) / export `cX`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindConversationProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindConversationPeers = {
+  $u: (...args: unknown[]) => unknown;
+  $xr: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  CM: (...args: unknown[]) => unknown;
+  Il: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Pp: (...args: unknown[]) => unknown;
+  SXt: (...args: unknown[]) => unknown;
+  _Jr: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fJr: (...args: unknown[]) => unknown;
+  gJr: (...args: unknown[]) => unknown;
+  gKr: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  vJr: (...args: unknown[]) => unknown;
+  vKr: (...args: unknown[]) => unknown;
+  wp: (...args: unknown[]) => unknown;
 };
 
-type BindConversationImpl = (props: BindConversationProps) => ReactNode;
-let impl: BindConversationImpl | null = null;
+let peers: BindBindConversationPeers | null = null;
 
-/** Wire the full BindConversation once deeper restore lands. */
-export function bindBindConversation(next: BindConversationImpl): void {
-  impl = next;
+/** Wire bindBindConversation peers once companions land. */
+export function setBindBindConversationPeers(next: BindBindConversationPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `cX` / internal `yJr`.
- * Stage-3 fill for bundle export cX / yJr; heavy UI via bind.
  */
-export function BindConversation(props: BindConversationProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-et-scaffold="cX"
-      aria-label="BindConversation"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export cX / yJr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindConversation() {
+  if (peers == null) {
+    throw new Error("bindBindConversation peers are not configured");
+  }
+
+  return peers.e(() => {
+    gJr = peers.c(), _Jr = peers.r(peers.Il(), 1), peers.Au(), peers.$u(), peers.Pp(), peers.CM(), peers.$xr(), peers.gKr(), peers.SXt(), peers.wp(), peers.vKr(), peers.fJr(), vJr = peers.J();
+  });
 }

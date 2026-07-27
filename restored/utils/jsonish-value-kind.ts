@@ -2,9 +2,7 @@
 // Bundle export `vs` — pure helper.
 
 /** Coarse kind for jsonish values. */
-export function jsonishValueKind(
-  value: unknown,
-): "array" | "string" | "unknown" {
+export function jsonishValueKind(value: unknown): "array" | "string" | "unknown" {
   return Array.isArray(value)
     ? "array"
     : typeof value === "string"

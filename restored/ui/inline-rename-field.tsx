@@ -1,41 +1,46 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Inline rename field
+// Materialized via extractFn(internal `URl`) / export `Wo`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type InlineRenameFieldProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindInlineRenameFieldPeers = {
+  $8: (...args: unknown[]) => unknown;
+  KRl: (...args: unknown[]) => unknown;
+  WRl: (...args: unknown[]) => unknown;
 };
+let peers: BindInlineRenameFieldPeers | null = null;
 
-type InlineRenameFieldImpl = (props: InlineRenameFieldProps) => ReactNode;
-let impl: InlineRenameFieldImpl | null = null;
-
-/** Wire the full InlineRenameField once deeper restore lands. */
-export function bindInlineRenameField(next: InlineRenameFieldImpl): void {
-  impl = next;
+/** Wire bindInlineRenameField peers once companions land. */
+export function setBindInlineRenameFieldPeers(
+  next: BindInlineRenameFieldPeers,
+): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Wo` / internal `URl`.
- * Inline rename field; heavy UI via bind.
  */
-export function InlineRenameField(props: InlineRenameFieldProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
+export function bindInlineRenameField(props: unknown) {
+  const WRl = peers.WRl;
+  if (peers == null) {
+    throw new Error("bindInlineRenameField peers are not configured");
+  }
+  let {
+    initialValue,
+    initialColor = null,
+    showColorPicker = false,
+    requireNonEmpty = false,
+    trimOnSave = false,
+    ...rest
+  } = props;
+  let f = `${initialValue}:${initialColor ?? "default"}:${showColorPicker}`;
   return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-em-scaffold="Wo"
-      aria-label="InlineRenameField"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Inline rename field
-        </div>
-      )}
-    </div>
+    <WRl
+      key={f}
+      initialValue={initialValue}
+      initialColor={initialColor}
+      showColorPicker={showColorPicker}
+      requireNonEmpty={requireNonEmpty}
+      trimOnSave={trimOnSave}
+      {...rest}
+    />
   );
 }

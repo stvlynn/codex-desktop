@@ -4,11 +4,7 @@
 type TurnNode = { id: string; previous_turn_id?: string | null };
 
 /** True when `ancestorId` appears in `turnId`'s previous_turn_id chain. */
-export function isTurnAncestor(
-  turns: Map<string, TurnNode>,
-  ancestorId: string,
-  turnId: string,
-): boolean {
+export function isTurnAncestor(turns: Map<string, TurnNode>, ancestorId: string, turnId: string): boolean {
   if (ancestorId === turnId) return true;
   let current = turns.get(turnId);
   const seen = new Set<string>();
@@ -21,11 +17,7 @@ export function isTurnAncestor(
 }
 
 /** True when either turn is an ancestor of the other. */
-export function areTurnsRelated(
-  turns: Map<string, TurnNode>,
-  leftId: string,
-  rightId: string,
-): boolean {
+export function areTurnsRelated(turns: Map<string, TurnNode>, leftId: string, rightId: string): boolean {
   return (
     isTurnAncestor(turns, leftId, rightId) ||
     isTurnAncestor(turns, rightId, leftId)

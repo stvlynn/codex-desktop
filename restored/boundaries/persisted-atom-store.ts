@@ -1,34 +1,52 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export $ut / tp
+// Materialized via extractFn(internal `tp`) / export `$ut`.
 
 export type PersistedAtomStorePeers = {
-  impl: (...args: unknown[]) => unknown;
+  $f: (...args: unknown[]) => unknown;
+  PZe: (...args: unknown[]) => unknown;
+  cacheKey: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
+  select: (...args: unknown[]) => unknown;
+  source: (...args: unknown[]) => unknown;
 };
 
 let peers: PersistedAtomStorePeers | null = null;
 
-/** Wire persistedAtomStore once companions land. */
-export function setPersistedAtomStorePeers(
-  next: PersistedAtomStorePeers,
-): void {
+/** Wire persistedAtomStore peers once companions land. */
+export function setPersistedAtomStorePeers(next: PersistedAtomStorePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `$ut` / internal `tp`.
- * Stage-3 fill for bundle export $ut / tp
  */
-export function persistedAtomStore(...args: unknown[]): unknown {
+export function persistedAtomStore(e: unknown, t: unknown, n: unknown) {
   if (peers == null) {
     throw new Error("persistedAtomStore peers are not configured");
   }
-  return peers.impl(...args);
-}
 
-// --- qg-full-green: missing-relative-exports stubs (open-runtime wiring) ---
-export const clearPersistedAtomsByPrefix: any = undefined;
-export const createNamedAppScopeQueryAtom: any = undefined;
-export const ensurePersistedAtomStoreInit: any = undefined;
-export const getPersistedAtomItem: any = undefined;
+  return peers.ka(e, e => {
+    let r = n?.(e),
+      i = r != null && `params` in r ? r.params : void 0,
+      a = r != null && `params` in r ? i : e,
+      o = r?.cacheKey,
+      s = r?.select,
+      c = r?.source;
+    return {
+      ...(r == null ? {} : (() => {
+        let {
+          cacheKey: e,
+          params: t,
+          select: n,
+          source: i,
+          ...a
+        } = r;
+        return a;
+      })()),
+      queryFn: ({
+        signal: e
+      }) => peers.PZe(t, a, s, e, c),
+      queryKey: peers.$f(t, a, o)
+    };
+  });
+}

@@ -14,10 +14,7 @@ export type DesktopCommandCapabilityFlags = {
 };
 
 /** Gate a command id against desktop capability flags. */
-export function isDesktopCommandIdEnabled(
-  commandId: string,
-  flags: DesktopCommandCapabilityFlags,
-): boolean {
+export function isDesktopCommandIdEnabled(commandId: string, flags: DesktopCommandCapabilityFlags): boolean {
   if (commandId === "hotkeyWindow") return flags.isHotkeyWindowEnabled;
   if (commandId === "switchToMode1" || commandId === "switchToMode2") {
     return flags.modeSwitchAvailable;

@@ -109,9 +109,17 @@ function isFragmentRef(node: t.Node, fragmentNames = FRAGMENT_NAMES): boolean {
 
 function toJsxName(
   node: t.Expression,
+  isRoot = true,
 ): t.JSXIdentifier | t.JSXMemberExpression | null {
   if (t.isIdentifier(node)) {
-    if (!/^[A-Z]/.test(node.name)) return null;
+    // The uppercase-root rule only disambiguates a *bare* identifier used
+    // directly as the whole JSX tag (React treats a lowercase bare name as a
+    // string/intrinsic tag, so `jsx(buttonAlias, …)` must stay a call until
+    // renamed). A dotted member expression is never ambiguous that way —
+    // `<peers.Foo />` always compiles to `jsx(peers.Foo, …)` regardless of
+    // whether `peers` starts lowercase — so the root-only checks are skipped
+    // once we're recursing into a member expression's object.
+    if (isRoot && !/^[A-Z]/.test(node.name)) return null;
     return t.jsxIdentifier(node.name);
   }
   if (
@@ -119,7 +127,7 @@ function toJsxName(
     !node.computed &&
     t.isIdentifier(node.property)
   ) {
-    const object = toJsxName(node.object as t.Expression);
+    const object = toJsxName(node.object as t.Expression, false);
     if (
       !object ||
       (t.isJSXIdentifier(object) === false &&

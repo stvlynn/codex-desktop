@@ -92,9 +92,7 @@ type ScopeLike = {
 };
 
 /** Bundle export `n` — read codex app version from app-info query atom. */
-export function getCodexAppVersionFromScope(
-  scope: ScopeLike,
-): string | undefined {
+export function getCodexAppVersionFromScope(scope: ScopeLike): string | undefined {
   return scope.get(appInfoQueryAtom()).data?.version;
 }
 

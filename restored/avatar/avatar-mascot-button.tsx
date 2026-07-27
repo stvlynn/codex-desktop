@@ -23,7 +23,6 @@ import {
 import { useTurnSourcesReducedMotion } from "../boundaries/turn-sources-runtime";
 import { cx } from "../ui/cx";
 ensurePersistedAtomInit();
-const MOVE_THRESHOLD_PX = 4;
 const CORNER_CLASS: Record<string, string> = {
   "top-start": "top-0 left-0",
   "top-end": "top-0 right-0",
@@ -90,7 +89,7 @@ function AvatarMascotNotificationBadge(props: {
   const suppressClickRef = useRef(false);
   const reducedMotion = useTurnSourcesReducedMotion() && !ignoresReducedMotion;
   const resolvedCorner = presentationPosition ?? corner;
-  void reducedMotion;
+  undefined;
   return (
     <button
       type="button"
@@ -132,11 +131,7 @@ function AvatarMascotNotificationBadge(props: {
         event.stopPropagation();
         const dx = event.clientX - drag.startClientX;
         const dy = event.clientY - drag.startClientY;
-        if (
-          !drag.hasMoved &&
-          Math.abs(dx) < MOVE_THRESHOLD_PX &&
-          Math.abs(dy) < MOVE_THRESHOLD_PX
-        ) {
+        if (!drag.hasMoved && Math.abs(dx) < 4 && Math.abs(dy) < 4) {
           return;
         }
         event.preventDefault();
@@ -240,8 +235,12 @@ export function AvatarMascotButton(props: {
       aria-label={ariaLabel}
       role={ariaLabel != null ? (interactive ? "group" : "img") : undefined}
       onContextMenu={onContextMenu}
-      onPointerEnter={() => setHoverJump(true)}
-      onPointerLeave={() => setHoverJump(false)}
+      onPointerEnter={() => {
+        return setHoverJump(true);
+      }}
+      onPointerLeave={() => {
+        return setHoverJump(false);
+      }}
       style={style}
     >
       <CodexAvatar

@@ -16,11 +16,7 @@ export function setProductEventLoggerToken(token: unknown): void {
   productEventLoggerToken = token;
 }
 
-export function logProductEvent(
-  store: StoreLike,
-  eventType: unknown,
-  payload: unknown,
-): void {
+export function logProductEvent(store: StoreLike, eventType: unknown, payload: unknown): void {
   if (productEventLoggerToken == null) {
     throw new Error("product-event logger token has not been configured");
   }

@@ -17,9 +17,7 @@ type RemoteConnectionsSettingsImpl = (
 let impl: RemoteConnectionsSettingsImpl | null = null;
 
 /** Wire the full RemoteConnectionsSettings once deeper companion restore lands. */
-export function bindRemoteConnectionsSettings(
-  next: RemoteConnectionsSettingsImpl,
-): void {
+export function bindRemoteConnectionsSettings(next: RemoteConnectionsSettingsImpl): void {
   impl = next;
 }
 

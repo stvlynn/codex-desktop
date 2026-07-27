@@ -1,42 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export hj / wmo
+// Materialized via extractFn(internal `wmo`) / export `hj`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindSettingsRow2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindSettingsRow2Peers = {
+  Cmo: (...args: unknown[]) => unknown;
+  Jg: (...args: unknown[]) => unknown;
+  c_: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
-type BindSettingsRow2Impl = (props: BindSettingsRow2Props) => ReactNode;
-let impl: BindSettingsRow2Impl | null = null;
+let peers: BindBindSettingsRow2Peers | null = null;
 
-/** Wire the full BindSettingsRow2 once deeper restore lands. */
-export function bindBindSettingsRow2(next: BindSettingsRow2Impl): void {
-  impl = next;
+/** Wire bindBindSettingsRow2 peers once companions land. */
+export function setBindBindSettingsRow2Peers(next: BindBindSettingsRow2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `hj` / internal `wmo`.
- * Stage-3 fill for bundle export hj / wmo; heavy UI via bind.
  */
-export function BindSettingsRow2(props: BindSettingsRow2Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ew-scaffold="hj"
-      aria-label="BindSettingsRow2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export hj / wmo
-        </div>
-      )}
-    </div>
-  );
+export function bindBindSettingsRow2() {
+  if (peers == null) {
+    throw new Error("bindBindSettingsRow2 peers are not configured");
+  }
+
+  return peers.e(() => {
+    Cmo = peers.r(peers.Jg(), 1), peers.c_();
+  });
 }

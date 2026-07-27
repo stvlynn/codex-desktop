@@ -17,20 +17,13 @@ export function bindSharedObjectMutationAtom(atom: unknown): void {
 }
 
 /** Bundle `nOt` — host shared-object-set + local snapshot write. */
-export function writeSharedObjectValue(
-  store: StoreGetSet,
-  key: string,
-  value: unknown,
-): void {
+export function writeSharedObjectValue(store: StoreGetSet, key: string, value: unknown): void {
   hostMessageBus.dispatchMessage("shared-object-set", { key, value });
   store.set(sharedObjectSnapshotAtom, key, value);
 }
 
 /** Bundle `L_` — read-modify-write shared object value. */
-export function updateSharedObjectValue(
-  store: StoreGetSet,
-  key: string,
-  next: unknown | ((prev: unknown) => unknown),
+export function updateSharedObjectValue(store: StoreGetSet, key: string, next: unknown | ((prev: unknown) => unknown),
 ): void {
   const prev = store.get(sharedObjectSnapshotAtom, key);
   writeSharedObjectValue(

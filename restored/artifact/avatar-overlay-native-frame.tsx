@@ -17,9 +17,7 @@ type avatarOverlayNativeFrame_aImpl = (
 let impl: avatarOverlayNativeFrame_aImpl | null = null;
 
 /** Wire the full avatarOverlayNativeFrame_a once deeper companion restore lands. */
-export function bindavatarOverlayNativeFrame_a(
-  next: avatarOverlayNativeFrame_aImpl,
-): void {
+export function bindavatarOverlayNativeFrame_a(next: avatarOverlayNativeFrame_aImpl): void {
   impl = next;
 }
 

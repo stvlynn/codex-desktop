@@ -1,41 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Ry / zws
+// Materialized via extractFn(internal `zws`) / export `Ry`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type LoginHintProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindLoginHintPeers = {
+  Au: (...args: unknown[]) => unknown;
+  Fh: (...args: unknown[]) => unknown;
+  Iws: (...args: unknown[]) => unknown;
+  Lws: (...args: unknown[]) => unknown;
+  Rws: (...args: unknown[]) => unknown;
+  URL: (...args: unknown[]) => unknown;
+  Uo: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
-type LoginHintImpl = (props: LoginHintProps) => ReactNode;
-let impl: LoginHintImpl | null = null;
+let peers: BindLoginHintPeers | null = null;
 
-/** Wire the full LoginHint once deeper restore lands. */
-export function bindLoginHint(next: LoginHintImpl): void {
-  impl = next;
+/** Wire bindLoginHint peers once companions land. */
+export function setBindLoginHintPeers(next: BindLoginHintPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Ry` / internal `zws`.
- * Stage-3 fill for bundle export Ry / zws; heavy UI via bind.
  */
-export function LoginHint(props: LoginHintProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fm-scaffold="Ry"
-      aria-label="LoginHint"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Ry / zws
-        </div>
-      )}
-    </div>
-  );
+export function bindLoginHint() {
+  if (peers == null) {
+    throw new Error("bindLoginHint peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Au(), peers.Fh(), Iws = new peers.URL(peers.Uo), Lws = `${peers.Iws.pathname}/purchase/`, Rws = `3800100299`;
+  });
 }

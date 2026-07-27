@@ -25,9 +25,7 @@ export function formatAppServerVersionRestartAvailableKey({
 }
 
 /** Parse `codex-app-server-version-restart-available:current:installed`. */
-export function parseAppServerVersionRestartAvailableKey(
-  message: string,
-): AppServerVersionPair | null {
+export function parseAppServerVersionRestartAvailableKey(message: string): AppServerVersionPair | null {
   if (!message.startsWith(APP_SERVER_VERSION_RESTART_AVAILABLE_PREFIX)) {
     return null;
   }
@@ -58,9 +56,7 @@ export type AppServerConnectionError =
 /**
  * Bundle `_he` (co-located) — classify a raw app-server error string.
  */
-export function classifyAppServerConnectionError(
-  message: string,
-): AppServerConnectionError {
+export function classifyAppServerConnectionError(message: string): AppServerConnectionError {
   if (message.startsWith("Parse Error")) {
     return { code: "restart-required" };
   }

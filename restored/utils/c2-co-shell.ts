@@ -1,26 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export C2 / lD
+// Materialized via extractFn(internal `lD`) / export `C2`.
 
 export type BindC2CoShellPeers = {
-  impl: (...args: unknown[]) => unknown;
+  JE: (...args: unknown[]) => unknown;
+  status: (...args: unknown[]) => unknown;
+  ug: (...args: unknown[]) => unknown;
 };
 
 let peers: BindC2CoShellPeers | null = null;
 
-/** Wire bindC2CoShell once companions land. */
+/** Wire bindC2CoShell peers once companions land. */
 export function setBindC2CoShellPeers(next: BindC2CoShellPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `C2` / internal `lD`.
- * Stage-3 fill for bundle export C2 / lD
  */
-export function bindC2CoShell(...args: unknown[]): unknown {
+export function bindC2CoShell() {
   if (peers == null) {
     throw new Error("bindC2CoShell peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.JE(e => peers.ug(e)?.status === `inProgress`);
 }

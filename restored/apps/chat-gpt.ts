@@ -1,26 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Fgt / Gme
+// Materialized via extractFn(internal `Gme`) / export `Fgt`.
 
 export type ChatGPTPeers = {
-  impl: (...args: unknown[]) => unknown;
+  El: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  Wme: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  pl: (...args: unknown[]) => unknown;
+  vl: (...args: unknown[]) => unknown;
 };
 
 let peers: ChatGPTPeers | null = null;
 
-/** Wire chatGPT once companions land. */
+/** Wire chatGPT peers once companions land. */
 export function setChatGPTPeers(next: ChatGPTPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Fgt` / internal `Gme`.
- * Stage-3 fill for bundle export Fgt / Gme
  */
-export function chatGPT(...args: unknown[]): unknown {
+export function chatGPT() {
   if (peers == null) {
     throw new Error("chatGPT peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Sl(), El = {
+      Codex: `codex`,
+      ChatGPT: `chatgpt`
+    }, peers.pl([peers.El.Codex, peers.El.ChatGPT]), Wme = peers.vl(e => peers.e === `codex-light` || peers.e === `codex-dark` ? `codex-system` : peers.e, peers.pl([`app-default`, `codex-system`]));
+  });
 }

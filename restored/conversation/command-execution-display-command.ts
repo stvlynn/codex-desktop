@@ -13,9 +13,7 @@ export type CommandExecutionCommandLike = {
 };
 
 /** Prefer the last non-meta command action, else the root command. */
-export function commandExecutionDisplayCommand(
-  item: CommandExecutionCommandLike,
-): string {
+export function commandExecutionDisplayCommand(item: CommandExecutionCommandLike): string {
   const actions = item.commandActions ?? [];
   for (let i = actions.length - 1; i >= 0; --i) {
     const command = actions[i]?.command?.trim() ?? "";

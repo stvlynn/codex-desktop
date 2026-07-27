@@ -16,9 +16,7 @@ export type UseProfileUsageQueryPeers = {
 let peers: UseProfileUsageQueryPeers | null = null;
 
 /** Wire useProfileUsageQuery peers once companions land. */
-export function setUseProfileUsageQueryPeers(
-  next: UseProfileUsageQueryPeers,
-): void {
+export function setUseProfileUsageQueryPeers(next: UseProfileUsageQueryPeers): void {
   peers = next;
 }
 

@@ -1,26 +1,173 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Tmt / Kxe
+// Materialized via extractFn(internal `Kxe`) / export `Tmt`.
 
 export type BindThreadStartedPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Gxe: (...args: unknown[]) => unknown;
+  Wxe: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindThreadStartedPeers | null = null;
 
-/** Wire bindThreadStarted once companions land. */
+/** Wire bindThreadStarted peers once companions land. */
 export function setBindThreadStartedPeers(next: BindThreadStartedPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Tmt` / internal `Kxe`.
- * Stage-3 fill for bundle export Tmt / Kxe
  */
-export function bindThreadStarted(...args: unknown[]): unknown {
+export function bindThreadStarted() {
   if (peers == null) {
     throw new Error("bindThreadStarted peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    Wxe = {
+      error: !0,
+      "thread/started": !0,
+      "thread/name/updated": !0,
+      "thread/environment/connected": !1,
+      "thread/environment/disconnected": !1,
+      "thread/settings/updated": !0,
+      "thread/tokenUsage/updated": !0,
+      "turn/started": !0,
+      "hook/started": !0,
+      "turn/completed": !0,
+      "hook/completed": !0,
+      "turn/diff/updated": !0,
+      "turn/plan/updated": !0,
+      "item/started": !0,
+      "item/autoApprovalReview/started": !0,
+      "item/autoApprovalReview/completed": !0,
+      "item/completed": !0,
+      "rawResponseItem/completed": !1,
+      "item/agentMessage/delta": !0,
+      "item/plan/delta": !0,
+      "command/exec/outputDelta": !1,
+      "process/outputDelta": !1,
+      "process/exited": !1,
+      "item/commandExecution/outputDelta": !0,
+      "item/commandExecution/terminalInteraction": !0,
+      "item/fileChange/outputDelta": !0,
+      "item/fileChange/patchUpdated": !0,
+      "serverRequest/resolved": !0,
+      "item/mcpToolCall/progress": !0,
+      "mcpServer/oauthLogin/completed": !0,
+      "mcpServer/startupStatus/updated": !0,
+      "account/updated": !0,
+      "account/rateLimits/updated": !0,
+      "app/list/updated": !0,
+      "externalAgentConfig/import/progress": !1,
+      "externalAgentConfig/import/completed": !0,
+      "fs/changed": !0,
+      "item/reasoning/summaryTextDelta": !0,
+      "item/reasoning/summaryPartAdded": !0,
+      "item/reasoning/textDelta": !0,
+      "thread/compacted": !1,
+      deprecationNotice: !0,
+      configWarning: !0,
+      "windows/worldWritableWarning": !1,
+      "windowsSandbox/setupCompleted": !0,
+      "account/login/completed": !0,
+      "model/rerouted": !0,
+      "model/verification": !0,
+      "model/safetyBuffering/updated": !0,
+      "turn/moderationMetadata": !1,
+      authStatusChange: !1,
+      loginChatGptComplete: !1,
+      sessionConfigured: !0,
+      "codex/event/session_configured": !0,
+      "codex/event/task_started": !1,
+      "codex/event/agent_reasoning": !1,
+      "codex/event/agent_message": !1,
+      "codex/event/task_complete": !1,
+      "codex/event/mcp_tool_call_begin": !1,
+      "codex/event/mcp_tool_call_end": !1,
+      "codex/event/exec_command_begin": !1,
+      "codex/event/exec_command_end": !1,
+      "codex/event/exec_command_output_delta": !1,
+      "codex/event/exec_approval_request": !1,
+      "codex/event/apply_patch_approval_request": !1,
+      "codex/event/background_event": !1,
+      "codex/event/turn_diff": !1,
+      "codex/event/get_history_entry_response": !1,
+      "codex/event/agent_reasoning_delta": !1,
+      "codex/event/agent_reasoning_section_break": !1,
+      "codex/event/agent_message_delta": !1,
+      "codex/event/stream_error": !1,
+      "codex/event/error": !1,
+      "codex/event/turn_aborted": !1,
+      "codex/event/plan_delta": !1,
+      "codex/event/plan_update": !1,
+      "codex/event/patch_apply_begin": !1,
+      "codex/event/patch_apply_end": !1,
+      "codex/event/item_started": !1,
+      "codex/event/item_completed": !1,
+      "codex/event/user_message": !1,
+      "codex/event/agent_reasoning_raw_content": !1,
+      "codex/event/agent_reasoning_raw_content_delta": !1,
+      "codex/event/web_search_begin": !1,
+      "codex/event/web_search_end": !1,
+      "codex/event/mcp_list_tools_response": !1,
+      "codex/event/list_skills_response": !1,
+      "codex/event/list_remote_skills_response": !1,
+      "codex/event/remote_skill_downloaded": !1,
+      "codex/event/list_custom_prompts_response": !1,
+      "codex/event/raw_response_item": !1,
+      "codex/event/agent_message_content_delta": !1,
+      "codex/event/reasoning_content_delta": !1,
+      "codex/event/reasoning_raw_content_delta": !1,
+      "codex/event/warning": !1,
+      "codex/event/undo_started": !1,
+      "codex/event/undo_completed": !1,
+      "codex/event/shutdown_complete": !1,
+      "codex/event/entered_review_mode": !1,
+      "codex/event/exited_review_mode": !1,
+      "codex/event/view_image_tool_call": !1,
+      "codex/event/mcp_startup_update": !1,
+      "codex/event/mcp_startup_complete": !1,
+      "codex/event/remote_task_created": !1,
+      "codex/event/thread_rolled_back": !1,
+      "codex/event/thread_name_updated": !1,
+      "codex/event/collab_agent_spawn_begin": !0,
+      "codex/event/collab_agent_spawn_end": !0,
+      "codex/event/collab_agent_interaction_begin": !0,
+      "codex/event/collab_agent_interaction_end": !0,
+      "codex/event/collab_resume_begin": !0,
+      "codex/event/collab_resume_end": !0,
+      "codex/event/collab_waiting_begin": !0,
+      "codex/event/collab_waiting_end": !0,
+      "codex/event/collab_close_begin": !0,
+      "codex/event/collab_close_end": !0,
+      "codex/event/elicitation_request": !1,
+      "codex/event/dynamic_tool_call_request": !1,
+      "codex/event/request_user_input": !1,
+      "codex/event/terminal_interaction": !1,
+      "codex/event/token_count": !1,
+      "codex/event/deprecation_notice": !1,
+      "fuzzyFileSearch/sessionUpdated": !0,
+      "fuzzyFileSearch/sessionCompleted": !0,
+      "thread/archived": !0,
+      "thread/deleted": !0,
+      "thread/closed": !1,
+      "thread/goal/cleared": !0,
+      "thread/goal/updated": !0,
+      "thread/unarchived": !0,
+      "skills/changed": !0,
+      "thread/realtime/started": !0,
+      "thread/realtime/itemAdded": !0,
+      "thread/realtime/transcript/delta": !0,
+      "thread/realtime/transcript/done": !0,
+      "thread/realtime/outputAudio/delta": !0,
+      "thread/realtime/sdp": !0,
+      "thread/realtime/error": !0,
+      "thread/realtime/closed": !0,
+      "thread/status/changed": !0,
+      "remoteControl/status/changed": !0,
+      "rawResponse/completed": !1,
+      guardianWarning: !0,
+      warning: !1
+    }, Gxe = new Set([`process/outputDelta`, `process/exited`, `fs/changed`]), Object.entries(peers.Wxe).filter(([e, t]) => !t && !peers.Gxe.has(peers.e)).map(([e]) => peers.e);
+  });
 }

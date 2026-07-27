@@ -1,42 +1,77 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export DX / EM
+// Materialized via extractFn(internal `EM`) / export `DX`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredDXProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredDXPeers = {
+  Ft: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Qt: (...args: unknown[]) => unknown;
+  Ra: (...args: unknown[]) => unknown;
+  SKr: (...args: unknown[]) => unknown;
+  TM: (...args: unknown[]) => unknown;
+  U8n: (...args: unknown[]) => unknown;
+  Uf: (...args: unknown[]) => unknown;
+  _p: (...args: unknown[]) => unknown;
+  bKr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  gp: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
+  wM: (...args: unknown[]) => unknown;
+  xKr: (...args: unknown[]) => unknown;
+  yE: (...args: unknown[]) => unknown;
+  yKr: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredDXImpl = (props: BindDeferredDXProps) => ReactNode;
-let impl: BindDeferredDXImpl | null = null;
+let peers: BindBindDeferredDXPeers | null = null;
 
-/** Wire the full BindDeferredDX once deeper restore lands. */
-export function bindBindDeferredDX(next: BindDeferredDXImpl): void {
-  impl = next;
+/** Wire bindBindDeferredDX peers once companions land. */
+export function setBindBindDeferredDXPeers(next: BindBindDeferredDXPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `DX` / internal `EM`.
- * Stage-3 fill for bundle export DX / EM; heavy UI via bind.
  */
-export function BindDeferredDX(props: BindDeferredDXProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="DX"
-      aria-label="BindDeferredDX"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export DX / EM
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredDX() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredDX peers are not configured");
+  }
+
+  return peers.e(() => {
+    (peers.Qt(),
+      peers.Ho(),
+      peers.yE(),
+      peers._p(),
+      peers.yKr(),
+      peers.ed(),
+      peers.Uf(),
+      (TM = peers.ka(peers.Q, (e) =>
+        peers.Ft({
+          queryKey: peers.bKr(peers.e),
+          queryFn: ({ signal: t }) => peers.xKr(peers.e, t),
+          staleTime: peers.Hf.ONE_MINUTE,
+        }),
+      )),
+      (SKr = peers.Ra(peers.Q, ({ scope: e }) => ({
+        mutationFn: async (e) =>
+          peers.wM(peers.gp.openIn.setGlobalPreferredTarget(peers.e)),
+        networkMode: `always`,
+        onSuccess: async (t, { target: n }) => {
+          let r = peers.e.query.snapshot(peers.TM, {
+            cwd: null,
+          });
+          (r.setData((e) =>
+            peers.e == null
+              ? peers.e
+              : {
+                  ...peers.e,
+                  preferredTarget: n,
+                },
+          ),
+            await peers.U8n(peers.e.queryClient, r.queryKey));
+        },
+      }))));
+  });
 }

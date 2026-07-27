@@ -1,43 +1,18 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DY — real body via extractFn(internal `_2i`) / export `rB`.
-
-export type HostToolCallView = {
-  icon?: unknown;
-  title?: unknown;
-  [key: string]: unknown;
-};
-
-export type OpenHostToolCallPanelOptions = {
-  activate?: boolean;
-  hostToolCallMetadata?: unknown;
-  hostToolResultMetadata?: unknown;
-  instanceId?: string;
-  isPreview?: boolean;
-  onClose?: () => void;
-  readHostResource?: unknown;
-  resolveHostResourceSubscriptionPath?: unknown;
-  writeHostResource?: unknown;
-  tabId?: string;
-  target?: "right" | "left" | "bottom" | string;
-  title?: unknown;
-  toolArguments?: unknown;
-};
+// Materialized via extractFn(internal `_2i`) / export `rB`.
 
 export type OpenHostToolCallPanelPeers = {
-  requireHostValue: (value: unknown) => unknown | null;
-  resolveTabId: (view: HostToolCallView, instanceId: string) => string;
-  locatePanel: (store: any, tabId: string) => string | null;
-  panelController: (side: string) => {
-    openTab: (store: any, component: unknown, opts: unknown) => void;
-  };
-  panelComponent: unknown;
-  resolveIcon: (icon: unknown, className: string) => unknown;
-  openPanel: (store: any, side: string) => void;
+  QI: (...args: unknown[]) => unknown;
+  XI: (...args: unknown[]) => unknown;
+  ZI: (...args: unknown[]) => unknown;
+  i2i: (...args: unknown[]) => unknown;
+  mT: (...args: unknown[]) => unknown;
+  p2i: (...args: unknown[]) => unknown;
+  v2i: (...args: unknown[]) => unknown;
 };
-
 let peers: OpenHostToolCallPanelPeers | null = null;
 
-/** Wire host tool-call panel peers once companions land. */
+/** Wire openHostToolCallPanel peers once companions land. */
 export function setOpenHostToolCallPanelPeers(
   next: OpenHostToolCallPanelPeers,
 ): void {
@@ -46,18 +21,11 @@ export function setOpenHostToolCallPanelPeers(
 
 /**
  * Bundle export `rB` / internal `_2i`.
- * Open a host tool-call panel instance and return its tab id.
  */
 export function openHostToolCallPanel(
-  store: { value?: unknown },
-  view: HostToolCallView,
-  options: OpenHostToolCallPanelOptions = {},
-): string | null {
-  if (peers == null) {
-    throw new Error("OpenHostToolCallPanel peers are not configured");
-  }
-  if (peers.requireHostValue(store.value) == null) return null;
-  const {
+  e: unknown,
+  t: unknown,
+  {
     activate = true,
     hostToolCallMetadata,
     hostToolResultMetadata,
@@ -67,31 +35,37 @@ export function openHostToolCallPanel(
     readHostResource,
     resolveHostResourceSubscriptionPath,
     writeHostResource,
-    tabId: explicitTabId,
+    tabId = peers.v2i(t, instanceId),
     target = "right",
-    title = view.title,
+    title = t.title,
     toolArguments,
-  } = options;
-  const tabId = explicitTabId ?? peers.resolveTabId(view, instanceId);
-  const side = peers.locatePanel(store as any, tabId) ?? target;
-  peers.panelController(side).openTab(store, peers.panelComponent, {
-    icon: peers.resolveIcon(view.icon, "icon-xs shrink-0"),
-    id: tabId,
-    props: {
-      hostToolCallMetadata,
-      hostToolResultMetadata,
-      instanceId,
-      readHostResource,
-      resolveHostResourceSubscriptionPath,
-      toolArguments,
-      view,
-      writeHostResource,
-    },
-    title,
-    activate,
-    isPreview,
-    onClose,
-  });
-  if (activate) peers.openPanel(store as any, side);
-  return tabId;
+  }: Record<string, unknown> = {},
+) {
+  if (peers == null) {
+    throw new Error("openHostToolCallPanel peers are not configured");
+  }
+  if (peers.mT(e.value) == null) return null;
+  let h = peers.ZI(e, tabId) ?? target;
+  return (
+    peers.XI(h).openTab(e, peers.i2i, {
+      icon: peers.p2i(t.icon, "icon-xs shrink-0"),
+      id: tabId,
+      props: {
+        hostToolCallMetadata,
+        hostToolResultMetadata,
+        instanceId,
+        readHostResource,
+        resolveHostResourceSubscriptionPath,
+        toolArguments,
+        view: t,
+        writeHostResource,
+      },
+      title,
+      activate,
+      isPreview,
+      onClose,
+    }),
+    activate && peers.QI(e, h),
+    tabId
+  );
 }

@@ -1,44 +1,17 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave ED — real body via extractFn(internal `tJa`) / export `cM`.
-
-import type { ReactElement, ReactNode } from "react";
-
-export type AtMentionSectionsListProps = {
-  className?: string;
-  sections: Array<
-    { items?: Array<{ key: string } & Record<string, unknown>> } & Record<
-      string,
-      unknown
-    >
-  >;
-  onUpdateSelectedMention: (mention: unknown | null) => void;
-  onAddContext: (mention: unknown) => void;
-  onRequestClose: () => void;
-  placement?: string;
-  query?: string;
-  chromeVariant?: string;
-  isHomeMenu?: boolean;
-  keyboardEventTarget?: unknown;
-};
+// Materialized via extractFn(internal `tJa`) / export `cM`.
 
 export type AtMentionSectionsListPeers = {
-  flattenMentionEntries: (
-    section: AtMentionSectionsListProps["sections"][number],
-  ) => Array<[string, unknown]>;
-  mapSectionForList: (
-    section: AtMentionSectionsListProps["sections"][number],
-  ) => unknown;
-  FormattedMessage: (props: {
-    id: string;
-    defaultMessage: string;
-    description?: string;
-  }) => ReactNode;
-  MentionListSurface: (props: Record<string, unknown>) => ReactElement;
+  Z: (...args: unknown[]) => unknown;
+  eUa: (...args: unknown[]) => unknown;
+  iJa: (...args: unknown[]) => unknown;
+  nJa: (...args: unknown[]) => unknown;
+  rU: (...args: unknown[]) => unknown;
+  sJa: (...args: unknown[]) => unknown;
 };
-
 let peers: AtMentionSectionsListPeers | null = null;
 
-/** Wire at-mention list peers once companions land. */
+/** Wire AtMentionSectionsList peers once companions land. */
 export function setAtMentionSectionsListPeers(
   next: AtMentionSectionsListPeers,
 ): void {
@@ -47,59 +20,56 @@ export function setAtMentionSectionsListPeers(
 
 /**
  * Bundle export `cM` / internal `tJa`.
- * Render at-mention sections list with highlight/select wiring.
  */
-export function AtMentionSectionsList(
-  props: AtMentionSectionsListProps,
-): ReactElement {
+export function AtMentionSectionsList(props: unknown) {
+  const Z = peers.Z;
+  const EUa = peers.eUa;
   if (peers == null) {
     throw new Error("AtMentionSectionsList peers are not configured");
   }
-  const {
-    className,
-    sections,
-    onUpdateSelectedMention,
-    onAddContext,
-    onRequestClose,
-    placement = "top",
-    query = "",
-    chromeVariant = "default",
-    isHomeMenu = false,
-    keyboardEventTarget,
-  } = props;
-  const byKey = new Map(
-    sections.flatMap((section) => peers!.flattenMentionEntries(section)),
-  );
-  const noResults = peers.FormattedMessage({
-    id: "composer.atMentionList.noResults",
-    defaultMessage: "No results",
-    description:
-      "Shown when there are no mention results matching the search query",
-  });
-  const onHighlight = (item: { key: string } | null) => {
-    onUpdateSelectedMention(
-      item == null ? null : (byKey.get(item.key) ?? null),
+  let {
+      className,
+      sections,
+      onUpdateSelectedMention,
+      onAddContext,
+      onRequestClose,
+      placement = "top",
+      query = "",
+      chromeVariant = "default",
+      isHomeMenu = false,
+      keyboardEventTarget,
+    } = props,
+    g = new Map(sections.flatMap(peers.iJa));
+  let _ = g,
+    v = (
+      <Z
+        id="composer.atMentionList.noResults"
+        defaultMessage="No results"
+        description="Shown when there are no mention results matching the search query"
+      />
     );
+  let y = (event) => {
+    onUpdateSelectedMention(event == null ? null : (_.get(event.key) ?? null));
   };
-  const onSelect = (item: { key: string }) => {
-    const mention = byKey.get(item.key);
-    if (mention != null) {
-      onUpdateSelectedMention(mention);
-      onAddContext(mention);
-    }
+  let b = (event) => {
+    let t = _.get(event.key);
+    t != null && (onUpdateSelectedMention(t), onAddContext(t));
   };
-  return peers.MentionListSurface({
-    className,
-    chromeVariant,
-    isActive: true,
-    isHomeMenu,
-    keyboardEventTarget,
-    noResults,
-    onHighlight,
-    onRequestClose,
-    placement,
-    onSelect,
-    query,
-    sections: sections.map((section) => peers!.mapSectionForList(section)),
-  });
+  let x = sections.map(peers.nJa);
+  return (
+    <EUa
+      className={className}
+      chromeVariant={chromeVariant}
+      isActive={true}
+      isHomeMenu={isHomeMenu}
+      keyboardEventTarget={keyboardEventTarget}
+      noResults={v}
+      onHighlight={y}
+      onRequestClose={onRequestClose}
+      placement={placement}
+      onSelect={b}
+      query={query}
+      sections={x}
+    />
+  );
 }

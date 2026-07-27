@@ -11,12 +11,9 @@ import {
   codexMicroLastDetectedDeviceModel,
   ensureCodexMicroDetectionSignalsInit,
 } from "./codex-micro-detection-signals";
-
 ensurePersistedScopeSignalInit();
 ensureCodexMicroDetectionSignalsInit();
-
 export type CodexMicroOnboardingPhase = "idle" | "pending" | string;
-
 export type CodexMicroDeviceStatus =
   | "detected"
   | "connected"
@@ -29,7 +26,6 @@ export const codexMicroOnboardingState =
     "codex-micro-onboarding-state",
     "idle",
   );
-
 type ScopeLike = {
   get: (atom: unknown) => unknown;
   set: (atom: unknown, value: unknown) => void;

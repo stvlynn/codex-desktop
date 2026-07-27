@@ -1,48 +1,63 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export DD / FWo
+// Materialized via extractFn(internal `FWo`) / export `DD`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindLocalConversationGitActions3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindLocalConversationGitActions3Peers = {
+  OWo: (...args: unknown[]) => unknown;
+  Oa: (...args: unknown[]) => unknown;
+  _J: (...args: unknown[]) => unknown;
+  aJ: (...args: unknown[]) => unknown;
+  cWo: (...args: unknown[]) => unknown;
+  commitsAhead: (...args: unknown[]) => unknown;
+  dWo: (...args: unknown[]) => unknown;
+  fJ: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
+  kWo: (...args: unknown[]) => unknown;
+  trim: (...args: unknown[]) => unknown;
 };
 
-type BindLocalConversationGitActions3Impl = (
-  props: BindLocalConversationGitActions3Props,
-) => ReactNode;
-let impl: BindLocalConversationGitActions3Impl | null = null;
+let peers: BindBindLocalConversationGitActions3Peers | null = null;
 
-/** Wire the full BindLocalConversationGitActions3 once deeper restore lands. */
-export function bindBindLocalConversationGitActions3(
-  next: BindLocalConversationGitActions3Impl,
-): void {
-  impl = next;
+/** Wire bindBindLocalConversationGitActions3 peers once companions land. */
+export function setBindBindLocalConversationGitActions3Peers(next: BindBindLocalConversationGitActions3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `DD` / internal `FWo`.
- * Stage-3 fill for bundle export DD / FWo; heavy UI via bind.
  */
-export function BindLocalConversationGitActions3(
-  props: BindLocalConversationGitActions3Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="DD"
-      aria-label="BindLocalConversationGitActions3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export DD / FWo
-        </div>
-      )}
-    </div>
-  );
+export function bindBindLocalConversationGitActions3() {
+  if (peers == null) {
+    throw new Error("bindBindLocalConversationGitActions3 peers are not configured");
+  }
+
+  return peers.Oa(peers.hT, (e, {
+    get: t
+  }) => {
+    let n = t(peers.OWo, e);
+    if (!n.isSuccess) return `hidden`;
+    let r = n.data?.trim() ?? ``,
+      i = r.length === 0;
+    if (i) {
+      let n = t(peers.aJ, {
+          cwd: e.cwd,
+          hostConfig: e.hostConfig,
+          operationSource: `local_conversation_git_actions`
+        }),
+        r = n.type === `success` ? n.data : null;
+      if (t(peers.cWo, {
+        ...e,
+        includeUnstaged: !0
+      }) != null && (r?.commitsAhead ?? 0) === 0) return `hidden`;
+    } else {
+      let n = t(peers.kWo, e).data;
+      if (n == null || r === n) return `hidden`;
+    }
+    return t(peers.dWo, {
+      conversationId: e.conversationId,
+      cwd: e.cwd,
+      hostConfig: e.hostConfig,
+      createsBranch: i,
+      includeLocalChanges: t(peers._J, peers.fJ(e))
+    }).blockedStep == null ? `enabled` : `disabled`;
+  });
 }

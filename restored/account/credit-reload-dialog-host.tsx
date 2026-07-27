@@ -17,9 +17,7 @@ type CreditReloadDialogHostImpl = (
 let impl: CreditReloadDialogHostImpl | null = null;
 
 /** Wire the full CreditReloadDialogHost once deeper companion restore lands. */
-export function bindCreditReloadDialogHost(
-  next: CreditReloadDialogHostImpl,
-): void {
+export function bindCreditReloadDialogHost(next: CreditReloadDialogHostImpl): void {
   impl = next;
 }
 

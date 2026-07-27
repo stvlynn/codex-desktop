@@ -1,38 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DU — real body via extractFn(internal `A8`) / export `us`.
-// Bundle A8 is sidebar nav item chrome (misnamed ConversationPageShell in early map).
+// Materialized via extractFn(internal `A8`) / export `us`.
 
-import type { ButtonHTMLAttributes, ReactElement, ReactNode } from "react";
-import { cx } from "../ui/cx";
+export type ConversationPageShellPeers = {
+  $: (...args: unknown[]) => unknown;
+  M8: (...args: unknown[]) => unknown;
+  nFl: (...args: unknown[]) => unknown;
+  tFl: (...args: unknown[]) => unknown;
+};
+let peers: ConversationPageShellPeers | null = null;
 
-export type ConversationPageShellProps = {
-  activeVariant?: "default" | "accent" | string;
-  className?: string;
-  disabled?: boolean;
-  fullWidth?: boolean;
-  hideLabel?: boolean;
-  hoverBackground?: boolean;
-  icon?: ReactNode;
-  iconClassName?: string;
-  interactiveTrailing?: boolean;
-  isActive?: boolean;
-  label?: ReactNode;
-  onClick?: ButtonHTMLAttributes<HTMLButtonElement>["onClick"];
-  trailing?: ReactNode;
-  weightClassName?: string;
-} & Omit<
-  ButtonHTMLAttributes<HTMLButtonElement>,
-  "children" | "className" | "disabled" | "onClick" | "type"
->;
+/** Wire ConversationPageShell peers once companions land. */
+export function setConversationPageShellPeers(
+  next: ConversationPageShellPeers,
+): void {
+  peers = next;
+}
 
 /**
  * Bundle export `us` / internal `A8`.
- * Sidebar list-row button used as conversation/page shell chrome.
  */
-export function ConversationPageShell(
-  props: ConversationPageShellProps,
-): ReactElement {
-  const {
+export function ConversationPageShell(props: unknown) {
+  if (peers == null) {
+    throw new Error("ConversationPageShell peers are not configured");
+  }
+  let {
     icon,
     label,
     hideLabel,
@@ -49,73 +40,88 @@ export function ConversationPageShell(
     interactiveTrailing,
     ...rest
   } = props;
-
-  const activeBg =
-    activeVariant === "accent"
-      ? "bg-token-text-link-foreground/10 hover:bg-token-text-link-foreground/15"
-      : "bg-token-list-hover-background";
-  const activeFg =
-    activeVariant === "accent"
-      ? "text-token-text-link-foreground"
-      : "text-token-list-active-selection-foreground";
-  const activeIconFg =
-    activeVariant === "accent"
-      ? "text-token-text-link-foreground"
-      : "text-token-list-active-selection-icon-foreground";
-  const widthClass = fullWidth ? "flex w-full" : "inline-flex w-auto";
-  const hoverClass = isActive
-    ? activeBg
-    : hoverBackground && "hover:bg-token-list-hover-background";
-  const buttonClassName = cx(
-    "sidebar-item focus-visible:outline-token-border relative h-[var(--height-token-row)] px-[var(--padding-row-cell-x,var(--padding-row-x))] py-row-y cursor-interaction shrink-0 items-center overflow-hidden text-left text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50 gap-2",
-    widthClass,
-    hoverClass,
-    weightClassName,
-    className,
+  let C =
+      activeVariant === "accent"
+        ? "bg-token-text-link-foreground/10 hover:bg-token-text-link-foreground/15"
+        : "bg-token-list-hover-background",
+    w =
+      activeVariant === "accent"
+        ? "text-token-text-link-foreground"
+        : "text-token-list-active-selection-foreground",
+    T =
+      activeVariant === "accent"
+        ? "text-token-text-link-foreground"
+        : "text-token-list-active-selection-icon-foreground",
+    E = fullWidth ? "flex w-full" : "inline-flex w-auto",
+    D = isActive
+      ? C
+      : hoverBackground && "hover:bg-token-list-hover-background",
+    O = peers.$(
+      "sidebar-item focus-visible:outline-token-border relative h-[var(--height-token-row)] px-[var(--padding-row-cell-x,var(--padding-row-x))] py-row-y cursor-interaction shrink-0 items-center overflow-hidden text-left text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50 gap-2",
+      E,
+      D,
+      weightClassName,
+      className,
+    );
+  let k = O,
+    A = fullWidth && "flex-1",
+    j = hideLabel !== undefined && "min-h-6",
+    M = isActive ? w : "text-token-foreground",
+    N = peers.$("flex min-w-0 items-center text-base gap-2", A, j, M);
+  let P = peers.nFl.isValidElement(icon)
+    ? icon
+    : peers.nFl.createElement(icon, {
+        className: peers.$(iconClassName, isActive && T),
+      });
+  let F = (
+    <span className="flex w-4 shrink-0 items-center justify-center">{P}</span>
   );
-
-  const labelNode =
-    hideLabel === true ? null : (
-      <span
-        className={cx(
-          "min-w-0 flex-1 truncate",
-          isActive ? activeFg : "text-token-foreground",
-        )}
-      >
-        {label}
-      </span>
+  let I = hideLabel ? null : (
+    <span className="text-fade-truncate">{label}</span>
+  );
+  let L = (
+    <div className={N}>
+      {F}
+      {I}
+    </div>
+  );
+  let R = L;
+  if (interactiveTrailing != null) {
+    let e = isActive ? "page" : undefined,
+      n = rest,
+      r = (
+        <button
+          type="button"
+          className="flex min-w-0 flex-1 cursor-interaction items-center text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-token-border disabled:cursor-not-allowed"
+          onClick={onClick}
+          aria-current={e}
+          disabled={disabled}
+          {...n}
+        >
+          {R}
+        </button>
+      );
+    let i;
+    return (
+      <div className={k}>
+        {r}
+        {interactiveTrailing}
+      </div>
     );
-  const iconNode =
-    icon == null ? null : (
-      <span
-        className={cx(
-          "shrink-0",
-          iconClassName,
-          isActive ? activeIconFg : "text-token-text-secondary",
-        )}
-      >
-        {icon}
-      </span>
-    );
-  const trailingNode =
-    trailing == null ? null : interactiveTrailing === true ? (
-      trailing
-    ) : (
-      <span className="ms-auto shrink-0">{trailing}</span>
-    );
-
+  }
+  let z = isActive ? "page" : undefined,
+    B = rest;
   return (
     <button
       type="button"
-      className={buttonClassName}
+      className={k}
       onClick={onClick}
-      aria-current={isActive ? "page" : undefined}
+      aria-current={z}
       disabled={disabled}
-      {...rest}
+      {...B}
     >
-      {iconNode}
-      {labelNode}
-      {trailingNode}
+      {R}
+      {trailing}
     </button>
   );
 }

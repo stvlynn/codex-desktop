@@ -25,9 +25,7 @@ export type AppMentionItem = AppMentionItemFields & {
 };
 
 /** Normalize app fields for mention menus (`N1r`). */
-export function toAppMentionFields(
-  app: AppMentionSource,
-): AppMentionItemFields {
+export function toAppMentionFields(app: AppMentionSource): AppMentionItemFields {
   return {
     name: slugifyAppMentionName(app.name),
     displayName: app.name,

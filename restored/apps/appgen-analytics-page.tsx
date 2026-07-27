@@ -20,9 +20,7 @@ export function bindAppgenAnalyticsPage(next: AppgenAnalyticsPageImpl): void {
  * Bindable AppgenAnalyticsPage.
  * Alias ownership unresolved — do not invent extractFn body.
  */
-export function AppgenAnalyticsPage(
-  props: AppgenAnalyticsPageProps,
-): ReactElement {
+export function AppgenAnalyticsPage(props: AppgenAnalyticsPageProps): ReactElement {
   if (impl == null) {
     return (
       <div

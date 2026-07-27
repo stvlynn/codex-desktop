@@ -1,35 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `Rit`) / export `Dct`.
+// Materialized via extractFn(internal `Rit`) / export `Dct`.
 
 export type ParseErrorMessageDetailPeers = {
-  schema: {
-    safeParse: (value: unknown) => {
-      success: boolean;
-      data?: { detail?: unknown };
-    };
-  };
+  zit: (...args: unknown[]) => unknown;
 };
 
 let peers: ParseErrorMessageDetailPeers | null = null;
 
 /** Wire parseErrorMessageDetail peers once companions land. */
-export function setParseErrorMessageDetailPeers(
-  next: ParseErrorMessageDetailPeers,
-): void {
+export function setParseErrorMessageDetailPeers(next: ParseErrorMessageDetailPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Dct` / internal `Rit`.
- * Parse JSON error.message detail when present.
  */
-export function parseErrorMessageDetail(error: { message: string }): unknown {
+export function parseErrorMessageDetail(e: unknown) {
   if (peers == null) {
-    throw new Error("ParseErrorMessageDetail peers are not configured");
+    throw new Error("parseErrorMessageDetail peers are not configured");
   }
+
   try {
-    const parsed = peers.schema.safeParse(JSON.parse(error.message));
-    return parsed.success ? (parsed.data?.detail ?? null) : null;
+    let t = peers.zit.safeParse(JSON.parse(e.message));
+    return t.success ? t.data.detail : null;
   } catch {
     return null;
   }

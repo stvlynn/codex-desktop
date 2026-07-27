@@ -60,8 +60,9 @@ export function SettingsHostDropdown({
 }: SettingsHostDropdownProps): ReactNode {
   const intl = useIntl();
   const selectedRemote =
-    connectedRemoteConnections.find((item) => item.hostId === selectedHostId) ??
-    null;
+    connectedRemoteConnections.find((item) => {
+      return item.hostId === selectedHostId;
+    }) ?? null;
   const resolvedLocalLabel =
     localLabel ??
     intl.formatMessage({
@@ -117,30 +118,34 @@ export function SettingsHostDropdown({
         />
       </DropdownMenu.Title>
       <DropdownMenu.Section className="max-h-40 overflow-y-auto">
-        {hosts.map((item) => (
-          <DropdownMenu.Item
-            key={item.hostId}
-            RightIcon={item.hostId === selectedHostId ? AppIconZlt : undefined}
-            onSelect={() => {
-              onSelectHost(item.hostId);
-            }}
-          >
-            <span className={cx("flex min-w-0 items-center gap-2")}>
-              {item.hostId === LOCAL_HOST_ID ? (
-                <LocalIcon className="icon-xs shrink-0" />
-              ) : (
-                <HostColorDot
-                  className="icon-xs shrink-0"
-                  hostId={item.hostId}
-                />
-              )}
-              <span className="truncate">{item.displayName}</span>
-              {item.hostId !== LOCAL_HOST_ID && showConnectedIndicator ? (
-                <ConnectedDot />
-              ) : null}
-            </span>
-          </DropdownMenu.Item>
-        ))}
+        {hosts.map((item) => {
+          return (
+            <DropdownMenu.Item
+              key={item.hostId}
+              RightIcon={
+                item.hostId === selectedHostId ? AppIconZlt : undefined
+              }
+              onSelect={() => {
+                onSelectHost(item.hostId);
+              }}
+            >
+              <span className={cx("flex min-w-0 items-center gap-2")}>
+                {item.hostId === LOCAL_HOST_ID ? (
+                  <LocalIcon className="icon-xs shrink-0" />
+                ) : (
+                  <HostColorDot
+                    className="icon-xs shrink-0"
+                    hostId={item.hostId}
+                  />
+                )}
+                <span className="truncate">{item.displayName}</span>
+                {item.hostId !== LOCAL_HOST_ID && showConnectedIndicator ? (
+                  <ConnectedDot />
+                ) : null}
+              </span>
+            </DropdownMenu.Item>
+          );
+        })}
       </DropdownMenu.Section>
     </DropdownMenuPopover>
   );

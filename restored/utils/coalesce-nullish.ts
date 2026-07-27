@@ -13,8 +13,6 @@ export type ComposerPermissionModeVisibility = {
 };
 
 /** Nullish-coalesce composer permission-mode visibility to defaults. */
-export function coalesceComposerPermissionModeVisibility(
-  value: ComposerPermissionModeVisibility | null | undefined,
-): ComposerPermissionModeVisibility {
+export function coalesceComposerPermissionModeVisibility(value: ComposerPermissionModeVisibility | null | undefined): ComposerPermissionModeVisibility {
   return value ?? { ...DEFAULT_COMPOSER_PERMISSION_MODE_VISIBILITY };
 }

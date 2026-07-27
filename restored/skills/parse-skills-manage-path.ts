@@ -16,9 +16,7 @@ export type SkillsManagePathInfo = {
  * Parse a skills/manage-style path into skill/plugin identity.
  * Mirrors the bundle `v2n`/`y2n` walkers for `skills` + `plugins` layouts.
  */
-export function parseSkillsManagePath(
-  rawPath: string,
-): SkillsManagePathInfo | null {
+export function parseSkillsManagePath(rawPath: string): SkillsManagePathInfo | null {
   const normalized = trimDotSlashPrefix(rawPath).replace(/\/+$/, "");
   const segments = normalized.split("/").filter((part) => part.length > 0);
   if (segments.length === 0) return null;

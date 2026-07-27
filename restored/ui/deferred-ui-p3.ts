@@ -1,25 +1,37 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export p3 / gE
+// Materialized via extractFn(internal `gE`) / export `p3`.
 
 export type BindDeferredUiP3Peers = {
-  impl: (...args: unknown[]) => unknown;
+  Eh: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Th: (...args: unknown[]) => unknown;
+  a8n: (...args: unknown[]) => unknown;
+  checkGate: (...args: unknown[]) => unknown;
+  i8n: (...args: unknown[]) => unknown;
+  o8n: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiP3Peers | null = null;
 
-/** Wire bindDeferredUiP3 once companions land. */
+/** Wire bindDeferredUiP3 peers once companions land. */
 export function setBindDeferredUiP3Peers(next: BindDeferredUiP3Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `p3` / internal `gE`.
- * Stage-3 fill for bundle export p3 / gE
  */
-export function bindDeferredUiP3(...args: unknown[]): unknown {
+export function bindDeferredUiP3() {
   if (peers == null) {
     throw new Error("bindDeferredUiP3 peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ma(peers.Q, ({
+    get: e
+  }) => {
+    let t = e(peers.Eh, peers.a8n),
+      n = e(peers.Th);
+    return peers.i8n(e(peers.o8n), t || n?.checkGate(`2333235660`) === !0);
+  });
 }

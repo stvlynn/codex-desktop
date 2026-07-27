@@ -20,9 +20,7 @@ export function bindDataControlsSettings(next: DataControlsSettingsImpl): void {
  * Bindable DataControlsSettings.
  * Alias ownership unresolved — do not invent extractFn body.
  */
-export function DataControlsSettings(
-  props: DataControlsSettingsProps,
-): ReactElement {
+export function DataControlsSettings(props: DataControlsSettingsProps): ReactElement {
   if (impl == null) {
     return (
       <div

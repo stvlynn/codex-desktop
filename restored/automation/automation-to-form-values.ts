@@ -1,92 +1,54 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `DQc`) / export `Cu`.
-
-export type AutomationLike = {
-  id: string;
-  kind: string;
-  name: string;
-  prompt: string;
-  status: string;
-  target?: { type?: string; projectId?: string } | null;
-  cwds?: string[];
-  executionEnvironment?: unknown;
-  localEnvironmentConfigPath?: unknown;
-  pluginTemplateId?: unknown;
-  targetThreadId?: unknown;
-  notificationPolicy?: unknown;
-  rrule?: unknown;
-  [key: string]: unknown;
-};
+// Materialized via extractFn(internal `DQc`) / export `Cu`.
 
 export type AutomationToFormValuesPeers = {
-  resolveModelSettings: (args: {
-    automation: AutomationLike;
-    models: unknown[];
-  }) => { model: unknown; reasoningEffort: unknown };
-  isThreadTarget: (automation: AutomationLike) => boolean;
-  mapExecutionEnvironment: (value: unknown) => unknown;
-  projectlessCwdSentinel: unknown;
-  parseScheduleConfig: (rrule: unknown) => unknown;
-  parseThreadScheduleConfig: (rrule: unknown) => unknown;
+  Dme: (...args: unknown[]) => unknown;
+  Tl: (...args: unknown[]) => unknown;
+  d3: (...args: unknown[]) => unknown;
+  jme: (...args: unknown[]) => unknown;
+  mZc: (...args: unknown[]) => unknown;
+  pZc: (...args: unknown[]) => unknown;
+  type: (...args: unknown[]) => unknown;
 };
 
 let peers: AutomationToFormValuesPeers | null = null;
 
-/** Wire automation form mapping peers once companions land. */
-export function setAutomationToFormValuesPeers(
-  next: AutomationToFormValuesPeers,
-): void {
+/** Wire automationToFormValues peers once companions land. */
+export function setAutomationToFormValuesPeers(next: AutomationToFormValuesPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Cu` / internal `DQc`.
- * Map an automation record into editor form values.
  */
-export function automationToFormValues(
-  automation: AutomationLike,
-  models?: unknown[],
-): Record<string, unknown> {
+export function automationToFormValues(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("AutomationToFormValues peers are not configured");
+    throw new Error("automationToFormValues peers are not configured");
   }
-  const resolved = peers.resolveModelSettings({
-    automation,
-    models: models ?? [],
+
+  let n = peers.jme({
+    automation: e,
+    models: t ?? []
   });
-  const threadTarget = peers.isThreadTarget(automation);
   return {
-    id: automation.id,
-    kind: automation.kind,
-    name: automation.name,
-    prompt: automation.prompt,
-    status: automation.status,
-    projectId: threadTarget
-      ? null
-      : automation.target?.type === "project"
-        ? automation.target.projectId
-        : automation.target?.type === "projectless" ||
-            automation.cwds?.[0] === peers.projectlessCwdSentinel
-          ? null
-          : (automation.cwds?.[0] ?? null),
-    cwds: threadTarget ? [] : (automation.cwds ?? []),
-    executionEnvironment: threadTarget
-      ? null
-      : peers.mapExecutionEnvironment(automation.executionEnvironment),
-    localEnvironmentConfigPath: threadTarget
-      ? null
-      : automation.localEnvironmentConfigPath,
-    pluginTemplateId: threadTarget ? null : automation.pluginTemplateId,
-    targetThreadId: threadTarget ? automation.targetThreadId : null,
-    model: threadTarget ? null : resolved.model,
-    reasoningEffort: threadTarget ? null : resolved.reasoningEffort,
-    ...(automation.notificationPolicy == null
-      ? {}
-      : { notificationPolicy: automation.notificationPolicy }),
-    rawRrule: automation.rrule,
-    scheduleConfig: threadTarget
-      ? peers.parseThreadScheduleConfig(automation.rrule)
-      : peers.parseScheduleConfig(automation.rrule),
-    scheduleDirty: false,
+    id: e.id,
+    kind: e.kind,
+    name: e.name,
+    prompt: e.prompt,
+    status: e.status,
+    projectId: peers.Tl(e) ? null : e.target?.type === `project` ? e.target.projectId : e.target?.type === `projectless` || e.cwds[0] === peers.d3 ? null : e.cwds[0] ?? null,
+    cwds: peers.Tl(e) ? [] : e.cwds,
+    executionEnvironment: peers.Tl(e) ? null : peers.Dme(e.executionEnvironment),
+    localEnvironmentConfigPath: peers.Tl(e) ? null : e.localEnvironmentConfigPath,
+    pluginTemplateId: peers.Tl(e) ? null : e.pluginTemplateId,
+    targetThreadId: peers.Tl(e) ? e.targetThreadId : null,
+    model: peers.Tl(e) ? null : n.model,
+    reasoningEffort: peers.Tl(e) ? null : n.reasoningEffort,
+    ...(e.notificationPolicy == null ? {} : {
+      notificationPolicy: e.notificationPolicy
+    }),
+    rawRrule: e.rrule,
+    scheduleConfig: peers.Tl(e) ? peers.mZc(e.rrule) : peers.pZc(e.rrule),
+    scheduleDirty: !1
   };
 }

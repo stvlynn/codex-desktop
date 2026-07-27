@@ -10,9 +10,7 @@ export type OnboardingChecklistPeers = {
 let peers: OnboardingChecklistPeers | null = null;
 
 /** Wire onboardingChecklist once companions land. */
-export function setOnboardingChecklistPeers(
-  next: OnboardingChecklistPeers,
-): void {
+export function setOnboardingChecklistPeers(next: OnboardingChecklistPeers): void {
   peers = next;
 }
 

@@ -9,9 +9,7 @@ export type DigitStringParseResult =
   | { kind: "valid"; value: number };
 
 /** Parse a trimmed digit-only string into a non-negative integer. */
-export function parseDigitString(
-  value: string | null | undefined,
-): DigitStringParseResult {
+export function parseDigitString(value: string | null | undefined): DigitStringParseResult {
   const trimmed = trimOrEmpty(value);
   if (trimmed.length === 0) return { kind: "missing" };
   if (!/^\d+$/.test(trimmed)) return { kind: "invalid" };

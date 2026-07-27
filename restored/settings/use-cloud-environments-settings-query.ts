@@ -1,176 +1,91 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `Ra`) / export `evt`.
+// Materialized via extractFn(internal `Ra`) / export `evt`.
 
 export type UseCloudEnvironmentsSettingsQueryPeers = {
-  createCachedMutationSignal: (
-    debugLabel: "cached",
-    scope: unknown,
-    factory: (scope: unknown, get: unknown) => unknown,
-    register: (scope: unknown, signal: unknown) => void,
-  ) => unknown;
-  buildMutationOptions: (
-    scope: unknown,
-    get: unknown,
-  ) => {
-    meta?: unknown;
-    mutationKey?: unknown;
-    onMutate?: (...args: unknown[]) => unknown;
-    mutationFn?: (...args: unknown[]) => Promise<unknown>;
-    onError?: (...args: unknown[]) => unknown;
-    onSuccess?: (...args: unknown[]) => unknown;
-    onSettled?: (...args: unknown[]) => unknown;
-  };
-  createAtom: (initial: unknown) => unknown;
-  deriveAtom: (reader: (get: (atom: unknown) => unknown) => unknown) => unknown;
-  registerDebug: (
-    signal: unknown,
-    scope: unknown,
-    kind: "mutation",
-    options: { debugLabel: unknown },
-  ) => void;
+  Hi: (...args: unknown[]) => unknown;
+  Pn: (...args: unknown[]) => unknown;
+  di: (...args: unknown[]) => unknown;
+  onError: (...args: unknown[]) => unknown;
+  onSettled: (...args: unknown[]) => unknown;
+  onSuccess: (...args: unknown[]) => unknown;
+  ua: (...args: unknown[]) => unknown;
 };
 
 let peers: UseCloudEnvironmentsSettingsQueryPeers | null = null;
 
 /** Wire useCloudEnvironmentsSettingsQuery peers once companions land. */
-export function setUseCloudEnvironmentsSettingsQueryPeers(
-  next: UseCloudEnvironmentsSettingsQueryPeers,
-): void {
+export function setUseCloudEnvironmentsSettingsQueryPeers(next: UseCloudEnvironmentsSettingsQueryPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `evt` / internal `Ra`.
- * Create a cached mutation-signal scope for cloud environment settings.
  */
-export function useCloudEnvironmentsSettingsQuery(
-  scope: unknown,
-  _unused?: unknown,
-): unknown {
+export function useCloudEnvironmentsSettingsQuery(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error(
-      "UseCloudEnvironmentsSettingsQuery peers are not configured",
-    );
+    throw new Error("useCloudEnvironmentsSettingsQuery peers are not configured");
   }
-  void _unused;
-  return peers.createCachedMutationSignal(
-    "cached",
-    scope,
-    (innerScope, get) => {
-      const scoped = innerScope as {
-        queryClient?: {
-          /* QueryClient */
-        };
-        store: {
-          set: (atom: unknown, value: unknown) => void;
-        };
-      };
-      if (scoped.queryClient == null) {
-        throw new Error("mutationSignal requires a QueryClient on Scope");
-      }
-      const statusAtom = peers!.createAtom({
-        data: undefined,
+
+  let n = peers.Hi(`cached`, e, (e, n) => {
+    if (e.queryClient == null) throw Error(`mutationSignal requires a QueryClient on Scope`);
+    let r = peers.Pn({
+        data: void 0,
         error: null,
-        status: "idle",
-        variables: undefined,
-      });
-      let generation = 0;
-      return peers!.deriveAtom((read) => {
-        const status = read(statusAtom) as {
-          data: unknown;
-          error: unknown;
-          status: string;
-          variables: unknown;
-        };
-        const mutateAsync = async (
-          variables: unknown,
-          callbacks?: Record<
-            string,
-            ((...args: unknown[]) => unknown) | undefined
-          >,
-        ) => {
-          const options = peers!.buildMutationOptions(get, innerScope);
-          const context = {
-            client: scoped.queryClient,
-            meta: options.meta,
-            mutationKey: options.mutationKey,
-          };
-          const gen = ++generation;
-          scoped.store.set(statusAtom, {
-            data: undefined,
+        status: `idle`,
+        variables: void 0
+      }),
+      i = 0;
+    return peers.Pn(a => {
+      let o = a(r),
+        s = async (a, o) => {
+          let s = t(peers.ua(n, e)),
+            c = {
+              client: e.queryClient,
+              meta: s.meta,
+              mutationKey: s.mutationKey
+            },
+            l = ++i;
+          e.store.set(r, {
+            data: void 0,
             error: null,
-            status: "pending",
-            variables,
+            status: `pending`,
+            variables: a
           });
-          let contextValue: unknown;
-          let data: unknown;
+          let u, d;
           try {
-            contextValue = await options.onMutate?.(variables, context);
-            data = await options.mutationFn?.(variables, context);
-          } catch (error) {
-            if (gen === generation) {
-              scoped.store.set(statusAtom, {
-                data: undefined,
-                error,
-                status: "error",
-                variables,
-              });
-            }
-            await options.onError?.(error, variables, contextValue, context);
-            await options.onSettled?.(
-              undefined,
-              error,
-              variables,
-              contextValue,
-              context,
-            );
-            callbacks?.onError?.(error, variables, contextValue, context);
-            callbacks?.onSettled?.(
-              undefined,
-              error,
-              variables,
-              contextValue,
-              context,
-            );
-            throw error;
+            u = await s.onMutate?.(a, c), d = await s.mutationFn?.(a, c);
+          } catch (t) {
+            let n = t;
+            throw l === i && e.store.set(r, {
+              data: void 0,
+              error: n,
+              status: `error`,
+              variables: a
+            }), await s.onError?.(n, a, u, c), await s.onSettled?.(void 0, n, a, u, c), o?.onError?.(n, a, u, c), o?.onSettled?.(void 0, n, a, u, c), t;
           }
-          if (gen === generation) {
-            scoped.store.set(statusAtom, {
-              data,
-              error: null,
-              status: "success",
-              variables,
-            });
-          }
-          await options.onSuccess?.(data, variables, contextValue, context);
-          await options.onSettled?.(
-            data,
-            null,
-            variables,
-            contextValue,
-            context,
-          );
-          callbacks?.onSuccess?.(data, variables, contextValue, context);
-          callbacks?.onSettled?.(data, null, variables, contextValue, context);
-          return data;
+          return l === i && e.store.set(r, {
+            data: d,
+            error: null,
+            status: `success`,
+            variables: a
+          }), await s.onSuccess?.(d, a, u, c), await s.onSettled?.(d, null, a, u, c), o?.onSuccess?.(d, a, u, c), o?.onSettled?.(d, null, a, u, c), d;
         };
-        return {
-          ...status,
-          isError: status.status === "error",
-          isIdle: status.status === "idle",
-          isPending: status.status === "pending",
-          isSuccess: status.status === "success",
-          mutate: (variables: unknown, callbacks?: Record<string, unknown>) => {
-            mutateAsync(variables, callbacks as never).catch(() => {});
-          },
-          mutateAsync,
-        };
-      });
-    },
-    (innerScope, signal) => {
-      peers!.registerDebug(signal, innerScope, "mutation", {
-        debugLabel: "cached",
-      });
-    },
-  );
+      return {
+        ...o,
+        isError: o.status === `error`,
+        isIdle: o.status === `idle`,
+        isPending: o.status === `pending`,
+        isSuccess: o.status === `success`,
+        mutate: (e, t) => {
+          s(e, t).catch(() => {});
+        },
+        mutateAsync: s
+      };
+    });
+  }, (e, t) => {
+    peers.di(t, e, `mutation`, {
+      debugLabel: n.debugLabel
+    });
+  });
+  return n;
 }

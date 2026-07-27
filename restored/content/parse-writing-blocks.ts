@@ -12,9 +12,7 @@ type WritingBlockSanitizer = (value: unknown) => Record<string, unknown> | null;
 let sanitizeWritingBlock: WritingBlockSanitizer | null = null;
 
 /** Wire writing-block sanitizer (`pxa` in the bundle). */
-export function setWritingBlockSanitizer(
-  sanitizer: WritingBlockSanitizer,
-): void {
+export function setWritingBlockSanitizer(sanitizer: WritingBlockSanitizer): void {
   sanitizeWritingBlock = sanitizer;
 }
 
@@ -31,9 +29,7 @@ function ownStringEntries(
   return entries;
 }
 
-export function parseWritingBlocks(
-  value: unknown,
-): Record<string, Record<string, unknown>> | typeof EMPTY_WRITING_BLOCKS {
+export function parseWritingBlocks(value: unknown): Record<string, Record<string, unknown>> | typeof EMPTY_WRITING_BLOCKS {
   if (!isPlainObject(value)) return EMPTY_WRITING_BLOCKS;
   if (value.writing_blocks === undefined) return EMPTY_WRITING_BLOCKS;
   const blocks = value.writing_blocks;

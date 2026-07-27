@@ -9,10 +9,7 @@ export type ProfileDurationIntl = {
 };
 
 /** Format a profile stats duration (ms) for display. */
-export function formatProfileStatsDuration(
-  intl: ProfileDurationIntl,
-  durationMs: number,
-): string {
+export function formatProfileStatsDuration(intl: ProfileDurationIntl, durationMs: number): string {
   const totalSeconds = Math.max(0, Math.round(durationMs / 1e3));
   if (totalSeconds >= 3600) {
     const totalMinutes = Math.round(totalSeconds / 60);

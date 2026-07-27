@@ -1,44 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export D7 / bun
+// Materialized via extractFn(internal `bun`) / export `D7`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindWorkspaceWriteProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindWorkspaceWritePeers = {
+  Fh: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  X: (...args: unknown[]) => unknown;
+  _un: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  sl: (...args: unknown[]) => unknown;
+  vun: (...args: unknown[]) => unknown;
+  yun: (...args: unknown[]) => unknown;
 };
 
-type BindWorkspaceWriteImpl = (props: BindWorkspaceWriteProps) => ReactNode;
-let impl: BindWorkspaceWriteImpl | null = null;
+let peers: BindBindWorkspaceWritePeers | null = null;
 
-/** Wire the full BindWorkspaceWrite once deeper restore lands. */
-export function bindBindWorkspaceWrite(next: BindWorkspaceWriteImpl): void {
-  impl = next;
+/** Wire bindBindWorkspaceWrite peers once companions land. */
+export function setBindBindWorkspaceWritePeers(next: BindBindWorkspaceWritePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `D7` / internal `bun`.
- * Stage-3 fill for bundle export D7 / bun; heavy UI via bind.
  */
-export function BindWorkspaceWrite(
-  props: BindWorkspaceWriteProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ew-scaffold="D7"
-      aria-label="BindWorkspaceWrite"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export D7 / bun
-        </div>
-      )}
-    </div>
-  );
+export function bindBindWorkspaceWrite() {
+  if (peers == null) {
+    throw new Error("bindBindWorkspaceWrite peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Sl(), peers.Fh(), _un = `1574672957`, vun = peers.X().trim().transform(e => peers.e || void 0).optional(), yun = peers.sl({
+      desktop_context_section: peers.vun,
+      workspace_dependencies_section: peers.vun
+    });
+  });
 }

@@ -1,39 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `j1`) / export `nm`.
+// Materialized via extractFn(internal `j1`) / export `nm`.
 
 export type ResolveBranchOrFallbackPathPeers = {
-  prepareResolve: (store: unknown, branchOrPath: unknown) => void;
-  resolveBranch: (branchOrPath: unknown) => unknown | null | undefined;
-  toFallbackPath: (branchOrPath: unknown) => unknown;
+  BA: (...args: unknown[]) => unknown;
+  bMr: (...args: unknown[]) => unknown;
+  lnc: (...args: unknown[]) => unknown;
 };
 
 let peers: ResolveBranchOrFallbackPathPeers | null = null;
 
-/** Wire branch/path resolve peers once companions land. */
-export function setResolveBranchOrFallbackPathPeers(
-  next: ResolveBranchOrFallbackPathPeers,
-): void {
+/** Wire resolveBranchOrFallbackPath peers once companions land. */
+export function setResolveBranchOrFallbackPathPeers(next: ResolveBranchOrFallbackPathPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `nm` / internal `j1`.
- * Resolve a branch name, else invoke the fallback-path callback.
  */
-export function resolveBranchOrFallbackPath(
-  store: unknown,
-  branchOrPath: unknown,
-  onBranch: (branch: unknown) => void,
-  onFallbackPath: (path: unknown) => void,
-): void {
+export function resolveBranchOrFallbackPath(e: unknown, t: unknown, n: unknown, r: unknown) {
   if (peers == null) {
-    throw new Error("ResolveBranchOrFallbackPath peers are not configured");
+    throw new Error("resolveBranchOrFallbackPath peers are not configured");
   }
-  peers.prepareResolve(store, branchOrPath);
-  const branch = peers.resolveBranch(branchOrPath);
-  if (branch != null) {
-    onBranch(branch);
+
+  peers.lnc(e, t);
+  let i = peers.BA(t);
+  if (i != null) {
+    n(i);
     return;
   }
-  onFallbackPath(peers.toFallbackPath(branchOrPath));
+  r(peers.bMr(t));
 }

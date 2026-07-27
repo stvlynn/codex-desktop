@@ -1,28 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export XO / RAo
+// Materialized via extractFn(internal `RAo`) / export `XO`.
 
 export type BindDeferredNavigationXOPeers = {
-  impl: (...args: unknown[]) => unknown;
+  LAo: (...args: unknown[]) => unknown;
+  kp: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredNavigationXOPeers | null = null;
 
-/** Wire bindDeferredNavigationXO once companions land. */
-export function setBindDeferredNavigationXOPeers(
-  next: BindDeferredNavigationXOPeers,
-): void {
+/** Wire bindDeferredNavigationXO peers once companions land. */
+export function setBindDeferredNavigationXOPeers(next: BindDeferredNavigationXOPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `XO` / internal `RAo`.
- * Stage-3 fill for bundle export XO / RAo
  */
-export function bindDeferredNavigationXO(...args: unknown[]): unknown {
+export function bindDeferredNavigationXO() {
   if (peers == null) {
     throw new Error("bindDeferredNavigationXO peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.kp(peers.LAo, !1);
 }

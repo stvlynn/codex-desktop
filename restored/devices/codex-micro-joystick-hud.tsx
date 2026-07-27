@@ -17,9 +17,7 @@ type CodexMicroJoystickHudImpl = (
 let impl: CodexMicroJoystickHudImpl | null = null;
 
 /** Wire the full CodexMicroJoystickHud once deeper companion restore lands. */
-export function bindCodexMicroJoystickHud(
-  next: CodexMicroJoystickHudImpl,
-): void {
+export function bindCodexMicroJoystickHud(next: CodexMicroJoystickHudImpl): void {
   impl = next;
 }
 

@@ -13,10 +13,7 @@ export type WebpageSource = {
   url: string;
 };
 
-export function buildWebpageSource(
-  item: Record<string, unknown> | null | undefined,
-  kind: WebpageSourceKind,
-): WebpageSource | null {
+export function buildWebpageSource(item: Record<string, unknown> | null | undefined, kind: WebpageSourceKind): WebpageSource | null {
   if (item == null) return null;
   const url = nonEmptyStringOrNull(item.url);
   if (url == null) return null;

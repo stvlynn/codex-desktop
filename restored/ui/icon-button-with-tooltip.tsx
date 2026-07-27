@@ -1,47 +1,68 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// iconSmall/showTooltip button
+// Materialized via extractFn(internal `Ara`) / export `GL`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type IconButtonWithTooltipProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindIconButtonWithTooltipPeers = {
+  DB: (...args: unknown[]) => unknown;
+  EB: (...args: unknown[]) => unknown;
+  M7r: (...args: unknown[]) => unknown;
+  TB: (...args: unknown[]) => unknown;
+  bb0: (...args: unknown[]) => unknown;
+  hB: (...args: unknown[]) => unknown;
+  jna: (...args: unknown[]) => unknown;
+  jra: (...args: unknown[]) => unknown;
 };
+let peers: BindIconButtonWithTooltipPeers | null = null;
 
-type IconButtonWithTooltipImpl = (
-  props: IconButtonWithTooltipProps,
-) => ReactNode;
-let impl: IconButtonWithTooltipImpl | null = null;
-
-/** Wire the full IconButtonWithTooltip once deeper restore lands. */
-export function bindIconButtonWithTooltip(
-  next: IconButtonWithTooltipImpl,
+/** Wire bindIconButtonWithTooltip peers once companions land. */
+export function setBindIconButtonWithTooltipPeers(
+  next: BindIconButtonWithTooltipPeers,
 ): void {
-  impl = next;
+  peers = next;
 }
 
 /**
- * Bundle export `GL` / export `GL` / internal `Ara`.
- * iconSmall/showTooltip button; heavy UI via bind.
+ * Bundle export `GL` / internal `Ara`.
  */
-export function IconButtonWithTooltip(
-  props: IconButtonWithTooltipProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
+export function bindIconButtonWithTooltip(props: unknown) {
+  const Jra = peers.jra;
+  const N = n;
+  if (peers == null) {
+    throw new Error("bindIconButtonWithTooltip peers are not configured");
+  }
+  let n, r, i, a, o, s, c;
+  c = Symbol.for("react.early_return_sentinel");
+  bb0: {
+    let { iconSmall, showTooltip, ...rest } = props;
+    r = rest;
+    i = showTooltip === undefined ? true : showTooltip;
+    let f = peers.M7r(iconSmall);
+    let p = f;
+    if (p != null) {
+      c = <Jra connectorLogoRequest={p} showTooltip={i} {...r} />;
+      break bb0;
+    }
+    n = peers.TB;
+    a = r.brandColor;
+    o = r.dataAttributes;
+    s = peers.jna(null, {
+      alt: r.displayName,
+      iconSmall,
+      basePath: r.href ?? "",
+      fallbackName: r.fallbackName,
+      fallbackDescription: r.description,
+      fallbackIcon: r.fallbackIcon ?? peers.hB(),
+    });
+  }
+  if (c !== Symbol.for("react.early_return_sentinel")) return c;
+  let l = i ? (r.description ?? r.tooltipText) : undefined;
   return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ee-scaffold="GL"
-      aria-label="IconButtonWithTooltip"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          iconSmall/showTooltip button
-        </div>
-      )}
-    </div>
+    <N
+      brandColor={a}
+      dataAttributes={o}
+      icon={s}
+      text={r.displayName}
+      textClassName={r.textClassName}
+      tooltipText={l}
+    />
   );
 }

@@ -1,19 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `g8i`) / export `UR`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `g8i`) / export `UR`.
 
 export type ArtifactPreviewZoomToFitLabelPeers = {
-  FormattedMessage: (props: {
-    id: string;
-    defaultMessage: string;
-    description: string;
-  }) => ReactNode;
+  Iz: (...args: unknown[]) => unknown;
+  Lz: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
 };
-
 let peers: ArtifactPreviewZoomToFitLabelPeers | null = null;
 
-/** Wire intl message peers once companions land. */
+/** Wire ArtifactPreviewZoomToFitLabel peers once companions land. */
 export function setArtifactPreviewZoomToFitLabelPeers(
   next: ArtifactPreviewZoomToFitLabelPeers,
 ): void {
@@ -22,16 +17,17 @@ export function setArtifactPreviewZoomToFitLabelPeers(
 
 /**
  * Bundle export `UR` / internal `g8i`.
- * Intl label for the artifact preview "Zoom to fit" option.
  */
-export function ArtifactPreviewZoomToFitLabel(): ReactElement {
+export function ArtifactPreviewZoomToFitLabel() {
+  const Z = peers.Z;
   if (peers == null) {
     throw new Error("ArtifactPreviewZoomToFitLabel peers are not configured");
   }
-  return peers.FormattedMessage({
-    id: "artifactTab.preview.zoomToFit",
-    defaultMessage: "Zoom to fit",
-    description:
-      "Zoom option that fits the artifact preview to the available space",
-  }) as ReactElement;
+  return (
+    <Z
+      id="artifactTab.preview.zoomToFit"
+      defaultMessage="Zoom to fit"
+      description="Zoom option that fits the artifact preview to the available space"
+    />
+  );
 }

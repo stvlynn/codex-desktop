@@ -12,10 +12,7 @@ export type PanelPlacementTabs = Partial<
 >;
 
 /** Collect browser-tab ids for open right/bottom panel tabs. */
-export function browserTabIdsFromPanelPlacements(
-  conversationId: string | null | undefined,
-  tabsByPlacement: PanelPlacementTabs,
-  enabled: Partial<Record<(typeof PLACEMENT_RIGHT_BOTTOM)[number], boolean>>,
+export function browserTabIdsFromPanelPlacements(conversationId: string | null | undefined, tabsByPlacement: PanelPlacementTabs, enabled: Partial<Record<(typeof PLACEMENT_RIGHT_BOTTOM)[number], boolean>>,
 ): string[] {
   const out: string[] = [];
   for (const placement of PLACEMENT_RIGHT_BOTTOM) {

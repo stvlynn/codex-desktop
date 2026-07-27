@@ -8,8 +8,6 @@ export type ContentReferenceLike = {
   [key: string]: unknown;
 };
 
-export function getContentReferenceAttributes(
-  ref: ContentReferenceLike,
-): unknown[] {
+export function getContentReferenceAttributes(ref: ContentReferenceLike): unknown[] {
   return extractWebpageContentReferences(ref).map((entry) => entry.attributes);
 }

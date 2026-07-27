@@ -1,45 +1,20 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `T0n`) / export `r6`.
-
-export type AppgenEndCardTurn = {
-  status: string;
-  cwd: unknown;
-  items: Array<{ type: string; [key: string]: unknown }>;
-};
-
-export type BuildAppgenEndCardItemsArgs = {
-  assistantContent: unknown;
-  projectlessOutputDirectory?: string | null;
-  isAppgenEndCardEnabled?: boolean;
-  turn: AppgenEndCardTurn;
-};
+// Materialized via extractFn(internal `T0n`) / export `r6`.
 
 export type BuildAppgenEndCardItemsPeers = {
-  extractWebsiteTarget: (content: unknown) => string | null;
-  collectMcpWebsiteItems: (toolCalls: unknown[]) => unknown[];
-  extractPrimaryResource: (turn: AppgenEndCardTurn) => unknown;
-  extractSecondaryResource: (turn: AppgenEndCardTurn) => unknown;
-  normalizeResources: (args: {
-    cwd: unknown;
-    projectlessOutputDirectory: string | null;
-    resources: unknown[];
-  }) => Array<{ type: string; [key: string]: unknown }>;
-  collectFilePaths: (turn: AppgenEndCardTurn) => string[];
-  buildContentResources: (
-    content: unknown,
-    secondary: unknown,
-    primary: unknown,
-  ) => unknown[];
-  dedupeResources: (args: { cwd: unknown; resources: unknown[] }) => unknown[];
-  fallbackWebsiteTarget: (
-    turn: AppgenEndCardTurn,
-    projectlessOutputDirectory: string | null,
-  ) => string | null;
+  A0n: (...args: unknown[]) => unknown;
+  B0n: (...args: unknown[]) => unknown;
+  I0n: (...args: unknown[]) => unknown;
+  L0n: (...args: unknown[]) => unknown;
+  LUn: (...args: unknown[]) => unknown;
+  M0n: (...args: unknown[]) => unknown;
+  R0n: (...args: unknown[]) => unknown;
+  e2n: (...args: unknown[]) => unknown;
+  t2n: (...args: unknown[]) => unknown;
 };
-
 let peers: BuildAppgenEndCardItemsPeers | null = null;
 
-/** Wire appgen end-card peers once companions land. */
+/** Wire buildAppgenEndCardItems peers once companions land. */
 export function setBuildAppgenEndCardItemsPeers(
   next: BuildAppgenEndCardItemsPeers,
 ): void {
@@ -48,54 +23,66 @@ export function setBuildAppgenEndCardItemsPeers(
 
 /**
  * Bundle export `r6` / internal `T0n`.
- * Build end-card items (files/websites/MCP) for a completed appgen turn.
  */
-export function buildAppgenEndCardItems(
-  args: BuildAppgenEndCardItemsArgs,
-): unknown[] {
+export function buildAppgenEndCardItems({
+  assistantContent,
+  projectlessOutputDirectory = null,
+  isAppgenEndCardEnabled = false,
+  turn,
+}: Record<string, unknown>) {
   if (peers == null) {
-    throw new Error("BuildAppgenEndCardItems peers are not configured");
+    throw new Error("buildAppgenEndCardItems peers are not configured");
   }
-  const {
-    assistantContent,
-    projectlessOutputDirectory = null,
-    isAppgenEndCardEnabled = false,
-    turn,
-  } = args;
   if (turn.status !== "complete") return [];
-  const websiteFromContent = peers.extractWebsiteTarget(assistantContent);
-  const mcpItems = isAppgenEndCardEnabled
-    ? peers.collectMcpWebsiteItems(
-        turn.items.filter((item) => item.type === "mcp-tool-call"),
-      )
-    : [];
-  const primary = peers.extractPrimaryResource(turn);
-  const secondary = peers.extractSecondaryResource(turn);
-  const resources = peers.normalizeResources({
-    cwd: turn.cwd,
-    projectlessOutputDirectory,
-    resources: peers.dedupeResources({
+  let i = peers.R0n(assistantContent),
+    a = isAppgenEndCardEnabled
+      ? peers.LUn(
+          turn.items.filter((item) => {
+            return item.type === "mcp-tool-call";
+          }),
+        )
+      : [],
+    o = peers.t2n(turn),
+    s = peers.e2n(turn),
+    c = peers.L0n({
       cwd: turn.cwd,
-      resources: [
-        ...peers.collectFilePaths(turn).map((pathValue) => ({
-          type: "file",
-          path: pathValue,
-        })),
-        ...peers.buildContentResources(assistantContent, secondary, primary),
-      ],
-    }),
-  });
-  if (resources.some((item) => item.type === "file") || mcpItems.length > 0) {
-    return [...resources, ...mcpItems];
-  }
-  if (websiteFromContent != null) {
-    return [...resources, { type: "website", target: websiteFromContent }];
-  }
-  const fallback = peers.fallbackWebsiteTarget(
-    turn,
-    projectlessOutputDirectory,
-  );
-  return fallback == null
-    ? resources
-    : [...resources, { type: "website", target: fallback }];
+      projectlessOutputDirectory,
+      resources: peers.M0n({
+        cwd: turn.cwd,
+        resources: [
+          ...peers.A0n(turn).map((item) => {
+            return {
+              type: "file",
+              path: item,
+            };
+          }),
+          ...peers.B0n(assistantContent, s, o),
+        ],
+      }),
+    });
+  if (
+    c.some((item) => {
+      return item.type === "file";
+    }) ||
+    a.length > 0
+  )
+    return [...c, ...a];
+  if (i != null)
+    return [
+      ...c,
+      {
+        type: "website",
+        target: i,
+      },
+    ];
+  let l = peers.I0n(turn, projectlessOutputDirectory);
+  return l == null
+    ? c
+    : [
+        ...c,
+        {
+          type: "website",
+          target: l,
+        },
+      ];
 }

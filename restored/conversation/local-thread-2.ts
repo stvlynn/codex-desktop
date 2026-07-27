@@ -1,26 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export nH / IWi
+// Materialized via extractFn(internal `IWi`) / export `nH`.
 
 export type BindLocalThreadPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  DWi: (...args: unknown[]) => unknown;
+  Da: (...args: unknown[]) => unknown;
+  FWi: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  ap: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  kqr: (...args: unknown[]) => unknown;
 };
 
 let peers: BindLocalThreadPeers | null = null;
 
-/** Wire bindLocalThread once companions land. */
+/** Wire bindLocalThread peers once companions land. */
 export function setBindLocalThreadPeers(next: BindLocalThreadPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `nH` / internal `IWi`.
- * Stage-3 fill for bundle export nH / IWi
  */
-export function bindLocalThread(...args: unknown[]): unknown {
+export function bindLocalThread() {
   if (peers == null) {
     throw new Error("bindLocalThread peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ho(), peers.Au(), peers.kqr(), peers.ed(), peers.ap(), peers.DWi(), FWi = peers.Da(peers.Q, e => !1);
+  });
 }

@@ -9,10 +9,7 @@ export type ComposerRootState = {
 const composerRegistry = new Map<Element, ComposerRootState>();
 
 /** Register composer state for a root element (bundle `Hj`). */
-export function registerComposerRoot(
-  element: Element,
-  state: ComposerRootState,
-): void {
+export function registerComposerRoot(element: Element, state: ComposerRootState): void {
   composerRegistry.set(element, state);
 }
 

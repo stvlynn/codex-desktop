@@ -1,41 +1,37 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export sN / HLa
+// Materialized via extractFn(internal `HLa`) / export `sN`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredUisNProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredUisNPeers = {
+  $ga: (...args: unknown[]) => unknown;
+  BLa: (...args: unknown[]) => unknown;
+  Fh: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  LLa: (...args: unknown[]) => unknown;
+  Mga: (...args: unknown[]) => unknown;
+  VLa: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  r_a: (...args: unknown[]) => unknown;
+  yS: (...args: unknown[]) => unknown;
+  yk: (...args: unknown[]) => unknown;
 };
 
-type DeferredUisNImpl = (props: DeferredUisNProps) => ReactNode;
-let impl: DeferredUisNImpl | null = null;
+let peers: BindDeferredUisNPeers | null = null;
 
-/** Wire the full DeferredUisN once deeper restore lands. */
-export function bindDeferredUisN(next: DeferredUisNImpl): void {
-  impl = next;
+/** Wire bindDeferredUisN peers once companions land. */
+export function setBindDeferredUisNPeers(next: BindDeferredUisNPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `sN` / internal `HLa`.
- * Stage-3 fill for bundle export sN / HLa; heavy UI via bind.
  */
-export function DeferredUisN(props: DeferredUisNProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fl-scaffold="sN"
-      aria-label="DeferredUisN"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export sN / HLa
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredUisN() {
+  if (peers == null) {
+    throw new Error("bindDeferredUisN peers are not configured");
+  }
+
+  return peers.e(() => {
+    BLa = peers.c(), peers.Fh(), peers.yk(), peers.Mga(), peers.$ga(), peers.r_a(), peers.LLa(), peers.yS(), VLa = peers.J();
+  });
 }

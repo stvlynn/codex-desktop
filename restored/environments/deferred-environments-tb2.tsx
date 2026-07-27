@@ -1,48 +1,54 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export TB / iz
+// Materialized via extractFn(internal `iz`) / export `TB`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredEnvironmentsTB2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredEnvironmentsTB2Peers = {
+  BQi: (...args: unknown[]) => unknown;
+  EQi: (...args: unknown[]) => unknown;
+  Fl: (...args: unknown[]) => unknown;
+  IZi: (...args: unknown[]) => unknown;
+  LQi: (...args: unknown[]) => unknown;
+  MZi: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  RZi: (...args: unknown[]) => unknown;
+  bE: (...args: unknown[]) => unknown;
+  codexHome: (...args: unknown[]) => unknown;
+  origins: (...args: unknown[]) => unknown;
+  sp: (...args: unknown[]) => unknown;
+  tj: (...args: unknown[]) => unknown;
+  wE: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredEnvironmentsTB2Impl = (
-  props: BindDeferredEnvironmentsTB2Props,
-) => ReactNode;
-let impl: BindDeferredEnvironmentsTB2Impl | null = null;
+let peers: BindBindDeferredEnvironmentsTB2Peers | null = null;
 
-/** Wire the full BindDeferredEnvironmentsTB2 once deeper restore lands. */
-export function bindBindDeferredEnvironmentsTB2(
-  next: BindDeferredEnvironmentsTB2Impl,
-): void {
-  impl = next;
+/** Wire bindBindDeferredEnvironmentsTB2 peers once companions land. */
+export function setBindBindDeferredEnvironmentsTB2Peers(next: BindBindDeferredEnvironmentsTB2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `TB` / internal `iz`.
- * Stage-3 fill for bundle export TB / iz; heavy UI via bind.
  */
-export function BindDeferredEnvironmentsTB2(
-  props: BindDeferredEnvironmentsTB2Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-eu-scaffold="TB"
-      aria-label="BindDeferredEnvironmentsTB2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export TB / iz
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredEnvironmentsTB2() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredEnvironmentsTB2 peers are not configured");
+  }
+
+  return peers.Ma(peers.Q, ({ get: e }) => {
+    let t = e(peers.wE).data,
+      n = e(peers.BQi).data?.origins ?? peers.LQi,
+      r = peers.EQi(e);
+    return peers.MZi(
+      [
+        ...peers.IZi(
+          peers.sp(e, peers.Fl.LOCAL_PROJECTS),
+          t,
+          n,
+          e(peers.bE, void 0).data?.codexHome,
+        ),
+        ...peers.RZi(r, e(peers.tj)),
+      ],
+      peers.sp(e, peers.Fl.PROJECT_ORDER),
+    );
+  });
 }

@@ -1,25 +1,65 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export bnt / Uy
+// Materialized via extractFn(internal `Uy`) / export `bnt`.
 
 export type BindDeferredUiBntPeers = {
-  impl: (...args: unknown[]) => unknown;
+  a: (...args: unknown[]) => unknown;
+  capPixels: (...args: unknown[]) => unknown;
+  constructor: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  i: (...args: unknown[]) => unknown;
+  limitCanvas: (...args: unknown[]) => unknown;
+  n: (...args: unknown[]) => unknown;
+  pixelRatio: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  scaled: (...args: unknown[]) => unknown;
+  symmetric: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiBntPeers | null = null;
 
-/** Wire bindDeferredUiBnt once companions land. */
+/** Wire bindDeferredUiBnt peers once companions land. */
 export function setBindDeferredUiBntPeers(next: BindDeferredUiBntPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `bnt` / internal `Uy`.
- * Stage-3 fill for bundle export bnt / Uy
  */
-export function bindDeferredUiBnt(...args: unknown[]): unknown {
+export function bindDeferredUiBnt() {
   if (peers == null) {
     throw new Error("bindDeferredUiBnt peers are not configured");
   }
-  return peers.impl(...args);
+
+  return class e {
+    constructor() {
+      let {
+        pixelRatio: t
+      } = peers.e;
+      this.sx = t, this.sy = t;
+    }
+    get scaled() {
+      return this.sx !== 1 || this.sy !== 1;
+    }
+    get symmetric() {
+      return this.sx === this.sy;
+    }
+    limitCanvas(t, n, r, i, a = -1) {
+      let o = 1 / 0,
+        s = 1 / 0,
+        c = 1 / 0;
+      r = peers.e.capPixels(peers.r, peers.a), peers.r > 0 && (o = Math.sqrt(peers.r / (t * peers.n))), peers.i !== -1 && (s = peers.i / t, c = peers.i / peers.n);
+      let l = Math.min(o, s, c);
+      return this.sx > l || this.sy > l ? (this.sx = l, this.sy = l, !0) : !1;
+    }
+    static get pixelRatio() {
+      return globalThis.devicePixelRatio || 1;
+    }
+    static capPixels(e, t) {
+      if (t >= 0) {
+        let n = Math.ceil(window.screen.availWidth * window.screen.availHeight * this.pixelRatio ** 2 * (1 + t / 100));
+        return peers.e > 0 ? Math.min(peers.e, peers.n) : peers.n;
+      }
+      return peers.e;
+    }
+  };
 }

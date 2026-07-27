@@ -1,28 +1,41 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export BJ / C$r
+// Materialized via extractFn(internal `C$r`) / export `BJ`.
 
 export type BindDeferredConversationBJPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  b$r: (...args: unknown[]) => unknown;
+  current_assistant_turn: (...args: unknown[]) => unknown;
+  current_user_turn: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
+  l$r: (...args: unknown[]) => unknown;
+  x$r: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredConversationBJPeers | null = null;
 
-/** Wire bindDeferredConversationBJ once companions land. */
-export function setBindDeferredConversationBJPeers(
-  next: BindDeferredConversationBJPeers,
-): void {
+/** Wire bindDeferredConversationBJ peers once companions land. */
+export function setBindDeferredConversationBJPeers(next: BindDeferredConversationBJPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `BJ` / internal `C$r`.
- * Stage-3 fill for bundle export BJ / C$r
  */
-export function bindDeferredConversationBJ(...args: unknown[]): unknown {
+export function bindDeferredConversationBJ() {
   if (peers == null) {
     throw new Error("bindDeferredConversationBJ peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ma(peers.hT, ({
+    get: e
+  }) => {
+    let {
+      data: t
+    } = e(peers.b$r);
+    return peers.l$r({
+      taskTurns: e(peers.x$r).data,
+      fallbackUserTurn: t?.current_user_turn ?? null,
+      fallbackAssistantTurn: t?.current_assistant_turn ?? null
+    });
+  });
 }

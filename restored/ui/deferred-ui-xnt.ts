@@ -1,25 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Xnt / Nqt
+// Materialized via extractFn(internal `Nqt`) / export `Xnt`.
 
 export type BindDeferredUiXntPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Mqt: (...args: unknown[]) => unknown;
+  WGt: (...args: unknown[]) => unknown;
+  jqt: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiXntPeers | null = null;
 
-/** Wire bindDeferredUiXnt once companions land. */
+/** Wire bindDeferredUiXnt peers once companions land. */
 export function setBindDeferredUiXntPeers(next: BindDeferredUiXntPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Xnt` / internal `Nqt`.
- * Stage-3 fill for bundle export Xnt / Nqt
  */
-export function bindDeferredUiXnt(...args: unknown[]): unknown {
+export function bindDeferredUiXnt() {
   if (peers == null) {
     throw new Error("bindDeferredUiXnt peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.WGt.bind(null, peers.jqt, peers.Mqt);
 }

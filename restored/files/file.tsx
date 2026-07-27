@@ -1,42 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export fL / Cfa
+// Materialized via extractFn(internal `Cfa`) / export `fL`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindFileProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindFilePeers = {
+  Sfa: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  pfa: (...args: unknown[]) => unknown;
+  sfa: (...args: unknown[]) => unknown;
+  yfa: (...args: unknown[]) => unknown;
 };
 
-type BindFileImpl = (props: BindFileProps) => ReactNode;
-let impl: BindFileImpl | null = null;
+let peers: BindBindFilePeers | null = null;
 
-/** Wire the full BindFile once deeper restore lands. */
-export function bindBindFile(next: BindFileImpl): void {
-  impl = next;
+/** Wire bindBindFile peers once companions land. */
+export function setBindBindFilePeers(next: BindBindFilePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `fL` / internal `Cfa`.
- * Stage-3 fill for bundle export fL / Cfa; heavy UI via bind.
  */
-export function BindFile(props: BindFileProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="fL"
-      aria-label="BindFile"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export fL / Cfa
-        </div>
-      )}
-    </div>
-  );
+export function bindBindFile() {
+  if (peers == null) {
+    throw new Error("bindBindFile peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.pfa(), peers.yfa(), Sfa = peers.sfa();
+  });
 }

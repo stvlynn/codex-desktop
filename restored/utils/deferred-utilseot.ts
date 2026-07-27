@@ -1,28 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export eot / gAt
+// Materialized via extractFn(internal `gAt`) / export `eot`.
 
 export type BindDeferredUtilseotPeers = {
-  impl: (...args: unknown[]) => unknown;
+  dAt: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fAt: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUtilseotPeers | null = null;
 
-/** Wire bindDeferredUtilseot once companions land. */
-export function setBindDeferredUtilseotPeers(
-  next: BindDeferredUtilseotPeers,
-): void {
+/** Wire bindDeferredUtilseot peers once companions land. */
+export function setBindDeferredUtilseotPeers(next: BindDeferredUtilseotPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `eot` / internal `gAt`.
- * Stage-3 fill for bundle export eot / gAt
  */
-export function bindDeferredUtilseot(...args: unknown[]): unknown {
+export function bindDeferredUtilseot() {
   if (peers == null) {
     throw new Error("bindDeferredUtilseot peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.dAt(), peers.fAt({
+      thousands: `,`,
+      grouping: [3],
+      currency: [`$`, ``]
+    });
+  });
 }

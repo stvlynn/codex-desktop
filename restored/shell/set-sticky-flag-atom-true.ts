@@ -1,33 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `QYn`) / export `u8`.
+// Materialized via extractFn(internal `QYn`) / export `u8`.
 
-export type SetStickyFlagAtomTruePeers = {
-  validateFlag: (flag: unknown) => void;
-  stickyFlagsAtom: unknown;
+export type U8Peers = {
+  $Yn: (...args: unknown[]) => unknown;
+  HYn: (...args: unknown[]) => unknown;
 };
+let peers: U8Peers | null = null;
 
-let peers: SetStickyFlagAtomTruePeers | null = null;
-
-/** Wire sticky-flag peers once companions land. */
-export function setSetStickyFlagAtomTruePeers(
-  next: SetStickyFlagAtomTruePeers,
-): void {
+/** Wire u8 peers once companions land. */
+export function setU8Peers(next: U8Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `u8` / internal `QYn`.
- * Mark a sticky flag as true in the atom family.
  */
-export function setStickyFlagAtomTrue(
-  store: {
-    set: (atom: unknown, flag: unknown, value: boolean) => void;
-  },
-  flag: unknown,
-): void {
+export function u8(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("SetStickyFlagAtomTrue peers are not configured");
+    throw new Error("u8 peers are not configured");
   }
-  peers.validateFlag(flag);
-  store.set(peers.stickyFlagsAtom, flag, true);
+  peers.HYn(t);
+  e.set(peers.$Yn, t, true);
 }

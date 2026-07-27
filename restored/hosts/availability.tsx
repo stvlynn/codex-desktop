@@ -1,42 +1,65 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export cW / IFi
+// Materialized via extractFn(internal `IFi`) / export `cW`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindAvailabilityProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindAvailabilityPeers = {
+  $T: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  FFi: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  QT: (...args: unknown[]) => unknown;
+  Uf: (...args: unknown[]) => unknown;
+  XT: (...args: unknown[]) => unknown;
+  ZT: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  eE: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
 };
 
-type BindAvailabilityImpl = (props: BindAvailabilityProps) => ReactNode;
-let impl: BindAvailabilityImpl | null = null;
+let peers: BindBindAvailabilityPeers | null = null;
 
-/** Wire the full BindAvailability once deeper restore lands. */
-export function bindBindAvailability(next: BindAvailabilityImpl): void {
-  impl = next;
+/** Wire bindBindAvailability peers once companions land. */
+export function setBindBindAvailabilityPeers(next: BindBindAvailabilityPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `cW` / internal `IFi`.
- * Stage-3 fill for bundle export cW / IFi; heavy UI via bind.
  */
-export function BindAvailability(props: BindAvailabilityProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="cW"
-      aria-label="BindAvailability"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export cW / IFi
-        </div>
-      )}
-    </div>
-  );
+export function bindBindAvailability() {
+  if (peers == null) {
+    throw new Error("bindBindAvailability peers are not configured");
+  }
+
+  return peers.e(() => {
+    (peers.Ho(),
+      peers.Au(),
+      peers.ed(),
+      peers.Uf(),
+      peers.ZT(),
+      peers.QT(),
+      peers.eE(),
+      (FFi = peers.ka(
+        peers.Q,
+        ({ hostConfig: e, operationSource: t }) => ({
+          enabled: !0,
+          queryKey: [`git`, `availability`, peers.$T(peers.e)],
+          queryFn: ({ signal: n }) =>
+            peers.XT(`git`).request({
+              method: `availability`,
+              params: {
+                hostConfig: peers.e,
+                operationSource: t,
+              },
+              signal: n,
+            }),
+          staleTime: peers.Hf.THIRTY_SECONDS,
+        }),
+        {
+          excludeFieldsFromKey: [`operationSource`],
+        },
+      )));
+  });
 }

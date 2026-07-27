@@ -16,10 +16,7 @@ export type SidebarOnboardingAction = {
 };
 
 /** Normalize a sidebar onboarding CTA into a typed action payload. */
-export function resolveSidebarOnboardingAction(
-  action: SidebarOnboardingAction,
-  intl: IntlShapeLike,
-): {
+export function resolveSidebarOnboardingAction(action: SidebarOnboardingAction, intl: IntlShapeLike): {
   type: "sidebar_claude_import" | "sidebar_notification" | "sidebar";
   label: string;
   pluginSlots?: Record<string, unknown> | null;

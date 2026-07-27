@@ -1,44 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Klt / qm
+// Materialized via extractFn(internal `qm`) / export `Klt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type CodexDismissTooltipsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindCodexDismissTooltipsPeers = {
+  H7e: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  U7e: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  sd: (...args: unknown[]) => unknown;
 };
 
-type CodexDismissTooltipsImpl = (props: CodexDismissTooltipsProps) => ReactNode;
-let impl: CodexDismissTooltipsImpl | null = null;
+let peers: BindCodexDismissTooltipsPeers | null = null;
 
-/** Wire the full CodexDismissTooltips once deeper restore lands. */
-export function bindCodexDismissTooltips(next: CodexDismissTooltipsImpl): void {
-  impl = next;
+/** Wire bindCodexDismissTooltips peers once companions land. */
+export function setBindCodexDismissTooltipsPeers(next: BindCodexDismissTooltipsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Klt` / internal `qm`.
- * Stage-3 fill for bundle export Klt / qm; heavy UI via bind.
  */
-export function CodexDismissTooltips(
-  props: CodexDismissTooltipsProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-er-scaffold="Klt"
-      aria-label="CodexDismissTooltips"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Klt / qm
-        </div>
-      )}
-    </div>
-  );
+export function bindCodexDismissTooltips() {
+  if (peers == null) {
+    throw new Error("bindCodexDismissTooltips peers are not configured");
+  }
+
+  return peers.e(() => {
+    H7e = peers.c(), peers.sd(), U7e = peers.J();
+  });
 }

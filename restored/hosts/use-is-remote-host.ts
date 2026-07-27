@@ -1,10 +1,10 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EG — real body via extractFn(internal `RZ`) / export `Lb`.
+// Materialized via extractFn(internal `RZ`) / export `Lb`.
 
 export type UseIsRemoteHostPeers = {
-  selectedHostAtom: unknown;
-  useAtomValue: (atom: unknown) => { kind?: string };
-  resolveHost: (host: { kind?: string }) => { kind?: string };
+  SD: (...args: unknown[]) => unknown;
+  W_: (...args: unknown[]) => unknown;
+  Y: (...args: unknown[]) => unknown;
 };
 
 let peers: UseIsRemoteHostPeers | null = null;
@@ -16,17 +16,11 @@ export function setUseIsRemoteHostPeers(next: UseIsRemoteHostPeers): void {
 
 /**
  * Bundle export `Lb` / internal `RZ`.
- * True when the selected host is not local.
  */
-export function useIsRemoteHost(): boolean {
+export function useIsRemoteHost() {
   if (peers == null) {
-    throw new Error("UseIsRemoteHost peers are not configured");
+    throw new Error("useIsRemoteHost peers are not configured");
   }
-  return (
-    peers.resolveHost(peers.useAtomValue(peers.selectedHostAtom)).kind !==
-    "local"
-  );
-}
 
-// --- qg-full-green: missing-relative-exports stubs (open-runtime wiring) ---
-export const ensureUseIsRemoteHostInit: any = undefined;
+  return peers.W_(peers.Y(peers.SD)).kind !== `local`;
+}

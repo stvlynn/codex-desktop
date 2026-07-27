@@ -1,47 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Render a scrollable accessible list container for children
+// Materialized via extractFn(internal `vsu`) / export `vn`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type AccessibleChildrenListProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindAccessibleChildrenListPeers = {
+  $: (...args: unknown[]) => unknown;
+  Ssu: (...args: unknown[]) => unknown;
+  c9: (...args: unknown[]) => unknown;
 };
+let peers: BindAccessibleChildrenListPeers | null = null;
 
-type AccessibleChildrenListImpl = (
-  props: AccessibleChildrenListProps,
-) => ReactNode;
-let impl: AccessibleChildrenListImpl | null = null;
-
-/** Wire the full AccessibleChildrenList once deeper restore lands. */
-export function bindAccessibleChildrenList(
-  next: AccessibleChildrenListImpl,
+/** Wire bindAccessibleChildrenList peers once companions land. */
+export function setBindAccessibleChildrenListPeers(
+  next: BindAccessibleChildrenListPeers,
 ): void {
-  impl = next;
+  peers = next;
 }
 
 /**
  * Bundle export `vn` / internal `vsu`.
- * Render a scrollable accessible list container for children; heavy UI via bind.
  */
-export function AccessibleChildrenList(
-  props: AccessibleChildrenListProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
+export function bindAccessibleChildrenList(props: unknown) {
+  if (peers == null) {
+    throw new Error("bindAccessibleChildrenList peers are not configured");
+  }
+  let { children, ariaLabel, className } = props,
+    a = peers.$(
+      "flex h-[240px] w-full flex-col overflow-y-auto rounded-2xl border border-token-border bg-token-surface-primary px-5 py-4",
+      className,
+    );
   return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-em-scaffold="vn"
-      aria-label="AccessibleChildrenList"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Render a scrollable accessible list container for children
-        </div>
-      )}
+    <div className={a} role="list" aria-label={ariaLabel}>
+      {children}
     </div>
   );
 }

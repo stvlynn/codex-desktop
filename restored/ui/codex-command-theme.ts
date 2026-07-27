@@ -1,25 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export In / tau
+// Materialized via extractFn(internal `tau`) / export `In`.
 
 export type CodexCommandThemePeers = {
-  impl: (...args: unknown[]) => unknown;
+  $iu: (...args: unknown[]) => unknown;
+  $u: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  eau: (...args: unknown[]) => unknown;
 };
 
 let peers: CodexCommandThemePeers | null = null;
 
-/** Wire codexCommandTheme once companions land. */
+/** Wire codexCommandTheme peers once companions land. */
 export function setCodexCommandThemePeers(next: CodexCommandThemePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `In` / internal `tau`.
- * Stage-3 fill for bundle export In / tau
  */
-export function codexCommandTheme(...args: unknown[]): unknown {
+export function codexCommandTheme() {
   if (peers == null) {
     throw new Error("codexCommandTheme peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    $iu = peers.c(), peers.$u(), eau = peers.J();
+  });
 }

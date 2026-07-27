@@ -1,42 +1,42 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Tz / wz
+// Materialized via extractFn(internal `wz`) / export `Tz`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindSkills3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindSkills3Peers = {
+  $4i: (...args: unknown[]) => unknown;
+  Cz: (...args: unknown[]) => unknown;
+  DD: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Jg: (...args: unknown[]) => unknown;
+  OE: (...args: unknown[]) => unknown;
+  Q4i: (...args: unknown[]) => unknown;
+  Qt: (...args: unknown[]) => unknown;
+  Uf: (...args: unknown[]) => unknown;
+  V_: (...args: unknown[]) => unknown;
+  Vf: (...args: unknown[]) => unknown;
+  Z4i: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  hj: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
-type BindSkills3Impl = (props: BindSkills3Props) => ReactNode;
-let impl: BindSkills3Impl | null = null;
+let peers: BindBindSkills3Peers | null = null;
 
-/** Wire the full BindSkills3 once deeper restore lands. */
-export function bindBindSkills3(next: BindSkills3Impl): void {
-  impl = next;
+/** Wire bindBindSkills3 peers once companions land. */
+export function setBindBindSkills3Peers(next: BindBindSkills3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Tz` / internal `wz`.
- * Stage-3 fill for bundle export Tz / wz; heavy UI via bind.
  */
-export function BindSkills3(props: BindSkills3Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="Tz"
-      aria-label="BindSkills3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Tz / wz
-        </div>
-      )}
-    </div>
-  );
+export function bindBindSkills3() {
+  if (peers == null) {
+    throw new Error("bindBindSkills3 peers are not configured");
+  }
+
+  return peers.e(() => {
+    Z4i = peers.c(), peers.Qt(), Q4i = peers.r(peers.Jg(), 1), peers.Ho(), $4i = peers.r(peers.o(), 1), peers.DD(), peers.Vf(), peers.hj(), peers.OE(), peers.V_(), peers.Uf(), Cz = [`skills`];
+  });
 }

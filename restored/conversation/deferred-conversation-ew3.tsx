@@ -1,48 +1,75 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export eW / XFi
+// Materialized via extractFn(internal `XFi`) / export `eW`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BinddeferredConversationEW3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBinddeferredConversationEW3Peers = {
+  CE: (...args: unknown[]) => unknown;
+  DI: (...args: unknown[]) => unknown;
+  EE: (...args: unknown[]) => unknown;
+  FI: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  UFi: (...args: unknown[]) => unknown;
+  Vl: (...args: unknown[]) => unknown;
+  X8n: (...args: unknown[]) => unknown;
+  YFi: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
+  jFi: (...args: unknown[]) => unknown;
+  kI: (...args: unknown[]) => unknown;
+  ku: (...args: unknown[]) => unknown;
+  length: (...args: unknown[]) => unknown;
+  mFi: (...args: unknown[]) => unknown;
+  projectKind: (...args: unknown[]) => unknown;
 };
 
-type BinddeferredConversationEW3Impl = (
-  props: BinddeferredConversationEW3Props,
-) => ReactNode;
-let impl: BinddeferredConversationEW3Impl | null = null;
+let peers: BindBinddeferredConversationEW3Peers | null = null;
 
-/** Wire the full BinddeferredConversationEW3 once deeper restore lands. */
-export function bindBinddeferredConversationEW3(
-  next: BinddeferredConversationEW3Impl,
-): void {
-  impl = next;
+/** Wire bindBinddeferredConversationEW3 peers once companions land. */
+export function setBindBinddeferredConversationEW3Peers(next: BindBinddeferredConversationEW3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `eW` / internal `XFi`.
- * Stage-3 fill for bundle export eW / XFi; heavy UI via bind.
  */
-export function BinddeferredConversationEW3(
-  props: BinddeferredConversationEW3Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="eW"
-      aria-label="BinddeferredConversationEW3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export eW / XFi
-        </div>
-      )}
-    </div>
-  );
+export function bindBinddeferredConversationEW3() {
+  if (peers == null) {
+    throw new Error("bindBinddeferredConversationEW3 peers are not configured");
+  }
+
+  return peers.Ma(peers.hT, ({
+    get: e,
+    scope: t
+  }) => {
+    let n = e(peers.YFi),
+      r;
+    switch (n.kind) {
+      case `none`:
+        r = null;
+        break;
+      case `plain`:
+        {
+          let i = e(peers.kI),
+            a = t.value.routeKind === `local-thread` ? e(peers.EE)?.[t.value.conversationId] : null,
+            o = a?.projectKind === `local` ? e(peers.X8n, a.projectId) : null,
+            s = o?.length === 1 ? o[0] ?? null : a?.projectKind === `local` ? a.path ?? null : null,
+            c = a == null ? n.cwd : peers.ku({
+              assignment: a,
+              cwd: n.cwd
+            }),
+            l = t.value.routeKind !== `local-thread` && i.kind === `local` && i.id === n.hostId ? e(peers.CE) : null,
+            u = c != null && peers.Vl(c) ? c : null;
+          r = s ?? l ?? u;
+          break;
+        }
+      case `git`:
+        r = n.git.root;
+        break;
+    }
+    return peers.jFi({
+      codexHome: e(peers.mFi),
+      executionCwd: e(peers.DI),
+      isWorktreeMode: !1,
+      projectRootPaths: e(peers.UFi, e(peers.FI)),
+      workspaceBrowserRoot: r
+    });
+  });
 }

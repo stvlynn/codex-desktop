@@ -1,28 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `qfa`) / export `uL`.
+// Materialized via extractFn(internal `qfa`) / export `uL`.
 
 export type LogConversationHrefNavigationPeers = {
-  normalizeHref: (href: unknown) => string;
-  isUnsafeHref: (href: string) => boolean;
-  formatMessage: (descriptor: {
-    id: string;
-    defaultMessage: string;
-    description: string;
-  }) => unknown;
-  openLink: (input: {
-    href: string;
-    initiator: unknown;
-    openTarget: "in-app-browser" | "external-browser";
-  }) => void;
-  openInConversationBrowser: (input: {
-    conversationId: unknown;
-    url: unknown;
-    source: "manual";
-    initiator: unknown;
-  }) => void;
-  copyLink: (href: string) => void;
+  BL: (...args: unknown[]) => unknown;
+  Jfa: (...args: unknown[]) => unknown;
+  Wfa: (...args: unknown[]) => unknown;
+  Zu: (...args: unknown[]) => unknown;
+  hXt: (...args: unknown[]) => unknown;
+  ub: (...args: unknown[]) => unknown;
 };
-
 let peers: LogConversationHrefNavigationPeers | null = null;
 
 /** Wire logConversationHrefNavigation peers once companions land. */
@@ -34,70 +20,72 @@ export function setLogConversationHrefNavigationPeers(
 
 /**
  * Bundle export `uL` / internal `qfa`.
- * Build context-menu actions for conversation external links.
  */
-export function logConversationHrefNavigation(input: {
-  conversationId: unknown;
-  href: unknown;
-  initiator: unknown;
-}): Array<Record<string, unknown>> {
+export function logConversationHrefNavigation({
+  conversationId,
+  href,
+  initiator,
+}: Record<string, unknown>) {
   if (peers == null) {
-    throw new Error("LogConversationHrefNavigation peers are not configured");
+    throw new Error("logConversationHrefNavigation peers are not configured");
   }
-  const href = peers.normalizeHref(input.href);
-  const unsafe = peers.isUnsafeHref(href);
+  let r = peers.hXt(href),
+    i = peers.Jfa(r);
   return [
     {
       id: "open-in-codex-browser",
-      message: peers.formatMessage({
+      message: peers.Zu({
         id: "externalLink.contextMenu.openInBrowser",
         defaultMessage: "Open in browser",
         description:
           "Context menu action to open an external link in the Codex browser",
       }),
       onSelect: () => {
-        if (input.conversationId == null || unsafe) {
-          peers!.openLink({
-            href,
-            initiator: input.initiator,
+        if (conversationId == null || i) {
+          peers.ub({
+            href: r,
+            initiator,
             openTarget: "in-app-browser",
           });
           return;
         }
-        peers!.openInConversationBrowser({
-          conversationId: input.conversationId,
-          url: input.href,
+        peers.Wfa({
+          conversationId,
+          url: href,
           source: "manual",
-          initiator: input.initiator,
+          initiator,
         });
       },
     },
     {
       id: "open-in-external-browser",
-      message: peers.formatMessage({
+      message: peers.Zu({
         id: "externalLink.contextMenu.openInExternalBrowser",
         defaultMessage: "Open in external browser",
         description:
           "Context menu action to open an external link in the external browser",
       }),
       onSelect: () => {
-        peers!.openLink({
-          href,
-          initiator: input.initiator,
+        peers.ub({
+          href: r,
+          initiator,
           openTarget: "external-browser",
         });
       },
     },
-    { id: "external-link-separator", type: "separator" },
+    {
+      id: "external-link-separator",
+      type: "separator",
+    },
     {
       id: "copy-link",
-      message: peers.formatMessage({
+      message: peers.Zu({
         id: "externalLink.contextMenu.copyLink",
         defaultMessage: "Copy link",
         description: "Context menu action to copy an external link",
       }),
       onSelect: () => {
-        peers!.copyLink(href);
+        peers.BL(r);
       },
     },
   ];

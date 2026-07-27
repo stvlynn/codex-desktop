@@ -30,10 +30,7 @@ export function setConsumerLockdownActiveDeps(args: {
   lockdownDisabledAtom = args.lockdownDisabledAtom;
 }
 
-export function isConsumerLockdownActive(
-  store: StoreLike,
-  conversationId: string,
-): boolean {
+export function isConsumerLockdownActive(store: StoreLike, conversationId: string): boolean {
   if (featureGate == null || combine == null) {
     throw new Error("isConsumerLockdownActive deps have not been configured");
   }

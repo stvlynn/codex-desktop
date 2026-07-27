@@ -1,24 +1,11 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `gun`) / export `E7`.
+// Materialized via extractFn(internal `gun`) / export `E7`.
 
 export type RunGateWithOptionalExposureLogPeers = {
-  readGate: (
-    client: unknown,
-    gate: unknown,
-    opts: { disableExposureLog: boolean },
-  ) => { get: (key: unknown, fallback: unknown) => unknown };
-  gateKey: unknown;
-  schema: {
-    safeParse: (value: unknown) => {
-      success: boolean;
-      data?: {
-        desktop_context_section?: unknown;
-        workspace_dependencies_section?: unknown;
-      };
-    };
-  };
+  Ph: (...args: unknown[]) => unknown;
+  _un: (...args: unknown[]) => unknown;
+  yun: (...args: unknown[]) => unknown;
 };
-
 let peers: RunGateWithOptionalExposureLogPeers | null = null;
 
 /** Wire runGateWithOptionalExposureLog peers once companions land. */
@@ -30,33 +17,30 @@ export function setRunGateWithOptionalExposureLogPeers(
 
 /**
  * Bundle export `E7` / internal `gun`.
- * Evaluate a Statsig gate payload and return desktop/workspace sections.
  */
 export function runGateWithOptionalExposureLog(
-  client: unknown,
-  gate: unknown,
-  options: { disableExposureLog?: boolean } = {},
-): {
-  desktopContextSection: unknown;
-  workspaceDependenciesSection: unknown;
-} | null {
+  e: unknown,
+  t: unknown,
+  { disableExposureLog = false }: Record<string, unknown> = {},
+) {
   if (peers == null) {
-    throw new Error("RunGateWithOptionalExposureLog peers are not configured");
+    throw new Error("runGateWithOptionalExposureLog peers are not configured");
   }
-  if (client == null || gate == null) return null;
-  const parsed = peers.schema.safeParse(
+  if (e == null || t == null) return null;
+  let r = peers.yun.safeParse(
     peers
-      .readGate(client, peers.gateKey, {
-        disableExposureLog: options.disableExposureLog ?? false,
+      .Ph(e, peers._un, {
+        disableExposureLog,
       })
-      .get(gate, {}),
+      .get(t, {}),
   );
-  if (!parsed.success) return null;
-  const desktopContextSection = parsed.data?.desktop_context_section;
-  const workspaceDependenciesSection =
-    parsed.data?.workspace_dependencies_section;
-  if (desktopContextSection == null && workspaceDependenciesSection == null) {
-    return null;
-  }
-  return { desktopContextSection, workspaceDependenciesSection };
+  if (!r.success) return null;
+  let { desktop_context_section, workspace_dependencies_section } = r.data;
+  return desktop_context_section == null &&
+    workspace_dependencies_section == null
+    ? null
+    : {
+        desktopContextSection: desktop_context_section,
+        workspaceDependenciesSection: workspace_dependencies_section,
+      };
 }

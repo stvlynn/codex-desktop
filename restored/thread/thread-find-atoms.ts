@@ -1,32 +1,37 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export HH / CVi
+// Materialized via extractFn(internal `CVi`) / export `HH`.
 
 export type BindThreadFindAtomsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  EL: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  TL: (...args: unknown[]) => unknown;
+  UBi: (...args: unknown[]) => unknown;
+  contextId: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
+  wL: (...args: unknown[]) => unknown;
 };
 
 let peers: BindThreadFindAtomsPeers | null = null;
 
-/** Wire bindThreadFindAtoms once companions land. */
-export function setBindThreadFindAtomsPeers(
-  next: BindThreadFindAtomsPeers,
-): void {
+/** Wire bindThreadFindAtoms peers once companions land. */
+export function setBindThreadFindAtomsPeers(next: BindThreadFindAtomsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `HH` / internal `CVi`.
- * Stage-3 fill for bundle export HH / CVi
  */
-export function bindThreadFindAtoms(...args: unknown[]): unknown {
+export function bindThreadFindAtoms() {
   if (peers == null) {
     throw new Error("bindThreadFindAtoms peers are not configured");
   }
-  return peers.impl(...args);
-}
 
-// --- qg-full-green: missing-relative-exports stubs (open-runtime wiring) ---
-export const conversationFindActiveMatchAtom: any = undefined;
-export const conversationFindResultAtom: any = undefined;
+  return peers.Ma(peers.hT, ({
+    get: e
+  }) => peers.UBi({
+    query: e(peers.TL).trim(),
+    routeContextId: e(peers.EL)?.contextId ?? `unavailable`,
+    stateDomain: e(peers.wL),
+    result: e(peers.EL)
+  }, `conversation`));
+}

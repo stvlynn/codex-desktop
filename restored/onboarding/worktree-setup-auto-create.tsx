@@ -4,18 +4,15 @@
 // GuardianApprovals / WorktreeSetupActivityFeed / deferredDefaultHelper.
 
 import type { ReactElement, ReactNode } from "react";
-
 import { GuardianApprovals } from "../apps/guardian-approvals";
 import { deferredDefaultHelper } from "../ui/deferred-default-helper";
 import { WorktreeSetupActivityFeed } from "../worktrees/worktree-setup-activity-feed";
-
 export type WorktreeSetupActivityRow = {
   id: string;
   kind: "worktree" | "setup" | "conversation";
   status: "running" | "completed" | "failed" | "skipped";
   outputText?: string;
 };
-
 export type WorktreeSetupAutoCreateProps = {
   pendingWorktree?: {
     id?: string;
@@ -35,11 +32,9 @@ export type WorktreeSetupAutoCreateProps = {
   className?: string;
   [key: string]: unknown;
 };
-
 type WorktreeSetupAutoCreateImpl = (
   props: WorktreeSetupAutoCreateProps,
 ) => ReactNode;
-
 let impl: WorktreeSetupAutoCreateImpl | null = null;
 
 /** Wire the full auto-create/auto-fix surface once host companions land. */
@@ -48,7 +43,6 @@ export function bindWorktreeSetupAutoCreate(
 ): void {
   impl = next;
 }
-
 function worktreePhaseStatus(
   phase: string | undefined,
   hasWorktreeRoots: boolean,
@@ -66,7 +60,6 @@ function worktreePhaseStatus(
       return undefined;
   }
 }
-
 function setupPhaseStatus(
   pending: NonNullable<WorktreeSetupAutoCreateProps["pendingWorktree"]>,
   hasWorktreeRoots: boolean,
@@ -140,7 +133,6 @@ export function WorktreeSetupAutoCreate(
   props: WorktreeSetupAutoCreateProps = {},
 ): ReactElement {
   if (impl != null) return impl(props) as ReactElement;
-
   const {
     pendingWorktree,
     isConversationStarting,
@@ -149,7 +141,6 @@ export function WorktreeSetupAutoCreate(
     className,
     ...rest
   } = props;
-
   const activities =
     pendingWorktree != null
       ? buildWorktreeSetupAutoCreateActivities({
@@ -158,7 +149,6 @@ export function WorktreeSetupAutoCreate(
           isConversationStartFailed,
         })
       : undefined;
-
   return (
     <WorktreeSetupActivityFeed
       className={className}
@@ -175,7 +165,7 @@ export function WorktreeSetupAutoCreate(
  * Touches deferred Wave AH peers Fq/Ic/Lc so the import graph stays live.
  */
 export function ensureWorktreeSetupAutoCreateInit(): void {
-  void GuardianApprovals;
-  void WorktreeSetupActivityFeed;
-  void deferredDefaultHelper;
+  undefined;
+  undefined;
+  undefined;
 }

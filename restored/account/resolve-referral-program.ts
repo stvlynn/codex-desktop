@@ -7,9 +7,7 @@ export type ReferralProgram = {
 };
 
 /** Map account kind onto referral program ids. */
-export function resolveReferralProgram(
-  kind: string | null | undefined,
-): ReferralProgram | null {
+export function resolveReferralProgram(kind: string | null | undefined): ReferralProgram | null {
   switch (kind?.toLowerCase()) {
     case "personal":
       return { programId: "codex_referral_consumer", entrypoint: "persistent" };

@@ -103,7 +103,9 @@ export function drawText(
   tspan.text(sanitized);
   return text;
 }
-let sanitizeUrl: (url: string) => string = (url) => url;
+let sanitizeUrl: (url: string) => string = (url) => {
+  return url;
+};
 export function drawImage(
   parent: SvgSelection,
   x: number,

@@ -1,42 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export P8 / sYn
+// Materialized via extractFn(internal `sYn`) / export `P8`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindRemote7Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindRemote7Peers = {
+  Da: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
 };
 
-type BindRemote7Impl = (props: BindRemote7Props) => ReactNode;
-let impl: BindRemote7Impl | null = null;
+let peers: BindBindRemote7Peers | null = null;
 
-/** Wire the full BindRemote7 once deeper restore lands. */
-export function bindBindRemote7(next: BindRemote7Impl): void {
-  impl = next;
+/** Wire bindBindRemote7 peers once companions land. */
+export function setBindBindRemote7Peers(next: BindBindRemote7Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `P8` / internal `sYn`.
- * Stage-3 fill for bundle export P8 / sYn; heavy UI via bind.
  */
-export function BindRemote7(props: BindRemote7Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fd-scaffold="P8"
-      aria-label="BindRemote7"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export P8 / sYn
-        </div>
-      )}
-    </div>
-  );
+export function bindBindRemote7() {
+  if (peers == null) {
+    throw new Error("bindBindRemote7 peers are not configured");
+  }
+
+  return peers.Da(peers.Q, e => null);
 }

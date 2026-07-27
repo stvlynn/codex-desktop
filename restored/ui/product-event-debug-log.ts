@@ -1,27 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export _r / G9l
+// Materialized via extractFn(internal `G9l`) / export `_r`.
 
 export type ProductEventDebugLogPeers = {
-  impl: (...args: unknown[]) => unknown;
+  B9l: (...args: unknown[]) => unknown;
+  H7: (...args: unknown[]) => unknown;
+  H9l: (...args: unknown[]) => unknown;
+  U9l: (...args: unknown[]) => unknown;
+  V9l: (...args: unknown[]) => unknown;
+  W9l: (...args: unknown[]) => unknown;
+  crypto: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  z9l: (...args: unknown[]) => unknown;
 };
 
 let peers: ProductEventDebugLogPeers | null = null;
 
-/** Wire productEventDebugLog once companions land. */
-export function setProductEventDebugLogPeers(
-  next: ProductEventDebugLogPeers,
-): void {
+/** Wire productEventDebugLog peers once companions land. */
+export function setProductEventDebugLogPeers(next: ProductEventDebugLogPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `_r` / internal `G9l`.
- * Stage-3 fill for bundle export _r / G9l
  */
-export function productEventDebugLog(...args: unknown[]): unknown {
+export function productEventDebugLog() {
   if (peers == null) {
     throw new Error("productEventDebugLog peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    z9l = peers.r(peers.o(), 1), B9l = 200, V9l = typeof peers.crypto < `u` && typeof peers.crypto.randomUUID == `function` ? peers.crypto.randomUUID() : `product-event-debug-log`, H9l = new Set(), H7 = new Map(), U9l = [], W9l = 0;
+  });
 }

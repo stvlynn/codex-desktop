@@ -69,10 +69,7 @@ export const activeMiniGameAtom = createScopedSignal<MiniGameId | null>(
 export const emptyRotationGestureState: RotationGestureState = EMPTY_GESTURE;
 
 /** Bundle export `d` — register a DOM surface as owning a mini-game context. */
-export function registerMiniGameSurface(
-  owner: unknown,
-  element: Element,
-  onOrphan?: () => void,
+export function registerMiniGameSurface(owner: unknown, element: Element, onOrphan?: () => void,
 ): () => void {
   surfaceOwners.set(element, owner);
   return () => {
@@ -95,8 +92,7 @@ export function getFocusedMiniGameOwner(): unknown {
 }
 
 /** Bundle export `o` — pick a random mini-game id. */
-export function pickRandomMiniGame(
-  random: () => number = Math.random,
+export function pickRandomMiniGame(random: () => number = Math.random,
 ): MiniGameId {
   return GAME_IDS[Math.floor(random() * GAME_IDS.length)] ?? "brick-breaker";
 }

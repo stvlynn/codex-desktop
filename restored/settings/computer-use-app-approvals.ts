@@ -1,28 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export ht / p_u
+// Materialized via extractFn(internal `p_u`) / export `ht`.
 
 export type BindComputerUseAppApprovalsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Ia: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  gp: (...args: unknown[]) => unknown;
+  wM: (...args: unknown[]) => unknown;
 };
 
 let peers: BindComputerUseAppApprovalsPeers | null = null;
 
-/** Wire bindComputerUseAppApprovals once companions land. */
-export function setBindComputerUseAppApprovalsPeers(
-  next: BindComputerUseAppApprovalsPeers,
-): void {
+/** Wire bindComputerUseAppApprovals peers once companions land. */
+export function setBindComputerUseAppApprovalsPeers(next: BindComputerUseAppApprovalsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `ht` / internal `p_u`.
- * Stage-3 fill for bundle export ht / p_u
  */
-export function bindComputerUseAppApprovals(...args: unknown[]): unknown {
+export function bindComputerUseAppApprovals() {
   if (peers == null) {
     throw new Error("bindComputerUseAppApprovals peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ia(peers.Q, () => ({
+    queryFn: ({ signal: e }) =>
+      peers.wM(peers.gp.computerUseSettings.getAppApprovals(), e),
+    queryKey: [`computer-use-app-approvals`],
+    refetchOnMount: `always`,
+    refetchOnWindowFocus: !0,
+    staleTime: peers.Hf.ONE_MINUTE,
+  }));
 }

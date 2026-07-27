@@ -26,9 +26,7 @@ export const OPEN_WORKSPACE_ROOT_MESSAGES = {
 } as const satisfies Record<string, OpenWorkspaceRootMessage>;
 
 /** Platform-specific "reveal workspace root" menu message. */
-export function openWorkspaceRootMessage(
-  platform: "macOS" | "windows" | "linux" | string,
-): OpenWorkspaceRootMessage | undefined {
+export function openWorkspaceRootMessage(platform: "macOS" | "windows" | "linux" | string): OpenWorkspaceRootMessage | undefined {
   switch (platform) {
     case "macOS":
       return OPEN_WORKSPACE_ROOT_MESSAGES.finder;

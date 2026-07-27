@@ -1,41 +1,50 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export jA / bxo
+// Materialized via extractFn(internal `bxo`) / export `jA`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiJA2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiJA2Peers = {
+  J: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gK: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  yxo: (...args: unknown[]) => unknown;
 };
+let peers: BindBindDeferredUiJA2Peers | null = null;
 
-type BindDeferredUiJA2Impl = (props: BindDeferredUiJA2Props) => ReactNode;
-let impl: BindDeferredUiJA2Impl | null = null;
-
-/** Wire the full BindDeferredUiJA2 once deeper restore lands. */
-export function bindBindDeferredUiJA2(next: BindDeferredUiJA2Impl): void {
-  impl = next;
+/** Wire bindBindDeferredUiJA2 peers once companions land. */
+export function setBindBindDeferredUiJA2Peers(
+  next: BindBindDeferredUiJA2Peers,
+): void {
+  peers = next;
 }
 
 /**
  * Bundle export `jA` / internal `bxo`.
- * Stage-3 fill for bundle export jA / bxo; heavy UI via bind.
  */
-export function BindDeferredUiJA2(props: BindDeferredUiJA2Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fg-scaffold="jA"
-      aria-label="BindDeferredUiJA2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export jA / bxo
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiJA2() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiJA2 peers are not configured");
+  }
+  return peers.e(() => {
+    peers.o();
+    yxo = peers.J();
+    gK = (e) => {
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={20}
+          height={20}
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          {...peers.e}
+        >
+          <path d="M12.084 12.668a.666.666 0 0 1 0 1.33H7.917a.665.665 0 1 1 0-1.33h4.167ZM10 5.585c.367 0 .665.298.665.665v1.418h1.419a.666.666 0 0 1 0 1.33h-1.419v1.419a.666.666 0 0 1-1.33 0V8.998H7.917a.665.665 0 0 1 0-1.33h1.418V6.25c0-.367.298-.665.665-.665Z" />
+          <path
+            fillRule="evenodd"
+            d="M12.667 2.668c.689 0 1.246 0 1.696.036.458.038.865.117 1.242.309a3.163 3.163 0 0 1 1.382 1.383c.192.377.272.783.309 1.24.037.45.036 1.008.036 1.697v5.333c0 .689 0 1.246-.036 1.696-.037.458-.117.865-.309 1.242a3.166 3.166 0 0 1-1.382 1.382c-.377.192-.784.271-1.242.309-.45.037-1.007.036-1.696.036H7.334c-.689 0-1.246 0-1.696-.036-.458-.038-.864-.117-1.24-.309a3.166 3.166 0 0 1-1.384-1.383c-.192-.376-.271-.783-.309-1.24-.037-.45-.036-1.008-.036-1.697V7.333c0-.689 0-1.246.036-1.696.038-.458.117-.864.309-1.24a3.17 3.17 0 0 1 1.383-1.384c.377-.192.783-.272 1.24-.309.45-.037 1.008-.036 1.697-.036h5.333Zm-5.333 1.33c-.71 0-1.204.001-1.588.032-.375.03-.587.088-.745.168A1.836 1.836 0 0 0 4.199 5c-.08.158-.137.37-.168.745C4 6.13 4 6.622 4 7.333v5.333c0 .71.001 1.204.032 1.588.03.375.088.587.168.745.176.345.457.627.802.803.158.08.37.137.745.168.384.031.877.031 1.588.031h5.333c.71 0 1.204 0 1.588-.031.375-.031.587-.088.745-.168a1.84 1.84 0 0 0 .803-.803c.08-.158.137-.37.168-.745.031-.383.031-.877.031-1.588V7.333c0-.71 0-1.204-.031-1.588-.031-.375-.088-.587-.168-.745A1.838 1.838 0 0 0 15 4.198c-.158-.08-.37-.137-.745-.168-.384-.031-.877-.032-1.588-.032H7.334Z"
+            clipRule="evenodd"
+          />
+        </svg>
+      );
+    };
+  });
 }

@@ -1,25 +1,45 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export VX / zGr
+// Materialized via extractFn(internal `zGr`) / export `VX`.
 
 export type DeferredVXPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  LGr: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Qt: (...args: unknown[]) => unknown;
+  RGr: (...args: unknown[]) => unknown;
+  Uf: (...args: unknown[]) => unknown;
+  ap: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  ep: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredVXPeers | null = null;
 
-/** Wire deferredVX once companions land. */
+/** Wire deferredVX peers once companions land. */
 export function setDeferredVXPeers(next: DeferredVXPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `VX` / internal `zGr`.
- * Stage-3 fill for bundle export VX / zGr
  */
-export function deferredVX(...args: unknown[]): unknown {
+export function deferredVX() {
   if (peers == null) {
     throw new Error("deferredVX peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    ((LGr = peers.c()),
+      peers.Qt(),
+      peers.Ho(),
+      peers.ed(),
+      peers.Uf(),
+      peers.ap(),
+      (RGr = peers.ep(peers.Q, `is-copilot-api-available`, {
+        staleTime: peers.Hf.INFINITE,
+      })));
+  });
 }

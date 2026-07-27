@@ -1,41 +1,61 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export yW / EI
+// Materialized via extractFn(internal `EI`) / export `yW`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredyWProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredyWPeers = {
+  Au: (...args: unknown[]) => unknown;
+  CI: (...args: unknown[]) => unknown;
+  Gf: (...args: unknown[]) => unknown;
+  TI: (...args: unknown[]) => unknown;
+  ZPi: (...args: unknown[]) => unknown;
+  cFi: (...args: unknown[]) => unknown;
+  c_: (...args: unknown[]) => unknown;
+  dFi: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  lFi: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  sFi: (...args: unknown[]) => unknown;
+  uFi: (...args: unknown[]) => unknown;
+  zmi: (...args: unknown[]) => unknown;
 };
 
-type DeferredyWImpl = (props: DeferredyWProps) => ReactNode;
-let impl: DeferredyWImpl | null = null;
+let peers: BindDeferredyWPeers | null = null;
 
-/** Wire the full DeferredyW once deeper restore lands. */
-export function bindDeferredyW(next: DeferredyWImpl): void {
-  impl = next;
+/** Wire bindDeferredyW peers once companions land. */
+export function setBindDeferredyWPeers(next: BindDeferredyWPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `yW` / internal `EI`.
- * Stage-3 fill for bundle export yW / EI; heavy UI via bind.
  */
-export function DeferredyW(props: DeferredyWProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fl-scaffold="yW"
-      aria-label="DeferredyW"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export yW / EI
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredyW() {
+  if (peers == null) {
+    throw new Error("bindDeferredyW peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.CI(), sFi = peers.r(peers.ZPi(), 1), peers.Au(), peers.Gf(), peers.c_(), peers.zmi(), cFi = 50, lFi = 2e5, TI = new Map(), uFi = e => {
+      let t = new Set(),
+        n = -1;
+      for (let r of peers.e.split(/\r?\n/)) {
+        if (peers.r.startsWith(`diff --git `)) {
+          n += 1;
+          continue;
+        }
+        peers.r.startsWith(`GIT binary patch`) && n >= 0 && t.add(n);
+      }
+      return t;
+    }, dFi = e => {
+      let t = new Set(),
+        n = -1;
+      for (let r of peers.e.split(/\r?\n/)) {
+        if (peers.r.startsWith(`diff --git `)) {
+          n += 1;
+          continue;
+        }
+        n >= 0 && (/^(?:new file mode|deleted file mode|old mode|new mode) 160000$/.test(peers.r) || /^index [0-9a-f]+\.\.[0-9a-f]+ 160000$/.test(peers.r)) && t.add(n);
+      }
+      return t;
+    };
+  });
 }

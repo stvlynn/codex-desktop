@@ -133,9 +133,7 @@ function playHandoffAnimation(
 /**
  * Bundle export `t` — div that plays a handoff enter animation when `handoff` changes.
  */
-export function RealtimeVoiceHandoffTarget(
-  props: RealtimeVoiceHandoffTargetProps,
-): ReactElement {
+export function RealtimeVoiceHandoffTarget(props: RealtimeVoiceHandoffTargetProps): ReactElement {
   const {
     children,
     className,

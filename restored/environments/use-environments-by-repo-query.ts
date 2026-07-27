@@ -1,56 +1,90 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `TQr`) / export `mY`.
-
-export type UseEnvironmentsByRepoQueryArgs = {
-  enabled?: boolean;
-};
+// Materialized via extractFn(internal `TQr`) / export `mY`.
 
 export type UseEnvironmentsByRepoQueryPeers = {
-  useAuthSession: () => { authMethod: string };
-  useQuery: (options: Record<string, unknown>) => { data?: unknown };
-  fetchRepos: () => Promise<unknown>;
-  oneMinuteMs: number;
-  repoKeysFromRepos: (repos: unknown) => string[];
-  fetchEnvironmentsForRepos: (repos: unknown) => Promise<unknown[]>;
-  sortEnvironments: (items: unknown[]) => unknown[];
+  DQr: (...args: unknown[]) => unknown;
+  EQr: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  OQr: (...args: unknown[]) => unknown;
+  enabled: (...args: unknown[]) => unknown;
+  iN: (...args: unknown[]) => unknown;
+  jt: (...args: unknown[]) => unknown;
+  o$r: (...args: unknown[]) => unknown;
+  yM: (...args: unknown[]) => unknown;
 };
 
 let peers: UseEnvironmentsByRepoQueryPeers | null = null;
 
-/** Wire environments-by-repo query peers once companions land. */
-export function setUseEnvironmentsByRepoQueryPeers(
-  next: UseEnvironmentsByRepoQueryPeers,
-): void {
+/** Wire useEnvironmentsByRepoQuery peers once companions land. */
+export function setUseEnvironmentsByRepoQueryPeers(next: UseEnvironmentsByRepoQueryPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `mY` / internal `TQr`.
- * Load workspace environments grouped/sorted by repo for ChatGPT auth.
  */
-export function useEnvironmentsByRepoQuery(
-  args?: UseEnvironmentsByRepoQueryArgs,
-): unknown {
+export function useEnvironmentsByRepoQuery(e: unknown) {
   if (peers == null) {
-    throw new Error("UseEnvironmentsByRepoQuery peers are not configured");
+    throw new Error("useEnvironmentsByRepoQuery peers are not configured");
   }
-  const { authMethod } = peers.useAuthSession();
-  const enabled = args?.enabled ?? true;
-  const reposQueryKey = ["workspace", "environments-by-repo"];
-  const reposEnabled = enabled && authMethod === "chatgpt";
-  const { data: repos } = peers.useQuery({
-    queryKey: reposQueryKey,
-    queryFn: peers.fetchRepos,
-    staleTime: peers.oneMinuteMs,
-    enabled: reposEnabled,
-  });
-  const repoKeys = peers.repoKeysFromRepos(repos);
-  const environmentsEnabled = enabled && !!repos && authMethod === "chatgpt";
-  return peers.useQuery({
-    queryKey: ["workspace", "environments-by-repo", ...repoKeys],
-    enabled: environmentsEnabled,
-    staleTime: peers.oneMinuteMs,
-    queryFn: async () =>
-      peers!.sortEnvironments(await peers!.fetchEnvironmentsForRepos(repos)),
-  });
+
+  let t = (0, peers.iN.c)(12),
+    { authMethod: n } = peers.yM(),
+    r = e?.enabled ?? !0,
+    i;
+  t[0] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((i = [`workspace`, `environments-by-repo`]), (t[0] = i))
+    : (i = t[0]);
+  let a = r && n === `chatgpt`,
+    o;
+  t[1] === a
+    ? (o = t[2])
+    : ((o = {
+        queryKey: i,
+        queryFn: peers.OQr,
+        staleTime: peers.Hf.ONE_MINUTE,
+        enabled: a,
+      }),
+      (t[1] = a),
+      (t[2] = o));
+  let { data: s } = peers.jt(o),
+    c,
+    l;
+  if (t[3] !== s) {
+    let e = (0, peers.o$r.default)(s, [`owner`, `repoName`]).flatMap(peers.DQr);
+    ((l = peers.jt),
+      (c = [`workspace`, `environments-by-repo`, ...e]),
+      (t[3] = s),
+      (t[4] = c),
+      (t[5] = l));
+  } else ((c = t[4]), (l = t[5]));
+  let u = r && !!s && n === `chatgpt`,
+    d;
+  t[6] === s
+    ? (d = t[7])
+    : ((d = async () => {
+        let e = (await Promise.all((s ?? []).map(peers.EQr))).flat();
+        return (
+          (0, peers.o$r.default)(e, [`is_pinned`, `task_count`, `label`]),
+          e
+        );
+      }),
+      (t[6] = s),
+      (t[7] = d));
+  let f;
+  return (
+    t[8] !== c || t[9] !== u || t[10] !== d
+      ? ((f = {
+          queryKey: c,
+          enabled: u,
+          staleTime: peers.Hf.ONE_MINUTE,
+          queryFn: d,
+        }),
+        (t[8] = c),
+        (t[9] = u),
+        (t[10] = d),
+        (t[11] = f))
+      : (f = t[11]),
+    l(f)
+  );
 }

@@ -134,11 +134,7 @@ export function updateJoystickFeedback(
 }
 
 /** Bundle export `o` — apply a mini-game activation gesture update. */
-export function updateJoystickGameGesture(
-  store: StoreLike,
-  event: AnalogJoystickEvent,
-  progress: number,
-): void {
+export function updateJoystickGameGesture(store: StoreLike, event: AnalogJoystickEvent, progress: number): void {
   store.set(
     joystickFeedbackAtom,
     gameGesture(store.get(joystickFeedbackAtom), event, progress),

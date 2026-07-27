@@ -19,15 +19,9 @@ export function logOnboardingEntered(store: StoreLike): void {
 export function logOnboardingStepViewed(store: StoreLike, step: unknown): void {
   logProductEvent(store, CODEX_ONBOARDING_STEP_VIEWED_TYPE, { step });
 }
-export function logOnboardingStepContinueClicked(
-  store: StoreLike,
-  step: unknown,
-): void {
+export function logOnboardingStepContinueClicked(store: StoreLike, step: unknown): void {
   logProductEvent(store, CODEX_ONBOARDING_STEP_CONTINUE_CLICKED_TYPE, { step });
 }
-export function logOnboardingStepSkipped(
-  store: StoreLike,
-  step: unknown,
-): void {
+export function logOnboardingStepSkipped(store: StoreLike, step: unknown): void {
   logProductEvent(store, CODEX_ONBOARDING_STEP_SKIPPED_TYPE, { step });
 }

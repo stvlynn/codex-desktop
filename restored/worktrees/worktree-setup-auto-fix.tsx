@@ -17,9 +17,7 @@ type WorktreeSetupAutoFixActivityImpl = (
 let impl: WorktreeSetupAutoFixActivityImpl | null = null;
 
 /** Wire the full WorktreeSetupAutoFixActivity once deeper companion restore lands. */
-export function bindWorktreeSetupAutoFixActivity(
-  next: WorktreeSetupAutoFixActivityImpl,
-): void {
+export function bindWorktreeSetupAutoFixActivity(next: WorktreeSetupAutoFixActivityImpl): void {
   impl = next;
 }
 

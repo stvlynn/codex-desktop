@@ -1,47 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Scrollable surface column
+// Materialized via extractFn(internal `wIa`) / export `uN`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type ScrollableSurfaceColumnProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindScrollableSurfaceColumnPeers = {
+  $: (...args: unknown[]) => unknown;
+  AH: (...args: unknown[]) => unknown;
+  kH: (...args: unknown[]) => unknown;
 };
+let peers: BindScrollableSurfaceColumnPeers | null = null;
 
-type ScrollableSurfaceColumnImpl = (
-  props: ScrollableSurfaceColumnProps,
-) => ReactNode;
-let impl: ScrollableSurfaceColumnImpl | null = null;
-
-/** Wire the full ScrollableSurfaceColumn once deeper restore lands. */
-export function bindScrollableSurfaceColumn(
-  next: ScrollableSurfaceColumnImpl,
+/** Wire bindScrollableSurfaceColumn peers once companions land. */
+export function setBindScrollableSurfaceColumnPeers(
+  next: BindScrollableSurfaceColumnPeers,
 ): void {
-  impl = next;
+  peers = next;
 }
 
 /**
  * Bundle export `uN` / internal `wIa`.
- * Scrollable surface column; heavy UI via bind.
  */
-export function ScrollableSurfaceColumn(
-  props: ScrollableSurfaceColumnProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-em-scaffold="uN"
-      aria-label="ScrollableSurfaceColumn"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Scrollable surface column
-        </div>
-      )}
-    </div>
+export function bindScrollableSurfaceColumn(props: unknown) {
+  if (peers == null) {
+    throw new Error("bindScrollableSurfaceColumn peers are not configured");
+  }
+  let { children, className, surfaceClassName, scrollClassName } = props,
+    o = peers.$("flex h-full min-h-0 flex-col pt-4", className);
+  let s = peers.$(
+    "flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl border border-token-border-default/70 bg-token-bg-primary/40",
+    surfaceClassName,
   );
+  let c = peers.$("h-full min-h-0 overflow-y-auto", scrollClassName);
+  let l = <div className={c}>{children}</div>;
+  let u = <div className={s}>{l}</div>;
+  return <div className={o}>{u}</div>;
 }

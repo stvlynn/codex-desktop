@@ -1,37 +1,47 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `KQr`) / export `eY`.
+// Materialized via extractFn(internal `KQr`) / export `eY`.
 
 export type UseCancelTaskMutationPeers = {
-  useQueryClient: () => {
-    invalidateQueries: (opts: { queryKey: unknown[] }) => unknown;
-  };
-  useMutation: (options: Record<string, unknown>) => unknown;
-  mutationFn: (...args: unknown[]) => unknown;
+  iN: (...args: unknown[]) => unknown;
+  qQr: (...args: unknown[]) => unknown;
+  qt: (...args: unknown[]) => unknown;
+  rt: (...args: unknown[]) => unknown;
 };
 
 let peers: UseCancelTaskMutationPeers | null = null;
 
-/** Wire cancel-task mutation peers once companions land. */
-export function setUseCancelTaskMutationPeers(
-  next: UseCancelTaskMutationPeers,
-): void {
+/** Wire useCancelTaskMutation peers once companions land. */
+export function setUseCancelTaskMutationPeers(next: UseCancelTaskMutationPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `eY` / internal `KQr`.
- * Cancel a task and invalidate tasks + task detail queries.
  */
-export function useCancelTaskMutation(): unknown {
+export function useCancelTaskMutation() {
   if (peers == null) {
-    throw new Error("UseCancelTaskMutation peers are not configured");
+    throw new Error("useCancelTaskMutation peers are not configured");
   }
-  const queryClient = peers.useQueryClient();
-  return peers.useMutation({
-    mutationFn: peers.mutationFn,
-    onSuccess: (_data: unknown, taskId: unknown) => {
-      queryClient.invalidateQueries({ queryKey: ["tasks"] });
-      queryClient.invalidateQueries({ queryKey: ["task", taskId] });
-    },
-  });
+
+  let e = (0, peers.iN.c)(2),
+    t = peers.rt(),
+    n;
+  return (
+    e[0] === t
+      ? (n = e[1])
+      : ((n = {
+          mutationFn: peers.qQr,
+          onSuccess: (e, n) => {
+            (t.invalidateQueries({
+              queryKey: [`tasks`],
+            }),
+              t.invalidateQueries({
+                queryKey: [`task`, n],
+              }));
+          },
+        }),
+        (e[0] = t),
+        (e[1] = n)),
+    peers.qt(n)
+  );
 }

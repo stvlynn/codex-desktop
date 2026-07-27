@@ -1,23 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DU — real body via extractFn(internal `ijs`) / export `vv`.
+// Materialized via extractFn(internal `ijs`) / export `vv`.
 
-export type ComposerUserInputStateApi = {
-  getState: (state: unknown) => { active?: boolean } | null | undefined;
+export type BindComposerUserInputStateApiPeers = {
+  aU: (...args: unknown[]) => unknown;
+  active: (...args: unknown[]) => unknown;
 };
 
-let composerUserInputApi: ComposerUserInputStateApi | null = null;
+let peers: BindComposerUserInputStateApiPeers | null = null;
 
-/** Wire composer user-input state reader (bundle `aU`). */
-export function bindComposerUserInputStateApi(
-  next: ComposerUserInputStateApi,
-): void {
-  composerUserInputApi = next;
+/** Wire bindComposerUserInputStateApi peers once companions land. */
+export function setBindComposerUserInputStateApiPeers(next: BindComposerUserInputStateApiPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `vv` / internal `ijs`.
- * True when the composer user-input slice reports active.
  */
-export function isUserInputActiveInState(state: unknown): boolean {
-  return composerUserInputApi?.getState(state)?.active === true;
+export function bindComposerUserInputStateApi(e: unknown) {
+  if (peers == null) {
+    throw new Error("bindComposerUserInputStateApi peers are not configured");
+  }
+
+  return peers.aU.getState(e)?.active === !0;
 }

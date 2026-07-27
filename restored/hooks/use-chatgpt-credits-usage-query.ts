@@ -1,52 +1,47 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `Ngs`) / export `nx`.
+// Materialized via extractFn(internal `Ngs`) / export `nx`.
 
 export type UseChatgptCreditsUsageQueryPeers = {
-  useAccountAuth: () => {
-    accountId: unknown;
-    authMethod: unknown;
-    userId: unknown;
-  };
-  buildCreditsUsageQuery: (input: {
-    accountId: unknown;
-    authMethod: unknown;
-    enabled: boolean;
-    userId: unknown;
-  }) => unknown;
-  useQuery: (options: unknown) => unknown;
+  FZ: (...args: unknown[]) => unknown;
+  Mgs: (...args: unknown[]) => unknown;
+  jt: (...args: unknown[]) => unknown;
+  yM: (...args: unknown[]) => unknown;
 };
 
 let peers: UseChatgptCreditsUsageQueryPeers | null = null;
 
-/** Wire ChatGPT credits usage query peers once companions land. */
-export function setUseChatgptCreditsUsageQueryPeers(
-  next: UseChatgptCreditsUsageQueryPeers,
-): void {
+/** Wire useChatgptCreditsUsageQuery peers once companions land. */
+export function setUseChatgptCreditsUsageQueryPeers(next: UseChatgptCreditsUsageQueryPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `nx` / internal `Ngs`.
- * Query ChatGPT credits usage when account auth is present.
  */
-export function useChatgptCreditsUsageQuery(options: {
-  enabled?: boolean;
-}): unknown {
+export function useChatgptCreditsUsageQuery(e: unknown) {
   if (peers == null) {
-    throw new Error("UseChatgptCreditsUsageQuery peers are not configured");
+    throw new Error("useChatgptCreditsUsageQuery peers are not configured");
   }
-  const { accountId, authMethod, userId } = peers.useAccountAuth();
-  const enabled =
-    Boolean(options.enabled) &&
-    authMethod === "chatgpt" &&
-    userId != null &&
-    accountId != null;
-  return peers.useQuery(
-    peers.buildCreditsUsageQuery({
-      accountId,
-      authMethod,
-      enabled,
-      userId,
-    }),
+
+  let t = (0, peers.FZ.c)(5),
+    { enabled: n } = e,
+    { accountId: r, authMethod: i, userId: a } = peers.yM(),
+    o = n && i === `chatgpt` && a != null && r != null,
+    s;
+  return (
+    t[0] !== r || t[1] !== i || t[2] !== o || t[3] !== a
+      ? ((s = peers.Mgs({
+          accountId: r,
+          authMethod: i,
+          enabled: o,
+          userId: a,
+        })),
+        (t[0] = r),
+        (t[1] = i),
+        (t[2] = o),
+        (t[3] = a),
+        (t[4] = s))
+      : (s = t[4]),
+    peers.jt(s)
   );
 }

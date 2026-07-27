@@ -1,26 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export IO / KPo
+// Materialized via extractFn(internal `KPo`) / export `IO`.
 
 export type BindDismissPeers = {
-  impl: (...args: unknown[]) => unknown;
+  GPo: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDismissPeers | null = null;
 
-/** Wire bindDismiss once companions land. */
+/** Wire bindDismiss peers once companions land. */
 export function setBindDismissPeers(next: BindDismissPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `IO` / internal `KPo`.
- * Stage-3 fill for bundle export IO / KPo
  */
-export function bindDismiss(...args: unknown[]): unknown {
+export function bindDismiss() {
   if (peers == null) {
     throw new Error("bindDismiss peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    GPo = `browser-comment-popup-shake`;
+  });
 }

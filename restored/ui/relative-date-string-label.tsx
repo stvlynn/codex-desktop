@@ -1,37 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `uua`) / export `SL`.
+// Materialized via extractFn(internal `uua`) / export `SL`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type RelativeDateStringLabelProps = {
-  dateString: string;
+export type RelativeDateStringLabelPeers = {
+  Gla: (...args: unknown[]) => unknown;
+  fua: (...args: unknown[]) => unknown;
+  mua: (...args: unknown[]) => unknown;
+  pua: (...args: unknown[]) => unknown;
 };
+let peers: RelativeDateStringLabelPeers | null = null;
 
-export type RelativeDateStringLabelParts = {
-  useNow: () => unknown;
-  Label: (props: { dateString: string; now: unknown }) => ReactNode;
-};
-
-let parts: RelativeDateStringLabelParts | null = null;
-
-/** Wire relative-date label parts once companions land. */
-export function setRelativeDateStringLabelParts(
-  next: RelativeDateStringLabelParts,
+/** Wire RelativeDateStringLabel peers once companions land. */
+export function setRelativeDateStringLabelPeers(
+  next: RelativeDateStringLabelPeers,
 ): void {
-  parts = next;
+  peers = next;
 }
 
 /**
  * Bundle export `SL` / internal `uua`.
- * Relative date label driven by a live `now` clock.
  */
-export function RelativeDateStringLabel(
-  props: RelativeDateStringLabelProps,
-): ReactElement {
-  if (parts == null) {
-    throw new Error("RelativeDateStringLabel parts are not configured");
+export function RelativeDateStringLabel(props: unknown) {
+  const Fua = peers.fua;
+  if (peers == null) {
+    throw new Error("RelativeDateStringLabel peers are not configured");
   }
-  const { dateString } = props;
-  const now = parts.useNow();
-  return <>{parts.Label({ dateString, now })}</>;
+  let { dateString } = props,
+    r = peers.Gla();
+  return <Fua dateString={dateString} now={r} />;
 }

@@ -1,42 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export q5 / fRn
+// Materialized via extractFn(internal `fRn`) / export `q5`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindPluginProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindPluginPeers = {
+  dRn: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  uRn: (...args: unknown[]) => unknown;
 };
 
-type BindPluginImpl = (props: BindPluginProps) => ReactNode;
-let impl: BindPluginImpl | null = null;
+let peers: BindBindPluginPeers | null = null;
 
-/** Wire the full BindPlugin once deeper restore lands. */
-export function bindBindPlugin(next: BindPluginImpl): void {
-  impl = next;
+/** Wire bindBindPlugin peers once companions land. */
+export function setBindBindPluginPeers(next: BindBindPluginPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `q5` / internal `fRn`.
- * Stage-3 fill for bundle export q5 / fRn; heavy UI via bind.
  */
-export function BindPlugin(props: BindPluginProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fa-scaffold="q5"
-      aria-label="BindPlugin"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export q5 / fRn
-        </div>
-      )}
-    </div>
-  );
+export function bindBindPlugin() {
+  if (peers == null) {
+    throw new Error("bindBindPlugin peers are not configured");
+  }
+
+  return peers.e(() => {
+    uRn = `app://`, dRn = `plugin://`;
+  });
 }

@@ -1,25 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export sw / its
+// Materialized via extractFn(internal `its`) / export `sw`.
 
 export type DeferredSwPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Zes: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  nts: (...args: unknown[]) => unknown;
+  rts: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredSwPeers | null = null;
 
-/** Wire deferredSw once companions land. */
+/** Wire deferredSw peers once companions land. */
 export function setDeferredSwPeers(next: DeferredSwPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `sw` / internal `its`.
- * Stage-3 fill for bundle export sw / its
  */
-export function deferredSw(...args: unknown[]): unknown {
+export function deferredSw() {
   if (peers == null) {
     throw new Error("deferredSw peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Zes(), nts = 1500, rts = `Codex capabilities available this session:`;
+  });
 }

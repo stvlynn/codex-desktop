@@ -1,28 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export HJ / b$r
+// Materialized via extractFn(internal `b$r`) / export `HJ`.
 
 export type DeferredConversationHJPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ia: (...args: unknown[]) => unknown;
+  fQr: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredConversationHJPeers | null = null;
 
-/** Wire deferredConversationHJ once companions land. */
-export function setDeferredConversationHJPeers(
-  next: DeferredConversationHJPeers,
-): void {
+/** Wire deferredConversationHJ peers once companions land. */
+export function setDeferredConversationHJPeers(next: DeferredConversationHJPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `HJ` / internal `b$r`.
- * Stage-3 fill for bundle export HJ / b$r
  */
-export function deferredConversationHJ(...args: unknown[]): unknown {
+export function deferredConversationHJ() {
   if (peers == null) {
     throw new Error("deferredConversationHJ peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ia(peers.hT, ({
+    scope: e
+  }) => peers.fQr(e.value.routeKind === `remote-thread` ? e.value.taskId : null));
 }

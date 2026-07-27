@@ -17,9 +17,7 @@ type LocalConversationStreamRoleProductEventImpl = (
 let impl: LocalConversationStreamRoleProductEventImpl | null = null;
 
 /** Wire the full LocalConversationStreamRoleProductEvent once deeper companion restore lands. */
-export function bindLocalConversationStreamRoleProductEvent(
-  next: LocalConversationStreamRoleProductEventImpl,
-): void {
+export function bindLocalConversationStreamRoleProductEvent(next: LocalConversationStreamRoleProductEventImpl): void {
   impl = next;
 }
 

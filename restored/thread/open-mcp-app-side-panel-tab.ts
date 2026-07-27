@@ -1,37 +1,18 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DY — real body via extractFn(internal `XGi`) / export `NV`.
-
-import type { ReactNode } from "react";
-
-export type OpenMcpAppSidePanelTabOptions = {
-  activate?: boolean;
-  icon?: {
-    alt?: string;
-    logoUrl?: string;
-    logoDarkUrl?: string;
-  } | null;
-  mcpAppId: unknown;
-  onExitFullScreen?: () => void;
-  onPanelElementChange?: unknown;
-  title?: ReactNode;
-};
+// Materialized via extractFn(internal `XGi`) / export `NV`.
 
 export type OpenMcpAppSidePanelTabPeers = {
-  tabIdFromAppId: (mcpAppId: unknown) => string;
-  openTab: (
-    store: unknown,
-    component: unknown,
-    opts: Record<string, unknown>,
-  ) => void;
-  panelComponent: unknown;
-  DefaultIcon: (props: { className?: string }) => ReactNode;
-  AppLogo: (props: Record<string, unknown>) => ReactNode;
-  openRightPanel: (store: unknown) => void;
+  QGi: (...args: unknown[]) => unknown;
+  UGi: (...args: unknown[]) => unknown;
+  _P: (...args: unknown[]) => unknown;
+  dR: (...args: unknown[]) => unknown;
+  eO: (...args: unknown[]) => unknown;
+  pR: (...args: unknown[]) => unknown;
+  qGi: (...args: unknown[]) => unknown;
 };
-
 let peers: OpenMcpAppSidePanelTabPeers | null = null;
 
-/** Wire MCP side-panel peers once companions land. */
+/** Wire openMcpAppSidePanelTab peers once companions land. */
 export function setOpenMcpAppSidePanelTabPeers(
   next: OpenMcpAppSidePanelTabPeers,
 ): void {
@@ -40,44 +21,45 @@ export function setOpenMcpAppSidePanelTabPeers(
 
 /**
  * Bundle export `NV` / internal `XGi`.
- * Open an MCP app side-panel tab.
  */
 export function openMcpAppSidePanelTab(
-  store: unknown,
-  options: OpenMcpAppSidePanelTabOptions,
-): void {
-  if (peers == null) {
-    throw new Error("OpenMcpAppSidePanelTab peers are not configured");
-  }
-  const {
+  e: unknown,
+  {
     activate = true,
     icon,
     mcpAppId,
     onExitFullScreen,
     onPanelElementChange,
     title,
-  } = options;
-  const tabId = peers.tabIdFromAppId(mcpAppId);
-  const defaultIcon = peers.DefaultIcon({
-    className: "icon-xs shrink-0 text-token-text-secondary",
-  });
-  peers.openTab(store, peers.panelComponent, {
+  }: Record<string, unknown>,
+) {
+  if (peers == null) {
+    throw new Error("openMcpAppSidePanelTab peers are not configured");
+  }
+  let s = peers.pR(mcpAppId);
+  peers.eO.openTab(e, peers.UGi, {
     icon:
       icon == null
-        ? defaultIcon
-        : peers.AppLogo({
+        ? peers.QGi.createElement(peers.dR, {
+            className: "icon-xs shrink-0 text-token-text-secondary",
+          })
+        : peers.QGi.createElement(peers._P, {
             alt: icon.alt,
             className: "icon-xs shrink-0 object-contain",
             knownAppId: icon.alt,
             logoUrl: icon.logoUrl,
             logoDarkUrl: icon.logoDarkUrl,
-            fallback: defaultIcon,
+            fallback: peers.QGi.createElement(peers.dR, {
+              className: "icon-xs shrink-0 text-token-text-secondary",
+            }),
           }),
-    props: { onPanelElementChange },
-    id: tabId,
+    props: {
+      onPanelElementChange,
+    },
+    id: s,
     title,
     activate,
     onClose: onExitFullScreen,
   });
-  if (activate) peers.openRightPanel(store);
+  activate && peers.qGi(e);
 }

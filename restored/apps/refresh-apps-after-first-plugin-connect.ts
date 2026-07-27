@@ -1,33 +1,18 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `RIs`) / export `T_`.
+// Materialized via extractFn(internal `RIs`) / export `T_`.
 
 export type RefreshAppsAfterFirstPluginConnectPeers = {
-  didAppsChange: (args: {
-    previousApps: unknown;
-    nextApps: unknown;
-  }) => boolean;
-  refreshAmbientSuggestions: (
-    queryClient: unknown,
-    key: unknown,
-  ) => Promise<unknown>;
-  ambientSuggestionsKey: (hostId: unknown) => unknown;
-  suggestionDomains: unknown[];
-  invokeRefresh: (args: {
-    params: {
-      domain: unknown;
-      hostId: unknown;
-      projectRoot: unknown;
-      mode: "first-plugin-connect";
-    };
-  }) => Promise<unknown>;
-  homeProjectRoot: () => unknown;
-  invalidateAmbient: (queryClient: unknown) => Promise<unknown>;
-  invalidateAmbientRefresh: (queryClient: unknown) => Promise<unknown>;
+  $f: (...args: unknown[]) => unknown;
+  U8n: (...args: unknown[]) => unknown;
+  VIs: (...args: unknown[]) => unknown;
+  Zti: (...args: unknown[]) => unknown;
+  eu: (...args: unknown[]) => unknown;
+  rp: (...args: unknown[]) => unknown;
+  zIs: (...args: unknown[]) => unknown;
 };
-
 let peers: RefreshAppsAfterFirstPluginConnectPeers | null = null;
 
-/** Wire first-plugin-connect refresh peers once companions land. */
+/** Wire refreshAppsAfterFirstPluginConnect peers once companions land. */
 export function setRefreshAppsAfterFirstPluginConnectPeers(
   next: RefreshAppsAfterFirstPluginConnectPeers,
 ): void {
@@ -36,43 +21,44 @@ export function setRefreshAppsAfterFirstPluginConnectPeers(
 
 /**
  * Bundle export `T_` / internal `RIs`.
- * Refresh apps list and ambient suggestions after first plugin connect.
  */
-export async function refreshAppsAfterFirstPluginConnect(args: {
-  hostId: unknown;
-  queryClient: { getQueryData: (key: unknown[]) => unknown };
-  refreshAppsList: () => Promise<unknown>;
-}): Promise<unknown> {
+export async function refreshAppsAfterFirstPluginConnect({
+  hostId,
+  queryClient,
+  refreshAppsList,
+}: Record<string, unknown>) {
   if (peers == null) {
     throw new Error(
-      "RefreshAppsAfterFirstPluginConnect peers are not configured",
+      "refreshAppsAfterFirstPluginConnect peers are not configured",
     );
   }
-  const { hostId, queryClient, refreshAppsList } = args;
-  const previousApps = queryClient.getQueryData(["apps", "list", hostId]);
-  const nextApps = await refreshAppsList();
-  if (!peers.didAppsChange({ previousApps, nextApps })) {
-    return nextApps;
-  }
-  await peers.refreshAmbientSuggestions(
-    queryClient,
-    peers.ambientSuggestionsKey(hostId),
-  );
-  await Promise.all(
-    peers.suggestionDomains.map((domain) =>
-      peers!.invokeRefresh({
-        params: {
-          domain,
-          hostId,
-          projectRoot: peers!.homeProjectRoot(),
-          mode: "first-plugin-connect",
-        },
-      }),
-    ),
-  );
-  await Promise.all([
-    peers.invalidateAmbient(queryClient),
-    peers.invalidateAmbientRefresh(queryClient),
-  ]);
-  return nextApps;
+  let r = queryClient.getQueryData(["apps", "list", hostId]),
+    i = await refreshAppsList();
+  return peers.zIs({
+    previousApps: r,
+    nextApps: i,
+  })
+    ? (await peers.U8n(queryClient, peers.Zti(hostId)),
+      await Promise.all(
+        peers.VIs.map((item) => {
+          return peers.rp("ambient-suggestions-refresh", {
+            params: {
+              domain: item,
+              hostId,
+              projectRoot: peers.eu("~"),
+              mode: "first-plugin-connect",
+            },
+          });
+        }),
+      ),
+      await Promise.all([
+        queryClient.invalidateQueries({
+          queryKey: peers.$f("ambient-suggestions"),
+        }),
+        queryClient.invalidateQueries({
+          queryKey: peers.$f("ambient-suggestions-refresh"),
+        }),
+      ]),
+      i)
+    : i;
 }

@@ -1,28 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export ak / Tko
+// Materialized via extractFn(internal `Tko`) / export `ak`.
 
 export type BindDeferredOnboardingAkPeers = {
-  impl: (...args: unknown[]) => unknown;
+  URL: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  import: (...args: unknown[]) => unknown;
+  meta: (...args: unknown[]) => unknown;
+  wko: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredOnboardingAkPeers | null = null;
 
-/** Wire bindDeferredOnboardingAk once companions land. */
-export function setBindDeferredOnboardingAkPeers(
-  next: BindDeferredOnboardingAkPeers,
-): void {
+/** Wire bindDeferredOnboardingAk peers once companions land. */
+export function setBindDeferredOnboardingAkPeers(next: BindDeferredOnboardingAkPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `ak` / internal `Tko`.
- * Stage-3 fill for bundle export ak / Tko
  */
-export function bindDeferredOnboardingAk(...args: unknown[]): unknown {
+export function bindDeferredOnboardingAk() {
   if (peers == null) {
     throw new Error("bindDeferredOnboardingAk peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    wko = `` + new peers.URL(`atlas-app-BbZ7-u67.png`, import.meta.url).href;
+  });
 }

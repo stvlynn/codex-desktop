@@ -1,30 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `m1o`) / export `lE`.
+// Materialized via extractFn(internal `m1o`) / export `lE`.
 
 export type NoopPlaceholderExportPeers = {
-  registerPrimary: (token: unknown) => void;
-  registerSecondary: (token: unknown) => void;
-  primaryToken: unknown;
-  secondaryToken: unknown;
+  dHi: (...args: unknown[]) => unknown;
+  f1o: (...args: unknown[]) => unknown;
+  fxo: (...args: unknown[]) => unknown;
+  jqr: (...args: unknown[]) => unknown;
 };
 
 let peers: NoopPlaceholderExportPeers | null = null;
 
 /** Wire noopPlaceholderExport peers once companions land. */
-export function setNoopPlaceholderExportPeers(
-  next: NoopPlaceholderExportPeers,
-): void {
+export function setNoopPlaceholderExportPeers(next: NoopPlaceholderExportPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `lE` / internal `m1o`.
- * Initialize companion registries for the noop placeholder export.
  */
-export function noopPlaceholderExport(): void {
+export function noopPlaceholderExport() {
   if (peers == null) {
-    throw new Error("NoopPlaceholderExport peers are not configured");
+    throw new Error("noopPlaceholderExport peers are not configured");
   }
-  peers.registerPrimary(peers.primaryToken);
-  peers.registerSecondary(peers.secondaryToken);
+
+  peers.jqr(peers.fxo), peers.dHi(peers.f1o);
 }

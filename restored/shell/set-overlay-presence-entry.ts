@@ -1,37 +1,23 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `Gvu`) / export `rt`.
+// Materialized via extractFn(internal `Gvu`) / export `rt`.
 
-export type SetOverlayPresenceEntryPeers = {
-  overlayPresenceAtom: unknown;
-  setPresenceEntry: (current: unknown, key: unknown, value: unknown) => unknown;
+export type RtPeers = {
+  Jvu: (...args: unknown[]) => unknown;
+  P9: (...args: unknown[]) => unknown;
 };
+let peers: RtPeers | null = null;
 
-let peers: SetOverlayPresenceEntryPeers | null = null;
-
-/** Wire overlay presence entry peers once companions land. */
-export function setSetOverlayPresenceEntryPeers(
-  next: SetOverlayPresenceEntryPeers,
-): void {
+/** Wire rt peers once companions land. */
+export function setRtPeers(next: RtPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `rt` / internal `Gvu`.
- * Set one overlay presence entry by key.
  */
-export function setOverlayPresenceEntry(
-  store: {
-    get: (atom: unknown) => unknown;
-    set: (atom: unknown, value: unknown) => void;
-  },
-  key: unknown,
-  value: unknown,
-): void {
+export function rt(e: unknown, t: unknown, n: unknown) {
   if (peers == null) {
-    throw new Error("SetOverlayPresenceEntry peers are not configured");
+    throw new Error("rt peers are not configured");
   }
-  store.set(
-    peers.overlayPresenceAtom,
-    peers.setPresenceEntry(store.get(peers.overlayPresenceAtom), key, value),
-  );
+  e.set(peers.P9, peers.Jvu(e.get(peers.P9), t, n));
 }

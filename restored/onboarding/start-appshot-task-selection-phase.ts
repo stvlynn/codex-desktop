@@ -1,39 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EM — real body via extractFn(internal `kPc`) / export `wf`.
+// Materialized via extractFn(internal `kPc`) / export `wf`.
 
 export type StartAppshotTaskSelectionPhasePeers = {
-  journeyAtom: unknown;
+  A2: (...args: unknown[]) => unknown;
 };
 
 let peers: StartAppshotTaskSelectionPhasePeers | null = null;
 
 /** Wire startAppshotTaskSelectionPhase peers once companions land. */
-export function setStartAppshotTaskSelectionPhasePeers(
-  next: StartAppshotTaskSelectionPhasePeers,
-): void {
+export function setStartAppshotTaskSelectionPhasePeers(next: StartAppshotTaskSelectionPhasePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `wf` / internal `kPc`.
- * Reset appshot journey atom into the task-selection phase.
  */
-export type AtomStore = {
-  set: (atom: unknown, value: unknown) => void;
-};
-
-export function startAppshotTaskSelectionPhase(
-  store: AtomStore,
-  selectedRole: unknown,
-): void {
+export function startAppshotTaskSelectionPhase(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("StartAppshotTaskSelectionPhase peers are not configured");
+    throw new Error("startAppshotTaskSelectionPhase peers are not configured");
   }
-  store.set(peers.journeyAtom, {
+
+  e.set(peers.A2, {
     declinedTasks: [],
-    phase: "task",
-    selectedRole,
+    phase: `task`,
+    selectedRole: t,
     selectedTask: null,
-    permissionStatus: "not-requested",
+    permissionStatus: `not-requested`
   });
 }

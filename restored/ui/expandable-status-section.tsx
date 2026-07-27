@@ -1,19 +1,17 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EO — real body via extractFn(internal `OWc`) / export `Ad`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `OWc`) / export `Ad`.
 
 export type ExpandableStatusSectionPeers = {
-  useState: <T>(
-    initial: T | (() => T),
-  ) => [T, (next: T | ((prev: T) => T)) => void];
-  useElementHeight: () => { elementHeightPx: number; elementRef: unknown };
-  StatusSummary: unknown;
-  renderNode: (type: unknown, props: Record<string, unknown>) => ReactNode;
-  renderNodes: (type: unknown, props: Record<string, unknown>) => ReactNode;
-  cx: (...parts: Array<string | false | null | undefined>) => string;
+  AWc: (...args: unknown[]) => unknown;
+  Mk: (...args: unknown[]) => unknown;
+  W1: (...args: unknown[]) => unknown;
+  ef: (...args: unknown[]) => unknown;
+  g4: (...args: unknown[]) => unknown;
+  jWc: (...args: unknown[]) => unknown;
+  kWc: (...args: unknown[]) => unknown;
+  l4: (...args: unknown[]) => unknown;
+  wWc: (...args: unknown[]) => unknown;
 };
-
 let peers: ExpandableStatusSectionPeers | null = null;
 
 /** Wire ExpandableStatusSection peers once companions land. */
@@ -25,69 +23,71 @@ export function setExpandableStatusSectionPeers(
 
 /**
  * Bundle export `Ad` / internal `OWc`.
- * Expandable status row that toggles children while running/idle.
  */
-export type ExpandableStatusSectionProps = {
-  defaultExpanded?: boolean;
-  indentContent?: boolean;
-  icon?: ReactNode;
-  onExpand?: () => void;
-  summary?: ReactNode;
-  status?: "running" | "idle" | string;
-  children?: ReactNode;
-};
-
-export function ExpandableStatusSection(
-  props: ExpandableStatusSectionProps,
-): ReactElement {
+export function ExpandableStatusSection(props: unknown) {
+  const W1 = peers.W1;
+  const Div = peers.ef.div;
+  const WWc = peers.wWc;
+  const L4 = peers.l4;
   if (peers == null) {
     throw new Error("ExpandableStatusSection peers are not configured");
   }
-  const {
-    defaultExpanded = false,
-    indentContent = true,
-    icon,
-    onExpand,
-    summary,
-    status,
-    children,
-  } = props;
-  const [collapsedWhileRunning, setCollapsedWhileRunning] =
-    peers.useState(false);
-  const [expanded, setExpanded] = peers.useState(defaultExpanded);
-  const { elementHeightPx, elementRef } = peers.useElementHeight();
-  const isRunning = status === "running";
-  const hasChildren = children != null;
-  const showChildren =
-    hasChildren && (isRunning ? !collapsedWhileRunning : expanded);
-  const onToggle = () => {
-    if (!showChildren) onExpand?.();
-    if (isRunning) setCollapsedWhileRunning(!collapsedWhileRunning);
-    else setExpanded(!expanded);
-  };
-  return peers.renderNodes("div", {
-    className: "flex w-full flex-col",
-    children: [
-      peers.renderNode("button", {
-        type: "button",
-        onClick: onToggle,
-        className: "flex w-full items-center gap-2 text-left",
-        children: peers.renderNode(peers.StatusSummary, {
-          active: isRunning,
-          className:
-            "text-size-chat min-w-0 truncate text-token-conversation-summary",
-          icon,
-          summary,
-        }),
-      }),
-      showChildren
-        ? peers.renderNode("div", {
-            ref: elementRef,
-            className: peers.cx(indentContent && "pl-6"),
-            style: { minHeight: elementHeightPx || undefined },
-            children,
-          })
-        : null,
-    ],
-  }) as ReactElement;
+  let {
+      defaultExpanded = false,
+      indentContent = true,
+      icon,
+      onExpand,
+      summary,
+      status,
+      children,
+    } = props,
+    [d, f] = peers.AWc.useState(false),
+    [p, m] = peers.AWc.useState(defaultExpanded),
+    { elementHeightPx, elementRef } = peers.g4(),
+    _ = status === "running",
+    v = children != null,
+    y = v && (_ ? !d : p),
+    b = () => {
+      y || onExpand?.();
+      _ ? f(!d) : m(!p);
+    };
+  let x = b,
+    S = (
+      <W1
+        active={_}
+        className="text-size-chat min-w-0 truncate text-token-conversation-summary-leading group-hover/activity-header:text-token-foreground"
+      >
+        {summary}
+      </W1>
+    );
+  let C = S,
+    w = v
+      ? {
+          expanded: y,
+          onToggle: x,
+        }
+      : undefined;
+  let T = w,
+    E = v ? (
+      <Div
+        initial={false}
+        animate={{
+          height: y ? elementHeightPx : 0,
+          opacity: +!!y,
+        }}
+        aria-hidden={!y}
+        inert={!y}
+        className={y ? "overflow-visible" : "overflow-hidden"}
+        style={{
+          pointerEvents: y ? "auto" : "none",
+        }}
+        transition={peers.Mk}
+      >
+        <WWc ref={elementRef} indent={indentContent}>
+          {children}
+        </WWc>
+      </Div>
+    ) : null;
+  let D = E;
+  return <L4 body={D} disclosure={T} icon={icon} summary={C} />;
 }

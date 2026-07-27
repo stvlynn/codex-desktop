@@ -12,6 +12,7 @@ const generate = ((babelGenerator as unknown as { default?: typeof babelGenerato
 
 export const PARSER_PLUGINS: parser.ParserPlugin[] = [
   "jsx",
+  "typescript",
   "classProperties",
   "classPrivateProperties",
   "classPrivateMethods",

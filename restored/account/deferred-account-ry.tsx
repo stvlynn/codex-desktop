@@ -17,9 +17,7 @@ type BindDeferredAccountRyImpl = (
 let impl: BindDeferredAccountRyImpl | null = null;
 
 /** Wire the full BindDeferredAccountRy once deeper restore lands. */
-export function bindBindDeferredAccountRy(
-  next: BindDeferredAccountRyImpl,
-): void {
+export function bindBindDeferredAccountRy(next: BindDeferredAccountRyImpl): void {
   impl = next;
 }
 
@@ -27,9 +25,7 @@ export function bindBindDeferredAccountRy(
  * Bundle export `Ry` / internal `zws`.
  * Stage-3 fill for bundle export Ry / zws; heavy UI via bind.
  */
-export function BindDeferredAccountRy(
-  props: BindDeferredAccountRyProps,
-): ReactElement {
+export function BindDeferredAccountRy(props: BindDeferredAccountRyProps): ReactElement {
   if (impl != null) return impl(props) as ReactElement;
   const { className, children } = props;
   return (

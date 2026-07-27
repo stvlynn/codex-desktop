@@ -17,9 +17,7 @@ type WorktreeEnvironmentDropdownImpl = (
 let impl: WorktreeEnvironmentDropdownImpl | null = null;
 
 /** Wire the full WorktreeEnvironmentDropdown once deeper companion restore lands. */
-export function bindWorktreeEnvironmentDropdown(
-  next: WorktreeEnvironmentDropdownImpl,
-): void {
+export function bindWorktreeEnvironmentDropdown(next: WorktreeEnvironmentDropdownImpl): void {
   impl = next;
 }
 

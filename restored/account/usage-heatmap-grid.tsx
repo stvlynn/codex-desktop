@@ -37,9 +37,7 @@ export type UsageHeatmapGridHelpers = {
 let helpers: UsageHeatmapGridHelpers | null = null;
 
 /** Wire heatmap model + view renderers once companions land. */
-export function setUsageHeatmapGridRenderers(
-  next: UsageHeatmapGridHelpers,
-): void {
+export function setUsageHeatmapGridRenderers(next: UsageHeatmapGridHelpers): void {
   helpers = next;
 }
 

@@ -17,9 +17,7 @@ type CloudEnvironmentsSettingsPageImpl = (
 let impl: CloudEnvironmentsSettingsPageImpl | null = null;
 
 /** Wire the full CloudEnvironmentsSettingsPage once deeper companion restore lands. */
-export function bindCloudEnvironmentsSettingsPage(
-  next: CloudEnvironmentsSettingsPageImpl,
-): void {
+export function bindCloudEnvironmentsSettingsPage(next: CloudEnvironmentsSettingsPageImpl): void {
   impl = next;
 }
 

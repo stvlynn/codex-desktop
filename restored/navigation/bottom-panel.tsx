@@ -1,42 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export tm / M1
+// Materialized via extractFn(internal `M1`) / export `tm`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BottomPanelProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBottomPanelPeers = {
+  DD: (...args: unknown[]) => unknown;
+  HA: (...args: unknown[]) => unknown;
+  K_: (...args: unknown[]) => unknown;
+  Wx: (...args: unknown[]) => unknown;
+  ZA: (...args: unknown[]) => unknown;
+  cnc: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  lia: (...args: unknown[]) => unknown;
+  oT: (...args: unknown[]) => unknown;
+  pS: (...args: unknown[]) => unknown;
 };
 
-type BottomPanelImpl = (props: BottomPanelProps) => ReactNode;
-let impl: BottomPanelImpl | null = null;
+let peers: BindBottomPanelPeers | null = null;
 
-/** Wire the full BottomPanel once deeper restore lands. */
-export function bindBottomPanel(next: BottomPanelImpl): void {
-  impl = next;
+/** Wire bindBottomPanel peers once companions land. */
+export function setBindBottomPanelPeers(next: BindBottomPanelPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `tm` / internal `M1`.
- * Stage-3 fill for bundle export tm / M1; heavy UI via bind.
  */
-export function BottomPanel(props: BottomPanelProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-er-scaffold="tm"
-      aria-label="BottomPanel"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export tm / M1
-        </div>
-      )}
-    </div>
-  );
+export function bindBottomPanel() {
+  if (peers == null) {
+    throw new Error("bindBottomPanel peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.DD(), peers.cnc(), peers.lia(), peers.pS(), peers.Wx(), peers.oT(), peers.K_(), peers.ZA(), peers.HA();
+  });
 }

@@ -17,11 +17,7 @@ export function bindOpenDiffPanelTab(next: OpenDiffTab): void {
  * Open a diff tab (right by default) and optionally activate the DIFF panel.
  * Bundle: `(i1o(e, !1, n), !t || eL(e, n, _T.DIFF))`.
  */
-export function openOrActivateDiffPanelTab(
-  target: unknown,
-  activate: boolean = true,
-  side: "right" | "left" | string = "right",
-): boolean | void {
+export function openOrActivateDiffPanelTab(target: unknown, activate: boolean = true, side: "right" | "left" | string = "right"): boolean | void {
   openDiffTab?.(target, false, side);
   if (!activate) return;
   return activatePanelTab(target, side, ThreadSidePanelTab.DIFF);

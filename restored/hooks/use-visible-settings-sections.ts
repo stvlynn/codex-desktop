@@ -13,9 +13,7 @@ type useVisibleSettingsSectionsImpl = (
 let impl: useVisibleSettingsSectionsImpl | null = null;
 
 /** Wire useVisibleSettingsSections once companions land. */
-export function bindUseVisibleSettingsSections(
-  next: useVisibleSettingsSectionsImpl,
-): void {
+export function bindUseVisibleSettingsSections(next: useVisibleSettingsSectionsImpl): void {
   impl = next;
 }
 

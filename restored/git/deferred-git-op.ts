@@ -1,26 +1,49 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Op / Tac
+// Materialized via extractFn(internal `Tac`) / export `Op`.
 
 export type BindDeferredGitOpPeers = {
-  impl: (...args: unknown[]) => unknown;
+  $f: (...args: unknown[]) => unknown;
+  HG: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredGitOpPeers | null = null;
 
-/** Wire bindDeferredGitOp once companions land. */
+/** Wire bindDeferredGitOp peers once companions land. */
 export function setBindDeferredGitOpPeers(next: BindDeferredGitOpPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Op` / internal `Tac`.
- * Stage-3 fill for bundle export Op / Tac
  */
-export function bindDeferredGitOp(...args: unknown[]): unknown {
+export function bindDeferredGitOp() {
   if (peers == null) {
     throw new Error("bindDeferredGitOp peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.ka(
+    peers.Q,
+    ({ hostId: e, hostname: t, source: n = `pull_requests_page` }) => ({
+      queryFn: ({ signal: r }) =>
+        peers.HG(
+          `gh-current-user`,
+          {
+            hostId: e,
+            hostname: t,
+          },
+          {
+            signal: r,
+            source: n,
+          },
+        ),
+      queryKey: peers.$f(`gh-current-user`, {
+        hostId: e,
+        hostname: t,
+      }),
+      staleTime: peers.Hf.ONE_MINUTE,
+    }),
+  );
 }

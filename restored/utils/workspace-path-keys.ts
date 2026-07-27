@@ -58,10 +58,7 @@ function parseExplicitComparable(key: string): ComparableExplicit | null {
 }
 
 /** `Sf` / `Bdt` */
-export function pathsReferToSameWorkspaceResource(
-  left: string,
-  right: string,
-): boolean {
+export function pathsReferToSameWorkspaceResource(left: string, right: string): boolean {
   const a = canonicalizeWorkspacePathKey(left);
   const b = canonicalizeWorkspacePathKey(right);
   if (a === b) return true;

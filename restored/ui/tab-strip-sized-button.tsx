@@ -1,14 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-
-import type { ReactElement, ReactNode } from "react";
-
-export type TabStripSizedButtonProps = Record<string, unknown>;
+// Materialized via extractFn(internal `hwr`) / export `D1`.
 
 export type TabStripSizedButtonPeers = {
-  render: (props: TabStripSizedButtonProps) => ReactNode;
+  Np: (...args: unknown[]) => unknown;
+  _wr: (...args: unknown[]) => unknown;
+  gwr: (...args: unknown[]) => unknown;
+  vwr: (...args: unknown[]) => unknown;
+  ywr: (...args: unknown[]) => unknown;
 };
-
 let peers: TabStripSizedButtonPeers | null = null;
 
 /** Wire TabStripSizedButton peers once companions land. */
@@ -21,11 +20,12 @@ export function setTabStripSizedButtonPeers(
 /**
  * Bundle export `D1` / internal `hwr`.
  */
-export function TabStripSizedButton(
-  props: TabStripSizedButtonProps,
-): ReactElement {
+export function TabStripSizedButton(props: unknown) {
+  const Np = peers.Np;
   if (peers == null) {
     throw new Error("TabStripSizedButton peers are not configured");
   }
-  return peers.render(props) as ReactElement;
+  let { size = "toolbar", ...rest } = props;
+  let a = peers._wr.useContext(peers.ywr) ? "tabStripAction" : size;
+  return <Np size={a} {...rest} />;
 }

@@ -17,9 +17,7 @@ type AutoReviewApprovalNudgeImpl = (
 let impl: AutoReviewApprovalNudgeImpl | null = null;
 
 /** Wire the full AutoReviewApprovalNudge once deeper companion restore lands. */
-export function bindAutoReviewApprovalNudge(
-  next: AutoReviewApprovalNudgeImpl,
-): void {
+export function bindAutoReviewApprovalNudge(next: AutoReviewApprovalNudgeImpl): void {
   impl = next;
 }
 

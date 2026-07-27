@@ -1,56 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DU — real body via extractFn(internal `esu`) / export `Dn`.
-// Brand mark assets bind via setAppBrandMarkAssets (conversation-page style).
+// Materialized via extractFn(internal `esu`) / export `Dn`.
 
-import type { ComponentType, ReactElement, ReactNode } from "react";
-
-export type AppBrand = "codex" | "chatgpt" | string;
-
-export const AppBrandKind = {
-  Codex: "codex",
-  ChatGPT: "chatgpt",
-} as const;
-
-export type AppBrandMarkProps = {
-  appBrand?: AppBrand;
-  className?: string;
+export type AppBrandMarkPeers = {
+  El: (...args: unknown[]) => unknown;
+  Qou: (...args: unknown[]) => unknown;
+  You: (...args: unknown[]) => unknown;
+  nsu: (...args: unknown[]) => unknown;
+  tsu: (...args: unknown[]) => unknown;
 };
+let peers: AppBrandMarkPeers | null = null;
 
-export type AppBrandMarkAssets = {
-  ChatGptMark: ComponentType<{ "aria-hidden"?: string; className?: string }>;
-  codexLogoSrc: string;
-};
-
-let assets: AppBrandMarkAssets | null = null;
-
-/** Wire ChatGPT SVG mark + Codex logo URL once assets land. */
-export function setAppBrandMarkAssets(next: AppBrandMarkAssets): void {
-  assets = next;
+/** Wire AppBrandMark peers once companions land. */
+export function setAppBrandMarkPeers(next: AppBrandMarkPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Dn` / internal `esu`.
- * Login/onboarding brand mark — ChatGPT SVG or Codex logo image.
  */
-export function AppBrandMark(props: AppBrandMarkProps): ReactElement {
-  const { appBrand, className } = props;
-  if (assets == null) {
-    throw new Error("AppBrandMark assets are not configured");
+export function AppBrandMark(props: unknown) {
+  const Qou = peers.Qou;
+  if (peers == null) {
+    throw new Error("AppBrandMark peers are not configured");
   }
-  if (appBrand === AppBrandKind.ChatGPT) {
-    const Mark = assets.ChatGptMark;
-    return <Mark aria-hidden="true" className={className} />;
-  }
-  return (
+  let { appBrand, className } = props;
+  return appBrand === peers.El.ChatGPT ? (
+    <Qou aria-hidden="true" className={className} />
+  ) : (
     <img
       alt=""
       aria-hidden="true"
       className={className}
       draggable={false}
-      src={assets.codexLogoSrc}
+      src={peers.You}
     />
   );
 }
-
-/** @deprecated Prefer {@link AppBrandMark}. */
-export type AppBrandMarkImpl = (props: AppBrandMarkProps) => ReactNode;

@@ -1,15 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `iMa`) / export `PN`.
+// Materialized via extractFn(internal `iMa`) / export `PN`.
 
 export type DeleteProjectAndMaybeNavigatePeers = {
-  accountScopeAtom: unknown;
-  invalidateProjectQueries: (queryClient: unknown, projectId: unknown) => void;
-  setActiveRouteKind: (scope: unknown, kind: string) => void;
+  MV: (...args: unknown[]) => unknown;
+  bH: (...args: unknown[]) => unknown;
+  lMa: (...args: unknown[]) => unknown;
 };
-
 let peers: DeleteProjectAndMaybeNavigatePeers | null = null;
 
-/** Wire delete-project peers once companions land. */
+/** Wire deleteProjectAndMaybeNavigate peers once companions land. */
 export function setDeleteProjectAndMaybeNavigatePeers(
   next: DeleteProjectAndMaybeNavigatePeers,
 ): void {
@@ -18,27 +17,18 @@ export function setDeleteProjectAndMaybeNavigatePeers(
 
 /**
  * Bundle export `PN` / internal `iMa`.
- * Delete a project, invalidate queries, and navigate home if it was active.
  */
-export async function deleteProjectAndMaybeNavigate(args: {
-  scope: {
-    get: (atom: unknown) => {
-      deleteProject: (id: unknown) => Promise<unknown>;
-    };
-  };
-  activeProjectId: unknown;
-  navigate: (path: string) => void;
-  projectId: unknown;
-  queryClient: unknown;
-}): Promise<void> {
+export async function deleteProjectAndMaybeNavigate({
+  scope,
+  activeProjectId,
+  navigate,
+  projectId,
+  queryClient,
+}: Record<string, unknown>) {
   if (peers == null) {
-    throw new Error("DeleteProjectAndMaybeNavigate peers are not configured");
+    throw new Error("deleteProjectAndMaybeNavigate peers are not configured");
   }
-  const { scope, activeProjectId, navigate, projectId, queryClient } = args;
-  await scope.get(peers.accountScopeAtom).deleteProject(projectId);
-  peers.invalidateProjectQueries(queryClient, projectId);
-  if (projectId === activeProjectId) {
-    peers.setActiveRouteKind(scope, "chat");
-    navigate("/");
-  }
+  await scope.get(peers.MV).deleteProject(projectId);
+  peers.lMa(queryClient, projectId);
+  projectId === activeProjectId && (peers.bH(scope, "chat"), navigate("/"));
 }

@@ -17,15 +17,12 @@ import {
   ensureDebugPanelTurnFilesInit,
   type DebugPanelTurnLike,
 } from "./debug-panel-turn-files";
-
 ensureDebugPanelTurnFilesInit();
-
 export type DebugPanelEntry = {
   id: string;
   titleText: string;
   lines: unknown;
 };
-
 type ScopeLike = {
   set: (
     atom: unknown,
@@ -38,9 +35,7 @@ export const debugPanelEntriesAtom = createScopedSignal<DebugPanelEntry[]>(
   appScopeAtom,
   [],
 );
-
 let debugPanelIdCounter = 0;
-
 function collectPaths(
   turns: DebugPanelTurnLike[],
   key: "editedFilePaths" | "referencedFilePaths",
@@ -85,35 +80,50 @@ export function useDebugPanelEntries(): DebugPanelEntry[] {
 export function isDebugPanelAllowedForBuild(): boolean {
   return CodexBuildEnvironment.isInternal(getBuildFlavor());
 }
-
 function toEntry(
   id: string,
-  input: { title: ReactNode; lines: unknown },
+  input: {
+    title: ReactNode;
+    lines: unknown;
+  },
 ): DebugPanelEntry {
   let titleText = "[non-serializable title]";
   if (typeof input.title === "string") titleText = input.title;
   else if (isValidElement(input.title)) titleText = "";
-  return { id, titleText, lines: input.lines };
+  return {
+    id,
+    titleText,
+    lines: input.lines,
+  };
 }
 
 /** Bundle export `i` — upsert a debug panel entry by id. */
 export function upsertDebugPanelEntry(
   scope: ScopeLike,
   id: string,
-  input: { title: ReactNode; lines: unknown },
+  input: {
+    title: ReactNode;
+    lines: unknown;
+  },
 ): void {
   const entry = toEntry(id, input);
-  scope.set(debugPanelEntriesAtom, (prev) => [
-    ...prev.filter((item) => item.id !== id),
-    entry,
-  ]);
+  scope.set(debugPanelEntriesAtom, (prev) => {
+    return [
+      ...prev.filter((item) => {
+        return item.id !== id;
+      }),
+      entry,
+    ];
+  });
 }
 
 /** Bundle export `r` — remove a debug panel entry by id. */
 export function removeDebugPanelEntry(scope: ScopeLike, id: string): void {
-  scope.set(debugPanelEntriesAtom, (prev) =>
-    prev.filter((item) => item.id !== id),
-  );
+  scope.set(debugPanelEntriesAtom, (prev) => {
+    return prev.filter((item) => {
+      return item.id !== id;
+    });
+  });
 }
 
 /** Bundle export `t` — allocate a debug panel entry id. */

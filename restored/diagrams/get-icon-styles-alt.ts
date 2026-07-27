@@ -5,23 +5,8 @@ import {
   defineFunctionName,
   initDayjsLoggerRuntime,
 } from "../utils/dayjs-core-alt-dup";
-const ICON_STYLES = `
-  /* Font Awesome icon styling - consolidated */
-  .label-icon {
-    display: inline-block;
-    height: 1em;
-    overflow: visible;
-    vertical-align: -0.125em;
-  }
-  
-  .node .label-icon path {
-    fill: currentColor;
-    stroke: revert;
-    stroke-width: revert;
-  }
-`;
 export function getIconStyles(): string {
-  return ICON_STYLES;
+  return "\n  /* Font Awesome icon styling - consolidated */\n  .label-icon {\n    display: inline-block;\n    height: 1em;\n    overflow: visible;\n    vertical-align: -0.125em;\n  }\n  \n  .node .label-icon path {\n    fill: currentColor;\n    stroke: revert;\n    stroke-width: revert;\n  }\n";
 }
 defineFunctionName(getIconStyles, "getIconStyles");
 

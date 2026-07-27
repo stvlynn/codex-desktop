@@ -1,25 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `dJs`) / export `Bg`.
+// Materialized via extractFn(internal `dJs`) / export `Bg`.
 
 export type ToWorktreePeers = {
-  toMessageComponent: (messages: unknown) => unknown;
-  toWorktreeMessages: unknown;
+  _Js: (...args: unknown[]) => unknown;
+  tr: (...args: unknown[]) => unknown;
 };
 
 let peers: ToWorktreePeers | null = null;
 
-/** Wire ToWorktree message peers once companions land. */
+/** Wire ToWorktree peers once companions land. */
 export function setToWorktreePeers(next: ToWorktreePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Bg` / internal `dJs`.
- * Thin message-component wrapper for to-worktree copy.
  */
-export function ToWorktree(): unknown {
+export function ToWorktree() {
   if (peers == null) {
     throw new Error("ToWorktree peers are not configured");
   }
-  return peers.toMessageComponent(peers.toWorktreeMessages);
+
+  return peers.tr(peers._Js);
 }

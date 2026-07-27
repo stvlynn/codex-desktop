@@ -17,9 +17,7 @@ type useConnectPluginsSubmenuModelImpl = (
 let impl: useConnectPluginsSubmenuModelImpl | null = null;
 
 /** Wire the full useConnectPluginsSubmenuModel once deeper companion restore lands. */
-export function binduseConnectPluginsSubmenuModel(
-  next: useConnectPluginsSubmenuModelImpl,
-): void {
+export function binduseConnectPluginsSubmenuModel(next: useConnectPluginsSubmenuModelImpl): void {
   impl = next;
 }
 

@@ -1,28 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export $V / zWi
+// Materialized via extractFn(internal `zWi`) / export `$V`.
 
 export type DeferredConversationVPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  IWi: (...args: unknown[]) => unknown;
+  Vf: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  jI: (...args: unknown[]) => unknown;
+  nO: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredConversationVPeers | null = null;
 
-/** Wire deferredConversationV once companions land. */
-export function setDeferredConversationVPeers(
-  next: DeferredConversationVPeers,
-): void {
+/** Wire deferredConversationV peers once companions land. */
+export function setDeferredConversationVPeers(next: DeferredConversationVPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `$V` / internal `zWi`.
- * Stage-3 fill for bundle export $V / zWi
  */
-export function deferredConversationV(...args: unknown[]): unknown {
+export function deferredConversationV() {
   if (peers == null) {
     throw new Error("deferredConversationV peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Au(), peers.Vf(), peers.nO(), peers.jI(), peers.IWi();
+  });
 }

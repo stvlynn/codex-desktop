@@ -1,28 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `atn`) / export `E9`.
+// Materialized via extractFn(internal `atn`) / export `E9`.
 
 export type ClearUpcomingLocalDatetimeEntriesPeers = {
-  clearEntries: (key: unknown) => void;
+  gx: (...args: unknown[]) => unknown;
 };
 
 let peers: ClearUpcomingLocalDatetimeEntriesPeers | null = null;
 
-/** Wire formatter cache peers once companions land. */
-export function setClearUpcomingLocalDatetimeEntriesPeers(
-  next: ClearUpcomingLocalDatetimeEntriesPeers,
-): void {
+/** Wire clearUpcomingLocalDatetimeEntries peers once companions land. */
+export function setClearUpcomingLocalDatetimeEntriesPeers(next: ClearUpcomingLocalDatetimeEntriesPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `E9` / internal `atn`.
- * Clear cached upcoming-local-datetime formatter entries for a key.
  */
-export function clearUpcomingLocalDatetimeEntries(key: unknown): void {
+export function clearUpcomingLocalDatetimeEntries(e: unknown) {
   if (peers == null) {
     throw new Error(
-      "ClearUpcomingLocalDatetimeEntries peers are not configured",
+      "clearUpcomingLocalDatetimeEntries peers are not configured",
     );
   }
-  peers.clearEntries(key);
+
+  peers.gx.clearEntries(e);
 }

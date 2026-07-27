@@ -17,9 +17,7 @@ type useCodexMobileSetupDialogImpl = (
 let impl: useCodexMobileSetupDialogImpl | null = null;
 
 /** Wire the full useCodexMobileSetupDialog once deeper companion restore lands. */
-export function binduseCodexMobileSetupDialog(
-  next: useCodexMobileSetupDialogImpl,
-): void {
+export function binduseCodexMobileSetupDialog(next: useCodexMobileSetupDialogImpl): void {
   impl = next;
 }
 

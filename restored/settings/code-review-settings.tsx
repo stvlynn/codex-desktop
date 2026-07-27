@@ -108,7 +108,9 @@ export function CodeReviewSettings(): ReactNode {
                     <Button
                       color="secondary"
                       size="toolbar"
-                      onClick={() => preferencesQuery.refetch()}
+                      onClick={() => {
+                        return preferencesQuery.refetch();
+                      }}
                     >
                       <MemoizedFormattedMessage
                         id="settings.codeReview.retry"
@@ -233,18 +235,20 @@ function CodeReviewPreferencesForm(props: {
                   </DropdownTriggerButton>
                 }
               >
-                {TRIGGER_POLICIES.map((policy) => (
-                  <DropdownMenu.Item
-                    key={policy}
-                    onSelect={() => {
-                      onUpdate({
-                        code_review_trigger_policy: policy,
-                      });
-                    }}
-                  >
-                    {triggerLabel(policy)}
-                  </DropdownMenu.Item>
-                ))}
+                {TRIGGER_POLICIES.map((policy) => {
+                  return (
+                    <DropdownMenu.Item
+                      key={policy}
+                      onSelect={() => {
+                        onUpdate({
+                          code_review_trigger_policy: policy,
+                        });
+                      }}
+                    >
+                      {triggerLabel(policy)}
+                    </DropdownMenu.Item>
+                  );
+                })}
               </DropdownMenuPopover>
             }
           />

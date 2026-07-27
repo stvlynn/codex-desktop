@@ -17,9 +17,7 @@ type CodexMicroMiniGameComposerImpl = (
 let impl: CodexMicroMiniGameComposerImpl | null = null;
 
 /** Wire the full CodexMicroMiniGameComposer once deeper companion restore lands. */
-export function bindCodexMicroMiniGameComposer(
-  next: CodexMicroMiniGameComposerImpl,
-): void {
+export function bindCodexMicroMiniGameComposer(next: CodexMicroMiniGameComposerImpl): void {
   impl = next;
 }
 

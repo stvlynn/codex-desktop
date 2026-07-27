@@ -1,25 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export AL / Vca
+// Materialized via extractFn(internal `Vca`) / export `AL`.
 
 export type BindDeferredUiALPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Bca: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Lca: (...args: unknown[]) => unknown;
+  Pca: (...args: unknown[]) => unknown;
+  Rca: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  zca: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiALPeers | null = null;
 
-/** Wire bindDeferredUiAL once companions land. */
+/** Wire bindDeferredUiAL peers once companions land. */
 export function setBindDeferredUiALPeers(next: BindDeferredUiALPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `AL` / internal `Vca`.
- * Stage-3 fill for bundle export AL / Vca
  */
-export function bindDeferredUiAL(...args: unknown[]): unknown {
+export function bindDeferredUiAL() {
   if (peers == null) {
     throw new Error("bindDeferredUiAL peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Pca(), Lca = peers.r(peers.o(), 1), Rca = peers.J(), zca = (0, peers.Lca.createContext)(void 0), Bca = 0;
+  });
 }

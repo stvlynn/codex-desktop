@@ -1,25 +1,37 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Stage 3: Wave CB — small real body for toggle-diff-panel window listener.
-// Deferred companion of EditorDiffPage / diff panel chrome.
+// Materialized via extractFn(internal `K4s`) / export `_h`.
 
-import { useWindowEvent } from "../hooks/use-window-event";
-
-export type ToggleDiffPanelDetail = {
-  open: boolean;
+export type UseToggleDiffPanelListenerPeers = {
+  Kf: (...args: unknown[]) => unknown;
+  q4s: (...args: unknown[]) => unknown;
 };
 
+let peers: UseToggleDiffPanelListenerPeers | null = null;
+
+/** Wire useToggleDiffPanelListener peers once companions land. */
+export function setUseToggleDiffPanelListenerPeers(next: UseToggleDiffPanelListenerPeers): void {
+  peers = next;
+}
+
 /**
- * Subscribe to the host `toggle-diff-panel` window event and forward open state.
  * Bundle export `_h` / internal `K4s`.
  */
-export function useToggleDiffPanelListener(
-  onOpenChange: (open: boolean) => void,
-): void {
-  useWindowEvent(
-    "toggle-diff-panel",
-    (event: ToggleDiffPanelDetail) => {
-      onOpenChange(event.open);
-    },
-    [onOpenChange],
-  );
+export function useToggleDiffPanelListener(e: unknown) {
+  if (peers == null) {
+    throw new Error("useToggleDiffPanelListener peers are not configured");
+  }
+
+  let t = (0, peers.q4s.c)(3),
+    n,
+    r;
+  (t[0] === e
+    ? ((n = t[1]), (r = t[2]))
+    : ((n = (t) => {
+        e(t.open);
+      }),
+      (r = [e]),
+      (t[0] = e),
+      (t[1] = n),
+      (t[2] = r)),
+    peers.Kf(`toggle-diff-panel`, n, r));
 }

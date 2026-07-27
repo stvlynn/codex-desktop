@@ -1,26 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export C5 / zWn
+// Materialized via extractFn(internal `zWn`) / export `C5`.
 
 export type BindAppgen3Peers = {
-  impl: (...args: unknown[]) => unknown;
+  Bw: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Vw: (...args: unknown[]) => unknown;
+  iWn: (...args: unknown[]) => unknown;
+  ja: (...args: unknown[]) => unknown;
+  yWn: (...args: unknown[]) => unknown;
 };
 
 let peers: BindAppgen3Peers | null = null;
 
-/** Wire bindAppgen3 once companions land. */
+/** Wire bindAppgen3 peers once companions land. */
 export function setBindAppgen3Peers(next: BindAppgen3Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `C5` / internal `zWn`.
- * Stage-3 fill for bundle export C5 / zWn
  */
-export function bindAppgen3(...args: unknown[]): unknown {
+export function bindAppgen3() {
   if (peers == null) {
     throw new Error("bindAppgen3 peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.ja(peers.Q, e => ({
+    mutationKey: [...peers.Vw, e, `title`, `update`],
+    mutationFn: t => peers.Bw(`sites_update_site_metadata`, {
+      project_id: e,
+      ...t
+    }, peers.yWn),
+    onSettled: (t, n, r, i, {
+      client: a
+    }) => peers.iWn(a, [e])
+  }));
 }

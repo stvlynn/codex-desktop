@@ -17,9 +17,7 @@ type useAsciiEngineControlsImpl = (
 let impl: useAsciiEngineControlsImpl | null = null;
 
 /** Wire the full useAsciiEngineControls once deeper companion restore lands. */
-export function binduseAsciiEngineControls(
-  next: useAsciiEngineControlsImpl,
-): void {
+export function binduseAsciiEngineControls(next: useAsciiEngineControlsImpl): void {
   impl = next;
 }
 

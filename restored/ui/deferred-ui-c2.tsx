@@ -1,41 +1,53 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export c2 / frr
+// Materialized via extractFn(internal `frr`) / export `c2`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiC2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiC2Peers = {
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  R_: (...args: unknown[]) => unknown;
+  eD: (...args: unknown[]) => unknown;
+  nu: (...args: unknown[]) => unknown;
+  wD: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiC2Impl = (props: BindDeferredUiC2Props) => ReactNode;
-let impl: BindDeferredUiC2Impl | null = null;
+let peers: BindBindDeferredUiC2Peers | null = null;
 
-/** Wire the full BindDeferredUiC2 once deeper restore lands. */
-export function bindBindDeferredUiC2(next: BindDeferredUiC2Impl): void {
-  impl = next;
+/** Wire bindBindDeferredUiC2 peers once companions land. */
+export function setBindBindDeferredUiC2Peers(next: BindBindDeferredUiC2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `c2` / internal `frr`.
- * Stage-3 fill for bundle export c2 / frr; heavy UI via bind.
  */
-export function BindDeferredUiC2(props: BindDeferredUiC2Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fc-scaffold="c2"
-      aria-label="BindDeferredUiC2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export c2 / frr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiC2() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiC2 peers are not configured");
+  }
+
+  return peers.Oa(peers.Q, (e, {
+    get: t
+  }) => {
+    let n = t(peers.wD, e),
+      r = t(peers.eD, n);
+    if (r != null) return {
+      hostId: n,
+      manager: r,
+      status: `ready`
+    };
+    if (n === `local` || peers.nu(n)) return {
+      hostId: n,
+      status: `recovering`
+    };
+    let i = peers.R_(t, `remote_ssh_connections`),
+      a = peers.R_(t, `remote_wsl_connections`),
+      o = peers.R_(t, `remote_control_connections`);
+    return i == null || o == null || [...(i ?? []), ...(a ?? []), ...(o ?? [])].some(e => e.hostId === n) ? {
+      hostId: n,
+      status: `recovering`
+    } : {
+      hostId: n,
+      status: `unavailable`
+    };
+  });
 }

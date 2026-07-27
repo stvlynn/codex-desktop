@@ -17,9 +17,7 @@ let expandedPathsAtom: unknown = Symbol.for("codex.review.expanded-paths");
 let commentFocusAtom: unknown = Symbol.for("codex.review.comment-focus");
 let scrollTargetAtom: unknown = Symbol.for("codex.review.scroll-target");
 
-export function bindReviewScrollTargetAtoms(
-  bindings: ReviewScrollTargetAtoms,
-): void {
+export function bindReviewScrollTargetAtoms(bindings: ReviewScrollTargetAtoms): void {
   if (bindings.expandedPathsAtom != null) {
     expandedPathsAtom = bindings.expandedPathsAtom;
   }
@@ -34,10 +32,7 @@ export function bindReviewScrollTargetAtoms(
 /**
  * Bundle `LVi` / export `VH` — expand path (when set) and pin scroll target.
  */
-export function setReviewScrollTarget(
-  scope: AppActionScope,
-  path: string | null | undefined,
-): void {
+export function setReviewScrollTarget(scope: AppActionScope, path: string | null | undefined): void {
   if (path != null) {
     scope.set(expandedPathsAtom, (prev: unknown) => {
       const next = new Map(

@@ -1,61 +1,46 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `Xqs`) / export `Vg`.
+// Materialized via extractFn(internal `Xqs`) / export `Vg`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type OperationStatus = {
-  status: "queued" | "running" | "warning" | "success" | "error" | string;
-  [key: string]: unknown;
+export type OperationStatusOverlayPeers = {
+  $qs: (...args: unknown[]) => unknown;
+  Qqs: (...args: unknown[]) => unknown;
+  Zqs: (...args: unknown[]) => unknown;
+  cJs: (...args: unknown[]) => unknown;
+  eJs: (...args: unknown[]) => unknown;
+  k$: (...args: unknown[]) => unknown;
 };
+let peers: OperationStatusOverlayPeers | null = null;
 
-export type OperationStatusOverlayProps = {
-  operation: OperationStatus;
-  onClose?: () => void;
-  onRetry?: () => void;
-};
-
-export type OperationStatusOverlayParts = {
-  QueuedOrRunning: (props: { operation: OperationStatus }) => ReactNode;
-  Warning: (props: {
-    operation: OperationStatus;
-    onClose?: () => void;
-  }) => ReactNode;
-  Success: (props: { operation: OperationStatus }) => ReactNode;
-  Error: (props: {
-    operation: OperationStatus;
-    onClose?: () => void;
-    onRetry?: () => void;
-  }) => ReactNode;
-};
-
-let parts: OperationStatusOverlayParts | null = null;
-
-/** Wire operation status panes once companions land. */
-export function setOperationStatusOverlayParts(
-  next: OperationStatusOverlayParts,
+/** Wire OperationStatusOverlay peers once companions land. */
+export function setOperationStatusOverlayPeers(
+  next: OperationStatusOverlayPeers,
 ): void {
-  parts = next;
+  peers = next;
 }
 
 /**
  * Bundle export `Vg` / internal `Xqs`.
- * Status overlay for queued/running/warning/success/error operations.
  */
-export function OperationStatusOverlay(
-  props: OperationStatusOverlayProps,
-): ReactElement {
-  if (parts == null) {
-    throw new Error("OperationStatusOverlay parts are not configured");
+export function OperationStatusOverlay(props: unknown) {
+  const Zqs = peers.Zqs;
+  const Qs = peers.$qs;
+  const Qqs = peers.Qqs;
+  const EJs = peers.eJs;
+  if (peers == null) {
+    throw new Error("OperationStatusOverlay peers are not configured");
   }
-  const { operation, onClose, onRetry } = props;
+  let { operation, onClose, onRetry } = props;
   if (operation.status === "queued" || operation.status === "running") {
-    return (<>{parts.QueuedOrRunning({ operation })}</>) as ReactElement;
+    let e;
+    return <Zqs operation={operation} />;
   }
   if (operation.status === "warning") {
-    return (<>{parts.Warning({ operation, onClose })}</>) as ReactElement;
+    let e;
+    return <Qs operation={operation} onClose={onClose} />;
   }
   if (operation.status === "success") {
-    return (<>{parts.Success({ operation })}</>) as ReactElement;
+    let e;
+    return <Qqs operation={operation} />;
   }
-  return (<>{parts.Error({ operation, onClose, onRetry })}</>) as ReactElement;
+  return <EJs operation={operation} onClose={onClose} onRetry={onRetry} />;
 }

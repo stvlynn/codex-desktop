@@ -2,8 +2,4 @@
 // Wave FR — stale-alias duplicate consolidated to owner `ui/deferred-ui-i23-2.tsx`
 // (alias `I2` already filled; do not invent body). via=filled-owner
 
-export {
-  bindBindDeferredUiI23,
-  BindDeferredUiI23,
-  BindDeferredUiI23Props,
-} from "./deferred-ui-i23-2";
+export * from "./deferred-ui-i23-2";

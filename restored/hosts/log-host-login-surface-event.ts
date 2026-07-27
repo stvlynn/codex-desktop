@@ -1,13 +1,11 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EP — real body via extractFn(internal `yql`) / export `Fa`.
+// Materialized via extractFn(internal `yql`) / export `Fa`.
 
 export type LogHostLoginSurfaceEventPeers = {
-  formatMessage: (key: unknown, values?: Record<string, unknown>) => string;
-  messageForState: (state: string, error: unknown) => unknown;
-  track: (event: string, payload: Record<string, unknown>) => void;
-  logError: (error: unknown, context: Record<string, unknown>) => void;
+  B5: (...args: unknown[]) => unknown;
+  _ql: (...args: unknown[]) => unknown;
+  bql: (...args: unknown[]) => unknown;
 };
-
 let peers: LogHostLoginSurfaceEventPeers | null = null;
 
 /** Wire logHostLoginSurfaceEvent peers once companions land. */
@@ -19,38 +17,104 @@ export function setLogHostLoginSurfaceEventPeers(
 
 /**
  * Bundle export `Fa` / internal `yql`.
- * Emit analytics for host login surface state transitions.
  */
 export function logHostLoginSurfaceEvent(
-  intl: {
-    formatMessage: (key: unknown, values?: Record<string, unknown>) => string;
-  },
-  args: {
-    canLogin: boolean;
-    error?: unknown;
-    hostKind: unknown;
-    state: string;
-    surface: unknown;
-  },
-): void {
+  e: unknown,
+  { canLogin, error, hostKind, state, surface }: Record<string, unknown>,
+) {
   if (peers == null) {
-    throw new Error("LogHostLoginSurfaceEvent peers are not configured");
+    throw new Error("logHostLoginSurfaceEvent peers are not configured");
   }
-  const message = intl.formatMessage(
-    peers.messageForState(args.state, args.error),
-  );
-  if (args.state === "error" && args.error != null) {
-    peers.logError(args.error, {
-      hostKind: args.hostKind,
-      surface: args.surface,
-      message,
-    });
+  let o = e.formatMessage(peers.bql(state, error));
+  if (state === "error" && error != null) {
+    let i = peers._ql(e, error);
+    switch (error.code) {
+      case "login-required":
+        if (canLogin)
+          return {
+            action: {
+              kind: "login",
+              label: e.formatMessage(peers.B5.login),
+            },
+            label: o,
+            message: i,
+          };
+        if (surface === "connection-status-badge") {
+          let t = e.formatMessage(peers.B5.goToSettings);
+          return {
+            action: {
+              kind: "settings",
+              label: t,
+            },
+            label: o,
+            message: `${i} ${t}`,
+          };
+        }
+        return {
+          action: null,
+          label: o,
+          message: i,
+        };
+      case "remote-codex-not-found":
+        return {
+          action: {
+            kind: "install-codex",
+            label: e.formatMessage(peers.B5.installCodex),
+            loadingLabel: e.formatMessage(peers.B5.installingCodex),
+          },
+          label: o,
+          message: i,
+        };
+      case "restart-required":
+        return {
+          action: {
+            kind: "restart",
+            label: e.formatMessage(peers.B5.restartNow),
+            tooltipText: e.formatMessage(peers.B5.restartNowTooltip),
+          },
+          label: o,
+          message: i,
+        };
+      case "update-required":
+        return hostKind === "wsl"
+          ? {
+              action: null,
+              label: o,
+              message: e.formatMessage(peers.B5.updateWslCodexMessage, {
+                currentVersion: error.currentVersion,
+                minRequiredVersion: error.minRequiredVersion,
+              }),
+            }
+          : surface === "connections-row"
+            ? {
+                action: {
+                  kind: "install-codex",
+                  label: e.formatMessage(peers.B5.updateCodex),
+                  loadingLabel: e.formatMessage(peers.B5.updatingCodex),
+                  tooltipText: e.formatMessage(peers.B5.restartNowTooltip),
+                },
+                label: o,
+                message: i,
+              }
+            : {
+                action: {
+                  kind: "settings",
+                  label: e.formatMessage(peers.B5.goToSettings),
+                },
+                label: o,
+                message: i,
+              };
+      case "connection-failed":
+        return {
+          action: null,
+          label: o,
+          message: i,
+        };
+    }
   }
-  peers.track("host_login_surface", {
-    canLogin: args.canLogin,
-    hostKind: args.hostKind,
-    state: args.state,
-    surface: args.surface,
-    message,
-  });
+  return {
+    action: null,
+    label: o,
+    message: o,
+  };
 }

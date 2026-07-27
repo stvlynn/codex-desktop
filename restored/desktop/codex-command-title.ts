@@ -21,8 +21,7 @@ let getCommandTitleImpl:
   | null = null;
 
 /** Wire the full command-title catalog once app-initial drains. */
-export function bindGetCommandTitle(
-  next: (command: CommandTitleSource, intl: IntlLike) => string,
+export function bindGetCommandTitle(next: (command: CommandTitleSource, intl: IntlLike) => string,
 ): void {
   getCommandTitleImpl = next;
 }
@@ -30,10 +29,7 @@ export function bindGetCommandTitle(
 /**
  * Bundle export `lr` — resolve a command's localized menu/analog title.
  */
-export function getCommandTitle(
-  command: CommandTitleSource,
-  intl: IntlLike,
-): string {
+export function getCommandTitle(command: CommandTitleSource, intl: IntlLike): string {
   if (getCommandTitleImpl == null) {
     return command.id;
   }

@@ -1,37 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `Ht`) / export `yvt`.
+// Materialized via extractFn(internal `Ht`) / export `yvt`.
 
 export type CountPendingFilteredItemsPeers = {
-  resolveScope: (scope: unknown) => unknown;
-  listItems: (
-    query: { filters: Record<string, unknown> },
-    scope: unknown,
-  ) => unknown[];
+  Wt: (...args: unknown[]) => unknown;
+  rt: (...args: unknown[]) => unknown;
 };
 
 let peers: CountPendingFilteredItemsPeers | null = null;
 
 /** Wire countPendingFilteredItems peers once companions land. */
-export function setCountPendingFilteredItemsPeers(
-  next: CountPendingFilteredItemsPeers,
-): void {
+export function setCountPendingFilteredItemsPeers(next: CountPendingFilteredItemsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `yvt` / internal `Ht`.
- * Count pending items under the given filters.
  */
-export function countPendingFilteredItems(
-  filters: Record<string, unknown>,
-  scope: unknown,
-): number {
+export function countPendingFilteredItems(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("CountPendingFilteredItems peers are not configured");
+    throw new Error("countPendingFilteredItems peers are not configured");
   }
-  const resolved = peers.resolveScope(scope);
-  return peers.listItems(
-    { filters: { ...filters, status: "pending" } },
-    resolved,
-  ).length;
+
+  let n = peers.rt(t);
+  return peers.Wt({
+    filters: {
+      ...e,
+      status: `pending`
+    }
+  }, n).length;
 }

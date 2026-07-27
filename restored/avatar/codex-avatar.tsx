@@ -16,7 +16,6 @@ import {
 } from "../ui/icon-pixel-size";
 import { cx } from "../ui/cx";
 import { useTurnSourcesReducedMotion } from "../boundaries/turn-sources-runtime";
-
 ensureIconPixelSizeInit();
 
 // Filenames match the co-located webview asset chunk URLs.
@@ -31,9 +30,7 @@ const SPRITESHEET_URLS = {
   seedy: "seedy-spritesheet-v10-A9vkGoq7.webp",
   stacky: "stacky-spritesheet-v6-Y0DWcgq_.webp",
 } as const;
-
 export type CodexAvatarAssetRef = keyof typeof SPRITESHEET_URLS;
-
 export type CodexAvatarState =
   | "failed"
   | "idle"
@@ -44,41 +41,69 @@ export type CodexAvatarState =
   | "running-right"
   | "waving"
   | "waiting";
-
 type Frame = {
   columnIndex: number;
   frameDurationMs: number;
   rowIndex: number;
 };
-
 function buildRowFrames(
   rowIndex: number,
   count: number,
   frameDurationMs: number,
   lastFrameDurationMs: number,
 ): Frame[] {
-  return Array.from({ length: count }, (_unused, columnIndex) => ({
-    columnIndex,
-    frameDurationMs:
-      columnIndex === count - 1 ? lastFrameDurationMs : frameDurationMs,
-    rowIndex,
-  }));
+  return Array.from(
+    {
+      length: count,
+    },
+    (_unused, columnIndex) => {
+      return {
+        columnIndex,
+        frameDurationMs:
+          columnIndex === count - 1 ? lastFrameDurationMs : frameDurationMs,
+        rowIndex,
+      };
+    },
+  );
 }
-
 const IDLE_FRAMES: Frame[] = [
-  { rowIndex: 0, columnIndex: 0, frameDurationMs: 280 },
-  { rowIndex: 0, columnIndex: 1, frameDurationMs: 110 },
-  { rowIndex: 0, columnIndex: 2, frameDurationMs: 110 },
-  { rowIndex: 0, columnIndex: 3, frameDurationMs: 140 },
-  { rowIndex: 0, columnIndex: 4, frameDurationMs: 140 },
-  { rowIndex: 0, columnIndex: 5, frameDurationMs: 320 },
+  {
+    rowIndex: 0,
+    columnIndex: 0,
+    frameDurationMs: 280,
+  },
+  {
+    rowIndex: 0,
+    columnIndex: 1,
+    frameDurationMs: 110,
+  },
+  {
+    rowIndex: 0,
+    columnIndex: 2,
+    frameDurationMs: 110,
+  },
+  {
+    rowIndex: 0,
+    columnIndex: 3,
+    frameDurationMs: 140,
+  },
+  {
+    rowIndex: 0,
+    columnIndex: 4,
+    frameDurationMs: 140,
+  },
+  {
+    rowIndex: 0,
+    columnIndex: 5,
+    frameDurationMs: 320,
+  },
 ];
-
-const IDLE_SLOW_FRAMES = IDLE_FRAMES.map((frame) => ({
-  ...frame,
-  frameDurationMs: frame.frameDurationMs * 6,
-}));
-
+const IDLE_SLOW_FRAMES = IDLE_FRAMES.map((frame) => {
+  return {
+    ...frame,
+    frameDurationMs: frame.frameDurationMs * 6,
+  };
+});
 const STATE_FRAMES: Record<CodexAvatarState, Frame[]> = {
   failed: buildRowFrames(5, 8, 140, 240),
   idle: IDLE_FRAMES,
@@ -90,24 +115,31 @@ const STATE_FRAMES: Record<CodexAvatarState, Frame[]> = {
   waving: buildRowFrames(3, 4, 140, 280),
   waiting: buildRowFrames(6, 6, 150, 260),
 };
-
 function backgroundPositionForFrame(
   frame: Frame,
   spriteRowCount: number,
 ): string {
   return `${(frame.columnIndex / 7) * 100}% ${(frame.rowIndex / (spriteRowCount - 1)) * 100}%`;
 }
-
 function framesForState(
   state: CodexAvatarState,
   prefersReducedMotion: boolean,
-): { frames: Frame[]; loopStartIndex: number | null } {
+): {
+  frames: Frame[];
+  loopStartIndex: number | null;
+} {
   const base = STATE_FRAMES[state];
   if (prefersReducedMotion) {
-    return { frames: [base[0]], loopStartIndex: null };
+    return {
+      frames: [base[0]],
+      loopStartIndex: null,
+    };
   }
   if (state === "idle") {
-    return { frames: IDLE_SLOW_FRAMES, loopStartIndex: 0 };
+    return {
+      frames: IDLE_SLOW_FRAMES,
+      loopStartIndex: 0,
+    };
   }
   const triple = [...base, ...base, ...base];
   return {
@@ -115,7 +147,6 @@ function framesForState(
     loopStartIndex: triple.length,
   };
 }
-
 function useCodexAvatarAnimation(args: {
   avatarRef: RefObject<HTMLDivElement | null>;
   isAnimationEnabled?: boolean;
@@ -132,7 +163,6 @@ function useCodexAvatarAnimation(args: {
     spriteRowCount,
     state,
   } = args;
-
   useEffect(() => {
     const node = avatarRef.current;
     if (node == null) return;
@@ -191,11 +221,9 @@ function useCodexAvatarAnimation(args: {
     state,
   ]);
 }
-
 function isCodexAvatarAssetRef(value: unknown): value is CodexAvatarAssetRef {
   return value != null && Object.hasOwn(SPRITESHEET_URLS, value as string);
 }
-
 export type CodexAvatarProps = {
   assetRef?: string | null;
   className?: string;

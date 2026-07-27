@@ -1,17 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `dZ`) / export `xS`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `dZ`) / export `xS`.
 
 export type RemoteProjectHostGlyphPeers = {
-  renderLocal: (props: { className?: string }) => ReactNode;
-  renderUnknownRemote: (props: { className?: string }) => ReactNode;
-  renderRemoteHost: (props: {
-    className?: string;
-    hostId: unknown;
-  }) => ReactNode;
+  Aus: (...args: unknown[]) => unknown;
+  Ous: (...args: unknown[]) => unknown;
+  Tus: (...args: unknown[]) => unknown;
+  kus: (...args: unknown[]) => unknown;
+  lZ: (...args: unknown[]) => unknown;
 };
-
 let peers: RemoteProjectHostGlyphPeers | null = null;
 
 /** Wire RemoteProjectHostGlyph peers once companions land. */
@@ -23,29 +19,22 @@ export function setRemoteProjectHostGlyphPeers(
 
 /**
  * Bundle export `xS` / internal `dZ`.
- * Render local / unknown / remote host glyph for a project.
  */
-export type RemoteProjectHostGlyphProps = {
-  className?: string;
-  remoteHostId?: unknown;
-  isRemoteProject?: boolean;
-};
-
-export function RemoteProjectHostGlyph(
-  props: RemoteProjectHostGlyphProps,
-): ReactElement {
+export function RemoteProjectHostGlyph(props: unknown) {
+  const LZ = peers.lZ;
+  const Tus = peers.Tus;
+  const Ous = peers.Ous;
   if (peers == null) {
     throw new Error("RemoteProjectHostGlyph peers are not configured");
   }
-  const { className, remoteHostId, isRemoteProject } = props;
+  let { className, remoteHostId, isRemoteProject } = props;
   if (!(isRemoteProject !== undefined && isRemoteProject)) {
-    return peers.renderLocal({ className }) as ReactElement;
+    let e;
+    return <LZ className={className} />;
   }
   if (remoteHostId == null) {
-    return peers.renderUnknownRemote({ className }) as ReactElement;
+    let e;
+    return <Tus className={className} />;
   }
-  return peers.renderRemoteHost({
-    className,
-    hostId: remoteHostId,
-  }) as ReactElement;
+  return <Ous className={className} hostId={remoteHostId} />;
 }

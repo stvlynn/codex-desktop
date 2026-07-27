@@ -1,44 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ymt / Vbe
+// Materialized via extractFn(internal `Vbe`) / export `Ymt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindAuthElicitationProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindAuthElicitationPeers = {
+  Bbe: (...args: unknown[]) => unknown;
+  Rbe: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  zbe: (...args: unknown[]) => unknown;
 };
 
-type BindAuthElicitationImpl = (props: BindAuthElicitationProps) => ReactNode;
-let impl: BindAuthElicitationImpl | null = null;
+let peers: BindBindAuthElicitationPeers | null = null;
 
-/** Wire the full BindAuthElicitation once deeper restore lands. */
-export function bindBindAuthElicitation(next: BindAuthElicitationImpl): void {
-  impl = next;
+/** Wire bindBindAuthElicitation peers once companions land. */
+export function setBindBindAuthElicitationPeers(next: BindBindAuthElicitationPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Ymt` / internal `Vbe`.
- * Stage-3 fill for bundle export Ymt / Vbe; heavy UI via bind.
  */
-export function BindAuthElicitation(
-  props: BindAuthElicitationProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="Ymt"
-      aria-label="BindAuthElicitation"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Ymt / Vbe
-        </div>
-      )}
-    </div>
-  );
+export function bindBindAuthElicitation() {
+  if (peers == null) {
+    throw new Error("bindBindAuthElicitation peers are not configured");
+  }
+
+  return peers.e(() => {
+    Rbe = `features.`, zbe = new Set([`auth_elicitation`, `plugins`, `apps`, `tool_suggest`, `tool_call_mcp_elicitation`, `writing_blocks`]), Bbe = `workspace_dependencies`;
+  });
 }

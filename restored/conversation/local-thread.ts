@@ -1,26 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export sr / Enu
+// Materialized via extractFn(internal `Enu`) / export `sr`.
 
 export type LocalThreadPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Tnu: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  wnu: (...args: unknown[]) => unknown;
 };
 
 let peers: LocalThreadPeers | null = null;
 
-/** Wire localThread once companions land. */
+/** Wire localThread peers once companions land. */
 export function setLocalThreadPeers(next: LocalThreadPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `sr` / internal `Enu`.
- * Stage-3 fill for bundle export sr / Enu
  */
-export function localThread(...args: unknown[]): unknown {
+export function localThread() {
   if (peers == null) {
     throw new Error("localThread peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    wnu = `3026692602`, Tnu = `3502101112`;
+  });
 }

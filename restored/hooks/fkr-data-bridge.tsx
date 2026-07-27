@@ -1,9 +1,10 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `mKr`) / export `NX`.
+// Materialized via extractFn(internal `mKr`) / export `NX`.
 
 export type FkrDataBridgePeers = {
-  useAtomValue: (atom: unknown) => { data: unknown; isLoading: boolean };
-  fkrAtom: unknown;
+  Y: (...args: unknown[]) => unknown;
+  fKr: (...args: unknown[]) => unknown;
+  hKr: (...args: unknown[]) => unknown;
 };
 
 let peers: FkrDataBridgePeers | null = null;
@@ -15,12 +16,25 @@ export function setFkrDataBridgePeers(next: FkrDataBridgePeers): void {
 
 /**
  * Bundle export `NX` / internal `mKr`.
- * Bridge fKr query atom into a stable { data, isLoading } object.
  */
-export function FkrDataBridge(): { data: unknown; isLoading: boolean } {
+export function FkrDataBridge() {
   if (peers == null) {
     throw new Error("FkrDataBridge peers are not configured");
   }
-  const value = peers.useAtomValue(peers.fkrAtom);
-  return { data: value.data, isLoading: value.isLoading };
+
+  let e = (0, peers.hKr.c)(3),
+    t = peers.Y(peers.fKr),
+    n;
+  return (
+    e[0] !== t.data || e[1] !== t.isLoading
+      ? ((n = {
+          data: t.data,
+          isLoading: t.isLoading,
+        }),
+        (e[0] = t.data),
+        (e[1] = t.isLoading),
+        (e[2] = n))
+      : (n = e[2]),
+    n
+  );
 }

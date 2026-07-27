@@ -18,9 +18,7 @@ export type LocalAttachmentLike = {
 };
 
 /** Bundle `vge` (co-located). */
-export function resolveLocalAttachmentOrigin(
-  attachment: LocalAttachmentLike,
-): LocalAttachmentOrigin | null {
+export function resolveLocalAttachmentOrigin(attachment: LocalAttachmentLike): LocalAttachmentOrigin | null {
   const origin = attachment.origin;
   return origin === LOCAL_ATTACHMENT_ORIGIN.DIFF ||
     origin === LOCAL_ATTACHMENT_ORIGIN.BROWSER ||
@@ -34,9 +32,7 @@ export function resolveLocalAttachmentOrigin(
  * Bundle `Age` / export `hgt`.
  * True when the attachment is (or looks like) an artifact annotation.
  */
-export function isArtifactAnnotationAttachment(
-  attachment: LocalAttachmentLike,
-): boolean {
+export function isArtifactAnnotationAttachment(attachment: LocalAttachmentLike): boolean {
   const origin = resolveLocalAttachmentOrigin(attachment);
   return origin == null
     ? attachment.localArtifactAnnotationContext != null ||

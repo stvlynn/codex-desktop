@@ -1,44 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export C9 / Ftn
+// Materialized via extractFn(internal `Ftn`) / export `C9`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type CollabAgentToolCallProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindCollabAgentToolCallPeers = {
+  Ptn: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
-type CollabAgentToolCallImpl = (props: CollabAgentToolCallProps) => ReactNode;
-let impl: CollabAgentToolCallImpl | null = null;
+let peers: BindCollabAgentToolCallPeers | null = null;
 
-/** Wire the full CollabAgentToolCall once deeper restore lands. */
-export function bindCollabAgentToolCall(next: CollabAgentToolCallImpl): void {
-  impl = next;
+/** Wire bindCollabAgentToolCall peers once companions land. */
+export function setBindCollabAgentToolCallPeers(next: BindCollabAgentToolCallPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `C9` / internal `Ftn`.
- * Stage-3 fill for bundle export C9 / Ftn; heavy UI via bind.
  */
-export function CollabAgentToolCall(
-  props: CollabAgentToolCallProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-es-scaffold="C9"
-      aria-label="CollabAgentToolCall"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export C9 / Ftn
-        </div>
-      )}
-    </div>
-  );
+export function bindCollabAgentToolCall() {
+  if (peers == null) {
+    throw new Error("bindCollabAgentToolCall peers are not configured");
+  }
+
+  return peers.e(() => {
+    Ptn = new Map();
+  });
 }

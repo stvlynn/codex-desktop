@@ -1,15 +1,10 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EI — real body via extractFn(internal `Y3n`) / export `j3`.
+// Materialized via extractFn(internal `Y3n`) / export `j3`.
 
 export type InvalidateWorkspaceRootQueriesPeers = {
-  suffixesByChangeType: Record<string, string[]>;
-  rootQueryKey: (
-    commonDir: unknown,
-    root: unknown,
-    hostKey: unknown,
-  ) => unknown[];
+  K3n: (...args: unknown[]) => unknown;
+  i6n: (...args: unknown[]) => unknown;
 };
-
 let peers: InvalidateWorkspaceRootQueriesPeers | null = null;
 
 /** Wire invalidateWorkspaceRootQueries peers once companions land. */
@@ -21,40 +16,32 @@ export function setInvalidateWorkspaceRootQueriesPeers(
 
 /**
  * Bundle export `j3` / internal `Y3n`.
- * Invalidate workspace-root query keys for a given change type.
  */
-export async function invalidateWorkspaceRootQueries(
-  queryClient: {
-    invalidateQueries: (
-      filters: { queryKey: unknown[] },
-      opts: { cancelRefetch: boolean; throwOnError: boolean },
-    ) => Promise<unknown>;
-  },
-  dirs: { commonDir: unknown; root: unknown },
-  opts: {
-    changeType: string;
-    hostKey: unknown;
-    cancelRefetch?: boolean;
-    throwOnError?: boolean;
-  },
-): Promise<unknown[]> {
+export function invalidateWorkspaceRootQueries(
+  e: unknown,
+  { commonDir, root }: Record<string, unknown>,
+  {
+    changeType,
+    hostKey,
+    cancelRefetch = true,
+    throwOnError = false,
+  }: Record<string, unknown>,
+) {
   if (peers == null) {
-    throw new Error("InvalidateWorkspaceRootQueries peers are not configured");
+    throw new Error("invalidateWorkspaceRootQueries peers are not configured");
   }
-  const cancelRefetch = opts.cancelRefetch ?? true;
-  const throwOnError = opts.throwOnError ?? false;
-  const suffixes = peers.suffixesByChangeType[opts.changeType] ?? [];
+  let s = peers.i6n[changeType];
   return Promise.all(
-    suffixes.map((suffix) =>
-      queryClient.invalidateQueries(
+    s.map((item) => {
+      return e.invalidateQueries(
         {
-          queryKey: [
-            ...peers!.rootQueryKey(dirs.commonDir, dirs.root, opts.hostKey),
-            suffix,
-          ],
+          queryKey: [...peers.K3n(commonDir, root, hostKey), item],
         },
-        { cancelRefetch, throwOnError },
-      ),
-    ),
+        {
+          cancelRefetch,
+          throwOnError,
+        },
+      );
+    }),
   );
 }

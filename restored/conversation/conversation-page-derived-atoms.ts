@@ -1,30 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export e1 / Hk
+// Materialized via extractFn(internal `Hk`) / export `e1`.
 
 export type BindConversationPageDerivedAtomsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  fEr: (...args: unknown[]) => unknown;
 };
 
 let peers: BindConversationPageDerivedAtomsPeers | null = null;
 
-/** Wire bindConversationPageDerivedAtoms once companions land. */
-export function setBindConversationPageDerivedAtomsPeers(
-  next: BindConversationPageDerivedAtomsPeers,
-): void {
+/** Wire bindConversationPageDerivedAtoms peers once companions land. */
+export function setBindConversationPageDerivedAtomsPeers(next: BindConversationPageDerivedAtomsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `e1` / internal `Hk`.
- * Stage-3 fill for bundle export e1 / Hk
  */
-export function bindConversationPageDerivedAtoms(...args: unknown[]): unknown {
+export function bindConversationPageDerivedAtoms() {
   if (peers == null) {
-    throw new Error(
-      "bindConversationPageDerivedAtoms peers are not configured",
-    );
+    throw new Error("bindConversationPageDerivedAtoms peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Oa(peers.Q, (e, {
+    get: t
+  }) => t(peers.fEr, e)[0] ?? null);
 }

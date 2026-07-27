@@ -17,7 +17,6 @@ import {
   codexWorktreesQueryKey,
   ensureCodexWorktreesQueryKeyInit,
 } from "./codex-worktrees-query-key";
-
 ensureHostRpcClientsInit();
 ensureHostConfigIdInit();
 ensureCodexWorktreesQueryKeyInit();
@@ -37,8 +36,8 @@ export function useCodexWorktrees(
   const queryKey = codexWorktreesQueryKey(hostId, worktreesRoot);
   return useQuery({
     queryKey,
-    queryFn: ({ signal }: { signal?: AbortSignal }) =>
-      getHostRpcClient("git").request({
+    queryFn: ({ signal }: { signal?: AbortSignal }) => {
+      return getHostRpcClient("git").request({
         method: "codex-worktrees",
         params: {
           hostConfig: host,
@@ -46,7 +45,8 @@ export function useCodexWorktrees(
           worktreesRoot,
         },
         signal,
-      }),
+      });
+    },
     staleTime: QueryStaleTimes.INFINITE,
     gcTime: 1_800_000,
   });

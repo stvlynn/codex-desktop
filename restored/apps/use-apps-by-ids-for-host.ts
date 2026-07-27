@@ -1,52 +1,60 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `yei`) / export `RG`.
-
-export type UseAppsByIdsForHostArgs = {
-  appIds: unknown[];
-  enabled?: boolean;
-  hostId?: unknown;
-};
+// Materialized via extractFn(internal `yei`) / export `RG`.
 
 export type UseAppsByIdsForHostPeers = {
-  useHostHasMatchingEntries: (args: { hostId: unknown }) => boolean;
-  useUserQuery: () => { isLoading: boolean; userId?: unknown };
-  appsAtom: unknown;
-  useAtomValue: (
-    atom: unknown,
-    hostId: unknown,
-    options: { enabled: boolean },
-  ) => unknown;
-  selectByIds: (apps: unknown, appIds: unknown[]) => unknown;
+  Cei: (...args: unknown[]) => unknown;
+  Fo: (...args: unknown[]) => unknown;
+  Sei: (...args: unknown[]) => unknown;
+  vei: (...args: unknown[]) => unknown;
+  yM: (...args: unknown[]) => unknown;
+  z7r: (...args: unknown[]) => unknown;
 };
 
 let peers: UseAppsByIdsForHostPeers | null = null;
 
-/** Wire apps-by-ids peers once companions land. */
-export function setUseAppsByIdsForHostPeers(
-  next: UseAppsByIdsForHostPeers,
-): void {
+/** Wire useAppsByIdsForHost peers once companions land. */
+export function setUseAppsByIdsForHostPeers(next: UseAppsByIdsForHostPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `RG` / internal `yei`.
- * Resolve apps by id for a host when entries/user are ready.
  */
-export function useAppsByIdsForHost(args: UseAppsByIdsForHostArgs): unknown {
+export function useAppsByIdsForHost(e: unknown) {
   if (peers == null) {
-    throw new Error("UseAppsByIdsForHost peers are not configured");
+    throw new Error("useAppsByIdsForHost peers are not configured");
   }
-  const { appIds, enabled = true, hostId } = args;
-  const resolvedHostId = hostId ?? "local";
-  const hasEntries = peers.useHostHasMatchingEntries({
-    hostId: resolvedHostId,
-  });
-  const user = peers.useUserQuery();
-  const queryEnabled =
-    enabled && hasEntries && !user.isLoading && user.userId != null;
-  const apps = peers.useAtomValue(peers.appsAtom, resolvedHostId, {
-    enabled: queryEnabled,
-  });
-  if (apps == null) return undefined;
-  return peers.selectByIds(apps, appIds);
+
+  let t = (0, peers.Sei.c)(7),
+    { appIds: n, enabled: r, hostId: i } = e,
+    a = r === void 0 ? !0 : r,
+    o = i ?? `local`,
+    s = peers.yM(),
+    c;
+  t[0] === o
+    ? (c = t[1])
+    : ((c = {
+        hostId: o,
+      }),
+      (t[0] = o),
+      (t[1] = c));
+  let l = peers.z7r(c),
+    u = a && l && !s.isLoading && s.userId != null,
+    d;
+  t[2] === u
+    ? (d = t[3])
+    : ((d = {
+        enabled: u,
+      }),
+      (t[2] = u),
+      (t[3] = d));
+  let f = peers.Fo(peers.Cei, o, d);
+  if (f == null) return;
+  let p;
+  return (
+    t[4] !== f || t[5] !== n
+      ? ((p = peers.vei(f, n)), (t[4] = f), (t[5] = n), (t[6] = p))
+      : (p = t[6]),
+    p
+  );
 }

@@ -1,47 +1,66 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Embedded expanded top tray
+// Materialized via extractFn(internal `RHa`) / export `jM`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type EmbeddedExpandedTopTrayProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindEmbeddedExpandedTopTrayPeers = {
+  $: (...args: unknown[]) => unknown;
+  GHa: (...args: unknown[]) => unknown;
+  QH: (...args: unknown[]) => unknown;
+  WHa: (...args: unknown[]) => unknown;
+  jHa: (...args: unknown[]) => unknown;
+  vw: (...args: unknown[]) => unknown;
 };
+let peers: BindEmbeddedExpandedTopTrayPeers | null = null;
 
-type EmbeddedExpandedTopTrayImpl = (
-  props: EmbeddedExpandedTopTrayProps,
-) => ReactNode;
-let impl: EmbeddedExpandedTopTrayImpl | null = null;
-
-/** Wire the full EmbeddedExpandedTopTray once deeper restore lands. */
-export function bindEmbeddedExpandedTopTray(
-  next: EmbeddedExpandedTopTrayImpl,
+/** Wire bindEmbeddedExpandedTopTray peers once companions land. */
+export function setBindEmbeddedExpandedTopTrayPeers(
+  next: BindEmbeddedExpandedTopTrayPeers,
 ): void {
-  impl = next;
+  peers = next;
 }
 
 /**
  * Bundle export `jM` / internal `RHa`.
- * Embedded expanded top tray; heavy UI via bind.
  */
-export function EmbeddedExpandedTopTray(
-  props: EmbeddedExpandedTopTrayProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
+export function bindEmbeddedExpandedTopTray(props: unknown) {
+  const JHa = peers.jHa;
+  if (peers == null) {
+    throw new Error("bindEmbeddedExpandedTopTray peers are not configured");
+  }
+  let {
+      children,
+      className,
+      chromeVariant = "default",
+      containerRef,
+      padded = true,
+    } = props,
+    l = peers.vw(),
+    u = chromeVariant === "embeddedExpandedTopTray";
+  if (chromeVariant === "expandedTopTray" || u || peers.QH(l.pathname)) {
+    let e = peers.$(
+      "relative flex w-full flex-col overflow-hidden text-sm",
+      className,
+    );
+    let i;
+    return (
+      <JHa
+        embedded={u}
+        expandedTopTray={true}
+        containerRef={containerRef}
+        className={e}
+      >
+        {children}
+      </JHa>
+    );
+  }
+  let d = padded && "p-1",
+    f = peers.$(
+      "border-token-border bg-token-dropdown-background/90 relative flex w-full flex-col overflow-hidden rounded-2xl border text-sm backdrop-blur-sm",
+      d,
+      className,
+    );
   return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-em-scaffold="jM"
-      aria-label="EmbeddedExpandedTopTray"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Embedded expanded top tray
-        </div>
-      )}
+    <div ref={containerRef} className={f}>
+      {children}
     </div>
   );
 }

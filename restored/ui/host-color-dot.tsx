@@ -14,8 +14,7 @@ export type HostColorDotProps = {
 let colorForHost: ((hostId: string) => string | undefined) | null = null;
 
 /** Wire host id → CSS color lookup (bundle `Sus`). */
-export function bindHostColorLookup(
-  lookup: (hostId: string) => string | undefined,
+export function bindHostColorLookup(lookup: (hostId: string) => string | undefined,
 ): void {
   colorForHost = lookup;
 }

@@ -1,26 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export dat / tPt
+// Materialized via extractFn(internal `tPt`) / export `dat`.
 
 export type DeferredDatPeers = {
-  impl: (...args: unknown[]) => unknown;
+  CAt: (...args: unknown[]) => unknown;
+  WNt: (...args: unknown[]) => unknown;
+  dv: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  lv: (...args: unknown[]) => unknown;
+  ov: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredDatPeers | null = null;
 
-/** Wire deferredDat once companions land. */
+/** Wire deferredDat peers once companions land. */
 export function setDeferredDatPeers(next: DeferredDatPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `dat` / internal `tPt`.
- * Stage-3 fill for bundle export dat / tPt
  */
-export function deferredDat(...args: unknown[]): unknown {
+export function deferredDat() {
   if (peers == null) {
     throw new Error("deferredDat peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.ov(), peers.CAt(), peers.WNt(), peers.dv(), peers.lv();
+  });
 }

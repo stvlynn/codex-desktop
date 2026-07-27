@@ -1,42 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export rS / rps
+// Materialized via extractFn(internal `rps`) / export `rS`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindContentProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindContentPeers = {
+  Mo: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  nps: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
-type BindContentImpl = (props: BindContentProps) => ReactNode;
-let impl: BindContentImpl | null = null;
+let peers: BindBindContentPeers | null = null;
 
-/** Wire the full BindContent once deeper restore lands. */
-export function bindBindContent(next: BindContentImpl): void {
-  impl = next;
+/** Wire bindBindContent peers once companions land. */
+export function setBindBindContentPeers(next: BindBindContentPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `rS` / internal `rps`.
- * Stage-3 fill for bundle export rS / rps; heavy UI via bind.
  */
-export function BindContent(props: BindContentProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-et-scaffold="rS"
-      aria-label="BindContent"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export rS / rps
-        </div>
-      )}
-    </div>
-  );
+export function bindBindContent() {
+  if (peers == null) {
+    throw new Error("bindBindContent peers are not configured");
+  }
+
+  return peers.e(() => {
+    nps = peers.r(peers.Mo(), 1);
+  });
 }

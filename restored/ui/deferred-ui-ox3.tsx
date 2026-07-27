@@ -1,41 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export OX / TM
+// Materialized via extractFn(internal `TM`) / export `OX`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BinddeferredUiOX3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBinddeferredUiOX3Peers = {
+  Ft: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  bKr: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
+  xKr: (...args: unknown[]) => unknown;
 };
 
-type BinddeferredUiOX3Impl = (props: BinddeferredUiOX3Props) => ReactNode;
-let impl: BinddeferredUiOX3Impl | null = null;
+let peers: BindBinddeferredUiOX3Peers | null = null;
 
-/** Wire the full BinddeferredUiOX3 once deeper restore lands. */
-export function bindBinddeferredUiOX3(next: BinddeferredUiOX3Impl): void {
-  impl = next;
+/** Wire bindBinddeferredUiOX3 peers once companions land. */
+export function setBindBinddeferredUiOX3Peers(next: BindBinddeferredUiOX3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `OX` / internal `TM`.
- * Stage-3 fill for bundle export OX / TM; heavy UI via bind.
  */
-export function BinddeferredUiOX3(props: BinddeferredUiOX3Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ff-scaffold="OX"
-      aria-label="BinddeferredUiOX3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export OX / TM
-        </div>
-      )}
-    </div>
+export function bindBinddeferredUiOX3() {
+  if (peers == null) {
+    throw new Error("bindBinddeferredUiOX3 peers are not configured");
+  }
+
+  return peers.ka(peers.Q, (e) =>
+    peers.Ft({
+      queryKey: peers.bKr(e),
+      queryFn: ({ signal: t }) => peers.xKr(e, t),
+      staleTime: peers.Hf.ONE_MINUTE,
+    }),
   );
 }

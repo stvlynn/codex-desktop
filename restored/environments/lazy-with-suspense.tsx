@@ -1,41 +1,41 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Stage 3: Wave CA — small real body for React.lazy + optional Suspense wrapper.
-// Deferred companion of environment-labels / lazy route loaders.
+// Materialized via extractFn(internal `WY`) / export `AT`.
 
-import {
-  createElement,
-  lazy,
-  Suspense,
-  type ComponentType,
-  type ReactNode,
-} from "react";
-
-export type LazyWithSuspenseOptions = {
-  fallback?: ReactNode;
-  /** When true, return the bare lazy component (caller supplies Suspense). */
-  suspendToParent?: boolean;
+export type LazyWithSuspensePeers = {
+  D3o: (...args: unknown[]) => unknown;
+  E3o: (...args: unknown[]) => unknown;
 };
+let peers: LazyWithSuspensePeers | null = null;
 
-type AnyProps = Record<string, unknown>;
+/** Wire lazyWithSuspense peers once companions land. */
+export function setLazyWithSuspensePeers(next: LazyWithSuspensePeers): void {
+  peers = next;
+}
 
 /**
- * Wrap an async default-export loader in React.lazy, optionally nesting Suspense.
  * Bundle export `AT` / internal `WY`.
  */
-export function lazyWithSuspense<P extends AnyProps = AnyProps>(
-  loader: () => Promise<ComponentType<P>>,
-  { fallback = null, suspendToParent = false }: LazyWithSuspenseOptions = {},
-): ComponentType<P> {
-  const Lazy = lazy(async () => ({ default: await loader() }));
-  if (suspendToParent) {
-    return Lazy as ComponentType<P>;
+export function lazyWithSuspense(
+  e: unknown,
+  { fallback = null, suspendToParent = false }: Record<string, unknown> = {},
+) {
+  if (peers == null) {
+    throw new Error("lazyWithSuspense peers are not configured");
   }
-  function Suspended(props: P) {
-    return createElement(
-      Suspense,
-      { fallback },
-      createElement(Lazy, props as AnyProps),
-    );
-  }
-  return Suspended as ComponentType<P>;
+  let r = peers.E3o.lazy(async () => {
+    return {
+      default: await e(),
+    };
+  });
+  return suspendToParent
+    ? r
+    : function (props) {
+        const Suspense = peers.E3o.Suspense;
+        const R = r;
+        return (
+          <Suspense fallback={fallback}>
+            <R {...props} />
+          </Suspense>
+        );
+      };
 }

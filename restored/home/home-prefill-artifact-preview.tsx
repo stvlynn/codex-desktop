@@ -8,15 +8,12 @@ import {
   ensureHomePrefillArtifactPreviewDepsInit,
   openArtifactPreview,
 } from "../navigation/open-artifact-preview";
-
 ensureHomePrefillArtifactPreviewDepsInit();
-
 export type HomePrefillArtifactPreviewFile = {
   fsPath?: string | null;
   path?: string | null;
   label?: string;
 };
-
 export type HomePrefillArtifactPreviewProps = {
   hostId: string;
   locationKey: string;
@@ -33,7 +30,6 @@ export function HomePrefillArtifactPreview({
 }: HomePrefillArtifactPreviewProps): null {
   const scope = useAppScope();
   const openedForKeyRef = useRef<string | null>(null);
-
   useEffect(() => {
     if (
       previewFiles == null ||
@@ -46,9 +42,11 @@ export function HomePrefillArtifactPreview({
     for (const file of previewFiles) {
       const path = file.fsPath || file.path;
       if (path == null || path.length === 0) continue;
-      openArtifactPreview(scope, path, { hostId, title: file.label });
+      openArtifactPreview(scope, path, {
+        hostId,
+        title: file.label,
+      });
     }
   }, [hostId, locationKey, previewFiles, scope]);
-
   return null;
 }

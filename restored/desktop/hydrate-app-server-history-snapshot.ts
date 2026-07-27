@@ -1,76 +1,51 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `snc`) / export `im`.
+// Materialized via extractFn(internal `snc`) / export `im`.
 
 export type HydrateAppServerHistorySnapshotPeers = {
-  getHistorySnapshots: () => unknown;
-  conversationAtom: unknown;
-  desktopStateAtom: unknown;
-  hydrationStatusAtom: unknown;
-  gateId: string;
-  createController: (
-    conversation: unknown,
-    snapshots: unknown,
-  ) => {
-    hydrate: (
-      conversationId: unknown,
-      options: unknown,
-      onClear: () => void,
-      onError: (error: unknown) => void,
-    ) => {
-      applied: Promise<boolean>;
-      dispose: () => void;
-    };
-  };
-  markCachedHistoryApplied: (conversationId: unknown) => void;
+  Jfs: (...args: unknown[]) => unknown;
+  Th: (...args: unknown[]) => unknown;
+  anc: (...args: unknown[]) => unknown;
+  appServerHistorySnapshots: (...args: unknown[]) => unknown;
+  checkGate: (...args: unknown[]) => unknown;
+  fS: (...args: unknown[]) => unknown;
+  gp: (...args: unknown[]) => unknown;
+  tD: (...args: unknown[]) => unknown;
 };
 
 let peers: HydrateAppServerHistorySnapshotPeers | null = null;
 
 /** Wire hydrateAppServerHistorySnapshot peers once companions land. */
-export function setHydrateAppServerHistorySnapshotPeers(
-  next: HydrateAppServerHistorySnapshotPeers,
-): void {
+export function setHydrateAppServerHistorySnapshotPeers(next: HydrateAppServerHistorySnapshotPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `im` / internal `snc`.
- * Hydrate an app-server history snapshot when the gate is enabled.
  */
-export function hydrateAppServerHistorySnapshot(
-  store: {
-    get: (atom: unknown, key?: unknown) => any;
-    set: (atom: unknown, key: unknown, value: unknown) => void;
-  },
-  hostKey: unknown,
-  conversationId: unknown,
-  options: unknown,
-): () => void {
+export function hydrateAppServerHistorySnapshot(e: unknown, t: unknown, n: unknown, r: unknown) {
   if (peers == null) {
-    throw new Error("HydrateAppServerHistorySnapshot peers are not configured");
+    throw new Error("hydrateAppServerHistorySnapshot peers are not configured");
   }
-  const snapshots = peers.getHistorySnapshots();
-  const conversation = store.get(peers.conversationAtom, hostKey);
-  if (
-    conversation == null ||
-    snapshots == null ||
-    store.get(peers.desktopStateAtom)?.checkGate(peers.gateId) !== true
-  ) {
+
+  let i = peers.gp?.appServerHistorySnapshots,
+    a = e.get(peers.tD, t);
+  if (a == null || i == null || e.get(peers.Th)?.checkGate(`416252813`) !== !0)
     return () => {};
-  }
-  const controller = (conversation.historySnapshotHydrationController ??=
-    peers.createController(conversation, snapshots));
-  const handle = controller.hydrate(
-    conversationId,
-    options,
-    () => store.set(peers!.hydrationStatusAtom, conversationId, null),
-    (error) => store.set(peers!.hydrationStatusAtom, conversationId, error),
+  let o = (a.historySnapshotHydrationController ??= new peers.anc(
+    a,
+    i,
+  )).hydrate(
+    n,
+    r,
+    () => e.set(peers.Jfs, n, null),
+    (t) => e.set(peers.Jfs, n, t),
   );
-  handle.applied.then((applied) => {
-    if (applied) peers!.markCachedHistoryApplied(conversationId);
-  });
-  return () => {
-    handle.dispose();
-    store.set(peers!.hydrationStatusAtom, conversationId, null);
-  };
+  return (
+    o.applied.then((e) => {
+      e && peers.fS.markCachedHistoryApplied(n);
+    }),
+    () => {
+      (o.dispose(), e.set(peers.Jfs, n, null));
+    }
+  );
 }

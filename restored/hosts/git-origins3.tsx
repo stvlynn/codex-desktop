@@ -1,42 +1,47 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export x$ / xA
+// Materialized via extractFn(internal `xA`) / export `x$`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type GitOrigins3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindGitOrigins3Peers = {
+  $f: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  dirs: (...args: unknown[]) => unknown;
+  gAr: (...args: unknown[]) => unknown;
+  hostId: (...args: unknown[]) => unknown;
+  ka: (...args: unknown[]) => unknown;
+  rp: (...args: unknown[]) => unknown;
 };
 
-type GitOrigins3Impl = (props: GitOrigins3Props) => ReactNode;
-let impl: GitOrigins3Impl | null = null;
+let peers: BindGitOrigins3Peers | null = null;
 
-/** Wire the full GitOrigins3 once deeper restore lands. */
-export function bindGitOrigins3(next: GitOrigins3Impl): void {
-  impl = next;
+/** Wire bindGitOrigins3 peers once companions land. */
+export function setBindGitOrigins3Peers(next: BindGitOrigins3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `x$` / internal `xA`.
- * Stage-3 fill for bundle export x$ / xA; heavy UI via bind.
  */
-export function GitOrigins3(props: GitOrigins3Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="x$"
-      aria-label="GitOrigins3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export x$ / xA
-        </div>
-      )}
-    </div>
-  );
+export function bindGitOrigins3() {
+  if (peers == null) {
+    throw new Error("bindGitOrigins3 peers are not configured");
+  }
+
+  return peers.ka(peers.Q, ({ params: e, source: t }, { queryClient: n }) => ({
+    enabled: e?.dirs == null || e.dirs.length > 0,
+    meta: {
+      gitOrigins: {
+        dirs: e?.dirs,
+        hostId: e?.hostId,
+      },
+    },
+    placeholderData: () => peers.gAr(n, e),
+    queryFn: () =>
+      peers.rp(`git-origins`, {
+        params: e,
+        source: t,
+      }),
+    queryKey: peers.$f(`git-origins`, e),
+    staleTime: peers.Hf.FIVE_SECONDS,
+  }));
 }

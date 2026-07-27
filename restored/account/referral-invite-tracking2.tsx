@@ -17,9 +17,7 @@ type ReferralInviteTracking2Impl = (
 let impl: ReferralInviteTracking2Impl | null = null;
 
 /** Wire the full ReferralInviteTracking2 once deeper restore lands. */
-export function bindReferralInviteTracking2(
-  next: ReferralInviteTracking2Impl,
-): void {
+export function bindReferralInviteTracking2(next: ReferralInviteTracking2Impl): void {
   impl = next;
 }
 
@@ -27,9 +25,7 @@ export function bindReferralInviteTracking2(
  * Bundle export `kv` / internal `_Os`.
  * Stage-3 fill for bundle export kv / _Os; heavy UI via bind.
  */
-export function ReferralInviteTracking2(
-  props: ReferralInviteTracking2Props,
-): ReactElement {
+export function ReferralInviteTracking2(props: ReferralInviteTracking2Props): ReactElement {
   if (impl != null) return impl(props) as ReactElement;
   const { className, children } = props;
   return (

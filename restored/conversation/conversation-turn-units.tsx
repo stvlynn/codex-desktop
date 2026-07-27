@@ -8,9 +8,7 @@ type AnyProps = Record<string, unknown>;
 
 let UnitsImpl: ComponentType<AnyProps> | null = null;
 
-export function setConversationTurnUnitsImpl(
-  impl: ComponentType<AnyProps>,
-): void {
+export function setConversationTurnUnitsImpl(impl: ComponentType<AnyProps>): void {
   UnitsImpl = impl;
 }
 
@@ -25,9 +23,7 @@ export type ConversationTurnUnitsProps = {
   [key: string]: unknown;
 };
 
-export function ConversationTurnUnits(
-  props: ConversationTurnUnitsProps,
-): ReactNode {
+export function ConversationTurnUnits(props: ConversationTurnUnitsProps): ReactNode {
   if (UnitsImpl == null) {
     throw new Error("ConversationTurnUnits impl has not been configured");
   }

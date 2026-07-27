@@ -1,48 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export TS / ius
+// Materialized via extractFn(internal `ius`) / export `TS`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindRemoteHostGlobeColorByHostIdProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindRemoteHostGlobeColorByHostIdPeers = {
+  JR: (...args: unknown[]) => unknown;
+  WH: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  rus: (...args: unknown[]) => unknown;
 };
 
-type BindRemoteHostGlobeColorByHostIdImpl = (
-  props: BindRemoteHostGlobeColorByHostIdProps,
-) => ReactNode;
-let impl: BindRemoteHostGlobeColorByHostIdImpl | null = null;
+let peers: BindBindRemoteHostGlobeColorByHostIdPeers | null = null;
 
-/** Wire the full BindRemoteHostGlobeColorByHostId once deeper restore lands. */
-export function bindBindRemoteHostGlobeColorByHostId(
-  next: BindRemoteHostGlobeColorByHostIdImpl,
-): void {
-  impl = next;
+/** Wire bindBindRemoteHostGlobeColorByHostId peers once companions land. */
+export function setBindBindRemoteHostGlobeColorByHostIdPeers(next: BindBindRemoteHostGlobeColorByHostIdPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `TS` / internal `ius`.
- * Stage-3 fill for bundle export TS / ius; heavy UI via bind.
  */
-export function BindRemoteHostGlobeColorByHostId(
-  props: BindRemoteHostGlobeColorByHostIdProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="TS"
-      aria-label="BindRemoteHostGlobeColorByHostId"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export TS / ius
-        </div>
-      )}
-    </div>
-  );
+export function bindBindRemoteHostGlobeColorByHostId() {
+  if (peers == null) {
+    throw new Error("bindBindRemoteHostGlobeColorByHostId peers are not configured");
+  }
+
+  return peers.e(() => {
+    rus = peers.r(peers.JR(), 1), peers.WH();
+  });
 }

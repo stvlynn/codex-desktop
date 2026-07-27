@@ -1,38 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `Z$s`) / export `Zh`.
+// Materialized via extractFn(internal `Z$s`) / export `Zh`.
 
-export type SetKeyedAtomValueWithCleanupPeers = {
-  familyAtom: unknown;
+export type ZhPeers = {
+  c1s: (...args: unknown[]) => unknown;
 };
+let peers: ZhPeers | null = null;
 
-let peers: SetKeyedAtomValueWithCleanupPeers | null = null;
-
-/** Wire setKeyedAtomValueWithCleanup peers once companions land. */
-export function setSetKeyedAtomValueWithCleanupPeers(
-  next: SetKeyedAtomValueWithCleanupPeers,
-): void {
+/** Wire Zh peers once companions land. */
+export function setZhPeers(next: ZhPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Zh` / internal `Z$s`.
- * Set a keyed atom value and return a cleanup that clears it.
  */
-export function setKeyedAtomValueWithCleanup(
-  store: {
-    get: (atom: unknown, key: unknown) => unknown;
-    set: (atom: unknown, key: unknown, value: unknown) => void;
-  },
-  key: unknown,
-  value: unknown,
-): () => void {
+export function Zh(e: unknown, t: unknown, n: unknown) {
   if (peers == null) {
-    throw new Error("SetKeyedAtomValueWithCleanup peers are not configured");
+    throw new Error("Zh peers are not configured");
   }
-  store.set(peers.familyAtom, key, value);
-  return () => {
-    if (store.get(peers.familyAtom, key) === value) {
-      store.set(peers.familyAtom, key, null);
+  return (
+    e.set(peers.c1s, t, n),
+    () => {
+      e.get(peers.c1s, t) === n && e.set(peers.c1s, t, null);
     }
-  };
+  );
 }

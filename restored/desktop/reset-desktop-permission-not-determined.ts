@@ -1,36 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `Vsc`) / export `$f`.
+// Materialized via extractFn(internal `Vsc`) / export `$f`.
 
 export type ResetDesktopPermissionNotDeterminedPeers = {
-  clearPermissionCaches: () => void;
-  permissionStatusAtom: unknown;
-  micDeniedAtom: unknown;
-  cameraDeniedAtom: unknown;
+  Hsc: (...args: unknown[]) => unknown;
+  Rsc: (...args: unknown[]) => unknown;
+  Wsc: (...args: unknown[]) => unknown;
+  zsc: (...args: unknown[]) => unknown;
 };
 
 let peers: ResetDesktopPermissionNotDeterminedPeers | null = null;
 
-/** Wire desktop permission reset peers once companions land. */
-export function setResetDesktopPermissionNotDeterminedPeers(
-  next: ResetDesktopPermissionNotDeterminedPeers,
-): void {
+/** Wire resetDesktopPermissionNotDetermined peers once companions land. */
+export function setResetDesktopPermissionNotDeterminedPeers(next: ResetDesktopPermissionNotDeterminedPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `$f` / internal `Vsc`.
- * Reset desktop permission atoms to not-determined / false.
  */
-export function resetDesktopPermissionNotDetermined(store: {
-  set: (atom: unknown, value: unknown) => void;
-}): void {
+export function resetDesktopPermissionNotDetermined(e: unknown) {
   if (peers == null) {
-    throw new Error(
-      "ResetDesktopPermissionNotDetermined peers are not configured",
-    );
+    throw new Error("resetDesktopPermissionNotDetermined peers are not configured");
   }
-  peers.clearPermissionCaches();
-  store.set(peers.permissionStatusAtom, "not-determined");
-  store.set(peers.micDeniedAtom, false);
-  store.set(peers.cameraDeniedAtom, false);
+
+  peers.Hsc(), e.set(peers.Wsc, `not-determined`), e.set(peers.Rsc, !1), e.set(peers.zsc, !1);
 }

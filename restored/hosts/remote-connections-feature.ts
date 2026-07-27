@@ -11,8 +11,7 @@ import { readConfigFeatureFlag } from "../config/read-config-feature-flag";
  * Bundle `uGr` / export `eZ`.
  * Thin wrapper around the Slingshot Statsig gate id.
  */
-export function isSlingshotEnabled(
-  isGateEnabled: (gateId: string) => boolean,
+export function isSlingshotEnabled(isGateEnabled: (gateId: string) => boolean,
 ): boolean {
   return isGateEnabled(SLINGSHOT_FEATURE_GATE_ID);
 }

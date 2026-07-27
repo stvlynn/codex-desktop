@@ -17,9 +17,7 @@ type PersonalizationSettingsImpl = (
 let impl: PersonalizationSettingsImpl | null = null;
 
 /** Wire the full PersonalizationSettings once deeper companion restore lands. */
-export function bindPersonalizationSettings(
-  next: PersonalizationSettingsImpl,
-): void {
+export function bindPersonalizationSettings(next: PersonalizationSettingsImpl): void {
   impl = next;
 }
 

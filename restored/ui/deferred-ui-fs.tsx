@@ -1,41 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export fs / N8
+// Materialized via extractFn(internal `N8`) / export `fs`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiFsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiFsPeers = {
+  J: (...args: unknown[]) => unknown;
+  M8: (...args: unknown[]) => unknown;
+  Nk: (...args: unknown[]) => unknown;
+  af: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  nFl: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  sd: (...args: unknown[]) => unknown;
+  tFl: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiFsImpl = (props: BindDeferredUiFsProps) => ReactNode;
-let impl: BindDeferredUiFsImpl | null = null;
+let peers: BindBindDeferredUiFsPeers | null = null;
 
-/** Wire the full BindDeferredUiFs once deeper restore lands. */
-export function bindBindDeferredUiFs(next: BindDeferredUiFsImpl): void {
-  impl = next;
+/** Wire bindBindDeferredUiFs peers once companions land. */
+export function setBindBindDeferredUiFsPeers(next: BindBindDeferredUiFsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `fs` / internal `N8`.
- * Stage-3 fill for bundle export fs / N8; heavy UI via bind.
  */
-export function BindDeferredUiFs(props: BindDeferredUiFsProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fe-scaffold="fs"
-      aria-label="BindDeferredUiFs"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export fs / N8
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiFs() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiFs peers are not configured");
+  }
+
+  return peers.e(() => {
+    tFl = peers.c(), peers.sd(), peers.af(), nFl = peers.r(peers.o(), 1), peers.Nk(), M8 = peers.J();
+  });
 }

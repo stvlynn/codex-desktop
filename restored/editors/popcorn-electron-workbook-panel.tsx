@@ -14,9 +14,7 @@ type PopcornElectronWorkbookPanelImpl = (
 let impl: PopcornElectronWorkbookPanelImpl | null = null;
 
 /** Wire the full PopcornElectronWorkbookPanel once deeper restore lands. */
-export function bindPopcornElectronWorkbookPanel(
-  next: PopcornElectronWorkbookPanelImpl,
-): void {
+export function bindPopcornElectronWorkbookPanel(next: PopcornElectronWorkbookPanelImpl): void {
   impl = next;
 }
 
@@ -24,9 +22,7 @@ export function bindPopcornElectronWorkbookPanel(
  * Bindable PopcornElectronWorkbookPanel.
  * Alias ownership unresolved — do not invent extractFn body.
  */
-export function PopcornElectronWorkbookPanel(
-  props: PopcornElectronWorkbookPanelProps,
-): ReactElement {
+export function PopcornElectronWorkbookPanel(props: PopcornElectronWorkbookPanelProps): ReactElement {
   if (impl == null) {
     return (
       <div

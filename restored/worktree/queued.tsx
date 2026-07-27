@@ -1,42 +1,39 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Hg / lJs
+// Materialized via extractFn(internal `lJs`) / export `Hg`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindQueuedProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindQueuedPeers = {
+  $u: (...args: unknown[]) => unknown;
+  E$: (...args: unknown[]) => unknown;
+  Eqs: (...args: unknown[]) => unknown;
+  Iqs: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Pp: (...args: unknown[]) => unknown;
+  Vm: (...args: unknown[]) => unknown;
+  Yqs: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  cA: (...args: unknown[]) => unknown;
+  cJs: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  k$: (...args: unknown[]) => unknown;
+  kqs: (...args: unknown[]) => unknown;
 };
 
-type BindQueuedImpl = (props: BindQueuedProps) => ReactNode;
-let impl: BindQueuedImpl | null = null;
+let peers: BindBindQueuedPeers | null = null;
 
-/** Wire the full BindQueued once deeper restore lands. */
-export function bindBindQueued(next: BindQueuedImpl): void {
-  impl = next;
+/** Wire bindBindQueued peers once companions land. */
+export function setBindBindQueuedPeers(next: BindBindQueuedPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Hg` / internal `lJs`.
- * Stage-3 fill for bundle export Hg / lJs; heavy UI via bind.
  */
-export function BindQueued(props: BindQueuedProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fa-scaffold="Hg"
-      aria-label="BindQueued"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Hg / lJs
-        </div>
-      )}
-    </div>
-  );
+export function bindBindQueued() {
+  if (peers == null) {
+    throw new Error("bindBindQueued peers are not configured");
+  }
+
+  return peers.e(() => {
+    cJs = peers.c(), peers.$u(), peers.Pp(), peers.cA(), peers.Iqs(), peers.Vm(), peers.Eqs(), peers.kqs(), peers.E$(), peers.Yqs(), k$ = peers.J();
+  });
 }

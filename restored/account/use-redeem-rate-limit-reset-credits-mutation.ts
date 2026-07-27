@@ -21,9 +21,7 @@ export type UseRedeemRateLimitResetCreditsMutationPeers = {
 let peers: UseRedeemRateLimitResetCreditsMutationPeers | null = null;
 
 /** Wire useRedeemRateLimitResetCreditsMutation peers once companions land. */
-export function setUseRedeemRateLimitResetCreditsMutationPeers(
-  next: UseRedeemRateLimitResetCreditsMutationPeers,
-): void {
+export function setUseRedeemRateLimitResetCreditsMutationPeers(next: UseRedeemRateLimitResetCreditsMutationPeers): void {
   peers = next;
 }
 

@@ -1,54 +1,46 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `HX`) / export `HS`.
-
-import type { ReactElement, ReactNode } from "react";
-
-export type ProjectMarkerIconProps = {
-  className?: string;
-  fallbackIcon?: ReactNode;
-  isRemoteProject?: boolean;
-  markerClassName?: string;
-  projectId: unknown;
-};
+// Materialized via extractFn(internal `HX`) / export `HS`.
 
 export type ProjectMarkerIconPeers = {
-  isLocalGizmoProject: (projectId: unknown) => boolean;
-  LocalGizmoProjectIcon: (props: Record<string, unknown>) => ReactNode;
-  ProjectMarkerFallbackIcon: (props: Record<string, unknown>) => ReactNode;
+  $as: (...args: unknown[]) => unknown;
+  Qas: (...args: unknown[]) => unknown;
+  eos: (...args: unknown[]) => unknown;
+  tos: (...args: unknown[]) => unknown;
+  vH: (...args: unknown[]) => unknown;
 };
-
 let peers: ProjectMarkerIconPeers | null = null;
 
-/** Wire project marker icon peers once companions land. */
+/** Wire ProjectMarkerIcon peers once companions land. */
 export function setProjectMarkerIconPeers(next: ProjectMarkerIconPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `HS` / internal `HX`.
- * Render local-gizmo or fallback project marker icon.
  */
-export function ProjectMarkerIcon(props: ProjectMarkerIconProps): ReactElement {
+export function ProjectMarkerIcon(props: unknown) {
+  const Qas = peers.Qas;
+  const As = peers.$as;
   if (peers == null) {
     throw new Error("ProjectMarkerIcon peers are not configured");
   }
-  const {
-    className,
-    fallbackIcon,
-    isRemoteProject,
-    markerClassName,
-    projectId,
-  } = props;
-  if (!isRemoteProject && peers.isLocalGizmoProject(projectId)) {
-    return peers.LocalGizmoProjectIcon({
-      className,
-      fallbackIcon,
-      projectId,
-    }) as ReactElement;
+  let { className, fallbackIcon, isRemoteProject, markerClassName, projectId } =
+    props;
+  if (!isRemoteProject && peers.vH(projectId)) {
+    let e;
+    return (
+      <Qas
+        className={className}
+        fallbackIcon={fallbackIcon}
+        projectId={projectId}
+      />
+    );
   }
-  return peers.ProjectMarkerFallbackIcon({
-    fallbackIcon,
-    markerClassName,
-    projectId,
-  }) as ReactElement;
+  return (
+    <As
+      fallbackIcon={fallbackIcon}
+      markerClassName={markerClassName}
+      projectId={projectId}
+    />
+  );
 }

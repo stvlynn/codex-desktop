@@ -1,28 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export e4 / _D
+// Materialized via extractFn(internal `_D`) / export `e4`.
 
 export type BindE4BindableHelperPeers = {
-  impl: (...args: unknown[]) => unknown;
+  JE: (...args: unknown[]) => unknown;
 };
 
 let peers: BindE4BindableHelperPeers | null = null;
 
-/** Wire bindE4BindableHelper once companions land. */
-export function setBindE4BindableHelperPeers(
-  next: BindE4BindableHelperPeers,
-): void {
+/** Wire bindE4BindableHelper peers once companions land. */
+export function setBindE4BindableHelperPeers(next: BindE4BindableHelperPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `e4` / internal `_D`.
- * Stage-3 fill for bundle export e4 / _D
  */
-export function bindE4BindableHelper(...args: unknown[]): unknown {
+export function bindE4BindableHelper() {
   if (peers == null) {
     throw new Error("bindE4BindableHelper peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.JE(({
+    title: e
+  }) => e);
 }

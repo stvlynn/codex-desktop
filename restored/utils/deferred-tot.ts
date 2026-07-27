@@ -1,26 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export tot / dAt
+// Materialized via extractFn(internal `dAt`) / export `tot`.
 
 export type DeferredTotPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Hkt: (...args: unknown[]) => unknown;
+  Kkt: (...args: unknown[]) => unknown;
+  Qkt: (...args: unknown[]) => unknown;
+  Wkt: (...args: unknown[]) => unknown;
+  Xkt: (...args: unknown[]) => unknown;
+  aAt: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  lAt: (...args: unknown[]) => unknown;
+  sAt: (...args: unknown[]) => unknown;
+  tAt: (...args: unknown[]) => unknown;
+  uAt: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredTotPeers | null = null;
 
-/** Wire deferredTot once companions land. */
+/** Wire deferredTot peers once companions land. */
 export function setDeferredTotPeers(next: DeferredTotPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `tot` / internal `dAt`.
- * Stage-3 fill for bundle export tot / dAt
  */
-export function deferredTot(...args: unknown[]): unknown {
+export function deferredTot() {
   if (peers == null) {
     throw new Error("deferredTot peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Hkt(), peers.Wkt(), peers.Kkt(), peers.Xkt(), peers.Qkt(), peers.aAt(), peers.tAt(), peers.sAt(), lAt = Array.prototype.map, uAt = [`y`, `z`, `a`, `f`, `p`, `n`, `µ`, `m`, ``, `k`, `M`, `G`, `T`, `P`, `E`, `Z`, `Y`];
+  });
 }

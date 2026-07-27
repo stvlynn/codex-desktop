@@ -1,42 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export hX / qqr
+// Materialized via extractFn(internal `qqr`) / export `hX`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredhXProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredhXPeers = {
+  HT: (...args: unknown[]) => unknown;
+  Kqr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredhXImpl = (props: BindDeferredhXProps) => ReactNode;
-let impl: BindDeferredhXImpl | null = null;
+let peers: BindBindDeferredhXPeers | null = null;
 
-/** Wire the full BindDeferredhX once deeper restore lands. */
-export function bindBindDeferredhX(next: BindDeferredhXImpl): void {
-  impl = next;
+/** Wire bindBindDeferredhX peers once companions land. */
+export function setBindBindDeferredhXPeers(next: BindBindDeferredhXPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `hX` / internal `qqr`.
- * Stage-3 fill for bundle export hX / qqr; heavy UI via bind.
  */
-export function BindDeferredhX(props: BindDeferredhXProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ey-scaffold="hX"
-      aria-label="BindDeferredhX"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export hX / qqr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredhX() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredhX peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.HT(), Kqr = new Map([[`csv`, `csv`], [`docx`, `docx`], [`ipynb`, `ipynb`], [`pdf`, `pdf`], [`pptx`, `pptx`], [`tex`, `tex`], [`tsv`, `tsv`], [`xlsm`, `xlsx`], [`xlsx`, `xlsx`]]);
+  });
 }

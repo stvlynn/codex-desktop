@@ -16,9 +16,6 @@ export function defaultModeRequestUserInputEnabled(
 ): boolean {
   return (
     override ??
-    getPersistedAtomItem(
-      DEFAULT_MODE_REQUEST_USER_INPUT_ENABLED_KEY,
-      DEFAULT_MODE_REQUEST_USER_INPUT_ENABLED_FALLBACK,
-    )
+    getPersistedAtomItem("default-mode-request-user-input-enabled", true)
   );
 }

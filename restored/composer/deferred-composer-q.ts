@@ -1,28 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export $q / o2r
+// Materialized via extractFn(internal `o2r`) / export `$q`.
 
 export type BindDeferredComposerQPeers = {
-  impl: (...args: unknown[]) => unknown;
+  GM: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  yN: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredComposerQPeers | null = null;
 
-/** Wire bindDeferredComposerQ once companions land. */
-export function setBindDeferredComposerQPeers(
-  next: BindDeferredComposerQPeers,
-): void {
+/** Wire bindDeferredComposerQ peers once companions land. */
+export function setBindDeferredComposerQPeers(next: BindDeferredComposerQPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `$q` / internal `o2r`.
- * Stage-3 fill for bundle export $q / o2r
  */
-export function bindDeferredComposerQ(...args: unknown[]): unknown {
+export function bindDeferredComposerQ() {
   if (peers == null) {
     throw new Error("bindDeferredComposerQ peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ma(peers.GM, ({
+    get: e
+  }) => e(peers.yN).asyncThreadStartingState);
 }

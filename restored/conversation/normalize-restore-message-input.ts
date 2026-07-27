@@ -1,23 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EG — real body via extractFn(internal `nnn`) / export `x9`.
+// Materialized via extractFn(internal `nnn`) / export `x9`.
 
 export type NormalizeRestoreMessageInputPeers = {
-  normalizeInput: (args: {
-    input: unknown;
-    commentAttachments: unknown;
-    shouldStripImageDisplayPlaceholderLines: boolean;
-    sentAtMs: null;
-  }) => unknown;
-  applyToMessage: (
-    message: unknown,
-    normalized: unknown,
-    opts: { acceptMissingImageInputs: boolean },
-  ) => unknown;
+  inn: (...args: unknown[]) => unknown;
+  v_: (...args: unknown[]) => unknown;
 };
-
 let peers: NormalizeRestoreMessageInputPeers | null = null;
 
-/** Wire restore-message normalize peers once companions land. */
+/** Wire normalizeRestoreMessageInput peers once companions land. */
 export function setNormalizeRestoreMessageInputPeers(
   next: NormalizeRestoreMessageInputPeers,
 ): void {
@@ -26,32 +16,26 @@ export function setNormalizeRestoreMessageInputPeers(
 
 /**
  * Bundle export `x9` / internal `nnn`.
- * Normalize restore-message input and apply to the message draft.
  */
 export function normalizeRestoreMessageInput(
-  message: { restoreMessage: { context: { commentAttachments: unknown } } },
-  input: unknown,
-  opts: {
-    acceptMissingImageInputs?: boolean;
-    commentAttachments?: unknown;
-    shouldStripImageDisplayPlaceholderLines?: boolean;
-  } = {},
-): unknown {
-  if (peers == null) {
-    throw new Error("NormalizeRestoreMessageInput peers are not configured");
-  }
-  const {
+  e: unknown,
+  t: unknown,
+  {
     acceptMissingImageInputs = false,
-    commentAttachments = message.restoreMessage.context.commentAttachments,
+    commentAttachments = e.restoreMessage.context.commentAttachments,
     shouldStripImageDisplayPlaceholderLines = false,
-  } = opts;
-  const normalized = peers.normalizeInput({
-    input,
+  }: Record<string, unknown> = {},
+) {
+  if (peers == null) {
+    throw new Error("normalizeRestoreMessageInput peers are not configured");
+  }
+  let a = peers.v_({
+    input: t,
     commentAttachments,
     shouldStripImageDisplayPlaceholderLines,
     sentAtMs: null,
   });
-  return peers.applyToMessage(message, normalized, {
+  return peers.inn(e.compareKey, a.compareKey, {
     acceptMissingImageInputs,
   });
 }

@@ -1,25 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export wp / ooc
+// Materialized via extractFn(internal `ooc`) / export `wp`.
 
 export type BindDeferredUiWpPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  aoc: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  ioc: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiWpPeers | null = null;
 
-/** Wire bindDeferredUiWp once companions land. */
+/** Wire bindDeferredUiWp peers once companions land. */
 export function setBindDeferredUiWpPeers(next: BindDeferredUiWpPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `wp` / internal `ooc`.
- * Stage-3 fill for bundle export wp / ooc
  */
-export function bindDeferredUiWp(...args: unknown[]): unknown {
+export function bindDeferredUiWp() {
   if (peers == null) {
     throw new Error("bindDeferredUiWp peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ho(), peers.ed(), ioc = {
+      status: `idle`
+    }, aoc = peers.Ta(peers.Q, peers.ioc);
+  });
 }

@@ -1,35 +1,17 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EO — real body via extractFn(internal `bk`) / export `F1`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `bk`) / export `F1`.
 
 export type SortableContextPeers = {
-  useDndContext: () => {
-    active: { id: unknown } | null;
-    dragOverlay: { rect: unknown };
-    droppableRects: unknown;
-    over: { id: unknown } | null;
-    measureDroppableContainers: (ids: unknown[]) => void;
-  };
-  resolveContainerId: (namespace: unknown, id: unknown) => unknown;
-  defaultStrategy: unknown;
-  namespace: unknown;
-  itemsEqual: (a: unknown[], b: unknown[]) => boolean;
-  normalizeDisabled: (disabled: unknown) => {
-    draggable: boolean;
-    droppable: boolean;
-  };
-  useIsomorphicLayoutEffect: (effect: () => void, deps: unknown[]) => void;
-  sortedRects: (items: unknown[], rects: unknown) => unknown;
-  Provider: unknown;
-  createElement: (
-    type: unknown,
-    props: { value: unknown },
-    children: ReactNode,
-  ) => ReactElement;
-  useMemo: <T>(factory: () => T, deps: unknown[]) => T;
-  useRef: <T>(value: T) => { current: T };
-  useEffect: (effect: () => void, deps: unknown[]) => void;
+  BSr: (...args: unknown[]) => unknown;
+  DSr: (...args: unknown[]) => unknown;
+  HBt: (...args: unknown[]) => unknown;
+  OSr: (...args: unknown[]) => unknown;
+  RSr: (...args: unknown[]) => unknown;
+  Sk: (...args: unknown[]) => unknown;
+  THt: (...args: unknown[]) => unknown;
+  TSr: (...args: unknown[]) => unknown;
+  VSr: (...args: unknown[]) => unknown;
+  Wv: (...args: unknown[]) => unknown;
 };
 
 let peers: SortableContextPeers | null = null;
@@ -41,83 +23,64 @@ export function setSortableContextPeers(next: SortableContextPeers): void {
 
 /**
  * Bundle export `F1` / internal `bk`.
- * Provide sortable DnD context derived from active/over items.
  */
-export type SortableContextProps = {
-  children?: ReactNode;
-  id?: unknown;
-  items: Array<unknown | { id: unknown }>;
-  strategy?: unknown;
-  disabled?: unknown;
-};
-
-export function SortableContext(props: SortableContextProps): ReactElement {
+export function SortableContext(e: unknown) {
   if (peers == null) {
     throw new Error("SortableContext peers are not configured");
   }
-  const {
-    children,
-    id,
-    items,
-    strategy = peers.defaultStrategy,
-    disabled = false,
-  } = props;
-  const {
-    active,
-    dragOverlay,
-    droppableRects,
-    over,
-    measureDroppableContainers,
-  } = peers.useDndContext();
-  const containerId = peers.resolveContainerId(peers.namespace, id);
-  const useDragOverlay = dragOverlay.rect !== null;
-  const itemIds = peers.useMemo(
-    () =>
-      items.map((item) =>
-        typeof item === "object" && item != null && "id" in item
-          ? (item as { id: unknown }).id
-          : item,
-      ),
-    [items],
-  );
-  const isDragging = active != null;
-  const activeIndex = active ? itemIds.indexOf(active.id) : -1;
-  const overIndex = over ? itemIds.indexOf(over.id) : -1;
-  const previousItems = peers.useRef(itemIds);
-  const itemsChanged = !peers.itemsEqual(itemIds, previousItems.current);
-  const disableTransforms =
-    (overIndex !== -1 && activeIndex === -1) || itemsChanged;
-  const normalizedDisabled = peers.normalizeDisabled(disabled);
-  peers.useIsomorphicLayoutEffect(() => {
-    if (itemsChanged && isDragging) measureDroppableContainers(itemIds);
-  }, [itemsChanged, itemIds, isDragging, measureDroppableContainers]);
-  peers.useEffect(() => {
-    previousItems.current = itemIds;
-  }, [itemIds]);
-  const value = peers.useMemo(
+
+  let {
+      children: t,
+      id: n,
+      items: r,
+      strategy: i = peers.RSr,
+      disabled: a = !1,
+    } = e,
+    {
+      active: o,
+      dragOverlay: s,
+      droppableRects: c,
+      over: l,
+      measureDroppableContainers: u,
+    } = peers.THt(),
+    d = peers.HBt(peers.BSr, n),
+    f = s.rect !== null,
+    p = (0, peers.Sk.useMemo)(
+      () => r.map((e) => (typeof e == `object` && `id` in e ? e.id : e)),
+      [r],
+    ),
+    m = o != null,
+    h = o ? p.indexOf(o.id) : -1,
+    g = l ? p.indexOf(l.id) : -1,
+    _ = (0, peers.Sk.useRef)(p),
+    v = !peers.DSr(p, _.current),
+    y = (g !== -1 && h === -1) || v,
+    b = peers.OSr(a);
+  (peers.Wv(() => {
+    v && m && u(p);
+  }, [v, p, m, u]),
+    (0, peers.Sk.useEffect)(() => {
+      _.current = p;
+    }, [p]));
+  let x = (0, peers.Sk.useMemo)(
     () => ({
-      activeIndex,
-      containerId,
-      disabled: normalizedDisabled,
-      disableTransforms,
-      items: itemIds,
-      overIndex,
-      useDragOverlay,
-      sortedRects: peers!.sortedRects(itemIds, droppableRects),
-      strategy,
+      activeIndex: h,
+      containerId: d,
+      disabled: b,
+      disableTransforms: y,
+      items: p,
+      overIndex: g,
+      useDragOverlay: f,
+      sortedRects: peers.TSr(p, c),
+      strategy: i,
     }),
-    [
-      activeIndex,
-      containerId,
-      normalizedDisabled.draggable,
-      normalizedDisabled.droppable,
-      disableTransforms,
-      itemIds,
-      overIndex,
-      droppableRects,
-      useDragOverlay,
-      strategy,
-    ],
+    [h, d, b.draggable, b.droppable, y, p, g, c, f, i],
   );
-  return peers.createElement(peers.Provider, { value }, children);
+  return peers.Sk.createElement(
+    peers.VSr.Provider,
+    {
+      value: x,
+    },
+    t,
+  );
 }

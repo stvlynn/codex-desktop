@@ -15,14 +15,10 @@ let MarkdownImpl: ComponentType<AnyProps> | null = null;
 let ErrorBoundary: ComponentType<BoundaryProps> | null = null;
 let Fallback: ComponentType<{ resetError: () => void }> | null = null;
 
-export function setSafeStreamingMarkdownImpl(
-  impl: ComponentType<AnyProps>,
-): void {
+export function setSafeStreamingMarkdownImpl(impl: ComponentType<AnyProps>): void {
   MarkdownImpl = impl;
 }
-export function setSafeStreamingMarkdownErrorBoundary(
-  impl: ComponentType<BoundaryProps>,
-): void {
+export function setSafeStreamingMarkdownErrorBoundary(impl: ComponentType<BoundaryProps>): void {
   ErrorBoundary = impl;
 }
 export function setSafeStreamingMarkdownFallback(

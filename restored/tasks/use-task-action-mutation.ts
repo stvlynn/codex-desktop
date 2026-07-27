@@ -1,36 +1,44 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `UQr`) / export `aY`.
+// Materialized via extractFn(internal `UQr`) / export `aY`.
 
 export type UseTaskActionMutationPeers = {
-  useQueryClient: () => {
-    invalidateQueries: (opts: { queryKey: unknown[] }) => unknown;
-  };
-  useMutation: (options: Record<string, unknown>) => unknown;
-  mutationFn: (...args: unknown[]) => unknown;
+  WQr: (...args: unknown[]) => unknown;
+  iN: (...args: unknown[]) => unknown;
+  qt: (...args: unknown[]) => unknown;
+  rt: (...args: unknown[]) => unknown;
 };
 
 let peers: UseTaskActionMutationPeers | null = null;
 
-/** Wire task-action mutation peers once companions land. */
-export function setUseTaskActionMutationPeers(
-  next: UseTaskActionMutationPeers,
-): void {
+/** Wire useTaskActionMutation peers once companions land. */
+export function setUseTaskActionMutationPeers(next: UseTaskActionMutationPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `aY` / internal `UQr`.
- * Mutation that invalidates the tasks query on success.
  */
-export function useTaskActionMutation(): unknown {
+export function useTaskActionMutation() {
   if (peers == null) {
-    throw new Error("UseTaskActionMutation peers are not configured");
+    throw new Error("useTaskActionMutation peers are not configured");
   }
-  const queryClient = peers.useQueryClient();
-  return peers.useMutation({
-    mutationFn: peers.mutationFn,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["tasks"] });
-    },
-  });
+
+  let e = (0, peers.iN.c)(2),
+    t = peers.rt(),
+    n;
+  return (
+    e[0] === t
+      ? (n = e[1])
+      : ((n = {
+          mutationFn: peers.WQr,
+          onSuccess: () => {
+            t.invalidateQueries({
+              queryKey: [`tasks`],
+            });
+          },
+        }),
+        (e[0] = t),
+        (e[1] = n)),
+    peers.qt(n)
+  );
 }

@@ -1,25 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export YE / FJo
+// Materialized via extractFn(internal `FJo`) / export `YE`.
 
 export type DeferredUiYEPeers = {
-  impl: (...args: unknown[]) => unknown;
+  $u: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  MJo: (...args: unknown[]) => unknown;
+  Mp: (...args: unknown[]) => unknown;
+  PJo: (...args: unknown[]) => unknown;
+  Pp: (...args: unknown[]) => unknown;
+  VJ: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  uh: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredUiYEPeers | null = null;
 
-/** Wire deferredUiYE once companions land. */
+/** Wire deferredUiYE peers once companions land. */
 export function setDeferredUiYEPeers(next: DeferredUiYEPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `YE` / internal `FJo`.
- * Stage-3 fill for bundle export YE / FJo
  */
-export function deferredUiYE(...args: unknown[]): unknown {
+export function deferredUiYE() {
   if (peers == null) {
     throw new Error("deferredUiYE peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    PJo = peers.c(), peers.$u(), peers.Pp(), peers.Mp(), peers.uh(), peers.MJo(), VJ = peers.J();
+  });
 }

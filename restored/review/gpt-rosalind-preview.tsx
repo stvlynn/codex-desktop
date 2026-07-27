@@ -1,48 +1,52 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ugt / _me
+// Materialized via extractFn(internal `_me`) / export `Ugt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindGptRosalindPreviewProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindGptRosalindPreviewPeers = {
+  Sl: (...args: unknown[]) => unknown;
+  X: (...args: unknown[]) => unknown;
+  dme: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fme: (...args: unknown[]) => unknown;
+  gme: (...args: unknown[]) => unknown;
+  hme: (...args: unknown[]) => unknown;
+  mme: (...args: unknown[]) => unknown;
+  ol: (...args: unknown[]) => unknown;
+  pl: (...args: unknown[]) => unknown;
+  pme: (...args: unknown[]) => unknown;
+  rl: (...args: unknown[]) => unknown;
+  sl: (...args: unknown[]) => unknown;
 };
 
-type BindGptRosalindPreviewImpl = (
-  props: BindGptRosalindPreviewProps,
-) => ReactNode;
-let impl: BindGptRosalindPreviewImpl | null = null;
+let peers: BindBindGptRosalindPreviewPeers | null = null;
 
-/** Wire the full BindGptRosalindPreview once deeper restore lands. */
-export function bindBindGptRosalindPreview(
-  next: BindGptRosalindPreviewImpl,
-): void {
-  impl = next;
+/** Wire bindBindGptRosalindPreview peers once companions land. */
+export function setBindBindGptRosalindPreviewPeers(next: BindBindGptRosalindPreviewPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Ugt` / internal `_me`.
- * Stage-3 fill for bundle export Ugt / _me; heavy UI via bind.
  */
-export function BindGptRosalindPreview(
-  props: BindGptRosalindPreviewProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="Ugt"
-      aria-label="BindGptRosalindPreview"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Ugt / _me
-        </div>
-      )}
-    </div>
-  );
+export function bindBindGptRosalindPreview() {
+  if (peers == null) {
+    throw new Error("bindBindGptRosalindPreview peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Sl(), dme = peers.pl([`pending`, `accepted`, `dismissed`]), peers.pl([`science`]).nullable(), fme = peers.sl({
+      id: peers.X().min(1),
+      title: peers.X(),
+      description: peers.X(),
+      prompt: peers.X(),
+      appIds: peers.ol(peers.X()),
+      status: peers.dme,
+      createdAtMs: peers.rl(),
+      updatedAtMs: peers.rl()
+    }), peers.sl({
+      projectRoot: peers.X().default(``),
+      generatedAtMs: peers.rl().nullable(),
+      currentSuggestionIds: peers.ol(peers.X()),
+      suggestions: peers.ol(peers.fme)
+    }), pme = 300 * 6e4, mme = 1440 * 6e4, hme = /rosalind/i, gme = new Set([`gpt-rosalind-preview`, `gpt-rosalind-5-5`, `heisenberg`]);
+  });
 }

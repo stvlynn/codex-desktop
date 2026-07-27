@@ -1,48 +1,41 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ud / BRc
+// Materialized via extractFn(internal `BRc`) / export `Ud`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindUnifiedSidebarChatOrderV12Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindUnifiedSidebarChatOrderV12Peers = {
+  Au: (...args: unknown[]) => unknown;
+  DD: (...args: unknown[]) => unknown;
+  OE: (...args: unknown[]) => unknown;
+  OK: (...args: unknown[]) => unknown;
+  RE: (...args: unknown[]) => unknown;
+  RRc: (...args: unknown[]) => unknown;
+  Vf: (...args: unknown[]) => unknown;
+  Vxo: (...args: unknown[]) => unknown;
+  _Co: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gR: (...args: unknown[]) => unknown;
+  mSo: (...args: unknown[]) => unknown;
+  sSo: (...args: unknown[]) => unknown;
+  tz: (...args: unknown[]) => unknown;
+  yK: (...args: unknown[]) => unknown;
+  zRc: (...args: unknown[]) => unknown;
 };
 
-type BindUnifiedSidebarChatOrderV12Impl = (
-  props: BindUnifiedSidebarChatOrderV12Props,
-) => ReactNode;
-let impl: BindUnifiedSidebarChatOrderV12Impl | null = null;
+let peers: BindBindUnifiedSidebarChatOrderV12Peers | null = null;
 
-/** Wire the full BindUnifiedSidebarChatOrderV12 once deeper restore lands. */
-export function bindBindUnifiedSidebarChatOrderV12(
-  next: BindUnifiedSidebarChatOrderV12Impl,
-): void {
-  impl = next;
+/** Wire bindBindUnifiedSidebarChatOrderV12 peers once companions land. */
+export function setBindBindUnifiedSidebarChatOrderV12Peers(next: BindBindUnifiedSidebarChatOrderV12Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Ud` / internal `BRc`.
- * Stage-3 fill for bundle export Ud / BRc; heavy UI via bind.
  */
-export function BindUnifiedSidebarChatOrderV12(
-  props: BindUnifiedSidebarChatOrderV12Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ex-scaffold="Ud"
-      aria-label="BindUnifiedSidebarChatOrderV12"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Ud / BRc
-        </div>
-      )}
-    </div>
-  );
+export function bindBindUnifiedSidebarChatOrderV12() {
+  if (peers == null) {
+    throw new Error("bindBindUnifiedSidebarChatOrderV12 peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Au(), peers.DD(), peers.Vf(), peers.Vxo(), peers.RE(), peers.yK(), peers.sSo(), peers.OK(), peers.OE(), peers._Co(), peers.mSo(), peers.tz(), peers.gR(), RRc = `The fork contains completed history only. If the source thread was running, the active turn and unfinished response are not in the child. Send a follow-up message to threadId only if the task requires work to continue there.`, zRc = `The worktree is being created asynchronously, so no child thread id exists yet. Wait for worktree setup to finish, then send a follow-up message to the child only if the task requires work to continue there.`;
+  });
 }

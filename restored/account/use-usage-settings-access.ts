@@ -11,9 +11,7 @@ export type UseUsageSettingsAccessPeers = {
 let peers: UseUsageSettingsAccessPeers | null = null;
 
 /** Wire useUsageSettingsAccess peers once companions land. */
-export function setUseUsageSettingsAccessPeers(
-  next: UseUsageSettingsAccessPeers,
-): void {
+export function setUseUsageSettingsAccessPeers(next: UseUsageSettingsAccessPeers): void {
   peers = next;
 }
 

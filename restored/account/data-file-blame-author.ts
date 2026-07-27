@@ -10,9 +10,7 @@ export type BindDataFileBlameAuthorPeers = {
 let peers: BindDataFileBlameAuthorPeers | null = null;
 
 /** Wire bindDataFileBlameAuthor once companions land. */
-export function setBindDataFileBlameAuthorPeers(
-  next: BindDataFileBlameAuthorPeers,
-): void {
+export function setBindDataFileBlameAuthorPeers(next: BindDataFileBlameAuthorPeers): void {
   peers = next;
 }
 

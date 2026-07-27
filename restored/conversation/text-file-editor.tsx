@@ -1,44 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export oj / bho
+// Materialized via extractFn(internal `bho`) / export `oj`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindTextFileEditorProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindTextFileEditorPeers = {
+  e: (...args: unknown[]) => unknown;
+  yho: (...args: unknown[]) => unknown;
 };
 
-type BindTextFileEditorImpl = (props: BindTextFileEditorProps) => ReactNode;
-let impl: BindTextFileEditorImpl | null = null;
+let peers: BindBindTextFileEditorPeers | null = null;
 
-/** Wire the full BindTextFileEditor once deeper restore lands. */
-export function bindBindTextFileEditor(next: BindTextFileEditorImpl): void {
-  impl = next;
+/** Wire bindBindTextFileEditor peers once companions land. */
+export function setBindBindTextFileEditorPeers(next: BindBindTextFileEditorPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `oj` / internal `bho`.
- * Stage-3 fill for bundle export oj / bho; heavy UI via bind.
  */
-export function BindTextFileEditor(
-  props: BindTextFileEditorProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fd-scaffold="oj"
-      aria-label="BindTextFileEditor"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export oj / bho
-        </div>
-      )}
-    </div>
-  );
+export function bindBindTextFileEditor() {
+  if (peers == null) {
+    throw new Error("bindBindTextFileEditor peers are not configured");
+  }
+
+  return peers.e(() => {
+    yho = `text-file-editor`;
+  });
 }

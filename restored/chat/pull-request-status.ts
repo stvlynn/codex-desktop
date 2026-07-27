@@ -23,9 +23,7 @@ export type TaskWithPullRequests = {
 /**
  * Map a GitHub PR payload onto the sidebar status enum (`_Hl` / `io`).
  */
-export function mapPullRequestToSidebarStatus(
-  pullRequest: GithubPullRequestLike,
-): SidebarPullRequestStatus {
+export function mapPullRequestToSidebarStatus(pullRequest: GithubPullRequestLike): SidebarPullRequestStatus {
   if (pullRequest.merged) return "merged";
   switch (pullRequest.state.toUpperCase()) {
     case "OPEN":
@@ -50,9 +48,7 @@ export function extractPullRequestNumber(url: string): number | null {
 /**
  * Read the first PR on a cloud/local task and normalize its status (`bHl` / `$a`).
  */
-export function getTaskPullRequestStatus(
-  taskRow: TaskWithPullRequests | null | undefined,
-): SidebarPullRequestStatus | null {
+export function getTaskPullRequestStatus(taskRow: TaskWithPullRequests | null | undefined): SidebarPullRequestStatus | null {
   if (taskRow == null) return null;
   const pullRequest = taskRow.task.pull_requests?.[0]?.pull_request ?? null;
   return pullRequest ? mapPullRequestToSidebarStatus(pullRequest) : null;
@@ -61,10 +57,7 @@ export function getTaskPullRequestStatus(
 /**
  * Localized tooltip label for a sidebar PR badge (`wHl`).
  */
-export function formatPullRequestStatusLabel(
-  status: SidebarPullRequestStatus,
-  intl: Pick<IntlShape, "formatMessage">,
-): string {
+export function formatPullRequestStatusLabel(status: SidebarPullRequestStatus, intl: Pick<IntlShape, "formatMessage">): string {
   switch (status) {
     case "draft":
       return intl.formatMessage({

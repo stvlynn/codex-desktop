@@ -1,42 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export EL / KB
+// Materialized via extractFn(internal `KB`) / export `EL`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindLineInfoProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindLineInfoPeers = {
+  Nla: (...args: unknown[]) => unknown;
+  Tla: (...args: unknown[]) => unknown;
+  Vca: (...args: unknown[]) => unknown;
+  _la: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ila: (...args: unknown[]) => unknown;
+  ula: (...args: unknown[]) => unknown;
 };
 
-type BindLineInfoImpl = (props: BindLineInfoProps) => ReactNode;
-let impl: BindLineInfoImpl | null = null;
+let peers: BindBindLineInfoPeers | null = null;
 
-/** Wire the full BindLineInfo once deeper restore lands. */
-export function bindBindLineInfo(next: BindLineInfoImpl): void {
-  impl = next;
+/** Wire bindBindLineInfo peers once companions land. */
+export function setBindBindLineInfoPeers(next: BindBindLineInfoPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `EL` / internal `KB`.
- * Stage-3 fill for bundle export EL / KB; heavy UI via bind.
  */
-export function BindLineInfo(props: BindLineInfoProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="EL"
-      aria-label="BindLineInfo"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export EL / KB
-        </div>
-      )}
-    </div>
-  );
+export function bindBindLineInfo() {
+  if (peers == null) {
+    throw new Error("bindBindLineInfo peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Vca(), peers.ila(), peers.ula(), peers._la(), peers.Tla(), peers.Nla();
+  });
 }

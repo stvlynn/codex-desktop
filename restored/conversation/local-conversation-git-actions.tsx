@@ -1,12 +1,17 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `GYo`) / export `BE`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `GYo`) / export `BE`.
 
 export type LocalConversationGitActionsPeers = {
-  renderActions: (props: Record<string, unknown>) => ReactNode;
+  FFi: (...args: unknown[]) => unknown;
+  Fo: (...args: unknown[]) => unknown;
+  KYo: (...args: unknown[]) => unknown;
+  No: (...args: unknown[]) => unknown;
+  W_: (...args: unknown[]) => unknown;
+  XJ: (...args: unknown[]) => unknown;
+  available: (...args: unknown[]) => unknown;
+  qYo: (...args: unknown[]) => unknown;
+  yJ: (...args: unknown[]) => unknown;
 };
-
 let peers: LocalConversationGitActionsPeers | null = null;
 
 /** Wire LocalConversationGitActions peers once companions land. */
@@ -18,15 +23,61 @@ export function setLocalConversationGitActionsPeers(
 
 /**
  * Bundle export `BE` / internal `GYo`.
- * Render local conversation git action toolbar/menu.
  */
-export type LocalConversationGitActionsProps = Record<string, unknown>;
-
-export function LocalConversationGitActions(
-  props: LocalConversationGitActionsProps,
-): ReactElement {
+export function LocalConversationGitActions(props: unknown) {
+  const KYo = peers.KYo;
+  const No = peers.No;
   if (peers == null) {
     throw new Error("LocalConversationGitActions peers are not configured");
   }
-  return peers.renderActions(props) as ReactElement;
+  let {
+      conversationId = null,
+      target,
+      codexWorktree,
+      surface,
+      hidePullRequestSection = false,
+      hideCreatePullRequestAction = false,
+      branchControlOwnsDetachedSetup = false,
+      reviewToolbarCompact = false,
+      onCreateBranchActionReady,
+      onCreatePullRequestActionReady,
+      deferQueries = false,
+      showCreatePullRequestActionWhenDeferred = false,
+    } = props,
+    x = peers.W_(target.hostId),
+    S = {
+      hostConfig: x,
+      operationSource: "local_conversation_git_actions",
+    };
+  let C = !deferQueries,
+    w = {
+      enabled: C,
+    };
+  let T = peers.Fo(peers.FFi, S, w),
+    E = deferQueries || T.data?.available !== true,
+    D = {
+      codexWorktree,
+      conversationId,
+      target,
+    };
+  let O = (
+    <KYo
+      deferGitQueries={E}
+      hideCreatePullRequestAction={hideCreatePullRequestAction}
+      hidePullRequestSection={hidePullRequestSection}
+      reviewToolbarCompact={reviewToolbarCompact}
+      surface={surface}
+      branchControlOwnsDetachedSetup={branchControlOwnsDetachedSetup}
+      onCreateBranchActionReady={onCreateBranchActionReady}
+      onCreatePullRequestActionReady={onCreatePullRequestActionReady}
+      showCreatePullRequestActionWhenDeferred={
+        showCreatePullRequestActionWhenDeferred
+      }
+    />
+  );
+  return (
+    <No scope={peers.yJ} value={D}>
+      {O}
+    </No>
+  );
 }

@@ -3,9 +3,7 @@
 
 import { asRecord } from "../utils/as-record";
 
-export function collectContentReferenceImages(
-  ref: Record<string, unknown>,
-): Record<string, unknown>[] {
+export function collectContentReferenceImages(ref: Record<string, unknown>): Record<string, unknown>[] {
   const images = Array.isArray(ref.images)
     ? ref.images
         .map(asRecord)

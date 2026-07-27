@@ -1,44 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Umt / axe
+// Materialized via extractFn(internal `axe`) / export `Umt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindXCodexGitSourceProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindXCodexGitSourcePeers = {
+  e: (...args: unknown[]) => unknown;
+  ixe: (...args: unknown[]) => unknown;
+  rxe: (...args: unknown[]) => unknown;
 };
 
-type BindXCodexGitSourceImpl = (props: BindXCodexGitSourceProps) => ReactNode;
-let impl: BindXCodexGitSourceImpl | null = null;
+let peers: BindBindXCodexGitSourcePeers | null = null;
 
-/** Wire the full BindXCodexGitSource once deeper restore lands. */
-export function bindBindXCodexGitSource(next: BindXCodexGitSourceImpl): void {
-  impl = next;
+/** Wire bindBindXCodexGitSource peers once companions land. */
+export function setBindBindXCodexGitSourcePeers(next: BindBindXCodexGitSourcePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Umt` / internal `axe`.
- * Stage-3 fill for bundle export Umt / axe; heavy UI via bind.
  */
-export function BindXCodexGitSource(
-  props: BindXCodexGitSourceProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fk-scaffold="Umt"
-      aria-label="BindXCodexGitSource"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Umt / axe
-        </div>
-      )}
-    </div>
-  );
+export function bindBindXCodexGitSource() {
+  if (peers == null) {
+    throw new Error("bindBindXCodexGitSource peers are not configured");
+  }
+
+  return peers.e(() => {
+    rxe = `x-codex-git-source`, ixe = [`apply-patch`, `git-checkout-branch`, `git-create-branch`, `git-merge-base`, `git-origins`, `git-push`, `prepare-worktree-snapshot`, `upload-worktree-snapshot`], new Set(peers.ixe);
+  });
 }

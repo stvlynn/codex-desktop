@@ -1,42 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EM — real body via extractFn(internal `APc`) / export `Tf`.
+// Materialized via extractFn(internal `APc`) / export `Tf`.
 
-export type SetAppshotSelectedTaskPhasePeers = {
-  journeyAtom: unknown;
-  readJourney: (store: AtomStore) => Record<string, unknown>;
+export type TfPeers = {
+  A2: (...args: unknown[]) => unknown;
+  k2: (...args: unknown[]) => unknown;
 };
+let peers: TfPeers | null = null;
 
-let peers: SetAppshotSelectedTaskPhasePeers | null = null;
-
-/** Wire setAppshotSelectedTaskPhase peers once companions land. */
-export function setSetAppshotSelectedTaskPhasePeers(
-  next: SetAppshotSelectedTaskPhasePeers,
-): void {
+/** Wire Tf peers once companions land. */
+export function setTfPeers(next: TfPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Tf` / internal `APc`.
- * Select an appshot task and advance permission/execution phase.
  */
-export type AtomStore = {
-  set: (atom: unknown, value: unknown) => void;
-  get?: (atom: unknown) => unknown;
-};
-
-export function setAppshotSelectedTaskPhase(
-  store: AtomStore,
-  selectedTask: unknown,
-): void {
+export function Tf(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("SetAppshotSelectedTaskPhase peers are not configured");
+    throw new Error("Tf peers are not configured");
   }
-  const current = peers.readJourney(store);
-  store.set(peers.journeyAtom, {
-    ...current,
-    phase: selectedTask === "csv_chart" ? "execution" : "permission",
-    selectedTask,
-    permissionStatus:
-      selectedTask === "csv_chart" ? "not-requested" : "pending",
+  e.set(peers.A2, {
+    ...peers.k2(e),
+    phase: t === "csv_chart" ? "execution" : "permission",
+    selectedTask: t,
+    permissionStatus: t === "csv_chart" ? "not-requested" : "pending",
   });
 }

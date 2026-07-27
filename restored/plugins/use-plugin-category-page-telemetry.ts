@@ -1,14 +1,20 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EL — real body via extractFn(internal `c3i`) / export `Cz`.
+// Materialized via extractFn(internal `c3i`) / export `Cz`.
 
 export type UsePluginCategoryPageTelemetryPeers = {
-  useRef: <T>(init: T) => { current: T };
-  useEffect: (effect: () => void | (() => void), deps: unknown[]) => void;
-  trackPage: (payload: Record<string, unknown>) => void;
-  trackSearch: (payload: Record<string, unknown>) => void;
-  unspecifiedPageName: unknown;
+  Ez: (...args: unknown[]) => unknown;
+  G1t: (...args: unknown[]) => unknown;
+  Ib: (...args: unknown[]) => unknown;
+  J1t: (...args: unknown[]) => unknown;
+  K1t: (...args: unknown[]) => unknown;
+  LZt: (...args: unknown[]) => unknown;
+  Ub: (...args: unknown[]) => unknown;
+  _3i: (...args: unknown[]) => unknown;
+  clearTimeout: (...args: unknown[]) => unknown;
+  g3i: (...args: unknown[]) => unknown;
+  m3i: (...args: unknown[]) => unknown;
+  setTimeout: (...args: unknown[]) => unknown;
 };
-
 let peers: UsePluginCategoryPageTelemetryPeers | null = null;
 
 /** Wire usePluginCategoryPageTelemetry peers once companions land. */
@@ -20,51 +26,83 @@ export function setUsePluginCategoryPageTelemetryPeers(
 
 /**
  * Bundle export `Cz` / internal `c3i`.
- * Emit plugin category page telemetry on mount/search changes.
  */
-export function usePluginCategoryPageTelemetry(args: {
-  scope?: unknown;
-  categoryId?: unknown;
-  enabled?: boolean;
-  entrypoint?: unknown;
-  pageName?: unknown;
-  searchQuery?: string;
-  source?: unknown;
-}): void {
+export function usePluginCategoryPageTelemetry(e: unknown) {
   if (peers == null) {
-    throw new Error("UsePluginCategoryPageTelemetry peers are not configured");
+    throw new Error("usePluginCategoryPageTelemetry peers are not configured");
   }
-  const enabled = args.enabled ?? true;
-  const seen = peers.useRef(false);
-  const lastQuery = peers.useRef<string | null>(null);
-  peers.useEffect(() => {
-    if (!enabled || seen.current) return;
-    seen.current = true;
-    peers!.trackPage({
-      scope: args.scope,
-      categoryId: args.categoryId,
-      entrypoint: args.entrypoint,
-      pageName: args.pageName ?? peers!.unspecifiedPageName,
-      source: args.source,
-    });
-  }, [
-    enabled,
-    args.scope,
-    args.categoryId,
-    args.entrypoint,
-    args.pageName,
-    args.source,
-  ]);
-  peers.useEffect(() => {
-    if (!enabled) return;
-    const query = args.searchQuery ?? "";
-    if (lastQuery.current === query) return;
-    lastQuery.current = query;
-    peers!.trackSearch({
-      scope: args.scope,
-      categoryId: args.categoryId,
-      searchQuery: query,
-      source: args.source,
-    });
-  }, [enabled, args.searchQuery, args.scope, args.categoryId, args.source]);
+  let {
+      scope,
+      categoryId,
+      enabled,
+      entrypoint,
+      pageName,
+      searchQuery,
+      source,
+    } = e,
+    l = peers.Ez.useRef(false),
+    u = peers.Ez.useRef(null),
+    d = peers.Ez.useRef(peers.Ib.CODEX_PLUGIN_PAGE_NAME_UNSPECIFIED),
+    f = peers.Ez.useRef(""),
+    p = () => {
+      peers.Ub(scope, peers.G1t, {
+        entrypoint,
+      });
+    };
+  let m = peers.Ez.useEffectEvent(p),
+    h = (e) => {
+      peers.Ub(scope, peers.K1t, {
+        ...(pageName === peers.Ib.CODEX_PLUGIN_PAGE_NAME_CATEGORY &&
+        categoryId != null
+          ? {
+              categoryId,
+            }
+          : {}),
+        pageName,
+        referrer: e,
+        source,
+      });
+    };
+  let g = peers.Ez.useEffectEvent(h),
+    _ = () => {
+      peers.Ub(scope, peers.J1t, {
+        source,
+        target: peers.LZt.CODEX_PLUGIN_CLICK_TARGET_SUBMIT_SEARCH,
+      });
+    };
+  let v = peers.Ez.useEffectEvent(_),
+    y = () => {
+      if (!enabled) {
+        l.current = false;
+        u.current = null;
+        d.current = peers.Ib.CODEX_PLUGIN_PAGE_NAME_UNSPECIFIED;
+        return;
+      }
+      l.current || ((l.current = true), m());
+      let e =
+          pageName === peers.Ib.CODEX_PLUGIN_PAGE_NAME_CATEGORY
+            ? (categoryId ?? "")
+            : "",
+        t = `${pageName}\u0000${source}\u0000${e}`;
+      u.current !== t &&
+        (g(peers.m3i(d.current)), (u.current = t), (d.current = pageName));
+    };
+  let b;
+  b = [categoryId, enabled, entrypoint, pageName, source];
+  peers.Ez.useEffect(y, b);
+  let x = () => {
+    if (!enabled || searchQuery === "") {
+      f.current = "";
+      return;
+    }
+    let e = peers.setTimeout(() => {
+      f.current !== searchQuery && (v(), (f.current = searchQuery));
+    }, peers._3i);
+    return () => {
+      peers.clearTimeout(e);
+    };
+  };
+  let S;
+  S = [enabled, searchQuery];
+  peers.Ez.useEffect(x, S);
 }

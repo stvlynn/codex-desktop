@@ -1,45 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DU — real body via extractFn(internal `roc`) / export `Tp`.
-// Importing-status atom binds via setImportingStatusAtom.
+// Materialized via extractFn(internal `roc`) / export `Tp`.
 
-export type ImportingStatusStore = {
-  set: (atom: unknown, value: unknown) => void;
+export type RunImportingStatusTaskPeers = {
+  aoc: (...args: unknown[]) => unknown;
 };
 
-let importingStatusAtom: unknown = null;
+let peers: RunImportingStatusTaskPeers | null = null;
 
-/** Wire the importing-status jotai atom (bundle `aoc`) without inventing it. */
-export function setImportingStatusAtom(atom: unknown): void {
-  importingStatusAtom = atom;
+/** Wire runImportingStatusTask peers once companions land. */
+export function setRunImportingStatusTaskPeers(next: RunImportingStatusTaskPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Tp` / internal `roc`.
- * Run an async task while projecting importing → success/error status.
  */
-export async function runImportingStatusTask(
-  store: ImportingStatusStore,
-  task: () => Promise<unknown>,
-): Promise<unknown> {
-  if (importingStatusAtom == null) {
-    throw new Error("Importing status atom is not configured");
+async function runImportingStatusTask(e, t) {
+  if (peers == null) {
+    throw new Error("runImportingStatusTask peers are not configured");
   }
-  store.set(importingStatusAtom, {
-    status: "importing",
-    startedAtMs: Date.now(),
+
+  e.set(peers.aoc, {
+    status: `importing`,
+    startedAtMs: Date.now()
   });
   try {
-    const result = await task();
-    store.set(importingStatusAtom, {
-      status: "success",
-      completedAtMs: Date.now(),
+    await t(), e.set(peers.aoc, {
+      status: `success`,
+      completedAtMs: Date.now()
     });
-    return result;
-  } catch (error) {
-    store.set(importingStatusAtom, {
-      status: "error",
-      completedAtMs: Date.now(),
-    });
-    throw error;
+  } catch (t) {
+    throw e.set(peers.aoc, {
+      status: `error`,
+      completedAtMs: Date.now()
+    }), t;
   }
 }

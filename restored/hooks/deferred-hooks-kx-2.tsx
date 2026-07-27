@@ -1,44 +1,47 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export kX / SKr
+// Materialized via extractFn(internal `SKr`) / export `kX`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredHooksKXProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredHooksKXPeers = {
+  Q: (...args: unknown[]) => unknown;
+  Ra: (...args: unknown[]) => unknown;
+  TM: (...args: unknown[]) => unknown;
+  U8n: (...args: unknown[]) => unknown;
+  gp: (...args: unknown[]) => unknown;
+  wM: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredHooksKXImpl = (props: BindDeferredHooksKXProps) => ReactNode;
-let impl: BindDeferredHooksKXImpl | null = null;
+let peers: BindBindDeferredHooksKXPeers | null = null;
 
-/** Wire the full BindDeferredHooksKX once deeper restore lands. */
-export function bindBindDeferredHooksKX(next: BindDeferredHooksKXImpl): void {
-  impl = next;
+/** Wire bindBindDeferredHooksKX peers once companions land. */
+export function setBindBindDeferredHooksKXPeers(next: BindBindDeferredHooksKXPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `kX` / internal `SKr`.
- * Stage-3 fill for bundle export kX / SKr; heavy UI via bind.
  */
-export function BindDeferredHooksKX(
-  props: BindDeferredHooksKXProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="kX"
-      aria-label="BindDeferredHooksKX"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export kX / SKr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredHooksKX() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredHooksKX peers are not configured");
+  }
+
+  return peers.Ra(peers.Q, ({ scope: e }) => ({
+    mutationFn: async (e) =>
+      peers.wM(peers.gp.openIn.setGlobalPreferredTarget(e)),
+    networkMode: `always`,
+    onSuccess: async (t, { target: n }) => {
+      let r = e.query.snapshot(peers.TM, {
+        cwd: null,
+      });
+      (r.setData((e) =>
+        e == null
+          ? e
+          : {
+              ...e,
+              preferredTarget: n,
+            },
+      ),
+        await peers.U8n(e.queryClient, r.queryKey));
+    },
+  }));
 }

@@ -1,41 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export xw / mes
+// Materialized via extractFn(internal `mes`) / export `xw`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredxwProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredxwPeers = {
+  Qt: (...args: unknown[]) => unknown;
+  U4i: (...args: unknown[]) => unknown;
+  XN: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  des: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fes: (...args: unknown[]) => unknown;
+  pes: (...args: unknown[]) => unknown;
+  tP: (...args: unknown[]) => unknown;
 };
 
-type DeferredxwImpl = (props: DeferredxwProps) => ReactNode;
-let impl: DeferredxwImpl | null = null;
+let peers: BindDeferredxwPeers | null = null;
 
-/** Wire the full Deferredxw once deeper restore lands. */
-export function bindDeferredxw(next: DeferredxwImpl): void {
-  impl = next;
+/** Wire bindDeferredxw peers once companions land. */
+export function setBindDeferredxwPeers(next: BindDeferredxwPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `xw` / internal `mes`.
- * Stage-3 fill for bundle export xw / mes; heavy UI via bind.
  */
-export function Deferredxw(props: DeferredxwProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fl-scaffold="xw"
-      aria-label="Deferredxw"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export xw / mes
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredxw() {
+  if (peers == null) {
+    throw new Error("bindDeferredxw peers are not configured");
+  }
+
+  return peers.e(() => {
+    des = peers.c(), peers.Qt(), peers.XN(), peers.tP(), peers.U4i(), fes = `DISABLED_BY_ADMIN`, pes = `DISABLED_BY_ADMIN`;
+  });
 }

@@ -1,14 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-
-import type { ReactElement, ReactNode } from "react";
-
-export type EmptyMemoSlotProps = Record<string, unknown>;
+// Materialized via extractFn(internal `JWi`) / export `JV`.
 
 export type EmptyMemoSlotPeers = {
-  render: (props: EmptyMemoSlotProps) => ReactNode;
+  $Wi: (...args: unknown[]) => unknown;
+  QWi: (...args: unknown[]) => unknown;
+  XWi: (...args: unknown[]) => unknown;
+  YWi: (...args: unknown[]) => unknown;
+  ZWi: (...args: unknown[]) => unknown;
 };
-
 let peers: EmptyMemoSlotPeers | null = null;
 
 /** Wire EmptyMemoSlot peers once companions land. */
@@ -19,9 +18,17 @@ export function setEmptyMemoSlotPeers(next: EmptyMemoSlotPeers): void {
 /**
  * Bundle export `JV` / internal `JWi`.
  */
-export function EmptyMemoSlot(props: EmptyMemoSlotProps): ReactElement {
+export function EmptyMemoSlot(props: unknown) {
+  const YWi = peers.YWi;
+  const Suspense = peers.ZWi.Suspense;
+  const Wi = peers.$Wi;
   if (peers == null) {
     throw new Error("EmptyMemoSlot peers are not configured");
   }
-  return peers.render(props) as ReactElement;
+  let n = <YWi />;
+  return (
+    <Suspense fallback={n}>
+      <Wi {...props} />
+    </Suspense>
+  );
 }

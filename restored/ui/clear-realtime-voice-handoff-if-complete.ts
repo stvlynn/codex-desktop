@@ -1,47 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EA — real body via extractFn(internal `lts`) / export `$C`.
+// Materialized via extractFn(internal `lts`) / export `$C`.
 
-export type RealtimeVoiceHandoffState = {
-  request?: unknown;
-  phase?: string;
-  handoffComplete?: boolean;
-  [key: string]: unknown;
-} | null;
-
-export type ClearRealtimeVoiceHandoffPeers = {
-  handoffAtom: unknown;
+export type ClearRealtimeVoiceHandoffIfCompletePeers = {
+  request: (...args: unknown[]) => unknown;
+  yX: (...args: unknown[]) => unknown;
 };
 
-let peers: ClearRealtimeVoiceHandoffPeers | null = null;
+let peers: ClearRealtimeVoiceHandoffIfCompletePeers | null = null;
 
-/** Wire realtime voice handoff atom once companions land. */
-export function setClearRealtimeVoiceHandoffPeers(
-  next: ClearRealtimeVoiceHandoffPeers,
-): void {
+/** Wire clearRealtimeVoiceHandoffIfComplete peers once companions land. */
+export function setClearRealtimeVoiceHandoffIfCompletePeers(next: ClearRealtimeVoiceHandoffIfCompletePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `$C` / internal `lts`.
- * Clear handoff atom when request matches and handoff is complete.
  */
-export function clearRealtimeVoiceHandoffIfComplete(
-  store: {
-    set: (
-      atom: unknown,
-      updater: (prev: RealtimeVoiceHandoffState) => RealtimeVoiceHandoffState,
-    ) => void;
-  },
-  request: unknown,
-): void {
+export function clearRealtimeVoiceHandoffIfComplete(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("ClearRealtimeVoiceHandoff peers are not configured");
+    throw new Error("clearRealtimeVoiceHandoffIfComplete peers are not configured");
   }
-  store.set(peers.handoffAtom, (prev) =>
-    prev?.request !== request ||
-    prev.phase !== "connected" ||
-    !prev.handoffComplete
-      ? prev
-      : null,
-  );
+
+  e.set(peers.yX, e => e?.request !== t || e.phase !== `connected` || !e.handoffComplete ? e : null);
 }

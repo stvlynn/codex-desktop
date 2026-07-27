@@ -28,9 +28,7 @@ export type AppgenAccessStateKey =
   | "custom";
 
 /** Normalize access mode + counts into a message table key. */
-export function appgenAccessStateKey(
-  access: AppgenAccessLike,
-): AppgenAccessStateKey | undefined {
+export function appgenAccessStateKey(access: AppgenAccessLike): AppgenAccessStateKey | undefined {
   if (isAppgenOwnerOnlyAccess(access)) return "owner_only";
   const mode = access.accessMode;
   const groups = access.groupCount ?? 0;

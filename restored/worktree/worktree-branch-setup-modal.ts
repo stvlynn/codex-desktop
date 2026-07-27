@@ -1,28 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export UE / BYo
+// Materialized via extractFn(internal `BYo`) / export `UE`.
 
 export type BindWorktreeBranchSetupModalPeers = {
-  impl: (...args: unknown[]) => unknown;
+  $u: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Nw: (...args: unknown[]) => unknown;
+  RYo: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  zYo: (...args: unknown[]) => unknown;
 };
 
 let peers: BindWorktreeBranchSetupModalPeers | null = null;
 
-/** Wire bindWorktreeBranchSetupModal once companions land. */
-export function setBindWorktreeBranchSetupModalPeers(
-  next: BindWorktreeBranchSetupModalPeers,
-): void {
+/** Wire bindWorktreeBranchSetupModal peers once companions land. */
+export function setBindWorktreeBranchSetupModalPeers(next: BindWorktreeBranchSetupModalPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `UE` / internal `BYo`.
- * Stage-3 fill for bundle export UE / BYo
  */
-export function bindWorktreeBranchSetupModal(...args: unknown[]): unknown {
+export function bindWorktreeBranchSetupModal() {
   if (peers == null) {
     throw new Error("bindWorktreeBranchSetupModal peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    RYo = peers.c(), peers.$u(), peers.Nw(), zYo = peers.J();
+  });
 }

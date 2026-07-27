@@ -17,9 +17,7 @@ type RealtimeVoiceLaunchSurfaceImpl = (
 let impl: RealtimeVoiceLaunchSurfaceImpl | null = null;
 
 /** Wire the full RealtimeVoiceLaunchSurface once deeper companion restore lands. */
-export function bindRealtimeVoiceLaunchSurface(
-  next: RealtimeVoiceLaunchSurfaceImpl,
-): void {
+export function bindRealtimeVoiceLaunchSurface(next: RealtimeVoiceLaunchSurfaceImpl): void {
   impl = next;
 }
 

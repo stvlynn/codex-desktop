@@ -1,28 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export wut / $Qe
+// Materialized via extractFn(internal `$Qe`) / export `wut`.
 
 export type BindApplyRoundedFullPeers = {
-  impl: (...args: unknown[]) => unknown;
+  $u: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  QQe: (...args: unknown[]) => unknown;
+  ZQe: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  sd: (...args: unknown[]) => unknown;
 };
 
 let peers: BindApplyRoundedFullPeers | null = null;
 
-/** Wire bindApplyRoundedFull once companions land. */
-export function setBindApplyRoundedFullPeers(
-  next: BindApplyRoundedFullPeers,
-): void {
+/** Wire bindApplyRoundedFull peers once companions land. */
+export function setBindApplyRoundedFullPeers(next: BindApplyRoundedFullPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `wut` / internal `$Qe`.
- * Stage-3 fill for bundle export wut / $Qe
  */
-export function bindApplyRoundedFull(...args: unknown[]): unknown {
+export function bindApplyRoundedFull() {
   if (peers == null) {
     throw new Error("bindApplyRoundedFull peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    ZQe = peers.c(), peers.sd(), peers.$u(), QQe = peers.J();
+  });
 }

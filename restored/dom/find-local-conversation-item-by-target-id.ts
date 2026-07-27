@@ -4,9 +4,7 @@
 import { LOCAL_CONVERSATION_ITEM_TARGET_IDS_ATTR } from "./local-conversation-item-target-ids-attr";
 
 /** Find a DOM node whose target-ids attr includes the encoded id. */
-export function findLocalConversationItemByTargetId(
-  targetId: string,
-): Element | null {
+export function findLocalConversationItemByTargetId(targetId: string): Element | null {
   const encoded = encodeURIComponent(targetId);
   const nodes = document.querySelectorAll(
     `[${LOCAL_CONVERSATION_ITEM_TARGET_IDS_ATTR}]`,

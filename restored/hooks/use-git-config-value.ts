@@ -12,9 +12,7 @@ import {
   mergeGitLiveQueryOptions,
   type GitMethodQueryOptionsInput,
 } from "./git-method-query-atoms";
-
 ensureGitConfigValueQueryInit();
-
 export type UseGitConfigValueHostConfig = Record<string, unknown>;
 
 /**
@@ -29,7 +27,12 @@ export function useGitConfigValue(
   options?: GitMethodQueryOptionsInput | null,
 ): unknown {
   const lookup =
-    cwd == null ? null : ({ cwd, hostConfig } as Record<string, unknown>);
+    cwd == null
+      ? null
+      : ({
+          cwd,
+          hostConfig,
+        } as Record<string, unknown>);
   const merged = mergeGitLiveQueryOptions(options, null);
   return useAppScopeAtomValue(gitConfigValueFromTargetAtom, {
     key,

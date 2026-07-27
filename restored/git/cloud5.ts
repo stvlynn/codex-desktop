@@ -1,26 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export PE / hQo
+// Materialized via extractFn(internal `hQo`) / export `PE`.
 
 export type Cloud5Peers = {
-  impl: (...args: unknown[]) => unknown;
+  $u: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Mp: (...args: unknown[]) => unknown;
+  Vm: (...args: unknown[]) => unknown;
+  aP: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  lY: (...args: unknown[]) => unknown;
+  mQo: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  pQo: (...args: unknown[]) => unknown;
+  qR: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
 let peers: Cloud5Peers | null = null;
 
-/** Wire cloud5 once companions land. */
+/** Wire cloud5 peers once companions land. */
 export function setCloud5Peers(next: Cloud5Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `PE` / internal `hQo`.
- * Stage-3 fill for bundle export PE / hQo
  */
-export function cloud5(...args: unknown[]): unknown {
+export function cloud5() {
   if (peers == null) {
     throw new Error("cloud5 peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    pQo = peers.c(), mQo = peers.r(peers.o(), 1), peers.$u(), peers.aP(), peers.Vm(), peers.qR(), peers.Mp(), lY = peers.J();
+  });
 }

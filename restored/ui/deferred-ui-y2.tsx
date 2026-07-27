@@ -1,41 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export _Y / nQr
+// Materialized via extractFn(internal `nQr`) / export `_Y`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiY2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiY2Peers = {
+  i: (...args: unknown[]) => unknown;
+  tQr: (...args: unknown[]) => unknown;
+  yo: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiY2Impl = (props: BindDeferredUiY2Props) => ReactNode;
-let impl: BindDeferredUiY2Impl | null = null;
+let peers: BindBindDeferredUiY2Peers | null = null;
 
-/** Wire the full BindDeferredUiY2 once deeper restore lands. */
-export function bindBindDeferredUiY2(next: BindDeferredUiY2Impl): void {
-  impl = next;
+/** Wire bindBindDeferredUiY2 peers once companions land. */
+export function setBindBindDeferredUiY2Peers(next: BindBindDeferredUiY2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `_Y` / internal `nQr`.
- * Stage-3 fill for bundle export _Y / nQr; heavy UI via bind.
  */
-export function BindDeferredUiY2(props: BindDeferredUiY2Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fk-scaffold="_Y"
-      aria-label="BindDeferredUiY2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export _Y / nQr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiY2() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiY2 peers are not configured");
+  }
+
+  return peers.i((e, t) => {
+    var n = peers.tQr(),
+      r = peers.yo();
+    function i(e, t, i, a) {
+      return e == null ? [] : (r(t) || (t = t == null ? [] : [t]), i = a ? void 0 : peers.i, r(peers.i) || (i = peers.i == null ? [] : [peers.i]), n(e, t, peers.i));
+    }
+    t.exports = peers.i;
+  });
 }

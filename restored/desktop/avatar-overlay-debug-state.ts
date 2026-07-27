@@ -6,7 +6,6 @@ import {
   createPersistedScopeSignal,
   ensurePersistedScopeSignalInit,
 } from "../boundaries/turn-sources-runtime";
-
 ensurePersistedScopeSignalInit();
 
 /** Bundle export `r` — hide avatar overlay resize button. */

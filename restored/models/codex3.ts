@@ -1,26 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Wb / q_s
+// Materialized via extractFn(internal `q_s`) / export `Wb`.
 
 export type Codex3Peers = {
-  impl: (...args: unknown[]) => unknown;
+  K_s: (...args: unknown[]) => unknown;
+  NZ: (...args: unknown[]) => unknown;
+  PZ: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  k_s: (...args: unknown[]) => unknown;
 };
 
 let peers: Codex3Peers | null = null;
 
-/** Wire codex3 once companions land. */
+/** Wire codex3 peers once companions land. */
 export function setCodex3Peers(next: Codex3Peers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Wb` / internal `q_s`.
- * Stage-3 fill for bundle export Wb / q_s
  */
-export function codex3(...args: unknown[]): unknown {
+export function codex3() {
   if (peers == null) {
     throw new Error("codex3 peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.NZ(), peers.PZ(), peers.k_s(), K_s = `codex`;
+  });
 }

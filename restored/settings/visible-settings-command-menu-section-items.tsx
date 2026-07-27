@@ -17,9 +17,7 @@ type VisibleSettingsCommandMenuSectionItemsImpl = (
 let impl: VisibleSettingsCommandMenuSectionItemsImpl | null = null;
 
 /** Wire the full VisibleSettingsCommandMenuSectionItems once deeper restore lands. */
-export function bindVisibleSettingsCommandMenuSectionItems(
-  next: VisibleSettingsCommandMenuSectionItemsImpl,
-): void {
+export function bindVisibleSettingsCommandMenuSectionItems(next: VisibleSettingsCommandMenuSectionItemsImpl): void {
   impl = next;
 }
 
@@ -27,9 +25,7 @@ export function bindVisibleSettingsCommandMenuSectionItems(
  * Bindable VisibleSettingsCommandMenuSectionItems.
  * Alias ownership unresolved — do not invent extractFn body.
  */
-export function VisibleSettingsCommandMenuSectionItems(
-  props: VisibleSettingsCommandMenuSectionItemsProps,
-): ReactElement {
+export function VisibleSettingsCommandMenuSectionItems(props: VisibleSettingsCommandMenuSectionItemsProps): ReactElement {
   if (impl == null) {
     return (
       <div

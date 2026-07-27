@@ -1,48 +1,39 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export _pt / QEe
+// Materialized via extractFn(internal `QEe`) / export `_pt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindConversationDetailModeProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindConversationDetailModePeers = {
+  Sl: (...args: unknown[]) => unknown;
+  ZEe: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  pl: (...args: unknown[]) => unknown;
+  vu: (...args: unknown[]) => unknown;
+  xu: (...args: unknown[]) => unknown;
 };
 
-type BindConversationDetailModeImpl = (
-  props: BindConversationDetailModeProps,
-) => ReactNode;
-let impl: BindConversationDetailModeImpl | null = null;
+let peers: BindBindConversationDetailModePeers | null = null;
 
-/** Wire the full BindConversationDetailMode once deeper restore lands. */
-export function bindBindConversationDetailMode(
-  next: BindConversationDetailModeImpl,
-): void {
-  impl = next;
+/** Wire bindBindConversationDetailMode peers once companions land. */
+export function setBindBindConversationDetailModePeers(next: BindBindConversationDetailModePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `_pt` / internal `QEe`.
- * Stage-3 fill for bundle export _pt / QEe; heavy UI via bind.
  */
-export function BindConversationDetailMode(
-  props: BindConversationDetailModeProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ew-scaffold="_pt"
-      aria-label="BindConversationDetailMode"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export _pt / QEe
-        </div>
-      )}
-    </div>
-  );
+export function bindBindConversationDetailMode() {
+  if (peers == null) {
+    throw new Error("bindBindConversationDetailMode peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Sl(), peers.xu(), ZEe = {
+      conversationDetailMode: peers.vu({
+        agentAccess: `read-write`,
+        default: `STEPS_COMMANDS`,
+        description: `How much turn detail Codex shows`,
+        key: `conversationDetailMode`,
+        schema: peers.pl([`STEPS_PROSE`, `STEPS_COMMANDS`, `STEPS_EXECUTION`])
+      })
+    };
+  });
 }

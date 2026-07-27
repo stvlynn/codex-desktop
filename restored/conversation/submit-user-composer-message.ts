@@ -57,10 +57,7 @@ export function setSubmitUserComposerMessageDeps(args: {
   startSubmit = args.startSubmit;
 }
 
-export function submitUserComposerMessage(
-  scope: ScopeLike,
-  args: Args,
-): unknown {
+export function submitUserComposerMessage(scope: ScopeLike, args: Args): unknown {
   const submittedAtMs = nowMs();
   const prompt = (args.prompt ?? "").trim();
   const attachments = args.attachments ?? [];

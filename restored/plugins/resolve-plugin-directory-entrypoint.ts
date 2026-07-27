@@ -1,24 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `s3i`) / export `hz`.
-
-export type ResolvePluginDirectoryEntrypointArgs = {
-  explicitEntrypoint?: unknown;
-  locationKey?: string;
-  locationState?: unknown;
-};
+// Materialized via extractFn(internal `s3i`) / export `hz`.
 
 export type ResolvePluginDirectoryEntrypointPeers = {
-  safeParse: (value: unknown) => {
-    success: boolean;
-    data?: { pluginDirectoryEntrypoint?: unknown };
-  };
-  directEntrypoint: unknown;
-  otherEntrypoint: unknown;
+  Fb: (...args: unknown[]) => unknown;
+  y3i: (...args: unknown[]) => unknown;
 };
-
 let peers: ResolvePluginDirectoryEntrypointPeers | null = null;
 
-/** Wire location-state schema once companions land. */
+/** Wire resolvePluginDirectoryEntrypoint peers once companions land. */
 export function setResolvePluginDirectoryEntrypointPeers(
   next: ResolvePluginDirectoryEntrypointPeers,
 ): void {
@@ -27,23 +16,22 @@ export function setResolvePluginDirectoryEntrypointPeers(
 
 /**
  * Bundle export `hz` / internal `s3i`.
- * Resolve the Codex plugin directory entrypoint from location state.
  */
-export function resolvePluginDirectoryEntrypoint(
-  args: ResolvePluginDirectoryEntrypointArgs,
-): unknown {
+export function resolvePluginDirectoryEntrypoint({
+  explicitEntrypoint,
+  locationKey,
+  locationState,
+}: Record<string, unknown>) {
   if (peers == null) {
     throw new Error(
-      "ResolvePluginDirectoryEntrypoint peers are not configured",
+      "resolvePluginDirectoryEntrypoint peers are not configured",
     );
   }
-  const { explicitEntrypoint, locationKey, locationState } = args;
   if (explicitEntrypoint != null) return explicitEntrypoint;
-  const parsed = peers.safeParse(locationState);
-  if (parsed.success && parsed.data?.pluginDirectoryEntrypoint != null) {
-    return parsed.data.pluginDirectoryEntrypoint;
-  }
-  return locationKey === "default"
-    ? peers.directEntrypoint
-    : peers.otherEntrypoint;
+  let r = peers.y3i.safeParse(locationState);
+  return r.success && r.data.pluginDirectoryEntrypoint != null
+    ? r.data.pluginDirectoryEntrypoint
+    : locationKey === "default"
+      ? peers.Fb.CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_DIRECT
+      : peers.Fb.CODEX_PLUGIN_DIRECTORY_ENTRYPOINT_OTHER;
 }

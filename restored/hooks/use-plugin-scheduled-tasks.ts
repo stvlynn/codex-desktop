@@ -13,9 +13,7 @@ type usePluginScheduledTasksImpl = (
 let impl: usePluginScheduledTasksImpl | null = null;
 
 /** Wire usePluginScheduledTasks once companions land. */
-export function bindUsePluginScheduledTasks(
-  next: usePluginScheduledTasksImpl,
-): void {
+export function bindUsePluginScheduledTasks(next: usePluginScheduledTasksImpl): void {
   impl = next;
 }
 

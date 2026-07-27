@@ -16,9 +16,7 @@ type HomeComposerAnnouncementsImpl = (
 ) => ReactNode;
 let impl: HomeComposerAnnouncementsImpl | null = null;
 
-export function bindHomeComposerAnnouncements(
-  next: HomeComposerAnnouncementsImpl,
-): void {
+export function bindHomeComposerAnnouncements(next: HomeComposerAnnouncementsImpl): void {
   impl = next;
 }
 

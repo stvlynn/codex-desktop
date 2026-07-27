@@ -14,9 +14,7 @@ type ArtifactTemplatePickerImpl = (
 let impl: ArtifactTemplatePickerImpl | null = null;
 
 /** Wire the full ArtifactTemplatePicker once deeper restore lands. */
-export function bindArtifactTemplatePicker(
-  next: ArtifactTemplatePickerImpl,
-): void {
+export function bindArtifactTemplatePicker(next: ArtifactTemplatePickerImpl): void {
   impl = next;
 }
 
@@ -24,9 +22,7 @@ export function bindArtifactTemplatePicker(
  * Bindable ArtifactTemplatePicker.
  * Alias ownership unresolved — do not invent extractFn body.
  */
-export function ArtifactTemplatePicker(
-  props: ArtifactTemplatePickerProps,
-): ReactElement {
+export function ArtifactTemplatePicker(props: ArtifactTemplatePickerProps): ReactElement {
   if (impl == null) {
     return (
       <div

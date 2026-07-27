@@ -18,9 +18,7 @@ export function setComposerContextSlicer(fn: ContextSliceFn): void {
 }
 
 /** Wire next-section boundary finder (`sSt` in the bundle). */
-export function setSelectionSectionBoundaryFinder(
-  fn: NextSectionStartFn,
-): void {
+export function setSelectionSectionBoundaryFinder(fn: NextSectionStartFn): void {
   findNextSectionStart = fn;
 }
 

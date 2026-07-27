@@ -1,29 +1,19 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave ED — real body via extractFn(internal `t6s`) / export `Zm`.
-
-import type { ReactNode } from "react";
-
-export type ComposerProjectSelectorProps = {
-  projectId?: string | null;
-  projectName?: string | null;
-  menuOpen?: boolean;
-  onMenuOpenChange?: (open: boolean) => void;
-  shortcut?: unknown;
-  subtleHover?: boolean;
-  triggerButton?: ReactNode;
-  variant?: unknown;
-  onProjectChange?: (projectId: string | null) => void;
-};
+// Materialized via extractFn(internal `t6s`) / export `Zm`.
 
 export type ComposerProjectSelectorPeers = {
-  useActiveThread: () => { type?: string; projectId?: string | null } | null;
-  ControlledProjectSelector: (props: Record<string, unknown>) => ReactNode;
-  UncontrolledProjectSelector: (props: Record<string, unknown>) => ReactNode;
+  TE: (...args: unknown[]) => unknown;
+  Y: (...args: unknown[]) => unknown;
+  Zus: (...args: unknown[]) => unknown;
+  i6s: (...args: unknown[]) => unknown;
+  n6s: (...args: unknown[]) => unknown;
+  r6s: (...args: unknown[]) => unknown;
+  startsWith: (...args: unknown[]) => unknown;
+  type: (...args: unknown[]) => unknown;
 };
-
 let peers: ComposerProjectSelectorPeers | null = null;
 
-/** Wire composer project selector peers once companions land. */
+/** Wire ComposerProjectSelector peers once companions land. */
 export function setComposerProjectSelectorPeers(
   next: ComposerProjectSelectorPeers,
 ): void {
@@ -32,35 +22,16 @@ export function setComposerProjectSelectorPeers(
 
 /**
  * Bundle export `Zm` / internal `t6s`.
- * Project selector for composer — controlled when onProjectChange is set.
  */
-export function ComposerProjectSelector(
-  props: ComposerProjectSelectorProps,
-): ReactNode {
+export function ComposerProjectSelector(props: unknown) {
+  const Zus = peers.Zus;
+  const N6s = peers.n6s;
   if (peers == null) {
     throw new Error("ComposerProjectSelector peers are not configured");
   }
-  const {
-    projectId,
-    projectName = null,
-    menuOpen,
-    onMenuOpenChange,
-    shortcut,
-    subtleHover,
-    triggerButton,
-    variant,
-    onProjectChange,
-  } = props;
-  const active = peers.useActiveThread();
-  let resolvedId = projectId;
-  if (resolvedId === undefined) {
-    resolvedId = active?.type === "local" ? (active.projectId ?? null) : null;
-  }
-  if (onProjectChange != null) {
-    const chatgptProjectId = resolvedId?.startsWith("g-p-") ? resolvedId : null;
-    return peers.ControlledProjectSelector({
-      projectId: chatgptProjectId,
-      projectName,
+  let {
+      projectId,
+      projectName = null,
       menuOpen,
       onMenuOpenChange,
       shortcut,
@@ -68,19 +39,39 @@ export function ComposerProjectSelector(
       triggerButton,
       variant,
       onProjectChange,
-    });
+    } = props,
+    f = peers.Y(peers.TE),
+    p = projectId;
+  if (
+    (p === undefined && (p = f?.type === "local" ? f.projectId : null),
+    onProjectChange != null)
+  ) {
+    let e = p?.startsWith("g-p-") ? p : null;
+    let n;
+    return (
+      <Zus
+        projectId={e}
+        projectName={projectName}
+        menuOpen={menuOpen}
+        onMenuOpenChange={onMenuOpenChange}
+        shortcut={shortcut}
+        subtleHover={subtleHover}
+        triggerButton={triggerButton}
+        variant={variant}
+        onProjectChange={onProjectChange}
+      />
+    );
   }
-  return peers.UncontrolledProjectSelector({
-    projectId: resolvedId,
-    projectName,
-    menuOpen,
-    onMenuOpenChange,
-    shortcut,
-    subtleHover,
-    triggerButton,
-    variant,
-  });
+  return (
+    <N6s
+      projectId={p}
+      projectName={projectName}
+      menuOpen={menuOpen}
+      onMenuOpenChange={onMenuOpenChange}
+      shortcut={shortcut}
+      subtleHover={subtleHover}
+      triggerButton={triggerButton}
+      variant={variant}
+    />
+  );
 }
-
-/** Bundle export `Qm` — Rolldown ESM init retained as no-op. */
-export function ensureComposerProjectSelectorInit(): void {}

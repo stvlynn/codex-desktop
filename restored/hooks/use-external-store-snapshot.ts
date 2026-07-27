@@ -1,31 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `A9l`) / export `vr`.
+// Materialized via extractFn(internal `A9l`) / export `vr`.
 
 export type UseExternalStoreSnapshotPeers = {
-  useSyncExternalStore: (
-    subscribe: () => () => void,
-    getSnapshot: () => unknown,
-  ) => unknown;
-  subscribe: () => () => void;
-  getSnapshot: () => unknown;
+  P9l: (...args: unknown[]) => unknown;
+  j9l: (...args: unknown[]) => unknown;
+  z9l: (...args: unknown[]) => unknown;
 };
 
 let peers: UseExternalStoreSnapshotPeers | null = null;
 
 /** Wire useExternalStoreSnapshot peers once companions land. */
-export function setUseExternalStoreSnapshotPeers(
-  next: UseExternalStoreSnapshotPeers,
-): void {
+export function setUseExternalStoreSnapshotPeers(next: UseExternalStoreSnapshotPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `vr` / internal `A9l`.
- * Subscribe to an external store snapshot via useSyncExternalStore.
  */
-export function useExternalStoreSnapshot(): unknown {
+export function useExternalStoreSnapshot() {
   if (peers == null) {
-    throw new Error("UseExternalStoreSnapshot peers are not configured");
+    throw new Error("useExternalStoreSnapshot peers are not configured");
   }
-  return peers.useSyncExternalStore(peers.subscribe, peers.getSnapshot);
+
+  return (0, peers.z9l.useSyncExternalStore)(peers.P9l, peers.j9l);
 }

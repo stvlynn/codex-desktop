@@ -1,35 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EP — real body via extractFn(internal `Nh`) / export `olt`.
+// Materialized via extractFn(internal `Nh`) / export `olt`.
 
 export type UseStatsigGateValuePeers = {
-  useStatsigClient: () => { client: unknown };
-  evaluateGate: (
-    client: unknown,
-    gateId: unknown,
-    options?: unknown,
-  ) => boolean;
+  Ah: (...args: unknown[]) => unknown;
+  Ant: (...args: unknown[]) => unknown;
+  Ph: (...args: unknown[]) => unknown;
 };
 
 let peers: UseStatsigGateValuePeers | null = null;
 
 /** Wire useStatsigGateValue peers once companions land. */
-export function setUseStatsigGateValuePeers(
-  next: UseStatsigGateValuePeers,
-): void {
+export function setUseStatsigGateValuePeers(next: UseStatsigGateValuePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `olt` / internal `Nh`.
- * Read a Statsig gate value from the active client.
  */
-export function useStatsigGateValue(
-  gateId: unknown,
-  options?: unknown,
-): boolean {
+export function useStatsigGateValue(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("UseStatsigGateValue peers are not configured");
+    throw new Error("useStatsigGateValue peers are not configured");
   }
-  const { client } = peers.useStatsigClient();
-  return peers.evaluateGate(client, gateId, options);
+
+  let n = (0, peers.Ant.c)(4),
+    { client: r } = peers.Ah(),
+    i;
+  return (
+    n[0] !== r || n[1] !== e || n[2] !== t
+      ? ((i = peers.Ph(r, e, t)),
+        (n[0] = r),
+        (n[1] = e),
+        (n[2] = t),
+        (n[3] = i))
+      : (i = n[3]),
+    i
+  );
 }

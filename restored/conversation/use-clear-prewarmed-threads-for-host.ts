@@ -1,68 +1,73 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `PN`) / export `cq`.
+// Materialized via extractFn(internal `PN`) / export `cq`.
 
 export type UseClearPrewarmedThreadsForHostPeers = {
-  useDraftSettings: () => {
-    draftSettings: { serviceTier?: unknown };
-    isNewThreadDraft: boolean;
-    updateDraftSettings: (updater: (prev: any) => any) => void;
-  };
-  useModelSettings: (conversationId: unknown) => { modelSettings: unknown };
-  resolveServiceTier: (
-    conversationId: unknown,
-    modelSettings: unknown,
-    serviceTier: unknown,
-    isNewThreadDraft: boolean,
-  ) => {
-    hostId: unknown;
-    hasManagedNewThreadSettings: boolean;
-    setServiceTier: (tier: unknown, options: unknown) => Promise<void>;
-  };
-  normalizeTier: (tier: unknown) => unknown;
-  clearPrewarmed: (payload: { hostId: unknown }) => Promise<unknown>;
+  Bf: (...args: unknown[]) => unknown;
+  OJr: (...args: unknown[]) => unknown;
+  _tr: (...args: unknown[]) => unknown;
+  c3r: (...args: unknown[]) => unknown;
+  l3r: (...args: unknown[]) => unknown;
+  zM: (...args: unknown[]) => unknown;
 };
 
 let peers: UseClearPrewarmedThreadsForHostPeers | null = null;
 
-/** Wire clear-prewarmed-threads peers once companions land. */
-export function setUseClearPrewarmedThreadsForHostPeers(
-  next: UseClearPrewarmedThreadsForHostPeers,
-): void {
+/** Wire useClearPrewarmedThreadsForHost peers once companions land. */
+export function setUseClearPrewarmedThreadsForHostPeers(next: UseClearPrewarmedThreadsForHostPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `cq` / internal `PN`.
- * Service-tier setter that clears prewarmed threads for managed new threads.
  */
-export function useClearPrewarmedThreadsForHost(
-  conversationId?: unknown,
-): Record<string, unknown> {
+export function useClearPrewarmedThreadsForHost(e: unknown) {
   if (peers == null) {
-    throw new Error("UseClearPrewarmedThreadsForHost peers are not configured");
+    throw new Error("useClearPrewarmedThreadsForHost peers are not configured");
   }
-  const id = conversationId === undefined ? null : conversationId;
-  const { draftSettings, isNewThreadDraft, updateDraftSettings } =
-    peers.useDraftSettings();
-  const { modelSettings } = peers.useModelSettings(id);
-  const serviceTier = peers.resolveServiceTier(
-    id,
-    modelSettings,
-    draftSettings.serviceTier,
-    isNewThreadDraft,
+
+  let t = (0, peers.l3r.c)(7),
+    n = e === void 0 ? null : e,
+    {
+      draftSettings: r,
+      isNewThreadDraft: i,
+      updateDraftSettings: a,
+    } = peers.OJr(),
+    { modelSettings: o } = peers.zM(n),
+    s = peers.c3r(n, o, r.serviceTier, i),
+    c = n == null && i && s.hasManagedNewThreadSettings,
+    l;
+  t[0] !== s || t[1] !== c || t[2] !== a
+    ? ((l = async (e, t) => {
+        (c &&
+          (a((t) => ({
+            ...t,
+            isManuallyChanged: !0,
+            serviceTier: {
+              value: peers._tr(e),
+            },
+          })),
+          await peers.Bf(`clear-prewarmed-threads-for-host`, {
+            hostId: s.hostId,
+          })),
+          await s.setServiceTier(e, t));
+      }),
+      (t[0] = s),
+      (t[1] = c),
+      (t[2] = a),
+      (t[3] = l))
+    : (l = t[3]);
+  let u = l,
+    d;
+  return (
+    t[4] !== s || t[5] !== u
+      ? ((d = {
+          ...s,
+          setServiceTier: u,
+        }),
+        (t[4] = s),
+        (t[5] = u),
+        (t[6] = d))
+      : (d = t[6]),
+    d
   );
-  const shouldClear =
-    id == null && isNewThreadDraft && serviceTier.hasManagedNewThreadSettings;
-  const setServiceTier = async (tier: unknown, options: unknown) => {
-    if (shouldClear) {
-      updateDraftSettings((prev) => ({
-        ...prev,
-        isManuallyChanged: true,
-        serviceTier: { value: peers!.normalizeTier(tier) },
-      }));
-      await peers!.clearPrewarmed({ hostId: serviceTier.hostId });
-    }
-    await serviceTier.setServiceTier(tier, options);
-  };
-  return { ...serviceTier, setServiceTier };
 }

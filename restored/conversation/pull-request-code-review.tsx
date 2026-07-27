@@ -17,9 +17,7 @@ type PullRequestCodeReviewImpl = (
 let impl: PullRequestCodeReviewImpl | null = null;
 
 /** Wire the full PullRequestCodeReview once deeper companion restore lands. */
-export function bindPullRequestCodeReview(
-  next: PullRequestCodeReviewImpl,
-): void {
+export function bindPullRequestCodeReview(next: PullRequestCodeReviewImpl): void {
   impl = next;
 }
 

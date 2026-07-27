@@ -32,9 +32,7 @@ export function isBusinessPlan(plan: string | null | undefined): boolean {
 }
 
 /** Bundle `xln` / export `Z7`. */
-export function isBusinessPlanExcludingEducation(
-  plan: string | null | undefined,
-): boolean {
+export function isBusinessPlanExcludingEducation(plan: string | null | undefined): boolean {
   return isBusinessPlan(plan) && !isQuorumPlan(plan);
 }
 

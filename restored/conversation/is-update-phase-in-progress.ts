@@ -1,28 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Xn / oiu
+// Materialized via extractFn(internal `oiu`) / export `Xn`.
 
 export type BindIsUpdatePhaseInProgressPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Gf: (...args: unknown[]) => unknown;
+  Hb: (...args: unknown[]) => unknown;
+  Zru: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  riu: (...args: unknown[]) => unknown;
 };
 
 let peers: BindIsUpdatePhaseInProgressPeers | null = null;
 
-/** Wire bindIsUpdatePhaseInProgress once companions land. */
-export function setBindIsUpdatePhaseInProgressPeers(
-  next: BindIsUpdatePhaseInProgressPeers,
-): void {
+/** Wire bindIsUpdatePhaseInProgress peers once companions land. */
+export function setBindIsUpdatePhaseInProgressPeers(next: BindIsUpdatePhaseInProgressPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Xn` / internal `oiu`.
- * Stage-3 fill for bundle export Xn / oiu
  */
-export function bindIsUpdatePhaseInProgress(...args: unknown[]): unknown {
+export function bindIsUpdatePhaseInProgress() {
   if (peers == null) {
     throw new Error("bindIsUpdatePhaseInProgress peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Hb(), peers.Gf(), peers.Zru(), peers.riu();
+  });
 }

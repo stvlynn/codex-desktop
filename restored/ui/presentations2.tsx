@@ -1,41 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export yR / gB
+// Materialized via extractFn(internal `gB`) / export `yR`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type Presentations2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindPresentations2Peers = {
+  BUi: (...args: unknown[]) => unknown;
+  ZL: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  iti: (...args: unknown[]) => unknown;
 };
 
-type Presentations2Impl = (props: Presentations2Props) => ReactNode;
-let impl: Presentations2Impl | null = null;
+let peers: BindPresentations2Peers | null = null;
 
-/** Wire the full Presentations2 once deeper restore lands. */
-export function bindPresentations2(next: Presentations2Impl): void {
-  impl = next;
+/** Wire bindPresentations2 peers once companions land. */
+export function setBindPresentations2Peers(next: BindPresentations2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `yR` / internal `gB`.
- * Stage-3 fill for bundle export yR / gB; heavy UI via bind.
  */
-export function Presentations2(props: Presentations2Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fn-scaffold="yR"
-      aria-label="Presentations2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export yR / gB
-        </div>
-      )}
-    </div>
-  );
+export function bindPresentations2() {
+  if (peers == null) {
+    throw new Error("bindPresentations2 peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.ZL(), peers.iti(), peers.BUi();
+  });
 }

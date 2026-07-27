@@ -1,48 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export j8 / cYn
+// Materialized via extractFn(internal `cYn`) / export `j8`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredConversationJ83Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredConversationJ83Peers = {
+  Da: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  bge: (...args: unknown[]) => unknown;
 };
 
-type DeferredConversationJ83Impl = (
-  props: DeferredConversationJ83Props,
-) => ReactNode;
-let impl: DeferredConversationJ83Impl | null = null;
+let peers: BindDeferredConversationJ83Peers | null = null;
 
-/** Wire the full DeferredConversationJ83 once deeper restore lands. */
-export function bindDeferredConversationJ83(
-  next: DeferredConversationJ83Impl,
-): void {
-  impl = next;
+/** Wire bindDeferredConversationJ83 peers once companions land. */
+export function setBindDeferredConversationJ83Peers(next: BindDeferredConversationJ83Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `j8` / internal `cYn`.
- * Stage-3 fill for bundle export j8 / cYn; heavy UI via bind.
  */
-export function DeferredConversationJ83(
-  props: DeferredConversationJ83Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="j8"
-      aria-label="DeferredConversationJ83"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export j8 / cYn
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredConversationJ83() {
+  if (peers == null) {
+    throw new Error("bindDeferredConversationJ83 peers are not configured");
+  }
+
+  return peers.Da(peers.Q, e => peers.bge());
 }

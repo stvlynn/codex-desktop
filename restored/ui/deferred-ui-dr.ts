@@ -1,25 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export DR / m5i
+// Materialized via extractFn(internal `m5i`) / export `DR`.
 
 export type BindDeferredUiDRPeers = {
-  impl: (...args: unknown[]) => unknown;
+  $u: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  f5i: (...args: unknown[]) => unknown;
+  p5i: (...args: unknown[]) => unknown;
+  sd: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiDRPeers | null = null;
 
-/** Wire bindDeferredUiDR once companions land. */
+/** Wire bindDeferredUiDR peers once companions land. */
 export function setBindDeferredUiDRPeers(next: BindDeferredUiDRPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `DR` / internal `m5i`.
- * Stage-3 fill for bundle export DR / m5i
  */
-export function bindDeferredUiDR(...args: unknown[]): unknown {
+export function bindDeferredUiDR() {
   if (peers == null) {
     throw new Error("bindDeferredUiDR peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    f5i = peers.c(), peers.sd(), peers.$u(), p5i = peers.J();
+  });
 }

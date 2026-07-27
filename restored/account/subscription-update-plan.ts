@@ -7,9 +7,7 @@ type SubscriptionUpdatePlanDialogImpl = (...args: unknown[]) => unknown;
 let impl: SubscriptionUpdatePlanDialogImpl | null = null;
 
 /** Wire SubscriptionUpdatePlanDialog once companions land. */
-export function bindSubscriptionUpdatePlanDialog(
-  next: SubscriptionUpdatePlanDialogImpl,
-): void {
+export function bindSubscriptionUpdatePlanDialog(next: SubscriptionUpdatePlanDialogImpl): void {
   impl = next;
 }
 

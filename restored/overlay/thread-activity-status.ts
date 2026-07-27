@@ -43,9 +43,7 @@ export type ThreadActivityStatus =
  * Bundle `rpe` / export `o_t`.
  * 24-bit RGB ints used by overlay / tray status glyphs.
  */
-export function threadActivityStatusColor(
-  status: ThreadActivityStatus,
-): number {
+export function threadActivityStatusColor(status: ThreadActivityStatus): number {
   switch (status) {
     case "working":
       return 3_166_206;

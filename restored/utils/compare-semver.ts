@@ -33,10 +33,7 @@ export function parseSemver(version: string): ParsedSemver | null {
 }
 
 /** Bundle `Che` (co-located) — major/minor/patch only. */
-export function compareSemverCore(
-  left: ParsedSemver,
-  right: ParsedSemver,
-): number {
+export function compareSemverCore(left: ParsedSemver, right: ParsedSemver): number {
   if (left.major !== right.major) return left.major - right.major;
   if (left.minor !== right.minor) return left.minor - right.minor;
   if (left.patch !== right.patch) return left.patch - right.patch;
@@ -87,10 +84,7 @@ export function compareSemverRelease(left: string, right: string): number {
 /**
  * True when `version` is unknown (`0.0.0`) or >= `minimumVersion`.
  */
-export function isAppServerVersionSupported(
-  version: string,
-  minimumVersion: string,
-): boolean {
+export function isAppServerVersionSupported(version: string, minimumVersion: string): boolean {
   return version === UNKNOWN_APP_SERVER_VERSION
     ? true
     : compareSemver(version, minimumVersion) >= 0;

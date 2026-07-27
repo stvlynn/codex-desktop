@@ -1,13 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EM — real body via extractFn(internal `d5l`) / export `Ar`.
+// Materialized via extractFn(internal `d5l`) / export `Ar`.
 
 export type UseSelectedAvatarPeers = {
-  useStore: (atom: unknown) => unknown;
-  storeAtom: unknown;
-  readSelectedAvatarId: (key: unknown) => unknown;
-  selectedAvatarIdKey: unknown;
-  resolveAvatar: (id: unknown, fallback: unknown) => unknown;
-  writeSelectedAvatarId: (store: unknown, key: unknown, value: unknown) => void;
+  GEe: (...args: unknown[]) => unknown;
+  Io: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Sp: (...args: unknown[]) => unknown;
+  bp: (...args: unknown[]) => unknown;
+  f5l: (...args: unknown[]) => unknown;
+  l5l: (...args: unknown[]) => unknown;
 };
 
 let peers: UseSelectedAvatarPeers | null = null;
@@ -19,23 +20,40 @@ export function setUseSelectedAvatarPeers(next: UseSelectedAvatarPeers): void {
 
 /**
  * Bundle export `Ar` / internal `d5l`.
- * Resolve selected avatar id/object and expose a setter.
  */
-export function useSelectedAvatar(fallback: unknown): {
-  selectedAvatar: unknown;
-  selectedAvatarId: unknown;
-  setSelectedAvatarId: (value: unknown) => void;
-} {
+export function useSelectedAvatar(e: unknown) {
   if (peers == null) {
-    throw new Error("UseSelectedAvatar peers are not configured");
+    throw new Error("useSelectedAvatar peers are not configured");
   }
-  const store = peers.useStore(peers.storeAtom);
-  const selectedAvatarId = peers.readSelectedAvatarId(
-    peers.selectedAvatarIdKey,
+
+  let t = (0, peers.f5l.c)(9),
+    n = peers.Io(peers.Q),
+    r = peers.bp(peers.GEe.selectedAvatarId),
+    i;
+  t[0] !== e || t[1] !== r
+    ? ((i = peers.l5l(r, e)), (t[0] = e), (t[1] = r), (t[2] = i))
+    : (i = t[2]);
+  let a;
+  t[3] === n
+    ? (a = t[4])
+    : ((a = (e) => {
+        peers.Sp(n, peers.GEe.selectedAvatarId, e);
+      }),
+      (t[3] = n),
+      (t[4] = a));
+  let o;
+  return (
+    t[5] !== r || t[6] !== i || t[7] !== a
+      ? ((o = {
+          selectedAvatar: i,
+          selectedAvatarId: r,
+          setSelectedAvatarId: a,
+        }),
+        (t[5] = r),
+        (t[6] = i),
+        (t[7] = a),
+        (t[8] = o))
+      : (o = t[8]),
+    o
   );
-  const selectedAvatar = peers.resolveAvatar(selectedAvatarId, fallback);
-  const setSelectedAvatarId = (value: unknown) => {
-    peers!.writeSelectedAvatarId(store, peers!.selectedAvatarIdKey, value);
-  };
-  return { selectedAvatar, selectedAvatarId, setSelectedAvatarId };
 }

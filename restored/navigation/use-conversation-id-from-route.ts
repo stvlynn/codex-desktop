@@ -1,30 +1,42 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Stage 3: Wave CB — small real body reading conversationId from local/remote/hotkey routes.
-// Deferred companion of thread route shells.
+// Materialized via extractFn(internal `T3`) / export `ql`.
 
-import { asThreadId } from "../conversation/as-thread-id";
-import { useMatch } from "../boundaries/react-router-navigation";
+export type UseConversationIdFromRoutePeers = {
+  X1c: (...args: unknown[]) => unknown;
+  conversationId: (...args: unknown[]) => unknown;
+  kl: (...args: unknown[]) => unknown;
+  params: (...args: unknown[]) => unknown;
+  yw: (...args: unknown[]) => unknown;
+};
+
+let peers: UseConversationIdFromRoutePeers | null = null;
+
+/** Wire useConversationIdFromRoute peers once companions land. */
+export function setUseConversationIdFromRoutePeers(next: UseConversationIdFromRoutePeers): void {
+  peers = next;
+}
 
 /**
- * Resolve the active conversation thread id from local, remote, or hotkey-window routes.
  * Bundle export `ql` / internal `T3`.
  */
-export function useConversationIdFromRoute(): string | null {
-  const local = useMatch("/local/:conversationId") as
-    | { params?: { conversationId?: string } }
-    | null
-    | undefined;
-  const remote = useMatch("/remote/:conversationId") as
-    | { params?: { conversationId?: string } }
-    | null
-    | undefined;
-  const hotkey = useMatch("/hotkey-window/thread/:conversationId") as
-    | { params?: { conversationId?: string } }
-    | null
-    | undefined;
-  const conversationId =
-    local?.params?.conversationId ??
-    remote?.params?.conversationId ??
-    hotkey?.params?.conversationId;
-  return conversationId ? asThreadId(conversationId) : null;
+export function useConversationIdFromRoute() {
+  if (peers == null) {
+    throw new Error("useConversationIdFromRoute peers are not configured");
+  }
+
+  let e = (0, peers.X1c.c)(2),
+    t = peers.yw(`/local/:conversationId`),
+    n = peers.yw(`/remote/:conversationId`),
+    r = peers.yw(`/hotkey-window/thread/:conversationId`),
+    i =
+      t?.params.conversationId ??
+      n?.params.conversationId ??
+      r?.params.conversationId,
+    a;
+  return (
+    e[0] === i
+      ? (a = e[1])
+      : ((a = i ? peers.kl(i) : null), (e[0] = i), (e[1] = a)),
+    a
+  );
 }

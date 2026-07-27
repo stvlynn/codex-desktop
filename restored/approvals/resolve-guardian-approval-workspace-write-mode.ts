@@ -1,21 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `a4r`) / export `Pq`.
+// Materialized via extractFn(internal `a4r`) / export `Pq`.
 
 export type ResolveGuardianApprovalWorkspaceWriteModePeers = {
-  listModesFromConfig: (
-    requirements: unknown,
-    resolvedConfig: unknown,
-  ) => string[];
-  isGuardianDefaultEnabled: (resolvedConfig: unknown) => boolean | null;
-  resolveNonFullAccessMode: (
-    resolvedConfig: unknown,
-    defaultMode: string,
-  ) => string;
-  isGuardianAutoEligible: (value: unknown) => boolean;
-  readGuardianAutoSource: (resolvedConfig: unknown) => unknown;
-  pickConfigNonFullAccessMode: (modes: string[]) => string | null;
+  Epe: (...args: unknown[]) => unknown;
+  Fpe: (...args: unknown[]) => unknown;
+  Gpe: (...args: unknown[]) => unknown;
+  Kpe: (...args: unknown[]) => unknown;
+  Upe: (...args: unknown[]) => unknown;
+  r4r: (...args: unknown[]) => unknown;
 };
-
 let peers: ResolveGuardianApprovalWorkspaceWriteModePeers | null = null;
 
 /** Wire resolveGuardianApprovalWorkspaceWriteMode peers once companions land. */
@@ -27,81 +20,51 @@ export function setResolveGuardianApprovalWorkspaceWriteModePeers(
 
 /**
  * Bundle export `Pq` / internal `a4r`.
- * Resolve available agent modes and guardian-approval workspace-write options.
  */
-export function resolveGuardianApprovalWorkspaceWriteMode(args: {
-  isConfigDataPending: boolean;
-  requirements: unknown;
-  resolvedConfig: unknown;
-  isGuardianApprovalEnabledByStatsig: boolean;
-  hasAuthoritativeGuardianApprovalDefault?: boolean;
-  defaultWorkspaceWriteMode?: string;
-}): {
-  availableAgentModes: string[];
-  canShowCustom: boolean;
-  canUnlock: boolean;
-  customEquivalentMode: string;
-  isGuardianModeAvailable: boolean;
-  isConfigDataPending: boolean;
-  configNonFullAccessMode: string | null;
-  showGuardianOption: boolean;
-} {
+export function resolveGuardianApprovalWorkspaceWriteMode({
+  isConfigDataPending,
+  requirements,
+  resolvedConfig,
+  isGuardianApprovalEnabledByStatsig,
+  hasAuthoritativeGuardianApprovalDefault = false,
+  defaultWorkspaceWriteMode = "auto",
+}: Record<string, unknown>) {
   if (peers == null) {
     throw new Error(
-      "ResolveGuardianApprovalWorkspaceWriteMode peers are not configured",
+      "resolveGuardianApprovalWorkspaceWriteMode peers are not configured",
     );
   }
-  const {
-    isConfigDataPending,
-    requirements,
-    resolvedConfig,
-    isGuardianApprovalEnabledByStatsig,
-    hasAuthoritativeGuardianApprovalDefault = false,
-    defaultWorkspaceWriteMode = "auto",
-  } = args;
-  const rawModes = isConfigDataPending
-    ? ["read-only", "auto", "granular", "full-access", "custom"]
-    : peers.listModesFromConfig(requirements, resolvedConfig);
-  const guardianDefaultEnabled =
-    peers.isGuardianDefaultEnabled(resolvedConfig ?? undefined) ?? true;
-  const showGuardianOption =
-    isGuardianApprovalEnabledByStatsig ||
-    hasAuthoritativeGuardianApprovalDefault;
-  const withoutGuardian = rawModes.filter((m) => m !== "guardian-approvals");
-  const guardianOnly =
-    rawModes.includes("guardian-approvals") && withoutGuardian.length === 0;
-  const availableAgentModes =
-    (showGuardianOption && guardianDefaultEnabled) || guardianOnly
-      ? rawModes
-      : withoutGuardian;
-  const isGuardianModeAvailable =
-    availableAgentModes.includes("guardian-approvals");
-  const withoutCustom = availableAgentModes.filter((m) => m !== "custom");
-  const resolvedMode = peers.resolveNonFullAccessMode(
-    resolvedConfig ?? undefined,
-    defaultWorkspaceWriteMode,
+  let o = isConfigDataPending
+      ? ["read-only", "auto", "granular", "full-access", "custom"]
+      : peers.Fpe(requirements, resolvedConfig),
+    s = peers.Kpe(resolvedConfig ?? undefined) ?? true,
+    c =
+      isGuardianApprovalEnabledByStatsig ||
+      hasAuthoritativeGuardianApprovalDefault,
+    l = o.filter((item) => {
+      return item !== "guardian-approvals";
+    }),
+    u = o.includes("guardian-approvals") && l.length === 0,
+    d = (c && s) || u ? o : l,
+    f = d.includes("guardian-approvals"),
+    p = d.filter((item) => {
+      return item !== "custom";
+    }),
+    m = peers.Gpe(resolvedConfig ?? undefined, defaultWorkspaceWriteMode),
+    h = m === "full-access" ? null : m,
+    g = f && m === "auto" && peers.Epe(peers.Upe(resolvedConfig ?? undefined)),
+    _ = peers.r4r(p);
+  return (
+    g ? (_ = "guardian-approvals") : h != null && p.includes(h) && (_ = h),
+    {
+      availableAgentModes: d,
+      canShowCustom: d.includes("custom"),
+      canUnlock: d.includes("full-access"),
+      customEquivalentMode: g ? "guardian-approvals" : m,
+      isGuardianModeAvailable: f,
+      isConfigDataPending,
+      configNonFullAccessMode: _,
+      showGuardianOption: c,
+    }
   );
-  const configHint = resolvedMode === "full-access" ? null : resolvedMode;
-  const guardianAuto =
-    isGuardianModeAvailable &&
-    resolvedMode === "auto" &&
-    peers.isGuardianAutoEligible(
-      peers.readGuardianAutoSource(resolvedConfig ?? undefined),
-    );
-  let configNonFullAccessMode =
-    peers.pickConfigNonFullAccessMode(withoutCustom);
-  if (guardianAuto) configNonFullAccessMode = "guardian-approvals";
-  else if (configHint != null && withoutCustom.includes(configHint)) {
-    configNonFullAccessMode = configHint;
-  }
-  return {
-    availableAgentModes,
-    canShowCustom: availableAgentModes.includes("custom"),
-    canUnlock: availableAgentModes.includes("full-access"),
-    customEquivalentMode: guardianAuto ? "guardian-approvals" : resolvedMode,
-    isGuardianModeAvailable,
-    isConfigDataPending,
-    configNonFullAccessMode,
-    showGuardianOption,
-  };
 }

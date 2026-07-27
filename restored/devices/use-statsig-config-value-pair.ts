@@ -1,36 +1,48 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EO — real body via extractFn(internal `B_`) / export `jot`.
+// Materialized via extractFn(internal `B_`) / export `jot`.
 
 export type UseStatsigConfigValuePairPeers = {
-  useScope: () => unknown;
-  useConfigValue: (configKey: unknown, name: unknown) => unknown;
-  configKey: unknown;
-  writeConfigValue: (scope: unknown, name: unknown, value: unknown) => void;
+  Fo: (...args: unknown[]) => unknown;
+  Io: (...args: unknown[]) => unknown;
+  L_: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  aOt: (...args: unknown[]) => unknown;
+  iOt: (...args: unknown[]) => unknown;
 };
 
 let peers: UseStatsigConfigValuePairPeers | null = null;
 
 /** Wire useStatsigConfigValuePair peers once companions land. */
-export function setUseStatsigConfigValuePairPeers(
-  next: UseStatsigConfigValuePairPeers,
-): void {
+export function setUseStatsigConfigValuePairPeers(next: UseStatsigConfigValuePairPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `jot` / internal `B_`.
- * Return a Statsig config value plus a setter bound to scope.
  */
-export function useStatsigConfigValuePair(
-  name: unknown,
-): [unknown, (value: unknown) => void] {
+export function useStatsigConfigValuePair(e: unknown) {
   if (peers == null) {
-    throw new Error("UseStatsigConfigValuePair peers are not configured");
+    throw new Error("useStatsigConfigValuePair peers are not configured");
   }
-  const scope = peers.useScope();
-  const value = peers.useConfigValue(peers.configKey, name);
-  const setValue = (next: unknown) => {
-    peers!.writeConfigValue(scope, name, next);
-  };
-  return [value, setValue];
+
+  let t = (0, peers.aOt.c)(6),
+    n = peers.Io(peers.Q),
+    r = peers.Fo(peers.iOt, e),
+    i;
+  t[0] !== e || t[1] !== n
+    ? ((i = (t) => {
+        peers.L_(n, e, t);
+      }),
+      (t[0] = e),
+      (t[1] = n),
+      (t[2] = i))
+    : (i = t[2]);
+  let a = i,
+    o;
+  return (
+    t[3] !== a || t[4] !== r
+      ? ((o = [r, a]), (t[3] = a), (t[4] = r), (t[5] = o))
+      : (o = t[5]),
+    o
+  );
 }

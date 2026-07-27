@@ -93,10 +93,7 @@ export function scrollAppActionTarget(
  * Bundle `WXe` / export `Tdt` — scroll so a pixel/page offset lands at the
  * viewport edge, or jump to an edge.
  */
-export function scrollAppActionTargetTo(
-  element: HTMLElement,
-  command: AppActionScrollTo,
-): void {
+export function scrollAppActionTargetTo(element: HTMLElement, command: AppActionScrollTo): void {
   if (command.type === "edge") {
     scrollAppActionTarget(element, command, { isReversed: true });
     return;
@@ -138,10 +135,7 @@ function findAdjacentTimelineTurn(
  * Bundle `GXe` / export `Edt` — scroll timeline to previous/next turn, or
  * fall back to an edge jump.
  */
-export function scrollAppActionTargetByTurn(
-  element: HTMLElement,
-  direction: "previous" | "next",
-): void {
+export function scrollAppActionTargetByTurn(element: HTMLElement, direction: "previous" | "next"): void {
   const turn = findAdjacentTimelineTurn(element, direction);
   if (turn == null) {
     scrollAppActionTargetTo(element, {

@@ -15,9 +15,7 @@ export type UseEmbeddedCreditCheckoutGatePeers = {
 let peers: UseEmbeddedCreditCheckoutGatePeers | null = null;
 
 /** Wire useEmbeddedCreditCheckoutGate peers once companions land. */
-export function setUseEmbeddedCreditCheckoutGatePeers(
-  next: UseEmbeddedCreditCheckoutGatePeers,
-): void {
+export function setUseEmbeddedCreditCheckoutGatePeers(next: UseEmbeddedCreditCheckoutGatePeers): void {
   peers = next;
 }
 

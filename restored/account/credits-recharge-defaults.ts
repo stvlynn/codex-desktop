@@ -28,9 +28,7 @@ export type AutoTopUpSettingsLike = {
 };
 
 /** Bundle `Bws` / export `jy`. */
-export function getDefaultRechargeTarget(
-  settings: AutoTopUpSettingsLike,
-): string {
+export function getDefaultRechargeTarget(settings: AutoTopUpSettingsLike): string {
   if (!settings.isEnabled) {
     return String(CREDIT_RECHARGE_TARGET_OPTIONS[0]);
   }
@@ -41,9 +39,7 @@ export function getDefaultRechargeTarget(
 }
 
 /** Bundle `Vws` / export `ky`. */
-export function getDefaultRechargeThreshold(
-  settings: AutoTopUpSettingsLike,
-): string {
+export function getDefaultRechargeThreshold(settings: AutoTopUpSettingsLike): string {
   if (!settings.isEnabled) return CREDIT_RECHARGE_THRESHOLD_DEFAULT;
   const parsed = parseWholeNumber(settings.rechargeThreshold ?? "");
   return parsed.kind === "valid"

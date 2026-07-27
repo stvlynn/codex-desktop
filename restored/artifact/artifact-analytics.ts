@@ -104,18 +104,12 @@ export function logArtifactAnnotationStarted(
 }
 
 /** Bundle export `a` — log CodexArtifactRefreshClicked. */
-export function logArtifactRefreshClicked(
-  store: StoreLike,
-  ctx: ArtifactAnalyticsContext,
-): void {
+export function logArtifactRefreshClicked(store: StoreLike, ctx: ArtifactAnalyticsContext): void {
   logProductEvent(store, CodexArtifactRefreshClickedEvent, basePayload(ctx));
 }
 
 /** Bundle export `n` — log CodexArtifactAnnotationModeEnabled. */
-export function logArtifactAnnotationModeEnabled(
-  store: StoreLike,
-  ctx: ArtifactAnalyticsContext,
-): void {
+export function logArtifactAnnotationModeEnabled(store: StoreLike, ctx: ArtifactAnalyticsContext): void {
   logProductEvent(
     store,
     CodexArtifactAnnotationModeEnabledEvent,

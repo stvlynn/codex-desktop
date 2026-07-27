@@ -1,42 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export hR / Eta
+// Materialized via extractFn(internal `Eta`) / export `hR`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindPresentationsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindPresentationsPeers = {
+  Cta: (...args: unknown[]) => unknown;
+  Sta: (...args: unknown[]) => unknown;
+  Tta: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  wta: (...args: unknown[]) => unknown;
+  xta: (...args: unknown[]) => unknown;
 };
 
-type BindPresentationsImpl = (props: BindPresentationsProps) => ReactNode;
-let impl: BindPresentationsImpl | null = null;
+let peers: BindBindPresentationsPeers | null = null;
 
-/** Wire the full BindPresentations once deeper restore lands. */
-export function bindBindPresentations(next: BindPresentationsImpl): void {
-  impl = next;
+/** Wire bindBindPresentations peers once companions land. */
+export function setBindBindPresentationsPeers(next: BindBindPresentationsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `hR` / internal `Eta`.
- * Stage-3 fill for bundle export hR / Eta; heavy UI via bind.
  */
-export function BindPresentations(props: BindPresentationsProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fa-scaffold="hR"
-      aria-label="BindPresentations"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export hR / Eta
-        </div>
-      )}
-    </div>
-  );
+export function bindBindPresentations() {
+  if (peers == null) {
+    throw new Error("bindBindPresentations peers are not configured");
+  }
+
+  return peers.e(() => {
+    xta = `spreadsheets`, Sta = `presentations`, Cta = `1288674243`, wta = `1623794951`, Tta = `openai-primary-runtime`;
+  });
 }

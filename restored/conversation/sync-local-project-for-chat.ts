@@ -29,10 +29,7 @@ export function setSyncLocalProjectForChatDeps(args: {
   intlAtom = args.intlAtom;
 }
 
-export async function syncLocalProjectForChat(
-  scope: ScopeLike,
-  project: unknown,
-): Promise<unknown> {
+export async function syncLocalProjectForChat(scope: ScopeLike, project: unknown): Promise<unknown> {
   try {
     return await syncProject(scope, project);
   } catch {

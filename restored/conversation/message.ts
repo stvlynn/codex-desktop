@@ -1,26 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export A9 / Den
+// Materialized via extractFn(internal `Den`) / export `A9`.
 
 export type BindMessagePeers = {
-  impl: (...args: unknown[]) => unknown;
+  Een: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  X: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  rl: (...args: unknown[]) => unknown;
+  sl: (...args: unknown[]) => unknown;
 };
 
 let peers: BindMessagePeers | null = null;
 
-/** Wire bindMessage once companions land. */
+/** Wire bindMessage peers once companions land. */
 export function setBindMessagePeers(next: BindMessagePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `A9` / internal `Den`.
- * Stage-3 fill for bundle export A9 / Den
  */
-export function bindMessage(...args: unknown[]): unknown {
+export function bindMessage() {
   if (peers == null) {
     throw new Error("bindMessage peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Sl(), Een = peers.sl({
+      code: peers.rl().optional(),
+      message: peers.X().optional()
+    });
+  });
 }

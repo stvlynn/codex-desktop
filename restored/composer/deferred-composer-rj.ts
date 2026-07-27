@@ -1,28 +1,37 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export rJ / xN
+// Materialized via extractFn(internal `xN`) / export `rJ`.
 
 export type BindDeferredComposerRJPeers = {
-  impl: (...args: unknown[]) => unknown;
+  GM: (...args: unknown[]) => unknown;
+  H0r: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  WM: (...args: unknown[]) => unknown;
+  z0r: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredComposerRJPeers | null = null;
 
-/** Wire bindDeferredComposerRJ once companions land. */
-export function setBindDeferredComposerRJPeers(
-  next: BindDeferredComposerRJPeers,
-): void {
+/** Wire bindDeferredComposerRJ peers once companions land. */
+export function setBindDeferredComposerRJPeers(next: BindDeferredComposerRJPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `rJ` / internal `xN`.
- * Stage-3 fill for bundle export rJ / xN
  */
-export function bindDeferredComposerRJ(...args: unknown[]): unknown {
+export function bindDeferredComposerRJ() {
   if (peers == null) {
     throw new Error("bindDeferredComposerRJ peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ma(peers.GM, ({
+    get: e,
+    scope: t
+  }) => {
+    if (t.value.kind === `local` && t.value.conversationId != null) {
+      let n = e(peers.z0r, t.value.conversationId);
+      if (n != null) return n.prompt;
+    }
+    return e(peers.H0r)[peers.WM(t.value)] ?? ``;
+  });
 }

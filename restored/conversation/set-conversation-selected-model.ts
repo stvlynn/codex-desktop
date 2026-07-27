@@ -25,12 +25,7 @@ export function setConversationSelectedModelDeps(args: {
   if (args.defaultModelReader) defaultModelReader = args.defaultModelReader;
 }
 
-export function setConversationSelectedModel(
-  scope: ScopeLike,
-  conversationId: string,
-  model: unknown,
-  fallbackModel?: unknown,
-): void {
+export function setConversationSelectedModel(scope: ScopeLike, conversationId: string, model: unknown, fallbackModel?: unknown): void {
   syncHelper(
     scope,
     fallbackModel ?? defaultModelReader(scope.get, conversationId),

@@ -1,42 +1,60 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export $5 / oRn
+// Materialized via extractFn(internal `oRn`) / export `$5`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type GoogleCalendarProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindGoogleCalendarPeers = {
+  aRn: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
-type GoogleCalendarImpl = (props: GoogleCalendarProps) => ReactNode;
-let impl: GoogleCalendarImpl | null = null;
+let peers: BindGoogleCalendarPeers | null = null;
 
-/** Wire the full GoogleCalendar once deeper restore lands. */
-export function bindGoogleCalendar(next: GoogleCalendarImpl): void {
-  impl = next;
+/** Wire bindGoogleCalendar peers once companions land. */
+export function setBindGoogleCalendarPeers(next: BindGoogleCalendarPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `$5` / internal `oRn`.
- * Stage-3 fill for bundle export $5 / oRn; heavy UI via bind.
  */
-export function GoogleCalendar(props: GoogleCalendarProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="$5"
-      aria-label="GoogleCalendar"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export $5 / oRn
-        </div>
-      )}
-    </div>
-  );
+export function bindGoogleCalendar() {
+  if (peers == null) {
+    throw new Error("bindGoogleCalendar peers are not configured");
+  }
+
+  return peers.e(() => {
+    aRn = [{
+      appId: `google-calendar`,
+      hostnames: [`calendar.google.com`]
+    }, {
+      appId: `google-drive`,
+      hostnames: [`docs.google.com`]
+    }, {
+      appId: `google-drive`,
+      hostnames: [`drive.google.com`]
+    }, {
+      appId: `figma`,
+      hostnames: [`figma.com`]
+    }, {
+      appId: `github`,
+      hostnames: [`github.com`]
+    }, {
+      appId: `linear`,
+      hostnames: [`linear.app`]
+    }, {
+      appId: `gmail`,
+      hostnames: [`mail.google.com`]
+    }, {
+      appId: `notion`,
+      hostnames: [`app.notion.com`, `notion.so`]
+    }, {
+      appId: `google-drive`,
+      hostnames: [`sheets.google.com`]
+    }, {
+      appId: `slack`,
+      hostnames: [`slack.com`]
+    }, {
+      appId: `google-drive`,
+      hostnames: [`slides.google.com`]
+    }];
+  });
 }

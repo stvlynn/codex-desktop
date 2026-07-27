@@ -1,32 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export cm / W9s
+// Materialized via extractFn(internal `W9s`) / export `cm`.
 
 export type BindChatgptUpdateDownloadedAnnouncementPeers = {
-  impl: (...args: unknown[]) => unknown;
+  U9s: (...args: unknown[]) => unknown;
+  URL: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  import: (...args: unknown[]) => unknown;
+  meta: (...args: unknown[]) => unknown;
 };
 
 let peers: BindChatgptUpdateDownloadedAnnouncementPeers | null = null;
 
-/** Wire bindChatgptUpdateDownloadedAnnouncement once companions land. */
-export function setBindChatgptUpdateDownloadedAnnouncementPeers(
-  next: BindChatgptUpdateDownloadedAnnouncementPeers,
-): void {
+/** Wire bindChatgptUpdateDownloadedAnnouncement peers once companions land. */
+export function setBindChatgptUpdateDownloadedAnnouncementPeers(next: BindChatgptUpdateDownloadedAnnouncementPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `cm` / internal `W9s`.
- * Stage-3 fill for bundle export cm / W9s
  */
-export function bindChatgptUpdateDownloadedAnnouncement(
-  ...args: unknown[]
-): unknown {
+export function bindChatgptUpdateDownloadedAnnouncement() {
   if (peers == null) {
-    throw new Error(
-      "bindChatgptUpdateDownloadedAnnouncement peers are not configured",
-    );
+    throw new Error("bindChatgptUpdateDownloadedAnnouncement peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    U9s = `` + new peers.URL(`gradient-DoN1ti1h.png`, import.meta.url).href;
+  });
 }

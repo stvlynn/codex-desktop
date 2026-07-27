@@ -1,41 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Bat / hMt
+// Materialized via extractFn(internal `hMt`) / export `Bat`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredBatProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredBatPeers = {
+  Gjt: (...args: unknown[]) => unknown;
+  cMt: (...args: unknown[]) => unknown;
+  dMt: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fMt: (...args: unknown[]) => unknown;
+  lMt: (...args: unknown[]) => unknown;
+  mMt: (...args: unknown[]) => unknown;
+  pMt: (...args: unknown[]) => unknown;
 };
 
-type DeferredBatImpl = (props: DeferredBatProps) => ReactNode;
-let impl: DeferredBatImpl | null = null;
+let peers: BindDeferredBatPeers | null = null;
 
-/** Wire the full DeferredBat once deeper restore lands. */
-export function bindDeferredBat(next: DeferredBatImpl): void {
-  impl = next;
+/** Wire bindDeferredBat peers once companions land. */
+export function setBindDeferredBatPeers(next: BindDeferredBatPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Bat` / internal `hMt`.
- * Stage-3 fill for bundle export Bat / hMt; heavy UI via bind.
  */
-export function DeferredBat(props: DeferredBatProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="Bat"
-      aria-label="DeferredBat"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Bat / hMt
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredBat() {
+  if (peers == null) {
+    throw new Error("bindDeferredBat peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Gjt(), peers.dMt(), pMt = peers.fMt(peers.cMt, `px, `, `px)`, `deg)`), mMt = peers.fMt(peers.lMt, `, `, `)`, `)`);
+  });
 }

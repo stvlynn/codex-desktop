@@ -1,60 +1,60 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `dIc`) / export `af`.
+// Materialized via extractFn(internal `dIc`) / export `af`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type WorkspaceAccessPolicyIconProps = {
-  accessPolicy: unknown;
-  [key: string]: unknown;
+export type WorkspaceAccessPolicyIconPeers = {
+  AIo: (...args: unknown[]) => unknown;
+  Jrr: (...args: unknown[]) => unknown;
+  bb0: (...args: unknown[]) => unknown;
+  fIc: (...args: unknown[]) => unknown;
+  jIo: (...args: unknown[]) => unknown;
+  lIc: (...args: unknown[]) => unknown;
+  oIc: (...args: unknown[]) => unknown;
+  pIc: (...args: unknown[]) => unknown;
+  pb: (...args: unknown[]) => unknown;
 };
+let peers: WorkspaceAccessPolicyIconPeers | null = null;
 
-export type WorkspaceAccessPolicyIconParts = {
-  normalizePolicy: (policy: unknown) => {
-    accessMode: string;
-  };
-  isCustomRestricted: (policy: { accessMode: string }) => boolean;
-  AdminsOnlyIcon: (props: Record<string, unknown>) => ReactNode;
-  CustomRestrictedIcon: (props: Record<string, unknown>) => ReactNode;
-  WorkspaceAllIcon: (props: Record<string, unknown>) => ReactNode;
-  PublicIcon: (props: Record<string, unknown>) => ReactNode;
-};
-
-let parts: WorkspaceAccessPolicyIconParts | null = null;
-
-/** Wire access-policy icon variants once companions land. */
-export function setWorkspaceAccessPolicyIconParts(
-  next: WorkspaceAccessPolicyIconParts,
+/** Wire WorkspaceAccessPolicyIcon peers once companions land. */
+export function setWorkspaceAccessPolicyIconPeers(
+  next: WorkspaceAccessPolicyIconPeers,
 ): void {
-  parts = next;
+  peers = next;
 }
 
 /**
  * Bundle export `af` / internal `dIc`.
- * Icon for workspace access policy modes.
  */
-export function WorkspaceAccessPolicyIcon(
-  props: WorkspaceAccessPolicyIconProps,
-): ReactElement | null {
-  if (parts == null) {
-    throw new Error("WorkspaceAccessPolicyIcon parts are not configured");
+export function WorkspaceAccessPolicyIcon(props: unknown) {
+  const Jrr = peers.Jrr;
+  const LIc = peers.lIc;
+  const OIc = peers.oIc;
+  const Pb = peers.pb;
+  if (peers == null) {
+    throw new Error("WorkspaceAccessPolicyIcon peers are not configured");
   }
-  const { accessPolicy, ...rest } = props;
-  const normalized = parts.normalizePolicy(accessPolicy);
-  switch (normalized.accessMode) {
-    case "admins_only":
-    case "custom":
-      return (
-        <>
-          {parts.isCustomRestricted(normalized)
-            ? parts.CustomRestrictedIcon(rest)
-            : parts.AdminsOnlyIcon(rest)}
-        </>
-      ) as ReactElement;
-    case "workspace_all":
-      return (<>{parts.WorkspaceAllIcon(rest)}</>) as ReactElement;
-    case "public":
-      return (<>{parts.PublicIcon(rest)}</>) as ReactElement;
-    default:
-      return null;
+  let { accessPolicy, ...rest } = props;
+  let i;
+  i = Symbol.for("react.early_return_sentinel");
+  bb0: {
+    let e = peers.AIo(accessPolicy);
+    switch (e.accessMode) {
+      case "admins_only":
+      case "custom":
+        i = peers.jIo(e) ? <Jrr {...rest} /> : <LIc {...rest} />;
+        break bb0;
+      case "workspace_all": {
+        let e;
+        e = <OIc {...rest} />;
+        i = e;
+        break bb0;
+      }
+      case "public": {
+        let e;
+        e = <Pb {...rest} />;
+        i = e;
+        break bb0;
+      }
+    }
   }
+  if (i !== Symbol.for("react.early_return_sentinel")) return i;
 }

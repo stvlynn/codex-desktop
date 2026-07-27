@@ -43,10 +43,7 @@ import {
  * Bundle `ari` — derive accent / ink / surface / semanticColors from a
  * code-theme document for the given appearance variant.
  */
-export function extractChromeThemeColors(
-  theme: CodeThemeDocument,
-  variant: ChromeThemeVariant,
-): Pick<ChromeTheme, "accent" | "ink" | "semanticColors" | "surface"> {
+export function extractChromeThemeColors(theme: CodeThemeDocument, variant: ChromeThemeVariant): Pick<ChromeTheme, "accent" | "ink" | "semanticColors" | "surface"> {
   const defaults = CHROME_THEME_DEFAULTS[variant];
   const surface =
     firstMatchingColor(theme.colors, SURFACE_COLOR_KEYS) ?? defaults.surface;
@@ -92,10 +89,7 @@ export type ChromeThemeSeedColors = Pick<
  * Bundle `ori` — merge optional `chromeTheme` overlay from the code-theme
  * document onto extracted colors.
  */
-export function mergeChromeThemeSeedOverlay(
-  extracted: ChromeThemeSeedColors,
-  overlay: ChromeThemePatch | null | undefined,
-): ChromeThemeSeedColors {
+export function mergeChromeThemeSeedOverlay(extracted: ChromeThemeSeedColors, overlay: ChromeThemePatch | null | undefined): ChromeThemeSeedColors {
   if (overlay == null) return extracted;
   return {
     accent: overlay.accent ?? extracted.accent,
@@ -111,10 +105,7 @@ export function mergeChromeThemeSeedOverlay(
 /**
  * Bundle `ari`+`ori` pipeline used by `loadChromeThemeSeed`.
  */
-export function chromeThemeSeedFromCodeTheme(
-  theme: CodeThemeDocument,
-  variant: ChromeThemeVariant,
-): Pick<ChromeTheme, "accent" | "ink" | "semanticColors" | "surface"> {
+export function chromeThemeSeedFromCodeTheme(theme: CodeThemeDocument, variant: ChromeThemeVariant): Pick<ChromeTheme, "accent" | "ink" | "semanticColors" | "surface"> {
   return mergeChromeThemeSeedOverlay(
     extractChromeThemeColors(theme, variant),
     theme.chromeTheme,

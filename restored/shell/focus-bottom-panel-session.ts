@@ -1,12 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DU — real body via extractFn(internal `Wzi`) / export `cU`.
+// Materialized via extractFn(internal `Wzi`) / export `cU`.
 
-import { addNamedPanelSession } from "./add-named-panel-session";
+export type FocusBottomPanelSessionPeers = {
+  Kzi: (...args: unknown[]) => unknown;
+};
+
+let peers: FocusBottomPanelSessionPeers | null = null;
+
+/** Wire focusBottomPanelSession peers once companions land. */
+export function setFocusBottomPanelSessionPeers(next: FocusBottomPanelSessionPeers): void {
+  peers = next;
+}
 
 /**
  * Bundle export `cU` / internal `Wzi`.
- * Focus/add a session into the bottom panel.
  */
-export function focusBottomPanelSession(store: unknown): void {
-  addNamedPanelSession(store, "bottom");
+export function focusBottomPanelSession(e: unknown) {
+  if (peers == null) {
+    throw new Error("focusBottomPanelSession peers are not configured");
+  }
+
+  peers.Kzi(e, `bottom`);
 }

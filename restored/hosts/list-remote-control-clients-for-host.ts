@@ -1,21 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EE — real body via extractFn(internal `Ejr`) / export `KQ`.
+// Materialized via extractFn(internal `Ejr`) / export `KQ`.
 
 export type ListRemoteControlClientsForHostPeers = {
-  listBrowserClients: () => Promise<Array<{ client_id: string }>>;
-  listHostClients: (
-    appServerHostId: unknown,
-    hostId: unknown,
-  ) => Promise<Array<{ clientId: string }>>;
-  normalizeBrowserClient: (client: { client_id: string }) => {
-    clientId: string;
-    [key: string]: unknown;
-  };
+  Ojr: (...args: unknown[]) => unknown;
+  gjr: (...args: unknown[]) => unknown;
+  kjr: (...args: unknown[]) => unknown;
 };
-
 let peers: ListRemoteControlClientsForHostPeers | null = null;
 
-/** Wire remote-control client list peers once companions land. */
+/** Wire listRemoteControlClientsForHost peers once companions land. */
 export function setListRemoteControlClientsForHostPeers(
   next: ListRemoteControlClientsForHostPeers,
 ): void {
@@ -24,34 +17,23 @@ export function setListRemoteControlClientsForHostPeers(
 
 /**
  * Bundle export `KQ` / internal `Ejr`.
- * Merge browser + host remote-control clients by client id.
  */
 export async function listRemoteControlClientsForHost(
-  hostId: unknown,
-  options: {
-    appServerHostId?: unknown;
-    includeBrowserClients?: boolean;
-  } = {},
-): Promise<unknown[]> {
+  e: unknown,
+  {
+    appServerHostId,
+    includeBrowserClients = true,
+  }: Record<string, unknown> = {},
+) {
   if (peers == null) {
-    throw new Error("ListRemoteControlClientsForHost peers are not configured");
+    throw new Error("listRemoteControlClientsForHost peers are not configured");
   }
-  const { appServerHostId, includeBrowserClients = true } = options;
-  const [browserClients, hostClients] = await Promise.all([
-    includeBrowserClients && appServerHostId == null
-      ? peers.listBrowserClients()
-      : Promise.resolve([]),
-    hostId == null
-      ? Promise.resolve([])
-      : peers.listHostClients(appServerHostId ?? "local", hostId),
-  ]);
-  const merged = new Map<string, unknown>();
-  for (const client of browserClients) {
-    const normalized = peers.normalizeBrowserClient(client);
-    merged.set(normalized.clientId, normalized);
-  }
-  for (const client of hostClients) {
-    merged.set(client.clientId, client);
-  }
-  return Array.from(merged.values());
+  let [r, i] = await Promise.all([
+      includeBrowserClients && appServerHostId == null ? peers.gjr() : [],
+      e == null ? [] : peers.Ojr(appServerHostId ?? "local", e),
+    ]),
+    a = new Map();
+  for (let e of r) a.set(e.client_id, peers.kjr(e));
+  for (let e of i) a.set(e.clientId, e);
+  return Array.from(a.values());
 }

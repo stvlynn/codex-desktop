@@ -1,89 +1,74 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `rE`) / export `k3`.
+// Materialized via extractFn(internal `rE`) / export `k3`.
 
 export type CreateGitLiveQueryOptionsPeers = {
-  infiniteStaleTime: unknown;
-  buildQueryKey: (input: {
-    metadata: unknown;
-    method: unknown;
-    params: unknown;
-    hostKey: unknown;
-  }) => unknown;
-  normalizeParams: (params: unknown, hostConfig: unknown) => unknown;
-  requestGit: (input: {
-    method: unknown;
-    params: unknown;
-    signal: unknown;
-  }) => Promise<unknown>;
+  $3n: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  XT: (...args: unknown[]) => unknown;
+  q3n: (...args: unknown[]) => unknown;
 };
 
 let peers: CreateGitLiveQueryOptionsPeers | null = null;
 
-/** Wire git live-query option peers once companions land. */
-export function setCreateGitLiveQueryOptionsPeers(
-  next: CreateGitLiveQueryOptionsPeers,
-): void {
+/** Wire createGitLiveQueryOptions peers once companions land. */
+export function setCreateGitLiveQueryOptionsPeers(next: CreateGitLiveQueryOptionsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `k3` / internal `rE`.
- * Build react-query options for a live git RPC method.
  */
-export function createGitLiveQueryOptions(
-  method: unknown,
-  metadata: unknown,
-  params: unknown,
-  hostKey: unknown,
-  hostConfig: unknown,
-  options: Record<string, any> = {},
-): Record<string, unknown> {
+export function createGitLiveQueryOptions(e: unknown, t: unknown, n: unknown, r: unknown, i: unknown, a: unknown) {
   if (peers == null) {
-    throw new Error("CreateGitLiveQueryOptions peers are not configured");
+    throw new Error("createGitLiveQueryOptions peers are not configured");
   }
-  const { liveQuery, retainRepoWatch, ...rest } = options;
-  const resolvedLiveQuery =
-    params == null || liveQuery == null || retainRepoWatch === false
-      ? undefined
-      : typeof liveQuery === "function"
-        ? liveQuery(params)
-        : liveQuery;
-  const staleTime = rest.staleTime ?? peers.infiniteStaleTime;
+
+  let { liveQuery: o, retainRepoWatch: s, ...c } = a ?? {},
+    l =
+      n == null || o == null || s === !1
+        ? void 0
+        : typeof o == `function`
+          ? o(n)
+          : o,
+    u = c.staleTime ?? peers.Hf.INFINITE;
   return {
     queryKey:
-      metadata && params
-        ? peers.buildQueryKey({
-            metadata,
-            method,
-            params,
-            hostKey,
+      t && n
+        ? peers.q3n({
+            metadata: t,
+            method: e,
+            params: n,
+            hostKey: r,
           })
-        : ["git", "disabled", method],
-    queryFn: ({ signal }: { signal: unknown }) =>
-      !metadata || !params
-        ? Promise.reject(Error("Missing git metadata"))
-        : peers!.requestGit({
-            method,
-            params: peers!.normalizeParams(params, hostConfig),
-            signal,
+        : [`git`, `disabled`, e],
+    queryFn: ({ signal: r }) =>
+      !t || !n
+        ? Promise.reject(Error(`Missing git metadata`))
+        : peers.XT(`git`).request({
+            method: e,
+            params: peers.$3n(n, i),
+            signal: r,
           }),
-    staleTime,
-    gcTime: 1800 * 1000,
-    ...rest,
+    staleTime: u,
+    gcTime: 1800 * 1e3,
+    ...c,
     meta:
-      resolvedLiveQuery == null
-        ? rest.meta
+      l == null
+        ? c.meta
         : {
-            ...rest.meta,
-            gitLiveQuery: { hostConfig, query: resolvedLiveQuery },
+            ...c.meta,
+            gitLiveQuery: {
+              hostConfig: i,
+              query: l,
+            },
           },
-    networkMode: "always",
-    refetchOnWindowFocus: false,
-    enabled: (query: unknown) =>
-      metadata == null || params == null
-        ? false
-        : typeof rest.enabled === "function"
-          ? rest.enabled(query)
-          : (rest.enabled ?? true),
+    networkMode: `always`,
+    refetchOnWindowFocus: !1,
+    enabled: (e) =>
+      t == null || n == null
+        ? !1
+        : typeof c.enabled == `function`
+          ? c.enabled(e)
+          : (c.enabled ?? !0),
   };
 }

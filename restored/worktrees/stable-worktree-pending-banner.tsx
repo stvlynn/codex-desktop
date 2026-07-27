@@ -1,31 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `BKi`) / export `SV`.
+// Materialized via extractFn(internal `BKi`) / export `SV`.
 
 export type StableWorktreePendingBannerPeers = {
-  usePendingWorktrees: (key: string) => [{ id: unknown }[] | undefined];
+  B_: (...args: unknown[]) => unknown;
+  ZKi: (...args: unknown[]) => unknown;
 };
 
 let peers: StableWorktreePendingBannerPeers | null = null;
 
-/** Wire stable worktree pending lookup peers once companions land. */
-export function setStableWorktreePendingBannerPeers(
-  next: StableWorktreePendingBannerPeers,
-): void {
+/** Wire StableWorktreePendingBanner peers once companions land. */
+export function setStableWorktreePendingBannerPeers(next: StableWorktreePendingBannerPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `SV` / internal `BKi`.
- * Find a pending worktree entry by id (banner data source).
  */
-export function StableWorktreePendingBanner(
-  worktreeId: unknown,
-): { id: unknown } | null | undefined {
+export function StableWorktreePendingBanner(e: unknown) {
   if (peers == null) {
     throw new Error("StableWorktreePendingBanner peers are not configured");
   }
-  const [pending] = peers.usePendingWorktrees("pending_worktrees");
-  if (!worktreeId) return null;
-  if (pending === undefined) return undefined;
-  return pending.find((entry) => entry.id === worktreeId) ?? null;
+
+  let t = (0, peers.ZKi.c)(3),
+    [n] = peers.B_(`pending_worktrees`);
+  if (!e) return null;
+  if (n === void 0) return;
+  let r;
+  return (
+    t[0] !== e || t[1] !== n
+      ? ((r = n.find((t) => t.id === e) ?? null),
+        (t[0] = e),
+        (t[1] = n),
+        (t[2] = r))
+      : (r = t[2]),
+    r
+  );
 }

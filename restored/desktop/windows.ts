@@ -1,26 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export d5 / Ww
+// Materialized via extractFn(internal `Ww`) / export `d5`.
 
 export type BindWindowsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  YGn: (...args: unknown[]) => unknown;
+  ZGn: (...args: unknown[]) => unknown;
+  platform: (...args: unknown[]) => unknown;
 };
 
 let peers: BindWindowsPeers | null = null;
 
-/** Wire bindWindows once companions land. */
+/** Wire bindWindows peers once companions land. */
 export function setBindWindowsPeers(next: BindWindowsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `d5` / internal `Ww`.
- * Stage-3 fill for bundle export d5 / Ww
  */
-export function bindWindows(...args: unknown[]): unknown {
+export function bindWindows() {
   if (peers == null) {
     throw new Error("bindWindows peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ma(peers.Q, ({
+    get: e
+  }) => peers.ZGn(e(peers.YGn).data?.platform));
 }

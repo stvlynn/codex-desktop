@@ -1,41 +1,45 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export el / sol
+// Materialized via extractFn(internal `sol`) / export `el`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredelProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredelPeers = {
+  Arl: (...args: unknown[]) => unknown;
+  Gil: (...args: unknown[]) => unknown;
+  MKn: (...args: unknown[]) => unknown;
+  Ral: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  Wrl: (...args: unknown[]) => unknown;
+  X: (...args: unknown[]) => unknown;
+  aal: (...args: unknown[]) => unknown;
+  aol: (...args: unknown[]) => unknown;
+  bal: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  frl: (...args: unknown[]) => unknown;
+  nil: (...args: unknown[]) => unknown;
+  oKn: (...args: unknown[]) => unknown;
+  ool: (...args: unknown[]) => unknown;
+  pil: (...args: unknown[]) => unknown;
+  sl: (...args: unknown[]) => unknown;
+  trl: (...args: unknown[]) => unknown;
 };
 
-type DeferredelImpl = (props: DeferredelProps) => ReactNode;
-let impl: DeferredelImpl | null = null;
+let peers: BindDeferredelPeers | null = null;
 
-/** Wire the full Deferredel once deeper restore lands. */
-export function bindDeferredel(next: DeferredelImpl): void {
-  impl = next;
+/** Wire bindDeferredel peers once companions land. */
+export function setBindDeferredelPeers(next: BindDeferredelPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `el` / internal `sol`.
- * Stage-3 fill for bundle export el / sol; heavy UI via bind.
  */
-export function Deferredel(props: DeferredelProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fo-scaffold="el"
-      aria-label="Deferredel"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export el / sol
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredel() {
+  if (peers == null) {
+    throw new Error("bindDeferredel peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Sl(), peers.oKn(), peers.MKn(), peers.trl(), peers.frl(), peers.Arl(), peers.Wrl(), peers.nil(), peers.pil(), peers.Gil(), peers.aal(), peers.bal(), peers.Ral(), aol = 80, ool = peers.sl({
+      title: peers.X().transform(e => peers.e.trim().replace(/\s+/g, ` `)).pipe(peers.X().min(1)).optional()
+    });
+  });
 }

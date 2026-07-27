@@ -1,42 +1,38 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Ex / uhs
+// Materialized via extractFn(internal `uhs`) / export `Ex`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredExProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredExPeers = {
+  FHa: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  chs: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  lhs: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  ohs: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  sd: (...args: unknown[]) => unknown;
+  shs: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredExImpl = (props: BindDeferredExProps) => ReactNode;
-let impl: BindDeferredExImpl | null = null;
+let peers: BindBindDeferredExPeers | null = null;
 
-/** Wire the full BindDeferredEx once deeper restore lands. */
-export function bindBindDeferredEx(next: BindDeferredExImpl): void {
-  impl = next;
+/** Wire bindBindDeferredEx peers once companions land. */
+export function setBindBindDeferredExPeers(next: BindBindDeferredExPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Ex` / internal `uhs`.
- * Stage-3 fill for bundle export Ex / uhs; heavy UI via bind.
  */
-export function BindDeferredEx(props: BindDeferredExProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-eu-scaffold="Ex"
-      aria-label="BindDeferredEx"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Ex / uhs
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredEx() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredEx peers are not configured");
+  }
+
+  return peers.e(() => {
+    ohs = peers.c(), peers.sd(), shs = peers.r(peers.o(), 1), peers.FHa(), chs = peers.J(), lhs = (0, peers.shs.createContext)({
+      expandedTopTray: !1
+    });
+  });
 }

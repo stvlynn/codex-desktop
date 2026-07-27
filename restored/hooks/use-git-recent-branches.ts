@@ -7,24 +7,23 @@ import {
   type GitRepoLiveQueryHostConfig,
   type GitRepoLiveQueryOptions,
 } from "./use-git-repo-live-query";
-
 export type UseGitRecentBranchesOptions = GitRepoLiveQueryOptions & {
   limit?: number;
 };
-
 type RecentBranchesResult = {
   branches: unknown;
 };
-
 function selectBranches(data: RecentBranchesResult): unknown {
   return data.branches;
 }
-
 function liveQuery(params: Record<string, unknown>): {
   method: string;
   params: Record<string, unknown>;
 } {
-  return { method: "recent-branches", params };
+  return {
+    method: "recent-branches",
+    params,
+  };
 }
 
 /**
@@ -37,11 +36,13 @@ export function useGitRecentBranches(
   options?: UseGitRecentBranchesOptions,
 ): unknown {
   const { limit = 100, ...rest } = options ?? {};
-  const paramsFactory = ({ root }: { root: unknown }) => ({
-    operationSource,
-    root,
-    limit,
-  });
+  const paramsFactory = ({ root }: { root: unknown }) => {
+    return {
+      operationSource,
+      root,
+      limit,
+    };
+  };
   return useGitRepoLiveQuery(
     cwd,
     hostConfig,

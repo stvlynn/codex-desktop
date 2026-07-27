@@ -1,61 +1,62 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EI — real body via extractFn(internal `Vdl`) / export `Cc`.
+// Materialized via extractFn(internal `Vdl`) / export `Cc`.
 
 export type UseRealtimeCallIdsBridgePeers = {
-  useStore: (atom: unknown) => unknown;
-  storeAtom: unknown;
-  useMapAtom: (atom: unknown) => MapLike;
-  sidePanelAtom: unknown;
-  fullscreenAtom: unknown;
-  toConversationKey: (callId: unknown) => unknown;
-  ensureSidePanel: (store: unknown, key: unknown) => void;
-  ensureFullscreen: (store: unknown, key: unknown) => void;
-  useLayoutEffect: (effect: () => void, deps: unknown[]) => void;
+  C$i: (...args: unknown[]) => unknown;
+  Io: (...args: unknown[]) => unknown;
+  Jdl: (...args: unknown[]) => unknown;
+  Vxe: (...args: unknown[]) => unknown;
+  Y: (...args: unknown[]) => unknown;
+  ZGi: (...args: unknown[]) => unknown;
+  dz: (...args: unknown[]) => unknown;
+  hT: (...args: unknown[]) => unknown;
+  isFullScreen: (...args: unknown[]) => unknown;
+  qdl: (...args: unknown[]) => unknown;
+  sidePanelSourceMcpAppId: (...args: unknown[]) => unknown;
+  uz: (...args: unknown[]) => unknown;
 };
 
 let peers: UseRealtimeCallIdsBridgePeers | null = null;
 
 /** Wire useRealtimeCallIdsBridge peers once companions land. */
-export function setUseRealtimeCallIdsBridgePeers(
-  next: UseRealtimeCallIdsBridgePeers,
-): void {
+export function setUseRealtimeCallIdsBridgePeers(next: UseRealtimeCallIdsBridgePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Cc` / internal `Vdl`.
- * Bridge realtime call ids into side-panel / fullscreen presentation state.
  */
-export type MapLike = {
-  get: (
-    key: unknown,
-  ) =>
-    | { sidePanelSourceMcpAppId?: unknown; isFullScreen?: boolean }
-    | undefined;
-};
-
-export function useRealtimeCallIdsBridge(args: { callIds: unknown[] }): null {
+export function useRealtimeCallIdsBridge(e: unknown) {
   if (peers == null) {
-    throw new Error("UseRealtimeCallIdsBridge peers are not configured");
+    throw new Error("useRealtimeCallIdsBridge peers are not configured");
   }
-  const { callIds } = args;
-  const store = peers.useStore(peers.storeAtom);
-  const sidePanel = peers.useMapAtom(peers.sidePanelAtom);
-  const fullscreen = peers.useMapAtom(peers.fullscreenAtom);
-  peers.useLayoutEffect(() => {
-    for (const callId of callIds) {
-      const key = peers!.toConversationKey(callId);
-      const side = sidePanel.get(key);
-      const full = fullscreen.get(key);
-      if (
-        side?.sidePanelSourceMcpAppId != null &&
-        full?.isFullScreen === true
-      ) {
-        continue;
-      }
-      peers!.ensureSidePanel(store, key);
-      peers!.ensureFullscreen(store, key);
-    }
-  }, [callIds, sidePanel, fullscreen, store]);
-  return null;
+
+  let t = (0, peers.qdl.c)(6),
+    { callIds: n } = e,
+    r = peers.Io(peers.hT),
+    i = peers.Y(peers.uz),
+    a = peers.Y(peers.dz),
+    o,
+    s;
+  return (
+    t[0] !== n || t[1] !== i || t[2] !== a || t[3] !== r
+      ? ((o = () => {
+          for (let e of n) {
+            let t = peers.Vxe(e);
+            (i.get(t)?.sidePanelSourceMcpAppId != null &&
+              a.get(t)?.isFullScreen === !0) ||
+              (peers.ZGi(r, t), peers.C$i(r, t));
+          }
+        }),
+        (s = [n, i, a, r]),
+        (t[0] = n),
+        (t[1] = i),
+        (t[2] = a),
+        (t[3] = r),
+        (t[4] = o),
+        (t[5] = s))
+      : ((o = t[4]), (s = t[5])),
+    (0, peers.Jdl.useLayoutEffect)(o, s),
+    null
+  );
 }

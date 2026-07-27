@@ -1,19 +1,11 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EI — real body via extractFn(internal `fA`) / export `P$`.
+// Materialized via extractFn(internal `fA`) / export `P$`.
 
 export type ResolveProjectlessThreadWorkspacePeers = {
-  needsProjectless: (roots: unknown) => boolean;
-  fallbackCwd: (roots: unknown) => unknown;
-  ipc: (
-    method: string,
-    payload: { params: { directoryName?: unknown; prompt: unknown } },
-  ) => Promise<{
-    cwd: unknown;
-    outputDirectory: unknown;
-    workspaceRoot: unknown;
-  }>;
+  dA: (...args: unknown[]) => unknown;
+  ou: (...args: unknown[]) => unknown;
+  rp: (...args: unknown[]) => unknown;
 };
-
 let peers: ResolveProjectlessThreadWorkspacePeers | null = null;
 
 /** Wire resolveProjectlessThreadWorkspace peers once companions land. */
@@ -25,34 +17,28 @@ export function setResolveProjectlessThreadWorkspacePeers(
 
 /**
  * Bundle export `P$` / internal `fA`.
- * Resolve cwd/output directory for a projectless thread, or pass roots through.
  */
 export async function resolveProjectlessThreadWorkspace(
-  workspaceRoots: unknown,
-  opts: { directoryName?: unknown; prompt?: unknown } = {},
-): Promise<{
-  cwd: unknown;
-  projectlessOutputDirectory: unknown;
-  workspaceRoots: unknown;
-}> {
+  e: unknown,
+  { directoryName, prompt }: Record<string, unknown> = {},
+) {
   if (peers == null) {
     throw new Error(
-      "ResolveProjectlessThreadWorkspace peers are not configured",
+      "resolveProjectlessThreadWorkspace peers are not configured",
     );
   }
-  if (!peers.needsProjectless(workspaceRoots)) {
+  if (!peers.dA(e))
     return {
-      cwd: peers.fallbackCwd(workspaceRoots),
+      cwd: peers.ou(e),
       projectlessOutputDirectory: null,
-      workspaceRoots,
+      workspaceRoots: e,
     };
-  }
-  const { cwd, outputDirectory, workspaceRoot } = await peers.ipc(
+  let { cwd, outputDirectory, workspaceRoot } = await peers.rp(
     "projectless-thread-cwd",
     {
       params: {
-        directoryName: opts.directoryName,
-        prompt: opts.prompt ?? null,
+        directoryName,
+        prompt: prompt ?? null,
       },
     },
   );

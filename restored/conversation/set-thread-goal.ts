@@ -1,26 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export MV / $Gi
+// Materialized via extractFn(internal `$Gi`) / export `MV`.
 
 export type BindSetThreadGoalPeers = {
-  impl: (...args: unknown[]) => unknown;
+  KGi: (...args: unknown[]) => unknown;
+  QGi: (...args: unknown[]) => unknown;
+  YGi: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  fR: (...args: unknown[]) => unknown;
+  nO: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  vP: (...args: unknown[]) => unknown;
+  vT: (...args: unknown[]) => unknown;
 };
 
 let peers: BindSetThreadGoalPeers | null = null;
 
-/** Wire bindSetThreadGoal once companions land. */
+/** Wire bindSetThreadGoal peers once companions land. */
 export function setBindSetThreadGoalPeers(next: BindSetThreadGoalPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `MV` / internal `$Gi`.
- * Stage-3 fill for bundle export MV / $Gi
  */
-export function bindSetThreadGoal(...args: unknown[]): unknown {
+export function bindSetThreadGoal() {
   if (peers == null) {
     throw new Error("bindSetThreadGoal peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    QGi = peers.r(peers.o(), 1), peers.nO(), peers.vP(), peers.fR(), peers.KGi(), peers.YGi(), peers.vT();
+  });
 }

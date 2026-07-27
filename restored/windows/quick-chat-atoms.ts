@@ -14,10 +14,8 @@ import {
   QUICK_CHAT_DEFAULT_SIZE,
   type QuickChatWindowSize,
 } from "../windows/quick-chat-default-size";
-
 export type QuickChatDockPosition = "bottom-left" | "bottom-right";
 export type QuickChatHistoryTab = "recent" | "all" | string;
-
 export type QuickChatSurfaceSession = {
   contextSourceConversationId: string | null;
   conversationId: string | null;
@@ -28,7 +26,6 @@ export type QuickChatSurfaceSession = {
   projectName: string | null;
   title?: string | null;
 } | null;
-
 ensureAppScopeInit();
 
 /** Bundle `SZ` / export `Ix` — persisted dock position. */
@@ -72,7 +69,6 @@ export const quickChatWindowModeAtom = createScopedSignal<boolean>(
 /** Bundle `CZ` — active quick-chat surface session (nullable). */
 export const quickChatSurfaceSessionAtom =
   createScopedSignal<QuickChatSurfaceSession>(appScopeAtom, null);
-
 export function ensureQuickChatAtomsInit(): void {
   ensureAppScopeInit();
 }

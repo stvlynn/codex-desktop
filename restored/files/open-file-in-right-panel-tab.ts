@@ -1,42 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave DY — real body via extractFn(internal `who`) / export `nj`.
-
-export type OpenFileInRightPanelTabOptions = {
-  activate?: boolean;
-  hostId?: unknown;
-  isPreview?: boolean;
-  line?: unknown;
-  syncOpenTabs?: boolean;
-  tabId?: unknown;
-  target?: "right" | "left" | "bottom" | string;
-};
+// Materialized via extractFn(internal `who`) / export `nj`.
 
 export type OpenFileInRightPanelTabPeers = {
-  resolveEditor: (path: unknown) => unknown | null;
-  resolveIcon: (path: unknown) => unknown;
-  resolveTabId: (path: unknown, hostId: unknown, tabId?: unknown) => string;
-  locatePanel: (store: any, tabId: string) => "right" | "left" | "bottom";
-  panelController: (side: string) => {
-    openTab: (store: any, component: unknown, opts: unknown) => void;
-    resetTabState: (store: any, tabId: string) => void;
-    activeTab$: unknown;
-    tabById$: unknown;
-  };
-  editorComponent: unknown;
-  editorKind: unknown;
-  syncOpenTabs: (
-    store: any,
-    opts?: { excludeTab?: { panelId: unknown; tabId: string } },
-  ) => void;
-  titleFromPath: (path: unknown) => unknown;
-  isFullWidthAtom: unknown;
-  setFullWidth: (store: any, value: boolean) => void;
-  focusMain: (store: any, area: string) => void;
+  BD: (...args: unknown[]) => unknown;
+  Ef: (...args: unknown[]) => unknown;
+  S2i: (...args: unknown[]) => unknown;
+  Tho: (...args: unknown[]) => unknown;
+  VD: (...args: unknown[]) => unknown;
+  XI: (...args: unknown[]) => unknown;
+  YL: (...args: unknown[]) => unknown;
+  ZI: (...args: unknown[]) => unknown;
+  _ho: (...args: unknown[]) => unknown;
+  onBeforeClose: (...args: unknown[]) => unknown;
+  tabId: (...args: unknown[]) => unknown;
+  xho: (...args: unknown[]) => unknown;
+  yho: (...args: unknown[]) => unknown;
 };
-
 let peers: OpenFileInRightPanelTabPeers | null = null;
 
-/** Wire right-panel file tab peers once companions land. */
+/** Wire openFileInRightPanelTab peers once companions land. */
 export function setOpenFileInRightPanelTabPeers(
   next: OpenFileInRightPanelTabPeers,
 ): void {
@@ -45,82 +27,83 @@ export function setOpenFileInRightPanelTabPeers(
 
 /**
  * Bundle export `nj` / internal `who`.
- * Open a file into the right (or located) panel tab.
  */
 export function openFileInRightPanelTab(
-  store: any,
-  filePath: unknown,
-  options: OpenFileInRightPanelTabOptions,
-): boolean {
-  if (peers == null) {
-    throw new Error("OpenFileInRightPanelTab peers are not configured");
-  }
-  const {
+  e: unknown,
+  t: unknown,
+  {
     activate = true,
     hostId,
     isPreview,
     line,
     syncOpenTabs = true,
-    tabId: explicitTabId,
+    tabId,
     target = "right",
-  } = options;
-  const editor = peers.resolveEditor(filePath);
-  if (editor == null) return false;
-  const Icon = peers.resolveIcon(filePath);
-  const tabId = explicitTabId ?? `text-editor:${hostId}:${filePath}`;
-  const side = peers.locatePanel(store, tabId) ?? target;
-  const controller = peers.panelController(side);
-  const existing = store.get(controller.tabById$, tabId);
-  const pathChanged =
-    existing != null &&
-    "path" in existing.props &&
-    existing.props.path !== filePath;
-  const sameLine =
-    existing != null &&
-    line != null &&
-    "line" in existing.props &&
-    existing.props.line === line;
-  controller.openTab(store, peers.editorComponent, {
-    activate,
-    defaultState: () => ({
-      markdownMode: "markdown",
-      markdownSourceScrollTop: null,
-      pierreDraft: null,
-      scrollTop: null,
-      textDraft: null,
+  }: Record<string, unknown>,
+) {
+  if (peers == null) {
+    throw new Error("openFileInRightPanelTab peers are not configured");
+  }
+  let l = peers.S2i(t);
+  if (l == null) return false;
+  let u = peers.YL(t),
+    d = tabId ?? `text-editor:${hostId}:${t}`,
+    f = peers.XI(peers.ZI(e, d) ?? target),
+    p = e.get(f.tabById$, d),
+    m = p != null && "path" in p.props && p.props.path !== t,
+    h = p != null && line != null && "line" in p.props && p.props.line === line;
+  return (
+    f.openTab(e, peers._ho, {
+      activate,
+      defaultState: () => {
+        return {
+          markdownMode: "markdown",
+          markdownSourceScrollTop: null,
+          pierreDraft: null,
+          scrollTop: null,
+          textDraft: null,
+        };
+      },
+      icon: peers.Tho.createElement(u, {
+        className: "icon-xs shrink-0",
+      }),
+      id: d,
+      isPreview,
+      kind: peers.yho,
+      onBeforeClose: m ? undefined : p?.onBeforeClose,
+      props: {
+        editor: l,
+        hostId,
+        line,
+        path: t,
+      },
+      resetState:
+        !m && line != null
+          ? (e) => {
+              return {
+                ...e,
+                markdownScrollSnapshot: undefined,
+                markdownSourceScrollTop: null,
+                scrollTop: null,
+              };
+            }
+          : undefined,
+      onClose: (e, t) => {
+        peers.xho(e, {
+          excludeTab: {
+            panelId: t,
+            tabId: d,
+          },
+        });
+        t === "right" &&
+          e.get(peers.XI(t).activeTab$)?.tabId === d &&
+          e.get(peers.VD) &&
+          (e.set(peers.VD, false), peers.BD(e, "main"));
+      },
+      title: peers.Ef(t),
     }),
-    icon: Icon,
-    id: tabId,
-    isPreview,
-    kind: peers.editorKind,
-    onBeforeClose: pathChanged ? undefined : existing?.onBeforeClose,
-    props: { editor, hostId, line, path: filePath },
-    resetState:
-      !pathChanged && line != null
-        ? (state: Record<string, unknown>) => ({
-            ...state,
-            markdownScrollSnapshot: undefined,
-            markdownSourceScrollTop: null,
-            scrollTop: null,
-          })
-        : undefined,
-    onClose: (closeStore: any, panelId: unknown) => {
-      peers!.syncOpenTabs(closeStore, {
-        excludeTab: { panelId, tabId },
-      });
-      if (
-        panelId === "right" &&
-        closeStore.get(peers!.panelController("right").activeTab$)?.tabId ===
-          tabId &&
-        closeStore.get(peers!.isFullWidthAtom)
-      ) {
-        peers!.setFullWidth(closeStore, false);
-        peers!.focusMain(closeStore, "main");
-      }
-    },
-    title: peers.titleFromPath(filePath),
-  });
-  if (pathChanged || sameLine) controller.resetTabState(store, tabId);
-  if (existing == null && syncOpenTabs) peers.syncOpenTabs(store);
-  return true;
+    (m || h) && f.resetTabState(e, d),
+    p == null && syncOpenTabs && peers.xho(e),
+    true
+  );
 }

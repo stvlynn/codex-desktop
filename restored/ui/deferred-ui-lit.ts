@@ -1,25 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Lit / JIt
+// Materialized via extractFn(internal `JIt`) / export `Lit`.
 
 export type BindDeferredUiLitPeers = {
-  impl: (...args: unknown[]) => unknown;
+  UIt: (...args: unknown[]) => unknown;
+  WNt: (...args: unknown[]) => unknown;
+  dv: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  hFt: (...args: unknown[]) => unknown;
+  lv: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiLitPeers | null = null;
 
-/** Wire bindDeferredUiLit once companions land. */
+/** Wire bindDeferredUiLit peers once companions land. */
 export function setBindDeferredUiLitPeers(next: BindDeferredUiLitPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Lit` / internal `JIt`.
- * Stage-3 fill for bundle export Lit / JIt
  */
-export function bindDeferredUiLit(...args: unknown[]): unknown {
+export function bindDeferredUiLit() {
   if (peers == null) {
     throw new Error("bindDeferredUiLit peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.hFt(), peers.UIt(), peers.dv(), peers.lv(), peers.WNt();
+  });
 }

@@ -7,9 +7,7 @@ export const ONBOARDING_CUTOFF_TIMESTAMP_MS = new Date(2026, 3, 30).getTime();
 /**
  * True when `unixSeconds * 1000` is strictly before {@link ONBOARDING_CUTOFF_TIMESTAMP_MS}.
  */
-export function isBeforeOnboardingCutoff(
-  unixSeconds: number | null | undefined,
-): boolean {
+export function isBeforeOnboardingCutoff(unixSeconds: number | null | undefined): boolean {
   return (
     unixSeconds != null && unixSeconds * 1000 < ONBOARDING_CUTOFF_TIMESTAMP_MS
   );

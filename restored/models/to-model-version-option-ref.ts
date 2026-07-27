@@ -12,10 +12,7 @@ export type ModelVersionOptionRef = {
   versionId: string;
 };
 
-export function toModelVersionOptionRef(
-  option: ModelSlugOption,
-  versionId: string,
-): ModelVersionOptionRef {
+export function toModelVersionOptionRef(option: ModelSlugOption, versionId: string): ModelVersionOptionRef {
   return {
     slug: option.slug,
     thinkingEffort: option.thinkingEffort ?? null,

@@ -1,26 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EA — real body via extractFn(internal `kGr`) / export `XX`.
+// Materialized via extractFn(internal `kGr`) / export `XX`.
 
-export type RecentConversationsQueryKeyPeers = {
-  makeKey: (name: string) => unknown;
+export type RecentConversationsMetaQueryKeyPeers = {
+  AGr: (...args: unknown[]) => unknown;
 };
 
-let peers: RecentConversationsQueryKeyPeers | null = null;
+let peers: RecentConversationsMetaQueryKeyPeers | null = null;
 
-/** Wire query-key factory once companions land. */
-export function setRecentConversationsMetaQueryKeyPeers(
-  next: RecentConversationsQueryKeyPeers,
-): void {
+/** Wire recentConversationsMetaQueryKey peers once companions land. */
+export function setRecentConversationsMetaQueryKeyPeers(next: RecentConversationsMetaQueryKeyPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `XX` / internal `kGr`.
- * Query key for recent-conversations-meta.
  */
-export function recentConversationsMetaQueryKey(): unknown {
+export function recentConversationsMetaQueryKey() {
   if (peers == null) {
-    throw new Error("RecentConversationsMetaQueryKey peers are not configured");
+    throw new Error("recentConversationsMetaQueryKey peers are not configured");
   }
-  return peers.makeKey("recent-conversations-meta");
+
+  return peers.AGr(`recent-conversations-meta`);
 }

@@ -1,45 +1,52 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export JB / KR
+// Materialized via extractFn(internal `KR`) / export `JB`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DropdownMenuPartsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDropdownMenuPartsPeers = {
+  BR: (...args: unknown[]) => unknown;
+  aXi: (...args: unknown[]) => unknown;
+  dXi: (...args: unknown[]) => unknown;
+  eXi: (...args: unknown[]) => unknown;
+  fXi: (...args: unknown[]) => unknown;
+  gXi: (...args: unknown[]) => unknown;
+  hXi: (...args: unknown[]) => unknown;
+  iXi: (...args: unknown[]) => unknown;
+  lXi: (...args: unknown[]) => unknown;
+  mXi: (...args: unknown[]) => unknown;
+  oXi: (...args: unknown[]) => unknown;
+  rXi: (...args: unknown[]) => unknown;
+  tXi: (...args: unknown[]) => unknown;
+  uXi: (...args: unknown[]) => unknown;
 };
 
-type DropdownMenuPartsImpl = (props: DropdownMenuPartsProps) => ReactNode;
-let impl: DropdownMenuPartsImpl | null = null;
+let peers: BindDropdownMenuPartsPeers | null = null;
 
-/** Wire the full DropdownMenuParts once deeper restore lands. */
-export function bindDropdownMenuParts(next: DropdownMenuPartsImpl): void {
-  impl = next;
+/** Wire bindDropdownMenuParts peers once companions land. */
+export function setBindDropdownMenuPartsPeers(next: BindDropdownMenuPartsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `JB` / internal `KR`.
- * Stage-3 fill for bundle export JB / KR; heavy UI via bind.
  */
-export function DropdownMenuParts(props: DropdownMenuPartsProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fm-scaffold="JB"
-      aria-label="DropdownMenuParts"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export JB / KR
-        </div>
-      )}
-    </div>
-  );
-}
+export function bindDropdownMenuParts() {
+  if (peers == null) {
+    throw new Error("bindDropdownMenuParts peers are not configured");
+  }
 
-// --- qg-full-green: missing-relative-exports stubs (open-runtime wiring) ---
-export const DropdownMenu: any = undefined;
-export const ensureDropdownMenuInit: any = undefined;
+  return {
+    Trigger: peers.eXi,
+    Content: peers.tXi,
+    Item: peers.BR,
+    CheckboxItem: peers.rXi,
+    ItemIcon: peers.iXi,
+    Input: peers.aXi,
+    SearchInput: peers.oXi,
+    Separator: peers.lXi,
+    SectionLabel: peers.uXi,
+    Message: peers.dXi,
+    Title: peers.hXi,
+    SubmenuItem: peers.fXi,
+    FlyoutSubmenuItem: peers.mXi,
+    Section: peers.gXi
+  };
+}

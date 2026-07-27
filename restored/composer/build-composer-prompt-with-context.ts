@@ -26,9 +26,7 @@ export function setComposerContextPrefixBuilder(fn: BuildContextPrefix): void {
 }
 
 /** Wire pasted-path detector (`vvt` in the bundle). */
-export function setGeneratedPastedPathsChecker(
-  fn: HasGeneratedPastedPaths,
-): void {
+export function setGeneratedPastedPathsChecker(fn: HasGeneratedPastedPaths): void {
   hasGeneratedPastedPaths = fn;
 }
 

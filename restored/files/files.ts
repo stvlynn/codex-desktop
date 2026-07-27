@@ -1,26 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export tM / hU
+// Materialized via extractFn(internal `hU`) / export `tM`.
 
 export type BindFilesPeers = {
-  impl: (...args: unknown[]) => unknown;
+  $Ya: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  QYa: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  X: (...args: unknown[]) => unknown;
+  XYa: (...args: unknown[]) => unknown;
+  YYa: (...args: unknown[]) => unknown;
+  ZYa: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  jf: (...args: unknown[]) => unknown;
+  sBa: (...args: unknown[]) => unknown;
+  sl: (...args: unknown[]) => unknown;
 };
 
 let peers: BindFilesPeers | null = null;
 
-/** Wire bindFiles once companions land. */
+/** Wire bindFiles peers once companions land. */
 export function setBindFilesPeers(next: BindFilesPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `tM` / internal `hU`.
- * Stage-3 fill for bundle export tM / hU
  */
-export function bindFiles(...args: unknown[]): unknown {
+export function bindFiles() {
   if (peers == null) {
     throw new Error("bindFiles peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Au(), peers.Sl(), peers.sBa(), peers.jf(), YYa = `Files`, XYa = [`text/uri-list`, `public.file-url`], ZYa = `DownloadURL`, QYa = `application/x-codex-image`, $Ya = peers.sl({
+      filename: peers.X().trim().min(1),
+      src: peers.X().trim().min(1)
+    });
+  });
 }

@@ -7,9 +7,7 @@ type codexMicroSlotSignalAImpl = (...args: unknown[]) => unknown;
 let impl: codexMicroSlotSignalAImpl | null = null;
 
 /** Wire codexMicroSlotSignalA once companions land. */
-export function bindCodexMicroSlotSignalA(
-  next: codexMicroSlotSignalAImpl,
-): void {
+export function bindCodexMicroSlotSignalA(next: codexMicroSlotSignalAImpl): void {
   impl = next;
 }
 

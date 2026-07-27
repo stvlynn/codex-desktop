@@ -1,48 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export VY / qYr
+// Materialized via extractFn(internal `qYr`) / export `VY`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BinddeferredPluginsVY3Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBinddeferredPluginsVY3Peers = {
+  Pn: (...args: unknown[]) => unknown;
 };
 
-type BinddeferredPluginsVY3Impl = (
-  props: BinddeferredPluginsVY3Props,
-) => ReactNode;
-let impl: BinddeferredPluginsVY3Impl | null = null;
+let peers: BindBinddeferredPluginsVY3Peers | null = null;
 
-/** Wire the full BinddeferredPluginsVY3 once deeper restore lands. */
-export function bindBinddeferredPluginsVY3(
-  next: BinddeferredPluginsVY3Impl,
-): void {
-  impl = next;
+/** Wire bindBinddeferredPluginsVY3 peers once companions land. */
+export function setBindBinddeferredPluginsVY3Peers(next: BindBinddeferredPluginsVY3Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `VY` / internal `qYr`.
- * Stage-3 fill for bundle export VY / qYr; heavy UI via bind.
  */
-export function BinddeferredPluginsVY3(
-  props: BinddeferredPluginsVY3Props,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ew-scaffold="VY"
-      aria-label="BinddeferredPluginsVY3"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export VY / qYr
-        </div>
-      )}
-    </div>
-  );
+export function bindBinddeferredPluginsVY3() {
+  if (peers == null) {
+    throw new Error("bindBinddeferredPluginsVY3 peers are not configured");
+  }
+
+  return peers.Pn(!1);
 }

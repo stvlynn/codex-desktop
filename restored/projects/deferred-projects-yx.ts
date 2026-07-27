@@ -1,28 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Yx / Ips
+// Materialized via extractFn(internal `Ips`) / export `Yx`.
 
 export type BindDeferredProjectsYxPeers = {
-  impl: (...args: unknown[]) => unknown;
+  $l: (...args: unknown[]) => unknown;
+  $w: (...args: unknown[]) => unknown;
+  DD: (...args: unknown[]) => unknown;
+  Nps: (...args: unknown[]) => unknown;
+  OA: (...args: unknown[]) => unknown;
+  UE: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredProjectsYxPeers | null = null;
 
-/** Wire bindDeferredProjectsYx once companions land. */
-export function setBindDeferredProjectsYxPeers(
-  next: BindDeferredProjectsYxPeers,
-): void {
+/** Wire bindDeferredProjectsYx peers once companions land. */
+export function setBindDeferredProjectsYxPeers(next: BindDeferredProjectsYxPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Yx` / internal `Ips`.
- * Stage-3 fill for bundle export Yx / Ips
  */
-export function bindDeferredProjectsYx(...args: unknown[]): unknown {
+export function bindDeferredProjectsYx() {
   if (peers == null) {
     throw new Error("bindDeferredProjectsYx peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.DD(), peers.UE(), peers.$w(), peers.Nps(), peers.OA(), peers.$l();
+  });
 }

@@ -13,9 +13,7 @@ export type AutomationExecutionEnvironment = "worktree" | "local";
  * Bundle `Dme` (co-located with `Hme` / packet-004).
  * Coerce an unknown environment string to worktree/local, else default.
  */
-export function normalizeAutomationExecutionEnvironment(
-  value: string | null | undefined,
-): AutomationExecutionEnvironment {
+export function normalizeAutomationExecutionEnvironment(value: string | null | undefined): AutomationExecutionEnvironment {
   return value === "worktree" || value === "local"
     ? value
     : DEFAULT_AUTOMATION_EXECUTION_ENVIRONMENT;

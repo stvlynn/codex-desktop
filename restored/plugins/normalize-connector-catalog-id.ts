@@ -11,8 +11,6 @@ const CONNECTOR_CATALOG_IDS = new Map<string, string>([
 ]);
 
 /** Normalize a connector id to its catalog id, or null. */
-export function normalizeConnectorCatalogId(
-  connectorId: string,
-): string | null {
+export function normalizeConnectorCatalogId(connectorId: string): string | null {
   return CONNECTOR_CATALOG_IDS.get(connectorId) ?? null;
 }

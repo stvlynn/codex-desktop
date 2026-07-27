@@ -1,41 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export dQ / tPr
+// Materialized via extractFn(internal `tPr`) / export `dQ`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindDeferredUiDQProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindDeferredUiDQPeers = {
+  Oa: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  rj: (...args: unknown[]) => unknown;
 };
 
-type BindDeferredUiDQImpl = (props: BindDeferredUiDQProps) => ReactNode;
-let impl: BindDeferredUiDQImpl | null = null;
+let peers: BindBindDeferredUiDQPeers | null = null;
 
-/** Wire the full BindDeferredUiDQ once deeper restore lands. */
-export function bindBindDeferredUiDQ(next: BindDeferredUiDQImpl): void {
-  impl = next;
+/** Wire bindBindDeferredUiDQ peers once companions land. */
+export function setBindBindDeferredUiDQPeers(next: BindBindDeferredUiDQPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `dQ` / internal `tPr`.
- * Stage-3 fill for bundle export dQ / tPr; heavy UI via bind.
  */
-export function BindDeferredUiDQ(props: BindDeferredUiDQProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fe-scaffold="dQ"
-      aria-label="BindDeferredUiDQ"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export dQ / tPr
-        </div>
-      )}
-    </div>
-  );
+export function bindBindDeferredUiDQ() {
+  if (peers == null) {
+    throw new Error("bindBindDeferredUiDQ peers are not configured");
+  }
+
+  return peers.Oa(peers.Q, (e, {
+    get: t
+  }) => e.flatMap(e => {
+    let n = t(peers.rj, e);
+    return n == null ? [] : [n];
+  }));
 }

@@ -1,48 +1,35 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Kgt / ome
+// Materialized via extractFn(internal `ome`) / export `Kgt`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindAgentModeByHostIdProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindAgentModeByHostIdPeers = {
+  Sl: (...args: unknown[]) => unknown;
+  Zpe: (...args: unknown[]) => unknown;
+  ame: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ime: (...args: unknown[]) => unknown;
+  rme: (...args: unknown[]) => unknown;
+  tpe: (...args: unknown[]) => unknown;
 };
 
-type BindAgentModeByHostIdImpl = (
-  props: BindAgentModeByHostIdProps,
-) => ReactNode;
-let impl: BindAgentModeByHostIdImpl | null = null;
+let peers: BindBindAgentModeByHostIdPeers | null = null;
 
-/** Wire the full BindAgentModeByHostId once deeper restore lands. */
-export function bindBindAgentModeByHostId(
-  next: BindAgentModeByHostIdImpl,
-): void {
-  impl = next;
+/** Wire bindBindAgentModeByHostId peers once companions land. */
+export function setBindBindAgentModeByHostIdPeers(next: BindBindAgentModeByHostIdPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Kgt` / internal `ome`.
- * Stage-3 fill for bundle export Kgt / ome; heavy UI via bind.
  */
-export function BindAgentModeByHostId(
-  props: BindAgentModeByHostIdProps,
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="Kgt"
-      aria-label="BindAgentModeByHostId"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Kgt / ome
-        </div>
-      )}
-    </div>
-  );
+export function bindBindAgentModeByHostId() {
+  if (peers == null) {
+    throw new Error("bindBindAgentModeByHostId peers are not configured");
+  }
+
+  return peers.e(() => {
+    (peers.Sl(),
+      peers.rme(),
+      (ime = `agent-mode-by-host-id`),
+      (ame = peers.tpe.enum(peers.Zpe)));
+  });
 }

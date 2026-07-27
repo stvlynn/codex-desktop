@@ -12,9 +12,7 @@ export type WorkspacePlan =
   | (string & {});
 
 /** True for business / enterprise-style plans that gate workspace Codex access (`Gx`). */
-export function isWorkspacePlan(
-  plan: WorkspacePlan | null | undefined,
-): boolean {
+export function isWorkspacePlan(plan: WorkspacePlan | null | undefined): boolean {
   return (
     plan === "business" ||
     plan === "enterprise" ||

@@ -1,12 +1,13 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `fgu`) / export `St`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `fgu`) / export `St`.
 
 export type ChartsPurpleBadgePeers = {
-  renderBadge: () => ReactNode;
+  D9: (...args: unknown[]) => unknown;
+  Jrr: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
+  dh: (...args: unknown[]) => unknown;
+  mgu: (...args: unknown[]) => unknown;
 };
-
 let peers: ChartsPurpleBadgePeers | null = null;
 
 /** Wire ChartsPurpleBadge peers once companions land. */
@@ -16,16 +17,22 @@ export function setChartsPurpleBadgePeers(next: ChartsPurpleBadgePeers): void {
 
 /**
  * Bundle export `St` / internal `fgu`.
- * Render the charts-purple Upgrade-to-unlock badge.
  */
-export type ChartsPurpleBadgeProps = Record<string, unknown>;
-
-export function ChartsPurpleBadge(
-  _props: ChartsPurpleBadgeProps = {},
-): ReactElement {
+export function ChartsPurpleBadge() {
+  const Dh = peers.dh;
+  const Jrr = peers.Jrr;
+  const Z = peers.Z;
   if (peers == null) {
     throw new Error("ChartsPurpleBadge peers are not configured");
   }
-  void _props;
-  return peers.renderBadge() as ReactElement;
+  return (
+    <Dh className="gap-1 !bg-token-charts-purple/10 px-1.5 py-1 text-xs font-medium !text-token-charts-purple">
+      <Jrr className="icon-xs" />
+      <Z
+        id="plugins.googleUpgrade.badge"
+        defaultMessage="Upgrade to unlock"
+        description="Badge label shown on Google plugins that need a paid plan"
+      />
+    </Dh>
+  );
 }

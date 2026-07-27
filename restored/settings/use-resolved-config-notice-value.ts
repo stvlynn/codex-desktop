@@ -1,29 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave ED — real body via extractFn(internal `ePl`) / export `ys`.
+// Materialized via extractFn(internal `ePl`) / export `ys`.
 
 export type UseResolvedConfigNoticeValuePeers = {
-  useConfigNotice: (atom: unknown) => { value: unknown };
-  configNoticeAtom: unknown;
-  resolveNoticeValue: (value: unknown) => unknown;
+  Mh: (...args: unknown[]) => unknown;
+  iPl: (...args: unknown[]) => unknown;
+  nPl: (...args: unknown[]) => unknown;
+  rPl: (...args: unknown[]) => unknown;
 };
 
 let peers: UseResolvedConfigNoticeValuePeers | null = null;
 
-/** Wire config-notice peers once companions land. */
-export function setUseResolvedConfigNoticeValuePeers(
-  next: UseResolvedConfigNoticeValuePeers,
-): void {
+/** Wire useResolvedConfigNoticeValue peers once companions land. */
+export function setUseResolvedConfigNoticeValuePeers(next: UseResolvedConfigNoticeValuePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `ys` / internal `ePl`.
- * Resolve the active config notice value for settings UI.
  */
-export function useResolvedConfigNoticeValue(): unknown {
+export function useResolvedConfigNoticeValue() {
   if (peers == null) {
-    throw new Error("UseResolvedConfigNoticeValue peers are not configured");
+    throw new Error("useResolvedConfigNoticeValue peers are not configured");
   }
-  const { value } = peers.useConfigNotice(peers.configNoticeAtom);
-  return peers.resolveNoticeValue(value);
+
+  let e = (0, peers.rPl.c)(2),
+    { value: t } = peers.Mh(peers.iPl),
+    n;
+  return (
+    e[0] === t ? (n = e[1]) : ((n = peers.nPl(t)), (e[0] = t), (e[1] = n)),
+    n
+  );
 }

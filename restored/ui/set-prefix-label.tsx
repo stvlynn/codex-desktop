@@ -1,41 +1,63 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Set prefix label control
+// Materialized via extractFn(internal `LYo`) / export `HE`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type SetPrefixLabelProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindSetPrefixLabelPeers = {
+  RYo: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
+  bw: (...args: unknown[]) => unknown;
+  zYo: (...args: unknown[]) => unknown;
 };
+let peers: BindSetPrefixLabelPeers | null = null;
 
-type SetPrefixLabelImpl = (props: SetPrefixLabelProps) => ReactNode;
-let impl: SetPrefixLabelImpl | null = null;
-
-/** Wire the full SetPrefixLabel once deeper restore lands. */
-export function bindSetPrefixLabel(next: SetPrefixLabelImpl): void {
-  impl = next;
+/** Wire bindSetPrefixLabel peers once companions land. */
+export function setBindSetPrefixLabelPeers(
+  next: BindSetPrefixLabelPeers,
+): void {
+  peers = next;
 }
 
 /**
  * Bundle export `HE` / internal `LYo`.
- * Set prefix label control; heavy UI via bind.
  */
-export function SetPrefixLabel(props: SetPrefixLabelProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-em-scaffold="HE"
-      aria-label="SetPrefixLabel"
+export function bindSetPrefixLabel(props: unknown) {
+  const Z = peers.Z;
+  if (peers == null) {
+    throw new Error("bindSetPrefixLabel peers are not configured");
+  }
+  let { showSetPrefix = true } = props,
+    i = peers.bw(),
+    a = (
+      <span className="text-sm font-medium text-token-foreground">
+        {
+          <Z
+            id="localConversation.syncSetup.branchName"
+            defaultMessage="Branch name"
+            description="Title for the branch name input in the sync setup modal"
+          />
+        }
+      </span>
+    );
+  let o = showSetPrefix ? (
+    <button
+      type="button"
+      className="text-sm text-token-description-foreground hover:text-token-foreground"
+      onClick={() => {
+        i("/settings/git-settings");
+      }}
     >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Set prefix label control
-        </div>
-      )}
+      {
+        <Z
+          id="localConversation.syncSetup.setPrefix"
+          defaultMessage="Set prefix"
+          description="Label for branch prefix configuration"
+        />
+      }
+    </button>
+  ) : null;
+  return (
+    <div className="flex items-center justify-between gap-4">
+      {a}
+      {o}
     </div>
   );
 }

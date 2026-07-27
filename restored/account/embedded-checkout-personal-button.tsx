@@ -26,9 +26,7 @@ export type EmbeddedCheckoutPersonalButtonPeers = {
 let peers: EmbeddedCheckoutPersonalButtonPeers | null = null;
 
 /** Wire EmbeddedCheckoutPersonalButton peers once companions land. */
-export function setEmbeddedCheckoutPersonalButtonPeers(
-  next: EmbeddedCheckoutPersonalButtonPeers,
-): void {
+export function setEmbeddedCheckoutPersonalButtonPeers(next: EmbeddedCheckoutPersonalButtonPeers): void {
   peers = next;
 }
 

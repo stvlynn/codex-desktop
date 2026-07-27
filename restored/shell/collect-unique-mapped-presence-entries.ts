@@ -1,53 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `Qvu`) / export `X`.
+// Materialized via extractFn(internal `Qvu`) / export `X`.
 
 export type CollectUniqueMappedPresenceEntriesPeers = {
-  mapProcessMetrics: (
-    process: unknown,
-    options: unknown,
-    context: unknown,
-  ) => { pid: unknown } | null | undefined;
-  scorePresence: (
-    entry: { metrics: unknown; process: unknown },
-    context: unknown,
-  ) => number | null | undefined;
-  minScore: number;
+  cyu: (...args: unknown[]) => unknown;
+  kvu: (...args: unknown[]) => unknown;
+  ryu: (...args: unknown[]) => unknown;
 };
 
 let peers: CollectUniqueMappedPresenceEntriesPeers | null = null;
 
-/** Wire unique presence-entry peers once companions land. */
-export function setCollectUniqueMappedPresenceEntriesPeers(
-  next: CollectUniqueMappedPresenceEntriesPeers,
-): void {
+/** Wire collectUniqueMappedPresenceEntries peers once companions land. */
+export function setCollectUniqueMappedPresenceEntriesPeers(next: CollectUniqueMappedPresenceEntriesPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `X` / internal `Qvu`.
- * Map processes to unique presence entries, dropping low scores / dup pids.
  */
-export function collectUniqueMappedPresenceEntries(
-  processes: unknown[],
-  options: unknown,
-  context: unknown,
-): Array<{ metrics: { pid: unknown }; process: unknown }> {
+export function collectUniqueMappedPresenceEntries(e: unknown, t: unknown, n: unknown) {
   if (peers == null) {
-    throw new Error(
-      "CollectUniqueMappedPresenceEntries peers are not configured",
-    );
+    throw new Error("collectUniqueMappedPresenceEntries peers are not configured");
   }
-  const out: Array<{ metrics: { pid: unknown }; process: unknown }> = [];
-  const seen = new Set<unknown>();
-  for (const process of processes) {
-    const metrics = peers.mapProcessMetrics(process, options, context);
-    if (metrics == null) continue;
-    const score = peers.scorePresence({ metrics, process }, context);
-    if ((score != null && score < peers.minScore) || seen.has(metrics.pid)) {
-      continue;
-    }
-    seen.add(metrics.pid);
-    out.push({ metrics, process });
+
+  let r = [],
+    i = new Set();
+  for (let a of e) {
+    let e = peers.kvu(a, t, n);
+    if (e == null) continue;
+    let o = peers.ryu({
+      metrics: e,
+      process: a
+    }, n);
+    o != null && o < peers.cyu || i.has(e.pid) || (i.add(e.pid), r.push({
+      metrics: e,
+      process: a
+    }));
   }
-  return out;
+  return r;
 }

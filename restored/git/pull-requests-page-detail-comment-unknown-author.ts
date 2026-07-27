@@ -1,32 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export QM / wza
+// Materialized via extractFn(internal `wza`) / export `QM`.
 
 export type PullRequestsPageDetailCommentUnknownAuthorPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Cza: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Sza: (...args: unknown[]) => unknown;
+  V9r: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: PullRequestsPageDetailCommentUnknownAuthorPeers | null = null;
 
-/** Wire pullRequestsPageDetailCommentUnknownAuthor once companions land. */
-export function setPullRequestsPageDetailCommentUnknownAuthorPeers(
-  next: PullRequestsPageDetailCommentUnknownAuthorPeers,
-): void {
+/** Wire pullRequestsPageDetailCommentUnknownAuthor peers once companions land. */
+export function setPullRequestsPageDetailCommentUnknownAuthorPeers(next: PullRequestsPageDetailCommentUnknownAuthorPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `QM` / internal `wza`.
- * Stage-3 fill for bundle export QM / wza
  */
-export function pullRequestsPageDetailCommentUnknownAuthor(
-  ...args: unknown[]
-): unknown {
+export function pullRequestsPageDetailCommentUnknownAuthor() {
   if (peers == null) {
-    throw new Error(
-      "pullRequestsPageDetailCommentUnknownAuthor peers are not configured",
-    );
+    throw new Error("pullRequestsPageDetailCommentUnknownAuthor peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    Sza = peers.c(), peers.V9r(), Cza = peers.J();
+  });
 }

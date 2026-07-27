@@ -1,22 +1,16 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `I2l`) / export `Yr`.
-
-import type { ReactElement, ReactNode } from "react";
-
-export type CodexMicroDeviceGateProps = {
-  codexMicroDeviceModel?: string | null;
-  slug: string;
-};
+// Materialized via extractFn(internal `I2l`) / export `Yr`.
 
 export type CodexMicroDeviceGatePeers = {
-  FormattedMessage: (props: Record<string, unknown>) => ReactNode;
-  creatorMicroMessage: Record<string, unknown>;
-  messageForSlug: (slug: string) => Record<string, unknown>;
+  A2l: (...args: unknown[]) => unknown;
+  M2l: (...args: unknown[]) => unknown;
+  R2l: (...args: unknown[]) => unknown;
+  T7: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
 };
-
 let peers: CodexMicroDeviceGatePeers | null = null;
 
-/** Wire codex-micro device gate peers once companions land. */
+/** Wire CodexMicroDeviceGate peers once companions land. */
 export function setCodexMicroDeviceGatePeers(
   next: CodexMicroDeviceGatePeers,
 ): void {
@@ -25,25 +19,21 @@ export function setCodexMicroDeviceGatePeers(
 
 /**
  * Bundle export `Yr` / internal `I2l`.
- * Render the creator-micro message or a slug-specific device message.
  */
-export function CodexMicroDeviceGate(
-  props: CodexMicroDeviceGateProps,
-): ReactElement {
+export function CodexMicroDeviceGate(props: unknown) {
+  const Z = peers.Z;
   if (peers == null) {
     throw new Error("CodexMicroDeviceGate peers are not configured");
   }
-  const { codexMicroDeviceModel, slug } = props;
+  let { codexMicroDeviceModel, slug } = props;
   if (
     slug === "codex-micro" &&
     (codexMicroDeviceModel === undefined ? null : codexMicroDeviceModel) ===
       "creator-micro-v2"
   ) {
-    return peers.FormattedMessage({
-      ...peers.creatorMicroMessage,
-    }) as ReactElement;
+    let e;
+    return <Z {...peers.A2l.creatorMicro} />;
   }
-  return peers.FormattedMessage({
-    ...peers.messageForSlug(slug),
-  }) as ReactElement;
+  let i = peers.M2l(slug);
+  return <Z {...i} />;
 }

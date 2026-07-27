@@ -1,32 +1,42 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `aXr`) / export `zY`.
+// Materialized via extractFn(internal `aXr`) / export `zY`.
 
 export type UseWorkspaceHeadlinePeers = {
-  useWorkspaceHeadlineSource: () => {
-    data: unknown;
-    shouldFetch: boolean;
-  };
-  buildHeadline: (data: unknown) => unknown;
+  eXr: (...args: unknown[]) => unknown;
+  lXr: (...args: unknown[]) => unknown;
+  oXr: (...args: unknown[]) => unknown;
 };
 
 let peers: UseWorkspaceHeadlinePeers | null = null;
 
-/** Wire workspace headline peers once companions land. */
-export function setUseWorkspaceHeadlinePeers(
-  next: UseWorkspaceHeadlinePeers,
-): void {
+/** Wire useWorkspaceHeadline peers once companions land. */
+export function setUseWorkspaceHeadlinePeers(next: UseWorkspaceHeadlinePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `zY` / internal `aXr`.
- * Derive a workspace headline from the fetch source when enabled.
  */
-export function useWorkspaceHeadline(): { headline: unknown } {
+export function useWorkspaceHeadline() {
   if (peers == null) {
-    throw new Error("UseWorkspaceHeadline peers are not configured");
+    throw new Error("useWorkspaceHeadline peers are not configured");
   }
-  const { data, shouldFetch } = peers.useWorkspaceHeadlineSource();
-  const headline = shouldFetch ? peers.buildHeadline(data) : null;
-  return { headline };
+
+  let e = (0, peers.lXr.c)(5),
+    { data: t, shouldFetch: n } = peers.oXr(),
+    r;
+  e[0] !== t || e[1] !== n
+    ? ((r = n ? peers.eXr(t) : null), (e[0] = t), (e[1] = n), (e[2] = r))
+    : (r = e[2]);
+  let i;
+  return (
+    e[3] === r
+      ? (i = e[4])
+      : ((i = {
+          headline: r,
+        }),
+        (e[3] = r),
+        (e[4] = i)),
+    i
+  );
 }

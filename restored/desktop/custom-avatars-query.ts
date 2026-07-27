@@ -18,15 +18,19 @@ export const customAvatarsQueryKey = ["custom-avatars"] as const;
  */
 export const customAvatarsQueryAtom = createAppScopeQueryAtom(
   appScopeAtom,
-  () => ({
-    queryKey: customAvatarsQueryKey,
-    queryFn: () => getDesktopServices()?.customAvatars?.load?.(),
-    enabled: true,
-    networkMode: "always",
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
-    staleTime: QueryStaleTimes.INFINITE,
-  }),
+  () => {
+    return {
+      queryKey: customAvatarsQueryKey,
+      queryFn: () => {
+        return getDesktopServices()?.customAvatars?.load?.();
+      },
+      enabled: true,
+      networkMode: "always",
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+      staleTime: QueryStaleTimes.INFINITE,
+    };
+  },
 );
 
 /**
@@ -34,16 +38,20 @@ export const customAvatarsQueryAtom = createAppScopeQueryAtom(
  */
 export const customAvatarByIdQueryAtom = createAppScopeSelectAtom(
   appScopeAtom,
-  (avatarId: string) => ({
-    queryKey: [...customAvatarsQueryKey, "by-id", avatarId],
-    queryFn: () => getDesktopServices()?.customAvatars?.loadAvatar?.(avatarId),
-    enabled: avatarId.startsWith("custom:"),
-    gcTime: 0,
-    networkMode: "always",
-    refetchOnWindowFocus: false,
-    retry: false,
-    staleTime: QueryStaleTimes.INFINITE,
-  }),
+  (avatarId: string) => {
+    return {
+      queryKey: [...customAvatarsQueryKey, "by-id", avatarId],
+      queryFn: () => {
+        return getDesktopServices()?.customAvatars?.loadAvatar?.(avatarId);
+      },
+      enabled: avatarId.startsWith("custom:"),
+      gcTime: 0,
+      networkMode: "always",
+      refetchOnWindowFocus: false,
+      retry: false,
+      staleTime: QueryStaleTimes.INFINITE,
+    };
+  },
 );
 
 /** Bundle export `i` — Rolldown ESM init retained as no-op. */

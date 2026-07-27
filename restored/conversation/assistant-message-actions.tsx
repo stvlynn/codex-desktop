@@ -31,9 +31,7 @@ export type AssistantMessageActionsProps = {
   [key: string]: unknown;
 };
 
-export function AssistantMessageActions(
-  props: AssistantMessageActionsProps,
-): ReactNode {
+export function AssistantMessageActions(props: AssistantMessageActionsProps): ReactNode {
   const always =
     props.alwaysShowActions === true || useAlwaysShow?.(props.turnId) === true;
   return (

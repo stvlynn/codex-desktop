@@ -1,14 +1,12 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EN — real body via extractFn(internal `Met`) / export `ylt`.
-
-import type { ReactElement, ReactNode } from "react";
+// Materialized via extractFn(internal `Met`) / export `ylt`.
 
 export type ResponsiveSelectNoneLabelPeers = {
-  footerResponsive: boolean;
-  mergeClassNames: (...parts: Array<string | boolean | undefined>) => string;
-  renderDiv: (props: Record<string, unknown>) => ReactNode;
+  $: (...args: unknown[]) => unknown;
+  Fet: (...args: unknown[]) => unknown;
+  Pet: (...args: unknown[]) => unknown;
+  gh: (...args: unknown[]) => unknown;
 };
-
 let peers: ResponsiveSelectNoneLabelPeers | null = null;
 
 /** Wire ResponsiveSelectNoneLabel peers once companions land. */
@@ -20,27 +18,13 @@ export function setResponsiveSelectNoneLabelPeers(
 
 /**
  * Bundle export `ylt` / internal `Met`.
- * Render a select-none label, optionally footer-responsive.
  */
-export type ResponsiveSelectNoneLabelProps = {
-  className?: string;
-  responsive?: boolean;
-  [key: string]: unknown;
-};
-
-export function ResponsiveSelectNoneLabel(
-  props: ResponsiveSelectNoneLabelProps,
-): ReactElement {
+export function ResponsiveSelectNoneLabel(props: unknown) {
   if (peers == null) {
     throw new Error("ResponsiveSelectNoneLabel peers are not configured");
   }
-  const { className, responsive, ...rest } = props;
-  const responsiveClass =
-    (responsive === undefined ? true : responsive) && peers.footerResponsive;
-  const merged = peers.mergeClassNames(
-    "select-none",
-    responsiveClass,
-    className,
-  );
-  return peers.renderDiv({ className: merged, ...rest }) as ReactElement;
+  let { className, responsive, ...rest } = props;
+  let a = (responsive === undefined ? true : responsive) && peers.gh.footer,
+    o = peers.$("select-none", a, className);
+  return <div className={o} {...rest} />;
 }

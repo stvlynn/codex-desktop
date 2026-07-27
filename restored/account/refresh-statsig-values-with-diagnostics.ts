@@ -11,9 +11,7 @@ export type RefreshStatsigValuesWithDiagnosticsPeers = {
 let peers: RefreshStatsigValuesWithDiagnosticsPeers | null = null;
 
 /** Wire refreshStatsigValuesWithDiagnostics peers once companions land. */
-export function setRefreshStatsigValuesWithDiagnosticsPeers(
-  next: RefreshStatsigValuesWithDiagnosticsPeers,
-): void {
+export function setRefreshStatsigValuesWithDiagnosticsPeers(next: RefreshStatsigValuesWithDiagnosticsPeers): void {
   peers = next;
 }
 
@@ -21,10 +19,7 @@ export function setRefreshStatsigValuesWithDiagnosticsPeers(
  * Bundle export `mr` / internal `ntu`.
  * Refresh Statsig values and emit timing diagnostics.
  */
-export async function refreshStatsigValuesWithDiagnostics(
-  client: unknown,
-  reason: unknown,
-): Promise<unknown> {
+export async function refreshStatsigValuesWithDiagnostics(client: unknown, reason: unknown): Promise<unknown> {
   if (peers == null) {
     throw new Error(
       "RefreshStatsigValuesWithDiagnostics peers are not configured",

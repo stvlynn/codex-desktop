@@ -15,9 +15,7 @@ type LocalConversationPageImpl = (
 ) => ReactNode;
 let impl: LocalConversationPageImpl | null = null;
 
-export function bindLocalConversationPage(
-  next: LocalConversationPageImpl,
-): void {
+export function bindLocalConversationPage(next: LocalConversationPageImpl): void {
   impl = next;
 }
 

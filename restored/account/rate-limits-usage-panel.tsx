@@ -34,9 +34,7 @@ export type RateLimitsUsagePanelParts = {
 let parts: RateLimitsUsagePanelParts | null = null;
 
 /** Wire full rate-limit rows / upsell once companions land. */
-export function setRateLimitsUsagePanelParts(
-  next: RateLimitsUsagePanelParts,
-): void {
+export function setRateLimitsUsagePanelParts(next: RateLimitsUsagePanelParts): void {
   parts = next;
 }
 
@@ -44,9 +42,7 @@ export function setRateLimitsUsagePanelParts(
  * Bundle export `wi` / internal `n1l`.
  * Rate limits / plan usage panel with a real Stage-3 scaffold.
  */
-export function RateLimitsUsagePanel(
-  props: RateLimitsUsagePanelProps,
-): ReactElement | null {
+export function RateLimitsUsagePanel(props: RateLimitsUsagePanelProps): ReactElement | null {
   if (parts != null) {
     return parts.render(props) as ReactElement | null;
   }

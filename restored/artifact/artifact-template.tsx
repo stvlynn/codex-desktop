@@ -1,42 +1,47 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export Y3 / z4n
+// Materialized via extractFn(internal `z4n`) / export `Y3`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type ArtifactTemplateProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindArtifactTemplatePeers = {
+  F4n: (...args: unknown[]) => unknown;
+  I4n: (...args: unknown[]) => unknown;
+  Il: (...args: unknown[]) => unknown;
+  L4n: (...args: unknown[]) => unknown;
+  R4n: (...args: unknown[]) => unknown;
+  Sl: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  jf: (...args: unknown[]) => unknown;
+  ml: (...args: unknown[]) => unknown;
+  pl: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  sl: (...args: unknown[]) => unknown;
 };
 
-type ArtifactTemplateImpl = (props: ArtifactTemplateProps) => ReactNode;
-let impl: ArtifactTemplateImpl | null = null;
+let peers: BindArtifactTemplatePeers | null = null;
 
-/** Wire the full ArtifactTemplate once deeper restore lands. */
-export function bindArtifactTemplate(next: ArtifactTemplateImpl): void {
-  impl = next;
+/** Wire bindArtifactTemplate peers once companions land. */
+export function setBindArtifactTemplatePeers(next: BindArtifactTemplatePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `Y3` / internal `z4n`.
- * Stage-3 fill for bundle export Y3 / z4n; heavy UI via bind.
  */
-export function ArtifactTemplate(props: ArtifactTemplateProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-eq-scaffold="Y3"
-      aria-label="ArtifactTemplate"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export Y3 / z4n
-        </div>
-      )}
-    </div>
-  );
+export function bindArtifactTemplate() {
+  if (peers == null) {
+    throw new Error("bindArtifactTemplate peers are not configured");
+  }
+
+  return peers.e(() => {
+    F4n = peers.r(peers.Il(), 1), peers.Sl(), peers.jf(), I4n = `artifact-template-`, L4n = peers.sl({
+      schemaVersion: peers.ml(1),
+      kind: peers.pl([`document`, `presentation`, `spreadsheet`, `google-docs`, `google-slides`, `google-sheets`])
+    }), R4n = {
+      document: `docx`,
+      presentation: `pptx`,
+      spreadsheet: `xlsx`,
+      "google-docs": `pdf`,
+      "google-slides": `pdf`,
+      "google-sheets": `pdf`
+    };
+  });
 }

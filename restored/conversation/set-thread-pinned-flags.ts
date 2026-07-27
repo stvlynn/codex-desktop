@@ -1,54 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EA — real body via extractFn(internal `HKi`) / export `xV`.
+// Materialized via extractFn(internal `HKi`) / export `xV`.
 
-export type SetThreadPinnedFlagsPeers = {
-  patchThreadFlags: (
-    store: unknown,
-    threadId: unknown,
-    flags: Array<Record<string, unknown>>,
-  ) => void;
+export type BindSetThreadPinnedFlagsWriterPeers = {
+  UKi: (...args: unknown[]) => unknown;
 };
 
-let peers: SetThreadPinnedFlagsPeers | null = null;
+let peers: BindSetThreadPinnedFlagsWriterPeers | null = null;
 
-/** Wire thread flag patcher once companions land. */
-export function setSetThreadPinnedFlagsPeers(
-  next: SetThreadPinnedFlagsPeers,
-): void {
+/** Wire bindSetThreadPinnedFlagsWriter peers once companions land. */
+export function setBindSetThreadPinnedFlagsWriterPeers(next: BindSetThreadPinnedFlagsWriterPeers): void {
   peers = next;
-}
-
-/** @deprecated Prefer setSetThreadPinnedFlagsPeers */
-export function bindSetThreadPinnedFlagsWriter(
-  next: (
-    store: unknown,
-    threadId: unknown,
-    flags: Array<Record<string, unknown>>,
-  ) => void,
-): void {
-  peers = { patchThreadFlags: next };
 }
 
 /**
  * Bundle export `xV` / internal `HKi`.
- * Set isPinned (+ clear pinnedBeforeThreadId when unpinning).
  */
-export function setThreadPinnedFlags(
-  store: unknown,
-  threadId: unknown,
-  isPinned: boolean,
-): void {
+export function bindSetThreadPinnedFlagsWriter(e: unknown, t: unknown, n: unknown) {
   if (peers == null) {
-    throw new Error("SetThreadPinnedFlags peers are not configured");
+    throw new Error("bindSetThreadPinnedFlagsWriter peers are not configured");
   }
-  peers.patchThreadFlags(
-    store,
-    threadId,
-    isPinned
-      ? [{ type: "isPinned", isPinned }]
-      : [
-          { type: "isPinned", isPinned },
-          { type: "pinnedBeforeThreadId", beforeThreadId: null },
-        ],
-  );
+
+  peers.UKi(e, t, n ? [{
+    type: `isPinned`,
+    isPinned: n
+  }] : [{
+    type: `isPinned`,
+    isPinned: n
+  }, {
+    type: `pinnedBeforeThreadId`,
+    beforeThreadId: null
+  }]);
 }

@@ -1,42 +1,62 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export cj / Ymo
+// Materialized via extractFn(internal `Ymo`) / export `cj`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindLocalThreadProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindLocalThreadPeers = {
+  $u: (...args: unknown[]) => unknown;
+  Ami: (...args: unknown[]) => unknown;
+  Amo: (...args: unknown[]) => unknown;
+  Au: (...args: unknown[]) => unknown;
+  Gm: (...args: unknown[]) => unknown;
+  Gmo: (...args: unknown[]) => unknown;
+  J: (...args: unknown[]) => unknown;
+  Jmo: (...args: unknown[]) => unknown;
+  Kmo: (...args: unknown[]) => unknown;
+  M1a: (...args: unknown[]) => unknown;
+  Omo: (...args: unknown[]) => unknown;
+  UG: (...args: unknown[]) => unknown;
+  Umo: (...args: unknown[]) => unknown;
+  Wmo: (...args: unknown[]) => unknown;
+  c: (...args: unknown[]) => unknown;
+  c0a: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  kmo: (...args: unknown[]) => unknown;
+  qmo: (...args: unknown[]) => unknown;
+  uR: (...args: unknown[]) => unknown;
+  yk: (...args: unknown[]) => unknown;
 };
 
-type BindLocalThreadImpl = (props: BindLocalThreadProps) => ReactNode;
-let impl: BindLocalThreadImpl | null = null;
+let peers: BindBindLocalThreadPeers | null = null;
 
-/** Wire the full BindLocalThread once deeper restore lands. */
-export function bindBindLocalThread(next: BindLocalThreadImpl): void {
-  impl = next;
+/** Wire bindBindLocalThread peers once companions land. */
+export function setBindBindLocalThreadPeers(next: BindBindLocalThreadPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `cj` / internal `Ymo`.
- * Stage-3 fill for bundle export cj / Ymo; heavy UI via bind.
  */
-export function BindLocalThread(props: BindLocalThreadProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="cj"
-      aria-label="BindLocalThread"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export cj / Ymo
-        </div>
-      )}
-    </div>
-  );
+export function bindBindLocalThread() {
+  if (peers == null) {
+    throw new Error("bindBindLocalThread peers are not configured");
+  }
+
+  return peers.e(() => {
+    ((Umo = peers.c()),
+      peers.Au(),
+      peers.$u(),
+      peers.c0a(),
+      peers.Ami(),
+      peers.yk(),
+      peers.M1a(),
+      peers.Omo(),
+      peers.Amo(),
+      peers.uR(),
+      peers.Gm(),
+      (UG = peers.J()),
+      (Wmo = 29),
+      (Gmo = peers.kmo.replace(/<svg[^>]*>/, ``).replace(`</svg>`, ``)),
+      (Kmo = 18),
+      (qmo = 7),
+      (Jmo = peers.Kmo / 21));
+  });
 }

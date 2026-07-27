@@ -1,42 +1,51 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export iW / HFi
+// Materialized via extractFn(internal `HFi`) / export `iW`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindRemoteProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindRemotePeers = {
+  BFi: (...args: unknown[]) => unknown;
+  LFi: (...args: unknown[]) => unknown;
+  RFi: (...args: unknown[]) => unknown;
+  VFi: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  zFi: (...args: unknown[]) => unknown;
 };
 
-type BindRemoteImpl = (props: BindRemoteProps) => ReactNode;
-let impl: BindRemoteImpl | null = null;
+let peers: BindBindRemotePeers | null = null;
 
-/** Wire the full BindRemote once deeper restore lands. */
-export function bindBindRemote(next: BindRemoteImpl): void {
-  impl = next;
+/** Wire bindBindRemote peers once companions land. */
+export function setBindBindRemotePeers(next: BindBindRemotePeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `iW` / internal `HFi`.
- * Stage-3 fill for bundle export iW / HFi; heavy UI via bind.
  */
-export function BindRemote(props: BindRemoteProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fd-scaffold="iW"
-      aria-label="BindRemote"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export iW / HFi
-        </div>
-      )}
-    </div>
-  );
+export function bindBindRemote() {
+  if (peers == null) {
+    throw new Error("bindBindRemote peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.RFi(), zFi = peers.LFi({
+      method: `current-branch`,
+      getParams: e => ({
+        operationSource: peers.e.operationSource,
+        root: peers.e.root
+      }),
+      getOptions: e => {
+        let t = {
+          operationSource: peers.e.operationSource,
+          root: peers.e.root
+        };
+        return {
+          liveQuery: peers.e.retainRepoWatch === !1 ? void 0 : {
+            method: `current-branch`,
+            params: t
+          },
+          select: e => peers.e.branch,
+          staleTime: 1 / 0
+        };
+      }
+    }), BFi = peers.zFi.fromMetadata$, VFi = peers.zFi.fromTarget$;
+  });
 }

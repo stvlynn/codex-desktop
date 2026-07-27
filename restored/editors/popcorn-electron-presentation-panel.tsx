@@ -14,9 +14,7 @@ type PopcornElectronPresentationPanelImpl = (
 let impl: PopcornElectronPresentationPanelImpl | null = null;
 
 /** Wire the full PopcornElectronPresentationPanel once deeper restore lands. */
-export function bindPopcornElectronPresentationPanel(
-  next: PopcornElectronPresentationPanelImpl,
-): void {
+export function bindPopcornElectronPresentationPanel(next: PopcornElectronPresentationPanelImpl): void {
   impl = next;
 }
 
@@ -24,9 +22,7 @@ export function bindPopcornElectronPresentationPanel(
  * Bindable PopcornElectronPresentationPanel.
  * Alias ownership unresolved — do not invent extractFn body.
  */
-export function PopcornElectronPresentationPanel(
-  props: PopcornElectronPresentationPanelProps,
-): ReactElement {
+export function PopcornElectronPresentationPanel(props: PopcornElectronPresentationPanelProps): ReactElement {
   if (impl == null) {
     return (
       <div

@@ -1,44 +1,64 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export XE / BJ
+// Materialized via extractFn(internal `BJ`) / export `XE`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type PopoverMenuPartsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindPopoverMenuPartsPeers = {
+  Bqo: (...args: unknown[]) => unknown;
+  DJo: (...args: unknown[]) => unknown;
+  EJo: (...args: unknown[]) => unknown;
+  Fqo: (...args: unknown[]) => unknown;
+  Gqo: (...args: unknown[]) => unknown;
+  Hqo: (...args: unknown[]) => unknown;
+  Iqo: (...args: unknown[]) => unknown;
+  Lqo: (...args: unknown[]) => unknown;
+  Nqo: (...args: unknown[]) => unknown;
+  OJo: (...args: unknown[]) => unknown;
+  Pqo: (...args: unknown[]) => unknown;
+  Rqo: (...args: unknown[]) => unknown;
+  TJo: (...args: unknown[]) => unknown;
+  Uqo: (...args: unknown[]) => unknown;
+  Vqo: (...args: unknown[]) => unknown;
+  Wqo: (...args: unknown[]) => unknown;
+  lJo: (...args: unknown[]) => unknown;
+  rJo: (...args: unknown[]) => unknown;
+  wJo: (...args: unknown[]) => unknown;
+  zqo: (...args: unknown[]) => unknown;
 };
 
-type PopoverMenuPartsImpl = (props: PopoverMenuPartsProps) => ReactNode;
-let impl: PopoverMenuPartsImpl | null = null;
+let peers: BindPopoverMenuPartsPeers | null = null;
 
-/** Wire the full PopoverMenuParts once deeper restore lands. */
-export function bindPopoverMenuParts(next: PopoverMenuPartsImpl): void {
-  impl = next;
+/** Wire bindPopoverMenuParts peers once companions land. */
+export function setBindPopoverMenuPartsPeers(next: BindPopoverMenuPartsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `XE` / internal `BJ`.
- * Stage-3 fill for bundle export XE / BJ; heavy UI via bind.
  */
-export function PopoverMenuParts(props: PopoverMenuPartsProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fn-scaffold="XE"
-      aria-label="PopoverMenuParts"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export XE / BJ
-        </div>
-      )}
-    </div>
-  );
-}
+export function bindPopoverMenuParts() {
+  if (peers == null) {
+    throw new Error("bindPopoverMenuParts peers are not configured");
+  }
 
-// --- qg-full-green: missing-relative-exports stubs (open-runtime wiring) ---
-export const PopoverMenu: any = undefined;
+  return {
+    Content: peers.EJo,
+    HeaderButton: peers.DJo,
+    IconButton: peers.Gqo,
+    Item: peers.Nqo,
+    ItemActionLink: peers.Uqo,
+    ItemActions: peers.Hqo,
+    ItemAvatarGroup: peers.zqo,
+    ItemAvatarButton: peers.Rqo,
+    ItemButton: peers.Pqo,
+    ItemGroup: peers.Iqo,
+    ItemLabel: peers.Bqo,
+    ItemLeading: peers.Lqo,
+    ItemMeta: peers.Vqo,
+    ItemTrigger: peers.Fqo,
+    List: peers.rJo,
+    PopoverContent: peers.TJo,
+    Root: peers.wJo,
+    Section: peers.lJo,
+    SectionActions: peers.Wqo,
+    SectionCount: peers.OJo
+  };
+}

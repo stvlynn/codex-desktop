@@ -50,9 +50,7 @@ export function useSystemPrefersReducedMotion(): boolean {
  * Pass the settings preference when available; defaults to `system` so the hook
  * still tracks the media query without the settings store wired.
  */
-export function usePrefersReducedMotion(
-  preference: ReducedMotionPreference = "system",
-): boolean {
+export function usePrefersReducedMotion(preference: ReducedMotionPreference = "system"): boolean {
   const systemPrefersReducedMotion = useSystemPrefersReducedMotion();
   return resolvePrefersReducedMotion({
     preference,

@@ -1,41 +1,36 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export TZ / WBr
+// Materialized via extractFn(internal `WBr`) / export `TZ`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredTZProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredTZPeers = {
+  BBr: (...args: unknown[]) => unknown;
+  HBr: (...args: unknown[]) => unknown;
+  IBr: (...args: unknown[]) => unknown;
+  LBr: (...args: unknown[]) => unknown;
+  Nj: (...args: unknown[]) => unknown;
+  Pj: (...args: unknown[]) => unknown;
+  RBr: (...args: unknown[]) => unknown;
+  UBr: (...args: unknown[]) => unknown;
+  VBr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  zBr: (...args: unknown[]) => unknown;
 };
 
-type DeferredTZImpl = (props: DeferredTZProps) => ReactNode;
-let impl: DeferredTZImpl | null = null;
+let peers: BindDeferredTZPeers | null = null;
 
-/** Wire the full DeferredTZ once deeper restore lands. */
-export function bindDeferredTZ(next: DeferredTZImpl): void {
-  impl = next;
+/** Wire bindDeferredTZ peers once companions land. */
+export function setBindDeferredTZPeers(next: BindDeferredTZPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `TZ` / internal `WBr`.
- * Stage-3 fill for bundle export TZ / WBr; heavy UI via bind.
  */
-export function DeferredTZ(props: DeferredTZProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fb-scaffold="TZ"
-      aria-label="DeferredTZ"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export TZ / WBr
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredTZ() {
+  if (peers == null) {
+    throw new Error("bindDeferredTZ peers are not configured");
+  }
+
+  return peers.e(() => {
+    IBr = new Map(), LBr = new Map(), RBr = new Map(), zBr = new Map(), BBr = new Map(), Nj = new Map(), VBr = new Set(), HBr = 0, Pj = new Map(), UBr = new Map();
+  });
 }

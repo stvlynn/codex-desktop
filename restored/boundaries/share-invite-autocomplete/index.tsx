@@ -208,9 +208,7 @@ function ShareInviteOptionSections(props: {
   return <>{nodes}</>;
 }
 
-export function ShareInviteAutocomplete(
-  props: ShareInviteAutocompleteProps,
-): ReactElement {
+export function ShareInviteAutocomplete(props: ShareInviteAutocompleteProps): ReactElement {
   const {
     ariaLabel,
     disabled = false,

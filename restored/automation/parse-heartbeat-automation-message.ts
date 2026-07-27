@@ -16,9 +16,7 @@ function readHeartbeatTag(text: string, tag: string): string | null {
 }
 
 /** Parse a standalone `<heartbeat>...</heartbeat>` automation message block. */
-export function parseHeartbeatAutomationMessage(
-  text: string,
-): HeartbeatAutomationMessage | null {
+export function parseHeartbeatAutomationMessage(text: string): HeartbeatAutomationMessage | null {
   const trimmed = text.trim();
   if (!trimmed.startsWith("<heartbeat>") || !trimmed.endsWith("</heartbeat>")) {
     return null;

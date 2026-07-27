@@ -1,25 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export mb / nbs
+// Materialized via extractFn(internal `nbs`) / export `mb`.
 
 export type ImagePlaygroundPeers = {
-  impl: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ebs: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  tbs: (...args: unknown[]) => unknown;
 };
 
 let peers: ImagePlaygroundPeers | null = null;
 
-/** Wire imagePlayground once companions land. */
+/** Wire imagePlayground peers once companions land. */
 export function setImagePlaygroundPeers(next: ImagePlaygroundPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `mb` / internal `nbs`.
- * Stage-3 fill for bundle export mb / nbs
  */
-export function imagePlayground(...args: unknown[]): unknown {
+export function imagePlayground() {
   if (peers == null) {
     throw new Error("imagePlayground peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    ebs = peers.r(peers.o(), 1), tbs = (0, peers.ebs.createContext)(`default`);
+  });
 }

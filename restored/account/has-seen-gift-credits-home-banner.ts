@@ -10,9 +10,7 @@ export type HasSeenGiftCreditsHomeBannerPeers = {
 let peers: HasSeenGiftCreditsHomeBannerPeers | null = null;
 
 /** Wire hasSeenGiftCreditsHomeBanner once companions land. */
-export function setHasSeenGiftCreditsHomeBannerPeers(
-  next: HasSeenGiftCreditsHomeBannerPeers,
-): void {
+export function setHasSeenGiftCreditsHomeBannerPeers(next: HasSeenGiftCreditsHomeBannerPeers): void {
   peers = next;
 }
 

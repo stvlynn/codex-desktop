@@ -15,49 +15,43 @@ import {
   getPersistedAtomItem,
 } from "../boundaries/persisted-atom-store";
 import { getAnnouncementTtlMs } from "../account/announcement-ttl-ms";
-
 ensurePersistedAtomStoreInit();
-
-const MAX_PENDING = 3;
-const STATUS_PREFIX = "ambient-suggestions:default-statuses";
-
 export type SuggestionScope = {
   domain?: string | null;
   hostId: string;
   plan?: string | null;
   projectRoot?: string | null;
 };
-
-type SuggestionRow = { id: string; status?: string };
+type SuggestionRow = {
+  id: string;
+  status?: string;
+};
 type StatusMap = Record<string, Record<string, unknown>>;
-
 function projectKey(projectRoot: string | null | undefined): string {
   return projectRoot ?? "";
 }
-
 function statusStorageKey(scope: SuggestionScope): string {
   return scope.domain == null
-    ? `${STATUS_PREFIX}:${scope.hostId}:${projectKey(scope.projectRoot)}`
-    : `${STATUS_PREFIX}:${scope.hostId}:${projectKey(scope.projectRoot)}:${scope.domain}`;
+    ? `${"ambient-suggestions:default-statuses"}:${scope.hostId}:${projectKey(scope.projectRoot)}`
+    : `${"ambient-suggestions:default-statuses"}:${scope.hostId}:${projectKey(scope.projectRoot)}:${scope.domain}`;
 }
-
 function defaultStatusKey(scope: SuggestionScope): string {
-  return `${STATUS_PREFIX}:${scope.hostId}:${projectKey(scope.projectRoot)}`;
+  return `${"ambient-suggestions:default-statuses"}:${scope.hostId}:${projectKey(scope.projectRoot)}`;
 }
-
 function defaultStatuses(scope: SuggestionScope): unknown {
   return getPersistedAtomItem(defaultStatusKey(scope), undefined);
 }
-
 function pendingSuggestions(
   ids: string[],
   suggestions: SuggestionRow[],
 ): SuggestionRow[] {
   const pending: SuggestionRow[] = [];
   for (const id of ids) {
-    const match = suggestions.find((row) => row.id === id);
+    const match = suggestions.find((row) => {
+      return row.id === id;
+    });
     if (match?.status === "pending") pending.push(match);
-    if (pending.length === MAX_PENDING) break;
+    if (pending.length === 3) break;
   }
   return pending;
 }
@@ -70,7 +64,7 @@ export const newChatSuggestionSourceDebugOverride = createPersistedScopeSignal(
 
 /** Status map atom (bundle ambient-suggestions:default-statuses). */
 export const defaultStatusesAtom = createPersistedScopeSignal(
-  STATUS_PREFIX,
+  "ambient-suggestions:default-statuses",
   {} as StatusMap,
 );
 
@@ -78,34 +72,51 @@ export const defaultStatusesAtom = createPersistedScopeSignal(
 export const ambientSuggestionsQueryAtom = createNamedAppScopeQueryAtom(
   appScopeAtom,
   "ambient-suggestions",
-  ({ projectRoot }) => ({
-    enabled: projectRoot != null,
-  }),
+  ({ projectRoot }) => {
+    return {
+      enabled: projectRoot != null,
+    };
+  },
 );
 
 /** Bundle export `o` — ambient suggestions refresh query atom. */
 export const ambientSuggestionsRefreshQueryAtom = createNamedAppScopeQueryAtom(
   appScopeAtom,
   "ambient-suggestions-refresh",
-  ({ domain, hostId, plan, projectRoot }) => ({
-    enabled: projectRoot != null,
-    gcTime: getAnnouncementTtlMs(plan as string | null | undefined),
-    params: { domain, hostId, projectRoot },
-    select: () => true,
-    staleTime: getAnnouncementTtlMs(plan as string | null | undefined),
-  }),
+  ({ domain, hostId, plan, projectRoot }) => {
+    return {
+      enabled: projectRoot != null,
+      gcTime: getAnnouncementTtlMs(plan as string | null | undefined),
+      params: {
+        domain,
+        hostId,
+        projectRoot,
+      },
+      select: () => {
+        return true;
+      },
+      staleTime: getAnnouncementTtlMs(plan as string | null | undefined),
+    };
+  },
 );
 
 /** Bundle export `r` — null select atom placeholder. */
 export const ambientSuggestionsNullSelectAtom = createAppScopeQueryAtom(
   appScopeAtom,
-  () => null,
+  () => {
+    return null;
+  },
 );
 
 /** Bundle export `c` — derived keys present in the status map. */
 export const ambientSuggestionStatusKeysAtom = createAppScopeDerivedAtom(
   appScopeAtom,
-  (scope: SuggestionScope, api: { get: (atom: unknown) => unknown }) => {
+  (
+    scope: SuggestionScope,
+    api: {
+      get: (atom: unknown) => unknown;
+    },
+  ) => {
     const keyed = (api.get(defaultStatusesAtom) as StatusMap | undefined)?.[
       statusStorageKey(scope)
     ];
@@ -118,7 +129,12 @@ export const ambientSuggestionStatusKeysAtom = createAppScopeDerivedAtom(
 /** Bundle export `a` — whether ambient suggestions have loaded or errored. */
 export const ambientSuggestionsSettledAtom = createAppScopeDerivedAtom(
   appScopeAtom,
-  (_scope: SuggestionScope, api: { get: (atom: unknown) => unknown }) => {
+  (
+    _scope: SuggestionScope,
+    api: {
+      get: (atom: unknown) => unknown;
+    },
+  ) => {
     const result = api.get(ambientSuggestionsQueryAtom) as {
       data?: unknown;
       isError?: boolean;
@@ -130,7 +146,12 @@ export const ambientSuggestionsSettledAtom = createAppScopeDerivedAtom(
 /** Bundle export `f` — pending suggestion rows for the current scope. */
 export const ambientPendingSuggestionsAtom = createAppScopeDerivedAtom(
   appScopeAtom,
-  (_scope: SuggestionScope, api: { get: (atom: unknown) => unknown }) => {
+  (
+    _scope: SuggestionScope,
+    api: {
+      get: (atom: unknown) => unknown;
+    },
+  ) => {
     const file = (
       api.get(ambientSuggestionsQueryAtom) as {
         data?: {
@@ -167,7 +188,13 @@ export function setAmbientSuggestionStatusField(
       map[key] ??
       ((defaultStatuses(scope) as Record<string, unknown> | undefined) || {});
     if (current[field] === value) return map;
-    return { ...map, [key]: { ...current, [field]: value } };
+    return {
+      ...map,
+      [key]: {
+        ...current,
+        [field]: value,
+      },
+    };
   });
 }
 
@@ -175,7 +202,7 @@ export function setAmbientSuggestionStatusField(
 export function clearAmbientSuggestionStatuses(store: {
   set: (atom: unknown, value: StatusMap) => void;
 }): void {
-  clearPersistedAtomsByPrefix(`${STATUS_PREFIX}:`);
+  clearPersistedAtomsByPrefix(`${"ambient-suggestions:default-statuses"}:`);
   store.set(defaultStatusesAtom, {});
 }
 
@@ -189,7 +216,11 @@ export function patchAmbientSuggestionStatus(
       ) => {
         setData: (
           updater: (
-            prev: { file?: { suggestions?: SuggestionRow[] } } | null,
+            prev: {
+              file?: {
+                suggestions?: SuggestionRow[];
+              };
+            } | null,
           ) => unknown,
         ) => void;
       };
@@ -199,18 +230,23 @@ export function patchAmbientSuggestionStatus(
   suggestionId: string,
   status: string,
 ): void {
-  store.query.snapshot(ambientSuggestionsQueryAtom, scope).setData((prev) =>
-    prev == null
+  store.query.snapshot(ambientSuggestionsQueryAtom, scope).setData((prev) => {
+    return prev == null
       ? prev
       : {
           file: {
             ...prev.file,
-            suggestions: (prev.file?.suggestions ?? []).map((item) =>
-              item.id === suggestionId ? { ...item, status } : item,
-            ),
+            suggestions: (prev.file?.suggestions ?? []).map((item) => {
+              return item.id === suggestionId
+                ? {
+                    ...item,
+                    status,
+                  }
+                : item;
+            }),
           },
-        },
-  );
+        };
+  });
 }
 
 /** Bundle export `s` — Rolldown ESM init retained as no-op. */

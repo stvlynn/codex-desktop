@@ -10,18 +10,14 @@ export const VOICE_STATUS_SLOT_IDS = [
 ] as const;
 
 /** Bundle `Wge` / export `rgt`. */
-export function isVoiceControlSlotId(
-  slotId: string | null | undefined,
-): boolean {
+export function isVoiceControlSlotId(slotId: string | null | undefined): boolean {
   return (
     slotId != null && (VOICE_SURFACE_IDS as readonly string[]).includes(slotId)
   );
 }
 
 /** Bundle `Gge` / export `igt`. */
-export function isVoiceStatusSlotId(
-  slotId: string | null | undefined,
-): boolean {
+export function isVoiceStatusSlotId(slotId: string | null | undefined): boolean {
   return (
     slotId != null &&
     (VOICE_STATUS_SLOT_IDS as readonly string[]).includes(slotId)

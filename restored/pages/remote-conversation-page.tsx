@@ -15,9 +15,7 @@ type RemoteConversationPageImpl = (
 ) => ReactNode;
 let impl: RemoteConversationPageImpl | null = null;
 
-export function bindRemoteConversationPage(
-  next: RemoteConversationPageImpl,
-): void {
+export function bindRemoteConversationPage(next: RemoteConversationPageImpl): void {
   impl = next;
 }
 

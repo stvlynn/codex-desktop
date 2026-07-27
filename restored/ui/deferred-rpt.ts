@@ -1,25 +1,41 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export rpt / Iu
+// Materialized via extractFn(internal `Iu`) / export `rpt`.
 
 export type DeferredRptPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Fu: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  vOe: (...args: unknown[]) => unknown;
 };
 
 let peers: DeferredRptPeers | null = null;
 
-/** Wire deferredRpt once companions land. */
+/** Wire deferredRpt peers once companions land. */
 export function setDeferredRptPeers(next: DeferredRptPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `rpt` / internal `Iu`.
- * Stage-3 fill for bundle export rpt / Iu
  */
-export function deferredRpt(...args: unknown[]): unknown {
+export function deferredRpt() {
   if (peers == null) {
     throw new Error("deferredRpt peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    vOe = function (e, t) {
+      return vOe = Object.setPrototypeOf || {
+        __proto__: []
+      } instanceof Array && function (e, t) {
+        peers.e.__proto__ = t;
+      } || function (e, t) {
+        for (var n in t) Object.prototype.hasOwnProperty.call(t, n) && (peers.e[n] = t[n]);
+      }, peers.vOe(peers.e, t);
+    }, Fu = function () {
+      return Fu = Object.assign || function (e) {
+        for (var t, n = 1, r = arguments.length; n < r; n++) for (var i in t = arguments[n], t) Object.prototype.hasOwnProperty.call(t, i) && (peers.e[i] = t[i]);
+        return peers.e;
+      }, peers.Fu.apply(this, arguments);
+    };
+  });
 }

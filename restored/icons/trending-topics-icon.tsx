@@ -5,9 +5,7 @@ import type { ReactElement, SVGProps } from "react";
 
 export type TrendingTopicsIconProps = SVGProps<SVGSVGElement>;
 
-export function TrendingTopicsIcon(
-  props: TrendingTopicsIconProps,
-): ReactElement {
+export function TrendingTopicsIcon(props: TrendingTopicsIconProps): ReactElement {
   return (
     <svg
       width={20}

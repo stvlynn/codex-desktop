@@ -11,9 +11,7 @@ import type {
 } from "./hooks-types";
 
 /** Normalize raw hook source strings into settings source kinds (bundle `uqc`). */
-export function normalizeHookSourceKind(
-  source: string | null | undefined,
-): HookSourceKind | undefined {
+export function normalizeHookSourceKind(source: string | null | undefined): HookSourceKind | undefined {
   switch (source) {
     case "plugin":
       return "plugin";
@@ -38,9 +36,7 @@ export function normalizeHookSourceKind(
 }
 
 /** Bundle `xqc` — parse a URL/search source string into a known kind. */
-export function parseHookSourceParam(
-  source: string | null | undefined,
-): HookSourceKind | null {
+export function parseHookSourceParam(source: string | null | undefined): HookSourceKind | null {
   switch (source) {
     case "plugin":
     case "user":
@@ -275,11 +271,7 @@ export function mergeProjectRoots(
 /**
  * Bundle `U6c` / export `El` — write host/source selection into search params.
  */
-export function applyHooksSettingsSourceParams(
-  params: URLSearchParams,
-  hostId: string,
-  selection: HookSourceSelection | null | undefined,
-): void {
+export function applyHooksSettingsSourceParams(params: URLSearchParams, hostId: string, selection: HookSourceSelection | null | undefined): void {
   params.delete("hostId");
   params.delete("pluginId");
   params.delete("projectRoot");

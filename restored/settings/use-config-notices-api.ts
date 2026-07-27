@@ -1,38 +1,40 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EB — real body via extractFn(internal `MGr`) / export `GX`.
-
-import { useSyncExternalStore } from "react";
-
-export type ConfigNoticesApi = {
-  addConfigNoticeCallback: (listener: () => void) => () => void;
-  getConfigNotices: () => unknown;
-};
+// Materialized via extractFn(internal `MGr`) / export `GX`.
 
 export type UseConfigNoticesApiPeers = {
-  resolveApi: (host?: unknown) => ConfigNoticesApi;
-  defaultHost: unknown;
+  EGr: (...args: unknown[]) => unknown;
+  H_: (...args: unknown[]) => unknown;
+  NGr: (...args: unknown[]) => unknown;
+  _M: (...args: unknown[]) => unknown;
 };
 
 let peers: UseConfigNoticesApiPeers | null = null;
 
-/** Wire config notices host once companions land. */
-export function setUseConfigNoticesApiPeers(
-  next: UseConfigNoticesApiPeers,
-): void {
+/** Wire useConfigNoticesApi peers once companions land. */
+export function setUseConfigNoticesApiPeers(next: UseConfigNoticesApiPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `GX` / internal `MGr`.
- * Subscribe to host config notices via useSyncExternalStore.
  */
-export function useConfigNoticesApi(host?: unknown): unknown {
+export function useConfigNoticesApi(e: unknown) {
   if (peers == null) {
-    throw new Error("UseConfigNoticesApi peers are not configured");
+    throw new Error("useConfigNoticesApi peers are not configured");
   }
-  const api = peers.resolveApi(host === undefined ? peers.defaultHost : host);
-  return useSyncExternalStore(
-    (listener) => api.addConfigNoticeCallback(listener),
-    () => api.getConfigNotices(),
+
+  let t = (0, peers.NGr.c)(3),
+    n = peers.EGr(e === void 0 ? peers.H_ : e),
+    r,
+    i;
+  return (
+    t[0] === n
+      ? ((r = t[1]), (i = t[2]))
+      : ((r = (e) => n.addConfigNoticeCallback(e)),
+        (i = () => n.getConfigNotices()),
+        (t[0] = n),
+        (t[1] = r),
+        (t[2] = i)),
+    (0, peers._M.useSyncExternalStore)(r, i)
   );
 }

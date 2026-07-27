@@ -1,61 +1,54 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EL — real body via extractFn(internal `fCr`) / export `M1`.
+// Materialized via extractFn(internal `fCr`) / export `M1`.
 
 export type UseContentRectSizePeers = {
-  useState: <T>(init: T) => [T, (next: T | ((prev: T) => T)) => void];
-  useCallback: <T extends (...args: never[]) => unknown>(
-    fn: T,
-    deps: unknown[],
-  ) => T;
-  ResizeObserver: new (
-    callback: (
-      entries: Array<{ contentRect: { width: number; height: number } }>,
-    ) => void,
-  ) => {
-    observe: (target: Element) => void;
-    disconnect: () => void;
-  };
+  Tk: (...args: unknown[]) => unknown;
+  hCr: (...args: unknown[]) => unknown;
+  mCr: (...args: unknown[]) => unknown;
 };
 
 let peers: UseContentRectSizePeers | null = null;
 
 /** Wire useContentRectSize peers once companions land. */
-export function setUseContentRectSizePeers(
-  next: UseContentRectSizePeers,
-): void {
+export function setUseContentRectSizePeers(next: UseContentRectSizePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `M1` / internal `fCr`.
- * Track element contentRect width/height via ResizeObserver.
  */
-export type ContentRectSize = {
-  width: number | null;
-  height: number | null;
-};
-
-export function useContentRectSize(): {
-  size: ContentRectSize;
-  setRef: (node: Element | null) => void;
-} {
+export function useContentRectSize() {
   if (peers == null) {
-    throw new Error("UseContentRectSize peers are not configured");
+    throw new Error("useContentRectSize peers are not configured");
   }
-  const [size, setSize] = peers.useState<ContentRectSize>({
-    width: null,
-    height: null,
-  });
-  const setRef = peers.useCallback((node: Element | null) => {
-    if (node == null || peers == null) return;
-    const observer = new peers.ResizeObserver((entries) => {
-      const entry = entries[0];
-      if (!entry) return;
-      const { width, height } = entry.contentRect;
-      setSize({ width, height });
-    });
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-  return { size, setRef };
+
+  let e = (0, peers.mCr.c)(5),
+    t;
+  e[0] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((t = {
+        width: null,
+        height: null,
+      }),
+      (e[0] = t))
+    : (t = e[0]);
+  let [n, r] = (0, peers.hCr.useState)(t),
+    i;
+  e[1] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((i = (e) => {
+        let { width: t, height: n } = e.contentRect;
+        r({
+          width: t,
+          height: n,
+        });
+      }),
+      (e[1] = i))
+    : (i = e[1]);
+  let a = peers.Tk(i),
+    o;
+  return (
+    e[2] !== n || e[3] !== a
+      ? ((o = [a, n]), (e[2] = n), (e[3] = a), (e[4] = o))
+      : (o = e[4]),
+    o
+  );
 }

@@ -5,9 +5,7 @@ import { getContentReferenceAttributes } from "./get-content-reference-attribute
 import { extractNavListContentReferenceAttributes } from "./extract-nav-list-content-reference-attributes";
 
 /** Bundle `aSa` / export `iI`. */
-export function collectConversationContentReferences(
-  ref: Record<string, unknown>,
-): unknown[] {
+export function collectConversationContentReferences(ref: Record<string, unknown>): unknown[] {
   return [
     ...getContentReferenceAttributes(ref),
     ...extractNavListContentReferenceAttributes(ref),

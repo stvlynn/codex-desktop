@@ -1,56 +1,43 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `qja`) / export `LN`.
+// Materialized via extractFn(internal `qja`) / export `LN`.
 
 export type UseInfiniteListQueryPeers = {
-  useInfiniteQuery: (opts: Record<string, unknown>) => unknown;
-  allLimit: number;
-  ownedLimit: number;
-  getNextPageParam: (lastPage: unknown) => unknown;
-  buildQueryKey: (projectId: unknown, limit: number) => unknown;
-  oneMinute: number;
+  Gja: (...args: unknown[]) => unknown;
+  Hf: (...args: unknown[]) => unknown;
+  Lt: (...args: unknown[]) => unknown;
+  XMa: (...args: unknown[]) => unknown;
+  YMa: (...args: unknown[]) => unknown;
+  Yja: (...args: unknown[]) => unknown;
 };
 
 let peers: UseInfiniteListQueryPeers | null = null;
 
 /** Wire useInfiniteListQuery peers once companions land. */
-export function setUseInfiniteListQueryPeers(
-  next: UseInfiniteListQueryPeers,
-): void {
+export function setUseInfiniteListQueryPeers(next: UseInfiniteListQueryPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `LN` / internal `qja`.
- * Infinite query for project conversation lists.
  */
-export function useInfiniteListQuery(
-  client: {
-    listProjectConversations: (
-      args: Record<string, unknown>,
-    ) => Promise<unknown>;
-  },
-  projectId: unknown,
-  enabled?: boolean,
-  scope?: "all" | string,
-): unknown {
+export function useInfiniteListQuery(e: unknown, t: unknown, n: unknown = !0, r: unknown = `all`) {
   if (peers == null) {
-    throw new Error("UseInfiniteListQuery peers are not configured");
+    throw new Error("useInfiniteListQuery peers are not configured");
   }
-  const enabledFlag = enabled ?? true;
-  const scopeFlag = scope ?? "all";
-  const limit = scopeFlag === "all" ? peers.allLimit : peers.ownedLimit;
-  return peers.useInfiniteQuery({
-    enabled: enabledFlag,
-    getNextPageParam: peers.getNextPageParam,
+
+  let i = r === `all` ? peers.YMa : peers.XMa;
+  return peers.Lt({
+    enabled: n,
+    getNextPageParam: peers.Yja,
     initialPageParam: null,
-    queryFn: ({ pageParam }: { pageParam: unknown }) =>
-      client.listProjectConversations({
-        cursor: pageParam,
-        limit,
-        ownedOnly: false,
-        projectId,
+    queryFn: ({ pageParam: n }) =>
+      e.listProjectConversations({
+        cursor: n,
+        limit: i,
+        ownedOnly: !1,
+        projectId: t,
       }),
-    queryKey: peers.buildQueryKey(projectId, limit),
-    staleTime: peers.oneMinute,
+    queryKey: peers.Gja(t, i),
+    staleTime: peers.Hf.ONE_MINUTE,
   });
 }

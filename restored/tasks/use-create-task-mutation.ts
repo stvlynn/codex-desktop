@@ -1,43 +1,53 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `LQr`) / export `nY`.
+// Materialized via extractFn(internal `LQr`) / export `nY`.
 
 export type UseCreateTaskMutationPeers = {
-  useQueryClient: () => {
-    invalidateQueries: (opts: { queryKey: unknown }) => unknown;
-  };
-  useMutation: (opts: Record<string, unknown>) => unknown;
-  mutationFn: (...args: unknown[]) => unknown;
+  RQr: (...args: unknown[]) => unknown;
+  iN: (...args: unknown[]) => unknown;
+  qt: (...args: unknown[]) => unknown;
+  rt: (...args: unknown[]) => unknown;
 };
 
 let peers: UseCreateTaskMutationPeers | null = null;
 
 /** Wire useCreateTaskMutation peers once companions land. */
-export function setUseCreateTaskMutationPeers(
-  next: UseCreateTaskMutationPeers,
-): void {
+export function setUseCreateTaskMutationPeers(next: UseCreateTaskMutationPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `nY` / internal `LQr`.
- * Create-task mutation that invalidates task query keys on success.
  */
-export function useCreateTaskMutation(): unknown {
+export function useCreateTaskMutation() {
   if (peers == null) {
-    throw new Error("UseCreateTaskMutation peers are not configured");
+    throw new Error("useCreateTaskMutation peers are not configured");
   }
-  const queryClient = peers.useQueryClient();
-  return peers.useMutation({
-    mutationFn: peers.mutationFn,
-    onSuccess: (_data: unknown, vars: { taskId: unknown; turnId: unknown }) => {
-      queryClient.invalidateQueries({ queryKey: ["tasks"] });
-      queryClient.invalidateQueries({ queryKey: ["task", vars.taskId] });
-      queryClient.invalidateQueries({
-        queryKey: ["task", vars.taskId, "turns"],
-      });
-      queryClient.invalidateQueries({
-        queryKey: ["task", vars.taskId, "turn", vars.turnId],
-      });
-    },
-  });
+
+  let e = (0, peers.iN.c)(2),
+    t = peers.rt(),
+    n;
+  return (
+    e[0] === t
+      ? (n = e[1])
+      : ((n = {
+          mutationFn: peers.RQr,
+          onSuccess: (e, n) => {
+            (t.invalidateQueries({
+              queryKey: [`tasks`],
+            }),
+              t.invalidateQueries({
+                queryKey: [`task`, n.taskId],
+              }),
+              t.invalidateQueries({
+                queryKey: [`task`, n.taskId, `turns`],
+              }),
+              t.invalidateQueries({
+                queryKey: [`task`, n.taskId, `turn`, n.turnId],
+              }));
+          },
+        }),
+        (e[0] = t),
+        (e[1] = n)),
+    peers.qt(n)
+  );
 }

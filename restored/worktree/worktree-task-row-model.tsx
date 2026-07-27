@@ -24,9 +24,7 @@ export type WorktreeTaskStatusState =
 /**
  * Status-indicator state machine from the worktree task row body.
  */
-export function getWorktreeTaskStatusState(
-  input: WorktreeTaskRowModelInput,
-): WorktreeTaskStatusState {
+export function getWorktreeTaskStatusState(input: WorktreeTaskRowModelInput): WorktreeTaskStatusState {
   const unread = input.hasAttention ?? false;
   if (input.phaseIsLoading) return { type: "loading", unread };
   if (input.phase === "failed") return { type: "error", unread };
@@ -36,10 +34,7 @@ export function getWorktreeTaskStatusState(
 /**
  * Visible title node: FormattedMessage when init failed, else formatted label.
  */
-export function getWorktreeTaskRowTitle(
-  phase: WorktreeTaskPhase,
-  label: string,
-  formatLabel: (label: string) => ReactNode,
+export function getWorktreeTaskRowTitle(phase: WorktreeTaskPhase, label: string, formatLabel: (label: string) => ReactNode,
 ): ReactNode {
   if (phase === "failed") {
     return (
@@ -52,11 +47,7 @@ export function getWorktreeTaskRowTitle(
 /**
  * Accessible aria label string for the row (intl-aware failed title).
  */
-export function getWorktreeTaskRowAriaLabel(
-  phase: WorktreeTaskPhase,
-  label: string,
-  intl: Pick<IntlShape, "formatMessage">,
-  formatLabel: (label: string) => string,
+export function getWorktreeTaskRowAriaLabel(phase: WorktreeTaskPhase, label: string, intl: Pick<IntlShape, "formatMessage">, formatLabel: (label: string) => string,
 ): string {
   if (phase === "failed") {
     return intl.formatMessage(worktreeTaskRowMessages.worktreeInitFailedTitle);

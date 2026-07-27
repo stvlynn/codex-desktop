@@ -6,9 +6,7 @@ import { asRecord } from "../utils/as-record";
 import { hostnameFromUrl } from "../utils/hostname-from-url";
 import { pickContentReferenceUrl } from "./pick-content-reference-url";
 
-export function pickContentReferenceDisplayTitle(
-  ref: Record<string, unknown>,
-): string | null {
+export function pickContentReferenceDisplayTitle(ref: Record<string, unknown>): string | null {
   const item = asRecord(ref.item);
   return (
     nonEmptyStringOrNull(ref.title) ??

@@ -37,10 +37,7 @@ function pickPrefixedKeys(
  * Parse `ajs_*` query params from a URL and apply identify/track/anonymousId.
  * Bundle export `queryString` / local `s`.
  */
-export function queryString(
-  analytics: AnalyticsQueryStringClient,
-  url: string,
-): Promise<unknown[]> {
+export function queryString(analytics: AnalyticsQueryStringClient, url: string): Promise<unknown[]> {
   const anchor = document.createElement("a");
   anchor.href = url;
   const query = anchor.search

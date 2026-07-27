@@ -50,9 +50,7 @@ function resolveBrandColor(
  * Normalize plugin fields for mention menus (`P1r`).
  * Browser / Computer Use swap in localized short labels.
  */
-export function toPluginMentionFields(
-  source: PluginMentionSource,
-  labels: PluginMentionLabels = defaultPluginMentionLabels(),
+export function toPluginMentionFields(source: PluginMentionSource, labels: PluginMentionLabels = defaultPluginMentionLabels(),
 ): PluginMentionItemFields {
   const pluginName = source.plugin.name;
   let displayName = source.displayName ?? pluginName;
@@ -76,9 +74,6 @@ export function toPluginMentionFields(
 }
 
 /** Mention list item with `kind: "plugin"` (`R1r` / `_J`). */
-export function toPluginMentionItem(
-  source: PluginMentionSource,
-  labels?: PluginMentionLabels,
-): PluginMentionItem {
+export function toPluginMentionItem(source: PluginMentionSource, labels?: PluginMentionLabels): PluginMentionItem {
   return { kind: "plugin", ...toPluginMentionFields(source, labels) };
 }

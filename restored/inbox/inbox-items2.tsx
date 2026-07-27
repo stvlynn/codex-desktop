@@ -1,42 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export AQ / mMr
+// Materialized via extractFn(internal `mMr`) / export `AQ`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type InboxItems2Props = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindInboxItems2Peers = {
+  Da: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  uMr: (...args: unknown[]) => unknown;
 };
 
-type InboxItems2Impl = (props: InboxItems2Props) => ReactNode;
-let impl: InboxItems2Impl | null = null;
+let peers: BindInboxItems2Peers | null = null;
 
-/** Wire the full InboxItems2 once deeper restore lands. */
-export function bindInboxItems2(next: InboxItems2Impl): void {
-  impl = next;
+/** Wire bindInboxItems2 peers once companions land. */
+export function setBindInboxItems2Peers(next: BindInboxItems2Peers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `AQ` / internal `mMr`.
- * Stage-3 fill for bundle export AQ / mMr; heavy UI via bind.
  */
-export function InboxItems2(props: InboxItems2Props): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-es-scaffold="AQ"
-      aria-label="InboxItems2"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export AQ / mMr
-        </div>
-      )}
-    </div>
-  );
+export function bindInboxItems2() {
+  if (peers == null) {
+    throw new Error("bindInboxItems2 peers are not configured");
+  }
+
+  return peers.Da(peers.Q, (e) => null, {
+    isEqual: peers.uMr.default,
+  });
 }

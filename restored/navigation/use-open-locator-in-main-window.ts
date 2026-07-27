@@ -1,34 +1,45 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EJ — real body via extractFn(internal `Obu`) / export `G`.
+// Materialized via extractFn(internal `Obu`) / export `G`.
 
 export type UseOpenLocatorInMainWindowPeers = {
-  presentLocator: (input: { locator: unknown; surface: "main-thread" }) => void;
-  locatorToPath: (locator: unknown) => unknown;
-  dispatchOpenInMainWindow: (path: unknown) => void;
+  Abu: (...args: unknown[]) => unknown;
+  Cbu: (...args: unknown[]) => unknown;
+  Dbu: (...args: unknown[]) => unknown;
+  Jf: (...args: unknown[]) => unknown;
 };
 
 let peers: UseOpenLocatorInMainWindowPeers | null = null;
 
-/** Wire open-locator-in-main-window peers once companions land. */
-export function setUseOpenLocatorInMainWindowPeers(
-  next: UseOpenLocatorInMainWindowPeers,
-): void {
+/** Wire useOpenLocatorInMainWindow peers once companions land. */
+export function setUseOpenLocatorInMainWindowPeers(next: UseOpenLocatorInMainWindowPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `G` / internal `Obu`.
- * Return a callback that opens a locator in the main window.
  */
-export function useOpenLocatorInMainWindow(
-  locator: unknown,
-): (() => void) | undefined {
+export function useOpenLocatorInMainWindow(e: unknown) {
   if (peers == null) {
-    throw new Error("UseOpenLocatorInMainWindow peers are not configured");
+    throw new Error("useOpenLocatorInMainWindow peers are not configured");
   }
-  if (locator == null) return undefined;
-  return () => {
-    peers!.presentLocator({ locator, surface: "main-thread" });
-    peers!.dispatchOpenInMainWindow(peers!.locatorToPath(locator));
-  };
+
+  let t = (0, peers.Abu.c)(2),
+    n;
+  return (
+    t[0] === e
+      ? (n = t[1])
+      : ((n = () => {
+          e != null &&
+            (peers.Dbu({
+              locator: e,
+              surface: `main-thread`,
+            }),
+            peers.Jf.dispatchMessage(`open-in-main-window`, {
+              path: peers.Cbu(e),
+            }));
+        }),
+        (t[0] = e),
+        (t[1] = n)),
+    e == null ? void 0 : n
+  );
 }

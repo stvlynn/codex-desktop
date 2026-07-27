@@ -15,9 +15,7 @@ type PermissionsModeDropdownImpl = (
 ) => ReactNode;
 let impl: PermissionsModeDropdownImpl | null = null;
 
-export function bindPermissionsModeDropdown(
-  next: PermissionsModeDropdownImpl,
-): void {
+export function bindPermissionsModeDropdown(next: PermissionsModeDropdownImpl): void {
   impl = next;
 }
 

@@ -17,10 +17,7 @@ export function bindGetCodeThemeRegistration(next: ThemeRegistryLookup): void {
 }
 
 /** Return the registration for a code theme variant or throw. */
-export function getCodeThemeRegistration(
-  themeId: string,
-  variant: string,
-): ThemeRegistration {
+export function getCodeThemeRegistration(themeId: string, variant: string): ThemeRegistration {
   const registration = lookup?.(themeId, variant)?.registrationByVariant[
     variant
   ];

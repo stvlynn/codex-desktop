@@ -11,9 +11,7 @@ type RunInPrimaryWindow = (
 let runInPrimaryWindow: RunInPrimaryWindow | null = null;
 
 /** Bind primary-window app action runner (bundle `gp.appActions`). */
-export function bindRunAppActionInPrimaryWindow(
-  next: RunInPrimaryWindow,
-): void {
+export function bindRunAppActionInPrimaryWindow(next: RunInPrimaryWindow): void {
   runInPrimaryWindow = next;
 }
 

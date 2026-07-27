@@ -1,24 +1,15 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EI — real body via extractFn(internal `kvu`) / export `it`.
+// Materialized via extractFn(internal `kvu`) / export `it`.
 
 export type MatchCommandByStartTimePeers = {
-  startTimeMatcher: unknown;
-  findByPid: (
-    pid: unknown,
-    procs: unknown,
-  ) => { command: unknown; pid: unknown } | null;
-  commandsMatch: (a: unknown, b: unknown) => boolean;
-  commandText: (command: unknown) => unknown;
-  resolveOsPid: (processId: unknown) => unknown | null;
-  filterCandidates: (
-    entry: unknown,
-    procs: unknown,
-    now: number,
-    matcher: unknown,
-  ) => { pid: unknown } | null;
-  procsForPid: (pid: unknown, procs: unknown) => unknown;
+  Avu: (...args: unknown[]) => unknown;
+  Bvu: (...args: unknown[]) => unknown;
+  Fvu: (...args: unknown[]) => unknown;
+  Hvu: (...args: unknown[]) => unknown;
+  Ivu: (...args: unknown[]) => unknown;
+  Mvu: (...args: unknown[]) => unknown;
+  Nvu: (...args: unknown[]) => unknown;
 };
-
 let peers: MatchCommandByStartTimePeers | null = null;
 
 /** Wire matchCommandByStartTime peers once companions land. */
@@ -30,53 +21,34 @@ export function setMatchCommandByStartTimePeers(
 
 /**
  * Bundle export `it` / internal `kvu`.
- * Match a terminal command process by pid / processId / start time.
  */
-export type TerminalCommandEntry = {
-  osPid?: unknown | null;
-  processId?: unknown;
-  command?: unknown;
-  commandExecutionStartedAtMs?: number | null;
-  source?: string;
-};
-
 export function matchCommandByStartTime(
-  entry: TerminalCommandEntry,
-  processes: unknown,
-  now: number = Date.now(),
-  opts: { matchCommandStartTime?: boolean } = {},
-): unknown {
+  e: unknown,
+  t: unknown,
+  n: unknown = Date.now(),
+  { matchCommandStartTime = false }: Record<string, unknown> = {},
+) {
   if (peers == null) {
-    throw new Error("MatchCommandByStartTime peers are not configured");
+    throw new Error("matchCommandByStartTime peers are not configured");
   }
-  if (processes == null) return null;
-  const matcher =
-    opts.matchCommandStartTime && entry.commandExecutionStartedAtMs != null
-      ? peers.startTimeMatcher
+  if (t == null) return null;
+  let i =
+    matchCommandStartTime && e.commandExecutionStartedAtMs != null
+      ? peers.Hvu
       : null;
-  if (entry.osPid != null) {
-    const hit = peers.findByPid(entry.osPid, processes);
-    if (
-      hit != null &&
-      peers.commandsMatch(peers.commandText(entry.command), hit.command)
-    ) {
-      return hit;
-    }
+  if (e.osPid != null) {
+    let n = peers.Nvu(e.osPid, t);
+    if (n != null && peers.Ivu(peers.Bvu(e.command), n.command)) return n;
   }
-  const osPid = peers.resolveOsPid(entry.processId);
-  if (osPid != null) {
-    if (entry.source !== "restored-process" && matcher == null) {
-      const hit = peers.findByPid(osPid, processes);
-      if (hit != null) return hit;
+  let a = peers.Mvu(e.processId);
+  if (a != null) {
+    if (e.source !== "restored-process" && i == null) {
+      let e = peers.Nvu(a, t);
+      if (e != null) return e;
     }
-    const candidate = peers.filterCandidates(
-      entry,
-      peers.procsForPid(osPid, processes),
-      now,
-      matcher,
-    );
-    if (candidate != null) return peers.findByPid(candidate.pid, processes);
+    let r = peers.Fvu(e, peers.Avu(a, t), n, i);
+    if (r != null) return peers.Nvu(r.pid, t);
   }
-  const fallback = peers.filterCandidates(entry, processes, now, matcher);
-  return fallback == null ? null : peers.findByPid(fallback.pid, processes);
+  let o = peers.Fvu(e, t, n, i);
+  return o == null ? null : peers.Nvu(o.pid, t);
 }

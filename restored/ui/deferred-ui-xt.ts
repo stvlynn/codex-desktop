@@ -1,25 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export XT / EY
+// Materialized via extractFn(internal `EY`) / export `XT`.
 
 export type BindDeferredUiXTPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiXTPeers | null = null;
 
-/** Wire bindDeferredUiXT once companions land. */
+/** Wire bindDeferredUiXT peers once companions land. */
 export function setBindDeferredUiXTPeers(next: BindDeferredUiXTPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `XT` / internal `EY`.
- * Stage-3 fill for bundle export XT / EY
  */
-export function bindDeferredUiXT(...args: unknown[]): unknown {
+export function bindDeferredUiXT() {
   if (peers == null) {
     throw new Error("bindDeferredUiXT peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ta(peers.Q, () => null);
 }

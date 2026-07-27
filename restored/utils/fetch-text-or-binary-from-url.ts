@@ -1,46 +1,57 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EL — real body via extractFn(internal `_y`) / export `znt`.
+// Materialized via extractFn(internal `_y`) / export `znt`.
 
 export type FetchTextOrBinaryFromUrlPeers = {
-  isSameOrigin: (url: string, base: string) => boolean;
-  getBaseUri: () => string;
-  fetch: (url: string) => Promise<Response>;
-  xhr: (url: string, responseType: string) => Promise<unknown>;
+  XMLHttpRequest: (...args: unknown[]) => unknown;
+  ZGt: (...args: unknown[]) => unknown;
+  fetch: (...args: unknown[]) => unknown;
 };
 
 let peers: FetchTextOrBinaryFromUrlPeers | null = null;
 
 /** Wire fetchTextOrBinaryFromUrl peers once companions land. */
-export function setFetchTextOrBinaryFromUrlPeers(
-  next: FetchTextOrBinaryFromUrlPeers,
-): void {
+export function setFetchTextOrBinaryFromUrlPeers(next: FetchTextOrBinaryFromUrlPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `znt` / internal `_y`.
- * Fetch text/binary from same-origin URL or XHR fallback.
  */
-export async function fetchTextOrBinaryFromUrl(
-  url: string,
-  responseType: "text" | "arraybuffer" | "blob" | "json" = "text",
-): Promise<unknown> {
+async function fetchTextOrBinaryFromUrl(e, t = `text`) {
   if (peers == null) {
-    throw new Error("FetchTextOrBinaryFromUrl peers are not configured");
+    throw new Error("fetchTextOrBinaryFromUrl peers are not configured");
   }
-  if (peers.isSameOrigin(url, peers.getBaseUri())) {
-    const response = await peers.fetch(url);
-    if (!response.ok) throw new Error(response.statusText);
-    switch (responseType) {
-      case "arraybuffer":
-        return response.arrayBuffer();
-      case "blob":
-        return response.blob();
-      case "json":
-        return response.json();
-      default:
-        return response.text();
+
+  if (peers.ZGt(e, document.baseURI)) {
+    let n = await peers.fetch(e);
+    if (!n.ok) throw Error(n.statusText);
+    switch (t) {
+      case `arraybuffer`:
+        return n.arrayBuffer();
+      case `blob`:
+        return n.blob();
+      case `json`:
+        return n.json();
     }
+    return n.text();
   }
-  return peers.xhr(url, responseType);
+  return new Promise((n, r) => {
+    let i = new peers.XMLHttpRequest();
+    i.open(`GET`, e, !0), i.responseType = t, i.onreadystatechange = () => {
+      if (i.readyState === peers.XMLHttpRequest.DONE) {
+        if (i.status === 200 || i.status === 0) {
+          switch (t) {
+            case `arraybuffer`:
+            case `blob`:
+            case `json`:
+              n(i.response);
+              return;
+          }
+          n(i.responseText);
+          return;
+        }
+        r(Error(i.statusText));
+      }
+    }, i.send(null);
+  });
 }

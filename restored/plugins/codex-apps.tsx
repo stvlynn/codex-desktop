@@ -1,42 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export j5 / zw
+// Materialized via extractFn(internal `zw`) / export `j5`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindCodexAppsProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindCodexAppsPeers = {
+  Au: (...args: unknown[]) => unknown;
+  N_e: (...args: unknown[]) => unknown;
+  S_e: (...args: unknown[]) => unknown;
+  Wl: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gUn: (...args: unknown[]) => unknown;
 };
 
-type BindCodexAppsImpl = (props: BindCodexAppsProps) => ReactNode;
-let impl: BindCodexAppsImpl | null = null;
+let peers: BindBindCodexAppsPeers | null = null;
 
-/** Wire the full BindCodexApps once deeper restore lands. */
-export function bindBindCodexApps(next: BindCodexAppsImpl): void {
-  impl = next;
+/** Wire bindBindCodexApps peers once companions land. */
+export function setBindBindCodexAppsPeers(next: BindBindCodexAppsPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `j5` / internal `zw`.
- * Stage-3 fill for bundle export j5 / zw; heavy UI via bind.
  */
-export function BindCodexApps(props: BindCodexAppsProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-ev-scaffold="j5"
-      aria-label="BindCodexApps"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export j5 / zw
-        </div>
-      )}
-    </div>
-  );
+export function bindBindCodexApps() {
+  if (peers == null) {
+    throw new Error("bindBindCodexApps peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Au(), `${peers.S_e}${peers.Wl}`, gUn = `${peers.N_e}@${peers.Wl}`;
+  });
 }

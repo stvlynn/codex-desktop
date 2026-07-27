@@ -1,25 +1,33 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export Js / HMl
+// Materialized via extractFn(internal `HMl`) / export `Js`.
 
 export type BindDeferredUiJsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  D8: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  VMl: (...args: unknown[]) => unknown;
+  j2: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredUiJsPeers | null = null;
 
-/** Wire bindDeferredUiJs once companions land. */
+/** Wire bindDeferredUiJs peers once companions land. */
 export function setBindDeferredUiJsPeers(next: BindDeferredUiJsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Js` / internal `HMl`.
- * Stage-3 fill for bundle export Js / HMl
  */
-export function bindDeferredUiJs(...args: unknown[]): unknown {
+export function bindDeferredUiJs() {
   if (peers == null) {
     throw new Error("bindDeferredUiJs peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ma(peers.j2, ({
+    get: e
+  }) => {
+    let t = e(peers.D8).visibleTaskIds,
+      n = e(peers.VMl);
+    return t == null || n == null ? null : t.filter(e => !n.includes(e));
+  });
 }

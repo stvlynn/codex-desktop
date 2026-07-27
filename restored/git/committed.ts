@@ -1,26 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export DZ / ARr
+// Materialized via extractFn(internal `ARr`) / export `DZ`.
 
 export type BindCommittedPeers = {
-  impl: (...args: unknown[]) => unknown;
+  DRr: (...args: unknown[]) => unknown;
+  ORr: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  kRr: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
 let peers: BindCommittedPeers | null = null;
 
-/** Wire bindCommitted once companions land. */
+/** Wire bindCommitted peers once companions land. */
 export function setBindCommittedPeers(next: BindCommittedPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `DZ` / internal `ARr`.
- * Stage-3 fill for bundle export DZ / ARr
  */
-export function bindCommitted(...args: unknown[]): unknown {
+export function bindCommitted() {
   if (peers == null) {
     throw new Error("bindCommitted peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    DRr = peers.r(peers.o(), 1), ORr = (0, peers.DRr.createContext)(null), kRr = (0, peers.DRr.createContext)(null);
+  });
 }

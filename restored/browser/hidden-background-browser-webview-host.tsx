@@ -14,9 +14,7 @@ type HiddenBackgroundBrowserWebviewHostImpl = (
 let impl: HiddenBackgroundBrowserWebviewHostImpl | null = null;
 
 /** Wire the full HiddenBackgroundBrowserWebviewHost once deeper restore lands. */
-export function bindHiddenBackgroundBrowserWebviewHost(
-  next: HiddenBackgroundBrowserWebviewHostImpl,
-): void {
+export function bindHiddenBackgroundBrowserWebviewHost(next: HiddenBackgroundBrowserWebviewHostImpl): void {
   impl = next;
 }
 
@@ -24,9 +22,7 @@ export function bindHiddenBackgroundBrowserWebviewHost(
  * Bindable HiddenBackgroundBrowserWebviewHost.
  * Alias ownership unresolved — do not invent extractFn body.
  */
-export function HiddenBackgroundBrowserWebviewHost(
-  props: HiddenBackgroundBrowserWebviewHostProps,
-): ReactElement {
+export function HiddenBackgroundBrowserWebviewHost(props: HiddenBackgroundBrowserWebviewHostProps): ReactElement {
   if (impl == null) {
     return (
       <div

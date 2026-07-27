@@ -17,10 +17,7 @@ export type SkillsCatalog = {
  * Resolve a skill by case-insensitive exact name, else a unique `*:name` suffix
  * match across catalog groups.
  */
-export function findSkillByName(
-  catalog: SkillsCatalog,
-  rawName: string,
-): SkillNameRecord | null {
+export function findSkillByName(catalog: SkillsCatalog, rawName: string): SkillNameRecord | null {
   const needle = rawName.toLowerCase();
   const suffixMatches: SkillNameRecord[] = [];
   for (const group of catalog.data) {

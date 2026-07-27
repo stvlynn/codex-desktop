@@ -10,10 +10,7 @@ type StoreLike = {
   get: (atom: unknown, tabId: string) => unknown;
 };
 
-export function findPanelSideForTab(
-  store: StoreLike,
-  tabId: string,
-): PanelSide | null {
+export function findPanelSideForTab(store: StoreLike, tabId: string): PanelSide | null {
   for (const side of PLACEMENT_RIGHT_BOTTOM) {
     const controller = panelControllerForSide(side);
     if (store.get(controller.tabById$, tabId) != null) return side;

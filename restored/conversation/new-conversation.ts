@@ -1,28 +1,28 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export z8 / tT
+// Materialized via extractFn(internal `tT`) / export `z8`.
 
 export type BindNewConversationPeers = {
-  impl: (...args: unknown[]) => unknown;
+  IJn: (...args: unknown[]) => unknown;
+  LJn: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindNewConversationPeers | null = null;
 
-/** Wire bindNewConversation once companions land. */
-export function setBindNewConversationPeers(
-  next: BindNewConversationPeers,
-): void {
+/** Wire bindNewConversation peers once companions land. */
+export function setBindNewConversationPeers(next: BindNewConversationPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `z8` / internal `tT`.
- * Stage-3 fill for bundle export z8 / tT
  */
-export function bindNewConversation(...args: unknown[]): unknown {
+export function bindNewConversation() {
   if (peers == null) {
     throw new Error("bindNewConversation peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    IJn = `new-conversation`, LJn = `panel-new-conversation`;
+  });
 }

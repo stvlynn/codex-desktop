@@ -15,9 +15,7 @@ type ShikiHighlightProviderImpl = (
 ) => ReactNode;
 let impl: ShikiHighlightProviderImpl | null = null;
 
-export function bindShikiHighlightProvider(
-  next: ShikiHighlightProviderImpl,
-): void {
+export function bindShikiHighlightProvider(next: ShikiHighlightProviderImpl): void {
   impl = next;
 }
 

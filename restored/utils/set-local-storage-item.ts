@@ -1,26 +1,24 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EK — real body via extractFn(internal `rd`) / export `Mft`.
+// Materialized via extractFn(internal `rd`) / export `Mft`.
 
-export type SetLocalStorageItemPeers = {
-  getStorage: () => { setItem: (key: string, value: string) => void };
+export type MftPeers = {
+  _Me: (...args: unknown[]) => unknown;
 };
 
-let peers: SetLocalStorageItemPeers | null = null;
+let peers: MftPeers | null = null;
 
-/** Wire setLocalStorageItem peers once companions land. */
-export function setSetLocalStorageItemPeers(
-  next: SetLocalStorageItemPeers,
-): void {
+/** Wire Mft peers once companions land. */
+export function setMftPeers(next: MftPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Mft` / internal `rd`.
- * Set a key/value on the local storage adapter.
  */
-export function setLocalStorageItem(key: string, value: string): void {
+export function Mft(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("SetLocalStorageItem peers are not configured");
+    throw new Error("Mft peers are not configured");
   }
-  peers.getStorage().setItem(key, value);
+
+  peers._Me().setItem(e, t);
 }

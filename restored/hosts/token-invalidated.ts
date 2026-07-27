@@ -1,28 +1,30 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export F / _xu
+// Materialized via extractFn(internal `_xu`) / export `F`.
 
 export type BindTokenInvalidatedPeers = {
-  impl: (...args: unknown[]) => unknown;
+  RE: (...args: unknown[]) => unknown;
+  cE: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  gxu: (...args: unknown[]) => unknown;
+  ih: (...args: unknown[]) => unknown;
 };
 
 let peers: BindTokenInvalidatedPeers | null = null;
 
-/** Wire bindTokenInvalidated once companions land. */
-export function setBindTokenInvalidatedPeers(
-  next: BindTokenInvalidatedPeers,
-): void {
+/** Wire bindTokenInvalidated peers once companions land. */
+export function setBindTokenInvalidatedPeers(next: BindTokenInvalidatedPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `F` / internal `_xu`.
- * Stage-3 fill for bundle export F / _xu
  */
-export function bindTokenInvalidated(...args: unknown[]): unknown {
+export function bindTokenInvalidated() {
   if (peers == null) {
     throw new Error("bindTokenInvalidated peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.cE(), peers.ih(), peers.RE(), gxu = `token_invalidated`;
+  });
 }

@@ -1,41 +1,50 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export ay / ZTs
+// Materialized via extractFn(internal `ZTs`) / export `ay`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredayProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredayPeers = {
+  J: (...args: unknown[]) => unknown;
+  XTs: (...args: unknown[]) => unknown;
+  YTs: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
 };
+let peers: BindDeferredayPeers | null = null;
 
-type DeferredayImpl = (props: DeferredayProps) => ReactNode;
-let impl: DeferredayImpl | null = null;
-
-/** Wire the full Deferreday once deeper restore lands. */
-export function bindDeferreday(next: DeferredayImpl): void {
-  impl = next;
+/** Wire bindDeferreday peers once companions land. */
+export function setBindDeferredayPeers(next: BindDeferredayPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `ay` / internal `ZTs`.
- * Stage-3 fill for bundle export ay / ZTs; heavy UI via bind.
  */
-export function Deferreday(props: DeferredayProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fo-scaffold="ay"
-      aria-label="Deferreday"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export ay / ZTs
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferreday() {
+  if (peers == null) {
+    throw new Error("bindDeferreday peers are not configured");
+  }
+  return peers.e(() => {
+    peers.o();
+    YTs = peers.J();
+    XTs = (e) => {
+      return (
+        <svg
+          width={20}
+          height={20}
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          {...peers.e}
+        >
+          <path
+            d="M10.8343 12.0693C10.0371 12.5295 9.01783 12.2564 8.55759 11.4592C8.09735 10.6621 8.37048 9.64276 9.16763 9.18253C10.1299 8.62697 14.0533 7.64478 14.3311 8.1259C14.6089 8.60703 11.7966 11.5137 10.8343 12.0693Z"
+            fill="currentColor"
+          />
+          <path
+            d="M16.585 10.25C16.585 6.6132 13.6368 3.66504 10 3.66504C6.3632 3.66504 3.41504 6.6132 3.41504 10.25C3.41504 12.4001 4.44494 14.31 6.04102 15.5127L6.36719 15.7432L6.47168 15.8291C6.68974 16.0482 6.73203 16.3973 6.55469 16.665C6.3772 16.9328 6.03875 17.0306 5.75195 16.915L5.63281 16.8516L5.24023 16.5752C3.32482 15.1316 2.08496 12.8355 2.08496 10.25C2.08496 5.87867 5.62867 2.33496 10 2.33496C14.3713 2.33496 17.915 5.87867 17.915 10.25C17.915 13.0079 16.5037 15.4356 14.3672 16.8516L14.248 16.915C13.9612 17.0306 13.6228 16.9328 13.4453 16.665C13.2425 16.3589 13.3267 15.946 13.6328 15.7432L13.959 15.5127C15.5551 14.31 16.585 12.4001 16.585 10.25Z"
+            fill="currentColor"
+          />
+        </svg>
+      );
+    };
+  });
 }

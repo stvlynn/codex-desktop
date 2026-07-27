@@ -17,9 +17,7 @@ type ChronicleSettingsPageImpl = (
 let impl: ChronicleSettingsPageImpl | null = null;
 
 /** Wire the full ChronicleSettingsPage once deeper companion restore lands. */
-export function bindChronicleSettingsPage(
-  next: ChronicleSettingsPageImpl,
-): void {
+export function bindChronicleSettingsPage(next: ChronicleSettingsPageImpl): void {
   impl = next;
 }
 

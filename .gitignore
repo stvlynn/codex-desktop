@@ -1,2 +1,5 @@
 # Deobfuscation working cache (large intermediate artifacts)
-restored/.deobfuscate-javascript/_full/
+**/.deobfuscate-javascript/_full/
+**/.deobfuscate-javascript/node_modules/
+**/.deobfuscate-javascript/gate-cache.json
+restored/.deobfuscate-javascript/node_modules

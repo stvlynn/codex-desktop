@@ -1,28 +1,37 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export EN / BNa
+// Materialized via extractFn(internal `BNa`) / export `EN`.
 
 export type BindDeferredNavigationENPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Eh: (...args: unknown[]) => unknown;
+  Ma: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  enabled: (...args: unknown[]) => unknown;
+  zNa: (...args: unknown[]) => unknown;
 };
 
 let peers: BindDeferredNavigationENPeers | null = null;
 
-/** Wire bindDeferredNavigationEN once companions land. */
-export function setBindDeferredNavigationENPeers(
-  next: BindDeferredNavigationENPeers,
-): void {
+/** Wire bindDeferredNavigationEN peers once companions land. */
+export function setBindDeferredNavigationENPeers(next: BindDeferredNavigationENPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `EN` / internal `BNa`.
- * Stage-3 fill for bundle export EN / BNa
  */
-export function bindDeferredNavigationEN(...args: unknown[]): unknown {
+export function bindDeferredNavigationEN() {
   if (peers == null) {
     throw new Error("bindDeferredNavigationEN peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.Ma(peers.Q, ({
+    get: e
+  }) => {
+    if (!e(peers.Eh, `637432221`)) return `unavailable`;
+    let {
+      data: t,
+      isError: n
+    } = e(peers.zNa);
+    return t?.enabled === !0 ? `available` : t?.enabled === !1 || n ? `unavailable` : `loading`;
+  });
 }

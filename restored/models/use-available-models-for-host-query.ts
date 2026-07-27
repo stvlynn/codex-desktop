@@ -1,55 +1,74 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `NM`) / export `$Y`.
+// Materialized via extractFn(internal `NM`) / export `$Y`.
 
 export type UseAvailableModelsForHostQueryPeers = {
-  defaultLimit: number;
-  useHostAuth: (
-    hostId: unknown,
-  ) => { authMethod?: string | null; isLoading?: boolean } | null | undefined;
-  useModelsQuery: (
-    key: unknown,
-    params: Record<string, unknown>,
-    options: { enabled: boolean },
-  ) => unknown;
-  modelsQueryKey: unknown;
+  Fo: (...args: unknown[]) => unknown;
+  QJr: (...args: unknown[]) => unknown;
+  ZJr: (...args: unknown[]) => unknown;
+  additionalAvailableModels: (...args: unknown[]) => unknown;
+  authMethod: (...args: unknown[]) => unknown;
+  bM: (...args: unknown[]) => unknown;
+  eYr: (...args: unknown[]) => unknown;
+  enabled: (...args: unknown[]) => unknown;
+  hostId: (...args: unknown[]) => unknown;
+  includeUltraReasoningEffort: (...args: unknown[]) => unknown;
+  isLoading: (...args: unknown[]) => unknown;
+  limit: (...args: unknown[]) => unknown;
 };
 
 let peers: UseAvailableModelsForHostQueryPeers | null = null;
 
-/** Wire available-models-for-host query peers once companions land. */
-export function setUseAvailableModelsForHostQueryPeers(
-  next: UseAvailableModelsForHostQueryPeers,
-): void {
+/** Wire useAvailableModelsForHostQuery peers once companions land. */
+export function setUseAvailableModelsForHostQueryPeers(next: UseAvailableModelsForHostQueryPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `$Y` / internal `NM`.
- * Query available models for a host with auth + ultra-effort options.
  */
-export function useAvailableModelsForHostQuery(args?: {
-  hostId?: unknown;
-  limit?: number;
-  additionalAvailableModels?: Iterable<unknown>;
-  includeUltraReasoningEffort?: boolean;
-  enabled?: boolean;
-}): unknown {
+export function useAvailableModelsForHostQuery(e: unknown) {
   if (peers == null) {
-    throw new Error("UseAvailableModelsForHostQuery peers are not configured");
+    throw new Error("useAvailableModelsForHostQuery peers are not configured");
   }
-  const hostId = args?.hostId ?? "local";
-  const limit = args?.limit ?? peers.defaultLimit;
-  const auth = peers.useHostAuth(hostId);
-  const additionalAvailableModels = Array.from(
-    args?.additionalAvailableModels ?? [],
-  ).sort();
-  const params = {
-    additionalAvailableModels,
-    authMethod: auth?.authMethod ?? null,
-    hostId,
-    includeUltraReasoningEffort: args?.includeUltraReasoningEffort !== false,
-    limit,
-  };
-  const enabled = args?.enabled !== false && auth?.isLoading !== true;
-  return peers.useModelsQuery(peers.modelsQueryKey, params, { enabled });
+
+  let t = (0, peers.ZJr.c)(10),
+    n = e?.hostId ?? `local`,
+    r = e?.limit ?? peers.QJr,
+    i = peers.bM(n),
+    a;
+  t[0] === e?.additionalAvailableModels
+    ? (a = t[1])
+    : ((a = Array.from(e?.additionalAvailableModels ?? []).sort()),
+      (t[0] = e?.additionalAvailableModels),
+      (t[1] = a));
+  let o = i?.authMethod ?? null,
+    s = e?.includeUltraReasoningEffort !== !1,
+    c;
+  t[2] !== n || t[3] !== r || t[4] !== a || t[5] !== o || t[6] !== s
+    ? ((c = {
+        additionalAvailableModels: a,
+        authMethod: o,
+        hostId: n,
+        includeUltraReasoningEffort: s,
+        limit: r,
+      }),
+      (t[2] = n),
+      (t[3] = r),
+      (t[4] = a),
+      (t[5] = o),
+      (t[6] = s),
+      (t[7] = c))
+    : (c = t[7]);
+  let l = e?.enabled !== !1 && i?.isLoading !== !0,
+    u;
+  return (
+    t[8] === l
+      ? (u = t[9])
+      : ((u = {
+          enabled: l,
+        }),
+        (t[8] = l),
+        (t[9] = u)),
+    peers.Fo(peers.eYr, c, u)
+  );
 }

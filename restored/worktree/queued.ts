@@ -1,26 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export TV / FKi
+// Materialized via extractFn(internal `FKi`) / export `TV`.
 
 export type BindQueuedPeers = {
-  impl: (...args: unknown[]) => unknown;
+  MKi: (...args: unknown[]) => unknown;
+  NKi: (...args: unknown[]) => unknown;
+  PKi: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  mR: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
 };
 
 let peers: BindQueuedPeers | null = null;
 
-/** Wire bindQueued once companions land. */
+/** Wire bindQueued peers once companions land. */
 export function setBindQueuedPeers(next: BindQueuedPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `TV` / internal `FKi`.
- * Stage-3 fill for bundle export TV / FKi
  */
-export function bindQueued(...args: unknown[]): unknown {
+export function bindQueued() {
   if (peers == null) {
     throw new Error("bindQueued peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    MKi = peers.r(peers.o(), 1), NKi = new Set(), mR = new Map(), PKi = [];
+  });
 }

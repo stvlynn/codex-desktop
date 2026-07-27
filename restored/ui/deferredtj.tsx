@@ -1,41 +1,37 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export tj / Eho
+// Materialized via extractFn(internal `Eho`) / export `tj`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DeferredtjProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindDeferredtjPeers = {
+  C2i: (...args: unknown[]) => unknown;
+  Cho: (...args: unknown[]) => unknown;
+  Tho: (...args: unknown[]) => unknown;
+  UD: (...args: unknown[]) => unknown;
+  ZL: (...args: unknown[]) => unknown;
+  bho: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  jf: (...args: unknown[]) => unknown;
+  nL: (...args: unknown[]) => unknown;
+  o: (...args: unknown[]) => unknown;
+  r: (...args: unknown[]) => unknown;
+  vho: (...args: unknown[]) => unknown;
 };
 
-type DeferredtjImpl = (props: DeferredtjProps) => ReactNode;
-let impl: DeferredtjImpl | null = null;
+let peers: BindDeferredtjPeers | null = null;
 
-/** Wire the full Deferredtj once deeper restore lands. */
-export function bindDeferredtj(next: DeferredtjImpl): void {
-  impl = next;
+/** Wire bindDeferredtj peers once companions land. */
+export function setBindDeferredtjPeers(next: BindDeferredtjPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `tj` / internal `Eho`.
- * Stage-3 fill for bundle export tj / Eho; heavy UI via bind.
  */
-export function Deferredtj(props: DeferredtjProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fq-scaffold="tj"
-      aria-label="Deferredtj"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export tj / Eho
-        </div>
-      )}
-    </div>
-  );
+export function bindDeferredtj() {
+  if (peers == null) {
+    throw new Error("bindDeferredtj peers are not configured");
+  }
+
+  return peers.e(() => {
+    Tho = peers.r(peers.o(), 1), peers.UD(), peers.ZL(), peers.C2i(), peers.vho(), peers.Cho(), peers.nL(), peers.bho(), peers.jf();
+  });
 }

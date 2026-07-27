@@ -9,9 +9,7 @@ export type PluginMarketplaceSource = {
 };
 
 /** Exactly one of marketplacePath / remoteMarketplaceName. */
-export function pluginMarketplaceSourceFields(
-  input: PluginMarketplaceSource,
-): { marketplacePath: string } | { remoteMarketplaceName: string } {
+export function pluginMarketplaceSourceFields(input: PluginMarketplaceSource): { marketplacePath: string } | { remoteMarketplaceName: string } {
   if (input.marketplacePath != null && input.remoteMarketplaceName != null) {
     throw new Error(
       "plugin marketplace request requires one marketplace source",

@@ -1,42 +1,29 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export a1 / Bk
+// Materialized via extractFn(internal `Bk`) / export `a1`.
 
-import type { ReactElement, ReactNode } from "react";
-
-export type BindMacOSProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
+export type BindBindMacOSPeers = {
+  $Tr: (...args: unknown[]) => unknown;
+  Rk: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  iEr: (...args: unknown[]) => unknown;
 };
 
-type BindMacOSImpl = (props: BindMacOSProps) => ReactNode;
-let impl: BindMacOSImpl | null = null;
+let peers: BindBindMacOSPeers | null = null;
 
-/** Wire the full BindMacOS once deeper restore lands. */
-export function bindBindMacOS(next: BindMacOSImpl): void {
-  impl = next;
+/** Wire bindBindMacOS peers once companions land. */
+export function setBindBindMacOSPeers(next: BindBindMacOSPeers): void {
+  peers = next;
 }
 
 /**
  * Bundle export `a1` / internal `Bk`.
- * Stage-3 fill for bundle export a1 / Bk; heavy UI via bind.
  */
-export function BindMacOS(props: BindMacOSProps): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fk-scaffold="a1"
-      aria-label="BindMacOS"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          Stage-3 fill for bundle export a1 / Bk
-        </div>
-      )}
-    </div>
-  );
+export function bindBindMacOS() {
+  if (peers == null) {
+    throw new Error("bindBindMacOS peers are not configured");
+  }
+
+  return peers.e(() => {
+    peers.Rk(), peers.$Tr(), iEr = new Map([[`LeftOption+RightOption`, `⌥ + ⌥`], [`LeftAlt+RightAlt`, `⌥ + ⌥`], [`LeftCommand+RightCommand`, `⌘ + ⌘`], [`LeftCmd+RightCmd`, `⌘ + ⌘`], [`LeftMeta+RightMeta`, `⌘ + ⌘`], [`LeftShift+RightShift`, `⇧ + ⇧`]]);
+  });
 }

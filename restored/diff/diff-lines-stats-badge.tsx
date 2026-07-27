@@ -1,31 +1,16 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave ED — real body via extractFn(internal `Hq`) / export `QD`.
-
-import { createElement, type ReactElement, type ReactNode } from "react";
-
-export type DiffLinesStatsBadgeProps = {
-  linesAdded: number;
-  linesRemoved: number;
-  variant?: "color" | "monochrome" | "agent-activity" | string;
-  className?: string;
-};
+// Materialized via extractFn(internal `Hq`) / export `QD`.
 
 export type DiffLinesStatsBadgePeers = {
-  useIntl: () => {
-    formatNumber: (value: number) => string;
-  };
-  cx: (...parts: Array<string | false | null | undefined>) => string;
-  FormattedMessage: (props: {
-    id: string;
-    defaultMessage: string;
-    description?: string;
-    values?: Record<string, unknown>;
-  }) => ReactNode;
+  $: (...args: unknown[]) => unknown;
+  Ju: (...args: unknown[]) => unknown;
+  Kzo: (...args: unknown[]) => unknown;
+  Uq: (...args: unknown[]) => unknown;
+  Z: (...args: unknown[]) => unknown;
 };
-
 let peers: DiffLinesStatsBadgePeers | null = null;
 
-/** Wire diff stats badge peers once companions land. */
+/** Wire DiffLinesStatsBadge peers once companions land. */
 export function setDiffLinesStatsBadgePeers(
   next: DiffLinesStatsBadgePeers,
 ): void {
@@ -34,53 +19,62 @@ export function setDiffLinesStatsBadgePeers(
 
 /**
  * Bundle export `QD` / internal `Hq`.
- * Render +/− line stats for a diff / agent-activity header.
  */
-export function DiffLinesStatsBadge(
-  props: DiffLinesStatsBadgeProps,
-): ReactElement {
+export function DiffLinesStatsBadge(props: unknown) {
+  const Z = peers.Z;
   if (peers == null) {
     throw new Error("DiffLinesStatsBadge peers are not configured");
   }
-  const { linesAdded, linesRemoved, variant = "color", className } = props;
-  const intl = peers.useIntl();
-  const rootClass = peers.cx(
-    "inline-flex items-center gap-1 disambiguated-digits tabular-nums tracking-tight",
-    className,
+  let { linesAdded, linesRemoved, variant = "color", className } = props,
+    s = peers.Ju(),
+    c = peers.$(
+      "inline-flex items-center gap-1 disambiguated-digits tabular-nums tracking-tight",
+      className,
+    );
+  let l = variant === "monochrome" && "text-token-input-placeholder-foreground",
+    u =
+      variant === "color" &&
+      "text-token-git-decoration-added-resource-foreground",
+    d =
+      variant === "agent-activity" &&
+      "[@media(hover:hover)]:group-[:hover:not(:has([data-agent-activity-file-link]:hover))]/activity-header:text-token-git-decoration-added-resource-foreground",
+    f = peers.$("flex shrink-0 items-center", l, u, d);
+  let p = s.formatNumber(linesAdded);
+  let m = (
+    <Z
+      id="wham.message.modal.repoAndDiffStats.linesAdded"
+      defaultMessage={"+{linesAdded}"}
+      description="Number of lines added"
+      values={{
+        linesAdded: p,
+      }}
+    />
   );
-  const addedTone =
-    (variant === "monochrome" && "text-token-input-placeholder-foreground") ||
-    (variant === "color" &&
-      "text-token-git-decoration-added-resource-foreground") ||
-    (variant === "agent-activity" &&
-      "[@media(hover:hover)]:group-[:hover:not(:has([data-agent-activity-file-link]:hover))]/activity-header:text-token-git-decoration-added-resource-foreground");
-  const removedTone =
-    (variant === "monochrome" && "text-token-input-placeholder-foreground") ||
-    (variant === "color" &&
-      "text-token-git-decoration-deleted-resource-foreground") ||
-    (variant === "agent-activity" &&
-      "[@media(hover:hover)]:group-[:hover:not(:has([data-agent-activity-file-link]:hover))]/activity-header:text-token-git-decoration-deleted-resource-foreground");
-  const addedClass = peers.cx("flex shrink-0 items-center", addedTone || false);
-  const removedClass = peers.cx(
-    "flex shrink-0 items-center",
-    removedTone || false,
+  let h = <span className={f}>{m}</span>;
+  let g = variant === "monochrome" && "text-token-input-placeholder-foreground",
+    _ =
+      variant === "color" &&
+      "text-token-git-decoration-deleted-resource-foreground",
+    v =
+      variant === "agent-activity" &&
+      "[@media(hover:hover)]:group-[:hover:not(:has([data-agent-activity-file-link]:hover))]/activity-header:text-token-git-decoration-deleted-resource-foreground",
+    y = peers.$("flex shrink-0 items-center", g, _, v);
+  let b = s.formatNumber(linesRemoved);
+  let x = (
+    <Z
+      id="wham.message.modal.repoAndDiffStats.linesRemoved"
+      defaultMessage={"-{linesRemoved}"}
+      description="Number of lines removed"
+      values={{
+        linesRemoved: b,
+      }}
+    />
   );
-  const addedLabel = peers.FormattedMessage({
-    id: "wham.message.modal.repoAndDiffStats.linesAdded",
-    defaultMessage: "+{linesAdded}",
-    description: "Number of lines added",
-    values: { linesAdded: intl.formatNumber(linesAdded) },
-  });
-  const removedLabel = peers.FormattedMessage({
-    id: "wham.message.modal.repoAndDiffStats.linesRemoved",
-    defaultMessage: "-{linesRemoved}",
-    description: "Number of lines removed",
-    values: { linesRemoved: intl.formatNumber(linesRemoved) },
-  });
-  return createElement(
-    "div",
-    { className: rootClass },
-    createElement("span", { className: addedClass, key: "a" }, addedLabel),
-    createElement("span", { className: removedClass, key: "r" }, removedLabel),
+  let S = <span className={y}>{x}</span>;
+  return (
+    <span data-thread-find-skip={true} className={c}>
+      {h}
+      {S}
+    </span>
   );
 }

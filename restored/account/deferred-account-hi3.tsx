@@ -17,9 +17,7 @@ type BinddeferredAccountHi3Impl = (
 let impl: BinddeferredAccountHi3Impl | null = null;
 
 /** Wire the full BinddeferredAccountHi3 once deeper restore lands. */
-export function bindBinddeferredAccountHi3(
-  next: BinddeferredAccountHi3Impl,
-): void {
+export function bindBinddeferredAccountHi3(next: BinddeferredAccountHi3Impl): void {
   impl = next;
 }
 
@@ -27,9 +25,7 @@ export function bindBinddeferredAccountHi3(
  * Bundle export `Hi` / internal `l$l`.
  * Stage-3 fill for bundle export Hi / l$l; heavy UI via bind.
  */
-export function BinddeferredAccountHi3(
-  props: BinddeferredAccountHi3Props,
-): ReactElement {
+export function BinddeferredAccountHi3(props: BinddeferredAccountHi3Props): ReactElement {
   if (impl != null) return impl(props) as ReactElement;
   const { className, children } = props;
   return (

@@ -1,42 +1,34 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EH — real body via extractFn(internal `FNo`) / export `UO`.
+// Materialized via extractFn(internal `FNo`) / export `UO`.
 
 export type UseIsVoiceRecordingSupportedPeers = {
-  useHostAuth: (
-    hostId: unknown,
-  ) => { isLoading?: boolean; authMethod?: string } | null | undefined;
-  useGate: (gateId: string) => boolean;
-  useIsUnsupportedPlatform: () => boolean;
-  isVoiceRecordingBlocked: () => boolean;
+  INo: (...args: unknown[]) => unknown;
+  MediaRecorder: (...args: unknown[]) => unknown;
+  Oh: (...args: unknown[]) => unknown;
+  bM: (...args: unknown[]) => unknown;
+  getUserMedia: (...args: unknown[]) => unknown;
+  kh: (...args: unknown[]) => unknown;
+  mediaDevices: (...args: unknown[]) => unknown;
+  navigator: (...args: unknown[]) => unknown;
 };
 
 let peers: UseIsVoiceRecordingSupportedPeers | null = null;
 
-/** Wire voice-recording support peers once companions land. */
-export function setUseIsVoiceRecordingSupportedPeers(
-  next: UseIsVoiceRecordingSupportedPeers,
-): void {
+/** Wire useIsVoiceRecordingSupported peers once companions land. */
+export function setUseIsVoiceRecordingSupportedPeers(next: UseIsVoiceRecordingSupportedPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `UO` / internal `FNo`.
- * Whether MediaRecorder + getUserMedia voice recording is supported.
  */
-export function useIsVoiceRecordingSupported(hostId: unknown): boolean | null {
+export function useIsVoiceRecordingSupported(e: unknown) {
   if (peers == null) {
-    throw new Error("UseIsVoiceRecordingSupported peers are not configured");
+    throw new Error("useIsVoiceRecordingSupported peers are not configured");
   }
-  const auth = peers.useHostAuth(hostId);
-  const gated = peers.useGate("4100906017");
-  const unsupportedPlatform = peers.useIsUnsupportedPlatform();
-  if (
-    peers.isVoiceRecordingBlocked() ||
-    !navigator?.mediaDevices?.getUserMedia ||
-    typeof MediaRecorder === "undefined"
-  ) {
-    return false;
-  }
-  if (auth == null || auth.isLoading || unsupportedPlatform) return null;
-  return gated && auth.authMethod === "chatgpt";
+
+  let t = peers.bM(e),
+    n = peers.kh(`4100906017`),
+    r = peers.Oh();
+  return !peers.INo() || !peers.navigator?.mediaDevices?.getUserMedia || typeof peers.MediaRecorder > `u` ? !1 : t == null || t.isLoading || r ? null : n && t.authMethod === `chatgpt`;
 }

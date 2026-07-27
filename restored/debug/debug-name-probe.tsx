@@ -1,30 +1,26 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave EF — real body via extractFn(internal `s1`) / export `Vm`.
-
-import type { ReactElement, ReactNode } from "react";
-
-export type DebugNameProbeProps = {
-  debugName: string;
-};
+// Materialized via extractFn(internal `s1`) / export `Vm`.
 
 export type DebugNameProbePeers = {
-  Probe: (props: { debugName: string }) => ReactNode;
+  J6s: (...args: unknown[]) => unknown;
+  oir: (...args: unknown[]) => unknown;
+  q6s: (...args: unknown[]) => unknown;
 };
-
 let peers: DebugNameProbePeers | null = null;
 
-/** Wire debug probe peers once companions land. */
+/** Wire DebugNameProbe peers once companions land. */
 export function setDebugNameProbePeers(next: DebugNameProbePeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `Vm` / internal `s1`.
- * Thin wrapper that renders a debug-name probe child.
  */
-export function DebugNameProbe(props: DebugNameProbeProps): ReactElement {
+export function DebugNameProbe(props: unknown) {
+  const Oir = peers.oir;
   if (peers == null) {
     throw new Error("DebugNameProbe peers are not configured");
   }
-  return peers.Probe({ debugName: props.debugName }) as ReactElement;
+  let { debugName } = props;
+  return <Oir debugName={debugName} />;
 }

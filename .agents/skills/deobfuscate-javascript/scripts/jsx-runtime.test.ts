@@ -120,6 +120,15 @@ describe("jsx-runtime (library)", () => {
     expect(normalize(out.code)).toContain("<Form.Field />");
   });
 
+  test("member expression with lowercase-root object still converts (dotted access is never an intrinsic tag)", () => {
+    const src = `var x = (0, peers.w9.jsx)(peers.Xm, { tooltipContent: "hi" });`;
+    const out = convertJsxRuntime(src);
+    expect(normalize(out.code)).toContain(
+      '<peers.Xm tooltipContent="hi" />',
+    );
+    expect(out.stats.callsConverted).toBe(1);
+  });
+
   test("non-identifier string tag (e.g. with dash) is left alone", () => {
     const src = `var x = jsxRuntime.jsx("my-element", {});`;
     const out = convertJsxRuntime(src);

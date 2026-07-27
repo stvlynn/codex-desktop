@@ -1,25 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export kit / XLt
+// Materialized via extractFn(internal `XLt`) / export `kit`.
 
 export type UseDndSensorPeers = {
-  impl: (...args: unknown[]) => unknown;
+  GLt: (...args: unknown[]) => unknown;
+  HLt: (...args: unknown[]) => unknown;
+  JLt: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  jLt: (...args: unknown[]) => unknown;
+  mLt: (...args: unknown[]) => unknown;
 };
 
 let peers: UseDndSensorPeers | null = null;
 
-/** Wire useDndSensor once companions land. */
+/** Wire useDndSensor peers once companions land. */
 export function setUseDndSensorPeers(next: UseDndSensorPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `kit` / internal `XLt`.
- * Stage-3 fill for bundle export kit / XLt
  */
-export function useDndSensor(...args: unknown[]): unknown {
+export function useDndSensor() {
   if (peers == null) {
     throw new Error("useDndSensor peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.HLt(), peers.mLt(), peers.GLt(), peers.jLt(), peers.JLt();
+  });
 }

@@ -1,27 +1,31 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave GA — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Stage-3 fill for bundle export nZ / cGr
+// Materialized via extractFn(internal `cGr`) / export `nZ`.
 
 export type FeaturesRemoteConnectionsPeers = {
-  impl: (...args: unknown[]) => unknown;
+  Ho: (...args: unknown[]) => unknown;
+  Q: (...args: unknown[]) => unknown;
+  Ta: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
+  ed: (...args: unknown[]) => unknown;
+  sGr: (...args: unknown[]) => unknown;
 };
 
 let peers: FeaturesRemoteConnectionsPeers | null = null;
 
-/** Wire featuresRemoteConnections once companions land. */
-export function setFeaturesRemoteConnectionsPeers(
-  next: FeaturesRemoteConnectionsPeers,
-): void {
+/** Wire featuresRemoteConnections peers once companions land. */
+export function setFeaturesRemoteConnectionsPeers(next: FeaturesRemoteConnectionsPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `nZ` / internal `cGr`.
- * Stage-3 fill for bundle export nZ / cGr
  */
-export function featuresRemoteConnections(...args: unknown[]): unknown {
+export function featuresRemoteConnections() {
   if (peers == null) {
     throw new Error("featuresRemoteConnections peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    peers.Ho(), peers.ed(), sGr = peers.Ta(peers.Q, !1);
+  });
 }

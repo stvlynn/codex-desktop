@@ -1,26 +1,27 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Wave FZ — upgraded former deferred-scaffold soft host (no extractFn wording).
-// Open-runtime facade: aggregator-only alias; body not taken from app-initial extractFn.
-// Stage-3 fill for bundle export CD / lKo
+// Materialized via extractFn(internal `lKo`) / export `CD`.
 
 export type BindCommitModalPeers = {
-  impl: (...args: unknown[]) => unknown;
+  cKo: (...args: unknown[]) => unknown;
+  e: (...args: unknown[]) => unknown;
 };
 
 let peers: BindCommitModalPeers | null = null;
 
-/** Wire bindCommitModal once companions land. */
+/** Wire bindCommitModal peers once companions land. */
 export function setBindCommitModalPeers(next: BindCommitModalPeers): void {
   peers = next;
 }
 
 /**
  * Bundle export `CD` / internal `lKo`.
- * Stage-3 fill for bundle export CD / lKo
  */
-export function bindCommitModal(...args: unknown[]): unknown {
+export function bindCommitModal() {
   if (peers == null) {
     throw new Error("bindCommitModal peers are not configured");
   }
-  return peers.impl(...args);
+
+  return peers.e(() => {
+    cKo = 5;
+  });
 }

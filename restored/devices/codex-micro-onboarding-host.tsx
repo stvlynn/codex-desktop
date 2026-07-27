@@ -17,9 +17,7 @@ type CodexMicroOnboardingHostImpl = (
 let impl: CodexMicroOnboardingHostImpl | null = null;
 
 /** Wire the full CodexMicroOnboardingHost once deeper companion restore lands. */
-export function bindCodexMicroOnboardingHost(
-  next: CodexMicroOnboardingHostImpl,
-): void {
+export function bindCodexMicroOnboardingHost(next: CodexMicroOnboardingHostImpl): void {
   impl = next;
 }
 

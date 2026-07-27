@@ -12,9 +12,7 @@ export type PromptHeartbeatLike = {
  * Bundle `YAr` / export `e$`.
  * Heartbeat items whose prompt includes the PR-fix automation header.
  */
-export function isPullRequestFixAutomationHeartbeat(
-  item: PromptHeartbeatLike | null | undefined,
-): boolean {
+export function isPullRequestFixAutomationHeartbeat(item: PromptHeartbeatLike | null | undefined): boolean {
   return (
     isHeartbeatItem(item) &&
     (item?.prompt ?? "").split("\n").includes("## Pull request fix automation:")
