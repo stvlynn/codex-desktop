@@ -26,3 +26,60 @@ export function bindDeferredSettingsZ7() {
     get: e
   }) => e(peers.Xx).status === `allowed`);
 }
+
+type SettingsZ7Atom = {
+  get: () => boolean;
+  set: (value: boolean) => void;
+  subscribe: (listener: () => void) => () => void;
+};
+
+let cachedAtom: SettingsZ7Atom | null = null;
+
+/**
+ * IMPORT_MAP public name for export `z7` — atom cell for `useAppScopeValue`.
+ * Falls back to a deny atom when peers are not wired.
+ */
+export const deferredSettingsZ7: SettingsZ7Atom = {
+  get: () => {
+    if (cachedAtom == null) {
+      try {
+        cachedAtom = bindDeferredSettingsZ7() as SettingsZ7Atom;
+      } catch {
+        cachedAtom = {
+          get: () => false,
+          set: () => {},
+          subscribe: () => () => {},
+        };
+      }
+    }
+    return cachedAtom.get();
+  },
+  set: (value) => {
+    if (cachedAtom == null) {
+      try {
+        cachedAtom = bindDeferredSettingsZ7() as SettingsZ7Atom;
+      } catch {
+        cachedAtom = {
+          get: () => false,
+          set: () => {},
+          subscribe: () => () => {},
+        };
+      }
+    }
+    cachedAtom.set(value);
+  },
+  subscribe: (listener) => {
+    if (cachedAtom == null) {
+      try {
+        cachedAtom = bindDeferredSettingsZ7() as SettingsZ7Atom;
+      } catch {
+        cachedAtom = {
+          get: () => false,
+          set: () => {},
+          subscribe: () => () => {},
+        };
+      }
+    }
+    return cachedAtom.subscribe(listener);
+  },
+};

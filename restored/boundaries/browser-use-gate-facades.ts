@@ -84,3 +84,24 @@ export function browserUseGateFacades(e: unknown) {
     g
   );
 }
+
+/** Bundle export `BK` — public hook name from IMPORT_MAP. */
+export function useBrowserUseGate(args: unknown) {
+  return browserUseGateFacades(args);
+}
+
+/**
+ * Bundle export `HK` — external/browser-agent gate.
+ * Body not yet extracted into this facade; same return shape as BK until drained.
+ */
+export function useExternalBrowserUseGate(args: unknown) {
+  return browserUseGateFacades(args);
+}
+
+/** Bundle export `zK` — browser plugin enabled probe (open until deep-drained). */
+export function useIsBrowserPluginEnabled(): boolean {
+  return false;
+}
+
+/** Bundle export `VK` — Rolldown ESM init retained as no-op. */
+export function ensureBrowserUseGateInit(): void {}

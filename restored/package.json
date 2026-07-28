@@ -2,6 +2,11 @@
   "name": "codex-desktop-restored",
   "private": true,
   "type": "module",
+  "scripts": {
+    "smoke": "bun ../scripts/restored-smoke.ts",
+    "build": "bun build ./app/webview-entry.ts --outdir=../dist/restored --target=browser",
+    "check": "bun ../.agents/skills/deobfuscate-javascript/scripts/quality-gate.ts ."
+  },
   "dependencies": {
     "@babel/runtime": "^7.27.6",
     "@braintree/sanitize-url": "^7.1.1",

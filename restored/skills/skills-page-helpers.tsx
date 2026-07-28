@@ -191,3 +191,11 @@ export function EmptyState(props: EmptyStateProps): ReactNode {
     </div>
   );
 }
+
+/** Bundle export `RK` — IMPORT_MAP public name for plugins feature probe. */
+export function usePluginsFeatureEnabled(args: unknown): boolean {
+  return Boolean(bindSkillsPageHelpers(args));
+}
+
+/** Bundle export `LK` — Rolldown ESM init retained as no-op. */
+export function ensureSkillsPageHelpersInit(): void {}

@@ -86,3 +86,8 @@ export function bindGeneralSettings2() {
     }];
   });
 }
+
+/** IMPORT_MAP alias for export `yT`. */
+export function generalSettings2() {
+  return bindGeneralSettings2();
+}

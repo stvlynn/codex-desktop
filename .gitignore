@@ -3,3 +3,6 @@
 **/.deobfuscate-javascript/node_modules/
 **/.deobfuscate-javascript/gate-cache.json
 restored/.deobfuscate-javascript/node_modules
+
+# bun build output from `make build`
+/dist/

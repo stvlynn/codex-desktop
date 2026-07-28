@@ -1,6 +1,5 @@
 // Restored from ref/webview/assets/share-invite-autocomplete-CSfuQIPj.js
 // Share-invite autocomplete field/menu: chips, sections, keyboard listbox.
-// Open-runtime soft hosts stand in for former app-initial peers (not a barrel).
 
 import type {
   CSSProperties,
@@ -8,10 +7,15 @@ import type {
   ReactElement,
   ReactNode,
 } from "react";
-import { rolldownRuntimeN } from "../../runtime/rolldown-runtime";
 
-type ClassValue = string | false | null | undefined;
-type ClassNameFn = (...values: ClassValue[]) => string;
+import { CloseIcon } from "../../icons/close-icon";
+import { AppIconZlt as CheckIcon } from "../../icons/app-icon-zlt";
+import { cx } from "../../ui/cx";
+import { Spinner } from "../../ui/spinner";
+import {
+  ensureListKeyboardNavigationInit,
+  useListKeyboardNavigation,
+} from "../../ui/use-list-keyboard-navigation";
 
 type ShareInviteOption = {
   id: string;
@@ -27,42 +31,6 @@ type ShareInviteOptionSection = {
   label: string;
   options: ShareInviteOption[];
 };
-
-type ListNavigationApi = {
-  highlightedIndex: number;
-  listRef: { current: HTMLElement | null };
-  getInputProps: (extra?: {
-    onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
-  }) => Record<string, unknown>;
-  getItemProps: (index: number) => Record<string, unknown>;
-};
-
-type UseListNavigation = (args: {
-  items: ShareInviteOption[] | null | undefined;
-  isActive: boolean;
-  onSelect: (option: ShareInviteOption) => void;
-  onEscape: () => void;
-}) => ListNavigationApi;
-
-/** Soft hosts for unresolved app-initial peers (open-runtime boundary). */
-const softHostNop: (...args: unknown[]) => unknown = (...args) =>
-  typeof args[0] === "object" &&
-  args[0] != null &&
-  "children" in (args[0] as object)
-    ? null
-    : undefined;
-
-const ensureIntlMessagesInit = softHostNop;
-const ensureShareInviteIconsInit = softHostNop;
-const ensureShareInviteStringsInit = softHostNop;
-const CloseIcon: any = softHostNop;
-const ensureFocusScopeInit = softHostNop;
-const ensurePopoverInit = softHostNop;
-const useListNavigation = softHostNop as UseListNavigation;
-const ensureComboboxInit = softHostNop;
-const clsx = softHostNop as ClassNameFn;
-const SpinnerIcon: any = softHostNop;
-const CheckIcon: any = softHostNop;
 
 export interface ShareInviteAutocompleteProps {
   ariaLabel?: string;
@@ -117,7 +85,7 @@ function ShareInviteOptionRow(props: {
   const ariaSelected = selected ?? index === highlightedIndex;
   const highlightClass =
     index === highlightedIndex && "bg-token-list-hover-background";
-  const rowClassName = clsx(
+  const rowClassName = cx(
     "cursor-interaction flex w-full items-start gap-2 rounded-sm px-2 py-1.5 text-left disabled:cursor-not-allowed",
     highlightClass,
   );
@@ -208,7 +176,9 @@ function ShareInviteOptionSections(props: {
   return <>{nodes}</>;
 }
 
-export function ShareInviteAutocomplete(props: ShareInviteAutocompleteProps): ReactElement {
+export function ShareInviteAutocomplete(
+  props: ShareInviteAutocompleteProps,
+): ReactElement {
   const {
     ariaLabel,
     disabled = false,
@@ -252,19 +222,19 @@ export function ShareInviteAutocomplete(props: ShareInviteAutocompleteProps): Re
   };
 
   const { highlightedIndex, listRef, getInputProps, getItemProps } =
-    useListNavigation({
+    useListKeyboardNavigation({
       items: flatOptions,
       isActive: listActive,
       onSelect,
       onEscape: onListEscape,
     });
 
-  const rootClassName = clsx(variant === "field" && "relative");
+  const rootClassName = cx(variant === "field" && "relative");
   const fieldClassName =
     variant === "field"
       ? "min-h-[30px] rounded-md border border-token-input-border bg-token-input-background px-2 py-1 focus-within:border-token-focus-border"
       : "h-11 border-b border-token-border px-3";
-  const rowClassName = clsx(
+  const rowClassName = cx(
     "flex w-full flex-wrap items-center gap-1 text-base text-token-input-foreground",
     fieldClassName,
   );
@@ -292,7 +262,7 @@ export function ShareInviteAutocomplete(props: ShareInviteAutocompleteProps): Re
       : null;
 
   const inputProps = getInputProps({
-    onKeyDown: (event) => {
+    onKeyDown: (event: KeyboardEvent<HTMLInputElement>) => {
       if (dropdownOpen && event.key === "Enter") event.preventDefault();
     },
   });
@@ -325,15 +295,15 @@ export function ShareInviteAutocomplete(props: ShareInviteAutocompleteProps): Re
 
   const dropdown = dropdownOpen ? (
     <div
-      className={clsx(
+      className={cx(
         "w-full overflow-hidden bg-token-dropdown-background",
         variant === "field" &&
           "absolute z-10 mt-2 rounded-md border border-token-border shadow-sm",
       )}
     >
       <div
-        ref={listRef as never}
-        className={clsx(
+        ref={listRef}
+        className={cx(
           "flex max-h-64 flex-col overflow-y-auto p-1",
           flatOptions == null &&
             (loadingSize === "compact" ? "min-h-16" : "min-h-64"),
@@ -346,7 +316,7 @@ export function ShareInviteAutocomplete(props: ShareInviteAutocompleteProps): Re
             className="flex flex-1 items-center justify-center text-token-description-foreground"
             role={loadingLabel == null ? undefined : "status"}
           >
-            <SpinnerIcon className="icon-xs" />
+            <Spinner className="icon-xs" />
           </div>
         ) : flatOptions.length === 0 ? (
           <div className="px-2 py-1.5 text-sm text-token-input-placeholder-foreground">
@@ -387,13 +357,8 @@ export function ShareInviteAutocomplete(props: ShareInviteAutocompleteProps): Re
 
 ShareInviteAutocomplete.displayName = "ShareInviteAutocomplete";
 
-export const ensureShareInviteAutocompleteInit = rolldownRuntimeN(() => {
-  ensureIntlMessagesInit();
-  ensureShareInviteIconsInit();
-  ensureShareInviteStringsInit();
-  ensureFocusScopeInit();
-  ensurePopoverInit();
-  ensureComboboxInit();
-});
+export function ensureShareInviteAutocompleteInit(): void {
+  ensureListKeyboardNavigationInit();
+}
 
 export default ShareInviteAutocomplete;
