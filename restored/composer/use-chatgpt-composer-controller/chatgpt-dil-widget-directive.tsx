@@ -9,16 +9,20 @@ import {
 import { writingBlocksControllerAtom as appInitialCI } from "../../boundaries/composer-appscope-atoms";
 import {
   chatgptDilRendererLazy as $f,
-  chatgptDilMapboxAccessToken,
   chatgptDilReact,
   chatgptDilRendererCustomCss,
-  useChatgptComposerControllerHelper46,
-  useChatgptComposerControllerHelper52,
+} from "../../boundaries/use-chatgpt-composer-controller";
+import { useChatgptComposerControllerHelper46 } from "./chatgpt-dil-geolocation-permission";
+import { useChatgptComposerControllerHelper52 } from "./chatgpt-dil-ecosystem-widget";
+import {
+  chatgptDilMapboxAccessToken,
   useChatgptComposerControllerHelper56,
-  useChatgptComposerControllerHelper79,
+} from "./chatgpt-dil-ecosystem-widget-launch";
+import { useChatgptComposerControllerHelper79 } from "./chatgpt-news-carousel-references";
+import {
   useChatgptComposerControllerHelper91,
   useChatgptComposerControllerHelper92,
-} from "../../boundaries/use-chatgpt-composer-controller";
+} from "./chatgpt-entity-tab-launch";
 import { isLocalChatgptId as appInitialVI } from "../../chatgpt/is-local-chatgpt-id";
 import { isElectronPlatform as _AppInitialNl } from "../../config/is-electron-platform";
 import { submitComposerPromptIfIdle as appInitialN } from "../../conversation/submit-composer-prompt-if-idle";

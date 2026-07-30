@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Semantic composer-domain API: typed aliases over the open oversized runtime body.
-// Stage-3 wave-7: Helper93/106/244 registry bodies drained (Value308 fill).
-// Residual: letter A/K + Value20–26 conversation-updates; _O/_D; Helper46–92 ecosystem.
+// Stage-3 wave-8: Helper46–92 ecosystem drained (Dil circular cut).
+// Residual: A/K + Value20–26 conversation-updates; _O/_D mega-init.
 
 export type {
   ChatgptBrowserConversationBannerProps,
@@ -317,6 +317,28 @@ export {
   useChatgptComposerControllerHelper45,
 } from "./chatgpt-dil-action-helpers";
 
+
+
+export { useChatgptComposerControllerHelper46 } from "./chatgpt-dil-geolocation-permission";
+export { useChatgptComposerControllerHelper52 } from "./chatgpt-dil-ecosystem-widget";
+export {
+  useChatgptComposerControllerHelper56,
+  chatgptDilMapboxAccessToken,
+} from "./chatgpt-dil-ecosystem-widget-launch";
+export {
+  useChatgptComposerControllerHelper64,
+  useChatgptComposerControllerHelper66,
+  useChatgptComposerControllerHelper68,
+} from "./chatgpt-content-reference-cards";
+export {
+  useChatgptComposerControllerHelper73,
+  useChatgptComposerControllerHelper74,
+} from "./chatgpt-content-reference-link-card";
+export { useChatgptComposerControllerHelper79 } from "./chatgpt-news-carousel-references";
+export {
+  useChatgptComposerControllerHelper91,
+  useChatgptComposerControllerHelper92,
+} from "./chatgpt-entity-tab-launch";
 
 export {
   useChatgptComposerControllerHelper93,
