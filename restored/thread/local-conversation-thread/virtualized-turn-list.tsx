@@ -25,6 +25,7 @@ import {
   softReadLatestTurnPhaseForEntity,
   softReadVirtualizedTurnListScrollState,
   softWriteVirtualizedTurnListScrollState,
+  isHistoryTurnEntry,
   type LatestTurnPhaseInfo,
   type TurnListEntry,
   type VirtualizedTurnListPersistedScrollState,
@@ -67,17 +68,6 @@ type LatestTurnHeightChange = {
 
 const LatestTurnOffsetContext =
   createContext<LatestTurnOffsetContextValue | null>(null);
-
-function isHistoryTurnEntry(entry: TurnListEntry): boolean {
-  if (isGapItem(entry)) return false;
-  if (!("type" in entry)) return true;
-  const entryType = entry.type;
-  return (
-    entryType !== "voice-nux" &&
-    entryType !== "voice-presentation" &&
-    entryType !== "voice-transcript"
-  );
-}
 
 function VirtualizedTurnListRow(props: {
   entry: TurnListEntry;

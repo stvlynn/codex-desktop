@@ -1,15 +1,18 @@
 // Restored from ref/webview/assets/local-conversation-thread-C3pAiUmg.js
-// Soft TurnListEntryRow (`groveR1`): dispatches gap / voice-nux / voice-transcript /
-// voice-presentation / history-turn rows for VirtualizedTurnList. AppInitialAc →
-// soft LiveAssistantTurn shell; AppInitialSC → soft RealtimeVoiceHomeAnnouncement
-// (entryPoint="codex"). Never imports app-initial aggregator / deferredAc.
+// Soft TurnListEntryRow (`groveR1`): dispatches gap / voice-nux / voice-transcript
+// (`elmR1`) / voice-presentation (`waveR1`) / history-turn rows for
+// VirtualizedTurnList. AppInitialAc → soft LiveAssistantTurn shell; AppInitialSC
+// → soft RealtimeVoiceHomeAnnouncement (entryPoint="codex"). Never imports
+// app-initial aggregator / deferredAc / throw-bound PopoverMenu / Ol peers.
 
 import { type ReactElement, type ReactNode, type RefObject } from "react";
 
+import { GeneratedImageTabs } from "../../conversation/generated-image-tabs";
 import { isGapItem } from "../../conversation/is-gap-item";
 import { RealtimeVoiceHomeAnnouncement } from "../../home/realtime-voice-home-announcement";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
 import { LiveAssistantTurn } from "../../pages/remote-conversation-page/live-assistant-turn";
+import { contentSearchUnitKey } from "../thread-find-match-ids";
 import { Button } from "../../ui/button";
 import type { TurnListEntry } from "./soft-turn-list-accessors";
 
@@ -36,15 +39,36 @@ type VoicePresentation = {
   turnId?: string;
   completed?: boolean;
   content?: string;
-  results?: unknown;
+  results?: ReadonlyArray<unknown>;
   file?: unknown;
-  image?: unknown;
-  conversationImages?: unknown;
-  activityItems?: unknown;
-  resources?: unknown;
+  image?: {
+    src?: string | null;
+    status?: string;
+    previewSrc?: string;
+    [key: string]: unknown;
+  };
+  conversationImages?: unknown[];
+  activityItems?: ReadonlyArray<{
+    activityStatus?: string;
+    [key: string]: unknown;
+  }>;
+  resources?: ReadonlyArray<{
+    type?: string;
+    path?: string;
+    [key: string]: unknown;
+  }>;
   sourceThreadId?: string | null;
   inputMessageId?: string;
   messageId?: string;
+};
+
+type SoftAssistantMessageItem = {
+  type: "assistant-message";
+  completed?: boolean;
+  content?: string;
+  phase: null;
+  sentAtMs: null;
+  structuredOutput: undefined;
 };
 
 /**
@@ -75,6 +99,64 @@ export function TurnRenderErrorFallback(props: {
 }
 
 /**
+ * Soft stand-in for AppInitialOl assistant-message body. Real Ol peers throw /
+ * stay unbound — soft mounts markdown text with the Ol prop contract as data.
+ */
+function SoftAssistantMessageBody(props: {
+  assistantCopyText?: string;
+  conversationId?: string | null;
+  cwd?: string | null;
+  hostId?: string | null;
+  item: SoftAssistantMessageItem;
+  markdownMediaCacheKey?: string;
+  showActionRow?: boolean;
+  showProcessBadges?: boolean;
+  turnId?: string;
+}): ReactElement {
+  const text = props.assistantCopyText ?? props.item.content ?? "";
+  return (
+    <div
+      className="prose prose-sm max-w-none text-token-text-primary"
+      data-soft-assistant-message=""
+      data-conversation-id={props.conversationId ?? undefined}
+      data-cwd={props.cwd ?? undefined}
+      data-host-id={props.hostId != null ? String(props.hostId) : undefined}
+      data-turn-id={props.turnId}
+      data-markdown-media-cache-key={props.markdownMediaCacheKey}
+      data-completed={props.item.completed === true ? "true" : undefined}
+      data-show-action-row={props.showActionRow === true ? "true" : undefined}
+      data-show-process-badges={
+        props.showProcessBadges === true ? "true" : undefined
+      }
+    >
+      {text}
+    </div>
+  );
+}
+
+/**
+ * Soft stand-in for user-message + role chrome inside voice transcript rows.
+ * Real UserMessage / setDesktopPermissionStatus peers throw when unbound.
+ */
+function SoftUserTranscriptMessage(props: {
+  cwd?: string | null;
+  hostId?: string | null;
+  message: string;
+}): ReactElement {
+  return (
+    <div
+      className="rounded-2xl bg-token-main-surface-secondary px-3 py-2 text-sm text-token-text-primary"
+      data-soft-user-message=""
+      data-cwd={props.cwd ?? undefined}
+      data-host-id={props.hostId != null ? String(props.hostId) : undefined}
+      data-hide-actions="true"
+    >
+      {props.message}
+    </div>
+  );
+}
+
+/**
  * Soft `AppInitialSC` — voice NUX row. Real body mounts SC with
  * entryPoint="codex"; soft uses promoted RealtimeVoiceHomeAnnouncement
  * (returns null until NUX peers / eligibility wire).
@@ -92,6 +174,9 @@ function SoftVoiceNuxEntry(): ReactElement {
   );
 }
 
+/**
+ * Bundle `elmR1` — soft voice-transcript row body.
+ */
 function SoftVoiceTranscriptEntry(props: {
   entry: TurnListEntry;
 }): ReactElement {
@@ -99,7 +184,13 @@ function SoftVoiceTranscriptEntry(props: {
   const turnSearchKey =
     typeof props.entry.turnKey === "string" ? props.entry.turnKey : undefined;
   const handoffId = block?.type === "handoff" ? block.id : undefined;
-  const entryCount = block?.entries?.length ?? 0;
+  const conversationId =
+    typeof props.entry.conversationId === "string"
+      ? props.entry.conversationId
+      : null;
+  const cwd = typeof props.entry.cwd === "string" ? props.entry.cwd : null;
+  const hostId = props.entry.hostId ?? null;
+  const entries = block?.entries ?? [];
 
   return (
     <section
@@ -108,9 +199,252 @@ function SoftVoiceTranscriptEntry(props: {
       data-turn-list-entry-soft=""
       data-content-search-turn-key={turnSearchKey}
       data-realtime-handoff-id={handoffId}
-      data-entry-count={entryCount > 0 ? String(entryCount) : undefined}
-    />
+      data-entry-count={entries.length > 0 ? String(entries.length) : undefined}
+    >
+      <div className="flex flex-col gap-6">
+        {entries.map((transcriptEntry) => {
+          const unitKey =
+            turnSearchKey == null
+              ? undefined
+              : contentSearchUnitKey(turnSearchKey, transcriptEntry.id);
+          return (
+            <div
+              key={transcriptEntry.id}
+              data-content-search-unit-key={unitKey}
+            >
+              {transcriptEntry.role === "user" ? (
+                <SoftUserTranscriptMessage
+                  cwd={cwd}
+                  hostId={hostId}
+                  message={transcriptEntry.text ?? ""}
+                />
+              ) : (
+                <SoftAssistantMessageBody
+                  assistantCopyText={transcriptEntry.text}
+                  conversationId={conversationId}
+                  cwd={cwd}
+                  hostId={hostId}
+                  item={{
+                    type: "assistant-message",
+                    completed: transcriptEntry.completed,
+                    content: transcriptEntry.text,
+                    phase: null,
+                    sentAtMs: null,
+                    structuredOutput: undefined,
+                  }}
+                  showActionRow={false}
+                  showProcessBadges={false}
+                />
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
+}
+
+/**
+ * Soft `created-thread` branch of `waveR1` — ShowFewerCreatedTasksButton throws
+ * without peers; soft lists result count / ids only.
+ */
+function SoftCreatedThreadPresentation(props: {
+  results?: ReadonlyArray<unknown>;
+}): ReactElement | null {
+  const results = props.results ?? [];
+  if (results.length === 0) return null;
+  return (
+    <div
+      className="divide-y divide-token-border"
+      data-soft-created-thread-results=""
+      data-result-count={String(results.length)}
+    >
+      {results.map((result, index) => {
+        const id =
+          result != null &&
+          typeof result === "object" &&
+          "id" in result &&
+          typeof (result as { id?: unknown }).id === "string"
+            ? (result as { id: string }).id
+            : String(index);
+        return (
+          <div
+            key={id}
+            className="px-2 py-1.5 text-sm text-token-text-secondary"
+            data-created-thread-result={id}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+/**
+ * Soft `apexR1` — subagent presentation summary without DeferredUi activity peers.
+ */
+function SoftSubagentPresentation(props: {
+  presentation: VoicePresentation;
+  conversationId: string | null;
+}): ReactElement {
+  const activityItems = props.presentation.activityItems ?? [];
+  return (
+    <div
+      className="flex flex-col gap-1"
+      data-soft-subagent-presentation=""
+      data-conversation-id={props.conversationId ?? undefined}
+      data-turn-id={props.presentation.turnId}
+      data-activity-count={String(activityItems.length)}
+    >
+      {activityItems.map((item, index) => (
+        <div
+          key={index}
+          className="text-sm text-token-text-secondary"
+          data-activity-status={item.activityStatus}
+        />
+      ))}
+    </div>
+  );
+}
+
+/**
+ * Soft `duskR1` / PlanProgressDonut stand-in — PlanProgressDonut throws until
+ * impl is wired; soft lists end-resource paths only.
+ */
+function SoftEndResourcesPresentation(props: {
+  presentation: VoicePresentation;
+  conversationId: string | null;
+  cwd: string | null;
+  hostId: string | null;
+}): ReactElement {
+  const resources = props.presentation.resources ?? [];
+  const filePaths = resources.flatMap((resource) =>
+    resource.type === "file" && typeof resource.path === "string"
+      ? [resource.path]
+      : [],
+  );
+  return (
+    <div
+      className="flex flex-col gap-1"
+      data-soft-end-resources=""
+      data-conversation-id={props.conversationId ?? undefined}
+      data-cwd={props.cwd ?? undefined}
+      data-host-id={props.hostId ?? undefined}
+      data-turn-id={props.presentation.turnId}
+      data-input-message-id={props.presentation.inputMessageId}
+      data-message-id={props.presentation.messageId}
+      data-resource-count={String(resources.length)}
+      data-existing-file-count={String(filePaths.length)}
+    >
+      {filePaths.map((path) => (
+        <div
+          key={path}
+          className="truncate text-sm text-token-text-secondary"
+          data-end-resource-path={path}
+          title={path}
+        >
+          {path}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/**
+ * Bundle `waveR1` — soft voice-presentation row body by presentation.type.
+ */
+function SoftVoicePresentationBody(props: {
+  presentation: VoicePresentation;
+  conversationId: string | null;
+  cwd: string | null;
+  hostId: string | null;
+  turnSearchKey?: string;
+}): ReactElement | null {
+  const { presentation, conversationId, cwd, hostId, turnSearchKey } = props;
+
+  switch (presentation.type) {
+    case "created-thread":
+      return <SoftCreatedThreadPresentation results={presentation.results} />;
+    case "inline-markdown": {
+      const unitKey =
+        turnSearchKey == null || presentation.presentationId == null
+          ? undefined
+          : contentSearchUnitKey(turnSearchKey, presentation.presentationId);
+      const item: SoftAssistantMessageItem = {
+        type: "assistant-message",
+        completed: presentation.completed,
+        content: presentation.content,
+        phase: null,
+        sentAtMs: null,
+        structuredOutput: undefined,
+      };
+      return (
+        <div
+          data-content-search-turn-key={turnSearchKey}
+          data-content-search-unit-key={unitKey}
+        >
+          <SoftAssistantMessageBody
+            assistantCopyText={presentation.content}
+            conversationId={conversationId}
+            cwd={cwd}
+            hostId={hostId}
+            item={item}
+            markdownMediaCacheKey={presentation.presentationId}
+            showActionRow={false}
+            showProcessBadges={false}
+            turnId={presentation.turnId}
+          />
+        </div>
+      );
+    }
+    case "inline-visualization":
+      return (
+        <div
+          data-soft-inline-visualization=""
+          data-presentation-id={presentation.presentationId}
+          data-host-id={hostId ?? undefined}
+          data-source-thread-id={presentation.sourceThreadId ?? undefined}
+          data-thread-id={conversationId ?? undefined}
+          data-turn-id={presentation.turnId}
+          data-has-file={presentation.file != null ? "true" : undefined}
+        />
+      );
+    case "generated-image": {
+      const image = presentation.image;
+      const isPending =
+        image != null &&
+        image.src == null &&
+        (image.status === "in_progress" || image.status === "inProgress");
+      const images = image?.src == null ? [] : [image];
+      return (
+        <div className="flex flex-col gap-3">
+          <GeneratedImageTabs
+            images={images}
+            conversationImages={presentation.conversationImages}
+            conversationId={conversationId ?? undefined}
+            pendingImageCount={isPending ? 1 : 0}
+          />
+        </div>
+      );
+    }
+    case "subagent":
+      return (
+        <SoftSubagentPresentation
+          presentation={presentation}
+          conversationId={conversationId}
+        />
+      );
+    case "end-resources":
+      return (
+        <SoftEndResourcesPresentation
+          presentation={presentation}
+          conversationId={conversationId}
+          cwd={cwd}
+          hostId={hostId}
+        />
+      );
+    default:
+      return null;
+  }
 }
 
 function SoftVoicePresentationEntry(props: {
@@ -121,6 +455,12 @@ function SoftVoicePresentationEntry(props: {
     | undefined;
   const turnSearchKey =
     typeof props.entry.turnKey === "string" ? props.entry.turnKey : undefined;
+  const conversationId =
+    typeof props.entry.conversationId === "string"
+      ? props.entry.conversationId
+      : null;
+  const cwd = typeof props.entry.cwd === "string" ? props.entry.cwd : null;
+  const hostId = props.entry.hostId != null ? String(props.entry.hostId) : null;
 
   return (
     <div
@@ -131,7 +471,17 @@ function SoftVoicePresentationEntry(props: {
       data-presentation-type={presentation?.type}
       data-presentation-id={presentation?.presentationId}
       data-presentation-turn-id={presentation?.turnId}
-    />
+    >
+      {presentation == null ? null : (
+        <SoftVoicePresentationBody
+          presentation={presentation}
+          conversationId={conversationId}
+          cwd={cwd}
+          hostId={hostId}
+          turnSearchKey={turnSearchKey}
+        />
+      )}
+    </div>
   );
 }
 

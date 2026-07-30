@@ -169,6 +169,7 @@ export {
 export {
   softReadTurnListEntries,
   softWriteTurnListEntries,
+  softBuildAndWriteTurnListEntries,
   softReadVirtualizedTurnListScrollState,
   softWriteVirtualizedTurnListScrollState,
   softReadLatestTurnPhaseForEntity,
@@ -178,7 +179,11 @@ export {
   bindSoftReadTurnListEntries,
   bindSoftReadLatestTurnPhaseForEntity,
   bindSoftReadEntityTurn,
+  buildTurnListEntries,
+  isHistoryTurnEntry,
   type TurnListEntry,
   type LatestTurnPhaseInfo,
   type VirtualizedTurnListPersistedScrollState,
+  type BuildTurnListEntriesArgs,
+  type BuildTurnListEntriesResult,
 } from "./soft-turn-list-accessors";

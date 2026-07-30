@@ -2,12 +2,26 @@
 // Soft turn-list accessors for VirtualizedTurnList (`copperR2`). Scroll persist
 // is an in-memory Map (checkpoint frostR27 atom family). Entity-phase uses
 // `deriveLatestTurnPhaseInfoFromTurn` (`kiteR2` / `unityR1`) over an in-memory
-// entity-turn Map when DeferredUiU232 / coralR30 peers are unbound. throws: 0.
+// entity-turn Map when DeferredUiU232 / coralR30 peers are unbound. Pure
+// `lemonR2` builder lives in `build-turn-list-entries.ts`. throws: 0.
 
 import { createElement, type ReactNode, type RefObject } from "react";
 
+import {
+  buildTurnListEntries,
+  isHistoryTurnEntry,
+  type BuildTurnListEntriesArgs,
+  type BuildTurnListEntriesResult,
+} from "./build-turn-list-entries";
 import { TurnListEntryRow } from "./turn-list-entry";
 import { deriveLatestTurnPhaseInfoFromTurn } from "./virtualized-turn-list-scroll-state";
+
+export {
+  buildTurnListEntries,
+  isHistoryTurnEntry,
+  type BuildTurnListEntriesArgs,
+  type BuildTurnListEntriesResult,
+};
 
 /** Soft turn-list entry shape consumed by VirtualizedTurnList (`copperR2`). */
 export type TurnListEntry = {
@@ -162,6 +176,18 @@ export function softWriteTurnListEntries(args: {
   entries: TurnListEntry[];
 }): void {
   turnListEntriesByConversationId.set(args.conversationId, args.entries);
+}
+
+/**
+ * Soft `lemonR2` — builds entries via the pure checkpoint builder, then
+ * persists them into the in-memory turn-list Map for softReadTurnListEntries.
+ */
+export function softBuildAndWriteTurnListEntries(
+  args: BuildTurnListEntriesArgs,
+): BuildTurnListEntriesResult {
+  const result = buildTurnListEntries(args);
+  turnListEntriesByConversationId.set(args.conversationId, result.entries);
+  return result;
 }
 
 /**
