@@ -3,7 +3,7 @@
 // (`elmR1`) / voice-presentation (`waveR1`) / history-turn rows for
 // VirtualizedTurnList. AppInitialAc → soft LiveAssistantTurn shell; AppInitialSC
 // → soft RealtimeVoiceHomeAnnouncement (entryPoint="codex"). Never imports
-// app-initial aggregator / deferredAc / throw-bound PopoverMenu / Ol peers.
+// app-initial aggregator / deferredAc / Ol peers.
 
 import { type ReactElement, type ReactNode, type RefObject } from "react";
 

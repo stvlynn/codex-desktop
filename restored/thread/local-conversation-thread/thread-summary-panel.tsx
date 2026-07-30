@@ -1,12 +1,13 @@
 // Restored from ref/webview/assets/local-conversation-thread-C3pAiUmg.js
-// Floating thread-summary popover (`novaR1` / `sageR1`): soft PopoverMenu.Section
-// stand-ins for every checkpoint sectionKey. Real PopoverMenu compound peers
-// throw until bindPopoverMenuParts is wired — never invoke them here.
+// Floating thread-summary popover (`novaR1` / `sageR1`) on real PopoverMenu
+// compound (`XE`/`BJ`). Section bodies stay soft until AppInitial companions /
+// store peers deepen; shell + Section roster use the public PopoverMenu API.
 
-import type { ReactElement, ReactNode } from "react";
+import type { ReactElement } from "react";
 
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
 import { ElectronOnly } from "../../ui/electron-only";
+import { PopoverMenu } from "../../ui/popover-menu";
 import {
   softReadSummaryPanelShouldHideInline,
   softReadSummaryPanelShouldShow,
@@ -16,40 +17,10 @@ export type ThreadSummaryPanelProps = {
   onOpenBackgroundAgent?: (...args: unknown[]) => void;
   onOpenPullRequestSidePanel?: (...args: unknown[]) => void;
   onOpenSubagentsPanel?: (...args: unknown[]) => void;
-  /** When true, skip the floating Root/Content soft shell (`localConversationThreadH`). */
+  /** When true, use PopoverContent shell (`localConversationThreadH`). */
   inlinePopoverContent?: boolean;
   registerEnvironmentActionCommands?: boolean;
 };
-
-type SummarySectionSlotProps = {
-  sectionKey: string;
-  title: ReactNode;
-  titleSuffix?: ReactNode;
-  after?: ReactNode;
-  children?: ReactNode;
-};
-
-/**
- * Soft stand-in for `PopoverMenu.Section` (`lJo`). Keeps sectionKey contract
- * from checkpoint `sageR1` without calling unbound PopoverMenu peers.
- */
-function SummarySectionSlot(props: SummarySectionSlotProps): ReactElement {
-  return (
-    <section
-      data-popover-section={props.sectionKey}
-      className="flex flex-col gap-1 px-3 py-2"
-    >
-      <div className="flex items-center justify-between gap-2">
-        <h3 className="text-xs font-medium text-token-text-secondary">
-          {props.title}
-        </h3>
-        {props.titleSuffix ?? null}
-      </div>
-      {props.after ?? null}
-      {props.children ?? null}
-    </section>
-  );
-}
 
 /**
  * Soft `sageR1` — section roster matching checkpoint PopoverMenu.Section keys.
@@ -80,7 +51,7 @@ function ThreadSummarySections(props: {
       }
     >
       {/* cliff → sectionKey "automation" */}
-      <SummarySectionSlot
+      <PopoverMenu.Section
         sectionKey="automation"
         title={
           <MemoizedFormattedMessage
@@ -92,7 +63,7 @@ function ThreadSummarySections(props: {
       />
 
       {/* tide / vale / apex → sectionKey "environment" */}
-      <SummarySectionSlot
+      <PopoverMenu.Section
         sectionKey="environment"
         title={
           <MemoizedFormattedMessage
@@ -104,7 +75,7 @@ function ThreadSummarySections(props: {
       />
 
       {/* elm → sectionKey "plan" */}
-      <SummarySectionSlot
+      <PopoverMenu.Section
         sectionKey="plan"
         title={
           <MemoizedFormattedMessage
@@ -116,7 +87,7 @@ function ThreadSummarySections(props: {
       />
 
       {/* brookR2 → sectionKey "artifacts" */}
-      <SummarySectionSlot
+      <PopoverMenu.Section
         sectionKey="artifacts"
         title={
           <MemoizedFormattedMessage
@@ -127,22 +98,22 @@ function ThreadSummarySections(props: {
         }
       >
         {onOpenPullRequestSidePanel != null ? (
-          <button
-            type="button"
-            className="text-left text-sm"
+          <PopoverMenu.ItemButton
             onClick={() => onOpenPullRequestSidePanel()}
           >
-            <MemoizedFormattedMessage
-              id="codex.localConversation.pullRequest.open"
-              defaultMessage="Open pull request"
-              description="Opens the pull-request side panel from the summary"
-            />
-          </button>
+            <PopoverMenu.ItemLabel>
+              <MemoizedFormattedMessage
+                id="codex.localConversation.pullRequest.open"
+                defaultMessage="Open pull request"
+                description="Opens the pull-request side panel from the summary"
+              />
+            </PopoverMenu.ItemLabel>
+          </PopoverMenu.ItemButton>
         ) : null}
-      </SummarySectionSlot>
+      </PopoverMenu.Section>
 
       {/* alphaR1 → sectionKey "side-chats" */}
-      <SummarySectionSlot
+      <PopoverMenu.Section
         sectionKey="side-chats"
         title={
           <MemoizedFormattedMessage
@@ -154,7 +125,7 @@ function ThreadSummarySections(props: {
       />
 
       {/* bravoR3 → sectionKey "background-subagents" */}
-      <SummarySectionSlot
+      <PopoverMenu.Section
         sectionKey="background-subagents"
         title={
           <MemoizedFormattedMessage
@@ -165,39 +136,35 @@ function ThreadSummarySections(props: {
         }
       >
         {onOpenBackgroundAgent != null || onOpenSubagentsPanel != null ? (
-          <div className="flex flex-col gap-1">
+          <PopoverMenu.ItemGroup>
             {onOpenBackgroundAgent != null ? (
-              <button
-                type="button"
-                className="text-left text-sm"
-                onClick={() => onOpenBackgroundAgent()}
-              >
-                <MemoizedFormattedMessage
-                  id="codex.localConversation.backgroundAgent.open"
-                  defaultMessage="Open background agent"
-                  description="Opens a background agent from the summary"
-                />
-              </button>
+              <PopoverMenu.ItemButton onClick={() => onOpenBackgroundAgent()}>
+                <PopoverMenu.ItemLabel>
+                  <MemoizedFormattedMessage
+                    id="codex.localConversation.backgroundAgent.open"
+                    defaultMessage="Open background agent"
+                    description="Opens a background agent from the summary"
+                  />
+                </PopoverMenu.ItemLabel>
+              </PopoverMenu.ItemButton>
             ) : null}
             {onOpenSubagentsPanel != null ? (
-              <button
-                type="button"
-                className="text-left text-sm"
-                onClick={() => onOpenSubagentsPanel()}
-              >
-                <MemoizedFormattedMessage
-                  id="codex.localConversation.subagents.open"
-                  defaultMessage="Open subagents"
-                  description="Opens the subagents panel from the summary"
-                />
-              </button>
+              <PopoverMenu.ItemButton onClick={() => onOpenSubagentsPanel()}>
+                <PopoverMenu.ItemLabel>
+                  <MemoizedFormattedMessage
+                    id="codex.localConversation.subagents.open"
+                    defaultMessage="Open subagents"
+                    description="Opens the subagents panel from the summary"
+                  />
+                </PopoverMenu.ItemLabel>
+              </PopoverMenu.ItemButton>
             ) : null}
-          </div>
+          </PopoverMenu.ItemGroup>
         ) : null}
-      </SummarySectionSlot>
+      </PopoverMenu.Section>
 
       {/* topazR1 → sectionKey "usage" */}
-      <SummarySectionSlot
+      <PopoverMenu.Section
         sectionKey="usage"
         title={
           <MemoizedFormattedMessage
@@ -209,7 +176,7 @@ function ThreadSummarySections(props: {
       />
 
       {/* yellowR3 → sectionKey "background-tasks" */}
-      <SummarySectionSlot
+      <PopoverMenu.Section
         sectionKey="background-tasks"
         title={
           <MemoizedFormattedMessage
@@ -221,7 +188,7 @@ function ThreadSummarySections(props: {
       />
 
       {/* $C → sectionKey "computer-use-pip" */}
-      <SummarySectionSlot
+      <PopoverMenu.Section
         sectionKey="computer-use-pip"
         title={
           <MemoizedFormattedMessage
@@ -234,7 +201,7 @@ function ThreadSummarySections(props: {
 
       {/* echo / falcon → sectionKey "chrome-tabs" (ElectronOnly) */}
       <ElectronOnly electron={true}>
-        <SummarySectionSlot
+        <PopoverMenu.Section
           sectionKey="chrome-tabs"
           title={
             <MemoizedFormattedMessage
@@ -246,8 +213,8 @@ function ThreadSummarySections(props: {
         />
       </ElectronOnly>
 
-      {/* kelpR3 → sectionKey "browser" */}
-      <SummarySectionSlot
+      {/* kelpR3 → sectionKey "browser" / browser-tabs */}
+      <PopoverMenu.Section
         sectionKey="browser"
         title={
           <MemoizedFormattedMessage
@@ -259,7 +226,7 @@ function ThreadSummarySections(props: {
       />
 
       {/* lotusR1 → sectionKey "tool-sources" */}
-      <SummarySectionSlot
+      <PopoverMenu.Section
         sectionKey="tool-sources"
         title={
           <MemoizedFormattedMessage
@@ -273,10 +240,13 @@ function ThreadSummarySections(props: {
   );
 }
 
+/** Soft trigger peer (`reefR1` / NativeContextMenuSurface) — no-op mount. */
+function SoftSummaryTrigger(): ReactElement {
+  return <div data-local-thread-summary-trigger="" hidden aria-hidden />;
+}
+
 /**
- * Bundle `novaR1` — floating summary panel for the local conversation thread.
- * Soft: does not call PopoverMenu (peers unbound); mounts an inline floating
- * shell with the same sageR1 section contract.
+ * Bundle `novaR1` / `localConversationThreadH` — floating + inline summary panel.
  */
 export function ThreadSummaryPanel(
   props: ThreadSummaryPanelProps,
@@ -292,52 +262,34 @@ export function ThreadSummaryPanel(
   const shouldShow = softReadSummaryPanelShouldShow();
   const shouldHideInlineImmediately = softReadSummaryPanelShouldHideInline();
 
+  const sections = (
+    <ThreadSummarySections
+      isVisible={inlinePopoverContent ? true : shouldShow}
+      registerEnvironmentActionCommands={registerEnvironmentActionCommands}
+      onOpenBackgroundAgent={onOpenBackgroundAgent}
+      onOpenPullRequestSidePanel={onOpenPullRequestSidePanel}
+      onOpenSubagentsPanel={onOpenSubagentsPanel}
+    />
+  );
+
   if (inlinePopoverContent) {
     return (
-      <div
-        className="rounded-2xl border border-token-border bg-token-main-surface-primary p-1 shadow-sm"
-        data-local-thread-summary-popover-content=""
-      >
-        {/* Soft trigger peer (`reefR1` / NativeContextMenuSurface) — no-op mount. */}
-        <div data-local-thread-summary-trigger="" hidden aria-hidden />
-        <ThreadSummarySections
-          isVisible={true}
-          registerEnvironmentActionCommands={registerEnvironmentActionCommands}
-          onOpenBackgroundAgent={onOpenBackgroundAgent}
-          onOpenPullRequestSidePanel={onOpenPullRequestSidePanel}
-          onOpenSubagentsPanel={onOpenSubagentsPanel}
-        />
-      </div>
+      <PopoverMenu.PopoverContent>
+        <SoftSummaryTrigger />
+        <PopoverMenu.Content>{sections}</PopoverMenu.Content>
+      </PopoverMenu.PopoverContent>
     );
   }
 
   if (!shouldShow && shouldHideInlineImmediately) return null;
 
   return (
-    <div
-      className="pointer-events-auto absolute right-3 top-3 z-10"
-      data-local-thread-summary-panel=""
-      data-should-show={shouldShow ? "true" : undefined}
-      data-should-hide-inline={shouldHideInlineImmediately ? "true" : undefined}
+    <PopoverMenu.Root
+      shouldHideInlineImmediately={shouldHideInlineImmediately}
+      shouldShow={shouldShow}
     >
-      {/* Soft trigger peer (`reefR1` / NativeContextMenuSurface) — no-op mount. */}
-      <div data-local-thread-summary-trigger="" hidden aria-hidden />
-      {shouldShow ? (
-        <div
-          className="rounded-2xl border border-token-border bg-token-main-surface-primary p-1 shadow-sm"
-          data-local-thread-summary-content=""
-        >
-          <ThreadSummarySections
-            isVisible={shouldShow}
-            registerEnvironmentActionCommands={
-              registerEnvironmentActionCommands
-            }
-            onOpenBackgroundAgent={onOpenBackgroundAgent}
-            onOpenPullRequestSidePanel={onOpenPullRequestSidePanel}
-            onOpenSubagentsPanel={onOpenSubagentsPanel}
-          />
-        </div>
-      ) : null}
-    </div>
+      <SoftSummaryTrigger />
+      <PopoverMenu.Content>{sections}</PopoverMenu.Content>
+    </PopoverMenu.Root>
   );
 }

@@ -63,7 +63,7 @@ export function localConversationThreadD(_props: DisabledReasonProps): null {
 /**
  * Bundle export `h` — PopoverMenu.PopoverContent summary shell
  * (`localConversationThreadH` / sageR1 with registerEnvironmentActionCommands
- * false). Soft: mounts ThreadSummaryPanel inline content without PopoverMenu.
+ * false). Soft: mounts ThreadSummaryPanel inline PopoverContent shell.
  */
 export function localConversationThreadH(props: {
   onOpenBackgroundAgent?: (...args: unknown[]) => void;
