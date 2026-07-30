@@ -1,22 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
 // PopoverMenu.Section (`lJo`) + SectionCount (`OJo`).
 //
-// Leftover: persisted expand / autoCollapse store atoms (`$E` / `SJo` —
-// `bJo`/`xJo`/`hT`) stay soft. This restore uses local React state so the
-// accordion UI works; wiring the real store peers unblocks cross-session
-// collapse memory and timed auto-collapse. Dropdown `sectionOptions` uses
-// the restored DropdownMenuPopover (`VR`) + DropdownMenu.Item (`BR`).
+// Expand persistence + timed autoCollapse via `$E`/`SJo` (`bJo`/`xJo`/`hT`).
+// Dropdown `sectionOptions` uses restored DropdownMenuPopover (`VR`) +
+// DropdownMenu.Item (`BR`).
 
 import {
   useEffect,
   useImperativeHandle,
-  useState,
   type ReactElement,
   type ReactNode,
 } from "react";
 import { AnimatePresence, motion } from "../../vendor/framer-motion";
 import ChevronDown from "../../icons/chevron-down";
 
+import {
+  SECTION_AUTO_COLLAPSE_MS,
+  sectionAutoCollapseStatusAtom,
+  sectionExpandedAtom,
+} from "../../conversation/thread-summary-panel-section-expanded";
+import { useAppScopeFamilyValue } from "../../boundaries/app-scope-runtime";
 import { cx } from "../cx";
 import { DropdownMenu, DropdownMenuPopover } from "../dropdown-menu";
 import { usePrefersReducedMotion } from "../../motion/use-prefers-reduced-motion";
@@ -132,7 +135,8 @@ export function PopoverMenuSectionCount(props: {
 
 /**
  * Bundle `lJo` — accordion / headerless / dropdown section.
- * Expand state is local until `$E` store peers land.
+ * Expand state persists via `sectionExpandedAtom` (`bJo` / `Fm`);
+ * timed autoCollapse via `sectionAutoCollapseStatusAtom` (`xJo` / `Da(hT)`).
  */
 export function PopoverMenuSection(
   props: PopoverMenuSectionProps,
@@ -152,19 +156,49 @@ export function PopoverMenuSection(
   } = props;
 
   const shouldUseReducedMotion = usePrefersReducedMotion();
-  const [isExpanded, setIsExpanded] = useState(!defaultCollapsed);
+  const autoCollapseStatus = useAppScopeFamilyValue(
+    sectionAutoCollapseStatusAtom,
+    sectionKey,
+  );
+  const storedExpanded = useAppScopeFamilyValue(
+    sectionExpandedAtom,
+    sectionKey,
+  );
 
-  // Soft autoCollapse: honor boolean collapse only; timed store collapse stays open.
-  useEffect(() => {
-    if (autoCollapse === true) {
-      setIsExpanded(false);
-    }
-  }, [autoCollapse]);
+  const autoCollapseActive =
+    autoCollapse != null && autoCollapseStatus !== "canceled";
+  const isExpanded =
+    !(autoCollapse === true && autoCollapseStatus === "collapsed") &&
+    (storedExpanded ?? !defaultCollapsed);
+
+  const setExpanded = (expanded: boolean): void => {
+    sectionExpandedAtom.write(sectionKey, expanded);
+  };
 
   useImperativeHandle(ref, () => ({
-    collapse: () => setIsExpanded(false),
-    expand: () => setIsExpanded(true),
+    collapse: () => setExpanded(false),
+    expand: () => setExpanded(true),
   }));
+
+  useEffect(() => {
+    if (!autoCollapseActive) return;
+    if (!autoCollapse) {
+      if (autoCollapseStatus === "collapsed") {
+        sectionAutoCollapseStatusAtom.write(sectionKey, "pending");
+      }
+      return;
+    }
+    if (autoCollapseStatus !== "pending") return;
+    const timeoutId = window.setTimeout(() => {
+      sectionAutoCollapseStatusAtom.write(sectionKey, "collapsed");
+    }, SECTION_AUTO_COLLAPSE_MS);
+    return () => window.clearTimeout(timeoutId);
+  }, [
+    autoCollapse,
+    autoCollapseActive,
+    autoCollapseStatus,
+    sectionKey,
+  ]);
 
   const showContent =
     mode === "headerless" || isExpanded || mode === "dropdown";
@@ -202,6 +236,13 @@ export function PopoverMenuSection(
         mode === "accordion" && !isExpanded ? "last:pb-0.5" : "last:pb-0",
       )}
       data-popover-section={sectionKey}
+      onClick={
+        autoCollapseActive
+          ? () => {
+              sectionAutoCollapseStatusAtom.write(sectionKey, "canceled");
+            }
+          : undefined
+      }
     >
       {mode === "headerless" ? null : (
         <PopoverMenuSectionHeader
@@ -210,7 +251,7 @@ export function PopoverMenuSection(
           mode={mode}
           onChange={onChange}
           onToggle={() => {
-            if (mode !== "dropdown") setIsExpanded(!isExpanded);
+            if (mode !== "dropdown") setExpanded(!isExpanded);
           }}
           sectionOptions={sectionOptions}
           shouldUseReducedMotion={shouldUseReducedMotion}

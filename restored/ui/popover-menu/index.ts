@@ -1,8 +1,5 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
 // PopoverMenu compound (`XE` / internal `BJ`) — thread-summary panel menu API.
-//
-// Leftovers (documented, not blockers for the public compound):
-// - Section expand persistence / timed autoCollapse via `$E`/`SJo` store atoms
 
 import { ExpandableItemList } from "../expandable-item-list";
 import {

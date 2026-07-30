@@ -6,10 +6,15 @@
 //   ed/Ift ≈ ensureAppScopeInit (Ho then wa),
 //   Ta/ivt ≈ createScopedSignal(scope, factory, opts),
 //   Ho/M_t ≈ ensureAppScopeHostInit (zod/host cluster prelude),
-//   Io/L_t ≈ useAppScope(scope) scoped node hook.
+//   Io/L_t ≈ useAppScope(scope) scoped node hook,
+//   hT/_8 ≈ routeScopeAtom (wa(`RouteScope`, parent ThreadScope)),
+//   Da ≈ createAppScopeFamilySignal,
+//   Fm ≈ createPersistedAppScopeFamilySignal (Da + localStorage).
 //
 // Recorded under dependencyBoundaryFacades. Do NOT treat as done/app-feature.
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+import { useCallback, useSyncExternalStore } from "react";
 
 export type AppScopeBrand = {
   __scopeBrand: string;
@@ -40,6 +45,17 @@ export function createAppScope(
  */
 export let appScopeAtom: AppScopeBrand = createAppScope("AppScope");
 
+/**
+ * Bundle `hT` / export `_8` — RouteScope under ThreadScope.
+ * Soft: retain/parent chain + per-route instance partitioning stay open;
+ * brand is enough for family atoms keyed through this scope.
+ */
+export const routeScopeAtom: AppScopeBrand = createAppScope("RouteScope", {
+  key: (route: { pathname?: string; search?: string }) =>
+    `${route.pathname ?? ""}${route.search ?? ""}`,
+  parent: undefined,
+  retain: { max: 20 },
+});
 /** Bundle `Ho` / export `M_t` — host/zod prelude required before AppScope init. */
 export function ensureAppScopeHostInit(): void {}
 
@@ -157,19 +173,146 @@ export function createAppScopeFamilySignal<T>(
 }
 
 /**
+ * Bundle `Fm` — localStorage-backed AppScope family signal.
+ * Key factory maps each family key → storage key; default seeds first read.
+ * Cross-tab updates arrive via the `storage` event (bundle `SMe` peer).
+ */
+export function createPersistedAppScopeFamilySignal<T>(
+  keyFor: (key: unknown) => string,
+  defaultValue: T,
+  brand = "PersistedAppScopeFamily",
+): AppScopeFamilySignal<T> {
+  const values = new Map<unknown, T>();
+  const listeners = new Map<unknown, Set<() => void>>();
+  const keyByStorageKey = new Map<string, unknown>();
+
+  const readStorage = (storageKey: string): T => {
+    if (typeof localStorage === "undefined") return defaultValue;
+    try {
+      const raw = localStorage.getItem(storageKey);
+      return raw == null ? defaultValue : (JSON.parse(raw) as T);
+    } catch {
+      return defaultValue;
+    }
+  };
+
+  const writeStorage = (storageKey: string, next: T): void => {
+    if (typeof localStorage === "undefined") return;
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(next));
+    } catch {
+      /* ignore quota / serialization errors */
+    }
+  };
+
+  const notify = (key: unknown): void => {
+    const set = listeners.get(key);
+    if (set == null) return;
+    for (const listener of set) listener();
+  };
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("storage", (event) => {
+      if (event.key == null || !keyByStorageKey.has(event.key)) return;
+      const familyKey = keyByStorageKey.get(event.key);
+      let next: T = defaultValue;
+      if (event.newValue != null) {
+        try {
+          next = JSON.parse(event.newValue) as T;
+        } catch {
+          next = defaultValue;
+        }
+      }
+      values.set(familyKey, next);
+      notify(familyKey);
+    });
+  }
+
+  return {
+    __brand: brand,
+    __kind: "signal-family",
+    read(key) {
+      if (!values.has(key)) {
+        const storageKey = keyFor(key);
+        keyByStorageKey.set(storageKey, key);
+        values.set(key, readStorage(storageKey));
+      }
+      return values.get(key) as T;
+    },
+    write(key, value) {
+      const prev = values.has(key)
+        ? (values.get(key) as T)
+        : readStorage(keyFor(key));
+      const next =
+        typeof value === "function" ? (value as (prev: T) => T)(prev) : value;
+      const storageKey = keyFor(key);
+      keyByStorageKey.set(storageKey, key);
+      values.set(key, next);
+      writeStorage(storageKey, next);
+      notify(key);
+    },
+    subscribe(key, listener) {
+      if (!values.has(key)) {
+        const storageKey = keyFor(key);
+        keyByStorageKey.set(storageKey, key);
+        values.set(key, readStorage(storageKey));
+      }
+      let set = listeners.get(key);
+      if (set == null) {
+        set = new Set();
+        listeners.set(key, set);
+      }
+      set.add(listener);
+      return () => {
+        set!.delete(listener);
+        if (set!.size === 0) listeners.delete(key);
+      };
+    },
+  };
+}
+
+/**
+ * Bundle `Fo` neighborhood — subscribe to a family signal member.
+ */
+export function useAppScopeFamilyValue<T>(
+  family: AppScopeFamilySignal<T>,
+  key: unknown,
+): T {
+  const subscribe = useCallback(
+    (listener: () => void) => family.subscribe(key, listener),
+    [family, key],
+  );
+  const getSnapshot = useCallback(() => family.read(key), [family, key]);
+  return useSyncExternalStore(subscribe, getSnapshot, getSnapshot);
+}
+
+/**
  * Bundle `Io` / export `L_t` — scoped AppScope node hook.
- * Open boundary stub: returns a minimal `{ scope, value }` shape.
+ * Soft host stub: returns `{ scope, value, get, set }` adapted over family
+ * signals so section expand can call `store.set(atom, key, value)`.
  */
 export function useAppScope(scope: AppScopeBrand = appScopeAtom): {
   scope: AppScopeBrand;
   value: any;
   queryClient: any;
+  get: <T>(atom: AppScopeFamilySignal<T>, key: unknown) => T;
+  set: <T>(
+    atom: AppScopeFamilySignal<T>,
+    key: unknown,
+    value: T | ((prev: T) => T),
+  ) => void;
 } {
   return {
     scope,
     value: undefined,
     get queryClient(): any {
       throw new Error("Missing query client (open AppScope runtime boundary)");
+    },
+    get(atom, key) {
+      return atom.read(key);
+    },
+    set(atom, key, value) {
+      atom.write(key, value);
     },
   };
 }

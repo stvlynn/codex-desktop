@@ -1,8 +1,16 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Section expand / autoCollapse atoms (`$E` / `SJo` — `bJo` / `xJo`).
+// Section expand / autoCollapse atoms (`$E` / `SJo` — `bJo` / `xJo` / `hT`).
 //
-// Soft: real `Fm`/`Da`/`hT` RouteScope jotai peers are not yet restored, so
-// these helpers keep the key + timeout contracts without persistence.
+// `bJo` = Fm(keyFactory, null) — localStorage-persisted expand boolean.
+// `xJo` = Da(hT, () => "pending") — RouteScope-timed autoCollapse status.
+
+import {
+  appScopeAtom,
+  createAppScopeFamilySignal,
+  createPersistedAppScopeFamilySignal,
+  routeScopeAtom,
+  type AppScopeFamilySignal,
+} from "../boundaries/app-scope-runtime";
 
 /** Bundle `mJo` — timed auto-collapse delay (30s). */
 export const SECTION_AUTO_COLLAPSE_MS = 30_000;
@@ -21,12 +29,38 @@ export function sectionExpandedStorageKey(sectionKey: string): string {
   return `${SECTION_EXPANDED_KEY_PREFIX}${sectionKey}`;
 }
 
-/** Legacy extractFn binder — peers now soft; retained for stale callers. */
-export function setBindThreadSummaryPanelSectionExpandedPeers(
-  _next: unknown,
-): void {}
+/**
+ * Bundle `bJo` — persisted expand family (`Fm` over AppScope `Q`).
+ * `null` means “no stored preference” → fall back to `!defaultCollapsed`.
+ */
+export const sectionExpandedAtom: AppScopeFamilySignal<boolean | null> =
+  createPersistedAppScopeFamilySignal<boolean | null>(
+    (key) => sectionExpandedStorageKey(String(key)),
+    null,
+    "sectionExpandedAtom",
+  );
 
-/** Legacy init no-op (`$E` / `SJo`). */
+/**
+ * Bundle `xJo` — RouteScope autoCollapse status family (`Da(hT, …)`).
+ * Soft: RouteScope instance partitioning stays open; status is still
+ * per-sectionKey within this process.
+ */
+export const sectionAutoCollapseStatusAtom: AppScopeFamilySignal<SectionAutoCollapseStatus> =
+  createAppScopeFamilySignal<SectionAutoCollapseStatus>(
+    routeScopeAtom,
+    () => "pending",
+    "sectionAutoCollapseStatusAtom",
+  );
+
+/** Re-export RouteScope brand used by `Io(hT)` callers. */
+export { routeScopeAtom, appScopeAtom };
+
+/** Bundle `$E` / `SJo` ESM init — atoms construct on import. */
 export function bindThreadSummaryPanelSectionExpanded(): void {}
 
 export function ensureThreadSummaryPanelSectionExpandedInit(): void {}
+
+/** Legacy extractFn binder — atoms are module-level; retained for callers. */
+export function setBindThreadSummaryPanelSectionExpandedPeers(
+  _next: unknown,
+): void {}
