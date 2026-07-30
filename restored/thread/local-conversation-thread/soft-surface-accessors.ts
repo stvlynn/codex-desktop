@@ -1,5 +1,10 @@
 // Restored from ref/webview/assets/local-conversation-thread-C3pAiUmg.js
-// Soft S8 / L8 / V1 surface accessors for LocalThreadSurface. throws: 0.
+// Soft S8 / L8 / V1 surface accessors for LocalThreadSurface. Bind hooks wire
+// real companions when live; defaults use promoted L8 + client-new-thread
+// eligibility accessors (throws: 0).
+
+import { isClientNewThreadId } from "../../conversation/client-new-thread-id";
+import { localConversationIdAtom } from "../../pages/local-conversation-page/runtime-bridges";
 
 export type PendingWorktreeLaunch = {
   id: string;
@@ -34,6 +39,30 @@ let readPendingWorktreeLaunchImpl: SoftReader<
   [string | null],
   PendingWorktreeLaunch | null
 > | null = null;
+let readRouteConversationIdImpl: SoftReader<[], string | null> | null = null;
+let readHasConversationImpl: SoftReader<[string | null], boolean> | null = null;
+let readHostIdForConversationImpl: SoftReader<
+  [string | null],
+  string | null
+> | null = null;
+let readIsBackgroundSubagentsEnabledImpl: SoftReader<[], boolean> | null = null;
+let readCachedHistoryPresentImpl: SoftReader<[string | null], boolean> | null =
+  null;
+let readIsRealtimeVoiceThreadImpl: SoftReader<[string | null], boolean> | null =
+  null;
+let readRightPanelHidesThreadImpl: SoftReader<
+  [
+    {
+      conversationId: string | null;
+      routeConversationId: string | null;
+    },
+  ],
+  boolean
+> | null = null;
+let threadContentShiftImpl: SoftReader<[string | null], unknown> | null = null;
+let readHotkeyHomePathImpl: SoftReader<[], string | null> | null = null;
+let showConversationNotFoundToastImpl: SoftReader<[string], void> | null = null;
+let markThreadVisibleImpl: SoftReader<[string], void> | null = null;
 
 /** Bind S8 `clientThreadId` reader once the composer scope peer is live. */
 export function bindSoftReadClientThreadId(
@@ -56,6 +85,91 @@ export function bindSoftReadPendingWorktreeLaunch(
   readPendingWorktreeLaunchImpl = next;
 }
 
+/** Bind L8 / route conversation-id reader. */
+export function bindSoftReadRouteConversationId(
+  next: SoftReader<[], string | null>,
+): void {
+  readRouteConversationIdImpl = next;
+}
+
+/** Bind DeferredUi / H2 conversation-presence reader. */
+export function bindSoftReadHasConversation(
+  next: SoftReader<[string | null], boolean>,
+): void {
+  readHasConversationImpl = next;
+}
+
+/** Bind U2 host-id reader. */
+export function bindSoftReadHostIdForConversation(
+  next: SoftReader<[string | null], string | null>,
+): void {
+  readHostIdForConversationImpl = next;
+}
+
+/** Bind EM background-subagents feature flag. */
+export function bindSoftReadIsBackgroundSubagentsEnabled(
+  next: SoftReader<[], boolean>,
+): void {
+  readIsBackgroundSubagentsEnabledImpl = next;
+}
+
+/** Bind cached-history presence reader. */
+export function bindSoftReadCachedHistoryPresent(
+  next: SoftReader<[string | null], boolean>,
+): void {
+  readCachedHistoryPresentImpl = next;
+}
+
+/** Bind DeferredUi2 + H4 realtime-voice thread classifier. */
+export function bindSoftReadIsRealtimeVoiceThread(
+  next: SoftReader<[string | null], boolean>,
+): void {
+  readIsRealtimeVoiceThreadImpl = next;
+}
+
+/** Bind timberR2 / K0 right-panel hide reader. */
+export function bindSoftReadRightPanelHidesThread(
+  next: SoftReader<
+    [
+      {
+        conversationId: string | null;
+        routeConversationId: string | null;
+      },
+    ],
+    boolean
+  >,
+): void {
+  readRightPanelHidesThreadImpl = next;
+}
+
+/** Bind conversationSourceI content-shift motion. */
+export function bindSoftThreadContentShift(
+  next: SoftReader<[string | null], unknown>,
+): void {
+  threadContentShiftImpl = next;
+}
+
+/** Bind B7 + Rmt hotkey-home path. */
+export function bindSoftReadHotkeyHomePath(
+  next: SoftReader<[], string | null>,
+): void {
+  readHotkeyHomePathImpl = next;
+}
+
+/** Bind toastAtom danger for missing conversation. */
+export function bindSoftShowConversationNotFoundToast(
+  next: SoftReader<[string], void>,
+): void {
+  showConversationNotFoundToastImpl = next;
+}
+
+/** Bind Vh / plan-complete thread-visible marker. */
+export function bindSoftMarkThreadVisible(
+  next: SoftReader<[string], void>,
+): void {
+  markThreadVisibleImpl = next;
+}
+
 /** Soft: composer-scope `clientThreadId` (bundle S8.value.clientThreadId). */
 export function softReadClientThreadId(): string | null {
   return readClientThreadIdImpl?.() ?? null;
@@ -63,7 +177,8 @@ export function softReadClientThreadId(): string | null {
 
 /**
  * Soft: whether a client thread id is eligible as a stable-worktree launch
- * placeholder (UUID-shaped client thread id peer).
+ * placeholder. Default = `isClientNewThreadId` (UUID-shaped client-new-thread
+ * peer) until a tighter binder lands.
  */
 export function softIsClientThreadEligibleForStableWorktree(
   clientThreadId: string | null | undefined,
@@ -71,8 +186,7 @@ export function softIsClientThreadEligibleForStableWorktree(
   if (isClientThreadEligibleImpl != null) {
     return isClientThreadEligibleImpl(clientThreadId);
   }
-  void clientThreadId;
-  return false;
+  return isClientNewThreadId(clientThreadId);
 }
 
 /** Soft: pending worktree launch descriptor for a client thread id (V1). */
@@ -86,62 +200,73 @@ export function softReadPendingWorktreeLaunch(
 export function softReadHasConversation(
   conversationId: string | null,
 ): boolean {
+  if (readHasConversationImpl != null) {
+    return readHasConversationImpl(conversationId);
+  }
   return conversationId != null;
 }
 
 /** Soft: host id for a conversation (U2). */
 export function softReadHostIdForConversation(
-  _conversationId: string | null,
+  conversationId: string | null,
 ): string | null {
-  return null;
+  return readHostIdForConversationImpl?.(conversationId) ?? null;
 }
 
-/** Soft: route conversation id from composer scope (S8 → deferredV8). */
+/**
+ * Soft: route conversation id. Default reads promoted L8
+ * (`localConversationIdAtom`) until a tighter binder lands.
+ */
 export function softReadRouteConversationId(): string | null {
-  return null;
+  if (readRouteConversationIdImpl != null) {
+    return readRouteConversationIdImpl();
+  }
+  return localConversationIdAtom.get();
 }
 
 /** Soft: background-subagents feature flag (EM). */
 export function softReadIsBackgroundSubagentsEnabled(): boolean {
-  return false;
+  return readIsBackgroundSubagentsEnabledImpl?.() ?? false;
 }
 
 /** Soft: cached-history presence (ComposerCategoryValueChip / IS). */
 export function softReadCachedHistoryPresent(
-  _conversationId: string | null,
+  conversationId: string | null,
 ): boolean {
-  return false;
+  return readCachedHistoryPresentImpl?.(conversationId) ?? false;
 }
 
 /** Soft: realtime-voice thread classification (DeferredUi2 + H4). */
 export function softReadIsRealtimeVoiceThread(
-  _conversationId: string | null,
+  conversationId: string | null,
 ): boolean {
-  return false;
+  return readIsRealtimeVoiceThreadImpl?.(conversationId) ?? false;
 }
 
 /** Soft: right-panel full-width hides thread content (timberR2 / K0). */
-export function softReadRightPanelHidesThread(_args: {
+export function softReadRightPanelHidesThread(args: {
   conversationId: string | null;
   routeConversationId: string | null;
 }): boolean {
-  return false;
+  return readRightPanelHidesThreadImpl?.(args) ?? false;
 }
 
 /** Soft: framer content-shift motion value (conversationSourceI). */
-export function softThreadContentShift(
-  _conversationId: string | null,
-): unknown {
-  return undefined;
+export function softThreadContentShift(conversationId: string | null): unknown {
+  return threadContentShiftImpl?.(conversationId) ?? undefined;
 }
 
 /** Soft: hotkey-home path preference (B7 + Rmt). Null → `/`. */
 export function softReadHotkeyHomePath(): string | null {
-  return null;
+  return readHotkeyHomePathImpl?.() ?? null;
 }
 
 /** Soft: toast danger for missing conversation (toastAtom). */
-export function softShowConversationNotFoundToast(_message: string): void {}
+export function softShowConversationNotFoundToast(message: string): void {
+  showConversationNotFoundToastImpl?.(message);
+}
 
 /** Soft: mark thread visible + complete telemetry (Vh / plan complete). */
-export function softMarkThreadVisible(_conversationId: string): void {}
+export function softMarkThreadVisible(conversationId: string): void {
+  markThreadVisibleImpl?.(conversationId);
+}

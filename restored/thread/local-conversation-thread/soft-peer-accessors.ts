@@ -8,6 +8,7 @@ import {
   softReadHasConversation,
   type PendingWorktreeLaunch,
 } from "./soft-surface-accessors";
+import { softReadTurnListEntries } from "./soft-turn-list-accessors";
 
 export type TurnTimelineLoadingKind = "state" | "subagentTurns";
 
@@ -220,11 +221,11 @@ export function softReadIsConversationPresent(conversationId: string): boolean {
   return softReadHasConversation(conversationId);
 }
 
-export function softReadHasRenderableTurns(_args: {
+export function softReadHasRenderableTurns(args: {
   conversationId: string;
   isBackgroundSubagentsEnabled: boolean;
 }): boolean {
-  return false;
+  return softReadTurnListEntries(args).length > 0;
 }
 
 export function softReadTurnTimelineLoadingKind(args: {

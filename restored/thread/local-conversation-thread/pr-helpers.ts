@@ -1,5 +1,10 @@
 // Restored from ref/webview/assets/local-conversation-thread-C3pAiUmg.js
-// Pull-request comment / autofix helpers extracted from the local thread chunk.
+// Pull-request comment / autofix helpers + soft summary PopoverContent shell
+// (`localConversationThreadH`) extracted from the local thread chunk.
+
+import { createElement, type ReactElement } from "react";
+
+import { ThreadSummaryPanel } from "./thread-summary-panel";
 
 export type PrCommentAttachArgs = {
   baseBranch?: string | null;
@@ -55,11 +60,21 @@ export function localConversationThreadD(_props: DisabledReasonProps): null {
   return null;
 }
 
-/** Bundle export `h` — environment actions popover shell. Soft: null. */
-export function localConversationThreadH(_props: {
+/**
+ * Bundle export `h` — PopoverMenu.PopoverContent summary shell
+ * (`localConversationThreadH` / sageR1 with registerEnvironmentActionCommands
+ * false). Soft: mounts ThreadSummaryPanel inline content without PopoverMenu.
+ */
+export function localConversationThreadH(props: {
   onOpenBackgroundAgent?: (...args: unknown[]) => void;
   onOpenPullRequestSidePanel?: (...args: unknown[]) => void;
   onOpenSubagentsPanel?: (...args: unknown[]) => void;
-}): null {
-  return null;
+}): ReactElement {
+  return createElement(ThreadSummaryPanel, {
+    inlinePopoverContent: true,
+    registerEnvironmentActionCommands: false,
+    onOpenBackgroundAgent: props.onOpenBackgroundAgent,
+    onOpenPullRequestSidePanel: props.onOpenPullRequestSidePanel,
+    onOpenSubagentsPanel: props.onOpenSubagentsPanel,
+  });
 }

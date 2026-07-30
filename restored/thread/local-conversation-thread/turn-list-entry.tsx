@@ -1,12 +1,15 @@
 // Restored from ref/webview/assets/local-conversation-thread-C3pAiUmg.js
 // Soft TurnListEntryRow (`groveR1`): dispatches gap / voice-nux / voice-transcript /
-// voice-presentation / history-turn rows for VirtualizedTurnList. AppInitialAc /
-// AppInitialSC / DeferredUi error-boundary peers stay soft shells (never app-initial).
+// voice-presentation / history-turn rows for VirtualizedTurnList. AppInitialAc →
+// soft LiveAssistantTurn shell; AppInitialSC → soft RealtimeVoiceHomeAnnouncement
+// (entryPoint="codex"). Never imports app-initial aggregator / deferredAc.
 
 import { type ReactElement, type ReactNode, type RefObject } from "react";
 
 import { isGapItem } from "../../conversation/is-gap-item";
+import { RealtimeVoiceHomeAnnouncement } from "../../home/realtime-voice-home-announcement";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
+import { LiveAssistantTurn } from "../../pages/remote-conversation-page/live-assistant-turn";
 import { Button } from "../../ui/button";
 import type { TurnListEntry } from "./soft-turn-list-accessors";
 
@@ -71,13 +74,21 @@ export function TurnRenderErrorFallback(props: {
   );
 }
 
+/**
+ * Soft `AppInitialSC` — voice NUX row. Real body mounts SC with
+ * entryPoint="codex"; soft uses promoted RealtimeVoiceHomeAnnouncement
+ * (returns null until NUX peers / eligibility wire).
+ */
 function SoftVoiceNuxEntry(): ReactElement {
   return (
     <div
       data-virtualized-turn-content=""
       data-turn-list-entry="voice-nux"
       data-turn-list-entry-soft=""
-    />
+      data-voice-nux-entrypoint="codex"
+    >
+      <RealtimeVoiceHomeAnnouncement entryPoint="codex" />
+    </div>
   );
 }
 
@@ -125,8 +136,9 @@ function SoftVoicePresentationEntry(props: {
 }
 
 /**
- * Soft `isleR1` — history-turn shell. Real body mounts AppInitialAc inside a
- * DeferredUi LocalConversationTurn boundary; soft keeps footer + turn metadata.
+ * Soft `isleR1` / AppInitialAc — history-turn shell. Real body mounts
+ * deferredAc inside a DeferredUi LocalConversationTurn boundary; soft keeps
+ * LiveAssistantTurn props contract + footer without calling deferredAc.
  */
 function SoftHistoryTurnEntry(props: {
   entry: TurnListEntry;
@@ -145,6 +157,11 @@ function SoftHistoryTurnEntry(props: {
     entry.turn != null && typeof entry.turn.status === "string"
       ? entry.turn.status
       : undefined;
+  const cwd = typeof entry.cwd === "string" ? entry.cwd : null;
+  const hostId = entry.hostId ?? null;
+  const modelProvider =
+    "modelProvider" in entry ? entry.modelProvider : undefined;
+  const resolvedApps = "resolvedApps" in entry ? entry.resolvedApps : undefined;
 
   void latestTurnFollowContentRef;
 
@@ -159,7 +176,19 @@ function SoftHistoryTurnEntry(props: {
       data-most-recent-turn={isMostRecentTurn ? "true" : undefined}
       data-turn-status={turnStatus}
     >
-      {latestTurnFooter ?? null}
+      <LiveAssistantTurn
+        conversationId={conversationId}
+        hostId={hostId}
+        turnSearchKey={turnSearchKey}
+        turn={entry.turn}
+        turnState={"turnState" in entry ? entry.turnState : undefined}
+        cwd={cwd}
+        resolvedApps={resolvedApps}
+        modelProvider={modelProvider}
+        reportEntityType="thread"
+      >
+        {latestTurnFooter ?? null}
+      </LiveAssistantTurn>
     </div>
   );
 }
