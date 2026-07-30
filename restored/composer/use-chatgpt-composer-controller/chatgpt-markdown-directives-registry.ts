@@ -1,0 +1,24 @@
+// Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
+// Mutable markdown directive registry filled by the residual boundary ESM init.
+
+let chatgptMarkdownDirectives: Record<string | symbol, unknown> = {};
+
+export function setChatgptMarkdownDirectives(
+  directives: Record<string | symbol, unknown>,
+): void {
+  chatgptMarkdownDirectives = directives;
+}
+
+export function getChatgptMarkdownDirectives(): Record<
+  string | symbol,
+  unknown
+> {
+  return chatgptMarkdownDirectives;
+}
+
+export function useChatgptComposerControllerHelper246(): Record<
+  string | symbol,
+  unknown
+> {
+  return getChatgptMarkdownDirectives();
+}

@@ -2,7 +2,7 @@
 // ChatGPT reasoning-group renderer for browser-conversation rows.
 
 import { ChatMessageContent as appInitialQd } from "../../chat/chat-message-content";
-import { useChatgptComposerControllerHelper261 } from "../../boundaries/use-chatgpt-composer-controller";
+import { useChatgptComposerControllerHelper261 } from "./chatgpt-reasoning-item-content";
 import {
   useChatgptComposerControllerHelper262,
   useChatgptComposerControllerHelper264,

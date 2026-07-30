@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Semantic composer-domain API: typed aliases over the open oversized runtime body.
-// Stage-3 wave-4: deep row helpers (104/257–260/262–264/285–294) + B/V/X/Y contexts drained.
-// Residual: Helpers 19/248/255/261/269/284 + letter A/U/K + _O/_D/_F still in boundary.
+// Stage-3 wave-5: Helpers 19/247–255/261/265–273/275/284 + _F drained.
+// Residual: letter A/U/K + _O/_D + markdown mountain still in boundary.
 
 export type {
   ChatgptBrowserConversationBannerProps,
@@ -187,6 +187,54 @@ export {
 export { ReplyArrowIcon, B_ } from "./chatgpt-reply-arrow-icon";
 
 export {
+  useChatgptComposerControllerHelper19,
+  useChatgptComposerControllerHelper20,
+  useChatgptComposerControllerHelper21,
+  useChatgptComposerControllerHelper22,
+  useChatgptComposerControllerHelper23,
+} from "./chatgpt-turn-sources-footer";
+
+export {
+  useChatgptComposerControllerHelper31,
+  chatgptBrowserHostContext,
+} from "./chatgpt-browser-host-context";
+
+export { useChatgptComposerControllerHelper65 } from "./chatgpt-composer-confirmation-link";
+
+export { useChatgptComposerControllerHelper247 } from "./chatgpt-safe-streaming-markdown";
+
+export {
+  useChatgptComposerControllerHelper248,
+  useChatgptComposerControllerHelper249,
+  useChatgptComposerControllerHelper250,
+} from "./chatgpt-moderation-disclaimers";
+
+export { useChatgptComposerControllerHelper255 } from "./chatgpt-assistant-message-content";
+
+export { useChatgptComposerControllerHelper261 } from "./chatgpt-reasoning-item-content";
+
+export {
+  useChatgptComposerControllerHelper265,
+  useChatgptComposerControllerHelper266,
+  useChatgptComposerControllerHelper267,
+} from "./chatgpt-reasoning-tool-icons";
+
+export { useChatgptComposerControllerHelper269 } from "./chatgpt-safety-review-banner";
+export {
+  useChatgptComposerControllerHelper268,
+  useChatgptComposerControllerHelper270,
+  useChatgptComposerControllerHelper273,
+} from "./chatgpt-safety-review-helpers";
+
+export {
+  useChatgptComposerControllerHelper275,
+} from "./chatgpt-subagent-side-panel";
+
+export {
+  useChatgptComposerControllerHelper284,
+} from "./chatgpt-subagent-activity-panel";
+
+export {
   ChatgptBrowserConversationItem,
   useChatgptComposerControllerHelper305,
 } from "./chatgpt-browser-conversation-item";
@@ -228,12 +276,12 @@ export {
 
 import {
   _useChatgptComposerControllerD,
-  _useChatgptComposerControllerF,
   _useChatgptComposerControllerO,
   useChatgptComposerControllerA,
   useChatgptComposerControllerK,
   useChatgptComposerControllerU,
 } from "../../boundaries/use-chatgpt-composer-controller";
+import { _useChatgptComposerControllerF } from "./chatgpt-subagent-activity-panel";
 import {
   useChatgptComposerControllerB,
   useChatgptComposerControllerV,

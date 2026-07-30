@@ -11,10 +11,8 @@ import {
   react,
   reactCompilerRuntime,
 } from "../../boundaries/react-cjs-runtime";
-import {
-  useChatgptComposerControllerHelper19,
-  useChatgptComposerControllerHelper269,
-} from "../../boundaries/use-chatgpt-composer-controller";
+import { useChatgptComposerControllerHelper19 } from "./chatgpt-turn-sources-footer";
+import { useChatgptComposerControllerHelper269 } from "./chatgpt-safety-review-banner";
 import { useChatgptComposerControllerHelper257 } from "./chatgpt-branch-source-divider";
 import { useChatgptComposerControllerHelper290 } from "./chatgpt-turn-sources-from-items";
 import { allocateStableActivityItemKeys as AppInitialHF } from "../../conversation/allocate-stable-activity-item-keys";

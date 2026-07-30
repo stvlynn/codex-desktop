@@ -10,11 +10,9 @@ import {
   chatgptConversationServerIdAtom as appInitialFP,
   writingBlocksControllerAtom as appInitialCI,
 } from "../../boundaries/composer-appscope-atoms";
-import {
-  useChatgptComposerControllerHelper248,
-  useChatgptComposerControllerHelper255,
-  useChatgptComposerControllerHelper284,
-} from "../../boundaries/use-chatgpt-composer-controller";
+import { useChatgptComposerControllerHelper248 } from "./chatgpt-moderation-disclaimers";
+import { useChatgptComposerControllerHelper255 } from "./chatgpt-assistant-message-content";
+import { useChatgptComposerControllerHelper284 } from "./chatgpt-subagent-activity-panel";
 import { useChatgptComposerControllerHelper104 } from "./chatgpt-conversation-image-download";
 import { useChatgptComposerControllerHelper259 } from "./chatgpt-codex-handoff-continued-link";
 import {
