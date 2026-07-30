@@ -1,3 +1,10 @@
-// Restored from ref/webview/assets/qg-full-green-reexport-shim.js
-// Thin re-export shim — Mermaid body lives under boundaries/mermaid-diagrams (diagram/doc vendor).
-export * from "../boundaries/mermaid-diagrams/mermaid-core";
+// Restored from ref/webview/assets/mermaid.core-CtG2uVQZ.js
+// Public diagrams/ path for the Codex Mermaid core aggregator wrapper.
+
+export { default, type MermaidCore } from "../boundaries/mermaid-diagrams/mermaid-core";
+export type {
+  DiagramDefinition,
+  ExternalDiagramDefinition,
+  Mermaid,
+  MermaidConfig,
+} from "../boundaries/mermaid-diagrams/mermaid-core";

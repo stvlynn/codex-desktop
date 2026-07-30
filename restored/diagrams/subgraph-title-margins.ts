@@ -1,36 +1,7 @@
 // Restored from ref/webview/assets/chunk-CVBHYZKI-Ct0iRt9_.js
-// Mermaid flowchart subgraph title margin helper.
+// npm shim: mermaid@11.12.0 subgraph title margins (content-hash CVBHYZKI).
 
-import {
-  defineFunctionName,
-  initDayjsLoggerRuntime,
-} from "../utils/dayjs-core-alt-dup";
-export type FlowchartSubGraphTitleMargin = {
-  top?: number;
-  bottom?: number;
-};
-export type FlowchartConfigSlice = {
-  flowchart?: {
-    subGraphTitleMargin?: FlowchartSubGraphTitleMargin;
-  };
-};
-export type SubGraphTitleMargins = {
-  subGraphTitleTopMargin: number;
-  subGraphTitleBottomMargin: number;
-  subGraphTitleTotalMargin: number;
-};
-export function getSubGraphTitleMargins(config: FlowchartConfigSlice): SubGraphTitleMargins {
-  const top = config.flowchart?.subGraphTitleMargin?.top ?? 0;
-  const bottom = config.flowchart?.subGraphTitleMargin?.bottom ?? 0;
-  return {
-    subGraphTitleTopMargin: top,
-    subGraphTitleBottomMargin: bottom,
-    subGraphTitleTotalMargin: top + bottom,
-  };
-}
-defineFunctionName(getSubGraphTitleMargins, "getSubGraphTitleMargins");
+export { getSubGraphTitleMargins } from "mermaid/dist/chunks/mermaid.core/chunk-CVBHYZKI.mjs";
 
-/** Rolldown ESM init thunk (bundle export `n`). */
-export function initSubGraphTitleMarginsChunk(): void {
-  initDayjsLoggerRuntime();
-}
+/** Legacy Rolldown ESM init — no-op under npm. */
+export function initSubGraphTitleMarginsChunk(): void {}
