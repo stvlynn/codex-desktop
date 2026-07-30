@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Semantic composer-domain API: typed aliases over the open oversized runtime body.
-// Stage-3 wave-6: Helper24–30/32–45 + Value54 markdown mountain drained.
-// Residual: letter A/U/K + _O/_D (Value20–26 / mega-init U blockers).
+// Stage-3 wave-7: Helper93/106/244 registry bodies drained (Value308 fill).
+// Residual: letter A/K + Value20–26 conversation-updates; _O/_D; Helper46–92 ecosystem.
 
 export type {
   ChatgptBrowserConversationBannerProps,
@@ -316,6 +316,42 @@ export {
   useChatgptComposerControllerHelper44,
   useChatgptComposerControllerHelper45,
 } from "./chatgpt-dil-action-helpers";
+
+
+export {
+  useChatgptComposerControllerHelper93,
+  useChatgptComposerControllerHelper102,
+} from "./chatgpt-dil-widget-directive";
+
+export {
+  useChatgptComposerControllerHelper106,
+  useChatgptComposerControllerHelper107,
+  useChatgptComposerControllerHelper108,
+  useChatgptComposerControllerHelper109,
+  useChatgptComposerControllerHelper110,
+  useChatgptComposerControllerHelper111,
+  useChatgptComposerControllerHelper112,
+  useChatgptComposerControllerHelper113,
+  ensureChatgptImageGroupUdtInit,
+  ensureChatgptImageGroupDirectiveInit,
+} from "./chatgpt-image-group-directive";
+
+export {
+  useChatgptComposerControllerHelper94,
+  useChatgptComposerControllerHelper95,
+  useChatgptComposerControllerHelper96,
+  useChatgptComposerControllerHelper97,
+  useChatgptComposerControllerHelper98,
+  useChatgptComposerControllerHelper99,
+  useChatgptComposerControllerHelper100,
+  useChatgptComposerControllerHelper101,
+  useChatgptComposerControllerHelper103,
+} from "./chatgpt-dil-widget-helpers";
+
+export {
+  useChatgptComposerControllerHelper244,
+  useChatgptComposerControllerHelper245,
+} from "./chatgpt-content-reference-directive";
 
 import {
   _useChatgptComposerControllerD,
