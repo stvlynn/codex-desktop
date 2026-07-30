@@ -1,34 +1,11 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
 // Materialized via extractFn(internal `PR`) / export `nV`.
+// Soft ESM init for DropdownMenu peers — compound is now inlined at `ui/dropdown-menu`.
 
-export type DropdownMenuPeers = {
-  GJi: (...args: unknown[]) => unknown;
-  J: (...args: unknown[]) => unknown;
-  JJi: (...args: unknown[]) => unknown;
-  MR: (...args: unknown[]) => unknown;
-  Vm: (...args: unknown[]) => unknown;
-  c: (...args: unknown[]) => unknown;
-  e: (...args: unknown[]) => unknown;
-  qJi: (...args: unknown[]) => unknown;
-  sd: (...args: unknown[]) => unknown;
-};
+/** Legacy peer binder — no-op once DropdownMenu compound is inlined. */
+export function setDropdownMenuPeers(_next: unknown): void {}
 
-let peers: DropdownMenuPeers | null = null;
+/** Bundle export `nV` / internal `PR` — retained as no-op init. */
+export function dropdownMenu(): void {}
 
-/** Wire dropdownMenu peers once companions land. */
-export function setDropdownMenuPeers(next: DropdownMenuPeers): void {
-  peers = next;
-}
-
-/**
- * Bundle export `nV` / internal `PR`.
- */
-export function dropdownMenu() {
-  if (peers == null) {
-    throw new Error("dropdownMenu peers are not configured");
-  }
-
-  return peers.e(() => {
-    qJi = peers.c(), peers.GJi(), peers.sd(), peers.Vm(), peers.MR(), JJi = peers.J();
-  });
-}
+export function ensureDropdownMenuRuntimeInit(): void {}

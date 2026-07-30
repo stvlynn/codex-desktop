@@ -3,7 +3,6 @@
 //
 // Leftovers (documented, not blockers for the public compound):
 // - Section expand persistence / timed autoCollapse via `$E`/`SJo` store atoms
-// - Section dropdown mode via unbound DropdownMenu peers (`VR`/`BR`)
 
 import { ExpandableItemList } from "../expandable-item-list";
 import {

@@ -4,8 +4,8 @@
 // Leftover: persisted expand / autoCollapse store atoms (`$E` / `SJo` —
 // `bJo`/`xJo`/`hT`) stay soft. This restore uses local React state so the
 // accordion UI works; wiring the real store peers unblocks cross-session
-// collapse memory and timed auto-collapse. Dropdown `sectionOptions` also
-// soft-degrades to accordion until DropdownMenu compound peers bind.
+// collapse memory and timed auto-collapse. Dropdown `sectionOptions` uses
+// the restored DropdownMenuPopover (`VR`) + DropdownMenu.Item (`BR`).
 
 import {
   useEffect,
@@ -18,6 +18,7 @@ import { AnimatePresence, motion } from "../../vendor/framer-motion";
 import ChevronDown from "../../icons/chevron-down";
 
 import { cx } from "../cx";
+import { DropdownMenu, DropdownMenuPopover } from "../dropdown-menu";
 import { usePrefersReducedMotion } from "../../motion/use-prefers-reduced-motion";
 import {
   SECTION_COLLAPSED_STYLE,
@@ -55,16 +56,16 @@ function PopoverMenuSectionHeader(props: SectionHeaderProps): ReactElement {
     children,
     isExpanded,
     mode,
+    onChange,
     onToggle,
     sectionOptions,
     shouldUseReducedMotion,
     titleSuffix,
   } = props;
 
-  // Dropdown mode with options soft-degrades to accordion until DropdownMenu binds.
-  const showChevron =
-    mode === "accordion" ||
-    (sectionOptions != null && sectionOptions.length > 1);
+  const hasDropdownOptions =
+    sectionOptions != null && sectionOptions.length > 1;
+  const showChevron = mode === "accordion" || hasDropdownOptions;
   const onClick = mode === "accordion" ? onToggle : undefined;
 
   const titleButton = (
@@ -90,9 +91,25 @@ function PopoverMenuSectionHeader(props: SectionHeaderProps): ReactElement {
     </button>
   );
 
+  const titleNode =
+    mode === "dropdown" && hasDropdownOptions ? (
+      <DropdownMenuPopover triggerButton={titleButton}>
+        {sectionOptions.map((option) => (
+          <DropdownMenu.Item
+            key={option}
+            onSelect={() => onChange?.(option)}
+          >
+            {option}
+          </DropdownMenu.Item>
+        ))}
+      </DropdownMenuPopover>
+    ) : (
+      titleButton
+    );
+
   return (
     <header className="sticky top-0 z-10 flex h-7 w-full min-w-0 items-center justify-start gap-2 bg-token-dropdown-background ps-3.5 pe-2.5 pb-0.5 text-base text-token-text-tertiary">
-      {titleButton}
+      {titleNode}
       {after == null ? null : (
         <div className="flex min-w-0 flex-1">{after}</div>
       )}
@@ -114,7 +131,7 @@ export function PopoverMenuSectionCount(props: {
 }
 
 /**
- * Bundle `lJo` — accordion / headerless / (soft) dropdown section.
+ * Bundle `lJo` — accordion / headerless / dropdown section.
  * Expand state is local until `$E` store peers land.
  */
 export function PopoverMenuSection(
@@ -151,9 +168,7 @@ export function PopoverMenuSection(
 
   const showContent =
     mode === "headerless" || isExpanded || mode === "dropdown";
-  const afterNode = isRenderProp(after)
-    ? after({ isExpanded })
-    : after;
+  const afterNode = isRenderProp(after) ? after({ isExpanded }) : after;
 
   const staticContent = (
     <div className="relative z-0 mt-0.5 overflow-hidden">
