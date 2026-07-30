@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
 import {
   GeneralSettings,
   ensureGeneralSettingsInit,
-} from "./general-settings.tsx";
+} from "./general-settings";
 import { SettingsSectionLayout } from "./settings-section-layout";
 import { SettingsSectionTitle } from "./settings-section-title";
 

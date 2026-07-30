@@ -36,3 +36,6 @@ export const serviceTierMessages = defineMessages({
     description: "Description for the Ultrafast service tier",
   },
 });
+
+// Semantic export aliases (split/export lane)
+export { serviceTierMessages as ServiceTierMessages };

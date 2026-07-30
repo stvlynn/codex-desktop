@@ -41,3 +41,6 @@ export function useUsageSettingsAccess(): {
 
 // --- qg-full-green: missing-relative-exports stubs (open-runtime wiring) ---
 export const ensureUsageSettingsAccessInit: any = undefined;
+
+// --- missing-relative-export aliases ---
+export { ensureUsageSettingsAccessInit as EnsureUsageSettingsAccessInit };

@@ -31,3 +31,6 @@ export function bindDeferredUiAC() {
     return t.phase === `inactive` || !t.outputMuted ? null : peers.lrs(e(peers.srs, t.locator));
   });
 }
+
+// --- missing-relative-export aliases ---
+export { bindDeferredUiAC as deferredUiAC };

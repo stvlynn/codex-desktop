@@ -28,3 +28,9 @@ export function chatgpt2() {
     peers.Au(), zh = `chatgpt`, Bh = peers.Ume(peers.zh);
   });
 }
+
+// --- split/export lane aliases ---
+export { chatgpt2 as Chatgpt2 };
+
+// --- missing-relative-export aliases ---
+export { chatgpt2 as Chatgpt22 };

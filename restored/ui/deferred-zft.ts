@@ -32,3 +32,6 @@ export const deferredZft = function () {
     peers.Fu.apply(this, arguments)
   );
 };
+
+// --- missing-relative-export aliases ---
+export { deferredZft as DeferredZft };

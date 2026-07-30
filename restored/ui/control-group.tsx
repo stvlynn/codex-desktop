@@ -24,3 +24,6 @@ export function ControlGroup({
 
 /** Bundle export `n` — Rolldown ESM init retained as no-op. */
 export function ensureControlGroupInit(): void {}
+
+// --- missing-relative-export aliases ---
+export { ensureControlGroupInit as EnsureControlGroupInit };

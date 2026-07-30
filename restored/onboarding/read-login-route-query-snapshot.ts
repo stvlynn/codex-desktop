@@ -16,36 +16,59 @@ export function setReadLoginRouteQuerySnapshotPeers(next: ReadLoginRouteQuerySna
   peers = next;
 }
 
+export type SetGlobalStateOptions = {
+  fetchFromHost?: (...args: unknown[]) => Promise<{ success: boolean }>;
+  throwOnFailure?: boolean;
+};
+
 /**
  * Bundle export `Yut` / internal `op`.
+ * Despite the historical filename, this writes a desktop global-state key
+ * (`set-global-state`) via the host bridge (used by first-run NUX accept).
  */
-async function readLoginRouteQuerySnapshot(e, t, n, r) {
+export async function readLoginRouteQuerySnapshot(
+  scope: { query: { snapshot: (cp: unknown, key: unknown) => SnapshotHandle } },
+  key: unknown,
+  value: unknown,
+  options?: SetGlobalStateOptions,
+): Promise<void> {
   if (peers == null) {
     throw new Error("readLoginRouteQuerySnapshot peers are not configured");
   }
 
-  let i = e.query.snapshot(peers.cp, t);
-  await i.cancel();
-  let a = i.getData();
-  i.setData({
-    value: n
+  const handle = scope.query.snapshot(peers.cp, key);
+  await handle.cancel();
+  const previous = handle.getData();
+  handle.setData({
+    value,
   });
   try {
-    let {
-      success: e
-    } = await (r?.fetchFromHost ?? peers.rp)(`set-global-state`, {
-      params: {
-        key: t,
-        value: n
-      }
-    });
-    if (!e) {
-      if (r?.throwOnFailure) throw Error(`Failed to set global setting`);
-      i.setData(a);
+    const { success } = await (options?.fetchFromHost ?? peers.rp)(
+      `set-global-state`,
+      {
+        params: {
+          key,
+          value,
+        },
+      },
+    );
+    if (!success) {
+      if (options?.throwOnFailure) throw Error(`Failed to set global setting`);
+      handle.setData(previous);
     }
-  } catch (e) {
-    throw i.setData(a), e;
+  } catch (error) {
+    handle.setData(previous);
+    throw error;
   } finally {
-    await i.invalidate(), peers.vp(i.queryKey);
+    await handle.invalidate();
+    peers.vp(handle.queryKey);
   }
 }
+
+type SnapshotHandle = {
+  cancel: () => Promise<void>;
+  getData: () => unknown;
+  setData: (next: unknown) => void;
+  invalidate: () => Promise<void>;
+  queryKey: unknown;
+};

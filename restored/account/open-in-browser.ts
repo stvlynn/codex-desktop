@@ -26,3 +26,6 @@ export function openInBrowser() {
     peers.Yf(), L$l = `1728613635`, R$l = `https://chatgpt.com/gifts/credits`;
   });
 }
+
+// --- missing-relative-export aliases ---
+export { openInBrowser as OpenInBrowser };

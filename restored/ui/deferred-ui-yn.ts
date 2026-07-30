@@ -23,3 +23,6 @@ export function deferredUiYn() {
 
   return peers.Ta(peers.Q, null);
 }
+
+// --- split/export lane aliases ---
+export { deferredUiYn as DeferredUiYn };

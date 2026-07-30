@@ -1,31 +1,17 @@
 // Restored from ref/webview/assets/esm-C58sDLre.js
-// Wave FY — soft-convert bindable shell (remove has-not-been-bound throws).
-// Evidence: chunk-ws present for esm-C58sDLre (auto-polished/original).
-// IMPORT_MAP exports: ensureTanstackReactFormInit, useTanstackForm, ensureTanstackReactFormApiInit, bindUseTanstackForm.
-// Wave FR — restored bindable shell after rejecting unsafe stale-alias consolidate.
-// Stage 3 shell; tanstackReactForm bindable. No free app-initial alias (blocked/no-alias).
+// npm shim: @tanstack/react-form — bundle exports n/r/t map to inits + useForm.
+// Soft-shell replaced; do not hand-rewrite the form-core body.
 
-type TanstackReactFormImpl = (...args: unknown[]) => unknown;
-let impl: TanstackReactFormImpl | null = null;
+export { useForm as useTanstackForm } from "@tanstack/react-form";
 
-/** Wire tanstackReactForm once deeper restore lands. */
-export function bindTanstackReactForm(next: TanstackReactFormImpl): void {
-  impl = next;
-}
+/** Bundle export `n` / `Ze` — rolldown __esm init; no-op under the npm package. */
+export function ensureTanstackReactFormInit(): void {}
+
+/** Bundle export `t` / `Qe` — companion API init; no-op under the npm package. */
+export function ensureTanstackReactFormApiInit(): void {}
 
 /**
- * Bindable tanstackReactForm.
- * Alias ownership unresolved — do not invent extractFn body.
+ * Soft-shell bind hook alias. Prefer `useTanstackForm` (`useForm`).
+ * Kept so consumers that imported the bindable name still resolve.
  */
-export function tanstackReactForm(...args: unknown[]): unknown {
-  if (impl == null) {
-    return null;
-  }
-  return impl(...args);
-}
-
-// --- qg-full-green: IMPORT_MAP export stubs ---
-export const bindUseTanstackForm: any = undefined;
-export const ensureTanstackReactFormApiInit: any = undefined;
-export const ensureTanstackReactFormInit: any = undefined;
-export const useTanstackForm: any = undefined;
+export { useForm as bindUseTanstackForm } from "@tanstack/react-form";

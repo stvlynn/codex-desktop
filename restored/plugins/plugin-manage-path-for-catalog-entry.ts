@@ -19,3 +19,6 @@ export function pluginManagePathForCatalogEntry(
     ...pluginMarketplaceRequestFields(entry),
   });
 }
+
+// --- missing-relative-export aliases ---
+export { pluginManagePathForCatalogEntry as PluginManagePathForCatalogEntry };

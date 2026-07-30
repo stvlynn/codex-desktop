@@ -54,3 +54,6 @@ export function ConnectorLogoStack({
 
 /** Bundle export `n` — Rolldown ESM init retained as no-op. */
 export function ensureConnectorLogoStackInit(): void {}
+
+// --- missing-relative-export aliases ---
+export { ensureConnectorLogoStackInit as EnsureConnectorLogoStackInit };

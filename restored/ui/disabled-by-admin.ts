@@ -1,24 +1,8 @@
-// Restored from ref/webview/assets/unknown-chunk-for-disabled-by-admin.js
-// Wave FY — soft-convert bindable shell (remove has-not-been-bound throws).
-// Open-runtime soft host: no IMPORT_MAP chunk owner / unknown-chunk header (Wave FR residue).
-// Wave FR — restored bindable shell after rejecting unsafe stale-alias consolidate.
-// Stage 3 shell; disabledByAdmin bindable. No free app-initial alias (blocked/no-alias).
+// Restored from ref/webview/assets/app-initial-C-fROkKo.js
+// Wave lane-B — stale soft shell consolidated to owner `plugins/is-availability-disabled-by-admin.ts`
+// (alias `Sw` already filled; do not invent body). via=filled-owner
 
-type DisabledByAdminImpl = (...args: unknown[]) => unknown;
-let impl: DisabledByAdminImpl | null = null;
-
-/** Wire disabledByAdmin once deeper restore lands. */
-export function bindDisabledByAdmin(next: DisabledByAdminImpl): void {
-  impl = next;
-}
-
-/**
- * Bindable disabledByAdmin.
- * Alias ownership unresolved — do not invent extractFn body.
- */
-export function disabledByAdmin(...args: unknown[]): unknown {
-  if (impl == null) {
-    return null;
-  }
-  return impl(...args);
-}
+export {
+  isAvailabilityDisabledByAdmin,
+  isAvailabilityDisabledByAdmin as disabledByAdmin,
+} from "../plugins/is-availability-disabled-by-admin";

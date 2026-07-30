@@ -55,3 +55,6 @@ export function useProfileUsageQuery(args: {
     },
   });
 }
+
+// --- missing-relative-export aliases ---
+export { useProfileUsageQuery as UseProfileUsageQuery };

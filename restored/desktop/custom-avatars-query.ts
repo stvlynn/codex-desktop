@@ -56,3 +56,7 @@ export const customAvatarByIdQueryAtom = createAppScopeSelectAtom(
 
 /** Bundle export `i` — Rolldown ESM init retained as no-op. */
 export function ensureCustomAvatarsQueryInit(): void {}
+
+// --- missing-relative-export aliases ---
+export { customAvatarsQueryKey as customAvatarsQueryI };
+export { customAvatarsQueryAtom as customAvatarsQueryN };

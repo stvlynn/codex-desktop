@@ -29,3 +29,6 @@ export function deferredT() {
     peers.Ho(), peers.ed(), ASu = peers.Ta(peers.Q, null);
   });
 }
+
+// --- split/export lane aliases ---
+export { deferredT as DeferredT };

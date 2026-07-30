@@ -78,3 +78,7 @@ export function ToolbarCircleDashedButton(props: ToolbarCircleDashedButtonProps)
 /** Bundle export `i` / `n` — Rolldown ESM inits retained as no-ops. */
 export function ensureToolbarCircleDashedButtonInit(): void {}
 export function ensureCircleDashedIconInit(): void {}
+
+// --- missing-relative-export aliases ---
+export { ensureCircleDashedIconInit as EnsureCircleDashedIconInit };
+export { ensureToolbarCircleDashedButtonInit as EnsureToolbarCircleDashedButtonInit };

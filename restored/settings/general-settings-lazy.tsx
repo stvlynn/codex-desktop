@@ -4,7 +4,7 @@
 import {
   GeneralSettings,
   ensureGeneralSettingsInit,
-} from "./general-settings.tsx";
+} from "./general-settings";
 
 ensureGeneralSettingsInit();
 export { GeneralSettings };

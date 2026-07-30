@@ -36,3 +36,6 @@ export function isStartingProcessExpired(
   if (snapshot == null) return false;
   return isStartStaleAgainstMetrics(row, snapshot, nowMs);
 }
+
+// --- missing-relative-export aliases ---
+export { isStartingProcessExpired as IsStartingProcessExpired };

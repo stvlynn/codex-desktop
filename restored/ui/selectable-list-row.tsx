@@ -256,3 +256,6 @@ export function SelectableListRow({
 
 /** Bundle export `n` — Rolldown ESM init retained as no-op. */
 export function ensureSelectableListRowInit(): void {}
+
+// --- missing-relative-export aliases ---
+export { ensureSelectableListRowInit as EnsureSelectableListRowInit };

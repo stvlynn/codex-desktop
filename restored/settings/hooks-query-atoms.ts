@@ -112,3 +112,6 @@ export async function invalidateHooksQueries(
 
 /** Bundle export `Oz` / init `Y4i` — Rolldown ESM init retained as no-op. */
 export function ensureHooksQueriesInit(): void {}
+
+// --- missing-relative-export aliases ---
+export { writeHooksStateMutationAtom as WriteHooksStateMutationAtom };

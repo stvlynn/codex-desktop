@@ -1,48 +1,61 @@
 // Restored from ref/webview/assets/debug-window-page-Bg0HT6g0.js
-// Wave FV — chunk-local lift from `debug-window-page-Bg0HT6g0` export { _ as DebugWindowPage }.
-// Evidence symbol `DebugWindowPage` (auto-polished.tsx, kind=fn, bodyLen=990).
-// Soft deferred host until companion imports are rewritten; NOT app-initial extractFn.
+// Wave FY — full polished body from `debug-window-page-Bg0HT6g0/auto-polished.tsx` with companion import rewrite.
+// Soft-deferred host replaced; NOT app-initial extractFn / promote / producer barrel.
+// Companion imports rewritten via IMPORT_MAP + app-initial exportSources (17/17).
 
-import type { ReactElement, ReactNode } from "react";
-
-export type DebugWindowPageProps = {
-  className?: string;
-  children?: ReactNode;
-  [key: string]: unknown;
-};
-
-type DebugWindowPageImpl = (props: DebugWindowPageProps) => ReactNode;
-let impl: DebugWindowPageImpl | null = null;
-
-/** Wire the full DebugWindowPage once deeper companion restore lands. */
-export function bindDebugWindowPage(next: DebugWindowPageImpl): void {
-  impl = next;
+import { isBusinessPlan } from "../account/plan-type-helpers";
+import { ensureComposerEsm_K1_Init, ensureComposerEsm_P5_Init } from "../boundaries/composer-esm-inits";
+import { react, reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
+import { Navigate } from "../boundaries/react-router-navigation";
+import { DebugModal, ensureDebugModalInit } from "../desktop/debug-modal";
+import { CodexBuildEnvironment } from "../env/codex-build-environment";
+import { ensureDebugPanelTurnFilesInit } from "../hooks/debug-panel-turn-files";
+import { strongMarkerFromOptions } from "../markdown/strong-marker-from-options";
+import { findSidebarSectionElement, writeScrollTop } from "../navigation/app-action-dom";
+import { commonJsInit, esmInit } from "../runtime/rolldown-runtime";
+import { ElectronOnly } from "../ui/electron-only";
+export function DebugWindowPage() {
+  let [echo, falcon] = copper.useState(null),
+    gamma;
+  if (gamma = harbor => {
+    let {
+      conversationId
+    } = harbor;
+    falcon(conversationId);
+  }, writeScrollTop("debug-window-origin-conversation-changed", gamma), !CodexBuildEnvironment.allowDebugMenu(isBusinessPlan())) {
+    let indigo;
+    return <Navigate {...{
+      to: "/",
+      replace: true
+    }} />;
+  }
+  return <ElectronOnly {...{
+    electron: true,
+    children: <main className="h-dvh w-full overflow-hidden bg-token-main-surface-primary text-token-foreground">
+            {<DebugModal {...{
+        conversationIdOverride: echo,
+        onClose: alpha,
+        showHeader: false,
+        showPopOutButton: false
+      }} />}
+          </main>
+  }} />;
 }
-
-/**
- * Bundle export `DebugWindowPage` / chunk-local `_`.
- * Lifted from debug-window-page-Bg0HT6g0 (auto-polished.tsx).
- */
-export function DebugWindowPage(
-  props: DebugWindowPageProps = {},
-): ReactElement {
-  if (impl != null) return impl(props) as ReactElement;
-  const { className, children } = props;
-  return (
-    <div
-      className={className ?? "flex min-w-0 flex-col gap-2"}
-      data-fv-chunk="debug-window-page-Bg0HT6g0"
-      data-fv-short="_"
-      aria-label="DebugWindowPage"
-    >
-      {children ?? (
-        <div className="text-sm text-token-text-secondary">
-          DebugWindowPage (chunk-local _)
-        </div>
-      )}
-    </div>
-  );
+function alpha() {
+  return window.close();
 }
+var bravo, copper, delta;
+esmInit(() => {
+  bravo = reactCompilerRuntime();
+  strongMarkerFromOptions();
+  copper = commonJsInit(react(), 1);
+  ensureComposerEsm_P5_Init();
+  ensureComposerEsm_K1_Init();
+  findSidebarSectionElement();
+  ensureDebugPanelTurnFilesInit();
+  ensureDebugModalInit();
+})();
 
-/** Rolldown ESM init retained as no-op. */
+/** Wave FY: bind no longer required after full body promote */
+export function bindDebugWindowPage(_next: unknown): void {}
 export function ensureDebugWindowPageInit(): void {}

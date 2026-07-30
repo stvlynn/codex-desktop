@@ -65,3 +65,6 @@ export function applyActive() {
     }
   };
 }
+
+// --- missing-relative-export aliases ---
+export { applyActive as ApplyActive };

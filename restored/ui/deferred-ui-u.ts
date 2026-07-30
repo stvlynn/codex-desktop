@@ -26,3 +26,6 @@ export function bindDeferredUiU() {
     get: e
   }) => e(peers.Mbu).active);
 }
+
+// --- missing-relative-export aliases ---
+export { bindDeferredUiU as deferredUiU };

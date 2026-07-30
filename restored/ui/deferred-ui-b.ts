@@ -26,3 +26,6 @@ export function deferredUiB() {
     peers.cE(), peers.Vf();
   });
 }
+
+// Semantic export aliases (split/export lane)
+export { deferredUiB as DeferredUiB };

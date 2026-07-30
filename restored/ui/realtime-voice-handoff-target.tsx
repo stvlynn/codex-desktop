@@ -180,3 +180,6 @@ export function RealtimeVoiceHandoffTarget(props: RealtimeVoiceHandoffTargetProp
 
 /** Bundle export `n` — Rolldown ESM init retained as no-op. */
 export function ensureRealtimeVoiceHandoffTargetInit(): void {}
+
+// --- missing-relative-export aliases ---
+export { ensureRealtimeVoiceHandoffTargetInit as EnsureRealtimeVoiceHandoffTargetInit };

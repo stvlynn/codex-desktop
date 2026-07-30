@@ -107,3 +107,6 @@ export function toggleConversationPinned({
     }
   });
 }
+
+// --- missing-relative-export aliases ---
+export { toggleConversationPinned as ToggleConversationPinned };

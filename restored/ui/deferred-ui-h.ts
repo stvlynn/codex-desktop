@@ -85,3 +85,6 @@ export function deferredUiH() {
     }) => peers.e(peers.Mbu).active);
   });
 }
+
+// Semantic export aliases (split/export lane)
+export { deferredUiH as DeferredUiH };

@@ -175,3 +175,7 @@ export function DetailPage({ children }: DetailPageProps): ReactNode {
 
 /** Bundle export `r` — page container ESM init (no-op). */
 export function ensureDetailPageInit(): void {}
+
+// --- missing-relative-export aliases ---
+export { ensureDetailPageSectionHeaderInit as EnsureDetailPageSectionHeaderInit };
+export { ensureDetailPageSectionInit as EnsureDetailPageSectionInit };
