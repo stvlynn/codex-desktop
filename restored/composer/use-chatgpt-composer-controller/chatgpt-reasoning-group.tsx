@@ -2,11 +2,11 @@
 // ChatGPT reasoning-group renderer for browser-conversation rows.
 
 import { ChatMessageContent as appInitialQd } from "../../chat/chat-message-content";
+import { useChatgptComposerControllerHelper261 } from "../../boundaries/use-chatgpt-composer-controller";
 import {
-  useChatgptComposerControllerHelper261,
   useChatgptComposerControllerHelper262,
   useChatgptComposerControllerHelper264,
-} from "../../boundaries/use-chatgpt-composer-controller";
+} from "./chatgpt-reasoning-chrome-helpers";
 import { activityItemStableId as appInitialBd } from "../../conversation/activity-item-stable-id";
 import { classifyActivityItemGrouping as AppInitialOd } from "../../conversation/classify-activity-item-grouping";
 import { ConversationTurnUnits as appInitialPc } from "../../conversation/conversation-turn-units";

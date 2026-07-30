@@ -11,15 +11,17 @@ import {
   writingBlocksControllerAtom as appInitialCI,
 } from "../../boundaries/composer-appscope-atoms";
 import {
-  useChatgptComposerControllerHelper104,
   useChatgptComposerControllerHelper248,
   useChatgptComposerControllerHelper255,
-  useChatgptComposerControllerHelper259,
   useChatgptComposerControllerHelper284,
+} from "../../boundaries/use-chatgpt-composer-controller";
+import { useChatgptComposerControllerHelper104 } from "./chatgpt-conversation-image-download";
+import { useChatgptComposerControllerHelper259 } from "./chatgpt-codex-handoff-continued-link";
+import {
   useChatgptComposerControllerHelper287,
   useChatgptComposerControllerHelper288,
-  useChatgptComposerControllerHelper292,
-} from "../../boundaries/use-chatgpt-composer-controller";
+} from "./chatgpt-tool-approval-helpers";
+import { useChatgptComposerControllerHelper292 } from "./chatgpt-generated-image-item";
 import { AgentActivitySummaryPart as AppInitialVd } from "../../conversation/agent-activity-summary-part";
 import { ConversationRoleHeading as appInitialEf } from "../../conversation/conversation-role-heading";
 import { EndResourceList as appInitialHc } from "../../conversation/end-resource-list";
