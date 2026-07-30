@@ -3,6 +3,7 @@
 // Soft-deferred host replaced; NOT app-initial extractFn / promote / producer barrel.
 // Residual companion stubs: 53 (verified 130/182).
 // Public barrel.
+// Wave QG — fixed Hft/Wft collisions (motion/cx), real overflow bindables, react-dom/findLastIndex.
 export * from "./part-1-g1";
 export * from "./part-1-g2";
 export * from "./part-2-g1";

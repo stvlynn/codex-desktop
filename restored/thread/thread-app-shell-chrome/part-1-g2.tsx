@@ -16,6 +16,7 @@ import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-run
 import { chatgptConversationsGateAtom, useStepsProseAtom } from "../../boundaries/composer-appscope-atoms";
 import { ensureComposerEsm_B7_Init, ensureComposerEsm_BU_Init, ensureComposerEsm_CU_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_IB_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_LR_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_NA_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wdt_Init, ensureComposerEsm_Wlt_Init as EnsureComposerEsm_Wlt_Init, ensureComposerEsm_Ytt_Init } from "../../boundaries/composer-esm-inits";
 import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_GZ_Init } from "../../boundaries/conversation-page-esm-inits";
+import { useState } from "react";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
@@ -73,13 +74,6 @@ import { CompoundButtonMenu } from "../../ui/compound-button-menu";
 import { cx } from "../../ui/cx";
 import { DEFAULT_MOTION_TRANSITION } from "../../ui/default-motion-transition";
 import { motion } from "../../vendor/framer-motion";
-import {
-  hazel,
-  jasper,
-  kelp,
-  lotus,
-  ThreadAppShellChromeHelper19,
-} from "./part-2-g1";
 import { deferredUiYE } from "../../ui/deferred-ui-ye";
 import { deferredW1 } from "../../ui/deferred-w1";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
@@ -102,7 +96,99 @@ import { threadOverflowMenuO, threadOverflowMenuS } from "../thread-overflow-men
 import { initThreadPanelToggleButton as InitThreadPanelToggleButton, ThreadPanelToggleButton } from "../thread-panel-toggle-button";
 
 
-function ThreadAppShellChromeHelper17(gasket) {
+
+const jasper = {
+  closed: { opacity: 0, y: -8, transition: { duration: 0.06, ease: DEFAULT_MOTION_TRANSITION.ease, when: "afterChildren" } },
+  open: { opacity: 1, y: 0, transition: { duration: 0.09, ease: DEFAULT_MOTION_TRANSITION.ease, when: "beforeChildren" } },
+};
+const kelp = {
+  closed: { transition: { staggerChildren: 0.008, staggerDirection: -1 } },
+  open: { transition: { delayChildren: 0.012, staggerChildren: 0.016 } },
+};
+const lotus = {
+  closed: { opacity: 0, y: -6, transition: { duration: 0.045, ease: DEFAULT_MOTION_TRANSITION.ease } },
+  open: { opacity: 1, y: 0, transition: { duration: 0.075, ease: DEFAULT_MOTION_TRANSITION.ease } },
+};
+const lemon: any = (item: any) => item?.id ?? String(item);
+const nickel: any = (artifact: any) => artifact?.title ?? artifact?.name ?? "";
+const marble: any = (artifact: any) => artifact?.title ?? artifact?.name ?? "";
+const ThreadAppShellChromeHelper6: any = (_props: any) => null;
+
+function ThreadAppShellChromeHelper19(nipple) {
+  let {
+      artifacts,
+      onOpen
+    } = nipple,
+    [orifice, pin] = useState(null),
+    race;
+  {
+    let sleeve;
+    sleeve = (trunnion, boss) => <ThreadAppShellChromeHelper20 key={lemon(trunnion)} {...{
+      hideDivider: orifice === boss || orifice === boss + 1,
+      artifact: trunnion,
+      onOpen,
+      onActiveChange: cam => pin(cam ? boss : null)
+    }} />;
+    race = artifacts.map(sleeve);
+  }
+  return <ul className="mx-auto flex w-full max-w-xl flex-col px-panel">
+      {race}
+    </ul>;
+}
+function ThreadAppShellChromeHelper20(detent) {
+  let {
+      artifact,
+      hideDivider,
+      onActiveChange,
+      onOpen
+    } = detent,
+    eccentric = hideDivider && "after:hidden",
+    follower = cx("relative flex w-full after:absolute after:inset-x-3 after:bottom-0 after:h-px after:bg-token-border-light after:content-[''] last:after:hidden", eccentric);
+  let guide = nickel(artifact);
+  let helix = cx("cursor-interaction relative min-h-10 w-full rounded-md px-2.5 py-2 text-left", "hover:bg-token-list-hover-background", "focus-visible:outline focus-visible:outline-2 focus-visible:outline-token-border-xstrong");
+  let impeller, journal, kingpin, land;
+  impeller = () => onActiveChange(false);
+  journal = () => onActiveChange(true);
+  kingpin = () => onActiveChange(true);
+  land = () => onActiveChange(false);
+  let mesh = thrust => onOpen(artifact, thrust);
+  let neck = <span className="icon-xs flex shrink-0 items-center justify-center text-token-text-secondary">
+      {<ThreadAppShellChromeHelper6 {...{
+      artifact,
+      iconClassName: "icon-xs",
+      imageClassName: "size-full rounded"
+    }} />}
+    </span>;
+  let pad = marble(artifact);
+  let quillshaft = <span className="min-w-0 flex-1 truncate text-sm font-normal text-token-text-primary">
+      {pad}
+    </span>;
+  let roller = <span className="flex min-w-0 items-center gap-2">
+      {neck}
+      {quillshaft}
+    </span>;
+  let spindle = <button type="button" title={guide} className={helix} onBlur={impeller} onFocus={journal} onMouseEnter={kingpin} onMouseLeave={land} onClick={mesh}>
+      {roller}
+    </button>;
+  return <li className={follower}>
+      {spindle}
+    </li>;
+}
+
+export type ThreadAppShellChromeHelper17Props = {
+  actions: Array<{
+    id: string;
+    title?: unknown;
+    onSelect?: (...args: unknown[]) => unknown;
+    Icon?: any;
+    mcpServerIcon?: unknown;
+    keyboardShortcut?: unknown;
+  }>;
+  onOpenArtifact?: (...args: unknown[]) => unknown;
+  outputArtifacts?: unknown[] | null;
+};
+
+export function ThreadAppShellChromeHelper17(gasket: ThreadAppShellChromeHelper17Props) {
   let {
       actions,
       onOpenArtifact,
@@ -110,8 +196,8 @@ function ThreadAppShellChromeHelper17(gasket) {
     } = gasket,
     handle = outputArtifacts != null && outputArtifacts.length > 0 ? outputArtifacts : null,
     insert = CodexPluginActionResult(readPrefersReducedMotionAtom),
-    [jacket, knurl] = hazel.useState(null),
-    [lever, mount] = hazel.useState(false),
+    [jacket, knurl] = useState(null),
+    [lever, mount] = useState(false),
     [nozzle, platen] = useContentRectSize(),
     ratchet = insert ? undefined : "open",
     shim = insert ? undefined : jasper,

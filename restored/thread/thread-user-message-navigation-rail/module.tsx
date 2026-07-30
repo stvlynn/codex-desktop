@@ -72,7 +72,6 @@ const fileCsv: any = undefined;
 const deferredConversationVJ: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_VL_Init@boundaries/composer-esm-inits.ts) */
 const AppInitialVL: any = undefined;
-/** Wave FZ unresolved companion (missing-export:ui/intl-provider.tsx) */
 /** Wave FZ unresolved companion (missing-export:boundaries/quick-chat-window-facades.tsx) */
 const QuickChatConversationTitleAtom: any = undefined;
 /** Wave FZ unresolved companion (missing-export:plugins/slides-google-com.tsx) */

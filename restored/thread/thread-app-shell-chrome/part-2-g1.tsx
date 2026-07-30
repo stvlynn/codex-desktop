@@ -158,7 +158,7 @@ const ThreadAppShellChromeHelper22: any = undefined;
 const ThreadAppShellChromeHelper21: any = undefined;
 const ThreadAppShellChromeHelper14: any = undefined;
 
-export function ThreadAppShellChromeHelper19(nipple) {
+function ThreadAppShellChromeHelper19(nipple) {
   let {
       artifacts,
       onOpen
@@ -219,12 +219,12 @@ function ThreadAppShellChromeHelper20(detent) {
     </li>;
 }
 var _r,
-  ivory;
-export var hazel;
-export var jasper;
-export var kelp;
-export var lotus;
-var mint = esmInit(() => {
+  hazel,
+  ivory,
+  jasper,
+  kelp,
+  lotus,
+  mint = esmInit(() => {
     _r = reactCompilerRuntime();
     ensureComposerEsm_Tft_Init();
     useBrowserExtensionPluginSetupQuery();

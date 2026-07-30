@@ -91,7 +91,7 @@ import { getRecentConversationsQueryKey } from "../../worktrees/get-recent-conve
 import { localConversationThreadUpperA, localConversationThreadUpperL as LocalConversationThreadUpperL, localConversationThreadUpperR } from "../local-conversation-thread";
 import { threadOverflowMenuO, threadOverflowMenuS } from "../thread-overflow-menu";
 import { initThreadPanelToggleButton as InitThreadPanelToggleButton, ThreadPanelToggleButton } from "../thread-panel-toggle-button";
-const ThreadAppShellChromeHelper17: any = undefined;
+import { ThreadAppShellChromeHelper17 } from "./part-1-g2";
 
 const deferredUiA4: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:resolvePanelSide@navigation/resolve-panel-side.ts) */
@@ -211,10 +211,10 @@ var alpha,
         <path fillRule="evenodd" clipRule="evenodd" d="M15 3.08594C16.748 3.08594 18.165 4.503 18.165 6.25098V13.751C18.165 15.499 16.748 16.916 15 16.916H5C3.25202 16.916 1.83496 15.499 1.83496 13.751V6.25098C1.83496 4.503 3.25202 3.08594 5 3.08594H15ZM5 4.41602C3.98656 4.41602 3.16504 5.23753 3.16504 6.25098V13.751C3.16504 14.7644 3.98656 15.5859 5 15.5859H15C16.0134 15.5859 16.835 14.7644 16.835 13.751V6.25098C16.835 5.23753 16.0134 4.41602 15 4.41602H5Z" fill="currentColor" />
         <path d="M3.16504 12.2529H16.835V13.583H3.16504V12.2529Z" fill="currentColor" />
       </svg>;
-  }),
-  threadAppShellChromeR = esmInit(() => {
-    localConversationThreadUpperA();
   });
+export const threadAppShellChromeR = esmInit(() => {
+  localConversationThreadUpperA();
+});
 function gamma({
   onClose,
   target
