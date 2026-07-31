@@ -23034,7 +23034,7 @@
       "status": "done"
     },
     "conversation-source-AkSNVCIa": {
-      "restored": "boundaries/conversation-source.tsx",
+      "restored": "conversation/conversation-source/index.ts",
       "status": "done",
       "exports": {
         "C": "conversationSourceC",
@@ -23050,7 +23050,7 @@
         "S": "conversationSourceS"
       },
       "classification": "local",
-      "notes": "qg-full-green: relocated oversized dump to boundaries (vendored flat boundary). qg-full-green: open-runtime vendored boundary (oversized conversation source).",
+      "notes": "qg-full-green: relocated oversized dump to boundaries (vendored flat boundary). qg-full-green: open-runtime vendored boundary (oversized conversation source). Wave CS-drain: body split into conversation/conversation-source semantic modules; boundary thin re-export.",
       "stage3Accepted": true
     },
     "auto-track-C2WS6wxc": {
