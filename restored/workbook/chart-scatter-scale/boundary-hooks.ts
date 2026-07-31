@@ -2,6 +2,8 @@
 // Stage-3 wave-97: chart-scatter-scale boundary hooks.
 
 export type ChartScatterScaleBoundaryHooks = {
+  bh399: (...args: any[]) => any;
+  bh534: (...args: any[]) => any;
   bh398: (...args: any[]) => any;
   bh400: (...args: any[]) => any;
   bh533: (...args: any[]) => any;

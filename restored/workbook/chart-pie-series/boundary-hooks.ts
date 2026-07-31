@@ -2,6 +2,16 @@
 // Stage-3 wave-101/102: chart-pie-series boundary hooks.
 
 export type ChartPieSeriesBoundaryHooks = {
+  contrastPair: (...args: any[]) => any;
+  measureText: (...args: any[]) => any;
+  formatValue: (...args: any[]) => any;
+  minArcLen: any;
+  minRing: any;
+  minValueArc: any;
+  minValueRing: any;
+  nameFont: any;
+  valueFont: any;
+  lineGap: any;
   /** Slice mid-angle helpers (legacy dbe). */
   sliceMid: (...args: any[]) => any;
   bh347: (...args: any[]) => any;

@@ -3,3 +3,8 @@
 
 export { wireChartTrendlineBoundaryHooks, ctlH } from "./boundary-hooks";
 export { paintChartTrendline } from "./chart-trendline-impl";
+
+export {
+  paintTrendlineLabel,
+  workbookHelper524,
+} from "./paint-trendline-label-impl";

@@ -6,3 +6,8 @@ export {
   computeHistogramBins,
   workbookHelper555,
 } from "./chart-histogram-bins-impl";
+
+export {
+  aggregateHistogramBins,
+  _Se,
+} from "./aggregate-histogram-bins-impl";

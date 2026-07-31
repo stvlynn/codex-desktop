@@ -41,3 +41,16 @@ export {
   ensurePlaceholderStyleInit,
   ensurePresentationThemeInit,
 } from "./ensure-presentation-theme-init";
+
+export {
+  wireThemeFontsBoundaryHooks,
+  ptfH,
+} from "./boundary-hooks-theme-fonts";
+export {
+  collectSlideThemeFonts,
+  normalizeFontScheme,
+  addTypeface,
+  VDe,
+  HDe,
+  workbookHelper679,
+} from "./collect-slide-theme-fonts-impl";

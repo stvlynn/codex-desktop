@@ -10,3 +10,10 @@ export {
   clampColumnWidth,
   $B,
 } from "./layout-table-columns-impl";
+
+export {
+  mergeCollinearBorderStrokes,
+  materializeBorderStrokes,
+  bTe,
+  xTe,
+} from "./materialize-border-strokes-impl";

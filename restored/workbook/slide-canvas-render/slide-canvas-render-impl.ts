@@ -12,6 +12,7 @@ import {
 } from "../text-box";
 import { resolveShapeTextFrameRect } from "../preset-shape";
 import { scrH } from "./boundary-hooks";
+import { paintViewOverlay } from "./paint-view-overlay-impl";
 import { paintSlideText } from "./paint-slide-text-impl";
 
 void paintSlideText;
@@ -336,7 +337,7 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
       });
   }
   scrIn175?.viewOverlay &&
-    scrH.paintViewOverlay(
+    paintViewOverlay(
       scrIn167,
       scrIn166,
       scrIn165,

@@ -2,7 +2,8 @@
 // Stage-3 wave-102: chart-histogram-bins boundary hooks.
 
 export type ChartHistogramBinsBoundaryHooks = {
-  aggregatedBins: (...args: any[]) => any;
+  parseBinLabel: (...args: any[]) => any;
+  bh347: (...args: any[]) => any;
   coerceNumber: (...args: any[]) => any;
   valueExtent: (...args: any[]) => any;
   binWidth: (...args: any[]) => any;

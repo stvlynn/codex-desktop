@@ -7,3 +7,8 @@ export {
   paintPieLabels,
   workbookHelper496,
 } from "./chart-pie-series-impl";
+
+export {
+  paintDonutArcLabels,
+  qSe,
+} from "./paint-donut-arc-labels-impl";

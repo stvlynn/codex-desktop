@@ -3,3 +3,8 @@
 
 export { wireChartWaterfallBarBoundaryHooks, cwbH } from "./boundary-hooks";
 export { paintWaterfallBar, dCe } from "./chart-waterfall-bar-impl";
+
+export {
+  paintWaterfallSeries,
+  pCe,
+} from "./paint-waterfall-series-impl";

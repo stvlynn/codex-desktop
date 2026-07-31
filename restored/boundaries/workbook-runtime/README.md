@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~53.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~52.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -181,6 +181,19 @@
 | Matrix determinant (`klt`) | ~0.08k | **Drained (wave-106)** → `workbook/formula-matrix-inverse/` |
 | Paste target resolve (`Tmt`/`Emt`) | ~0.09k | **Drained (wave-106)** → `workbook/html-paste/` |
 | Range-ref remap (`Bht`/`helper1023`) | ~0.10k | **Drained (wave-106)** → `workbook/formula-ast-remap/` |
+| Trendline label (`helper524`) | ~0.08k | **Drained (wave-107)** → `workbook/chart-trendline/` |
+| Bubble scale fit (`helper539`) | ~0.07k | **Drained (wave-107)** → `workbook/chart-scatter-scale/` |
+| Histogram aggregate bins (`_Se`) | ~0.08k | **Drained (wave-107)** → `workbook/chart-histogram-bins/` |
+| Donut arc labels (`qSe`) | ~0.08k | **Drained (wave-107)** → `workbook/chart-pie-series/` |
+| Waterfall series (`pCe`) | ~0.08k | **Drained (wave-107)** → `workbook/chart-waterfall-bar/` |
+| Custom path draw/clip (`Rwe`/`cTe`) | ~0.16k | **Drained (wave-107)** → `workbook/shape-path/` |
+| Path endpoint metrics (`mTe`) | ~0.08k | **Drained (wave-107)** → `workbook/shape-path-densify/` |
+| Table border strokes (`bTe`/`xTe`) | ~0.12k | **Drained (wave-107)** → `workbook/table-cell-paint/` |
+| Slide view overlay (`dEe` cluster) | ~0.27k | **Drained (wave-107)** → `workbook/slide-canvas-render/` |
+| Theme typefaces (`VDe`) | ~0.09k | **Drained (wave-107)** → `workbook/presentation-theme/` |
+| Formula dep edges (`WXe`) | ~0.11k | **Drained (wave-107)** → `workbook/formula-dep-scc/` |
+| GROWTH (`pQe`) | ~0.08k | **Drained (wave-107)** → `workbook/formula-growth/` |
+| YIELD/PRICEDISC (`k0e`/`H0e`) | ~0.15k | **Drained (wave-107)** → `workbook/formula-securities/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1359,3 +1372,12 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on modules + peers + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 53312 (was 54143; Δ -831).
 - Next: newly revealed ≥75–90 / leave-behinds when safe.
+
+## Wave-107 progress
+
+- Re-scanned ≥70 after wave-106. **FALSE/ESM:** `ict`/`_xe@1150`/`helper672@xDe`/`helper391@841`/`hxe@mxe`/`helper601@Twe`/`Amt@kmt`/`helper438@866`/`PDe@1489`/`BTe@zTe`. **LEAVE:** `rze`/`kht`/`WorkbookN`/`_workbookS`. **SKIP:** `Qwe` (heavy leave-behinds), `CSe` (dead).
+- Preferred reals + owned neighbors: `Rwe`/`cTe`/`dEe`-cluster/`qSe`/`VDe`+HDe/`pQe`/`k0e`/`H0e`/`pCe`/`mTe`/`helper524`/`_Se`/`helper539`/`bTe`+`xTe`/`UXe`+`WXe`+`GXe`.
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on modules + peers + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 52005 (was 53308; Δ -1303).
+- Next: newly revealed ≥70–85 / `Qwe` when leave-behinds thin / leave-behinds when safe.

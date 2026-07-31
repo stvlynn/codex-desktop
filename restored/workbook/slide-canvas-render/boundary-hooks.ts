@@ -2,8 +2,9 @@
 // Stage-3 wave-94/105: slide-canvas-render boundary hooks.
 
 export type SlideCanvasRenderBoundaryHooks = {
+  /** Guide orientation enum (legacy tt). */
+  guideEnum: any;
   paintSlideShape: (...args: any[]) => any;
-  paintViewOverlay: (...args: any[]) => any;
   paintSlideGroup: (...args: any[]) => any;
   paintSlideImage: (...args: any[]) => any;
   isHiddenElement: (...args: any[]) => any;

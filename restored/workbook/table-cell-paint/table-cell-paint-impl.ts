@@ -4,6 +4,7 @@
 
 import { workbookGt } from "../text-style";
 import { tcpH } from "./boundary-hooks";
+import { materializeBorderStrokes } from "./materialize-border-strokes-impl";
 import { layoutTableColumns } from "./layout-table-columns-impl";
 
 void layoutTableColumns;
@@ -161,7 +162,7 @@ export function paintTableCells(tcpIn657: any, tcpIn658: any, tcpIn659: any = {}
         tcpBind7470.lines?.left,
       );
     }
-  return tcpH.materializeBorderStrokes([...tcpBind4808.values()]);
+  return materializeBorderStrokes([...tcpBind4808.values()]);
 }
 
 /** Legacy alias. */

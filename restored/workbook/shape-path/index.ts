@@ -10,3 +10,9 @@ export {
   DEG_TO_RAD,
   PATH_EPS,
 } from "./shape-path-impl";
+
+export { drawCustomPaths, Rwe } from "./draw-custom-paths-impl";
+export {
+  pathCommandsToClipPoints,
+  cTe,
+} from "./path-commands-to-clip-impl";

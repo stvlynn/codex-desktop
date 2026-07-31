@@ -4,6 +4,7 @@
 
 import { Jn as _presentationJn } from "../presentation-protobuf";
 import { chbinH } from "./boundary-hooks";
+import { aggregateHistogramBins } from "./aggregate-histogram-bins-impl";
 
 void _presentationJn;
 void chbinH;
@@ -24,7 +25,7 @@ export function computeHistogramBins(chbIn937: any, chbIn938: any) {
     };
   let chbBind5956 = chbIn937.histogramOptions;
   if (chbBind5956?.aggregated) {
-    let chbBind22874 = chbinH.aggregatedBins(
+    let chbBind22874 = aggregateHistogramBins(
       chbIn937,
       chbBind5955,
       chbBind5956,

@@ -9,3 +9,14 @@ export {
   nEe,
   tEe,
 } from "./paint-slide-text-impl";
+
+export {
+  paintViewOverlay,
+  paintGridDots,
+  paintSlideGuides,
+  resolveSlideViewport,
+  dEe,
+  sEe,
+  uEe,
+  iEe,
+} from "./paint-view-overlay-impl";
