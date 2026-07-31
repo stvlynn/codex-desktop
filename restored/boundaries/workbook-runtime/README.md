@@ -787,3 +787,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary LOC ≈ 98173 (was 99489; Δ -1316).
 - Next: Google Slides `oJe`/`pJe`/`SJe` (~1.4k) / Ume table-styles (~1.4k) / clean `xLe` walnut peel before comments/`_C` (~660) / compose DSL Binding1490–1528 / flowchart `NPe` cluster.
 
+## Wave-70 progress
+
+- Identified contiguous `Nme`/`Ume`/`ahe` cluster as Codex Excel table/pivot style presets (NOT vendor): region names + preset color/font/fill/line/DXF templates + resolve helpers + style registry (~1.95k LOC).
+- Extracted → `workbook/table-styles/` (split under flat limit; `wr`/`Zn`/`tr` via `presentation-protobuf`).
+- Left compose DSL Binding1490–1528, Google Slides `oJe`/`pJe`/`SJe`, `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, flowchart `NPe`/`PPe` + graph layout Binding1675/1685, Table VO `fhe`/`ohe`, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 96321 (was 98173; Δ -1852).
+- Next: Google Slides `oJe`/`pJe`/`SJe` (~1.4k) / clean `xLe` walnut peel before comments/`_C` (~660) / compose DSL Binding1490–1528 / flowchart `NPe` cluster / Table VO `fhe`.
+
