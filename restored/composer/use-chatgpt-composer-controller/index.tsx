@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Semantic composer-domain API: typed aliases over the open oversized runtime body.
-// Stage-3 wave-13: map widgets + pie chart + forecast/file surfaces drained.
-// Residual: Helper243 content-reference router + remaining peer surfaces.
+// Stage-3 wave-14: content-reference router + product/sports/stock/location surfaces drained.
+// Residual: client-defined widget mountain (Helper124–178) + remaining ensures.
 
 export type {
   ChatgptBrowserConversationBannerProps,
@@ -457,6 +457,49 @@ export {
   useChatgptComposerControllerHelper182,
   ensureChatgptMapContentReferenceInit,
 } from "./chatgpt-map-content-reference";
+
+export {
+  useChatgptComposerControllerHelper114,
+  useChatgptComposerControllerHelper119,
+  useChatgptComposerControllerHelper121,
+  useChatgptComposerControllerHelper122,
+  useChatgptComposerControllerHelper123,
+  slot125 as useChatgptComposerControllerValue125,
+  slot128 as useChatgptComposerControllerValue128,
+  slot131 as useChatgptComposerControllerValue131,
+  slot125 as ensureChatgptProductCarouselInit,
+  slot128 as ensureChatgptCalculatorFallbackInit,
+  slot131 as ensureChatgptAttributionSourcesInit,
+} from "./chatgpt-product-carousel-references";
+export {
+  useChatgptComposerControllerHelper179,
+  useChatgptComposerControllerHelper180,
+} from "./chatgpt-code-link-title-citations";
+export {
+  useChatgptComposerControllerHelper181,
+  slot242 as useChatgptComposerControllerValue242,
+  slot248 as useChatgptComposerControllerValue248,
+  slot242 as ensureChatgptVideoSurfaceInit,
+  slot248 as ensureChatgptMapsAttributionInit,
+} from "./chatgpt-location-search-attribution";
+export {
+  useChatgptComposerControllerHelper208,
+  useChatgptComposerControllerHelper223,
+  useChatgptComposerControllerHelper236,
+  useChatgptComposerControllerHelper241,
+  useChatgptComposerControllerHelper242,
+  slot278 as useChatgptComposerControllerValue278,
+  slot299 as useChatgptComposerControllerValue299,
+  slot278 as ensureChatgptProductEntitySurfaceInit,
+  slot299 as ensureChatgptTitleCitationSurfaceInit,
+} from "./chatgpt-product-sports-stock-surfaces";
+export {
+  useChatgptComposerControllerHelper243,
+} from "./chatgpt-content-reference-router";
+export {
+  setChatgptContentReferenceRouterPeers,
+} from "./chatgpt-content-reference-router-peers";
+
 
 
 
