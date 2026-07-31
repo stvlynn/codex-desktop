@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Composer-controller aux init O — overlay materialization over U.
 
-import { ensureAppScopeHostInit as appInitialMT } from "../../boundaries/app-scope-runtime";
+import { ensureAppScopeHostInit as appInitialMT } from "../../runtime/app-scope-runtime";
 import {
   ensureComposerEsm_jP_Init as appInitialJP,
   ensureComposerEsm_M0_Init as appInitialM0,

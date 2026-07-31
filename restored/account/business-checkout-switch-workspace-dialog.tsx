@@ -5,7 +5,7 @@
 
 import { CodexPluginActionType } from "../analytics/codex-plugin-action-type-enum";
 import { useUpdateAuthNonce } from "../auth/use-update-auth-nonce";
-import { appScopeAtom, ensureAppScopeInit } from "../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../runtime/app-scope-runtime";
 import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init } from "../boundaries/composer-esm-inits";
 import { react } from "../boundaries/react-cjs-runtime";
 import { toastAtom } from "../boundaries/toast-atom";

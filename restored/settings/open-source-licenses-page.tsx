@@ -4,7 +4,7 @@
 // edt→createAppScopeQueryAtom (ep wrapper).
 
 import type { ReactNode } from "react";
-import { appScopeAtom } from "../boundaries/app-scope-runtime";
+import { appScopeAtom } from "../runtime/app-scope-runtime";
 import {
   createAppScopeQueryAtom,
   useAppScopeValue,

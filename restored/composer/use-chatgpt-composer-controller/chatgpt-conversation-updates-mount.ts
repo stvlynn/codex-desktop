@@ -5,7 +5,7 @@ import {
   appScopeAtom as appInitialFft,
   ensureAppScopeHostInit as appInitialMT,
   ensureAppScopeInit as appInitialIft,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import { createAppScopeDerivedAtom as appInitialZT } from "../../boundaries/composer-appscope-atoms";
 import { rolldownRuntimeN } from "../../runtime/rolldown-runtime";
 import {

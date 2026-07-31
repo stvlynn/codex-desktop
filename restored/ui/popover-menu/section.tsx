@@ -19,7 +19,7 @@ import {
   sectionAutoCollapseStatusAtom,
   sectionExpandedAtom,
 } from "../../conversation/thread-summary-panel-section-expanded";
-import { useAppScopeFamilyValue } from "../../boundaries/app-scope-runtime";
+import { useAppScopeFamilyValue } from "../../runtime/app-scope-runtime";
 import { cx } from "../cx";
 import { DropdownMenu, DropdownMenuPopover } from "../dropdown-menu";
 import { usePrefersReducedMotion } from "../../motion/use-prefers-reduced-motion";

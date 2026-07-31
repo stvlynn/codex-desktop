@@ -7,9 +7,9 @@ import { MemoizedFormattedMessage } from "../i18n/memoized-formatted-message";
 import { useIntl } from "../i18n/use-intl";
 import { CloseIcon } from "../icons/close-icon";
 import { OnboardingBanner } from "../onboarding/onboarding-banner";
-import { useAppScope } from "../boundaries/app-scope-runtime";
+import { useAppScope } from "../runtime/app-scope-runtime";
 import { useAppScopeValue } from "../boundaries/composer-appscope-atoms";
-import { appScopeAtom } from "../boundaries/app-scope-runtime";
+import { appScopeAtom } from "../runtime/app-scope-runtime";
 import {
   createRealtimeVoiceStartHandler,
   ensureHasSeenRealtimeVoiceNuxAtomInit,

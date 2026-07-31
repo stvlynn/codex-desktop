@@ -6,7 +6,7 @@ import { type ReactElement } from "react";
 import {
   ensureAppScopeHostInit,
   ensureAppScopeInit,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_P5_Init } from "../../boundaries/composer-esm-inits";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { ensureSkillsPageHelpersInit } from "../../skills/skills-page-helpers";

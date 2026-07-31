@@ -3,7 +3,7 @@
 
 import { Suspense, type ReactElement } from "react";
 
-import { useAppScope } from "../../boundaries/app-scope-runtime";
+import { useAppScope } from "../../runtime/app-scope-runtime";
 import {
   Navigate,
   useNavigate,

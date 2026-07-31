@@ -13,7 +13,7 @@ import {
   createAppScope,
   ensureAppScopeHostInit,
   useAppScope,
-} from "../boundaries/app-scope-runtime";
+} from "../runtime/app-scope-runtime";
 import {
   ensureComposerEsm_AG_Init,
   ensureComposerEsm_MT_Init,

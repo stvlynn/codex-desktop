@@ -4,7 +4,7 @@
 import {
   ensureAppScopeHostInit as appInitialMT,
   useAppScope as appInitialLT,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   ensureComposerEsm_B__Init as _AppInitialB,
   ensureComposerEsm_S8_Init as _appInitial8,

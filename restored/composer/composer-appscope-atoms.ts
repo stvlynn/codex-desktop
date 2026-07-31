@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
 // AppScope-bound atom factories + ChatGPT/composer atom instances
-// (sibling of boundaries/app-scope-runtime). Codex runtime — not stock jotai.
+// (sibling of runtime/app-scope-runtime). Codex runtime — not stock jotai.
 // Bundle bindings (partial):
 //   Oa/xOa ≈ createAppScopeDerivedAtom(scope, computeFn) [export `BP`],
 //   Ta/ivt ≈ createScopedSignal (see app-scope-runtime),
@@ -11,7 +11,7 @@ import {
   appScopeAtom,
   createScopedSignal,
   type AppScopeBrand,
-} from "../boundaries/app-scope-runtime";
+} from "../runtime/app-scope-runtime";
 
 /**
  * Shape returned by every AppScope atom factory below — a thin

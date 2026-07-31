@@ -4,7 +4,7 @@
 import { CodexChatgptHandoffLifecycleAction } from "../../analytics/codex-chatgpt-handoff-lifecycle-action";
 import { CODEX_CHATGPT_HANDOFF_LIFECYCLE_EVENT_TYPE } from "../../analytics/codex-chatgpt-handoff-lifecycle-event-type";
 import { logProductEvent } from "../../analytics/log-product-event";
-import { appScopeAtom, useAppScope } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, useAppScope } from "../../runtime/app-scope-runtime";
 import {
   chatgptConversationQueryAtomKP,
   useAppScopeAtomValue,

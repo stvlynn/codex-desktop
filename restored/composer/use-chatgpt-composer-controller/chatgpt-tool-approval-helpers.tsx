@@ -4,7 +4,7 @@
 import {
   appScopeAtom as appInitialFft,
   useAppScope as appInitialLT,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import { ApprovalRequestCard as AppInitialN } from "../../conversation/approval-request-card";
 import { submitUserComposerMessage as AppInitialIP } from "../../conversation/submit-user-composer-message";
 import { MemoizedFormattedMessage as appInitialGft } from "../../i18n/memoized-formatted-message";

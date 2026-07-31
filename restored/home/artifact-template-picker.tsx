@@ -15,7 +15,7 @@ import {
   createAppScope,
   ensureAppScopeHostInit,
   useAppScope,
-} from "../boundaries/app-scope-runtime";
+} from "../runtime/app-scope-runtime";
 import { toastAtom } from "../boundaries/toast-atom";
 import { ComposerOverlayFloatingUi } from "../composer/composer-overlay-floating-ui";
 import { getPluginDisplayName } from "../composer/get-plugin-display-name";

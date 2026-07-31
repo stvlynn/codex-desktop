@@ -5,7 +5,7 @@
 import {
   appScopeAtom,
   createScopedSignal,
-} from "../boundaries/app-scope-runtime";
+} from "../runtime/app-scope-runtime";
 import {
   analogDirectionFromJoystick,
   ensureCodexMicroJoystickGeometryInit,

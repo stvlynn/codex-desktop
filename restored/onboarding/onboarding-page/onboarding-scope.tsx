@@ -13,7 +13,7 @@ import {
   createAppScope,
   createScopedSignal,
   type AppScopeBrand,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   ONBOARDING_STEPS,
   type OnboardingStep,

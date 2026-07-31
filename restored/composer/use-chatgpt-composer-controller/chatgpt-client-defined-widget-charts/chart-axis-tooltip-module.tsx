@@ -6,7 +6,7 @@ import {
   ensureAppScopeInit as appInitialIft,
   useAppScope as appInitialLT,
   ensureAppScopeHostInit as appInitialMT,
-} from "../../../boundaries/app-scope-runtime";
+} from "../../../runtime/app-scope-runtime";
 import {
   writingBlocksControllerAtom as appInitialCI,
 } from "../../../boundaries/composer-appscope-atoms";

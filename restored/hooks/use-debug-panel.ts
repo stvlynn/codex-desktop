@@ -7,7 +7,7 @@ import { isValidElement, type ReactNode } from "react";
 import {
   appScopeAtom,
   createScopedSignal,
-} from "../boundaries/app-scope-runtime";
+} from "../runtime/app-scope-runtime";
 import { useAppScopeValue } from "../boundaries/composer-appscope-atoms";
 import { CodexBuildEnvironment } from "../env/codex-build-environment";
 import { getBuildFlavor } from "../desktop/get-build-flavor";

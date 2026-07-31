@@ -13,7 +13,7 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { logProductEvent } from "../../analytics/log-product-event";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { appshotLogoUrl } from "../../assets/appshot-logo-url";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { createAppScopeQueryAtom } from "../../boundaries/composer-appscope-atoms";
 import { ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Utt_Init } from "../../boundaries/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";

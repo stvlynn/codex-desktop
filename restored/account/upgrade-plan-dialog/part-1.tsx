@@ -13,7 +13,7 @@ import { logProductEvent } from "../../analytics/log-product-event";
 import {
   appScopeAtom,
   ensureAppScopeInit,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   ensureComposerEsm_Ilt_Init,
   ensureComposerEsm_K9_Init,

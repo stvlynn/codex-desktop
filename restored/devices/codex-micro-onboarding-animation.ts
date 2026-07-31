@@ -11,7 +11,7 @@ import { CodexMicroInputMonitoringPermissionState } from "../analytics/codex-mic
 import { CODEX_MICRO_ONBOARDING_LIFECYCLE_STEP_TYPE } from "../analytics/codex-micro-onboarding-lifecycle-step-type";
 import { CodexMicroOnboardingScreen } from "../analytics/codex-micro-onboarding-screen";
 import { logProductEvent } from "../analytics/log-product-event";
-import { appScopeAtom, ensureAppScopeInit } from "../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../runtime/app-scope-runtime";
 import { ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init } from "../boundaries/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { esmInit } from "../runtime/rolldown-runtime";

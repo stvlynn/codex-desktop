@@ -6,7 +6,7 @@ import {
   ensureUsageSettingsAccessInit,
   useUsageSettingsAccess,
 } from "../account/use-usage-settings-access";
-import { appScopeAtom, useAppScope } from "../boundaries/app-scope-runtime";
+import { appScopeAtom, useAppScope } from "../runtime/app-scope-runtime";
 import { toastAtom } from "../boundaries/toast-atom";
 import { MemoizedFormattedMessage } from "../i18n/memoized-formatted-message";
 import { useIntl } from "../i18n/use-intl";

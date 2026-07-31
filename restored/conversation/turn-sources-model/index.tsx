@@ -9,7 +9,7 @@ import {
   appScopeAtom,
   ensureAppScopeHostInit,
   ensureAppScopeInit,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   createAppScopeSelectAtom,
   type BindableAtom,

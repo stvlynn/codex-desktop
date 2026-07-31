@@ -19,7 +19,7 @@ import { ensureImportMetaAssetUrlInit } from "../../assets/ensure-import-meta-as
 import {
   appScopeAtom,
   ensureAppScopeInit,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   ensureBrowserUseGateInit,
   useBrowserUseGate,

@@ -3,7 +3,7 @@
 // Stage 3: qV→openArtifactPreview; L_t→useAppScope; KV/_8/b8 inits dropped.
 
 import { useEffect, useRef } from "react";
-import { useAppScope } from "../boundaries/app-scope-runtime";
+import { useAppScope } from "../runtime/app-scope-runtime";
 import {
   ensureHomePrefillArtifactPreviewDepsInit,
   openArtifactPreview,

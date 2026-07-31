@@ -16,7 +16,7 @@ import {
   ensureAppScopeHostInit,
   ensureAppScopeInit,
   useAppScope,
-} from "../boundaries/app-scope-runtime";
+} from "../runtime/app-scope-runtime";
 import {
   ensureComposerEsm_K9_Init,
   ensureComposerEsm_Qtt_Init,

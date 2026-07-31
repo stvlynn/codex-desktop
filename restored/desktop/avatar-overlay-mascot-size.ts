@@ -2,7 +2,7 @@
 // Read/write floating pet width via avatar-overlay settings.
 // Stage 3: Spt→avatarOverlaySettings; Lut/Iut/L_t mapped; ESM inits dropped.
 
-import { appScopeAtom, useAppScope } from "../boundaries/app-scope-runtime";
+import { appScopeAtom, useAppScope } from "../runtime/app-scope-runtime";
 import { avatarOverlaySettings } from "../desktop/avatar-overlay-settings";
 import { setSettingValue } from "../settings/settings-values";
 import { useSettingValue } from "../settings/use-setting-value";

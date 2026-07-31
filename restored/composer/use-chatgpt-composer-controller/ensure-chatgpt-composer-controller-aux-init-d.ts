@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Composer-controller aux init D (Value359 deps + _D overlay materialization).
 
-import { ensureAppScopeHostInit as appInitialMT } from "../../boundaries/app-scope-runtime";
+import { ensureAppScopeHostInit as appInitialMT } from "../../runtime/app-scope-runtime";
 import { chatgptConversationFlagsAtom as _appInitialLP } from "../../boundaries/composer-appscope-atoms";
 import {
   ensureComposerEsm_BF_Init as appInitialBF,

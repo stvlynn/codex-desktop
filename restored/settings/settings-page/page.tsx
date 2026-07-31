@@ -9,7 +9,7 @@ import {
   ensureAppScopeHostInit,
   ensureAppScopeInit,
   useAppScope,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import { useAppScopeValue } from "../../boundaries/composer-appscope-atoms";
 import {
   ensureComposerEsm_K9_Init,

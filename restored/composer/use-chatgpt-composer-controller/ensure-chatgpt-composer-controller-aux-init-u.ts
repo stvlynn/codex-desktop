@@ -4,7 +4,7 @@
 import {
   ensureAppScopeHostInit as appInitialMT,
   ensureAppScopeInit as appInitialIft,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import { chatgptConversationFlagsAtom as _appInitialLP } from "../../boundaries/composer-appscope-atoms";
 import {
   ensureComposerEsm_aK_Init as appInitialAK,

@@ -6,7 +6,7 @@
 import { CODEX_APPSHOT_SHORTCUT_CHANGED_TYPE } from "../analytics/codex-appshot-shortcut-changed-type";
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../analytics/codex-plugin-action-type-enum";
-import { appScopeAtom, ensureAppScopeInit } from "../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../runtime/app-scope-runtime";
 import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init } from "../boundaries/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { useLocation } from "../boundaries/react-router-navigation";

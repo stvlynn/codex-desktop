@@ -2,7 +2,7 @@
 // AppScope react-query atoms for custom avatar list + by-id load.
 // Stage 3: nvt/tvt→appscope atoms; fdt→QueryStaleTimes; Hut→desktop-services.
 
-import { appScopeAtom } from "../boundaries/app-scope-runtime";
+import { appScopeAtom } from "../runtime/app-scope-runtime";
 import {
   createAppScopeQueryAtom,
   createAppScopeSelectAtom,

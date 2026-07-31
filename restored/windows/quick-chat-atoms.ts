@@ -9,7 +9,7 @@ import {
   appScopeAtom,
   createScopedSignal,
   ensureAppScopeInit,
-} from "../boundaries/app-scope-runtime";
+} from "../runtime/app-scope-runtime";
 import {
   QUICK_CHAT_DEFAULT_SIZE,
   type QuickChatWindowSize,

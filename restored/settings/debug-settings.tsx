@@ -5,7 +5,7 @@
 // D/O/k→gpu tearing atom; yC→Switch; dC→SettingsPanel; rn→SettingsGroup;
 // R_t→useAppScopeValue; L_t→useAppScope; Fft→appScopeAtom; Gft/Jft i18n.
 
-import { appScopeAtom, useAppScope } from "../boundaries/app-scope-runtime";
+import { appScopeAtom, useAppScope } from "../runtime/app-scope-runtime";
 import { useAppScopeValue } from "../boundaries/composer-appscope-atoms";
 import { MemoizedFormattedMessage } from "../i18n/memoized-formatted-message";
 import { useIntl } from "../i18n/use-intl";

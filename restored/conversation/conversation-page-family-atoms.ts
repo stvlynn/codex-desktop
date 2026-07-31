@@ -6,7 +6,7 @@ import {
   appScopeAtom,
   createAppScopeFamilySignal,
   type AppScopeFamilySignal,
-} from "../boundaries/app-scope-runtime";
+} from "../runtime/app-scope-runtime";
 
 /** Bundle `gH` / export `fP` — per-conversation busy / in-flight flag. */
 export const conversationComposerBusyAtom: AppScopeFamilySignal<boolean> =

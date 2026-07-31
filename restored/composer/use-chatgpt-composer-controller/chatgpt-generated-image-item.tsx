@@ -4,7 +4,7 @@
 import {
   appScopeAtom as appInitialFft,
   useAppScope as appInitialLT,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   chatgptConversationServerIdAtom as appInitialFP,
   writingBlocksControllerAtom as appInitialCI,

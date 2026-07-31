@@ -6,7 +6,7 @@ import {
   ensureAppScopeHostInit,
   ensureAppScopeInit,
   useAppScope,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import { appLogoCacheAtom } from "../../boundaries/composer-appscope-atoms";
 import { ensureComposerEsm_Rj_Init as ensureComposerRjInit } from "../../boundaries/composer-esm-inits";
 import {

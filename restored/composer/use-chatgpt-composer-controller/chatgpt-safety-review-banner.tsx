@@ -10,7 +10,7 @@ import { logProductEvent as appInitialJ9 } from "../../analytics/log-product-eve
 import {
   appScopeAtom as appInitialFft,
   useAppScope as appInitialLT,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   chatgptConversationBranchAtom as _appInitialRP,
   chatgptConversationQueryAtomKP as _AppInitialKP,

@@ -2,7 +2,7 @@
 // Ambient / new-chat suggestion status atoms + debug override signal.
 // Stage 3: $ut/Oft/jft/kft → persisted-atom-store; remaining AppScope aliases mapped.
 
-import { appScopeAtom } from "../boundaries/app-scope-runtime";
+import { appScopeAtom } from "../runtime/app-scope-runtime";
 import {
   createAppScopeDerivedAtom,
   createAppScopeQueryAtom,

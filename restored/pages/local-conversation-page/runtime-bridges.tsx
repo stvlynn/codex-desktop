@@ -14,7 +14,7 @@ import {
   appScopeAtom,
   createAppScope,
   createScopedSignal,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import { localThreadPath } from "../../conversation/local-thread-path";
 import { useOpenThreadInNewWindow } from "../../conversation/use-open-thread-in-new-window";
 import { hostMessageBus } from "../../navigation/host-message-bus";

@@ -11,7 +11,7 @@ import { CODEX_AUTOMATION_CREATED_TYPE } from "../../analytics/codex-automation-
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { logProductEvent } from "../../analytics/log-product-event";
 import { useAppInstallPreparingState } from "../../apps/use-app-install-preparing-state";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sut_Init } from "../../boundaries/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { useLocation, useNavigate } from "../../boundaries/react-router-navigation";

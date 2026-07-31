@@ -3,7 +3,7 @@
 // Stage 3: settings/i18n/UI aliases mapped; ESM inits dropped; Llt→toastAtom.
 
 import { useState, type ReactNode } from "react";
-import { appScopeAtom, useAppScope } from "../boundaries/app-scope-runtime";
+import { appScopeAtom, useAppScope } from "../runtime/app-scope-runtime";
 import { toastAtom } from "../boundaries/toast-atom";
 import { MemoizedFormattedMessage } from "../i18n/memoized-formatted-message";
 import { useIntl } from "../i18n/use-intl";

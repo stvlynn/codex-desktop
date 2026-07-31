@@ -10,7 +10,7 @@ import {
   createPersistedAppScopeFamilySignal,
   routeScopeAtom,
   type AppScopeFamilySignal,
-} from "../boundaries/app-scope-runtime";
+} from "../runtime/app-scope-runtime";
 
 /** Bundle `mJo` — timed auto-collapse delay (30s). */
 export const SECTION_AUTO_COLLAPSE_MS = 30_000;

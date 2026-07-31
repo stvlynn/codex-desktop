@@ -16,7 +16,7 @@ import { ArtifactPreviewDownloadButton } from "../../artifact/artifact-preview-d
 import { artifactTabLoading } from "../../artifact/artifact-tab-loading";
 import { hypotDistance } from "../../artifact/hypot-distance";
 import { QueueAutomationRun } from "../../automation/queue-automation-run";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_MT_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Z8_Init } from "../../boundaries/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { deferredComposerBV } from "../../composer/deferred-composer-bv";

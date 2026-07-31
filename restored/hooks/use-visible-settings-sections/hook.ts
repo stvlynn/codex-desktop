@@ -12,7 +12,7 @@ import {
   ensureUsageSettingsAccessInit,
   useUsageSettingsAccess,
 } from "../../account/use-usage-settings-access";
-import { ensureAppScopeHostInit } from "../../boundaries/app-scope-runtime";
+import { ensureAppScopeHostInit } from "../../runtime/app-scope-runtime";
 import {
   ensureBrowserUseGateInit,
   useBrowserUseGate,

@@ -5,7 +5,7 @@ import {
   appScopeAtom as appInitialFft,
   ensureAppScopeHostInit as appInitialMT,
   ensureAppScopeInit as appInitialIft,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   chatgptConversationBranchAtom as appInitialRP,
   chatgptConversationMetaAtom as appInitialIP,

@@ -5,7 +5,7 @@
 import {
   appScopeAtom as appInitialFft,
   useAppScope as appInitialLT,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import { writingBlocksControllerAtom as appInitialCI } from "../../boundaries/composer-appscope-atoms";
 import {
   chatgptDilRendererLazy as $f,

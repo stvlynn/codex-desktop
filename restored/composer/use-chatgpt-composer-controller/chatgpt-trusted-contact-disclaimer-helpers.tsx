@@ -3,7 +3,7 @@
 
 import { CHATGPT_DISCLAIMER_LINK_CLICKED_TYPE as appInitialO8 } from "../../analytics/chatgpt-disclaimer-link-clicked-type";
 import { logProductEvent as appInitialJ9 } from "../../analytics/log-product-event";
-import { appScopeAtom as appInitialFft, useAppScope as appInitialLT } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom as appInitialFft, useAppScope as appInitialLT } from "../../runtime/app-scope-runtime";
 import { cx as appInitialWft } from "../../ui/cx";
 import { useChatgptComposerControllerHelper65 } from "./chatgpt-composer-confirmation-link";
 

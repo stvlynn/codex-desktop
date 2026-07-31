@@ -7,7 +7,7 @@ import {
   createScopedSignal,
   ensureAppScopeInit,
   type AppScopeBrand,
-} from "../boundaries/app-scope-runtime";
+} from "../runtime/app-scope-runtime";
 
 export type GpuTearingDebugSettings = {
   disableBackdropBlur: boolean;
