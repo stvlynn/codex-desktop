@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~185.7k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~185.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -48,6 +48,7 @@
 | Sparkline/DV/shape/image mutation (Sfe…Wfe) + helper333 | ~15.7k (post-mutation) | **Drained (wave-42)** → `workbook/mutation-ops/` + `worksheet-attachment/` |
 | CF/DV VO+API (helper322…Bpe) | ~1.2k (post-Binding662) | **Drained (wave-43)** → `workbook/conditional-format/` + `data-validation/` |
 | Formula/token/WorkbookR (Vpe…workbookF) | ~1.4k (post-Binding662) | **Drained (wave-44)** → `workbook/formula/` |
+| Fill-from / formula-address (dme…helper336) | ~0.4k (post-formula) | **Drained (wave-45)** → `workbook/range-fill/` + `formula-address/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -497,6 +498,18 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 185683.
-- Next: contiguous post-dme fill-from / formula-address helpers (`dme`…`hme`/`helper332`+), or pivot Binding335/336/338 + Class53 if cleanly separable; continue scanning for stock vendor fingerprints.
+- Next: ~~post-dme fill-from / formula-address helpers~~ (done wave-45); pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Binding669 Range VO / address-utils cluster.
+
+
+## Wave-45 progress
+
+- Extracted fill-from core (`dme`/`helper330`/`331`/`fme`/`pme`/`mme`) + ensure (`hme`) → `workbook/range-fill/`.
+- Extracted Excel serial/date coerce (`helper332`/`gme`) + typed cell coerce (`helper336`) → `workbook/range-fill/`.
+- Extracted A1 shift + A1↔R1C1 converters (`helper334`/`_me`/`helper335`/`vme`/`yme`) + worksheet limits → `workbook/formula-address/`.
+- Left Binding662/`_C` init gate, Binding669+/Binding675 Range VO init, pivot enums Binding335/336/338 + Class53, and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 185281.
+- Next: pivot Binding335/336/338 + Class53 if cleanly separable, or contiguous post-Binding669 Range VO / serial-date init cluster; continue scanning for stock vendor fingerprints.
 
 
