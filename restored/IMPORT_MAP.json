@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notes": "dil-register openBoundary cleared \u2192 apps/dil-register.ts (unified DKf9ZaVQ+DgvAZVS9). | Wave composer-ctrl closeout polish: consumers\u2192composer barrel; Value* aliases dropped. | Wave composer-ctrl Stage-3 wave-15: Helper124\u2013178 mountain drained; thin boundary; openBoundary cleared; mapbox-gl npm CSP shim. | Wave composer-ctrl Stage-3 wave-15: Helper124\u2013178 mountain drained; boundary thin; openBoundary cleared. | Wave DR: +2 Gut\u2192usingCtx (babel usingCtx npm), fJ\u2192deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop \u2192 index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path \u2192 composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite) | diagram-export-alias-semantic: IMPORT_MAP exports n/t/a/\u2026 \u2192 semantic public names after dropping cryptic re-export aliases | deep-drain 2026-07-28: Stage-3 shiki pool split (kL\u2192shiki-highlight-context) + settings wrapper; checkout-webview-page typed deps shell; permissions-mode-dropdown typed shell. Soft scaffolds Stage-3-fill/Open-runtime-facade remain 0. Remaining Open-runtime soft hosts: large page bodies (settings/onboarding/local/remote) blocked by mechanical checkpoint QG fails; no-alias ui shells blocked by missing extract alias. | Wave GA: share-invite soft-host drain (real peers + useListKeyboardNavigation); settings-pets-nav-icon split; settings-page candidate case-correct imports staged (not promoted: residual *Param/*Value + exportSources collisions HM/Bft) | Wave GB: settings-page candidate rebuilt with export-correct IMPORT_MAP resolution + HM\u2192scoreFuzzyMatch / Bft\u2192defineMessage overrides; public utils/score-fuzzy-match.ts (QG pass, contract scorer; full HH in deps WIP); soft-host count still 18 (settings not promoted: ~270 mechanical names + use-visible-settings-sections soft shell) | Wave GC: use-visible-settings-sections soft shell drained (split dir); soft-host count still 18 (settings-page not yet promoted)\nReconcile Mermaid faced\u2192done for 52 boundaries/mermaid-diagrams npm shims/wrappers (IMPORT_MAP drift).",
+  "notes": "dil-register openBoundary cleared \u2192 apps/dil-register.ts (unified DKf9ZaVQ+DgvAZVS9). | Wave composer-ctrl closeout polish: consumers\u2192composer barrel; Value* aliases dropped. | Wave composer-ctrl Stage-3 wave-15: Helper124\u2013178 mountain drained; thin boundary; openBoundary cleared; mapbox-gl npm CSP shim. | Wave composer-ctrl Stage-3 wave-15: Helper124\u2013178 mountain drained; boundary thin; openBoundary cleared. | Wave DR: +2 Gut\u2192usingCtx (babel usingCtx npm), fJ\u2192deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop \u2192 index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path \u2192 composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite) | diagram-export-alias-semantic: IMPORT_MAP exports n/t/a/\u2026 \u2192 semantic public names after dropping cryptic re-export aliases | deep-drain 2026-07-28: Stage-3 shiki pool split (kL\u2192shiki-highlight-context) + settings wrapper; checkout-webview-page typed deps shell; permissions-mode-dropdown typed shell. Soft scaffolds Stage-3-fill/Open-runtime-facade remain 0. Remaining Open-runtime soft hosts: large page bodies (settings/onboarding/local/remote) blocked by mechanical checkpoint QG fails; no-alias ui shells blocked by missing extract alias. | Wave GA: share-invite soft-host drain (real peers + useListKeyboardNavigation); settings-pets-nav-icon split; settings-page candidate case-correct imports staged (not promoted: residual *Param/*Value + exportSources collisions HM/Bft) | Wave GB: settings-page candidate rebuilt with export-correct IMPORT_MAP resolution + HM\u2192scoreFuzzyMatch / Bft\u2192defineMessage overrides; public utils/score-fuzzy-match.ts (QG pass, contract scorer; full HH in deps WIP); soft-host count still 18 (settings not promoted: ~270 mechanical names + use-visible-settings-sections soft shell) | Wave GC: use-visible-settings-sections soft shell drained (split dir); soft-host count still 18 (settings-page not yet promoted)\nReconcile Mermaid faced\u2192done for 52 boundaries/mermaid-diagrams npm shims/wrappers (IMPORT_MAP drift). | Wave lodash/npm-boundary mop: lodash-* + highlight-js + iconify-utils + d3-hierarchy \u2192 bare npm shims; deps d3-hierarchy/d3-scale-chromatic/@iconify/utils/ts-dedent added.",
   "chunks": {
     "app-initial-C-fROkKo": {
       "status": "in-progress",
@@ -17746,9 +17746,10 @@
         "default": "default"
       },
       "status": "done",
-      "notes": "Wave AZ: faced\u2192promoted highlight.js npm-shim (Rolldown __commonJS t()).",
+      "notes": "npm-shim: highlight.js (getHighlightJs/Core/t + export *).",
       "boundary": true,
-      "npmPackage": "highlight.js"
+      "npmPackage": "highlight.js",
+      "vendor": "highlight.js"
     },
     "app-14A_I_iz": {
       "restored": "runtime/app-side-effect.ts",
@@ -18076,7 +18077,11 @@
         "y": "y",
         "z": "z"
       },
-      "status": "done"
+      "status": "done",
+      "boundary": true,
+      "vendor": "lodash",
+      "npmPackage": "lodash",
+      "notes": "npm-shim: lodash baseFor mega-chunk \u2192 lodash/* letter re-exports + init stubs."
     },
     "address-utils-xK0e4BjB": {
       "restored": "utils/spreadsheet-address-utils.ts",
@@ -18136,7 +18141,11 @@
         "t": "t",
         "u": "u"
       },
-      "status": "done"
+      "status": "done",
+      "boundary": true,
+      "vendor": "d3-hierarchy",
+      "npmPackage": "d3-hierarchy",
+      "notes": "npm-shim: d3-hierarchy + d3-scale-chromatic (Tableau10/Set2) letter aliases."
     },
     "chunk-KS23V3DP-CUuW3DmV": {
       "restored": "utils/mermaid-package-json.ts",
@@ -18163,7 +18172,11 @@
         "t": "t",
         "u": "u"
       },
-      "status": "done"
+      "status": "done",
+      "boundary": true,
+      "vendor": "@iconify/utils",
+      "npmPackage": "@iconify/utils",
+      "notes": "npm-shim: @iconify/utils + ts-dedent (t); Iconify utils letter aliases."
     },
     "load-script-Cltl04TI": {
       "restored": "utils/segment-load-script.ts",
@@ -18378,7 +18391,11 @@
         "s": "s",
         "t": "t"
       },
-      "status": "done"
+      "status": "done",
+      "boundary": true,
+      "vendor": "lodash",
+      "npmPackage": "lodash",
+      "notes": "npm-shim: lodash/isEmpty (n) + Rolldown letter init stubs."
     },
     "merge-DIqo0EGT": {
       "restored": "boundaries/lodash-merge-internals.ts",
@@ -18418,7 +18435,11 @@
         "x": "x",
         "y": "y"
       },
-      "status": "done"
+      "status": "done",
+      "boundary": true,
+      "vendor": "lodash",
+      "npmPackage": "lodash",
+      "notes": "npm-shim: lodash/constant (j) + lodash/merge (n) + letter init stubs."
     },
     "workbook-from-csv-CDfYIljB": {
       "restored": "workbook/plan-csv-import.ts",
@@ -18448,7 +18469,11 @@
         "s": "s",
         "t": "t"
       },
-      "status": "done"
+      "status": "done",
+      "boundary": true,
+      "vendor": "lodash",
+      "npmPackage": "lodash",
+      "notes": "npm-shim: lodash/isEmpty alt twin (n) + letter init stubs."
     },
     "routing-middleware-B8BjNZUQ": {
       "restored": "analytics/tsub-middleware.ts",
@@ -18583,7 +18608,11 @@
         "y": "y",
         "z": "z"
       },
-      "status": "done"
+      "status": "done",
+      "boundary": true,
+      "vendor": "lodash",
+      "npmPackage": "lodash",
+      "notes": "npm-shim: lodash map/filter/reduce/flatten letter re-exports + init stubs."
     },
     "lodash-CMdXiqaz": {
       "restored": "boundaries/lodash-collection-runtime.ts",
@@ -18682,7 +18711,11 @@
         "z": "z",
         "zt": "zt"
       },
-      "status": "done"
+      "status": "done",
+      "boundary": true,
+      "vendor": "lodash",
+      "npmPackage": "lodash",
+      "notes": "npm-shim: lodash collection aggregate letter re-exports + init stubs."
     },
     "chunk-BSJP7CBP-DFvoyeko": {
       "restored": "diagrams/line-offset-helpers-alt.ts",
@@ -18752,7 +18785,11 @@
         "y": "y",
         "z": "z"
       },
-      "status": "done"
+      "status": "done",
+      "boundary": true,
+      "vendor": "lodash",
+      "npmPackage": "lodash",
+      "notes": "npm-shim: lodash current aggregate letter re-exports + init stubs."
     },
     "chunk-XPW4576I-D2l7hhLl": {
       "restored": "utils/mermaid-js-yaml-core.ts",
@@ -25747,8 +25784,8 @@
       "provenance": "ref/webview/assets/app-initial-C-fROkKo.js"
     },
     "boundaries/lodash-clone-deep-guts.ts": {
-      "kind": "open-runtime",
-      "note": "Lodash cloneDeep CJS guts (non-public internals) as thin thunks for chart unblock",
+      "kind": "npm-shim",
+      "note": "Lodash cloneDeep CJS guts \u2192 lodash/_* thunk re-exports (initCloneObject, cloneTypedArray, \u2026).",
       "aliases": [
         "Df",
         "Of",
@@ -25761,7 +25798,8 @@
         "GB",
         "WB"
       ],
-      "provenance": "ref/webview/assets/app-initial-C-fROkKo.js"
+      "provenance": "ref/webview/assets/app-initial-C-fROkKo.js",
+      "npmPackage": "lodash"
     },
     "boundaries/react-cjs-runtime.ts": {
       "kind": "open-runtime",
@@ -25996,5 +26034,5 @@
       "provenance": "ref/webview/assets/app-initial-C-fROkKo.js"
     }
   },
-  "updatedAt": "2026-07-31T04:08:33Z"
+  "updatedAt": "2026-07-31T04:18:03.346Z"
 }
