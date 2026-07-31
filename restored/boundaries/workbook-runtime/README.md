@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~64.9k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~63.9k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -101,6 +101,10 @@
 | Shape geometry paint (`helper616`) | ~0.38k | **Drained (wave-94)** → `workbook/shape-geometry-paint/` |
 | Table frame layout (`workbookA`) | ~0.36k | **Drained (wave-94)** → `workbook/table-frame-layout/` |
 | Slide canvas render (`vEe`) | ~0.33k | **Drained (wave-94)** → `workbook/slide-canvas-render/` |
+| Bar-direction series (`Dbe`) | ~0.25k | **Drained (wave-95)** → `workbook/chart-bar-direction/` |
+| Bar/column series (`helper501`) | ~0.27k | **Drained (wave-95)** → `workbook/chart-bar-series/` |
+| Radar chart paint (`Txe`) | ~0.27k | **Drained (wave-95)** → `workbook/chart-radar/` |
+| Category plot layout (`Xxe`) | ~0.28k | **Drained (wave-95)** → `workbook/chart-plot-layout/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1084,11 +1088,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via single-pass line-range drain; `openBoundary` kept.
 - QG PASS on new modules + chart-paint + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 64914 (was 66294; Δ -1380).
-- Next: helper501 (~0.27k) / Xxe (~0.28k) / Txe (~0.27k) / jCe (~0.26k) / clean `xLe` / `_workbookS` after presentation leave-behind drain.
+- Next: helper501 / Xxe / Txe / Dbe (taken by wave-95).
 
+## Wave-95 progress
 
-
-
-
-
-
+- Re-scanned ≥200 clusters: WorkbookN/Binding1996 (~1862 leave), `_workbookS`/`vYe` (~1240 leave), `Xxe` (~280), `Vht` (~270), `Txe` (~268), `helper501` (~266), `Dbe`/`rze`/`kht` (~254), `Uft` (~229), `gCe` (~222), `ODe` (~210), `Kht` (~208). `jCe` is a 7-line stub (not a real peel).
+- Skipped `_workbookS`/WorkbookN / KJe–aYe / `xLe`; deferred `rze` (vYe leave-behind caller), `kht` (WorkbookN leave-behind), `Vht`/`Kht` CF init/class, `Uft`/`ODe`.
+- Peeled `Dbe` → `workbook/chart-bar-direction/` (`cbdH`); chart-paint `paintFunnel` → `paintBarDirectionSeries` (hook was misnamed for BAR_DIRECTION_BAR).
+- Peeled `helper501` → `workbook/chart-bar-series/` (`cbsH`); chart-paint dropped `bh501`; boundary alias keeps `yxe` caller.
+- Peeled `Txe` → `workbook/chart-radar/` (`crH` + `Cxe`); chart-paint `paintBoxWhisker` → `paintRadarChart` (hook was misnamed for RADAR).
+- Peeled `Xxe` → `workbook/chart-plot-layout/` (`cplH` + `Nxe`); Binding1173/1174 inlined; boundary alias keeps `helper559` caller.
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on four modules + chart-paint + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 63920 (was 64914; Δ -994).
+- Next: `gCe` (~0.22k doughnut) / `nCe` (~0.19k line) / `rze` after `_workbookS` ensure drain / `kht` after WorkbookN / clean `xLe`.

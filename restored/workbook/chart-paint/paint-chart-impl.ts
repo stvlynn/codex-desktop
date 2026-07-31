@@ -9,6 +9,9 @@ import {
   workbookHelper352 as chartRegressionFn,
 } from "../chart-asset";
 import { cpH } from "./boundary-hooks";
+import { paintBarDirectionSeries } from "../chart-bar-direction";
+import { paintBarSeries } from "../chart-bar-series";
+import { paintRadarChart } from "../chart-radar";
 import { paintChartAxisTicks } from "../chart-axis-ticks";
 import { paintChartLegend } from "../chart-legend";
 import { paintThreeChart } from "../three-chart-paint";
@@ -157,7 +160,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         chartHoverTargets: cpIn35.chartHoverTargets,
         hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
       });
-    cpH.paintFunnel(
+    paintBarDirectionSeries(
       cpIn32,
       cpIn33,
       cpBind9668,
@@ -257,7 +260,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         chartHoverTargets: cpIn35.chartHoverTargets,
         hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
       });
-    cpH.paintBoxWhisker(
+    paintRadarChart(
       cpIn32,
       cpIn33,
       cpBind2290,
@@ -332,7 +335,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         cpIn33.type)
       ) {
         case Cn.CHART_TYPE_BAR: {
-          cpH.bh501(
+          paintBarSeries(
             cpIn32,
             cpIn33,
             cpBind2300,
