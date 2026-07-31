@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Semantic composer-domain API: typed aliases over the open oversized runtime body.
-// Stage-3 wave-8: Helper46–92 ecosystem drained (Dil circular cut).
-// Residual: A/K + Value20–26 conversation-updates; _O/_D mega-init.
+// Stage-3 wave-9: conversation-updates drained (Helper9–17 + Value12–26 + A/K).
+// Residual: _O/_D mega-init (Value359 → _D next).
 
 export type {
   ChatgptBrowserConversationBannerProps,
@@ -375,13 +375,33 @@ export {
   useChatgptComposerControllerHelper245,
 } from "./chatgpt-content-reference-directive";
 
+
+export {
+  chatgptGenUiRefreshMetadataSchema,
+  ensureChatgptConversationUpdateSchemasInit,
+} from "./chatgpt-conversation-update-schemas";
+export { useChatgptComposerControllerHelper9 } from "./chatgpt-conversation-genui-refresh-targets";
+export { useChatgptComposerControllerHelper10 } from "./chatgpt-conversation-widget-refresh-controller";
+export { useChatgptComposerControllerHelper11 } from "./chatgpt-conversation-update-parsers";
+export { useChatgptComposerControllerHelper16 } from "./chatgpt-conversation-refetch";
+export {
+  chatgptConversationUpdatesSubscriptionAtom,
+  ensureChatgptConversationUpdatesSubscriptionInit,
+} from "./chatgpt-conversation-updates-subscription";
+export {
+  chatgptImageGenerationPollAtom,
+  ensureChatgptImageGenerationPollInit,
+} from "./chatgpt-conversation-image-generation-poll";
+
 import {
   _useChatgptComposerControllerD,
   _useChatgptComposerControllerO,
-  useChatgptComposerControllerA,
-  useChatgptComposerControllerK,
   useChatgptComposerControllerU,
 } from "../../boundaries/use-chatgpt-composer-controller";
+import {
+  useChatgptComposerControllerA,
+  useChatgptComposerControllerK,
+} from "./chatgpt-conversation-updates-mount";
 import { _useChatgptComposerControllerF } from "./chatgpt-subagent-activity-panel";
 import {
   useChatgptComposerControllerB,
