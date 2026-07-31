@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~176.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~176.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -55,6 +55,7 @@
 | PivotTable (Binding369 / `_u`) | ~0.85k | **Drained (wave-49)** → `workbook/pivot-table/` (peeled) |
 | Field VOs (Binding343–361 + enums 335/336 + Class53) | ~2.7k | **Drained (wave-50)** → `workbook/pivot-fields/` |
 | Formula array/eval (helper31–61 + $u Binding370–374) | ~1.1k | **Drained (wave-51)** → `workbook/formula-array/` |
+| PivotLayout/cache hydrate (Binding334/wne + Cne/el/332/333 + helper24/hre) | ~0.37k | **Drained (wave-52)** → `workbook/pivot-table/` + `workbook/pivot-caches/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -582,5 +583,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Wired via thin boundary stubs + `ensureFormulaArrayInit` (`$u`); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 176346.
-- Next: Binding334/wne + cache hydrate leftovers (el/332/333), or next contiguous post-gae residual; continue scanning for stock vendor fingerprints.
+- Next: ~~Binding334/wne + cache hydrate leftovers~~ (done wave-52); next contiguous post-gae residual (or Binding662/`_C` when finally clean); continue scanning for stock vendor fingerprints.
+
+
+## Wave-52 progress
+
+- Extracted PivotLayout (`Binding334`/`wne`), cache hydrate (`Cne`/`$c`/`el`), PivotCacheModel (`Binding332`/`333`), and cell-hint helpers (`helper24`/`hre`) → `workbook/pivot-table/` + `workbook/pivot-caches/`.
+- Peeled residual field/table glue stubs between layout and formula-array; boundary hooks now re-export real modules (wire kept as no-op).
+- Left Binding662/`_C`, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Wired via thin boundary stubs + `ensurePivotLayoutInit` / `ensurePivotCacheModelInit`; `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 176004.
+- Next: contiguous post-gae residual, or Binding662/`_C` when finally clean; continue scanning for stock vendor fingerprints.
 

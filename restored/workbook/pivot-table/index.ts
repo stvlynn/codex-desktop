@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-49: PivotTable barrel (Binding369 / `_u`).
+// Stage-3 wave-49/52: PivotTable barrel (Binding369 / `_u`) + PivotLayout / cell hints.
 
 export type {
   PivotTableSource,
@@ -9,10 +9,13 @@ export type {
 } from "./types";
 export { PivotLayoutType } from "./pivot-layout-type";
 export type { PivotLayoutTypeValue } from "./pivot-layout-type";
+export { PivotLayout, ensurePivotLayoutInit } from "./pivot-layout";
+export { cellHintKey, parseCellHintKey } from "./cell-hint-key";
 export { pivotAxisEnum, pivotAxisToken } from "./pivot-axis-tokens";
 export {
   wirePivotTableBoundaryHooks,
   refreshPivotTableLayout,
+  hydrateCacheFields,
 } from "./boundary-hooks";
 export {
   getPivotTableProto,
