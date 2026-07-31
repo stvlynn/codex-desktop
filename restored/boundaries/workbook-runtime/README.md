@@ -118,7 +118,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, and `ooe` geometry helper in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Next: ~~math-plain-text (Coe/helper121+)~~ (done wave-12); MathML cluster (`helper127`+/Doe/Eoe), or worksheet/spreadsheet core if a clean slice appears.
+- Next: ~~math-plain-text (Coe/helper121+)~~ (done wave-12); ~~MathML cluster (`helper127`+/Doe/Eoe)~~ (done wave-13); font-stack helpers (`helper147`+), or worksheet/spreadsheet core if a clean slice appears.
 
 ## Wave-12 progress
 
@@ -127,4 +127,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 221739.
-- Next: MathML cluster (`helper127`+/Doe/Eoe) beside the drained locus, or worksheet/spreadsheet core if a clean line-range slice appears.
+- Next: ~~MathML cluster (`helper127`+/Doe/Eoe)~~ (done wave-13); font-stack helpers (`helper147`+), or worksheet/spreadsheet core if a clean slice appears.
+
+## Wave-13 progress
+
+- Extracted MathML codec (`helper127`–`146`, `Doe`/`Eoe`, token splitters, attr maps, `Binding466`–`482` / `$m`) → `workbook/math-ml/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and font-stack helpers (`helper147`+) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 220444.
+- Next: font-stack / math-font helpers beside the drained locus (`helper147`+/Binding483+), or worksheet/spreadsheet core if a clean line-range slice appears.
