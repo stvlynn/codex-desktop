@@ -71,3 +71,17 @@ export {
   setChartBundleIntlProvider,
 } from "./chart-intl-provider";
 export type { ChartIntlProviderProps } from "./chart-intl-provider";
+
+export {
+  Chart,
+  _chartWidgetStoresS,
+  ensureChartComponentInit,
+} from "./chart";
+export type { CodexChartComponent } from "./chart";
+
+export {
+  setChartBundleSurface,
+  getChartBundleSurface,
+  hasChartBundleSurface,
+} from "./chart-bundle-surface";
+export type { ChartBundleSurface } from "./chart-bundle-surface";
