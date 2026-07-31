@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~226.0k LOC remaining; was ~226.6k)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~225.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -16,6 +16,7 @@
 | Chart/presentation proto ↔ camelCase bridges | Binding404 cluster | **Drained** with shape maps |
 | Theme / pattern fill (Hie) | ~15.7k–16.2k | **Drained** → `workbook/theme-color/` |
 | Fill value object (workbookCt) | ~15.6k | **Drained (wave-4)** → `workbook/fill/` |
+| Stylesheet Bae / Binding424 | ~15.5k–16.4k | **Drained (wave-5)** → `workbook/stylesheet/` |
 | Worksheet / spreadsheet core | ~50k–72k, ~210k–230k | Range/table/drawing APIs |
 | Presentation + Mermaid hooks | ~142k–174k | Theme palettes drained → `workbook/presentation-theme/`; Mermaid/collab remain |
 | Formula / xlsx validation | ~177k–230k | Serial dates, workbook validation (`WorkbookN`) |
@@ -56,4 +57,11 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Extracted Fill value object (`workbookCt`), gradient-kind maps, fill proto helpers, CSS value tokenizers, and gradient fill string parser.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Next: Stylesheet Bae/Binding424 (~font/fill/border/xf tables), or Line Binding431.
+- Next: ~~Stylesheet Bae/Binding424~~ (done wave-5).
+
+## Wave-5 progress
+
+- Extracted Stylesheet (`Bae`/`Binding424`), SpreadsheetFont/BorderSide/Borders/CellXf/NumberFormat (`Binding419`–`423`), and stylesheet helpers (border/fill clone, deep-clone, theme dxf).
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept; Tae color resolver wired into helpers.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Next: Line Binding431 stroke VO, or remaining text-style / color-resolve helpers ahead of Bae.
