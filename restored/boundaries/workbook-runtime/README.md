@@ -767,3 +767,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary LOC ≈ 101269 (was 103388; Δ -2119).
 - Next: compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe` / Binding1831/`xLe` (~1.9k) / Binding1592 (~1.5k) / Ume table-styles (~1.4k) / earlier mermaid helpers Binding1615–1685.
 
+## Wave-68 progress
+
+- Identified contiguous `Binding1831`/`Binding1874` cluster as Codex Excel formula-stats wrappers over jstat/bessel (NOT vendor body): error consts + date serial mode + TYPE + BETA…Z.TEST distribution catalog + short aliases (~1.9k LOC).
+- Extracted → `workbook/formula-stats/` (split under flat limit; helpers remain in boundary via `fsH` hooks; jstat/bessel via `vendor/*` + `toEsm`).
+- Left compose DSL Binding1490–1528, Google Slides `pJe`/`SJe`/`oJe`, `xLe` walnut/comments cluster, Binding1592, Binding662/`_C`, Binding1574/`Cke`, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 99489 (was 101269; Δ -1780).
+- Next: `xLe` walnut layout consts (peel before comments/`_C`) / compose DSL Binding1490–1528 / Google Slides `oJe`/`pJe`/`SJe` (~1.4k) / Binding1592 (~1.5k) / Ume table-styles / formula helpers that feed Binding1831.
+
