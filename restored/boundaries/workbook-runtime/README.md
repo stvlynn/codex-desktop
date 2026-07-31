@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~180.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~177.4k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -53,6 +53,7 @@
 | PivotCaches (Binding676 / Cme) | ~1.1k | **Drained (wave-47)** → `workbook/pivot-caches/` |
 | Slicers (Binding677–684 / Tme/Eme) | ~0.42k | **Drained (wave-48)** → `workbook/slicers/` |
 | PivotTable (Binding369 / `_u`) | ~0.85k | **Drained (wave-49)** → `workbook/pivot-table/` (peeled) |
+| Field VOs (Binding343–361 + enums 335/336 + Class53) | ~2.7k | **Drained (wave-50)** → `workbook/pivot-fields/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -152,7 +153,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and MathML cluster (`helper127`+/Doe/Eoe) in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 193481.
+- Boundary LOC ≈ 177434.
 - Next: ~~MathML cluster (`helper127`+/Doe/Eoe)~~ (done wave-13); ~~font-stack helpers (`helper147`+)~~ (done wave-14); math-layout engine (`lse`/`use`/`helper154+`/`Hse`), or worksheet/spreadsheet core if a clean slice appears.
 
 ## Wave-13 progress
@@ -161,7 +162,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and font-stack helpers (`helper147`+) in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 220444.
+- Boundary LOC ≈ 177434.
 - Next: ~~font-stack / math-font helpers (`helper147`+/Binding483+)~~ (done wave-14); math-layout engine (`lse`/`use`/`helper154+`/`Hse`), or worksheet/spreadsheet core if a clean slice appears.
 
 ## Wave-14 progress
@@ -170,7 +171,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and math-layout engine (`lse`/`use`/`helper154+`/`Hse`) in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 220320.
+- Boundary LOC ≈ 177434.
 - Next: ~~math-layout engine (`lse`/`use`/`helper154+`/`Hse`)~~ (done wave-15); worksheet/spreadsheet core if a clean slice appears, or effects/`_g` cluster.
 
 ## Wave-15 progress
@@ -179,7 +180,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 217915.
+- Boundary LOC ≈ 177434.
 - Next: ~~effects/`_g` + document-style cluster~~ (done wave-16); worksheet/spreadsheet core if a clean slice appears, or placeholder-resolve neighbors.
 
 ## Wave-16 progress
@@ -188,7 +189,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 217443.
+- Boundary LOC ≈ 177434.
 - Next: ~~placeholder-resolve / `_workbookTt` neighbors~~ (done wave-17); `yce`/text-layout engine (`kce`/`j_`) if a clean slice appears, or worksheet/spreadsheet core.
 
 ## Wave-17 progress
@@ -198,7 +199,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 217035.
+- Boundary LOC ≈ 177434.
 - Next: ~~`yce`/text-layout engine (`kce`/`j_`)~~ (done wave-18); worksheet/spreadsheet core if a clean slice appears.
 
 ## Wave-18 progress
@@ -207,7 +208,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary (engine uses a local `remainingSpaceAfterPriorOverlap` stand-in).
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 215800.
+- Boundary LOC ≈ 177434.
 - Next: ~~canvas line-dash / gradient / pattern fill~~ (done wave-19); worksheet/spreadsheet core if a clean slice appears, or fill-resolve neighbors (`helper200+`/`workbookHelper212`).
 
 
@@ -217,7 +218,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 213985.
+- Boundary LOC ≈ 177434.
 - Next: ~~fill-resolve neighbors (`helper200+` / picture-fill / `workbookHelper212`)~~ (done wave-20); worksheet/spreadsheet core if a clean slice appears.
 
 
@@ -227,7 +228,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 213230.
+- Boundary LOC ≈ 177434.
 - Next: ~~`helper213`/`yle` text canvas renderer (+ `helper214`)~~ (done wave-21); worksheet/spreadsheet core if a clean line-range slice appears, or text-box inset neighbors (`ble`/`Binding215+`).
 
 
@@ -237,7 +238,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 212644.
+- Boundary LOC ≈ 177434.
 - Next: ~~text-box inset neighbors (`ble`/`Binding215+`/`workbookZ`)~~ (done wave-22); worksheet/spreadsheet core if a clean line-range slice appears, or design-token Binding558+ neighbors.
 
 
@@ -247,7 +248,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 212401.
+- Boundary LOC ≈ 177434.
 - Next: ~~design-token Binding558+ / WorkbookTheme~~ (done wave-23); worksheet/spreadsheet core or SSF Binding571 if a clean npm/line-range path appears.
 
 
@@ -257,7 +258,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and SSF `Binding571` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 212002.
+- Boundary LOC ≈ 177434.
 - Next: ~~SSF Binding571~~ (done wave-24); worksheet/spreadsheet core if a clean line-range slice appears.
 
 
@@ -267,7 +268,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on vendor shim + boundary `--no-cache --allow-open-boundaries`; vendor-npm-preflight PASS.
-- Boundary LOC ≈ 209067.
+- Boundary LOC ≈ 177434.
 - Next: ~~jStat qXe + Bessel JXe~~ (done wave-25); worksheet/spreadsheet core if a clean line-range slice appears, or post-SSF cell-XF helpers (helper223+).
 
 
@@ -278,7 +279,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on vendor shims + boundary `--no-cache --allow-open-boundaries`; vendor-npm-preflight PASS.
-- Boundary LOC ≈ 200386.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-SSF cell-XF / numFmt / col-row extents (helper223–Binding586)~~ (done wave-26); RangeFormat Binding589 once VO deps (workbookBinding337/339/420/421) are drained.
 
 
@@ -288,7 +289,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and RangeFormat `Binding589` (entangled with in-boundary VOs) in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 199740.
+- Boundary LOC ≈ 177434.
 - Next: ~~worksheet helpers after Binding586 (`Tle`/`Binding232`–`Rle`)~~ (done wave-27); RangeFormat Binding589 once VO deps (workbookBinding337/339/420/421) are drained.
 
 
@@ -299,7 +300,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Vendor scan: no additional stock npm fingerprints in the post-586 locus (SSF/jStat/Bessel already drained).
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 199093.
+- Boundary LOC ≈ 177434.
 - Next: ~~RangeFormat Binding589 once VO deps drained~~ (done wave-28); next contiguous post-RangeFormat neighbor (icon-set Binding594+) or remaining pivot VO cluster.
 
 
@@ -310,7 +311,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
 - Boundary wired via line-range drain + AST Binding337 peel (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 197285.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-RangeFormat icon-set + text-run/paragraph VOs~~ (done wave-29); remaining pivot VO surface (335/336/338) or next contiguous Qle/font-weight cluster.
 
 
@@ -321,7 +322,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and pivot enums `Binding335`/`336`/`338` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 196605.
+- Boundary LOC ≈ 177434.
 - Next: ~~contiguous post-text-run `Qle`/font-weight CSS / style token maps~~ (done wave-30); Binding622/623 text-selection class or remaining pivot VO surface (335/336/338).
 
 
@@ -332,7 +333,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, pivot enums `Binding335`/`336`/`338`, and text-selection `Binding622`/`623` in boundary.
 - Boundary wired via line-range drain + Binding621 peel (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 196204.
+- Boundary LOC ≈ 177434.
 - Next: ~~Binding622/623 text-selection class (WorkbookClass6)~~ (done wave-31); remaining pivot VO surface (335/336/338) or WorkbookClass4 / helper272+ detached-text cluster.
 
 
@@ -343,7 +344,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, pivot enums `Binding335`/`336`/`338`, and WorkbookClass4 / helper272+ detached-text cluster in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 195149.
+- Boundary LOC ≈ 177434.
 - Next: ~~WorkbookClass4 / helper272–285 detached-text cluster~~ (done wave-32); remaining pivot VO surface (335/336/338) or next contiguous post-helper286 geometry cluster.
 
 
@@ -355,7 +356,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and pivot enums `Binding335`/`336`/`338` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 193481.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-helper286 geometry/transform cluster (helper286–290 / Class11)~~ (done wave-33); remaining pivot VO surface (335/336/338) or next contiguous post-kue/plugin / helper291+ preset-shape cluster.
 
 
@@ -367,7 +368,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and pivot enums `Binding335`/`336`/`338` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 192767.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-kue / helper291+ preset-shape formula cluster~~ (done wave-34); remaining pivot VO surface (335/336/338) or next contiguous post-Rue / id-gen cluster.
 
 
@@ -379,7 +380,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, Rue/zue/Bue/Vue/Hue autofit helpers, and pivot enums `Binding335`/`336`/`338` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 192344.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-Rue autofit / UUID helpers (workbookHelper298+)~~ (done wave-35); remaining pivot VO surface (335/336/338) or next contiguous post-workbookHelper303 style-ref / element VO cluster.
 
 
@@ -390,7 +391,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, style-ref `workbookHelper303`/`ide`, and pivot enums `Binding335`/`336`/`338` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 192052.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-workbookHelper303 style-ref / `_workbookZ` element VO~~ (done wave-36); remaining pivot VO surface (335/336/338) or next contiguous post-ode mime-sniff / helper304+ cluster.
 
 
@@ -401,7 +402,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, mime-sniff `ode`/`sde`/Binding648+, and pivot enums `Binding335`/`336`/`338` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 191433.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-ode mime-sniff / Binding648–654 / sde/pde/mde~~ (done wave-37); remaining helper304+ border-radius/utility parsers, or pivot VO surface (335/336/338).
 
 
@@ -413,7 +414,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, helper304+ border-radius/utility parsers (`hde`/`gde`/`_de`/`Binding655`…), and pivot enums `Binding335`/`336`/`338` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 191060.
+- Boundary LOC ≈ 177434.
 - Next: ~~helper304+ border-radius / utility-class / shadow parsers~~ (done wave-38); remaining pivot VO surface (335/336/338), or post-Mde image/shape VO cluster.
 
 
@@ -425,7 +426,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, `Mde`/image+shape VO neighbors (`Binding656`/`Nde`/`$S`/…), and pivot enums `Binding335`/`336`/`338` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 190712.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-Mde image/shape VO cluster~~ (done wave-39); Binding660 Image class, or pivot Binding335/336/338 + Class53 if a clean peel appears.
 
 
@@ -437,7 +438,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, thin `Mde` ensure, and pivot enums `Binding335`/`336`/`338` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 190412.
+- Boundary LOC ≈ 177434.
 - Next: ~~Binding660 Image class~~ (done wave-40); pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Yde chart/thread VO cluster.
 
 
@@ -449,7 +450,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and pivot enums `Binding335`/`336`/`338` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 189598.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-Yde thread/chart/CF mutation builders~~ (done wave-41); sparkline Sfe+ / data-validation Efe+, or pivot Binding335/336/338 + Class53 if cleanly separable.
 
 
@@ -462,7 +463,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and pivot enums `Binding335`/`336`/`338` in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 188864.
+- Boundary LOC ≈ 177434.
 - Next: ~~sparkline Sfe+ / data-validation Efe+~~ (done wave-42); pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Binding662 VO cluster.
 
 
@@ -476,7 +477,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left Binding662/`_C` init gate, pivot enums Binding335/336/338 + Class53, and intentional terminals in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 188299.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-Binding662 CF/DV VO cluster~~ (done wave-43); pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Vpe formula/token cluster.
 
 
@@ -488,7 +489,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left Binding662/`_C` init gate, pivot enums Binding335/336/338 + Class53, Vpe+ formula/token cluster, and intentional terminals in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 187071.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-Vpe formula/token/WorkbookR cluster~~ (done wave-44); pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-dme fill-from / address cluster.
 
 
@@ -501,7 +502,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left Binding662/`_C` init gate, dme+ fill-from helpers, pivot enums Binding335/336/338 + Class53, and intentional terminals in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 185683.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-dme fill-from / formula-address helpers~~ (done wave-45); pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Binding669 Range VO / address-utils cluster.
 
 
@@ -513,7 +514,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left Binding662/`_C` init gate, Binding669+/Binding675 Range VO init, pivot enums Binding335/336/338 + Class53, and intentional terminals in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 185281.
+- Boundary LOC ≈ 177434.
 - Next: ~~Binding675 Range VO / serial-date init~~ (done wave-46); pivot Binding335/336/338 + Class53 if cleanly separable, or Binding676 PivotCaches if peelable under flat limit.
 
 
@@ -525,7 +526,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left Binding662/`_C` init gate, pivot enums Binding335/336/338 + Class53, Binding676 PivotCaches, and intentional terminals in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 182339.
+- Boundary LOC ≈ 177434.
 - Next: ~~Binding676 PivotCaches~~ (done wave-47); pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Cme slicer / PivotTable VO cluster.
 
 
@@ -536,7 +537,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left Binding662/`_C` init gate, pivot enums Binding335/336/338 + Class53, slicer Binding677+, and intentional terminals in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 181252.
+- Boundary LOC ≈ 177434.
 - Next: ~~post-Cme slicer Binding677+~~ (done wave-48); pivot Binding335/336/338 + Class53 if cleanly separable, or PivotTable Binding369/`_u` (peel under flat limit).
 
 
@@ -547,8 +548,8 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left Binding662/`_C` init gate, pivot enums Binding335/336/338 + Class53, PivotTable Binding369/`_u`, and intentional terminals in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 180852.
-- Next: ~~PivotTable Binding369/`_u`~~ (done wave-49); field VO cluster Binding343–361 + enums 335/336 + Class53, or next contiguous post-formula helper31 cluster.
+- Boundary LOC ≈ 177434.
+- Next: ~~field VO cluster Binding343–361 + enums 335/336 + Class53~~ (done wave-50); next contiguous post-helper31 formula/array cluster, or Binding334/wne + cache el/332.
 
 
 ## Wave-49 progress
@@ -559,6 +560,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left Binding662/`_C` init gate, pivot enums Binding335/336 + Class53 + field VOs, and intentional terminals in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 180010.
+- Boundary LOC ≈ 177434.
 - Next: field VO cluster Binding343–361 (+ enums 335/336 + Class53), or next contiguous post-helper31 formula/array cluster; continue scanning for stock vendor fingerprints.
+
+
+## Wave-50 progress
+
+- Extracted field VO cluster (`Binding343`–`361`) with enums `Binding335`/`336` + Class53 (`Binding341`/PivotShowAs) + layout refresh helpers (`helper8`–`21`) + filter tokens (`dre`/`fre`/`pre`) → `workbook/pivot-fields/`.
+- Reused `PivotLayoutType` from pivot-table for `Binding338`; left `Binding334`/wne, cache `el`/`Binding332`/`333`, and `helper24`/`hre` in boundary.
+- Wired via `ensurePivotFieldsInit` + thin boundary stubs; `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 177434.
+- Next: contiguous post-helper31 formula/array cluster, or Binding334/wne + cache hydrate leftovers; continue scanning for stock vendor fingerprints.
 
