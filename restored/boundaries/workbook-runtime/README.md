@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~77.2k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~76.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -82,6 +82,7 @@
 | Formula opcodes (`Z_t`/`X_t`) | ~0.50k | **Drained (wave-83)** → `workbook/formula-opcodes/` |
 | Table element (`_workbookH`/`eDe`…`cDe`/`_workbookM`) | ~0.72k | **Drained (wave-84)** → `workbook/table-element/` |
 | Table row/range/columns/borders (`YEe`/`Binding1321`/`QEe`/`$Ee`) | ~0.58k | **Drained (wave-85)** → `workbook/table-row-range/` |
+| Formula registry (`$dt`/`Xdt`/`Zdt`/`Binding1947`) | ~0.57k | **Drained (wave-86)** → `workbook/formula-registry/` |
 
 ## Why it stays in `boundaries/`
 
@@ -965,4 +966,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 77155 (was 77713; Δ -558).
 - Next: `$dt` formula registry (~0.57k) / clean `xLe` walnut / `Z$` (~460) / JEe cell (~0.39k) / leave-behinds only if consumers clean.
+
+## Wave-86 progress
+
+- Identified contiguous Xdt/Zdt/`$dt` cluster as Codex Excel formula name→impl registry (NOT vendor): lookup helpers + Binding1947 map + Qdt error bag (~580 LOC).
+- Extracted → `workbook/formula-registry/` (single impl under flat limit; 17 formula-impl ensures remain in boundary via `frH` hooks; 502 hoisted impl `function`s wired once via compact `setFormulaImplBag`; `workbookBinding1874`/`Z2e` from formula-stats; Ydt leave-behind).
+- Left `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, `_Ye`/`_workbookS` (~1.2k leave), JEe/Binding1315 (~0.39k), `Z$` (~460), and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 76686 (was 77155; Δ -469).
+- Next: `Z$` presentation slide (~0.46k) / JEe table cell (~0.39k reunite with table-row-range) / clean `xLe` walnut / leave-behinds only if consumers clean.
 
