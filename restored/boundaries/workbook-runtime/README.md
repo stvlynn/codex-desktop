@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~191.4k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~191.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -389,6 +389,18 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 191433.
-- Next: pivot VO surface (335/336/338), or post-ode mime-sniff / helper304+ cluster; continue scanning for stock vendor fingerprints.
+- Next: ~~post-ode mime-sniff / Binding648–654 / sde/pde/mde~~ (done wave-37); remaining helper304+ border-radius/utility parsers, or pivot VO surface (335/336/338).
+
+
+## Wave-37 progress
+
+- Extracted content-type + magic-byte mime sniff (`ode`/`Binding648`/`sde`) → `workbook/image-mime/`.
+- Extracted PNG/GIF/JPEG/WEBP size readers + probe (`Binding649`/`cde`/`lde`/`ude`/`dde`/`fde`/`Binding650`/`pde`) → `workbook/image-mime/`.
+- Extracted object-fit contain/cover + letterbox helpers (`Binding651`–`654`/`mde`) → `workbook/image-mime/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, helper304+ border-radius/utility parsers (`hde`/`gde`/`_de`/`Binding655`…), and pivot enums `Binding335`/`336`/`338` in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 191060.
+- Next: helper304+ border-radius / utility-class / shadow parsers (once color/shadow deps are ready), or pivot VO surface (335/336/338); continue scanning for stock vendor fingerprints.
 
 
