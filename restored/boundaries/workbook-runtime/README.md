@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~115.7k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~111.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -65,7 +65,8 @@
 | WorkbookN / `__workbookT` (`Binding1996`) | ~4.4k | **Drained (wave-59)** → `workbook/workbook-core/` |
 | Worksheet drawings (`helper373`…`Sve` + `Binding740`–`789`) | ~3.1k | **Drained (wave-60)** → `workbook/worksheet-drawings/` |
 | Drawing-layout + sparklines (`Lve`/`Binding790`–`815`/`_D`) | ~1.6k | **Drained (wave-61)** → `workbook/worksheet-drawings/` + `workbook/sparklines/` |
-| Mermaid→slide adapters (`Binding1687` / gitGraph·sequence·class·treeView) | ~3.0k | **Drained (wave-62)** → `workbook/mermaid-slide-adapters/` |
+| Mermaid→slide adapters (`Binding1687` / gitGraph·sequence·class·treeView) | ~3.0k | **Drained (wave-62)** → `workbook/mermaid-slide-adapters/`
+| decimal.js (`helper939`…/`Binding1906`/`lit`/`Vit`) | ~4.4k | **Drained (wave-63)** → `vendor/decimal` npm shim (`decimal.js@10.6.0`) |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -712,4 +713,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 115720 (was 118625).
-- Next: Binding1906/1967 (~2.4k) / `BYe` (~2.4k) / `The` (~2.2k) / Binding1827 (~2.3k) / compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe`.
+- Next: ~~Binding1906 decimal.js~~ (done wave-63); Binding1967 (~2.4k) / `BYe` (~2.4k) / `The` (~2.2k) / Binding1827 (~2.3k) / compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe`.
+
+## Wave-63 progress
+
+- Confirmed Binding1906 contiguous cluster as stock `decimal.js` (`[DecimalError]`, `Symbol.toStringTag="Decimal"`, `nodejs.util.inspect.custom`, LN10/PI strings, `lit` factory). Full body is helper939…Pit + Binding1906/`$`/`Vit` (~4.4k), not only the ~2.4k Binding1906 var init.
+- Replaced inlined decimal.js with `vendor/decimal` npm shim (`decimal.js@10.6.0`).
+- Kept thin boundary aliases: `Binding1926`=`Decimal` constructor, `Vit`=`ensureDecimalInit` (no-op) for `rot()`/`Uat` call-sites.
+- Left bond helpers (Prt/Lrt), Binding1967, `BYe`, `The`, Binding1827, Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on vendor shim + boundary `--no-cache --allow-open-boundaries`; vendor-npm-preflight PASS.
+- Boundary LOC ≈ 111324.
+- Next: Binding1967 (~2.4k) / `BYe` (~2.4k) / Binding1827 (~2.3k) / `The` (~2.2k) / compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe` / earlier mermaid helpers Binding1615–1685.
+
