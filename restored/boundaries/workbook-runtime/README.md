@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~224.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~223.6k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -20,6 +20,7 @@
 | Line Binding431 stroke VO | ~15.7k | **Drained (wave-6)** → `workbook/line/` |
 | Color-resolve helpers (Tae/St) | ~15.4k | **Drained (wave-7)** → `workbook/color-resolve/` |
 | TextStyle VO (workbookVt) | ~15.5k–16.2k | **Drained (wave-8)** → `workbook/text-style/` |
+| TextStyle CSS / shadow parsers | ~14.9k–15.7k | **Drained (wave-9)** → `workbook/text-style/` |
 | Worksheet / spreadsheet core | ~50k–72k, ~210k–230k | Range/table/drawing APIs |
 | Presentation + Mermaid hooks | ~142k–174k | Theme palettes drained → `workbook/presentation-theme/`; Mermaid/collab remain |
 | Formula / xlsx validation | ~177k–230k | Serial dates, workbook validation (`WorkbookN`) |
@@ -81,7 +82,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Extracted color-resolve helpers (`Sae`, `Cae`, `wae`, hex/value accessors, `Tae`, `workbookSt`) → `workbook/color-resolve/`.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept; Tae wire retained for stylesheet.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Next: ~~TextStyle VO + alignment/autofit/caps~~ (done wave-8); text-style CSS parsers (`helper80`–`83`, `workbookYt`) or worksheet core.
+- Next: ~~TextStyle VO + alignment/autofit/caps~~ (done wave-8); ~~text-style CSS parsers~~ (done wave-9); worksheet/spreadsheet core.
 
 ## Wave-8 progress
 
@@ -89,4 +90,12 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `noe` / `workbookYt` / helper103–104 in boundary (shadow-CSS + declaration parsers); wired `noe` into TextStyle.shadow.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Next: text-style CSS declaration parsers (`helper80`–`83`, `workbookYt`), or worksheet/spreadsheet core clusters.
+- Next: ~~text-style CSS parsers~~ (done wave-9); worksheet/spreadsheet core clusters, or residual presentation placeholder helpers.
+
+## Wave-9 progress
+
+- Extracted CSS declaration parsers (`workbookHelper 80/81`, `iae`/`aae`/`oae`…`hae`, `tae`/`nae`), shadow-CSS (`workbookHelper 82/83`, `_ae`, `noe`), and TextStyle patch helpers (`workbookYt`, `workbookHelper 103/104`) → `workbook/text-style/`.
+- Left `gae`/`workbookEt` EMU converters in boundary (still used by geometry mid-body); `rae`/`Binding411` re-exported as ensures.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Next: worksheet/spreadsheet core clusters, or residual presentation placeholder-style helpers near the drained locus.
