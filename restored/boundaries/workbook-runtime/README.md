@@ -62,6 +62,7 @@
 | Zod (`helper789` / `$Zod*` / Binding1790–1799; Binding1790 var tail = recipes kept) | ~6.4k | **Drained (wave-56)** → `vendor/zod` npm shim (`zod@^4.4.3`)
 | presentation recipes (`Binding1800`/`qWe`…`Yqe` + `Xqe`/`Zqe`/`aJe`) | ~7.3k | **Drained (wave-57)** → `workbook/presentation-recipes/`
 | compose-layout engine (`Binding1390`/`MDe`…`Binding1488`) | ~3.9k | **Drained (wave-58)** → `workbook/compose-layout/` |
+| WorkbookN / `__workbookT` (`Binding1996`) | ~4.4k | **Drained (wave-59)** → `workbook/workbook-core/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -672,3 +673,12 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary LOC ≈ 125862.
 - Next: Binding1996 WorkbookN class peel / compose DSL Binding1490–1528 / Binding740 (~3.0k) / `The`/`BYe` / Google Slides `pJe`/`SJe`.
 
+
+## Wave-59 progress
+
+- Extracted Binding1996 WorkbookN / `__workbookT` method bodies (~4.4k) → `workbook/workbook-core/` Range-style peels; class shell + `#opsHost` retained in open boundary (flat exemption).
+- Wired boundary via `wireWorkbookCoreEnv` + thin WorkbookN init (line-range drain; no mega-file StrReplace); `openBoundary` kept.
+- Left Binding662/`_C`, Binding1574/`Cke`, public compose DSL Binding1490–1528, Google Slides `pJe`/`SJe`, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 123201.
+- Next: compose DSL Binding1490–1528 / Binding740 (~3.0k) / `The`/`BYe` / Google Slides `pJe`/`SJe`.

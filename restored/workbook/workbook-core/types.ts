@@ -1,0 +1,65 @@
+// Restored from ref/webview/assets/workbook-C49Dgk1_.js
+// Stage-3 wave-59: Workbook ops-host surface for peeled methods.
+
+export type WorkbookOpsHost = {
+  wb: any;
+  p: Record<string, any>;
+  m: Record<string, (...args: any[]) => any>;
+};
+
+/** Private field keys exposed on host.p (53). */
+export const WORKBOOK_PRIV_FIELD_KEYS = [
+  "e",
+  "t",
+  "n",
+  "r",
+  "i",
+  "a",
+  "o",
+  "s",
+  "c",
+  "l",
+  "u",
+  "d",
+  "f",
+  "p",
+  "m",
+  "h",
+  "g",
+  "_",
+  "v",
+  "y",
+  "b",
+  "x",
+  "S",
+  "C",
+  "w",
+  "T",
+  "E",
+  "D",
+  "O",
+  "k",
+  "A",
+  "j",
+  "M",
+  "N",
+  "P",
+  "F",
+  "I",
+  "L",
+  "R",
+  "z",
+  "B",
+  "V",
+  "H",
+  "U",
+  "W",
+  "G",
+  "K",
+  "q",
+  "J",
+  "Y",
+  "X",
+  "Z",
+  "Q",
+] as const;
