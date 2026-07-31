@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~195.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~193.5k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -38,7 +38,7 @@
 | Icon-set (`Binding594`/`helper256`–`259`) | ~0.13k | **Drained (wave-29)** → `workbook/icon-set/`
 | TextRun/Paragraph VOs (`Binding597`–`612`/`Xle`/`Zle`/`helper260`–`261`) | ~0.58k | **Drained (wave-29)** → `workbook/text-run/`
 | Style-tokens (`Qle`/`Binding613`–`621`/`helper262`–`271`/`iue`/`aue`/`_x`) | ~0.43k | **Drained (wave-30)** → `workbook/style-tokens/`
-| Text-selection (`Binding622`/`623` / WorkbookClass6) | ~1.06k | **Drained (wave-31)** → `workbook/text-selection/` |
+| Text-selection (`Binding622`/`623` / WorkbookClass6) | ~1.06k | **Drained (wave-31)** → `workbook/text-selection/`
 | Document glue | scattered | DOCX protobuf already faced under `workbook/document-*` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
@@ -139,7 +139,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and MathML cluster (`helper127`+/Doe/Eoe) in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Boundary LOC ≈ 221739.
+- Boundary LOC ≈ 193481.
 - Next: ~~MathML cluster (`helper127`+/Doe/Eoe)~~ (done wave-13); ~~font-stack helpers (`helper147`+)~~ (done wave-14); math-layout engine (`lse`/`use`/`helper154+`/`Hse`), or worksheet/spreadsheet core if a clean slice appears.
 
 ## Wave-13 progress
@@ -331,6 +331,18 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 195149.
-- Next: WorkbookClass4 / helper272–285 detached-text cluster, or remaining pivot VO surface (335/336/338); continue scanning for stock vendor fingerprints.
+- Next: ~~WorkbookClass4 / helper272–285 detached-text cluster~~ (done wave-32); remaining pivot VO surface (335/336/338) or next contiguous post-helper286 geometry cluster.
+
+
+## Wave-32 progress
+
+- Extracted detached-text input helpers (`helper272`–`285` + math/run/paragraph converters) → `workbook/detached-text/`.
+- Extracted DetachedText VO (`Binding626`/`WorkbookClass4`) with style accessor + style-apply peels → `workbook/detached-text/`.
+- Extracted stub host (`Binding625`) + helper/class ensures (`workbookK`/`Binding627`) → `workbook/detached-text/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and pivot enums `Binding335`/`336`/`338` in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 193481.
+- Next: pivot VO surface (335/336/338), or post-helper286 geometry/transform cluster (helper286–290 / Class11); continue scanning for stock vendor fingerprints.
 
 
