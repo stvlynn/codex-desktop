@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~196.6k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~196.2k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -36,7 +36,8 @@
 | Worksheet autofit (`Tle` / `Binding232`–`Rle`) | ~0.7k | **Drained (wave-27)** → `workbook/worksheet-autofit/`
 | RangeFormat (`Binding337` + `helper240`–`Jle` + `Binding589`–`593`/`Yle`) | ~1.8k | **Drained (wave-28)** → `workbook/range-format/`
 | Icon-set (`Binding594`/`helper256`–`259`) | ~0.13k | **Drained (wave-29)** → `workbook/icon-set/`
-| TextRun/Paragraph VOs (`Binding597`–`612`/`Xle`/`Zle`/`helper260`–`261`) | ~0.58k | **Drained (wave-29)** → `workbook/text-run/` |
+| TextRun/Paragraph VOs (`Binding597`–`612`/`Xle`/`Zle`/`helper260`–`261`) | ~0.58k | **Drained (wave-29)** → `workbook/text-run/`
+| Style-tokens (`Qle`/`Binding613`–`621`/`helper262`–`271`/`iue`/`aue`/`_x`) | ~0.43k | **Drained (wave-30)** → `workbook/style-tokens/` |
 | Document glue | scattered | DOCX protobuf already faced under `workbook/document-*` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
@@ -307,6 +308,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 196605.
-- Next: remaining pivot VO surface (335/336/338) or contiguous post-text-run neighbor (`Qle`/font-weight CSS / style token maps); continue scanning for stock vendor fingerprints.
+- Next: ~~contiguous post-text-run `Qle`/font-weight CSS / style token maps~~ (done wave-30); Binding622/623 text-selection class or remaining pivot VO surface (335/336/338).
+
+
+## Wave-30 progress
+
+- Extracted Tailwind-like style token maps (`Qle`/`Binding613`–`619`/`$le`/`eue`/`tue`/`nue`/`rue`) + className parser (`helper262`) + cluster ensure (`Binding620`) → `workbook/style-tokens/`.
+- Extracted style-config helpers (`helper263`–`271`/`iue`/`aue`/`_x`) + ensure (`Binding621`, peeled from shared var with Binding622/623) → `workbook/style-tokens/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, pivot enums `Binding335`/`336`/`338`, and text-selection `Binding622`/`623` in boundary.
+- Boundary wired via line-range drain + Binding621 peel (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 196204.
+- Next: Binding622/623 text-selection class (WorkbookClass6) or remaining pivot VO surface (335/336/338); continue scanning for stock vendor fingerprints.
 
 
