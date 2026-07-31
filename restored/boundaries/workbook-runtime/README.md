@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~215.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~214.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -185,6 +185,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 215800.
-- Next: worksheet/spreadsheet core if a clean line-range slice appears, or neighboring presentation/document glue.
+- Next: ~~canvas line-dash / gradient / pattern fill~~ (done wave-19); worksheet/spreadsheet core if a clean slice appears, or fill-resolve neighbors (`helper200+`/`workbookHelper212`).
+
+
+## Wave-19 progress
+
+- Extracted canvas line-dash (`M_`/`N_`) + gradient stop/blend (`Ace`…`L_`) + linear/radial gradient painters (`Pce`/`Fce`/`Ice`/`Lce`) + pattern tile painters (`R_`/`z_`/`Rce`) + pattern fill resolve (`zce`…`Wce`/`Gce`) → `workbook/canvas-fill/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 213985.
+- Next: fill-resolve neighbors (`helper200+` / picture-fill / `workbookHelper212`) if a clean slice appears, else worksheet/spreadsheet core.
 
 
