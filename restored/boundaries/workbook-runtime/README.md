@@ -807,3 +807,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary LOC ≈ 95036 (was 96321; Δ -1285).
 - Next: clean `xLe` walnut peel before comments/`_C` (~660) / compose DSL Binding1490–1528 / flowchart `NPe` cluster / Table VO `fhe`.
 
+## Wave-72 progress
+
+- Identified contiguous Binding1490–1528/`DOe`/`OOe` cluster as Codex presentation compose DSL (NOT vendor): layout MIME/meta + size modes + element builders (row/col/grid/table/image/shape) (~886 LOC).
+- Extracted → `workbook/compose-dsl/` (split under flat limit; Binding661/739/1489/`_workbookH`/433/1213/1330/1328 remain in boundary via `cdslH` hooks; fill/design-tokens/compose-layout/etc. imported directly).
+- Left `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, flowchart `NPe`/`PPe` + graph layout Binding1675/1685, Table VO `fhe`/`ohe`, WorkbookN shell, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 94271 (was 95036; Δ -765).
+- Next: flowchart `NPe`/`PPe` + Binding1675/1685 (~0.8k) / Table VO `fhe`/`ohe` (~0.5k) / clean `xLe` walnut peel before comments/`_C` (~660).
+

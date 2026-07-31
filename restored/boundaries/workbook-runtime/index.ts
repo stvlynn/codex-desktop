@@ -2,7 +2,7 @@
 // Flat boundary facade — vendored oversized workbook runtime module.
 // Intentional oversized vendor-runtime terminal (openBoundary).
 // Not stock npm (Codex popcorn workbook engine). Exit: Stage-3 split into workbook/.
-// Stage-3 waves: shape-geometry; theme-color; presentation-theme (Mae/Sle); fill; stylesheet; line; color-resolve; text-style; placeholder-style + font-metrics; style-resolve + glyph-advance; math-plain-text; math-ml; font-stack; math-layout; document-style/effects; placeholder-resolve; text-layout; canvas-fill; fill-resolve; text-canvas; text-box; design-tokens; ssf-npm; jstat+bessel-npm; yjs-npm; three-npm; highlightjs-npm; zod-npm; presentation-recipes; compose-layout; workbook-core; worksheet-drawings; drawing-layout+sparklines; mermaid-slide-adapters; decimal-npm; canvas-paint (BYe); chart-elements (The/Ohe…ige); formula-stats (Binding1831/1874); mermaid-slide-helpers (Binding1592/SAe…QAe); table-styles (Nme/Ume/ahe); google-slides-adapter (oJe/pJe/SJe).
+// Stage-3 waves: shape-geometry; theme-color; presentation-theme (Mae/Sle); fill; stylesheet; line; color-resolve; text-style; placeholder-style + font-metrics; style-resolve + glyph-advance; math-plain-text; math-ml; font-stack; math-layout; document-style/effects; placeholder-resolve; text-layout; canvas-fill; fill-resolve; text-canvas; text-box; design-tokens; ssf-npm; jstat+bessel-npm; yjs-npm; three-npm; highlightjs-npm; zod-npm; presentation-recipes; compose-layout; workbook-core; worksheet-drawings; drawing-layout+sparklines; mermaid-slide-adapters; decimal-npm; canvas-paint (BYe); chart-elements (The/Ohe…ige); formula-stats (Binding1831/1874); mermaid-slide-helpers (Binding1592/SAe…QAe); table-styles (Nme/Ume/ahe); google-slides-adapter (oJe/pJe/SJe); compose-dsl (Binding1490–1528).
 // Stage-3 wave-6: Line Binding431 stroke VO + dash/compound maps → workbook/line/.
 // Stage-3 wave-7: color-resolve helpers (Sae/Cae/wae/Tae/workbookSt) → workbook/color-resolve/.
 // Stage-3 wave-8: TextStyle VO (workbookVt) + alignment/autofit/caps → workbook/text-style/.
@@ -55,7 +55,7 @@
 // Stage-3 wave-55: inlined highlight.js grammars (wke…aAe) + oAe/sAe → boundaries/highlight-js Core() (highlight.js@^11.11.1); Binding1574/Cke layout schemas retained; inlined HLJS body deleted.
 // Stage-3 wave-56: inlined Zod (helper789 / Binding1751… / $Zod* / Binding1790–1799) → vendor/zod npm shim (zod@^4.4.3); recipe cluster qWe… kept with helper816–819/YUe/Binding1799 aliases; inlined Zod body deleted.
 // Stage-3 wave-57: presentation recipes Binding1800/qWe…Yqe + Xqe/Zqe/aJe → workbook/presentation-recipes/; dJe templates + Google Slides adapter retained; thin aJe/Xqe/Zqe stubs + layout hooks.
-// Stage-3 wave-58: compose-layout engine Binding1390/MDe…Binding1488 → workbook/compose-layout/; public compose DSL Binding1490–1528 retained.
+// Stage-3 wave-58: compose-layout engine Binding1390/MDe…Binding1488 → workbook/compose-layout/; compose DSL Binding1490–1528 → workbook/compose-dsl (wave-72).
 // Stage-3 wave-59: Binding1996 WorkbookN / __workbookT → workbook/workbook-core/ (method peels); Binding662/_C + Binding1574/Cke + compose DSL + intentional terminals retained.
 // Stage-3 wave-60: helper373…xve/Sve + Binding740–789 worksheet drawings → workbook/worksheet-drawings/.
 // Stage-3 wave-61: Lve+Binding790–803 drawing-layout → worksheet-drawings/; Binding804–815+_D sparklines → workbook/sparklines/.
@@ -1837,6 +1837,127 @@ void pJe;
 
 // Thin alias: cluster ensure for Google Slides adapter (oJe/pJe/SJe).
 var ensureGoogleSlidesAdapterCluster = ensureGoogleSlidesClusterInit;
+
+import {
+  wireComposeDslBoundaryHooks,
+  ensureComposeDslInit,
+  ensureComposeLayoutMetaInit as DOe,
+  ensureComposeSizeHelpersInit as workbookBinding1499,
+  ensureComposeElementBuildersInit as OOe,
+  ensureComposeDslAggregatorInit as workbookBinding1528,
+  workbookBinding1490,
+  workbookBinding1491,
+  workbookBinding1492,
+  workbookBinding1493,
+  workbookBinding1494,
+  workbookBinding1495,
+  workbookBinding1496,
+  workbookBinding1497,
+  workbookBinding1498,
+  $K,
+  workbookBinding1500,
+  workbookBinding1501,
+  workbookBinding1502,
+  workbookBinding1503,
+  workbookBinding1504,
+  workbookBinding1505,
+  workbookBinding1506,
+  workbookBinding1507,
+  workbookBinding1508,
+  workbookBinding1509,
+  workbookBinding1510,
+  workbookBinding1511,
+  workbookBinding1512,
+  workbookBinding1513,
+  workbookBinding1514,
+  workbookBinding1515,
+  _q,
+  workbookBinding1516,
+  workbookBinding1517,
+  workbookBinding1518,
+  workbookBinding1519,
+  workbookBinding1520,
+  workbookBinding1521,
+  workbookBinding1522,
+  workbookBinding1523,
+  workbookBinding1524,
+  workbookBinding1525,
+  workbookBinding1526,
+  workbookBinding1527,
+} from "../../workbook/compose-dsl";
+
+wireComposeDslBoundaryHooks({
+  ensureBinding661: () => {
+    workbookBinding661();
+  },
+  ensureBinding739: () => {
+    workbookBinding739();
+  },
+  ensureBinding1489: () => {
+    workbookBinding1489();
+  },
+  ensureWorkbookH: () => {
+    _workbookH();
+  },
+  ensureBinding433: () => {
+    workbookBinding433();
+  },
+  ensureBinding1213: () => {
+    workbookBinding1213();
+  },
+  ensureBinding1330: () => {
+    workbookBinding1330();
+  },
+  parseComposeTracks: (tracks: any, label?: string) =>
+    workbookBinding1328(tracks, label),
+});
+
+void workbookBinding1490;
+void workbookBinding1491;
+void workbookBinding1492;
+void workbookBinding1493;
+void workbookBinding1494;
+void workbookBinding1495;
+void workbookBinding1496;
+void workbookBinding1497;
+void workbookBinding1498;
+void $K;
+void workbookBinding1499;
+void workbookBinding1500;
+void workbookBinding1501;
+void workbookBinding1502;
+void workbookBinding1503;
+void workbookBinding1504;
+void workbookBinding1505;
+void workbookBinding1506;
+void workbookBinding1507;
+void workbookBinding1508;
+void workbookBinding1509;
+void workbookBinding1510;
+void workbookBinding1511;
+void workbookBinding1512;
+void workbookBinding1513;
+void workbookBinding1514;
+void workbookBinding1515;
+void _q;
+void workbookBinding1516;
+void workbookBinding1517;
+void workbookBinding1518;
+void workbookBinding1519;
+void workbookBinding1520;
+void workbookBinding1521;
+void workbookBinding1522;
+void workbookBinding1523;
+void workbookBinding1524;
+void workbookBinding1525;
+void workbookBinding1526;
+void workbookBinding1527;
+void DOe;
+void OOe;
+void workbookBinding1528;
+
+// Thin alias: cluster ensure for compose DSL (Binding1490–1528).
+var ensureComposeDslCluster = ensureComposeDslInit;
 
 wireSheetBoundaryHooks({
   ensureRangeClusterInit: () => {
@@ -46872,892 +46993,6 @@ function workbookHelper696(workbookInput11481) {
   )
     return Math.round(workbookInput11481 * 100) / 100;
 }
-var workbookBinding1490,
-  workbookBinding1491,
-  workbookBinding1492,
-  DOe = esmInit(() => {
-    wr();
-    workbookWt();
-    workbookBinding661();
-    workbookBinding521();
-    workbookBinding739();
-    workbookBinding1489();
-    _workbookH();
-    workbookBinding433();
-    workbookBinding404();
-    workbookBinding1213();
-    workbookBinding550();
-    workbookBinding644();
-    workbookBinding522();
-    workbookT();
-    workbookZ();
-    workbookBinding628();
-    workbookMt();
-    workbookBinding1490 = "openai.presentation.layout/v4";
-    workbookBinding1491 = "application/vnd.openai.presentation-layout+json";
-    workbookBinding1492 = Object.entries(workbookBinding393).reduce(
-      (accumulator, [workbookInput14905, workbookInput14906]) => (
-        accumulator[workbookInput14906] === undefined &&
-          (accumulator[workbookInput14906] = workbookInput14905),
-        accumulator
-      ),
-      {},
-    );
-  }),
-  workbookBinding1493,
-  workbookBinding1494,
-  workbookBinding1495,
-  workbookBinding1496,
-  workbookBinding1497,
-  workbookBinding1498,
-  $K,
-  workbookBinding1499 = esmInit(() => {
-    workbookBinding1493 = "fill";
-    workbookBinding1494 = (workbookInput13538) => ({
-      mode: "fixed",
-      value: workbookBinding1498(workbookInput13538, "compose.fixed(value)"),
-    });
-    workbookBinding1495 = (workbookInput13320 = 1) => ({
-      mode: "fill",
-      value: workbookBinding1498(workbookInput13320, "compose.grow(value)"),
-    });
-    workbookBinding1496 = (workbookInput14041) => ({
-      mode: "wrap",
-      max: workbookBinding1498(workbookInput14041, "compose.wrap(max)"),
-    });
-    workbookBinding1497 = (
-      workbookInput1535,
-      workbookInput1536 = "hug",
-      workbookInput1537 = "compose.size",
-    ) => {
-      let workbookBinding7607 = workbookInput1535 ?? workbookInput1536;
-      if (workbookBinding7607 === "hug" || workbookBinding7607 === "fill")
-        return workbookBinding7607 === "hug"
-          ? {
-              mode: "hug",
-            }
-          : {
-              mode: "fill",
-              value: 1,
-            };
-      if (typeof workbookBinding7607 == "number")
-        return {
-          mode: "fixed",
-          value: workbookBinding1498(
-            workbookBinding7607,
-            `${workbookInput1537}.fixed.value`,
-          ),
-        };
-      if (typeof workbookBinding7607 == "string") {
-        let workbookBinding17004 = $K(workbookBinding7607, workbookInput1537);
-        if (workbookBinding17004 !== undefined)
-          return {
-            mode: "fixed",
-            value: workbookBinding17004,
-          };
-        throw Error(
-          `${workbookInput1537} must be hug, fill, a positive pixel number, a "[number]px" string, grow(...), fixed(...), or wrap(...).`,
-        );
-      }
-      if (workbookBinding7607.mode === "fixed")
-        return {
-          mode: "fixed",
-          value: workbookBinding1498(
-            workbookBinding7607.value,
-            `${workbookInput1537}.fixed.value`,
-          ),
-        };
-      if (workbookBinding7607.mode === "fill")
-        return {
-          mode: "fill",
-          value: workbookBinding1498(
-            workbookBinding7607.value,
-            `${workbookInput1537}.fill.value`,
-          ),
-        };
-      if (workbookBinding7607.mode === "wrap")
-        return {
-          mode: "wrap",
-          max: workbookBinding1498(
-            workbookBinding7607.max,
-            `${workbookInput1537}.wrap.max`,
-          ),
-        };
-      throw Error(
-        `${workbookInput1537} must be hug, fill, a positive pixel number, a "[number]px" string, grow(...), fixed(...), or wrap(...).`,
-      );
-    };
-    workbookBinding1498 = (workbookInput10154, workbookInput10155) => {
-      if (!Number.isFinite(workbookInput10154) || workbookInput10154 <= 0)
-        throw Error(`${workbookInput10155} must be a positive number.`);
-      return workbookInput10154;
-    };
-    $K = (workbookInput10695, workbookInput10696) => {
-      let workbookBinding21199 = /^(\d+(?:\.\d+)?)\s*px$/i.exec(
-        workbookInput10695.trim(),
-      );
-      if (workbookBinding21199)
-        return workbookBinding1498(
-          Number(workbookBinding21199[1]),
-          workbookInput10696,
-        );
-    };
-  }),
-  workbookBinding1500,
-  workbookBinding1501,
-  workbookBinding1502,
-  workbookBinding1503,
-  workbookBinding1504,
-  workbookBinding1505,
-  workbookBinding1506,
-  workbookBinding1507,
-  workbookBinding1508,
-  workbookBinding1509,
-  workbookBinding1510,
-  workbookBinding1511,
-  workbookBinding1512,
-  workbookBinding1513,
-  workbookBinding1514,
-  workbookBinding1515,
-  _q,
-  workbookBinding1516,
-  workbookBinding1517,
-  workbookBinding1518,
-  workbookBinding1519,
-  workbookBinding1520,
-  workbookBinding1521,
-  workbookBinding1522,
-  workbookBinding1523,
-  workbookBinding1524,
-  workbookBinding1525,
-  workbookBinding1526,
-  workbookBinding1527,
-  OOe = esmInit(() => {
-    workbookBinding565();
-    workbookBinding1499();
-    workbookBinding1330();
-    workbookBinding1500 = {
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-    };
-    workbookBinding1501 = (workbookInput4049, workbookInput4050 = {}) => ({
-      kind: "text",
-      value: workbookInput4049,
-      name: workbookBinding1516(workbookInput4050.name),
-      style: workbookInput4050.style,
-      shadow: workbookInput4050.shadow,
-      transform: workbookInput4050.transform ?? "none",
-      width: workbookBinding1497(
-        workbookInput4050.width,
-        "hug",
-        "compose.text.width",
-      ),
-      height: workbookBinding1497(
-        workbookInput4050.height,
-        "hug",
-        "compose.text.height",
-      ),
-      position: workbookBinding1515(workbookInput4050.position),
-      columnSpan: workbookBinding1523(
-        workbookInput4050.columnSpan,
-        "compose.text.columnSpan",
-      ),
-      rowSpan: workbookBinding1523(
-        workbookInput4050.rowSpan,
-        "compose.text.rowSpan",
-      ),
-    });
-    workbookBinding1502 = (workbookInput3248) => {
-      let workbookBinding11458 = workbookBinding1521(
-          workbookInput3248.weight ?? 1,
-          "compose.rule.weight",
-        ),
-        workbookBinding11459 = workbookBinding1524(
-          workbookInput3248.opacity,
-          "compose.rule.opacity",
-        );
-      return {
-        kind: "rule",
-        name: workbookBinding1516(workbookInput3248.name),
-        stroke: workbookInput3248.stroke,
-        opacity: workbookBinding11459,
-        weight: workbookBinding11458,
-        width: workbookBinding1497(
-          workbookInput3248.width,
-          "fill",
-          "compose.rule.width",
-        ),
-        height: workbookBinding1497(
-          workbookInput3248.height ?? workbookBinding1494(workbookBinding11458),
-          "hug",
-          "compose.rule.height",
-        ),
-        position: workbookBinding1515(workbookInput3248.position),
-        columnSpan: workbookBinding1523(
-          workbookInput3248.columnSpan,
-          "compose.rule.columnSpan",
-        ),
-        rowSpan: workbookBinding1523(
-          workbookInput3248.rowSpan,
-          "compose.rule.rowSpan",
-        ),
-      };
-    };
-    workbookBinding1503 = (workbookInput1562 = {}) => {
-      let workbookBinding7657 = workbookInput1562.geometry ?? "rect",
-        workbookBinding7658 = {
-          kind: "shape",
-          name: workbookBinding1516(workbookInput1562.name),
-          fill: workbookInput1562.fill,
-          line: workbookInput1562.line,
-          borderRadius: workbookInput1562.borderRadius,
-          shadow: workbookInput1562.shadow,
-          width: workbookBinding1497(
-            workbookInput1562.width,
-            workbookBinding1494(24),
-            "compose.shape.width",
-          ),
-          height: workbookBinding1497(
-            workbookInput1562.height,
-            workbookBinding1494(24),
-            "compose.shape.height",
-          ),
-          position: workbookBinding1515(workbookInput1562.position),
-          columnSpan: workbookBinding1523(
-            workbookInput1562.columnSpan,
-            "compose.shape.columnSpan",
-          ),
-          rowSpan: workbookBinding1523(
-            workbookInput1562.rowSpan,
-            "compose.shape.rowSpan",
-          ),
-        };
-      if (workbookBinding7657 === "custom") {
-        let workbookBinding17077 = workbookInput1562.customPaths;
-        if (!workbookBinding17077 || workbookBinding17077.length === 0)
-          throw Error(
-            'compose.shape geometry "custom" requires at least one custom path.',
-          );
-        return {
-          ...workbookBinding7658,
-          geometry: workbookBinding7657,
-          customPaths: workbookBinding17077,
-        };
-      }
-      if (workbookInput1562.customPaths !== undefined)
-        throw Error(
-          'compose.shape customPaths can only be used with geometry "custom".',
-        );
-      return {
-        ...workbookBinding7658,
-        geometry: workbookBinding7657,
-      };
-    };
-    workbookBinding1504 = (workbookInput1801 = {}) => {
-      let workbookBinding8326 = _q(
-        workbookInput1801.from,
-        workbookInput1801.to,
-      );
-      return {
-        kind: "connector",
-        name: workbookBinding1516(workbookInput1801.name),
-        connectorKind: workbookInput1801.kind ?? "straight",
-        orientation: workbookInput1801.orientation ?? "horizontal",
-        from: workbookBinding8326?.from,
-        to: workbookBinding8326?.to,
-        fromElement: workbookInput1801.fromElement,
-        toElement: workbookInput1801.toElement,
-        fromSide: workbookInput1801.fromSide,
-        toSide: workbookInput1801.toSide,
-        fromIdx: workbookInput1801.fromIdx,
-        toIdx: workbookInput1801.toIdx,
-        line: workbookInput1801.line,
-        head: workbookInput1801.head,
-        tail: workbookInput1801.tail,
-        cap: workbookInput1801.cap,
-        join: workbookInput1801.join,
-        width: workbookBinding1497(
-          workbookInput1801.width,
-          workbookBinding8326?.width ?? workbookBinding1494(160),
-          "compose.connector.width",
-        ),
-        height: workbookBinding1497(
-          workbookInput1801.height,
-          workbookBinding8326?.height ?? workbookBinding1494(16),
-          "compose.connector.height",
-        ),
-        position:
-          workbookBinding8326?.position ??
-          workbookBinding1515(workbookInput1801.position),
-        columnSpan: workbookBinding1523(
-          workbookInput1801.columnSpan,
-          "compose.connector.columnSpan",
-        ),
-        rowSpan: workbookBinding1523(
-          workbookInput1801.rowSpan,
-          "compose.connector.rowSpan",
-        ),
-      };
-    };
-    workbookBinding1505 = (workbookInput2128) => ({
-      kind: "image",
-      name: workbookBinding1516(workbookInput2128.name),
-      source: workbookBinding1527(workbookInput2128),
-      contentType: workbookBinding1516(workbookInput2128.contentType),
-      fit: workbookInput2128.fit,
-      alt: workbookInput2128.alt,
-      geometry: workbookInput2128.geometry,
-      borderRadius: workbookInput2128.borderRadius,
-      crop: workbookInput2128.crop,
-      rotation: workbookBinding1526(
-        workbookInput2128.rotation,
-        "compose.image.rotation",
-      ),
-      flipHorizontal: workbookBinding1525(
-        workbookInput2128.flipHorizontal,
-        "compose.image.flipHorizontal",
-      ),
-      flipVertical: workbookBinding1525(
-        workbookInput2128.flipVertical,
-        "compose.image.flipVertical",
-      ),
-      lockAspectRatio: workbookBinding1525(
-        workbookInput2128.lockAspectRatio,
-        "compose.image.lockAspectRatio",
-      ),
-      width: workbookBinding1497(
-        workbookInput2128.width,
-        "fill",
-        "compose.image.width",
-      ),
-      height: workbookBinding1497(
-        workbookInput2128.height,
-        "fill",
-        "compose.image.height",
-      ),
-      position: workbookBinding1515(workbookInput2128.position),
-      columnSpan: workbookBinding1523(
-        workbookInput2128.columnSpan,
-        "compose.image.columnSpan",
-      ),
-      rowSpan: workbookBinding1523(
-        workbookInput2128.rowSpan,
-        "compose.image.rowSpan",
-      ),
-    });
-    workbookBinding1506 = (workbookInput2983) => ({
-      kind: "table",
-      name: workbookBinding1516(workbookInput2983.name),
-      rows: workbookBinding1522(workbookInput2983.rows, "compose.table.rows"),
-      columns: workbookBinding1522(
-        workbookInput2983.columns,
-        "compose.table.columns",
-      ),
-      values: workbookInput2983.values,
-      columnWidths: workbookInput2983.columnWidths,
-      columnTracks: workbookInput2983.columnTracks,
-      style: workbookBinding1516(workbookInput2983.style),
-      styleOptions: workbookInput2983.styleOptions,
-      width: workbookBinding1497(
-        workbookInput2983.width,
-        "fill",
-        "compose.table.width",
-      ),
-      height: workbookBinding1497(
-        workbookInput2983.height,
-        "fill",
-        "compose.table.height",
-      ),
-      position: workbookBinding1515(workbookInput2983.position),
-      columnSpan: workbookBinding1523(
-        workbookInput2983.columnSpan,
-        "compose.table.columnSpan",
-      ),
-      rowSpan: workbookBinding1523(
-        workbookInput2983.rowSpan,
-        "compose.table.rowSpan",
-      ),
-    });
-    workbookBinding1507 = (workbookInput4696) => ({
-      kind: "chart",
-      name: workbookBinding1516(workbookInput4696.name),
-      chartType: workbookInput4696.chartType,
-      config: workbookInput4696.config,
-      width: workbookBinding1497(
-        workbookInput4696.width,
-        "fill",
-        "compose.chart.width",
-      ),
-      height: workbookBinding1497(
-        workbookInput4696.height,
-        "fill",
-        "compose.chart.height",
-      ),
-      position: workbookBinding1515(workbookInput4696.position),
-      columnSpan: workbookBinding1523(
-        workbookInput4696.columnSpan,
-        "compose.chart.columnSpan",
-      ),
-      rowSpan: workbookBinding1523(
-        workbookInput4696.rowSpan,
-        "compose.chart.rowSpan",
-      ),
-    });
-    workbookBinding1508 = (workbookInput3200 = {}, workbookInput3201 = []) => ({
-      kind: "row",
-      name: workbookBinding1516(workbookInput3200.name),
-      width: workbookBinding1497(
-        workbookInput3200.width,
-        "hug",
-        "compose.row.width",
-      ),
-      height: workbookBinding1497(
-        workbookInput3200.height,
-        "hug",
-        "compose.row.height",
-      ),
-      gap: workbookBinding1519(workbookInput3200.gap ?? 0, "compose.row.gap"),
-      align: workbookBinding1517(
-        workbookInput3200.align ?? "start",
-        "compose.row.align",
-      ),
-      justify: workbookBinding1518(
-        workbookInput3200.justify ?? "start",
-        "compose.row.justify",
-      ),
-      padding: workbookBinding1514(workbookInput3200.padding),
-      children: [...workbookInput3201],
-      position: workbookBinding1515(workbookInput3200.position),
-      columnSpan: workbookBinding1523(
-        workbookInput3200.columnSpan,
-        "compose.row.columnSpan",
-      ),
-      rowSpan: workbookBinding1523(
-        workbookInput3200.rowSpan,
-        "compose.row.rowSpan",
-      ),
-    });
-    workbookBinding1509 = (workbookInput3071 = {}, workbookInput3072 = []) => ({
-      kind: "column",
-      name: workbookBinding1516(workbookInput3071.name),
-      width: workbookBinding1497(
-        workbookInput3071.width,
-        "hug",
-        "compose.column.width",
-      ),
-      height: workbookBinding1497(
-        workbookInput3071.height,
-        "hug",
-        "compose.column.height",
-      ),
-      gap: workbookBinding1519(
-        workbookInput3071.gap ?? 0,
-        "compose.column.gap",
-      ),
-      align: workbookBinding1517(
-        workbookInput3071.align ?? "start",
-        "compose.column.align",
-      ),
-      justify: workbookBinding1518(
-        workbookInput3071.justify ?? "start",
-        "compose.column.justify",
-      ),
-      padding: workbookBinding1514(workbookInput3071.padding),
-      children: [...workbookInput3072],
-      position: workbookBinding1515(workbookInput3071.position),
-      columnSpan: workbookBinding1523(
-        workbookInput3071.columnSpan,
-        "compose.column.columnSpan",
-      ),
-      rowSpan: workbookBinding1523(
-        workbookInput3071.rowSpan,
-        "compose.column.rowSpan",
-      ),
-    });
-    workbookBinding1510 = (workbookInput1934, workbookInput1935 = []) => ({
-      kind: "grid",
-      name: workbookBinding1516(workbookInput1934.name),
-      width: workbookBinding1497(
-        workbookInput1934.width,
-        "hug",
-        "compose.grid.width",
-      ),
-      height: workbookBinding1497(
-        workbookInput1934.height,
-        "hug",
-        "compose.grid.height",
-      ),
-      columns: workbookBinding1328(
-        workbookInput1934.columns,
-        "compose.grid.columns",
-      ),
-      rows: workbookInput1934.rows
-        ? workbookBinding1328(workbookInput1934.rows, "compose.grid.rows")
-        : undefined,
-      autoRows: workbookInput1934.autoRows ?? "auto",
-      columnGap: workbookBinding1519(
-        workbookInput1934.columnGap ?? 0,
-        "compose.grid.columnGap",
-      ),
-      rowGap: workbookBinding1519(
-        workbookInput1934.rowGap ?? 0,
-        "compose.grid.rowGap",
-      ),
-      alignItems: workbookBinding1517(
-        workbookInput1934.alignItems ?? "stretch",
-        "compose.grid.alignItems",
-      ),
-      justifyItems: workbookBinding1517(
-        workbookInput1934.justifyItems ?? "stretch",
-        "compose.grid.justifyItems",
-      ),
-      padding: workbookBinding1514(workbookInput1934.padding),
-      children: [...workbookInput1935],
-      position: workbookBinding1515(workbookInput1934.position),
-      columnSpan: workbookBinding1523(
-        workbookInput1934.columnSpan,
-        "compose.grid.columnSpan",
-      ),
-      rowSpan: workbookBinding1523(
-        workbookInput1934.rowSpan,
-        "compose.grid.rowSpan",
-      ),
-    });
-    workbookBinding1511 = (workbookInput1919 = {}, workbookInput1920) => {
-      let workbookBinding8632 =
-        workbookInput1919.fill !== undefined ||
-        workbookInput1919.line !== undefined ||
-        workbookInput1919.borderRadius !== undefined ||
-        workbookInput1919.shadow !== undefined;
-      return {
-        kind: "panel",
-        name: workbookBinding1516(workbookInput1919.name),
-        fill: workbookInput1919.fill,
-        line: workbookInput1919.line,
-        borderRadius: workbookInput1919.borderRadius,
-        shadow: workbookInput1919.shadow,
-        materialize: workbookInput1919.materialize ?? workbookBinding8632,
-        align: workbookBinding1517(
-          workbookInput1919.align ?? "start",
-          "compose.panel.align",
-        ),
-        justify: workbookBinding1517(
-          workbookInput1919.justify ?? "start",
-          "compose.panel.justify",
-        ),
-        width: workbookBinding1497(
-          workbookInput1919.width,
-          "fill",
-          "compose.panel.width",
-        ),
-        height: workbookBinding1497(
-          workbookInput1919.height,
-          "hug",
-          "compose.panel.height",
-        ),
-        padding: workbookBinding1514(workbookInput1919.padding),
-        child: workbookInput1920,
-        position: workbookBinding1515(workbookInput1919.position),
-        columnSpan: workbookBinding1523(
-          workbookInput1919.columnSpan,
-          "compose.panel.columnSpan",
-        ),
-        rowSpan: workbookBinding1523(
-          workbookInput1919.rowSpan,
-          "compose.panel.rowSpan",
-        ),
-      };
-    };
-    workbookBinding1512 = workbookBinding1511;
-    workbookBinding1513 = (workbookInput2997 = {}, workbookInput2998 = []) => ({
-      kind: "layers",
-      name: workbookBinding1516(workbookInput2997.name),
-      width: workbookBinding1497(
-        workbookInput2997.width,
-        "hug",
-        "compose.layers.width",
-      ),
-      height: workbookBinding1497(
-        workbookInput2997.height,
-        "hug",
-        "compose.layers.height",
-      ),
-      alignItems: workbookBinding1517(
-        workbookInput2997.alignItems ?? "stretch",
-        "compose.layers.alignItems",
-      ),
-      justifyItems: workbookBinding1517(
-        workbookInput2997.justifyItems ?? "stretch",
-        "compose.layers.justifyItems",
-      ),
-      padding: workbookBinding1514(workbookInput2997.padding),
-      children: [...workbookInput2998],
-      position: workbookBinding1515(workbookInput2997.position),
-      columnSpan: workbookBinding1523(
-        workbookInput2997.columnSpan,
-        "compose.layers.columnSpan",
-      ),
-      rowSpan: workbookBinding1523(
-        workbookInput2997.rowSpan,
-        "compose.layers.rowSpan",
-      ),
-    });
-    workbookBinding1514 = (workbookInput3114) => {
-      if (workbookInput3114 === undefined)
-        return {
-          ...workbookBinding1500,
-        };
-      if (
-        typeof workbookInput3114 == "number" ||
-        typeof workbookInput3114 == "string"
-      ) {
-        let workbookBinding21385 = workbookBinding1519(
-          workbookInput3114,
-          "compose.padding",
-        );
-        return {
-          top: workbookBinding21385,
-          right: workbookBinding21385,
-          bottom: workbookBinding21385,
-          left: workbookBinding21385,
-        };
-      }
-      let workbookBinding11216 = workbookBinding1519(
-          workbookInput3114.x ?? 0,
-          "compose.padding.x",
-        ),
-        workbookBinding11217 = workbookBinding1519(
-          workbookInput3114.y ?? 0,
-          "compose.padding.y",
-        );
-      return {
-        top: workbookBinding1519(
-          workbookInput3114.top ?? workbookBinding11217,
-          "compose.padding.top",
-        ),
-        right: workbookBinding1519(
-          workbookInput3114.right ?? workbookBinding11216,
-          "compose.padding.right",
-        ),
-        bottom: workbookBinding1519(
-          workbookInput3114.bottom ?? workbookBinding11217,
-          "compose.padding.bottom",
-        ),
-        left: workbookBinding1519(
-          workbookInput3114.left ?? workbookBinding11216,
-          "compose.padding.left",
-        ),
-      };
-    };
-    workbookBinding1515 = (workbookInput3759) => {
-      if (workbookInput3759 === undefined) return;
-      let workbookBinding12484 = {};
-      return (
-        workbookInput3759.left !== undefined &&
-          (workbookBinding12484.left = workbookBinding1520(
-            workbookInput3759.left,
-            "compose.position.left",
-          )),
-        workbookInput3759.top !== undefined &&
-          (workbookBinding12484.top = workbookBinding1520(
-            workbookInput3759.top,
-            "compose.position.top",
-          )),
-        workbookInput3759.right !== undefined &&
-          (workbookBinding12484.right = workbookBinding1520(
-            workbookInput3759.right,
-            "compose.position.right",
-          )),
-        workbookInput3759.bottom !== undefined &&
-          (workbookBinding12484.bottom = workbookBinding1520(
-            workbookInput3759.bottom,
-            "compose.position.bottom",
-          )),
-        Object.keys(workbookBinding12484).length > 0
-          ? workbookBinding12484
-          : undefined
-      );
-    };
-    _q = (workbookInput1911, workbookInput1912) => {
-      if (workbookInput1911 === undefined && workbookInput1912 === undefined)
-        return;
-      if (workbookInput1911 === undefined || workbookInput1912 === undefined)
-        throw Error("compose.connector requires both from and to points.");
-      let workbookBinding8608 = {
-          left: workbookBinding1520(
-            workbookInput1911.left,
-            "compose.connector.from.left",
-          ),
-          top: workbookBinding1520(
-            workbookInput1911.top,
-            "compose.connector.from.top",
-          ),
-        },
-        workbookBinding8609 = {
-          left: workbookBinding1520(
-            workbookInput1912.left,
-            "compose.connector.to.left",
-          ),
-          top: workbookBinding1520(
-            workbookInput1912.top,
-            "compose.connector.to.top",
-          ),
-        },
-        workbookBinding8610 = Math.min(
-          workbookBinding8608.left,
-          workbookBinding8609.left,
-        ),
-        workbookBinding8611 = Math.min(
-          workbookBinding8608.top,
-          workbookBinding8609.top,
-        ),
-        workbookBinding8612 = Math.max(
-          1,
-          Math.abs(workbookBinding8609.left - workbookBinding8608.left),
-        ),
-        workbookBinding8613 = Math.max(
-          1,
-          Math.abs(workbookBinding8609.top - workbookBinding8608.top),
-        );
-      return {
-        position: {
-          left: workbookBinding8610,
-          top: workbookBinding8611,
-        },
-        width: workbookBinding1494(workbookBinding8612),
-        height: workbookBinding1494(workbookBinding8613),
-        from: {
-          left: workbookBinding8608.left - workbookBinding8610,
-          top: workbookBinding8608.top - workbookBinding8611,
-        },
-        to: {
-          left: workbookBinding8609.left - workbookBinding8610,
-          top: workbookBinding8609.top - workbookBinding8611,
-        },
-      };
-    };
-    workbookBinding1516 = (workbookInput10753) => {
-      if (workbookInput10753 === undefined) return;
-      let workbookBinding21273 = workbookInput10753.trim();
-      return workbookBinding21273.length > 0 ? workbookBinding21273 : undefined;
-    };
-    workbookBinding1517 = (workbookInput8636, workbookInput8637) => {
-      if (
-        workbookInput8636 === "start" ||
-        workbookInput8636 === "center" ||
-        workbookInput8636 === "end" ||
-        workbookInput8636 === "stretch"
-      )
-        return workbookInput8636;
-      throw Error(
-        `${workbookInput8637} must be start, center, end, or stretch.`,
-      );
-    };
-    workbookBinding1518 = (workbookInput8638, workbookInput8639) => {
-      if (
-        workbookInput8638 === "start" ||
-        workbookInput8638 === "center" ||
-        workbookInput8638 === "end" ||
-        workbookInput8638 === "between"
-      )
-        return workbookInput8638;
-      throw Error(
-        `${workbookInput8639} must be start, center, end, or between.`,
-      );
-    };
-    workbookBinding1519 = (workbookInput15943, workbookInput15944) =>
-      workbookBinding559(workbookInput15943, {
-        name: workbookInput15944,
-      });
-    workbookBinding1520 = (workbookInput6026, workbookInput6027) => {
-      if (typeof workbookInput6026 == "number") {
-        if (!Number.isFinite(workbookInput6026))
-          throw Error(`${workbookInput6027} must be a finite number.`);
-        return workbookInput6026;
-      }
-      let workbookBinding16068 = workbookInput6026.trim().toLowerCase(),
-        workbookBinding16069 = /^(-?\d+(?:\.\d+)?)\s*px$/i.exec(
-          workbookBinding16068,
-        );
-      return workbookBinding16069
-        ? Number(workbookBinding16069[1])
-        : workbookBinding1519(workbookInput6026, workbookInput6027);
-    };
-    workbookBinding1521 = (workbookInput10156, workbookInput10157) => {
-      if (!Number.isFinite(workbookInput10156) || workbookInput10156 <= 0)
-        throw Error(`${workbookInput10157} must be a positive number.`);
-      return workbookInput10156;
-    };
-    workbookBinding1522 = (workbookInput9319, workbookInput9320) => {
-      if (
-        !Number.isFinite(workbookInput9319) ||
-        workbookInput9319 <= 0 ||
-        !Number.isInteger(workbookInput9319)
-      )
-        throw Error(`${workbookInput9320} must be a positive integer.`);
-      return workbookInput9319;
-    };
-    workbookBinding1523 = (workbookInput15576, workbookInput15577) =>
-      workbookInput15576 === undefined
-        ? 1
-        : workbookBinding1522(workbookInput15576, workbookInput15577);
-    workbookBinding1524 = (workbookInput8604, workbookInput8605) => {
-      if (workbookInput8604 !== undefined) {
-        if (
-          !Number.isFinite(workbookInput8604) ||
-          workbookInput8604 < 0 ||
-          workbookInput8604 > 1
-        )
-          throw Error(`${workbookInput8605} must be between 0 and 1.`);
-        return workbookInput8604;
-      }
-    };
-    workbookBinding1525 = (workbookInput9607, workbookInput9608) => {
-      if (workbookInput9607 !== undefined) {
-        if (typeof workbookInput9607 != "boolean")
-          throw Error(`${workbookInput9608} must be a boolean.`);
-        return workbookInput9607;
-      }
-    };
-    workbookBinding1526 = (workbookInput9505, workbookInput9506) => {
-      if (workbookInput9505 !== undefined) {
-        if (!Number.isFinite(workbookInput9505))
-          throw Error(`${workbookInput9506} must be a finite number.`);
-        return workbookInput9505;
-      }
-    };
-    workbookBinding1527 = (workbookInput6441) =>
-      "path" in workbookInput6441
-        ? {
-            path: workbookInput6441.path,
-          }
-        : "dataUrl" in workbookInput6441
-          ? {
-              dataUrl: workbookInput6441.dataUrl,
-            }
-          : "blob" in workbookInput6441
-            ? {
-                blob: workbookInput6441.blob,
-              }
-            : "uri" in workbookInput6441
-              ? {
-                  uri: workbookInput6441.uri,
-                }
-              : {
-                  prompt: workbookInput6441.prompt,
-                };
-  }),
-  workbookBinding1528 = esmInit(() => {
-    workbookBinding1499();
-    workbookBinding1330();
-    OOe();
-    workbookBinding1393();
-    workbookBinding1465();
-    workbookBinding1485();
-    workbookBinding1488();
-  });
 function workbookHelper697(workbookInput11745) {
   return (
     typeof workbookInput11745 == "object" &&
