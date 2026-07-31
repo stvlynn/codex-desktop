@@ -1,5 +1,9 @@
 import { createElement } from "react";
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
+// Intentional oversized vendor-runtime terminal (openBoundary).
+// Not a single stock npm package: composite Recharts + Redux Toolkit/Immer
+// plus Codex WidgetContext/app-scope widget store. Exit: npm-shim separable
+// stock slices; Stage-3 promote Codex glue into visualization/.
 // Stage 3 candidate: 36/36 app-initial aliases rewritten to
 // IMPORT_MAP semantic/vendor/boundary paths. AppScope (Fft/Ift/ivt/M_t/L_t) is an
 // open host/runtime facade — not stock jotai. No whole-file app-initial promote.
