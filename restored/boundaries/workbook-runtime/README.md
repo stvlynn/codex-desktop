@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~200.4k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~199.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -31,7 +31,8 @@
 | Formula / xlsx validation | ~177k–230k | Serial dates, workbook validation (`WorkbookN`) |
 | SSF number-format (`Binding571`) | ~2.9k | **Drained (wave-24)** → `vendor/ssf` npm shim (`ssf@0.11.2`)
 | jStat stats (`qXe`) | ~8.1k | **Drained (wave-25)** → `vendor/jstat` npm shim (`jstat@1.9.6`)
-| Bessel (`JXe`) | ~0.57k | **Drained (wave-25)** → `vendor/bessel` npm shim (`bessel@1.0.2`) |
+| Bessel (`JXe`) | ~0.57k | **Drained (wave-25)** → `vendor/bessel` npm shim (`bessel@1.0.2`)
+| Cell-XF / numFmt / col-row extents (`helper223`–`Binding586`) | ~0.7k | **Drained (wave-26)** → `workbook/cell-xf-format/` |
 | Document glue | scattered | DOCX protobuf already faced under `workbook/document-*` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
@@ -259,6 +260,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on vendor shims + boundary `--no-cache --allow-open-boundaries`; vendor-npm-preflight PASS.
 - Boundary LOC ≈ 200386.
-- Next: post-SSF spreadsheet cell-XF / number-format / col-row extents (helper223–Binding586), or RangeFormat Binding589 once VO deps are drained.
+- Next: ~~post-SSF cell-XF / numFmt / col-row extents (helper223–Binding586)~~ (done wave-26); RangeFormat Binding589 once VO deps (workbookBinding337/339/420/421) are drained.
+
+
+## Wave-26 progress
+
+- Extracted cell-XF apply/color helpers (`helper223`–`227`/`Cle`) + SSF numFmt table (`Binding572`–`577`) + default digit-width (`helper228`/`Binding578`–`581`) + SSF cell-value format (`wle`/`helper229`/`Binding582`–`583`) + col-row extents (`helper230`–`231`/`Binding584`) + font-face name strip (`Binding585`–`586`) → `workbook/cell-xf-format/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and RangeFormat `Binding589` (entangled with in-boundary VOs) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 199740.
+- Next: worksheet helpers after Binding586 (`Tle`/`helper232`–`Rle`) if a clean slice appears, or RangeFormat Binding589 once VO deps are drained; scan for additional stock vendor fingerprints.
 
 
