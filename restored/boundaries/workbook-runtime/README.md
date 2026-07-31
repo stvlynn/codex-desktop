@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~71.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~70.5k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -89,6 +89,9 @@
 | Chart canvas paint (`helper579`–`585` / `NCe` / `LCe` / `PCe`) | ~1.28k | **Drained (wave-89)** → `workbook/chart-paint/` |
 | Doc-op apply (`helper1024` / `Zht` / `Qht`…`ggt` / `_gt`) | ~1.26k | **Drained (wave-90)** → `workbook/doc-op-apply/` |
 | Three.js chart paint (`helper521` / `Qbe` / `$be`) | ~0.97k | **Drained (wave-90)** → `workbook/three-chart-paint/` |
+| Unit convert (`N1e`) | ~0.52k | **Drained (wave-91)** → `workbook/unit-convert/` |
+| Named ranges (`IXe` / `LXe` / `RXe` / `zXe`) | ~0.37k | **Drained (wave-91)** → `workbook/named-ranges/` |
+| Styles Yjs (`helper1030`…`Cgt` / `Ogt` / `kgt`) | ~0.45k | **Drained (wave-91)** → `workbook/styles-yjs/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1025,6 +1028,19 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 71784 (was 73958; Δ -2174).
 - Next: N1e unit-convert (~0.52k) / zXe named-ranges (~0.37k) / kgt styles-yjs (~0.36k) / helpers 491+ / `_workbookS` only after presentation leave-behind ensures drain.
+
+## Wave-91 progress
+
+- Re-scanned ≥300 clusters: WorkbookN (~1845 leave), `_workbookS`/`_workbookO` (~1236 leave), N1e (~522), helpers 491/722/745/462/607 (~471–375), zXe (~368), kgt (~361), Binding1486 (~626), Kpt (~352), vEe (~332).
+- Skipped full `_workbookS`/`_workbookO` (45-ensure fan-out) and WorkbookN leave-behind; deferred chart helpers 491+ (fan-in to many chart leave-behinds).
+- Peeled `N1e` → `workbook/unit-convert/`; coerce inlined; `#VALUE!`/`#N/A` from formula-stats; `a7e` still wraps `N1e`.
+- Peeled `IXe`/`LXe`/`RXe`/`zXe` → `workbook/named-ranges/`; formula/address/attachment direct; Binding675 via `nrH`.
+- Peeled contiguous `helper1030`…`Cgt`/`Ogt`/`kgt` → `workbook/styles-yjs/`; Fill/Font/Borders/stylesheet + yjs Map/Array direct.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 70467 (was 71784; Δ -1317).
+- Next: helpers 491/722/745 (~0.47–0.41k) / Kpt (~0.35k) / vEe (~0.33k) / Binding1486 (~0.63k) / `_workbookS` only after presentation leave-behind ensures drain.
+
 
 
 
