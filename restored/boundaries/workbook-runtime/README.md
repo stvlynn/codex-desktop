@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~229k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~228k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -14,7 +14,7 @@
 | ------ | ------------------------ | ----- |
 | Shape geometry enum + name map | ~16k–17k | **Drained** → `workbook/shape-geometry.ts` + `workbook/chart-proto-name-maps/` |
 | Chart/presentation proto ↔ camelCase bridges | Binding404 cluster | **Drained** with shape maps |
-| Theme / pattern fill (Hie) | ~15.7k–17.4k residual | Next: pattern fill class + theme color sets |
+| Theme / pattern fill (Hie) | ~15.7k–16.2k | **Drained** → `workbook/theme-color/` |
 | Worksheet / spreadsheet core | ~50k–72k, ~210k–230k | Range/table/drawing APIs |
 | Presentation + Mermaid hooks | ~142k–174k | `fromMermaid`, slide plugins, collab publish |
 | Formula / xlsx validation | ~177k–230k | Serial dates, workbook validation (`WorkbookN`) |
@@ -35,5 +35,11 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 ## Wave-1 progress
 
 - Extracted ~1.2k LOC: OOXML shape-geometry enum + 55 chart/presentation proto name-map bridges.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+
+## Wave-2 progress
+
+- Extracted theme scheme color sets, named CSS colors, color transform/parse helpers, `WorkbookColor`, and `PatternFill`.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
