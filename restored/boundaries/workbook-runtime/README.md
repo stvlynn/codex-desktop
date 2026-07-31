@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~212.6k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~212.4k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -205,7 +205,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 213230.
-- Next: ~~`helper213`/`yle` text canvas renderer (+ `helper214`)~~ (done wave-21); worksheet/spreadsheet core if a clean line-range slice appears, or text-box inset neighbors (`ble`/`helper215+`).
+- Next: ~~`helper213`/`yle` text canvas renderer (+ `helper214`)~~ (done wave-21); worksheet/spreadsheet core if a clean line-range slice appears, or text-box inset neighbors (`ble`/`Binding215+`).
 
 
 ## Wave-21 progress
@@ -215,6 +215,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 212644.
-- Next: text-box inset neighbors (`ble`/`helper215+`/`workbookZ`) if a clean slice appears, else worksheet/spreadsheet core.
+- Next: ~~text-box inset neighbors (`ble`/`Binding215+`/`workbookZ`)~~ (done wave-22); worksheet/spreadsheet core if a clean line-range slice appears, or design-token Binding558+ neighbors.
+
+
+## Wave-22 progress
+
+- Extracted default text-box insets (`ble`/`Binding548`–`550`) + inset resolvers (`Binding215`–`217`/`xle`/`Binding219`) + master paragraph defaults (`Binding218`) + layout box (`Binding220`) + layout/render (`workbookQ`/`Binding221`/`workbookX`) + cluster ensure (`workbookZ`) → `workbook/text-box/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 212401.
+- Next: worksheet/spreadsheet core if a clean line-range slice appears, or design-token Binding558+ neighbors.
 
 
