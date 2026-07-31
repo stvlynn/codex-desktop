@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-93: compose-jsx-lower barrel.
+// Stage-3 wave-93/104: compose-jsx-lower barrel.
 
 export {
   wireComposeJsxLowerBoundaryHooks,
@@ -59,3 +59,5 @@ export {
   isComposeFormattingWhitespace,
   lowerTableRows,
 } from "./lower-element-impl";
+
+export { lowerPanelSurfaceTag, JOe } from "./lower-panel-impl";

@@ -1,9 +1,12 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: table cell border segment paint (legacy STe).
-// Stage-3 wave-99.
+// Stage-3 wave-99/104 (layoutTableColumns / $B).
 
 import { workbookGt } from "../text-style";
 import { tcpH } from "./boundary-hooks";
+import { layoutTableColumns } from "./layout-table-columns-impl";
+
+void layoutTableColumns;
 
 void workbookGt;
 void tcpH;
@@ -13,7 +16,7 @@ export function paintTableCells(tcpIn657: any, tcpIn658: any, tcpIn659: any = {}
   let tcpBind4804 = tcpIn657.bbox?.xEmu ?? 0,
     tcpBind4805 = tcpIn657.bbox?.yEmu ?? 0,
     tcpBind4806 = tcpIn657.bbox?.widthEmu ?? 0,
-    tcpBind4807 = tcpH.layoutTableColumns(tcpIn657.table, {
+    tcpBind4807 = layoutTableColumns(tcpIn657.table, {
       frameWidthEmu: tcpBind4806,
       fitColumnWidthsToFrame: tcpIn659.fitColumnWidthsToFrame,
     }),

@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-98: chart-legend-plot barrel.
+// Stage-3 wave-98/104: chart-legend-plot barrel.
 
 export { wireChartLegendPlotBoundaryHooks, clpH } from "./boundary-hooks";
 export {
@@ -8,3 +8,4 @@ export {
   jxe,
   wSe,
 } from "./chart-legend-plot-impl";
+export { reserveTitleBand, uSe } from "./reserve-title-band-impl";

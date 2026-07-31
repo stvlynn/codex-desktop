@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-93: compose-jsx-lower boundary hooks.
+// Stage-3 wave-93/104: compose-jsx-lower boundary hooks.
 
 export type ComposeJsxLowerBoundaryHooks = {
   bh700: (...args: any[]) => any;
@@ -9,10 +9,35 @@ export type ComposeJsxLowerBoundaryHooks = {
   ensureUke: () => void;
   ensureBinding1544: () => void;
   ensureBinding1531: () => void;
+  /** Prop allowlist check (helper716). */
+  assertAllowedProps: (...args: any[]) => any;
+  /** Allowed props table (Binding1545). */
+  panelPropAllowlist: any;
+  /** Flatten children (QOe). */
+  flattenChildren: (...args: any[]) => any;
+  /** Resolve tag kind (tke). */
+  resolveTagKind: (...args: any[]) => any;
+  /** Style bag from props (rke). */
+  styleFromProps: (...args: any[]) => any;
+  /** Has visual chrome (ike). */
+  hasVisualChrome: (...args: any[]) => any;
+  /** Create text/box element (helper713). */
+  createBoxElement: (...args: any[]) => any;
+  /** Element name (helper717). */
+  elementName: (...args: any[]) => any;
+  /** Size token (helper721). */
+  sizeToken: (...args: any[]) => any;
+  /** Attach children ($Oe). */
+  attachChildren: (...args: any[]) => any;
+  /** Shape element factory (Binding1511). */
+  createShapeElement: (...args: any[]) => any;
 };
 
-export const cjlH: ComposeJsxLowerBoundaryHooks = {} as ComposeJsxLowerBoundaryHooks;
+export const cjlH: ComposeJsxLowerBoundaryHooks =
+  {} as ComposeJsxLowerBoundaryHooks;
 
-export function wireComposeJsxLowerBoundaryHooks(next: ComposeJsxLowerBoundaryHooks): void {
+export function wireComposeJsxLowerBoundaryHooks(
+  next: ComposeJsxLowerBoundaryHooks,
+): void {
   Object.assign(cjlH, next);
 }

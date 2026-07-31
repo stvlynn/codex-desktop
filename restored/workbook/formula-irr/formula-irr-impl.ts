@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: Excel IRR solver (legacy F0e).
-// Stage-3 wave-101.
+// Stage-3 wave-101/104 (computeXirr / Z0e).
 
 import {
   workbookBinding1835 as valueError,
@@ -152,3 +152,100 @@ export function computeIrr(irrIn689: any, irrIn690: any) {
 
 /** Legacy alias. */
 export const F0e = computeIrr;
+
+export function computeXirr(irrIn1978: any, irrIn1979: any, irrIn1980: any) {
+  if (
+    ((irrIn1978 = irrH.fn850(
+      irrH.fn841(irrIn1978),
+    )),
+    (irrIn1979 = irrH.coerceDates(irrH.fn841(irrIn1979))),
+    (irrIn1980 = irrH.fn849(irrIn1980)),
+    irrH.fn846(irrIn1978, irrIn1979, irrIn1980))
+  )
+    return valueError;
+  let irrBind8747 = (
+      irrIn9267,
+      irrIn9268,
+      irrIn9269,
+    ) => {
+      let irrBind19820 = irrIn9269 + 1,
+        irrBind19821 = irrIn9267[0];
+      for (
+        let irrBind22364 = 1;
+        irrBind22364 < irrIn9267.length;
+        irrBind22364++
+      )
+        irrBind19821 +=
+          irrIn9267[irrBind22364] /
+          irrBind19820 **
+            (irrH.dayDiff(
+              irrIn9268[irrBind22364],
+              irrIn9268[0],
+            ) /
+              365);
+      return irrBind19821;
+    },
+    irrBind8748 = (
+      irrIn8201,
+      irrIn8202,
+      irrIn8203,
+    ) => {
+      let irrBind18705 = irrIn8203 + 1,
+        irrBind18706 = 0;
+      for (
+        let irrBind21111 = 1;
+        irrBind21111 < irrIn8201.length;
+        irrBind21111++
+      ) {
+        let irrBind22217 =
+          irrH.dayDiff(
+            irrIn8202[irrBind21111],
+            irrIn8202[0],
+          ) / 365;
+        irrBind18706 -=
+          (irrBind22217 * irrIn8201[irrBind21111]) /
+          irrBind18705 ** +(irrBind22217 + 1);
+      }
+      return irrBind18706;
+    },
+    irrBind8749 = false,
+    irrBind8750 = false;
+  for (
+    let irrBind22324 = 0;
+    irrBind22324 < irrIn1978.length;
+    irrBind22324++
+  ) {
+    irrIn1978[irrBind22324] > 0 && (irrBind8749 = true);
+    irrIn1978[irrBind22324] < 0 && (irrBind8750 = true);
+  }
+  if (!irrBind8749 || !irrBind8750) return numError;
+  irrIn1980 ||= 0.1;
+  let irrBind8751 = irrIn1980,
+    irrBind8753,
+    irrBind8754,
+    irrBind8755,
+    irrBind8756 = true;
+  do {
+    irrBind8755 = irrBind8747(
+      irrIn1978,
+      irrIn1979,
+      irrBind8751,
+    );
+    irrBind8753 =
+      irrBind8751 -
+      irrBind8755 /
+        irrBind8748(
+          irrIn1978,
+          irrIn1979,
+          irrBind8751,
+        );
+    irrBind8754 = Math.abs(irrBind8753 - irrBind8751);
+    irrBind8751 = irrBind8753;
+    irrBind8756 =
+      irrBind8754 > 1e-10 && Math.abs(irrBind8755) > 1e-10;
+  } while (irrBind8756);
+  return irrBind8751;
+}
+
+/** Legacy alias. */
+export const Z0e = computeXirr;

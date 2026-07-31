@@ -1,9 +1,12 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: legend-aware plot layout (legacy jxe + wSe).
-// Stage-3 wave-98.
+// Stage-3 wave-98/104 (reserveTitleBand / uSe).
 
 import { Mn } from "../presentation-protobuf";
 import { clpH } from "./boundary-hooks";
+import { reserveTitleBand } from "./reserve-title-band-impl";
+
+void reserveTitleBand;
 
 void Mn;
 void clpH;
@@ -213,7 +216,7 @@ export function layoutLegendPlot(clpIn590: any, clpIn591: any, clpIn592: any, cl
       width: clpIn592.width,
       height: Math.max(0, clpIn592.height - clpBind4572),
     },
-    clpBind4574 = clpH.reserveTitleBand(
+    clpBind4574 = reserveTitleBand(
       clpIn591,
       clpBind4573,
       clpIn593,

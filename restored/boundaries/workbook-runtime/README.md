@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~56.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~54.8k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -155,6 +155,15 @@
 | Shape path densify (`dTe`) | ~0.11k | **Drained (wave-103)** → `workbook/shape-path-densify/` |
 | Compose element snapshot (`helper678`) | ~0.10k | **Drained (wave-103)** → `workbook/compose-element-snapshot/` |
 | YEARFRAC (`helper884`) | ~0.11k | **Drained (wave-103)** → `workbook/formula-yearfrac/` |
+| Scatter axis plan (`helper545`) | ~0.09k | **Drained (wave-104)** → `workbook/chart-scatter-axes/` |
+| Title band (`uSe`) | ~0.10k | **Drained (wave-104)** → `workbook/chart-legend-plot/` |
+| Series values (`helper551`) | ~0.15k | **Drained (wave-104)** → `workbook/chart-series-values/` |
+| Icon-set paint (`uwe`…`ywe`) | ~0.48k | **Drained (wave-104)** → `workbook/icon-set-paint/` |
+| Table columns (`$B`) | ~0.16k | **Drained (wave-104)** → `workbook/table-cell-paint/` |
+| Panel/surface JSX (`JOe`) | ~0.10k | **Drained (wave-104)** → `workbook/compose-jsx-lower/` |
+| XIRR (`Z0e`) | ~0.09k | **Drained (wave-104)** → `workbook/formula-irr/` |
+| Lambda detect (`helper1008`) | ~0.09k | **Drained (wave-104)** → `workbook/formula-ast-remap/` |
+| HTML paste cell/table (`Dmt`/`Jpt`) | ~0.20k | **Drained (wave-104)** → `workbook/html-paste/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1279,3 +1288,21 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on modules + chart-paint + peers + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 56143 (was 57000; Δ -857).
 - Next: newly revealed ≥90 (`helper551`/`uSe`/`helper545`/`uwe`/`JOe`/`Dmt`/`$B`/`Z0e`/`helper1008`) / leave-behinds when safe.
+
+## Wave-104 progress
+
+- Re-scanned ≥85 after wave-103. **FALSE/ESM:** `ict`/`WEe`/`TIe`/`$nt`/`zwe`/`yEe`/`Oht`/`npt`/`gxe`/`Binding1150`/`_xe`/`xDe`/`ftt`/`Binding841`/`helper672@xDe`/`helper391@841`/`hxe@mxe`/`helper601@Twe`/`Amt@kmt`. **LEAVE:** `rze`/`kht` (WorkbookN/`_workbookS` not top-level).
+- Preferred reals: `helper551`+`fSe`/`pSe`, `JOe`, `uSe`, `Dmt`+`Omt`, `$B`+`gTe`/`helper633`/`_Te`, `Z0e`, `helper1008`, `helper545`, `uwe`…`ywe` (+ neighbor `Jpt`).
+- Peeled `helper545` → `workbook/chart-scatter-axes/` `planScatterAxes`.
+- Peeled `uSe` → `workbook/chart-legend-plot/` `reserveTitleBand`.
+- Peeled `helper551`+`fSe`/`pSe` → `workbook/chart-series-values/`.
+- Peeled `uwe`…`ywe` → `workbook/icon-set-paint/` `paintIconSetGlyph`.
+- Peeled `$B` cluster → `workbook/table-cell-paint/` `layoutTableColumns`.
+- Peeled `JOe` → `workbook/compose-jsx-lower/` `lowerPanelSurfaceTag`.
+- Peeled `Z0e` → `workbook/formula-irr/` `computeXirr`.
+- Peeled `helper1008` → `workbook/formula-ast-remap/` `exprContainsLambda`.
+- Peeled `Dmt`/`Omt`+`Jpt` → `workbook/html-paste/`.
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on modules + peers + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 54770 (was 56143; Δ -1373).
+- Next: newly revealed ≥85 / leave-behinds when safe.
