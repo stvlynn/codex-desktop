@@ -777,3 +777,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary LOC ≈ 99489 (was 101269; Δ -1780).
 - Next: `xLe` walnut layout consts (peel before comments/`_C`) / compose DSL Binding1490–1528 / Google Slides `oJe`/`pJe`/`SJe` (~1.4k) / Binding1592 (~1.5k) / Ume table-styles / formula helpers that feed Binding1831.
 
+## Wave-69 progress
+
+- Identified contiguous `Binding1592`/`SAe`…`QAe` cluster as Codex mermaid-slide helpers (NOT vendor): code theme tokens + text measure/run-style/scratch-slide + chart-like timeline/gantt plugins + fallback plugin + state/mind/arrow geometry (~1.4k LOC).
+- Extracted → `workbook/mermaid-slide-helpers/` (split under flat limit; `workbookEt`/`_workbookS`/`_workbookO` remain in boundary via `mshH` hooks). Feeds existing `mermaid-slide-adapters` wire.
+- Left compose DSL Binding1490–1528, Google Slides `oJe`/`pJe`/`SJe`, `xLe` walnut/comments (incl. `_C`), Ume table-styles, Binding662/`_C`, Binding1574/`Cke`, flowchart `NPe`/`PPe` + graph layout Binding1675/1685, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 98173 (was 99489; Δ -1316).
+- Next: Google Slides `oJe`/`pJe`/`SJe` (~1.4k) / Ume table-styles (~1.4k) / clean `xLe` walnut peel before comments/`_C` (~660) / compose DSL Binding1490–1528 / flowchart `NPe` cluster.
+
