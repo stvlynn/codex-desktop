@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~199.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~197.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -33,7 +33,8 @@
 | jStat stats (`qXe`) | ~8.1k | **Drained (wave-25)** → `vendor/jstat` npm shim (`jstat@1.9.6`)
 | Bessel (`JXe`) | ~0.57k | **Drained (wave-25)** → `vendor/bessel` npm shim (`bessel@1.0.2`)
 | Cell-XF / numFmt / col-row extents (`helper223`–`Binding586`) | ~0.7k | **Drained (wave-26)** → `workbook/cell-xf-format/`
-| Worksheet autofit (`Tle` / `Binding232`–`Rle`) | ~0.7k | **Drained (wave-27)** → `workbook/worksheet-autofit/` |
+| Worksheet autofit (`Tle` / `Binding232`–`Rle`) | ~0.7k | **Drained (wave-27)** → `workbook/worksheet-autofit/`
+| RangeFormat (`Binding337` + `helper240`–`Jle` + `Binding589`–`593`/`Yle`) | ~1.8k | **Drained (wave-28)** → `workbook/range-format/` |
 | Document glue | scattered | DOCX protobuf already faced under `workbook/document-*` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
@@ -282,6 +283,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 199093.
-- Next: RangeFormat Binding589 once VO deps (`workbookBinding337`/`339`/`420`/`421`) are drained as separable clusters; continue scanning for stock vendor fingerprints.
+- Next: ~~RangeFormat Binding589 once VO deps drained~~ (done wave-28); next contiguous post-RangeFormat neighbor (icon-set Binding594+) or remaining pivot VO cluster.
+
+
+## Wave-28 progress
+
+- Extracted RangeFormat unlock cluster: horizontalAlignment enum (`Binding337`, peeled from pivot `Binding339` init) + fill/font/border clone helpers (`helper240`–`244`) + 2D array shape (`zle`/`Ble`) + border/color/alignment helpers (`helper245`–`255`/`Ule`/`Wle`/`_b`/`Gle`/`Kle`/`qle`/`Jle`) + RangeFormatFill/RangeFormat/Font/Borders/BorderEdge (`Binding589`–`593`) + cluster ensure (`Yle`) → `workbook/range-format/`.
+- VO status: `Binding420`/`421` already drained (wave-5 stylesheet); `Binding337` drained this wave; `Binding339` remains as pivot-enum init for 335/336/338 only (no longer required by RangeFormat).
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
+- Boundary wired via line-range drain + AST Binding337 peel (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 197285.
+- Next: post-RangeFormat icon-set helpers (`Binding594`/`helper256`+) or remaining pivot VO surface; continue scanning for stock vendor fingerprints.
 
 
