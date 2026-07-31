@@ -2138,6 +2138,25 @@ describe("quality-gate", () => {
     expect(report.issues).toEqual([]);
   });
 
+  test("passes yjs vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/workbook-C49Dgk1_.js
+      export {
+        Doc,
+        Array,
+        Map,
+        applyUpdate,
+        encodeStateAsUpdate,
+        decodeUpdate,
+      } from "yjs";
+    `;
+    const report = analyzeSource(source, "restored/vendor/yjs.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
   test("passes renamed react-intl source chunk shims that re-export the npm package", () => {
     const source = `
       // Restored from ref/webview/assets/lib-BWT6A3Q0.js

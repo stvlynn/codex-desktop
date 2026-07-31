@@ -565,6 +565,7 @@ const PUBLIC_NPM_VENDOR_SHIMS: Record<string, PublicNpmVendorSpecifiers> = {
   roughjs: "roughjs",
   ssf: "ssf",
   stylis: "stylis",
+  yjs: "yjs",
   analytics: "@segment/analytics-next",
   "babel-runtime-using-ctx": "@babel/runtime/helpers/esm/usingCtx",
   "segment-analytics": ["@segment/analytics-next", "@segment/analytics-core"],
@@ -842,6 +843,22 @@ const PUBLIC_NPM_VENDOR_API_FINGERPRINTS: Array<{
       "version",
     ],
     minimumUniqueApiNames: 3,
+  },
+  {
+    specifiers: "yjs",
+    apiNames: [
+      "Doc",
+      "Array",
+      "Map",
+      "Text",
+      "applyUpdate",
+      "encodeStateAsUpdate",
+      "decodeUpdate",
+      "encodeStateVector",
+      "transact",
+      "UndoManager",
+    ],
+    minimumUniqueApiNames: 4,
   },
 ];
 
