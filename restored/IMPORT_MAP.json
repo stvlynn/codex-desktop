@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notes": "Wave workbook-runtime Stage-3 wave-46: range drained. | Wave workbook-runtime Stage-3 wave-45: range-fill + formula-address drained. | Wave workbook-runtime Stage-3 wave-44: formula drained. | Wave workbook-runtime Stage-3 wave-43: conditional-format + data-validation drained. | Wave workbook-runtime Stage-3 wave-42: sparkline/DV/shape/image + worksheet-attachment drained. | Wave workbook-runtime Stage-3 wave-41: mutation-ops drained. | Wave workbook-runtime Stage-3 wave-40: image-element drained. | Wave workbook-runtime Stage-3 wave-39: image-source drained. | Wave workbook-runtime Stage-3 wave-38: shape-utility + path-geometry drained. | Wave workbook-runtime Stage-3 wave-37: image-mime drained. | Wave workbook-runtime Stage-3 wave-36: slide-element drained. | Wave workbook-runtime Stage-3 wave-35: text-element-autofit + stable-id drained. | Wave workbook-runtime Stage-3 wave-34: preset-shape drained. | Wave workbook-runtime Stage-3 wave-33: geometry-transform drained. | Wave workbook-runtime Stage-3 wave-32: detached-text drained. | Wave workbook-runtime Stage-3 wave-31: text-selection drained. | Wave workbook-runtime Stage-3 wave-30: style-tokens drained. | Wave workbook-runtime Stage-3 wave-29: icon-set + text-run drained. | Wave workbook-runtime Stage-3 wave-28: range-format drained. | Wave workbook-runtime Stage-3 wave-27: worksheet-autofit drained. | Wave workbook-runtime Stage-3 wave-26: cell-xf-format drained. | Wave workbook-runtime Stage-3 wave-25: jStat+Bessel npm-shimmed via vendor/jstat + vendor/bessel. | Wave workbook-runtime Stage-3 wave-24: SSF Binding571 npm-shimmed via vendor/ssf. | Wave workbook-runtime Stage-3 wave-23: design-tokens/WorkbookTheme drained. | Wave workbook-runtime Stage-3 wave-22: text-box insets/layout-render drained. | Wave workbook-runtime Stage-3 wave-21: text-canvas renderer drained. | Wave workbook-runtime Stage-3 wave-20: fill-resolve/picture-fill drained. | Wave workbook-runtime Stage-3 wave-19: canvas-fill drained. | Wave workbook-runtime Stage-3 wave-18: text-layout drained. | Wave workbook-runtime Stage-3 wave-17: placeholder-resolve drained. | Wave workbook-runtime Stage-3 wave-16: document-style/effects drained. | Wave workbook-runtime Stage-3 wave-14: font-stack drained. | Wave workbook-runtime Stage-3 wave-13: math-ml drained. | Wave workbook-runtime Stage-3 wave-12: math-plain-text drained. | Wave workbook-runtime Stage-3 wave-11: style-resolve + glyph-advance drained. | Wave workbook-runtime Stage-3 wave-10: placeholder-style + font-metrics drained. | Wave workbook-runtime Stage-3 wave-3: Mae presentation theme cluster drained. | app-scope-runtime openBoundary cleared \u2192 runtime/app-scope-runtime/ (index barrel + split; thin boundary compat retained; Codex AppScope, not stock jotai). | conversation-page openBoundary cleared \u2192 conversation/conversation-page-esm-inits.ts (+helpers/components/appscope-atoms); thin boundary compat retained. | composer-appscope-atoms + composer-esm-inits openBoundary cleared \u2192 composer/composer-appscope-atoms.ts + composer/composer-esm-inits.ts (thin boundary compat retained). | dil-register openBoundary cleared \u2192 apps/dil-register.ts (unified DKf9ZaVQ+DgvAZVS9). | Wave composer-ctrl closeout polish: consumers\u2192composer barrel; Value* aliases dropped. | Wave composer-ctrl Stage-3 wave-15: Helper124\u2013178 mountain drained; thin boundary; openBoundary cleared; mapbox-gl npm CSP shim. | Wave composer-ctrl Stage-3 wave-15: Helper124\u2013178 mountain drained; boundary thin; openBoundary cleared. | Wave DR: +2 Gut\u2192usingCtx (babel usingCtx npm), fJ\u2192deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop \u2192 index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path \u2192 composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite) | diagram-export-alias-semantic: IMPORT_MAP exports n/t/a/\u2026 \u2192 semantic public names after dropping cryptic re-export aliases | deep-drain 2026-07-28: Stage-3 shiki pool split (kL\u2192shiki-highlight-context) + settings wrapper; checkout-webview-page typed deps shell; permissions-mode-dropdown typed shell. Soft scaffolds Stage-3-fill/Open-runtime-facade remain 0. Remaining Open-runtime soft hosts: large page bodies (settings/onboarding/local/remote) blocked by mechanical checkpoint QG fails; no-alias ui shells blocked by missing extract alias. | Wave GA: share-invite soft-host drain (real peers + useListKeyboardNavigation); settings-pets-nav-icon split; settings-page candidate case-correct imports staged (not promoted: residual *Param/*Value + exportSources collisions HM/Bft) | Wave GB: settings-page candidate rebuilt with export-correct IMPORT_MAP resolution + HM\u2192scoreFuzzyMatch / Bft\u2192defineMessage overrides; public utils/score-fuzzy-match.ts (QG pass, contract scorer; full HH in deps WIP); soft-host count still 18 (settings not promoted: ~270 mechanical names + use-visible-settings-sections soft shell) | Wave GC: use-visible-settings-sections soft shell drained (split dir); soft-host count still 18 (settings-page not yet promoted)\nReconcile Mermaid faced\u2192done for 52 boundaries/mermaid-diagrams npm shims/wrappers (IMPORT_MAP drift). | Wave lodash/npm-boundary mop: lodash-* + highlight-js + iconify-utils + d3-hierarchy \u2192 bare npm shims; deps d3-hierarchy/d3-scale-chromatic/@iconify/utils/ts-dedent added. | browser-use facades openBoundary cleared \u2192 browser/browser-use-gates.ts, browser/browser-use-mutations.ts, browser/browser-settings-history-nav.tsx, settings/{settings-section-chrome,settings-empty-state,reveal-in-file-manager-button}, plugins/{plugin-display-name-helper,build-plugin-install-query,plugin-install-mutations,browser-use-plugin-esm-inits}; thin boundary compat retained. | Mega dumps: workbook-runtime + chart-widget-stores hardened as intentional oversized vendor-runtime terminals (vendor=runtime, openBoundary). | app-initial missing-public-target closed \u2192 restored=app/app-initial-aggregator-notes.ts (doNotPromoteYet; exports pruned to notes constants; exportSources/restoredModules retained; no producer barrel). | Wave chart-widget-stores-9: pie off surface aliases onto public recharts@3; setChartBundleSurface no-op; openBoundary kept for joint vendor delete. | Wave chart-widget-stores-10: joint-deleted pre-Y+Y vendor + post-Y intl; surface call dropped; openBoundary cleared; mega thinned. | Wave chart-widget-stores-11: promoted Flat chart-component \u2192 visualization/chart-widget-stores/chart/*; openBoundary cleared.",
+  "notes": "Wave workbook-runtime Stage-3 wave-47: pivot-caches drained. | Wave workbook-runtime Stage-3 wave-46: range drained. | Wave workbook-runtime Stage-3 wave-45: range-fill + formula-address drained. | Wave workbook-runtime Stage-3 wave-44: formula drained. | Wave workbook-runtime Stage-3 wave-43: conditional-format + data-validation drained. | Wave workbook-runtime Stage-3 wave-42: sparkline/DV/shape/image + worksheet-attachment drained. | Wave workbook-runtime Stage-3 wave-41: mutation-ops drained. | Wave workbook-runtime Stage-3 wave-40: image-element drained. | Wave workbook-runtime Stage-3 wave-39: image-source drained. | Wave workbook-runtime Stage-3 wave-38: shape-utility + path-geometry drained. | Wave workbook-runtime Stage-3 wave-37: image-mime drained. | Wave workbook-runtime Stage-3 wave-36: slide-element drained. | Wave workbook-runtime Stage-3 wave-35: text-element-autofit + stable-id drained. | Wave workbook-runtime Stage-3 wave-34: preset-shape drained. | Wave workbook-runtime Stage-3 wave-33: geometry-transform drained. | Wave workbook-runtime Stage-3 wave-32: detached-text drained. | Wave workbook-runtime Stage-3 wave-31: text-selection drained. | Wave workbook-runtime Stage-3 wave-30: style-tokens drained. | Wave workbook-runtime Stage-3 wave-29: icon-set + text-run drained. | Wave workbook-runtime Stage-3 wave-28: range-format drained. | Wave workbook-runtime Stage-3 wave-27: worksheet-autofit drained. | Wave workbook-runtime Stage-3 wave-26: cell-xf-format drained. | Wave workbook-runtime Stage-3 wave-25: jStat+Bessel npm-shimmed via vendor/jstat + vendor/bessel. | Wave workbook-runtime Stage-3 wave-24: SSF Binding571 npm-shimmed via vendor/ssf. | Wave workbook-runtime Stage-3 wave-23: design-tokens/WorkbookTheme drained. | Wave workbook-runtime Stage-3 wave-22: text-box insets/layout-render drained. | Wave workbook-runtime Stage-3 wave-21: text-canvas renderer drained. | Wave workbook-runtime Stage-3 wave-20: fill-resolve/picture-fill drained. | Wave workbook-runtime Stage-3 wave-19: canvas-fill drained. | Wave workbook-runtime Stage-3 wave-18: text-layout drained. | Wave workbook-runtime Stage-3 wave-17: placeholder-resolve drained. | Wave workbook-runtime Stage-3 wave-16: document-style/effects drained. | Wave workbook-runtime Stage-3 wave-14: font-stack drained. | Wave workbook-runtime Stage-3 wave-13: math-ml drained. | Wave workbook-runtime Stage-3 wave-12: math-plain-text drained. | Wave workbook-runtime Stage-3 wave-11: style-resolve + glyph-advance drained. | Wave workbook-runtime Stage-3 wave-10: placeholder-style + font-metrics drained. | Wave workbook-runtime Stage-3 wave-3: Mae presentation theme cluster drained. | app-scope-runtime openBoundary cleared → runtime/app-scope-runtime/ (index barrel + split; thin boundary compat retained; Codex AppScope, not stock jotai). | conversation-page openBoundary cleared → conversation/conversation-page-esm-inits.ts (+helpers/components/appscope-atoms); thin boundary compat retained. | composer-appscope-atoms + composer-esm-inits openBoundary cleared → composer/composer-appscope-atoms.ts + composer/composer-esm-inits.ts (thin boundary compat retained). | dil-register openBoundary cleared → apps/dil-register.ts (unified DKf9ZaVQ+DgvAZVS9). | Wave composer-ctrl closeout polish: consumers→composer barrel; Value* aliases dropped. | Wave composer-ctrl Stage-3 wave-15: Helper124–178 mountain drained; thin boundary; openBoundary cleared; mapbox-gl npm CSP shim. | Wave composer-ctrl Stage-3 wave-15: Helper124–178 mountain drained; boundary thin; openBoundary cleared. | Wave DR: +2 Gut→usingCtx (babel usingCtx npm), fJ→deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop → index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path → composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite) | diagram-export-alias-semantic: IMPORT_MAP exports n/t/a/… → semantic public names after dropping cryptic re-export aliases | deep-drain 2026-07-28: Stage-3 shiki pool split (kL→shiki-highlight-context) + settings wrapper; checkout-webview-page typed deps shell; permissions-mode-dropdown typed shell. Soft scaffolds Stage-3-fill/Open-runtime-facade remain 0. Remaining Open-runtime soft hosts: large page bodies (settings/onboarding/local/remote) blocked by mechanical checkpoint QG fails; no-alias ui shells blocked by missing extract alias. | Wave GA: share-invite soft-host drain (real peers + useListKeyboardNavigation); settings-pets-nav-icon split; settings-page candidate case-correct imports staged (not promoted: residual *Param/*Value + exportSources collisions HM/Bft) | Wave GB: settings-page candidate rebuilt with export-correct IMPORT_MAP resolution + HM→scoreFuzzyMatch / Bft→defineMessage overrides; public utils/score-fuzzy-match.ts (QG pass, contract scorer; full HH in deps WIP); soft-host count still 18 (settings not promoted: ~270 mechanical names + use-visible-settings-sections soft shell) | Wave GC: use-visible-settings-sections soft shell drained (split dir); soft-host count still 18 (settings-page not yet promoted)\nReconcile Mermaid faced→done for 52 boundaries/mermaid-diagrams npm shims/wrappers (IMPORT_MAP drift). | Wave lodash/npm-boundary mop: lodash-* + highlight-js + iconify-utils + d3-hierarchy → bare npm shims; deps d3-hierarchy/d3-scale-chromatic/@iconify/utils/ts-dedent added. | browser-use facades openBoundary cleared → browser/browser-use-gates.ts, browser/browser-use-mutations.ts, browser/browser-settings-history-nav.tsx, settings/{settings-section-chrome,settings-empty-state,reveal-in-file-manager-button}, plugins/{plugin-display-name-helper,build-plugin-install-query,plugin-install-mutations,browser-use-plugin-esm-inits}; thin boundary compat retained. | Mega dumps: workbook-runtime + chart-widget-stores hardened as intentional oversized vendor-runtime terminals (vendor=runtime, openBoundary). | app-initial missing-public-target closed → restored=app/app-initial-aggregator-notes.ts (doNotPromoteYet; exports pruned to notes constants; exportSources/restoredModules retained; no producer barrel). | Wave chart-widget-stores-9: pie off surface aliases onto public recharts@3; setChartBundleSurface no-op; openBoundary kept for joint vendor delete. | Wave chart-widget-stores-10: joint-deleted pre-Y+Y vendor + post-Y intl; surface call dropped; openBoundary cleared; mega thinned. | Wave chart-widget-stores-11: promoted Flat chart-component → visualization/chart-widget-stores/chart/*; openBoundary cleared.",
   "chunks": {
     "app-initial-C-fROkKo": {
       "status": "in-progress",
@@ -6015,7 +6015,7 @@
       },
       "exportsBackupRef": ".deobfuscate-javascript/_full/files/app-initial-C-fROkKo/exports-backup.json",
       "restored": "app/app-initial-aggregator-notes.ts",
-      "note": "Public target = app/app-initial-aggregator-notes.ts (doNotPromoteYet; not a producer barrel / no 781k body promote). Bundle alias\u2192semanticName map pruned from exports for QG honesty; full routing remains in exportSources + restoredModules + exportsBackupRef."
+      "note": "Public target = app/app-initial-aggregator-notes.ts (doNotPromoteYet; not a producer barrel / no 781k body promote). Bundle alias→semanticName map pruned from exports for QG honesty; full routing remains in exportSources + restoredModules + exportsBackupRef."
     },
     "a-arrow-down-BVHhLC5--Bd_0rFYi": {
       "restored": "icons/a-arrow-down.tsx",
@@ -13645,7 +13645,7 @@
       "boundary": true,
       "vendor": "lodash",
       "npmPackage": "lodash",
-      "notes": "npm-shim: lodash baseFor mega-chunk \u2192 lodash/* letter re-exports + init stubs."
+      "notes": "npm-shim: lodash baseFor mega-chunk → lodash/* letter re-exports + init stubs."
     },
     "address-utils-xK0e4BjB": {
       "restored": "utils/spreadsheet-address-utils.ts",
@@ -14417,7 +14417,7 @@
         "inject": "inject"
       },
       "status": "done",
-      "note": "export-missing: pruned letter identity \u2192 23 public exports"
+      "note": "export-missing: pruned letter identity → 23 public exports"
     },
     "index-0YairKH_-DuUEIl-8": {
       "restored": "icons/lucide-react-barrel.ts",
@@ -15987,7 +15987,7 @@
         "inject": "inject"
       },
       "status": "done",
-      "note": "export-missing: pruned letter identity \u2192 21 public exports"
+      "note": "export-missing: pruned letter identity → 21 public exports"
     },
     "presentation-BsNXHgL_": {
       "restored": "workbook/presentation-protobuf.ts",
@@ -16203,7 +16203,7 @@
         "t": "RadarModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-67CJDMHE-Bc3ouymy": {
       "restored": "diagrams/mermaid-git-graph-langium-services.ts",
@@ -16213,7 +16213,7 @@
         "t": "GitGraphModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-7N4EOEYR-7en_DI4g": {
       "restored": "diagrams/mermaid-architecture-langium-services.ts",
@@ -16223,7 +16223,7 @@
         "t": "ArchitectureModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-AA7GKIK3-BzQRt39W": {
       "restored": "diagrams/mermaid-pie-langium-services.ts",
@@ -16233,7 +16233,7 @@
         "t": "PieModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-CIAEETIT-BFQsYrp6": {
       "restored": "diagrams/mermaid-wardley-langium-services.ts",
@@ -16243,7 +16243,7 @@
         "t": "WardleyModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-FOC6F5B3-718GsrP4": {
       "restored": "diagrams/mermaid-packet-langium-services.ts",
@@ -16253,7 +16253,7 @@
         "t": "PacketModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-KGLVRYIC-C8_y_CK6": {
       "restored": "diagrams/mermaid-info-langium-services.ts",
@@ -16263,7 +16263,7 @@
         "t": "InfoModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-LIHQZDEY-BMdO0aac": {
       "restored": "diagrams/mermaid-treemap-langium-services.ts",
@@ -16273,7 +16273,7 @@
         "t": "TreemapModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-ORNJ4GCN-zJqraLh5": {
       "restored": "diagrams/mermaid-tree-view-langium-services.ts",
@@ -16283,7 +16283,7 @@
         "t": "TreeViewModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-76Q3JFCE-ZGsz2j1F": {
       "restored": "diagrams/mermaid-packet-langium-services-alt.ts",
@@ -16293,7 +16293,7 @@
         "t": "PacketModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-FWNWRKHM-DDjfzubo": {
       "restored": "diagrams/mermaid-treemap-langium-services-alt.ts",
@@ -16303,7 +16303,7 @@
         "t": "TreemapModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-LBM3YZW2-8IPxCVR0": {
       "restored": "diagrams/mermaid-info-langium-services-alt.ts",
@@ -16313,7 +16313,7 @@
         "t": "InfoModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-LHMN2FUI-0Cxd13qr": {
       "restored": "diagrams/mermaid-radar-langium-services-alt.ts",
@@ -16323,7 +16323,7 @@
         "t": "RadarModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-O7ZBX7Z2-VAyiWgyE": {
       "restored": "diagrams/mermaid-architecture-langium-services-alt.ts",
@@ -16333,7 +16333,7 @@
         "t": "ArchitectureModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-S6J4BHB3-DwPS_zd4": {
       "restored": "diagrams/mermaid-git-graph-langium-services-alt.ts",
@@ -16343,7 +16343,7 @@
         "t": "GitGraphModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-T53DSG4Q-PnwlQLO5": {
       "restored": "diagrams/mermaid-pie-langium-services-alt.ts",
@@ -16353,7 +16353,7 @@
         "t": "PieModule"
       },
       "status": "done",
-      "note": "export-missing: letter\u2192semantic (n=create, r=init, t=Module)"
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "spreadsheet-Ckzf8Np8": {
       "restored": "workbook/spreadsheet-protobuf.ts",
@@ -17043,7 +17043,7 @@
       "status": "done",
       "classification": "boundary",
       "notes": "Mermaid diagram-api/config + DOMPurify surface; typed facade (minified aliases). Prefer npm mermaid when alias map is recovered.",
-      "note": "export-missing: pruned letter identity \u2192 63 public exports"
+      "note": "export-missing: pruned letter identity → 63 public exports"
     },
     "cose-bilkent-S5V4N54A-iO47pcr8": {
       "restored": "diagrams/cose-bilkent-alt.ts",
@@ -17131,7 +17131,7 @@
       "status": "done",
       "classification": "boundary",
       "notes": "Mermaid diagram-api/config alt twin (+ DOMPurify); typed facade (minified aliases). Prefer npm mermaid when alias map is recovered.",
-      "note": "export-missing: pruned letter identity \u2192 65 public exports"
+      "note": "export-missing: pruned letter identity → 65 public exports"
     },
     "chunk-55IACEB6-CEXn3bFg": {
       "restored": "diagrams/get-diagram-element-alt.ts",
@@ -17256,7 +17256,7 @@
         "u": "chunk5PVQY5BWU"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -17266,7 +17266,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -17276,7 +17276,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -17286,7 +17286,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -17296,7 +17296,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -17306,7 +17306,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -17316,7 +17316,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -17335,7 +17335,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -17354,7 +17354,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -17364,7 +17364,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -17374,7 +17374,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -17468,7 +17468,7 @@
       },
       "status": "done",
       "classification": "vendor-runtime",
-      "notes": "Intentional oversized vendor-runtime terminal (not stock npm). Codex popcorn workbook/spreadsheet/presentation/document engine with D3/mermaid/xlsx validation \u2014 not HyperFormula/SheetJS/Univer. Open boundary until Stage-3 split/promote into workbook/. Header + classification keep full-tree QG from false-failing on the ~230kLOC dump. | Stage-3 wave-1: drained shape-geometry enum (workbookDt/Ot) + chart/presentation proto\u2194name maps (Binding404 cluster) into workbook/shape-geometry.ts and workbook/chart-proto-name-maps/; boundary remains open (~229k LOC). | Stage-3 wave-2: theme-color / PatternFill drained to workbook/theme-color/; boundary remains open. | Stage-3 wave-3: Mae/Sle presentation themes + CSS named colors + slide placeholders \u2192 workbook/presentation-theme/; boundary remains open. | Stage-3 wave-4: Fill/workbookCt + CSS tokenizers + gradient fill parse \u2192 workbook/fill/; boundary remains open. | Stage-3 wave-5: Stylesheet Bae/Binding424 + font/border/xf VOs \u2192 workbook/stylesheet/; boundary remains open. | Stage-3 wave-6: Line Binding431 stroke VO + dash/compound maps \u2192 workbook/line/; boundary remains open. | Stage-3 wave-7: color-resolve helpers (Tae/workbookSt) \u2192 workbook/color-resolve/; boundary remains open. | Stage-3 wave-8: TextStyle VO (workbookVt) + alignment/autofit/caps \u2192 workbook/text-style/; boundary remains open. | Stage-3 wave-9: text-style CSS declaration/shadow parsers (workbookHelper 80-83, noe, workbookYt) \u2192 workbook/text-style/; boundary remains open. | Stage-3 wave-10: placeholder-style (Vae/Uae/helper97+) \u2192 presentation-theme/; font-metrics (workbookMt/Pt) \u2192 workbook/font-metrics/; boundary remains open. | Stage-3 wave-11: TextStyle style-resolve (helper106\u2013110/workbookT) \u2192 text-style/; glyph-advance ($p/Binding456) \u2192 font-metrics/; boundary remains open. | Stage-3 wave-12: math LaTeX parse + AST\u2192plain-text (Coe/helper121\u2013126/Binding457\u2013465) \u2192 workbook/math-plain-text/; boundary remains open. | Stage-3 wave-13: MathML codec (helper127\u2013146/Doe/Eoe/Binding466\u2013482) \u2192 workbook/math-ml/; boundary remains open. | Stage-3 wave-14: font-stack / math-font / typography units (helper147\u2013153/Binding483\u2013496) \u2192 workbook/font-stack/; boundary remains open. | Stage-3 wave-15: math-layout engine (lse/use/helper154\u2013180/Hse) \u2192 workbook/math-layout/; boundary remains open. | Stage-3 wave-16: effects/_g + document-style/theme maps (Binding516 / Lt/It/Nt/Rt / helper181\u2013188) \u2192 workbook/document-style/; boundary remains open. | Stage-3 wave-17: _workbookTt + placeholder-resolve / theme-typeface / docx-scheme helpers (helper189\u2013198 / ece\u2013vce) \u2192 workbook/placeholder-resolve/; boundary remains open. | Stage-3 wave-18: yce + line-box helpers + text-layout engine (kce/j_) \u2192 workbook/text-layout/; boundary remains open. | Stage-3 wave-19: M_/N_ line-dash + Pce/Ice gradients + Wce/Gce pattern fill \u2192 workbook/canvas-fill/; boundary remains open. | Stage-3 wave-20: helper200\u2026Binding542 picture-effects + helper212/Binding543 fill-resolve \u2192 workbook/canvas-fill/; boundary remains open. | Stage-3 wave-20: helper200\u2026Binding542 picture-effects + helper212/Binding543 fill-resolve \u2192 workbook/canvas-fill/; boundary remains open. | Stage-3 wave-21: helper213/Binding545 polar-offset + helper214 explicit-none + yle/Binding547 text-canvas renderer \u2192 workbook/text-canvas/; boundary remains open. | Stage-3 wave-22: ble/Binding548\u2013550 text-box insets + helper215\u2013221/xle + workbookQ/X + workbookZ \u2192 workbook/text-box/; boundary remains open. | Stage-3 wave-23: Binding558\u2013570 design-tokens + WorkbookTheme (workbookJ/Y) + helper222 \u2192 workbook/design-tokens/; boundary remains open. | Stage-3 wave-24: SSF Binding571 \u2192 vendor/ssf npm shim (ssf@0.11.2); boundary remains open. | Stage-3 wave-25: jStat qXe + Bessel JXe \u2192 vendor/jstat + vendor/bessel npm shims; boundary remains open. | Stage-3 wave-26: Binding223\u2013586 cell-XF / numFmt / col-row extents \u2192 workbook/cell-xf-format/; boundary remains open. | Stage-3 wave-27: Tle/Binding232\u2013Rle worksheet autofit \u2192 workbook/worksheet-autofit/; boundary remains open. | Stage-3 wave-28: Binding337 + helper240\u2013Jle + RangeFormat Binding589\u2013593/Yle \u2192 workbook/range-format/; boundary remains open. | Stage-3 wave-29: Binding594/helper256\u2013259 \u2192 workbook/icon-set/; Binding597\u2013612/Xle/Zle/helper260\u2013261 \u2192 workbook/text-run/; boundary remains open. | Stage-3 wave-30: Qle/Binding613\u2013620/helper262 + helper263\u2013271/iue/aue/_x/Binding621 \u2192 workbook/style-tokens/; boundary remains open. | Stage-3 wave-31: Binding622/623 TextSelection (WorkbookClass6) peeled \u2192 workbook/text-selection/; boundary remains open. | Stage-3 wave-32: helper272\u2013285 + Binding624\u2013627 DetachedText (WorkbookClass4) peeled \u2192 workbook/detached-text/; boundary remains open. | Stage-3 wave-33: helper286\u2013290 + Binding628\u2013632 FrameBbox (WorkbookClass11) peeled \u2192 workbook/geometry-transform/; boundary remains open. | Stage-3 wave-34: kue\u2013helper297 + Binding633\u2013644 preset-shape formula peeled \u2192 workbook/preset-shape/; boundary remains open. | Stage-3 wave-35: Rue\u2013Hue text-element autofit + Uue\u2013Binding647 stable-id peeled \u2192 workbook/text-element-autofit/ + workbook/stable-id/; boundary remains open. | Stage-3 wave-36: helper303/ide + `_workbookZ`/ade/workbookB peeled \u2192 workbook/slide-element/; boundary remains open. | Stage-3 wave-37: ode/Binding648\u2013654 + sde/pde/mde peeled \u2192 workbook/image-mime/; boundary remains open. | Stage-3 wave-38: helper304+ shape-utility + path-geometry (xde\u2026jde) peeled \u2192 workbook/shape-utility/ + workbook/path-geometry/; boundary remains open. | Stage-3 wave-39: post-Mde image-source VO (Binding656/$S/Pde + Fde\u2026Kde + Binding657\u2013659/Jde) peeled \u2192 workbook/image-source/; Binding660 Image class remains; boundary remains open. | Stage-3 wave-40: Binding660 Image class + Binding661 ensure peeled \u2192 workbook/image-element/; thin Mde + residual Binding661 (workbookEt/Mde) remain; boundary remains open. | Stage-3 wave-41: Yde\u2026helper319 thread/chart/CF mutation builders peeled \u2192 workbook/mutation-ops/; sparkline Sfe+ remains; boundary remains open. | Stage-3 wave-42: Sfe\u2026Wfe sparkline/DV/shape/image mutation builders peeled \u2192 workbook/mutation-ops/; helper333/Binding669 \u2192 workbook/worksheet-attachment/; boundary remains open. | Stage-3 wave-43: helper322\u2026Bpe CF/DV VO+API cluster peeled \u2192 workbook/conditional-format/ + workbook/data-validation/; Binding662/_C remains; boundary remains open. | Stage-3 wave-44: Vpe\u2026workbookF formula/token/WorkbookR cluster peeled \u2192 workbook/formula/; Binding662/_C + dme+ remain; boundary remains open. | Stage-3 wave-45: dme\u2026helper336 fill-from / formula-address cluster peeled \u2192 workbook/range-fill/ + workbook/formula-address/; Binding662/_C + Binding669+ remain; boundary remains open. | Stage-3 wave-46: Binding675 Range VO + bme/xme/Sme peeled \u2192 workbook/range/; Binding662/_C + pivot 335/336/338 + Binding676 remain; boundary remains open.",
+      "notes": "Intentional oversized vendor-runtime terminal (not stock npm). Codex popcorn workbook/spreadsheet/presentation/document engine with D3/mermaid/xlsx validation — not HyperFormula/SheetJS/Univer. Open boundary until Stage-3 split/promote into workbook/. Header + classification keep full-tree QG from false-failing on the ~230kLOC dump. | Stage-3 wave-1: drained shape-geometry enum (workbookDt/Ot) + chart/presentation proto↔name maps (Binding404 cluster) into workbook/shape-geometry.ts and workbook/chart-proto-name-maps/; boundary remains open (~229k LOC). | Stage-3 wave-2: theme-color / PatternFill drained to workbook/theme-color/; boundary remains open. | Stage-3 wave-3: Mae/Sle presentation themes + CSS named colors + slide placeholders → workbook/presentation-theme/; boundary remains open. | Stage-3 wave-4: Fill/workbookCt + CSS tokenizers + gradient fill parse → workbook/fill/; boundary remains open. | Stage-3 wave-5: Stylesheet Bae/Binding424 + font/border/xf VOs → workbook/stylesheet/; boundary remains open. | Stage-3 wave-6: Line Binding431 stroke VO + dash/compound maps → workbook/line/; boundary remains open. | Stage-3 wave-7: color-resolve helpers (Tae/workbookSt) → workbook/color-resolve/; boundary remains open. | Stage-3 wave-8: TextStyle VO (workbookVt) + alignment/autofit/caps → workbook/text-style/; boundary remains open. | Stage-3 wave-9: text-style CSS declaration/shadow parsers (workbookHelper 80-83, noe, workbookYt) → workbook/text-style/; boundary remains open. | Stage-3 wave-10: placeholder-style (Vae/Uae/helper97+) → presentation-theme/; font-metrics (workbookMt/Pt) → workbook/font-metrics/; boundary remains open. | Stage-3 wave-11: TextStyle style-resolve (helper106–110/workbookT) → text-style/; glyph-advance ($p/Binding456) → font-metrics/; boundary remains open. | Stage-3 wave-12: math LaTeX parse + AST→plain-text (Coe/helper121–126/Binding457–465) → workbook/math-plain-text/; boundary remains open. | Stage-3 wave-13: MathML codec (helper127–146/Doe/Eoe/Binding466–482) → workbook/math-ml/; boundary remains open. | Stage-3 wave-14: font-stack / math-font / typography units (helper147–153/Binding483–496) → workbook/font-stack/; boundary remains open. | Stage-3 wave-15: math-layout engine (lse/use/helper154–180/Hse) → workbook/math-layout/; boundary remains open. | Stage-3 wave-16: effects/_g + document-style/theme maps (Binding516 / Lt/It/Nt/Rt / helper181–188) → workbook/document-style/; boundary remains open. | Stage-3 wave-17: _workbookTt + placeholder-resolve / theme-typeface / docx-scheme helpers (helper189–198 / ece–vce) → workbook/placeholder-resolve/; boundary remains open. | Stage-3 wave-18: yce + line-box helpers + text-layout engine (kce/j_) → workbook/text-layout/; boundary remains open. | Stage-3 wave-19: M_/N_ line-dash + Pce/Ice gradients + Wce/Gce pattern fill → workbook/canvas-fill/; boundary remains open. | Stage-3 wave-20: helper200…Binding542 picture-effects + helper212/Binding543 fill-resolve → workbook/canvas-fill/; boundary remains open. | Stage-3 wave-20: helper200…Binding542 picture-effects + helper212/Binding543 fill-resolve → workbook/canvas-fill/; boundary remains open. | Stage-3 wave-21: helper213/Binding545 polar-offset + helper214 explicit-none + yle/Binding547 text-canvas renderer → workbook/text-canvas/; boundary remains open. | Stage-3 wave-22: ble/Binding548–550 text-box insets + helper215–221/xle + workbookQ/X + workbookZ → workbook/text-box/; boundary remains open. | Stage-3 wave-23: Binding558–570 design-tokens + WorkbookTheme (workbookJ/Y) + helper222 → workbook/design-tokens/; boundary remains open. | Stage-3 wave-24: SSF Binding571 → vendor/ssf npm shim (ssf@0.11.2); boundary remains open. | Stage-3 wave-25: jStat qXe + Bessel JXe → vendor/jstat + vendor/bessel npm shims; boundary remains open. | Stage-3 wave-26: Binding223–586 cell-XF / numFmt / col-row extents → workbook/cell-xf-format/; boundary remains open. | Stage-3 wave-27: Tle/Binding232–Rle worksheet autofit → workbook/worksheet-autofit/; boundary remains open. | Stage-3 wave-28: Binding337 + helper240–Jle + RangeFormat Binding589–593/Yle → workbook/range-format/; boundary remains open. | Stage-3 wave-29: Binding594/helper256–259 → workbook/icon-set/; Binding597–612/Xle/Zle/helper260–261 → workbook/text-run/; boundary remains open. | Stage-3 wave-30: Qle/Binding613–620/helper262 + helper263–271/iue/aue/_x/Binding621 → workbook/style-tokens/; boundary remains open. | Stage-3 wave-31: Binding622/623 TextSelection (WorkbookClass6) peeled → workbook/text-selection/; boundary remains open. | Stage-3 wave-32: helper272–285 + Binding624–627 DetachedText (WorkbookClass4) peeled → workbook/detached-text/; boundary remains open. | Stage-3 wave-33: helper286–290 + Binding628–632 FrameBbox (WorkbookClass11) peeled → workbook/geometry-transform/; boundary remains open. | Stage-3 wave-34: kue–helper297 + Binding633–644 preset-shape formula peeled → workbook/preset-shape/; boundary remains open. | Stage-3 wave-35: Rue–Hue text-element autofit + Uue–Binding647 stable-id peeled → workbook/text-element-autofit/ + workbook/stable-id/; boundary remains open. | Stage-3 wave-36: helper303/ide + `_workbookZ`/ade/workbookB peeled → workbook/slide-element/; boundary remains open. | Stage-3 wave-37: ode/Binding648–654 + sde/pde/mde peeled → workbook/image-mime/; boundary remains open. | Stage-3 wave-38: helper304+ shape-utility + path-geometry (xde…jde) peeled → workbook/shape-utility/ + workbook/path-geometry/; boundary remains open. | Stage-3 wave-39: post-Mde image-source VO (Binding656/$S/Pde + Fde…Kde + Binding657–659/Jde) peeled → workbook/image-source/; Binding660 Image class remains; boundary remains open. | Stage-3 wave-40: Binding660 Image class + Binding661 ensure peeled → workbook/image-element/; thin Mde + residual Binding661 (workbookEt/Mde) remain; boundary remains open. | Stage-3 wave-41: Yde…helper319 thread/chart/CF mutation builders peeled → workbook/mutation-ops/; sparkline Sfe+ remains; boundary remains open. | Stage-3 wave-42: Sfe…Wfe sparkline/DV/shape/image mutation builders peeled → workbook/mutation-ops/; helper333/Binding669 → workbook/worksheet-attachment/; boundary remains open. | Stage-3 wave-43: helper322…Bpe CF/DV VO+API cluster peeled → workbook/conditional-format/ + workbook/data-validation/; Binding662/_C remains; boundary remains open. | Stage-3 wave-44: Vpe…workbookF formula/token/WorkbookR cluster peeled → workbook/formula/; Binding662/_C + dme+ remain; boundary remains open. | Stage-3 wave-45: dme…helper336 fill-from / formula-address cluster peeled → workbook/range-fill/ + workbook/formula-address/; Binding662/_C + Binding669+ remain; boundary remains open. | Stage-3 wave-46: Binding675 Range VO + bme/xme/Sme peeled → workbook/range/; Binding662/_C + pivot 335/336/338 + Binding676 remain; boundary remains open. | Stage-3 wave-47: Binding676 PivotCaches (Cme) peeled → workbook/pivot-caches/; Binding662/_C + pivot 335/336/338 remain; boundary remains open.",
       "stage3Accepted": true,
       "vendor": "runtime",
       "openBoundary": true,
@@ -17712,6 +17712,15 @@
         "workbook/path-geometry/simplify-polyline.ts",
         "workbook/path-geometry/types.ts",
         "workbook/path-geometry/vector-scale.ts",
+        "workbook/pivot-caches/boundary-hooks.ts",
+        "workbook/pivot-caches/build-pivot-table-proto.ts",
+        "workbook/pivot-caches/ensure-pivot-caches-init.ts",
+        "workbook/pivot-caches/index.ts",
+        "workbook/pivot-caches/pivot-caches.ts",
+        "workbook/pivot-caches/pivot-num-fmt-map.ts",
+        "workbook/pivot-caches/pivot-render-layout.ts",
+        "workbook/pivot-caches/pivot-source-headers.ts",
+        "workbook/pivot-caches/types.ts",
         "workbook/placeholder-resolve/contextual-paragraph-match.ts",
         "workbook/placeholder-resolve/docx-scheme-constants.ts",
         "workbook/placeholder-resolve/docx-scheme-style.ts",
@@ -17945,7 +17954,7 @@
         "u": "chunkS3R3BYOJU"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -17955,7 +17964,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -17965,7 +17974,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18009,7 +18018,7 @@
       },
       "status": "done",
       "classification": "vendor-runtime",
-      "notes": "Wave-11: promoted Flat chart-component \u2192 visualization/chart-widget-stores/chart/* (split helpers/tooltip/legend/setup/model/body); thin boundary retained; openBoundary cleared.",
+      "notes": "Wave-11: promoted Flat chart-component → visualization/chart-widget-stores/chart/* (split helpers/tooltip/legend/setup/model/body); thin boundary retained; openBoundary cleared.",
       "stage3Accepted": true,
       "vendor": "runtime",
       "openBoundary": false,
@@ -18038,7 +18047,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18048,7 +18057,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18077,7 +18086,7 @@
         "t": "chunkU2HBQHQKT"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18093,7 +18102,7 @@
         "t": "chunkJA3XYJ7ZT"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18113,7 +18122,7 @@
         "u": "chunk5FUZZQ4RU"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18133,7 +18142,7 @@
         "u": "chunkJZLCHNYAU"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18148,7 +18157,7 @@
         "t": "chunkENJZ2VHET"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18163,7 +18172,7 @@
         "t": "chunkQXUST7PYT"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18173,7 +18182,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18183,7 +18192,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18193,7 +18202,7 @@
         "render": "render"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18203,7 +18212,7 @@
         "render": "render"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18277,7 +18286,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18287,7 +18296,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18297,7 +18306,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18307,7 +18316,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18317,7 +18326,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18327,7 +18336,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18341,7 +18350,7 @@
         "t": "chunk4TB4RGXKT"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18355,7 +18364,7 @@
         "t": "chunkOYMX7WX6T"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18369,7 +18378,7 @@
         "t": "chunkB4BG7PRWT"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18383,7 +18392,7 @@
         "t": "chunkDI55MBZ5T"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18439,7 +18448,7 @@
       },
       "status": "done",
       "npmPackage": "lucide-react",
-      "note": "Stock lucide-react createLucideIcon \u2014 thin npm re-export; 22 icon dependents already lucide shims"
+      "note": "Stock lucide-react createLucideIcon — thin npm re-export; 22 icon dependents already lucide shims"
     },
     "mermaid-parser.core-Bf-wA51e": {
       "restored": "diagrams/mermaid-parser-core.ts",
@@ -18448,7 +18457,7 @@
         "t": "initMermaidParserCore"
       },
       "status": "done",
-      "note": "export-missing: n\u2192parse, t\u2192initMermaidParserCore"
+      "note": "export-missing: n→parse, t→initMermaidParserCore"
     },
     "mermaid-parser.core-lQvHC-p1": {
       "restored": "diagrams/mermaid-parser-core-alt.ts",
@@ -18457,7 +18466,7 @@
         "t": "initMermaidParserCore"
       },
       "status": "done",
-      "note": "export-missing: n\u2192parse, t\u2192initMermaidParserCore"
+      "note": "export-missing: n→parse, t→initMermaidParserCore"
     },
     "infoDiagram-42DDH7IO-Dt1JsHyX": {
       "restored": "diagrams/info-diagram.ts",
@@ -18493,7 +18502,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18503,7 +18512,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18527,7 +18536,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18544,7 +18553,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18554,7 +18563,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18627,7 +18636,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18637,7 +18646,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18647,7 +18656,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18657,7 +18666,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18667,7 +18676,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18677,7 +18686,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18687,7 +18696,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18697,7 +18706,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18707,7 +18716,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18717,7 +18726,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -18745,7 +18754,7 @@
         "default": "default"
       },
       "status": "done",
-      "notes": "Reconcile: Codex Mermaid core aggregator typed wrapper over mermaid-v14 + local diagram npm shims (not a bare package-root re-export). faced\u2192done; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: Codex Mermaid core aggregator typed wrapper over mermaid-v14 + local diagram npm shims (not a bare package-root re-export). faced→done; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -18953,7 +18962,7 @@
       },
       "status": "done",
       "npmPackage": "remark-math",
-      "note": "Stock remark-math \u2014 thin npm re-export (bundle export remarkMath)"
+      "note": "Stock remark-math — thin npm re-export (bundle export remarkMath)"
     },
     "index-BFCcxPM5-Mucjm1d8": {
       "restored": "vendor/katex.ts",
@@ -18962,7 +18971,7 @@
       },
       "status": "done",
       "npmPackage": "katex",
-      "note": "Stock katex@0.16.22 \u2014 thin npm re-export of default API",
+      "note": "Stock katex@0.16.22 — thin npm re-export of default API",
       "classification": "vendor-npm"
     },
     "plugin-detail-page-QPU09DuF": {
@@ -18978,7 +18987,7 @@
       "restored": "composer/use-chatgpt-composer-controller/index.tsx",
       "status": "done",
       "classification": "app-feature",
-      "notes": "Thin ChatGPT composer-controller boundary barrel (Stage-3 wave-15). Helper124\u2013178 client-defined widget / charts_widget_v2 mountain drained; markdown peer bootstrap owns registry side-effects; openBoundary cleared. boundaries/chatgpt-mapbox-gl-runtime.ts is now a mapbox-gl npm CSP shim. | Closeout polish: consumers remapped to composer barrel; legacy Value* slot aliases dropped; thin boundary retained as compat re-export.",
+      "notes": "Thin ChatGPT composer-controller boundary barrel (Stage-3 wave-15). Helper124–178 client-defined widget / charts_widget_v2 mountain drained; markdown peer bootstrap owns registry side-effects; openBoundary cleared. boundaries/chatgpt-mapbox-gl-runtime.ts is now a mapbox-gl npm CSP shim. | Closeout polish: consumers remapped to composer barrel; legacy Value* slot aliases dropped; thin boundary retained as compat re-export.",
       "stage3Accepted": true,
       "restoredModules": [
         "composer/use-chatgpt-composer-controller/index.tsx",
@@ -19266,7 +19275,7 @@
         "r": "initToggleThreadSummaryPanel",
         "t": "initToggleThreadSummaryPanelAtoms"
       },
-      "note": "Wave Z-cs: A$/M$/k$\u2192Popover*; C0/y0/_0\u2192shell-panel-pin; N$ init dropped; conversationSourceS/O"
+      "note": "Wave Z-cs: A$/M$/k$→Popover*; C0/y0/_0→shell-panel-pin; N$ init dropped; conversationSourceS/O"
     },
     "checkmark-arrows-counterclockwise-rotate-lg-COZ08dCs": {
       "restored": "icons/checkmark-arrows-counterclockwise-rotate-lg.tsx",
@@ -19275,7 +19284,7 @@
         "n": "CheckmarkArrowsCounterclockwiseRotateLg",
         "t": "initCheckmarkArrowsCounterclockwiseRotateLg"
       },
-      "note": "Wave Z-cs: gap 0 icon; Jvt/Lvt\u2192react/jsx"
+      "note": "Wave Z-cs: gap 0 icon; Jvt/Lvt→react/jsx"
     },
     "chatgpt-temporary-chat-ui-DzECkldP": {
       "restored": "conversation/chatgpt-temporary-chat-ui/index.tsx",
@@ -19285,7 +19294,7 @@
         "r": "TemporaryChatOnboarding",
         "t": "initChatgptTemporaryChatUi"
       },
-      "note": "Wave Z-cs: S8\u2192setTemporaryChatSearchParam; G$/Y$/YA/Hft/P5/but/Hlt inits dropped"
+      "note": "Wave Z-cs: S8→setTemporaryChatSearchParam; G$/Y$/YA/Hft/P5/but/Hlt inits dropped"
     },
     "chatgpt-temporary-chat-ui-BNtlPqRH": {
       "restored": "conversation/chatgpt-temporary-chat-ui-lazy.ts",
@@ -19303,7 +19312,7 @@
         "t": "ensureOnboardingBannerInit"
       },
       "status": "done",
-      "note": "Wave AA: mU\u2192Callout (\u2260MU), hU\u2192ensureCalloutInit (\u2260HU); Elt/Dlt Badge; but/yut Button; wft\u2192cx; Ivt/jvt/Tft dropped"
+      "note": "Wave AA: mU→Callout (≠MU), hU→ensureCalloutInit (≠HU); Elt/Dlt Badge; but/yut Button; wft→cx; Ivt/jvt/Tft dropped"
     },
     "plan-summary-page-c9VO7iqd": {
       "restored": "conversation/plan-summary-page.tsx",
@@ -19311,7 +19320,7 @@
         "PlanSummaryPage": "PlanSummaryPage"
       },
       "status": "done",
-      "note": "Wave AA: yc\u2192PlanSummaryMessage bindable (exact lowercase); bc init; B5\u2192useLocation; P5/Ivt/jvt dropped"
+      "note": "Wave AA: yc→PlanSummaryMessage bindable (exact lowercase); bc init; B5→useLocation; P5/Ivt/jvt dropped"
     },
     "use-git-recent-branches-D2g84RUJ": {
       "restored": "hooks/use-git-recent-branches.ts",
@@ -19320,7 +19329,7 @@
         "t": "ensureUseGitRecentBranchesInit"
       },
       "status": "done",
-      "note": "Wave AA: N3\u2192useGitRepoLiveQuery bindable; A3\u2192ensureUseGitRepoLiveQueryInit; Ivt dropped"
+      "note": "Wave AA: N3→useGitRepoLiveQuery bindable; A3→ensureUseGitRepoLiveQueryInit; Ivt dropped"
     },
     "middleware-2Su2Qp7P": {
       "restored": "vendor/segment-middleware.ts",
@@ -19377,7 +19386,7 @@
         "t": "ensureHomeSuggestionStaggeredItemInit"
       },
       "status": "done",
-      "note": "Wave AA+: Aut\u2192usePrefersReducedMotion; hft\u2192motion; $dt/kut/Ivt/jvt dropped"
+      "note": "Wave AA+: Aut→usePrefersReducedMotion; hft→motion; $dt/kut/Ivt/jvt dropped"
     },
     "connector-logo-stack-CKYJhcR5": {
       "restored": "ui/connector-logo-stack.tsx",
@@ -19386,7 +19395,7 @@
         "t": "ensureConnectorLogoStackInit"
       },
       "status": "done",
-      "note": "Wave AA+: wft\u2192cx; Lvt Children; Ivt/jvt/Tft dropped"
+      "note": "Wave AA+: wft→cx; Lvt Children; Ivt/jvt/Tft dropped"
     },
     "artifact-preview-status-D-ULvJ60": {
       "restored": "ui/artifact-preview-status.tsx",
@@ -19395,7 +19404,7 @@
         "t": "ensureArtifactPreviewStatusInit"
       },
       "status": "done",
-      "note": "Wave AA+: Gft\u2192MemoizedFormattedMessage; Hft/jvt dropped"
+      "note": "Wave AA+: Gft→MemoizedFormattedMessage; Hft/jvt dropped"
     },
     "local-environment-workflow-messages-Q6HEVFW7": {
       "restored": "settings/local-environment-workflow-messages.ts",
@@ -19404,7 +19413,7 @@
         "t": "ensureLocalEnvironmentWorkflowMessagesInit"
       },
       "status": "done",
-      "note": "Wave AA+: Vft\u2192identity defineMessages; Hft dropped"
+      "note": "Wave AA+: Vft→identity defineMessages; Hft dropped"
     },
     "avatar-overlay-debug-state-CtxOR8Zi": {
       "restored": "desktop/avatar-overlay-debug-state.ts",
@@ -19531,7 +19540,7 @@
         "t": "ensureArtifactAnnotationCommentInit"
       },
       "status": "done",
-      "note": "Wave AB: hgt\u2192isArtifactAnnotationAttachment; pgt\u2192buildArtifactAnnotationComment; opt dropped"
+      "note": "Wave AB: hgt→isArtifactAnnotationAttachment; pgt→buildArtifactAnnotationComment; opt dropped"
     },
     "artifact-file-preview-icon-n81pVXki": {
       "restored": "artifact/artifact-file-preview-icon.tsx",
@@ -19540,7 +19549,7 @@
         "t": "ensureArtifactFilePreviewIconInit"
       },
       "status": "done",
-      "note": "Wave AB: bH\u2192resolveArtifactFileIcon; wft\u2192cx; Ivt/Lvt/jvt/Tft/xH dropped"
+      "note": "Wave AB: bH→resolveArtifactFileIcon; wft→cx; Ivt/Lvt/jvt/Tft/xH dropped"
     },
     "artifact-creation-prompts-CWNgl5xb": {
       "restored": "home/artifact-creation-prompts.ts",
@@ -19550,7 +19559,7 @@
         "t": "ensureArtifactCreationPromptsInit"
       },
       "status": "done",
-      "note": "Wave AB: Cst\u2192toMarkdownLink; K5\u2192buildPluginUri; Vft\u2192identity; Hft/Sst/xJ dropped"
+      "note": "Wave AB: Cst→toMarkdownLink; K5→buildPluginUri; Vft→identity; Hft/Sst/xJ dropped"
     },
     "custom-avatars-query-BoNA278E": {
       "restored": "desktop/custom-avatars-query.ts",
@@ -19561,7 +19570,7 @@
         "t": "ensureCustomAvatarsQueryInit"
       },
       "status": "done",
-      "note": "Wave AB: nvt\u2192createAppScopeQueryAtom; tvt\u2192createAppScopeSelectAtom; Hut\u2192getDesktopServices; fdt\u2192QueryStaleTimes"
+      "note": "Wave AB: nvt→createAppScopeQueryAtom; tvt→createAppScopeSelectAtom; Hut→getDesktopServices; fdt→QueryStaleTimes"
     },
     "avatar-overlay-mascot-size-4juuy68a": {
       "restored": "desktop/avatar-overlay-mascot-size.ts",
@@ -19574,7 +19583,7 @@
         "t": "ensureAvatarOverlayMascotSizeInit"
       },
       "status": "done",
-      "note": "Wave AB: Spt\u2192avatarOverlaySettings; Lut/Iut/L_t/Fft; ESM inits dropped"
+      "note": "Wave AB: Spt→avatarOverlaySettings; Lut/Iut/L_t/Fft; ESM inits dropped"
     },
     "codex-micro-onboarding-state-eD-68cqY": {
       "restored": "onboarding/codex-micro-onboarding-state.ts",
@@ -19586,7 +19595,7 @@
         "t": "ensureCodexMicroOnboardingStateInit"
       },
       "status": "done",
-      "note": "Wave AB: Jw/Kw/qw\u2192codex-micro-detection-signals; rut\u2192persisted onboarding state"
+      "note": "Wave AB: Jw/Kw/qw→codex-micro-detection-signals; rut→persisted onboarding state"
     },
     "use-home-directory-CROe_CvY": {
       "restored": "hooks/use-home-directory.ts",
@@ -19596,7 +19605,7 @@
         "t": "ensureUseHomeDirectoryInit"
       },
       "status": "done",
-      "note": "Wave AC: Q4\u2192homeDirectoryQueryAtom; e3 init; I_t\u2192useAppScopeAtomValue (\u2260IT polish)"
+      "note": "Wave AC: Q4→homeDirectoryQueryAtom; e3 init; I_t→useAppScopeAtomValue (≠IT polish)"
     },
     "use-git-submodule-paths-BOmLGs8q": {
       "restored": "hooks/use-git-submodule-paths.ts",
@@ -19605,7 +19614,7 @@
         "t": "ensureUseGitSubmodulePathsInit"
       },
       "status": "done",
-      "note": "Wave AC: aW/oW\u2192createGitMethodQueryAtoms; I3\u2192mergeGitLiveQueryOptions; L3 init; fdt\u2192QueryStaleTimes"
+      "note": "Wave AC: aW/oW→createGitMethodQueryAtoms; I3→mergeGitLiveQueryOptions; L3 init; fdt→QueryStaleTimes"
     },
     "use-git-config-value-BVCZfaZo": {
       "restored": "hooks/use-git-config-value.ts",
@@ -19614,7 +19623,7 @@
         "t": "ensureUseGitConfigValueInit"
       },
       "status": "done",
-      "note": "Wave AC: xA\u2192gitConfigValueFromTargetAtom; SA init; I3 merge options"
+      "note": "Wave AC: xA→gitConfigValueFromTargetAtom; SA init; I3 merge options"
     },
     "pet-install-state-DIJx4Tfv": {
       "restored": "desktop/pet-install-state.ts",
@@ -19626,7 +19635,7 @@
         "t": "clearPetInstallState"
       },
       "status": "done",
-      "note": "Wave AC: Zut\u2192invokeDesktopRpc (\u2260rp feature-gate collision); ivt\u2192createScopedSignal; tdt init"
+      "note": "Wave AC: Zut→invokeDesktopRpc (≠rp feature-gate collision); ivt→createScopedSignal; tdt init"
     },
     "access-splash-CgMACdwp": {
       "restored": "onboarding/access-splash.tsx",
@@ -19635,7 +19644,7 @@
         "t": "AccessSplash"
       },
       "status": "done",
-      "note": "Wave AC: L0\u2192AppIconL0; R0\u2192ensureAppIconL0Init; ent\u2192handleAnchorOpenHref; z0\u2192ExternalLinkIconButton"
+      "note": "Wave AC: L0→AppIconL0; R0→ensureAppIconL0Init; ent→handleAnchorOpenHref; z0→ExternalLinkIconButton"
     },
     "home-prefill-artifact-preview-DEuv-UOn": {
       "restored": "home/home-prefill-artifact-preview.tsx",
@@ -19643,7 +19652,7 @@
         "HomePrefillArtifactPreview": "HomePrefillArtifactPreview"
       },
       "status": "done",
-      "note": "Wave AC: qV\u2192openArtifactPreview; KV deps init; L_t\u2192useAppScope; _8/b8 dropped"
+      "note": "Wave AC: qV→openArtifactPreview; KV deps init; L_t→useAppScope; _8/b8 dropped"
     },
     "use-debug-panel-G2DtvEwQ": {
       "restored": "hooks/use-debug-panel.ts",
@@ -19659,7 +19668,7 @@
         "t": "nextDebugPanelEntryId"
       },
       "status": "done",
-      "note": "Wave AC: J8\u2192collectDebugPanelTurnFiles bindable; J7/Y8 inits; R_t\u2192useAppScopeValue; q7/Jht"
+      "note": "Wave AC: J8→collectDebugPanelTurnFiles bindable; J7/Y8 inits; R_t→useAppScopeValue; q7/Jht"
     },
     "composer-action-bar-run-location-dropdown-DN6XZTGU": {
       "restored": "composer/composer-action-bar-run-location-dropdown.tsx",
@@ -19667,7 +19676,7 @@
         "ComposerActionBarRunLocationDropdown": "ComposerActionBarRunLocationDropdown"
       },
       "status": "done",
-      "note": "Wave AC: IB\u2192ensureComposerEsm_IB_Init (side-effect icon); d_/FB/Zlt icons; polish F dropped"
+      "note": "Wave AC: IB→ensureComposerEsm_IB_Init (side-effect icon); d_/FB/Zlt icons; polish F dropped"
     },
     "codex-local-access-splash-Clh6i4bQ": {
       "restored": "onboarding/codex-local-access-splash.tsx",
@@ -19675,7 +19684,7 @@
       "exports": {
         "CodexLocalAccessSplash": "CodexLocalAccessSplash"
       },
-      "note": "Wave AD: Gft\u2192MemoizedFormattedMessage; AccessSplash; Hft/Ivt/jvt dropped"
+      "note": "Wave AD: Gft→MemoizedFormattedMessage; AccessSplash; Hft/Ivt/jvt dropped"
     },
     "work-mode-access-splash-BBkke-wX": {
       "restored": "onboarding/work-mode-access-splash.tsx",
@@ -19683,7 +19692,7 @@
       "exports": {
         "WorkModeAccessSplash": "WorkModeAccessSplash"
       },
-      "note": "Wave AD: G1\u2192ElectronOnly; aZ\u2192AppShellLayout (existing map); Gft\u2192MemoizedFormattedMessage; Hft/Ivt/jvt/K1/oZ dropped"
+      "note": "Wave AD: G1→ElectronOnly; aZ→AppShellLayout (existing map); Gft→MemoizedFormattedMessage; Hft/Ivt/jvt/K1/oZ dropped"
     },
     "recommended-skill-statsig-overrides-2fOHXsHG": {
       "restored": "skills/recommended-skill-statsig-overrides.ts",
@@ -19693,7 +19702,7 @@
         "t": "getRecommendedSkillStatsigOverride",
         "n": "ensureRecommendedSkillStatsigOverridesInit"
       },
-      "note": "Wave AD: C_t/E_t/S_t/x_t/c_t\u2192zod; nlt\u2192useDynamicConfig; tlt/Ivt dropped"
+      "note": "Wave AD: C_t/E_t/S_t/x_t/c_t→zod; nlt→useDynamicConfig; tlt/Ivt dropped"
     },
     "play-outline-DP2VGTN0": {
       "restored": "icons/play-outline-icon.tsx",
@@ -19702,7 +19711,7 @@
         "n": "PlayOutlineIcon",
         "t": "ensurePlayOutlineIconInit"
       },
-      "note": "Wave AD: gap 0 icon; Lvt/jvt\u2192react/jsx dropped"
+      "note": "Wave AD: gap 0 icon; Lvt/jvt→react/jsx dropped"
     },
     "star-zhAPZW1a": {
       "restored": "icons/star-outline-icon.tsx",
@@ -19807,7 +19816,7 @@
         "n": "RealtimeVoiceHandoffTarget",
         "t": "ensureRealtimeVoiceHandoffTargetInit"
       },
-      "note": "Wave AE: cct/lct/sct/uct\u2192handoff-geometry; tut/Aut exact; $lt/kut dropped"
+      "note": "Wave AE: cct/lct/sct/uct→handoff-geometry; tut/Aut exact; $lt/kut dropped"
     },
     "codex-avatar-93dNPzLt": {
       "restored": "avatar/codex-avatar.tsx",
@@ -19825,7 +19834,7 @@
         "n": "useRecommendedSkills",
         "t": "ensureUseRecommendedSkillsInit"
       },
-      "note": "Wave AE: Avt\u2192useQueryClient; ndt/rdt\u2192vscode query/mutation; Zut/Qut/fdt"
+      "note": "Wave AE: Avt→useQueryClient; ndt/rdt→vscode query/mutation; Zut/Qut/fdt"
     },
     "mcp-capability-view-page-O_triaiK": {
       "restored": "mcp/mcp-capability-view-page.tsx",
@@ -19833,7 +19842,7 @@
       "exports": {
         "McpCapabilityViewPage": "McpCapabilityViewPage"
       },
-      "note": "Wave AE: SX/oB/sB/yX\u2192mcp-capability-host; U5/iO/Gft/R_t exact (\u2260OB/RT soft)"
+      "note": "Wave AE: SX/oB/sB/yX→mcp-capability-host; U5/iO/Gft/R_t exact (≠OB/RT soft)"
     },
     "appgen-publication-terms-route-_6Q15k8-": {
       "restored": "apps/appgen-publication-terms-route.tsx",
@@ -19841,7 +19850,7 @@
       "exports": {
         "AppgenPublicationTermsRoute": "AppgenPublicationTermsRoute"
       },
-      "note": "Wave AE: Wr/Gr\u2192publication-terms-banner; Ivt/jvt dropped"
+      "note": "Wave AE: Wr/Gr→publication-terms-banner; Ivt/jvt dropped"
     },
     "external-agent-config-import-flow-DnPb-mab": {
       "restored": "onboarding/open-external-agent-import.ts",
@@ -19861,7 +19870,7 @@
         "r": "logArtifactAnnotationSubmitted",
         "t": "ensureArtifactAnalyticsInit"
       },
-      "note": "Wave AF: gap8 exact aet/eet/iet/net/oet/ret/set/tet\u2192artifact-analytics-enums"
+      "note": "Wave AF: gap8 exact aet/eet/iet/net/oet/ret/set/tet→artifact-analytics-enums"
     },
     "codex-micro-joystick-feedback-CK7y1eSl": {
       "restored": "desktop/codex-micro-joystick-feedback.ts",
@@ -19874,7 +19883,7 @@
         "r": "resetJoystickFeedback",
         "t": "ensureCodexMicroJoystickFeedbackInit"
       },
-      "note": "Wave AF: gap2 exact Gw/Ww\u2192joystick-geometry"
+      "note": "Wave AF: gap2 exact Gw/Ww→joystick-geometry"
     },
     "realtime-voice-home-announcement-BBLBSud5": {
       "restored": "home/realtime-voice-home-announcement.tsx",
@@ -19882,7 +19891,7 @@
       "exports": {
         "RealtimeVoiceHomeAnnouncement": "RealtimeVoiceHomeAnnouncement"
       },
-      "note": "Wave AF: gap7 exact Nh/Ph/QS/XS/iC/nC/tC\u2192realtime-voice-nux; alias-mappable"
+      "note": "Wave AF: gap7 exact Nh/Ph/QS/XS/iC/nC/tC→realtime-voice-nux; alias-mappable"
     },
     "use-codex-worktrees-FWkscfGb": {
       "restored": "hooks/use-codex-worktrees.ts",
@@ -19891,7 +19900,7 @@
         "n": "useCodexWorktrees",
         "t": "ensureUseCodexWorktreesInit"
       },
-      "note": "Wave AF: gap7 exact G3/H3/K3/Tpt/U3/X_/Z_\u2192host-rpc + git settings + query-key"
+      "note": "Wave AF: gap7 exact G3/H3/K3/Tpt/U3/X_/Z_→host-rpc + git settings + query-key"
     },
     "new-chat-suggestion-source-debug-state-D2osy-li": {
       "restored": "home/new-chat-suggestion-source-debug-state.ts",
@@ -19910,7 +19919,7 @@
         "t": "ensureNewChatSuggestionSourceDebugOverrideInit",
         "u": "patchAmbientSuggestionStatus"
       },
-      "note": "Wave AF: gap4 exact $ut/Oft/jft/kft\u2192persisted-atom-store"
+      "note": "Wave AF: gap4 exact $ut/Oft/jft/kft→persisted-atom-store"
     },
     "codex-micro-commands-8_4zZXYk": {
       "restored": "desktop/codex-micro-webview-commands.ts",
@@ -19920,7 +19929,7 @@
         "r": "findCodexMicroWebviewCommand",
         "t": "ensureCodexMicroWebviewCommandsInit"
       },
-      "note": "Wave AF: gap3 exact b1/l1/y1\u2192codex-micro-commands-catalog"
+      "note": "Wave AF: gap3 exact b1/l1/y1→codex-micro-commands-catalog"
     },
     "cloud-preferences-B2FohNg2": {
       "restored": "settings/cloud-preferences.ts",
@@ -19933,7 +19942,7 @@
         "r": "previewCloudFilenamePattern",
         "t": "ensureCloudPreferencesInit"
       },
-      "note": "Wave AF: gap3 exact Vct/_vt/zct\u2192cloud-api-client + useMutation"
+      "note": "Wave AF: gap3 exact Vct/_vt/zct→cloud-api-client + useMutation"
     },
     "codex-micro-mini-games-BVBFbIhK": {
       "restored": "desktop/codex-micro-mini-games.ts",
@@ -19951,7 +19960,7 @@
         "t": "advanceMiniGameRotationGesture",
         "u": "ensureCodexMicroMiniGamesInit"
       },
-      "note": "Wave AF: gap2 exact _Z/vZ\u2192overlay-focus-selectors"
+      "note": "Wave AF: gap2 exact _Z/vZ→overlay-focus-selectors"
     },
     "quick-chat-window-_GO18s8K": {
       "restored": "composer/quick-chat-window/index.ts",
@@ -19978,7 +19987,7 @@
       "exports": {
         "CloudPreferencesSettings": "CloudPreferencesSettings"
       },
-      "note": "Wave AG: gap0 exact settings/i18n/UI; Llt\u2192toastAtom; ESM inits dropped"
+      "note": "Wave AG: gap0 exact settings/i18n/UI; Llt→toastAtom; ESM inits dropped"
     },
     "code-review-settings-Ci3aKMa3": {
       "restored": "settings/code-review-settings.tsx",
@@ -19986,7 +19995,7 @@
       "exports": {
         "CodeReviewSettings": "CodeReviewSettings"
       },
-      "note": "Wave AG: gap2 exact Ci/Si\u2192use-usage-settings-access; Si noop"
+      "note": "Wave AG: gap2 exact Ci/Si→use-usage-settings-access; Si noop"
     },
     "subscription-update-plan-IbQvs_Ig": {
       "restored": "account/subscription-update-plan/index.ts",
@@ -20009,7 +20018,7 @@
         "n": "getAnalogActionTitle",
         "t": "ensureCodexMicroAnalogActionTitleInit"
       },
-      "note": "Wave AG: gap2 exact lr/ur\u2192codex-command-title; OJ mapped"
+      "note": "Wave AG: gap2 exact lr/ur→codex-command-title; OJ mapped"
     },
     "chatgpt-desktop-auth-url-fs7WVkdZ": {
       "restored": "account/chatgpt-desktop-auth-url.ts",
@@ -20022,7 +20031,7 @@
         "r": "buildChatgptDesktopAuthUrl",
         "t": "ensureBuildChatgptDesktopAuthUrlInit"
       },
-      "note": "Wave AG: gap6 exact hdt/mdt/u4/d4/flt/gr\u2192host-request/app-info/StableID"
+      "note": "Wave AG: gap6 exact hdt/mdt/u4/d4/flt/gr→host-request/app-info/StableID"
     },
     "workbook-from-markdown-Ur6qTV_W": {
       "restored": "workbook/workbook-from-markdown.ts",
@@ -20042,7 +20051,7 @@
         "r": "ensureAvatarMascotButtonInit",
         "t": "AvatarMascotButton"
       },
-      "note": "Wave AG: gap3 exact Dut/Out/uvt\u2192persisted-atom; hft dropped"
+      "note": "Wave AG: gap3 exact Dut/Out/uvt→persisted-atom; hft dropped"
     },
     "use-workspace-users-XGSt9G0t": {
       "restored": "hooks/use-workspace-users/index.ts",
@@ -20064,7 +20073,7 @@
       "classification": "local",
       "notes": "Drained from boundaries to ui/share-invite-autocomplete (types + option-row + sections + field). Thin boundary compat retained.",
       "stage3Accepted": true,
-      "note": "Wave GA: drained Open-runtime soft hosts \u2192 real CloseIcon/cx/Spinner/CheckIcon + useListKeyboardNavigation"
+      "note": "Wave GA: drained Open-runtime soft hosts → real CloseIcon/cx/Spinner/CheckIcon + useListKeyboardNavigation"
     },
     "appgen-share-dialog-j88Mseym": {
       "restored": "appgen/appgen-share-dialog/index.ts",
@@ -20105,7 +20114,7 @@
       "exports": {
         "BusinessCheckoutSwitchWorkspaceDialog": "BusinessCheckoutSwitchWorkspaceDialog"
       },
-      "note": "Wave AH: gap2 BX/zht\u2192useUpdateAuthNonce/getErrorMessage; dialog bindable"
+      "note": "Wave AH: gap2 BX/zht→useUpdateAuthNonce/getErrorMessage; dialog bindable"
     },
     "color-icon-CJgkzSbJ": {
       "restored": "icons/color-icon/index.ts",
@@ -20117,7 +20126,7 @@
         "ensureColorIconInit": "ensureColorIconInit",
         "useIsDarkAppearance": "useIsDarkAppearance"
       },
-      "note": "Wave AH: gap2 MG/jG\u2192useIsDarkAppearance; ColorIcon atlas bindable"
+      "note": "Wave AH: gap2 MG/jG→useIsDarkAppearance; ColorIcon atlas bindable"
     },
     "security-page-C3xazhLy": {
       "restored": "security/security-page.tsx",
@@ -20125,7 +20134,7 @@
       "exports": {
         "SecurityPage": "SecurityPage"
       },
-      "note": "Wave AH: gap8 Lb/rlt/jK/es\u2192remote-host/feature-gate/plugins/shell-state"
+      "note": "Wave AH: gap8 Lb/rlt/jK/es→remote-host/feature-gate/plugins/shell-state"
     },
     "pet-install-modal-host-B_NIodo4": {
       "restored": "desktop/pet-install-modal-host.tsx",
@@ -20133,7 +20142,7 @@
       "exports": {
         "PetInstallModalHost": "PetInstallModalHost"
       },
-      "note": "Wave AH: gap4 Ar/l3\u2192useSelectedAvatar/useInvalidateCustomAvatars"
+      "note": "Wave AH: gap4 Ar/l3→useSelectedAvatar/useInvalidateCustomAvatars"
     },
     "codex-micro-layout-CIGyS1bN": {
       "restored": "devices/codex-micro-layout.ts",
@@ -20145,7 +20154,7 @@
         "parseStreamDeckLayout": "parseStreamDeckLayout",
         "ensureCodexMicroLayoutInit": "ensureCodexMicroLayoutInit"
       },
-      "note": "Wave AH: gap1 n_t\u2192streamDeckLayoutSchema; thin Stage 3 (catalog deferred)"
+      "note": "Wave AH: gap1 n_t→streamDeckLayoutSchema; thin Stage 3 (catalog deferred)"
     },
     "auto-review-approval-nudge-BlX0A97p": {
       "restored": "approvals/auto-review-approval-nudge.tsx",
@@ -20172,7 +20181,7 @@
         "bindWorktreeSetupAutoCreate": "bindWorktreeSetupAutoCreate",
         "buildWorktreeSetupAutoCreateActivities": "buildWorktreeSetupAutoCreateActivities"
       },
-      "note": "Wave AH misnamed key for worktree-setup-auto-fix-CqsFmOeg; restored onboarding surface. Fq/Ic/Lc \u2192 GuardianApprovals / WorktreeSetupActivityFeed / deferredDefaultHelper."
+      "note": "Wave AH misnamed key for worktree-setup-auto-fix-CqsFmOeg; restored onboarding surface. Fq/Ic/Lc → GuardianApprovals / WorktreeSetupActivityFeed / deferredDefaultHelper."
     },
     "git-settings-0pyuGSeN": {
       "restored": "settings/git-settings/index.ts",
@@ -20407,7 +20416,7 @@
         "r": "ensureConnectPluginsSubmenuModelInit",
         "t": "ConnectPluginsSubmenuSection"
       },
-      "note": "Wave AK: gap5 Sw/_w/pw/uw/xw deferred; ConnectPluginsSubmenuItem bindable | export-missing: r\u2192ensureConnectPluginsSubmenuModelInit (Item not in Wave FY body)"
+      "note": "Wave AK: gap5 Sw/_w/pw/uw/xw deferred; ConnectPluginsSubmenuItem bindable | export-missing: r→ensureConnectPluginsSubmenuModelInit (Item not in Wave FY body)"
     },
     "start-appgen-conversation-DD_Qpz5h": {
       "restored": "appgen/start-appgen-conversation/index.ts",
@@ -20932,7 +20941,7 @@
         "yt": "popcornSurfaceStyle_yt",
         "z": "popcornSurfaceStyle_z"
       },
-      "note": "Wave AO: gap25 after exact-case _ut\u2192coerceSourcePositionNumber; surface-style bindable"
+      "note": "Wave AO: gap25 after exact-case _ut→coerceSourcePositionNumber; surface-style bindable"
     },
     "PopcornElectronPresentationPanel-B28phSkk": {
       "restored": "editors/popcorn-electron-presentation-panel/index.ts",
@@ -20968,7 +20977,7 @@
       "exports": {
         "QueuedMessageList": "QueuedMessageList"
       },
-      "note": "Wave AP: gap25 after exact-case Dst\u2192filterItemsByMatchingPaths; QueuedMessageList bindable"
+      "note": "Wave AP: gap25 after exact-case Dst→filterItemsByMatchingPaths; QueuedMessageList bindable"
     },
     "first-run-CmpS1-m3": {
       "restored": "onboarding/first-run-page/index.ts",
@@ -21017,7 +21026,7 @@
         "t": "ensureAnimatedIconInit"
       },
       "status": "done",
-      "note": "Wave AR: gap3 exact Ah/Ld/jH\u2192ensureAppIconKh/Id/ImageFileIconInit; AnimatedIcon Stage 3"
+      "note": "Wave AR: gap3 exact Ah/Ld/jH→ensureAppIconKh/Id/ImageFileIconInit; AnimatedIcon Stage 3"
     },
     "animated-icon-DheIHbIG": {
       "restored": "ui/animated-icon-reexport.ts",
@@ -21046,7 +21055,7 @@
         "ensureUseVisibleSettingsSectionsInit": "ensureUseVisibleSettingsSectionsInit"
       },
       "status": "done",
-      "note": "Wave GC: drained soft shell \u2192 Stage-3 hook split (external-nav + section-components + hook); k4\u2192appshotsHostAllowedAtom override"
+      "note": "Wave GC: drained soft shell → Stage-3 hook split (external-nav + section-components + hook); k4→appshotsHostAllowedAtom override"
     },
     "settings-command-menu-section-items-BzoP-M1E": {
       "restored": "settings/visible-settings-command-menu-section-items.tsx",
@@ -21129,7 +21138,7 @@
         "n": "ensureWalletOnboardingAnnouncementModalInit"
       },
       "status": "done",
-      "note": "Wave AT promote + Wave AU Stage 3 body; HW/VW\u2192AnnouncementModal bindable; I0 Wave AS"
+      "note": "Wave AT promote + Wave AU Stage 3 body; HW/VW→AnnouncementModal bindable; I0 Wave AS"
     },
     "rpc-wEQ5kv6D": {
       "restored": "desktop/rpc.ts",
@@ -21141,7 +21150,7 @@
         "bindInitializeAppHostServices": "bindInitializeAppHostServices"
       },
       "status": "done",
-      "note": "Wave AT promote + Wave AU Stage 3; Vut/Wut bindable; Hut\u2192appServices; Uut ensureDynamicScriptLoadInit"
+      "note": "Wave AT promote + Wave AU Stage 3; Vut/Wut bindable; Hut→appServices; Uut ensureDynamicScriptLoadInit"
     },
     "environment-labels-BrZBoJDP": {
       "restored": "environments/environment-labels/index.ts",
@@ -21813,7 +21822,7 @@
     "core-DvEtKs5A": "boundaries/highlight-js.ts",
     "boundaries/lodash-clone-deep-guts.ts": {
       "kind": "npm-shim",
-      "note": "Lodash cloneDeep CJS guts \u2192 lodash/_* thunk re-exports (initCloneObject, cloneTypedArray, \u2026).",
+      "note": "Lodash cloneDeep CJS guts → lodash/_* thunk re-exports (initCloneObject, cloneTypedArray, …).",
       "aliases": [
         "Df",
         "Of",
@@ -21857,7 +21866,7 @@
     },
     "boundaries/react-router-link.tsx": {
       "kind": "npm-shim",
-      "note": "react-router Link (F5/MHn) \u2192 vendor/react-router thin re-export.",
+      "note": "react-router Link (F5/MHn) → vendor/react-router thin re-export.",
       "aliases": [
         "F5"
       ],
@@ -21867,7 +21876,7 @@
     },
     "boundaries/react-router-navigation.tsx": {
       "kind": "npm-shim",
-      "note": "react-router Navigate/useLocation/useNavigate/useMatch/useSearchParams \u2192 vendor/react-router.",
+      "note": "react-router Navigate/useLocation/useNavigate/useMatch/useSearchParams → vendor/react-router.",
       "aliases": [
         "B5",
         "I5",
