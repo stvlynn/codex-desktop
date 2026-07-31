@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~199.7k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~199.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -32,7 +32,8 @@
 | SSF number-format (`Binding571`) | ~2.9k | **Drained (wave-24)** → `vendor/ssf` npm shim (`ssf@0.11.2`)
 | jStat stats (`qXe`) | ~8.1k | **Drained (wave-25)** → `vendor/jstat` npm shim (`jstat@1.9.6`)
 | Bessel (`JXe`) | ~0.57k | **Drained (wave-25)** → `vendor/bessel` npm shim (`bessel@1.0.2`)
-| Cell-XF / numFmt / col-row extents (`helper223`–`Binding586`) | ~0.7k | **Drained (wave-26)** → `workbook/cell-xf-format/` |
+| Cell-XF / numFmt / col-row extents (`helper223`–`Binding586`) | ~0.7k | **Drained (wave-26)** → `workbook/cell-xf-format/`
+| Worksheet autofit (`Tle` / `Binding232`–`Rle`) | ~0.7k | **Drained (wave-27)** → `workbook/worksheet-autofit/` |
 | Document glue | scattered | DOCX protobuf already faced under `workbook/document-*` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
@@ -270,6 +271,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 199740.
-- Next: worksheet helpers after Binding586 (`Tle`/`helper232`–`Rle`) if a clean slice appears, or RangeFormat Binding589 once VO deps are drained; scan for additional stock vendor fingerprints.
+- Next: ~~worksheet helpers after Binding586 (`Tle`/`Binding232`–`Rle`)~~ (done wave-27); RangeFormat Binding589 once VO deps (workbookBinding337/339/420/421) are drained.
+
+
+## Wave-27 progress
+
+- Extracted worksheet autofit cluster: solid-fill (`Tle`) + merge text-style (`Binding232`/`Binding587`) + dropdown padding (`Ele`/`$y`/`Binding233`/`Binding588`) + col/row span parse (`Dle`/`Ole`) + styleIndex maps (`Binding234`–`236`) + measure cell text (`kle`/`Ale`/`Binding237`) + format/table/validation helpers (`Binding238`–`239`/`jle`/`Mle`/`Nle`/`Ple`/`Fle`) + autofit columns/rows (`Ile`/`Lle`) + cluster ensure (`Rle`) → `workbook/worksheet-autofit/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and RangeFormat `Binding589` (entangled with in-boundary VOs Binding337/339/420/421) in boundary.
+- Vendor scan: no additional stock npm fingerprints in the post-586 locus (SSF/jStat/Bessel already drained).
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 199093.
+- Next: RangeFormat Binding589 once VO deps (`workbookBinding337`/`339`/`420`/`421`) are drained as separable clusters; continue scanning for stock vendor fingerprints.
 
 
