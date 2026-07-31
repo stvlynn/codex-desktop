@@ -118,4 +118,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, and `ooe` geometry helper in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Next: worksheet/spreadsheet core clusters (range/table/drawing), or math-plain-text helpers (`Coe`/helper121+) near the drained locus.
+- Next: ~~math-plain-text (Coe/helper121+)~~ (done wave-12); MathML cluster (`helper127`+/Doe/Eoe), or worksheet/spreadsheet core if a clean slice appears.
+
+## Wave-12 progress
+
+- Extracted math LaTeX parser (`Coe` / `Binding464`) + AST→plain-text helpers (`helper121`–`126`, `woe`, `Toe`) + unicode maps (`Binding457`–`463`) → `workbook/math-plain-text/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and MathML cluster (`helper127`+/Doe/Eoe) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 221739.
+- Next: MathML cluster (`helper127`+/Doe/Eoe) beside the drained locus, or worksheet/spreadsheet core if a clean line-range slice appears.
