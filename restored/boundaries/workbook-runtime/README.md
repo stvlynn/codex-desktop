@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~190.4k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~189.6k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -43,6 +43,7 @@
 | Shape utility-class / border-radius / shadow→effect | ~15.6k (post-mde) | **Drained (wave-38)** → `workbook/shape-utility/` |
 | Path-geometry polyline / rect-edge helpers | ~15.7k (post-bde) | **Drained (wave-38)** → `workbook/path-geometry/` |
 | Image-source VO / payload normalize | ~15.7k (post-Mde) | **Drained (wave-39)** → `workbook/image-source/` |
+| Image element VO (Binding660) | ~15.7k (post-source) | **Drained (wave-40)** → `workbook/image-element/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -428,6 +429,18 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 190412.
-- Next: Binding660 Image class (peel if deps settle), or pivot Binding335/336/338 + Class53 if cleanly separable; continue scanning for stock vendor fingerprints.
+- Next: ~~Binding660 Image class~~ (done wave-40); pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Yde chart/thread VO cluster.
+
+
+## Wave-40 progress
+
+- Extracted Binding660 Image element VO → `workbook/image-element/`.
+- Extracted Binding661 drained ensure half → `ensureImageElementInit`; thin residual Binding661 keeps `workbookEt` + `Mde`.
+- Left thin `Mde` in boundary (Binding412 → `gae` intentionally retained).
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and pivot enums `Binding335`/`336`/`338` in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 189598.
+- Next: pivot Binding335/336/338 + Class53 if cleanly separable, or scan post-Yde thread/chart VO helpers; continue scanning for stock vendor fingerprints.
 
 
