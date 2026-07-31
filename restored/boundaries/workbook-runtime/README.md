@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~75.2k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~74.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -86,6 +86,7 @@
 | Presentation slide (`Z$`/`X$`/`cLe`/`sLe`) | ~0.79k | **Drained (wave-87)** → `workbook/presentation-slide/` |
 | Table cell (`JEe`/`Binding1315`) | ~0.43k | **Drained (wave-88)** → `workbook/table-row-range/` (reunite) |
 | Worksheets collection (`TXe`/`wXe`/`CXe`/`EXe`) | ~0.40k | **Drained (wave-88)** → `workbook/sheet/` |
+| Chart canvas paint (`helper579`–`585` / `NCe` / `LCe` / `PCe`) | ~1.28k | **Drained (wave-89)** → `workbook/chart-paint/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1000,4 +1001,15 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on changed modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 75165 (was 75978; Δ -813).
 - Next: zXe named-ranges (~0.37k) / kgt styles-yjs (~0.36k) / clean `xLe` walnut / partial WorkbookN method peel / `_workbookS` only after presentation leave-behind ensures drain.
+
+## Wave-89 progress
+
+- Re-scanned ≥300 clusters: WorkbookN (~1845 leave), `_workbookS`/`_workbookO` (~1236 leave), helper579–585 chart paint (~1282 contiguous), Zht (~596), $be (~578), N1e (~522), helpers 491/722/745/462/607 (~471–375), zXe (~368), kgt (~361), Kpt/Qbe (~352/328).
+- Skipped full `_workbookS`/`_workbookO`: 45-ensure fan-out still entangled with presentation leave-behinds (jLe…aYe / WorkbookN) — unsafe this wave.
+- Peeled contiguous chart canvas paint `helper579`–`585` + `NCe`/`FCe`/`ICe`/`LCe`/`PCe` → `workbook/chart-paint/` (prelude + paint body under flat limit); ~45 chart helper leave-behinds via `cpH` hooks; `Cn`/`Mn`/`Yn`/`tr`/`workbookX`/`helper212`/`Binding721` imported directly.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 73958 (was 75165; Δ -1207).
+- Next: zXe named-ranges (~0.37k) / kgt styles-yjs (~0.36k) / Zht export (~0.60k) / clean `xLe` walnut / partial WorkbookN method peel / `_workbookS` only after presentation leave-behind ensures drain.
+
 
