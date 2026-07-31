@@ -17,6 +17,8 @@ import { paintScatterSeries } from "../chart-scatter-series";
 import { paintHistogramAxes } from "../chart-histogram-axes";
 import { paintChartDataTable } from "../chart-data-table";
 import { paintScatterAxes } from "../chart-scatter-axes";
+import { paintChartTrendline } from "../chart-trendline";
+import { buildScatterScale } from "../chart-scatter-scale";
 import { paintChartAxisTicks } from "../chart-axis-ticks";
 import { paintChartLegend } from "../chart-legend";
 import { paintThreeChart } from "../three-chart-paint";
@@ -353,7 +355,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
             if (!item?.trendlines?.length) return;
             let cpBind14141 =
               cpIn35.trendlineRenderCache?.bySeriesIndex.get(index);
-            cpH.bh525(
+            paintChartTrendline(
               cpIn32,
               cpIn33,
               item,
@@ -477,7 +479,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
               series: [],
               extents: cpBind16038.extents,
             },
-            cpBind16040 = cpH.bh540(cpIn33, cpBind2290, cpBind16039, {
+            cpBind16040 = buildScatterScale(cpIn33, cpBind2290, cpBind16039, {
               niceXDomain: false,
             });
           paintHistogramAxes(
@@ -560,7 +562,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
                 ? undefined
                 : new Set(cpIn35.hiddenSeriesIndices),
             cpBind12407 = cpH.bh556(cpIn33, cpBind12406),
-            cpBind12408 = cpH.bh540(cpIn33, cpBind2290, cpBind12407);
+            cpBind12408 = buildScatterScale(cpIn33, cpBind2290, cpBind12407);
           paintScatterAxes(
             cpIn32,
             cpIn33,
@@ -589,7 +591,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
                 ? undefined
                 : new Set(cpIn35.hiddenSeriesIndices),
             ),
-            cpBind15275 = cpH.bh540(cpIn33, cpBind2290, cpBind15274);
+            cpBind15275 = buildScatterScale(cpIn33, cpBind2290, cpBind15274);
           paintScatterAxes(
             cpIn32,
             cpIn33,

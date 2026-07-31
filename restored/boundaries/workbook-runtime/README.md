@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~62.9k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~61.4k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -110,6 +110,12 @@
 | Histogram axes (`gCe`) | ~0.22k | **Drained (wave-96)** → `workbook/chart-histogram-axes/` |
 | Chart data table (`helper561`) | ~0.18k | **Drained (wave-96)** → `workbook/chart-data-table/` |
 | Scatter axes (`helper570`) | ~0.19k | **Drained (wave-96)** → `workbook/chart-scatter-axes/` |
+| Three-cam fit (`rxe`) | ~0.24k | **Drained (wave-97)** → `workbook/three-chart-camera/` |
+| Chart trendline (`helper525`) | ~0.16k | **Drained (wave-97)** → `workbook/chart-trendline/` |
+| Scatter scale (`helper540`) | ~0.17k | **Drained (wave-97)** → `workbook/chart-scatter-scale/` |
+| Paint images (`Fwe`) | ~0.18k | **Drained (wave-97)** → `workbook/paint-images/` |
+| Constraint auto-layout (`ODe`/`kDe`) | ~0.70k | **Drained (wave-97)** → `workbook/constraint-layout/` |
+| Selection style grid (`Upt`) | ~0.18k | **Drained (wave-97)** → `workbook/selection-style-grid/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1121,3 +1127,18 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on five modules + chart-paint + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 62936 (was 63920; Δ -984).
 - Next: `rxe` (~0.24k three-cam) / `ODe` (~0.21k) after constraint readiness / `rze` after `_workbookS` / `kht` after WorkbookN / clean `xLe`.
+
+## Wave-97 progress
+
+- Re-scanned ≥160 clusters: WorkbookN (~1.8k leave), `_workbookS`/`vYe` (~1.2k leave), `rze`/`kht` blocked leave-behinds, `rxe` (~249), `helper540` (~191), `Fwe` (~187), `helper525` (~184), `Upt` (~183), `ODe` (~210) + contiguous auto-layout (`Binding1369`…`kDe` ~700).
+- Skipped `_workbookS`/WorkbookN / KJe–aYe / `xLe`; deferred `rze`/`kht`; `Vht`/`Uft`/`Kht` still not top-level peels (env bag / class).
+- Peeled `rxe` → `workbook/three-chart-camera/` (`tccH.cameraDir` ← Binding1142/ixe).
+- Peeled `helper525` → `workbook/chart-trendline/` (`ctlH`); chart-paint dropped `bh525`.
+- Peeled `helper540` → `workbook/chart-scatter-scale/` (`csscH`); chart-paint dropped `bh540`.
+- Peeled `Fwe` → `workbook/paint-images/` (`piH` bitmap caches ← Binding1254/1255).
+- Peeled `Binding1369`…`kDe` (incl. `EDe`/`DDe`/`ODe`) → `workbook/constraint-layout/`; presentation-slide ensures keep working via aliases.
+- Peeled `Upt` → `workbook/selection-style-grid/` (`ssgH.bh229`).
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on six modules + chart-paint + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 61416 (was 62936; Δ -1520).
+- Next: `rze` after `_workbookS` / `kht` after WorkbookN / mid peels (`jxe`/`wSe`/`ECe`/`Nxe`) / clean `xLe`.
