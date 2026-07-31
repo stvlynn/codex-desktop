@@ -9,6 +9,7 @@ import {
   workbookHelper352 as chartRegressionFn,
 } from "../chart-asset";
 import { cpH } from "./boundary-hooks";
+import { paintChartAxisTicks } from "../chart-axis-ticks";
 import { paintChartLegend } from "../chart-legend";
 import { paintThreeChart } from "../three-chart-paint";
 import {
@@ -276,7 +277,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         }),
         cpBind12305 = cpH.paintWaterfall(cpBind12304, cpBind2290);
       strokePlotAreaBorder(cpIn32, cpIn33, cpBind2290, cpIn35.themeMap);
-      cpH.bh462(
+      paintChartAxisTicks(
         cpIn32,
         cpIn33,
         cpBind12305,
@@ -312,7 +313,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         cpBind3010 = cpBind3009 && axisCrossesZero(cpIn33, cpBind2300);
       switch (
         (cpBind3009 &&
-          cpH.bh462(
+          paintChartAxisTicks(
             cpIn32,
             cpIn33,
             cpBind2300,
@@ -604,7 +605,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
           break;
       }
       cpBind3010 &&
-        cpH.bh462(
+        paintChartAxisTicks(
           cpIn32,
           cpIn33,
           cpBind2300,

@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~66.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~64.9k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -97,6 +97,10 @@
 | Excel HTML clipboard (`Wpt` / `Gpt` / `Kpt`) | ~0.37k | **Drained (wave-92)** → `workbook/html-table-export/` |
 | Chart JSX lower (`dke` / `fke` / `helper722`–`742` / `_ke`) | ~1.59k | **Drained (wave-93)** → `workbook/chart-jsx-lower/` |
 | Compose JSX lower (`vke` / `helper745` / `Cke`) | ~1.22k | **Drained (wave-93)** → `workbook/compose-jsx-lower/` |
+| Chart axis ticks (`helper462`) | ~0.40k | **Drained (wave-94)** → `workbook/chart-axis-ticks/` |
+| Shape geometry paint (`helper616`) | ~0.38k | **Drained (wave-94)** → `workbook/shape-geometry-paint/` |
+| Table frame layout (`workbookA`) | ~0.36k | **Drained (wave-94)** → `workbook/table-frame-layout/` |
+| Slide canvas render (`vEe`) | ~0.33k | **Drained (wave-94)** → `workbook/slide-canvas-render/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1068,6 +1072,20 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 66294 (was 69013; Δ -2719).
 - Next: helper462 (~0.40k) / helper616 (~0.38k) / workbookA (~0.36k) / vEe (~0.33k) / clean `xLe` / `_workbookS` after presentation leave-behind drain.
+
+## Wave-94 progress
+
+- Re-scanned ≥300 clusters: WorkbookN (~1946 leave), `_workbookS`/`vYe` (~1240 leave), `xLe` (~1770 walnut), helper462 (~403), helper616 (~380), workbookA (~362), vEe (~332). No other true top-level ≥300 after wave-93.
+- Skipped `_workbookS`/`WorkbookN` / KJe–aYe / `xLe`.
+- Peeled `helper462` → `workbook/chart-axis-ticks/` (`catH` for helpers 405/422/424–440/446/460/461 + Nye/Vye); axis consts inlined; chart-paint imports `paintChartAxisTicks` (dropped `cpH.bh462`).
+- Peeled `helper616` → `workbook/shape-geometry-paint/` (`sgpH`); fill/frame/color direct imports; connector helpers via hooks.
+- Peeled `workbookA` → `workbook/table-frame-layout/` (`tflH`); table default consts inlined; text/fill via direct imports.
+- Peeled `vEe` → `workbook/slide-canvas-render/` (`scrH`); `layoutTableFrame` + `paintChartElement` direct imports.
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on new modules + chart-paint + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 64914 (was 66294; Δ -1380).
+- Next: helper501 (~0.27k) / Xxe (~0.28k) / Txe (~0.27k) / jCe (~0.26k) / clean `xLe` / `_workbookS` after presentation leave-behind drain.
+
 
 
 
