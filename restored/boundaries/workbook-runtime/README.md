@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~57.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~56.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -146,6 +146,15 @@
 | Sheet hidden boundaries (`ewe`) | ~0.11k | **Drained (wave-102)** → `workbook/sheet-hidden-boundaries/` |
 | Slide background paint (`RTe`) | ~0.16k | **Drained (wave-102)** → `workbook/slide-background-paint/` |
 | Formula matrix inverse (`Alt`) | ~0.12k | **Drained (wave-102)** → `workbook/formula-matrix-inverse/` |
+| Axis auto domain (`bye`) | ~0.13k | **Drained (wave-103)** → `workbook/chart-axis-auto-domain/` |
+| Bar segments (`helper421`) | ~0.10k | **Drained (wave-103)** → `workbook/chart-bar-series/` |
+| Pie 3D paint (`txe`) | ~0.12k | **Drained (wave-103)** → `workbook/three-chart-paint/` |
+| Line stack layers (`axe`) | ~0.10k | **Drained (wave-103)** → `workbook/chart-line-series/` |
+| Combo groups (`yxe`) | ~0.10k | **Drained (wave-103)** → `workbook/chart-combo-groups/` |
+| Funnel bars (`vCe`) | ~0.10k | **Drained (wave-103)** → `workbook/chart-funnel-segments/` |
+| Shape path densify (`dTe`) | ~0.11k | **Drained (wave-103)** → `workbook/shape-path-densify/` |
+| Compose element snapshot (`helper678`) | ~0.10k | **Drained (wave-103)** → `workbook/compose-element-snapshot/` |
+| YEARFRAC (`helper884`) | ~0.11k | **Drained (wave-103)** → `workbook/formula-yearfrac/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1252,3 +1261,21 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on modules + chart-paint + slide-canvas-render + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 57000 (was 57711; Δ -711).
 - Next: ≥100 chart/series neighbors (`txe`/`yxe`/`axe`/`dTe`/`bye`/`helper421`/`helper678`/`helper884`) / leave-behinds when safe.
+
+## Wave-103 progress
+
+- Re-scanned ≥90 after wave-102. **FALSE/ESM:** `ict`/`WEe`/`TIe`/`$nt`/`zwe`/`yEe`/`Oht`/`npt`/`gxe`/`Binding1150`/`_xe`/`xDe`/`ftt`/`Binding841`/`helper672@xDe`. **LEAVE:** `rze`/`kht` (WorkbookN/`_workbookS` not top-level).
+- Preferred reals: `txe`/`dTe`/`helper884`/`axe`/`helper678`/`yxe`/`helper421`/`bye` (+ neighbor `vCe`; owned `xye`/`Sye`/`Cye`/`helper401`/`nxe`/`helper522`/`helper882`/`helper883`).
+- Peeled `bye` cluster → `workbook/chart-axis-auto-domain/` (`computeAxisAutoDomain`).
+- Peeled `helper421` → `workbook/chart-bar-series/` `computeBarSegments` (bar-direction + three-chart-paint direct import).
+- Peeled `txe`+`nxe`+`helper522` → `workbook/three-chart-paint/` `paintPie3d` (chart-paint hook was misnamed `paintBar` for PIE_3D).
+- Peeled `axe` → `workbook/chart-line-series/` `stackLineLayers`.
+- Peeled `yxe` → `workbook/chart-combo-groups/` (chart-paint hook was misnamed `paintScatter` for COMBO).
+- Peeled `vCe` → `workbook/chart-funnel-segments/` `paintFunnelBars` (hook was misnamed `paintBar3d`).
+- Peeled `dTe` → `workbook/shape-path-densify/`.
+- Peeled `helper678` → `workbook/compose-element-snapshot/`.
+- Peeled `helper884`+`882`/`883` → `workbook/formula-yearfrac/`.
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on modules + chart-paint + peers + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 56143 (was 57000; Δ -857).
+- Next: newly revealed ≥90 (`helper551`/`uSe`/`helper545`/`uwe`/`JOe`/`Dmt`/`$B`/`Z0e`/`helper1008`) / leave-behinds when safe.

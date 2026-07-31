@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: chart line-series paint (legacy helper528).
-// Stage-3 wave-99.
+// Stage-3 wave-99/103 (stackLineLayers / axe).
 
 import { line as d3Line } from "../../vendor/d3-shape-line-pie-stack";
 import {
@@ -9,7 +9,22 @@ import {
 } from "../../vendor/d3-shape-curves";
 import { paintChartTrendline } from "../chart-trendline";
 import { paintChartDataLabel } from "../chart-data-labels";
+import { Nn } from "../presentation-protobuf";
+import {
+  stack,
+  stackOrderNone,
+  stackOffsetExpand,
+  stackOffsetNone,
+} from "../../vendor/d3-shape-line-pie-stack";
+import { workbookHelper348 } from "../chart-asset";
 import { clnH } from "./boundary-hooks";
+
+void Nn;
+void stack;
+void stackOrderNone;
+void stackOffsetExpand;
+void stackOffsetNone;
+void workbookHelper348;
 
 void d3Line;
 void d3CurveCatmullRom;
@@ -29,7 +44,7 @@ export function paintLineSeries(
   clnIn561: any,
 ) {
   let { x, y } = clnIn557,
-    clnBind4494 = clnH.stackLineLayers(clnIn555, clnIn560),
+    clnBind4494 = stackLineLayers(clnIn555, clnIn560),
     clnBind4495 = clnBind4494.categories;
   clnBind4494.layers.forEach((item) => {
     let clnBind4650 = clnIn555.series[item.seriesIndex];
@@ -165,5 +180,111 @@ export function paintLineSeries(
   });
 }
 
-/** Legacy alias. */
+export function stackLineLayers(clnIn756: any, clnIn757: any) {
+  let clnBind5251 = workbookHelper348(clnIn756),
+    clnBind5252 = clnIn756.series
+      .map((item, index) => index)
+      .filter((item) => !clnIn757?.has(item)),
+    clnBind5253 = clnIn756.lineOptions?.grouping,
+    clnBind5254 =
+      clnBind5253 === Nn.LINE_GROUPING_STACKED
+        ? "stacked"
+        : clnBind5253 === Nn.LINE_GROUPING_PERCENT_STACKED
+          ? "percent"
+          : "standard",
+    clnBind5255 = clnBind5252.map((item) => ({
+      seriesIndex: item,
+      values: clnBind5251.map(() => 0),
+      tuples: clnBind5251.map(() => ({
+        start: 0,
+        end: 0,
+      })),
+    }));
+  if (clnBind5254 === "standard" || clnBind5252.length === 0)
+    return (
+      clnBind5251.forEach((item, index) => {
+        clnBind5252.forEach((_item) => {
+          let clnBind17129 = clnBind5255.find(
+            (__item) => __item.seriesIndex === _item,
+          );
+          if (!clnBind17129) return;
+          let clnBind17130 =
+              clnIn756.series[_item]?.values[index] ?? 0,
+            clnBind17131 = Number.isFinite(clnBind17130)
+              ? clnBind17130
+              : 0;
+          clnBind17129.values[index] = clnBind17131;
+          clnBind17129.tuples[index] = {
+            start: 0,
+            end: clnBind17131,
+          };
+        });
+      }),
+      {
+        categories: clnBind5251,
+        visibleSeries: clnBind5252,
+        mode: clnBind5254,
+        layers: clnBind5255,
+      }
+    );
+  let clnBind5256 = clnBind5251.map((item, index) => {
+      let clnBind18492 = {};
+      return (
+        clnBind5252.forEach((_item) => {
+          let clnBind21267 =
+            clnIn756.series[_item]?.values[index] ?? 0;
+          clnBind18492[String(_item)] = Number.isFinite(
+            clnBind21267,
+          )
+            ? clnBind21267
+            : 0;
+        }),
+        clnBind18492
+      );
+    }),
+    clnBind5257 = stack()
+      .keys(clnBind5252.map((item) => String(item)))
+      .value(
+        (clnIn16358, clnIn16359) =>
+          clnIn16358[clnIn16359] ?? 0,
+      )
+      .order(stackOrderNone);
+  clnBind5254 === "percent"
+    ? clnBind5257.offset(stackOffsetExpand)
+    : clnBind5257.offset(stackOffsetNone);
+  let clnBind5258 = new Map(
+    clnBind5255.map((item) => [item.seriesIndex, item]),
+  );
+  return (
+    clnBind5257(clnBind5256).forEach((item) => {
+      let clnBind15020 = Number.parseInt(item.key, 10),
+        clnBind15021 = clnBind5258.get(clnBind15020);
+      clnBind15021 &&
+        clnBind5251.forEach((_item, index) => {
+          let clnBind17533 = item[index];
+          if (!clnBind17533) return;
+          let clnBind17534 = Number.isFinite(clnBind17533[0])
+              ? clnBind17533[0]
+              : 0,
+            clnBind17535 = Number.isFinite(clnBind17533[1])
+              ? clnBind17533[1]
+              : clnBind17534;
+          clnBind15021.tuples[index] = {
+            start: clnBind17534,
+            end: clnBind17535,
+          };
+          clnBind15021.values[index] = clnBind17535;
+        });
+    }),
+    {
+      categories: clnBind5251,
+      visibleSeries: clnBind5252,
+      mode: clnBind5254,
+      layers: clnBind5255,
+    }
+  );
+}
+
+/** Legacy aliases. */
 export const workbookHelper528 = paintLineSeries;
+export const axe = stackLineLayers;

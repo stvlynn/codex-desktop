@@ -1,8 +1,21 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: column/bar series paint (legacy workbook bar-series painter).
-// Stage-3 wave-95.
+// Stage-3 wave-95/103 (computeBarSegments / helper421).
 
+import { Yn } from "../presentation-protobuf";
+import {
+  stack,
+  stackOrderNone,
+  stackOffsetExpand,
+  stackOffsetNone,
+} from "../../vendor/d3-shape-line-pie-stack";
 import { cbsH } from "./boundary-hooks";
+
+void Yn;
+void stack;
+void stackOrderNone;
+void stackOffsetExpand;
+void stackOffsetNone;
 
 void cbsH;
 
@@ -17,7 +30,7 @@ export function paintBarSeries(
   if (!cbsH.bh424(cbsIn296.x)) return;
   let cbsBind3508 = cbsIn296.x,
     cbsBind3509 = cbsIn296.y,
-    cbsBind3510 = cbsH.bh421(cbsIn295, cbsIn299),
+    cbsBind3510 = computeBarSegments(cbsIn295, cbsIn299),
     cbsBind3511 = cbsBind3510.categories,
     cbsBind3512 = cbsBind3510.mode === "clustered",
     cbsBind3513 = new Map(
@@ -208,3 +221,100 @@ export function paintBarSeries(
     });
   });
 }
+
+export function computeBarSegments(cbsIn685: any, cbsIn686: any) {
+  let cbsBind4953 = cbsH.bh419(cbsIn685),
+    cbsBind4954 = cbsIn685.series
+      .map((item, index) => index)
+      .filter((item) => !cbsIn686?.has(item)),
+    cbsBind4955 = cbsIn685.barOptions?.grouping,
+    cbsBind4956 =
+      cbsBind4955 === Yn.BAR_GROUPING_STACKED
+        ? "stacked"
+        : cbsBind4955 === Yn.BAR_GROUPING_PERCENT_STACKED
+          ? "percent"
+          : "clustered",
+    cbsBind4957 = cbsBind4953.map(() => []);
+  if (cbsBind4956 === "clustered" || cbsBind4954.length === 0) {
+    let cbsBind11831 = cbsIn685.series.map(cbsH.bh420);
+    return (
+      cbsBind4953.forEach((item, index) => {
+        cbsBind4954.forEach((_item) => {
+          if (!cbsIn685.series[_item]) return;
+          let cbsBind15046 = cbsBind11831[_item]?.get(index),
+            cbsBind15047 = true;
+          (cbsBind15046 === undefined || !Number.isFinite(cbsBind15046)) &&
+            ((cbsBind15046 = 0), (cbsBind15047 = false));
+          cbsBind4957[index]?.push({
+            seriesIndex: _item,
+            hasValue: cbsBind15047,
+            valueRaw: cbsBind15046,
+            start: 0,
+            end: cbsBind15046,
+          });
+        });
+      }),
+      {
+        categories: cbsBind4953,
+        visibleSeries: cbsBind4954,
+        mode: cbsBind4956,
+        segmentsByCategory: cbsBind4957,
+      }
+    );
+  }
+  let cbsBind4958 = cbsIn685.series.map(cbsH.bh420),
+    cbsBind4959 = cbsBind4953.map((item, index) => {
+      let cbsBind18723 = {};
+      return (
+        cbsBind4954.forEach((_item) => {
+          let cbsBind21466 = cbsIn685.series[_item];
+          cbsBind18723[String(_item)] =
+            cbsBind21466 && cbsBind4958[_item]
+              ? (cbsBind4958[_item]?.get(index) ?? 0)
+              : 0;
+        }),
+        cbsBind18723
+      );
+    }),
+    cbsBind4960 = stack()
+      .keys(cbsBind4954.map((item) => String(item)))
+      .value((cbsIn16356, cbsIn16357) => cbsIn16356[cbsIn16357] ?? 0)
+      .order(stackOrderNone);
+  return (
+    cbsBind4956 === "percent"
+      ? cbsBind4960.offset(stackOffsetExpand)
+      : cbsBind4960.offset(stackOffsetNone),
+    cbsBind4960(cbsBind4959).forEach((item) => {
+      let cbsBind11977 = item.key,
+        cbsBind11978 = Number.parseInt(cbsBind11977, 10);
+      cbsBind4953.forEach((_item, index) => {
+        let cbsBind13337 = item[index];
+        if (!cbsBind13337) return;
+        let cbsBind13338 = Number.isFinite(cbsBind13337[0])
+            ? cbsBind13337[0]
+            : 0,
+          cbsBind13339 = Number.isFinite(cbsBind13337[1]) ? cbsBind13337[1] : 0,
+          cbsBind13340 = cbsBind4958[cbsBind11978]?.get(index),
+          cbsBind13341 = true;
+        (cbsBind13340 === undefined || !Number.isFinite(cbsBind13340)) &&
+          ((cbsBind13340 = 0), (cbsBind13341 = false));
+        cbsBind4957[index]?.push({
+          seriesIndex: cbsBind11978,
+          hasValue: cbsBind13341,
+          valueRaw: cbsBind13340,
+          start: cbsBind13338,
+          end: cbsBind13339,
+        });
+      });
+    }),
+    {
+      categories: cbsBind4953,
+      visibleSeries: cbsBind4954,
+      mode: cbsBind4956,
+      segmentsByCategory: cbsBind4957,
+    }
+  );
+}
+
+/** Legacy alias. */
+export const workbookHelper421 = computeBarSegments;

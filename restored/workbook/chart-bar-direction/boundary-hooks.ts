@@ -5,7 +5,6 @@ export type ChartBarDirectionBoundaryHooks = {
   bh393: (...args: any[]) => any;
   bh394: (...args: any[]) => any;
   bh404: (...args: any[]) => any;
-  bh421: (...args: any[]) => any;
   bh469: (...args: any[]) => any;
   bh470: (...args: any[]) => any;
   bh473: (...args: any[]) => any;

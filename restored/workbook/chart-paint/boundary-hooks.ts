@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-89: chart-paint boundary hooks
+// Stage-3 wave-89/103: chart-paint boundary hooks
 // (chart helper leave-behinds + PCe ensure fan-out).
 
 export type ChartPaintBoundaryHooks = {
@@ -16,12 +16,9 @@ export type ChartPaintBoundaryHooks = {
   bh552: (...args: any[]) => any;
   bh556: (...args: any[]) => any;
   paintSunburst: (...args: any[]) => any;
-  paintScatter: (...args: any[]) => any;
   paintPie: (...args: any[]) => any;
   paintArea: (...args: any[]) => any;
-  paintBar: (...args: any[]) => any;
   layoutCategoryLabels: (...args: any[]) => any;
-  paintBar3d: (...args: any[]) => any;
   paintSurface: (...args: any[]) => any;
   paintDataTable: (...args: any[]) => any;
   paintAxis: (...args: any[]) => any;

@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: funnel segment geometry (legacy helper576 + bCe).
-// Stage-3 wave-102.
+// Stage-3 wave-102/103 (paintFunnelBars / vCe).
 
 import { max as appInitialAat } from "../../vendor/d3-array-min";
 import { cfsH } from "./boundary-hooks";
@@ -130,3 +130,98 @@ export function computeFunnelSegments(cfsIn878: any, cfsIn879: any, cfsIn880: an
 
 /** Legacy alias. */
 export const workbookHelper576 = computeFunnelSegments;
+
+export function paintFunnelBars(cfsIn790: any, cfsIn791: any, cfsIn792: any, cfsIn793: any, cfsIn794: any, cfsIn795: any, ) {
+  if (
+    cfsIn792.seriesIndex === -1 ||
+    cfsIn792.segments.length === 0
+  )
+    return;
+  let cfsBind5392 =
+    cfsIn791.series[cfsIn792.seriesIndex];
+  if (!cfsBind5392) return;
+  cfsIn790.save();
+  cfsIn790.lineJoin = "round";
+  cfsIn790.lineCap = "round";
+  let cfsBind5393 = [];
+  cfsIn792.segments.forEach((item) => {
+    let cfsBind7081 = item.y1 - item.y0;
+    if (cfsBind7081 <= 0) return;
+    let cfsBind7082 = cfsH.bh474(cfsBind5392, item.index)
+        ? undefined
+        : cfsH.bh469(
+            cfsBind5392,
+            item.index,
+            cfsIn792.seriesIndex,
+            cfsIn793,
+          ),
+      { color, widthPx } = cfsH.bh473(
+        cfsBind5392,
+        item.index,
+        cfsIn793,
+      );
+    cfsIn790.beginPath();
+    cfsIn790.moveTo(item.topLeftX, item.y0);
+    cfsIn790.lineTo(item.topRightX, item.y0);
+    cfsIn790.lineTo(item.bottomRightX, item.y1);
+    cfsIn790.lineTo(item.bottomLeftX, item.y1);
+    cfsIn790.closePath();
+    cfsBind7082 &&
+      ((cfsIn790.fillStyle = cfsBind7082),
+      cfsIn790.fill());
+    let cfsBind7083 = color ?? (cfsBind7082 || "#ffffff"),
+      cfsBind7084 = widthPx ?? +!!color;
+    if (
+      (cfsBind7084 > 0 &&
+        ((cfsIn790.strokeStyle = cfsBind7083),
+        (cfsIn790.lineWidth = cfsBind7084),
+        cfsIn790.stroke()),
+      cfsBind5393.push({
+        text: item.category,
+        centerY: item.y0 + cfsBind7081 / 2,
+      }),
+      cfsIn794)
+    ) {
+      let cfsBind12093 = Math.max(
+          item.topRightX - item.topLeftX,
+          item.bottomRightX - item.bottomLeftX,
+        ),
+        cfsBind12094 = Math.min(item.topLeftX, item.bottomLeftX),
+        cfsBind12095 = item.centerX,
+        cfsBind12096 = item.y0 + cfsBind7081 / 2;
+      cfsIn794.push({
+        kind: "bar-vertical",
+        x: cfsBind12094,
+        y: item.y0,
+        width: cfsBind12093,
+        height: cfsBind7081,
+        category: item.category,
+        seriesName: cfsBind5392.name,
+        value: item.value,
+        color: cfsBind7082 ?? color,
+        anchorX: cfsBind12095,
+        anchorY: cfsBind12096,
+        seriesIndex: cfsIn792.seriesIndex,
+      });
+    }
+  });
+  cfsIn795 &&
+    cfsBind5393.length > 0 &&
+    (cfsIn790.save(),
+    (cfsIn790.font = cfsIn795.font),
+    (cfsIn790.fillStyle = cfsIn795.textColor),
+    (cfsIn790.textAlign = "right"),
+    (cfsIn790.textBaseline = "middle"),
+    cfsBind5393.forEach((item) => {
+      cfsIn790.fillText(
+        item.text,
+        cfsIn795.labelX,
+        item.centerY,
+      );
+    }),
+    cfsIn790.restore());
+  cfsIn790.restore();
+}
+
+/** Legacy alias. */
+export const vCe = paintFunnelBars;

@@ -32,7 +32,9 @@ import { paintChartTrendline } from "../chart-trendline";
 import { buildScatterScale } from "../chart-scatter-scale";
 import { paintChartAxisTicks } from "../chart-axis-ticks";
 import { paintChartLegend } from "../chart-legend";
-import { paintThreeChart } from "../three-chart-paint";
+import { paintThreeChart, paintPie3d } from "../three-chart-paint";
+import { paintComboGroups } from "../chart-combo-groups";
+import { paintFunnelBars } from "../chart-funnel-segments";
 import {
   strokePlotAreaBorder,
   paintChartChrome,
@@ -385,7 +387,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
           break;
         }
         case Cn.CHART_TYPE_COMBO:
-          cpH.paintScatter(
+          paintComboGroups(
             cpIn32,
             cpIn33,
             cpBind2290,
@@ -547,7 +549,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
             width: cpBind2290.width,
             height: cpBind2290.height,
           };
-          cpH.paintBar(
+          paintPie3d(
             cpIn35.threeCtx,
             cpIn33,
             cpBind9565,
@@ -652,7 +654,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         cpBind2290,
         cpIn35.themeMap,
       );
-    cpH.paintBar3d(
+    paintFunnelBars(
       cpIn32,
       cpIn33,
       cpBind14154 === null

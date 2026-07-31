@@ -22,6 +22,9 @@ import {
 } from "../../vendor/three";
 import { Yn } from "../presentation-protobuf";
 import { tcH } from "./boundary-hooks";
+import { computeBarSegments } from "../chart-bar-series";
+
+void computeBarSegments;
 
 /** Chart 3D layout constants (legacy Binding1136–1138). */
 export const THREE_CHART_BAR_DEPTH = 2.6;
@@ -120,7 +123,7 @@ export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any,
       grouping: tcBind3033,
       categories: [],
     };
-  let tcBind3034 = tcH.bh421(
+  let tcBind3034 = computeBarSegments(
       tcIn191,
       tcIn195,
     ),

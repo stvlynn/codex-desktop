@@ -4,6 +4,9 @@
 
 import { Mn as _presentationMn } from "../presentation-protobuf";
 import { cbdH } from "./boundary-hooks";
+import { computeBarSegments } from "../chart-bar-series";
+
+void computeBarSegments;
 
 void _presentationMn;
 void cbdH;
@@ -17,7 +20,7 @@ export function paintBarDirectionSeries(
   cbdIn286: any,
 ) {
   let { x, y } = cbdIn283,
-    cbdBind3458 = cbdH.bh421(cbdIn282, cbdIn286),
+    cbdBind3458 = computeBarSegments(cbdIn282, cbdIn286),
     cbdBind3459 = cbdBind3458.categories,
     cbdBind3460 = cbdBind3458.mode === "clustered",
     cbdBind3461 =
