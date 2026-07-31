@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~118.6k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~115.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -65,6 +65,7 @@
 | WorkbookN / `__workbookT` (`Binding1996`) | ~4.4k | **Drained (wave-59)** → `workbook/workbook-core/` |
 | Worksheet drawings (`helper373`…`Sve` + `Binding740`–`789`) | ~3.1k | **Drained (wave-60)** → `workbook/worksheet-drawings/` |
 | Drawing-layout + sparklines (`Lve`/`Binding790`–`815`/`_D`) | ~1.6k | **Drained (wave-61)** → `workbook/worksheet-drawings/` + `workbook/sparklines/` |
+| Mermaid→slide adapters (`Binding1687` / gitGraph·sequence·class·treeView) | ~3.0k | **Drained (wave-62)** → `workbook/mermaid-slide-adapters/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -702,3 +703,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 118625 (was 120164).
 - Next: compose DSL Binding1490–1528 / `The`/`BYe` / Google Slides `pJe`/`SJe` / Binding1687 (~3.0k) / Binding1906 (~2.4k).
+
+## Wave-62 progress
+
+- Identified Binding1687 (~3.0k) as Codex Mermaid→presentation slide adapters (gitGraph / sequence / class·state·er·requirement·mindmap / treeView + `P$` registry) — **not** stock `mermaid` npm (custom slide-element emitters).
+- Extracted contiguous cluster → `workbook/mermaid-slide-adapters/` (split under flat limit).
+- Left compose DSL Binding1490–1528, Google Slides `pJe`/`SJe`, `The`/`BYe`, Binding1906/1967, Binding662/`_C`, Binding1574/`Cke`, earlier mermaid helpers (Binding1615–1685 / flowchart `NPe` / chart-like `zAe`), and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 115720 (was 118625).
+- Next: Binding1906/1967 (~2.4k) / `BYe` (~2.4k) / `The` (~2.2k) / Binding1827 (~2.3k) / compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe`.
