@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~80.9k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~80.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -76,6 +76,7 @@
 | Mermaid flowchart (`$Ne`/Binding1675/`OPe`/Binding1685/`NPe`/`PPe`) | ~0.8k | **Drained (wave-78)** → `workbook/mermaid-flowchart/` |
 | Deck kinds (`wRe`/`qRe`/Binding1738–1748) | ~0.9k | **Drained (wave-79)** → `workbook/deck-kinds/` |
 | Shape element (`Binding736`/`739`) | ~0.76k | **Drained (wave-80)** → `workbook/shape-element/` |
+| Slides collection (`_workbookY`/`_workbookV`) | ~0.91k | **Drained (wave-81)** → `workbook/slides-collection/` |
 
 ## Why it stays in `boundaries/`
 
@@ -905,4 +906,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 80878 (was 81619; Δ -741).
 - Next: `_workbookY` slides collection (~0.75k) / `bDe` (~0.74k) / `_workbookS` presentation ensure (~1.2k leave) / clean `xLe` walnut peel before comments/`_C`.
+
+## Wave-81 progress
+
+- Identified contiguous helper660–665/`GEe`/`KEe`/`qEe` + `_workbookY`/`_workbookV`/Binding1313 cluster as Codex presentation slide shapes collection (NOT vendor): connector geometry helpers + shape-props builders + Shapes VO + edge map (~913 LOC).
+- Extracted → `workbook/slides-collection/` (helpers + collection impl under flat limit; Binding1312/`helper659` remain in boundary via `scH` hooks; shape-element / image-connector / preset-shape / shape-geometry / stable-id / yjs imported directly; empty `workbookKt` stub dropped as noop).
+- Left `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, `_Ye`/`_workbookS` (~1.2k leave), `cDe`/`_workbookH`, `bDe` (~0.74k), `jgt` sheet-meta, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 79982 (was 80878; Δ -896).
+- Next: `bDe` (~0.74k) / `_workbookS` presentation ensure (~1.2k leave) / clean `xLe` walnut peel before comments/`_C`.
 
