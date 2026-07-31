@@ -49,6 +49,7 @@
 | CF/DV VO+API (helper322…Bpe) | ~1.2k (post-Binding662) | **Drained (wave-43)** → `workbook/conditional-format/` + `data-validation/` |
 | Formula/token/WorkbookR (Vpe…workbookF) | ~1.4k (post-Binding662) | **Drained (wave-44)** → `workbook/formula/` |
 | Fill-from / formula-address (dme…helper336) | ~0.4k (post-formula) | **Drained (wave-45)** → `workbook/range-fill/` + `formula-address/` |
+| Range VO (Binding672/675 + bme/xme/Sme) | ~3.0k | **Drained (wave-46)** → `workbook/range/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -510,6 +511,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 185281.
-- Next: pivot Binding335/336/338 + Class53 if cleanly separable, or contiguous post-Binding669 Range VO / serial-date init cluster; continue scanning for stock vendor fingerprints.
+- Next: ~~Binding675 Range VO / serial-date init~~ (done wave-46); pivot Binding335/336/338 + Class53 if cleanly separable, or Binding676 PivotCaches if peelable under flat limit.
 
+
+
+## Wave-46 progress
+
+- Extracted Range VO (`Binding672`/`WorkbookClass2`) with method peels (write/fill/copy/formulas/nav/matrix) → `workbook/range/`.
+- Extracted DV guard (`bme`), ISO date-time RE (`xme`), sparklines helper (`Sme`); wired Binding670/671/673/674 to existing epoch/limit constants.
+- Left Binding662/`_C` init gate, pivot enums Binding335/336/338 + Class53, Binding676 PivotCaches, and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 182339.
+- Next: pivot Binding335/336/338 + Class53 if cleanly separable, or Binding676 PivotCaches cluster; continue scanning for stock vendor fingerprints.
 
