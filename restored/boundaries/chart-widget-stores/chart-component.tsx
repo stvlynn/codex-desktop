@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
 // Codex Chart component (`_chartWidgetStoresS`) + series/legend/tooltip helpers.
 // Flat boundary facade — vendored Chart body parked beside the mega until Recharts/RTK npm-shim; public API re-exported from visualization/.
-// Recharts surfaces arrive via chart-bundle-surface (still inlined in the mega).
+// Recharts surfaces arrive via chart-bundle-surface; semantic aliases via recharts-surface-aliases (wave-6).
 
 import type { ReactNode } from "react";
 
@@ -39,7 +39,6 @@ import { useWidgetContext as chartWidgetStoresE } from "../../visualization/char
 import { classNames as chartWidgetStoresV } from "../../visualization/chart-widget-stores/widget-class-names";
 import { WidgetBoxRoot as chartWidgetStoresD } from "../../visualization/chart-widget-stores/widget-box";
 
-
 import {
   getChartBundleSurface,
   hasChartBundleSurface,
@@ -51,25 +50,26 @@ export type CodexChartComponent = (props: unknown) => ReactNode;
 function buildCodexChart(surface: ChartBundleSurface): CodexChartComponent {
   const {
     createElement,
-    chartWidgetStoresF,
-    chartWidgetStoresG,
-    chartWidgetStoresP,
-    chartWidgetStoresUnderscore,
     chartWidgetStoresHelper611: chartFn611,
-    chartWidgetStoresHelper767: chartFn767,
     chartWidgetStoresBinding1022,
-    chartWidgetStoresBinding1063,
     chartWidgetStoresBinding1076,
     chartWidgetStoresBinding1080,
-    chartWidgetStoresBinding1113,
-    chartWidgetStoresBinding1130,
-    chartWidgetStoresBinding1147,
-    chartWidgetStoresBinding1155,
-    chartWidgetStoresBinding1164,
-    chartWidgetStoresBinding1208,
     chartWidgetStoresBinding1317,
-    chartWidgetStoresBinding1326
+    chartWidgetStoresBinding1326,
   } = surface;
+  // Semantic Recharts aliases (G/P/Underscore/Bar/Line/Area/…) — bodies still mega-injected.
+  const chartWidgetStoresG = surface.chartWidgetStoresG; // ResponsiveContainer
+  const chartWidgetStoresP = surface.chartWidgetStoresP; // Legend
+  const chartWidgetStoresUnderscore = surface.chartWidgetStoresUnderscore; // Tooltip
+  const chartWidgetStoresF = surface.chartWidgetStoresF; // Cell
+  const chartWidgetStoresBinding1208 = surface.chartWidgetStoresBinding1208; // ComposedChart
+  const chartWidgetStoresBinding1063 = surface.chartWidgetStoresBinding1063; // Bar
+  const chartWidgetStoresBinding1113 = surface.chartWidgetStoresBinding1113; // Line
+  const chartWidgetStoresBinding1130 = surface.chartWidgetStoresBinding1130; // Area
+  const chartWidgetStoresBinding1147 = surface.chartWidgetStoresBinding1147; // Scatter
+  const chartWidgetStoresBinding1155 = surface.chartWidgetStoresBinding1155; // XAxis
+  const chartWidgetStoresBinding1164 = surface.chartWidgetStoresBinding1164; // YAxis
+  const chartFn767 = surface.chartWidgetStoresHelper767; // CartesianGrid
 
   const chartWidgetStoresBinding1327 = CHART_CLASS_NAMES;
   const chartWidgetStoresBinding1328: Record<string, unknown> = {};

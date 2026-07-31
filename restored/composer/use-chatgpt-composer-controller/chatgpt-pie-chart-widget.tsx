@@ -1,29 +1,26 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Pie-chart content-reference widget (Helper156–164 + Value182/197).
+// Wave-6: Recharts G/P/Underscore/F/H/M via visualization surface aliases;
+// Codex B/C/D/E/S/U/V/X from drained visualization modules.
 
 import {
   jsxRuntime as appInitialJvt,
   react as appInitialLvt,
 } from "../../boundaries/react-cjs-runtime";
 import {
+  _chartWidgetStoresC as ensureChartBundleSurfaceInit,
+} from "../../boundaries/chart-widget-stores";
+import {
   chartWidgetStoresB,
   chartWidgetStoresC,
   chartWidgetStoresD,
   chartWidgetStoresE,
-  chartWidgetStoresF,
-  chartWidgetStoresG,
-  chartWidgetStoresH,
-  chartWidgetStoresL,
-  chartWidgetStoresM,
-  chartWidgetStoresP,
   chartWidgetStoresS,
-  chartWidgetStoresT,
   chartWidgetStoresU,
-  chartWidgetStoresUnderscore,
   chartWidgetStoresV,
   chartWidgetStoresX,
-  chartWidgetStoresY,
-} from "../../boundaries/chart-widget-stores";
+  getRechartsSurfaceAliases,
+} from "../../visualization/chart-widget-stores";
 import {
   rolldownRuntimeN,
   rolldownRuntimeS,
@@ -93,12 +90,15 @@ function useChatgptComposerControllerHelper161(request10254) {
   return typeof slot15711?.formatted == "string" ? slot15711.formatted : null;
 }
 export function useChatgptComposerControllerHelper162(request415: any) {
+  const {
+    ResponsiveContainer: ChartWidgetStoresG,
+    PieChart: ChartWidgetStoresH,
+    Tooltip: ChartWidgetStoresUnderscore,
+    Legend: Slot196,
+    Pie: ChartWidgetStoresM,
+    Cell: ChartWidgetStoresF,
+  } = getRechartsSurfaceAliases();
   const ChartWidgetStoresD = chartWidgetStoresD;
-  const ChartWidgetStoresG = chartWidgetStoresG;
-  const ChartWidgetStoresH = chartWidgetStoresH;
-  const ChartWidgetStoresUnderscore = chartWidgetStoresUnderscore;
-  const Slot196 = slot196;
-  const ChartWidgetStoresM = chartWidgetStoresM;
   let {
       data = [],
       series = [slot186],
@@ -331,7 +331,6 @@ export function useChatgptComposerControllerHelper162(request415: any) {
             labelLine={showValueLabels ? showLabelLines : false}
           >
             {slot2475.map((item) => {
-              const ChartWidgetStoresF = chartWidgetStoresF;
               return (
                 <ChartWidgetStoresF
                   key={item.__sliceId}
@@ -513,14 +512,12 @@ let slot192: any;
 let slot193: any;
 let slot194: any;
 let slot195: any;
-let slot196: any;
 
 const slot197 = rolldownRuntimeN(() => {
   slot182();
-  chartWidgetStoresY();
-  chartWidgetStoresT();
+  // Mega `_chartWidgetStoresC` runs Y/T/L and setChartBundleSurface (Recharts bag).
+  ensureChartBundleSurfaceInit();
   slot183 = rolldownRuntimeS(appInitialLvt());
-  chartWidgetStoresL();
   slot184 = appInitialJvt();
   slot185 = {
     Chart: "PieChart_Chart",
@@ -547,7 +544,6 @@ const slot197 = rolldownRuntimeN(() => {
       return `var(--${_item}-${item})`;
     });
   });
-  slot196 = chartWidgetStoresP;
 });
 
 export const ensureChatgptPieChartWidgetInit = slot197;

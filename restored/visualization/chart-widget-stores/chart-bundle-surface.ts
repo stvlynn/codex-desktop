@@ -1,12 +1,15 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
 // Injected Recharts surfaces still living in boundaries/chart-widget-stores.
 // Codex C/S/U/B/X/D/E/V drained to visualization (wave-4/5); Chart imports those directly.
+// Wave-6: H (PieChart) + M (Pie) join the bag; semantic names via recharts-surface-aliases.
 
 export type ChartBundleSurface = {
   createElement: any;
   $_: any;
   chartWidgetStoresF: any;
   chartWidgetStoresG: any;
+  chartWidgetStoresH: any;
+  chartWidgetStoresM: any;
   chartWidgetStoresP: any;
   chartWidgetStoresUnderscore: any;
   chartWidgetStoresHelper611: any;

@@ -17649,7 +17649,7 @@
       },
       "status": "done",
       "classification": "vendor-runtime",
-      "notes": "Intentional oversized vendor-runtime terminal (openBoundary). Stage-3 wave-1..5: WidgetContext, widget-scope, chrome, locales/i18n, Chart, C/S/U/B/X, plus Box/style/classNames (D/_H/V) drained to visualization/chart-widget-stores/. Chart still via setChartBundleSurface (Recharts). Immer npm-shimmed. Recharts + @reduxjs/toolkit still entangled — next: npm shim when cut clean.",
+      "notes": "Intentional oversized vendor-runtime terminal (openBoundary). Stage-3 wave-1..6: WidgetContext, widget-scope, chrome, locales/i18n, Chart, C/S/U/B/X, Box/style/V, plus Recharts surface aliases (G/P/_/Bar/Line/Area/H/M → recharts-surface-aliases.ts). Chart+pie via setChartBundleSurface. Immer npm-shimmed. Recharts + @reduxjs/toolkit still entangled (~50k in Y) — next: joint npm shim of recharts+RTK or keep wrappers.",
       "stage3Accepted": true,
       "vendor": "runtime",
       "openBoundary": true

@@ -87,6 +87,12 @@ export {
 export type { ChartBundleSurface } from "./chart-bundle-surface";
 
 export {
+  getRechartsSurfaceAliases,
+  getChartWidgetStoresRechartsLocals,
+} from "./recharts-surface-aliases";
+export type { RechartsSurfaceAliases } from "./recharts-surface-aliases";
+
+export {
   isChartPaletteColor,
   pickThemeColor,
   resolveChartThemeColor,

@@ -4,9 +4,9 @@ import { createElement } from "react";
 // Intentional oversized vendor-runtime terminal (openBoundary).
 // Not a single stock npm package: composite Recharts + Redux Toolkit/Immer
 // plus Codex WidgetContext / widget-scope store / chart chrome / i18n.
-// Stage-3 wave-1..5: WidgetContext, widget-scope, chrome, i18n, Chart,
-// C/S/U/B/X + Box/style/V Codex glue → visualization/ (Chart via surface).
-// Exit: npm-shim Recharts/@reduxjs/toolkit when cut clean; keep openBoundary.
+// Stage-3 wave-1..6: WidgetContext, widget-scope, chrome, i18n, Chart,
+// C/S/U/B/X/Box + Recharts surface aliases (G/P/_/Bar/Line/Area/H/M)
+// → visualization/ (Chart via surface). Recharts/RTK npm-shim still blocked.
 // Stage 3 candidate: 36/36 app-initial aliases rewritten to
 // IMPORT_MAP semantic/vendor/boundary paths. AppScope (Fft/Ift/ivt/M_t/L_t) is an
 // open host/runtime facade — not stock jotai. No whole-file app-initial promote.
@@ -60028,6 +60028,8 @@ export const _chartWidgetStoresC = rolldownRuntimeN(() => {
     $_,
     chartWidgetStoresF,
     chartWidgetStoresG,
+    chartWidgetStoresH,
+    chartWidgetStoresM,
     chartWidgetStoresP,
     chartWidgetStoresUnderscore,
     chartWidgetStoresHelper611,
