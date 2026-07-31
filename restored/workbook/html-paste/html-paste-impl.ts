@@ -1,11 +1,15 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: paste HTML table into worksheet (legacy wmt).
-// Stage-3 wave-101/104 (applyHtmlCell / parseHtmlTable).
+// Stage-3 wave-101/104/106 (applyHtmlCell / parseHtmlTable / paste target).
 
 import { formatA1 } from "../../utils/spreadsheet-address-utils";
 import { htmH } from "./boundary-hooks";
 import { applyHtmlCell } from "./html-cell-impl";
 import { parseHtmlTable } from "./parse-html-table-impl";
+import {
+  resolvePasteTarget,
+  rectToA1,
+} from "./paste-target-impl";
 
 void applyHtmlCell;
 void parseHtmlTable;
@@ -25,13 +29,13 @@ export function pasteHtmlIntoSheet(htmIn718: any) {
       1,
       ...htmBind5088.rows.map((item) => item.length),
     ),
-    htmBind5091 = htmH.resolvePasteTarget({
+    htmBind5091 = resolvePasteTarget({
       sheetName: htmBind5086,
       sourceRowCount: htmBind5089,
       sourceColCount: htmBind5090,
       target,
     }),
-    htmBind5092 = htmH.rectToA1(htmBind5091.selectionRect),
+    htmBind5092 = rectToA1(htmBind5091.selectionRect),
     htmBind5093 = options?.applyValues ?? true;
   htmBind5087.getRange(htmBind5092).unmerge();
   htmBind5087.getRange(htmBind5092).clear({

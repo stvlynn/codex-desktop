@@ -1,7 +1,8 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-66/105: boundary deps for canvas-paint cluster.
+// Stage-3 wave-66/105/106: boundary deps for canvas-paint cluster.
 
 import { fillCellBackground as fillCellBackgroundImpl } from "./fill-cell-background-impl";
+import { paintCharts as paintChartsImpl } from "./paint-charts-impl";
 
 export type CanvasPaintBoundaryHooks = {
   ensureWorkbookZ: () => void;
@@ -120,8 +121,7 @@ export const paintImages = (...args: any[]) =>
   requirePaintHooks().paintImages(...args);
 export const paintSparklines = (...args: any[]) =>
   requirePaintHooks().paintSparklines(...args);
-export const paintCharts = (...args: any[]) =>
-  requirePaintHooks().paintCharts(...args);
+export const paintCharts = (...args: any[]) => paintChartsImpl(...args);
 export const checkboxHitTest = (...args: any[]) =>
   requirePaintHooks().checkboxHitTest(...args);
 export const paintCheckboxBox = (...args: any[]) =>

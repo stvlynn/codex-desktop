@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-103: compose-element-snapshot boundary hooks.
+// Stage-3 wave-103/106: compose-element-snapshot boundary hooks.
 
 export type ComposeElementSnapshotBoundaryHooks = {
   bh681: (...args: any[]) => any;
@@ -10,6 +10,8 @@ export type ComposeElementSnapshotBoundaryHooks = {
   bh689: (...args: any[]) => any;
   bh695: (...args: any[]) => any;
   bh696: (...args: any[]) => any;
+  /** Flatten run style (legacy rOe). */
+  runPlain: (...args: any[]) => any;
   paragraphsFromElement: (...args: any[]) => any; // $De
   tableCellsFromElement: (...args: any[]) => any; // iOe
   cellsPreview: (...args: any[]) => any; // aOe

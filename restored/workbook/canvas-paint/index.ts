@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-66: canvas-paint barrel (legacy BYe cluster).
+// Stage-3 wave-66/106: canvas-paint barrel (legacy BYe cluster).
 
 export {
   wireCanvasPaintBoundaryHooks,
@@ -25,3 +25,12 @@ export {
   fillCellBackground,
   workbookHelper600,
 } from "./fill-cell-background-impl";
+export {
+  paintCharts,
+  hydrateChartSeries,
+  sheetMapByName,
+  zCe,
+  BCe,
+  VCe,
+} from "./paint-charts-impl";
+export { wirePaintChartsBoundaryHooks, pchH } from "./boundary-hooks-charts";

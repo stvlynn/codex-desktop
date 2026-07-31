@@ -1,15 +1,16 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: recursive formula AST range remap (legacy helper1022).
-// Stage-3 wave-101.
+// Stage-3 wave-101/106 (Bht remapRangeRef).
 
 import { farH } from "./boundary-hooks";
+import { remapRangeRef } from "./remap-range-ref-impl";
 
 void farH;
 
 export function remapFormulaAst(farIn1053: any, farIn1054: any, farIn1055: any, ) {
   switch (farIn1053.kind) {
     case "RangeRef": {
-      let farBind22402 = farH.remapRangeRef(
+      let farBind22402 = remapRangeRef(
         farIn1053.ref,
         farIn1054,
         farIn1055,

@@ -61,3 +61,12 @@ export {
   ensureTableStylesInit,
   workbookBinding687,
 } from "./ensure-table-styles-init";
+
+export {
+  wireTableCellStyleBandsBoundaryHooks,
+  tsbH,
+} from "./boundary-hooks-cell-bands";
+export {
+  resolveTableCellStyleBands,
+  workbookHelper384,
+} from "./resolve-cell-style-bands-impl";

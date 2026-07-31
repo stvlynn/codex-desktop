@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~54.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~53.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -171,6 +171,16 @@
 | Slide text group (`nEe`) | ~0.11k | **Drained (wave-105)** → `workbook/slide-canvas-render/` |
 | Treemap tiles (`Yye`) | ~0.09k | **Drained (wave-105)** → `workbook/chart-treemap-tiles/` |
 | Code-block plugin (`cAe`/`vAe`) | ~0.18k | **Drained (wave-105)** → `workbook/presentation-code-block/` |
+| Sheet chart painter (`zCe`/`BCe`/`VCe`) | ~0.14k | **Drained (wave-106)** → `workbook/canvas-paint/` |
+| Table cell style bands (`helper384`) | ~0.08k | **Drained (wave-106)** → `workbook/table-styles/` |
+| Chart card paint (`ASe`) | ~0.08k | **Drained (wave-106)** → `workbook/chart-card-paint/` |
+| Paragraph snapshot (`helper685`) | ~0.08k | **Drained (wave-106)** → `workbook/compose-element-snapshot/` |
+| Formula dep SCCs (`VXe`) | ~0.08k | **Drained (wave-106)** → `workbook/formula-dep-scc/` |
+| Criteria column match (`helper896`) | ~0.08k | **Drained (wave-106)** → `workbook/formula-criteria-match/` |
+| RATE solver (`W0e`) | ~0.08k | **Drained (wave-106)** → `workbook/formula-irr/` |
+| Matrix determinant (`klt`) | ~0.08k | **Drained (wave-106)** → `workbook/formula-matrix-inverse/` |
+| Paste target resolve (`Tmt`/`Emt`) | ~0.09k | **Drained (wave-106)** → `workbook/html-paste/` |
+| Range-ref remap (`Bht`/`helper1023`) | ~0.10k | **Drained (wave-106)** → `workbook/formula-ast-remap/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1329,3 +1339,23 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on modules + peers + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 54138 (was 54798; Δ -660).
 - Next: newly revealed ≥80 / leave-behinds when safe.
+
+## Wave-106 progress
+
+- Re-scanned ≥75 after wave-105. **FALSE/ESM:** `ict`/`_xe@1150`/`helper672@xDe`/`helper391@841`/`hxe@mxe`/`helper601@Twe`/`Amt@kmt`/`helper438@866`/`PDe@1489`/`BTe@zTe`. **LEAVE:** `rze`/`kht` (WorkbookN/`_workbookS` not top-level).
+- Preferred reals: `zCe`, `VXe`, `helper384`, `ASe`, `Bht`, `helper685`, `helper896`, `W0e`, `klt`, `Tmt` (+ neighbors `BCe`/`VCe`, `Emt`, `helper1023`).
+- `zCe` verified as peelable paintCharts dispatcher (not leave-behind glue); `_z` kept (extra caller).
+- Peeled `zCe`+`BCe`+`VCe` → `workbook/canvas-paint/` `paintCharts`.
+- Peeled `helper384` → `workbook/table-styles/` `resolveTableCellStyleBands`.
+- Peeled `ASe` → `workbook/chart-card-paint/`.
+- Peeled `helper685` → `workbook/compose-element-snapshot/` `snapshotParagraphs`.
+- Peeled `VXe` → `workbook/formula-dep-scc/`.
+- Peeled `helper896` → `workbook/formula-criteria-match/`.
+- Peeled `W0e` → `workbook/formula-irr/` `computeRate`.
+- Peeled `klt` → `workbook/formula-matrix-inverse/` `computeDeterminant`.
+- Peeled `Tmt`+`Emt` → `workbook/html-paste/` (leave-behind resolved).
+- Peeled `Bht`+`helper1023` → `workbook/formula-ast-remap/` (leave-behind resolved).
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on modules + peers + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 53312 (was 54143; Δ -831).
+- Next: newly revealed ≥75–90 / leave-behinds when safe.
