@@ -757,3 +757,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary LOC ≈ 103388 (was 106544; Δ -3156).
 - Next: compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe` / `The` (~2.2k) / earlier mermaid helpers Binding1615–1685 / Ume table-styles (~1.4k).
 
+## Wave-67 progress
+
+- Identified `The` contiguous cluster as Codex chart axis/series/legend/trendline VOs (NOT vendor): Ohe/`The` Axis number-format + Axis (`Binding705`) + Ahe…zhe series options + Binding712 legend + Hhe…Jhe plot extras + Yhe…nge markers/points + ige trendline (~2.2k LOC).
+- Extracted → `workbook/chart-elements/` (split under flat limit).
+- Left compose DSL Binding1490–1528, Google Slides `pJe`/`SJe`, Binding1831/`xLe`, Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 101269 (was 103388; Δ -2119).
+- Next: compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe` / Binding1831/`xLe` (~1.9k) / Binding1592 (~1.5k) / Ume table-styles (~1.4k) / earlier mermaid helpers Binding1615–1685.
+
