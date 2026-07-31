@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~70.5k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~69.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -92,6 +92,9 @@
 | Unit convert (`N1e`) | ~0.52k | **Drained (wave-91)** → `workbook/unit-convert/` |
 | Named ranges (`IXe` / `LXe` / `RXe` / `zXe`) | ~0.37k | **Drained (wave-91)** → `workbook/named-ranges/` |
 | Styles Yjs (`helper1030`…`Cgt` / `Ogt` / `kgt`) | ~0.45k | **Drained (wave-91)** → `workbook/styles-yjs/` |
+| Chart legend (`helper491` / `lbe`) | ~0.71k | **Drained (wave-92)** → `workbook/chart-legend/` |
+| Shape path (`helper605`–`607`) | ~0.42k | **Drained (wave-92)** → `workbook/shape-path/` |
+| Excel HTML clipboard (`Wpt` / `Gpt` / `Kpt`) | ~0.37k | **Drained (wave-92)** → `workbook/html-table-export/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1040,6 +1043,19 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 70467 (was 71784; Δ -1317).
 - Next: helpers 491/722/745 (~0.47–0.41k) / Kpt (~0.35k) / vEe (~0.33k) / Binding1486 (~0.63k) / `_workbookS` only after presentation leave-behind ensures drain.
+
+## Wave-92 progress
+
+- Re-scanned ≥300 clusters: WorkbookN (~1946 leave), `_workbookS`/`vYe` (~1240 leave), `xLe` (~1770 walnut), helpers 491+lbe (~706), 722/745/462 (~467–403), Binding1344 (~528), Kpt (~370), helper605–607 (~423), vEe (~332). Binding1486 (~626 scan) is a thin Proxy + import span — not a real peel.
+- Skipped full `_workbookS`/`_workbookO` (45-ensure fan-out) and WorkbookN leave-behind; skipped KJe/aYe presentation leave-behind cluster.
+- Peeled `helper491`+`lbe` → `workbook/chart-legend/`; leave-behind chart helpers via `clH`; legend consts inlined; chart-paint imports `paintChartLegend` (dropped `cpH.bh491`).
+- Peeled `helper605`–`607` → `workbook/shape-path/`; TAU/deg↔rad/PATH_EPS inlined; `evalShapeFormula` from preset-shape.
+- Peeled `Wpt`/`Gpt`/`Kpt` → `workbook/html-table-export/`; wr + address metrics + SSF ensure; WorkbookN env keeps aliases.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 69013 (was 70467; Δ -1454).
+- Next: helpers 722/745 (~0.47–0.41k) / vEe (~0.33k) / workbookA (~0.36k) / Binding1344 (~0.53k) / `_workbookS` only after presentation leave-behind ensures drain.
+
 
 
 

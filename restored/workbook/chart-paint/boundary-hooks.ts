@@ -11,7 +11,6 @@ export type ChartPaintBoundaryHooks = {
   bh426: (...args: any[]) => any;
   bh433: (...args: any[]) => any;
   bh462: (...args: any[]) => any;
-  bh491: (...args: any[]) => any;
   bh496: (...args: any[]) => any;
   bh501: (...args: any[]) => any;
   bh525: (...args: any[]) => any;

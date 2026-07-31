@@ -9,6 +9,7 @@ import {
   workbookHelper352 as chartRegressionFn,
 } from "../chart-asset";
 import { cpH } from "./boundary-hooks";
+import { paintChartLegend } from "../chart-legend";
 import { paintThreeChart } from "../three-chart-paint";
 import {
   strokePlotAreaBorder,
@@ -150,7 +151,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
       cpBind9667,
     );
     cpBind2291 &&
-      cpH.bh491(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
+      paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
         elementId: cpIn35.elementId,
         chartHoverTargets: cpIn35.chartHoverTargets,
         hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
@@ -250,7 +251,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
   if (!cpBind2276 && !cpBind2277 && cpBind2278) {
     strokePlotAreaBorder(cpIn32, cpIn33, cpBind2290, cpIn35.themeMap);
     cpBind2291 &&
-      cpH.bh491(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
+      paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
         elementId: cpIn35.elementId,
         chartHoverTargets: cpIn35.chartHoverTargets,
         hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
@@ -286,7 +287,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         cpIn34,
       );
       cpBind2291 &&
-        cpH.bh491(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
+        paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
           elementId: cpIn35.elementId,
           chartHoverTargets: cpIn35.chartHoverTargets,
           hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
@@ -322,7 +323,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
             cpIn34,
           ),
         cpBind2291 &&
-          cpH.bh491(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
+          paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
             elementId: cpIn35.elementId,
             chartHoverTargets: cpIn35.chartHoverTargets,
             hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
@@ -616,7 +617,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
     }
   } else if (cpBind2281) {
     cpBind2291 &&
-      cpH.bh491(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
+      paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
         elementId: cpIn35.elementId,
         chartHoverTargets: cpIn35.chartHoverTargets,
         hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
@@ -641,7 +642,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
     );
   } else if (cpBind2280) {
     cpBind2291 &&
-      cpH.bh491(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
+      paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
         elementId: cpIn35.elementId,
         chartHoverTargets: cpIn35.chartHoverTargets,
         hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
@@ -682,7 +683,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
           },
         ),
         cpBind2291 &&
-          cpH.bh491(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
+          paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
             elementId: cpIn35.elementId,
             chartHoverTargets: cpIn35.chartHoverTargets,
             hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
@@ -699,7 +700,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
           },
         ),
         cpBind2291 &&
-          cpH.bh491(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
+          paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
             elementId: cpIn35.elementId,
             chartHoverTargets: cpIn35.chartHoverTargets,
             hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
