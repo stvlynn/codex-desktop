@@ -17,3 +17,16 @@ export {
   axisHasTitleManualLayout,
   paintAxisTitle,
 } from "./paint-axis-title-impl";
+
+export {
+  planAxisTicks,
+  tryAxisTickCount,
+  majorTicksForAxis,
+  minorTicksForAxis,
+  logMajorTicks,
+  logMinorTicks,
+  minTickSeparationPx,
+  Iye,
+  Lye,
+  Rye,
+} from "./plan-axis-ticks-impl";

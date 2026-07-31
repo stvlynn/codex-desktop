@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~49.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~48.2k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -217,7 +217,7 @@
 | CUMPRINC/DDB/PPMT (`T0e`/`O0e`/`P0e`) | ~0.17k | **Drained (wave-110)** → `workbook/formula-financial/` |
 | Path commands bbox (`tTe`) | ~0.06k | **Drained (wave-110)** → `workbook/shape-path/` |
 | Unique columns (`Ost`/`kst`/`Ast`) | ~0.08k | **Drained (wave-110)** → `workbook/formula-unique/` |
-| Table style bands (`fye`/`dye`/`helper386`) | ~0.32k | **Deferred (wave-111)** — leave-behinds helper339/340 + Binding836/pye |
+| Table style bands (`fye`/`dye`/`helper386`+owned) | ~0.32k | **Drained (wave-112)** → `workbook/table-styles/` |
 | Axis title paint (`helper460`+453/457/459) | ~0.08k | **Drained (wave-111)** → `workbook/chart-axis-ticks/` |
 | Slice mid labels (`ube`/`dbe`) | ~0.10k | **Drained (wave-111)** → `workbook/chart-pie-series/` |
 | Pastel materials (`Zbe`/`helper519`) | ~0.07k | **Drained (wave-111)** → `workbook/three-chart-paint/` |
@@ -227,6 +227,10 @@
 | Waterfall connector label (`fCe`) | ~0.06k | **Drained (wave-111)** → `workbook/chart-waterfall-bar/` |
 | Connector route path (`pTe`) | ~0.06k | **Drained (wave-111)** → `workbook/shape-path-endpoints/` |
 | Code-block position (`bAe`+owned) | ~0.11k | **Drained (wave-111)** → `workbook/presentation-code-block/` |
+| Tick planner (`helper440`+Iye/Lye/Rye) | ~0.21k | **Drained (wave-112)** → `workbook/chart-axis-ticks/` |
+| Plot-area reserve (`helper546`) | ~0.05k | **Drained (wave-112)** → `workbook/chart-scatter-axes/` |
+| Rounded-rect arcTo (`swe`/`Swe`) | ~0.10k | **Drained (wave-112)** → `workbook/shape-path/` |
+| Stroke shape line (`Lwe`/`helper648`) | ~0.10k | **Drained (wave-112)** → `workbook/shape-geometry-paint/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1444,4 +1448,12 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Peeled: helper453/454/457/459/460; ube+dbe; Zbe+519; dxe+526+fxe+527; helper547→lSe; helper562+563; fCe; pTe+629; bAe+766/xAe/767
 - Deferred table bands (fye/dye/386): leave-behinds helper339/340 + Binding836/pye
 - Skipped Qwe (leave-behinds $we/618/623/611), ADe/helper672 (Binding137x), BDe (690/691/695), helper440 cluster, helper648/Lwe, FALSE/ESM, rze/kht
+- openBoundary remains while mega still large
+
+## Wave 112 (Stage-3 preferred + mid peel)
+
+- Boundary 48990 → 48247 (Δ -743)
+- Peeled: helper380→fye + helper386/mye/hye (Binding835 inlined; pye/Binding836 kept); helper546; helper440+Iye+441/442/Lye/Rye/443; swe/Swe; Lwe+647/648
+- helper339/340 already wired from table-vo (wave-76) — unlocked bands
+- Skipped Qwe (leave-behinds $we/618/623/611), ADe/helper672, BDe (690/691/695), Binding836/pye, FALSE/ESM, rze/kht
 - openBoundary remains while mega still large

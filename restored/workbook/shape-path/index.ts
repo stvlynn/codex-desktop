@@ -17,3 +17,10 @@ export { pathCommandsToClipPoints, cTe } from "./path-commands-to-clip-impl";
 export { roundRectPath, NSe } from "./round-rect-path-impl";
 
 export { pathCommandsBBox, tTe } from "./path-commands-bbox-impl";
+
+export {
+  roundRectPathArcTo,
+  roundRectPathBeginArcTo,
+  swe,
+  Swe,
+} from "./round-rect-arc-to-impl";

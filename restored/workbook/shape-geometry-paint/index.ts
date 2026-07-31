@@ -3,3 +3,10 @@
 
 export { wireShapeGeometryPaintBoundaryHooks, sgpH } from "./boundary-hooks";
 export { paintShapeGeometry } from "./shape-geometry-paint-impl";
+
+export {
+  drawPresetShapePath,
+  strokePresetGeometry,
+  strokeShapeLine,
+  Lwe,
+} from "./stroke-shape-line-impl";

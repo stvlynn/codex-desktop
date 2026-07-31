@@ -7,3 +7,5 @@ export {
   planScatterAxes,
   workbookHelper545,
 } from "./chart-scatter-axes-impl";
+
+export { reservePlotAxes } from "./reserve-plot-axes-impl";

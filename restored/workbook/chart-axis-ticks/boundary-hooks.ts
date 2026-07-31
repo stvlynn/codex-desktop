@@ -3,6 +3,7 @@
 
 export type ChartAxisTicksBoundaryHooks = {
   bh405: (...args: any[]) => any;
+  bh406: (...args: any[]) => any;
   bh422: (...args: any[]) => any;
   bh424: (...args: any[]) => any;
   bh425: (...args: any[]) => any;
@@ -20,6 +21,7 @@ export type ChartAxisTicksBoundaryHooks = {
   bh437: (...args: any[]) => any;
   bh438: (...args: any[]) => any;
   bh439: (...args: any[]) => any;
+  bhTye: (...args: any[]) => any;
   bh440: (...args: any[]) => any;
   bh446: (...args: any[]) => any;
   bh460: (...args: any[]) => any;

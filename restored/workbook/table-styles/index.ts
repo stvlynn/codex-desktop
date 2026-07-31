@@ -70,3 +70,26 @@ export {
   resolveTableCellStyleBands,
   workbookHelper384,
 } from "./resolve-cell-style-bands-impl";
+
+export {
+  resolveTableRegionStyle,
+  lookupTableStyleByName,
+  tableBandFillHints,
+  resolveBandFillCss,
+  resolveBorderStroke,
+  pickStripeStyle,
+  mergeBandFont,
+  applyOuterBorders,
+  applyTableBandBorders,
+  resolveTableBandFills,
+  mergeTableBandFonts,
+  mergeAllBandFonts,
+  tableBandBorderMap,
+  cye,
+  lye,
+  uye,
+  dye,
+  fye,
+  mye,
+  hye,
+} from "./table-cell-bands-impl";
