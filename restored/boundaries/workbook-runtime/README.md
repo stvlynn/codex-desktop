@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~180.9k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~180.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -52,6 +52,7 @@
 | Range VO (Binding672/675 + bme/xme/Sme) | ~3.0k | **Drained (wave-46)** → `workbook/range/` |
 | PivotCaches (Binding676 / Cme) | ~1.1k | **Drained (wave-47)** → `workbook/pivot-caches/` |
 | Slicers (Binding677–684 / Tme/Eme) | ~0.42k | **Drained (wave-48)** → `workbook/slicers/` |
+| PivotTable (Binding369 / `_u`) | ~0.85k | **Drained (wave-49)** → `workbook/pivot-table/` (peeled) |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -547,5 +548,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 180852.
-- Next: pivot Binding335/336/338 + Class53 if cleanly separable (unlocks PivotTable), or PivotTable Binding369/`_u` peeled under flat limit; continue scanning for stock vendor fingerprints.
+- Next: ~~PivotTable Binding369/`_u`~~ (done wave-49); field VO cluster Binding343–361 + enums 335/336 + Class53, or next contiguous post-formula helper31 cluster.
+
+
+## Wave-49 progress
+
+- Extracted PivotTable VO (`Binding369`/`_u`) with peels (`rebuildCache` + `#D` filter descriptor) + helpers 25–30/`_re`/`vre`/WeakMaps → `workbook/pivot-table/`.
+- Extracted layout enum `Binding338` (`PivotLayoutType`); left `Binding335`/`336` + Class53 in boundary (still required by PivotField/DataField VO cluster).
+- Wired field-VO ctors / filter tokens / `el`/`helper22`/`24` via `wirePivotTableBoundaryHooks`; pivot-caches proto hooks now re-export from pivot-table.
+- Left Binding662/`_C` init gate, pivot enums Binding335/336 + Class53 + field VOs, and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 180010.
+- Next: field VO cluster Binding343–361 (+ enums 335/336 + Class53), or next contiguous post-helper31 formula/array cluster; continue scanning for stock vendor fingerprints.
 

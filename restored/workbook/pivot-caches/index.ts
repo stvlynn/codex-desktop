@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-47: PivotCaches barrel (Binding676 / Cme).
+// Stage-3 wave-47/49: PivotCaches barrel (Binding676 / Cme); proto hooks via pivot-table.
 
 export type { PivotCachesOpsHost } from "./types";
 export { PivotCaches } from "./pivot-caches";
