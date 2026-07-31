@@ -726,3 +726,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary LOC ≈ 111324.
 - Next: Binding1967 (~2.4k) / `BYe` (~2.4k) / Binding1827 (~2.3k) / `The` (~2.2k) / compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe` / earlier mermaid helpers Binding1615–1685.
 
+## Wave-64 progress
+
+- Identified Binding1967 contiguous cluster as Codex entity-query / snapshot helpers (NOT vendor): Kgt…e_t find/truncate + R_t kind maps/query ops + B_t path-split + J_t thread-comment serializers (~2.3k LOC).
+- Extracted → `workbook/entity-query/` (split under flat limit).
+- Left compose DSL Binding1490–1528, Google Slides `pJe`/`SJe`, `The`/`BYe`, Binding1827/SXe sheet API, Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Also drained `Ygt` find/inspect helper into `find-cells.ts` (was contiguous with Kgt…Jgt).
+- Boundary LOC ≈ 109187 (was 111324; Δ −2,137).
+- Next: Binding1827/SXe (~2.3–2.8k sheet/range API) / `BYe` canvas paint (~2.4k) / compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe` / earlier mermaid helpers Binding1615–1685 / Ume table-styles (~1.4k).
+
