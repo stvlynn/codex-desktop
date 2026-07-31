@@ -4,8 +4,8 @@ import { createElement } from "react";
 // Intentional oversized vendor-runtime terminal (openBoundary).
 // Not a single stock npm package: composite Recharts + Redux Toolkit/Immer
 // plus Codex WidgetContext / widget-scope store / chart chrome / i18n.
-// Stage-3 wave-1+2+3: WidgetContext, widget-scope, chrome, i18n, Chart
-// delegate to visualization/chart-widget-stores (Chart via surface bridge).
+// Stage-3 wave-1..4: WidgetContext, widget-scope, chrome, i18n, Chart,
+// C/S/U/B/X Codex glue → visualization/chart-widget-stores (Chart via surface).
 // Exit: npm-shim Recharts/@reduxjs/toolkit when cut clean; keep openBoundary.
 // Stage 3 candidate: 36/36 app-initial aliases rewritten to
 // IMPORT_MAP semantic/vendor/boundary paths. AppScope (Fft/Ift/ivt/M_t/L_t) is an
@@ -65,6 +65,7 @@ import {
   isTypedArray as appInitialVT,
   keysIn as AppInitialAf,
 } from "../../vendor/lodash-cjs-predicates";
+
 import {
   WidgetContext as vizWidgetContext,
   useWidgetContext as vizUseWidgetContext,
@@ -97,6 +98,13 @@ import {
   Chart as vizChart,
   setChartBundleSurface as vizSetChartBundleSurface,
   ensureChartComponentInit as vizEnsureChartComponentInit,
+  isChartPaletteColor as vizIsChartPaletteColor,
+  resolveChartThemeColor as vizResolveChartThemeColor,
+  useWidgetEvaluate as vizUseWidgetEvaluate,
+  resolveWidgetProps as vizResolveWidgetProps,
+  useResolveWidgetAction as vizUseResolveWidgetAction,
+  useChartIntl as vizUseChartIntl,
+  setChartBundleIntlContext as vizSetChartBundleIntlContext,
 } from "../../visualization/chart-widget-stores";
 
 var chartWidgetStoresBinding1 = rolldownRuntimeN(() => {}),
@@ -26953,429 +26961,15 @@ function H_(chartWidgetStoresInput1126, chartWidgetStoresInput1127) {
             },
           );
 }
-function U_(chartWidgetStoresInput2941) {
-  let chartWidgetStoresBinding5591 =
-    chartWidgetStoresBinding138.useRef(undefined);
-  return (chartWidgetStoresInput3547) => {
-    let chartWidgetStoresBinding5878 = chartWidgetStoresInput2941(
-      chartWidgetStoresInput3547,
-    );
-    return H_(
-      chartWidgetStoresBinding5591.current,
-      chartWidgetStoresBinding5878,
-    )
-      ? chartWidgetStoresBinding5591.current
-      : (chartWidgetStoresBinding5591.current = chartWidgetStoresBinding5878);
-  };
-}
-function W_(chartWidgetStoresInput2044) {
-  return $y.isValidElement(chartWidgetStoresInput2044)
-    ? typeof chartWidgetStoresInput2044.props == "object" &&
-      chartWidgetStoresInput2044.props &&
-      "$key" in chartWidgetStoresInput2044.props &&
-      typeof chartWidgetStoresInput2044.props.$key == "string"
-      ? chartWidgetStoresInput2044.props.$key
-      : null
-    : Array.isArray(chartWidgetStoresInput2044)
-      ? W_(chartWidgetStoresInput2044[0])
-      : null;
-}
+// props/evaluate/action drained to visualization/chart-widget-stores (wave-4)
 function chartWidgetStoresS() {
-  let chartWidgetStoresBinding3094 = chartWidgetStoresE(),
-    { useWidgetStateStore, evaluate, errorMode, onSoftFailure } =
-      chartWidgetStoresBinding3094,
-    chartWidgetStoresBinding3095 = chartWidgetStoresBinding1227(),
-    chartWidgetStoresBinding3096 = chartWidgetStoresBinding1224(
-      chartWidgetStoresBinding3094,
-    );
-  return $y.useCallback(
-    (
-      chartWidgetStoresInput723,
-      chartWidgetStoresInput724,
-      chartWidgetStoresInput725 = {},
-    ) => {
-      if (typeof chartWidgetStoresInput723 != "string")
-        return chartWidgetStoresInput723;
-      let chartWidgetStoresBinding3542 = useWidgetStateStore.getState();
-      try {
-        return evaluate(chartWidgetStoresInput723, {
-          state: X_(
-            chartWidgetStoresBinding3542,
-            chartWidgetStoresBinding3095,
-            evaluate,
-            undefined,
-            chartWidgetStoresBinding3096,
-          ),
-          ...chartWidgetStoresBinding3095,
-          ...chartWidgetStoresInput724,
-        });
-      } catch (chartWidgetStoresBinding4079) {
-        if (errorMode === "throw") throw chartWidgetStoresBinding4079;
-        return (
-          chartWidgetStoresBinding1216(onSoftFailure, {
-            error: chartWidgetStoresBinding4079,
-            scope:
-              chartWidgetStoresInput725.recovery === "action-no-op"
-                ? "action-resolution"
-                : "expression-evaluation",
-            recovery: chartWidgetStoresInput725.recovery ?? "prop-fallback",
-            node: chartWidgetStoresInput725.propName
-              ? {
-                  propName: chartWidgetStoresInput725.propName,
-                }
-              : undefined,
-          }),
-          chartWidgetStoresInput725.fallbackValue
-        );
-      }
-    },
-    [
-      useWidgetStateStore,
-      chartWidgetStoresBinding3095,
-      evaluate,
-      errorMode,
-      onSoftFailure,
-      chartWidgetStoresBinding3096,
-    ],
-  );
+  return vizUseWidgetEvaluate();
 }
-function K_(chartWidgetStoresInput268) {
-  let chartWidgetStoresBinding2644 = chartWidgetStoresE(),
-    { useWidgetStateStore, evaluate, errorMode, onSoftFailure } =
-      chartWidgetStoresBinding2644,
-    chartWidgetStoresBinding2645 = chartWidgetStoresBinding1227(),
-    chartWidgetStoresBinding2646 = chartWidgetStoresBinding1224(
-      chartWidgetStoresBinding2644,
-    ),
-    chartWidgetStoresBinding2647 = useWidgetStateStore(
-      U_((chartWidgetStoresInput656) =>
-        chartWidgetStoresInput268
-          ? $y.Children.map(
-              chartWidgetStoresInput268,
-              (chartWidgetStoresInput747) => {
-                let chartWidgetStoresBinding3566 = W_(
-                  chartWidgetStoresInput747,
-                );
-                if (chartWidgetStoresBinding3566)
-                  try {
-                    return evaluate(chartWidgetStoresBinding3566, {
-                      state: X_(
-                        chartWidgetStoresInput656,
-                        chartWidgetStoresBinding2645,
-                        evaluate,
-                        undefined,
-                        chartWidgetStoresBinding2646,
-                      ),
-                      ...chartWidgetStoresBinding2645,
-                    });
-                  } catch (chartWidgetStoresBinding4218) {
-                    if (errorMode === "throw")
-                      throw chartWidgetStoresBinding4218;
-                    return (
-                      chartWidgetStoresBinding1216(onSoftFailure, {
-                        error: chartWidgetStoresBinding4218,
-                        scope: "expression-evaluation",
-                        recovery: "prop-fallback",
-                        node: {
-                          propName: "$key",
-                        },
-                      }),
-                      null
-                    );
-                  }
-                return null;
-              },
-            )
-          : [],
-      ),
-    );
-  return $y.useMemo(() => {
-    if (chartWidgetStoresBinding2647.length === 0)
-      return chartWidgetStoresInput268;
-    let chartWidgetStoresBinding4511 = [];
-    return (
-      chartWidgetStoresBinding2647 &&
-        $y.Children.forEach(
-          chartWidgetStoresInput268,
-          (chartWidgetStoresInput2923, chartWidgetStoresInput2924) => {
-            chartWidgetStoresBinding2647[chartWidgetStoresInput2924] &&
-            $y.isValidElement(chartWidgetStoresInput2923)
-              ? chartWidgetStoresBinding4511.push(
-                  $y.cloneElement(chartWidgetStoresInput2923, {
-                    key: chartWidgetStoresBinding2647[
-                      chartWidgetStoresInput2924
-                    ],
-                  }),
-                )
-              : chartWidgetStoresBinding4511.push(chartWidgetStoresInput2923);
-          },
-        ),
-      chartWidgetStoresBinding4511.length === 0
-        ? chartWidgetStoresInput268
-        : chartWidgetStoresBinding4511.length === 1
-          ? chartWidgetStoresBinding4511[0]
-          : chartWidgetStoresBinding4511
-    );
-  }, [chartWidgetStoresBinding2647, chartWidgetStoresInput268]);
-}
-function chartWidgetStoresC(chartWidgetStoresInput255) {
-  let chartWidgetStoresBinding2600 = chartWidgetStoresE(),
-    { useWidgetStateStore, evaluate, errorMode, onSoftFailure } =
-      chartWidgetStoresBinding2600,
-    chartWidgetStoresBinding2601 = chartWidgetStoresBinding1227(),
-    chartWidgetStoresBinding2602 = chartWidgetStoresBinding1224(
-      chartWidgetStoresBinding2600,
-    ),
-    chartWidgetStoresBinding2603 = $y.useRef([]),
-    chartWidgetStoresBinding2604 = chartWidgetStoresBinding1210.default(
-      chartWidgetStoresInput255,
-      (chartWidgetStoresInput4333, chartWidgetStoresInput4334) =>
-        chartWidgetStoresInput4334.startsWith("$") ||
-        chartWidgetStoresBinding1220.has(chartWidgetStoresInput4334),
-    ),
-    chartWidgetStoresBinding2605 = K_(chartWidgetStoresInput255.children),
-    chartWidgetStoresBinding2606 = useWidgetStateStore(
-      J_((chartWidgetStoresInput544) => {
-        let chartWidgetStoresBinding3162 = {},
-          chartWidgetStoresBinding3163 = [];
-        for (let [
-          chartWidgetStoresBinding3341,
-          chartWidgetStoresBinding3342,
-        ] of Object.entries(chartWidgetStoresInput255)) {
-          if (
-            chartWidgetStoresBinding3341 === "$key" ||
-            !chartWidgetStoresBinding3341.startsWith("$") ||
-            typeof chartWidgetStoresBinding3342 != "string"
-          )
-            continue;
-          let chartWidgetStoresBinding3435 = chartWidgetStoresBinding3342,
-            chartWidgetStoresBinding3436 =
-              chartWidgetStoresBinding3341.slice(1);
-          if (chartWidgetStoresBinding3341.endsWith("Action")) {
-            chartWidgetStoresBinding3162[chartWidgetStoresBinding3436] =
-              chartWidgetStoresBinding3435;
-            continue;
-          }
-          try {
-            chartWidgetStoresBinding3162[chartWidgetStoresBinding3436] =
-              evaluate(chartWidgetStoresBinding3435, {
-                state: X_(
-                  chartWidgetStoresInput544,
-                  chartWidgetStoresBinding2601,
-                  evaluate,
-                  undefined,
-                  chartWidgetStoresBinding2602,
-                ),
-                ...chartWidgetStoresBinding2601,
-              });
-          } catch (chartWidgetStoresBinding4875) {
-            if (errorMode === "throw") throw chartWidgetStoresBinding4875;
-            chartWidgetStoresBinding3162[chartWidgetStoresBinding3436] =
-              chartWidgetStoresBinding1223(chartWidgetStoresBinding3436);
-            chartWidgetStoresBinding3163.push({
-              error: chartWidgetStoresBinding4875,
-              scope: "expression-evaluation",
-              recovery: "prop-fallback",
-              node: {
-                propName: chartWidgetStoresBinding3436,
-              },
-            });
-          }
-        }
-        return (
-          (chartWidgetStoresBinding2603.current = chartWidgetStoresBinding3163),
-          chartWidgetStoresBinding3162
-        );
-      }),
-    );
-  return (
-    $y.useEffect(() => {
-      let chartWidgetStoresBinding5818 = chartWidgetStoresBinding2603.current;
-      chartWidgetStoresBinding2603.current = [];
-      for (let chartWidgetStoresBinding5983 of chartWidgetStoresBinding5818)
-        chartWidgetStoresBinding1216(
-          onSoftFailure,
-          chartWidgetStoresBinding5983,
-        );
-    }),
-    {
-      ...chartWidgetStoresBinding2604,
-      ...chartWidgetStoresBinding2606,
-      children: chartWidgetStoresBinding2605,
-    }
-  );
-}
-function J_(chartWidgetStoresInput2798) {
-  let chartWidgetStoresBinding5508 = $y.useRef(undefined);
-  return (chartWidgetStoresInput3350) => {
-    let chartWidgetStoresBinding5778 = chartWidgetStoresInput2798(
-      chartWidgetStoresInput3350,
-    );
-    return chartWidgetStoresBinding1209.default(
-      chartWidgetStoresBinding5508.current,
-      chartWidgetStoresBinding5778,
-    )
-      ? chartWidgetStoresBinding5508.current
-      : (chartWidgetStoresBinding5508.current = chartWidgetStoresBinding5778);
-  };
-}
-function Y_(
-  chartWidgetStoresInput1003,
-  chartWidgetStoresInput1004,
-  chartWidgetStoresInput1005,
-  chartWidgetStoresInput1006,
-  chartWidgetStoresInput1007,
-) {
-  if (
-    !chartWidgetStoresInput1006 ||
-    typeof chartWidgetStoresInput1004 != "object" ||
-    !chartWidgetStoresInput1004 ||
-    Array.isArray(chartWidgetStoresInput1004) ||
-    Object.keys(chartWidgetStoresInput1004).length === 0
-  )
-    return chartWidgetStoresInput1003;
-  let chartWidgetStoresBinding3920 = chartWidgetStoresInput1003;
-  for (let [
-    chartWidgetStoresBinding4745,
-    chartWidgetStoresBinding4746,
-  ] of Object.entries(chartWidgetStoresInput1004)) {
-    if (
-      typeof chartWidgetStoresBinding4746 != "string" ||
-      chartWidgetStoresBinding4746.length === 0
-    )
-      continue;
-    let chartWidgetStoresBinding5008;
-    try {
-      chartWidgetStoresBinding5008 = chartWidgetStoresInput1006(
-        chartWidgetStoresBinding4746,
-        {
-          state: chartWidgetStoresBinding3920,
-          ...chartWidgetStoresInput1005,
-        },
-      );
-    } catch (chartWidgetStoresBinding5927) {
-      if (!chartWidgetStoresInput1007) throw chartWidgetStoresBinding5927;
-      chartWidgetStoresInput1007(
-        chartWidgetStoresBinding5927,
-        chartWidgetStoresBinding4745,
-      );
-      continue;
-    }
-    chartWidgetStoresBinding5008 !== undefined &&
-      (chartWidgetStoresBinding3920 === chartWidgetStoresInput1003 &&
-        (chartWidgetStoresBinding3920 = {
-          ...chartWidgetStoresInput1003,
-        }),
-      (chartWidgetStoresBinding3920[chartWidgetStoresBinding4745] =
-        chartWidgetStoresBinding5008));
-  }
-  return chartWidgetStoresBinding3920;
-}
-function X_(
-  chartWidgetStoresInput3266,
-  chartWidgetStoresInput3267,
-  chartWidgetStoresInput3268,
-  chartWidgetStoresInput3269,
-  chartWidgetStoresInput3270,
-) {
-  let chartWidgetStoresBinding5753 = chartWidgetStoresBinding1225(
-    chartWidgetStoresInput3267[chartWidgetStoresBinding1218],
-  );
-  return Y_(
-    chartWidgetStoresBinding5753
-      ? {
-          ...chartWidgetStoresBinding5753,
-          ...chartWidgetStoresInput3266,
-        }
-      : chartWidgetStoresInput3266,
-    chartWidgetStoresBinding1226(
-      chartWidgetStoresInput3267[chartWidgetStoresBinding1219],
-      chartWidgetStoresInput3269,
-    ),
-    chartWidgetStoresInput3267,
-    chartWidgetStoresInput3268,
-    chartWidgetStoresInput3270,
-  );
-}
-function Z_(chartWidgetStoresInput4377) {
-  return chartWidgetStoresBinding1228.has(chartWidgetStoresInput4377);
-}
-function Q_(
-  chartWidgetStoresInput1200,
-  chartWidgetStoresInput1201,
-  chartWidgetStoresInput1202,
-) {
-  let chartWidgetStoresBinding4143 = chartWidgetStoresInput1202,
-    chartWidgetStoresBinding4144 = chartWidgetStoresInput1200.split(".");
-  for (; chartWidgetStoresBinding4144.length > 1; ) {
-    let chartWidgetStoresBinding5095 = chartWidgetStoresBinding4144.shift();
-    if (Z_(chartWidgetStoresBinding5095)) return;
-    if (
-      typeof chartWidgetStoresBinding4143[chartWidgetStoresBinding5095] ==
-        "object" &&
-      chartWidgetStoresBinding4143[chartWidgetStoresBinding5095] != null &&
-      !Array.isArray(chartWidgetStoresBinding4143[chartWidgetStoresBinding5095])
-    )
-      chartWidgetStoresBinding4143 =
-        chartWidgetStoresBinding4143[chartWidgetStoresBinding5095];
-    else if (
-      chartWidgetStoresBinding4143[chartWidgetStoresBinding5095] == null
-    ) {
-      let chartWidgetStoresBinding5957 = {};
-      chartWidgetStoresBinding4143[chartWidgetStoresBinding5095] =
-        chartWidgetStoresBinding5957;
-      chartWidgetStoresBinding4143 = chartWidgetStoresBinding5957;
-    } else return;
-  }
-  let chartWidgetStoresBinding4145 = chartWidgetStoresBinding4144[0];
-  Z_(chartWidgetStoresBinding4145) ||
-    ((chartWidgetStoresBinding4143[chartWidgetStoresBinding4145] == null ||
-      typeof chartWidgetStoresBinding4143[chartWidgetStoresBinding4145] ==
-        typeof chartWidgetStoresInput1201) &&
-      (chartWidgetStoresBinding4143[chartWidgetStoresBinding4145] =
-        chartWidgetStoresInput1201));
+function chartWidgetStoresC(chartWidgetStoresInput255: Record<string, unknown>) {
+  return vizResolveWidgetProps(chartWidgetStoresInput255);
 }
 function $_() {
-  let chartWidgetStoresBinding3772 = chartWidgetStoresS();
-  return chartWidgetStoresBinding139.useCallback(
-    (chartWidgetStoresInput1152, chartWidgetStoresInput1153 = {}) => {
-      if (!chartWidgetStoresInput1152) return;
-      if (typeof chartWidgetStoresInput1152 == "string") {
-        let chartWidgetStoresBinding5375 = Object.prototype.hasOwnProperty.call(
-          chartWidgetStoresInput1153,
-          "value",
-        )
-          ? {
-              ...(chartWidgetStoresInput1153.scope ?? {}),
-              value: chartWidgetStoresInput1153.value,
-            }
-          : chartWidgetStoresInput1153.scope;
-        return chartWidgetStoresBinding3772(
-          chartWidgetStoresInput1152,
-          chartWidgetStoresBinding5375,
-          {
-            recovery: "action-no-op",
-          },
-        );
-      }
-      if (!chartWidgetStoresInput1153.name) return chartWidgetStoresInput1152;
-      let chartWidgetStoresBinding4080 = chartWidgetStoresInput1152.payload
-        ? structuredClone(chartWidgetStoresInput1152.payload)
-        : {};
-      return (
-        Q_(
-          chartWidgetStoresInput1153.name,
-          chartWidgetStoresInput1153.value,
-          chartWidgetStoresBinding4080,
-        ),
-        {
-          ...chartWidgetStoresInput1152,
-          payload: chartWidgetStoresBinding4080,
-        }
-      );
-    },
-    [chartWidgetStoresBinding3772],
-  );
+  return vizUseResolveWidgetAction();
 }
 function chartWidgetStoresHelper827(chartWidgetStoresInput3259) {
   if (chartWidgetStoresInput3259 != null)
@@ -55845,25 +55439,8 @@ var chartWidgetStoresBinding34,
       /^(?:white|black|alpha-\d{1,3}|(?:gray|green|red|pink|orange|yellow|purple|blue)-(?:\d{1,4}|a\d{1,3}))$/;
     chartWidgetStoresBinding1241 = (chartWidgetStoresInput4730) =>
       chartWidgetStoresBinding1240.test(chartWidgetStoresInput4730);
-    chartWidgetStoresB = (chartWidgetStoresInput3284) =>
-      ["blue", "purple", "orange", "green", "red", "yellow", "pink"].includes(
-        chartWidgetStoresInput3284,
-      );
-    chartWidgetStoresX = (
-      chartWidgetStoresInput3317,
-      chartWidgetStoresInput3318,
-    ) => {
-      let chartWidgetStoresBinding5771 = chartWidgetStoresBinding1238(
-        chartWidgetStoresInput3317,
-        chartWidgetStoresInput3318,
-      );
-      if (chartWidgetStoresBinding5771)
-        return chartWidgetStoresB(chartWidgetStoresBinding5771)
-          ? chartWidgetStoresBinding5771
-          : chartWidgetStoresBinding1241(chartWidgetStoresBinding5771)
-            ? `var(--${chartWidgetStoresBinding5771})`
-            : chartWidgetStoresBinding5771;
-    };
+    chartWidgetStoresB = vizIsChartPaletteColor;
+    chartWidgetStoresX = vizResolveChartThemeColor;
     chartWidgetStoresBinding1242 = (
       chartWidgetStoresInput266,
       chartWidgetStoresInput267,
@@ -60376,13 +59953,7 @@ function chartWidgetStoresHelper903(
   return true;
 }
 function chartWidgetStoresU() {
-  let chartWidgetStoresBinding5934 = chartWidgetStoresBinding1306.useContext(
-    chartWidgetStoresBinding1310,
-  );
-  return (
-    chartWidgetStoresHelper901(chartWidgetStoresBinding5934),
-    chartWidgetStoresBinding5934
-  );
+  return vizUseChartIntl();
 }
 function chartWidgetStoresHelper904(chartWidgetStoresInput1671) {
   let chartWidgetStoresBinding4662 = (chartWidgetStoresInput2093) => {
@@ -60625,6 +60196,7 @@ var chartWidgetStoresBinding1306,
     chartWidgetStoresBinding1310 =
       chartWidgetStoresBinding1306.createContext(null);
     chartWidgetStoresBinding1311 = chartWidgetStoresBinding1310.Provider;
+    vizSetChartBundleIntlContext(chartWidgetStoresBinding1310);
     chartWidgetStoresBinding1312 = (function (chartWidgetStoresInput1750) {
       return (
         (chartWidgetStoresInput1750.formatDate = "FormattedDate"),
@@ -60938,18 +60510,13 @@ export const _chartWidgetStoresC = rolldownRuntimeN(() => {
   vizSetChartBundleSurface({
     createElement,
     $_,
-    chartWidgetStoresB,
-    chartWidgetStoresC,
     chartWidgetStoresD,
     chartWidgetStoresE,
     chartWidgetStoresF,
     chartWidgetStoresG,
     chartWidgetStoresP,
-    chartWidgetStoresS,
-    chartWidgetStoresU,
     chartWidgetStoresUnderscore,
     chartWidgetStoresV,
-    chartWidgetStoresX,
     chartWidgetStoresHelper611,
     chartWidgetStoresHelper767,
     chartWidgetStoresBinding1022,

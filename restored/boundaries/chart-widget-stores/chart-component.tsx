@@ -26,6 +26,17 @@ import {
   CHART_VIEW_BOX_AUTO,
 } from "../../visualization/chart-widget-stores/chart-chrome-constants";
 import {
+  isChartPaletteColor as chartWidgetStoresB,
+  resolveChartThemeColor as chartWidgetStoresX,
+} from "../../visualization/chart-widget-stores/chart-theme-colors";
+import {
+  resolveWidgetProps as chartWidgetStoresC,
+  useWidgetEvaluate as chartWidgetStoresS,
+  useResolveWidgetAction as $_,
+} from "../../visualization/chart-widget-stores/use-widget-expression";
+import { useChartIntl as chartWidgetStoresU } from "../../visualization/chart-widget-stores/use-chart-intl";
+
+import {
   getChartBundleSurface,
   hasChartBundleSurface,
   type ChartBundleSurface,
@@ -36,19 +47,13 @@ export type CodexChartComponent = (props: unknown) => ReactNode;
 function buildCodexChart(surface: ChartBundleSurface): CodexChartComponent {
   const {
     createElement,
-    $_,
-    chartWidgetStoresB,
-    chartWidgetStoresC,
     chartWidgetStoresD,
     chartWidgetStoresE,
     chartWidgetStoresF,
     chartWidgetStoresG,
     chartWidgetStoresP,
-    chartWidgetStoresS,
-    chartWidgetStoresU,
     chartWidgetStoresUnderscore,
     chartWidgetStoresV,
-    chartWidgetStoresX,
     chartWidgetStoresHelper611: chartFn611,
     chartWidgetStoresHelper767: chartFn767,
     chartWidgetStoresBinding1022,

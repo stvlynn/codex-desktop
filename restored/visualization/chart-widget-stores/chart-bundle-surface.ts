@@ -1,22 +1,17 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
-// Injected Recharts + Codex glue still living in boundaries/chart-widget-stores.
-// Chart (`_chartWidgetStoresS`) consumes this bag until Recharts/RTK can npm-shim.
+// Injected Recharts surfaces still living in boundaries/chart-widget-stores.
+// Codex C/S/U/B/X drained to visualization (wave-4); Chart imports those directly.
 
 export type ChartBundleSurface = {
   createElement: any;
   $_: any;
-  chartWidgetStoresB: any;
-  chartWidgetStoresC: any;
   chartWidgetStoresD: any;
   chartWidgetStoresE: any;
   chartWidgetStoresF: any;
   chartWidgetStoresG: any;
   chartWidgetStoresP: any;
-  chartWidgetStoresS: any;
-  chartWidgetStoresU: any;
   chartWidgetStoresUnderscore: any;
   chartWidgetStoresV: any;
-  chartWidgetStoresX: any;
   chartWidgetStoresHelper611: any;
   chartWidgetStoresHelper767: any;
   chartWidgetStoresBinding1022: any;
@@ -36,7 +31,7 @@ export type ChartBundleSurface = {
 let surface: ChartBundleSurface | null = null;
 
 /**
- * Wire mega-local Recharts components + Codex helpers into the drained Chart.
+ * Wire mega-local Recharts components into the drained Chart.
  * Called from `_chartWidgetStoresC` after Recharts bindings are assigned.
  */
 export function setChartBundleSurface(next: ChartBundleSurface): void {

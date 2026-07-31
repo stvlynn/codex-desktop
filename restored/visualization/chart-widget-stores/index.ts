@@ -85,3 +85,35 @@ export {
   hasChartBundleSurface,
 } from "./chart-bundle-surface";
 export type { ChartBundleSurface } from "./chart-bundle-surface";
+
+export {
+  isChartPaletteColor,
+  pickThemeColor,
+  resolveChartThemeColor,
+  chartWidgetStoresB,
+  chartWidgetStoresX,
+} from "./chart-theme-colors";
+export type { ThemeColorInput } from "./chart-theme-colors";
+
+export {
+  useWidgetEvaluate,
+  resolveWidgetProps,
+  useResolveWidgetAction,
+  WidgetExpressionScopeContext,
+  ensureWidgetExpressionInit,
+  chartWidgetStoresS,
+  chartWidgetStoresC,
+  $_,
+} from "./use-widget-expression";
+export type {
+  SoftFailureReport,
+  EvaluateOptions,
+} from "./use-widget-expression";
+
+export {
+  useChartIntl,
+  setChartBundleIntlContext,
+  hasChartBundleIntlContext,
+  chartWidgetStoresU,
+} from "./use-chart-intl";
+export type { ChartIntlShape } from "./use-chart-intl";
