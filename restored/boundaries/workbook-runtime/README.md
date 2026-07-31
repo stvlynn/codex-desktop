@@ -747,3 +747,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary LOC ≈ 106544 (was 109187; Δ −2,643).
 - Next: `BYe` canvas paint (~2.4k) / compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe` / earlier mermaid helpers Binding1615–1685 / Ume table-styles (~1.4k).
 
+## Wave-66 progress
+
+- Identified BYe contiguous cluster as Codex spreadsheet canvas painter (NOT vendor): `bYe` shape overlay + Binding1818/`xYe` emu maps + SYe…Helper831 paint helpers + `BYe` (~2.4k) + Binding1822–1824 paint consts (~3.2k LOC).
+- Extracted → `workbook/canvas-paint/` (BYe split across setup/cells/cell-interactive/overlays via mutable paint bag under flat limit).
+- Left compose DSL Binding1490–1528, Google Slides `pJe`/`SJe`, `The`, Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 103388 (was 106544; Δ -3156).
+- Next: compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe` / `The` (~2.2k) / earlier mermaid helpers Binding1615–1685 / Ume table-styles (~1.4k).
+
