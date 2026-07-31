@@ -2,6 +2,20 @@
 // Stage-3 wave-100: chart-legend-layout boundary hooks.
 
 export type ChartLegendLayoutBoundaryHooks = {
+  seriesGap: any;
+  rampHeight: any;
+  labelGap: any;
+  swatchSize: any;
+  CHART_TYPE_WATERFALL: any;
+  CHART_TYPE_TREEMAP: any;
+  ChartAsset: any;
+  reverseLegend: (...args: any[]) => any;
+  seriesChartTypes: (...args: any[]) => any;
+  waterfallEntries: (...args: any[]) => any;
+  treemapEntries: (...args: any[]) => any;
+  filterDeleted: (...args: any[]) => any;
+  bh347: (...args: any[]) => any;
+  isPieLike: (...args: any[]) => any;
   /** Map-legend size when chart type is MAP (legacy abe). */
   measureMapLegend: (...args: any[]) => any;
   /** Legend entry list from chart model (legacy ibe). */

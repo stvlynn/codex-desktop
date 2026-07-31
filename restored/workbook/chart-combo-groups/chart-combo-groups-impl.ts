@@ -7,6 +7,7 @@ import { paintBarSeries } from "../chart-bar-series";
 import { paintLineSeries } from "../chart-line-series";
 import { paintAreaSeries } from "../chart-area-series";
 import { ccgH } from "./boundary-hooks";
+import { buildComboRenderGroups } from "./build-combo-render-groups-impl";
 
 void Cn;
 void Hn;
@@ -15,10 +16,19 @@ void paintLineSeries;
 void paintAreaSeries;
 void ccgH;
 
-export function paintComboGroups(ccgIn1093: any, ccgIn1094: any, ccgIn1095: any, ccgIn1096: any, ccgIn1097: any, ccgIn1098: any, ccgIn1099: any, ccgIn1100: any, ccgIn1101: any, ) {
+export function paintComboGroups(
+  ccgIn1093: any,
+  ccgIn1094: any,
+  ccgIn1095: any,
+  ccgIn1096: any,
+  ccgIn1097: any,
+  ccgIn1098: any,
+  ccgIn1099: any,
+  ccgIn1100: any,
+  ccgIn1101: any,
+) {
   let ccgBind6474 =
-    ccgIn1101 ??
-    ccgH.bh532(ccgIn1094, ccgIn1095, ccgIn1099);
+    ccgIn1101 ?? buildComboRenderGroups(ccgIn1094, ccgIn1095, ccgIn1099);
   if (ccgBind6474.length === 0) return;
   let ccgBind6475 = new Set();
   for (let { renderGroup, groupScales } of ccgBind6474) {
@@ -26,8 +36,7 @@ export function paintComboGroups(ccgIn1093: any, ccgIn1094: any, ccgIn1095: any,
     if (
       renderGroup.isPrimaryValueAxis ||
       !ccgBind10772 ||
-      (ccgBind10772.id !== undefined &&
-        ccgBind6475.has(ccgBind10772.id))
+      (ccgBind10772.id !== undefined && ccgBind6475.has(ccgBind10772.id))
     )
       continue;
     let ccgBind10773 =
@@ -39,16 +48,9 @@ export function paintComboGroups(ccgIn1093: any, ccgIn1094: any, ccgIn1095: any,
     if (!ccgBind10773) continue;
     let ccgBind10774 = groupScales.y.domain(),
       ccgBind10775 = ccgBind10774[0],
-      ccgBind10776 =
-        ccgBind10774[ccgBind10774.length - 1];
-    if (
-      ccgBind10775 === undefined ||
-      ccgBind10776 === undefined
-    )
-      continue;
-    let ccgBind10777 = groupScales.y(
-      Math.min(ccgBind10775, ccgBind10776),
-    );
+      ccgBind10776 = ccgBind10774[ccgBind10774.length - 1];
+    if (ccgBind10775 === undefined || ccgBind10776 === undefined) continue;
+    let ccgBind10777 = groupScales.y(Math.min(ccgBind10775, ccgBind10776));
     ccgH.paintSecondaryValueAxis({
       ctx: ccgIn1093,
       axis: ccgBind10772,
@@ -59,8 +61,7 @@ export function paintComboGroups(ccgIn1093: any, ccgIn1094: any, ccgIn1095: any,
       side: ccgBind10773,
       baselineY: ccgBind10777,
     });
-    ccgBind10772.id !== undefined &&
-      ccgBind6475.add(ccgBind10772.id);
+    ccgBind10772.id !== undefined && ccgBind6475.add(ccgBind10772.id);
   }
   for (let {
     renderGroup,

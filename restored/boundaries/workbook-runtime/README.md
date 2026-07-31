@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~52.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~51.2k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -194,6 +194,14 @@
 | Formula dep edges (`WXe`) | ~0.11k | **Drained (wave-107)** → `workbook/formula-dep-scc/` |
 | GROWTH (`pQe`) | ~0.08k | **Drained (wave-107)** → `workbook/formula-growth/` |
 | YIELD/PRICEDISC (`k0e`/`H0e`) | ~0.15k | **Drained (wave-107)** → `workbook/formula-securities/` |
+| Legend entries + map measure (`ibe`/`abe`) | ~0.13k | **Drained (wave-108)** → `workbook/chart-legend-layout/` |
+| Manual layout (`helper455`/`456`/`458`) | ~0.11k | **Drained (wave-108)** → `workbook/chart-legend-plot/` |
+| Combo render groups (`helper532`) | ~0.06k | **Drained (wave-108)** → `workbook/chart-combo-groups/` |
+| Used-range bounds (`UTe`/`HTe`) | ~0.07k | **Drained (wave-108)** → `workbook/worksheet-used-range/` |
+| DATEDIF (`helper876`) | ~0.07k | **Drained (wave-108)** → `workbook/formula-datedif/` |
+| Complex real/imag (`helper893`/`$4`) | ~0.14k | **Drained (wave-108)** → `workbook/formula-complex/` |
+| CUMIPMT + DB (`E0e`/`D0e`) | ~0.13k | **Drained (wave-108)** → `workbook/formula-financial/` |
+| CF date/color-scale/data-bar (`oht`/`Nht`/`Pht`) | ~0.21k | **Drained (wave-108)** → `workbook/conditional-format/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1381,3 +1389,10 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on modules + peers + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 52005 (was 53308; Δ -1303).
 - Next: newly revealed ≥70–85 / `Qwe` when leave-behinds thin / leave-behinds when safe.
+
+## Wave 108 (Stage-3 mid peel)
+
+- Boundary 52006 → 51226 (Δ -780)
+- Peeled: ibe+abe, helper455/456/458, helper532, UTe+HTe, helper876, helper893+$4, E0e+D0e, oht+uht, Nht+Pht
+- Skipped FALSE ict nests (Llt/kpt/…), Qwe leave-behinds, CSe dead, FALSE/ESM inventory
+- openBoundary remains while mega still large

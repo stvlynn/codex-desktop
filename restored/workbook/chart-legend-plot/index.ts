@@ -9,3 +9,12 @@ export {
   wSe,
 } from "./chart-legend-plot-impl";
 export { reserveTitleBand, uSe } from "./reserve-title-band-impl";
+
+export {
+  applyManualLayout,
+  layoutEdgeOffset,
+  layoutSizeOffset,
+  workbookHelper455,
+  workbookHelper456,
+  workbookHelper458,
+} from "./apply-manual-layout-impl";

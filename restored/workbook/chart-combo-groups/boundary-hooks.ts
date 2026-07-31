@@ -2,6 +2,11 @@
 // Stage-3 wave-103: chart-combo-groups boundary hooks.
 
 export type ChartComboGroupsBoundaryHooks = {
+  ChartAsset: any;
+  bh423: (...args: any[]) => any;
+  axisKey: (...args: any[]) => any;
+  hiddenSeriesIndices: (...args: any[]) => any;
+  sliceGroupChart: (...args: any[]) => any;
   /** Build render groups (helper532). */
   bh532: (...args: any[]) => any;
   /** Paint secondary value axis (_xe; still nested in Binding1150 esm). */

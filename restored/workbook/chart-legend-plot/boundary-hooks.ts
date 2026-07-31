@@ -2,6 +2,9 @@
 // Stage-3 wave-98/104: chart-legend-plot boundary hooks.
 
 export type ChartLegendPlotBoundaryHooks = {
+  LAYOUT_MODE_EDGE: any;
+  bh454: (...args: any[]) => any;
+  bh453: (...args: any[]) => any;
   /** Legend gap px (Binding1164). */
   legendGapPx: any;
   /** Legend max fraction helpers (Binding1167). */
