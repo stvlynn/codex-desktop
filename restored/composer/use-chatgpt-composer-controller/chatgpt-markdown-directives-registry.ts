@@ -22,3 +22,14 @@ export function useChatgptComposerControllerHelper246(): Record<
 > {
   return getChatgptMarkdownDirectives();
 }
+
+let ensureMarkdownDirectivesInitImpl: (() => void) | null = null;
+
+/** Boundary registers Value308 here so extracted Value311 avoids a circular import. */
+export function setEnsureChatgptMarkdownDirectivesInit(fn: () => void): void {
+  ensureMarkdownDirectivesInitImpl = fn;
+}
+
+export function ensureChatgptMarkdownDirectivesInit(): void {
+  ensureMarkdownDirectivesInitImpl?.();
+}

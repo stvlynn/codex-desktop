@@ -24,3 +24,14 @@ export function useChatgptComposerControllerHelper31(): any {
 
 export const chatgptBrowserHostContextProvider =
   chatgptBrowserHostContext.Provider;
+
+let ensureBrowserHostContextInitImpl: (() => void) | null = null;
+
+/** Boundary registers Value43 here so extracted Value311 avoids a circular import. */
+export function setEnsureChatgptBrowserHostContextInit(fn: () => void): void {
+  ensureBrowserHostContextInitImpl = fn;
+}
+
+export function ensureChatgptBrowserHostContextInit(): void {
+  ensureBrowserHostContextInitImpl?.();
+}

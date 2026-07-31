@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Semantic composer-domain API: typed aliases over the open oversized runtime body.
-// Stage-3 wave-9: conversation-updates drained (Helper9–17 + Value12–26 + A/K).
-// Residual: _O/_D mega-init (Value359 → _D next).
+// Stage-3 wave-10: Value311/355 drained; Value359→_D extracted.
+// Residual: _O/U mega-init (not cleanly shrinkable — deep Value318+ fan-in).
 
 export type {
   ChatgptBrowserConversationBannerProps,
@@ -393,11 +393,20 @@ export {
   ensureChatgptImageGenerationPollInit,
 } from "./chatgpt-conversation-image-generation-poll";
 
+
+export { ensureChatgptComposerMarkdownSurfaceInit } from "./ensure-chatgpt-composer-markdown-surface-init";
+export {
+  ensureChatgptSubagentFinalResponseQueryInit,
+  getChatgptSubagentFinalResponseAtom,
+  setChatgptSubagentFinalResponseAtom,
+} from "./chatgpt-subagent-final-response-atom";
+export { ensureChatgptComposerSubagentOverlayDepsInit } from "./ensure-chatgpt-composer-controller-aux-init-d";
+
 import {
-  _useChatgptComposerControllerD,
   _useChatgptComposerControllerO,
   useChatgptComposerControllerU,
 } from "../../boundaries/use-chatgpt-composer-controller";
+import { _useChatgptComposerControllerD } from "./ensure-chatgpt-composer-controller-aux-init-d";
 import {
   useChatgptComposerControllerA,
   useChatgptComposerControllerK,
