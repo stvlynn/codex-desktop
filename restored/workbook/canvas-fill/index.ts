@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-19: canvas line-dash + gradient + pattern fill barrel.
+// Stage-3 wave-20: canvas line-dash + gradient + pattern + picture/fill-resolve barrel.
 
 export {
   applyCanvasLineDash,
@@ -31,4 +31,13 @@ export {
   resolvePatternFillStyle,
   ensurePatternFillResolveInit,
 } from "./pattern-fill-resolve";
+export {
+  processPictureBitmapEffects,
+  processPictureBitmapWithOpacity,
+  ensurePictureEffectCachesInit,
+} from "./picture-effects";
+export {
+  resolveFillStyle,
+  ensureFillResolveInit,
+} from "./fill-resolve";
 export { ensureCanvasFillClusterInit } from "./ensure-canvas-fill-init";
