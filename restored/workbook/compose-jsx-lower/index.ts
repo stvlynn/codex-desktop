@@ -63,3 +63,9 @@ export {
 export { lowerPanelSurfaceTag, JOe } from "./lower-panel-impl";
 
 export { createBoxElement, workbookHelper713 } from "./create-box-element-impl";
+
+export {
+  flattenComposeChildren,
+  flattenFragments,
+  QOe,
+} from "./flatten-children-impl";

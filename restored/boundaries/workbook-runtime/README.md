@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~50.5k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~49.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -211,6 +211,12 @@
 | Data-label text (`helper495`) | ~0.08k | **Drained (wave-109)** → `workbook/chart-data-labels/` |
 | Shape.add normalize (`hze`) | ~0.07k | **Drained (wave-109)** → `workbook/shape-element/` |
 | Round-rect path (`NSe`) | ~0.06k | **Drained (wave-109)** → `workbook/shape-path/` |
+| Criteria predicate (`I8e`/`F8e`+owned) | ~0.21k | **Drained (wave-110)** → `workbook/formula-criteria-predicate/` |
+| Table cells snapshot (`iOe`+cluster) | ~0.19k | **Drained (wave-110)** → `workbook/compose-element-snapshot/` |
+| Flatten compose children (`QOe`/`helper712`) | ~0.09k | **Drained (wave-110)** → `workbook/compose-jsx-lower/` |
+| CUMPRINC/DDB/PPMT (`T0e`/`O0e`/`P0e`) | ~0.17k | **Drained (wave-110)** → `workbook/formula-financial/` |
+| Path commands bbox (`tTe`) | ~0.06k | **Drained (wave-110)** → `workbook/shape-path/` |
+| Unique columns (`Ost`/`kst`/`Ast`) | ~0.08k | **Drained (wave-110)** → `workbook/formula-unique/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1411,5 +1417,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary 51226 → 50500 (Δ -726)
 - Peeled: helper713, DZe, helper389+_ye+390, helper480, BSe+VSe/HSe/USe/567/WSe, XDe+ZDe/QDe+helper676, helper495+492/493/494, hze+helper786, NSe
 - Skipped Qwe (leave-behinds), I8e/iOe/QOe heavy, FALSE/ESM nests, rze/kht
+- WorkbookN/_workbookS: still no top decls (method-peeled)
+- openBoundary remains while mega still large
+
+## Wave 110 (Stage-3 preferred + mid peel)
+
+- Boundary 50500 → 49748 (Δ -752)
+- Peeled: I8e+F8e+L8e+927/928/929+R8e/z8e/B8e/V8e/H8e/U8e; iOe+aOe+oOe+sOe+686/687/688/rOe; QOe+helper712; T0e/O0e/P0e; tTe; Ost+kst+Ast
+- Skipped Qwe (leave-behinds $we/618/623/611), fye (Binding836), ADe/BDe/dbe heavy, FALSE/ESM, rze/kht
 - WorkbookN/_workbookS: still no top decls (method-peeled)
 - openBoundary remains while mega still large

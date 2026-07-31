@@ -120,6 +120,164 @@ export function dbDepreciation(
       : ffinBind11129;
 }
 
+// --- wave-110: CUMPRINC / DDB / PPMT ---
+
+export function cumPrinc(
+  ffinIn4284: any,
+  ffinIn4285: any,
+  ffinIn4286: any,
+  ffinIn4287: any,
+  ffinIn4288: any,
+  ffinIn4289: any,
+) {
+  if (
+    ((ffinIn4284 = ffinH.fn849(ffinIn4284)),
+    (ffinIn4285 = ffinH.fn849(ffinIn4285)),
+    (ffinIn4286 = ffinH.fn849(ffinIn4286)),
+    ffinH.fn846(ffinIn4284, ffinIn4285, ffinIn4286))
+  )
+    return ffinH.VALUE_ERROR;
+  if (
+    ffinIn4284 <= 0 ||
+    ffinIn4285 <= 0 ||
+    ffinIn4286 <= 0 ||
+    ffinIn4287 < 1 ||
+    ffinIn4288 < 1 ||
+    ffinIn4287 > ffinIn4288 ||
+    (ffinIn4289 !== 0 && ffinIn4289 !== 1)
+  )
+    return ffinH.NUM_ERROR;
+  let ffinBind13357 = ffinH.fn901(
+      ffinIn4284,
+      ffinIn4285,
+      ffinIn4286,
+      0,
+      ffinIn4289,
+    ),
+    ffinBind13358 = 0;
+  ffinIn4287 === 1 &&
+    (ffinIn4289 === 0 && (ffinBind13358 = -ffinIn4286), ffinIn4287++);
+  for (
+    let ffinBind21909 = ffinIn4287;
+    ffinBind21909 <= ffinIn4288;
+    ffinBind21909++
+  )
+    ffinBind13358 +=
+      ffinIn4289 === 1
+        ? ffinH.fn899(
+            ffinIn4284,
+            ffinBind21909 - 2,
+            ffinBind13357,
+            ffinIn4286,
+            1,
+          ) - ffinBind13357
+        : ffinH.fn899(
+            ffinIn4284,
+            ffinBind21909 - 1,
+            ffinBind13357,
+            ffinIn4286,
+            0,
+          );
+  return ((ffinBind13358 *= ffinIn4284), ffinBind13358);
+}
+export function ddb(
+  ffinIn4566: any,
+  ffinIn4567: any,
+  ffinIn4568: any,
+  ffinIn4569: any,
+  ffinIn4570: any,
+) {
+  if (
+    ((ffinIn4570 = ffinIn4570 === undefined ? 2 : ffinIn4570),
+    (ffinIn4566 = ffinH.fn849(ffinIn4566)),
+    (ffinIn4567 = ffinH.fn849(ffinIn4567)),
+    (ffinIn4568 = ffinH.fn849(ffinIn4568)),
+    (ffinIn4569 = ffinH.fn849(ffinIn4569)),
+    (ffinIn4570 = ffinH.fn849(ffinIn4570)),
+    ffinH.fn846(ffinIn4566, ffinIn4567, ffinIn4568, ffinIn4569, ffinIn4570))
+  )
+    return ffinH.VALUE_ERROR;
+  if (
+    ffinIn4566 < 0 ||
+    ffinIn4567 < 0 ||
+    ffinIn4568 < 0 ||
+    ffinIn4569 < 0 ||
+    ffinIn4570 <= 0 ||
+    ffinIn4569 > ffinIn4568
+  )
+    return ffinH.NUM_ERROR;
+  if (ffinIn4567 >= ffinIn4566) return 0;
+  let ffinBind13838 = 0,
+    ffinBind13839 = 0;
+  for (let ffinBind22157 = 1; ffinBind22157 <= ffinIn4569; ffinBind22157++) {
+    ffinBind13839 = Math.min(
+      (ffinIn4566 - ffinBind13838) * (ffinIn4570 / ffinIn4568),
+      ffinIn4566 - ffinIn4567 - ffinBind13838,
+    );
+    ffinBind13838 += ffinBind13839;
+  }
+  return ffinBind13839;
+}
+export function ppmt(
+  ffinIn4757: any,
+  ffinIn4758: any,
+  ffinIn4759: any,
+  ffinIn4760: any,
+  ffinIn4761: any,
+  ffinIn4762: any,
+) {
+  if (
+    ((ffinIn4761 ||= 0),
+    (ffinIn4762 ||= 0),
+    (ffinIn4757 = ffinH.fn849(ffinIn4757)),
+    (ffinIn4758 = ffinH.fn849(ffinIn4758)),
+    (ffinIn4759 = ffinH.fn849(ffinIn4759)),
+    (ffinIn4760 = ffinH.fn849(ffinIn4760)),
+    (ffinIn4761 = ffinH.fn849(ffinIn4761)),
+    (ffinIn4762 = ffinH.fn849(ffinIn4762)),
+    ffinH.fn846(
+      ffinIn4757,
+      ffinIn4758,
+      ffinIn4759,
+      ffinIn4760,
+      ffinIn4761,
+      ffinIn4762,
+    ))
+  )
+    return ffinH.VALUE_ERROR;
+  let ffinBind14111 = ffinH.fn901(
+    ffinIn4757,
+    ffinIn4759,
+    ffinIn4760,
+    ffinIn4761,
+    ffinIn4762,
+  );
+  return (
+    (ffinIn4758 === 1
+      ? ffinIn4762 === 1
+        ? 0
+        : -ffinIn4760
+      : ffinIn4762 === 1
+        ? ffinH.fn899(
+            ffinIn4757,
+            ffinIn4758 - 2,
+            ffinBind14111,
+            ffinIn4760,
+            1,
+          ) - ffinBind14111
+        : ffinH.fn899(
+            ffinIn4757,
+            ffinIn4758 - 1,
+            ffinBind14111,
+            ffinIn4760,
+            0,
+          )) * ffinIn4757
+  );
+}
+
 /** Legacy aliases. */
 export const E0e = cumIpmt;
 export const D0e = dbDepreciation;
+export const T0e = cumPrinc;
+export const O0e = ddb;
+export const P0e = ppmt;

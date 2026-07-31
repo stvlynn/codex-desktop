@@ -3,6 +3,8 @@
 
 export type ComposeElementSnapshotBoundaryHooks = {
   bh681: (...args: any[]) => any;
+  /** Bbox tuple from frame (legacy bh682). */
+  bh682: (...args: any[]) => any;
   bh683: (...args: any[]) => any;
   bh684: (...args: any[]) => any;
   bh686: (...args: any[]) => any;

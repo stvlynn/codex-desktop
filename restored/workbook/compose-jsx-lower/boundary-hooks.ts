@@ -12,23 +12,27 @@ export type ComposeJsxLowerBoundaryHooks = {
   ensureUke: () => void;
   ensureBinding1544: () => void;
   ensureBinding1531: () => void;
-  /** Prop allowlist check (helper716). */
+  /** Prop allowlist check (legacy assertAllowedProps). */
   assertAllowedProps: (...args: any[]) => any;
   /** Allowed props table (Binding1545). */
   panelPropAllowlist: any;
   /** Flatten children (QOe). */
   flattenChildren: (...args: any[]) => any;
+  /** Inline/text child predicate (legacy jOe). */
+  isInlineOrTextChild: (...args: any[]) => any;
+  /** Already-lowered kind bag (legacy cke). */
+  isLoweredKindBag: (...args: any[]) => any;
   /** Resolve tag kind (tke). */
   resolveTagKind: (...args: any[]) => any;
   /** Style bag from props (rke). */
   styleFromProps: (...args: any[]) => any;
   /** Has visual chrome (ike). */
   hasVisualChrome: (...args: any[]) => any;
-  /** Create text/box element (helper713). */
+  /** Create text/box element (legacy createBoxElement). */
   createBoxElement: (...args: any[]) => any;
-  /** Element name (helper717). */
+  /** Element name (legacy elementName). */
   elementName: (...args: any[]) => any;
-  /** Size token (helper721). */
+  /** Size token (legacy sizeToken). */
   sizeToken: (...args: any[]) => any;
   /** Attach children ($Oe). */
   attachChildren: (...args: any[]) => any;

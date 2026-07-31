@@ -12,9 +12,8 @@ export {
 } from "./shape-path-impl";
 
 export { drawCustomPaths, Rwe } from "./draw-custom-paths-impl";
-export {
-  pathCommandsToClipPoints,
-  cTe,
-} from "./path-commands-to-clip-impl";
+export { pathCommandsToClipPoints, cTe } from "./path-commands-to-clip-impl";
 
 export { roundRectPath, NSe } from "./round-rect-path-impl";
+
+export { pathCommandsBBox, tTe } from "./path-commands-bbox-impl";
