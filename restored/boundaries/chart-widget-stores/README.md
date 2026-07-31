@@ -1,7 +1,7 @@
 # chart-widget-stores (intentional oversized terminal)
 
 **Chunk:** `chart-widget-stores-SIOpvGDe`  
-**Public path:** `boundaries/chart-widget-stores/index.tsx` (~61k LOC)  
+**Public path:** `boundaries/chart-widget-stores/index.tsx` (~60k LOC)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Inventory (Stage-3 drain)
@@ -16,20 +16,21 @@
 | Codex props / evaluate / action | `chartWidgetStoresC` / `S` / `$_` | `$prop` eval + soft-failure | **Drained** → `use-widget-expression.ts` (wave-4) |
 | Codex useIntl | `chartWidgetStoresU` | mega react-intl context reader | **Drained** → `use-chart-intl.ts` (context injected from `L`) |
 | Codex theme colors | `chartWidgetStoresB` / `X` | palette check + theme color resolve | **Drained** → `chart-theme-colors.ts` (wave-4) |
+| Codex Box / style helpers | Y-init near B/X (`D`, `_H`, radius/margin/padding/border) + `V` | Widget Box + tokenized styles | **Drained** → `widget-box.tsx` / `widget-style-helpers.ts` / `widget-class-names.ts` (wave-5) |
 | Immer (stock) | ~3k+ embedded + `vendor/immer.ts` | `Symbol.for("immer-*")`, `produce` | **npm-shimmed** (`vendor/immer` → `immer`); body still inlined for RTK |
 | Redux Toolkit (stock) | ~configureStore/createSlice cluster (~4k–6k) | redux-toolkit.js.org error strings | **Blocked** — entangled with Recharts store; no consumer bare import |
 | Recharts (stock) | ~legend/pie/bar/line/area/scatter (~40k+) | `recharts-*` classNames; ComposedChart/Bar/Line/… | **Blocked** — Chart surface still injected from mega; no clean cut yet |
 
 ## Decision
 
-**Not a single npm-first shim.** The dump is a **composite** of stock Recharts + RTK/Immer **plus** Codex WidgetContext / app-scope widget store / chart chrome / i18n / Chart. A bare `export * from "recharts"` cannot replace `chartWidgetStores*` consumers.
+**Not a single npm-first shim.** The dump is a **composite** of stock Recharts + RTK/Immer **plus** Codex WidgetContext / app-scope widget store / chart chrome / i18n / Chart / Box. A bare `export * from "recharts"` cannot replace `chartWidgetStores*` consumers.
 
-## Recharts / RTK blockers (wave-4)
+## Recharts / RTK blockers (wave-5)
 
 1. **Chart still owns Recharts aliases** — consumers import `chartWidgetStoresG` (ResponsiveContainer), `chartWidgetStoresUnderscore` (Tooltip), `chartWidgetStoresP` (Legend), Bar/Line/Area/Scatter bindings, not `recharts`.
 2. **RTK is the Recharts internal store** — `configureStore` / `createSlice` cluster is referenced by Tooltip/Legend state helpers inside the same flat dump; cutting RTK without Recharts leaves a hole.
 3. **Immer body still inlined** for that RTK cluster even though `vendor/immer` is npm-shimmed for other consumers.
-4. **Surface bridge** — `setChartBundleSurface` still injects Recharts locals into drained `Chart`; Codex C/S/U/B/X no longer ride the bag (wave-4). Clearing `openBoundary` waits on replacing the Recharts bag with npm shims.
+4. **Surface bridge** — `setChartBundleSurface` still injects Recharts locals into drained `Chart`; Codex C/S/U/B/X/D/E/V no longer ride the bag (wave-4/5). Clearing `openBoundary` waits on replacing the Recharts bag with npm shims.
 
 ## Why it stays in `boundaries/`
 

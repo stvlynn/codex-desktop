@@ -117,3 +117,42 @@ export {
   chartWidgetStoresU,
 } from "./use-chart-intl";
 export type { ChartIntlShape } from "./use-chart-intl";
+
+export {
+  classNames,
+  chartWidgetStoresV,
+} from "./widget-class-names";
+
+export {
+  BOX_CLASS_NAMES,
+  BOX_VISIBILITY_THRESHOLD,
+  toSpacingCss,
+  toCssVars,
+  parseAspectRatio,
+  toAspectRatioCss,
+  toRadiusStyle,
+  isDesignTokenColor,
+  resolveSemanticColorName,
+  resolveBackgroundCss,
+  resolveBorderColorCss,
+  toMarginStyle,
+  toPaddingStyle,
+  toBorderStyle,
+  $V,
+  _H,
+} from "./widget-style-helpers";
+export type {
+  SpacingInput,
+  RadiusInput,
+  BorderInput,
+  AspectRatioInput,
+} from "./widget-style-helpers";
+
+export {
+  WidgetBox,
+  WidgetBoxWithVisibleAction,
+  WidgetBoxRoot,
+  chartWidgetStoresD,
+  ensureWidgetBoxInit,
+} from "./widget-box";
+export type { WidgetBoxProps } from "./widget-box";

@@ -1,17 +1,14 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
 // Injected Recharts surfaces still living in boundaries/chart-widget-stores.
-// Codex C/S/U/B/X drained to visualization (wave-4); Chart imports those directly.
+// Codex C/S/U/B/X/D/E/V drained to visualization (wave-4/5); Chart imports those directly.
 
 export type ChartBundleSurface = {
   createElement: any;
   $_: any;
-  chartWidgetStoresD: any;
-  chartWidgetStoresE: any;
   chartWidgetStoresF: any;
   chartWidgetStoresG: any;
   chartWidgetStoresP: any;
   chartWidgetStoresUnderscore: any;
-  chartWidgetStoresV: any;
   chartWidgetStoresHelper611: any;
   chartWidgetStoresHelper767: any;
   chartWidgetStoresBinding1022: any;

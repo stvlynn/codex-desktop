@@ -4,8 +4,8 @@ import { createElement } from "react";
 // Intentional oversized vendor-runtime terminal (openBoundary).
 // Not a single stock npm package: composite Recharts + Redux Toolkit/Immer
 // plus Codex WidgetContext / widget-scope store / chart chrome / i18n.
-// Stage-3 wave-1..4: WidgetContext, widget-scope, chrome, i18n, Chart,
-// C/S/U/B/X Codex glue → visualization/chart-widget-stores (Chart via surface).
+// Stage-3 wave-1..5: WidgetContext, widget-scope, chrome, i18n, Chart,
+// C/S/U/B/X + Box/style/V Codex glue → visualization/ (Chart via surface).
 // Exit: npm-shim Recharts/@reduxjs/toolkit when cut clean; keep openBoundary.
 // Stage 3 candidate: 36/36 app-initial aliases rewritten to
 // IMPORT_MAP semantic/vendor/boundary paths. AppScope (Fft/Ift/ivt/M_t/L_t) is an
@@ -105,6 +105,24 @@ import {
   useResolveWidgetAction as vizUseResolveWidgetAction,
   useChartIntl as vizUseChartIntl,
   setChartBundleIntlContext as vizSetChartBundleIntlContext,
+  classNames as vizClassNames,
+  WidgetBoxRoot as vizWidgetBoxRoot,
+  ensureWidgetBoxInit as vizEnsureWidgetBoxInit,
+  parseAspectRatio as vizParseAspectRatio,
+  toAspectRatioCss as vizToAspectRatioCss,
+  toRadiusStyle as vizToRadiusStyle,
+  resolveBackgroundCss as vizResolveBackgroundCss,
+  resolveBorderColorCss as vizResolveBorderColorCss,
+  toBorderStyle as vizToBorderStyle,
+  toMarginStyle as vizToMarginStyle,
+  toPaddingStyle as vizToPaddingStyle,
+  toSpacingCss as vizToSpacingCss,
+  toCssVars as vizToCssVars,
+  isDesignTokenColor as vizIsDesignTokenColor,
+  resolveSemanticColorName as vizResolveSemanticColorName,
+  BOX_CLASS_NAMES as vizBoxClassNames,
+  BOX_VISIBILITY_THRESHOLD as vizBoxVisibilityThreshold,
+  pickThemeColor as vizPickThemeColor,
 } from "../../visualization/chart-widget-stores";
 
 var chartWidgetStoresBinding1 = rolldownRuntimeN(() => {}),
@@ -26972,10 +26990,7 @@ function $_() {
   return vizUseResolveWidgetAction();
 }
 function chartWidgetStoresHelper827(chartWidgetStoresInput3259) {
-  if (chartWidgetStoresInput3259 != null)
-    return typeof chartWidgetStoresInput3259 == "number"
-      ? `calc(var(--spacing, 0.25rem) * ${chartWidgetStoresInput3259})`
-      : chartWidgetStoresInput3259;
+  return vizToSpacingCss(chartWidgetStoresInput3259);
 }
 function chartWidgetStoresHelper828(
   chartWidgetStoresInput870,
@@ -37555,7 +37570,7 @@ var chartWidgetStoresBinding34,
         chartWidgetStoresInput1882.exports = chartWidgetStoresHelper1166;
       },
     });
-    chartWidgetStoresV = chartWidgetStoresHelper3;
+    chartWidgetStoresV = vizClassNames;
     chartWidgetStoresBinding327 =
       chartWidgetStoresBinding37.createContext(null);
     chartWidgetStoresBinding328 = () =>
@@ -55261,100 +55276,22 @@ var chartWidgetStoresBinding34,
       "valueOf",
       "then",
     ]);
-    chartWidgetStoresBinding1229 = (chartWidgetStoresInput837) => {
-      if (chartWidgetStoresInput837 == null) return;
-      if (typeof chartWidgetStoresInput837 == "number")
-        return !Number.isFinite(chartWidgetStoresInput837) ||
-          chartWidgetStoresInput837 <= 0
-          ? undefined
-          : {
-              width: chartWidgetStoresInput837,
-              height: 1,
-            };
-      let chartWidgetStoresBinding3706 = chartWidgetStoresInput837.trim();
-      if (!chartWidgetStoresBinding3706) return;
-      let chartWidgetStoresBinding3707 = chartWidgetStoresBinding3706.match(
-        /^([0-9]+(?:\.[0-9]+)?)\s*[:/]\s*([0-9]+(?:\.[0-9]+)?)$/,
-      );
-      if (!chartWidgetStoresBinding3707) return;
-      let chartWidgetStoresBinding3708 = Number(
-          chartWidgetStoresBinding3707[1],
-        ),
-        chartWidgetStoresBinding3709 = Number(chartWidgetStoresBinding3707[2]);
-      if (
-        !(
-          !Number.isFinite(chartWidgetStoresBinding3708) ||
-          !Number.isFinite(chartWidgetStoresBinding3709) ||
-          chartWidgetStoresBinding3708 <= 0 ||
-          chartWidgetStoresBinding3709 <= 0
-        )
-      )
-        return {
-          width: chartWidgetStoresBinding3708,
-          height: chartWidgetStoresBinding3709,
-        };
-    };
-    $V = (chartWidgetStoresInput2460) => {
-      if (chartWidgetStoresInput2460 == null) return;
-      let chartWidgetStoresBinding5297 = chartWidgetStoresBinding1229(
-        chartWidgetStoresInput2460,
-      );
-      return chartWidgetStoresBinding5297
-        ? `${chartWidgetStoresBinding5297.width} / ${chartWidgetStoresBinding5297.height}`
-        : typeof chartWidgetStoresInput2460 == "number"
-          ? chartWidgetStoresInput2460
-          : chartWidgetStoresInput2460.trim() || undefined;
-    };
-    chartWidgetStoresBinding1230 = (chartWidgetStoresInput2164) => {
-      if (chartWidgetStoresInput2164)
-        switch (chartWidgetStoresInput2164) {
-          case "none":
-            return "0";
-          case "100%":
-            return "100%";
-          default:
-            return `var(--radius-${chartWidgetStoresInput2164})`;
-        }
-    };
-    chartWidgetStoresBinding1231 = (chartWidgetStoresInput836) => {
-      if (chartWidgetStoresInput836 == null) return;
-      if (typeof chartWidgetStoresInput836 == "string") {
-        let chartWidgetStoresBinding5810 = chartWidgetStoresBinding1230(
-          chartWidgetStoresInput836,
-        );
-        return chartWidgetStoresBinding5810 == null
-          ? undefined
-          : {
-              borderRadius: chartWidgetStoresBinding5810,
-            };
+    // Codex Box/style helpers drained to visualization/ (wave-5)
+    vizEnsureWidgetBoxInit();
+    chartWidgetStoresBinding1229 = vizParseAspectRatio;
+    $V = vizToAspectRatioCss;
+    chartWidgetStoresBinding1230 = (token) => {
+      if (!token) return;
+      switch (token) {
+        case "none":
+          return "0";
+        case "100%":
+          return "100%";
+        default:
+          return `var(--radius-${token})`;
       }
-      let chartWidgetStoresBinding3700 = chartWidgetStoresBinding1230(
-          chartWidgetStoresInput836.topLeft,
-        ),
-        chartWidgetStoresBinding3701 = chartWidgetStoresBinding1230(
-          chartWidgetStoresInput836.topRight,
-        ),
-        chartWidgetStoresBinding3702 = chartWidgetStoresBinding1230(
-          chartWidgetStoresInput836.bottomRight,
-        ),
-        chartWidgetStoresBinding3703 = chartWidgetStoresBinding1230(
-          chartWidgetStoresInput836.bottomLeft,
-        );
-      if (
-        !(
-          chartWidgetStoresBinding3700 == null &&
-          chartWidgetStoresBinding3701 == null &&
-          chartWidgetStoresBinding3703 == null &&
-          chartWidgetStoresBinding3702 == null
-        )
-      )
-        return {
-          borderStartStartRadius: chartWidgetStoresBinding3700,
-          borderStartEndRadius: chartWidgetStoresBinding3701,
-          borderEndStartRadius: chartWidgetStoresBinding3703,
-          borderEndEndRadius: chartWidgetStoresBinding3702,
-        };
     };
+    chartWidgetStoresBinding1231 = vizToRadiusStyle;
     chartWidgetStoresBinding1232 = new Set([
       "blue",
       "green",
@@ -55365,460 +55302,39 @@ var chartWidgetStoresBinding34,
       "yellow",
     ]);
     chartWidgetStoresBinding1233 = {
-      subtle: {
-        dark: "900",
-        light: "50",
-      },
-      soft: {
-        dark: "800",
-        light: "100",
-      },
+      subtle: { dark: "900", light: "50" },
+      soft: { dark: "800", light: "100" },
     };
-    chartWidgetStoresBinding1234 = {
-      light: "subtle",
-      low: "subtle",
-    };
-    chartWidgetStoresBinding1235 = {
-      subtle: "gray-50",
-      soft: "gray-100",
-    };
+    chartWidgetStoresBinding1234 = { light: "subtle", low: "subtle" };
+    chartWidgetStoresBinding1235 = { subtle: "gray-50", soft: "gray-100" };
     chartWidgetStoresBinding1236 = "gray-50";
     chartWidgetStoresBinding1237 = "gray-600";
-    chartWidgetStoresBinding1238 = (
-      chartWidgetStoresInput3801,
-      chartWidgetStoresInput3802,
-    ) => {
-      if (chartWidgetStoresInput3802)
-        return typeof chartWidgetStoresInput3802 == "string"
-          ? chartWidgetStoresInput3802
-          : chartWidgetStoresInput3802[chartWidgetStoresInput3801];
-    };
-    chartWidgetStoresBinding1239 = (
-      chartWidgetStoresInput648,
-      chartWidgetStoresInput649,
-      chartWidgetStoresInput650,
-    ) => {
-      let chartWidgetStoresBinding3357 = chartWidgetStoresInput649.indexOf("-"),
-        chartWidgetStoresBinding3358 =
-          chartWidgetStoresBinding3357 < 0
-            ? chartWidgetStoresInput649
-            : chartWidgetStoresInput649.slice(0, chartWidgetStoresBinding3357),
-        chartWidgetStoresBinding3359 =
-          chartWidgetStoresBinding3357 < 0
-            ? undefined
-            : chartWidgetStoresInput649.slice(chartWidgetStoresBinding3357 + 1);
-      if (chartWidgetStoresBinding3358 === "gray") {
-        let chartWidgetStoresBinding5117 =
-          chartWidgetStoresBinding3359 &&
-          chartWidgetStoresBinding3359 in chartWidgetStoresBinding1234
-            ? chartWidgetStoresBinding1234[chartWidgetStoresBinding3359]
-            : chartWidgetStoresBinding3359;
-        return chartWidgetStoresBinding5117
-          ? chartWidgetStoresBinding5117 === "subtle" ||
-            chartWidgetStoresBinding5117 === "soft"
-            ? chartWidgetStoresBinding1235[chartWidgetStoresBinding5117]
-            : chartWidgetStoresInput649
-          : chartWidgetStoresInput650 === "background"
-            ? chartWidgetStoresBinding1236
-            : chartWidgetStoresBinding1237;
-      }
-      if (!chartWidgetStoresBinding1232.has(chartWidgetStoresBinding3358))
-        return chartWidgetStoresInput649;
-      if (!chartWidgetStoresBinding3359)
-        return `${chartWidgetStoresBinding3358}-${chartWidgetStoresInput650 === "background" ? (chartWidgetStoresInput648 === "dark" ? "900" : "50") : chartWidgetStoresInput648 === "dark" ? "400" : "500"}`;
-      let chartWidgetStoresBinding3360 =
-        chartWidgetStoresBinding3359 in chartWidgetStoresBinding1234
-          ? chartWidgetStoresBinding1234[chartWidgetStoresBinding3359]
-          : chartWidgetStoresBinding3359;
-      return chartWidgetStoresBinding3360 !== "subtle" &&
-        chartWidgetStoresBinding3360 !== "soft"
-        ? chartWidgetStoresInput649
-        : `${chartWidgetStoresBinding3358}-${chartWidgetStoresBinding1233[chartWidgetStoresBinding3360][chartWidgetStoresInput648]}`;
-    };
+    chartWidgetStoresBinding1238 = vizPickThemeColor;
+    chartWidgetStoresBinding1239 = vizResolveSemanticColorName;
     chartWidgetStoresBinding1240 =
       /^(?:white|black|alpha-\d{1,3}|(?:gray|green|red|pink|orange|yellow|purple|blue)-(?:\d{1,4}|a\d{1,3}))$/;
-    chartWidgetStoresBinding1241 = (chartWidgetStoresInput4730) =>
-      chartWidgetStoresBinding1240.test(chartWidgetStoresInput4730);
+    chartWidgetStoresBinding1241 = vizIsDesignTokenColor;
     chartWidgetStoresB = vizIsChartPaletteColor;
     chartWidgetStoresX = vizResolveChartThemeColor;
-    chartWidgetStoresBinding1242 = (
-      chartWidgetStoresInput266,
-      chartWidgetStoresInput267,
-    ) => {
-      let chartWidgetStoresBinding2642 = chartWidgetStoresBinding1238(
-        chartWidgetStoresInput266,
-        chartWidgetStoresInput267,
-      );
-      if (!chartWidgetStoresBinding2642) return;
-      let chartWidgetStoresBinding2643 = chartWidgetStoresBinding1239(
-        chartWidgetStoresInput266,
-        chartWidgetStoresBinding2642,
-        "background",
-      );
-      if (chartWidgetStoresBinding1241(chartWidgetStoresBinding2643))
-        return `var(--${chartWidgetStoresBinding2643})`;
-      switch (chartWidgetStoresBinding2643) {
-        case "surface":
-          return "var(--color-surface)";
-        case "surface-inverted":
-          return "var(--color-text-prose)";
-        case "success":
-          return "var(--color-text-success)";
-        case "danger":
-          return "var(--color-text-danger)";
-        case "surface-secondary":
-          return "var(--color-surface-secondary)";
-        case "surface-tertiary":
-          return "var(--color-surface-tertiary)";
-        case "surface-soft":
-          return "var(--color-background-primary-surface)";
-        case "surface-elevated":
-          return "var(--color-surface-elevated)";
-        case "surface-elevated-secondary":
-          return "var(--color-surface-elevated-secondary)";
-        case "border":
-          return "var(--color-border)";
-        case "border-subtle":
-          return "var(--color-border-subtle)";
-        case "border-strong":
-          return "var(--color-border-strong)";
-        default:
-          return chartWidgetStoresBinding2643;
-      }
+    chartWidgetStoresBinding1242 = vizResolveBackgroundCss;
+    chartWidgetStoresBinding1243 = (theme, color) =>
+      vizResolveBorderColorCss(theme, color);
+    chartWidgetStoresBinding1244 = (theme, border) => {
+      if (border == null) return;
+      if (typeof border == "number")
+        return border
+          ? `${border}px solid ${vizResolveBorderColorCss(theme)}`
+          : "0";
+      return `${border.size}px ${border.style ?? "solid"} ${vizResolveBorderColorCss(theme, border.color)}`;
     };
-    chartWidgetStoresBinding1243 = (
-      chartWidgetStoresInput1063,
-      chartWidgetStoresInput1064,
-    ) => {
-      let chartWidgetStoresBinding3983 = chartWidgetStoresBinding1238(
-        chartWidgetStoresInput1063,
-        chartWidgetStoresInput1064,
-      );
-      if (!chartWidgetStoresBinding3983) return "var(--color-border)";
-      let chartWidgetStoresBinding3984 = chartWidgetStoresBinding1239(
-        chartWidgetStoresInput1063,
-        chartWidgetStoresBinding3983,
-        "foreground",
-      );
-      if (chartWidgetStoresBinding1241(chartWidgetStoresBinding3984))
-        return `var(--${chartWidgetStoresBinding3984})`;
-      switch (chartWidgetStoresBinding3984) {
-        case "default":
-          return "var(--color-border)";
-        case "subtle":
-          return "var(--color-border-subtle)";
-        case "strong":
-          return "var(--color-border-strong)";
-        default:
-          return chartWidgetStoresBinding3984;
-      }
-    };
-    chartWidgetStoresBinding1244 = (
-      chartWidgetStoresInput2348,
-      chartWidgetStoresInput2349,
-    ) => {
-      if (chartWidgetStoresInput2349 != null)
-        return typeof chartWidgetStoresInput2349 == "number"
-          ? chartWidgetStoresInput2349
-            ? `${chartWidgetStoresInput2349}px solid ${chartWidgetStoresBinding1243(chartWidgetStoresInput2348)}`
-            : "0"
-          : `${chartWidgetStoresInput2349.size}px ${chartWidgetStoresInput2349.style ?? "solid"} ${chartWidgetStoresBinding1243(chartWidgetStoresInput2348, chartWidgetStoresInput2349.color)}`;
-    };
-    _H = (chartWidgetStoresInput653) => {
-      if (chartWidgetStoresInput653 == null) return;
-      if (
-        typeof chartWidgetStoresInput653 == "number" ||
-        typeof chartWidgetStoresInput653 == "string"
-      ) {
-        let chartWidgetStoresBinding5390 = chartWidgetStoresHelper827(
-          chartWidgetStoresInput653,
-        );
-        return {
-          marginBlockStart: chartWidgetStoresBinding5390,
-          marginBlockEnd: chartWidgetStoresBinding5390,
-          marginInlineStart: chartWidgetStoresBinding5390,
-          marginInlineEnd: chartWidgetStoresBinding5390,
-        };
-      }
-      let chartWidgetStoresBinding3372 = chartWidgetStoresHelper827(
-          chartWidgetStoresInput653.top ?? chartWidgetStoresInput653.y,
-        ),
-        chartWidgetStoresBinding3373 = chartWidgetStoresHelper827(
-          chartWidgetStoresInput653.bottom ?? chartWidgetStoresInput653.y,
-        ),
-        chartWidgetStoresBinding3374 = chartWidgetStoresHelper827(
-          chartWidgetStoresInput653.left ?? chartWidgetStoresInput653.x,
-        ),
-        chartWidgetStoresBinding3375 = chartWidgetStoresHelper827(
-          chartWidgetStoresInput653.right ?? chartWidgetStoresInput653.x,
-        );
-      if (
-        !(
-          chartWidgetStoresBinding3372 == null &&
-          chartWidgetStoresBinding3373 == null &&
-          chartWidgetStoresBinding3374 == null &&
-          chartWidgetStoresBinding3375 == null
-        )
-      )
-        return {
-          marginBlockStart: chartWidgetStoresBinding3372,
-          marginBlockEnd: chartWidgetStoresBinding3373,
-          marginInlineStart: chartWidgetStoresBinding3374,
-          marginInlineEnd: chartWidgetStoresBinding3375,
-        };
-    };
-    chartWidgetStoresBinding1245 = (chartWidgetStoresInput349) => {
-      if (chartWidgetStoresInput349 == null) return;
-      if (
-        typeof chartWidgetStoresInput349 == "number" ||
-        typeof chartWidgetStoresInput349 == "string"
-      ) {
-        let chartWidgetStoresBinding4480 = chartWidgetStoresHelper827(
-          chartWidgetStoresInput349,
-        );
-        return {
-          ...chartWidgetStoresBinding30({
-            "w-box-gutter-block-start": chartWidgetStoresBinding4480,
-            "w-box-gutter-block-end": chartWidgetStoresBinding4480,
-            "w-box-gutter-inline-start": chartWidgetStoresBinding4480,
-            "w-box-gutter-inline-end": chartWidgetStoresBinding4480,
-          }),
-          paddingBlock: chartWidgetStoresBinding4480,
-          paddingInline: chartWidgetStoresBinding4480,
-        };
-      }
-      let chartWidgetStoresBinding2905 = chartWidgetStoresHelper827(
-          chartWidgetStoresInput349.top ?? chartWidgetStoresInput349.y,
-        ),
-        chartWidgetStoresBinding2906 = chartWidgetStoresHelper827(
-          chartWidgetStoresInput349.bottom ?? chartWidgetStoresInput349.y,
-        ),
-        chartWidgetStoresBinding2907 = chartWidgetStoresHelper827(
-          chartWidgetStoresInput349.left ?? chartWidgetStoresInput349.x,
-        ),
-        chartWidgetStoresBinding2908 = chartWidgetStoresHelper827(
-          chartWidgetStoresInput349.right ?? chartWidgetStoresInput349.x,
-        );
-      if (
-        !(
-          chartWidgetStoresBinding2905 == null &&
-          chartWidgetStoresBinding2906 == null &&
-          chartWidgetStoresBinding2907 == null &&
-          chartWidgetStoresBinding2908 == null
-        )
-      )
-        return {
-          ...chartWidgetStoresBinding30({
-            "w-box-gutter-block-start": chartWidgetStoresBinding2905,
-            "w-box-gutter-block-end": chartWidgetStoresBinding2906,
-            "w-box-gutter-inline-start": chartWidgetStoresBinding2907,
-            "w-box-gutter-inline-end": chartWidgetStoresBinding2908,
-          }),
-          paddingBlockStart: chartWidgetStoresBinding2905,
-          paddingBlockEnd: chartWidgetStoresBinding2906,
-          paddingInlineStart: chartWidgetStoresBinding2907,
-          paddingInlineEnd: chartWidgetStoresBinding2908,
-        };
-    };
-    chartWidgetStoresBinding1246 = (
-      chartWidgetStoresInput1098,
-      chartWidgetStoresInput1099,
-    ) => {
-      if (chartWidgetStoresInput1099 == null) return {};
-      if (
-        typeof chartWidgetStoresInput1099 == "number" ||
-        "size" in chartWidgetStoresInput1099
-      )
-        return {
-          border: chartWidgetStoresBinding1244(
-            chartWidgetStoresInput1098,
-            chartWidgetStoresInput1099,
-          ),
-        };
-      let {
-        x,
-        y,
-        top = y,
-        bottom = y,
-        left = x,
-        right = x,
-      } = chartWidgetStoresInput1099;
-      return {
-        borderTop: chartWidgetStoresBinding1244(
-          chartWidgetStoresInput1098,
-          top,
-        ),
-        borderBottom: chartWidgetStoresBinding1244(
-          chartWidgetStoresInput1098,
-          bottom,
-        ),
-        borderLeft: chartWidgetStoresBinding1244(
-          chartWidgetStoresInput1098,
-          left,
-        ),
-        borderRight: chartWidgetStoresBinding1244(
-          chartWidgetStoresInput1098,
-          right,
-        ),
-      };
-    };
-    chartWidgetStoresBinding1247 = 0.5;
-    chartWidgetStoresBinding1248 = {
-      Box: "Box_Box",
-    };
-    chartWidgetStoresBinding1249 = ({
-      direction = "col",
-      align,
-      size,
-      minSize,
-      maxSize,
-      height = size,
-      width = size,
-      minHeight = minSize,
-      minWidth = minSize,
-      maxHeight = maxSize,
-      maxWidth = maxSize,
-      flex,
-      justify,
-      wrap,
-      padding,
-      margin,
-      radius,
-      gap: chartWidgetStoresInput66,
-      rowGap,
-      columnGap,
-      children,
-      border,
-      background,
-      hoverBackground,
-      aspectRatio,
-      as: _as,
-      className,
-      style,
-      flush,
-      clip,
-      scrollable,
-      theme,
-      boxRef,
-      ref,
-      onVisibleAction,
-      ...rest
-    }) => {
-      let { theme: _theme } = chartWidgetStoresE(),
-        chartWidgetStoresBinding1916 =
-          (direction === "row" && !!width) || (direction === "col" && !!height),
-        chartWidgetStoresBinding1917 = _as,
-        chartWidgetStoresBinding1918 = rest,
-        chartWidgetStoresBinding1919 = theme ?? _theme,
-        chartWidgetStoresBinding1920 = chartWidgetStoresBinding1242(
-          chartWidgetStoresBinding1919,
-          background,
-        ),
-        _chartWidgetStoresW = chartWidgetStoresBinding1242(
-          chartWidgetStoresBinding1919,
-          hoverBackground,
-        );
-      return chartWidgetStoresBinding140.createElement(
-        chartWidgetStoresBinding1917,
-        {
-          ref: ref ?? boxRef,
-          className: chartWidgetStoresV(
-            chartWidgetStoresBinding1248.Box,
-            className,
-          ),
-          "data-w-direction": direction,
-          "data-w-auto-spacing":
-            chartWidgetStoresInput66 == null &&
-            rowGap == null &&
-            columnGap == null
-              ? ""
-              : undefined,
-          "data-w-flush": flush ? "" : undefined,
-          "data-w-clip": clip ? "" : undefined,
-          "data-w-scrollable": scrollable ? "" : undefined,
-          "data-w-hover-background": _chartWidgetStoresW ? "" : undefined,
-          "data-w-align": align,
-          "data-w-justify": justify,
-          "data-w-wrap": wrap,
-          "data-w-has-height": height || minHeight ? "" : undefined,
-          "data-w-has-width": width || minWidth ? "" : undefined,
-          style: {
-            ...chartWidgetStoresBinding30({
-              "smoothing-background-color": chartWidgetStoresBinding1920,
-              "box-hover-background-color": _chartWidgetStoresW,
-            }),
-            ..._H(margin),
-            ...chartWidgetStoresBinding1245(padding),
-            ...chartWidgetStoresBinding1231(radius),
-            ...chartWidgetStoresBinding1246(
-              chartWidgetStoresBinding1919,
-              border,
-            ),
-            height,
-            width,
-            minHeight,
-            minWidth,
-            maxHeight,
-            maxWidth,
-            gap: chartWidgetStoresHelper827(chartWidgetStoresInput66),
-            ...(rowGap == null
-              ? {}
-              : {
-                  rowGap: chartWidgetStoresHelper827(rowGap),
-                }),
-            ...(columnGap == null
-              ? {}
-              : {
-                  columnGap: chartWidgetStoresHelper827(columnGap),
-                }),
-            flex,
-            flexShrink: chartWidgetStoresBinding1916 ? "0" : undefined,
-            background: chartWidgetStoresBinding1920,
-            aspectRatio: $V(aspectRatio),
-            ...style,
-          },
-          ...chartWidgetStoresBinding1918,
-        },
-        children,
-      );
-    };
-    chartWidgetStoresBinding1250 = (chartWidgetStoresInput1876) => {
-      let chartWidgetStoresBinding4856 = chartWidgetStoresHelper829(
-          chartWidgetStoresInput1876.onVisibleAction,
-        ),
-        chartWidgetStoresBinding4857 = chartWidgetStoresBinding140.useCallback(
-          (chartWidgetStoresInput3780) => {
-            chartWidgetStoresHelper830(
-              chartWidgetStoresInput1876.boxRef,
-              chartWidgetStoresInput3780,
-            );
-            chartWidgetStoresHelper830(
-              chartWidgetStoresInput1876.ref,
-              chartWidgetStoresInput3780,
-            );
-            chartWidgetStoresBinding4856(chartWidgetStoresInput3780);
-          },
-          [
-            chartWidgetStoresInput1876.boxRef,
-            chartWidgetStoresInput1876.ref,
-            chartWidgetStoresBinding4856,
-          ],
-        );
-      return createElement(chartWidgetStoresBinding1249, {
-        ...chartWidgetStoresInput1876,
-        boxRef: undefined,
-        ref: chartWidgetStoresBinding4857,
-      });
-    };
-    chartWidgetStoresD = (chartWidgetStoresInput2966) =>
-      chartWidgetStoresInput2966.onVisibleAction
-        ? createElement(chartWidgetStoresBinding1250, {
-            ...chartWidgetStoresInput2966,
-            onVisibleAction: chartWidgetStoresInput2966.onVisibleAction,
-          })
-        : createElement(chartWidgetStoresBinding1249, {
-            ...chartWidgetStoresInput2966,
-          });
+    _H = vizToMarginStyle;
+    chartWidgetStoresBinding1245 = vizToPaddingStyle;
+    chartWidgetStoresBinding1246 = vizToBorderStyle;
+    chartWidgetStoresBinding1247 = vizBoxVisibilityThreshold;
+    chartWidgetStoresBinding1248 = vizBoxClassNames;
+    chartWidgetStoresBinding1249 = vizWidgetBoxRoot;
+    chartWidgetStoresBinding1250 = vizWidgetBoxRoot;
+    chartWidgetStoresD = vizWidgetBoxRoot;
   });
 function chartWidgetStoresHelper831(
   chartWidgetStoresInput2634,
@@ -60510,13 +60026,10 @@ export const _chartWidgetStoresC = rolldownRuntimeN(() => {
   vizSetChartBundleSurface({
     createElement,
     $_,
-    chartWidgetStoresD,
-    chartWidgetStoresE,
     chartWidgetStoresF,
     chartWidgetStoresG,
     chartWidgetStoresP,
     chartWidgetStoresUnderscore,
-    chartWidgetStoresV,
     chartWidgetStoresHelper611,
     chartWidgetStoresHelper767,
     chartWidgetStoresBinding1022,

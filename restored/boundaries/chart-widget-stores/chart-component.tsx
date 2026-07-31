@@ -35,6 +35,10 @@ import {
   useResolveWidgetAction as $_,
 } from "../../visualization/chart-widget-stores/use-widget-expression";
 import { useChartIntl as chartWidgetStoresU } from "../../visualization/chart-widget-stores/use-chart-intl";
+import { useWidgetContext as chartWidgetStoresE } from "../../visualization/chart-widget-stores/widget-context";
+import { classNames as chartWidgetStoresV } from "../../visualization/chart-widget-stores/widget-class-names";
+import { WidgetBoxRoot as chartWidgetStoresD } from "../../visualization/chart-widget-stores/widget-box";
+
 
 import {
   getChartBundleSurface,
@@ -47,13 +51,10 @@ export type CodexChartComponent = (props: unknown) => ReactNode;
 function buildCodexChart(surface: ChartBundleSurface): CodexChartComponent {
   const {
     createElement,
-    chartWidgetStoresD,
-    chartWidgetStoresE,
     chartWidgetStoresF,
     chartWidgetStoresG,
     chartWidgetStoresP,
     chartWidgetStoresUnderscore,
-    chartWidgetStoresV,
     chartWidgetStoresHelper611: chartFn611,
     chartWidgetStoresHelper767: chartFn767,
     chartWidgetStoresBinding1022,
