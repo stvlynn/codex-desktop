@@ -7,7 +7,7 @@ import type { ComponentType, ReactNode } from "react";
 import { LOCAL_HOST_ID } from "../hosts/local-host-id";
 import { MemoizedFormattedMessage } from "../i18n/memoized-formatted-message";
 import { useIntl } from "../i18n/use-intl";
-import { DropdownMenu } from "../ui/dropdown-menu.tsx";
+import { DropdownMenu } from "../ui/dropdown-menu";
 import { DropdownMenuPopover } from "../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../ui/dropdown-trigger-button";
 import { HostColorDot } from "../ui/host-color-dot";

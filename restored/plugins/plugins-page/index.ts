@@ -26,3 +26,7 @@ export * from "./runtime-bridges";
 // Semantic export aliases (IMPORT_MAP)
 export { pluginsPageT as PluginsPage } from "./part-11";
 export { pluginsPageN as ensurePluginsPageInit } from "./part-15";
+// PascalCase component aliases for cross-page JSX consumers (skills-page, …).
+export { pluginsPageC as PluginsPageC } from "./part-1";
+export { pluginsPageL as PluginsPageL } from "./part-1";
+export { pluginsPageR as PluginsPageR } from "./part-9";

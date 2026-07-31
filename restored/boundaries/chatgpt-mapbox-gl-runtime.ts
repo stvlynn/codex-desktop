@@ -1,15 +1,15 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
-// npm-shim: mapbox-gl CSP runtime (replaces the drained bundled Value249 body).
+// npm-shim: mapbox-gl CSP runtime (replaces the drained bundled mapbox body).
 // Flat boundary facade — third-party mapbox-gl re-export for ChatGPT map widgets.
 
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp.js";
 import { rolldownRuntimeN } from "../runtime/rolldown-runtime";
 
-/** Stock mapbox-gl CSP build (was bundled Value249 / chatgptMapboxGlRuntime). */
+/** Stock mapbox-gl CSP build (was bundled chatgptMapboxGlRuntime). */
 export const chatgptMapboxGlRuntime = mapboxgl;
 export default mapboxgl;
 
-/** Worker URL for the CSP build (was Value250). */
+/** Worker URL for the CSP build. */
 export let chatgptMapboxGlWorkerUrl: string = "";
 
 export const ensureChatgptMapboxGlWorkerUrlInit = rolldownRuntimeN(() => {
@@ -22,10 +22,3 @@ export const ensureChatgptMapboxGlWorkerUrlInit = rolldownRuntimeN(() => {
 /** Residual empty peer init previously emitted next to the bundled runtime. */
 export const _v = rolldownRuntimeN(() => {});
 export const ensureChatgptMapboxGlStubInit = rolldownRuntimeN(() => {});
-
-export {
-  chatgptMapboxGlRuntime as useChatgptComposerControllerValue249,
-  ensureChatgptMapboxGlWorkerUrlInit as useChatgptComposerControllerValue251,
-  ensureChatgptMapboxGlStubInit as useChatgptComposerControllerValue252,
-};
-export { chatgptMapboxGlWorkerUrl as useChatgptComposerControllerValue250 };

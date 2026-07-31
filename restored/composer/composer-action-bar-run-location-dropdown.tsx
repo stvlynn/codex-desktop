@@ -7,7 +7,7 @@ import { OptionalTooltip } from "../ui/optional-tooltip";
 import { Button } from "../ui/button";
 import { MemoizedFormattedMessage } from "../i18n/memoized-formatted-message";
 import { useIntl } from "../i18n/use-intl";
-import { DropdownMenu, ensureDropdownMenuInit } from "../ui/dropdown-menu.tsx";
+import { DropdownMenu, ensureDropdownMenuInit } from "../ui/dropdown-menu";
 import {
   DropdownMenuPopover,
   ensureDropdownMenuPopoverInit,

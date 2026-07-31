@@ -1,3 +1,4 @@
+// Restored from ref/webview/assets/mermaid.core-CtG2uVQZ.js
 // Ambient bridges for mermaid@11.12.0 published diagram/layout chunk subpaths.
 // The package exports "./*" but ships no .d.ts beside the hashed .mjs chunks.
 

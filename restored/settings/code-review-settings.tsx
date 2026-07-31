@@ -11,7 +11,7 @@ import { toastAtom } from "../boundaries/toast-atom";
 import { MemoizedFormattedMessage } from "../i18n/memoized-formatted-message";
 import { useIntl } from "../i18n/use-intl";
 import { Button } from "../ui/button";
-import { DropdownMenu } from "../ui/dropdown-menu.tsx";
+import { DropdownMenu } from "../ui/dropdown-menu";
 import { DropdownMenuPopover } from "../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../ui/dropdown-trigger-button";
 import { Switch } from "../ui/switch";
