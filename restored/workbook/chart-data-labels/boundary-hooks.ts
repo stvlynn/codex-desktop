@@ -2,6 +2,9 @@
 // Stage-3 wave-98: chart-data-labels boundary hooks.
 
 export type ChartDataLabelsBoundaryHooks = {
+  En: any;
+  formatFallback: (...args: any[]) => any;
+  formatNumber: (...args: any[]) => any;
   bh152: (...args: any[]) => any;
   /** Color resolve (workbookSt). */
   resolveColor: (...args: any[]) => any;

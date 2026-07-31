@@ -16,3 +16,5 @@ export {
   pathCommandsToClipPoints,
   cTe,
 } from "./path-commands-to-clip-impl";
+
+export { roundRectPath, NSe } from "./round-rect-path-impl";

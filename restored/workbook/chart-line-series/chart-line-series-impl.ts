@@ -18,6 +18,7 @@ import {
 } from "../../vendor/d3-shape-line-pie-stack";
 import { workbookHelper348 } from "../chart-asset";
 import { clnH } from "./boundary-hooks";
+import { paintSeriesMarker } from "./paint-series-marker-impl";
 
 void Nn;
 void stack;
@@ -166,7 +167,7 @@ export function paintLineSeries(
     });
     !(!clnH.bh479(clnBind4650) || clnBind4653.length === 0) &&
       clnBind4653.forEach(({ cx, cy }) => {
-        clnH.bh480(
+        paintSeriesMarker(
           clnIn554,
           clnBind4650,
           clnIn558,

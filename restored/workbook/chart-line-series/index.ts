@@ -8,3 +8,8 @@ export {
   workbookHelper528,
   axe,
 } from "./chart-line-series-impl";
+
+export {
+  paintSeriesMarker,
+  workbookHelper480,
+} from "./paint-series-marker-impl";

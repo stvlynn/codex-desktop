@@ -2,6 +2,9 @@
 // Stage-3 wave-99/103: chart-line-series boundary hooks.
 
 export type ChartLineSeriesBoundaryHooks = {
+  emuToPx: any;
+  bh464: (...args: any[]) => any;
+  bh463: (...args: any[]) => any;
   bh425: (...args: any[]) => any;
   bh433: (...args: any[]) => any;
   bh479: (...args: any[]) => any;

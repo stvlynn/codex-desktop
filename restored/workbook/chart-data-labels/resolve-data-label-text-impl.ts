@@ -1,0 +1,85 @@
+// Restored from ref/webview/assets/workbook-C49Dgk1_.js
+// Semantic implementation: data-label text resolve (legacy helper495).
+// Stage-3 wave-109.
+
+import { cdlH } from "./boundary-hooks";
+
+void cdlH;
+
+export function isDataCallout(cdlIn14385: any) {
+  return cdlIn14385?.kind === "dataCallout";
+}
+export function isDataLabelDeleted(cdlIn13674: any, cdlIn13675: any) {
+  return cdlIn13675?.deleted ?? cdlIn13674?.deleted ?? false;
+}
+export function seriesShowsValueLabels(cdlIn7865: any) {
+  return cdlIn7865.series.some((item) =>
+    isDataLabelDeleted(cdlIn7865.dataLabels, item.dataLabels)
+      ? false
+      : item.dataLabels === undefined
+        ? cdlIn7865.dataLabels?.showValue === true
+        : item.dataLabels.showValue === true,
+  );
+}
+export function resolveDataLabelText(cdlIn2186: any, cdlIn2187: any, cdlIn2188: any, cdlIn2189: any, ) {
+  let cdlBind9192 = cdlIn2186.dataLabels,
+    cdlBind9193 = cdlIn2187.dataLabels,
+    cdlBind9194;
+  if (cdlIn2187.dataLabelOverrides)
+    for (
+      let cdlBind19704 =
+        cdlIn2187.dataLabelOverrides.length - 1;
+      cdlBind19704 >= 0;
+      --cdlBind19704
+    ) {
+      let cdlBind21501 =
+        cdlIn2187.dataLabelOverrides[cdlBind19704];
+      if (cdlBind21501?.idx === cdlIn2188) {
+        cdlBind9194 = cdlBind21501;
+        break;
+      }
+    }
+  let cdlBind9195 =
+      cdlBind9194?.showValue ??
+      (cdlBind9193 === undefined
+        ? cdlBind9192?.showValue === true
+        : cdlBind9193.showValue === true),
+    cdlBind9196 = isDataLabelDeleted(
+      cdlBind9192,
+      cdlBind9193,
+    ),
+    cdlBind9197 =
+      cdlBind9194?.position ??
+      cdlBind9193?.position ??
+      cdlBind9192?.position ??
+      cdlH.En.DATA_LABEL_POSITION_OUT_END,
+    cdlBind9198 = cdlBind9194?.text ?? "";
+  cdlBind9198 ||= cdlH.formatNumber(
+    cdlIn2189,
+    cdlBind9193?.numberFormatCode ??
+      cdlBind9192?.numberFormatCode ??
+      cdlIn2187.valuesFormatCode ??
+      undefined,
+  );
+  let cdlBind9199 =
+    cdlBind9194?.textStyle ??
+    cdlBind9193?.textStyle ??
+    cdlBind9192?.textStyle ??
+    undefined;
+  return {
+    show: !cdlBind9196 && cdlBind9195,
+    position: cdlBind9197,
+    callout:
+      isDataCallout(cdlBind9194) ||
+      isDataCallout(cdlBind9193) ||
+      isDataCallout(cdlBind9192),
+    text: cdlBind9198,
+    textStyle: cdlBind9199,
+  };
+}
+
+/** Legacy aliases. */
+export const workbookHelper492 = isDataCallout;
+export const workbookHelper493 = isDataLabelDeleted;
+export const workbookHelper494 = seriesShowsValueLabels;
+export const workbookHelper495 = resolveDataLabelText;

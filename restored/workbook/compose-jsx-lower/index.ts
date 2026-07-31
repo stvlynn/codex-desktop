@@ -61,3 +61,5 @@ export {
 } from "./lower-element-impl";
 
 export { lowerPanelSurfaceTag, JOe } from "./lower-panel-impl";
+
+export { createBoxElement, workbookHelper713 } from "./create-box-element-impl";

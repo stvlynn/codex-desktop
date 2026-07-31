@@ -2,6 +2,9 @@
 // Stage-3 wave-93/104: compose-jsx-lower boundary hooks.
 
 export type ComposeJsxLowerBoundaryHooks = {
+  boxGrid: (...args: any[]) => any;
+  boxCol: (...args: any[]) => any;
+  boxRow: (...args: any[]) => any;
   bh700: (...args: any[]) => any;
   bh701: (...args: any[]) => any;
   lowerSemanticTag: (...args: any[]) => any;

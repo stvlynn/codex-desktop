@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~51.2k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~50.5k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -202,6 +202,15 @@
 | Complex real/imag (`helper893`/`$4`) | ~0.14k | **Drained (wave-108)** → `workbook/formula-complex/` |
 | CUMIPMT + DB (`E0e`/`D0e`) | ~0.13k | **Drained (wave-108)** → `workbook/formula-financial/` |
 | CF date/color-scale/data-bar (`oht`/`Nht`/`Pht`) | ~0.21k | **Drained (wave-108)** → `workbook/conditional-format/` |
+| Compose box factory (`helper713`) | ~0.06k | **Drained (wave-109)** → `workbook/compose-jsx-lower/` |
+| MATCH (`DZe`) | ~0.06k | **Drained (wave-109)** → `workbook/formula-match/` |
+| Stacked domain (`helper389`/`390`/`_ye`) | ~0.09k | **Drained (wave-109)** → `workbook/chart-stacked-domain/` |
+| Series marker (`helper480`) | ~0.06k | **Drained (wave-109)** → `workbook/chart-line-series/` |
+| Sunburst layout (`BSe`+cluster) | ~0.21k | **Drained (wave-109)** → `workbook/chart-sunburst-layout/` |
+| Element text layout (`XDe`/`helper676`) | ~0.14k | **Drained (wave-109)** → `workbook/element-text-layout/` |
+| Data-label text (`helper495`) | ~0.08k | **Drained (wave-109)** → `workbook/chart-data-labels/` |
+| Shape.add normalize (`hze`) | ~0.07k | **Drained (wave-109)** → `workbook/shape-element/` |
+| Round-rect path (`NSe`) | ~0.06k | **Drained (wave-109)** → `workbook/shape-path/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1395,4 +1404,12 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary 52006 → 51226 (Δ -780)
 - Peeled: ibe+abe, helper455/456/458, helper532, UTe+HTe, helper876, helper893+$4, E0e+D0e, oht+uht, Nht+Pht
 - Skipped FALSE ict nests (Llt/kpt/…), Qwe leave-behinds, CSe dead, FALSE/ESM inventory
+- openBoundary remains while mega still large
+
+## Wave 109 (Stage-3 mid peel)
+
+- Boundary 51226 → 50500 (Δ -726)
+- Peeled: helper713, DZe, helper389+_ye+390, helper480, BSe+VSe/HSe/USe/567/WSe, XDe+ZDe/QDe+helper676, helper495+492/493/494, hze+helper786, NSe
+- Skipped Qwe (leave-behinds), I8e/iOe/QOe heavy, FALSE/ESM nests, rze/kht
+- WorkbookN/_workbookS: still no top decls (method-peeled)
 - openBoundary remains while mega still large

@@ -14,3 +14,10 @@ export {
   workbookBinding738,
 } from "./se-slots";
 export { workbookBinding739 } from "./shape-class-impl";
+
+export {
+  requireShapeTarget,
+  normalizeShapeAddProps,
+  workbookHelper786,
+  hze,
+} from "./normalize-shape-add-impl";

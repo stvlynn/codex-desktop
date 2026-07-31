@@ -4,6 +4,7 @@
 export type ShapeElementBoundaryHooks = {
   /** Legacy Mde ensure (border-radius/shadow/shape-utility + Binding412/gae). */
   ensureMde: () => void;
+  ShapeClass: any;
 };
 
 /** Live bag for intentional leave-behind ensures. */
@@ -12,5 +13,5 @@ export const seH: ShapeElementBoundaryHooks = {} as ShapeElementBoundaryHooks;
 export function wireShapeElementBoundaryHooks(
   next: ShapeElementBoundaryHooks,
 ): void {
-  seH.ensureMde = next.ensureMde;
+  Object.assign(seH, next);
 }

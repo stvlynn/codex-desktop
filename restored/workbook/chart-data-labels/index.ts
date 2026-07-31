@@ -6,3 +6,10 @@ export {
   paintChartDataLabel,
   workbookHelper500,
 } from "./chart-data-labels-impl";
+
+export {
+  isDataCallout,
+  isDataLabelDeleted,
+  seriesShowsValueLabels,
+  resolveDataLabelText,
+} from "./resolve-data-label-text-impl";
