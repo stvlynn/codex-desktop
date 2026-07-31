@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Semantic composer-domain API: typed aliases over the open oversized runtime body.
-// Stage-3 wave-10: Value311/355 drained; Value359→_D extracted.
-// Residual: _O/U mega-init (not cleanly shrinkable — deep Value318+ fan-in).
+// Stage-3 wave-11: U fan-in Value318/324/327/332/336/349 drained; U→_O extracted.
+// Residual: Value303/306/308 markdown-registry mountain.
 
 export type {
   ChatgptBrowserConversationBannerProps,
@@ -402,11 +402,20 @@ export {
 } from "./chatgpt-subagent-final-response-atom";
 export { ensureChatgptComposerSubagentOverlayDepsInit } from "./ensure-chatgpt-composer-controller-aux-init-d";
 
-import {
-  _useChatgptComposerControllerO,
-  useChatgptComposerControllerU,
-} from "../../boundaries/use-chatgpt-composer-controller";
+
+export {
+  ensureChatgptTrustedContactSurfaceInit,
+  ensureChatgptAssistantMessageSurfaceInit,
+  ensureChatgptConversationWorkRouteSurfaceInit,
+  ensureChatgptHandoffPeerSurfaceInit,
+  ensureChatgptComposerWidgetSurfaceInit,
+  ensureChatgptSafetyReviewSurfaceInit,
+} from "./ensure-chatgpt-composer-controller-u-fanin";
+export { ensureChatgptComposerStreamingContextInit } from "./chatgpt-composer-streaming-context";
+
 import { _useChatgptComposerControllerD } from "./ensure-chatgpt-composer-controller-aux-init-d";
+import { _useChatgptComposerControllerO } from "./ensure-chatgpt-composer-controller-aux-init-o";
+import { useChatgptComposerControllerU } from "./ensure-chatgpt-composer-controller-aux-init-u";
 import {
   useChatgptComposerControllerA,
   useChatgptComposerControllerK,

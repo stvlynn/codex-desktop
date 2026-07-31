@@ -27,3 +27,16 @@ export function useChatgptComposerControllerHelper256(
     reference,
   });
 }
+
+let ensureContentReferenceFootnoteDepsInitImpl: (() => void) | null = null;
+
+/** Boundary registers Value134 here so extracted Value324 avoids a circular import. */
+export function setEnsureChatgptContentReferenceFootnoteDepsInit(
+  fn: () => void,
+): void {
+  ensureContentReferenceFootnoteDepsInitImpl = fn;
+}
+
+export function ensureChatgptContentReferenceFootnoteDepsInit(): void {
+  ensureContentReferenceFootnoteDepsInitImpl?.();
+}
