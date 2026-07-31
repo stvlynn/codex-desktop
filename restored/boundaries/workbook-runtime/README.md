@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~79.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~78.4k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -78,6 +78,8 @@
 | Shape element (`Binding736`/`739`) | ~0.76k | **Drained (wave-80)** → `workbook/shape-element/` |
 | Slides collection (`_workbookY`/`_workbookV`) | ~0.91k | **Drained (wave-81)** → `workbook/slides-collection/` |
 | Constraint solver (`bDe` / Binding1364–1368) | ~0.76k | **Drained (wave-82)** → `workbook/constraint-solver/` |
+| Constraint solver prelude (Binding1350–1363) | ~0.39k | **Drained (wave-83)** → `workbook/constraint-solver/` |
+| Formula opcodes (`Z_t`/`X_t`) | ~0.50k | **Drained (wave-83)** → `workbook/formula-opcodes/` |
 
 ## Why it stays in `boundaries/`
 
@@ -927,4 +929,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 79255 (was 79982; Δ -727).
 - Next: no remaining ≥700 safe peels — only leave-behinds (`_workbookS` ~1.2k, WorkbookN shell ~1.8k) or strategy change (lower bar / peel Expression+Strength prelude with solver / walnut `xLe`).
+
+## Wave-83 progress
+
+- Re-scan ≥400 esmInit clusters: WorkbookN ~1845 (leave), `_workbookS` ~1236 (leave), `_workbookH` ~568, `$dt` ~566, `Z_t` ~498, `Z$` ~460. No ≥700 safe peels.
+- Expanded constraint-solver with Expression/Strength/Constraint/PairMap/Variable prelude (helper668 + Binding1350–1363 + hDe, ~387 LOC); `csH` leave-behind hooks cleared.
+- Extracted self-contained Excel formula opcode map `Z_t`/`X_t` (~498 LOC) → `workbook/formula-opcodes/`.
+- Deferred `_workbookH`/`$dt` (heavy boundary ensure fan-out) and leave-behinds `_workbookS`/WorkbookN shell.
+- Left `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, `_Ye`/`_workbookS`, `cDe`/`_workbookH`, `$dt`, `Z$`, `jgt` sheet-meta, and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 78381 (was 79255; Δ -874).
+- Next: `_workbookH`+eDe..cDe table-element (~0.7k) / `$dt` formula registry (~0.57k) / clean `xLe` walnut / leave-behinds only if consumers clean.
 

@@ -1,24 +1,33 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: Cassowary/kiwi constraint Solver
 // (legacy bDe / Binding1364–1368).
-// Stage-3 wave-82 cohesive constraint-solver impl kept flat under maxFlatLines.
+// Stage-3 wave-82/83: Solver impl; prelude drained wave-83.
 
 import { esmInit } from "../../runtime/rolldown-runtime";
 import {
+  workbookBinding1358,
+  workbookBinding1360,
+  workbookBinding1361,
   workbookBinding1364,
   workbookBinding1365,
   workbookBinding1366,
   workbookBinding1367,
   workbookBinding1368,
 } from "./cs-slots";
-import { csH } from "./boundary-hooks";
+import {
+  workbookBinding1352,
+  workbookBinding1357,
+  workbookBinding1359,
+  workbookBinding1363,
+  createPairMap,
+} from "./solver-prelude-impl";
 import { nearZero } from "./near-zero";
 
 export const bDe = esmInit(() => {
-  csH.ensureBinding1363();
-  csH.ensureBinding1357();
-  csH.ensureBinding1352();
-  csH.ensureBinding1359();
+  workbookBinding1363();
+  workbookBinding1357();
+  workbookBinding1352();
+  workbookBinding1359();
   workbookBinding1364 = class {
     maxIterations = 1e3;
     constructor() {}
@@ -26,9 +35,9 @@ export const bDe = esmInit(() => {
       csIn10187,
       csIn10188,
       csIn10189,
-      csIn10190 = csH.Strength.required,
+      csIn10190 = workbookBinding1358.required,
     ) {
-      let csBind20647 = new csH.Constraint(
+      let csBind20647 = new workbookBinding1361(
         csIn10187,
         csIn10188,
         csIn10189,
@@ -86,13 +95,13 @@ export const bDe = esmInit(() => {
       if (this._editMap.find(csIn3792) !== undefined)
         throw Error("duplicate edit variable");
       if (
-        ((csIn3793 = csH.Strength.clip(csIn3793)),
-        csIn3793 === csH.Strength.required)
+        ((csIn3793 = workbookBinding1358.clip(csIn3793)),
+        csIn3793 === workbookBinding1358.required)
       )
         throw Error("bad required strength");
-      let csBind12542 = new csH.Constraint(
+      let csBind12542 = new workbookBinding1361(
         new csBind1356(csIn3792),
-        csH.Operator.Eq,
+        workbookBinding1360.Eq,
         undefined,
         csIn3793,
       );
@@ -196,14 +205,14 @@ export const bDe = esmInit(() => {
           other: workbookBinding1367,
         };
       switch (csIn807.op()) {
-        case csH.Operator.Le:
-        case csH.Operator.Ge: {
-          let csBind14930 = csIn807.op() === csH.Operator.Le ? 1 : -1,
+        case workbookBinding1360.Le:
+        case workbookBinding1360.Ge: {
+          let csBind14930 = csIn807.op() === workbookBinding1360.Le ? 1 : -1,
             csBind14931 = this._makeSymbol(workbookBinding1365.Slack);
           if (
             ((csBind5431.marker = csBind14931),
             csBind5427.insertSymbol(csBind14931, csBind14930),
-            csBind5430 < csH.Strength.required)
+            csBind5430 < workbookBinding1358.required)
           ) {
             let csBind20364 = this._makeSymbol(workbookBinding1365.Error);
             csBind5431.other = csBind20364;
@@ -212,8 +221,8 @@ export const bDe = esmInit(() => {
           }
           break;
         }
-        case csH.Operator.Eq:
-          if (csBind5430 < csH.Strength.required) {
+        case workbookBinding1360.Eq:
+          if (csBind5430 < workbookBinding1358.required) {
             let csBind15141 = this._makeSymbol(workbookBinding1365.Error),
               csBind15142 = this._makeSymbol(workbookBinding1365.Error);
             csBind5431.marker = csBind15141;
@@ -469,10 +478,10 @@ export const bDe = esmInit(() => {
     _makeSymbol(csIn13056) {
       return new workbookBinding1366(csIn13056, this._idTick++);
     }
-    _cnMap = csH.createPairMap();
-    _rowMap = csH.createPairMap();
-    _varMap = csH.createPairMap();
-    _editMap = csH.createPairMap();
+    _cnMap = createPairMap();
+    _rowMap = createPairMap();
+    _varMap = createPairMap();
+    _editMap = createPairMap();
     _infeasibleRows = [];
     _objective = new workbookBinding1368();
     _artificial = null;
