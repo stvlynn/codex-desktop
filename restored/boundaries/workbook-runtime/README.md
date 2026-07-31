@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~185.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~180.9k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -51,6 +51,7 @@
 | Fill-from / formula-address (dme…helper336) | ~0.4k (post-formula) | **Drained (wave-45)** → `workbook/range-fill/` + `formula-address/` |
 | Range VO (Binding672/675 + bme/xme/Sme) | ~3.0k | **Drained (wave-46)** → `workbook/range/` |
 | PivotCaches (Binding676 / Cme) | ~1.1k | **Drained (wave-47)** → `workbook/pivot-caches/` |
+| Slicers (Binding677–684 / Tme/Eme) | ~0.42k | **Drained (wave-48)** → `workbook/slicers/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -535,5 +536,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 181252.
-- Next: pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Cme slicer / PivotTable VO cluster; continue scanning for stock vendor fingerprints.
+- Next: ~~post-Cme slicer Binding677+~~ (done wave-48); pivot Binding335/336/338 + Class53 if cleanly separable, or PivotTable Binding369/`_u` (peel under flat limit).
+
+
+## Wave-48 progress
+
+- Extracted slicer / Slicers VO (`Binding677`–`684` / `helper337` / `wme` / `Tme`/`Eme`) → `workbook/slicers/`.
+- Wired layout refresh via existing `pivot-caches` `refreshPivotTableLayout` hook; boundary keeps thin `Tme`/`Eme` aliases for `Binding683`/`684`.
+- Left Binding662/`_C` init gate, pivot enums Binding335/336/338 + Class53, PivotTable Binding369/`_u`, and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 180852.
+- Next: pivot Binding335/336/338 + Class53 if cleanly separable (unlocks PivotTable), or PivotTable Binding369/`_u` peeled under flat limit; continue scanning for stock vendor fingerprints.
 
