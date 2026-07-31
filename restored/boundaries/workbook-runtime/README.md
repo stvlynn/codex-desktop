@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~196.2k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~195.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -37,7 +37,8 @@
 | RangeFormat (`Binding337` + `helper240`–`Jle` + `Binding589`–`593`/`Yle`) | ~1.8k | **Drained (wave-28)** → `workbook/range-format/`
 | Icon-set (`Binding594`/`helper256`–`259`) | ~0.13k | **Drained (wave-29)** → `workbook/icon-set/`
 | TextRun/Paragraph VOs (`Binding597`–`612`/`Xle`/`Zle`/`helper260`–`261`) | ~0.58k | **Drained (wave-29)** → `workbook/text-run/`
-| Style-tokens (`Qle`/`Binding613`–`621`/`helper262`–`271`/`iue`/`aue`/`_x`) | ~0.43k | **Drained (wave-30)** → `workbook/style-tokens/` |
+| Style-tokens (`Qle`/`Binding613`–`621`/`helper262`–`271`/`iue`/`aue`/`_x`) | ~0.43k | **Drained (wave-30)** → `workbook/style-tokens/`
+| Text-selection (`Binding622`/`623` / WorkbookClass6) | ~1.06k | **Drained (wave-31)** → `workbook/text-selection/` |
 | Document glue | scattered | DOCX protobuf already faced under `workbook/document-*` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
@@ -319,6 +320,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain + Binding621 peel (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 196204.
-- Next: Binding622/623 text-selection class (WorkbookClass6) or remaining pivot VO surface (335/336/338); continue scanning for stock vendor fingerprints.
+- Next: ~~Binding622/623 text-selection class (WorkbookClass6)~~ (done wave-31); remaining pivot VO surface (335/336/338) or WorkbookClass4 / helper272+ detached-text cluster.
+
+
+## Wave-31 progress
+
+- Extracted TextSelection VO (`Binding622`/`WorkbookClass6`) with method peels (compare + replace/insertAfter/run-split/mutation helpers) → `workbook/text-selection/`.
+- Extracted cluster ensure (`Binding623`) → `workbook/text-selection/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, pivot enums `Binding335`/`336`/`338`, and WorkbookClass4 / helper272+ detached-text cluster in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 195149.
+- Next: WorkbookClass4 / helper272–285 detached-text cluster, or remaining pivot VO surface (335/336/338); continue scanning for stock vendor fingerprints.
 
 
