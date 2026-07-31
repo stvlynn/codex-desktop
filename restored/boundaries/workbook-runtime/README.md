@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~151.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~143.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -57,7 +57,8 @@
 | Formula array/eval (helper31–61 + $u Binding370–374) | ~1.1k | **Drained (wave-51)** → `workbook/formula-array/` |
 | PivotLayout/cache hydrate (Binding334/wne + Cne/el/332/333 + helper24/hre) | ~0.37k | **Drained (wave-52)** → `workbook/pivot-table/` + `workbook/pivot-caches/`
 | Yjs + lib0 (`Binding1`–`331` / `no` / `Bte`) | ~9.5k | **Drained (wave-53)** → `vendor/yjs` npm shim (`yjs@13.6.27`)
-| Three.js (`Binding929`/`Xbe` + MathUtils helpers) | ~15.3k | **Drained (wave-54)** → `vendor/three` npm shim (`three@0.170.0`) |
+| Three.js (`Binding929`/`Xbe` + MathUtils helpers) | ~15.3k | **Drained (wave-54)** → `vendor/three` npm shim (`three@0.170.0`)
+| highlight.js grammars (`wke`…`aAe` + `oAe`/`sAe`; contiguous after Binding1574/`Cke`) | ~7.9k | **Drained (wave-55)** → `boundaries/highlight-js` npm shim (`highlight.js@^11.11.1`) |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -619,4 +620,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on vendor shim + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 151261.
 - Next: Binding1574 (~8.2k) / Binding1790 (~8.0k) / Binding1996 (~4.5k), or Binding740 / `The` / `BYe`; continue scanning for stock vendor fingerprints.
+
+
+## Wave-55 progress
+
+- Identified Binding1574 as layout-element kind/prop Sets (`Cke`, ~258 LOC) — app schema, not vendor. Contiguous ~8.2k block = Cke + stock highlight.js language pack.
+- Replaced inlined highlight.js grammars (`wke`…`aAe`) + `oAe`/`sAe` registerLanguage bootstrap (~7.9k LOC) with existing `boundaries/highlight-js` npm shim (`Core()` → `highlight.js@^11.11.1`).
+- Kept thin boundary aliases: `Binding1591`=`Core()`, `sAe`=no-op init. Retained Binding1574/`Cke` in boundary.
+- Left Binding662/`_C`, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on highlight-js shim + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 143331.
+- Next: Binding1790 (~8.0k Zod cluster) / Binding1996 (~4.5k) / Binding1390 (~3.8k) / Binding740 (~3.0k), or `The`/`BYe`; continue scanning for stock vendor fingerprints.
 
