@@ -166,4 +166,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 217443.
-- Next: worksheet/spreadsheet core if a clean line-range slice appears, or placeholder-resolve / `_workbookTt` neighbors beside the drained locus.
+- Next: ~~placeholder-resolve / `_workbookTt` neighbors~~ (done wave-17); `yce`/text-layout engine (`kce`/`j_`) if a clean slice appears, or worksheet/spreadsheet core.
+
+## Wave-17 progress
+
+- Extracted `_workbookTt` + placeholder-resolve neighbors (`helper189`–`193`, `ece`/`tce`/`nce`, `Binding521`) + theme typeface (`helper194`–`196`, `Binding522`) + contiguous layout helpers through auto-number format (`helper197`/`198`, `rce`/`ice`, `ace`/`$g`, docx-scheme parsers, `i_`/`a_`/`vce`) → `workbook/placeholder-resolve/`.
+- Lifted DOCX scheme constants (`v_`/`y_`/`b_`/`x_`/`S_`/`C_`/`w_`/`T_`/`O_`/`A_`) out of `kce`; left `yce` + text-layout engine (`kce`/`j_`) in boundary.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 217035.
+- Next: `yce`/text-layout engine (`kce`/`j_`) if a clean slice appears, or worksheet/spreadsheet core.
