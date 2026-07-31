@@ -22,10 +22,10 @@ import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-an
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { defaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { chatgptConversationBranchAtom, chatgptConversationFlagsAtom, chatgptConversationLoadQueryAtom, chatgptConversationPreviewAtom, chatgptConversationServerIdAtom, chatgptConversationsGateAtom, chatgptConversationStatusAtom, chatgptConversationTitleAtom, chatgptThreadDerivedAtomBP, useStepsProseAtom, writingBlocksControllerAtom } from "../../boundaries/composer-appscope-atoms";
 import { ensureComposerEsm_AG_Init, ensureComposerEsm_BF_Init, ensureComposerEsm_BI_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_II_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KF_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MF_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_Ytt_Init, ensureComposerEsm_ZI_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Jj_Init, ensureConversationPageEsm_Lo_Init, ensureConversationPageEsm_Mx_Init, ensureConversationPageEsm_Qa_Init, ensureConversationPageEsm_SP_Init, ensureConversationPageEsm_TP_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Jj_Init, ensureConversationPageEsm_Lo_Init, ensureConversationPageEsm_Mx_Init, ensureConversationPageEsm_Qa_Init, ensureConversationPageEsm_SP_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
 import { isIterateeCall } from "../../boundaries/lodash-clone-deep-guts";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
@@ -183,7 +183,7 @@ const deferredConversationF83: any = undefined;
 const AppInitialFF: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:findCachedConversationItem@conversation/find-cached-conversation-item.ts) */
 const AppInitialFN: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_FV_Init@boundaries/conversation-page-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_FV_Init@conversation/conversation-page-esm-inits.ts) */
 const AppInitialFV: any = undefined;
 /** Wave FZ unresolved companion (missing-export:thread/thread-find-atoms.ts) */
 const ensureThreadFindStoreInit: any = undefined;
@@ -191,9 +191,9 @@ const ensureThreadFindStoreInit: any = undefined;
 const AppInitialGL: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:renameThreadDialogMessages@sidebar/rename-thread-dialog-messages.ts) */
 const AppInitialGo: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_GS_Init@boundaries/conversation-page-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_GS_Init@conversation/conversation-page-esm-inits.ts) */
 const AppInitialGS: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_Ih_Init@boundaries/conversation-page-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_Ih_Init@conversation/conversation-page-esm-inits.ts) */
 const AppInitialIh: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:getProjectGizmoId@conversation/get-project-gizmo-id.ts) */
 const AppInitialIN: any = undefined;
@@ -219,13 +219,13 @@ const AppInitialMF: any = undefined;
 const AppInitialMN: any = undefined;
 /** Wave FZ unresolved companion (missing-export:ui/deferred-ui-mp2.tsx) */
 const AppInitialMP: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_MR_Init@boundaries/conversation-page-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_MR_Init@conversation/conversation-page-esm-inits.ts) */
 const AppInitialMR: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:isChatgptMessageNode@conversation/is-chatgpt-message-node.ts) */
 const AppInitialNI: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:useIsMountedRef@hooks/use-is-mounted-ref.ts) */
 const AppInitialNR: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_NZ_Init@boundaries/conversation-page-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_NZ_Init@conversation/conversation-page-esm-inits.ts) */
 const AppInitialNZ: any = undefined;
 /** Wave FZ unresolved companion (missing-export:utils/wave-at-gap-ensure-inits.ts) */
 const ensureSelectWorkspaceOhInit: any = undefined;
@@ -253,13 +253,13 @@ const AppInitialPV: any = undefined;
 const AppInitialQj: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:useAppsByIdsForHost@apps/use-apps-by-ids-for-host.ts) */
 const AppInitialRG: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_Rh_Init@boundaries/conversation-page-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_Rh_Init@conversation/conversation-page-esm-inits.ts) */
 const AppInitialRh: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:chatgptProjectQueryKey@conversation/chatgpt-conversation-query-keys.ts) */
 const AppInitialRN: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_TF_Init@boundaries/conversation-page-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_TF_Init@conversation/conversation-page-esm-inits.ts) */
 const AppInitialTF: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_TP_Init@boundaries/conversation-page-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureConversationPageEsm_TP_Init@conversation/conversation-page-esm-inits.ts) */
 const AppInitialTP: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:siteAnalyticsEventsPath@appgen/site-analytics-paths.ts) */
 const AppInitialTT: any = undefined;

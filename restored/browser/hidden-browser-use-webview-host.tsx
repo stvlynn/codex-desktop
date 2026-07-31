@@ -6,7 +6,7 @@
 import { CodexBrowserSurfaceActionType } from "../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
 import { ensureComposerEsm_M0_Init, ensureComposerEsm_MT_Init } from "../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_B0_Init } from "../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_B0_Init } from "../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { MEMORIES_ID } from "../config/memories-id";
 import { filterProjectsByHost as FilterProjectsByHost } from "../environments/filter-projects-by-host";

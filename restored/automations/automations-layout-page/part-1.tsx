@@ -36,7 +36,7 @@ import {
   ensureAppScopeHostInit,
   ensureAppScopeInit,
   useAppScope,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   useAppScopeValue,
   useStepsProseAtom,
@@ -66,7 +66,7 @@ import {
   ensureConversationPageEsm_GZ_Init,
   ensureConversationPageEsm_pvt_Init,
   ensureConversationPageEsm_xB_Init,
-} from "../../boundaries/conversation-page-esm-inits";
+} from "../../conversation/conversation-page-esm-inits";
 import {
   react,
   reactCompilerRuntime,
@@ -275,7 +275,7 @@ const deferredHostsO3: any = undefined;
 const deferredUiOk: any = undefined;
 /** Unresolved companion (jsx-collision:areAutomationSchedulesEqual@automation/are-automation-schedules-equal.ts) */
 const AppInitialOu: any = undefined;
-/** Unresolved companion (jsx-collision:ensureConversationPageEsm_oZ_Init@boundaries/conversation-page-esm-inits.ts) */
+/** Unresolved companion (jsx-collision:ensureConversationPageEsm_oZ_Init@conversation/conversation-page-esm-inits.ts) */
 const AppInitialOZ: any = undefined;
 /** Unresolved companion (jsx-collision:inboxItems@desktop/inbox-items.ts) */
 const AppInitialPs: any = undefined;

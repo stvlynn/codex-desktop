@@ -16,7 +16,7 @@ import {
   appScopeAtom,
   ensureAppScopeHostInit,
   ensureAppScopeInit,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   _chartWidgetStoresC,
   _chartWidgetStoresS,
@@ -44,7 +44,7 @@ import {
 import {
   ensureConversationPageEsm_Act_Init,
   ensureConversationPageEsm_B0_Init,
-} from "../../boundaries/conversation-page-esm-inits";
+} from "../../conversation/conversation-page-esm-inits";
 import {
   react,
   reactCompilerRuntime,
@@ -98,7 +98,7 @@ import {
 const AppInitialCT: any = undefined;
 /** Unresolved companion (jsx-collision:siteAnalyticsPath@appgen/site-analytics-paths.ts) */
 const AppInitialET: any = undefined;
-/** Unresolved companion (jsx-collision:ensureConversationPageEsm_oZ_Init@boundaries/conversation-page-esm-inits.ts) */
+/** Unresolved companion (jsx-collision:ensureConversationPageEsm_oZ_Init@conversation/conversation-page-esm-inits.ts) */
 const AppInitialOZ: any = undefined;
 /** Unresolved companion (jsx-collision:ensureAccountPlanQueryInit@account/ensure-account-plan-query-init.ts) */
 const AppInitialST: any = undefined;

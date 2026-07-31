@@ -10,7 +10,7 @@ import { CodexConversationalOnboardingExecutionAction } from "../../analytics/co
 import { CodexOnboardingWizardAction } from "../../analytics/codex-onboarding-wizard-action";
 import { CodexReferralInviteModalAction } from "../../analytics/codex-referral-invite-modal-action";
 import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_Ist_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_Ist_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { buildCodexDesktopRequestHeaders } from "../../desktop/codex-desktop-request-headers";
 import { isRemoteControlConnectionFailedError } from "../../desktop/remote-control-connection-failed-error";

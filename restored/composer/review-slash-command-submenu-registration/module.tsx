@@ -12,9 +12,9 @@ import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-res
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { CODEX_REVIEW_TARGET_SELECTED_TYPE } from "../../analytics/codex-review-target-selected-type";
 import { logProductEvent } from "../../analytics/log-product-event";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Utt_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_A0_Init } from "../../conversation/conversation-page-esm-inits";
 import { reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { writeCodexThreadDeeplink as WriteCodexThreadDeeplink } from "../../clipboard/write-codex-thread-deeplink";

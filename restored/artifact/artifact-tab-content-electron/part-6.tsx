@@ -45,14 +45,14 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import {
   appScopeAtom,
   ensureAppScopeInit,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   ensureComposerEsm_MT_Init,
   ensureComposerEsm_S8_Init,
   ensureComposerEsm_Tft_Init,
   ensureComposerEsm_Z8_Init,
 } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import {
   react,
   reactCompilerRuntime,

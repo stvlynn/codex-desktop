@@ -7,7 +7,7 @@ import {
   type ReactElement,
   type RefObject,
 } from "react";
-import { ensureAppScopeHostInit } from "../boundaries/app-scope-runtime";
+import { ensureAppScopeHostInit } from "../runtime/app-scope-runtime";
 import {
   useAppScopeValue,
   type BindableAtom,
@@ -16,7 +16,7 @@ import { ensureComposerEsm_M0_Init } from "../boundaries/composer-esm-inits";
 import {
   ensureConversationPageEsm_A0_Init,
   ensureConversationPageEsm_B0_Init,
-} from "../boundaries/conversation-page-esm-inits";
+} from "../conversation/conversation-page-esm-inits";
 import {
   ensureWindowZoomContextInit,
   useWindowZoom,

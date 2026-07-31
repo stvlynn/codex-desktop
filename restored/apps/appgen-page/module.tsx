@@ -10,9 +10,9 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { AppgenShareDialog, ensureAppgenShareDialogInit } from "../../appgen/appgen-share-dialog";
 import { ensureChatgptSiteSuffixesInit } from "../../appgen/chatgpt-site-suffixes";
 import { createAppgenConversation, dismissAppgenConversationPrompt, ensureStartAppgenConversationHelpersInit, ensureStartAppgenConversationInit, FormatAppgenConversationPrefill, handleAppgenConversationAction, listAppgenConversationActions, MapAppgenConversationAction, prepareAppgenConversation, startAppgenConversation, startAppgenConversationFromLibrary, useStartAppgenConversation } from "../../appgen/start-appgen-conversation";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_B0_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
 import { cloneTypedArray } from "../../boundaries/lodash-clone-deep-guts";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";

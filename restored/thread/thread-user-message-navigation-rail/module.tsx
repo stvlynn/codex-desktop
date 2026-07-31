@@ -11,7 +11,7 @@ import { AppLogoFromHref } from "../../apps/app-logo-from-href";
 import { ArtifactPreviewPageNav } from "../../artifact/artifact-preview-page-nav";
 import { hypotDistance } from "../../artifact/hypot-distance";
 import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_JL_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Rst_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Ytt_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_TP_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime, reactDom } from "../../boundaries/react-cjs-runtime";
 import { isAppUri } from "../../composer/app-plugin-uri";
 import { CHATGPT_PRODUCT_ID } from "../../config/chatgpt-product-id";

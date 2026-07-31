@@ -11,9 +11,9 @@ import { ensureUsageSettingsAccessInit as EnsureUsageSettingsAccessInit, useUsag
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wdt_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Lo_Init as EnsureConversationPageEsm_Lo_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Lo_Init as EnsureConversationPageEsm_Lo_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { findBrowserTabById } from "../../browser/find-browser-tab-by-id";

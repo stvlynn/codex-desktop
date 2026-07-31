@@ -21,7 +21,7 @@ import { decayZoomPercent } from "../../artifact/clamp-zoom-percent";
 import {
   appScopeAtom,
   ensureAppScopeInit,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   ensureComposerEsm_FH_Init,
   ensureComposerEsm_Hlt_Init,
@@ -31,7 +31,7 @@ import {
   ensureComposerEsm_S8_Init,
   ensureComposerEsm_Sut_Init,
 } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_B0_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
 import {
   react,
   reactCompilerRuntime,

@@ -26,7 +26,7 @@ import { isCustomAuthMethod } from "../../auth/is-custom-auth-method";
 import {
   appScopeAtom,
   ensureAppScopeInit,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   ensureBrowserUseGateInit,
   useExternalBrowserUseGate,
@@ -39,7 +39,7 @@ import {
   ensureComposerEsm_Qtt_Init,
   ensureComposerEsm_Tft_Init,
 } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_MR_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_MR_Init } from "../../conversation/conversation-page-esm-inits";
 import {
   react,
   reactCompilerRuntime,

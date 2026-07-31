@@ -13,9 +13,9 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Wlt_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_FR_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_FR_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { OPENAI_CURATED_ID } from "../../config/openai-curated-id";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";

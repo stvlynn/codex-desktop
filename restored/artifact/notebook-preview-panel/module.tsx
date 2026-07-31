@@ -9,7 +9,7 @@
 import { ensureAccountPlanQueryInit } from "../../account/ensure-account-plan-query-init";
 import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
 import { ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_Ist_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_Ist_Init } from "../../conversation/conversation-page-esm-inits";
 import { reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { chatgptProjectQueryKey } from "../../conversation/chatgpt-conversation-query-keys";
 import { AreVisualizationFeatureGatesEnabled } from "../../feature-gates/are-visualization-feature-gates-enabled";

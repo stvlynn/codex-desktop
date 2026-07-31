@@ -14,7 +14,7 @@ import {
   ensureAppScopeHostInit,
   ensureAppScopeInit,
   useAppScope,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import { useAppScopeValue } from "../../boundaries/composer-appscope-atoms";
 import {
   ensureComposerEsm_GS_Init,
@@ -32,7 +32,7 @@ import {
   ensureConversationPageEsm_pvt_Init,
   ensureConversationPageEsm_RS_Init,
   ensureConversationPageEsm_xB_Init,
-} from "../../boundaries/conversation-page-esm-inits";
+} from "../../conversation/conversation-page-esm-inits";
 import {
   react,
   reactCompilerRuntime,
@@ -120,7 +120,7 @@ const AppInitialCB: any = undefined;
 const AppInitialCO: any = undefined;
 /** Unresolved companion (missing-export:ui/deferred-ui-cr.tsx) */
 const deferredUiCR: any = undefined;
-/** Unresolved companion (jsx-collision:ensureConversationPageEsm_f__Init@boundaries/conversation-page-esm-inits.ts) */
+/** Unresolved companion (jsx-collision:ensureConversationPageEsm_f__Init@conversation/conversation-page-esm-inits.ts) */
 const AppInitialF: any = undefined;
 /** Unresolved companion (jsx-collision:ensureSettingsPanelInit@settings/settings-panel.tsx) */
 const AppInitialFC: any = undefined;

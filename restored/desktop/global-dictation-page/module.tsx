@@ -7,7 +7,7 @@
 
 import { ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
 import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";

@@ -16,7 +16,7 @@ import {
   appScopeAtom,
   ensureAppScopeHostInit,
   ensureAppScopeInit,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   _chartWidgetStoresC,
   _chartWidgetStoresS,
@@ -44,7 +44,7 @@ import {
 import {
   ensureConversationPageEsm_Act_Init,
   ensureConversationPageEsm_B0_Init,
-} from "../../boundaries/conversation-page-esm-inits";
+} from "../../conversation/conversation-page-esm-inits";
 import {
   react,
   reactCompilerRuntime,

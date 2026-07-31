@@ -18,10 +18,10 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { logProductEvent } from "../../analytics/log-product-event";
 import { ensureChatgptSiteSuffixesInit } from "../../appgen/chatgpt-site-suffixes";
 import { queueAutomationRun } from "../../automation/queue-automation-run";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { createAppScopeQueryAtom } from "../../boundaries/composer-appscope-atoms";
 import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Wdt_Init, ensureComposerEsm_Wlt_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_B0_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
 import { useAtomPair } from "../../boundaries/persisted-atom";
 import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";

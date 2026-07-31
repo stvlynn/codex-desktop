@@ -12,10 +12,10 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { listAvailableCodeThemes } from "../../appearance/code-theme-catalog";
 import { ensureChatgptSiteSuffixesInit } from "../../appgen/chatgpt-site-suffixes";
 import { ArtifactFilePreviewIcon, ensureArtifactFilePreviewIconInit as EnsureArtifactFilePreviewIconInit } from "../../artifact/artifact-file-preview-icon";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { chatgptConversationsGateAtom, useStepsProseAtom } from "../../boundaries/composer-appscope-atoms";
 import { ensureComposerEsm_B7_Init, ensureComposerEsm_BU_Init, ensureComposerEsm_CU_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_IB_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_LR_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_NA_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wdt_Init, ensureComposerEsm_Wlt_Init as EnsureComposerEsm_Wlt_Init, ensureComposerEsm_Ytt_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_GZ_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_GZ_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";

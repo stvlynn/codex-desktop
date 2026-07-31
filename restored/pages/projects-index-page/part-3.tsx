@@ -10,10 +10,10 @@ import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-res
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { defaultHourlyScheduleConfig as DefaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { chatgptConversationsGateAtom, useStepsProseAtom, writingBlocksControllerAtom } from "../../boundaries/composer-appscope-atoms";
 import { ensureComposerEsm_B7_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_QN_Init, ensureComposerEsm_Sp_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Qa_Init as EnsureConversationPageEsm_Qa_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Qa_Init as EnsureConversationPageEsm_Qa_Init } from "../../conversation/conversation-page-esm-inits";
 import { isIterateeCall } from "../../boundaries/lodash-clone-deep-guts";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";

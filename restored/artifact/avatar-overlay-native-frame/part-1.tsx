@@ -10,9 +10,9 @@ import { appActionSidebarProjectRefSchema } from "../../actions/app-action-paylo
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { AUTOMATION_MISSING_IN_APP_ERROR } from "../../automations/automation-missing-error";
 import { AvatarMascotButton, ensureAvatarMascotButtonInit } from "../../avatar/avatar-mascot-button";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { Chatgpt2 } from "../../browser/chatgpt2";

@@ -16,10 +16,10 @@ import { CodexRemoteControlRefreshSource } from "../../analytics/codex-remote-co
 import { CodexRemoteSshConnectionAction } from "../../analytics/codex-remote-ssh-connection-action";
 import { AppQueryClientProvider } from "../../app/app-query-client-provider";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { chatgptConversationFlagsAtom, chatgptConversationServerIdAtom, chatgptConversationTitleAtom } from "../../boundaries/composer-appscope-atoms";
 import { ensureComposerEsm_BI_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_RV_Init as EnsureComposerEsm_RV_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_ZI_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_Mx_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_Mx_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { _useChatgptComposerControllerI, _useChatgptComposerControllerR, _useChatgptComposerControllerT, useChatgptComposerControllerA as UseChatgptComposerControllerA, useChatgptComposerControllerB as UseChatgptComposerControllerB, useChatgptComposerControllerF, useChatgptComposerControllerI, useChatgptComposerControllerN, useChatgptComposerControllerO, useChatgptComposerControllerP as UseChatgptComposerControllerP, useChatgptComposerControllerR, useChatgptComposerControllerT, useChatgptComposerControllerV as UseChatgptComposerControllerV, useChatgptComposerControllerW, useChatgptComposerControllerX, useChatgptComposerControllerY } from "../../composer/use-chatgpt-composer-controller";

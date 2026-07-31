@@ -19,7 +19,7 @@ import { findAutomationForConversation } from "../../automation/find-automation-
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
 import { useStepsProseAtom } from "../../boundaries/composer-appscope-atoms";
 import { ensureComposerEsm_BU_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init as EnsureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_QN_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Utt_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Qa_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Qa_Init } from "../../conversation/conversation-page-esm-inits";
 import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";

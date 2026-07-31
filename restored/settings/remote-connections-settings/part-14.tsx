@@ -130,7 +130,7 @@ import { PULL_REQUEST_FIX_AUTOMATION_PROMPT_HEADER } from "../../automations/pul
 import {
   appScopeAtom,
   ensureAppScopeInit,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   ensureComposerEsm_CU_Init,
   ensureComposerEsm_FH_Init,
@@ -145,7 +145,7 @@ import {
   ensureComposerEsm_Tft_Init,
   ensureComposerEsm_Utt_Init,
 } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import {
   react,
   reactCompilerRuntime,

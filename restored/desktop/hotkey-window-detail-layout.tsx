@@ -7,7 +7,7 @@ import { ensureAppActionPayloadSchemasInit } from "../actions/app-action-payload
 import { CodexBrowserSurfaceActionType } from "../analytics/codex-browser-surface-action-type";
 import { ensureCodexSpriteAssetsInit } from "../assets/ensure-codex-sprite-assets-init";
 import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init } from "../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init } from "../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_Act_Init } from "../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { chatgpt2 as Chatgpt2 } from "../browser/chatgpt2";
 import { ContextMenuRegistration } from "../hooks/use-context-menu-registration";

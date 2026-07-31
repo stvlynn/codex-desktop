@@ -36,7 +36,7 @@ import {
   ensureAppScopeHostInit,
   ensureAppScopeInit,
   useAppScope,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   useAppScopeValue,
   useStepsProseAtom,
@@ -66,7 +66,7 @@ import {
   ensureConversationPageEsm_GZ_Init,
   ensureConversationPageEsm_pvt_Init,
   ensureConversationPageEsm_xB_Init,
-} from "../../boundaries/conversation-page-esm-inits";
+} from "../../conversation/conversation-page-esm-inits";
 import {
   react,
   reactCompilerRuntime,

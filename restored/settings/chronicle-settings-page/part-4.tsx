@@ -18,7 +18,7 @@ import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../ap
 import {
   appScopeAtom,
   ensureAppScopeInit,
-} from "../../boundaries/app-scope-runtime";
+} from "../../runtime/app-scope-runtime";
 import {
   ensureComposerEsm_Hlt_Init,
   ensureComposerEsm_Ilt_Init,
@@ -28,7 +28,7 @@ import {
   ensureComposerEsm_Wlt_Init,
   ensureComposerEsm_Ytt_Init,
 } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import {
   react,
   reactCompilerRuntime,

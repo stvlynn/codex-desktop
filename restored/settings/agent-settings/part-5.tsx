@@ -31,9 +31,9 @@ import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../ap
 import { normalizeAppIconThemeEntries } from "../../apps/normalize-app-icon-theme-entries";
 import { automationsNotShallowEqual } from "../../automation/automations-not-shallow-equal";
 import { isBlankAutomationDraft as IsBlankAutomationDraft } from "../../automation/is-blank-automation-draft";
-import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-runtime";
+import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_B7_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Utt_Init } from "../../boundaries/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init } from "../../boundaries/conversation-page-esm-inits";
+import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { useLocation } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
