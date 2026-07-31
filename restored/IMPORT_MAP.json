@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notes": "Wave composer-ctrl closeout polish: consumers→composer barrel; Value* aliases dropped. | Wave composer-ctrl Stage-3 wave-15: Helper124–178 mountain drained; thin boundary; openBoundary cleared; mapbox-gl npm CSP shim. | Wave composer-ctrl Stage-3 wave-15: Helper124–178 mountain drained; boundary thin; openBoundary cleared. | Wave DR: +2 Gut→usingCtx (babel usingCtx npm), fJ→deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop → index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path → composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite) | diagram-export-alias-semantic: IMPORT_MAP exports n/t/a/… → semantic public names after dropping cryptic re-export aliases | deep-drain 2026-07-28: Stage-3 shiki pool split (kL→shiki-highlight-context) + settings wrapper; checkout-webview-page typed deps shell; permissions-mode-dropdown typed shell. Soft scaffolds Stage-3-fill/Open-runtime-facade remain 0. Remaining Open-runtime soft hosts: large page bodies (settings/onboarding/local/remote) blocked by mechanical checkpoint QG fails; no-alias ui shells blocked by missing extract alias. | Wave GA: share-invite soft-host drain (real peers + useListKeyboardNavigation); settings-pets-nav-icon split; settings-page candidate case-correct imports staged (not promoted: residual *Param/*Value + exportSources collisions HM/Bft) | Wave GB: settings-page candidate rebuilt with export-correct IMPORT_MAP resolution + HM→scoreFuzzyMatch / Bft→defineMessage overrides; public utils/score-fuzzy-match.ts (QG pass, contract scorer; full HH in deps WIP); soft-host count still 18 (settings not promoted: ~270 mechanical names + use-visible-settings-sections soft shell) | Wave GC: use-visible-settings-sections soft shell drained (split dir); soft-host count still 18 (settings-page not yet promoted)\nReconcile Mermaid faced→done for 52 boundaries/mermaid-diagrams npm shims/wrappers (IMPORT_MAP drift).",
+  "notes": "dil-register openBoundary cleared → apps/dil-register.ts (unified DKf9ZaVQ+DgvAZVS9). | Wave composer-ctrl closeout polish: consumers→composer barrel; Value* aliases dropped. | Wave composer-ctrl Stage-3 wave-15: Helper124–178 mountain drained; thin boundary; openBoundary cleared; mapbox-gl npm CSP shim. | Wave composer-ctrl Stage-3 wave-15: Helper124–178 mountain drained; boundary thin; openBoundary cleared. | Wave DR: +2 Gut→usingCtx (babel usingCtx npm), fJ→deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop → index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path → composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite) | diagram-export-alias-semantic: IMPORT_MAP exports n/t/a/… → semantic public names after dropping cryptic re-export aliases | deep-drain 2026-07-28: Stage-3 shiki pool split (kL→shiki-highlight-context) + settings wrapper; checkout-webview-page typed deps shell; permissions-mode-dropdown typed shell. Soft scaffolds Stage-3-fill/Open-runtime-facade remain 0. Remaining Open-runtime soft hosts: large page bodies (settings/onboarding/local/remote) blocked by mechanical checkpoint QG fails; no-alias ui shells blocked by missing extract alias. | Wave GA: share-invite soft-host drain (real peers + useListKeyboardNavigation); settings-pets-nav-icon split; settings-page candidate case-correct imports staged (not promoted: residual *Param/*Value + exportSources collisions HM/Bft) | Wave GB: settings-page candidate rebuilt with export-correct IMPORT_MAP resolution + HM→scoreFuzzyMatch / Bft→defineMessage overrides; public utils/score-fuzzy-match.ts (QG pass, contract scorer; full HH in deps WIP); soft-host count still 18 (settings not promoted: ~270 mechanical names + use-visible-settings-sections soft shell) | Wave GC: use-visible-settings-sections soft shell drained (split dir); soft-host count still 18 (settings-page not yet promoted)\nReconcile Mermaid faced→done for 52 boundaries/mermaid-diagrams npm shims/wrappers (IMPORT_MAP drift).",
   "chunks": {
     "app-initial-C-fROkKo": {
       "status": "in-progress",
@@ -25690,31 +25690,36 @@
       "note": "Wave AX: sankey-strip gap189; strip pull-request-detail-query; after thread chain"
     },
     "register-BqqwIOLc-DKf9ZaVQ": {
-      "restored": "boundaries/dil-register.ts",
+      "restored": "apps/dil-register.ts",
       "exports": {
-        "r": "registerDilTag"
+        "r": "dilRegisterApi",
+        "dilRegisterApi": "dilRegisterApi",
+        "registerDilTag": "registerDilTag",
+        "loadDilRegister": "loadDilRegister",
+        "bindDilRegister": "bindDilRegister",
+        "ensureDilRegisterInit": "ensureDilRegisterInit"
       },
       "status": "done",
-      "notes": "Wave AZ: thin DIL register loader promoted onto dil-register facade.",
-      "boundary": true
+      "stage3Accepted": true,
+      "classification": "app-feature",
+      "notes": "Wave AZ closeout: thin DIL register loader unified onto apps/dil-register.ts; openBoundary cleared (Codex DIL registry surface; mega body leftover)."
     },
     "register-BqqwIOLc-DgvAZVS9": {
-      "restored": "boundaries/dil-register.ts",
+      "restored": "apps/dil-register.ts",
       "exports": {
         "a": "ensureDilRegisterInit",
-        "i": "registerDilTag",
+        "i": "dilRegisterApi",
+        "r": "dilRegisterApi",
         "ensureDilRegisterInit": "ensureDilRegisterInit",
         "registerDilTag": "registerDilTag",
+        "dilRegisterApi": "dilRegisterApi",
         "bindDilRegister": "bindDilRegister",
         "loadDilRegister": "loadDilRegister"
       },
       "status": "done",
-      "notes": "Open-runtime DIL facade (mapbox+lucide mega-chunk ~200k) — NOT stock npm; faced at dil-register; host binds via bindDilRegister. Body not expanded.",
-      "boundary": true,
-      "openRuntime": true,
-      "note": "Settled open-runtime boundary (status done = facing complete; runtime body remains unrestored).",
-      "openBoundary": true,
-      "vendor": "runtime"
+      "stage3Accepted": true,
+      "classification": "app-feature",
+      "notes": "Wave AZ closeout: Codex DIL register API promoted to apps/dil-register.ts; openBoundary cleared. Mega-chunk body (~200k hermes/DIL+mapbox+lucide) unrestored leftover; host may bindDilRegister when full registry is available. NOT stock npm."
     },
     "index-kwAErobc": {
       "restored": "app/webview-entry.ts",
@@ -25987,17 +25992,7 @@
         "zc"
       ],
       "provenance": "ref/webview/assets/app-initial-C-fROkKo.js"
-    },
-    "register-BqqwIOLc-DKf9ZaVQ": {
-      "kind": "open-runtime",
-      "path": "boundaries/dil-register.ts",
-      "note": "DIL registerTag facade — not stock npm; bindDilRegister wires host."
-    },
-    "register-BqqwIOLc-DgvAZVS9": {
-      "kind": "open-runtime",
-      "path": "boundaries/dil-register.ts",
-      "note": "DIL registerTag facade — not stock npm; bindDilRegister wires host. Mega-chunk body intentionally not restored."
     }
   },
-  "updatedAt": "2026-07-31T04:06:16Z"
+  "updatedAt": "2026-07-31T04:08:33Z"
 }

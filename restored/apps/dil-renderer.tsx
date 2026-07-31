@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/dist-Cvr7hdiT.js
 // Stage 3: DILRenderer (custom element `dil-renderer`) — NOT cmdk.
-// Gmt/Wmt → vite preload helpers; Ivt/Lvt/jvt → react; register-* faced via
-// boundaries/dil-register.ts.
+// Gmt/Wmt → vite preload helpers; Ivt/Lvt/jvt → react; register API via
+// apps/dil-register.ts.
 
 import {
   createElement,
@@ -11,7 +11,7 @@ import {
   type ReactElement,
 } from "react";
 
-import { loadDilRegister } from "../boundaries/dil-register";
+import { loadDilRegister } from "./dil-register";
 import {
   ensureViteModulepreloadRuntime,
   vitePreload,
@@ -66,7 +66,7 @@ function ensureDilCustomElement(): Promise<void> {
 
 /**
  * React host for the `dil-renderer` custom element (bundle export `DILRenderer`).
- * Dynamically registers the custom element via the faced DIL registry boundary.
+ * Dynamically registers the custom element via the DIL registry module.
  */
 export function DILRenderer({
   widget,
