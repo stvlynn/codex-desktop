@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~212.4k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~212.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -225,6 +225,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 212401.
-- Next: worksheet/spreadsheet core if a clean line-range slice appears, or design-token Binding558+ neighbors.
+- Next: ~~design-token Binding558+ / WorkbookTheme~~ (done wave-23); worksheet/spreadsheet core or SSF Binding571 if a clean npm/line-range path appears.
+
+
+## Wave-23 progress
+
+- Extracted design-token resolvers (`Binding558`–`565`) + default scheme colors/text styles (`Binding566`/`_y`) + `WorkbookTheme` (`workbookJ`/`Binding567`–`568`/`workbookY`) + theme-from-proto (`helper222`) + scheme color aliases (`Binding569`–`570`) → `workbook/design-tokens/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and SSF `Binding571` in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 212002.
+- Next: worksheet/spreadsheet core if a clean line-range slice appears, or SSF Binding571 (stock `ssf@0.11.2`) via npm-shim path.
 
 
