@@ -18853,31 +18853,32 @@
     "chunk-K5T4RW27-DBsaZQmV": {
       "restored": "diagrams/mermaid-langium-grammar.ts",
       "exports": {
-        "C": "C",
-        "S": "S",
-        "_": "_",
-        "a": "a",
-        "b": "b",
-        "c": "c",
-        "d": "d",
-        "f": "f",
-        "g": "g",
-        "h": "h",
-        "i": "i",
-        "l": "l",
-        "m": "m",
-        "n": "n",
-        "o": "o",
-        "p": "p",
-        "r": "r",
-        "s": "s",
-        "t": "t",
-        "u": "u",
-        "v": "v",
-        "x": "x",
-        "y": "y"
+        "AbstractMermaidTokenBuilder": "AbstractMermaidTokenBuilder",
+        "AbstractMermaidValueConverter": "AbstractMermaidValueConverter",
+        "ArchitectureGeneratedModule": "ArchitectureGeneratedModule",
+        "CommonValueConverter": "CommonValueConverter",
+        "EmptyFileSystem": "EmptyFileSystem",
+        "GitGraphGeneratedModule": "GitGraphGeneratedModule",
+        "InfoGeneratedModule": "InfoGeneratedModule",
+        "MermaidGeneratedSharedModule": "MermaidGeneratedSharedModule",
+        "PacketGeneratedModule": "PacketGeneratedModule",
+        "PieGeneratedModule": "PieGeneratedModule",
+        "RadarGeneratedModule": "RadarGeneratedModule",
+        "TreeViewGeneratedModule": "TreeViewGeneratedModule",
+        "TreemapGeneratedModule": "TreemapGeneratedModule",
+        "WardleyGeneratedModule": "WardleyGeneratedModule",
+        "createDefaultCoreModule": "createDefaultCoreModule",
+        "createDefaultSharedCoreModule": "createDefaultSharedCoreModule",
+        "defineName": "defineName",
+        "initEmptyFileSystem": "initEmptyFileSystem",
+        "initLangiumCoreModules": "initLangiumCoreModules",
+        "initLangiumRuntime": "initLangiumRuntime",
+        "initMermaidLangiumGrammar": "initMermaidLangiumGrammar",
+        "initObjectAssignHelpers": "initObjectAssignHelpers",
+        "inject": "inject"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: pruned letter identity → 23 public exports"
     },
     "index-0YairKH_-DuUEIl-8": {
       "restored": "icons/lucide-react-barrel.ts",
@@ -20424,29 +20425,30 @@
     "chunk-FPAJGGOC-CN4fXTF-": {
       "restored": "diagrams/mermaid-langium-grammar-alt.ts",
       "exports": {
-        "_": "_",
-        "a": "a",
-        "b": "b",
-        "c": "c",
-        "d": "d",
-        "f": "f",
-        "g": "g",
-        "h": "h",
-        "i": "i",
-        "l": "l",
-        "m": "m",
-        "n": "n",
-        "o": "o",
-        "p": "p",
-        "r": "r",
-        "s": "s",
-        "t": "t",
-        "u": "u",
-        "v": "v",
-        "x": "x",
-        "y": "y"
+        "AbstractMermaidTokenBuilder": "AbstractMermaidTokenBuilder",
+        "AbstractMermaidValueConverter": "AbstractMermaidValueConverter",
+        "ArchitectureGeneratedModule": "ArchitectureGeneratedModule",
+        "CommonValueConverter": "CommonValueConverter",
+        "EmptyFileSystem": "EmptyFileSystem",
+        "GitGraphGeneratedModule": "GitGraphGeneratedModule",
+        "InfoGeneratedModule": "InfoGeneratedModule",
+        "MermaidGeneratedSharedModule": "MermaidGeneratedSharedModule",
+        "PacketGeneratedModule": "PacketGeneratedModule",
+        "PieGeneratedModule": "PieGeneratedModule",
+        "RadarGeneratedModule": "RadarGeneratedModule",
+        "TreemapGeneratedModule": "TreemapGeneratedModule",
+        "createDefaultCoreModule": "createDefaultCoreModule",
+        "createDefaultSharedCoreModule": "createDefaultSharedCoreModule",
+        "defineName": "defineName",
+        "initEmptyFileSystem": "initEmptyFileSystem",
+        "initLangiumCoreModules": "initLangiumCoreModules",
+        "initLangiumRuntime": "initLangiumRuntime",
+        "initMermaidLangiumGrammar": "initMermaidLangiumGrammar",
+        "initObjectAssignHelpers": "initObjectAssignHelpers",
+        "inject": "inject"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: pruned letter identity → 21 public exports"
     },
     "presentation-BsNXHgL_": {
       "restored": "workbook/presentation-protobuf.ts",
@@ -20657,146 +20659,162 @@
     "chunk-2KRD3SAO-BEGHEWrY": {
       "restored": "diagrams/mermaid-radar-langium-services.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createRadarServices",
+        "r": "initRadarLangiumServices",
+        "t": "RadarModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-67CJDMHE-Bc3ouymy": {
       "restored": "diagrams/mermaid-git-graph-langium-services.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createGitGraphServices",
+        "r": "initGitGraphLangiumServices",
+        "t": "GitGraphModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-7N4EOEYR-7en_DI4g": {
       "restored": "diagrams/mermaid-architecture-langium-services.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createArchitectureServices",
+        "r": "initArchitectureLangiumServices",
+        "t": "ArchitectureModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-AA7GKIK3-BzQRt39W": {
       "restored": "diagrams/mermaid-pie-langium-services.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createPieServices",
+        "r": "initPieLangiumServices",
+        "t": "PieModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-CIAEETIT-BFQsYrp6": {
       "restored": "diagrams/mermaid-wardley-langium-services.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createWardleyServices",
+        "r": "initWardleyLangiumServices",
+        "t": "WardleyModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-FOC6F5B3-718GsrP4": {
       "restored": "diagrams/mermaid-packet-langium-services.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createPacketServices",
+        "r": "initPacketLangiumServices",
+        "t": "PacketModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-KGLVRYIC-C8_y_CK6": {
       "restored": "diagrams/mermaid-info-langium-services.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createInfoServices",
+        "r": "initInfoLangiumServices",
+        "t": "InfoModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-LIHQZDEY-BMdO0aac": {
       "restored": "diagrams/mermaid-treemap-langium-services.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createTreemapServices",
+        "r": "initTreemapLangiumServices",
+        "t": "TreemapModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-ORNJ4GCN-zJqraLh5": {
       "restored": "diagrams/mermaid-tree-view-langium-services.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createTreeViewServices",
+        "r": "initTreeViewLangiumServices",
+        "t": "TreeViewModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-76Q3JFCE-ZGsz2j1F": {
       "restored": "diagrams/mermaid-packet-langium-services-alt.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createPacketServices",
+        "r": "initPacketLangiumServices",
+        "t": "PacketModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-FWNWRKHM-DDjfzubo": {
       "restored": "diagrams/mermaid-treemap-langium-services-alt.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createTreemapServices",
+        "r": "initTreemapLangiumServices",
+        "t": "TreemapModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-LBM3YZW2-8IPxCVR0": {
       "restored": "diagrams/mermaid-info-langium-services-alt.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createInfoServices",
+        "r": "initInfoLangiumServices",
+        "t": "InfoModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-LHMN2FUI-0Cxd13qr": {
       "restored": "diagrams/mermaid-radar-langium-services-alt.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createRadarServices",
+        "r": "initRadarLangiumServices",
+        "t": "RadarModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-O7ZBX7Z2-VAyiWgyE": {
       "restored": "diagrams/mermaid-architecture-langium-services-alt.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createArchitectureServices",
+        "r": "initArchitectureLangiumServices",
+        "t": "ArchitectureModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-S6J4BHB3-DwPS_zd4": {
       "restored": "diagrams/mermaid-git-graph-langium-services-alt.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createGitGraphServices",
+        "r": "initGitGraphLangiumServices",
+        "t": "GitGraphModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "chunk-T53DSG4Q-PnwlQLO5": {
       "restored": "diagrams/mermaid-pie-langium-services-alt.ts",
       "exports": {
-        "n": "n",
-        "r": "r",
-        "t": "t"
+        "n": "createPieServices",
+        "r": "initPieLangiumServices",
+        "t": "PieModule"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: letter→semantic (n=create, r=init, t=Module)"
     },
     "spreadsheet-Ckzf8Np8": {
       "restored": "workbook/spreadsheet-protobuf.ts",
@@ -21419,62 +21437,74 @@
     "chunk-ABZYJK2D-CR4XLwon": {
       "restored": "diagrams/mermaid-config.ts",
       "exports": {
-        "A": "A",
-        "B": "B",
-        "C": "C",
-        "D": "D",
-        "E": "E",
-        "F": "F",
-        "G": "G",
-        "H": "H",
-        "I": "I",
-        "J": "J",
-        "K": "K",
-        "L": "L",
-        "M": "M",
-        "N": "N",
-        "O": "O",
-        "P": "P",
-        "Q": "Q",
-        "R": "R",
-        "S": "S",
-        "T": "T",
-        "U": "U",
-        "V": "V",
-        "W": "W",
-        "X": "X",
-        "Y": "Y",
-        "Z": "Z",
-        "_": "_",
-        "a": "a",
-        "b": "b",
-        "c": "c",
-        "d": "d",
-        "f": "f",
-        "g": "g",
-        "h": "h",
-        "i": "i",
-        "j": "j",
-        "k": "k",
-        "l": "l",
-        "m": "m",
-        "n": "n",
-        "o": "o",
-        "p": "p",
-        "q": "q",
-        "r": "r",
-        "s": "s",
-        "t": "t",
-        "u": "u",
-        "v": "v",
-        "w": "w",
-        "x": "x",
-        "y": "y",
-        "z": "z"
+        "UnknownDiagramError": "UnknownDiagramError",
+        "_chunkABZYJK2DC": "_chunkABZYJK2DC",
+        "_chunkABZYJK2DV": "_chunkABZYJK2DV",
+        "chunkABZYJK2DA": "chunkABZYJK2DA",
+        "chunkABZYJK2DAddDirective": "chunkABZYJK2DAddDirective",
+        "chunkABZYJK2DAssignWithDepth": "chunkABZYJK2DAssignWithDepth",
+        "chunkABZYJK2DB": "chunkABZYJK2DB",
+        "chunkABZYJK2DC": "chunkABZYJK2DC",
+        "chunkABZYJK2DCalculateMathMLDimensions": "chunkABZYJK2DCalculateMathMLDimensions",
+        "chunkABZYJK2DCommon": "chunkABZYJK2DCommon",
+        "chunkABZYJK2DCommonDb": "chunkABZYJK2DCommonDb",
+        "chunkABZYJK2DD": "chunkABZYJK2DD",
+        "chunkABZYJK2DD_getUserDefinedConfig": "chunkABZYJK2DD_getUserDefinedConfig",
+        "chunkABZYJK2DDefaultConfig2": "chunkABZYJK2DDefaultConfig2",
+        "chunkABZYJK2DDefaultConfigDefault": "chunkABZYJK2DDefaultConfigDefault",
+        "chunkABZYJK2DDetectType": "chunkABZYJK2DDetectType",
+        "chunkABZYJK2DDetectors": "chunkABZYJK2DDetectors",
+        "chunkABZYJK2DDirectiveRegex": "chunkABZYJK2DDirectiveRegex",
+        "chunkABZYJK2DE": "chunkABZYJK2DE",
+        "chunkABZYJK2DEvaluate": "chunkABZYJK2DEvaluate",
+        "chunkABZYJK2DF": "chunkABZYJK2DF",
+        "chunkABZYJK2DFrontMatterRegex": "chunkABZYJK2DFrontMatterRegex",
+        "chunkABZYJK2DG": "chunkABZYJK2DG",
+        "chunkABZYJK2DGetConfig": "chunkABZYJK2DGetConfig",
+        "chunkABZYJK2DGetDiagram": "chunkABZYJK2DGetDiagram",
+        "chunkABZYJK2DGetSiteConfig": "chunkABZYJK2DGetSiteConfig",
+        "chunkABZYJK2DH": "chunkABZYJK2DH",
+        "chunkABZYJK2DI": "chunkABZYJK2DI",
+        "chunkABZYJK2DJ": "chunkABZYJK2DJ",
+        "chunkABZYJK2DK": "chunkABZYJK2DK",
+        "chunkABZYJK2DL": "chunkABZYJK2DL",
+        "chunkABZYJK2DLineBreakRegex": "chunkABZYJK2DLineBreakRegex",
+        "chunkABZYJK2DM": "chunkABZYJK2DM",
+        "chunkABZYJK2DN": "chunkABZYJK2DN",
+        "chunkABZYJK2DO": "chunkABZYJK2DO",
+        "chunkABZYJK2DP": "chunkABZYJK2DP",
+        "chunkABZYJK2DParseGenericTypes": "chunkABZYJK2DParseGenericTypes",
+        "chunkABZYJK2DQ": "chunkABZYJK2DQ",
+        "chunkABZYJK2DR": "chunkABZYJK2DR",
+        "chunkABZYJK2DS": "chunkABZYJK2DS",
+        "chunkABZYJK2DSaveConfigFromInitialize": "chunkABZYJK2DSaveConfigFromInitialize",
+        "chunkABZYJK2DSetupGraphViewbox": "chunkABZYJK2DSetupGraphViewbox",
+        "chunkABZYJK2DSetupGraphViewbox2": "chunkABZYJK2DSetupGraphViewbox2",
+        "chunkABZYJK2DT": "chunkABZYJK2DT",
+        "chunkABZYJK2DThemes": "chunkABZYJK2DThemes",
+        "chunkABZYJK2DU": "chunkABZYJK2DU",
+        "chunkABZYJK2DUnderscore": "chunkABZYJK2DUnderscore",
+        "chunkABZYJK2DUnknownDiagramError": "chunkABZYJK2DUnknownDiagramError",
+        "chunkABZYJK2DV": "chunkABZYJK2DV",
+        "chunkABZYJK2DW": "chunkABZYJK2DW",
+        "chunkABZYJK2DX": "chunkABZYJK2DX",
+        "chunkABZYJK2DY": "chunkABZYJK2DY",
+        "chunkABZYJK2DZ": "chunkABZYJK2DZ",
+        "configureSvgSize": "configureSvgSize",
+        "defaultConfig": "defaultConfig",
+        "detectType": "detectType",
+        "diagramStyles": "diagramStyles",
+        "getConfig": "getConfig",
+        "getDiagram": "getDiagram",
+        "getThemeVariables": "getThemeVariables",
+        "registerDiagram": "registerDiagram",
+        "setConfig": "setConfig",
+        "themes": "themes"
       },
       "status": "done",
       "classification": "boundary",
-      "notes": "Mermaid diagram-api/config + DOMPurify surface; typed facade (minified aliases). Prefer npm mermaid when alias map is recovered."
+      "notes": "Mermaid diagram-api/config + DOMPurify surface; typed facade (minified aliases). Prefer npm mermaid when alias map is recovered.",
+      "note": "export-missing: pruned letter identity → 63 public exports"
     },
     "cose-bilkent-S5V4N54A-iO47pcr8": {
       "restored": "diagrams/cose-bilkent-alt.ts",
@@ -21493,63 +21523,76 @@
     "chunk-ICPOFSXX-CvbMQlkM": {
       "restored": "diagrams/mermaid-config-alt.ts",
       "exports": {
-        "$": "$",
-        "A": "A",
-        "B": "B",
-        "C": "C",
-        "D": "D",
-        "E": "E",
-        "F": "F",
-        "G": "G",
-        "H": "H",
-        "I": "I",
-        "J": "J",
-        "K": "K",
-        "L": "L",
-        "M": "M",
-        "N": "N",
-        "O": "O",
-        "P": "P",
-        "Q": "Q",
-        "R": "R",
-        "S": "S",
-        "T": "T",
-        "U": "U",
-        "V": "V",
-        "W": "W",
-        "X": "X",
-        "Y": "Y",
-        "Z": "Z",
-        "_": "_",
-        "a": "a",
-        "b": "b",
-        "c": "c",
-        "d": "d",
-        "f": "f",
-        "g": "g",
-        "h": "h",
-        "i": "i",
-        "j": "j",
-        "k": "k",
-        "l": "l",
-        "m": "m",
-        "n": "n",
-        "o": "o",
-        "p": "p",
-        "q": "q",
-        "r": "r",
-        "s": "s",
-        "t": "t",
-        "u": "u",
-        "v": "v",
-        "w": "w",
-        "x": "x",
-        "y": "y",
-        "z": "z"
+        "UnknownDiagramError": "UnknownDiagramError",
+        "_chunkICPOFSXXA": "_chunkICPOFSXXA",
+        "_chunkICPOFSXXC": "_chunkICPOFSXXC",
+        "_chunkICPOFSXXV": "_chunkICPOFSXXV",
+        "chunkICPOFSXXA": "chunkICPOFSXXA",
+        "chunkICPOFSXXAddDirective": "chunkICPOFSXXAddDirective",
+        "chunkICPOFSXXAssignWithDepth": "chunkICPOFSXXAssignWithDepth",
+        "chunkICPOFSXXB": "chunkICPOFSXXB",
+        "chunkICPOFSXXC": "chunkICPOFSXXC",
+        "chunkICPOFSXXCalculateMathMLDimensions": "chunkICPOFSXXCalculateMathMLDimensions",
+        "chunkICPOFSXXCommon": "chunkICPOFSXXCommon",
+        "chunkICPOFSXXCommonDb": "chunkICPOFSXXCommonDb",
+        "chunkICPOFSXXD": "chunkICPOFSXXD",
+        "chunkICPOFSXXDefaultConfig2": "chunkICPOFSXXDefaultConfig2",
+        "chunkICPOFSXXDefaultConfigDefault": "chunkICPOFSXXDefaultConfigDefault",
+        "chunkICPOFSXXDetectType": "chunkICPOFSXXDetectType",
+        "chunkICPOFSXXDetectors": "chunkICPOFSXXDetectors",
+        "chunkICPOFSXXDirectiveRegex": "chunkICPOFSXXDirectiveRegex",
+        "chunkICPOFSXXDollar": "chunkICPOFSXXDollar",
+        "chunkICPOFSXXE": "chunkICPOFSXXE",
+        "chunkICPOFSXXEvaluate": "chunkICPOFSXXEvaluate",
+        "chunkICPOFSXXF": "chunkICPOFSXXF",
+        "chunkICPOFSXXFrontMatterRegex": "chunkICPOFSXXFrontMatterRegex",
+        "chunkICPOFSXXG": "chunkICPOFSXXG",
+        "chunkICPOFSXXGetConfig": "chunkICPOFSXXGetConfig",
+        "chunkICPOFSXXGetDiagram": "chunkICPOFSXXGetDiagram",
+        "chunkICPOFSXXGetEffectiveHtmlLabels": "chunkICPOFSXXGetEffectiveHtmlLabels",
+        "chunkICPOFSXXGetUrl": "chunkICPOFSXXGetUrl",
+        "chunkICPOFSXXH": "chunkICPOFSXXH",
+        "chunkICPOFSXXHasKatex": "chunkICPOFSXXHasKatex",
+        "chunkICPOFSXXI": "chunkICPOFSXXI",
+        "chunkICPOFSXXJ": "chunkICPOFSXXJ",
+        "chunkICPOFSXXK": "chunkICPOFSXXK",
+        "chunkICPOFSXXL": "chunkICPOFSXXL",
+        "chunkICPOFSXXLineBreakRegex": "chunkICPOFSXXLineBreakRegex",
+        "chunkICPOFSXXM": "chunkICPOFSXXM",
+        "chunkICPOFSXXN": "chunkICPOFSXXN",
+        "chunkICPOFSXXO": "chunkICPOFSXXO",
+        "chunkICPOFSXXP": "chunkICPOFSXXP",
+        "chunkICPOFSXXQ": "chunkICPOFSXXQ",
+        "chunkICPOFSXXR": "chunkICPOFSXXR",
+        "chunkICPOFSXXS": "chunkICPOFSXXS",
+        "chunkICPOFSXXSanitizeText2": "chunkICPOFSXXSanitizeText2",
+        "chunkICPOFSXXSetupGraphViewbox2": "chunkICPOFSXXSetupGraphViewbox2",
+        "chunkICPOFSXXStyles": "chunkICPOFSXXStyles",
+        "chunkICPOFSXXT": "chunkICPOFSXXT",
+        "chunkICPOFSXXU": "chunkICPOFSXXU",
+        "chunkICPOFSXXUnderscore": "chunkICPOFSXXUnderscore",
+        "chunkICPOFSXXUnknownDiagramError": "chunkICPOFSXXUnknownDiagramError",
+        "chunkICPOFSXXV": "chunkICPOFSXXV",
+        "chunkICPOFSXXW": "chunkICPOFSXXW",
+        "chunkICPOFSXXX": "chunkICPOFSXXX",
+        "chunkICPOFSXXY": "chunkICPOFSXXY",
+        "chunkICPOFSXXZ": "chunkICPOFSXXZ",
+        "configureSvgSize": "configureSvgSize",
+        "defaultConfig": "defaultConfig",
+        "detectType": "detectType",
+        "diagramStyles": "diagramStyles",
+        "getConfig": "getConfig",
+        "getDiagram": "getDiagram",
+        "getEffectiveHtmlLabels": "getEffectiveHtmlLabels",
+        "getThemeVariables": "getThemeVariables",
+        "registerDiagram": "registerDiagram",
+        "setConfig": "setConfig",
+        "themes": "themes"
       },
       "status": "done",
       "classification": "boundary",
-      "notes": "Mermaid diagram-api/config alt twin (+ DOMPurify); typed facade (minified aliases). Prefer npm mermaid when alias map is recovered."
+      "notes": "Mermaid diagram-api/config alt twin (+ DOMPurify); typed facade (minified aliases). Prefer npm mermaid when alias map is recovered.",
+      "note": "export-missing: pruned letter identity → 65 public exports"
     },
     "chunk-55IACEB6-CEXn3bFg": {
       "restored": "diagrams/get-diagram-element-alt.ts",
@@ -22394,18 +22437,20 @@
     "mermaid-parser.core-Bf-wA51e": {
       "restored": "diagrams/mermaid-parser-core.ts",
       "exports": {
-        "n": "mermaidParserCoreN",
-        "t": "mermaidParserCoreT"
+        "n": "parse",
+        "t": "initMermaidParserCore"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: n→parse, t→initMermaidParserCore"
     },
     "mermaid-parser.core-lQvHC-p1": {
       "restored": "diagrams/mermaid-parser-core-alt.ts",
       "exports": {
-        "n": "mermaidParserCoreN",
-        "t": "mermaidParserCoreT"
+        "n": "parse",
+        "t": "initMermaidParserCore"
       },
-      "status": "done"
+      "status": "done",
+      "note": "export-missing: n→parse, t→initMermaidParserCore"
     },
     "infoDiagram-42DDH7IO-Dt1JsHyX": {
       "restored": "diagrams/info-diagram.ts",
@@ -24352,10 +24397,10 @@
       "exports": {
         "i": "useConnectPluginsSubmenuModel",
         "n": "ensureConnectPluginsSubmenuItemInit",
-        "r": "ConnectPluginsSubmenuItem",
+        "r": "ensureConnectPluginsSubmenuModelInit",
         "t": "ConnectPluginsSubmenuSection"
       },
-      "note": "Wave AK: gap5 Sw/_w/pw/uw/xw deferred; ConnectPluginsSubmenuItem bindable"
+      "note": "Wave AK: gap5 Sw/_w/pw/uw/xw deferred; ConnectPluginsSubmenuItem bindable | export-missing: r→ensureConnectPluginsSubmenuModelInit (Item not in Wave FY body)"
     },
     "start-appgen-conversation-DD_Qpz5h": {
       "restored": "appgen/start-appgen-conversation/index.ts",
@@ -25828,5 +25873,5 @@
       "vendor": "react-router"
     }
   },
-  "updatedAt": "2026-07-31T04:39:19.352Z"
+  "updatedAt": "2026-07-31T04:45:57.653Z"
 }

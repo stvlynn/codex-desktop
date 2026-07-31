@@ -163,3 +163,11 @@ export const connectPluginsSubmenuItemN = esmInit(() => {
 /** Wave FY: bind no longer required after full body promote */
 export function binduseConnectPluginsSubmenuModel(_next: unknown): void {}
 export function ensureuseConnectPluginsSubmenuModelInit(): void {}
+
+/** Semantic aliases matching IMPORT_MAP / composer consumers. */
+export {
+  connectPluginsSubmenuItemI as useConnectPluginsSubmenuModel,
+  connectPluginsSubmenuItemN as ensureConnectPluginsSubmenuItemInit,
+  connectPluginsSubmenuItemR as ensureConnectPluginsSubmenuModelInit,
+  connectPluginsSubmenuItemT as ConnectPluginsSubmenuSection,
+};

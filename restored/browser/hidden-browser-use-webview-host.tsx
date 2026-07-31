@@ -141,3 +141,8 @@ esmInit(() => {
 /** Wave FY: bind no longer required after full body promote */
 export function bindHiddenBrowserUseWebviewHost(_next: unknown): void {}
 export function ensureHiddenBrowserUseWebviewHostInit(): void {}
+
+/** Bundle public export name (IMPORT_MAP / original `HiddenBrowserUseWebviewHost`). */
+export {
+  BrowserSidebarHiddenBrowserUseWebviewHost as HiddenBrowserUseWebviewHost,
+};
