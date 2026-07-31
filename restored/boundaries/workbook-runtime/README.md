@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~63.9k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~62.9k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -105,6 +105,11 @@
 | Bar/column series (`helper501`) | ~0.27k | **Drained (wave-95)** → `workbook/chart-bar-series/` |
 | Radar chart paint (`Txe`) | ~0.27k | **Drained (wave-95)** → `workbook/chart-radar/` |
 | Category plot layout (`Xxe`) | ~0.28k | **Drained (wave-95)** → `workbook/chart-plot-layout/` |
+| Category axes (`Tbe`) | ~0.18k | **Drained (wave-96)** → `workbook/chart-category-axes/` |
+| Scatter series (`nCe`+`uxe`) | ~0.28k | **Drained (wave-96)** → `workbook/chart-scatter-series/` |
+| Histogram axes (`gCe`) | ~0.22k | **Drained (wave-96)** → `workbook/chart-histogram-axes/` |
+| Chart data table (`helper561`) | ~0.18k | **Drained (wave-96)** → `workbook/chart-data-table/` |
+| Scatter axes (`helper570`) | ~0.19k | **Drained (wave-96)** → `workbook/chart-scatter-axes/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1102,3 +1107,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on four modules + chart-paint + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 63920 (was 64914; Δ -994).
 - Next: `gCe` (~0.22k doughnut) / `nCe` (~0.19k line) / `rze` after `_workbookS` ensure drain / `kht` after WorkbookN / clean `xLe`.
+
+## Wave-96 progress
+
+- Re-scanned ≥180 clusters: WorkbookN (~1.8k leave), `_workbookS`/`vYe` (~1.2k leave), `rze`/`kht` blocked leave-behinds, `Vht`/`Uft`/`ODe`/`Kht` deferred (CF/class/constraint), `rxe` (~236 three-cam), `gCe` (~222), `nCe` (~187), `Tbe` (~177), `helper561` (~183), `helper570` (~182). `jCe` is a 7-line stub (skip).
+- Skipped `_workbookS`/WorkbookN / KJe–aYe / `xLe`; deferred `rze`/`kht`/`Vht`/`Uft`/`ODe`/`Kht`/`rxe`.
+- Peeled `Tbe` (+ `wbe`) → `workbook/chart-category-axes/` (`ccaH`); chart-paint `paintRadar` → `paintCategoryAxes` (hook was misnamed).
+- Peeled `nCe` (+ `QSe`/`$Se`/`eCe`/`tCe`/`uxe`) → `workbook/chart-scatter-series/` (`cssH`); chart-paint `paintLine` → `paintScatterSeries` (hook was misnamed).
+- Peeled `gCe` (+ `hCe`) → `workbook/chart-histogram-axes/` (`chaH`); chart-paint `paintDoughnut` → `paintHistogramAxes` (hook was misnamed).
+- Peeled `helper561` → `workbook/chart-data-table/` (`cdtH`); chart-paint dropped `bh561`.
+- Peeled `helper570` (+ `helper569`) → `workbook/chart-scatter-axes/` (`csaH`); chart-paint dropped `bh570`.
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on five modules + chart-paint + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 62936 (was 63920; Δ -984).
+- Next: `rxe` (~0.24k three-cam) / `ODe` (~0.21k) after constraint readiness / `rze` after `_workbookS` / `kht` after WorkbookN / clean `xLe`.

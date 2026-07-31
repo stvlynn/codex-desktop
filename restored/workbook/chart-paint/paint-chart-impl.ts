@@ -12,6 +12,11 @@ import { cpH } from "./boundary-hooks";
 import { paintBarDirectionSeries } from "../chart-bar-direction";
 import { paintBarSeries } from "../chart-bar-series";
 import { paintRadarChart } from "../chart-radar";
+import { paintCategoryAxes } from "../chart-category-axes";
+import { paintScatterSeries } from "../chart-scatter-series";
+import { paintHistogramAxes } from "../chart-histogram-axes";
+import { paintChartDataTable } from "../chart-data-table";
+import { paintScatterAxes } from "../chart-scatter-axes";
 import { paintChartAxisTicks } from "../chart-axis-ticks";
 import { paintChartLegend } from "../chart-legend";
 import { paintThreeChart } from "../three-chart-paint";
@@ -145,7 +150,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
       cpBind2287,
       cpIn35.chartModel,
     );
-    cpH.paintRadar(
+    paintCategoryAxes(
       cpIn32,
       cpIn33,
       cpBind9668,
@@ -169,7 +174,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
       cpBind2287,
     );
     cpBind2294 &&
-      (cpH.bh561(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287),
+      (paintChartDataTable(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287),
       (cpBind2295 = true));
     cpIn32.restore();
     return;
@@ -271,7 +276,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         : undefined,
     );
     cpBind2294 &&
-      (cpH.bh561(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287),
+      (paintChartDataTable(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287),
       (cpBind2295 = true));
   } else if (!cpBind2276 && !cpBind2277 && !cpBind2280 && !cpBind2281) {
     if (cpBind2282) {
@@ -307,7 +312,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         },
       );
       cpBind2294 &&
-        (cpH.bh561(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287),
+        (paintChartDataTable(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287),
         (cpBind2295 = true));
     } else if (cpBind2300) {
       strokePlotAreaBorder(cpIn32, cpIn33, cpBind2290, cpIn35.themeMap);
@@ -475,7 +480,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
             cpBind16040 = cpH.bh540(cpIn33, cpBind2290, cpBind16039, {
               niceXDomain: false,
             });
-          cpH.paintDoughnut(
+          paintHistogramAxes(
             cpIn32,
             cpIn33,
             cpBind16040,
@@ -556,7 +561,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
                 : new Set(cpIn35.hiddenSeriesIndices),
             cpBind12407 = cpH.bh556(cpIn33, cpBind12406),
             cpBind12408 = cpH.bh540(cpIn33, cpBind2290, cpBind12407);
-          cpH.bh570(
+          paintScatterAxes(
             cpIn32,
             cpIn33,
             cpBind12408,
@@ -564,7 +569,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
             cpIn35.themeMap,
             cpIn34,
           );
-          cpH.paintLine(
+          paintScatterSeries(
             cpIn32,
             cpIn33,
             cpBind2290,
@@ -585,7 +590,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
                 : new Set(cpIn35.hiddenSeriesIndices),
             ),
             cpBind15275 = cpH.bh540(cpIn33, cpBind2290, cpBind15274);
-          cpH.bh570(
+          paintScatterAxes(
             cpIn32,
             cpIn33,
             cpBind15275,
@@ -711,6 +716,6 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
           }));
   cpBind2294 &&
     !cpBind2295 &&
-    cpH.bh561(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287);
+    paintChartDataTable(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287);
   cpIn32.restore();
 }
