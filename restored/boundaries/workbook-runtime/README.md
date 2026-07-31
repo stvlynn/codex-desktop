@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~143.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~137.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -58,7 +58,8 @@
 | PivotLayout/cache hydrate (Binding334/wne + Cne/el/332/333 + helper24/hre) | ~0.37k | **Drained (wave-52)** → `workbook/pivot-table/` + `workbook/pivot-caches/`
 | Yjs + lib0 (`Binding1`–`331` / `no` / `Bte`) | ~9.5k | **Drained (wave-53)** → `vendor/yjs` npm shim (`yjs@13.6.27`)
 | Three.js (`Binding929`/`Xbe` + MathUtils helpers) | ~15.3k | **Drained (wave-54)** → `vendor/three` npm shim (`three@0.170.0`)
-| highlight.js grammars (`wke`…`aAe` + `oAe`/`sAe`; contiguous after Binding1574/`Cke`) | ~7.9k | **Drained (wave-55)** → `boundaries/highlight-js` npm shim (`highlight.js@^11.11.1`) |
+| highlight.js grammars (`wke`…`aAe` + `oAe`/`sAe`; contiguous after Binding1574/`Cke`) | ~7.9k | **Drained (wave-55)** → `boundaries/highlight-js` npm shim (`highlight.js@^11.11.1`)
+| Zod (`helper789` / `$Zod*` / Binding1790–1799; Binding1790 var tail = recipes kept) | ~6.4k | **Drained (wave-56)** → `vendor/zod` npm shim (`zod@^4.4.3`) |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -632,4 +633,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on highlight-js shim + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 143331.
 - Next: Binding1790 (~8.0k Zod cluster) / Binding1996 (~4.5k) / Binding1390 (~3.8k) / Binding740 (~3.0k), or `The`/`BYe`; continue scanning for stock vendor fingerprints.
+
+
+## Wave-56 progress
+
+- Confirmed Binding1790 fingerprints as stock Zod (`ZodType` / `ZodPipe` / `ZodReadonly` / `$Zod*`). Binding1790's ~8.0k var chain is Zod public API (~1.0k) + presentation-recipe schemas (~7k) — only the Zod slice + preceding `$Zod*` core were cut.
+- Replaced inlined Zod (`helper789` / Binding1751… / `$Zod*` / Binding1790–1799, ~6.4k LOC) with existing `vendor/zod` npm shim (`zod@^4.4.3`).
+- Kept thin boundary aliases for recipe consumers: `helper816`=`zodString`, `helper817`=`zodNumber`, `helper818`=`zodArray`, `helper819`=`zodObject`, `YUe`=`zodEnum`, `Binding1799`=`ensureZodRuntime`. Recipe cluster `qWe`… retained.
+- Left Binding662/`_C`, Binding1574/`Cke`, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on vendor shim + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 136962.
+- Next: Binding1996 (~4.5k) / Binding1390 (~3.8k) / Binding740 (~3.0k), or `The`/`BYe`; continue scanning for stock vendor fingerprints.
 
