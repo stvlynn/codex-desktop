@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~192.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~191.4k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -378,6 +378,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 192052.
-- Next: pivot VO surface (335/336/338), or post-workbookHelper303 style-ref / `_workbookZ` element VO cluster; continue scanning for stock vendor fingerprints.
+- Next: ~~post-workbookHelper303 style-ref / `_workbookZ` element VO~~ (done wave-36); remaining pivot VO surface (335/336/338) or next contiguous post-ode mime-sniff / helper304+ cluster.
+
+
+## Wave-36 progress
+
+- Extracted style-ref helpers (`workbookHelper303`/`ide`) + positive-id guard (`ade`) → `workbook/slide-element/`.
+- Extracted base slide Element VO (`_workbookZ`) + cluster ensure (`workbookB`) → `workbook/slide-element/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, mime-sniff `ode`/`sde`/Binding648+, and pivot enums `Binding335`/`336`/`338` in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 191433.
+- Next: pivot VO surface (335/336/338), or post-ode mime-sniff / helper304+ cluster; continue scanning for stock vendor fingerprints.
 
 
