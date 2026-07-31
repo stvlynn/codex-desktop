@@ -16,3 +16,15 @@ export {
   clampNonNegInt,
   gXe,
 } from "./sheet-helpers";
+
+export {
+  wireWorksheetsBoundaryHooks,
+  type WorksheetsBoundaryHooks,
+  shH,
+} from "./worksheets-boundary-hooks";
+export {
+  ensureWorksheetsCollectionInit,
+  TXe,
+  EXe,
+} from "./ensure-worksheets-collection-init";
+export { CXe, wXe } from "./worksheets-collection-impl";

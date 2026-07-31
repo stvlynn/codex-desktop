@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: presentation table row / range / columns / borders
-// (legacy YEe / Binding1321 / QEe / $Ee / Binding1316–1324 / XEe / ZEe).
+// (legacy YEe / Binding1321 / QEe / $Ee / Binding1316–1324 / XEe / ZEe; cell via table-cell-impl).
 // Stage-3 wave-85 cohesive table-row-range impl kept flat under maxFlatLines.
 
 import { esmInit } from "../../runtime/rolldown-runtime";
@@ -24,10 +24,12 @@ import {
   workbookBinding1323,
   workbookBinding1324,
 } from "./tr-slots";
-import { trH } from "./boundary-hooks";
+import { JEe, workbookBinding1315 } from "./table-cell-impl";
+import { Fill } from "../fill";
+import { applyTextStylePatch } from "../text-style";
 
 export const YEe = esmInit(() => {
-  trH.ensureJEe();
+  JEe();
   scH.ensureBinding1312();
   workbookT();
   workbookBinding1316 = class {
@@ -39,7 +41,7 @@ export const YEe = esmInit(() => {
       this.#r = trIn7644;
       this.#e =
         trIn7643?.cells?.map(
-          (trIn16364) => new trH.Binding1315(trIn16364, trIn7644),
+          (trIn16364) => new workbookBinding1315(trIn16364, trIn7644),
         ) ?? [];
       this.#t = trIn7643?.id ?? scH.allocateLocalId();
       this.#n = trIn7643?.heightEmu ? trIn7643.heightEmu * workbookGt : 0;
@@ -74,7 +76,7 @@ export const YEe = esmInit(() => {
         return;
       }
       for (; this.#e.length < trIn7193; )
-        this.#e.push(new trH.Binding1315(undefined, this.#r));
+        this.#e.push(new workbookBinding1315(undefined, this.#r));
       this.#e.length > trIn7193 && this.#e.splice(trIn7193);
     }
     toProto() {
@@ -180,14 +182,14 @@ export const workbookBinding1321 = esmInit(() => {
     }
     applyFill(trIn6568) {
       this.#l((trIn7543) => {
-        if (trIn6568 instanceof workbookCt) {
+        if (trIn6568 instanceof Fill) {
           let trBind20363 = trIn6568.toProto();
           trIn7543.fill = trBind20363
-            ? new workbookCt({
+            ? new Fill({
                 type: "proto",
                 proto: trBind20363,
               })
-            : new workbookCt();
+            : new Fill();
           return;
         }
         trIn7543.fill = trIn6568;
@@ -195,7 +197,7 @@ export const workbookBinding1321 = esmInit(() => {
     }
     applyTextStyle(trIn9890) {
       this.#l((trIn11596) => {
-        workbookYt(trIn11596.textStyle, trIn9890);
+        applyTextStylePatch(trIn11596.textStyle, trIn9890);
         "alignment" in trIn9890 && XEe(trIn11596, trIn9890.alignment);
       });
     }

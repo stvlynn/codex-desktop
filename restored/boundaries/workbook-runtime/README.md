@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~76.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~75.2k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -84,6 +84,8 @@
 | Table row/range/columns/borders (`YEe`/`Binding1321`/`QEe`/`$Ee`) | ~0.58k | **Drained (wave-85)** → `workbook/table-row-range/` |
 | Formula registry (`$dt`/`Xdt`/`Zdt`/`Binding1947`) | ~0.57k | **Drained (wave-86)** → `workbook/formula-registry/` |
 | Presentation slide (`Z$`/`X$`/`cLe`/`sLe`) | ~0.79k | **Drained (wave-87)** → `workbook/presentation-slide/` |
+| Table cell (`JEe`/`Binding1315`) | ~0.43k | **Drained (wave-88)** → `workbook/table-row-range/` (reunite) |
+| Worksheets collection (`TXe`/`wXe`/`CXe`/`EXe`) | ~0.40k | **Drained (wave-88)** → `workbook/sheet/` |
 
 ## Why it stays in `boundaries/`
 
@@ -987,4 +989,15 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 75978 (was 76686; Δ -708).
 - Next: JEe table cell (~0.39k reunite with table-row-range) / clean `xLe` walnut / leave-behinds (`WorkbookN`/`_workbookS`) only if consumers clean — or lower peel bar / strategy change.
+
+## Wave-88 progress
+
+- Re-scanned ≥300 clusters: WorkbookN (~1845 leave), `_workbookS`/`_workbookO` (~1236 leave), helper585 (~924 chart paint), Zht (~596), $be (~578), … JEe (~389), zXe (~368), TXe (~364), kgt (~361).
+- Skipped full `_workbookS`/`_workbookO`: consumers already hooked (canvas-paint / mermaid-slide-helpers) but 45-ensure fan-out still entangled with presentation leave-behinds (jLe…aYe / WorkbookN) — unsafe this wave.
+- Reunited `JEe`/`Binding1315` (+ `_workbookG` / helper666) → `workbook/table-row-range/table-cell-impl.ts`; cleared `trH` JEe hooks; Paragraphs/Fill/Line/TextStyle/DetachedText/geometry/scH/Qt imported directly; intentional `workbookEt` ensure dropped.
+- Peeled `CXe`+`TXe`/`wXe`+`EXe` → `workbook/sheet/worksheets-collection-impl.ts`; kme/Binding686 logger via `shH` hooks; Sheet/yXe via sheet bag.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on changed modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 75165 (was 75978; Δ -813).
+- Next: zXe named-ranges (~0.37k) / kgt styles-yjs (~0.36k) / clean `xLe` walnut / partial WorkbookN method peel / `_workbookS` only after presentation leave-behind ensures drain.
 

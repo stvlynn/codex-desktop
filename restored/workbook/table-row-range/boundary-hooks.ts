@@ -1,23 +1,14 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-85: boundary deps for table-row-range
-// (JEe / Binding1315 table-cell leave-behind).
+// Stage-3 wave-88: table-row-range boundary hooks
+// (JEe/Binding1315 reunited — hooks cleared; bag kept for future leave-behinds).
 
-export type TableRowRangeBoundaryHooks = {
-  /** Legacy JEe ensure (seeds Binding1315 table cell). */
-  ensureJEe: () => void;
-  /** Table cell class (legacy Binding1315). */
-  Binding1315: any;
-};
+export type TableRowRangeBoundaryHooks = Record<string, never>;
 
-/** Live bag for intentional leave-behind ensure/class. */
+/** Live bag (empty after wave-88 JEe reunite). */
 export const trH: TableRowRangeBoundaryHooks = {} as TableRowRangeBoundaryHooks;
 
 export function wireTableRowRangeBoundaryHooks(
-  next: TableRowRangeBoundaryHooks,
+  _next: TableRowRangeBoundaryHooks = {} as TableRowRangeBoundaryHooks,
 ): void {
-  trH.ensureJEe = next.ensureJEe;
-  Object.defineProperty(trH, "Binding1315", {
-    get: () => next.Binding1315,
-    configurable: true,
-  });
+  // no-op — JEe leave-behind drained in wave-88
 }

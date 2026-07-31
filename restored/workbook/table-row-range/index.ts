@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-85: table-row-range barrel
-// (legacy YEe / Binding1321 / QEe / $Ee / Binding1316–1324).
+// Stage-3 wave-88: table-row-range barrel
+// (legacy YEe / Binding1321 / QEe / $Ee / Binding1316–1324 + JEe / Binding1315).
 
 export { ensureTableRowRangeInit } from "./ensure-table-row-range-init";
 export { wireTableRowRangeBoundaryHooks, trH } from "./boundary-hooks";
@@ -22,3 +22,12 @@ export {
   QEe,
   $Ee,
 } from "./table-row-range-impl";
+export {
+  JEe,
+  workbookBinding1314,
+  workbookBinding1315,
+  lineFromPartialProto,
+  _workbookG,
+  normalizeTableCellAnchor,
+  workbookUnderscore,
+} from "./table-cell-impl";
