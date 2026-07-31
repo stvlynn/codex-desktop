@@ -48,7 +48,6 @@ export type ChartPaintBoundaryHooks = {
   paintAxis: (...args: any[]) => any;
   paintGridlines: (...args: any[]) => any;
   paintTrendlines: (...args: any[]) => any;
-  paintThreeChart: (...args: any[]) => any;
   ensureWr: () => void;
   ensureFillResolveInit: () => void;
   ensureWorkbookBinding862: () => void;

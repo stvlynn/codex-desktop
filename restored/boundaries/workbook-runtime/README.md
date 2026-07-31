@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~74.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~71.8k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -87,6 +87,8 @@
 | Table cell (`JEe`/`Binding1315`) | ~0.43k | **Drained (wave-88)** → `workbook/table-row-range/` (reunite) |
 | Worksheets collection (`TXe`/`wXe`/`CXe`/`EXe`) | ~0.40k | **Drained (wave-88)** → `workbook/sheet/` |
 | Chart canvas paint (`helper579`–`585` / `NCe` / `LCe` / `PCe`) | ~1.28k | **Drained (wave-89)** → `workbook/chart-paint/` |
+| Doc-op apply (`helper1024` / `Zht` / `Qht`…`ggt` / `_gt`) | ~1.26k | **Drained (wave-90)** → `workbook/doc-op-apply/` |
+| Three.js chart paint (`helper521` / `Qbe` / `$be`) | ~0.97k | **Drained (wave-90)** → `workbook/three-chart-paint/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1011,5 +1013,18 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 73958 (was 75165; Δ -1207).
 - Next: zXe named-ranges (~0.37k) / kgt styles-yjs (~0.36k) / Zht export (~0.60k) / clean `xLe` walnut / partial WorkbookN method peel / `_workbookS` only after presentation leave-behind ensures drain.
+
+## Wave-90 progress
+
+- Re-scanned ≥300 clusters: WorkbookN (~1845 leave), `_workbookS`/`_workbookO` (~1236 leave), Zht (~596) + contiguous converters/_gt (~1261 total), $be (~578) + Qbe/helper521 (~971 contiguous), N1e (~522), helpers 491/722/745/462/607 (~471–375), zXe (~368), kgt (~361), Kpt (~352).
+- Skipped full `_workbookS`/`_workbookO` (45-ensure fan-out) and WorkbookN leave-behind.
+- `$be` is app 3D chart paint — **not** covered by `vendor/three` (wave-54 stock three@0.170.0 shim).
+- Peeled doc-op apply `helper1024`/`Zht` + `Qht`…`ggt`/`Binding1964`/`_gt` → `workbook/doc-op-apply/` (apply + converters under flat limit); comment-thread class + range/comments ensures via `doH` hooks; spreadsheetVn / chart-proto maps / getAttachedWorksheet imported directly.
+- Peeled contiguous `helper521`/`Qbe`/`$be` → `workbook/three-chart-paint/`; three.js via `vendor/three`; chart helpers + SSF/camera via `tcH` hooks; chart-paint now imports `paintThreeChart` directly (dropped `cpH.paintThreeChart`).
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 71784 (was 73958; Δ -2174).
+- Next: N1e unit-convert (~0.52k) / zXe named-ranges (~0.37k) / kgt styles-yjs (~0.36k) / helpers 491+ / `_workbookS` only after presentation leave-behind ensures drain.
+
 
 

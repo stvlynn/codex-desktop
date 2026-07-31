@@ -9,6 +9,7 @@ import {
   workbookHelper352 as chartRegressionFn,
 } from "../chart-asset";
 import { cpH } from "./boundary-hooks";
+import { paintThreeChart } from "../three-chart-paint";
 import {
   strokePlotAreaBorder,
   paintChartChrome,
@@ -418,7 +419,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
               cpBind2287,
               cpIn35.chartModel,
             );
-          $be(
+          paintThreeChart(
             cpIn35.threeCtx,
             cpIn33,
             cpBind9902,
