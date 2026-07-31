@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~120.2k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~118.6k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -64,6 +64,7 @@
 | compose-layout engine (`Binding1390`/`MDe`…`Binding1488`) | ~3.9k | **Drained (wave-58)** → `workbook/compose-layout/` |
 | WorkbookN / `__workbookT` (`Binding1996`) | ~4.4k | **Drained (wave-59)** → `workbook/workbook-core/` |
 | Worksheet drawings (`helper373`…`Sve` + `Binding740`–`789`) | ~3.1k | **Drained (wave-60)** → `workbook/worksheet-drawings/` |
+| Drawing-layout + sparklines (`Lve`/`Binding790`–`815`/`_D`) | ~1.6k | **Drained (wave-61)** → `workbook/worksheet-drawings/` + `workbook/sparklines/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -692,3 +693,12 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 120160 (was 123201).
 - Next: Binding790 layout helpers / compose DSL Binding1490–1528 / `The`/`BYe` / Google Slides `pJe`/`SJe`.
+
+## Wave-61 progress
+
+- Extracted Binding790 contiguous cluster (`Lve` + Binding790–803 drawing-layout + Binding804–815/`_D` cell/sparkline VOs, ~1.6k LOC) → `workbook/worksheet-drawings/drawing-layout.ts` + `workbook/sparklines/`.
+- Left compose DSL Binding1490–1528, Google Slides `pJe`/`SJe`, `The`/`BYe`, Binding662/`_C`, Binding1574/`Cke`, and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 118625 (was 120164).
+- Next: compose DSL Binding1490–1528 / `The`/`BYe` / Google Slides `pJe`/`SJe` / Binding1687 (~3.0k) / Binding1906 (~2.4k).

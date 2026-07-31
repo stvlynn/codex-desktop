@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-60: worksheet-drawings barrel (legacy Binding740–789 + Sve).
+// Stage-3 wave-60/61: worksheet-drawings barrel (Binding740–789 + Lve/Binding790–803 layout).
 
 export {
   wireWorksheetDrawingsBoundaryHooks,
@@ -20,6 +20,11 @@ export { ensureDrawingAnchorInit } from "./drawing-anchor";
 export { ensureDrawingChartOpsInit } from "./drawing-chart-ops";
 export { ensureDrawingCollectionsAInit } from "./drawing-collections-a";
 export { ensureDrawingCollectionsBInit } from "./drawing-collections-b";
+export {
+  applyWorksheetDrawingLayout,
+  ensureDrawingLayoutInit,
+  drawingLayout,
+} from "./drawing-layout";
 
 import { ensureWorksheetDrawingsInit } from "./ensure-worksheet-drawings-init";
 import { worksheetDrawings } from "./drawing-bindings";
