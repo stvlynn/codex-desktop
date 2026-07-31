@@ -5,7 +5,7 @@ import {
   react,
   reactCompilerRuntime,
 } from "../../boundaries/react-cjs-runtime";
-import { rolldownRuntimeS } from "../../runtime/rolldown-runtime";
+import { rolldownRuntimeN, rolldownRuntimeS } from "../../runtime/rolldown-runtime";
 
 reactCompilerRuntime();
 
@@ -27,7 +27,7 @@ export const chatgptBrowserHostContextProvider =
 
 let ensureBrowserHostContextInitImpl: (() => void) | null = null;
 
-/** Boundary registers Value43 here so extracted Value311 avoids a circular import. */
+/** Registers Value43 so extracted modules can call ensure without a circular import. */
 export function setEnsureChatgptBrowserHostContextInit(fn: () => void): void {
   ensureBrowserHostContextInitImpl = fn;
 }
@@ -35,3 +35,19 @@ export function setEnsureChatgptBrowserHostContextInit(fn: () => void): void {
 export function ensureChatgptBrowserHostContextInit(): void {
   ensureBrowserHostContextInitImpl?.();
 }
+
+
+var browserHostReactRuntime: any,
+  browserHostContextAlias: any,
+  browserHostContextEnsure = rolldownRuntimeN(() => {
+    browserHostReactRuntime = rolldownRuntimeS(react(), 1);
+    browserHostContextAlias = chatgptBrowserHostContext;
+    browserHostReactRuntime.createContext(null);
+  });
+
+setEnsureChatgptBrowserHostContextInit(browserHostContextEnsure);
+
+export {
+  browserHostContextEnsure as ensureChatgptBrowserHostContextInitSlot,
+};
+

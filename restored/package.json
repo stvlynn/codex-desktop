@@ -55,6 +55,7 @@
     "khroma": "^2.1.0",
     "lodash": "^4.17.21",
     "lucide-react": "^0.511.0",
+    "mapbox-gl": "^3.27.0",
     "marked": "^15.0.0",
     "mermaid": "11.12.0",
     "mermaid-v14": "npm:mermaid@11.14.0",

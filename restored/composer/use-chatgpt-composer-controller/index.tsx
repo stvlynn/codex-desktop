@@ -1,7 +1,8 @@
+import "./ensure-chatgpt-composer-markdown-peer-bootstrap";
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Semantic composer-domain API: typed aliases over the open oversized runtime body.
-// Stage-3 wave-14: content-reference router + product/sports/stock/location surfaces drained.
-// Residual: client-defined widget mountain (Helper124–178) + remaining ensures.
+// Stage-3 wave-15: client-defined widget / chart mountain (Helper124–178) drained.
+// Residual: thin boundary re-export; markdown peer bootstrap owns registry side-effects.
 
 export type {
   ChatgptBrowserConversationBannerProps,
@@ -499,6 +500,20 @@ export {
 export {
   setChatgptContentReferenceRouterPeers,
 } from "./chatgpt-content-reference-router-peers";
+
+export {
+  useChatgptComposerControllerHelper124,
+  useChatgptComposerControllerHelper148,
+  useChatgptComposerControllerHelper154,
+  useChatgptComposerControllerHelper167,
+  useChatgptComposerControllerHelper173,
+  useChatgptComposerControllerHelper177,
+  useChatgptComposerControllerHelper178,
+  slot233 as useChatgptComposerControllerValue233,
+  ensureChatgptSportsCodeSurfaceInit,
+} from "./chatgpt-client-defined-widget-charts";
+export { ensureChatgptComposerMarkdownPeerBootstrap } from "./ensure-chatgpt-composer-markdown-peer-bootstrap";
+
 
 
 
