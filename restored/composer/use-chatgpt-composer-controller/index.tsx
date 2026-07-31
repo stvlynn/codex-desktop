@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Semantic composer-domain API: typed aliases over the open oversized runtime body.
-// Stage-3 wave-11: U fan-in Value318/324/327/332/336/349 drained; U→_O extracted.
-// Residual: Value303/306/308 markdown-registry mountain.
+// Stage-3 wave-12: mapbox + markdown fan-in/registry ensures drained.
+// Residual: markdown helper/router mountain + map widgets (mapbox drained).
 
 export type {
   ChatgptBrowserConversationBannerProps,
@@ -412,6 +412,34 @@ export {
   ensureChatgptSafetyReviewSurfaceInit,
 } from "./ensure-chatgpt-composer-controller-u-fanin";
 export { ensureChatgptComposerStreamingContextInit } from "./chatgpt-composer-streaming-context";
+
+export {
+  ensureChatgptCitationChromePeerInit,
+  ensureChatgptBrowserHostAppscopePeerInit,
+  ensureChatgptDilLazyRendererInit,
+  ensureChatgptDilLazyRendererPeerInit,
+  ensureChatgptContentReferenceFootnotePeerInit,
+  chatgptDilRendererLazy,
+  chatgptDilReact,
+  chatgptDilWidgetNodeSchema,
+  chatgptDilRendererCustomCss,
+} from "./ensure-chatgpt-composer-markdown-fanin-peers";
+export {
+  chatgptMapboxGlRuntime,
+  ensureChatgptMapboxGlWorkerUrlInit,
+  chatgptMapboxGlWorkerUrl,
+} from "../../boundaries/chatgpt-mapbox-gl-runtime";
+export {
+  chatgptHiddenContentReferenceTypes,
+  ensureChatgptMarkdownDirectivePeersInit,
+  ensureChatgptMarkdownDirectiveCitationPeerInit,
+  ensureChatgptMarkdownDirectivesRegistryInit,
+} from "./ensure-chatgpt-markdown-directives-registry-init";
+export {
+  setChatgptMarkdownRegistryPeerInits,
+  ensureChatgptMarkdownRegistryPeerInits,
+} from "./chatgpt-markdown-registry-peer-inits";
+
 
 import { _useChatgptComposerControllerD } from "./ensure-chatgpt-composer-controller-aux-init-d";
 import { _useChatgptComposerControllerO } from "./ensure-chatgpt-composer-controller-aux-init-o";
