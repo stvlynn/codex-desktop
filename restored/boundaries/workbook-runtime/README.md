@@ -797,3 +797,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary LOC ≈ 96321 (was 98173; Δ -1852).
 - Next: Google Slides `oJe`/`pJe`/`SJe` (~1.4k) / clean `xLe` walnut peel before comments/`_C` (~660) / compose DSL Binding1490–1528 / flowchart `NPe` cluster / Table VO `fhe`.
 
+## Wave-71 progress
+
+- Identified contiguous `oJe`/`pJe`/`SJe` cluster as Codex Google Slides adapter (NOT vendor): presentation templates + EMU/PT helpers + Slides↔presentation bridge class (~1.36k LOC).
+- Extracted → `workbook/google-slides-adapter/` (class peeled via prototype installers under flat limit; `workbookEt`/`Z$`/`Binding739`/`Binding1389`/`Binding736`/`of`/`Binding410` remain in boundary via `gsaH` hooks).
+- Left compose DSL Binding1490–1528, `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, flowchart `NPe`/`PPe` + graph layout Binding1675/1685, Table VO `fhe`/`ohe`, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 95036 (was 96321; Δ -1285).
+- Next: clean `xLe` walnut peel before comments/`_C` (~660) / compose DSL Binding1490–1528 / flowchart `NPe` cluster / Table VO `fhe`.
+
