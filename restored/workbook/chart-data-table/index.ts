@@ -3,3 +3,11 @@
 
 export { wireChartDataTableBoundaryHooks, cdtH } from "./boundary-hooks";
 export { paintChartDataTable } from "./chart-data-table-impl";
+
+export {
+  parseSheetRangeRef,
+  normalizeSheetRangeParts,
+  expandSheetRange,
+  UCe,
+  WCe,
+} from "./sheet-range-ref-impl";

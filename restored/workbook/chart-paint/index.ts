@@ -24,3 +24,13 @@ export {
   paintChartFromProto,
 } from "./chart-paint-entry-impl";
 export { paintChart } from "./paint-chart-impl";
+
+export { paintAxisTitleText } from "./paint-axis-title-text-impl";
+
+export {
+  resolveAxisTextStyle,
+  layoutCategoryLabels,
+  RCe,
+} from "./layout-category-labels-impl";
+
+export { paintRadialGridlines, KSe } from "./paint-radial-gridlines-impl";

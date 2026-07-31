@@ -8,3 +8,11 @@ export {
   fitBubbleScaleDomain,
   workbookHelper539,
 } from "./fit-bubble-scale-domain-impl";
+
+export {
+  scaledBubbleRadius,
+  niceBubbleExtentStep,
+  fitPercentBubbleDomain,
+  Dxe,
+  Oxe,
+} from "./fit-percent-bubble-domain-impl";

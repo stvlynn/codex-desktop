@@ -34,3 +34,8 @@ export {
   VCe,
 } from "./paint-charts-impl";
 export { wirePaintChartsBoundaryHooks, pchH } from "./boundary-hooks-charts";
+
+export {
+  paintSparklines as paintSparklinesImpl,
+  JCe,
+} from "./paint-sparklines-impl";

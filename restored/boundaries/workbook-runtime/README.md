@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~48.2k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~46.8k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -231,6 +231,13 @@
 | Plot-area reserve (`helper546`) | ~0.05k | **Drained (wave-112)** → `workbook/chart-scatter-axes/` |
 | Rounded-rect arcTo (`swe`/`Swe`) | ~0.10k | **Drained (wave-112)** → `workbook/shape-path/` |
 | Stroke shape line (`Lwe`/`helper648`) | ~0.10k | **Drained (wave-112)** → `workbook/shape-geometry-paint/` |
+| Scale domain helpers (`helper388`/`391`/`403`/`Mye`) | ~0.28k | **Drained (wave-113)** → `workbook/chart-group-scales/` |
+| Axis paint (`helper433`/`438`/`RCe`/`KSe`) | ~0.30k | **Drained (wave-113)** → `workbook/chart-axis-ticks/` + `chart-paint/` |
+| Treemap paths/labels (`helper475`/`PSe`) | ~0.15k | **Drained (wave-113)** → `workbook/chart-treemap-tiles/` |
+| Series peels (`hxe`/`Cxe`/`cxe`/`Oxe`) | ~0.35k | **Drained (wave-113)** → area/radar/trendline/scatter-scale |
+| Data-table + sparklines (`UCe`/`JCe`) | ~0.14k | **Drained (wave-113)** → `chart-data-table/` + `canvas-paint/` |
+| Connector stroke unlock (`Qwe`+611/618–623) | ~0.37k | **Drained (wave-113)** → `workbook/shape-geometry-paint/` |
+| Rounded connector corner (`FPe`) | ~0.05k | **Drained (wave-113)** → `workbook/image-connector/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1456,4 +1463,11 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Peeled: helper380→fye + helper386/mye/hye (Binding835 inlined; pye/Binding836 kept); helper546; helper440+Iye+441/442/Lye/Rye/443; swe/Swe; Lwe+647/648
 - helper339/340 already wired from table-vo (wave-76) — unlocked bands
 - Skipped Qwe (leave-behinds $we/618/623/611), ADe/helper672, BDe (690/691/695), Binding836/pye, FALSE/ESM, rze/kht
+- openBoundary remains while mega still large
+
+## Wave 113 (Stage-3 preferred + stroke unlock)
+
+- Boundary 48247 → 46792 (Δ -1455)
+- Peeled: helper388/391/403+417/Mye; helper433/438/428+RCe/KSe; helper475+Xye; PSe+565/566+LSe; cxe/hxe/Cxe; Oxe+Dxe+534; UCe+588+WCe; JCe; FPe; helper611+Qwe stroke cluster (618–623/$we/eTe/nTe/rTe/iTe/aTe/oTe/sTe/lTe)
+- Skipped pye/Binding836 (Binding836 absent), helper489 (SSF), helper603, hbe extras, ADe/BDe, rze, kht FALSE
 - openBoundary remains while mega still large

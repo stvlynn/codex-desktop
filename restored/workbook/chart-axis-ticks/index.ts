@@ -30,3 +30,5 @@ export {
   Lye,
   Rye,
 } from "./plan-axis-ticks-impl";
+
+export { paintAxisGridlineStroke } from "./paint-axis-gridline-impl";

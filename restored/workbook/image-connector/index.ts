@@ -72,3 +72,5 @@ export function icFn353(...args: any[]) {
 export function icFn371(...args: any[]) {
   return icR.icFn371(...args);
 }
+
+export { roundedConnectorCorner, FPe } from "./rounded-connector-corner-impl";

@@ -6,3 +6,12 @@ export {
   buildChartGroupScales,
   workbookHelper423,
 } from "./chart-group-scales-impl";
+
+export {
+  planComboValueDomains,
+  stackSeriesExtents,
+  applyNiceContinuousDomain,
+  niceTickStep,
+  expandForecastCategories,
+  Mye,
+} from "./scale-domain-helpers-impl";

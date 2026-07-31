@@ -3,3 +3,5 @@
 
 export { wireChartAreaSeriesBoundaryHooks, casH } from "./boundary-hooks";
 export { paintAreaSeries, workbookHelper529 } from "./chart-area-series-impl";
+
+export { stackAreaLayers, hxe } from "./stack-area-layers-impl";

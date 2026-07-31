@@ -8,3 +8,5 @@ export {
   paintTrendlineLabel,
   workbookHelper524,
 } from "./paint-trendline-label-impl";
+
+export { resolveTrendlineLabel, cxe } from "./resolve-trendline-label-impl";

@@ -3,3 +3,5 @@
 
 export { wireChartRadarBoundaryHooks, crH } from "./boundary-hooks";
 export { paintRadarChart, Txe } from "./chart-radar-impl";
+
+export { prepareRadarSeries, Cxe } from "./prepare-radar-series-impl";
