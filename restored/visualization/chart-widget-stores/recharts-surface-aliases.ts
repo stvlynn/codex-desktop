@@ -2,7 +2,9 @@
 // Codex wrappers around Recharts surfaces still living in the mega boundary.
 // Bodies stay inlined (RTK store entanglement); semantic names map the surface bag
 // so Chart / pie consumers stop speaking chartWidgetStoresG/P/Underscore/….
-// npm-shim of `recharts` / `@reduxjs/toolkit` waits on a clean cut of that cluster.
+// Wave-7: joint npm cut of Recharts+RTK ruled unsafe (see boundaries/.../README.md).
+// Blockers: pre-Y+Y span, Binding1022 internal offset hook, surface mixes React+react-intl,
+// post-Y inlined IntlProvider context. Keep mega bodies until Chart migrates off the bag.
 
 import {
   getChartBundleSurface,

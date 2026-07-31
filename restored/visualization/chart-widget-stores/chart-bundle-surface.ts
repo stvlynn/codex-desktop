@@ -2,6 +2,7 @@
 // Injected Recharts surfaces still living in boundaries/chart-widget-stores.
 // Codex C/S/U/B/X/D/E/V drained to visualization (wave-4/5); Chart imports those directly.
 // Wave-6: H (PieChart) + M (Pie) join the bag; semantic names via recharts-surface-aliases.
+// Wave-7: joint Recharts+RTK npm cut unsafe — Binding1022/1317/1326 are not pure Recharts exports.
 
 export type ChartBundleSurface = {
   createElement: any;

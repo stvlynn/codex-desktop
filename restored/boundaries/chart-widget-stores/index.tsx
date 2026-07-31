@@ -4,9 +4,9 @@ import { createElement } from "react";
 // Intentional oversized vendor-runtime terminal (openBoundary).
 // Not a single stock npm package: composite Recharts + Redux Toolkit/Immer
 // plus Codex WidgetContext / widget-scope store / chart chrome / i18n.
-// Stage-3 wave-1..6: WidgetContext, widget-scope, chrome, i18n, Chart,
-// C/S/U/B/X/Box + Recharts surface aliases (G/P/_/Bar/Line/Area/H/M)
-// → visualization/ (Chart via surface). Recharts/RTK npm-shim still blocked.
+// Stage-3 wave-1..7: WidgetContext, widget-scope, chrome, i18n, Chart,
+// C/S/U/B/X/Box + Recharts surface aliases; dead Box helpers 827–830 removed.
+// → visualization/. Wave-7: joint Recharts+RTK npm cut unsafe — blockers in README.
 // Stage 3 candidate: 36/36 app-initial aliases rewritten to
 // IMPORT_MAP semantic/vendor/boundary paths. AppScope (Fft/Ift/ivt/M_t/L_t) is an
 // open host/runtime facade — not stock jotai. No whole-file app-initial promote.
@@ -26989,87 +26989,8 @@ function chartWidgetStoresC(chartWidgetStoresInput255: Record<string, unknown>) 
 function $_() {
   return vizUseResolveWidgetAction();
 }
-function chartWidgetStoresHelper827(chartWidgetStoresInput3259) {
-  return vizToSpacingCss(chartWidgetStoresInput3259);
-}
-function chartWidgetStoresHelper828(
-  chartWidgetStoresInput870,
-  chartWidgetStoresInput871,
-) {
-  let chartWidgetStoresBinding3731 = chartWidgetStoresHelper1(
-      chartWidgetStoresInput871 ?? (() => {}),
-    ),
-    chartWidgetStoresBinding3732 = chartWidgetStoresBinding141.useRef(false);
-  chartWidgetStoresBinding141.useEffect(() => {
-    if (
-      !chartWidgetStoresInput870 ||
-      !chartWidgetStoresInput871 ||
-      chartWidgetStoresBinding3732.current ||
-      typeof IntersectionObserver > "u"
-    )
-      return;
-    let chartWidgetStoresBinding4118 = new IntersectionObserver(
-      (chartWidgetStoresInput2809) => {
-        chartWidgetStoresBinding3732.current ||
-          !chartWidgetStoresInput2809.some(
-            (item) =>
-              item.isIntersecting &&
-              item.intersectionRatio >= chartWidgetStoresBinding1247,
-          ) ||
-          ((chartWidgetStoresBinding3732.current = true),
-          chartWidgetStoresBinding4118.disconnect(),
-          chartWidgetStoresBinding3731());
-      },
-      {
-        threshold: chartWidgetStoresBinding1247,
-      },
-    );
-    return (
-      chartWidgetStoresBinding4118.observe(chartWidgetStoresInput870),
-      () => {
-        chartWidgetStoresBinding4118.disconnect();
-      }
-    );
-  }, [
-    chartWidgetStoresBinding3731,
-    chartWidgetStoresInput871,
-    chartWidgetStoresInput870,
-  ]);
-}
-function chartWidgetStoresHelper829(chartWidgetStoresInput2355) {
-  let [chartWidgetStoresBinding5144, chartWidgetStoresBinding5145] =
-      chartWidgetStoresBinding141.useState(null),
-    { onAction } = chartWidgetStoresE(),
-    chartWidgetStoresBinding5146 = $_(),
-    chartWidgetStoresBinding5147 = chartWidgetStoresHelper1(() => {
-      let chartWidgetStoresBinding5922 = chartWidgetStoresBinding5146(
-        chartWidgetStoresInput2355,
-      );
-      chartWidgetStoresBinding5922 &&
-        onAction({
-          ...chartWidgetStoresBinding5922,
-          cause: "system",
-        });
-    });
-  return (
-    chartWidgetStoresHelper828(
-      chartWidgetStoresBinding5144,
-      chartWidgetStoresInput2355 ? chartWidgetStoresBinding5147 : undefined,
-    ),
-    chartWidgetStoresBinding5145
-  );
-}
-function chartWidgetStoresHelper830(
-  chartWidgetStoresInput3337,
-  chartWidgetStoresInput3338,
-) {
-  if (typeof chartWidgetStoresInput3337 == "function") {
-    chartWidgetStoresInput3337(chartWidgetStoresInput3338);
-    return;
-  }
-  chartWidgetStoresInput3337 &&
-    (chartWidgetStoresInput3337.current = chartWidgetStoresInput3338);
-}
+// props/evaluate/action drained (wave-4); Box visibility/ref helpers
+// 827–830 were dead residual (duplicated in visualization/.../widget-box.tsx) — removed wave-7.
 var chartWidgetStoresBinding34,
   chartWidgetStoresBinding35,
   chartWidgetStoresBinding36,
