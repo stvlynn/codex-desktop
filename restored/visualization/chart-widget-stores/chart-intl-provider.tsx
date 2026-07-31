@@ -14,7 +14,7 @@ import {
 } from "./locale-messages";
 
 /**
- * Mega still calls this during chartWidgetStoresL; no-op after npm migrate.
+ * Wave-10: mega L deleted; this setter remains a no-op for any residual callers.
  */
 export function setChartBundleIntlProvider(_provider: unknown): void {}
 

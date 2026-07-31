@@ -1,5 +1,6 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
-// Stage-3 Codex glue drained from boundaries/chart-widget-stores (openBoundary).
+// Stage-3 Codex glue drained from boundaries/chart-widget-stores.
+// Wave-10: mega vendor bodies deleted; openBoundary kept for Flat chart-component.
 
 export type {
   WidgetContextProviderProps,

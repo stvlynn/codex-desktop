@@ -1,5 +1,6 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
 // Wave-9: surface bag retired — aliases re-export public recharts@3.
+// Wave-10: mega vendor body deleted; these aliases are the only Recharts locals bridge.
 // Prefer bare `import { … } from "recharts"` at call sites (Chart + pie already do).
 
 import {

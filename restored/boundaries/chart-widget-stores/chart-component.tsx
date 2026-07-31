@@ -1,8 +1,8 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
 // Codex Chart component (`_chartWidgetStoresS`) + series/legend/tooltip helpers.
 // Wave-8: migrated off surface bag onto public recharts@3 + react-intl + react.
-// Flat boundary facade retained for QG (mechanical body); public API from visualization/.
-// Wave-9: pie also on public recharts; surface bag is a no-op stub.
+// Flat boundary facade — vendored Chart body parked beside thin mega; public API from visualization/.
+// Wave-9/10: pie on public recharts; mega vendor deleted; this Flat body is the residual blocker.
 
 import {
   createElement,
