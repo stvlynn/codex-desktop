@@ -1,6 +1,5 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
-// Codex Chart public API — implementation lives in boundaries/chart-widget-stores/chart-component
-// (Flat boundary) until Recharts/@reduxjs/toolkit can be npm-shimmed.
+// Codex Chart public API — body in boundaries/.../chart-component (Flat; npm recharts/react-intl).
 
 export {
   Chart,

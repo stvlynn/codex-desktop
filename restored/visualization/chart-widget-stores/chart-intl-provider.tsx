@@ -1,9 +1,9 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
 // Codex chart/widget IntlProvider wrapper (bundle chartWidgetStoresI).
-// Uses the mega dump's inlined react-intl IntlProvider so Chart FormattedMessage
-// shares the same context (npm react-intl is a separate context tree).
+// Wave-8: npm react-intl IntlProvider (shares context with Chart FormattedMessage).
 
-import { createElement, type ComponentType, type ReactNode } from "react";
+import { createElement, type ReactNode } from "react";
+import { IntlProvider } from "react-intl";
 
 import { DEFAULT_LOCALE } from "../../i18n/default-locale";
 
@@ -13,24 +13,10 @@ import {
   getLocaleMessages,
 } from "./locale-messages";
 
-type BundleIntlProviderProps = {
-  children?: ReactNode;
-  defaultLocale?: string;
-  locale?: string;
-  messages?: Record<string, string>;
-};
-
-type BundleIntlProvider = ComponentType<BundleIntlProviderProps>;
-
-let bundleIntlProvider: BundleIntlProvider | null = null;
-
 /**
- * Wire the inlined react-intl `IntlProvider` from the chart-widget-stores mega
- * dump (binding set during `chartWidgetStoresL`).
+ * Mega still calls this during chartWidgetStoresL; no-op after npm migrate.
  */
-export function setChartBundleIntlProvider(provider: BundleIntlProvider): void {
-  bundleIntlProvider = provider;
-}
+export function setChartBundleIntlProvider(_provider: unknown): void {}
 
 export type ChartIntlProviderProps = {
   children?: ReactNode;
@@ -46,13 +32,8 @@ export function ChartIntlProvider({
   locale = DEFAULT_LOCALE,
 }: ChartIntlProviderProps) {
   ensureChartLocaleMessagesInit();
-  if (!bundleIntlProvider) {
-    throw new Error(
-      "ChartIntlProvider requires setChartBundleIntlProvider (call chartWidgetStoresL / chartWidgetStoresA first)",
-    );
-  }
   const canonical = canonicalizeLocale(locale);
-  return createElement(bundleIntlProvider, {
+  return createElement(IntlProvider, {
     defaultLocale: DEFAULT_LOCALE,
     locale: canonical,
     messages: getLocaleMessages(canonical),

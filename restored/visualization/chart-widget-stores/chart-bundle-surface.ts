@@ -1,12 +1,9 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
 // Injected Recharts surfaces still living in boundaries/chart-widget-stores.
-// Codex C/S/U/B/X/D/E/V drained to visualization (wave-4/5); Chart imports those directly.
-// Wave-6: H (PieChart) + M (Pie) join the bag; semantic names via recharts-surface-aliases.
-// Wave-7: joint Recharts+RTK npm cut unsafe — Binding1022/1317/1326 are not pure Recharts exports.
+// Wave-8: Chart migrated to public recharts + react-intl; bag kept for pie (+ series).
+// Binding1022 / Binding1317 / Binding1326 / createElement dropped from Chart path.
 
 export type ChartBundleSurface = {
-  createElement: any;
-  $_: any;
   chartWidgetStoresF: any;
   chartWidgetStoresG: any;
   chartWidgetStoresH: any;
@@ -15,7 +12,6 @@ export type ChartBundleSurface = {
   chartWidgetStoresUnderscore: any;
   chartWidgetStoresHelper611: any;
   chartWidgetStoresHelper767: any;
-  chartWidgetStoresBinding1022: any;
   chartWidgetStoresBinding1063: any;
   chartWidgetStoresBinding1076: any;
   chartWidgetStoresBinding1080: any;
@@ -25,15 +21,13 @@ export type ChartBundleSurface = {
   chartWidgetStoresBinding1155: any;
   chartWidgetStoresBinding1164: any;
   chartWidgetStoresBinding1208: any;
-  chartWidgetStoresBinding1317: any;
-  chartWidgetStoresBinding1326: any;
 };
 
 let surface: ChartBundleSurface | null = null;
 
 /**
- * Wire mega-local Recharts components into the drained Chart.
- * Called from `_chartWidgetStoresC` after Recharts bindings are assigned.
+ * Wire mega-local Recharts components for pie / residual surface consumers.
+ * Called from mega `_chartWidgetStoresC` after Recharts bindings are assigned.
  */
 export function setChartBundleSurface(next: ChartBundleSurface): void {
   surface = next;
@@ -42,7 +36,7 @@ export function setChartBundleSurface(next: ChartBundleSurface): void {
 export function getChartBundleSurface(): ChartBundleSurface {
   if (!surface) {
     throw new Error(
-      "Chart requires setChartBundleSurface (call _chartWidgetStoresC first)",
+      "getRechartsSurfaceAliases requires setChartBundleSurface (call _chartWidgetStoresC first)",
     );
   }
   return surface;

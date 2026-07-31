@@ -1,9 +1,39 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
 // Codex Chart component (`_chartWidgetStoresS`) + series/legend/tooltip helpers.
-// Flat boundary facade — vendored Chart body parked beside the mega until Recharts/RTK npm-shim; public API re-exported from visualization/.
-// Recharts surfaces arrive via chart-bundle-surface; semantic aliases via recharts-surface-aliases (wave-6).
+// Wave-8: migrated off surface bag onto public recharts@3 + react-intl + react.
+// Flat boundary facade retained for QG (mechanical body); public API from visualization/.
+// Pie still uses mega Recharts via getRechartsSurfaceAliases (partial migration).
 
-import type { ReactNode } from "react";
+import {
+  createElement,
+  startTransition,
+  useCallback,
+  useId,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
+import { FormattedMessage } from "react-intl";
+import {
+  Area,
+  Bar,
+  CartesianGrid,
+  Cell,
+  ComposedChart,
+  LabelList,
+  Legend,
+  Line,
+  ReferenceDot,
+  ReferenceLine,
+  ResponsiveContainer,
+  Scatter,
+  Tooltip,
+  XAxis,
+  YAxis,
+  usePlotArea,
+} from "recharts";
 
 import {
   CHART_AXIS_CHAR_WIDTH,
@@ -39,58 +69,28 @@ import { useWidgetContext as chartWidgetStoresE } from "../../visualization/char
 import { classNames as chartWidgetStoresV } from "../../visualization/chart-widget-stores/widget-class-names";
 import { WidgetBoxRoot as chartWidgetStoresD } from "../../visualization/chart-widget-stores/widget-box";
 
-import {
-  getChartBundleSurface,
-  hasChartBundleSurface,
-  type ChartBundleSurface,
-} from "../../visualization/chart-widget-stores/chart-bundle-surface";
-
 export type CodexChartComponent = (props: unknown) => ReactNode;
 
-function buildCodexChart(surface: ChartBundleSurface): CodexChartComponent {
-  const {
-    createElement,
-    chartWidgetStoresHelper611: chartFn611,
-    chartWidgetStoresBinding1022,
-    chartWidgetStoresBinding1076,
-    chartWidgetStoresBinding1080,
-    chartWidgetStoresBinding1317,
-    chartWidgetStoresBinding1326,
-  } = surface;
-  // Semantic Recharts aliases (G/P/Underscore/Bar/Line/Area/…) — bodies still mega-injected.
-  const chartWidgetStoresG = surface.chartWidgetStoresG; // ResponsiveContainer
-  const chartWidgetStoresP = surface.chartWidgetStoresP; // Legend
-  const chartWidgetStoresUnderscore = surface.chartWidgetStoresUnderscore; // Tooltip
-  const chartWidgetStoresF = surface.chartWidgetStoresF; // Cell
-  const chartWidgetStoresBinding1208 = surface.chartWidgetStoresBinding1208; // ComposedChart
-  const chartWidgetStoresBinding1063 = surface.chartWidgetStoresBinding1063; // Bar
-  const chartWidgetStoresBinding1113 = surface.chartWidgetStoresBinding1113; // Line
-  const chartWidgetStoresBinding1130 = surface.chartWidgetStoresBinding1130; // Area
-  const chartWidgetStoresBinding1147 = surface.chartWidgetStoresBinding1147; // Scatter
-  const chartWidgetStoresBinding1155 = surface.chartWidgetStoresBinding1155; // XAxis
-  const chartWidgetStoresBinding1164 = surface.chartWidgetStoresBinding1164; // YAxis
-  const chartFn767 = surface.chartWidgetStoresHelper767; // CartesianGrid
-
-  const chartWidgetStoresBinding1327 = CHART_CLASS_NAMES;
-  const chartWidgetStoresBinding1328: Record<string, unknown> = {};
-  const chartWidgetStoresBinding1329: Record<string, unknown> = {};
-  const chartWidgetStoresBinding1330 = CHART_BAR_RADIUS_DEFAULT;
-  const chartWidgetStoresBinding1331 = { ...CHART_DEFAULT_VALUE_FORMAT };
-  const chartWidgetStoresBinding1332 = CHART_BAR_GAP_RATIO;
-  const chartWidgetStoresBinding1333 = CHART_BAR_CATEGORY_GAP_RATIO;
-  const chartWidgetStoresBinding1334 = CHART_AXIS_CHAR_WIDTH;
-  const chartWidgetStoresBinding1335 = CHART_AXIS_LABEL_GAP;
-  const chartWidgetStoresBinding1336 = CHART_AXIS_COMPACT_WIDTH;
-  const chartWidgetStoresBinding1337 = CHART_AXIS_COMPACT_MAX_LABEL;
-  const chartWidgetStoresBinding1338 = CHART_LEGEND_ITEM_MIN_WIDTH;
-  const chartWidgetStoresBinding1339 = CHART_LEGEND_ROW_HEIGHT;
-  const chartWidgetStoresBinding1340 = CHART_HOVER_DOT_RADIUS;
-  const chartWidgetStoresBinding1341 = CHART_VALUE_LABEL_OFFSET;
-  const chartWidgetStoresBinding1342 = [...CHART_COLOR_NAMES];
-  const chartWidgetStoresBinding1343 = [...CHART_COLOR_WEIGHTS_PRIMARY];
-  const chartWidgetStoresBinding1344 = [...CHART_COLOR_WEIGHTS_SECONDARY];
-  const chartWidgetStoresBinding1345 = [...CHART_CSS_VAR_PALETTE];
-  const $G = [...CHART_VIEW_BOX_AUTO];
+const chartWidgetStoresBinding1327 = CHART_CLASS_NAMES;
+const chartWidgetStoresBinding1328: Record<string, unknown> = {};
+const chartWidgetStoresBinding1329: Record<string, unknown> = {};
+const chartWidgetStoresBinding1330 = CHART_BAR_RADIUS_DEFAULT;
+const chartWidgetStoresBinding1331 = { ...CHART_DEFAULT_VALUE_FORMAT };
+const chartWidgetStoresBinding1332 = CHART_BAR_GAP_RATIO;
+const chartWidgetStoresBinding1333 = CHART_BAR_CATEGORY_GAP_RATIO;
+const chartWidgetStoresBinding1334 = CHART_AXIS_CHAR_WIDTH;
+const chartWidgetStoresBinding1335 = CHART_AXIS_LABEL_GAP;
+const chartWidgetStoresBinding1336 = CHART_AXIS_COMPACT_WIDTH;
+const chartWidgetStoresBinding1337 = CHART_AXIS_COMPACT_MAX_LABEL;
+const chartWidgetStoresBinding1338 = CHART_LEGEND_ITEM_MIN_WIDTH;
+const chartWidgetStoresBinding1339 = CHART_LEGEND_ROW_HEIGHT;
+const chartWidgetStoresBinding1340 = CHART_HOVER_DOT_RADIUS;
+const chartWidgetStoresBinding1341 = CHART_VALUE_LABEL_OFFSET;
+const chartWidgetStoresBinding1342 = [...CHART_COLOR_NAMES];
+const chartWidgetStoresBinding1343 = [...CHART_COLOR_WEIGHTS_PRIMARY];
+const chartWidgetStoresBinding1344 = [...CHART_COLOR_WEIGHTS_SECONDARY];
+const chartWidgetStoresBinding1345 = [...CHART_CSS_VAR_PALETTE];
+const $G = [...CHART_VIEW_BOX_AUTO];
 
 function chartFn914(param3658) {
   return typeof param3658 == "number" &&
@@ -365,7 +365,7 @@ function chartFn925({
   ...rest
 }) {
   let { hide, interval, padding, tickFormatter, ticks, type } = rest,
-    chartWidgetStoresBinding2879 = chartWidgetStoresBinding1022(),
+    chartWidgetStoresBinding2879 = usePlotArea(),
     chartWidgetStoresBinding2880 =
       typeof padding == "object"
         ? (padding.left ?? 0) + (padding.right ?? 0)
@@ -383,7 +383,7 @@ function chartFn925({
       type !== "number" &&
       ticks == null &&
       interval == null,
-    chartWidgetStoresBinding2883 = chartWidgetStoresBinding1326.useMemo(() => {
+    chartWidgetStoresBinding2883 = useMemo(() => {
       if (chartWidgetStoresBinding2882)
         return chartFn924({
           axisWidth: chartWidgetStoresBinding2881,
@@ -417,7 +417,7 @@ function chartFn925({
     chartWidgetStoresBinding2885 = ticks ?? chartWidgetStoresBinding2883?.ticks,
     chartWidgetStoresBinding2886 =
       interval ?? (chartWidgetStoresBinding2883?.ticks == null ? undefined : 0);
-  return createElement(chartWidgetStoresBinding1155, {
+  return createElement(XAxis, {
     ...rest,
     dataKey,
     ticks: chartWidgetStoresBinding2885,
@@ -465,7 +465,7 @@ function chartFn928(param2595) {
     param2595.chartY == null
   );
 }
-function _chartWidgetStoresS(param4: unknown) {
+function CodexChartBody(param4: unknown) {
   let {
       data = [],
       series = [],
@@ -518,26 +518,26 @@ function _chartWidgetStoresS(param4: unknown) {
       chartWidgetStoresE(),
     chartWidgetStoresBinding1556 = chartWidgetStoresU(),
     be = $_(),
-    chartWidgetStoresBinding1557 = chartWidgetStoresBinding1326.useRef(null),
-    chartWidgetStoresBinding1558 = chartWidgetStoresBinding1326.useRef(null),
-    chartWidgetStoresBinding1559 = chartWidgetStoresBinding1326.useRef(null),
-    chartWidgetStoresBinding1560 = chartWidgetStoresBinding1326.useRef(false),
+    chartWidgetStoresBinding1557 = useRef(null),
+    chartWidgetStoresBinding1558 = useRef(null),
+    chartWidgetStoresBinding1559 = useRef(null),
+    chartWidgetStoresBinding1560 = useRef(false),
     [chartWidgetStoresBinding1561, chartWidgetStoresBinding1562] =
-      chartWidgetStoresBinding1326.useState(null),
+      useState(null),
     [chartWidgetStoresBinding1563, chartWidgetStoresBinding1564] =
-      chartWidgetStoresBinding1326.useState(false),
+      useState(false),
     [chartWidgetStoresBinding1565, chartWidgetStoresBinding1566] =
-      chartWidgetStoresBinding1326.useState(false),
+      useState(false),
     [chartWidgetStoresBinding1567, chartWidgetStoresBinding1568] =
-      chartWidgetStoresBinding1326.useState(() => new Set()),
+      useState(() => new Set()),
     [chartWidgetStoresBinding1569, chartWidgetStoresBinding1570] =
-      chartWidgetStoresBinding1326.useState(null),
+      useState(null),
     [chartWidgetStoresBinding1571, chartWidgetStoresBinding1572] =
-      chartWidgetStoresBinding1326.useState(null),
+      useState(null),
     [chartWidgetStoresBinding1573, chartWidgetStoresBinding1574] =
-      chartWidgetStoresBinding1326.useState(null),
-    chartWidgetStoresBinding1575 = chartWidgetStoresBinding1326.useId(),
-    chartWidgetStoresBinding1576 = chartWidgetStoresBinding1326.useMemo(
+      useState(null),
+    chartWidgetStoresBinding1575 = useId(),
+    chartWidgetStoresBinding1576 = useMemo(
       () => (Array.isArray(series) ? series : []),
       [series],
     ),
@@ -559,11 +559,11 @@ function _chartWidgetStoresS(param4: unknown) {
       legendMaxRows > 0
         ? Math.floor(legendMaxRows)
         : undefined,
-    chartWidgetStoresBinding1581 = chartWidgetStoresBinding1326.useMemo(
+    chartWidgetStoresBinding1581 = useMemo(
       () => new Set(chartWidgetStoresBinding1576.map((item) => item.dataKey)),
       [chartWidgetStoresBinding1576],
     ),
-    chartWidgetStoresBinding1582 = chartWidgetStoresBinding1326.useMemo(() => {
+    chartWidgetStoresBinding1582 = useMemo(() => {
       let chartWidgetStoresBinding5596 = new Set();
       return (
         chartWidgetStoresBinding1567.forEach((item) => {
@@ -589,7 +589,7 @@ function _chartWidgetStoresS(param4: unknown) {
       hoverIndicatorDataKey.length > 0
         ? hoverIndicatorDataKey
         : undefined,
-    chartWidgetStoresBinding1587 = chartWidgetStoresBinding1326.useMemo(
+    chartWidgetStoresBinding1587 = useMemo(
       () =>
         Array.isArray(data)
           ? chartWidgetStoresBinding1576.length === 1 &&
@@ -612,12 +612,12 @@ function _chartWidgetStoresS(param4: unknown) {
           : [],
       [chartWidgetStoresBinding1576, data],
     );
-  chartWidgetStoresBinding1326.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     chartWidgetStoresBinding1587.length > 0 &&
       (chartWidgetStoresBinding1560.current = true);
   }, [chartWidgetStoresBinding1587.length]);
   let chartWidgetStoresBinding1588 =
-      chartWidgetStoresBinding1326.useMemo(() => {
+      useMemo(() => {
         if (showIdleHoverIndicator) {
           for (
             let chartWidgetStoresBinding5935 =
@@ -638,7 +638,7 @@ function _chartWidgetStoresS(param4: unknown) {
         chartWidgetStoresBinding1586,
         showIdleHoverIndicator,
       ]),
-    chartWidgetStoresBinding1589 = chartWidgetStoresBinding1326.useMemo(() => {
+    chartWidgetStoresBinding1589 = useMemo(() => {
       let chartWidgetStoresBinding3003 = {},
         chartWidgetStoresBinding3004,
         chartWidgetStoresBinding3005 = {
@@ -781,7 +781,7 @@ function _chartWidgetStoresS(param4: unknown) {
       typeof visiblePointCount == "number" && Number.isFinite(visiblePointCount)
         ? Math.max(1, Math.floor(visiblePointCount))
         : null,
-    chartWidgetStoresBinding1624 = chartWidgetStoresBinding1326.useMemo(() => {
+    chartWidgetStoresBinding1624 = useMemo(() => {
       if (chartWidgetStoresBinding1588 == null) return null;
       let chartWidgetStoresBinding3303 =
         chartWidgetStoresBinding1587[chartWidgetStoresBinding1588];
@@ -818,7 +818,7 @@ function _chartWidgetStoresS(param4: unknown) {
       chartWidgetStoresBinding1588,
       chartWidgetStoresBinding1591,
     ]),
-    chartWidgetStoresBinding1625 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1625 = useCallback(
       (param319) => {
         if (!param319) return null;
         let chartWidgetStoresBinding2804 =
@@ -897,7 +897,7 @@ function _chartWidgetStoresS(param4: unknown) {
         chartWidgetStoresBinding1556,
       ],
     ),
-    chartWidgetStoresBinding1626 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1626 = useCallback(
       (param448) => {
         let chartWidgetStoresBinding3015 = chartWidgetStoresBinding1557.current,
           chartWidgetStoresBinding3016 =
@@ -948,7 +948,7 @@ function _chartWidgetStoresS(param4: unknown) {
       [onHoverAction, onAction, be],
     ),
     chartWidgetStoresBinding1627 = chartWidgetStoresS(),
-    chartWidgetStoresBinding1628 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1628 = useCallback(
       (param3130, param3131) => {
         try {
           return chartWidgetStoresBinding1627(param3130, {
@@ -960,7 +960,7 @@ function _chartWidgetStoresS(param4: unknown) {
       },
       [chartWidgetStoresBinding1627],
     ),
-    chartWidgetStoresBinding1629 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1629 = useCallback(
       ({ value, payload, seriesConfig }) =>
         chartFn919(payload) ??
         chartFn917(
@@ -970,7 +970,7 @@ function _chartWidgetStoresS(param4: unknown) {
         ),
       [chartWidgetStoresBinding1556],
     ),
-    chartWidgetStoresBinding1630 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1630 = useCallback(
       (param4168) =>
         param4168 == null
           ? true
@@ -981,7 +981,7 @@ function _chartWidgetStoresS(param4: unknown) {
             ),
       [chartWidgetStoresBinding1622, chartWidgetStoresBinding1621],
     ),
-    chartWidgetStoresBinding1631 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1631 = useCallback(
       (param179) => {
         if (param179 != null) {
           let chartWidgetStoresBinding5907 =
@@ -1059,7 +1059,7 @@ function _chartWidgetStoresS(param4: unknown) {
         chartWidgetStoresBinding1605,
       ],
     ),
-    chartWidgetStoresBinding1632 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1632 = useCallback(
       (param3285) => {
         if ($e || param3285 == null) return "";
         let chartWidgetStoresBinding5754 = String(param3285);
@@ -1070,7 +1070,7 @@ function _chartWidgetStoresS(param4: unknown) {
       },
       [$e, chartWidgetStoresBinding1592],
     ),
-    chartWidgetStoresBinding1633 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1633 = useCallback(
       (param3105) => {
         if ($e || param3105 == null) return "";
         let chartWidgetStoresBinding5671 = String(param3105);
@@ -1091,7 +1091,7 @@ function _chartWidgetStoresS(param4: unknown) {
         chartWidgetStoresBinding1592,
       ],
     ),
-    chartWidgetStoresBinding1634 = chartWidgetStoresBinding1326.useMemo(() => {
+    chartWidgetStoresBinding1634 = useMemo(() => {
       if (
         !chartWidgetStoresBinding1555 ||
         chartWidgetStoresBinding1613 <= 1 ||
@@ -1140,7 +1140,7 @@ function _chartWidgetStoresS(param4: unknown) {
       !chartWidgetStoresBinding1555 &&
       showYAxis &&
       chartWidgetStoresBinding1609 == null;
-  chartWidgetStoresBinding1326.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     if (!chartWidgetStoresBinding1635) {
       chartWidgetStoresBinding1574((param4512) =>
         param4512 == null ? param4512 : null,
@@ -1167,7 +1167,7 @@ function _chartWidgetStoresS(param4: unknown) {
     chartWidgetStoresBinding1602,
   ]);
   let chartWidgetStoresBinding1636 =
-      chartWidgetStoresBinding1326.useCallback(() => {
+      useCallback(() => {
         chartWidgetStoresBinding1635 &&
           chartWidgetStoresBinding1574(
             (param4456) =>
@@ -1179,7 +1179,7 @@ function _chartWidgetStoresS(param4: unknown) {
               param4456,
           );
       }, [chartWidgetStoresBinding1610, chartWidgetStoresBinding1635]),
-    chartWidgetStoresBinding1637 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1637 = useCallback(
       (param745, param746) => {
         let chartWidgetStoresBinding3564 =
             typeof param746.cx == "number"
@@ -1216,7 +1216,7 @@ function _chartWidgetStoresS(param4: unknown) {
       },
       [chartWidgetStoresBinding1589, chartWidgetStoresBinding1630, showDots],
     ),
-    chartWidgetStoresBinding1638 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1638 = useCallback(
       (param1009, param1010) => {
         let chartWidgetStoresBinding3921 =
             typeof param1010.cx == "number"
@@ -1255,7 +1255,7 @@ function _chartWidgetStoresS(param4: unknown) {
         showIdleHoverIndicator,
       ],
     ),
-    chartWidgetStoresBinding1639 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1639 = useCallback(
       (param1357) => {
         let chartWidgetStoresBinding4302 = chartWidgetStoresBinding1625(
           param1357,
@@ -1263,7 +1263,7 @@ function _chartWidgetStoresS(param4: unknown) {
         if (chartWidgetStoresBinding1614) {
           let chartWidgetStoresBinding5601 =
             chartWidgetStoresBinding4302?.index ?? null;
-          chartWidgetStoresBinding1326.startTransition(() => {
+          startTransition(() => {
             chartWidgetStoresBinding1572((param4580) =>
               param4580 === chartWidgetStoresBinding5601
                 ? param4580
@@ -1299,10 +1299,10 @@ function _chartWidgetStoresS(param4: unknown) {
       ],
     ),
     chartWidgetStoresBinding1640 =
-      chartWidgetStoresBinding1326.useCallback(() => {
+      useCallback(() => {
         showIdleHoverIndicator && chartWidgetStoresBinding1564(false);
         chartWidgetStoresBinding1614 &&
-          chartWidgetStoresBinding1326.startTransition(() => {
+          startTransition(() => {
             chartWidgetStoresBinding1572(null);
           });
         onHoverAction &&
@@ -1321,7 +1321,7 @@ function _chartWidgetStoresS(param4: unknown) {
         showIdleHoverIndicator,
       ]),
     chartWidgetStoresBinding1641 =
-      chartWidgetStoresBinding1326.useCallback(() => {
+      useCallback(() => {
         (showIdleHoverIndicator && !chartWidgetStoresBinding1614) ||
           chartWidgetStoresBinding1640();
       }, [
@@ -1329,7 +1329,7 @@ function _chartWidgetStoresS(param4: unknown) {
         chartWidgetStoresBinding1614,
         showIdleHoverIndicator,
       ]),
-    chartWidgetStoresBinding1642 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1642 = useCallback(
       (param1377) => {
         enableLegendSeriesToggle &&
           (chartWidgetStoresBinding1636(),
@@ -1359,20 +1359,20 @@ function _chartWidgetStoresS(param4: unknown) {
         chartWidgetStoresBinding1636,
       ],
     ),
-    chartWidgetStoresBinding1643 = chartWidgetStoresBinding1326.useCallback(
+    chartWidgetStoresBinding1643 = useCallback(
       (param3757) => {
-        chartWidgetStoresBinding1326.startTransition(() => {
+        startTransition(() => {
           chartWidgetStoresBinding1570(param3757);
         });
       },
       [],
     ),
-    $t = chartWidgetStoresBinding1326.useCallback(() => {
-      chartWidgetStoresBinding1326.startTransition(() => {
+    $t = useCallback(() => {
+      startTransition(() => {
         chartWidgetStoresBinding1570(null);
       });
     }, []);
-  chartWidgetStoresBinding1326.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     if (!scrollable || !chartWidgetStoresBinding1559.current) {
       chartWidgetStoresBinding1562(null);
       return;
@@ -1398,7 +1398,7 @@ function _chartWidgetStoresS(param4: unknown) {
       }
     );
   }, [scrollable]);
-  let chartWidgetStoresBinding1644 = chartWidgetStoresBinding1326.useMemo(
+  let chartWidgetStoresBinding1644 = useMemo(
       () =>
         !scrollable || !chartWidgetStoresBinding1587.length
           ? null
@@ -1417,7 +1417,7 @@ function _chartWidgetStoresS(param4: unknown) {
         chartWidgetStoresBinding1623,
       ],
     ),
-    chartWidgetStoresBinding1645 = chartWidgetStoresBinding1326.useMemo(() => {
+    chartWidgetStoresBinding1645 = useMemo(() => {
       if (chartWidgetStoresBinding1644)
         return chartWidgetStoresBinding1617 === "number" &&
           chartWidgetStoresBinding1587.length > 1
@@ -1429,7 +1429,7 @@ function _chartWidgetStoresS(param4: unknown) {
       chartWidgetStoresBinding1644,
       chartWidgetStoresBinding1617,
     ]),
-    chartWidgetStoresBinding1646 = chartWidgetStoresBinding1326.useMemo(() => {
+    chartWidgetStoresBinding1646 = useMemo(() => {
       if (scrollable)
         return {
           left: 0,
@@ -1454,7 +1454,7 @@ function _chartWidgetStoresS(param4: unknown) {
       !scrollable &&
       !disableAnimation &&
       !(showIdleHoverIndicator && chartWidgetStoresBinding1565),
-    on = chartWidgetStoresBinding1326.useCallback(
+    on = useCallback(
       (param334) => {
         let {
             offset,
@@ -1514,10 +1514,10 @@ function _chartWidgetStoresS(param4: unknown) {
       },
       [$e, chartWidgetStoresBinding1595],
     ),
-    chartWidgetStoresBinding1649 = chartWidgetStoresBinding1326.useRef(null),
-    chartWidgetStoresBinding1650 = chartWidgetStoresBinding1326.useRef(false);
+    chartWidgetStoresBinding1649 = useRef(null),
+    chartWidgetStoresBinding1650 = useRef(false);
   return (
-    chartWidgetStoresBinding1326.useLayoutEffect(() => {
+    useLayoutEffect(() => {
       if (
         !scrollable ||
         !chartWidgetStoresBinding1559.current ||
@@ -1583,8 +1583,8 @@ function _chartWidgetStoresS(param4: unknown) {
               minWidth: chartWidgetStoresBinding1645,
             }}
           >
-            {createElement(chartWidgetStoresG, {
-              children: createElement(chartWidgetStoresBinding1208, {
+            {createElement(ResponsiveContainer, {
+              children: createElement(ComposedChart, {
                 accessibilityLayer: true,
                 data: chartWidgetStoresBinding1587,
                 layout,
@@ -1607,14 +1607,14 @@ function _chartWidgetStoresS(param4: unknown) {
                   : undefined,
                 children: [
                   showGrid &&
-                    createElement(chartFn767, {
+                    createElement(CartesianGrid, {
                       vertical: chartWidgetStoresBinding1555,
                       strokeDasharray: "3 3",
                       horizontal: chartWidgetStoresBinding1555 ? false : on,
                     }),
                   chartWidgetStoresBinding1555 ? (
                     <>
-                      {createElement(chartWidgetStoresBinding1155, {
+                      {createElement(XAxis, {
                         className: chartWidgetStoresBinding1327.Axis,
                         type: "number",
                         domain: chartWidgetStoresBinding1601,
@@ -1627,7 +1627,7 @@ function _chartWidgetStoresS(param4: unknown) {
                         height: showYAxis ? undefined : 0,
                         padding: chartWidgetStoresBinding1647,
                       })}
-                      {createElement(chartWidgetStoresBinding1164, {
+                      {createElement(YAxis, {
                         className: chartWidgetStoresBinding1327.Axis,
                         dataKey: chartWidgetStoresBinding1591,
                         type: "category",
@@ -1650,7 +1650,7 @@ function _chartWidgetStoresS(param4: unknown) {
                     </>
                   ) : (
                     <>
-                      {createElement(chartWidgetStoresBinding1164, {
+                      {createElement(YAxis, {
                         className: chartWidgetStoresBinding1327.Axis,
                         domain: chartWidgetStoresBinding1601,
                         ticks: chartWidgetStoresBinding1602,
@@ -1695,7 +1695,7 @@ function _chartWidgetStoresS(param4: unknown) {
                     </>
                   ),
                   chartWidgetStoresBinding1585 &&
-                    createElement(chartWidgetStoresUnderscore, {
+                    createElement(Tooltip, {
                       offset: tooltipOffset,
                       animationDuration: tooltipAnimationDuration,
                       allowEscapeViewBox: chartWidgetStoresBinding1553,
@@ -1733,7 +1733,7 @@ function _chartWidgetStoresS(param4: unknown) {
                   showHoverCursor &&
                     !chartWidgetStoresBinding1563 &&
                     chartWidgetStoresBinding1624 != null &&
-                    createElement(chartWidgetStoresBinding1076, {
+                    createElement(ReferenceLine, {
                       x: chartWidgetStoresBinding1624.x,
                       ifOverflow: "hidden",
                       stroke: "var(--alpha-10)",
@@ -1741,7 +1741,7 @@ function _chartWidgetStoresS(param4: unknown) {
                       pointerEvents: "none",
                     }),
                   chartWidgetStoresBinding1579 &&
-                    createElement(chartWidgetStoresP, {
+                    createElement(Legend, {
                       content: (param920) =>
                         createElement(chartFn932, {
                           colors: chartWidgetStoresBinding1589,
@@ -1773,7 +1773,7 @@ function _chartWidgetStoresS(param4: unknown) {
                           : undefined,
                       chartWidgetStoresBinding1676 = showValueLabels
                         ? createElement(
-                            chartFn611,
+                            LabelList,
                             {
                               dataKey: item.dataKey,
                               content: (param113) => {
@@ -1848,7 +1848,7 @@ function _chartWidgetStoresS(param4: unknown) {
                     switch (item.type) {
                       case "line":
                         return createElement(
-                          chartWidgetStoresBinding1113,
+                          Line,
                           {
                             dataKey: item.dataKey,
                             type: item.curveType || "natural",
@@ -1883,7 +1883,7 @@ function _chartWidgetStoresS(param4: unknown) {
                         );
                       case "area":
                         return createElement(
-                          chartWidgetStoresBinding1130,
+                          Area,
                           {
                             dataKey: item.dataKey,
                             stackId: item.stack,
@@ -1957,7 +1957,7 @@ function _chartWidgetStoresS(param4: unknown) {
                               ? chartWidgetStoresBinding1587.map(
                                   (_item, index) =>
                                     createElement(
-                                      chartWidgetStoresF,
+                                      Cell,
                                       {
                                         style: {
                                           opacity:
@@ -1973,7 +1973,7 @@ function _chartWidgetStoresS(param4: unknown) {
                                 )
                               : null;
                         return createElement(
-                          chartWidgetStoresBinding1063,
+                          Bar,
                           {
                             dataKey: item.dataKey,
                             stackId: item.stack,
@@ -1999,7 +1999,7 @@ function _chartWidgetStoresS(param4: unknown) {
                       }
                       case "scatter":
                         return createElement(
-                          chartWidgetStoresBinding1147,
+                          Scatter,
                           {
                             dataKey: item.dataKey,
                             fill: chartWidgetStoresBinding1673,
@@ -2017,7 +2017,7 @@ function _chartWidgetStoresS(param4: unknown) {
                     chartWidgetStoresBinding1624 != null &&
                     chartWidgetStoresBinding1624.dots.map((item) =>
                       createElement(
-                        chartWidgetStoresBinding1080,
+                        ReferenceDot,
                         {
                           x: chartWidgetStoresBinding1624.x,
                           y: item.value,
@@ -2138,7 +2138,7 @@ function chartFn929({
 }
 function chartFn930({ cx, cy, color, root }) {
   return (
-    chartWidgetStoresBinding1326.useLayoutEffect(() => {
+    useLayoutEffect(() => {
       if (!root.current || cx == null || cy == null) return;
       let chartWidgetStoresBinding3442 = document.createElementNS(
           "http://www.w3.org/2000/svg",
@@ -2319,7 +2319,7 @@ function chartFn931({
         })}
         {chartWidgetStoresBinding1716 > 0 && (
           <div className="text-muted-foreground">
-            {createElement(chartWidgetStoresBinding1317, {
+            {createElement(FormattedMessage, {
               defaultMessage: "+{count, number} more",
               description:
                 "In a chart tooltip, last row that shows the number of additional hidden series not displayed. Keep the leading '+' before the number.",
@@ -2504,32 +2504,17 @@ function chartFn933(param3758) {
     : chartWidgetStoresBinding1342[0];
 }
 
-  return _chartWidgetStoresS as CodexChartComponent;
-}
-
-let cachedChart: CodexChartComponent | null = null;
-let cachedSurface: ChartBundleSurface | null = null;
-
-function resolveChart(): CodexChartComponent {
-  const surface = getChartBundleSurface();
-  if (cachedChart && cachedSurface === surface) return cachedChart;
-  cachedSurface = surface;
-  cachedChart = buildCodexChart(surface);
-  return cachedChart;
-}
 
 /**
- * Codex Chart — series / legend / tooltip chrome over injected Recharts.
+ * Codex Chart — series / legend / tooltip chrome over public recharts + react-intl.
  * Bundle export `_chartWidgetStoresS` (IMPORT_MAP alias C).
  */
 export function Chart(props: unknown): ReactNode {
-  return resolveChart()(props);
+  return CodexChartBody(props);
 }
 
 /** Bundle `_chartWidgetStoresS` compat alias. */
 export { Chart as _chartWidgetStoresS };
 
-/** ESM ensure-init (idempotent once surface is wired). */
-export function ensureChartComponentInit(): void {
-  if (hasChartBundleSurface()) resolveChart();
-}
+/** ESM ensure-init — no surface bag required after wave-8 npm migrate. */
+export function ensureChartComponentInit(): void {}
