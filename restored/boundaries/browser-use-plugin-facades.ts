@@ -1,30 +1,39 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `g4i`) / export `Bz`.
+// Thin boundary re-export — plugin helpers / mutations / ESM inits
+// (openBoundary cleared).
 
-export type BindBuildPluginInstallQueryPeers = {
-  GN: (...args: unknown[]) => unknown;
-  Iwe: (...args: unknown[]) => unknown;
-  hostId: (...args: unknown[]) => unknown;
-};
+export {
+  buildPluginInstallQuery,
+  setBuildPluginInstallQueryPeers,
+  type BuildPluginInstallQueryOptions,
+  type BuildPluginInstallQueryPeers,
+  type PluginInstallQueryPlugin,
+} from "../plugins/build-plugin-install-query";
 
-let peers: BindBuildPluginInstallQueryPeers | null = null;
+export {
+  ensurePluginDisplayNameHelperInit,
+  pluginDisplayName,
+  titleCasePluginName,
+  type PluginDisplayNameInput,
+} from "../plugins/plugin-display-name-helper";
 
-/** Wire bindBuildPluginInstallQuery peers once companions land. */
-export function setBindBuildPluginInstallQueryPeers(next: BindBuildPluginInstallQueryPeers): void {
-  peers = next;
-}
+export {
+  setPluginInstallMutationPeers,
+  useInstallPluginMutation,
+  useSetPluginEnabledMutation,
+  type PluginInstallMutationPeers,
+  type PluginMutationHostArgs,
+} from "../plugins/plugin-install-mutations";
 
-/**
- * Bundle export `Bz` / internal `g4i`.
- */
-export function bindBuildPluginInstallQuery(e: unknown, t: unknown) {
-  if (peers == null) {
-    throw new Error("bindBuildPluginInstallQuery peers are not configured");
-  }
-
-  return peers.Iwe({
-    hostId: t?.hostId,
-    pluginId: e.plugin.id,
-    ...peers.GN(e)
-  });
-}
+export {
+  CODEX_SETTINGS_LINK_DESTINATION_CHANGED_TYPE,
+  ensureBrowserUseFullCdpAccessClusterInit,
+  ensureBrowserUseMessagesInit,
+  ensureConfigQueryAtomsInit,
+  ensureHostConfigAtomsInit,
+  ensureMarketplaceJsonPathInit,
+  ensureOpenLinkPreferenceAnalyticsInit,
+  ensurePluginInstallFlowInit,
+  ensurePluginPageAnalyticsInit,
+  ensureThreadResumeGateInit,
+} from "../plugins/browser-use-plugin-esm-inits";

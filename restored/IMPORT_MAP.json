@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notes": "app-scope-runtime openBoundary cleared \u2192 runtime/app-scope-runtime/ (index barrel + split; thin boundary compat retained; Codex AppScope, not stock jotai). | conversation-page openBoundary cleared \u2192 conversation/conversation-page-esm-inits.ts (+helpers/components/appscope-atoms); thin boundary compat retained. | composer-appscope-atoms + composer-esm-inits openBoundary cleared \u2192 composer/composer-appscope-atoms.ts + composer/composer-esm-inits.ts (thin boundary compat retained). | dil-register openBoundary cleared \u2192 apps/dil-register.ts (unified DKf9ZaVQ+DgvAZVS9). | Wave composer-ctrl closeout polish: consumers\u2192composer barrel; Value* aliases dropped. | Wave composer-ctrl Stage-3 wave-15: Helper124\u2013178 mountain drained; thin boundary; openBoundary cleared; mapbox-gl npm CSP shim. | Wave composer-ctrl Stage-3 wave-15: Helper124\u2013178 mountain drained; boundary thin; openBoundary cleared. | Wave DR: +2 Gut\u2192usingCtx (babel usingCtx npm), fJ\u2192deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop \u2192 index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path \u2192 composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite) | diagram-export-alias-semantic: IMPORT_MAP exports n/t/a/\u2026 \u2192 semantic public names after dropping cryptic re-export aliases | deep-drain 2026-07-28: Stage-3 shiki pool split (kL\u2192shiki-highlight-context) + settings wrapper; checkout-webview-page typed deps shell; permissions-mode-dropdown typed shell. Soft scaffolds Stage-3-fill/Open-runtime-facade remain 0. Remaining Open-runtime soft hosts: large page bodies (settings/onboarding/local/remote) blocked by mechanical checkpoint QG fails; no-alias ui shells blocked by missing extract alias. | Wave GA: share-invite soft-host drain (real peers + useListKeyboardNavigation); settings-pets-nav-icon split; settings-page candidate case-correct imports staged (not promoted: residual *Param/*Value + exportSources collisions HM/Bft) | Wave GB: settings-page candidate rebuilt with export-correct IMPORT_MAP resolution + HM\u2192scoreFuzzyMatch / Bft\u2192defineMessage overrides; public utils/score-fuzzy-match.ts (QG pass, contract scorer; full HH in deps WIP); soft-host count still 18 (settings not promoted: ~270 mechanical names + use-visible-settings-sections soft shell) | Wave GC: use-visible-settings-sections soft shell drained (split dir); soft-host count still 18 (settings-page not yet promoted)\nReconcile Mermaid faced\u2192done for 52 boundaries/mermaid-diagrams npm shims/wrappers (IMPORT_MAP drift). | Wave lodash/npm-boundary mop: lodash-* + highlight-js + iconify-utils + d3-hierarchy \u2192 bare npm shims; deps d3-hierarchy/d3-scale-chromatic/@iconify/utils/ts-dedent added.",
+  "notes": "app-scope-runtime openBoundary cleared → runtime/app-scope-runtime/ (index barrel + split; thin boundary compat retained; Codex AppScope, not stock jotai). | conversation-page openBoundary cleared → conversation/conversation-page-esm-inits.ts (+helpers/components/appscope-atoms); thin boundary compat retained. | composer-appscope-atoms + composer-esm-inits openBoundary cleared → composer/composer-appscope-atoms.ts + composer/composer-esm-inits.ts (thin boundary compat retained). | dil-register openBoundary cleared → apps/dil-register.ts (unified DKf9ZaVQ+DgvAZVS9). | Wave composer-ctrl closeout polish: consumers→composer barrel; Value* aliases dropped. | Wave composer-ctrl Stage-3 wave-15: Helper124–178 mountain drained; thin boundary; openBoundary cleared; mapbox-gl npm CSP shim. | Wave composer-ctrl Stage-3 wave-15: Helper124–178 mountain drained; boundary thin; openBoundary cleared. | Wave DR: +2 Gut→usingCtx (babel usingCtx npm), fJ→deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop → index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path → composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite) | diagram-export-alias-semantic: IMPORT_MAP exports n/t/a/… → semantic public names after dropping cryptic re-export aliases | deep-drain 2026-07-28: Stage-3 shiki pool split (kL→shiki-highlight-context) + settings wrapper; checkout-webview-page typed deps shell; permissions-mode-dropdown typed shell. Soft scaffolds Stage-3-fill/Open-runtime-facade remain 0. Remaining Open-runtime soft hosts: large page bodies (settings/onboarding/local/remote) blocked by mechanical checkpoint QG fails; no-alias ui shells blocked by missing extract alias. | Wave GA: share-invite soft-host drain (real peers + useListKeyboardNavigation); settings-pets-nav-icon split; settings-page candidate case-correct imports staged (not promoted: residual *Param/*Value + exportSources collisions HM/Bft) | Wave GB: settings-page candidate rebuilt with export-correct IMPORT_MAP resolution + HM→scoreFuzzyMatch / Bft→defineMessage overrides; public utils/score-fuzzy-match.ts (QG pass, contract scorer; full HH in deps WIP); soft-host count still 18 (settings not promoted: ~270 mechanical names + use-visible-settings-sections soft shell) | Wave GC: use-visible-settings-sections soft shell drained (split dir); soft-host count still 18 (settings-page not yet promoted)\nReconcile Mermaid faced→done for 52 boundaries/mermaid-diagrams npm shims/wrappers (IMPORT_MAP drift). | Wave lodash/npm-boundary mop: lodash-* + highlight-js + iconify-utils + d3-hierarchy → bare npm shims; deps d3-hierarchy/d3-scale-chromatic/@iconify/utils/ts-dedent added. | browser-use facades openBoundary cleared → browser/browser-use-gates.ts, browser/browser-use-mutations.ts, browser/browser-settings-history-nav.tsx, settings/{settings-section-chrome,settings-empty-state,reveal-in-file-manager-button}, plugins/{plugin-display-name-helper,build-plugin-install-query,plugin-install-mutations,browser-use-plugin-esm-inits}; thin boundary compat retained.",
   "chunks": {
     "app-initial-C-fROkKo": {
       "status": "in-progress",
@@ -1517,7 +1517,24 @@
         "vendor/react-router.ts",
         "vendor/react-redux-provider-runtime.ts",
         "vendor/use-sync-external-store-selector-runtime.ts",
-        "vendor/react-is-runtime.ts"
+        "vendor/react-is-runtime.ts",
+        "browser/browser-settings-history-nav.tsx",
+        "browser/browser-use-gates/index.ts",
+        "browser/browser-use-mutations.ts",
+        "plugins/browser-use-plugin-esm-inits.ts",
+        "plugins/build-plugin-install-query.ts",
+        "plugins/plugin-display-name-helper.ts",
+        "plugins/plugin-install-mutations.ts",
+        "settings/reveal-in-file-manager-button.tsx",
+        "settings/settings-empty-state.tsx",
+        "settings/settings-section-chrome.tsx",
+        "browser/browser-use-gates/types.ts",
+        "browser/browser-use-gates/peers.ts",
+        "browser/browser-use-gates/use-host-feature-gate.ts",
+        "browser/browser-use-gates/use-browser-use-gates.ts",
+        "browser/browser-use-gates/use-computer-use-gate.ts",
+        "browser/browser-use-gates/use-is-browser-plugin-enabled.ts",
+        "browser/browser-use-gates/ensure-inits.ts"
       ],
       "exports": {
         "u3": "REVIEW_MODE_FEATURE_GATE_ID",
@@ -7658,57 +7675,57 @@
         "CN": "browser/browser-use-helpers.ts",
         "EK": "browser/browser-use-helpers.ts",
         "Aw": "browser/browser-use-helpers.ts",
-        "$K": "boundaries/browser-use-plugin-facades.ts",
-        "eq": "boundaries/browser-use-plugin-facades.ts",
+        "$K": "plugins/plugin-display-name-helper.ts",
+        "eq": "plugins/plugin-display-name-helper.ts",
         "Fpt": "settings/browser-download-settings.ts",
         "EO": "settings/browser-download-settings.ts",
         "kpt": "settings/browser-link-target-settings.ts",
         "V5": "boundaries/react-router-navigation.tsx",
         "TJ": "composer/browser-plugin-mention-messages.ts",
-        "BK": "boundaries/browser-use-gate-facades.ts",
-        "VK": "boundaries/browser-use-gate-facades.ts",
-        "HK": "boundaries/browser-use-gate-facades.ts",
-        "DO": "boundaries/browser-use-gate-facades.ts",
-        "KK": "boundaries/browser-use-gate-facades.ts",
-        "XK": "boundaries/browser-use-gate-facades.ts",
-        "GK": "boundaries/browser-use-gate-facades.ts",
-        "zK": "boundaries/browser-use-gate-facades.ts",
-        "AO": "boundaries/browser-use-mutation-facades.ts",
-        "FO": "boundaries/browser-use-mutation-facades.ts",
-        "PO": "boundaries/browser-use-mutation-facades.ts",
-        "jO": "boundaries/browser-use-mutation-facades.ts",
-        "NO": "boundaries/browser-use-mutation-facades.ts",
-        "OO": "boundaries/browser-use-mutation-facades.ts",
-        "kO": "boundaries/browser-use-mutation-facades.ts",
-        "W0": "boundaries/browser-use-mutation-facades.ts",
-        "U0": "boundaries/browser-use-mutation-facades.ts",
-        "vk": "boundaries/browser-use-mutation-facades.ts",
-        "_k": "boundaries/browser-use-mutation-facades.ts",
-        "HV": "boundaries/browser-use-ui-facades.tsx",
-        "UV": "boundaries/browser-use-ui-facades.tsx",
-        "Kr": "boundaries/browser-use-ui-facades.tsx",
-        "qr": "boundaries/browser-use-ui-facades.tsx",
-        "lj": "boundaries/browser-use-ui-facades.tsx",
-        "uj": "boundaries/browser-use-ui-facades.tsx",
-        "hN": "boundaries/browser-use-ui-facades.tsx",
-        "Bz": "boundaries/browser-use-plugin-facades.ts",
-        "dz": "boundaries/browser-use-plugin-facades.ts",
-        "fz": "boundaries/browser-use-plugin-facades.ts",
+        "BK": "browser/browser-use-gates/index.ts",
+        "VK": "browser/browser-use-gates/index.ts",
+        "HK": "browser/browser-use-gates/index.ts",
+        "DO": "browser/browser-use-gates/index.ts",
+        "KK": "browser/browser-use-gates/index.ts",
+        "XK": "browser/browser-use-gates/index.ts",
+        "GK": "browser/browser-use-gates/index.ts",
+        "zK": "browser/browser-use-gates/index.ts",
+        "AO": "browser/browser-use-mutations.ts",
+        "FO": "browser/browser-use-mutations.ts",
+        "PO": "browser/browser-use-mutations.ts",
+        "jO": "browser/browser-use-mutations.ts",
+        "NO": "browser/browser-use-mutations.ts",
+        "OO": "browser/browser-use-mutations.ts",
+        "kO": "browser/browser-use-mutations.ts",
+        "W0": "browser/browser-use-mutations.ts",
+        "U0": "browser/browser-use-mutations.ts",
+        "vk": "browser/browser-use-mutations.ts",
+        "_k": "browser/browser-use-mutations.ts",
+        "HV": "browser/browser-settings-history-nav.tsx",
+        "UV": "browser/browser-settings-history-nav.tsx",
+        "Kr": "settings/settings-section-chrome.tsx",
+        "qr": "settings/settings-section-chrome.tsx",
+        "lj": "settings/settings-empty-state.tsx",
+        "uj": "settings/settings-empty-state.tsx",
+        "hN": "settings/reveal-in-file-manager-button.tsx",
+        "Bz": "plugins/build-plugin-install-query.ts",
+        "dz": "plugins/plugin-install-mutations.ts",
+        "fz": "plugins/plugin-install-mutations.ts",
         "sv": "icons/browser-use-settings-icons.tsx",
         "OG": "icons/browser-use-settings-icons.tsx",
         "VO": "icons/browser-use-settings-icons.tsx",
         "M_": "icons/browser-use-settings-icons.tsx",
-        "A_": "boundaries/browser-use-plugin-facades.ts",
-        "k_": "boundaries/browser-use-plugin-facades.ts",
-        "Kz": "boundaries/browser-use-plugin-facades.ts",
-        "qK": "boundaries/browser-use-plugin-facades.ts",
-        "F4": "boundaries/browser-use-plugin-facades.ts",
-        "R4": "boundaries/browser-use-plugin-facades.ts",
-        "n3": "boundaries/browser-use-plugin-facades.ts",
-        "c9": "boundaries/browser-use-plugin-facades.ts",
-        "h$": "boundaries/browser-use-plugin-facades.ts",
-        "kw": "boundaries/browser-use-plugin-facades.ts",
-        "Mtt": "boundaries/browser-use-plugin-facades.ts",
+        "A_": "plugins/browser-use-plugin-esm-inits.ts",
+        "k_": "plugins/browser-use-plugin-esm-inits.ts",
+        "Kz": "plugins/browser-use-plugin-esm-inits.ts",
+        "qK": "plugins/browser-use-plugin-esm-inits.ts",
+        "F4": "plugins/browser-use-plugin-esm-inits.ts",
+        "R4": "plugins/browser-use-plugin-esm-inits.ts",
+        "n3": "plugins/browser-use-plugin-esm-inits.ts",
+        "c9": "plugins/browser-use-plugin-esm-inits.ts",
+        "h$": "plugins/browser-use-plugin-esm-inits.ts",
+        "kw": "plugins/browser-use-plugin-esm-inits.ts",
+        "Mtt": "plugins/browser-use-plugin-esm-inits.ts",
         "Irt": "ui/popover-primitives.tsx",
         "Nrt": "ui/popover-primitives.tsx",
         "Prt": "ui/popover-primitives.tsx",
@@ -18089,7 +18106,7 @@
       "boundary": true,
       "vendor": "lodash",
       "npmPackage": "lodash",
-      "notes": "npm-shim: lodash baseFor mega-chunk \u2192 lodash/* letter re-exports + init stubs."
+      "notes": "npm-shim: lodash baseFor mega-chunk → lodash/* letter re-exports + init stubs."
     },
     "address-utils-xK0e4BjB": {
       "restored": "utils/spreadsheet-address-utils.ts",
@@ -21657,7 +21674,7 @@
         "u": "chunk5PVQY5BWU"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -21667,7 +21684,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -21677,7 +21694,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -21687,7 +21704,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -21697,7 +21714,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -21707,7 +21724,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -21717,7 +21734,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -21736,7 +21753,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -21755,7 +21772,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -21765,7 +21782,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -21775,7 +21792,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -21894,7 +21911,7 @@
         "u": "chunkS3R3BYOJU"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -21904,7 +21921,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -21914,7 +21931,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -21967,7 +21984,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -21977,7 +21994,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22006,7 +22023,7 @@
         "t": "chunkU2HBQHQKT"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22022,7 +22039,7 @@
         "t": "chunkJA3XYJ7ZT"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22042,7 +22059,7 @@
         "u": "chunk5FUZZQ4RU"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22062,7 +22079,7 @@
         "u": "chunkJZLCHNYAU"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22077,7 +22094,7 @@
         "t": "chunkENJZ2VHET"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22092,7 +22109,7 @@
         "t": "chunkQXUST7PYT"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22102,7 +22119,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22112,7 +22129,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22122,7 +22139,7 @@
         "render": "render"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22132,7 +22149,7 @@
         "render": "render"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22206,7 +22223,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22216,7 +22233,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22226,7 +22243,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22236,7 +22253,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22246,7 +22263,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22256,7 +22273,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22270,7 +22287,7 @@
         "t": "chunk4TB4RGXKT"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22284,7 +22301,7 @@
         "t": "chunkOYMX7WX6T"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22298,7 +22315,7 @@
         "t": "chunkB4BG7PRWT"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22312,7 +22329,7 @@
         "t": "chunkDI55MBZ5T"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22368,7 +22385,7 @@
       },
       "status": "done",
       "npmPackage": "lucide-react",
-      "note": "Stock lucide-react createLucideIcon \u2014 thin npm re-export; 22 icon dependents already lucide shims"
+      "note": "Stock lucide-react createLucideIcon — thin npm re-export; 22 icon dependents already lucide shims"
     },
     "mermaid-parser.core-Bf-wA51e": {
       "restored": "diagrams/mermaid-parser-core.ts",
@@ -22420,7 +22437,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22430,7 +22447,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22454,7 +22471,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22471,7 +22488,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22481,7 +22498,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22554,7 +22571,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22564,7 +22581,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22574,7 +22591,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22584,7 +22601,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22594,7 +22611,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22604,7 +22621,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22614,7 +22631,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22624,7 +22641,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22634,7 +22651,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid-v14 npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid-v14; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22644,7 +22661,7 @@
         "diagram": "diagram"
       },
       "status": "done",
-      "notes": "Reconcile: already thin mermaid npm shim on disk; faced\u2192done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: already thin mermaid npm shim on disk; faced→done; set vendor=mermaid npmPackage=mermaid; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid"
     },
@@ -22672,7 +22689,7 @@
         "default": "default"
       },
       "status": "done",
-      "notes": "Reconcile: Codex Mermaid core aggregator typed wrapper over mermaid-v14 + local diagram npm shims (not a bare package-root re-export). faced\u2192done; dropped diagram/doc-vendor boundary.",
+      "notes": "Reconcile: Codex Mermaid core aggregator typed wrapper over mermaid-v14 + local diagram npm shims (not a bare package-root re-export). faced→done; dropped diagram/doc-vendor boundary.",
       "vendor": "mermaid",
       "npmPackage": "mermaid-v14"
     },
@@ -22684,7 +22701,7 @@
       "status": "done"
     },
     "mermaid-diagram-BzeSLuAD": {
-      "restored": "boundaries/mermaid-diagrams/mermaid-diagram.tsx",
+      "restored": "boundaries/mermaid-diagrams/mermaid-diagram/index.ts",
       "exports": {
         "MermaidDiagramRenderer": "MermaidDiagramRenderer"
       },
@@ -22785,7 +22802,7 @@
       "status": "done"
     },
     "skills-page-CKRhwfuo": {
-      "restored": "skills/skills-page.tsx",
+      "restored": "skills/skills-page/index.ts",
       "status": "done"
     },
     "skills-settings-uK_TVER6": {
@@ -22796,7 +22813,7 @@
       "status": "done"
     },
     "plugins-page-BCVTHZkx": {
-      "restored": "plugins/plugins-page.ts",
+      "restored": "plugins/plugins-page/index.ts",
       "exports": {
         "t": "PluginsPage",
         "n": "ensurePluginsPageInit",
@@ -22812,7 +22829,7 @@
       "status": "done"
     },
     "plugin-detail-page-CS2mOWnD": {
-      "restored": "plugins/plugin-detail-page.ts",
+      "restored": "plugins/plugin-detail-page/index.ts",
       "exports": {
         "N": "ensurePluginDetailPageInit",
         "F": "pluginDetailF",
@@ -22832,7 +22849,7 @@
       "status": "done"
     },
     "general-settings-DaCT8Zmh": {
-      "restored": "settings/general-settings.tsx",
+      "restored": "settings/general-settings/index.ts",
       "exports": {
         "I": "GeneralSettings",
         "O": "ensureGeneralSettingsInit",
@@ -22880,7 +22897,7 @@
       },
       "status": "done",
       "npmPackage": "remark-math",
-      "note": "Stock remark-math \u2014 thin npm re-export (bundle export remarkMath)"
+      "note": "Stock remark-math — thin npm re-export (bundle export remarkMath)"
     },
     "index-BFCcxPM5-Mucjm1d8": {
       "restored": "vendor/katex.ts",
@@ -22889,7 +22906,7 @@
       },
       "status": "done",
       "npmPackage": "katex",
-      "note": "Stock katex@0.16.22 \u2014 thin npm re-export of default API",
+      "note": "Stock katex@0.16.22 — thin npm re-export of default API",
       "classification": "vendor-npm"
     },
     "plugin-detail-page-QPU09DuF": {
@@ -22905,7 +22922,7 @@
       "restored": "composer/use-chatgpt-composer-controller/index.tsx",
       "status": "done",
       "classification": "app-feature",
-      "notes": "Thin ChatGPT composer-controller boundary barrel (Stage-3 wave-15). Helper124\u2013178 client-defined widget / charts_widget_v2 mountain drained; markdown peer bootstrap owns registry side-effects; openBoundary cleared. boundaries/chatgpt-mapbox-gl-runtime.ts is now a mapbox-gl npm CSP shim. | Closeout polish: consumers remapped to composer barrel; legacy Value* slot aliases dropped; thin boundary retained as compat re-export.",
+      "notes": "Thin ChatGPT composer-controller boundary barrel (Stage-3 wave-15). Helper124–178 client-defined widget / charts_widget_v2 mountain drained; markdown peer bootstrap owns registry side-effects; openBoundary cleared. boundaries/chatgpt-mapbox-gl-runtime.ts is now a mapbox-gl npm CSP shim. | Closeout polish: consumers remapped to composer barrel; legacy Value* slot aliases dropped; thin boundary retained as compat re-export.",
       "stage3Accepted": true,
       "restoredModules": [
         "composer/use-chatgpt-composer-controller/index.tsx",
@@ -23193,7 +23210,7 @@
         "r": "initToggleThreadSummaryPanel",
         "t": "initToggleThreadSummaryPanelAtoms"
       },
-      "note": "Wave Z-cs: A$/M$/k$\u2192Popover*; C0/y0/_0\u2192shell-panel-pin; N$ init dropped; conversationSourceS/O"
+      "note": "Wave Z-cs: A$/M$/k$→Popover*; C0/y0/_0→shell-panel-pin; N$ init dropped; conversationSourceS/O"
     },
     "checkmark-arrows-counterclockwise-rotate-lg-COZ08dCs": {
       "restored": "icons/checkmark-arrows-counterclockwise-rotate-lg.tsx",
@@ -23202,7 +23219,7 @@
         "n": "CheckmarkArrowsCounterclockwiseRotateLg",
         "t": "initCheckmarkArrowsCounterclockwiseRotateLg"
       },
-      "note": "Wave Z-cs: gap 0 icon; Jvt/Lvt\u2192react/jsx"
+      "note": "Wave Z-cs: gap 0 icon; Jvt/Lvt→react/jsx"
     },
     "chatgpt-temporary-chat-ui-DzECkldP": {
       "restored": "conversation/chatgpt-temporary-chat-ui/index.tsx",
@@ -23212,7 +23229,7 @@
         "r": "TemporaryChatOnboarding",
         "t": "initChatgptTemporaryChatUi"
       },
-      "note": "Wave Z-cs: S8\u2192setTemporaryChatSearchParam; G$/Y$/YA/Hft/P5/but/Hlt inits dropped"
+      "note": "Wave Z-cs: S8→setTemporaryChatSearchParam; G$/Y$/YA/Hft/P5/but/Hlt inits dropped"
     },
     "chatgpt-temporary-chat-ui-BNtlPqRH": {
       "restored": "conversation/chatgpt-temporary-chat-ui-lazy.ts",
@@ -23230,7 +23247,7 @@
         "t": "ensureOnboardingBannerInit"
       },
       "status": "done",
-      "note": "Wave AA: mU\u2192Callout (\u2260MU), hU\u2192ensureCalloutInit (\u2260HU); Elt/Dlt Badge; but/yut Button; wft\u2192cx; Ivt/jvt/Tft dropped"
+      "note": "Wave AA: mU→Callout (≠MU), hU→ensureCalloutInit (≠HU); Elt/Dlt Badge; but/yut Button; wft→cx; Ivt/jvt/Tft dropped"
     },
     "plan-summary-page-c9VO7iqd": {
       "restored": "conversation/plan-summary-page.tsx",
@@ -23238,7 +23255,7 @@
         "PlanSummaryPage": "PlanSummaryPage"
       },
       "status": "done",
-      "note": "Wave AA: yc\u2192PlanSummaryMessage bindable (exact lowercase); bc init; B5\u2192useLocation; P5/Ivt/jvt dropped"
+      "note": "Wave AA: yc→PlanSummaryMessage bindable (exact lowercase); bc init; B5→useLocation; P5/Ivt/jvt dropped"
     },
     "use-git-recent-branches-D2g84RUJ": {
       "restored": "hooks/use-git-recent-branches.ts",
@@ -23247,7 +23264,7 @@
         "t": "ensureUseGitRecentBranchesInit"
       },
       "status": "done",
-      "note": "Wave AA: N3\u2192useGitRepoLiveQuery bindable; A3\u2192ensureUseGitRepoLiveQueryInit; Ivt dropped"
+      "note": "Wave AA: N3→useGitRepoLiveQuery bindable; A3→ensureUseGitRepoLiveQueryInit; Ivt dropped"
     },
     "middleware-2Su2Qp7P": {
       "restored": "vendor/segment-middleware.ts",
@@ -23304,7 +23321,7 @@
         "t": "ensureHomeSuggestionStaggeredItemInit"
       },
       "status": "done",
-      "note": "Wave AA+: Aut\u2192usePrefersReducedMotion; hft\u2192motion; $dt/kut/Ivt/jvt dropped"
+      "note": "Wave AA+: Aut→usePrefersReducedMotion; hft→motion; $dt/kut/Ivt/jvt dropped"
     },
     "connector-logo-stack-CKYJhcR5": {
       "restored": "ui/connector-logo-stack.tsx",
@@ -23313,7 +23330,7 @@
         "t": "ensureConnectorLogoStackInit"
       },
       "status": "done",
-      "note": "Wave AA+: wft\u2192cx; Lvt Children; Ivt/jvt/Tft dropped"
+      "note": "Wave AA+: wft→cx; Lvt Children; Ivt/jvt/Tft dropped"
     },
     "artifact-preview-status-D-ULvJ60": {
       "restored": "ui/artifact-preview-status.tsx",
@@ -23322,7 +23339,7 @@
         "t": "ensureArtifactPreviewStatusInit"
       },
       "status": "done",
-      "note": "Wave AA+: Gft\u2192MemoizedFormattedMessage; Hft/jvt dropped"
+      "note": "Wave AA+: Gft→MemoizedFormattedMessage; Hft/jvt dropped"
     },
     "local-environment-workflow-messages-Q6HEVFW7": {
       "restored": "settings/local-environment-workflow-messages.ts",
@@ -23331,7 +23348,7 @@
         "t": "ensureLocalEnvironmentWorkflowMessagesInit"
       },
       "status": "done",
-      "note": "Wave AA+: Vft\u2192identity defineMessages; Hft dropped"
+      "note": "Wave AA+: Vft→identity defineMessages; Hft dropped"
     },
     "avatar-overlay-debug-state-CtxOR8Zi": {
       "restored": "desktop/avatar-overlay-debug-state.ts",
@@ -23458,7 +23475,7 @@
         "t": "ensureArtifactAnnotationCommentInit"
       },
       "status": "done",
-      "note": "Wave AB: hgt\u2192isArtifactAnnotationAttachment; pgt\u2192buildArtifactAnnotationComment; opt dropped"
+      "note": "Wave AB: hgt→isArtifactAnnotationAttachment; pgt→buildArtifactAnnotationComment; opt dropped"
     },
     "artifact-file-preview-icon-n81pVXki": {
       "restored": "artifact/artifact-file-preview-icon.tsx",
@@ -23467,7 +23484,7 @@
         "t": "ensureArtifactFilePreviewIconInit"
       },
       "status": "done",
-      "note": "Wave AB: bH\u2192resolveArtifactFileIcon; wft\u2192cx; Ivt/Lvt/jvt/Tft/xH dropped"
+      "note": "Wave AB: bH→resolveArtifactFileIcon; wft→cx; Ivt/Lvt/jvt/Tft/xH dropped"
     },
     "artifact-creation-prompts-CWNgl5xb": {
       "restored": "home/artifact-creation-prompts.ts",
@@ -23477,7 +23494,7 @@
         "t": "ensureArtifactCreationPromptsInit"
       },
       "status": "done",
-      "note": "Wave AB: Cst\u2192toMarkdownLink; K5\u2192buildPluginUri; Vft\u2192identity; Hft/Sst/xJ dropped"
+      "note": "Wave AB: Cst→toMarkdownLink; K5→buildPluginUri; Vft→identity; Hft/Sst/xJ dropped"
     },
     "custom-avatars-query-BoNA278E": {
       "restored": "desktop/custom-avatars-query.ts",
@@ -23488,7 +23505,7 @@
         "t": "ensureCustomAvatarsQueryInit"
       },
       "status": "done",
-      "note": "Wave AB: nvt\u2192createAppScopeQueryAtom; tvt\u2192createAppScopeSelectAtom; Hut\u2192getDesktopServices; fdt\u2192QueryStaleTimes"
+      "note": "Wave AB: nvt→createAppScopeQueryAtom; tvt→createAppScopeSelectAtom; Hut→getDesktopServices; fdt→QueryStaleTimes"
     },
     "avatar-overlay-mascot-size-4juuy68a": {
       "restored": "desktop/avatar-overlay-mascot-size.ts",
@@ -23501,7 +23518,7 @@
         "t": "ensureAvatarOverlayMascotSizeInit"
       },
       "status": "done",
-      "note": "Wave AB: Spt\u2192avatarOverlaySettings; Lut/Iut/L_t/Fft; ESM inits dropped"
+      "note": "Wave AB: Spt→avatarOverlaySettings; Lut/Iut/L_t/Fft; ESM inits dropped"
     },
     "codex-micro-onboarding-state-eD-68cqY": {
       "restored": "onboarding/codex-micro-onboarding-state.ts",
@@ -23513,7 +23530,7 @@
         "t": "ensureCodexMicroOnboardingStateInit"
       },
       "status": "done",
-      "note": "Wave AB: Jw/Kw/qw\u2192codex-micro-detection-signals; rut\u2192persisted onboarding state"
+      "note": "Wave AB: Jw/Kw/qw→codex-micro-detection-signals; rut→persisted onboarding state"
     },
     "use-home-directory-CROe_CvY": {
       "restored": "hooks/use-home-directory.ts",
@@ -23523,7 +23540,7 @@
         "t": "ensureUseHomeDirectoryInit"
       },
       "status": "done",
-      "note": "Wave AC: Q4\u2192homeDirectoryQueryAtom; e3 init; I_t\u2192useAppScopeAtomValue (\u2260IT polish)"
+      "note": "Wave AC: Q4→homeDirectoryQueryAtom; e3 init; I_t→useAppScopeAtomValue (≠IT polish)"
     },
     "use-git-submodule-paths-BOmLGs8q": {
       "restored": "hooks/use-git-submodule-paths.ts",
@@ -23532,7 +23549,7 @@
         "t": "ensureUseGitSubmodulePathsInit"
       },
       "status": "done",
-      "note": "Wave AC: aW/oW\u2192createGitMethodQueryAtoms; I3\u2192mergeGitLiveQueryOptions; L3 init; fdt\u2192QueryStaleTimes"
+      "note": "Wave AC: aW/oW→createGitMethodQueryAtoms; I3→mergeGitLiveQueryOptions; L3 init; fdt→QueryStaleTimes"
     },
     "use-git-config-value-BVCZfaZo": {
       "restored": "hooks/use-git-config-value.ts",
@@ -23541,7 +23558,7 @@
         "t": "ensureUseGitConfigValueInit"
       },
       "status": "done",
-      "note": "Wave AC: xA\u2192gitConfigValueFromTargetAtom; SA init; I3 merge options"
+      "note": "Wave AC: xA→gitConfigValueFromTargetAtom; SA init; I3 merge options"
     },
     "pet-install-state-DIJx4Tfv": {
       "restored": "desktop/pet-install-state.ts",
@@ -23553,7 +23570,7 @@
         "t": "clearPetInstallState"
       },
       "status": "done",
-      "note": "Wave AC: Zut\u2192invokeDesktopRpc (\u2260rp feature-gate collision); ivt\u2192createScopedSignal; tdt init"
+      "note": "Wave AC: Zut→invokeDesktopRpc (≠rp feature-gate collision); ivt→createScopedSignal; tdt init"
     },
     "access-splash-CgMACdwp": {
       "restored": "onboarding/access-splash.tsx",
@@ -23562,7 +23579,7 @@
         "t": "AccessSplash"
       },
       "status": "done",
-      "note": "Wave AC: L0\u2192AppIconL0; R0\u2192ensureAppIconL0Init; ent\u2192handleAnchorOpenHref; z0\u2192ExternalLinkIconButton"
+      "note": "Wave AC: L0→AppIconL0; R0→ensureAppIconL0Init; ent→handleAnchorOpenHref; z0→ExternalLinkIconButton"
     },
     "home-prefill-artifact-preview-DEuv-UOn": {
       "restored": "home/home-prefill-artifact-preview.tsx",
@@ -23570,7 +23587,7 @@
         "HomePrefillArtifactPreview": "HomePrefillArtifactPreview"
       },
       "status": "done",
-      "note": "Wave AC: qV\u2192openArtifactPreview; KV deps init; L_t\u2192useAppScope; _8/b8 dropped"
+      "note": "Wave AC: qV→openArtifactPreview; KV deps init; L_t→useAppScope; _8/b8 dropped"
     },
     "use-debug-panel-G2DtvEwQ": {
       "restored": "hooks/use-debug-panel.ts",
@@ -23586,7 +23603,7 @@
         "t": "nextDebugPanelEntryId"
       },
       "status": "done",
-      "note": "Wave AC: J8\u2192collectDebugPanelTurnFiles bindable; J7/Y8 inits; R_t\u2192useAppScopeValue; q7/Jht"
+      "note": "Wave AC: J8→collectDebugPanelTurnFiles bindable; J7/Y8 inits; R_t→useAppScopeValue; q7/Jht"
     },
     "composer-action-bar-run-location-dropdown-DN6XZTGU": {
       "restored": "composer/composer-action-bar-run-location-dropdown.tsx",
@@ -23594,7 +23611,7 @@
         "ComposerActionBarRunLocationDropdown": "ComposerActionBarRunLocationDropdown"
       },
       "status": "done",
-      "note": "Wave AC: IB\u2192ensureComposerEsm_IB_Init (side-effect icon); d_/FB/Zlt icons; polish F dropped"
+      "note": "Wave AC: IB→ensureComposerEsm_IB_Init (side-effect icon); d_/FB/Zlt icons; polish F dropped"
     },
     "codex-local-access-splash-Clh6i4bQ": {
       "restored": "onboarding/codex-local-access-splash.tsx",
@@ -23602,7 +23619,7 @@
       "exports": {
         "CodexLocalAccessSplash": "CodexLocalAccessSplash"
       },
-      "note": "Wave AD: Gft\u2192MemoizedFormattedMessage; AccessSplash; Hft/Ivt/jvt dropped"
+      "note": "Wave AD: Gft→MemoizedFormattedMessage; AccessSplash; Hft/Ivt/jvt dropped"
     },
     "work-mode-access-splash-BBkke-wX": {
       "restored": "onboarding/work-mode-access-splash.tsx",
@@ -23610,7 +23627,7 @@
       "exports": {
         "WorkModeAccessSplash": "WorkModeAccessSplash"
       },
-      "note": "Wave AD: G1\u2192ElectronOnly; aZ\u2192AppShellLayout (existing map); Gft\u2192MemoizedFormattedMessage; Hft/Ivt/jvt/K1/oZ dropped"
+      "note": "Wave AD: G1→ElectronOnly; aZ→AppShellLayout (existing map); Gft→MemoizedFormattedMessage; Hft/Ivt/jvt/K1/oZ dropped"
     },
     "recommended-skill-statsig-overrides-2fOHXsHG": {
       "restored": "skills/recommended-skill-statsig-overrides.ts",
@@ -23620,7 +23637,7 @@
         "t": "getRecommendedSkillStatsigOverride",
         "n": "ensureRecommendedSkillStatsigOverridesInit"
       },
-      "note": "Wave AD: C_t/E_t/S_t/x_t/c_t\u2192zod; nlt\u2192useDynamicConfig; tlt/Ivt dropped"
+      "note": "Wave AD: C_t/E_t/S_t/x_t/c_t→zod; nlt→useDynamicConfig; tlt/Ivt dropped"
     },
     "play-outline-DP2VGTN0": {
       "restored": "icons/play-outline-icon.tsx",
@@ -23629,7 +23646,7 @@
         "n": "PlayOutlineIcon",
         "t": "ensurePlayOutlineIconInit"
       },
-      "note": "Wave AD: gap 0 icon; Lvt/jvt\u2192react/jsx dropped"
+      "note": "Wave AD: gap 0 icon; Lvt/jvt→react/jsx dropped"
     },
     "star-zhAPZW1a": {
       "restored": "icons/star-outline-icon.tsx",
@@ -23686,7 +23703,7 @@
       "note": "Wave AD: gap 0 icon; Lvt/jvt dropped"
     },
     "chatgpt-conversation-page-Bq7nUgvB": {
-      "restored": "conversation/chatgpt-conversation-page.tsx",
+      "restored": "conversation/chatgpt-conversation-page/index.ts",
       "status": "done",
       "exports": {
         "ChatGptConversationPage": "ChatGptConversationPage"
@@ -23734,7 +23751,7 @@
         "n": "RealtimeVoiceHandoffTarget",
         "t": "ensureRealtimeVoiceHandoffTargetInit"
       },
-      "note": "Wave AE: cct/lct/sct/uct\u2192handoff-geometry; tut/Aut exact; $lt/kut dropped"
+      "note": "Wave AE: cct/lct/sct/uct→handoff-geometry; tut/Aut exact; $lt/kut dropped"
     },
     "codex-avatar-93dNPzLt": {
       "restored": "avatar/codex-avatar.tsx",
@@ -23752,7 +23769,7 @@
         "n": "useRecommendedSkills",
         "t": "ensureUseRecommendedSkillsInit"
       },
-      "note": "Wave AE: Avt\u2192useQueryClient; ndt/rdt\u2192vscode query/mutation; Zut/Qut/fdt"
+      "note": "Wave AE: Avt→useQueryClient; ndt/rdt→vscode query/mutation; Zut/Qut/fdt"
     },
     "mcp-capability-view-page-O_triaiK": {
       "restored": "mcp/mcp-capability-view-page.tsx",
@@ -23760,7 +23777,7 @@
       "exports": {
         "McpCapabilityViewPage": "McpCapabilityViewPage"
       },
-      "note": "Wave AE: SX/oB/sB/yX\u2192mcp-capability-host; U5/iO/Gft/R_t exact (\u2260OB/RT soft)"
+      "note": "Wave AE: SX/oB/sB/yX→mcp-capability-host; U5/iO/Gft/R_t exact (≠OB/RT soft)"
     },
     "appgen-publication-terms-route-_6Q15k8-": {
       "restored": "apps/appgen-publication-terms-route.tsx",
@@ -23768,7 +23785,7 @@
       "exports": {
         "AppgenPublicationTermsRoute": "AppgenPublicationTermsRoute"
       },
-      "note": "Wave AE: Wr/Gr\u2192publication-terms-banner; Ivt/jvt dropped"
+      "note": "Wave AE: Wr/Gr→publication-terms-banner; Ivt/jvt dropped"
     },
     "external-agent-config-import-flow-DnPb-mab": {
       "restored": "onboarding/open-external-agent-import.ts",
@@ -23788,7 +23805,7 @@
         "r": "logArtifactAnnotationSubmitted",
         "t": "ensureArtifactAnalyticsInit"
       },
-      "note": "Wave AF: gap8 exact aet/eet/iet/net/oet/ret/set/tet\u2192artifact-analytics-enums"
+      "note": "Wave AF: gap8 exact aet/eet/iet/net/oet/ret/set/tet→artifact-analytics-enums"
     },
     "codex-micro-joystick-feedback-CK7y1eSl": {
       "restored": "desktop/codex-micro-joystick-feedback.ts",
@@ -23801,7 +23818,7 @@
         "r": "resetJoystickFeedback",
         "t": "ensureCodexMicroJoystickFeedbackInit"
       },
-      "note": "Wave AF: gap2 exact Gw/Ww\u2192joystick-geometry"
+      "note": "Wave AF: gap2 exact Gw/Ww→joystick-geometry"
     },
     "realtime-voice-home-announcement-BBLBSud5": {
       "restored": "home/realtime-voice-home-announcement.tsx",
@@ -23809,7 +23826,7 @@
       "exports": {
         "RealtimeVoiceHomeAnnouncement": "RealtimeVoiceHomeAnnouncement"
       },
-      "note": "Wave AF: gap7 exact Nh/Ph/QS/XS/iC/nC/tC\u2192realtime-voice-nux; alias-mappable"
+      "note": "Wave AF: gap7 exact Nh/Ph/QS/XS/iC/nC/tC→realtime-voice-nux; alias-mappable"
     },
     "use-codex-worktrees-FWkscfGb": {
       "restored": "hooks/use-codex-worktrees.ts",
@@ -23818,7 +23835,7 @@
         "n": "useCodexWorktrees",
         "t": "ensureUseCodexWorktreesInit"
       },
-      "note": "Wave AF: gap7 exact G3/H3/K3/Tpt/U3/X_/Z_\u2192host-rpc + git settings + query-key"
+      "note": "Wave AF: gap7 exact G3/H3/K3/Tpt/U3/X_/Z_→host-rpc + git settings + query-key"
     },
     "new-chat-suggestion-source-debug-state-D2osy-li": {
       "restored": "home/new-chat-suggestion-source-debug-state.ts",
@@ -23837,7 +23854,7 @@
         "t": "ensureNewChatSuggestionSourceDebugOverrideInit",
         "u": "patchAmbientSuggestionStatus"
       },
-      "note": "Wave AF: gap4 exact $ut/Oft/jft/kft\u2192persisted-atom-store"
+      "note": "Wave AF: gap4 exact $ut/Oft/jft/kft→persisted-atom-store"
     },
     "codex-micro-commands-8_4zZXYk": {
       "restored": "desktop/codex-micro-webview-commands.ts",
@@ -23847,7 +23864,7 @@
         "r": "findCodexMicroWebviewCommand",
         "t": "ensureCodexMicroWebviewCommandsInit"
       },
-      "note": "Wave AF: gap3 exact b1/l1/y1\u2192codex-micro-commands-catalog"
+      "note": "Wave AF: gap3 exact b1/l1/y1→codex-micro-commands-catalog"
     },
     "cloud-preferences-B2FohNg2": {
       "restored": "settings/cloud-preferences.ts",
@@ -23860,7 +23877,7 @@
         "r": "previewCloudFilenamePattern",
         "t": "ensureCloudPreferencesInit"
       },
-      "note": "Wave AF: gap3 exact Vct/_vt/zct\u2192cloud-api-client + useMutation"
+      "note": "Wave AF: gap3 exact Vct/_vt/zct→cloud-api-client + useMutation"
     },
     "codex-micro-mini-games-BVBFbIhK": {
       "restored": "desktop/codex-micro-mini-games.ts",
@@ -23878,10 +23895,10 @@
         "t": "advanceMiniGameRotationGesture",
         "u": "ensureCodexMicroMiniGamesInit"
       },
-      "note": "Wave AF: gap2 exact _Z/vZ\u2192overlay-focus-selectors"
+      "note": "Wave AF: gap2 exact _Z/vZ→overlay-focus-selectors"
     },
     "quick-chat-window-_GO18s8K": {
-      "restored": "composer/quick-chat-window.tsx",
+      "restored": "composer/quick-chat-window/index.ts",
       "status": "done"
     },
     "quick-chat-window-2bwwo7FD": {
@@ -23905,7 +23922,7 @@
       "exports": {
         "CloudPreferencesSettings": "CloudPreferencesSettings"
       },
-      "note": "Wave AG: gap0 exact settings/i18n/UI; Llt\u2192toastAtom; ESM inits dropped"
+      "note": "Wave AG: gap0 exact settings/i18n/UI; Llt→toastAtom; ESM inits dropped"
     },
     "code-review-settings-Ci3aKMa3": {
       "restored": "settings/code-review-settings.tsx",
@@ -23913,10 +23930,10 @@
       "exports": {
         "CodeReviewSettings": "CodeReviewSettings"
       },
-      "note": "Wave AG: gap2 exact Ci/Si\u2192use-usage-settings-access; Si noop"
+      "note": "Wave AG: gap2 exact Ci/Si→use-usage-settings-access; Si noop"
     },
     "subscription-update-plan-IbQvs_Ig": {
-      "restored": "account/subscription-update-plan.ts",
+      "restored": "account/subscription-update-plan/index.ts",
       "status": "done",
       "exports": {
         "a": "ensureSubscriptionUpdatePlanDialogInit",
@@ -23936,7 +23953,7 @@
         "n": "getAnalogActionTitle",
         "t": "ensureCodexMicroAnalogActionTitleInit"
       },
-      "note": "Wave AG: gap2 exact lr/ur\u2192codex-command-title; OJ mapped"
+      "note": "Wave AG: gap2 exact lr/ur→codex-command-title; OJ mapped"
     },
     "chatgpt-desktop-auth-url-fs7WVkdZ": {
       "restored": "account/chatgpt-desktop-auth-url.ts",
@@ -23949,7 +23966,7 @@
         "r": "buildChatgptDesktopAuthUrl",
         "t": "ensureBuildChatgptDesktopAuthUrlInit"
       },
-      "note": "Wave AG: gap6 exact hdt/mdt/u4/d4/flt/gr\u2192host-request/app-info/StableID"
+      "note": "Wave AG: gap6 exact hdt/mdt/u4/d4/flt/gr→host-request/app-info/StableID"
     },
     "workbook-from-markdown-Ur6qTV_W": {
       "restored": "workbook/workbook-from-markdown.ts",
@@ -23969,10 +23986,10 @@
         "r": "ensureAvatarMascotButtonInit",
         "t": "AvatarMascotButton"
       },
-      "note": "Wave AG: gap3 exact Dut/Out/uvt\u2192persisted-atom; hft dropped"
+      "note": "Wave AG: gap3 exact Dut/Out/uvt→persisted-atom; hft dropped"
     },
     "use-workspace-users-XGSt9G0t": {
-      "restored": "hooks/use-workspace-users.ts",
+      "restored": "hooks/use-workspace-users/index.ts",
       "exports": {
         "useWorkspaceUsersSearch": "useWorkspaceUsersSearch",
         "buildPendingInvitees": "buildPendingInvitees",
@@ -23991,10 +24008,10 @@
       "classification": "local",
       "notes": "qg-full-green: relocated oversized dump to boundaries (vendored flat boundary).",
       "stage3Accepted": true,
-      "note": "Wave GA: drained Open-runtime soft hosts \u2192 real CloseIcon/cx/Spinner/CheckIcon + useListKeyboardNavigation"
+      "note": "Wave GA: drained Open-runtime soft hosts → real CloseIcon/cx/Spinner/CheckIcon + useListKeyboardNavigation"
     },
     "appgen-share-dialog-j88Mseym": {
-      "restored": "appgen/appgen-share-dialog.tsx",
+      "restored": "appgen/appgen-share-dialog/index.ts",
       "exports": {
         "t": "AppgenShareDialog",
         "n": "ensureAppgenShareDialogInit",
@@ -24012,7 +24029,7 @@
       "stage3Accepted": true
     },
     "hooks-settings-wtkEXqdK": {
-      "restored": "settings/hooks-settings.tsx",
+      "restored": "settings/hooks-settings/index.ts",
       "exports": {
         "HooksSettings": "HooksSettings"
       },
@@ -24032,10 +24049,10 @@
       "exports": {
         "BusinessCheckoutSwitchWorkspaceDialog": "BusinessCheckoutSwitchWorkspaceDialog"
       },
-      "note": "Wave AH: gap2 BX/zht\u2192useUpdateAuthNonce/getErrorMessage; dialog bindable"
+      "note": "Wave AH: gap2 BX/zht→useUpdateAuthNonce/getErrorMessage; dialog bindable"
     },
     "color-icon-CJgkzSbJ": {
-      "restored": "icons/color-icon.tsx",
+      "restored": "icons/color-icon/index.ts",
       "status": "done",
       "exports": {
         "ColorIcon": "ColorIcon",
@@ -24044,7 +24061,7 @@
         "ensureColorIconInit": "ensureColorIconInit",
         "useIsDarkAppearance": "useIsDarkAppearance"
       },
-      "note": "Wave AH: gap2 MG/jG\u2192useIsDarkAppearance; ColorIcon atlas bindable"
+      "note": "Wave AH: gap2 MG/jG→useIsDarkAppearance; ColorIcon atlas bindable"
     },
     "security-page-C3xazhLy": {
       "restored": "security/security-page.tsx",
@@ -24052,7 +24069,7 @@
       "exports": {
         "SecurityPage": "SecurityPage"
       },
-      "note": "Wave AH: gap8 Lb/rlt/jK/es\u2192remote-host/feature-gate/plugins/shell-state"
+      "note": "Wave AH: gap8 Lb/rlt/jK/es→remote-host/feature-gate/plugins/shell-state"
     },
     "pet-install-modal-host-B_NIodo4": {
       "restored": "desktop/pet-install-modal-host.tsx",
@@ -24060,7 +24077,7 @@
       "exports": {
         "PetInstallModalHost": "PetInstallModalHost"
       },
-      "note": "Wave AH: gap4 Ar/l3\u2192useSelectedAvatar/useInvalidateCustomAvatars"
+      "note": "Wave AH: gap4 Ar/l3→useSelectedAvatar/useInvalidateCustomAvatars"
     },
     "codex-micro-layout-CIGyS1bN": {
       "restored": "devices/codex-micro-layout.ts",
@@ -24072,7 +24089,7 @@
         "parseStreamDeckLayout": "parseStreamDeckLayout",
         "ensureCodexMicroLayoutInit": "ensureCodexMicroLayoutInit"
       },
-      "note": "Wave AH: gap1 n_t\u2192streamDeckLayoutSchema; thin Stage 3 (catalog deferred)"
+      "note": "Wave AH: gap1 n_t→streamDeckLayoutSchema; thin Stage 3 (catalog deferred)"
     },
     "auto-review-approval-nudge-BlX0A97p": {
       "restored": "approvals/auto-review-approval-nudge.tsx",
@@ -24099,10 +24116,10 @@
         "bindWorktreeSetupAutoCreate": "bindWorktreeSetupAutoCreate",
         "buildWorktreeSetupAutoCreateActivities": "buildWorktreeSetupAutoCreateActivities"
       },
-      "note": "Wave AH misnamed key for worktree-setup-auto-fix-CqsFmOeg; restored onboarding surface. Fq/Ic/Lc \u2192 GuardianApprovals / WorktreeSetupActivityFeed / deferredDefaultHelper."
+      "note": "Wave AH misnamed key for worktree-setup-auto-fix-CqsFmOeg; restored onboarding surface. Fq/Ic/Lc → GuardianApprovals / WorktreeSetupActivityFeed / deferredDefaultHelper."
     },
     "git-settings-0pyuGSeN": {
-      "restored": "settings/git-settings.tsx",
+      "restored": "settings/git-settings/index.ts",
       "status": "done",
       "exports": {
         "GitSettings": "GitSettings"
@@ -24110,7 +24127,7 @@
       "note": "Wave AI: gap3 lZ/m3/uZ deferred; GitSettings bindable"
     },
     "notebook-preview-panel-DwlTki9M": {
-      "restored": "artifact/notebook-preview-panel.tsx",
+      "restored": "artifact/notebook-preview-panel/index.ts",
       "status": "done",
       "exports": {
         "NotebookPreviewPanel": "NotebookPreviewPanel"
@@ -24141,10 +24158,9 @@
       "note": "Wave AI: gap8 Ah/Bh/Gm/Km/Qpt/nW/tW/zh deferred; HotkeyWindowNewThreadPage bindable"
     },
     "workspace-settings-webview-page-DGgV9FIa": {
-      "restored": "settings/workspace-settings-webview-page.tsx",
+      "restored": "settings/workspace-settings-webview-page/index.ts",
       "status": "done",
       "exports": {
-        "WorkspaceSettingsWebviewHost": "WorkspaceSettingsWebviewHost",
         "WorkspaceSettingsWebviewPage": "WorkspaceSettingsWebviewPage"
       },
       "note": "Wave AI: gap8 Cr/M5/N5/alt/dlt/mm/slt/wr deferred; page+host bindable"
@@ -24161,7 +24177,7 @@
       "note": "Wave AI: gap10 FK/FX/Fz/IK/PX/TK/bK/o3/vK/zX deferred; hook bindable"
     },
     "app-connect-oauth-callback-page-BvI38JhY": {
-      "restored": "account/app-connect-oauth-callback-page.tsx",
+      "restored": "account/app-connect-oauth-callback-page/index.ts",
       "status": "done",
       "exports": {
         "AppConnectOAuthCallbackPage": "AppConnectOAuthCallbackPage"
@@ -24169,7 +24185,7 @@
       "note": "Wave AI: gap11 $z/C6/QK/Qz/S6/ZK/b6/eB/tB/x6/z5 deferred; OAuth page bindable"
     },
     "appshots-settings-CJ4EHzWv": {
-      "restored": "settings/appshots-settings.tsx",
+      "restored": "settings/appshots-settings/index.ts",
       "status": "done",
       "exports": {
         "AppshotsSettings": "AppshotsSettings"
@@ -24177,7 +24193,7 @@
       "note": "Wave AI: gap11 $9/CC/Lpt/O4/X1/Y1/a1/i1/k4/slt/wC deferred; AppshotsSettings bindable"
     },
     "browser-use-settings-PxDSNhZ2": {
-      "restored": "settings/browser-use-settings.tsx",
+      "restored": "settings/browser-use-settings/index.ts",
       "exports": {
         "BrowserUseSettings": "BrowserUseSettings",
         "d": "ensureBrowserUseSettingsInit",
@@ -24205,7 +24221,7 @@
       "note": "Wave AJ: gap4 $$/L5/lZ/uZ deferred; HotkeyWindowDetailLayout bindable"
     },
     "model-picker-power-slider-impl-DbPnlWG9": {
-      "restored": "composer/model-picker-power-slider-impl.tsx",
+      "restored": "composer/model-picker-power-slider-impl/index.ts",
       "status": "done",
       "exports": {
         "ModelPickerPowerSliderImpl": "ModelPickerPowerSliderImpl"
@@ -24230,7 +24246,7 @@
       "note": "Wave AJ: gap6 Bw/Ev/Ez/Flt/Pw/Tz deferred; CodexMicroJoystickHud bindable"
     },
     "codex-micro-mini-game-composer-BoiUM7yg": {
-      "restored": "devices/codex-micro-mini-game-composer.tsx",
+      "restored": "devices/codex-micro-mini-game-composer/index.ts",
       "status": "done",
       "exports": {
         "CodexMicroMiniGameComposer": "CodexMicroMiniGameComposer"
@@ -24285,7 +24301,7 @@
       "note": "Wave AJ: gap16 AV/NV/SE/_E/bE/dE/fE/gE/hE/jV/mE/pE/uE/vE/xE/yE deferred; side-panel tab API bindable"
     },
     "page-D9xkFXMg": {
-      "restored": "apps/appgen-analytics-page.tsx",
+      "restored": "apps/appgen-analytics-page/index.ts",
       "status": "done",
       "exports": {
         "AppgenAnalyticsPage": "AppgenAnalyticsPage"
@@ -24308,7 +24324,7 @@
       "note": "Wave AK: gap9 A6/D6/E6/O6/T6/X_t/j6/k6/w6 deferred; onboarding animation API bindable"
     },
     "pricing-plan-page-C21WmWTp": {
-      "restored": "account/pricing-plan-page.tsx",
+      "restored": "account/pricing-plan-page/index.ts",
       "status": "done",
       "exports": {
         "PricingPlanPage": "PricingPlanPage",
@@ -24338,7 +24354,7 @@
       "note": "Wave AK: gap5 Sw/_w/pw/uw/xw deferred; ConnectPluginsSubmenuItem bindable"
     },
     "start-appgen-conversation-DD_Qpz5h": {
-      "restored": "appgen/start-appgen-conversation.ts",
+      "restored": "appgen/start-appgen-conversation/index.ts",
       "status": "done",
       "exports": {
         "a": "startAppgenConversationFromLibrary",
@@ -24357,7 +24373,7 @@
       "note": "Wave AK: gap8 DT/OT/Xj/g6/hX/j5/pO/pX deferred; start-appgen API bindable"
     },
     "hotkey-setter-a0kUJFgA": {
-      "restored": "settings/hotkey-setter.tsx",
+      "restored": "settings/hotkey-setter/index.ts",
       "status": "done",
       "exports": {
         "i": "ensureHotkeySetterHelpersInit",
@@ -24376,7 +24392,7 @@
       "note": "Wave AK: gap14 $C/H/QC/U/ZC/_9/aw/dct/ew/fct/g9/iw/rw/tw deferred; RealtimeVoiceLaunchSurface bindable"
     },
     "browser-profile-import-dialog-v_lwnIpS": {
-      "restored": "browser/browser-profile-import-dialog.tsx",
+      "restored": "browser/browser-profile-import-dialog/index.ts",
       "status": "done",
       "exports": {
         "BrowserProfileImportDialogModal": "BrowserProfileImportDialogModal"
@@ -24384,7 +24400,7 @@
       "note": "Wave AK: gap16 Ck/Mk/Sk/ak/bk/gk/hk/ik/mk/nV/oz/rk/tV/wk/xk/yk deferred; BrowserProfileImportDialogModal bindable"
     },
     "upgrade-plan-dialog-CKTSoudj": {
-      "restored": "account/upgrade-plan-dialog.tsx",
+      "restored": "account/upgrade-plan-dialog/index.ts",
       "status": "done",
       "exports": {
         "UpgradePlanDialog": "UpgradePlanDialog",
@@ -24393,7 +24409,7 @@
       "note": "Wave AK: gap17 $tt/GG/Htt/Qb/Ry/Uv/Vtt/Wv/Xb/Yb/Zb/alt/ix/ny/om/qb/uy deferred; UpgradePlanDialog bindable"
     },
     "global-dictation-orb-DtjKqirr": {
-      "restored": "desktop/global-dictation-orb.tsx",
+      "restored": "desktop/global-dictation-orb/index.ts",
       "status": "done",
       "exports": {
         "a": "GlobalDictationOrb",
@@ -24406,7 +24422,7 @@
       "note": "Wave AK: gap11 Fct/Ict/Jct/Lct/Nct/Pct/Rct/Tct/Xct/Yct/qct deferred; GlobalDictationOrb bindable"
     },
     "local-conversation-stream-role-product-event-BzrRYxBq": {
-      "restored": "conversation/local-conversation-stream-role-product-event.tsx",
+      "restored": "conversation/local-conversation-stream-role-product-event/index.ts",
       "status": "done",
       "exports": {
         "i": "ensureLocalConversationStreamRoleProductEventHelpersInit",
@@ -24417,7 +24433,7 @@
       "note": "Wave AK: gap13 Br/Btt/Hr/Ir/Lr/M2/N2/O2/Rr/Ur/Vr/X2/zr deferred; stream-role product event bindable"
     },
     "pets-settings-BdgUlXRY": {
-      "restored": "settings/pets-settings.tsx",
+      "restored": "settings/pets-settings/index.ts",
       "status": "done",
       "exports": {
         "PetsSettings": "PetsSettings"
@@ -24425,7 +24441,7 @@
       "note": "Wave AL: gap18 Ez/Fr/I7/Mr/Nr/Pr/Tz/X9/_X/cet/cz/let/nZ/nn/tZ/tn/uet/vX deferred; PetsSettings bindable"
     },
     "worktrees-settings-page-D8I58eIb": {
-      "restored": "worktrees/worktrees-settings-page.tsx",
+      "restored": "worktrees/worktrees-settings-page/index.ts",
       "status": "done",
       "exports": {
         "WorktreesSettingsPage": "WorktreesSettingsPage"
@@ -24433,7 +24449,7 @@
       "note": "Wave AL: gap18 $_/Bht/EM/F3/Kst/P3/Q_/TM/WX/Wst/YX/gpt/h3/ist/lZ/m3/rst/uZ deferred; WorktreesSettingsPage bindable"
     },
     "appgen-settings-page-8V-xKkmK": {
-      "restored": "appgen/appgen-settings-page.tsx",
+      "restored": "appgen/appgen-settings-page/index.ts",
       "status": "done",
       "exports": {
         "n": "AppgenSettingsPage",
@@ -24443,7 +24459,7 @@
       "note": "Wave AL: gap18 C5/OT/S5/_5/af/b5/cz/fL/g5/h5/j5/m5/nf/p5/pL/pO/y5/z_t deferred; AppgenSettingsPage bindable"
     },
     "credit-reload-dialog-host-ZAUlRfjE": {
-      "restored": "account/credit-reload-dialog-host.tsx",
+      "restored": "account/credit-reload-dialog-host/index.ts",
       "status": "done",
       "exports": {
         "CreditReloadDialogHost": "CreditReloadDialogHost"
@@ -24451,7 +24467,7 @@
       "note": "Wave AL: gap23 $b/$ct/Jb/Qb/Ry/Yb/_3/_6/alt/cy/dx/ex/g3/het/ly/met/nV/rx/tV/tx/ux/uy/v6 deferred; CreditReloadDialogHost bindable"
     },
     "global-dictation-page-Ds0ALp-v": {
-      "restored": "desktop/global-dictation-page.tsx",
+      "restored": "desktop/global-dictation-page/index.ts",
       "status": "done",
       "exports": {
         "GlobalDictationPage": "GlobalDictationPage"
@@ -24459,7 +24475,7 @@
       "note": "Wave AL: gap11 Glt/Klt/Nct/Nlt/Pct/Rlt/Tct/a1/i1/mlt/zlt deferred; GlobalDictationPage bindable"
     },
     "chronicle-settings-page-BM3S8jwp": {
-      "restored": "settings/chronicle-settings-page.tsx",
+      "restored": "settings/chronicle-settings-page/index.ts",
       "status": "done",
       "exports": {
         "ChronicleSettingsPage": "ChronicleSettingsPage"
@@ -24467,7 +24483,7 @@
       "note": "Wave AL: gap11 $L/Md/Nd/Nst/c3/cm/eR/evt/q4/qA/sm deferred; ChronicleSettingsPage bindable"
     },
     "appgen-page-C4yI6x8i": {
-      "restored": "apps/appgen-page.tsx",
+      "restored": "apps/appgen-page/index.ts",
       "status": "done",
       "exports": {
         "AppgenPage": "AppgenPage"
@@ -24475,7 +24491,7 @@
       "note": "Wave AL: gap15 CL/Cm/D5/E5/Iq/Lq/Sm/TN/X1/Y1/af/cz/pO/rf/xL deferred; AppgenPage bindable"
     },
     "editor-diff-page-I-nI99WS": {
-      "restored": "ui/editor-diff-page.tsx",
+      "restored": "ui/editor-diff-page/index.ts",
       "status": "done",
       "exports": {
         "EditorDiffPage": "EditorDiffPage"
@@ -24491,7 +24507,7 @@
       "note": "Wave AL: gap14 $o/IS/PY/Qo/RS/bM/bS/iM/kY/mw/nM/uw/yM/yS deferred; ComposerWorkHomePluginsControl bindable"
     },
     "voice-settings-vkVvUNXN": {
-      "restored": "settings/voice-settings.tsx",
+      "restored": "settings/voice-settings/index.ts",
       "status": "done",
       "exports": {
         "VoiceSettings": "VoiceSettings"
@@ -24499,7 +24515,7 @@
       "note": "Wave AL: gap22 A4/BC/Dpt/HC/JY/O4/Q$/SC/VC/X1/Y1/YY/_4/a1/aC/bpt/i1/oC/t1/xC/y4/ypt deferred; VoiceSettings bindable"
     },
     "computer-use-settings-Bhf26OaV": {
-      "restored": "settings/computer-use-settings.tsx",
+      "restored": "settings/computer-use-settings/index.ts",
       "status": "done",
       "exports": {
         "ComputerUseSettings": "ComputerUseSettings"
@@ -24597,7 +24613,7 @@
       "note": "Wave AM: gap0 all aliases mapped; AppgenSettingsDialog bindable"
     },
     "data-controls-DQbGPTwz": {
-      "restored": "settings/data-controls-settings.tsx",
+      "restored": "settings/data-controls-settings/index.ts",
       "status": "done",
       "exports": {
         "DataControlsSettings": "DataControlsSettings"
@@ -24605,7 +24621,7 @@
       "note": "Wave AM: gap18 A9/Ba/Bht/CB/CO/CR/SB/TB/Vdt/ast/bY/hvt/i3/ist/j9/v9/y9/yY deferred; DataControlsSettings bindable"
     },
     "codex-micro-keyboard-surface-Bhpd7qkO": {
-      "restored": "devices/codex-micro-keyboard-surface.tsx",
+      "restored": "devices/codex-micro-keyboard-surface/index.ts",
       "status": "done",
       "exports": {
         "a": "ensureCodexMicroKeyboardSurfaceInit",
@@ -24625,7 +24641,7 @@
       "note": "Wave AM: gap17 Bk/E$/Ev/I0/J1/Nlt/RB/WD/_D/dD/dv/jA/om/pD/tL/uC/zo deferred; keyboard surface bindable"
     },
     "avatar-overlay-pill-dismiss-button-DqyLuTaP": {
-      "restored": "artifact/avatar-overlay-pill-dismiss-button.tsx",
+      "restored": "artifact/avatar-overlay-pill-dismiss-button/index.ts",
       "status": "done",
       "exports": {
         "_": "ensureAvatarOverlayPillDismissButtonRootInit",
@@ -24651,7 +24667,7 @@
       "note": "Wave AM: gap20 $st/Fot/Gst/Iot/Lot/Qst/Rot/Sot/Wst/Xst/Yst/Zst/_ot/ast/ect/ict/ist/rct/rst/yot deferred; pill dismiss bindable"
     },
     "codex-mobile-setup-dialog-CedkrL4M": {
-      "restored": "devices/codex-mobile-setup-dialog.tsx",
+      "restored": "devices/codex-mobile-setup-dialog/index.ts",
       "status": "done",
       "exports": {
         "a": "ensureCodexMobileSetupDialogAtomsInit",
@@ -24669,7 +24685,7 @@
       "note": "Wave AM: gap19 BQ/Bn/Dpt/JK/Rt/UK/WK/WQ/WZ/X1/Y1/_t/bt/btt/mi/uC/uR/vt/zt deferred; mobile setup dialog bindable"
     },
     "review-slash-command-submenu-registration-hOlSu-xD": {
-      "restored": "composer/review-slash-command-submenu-registration.tsx",
+      "restored": "composer/review-slash-command-submenu-registration/index.ts",
       "status": "done",
       "exports": {
         "ReviewSlashCommandSubmenuRegistration": "ReviewSlashCommandSubmenuRegistration"
@@ -24677,7 +24693,7 @@
       "note": "Wave AM: gap22 $R/B3/Dpt/GV/JU/Mk/Ott/Qw/U2/V3/WV/WX/XU/YU/Zw/aG/dE/ez/h3/m3/qX/vE deferred; ReviewSlashCommandSubmenuRegistration bindable"
     },
     "thread-user-message-navigation-rail-DUbKEIeX": {
-      "restored": "thread/thread-user-message-navigation-rail.tsx",
+      "restored": "thread/thread-user-message-navigation-rail/index.ts",
       "status": "done",
       "exports": {
         "ThreadUserMessageNavigationRail": "ThreadUserMessageNavigationRail"
@@ -24685,7 +24701,7 @@
       "note": "Wave AM: gap25 $3/Est/GG/J5/KD/Tst/VG/X5/X9/Xot/Y5/Yot/Z5/cZ/dmt/e5/e6/hD/itt/sZ/t5/vR/xst/yR/zG deferred; ThreadUserMessageNavigationRail bindable"
     },
     "PopcornElectronDocumentPanel-Cz-nyTbC": {
-      "restored": "editors/popcorn-electron-document-panel.tsx",
+      "restored": "editors/popcorn-electron-document-panel/index.ts",
       "exports": {
         "PopcornElectronDocumentPanel": "PopcornElectronDocumentPanel"
       },
@@ -24726,7 +24742,7 @@
       "note": "Wave AO trivial: session-named re-export twin of pet-install-state (DIJx4Tfv)"
     },
     "use-ascii-engine-DfvLy_CH": {
-      "restored": "hooks/use-ascii-engine.ts",
+      "restored": "hooks/use-ascii-engine/index.ts",
       "exports": {
         "i": "ensureAsciiEngineViewInit",
         "n": "useAsciiEngine",
@@ -24735,15 +24751,13 @@
         "ensureAsciiEngineViewInit": "ensureAsciiEngineViewInit",
         "useAsciiEngine": "useAsciiEngine",
         "AsciiEngineView": "AsciiEngineView",
-        "ensureAsciiEngineInit": "ensureAsciiEngineInit",
-        "bindUseAsciiEngine": "bindUseAsciiEngine",
-        "bindAsciiEngineView": "bindAsciiEngineView"
+        "ensureAsciiEngineInit": "ensureAsciiEngineInit"
       },
       "status": "done",
       "note": "Wave AO: gap0 only-app-initial; AsciiEngineView + useAsciiEngine bindable shell (login/first-run)"
     },
     "cloud-environments-settings-page-nUgiqirT": {
-      "restored": "settings/cloud-environments-settings-page.tsx",
+      "restored": "settings/cloud-environments-settings-page/index.ts",
       "status": "done",
       "exports": {
         "CloudEnvironmentsSettingsPage": "CloudEnvironmentsSettingsPage"
@@ -24751,7 +24765,7 @@
       "note": "Wave AO: gap4 Svt/evt/gC/hvt deferred; CloudEnvironmentsSettingsPage bindable"
     },
     "codex-micro-onboarding-host-D5EQAUUd": {
-      "restored": "devices/codex-micro-onboarding-host.tsx",
+      "restored": "devices/codex-micro-onboarding-host/index.ts",
       "status": "done",
       "exports": {
         "CodexMicroOnboardingHost": "CodexMicroOnboardingHost"
@@ -24759,33 +24773,12 @@
       "note": "Wave AO: gap11 Bw/Ev/Fw/HW/Iw/Lw/VW/X1/Y1/_/v deferred; host bindable"
     },
     "local-environment-editor-9PiWGb5h": {
-      "restored": "settings/local-environment-editor.tsx",
+      "restored": "settings/local-environment-editor/index.ts",
       "status": "done",
-      "exports": {
-        "_": "localEnvironmentEditor_Underscore",
-        "a": "localEnvironmentEditor_a",
-        "c": "localEnvironmentEditor_c",
-        "d": "localEnvironmentEditor_d",
-        "f": "localEnvironmentEditor_f",
-        "g": "localEnvironmentEditor_g",
-        "h": "localEnvironmentEditor_h",
-        "i": "localEnvironmentEditor_i",
-        "l": "localEnvironmentEditor_l",
-        "m": "localEnvironmentEditor_m",
-        "n": "localEnvironmentEditor_n",
-        "o": "localEnvironmentEditor_o",
-        "p": "localEnvironmentEditor_p",
-        "r": "localEnvironmentEditor_r",
-        "s": "localEnvironmentEditor_s",
-        "t": "localEnvironmentEditor_t",
-        "u": "localEnvironmentEditor_u",
-        "v": "localEnvironmentEditor_v",
-        "y": "localEnvironmentEditor_y"
-      },
       "note": "Wave AO: gap14 deferred; local-environment-editor bindable"
     },
     "avatar-overlay-native-frame-fyNMBrWH": {
-      "restored": "artifact/avatar-overlay-native-frame.tsx",
+      "restored": "artifact/avatar-overlay-native-frame/index.ts",
       "status": "done",
       "exports": {
         "a": "avatarOverlayNativeFrame_a",
@@ -24883,10 +24876,10 @@
         "yt": "popcornSurfaceStyle_yt",
         "z": "popcornSurfaceStyle_z"
       },
-      "note": "Wave AO: gap25 after exact-case _ut\u2192coerceSourcePositionNumber; surface-style bindable"
+      "note": "Wave AO: gap25 after exact-case _ut→coerceSourcePositionNumber; surface-style bindable"
     },
     "PopcornElectronPresentationPanel-B28phSkk": {
-      "restored": "editors/popcorn-electron-presentation-panel.tsx",
+      "restored": "editors/popcorn-electron-presentation-panel/index.ts",
       "status": "done",
       "exports": {
         "PopcornElectronPresentationPanel": "PopcornElectronPresentationPanel"
@@ -24894,7 +24887,7 @@
       "note": "Wave AO: after surface-style; gap9 deferred; PresentationPanel bindable"
     },
     "PopcornElectronWorkbookPanel-DronpvSL": {
-      "restored": "editors/popcorn-electron-workbook-panel.tsx",
+      "restored": "editors/popcorn-electron-workbook-panel/index.ts",
       "status": "done",
       "exports": {
         "PopcornElectronWorkbookPanel": "PopcornElectronWorkbookPanel"
@@ -24914,15 +24907,15 @@
       "classification": "vendor-npm"
     },
     "queued-message-list-B4kmrCV-": {
-      "restored": "conversation/queued-message-list.tsx",
+      "restored": "conversation/queued-message-list/index.ts",
       "status": "done",
       "exports": {
         "QueuedMessageList": "QueuedMessageList"
       },
-      "note": "Wave AP: gap25 after exact-case Dst\u2192filterItemsByMatchingPaths; QueuedMessageList bindable"
+      "note": "Wave AP: gap25 after exact-case Dst→filterItemsByMatchingPaths; QueuedMessageList bindable"
     },
     "first-run-CmpS1-m3": {
-      "restored": "onboarding/first-run-page.tsx",
+      "restored": "onboarding/first-run-page/index.ts",
       "status": "done",
       "exports": {
         "FirstRunPage": "FirstRunPage"
@@ -24930,7 +24923,7 @@
       "note": "Wave AP: gap12 deferred; FirstRunPage bindable"
     },
     "login-route-ALPtito9": {
-      "restored": "onboarding/login-route.tsx",
+      "restored": "onboarding/login-route/index.ts",
       "status": "done",
       "exports": {
         "LoginRoute": "LoginRoute"
@@ -24938,30 +24931,18 @@
       "note": "Wave AP: gap23 deferred; LoginRoute bindable"
     },
     "local-environments-settings-page-DsmByKKn": {
-      "restored": "settings/local-environments-settings-page.tsx",
+      "restored": "settings/local-environments-settings-page/index.ts",
       "status": "done",
-      "exports": {
-        "LocalEnvironmentsSettings": "LocalEnvironmentsSettings"
-      },
       "note": "Wave AP: gap22 deferred; LocalEnvironmentsSettings bindable"
     },
     "codex-mobile-setup-flow-DgVVAeuF": {
-      "restored": "devices/codex-mobile-setup-flow.ts",
+      "restored": "devices/codex-mobile-setup-flow/index.ts",
       "status": "done",
       "exports": {
         "a": "codexMobileSetupFlow_a",
-        "c": "codexMobileSetupFlow_c",
-        "d": "codexMobileSetupFlow_d",
-        "f": "codexMobileSetupFlow_f",
         "i": "codexMobileSetupFlow_i",
-        "l": "codexMobileSetupFlow_l",
         "n": "codexMobileSetupFlow_n",
-        "o": "codexMobileSetupFlow_o",
-        "p": "codexMobileSetupFlow_p",
-        "r": "codexMobileSetupFlow_r",
-        "s": "codexMobileSetupFlow_s",
-        "t": "codexMobileSetupFlow_t",
-        "u": "codexMobileSetupFlow_u"
+        "r": "codexMobileSetupFlow_r"
       },
       "note": "Wave AP: gap25 after exact-case btt/xtt/Mot/C3; codex-mobile-setup-flow bindable"
     },
@@ -24980,7 +24961,7 @@
         "t": "ensureAnimatedIconInit"
       },
       "status": "done",
-      "note": "Wave AR: gap3 exact Ah/Ld/jH\u2192ensureAppIconKh/Id/ImageFileIconInit; AnimatedIcon Stage 3"
+      "note": "Wave AR: gap3 exact Ah/Ld/jH→ensureAppIconKh/Id/ImageFileIconInit; AnimatedIcon Stage 3"
     },
     "animated-icon-DheIHbIG": {
       "restored": "ui/animated-icon-reexport.ts",
@@ -25009,7 +24990,7 @@
         "ensureUseVisibleSettingsSectionsInit": "ensureUseVisibleSettingsSectionsInit"
       },
       "status": "done",
-      "note": "Wave GC: drained soft shell \u2192 Stage-3 hook split (external-nav + section-components + hook); k4\u2192appshotsHostAllowedAtom override"
+      "note": "Wave GC: drained soft shell → Stage-3 hook split (external-nav + section-components + hook); k4→appshotsHostAllowedAtom override"
     },
     "settings-command-menu-section-items-BzoP-M1E": {
       "restored": "settings/visible-settings-command-menu-section-items.tsx",
@@ -25020,7 +25001,7 @@
       "note": "Wave AS: after use-visible-settings; VisibleSettingsCommandMenuSectionItems bindable"
     },
     "keyboard-shortcuts-settings-CbGfl9Qf": {
-      "restored": "settings/keyboard-shortcuts-settings.tsx",
+      "restored": "settings/keyboard-shortcuts-settings/index.ts",
       "exports": {
         "KeyboardShortcutsSettings": "KeyboardShortcutsSettings"
       },
@@ -25028,7 +25009,7 @@
       "note": "Wave AS: gap25 after Gt/HM/Hp/JZ/Jt/Kt/Q$ maps; bindable"
     },
     "personalization-settings-DkpdQsHj": {
-      "restored": "settings/personalization-settings.tsx",
+      "restored": "settings/personalization-settings/index.ts",
       "exports": {
         "PersonalizationSettings": "PersonalizationSettings"
       },
@@ -25036,7 +25017,7 @@
       "note": "Wave AS: gap25 after $0/$g/C/G0/Jut/K0/M6 maps; bindable"
     },
     "app-main-Co92ANiN": {
-      "restored": "desktop/app-main.ts",
+      "restored": "desktop/app-main.tsx",
       "exports": {
         "runAppMain": "runAppMain",
         "ensureAppMainInit": "ensureAppMainInit",
@@ -25055,7 +25036,7 @@
       "note": "Wave AS: gap25 after $_t/Ap/BD/Cj/GU/HD maps; bindable"
     },
     "import-settings-DUWst0h6": {
-      "restored": "settings/import-settings.tsx",
+      "restored": "settings/import-settings/index.ts",
       "exports": {
         "ImportSettings": "ImportSettings"
       },
@@ -25063,7 +25044,7 @@
       "note": "Wave AS: gap25 after As/B4/CL/Cl/Cs/Dp/Ds/Es/Gct maps; bindable"
     },
     "pull-request-code-review-BqqvupGf": {
-      "restored": "conversation/pull-request-code-review.tsx",
+      "restored": "conversation/pull-request-code-review/index.ts",
       "exports": {
         "PullRequestCodeReview": "PullRequestCodeReview"
       },
@@ -25079,10 +25060,7 @@
       "note": "Wave AT: gap0 after _9/g9 maps; AvatarOverlayFeatureGatePage bindable"
     },
     "preview-BTZh6DoM": {
-      "restored": "utils/preview.tsx",
-      "exports": {
-        "PdbPreviewFromFile": "PdbPreviewFromFile"
-      },
+      "restored": "utils/preview/index.ts",
       "status": "done",
       "note": "Wave AT: gap0 after QA/XA/ZA/j1 maps; PdbPreviewFromFile bindable"
     },
@@ -25095,7 +25073,7 @@
         "n": "ensureWalletOnboardingAnnouncementModalInit"
       },
       "status": "done",
-      "note": "Wave AT promote + Wave AU Stage 3 body; HW/VW\u2192AnnouncementModal bindable; I0 Wave AS"
+      "note": "Wave AT promote + Wave AU Stage 3 body; HW/VW→AnnouncementModal bindable; I0 Wave AS"
     },
     "rpc-wEQ5kv6D": {
       "restored": "desktop/rpc.ts",
@@ -25107,10 +25085,10 @@
         "bindInitializeAppHostServices": "bindInitializeAppHostServices"
       },
       "status": "done",
-      "note": "Wave AT promote + Wave AU Stage 3; Vut/Wut bindable; Hut\u2192appServices; Uut ensureDynamicScriptLoadInit"
+      "note": "Wave AT promote + Wave AU Stage 3; Vut/Wut bindable; Hut→appServices; Uut ensureDynamicScriptLoadInit"
     },
     "environment-labels-BrZBoJDP": {
-      "restored": "environments/environment-labels.ts",
+      "restored": "environments/environment-labels/index.ts",
       "exports": {
         "a": "environmentLabelsA",
         "c": "environmentLabelsC",
@@ -25132,7 +25110,7 @@
       "note": "Wave AT: gap25 after D3/F3/FD/ID/LD/O3/P3/PD/R3/SD maps; multi-export bindable"
     },
     "select-workspace-page-BZ7MILnm": {
-      "restored": "pages/select-workspace-page.tsx",
+      "restored": "pages/select-workspace-page/index.ts",
       "exports": {
         "SelectWorkspacePage": "SelectWorkspacePage"
       },
@@ -25140,22 +25118,20 @@
       "note": "Wave AT: gap25 after Cq/Dh/E$/EB/EM/IX/KN/Kst/Nst/Oh/PX maps; SelectWorkspacePage bindable"
     },
     "worktree-environment-dropdown-NXDrzJV-": {
-      "restored": "environments/worktree-environment-dropdown.tsx",
+      "restored": "environments/worktree-environment-dropdown/index.ts",
       "exports": {
         "a": "WorktreeEnvironmentDropdown",
         "i": "worktreeEnvironmentDropdownI",
         "n": "worktreeEnvironmentDropdownN",
         "o": "worktreeEnvironmentDropdownO",
         "r": "worktreeEnvironmentDropdownR",
-        "t": "ensureWorktreeEnvironmentDropdownInit",
-        "WorktreeEnvironmentDropdown": "WorktreeEnvironmentDropdown",
-        "ensureWorktreeEnvironmentDropdownInit": "ensureWorktreeEnvironmentDropdownInit"
+        "WorktreeEnvironmentDropdown": "WorktreeEnvironmentDropdown"
       },
       "status": "done",
       "note": "Wave AT: gap20; promoted after environment-labels; WorktreeEnvironmentDropdown bindable"
     },
     "debug-modal-C6a0m7Ey": {
-      "restored": "desktop/debug-modal.tsx",
+      "restored": "desktop/debug-modal/index.ts",
       "exports": {
         "n": "DebugModal",
         "r": "ensureDebugModalInit",
@@ -25183,7 +25159,7 @@
       "note": "Wave AV: gap0 CLEAN; DebugWindowPage bindable after modal"
     },
     "header-DIFeySl0": {
-      "restored": "ui/header.tsx",
+      "restored": "ui/header/index.ts",
       "exports": {
         "n": "ensureHeaderInit",
         "t": "Header",
@@ -25202,7 +25178,7 @@
       "note": "Wave AV: lazy re-export after header"
     },
     "codex-home-announcements-CvdZr0JN": {
-      "restored": "home/codex-home-announcements.tsx",
+      "restored": "home/codex-home-announcements/index.ts",
       "exports": {
         "n": "HomeComposerAnnouncements",
         "r": "ensureCodexHomeAnnouncementsInit",
@@ -25224,7 +25200,7 @@
       "note": "Wave AV: lazy re-export after announcements"
     },
     "codex-micro-slot-signals-Dtul2Ai0": {
-      "restored": "devices/codex-micro-slot-signals.ts",
+      "restored": "devices/codex-micro-slot-signals/index.ts",
       "exports": {
         "a": "codexMicroSlotSignalA",
         "c": "codexMicroSlotSignalC",
@@ -25261,7 +25237,7 @@
       "note": "Wave AV: gap0 after exact-case gap9; sankey-strip local-conversation-thread"
     },
     "codex-micro-bridge-H8ca72zW": {
-      "restored": "devices/codex-micro-bridge.tsx",
+      "restored": "devices/codex-micro-bridge/index.ts",
       "exports": {
         "CodexMicroBridge": "CodexMicroBridge"
       },
@@ -25269,7 +25245,7 @@
       "note": "Wave AV follow-on: gap25 CodexMicroBridge bindable"
     },
     "settings-page-CXDiYo2f": {
-      "restored": "settings/settings-page.tsx",
+      "restored": "settings/settings-page/index.ts",
       "exports": {
         "SettingsPage": "SettingsPage"
       },
@@ -25277,7 +25253,7 @@
       "note": "Wave AW: sankey-strip gap31; SettingsPage bindable shell"
     },
     "onboarding-page-DQOZ3Jy7": {
-      "restored": "onboarding/onboarding-page.tsx",
+      "restored": "onboarding/onboarding-page/index.ts",
       "exports": {
         "OnboardingPage": "OnboardingPage"
       },
@@ -25293,7 +25269,7 @@
       "note": "Wave AW: sankey-strip gap64; Profile bindable shell"
     },
     "agent-settings-3N239YzB": {
-      "restored": "settings/agent-settings.tsx",
+      "restored": "settings/agent-settings/index.ts",
       "exports": {
         "AgentSettings": "AgentSettings"
       },
@@ -25301,7 +25277,7 @@
       "note": "Wave AW: sankey-strip gap58; AgentSettings bindable shell"
     },
     "usage-settings-1b4YOoJ0": {
-      "restored": "settings/usage-settings.tsx",
+      "restored": "settings/usage-settings/index.ts",
       "exports": {
         "UsageSettings": "UsageSettings"
       },
@@ -25309,7 +25285,7 @@
       "note": "Wave AW: sankey-strip gap47; UsageSettings bindable shell"
     },
     "remote-connections-settings-D2095Inq": {
-      "restored": "settings/remote-connections-settings.tsx",
+      "restored": "settings/remote-connections-settings/index.ts",
       "exports": {
         "RemoteConnectionsSettings": "RemoteConnectionsSettings"
       },
@@ -25317,7 +25293,7 @@
       "note": "Wave AW: sankey-strip gap69; RemoteConnectionsSettings bindable shell"
     },
     "automations-page-BWCJI7AO": {
-      "restored": "automations/automations-layout-page.tsx",
+      "restored": "automations/automations-layout-page/index.ts",
       "exports": {
         "AutomationsLayoutPage": "AutomationsLayoutPage"
       },
@@ -25325,7 +25301,7 @@
       "note": "Wave AW: sankey-strip gap102; AutomationsLayoutPage bindable shell"
     },
     "appgen-library-page-CYrP5b8N": {
-      "restored": "appgen/appgen-library-page.tsx",
+      "restored": "appgen/appgen-library-page/index.ts",
       "exports": {
         "AppgenLibraryPage": "AppgenLibraryPage"
       },
@@ -25333,7 +25309,7 @@
       "note": "Wave AW: sankey-strip gap45; AppgenLibraryPage bindable shell"
     },
     "hotkey-window-home-page-SLdyPBTP": {
-      "restored": "pages/hotkey-window-home-page.tsx",
+      "restored": "pages/hotkey-window-home-page/index.ts",
       "exports": {
         "HotkeyWindowHomePage": "HotkeyWindowHomePage"
       },
@@ -25341,7 +25317,7 @@
       "note": "Wave AW: sankey-strip gap38; HotkeyWindowHomePage bindable shell"
     },
     "pdf-preview-panel-Cv0tBSkT": {
-      "restored": "preview/pdf-preview-panel.tsx",
+      "restored": "preview/pdf-preview-panel/index.ts",
       "exports": {
         "PdfPreviewPanel": "PdfPreviewPanel"
       },
@@ -25349,7 +25325,7 @@
       "note": "Wave AW: sankey-strip gap39; PdfPreviewPanel bindable shell"
     },
     "docx-preview-panel-D6d6eiCV": {
-      "restored": "preview/docx-preview-panel.tsx",
+      "restored": "preview/docx-preview-panel/index.ts",
       "exports": {
         "DocxPreviewPanel": "DocxPreviewPanel"
       },
@@ -25365,7 +25341,7 @@
       "note": "Wave AW: sankey-strip gap47; ArtifactTemplatePicker bindable shell"
     },
     "app-prefetch-impl-BNGKTmLU": {
-      "restored": "app/app-prefetch-impl.tsx",
+      "restored": "app/app-prefetch-impl/index.ts",
       "exports": {
         "AppPrefetchImpl": "AppPrefetchImpl"
       },
@@ -25373,7 +25349,7 @@
       "note": "Wave AW follow-on: strip local-conversation-page then promote"
     },
     "artifact-tab-content.electron-z_W871m1": {
-      "restored": "artifact/artifact-tab-content-electron.tsx",
+      "restored": "artifact/artifact-tab-content-electron/index.ts",
       "exports": {
         "ArtifactTabContent": "ArtifactTabContent"
       },
@@ -25381,7 +25357,7 @@
       "note": "Wave AW: sankey-strip gap42; ArtifactTabContent bindable shell"
     },
     "codex-micro-settings-OfPypdLl": {
-      "restored": "devices/codex-micro-settings.tsx",
+      "restored": "devices/codex-micro-settings/index.ts",
       "exports": {
         "CodexMicroSettings": "CodexMicroSettings"
       },
@@ -25389,7 +25365,7 @@
       "note": "Wave AW: sankey-strip gap42; CodexMicroSettings bindable shell"
     },
     "use-avatar-overlay-selection-AlDkSEsR": {
-      "restored": "overlay/use-avatar-overlay-selection.ts",
+      "restored": "overlay/use-avatar-overlay-selection/index.ts",
       "exports": {
         "C": "avatarOverlaySelectionUpperC",
         "avatarOverlaySelectionUpperC": "avatarOverlaySelectionUpperC",
@@ -25443,7 +25419,7 @@
       "note": "Wave AY: sankey-strip gap64; multi bindable avatar overlay selection"
     },
     "avatar-overlay-page--lFBkhmD": {
-      "restored": "overlay/avatar-overlay-page.tsx",
+      "restored": "overlay/avatar-overlay-page/index.ts",
       "exports": {
         "AvatarOverlayPage": "AvatarOverlayPage"
       },
@@ -25451,7 +25427,7 @@
       "note": "Wave AY: sankey-strip gap37; AvatarOverlayPage bindable shell"
     },
     "avatar-overlay-native-page-CfbzKR8n": {
-      "restored": "overlay/avatar-overlay-native-page.tsx",
+      "restored": "overlay/avatar-overlay-native-page/index.ts",
       "exports": {
         "AvatarOverlayNativePage": "AvatarOverlayNativePage"
       },
@@ -25459,7 +25435,7 @@
       "note": "Wave AY: sankey-strip gap35; AvatarOverlayNativePage bindable shell"
     },
     "local-remote-dropdown-BYLT5Lpc": {
-      "restored": "composer/local-remote-dropdown.ts",
+      "restored": "composer/local-remote-dropdown/index.ts",
       "exports": {
         "a": "localRemoteDropdownA",
         "i": "localRemoteDropdownI",
@@ -25479,7 +25455,7 @@
       "note": "Wave AY: sankey-strip gap95; multi bindable local-remote dropdown"
     },
     "composer-utility-bar-B1JM6js2": {
-      "restored": "composer/composer-utility-bar.tsx",
+      "restored": "composer/composer-utility-bar/index.ts",
       "exports": {
         "ComposerUtilityBar": "ComposerUtilityBar"
       },
@@ -25487,7 +25463,7 @@
       "note": "Wave AY: sankey-strip gap60; ComposerUtilityBar bindable shell"
     },
     "pull-request-detail-query-BJjNrn31": {
-      "restored": "conversation/pull-request-detail-query.ts",
+      "restored": "conversation/pull-request-detail-query/index.ts",
       "exports": {
         "A": "pullRequestDetailUpperA",
         "pullRequestDetailUpperA": "pullRequestDetailUpperA",
@@ -25565,7 +25541,7 @@
       "note": "Wave AY: sankey-strip gap45; multi bindable PR detail query"
     },
     "pull-request-route-CROLmqPD": {
-      "restored": "conversation/pull-request-route.tsx",
+      "restored": "conversation/pull-request-route/index.ts",
       "exports": {
         "PullRequestsRoute": "PullRequestsRoute"
       },
@@ -25581,7 +25557,7 @@
       "note": "Wave AY: sankey-strip gap94; HomeAmbientSuggestionsContent bindable shell"
     },
     "thread-overflow-menu-jSLwXfym": {
-      "restored": "thread/thread-overflow-menu.ts",
+      "restored": "thread/thread-overflow-menu/index.ts",
       "exports": {
         "a": "threadOverflowMenuA",
         "i": "threadOverflowMenuI",
@@ -25602,7 +25578,7 @@
       "note": "Wave AX: sankey-strip gap43; ThreadOverflowMenu multi bindable"
     },
     "local-conversation-thread-C3pAiUmg": {
-      "restored": "thread/local-conversation-thread.ts",
+      "restored": "thread/local-conversation-thread/index.ts",
       "exports": {
         "A": "localConversationThreadUpperA",
         "B": "localConversationThreadUpperB",
@@ -25690,7 +25666,7 @@
       "note": "Wave AX: sankey-strip gap484; strip local-remote-dropdown; multi bindable"
     },
     "thread-app-shell-chrome-CBH_UkIP": {
-      "restored": "thread/thread-app-shell-chrome.tsx",
+      "restored": "thread/thread-app-shell-chrome/index.ts",
       "exports": {
         "n": "ensureThreadAppShellChromeInit",
         "r": "threadAppShellChromeR",
@@ -25713,7 +25689,7 @@
       "note": "Wave AX: lazy re-export after thread-app-shell-chrome"
     },
     "projects-index-page-AZjn-SLu": {
-      "restored": "pages/projects-index-page.tsx",
+      "restored": "pages/projects-index-page/index.ts",
       "exports": {
         "ProjectsIndexPage": "ProjectsIndexPage"
       },
@@ -25721,7 +25697,7 @@
       "note": "Wave AX: sankey-strip gap90; unlocked after overflow-menu"
     },
     "remote-conversation-page-Bgy__zbM": {
-      "restored": "pages/remote-conversation-page.tsx",
+      "restored": "pages/remote-conversation-page/index.ts",
       "exports": {
         "RemoteConversationPage": "RemoteConversationPage"
       },
@@ -25729,7 +25705,7 @@
       "note": "Wave AX: sankey-strip gap83; unlocked after thread+chrome"
     },
     "local-conversation-page-Bf1KJPOR": {
-      "restored": "pages/local-conversation-page.tsx",
+      "restored": "pages/local-conversation-page/index.ts",
       "exports": {
         "LocalConversationPage": "LocalConversationPage"
       },
@@ -25781,7 +25757,7 @@
     "core-DvEtKs5A": "boundaries/highlight-js.ts",
     "boundaries/lodash-clone-deep-guts.ts": {
       "kind": "npm-shim",
-      "note": "Lodash cloneDeep CJS guts \u2192 lodash/_* thunk re-exports (initCloneObject, cloneTypedArray, \u2026).",
+      "note": "Lodash cloneDeep CJS guts → lodash/_* thunk re-exports (initCloneObject, cloneTypedArray, …).",
       "aliases": [
         "Df",
         "Of",
@@ -25825,7 +25801,7 @@
     },
     "boundaries/react-router-link.tsx": {
       "kind": "npm-shim",
-      "note": "react-router Link (F5/MHn) \u2192 vendor/react-router thin re-export.",
+      "note": "react-router Link (F5/MHn) → vendor/react-router thin re-export.",
       "aliases": [
         "F5"
       ],
@@ -25835,7 +25811,7 @@
     },
     "boundaries/react-router-navigation.tsx": {
       "kind": "npm-shim",
-      "note": "react-router Navigate/useLocation/useNavigate/useMatch/useSearchParams \u2192 vendor/react-router.",
+      "note": "react-router Navigate/useLocation/useNavigate/useMatch/useSearchParams → vendor/react-router.",
       "aliases": [
         "B5",
         "I5",
@@ -25848,5 +25824,5 @@
       "vendor": "react-router"
     }
   },
-  "updatedAt": "2026-07-31T04:28:55.888817Z"
+  "updatedAt": "2026-07-31T04:36:58.192Z"
 }

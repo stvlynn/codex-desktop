@@ -1,107 +1,25 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `c6r`) / export `BK`.
+// Thin boundary re-export — body lives in browser/browser-use-gates/
+// (openBoundary cleared; Codex browser-use / host feature gates).
 
-export type BrowserUseGateFacadesPeers = {
-  AD: (...args: unknown[]) => unknown;
-  Cu: (...args: unknown[]) => unknown;
-  Y: (...args: unknown[]) => unknown;
-  bp: (...args: unknown[]) => unknown;
-  kh: (...args: unknown[]) => unknown;
-  l6r: (...args: unknown[]) => unknown;
-  q3r: (...args: unknown[]) => unknown;
-  u6r: (...args: unknown[]) => unknown;
-};
-
-let peers: BrowserUseGateFacadesPeers | null = null;
-
-/** Wire browserUseGateFacades peers once companions land. */
-export function setBrowserUseGateFacadesPeers(next: BrowserUseGateFacadesPeers): void {
-  peers = next;
-}
-
-/**
- * Bundle export `BK` / internal `c6r`.
- */
-export function browserUseGateFacades(e: unknown) {
-  if (peers == null) {
-    throw new Error("browserUseGateFacades peers are not configured");
-  }
-
-  let t = (0, peers.u6r.c)(13),
-    { hostId: n } = e,
-    r = peers.Y(peers.AD),
-    i = peers.kh(`410262010`),
-    a;
-  t[0] === n
-    ? (a = t[1])
-    : ((a = {
-        featureName: `browser_use`,
-        hostId: n,
-      }),
-      (t[0] = n),
-      (t[1] = a));
-  let o = peers.q3r(a),
-    s = peers.bp(peers.Cu.runCodexInWsl),
-    c = o.enabled && !o.isLoading,
-    l = o.isLoading,
-    u = s === !0,
-    d;
-  t[2] !== i || t[3] !== r || t[4] !== c || t[5] !== l || t[6] !== u
-    ? ((d = peers.l6r({
-        isBrowserAgentGateEnabled: i,
-        isBrowserSidebarEnabled: r,
-        isBrowserUseEnabled: c,
-        isLoading: l,
-        runCodexInWsl: u,
-        windowType: `electron`,
-      })),
-      (t[2] = i),
-      (t[3] = r),
-      (t[4] = c),
-      (t[5] = l),
-      (t[6] = u),
-      (t[7] = d))
-    : (d = t[7]);
-  let f = d,
-    p = f === `available`,
-    m = f === `available`,
-    h = f === `loading`,
-    g;
-  return (
-    t[8] !== f || t[9] !== p || t[10] !== m || t[11] !== h
-      ? ((g = {
-          allowed: p,
-          available: m,
-          isLoading: h,
-          reason: f,
-        }),
-        (t[8] = f),
-        (t[9] = p),
-        (t[10] = m),
-        (t[11] = h),
-        (t[12] = g))
-      : (g = t[12]),
-    g
-  );
-}
-
-/** Bundle export `BK` — public hook name from IMPORT_MAP. */
-export function useBrowserUseGate(args: unknown) {
-  return browserUseGateFacades(args);
-}
-
-/**
- * Bundle export `HK` — external/browser-agent gate.
- * Body not yet extracted into this facade; same return shape as BK until drained.
- */
-export function useExternalBrowserUseGate(args: unknown) {
-  return browserUseGateFacades(args);
-}
-
-/** Bundle export `zK` — browser plugin enabled probe (open until deep-drained). */
-export function useIsBrowserPluginEnabled(): boolean {
-  return false;
-}
-
-/** Bundle export `VK` — Rolldown ESM init retained as no-op. */
-export function ensureBrowserUseGateInit(): void {}
+export {
+  ensureBrowserUseGateInit,
+  ensureComputerUseGateInit,
+  setBrowserUseGatePeers,
+  useBrowserUseGate,
+  useComputerUseGate,
+  useExternalBrowserUseGate,
+  useHostFeatureGate,
+  useInAppBrowserFeature,
+  useIsBrowserPluginEnabled,
+  type BrowserUseGatePeers,
+  type BrowserUseGateReason,
+  type BrowserUseGateResult,
+  type HostFeatureGateArgs,
+  type HostFeatureGateResult,
+  type InAppBrowserFeatureSlice,
+  type PluginInstallFlowController,
+  type UseBrowserUseGateArgs,
+  type UseExternalBrowserUseGateArgs,
+  type UseInAppBrowserFeatureArgs,
+} from "../browser/browser-use-gates";

@@ -1,8 +1,6 @@
 // Restored from ref/webview/assets/settings-page-CXDiYo2f.js
 // Local bridges for IMPORT_MAP targets whose public files still expose bind*/peers-only surfaces.
 
-import type { ReactElement, ReactNode } from "react";
-
 import { bindDeferredBrowserY0 } from "../../browser/deferred-browser-y0";
 import { bindList } from "../../browser/list";
 import { bindDeferredBw } from "../../models/deferred-bw";
@@ -17,23 +15,11 @@ import { ensureAvatarOverlaySessionInit } from "../../utils/wave-at-gap-ensure-i
 import { bindWorktreesSettingsAcceleratorRow } from "../../worktrees/worktrees-settings-accelerator-row";
 import { bindSettings2 } from "../settings2";
 
-/** Bundle `Kr` — settings section loading chrome (not browser-use back/forward facade). */
-export type SettingsSectionChromeProps = {
-  section?: string | null;
-};
-
-export function SettingsSectionChrome({
-  section,
-}: SettingsSectionChromeProps): ReactElement {
-  return (
-    <div
-      className="flex min-h-0 flex-1 items-center justify-center text-sm text-token-text-secondary"
-      data-settings-section={section ?? undefined}
-    />
-  );
-}
-
-export function ensureSettingsSectionChromeInit(): void {}
+export {
+  ensureSettingsSectionChromeInit,
+  SettingsSectionChrome,
+  type SettingsSectionChromeProps,
+} from "../settings-section-chrome";
 
 /** Side-effect / value aliases matching settings-page call sites. */
 export const deferredBrowserY0: unknown = bindDeferredBrowserY0;

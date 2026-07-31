@@ -1,66 +1,32 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
-// Materialized via extractFn(internal `mGi`) / export `HV`.
+// Thin boundary re-export — UI bodies live under browser/ + settings/
+// (openBoundary cleared).
 
-export type BrowserUseUiFacadesPeers = {
-  Np: (...args: unknown[]) => unknown;
-  hGi: (...args: unknown[]) => unknown;
-  nR: (...args: unknown[]) => unknown;
-  wj: (...args: unknown[]) => unknown;
-};
-let peers: BrowserUseUiFacadesPeers | null = null;
+export {
+  BrowserSettingsHistoryNav,
+  ensureBrowserSettingsHistoryNavInit,
+  HistoryChevronIcon,
+  type BrowserSettingsHistoryNavProps,
+  type HistoryChevronIconProps,
+} from "../browser/browser-settings-history-nav";
 
-/** Wire browserUseUiFacades peers once companions land. */
-export function setBrowserUseUiFacadesPeers(
-  next: BrowserUseUiFacadesPeers,
-): void {
-  peers = next;
-}
+export {
+  ensureSettingsSectionChromeInit,
+  setSettingsSectionChromePeers,
+  SettingsSectionChrome,
+  type SettingsSectionChromePeers,
+  type SettingsSectionChromeProps,
+} from "../settings/settings-section-chrome";
 
-/**
- * Bundle export `HV` / internal `mGi`.
- */
-export function browserUseUiFacades(props: unknown) {
-  const Wj = peers.wj;
-  const Np = peers.Np;
-  if (peers == null) {
-    throw new Error("browserUseUiFacades peers are not configured");
-  }
-  let { backLabel, canGoBack, canGoForward, forwardLabel, onBack, onForward } =
-      props,
-    c = !canGoBack,
-    l = <Wj className="icon-xs" />;
-  let u = (
-    <Np
-      aria-label={backLabel}
-      color="ghost"
-      disabled={c}
-      onClick={onBack}
-      size="toolbar"
-      title={backLabel}
-      uniform={true}
-    >
-      {l}
-    </Np>
-  );
-  let d = !canGoForward,
-    f = <Wj className="icon-xs -scale-x-100 transform" />;
-  let p = (
-    <Np
-      aria-label={forwardLabel}
-      color="ghost"
-      disabled={d}
-      onClick={onForward}
-      size="toolbar"
-      title={forwardLabel}
-      uniform={true}
-    >
-      {f}
-    </Np>
-  );
-  return (
-    <>
-      {u}
-      {p}
-    </>
-  );
-}
+export {
+  ensureSettingsEmptyStateInit,
+  SettingsEmptyState,
+  type SettingsEmptyStateProps,
+} from "../settings/settings-empty-state";
+
+export {
+  RevealFolderIcon,
+  RevealInFileManagerButton,
+  type RevealFolderIconProps,
+  type RevealInFileManagerButtonProps,
+} from "../settings/reveal-in-file-manager-button";
