@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~129.7k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~125.9k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -60,7 +60,8 @@
 | Three.js (`Binding929`/`Xbe` + MathUtils helpers) | ~15.3k | **Drained (wave-54)** → `vendor/three` npm shim (`three@0.170.0`)
 | highlight.js grammars (`wke`…`aAe` + `oAe`/`sAe`; contiguous after Binding1574/`Cke`) | ~7.9k | **Drained (wave-55)** → `boundaries/highlight-js` npm shim (`highlight.js@^11.11.1`)
 | Zod (`helper789` / `$Zod*` / Binding1790–1799; Binding1790 var tail = recipes kept) | ~6.4k | **Drained (wave-56)** → `vendor/zod` npm shim (`zod@^4.4.3`)
-| presentation recipes (`Binding1800`/`qWe`…`Yqe` + `Xqe`/`Zqe`/`aJe`) | ~7.3k | **Drained (wave-57)** → `workbook/presentation-recipes/` |
+| presentation recipes (`Binding1800`/`qWe`…`Yqe` + `Xqe`/`Zqe`/`aJe`) | ~7.3k | **Drained (wave-57)** → `workbook/presentation-recipes/`
+| compose-layout engine (`Binding1390`/`MDe`…`Binding1488`) | ~3.9k | **Drained (wave-58)** → `workbook/compose-layout/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -657,4 +658,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 129681.
 - Next: Binding1996 (~4.5k) / Binding1390 (~3.8k) / Binding740 (~3.0k), or `The`/`BYe`; continue scanning for stock vendor fingerprints.
+
+
+
+
+## Wave-58 progress
+
+- Identified Binding1996 as WorkbookN/`__workbookT` core class (~4.4k, feature property bags + collab + calc) — **not vendor**; single private-field class needs Range-style method peel (deferred).
+- Extracted Binding1390 compose-layout engine (`MDe`/`NDe`/helper673–675 + Binding1393 case-transform + Binding1465 measure + Binding1485 apply + Binding1488 theme tokens, ~3.9k LOC) → `workbook/compose-layout/`.
+- Left public compose DSL (`Binding1490`–`1528`/`DOe`/`OOe`), Google Slides adapter (`pJe`/`SJe`), Binding662/`_C`, Binding1574/`Cke`, Binding1996/WorkbookN, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 125862.
+- Next: Binding1996 WorkbookN class peel / compose DSL Binding1490–1528 / Binding740 (~3.0k) / `The`/`BYe` / Google Slides `pJe`/`SJe`.
 
