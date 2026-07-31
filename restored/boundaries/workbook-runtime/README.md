@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~137.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~129.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -59,7 +59,8 @@
 | Yjs + lib0 (`Binding1`–`331` / `no` / `Bte`) | ~9.5k | **Drained (wave-53)** → `vendor/yjs` npm shim (`yjs@13.6.27`)
 | Three.js (`Binding929`/`Xbe` + MathUtils helpers) | ~15.3k | **Drained (wave-54)** → `vendor/three` npm shim (`three@0.170.0`)
 | highlight.js grammars (`wke`…`aAe` + `oAe`/`sAe`; contiguous after Binding1574/`Cke`) | ~7.9k | **Drained (wave-55)** → `boundaries/highlight-js` npm shim (`highlight.js@^11.11.1`)
-| Zod (`helper789` / `$Zod*` / Binding1790–1799; Binding1790 var tail = recipes kept) | ~6.4k | **Drained (wave-56)** → `vendor/zod` npm shim (`zod@^4.4.3`) |
+| Zod (`helper789` / `$Zod*` / Binding1790–1799; Binding1790 var tail = recipes kept) | ~6.4k | **Drained (wave-56)** → `vendor/zod` npm shim (`zod@^4.4.3`)
+| presentation recipes (`Binding1800`/`qWe`…`Yqe` + `Xqe`/`Zqe`/`aJe`) | ~7.3k | **Drained (wave-57)** → `workbook/presentation-recipes/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -644,5 +645,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on vendor shim + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 136962.
+- Next: Binding1996 (~4.5k) / Binding1390 (~3.8k) / Binding740 (~3.0k), or `The`/`BYe`; continue scanning for stock vendor fingerprints.
+
+
+## Wave-57 progress
+
+- Extracted presentation-recipe cluster (`Binding1800`/`qWe`…`Yqe` + `Xqe`/`Zqe`/`aJe` registry, ~7.3k LOC) → `workbook/presentation-recipes/`.
+- Compose-layout builders stay in-boundary; recipes call them via `layout-hooks` wired from thin `aJe` stub.
+- Left `dJe` presentation templates + Google Slides adapter (`pJe`/`SJe`), Binding662/`_C`, Binding1574/`Cke`, and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 129681.
 - Next: Binding1996 (~4.5k) / Binding1390 (~3.8k) / Binding740 (~3.0k), or `The`/`BYe`; continue scanning for stock vendor fingerprints.
 
