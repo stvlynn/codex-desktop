@@ -23,6 +23,9 @@ import { paintScatterSeries } from "../chart-scatter-series";
 import { paintHistogramAxes } from "../chart-histogram-axes";
 import { paintPieSeries } from "../chart-pie-series";
 import { paintBubbleSeries } from "../chart-bubble-series";
+import { layoutTreemapPlot } from "../chart-treemap-plot-layout";
+import { computeHistogramBins } from "../chart-histogram-bins";
+import { computeFunnelSegments } from "../chart-funnel-segments";
 import { paintChartDataTable } from "../chart-data-table";
 import { paintScatterAxes } from "../chart-scatter-axes";
 import { paintChartTrendline } from "../chart-trendline";
@@ -138,7 +141,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
   if (cpBind2286) {
     let cpBind9667;
     cpBind2288.manualLayout?.target !== "inner" &&
-      ((cpBind9667 = cpH.paintTreemap(
+      ((cpBind9667 = layoutTreemapPlot(
         cpIn32,
         cpIn33,
         cpBind2290,
@@ -475,7 +478,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
           );
           break;
         case Cn.CHART_TYPE_HISTOGRAM: {
-          let cpBind16038 = cpH.bh555(
+          let cpBind16038 = computeHistogramBins(
               cpIn33,
               cpBind2287
                 ? {
@@ -641,7 +644,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         chartHoverTargets: cpIn35.chartHoverTargets,
         hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
       });
-    let cpBind14153 = cpH.bh576(cpIn33, cpBind2290, cpBind2287),
+    let cpBind14153 = computeFunnelSegments(cpIn33, cpBind2290, cpBind2287),
       cpBind14154 = cpH.layoutCategoryLabels(
         cpIn32,
         cpIn33,
@@ -654,7 +657,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
       cpIn33,
       cpBind14154 === null
         ? cpBind14153
-        : cpH.bh576(cpIn33, cpBind14154.plotDims, cpBind2287),
+        : computeFunnelSegments(cpIn33, cpBind14154.plotDims, cpBind2287),
       cpIn35.themeMap,
       cpIn35.chartHoverTargets,
       cpBind14154?.labels,

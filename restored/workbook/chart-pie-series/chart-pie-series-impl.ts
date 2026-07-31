@@ -1,11 +1,12 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: pie/doughnut series paint (legacy helper496).
-// Stage-3 wave-101.
+// Stage-3 wave-101/102 (paintPieLabels / fbe).
 
-import { Cn } from "../presentation-protobuf";
+import { Cn, En } from "../presentation-protobuf";
 import { cpsH } from "./boundary-hooks";
 
 void Cn;
+void En;
 void cpsH;
 
 export function paintPieSeries(
@@ -99,7 +100,7 @@ export function paintPieSeries(
       cpsBind5149,
     );
     cpsBind7802 &&
-      cpsH.paintPieLabels(
+      paintPieLabels(
         cpsIn726,
         cpsBind7802,
         (item.startAngle + item.endAngle) / 2,
@@ -109,6 +110,97 @@ export function paintPieSeries(
       );
   });
   cpsIn726.restore();
+}
+
+export function paintPieLabels(
+  cpsIn891: any,
+  cpsIn892: any,
+  cpsIn893: any,
+  cpsIn894: any,
+  cpsIn895: any,
+  cpsIn896: any,
+) {
+  let cpsBind5690 =
+      cpsIn892.position === En.DATA_LABEL_POSITION_OUT_END
+        ? cpsIn894
+        : cpsIn894 * 0.7,
+    cpsBind5691 =
+      cpsIn895 > 0 ? cpsIn895 + (cpsIn894 - cpsIn895) / 2 : cpsIn894 * 0.55,
+    cpsBind5692 =
+      cpsIn892.position === En.DATA_LABEL_POSITION_OUT_END
+        ? cpsIn894 * 1.12
+        : cpsIn892.position === En.DATA_LABEL_POSITION_IN_END
+          ? cpsIn894 * 0.78
+          : cpsBind5691,
+    cpsBind5693 = Math.sin(cpsIn893) * cpsBind5690,
+    cpsBind5694 = -Math.cos(cpsIn893) * cpsBind5690,
+    cpsBind5695 = Math.sin(cpsIn893) * cpsBind5692,
+    cpsBind5696 = -Math.cos(cpsIn893) * cpsBind5692,
+    cpsBind5697 = cpsIn892.textStyle?.fontSize
+      ? cpsH.bh152(cpsIn892.textStyle.fontSize)
+      : 10,
+    cpsBind5698 = cpsIn892.textStyle?.bold ?? true,
+    cpsBind5699 = cpsIn892.textStyle?.fill?.color
+      ? cpsH.resolveColor(cpsIn892.textStyle.fill.color, cpsIn896)
+      : cpsH.defaultMuted,
+    cpsBind5700 = cpsIn892.text.split("\n"),
+    cpsBind5701 = cpsBind5697 * 1.2;
+  cpsIn891.save();
+  cpsIn891.font = `${cpsBind5698 ? "bold " : ""}${cpsBind5697}px ${cpsH.chartFontFamily}`;
+  cpsIn891.textAlign = "center";
+  cpsIn891.textBaseline = "middle";
+  let cpsBind5702 =
+      Math.max(...cpsBind5700.map((item) => cpsIn891.measureText(item).width)) +
+      10,
+    cpsBind5703 = cpsBind5701 * cpsBind5700.length + 8,
+    cpsBind5704 = {
+      x: cpsBind5695 - cpsBind5702 / 2,
+      y: cpsBind5696 - cpsBind5703 / 2,
+      width: cpsBind5702,
+      height: cpsBind5703,
+    };
+  cpsIn892.showLeaderLines &&
+    cpsIn892.position === En.DATA_LABEL_POSITION_OUT_END &&
+    (cpsIn891.save(),
+    cpsH.bh433(cpsIn891, cpsIn892.stroke, cpsIn896, {
+      color: "#808080",
+      widthPx: 0.75,
+    }),
+    cpsIn891.beginPath(),
+    cpsIn891.moveTo(cpsBind5693, cpsBind5694),
+    cpsIn891.lineTo(cpsBind5695, cpsBind5696),
+    cpsIn891.stroke(),
+    cpsIn891.restore());
+  cpsIn892.fill &&
+    ((cpsIn891.fillStyle = cpsH.bh212(
+      cpsIn891,
+      cpsBind5704,
+      cpsIn892.fill,
+      cpsIn896,
+      "transparent",
+    )),
+    cpsIn891.fillRect(
+      cpsBind5704.x,
+      cpsBind5704.y,
+      cpsBind5704.width,
+      cpsBind5704.height,
+    ));
+  cpsIn892.stroke?.fill?.color &&
+    (cpsH.bh433(cpsIn891, cpsIn892.stroke, cpsIn896, {
+      widthPx: 0.75,
+    }),
+    cpsIn891.strokeRect(
+      cpsBind5704.x,
+      cpsBind5704.y,
+      cpsBind5704.width,
+      cpsBind5704.height,
+    ));
+  cpsIn891.fillStyle = cpsBind5699;
+  let cpsBind5705 = cpsBind5696 - ((cpsBind5700.length - 1) * cpsBind5701) / 2;
+  cpsBind5700.forEach((item, index) => {
+    cpsIn891.fillText(item, cpsBind5695, cpsBind5705 + index * cpsBind5701);
+  });
+  cpsIn891.restore();
 }
 
 /** Legacy alias. */

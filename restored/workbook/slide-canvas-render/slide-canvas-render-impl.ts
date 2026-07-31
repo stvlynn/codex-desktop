@@ -12,6 +12,7 @@ import {
 } from "../text-box";
 import { resolveShapeTextFrameRect } from "../preset-shape";
 import { scrH } from "./boundary-hooks";
+import { paintSlideBackground } from "../slide-background-paint";
 
 void layoutTableFrame;
 void paintChartElement;
@@ -19,6 +20,7 @@ void resolvePlaceholderTextStyle;
 void resolveMasterParagraphDefaults;
 void resolveShapeTextFrameRect;
 void scrH;
+void paintSlideBackground;
 
 export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: any, scrIn168: any, scrIn169: any, scrIn170: any, scrIn171: any, scrIn172: any, scrIn173: any, scrIn174: any, scrIn175: any, ) {
   let scrBind2965 = scrIn165.resolveRenderContext(),
@@ -32,7 +34,7 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
     scrIn167.clearRect(0, 0, scrBind2966, scrBind2967);
   let scrBind2968;
   if (
-    (await scrH.paintSlideBackground(
+    (await paintSlideBackground(
       scrIn167,
       themeMap,
       scrBind2965.background,

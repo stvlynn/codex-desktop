@@ -1,15 +1,25 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-101: chart-pie-series boundary hooks.
+// Stage-3 wave-101/102: chart-pie-series boundary hooks.
 
 export type ChartPieSeriesBoundaryHooks = {
   /** Slice mid-angle helpers (legacy dbe). */
   sliceMid: (...args: any[]) => any;
-  /** Pie data-label paint (legacy fbe). */
-  paintPieLabels: (...args: any[]) => any;
   bh347: (...args: any[]) => any;
   bh469: (...args: any[]) => any;
   bh474: (...args: any[]) => any;
   bh482: (...args: any[]) => any;
+  /** Font size (helper152). */
+  bh152: (...args: any[]) => any;
+  /** Color resolve (workbookSt). */
+  resolveColor: (...args: any[]) => any;
+  /** Fill resolve (helper212). */
+  bh212: (...args: any[]) => any;
+  /** Stroke apply (helper433). */
+  bh433: (...args: any[]) => any;
+  /** Default muted fill (legacy $D). */
+  defaultMuted: any;
+  /** Chart font family (Binding837). */
+  chartFontFamily: any;
 };
 
 export const cpsH: ChartPieSeriesBoundaryHooks =

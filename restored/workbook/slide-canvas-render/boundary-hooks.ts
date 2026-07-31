@@ -2,7 +2,6 @@
 // Stage-3 wave-94: slide-canvas-render boundary hooks.
 
 export type SlideCanvasRenderBoundaryHooks = {
-  paintSlideBackground: (...args: any[]) => any;
   paintSlideShape: (...args: any[]) => any;
   paintSlideText: (...args: any[]) => any;
   paintViewOverlay: (...args: any[]) => any;

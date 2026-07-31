@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~57.7k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~57.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -139,6 +139,13 @@
 | Formula IRR (`F0e`) | ~0.14k | **Drained (wave-101)** → `workbook/formula-irr/` |
 | HTML paste (`wmt`) | ~0.13k | **Drained (wave-101)** → `workbook/html-paste/` |
 | Formula AST remap (`helper1022`) | ~0.12k | **Drained (wave-101)** → `workbook/formula-ast-remap/` |
+| Pie data labels (`fbe`) | ~0.11k | **Drained (wave-102)** → `workbook/chart-pie-series/` |
+| Treemap plot layout (`Cbe`) | ~0.11k | **Drained (wave-102)** → `workbook/chart-treemap-plot-layout/` |
+| Histogram bins (`helper555`) | ~0.11k | **Drained (wave-102)** → `workbook/chart-histogram-bins/` |
+| Funnel segments (`helper576`) | ~0.12k | **Drained (wave-102)** → `workbook/chart-funnel-segments/` |
+| Sheet hidden boundaries (`ewe`) | ~0.11k | **Drained (wave-102)** → `workbook/sheet-hidden-boundaries/` |
+| Slide background paint (`RTe`) | ~0.16k | **Drained (wave-102)** → `workbook/slide-background-paint/` |
+| Formula matrix inverse (`Alt`) | ~0.12k | **Drained (wave-102)** → `workbook/formula-matrix-inverse/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1228,3 +1235,20 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on seven modules + chart-paint + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 57711 (was 58451; Δ -740).
 - Next: mid neighbors (`fbe`/`helper576`/`helper555`/`RTe`/`Cbe`/`ewe`/`Alt`) / leave-behinds when `_workbookS`/WorkbookN ensure fan-out shrinks / clean `xLe`.
+
+## Wave-102 progress
+
+- Re-scanned ≥100 after wave-101. **FALSE/ESM:** `ict`/`WEe`/`TIe`/`$nt`/`zwe`/`yEe`/`Oht`/`npt`/`gxe`/`Binding1150`/`_xe`/`helper672@xDe`. **LEAVE:** `rze`/`kht` (WorkbookN/`_workbookS` not top-level).
+- Preferred reals: `fbe`/`helper576`/`Alt`/`RTe`/`helper555`/`Cbe`/`ewe` (+ owned `bCe`/`helper646`).
+- Peeled `fbe` → `workbook/chart-pie-series/` `paintPieLabels` (direct call; `cpsH` for font/color/fill/stroke).
+- Peeled `Cbe` → `workbook/chart-treemap-plot-layout/`; chart-paint `paintTreemap` → `layoutTreemapPlot`.
+- Peeled `helper555` → `workbook/chart-histogram-bins/`; chart-paint `bh555` → `computeHistogramBins`.
+- Peeled `helper576`+`bCe` → `workbook/chart-funnel-segments/`; chart-paint `bh576` → `computeFunnelSegments`.
+- Peeled `ewe` → `workbook/sheet-hidden-boundaries/` (twe cache stays).
+- Peeled `RTe`+`helper646` → `workbook/slide-background-paint/`; slide-canvas-render direct import.
+- Peeled `Alt` → `workbook/formula-matrix-inverse/` (MINVERSE core; Binding1942/1944 hooks).
+- Deferred ≥100 neighbors: `txe`/`yxe`/`axe`/`dTe`/`bye`/`helper421`/`helper678`/`helper884`.
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on modules + chart-paint + slide-canvas-render + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 57000 (was 57711; Δ -711).
+- Next: ≥100 chart/series neighbors (`txe`/`yxe`/`axe`/`dTe`/`bye`/`helper421`/`helper678`/`helper884`) / leave-behinds when safe.
