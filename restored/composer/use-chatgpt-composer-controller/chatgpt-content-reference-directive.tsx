@@ -3,7 +3,7 @@
 
 import { hasDilField as AppInitialVI } from "../../content/has-dil-field";
 import { identity as _appInitialRI } from "../../utils/identity";
-import { useChatgptComposerControllerHelper243 } from "../../boundaries/use-chatgpt-composer-controller";
+import { useChatgptComposerControllerHelper243 } from "./chatgpt-content-reference-router";
 import { useChatgptComposerControllerHelper31 } from "./chatgpt-browser-host-context";
 import { useChatgptComposerControllerHelper102 } from "./chatgpt-dil-widget-directive";
 import { useChatgptComposerControllerHelper107 } from "./chatgpt-image-group-directive";

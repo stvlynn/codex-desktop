@@ -2,7 +2,7 @@ import "./ensure-chatgpt-composer-markdown-peer-bootstrap";
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Semantic composer-domain API: typed aliases over the open oversized runtime body.
 // Stage-3 wave-15: client-defined widget / chart mountain (Helper124–178) drained.
-// Residual: thin boundary re-export; markdown peer bootstrap owns registry side-effects.
+// Residual: thin boundary kept as compat re-export; markdown peer bootstrap owns registry side-effects.
 
 export type {
   ChatgptBrowserConversationBannerProps,
@@ -465,9 +465,6 @@ export {
   useChatgptComposerControllerHelper121,
   useChatgptComposerControllerHelper122,
   useChatgptComposerControllerHelper123,
-  slot125 as useChatgptComposerControllerValue125,
-  slot128 as useChatgptComposerControllerValue128,
-  slot131 as useChatgptComposerControllerValue131,
   slot125 as ensureChatgptProductCarouselInit,
   slot128 as ensureChatgptCalculatorFallbackInit,
   slot131 as ensureChatgptAttributionSourcesInit,
@@ -478,8 +475,6 @@ export {
 } from "./chatgpt-code-link-title-citations";
 export {
   useChatgptComposerControllerHelper181,
-  slot242 as useChatgptComposerControllerValue242,
-  slot248 as useChatgptComposerControllerValue248,
   slot242 as ensureChatgptVideoSurfaceInit,
   slot248 as ensureChatgptMapsAttributionInit,
 } from "./chatgpt-location-search-attribution";
@@ -489,8 +484,6 @@ export {
   useChatgptComposerControllerHelper236,
   useChatgptComposerControllerHelper241,
   useChatgptComposerControllerHelper242,
-  slot278 as useChatgptComposerControllerValue278,
-  slot299 as useChatgptComposerControllerValue299,
   slot278 as ensureChatgptProductEntitySurfaceInit,
   slot299 as ensureChatgptTitleCitationSurfaceInit,
 } from "./chatgpt-product-sports-stock-surfaces";
@@ -509,7 +502,6 @@ export {
   useChatgptComposerControllerHelper173,
   useChatgptComposerControllerHelper177,
   useChatgptComposerControllerHelper178,
-  slot233 as useChatgptComposerControllerValue233,
   ensureChatgptSportsCodeSurfaceInit,
 } from "./chatgpt-client-defined-widget-charts";
 export { ensureChatgptComposerMarkdownPeerBootstrap } from "./ensure-chatgpt-composer-markdown-peer-bootstrap";

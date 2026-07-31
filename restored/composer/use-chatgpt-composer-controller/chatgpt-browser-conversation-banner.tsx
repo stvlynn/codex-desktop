@@ -19,7 +19,7 @@ import {
   react,
   reactCompilerRuntime,
 } from "../../boundaries/react-cjs-runtime";
-import { useChatgptComposerControllerK } from "../../boundaries/use-chatgpt-composer-controller";
+import { useChatgptComposerControllerK } from "./chatgpt-conversation-updates-mount";
 import { LOCAL_HOST_ID as appInitialTot } from "../../hosts/local-host-id";
 import { MemoizedFormattedMessage as appInitialGft } from "../../i18n/memoized-formatted-message";
 import { useIntl as appInitialJft } from "../../i18n/use-intl";

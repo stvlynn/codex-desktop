@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notes": "Wave DR: +2 Gut\u2192usingCtx (babel usingCtx npm), fJ\u2192deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop \u2192 index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path \u2192 composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite) | diagram-export-alias-semantic: IMPORT_MAP exports n/t/a/\u2026 \u2192 semantic public names after dropping cryptic re-export aliases | deep-drain 2026-07-28: Stage-3 shiki pool split (kL\u2192shiki-highlight-context) + settings wrapper; checkout-webview-page typed deps shell; permissions-mode-dropdown typed shell. Soft scaffolds Stage-3-fill/Open-runtime-facade remain 0. Remaining Open-runtime soft hosts: large page bodies (settings/onboarding/local/remote) blocked by mechanical checkpoint QG fails; no-alias ui shells blocked by missing extract alias. | Wave GA: share-invite soft-host drain (real peers + useListKeyboardNavigation); settings-pets-nav-icon split; settings-page candidate case-correct imports staged (not promoted: residual *Param/*Value + exportSources collisions HM/Bft) | Wave GB: settings-page candidate rebuilt with export-correct IMPORT_MAP resolution + HM\u2192scoreFuzzyMatch / Bft\u2192defineMessage overrides; public utils/score-fuzzy-match.ts (QG pass, contract scorer; full HH in deps WIP); soft-host count still 18 (settings not promoted: ~270 mechanical names + use-visible-settings-sections soft shell) | Wave GC: use-visible-settings-sections soft shell drained (split dir); soft-host count still 18 (settings-page not yet promoted)",
+  "notes": "Wave composer-ctrl closeout polish: consumers\u2192composer barrel; Value* aliases dropped. | Wave composer-ctrl Stage-3 wave-15: Helper124\u2013178 mountain drained; thin boundary; openBoundary cleared; mapbox-gl npm CSP shim. | Wave composer-ctrl Stage-3 wave-15: Helper124\u2013178 mountain drained; boundary thin; openBoundary cleared. | Wave DR: +2 Gut\u2192usingCtx (babel usingCtx npm), fJ\u2192deferredUiFJ (h0r Stage-3). 4463->4465/4465. No app-initial promote / producer barrel. | qg-full-green aggregator exemption: {\"at\":\"2026-07-27T05:40:57.010Z\",\"chunk\":\"app-initial-C-fROkKo\",\"codes\":[\"full-restoration-checkpoints-not-drained\",\"full-restoration-missing-public-target\",\"full-restoration-app-feature-not-accepted\"],\"reason\":\"Intentional aggregator: doNotPromoteYet=true; never stages.promoted; never producer barrel. Remaining undrained checkpoint and missing public target are expected until aggregator policy closeout.\"} | completion-audit: split-required mop \u2192 index dirs for share-invite-autocomplete, remote-text-edit-session, codex-branded-glyph-pack; drop cryptic n/t re-exports | completion-audit: composer controller path \u2192 composer/use-chatgpt-composer-controller/index.tsx (candidate Stage-3 + hash import rewrite) | diagram-export-alias-semantic: IMPORT_MAP exports n/t/a/\u2026 \u2192 semantic public names after dropping cryptic re-export aliases | deep-drain 2026-07-28: Stage-3 shiki pool split (kL\u2192shiki-highlight-context) + settings wrapper; checkout-webview-page typed deps shell; permissions-mode-dropdown typed shell. Soft scaffolds Stage-3-fill/Open-runtime-facade remain 0. Remaining Open-runtime soft hosts: large page bodies (settings/onboarding/local/remote) blocked by mechanical checkpoint QG fails; no-alias ui shells blocked by missing extract alias. | Wave GA: share-invite soft-host drain (real peers + useListKeyboardNavigation); settings-pets-nav-icon split; settings-page candidate case-correct imports staged (not promoted: residual *Param/*Value + exportSources collisions HM/Bft) | Wave GB: settings-page candidate rebuilt with export-correct IMPORT_MAP resolution + HM\u2192scoreFuzzyMatch / Bft\u2192defineMessage overrides; public utils/score-fuzzy-match.ts (QG pass, contract scorer; full HH in deps WIP); soft-host count still 18 (settings not promoted: ~270 mechanical names + use-visible-settings-sections soft shell) | Wave GC: use-visible-settings-sections soft shell drained (split dir); soft-host count still 18 (settings-page not yet promoted)",
   "chunks": {
     "app-initial-C-fROkKo": {
       "status": "in-progress",
@@ -22907,11 +22907,20 @@
       "stage3Accepted": true
     },
     "use-chatgpt-composer-controller-CXc9FuAU": {
-      "restored": "boundaries/use-chatgpt-composer-controller/index.tsx",
+      "restored": "composer/use-chatgpt-composer-controller/index.tsx",
       "status": "done",
-      "classification": "vendor-runtime",
-      "notes": "Phase C: promoted after local deps (sound-on, create-resize-observer, turn-sources-model, subagent-panel, DILRenderer). No app-initial whole-file. qg-full-green: relocated oversized dump to boundaries (vendored flat boundary).",
-      "stage3Accepted": true
+      "classification": "app-feature",
+      "notes": "Thin ChatGPT composer-controller boundary barrel (Stage-3 wave-15). Helper124\u2013178 client-defined widget / charts_widget_v2 mountain drained; markdown peer bootstrap owns registry side-effects; openBoundary cleared. boundaries/chatgpt-mapbox-gl-runtime.ts is now a mapbox-gl npm CSP shim. | Closeout polish: consumers remapped to composer barrel; legacy Value* slot aliases dropped; thin boundary retained as compat re-export.",
+      "stage3Accepted": true,
+      "restoredModules": [
+        "composer/use-chatgpt-composer-controller/index.tsx",
+        "composer/use-chatgpt-composer-controller/chatgpt-client-defined-widget-charts/index.ts",
+        "composer/use-chatgpt-composer-controller/chatgpt-client-defined-widget-charts/chart-axis-tooltip-module.tsx",
+        "composer/use-chatgpt-composer-controller/chatgpt-client-defined-widget-charts/chart-series-frame-module.tsx",
+        "composer/use-chatgpt-composer-controller/chatgpt-client-defined-widget-charts/client-defined-widget-module.tsx",
+        "composer/use-chatgpt-composer-controller/ensure-chatgpt-composer-markdown-peer-bootstrap.ts"
+      ],
+      "openBoundary": false
     },
     "thread-panel-toggle-button-CKdJKdPZ": {
       "restored": "thread/thread-panel-toggle-button.tsx",
@@ -26042,5 +26051,5 @@
       "note": "DIL registerTag facade \u2014 not stock npm; bindDilRegister wires host. Mega-chunk body intentionally not restored."
     }
   },
-  "updatedAt": "2026-07-28T05:34:19.518Z"
+  "updatedAt": "2026-07-31T04:01:57.647Z"
 }

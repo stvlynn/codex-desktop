@@ -92,6 +92,6 @@ export type SeedChatgptComposerConversationOptions = {
   initialPrompt?: string;
 };
 
-/** Runtime module that still owns the oversized mechanical body. */
+/** Public composer-controller surface (semantic barrel; thin boundary is compat-only). */
 export type ChatgptComposerControllerRuntimeModule =
-  typeof import("../../boundaries/use-chatgpt-composer-controller");
+  typeof import("./index");

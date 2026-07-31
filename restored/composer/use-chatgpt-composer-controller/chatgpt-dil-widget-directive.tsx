@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // ChatGPT DIL widget markdown directive (registry AppInitialWF / Helper93).
-// Value103–111 Dil React/CSS/lazy init stays in the open boundary.
+// Value103–111 Dil React/CSS/lazy init stays in markdown fan-in peers.
 
 import {
   appScopeAtom as appInitialFft,
@@ -11,7 +11,7 @@ import {
   chatgptDilRendererLazy as $f,
   chatgptDilReact,
   chatgptDilRendererCustomCss,
-} from "../../boundaries/use-chatgpt-composer-controller";
+} from "./ensure-chatgpt-composer-markdown-fanin-peers";
 import { useChatgptComposerControllerHelper46 } from "./chatgpt-dil-geolocation-permission";
 import { useChatgptComposerControllerHelper52 } from "./chatgpt-dil-ecosystem-widget";
 import {

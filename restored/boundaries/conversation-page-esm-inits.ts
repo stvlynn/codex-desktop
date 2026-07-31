@@ -148,3 +148,6 @@ export function ensureConversationPageEsm_zN_Init(): void {}
  * Icon lives at `icons/app-window-inset-icon.tsx`; init is a no-op under restore.
  */
 export function ensureAppWindowInsetIconInit(): void {}
+
+// --- missing-relative-export aliases ---
+export { ensureConversationPageEsm_Lo_Init as EnsureConversationPageEsm_Lo_Init };

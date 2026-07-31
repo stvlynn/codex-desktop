@@ -196,3 +196,10 @@ export function ensureComposerEsm_Sst_Init(): void {}
 
 /** Bundle export `IB` — side-effect icon factory init (QR) unused by consumers. */
 export function ensureComposerEsm_IB_Init(): void {}
+
+// --- split/export lane aliases ---
+export { ensureComposerEsm_UL_Init as EnsureComposerEsm_Ul_Init };
+
+// --- missing-relative-export aliases ---
+export { ensureComposerEsm_J0_Init as EnsureComposerEsm_J0_Init };
+export { ensureComposerEsm_Wlt_Init as EnsureComposerEsm_Wlt_Init };

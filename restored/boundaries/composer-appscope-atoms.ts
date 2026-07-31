@@ -5,7 +5,7 @@
 // deep-restore when scoped. Bundle bindings (partial):
 //   Oa/xOa ≈ createAppScopeDerivedAtom(scope, computeFn) [export `BP`],
 //   Ta/ivt ≈ createScopedSignal (see app-scope-runtime.ts),
-//   avt ≈ createAppScopeQueryAtom, tvt ≈ createAppScopeSelectAtom.
+//   avt/nvt/Nvt/edt ≈ createAppScopeQueryAtom, tvt ≈ createAppScopeSelectAtom.
 //
 // Recorded under dependencyBoundaryFacades. Do NOT treat as done/app-feature.
 /* eslint-disable @typescript-eslint/no-explicit-any */
