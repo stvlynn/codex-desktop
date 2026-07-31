@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~87.6k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~85.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -70,6 +70,7 @@
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 | graphlib Graph + dagre layout (`Binding1671` / `wNe` / `YNe`) | ~3.6k | **Drained (wave-73)** → `vendor/graphlib` + `vendor/dagre` npm shims |
 | Image asset + connector routing (`Binding723`–`735` / `Jge` / `Yge`…`pve`) | ~3.1k | **Drained (wave-74)** → `workbook/image-connector/` |
+| Chart asset (`She`/`Che`…`Binding721`/`722`) | ~2.4k | **Drained (wave-75)** → `workbook/chart-asset/` |
 
 ## Why it stays in `boundaries/`
 
@@ -839,4 +840,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 87615 (was 90666; Δ -3051).
 - Next: Chart Binding721 + Che→Ege prelude (~2.4k) / flowchart `$Ne`/Binding1675/1685 + `NPe`/`PPe` (~0.8k) / Table VO `fhe`+Tables (~1.0k) / clean `xLe` walnut peel before comments/`_C`.
+
+## Wave-75 progress
+
+- Identified contiguous She/Che→Ege + Binding721/722 cluster as Codex chart-asset / series VO (NOT vendor): area-grouping + axis patches + trendline collection + series fill/stroke + chart option VOs + regression helpers + Chart class (~2.4k LOC).
+- Extracted → `workbook/chart-asset/` (split under flat limit; `Zae`/`Qae` remain in boundary via `caH` hooks; chart-elements / fill / line / text-style imported directly).
+- Left Binding736 Shape, flowchart `$Ne`/Binding1675/1685 + `NPe`/`PPe`, Table VO `fhe`/`ohe`, `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 85270 (was 87616; Δ -2346).
+- Next: Binding736 Shape (~?) / flowchart `$Ne`/Binding1675/1685 + `NPe`/`PPe` (~0.8k) / Table VO `fhe`+Tables (~1.0k) / clean `xLe` walnut peel before comments/`_C`.
 
