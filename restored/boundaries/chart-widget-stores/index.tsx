@@ -2,8 +2,9 @@ import { createElement } from "react";
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
 // Intentional oversized vendor-runtime terminal (openBoundary).
 // Not a single stock npm package: composite Recharts + Redux Toolkit/Immer
-// plus Codex WidgetContext/app-scope widget store. Exit: npm-shim separable
-// stock slices; Stage-3 promote Codex glue into visualization/.
+// plus Codex WidgetContext/app-scope widget store. Stage-3 wave-1: Codex
+// WidgetContext + widget-scope store delegate to visualization/chart-widget-stores.
+// Exit: npm-shim Recharts/RTK when separable; drain chart chrome/i18n next.
 // Stage 3 candidate: 36/36 app-initial aliases rewritten to
 // IMPORT_MAP semantic/vendor/boundary paths. AppScope (Fft/Ift/ivt/M_t/L_t) is an
 // open host/runtime facade — not stock jotai. No whole-file app-initial promote.
@@ -63,22 +64,23 @@ import {
   isTypedArray as appInitialVT,
   keysIn as AppInitialAf,
 } from "../../vendor/lodash-cjs-predicates";
+import {
+  WidgetContext as vizWidgetContext,
+  useWidgetContext as vizUseWidgetContext,
+  ensureWidgetContextInit as vizEnsureWidgetContextInit,
+  useWidgetStores as vizUseWidgetStores,
+  createWidgetHostContext as vizCreateWidgetHostContext,
+  ensureWidgetScopeStoreInit as vizEnsureWidgetScopeStoreInit,
+} from "../../visualization/chart-widget-stores";
+
 var chartWidgetStoresBinding1 = rolldownRuntimeN(() => {}),
   chartWidgetStoresBinding2,
   chartWidgetStoresW,
   chartWidgetStoresE,
   chartWidgetStoresT = rolldownRuntimeN(() => {
-    chartWidgetStoresBinding2 = rolldownRuntimeS(appInitialLvt());
-    chartWidgetStoresW = chartWidgetStoresBinding2.createContext(null);
-    chartWidgetStoresE = () => {
-      let chartWidgetStoresBinding5319 =
-        chartWidgetStoresBinding2.useContext(chartWidgetStoresW);
-      if (!chartWidgetStoresBinding5319)
-        throw Error(
-          "useWidgetContext must be used within a WidgetContext.Provider",
-        );
-      return chartWidgetStoresBinding5319;
-    };
+    vizEnsureWidgetContextInit();
+    chartWidgetStoresW = vizWidgetContext;
+    chartWidgetStoresE = vizUseWidgetContext;
   }),
   chartWidgetStoresBinding3,
   chartWidgetStoresBinding4,
@@ -78156,156 +78158,24 @@ export const chartWidgetStoresA = rolldownRuntimeN(() => {
   );
 });
 export function chartWidgetStoresR() {
-  let chartWidgetStoresBinding4021 = appInitialLT(appInitialFft),
-    chartWidgetStoresBinding4022 = chartWidgetStoresHelper936(
-      chartWidgetStoresBinding4021,
-      "nameToId",
-    );
-  let chartWidgetStoresBinding4023 = chartWidgetStoresHelper936(
-    chartWidgetStoresBinding4021,
-    "widgetState",
-  );
-  return {
-    useNameToIdStore: chartWidgetStoresBinding4022,
-    useWidgetStateStore: chartWidgetStoresBinding4023,
-  };
+  return vizUseWidgetStores();
 }
 export function _chartWidgetStoresT(
-  chartWidgetStoresInput675,
-  { useNameToIdStore, useWidgetStateStore },
-  chartWidgetStoresInput676 = {},
+  theme: unknown,
+  stores: {
+    useNameToIdStore: unknown;
+    useWidgetStateStore: unknown;
+  },
+  flags: Record<string, unknown> = {},
 ) {
-  return {
-    activeBreakpoints: [],
-    errorMode: "throw",
-    evaluate: () => undefined,
-    flags: chartWidgetStoresInput676,
-    getActiveBreakpointValue: (chartWidgetStoresInput4736) =>
-      chartWidgetStoresInput4736.default,
-    isPrimarilyTouchDevice: false,
-    mapboxAccessToken: null,
-    onAction: async () => undefined,
-    onError: () => undefined,
-    onSoftFailure: () => undefined,
-    onStateMutation: () => undefined,
-    preferNativeControls: false,
-    setRootWidgetElement: () => undefined,
-    showRenderFailureDebugInfo: false,
-    streaming: false,
-    theme: chartWidgetStoresInput675,
-    useNameToIdStore,
-    usePointerDown: false,
-    useWidgetStateStore,
-  };
+  return vizCreateWidgetHostContext(
+    theme,
+    stores as Parameters<typeof vizCreateWidgetHostContext>[1],
+    flags,
+  );
 }
-function chartWidgetStoresHelper936(
-  chartWidgetStoresInput315,
-  chartWidgetStoresInput316,
-) {
-  let chartWidgetStoresBinding2791 = () =>
-      chartWidgetStoresInput315.get(chartWidgetStoresBinding1536)[
-        chartWidgetStoresInput316
-      ],
-    chartWidgetStoresBinding2792 = {
-      nameToId: {},
-      widgetState: {},
-    }[chartWidgetStoresInput316];
-  function chartWidgetStoresHelper1032(
-    chartWidgetStoresInput1535,
-    chartWidgetStoresInput1536 = false,
-  ) {
-    chartWidgetStoresInput315.set(
-      chartWidgetStoresBinding1536,
-      (chartWidgetStoresInput1940) => {
-        let chartWidgetStoresBinding4916 =
-            chartWidgetStoresInput1940[chartWidgetStoresInput316],
-          chartWidgetStoresBinding4917 =
-            typeof chartWidgetStoresInput1535 == "function"
-              ? chartWidgetStoresInput1535(chartWidgetStoresBinding4916)
-              : chartWidgetStoresInput1535;
-        return Object.is(
-          chartWidgetStoresBinding4917,
-          chartWidgetStoresBinding4916,
-        )
-          ? chartWidgetStoresInput1940
-          : appInitialN9(
-              chartWidgetStoresInput1940,
-              (chartWidgetStoresInput2987) => {
-                let chartWidgetStoresBinding5611 =
-                  chartWidgetStoresInput2987[chartWidgetStoresInput316];
-                if (chartWidgetStoresInput1536)
-                  for (let chartWidgetStoresBinding5971 of Object.keys(
-                    chartWidgetStoresBinding5611,
-                  ))
-                    delete chartWidgetStoresBinding5611[
-                      chartWidgetStoresBinding5971
-                    ];
-                Object.assign(
-                  chartWidgetStoresBinding5611,
-                  chartWidgetStoresBinding4917,
-                );
-              },
-            );
-      },
-    );
-  }
-  function chartWidgetStoresHelper1033() {
-    return chartWidgetStoresBinding2792;
-  }
-  function chartWidgetStoresHelper1034(chartWidgetStoresInput2679) {
-    let chartWidgetStoresBinding5447 = chartWidgetStoresBinding2791();
-    return chartWidgetStoresInput315.watch((chartWidgetStoresInput3167) => {
-      let chartWidgetStoresBinding5709 = chartWidgetStoresInput3167.get(
-        chartWidgetStoresBinding1536,
-      )[chartWidgetStoresInput316];
-      if (Object.is(chartWidgetStoresBinding5709, chartWidgetStoresBinding5447))
-        return;
-      let chartWidgetStoresBinding5710 = chartWidgetStoresBinding5447;
-      chartWidgetStoresBinding5447 = chartWidgetStoresBinding5709;
-      chartWidgetStoresInput2679(
-        chartWidgetStoresBinding5709,
-        chartWidgetStoresBinding5710,
-      );
-    });
-  }
-  function chartWidgetStoresHelper1035(chartWidgetStoresInput1398) {
-    let chartWidgetStoresBinding4347, chartWidgetStoresBinding4348;
-    return (
-      (chartWidgetStoresBinding4347 = () =>
-        chartWidgetStoresInput1398 == null
-          ? chartWidgetStoresBinding2791()
-          : chartWidgetStoresInput1398(chartWidgetStoresBinding2791())),
-      (chartWidgetStoresBinding4348 = () =>
-        chartWidgetStoresInput1398 == null
-          ? chartWidgetStoresHelper1033()
-          : chartWidgetStoresInput1398(chartWidgetStoresHelper1033())),
-      chartWidgetStoresBinding1535.useSyncExternalStore(
-        chartWidgetStoresHelper1034,
-        chartWidgetStoresBinding4347,
-        chartWidgetStoresBinding4348,
-      )
-    );
-  }
-  return Object.assign(chartWidgetStoresHelper1035, {
-    getInitialState: chartWidgetStoresHelper1033,
-    getState: chartWidgetStoresBinding2791,
-    setState: chartWidgetStoresHelper1032,
-    subscribe: chartWidgetStoresHelper1034,
-  });
-}
-var chartWidgetStoresBinding1534,
-  chartWidgetStoresBinding1535,
-  chartWidgetStoresBinding1536;
 export const chartWidgetStoresN = rolldownRuntimeN(() => {
-  chartWidgetStoresBinding1534 = appInitialIvt();
-  appInitialM9();
-  appInitialMT();
-  chartWidgetStoresBinding1535 = rolldownRuntimeS(appInitialLvt(), 1);
-  appInitialIft();
-  chartWidgetStoresBinding1536 = _appInitialIvt(appInitialFft, () => ({
-    nameToId: {},
-    widgetState: {},
-  }));
+  vizEnsureWidgetScopeStoreInit();
 });
 export {
   chartWidgetStoresC,
