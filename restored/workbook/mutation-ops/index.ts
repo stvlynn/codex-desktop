@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-41: mutation-ops barrel (thread / chart / conditional-format).
+// Stage-3 wave-41/42: mutation-ops barrel (thread/chart/CF/sparkline/DV/shape/image).
 
 export type * from "./types";
 export {
@@ -45,3 +45,36 @@ export {
   serializeColorValue,
   colorInputToConfig,
 } from "./fill-color-serialize";
+export {
+  buildSparklineSetOp,
+  buildSparklineAddOp,
+  buildSparklineSelector,
+  buildSparklineProps,
+  sparklineRangeRef,
+} from "./sparkline-ops";
+export {
+  buildDataValidationSetOp,
+  serializeDataValidationRule,
+  serializeDataValidationPrompt,
+  serializeDataValidationErrorAlert,
+  parseDataValidationListValues,
+  mapDataValidationType,
+  mapDataValidationOperator,
+  mapDataValidationErrorStyle,
+} from "./data-validation-ops";
+export {
+  buildShapeAddOp,
+  buildShapeSetOp,
+  buildShapeSelector,
+  buildShapeAddProps,
+  serializeShapeProps,
+  serializeShapeLineFromProto,
+  serializeShapeLine,
+  configFromToConfigable,
+} from "./shape-ops";
+export {
+  buildImageAddOp,
+  buildImageSetOp,
+  buildImageAddProps,
+  serializeImageSetSource,
+} from "./image-ops";

@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~188.9k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~188.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -45,6 +45,7 @@
 | Image-source VO / payload normalize | ~15.7k (post-Mde) | **Drained (wave-39)** → `workbook/image-source/` |
 | Image element VO (Binding660) | ~15.7k (post-source) | **Drained (wave-40)** → `workbook/image-element/` |
 | Thread/chart/CF mutation builders (Yde…helper319) | ~15.7k (post-image) | **Drained (wave-41)** → `workbook/mutation-ops/` |
+| Sparkline/DV/shape/image mutation (Sfe…Wfe) + helper333 | ~15.7k (post-mutation) | **Drained (wave-42)** → `workbook/mutation-ops/` + `worksheet-attachment/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -455,6 +456,20 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 188864.
-- Next: sparkline `Sfe`+ / data-validation `Efe`+ (peel if helper333 settles), or pivot Binding335/336/338 + Class53 if cleanly separable; continue scanning for stock vendor fingerprints.
+- Next: ~~sparkline Sfe+ / data-validation Efe+~~ (done wave-42); pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Binding662 VO cluster.
+
+
+## Wave-42 progress
+
+- Extracted sparkline builders (`Sfe`/`Cfe`/`wfe`/`Tfe`/`helper320`) → `workbook/mutation-ops/`.
+- Extracted data-validation builders (`Efe`…`Nfe`) → `workbook/mutation-ops/`.
+- Extracted shape.add/set builders (`Pfe`…`helper321`) → `workbook/mutation-ops/`.
+- Extracted image.add/set builders (`Vfe`/`Hfe`/`Ufe`/`Wfe`) → `workbook/mutation-ops/`.
+- Extracted worksheet owner WeakMap (`helper333`/`Binding669`) → `workbook/worksheet-attachment/`.
+- Left Binding662/`_C` init gate, pivot enums Binding335/336/338 + Class53, and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 188299.
+- Next: pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Binding662 VO/helper cluster; continue scanning for stock vendor fingerprints.
 
 
