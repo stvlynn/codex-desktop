@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-8/9: TextStyle VO + alignment/autofit + CSS declaration/shadow parsers.
+// Stage-3 wave-8/9/11: TextStyle VO + CSS parsers + style-resolve cascade.
 
 export {
   alignmentNameToProto,
@@ -30,7 +30,31 @@ export {
 export type { TextShadowNormalizer } from "./text-shadow-wire";
 export { TextStyle, MIN_FONT_SIZE_CENTIPOINTS } from "./text-style";
 export type { TextStyleProto, TextStyleInsets } from "./text-style";
-export { ensureTextStyleInit } from "./ensure-text-style-init";
+export {
+  ensureTextStyleInit,
+  ensureStyleResolveInit,
+} from "./ensure-text-style-init";
+export { EMU_TO_CSS_PX, workbookGt } from "./emu-to-css-px";
+export {
+  isStylePlainObject,
+  deepCloneStyleValue,
+  deepMergeFillGaps,
+  mergeStyleLayers,
+} from "./style-deep-merge";
+export {
+  cleanUnspecifiedTextStyleEnums,
+  textStyleToCleanProto,
+} from "./clean-text-style-proto";
+export { resolvePlaceholderTextStyle } from "./resolve-placeholder-text-style";
+export type {
+  PlaceholderFindOptions,
+  PlaceholderLike,
+  LayoutLike,
+  RenderContextLike,
+  ShapeTextStyleHost,
+  SlideRenderHost,
+} from "./resolve-placeholder-text-style";
+export { quoteCssFontFamily } from "./quote-css-font-family";
 export {
   OUTLINE_DASH_ALIASES,
   parseOutlineCss,

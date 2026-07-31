@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-10: font-family match + OffscreenCanvas metrics + grapheme segmenter.
+// Stage-3 wave-10/11: font-family match + metrics + segmenter + glyph-advance cache.
 
 export {
   officeFontMetricsByFamily,
@@ -38,4 +38,14 @@ export {
   ensureTextSegmenterInit,
   segmentGraphemes,
 } from "./text-segmenter";
+export {
+  GLYPH_TOKEN_CACHE_LIMIT,
+  KERNING_EPSILON_PX,
+  SIZE_BUCKET_SCALE,
+  GLYPH_ADVANCE_RESERVED_SIXTH,
+  SNAP_ADVANCE_SCRIPT_RE,
+  GlyphAdvanceCache,
+  ensureGlyphAdvanceCacheInit,
+} from "./glyph-advance-cache";
+export type { InkBounds } from "./glyph-advance-cache";
 export { ensureFontMetricsClusterInit } from "./ensure-font-metrics-init";

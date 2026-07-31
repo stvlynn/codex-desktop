@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~223.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~222.6k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -109,4 +109,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, and TextStyle style-resolve (`helper106`–`110`/`workbookT`) in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Next: worksheet/spreadsheet core clusters (range/table/drawing), or residual TextStyle style-resolve (`helper110`/`workbookT`).
+- Next: ~~TextStyle style-resolve + glyph-advance~~ (done wave-11); worksheet/spreadsheet core clusters (range/table/drawing), or math-plain-text helpers near the drained locus.
+
+## Wave-11 progress
+
+- Extracted TextStyle style-resolve (`helper106`–`111`, `_p`, `workbookT`/`workbookGt`/`Binding438`) → `workbook/text-style/`.
+- Extracted glyph-advance / ink-bounds cache (`$p` / `Binding456`) → `workbook/font-metrics/glyph-advance-cache.ts`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, and `ooe` geometry helper in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Next: worksheet/spreadsheet core clusters (range/table/drawing), or math-plain-text helpers (`Coe`/helper121+) near the drained locus.
