@@ -737,3 +737,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary LOC ≈ 109187 (was 111324; Δ −2,137).
 - Next: Binding1827/SXe (~2.3–2.8k sheet/range API) / `BYe` canvas paint (~2.4k) / compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe` / earlier mermaid helpers Binding1615–1685 / Ume table-styles (~1.4k).
 
+## Wave-65 progress
+
+- Identified Binding1827 contiguous cluster as Codex Sheet / worksheet API (NOT vendor): GYe…gXe helpers + Binding1826/aXe auto-heights + `_Xe` FreezePanes + Binding1828/`SXe` Sheet class + `yXe` null-sheet + `bXe`/`xXe` cell VOs (~2.8k LOC).
+- Extracted → `workbook/sheet/` (prototype installers split under flat limit; private fields demoted to public `_x` for cross-file methods).
+- Left `BYe` canvas paint, compose DSL Binding1490–1528, Google Slides `pJe`/`SJe`, Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 106544 (was 109187; Δ −2,643).
+- Next: `BYe` canvas paint (~2.4k) / compose DSL Binding1490–1528 / Google Slides `pJe`/`SJe` / earlier mermaid helpers Binding1615–1685 / Ume table-styles (~1.4k).
+

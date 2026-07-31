@@ -1,0 +1,33 @@
+// Restored from ref/webview/assets/workbook-C49Dgk1_.js
+// Stage-3 wave-65: Sheet helpers barrel.
+
+export {
+  GYe,
+  parseSheetColWidth,
+  ensureSheetAutoHeightInit,
+  qYe,
+  JYe,
+  YYe,
+  XYe,
+  ZYe,
+  QYe,
+  $Ye,
+  eXe,
+  tXe,
+  nXe,
+  ensureAutoHeightCacheInit,
+  clampNonNegInt,
+  aXe,
+  oXe,
+  sXe,
+  cXe,
+  lXe,
+  uXe,
+  dXe,
+  fXe,
+  pXe,
+  mXe,
+  hXe,
+  gXe,
+  asFiniteNumber,
+} from "./sheet-helpers-impl";
