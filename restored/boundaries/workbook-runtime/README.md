@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~189.6k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~188.9k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -44,6 +44,7 @@
 | Path-geometry polyline / rect-edge helpers | ~15.7k (post-bde) | **Drained (wave-38)** → `workbook/path-geometry/` |
 | Image-source VO / payload normalize | ~15.7k (post-Mde) | **Drained (wave-39)** → `workbook/image-source/` |
 | Image element VO (Binding660) | ~15.7k (post-source) | **Drained (wave-40)** → `workbook/image-element/` |
+| Thread/chart/CF mutation builders (Yde…helper319) | ~15.7k (post-image) | **Drained (wave-41)** → `workbook/mutation-ops/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -441,6 +442,19 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 189598.
-- Next: pivot Binding335/336/338 + Class53 if cleanly separable, or scan post-Yde thread/chart VO helpers; continue scanning for stock vendor fingerprints.
+- Next: ~~post-Yde thread/chart/CF mutation builders~~ (done wave-41); sparkline Sfe+ / data-validation Efe+, or pivot Binding335/336/338 + Class53 if cleanly separable.
+
+
+## Wave-41 progress
+
+- Extracted thread mutation builders (`Yde`/`Xde`/`Zde`) → `workbook/mutation-ops/`.
+- Extracted chart.add/set builders (`Qde`/`$de`/`efe`…`helper314`) → `workbook/mutation-ops/`.
+- Extracted conditionalformat.add + fill/color serializers (`pfe`/`mfe`…`helper319`) → `workbook/mutation-ops/`.
+- Left sparkline (`Sfe`+) + data-validation (`Efe`+) in boundary; re-exported `workbookHelper319` for sparkline color peels.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and pivot enums `Binding335`/`336`/`338` in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 188864.
+- Next: sparkline `Sfe`+ / data-validation `Efe`+ (peel if helper333 settles), or pivot Binding335/336/338 + Class53 if cleanly separable; continue scanning for stock vendor fingerprints.
 
 
