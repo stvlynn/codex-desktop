@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~78.4k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~77.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -80,6 +80,7 @@
 | Constraint solver (`bDe` / Binding1364–1368) | ~0.76k | **Drained (wave-82)** → `workbook/constraint-solver/` |
 | Constraint solver prelude (Binding1350–1363) | ~0.39k | **Drained (wave-83)** → `workbook/constraint-solver/` |
 | Formula opcodes (`Z_t`/`X_t`) | ~0.50k | **Drained (wave-83)** → `workbook/formula-opcodes/` |
+| Table element (`_workbookH`/`eDe`…`cDe`/`_workbookM`) | ~0.72k | **Drained (wave-84)** → `workbook/table-element/` |
 
 ## Why it stays in `boundaries/`
 
@@ -941,4 +942,15 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 78381 (was 79255; Δ -874).
 - Next: `_workbookH`+eDe..cDe table-element (~0.7k) / `$dt` formula registry (~0.57k) / clean `xLe` walnut / leave-behinds only if consumers clean.
+
+## Wave-84 progress
+
+- Identified contiguous eDe…cDe + `_workbookH`/`_workbookM` cluster as Codex presentation Table element VO (NOT vendor): style-id resolve, cell-margin/column-track helpers, preview trim, Table class (~719 LOC).
+- Extracted → `workbook/table-element/` (single impl under flat limit; YEe/Binding1321/QEe/`$Ee`/Binding1330 remain in boundary via `teH` hooks; slide-element / fill / geometry-transform / stable-id imported directly; intentional `workbookEt` ensure dropped — `of`/`workbookTt` from geometry-transform).
+- Compose-dsl `ensureWorkbookH` hook cleared → direct `ensureTableElementInit` import.
+- Left `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, `_Ye`/`_workbookS` (~1.2k leave), YEe…Binding1330 table support (~0.6k), `$dt` formula registry (~0.57k), `Z$` (~460), and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 77713 (was 78381; Δ -668).
+- Next: YEe…`$Ee` table row/range/columns/borders (~0.58k) / `$dt` formula registry (~0.57k) / clean `xLe` walnut / `Z$` (~460) / leave-behinds only if consumers clean.
 

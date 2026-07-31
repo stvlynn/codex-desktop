@@ -2,7 +2,7 @@
 // Flat boundary facade — vendored oversized workbook runtime module.
 // Intentional oversized vendor-runtime terminal (openBoundary).
 // Not stock npm (Codex popcorn workbook engine). Exit: Stage-3 split into workbook/.
-// Stage-3 waves: shape-geometry; theme-color; presentation-theme (Mae/Sle); fill; stylesheet; line; color-resolve; text-style; placeholder-style + font-metrics; style-resolve + glyph-advance; math-plain-text; math-ml; font-stack; math-layout; document-style/effects; placeholder-resolve; text-layout; canvas-fill; fill-resolve; text-canvas; text-box; design-tokens; ssf-npm; jstat+bessel-npm; yjs-npm; three-npm; highlightjs-npm; zod-npm; presentation-recipes; compose-layout; workbook-core; worksheet-drawings; drawing-layout+sparklines; mermaid-slide-adapters; decimal-npm; canvas-paint (BYe); chart-elements (The/Ohe…ige); formula-stats (Binding1831/1874); mermaid-slide-helpers (Binding1592/SAe…QAe); table-styles (Nme/Ume/ahe); google-slides-adapter (oJe/pJe/SJe); compose-dsl (Binding1490–1528); graphlib+dagre-npm (Binding1671/wNe); image-connector (Binding723–735); chart-asset (She/Che…Binding721); table-vo (fhe/yhe/xhe); charts-collection (CEe/REe/Binding1299/workbookC); mermaid-flowchart ($Ne/Binding1675/OPe/Binding1685/NPe/PPe); deck-kinds (wRe/qRe/Binding1738–1748); shape-element (Binding736/739); slides-collection (_workbookY/_workbookV); constraint-solver (bDe/Binding1364+prelude1350–1363); formula-opcodes (Z_t/X_t).
+// Stage-3 waves: shape-geometry; theme-color; presentation-theme (Mae/Sle); fill; stylesheet; line; color-resolve; text-style; placeholder-style + font-metrics; style-resolve + glyph-advance; math-plain-text; math-ml; font-stack; math-layout; document-style/effects; placeholder-resolve; text-layout; canvas-fill; fill-resolve; text-canvas; text-box; design-tokens; ssf-npm; jstat+bessel-npm; yjs-npm; three-npm; highlightjs-npm; zod-npm; presentation-recipes; compose-layout; workbook-core; worksheet-drawings; drawing-layout+sparklines; mermaid-slide-adapters; decimal-npm; canvas-paint (BYe); chart-elements (The/Ohe…ige); formula-stats (Binding1831/1874); mermaid-slide-helpers (Binding1592/SAe…QAe); table-styles (Nme/Ume/ahe); google-slides-adapter (oJe/pJe/SJe); compose-dsl (Binding1490–1528); graphlib+dagre-npm (Binding1671/wNe); image-connector (Binding723–735); chart-asset (She/Che…Binding721); table-vo (fhe/yhe/xhe); charts-collection (CEe/REe/Binding1299/workbookC); mermaid-flowchart ($Ne/Binding1675/OPe/Binding1685/NPe/PPe); deck-kinds (wRe/qRe/Binding1738–1748); shape-element (Binding736/739); slides-collection (_workbookY/_workbookV); constraint-solver (bDe/Binding1364+prelude1350–1363); formula-opcodes (Z_t/X_t); table-element (_workbookH/eDe…cDe/_workbookM).
 // Stage-3 wave-6: Line Binding431 stroke VO + dash/compound maps → workbook/line/.
 // Stage-3 wave-7: color-resolve helpers (Sae/Cae/wae/Tae/workbookSt) → workbook/color-resolve/.
 // Stage-3 wave-8: TextStyle VO (workbookVt) + alignment/autofit/caps → workbook/text-style/.
@@ -1616,6 +1616,60 @@ import {
 } from "../../workbook/formula-opcodes";
 
 var ensureFormulaOpcodesCluster = ensureFormulaOpcodesInit;
+import {
+  ensureTableElementInit,
+  wireTableElementBoundaryHooks,
+  _workbookH,
+  _workbookM,
+  workbookBinding1331,
+  workbookBinding1332,
+  workbookBinding1333,
+  eDe,
+  tDe,
+  nDe,
+  rDe,
+  iDe,
+  aDe,
+  oDe,
+  sDe,
+  cDe,
+} from "../../workbook/table-element";
+
+var ensureTableElementCluster = ensureTableElementInit;
+
+wireTableElementBoundaryHooks({
+  ensureYEe: () => {
+    YEe();
+  },
+  ensureBinding1321: () => {
+    workbookBinding1321();
+  },
+  ensureQEe: () => {
+    QEe();
+  },
+  ensureDollarEe: () => {
+    $Ee();
+  },
+  ensureBinding1330: () => {
+    workbookBinding1330();
+  },
+  get Binding1316() {
+    return workbookBinding1316;
+  },
+  get Binding1317() {
+    return workbookBinding1317;
+  },
+  get Binding1323() {
+    return workbookBinding1323;
+  },
+  get Binding1324() {
+    return workbookBinding1324;
+  },
+  get Binding1327() {
+    return workbookBinding1327;
+  },
+});
+
 void Z_t;
 
 import {
@@ -2101,9 +2155,6 @@ wireComposeDslBoundaryHooks({
   },
   ensureBinding1489: () => {
     workbookBinding1489();
-  },
-  ensureWorkbookH: () => {
-    _workbookH();
   },
   ensureBinding433: () => {
     workbookBinding433();
@@ -32383,726 +32434,7 @@ var workbookBinding1317,
       return workbookInput10148;
     };
   });
-function eDe(workbookInput10186) {
-  if (!workbookInput10186) return;
-  let workbookBinding20645 = workbookInput10186.trim();
-  if (!workbookBinding20645) return;
-  if (workbookBinding1333.test(workbookBinding20645))
-    return workbookBinding20645;
-  let workbookBinding20646 = tDe(workbookBinding20645);
-  return workbookBinding1332[workbookBinding20646];
-}
-function tDe(workbookInput10694) {
-  return workbookInput10694
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, " ")
-    .replace(/\s*-\s*/g, " - ");
-}
-function nDe(workbookInput4781) {
-  if (
-    workbookInput4781 &&
-    !(
-      workbookInput4781.left === undefined &&
-      workbookInput4781.right === undefined &&
-      workbookInput4781.top === undefined &&
-      workbookInput4781.bottom === undefined
-    )
-  )
-    return {
-      left:
-        workbookInput4781.left === undefined
-          ? undefined
-          : of(workbookInput4781.left),
-      right:
-        workbookInput4781.right === undefined
-          ? undefined
-          : of(workbookInput4781.right),
-      top:
-        workbookInput4781.top === undefined
-          ? undefined
-          : of(workbookInput4781.top),
-      bottom:
-        workbookInput4781.bottom === undefined
-          ? undefined
-          : of(workbookInput4781.bottom),
-    };
-}
-function rDe(workbookInput4782) {
-  if (
-    workbookInput4782 &&
-    !(
-      workbookInput4782.left === undefined &&
-      workbookInput4782.right === undefined &&
-      workbookInput4782.top === undefined &&
-      workbookInput4782.bottom === undefined
-    )
-  )
-    return {
-      left:
-        workbookInput4782.left === undefined
-          ? undefined
-          : workbookTt(workbookInput4782.left),
-      right:
-        workbookInput4782.right === undefined
-          ? undefined
-          : workbookTt(workbookInput4782.right),
-      top:
-        workbookInput4782.top === undefined
-          ? undefined
-          : workbookTt(workbookInput4782.top),
-      bottom:
-        workbookInput4782.bottom === undefined
-          ? undefined
-          : workbookTt(workbookInput4782.bottom),
-    };
-}
-function iDe(workbookInput6226, workbookInput6227) {
-  if (!Array.isArray(workbookInput6226) || workbookInput6226.length === 0)
-    throw Error(`${workbookInput6227} must include at least one column track.`);
-  return workbookInput6226.map((item, index) => {
-    let workbookBinding20510 = workbookBinding1327(
-      item,
-      `${workbookInput6227}[${index}]`,
-    );
-    if (workbookBinding20510 === "auto")
-      throw Error(
-        `${workbookInput6227}[${index}] must be fr(...) or fixed(...).`,
-      );
-    return workbookBinding20510;
-  });
-}
-function aDe(workbookInput13684) {
-  return {
-    mode: workbookInput13684.mode,
-    value: workbookInput13684.value,
-  };
-}
-function oDe(workbookInput5339, workbookInput5340) {
-  let workbookBinding15022 = workbookInput5339.reduce(
-      (accumulator, current) =>
-        accumulator + (current.mode === "fixed" ? current.value : 0),
-      0,
-    ),
-    workbookBinding15023 = workbookInput5339.reduce(
-      (accumulator, current) =>
-        accumulator + (current.mode === "fr" ? current.value : 0),
-      0,
-    ),
-    workbookBinding15024 = Math.max(
-      0,
-      workbookInput5340 - workbookBinding15022,
-    ),
-    workbookBinding15025 =
-      workbookBinding15023 > 0
-        ? workbookBinding15024 / workbookBinding15023
-        : 0;
-  return workbookInput5339.map((item) => {
-    let workbookBinding21330 =
-      item.mode === "fixed" ? item.value : workbookBinding15025 * item.value;
-    return Number.isFinite(workbookBinding21330) && workbookBinding21330 > 0
-      ? workbookBinding21330
-      : 1;
-  });
-}
-function sDe(workbookInput15121, workbookInput15122, workbookInput15123) {
-  return workbookHelper302(
-    workbookInput15121,
-    workbookInput15122,
-    workbookInput15123,
-  );
-}
-function cDe(workbookInput4389, workbookInput4390 = 140) {
-  if (!workbookInput4389.length) return;
-  let workbookBinding13548 =
-    workbookInput4389.find((item) =>
-      item.cells.some((_item) => _item.value.trim().length > 0),
-    ) ?? workbookInput4389[0];
-  if (!workbookBinding13548) return;
-  let workbookBinding13549 = workbookBinding13548.cells
-    .map((item) => item.value)
-    .map((item) => item.replace(/\r?\n/g, " ").trim())
-    .filter((item) => item.length > 0);
-  if (workbookBinding13549.length === 0) return;
-  let workbookBinding13550 = workbookBinding13549.join(" | ");
-  if (workbookBinding13550.length <= workbookInput4390)
-    return workbookBinding13550;
-  let workbookBinding13551 = Math.max(1, workbookInput4390 - 3);
-  return `${workbookBinding13550.slice(0, workbookBinding13551)}...`;
-}
-var workbookBinding1331,
-  _workbookM,
-  workbookBinding1332,
-  workbookBinding1333,
-  _workbookH = esmInit(() => {
-    Qt();
-    workbookB();
-    YEe();
-    workbookEt();
-    workbookWt();
-    workbookBinding1321();
-    QEe();
-    $Ee();
-    workbookBinding647();
-    workbookBinding1330();
-    workbookBinding1331 = class {
-      #e;
-      constructor(workbookInput14900) {
-        this.#e = workbookInput14900;
-      }
-      get(workbookInput13732, workbookInput13733) {
-        return this.#e.getCell(workbookInput13732, workbookInput13733);
-      }
-      set(workbookInput13413, workbookInput13414, workbookInput13415) {
-        this.#e.setCellValue(
-          workbookInput13413,
-          workbookInput13414,
-          workbookInput13415,
-        );
-      }
-      block(workbookInput14164) {
-        return new workbookBinding1317(this.#e, workbookInput14164);
-      }
-    };
-    _workbookM = class extends _workbookZ {
-      type = "table";
-      #e;
-      #t;
-      #n;
-      #r;
-      #i;
-      #a;
-      #o;
-      #s;
-      #c;
-      #l;
-      #u;
-      #d;
-      #f;
-      #p;
-      #m;
-      #h;
-      #g;
-      #_;
-      #v;
-      #y;
-      #b;
-      #x;
-      constructor(workbookInput1296, workbookInput1297) {
-        let workbookBinding6984 = workbookInput1297?.table;
-        super(workbookInput1296, workbookInput1297 ?? {});
-        let workbookBinding6985 = (workbookBinding6984?.columnWidths ?? []).map(
-          (item) => (Number.isFinite(item) && item > 0 ? of(item) : 0),
-        );
-        this.#t = workbookBinding6985.some((item) => item > 0);
-        this.#e = this.#t ? workbookBinding6985 : [];
-        let workbookBinding6986 = workbookBinding6984?.rows ?? [];
-        this.#r = workbookBinding6986.map(
-          (item) => new workbookBinding1316(item, workbookInput1296),
-        );
-        this.#i = workbookBinding6986.some(
-          (item) => item.heightEmu === undefined || item.heightEmu <= 0,
-        );
-        let workbookBinding6987 = workbookBinding6984?.properties;
-        this.#c = workbookBinding6987?.styleId;
-        this.#l = workbookBinding6987?.styleId;
-        this.#u = new workbookCt({
-          type: "proto",
-          proto: workbookBinding6987?.fill,
-        });
-        this.#d = workbookBinding6987?.rightToLeft;
-        this.#h = workbookBinding6987?.firstRow;
-        this.#g = workbookBinding6987?.lastRow;
-        this.#_ = workbookBinding6987?.firstColumn;
-        this.#v = workbookBinding6987?.lastColumn;
-        this.#y = workbookBinding6987?.bandedRows;
-        this.#b = workbookBinding6987?.bandedColumns;
-        this.#x = workbookBinding6987?.keepTogether;
-        this.#f =
-          workbookBinding6987?.effects?.map((workbookInput16440) => ({
-            ...workbookInput16440,
-          })) ?? [];
-        this.#p = workbookBinding6987?.styleXml;
-        this.#m = nDe(workbookBinding6987?.cellMargins);
-        this.data.type = j.ELEMENT_TYPE_TABLE;
-      }
-      get id() {
-        return this.data.id;
-      }
-      toSnapshot() {
-        let workbookBinding14392 = this.slideId,
-          workbookBinding14393 = this.id;
-        return {
-          aid: sDe("tb", workbookBinding14392, workbookBinding14393),
-          kind: "table",
-          id: workbookBinding14393,
-          slideId: workbookBinding14392,
-          name: this.name,
-          rows: this.rowCount,
-          cols: this.columnCount,
-          preview: cDe(this.#r),
-          frame: this.frame,
-        };
-      }
-      get cells() {
-        return ((this.#a ||= new workbookBinding1331(this)), this.#a);
-      }
-      get columns() {
-        return ((this.#o ||= new workbookBinding1323(this)), this.#o);
-      }
-      get borders() {
-        return ((this.#s ||= new workbookBinding1324(this)), this.#s);
-      }
-      set borders(workbookInput13784) {
-        this.borders.assign(workbookInput13784);
-      }
-      get rows() {
-        return [...this.#r];
-      }
-      get rowCount() {
-        return this.#r.length;
-      }
-      get columnCount() {
-        return this.#n && this.#n.length > 0
-          ? this.#n.length
-          : this.#e.length > 0
-            ? this.#e.length
-            : this.#r.reduce(
-                (accumulator, current) =>
-                  Math.max(accumulator, current.cells.length),
-                0,
-              );
-      }
-      get columnWidths() {
-        return this.#n ? this.#C() : [...this.#e];
-      }
-      get hasExplicitColumnWidths() {
-        return this.#t;
-      }
-      set columnWidths(workbookInput6231) {
-        if (
-          ((this.#n = undefined),
-          !Array.isArray(workbookInput6231) || workbookInput6231.length === 0)
-        ) {
-          this.#e = [];
-          this.#t = false;
-          return;
-        }
-        this.#e = workbookInput6231.map((item) =>
-          Number.isFinite(item) && item > 0 ? item : 1,
-        );
-        this.#t = true;
-      }
-      get columnTracks() {
-        return this.#n ? this.#n.map(aDe) : undefined;
-      }
-      set columnTracks(workbookInput4351) {
-        if (!workbookInput4351 || workbookInput4351.length === 0) {
-          this.#n = undefined;
-          return;
-        }
-        let workbookBinding13485 = iDe(workbookInput4351, "table.columnTracks"),
-          workbookBinding13486 = this.#r.reduce(
-            (accumulator, current) =>
-              Math.max(accumulator, current.cells.length),
-            0,
-          );
-        if (
-          workbookBinding13486 > 0 &&
-          workbookBinding13485.length !== workbookBinding13486
-        )
-          throw Error(
-            `Expected ${workbookBinding13486} column tracks, received ${workbookBinding13485.length}.`,
-          );
-        this.#n = workbookBinding13485;
-        this.#e = [];
-        this.#t = false;
-      }
-      get style() {
-        return this.#c;
-      }
-      set style(workbookInput10389) {
-        let workbookBinding20862 = workbookInput10389?.trim();
-        this.#c =
-          workbookBinding20862 && workbookBinding20862.length > 0
-            ? workbookBinding20862
-            : undefined;
-        this.#l = this.#c;
-      }
-      get styleId() {
-        return this.#l;
-      }
-      set styleId(workbookInput10329) {
-        let workbookBinding20796 = workbookInput10329?.trim();
-        this.#l =
-          workbookBinding20796 && workbookBinding20796.length > 0
-            ? workbookBinding20796
-            : undefined;
-        this.#c = this.#l;
-      }
-      get styleOptions() {
-        return {
-          headerRow: this.#h,
-          totalRow: this.#g,
-          firstColumn: this.#_,
-          lastColumn: this.#v,
-          bandedRows: this.#y,
-          bandedColumns: this.#b,
-        };
-      }
-      set styleOptions(workbookInput2745) {
-        if (!workbookInput2745) {
-          this.#h = undefined;
-          this.#g = undefined;
-          this.#_ = undefined;
-          this.#v = undefined;
-          this.#y = undefined;
-          this.#b = undefined;
-          return;
-        }
-        workbookInput2745.headerRow !== undefined &&
-          (this.#h = workbookInput2745.headerRow);
-        workbookInput2745.totalRow !== undefined &&
-          (this.#g = workbookInput2745.totalRow);
-        workbookInput2745.firstColumn !== undefined &&
-          (this.#_ = workbookInput2745.firstColumn);
-        workbookInput2745.lastColumn !== undefined &&
-          (this.#v = workbookInput2745.lastColumn);
-        workbookInput2745.bandedRows !== undefined &&
-          (this.#y = workbookInput2745.bandedRows);
-        workbookInput2745.bandedColumns !== undefined &&
-          (this.#b = workbookInput2745.bandedColumns);
-      }
-      get fill() {
-        return this.#u;
-      }
-      set fill(workbookInput7514) {
-        if (workbookInput7514 instanceof workbookCt) {
-          let workbookBinding20571 = workbookInput7514.toProto();
-          this.#u = workbookBinding20571
-            ? new workbookCt({
-                type: "proto",
-                proto: workbookBinding20571,
-              })
-            : new workbookCt();
-          return;
-        }
-        this.#u = new workbookCt(workbookInput7514);
-      }
-      get rightToLeft() {
-        return this.#d;
-      }
-      set rightToLeft(workbookInput14543) {
-        this.#d = workbookInput14543;
-      }
-      get cellMargins() {
-        return this.#m
-          ? {
-              ...this.#m,
-            }
-          : undefined;
-      }
-      set cellMargins(workbookInput12890) {
-        this.#m = workbookInput12890
-          ? {
-              ...workbookInput12890,
-            }
-          : undefined;
-      }
-      get keepTogether() {
-        return this.#x;
-      }
-      set keepTogether(workbookInput14395) {
-        this.#x = workbookInput14395;
-      }
-      setColumnWidths(workbookInput7412) {
-        if (workbookInput7412.length !== this.columnCount)
-          throw Error(
-            `Expected ${this.columnCount} column widths, received ${workbookInput7412.length}.`,
-          );
-        this.columnWidths = workbookInput7412;
-      }
-      setColumnTracks(workbookInput7413) {
-        if (workbookInput7413.length !== this.columnCount)
-          throw Error(
-            `Expected ${this.columnCount} column tracks, received ${workbookInput7413.length}.`,
-          );
-        this.columnTracks = workbookInput7413;
-      }
-      setValues(workbookInput5621) {
-        let workbookBinding15467 = workbookInput5621.length,
-          workbookBinding15468 = workbookInput5621.reduce(
-            (accumulator, current) => Math.max(accumulator, current.length),
-            0,
-          );
-        this.#E(workbookBinding15467, workbookBinding15468);
-        workbookInput5621.forEach((item, index) => {
-          item.forEach((_item, _index) => {
-            let workbookBinding21471 = this.#r[index]?.getCell(_index);
-            workbookBinding21471 && (workbookBinding21471.value = _item);
-          });
-        });
-      }
-      setCellValue(workbookInput11644, workbookInput11645, workbookInput11646) {
-        let workbookBinding22026 = this.getCell(
-          workbookInput11644,
-          workbookInput11645,
-        );
-        workbookBinding22026.value = workbookInput11646;
-      }
-      getCell(workbookInput5011, workbookInput5012) {
-        if (workbookInput5011 < 0 || workbookInput5012 < 0)
-          throw Error("Table addresses must be non-negative.");
-        let workbookBinding14451 = this.#r[workbookInput5011];
-        if (!workbookBinding14451)
-          throw Error(
-            `Row ${workbookInput5011} is outside the current table bounds.`,
-          );
-        let workbookBinding14452 =
-          workbookBinding14451.getCell(workbookInput5012);
-        if (!workbookBinding14452)
-          throw Error(
-            `Column ${workbookInput5012} is outside the current table bounds.`,
-          );
-        return workbookBinding14452;
-      }
-      getCellById(workbookInput8823) {
-        if (workbookInput8823)
-          for (let workbookBinding21066 of this.#r) {
-            let workbookBinding21794 = workbookBinding21066.cells.find(
-              (item) => item.id === workbookInput8823,
-            );
-            if (workbookBinding21794) return workbookBinding21794;
-          }
-      }
-      merge(workbookInput1406) {
-        let { startRow, endRow, startColumn, endColumn } = workbookInput1406;
-        if (
-          startRow < 0 ||
-          startColumn < 0 ||
-          endRow < startRow ||
-          endColumn < startColumn
-        )
-          throw Error("Invalid merge coordinates supplied.");
-        let workbookBinding7229 = this.rowCount - 1,
-          workbookBinding7230 = this.columnCount - 1;
-        if (
-          startRow > workbookBinding7229 ||
-          endRow > workbookBinding7229 ||
-          startColumn > workbookBinding7230 ||
-          endColumn > workbookBinding7230
-        )
-          throw Error("Merge range exceeds current table bounds.");
-        let workbookBinding7231 = endRow - startRow + 1,
-          workbookBinding7232 = endColumn - startColumn + 1;
-        for (
-          let workbookBinding10636 = startRow;
-          workbookBinding10636 <= endRow;
-          workbookBinding10636 += 1
-        )
-          for (
-            let workbookBinding11041 = startColumn;
-            workbookBinding11041 <= endColumn;
-            workbookBinding11041 += 1
-          ) {
-            let workbookBinding11385 =
-              this.#r[workbookBinding10636]?.getCell(workbookBinding11041);
-            if (!workbookBinding11385) continue;
-            let workbookBinding11386 = workbookBinding10636 === startRow,
-              workbookBinding11387 = workbookBinding11041 === startColumn;
-            workbookBinding11386 && workbookBinding11387
-              ? ((workbookBinding11385.gridSpan =
-                  workbookBinding7232 > 1 ? workbookBinding7232 : undefined),
-                (workbookBinding11385.rowSpan =
-                  workbookBinding7231 > 1 ? workbookBinding7231 : undefined),
-                (workbookBinding11385.horizontalMerge = undefined),
-                (workbookBinding11385.verticalMerge = undefined))
-              : ((workbookBinding11385.gridSpan = undefined),
-                (workbookBinding11385.rowSpan = undefined),
-                (workbookBinding11385.horizontalMerge =
-                  workbookBinding7232 > 1 ? !workbookBinding11387 : undefined),
-                (workbookBinding11385.verticalMerge =
-                  workbookBinding7231 > 1 ? !workbookBinding11386 : undefined));
-          }
-      }
-      toProto() {
-        let workbookBinding12371 = super.toProto();
-        workbookBinding12371.type = this.data.type;
-        let workbookBinding12372 = this.#C(),
-          workbookBinding12373 = this.#T(),
-          workbookBinding12374 = this.#S();
-        return (
-          (workbookBinding12371.table = {
-            columnWidths: workbookBinding12372.map((item) => workbookTt(item)),
-            rows: this.#r.map((item, index) => {
-              let workbookBinding20929 = item.toProto();
-              return (
-                workbookBinding12373 &&
-                  (workbookBinding20929.heightEmu = workbookTt(
-                    workbookBinding12373[index] ?? 0,
-                  )),
-                workbookBinding20929
-              );
-            }),
-            properties: workbookBinding12374,
-          }),
-          workbookBinding12371
-        );
-      }
-      #S() {
-        let workbookBinding7634 = this.#u?.toProto(),
-          workbookBinding7635 = this.context.getPresentation
-            ? eDe(this.#c)
-            : this.#l,
-          workbookBinding7636 =
-            this.#h !== undefined ||
-            this.#g !== undefined ||
-            this.#_ !== undefined ||
-            this.#v !== undefined ||
-            this.#y !== undefined ||
-            this.#b !== undefined ||
-            this.#x !== undefined,
-          workbookBinding7637 = this.#f.length > 0,
-          workbookBinding7638 = this.#p !== undefined,
-          workbookBinding7639 = this.#d !== undefined,
-          workbookBinding7640 = rDe(this.#m);
-        if (
-          !(
-            !workbookBinding7634 &&
-            !workbookBinding7635 &&
-            !workbookBinding7636 &&
-            !workbookBinding7637 &&
-            !workbookBinding7638 &&
-            !workbookBinding7639 &&
-            !workbookBinding7640
-          )
-        )
-          return {
-            fill: workbookBinding7634,
-            rightToLeft: this.#d,
-            firstRow: this.#h,
-            lastRow: this.#g,
-            firstColumn: this.#_,
-            lastColumn: this.#v,
-            bandedRows: this.#y,
-            bandedColumns: this.#b,
-            styleId: workbookBinding7635,
-            effects: this.#f ?? [],
-            styleXml: this.#p,
-            cellMargins: workbookBinding7640,
-            keepTogether: this.#x,
-          };
-      }
-      #C() {
-        let workbookBinding9577 = this.columnCount;
-        if (workbookBinding9577 <= 0) return [];
-        if (this.#n) {
-          let workbookBinding18753 = this.#w();
-          return workbookBinding18753 &&
-            Number.isFinite(workbookBinding18753) &&
-            workbookBinding18753 > 0
-            ? oDe(this.#n, workbookBinding18753)
-            : this.#n.map((item) => (item.mode === "fixed" ? item.value : 1));
-        }
-        if (this.#t) {
-          let workbookBinding17453 = this.#e.map((item) =>
-            Number.isFinite(item) && item > 0 ? item : 1,
-          );
-          if (workbookBinding17453.length >= workbookBinding9577)
-            return workbookBinding17453.slice(0, workbookBinding9577);
-          let workbookBinding17454 =
-            workbookBinding17453[workbookBinding17453.length - 1] ?? 1;
-          return workbookBinding17453.concat(
-            Array(workbookBinding9577 - workbookBinding17453.length).fill(
-              workbookBinding17454,
-            ),
-          );
-        }
-        let workbookBinding9578 = this.#w();
-        if (
-          workbookBinding9578 &&
-          Number.isFinite(workbookBinding9578) &&
-          workbookBinding9578 > 0
-        ) {
-          let workbookBinding22461 = workbookBinding9578 / workbookBinding9577;
-          return Array(workbookBinding9577).fill(workbookBinding22461);
-        }
-        return Array(workbookBinding9577).fill(1);
-      }
-      #w() {
-        let workbookBinding19135 = this.position.toProto();
-        return (
-          this.frame?.width ??
-          (workbookBinding19135?.widthEmu === undefined
-            ? undefined
-            : of(workbookBinding19135.widthEmu))
-        );
-      }
-      #T() {
-        let workbookBinding13181 = this.rowCount;
-        if (
-          workbookBinding13181 <= 0 ||
-          this.#i ||
-          this.#r.some((item) => item.height > 0)
-        )
-          return;
-        let workbookBinding13182 = this.position.toProto(),
-          workbookBinding13183 =
-            this.frame?.height ??
-            (workbookBinding13182?.heightEmu === undefined
-              ? undefined
-              : of(workbookBinding13182.heightEmu));
-        if (
-          !workbookBinding13183 ||
-          !Number.isFinite(workbookBinding13183) ||
-          workbookBinding13183 <= 0
-        )
-          return;
-        let workbookBinding13184 = workbookBinding13183 / workbookBinding13181;
-        if (
-          !(!Number.isFinite(workbookBinding13184) || workbookBinding13184 <= 0)
-        )
-          return Array(workbookBinding13181).fill(workbookBinding13184);
-      }
-      #E(workbookInput2041, workbookInput2042) {
-        if (workbookInput2041 < 0 || workbookInput2042 < 0)
-          throw Error("Table dimensions must be non-negative.");
-        let workbookBinding8901 = Math.floor(workbookInput2041),
-          workbookBinding8902 = Math.floor(workbookInput2042);
-        if (this.#n && this.#n.length !== workbookBinding8902)
-          throw Error(
-            `Expected ${this.#n.length} value columns for existing column tracks, received ${workbookBinding8902}.`,
-          );
-        for (; this.#r.length < workbookBinding8901; ) {
-          let workbookBinding21331 = new workbookBinding1316(
-            undefined,
-            this.context,
-          );
-          workbookBinding21331.ensureCellCount(workbookBinding8902);
-          this.#r.push(workbookBinding21331);
-        }
-        this.#r.length > workbookBinding8901 &&
-          this.#r.splice(workbookBinding8901);
-        for (let workbookBinding22976 of this.#r)
-          workbookBinding22976.ensureCellCount(workbookBinding8902);
-        workbookBinding8902 <= 0
-          ? (this.#e = [])
-          : this.#e.length < workbookBinding8902
-            ? this.#e.push(
-                ...Array(workbookBinding8902 - this.#e.length).fill(1),
-              )
-            : this.#e.length > workbookBinding8902 &&
-              (this.#e = this.#e.slice(0, workbookBinding8902));
-      }
-    };
-    workbookBinding1332 = {
-      tablestylemedium2: "{5C22544A-7EE6-4342-B048-85BDC9FD1C3A}",
-      "medium style 2 - accent 1": "{5C22544A-7EE6-4342-B048-85BDC9FD1C3A}",
-    };
-    workbookBinding1333 =
-      /^\{[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\}$/i;
-  }),
-  _workbookF,
+var _workbookF,
   _workbookP = esmInit(() => {
     _workbookH();
     _workbookF = class {

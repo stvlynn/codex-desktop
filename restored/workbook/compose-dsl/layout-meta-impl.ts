@@ -16,6 +16,7 @@ import { ensureTextBoxClusterInit } from "../text-box";
 import { ensureGeometryTransformDepsInit } from "../geometry-transform";
 import { ensureFontMetricsInit } from "../font-metrics";
 import { cdslH } from "./boundary-hooks";
+import { ensureTableElementInit } from "../table-element";
 import {
   workbookBinding1490,
   workbookBinding1491,
@@ -80,7 +81,7 @@ export const ensureComposeLayoutMetaInit = esmInit(() => {
   ensurePlaceholderResolveDepsInit();
   cdslH.ensureBinding739();
   cdslH.ensureBinding1489();
-  cdslH.ensureWorkbookH();
+  ensureTableElementInit();
   cdslH.ensureBinding433();
   ensureChartProtoNameMapsInit();
   cdslH.ensureBinding1213();

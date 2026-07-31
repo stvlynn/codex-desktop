@@ -8,8 +8,6 @@ export type ComposeDslBoundaryHooks = {
   ensureBinding739: () => void;
   /** Thin compose apply prelude (legacy Binding1489 → workbookOt). */
   ensureBinding1489: () => void;
-  /** Legacy _workbookH ensure. */
-  ensureWorkbookH: () => void;
   /** No-op / late boundary ensure (legacy Binding433). */
   ensureBinding433: () => void;
   /** Legacy Binding1213 ensure. */
@@ -29,7 +27,6 @@ export function wireComposeDslBoundaryHooks(
   cdslH.ensureBinding661 = next.ensureBinding661;
   cdslH.ensureBinding739 = next.ensureBinding739;
   cdslH.ensureBinding1489 = next.ensureBinding1489;
-  cdslH.ensureWorkbookH = next.ensureWorkbookH;
   cdslH.ensureBinding433 = next.ensureBinding433;
   cdslH.ensureBinding1213 = next.ensureBinding1213;
   cdslH.ensureBinding1330 = next.ensureBinding1330;
