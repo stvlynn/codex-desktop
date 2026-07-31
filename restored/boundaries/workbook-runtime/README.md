@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~58.5k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~57.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -132,6 +132,13 @@
 | Chart surface map (`Kye`) | ~0.14k | **Drained (wave-100)** → `workbook/chart-surface-map/` |
 | Compose inline text (`NOe`) | ~0.14k | **Drained (wave-100)** → `workbook/compose-inline-text/` |
 | Chart waterfall bar (`dCe`) | ~0.13k | **Drained (wave-100)** → `workbook/chart-waterfall-bar/` |
+| Chart pie series (`helper496`) | ~0.13k | **Drained (wave-101)** → `workbook/chart-pie-series/` |
+| Chart bubble series (`aCe`) | ~0.12k | **Drained (wave-101)** → `workbook/chart-bubble-series/` |
+| Sparkline paint (`YCe`) | ~0.12k | **Drained (wave-101)** → `workbook/sparkline-paint/` |
+| Icon-set symbols (`helper594`) | ~0.14k | **Drained (wave-101)** → `workbook/icon-set-symbols/` |
+| Formula IRR (`F0e`) | ~0.14k | **Drained (wave-101)** → `workbook/formula-irr/` |
+| HTML paste (`wmt`) | ~0.13k | **Drained (wave-101)** → `workbook/html-paste/` |
+| Formula AST remap (`helper1022`) | ~0.12k | **Drained (wave-101)** → `workbook/formula-ast-remap/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1204,3 +1211,20 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on six modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 58451 (was 59132; Δ -681).
 - Next: `helper594`/`F0e`/`YCe`/`helper496` mids / `aCe` bubble / `Uft`/`Kht` when ensure-safe / leave-behinds when consumers clean.
+
+## Wave-101 progress
+
+- Re-scanned ≥110 after wave-100. **FALSE/ESM:** `ict`/`WEe`/`TIe`/`$nt`/`zwe`/`yEe`/`Oht`/`npt`/`gxe`/`Binding1150`/`_xe`. **LEAVE:** `rze`/`kht` / WorkbookN / `_workbookS` (esm bags still fan out; partial method peel still unsafe). **DEFER:** `Uft`/`Kht`.
+- Real mids: `helper594`/`F0e`/`YCe`/`helper496`/`helper1022`/`wmt` + bubble neighbor `aCe`.
+- Peeled `helper496` → `workbook/chart-pie-series/` (`cpsH`); chart-paint imports `paintPieSeries` (dropped `bh496`).
+- Peeled `aCe` → `workbook/chart-bubble-series/` (`cbsH`); chart-paint `paintMap` → `paintBubbleSeries` (misnamed for BUBBLE).
+- Peeled `YCe` → `workbook/sparkline-paint/` (`spkH` for XCe/ZCe + Binding1230–1235).
+- Peeled `helper594` → `workbook/icon-set-symbols/` (`icsH` symbol colors).
+- Peeled `F0e` → `workbook/formula-irr/` (`irrH`; Binding1835/1838 from formula-stats).
+- Peeled `wmt` → `workbook/html-paste/` (`htmH`; `formatA1` direct import).
+- Peeled `helper1022` → `workbook/formula-ast-remap/` (`farH.remapRangeRef` ← Bht).
+- Skipped leave-behinds / large esm / `Uft`/`Kht`.
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on seven modules + chart-paint + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 57711 (was 58451; Δ -740).
+- Next: mid neighbors (`fbe`/`helper576`/`helper555`/`RTe`/`Cbe`/`ewe`/`Alt`) / leave-behinds when `_workbookS`/WorkbookN ensure fan-out shrinks / clean `xLe`.

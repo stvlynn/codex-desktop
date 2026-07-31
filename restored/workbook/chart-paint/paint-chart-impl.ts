@@ -21,6 +21,8 @@ import { layoutLegendPlot } from "../chart-legend-plot";
 import { paintCategoryAxes } from "../chart-category-axes";
 import { paintScatterSeries } from "../chart-scatter-series";
 import { paintHistogramAxes } from "../chart-histogram-axes";
+import { paintPieSeries } from "../chart-pie-series";
+import { paintBubbleSeries } from "../chart-bubble-series";
 import { paintChartDataTable } from "../chart-data-table";
 import { paintScatterAxes } from "../chart-scatter-axes";
 import { paintChartTrendline } from "../chart-trendline";
@@ -526,7 +528,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
               cpIn32.restore();
               return;
             }
-            cpH.bh496(
+            paintPieSeries(
               cpIn32,
               cpIn33,
               cpBind2290,
@@ -553,7 +555,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         }
         case Cn.CHART_TYPE_PIE:
         case Cn.CHART_TYPE_DOUGHNUT:
-          cpH.bh496(
+          paintPieSeries(
             cpIn32,
             cpIn33,
             cpBind2290,
@@ -606,7 +608,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
             cpIn35.themeMap,
             cpIn34,
           );
-          cpH.paintMap(
+          paintBubbleSeries(
             cpIn32,
             cpIn33,
             cpBind15275,
