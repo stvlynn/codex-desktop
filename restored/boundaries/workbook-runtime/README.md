@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~222.6k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~220.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -23,6 +23,9 @@
 | TextStyle CSS / shadow parsers | ~14.9k–15.7k | **Drained (wave-9)** → `workbook/text-style/` |
 | Placeholder-style helpers (Vae/Uae/helper97+) | ~15.0k | **Drained (wave-10)** → `workbook/presentation-theme/` |
 | Font metrics + grapheme segmenter | ~15.3k–15.8k | **Drained (wave-10)** → `workbook/font-metrics/` |
+| Math LaTeX + plain-text | ~15.1k | **Drained (wave-12)** → `workbook/math-plain-text/` |
+| MathML codec | ~15.1k | **Drained (wave-13)** → `workbook/math-ml/` |
+| Font-stack / math-font / typography units | ~15.1k | **Drained (wave-14)** → `workbook/font-stack/` |
 | Worksheet / spreadsheet core | ~50k–72k, ~210k–230k | Range/table/drawing APIs |
 | Presentation + Mermaid hooks | ~142k–174k | Theme palettes drained → `workbook/presentation-theme/`; Mermaid/collab remain |
 | Formula / xlsx validation | ~177k–230k | Serial dates, workbook validation (`WorkbookN`) |
@@ -118,7 +121,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, and `ooe` geometry helper in boundary.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Next: ~~math-plain-text (Coe/helper121+)~~ (done wave-12); ~~MathML cluster (`helper127`+/Doe/Eoe)~~ (done wave-13); font-stack helpers (`helper147`+), or worksheet/spreadsheet core if a clean slice appears.
+- Next: ~~math-plain-text (Coe/helper121+)~~ (done wave-12); ~~MathML cluster (`helper127`+/Doe/Eoe)~~ (done wave-13); ~~font-stack helpers (`helper147`+)~~ (done wave-14); math-layout engine (`lse`/`use`/`helper154+`/`Hse`), or worksheet/spreadsheet core if a clean slice appears.
 
 ## Wave-12 progress
 
@@ -127,7 +130,7 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 221739.
-- Next: ~~MathML cluster (`helper127`+/Doe/Eoe)~~ (done wave-13); font-stack helpers (`helper147`+), or worksheet/spreadsheet core if a clean slice appears.
+- Next: ~~MathML cluster (`helper127`+/Doe/Eoe)~~ (done wave-13); ~~font-stack helpers (`helper147`+)~~ (done wave-14); math-layout engine (`lse`/`use`/`helper154+`/`Hse`), or worksheet/spreadsheet core if a clean slice appears.
 
 ## Wave-13 progress
 
@@ -136,4 +139,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 220444.
-- Next: font-stack / math-font helpers beside the drained locus (`helper147`+/Binding483+), or worksheet/spreadsheet core if a clean line-range slice appears.
+- Next: ~~font-stack / math-font helpers (`helper147`+/Binding483+)~~ (done wave-14); math-layout engine (`lse`/`use`/`helper154+`/`Hse`), or worksheet/spreadsheet core if a clean slice appears.
+
+## Wave-14 progress
+
+- Extracted CSS font-stack (`helper147`–`149`, `sse`, `Binding483`–`489`) + math-font names (`Binding490`–`494`) + TeX layout constants (`helper150`–`151` / `_h` / `cse`) + typography units (`helper152`–`153` / `_workbookDt` / `Binding495`–`496` / `workbookUt`) → `workbook/font-stack/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and math-layout engine (`lse`/`use`/`helper154+`/`Hse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 220320.
+- Next: math-layout engine beside the drained locus (`lse`/`use`/`helper154+`/`Hse`), or worksheet/spreadsheet core if a clean line-range slice appears.
