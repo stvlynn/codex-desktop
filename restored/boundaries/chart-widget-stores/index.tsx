@@ -4,9 +4,9 @@ import { createElement } from "react";
 // Intentional oversized vendor-runtime terminal (openBoundary).
 // Not a single stock npm package: composite Recharts + Redux Toolkit/Immer
 // plus Codex WidgetContext / widget-scope store / chart chrome / i18n.
-// Stage-3 wave-1..8: WidgetContext, widget-scope, chrome, i18n, Chart,
-// C/S/U/B/X/Box + Recharts aliases; Chart npm-migrated (wave-8).
-// → visualization/. Wave-8: Chart on public recharts+react-intl; pie still surface.
+// Stage-3 wave-1..9: WidgetContext, widget-scope, chrome, i18n, Chart,
+// C/S/U/B/X/Box + Recharts aliases; Chart+pie npm-migrated (wave-8/9).
+// → visualization/. Wave-9: Chart+pie on public recharts; surface no-op.
 // Stage 3 candidate: 36/36 app-initial aliases rewritten to
 // IMPORT_MAP semantic/vendor/boundary paths. AppScope (Fft/Ift/ivt/M_t/L_t) is an
 // open host/runtime facade — not stock jotai. No whole-file app-initial promote.
@@ -59944,25 +59944,8 @@ export const _chartWidgetStoresC = rolldownRuntimeN(() => {
   chartWidgetStoresBinding1343 = [...vizChartColorWeightsPrimary];
   chartWidgetStoresBinding1344 = [...vizChartColorWeightsSecondary];
   chartWidgetStoresBinding1345 = [...vizChartCssVarPalette];
-  vizSetChartBundleSurface({
-    chartWidgetStoresF,
-    chartWidgetStoresG,
-    chartWidgetStoresH,
-    chartWidgetStoresM,
-    chartWidgetStoresP,
-    chartWidgetStoresUnderscore,
-    chartWidgetStoresHelper611,
-    chartWidgetStoresHelper767,
-    chartWidgetStoresBinding1063,
-    chartWidgetStoresBinding1076,
-    chartWidgetStoresBinding1080,
-    chartWidgetStoresBinding1113,
-    chartWidgetStoresBinding1130,
-    chartWidgetStoresBinding1147,
-    chartWidgetStoresBinding1155,
-    chartWidgetStoresBinding1164,
-    chartWidgetStoresBinding1208,
-  });
+  // Wave-9: surface bag retired (Chart + pie on public recharts).
+  vizSetChartBundleSurface();
   vizEnsureChartComponentInit();
 });
 export function chartWidgetStoresI(props: {

@@ -1,47 +1,24 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
-// Injected Recharts surfaces still living in boundaries/chart-widget-stores.
-// Wave-8: Chart migrated to public recharts + react-intl; bag kept for pie (+ series).
-// Binding1022 / Binding1317 / Binding1326 / createElement dropped from Chart path.
+// Wave-9: Chart + pie on public recharts; surface bag is a no-op stub.
+// Mega may still call setChartBundleSurface during _chartWidgetStoresC — ignored.
+// Drop the call + delete pre-Y/Y/post-Y intl together in the joint-delete wave.
 
-export type ChartBundleSurface = {
-  chartWidgetStoresF: any;
-  chartWidgetStoresG: any;
-  chartWidgetStoresH: any;
-  chartWidgetStoresM: any;
-  chartWidgetStoresP: any;
-  chartWidgetStoresUnderscore: any;
-  chartWidgetStoresHelper611: any;
-  chartWidgetStoresHelper767: any;
-  chartWidgetStoresBinding1063: any;
-  chartWidgetStoresBinding1076: any;
-  chartWidgetStoresBinding1080: any;
-  chartWidgetStoresBinding1113: any;
-  chartWidgetStoresBinding1130: any;
-  chartWidgetStoresBinding1147: any;
-  chartWidgetStoresBinding1155: any;
-  chartWidgetStoresBinding1164: any;
-  chartWidgetStoresBinding1208: any;
-};
-
-let surface: ChartBundleSurface | null = null;
+/** @deprecated Empty after wave-9 — no residual surface consumers. */
+export type ChartBundleSurface = Record<string, never>;
 
 /**
- * Wire mega-local Recharts components for pie / residual surface consumers.
- * Called from mega `_chartWidgetStoresC` after Recharts bindings are assigned.
+ * No-op after wave-9 (Chart + pie use public recharts).
+ * Mega `_chartWidgetStoresC` may still invoke this until joint vendor delete.
  */
-export function setChartBundleSurface(next: ChartBundleSurface): void {
-  surface = next;
-}
+export function setChartBundleSurface(_next?: ChartBundleSurface): void {}
 
+/** @deprecated Always false after wave-9 — bag is unused. */
 export function getChartBundleSurface(): ChartBundleSurface {
-  if (!surface) {
-    throw new Error(
-      "getRechartsSurfaceAliases requires setChartBundleSurface (call _chartWidgetStoresC first)",
-    );
-  }
-  return surface;
+  throw new Error(
+    "getChartBundleSurface retired (wave-9): Chart + pie use public recharts",
+  );
 }
 
 export function hasChartBundleSurface(): boolean {
-  return surface != null;
+  return false;
 }

@@ -1,96 +1,112 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
-// Codex wrappers around Recharts surfaces still living in the mega boundary.
-// Wave-8: Chart uses public recharts; pie still maps the surface bag.
-// Joint delete still blocked: pre-Y+Y span, post-Y inlined intl, Box stubs in Y.
+// Wave-9: surface bag retired — aliases re-export public recharts@3.
+// Prefer bare `import { … } from "recharts"` at call sites (Chart + pie already do).
 
 import {
-  getChartBundleSurface,
-  type ChartBundleSurface,
-} from "./chart-bundle-surface";
+  Area,
+  Bar,
+  CartesianGrid,
+  Cell,
+  ComposedChart,
+  LabelList,
+  Legend,
+  Line,
+  Pie,
+  PieChart,
+  ReferenceDot,
+  ReferenceLine,
+  ResponsiveContainer,
+  Scatter,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
-/** Semantic Recharts component bag used by Codex pie chrome. */
+/** Semantic Recharts component bag (npm-backed; no mega surface). */
 export type RechartsSurfaceAliases = {
-  ResponsiveContainer: ChartBundleSurface["chartWidgetStoresG"];
-  Legend: ChartBundleSurface["chartWidgetStoresP"];
-  Tooltip: ChartBundleSurface["chartWidgetStoresUnderscore"];
-  Cell: ChartBundleSurface["chartWidgetStoresF"];
-  Pie: ChartBundleSurface["chartWidgetStoresM"];
-  PieChart: ChartBundleSurface["chartWidgetStoresH"];
-  ComposedChart: ChartBundleSurface["chartWidgetStoresBinding1208"];
-  Bar: ChartBundleSurface["chartWidgetStoresBinding1063"];
-  Line: ChartBundleSurface["chartWidgetStoresBinding1113"];
-  Area: ChartBundleSurface["chartWidgetStoresBinding1130"];
-  Scatter: ChartBundleSurface["chartWidgetStoresBinding1147"];
-  XAxis: ChartBundleSurface["chartWidgetStoresBinding1155"];
-  YAxis: ChartBundleSurface["chartWidgetStoresBinding1164"];
-  CartesianGrid: ChartBundleSurface["chartWidgetStoresHelper767"];
-  LabelList: ChartBundleSurface["chartWidgetStoresHelper611"];
-  ReferenceLine: ChartBundleSurface["chartWidgetStoresBinding1076"];
-  ReferenceDot: ChartBundleSurface["chartWidgetStoresBinding1080"];
+  ResponsiveContainer: typeof ResponsiveContainer;
+  Legend: typeof Legend;
+  Tooltip: typeof Tooltip;
+  Cell: typeof Cell;
+  Pie: typeof Pie;
+  PieChart: typeof PieChart;
+  ComposedChart: typeof ComposedChart;
+  Bar: typeof Bar;
+  Line: typeof Line;
+  Area: typeof Area;
+  Scatter: typeof Scatter;
+  XAxis: typeof XAxis;
+  YAxis: typeof YAxis;
+  CartesianGrid: typeof CartesianGrid;
+  LabelList: typeof LabelList;
+  ReferenceLine: typeof ReferenceLine;
+  ReferenceDot: typeof ReferenceDot;
 };
 
 /**
- * Map mega surface locals onto stock Recharts names (pie path).
- * Requires `setChartBundleSurface` (mega `_chartWidgetStoresC`) first.
+ * @deprecated Prefer bare `recharts` imports (Chart + pie migrated wave-8/9).
  */
 export function getRechartsSurfaceAliases(): RechartsSurfaceAliases {
-  const surface = getChartBundleSurface();
   return {
-    ResponsiveContainer: surface.chartWidgetStoresG,
-    Legend: surface.chartWidgetStoresP,
-    Tooltip: surface.chartWidgetStoresUnderscore,
-    Cell: surface.chartWidgetStoresF,
-    Pie: surface.chartWidgetStoresM,
-    PieChart: surface.chartWidgetStoresH,
-    ComposedChart: surface.chartWidgetStoresBinding1208,
-    Bar: surface.chartWidgetStoresBinding1063,
-    Line: surface.chartWidgetStoresBinding1113,
-    Area: surface.chartWidgetStoresBinding1130,
-    Scatter: surface.chartWidgetStoresBinding1147,
-    XAxis: surface.chartWidgetStoresBinding1155,
-    YAxis: surface.chartWidgetStoresBinding1164,
-    CartesianGrid: surface.chartWidgetStoresHelper767,
-    LabelList: surface.chartWidgetStoresHelper611,
-    ReferenceLine: surface.chartWidgetStoresBinding1076,
-    ReferenceDot: surface.chartWidgetStoresBinding1080,
+    ResponsiveContainer,
+    Legend,
+    Tooltip,
+    Cell,
+    Pie,
+    PieChart,
+    ComposedChart,
+    Bar,
+    Line,
+    Area,
+    Scatter,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    LabelList,
+    ReferenceLine,
+    ReferenceDot,
   };
 }
 
-/** @deprecated Prefer semantic names from `getRechartsSurfaceAliases`. */
-export function getChartWidgetStoresRechartsLocals(): Pick<
-  ChartBundleSurface,
-  | "chartWidgetStoresF"
-  | "chartWidgetStoresG"
-  | "chartWidgetStoresH"
-  | "chartWidgetStoresM"
-  | "chartWidgetStoresP"
-  | "chartWidgetStoresUnderscore"
-  | "chartWidgetStoresHelper611"
-  | "chartWidgetStoresHelper767"
-  | "chartWidgetStoresBinding1063"
-  | "chartWidgetStoresBinding1113"
-  | "chartWidgetStoresBinding1130"
-  | "chartWidgetStoresBinding1147"
-  | "chartWidgetStoresBinding1155"
-  | "chartWidgetStoresBinding1164"
-  | "chartWidgetStoresBinding1208"
-> {
-  const surface = getChartBundleSurface();
+/**
+ * @deprecated Prefer `getRechartsSurfaceAliases` or bare `recharts` imports.
+ */
+export function getChartWidgetStoresRechartsLocals(): {
+  chartWidgetStoresF: typeof Cell;
+  chartWidgetStoresG: typeof ResponsiveContainer;
+  chartWidgetStoresH: typeof PieChart;
+  chartWidgetStoresM: typeof Pie;
+  chartWidgetStoresP: typeof Legend;
+  chartWidgetStoresUnderscore: typeof Tooltip;
+  chartWidgetStoresHelper611: typeof LabelList;
+  chartWidgetStoresHelper767: typeof CartesianGrid;
+  chartWidgetStoresBinding1063: typeof Bar;
+  chartWidgetStoresBinding1113: typeof Line;
+  chartWidgetStoresBinding1130: typeof Area;
+  chartWidgetStoresBinding1147: typeof Scatter;
+  chartWidgetStoresBinding1155: typeof XAxis;
+  chartWidgetStoresBinding1164: typeof YAxis;
+  chartWidgetStoresBinding1208: typeof ComposedChart;
+  chartWidgetStoresBinding1076: typeof ReferenceLine;
+  chartWidgetStoresBinding1080: typeof ReferenceDot;
+} {
   return {
-    chartWidgetStoresF: surface.chartWidgetStoresF,
-    chartWidgetStoresG: surface.chartWidgetStoresG,
-    chartWidgetStoresH: surface.chartWidgetStoresH,
-    chartWidgetStoresM: surface.chartWidgetStoresM,
-    chartWidgetStoresP: surface.chartWidgetStoresP,
-    chartWidgetStoresUnderscore: surface.chartWidgetStoresUnderscore,
-    chartWidgetStoresHelper611: surface.chartWidgetStoresHelper611,
-    chartWidgetStoresHelper767: surface.chartWidgetStoresHelper767,
-    chartWidgetStoresBinding1063: surface.chartWidgetStoresBinding1063,
-    chartWidgetStoresBinding1113: surface.chartWidgetStoresBinding1113,
-    chartWidgetStoresBinding1130: surface.chartWidgetStoresBinding1130,
-    chartWidgetStoresBinding1147: surface.chartWidgetStoresBinding1147,
-    chartWidgetStoresBinding1155: surface.chartWidgetStoresBinding1155,
-    chartWidgetStoresBinding1164: surface.chartWidgetStoresBinding1164,
-    chartWidgetStoresBinding1208: surface.chartWidgetStoresBinding1208,
+    chartWidgetStoresF: Cell,
+    chartWidgetStoresG: ResponsiveContainer,
+    chartWidgetStoresH: PieChart,
+    chartWidgetStoresM: Pie,
+    chartWidgetStoresP: Legend,
+    chartWidgetStoresUnderscore: Tooltip,
+    chartWidgetStoresHelper611: LabelList,
+    chartWidgetStoresHelper767: CartesianGrid,
+    chartWidgetStoresBinding1063: Bar,
+    chartWidgetStoresBinding1113: Line,
+    chartWidgetStoresBinding1130: Area,
+    chartWidgetStoresBinding1147: Scatter,
+    chartWidgetStoresBinding1155: XAxis,
+    chartWidgetStoresBinding1164: YAxis,
+    chartWidgetStoresBinding1208: ComposedChart,
+    chartWidgetStoresBinding1076: ReferenceLine,
+    chartWidgetStoresBinding1080: ReferenceDot,
   };
 }

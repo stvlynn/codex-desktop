@@ -1,30 +1,28 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Pie-chart content-reference widget (Helper156–164 + Value182/197).
-// Wave-6: Recharts G/P/Underscore/F/H/M via visualization surface aliases;
+// Wave-9: public recharts@3 + react (off getRechartsSurfaceAliases / mega surface).
 // Codex B/C/D/E/S/U/V/X from drained visualization modules.
 
+import { startTransition, useCallback, useId, useMemo, useState } from "react";
 import {
-  jsxRuntime as appInitialJvt,
-  react as appInitialLvt,
-} from "../../boundaries/react-cjs-runtime";
-import {
-  _chartWidgetStoresC as ensureChartBundleSurfaceInit,
-} from "../../boundaries/chart-widget-stores";
+  Cell,
+  Legend,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
+} from "recharts";
 import {
   chartWidgetStoresB,
   chartWidgetStoresC,
-  chartWidgetStoresD,
   chartWidgetStoresE,
   chartWidgetStoresS,
   chartWidgetStoresU,
   chartWidgetStoresV,
   chartWidgetStoresX,
-  getRechartsSurfaceAliases,
+  WidgetBoxRoot,
 } from "../../visualization/chart-widget-stores";
-import {
-  rolldownRuntimeN,
-  rolldownRuntimeS,
-} from "../../runtime/rolldown-runtime";
+import { rolldownRuntimeN } from "../../runtime/rolldown-runtime";
 
 const slot182 = rolldownRuntimeN(() => {});
 function useChatgptComposerControllerHelper156(request7979) {
@@ -90,15 +88,6 @@ function useChatgptComposerControllerHelper161(request10254) {
   return typeof slot15711?.formatted == "string" ? slot15711.formatted : null;
 }
 export function useChatgptComposerControllerHelper162(request415: any) {
-  const {
-    ResponsiveContainer: ChartWidgetStoresG,
-    PieChart: ChartWidgetStoresH,
-    Tooltip: ChartWidgetStoresUnderscore,
-    Legend: Slot196,
-    Pie: ChartWidgetStoresM,
-    Cell: ChartWidgetStoresF,
-  } = getRechartsSurfaceAliases();
-  const ChartWidgetStoresD = chartWidgetStoresD;
   let {
       data = [],
       series = [slot186],
@@ -130,8 +119,8 @@ export function useChatgptComposerControllerHelper162(request415: any) {
     slot2461 = chartWidgetStoresU(),
     { theme } = chartWidgetStoresE(),
     slot2462 = chartWidgetStoresS(),
-    slot2463 = slot183.useId(),
-    [slot2464, slot2465] = slot183.useState(null),
+    slot2463 = useId(),
+    [slot2464, slot2465] = useState(null),
     slot2466 =
       aspectRatio ?? (height || minHeight ? undefined : 1.3333333333333333),
     slot2467 =
@@ -145,7 +134,7 @@ export function useChatgptComposerControllerHelper162(request415: any) {
     slot2470 = typeof xAxis == "string" ? xAxis : (slot2469?.dataKey ?? ""),
     slot2471 = slot2469?.labels ?? slot187,
     slot2472 = chartWidgetStoresX(theme, slot2468.color),
-    slot2473 = slot183.useMemo(() => {
+    slot2473 = useMemo(() => {
       return chartWidgetStoresB(slot2472 ?? "")
         ? slot193.map((item) => {
             return `var(--${slot2472}-${item})`;
@@ -154,7 +143,7 @@ export function useChatgptComposerControllerHelper162(request415: any) {
           ? [slot2472]
           : slot195;
     }, [slot2472]),
-    slot2474 = slot183.useCallback(
+    slot2474 = useCallback(
       (request9287, request9288) => {
         let slot15231 = request9287[slot2470];
         if (slot15231 == null) return `Slice ${request9288 + 1}`;
@@ -163,7 +152,7 @@ export function useChatgptComposerControllerHelper162(request415: any) {
       },
       [slot2470, slot2471],
     ),
-    slot2475 = slot183.useMemo(() => {
+    slot2475 = useMemo(() => {
       return data.map((item, index) => {
         let slot11455 = item,
           slot11456 =
@@ -183,7 +172,7 @@ export function useChatgptComposerControllerHelper162(request415: any) {
         };
       });
     }, [slot2463, slot2473, data, slot2474]),
-    slot2476 = slot183.useMemo(() => {
+    slot2476 = useMemo(() => {
       return slot2475.map((item) => {
         return {
           color: item.fill,
@@ -203,7 +192,7 @@ export function useChatgptComposerControllerHelper162(request415: any) {
         ? accumulator + slot15589
         : accumulator;
     }, 0),
-    slot2478 = slot183.useCallback(
+    slot2478 = useCallback(
       (request9583, request9584) => {
         try {
           return slot2462(request9583, {
@@ -215,7 +204,7 @@ export function useChatgptComposerControllerHelper162(request415: any) {
       },
       [slot2462],
     ),
-    slot2479 = slot183.useCallback(
+    slot2479 = useCallback(
       (request11507, request11508) => {
         return (
           useChatgptComposerControllerHelper161(request11508) ??
@@ -228,7 +217,7 @@ export function useChatgptComposerControllerHelper162(request415: any) {
       },
       [slot2461, slot2468],
     ),
-    slot2480 = slot183.useCallback(
+    slot2480 = useCallback(
       ({ x, y, textAnchor, value, payload }) => {
         if (typeof x != "number" || typeof y != "number") return null;
         let slot10816 = slot2479(value, payload);
@@ -252,18 +241,18 @@ export function useChatgptComposerControllerHelper162(request415: any) {
       },
       [slot2479],
     ),
-    slot2481 = slot183.useCallback((request10921) => {
-      slot183.startTransition(() => {
+    slot2481 = useCallback((request10921) => {
+      startTransition(() => {
         slot2465(request10921);
       });
     }, []),
-    slot2482 = slot183.useCallback(() => {
-      slot183.startTransition(() => {
+    slot2482 = useCallback(() => {
+      startTransition(() => {
         slot2465(null);
       });
     }, []);
   return (
-    <ChartWidgetStoresD
+    <WidgetBoxRoot
       as="div"
       {...slot2460}
       className={chartWidgetStoresV(slot185.Chart)}
@@ -273,10 +262,10 @@ export function useChatgptComposerControllerHelper162(request415: any) {
       minHeight={minHeight}
       {...rest}
     >
-      <ChartWidgetStoresG>
-        <ChartWidgetStoresH>
+      <ResponsiveContainer>
+        <PieChart>
           {showTooltip && (
-            <ChartWidgetStoresUnderscore
+            <Tooltip
               offset={tooltipOffset}
               animationDuration={tooltipAnimationDuration}
               allowEscapeViewBox={tooltipAllowEscapeViewBox}
@@ -298,7 +287,7 @@ export function useChatgptComposerControllerHelper162(request415: any) {
             />
           )}
           {showLegend && (
-            <Slot196
+            <Legend
               payload={slot2476}
               content={(request8516) => {
                 const UseChatgptComposerControllerHelper164 =
@@ -314,7 +303,7 @@ export function useChatgptComposerControllerHelper162(request415: any) {
               }}
             />
           )}
-          <ChartWidgetStoresM
+          <Pie
             data={slot2475}
             dataKey={slot2468.dataKey}
             nameKey="__sliceLabel"
@@ -332,7 +321,7 @@ export function useChatgptComposerControllerHelper162(request415: any) {
           >
             {slot2475.map((item) => {
               return (
-                <ChartWidgetStoresF
+                <Cell
                   key={item.__sliceId}
                   fill={item.fill}
                   opacity={
@@ -345,10 +334,10 @@ export function useChatgptComposerControllerHelper162(request415: any) {
                 />
               );
             })}
-          </ChartWidgetStoresM>
-        </ChartWidgetStoresH>
-      </ChartWidgetStoresG>
-    </ChartWidgetStoresD>
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
+    </WidgetBoxRoot>
   );
 }
 function useChatgptComposerControllerHelper163({
@@ -499,8 +488,6 @@ function useChatgptComposerControllerHelper164({
     </div>
   );
 }
-let slot183: any;
-let slot184: any;
 let slot185: any;
 let slot186: any;
 let slot187: any;
@@ -515,10 +502,7 @@ let slot195: any;
 
 const slot197 = rolldownRuntimeN(() => {
   slot182();
-  // Mega `_chartWidgetStoresC` runs Y/T/L and setChartBundleSurface (Recharts bag).
-  ensureChartBundleSurfaceInit();
-  slot183 = rolldownRuntimeS(appInitialLvt());
-  slot184 = appInitialJvt();
+  // Wave-9: no mega surface / setChartBundleSurface — public recharts + react.
   slot185 = {
     Chart: "PieChart_Chart",
     ChartTooltip: "PieChart_ChartTooltip",

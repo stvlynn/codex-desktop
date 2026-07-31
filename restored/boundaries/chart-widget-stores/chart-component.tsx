@@ -2,7 +2,7 @@
 // Codex Chart component (`_chartWidgetStoresS`) + series/legend/tooltip helpers.
 // Wave-8: migrated off surface bag onto public recharts@3 + react-intl + react.
 // Flat boundary facade retained for QG (mechanical body); public API from visualization/.
-// Pie still uses mega Recharts via getRechartsSurfaceAliases (partial migration).
+// Wave-9: pie also on public recharts; surface bag is a no-op stub.
 
 import {
   createElement,
