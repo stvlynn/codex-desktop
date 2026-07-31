@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~220.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~215.8k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -176,4 +176,15 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 217035.
-- Next: `yce`/text-layout engine (`kce`/`j_`) if a clean slice appears, or worksheet/spreadsheet core.
+- Next: ~~`yce`/text-layout engine (`kce`/`j_`)~~ (done wave-18); worksheet/spreadsheet core if a clean slice appears.
+
+## Wave-18 progress
+
+- Extracted `yce` + line-box helpers (`bce`…`Oce`) + text-layout engine (`kce`/`j_`) with lifted constants (`l_`/`u_`/`d_`/`f_`/`p_`/`m_`/`h_`/`g_`/`__`/`E_`/`D_`/`k_`) → `workbook/text-layout/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary (engine uses a local `remainingSpaceAfterPriorOverlap` stand-in).
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 215800.
+- Next: worksheet/spreadsheet core if a clean line-range slice appears, or neighboring presentation/document glue.
+
+
