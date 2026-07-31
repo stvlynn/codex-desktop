@@ -30,9 +30,18 @@ export function ensureChatgptThemeWarmInit(): void {
   chatgptThemeWarmReady = true;
 }
 
+let placeholderStyleReady = false;
+
+/** Legacy Hae — placeholder-style helpers are eager. */
+export function ensurePlaceholderStyleInit(): void {
+  if (placeholderStyleReady) return;
+  placeholderStyleReady = true;
+}
+
 export function ensurePresentationThemeInit(): void {
   ensureCssNamedColorsInit();
   ensureChatgptThemeInit();
   ensureSlidePlaceholderRolesInit();
   ensureChatgptThemeWarmInit();
+  ensurePlaceholderStyleInit();
 }

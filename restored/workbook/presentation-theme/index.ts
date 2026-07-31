@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-3: presentation theme barrel (Mae / Sle / placeholders).
+// Stage-3 wave-3/10: presentation theme barrel (Mae / Sle / placeholders + style helpers).
 
 export { cssNamedColors } from "./css-named-colors";
 export { defaultFont } from "./default-font";
@@ -15,9 +15,29 @@ export { slidePlaceholderRoleAliases } from "./slide-placeholder-role-aliases";
 export { outerShadowEffect } from "./outer-shadow-effect";
 export { chatgptThemeWarm } from "./chatgpt-theme-warm";
 export {
+  placeholderTypeToStyleKey,
+  isFurniturePlaceholderType,
+  placeholderRoleToShortName,
+  normalizePlaceholderType,
+  expandPlaceholderTypeCandidates,
+  isPlaceholderVisibleForLayout,
+  placeholdersMatch,
+  normalizePlaceholderLabel,
+  resolvePlaceholderLabel,
+} from "./placeholder-style";
+export type {
+  PlaceholderStyleKey,
+  FurniturePlaceholderType,
+  FurnitureVisibility,
+  PlaceholderTypeCandidates,
+  ExpandPlaceholderTypesOptions,
+  PlaceholderNameHint,
+} from "./placeholder-style";
+export {
   ensureCssNamedColorsInit,
   ensureChatgptThemeInit,
   ensureSlidePlaceholderRolesInit,
   ensureChatgptThemeWarmInit,
+  ensurePlaceholderStyleInit,
   ensurePresentationThemeInit,
 } from "./ensure-presentation-theme-init";

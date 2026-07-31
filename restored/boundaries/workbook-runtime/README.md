@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~223.6k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~223.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -21,6 +21,8 @@
 | Color-resolve helpers (Tae/St) | ~15.4k | **Drained (wave-7)** → `workbook/color-resolve/` |
 | TextStyle VO (workbookVt) | ~15.5k–16.2k | **Drained (wave-8)** → `workbook/text-style/` |
 | TextStyle CSS / shadow parsers | ~14.9k–15.7k | **Drained (wave-9)** → `workbook/text-style/` |
+| Placeholder-style helpers (Vae/Uae/helper97+) | ~15.0k | **Drained (wave-10)** → `workbook/presentation-theme/` |
+| Font metrics + grapheme segmenter | ~15.3k–15.8k | **Drained (wave-10)** → `workbook/font-metrics/` |
 | Worksheet / spreadsheet core | ~50k–72k, ~210k–230k | Range/table/drawing APIs |
 | Presentation + Mermaid hooks | ~142k–174k | Theme palettes drained → `workbook/presentation-theme/`; Mermaid/collab remain |
 | Formula / xlsx validation | ~177k–230k | Serial dates, workbook validation (`WorkbookN`) |
@@ -98,4 +100,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Left `gae`/`workbookEt` EMU converters in boundary (still used by geometry mid-body); `rae`/`Binding411` re-exported as ensures.
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Next: worksheet/spreadsheet core clusters, or residual presentation placeholder-style helpers near the drained locus.
+- Next: ~~placeholder-style helpers + font-metrics~~ (done wave-10); worksheet/spreadsheet core clusters, or residual TextStyle style-resolve (`helper110`/`workbookT`).
+
+## Wave-10 progress
+
+- Extracted presentation placeholder-style helpers (`Vae`/`Uae`/`Wae`/`helper97`–`99`/`Gae`/`Kae`/`qae`/`Hae`) → `workbook/presentation-theme/placeholder-style.ts`.
+- Extracted font-family match + OffscreenCanvas metrics cache + grapheme segmenter (`soe`…`goe`, `workbookMt`/`Ht`, `workbookPt`/`Ft`, `Soe`) → `workbook/font-metrics/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, and TextStyle style-resolve (`helper106`–`110`/`workbookT`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Next: worksheet/spreadsheet core clusters (range/table/drawing), or residual TextStyle style-resolve (`helper110`/`workbookT`).
