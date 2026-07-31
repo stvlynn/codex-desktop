@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~111.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~90.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -68,6 +68,7 @@
 | Mermaid→slide adapters (`Binding1687` / gitGraph·sequence·class·treeView) | ~3.0k | **Drained (wave-62)** → `workbook/mermaid-slide-adapters/`
 | decimal.js (`helper939`…/`Binding1906`/`lit`/`Vit`) | ~4.4k | **Drained (wave-63)** → `vendor/decimal` npm shim (`decimal.js@10.6.0`) |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
+| graphlib Graph + dagre layout (`Binding1671` / `wNe` / `YNe`) | ~3.6k | **Drained (wave-73)** → `vendor/graphlib` + `vendor/dagre` npm shims |
 
 ## Why it stays in `boundaries/`
 
@@ -816,4 +817,15 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 94271 (was 95036; Δ -765).
 - Next: flowchart `NPe`/`PPe` + Binding1675/1685 (~0.8k) / Table VO `fhe`/`ohe` (~0.5k) / clean `xLe` walnut peel before comments/`_C` (~660).
+
+
+## Wave-73 progress
+
+- Identified contiguous inlined `graphlib` Graph (`Binding1671`/`rje`) + `dagre` layout (`wNe`/`YNe`/network-simplex/order/position, ~3.6k LOC) as stock vendor (NOT Codex) — already shimmed at `vendor/graphlib` + `vendor/dagre`.
+- Replaced inlined body with thin aliases: `Binding1671`=`Graph`, `Binding1672`/`YNe`=no-op ensures, `wNe`→`dagre.layout`.
+- Left flowchart `$Ne`/Binding1675/1685 + `NPe`/`PPe`, Table VO `fhe`/`ohe`, Chart `Binding721`, `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on vendor shims + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 90666 (was 94271; Δ -3605).
+- Next: flowchart `$Ne`/Binding1675/1685 + `NPe`/`PPe` (~0.8k) / Table VO `fhe`+Tables/DataTables (~1.0k) / Chart Binding721 (~0.7k) / image+path Binding723–735 (~3.0k mixed) / clean `xLe` walnut peel before comments/`_C`.
 
