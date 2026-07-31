@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~197.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~196.6k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -34,7 +34,9 @@
 | Bessel (`JXe`) | ~0.57k | **Drained (wave-25)** → `vendor/bessel` npm shim (`bessel@1.0.2`)
 | Cell-XF / numFmt / col-row extents (`helper223`–`Binding586`) | ~0.7k | **Drained (wave-26)** → `workbook/cell-xf-format/`
 | Worksheet autofit (`Tle` / `Binding232`–`Rle`) | ~0.7k | **Drained (wave-27)** → `workbook/worksheet-autofit/`
-| RangeFormat (`Binding337` + `helper240`–`Jle` + `Binding589`–`593`/`Yle`) | ~1.8k | **Drained (wave-28)** → `workbook/range-format/` |
+| RangeFormat (`Binding337` + `helper240`–`Jle` + `Binding589`–`593`/`Yle`) | ~1.8k | **Drained (wave-28)** → `workbook/range-format/`
+| Icon-set (`Binding594`/`helper256`–`259`) | ~0.13k | **Drained (wave-29)** → `workbook/icon-set/`
+| TextRun/Paragraph VOs (`Binding597`–`612`/`Xle`/`Zle`/`helper260`–`261`) | ~0.58k | **Drained (wave-29)** → `workbook/text-run/` |
 | Document glue | scattered | DOCX protobuf already faced under `workbook/document-*` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
@@ -294,6 +296,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain + AST Binding337 peel (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 197285.
-- Next: post-RangeFormat icon-set helpers (`Binding594`/`helper256`+) or remaining pivot VO surface; continue scanning for stock vendor fingerprints.
+- Next: ~~post-RangeFormat icon-set + text-run/paragraph VOs~~ (done wave-29); remaining pivot VO surface (335/336/338) or next contiguous Qle/font-weight cluster.
+
+
+## Wave-29 progress
+
+- Extracted conditional-format icon-set catalog (`Binding594`–`596`) + name/count helpers (`helper256`–`259`) → `workbook/icon-set/`.
+- Extracted TextRun/TextRuns/Paragraph/Paragraphs VOs (`Binding597`–`603`/`Xle`/`Zle`) + paragraphStyle clone (`helper260`) + list/numbered defaults (`Binding604`–`612`/`helper261`) → `workbook/text-run/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, and pivot enums `Binding335`/`336`/`338` in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 196605.
+- Next: remaining pivot VO surface (335/336/338) or contiguous post-text-run neighbor (`Qle`/font-weight CSS / style token maps); continue scanning for stock vendor fingerprints.
 
 
