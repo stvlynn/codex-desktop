@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: slide canvas render pass (legacy vEe).
-// Stage-3 wave-94.
+// Stage-3 wave-94/105 (paintSlideText / nEe).
 
 import { layoutTableFrame } from "../table-frame-layout";
 import { paintChartElement } from "../chart-paint";
@@ -12,6 +12,9 @@ import {
 } from "../text-box";
 import { resolveShapeTextFrameRect } from "../preset-shape";
 import { scrH } from "./boundary-hooks";
+import { paintSlideText } from "./paint-slide-text-impl";
+
+void paintSlideText;
 import { paintSlideBackground } from "../slide-background-paint";
 
 void layoutTableFrame;
@@ -171,7 +174,7 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
       (scrBind3114.type === "embeddedArtifact" &&
         scrH.paintSlideShape(scrBind3114, scrIn167),
       scrBind3114.type === "smartArt" &&
-        scrH.paintSlideText(
+        paintSlideText(
           scrBind3114,
           scrIn167,
           scrIn166,

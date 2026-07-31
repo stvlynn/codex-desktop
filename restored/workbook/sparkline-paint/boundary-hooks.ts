@@ -1,11 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-101: sparkline-paint boundary hooks.
+// Stage-3 wave-101/105: sparkline-paint boundary hooks.
 
 export type SparklinePaintBoundaryHooks = {
-  /** Column/stacked sparkline paint (legacy ZCe). */
-  paintColumnSparkline: (...args: any[]) => any;
-  /** Line sparkline paint (legacy XCe). */
-  paintLineSparkline: (...args: any[]) => any;
   /** Resolve sparkline color token (legacy Binding1235). */
   resolveColor: (...args: any[]) => any;
   /** Clamp number into range (legacy Binding1234). */
@@ -16,6 +12,10 @@ export type SparklinePaintBoundaryHooks = {
   defaultAxisColor: any;
   /** Plot inset px (legacy Binding1232). */
   plotInset: any;
+  /** Marker radius px (legacy Binding1233). */
+  markerRadius: any;
+  /** Resolve marker fill color (legacy QCe). */
+  resolveMarkerColor: (...args: any[]) => any;
 };
 
 export const spkH: SparklinePaintBoundaryHooks =

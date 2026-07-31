@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~54.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~54.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -164,6 +164,13 @@
 | XIRR (`Z0e`) | ~0.09k | **Drained (wave-104)** → `workbook/formula-irr/` |
 | Lambda detect (`helper1008`) | ~0.09k | **Drained (wave-104)** → `workbook/formula-ast-remap/` |
 | HTML paste cell/table (`Dmt`/`Jpt`) | ~0.20k | **Drained (wave-104)** → `workbook/html-paste/` |
+| Line/column sparkline (`XCe`/`ZCe`) | ~0.16k | **Drained (wave-105)** → `workbook/sparkline-paint/` |
+| Cell edge stroke (`helper600`) | ~0.09k | **Drained (wave-105)** → `workbook/canvas-paint/` |
+| Trim path start (`uTe`) | ~0.09k | **Drained (wave-105)** → `workbook/shape-path-densify/` |
+| Floating placement (`jTe`) | ~0.09k | **Drained (wave-105)** → `workbook/floating-placement/` |
+| Slide text group (`nEe`) | ~0.11k | **Drained (wave-105)** → `workbook/slide-canvas-render/` |
+| Treemap tiles (`Yye`) | ~0.09k | **Drained (wave-105)** → `workbook/chart-treemap-tiles/` |
+| Code-block plugin (`cAe`/`vAe`) | ~0.18k | **Drained (wave-105)** → `workbook/presentation-code-block/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1306,3 +1313,19 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on modules + peers + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 54770 (was 56143; Δ -1373).
 - Next: newly revealed ≥85 / leave-behinds when safe.
+
+## Wave-105 progress
+
+- Re-scanned ≥80 after wave-104. **FALSE/ESM:** `ict`/`WEe`/`TIe`/`$nt`/`zwe`/`yEe`/`Oht`/`npt`/`gxe`/`Binding1150`/`_xe`/`helper672@xDe`/`helper391@841`/`hxe@mxe`/`helper601@Twe`/`Amt@kmt`. **LEAVE:** `rze`/`kht` (WorkbookN/`_workbookS` not top-level). **Yye** was a false nest@Binding888 — real peel (treemap tiles; `paintAxis` hook name is legacy misnomer).
+- Preferred reals: `uTe`, `vAe`, `jTe`, `cAe`, `Yye`, `helper600`, `nEe`, `XCe` (+ neighbors `ZCe`, `tEe`, `helper765`).
+- Peeled `XCe`+`ZCe` → `workbook/sparkline-paint/` (leave-behind resolved).
+- Peeled `helper600` → `workbook/canvas-paint/` `fillCellBackground`.
+- Peeled `uTe` → `workbook/shape-path-densify/` `trimPathStart`.
+- Peeled `jTe` → `workbook/floating-placement/` `resolveFloatingPlacement`.
+- Peeled `tEe`+`nEe` → `workbook/slide-canvas-render/` `paintSlideText`.
+- Peeled `Yye` → `workbook/chart-treemap-tiles/` `layoutTreemapTiles`.
+- Peeled `cAe`+`vAe` → `workbook/presentation-code-block/`.
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on modules + peers + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 54138 (was 54798; Δ -660).
+- Next: newly revealed ≥80 / leave-behinds when safe.

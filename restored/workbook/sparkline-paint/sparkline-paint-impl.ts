@@ -1,32 +1,32 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: sparkline paint dispatcher (legacy YCe).
-// Stage-3 wave-101.
+// Stage-3 wave-101/105 (XCe/ZCe series painters).
 
 import { spkH } from "./boundary-hooks";
+import {
+  paintLineSparkline,
+  paintColumnSparkline,
+} from "./sparkline-series-paint-impl";
 
 void spkH;
 
-export function paintSparkline(spkIn1073: any, spkIn1074: any, spkIn1075: any, spkIn1076: any, ) {
+export function paintSparkline(
+  spkIn1073: any,
+  spkIn1074: any,
+  spkIn1075: any,
+  spkIn1076: any,
+) {
   let spkBind6398 = spkIn1075.x + spkH.plotInset,
     spkBind6399 = spkIn1075.y + spkH.plotInset,
     spkBind6400 = spkIn1075.width - spkH.plotInset * 2,
     spkBind6401 = spkIn1075.height - spkH.plotInset * 2;
-  if (
-    spkBind6400 <= 0 ||
-    spkBind6401 <= 0 ||
-    spkIn1074.values.length === 0
-  )
+  if (spkBind6400 <= 0 || spkBind6401 <= 0 || spkIn1074.values.length === 0)
     return;
   let spkBind6402 = spkIn1074.domain.min,
     spkBind6403 = spkIn1074.domain.max;
-  if (
-    !Number.isFinite(spkBind6402) ||
-    !Number.isFinite(spkBind6403)
-  )
-    return;
+  if (!Number.isFinite(spkBind6402) || !Number.isFinite(spkBind6403)) return;
   let spkBind6404 = spkBind6403 - spkBind6402;
-  if (!Number.isFinite(spkBind6404) || spkBind6404 === 0)
-    return;
+  if (!Number.isFinite(spkBind6404) || spkBind6404 === 0) return;
   let spkBind6405 = spkH.resolveColor(
       spkIn1074.colors.series,
       spkIn1076,
@@ -70,8 +70,7 @@ export function paintSparkline(spkIn1073: any, spkIn1074: any, spkIn1075: any, s
     spkBind6413 = (spkIn15827) =>
       spkBind6399 +
       spkBind6401 -
-      ((spkIn15827 - spkBind6402) / spkBind6404) *
-        spkBind6401,
+      ((spkIn15827 - spkBind6402) / spkBind6404) * spkBind6401,
     spkBind6414 = spkH.clamp(
       spkBind6413(0),
       spkBind6399,
@@ -80,7 +79,7 @@ export function paintSparkline(spkIn1073: any, spkIn1074: any, spkIn1075: any, s
   switch (spkIn1074.type) {
     case "column":
     case "stacked":
-      spkH.paintColumnSparkline(
+      paintColumnSparkline(
         spkIn1073,
         spkIn1074,
         {
@@ -99,7 +98,7 @@ export function paintSparkline(spkIn1073: any, spkIn1074: any, spkIn1075: any, s
       );
       break;
     default:
-      spkH.paintLineSparkline(
+      paintLineSparkline(
         spkIn1073,
         spkIn1074,
         {

@@ -1,5 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-66: boundary deps for canvas-paint cluster.
+// Stage-3 wave-66/105: boundary deps for canvas-paint cluster.
+
+import { fillCellBackground as fillCellBackgroundImpl } from "./fill-cell-background-impl";
 
 export type CanvasPaintBoundaryHooks = {
   ensureWorkbookZ: () => void;
@@ -145,7 +147,7 @@ export const strokeCellBorderSide = (...args: any[]) =>
 export const prepareDiagonalStroke = (...args: any[]) =>
   requirePaintHooks().prepareDiagonalStroke(...args);
 export const fillCellBackground = (...args: any[]) =>
-  requirePaintHooks().fillCellBackground(...args);
+  fillCellBackgroundImpl(...args);
 export const clipPaintRect = (...args: any[]) =>
   requirePaintHooks().clipPaintRect(...args);
 export const resolveShapeFillBitmap = (...args: any[]) =>

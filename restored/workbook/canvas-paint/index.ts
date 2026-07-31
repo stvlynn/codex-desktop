@@ -21,3 +21,7 @@ export {
 export { paintSheetShapes } from "./paint-shapes";
 export { paintSpreadsheetCanvas, BYe } from "./paint-spreadsheet";
 export { ensureCanvasPaintClusterInit } from "./ensure-canvas-paint-init";
+export {
+  fillCellBackground,
+  workbookHelper600,
+} from "./fill-cell-background-impl";
