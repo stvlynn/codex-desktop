@@ -8,7 +8,11 @@ export {
   workbookHelper496,
 } from "./chart-pie-series-impl";
 
+export { paintDonutArcLabels, qSe } from "./paint-donut-arc-labels-impl";
+
 export {
-  paintDonutArcLabels,
-  qSe,
-} from "./paint-donut-arc-labels-impl";
+  buildDataLabelText,
+  paintSliceMidLabel,
+  ube,
+  dbe,
+} from "./slice-mid-label-impl";

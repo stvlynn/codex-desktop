@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~49.7k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~49.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -217,6 +217,16 @@
 | CUMPRINC/DDB/PPMT (`T0e`/`O0e`/`P0e`) | ~0.17k | **Drained (wave-110)** → `workbook/formula-financial/` |
 | Path commands bbox (`tTe`) | ~0.06k | **Drained (wave-110)** → `workbook/shape-path/` |
 | Unique columns (`Ost`/`kst`/`Ast`) | ~0.08k | **Drained (wave-110)** → `workbook/formula-unique/` |
+| Table style bands (`fye`/`dye`/`helper386`) | ~0.32k | **Deferred (wave-111)** — leave-behinds helper339/340 + Binding836/pye |
+| Axis title paint (`helper460`+453/457/459) | ~0.08k | **Drained (wave-111)** → `workbook/chart-axis-ticks/` |
+| Slice mid labels (`ube`/`dbe`) | ~0.10k | **Drained (wave-111)** → `workbook/chart-pie-series/` |
+| Pastel materials (`Zbe`/`helper519`) | ~0.07k | **Drained (wave-111)** → `workbook/three-chart-paint/` |
+| Error bars (`fxe`/`helper527`+owned) | ~0.10k | **Drained (wave-111)** → `workbook/chart-line-series/` |
+| Title layout (`lSe`+547–549) | ~0.14k | **Drained (wave-111)** → `workbook/chart-legend-plot/` |
+| Card lines (`helper562`/`563`) | ~0.08k | **Drained (wave-111)** → `workbook/chart-card-paint/` |
+| Waterfall connector label (`fCe`) | ~0.06k | **Drained (wave-111)** → `workbook/chart-waterfall-bar/` |
+| Connector route path (`pTe`) | ~0.06k | **Drained (wave-111)** → `workbook/shape-path-endpoints/` |
+| Code-block position (`bAe`+owned) | ~0.11k | **Drained (wave-111)** → `workbook/presentation-code-block/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1426,4 +1436,12 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Peeled: I8e+F8e+L8e+927/928/929+R8e/z8e/B8e/V8e/H8e/U8e; iOe+aOe+oOe+sOe+686/687/688/rOe; QOe+helper712; T0e/O0e/P0e; tTe; Ost+kst+Ast
 - Skipped Qwe (leave-behinds $we/618/623/611), fye (Binding836), ADe/BDe/dbe heavy, FALSE/ESM, rze/kht
 - WorkbookN/_workbookS: still no top decls (method-peeled)
+- openBoundary remains while mega still large
+
+## Wave 111 (Stage-3 preferred + mid peel)
+
+- Boundary 49748 → 48990 (Δ -758)
+- Peeled: helper453/454/457/459/460; ube+dbe; Zbe+519; dxe+526+fxe+527; helper547→lSe; helper562+563; fCe; pTe+629; bAe+766/xAe/767
+- Deferred table bands (fye/dye/386): leave-behinds helper339/340 + Binding836/pye
+- Skipped Qwe (leave-behinds $we/618/623/611), ADe/helper672 (Binding137x), BDe (690/691/695), helper440 cluster, helper648/Lwe, FALSE/ESM, rze/kht
 - openBoundary remains while mega still large

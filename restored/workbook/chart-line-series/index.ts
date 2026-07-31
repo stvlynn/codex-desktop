@@ -13,3 +13,14 @@ export {
   paintSeriesMarker,
   workbookHelper480,
 } from "./paint-series-marker-impl";
+
+export {
+  meanFinite,
+  sampleStdDev,
+  errorBarMagnitude,
+  paintErrorBars,
+  dxe,
+  workbookHelper526,
+  fxe,
+  workbookHelper527,
+} from "./error-bars-impl";

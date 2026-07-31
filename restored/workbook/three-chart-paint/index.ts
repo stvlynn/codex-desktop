@@ -2,10 +2,7 @@
 // Stage-3 wave-90/103: three-chart-paint barrel
 // (legacy text-sprite / bar-layout / three-paint / pie-3d — app paint on vendor/three).
 
-export {
-  wireThreeChartPaintBoundaryHooks,
-  tcH,
-} from "./boundary-hooks";
+export { wireThreeChartPaintBoundaryHooks, tcH } from "./boundary-hooks";
 
 export {
   createChartTextSprite,
@@ -17,3 +14,10 @@ export {
 } from "./three-chart-paint-impl";
 
 export { paintPie3d, txe } from "./paint-pie-3d-impl";
+
+export {
+  parseThemeColor,
+  resolvePastelMaterial,
+  Zbe,
+  workbookHelper519,
+} from "./pastel-material-impl";

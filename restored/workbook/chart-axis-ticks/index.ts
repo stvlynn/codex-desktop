@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-94: chart-axis-ticks barrel.
+// Stage-3 wave-94/111: chart-axis-ticks barrel.
 
 export { wireChartAxisTicksBoundaryHooks, catH } from "./boundary-hooks";
 export {
@@ -9,3 +9,11 @@ export {
   AXIS_TICK_INSET,
   AXIS_LABEL_GAP,
 } from "./chart-axis-ticks-impl";
+
+export {
+  hasManualLayoutCoord,
+  clampNumber,
+  hasTitleManualLayout,
+  axisHasTitleManualLayout,
+  paintAxisTitle,
+} from "./paint-axis-title-impl";

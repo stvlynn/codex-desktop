@@ -18,3 +18,20 @@ export {
   workbookHelper456,
   workbookHelper458,
 } from "./apply-manual-layout-impl";
+
+export {
+  buildTitleTextElement,
+  titleFromPlainText,
+  titleFromParagraphs,
+  titlePlainText,
+  titleLayoutHeight,
+  truncateWithEllipsis,
+  layoutTitleElement,
+  workbookHelper547,
+  oSe,
+  sSe,
+  workbookHelper548,
+  workbookHelper549,
+  cSe,
+  lSe,
+} from "./layout-title-element-impl";

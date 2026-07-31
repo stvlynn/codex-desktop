@@ -1,10 +1,18 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: table cell style-band resolver (legacy helper384).
-// Stage-3 wave-106.
+// Semantic implementation: table cell style-band resolver.
+// Stage-3 wave-106 / wave-111.
 
 import { tsbH } from "./boundary-hooks-cell-bands";
 
 void tsbH;
+
+/** Stripe alternation for odd/even band styles. */
+function pickStripeBand(tsbIn10613: any, tsbIn10614: any, tsbIn10615: any) {
+  if (tsbIn10614 && tsbIn10615)
+    return tsbIn10613 % 2 == 0 ? tsbIn10614 : tsbIn10615;
+  if (!(!tsbIn10614 && !tsbIn10615))
+    return tsbIn10613 % 2 == 0 ? (tsbIn10614 ?? tsbIn10615) : undefined;
+}
 
 export function resolveTableCellStyleBands(
   tsbIn1663: any,
@@ -45,11 +53,15 @@ export function resolveTableCellStyleBands(
     whole: tsbBind7937,
     rowStripe:
       tsbBind7950 && tsbIn1663.showRowStripes
-        ? tsbHelper383(tsbIn1664 - tsbBind7946, tsbBind7942, tsbBind7943)
+        ? pickStripeBand(tsbIn1664 - tsbBind7946, tsbBind7942, tsbBind7943)
         : undefined,
     columnStripe:
       tsbBind7950 && tsbIn1663.showColumnStripes
-        ? tsbHelper383(tsbIn1665 - tsbIn1663.startCol, tsbBind7944, tsbBind7945)
+        ? pickStripeBand(
+            tsbIn1665 - tsbIn1663.startCol,
+            tsbBind7944,
+            tsbBind7945,
+          )
         : undefined,
     firstColumn:
       tsbIn1663.showFirstColumn && tsbIn1665 === tsbIn1663.startCol

@@ -3,3 +3,10 @@
 
 export { wireChartCardPaintBoundaryHooks, ccpH } from "./boundary-hooks";
 export { paintChartCard, ASe } from "./chart-card-paint-impl";
+
+export {
+  layoutCardLines,
+  ellipsizeMeasured,
+  workbookHelper562,
+  workbookHelper563,
+} from "./layout-card-lines-impl";
