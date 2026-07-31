@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~191.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~190.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -40,6 +40,8 @@
 | Style-tokens (`Qle`/`Binding613`–`621`/`helper262`–`271`/`iue`/`aue`/`_x`) | ~0.43k | **Drained (wave-30)** → `workbook/style-tokens/`
 | Text-selection (`Binding622`/`623` / WorkbookClass6) | ~1.06k | **Drained (wave-31)** → `workbook/text-selection/`
 | Document glue | scattered | DOCX protobuf already faced under `workbook/document-*` |
+| Shape utility-class / border-radius / shadow→effect | ~15.6k (post-mde) | **Drained (wave-38)** → `workbook/shape-utility/` |
+| Path-geometry polyline / rect-edge helpers | ~15.7k (post-bde) | **Drained (wave-38)** → `workbook/path-geometry/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -401,6 +403,18 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 191060.
-- Next: helper304+ border-radius / utility-class / shadow parsers (once color/shadow deps are ready), or pivot VO surface (335/336/338); continue scanning for stock vendor fingerprints.
+- Next: ~~helper304+ border-radius / utility-class / shadow parsers~~ (done wave-38); remaining pivot VO surface (335/336/338), or post-Mde image/shape VO cluster.
+
+
+## Wave-38 progress
+
+- Verified helper82/83 are text-style re-exports only (no residual boundary bodies); workbookHelper68/`workbookCt` already drained — helper304+ peel is cycle-free.
+- Extracted border-radius tokens + shape utility-class parser + borderRadius coerce + shadow→effectReference (`hde`/`gde`/`_de`/`helper304`/`Binding655`/`vde`/`yde`/`helper305`/`bde`) → `workbook/shape-utility/`.
+- Extracted contiguous path-geometry helpers (`xde`/`Sde`/`helper306`–`310`/`Cde`/`wde`/`Tde`/`Ede`/`Dde`/`Ode`/`kde`/`Ade`/`jde`) → `workbook/path-geometry/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, `_workbookEt`/`Qse` clamp helpers, `Mde`/image+shape VO neighbors (`Binding656`/`Nde`/`$S`/…), and pivot enums `Binding335`/`336`/`338` in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 190712.
+- Next: post-Mde image/shape VO cluster (`Binding656`/`Nde`/`$S`/`Pde`/…), or pivot Binding335/336/338 + Class53 if a clean peel appears; continue scanning for stock vendor fingerprints.
 
 
