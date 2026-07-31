@@ -2157,6 +2157,24 @@ describe("quality-gate", () => {
     expect(report.issues).toEqual([]);
   });
 
+  test("passes three vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/workbook-C49Dgk1_.js
+      export {
+        Vector3,
+        Color,
+        BufferGeometry,
+        MeshPhysicalMaterial,
+        MathUtils,
+      } from "three";
+    `;
+    const report = analyzeSource(source, "restored/vendor/three.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
   test("passes renamed react-intl source chunk shims that re-export the npm package", () => {
     const source = `
       // Restored from ref/webview/assets/lib-BWT6A3Q0.js

@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~166.5k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~151.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -56,7 +56,8 @@
 | Field VOs (Binding343–361 + enums 335/336 + Class53) | ~2.7k | **Drained (wave-50)** → `workbook/pivot-fields/` |
 | Formula array/eval (helper31–61 + $u Binding370–374) | ~1.1k | **Drained (wave-51)** → `workbook/formula-array/` |
 | PivotLayout/cache hydrate (Binding334/wne + Cne/el/332/333 + helper24/hre) | ~0.37k | **Drained (wave-52)** → `workbook/pivot-table/` + `workbook/pivot-caches/`
-| Yjs + lib0 (`Binding1`–`331` / `no` / `Bte`) | ~9.5k | **Drained (wave-53)** → `vendor/yjs` npm shim (`yjs@13.6.27`) |
+| Yjs + lib0 (`Binding1`–`331` / `no` / `Bte`) | ~9.5k | **Drained (wave-53)** → `vendor/yjs` npm shim (`yjs@13.6.27`)
+| Three.js (`Binding929`/`Xbe` + MathUtils helpers) | ~15.3k | **Drained (wave-54)** → `vendor/three` npm shim (`three@0.170.0`) |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -607,4 +608,15 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on vendor shim + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 166535.
 - Next: contiguous post-gae residual / worksheet core / chart proto neighbors, or Binding662/`_C` when finally clean; continue scanning for stock vendor fingerprints (e.g. THREE remnants).
+
+
+## Wave-54 progress
+
+- Replaced inlined Three.js (`helper502`…`Ybe` + `Binding929`/`Xbe`, ~15.3k LOC) with `vendor/three` npm shim (`three@0.170.0`).
+- Kept thin boundary aliases for external 3D surface: `Binding957`=`Vector3`, `Binding1041`=`Color`, `Binding1060`=`BufferGeometry`, `Binding1099`=`Line`, `Binding1091`=`LineBasicMaterial`, `Binding1073`=`Group`, `Binding972`=`Vector4`, `Binding973`=`Box3`, `Binding954`=`MathUtils`, `Binding1103`=`MeshPhysicalMaterial`, `Binding1101`=`CylinderGeometry`, `Binding1100`=`CanvasTexture`, `Binding1090`=`Sprite`, `Binding1077`=`SpriteMaterial`, `Binding1072`=`BoxGeometry`, `$P`=`Mesh`, `Binding1135`=no-op init.
+- Left Binding662/`_C`, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on vendor shim + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 151261.
+- Next: Binding1574 (~8.2k) / Binding1790 (~8.0k) / Binding1996 (~4.5k), or Binding740 / `The` / `BYe`; continue scanning for stock vendor fingerprints.
 
