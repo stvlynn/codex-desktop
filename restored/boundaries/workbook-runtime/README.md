@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~69.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~66.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -95,6 +95,8 @@
 | Chart legend (`helper491` / `lbe`) | ~0.71k | **Drained (wave-92)** → `workbook/chart-legend/` |
 | Shape path (`helper605`–`607`) | ~0.42k | **Drained (wave-92)** → `workbook/shape-path/` |
 | Excel HTML clipboard (`Wpt` / `Gpt` / `Kpt`) | ~0.37k | **Drained (wave-92)** → `workbook/html-table-export/` |
+| Chart JSX lower (`dke` / `fke` / `helper722`–`742` / `_ke`) | ~1.59k | **Drained (wave-93)** → `workbook/chart-jsx-lower/` |
+| Compose JSX lower (`vke` / `helper745` / `Cke`) | ~1.22k | **Drained (wave-93)** → `workbook/compose-jsx-lower/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1055,6 +1057,18 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 69013 (was 70467; Δ -1454).
 - Next: helpers 722/745 (~0.47–0.41k) / vEe (~0.33k) / workbookA (~0.36k) / Binding1344 (~0.53k) / `_workbookS` only after presentation leave-behind ensures drain.
+
+## Wave-93 progress
+
+- Re-scanned ≥300 clusters: WorkbookN (~1946 leave), `_workbookS`/`vYe` (~1240 leave), `xLe` (~1770 walnut), helper722 (~467), helper745 (~408), helper462 (~403), workbookA (~362), vEe (~332). Binding1344 is ~185 real class (false ≥300 var-span). yrt constants-only.
+- Skipped `_workbookS`/`WorkbookN` / KJe–aYe; deferred helper462/vEe/workbookA.
+- Peeled `dke`/`fke`/`helper722`–`742`/`_ke` → `workbook/chart-jsx-lower/`.
+- Peeled `vke`/`yke`/`helper743`–`762`/`Cke` → `workbook/compose-jsx-lower/`; `cjlH` for helper700/701/qOe/lke/uke.
+- Boundary wired via line-range drain; `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 66294 (was 69013; Δ -2719).
+- Next: helper462 (~0.40k) / helper616 (~0.38k) / workbookA (~0.36k) / vEe (~0.33k) / clean `xLe` / `_workbookS` after presentation leave-behind drain.
+
 
 
 
