@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~76.7k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~76.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -83,6 +83,7 @@
 | Table element (`_workbookH`/`eDe`…`cDe`/`_workbookM`) | ~0.72k | **Drained (wave-84)** → `workbook/table-element/` |
 | Table row/range/columns/borders (`YEe`/`Binding1321`/`QEe`/`$Ee`) | ~0.58k | **Drained (wave-85)** → `workbook/table-row-range/` |
 | Formula registry (`$dt`/`Xdt`/`Zdt`/`Binding1947`) | ~0.57k | **Drained (wave-86)** → `workbook/formula-registry/` |
+| Presentation slide (`Z$`/`X$`/`cLe`/`sLe`) | ~0.79k | **Drained (wave-87)** → `workbook/presentation-slide/` |
 
 ## Why it stays in `boundaries/`
 
@@ -976,4 +977,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 76686 (was 77155; Δ -469).
 - Next: `Z$` presentation slide (~0.46k) / JEe table cell (~0.39k reunite with table-row-range) / clean `xLe` walnut / leave-behinds only if consumers clean.
+
+## Wave-87 progress
+
+- Identified contiguous `Z$`/`X$` + `cLe`/`sLe` cluster as Codex presentation Slide VO + Slides collection (NOT vendor): JSX prop sets + title helpers + slide/list classes (~788 LOC).
+- Extracted → `workbook/presentation-slide/` (slide-vo + slides-list under flat limit; element/notes/background/placeholder/layout/add helpers remain in boundary via `psH` hooks; `scH` for Binding1312/helper659; compose-layout/theme/geometry/stable-id imported directly).
+- Left `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, `_Ye`/`_workbookS` (~1.2k leave), JEe/Binding1315 (~0.39k), and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 75978 (was 76686; Δ -708).
+- Next: JEe table cell (~0.39k reunite with table-row-range) / clean `xLe` walnut / leave-behinds (`WorkbookN`/`_workbookS`) only if consumers clean — or lower peel bar / strategy change.
 

@@ -2,7 +2,7 @@
 // Flat boundary facade — vendored oversized workbook runtime module.
 // Intentional oversized vendor-runtime terminal (openBoundary).
 // Not stock npm (Codex popcorn workbook engine). Exit: Stage-3 split into workbook/.
-// Stage-3 waves: shape-geometry; theme-color; presentation-theme (Mae/Sle); fill; stylesheet; line; color-resolve; text-style; placeholder-style + font-metrics; style-resolve + glyph-advance; math-plain-text; math-ml; font-stack; math-layout; document-style/effects; placeholder-resolve; text-layout; canvas-fill; fill-resolve; text-canvas; text-box; design-tokens; ssf-npm; jstat+bessel-npm; yjs-npm; three-npm; highlightjs-npm; zod-npm; presentation-recipes; compose-layout; workbook-core; worksheet-drawings; drawing-layout+sparklines; mermaid-slide-adapters; decimal-npm; canvas-paint (BYe); chart-elements (The/Ohe…ige); formula-stats (Binding1831/1874); mermaid-slide-helpers (Binding1592/SAe…QAe); table-styles (Nme/Ume/ahe); google-slides-adapter (oJe/pJe/SJe); compose-dsl (Binding1490–1528); graphlib+dagre-npm (Binding1671/wNe); image-connector (Binding723–735); chart-asset (She/Che…Binding721); table-vo (fhe/yhe/xhe); charts-collection (CEe/REe/Binding1299/workbookC); mermaid-flowchart ($Ne/Binding1675/OPe/Binding1685/NPe/PPe); deck-kinds (wRe/qRe/Binding1738–1748); shape-element (Binding736/739); slides-collection (_workbookY/_workbookV); constraint-solver (bDe/Binding1364+prelude1350–1363); formula-opcodes (Z_t/X_t); table-element (_workbookH/eDe…cDe/_workbookM); table-row-range (YEe/Binding1321/QEe/$Ee); formula-registry ($dt/Xdt/Zdt).
+// Stage-3 waves: shape-geometry; theme-color; presentation-theme (Mae/Sle); fill; stylesheet; line; color-resolve; text-style; placeholder-style + font-metrics; style-resolve + glyph-advance; math-plain-text; math-ml; font-stack; math-layout; document-style/effects; placeholder-resolve; text-layout; canvas-fill; fill-resolve; text-canvas; text-box; design-tokens; ssf-npm; jstat+bessel-npm; yjs-npm; three-npm; highlightjs-npm; zod-npm; presentation-recipes; compose-layout; workbook-core; worksheet-drawings; drawing-layout+sparklines; mermaid-slide-adapters; decimal-npm; canvas-paint (BYe); chart-elements (The/Ohe…ige); formula-stats (Binding1831/1874); mermaid-slide-helpers (Binding1592/SAe…QAe); table-styles (Nme/Ume/ahe); google-slides-adapter (oJe/pJe/SJe); compose-dsl (Binding1490–1528); graphlib+dagre-npm (Binding1671/wNe); image-connector (Binding723–735); chart-asset (She/Che…Binding721); table-vo (fhe/yhe/xhe); charts-collection (CEe/REe/Binding1299/workbookC); mermaid-flowchart ($Ne/Binding1675/OPe/Binding1685/NPe/PPe); deck-kinds (wRe/qRe/Binding1738–1748); shape-element (Binding736/739); slides-collection (_workbookY/_workbookV); constraint-solver (bDe/Binding1364+prelude1350–1363); formula-opcodes (Z_t/X_t); table-element (_workbookH/eDe…cDe/_workbookM); table-row-range (YEe/Binding1321/QEe/$Ee); formula-registry ($dt/Xdt/Zdt); presentation-slide (Z$/X$/cLe/sLe).
 // Stage-3 wave-6: Line Binding431 stroke VO + dash/compound maps → workbook/line/.
 // Stage-3 wave-7: color-resolve helpers (Sae/Cae/wae/Tae/workbookSt) → workbook/color-resolve/.
 // Stage-3 wave-8: TextStyle VO (workbookVt) + alignment/autofit/caps → workbook/text-style/.
@@ -1799,6 +1799,22 @@ import {
   Xdt,
   Zdt,
 } from "../../workbook/formula-registry";
+import {
+  ensurePresentationSlideInit,
+  ensureSlidesListInit,
+  wirePresentationSlideBoundaryHooks,
+  Z$,
+  cLe,
+  X$,
+  sLe,
+  tLe,
+  nLe,
+  aLe,
+  oLe,
+  rLe,
+  iLe,
+} from "../../workbook/presentation-slide";
+
 
 wireFormulaStatsBoundaryHooks({
   fn835: workbookHelper835,
@@ -1933,6 +1949,70 @@ setFormulaImplBag({
   Jut, Yut, Xut, Zut, Qut, $ut, edt, tdt, ndt, rdt, idt, adt,
   odt, sdt, cdt, ldt, udt, ddt, fdt, pdt, mdt, hdt, gdt, _dt,
   vdt, ydt, bdt, xdt, Sdt, Cdt, wdt, Tdt, Edt, Ddt,
+});
+
+var ensurePresentationSlideCluster = ensurePresentationSlideInit;
+var ensureSlidesListCluster = ensureSlidesListInit;
+
+wirePresentationSlideBoundaryHooks({
+  ensureKDe: () => {
+    kDe();
+  },
+  ensureBinding1370: () => {
+    workbookBinding1370();
+  },
+  ensureBinding1296: () => {
+    workbookBinding1296();
+  },
+  ensureJDe: () => {
+    jDe();
+  },
+  ensureBinding1341: () => {
+    workbookBinding1341();
+  },
+  ensureBinding1389: () => {
+    workbookBinding1389();
+  },
+  ensureBinding1343: () => {
+    workbookBinding1343();
+  },
+  ensureCke: () => {
+    Cke();
+  },
+  ensureBinding1531: () => {
+    workbookBinding1531();
+  },
+  ensureWorkbookEt: () => {
+    workbookEt();
+  },
+  ensureBIe: () => {
+    BIe();
+  },
+  get Binding1340() {
+    return workbookBinding1340;
+  },
+  get Binding1388() {
+    return workbookBinding1388;
+  },
+  get Binding1294() {
+    return workbookBinding1294;
+  },
+  get Binding1342() {
+    return workbookBinding1342;
+  },
+  get Binding1371() {
+    return workbookBinding1371;
+  },
+  get layoutDirection() {
+    return $U;
+  },
+  gridFrame: (...args: any[]) => workbookHelper672(...args),
+  autoLayoutFrames: (...args: any[]) => ADe(...args),
+  exportLayoutBlob: (...args: any[]) => FDe(...args),
+  normalizeAddConfig: (...args: any[]) => VIe(...args),
+  addFromMermaid: (...args: any[]) => IIe(...args),
+  addFromCodePlugin: (...args: any[]) => cAe(...args),
+  parseComposeInput: (...args: any[]) => vke(...args),
 });
 
 import {
@@ -41325,794 +41405,6 @@ function eLe(workbookInput8745) {
   )
     throw Error("<mermaid> does not accept children.");
 }
-var tLe,
-  nLe,
-  X$,
-  rLe,
-  iLe,
-  Z$ = esmInit(() => {
-    workbookBinding1312();
-    kDe();
-    workbookBinding1370();
-    workbookBinding1296();
-    jDe();
-    workbookBinding1341();
-    workbookBinding1389();
-    workbookBinding1343();
-    workbookBinding426();
-    workbookBinding1485();
-    workbookBinding1488();
-    DOe();
-    Cke();
-    workbookBinding1531();
-    workbookEt();
-    workbookH();
-    BIe();
-    tLe = new Set(["code", "position", "options", "children", "ref", "key"]);
-    nLe = new Set([
-      "code",
-      "language",
-      "fileName",
-      "position",
-      "showHeader",
-      "fit",
-      "children",
-      "ref",
-      "key",
-    ]);
-    X$ = class {
-      #e;
-      #t;
-      #n;
-      #r;
-      #i;
-      #a;
-      #o;
-      #s;
-      constructor(workbookInput2959, workbookInput2960) {
-        this.#e = workbookInput2959;
-        this.#t = {
-          id: workbookInput2960?.id ?? "",
-          index: workbookInput2960?.index ?? 0,
-          useLayoutId: workbookInput2960?.useLayoutId ?? "",
-          widthEmu: workbookInput2960?.widthEmu ?? 9144e3,
-          heightEmu: workbookInput2960?.heightEmu ?? 6858e3,
-          creationId: workbookInput2960?.creationId ?? Gue(),
-          showMasterShapes: workbookInput2960?.showMasterShapes,
-        };
-        this.#n = new workbookBinding1340(
-          this.#d(),
-          workbookInput2960?.elements ?? [],
-        );
-        this.#r = new workbookBinding1388(
-          this.#u(),
-          workbookInput2960?.notesSlide,
-        );
-        this.#i = new workbookBinding1294(
-          this.#f(),
-          workbookInput2960?.background ?? undefined,
-        );
-        this.#o = [];
-      }
-      get speakerNotes() {
-        return this.#r;
-      }
-      get background() {
-        return this.#i;
-      }
-      get id() {
-        return this.#t.id;
-      }
-      get index() {
-        return this.#t.index;
-      }
-      get slideNumber() {
-        return this.#t.index + 1;
-      }
-      get creationId() {
-        return this.#t.creationId;
-      }
-      get shapes() {
-        return this.#n.shapes;
-      }
-      get useLayoutId() {
-        return this.#t.useLayoutId;
-      }
-      get showMasterShapes() {
-        return (
-          this.#t.showMasterShapes ??
-          this.#e.getPresentation?.()?.layouts.getById(this.useLayoutId)
-            ?.showMasterShapes
-        );
-      }
-      get images() {
-        return this.#n.images;
-      }
-      get tables() {
-        return this.#n.tables;
-      }
-      get charts() {
-        return this.#n.charts;
-      }
-      get artifacts() {
-        return this.#n.artifacts;
-      }
-      get elements() {
-        return this.#n;
-      }
-      get theme() {
-        return (
-          (this.#s ||= new workbookBinding1486(
-            () => this.#e.getPresentation?.(),
-            this.id,
-          )),
-          this.#s
-        );
-      }
-      resolveRenderContext() {
-        return this.#e.resolveSlideRenderContext(this);
-      }
-      getInheritedPlaceholderShapes(workbookInput3126) {
-        let workbookBinding11238 = workbookInput3126.placeholderIndex,
-          workbookBinding11239 = workbookInput3126.placeholderTypeCandidates;
-        if (
-          workbookBinding11238 === undefined &&
-          workbookBinding11239.length === 0
-        )
-          return [];
-        let { layout, masterLayout } = this.resolveRenderContext(),
-          workbookBinding11240 =
-            workbookBinding11238 !== undefined &&
-            workbookBinding11239.length === 0,
-          workbookBinding11241 = (workbookInput8366) => {
-            let workbookBinding18871 = workbookInput8366?.findPlaceholder(
-              workbookBinding11239,
-              workbookBinding11238 ?? 0,
-              {
-                allowIndexMatchWithoutType: workbookBinding11240,
-              },
-            );
-            return workbookBinding18871?.type === "shape"
-              ? workbookBinding18871
-              : undefined;
-          };
-        return [
-          workbookBinding11241(masterLayout),
-          workbookBinding11241(layout),
-        ].filter((item) => item !== undefined && item !== workbookInput3126);
-      }
-      get frame() {
-        return {
-          left: 0,
-          top: 0,
-          width: of(this.#t.widthEmu),
-          height: of(this.#t.heightEmu),
-        };
-      }
-      set frame(workbookInput8221) {
-        let workbookBinding18726 = workbookTt(workbookInput8221.width);
-        workbookBinding18726 !== undefined &&
-          (this.#t.widthEmu = workbookBinding18726);
-        let workbookBinding18727 = workbookTt(workbookInput8221.height);
-        workbookBinding18727 !== undefined &&
-          (this.#t.heightEmu = workbookBinding18727);
-        this.#p();
-      }
-      setViewportSize(workbookInput7604, workbookInput7605) {
-        let workbookBinding18091 = workbookInput7604
-          ? workbookTt(workbookInput7604)
-          : undefined;
-        workbookBinding18091 !== undefined &&
-          (this.#t.widthEmu = workbookBinding18091);
-        let workbookBinding18092 = workbookInput7605
-          ? workbookTt(workbookInput7605)
-          : undefined;
-        workbookBinding18092 !== undefined &&
-          (this.#t.heightEmu = workbookBinding18092);
-        this.#p();
-      }
-      get placeholders() {
-        return (
-          (this.#a ||= new workbookBinding1342(this.#n.shapes, "slide", {
-            inheritedShapes: () => this.#c(),
-            materializeInheritedShape: (workbookInput16443) =>
-              this.#l(workbookInput16443),
-          })),
-          this.#a
-        );
-      }
-      setLayout(workbookInput12629) {
-        this.#t.useLayoutId = workbookInput12629.id;
-        this.#p();
-      }
-      #c() {
-        let { layout, masterLayout } = this.resolveRenderContext(),
-          workbookBinding15343 = layout?.placeholders.getAll() ?? [],
-          workbookBinding15344 = (masterLayout?.placeholders.getAll() ?? [])
-            .filter((item) => Gae(item, layout?.furnitureVisibility))
-            .filter(
-              (item) => !workbookBinding15343.some((_item) => Kae(_item, item)),
-            );
-        return [...workbookBinding15343, ...workbookBinding15344];
-      }
-      #l(workbookInput8239) {
-        let workbookBinding18754 = structuredClone(workbookInput8239.toProto());
-        return (
-          (workbookBinding18754.id = workbookHelper659()),
-          (workbookBinding18754.bbox = undefined),
-          this.#n.shapes.add({
-            proto: workbookBinding18754,
-          })
-        );
-      }
-      async add(workbookInput7121) {
-        let workbookBinding17458 = VIe(workbookInput7121),
-          workbookBinding17459 =
-            workbookBinding17458.config.plugin === "mermaid"
-              ? await IIe(this, workbookBinding17458.config)
-              : cAe(this, workbookBinding17458.config);
-        return (
-          workbookBinding17458.ref &&
-            (workbookBinding17458.ref.current = workbookBinding17459),
-          workbookBinding17459
-        );
-      }
-      async fromMermaid(
-        workbookInput8667,
-        workbookInput8668,
-        workbookInput8669 = {},
-      ) {
-        return this.add({
-          plugin: "mermaid",
-          code: workbookInput8667,
-          position: workbookInput8668,
-          options: workbookInput8669,
-        });
-      }
-      duplicate() {
-        return this.#e.duplicateSlide(this);
-      }
-      setIndex(workbookInput13259) {
-        this.#t.index = workbookInput13259;
-        this.#p();
-      }
-      hydrateCollaborativeRefsFromProto() {
-        this.#n.hydrateCollaborativeRefsFromProto();
-      }
-      toSnapshot() {
-        let workbookBinding9118 = this.shapes.items.map((item) =>
-            item.toSnapshot(),
-          ),
-          workbookBinding9119 = this.charts.items.map((item) =>
-            item.toSnapshot(),
-          ),
-          workbookBinding9120 = this.images.items.map((item) =>
-            item.toSnapshot(),
-          ),
-          workbookBinding9121 = this.tables.items.map((item) =>
-            item.toSnapshot(),
-          ),
-          workbookBinding9122 = this.artifacts.items.map((item) =>
-            item.toSnapshot(),
-          ),
-          workbookBinding9123 = this.#r.toSnapshot(this.id),
-          workbookBinding9124 = rLe(workbookBinding9118, this.index),
-          workbookBinding9125 = this.useLayoutId.trim();
-        return {
-          aid: `sl/${this.id}`,
-          kind: "slide",
-          id: this.id,
-          index: this.index,
-          title: workbookBinding9124,
-          layoutId:
-            workbookBinding9125.length > 0 ? workbookBinding9125 : undefined,
-          shapes: workbookBinding9118,
-          charts: workbookBinding9119,
-          images: workbookBinding9120,
-          tables: workbookBinding9121,
-          artifacts: workbookBinding9122,
-          notes: workbookBinding9123,
-        };
-      }
-      gridFrame(workbookInput13004, workbookInput13005 = {}) {
-        return workbookHelper672(
-          this.frame,
-          workbookInput13004,
-          workbookInput13005,
-        );
-      }
-      gridLayout(workbookInput9897, workbookInput9898 = {}) {
-        ADe(this.frame, workbookInput9897, workbookInput9898).forEach(
-          ({ shape, frame }) => {
-            shape.position = frame;
-          },
-        );
-      }
-      stackVertical(workbookInput11376, workbookInput11377 = {}) {
-        this.autoLayout(workbookInput11376, {
-          ...workbookInput11377,
-          direction: $U.vertical,
-        });
-      }
-      stackHorizontal(workbookInput11198, workbookInput11199 = {}) {
-        this.autoLayout(workbookInput11198, {
-          ...workbookInput11199,
-          direction: $U.horizontal,
-        });
-      }
-      autoLayout(workbookInput13420, workbookInput13421 = {}) {
-        workbookBinding1371.apply(this, workbookInput13420, workbookInput13421);
-      }
-      compose(workbookInput3620, workbookInput3621 = {}) {
-        let workbookBinding12159 = vke(workbookInput3620);
-        workbookBinding12159.background?.fill !== undefined &&
-          (this.background.fill = workbookBinding12159.background.fill);
-        workbookBinding12159.background?.ref !== undefined &&
-          (this.background.ref = workbookBinding12159.background.ref);
-        let { elements, elementsByPath, run } = workbookBinding1466(
-          this,
-          workbookBinding12159.node,
-          workbookInput3621,
-        );
-        return (
-          workbookBinding12159.refsByPath.forEach((item, index) => {
-            item.current = elementsByPath.get(index) ?? null;
-          }),
-          this.#o.push(run),
-          elements
-        );
-      }
-      getPresentation() {
-        return this.#e.getPresentation?.();
-      }
-      copyComposeRunsFrom(workbookInput11985) {
-        this.#o = JSON.parse(JSON.stringify(workbookInput11985.#o));
-      }
-      moveTo(workbookInput13947) {
-        this.#e.moveSlide(this, workbookInput13947);
-      }
-      delete() {
-        let workbookBinding15754 = this.#e.getPresentation?.()?.getRecorder?.();
-        if (workbookBinding15754) {
-          let workbookBinding19465 = `sl/${this.id}`;
-          workbookBinding15754.record({
-            op: "slide.remove",
-            target: workbookBinding15754.targetRefForElement(
-              this,
-              workbookBinding19465,
-            ),
-          });
-        }
-        this.#e.deleteSlide(this);
-      }
-      export(
-        workbookInput7445 = {
-          format: "png",
-        },
-      ) {
-        let workbookBinding17917 = workbookInput7445.format ?? "png";
-        return workbookBinding17917 === "layout"
-          ? Promise.resolve(FDe(this, this.#o))
-          : this.#e.renderSlidePreview(this, {
-              ...workbookInput7445,
-              format: workbookBinding17917,
-            });
-      }
-      toProto() {
-        let workbookBinding10977 = this.#r.toProto();
-        return (
-          workbookBinding10977 &&
-            this.#t.useLayoutId &&
-            (workbookBinding10977.useLayoutId = this.#t.useLayoutId),
-          {
-            id: this.#t.id,
-            index: this.#t.index,
-            useLayoutId: this.#t.useLayoutId,
-            widthEmu: this.#t.widthEmu,
-            heightEmu: this.#t.heightEmu,
-            creationId: this.#t.creationId,
-            showMasterShapes: this.#t.showMasterShapes,
-            elements: this.#n.toProto(),
-            background: this.#i.toProto(),
-            notesSlide: workbookBinding10977,
-          }
-        );
-      }
-      #u() {
-        return {
-          fontFamilyCache: this.#e.fontFamilyCache,
-          stub: () => {},
-          getSlideId: () => this.id,
-          recordOp: (workbookInput9827) => {
-            this.#p();
-            let workbookBinding20369 = this.#e
-              .getPresentation?.()
-              ?.getRecorder?.();
-            workbookBinding20369 &&
-              workbookBinding20369.record(workbookInput9827);
-          },
-        };
-      }
-      #d() {
-        return {
-          ...this.#e,
-          getSlide: () => this,
-          getSlideCollabState: () =>
-            this.#e.getPresentation?.()?.getSlideCollabState(this.id),
-        };
-      }
-      #f() {
-        return {
-          stub: () => {},
-          getTargetRef: () => {
-            let workbookBinding19140 = `sl/${this.id}`,
-              workbookBinding19141 = this.#e
-                .getPresentation?.()
-                ?.getRecorder?.();
-            return workbookBinding19141
-              ? workbookBinding19141.targetRefForElement(
-                  this,
-                  workbookBinding19140,
-                )
-              : workbookBinding19140;
-          },
-          recordOp: (workbookInput9828) => {
-            this.#p();
-            let workbookBinding20370 = this.#e
-              .getPresentation?.()
-              ?.getRecorder?.();
-            workbookBinding20370 &&
-              workbookBinding20370.record(workbookInput9828);
-          },
-        };
-      }
-      #p() {
-        this.#e.getPresentation?.()?.queuePresentationCollabPublish();
-      }
-    };
-    rLe = (workbookInput6684, workbookInput6685) => {
-      for (let workbookBinding18659 of workbookInput6684) {
-        let workbookBinding19174 = workbookBinding18659.text?.trim();
-        if (workbookBinding19174) {
-          let workbookBinding21106 =
-            workbookBinding19174
-              .split(/\r?\n/)
-              .find((item) => item.trim().length > 0) ?? workbookBinding19174;
-          return iLe(workbookBinding21106.trim());
-        }
-      }
-      return `Slide ${workbookInput6685 + 1}`;
-    };
-    iLe = (workbookInput10247, workbookInput10248 = 80) => {
-      if (workbookInput10247.length <= workbookInput10248)
-        return workbookInput10247;
-      let workbookBinding20713 = Math.max(1, workbookInput10248 - 3);
-      return `${workbookInput10247.slice(0, workbookBinding20713)}...`;
-    };
-  }),
-  aLe,
-  oLe,
-  sLe,
-  cLe = esmInit(() => {
-    Z$();
-    workbookH();
-    aLe = 12192e3;
-    oLe = 6858e3;
-    sLe = class {
-      #e;
-      #t;
-      #n;
-      #r;
-      #i;
-      #a;
-      constructor(
-        workbookInput4352,
-        workbookInput4353,
-        workbookInput4354 = {},
-      ) {
-        this.#e = workbookInput4352;
-        this.#r = workbookInput4354.defaultWidthEmu ?? aLe;
-        this.#i = workbookInput4354.defaultHeightEmu ?? oLe;
-        this.#t = [];
-        this.#a = new Map();
-        (workbookInput4353 ?? []).forEach((item) => {
-          let workbookBinding22088 = new X$(this.#u(), item);
-          this.#d(workbookBinding22088);
-        });
-        this.#c(0);
-        this.#n = this.#t.length > 0 ? 0 : -1;
-      }
-      get items() {
-        return [...this.#t];
-      }
-      getItem(workbookInput4515) {
-        if (typeof workbookInput4515 == "number") {
-          let workbookBinding20743 = this.#t[workbookInput4515];
-          if (!workbookBinding20743)
-            throw Error(`Slide index out of range: ${workbookInput4515}`);
-          return workbookBinding20743;
-        }
-        let workbookBinding13764 = workbookInput4515?.id ?? "";
-        if (!workbookBinding13764)
-          throw Error("Slide id selector requires an id value.");
-        let workbookBinding13765 = this.#a.get(workbookBinding13764);
-        if (!workbookBinding13765)
-          throw Error(`Slide with id ${workbookBinding13764} not found.`);
-        return workbookBinding13765;
-      }
-      add(workbookInput929 = {}) {
-        let { layout, layoutId } = workbookInput929,
-          workbookBinding5928 = {
-            id: workbookHelper299(),
-            index: this.#t.length,
-            elements: [],
-            useLayoutId: "",
-            widthEmu: this.#r,
-            heightEmu: this.#i,
-          },
-          workbookBinding5929 = new X$(this.#u(), workbookBinding5928);
-        if (
-          ((workbookInput929.width !== undefined ||
-            workbookInput929.height !== undefined) &&
-            workbookBinding5929.setViewportSize(
-              workbookInput929.width,
-              workbookInput929.height,
-            ),
-          layoutId)
-        ) {
-          let workbookBinding20313 = this.#e.getLayoutById(layoutId);
-          if (!workbookBinding20313)
-            throw Error(`Layout id not found: ${layoutId}`);
-          workbookBinding5929.setLayout(workbookBinding20313);
-        } else if (layout) {
-          let workbookBinding22188 = this.#e.getLayoutByName(layout);
-          workbookBinding5929.setLayout(workbookBinding22188);
-        } else {
-          let workbookBinding21967 = this.#e.getDefaultLayout?.();
-          workbookBinding21967 &&
-            workbookBinding5929.setLayout(workbookBinding21967);
-        }
-        this.#d(workbookBinding5929);
-        this.#e
-          .getPresentation?.()
-          ?.hydrateSlideCollaborativeState(workbookBinding5929);
-        this.#e.getPresentation?.()?.queuePresentationCollabPublish();
-        this.#n === -1 && (this.#n = 0);
-        let workbookBinding5930 = this.#e.getPresentation?.()?.getRecorder?.();
-        if (workbookBinding5930) {
-          let workbookBinding15528 = `sl/${workbookBinding5929.id}`,
-            workbookBinding15529 = workbookBinding5930.assignAlias(
-              workbookBinding5929,
-              workbookBinding15528,
-              "slide",
-            ),
-            workbookBinding15530 = workbookBinding5929.frame;
-          workbookBinding5930.record({
-            op: "slide.add",
-            as: workbookBinding15529,
-            layout,
-            layoutId,
-            width: workbookBinding15530.width,
-            height: workbookBinding15530.height,
-          });
-        }
-        return workbookBinding5929;
-      }
-      insert(workbookInput7202 = {}) {
-        let { after, ...rest } = workbookInput7202,
-          workbookBinding17563 = this.add(rest),
-          workbookBinding17564 = this.#p(after);
-        return (
-          workbookBinding17564 !== this.#t.length - 1 &&
-            workbookBinding17563.moveTo(workbookBinding17564),
-          {
-            slide: workbookBinding17563,
-            index: workbookBinding17564,
-          }
-        );
-      }
-      #o(workbookInput1910) {
-        let workbookBinding8592 = this.#t.indexOf(workbookInput1910);
-        if (workbookBinding8592 === -1)
-          throw Error(
-            "Cannot duplicate a slide that is not in this collection.",
-          );
-        let workbookBinding8593 = {
-            ...workbookInput1910.toProto(),
-            id: workbookHelper299(),
-            index: workbookBinding8592 + 1,
-          },
-          workbookBinding8594 = new X$(this.#u(), workbookBinding8593);
-        workbookBinding8594.copyComposeRunsFrom(workbookInput1910);
-        this.#d(workbookBinding8594, workbookBinding8592 + 1);
-        this.#e
-          .getPresentation?.()
-          ?.hydrateSlideCollaborativeState(workbookBinding8594);
-        this.#c(workbookBinding8592);
-        this.#e.getPresentation?.()?.queuePresentationCollabPublish();
-        let workbookBinding8595 = this.#e.getPresentation?.()?.getRecorder?.();
-        if (workbookBinding8595) {
-          let workbookBinding17245 = `sl/${workbookBinding8594.id}`,
-            workbookBinding17246 = workbookBinding8595.assignAlias(
-              workbookBinding8594,
-              workbookBinding17245,
-              "slide",
-            );
-          workbookBinding8595.record({
-            op: "slide.duplicate",
-            target: workbookBinding8595.targetRefForElement(
-              workbookInput1910,
-              `sl/${workbookInput1910.id}`,
-            ),
-            as: workbookBinding17246,
-          });
-        }
-        return workbookBinding8594;
-      }
-      #s(workbookInput1852, workbookInput1853) {
-        let workbookBinding8452 = this.#t.indexOf(workbookInput1852);
-        if (workbookBinding8452 === -1)
-          throw Error("Cannot move a slide that is not in this collection.");
-        let workbookBinding8453 = Math.max(
-          0,
-          Math.min(
-            Number.isFinite(workbookInput1853)
-              ? Math.trunc(workbookInput1853)
-              : 0,
-            this.#t.length - 1,
-          ),
-        );
-        if (workbookBinding8453 === workbookBinding8452) return;
-        let workbookBinding8454 =
-          this.#n >= 0 && this.#n < this.#t.length
-            ? this.#t[this.#n]
-            : undefined;
-        this.#t.splice(workbookBinding8452, 1);
-        let workbookBinding8455 = Math.max(
-          0,
-          Math.min(workbookBinding8453, this.#t.length),
-        );
-        this.#t.splice(workbookBinding8455, 0, workbookInput1852);
-        let workbookBinding8456 = Math.min(
-          workbookBinding8452,
-          workbookBinding8455,
-        );
-        if (
-          (this.#c(workbookBinding8456 < 0 ? 0 : workbookBinding8456),
-          this.#e.getPresentation?.()?.queuePresentationCollabPublish(),
-          workbookBinding8454)
-        ) {
-          let workbookBinding22442 = this.#t.indexOf(workbookBinding8454);
-          this.#n = workbookBinding22442;
-        } else this.#n = -1;
-      }
-      #c(workbookInput9778) {
-        for (
-          let workbookBinding21175 = workbookInput9778;
-          workbookBinding21175 < this.#t.length;
-          workbookBinding21175 += 1
-        ) {
-          let workbookBinding22465 = this.#t[workbookBinding21175];
-          workbookBinding22465 &&
-            workbookBinding22465.setIndex(workbookBinding21175);
-        }
-      }
-      remove(workbookInput12566) {
-        let workbookBinding22443 = this.#t[workbookInput12566];
-        workbookBinding22443 && workbookBinding22443.delete();
-      }
-      replace(workbookInput4093) {
-        let workbookBinding13065 = this.getActive()?.id;
-        this.#t = [];
-        this.#a = new Map();
-        for (let workbookBinding22859 of workbookInput4093 ?? [])
-          this.#d(new X$(this.#u(), workbookBinding22859));
-        for (
-          let workbookBinding22588 = 0;
-          workbookBinding22588 < this.#t.length;
-          workbookBinding22588 += 1
-        )
-          this.#t[workbookBinding22588]?.setIndex(workbookBinding22588);
-        if (workbookBinding13065) {
-          let workbookBinding20864 = this.#t.findIndex(
-            (item) => item.id === workbookBinding13065,
-          );
-          this.#n = workbookBinding20864 >= 0 ? workbookBinding20864 : -1;
-          return;
-        }
-        this.#n = this.#t.length > 0 ? 0 : -1;
-      }
-      #l(workbookInput3865) {
-        let workbookBinding12703 = this.#t.indexOf(workbookInput3865);
-        workbookBinding12703 !== -1 &&
-          (this.#e
-            .getPresentation?.()
-            ?.removeSlideCollaborativeState(workbookInput3865.id),
-          this.#f(workbookInput3865, workbookBinding12703),
-          this.#t.length === 0
-            ? (this.#n = -1)
-            : this.#n > workbookBinding12703
-              ? --this.#n
-              : this.#n === workbookBinding12703 &&
-                (this.#n = Math.min(workbookBinding12703, this.#t.length - 1)),
-          this.#c(workbookBinding12703),
-          this.#e.getPresentation?.()?.queuePresentationCollabPublish());
-      }
-      getActive() {
-        if (!(this.#n < 0)) return this.#t[this.#n];
-      }
-      setActive(workbookInput11534) {
-        let workbookBinding21941 = this.#t.indexOf(workbookInput11534);
-        workbookBinding21941 >= 0 && (this.#n = workbookBinding21941);
-      }
-      get count() {
-        return this.#t.length;
-      }
-      toProto() {
-        return this.#t.map((item) => item.toProto());
-      }
-      #u() {
-        return {
-          ...this.#e,
-          duplicateSlide: (workbookInput16444) => this.#o(workbookInput16444),
-          moveSlide: (workbookInput16233, workbookInput16234) =>
-            this.#s(workbookInput16233, workbookInput16234),
-          deleteSlide: (workbookInput16445) => this.#l(workbookInput16445),
-          renderSlidePreview: (workbookInput15345, workbookInput15346) =>
-            this.#e.renderSlidePreview(workbookInput15345, workbookInput15346),
-          resolveSlideRenderContext: (workbookInput14166) =>
-            this.#e.resolveSlideRenderContext(workbookInput14166),
-        };
-      }
-      #d(workbookInput6660, workbookInput6661) {
-        if (
-          typeof workbookInput6661 == "number" &&
-          Number.isFinite(workbookInput6661)
-        ) {
-          let workbookBinding21074 = Math.max(
-            0,
-            Math.min(Math.trunc(workbookInput6661), this.#t.length),
-          );
-          this.#t.splice(workbookBinding21074, 0, workbookInput6660);
-        } else this.#t.push(workbookInput6660);
-        workbookInput6660.id &&
-          this.#a.set(workbookInput6660.id, workbookInput6660);
-      }
-      #f(workbookInput7879, workbookInput7880) {
-        let workbookBinding18362 =
-          workbookInput7880 ??
-          this.#t.findIndex((item) => item === workbookInput7879);
-        workbookBinding18362 >= 0 &&
-          workbookBinding18362 < this.#t.length &&
-          this.#t.splice(workbookBinding18362, 1);
-        workbookInput7879.id &&
-          this.#a.get(workbookInput7879.id) === workbookInput7879 &&
-          this.#a.delete(workbookInput7879.id);
-      }
-      #p(workbookInput2883) {
-        if (workbookInput2883 == null || this.#t.length <= 1)
-          return this.#t.length - 1;
-        let workbookBinding10727;
-        if (typeof workbookInput2883 == "number") {
-          if (!Number.isFinite(workbookInput2883))
-            throw Error("Insert index must be a finite number.");
-          if (
-            ((workbookBinding10727 = Math.trunc(workbookInput2883)),
-            workbookBinding10727 < 0 || workbookBinding10727 >= this.#t.length)
-          )
-            throw Error("Insert index is out of range.");
-        } else if (
-          ((workbookBinding10727 = this.#t.indexOf(workbookInput2883)),
-          workbookBinding10727 === -1)
-        )
-          throw Error(
-            "Cannot insert relative to a slide outside this collection.",
-          );
-        let workbookBinding10728 = workbookBinding10727 + 1;
-        return Math.min(Math.max(workbookBinding10728, 0), this.#t.length - 1);
-      }
-    };
-  });
 function lLe(workbookInput7805, workbookInput7806) {
   let workbookBinding18290 = workbookInput7805.frame,
     workbookBinding18291 = Math.max(
