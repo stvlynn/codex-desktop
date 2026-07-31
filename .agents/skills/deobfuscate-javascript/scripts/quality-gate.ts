@@ -561,7 +561,9 @@ const PUBLIC_NPM_VENDOR_SHIMS: Record<string, PublicNpmVendorSpecifiers> = {
   "react-is-runtime": "react-is",
   "react-redux-provider-runtime": "react-redux",
   "react-style-singleton": "react-style-singleton",
+  recharts: "recharts",
   roughjs: "roughjs",
+  ssf: "ssf",
   stylis: "stylis",
   analytics: "@segment/analytics-next",
   "babel-runtime-using-ctx": "@babel/runtime/helpers/esm/usingCtx",
@@ -826,6 +828,20 @@ const PUBLIC_NPM_VENDOR_API_FINGERPRINTS: Array<{
       "sankeyRight",
     ],
     minimumUniqueApiNames: 2,
+  },
+  {
+    specifiers: "ssf",
+    apiNames: [
+      "format",
+      "get_table",
+      "init_table",
+      "is_date",
+      "load",
+      "load_table",
+      "parse_date_code",
+      "version",
+    ],
+    minimumUniqueApiNames: 3,
   },
 ];
 

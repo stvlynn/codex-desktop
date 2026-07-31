@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~212.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~209.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -29,6 +29,7 @@
 | Worksheet / spreadsheet core | ~50k–72k, ~210k–230k | Range/table/drawing APIs |
 | Presentation + Mermaid hooks | ~142k–174k | Theme palettes drained → `workbook/presentation-theme/`; Mermaid/collab remain |
 | Formula / xlsx validation | ~177k–230k | Serial dates, workbook validation (`WorkbookN`) |
+| SSF number-format (`Binding571`) | ~2.9k | **Drained (wave-24)** → `vendor/ssf` npm shim (`ssf@0.11.2`) |
 | Document glue | scattered | DOCX protobuf already faced under `workbook/document-*` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
@@ -235,6 +236,16 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 212002.
-- Next: worksheet/spreadsheet core if a clean line-range slice appears, or SSF Binding571 (stock `ssf@0.11.2`) via npm-shim path.
+- Next: ~~SSF Binding571~~ (done wave-24); worksheet/spreadsheet core if a clean line-range slice appears.
+
+
+## Wave-24 progress
+
+- Replaced inlined SSF `Binding571` (`ssf@0.11.2`, version + `DO_NOT_EXPORT_SSF` fingerprint) with `vendor/ssf` npm shim; boundary keeps thin `workbookBinding571 = () => workbookSsf` for existing `toEsm(...)` call-sites.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on vendor shim + boundary `--no-cache --allow-open-boundaries`; vendor-npm-preflight PASS.
+- Boundary LOC ≈ 209067.
+- Next: worksheet/spreadsheet core if a clean line-range slice appears (still leave intentional chart/EMU helpers).
 
 

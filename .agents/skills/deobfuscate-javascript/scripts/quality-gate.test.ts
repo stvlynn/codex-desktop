@@ -2085,6 +2085,59 @@ describe("quality-gate", () => {
     expect(report.issues).toEqual([]);
   });
 
+  test("passes recharts vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
+      export {
+        Area,
+        Bar,
+        CartesianGrid,
+        Cell,
+        ComposedChart,
+        LabelList,
+        Legend,
+        Line,
+        Pie,
+        PieChart,
+        ReferenceDot,
+        ReferenceLine,
+        ResponsiveContainer,
+        Scatter,
+        Tooltip,
+        XAxis,
+        YAxis,
+        useOffset,
+        usePlotArea,
+      } from "recharts";
+    `;
+    const report = analyzeSource(source, "restored/vendor/recharts.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
+  test("passes ssf vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/workbook-C49Dgk1_.js
+      export {
+        format,
+        get_table,
+        is_date,
+        load,
+        load_table,
+        parse_date_code,
+        version,
+      } from "ssf";
+      export { default } from "ssf";
+    `;
+    const report = analyzeSource(source, "restored/vendor/ssf.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
   test("passes renamed react-intl source chunk shims that re-export the npm package", () => {
     const source = `
       // Restored from ref/webview/assets/lib-BWT6A3Q0.js
