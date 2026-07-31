@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~77.7k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~77.2k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -81,6 +81,7 @@
 | Constraint solver prelude (Binding1350–1363) | ~0.39k | **Drained (wave-83)** → `workbook/constraint-solver/` |
 | Formula opcodes (`Z_t`/`X_t`) | ~0.50k | **Drained (wave-83)** → `workbook/formula-opcodes/` |
 | Table element (`_workbookH`/`eDe`…`cDe`/`_workbookM`) | ~0.72k | **Drained (wave-84)** → `workbook/table-element/` |
+| Table row/range/columns/borders (`YEe`/`Binding1321`/`QEe`/`$Ee`) | ~0.58k | **Drained (wave-85)** → `workbook/table-row-range/` |
 
 ## Why it stays in `boundaries/`
 
@@ -953,4 +954,15 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 77713 (was 78381; Δ -668).
 - Next: YEe…`$Ee` table row/range/columns/borders (~0.58k) / `$dt` formula registry (~0.57k) / clean `xLe` walnut / `Z$` (~460) / leave-behinds only if consumers clean.
+
+## Wave-85 progress
+
+- Identified contiguous YEe…`$Ee` cluster as Codex presentation table row/range/columns/borders (NOT vendor): Binding1316 row + XEe/ZEe helpers + Binding1317–1320 range + Binding1322–1323 columns + Binding1324 borders (~582 LOC).
+- Extracted → `workbook/table-row-range/` (single impl under flat limit; JEe/Binding1315 remain in boundary via `trH` hooks; Binding1312/helper659 via slides-collection `scH`; text-style / fill / geometry-transform / line imported directly; intentional `workbookEt` ensure dropped).
+- Table-element `teH` wire now resolves YEe/Binding1321/QEe/`$Ee`/Binding1316–1324 from imported module; Binding1330/1327 leave-behind unchanged.
+- Left `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, `_Ye`/`_workbookS` (~1.2k leave), JEe/Binding1315 (~0.39k), Binding1330 compose tracks, `$dt` formula registry (~0.57k), `Z$` (~460), and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 77155 (was 77713; Δ -558).
+- Next: `$dt` formula registry (~0.57k) / clean `xLe` walnut / `Z$` (~460) / JEe cell (~0.39k) / leave-behinds only if consumers clean.
 
