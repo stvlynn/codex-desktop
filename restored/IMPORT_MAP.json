@@ -1513,7 +1513,11 @@
         "worktree/pending-worktree-conversation-start-api.ts",
         "zod/prepend-issue-path.ts",
         "zod/zod-url-string.ts",
-        "markdown/shiki-highlight-context.tsx"
+        "markdown/shiki-highlight-context.tsx",
+        "vendor/react-router.ts",
+        "vendor/react-redux-provider-runtime.ts",
+        "vendor/use-sync-external-store-selector-runtime.ts",
+        "vendor/react-is-runtime.ts"
       ],
       "exports": {
         "u3": "REVIEW_MODE_FEATURE_GATE_ID",
@@ -25794,8 +25798,8 @@
       "npmPackage": "lodash"
     },
     "boundaries/react-cjs-runtime.ts": {
-      "kind": "open-runtime",
-      "note": "React/jsx/compiler-runtime/react-dom/react-is CJS thunk wrappers (npm-backed)",
+      "kind": "npm-shim",
+      "note": "React/jsx/compiler-runtime/react-dom CJS thunks + vendor/react-is-runtime; stock npm-backed.",
       "aliases": [
         "Lvt",
         "Ivt",
@@ -25803,26 +25807,46 @@
         "apt",
         "Lf"
       ],
-      "provenance": "ref/webview/assets/app-initial-C-fROkKo.js"
+      "provenance": "ref/webview/assets/app-initial-C-fROkKo.js",
+      "npmPackage": "react",
+      "vendor": "react"
     },
     "boundaries/react-redux-cjs.ts": {
-      "kind": "open-runtime",
-      "note": "react-redux Provider + with-selector CJS thunk + ensure init",
+      "kind": "npm-shim",
+      "note": "react-redux Provider + use-sync-external-store with-selector CJS thunk via vendor/*-runtime.",
       "aliases": [
         "If",
         "Mf",
         "Nf"
       ],
-      "provenance": "ref/webview/assets/app-initial-C-fROkKo.js"
+      "provenance": "ref/webview/assets/app-initial-C-fROkKo.js",
+      "npmPackage": "react-redux",
+      "vendor": "react-redux"
     },
     "boundaries/react-router-link.tsx": {
-      "kind": "open-runtime",
-      "note": "react-router Link (F5/MHn); bind via bindReactRouterLink when host wires routing",
+      "kind": "npm-shim",
+      "note": "react-router Link (F5/MHn) \u2192 vendor/react-router thin re-export.",
       "aliases": [
         "F5"
       ],
-      "provenance": "ref/webview/assets/app-initial-C-fROkKo.js"
+      "provenance": "ref/webview/assets/app-initial-C-fROkKo.js",
+      "npmPackage": "react-router",
+      "vendor": "react-router"
+    },
+    "boundaries/react-router-navigation.tsx": {
+      "kind": "npm-shim",
+      "note": "react-router Navigate/useLocation/useNavigate/useMatch/useSearchParams \u2192 vendor/react-router.",
+      "aliases": [
+        "B5",
+        "I5",
+        "H5",
+        "W5",
+        "V5"
+      ],
+      "provenance": "ref/webview/assets/app-initial-C-fROkKo.js",
+      "npmPackage": "react-router",
+      "vendor": "react-router"
     }
   },
-  "updatedAt": "2026-07-31T04:26:24.272Z"
+  "updatedAt": "2026-07-31T04:28:55.888817Z"
 }

@@ -1,15 +1,14 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
 // CJS / ESM interop for react-redux + use-sync-external-store/with-selector.
+// npm-shim: stock packages via vendor/*-runtime leaves.
 // Bundle: kuc/If≈with-selector thunk, $jc/Mf≈Provider, eMc/Nf≈ensure init.
 
-import { Provider } from "react-redux";
-import { useSyncExternalStoreWithSelector as useSyncExternalStoreWithSelectorImpl } from "use-sync-external-store/with-selector";
+import { useSyncExternalStoreWithSelector as useSyncExternalStoreWithSelectorImpl } from "../vendor/use-sync-external-store-selector-runtime";
 
-/** Bundle `$jc` / export `Mf` — React-Redux Provider (createElement type). */
-export { Provider };
-
-/** Bundle `eMc` / export `Nf`. */
-export function ensureReactReduxInit(): void {}
+export {
+  Provider,
+  ensureReactReduxInit,
+} from "../vendor/react-redux-provider-runtime";
 
 type WithSelectorModule = {
   useSyncExternalStoreWithSelector: typeof useSyncExternalStoreWithSelectorImpl;
