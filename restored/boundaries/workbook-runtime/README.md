@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~59.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~58.5k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -126,6 +126,12 @@
 | Table cell paint (`STe`) | ~0.15k | **Drained (wave-99)** → `workbook/table-cell-paint/` |
 | Text-frame embeds (`helper643`) | ~0.15k | **Drained (wave-99)** → `workbook/text-frame-embeds/` |
 | Slide image paint (`$Te`) | ~0.15k | **Drained (wave-99)** → `workbook/slide-image-paint/` |
+| Chart legend layout (`helper490`) | ~0.15k | **Drained (wave-100)** → `workbook/chart-legend-layout/` |
+| Chart area series (`helper529`) | ~0.12k | **Drained (wave-100)** → `workbook/chart-area-series/` |
+| Chart histogram bars (`sCe`) | ~0.14k | **Drained (wave-100)** → `workbook/chart-histogram-bars/` |
+| Chart surface map (`Kye`) | ~0.14k | **Drained (wave-100)** → `workbook/chart-surface-map/` |
+| Compose inline text (`NOe`) | ~0.14k | **Drained (wave-100)** → `workbook/compose-inline-text/` |
+| Chart waterfall bar (`dCe`) | ~0.13k | **Drained (wave-100)** → `workbook/chart-waterfall-bar/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1182,3 +1188,19 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on six modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 59132 (was 59946; Δ -814).
 - Next: `helper490` legend layout / `sCe` area paint / `NOe`/`Kye` / `Uft`/`Kht` when ensure-safe / leave-behinds when consumers clean / clean `xLe`.
+
+## Wave-100 progress
+
+- Re-scanned ≥120 after wave-99. **FALSE nest:** `gxe`/`oCe` esmInit close before helper529/sCe (inventory brace over-span). **LEAVE:** `rze`/`kht` / WorkbookN / `_workbookS`. **DEFER:** `Uft`/`Kht`. Nested `xLe` skipped.
+- Real mid peels: `helper490`/`helper529`/`sCe`/`Kye`/`NOe` + neighbor `dCe`.
+- Peeled `helper490` → `workbook/chart-legend-layout/` (`cllH`; paintTextElement + Cn/Mn/j).
+- Peeled `helper529` → `workbook/chart-area-series/` (`casH`; d3-color + tr).
+- Peeled `sCe` → `workbook/chart-histogram-bars/` (`chbH`; fixed x/y TDZ rename collision; data-label import).
+- Peeled `Kye` → `workbook/chart-surface-map/` (`csmH`; d3-array extent + d3-scale-linear).
+- Peeled `NOe` → `workbook/compose-inline-text/` (`citH`).
+- Peeled `dCe` → `workbook/chart-waterfall-bar/` (`cwbH`).
+- Skipped leave-behinds / `Uft`/`Kht` / `aCe` bubble (optional next).
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on six modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 58451 (was 59132; Δ -681).
+- Next: `helper594`/`F0e`/`YCe`/`helper496` mids / `aCe` bubble / `Uft`/`Kht` when ensure-safe / leave-behinds when consumers clean.
