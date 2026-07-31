@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
 // Stage-3 Codex glue drained from boundaries/chart-widget-stores.
-// Wave-10: mega vendor bodies deleted; openBoundary kept for Flat chart-component.
+// Wave-11: Chart body promoted to ./chart/*; openBoundary cleared.
 
 export type {
   WidgetContextProviderProps,
@@ -79,6 +79,7 @@ export {
   ensureChartComponentInit,
 } from "./chart";
 export type { CodexChartComponent } from "./chart";
+export { CodexChartBody } from "./chart";
 
 export {
   setChartBundleSurface,

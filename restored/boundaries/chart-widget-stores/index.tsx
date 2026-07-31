@@ -1,16 +1,9 @@
 // Restored from ref/webview/assets/chart-widget-stores-SIOpvGDe.js
-// Flat boundary facade — vendored oversized chart-widget-stores runtime module.
-// Intentional oversized vendor-runtime terminal (openBoundary kept: residual
-// Flat chart-component.tsx). Mega vendor bodies deleted wave-10.
-// Not a single stock npm package: Codex WidgetContext / widget-scope / chrome /
-// i18n / Chart / Box live in visualization/; Recharts+RTK+Immer+react-intl bodies
-// deleted wave-10 (consumers on public recharts@3 + react-intl).
-// Stage-3 wave-1..10: WidgetContext, widget-scope, chrome, i18n, Chart,
-// C/S/U/B/X/Box + Recharts aliases; Chart+pie npm-migrated (wave-8/9);
-// pre-Y + Y + post-Y intl jointly deleted (wave-10).
-// Stage 3 candidate: 36/36 app-initial aliases rewritten to
-// IMPORT_MAP semantic/vendor/boundary paths. AppScope (Fft/Ift/ivt/M_t/L_t) is an
-// open host/runtime facade — not stock jotai. No whole-file app-initial promote.
+// Thin boundary re-export / ESM-init compat — Chart body lives in
+// visualization/chart-widget-stores/chart/* (openBoundary cleared wave-11).
+// Stock Recharts/RTK/Immer/react-intl mega bodies deleted wave-10; Chart+pie on
+// public recharts@3 + react-intl. Codex glue promoted to visualization/.
+// Stage-3 wave-1..11 complete for chart-widget-stores drain.
 
 import {
   esmInit as rolldownRuntimeN,
