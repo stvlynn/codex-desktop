@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Semantic composer-domain API: typed aliases over the open oversized runtime body.
-// Stage-3 wave-12: mapbox + markdown fan-in/registry ensures drained.
-// Residual: markdown helper/router mountain + map widgets (mapbox drained).
+// Stage-3 wave-13: map widgets + pie chart + forecast/file surfaces drained.
+// Residual: Helper243 content-reference router + remaining peer surfaces.
 
 export type {
   ChatgptBrowserConversationBannerProps,
@@ -439,6 +439,25 @@ export {
   setChatgptMarkdownRegistryPeerInits,
   ensureChatgptMarkdownRegistryPeerInits,
 } from "./chatgpt-markdown-registry-peer-inits";
+
+export {
+  useChatgptComposerControllerHelper162,
+  ensureChatgptPieChartWidgetInit,
+} from "./chatgpt-pie-chart-widget";
+export {
+  ensureChatgptSportsLabelSurfaceInit,
+  ensureChatgptStockSurfaceInit,
+  i_ as ensureChatgptEntityNavPeerInit,
+  R_ as ensureChatgptEntityRichCardPeerInit,
+  J_ as ensureChatgptForecastSurfacePeerInit,
+  $g as ChatgptFollowupQueryChip,
+  M_ as ChatgptFileContentReference,
+} from "./chatgpt-forecast-file-content-references";
+export {
+  useChatgptComposerControllerHelper182,
+  ensureChatgptMapContentReferenceInit,
+} from "./chatgpt-map-content-reference";
+
 
 
 import { _useChatgptComposerControllerD } from "./ensure-chatgpt-composer-controller-aux-init-d";
