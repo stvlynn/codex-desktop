@@ -157,4 +157,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 217915.
-- Next: worksheet/spreadsheet core if a clean line-range slice appears, or effects/`_g` cluster beside the drained locus.
+- Next: ~~effects/`_g` + document-style cluster~~ (done wave-16); worksheet/spreadsheet core if a clean slice appears, or placeholder-resolve neighbors.
+
+## Wave-16 progress
+
+- Extracted effects/`_g` (`Binding516`) + contiguous document-style / theme-style cluster (`helper181`–`188`, `workbookLt`/`It`/`Nt`/`Rt`, `WorkbookAt`, `workbookDollar`) → `workbook/document-style/`.
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 217443.
+- Next: worksheet/spreadsheet core if a clean line-range slice appears, or placeholder-resolve / `_workbookTt` neighbors beside the drained locus.
