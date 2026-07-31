@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~188.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~187.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -46,6 +46,7 @@
 | Image element VO (Binding660) | ~15.7k (post-source) | **Drained (wave-40)** → `workbook/image-element/` |
 | Thread/chart/CF mutation builders (Yde…helper319) | ~15.7k (post-image) | **Drained (wave-41)** → `workbook/mutation-ops/` |
 | Sparkline/DV/shape/image mutation (Sfe…Wfe) + helper333 | ~15.7k (post-mutation) | **Drained (wave-42)** → `workbook/mutation-ops/` + `worksheet-attachment/` |
+| CF/DV VO+API (helper322…Bpe) | ~1.2k (post-Binding662) | **Drained (wave-43)** → `workbook/conditional-format/` + `data-validation/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -470,6 +471,18 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 188299.
-- Next: pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Binding662 VO/helper cluster; continue scanning for stock vendor fingerprints.
+- Next: ~~post-Binding662 CF/DV VO cluster~~ (done wave-43); pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Vpe formula/token cluster.
+
+
+## Wave-43 progress
+
+- Extracted CF helpers + rule factory (`helper322`…`lpe`) → `workbook/conditional-format/`.
+- Extracted CF dataBar/iconSet/cfvo builders (`upe`…`ype`) + Binding663/xpe/Spe/Cpe → `workbook/conditional-format/`.
+- Extracted DV builders (`Tpe`…`helper326`) + Lpe/Rpe/Binding664/zpe/Binding665 → `workbook/data-validation/`.
+- Left Binding662/`_C` init gate, pivot enums Binding335/336/338 + Class53, Vpe+ formula/token cluster, and intentional terminals in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 187071.
+- Next: pivot Binding335/336/338 + Class53 if cleanly separable, or next contiguous post-Vpe formula/token/WorkbookR cluster; continue scanning for stock vendor fingerprints.
 
 
