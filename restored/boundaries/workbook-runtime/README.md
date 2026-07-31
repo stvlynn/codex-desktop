@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~177.4k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~176.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -54,6 +54,7 @@
 | Slicers (Binding677–684 / Tme/Eme) | ~0.42k | **Drained (wave-48)** → `workbook/slicers/` |
 | PivotTable (Binding369 / `_u`) | ~0.85k | **Drained (wave-49)** → `workbook/pivot-table/` (peeled) |
 | Field VOs (Binding343–361 + enums 335/336 + Class53) | ~2.7k | **Drained (wave-50)** → `workbook/pivot-fields/` |
+| Formula array/eval (helper31–61 + $u Binding370–374) | ~1.1k | **Drained (wave-51)** → `workbook/formula-array/` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
 ## Why it stays in `boundaries/`
@@ -571,5 +572,15 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Wired via `ensurePivotFieldsInit` + thin boundary stubs; `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 177434.
-- Next: contiguous post-helper31 formula/array cluster, or Binding334/wne + cache hydrate leftovers; continue scanning for stock vendor fingerprints.
+- Next: ~~post-helper31 formula/array cluster~~ (done wave-51); Binding334/wne + cache el/332/333, or next contiguous post-gae residual.
+
+
+## Wave-51 progress
+
+- Extracted formula array/eval cluster (`helper31`–`61` + `Are`/`Ore`/`kre`/`jre`/`Mre`/`Nre` + `$u` Binding370–374) → `workbook/formula-array/`.
+- Left `Binding334`/wne, cache `el`/`Binding332`/`333`, `helper24`/`hre`, Binding662/`_C`, and intentional terminals in boundary.
+- Wired via thin boundary stubs + `ensureFormulaArrayInit` (`$u`); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 176346.
+- Next: Binding334/wne + cache hydrate leftovers (el/332/333), or next contiguous post-gae residual; continue scanning for stock vendor fingerprints.
 
