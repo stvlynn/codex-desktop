@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~224.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~224.6k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -18,6 +18,7 @@
 | Fill value object (workbookCt) | ~15.6k | **Drained (wave-4)** → `workbook/fill/` |
 | Stylesheet Bae / Binding424 | ~15.5k–16.4k | **Drained (wave-5)** → `workbook/stylesheet/` |
 | Line Binding431 stroke VO | ~15.7k | **Drained (wave-6)** → `workbook/line/` |
+| Color-resolve helpers (Tae/St) | ~15.4k | **Drained (wave-7)** → `workbook/color-resolve/` |
 | Worksheet / spreadsheet core | ~50k–72k, ~210k–230k | Range/table/drawing APIs |
 | Presentation + Mermaid hooks | ~142k–174k | Theme palettes drained → `workbook/presentation-theme/`; Mermaid/collab remain |
 | Formula / xlsx validation | ~177k–230k | Serial dates, workbook validation (`WorkbookN`) |
@@ -72,4 +73,11 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Extracted Line stroke VO (`Binding431`), dash/compound style parsers + proto↔name maps (`Binding427`–`430`, `Yae`, `Xae`), and `ensureLineInit` (`Binding432`).
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
-- Next: text-style / color-resolve helpers (`helper85–90`, `Tae`), or TextStyle VO (`workbookVt` / Binding437 cluster).
+- Next: ~~color-resolve helpers~~ (done wave-7); TextStyle VO (`workbookVt` / Binding437 cluster).
+
+## Wave-7 progress
+
+- Extracted color-resolve helpers (`Sae`, `Cae`, `wae`, hex/value accessors, `Tae`, `workbookSt`) → `workbook/color-resolve/`.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept; Tae wire retained for stylesheet.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Next: TextStyle VO (`workbookVt` / Binding437) + alignment/autofit/capitalization helpers (`$ae`, `roe`, `ioe`/`aoe`, …).
