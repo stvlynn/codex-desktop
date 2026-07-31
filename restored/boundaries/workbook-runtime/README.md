@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~61.4k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~59.9k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -116,6 +116,10 @@
 | Paint images (`Fwe`) | ~0.18k | **Drained (wave-97)** → `workbook/paint-images/` |
 | Constraint auto-layout (`ODe`/`kDe`) | ~0.70k | **Drained (wave-97)** → `workbook/constraint-layout/` |
 | Selection style grid (`Upt`) | ~0.18k | **Drained (wave-97)** → `workbook/selection-style-grid/` |
+| Chart data labels (`helper500`) | ~0.20k | **Drained (wave-98)** → `workbook/chart-data-labels/` |
+| Legend plot layout (`jxe`/`wSe`) | ~0.36k | **Drained (wave-98)** → `workbook/chart-legend-plot/` |
+| Category axis labels (`Nxe`…`Lxe`) | ~0.43k | **Drained (wave-98)** → `workbook/chart-category-axis-labels/` |
+| Box-whisker (`ECe`/`OCe`/`jCe`) | ~0.58k | **Drained (wave-98)** → `workbook/chart-box-whisker/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1142,3 +1146,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on six modules + chart-paint + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 61416 (was 62936; Δ -1520).
 - Next: `rze` after `_workbookS` / `kht` after WorkbookN / mid peels (`jxe`/`wSe`/`ECe`/`Nxe`) / clean `xLe`.
+
+## Wave-98 progress
+
+- Re-scanned ≥200 clusters with fixed brace matching: most prior inventory mid-hits were **FALSE** (`helper659`/`667`/`jgt`/`vrt`/`SEe`/`GJe`/`helper378`/`wIe`/`helper654`/`helper821`/`uvt` tiny; `ADe`/`Rwe` <80 after default-`{}` fix). `ict` ~6k was a false mega-span.
+- Real ≥180: WorkbookN (~1.9k leave), `_workbookS` (~1.3k leave), `rze`/`kht` blocked, `Uft`/`Kht`/`Vht` deferred classes/env, **`jCe` is NOT a stub** (~260 box-whisker paint; prior "7-line stub" was a false hit).
+- Peeled `helper500` → `workbook/chart-data-labels/` (`cdlH`).
+- Peeled `jxe`+`wSe` → `workbook/chart-legend-plot/` (`clpH`); chart-paint imports `layoutLegendPlot`.
+- Peeled `Nxe`…`Lxe` → `workbook/chart-category-axis-labels/` (`calH`); plot-layout imports `paintCategoryAxisLabels`.
+- Peeled box-whisker `SCe`…`ECe`+`OCe`+`helper578`/`ACe`/`jCe` → `workbook/chart-box-whisker/`; fixed misnamed `paintHistogram`/`paintWaterfall`/`paintCombo` hooks.
+- Skipped `xLe`; deferred leave-behinds / `Vht`/`Uft`/`Kht`; did not force `rze`/`kht`.
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on four modules + chart-paint + chart-plot-layout + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 59946 (was 61416; Δ -1470).
+- Next: `helper528` (~166 area series) / `Vwe` path bounds / `STe` table paint / `helper423` trendline forecast / leave-behinds when consumers clean / clean `xLe`.

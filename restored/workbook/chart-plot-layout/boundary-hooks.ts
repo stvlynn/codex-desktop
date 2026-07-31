@@ -14,7 +14,6 @@ export type ChartPlotLayoutBoundaryHooks = {
   bh440: (...args: any[]) => any;
   bh459: (...args: any[]) => any;
   bh494: (...args: any[]) => any;
-  paintCategoryAxisLabels: (...args: any[]) => any;
 };
 
 export const cplH: ChartPlotLayoutBoundaryHooks =

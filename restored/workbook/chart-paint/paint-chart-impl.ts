@@ -12,6 +12,12 @@ import { cpH } from "./boundary-hooks";
 import { paintBarDirectionSeries } from "../chart-bar-direction";
 import { paintBarSeries } from "../chart-bar-series";
 import { paintRadarChart } from "../chart-radar";
+import {
+  prepareBoxWhiskerData,
+  buildBoxWhiskerScales,
+  paintBoxWhiskerChart,
+} from "../chart-box-whisker";
+import { layoutLegendPlot } from "../chart-legend-plot";
 import { paintCategoryAxes } from "../chart-category-axes";
 import { paintScatterSeries } from "../chart-scatter-series";
 import { paintHistogramAxes } from "../chart-histogram-axes";
@@ -54,7 +60,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
       cpIn35.hiddenSeriesIndices === undefined
         ? undefined
         : new Set(cpIn35.hiddenSeriesIndices),
-    cpBind2288 = cpH.layoutLegendPlot(cpIn32, cpIn33, cpIn34, cpIn35.themeMap, {
+    cpBind2288 = layoutLegendPlot(cpIn32, cpIn33, cpIn34, cpIn35.themeMap, {
       chartModel: cpIn35.chartModel,
       skipLegend: cpIn35.skipLegend,
       hiddenSeriesIndices: cpBind2287,
@@ -282,10 +288,10 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
       (cpBind2295 = true));
   } else if (!cpBind2276 && !cpBind2277 && !cpBind2280 && !cpBind2281) {
     if (cpBind2282) {
-      let cpBind12304 = cpH.paintHistogram(cpIn33, {
+      let cpBind12304 = prepareBoxWhiskerData(cpIn33, {
           hiddenSeriesIndices: cpBind2287,
         }),
-        cpBind12305 = cpH.paintWaterfall(cpBind12304, cpBind2290);
+        cpBind12305 = buildBoxWhiskerScales(cpBind12304, cpBind2290);
       strokePlotAreaBorder(cpIn32, cpIn33, cpBind2290, cpIn35.themeMap);
       paintChartAxisTicks(
         cpIn32,
@@ -303,7 +309,7 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
           chartHoverTargets: cpIn35.chartHoverTargets,
           hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
         });
-      cpH.paintCombo(
+      paintBoxWhiskerChart(
         cpIn32,
         cpIn33,
         cpBind12305,

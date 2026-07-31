@@ -5,6 +5,7 @@
 import { Cn, Yn as _presentationYn } from "../presentation-protobuf";
 import { scaleLinear as _AppInitialMat } from "../../vendor/d3-scale-linear";
 import { max as appInitialAat, sum as appInitialSat } from "../../vendor/d3-array-min";
+import { paintCategoryAxisLabels } from "../chart-category-axis-labels";
 import { cplH } from "./boundary-hooks";
 
 /** Legacy Binding1173 — axis label pad (px). */
@@ -228,7 +229,7 @@ export function layoutCategoryChartPlot(cplIn251: any, cplIn252: any, cplIn253: 
       !cplBind3323 &&
       cplBind3326.width > 0 &&
       cplBind3326.height > 0
-        ? cplH.paintCategoryAxisLabels({
+        ? paintCategoryAxisLabels({
             ctx: cplIn251,
             axis: cplBind3322,
             categories: cplBind3303,
