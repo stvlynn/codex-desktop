@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~80.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~79.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -77,6 +77,7 @@
 | Deck kinds (`wRe`/`qRe`/Binding1738–1748) | ~0.9k | **Drained (wave-79)** → `workbook/deck-kinds/` |
 | Shape element (`Binding736`/`739`) | ~0.76k | **Drained (wave-80)** → `workbook/shape-element/` |
 | Slides collection (`_workbookY`/`_workbookV`) | ~0.91k | **Drained (wave-81)** → `workbook/slides-collection/` |
+| Constraint solver (`bDe` / Binding1364–1368) | ~0.76k | **Drained (wave-82)** → `workbook/constraint-solver/` |
 
 ## Why it stays in `boundaries/`
 
@@ -916,4 +917,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 79982 (was 80878; Δ -896).
 - Next: `bDe` (~0.74k) / `_workbookS` presentation ensure (~1.2k leave) / clean `xLe` walnut peel before comments/`_C`.
+
+## Wave-82 progress
+
+- Identified contiguous helper669 + `gDe`/`_De`/`vDe`/`yDe` + Binding1364–1368/`bDe` cluster as Codex Cassowary/kiwi constraint Solver (NOT vendor): nearZero + Solver/Symbol/Row + SymbolType enum (~763 LOC).
+- Extracted → `workbook/constraint-solver/` (nearZero + impl under flat limit; Expression/Strength/Constraint/PairMap Binding1352/1357/1358/1359/1360/1361/1363 remain in boundary via `csH` hooks; `xDe` var-chain re-anchored after peel).
+- Left `xLe` walnut/comments (incl. `_C`), Binding662/`_C`, Binding1574/`Cke`, WorkbookN shell, `_Ye`/`_workbookS` (~1.2k leave), `cDe`/`_workbookH`, `jgt` sheet-meta, and intentional terminals (`gae`/`workbookEt`, `ooe`, chart `Zae`/`Qae`, `_workbookEt`/`Qse`) in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 79255 (was 79982; Δ -727).
+- Next: no remaining ≥700 safe peels — only leave-behinds (`_workbookS` ~1.2k, WorkbookN shell ~1.8k) or strategy change (lower bar / peel Expression+Strength prelude with solver / walnut `xLe`).
 
