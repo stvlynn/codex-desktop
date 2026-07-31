@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~59.9k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~59.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -120,6 +120,12 @@
 | Legend plot layout (`jxe`/`wSe`) | ~0.36k | **Drained (wave-98)** → `workbook/chart-legend-plot/` |
 | Category axis labels (`Nxe`…`Lxe`) | ~0.43k | **Drained (wave-98)** → `workbook/chart-category-axis-labels/` |
 | Box-whisker (`ECe`/`OCe`/`jCe`) | ~0.58k | **Drained (wave-98)** → `workbook/chart-box-whisker/` |
+| Chart line series (`helper528`) | ~0.17k | **Drained (wave-99)** → `workbook/chart-line-series/` |
+| Chart group scales (`helper423`) | ~0.15k | **Drained (wave-99)** → `workbook/chart-group-scales/` |
+| Shape path endpoints (`Vwe`) | ~0.15k | **Drained (wave-99)** → `workbook/shape-path-endpoints/` |
+| Table cell paint (`STe`) | ~0.15k | **Drained (wave-99)** → `workbook/table-cell-paint/` |
+| Text-frame embeds (`helper643`) | ~0.15k | **Drained (wave-99)** → `workbook/text-frame-embeds/` |
+| Slide image paint (`$Te`) | ~0.15k | **Drained (wave-99)** → `workbook/slide-image-paint/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1160,3 +1166,19 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on four modules + chart-paint + chart-plot-layout + boundary `--no-cache --allow-open-boundaries`.
 - Boundary LOC ≈ 59946 (was 61416; Δ -1470).
 - Next: `helper528` (~166 area series) / `Vwe` path bounds / `STe` table paint / `helper423` trendline forecast / leave-behinds when consumers clean / clean `xLe`.
+
+## Wave-99 progress
+
+- Re-scanned ≥140 with default-`{}`-aware brace matching. **FALSE:** `Vht` is an rgba string assign (not a ~270 class). **DEFER:** `Uft` class (~226) / `Kht` class (~205) ensure/class fan-out. **LEAVE:** `rze`/`kht` / WorkbookN / `_workbookS`. Nested `kLe`/`jLe`/`xLe` skipped.
+- Real ≥140 taken: `helper528`/`Vwe`/`helper423`/`STe`/`helper643`/`$Te` (also noted `helper490`/`NOe`/`sCe`/`Kye` for later).
+- Peeled `helper528` → `workbook/chart-line-series/` (`clnH`; d3-line + trendline/data-label imports).
+- Peeled `helper423` → `workbook/chart-group-scales/` (`cgsH`; d3 band/point/linear).
+- Peeled `Vwe` → `workbook/shape-path-endpoints/` (workbookGt only).
+- Peeled `STe` → `workbook/table-cell-paint/` (`tcpH`).
+- Peeled `helper643` → `workbook/text-frame-embeds/` (`tfeH`).
+- Peeled `$Te` → `workbook/slide-image-paint/` (`sipH`).
+- Skipped leave-behinds / `Uft`/`Kht`; did not force `rze`/`kht`.
+- Boundary wired via single-pass line-range drain; `openBoundary` kept.
+- QG PASS on six modules + boundary `--no-cache --allow-open-boundaries`.
+- Boundary LOC ≈ 59132 (was 59946; Δ -814).
+- Next: `helper490` legend layout / `sCe` area paint / `NOe`/`Kye` / `Uft`/`Kht` when ensure-safe / leave-behinds when consumers clean / clean `xLe`.
