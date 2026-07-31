@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~209.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~200.4k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -29,7 +29,9 @@
 | Worksheet / spreadsheet core | ~50k–72k, ~210k–230k | Range/table/drawing APIs |
 | Presentation + Mermaid hooks | ~142k–174k | Theme palettes drained → `workbook/presentation-theme/`; Mermaid/collab remain |
 | Formula / xlsx validation | ~177k–230k | Serial dates, workbook validation (`WorkbookN`) |
-| SSF number-format (`Binding571`) | ~2.9k | **Drained (wave-24)** → `vendor/ssf` npm shim (`ssf@0.11.2`) |
+| SSF number-format (`Binding571`) | ~2.9k | **Drained (wave-24)** → `vendor/ssf` npm shim (`ssf@0.11.2`)
+| jStat stats (`qXe`) | ~8.1k | **Drained (wave-25)** → `vendor/jstat` npm shim (`jstat@1.9.6`)
+| Bessel (`JXe`) | ~0.57k | **Drained (wave-25)** → `vendor/bessel` npm shim (`bessel@1.0.2`) |
 | Document glue | scattered | DOCX protobuf already faced under `workbook/document-*` |
 | D3 chart helpers | imports + mid body | Prefer existing `vendor/d3-*` / ensure-* stubs |
 
@@ -246,6 +248,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
 - QG PASS on vendor shim + boundary `--no-cache --allow-open-boundaries`; vendor-npm-preflight PASS.
 - Boundary LOC ≈ 209067.
-- Next: worksheet/spreadsheet core if a clean line-range slice appears (still leave intentional chart/EMU helpers).
+- Next: ~~jStat qXe + Bessel JXe~~ (done wave-25); worksheet/spreadsheet core if a clean line-range slice appears, or post-SSF cell-XF helpers (helper223+).
+
+
+## Wave-25 progress
+
+- Replaced inlined jStat `qXe` (`jstat@1.9.6`, UMD `jStat` fingerprint) + Bessel `JXe` (`bessel@1.0.2`, `DO_NOT_EXPORT_BESSEL` fingerprint) with `vendor/jstat` + `vendor/bessel` npm shims; boundary keeps thin `qXe`/`JXe` factories for existing `toEsm(..., 1)` call-sites.
+- Worksheet/spreadsheet core still not cuttable as a clean line-range cluster (RangeFormat Binding589+ entangled with in-boundary VO classes; cell-XF helper223–231 is the next contiguous post-SSF neighbor ~0.6–3k LOC).
+- Left `gae`/`workbookEt` EMU converters, chart `Zae`/`Qae`, `ooe` geometry helper, and `_workbookEt`/`Qse` clamp helpers in boundary.
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept.
+- QG PASS on vendor shims + boundary `--no-cache --allow-open-boundaries`; vendor-npm-preflight PASS.
+- Boundary LOC ≈ 200386.
+- Next: post-SSF spreadsheet cell-XF / number-format / col-row extents (helper223–Binding586), or RangeFormat Binding589 once VO deps are drained.
 
 
