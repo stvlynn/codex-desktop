@@ -26,7 +26,11 @@ import { appScopeAtom, ensureAppScopeInit } from "../../boundaries/app-scope-run
 import { chatgptConversationBranchAtom, chatgptConversationFlagsAtom, chatgptConversationLoadQueryAtom, chatgptConversationPreviewAtom, chatgptConversationServerIdAtom, chatgptConversationsGateAtom, chatgptConversationStatusAtom, chatgptConversationTitleAtom, chatgptThreadDerivedAtomBP, useStepsProseAtom, writingBlocksControllerAtom } from "../../boundaries/composer-appscope-atoms";
 import { ensureComposerEsm_AG_Init, ensureComposerEsm_BF_Init, ensureComposerEsm_BI_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_II_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KF_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MF_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_Ytt_Init, ensureComposerEsm_ZI_Init } from "../../boundaries/composer-esm-inits";
 import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Jj_Init, ensureConversationPageEsm_Lo_Init, ensureConversationPageEsm_Mx_Init, ensureConversationPageEsm_Qa_Init, ensureConversationPageEsm_SP_Init, ensureConversationPageEsm_TP_Init } from "../../boundaries/conversation-page-esm-inits";
-import { conversationSourceA, conversationSourceC, conversationSourceD, conversationSourceI, conversationSourceL, conversationSourceN, conversationSourceO, conversationSourceR, conversationSourceS, conversationSourceT, conversationSourceU } from "../../boundaries/conversation-source";
+import {
+  conversationSourceUnusedExport,
+  ensureSummaryPanelDisplayRuntimeInit,
+  ensureVirtualizedConversationRowMemoInit,
+} from "../conversation-source";
 import { isIterateeCall } from "../../boundaries/lodash-clone-deep-guts";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
@@ -334,7 +338,7 @@ esmInit(() => {
   AppInitialRh();
   AppInitialIh();
   ensureThreadFindStoreInit();
-  conversationSourceU();
+  void conversationSourceUnusedExport;
   ensureConversationPageEsm_Lo_Init();
   tokenInvalidated();
   deferredConversationR();
@@ -348,7 +352,7 @@ esmInit(() => {
   isRemoteControlConnectionFailedError();
   ensureConversationPageEsm_Qa_Init();
   ensureComposerEsm_M0_Init();
-  conversationSourceL();
+  ensureVirtualizedConversationRowMemoInit();
   findSidebarSectionElement();
   AppInitialGS();
   ensureAppScopeInit();
@@ -365,7 +369,7 @@ esmInit(() => {
   AppInitialFV();
   initThreadScrollLayout();
   AppInitialWE();
-  conversationSourceR();
+  ensureSummaryPanelDisplayRuntimeInit();
   dataAppActionReviewFileExpanded();
   AppInitialMR();
   ensureComposerEsm_ML_Init();

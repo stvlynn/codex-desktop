@@ -8,7 +8,10 @@ import { CodexBrowserSurfaceActionType } from "../analytics/codex-browser-surfac
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../analytics/codex-plugin-action-type-enum";
 import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_S8_Init } from "../boundaries/composer-esm-inits";
-import { conversationSourceA, conversationSourceI } from "../boundaries/conversation-source";
+import {
+  useSummaryContentShift,
+  useSummaryPanelDisplaySync,
+} from "../conversation/conversation-source";
 import { react, reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { Navigate } from "../boundaries/react-router-navigation";
 import { deferredConversationN } from "../conversation/deferred-conversation-n";
@@ -82,7 +85,7 @@ export function HotkeyWindowThreadPage() {
   let violet;
   violet = [clientThreadId, falcon];
   bravo.useEffect(_HotkeyWindowThreadPage, violet);
-  conversationSourceA(delta);
+  useSummaryPanelDisplaySync(delta);
   let willow;
   if (willow = conversationId == null ? null : {
     title: <div className="flex max-w-full min-w-0 items-baseline gap-2">
@@ -143,7 +146,7 @@ esmInit(() => {
   filterConversationTimelineItems();
   ensureHotkeyThreadN8Init();
   deferredUiU();
-  conversationSourceI();
+  useSummaryContentShift();
   ensureHotkeyThreadB1Init();
   usePlatformAwareFeatureGate();
   HotkeyWindowDetailLayoutContext();

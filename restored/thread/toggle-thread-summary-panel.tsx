@@ -10,9 +10,9 @@ import {
   type ShellPanelPinKey,
 } from "../app-shell/shell-panel-pin";
 import {
-  conversationSourceO,
-  conversationSourceS,
-} from "../boundaries/conversation-source";
+  ensureSummaryPanelDisplayAtomInit,
+  summaryPanelDisplayAtom,
+} from "../conversation/conversation-source";
 import { PopoverContent } from "../ui/popover-content";
 import { PopoverRoot } from "../ui/popover-root";
 import { PopoverTrigger } from "../ui/popover-trigger";
@@ -103,7 +103,7 @@ function preventFocusOutsideRightTabPanel(event: {
  * Bundle export `n` — toggle summary pin / overlay popover open state.
  */
 export function toggleThreadSummaryPanel(scope: ScopeLike, next: ShellPanelPinKey | boolean = true): void {
-  const display = scope.get(conversationSourceS) as SummaryDisplayState;
+  const display = scope.get(summaryPanelDisplayAtom) as SummaryDisplayState;
   const pinKey = next as ShellPanelPinKey;
   const pinned = shouldKeepPanelPinned(
     scope.get(shellPanelPinnedDerivedAtom, pinKey) as {
@@ -129,7 +129,7 @@ export function toggleThreadSummaryPanel(scope: ScopeLike, next: ShellPanelPinKe
       createShellPanelPinState(pinKey, !popoverOpen),
     );
   }
-  scope.set(conversationSourceS, {
+  scope.set(summaryPanelDisplayAtom, {
     ...display,
     isPopoverOpen: !popoverOpen,
   });
@@ -140,5 +140,5 @@ export function initToggleThreadSummaryPanel(): void {}
 
 /** Bundle export `t` — atoms / conversation-source init retained as no-op. */
 export function initToggleThreadSummaryPanelAtoms(): void {
-  void conversationSourceO;
+  void ensureSummaryPanelDisplayAtomInit;
 }

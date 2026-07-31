@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/local-conversation-thread-C3pAiUmg.js
 // VirtualizedTurnList (`copperR2`): follow-mode scroll state, response spacer
-// motion, and conversationSourceC row virtualizer for the local thread.
+// motion, and VirtualizedConversationList row virtualizer for the local thread.
 
 import {
   createContext,
@@ -14,7 +14,7 @@ import {
 } from "react";
 import type { MotionValue } from "framer-motion";
 
-import { conversationSourceC } from "../../boundaries/conversation-source";
+import { VirtualizedConversationList } from "../../conversation/conversation-source";
 import { isGapItem } from "../../conversation/is-gap-item";
 import { useEventCallback } from "../../hooks/use-event-callback";
 import { useWindowZoom } from "../../hooks/use-window-zoom";
@@ -819,7 +819,7 @@ export function VirtualizedTurnList(
   return (
     <>
       <LatestTurnOffsetContext.Provider value={latestTurnOffsetContextValue}>
-        {conversationSourceC({
+        {VirtualizedConversationList({
           entries: conversationSourceEntries,
           getBottomScrollPaddingPx: getResponseSpacerHeightPx,
           initialRestoreState: initialVirtualizedTurnListRestoreState as
