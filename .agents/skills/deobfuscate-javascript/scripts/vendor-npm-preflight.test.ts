@@ -289,6 +289,29 @@ describe("vendor-npm-preflight CLI", () => {
     });
   });
 
+  test("classifies vendor/decimal as decimal.js npm shim when dependency is declared", () => {
+    const root = makeTmpRoot();
+    const vendorDir = path.join(root, "restored", "vendor");
+    fs.mkdirSync(vendorDir, { recursive: true });
+    fs.writeFileSync(
+      path.join(root, "package.json"),
+      JSON.stringify({ dependencies: { "decimal.js": "10.6.0" } }),
+    );
+
+    const result = runDecisionCLI(path.join(vendorDir, "decimal.ts"), {
+      intent: "npm-shim",
+    });
+    expect(result.code).toBe(0);
+    const decisions = JSON.parse(result.stdout) as Array<{
+      decision: string;
+      specifiers: string[];
+    }>;
+    expect(decisions[0]).toMatchObject({
+      decision: "npm-shim",
+      specifiers: ["decimal.js"],
+    });
+  });
+
   test("classifies pull request lodash helper loaders as registered npm shims", () => {
     const root = makeTmpRoot();
     const vendorDir = path.join(root, "restored", "vendor");

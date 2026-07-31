@@ -522,6 +522,7 @@ const PUBLIC_NPM_VENDOR_SHIMS: Record<string, PublicNpmVendorSpecifiers> = {
   "dnd-kit-utilities": "@dnd-kit/utilities",
   "docx-preview": "docx-preview",
   dayjs: "dayjs",
+  decimal: "decimal.js",
   "dotlottie-react": "@lottiefiles/dotlottie-react",
   "framer-motion": "framer-motion",
   "framer-motion-animate-sequence": "framer-motion",

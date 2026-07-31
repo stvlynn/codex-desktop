@@ -2138,6 +2138,20 @@ describe("quality-gate", () => {
     expect(report.issues).toEqual([]);
   });
 
+  test("passes decimal.js vendor shims that re-export the npm package", () => {
+    const source = `
+      // Restored from ref/webview/assets/workbook-C49Dgk1_.js
+      export { default } from "decimal.js";
+      export { default as Decimal } from "decimal.js";
+      export function ensureDecimalInit(): void {}
+    `;
+    const report = analyzeSource(source, "restored/vendor/decimal.ts", {
+      ...DEFAULT_OPTIONS,
+      allowFlat: true,
+    });
+    expect(report.issues).toEqual([]);
+  });
+
   test("passes yjs vendor shims that re-export the npm package", () => {
     const source = `
       // Restored from ref/webview/assets/workbook-C49Dgk1_.js
