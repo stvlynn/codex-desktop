@@ -372,6 +372,12 @@ export function isKnownTerminalBoundaryChunk(
   if (hasChunkPrefix(normalized, "src")) return true;
   if (hasChunkPrefix(normalized, "statsig")) return true;
   if (hasChunkPrefix(normalized, "vscode-api")) return true;
+  // Intentional oversized vendor-runtime mega dumps (not stock npm shims).
+  // Parked under boundaries/* until Stage-3 split into workbook/ / visualization/.
+  if (hasChunkPrefix(normalized, "workbook")) return true;
+  if (hasChunkPrefix(normalized, "chart-widget-stores")) return true;
+  if (restored.includes("boundaries/workbook-runtime")) return true;
+  if (restored.includes("boundaries/chart-widget-stores")) return true;
   if (text.includes("@pierre/")) return true;
   if (text.includes("codemirror")) return true;
   if (text.includes("prosemirror")) return true;
@@ -385,6 +391,12 @@ export function isKnownTerminalBoundaryChunk(
   if (restored.endsWith("assets/browser.ts") && vendor === "npm") return true;
   if (restored.includes("processbrowsershim")) return true;
   if (note.includes("bundler runtime") || note.includes("vite bundler")) {
+    return true;
+  }
+  if (
+    note.includes("intentional oversized vendor-runtime") ||
+    note.includes("intentional vendored terminal")
+  ) {
     return true;
   }
 
@@ -455,6 +467,7 @@ export const VENDOR_NPM_SPECIFIERS: Record<string, string> = {
   "@dnd-kit/utilities": "@dnd-kit/utilities",
   analytics: "@segment/analytics-next",
   segment: "@segment/analytics-next",
+  mermaid: "mermaid",
   // @radix-ui resolves per-primitive (@radix-ui/react-menu, …) — agent picks.
 };
 

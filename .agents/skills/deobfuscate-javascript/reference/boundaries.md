@@ -35,6 +35,22 @@ Full-restoration mode makes three categories of dependencies _terminal nodes_ in
 
 3. **Restore and move OUT of `boundaries/` (the only completion for kind 2).** A runtime facade/passthrough is an _open boundary_, never "done". Deep-restore, `ledger.ts set-organization` into its real domain (`host/`, `contexts/`, `utils/`, …), `promote-organized.ts` out of `boundaries/`. `quality-gate.ts <target-dir>` over the whole target — not a `boundaries/` grep — is the proof.
 
+### Intentional oversized vendor-runtime terminals
+
+Two Codex mega dumps are too large for a one-shot Stage-3 rewrite and are **not** single stock npm packages, so they stay as documented open terminals under `boundaries/` until drained:
+
+| Chunk | Public path | Why not npm-first | Exit |
+| ----- | ----------- | ----------------- | ---- |
+| `workbook-C49Dgk1_` | `boundaries/workbook-runtime/` | Codex popcorn workbook/spreadsheet/presentation/document engine (D3/mermaid/xlsx), not HyperFormula/SheetJS/etc. | Stage-3 split/promote into `workbook/` |
+| `chart-widget-stores-SIOpvGDe` | `boundaries/chart-widget-stores/` | Composite: stock Recharts + Redux Toolkit/Immer **plus** Codex `WidgetContext` / app-scope widget store — not one bare re-export | npm-shim stock slices when separable; promote Codex glue into `visualization/` |
+
+Hardening contract (so full-tree QG does not false-fail):
+
+- IMPORT_MAP: `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`, notes naming the intentional terminal + exit path.
+- Header keeps the `// Flat boundary facade — vendored …` marker (eligible under `boundaries/` only).
+- `isKnownTerminalBoundaryChunk` recognizes `workbook-*` / `chart-widget-stores-*` basenames and those restored paths.
+- Do **not** mark them `vendor-npm` or rewrite as hand-written package bodies.
+
 ## `build-import-graph.ts` depth override flags
 
 - `--max-lines 0` — default; disable the cap entirely (restore _everything_ project-local).

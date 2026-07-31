@@ -5,6 +5,7 @@ import * as path from "node:path";
 import {
   classifyBoundary,
   classifyVendorDataChunk,
+  isKnownTerminalBoundaryChunk,
   isLikelyAppChunk,
   isLocaleMessagesCatalog,
   localeIdFromBasename,
@@ -309,6 +310,33 @@ describe("classifyBoundary", () => {
       "vendor-runtime",
     );
     expect(classifyBoundary("vscode-api-XX", {}).kind).toBe("vendor-runtime");
+  });
+
+  test("oversized workbook / chart-widget mega dumps are known terminals", () => {
+    expect(isKnownTerminalBoundaryChunk("workbook-C49Dgk1_")).toBe(true);
+    expect(
+      isKnownTerminalBoundaryChunk("chart-widget-stores-SIOpvGDe"),
+    ).toBe(true);
+    expect(
+      isKnownTerminalBoundaryChunk("other-XX", {
+        restored: "boundaries/workbook-runtime/index.ts",
+        vendor: "runtime",
+      }),
+    ).toBe(true);
+    expect(
+      isKnownTerminalBoundaryChunk("other-XX", {
+        restored: "boundaries/chart-widget-stores/index.tsx",
+        note: "intentional oversized vendor-runtime terminal",
+      }),
+    ).toBe(true);
+    expect(
+      classifyBoundary("workbook-C49Dgk1_", { vendor: "runtime" }).kind,
+    ).toBe("vendor-runtime");
+    expect(
+      classifyBoundary("chart-widget-stores-SIOpvGDe", {
+        vendor: "runtime",
+      }).kind,
+    ).toBe("vendor-runtime");
   });
 
   test("radix chunks are vendor-npm even without a vendor field", () => {
