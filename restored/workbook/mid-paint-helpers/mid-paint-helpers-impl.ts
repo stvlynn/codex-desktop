@@ -2,6 +2,8 @@
 // Semantic implementation: mid paint/chart helpers (legacy bh470/481/523/596/617/_Ee/700).
 // Stage-3 wave-128.
 
+import { workbookHelper598 } from "./with-transformed-clip-impl";
+
 import { mphH } from "./boundary-hooks";
 
 export function resolveSeriesFill(
@@ -78,7 +80,7 @@ export function paintDirectionTriangle(
   mphIn3565: any,
   mphIn3566: any,
 ) {
-  mphH.bh598(mphIn3562, mphIn3563, () => {
+  workbookHelper598(mphIn3562, mphIn3563, () => {
     mphIn3564 === "down"
       ? (mphIn3562.translate(0.5, 0.5),
         mphIn3562.rotate(Math.PI),

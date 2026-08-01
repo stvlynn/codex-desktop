@@ -2,6 +2,8 @@
 // Semantic implementation: month-step / coupon-day count helpers (legacy F9e/N9e/_9e).
 // Stage-3 wave-128.
 
+import { workbookHelper934 } from "./compare-serial-dates-impl";
+
 import { fdmH } from "./boundary-hooks";
 
 export function monthsBetween(fdmIn9510: any, fdmIn9511: any, fdmIn9512: any) {
@@ -31,17 +33,18 @@ export function countMonthSteps(
       fdmIn5267,
       fdmIn5268,
     ),
-    fdmBind14846 = fdmH.fn934(fdmBind14844, fdmBind14845),
+    fdmBind14846 = workbookHelper934(fdmBind14844, fdmBind14845),
     fdmBind14847 = Math.abs(monthsBetween(fdmBind14844, fdmBind14845));
   if (fdmBind14847 < 1) return 0;
   fdmBind14844.getMonth() === 1 &&
     fdmBind14844.getDate() > 27 &&
     fdmBind14844.setDate(30);
   fdmBind14844.setMonth(fdmBind14844.getMonth() - fdmBind14846 * fdmBind14847);
-  let fdmBind14848 = fdmH.fn934(fdmBind14844, fdmBind14845) === -fdmBind14846;
+  let fdmBind14848 =
+    workbookHelper934(fdmBind14844, fdmBind14845) === -fdmBind14846;
   isSameMonthEnd(fdmBind14843) &&
     fdmBind14847 === 1 &&
-    fdmH.fn934(fdmBind14843, fdmBind14845) === 1 &&
+    workbookHelper934(fdmBind14843, fdmBind14845) === 1 &&
     (fdmBind14848 = false);
   let fdmBind14849 = fdmBind14846 * (fdmBind14847 - +fdmBind14848);
   return fdmBind14849 === 0 ? 0 : fdmBind14849;

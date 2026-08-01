@@ -6,8 +6,6 @@ export type SlideImagePaintBoundaryHooks = {
   bh290: (...args: any[]) => any;
   bh647: (...args: any[]) => any;
   bh648: (...args: any[]) => any;
-  /** True when mask geometry is usable (legacy ZTe). */
-  hasImageMask: (...args: any[]) => any;
   /** Paint masked image via geometry (legacy qwe). */
   paintMaskedImage: (...args: any[]) => any;
   /** Paint inherited mask source (legacy Jwe). */

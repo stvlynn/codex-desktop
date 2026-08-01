@@ -10,7 +10,6 @@ export type TableFrameLayoutBoundaryHooks = {
   layoutTableColumns: (...args: any[]) => any;
   measureEmbeddedHeight: (...args: any[]) => any;
   paintTableCells: (...args: any[]) => any;
-  sumRowSpan: (...args: any[]) => any;
   strokeTableBorders: (...args: any[]) => any;
   fillTableBackground: (...args: any[]) => any;
 };

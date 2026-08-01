@@ -16,3 +16,5 @@ export {
   ube,
   dbe,
 } from "./slice-mid-label-impl";
+
+export { workbookHelper568 } from "./measure-canvas-text-impl";

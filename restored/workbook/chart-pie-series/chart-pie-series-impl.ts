@@ -4,6 +4,7 @@
 
 import { Cn, En } from "../presentation-protobuf";
 import { cpsH } from "./boundary-hooks";
+import { workbookHelper568 } from "./measure-canvas-text-impl";
 
 void Cn;
 void En;

@@ -2,8 +2,6 @@
 // Stage-3 wave-94: shape-geometry-paint boundary hooks.
 
 export type ShapeGeometryPaintBoundaryHooks = {
-  bh571: (...args: any[]) => any;
-  bh572: (...args: any[]) => any;
   bh608: (...args: any[]) => any;
   bh612: (...args: any[]) => any;
   bh613: (...args: any[]) => any;
@@ -21,7 +19,8 @@ export type ShapeGeometryPaintBoundaryHooks = {
   drawConnectorArrowheads: (...args: any[]) => any;
 };
 
-export const sgpH: ShapeGeometryPaintBoundaryHooks = {} as ShapeGeometryPaintBoundaryHooks;
+export const sgpH: ShapeGeometryPaintBoundaryHooks =
+  {} as ShapeGeometryPaintBoundaryHooks;
 
 export function wireShapeGeometryPaintBoundaryHooks(
   next: ShapeGeometryPaintBoundaryHooks,

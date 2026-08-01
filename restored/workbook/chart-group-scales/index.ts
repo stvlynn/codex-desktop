@@ -51,3 +51,5 @@ export {
   workbookHelper395,
   workbookHelper396,
 } from "./gap-visible-count-impl";
+
+export { workbookHelper424, workbookHelper425 } from "./band-scale-center-impl";

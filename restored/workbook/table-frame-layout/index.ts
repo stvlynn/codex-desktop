@@ -28,3 +28,5 @@ export {
 } from "./table-stroke-margins-impl";
 
 export { workbookHelper645 } from "./sum-span-impl";
+
+export { LTe } from "./sum-row-span-impl";

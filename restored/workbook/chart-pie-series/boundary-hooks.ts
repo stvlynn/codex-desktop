@@ -3,7 +3,6 @@
 
 export type ChartPieSeriesBoundaryHooks = {
   contrastPair: (...args: any[]) => any;
-  measureText: (...args: any[]) => any;
   formatValue: (...args: any[]) => any;
   minArcLen: any;
   minRing: any;

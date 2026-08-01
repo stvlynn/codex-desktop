@@ -30,7 +30,7 @@ export function kwe() {
     ? isdBind20961
     : 1;
 }
-async function Mwe(isdIn10299, isdIn10300) {
+export async function Mwe(isdIn10299: any, isdIn10300: any) {
   try {
     let isdBind22822 = await jwe(isdIn10299, isdIn10300);
     if (isdBind22822) return isdBind22822;

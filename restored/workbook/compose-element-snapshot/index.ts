@@ -66,3 +66,5 @@ export { $De } from "./resolve-element-style-impl";
 export { zDe } from "./image-mask-impl";
 
 export { workbookHelper680 } from "./typeface-triplet-impl";
+
+export { TOe } from "./geometry-snapshot-impl";

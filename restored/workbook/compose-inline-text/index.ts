@@ -6,3 +6,5 @@ export {
   lowerInlineTextChildren,
   NOe,
 } from "./compose-inline-text-impl";
+
+export { GOe } from "./collapse-text-impl";

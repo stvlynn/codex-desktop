@@ -40,3 +40,11 @@ export {
   sTe,
   lTe,
 } from "./paint-connector-route-impl";
+
+export {
+  workbookHelper571,
+  workbookHelper572,
+  workbookHelper573,
+  wOe,
+  DEFAULT_LINE_WIDTH_PX,
+} from "./resolve-line-width-impl";

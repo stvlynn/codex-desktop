@@ -7,7 +7,6 @@ export type MidPaintHelpersHooks = {
   bh468: (...args: any[]) => any;
   bh472: (...args: any[]) => any;
   bh433: (...args: any[]) => any;
-  bh598: (...args: any[]) => any;
   bh208: (...args: any[]) => any;
   LOe: (...args: any[]) => any;
   WOe: (...args: any[]) => any;

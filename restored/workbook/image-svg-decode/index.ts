@@ -10,3 +10,5 @@ export {
 } from "./image-svg-decode-impl";
 
 export { Dwe, Owe, kwe, Mwe } from "./svg-bitmap-helpers-impl";
+
+export { workbookHelper603 } from "./decode-image-asset-impl";

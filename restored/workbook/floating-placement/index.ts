@@ -10,3 +10,5 @@ export {
   workbookHelper642,
   FLOATING_PLACEMENT_TYPE,
 } from "./placement-alignment-impl";
+
+export { ATe } from "./is-paragraph-vcenter-impl";

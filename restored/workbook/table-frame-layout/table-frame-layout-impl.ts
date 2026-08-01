@@ -2,6 +2,8 @@
 // Semantic implementation: table frame layout + paint (legacy workbookA).
 // Stage-3 wave-94.
 
+import { LTe } from "./sum-row-span-impl";
+
 import { resolveFillStyle } from "../canvas-fill";
 import { mergeStyleLayers, workbookGt } from "../text-style";
 import { paintTextElement } from "../text-box";
@@ -223,11 +225,7 @@ export function layoutTableFrame(
         tflBind4822 = tflBind4763.columnIndex,
         tflBind4823 = tflBind2843.xEmu + tflBind4763.xEmu,
         tflBind4824 = tflBind4763.widthEmu,
-        tflBind4825 = tflH.sumRowSpan(
-          tflBind2853,
-          tflBind4588,
-          tflBind4763.rowSpan,
-        ),
+        tflBind4825 = LTe(tflBind2853, tflBind4588, tflBind4763.rowSpan),
         tflBind4826 = tflH.bh644(tflBind4821, tflBind2842),
         tflBind4827 = tflH.bh639(
           tflBind4821,

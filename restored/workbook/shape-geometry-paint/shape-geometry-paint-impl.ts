@@ -13,6 +13,10 @@ import { workbookGt } from "../text-style";
 import { ShapeGeometry as workbookDt } from "../shape-geometry";
 import { ur, v, C } from "../presentation-protobuf";
 import { sgpH } from "./boundary-hooks";
+import {
+  workbookHelper571,
+  workbookHelper572,
+} from "./resolve-line-width-impl";
 
 void workbookGt;
 void workbookDt;
@@ -21,7 +25,14 @@ void v;
 void C;
 void sgpH;
 
-export function paintShapeGeometry(sgpIn150: any, sgpIn151: any, sgpIn152: any, sgpIn153: any, sgpIn154: any, sgpIn155: any = {}, ) {
+export function paintShapeGeometry(
+  sgpIn150: any,
+  sgpIn151: any,
+  sgpIn152: any,
+  sgpIn153: any,
+  sgpIn154: any,
+  sgpIn155: any = {},
+) {
   let sgpBind2893 = sgpIn150.proto,
     { line, geometry, adjustmentList } = sgpIn150,
     sgpBind2894 = sgpH.resolveShapeFill(sgpIn150, sgpIn154),
@@ -33,19 +44,15 @@ export function paintShapeGeometry(sgpIn150: any, sgpIn151: any, sgpIn152: any, 
           height: sgpIn155.frame.height,
         }
       : sgpBind2893 && sgpIn153
-        ? resolveElementFramePx(
-            sgpBind2893,
-            sgpIn152,
-            sgpIn153,
-          )
+        ? resolveElementFramePx(sgpBind2893, sgpIn152, sgpIn153)
         : undefined;
   if (!sgpBind2895) return;
   let { width, height } = sgpBind2895,
-    sgpBind2896 = sgpH.bh571(line),
+    sgpBind2896 = workbookHelper571(line),
     sgpBind2897 = sgpIn150.lineReference
       ? sgpIn154.lineStyleMap[sgpIn150.lineReference.index]
       : undefined,
-    sgpBind2898 = sgpH.bh572({
+    sgpBind2898 = workbookHelper572({
       line,
       themeLine: sgpBind2897,
     }),
@@ -58,16 +65,13 @@ export function paintShapeGeometry(sgpIn150: any, sgpIn151: any, sgpIn152: any, 
     sgpBind2900 = line ? line.fill : sgpBind2897?.fill,
     sgpBind2901 =
       sgpH.bh630(line) ??
-      (sgpBind2896
-        ? undefined
-        : sgpH.bh630(sgpBind2897)) ??
+      (sgpBind2896 ? undefined : sgpH.bh630(sgpBind2897)) ??
       ur.LINE_STYLE_SOLID,
     sgpBind2902 = sgpH.resolveShapeEffects(sgpIn150, sgpIn154),
     sgpBind2903 =
       !!sgpIn150.connector && sgpH.isConnectorGeometry(geometry ?? undefined),
     sgpBind2904 = !!(
-      sgpIn150.connector?.fromElementId &&
-      sgpIn150.connector.toElementId
+      sgpIn150.connector?.fromElementId && sgpIn150.connector.toElementId
     );
   if (sgpBind2903 && sgpBind2904) {
     let sgpBind14894 = sgpIn150.proto;
@@ -95,17 +99,13 @@ export function paintShapeGeometry(sgpIn150: any, sgpIn151: any, sgpIn152: any, 
     return;
   }
   if (geometry === undefined) return;
-  if (
-    sgpIn150.useBackgroundFill &&
-    !sgpIn155.backgroundFillPaint
-  )
+  if (sgpIn150.useBackgroundFill && !sgpIn155.backgroundFillPaint)
     throw Error(
       "A slide-background fill is required to render useBackgroundFill.",
     );
   if (
     (sgpIn151.save(),
-    (sgpIn151.lineWidth =
-      sgpBind2898 > 0 ? sgpBind2898 : 0.001),
+    (sgpIn151.lineWidth = sgpBind2898 > 0 ? sgpBind2898 : 0.001),
     sgpIn150.connector)
   ) {
     let sgpBind13010 = sgpIn150.connector.lineStyle?.cap;
@@ -113,15 +113,13 @@ export function paintShapeGeometry(sgpIn150: any, sgpIn151: any, sgpIn152: any, 
       ? (sgpIn151.lineCap = "butt")
       : sgpBind13010 === v.LINE_CAP_ROUND
         ? (sgpIn151.lineCap = "round")
-        : sgpBind13010 === v.LINE_CAP_SQUARE &&
-          (sgpIn151.lineCap = "square");
+        : sgpBind13010 === v.LINE_CAP_SQUARE && (sgpIn151.lineCap = "square");
     let sgpBind13011 = sgpIn150.connector.lineStyle?.join;
     sgpBind13011 === C.LINE_JOIN_ROUND
       ? (sgpIn151.lineJoin = "round")
       : sgpBind13011 === C.LINE_JOIN_BEVEL
         ? (sgpIn151.lineJoin = "bevel")
-        : sgpBind13011 === C.LINE_JOIN_MITER &&
-          (sgpIn151.lineJoin = "miter");
+        : sgpBind13011 === C.LINE_JOIN_MITER && (sgpIn151.lineJoin = "miter");
   }
   if (
     (applyCanvasLineDash(sgpIn151, sgpBind2901, sgpIn151.lineWidth),
@@ -134,12 +132,7 @@ export function paintShapeGeometry(sgpIn150: any, sgpIn151: any, sgpIn152: any, 
       sgpIn151.restore();
       return;
     }
-    applyElementCanvasTransform(
-      sgpIn151,
-      sgpBind21623,
-      sgpIn152,
-      sgpIn153,
-    );
+    applyElementCanvasTransform(sgpIn151, sgpBind21623, sgpIn152, sgpIn153);
   }
   let sgpBind2905 = {
       x: 0,
@@ -151,17 +144,10 @@ export function paintShapeGeometry(sgpIn150: any, sgpIn151: any, sgpIn152: any, 
   sgpIn150.useBackgroundFill &&
     sgpIn155.backgroundFillPaint &&
     ((sgpBind2906 = sgpIn155.backgroundFillPaint),
-    sgpBind2906.setTransform(
-      sgpIn151.getTransform().inverse(),
-    ));
+    sgpBind2906.setTransform(sgpIn151.getTransform().inverse()));
   let sgpBind2907 = (sgpIn15867 = sgpBind2905) =>
       sgpBind2906 ||
-      resolveFillStyle(
-        sgpIn151,
-        sgpIn15867,
-        sgpBind2894,
-        sgpIn154,
-      ),
+      resolveFillStyle(sgpIn151, sgpIn15867, sgpBind2894, sgpIn154),
     sgpBind2908 = (sgpIn15942 = sgpBind2905) =>
       resolveFillStyle(
         sgpIn151,
@@ -174,9 +160,7 @@ export function paintShapeGeometry(sgpIn150: any, sgpIn151: any, sgpIn152: any, 
     sgpBind2910 = sgpBind2908();
   sgpIn151.fillStyle = sgpBind2909;
   sgpIn151.strokeStyle = sgpBind2910;
-  let sgpBind2911 = sgpBind2906
-      ? undefined
-      : sgpIn155.pictureFillBitmap,
+  let sgpBind2911 = sgpBind2906 ? undefined : sgpIn155.pictureFillBitmap,
     sgpBind2912 = sgpIn155.pictureFill ?? sgpBind2894;
   switch ((sgpIn151.beginPath(), geometry)) {
     case workbookDt.SHAPE_GEOMETRY_UNSPECIFIED:
@@ -275,8 +259,7 @@ export function paintShapeGeometry(sgpIn150: any, sgpIn151: any, sgpIn152: any, 
       if (sgpBind5507) {
         let sgpBind6555 = adjustmentList?.reduce(
           (sgpIn15602, sgpIn15603) => (
-            (sgpIn15602[sgpIn15603.name] =
-              sgpIn15603.formula),
+            (sgpIn15602[sgpIn15603.name] = sgpIn15603.formula),
             sgpIn15602
           ),
           {},
@@ -299,23 +282,16 @@ export function paintShapeGeometry(sgpIn150: any, sgpIn151: any, sgpIn152: any, 
         let sgpBind6556 =
             !!sgpIn150.connector &&
             geometry === workbookDt.SHAPE_GEOMETRY_STRAIGHT_CONNECTOR1,
-          sgpBind6557 = sgpH.bh608(
-            sgpIn151,
-            sgpBind5507,
-            {
-              w: width,
-              h: height,
-              x: 0,
-              y: 0,
-              adjustments: sgpBind6555,
-              fill: !sgpBind2911,
-              stroke:
-                sgpBind2898 > 0 &&
-                !sgpBind2896 &&
-                !sgpBind6556,
-              collectMetrics: !!sgpIn150.connector,
-            },
-          );
+          sgpBind6557 = sgpH.bh608(sgpIn151, sgpBind5507, {
+            w: width,
+            h: height,
+            x: 0,
+            y: 0,
+            adjustments: sgpBind6555,
+            fill: !sgpBind2911,
+            stroke: sgpBind2898 > 0 && !sgpBind2896 && !sgpBind6556,
+            collectMetrics: !!sgpIn150.connector,
+          });
         if (
           (sgpBind2911 &&
             (sgpIn151.save(),
@@ -335,9 +311,7 @@ export function paintShapeGeometry(sgpIn150: any, sgpIn151: any, sgpIn152: any, 
             sgpIn151.restore()),
           sgpIn150.connector &&
             sgpBind6557?.length &&
-            (sgpBind5508 = sgpBind6557.find(
-              (item) => item.start && item.end,
-            )),
+            (sgpBind5508 = sgpBind6557.find((item) => item.start && item.end)),
           sgpBind6556 &&
             sgpBind5508 &&
             sgpBind5508.start &&

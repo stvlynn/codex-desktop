@@ -5,6 +5,7 @@
 import { ShapeGeometry as workbookDt } from "../shape-geometry";
 import { shapeGeometryNameToProto } from "../chart-proto-name-maps";
 import { sipH } from "./boundary-hooks";
+import { ZTe } from "./image-mask-geometry-impl";
 
 void workbookDt;
 void shapeGeometryNameToProto;
@@ -53,7 +54,7 @@ export async function paintSlideImage(
     sipBind4797 = height * (1 - sipBind20049 - sipBind20051);
   }
   let sipBind4799 = sipIn653.resolveImageMask(),
-    sipBind4800 = sipH.hasImageMask(sipBind4799),
+    sipBind4800 = ZTe(sipBind4799),
     sipBind4801,
     sipBind4802 = sipBind4799?.geometry;
   if (

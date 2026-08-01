@@ -37,3 +37,5 @@ export {
   p5e,
   m5e,
 } from "./networkdays-wrappers-impl";
+
+export { workbookHelper934 } from "./compare-serial-dates-impl";
