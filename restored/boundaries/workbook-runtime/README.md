@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~28.5k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~27.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -287,6 +287,7 @@
 | Measure embed (`NTe`) | ~0.04k | **Drained (wave-125)** → `workbook/text-frame-embeds/` |
 | CF range stats (`mht`/`Sht`/`helper1020`/`1015`) | ~0.19k | **Drained (wave-125)** → `workbook/cf-range-stats/` |
 | Chart axis scale domain (`bbe`/`helper402`/`406`/`wye`…) | ~0.70k body | **Drained (wave-126)** → `workbook/chart-axis-scale-domain/` + presentation-aid/ref + series-endpoint + formula-complex 886/892 + iSe + fill-empty + r3e |
+| CF engine unlock (`fht`/`aht`/`kht`/`Wht`/`Ght`) + text-measure + Yut | ~0.9k body | **Drained (wave-131)** → cf-engine + text-measure + formula-value-coerce + formula-and $0e + dead qxe/xwe |
 | Stroke/picture/text mids + D-stats/weeknum + CF unlock (`helper473`/`482`/`Jwe`/`639`/`l0e`/`Aht`/…) | ~0.7k body | **Drained (wave-130)** → stroke-resolve + picture-fill-paint + text-element-build + contrast-text + formula-weeknum + formula-d-stats + eng-mids 917 + sheet-hidden twe + axis 536 + GDe + Aht/Mht |
 | Sheet-range-map + uuid-v4 + formula-ast-walk + paint/cfvo mids (`helper587`/`jwe`/`UEe`/`1038`/…) | ~0.7k body | **Drained (wave-129)** → sheet-range-map + image-svg-decode + stable-id uuid-v4 + formula-ast-walk + cfvo-resolve + paint-mids + eng-mids F1e/I1e/q1e + mid-paint Xwe/Zwe |
 | Formula eng mids + date-months + A1/matrix/DSUM/add-months + paint mids (`s1e`/`F9e`/`Mst`/…) | ~0.80k body | **Drained (wave-128)** → formula-eng-mids + date-months + a1-address + matrix-transpose + dsum-agg + date-add-months + compose-attach-children + doc-shape + bin-width + paint-checkbox + shape-fill/geometry-apply + mid-paint-helpers |
@@ -1688,3 +1689,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: remaining ≥20 mids / fht+aht bag → kht / rze after vYe ensure / helper603 after Nwe Map ESM
+
+## Wave 131 (Stage-3 CF engine unlock + preferred mids)
+
+- Boundary 28519 → 27658 (Δ -861)
+- Peeled: cf-engine (tht..xht + epoch + kht/Lht/zht + Wht/Ght); text-measure 427/432/437; formula-value-coerce Yut; dead qxe/xwe; formula-and $0e (false-dead, kept via jot)
+- Skipped: helper603 (Nwe Map ESM); rze (vYe/_workbookS ensure); helper935/i4e/Prt/a6e nests; helper891/894 cluster
+- Leave-behind: rze still needs vYe/_workbookS ensure fan-out; kht **unlocked**; helper603 after Nwe Map ESM
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: remaining ≥20 mids / rze after vYe ensure / helper603 after Nwe Map ESM / helper935 nests
