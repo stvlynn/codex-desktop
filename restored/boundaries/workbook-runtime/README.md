@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~37.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~35.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -268,6 +268,8 @@
 | Formula range-index (`Uft`/`Wft`/`Gft`/`Kft`) | ~0.30k | **Drained (wave-120)** → `workbook/formula-range-index/` |
 | Formula structured-ref (`qft`..`tpt`) | ~0.20k | **Drained (wave-120)** → `workbook/formula-structured-ref/` |
 | CF cell-value compare (`Rht`) | ~0.04k | **Drained (wave-120)** → `workbook/cf-icon-color-scale/` |
+| Formula scalar-funcs (`isNonNullArg`..`days360`/`qQe`/`z$e`) | ~2.71k | **Drained (wave-121)** → `workbook/formula-scalar-funcs/` |
+| Bond basis + ACCRINT (`oat`/`sat`/`Kat`/`parseSettlementMaturity`..) | ~0.36k | **Drained (wave-121)** → `workbook/formula-bond-basis/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1560,4 +1562,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Confirmed Nft/Uft ESM nests real and included; ≥40 inventory entries REAL
 - Skipped helper603 (Nwe); sat/oat (Kat); qQe/z$e/_4e/879 (859 nest); rze; kht
 - Leave-behind: rze/kht still blocked; helper603 still needs Nwe Map ESM
+- openBoundary remains while mega still large
+
+## Wave 121 (Stage-3 preferred formula nest + sat/oat·Kat)
+
+- Boundary 37827 → 34979 (Δ -2848)
+- Peeled: isNonNullArg..days360 formula-scalar-funcs (owns average nest; preferred qQe/z$e/days360); oat/sat + Kat + parseSettlementMaturity..isBondError formula-bond-basis (Binding1896/1927–1932 via hooks)
+- Skipped _4e (Q2e/l4e); helper603 (Nwe Map ESM); rze; kht
+- Leave-behind: rze still 1 caller in WorkbookN apply; kht still in ensure bag; helper603 still needs Nwe Map ESM
+- QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`; full tree with `--allow-open-boundaries --allow-flat --allow-mechanical-names`
 - openBoundary remains while mega still large
