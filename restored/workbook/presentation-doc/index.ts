@@ -1,10 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-151: presentation-doc barrel (legacy _workbookS).
+// Stage-3 wave-151/157: presentation-doc barrel (direct imports; wire retired).
 
-export {
-  wirePresentationDocHooks,
-  psH,
-} from "./boundary-hooks";
+export { wirePresentationDocHooks, psH } from "./boundary-hooks";
 
 export {
   _workbookS,

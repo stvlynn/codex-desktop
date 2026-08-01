@@ -1,165 +1,156 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-65: boundary deps for Sheet / SXe cluster.
+// Stage-3 wave-157: Sheet boundary deps via direct imports (wire leave-behind retired).
 
-export type SheetBoundaryHooks = {
-  ensureRangeClusterInit: () => void;
-  ensureWorksheetDrawingsInit: () => void;
-  ensureDropdownPaddingInit: () => void;
-  ensureStyleRefsCollabInit: () => void;
-  ensureCanvasPaintConstsInit: () => void;
-  ensureWorkbookF: () => void;
-  ensureWorkbookZ: () => void;
-  ensureWorkbookKt: () => void;
-  ensureSpreadsheetVn: () => void;
-  ensureCme: () => void;
-  ensureEme: () => void;
-  ensureYhe: () => void;
-  ensureXhe: () => void;
-  ensureRve: () => void;
-  ensureZve: () => void;
-  ensureBve: () => void;
-  ensureKve: () => void;
-  ensureWpe: () => void;
-  ensureBpe: () => void;
-  ensureAye: () => void;
-  ensureSye: () => void;
-  ensureGye: () => void;
-  ensureQt: () => void;
-  ensureWr: () => void;
-  ensureWorkbookBinding583: () => void;
-  ensureWorkbookBinding586: () => void;
-  ensureWorkbookBinding1238: () => void;
-  shiftSharedFormulaRefs: (...args: any[]) => any;
-  getStyleRefsCollabClass: () => any;
-  getTableStyleClass: () => any;
-  getMergedRangeIndexClass: () => any;
-  getTablesCollectionClass: () => any;
-  getSparklinesFacadeClass: () => any;
-  isCheckboxStyle: (...args: any[]) => any;
-  notifyRowHeights: (...args: any[]) => any;
-  buildSparklinePreview: (...args: any[]) => any;
-};
+import { ensureRangeClusterInit as ensureRangeClusterInitMod } from "../binding662-gate";
+import { Cme, Eme } from "../binding662-gate";
+import {
+  ensureWorksheetDrawingsInit as workbookBinding789,
+  ensureDrawingLayoutInit as Rve,
+} from "../worksheet-drawings";
+import {
+  ensureDropdownPaddingInit as workbookBinding588,
+  isListValidationWithoutDropdown as Ele,
+} from "../worksheet-autofit";
+import {
+  workbookBinding817,
+  aye,
+  getStyleRefsCollabClass as getStyleRefsCollabClassMod,
+  getSheetStructureCollabClass,
+} from "../collab-snapshot";
+import {
+  ensureCanvasPaintConstsInit as ensureCpConstsInit,
+  notifyRowHeights as notifyRowHeightsMod,
+} from "../canvas-paint";
+import { ensureFormulaInit as workbookF } from "../formula";
+import { ensureTextBoxClusterInit as workbookZ } from "../text-box";
+import { Vn as spreadsheetVn } from "../spreadsheet-protobuf";
+import { yhe, xhe, bhe, vhe } from "../table-vo";
+import {
+  ensureCellVoInit as zve,
+  ensureCellGridInit as Bve,
+  ensureSparklineGroupsInit as Kve,
+} from "../sparklines";
+import { ensureConditionalFormatInit as wpe } from "../conditional-format";
+import { ensureDataValidationInit as Bpe } from "../data-validation";
+import { gye, pye } from "../table-styles";
+import { Qt, wr } from "../presentation-protobuf";
+import {
+  ensureSsfFormatInit as workbookBinding583,
+  ensureStripFontFaceNameInit as workbookBinding586,
+} from "../cell-xf-format";
+import { workbookBinding1238 } from "../guide-layout-consts";
+import { workbookBinding833 } from "../merged-range-index";
+import { shiftSharedFormulaRefs as shiftSharedFormulaRefsImpl } from "../formula-shared-refs";
 
-let hooks: SheetBoundaryHooks | null = null;
-
-export function wireSheetBoundaryHooks(next: SheetBoundaryHooks): void {
-  hooks = next;
-}
-
-function requireHooks(): SheetBoundaryHooks {
-  if (!hooks) {
-    throw new Error(
-      "sheet boundary hooks not wired (call from workbook-runtime)",
-    );
-  }
-  return hooks;
-}
+/** Legacy workbookKt eager-init no-op (Yjs shim companion). */
+export function ensureWorkbookKt(): void {}
 
 export function ensureRangeClusterInit(): void {
-  requireHooks().ensureRangeClusterInit();
+  ensureRangeClusterInitMod();
 }
 export function ensureWorksheetDrawingsInit(): void {
-  requireHooks().ensureWorksheetDrawingsInit();
+  workbookBinding789();
 }
 export function ensureDropdownPaddingInit(): void {
-  requireHooks().ensureDropdownPaddingInit();
+  workbookBinding588();
 }
 export function ensureStyleRefsCollabInit(): void {
-  requireHooks().ensureStyleRefsCollabInit();
+  workbookBinding817();
 }
 export function ensureCanvasPaintConstsInit(): void {
-  requireHooks().ensureCanvasPaintConstsInit();
+  ensureCpConstsInit();
 }
 export function ensureWorkbookF(): void {
-  requireHooks().ensureWorkbookF();
+  workbookF();
 }
 export function ensureWorkbookZ(): void {
-  requireHooks().ensureWorkbookZ();
-}
-export function ensureWorkbookKt(): void {
-  requireHooks().ensureWorkbookKt();
+  workbookZ();
 }
 export function ensureSpreadsheetVn(): void {
-  requireHooks().ensureSpreadsheetVn();
+  spreadsheetVn();
 }
 export function ensureCme(): void {
-  requireHooks().ensureCme();
+  Cme();
 }
 export function ensureEme(): void {
-  requireHooks().ensureEme();
+  Eme();
 }
 export function ensureYhe(): void {
-  requireHooks().ensureYhe();
+  yhe();
 }
 export function ensureXhe(): void {
-  requireHooks().ensureXhe();
+  xhe();
 }
 export function ensureRve(): void {
-  requireHooks().ensureRve();
+  Rve();
 }
 export function ensureZve(): void {
-  requireHooks().ensureZve();
+  zve();
 }
 export function ensureBve(): void {
-  requireHooks().ensureBve();
+  Bve();
 }
 export function ensureKve(): void {
-  requireHooks().ensureKve();
+  Kve();
 }
 export function ensureWpe(): void {
-  requireHooks().ensureWpe();
+  wpe();
 }
 export function ensureBpe(): void {
-  requireHooks().ensureBpe();
+  Bpe();
 }
 export function ensureAye(): void {
-  requireHooks().ensureAye();
+  aye();
 }
-export function ensureSye(): void {
-  requireHooks().ensureSye();
-}
+export function ensureSye(): void {}
 export function ensureGye(): void {
-  requireHooks().ensureGye();
+  gye();
 }
 export function ensureQt(): void {
-  requireHooks().ensureQt();
+  Qt();
 }
 export function ensureWr(): void {
-  requireHooks().ensureWr();
+  wr();
 }
 export function ensureWorkbookBinding583(): void {
-  requireHooks().ensureWorkbookBinding583();
+  workbookBinding583();
 }
 export function ensureWorkbookBinding586(): void {
-  requireHooks().ensureWorkbookBinding586();
+  workbookBinding586();
 }
 export function ensureWorkbookBinding1238(): void {
-  requireHooks().ensureWorkbookBinding1238();
+  workbookBinding1238();
 }
 export function shiftSharedFormulaRefs(...args: any[]): any {
-  return requireHooks().shiftSharedFormulaRefs(...args);
+  return shiftSharedFormulaRefsImpl(...args);
 }
 export function getStyleRefsCollabClass(): any {
-  return requireHooks().getStyleRefsCollabClass();
+  return getStyleRefsCollabClassMod();
 }
 export function getTableStyleClass(): any {
-  return requireHooks().getTableStyleClass();
+  return getSheetStructureCollabClass();
 }
 export function getMergedRangeIndexClass(): any {
-  return requireHooks().getMergedRangeIndexClass();
+  return workbookBinding833;
 }
 export function getTablesCollectionClass(): any {
-  return requireHooks().getTablesCollectionClass();
+  yhe();
+  return bhe;
 }
 export function getSparklinesFacadeClass(): any {
-  return requireHooks().getSparklinesFacadeClass();
+  xhe();
+  return vhe;
 }
 export function isCheckboxStyle(...args: any[]): any {
-  return requireHooks().isCheckboxStyle(...args);
+  return Ele(...args);
 }
 export function notifyRowHeights(...args: any[]): any {
-  return requireHooks().notifyRowHeights(...args);
+  return notifyRowHeightsMod(...args);
 }
 export function buildSparklinePreview(...args: any[]): any {
-  return requireHooks().buildSparklinePreview(...args);
+  return pye(...args);
 }
+
+/** @deprecated Wave-157: wire leave-behind retired — sheet uses direct imports. */
+export type SheetBoundaryHooks = Record<string, never>;
+export function wireSheetBoundaryHooks(_next?: SheetBoundaryHooks): void {}

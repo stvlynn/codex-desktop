@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~9.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~8.8k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1914,3 +1914,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Slimmed `workbook-shell-ensures` / `text-frame-insets` / `chart-layout-ensures` wires → direct imports
 - Dropped dead ensure* cluster aliases + helper24 wrapper + leftover jstat/bessel comment shims
 - `openBoundary` kept
+
+## Wave 157 (Stage-3 wire slim — WorkbookN / presentation-doc / sheet)
+
+- Boundary 9271 → 8778 (Δ -493)
+- Retired `wireWorkbookNHooks` / `wirePresentationDocHooks` / `wireSheetBoundaryHooks` leave-behinds → direct imports in owning modules (`workbook-core/ensure-workbook-n-deps.ts`, `presentation-doc-impl`, `sheet/boundary-hooks`)
+- Peeled thin Yjs aliases (`_o`/`is`/Binding210–266/`os`), empty `lvt`/`qpt`/`ygt`/`xgt`, and Binding1824/1826/1935/helper832/`_gt`/`jYe` mega aliases; public `workbookAt`/`workbookKt` retained
+- Fixed presentation-doc `Zqe` leave-behind to `runPresentationRecipe` (wave-156 rename residue)
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept
+- QG PASS on sheet + workbook-core + presentation-doc + boundary `--no-cache --allow-open-boundaries`
+- Next: slim `wireFormulaCriteriaLookupBoundaryHooks` / `wireCanvasPaintBoundaryHooks` / other large wires; reassess openBoundary closeout when mega is thin enough

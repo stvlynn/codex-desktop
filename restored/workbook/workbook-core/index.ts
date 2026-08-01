@@ -8,6 +8,14 @@ export { getWorkbookOps } from "./ops";
 export { ensureWorkbookCoreInit } from "./ensure-workbook-core-init";
 export { wireWorkbookNHooks, wnH } from "./boundary-hooks";
 export {
+  ensureWorkbookNDeps,
+  workbookKt,
+  qpt,
+  lvt,
+  ygt,
+  xgt,
+} from "./ensure-workbook-n-deps";
+export {
   WorkbookN,
   ensureWorkbookNInit,
   __workbookT,

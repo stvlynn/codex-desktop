@@ -4,7 +4,7 @@
 
 import { esmInit } from "../../runtime/rolldown-runtime";
 import type { WorkbookOpsHost } from "./types";
-import { wnH } from "./boundary-hooks";
+import { ensureWorkbookNDeps } from "./ensure-workbook-n-deps";
 import { ensureWorkbookCoreInit } from "./ensure-workbook-core-init";
 import { getWorkbookOps } from "./ops";
 import { getWorkbookCoreEnv } from "./runtime-env";
@@ -46,7 +46,7 @@ export let xvt: any;
 export let __workbookT: any;
 
 export const WorkbookN = esmInit(() => {
-  wnH.ensureWorkbookNDeps();
+  ensureWorkbookNDeps();
   ensureWorkbookCoreInit();
   workbookBinding1996 = featureBagCheckboxType();
   dvt = featureBagXfControlsType();

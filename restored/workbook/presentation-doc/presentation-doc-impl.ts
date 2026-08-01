@@ -1,86 +1,173 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: presentation workbook shell (legacy _workbookS / vYe / WorkbookClass3).
-// Stage-3 wave-151.
+// Stage-3 wave-151; wave-157: direct imports (wirePresentationDocHooks retired).
 
 import { esmInit } from "../../runtime/rolldown-runtime";
-import { psH } from "./boundary-hooks";
+import {
+  Doc as _o,
+  Map as workbookBinding266,
+  applyUpdate as workbookBinding210,
+  encodeStateAsUpdate as workbookBinding211,
+  decodeUpdate as os,
+  mergeUpdates as workbookAt,
+} from "../../vendor/yjs";
+import {
+  $H,
+  workbookBinding1325,
+  workbookBinding1326,
+} from "../compose-layout";
+import {
+  workbookBinding1512,
+  workbookBinding1507,
+  workbookBinding1509,
+  workbookBinding1493,
+  workbookBinding1494,
+  workbookBinding1495,
+  workbookBinding1510,
+  workbookBinding1505,
+  workbookBinding1511,
+  workbookBinding1508,
+  workbookBinding1502,
+  workbookBinding1503,
+  workbookBinding1506,
+  workbookBinding1501,
+  workbookBinding1496,
+  workbookBinding1528,
+} from "../compose-dsl";
+import { Qt, wr, $ as presentationDollar, Zn } from "../presentation-protobuf";
+import { yEe, aJe, Cze, workbookBinding1489 } from "../workbook-shell-ensures";
+import {
+  ensureThemeStyleMapsInit as workbookRt,
+  buildThemeStyleMaps as workbookNt,
+} from "../document-style";
+import { resolveColorToCssRgba as workbookSt } from "../color-resolve";
+import { ensureCssNamedColorsInit as workbookXt } from "../presentation-theme";
+import { bEe, workbookBinding1289 } from "../presentation-citations";
+import {
+  workbookD,
+  _workbookT,
+  workbookE,
+  workbookW,
+} from "../presentation-assets";
+import {
+  dDe,
+  fDe,
+  workbookBinding1345,
+  workbookBinding1346,
+} from "../slide-layout";
+import { mDe, workbookBinding1349 } from "../placeholder-styles";
+import { cLe, sLe } from "../presentation-slide";
+import { workbookEt, workbookTt } from "../emu-units";
+import {
+  ensureWorkbookThemeInit as workbookY,
+  WorkbookTheme as workbookJ,
+} from "../design-tokens";
+import {
+  ensureTextStyleInit as workbookBt,
+  TextStyle as workbookVt,
+} from "../text-style";
+import { jLe, ALe } from "../presentation-scripts";
+import { NLe, MLe } from "../presentation-list-styles";
+import {
+  FLe,
+  LLe,
+  zLe,
+  VLe,
+  WLe,
+  XLe,
+  QLe,
+  YLe,
+  PLe,
+  BLe,
+  ILe,
+  RLe,
+  ZLe,
+} from "../presentation-master-defaults";
+import {
+  ensurePresentationStubContextInit,
+  workbookHelper825 as pdHb825,
+  _Ye,
+} from "../presentation-stub-context";
+import { CRe, _workbookU } from "../comments";
+import {
+  ensureStableIdConstantsInit as workbookH,
+  randomBase36Id as pdHb299,
+  hashToBase36Id as pdHb300,
+  normalizeOrHashId as pdHb301,
+} from "../stable-id";
+import { qRe, wRe } from "../deck-kinds";
+import {
+  ensurePresentationAidInit as eze,
+  resolvePresentationAid as ZRe,
+} from "../presentation-aid";
+import { workbookKt } from "../workbook-core/ensure-workbook-n-deps";
+import {
+  ensurePluginSlotsInit as workbookU,
+  requirePresentationHelp as jue,
+} from "../preset-shape";
+import { nze, tze } from "../presentation-patch";
+import { dJe, SJe, bJe, xJe, uJe } from "../google-slides-adapter";
+import { tYe, eYe, workbookBinding1815 } from "../collab-snapshot";
+import { rYe, aYe, nYe, iYe } from "../presentation-artifacts";
+import { WorkbookN, __workbookT } from "../workbook-core";
+import {
+  _workbookL,
+  _workbookC,
+  workbookHelper824 as pdHb824,
+} from "../font-stack";
+import { fYe, mYe } from "../presentation-images";
+import { runPresentationRecipe as Zqe } from "../presentation-recipes";
+import { rze } from "../presentation-apply";
+import { OJe, EJe, DJe, kJe, CJe } from "../presentation-presence";
+import { workbookHelper676 as pdHb676 } from "../element-text-layout";
+import { vEe } from "../slide-canvas-render";
 
-let $H: any;
-let workbookBinding1512: any;
-let workbookBinding1507: any;
-let workbookBinding1509: any;
-let workbookBinding1493: any;
-let workbookBinding1494: any;
-let workbookBinding1325: any;
-let workbookBinding1495: any;
-let workbookBinding1510: any;
-let workbookBinding1505: any;
-let workbookBinding1511: any;
-let workbookBinding1326: any;
-let workbookBinding1508: any;
-let workbookBinding1502: any;
-let workbookBinding1503: any;
-let workbookBinding1506: any;
-let workbookBinding1501: any;
-let workbookBinding1496: any;
-let pdHb825: any;
-let workbookBinding266: any;
-let presentationDollar: any;
-let workbookTt: any;
-let pdHb299: any;
-let pdHb300: any;
-let pdHb301: any;
-let nYe: any;
-let _o: any;
-let iYe: any;
-let workbookBinding1349: any;
-let workbookE: any;
-let workbookW: any;
-let workbookBinding1345: any;
-let workbookBinding1346: any;
-let sLe: any;
-let workbookBinding1289: any;
-let ALe: any;
-let _workbookU: any;
-let eYe: any;
-let fYe: any;
-let bJe: any;
-let __workbookT: any;
-let xJe: any;
-let mYe: any;
-let wRe: any;
-let Zqe: any;
-let uJe: any;
-let _Ye: any;
-let ZRe: any;
-let rze: any;
-let tze: any;
-let workbookAt: any;
-let workbookBinding210: any;
-let workbookBinding211: any;
-let Zn: any;
-let YLe: any;
-let PLe: any;
-let MLe: any;
-let BLe: any;
-let ILe: any;
-let RLe: any;
-let ZLe: any;
-let os: any;
-let workbookNt: any;
-let pdHb824: any;
-let workbookJ: any;
-let OJe: any;
-let EJe: any;
-let DJe: any;
-let kJe: any;
-let CJe: any;
-let pdHb676: any;
-let workbookSt: any;
-let workbookVt: any;
-let _workbookC: any;
-let jue: any;
-let vEe: any;
+function ensurePresentationDocDeps(): void {
+  Qt();
+  wr();
+  yEe();
+  workbookRt();
+  workbookXt();
+  bEe();
+  workbookD();
+  _workbookT();
+  dDe();
+  fDe();
+  mDe();
+  cLe();
+  workbookEt();
+  workbookY();
+  workbookBt();
+  jLe();
+  NLe();
+  FLe();
+  LLe();
+  zLe();
+  VLe();
+  ensurePresentationStubContextInit();
+  WLe();
+  XLe();
+  QLe();
+  CRe();
+  workbookH();
+  qRe();
+  eze();
+  workbookKt();
+  workbookU();
+  nze();
+  Cze();
+  workbookBinding1528();
+  aJe();
+  dJe();
+  SJe();
+  tYe();
+  rYe();
+  aYe();
+  WorkbookN();
+  _workbookL();
+  workbookBinding1489();
+  workbookBinding1815();
+}
 
 export let vYe: any;
 export let _workbookO: any;
@@ -88,84 +175,7 @@ export let workbookBinding1817: any;
 export let yYe: any;
 
 export const _workbookS = esmInit(() => {
-  psH.ensurePresentationDocDeps();
-  const snap = psH.snapshotLeaveBehinds();
-  $H = snap.$H;
-  workbookBinding1512 = snap.workbookBinding1512;
-  workbookBinding1507 = snap.workbookBinding1507;
-  workbookBinding1509 = snap.workbookBinding1509;
-  workbookBinding1493 = snap.workbookBinding1493;
-  workbookBinding1494 = snap.workbookBinding1494;
-  workbookBinding1325 = snap.workbookBinding1325;
-  workbookBinding1495 = snap.workbookBinding1495;
-  workbookBinding1510 = snap.workbookBinding1510;
-  workbookBinding1505 = snap.workbookBinding1505;
-  workbookBinding1511 = snap.workbookBinding1511;
-  workbookBinding1326 = snap.workbookBinding1326;
-  workbookBinding1508 = snap.workbookBinding1508;
-  workbookBinding1502 = snap.workbookBinding1502;
-  workbookBinding1503 = snap.workbookBinding1503;
-  workbookBinding1506 = snap.workbookBinding1506;
-  workbookBinding1501 = snap.workbookBinding1501;
-  workbookBinding1496 = snap.workbookBinding1496;
-  pdHb825 = snap.pdHb825;
-  workbookBinding266 = snap.workbookBinding266;
-  presentationDollar = snap.presentationDollar;
-  workbookTt = snap.workbookTt;
-  pdHb299 = snap.pdHb299;
-  pdHb300 = snap.pdHb300;
-  pdHb301 = snap.pdHb301;
-  nYe = snap.nYe;
-  _o = snap._o;
-  iYe = snap.iYe;
-  workbookBinding1349 = snap.workbookBinding1349;
-  workbookE = snap.workbookE;
-  workbookW = snap.workbookW;
-  workbookBinding1345 = snap.workbookBinding1345;
-  workbookBinding1346 = snap.workbookBinding1346;
-  sLe = snap.sLe;
-  workbookBinding1289 = snap.workbookBinding1289;
-  ALe = snap.ALe;
-  _workbookU = snap._workbookU;
-  eYe = snap.eYe;
-  fYe = snap.fYe;
-  bJe = snap.bJe;
-  __workbookT = snap.__workbookT;
-  xJe = snap.xJe;
-  mYe = snap.mYe;
-  wRe = snap.wRe;
-  Zqe = snap.Zqe;
-  uJe = snap.uJe;
-  _Ye = snap._Ye;
-  ZRe = snap.ZRe;
-  rze = snap.rze;
-  tze = snap.tze;
-  workbookAt = snap.workbookAt;
-  workbookBinding210 = snap.workbookBinding210;
-  workbookBinding211 = snap.workbookBinding211;
-  Zn = snap.Zn;
-  YLe = snap.YLe;
-  PLe = snap.PLe;
-  MLe = snap.MLe;
-  BLe = snap.BLe;
-  ILe = snap.ILe;
-  RLe = snap.RLe;
-  ZLe = snap.ZLe;
-  os = snap.os;
-  workbookNt = snap.workbookNt;
-  pdHb824 = snap.pdHb824;
-  workbookJ = snap.workbookJ;
-  OJe = snap.OJe;
-  EJe = snap.EJe;
-  DJe = snap.DJe;
-  kJe = snap.kJe;
-  CJe = snap.CJe;
-  pdHb676 = snap.pdHb676;
-  workbookSt = snap.workbookSt;
-  workbookVt = snap.workbookVt;
-  _workbookC = snap._workbookC;
-  jue = snap.jue;
-  vEe = snap.vEe;
+  ensurePresentationDocDeps();
   vYe = Object.freeze({
     auto: $H,
     card: workbookBinding1512,

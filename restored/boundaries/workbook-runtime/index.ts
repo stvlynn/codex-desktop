@@ -420,29 +420,6 @@ import {
   ensureComposeTracksInit,
 } from "../../workbook/compose-layout";
 
-import type { WorkbookOpsHost } from "../../workbook/workbook-core";
-import {
-  ensureWorkbookCoreInit,
-  getWorkbookOps,
-  wireWorkbookCoreEnv,
-  getWorkbookCoreEnv,
-  featureBagCheckboxType,
-  featureBagXfControlsType,
-  featureBagXfComplementType,
-  featureBagXfComplementsType,
-  XF_COMPLEMENTS_MAPPER_EXT_REF,
-  CELL_CONTROL,
-  XF_CONTROLS,
-  MAPPED_FEATURE_PROPERTY_BAGS,
-  EXCEL_EPOCH_UTC_MS as workbookCoreExcelEpochMs,
-  MS_PER_DAY as workbookCoreMsPerDay,
-  MS_PER_MINUTE,
-  EXCEL_CANONICAL_DATE,
-  DATE_FORMULA_NAMES,
-  ISO_DATE_TIME_RE,
-  TRACE_ERROR_TOKEN,
-  CIRC_ERROR_TOKEN,
-} from "../../workbook/workbook-core";
 const workbookBinding1486 = new Proxy(function SlideComposeThemeProxy() {}, {
   construct(_target, args) {
     const Ctor = getSlideComposeTheme();
@@ -715,16 +692,7 @@ import {
   ensureThemeSchemeColorAliasesInit as workbookBinding570,
 } from "../../workbook/design-tokens";
 
-import {
-  Array as YArray,
-  Doc as YDoc,
-  Map as YMap,
-  UndoManager as YUndoManager,
-  applyUpdate as yApplyUpdate,
-  decodeUpdate as yDecodeUpdate,
-  encodeStateAsUpdate as yEncodeStateAsUpdate,
-  mergeUpdates as yMergeUpdates,
-} from "../../vendor/yjs";
+import { mergeUpdates as yMergeUpdates } from "../../vendor/yjs";
 import {
   Box3 as ThreeBox3,
   BoxGeometry as ThreeBoxGeometry,
@@ -1366,7 +1334,6 @@ wireEntityQueryBoundaryHooks({
 
 // Thin aliases for WorkbookN / create-ops env bag (legacy Binding1967 cluster).
 import {
-  wireSheetBoundaryHooks,
   ensureSheetInit,
   SXe,
   Sheet,
@@ -1458,8 +1425,6 @@ wireCanvasPaintBoundaryHooks({
 
 // Thin aliases for legacy BYe / Binding1824 / jYe / bYe / xYe.
 var BYe = paintSpreadsheetCanvasFn;
-var workbookBinding1824 = ensureCpConstsInit;
-var jYe = notifyRowHeights;
 var bYe = paintSheetShapes;
 var xYe = ensurePaintEmuMapsInit;
 var ensureCanvasPaintCluster = ensureCanvasPaintClusterInit;
@@ -1715,8 +1680,6 @@ wireDocOpApplyBoundaryHooks({
 });
 
 // Thin aliases: doc-op-apply cluster drained (wave-90).
-var _gt = ensureDocOpApplyInit;
-
 import {
   wireThreeChartPaintBoundaryHooks,
   paintThreeChart as $be,
@@ -6385,7 +6348,6 @@ import {
   b7e,
 } from "../../workbook/formula-eng-mids";
 
-const workbookBinding1935 = ensureEvalContextStackInit;
 import {
   wireFormulaDateMonthsBoundaryHooks,
   fdmH as __fdmHWave128,
@@ -7379,103 +7341,6 @@ void workbookBinding1528;
 
 // Thin alias: cluster ensure for compose DSL (Binding1490–1528).
 
-wireSheetBoundaryHooks({
-  ensureRangeClusterInit: () => {
-    workbookBinding675();
-  },
-  ensureWorksheetDrawingsInit: () => {
-    workbookBinding789();
-  },
-  ensureDropdownPaddingInit: () => {
-    workbookBinding588();
-  },
-  ensureStyleRefsCollabInit: () => {
-    workbookBinding817();
-  },
-  ensureCanvasPaintConstsInit: () => {
-    ensureCpConstsInit();
-  },
-  ensureWorkbookF: () => {
-    workbookF();
-  },
-  ensureWorkbookZ: () => {
-    workbookZ();
-  },
-  ensureWorkbookKt: () => {
-    workbookKt();
-  },
-  ensureSpreadsheetVn: () => {
-    spreadsheetVn();
-  },
-  ensureCme: () => {
-    Cme();
-  },
-  ensureEme: () => {
-    Eme();
-  },
-  ensureYhe: () => {
-    yhe();
-  },
-  ensureXhe: () => {
-    xhe();
-  },
-  ensureRve: () => {
-    Rve();
-  },
-  ensureZve: () => {
-    zve();
-  },
-  ensureBve: () => {
-    Bve();
-  },
-  ensureKve: () => {
-    Kve();
-  },
-  ensureWpe: () => {
-    wpe();
-  },
-  ensureBpe: () => {
-    Bpe();
-  },
-  ensureAye: () => {
-    aye();
-  },
-  ensureSye: () => {},
-  ensureGye: () => {
-    gye();
-  },
-  ensureQt: () => {
-    Qt();
-  },
-  ensureWr: () => {
-    wr();
-  },
-  ensureWorkbookBinding583: () => {
-    workbookBinding583();
-  },
-  ensureWorkbookBinding586: () => {
-    workbookBinding586();
-  },
-  ensureWorkbookBinding1238: () => {
-    workbookBinding1238();
-  },
-  shiftSharedFormulaRefs: (...args: any[]) => workbookHelper592(...args),
-  getStyleRefsCollabClass: () => getStyleRefsCollabClass(),
-  getTableStyleClass: () => getSheetStructureCollabClass(),
-  getMergedRangeIndexClass: () => workbookBinding833,
-  getTablesCollectionClass: () => {
-    yhe();
-    return bhe;
-  },
-  getSparklinesFacadeClass: () => {
-    xhe();
-    return vhe;
-  },
-  isCheckboxStyle: (...args: any[]) => Ele(...args),
-  notifyRowHeights: (...args: any[]) => jYe(...args),
-  buildSparklinePreview: (...args: any[]) => pye(...args),
-});
-
 wireWorksheetsBoundaryHooks({
   ensureKme: () => {
     ensureGranolaLogInit();
@@ -7488,8 +7353,6 @@ wireWorksheetsBoundaryHooks({
 var ensureWorksheetsCollectionCluster = ensureWorksheetsCollectionInit;
 
 // Thin aliases for TXe / WorkbookN (legacy Binding1827 / SXe cluster).
-var workbookBinding1826 = ensureSheetAutoHeightInit;
-var workbookHelper832 = parseSheetColWidth;
 var workbookBinding1827 = "__oaiPopcornFreezePanes";
 var workbookBinding1828: any = new Proxy(function () {} as any, {
   construct(_t, args) {
@@ -8101,7 +7964,6 @@ import {
 } from "../../workbook/lazy-workbook-loaders";
 
 import {
-  wirePresentationDocHooks,
   _workbookS,
   ensureWorkbookSInit,
   vYe,
@@ -8111,7 +7973,6 @@ import {
 } from "../../workbook/presentation-doc";
 
 import {
-  wireWorkbookNHooks,
   WorkbookN,
   ensureWorkbookNInit,
   __workbookT,
@@ -8131,6 +7992,9 @@ import {
   bvt,
   workbookBinding2000,
   xvt,
+  workbookKt,
+  xgt,
+  ygt,
 } from "../../workbook/workbook-core";
 
 import {
@@ -8813,359 +8677,10 @@ import {
   z,
 } from "../lodash-hNqv-runtime";
 import { j as mergeJ, n as mergeN } from "../lodash-merge-internals";
-/** Bundle Yjs — stock yjs@13.6.27 (was inlined Binding1–331 / lib0+Yjs). */
-var _o = YDoc;
-var is = YUndoManager;
-var workbookBinding265 = YArray;
-var workbookBinding266 = YMap;
-var workbookBinding210 = yApplyUpdate;
-var workbookBinding211 = yEncodeStateAsUpdate;
-var os = yDecodeUpdate;
 var workbookAt = yMergeUpdates;
-var workbookKt = () => {};
-
 wireFormulaSortFilterBoundaryHooks({
   getEvalContext: () => workbookHelper962(),
   firstCellOrValue: (...args: any[]) => workbookHelper966(...args),
-});
-
-// Thin empty ensure restored after wave-151 lead-scan over-drop.
-var lvt = esmInit(() => {});
-
-wireWorkbookNHooks({
-  ensureWorkbookNDeps: () => {
-    spreadsheetVn();
-    workbookKt();
-    Cme();
-    Eme();
-    EXe();
-    kXe();
-    FXe();
-    workbookBinding383();
-    zXe();
-    HXe();
-    KXe();
-    workbookF();
-    $u();
-    Hft();
-    ensureEvalContextStackInit();
-    Wft();
-    Kft();
-    ipt();
-    Cpt();
-    initAddressUtils();
-    _WorkbookI();
-    workbookBinding1826();
-    initAddressMetrics();
-    Wpt();
-    qpt();
-    workbookBinding577();
-    workbookBinding581();
-    kmt();
-    eht();
-    Ght();
-    workbookBinding570();
-    _workbookL();
-    CRe();
-    workbookBinding661();
-    workbookH();
-    qht();
-    Xht();
-    _gt();
-    ygt();
-    workbookBinding1824();
-    xgt();
-    workbookBinding424();
-    kgt();
-    workbookBinding817();
-    Ngt();
-    ensureSchemaMetaInit();
-    Ggt();
-    R_t();
-    workbookU();
-    B_t();
-    J_t();
-    Y_t();
-    avt();
-    svt();
-    lvt();
-    wireWorkbookCoreEnv({
-      $_t: $_t,
-      Amt,
-      Aue,
-      BXe,
-      B_t,
-      Bae,
-      CRe,
-      Cme,
-      Cpt,
-      Dot,
-      EXe,
-      Eme,
-      FXe,
-      Ft,
-      Gft,
-      Ggt,
-      Ght,
-      HXe,
-      H_t,
-      Hft,
-      J_t,
-      Jve,
-      KXe,
-      Kft,
-      Kht,
-      Kpt,
-      Mgt,
-      Mue,
-      Ngt,
-      OXe,
-      Ogt,
-      PXe,
-      Q_t,
-      Qt,
-      RXe,
-      R_t,
-      Tpt,
-      UXe,
-      U_t,
-      Uft,
-      Upt,
-      WXe,
-      Wft,
-      Wgt,
-      Wpt,
-      Xht,
-      Y_t,
-      Ygt,
-      Yht,
-      Z,
-      Zgt,
-      Zht,
-      _WorkbookI,
-      _gt,
-      _o,
-      _workbookC,
-      _workbookL,
-      _workbookU,
-      apt,
-      avt,
-      colIndexToLetters,
-      cvt,
-      d,
-      eft,
-      eht,
-      esmInit,
-      evt,
-      formatA1,
-      formatA1Range,
-      initAddressMetrics,
-      initAddressUtils,
-      ipt,
-      is,
-      jmt,
-      kXe,
-      kgt,
-      kht,
-      kmt,
-      kue,
-      lvt,
-      nt,
-      opt,
-      os,
-      ovt,
-      parseA1Range,
-      qht,
-      qpt,
-      qve,
-      rpt,
-      sn,
-      spreadsheetVn,
-      svt,
-      tt,
-      uvt,
-      wXe,
-      wmt,
-      workbookAt,
-      workbookBinding1824,
-      workbookBinding1826,
-      workbookBinding1935,
-      workbookBinding1987,
-      workbookBinding1988,
-      workbookBinding1989,
-      workbookBinding1990,
-      workbookBinding1991,
-      workbookBinding1992,
-      workbookBinding1995,
-      workbookBinding210,
-      workbookBinding211,
-      workbookBinding382,
-      workbookBinding383,
-      workbookBinding424,
-      workbookBinding570,
-      workbookBinding577,
-      workbookBinding581,
-      workbookBinding661,
-      workbookBinding676,
-      workbookBinding684,
-      workbookBinding817,
-      ensureSchemaMetaInit,
-      workbookF,
-      workbookH,
-      workbookHelper1035,
-      workbookHelper1036,
-      workbookHelper1037,
-      workbookHelper222,
-      workbookHelper227,
-      workbookHelper228,
-      workbookHelper298,
-      workbookHelper312,
-      workbookHelper32,
-      workbookHelper328,
-      workbookHelper329,
-      workbookHelper36,
-      workbookHelper377,
-      workbookHelper38,
-      workbookHelper832,
-      workbookKt,
-      workbookP,
-      workbookR,
-      workbookU,
-      xgt,
-      ygt,
-      yt,
-      zXe,
-      z_t,
-      zt,
-    });
-  },
-});
-
-wirePresentationDocHooks({
-  ensurePresentationDocDeps: () => {
-    Qt();
-    wr();
-    yEe();
-    workbookRt();
-    workbookXt();
-    bEe();
-    workbookD();
-    _workbookT();
-    dDe();
-    fDe();
-    mDe();
-    cLe();
-    workbookEt();
-    workbookY();
-    workbookBt();
-    jLe();
-    NLe();
-    FLe();
-    LLe();
-    zLe();
-    VLe();
-    ensurePresentationStubContextInit();
-    WLe();
-    XLe();
-    QLe();
-    CRe();
-    workbookH();
-    qRe();
-    eze();
-    workbookKt();
-    workbookU();
-    nze();
-    Cze();
-    workbookBinding1528();
-    aJe();
-    dJe();
-    SJe();
-    tYe();
-    rYe();
-    aYe();
-    WorkbookN();
-    _workbookL();
-    workbookBinding1489();
-    workbookBinding1815();
-  },
-  snapshotLeaveBehinds: () => ({
-    $H,
-    workbookBinding1512,
-    workbookBinding1507,
-    workbookBinding1509,
-    workbookBinding1493,
-    workbookBinding1494,
-    workbookBinding1325,
-    workbookBinding1495,
-    workbookBinding1510,
-    workbookBinding1505,
-    workbookBinding1511,
-    workbookBinding1326,
-    workbookBinding1508,
-    workbookBinding1502,
-    workbookBinding1503,
-    workbookBinding1506,
-    workbookBinding1501,
-    workbookBinding1496,
-    pdHb825: workbookHelper825,
-    workbookBinding266,
-    presentationDollar,
-    workbookTt,
-    pdHb299: workbookHelper299,
-    pdHb300: workbookHelper300,
-    pdHb301: workbookHelper301,
-    nYe,
-    _o,
-    iYe,
-    workbookBinding1349,
-    workbookE,
-    workbookW,
-    workbookBinding1345,
-    workbookBinding1346,
-    sLe,
-    workbookBinding1289,
-    ALe,
-    _workbookU,
-    eYe,
-    fYe,
-    bJe,
-    __workbookT,
-    xJe,
-    mYe,
-    wRe,
-    runPresentationRecipeMod,
-    uJe,
-    _Ye,
-    ZRe,
-    rze,
-    tze,
-    workbookAt,
-    workbookBinding210,
-    workbookBinding211,
-    Zn,
-    YLe,
-    PLe,
-    MLe,
-    BLe,
-    ILe,
-    RLe,
-    ZLe,
-    os,
-    workbookNt,
-    pdHb824: workbookHelper824,
-    workbookJ,
-    OJe,
-    EJe,
-    DJe,
-    kJe,
-    CJe,
-    pdHb676: workbookHelper676,
-    workbookSt,
-    workbookVt,
-    _workbookC,
-    jue,
-    vEe,
-  }),
 });
 
 /** Bundle Decimal — stock decimal.js@10.6.0 via vendor/decimal (was inlined helper939…/Binding1906/Vit). */
@@ -9178,13 +8693,6 @@ function ust(workbookInput15700) {
 function fst(workbookInput15701) {
   return kZe(workbookInput15701);
 }
-var qpt = esmInit(() => {});
-var ygt = esmInit(() => {
-  workbookBinding424();
-});
-var xgt = esmInit(() => {
-  initAddressMetrics();
-});
 export {
   workbookA,
   WorkbookAt,
