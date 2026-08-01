@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-95: chart-plot-layout barrel.
+// Stage-3 wave-95/123: chart-plot-layout barrel (+ bSe manualLayout).
 
 export { wireChartPlotLayoutBoundaryHooks, cplH } from "./boundary-hooks";
 export {
@@ -15,3 +15,9 @@ export {
   resolveManualLayoutRect,
   $L,
 } from "./manual-layout-rect-impl";
+
+export {
+  normalizePlotAreaManualLayout,
+  coerceManualLayoutFraction,
+  bSe,
+} from "./plot-area-manual-layout-impl";

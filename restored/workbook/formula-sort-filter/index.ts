@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-118: formula-sort-filter barrel.
+// Stage-3 wave-118/123: formula-sort-filter barrel (+ Lst filterMatrixByMask).
 
 export { wireFormulaSortFilterBoundaryHooks, fsfH } from "./boundary-hooks";
 export {
@@ -75,3 +75,4 @@ export {
   Fct,
   Ict,
 } from "./sort-filter-formulas-impl";
+export { filterMatrixByMask, Lst } from "./filter-matrix-by-mask-impl";

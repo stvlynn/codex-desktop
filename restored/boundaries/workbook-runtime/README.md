@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~34.2k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~33.8k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -273,6 +273,14 @@
 | Formula financial annuity (`helper897`..`Q0e` / `w0e` / `fv`/`pmt`) | ~0.63k | **Drained (wave-122)** → `workbook/formula-financial/` |
 | Bond RECEIVED/YIELD wrappers (`lat`/`uat`/`dat`/`fat`) | ~0.10k | **Drained (wave-122)** → `workbook/formula-bond-basis/` |
 | Formula AVERAGEA + error tokens (`$3`/`Q2e`/`l4e`/`_4e`) | ~0.09k | **Drained (wave-122)** → `workbook/formula-average-a/` |
+| Shape/text/image style apply (`fze`/`gze`/`_ze` + `pze`/`mze`/`vze`) | ~0.17k | **Drained (wave-123)** → `workbook/shape-style-apply/` |
+| DSUM criteria matrix (`P8e`/`j8e`/`M8e`/`N8e`/`helper926`) | ~0.08k | **Drained (wave-123)** → `workbook/formula-dsum-criteria/` |
+| Formula AVERAGEIF + flatten (`g4e`/`helper913`/`914`) | ~0.09k | **Drained (wave-123)** → `workbook/formula-averageif/` |
+| Worksheet metadata clone (`apt`) | ~0.04k | **Drained (wave-123)** → `workbook/worksheet-metadata-clone/` |
+| Formula text replace (`ppt`/`mpt`) | ~0.06k | **Drained (wave-123)** → `workbook/formula-text-replace/` |
+| CF dxf color maps (`jht`) | ~0.04k | **Drained (wave-123)** → `workbook/cf-dxf-color-maps/` |
+| FILTER-by-mask (`Lst`) | ~0.04k | **Drained (wave-123)** → `workbook/formula-sort-filter/` |
+| Plot-area manualLayout (`bSe`) | ~0.04k | **Drained (wave-123)** → `workbook/chart-plot-layout/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1582,5 +1590,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Peeled: formula-financial annuity helper897..Q0e (w0e/fv/npvArgs/pmt; closes ffinH fn899/fn901); formula-bond-basis lat/uat/dat/fat; formula-average-a $3/Q2e/l4e/_4e (owns Q2e/l4e for preferred _4e)
 - Skipped P8e (j8e/I8e); fze.._ze (rze callsites); helper603 (Nwe); rze; kht
 - Leave-behind: rze still WorkbookN.apply; kht still ensure bag; helper603 still needs Nwe Map ESM
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`; full tree with `--allow-open-boundaries --allow-flat --allow-mechanical-names`
+- openBoundary remains while mega still large
+
+## Wave 123 (Stage-3 preferred fze/P8e/g4e + mid helpers)
+
+- Boundary 34213 → 33826 (Δ -387)
+- Peeled: shape-style-apply fze..vze (rze callers import); formula-dsum-criteria j8e..P8e; formula-averageif helper913/914+p4e..g4e; apt; ppt+mpt; jht (kht caller); Lst; bSe+helper557
+- Skipped W4e (s4e nest); mht/Sht (helper1015 fan-out); helper603 (Nwe); rze; kht
+- Leave-behind: rze still WorkbookN.apply (now imports fze/gze/_ze/mze); kht still ensure bag (now imports jht); helper603 still needs Nwe Map ESM
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`; full tree with `--allow-open-boundaries --allow-flat --allow-mechanical-names`
 - openBoundary remains while mega still large
