@@ -12,3 +12,28 @@ export {
   formatComplexPair,
   complexDivide
 } from "./complex-divide-impl";
+
+export {
+  H1e,
+  workbookHelper891,
+  U1e,
+  W1e,
+  G1e,
+  K1e,
+  J1e,
+  Z1e,
+  Q1e,
+  workbookHelper894,
+  e0e,
+  complexConjugate,
+  complexCosh,
+  complexCos,
+  complexTan,
+  complexExp,
+  complexLn,
+  complexLog2,
+  complexSec,
+  complexCsc,
+  complexSinhAlt,
+  complexSqrt,
+} from "./complex-trig-impl";

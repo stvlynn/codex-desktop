@@ -74,3 +74,4 @@ export function icFn371(...args: any[]) {
 }
 
 export { roundedConnectorCorner, FPe } from "./rounded-connector-corner-impl";
+export { IPe, resolveConnectorElbow } from "./connector-elbow-impl";

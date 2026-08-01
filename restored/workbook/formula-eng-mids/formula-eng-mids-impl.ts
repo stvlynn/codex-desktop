@@ -394,3 +394,26 @@ export function coerceFiniteNumbers(femIn3423: any) {
 }
 
 export const workbookHelper917 = coerceFiniteNumbers;
+
+// Semantic: HEX2OCT (legacy V1e). Stage-3 wave-132.
+
+export function V1e(femIn4778: any, femIn4779: any) {
+  if (!/^[0-9A-Fa-f]{1,10}$/.test(femIn4778)) return numError;
+  let femBind14133 = parseInt(femIn4778, 16);
+  if (femBind14133 > 536870911 && femBind14133 < 0xffe0000000) return numError;
+  if (femBind14133 >= 0xffe0000000)
+    return (femBind14133 - 0xffc0000000).toString(8);
+  let r = femBind14133.toString(8);
+  return femIn4779 === undefined
+    ? r
+    : isNaN(femIn4779)
+      ? valueError
+      : femIn4779 < 0
+        ? numError
+        : ((femIn4779 = Math.floor(femIn4779)),
+          femIn4779 >= r.length
+            ? padStartRepeat("0", femIn4779 - r.length) + r
+            : numError);
+}
+
+export const hex2oct = V1e;

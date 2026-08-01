@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~27.7k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~26.8k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1699,3 +1699,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: remaining ≥20 mids / rze after vYe ensure / helper603 after Nwe Map ESM / helper935 nests
+
+## Wave 132 (Stage-3 rze unlock + preferred ≥20 batch)
+
+- Boundary 27660 → 26826 (Δ -834)
+- Peeled: presentation-apply rze nest (ize/785/787/aze/oze/sze/cze/lze/uze/788 via prefH); bezier-stroke Uwe/610/Wwe/612/613/fTe/624/625/628/630; compose-code-html-walk 763 nest; IPe; formula-complex H1e..e0e/891/894 + eng-mids V1e; formula-pair-series i4e; formula-value-coerce D3e/O3e
+- Skipped: helper603 (Nwe Map ESM); helper935 nest (H7e/w7e); Prt (Irt ensure); a6e (Binding1879 ensure); ETe nest (Binding1275 ensure)
+- Leave-behind: rze **unlocked**; helper603 still needs Nwe Map ESM; _workbookS ensure bag still large (vYe map remains)
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: helper935/Prt/a6e/ETe nests / remaining ≥18 mids / helper603 after Nwe Map ESM

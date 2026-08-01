@@ -37,6 +37,8 @@ export {
   workbookHelper895,
   coerceFiniteNumbers,
   workbookHelper917,
+  V1e,
+  hex2oct,
 } from "./formula-eng-mids-impl";
 
 export { formulaAndFromArgs, $0e } from "./formula-and-impl";
