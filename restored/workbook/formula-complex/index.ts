@@ -5,6 +5,10 @@ export { wireFormulaComplexBoundaryHooks, fcxH } from "./boundary-hooks";
 export {
   complexReal,
   complexImag,
-  workbookHelper893,
-  $4,
+  $4
 } from "./formula-complex-impl";
+
+export {
+  formatComplexPair,
+  complexDivide
+} from "./complex-divide-impl";

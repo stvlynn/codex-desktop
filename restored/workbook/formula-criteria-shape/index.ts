@@ -20,5 +20,12 @@ export {
   a3e,
   d3e,
   d6e,
-  h6e,
+  h6e
 } from "./formula-criteria-shape-impl";
+
+export {
+  sumIfsShaped,
+  coerceCriteriaMatrix,
+  lowerStringOrPassthrough,
+  r3e
+} from "./sum-ifs-shaped-impl";

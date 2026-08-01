@@ -21,3 +21,8 @@ export {
   coerceManualLayoutFraction,
   bSe,
 } from "./plot-area-manual-layout-impl";
+
+export {
+  reserveDataTablePlot,
+  iSe,
+} from "./reserve-data-table-plot-impl";

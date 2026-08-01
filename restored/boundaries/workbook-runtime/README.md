@@ -286,6 +286,7 @@
 | Continuous scale (`_O`) | ~0.04k | **Drained (wave-125)** → `workbook/chart-group-scales/` |
 | Measure embed (`NTe`) | ~0.04k | **Drained (wave-125)** → `workbook/text-frame-embeds/` |
 | CF range stats (`mht`/`Sht`/`helper1020`/`1015`) | ~0.19k | **Drained (wave-125)** → `workbook/cf-range-stats/` |
+| Chart axis scale domain (`bbe`/`helper402`/`406`/`wye`…) | ~0.70k body | **Drained (wave-126)** → `workbook/chart-axis-scale-domain/` + presentation-aid/ref + series-endpoint + formula-complex 886/892 + iSe + fill-empty + r3e |
 | Formula SKEW + samples (`W4e`/`s4e`/`c4e`/`helper912`) | ~0.11k | **Drained (wave-124)** → `workbook/formula-skew/` |
 | Path ordinal colors (`helper477`) | ~0.04k | **Drained (wave-124)** → `workbook/chart-path-colors/` |
 | Draw shape paths (`helper608`) | ~0.04k | **Drained (wave-124)** → `workbook/shape-path/` |
@@ -1635,3 +1636,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Leave-behind: rze still needs yze/bze/dze + ensure; kht now has mht/Sht/1015 owned — still needs ensure/Sht peers in bag; bbe needs helper402/406 nest
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`; full tree with `--allow-open-boundaries --allow-flat --allow-mechanical-names`
 - openBoundary remains while mega still large
+
+## Wave 126 (Stage-3 preferred bbe nest + yze/ZRe/483/892)
+
+- Boundary 32266 → 31568 (Δ -698)
+- Peeled: chart-axis-scale-domain bbe + bh402/wye/bh406 nest (+399/400/404..416/xbe/Sbe); presentation-aid ZRe/JRe/YRe + eze; presentation-ref yze/bze/dze; chart-series-endpoint bh479/483; formula-complex bh886/892; chart-plot-layout iSe; fill-empty bh574/iCe; formula-criteria-shape r3e+922/923
+- Skipped: Yot nest; helper603 (Nwe Map ESM); rze (WorkbookN.apply — yze/bze/dze owned, ensure fan-out remains); kht (ensure bag still large)
+- Leave-behind: rze path partially unlocked (yze/bze/dze owned); kht still blocked on ensure bag; bbe nest now owned
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: Yot nest / remaining ≥30 mids (YIe/F9e/Uat/zye/…) / rze after ensure readiness / kht after ensure bag / helper603 after Nwe Map ESM

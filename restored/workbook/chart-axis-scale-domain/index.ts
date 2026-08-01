@@ -1,0 +1,37 @@
+// Restored from ref/webview/assets/workbook-C49Dgk1_.js
+// Stage-3 wave-126: chart-axis-scale-domain barrel.
+
+export { wireChartAxisScaleDomainBoundaryHooks, casdH } from "./boundary-hooks";
+export {
+  readScaleMajorUnit,
+  minPositiveFinite,
+  buildContinuousDomain,
+  padDomainByTickStep,
+  clampToDomain,
+  resolveAxisCrossValue,
+  planAxisMajorTicks,
+  planAxisMinorTicks,
+  waterfallForceZero,
+  chartHasPercentFormats,
+  chartLooksPercent,
+  collectChartNumberFormats,
+  ticksFromUnit,
+  midpointsBetween,
+  finiteOrUndefined,
+  positiveOrUndefined,
+  formatLooksPercent,
+  preciseNumber,
+  preciseNumberKey,
+  layoutValAxisRight,
+  crossingRatio,
+  shiftForCrossing,
+  wye,
+  Tye,
+  Eye,
+  Dye,
+  Oye,
+  kye,
+  bbe,
+  xbe,
+  Sbe,
+} from "./chart-axis-scale-domain-impl";
