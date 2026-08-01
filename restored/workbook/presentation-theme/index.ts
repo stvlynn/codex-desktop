@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-3/10: presentation theme barrel (Mae / Sle / placeholders + style helpers).
+// Stage-3 wave-3/10: presentation theme barrel (Mae / Sle / placeholders + style helpers); wave-152: theme format scheme PXe.
 
 export { cssNamedColors } from "./css-named-colors";
 export { defaultFont } from "./default-font";
@@ -58,3 +58,11 @@ export {
 export { AXe, jXe } from "./color-scheme-clone-impl";
 
 export { $2 } from "./clone-style-list-impl";
+
+export {
+  MXe,
+  NXe,
+  PXe,
+  FXe,
+  ensureThemeFormatSchemeInit,
+} from "./theme-format-scheme-impl";

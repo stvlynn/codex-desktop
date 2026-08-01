@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-149: formula-date-epoch barrel.
+// Stage-3 wave-149: formula-date-epoch barrel; wave-152: b5e excel epoch.
 
 export {
   S7e,
@@ -16,4 +16,7 @@ export {
   workbookBinding1887,
   workbookBinding1888,
   ensureFormulaDateEpochInit,
+  v5e,
+  y5e,
+  b5e,
 } from "./formula-date-epoch-impl";

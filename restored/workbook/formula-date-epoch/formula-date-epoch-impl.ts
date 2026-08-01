@@ -1,8 +1,10 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: formula date-epoch constants + thin Binding1888 ensure bag.
 // Stage-3 wave-149. Collapses ~220 exclusive empty formula stubs that Binding1888 only called.
+// Stage-3 wave-152: b5e excel epoch consts (v5e/y5e).
 
 import { esmInit } from "../../runtime/rolldown-runtime";
+import { workbookBinding1874 } from "../formula-stats";
 
 export let S7e = 365.2425;
 export let C7e = 8640000000000000;
@@ -43,3 +45,12 @@ export const workbookBinding1888 = esmInit(() => {
 });
 
 export const ensureFormulaDateEpochInit = workbookBinding1888;
+
+export let v5e: number;
+export let y5e: number;
+
+export const b5e = esmInit(() => {
+  workbookBinding1874();
+  v5e = Date.UTC(1899, 11, 30);
+  y5e = 86400000;
+});

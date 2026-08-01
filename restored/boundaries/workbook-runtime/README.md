@@ -1858,3 +1858,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries --allow-flat`
 - openBoundary remains while mega still large
 - Next: mid-gap nests between former shells; thin stubs Nwe/Iwe/b5e; wirePresentationRecipes false inventory; closeout when thin
+
+## Wave 152 (Stage-3 mid-gap nests + thin stubs)
+
+- Boundary 11891 → 11255 (Δ -636)
+- Peeled: proto-item-collection kXe/DXe/OXe; presentation-theme FXe/PXe/MXe/NXe; table-area-resolver npt/ipt/rpt; dynamic-array-meta Cpt; alias-patch-recorder Xht/Yht/Jht; worksheet-topology Ngt/Mgt; col-row-address Y_t; lazy-workbook-loaders svt/ovt; paint-images Nwe/Iwe Maps; formula-date-epoch b5e
+- Fixed: canvas-paint ensureNwe/ensureIwe now call real Nwe/Iwe (was sheet-hidden `nwe` + empty `iwe`)
+- Skipped: wirePresentationRecipesFromBoundary (boundary glue); workbookBinding1389 / Nrt / workbookBinding1901 (heavier deps); HXe/KXe empty stubs
+- Leave-behind: wirePresentationRecipes false inventory; remaining mid nests (uke/Ort/Binding1389/Nrt…)
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries --allow-flat`
+- openBoundary remains while mega still large
+- Next: workbookBinding1389 slide-element nest; Nrt/workbookBinding1901 formula financial; uke semantic tags; remaining ≥5 inventory
