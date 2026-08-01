@@ -6,17 +6,20 @@ import { clnH } from "./boundary-hooks";
 
 void clnH;
 
-export function paintSeriesMarker(clnIn2642: any, clnIn2643: any, clnIn2644: any, clnIn2645: any, clnIn2646: any, clnIn2647: any, ) {
+export function paintSeriesMarker(
+  clnIn2642: any,
+  clnIn2643: any,
+  clnIn2644: any,
+  clnIn2645: any,
+  clnIn2646: any,
+  clnIn2647: any,
+) {
   let clnBind10122 = clnIn2643.marker?.size,
     clnBind10123 =
-      clnBind10122 !== undefined &&
-      Number.isFinite(clnBind10122)
+      clnBind10122 !== undefined && Number.isFinite(clnBind10122)
         ? (clnBind10122 * 96) / 72
         : 6,
-    clnBind10124 = Math.min(
-      clnIn2647 ?? 1 / 0,
-      Math.max(clnBind10123, 3),
-    ),
+    clnBind10124 = Math.min(clnIn2647 ?? 1 / 0, Math.max(clnBind10123, 3)),
     clnBind10125 = clnBind10124 / 2,
     clnBind10126 = {
       x: clnIn2645.x - clnBind10125,
@@ -45,16 +48,9 @@ export function paintSeriesMarker(clnIn2642: any, clnIn2643: any, clnIn2644: any
   clnIn2642.save();
   clnIn2642.setLineDash([]);
   clnIn2642.beginPath();
-  clnIn2642.arc(
-    clnIn2645.x,
-    clnIn2645.y,
-    clnBind10125,
-    0,
-    Math.PI * 2,
-  );
+  clnIn2642.arc(clnIn2645.x, clnIn2645.y, clnBind10125, 0, Math.PI * 2);
   clnBind10128 !== "transparent" &&
-    ((clnIn2642.fillStyle = clnBind10128),
-    clnIn2642.fill());
+    ((clnIn2642.fillStyle = clnBind10128), clnIn2642.fill());
   clnBind10130 &&
     clnBind10131 !== 0 &&
     ((clnIn2642.strokeStyle = clnBind10130),

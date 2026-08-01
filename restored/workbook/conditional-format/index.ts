@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-43: conditional-format barrel.
+// Stage-3 wave-108/160: conditional-format barrel (direct imports; wire retired).
 
 export {
   SPREADSHEETML_COLOR_SPACE,
@@ -50,21 +50,12 @@ export {
 } from "./range-conditional-formats";
 export { ensureConditionalFormatInit } from "./ensure-conditional-format-init";
 
-export {
-  wireCfRuntimeBoundaryHooks,
-  cfRtH,
-} from "./boundary-hooks-runtime";
+export { wireCfRuntimeBoundaryHooks, cfRtH } from "./boundary-hooks-runtime";
 export {
   matchesCfDatePeriod,
   utcDateKey,
   oht,
   uht,
 } from "./cf-date-period-impl";
-export {
-  buildColorScaleRuntime,
-  Nht,
-} from "./cf-color-scale-runtime-impl";
-export {
-  buildDataBarRuntime,
-  Pht,
-} from "./cf-data-bar-runtime-impl";
+export { buildColorScaleRuntime, Nht } from "./cf-color-scale-runtime-impl";
+export { buildDataBarRuntime, Pht } from "./cf-data-bar-runtime-impl";

@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-94: table-frame-layout barrel.
+// Stage-3 wave-94/160: table-frame-layout barrel (direct imports; wire retired).
 
 export { wireTableFrameLayoutBoundaryHooks, tflH } from "./boundary-hooks";
 export {

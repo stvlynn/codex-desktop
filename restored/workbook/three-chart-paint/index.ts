@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-90/103: three-chart-paint barrel
+// Stage-3 wave-90/103/160: three-chart-paint barrel (direct imports; wire retired).
 // (legacy text-sprite / bar-layout / three-paint / pie-3d — app paint on vendor/three).
 
 export { wireThreeChartPaintBoundaryHooks, tcH } from "./boundary-hooks";

@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-128: mid-paint-helpers barrel.
+// Stage-3 wave-128/160: mid-paint-helpers barrel (direct imports; wire retired).
 
 export { wireMidPaintHelpersBoundaryHooks, mphH } from "./boundary-hooks";
 export {

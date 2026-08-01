@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-105: presentation-code-block barrel.
+// Stage-3 wave-105/160: presentation-code-block barrel (direct imports; wire retired).
 
 export { wirePresentationCodeBlockBoundaryHooks, pcbH } from "./boundary-hooks";
 export { addFromCodePlugin, cAe } from "./add-from-code-plugin-impl";

@@ -45,8 +45,7 @@ export function createChartTextSprite(tcIn1173: any, tcIn1174: any = {}) {
     throw Error("OffscreenCanvas API is not available for chart text sprites.");
   let tcBind6685 = new OffscreenCanvas(1, 1),
     tcBind6686 = tcBind6685.getContext("2d");
-  if (!tcBind6686)
-    throw Error("Failed to acquire 2D context for text sprite");
+  if (!tcBind6686) throw Error("Failed to acquire 2D context for text sprite");
   tcBind6686.font = `${weight} ${fontSize}px ${fontFamily}`;
   let tcBind6687 = tcBind6686.measureText(tcIn1173),
     tcBind6688 = Math.ceil(tcBind6687.width),
@@ -58,18 +57,8 @@ export function createChartTextSprite(tcIn1173: any, tcIn1174: any = {}) {
   tcBind6686.textBaseline = "middle";
   backgroundColor
     ? ((tcBind6686.fillStyle = backgroundColor),
-      tcBind6686.fillRect(
-        0,
-        0,
-        tcBind6685.width,
-        tcBind6685.height,
-      ))
-    : tcBind6686.clearRect(
-        0,
-        0,
-        tcBind6685.width,
-        tcBind6685.height,
-      );
+      tcBind6686.fillRect(0, 0, tcBind6685.width, tcBind6685.height))
+    : tcBind6686.clearRect(0, 0, tcBind6685.width, tcBind6685.height);
   tcBind6686.fillStyle = color;
   tcBind6686.fillText(
     tcIn1173,
@@ -96,18 +85,19 @@ export function createChartTextSprite(tcIn1173: any, tcIn1174: any = {}) {
     tcBind6692
   );
 }
-export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any, tcIn194: any, tcIn195: any, ) {
+export function layoutThreeBarSegments(
+  tcIn191: any,
+  tcIn192: any,
+  tcIn193: any,
+  tcIn194: any,
+  tcIn195: any,
+) {
   let tcBind3032 = Math.max(
       THREE_CHART_BAR_DEPTH * 0.25,
       THREE_CHART_MIN_EXTENT,
     ),
-    tcBind3033 =
-      tcIn191.barOptions?.grouping ??
-      Yn.BAR_GROUPING_UNSPECIFIED;
-  if (
-    !tcH.bh424(tcIn192.x) ||
-    tcIn191.series.length === 0
-  )
+    tcBind3033 = tcIn191.barOptions?.grouping ?? Yn.BAR_GROUPING_UNSPECIFIED;
+  if (!tcH.bh424(tcIn192.x) || tcIn191.series.length === 0)
     return {
       segments: [],
       bounds: {
@@ -123,10 +113,7 @@ export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any,
       grouping: tcBind3033,
       categories: [],
     };
-  let tcBind3034 = computeBarSegments(
-      tcIn191,
-      tcIn195,
-    ),
+  let tcBind3034 = computeBarSegments(tcIn191, tcIn195),
     tcBind3035 = tcBind3034.categories;
   if (tcBind3035.length === 0)
     return {
@@ -148,39 +135,24 @@ export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any,
     tcBind3037 = tcIn192.y,
     tcBind3038 = tcH.bh520(tcIn193.width, 6),
     tcBind3039 = tcH.bh520(tcIn193.height, 4),
-    tcBind3040 = tcH.bh520(
-      tcIn193.width,
-      THREE_CHART_BAR_DEPTH,
-    ),
+    tcBind3040 = tcH.bh520(tcIn193.width, THREE_CHART_BAR_DEPTH),
     tcBind3041 = tcBind3037(0),
     tcBind3042 = Number.isFinite(tcBind3041)
       ? tcBind3041 - tcIn193.y
       : tcIn193.height,
-    tcBind3043 = (tcIn16387) =>
-      (tcBind3042 - tcIn16387) * tcBind3039,
+    tcBind3043 = (tcIn16387) => (tcBind3042 - tcIn16387) * tcBind3039,
     tcBind3044 = tcBind3034.mode === "clustered",
-    tcBind3045 =
-      tcBind3033 === Yn.BAR_GROUPING_UNSPECIFIED,
+    tcBind3045 = tcBind3033 === Yn.BAR_GROUPING_UNSPECIFIED,
     tcBind3046 = tcBind3034.visibleSeries,
-    tcBind3047 = tcBind3045
-      ? Math.max(tcBind3046.length, 1)
-      : 1,
+    tcBind3047 = tcBind3045 ? Math.max(tcBind3046.length, 1) : 1,
     tcBind3048 = Math.max(tcBind3036.bandwidth(), 1),
     tcBind3049 = tcBind3048 * 0.2,
-    tcBind3050 = Math.max(
-      tcBind3048 - tcBind3049,
-      tcBind3048 * 0.4,
-    ),
+    tcBind3050 = Math.max(tcBind3048 - tcBind3049, tcBind3048 * 0.4),
     tcBind3051 = tcBind3045 ? tcBind3050 * 0.2 : 0,
     tcBind3052 = tcBind3045
-      ? Math.max(
-          tcBind3050 - tcBind3051,
-          tcBind3050 * 0.5,
-        )
+      ? Math.max(tcBind3050 - tcBind3051, tcBind3050 * 0.5)
       : tcBind3050,
-    tcBind3053 = tcBind3045
-      ? tcBind3052 / Math.max(tcBind3047, 1)
-      : tcBind3050,
+    tcBind3053 = tcBind3045 ? tcBind3052 / Math.max(tcBind3047, 1) : tcBind3050,
     tcBind3054 = tcBind3045
       ? Math.max(tcBind3053 * tcBind3040, THREE_CHART_MIN_EXTENT)
       : tcBind3032,
@@ -192,32 +164,23 @@ export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any,
           )
         : 0,
     tcBind3056 = tcBind3045
-      ? Math.max(
-          tcBind3054 - tcBind3055 * 2,
-          THREE_CHART_MIN_EXTENT,
-        )
+      ? Math.max(tcBind3054 - tcBind3055 * 2, THREE_CHART_MIN_EXTENT)
       : tcBind3032,
     tcBind3057 = tcBind3045
-      ? Math.max(
-          tcBind3051 * tcBind3040,
-          tcBind3054 * 0.1,
-        )
+      ? Math.max(tcBind3051 * tcBind3040, tcBind3054 * 0.1)
       : 0,
     tcBind3058 = tcBind3045 ? tcBind3057 : 0,
     tcBind3059 = tcBind3045
       ? tcBind3046.map(
           (item, index) =>
-            tcBind3058 +
-            tcBind3054 / 2 +
-            index * (tcBind3054 + tcBind3057),
+            tcBind3058 + tcBind3054 / 2 + index * (tcBind3054 + tcBind3057),
         )
       : [tcBind3054 / 2],
     tcBind3060 = tcBind3045
       ? tcBind3046.map((item, index) => ({
           seriesIndex: item,
           label:
-            (tcIn191.series[item]?.name ?? "").trim() ||
-            `Series ${index + 1}`,
+            (tcIn191.series[item]?.name ?? "").trim() || `Series ${index + 1}`,
           centerZ: tcBind3059[index] ?? tcBind3054 / 2,
         }))
       : [],
@@ -232,32 +195,20 @@ export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any,
     let tcBind5259 = tcBind3036(item);
     if (tcBind5259 === undefined) return;
     let tcBind5260 = tcBind5259 - tcIn193.x,
-      tcBind5261 = (
-        tcBind3034.segmentsByCategory[index] ?? []
-      ).filter((_item) => {
-        let tcBind21061 = tcIn191.series[_item.seriesIndex];
-        return !tcBind21061 ||
-          tcH.bh474(tcBind21061, index)
-          ? false
-          : !!tcH.bh469(
-              tcBind21061,
-              index,
-              _item.seriesIndex,
-              tcIn194,
-            );
-      }),
+      tcBind5261 = (tcBind3034.segmentsByCategory[index] ?? []).filter(
+        (_item) => {
+          let tcBind21061 = tcIn191.series[_item.seriesIndex];
+          return !tcBind21061 || tcH.bh474(tcBind21061, index)
+            ? false
+            : !!tcH.bh469(tcBind21061, index, _item.seriesIndex, tcIn194);
+        },
+      ),
       tcBind5262 = tcBind5261.length || 1,
-      tcBind5263 =
-        tcBind3050 / Math.max(tcBind5262, 1);
+      tcBind5263 = tcBind3050 / Math.max(tcBind5262, 1);
     tcBind5261.forEach((_item, _index) => {
       let tcBind6095 = tcIn191.series[_item.seriesIndex];
       if (!tcBind6095) return;
-      let tcBind6096 = tcH.bh469(
-        tcBind6095,
-        index,
-        _item.seriesIndex,
-        tcIn194,
-      );
+      let tcBind6096 = tcH.bh469(tcBind6095, index, _item.seriesIndex, tcIn194);
       if (!tcBind6096) return;
       let tcBind6097 = tcBind3045
           ? Math.max(0, tcBind3046.indexOf(_item.seriesIndex))
@@ -272,8 +223,7 @@ export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any,
         tcBind6099 = tcBind3045
           ? (tcBind3048 - tcBind3050) / 2
           : tcBind3044
-            ? (tcBind3048 - tcBind3050) / 2 +
-              tcBind5263 * tcBind6097
+            ? (tcBind3048 - tcBind3050) / 2 + tcBind5263 * tcBind6097
             : 0,
         tcBind6100 = tcBind3037(_item.start),
         tcBind6101 = tcBind3037(_item.end);
@@ -292,22 +242,10 @@ export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any,
           THREE_CHART_MIN_HEIGHT,
         ),
         tcBind6107 = (tcBind6104 + tcBind6105) / 2,
-        tcBind6108 =
-          (tcBind5260 +
-            tcBind6099 +
-            tcBind6098 / 2) *
-          tcBind3038,
-        tcBind6109 = Math.max(
-          tcBind6098 * tcBind3038,
-          THREE_CHART_MIN_EXTENT,
-        ),
-        tcBind6110 = tcBind3045
-          ? tcBind3056
-          : tcBind3054,
-        tcBind6111 =
-          tcBind3059[tcBind6097] ??
-          tcBind3059[0] ??
-          tcBind3056 / 2;
+        tcBind6108 = (tcBind5260 + tcBind6099 + tcBind6098 / 2) * tcBind3038,
+        tcBind6109 = Math.max(tcBind6098 * tcBind3038, THREE_CHART_MIN_EXTENT),
+        tcBind6110 = tcBind3045 ? tcBind3056 : tcBind3054,
+        tcBind6111 = tcBind3059[tcBind6097] ?? tcBind3059[0] ?? tcBind3056 / 2;
       if (tcBind3045 && !tcBind3044) {
         let tcBind22264 = Math.max(
           Math.min(tcBind6109, tcBind3056),
@@ -317,9 +255,7 @@ export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any,
         tcBind6110 = tcBind22264;
       }
       tcBind3045 ||
-        ((tcBind6110 = tcBind3044
-          ? tcBind6109
-          : tcBind3032),
+        ((tcBind6110 = tcBind3044 ? tcBind6109 : tcBind3032),
         (tcBind6111 = tcBind6110 / 2));
       tcBind3061.push({
         key: `${index}-${_item.seriesIndex}-${_index}`,
@@ -340,26 +276,17 @@ export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any,
         tcBind6113 = tcBind6108 + tcBind6109 / 2;
       tcBind3062 = Math.min(tcBind3062, tcBind6112);
       tcBind3063 = Math.max(tcBind3063, tcBind6113);
-      tcBind3066 = Math.max(
-        tcBind3066,
-        tcBind6107 + tcBind6106 / 2,
-      );
-      tcBind3067 = Math.min(
-        tcBind3067,
-        tcBind6107 - tcBind6106 / 2,
-      );
+      tcBind3066 = Math.max(tcBind3066, tcBind6107 + tcBind6106 / 2);
+      tcBind3067 = Math.min(tcBind3067, tcBind6107 - tcBind6106 / 2);
       let tcBind6114 = tcBind6111 - tcBind6110 / 2,
         tcBind6115 = tcBind6111 + tcBind6110 / 2;
       tcBind3064 = Math.min(tcBind3064, tcBind6114);
       tcBind3065 = Math.max(tcBind3065, tcBind6115);
     });
   });
-  (!Number.isFinite(tcBind3062) ||
-    !Number.isFinite(tcBind3063)) &&
+  (!Number.isFinite(tcBind3062) || !Number.isFinite(tcBind3063)) &&
     ((tcBind3062 = 0), (tcBind3063 = 6));
-  let tcBind3068 = Number.isFinite(tcBind3062)
-    ? tcBind3062
-    : 0;
+  let tcBind3068 = Number.isFinite(tcBind3062) ? tcBind3062 : 0;
   tcBind3068 !== 0 &&
     (tcBind3061.forEach((item) => {
       item.position = {
@@ -374,18 +301,13 @@ export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any,
     tcBind3061.length > 0 &&
     Number.isFinite(tcBind3064) &&
     Number.isFinite(tcBind3065) &&
-    ((tcBind3064 -= tcBind3055),
-    (tcBind3065 += tcBind3055));
-  (!Number.isFinite(tcBind3064) ||
-    !Number.isFinite(tcBind3065)) &&
+    ((tcBind3064 -= tcBind3055), (tcBind3065 += tcBind3055));
+  (!Number.isFinite(tcBind3064) || !Number.isFinite(tcBind3065)) &&
     ((tcBind3064 = 0),
     (tcBind3065 = tcBind3045
-      ? (tcBind3059[tcBind3059.length - 1] ??
-        tcBind3056)
+      ? (tcBind3059[tcBind3059.length - 1] ?? tcBind3056)
       : tcBind3032));
-  let tcBind3069 = Number.isFinite(tcBind3064)
-    ? tcBind3064
-    : 0;
+  let tcBind3069 = Number.isFinite(tcBind3064) ? tcBind3064 : 0;
   return (
     tcBind3069 !== 0 &&
       (tcBind3061.forEach((item) => {
@@ -418,7 +340,14 @@ export function layoutThreeBarSegments(tcIn191: any, tcIn192: any, tcIn193: any,
     }
   );
 }
-export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: any, tcIn68: any, tcIn69: any, ) {
+export function paintThreeChart(
+  tcIn64: any,
+  tcIn65: any,
+  tcIn66: any,
+  tcIn67: any,
+  tcIn68: any,
+  tcIn69: any,
+) {
   let tcBind2501 = layoutThreeBarSegments(
     tcIn65,
     tcIn66,
@@ -436,36 +365,18 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
     { width, height } = tcIn64.dims,
     tcBind2505 = Math.max(1, width),
     tcBind2506 = Math.max(1, height),
-    tcBind2507 = tcBind2503.getViewport(
-      new Vector4(),
-    ),
-    tcBind2508 = tcBind2503.getScissor(
-      new Vector4(),
-    ),
+    tcBind2507 = tcBind2503.getViewport(new Vector4()),
+    tcBind2508 = tcBind2503.getScissor(new Vector4()),
     tcBind2509 = tcBind2503.getScissorTest(),
     tcBind2510 = tcBind2504.aspect;
-  tcBind2503.setViewport(
-    0,
-    0,
-    tcBind2505,
-    tcBind2506,
-  );
-  tcBind2503.setScissor(
-    0,
-    0,
-    tcBind2505,
-    tcBind2506,
-  );
+  tcBind2503.setViewport(0, 0, tcBind2505, tcBind2506);
+  tcBind2503.setScissor(0, 0, tcBind2505, tcBind2506);
   tcBind2503.setScissorTest(true);
   tcBind2506 > 0 &&
     ((tcBind2504.aspect = width / Math.max(height, 1)),
     tcBind2504.updateProjectionMatrix());
-  let { bounds, chartDepth, seriesLanes, grouping, categories } =
-      tcBind2501,
-    tcBind2511 = Math.max(
-      bounds.maxX - bounds.minX,
-      THREE_CHART_MIN_EXTENT,
-    ),
+  let { bounds, chartDepth, seriesLanes, grouping, categories } = tcBind2501,
+    tcBind2511 = Math.max(bounds.maxX - bounds.minX, THREE_CHART_MIN_EXTENT),
     tcBind2512 = -(tcBind2511 * 0.5),
     tcBind2513 = Math.max(chartDepth, THREE_CHART_MIN_EXTENT),
     tcBind2514 = Math.min(bounds.minHeight, 0),
@@ -490,65 +401,45 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
       let tcBind21749 = tcBind2517(tcIn11278);
       return tcBind21749 === undefined
         ? null
-        : (tcBind21749 - tcIn67.x + tcBind2524 / 2) *
-            tcBind2519 -
-            bounds.minX;
+        : (tcBind21749 - tcIn67.x + tcBind2524 / 2) * tcBind2519 - bounds.minX;
     },
     tcBind2526 = tcBind2523(0) ?? 0,
     tcBind2527 = (tcBind2514 + tcBind2515) * 0.5,
     tcBind2528 = chartDepth * 0.5,
-    tcBind2529 = (tcIn16596) =>
-      tcIn16596 - tcBind2527,
-    tcBind2530 = (tcIn16597) =>
-      tcIn16597 - tcBind2528,
+    tcBind2529 = (tcIn16596) => tcIn16596 - tcBind2527,
+    tcBind2530 = (tcIn16597) => tcIn16597 - tcBind2528,
     tcBind2531 = new Group(),
     tcBind2532 = new Group(),
     tcBind2533 = new Group(),
     tcBind2534 = new Group();
   tcBind2534.renderOrder = 20;
-  let tcBind2535 = tcH.bh428(
-      tcIn65.xAxis,
-      tcIn68,
-    ),
-    tcBind2536 = tcH.bh428(
-      tcIn65.yAxis,
-      tcIn68,
-    ),
+  let tcBind2535 = tcH.bh428(tcIn65.xAxis, tcIn68),
+    tcBind2536 = tcH.bh428(tcIn65.yAxis, tcIn68),
     tcBind2537 = !!tcIn65.yAxis?.majorGridlines?.fill?.color,
-    tcBind2538 =
-      tcBind2536.gridLineColor ?? tcBind2536.lineColor,
+    tcBind2538 = tcBind2536.gridLineColor ?? tcBind2536.lineColor,
     _e = (() => {
       let tcBind18084 = tcIn65.yAxis?.numberFormatCode,
         tcBind18085 = appInitialAt("~s");
       return (tcIn10294) => {
         if (tcBind18084)
           try {
-            return tcH.ssfModule.default.format(
-              tcBind18084,
-              tcIn10294,
-            );
+            return tcH.ssfModule.default.format(tcBind18084, tcIn10294);
           } catch {}
         return tcBind18085(tcIn10294);
       };
     })(),
     tcBind2539 = new LineBasicMaterial({
-      color: new Color(
-        tcBind2535.lineColor ?? "#2563eb",
-      ),
+      color: new Color(tcBind2535.lineColor ?? "#2563eb"),
       transparent: true,
       opacity: 0.9,
     }),
     tcBind2540 = new LineBasicMaterial({
-      color: new Color(
-        tcBind2536.lineColor ?? "#1f2937",
-      ),
+      color: new Color(tcBind2536.lineColor ?? "#1f2937"),
       transparent: true,
       opacity: 0.9,
     }),
     be = new LineBasicMaterial({
-      color: new Color(
-        tcBind2535.lineColor ?? "#2563eb",
-      ),
+      color: new Color(tcBind2535.lineColor ?? "#2563eb"),
       transparent: true,
       opacity: 0.9,
     }),
@@ -564,11 +455,7 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
     }),
     tcBind2543 = new Line(
       new BufferGeometry().setFromPoints([
-        new Vector3(
-          tcBind2512,
-          tcBind2529(tcBind2526),
-          tcBind2530(0),
-        ),
+        new Vector3(tcBind2512, tcBind2529(tcBind2526), tcBind2530(0)),
         new Vector3(
           tcBind2512 + tcBind2511,
           tcBind2529(tcBind2526),
@@ -581,16 +468,8 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
   tcBind2533.add(tcBind2543);
   let tcBind2544 = new Line(
     new BufferGeometry().setFromPoints([
-      new Vector3(
-        tcBind2512,
-        tcBind2529(tcBind2526),
-        tcBind2530(0),
-      ),
-      new Vector3(
-        tcBind2512,
-        tcBind2529(tcBind2526),
-        tcBind2530(tcBind2513),
-      ),
+      new Vector3(tcBind2512, tcBind2529(tcBind2526), tcBind2530(0)),
+      new Vector3(tcBind2512, tcBind2529(tcBind2526), tcBind2530(tcBind2513)),
     ]),
     be.clone(),
   );
@@ -598,16 +477,8 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
   tcBind2533.add(tcBind2544);
   let tcBind2545 = new Line(
     new BufferGeometry().setFromPoints([
-      new Vector3(
-        tcBind2512,
-        tcBind2529(tcBind2514),
-        tcBind2530(tcBind2513),
-      ),
-      new Vector3(
-        tcBind2512,
-        tcBind2529(tcBind2515),
-        tcBind2530(tcBind2513),
-      ),
+      new Vector3(tcBind2512, tcBind2529(tcBind2514), tcBind2530(tcBind2513)),
+      new Vector3(tcBind2512, tcBind2529(tcBind2515), tcBind2530(tcBind2513)),
     ]),
     tcBind2540.clone(),
   );
@@ -620,11 +491,7 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
       if (tcBind2537 && !(Math.abs(item) < 1e-6)) {
         let tcBind12919 = new Line(
           new BufferGeometry().setFromPoints([
-            new Vector3(
-              tcBind2512,
-              tcBind2529(tcBind9441),
-              tcBind2530(0),
-            ),
+            new Vector3(tcBind2512, tcBind2529(tcBind9441), tcBind2530(0)),
             new Vector3(
               tcBind2512 + tcBind2511,
               tcBind2529(tcBind9441),
@@ -659,8 +526,7 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
         weight: "500",
       });
       tcBind9442.position.set(
-        tcBind2512 -
-          Math.max(tcBind2511, tcBind2513) * 0.08,
+        tcBind2512 - Math.max(tcBind2511, tcBind2513) * 0.08,
         tcBind2529(tcBind9441),
         tcBind2530(0 - tcBind2513 * 0.05),
       );
@@ -672,11 +538,7 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
       let tcBind12699 = tcBind2512 + tcBind12698,
         tcBind12700 = new Line(
           new BufferGeometry().setFromPoints([
-            new Vector3(
-              tcBind12699,
-              tcBind2529(tcBind2526),
-              tcBind2530(0),
-            ),
+            new Vector3(tcBind12699, tcBind2529(tcBind2526), tcBind2530(0)),
             new Vector3(
               tcBind12699,
               tcBind2529(tcBind2526),
@@ -693,9 +555,7 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
       });
       tcBind12701.position.set(
         tcBind12699,
-        tcBind2529(
-          tcBind2526 - Math.min(tcBind2516 * 0.12, 0.5),
-        ),
+        tcBind2529(tcBind2526 - Math.min(tcBind2516 * 0.12, 0.5)),
         tcBind2530(0 - tcBind2513 * 0.06),
       );
       tcBind2534.add(tcBind12701);
@@ -717,38 +577,23 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
           weight: "500",
         });
       tcBind13772.position.set(
-        tcBind2512 +
-          tcBind2511 +
-          Math.max(tcBind2511, tcBind2513) * 0.06,
-        tcBind2529(
-          tcBind2526 - Math.min(tcBind2516 * 0.08, 0.4),
-        ),
+        tcBind2512 + tcBind2511 + Math.max(tcBind2511, tcBind2513) * 0.06,
+        tcBind2529(tcBind2526 - Math.min(tcBind2516 * 0.08, 0.4)),
         tcBind2530(tcBind13771),
       );
       tcBind2534.add(tcBind13772);
       tcBind13770 > 0 &&
-        (tcBind8084.add(
-          tcBind13771 - tcBind13770 / 2,
-        ),
-        tcBind8084.add(
-          tcBind13771 + tcBind13770 / 2,
-        ));
+        (tcBind8084.add(tcBind13771 - tcBind13770 / 2),
+        tcBind8084.add(tcBind13771 + tcBind13770 / 2));
     });
     let tcBind8085 = tcBind2542.clone();
     tcBind8085.opacity = 0.3;
     Array.from(tcBind8084)
-      .sort(
-        (tcIn16521, tcIn16522) =>
-          tcIn16521 - tcIn16522,
-      )
+      .sort((tcIn16521, tcIn16522) => tcIn16521 - tcIn16522)
       .forEach((item) => {
         let tcBind17128 = new Line(
           new BufferGeometry().setFromPoints([
-            new Vector3(
-              tcBind2512,
-              tcBind2529(tcBind2526),
-              tcBind2530(item),
-            ),
+            new Vector3(tcBind2512, tcBind2529(tcBind2526), tcBind2530(item)),
             new Vector3(
               tcBind2512 + tcBind2511,
               tcBind2529(tcBind2526),
@@ -767,10 +612,7 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
         item.size.height,
         item.size.depth,
       ),
-      tcBind16473 = tcH.bh519(
-        item.materialKey,
-        tcBind2502,
-      ),
+      tcBind16473 = tcH.bh519(item.materialKey, tcBind2502),
       tcBind16474 = new $P(tcBind16472, tcBind16473);
     tcBind16474.castShadow = true;
     tcBind16474.receiveShadow = true;
@@ -793,9 +635,7 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
   tcBind2547 && tcIn64.chartGroup.rotation.set(0, 0, 0);
   tcIn64.chartGroup.updateMatrixWorld(true);
   let tcBind2548 = tcBind2531,
-    tcBind2549 = new Box3().setFromObject(
-      tcBind2548,
-    ),
+    tcBind2549 = new Box3().setFromObject(tcBind2548),
     tcBind2550 = new Vector3(),
     tcBind2551 = new Vector3();
   tcBind2549.getCenter(tcBind2550);
@@ -808,46 +648,27 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
       Math.max(tcBind2516, 1),
       Math.max(tcBind2513, 1),
     );
-  let tcBind2552 = MathUtils.degToRad(
-      tcBind2504.fov * 0.5,
-    ),
+  let tcBind2552 = MathUtils.degToRad(tcBind2504.fov * 0.5),
     tcBind2553 = Math.max(0.001, tcBind2552),
     tcBind2554 = tcBind2504.aspect || 1,
-    tcBind2555 = Math.atan(
-      Math.tan(tcBind2553) * tcBind2554,
-    ),
+    tcBind2555 = Math.atan(Math.tan(tcBind2553) * tcBind2554),
     tcBind2556 = Math.max(0.001, tcBind2555),
     tcBind2557 = Math.max(Math.tan(tcBind2553), 1e-4),
     tcBind2558 = Math.max(Math.tan(tcBind2556), 1e-4),
     tcBind2559 = tcBind2551.clone().multiplyScalar(0.5);
-  tcBind2559.x = Math.max(
-    tcBind2559.x * 1.3,
-    THREE_CHART_MIN_EXTENT,
-  );
-  tcBind2559.y = Math.max(
-    tcBind2559.y * 1.3,
-    THREE_CHART_MIN_HEIGHT,
-  );
-  tcBind2559.z = Math.max(
-    tcBind2559.z * 1.3,
-    THREE_CHART_MIN_EXTENT,
-  );
+  tcBind2559.x = Math.max(tcBind2559.x * 1.3, THREE_CHART_MIN_EXTENT);
+  tcBind2559.y = Math.max(tcBind2559.y * 1.3, THREE_CHART_MIN_HEIGHT);
+  tcBind2559.z = Math.max(tcBind2559.z * 1.3, THREE_CHART_MIN_EXTENT);
   let tcBind2560 = tcBind2550.clone(),
     tcBind2561 = tcH.cameraDir.clone().normalize(),
     tcBind2562 = tcBind2561.clone().negate(),
     tcBind2563 = new Vector3(0, 1, 0);
   Math.abs(tcBind2562.dot(tcBind2563)) > 0.99 &&
     (tcBind2563 = new Vector3(1, 0, 0));
-  let tcBind2564 = new Vector3().crossVectors(
-    tcBind2563,
-    tcBind2562,
-  );
+  let tcBind2564 = new Vector3().crossVectors(tcBind2563, tcBind2562);
   tcBind2564.lengthSq() < 1e-6 &&
     ((tcBind2563 = new Vector3(0, 0, 1)),
-    (tcBind2564 = new Vector3().crossVectors(
-      tcBind2563,
-      tcBind2562,
-    )));
+    (tcBind2564 = new Vector3().crossVectors(tcBind2563, tcBind2562)));
   tcBind2564.normalize();
   let tcBind2565 = new Vector3()
       .crossVectors(tcBind2562, tcBind2564)
@@ -866,9 +687,7 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
       });
     });
   });
-  let tcBind2567 = tcBind2566.map((item) =>
-      tcBind2560.clone().add(item),
-    ),
+  let tcBind2567 = tcBind2566.map((item) => tcBind2560.clone().add(item)),
     tcBind2568 = tcBind2559.length() * 2,
     tcBind2569 = (tcIn6549) => {
       tcBind2504.position
@@ -877,10 +696,7 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
       let tcBind16794 = tcBind2560;
       tcBind2504.up.copy(tcBind2565);
       tcBind2504.near = 0.1;
-      tcBind2504.far = Math.max(
-        tcBind2504.near + 1,
-        tcIn6549 + tcBind2568 * 4,
-      );
+      tcBind2504.far = Math.max(tcBind2504.near + 1, tcIn6549 + tcBind2568 * 4);
       tcBind2504.lookAt(tcBind16794);
       tcBind2504.updateMatrixWorld(true);
       tcBind2504.updateProjectionMatrix();
@@ -898,31 +714,16 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
       return (
         tcBind2567.forEach((item) => {
           let tcBind17049 = item.clone().project(tcBind2504);
-          tcBind10697 = Math.max(
-            tcBind10697,
-            Math.abs(tcBind17049.x),
-          );
-          tcBind10698 = Math.max(
-            tcBind10698,
-            Math.abs(tcBind17049.y),
-          );
+          tcBind10697 = Math.max(tcBind10697, Math.abs(tcBind17049.x));
+          tcBind10698 = Math.max(tcBind10698, Math.abs(tcBind17049.y));
           let tcBind17050 = -item
             .clone()
             .applyMatrix4(tcBind2504.matrixWorldInverse).z;
-          tcBind10699 = Math.min(
-            tcBind10699,
-            tcBind17050,
-          );
-          tcBind10700 = Math.max(
-            tcBind10700,
-            tcBind17050,
-          );
+          tcBind10699 = Math.min(tcBind10699, tcBind17050);
+          tcBind10700 = Math.max(tcBind10700, tcBind17050);
         }),
         {
-          fits:
-            tcBind10697 <= 1 &&
-            tcBind10698 <= 1 &&
-            tcBind10699 > 0,
+          fits: tcBind10697 <= 1 && tcBind10698 <= 1 && tcBind10699 > 0,
           maxAbsX: tcBind10697,
           maxAbsY: tcBind10698,
           minDepth: tcBind10699,
@@ -931,15 +732,10 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
       );
     },
     tcBind2571 =
-      Math.max(
-        tcBind2559.x / tcBind2558,
-        tcBind2559.y / tcBind2557,
-      ) + tcBind2559.z,
+      Math.max(tcBind2559.x / tcBind2558, tcBind2559.y / tcBind2557) +
+      tcBind2559.z,
     tcBind2572 = 0.1,
-    tcBind2573 = Math.max(
-      tcBind2571,
-      tcBind2572 * 4,
-    ),
+    tcBind2573 = Math.max(tcBind2571, tcBind2572 * 4),
     $e = tcBind2570(tcBind2573),
     tcBind2574 = 0;
   for (; !$e.fits && tcBind2574 < 24; ) {
@@ -948,17 +744,11 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
     tcBind2574 += 1;
   }
   let tcBind2575 = $e;
-  for (
-    let tcBind20901 = 0;
-    tcBind20901 < 28;
-    tcBind20901 += 1
-  ) {
-    let tcBind21932 =
-        (tcBind2572 + tcBind2573) * 0.5,
+  for (let tcBind20901 = 0; tcBind20901 < 28; tcBind20901 += 1) {
+    let tcBind21932 = (tcBind2572 + tcBind2573) * 0.5,
       tcBind21933 = tcBind2570(tcBind21932);
     tcBind21933.fits
-      ? ((tcBind2573 = tcBind21932),
-        (tcBind2575 = tcBind21933))
+      ? ((tcBind2573 = tcBind21932), (tcBind2575 = tcBind21933))
       : (tcBind2572 = tcBind21932);
   }
   let tcBind2576 = tcBind2573;
@@ -967,10 +757,7 @@ export function paintThreeChart(tcIn64: any, tcIn65: any, tcIn66: any, tcIn67: a
   tcBind2575 = tcBind2570(tcBind2576);
   let tcBind2578 = Math.max(
       0.1,
-      Math.min(
-        tcBind2575.minDepth * 0.8,
-        tcBind2575.minDepth - 0.05,
-      ),
+      Math.min(tcBind2575.minDepth * 0.8, tcBind2575.minDepth - 0.05),
     ),
     at = Math.max(tcBind2578 + 1, tcBind2575.maxDepth * 1.2);
   tcBind2504.near = tcBind2578;

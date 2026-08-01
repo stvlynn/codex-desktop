@@ -6,10 +6,7 @@ import { formatA1 } from "../../utils/spreadsheet-address-utils";
 import { htmH } from "./boundary-hooks";
 import { applyHtmlCell } from "./html-cell-impl";
 import { parseHtmlTable } from "./parse-html-table-impl";
-import {
-  resolvePasteTarget,
-  rectToA1,
-} from "./paste-target-impl";
+import { resolvePasteTarget, rectToA1 } from "./paste-target-impl";
 
 void applyHtmlCell;
 void parseHtmlTable;

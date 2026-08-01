@@ -22,7 +22,13 @@ void THREE_CHART_BAR_DEPTH;
 void THREE_CHART_MIN_EXTENT;
 void tcH;
 
-export function paintPie3d(tcpIn958: any, tcpIn959: any, tcpIn960: any, tcpIn961: any, tcpIn962: any, ) {
+export function paintPie3d(
+  tcpIn958: any,
+  tcpIn959: any,
+  tcpIn960: any,
+  tcpIn961: any,
+  tcpIn962: any,
+) {
   let tcpBind6029 = tcpIn959.series[0];
   if (!tcpBind6029) {
     tcpHelper522(tcpIn958);
@@ -38,10 +44,7 @@ export function paintPie3d(tcpIn958: any, tcpIn959: any, tcpIn960: any, tcpIn961
     tcpHelper522(tcpIn958);
     return;
   }
-  let tcpBind6032 = Math.max(
-      Math.min(tcpIn960.width, tcpIn960.height) / 2,
-      1,
-    ),
+  let tcpBind6032 = Math.max(Math.min(tcpIn960.width, tcpIn960.height) / 2, 1),
     tcpBind6033 = tcpBind6032 * 2,
     tcpBind6034 = tcH.bh520(
       Math.max(tcpBind6033, 1),
@@ -82,10 +85,7 @@ export function paintPie3d(tcpIn958: any, tcpIn959: any, tcpIn960: any, tcpIn961
       );
       if (!tcpBind12363) return;
       let tcpBind12364 = item.endAngle - item.startAngle,
-        tcpBind12365 = Math.max(
-          Math.abs(tcpBind12364),
-          tcH.pieMinAngle,
-        );
+        tcpBind12365 = Math.max(Math.abs(tcpBind12364), tcH.pieMinAngle);
       if (!Number.isFinite(tcpBind12365)) return;
       let tcpBind12366 = pie3dStartAngleOffset(Math.PI / 2 - item.endAngle),
         tcpBind12367 = Math.max(
@@ -102,14 +102,8 @@ export function paintPie3d(tcpIn958: any, tcpIn959: any, tcpIn960: any, tcpIn961
           tcpBind12366,
           tcpBind12365,
         ),
-        tcpBind12369 = tcH.bh519(
-          tcpBind12363,
-          tcpBind6039,
-        ),
-        tcpBind12370 = new Mesh(
-          tcpBind12368,
-          tcpBind12369,
-        );
+        tcpBind12369 = tcH.bh519(tcpBind12363, tcpBind6039),
+        tcpBind12370 = new Mesh(tcpBind12368, tcpBind12369);
       tcpBind12370.castShadow = true;
       tcpBind12370.receiveShadow = true;
       tcpBind6040.add(tcpBind12370);
@@ -125,9 +119,7 @@ export function paintPie3d(tcpIn958: any, tcpIn959: any, tcpIn960: any, tcpIn961
 function pie3dStartAngleOffset(tcpIn12132: any) {
   let tcpBind22297 = Math.PI * 2,
     tcpBind22298 = tcpIn12132 % tcpBind22297;
-  return tcpBind22298 < 0
-    ? tcpBind22298 + tcpBind22297
-    : tcpBind22298;
+  return tcpBind22298 < 0 ? tcpBind22298 + tcpBind22297 : tcpBind22298;
 }
 function tcpHelper522(tcpIn13532: any) {
   tcpIn13532.clear();

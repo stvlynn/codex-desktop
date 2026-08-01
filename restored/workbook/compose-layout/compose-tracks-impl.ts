@@ -24,7 +24,10 @@ export const workbookBinding1326 = (ctIn7467: any, ctIn7468: any) => {
   );
 };
 
-export const workbookBinding1327 = (ctIn5395: any, ctIn5396: any = "compose.track") => {
+export const workbookBinding1327 = (
+  ctIn5395: any,
+  ctIn5396: any = "compose.track",
+) => {
   if (ctIn5395 === "auto") return ctIn5395;
   if (ctIn5395.mode === "fr")
     return {
@@ -39,7 +42,10 @@ export const workbookBinding1327 = (ctIn5395: any, ctIn5396: any = "compose.trac
   throw Error(`${ctIn5396} must be auto, fr(...), or fixed(...).`);
 };
 
-export const workbookBinding1328 = (ctIn8124: any, ctIn8125: any = "compose.tracks") => {
+export const workbookBinding1328 = (
+  ctIn8124: any,
+  ctIn8125: any = "compose.tracks",
+) => {
   if (!Array.isArray(ctIn8124) || ctIn8124.length === 0)
     throw Error(`${ctIn8125} must include at least one track.`);
   return ctIn8124.map((item, index) =>

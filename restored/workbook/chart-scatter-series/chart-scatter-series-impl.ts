@@ -2,7 +2,11 @@
 // Semantic implementation: scatter series + trendlines paint (legacy nCe + uxe).
 // Stage-3 wave-96. Wave-89 chart-paint hook was misnamed paintLine.
 
-import { Bn as _presentationBn, Hn as _presentationHn, Kn } from "../presentation-protobuf";
+import {
+  Bn as _presentationBn,
+  Hn as _presentationHn,
+  Kn,
+} from "../presentation-protobuf";
 import { line as d3Line } from "../../vendor/d3-shape-line-pie-stack";
 import {
   curveCardinal as d3CurveCardinal,
@@ -56,24 +60,26 @@ function seriesStrokeWidthPx(cssIn9793: any) {
   let cssBind20342 = cssIn9793.stroke?.widthEmu;
   if (cssBind20342 == null) return;
   let cssBind20343 = Number(cssBind20342) * EMU_TO_CSS_PX;
-  if (Number.isFinite(cssBind20343))
-    return Math.max(0, cssBind20343);
+  if (Number.isFinite(cssBind20343)) return Math.max(0, cssBind20343);
 }
-function paintScatterTrendlines(cssIn1608: any, cssIn1609: any, cssIn1610: any, cssIn1611: any, cssIn1612: any, cssIn1613: any, cssIn1614: any, cssIn1615: any, cssIn1616: any, ) {
+function paintScatterTrendlines(
+  cssIn1608: any,
+  cssIn1609: any,
+  cssIn1610: any,
+  cssIn1611: any,
+  cssIn1612: any,
+  cssIn1613: any,
+  cssIn1614: any,
+  cssIn1615: any,
+  cssIn1616: any,
+) {
   if (!cssIn1610.trendlines?.length) return;
   let cssBind7809 = cssIn1612.filter(
     (item) => Number.isFinite(item.x) && Number.isFinite(item.y),
   );
   cssBind7809.length < 2 ||
     cssIn1610.trendlines.forEach((item, index) => {
-      cssH.bh523(
-        cssIn1608,
-        cssIn1609,
-        cssIn1610,
-        cssIn1611,
-        item,
-        cssIn1613,
-      );
+      cssH.bh523(cssIn1608, cssIn1609, cssIn1610, cssIn1611, item, cssIn1613);
       let cssBind9137 =
           TRENDLINE_TYPE_PROTO_TO_NAME[item.type] ?? DEFAULT_TRENDLINE_TYPE,
         cssBind9138 =
@@ -98,29 +104,26 @@ function paintScatterTrendlines(cssIn1608: any, cssIn1609: any, cssIn1610: any, 
         !Number.isFinite(cssBind19225) ||
           !Number.isFinite(cssBind19226) ||
           (cssBind9139
-            ? cssIn1608.lineTo(
-                cssBind19225,
-                cssBind19226,
-              )
-            : (cssIn1608.moveTo(
-                cssBind19225,
-                cssBind19226,
-              ),
+            ? cssIn1608.lineTo(cssBind19225, cssBind19226)
+            : (cssIn1608.moveTo(cssBind19225, cssBind19226),
               (cssBind9139 = true)));
       }
       cssBind9139 && cssIn1608.stroke();
-      cssH.bh524(
-        cssIn1608,
-        item,
-        cssBind9138,
-        cssIn1613,
-        cssIn1615,
-      );
+      cssH.bh524(cssIn1608, item, cssBind9138, cssIn1613, cssIn1615);
     });
 }
-export function paintScatterSeries(cssIn444: any, cssIn445: any, cssIn446: any, cssIn447: any, cssIn448: any, cssIn449: any, cssIn450: any, cssIn451: any, cssIn452: any, ) {
-  let cssBind3998 =
-      cssIn451 ?? cssH.bh556(cssIn445, cssIn450),
+export function paintScatterSeries(
+  cssIn444: any,
+  cssIn445: any,
+  cssIn446: any,
+  cssIn447: any,
+  cssIn448: any,
+  cssIn449: any,
+  cssIn450: any,
+  cssIn451: any,
+  cssIn452: any,
+) {
+  let cssBind3998 = cssIn451 ?? cssH.bh556(cssIn445, cssIn450),
     cssBind3999 = cssIn445.scatterOptions?.style,
     cssBind4000 = scatterShowsLines(cssBind3999),
     cssBind4001 = scatterShowsMarkers(cssBind3999),
@@ -129,11 +132,7 @@ export function paintScatterSeries(cssIn444: any, cssIn445: any, cssIn446: any, 
       : d3CurveLinear;
   cssBind3998.series.forEach(({ series, seriesIndex, points }) => {
     if (points.length === 0) return;
-    let cssBind4201 = cssH.bh465(
-        series,
-        seriesIndex,
-        cssIn448,
-      ),
+    let cssBind4201 = cssH.bh465(series, seriesIndex, cssIn448),
       cssBind4202 = cssBind4201 ?? cssIn444.strokeStyle;
     if (cssBind4000) {
       let cssBind14534 = seriesStrokeWidthPx(series);
@@ -144,8 +143,7 @@ export function paintScatterSeries(cssIn444: any, cssIn445: any, cssIn446: any, 
         let cssBind15560 = d3Line()
           .defined(
             (cssIn14717) =>
-              Number.isFinite(cssIn14717.x) &&
-              Number.isFinite(cssIn14717.y),
+              Number.isFinite(cssIn14717.x) && Number.isFinite(cssIn14717.y),
           )
           .x((cssIn16530) => cssIn447.x(cssIn16530.x))
           .y((cssIn16531) => cssIn447.y(cssIn16531.y))
@@ -158,8 +156,7 @@ export function paintScatterSeries(cssIn444: any, cssIn445: any, cssIn446: any, 
       }
     }
     if (series.trendlines?.length) {
-      let cssBind18312 =
-        cssIn452?.bySeriesIndex.get(seriesIndex);
+      let cssBind18312 = cssIn452?.bySeriesIndex.get(seriesIndex);
       paintScatterTrendlines(
         cssIn444,
         cssIn445,
@@ -212,43 +209,26 @@ export function paintScatterSeries(cssIn444: any, cssIn445: any, cssIn446: any, 
       return;
     let cssBind4204 = series.marker?.size,
       cssBind4205 =
-        cssBind4204 !== undefined &&
-        Number.isFinite(cssBind4204)
+        cssBind4204 !== undefined && Number.isFinite(cssBind4204)
           ? (cssBind4204 * 96) / 72
           : 6,
       cssBind4206 = Math.max(cssBind4205 / 2 - 1, 2);
     points.forEach((item) => {
       let cssBind7267 = cssIn447.x(item.x),
         cssBind7268 = cssIn447.y(item.y);
-      if (
-        !Number.isFinite(cssBind7267) ||
-        !Number.isFinite(cssBind7268)
-      )
+      if (!Number.isFinite(cssBind7267) || !Number.isFinite(cssBind7268))
         return;
       let cssBind7269 = cssH.bh474(series, item.idx)
           ? undefined
           : cssH.bh469(series, item.idx, seriesIndex, cssIn448),
-        cssBind7270 = cssH.bh473(
-          series,
-          item.idx,
-          cssIn448,
-        );
+        cssBind7270 = cssH.bh473(series, item.idx, cssIn448);
       cssIn444.save();
       cssIn444.beginPath();
-      cssIn444.arc(
-        cssBind7267,
-        cssBind7268,
-        cssBind4206,
-        0,
-        Math.PI * 2,
-      );
+      cssIn444.arc(cssBind7267, cssBind7268, cssBind4206, 0, Math.PI * 2);
       cssBind7269
-        ? ((cssIn444.fillStyle = cssBind7269),
-          cssIn444.fill())
-        : ((cssIn444.fillStyle = cssBind4202),
-          cssIn444.fill());
-      let cssBind7271 =
-        cssBind7270.color ?? cssBind4202;
+        ? ((cssIn444.fillStyle = cssBind7269), cssIn444.fill())
+        : ((cssIn444.fillStyle = cssBind4202), cssIn444.fill());
+      let cssBind7271 = cssBind7270.color ?? cssBind4202;
       cssIn444.lineWidth =
         cssBind7270.widthPx === undefined
           ? Math.max(1, cssBind4206 / 3)
@@ -266,17 +246,11 @@ export function paintScatterSeries(cssIn444: any, cssIn445: any, cssIn446: any, 
           seriesName: series.name,
           category: String(item.x),
           value: item.y,
-          color:
-            cssBind7269 ?? cssBind4201 ?? cssBind4202,
+          color: cssBind7269 ?? cssBind4201 ?? cssBind4202,
           anchorX: cssBind7267,
           anchorY: cssBind7268,
         });
-      let cssBind7272 = cssH.bh495(
-        cssIn445,
-        series,
-        item.idx,
-        item.y,
-      );
+      let cssBind7272 = cssH.bh495(cssIn445, series, item.idx, item.y);
       cssBind7272.show &&
         cssH.bh500(
           cssIn444,

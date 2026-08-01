@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-95/103: chart-bar-series barrel.
+// Stage-3 wave-95/103/160: chart-bar-series barrel (direct imports; wire retired).
 
 export { wireChartBarSeriesBoundaryHooks, cbsH } from "./boundary-hooks";
 export {

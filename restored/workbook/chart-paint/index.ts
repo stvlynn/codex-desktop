@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-89: chart-paint barrel
+// Stage-3 wave-89/160: chart-paint barrel (direct imports; wire retired).
 // (legacy chart canvas paint cluster).
 
 export { ensureChartPaintInit } from "./ensure-chart-paint-init";
@@ -35,6 +35,10 @@ export {
 
 export { paintRadialGridlines, KSe } from "./paint-radial-gridlines-impl";
 
-export { workbookHelper426, workbookHelper552, workbookHelper556 } from "./chart-paint-wire-helpers-impl";
+export {
+  workbookHelper426,
+  workbookHelper552,
+  workbookHelper556,
+} from "./chart-paint-wire-helpers-impl";
 
 export { workbookHelper485 } from "./filter-hidden-indices-helper-impl";

@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-92: chart-legend barrel (legacy legend paint + map legend).
+// Stage-3 wave-92/160: chart-legend barrel (direct imports; wire retired).
 
 export { wireChartLegendBoundaryHooks, clH } from "./boundary-hooks";
 export {
@@ -33,6 +33,9 @@ export {
   LEGEND_INSET_BOTTOM,
 } from "./legend-marker-size-impl";
 
-export { workbookHelper387, workbookHelper487 } from "./legend-typeface-helpers-impl";
+export {
+  workbookHelper387,
+  workbookHelper487,
+} from "./legend-typeface-helpers-impl";
 
 export { workbookHelper486 } from "./legend-position-normalize-impl";

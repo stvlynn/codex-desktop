@@ -47,23 +47,14 @@ export function resolvePasteTarget(props: any) {
       : target.trim(),
     htmBind5822 = htmBind5821.lastIndexOf("!"),
     htmBind5823 =
-      htmBind5822 === -1
-        ? htmBind5821
-        : htmBind5821.slice(htmBind5822 + 1);
+      htmBind5822 === -1 ? htmBind5821 : htmBind5821.slice(htmBind5822 + 1);
   if (htmBind5822 >= 0) {
-    let htmBind17228 = htmBind5821.slice(
-        0,
-        htmBind5822,
-      ),
+    let htmBind17228 = htmBind5821.slice(0, htmBind5822),
       htmBind17229 =
-        htmBind17228.startsWith("'") &&
-        htmBind17228.endsWith("'")
+        htmBind17228.startsWith("'") && htmBind17228.endsWith("'")
           ? htmBind17228.slice(1, -1).replace(/''/g, "'")
           : htmBind17228;
-    if (
-      htmBind17229.trim() &&
-      htmBind17229.trim() !== sheetName
-    )
+    if (htmBind17229.trim() && htmBind17229.trim() !== sheetName)
       throw Error(
         `Range sheet "${htmBind17229.trim()}" does not match "${sheetName}"`,
       );

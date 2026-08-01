@@ -1,6 +1,10 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-58: boundary ensures still owned by workbook-runtime
-// (workbookEt EMU terminal, Binding412/gae cluster, Binding739, Binding736).
+// Stage-3 wave-160: compose-layout deps via direct imports
+// (wireComposeLayoutBoundaryHooks leave-behind retired).
+
+import { workbookEt, workbookTt } from "../emu-units";
+import { workbookBinding412 } from "../binding662-gate";
+import { workbookBinding739, workbookBinding736 } from "../shape-element";
 
 export type ComposeLayoutBoundaryHooks = {
   ensureWorkbookEt: () => void;
@@ -10,36 +14,24 @@ export type ComposeLayoutBoundaryHooks = {
   getWorkbookTt: () => (value: number) => number;
 };
 
-let hooks: ComposeLayoutBoundaryHooks | null = null;
-
+/** @deprecated Wave-160: wire leave-behind retired — ensures use direct imports. */
 export function wireComposeLayoutBoundaryHooks(
-  next: ComposeLayoutBoundaryHooks,
-): void {
-  hooks = next;
-}
-
-function requireHooks(): ComposeLayoutBoundaryHooks {
-  if (!hooks) {
-    throw new Error(
-      "compose-layout boundary hooks not wired (call from workbook-runtime)",
-    );
-  }
-  return hooks;
-}
+  _next?: Partial<ComposeLayoutBoundaryHooks>,
+): void {}
 
 export function ensureWorkbookEt(): void {
-  requireHooks().ensureWorkbookEt();
+  workbookEt();
 }
 export function ensureBinding412(): void {
-  requireHooks().ensureBinding412();
+  workbookBinding412();
 }
 export function ensureBinding739(): void {
-  requireHooks().ensureBinding739();
+  workbookBinding739();
 }
 export function getShapeElementClass(): any {
-  return requireHooks().getShapeElementClass();
+  return workbookBinding736;
 }
 export function getWorkbookTt(): (value: number) => number {
   ensureWorkbookEt();
-  return requireHooks().getWorkbookTt();
+  return workbookTt;
 }

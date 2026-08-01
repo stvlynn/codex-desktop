@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-95/123: chart-plot-layout barrel (+ bSe manualLayout).
+// Stage-3 wave-95/123/160: chart-plot-layout barrel (direct imports; wire retired).
 
 export { wireChartPlotLayoutBoundaryHooks, cplH } from "./boundary-hooks";
 export {
@@ -22,7 +22,4 @@ export {
   bSe,
 } from "./plot-area-manual-layout-impl";
 
-export {
-  reserveDataTablePlot,
-  iSe,
-} from "./reserve-data-table-plot-impl";
+export { reserveDataTablePlot, iSe } from "./reserve-data-table-plot-impl";

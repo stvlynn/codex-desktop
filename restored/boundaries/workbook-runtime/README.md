@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~7.9k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~7.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1944,5 +1944,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept
 - QG PASS on changed modules + boundary `--no-cache --allow-open-boundaries`
 - Next: slim chart-paint / chart-axis-ticks + remaining mid wires; reassess openBoundary closeout when mega is thin enough
+
+## Wave 160 (Stage-3 wire slim — top chart/compose/html-paste)
+
+- Boundary 7871 → 7349 (Δ -522)
+- Retired 20 mid-size wires → direct imports: chart-axis-ticks, chart-paint, chart-category-axes, chart-legend, chart-scatter-scale, chart-treemap-plot-layout, presentation-code-block, chart-bar-series, chart-plot-layout, html-paste, compose-layout, three-chart-paint, chart-scatter-series, chart-legend-plot, conditional-format runtime, mid-paint-helpers, table-frame-layout, chart-scatter-axes, chart-line-series, compose-inline-text
+- Live leave-behind constants baked as getters (htmlParser, treemap fracs, code-block theme tokens, three-chart SSF/camera, legend-plot gaps, CF colors, scatter labelGap, line emuToPx, inline fragment tags)
+- Same-package / reverse-cycle deps use createRequire + `__wh()` lazies
+- Kept: `setFormulaImplBag` mega bag; remaining smaller wires
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept
+- QG PASS on changed modules + boundary `--no-cache --allow-open-boundaries`
+- Next: slim remaining mid wires (element-text-layout / chart-bar-direction / category-axis-labels / axis-reserve / text-frame-embeds); reassess openBoundary closeout when mega is thin enough
+
 
 

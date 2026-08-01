@@ -6,7 +6,13 @@ import { cfRtH } from "./boundary-hooks-runtime";
 
 void cfRtH;
 
-export function buildDataBarRuntime(cfIn1407: any, cfIn1408: any, cfIn1409: any, cfIn1410: any, cfIn1411: any, ) {
+export function buildDataBarRuntime(
+  cfIn1407: any,
+  cfIn1408: any,
+  cfIn1409: any,
+  cfIn1410: any,
+  cfIn1411: any,
+) {
   let cfBind7241 = cfRtH.rangeStats({
     ranges: cfIn1408,
     getCell: cfIn1410,
@@ -33,24 +39,16 @@ export function buildDataBarRuntime(cfIn1407: any, cfIn1408: any, cfIn1409: any,
         })
       : null,
     negativeColorCss: cfIn1407.dataBar?.negativeFillColor
-      ? cfRtH.resolveColor(
-          cfIn1407.dataBar.negativeFillColor,
-          cfIn1411,
-          {
-            ...cfRtH.colorOpts,
-            defaultFill: "#FF0000",
-          },
-        )
+      ? cfRtH.resolveColor(cfIn1407.dataBar.negativeFillColor, cfIn1411, {
+          ...cfRtH.colorOpts,
+          defaultFill: "#FF0000",
+        })
       : null,
     negativeBorderColorCss: cfIn1407.dataBar?.negativeBorderColor
-      ? cfRtH.resolveColor(
-          cfIn1407.dataBar.negativeBorderColor,
-          cfIn1411,
-          {
-            ...cfRtH.colorOpts,
-            defaultFill: "#FF0000",
-          },
-        )
+      ? cfRtH.resolveColor(cfIn1407.dataBar.negativeBorderColor, cfIn1411, {
+          ...cfRtH.colorOpts,
+          defaultFill: "#FF0000",
+        })
       : null,
     axisColorCss: cfIn1407.dataBar?.axisColor
       ? cfRtH.resolveColor(cfIn1407.dataBar.axisColor, cfIn1411, {

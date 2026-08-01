@@ -175,11 +175,18 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
       cpBind9667,
     );
     cpBind2291 &&
-      paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
-        elementId: cpIn35.elementId,
-        chartHoverTargets: cpIn35.chartHoverTargets,
-        hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
-      });
+      paintChartLegend(
+        cpIn32,
+        cpIn33,
+        cpBind2291,
+        cpIn35.themeMap,
+        cpBind2292,
+        {
+          elementId: cpIn35.elementId,
+          chartHoverTargets: cpIn35.chartHoverTargets,
+          hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
+        },
+      );
     paintBarDirectionSeries(
       cpIn32,
       cpIn33,
@@ -189,7 +196,13 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
       cpBind2287,
     );
     cpBind2294 &&
-      (paintChartDataTable(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287),
+      (paintChartDataTable(
+        cpIn32,
+        cpIn33,
+        cpBind2294,
+        cpIn35.themeMap,
+        cpBind2287,
+      ),
       (cpBind2295 = true));
     cpIn32.restore();
     return;
@@ -275,11 +288,18 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
   if (!cpBind2276 && !cpBind2277 && cpBind2278) {
     strokePlotAreaBorder(cpIn32, cpIn33, cpBind2290, cpIn35.themeMap);
     cpBind2291 &&
-      paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
-        elementId: cpIn35.elementId,
-        chartHoverTargets: cpIn35.chartHoverTargets,
-        hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
-      });
+      paintChartLegend(
+        cpIn32,
+        cpIn33,
+        cpBind2291,
+        cpIn35.themeMap,
+        cpBind2292,
+        {
+          elementId: cpIn35.elementId,
+          chartHoverTargets: cpIn35.chartHoverTargets,
+          hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
+        },
+      );
     paintRadarChart(
       cpIn32,
       cpIn33,
@@ -291,7 +311,13 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         : undefined,
     );
     cpBind2294 &&
-      (paintChartDataTable(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287),
+      (paintChartDataTable(
+        cpIn32,
+        cpIn33,
+        cpBind2294,
+        cpIn35.themeMap,
+        cpBind2287,
+      ),
       (cpBind2295 = true));
   } else if (!cpBind2276 && !cpBind2277 && !cpBind2280 && !cpBind2281) {
     if (cpBind2282) {
@@ -311,11 +337,18 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         cpIn34,
       );
       cpBind2291 &&
-        paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
-          elementId: cpIn35.elementId,
-          chartHoverTargets: cpIn35.chartHoverTargets,
-          hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
-        });
+        paintChartLegend(
+          cpIn32,
+          cpIn33,
+          cpBind2291,
+          cpIn35.themeMap,
+          cpBind2292,
+          {
+            elementId: cpIn35.elementId,
+            chartHoverTargets: cpIn35.chartHoverTargets,
+            hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
+          },
+        );
       paintBoxWhiskerChart(
         cpIn32,
         cpIn33,
@@ -327,7 +360,13 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
         },
       );
       cpBind2294 &&
-        (paintChartDataTable(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287),
+        (paintChartDataTable(
+          cpIn32,
+          cpIn33,
+          cpBind2294,
+          cpIn35.themeMap,
+          cpBind2287,
+        ),
         (cpBind2295 = true));
     } else if (cpBind2300) {
       strokePlotAreaBorder(cpIn32, cpIn33, cpBind2290, cpIn35.themeMap);
@@ -347,11 +386,18 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
             cpIn34,
           ),
         cpBind2291 &&
-          paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
-            elementId: cpIn35.elementId,
-            chartHoverTargets: cpIn35.chartHoverTargets,
-            hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
-          }),
+          paintChartLegend(
+            cpIn32,
+            cpIn33,
+            cpBind2291,
+            cpIn35.themeMap,
+            cpBind2292,
+            {
+              elementId: cpIn35.elementId,
+              chartHoverTargets: cpIn35.chartHoverTargets,
+              hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
+            },
+          ),
         cpIn33.type)
       ) {
         case Cn.CHART_TYPE_BAR: {
@@ -641,11 +687,18 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
     }
   } else if (cpBind2281) {
     cpBind2291 &&
-      paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
-        elementId: cpIn35.elementId,
-        chartHoverTargets: cpIn35.chartHoverTargets,
-        hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
-      });
+      paintChartLegend(
+        cpIn32,
+        cpIn33,
+        cpBind2291,
+        cpIn35.themeMap,
+        cpBind2292,
+        {
+          elementId: cpIn35.elementId,
+          chartHoverTargets: cpIn35.chartHoverTargets,
+          hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
+        },
+      );
     let cpBind14153 = computeFunnelSegments(cpIn33, cpBind2290, cpBind2287),
       cpBind14154 = cpH.layoutCategoryLabels(
         cpIn32,
@@ -666,11 +719,18 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
     );
   } else if (cpBind2280) {
     cpBind2291 &&
-      paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
-        elementId: cpIn35.elementId,
-        chartHoverTargets: cpIn35.chartHoverTargets,
-        hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
-      });
+      paintChartLegend(
+        cpIn32,
+        cpIn33,
+        cpBind2291,
+        cpIn35.themeMap,
+        cpBind2292,
+        {
+          elementId: cpIn35.elementId,
+          chartHoverTargets: cpIn35.chartHoverTargets,
+          hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
+        },
+      );
     let cpBind10019 = cpIn34.width - Math.max(0, cpBind2290.x - cpIn34.x),
       cpBind10020 = cpIn34.height - Math.max(0, cpBind2290.y - cpIn34.y),
       cpBind10021 = {
@@ -707,11 +767,18 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
           },
         ),
         cpBind2291 &&
-          paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
-            elementId: cpIn35.elementId,
-            chartHoverTargets: cpIn35.chartHoverTargets,
-            hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
-          }))
+          paintChartLegend(
+            cpIn32,
+            cpIn33,
+            cpBind2291,
+            cpIn35.themeMap,
+            cpBind2292,
+            {
+              elementId: cpIn35.elementId,
+              chartHoverTargets: cpIn35.chartHoverTargets,
+              hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
+            },
+          ))
       : cpBind2277 &&
         (strokePlotAreaBorder(cpIn32, cpIn33, cpBind2290, cpIn35.themeMap),
         cpH.paintGridlines(
@@ -724,13 +791,26 @@ export function paintChart(cpIn32: any, cpIn33: any, cpIn34: any, cpIn35: any) {
           },
         ),
         cpBind2291 &&
-          paintChartLegend(cpIn32, cpIn33, cpBind2291, cpIn35.themeMap, cpBind2292, {
-            elementId: cpIn35.elementId,
-            chartHoverTargets: cpIn35.chartHoverTargets,
-            hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
-          }));
+          paintChartLegend(
+            cpIn32,
+            cpIn33,
+            cpBind2291,
+            cpIn35.themeMap,
+            cpBind2292,
+            {
+              elementId: cpIn35.elementId,
+              chartHoverTargets: cpIn35.chartHoverTargets,
+              hiddenSeriesIndices: cpIn35.hiddenSeriesIndices,
+            },
+          ));
   cpBind2294 &&
     !cpBind2295 &&
-    paintChartDataTable(cpIn32, cpIn33, cpBind2294, cpIn35.themeMap, cpBind2287);
+    paintChartDataTable(
+      cpIn32,
+      cpIn33,
+      cpBind2294,
+      cpIn35.themeMap,
+      cpBind2287,
+    );
   cpIn32.restore();
 }

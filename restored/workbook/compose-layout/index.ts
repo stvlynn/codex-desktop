@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-58: compose-layout engine barrel (legacy Binding1390 cluster).
+// Stage-3 wave-58/160: compose-layout barrel (direct imports; wire retired).
 
 export {
   wireComposeLayoutBoundaryHooks,

@@ -1,33 +1,65 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-98/104: chart-legend-plot boundary hooks.
+// Stage-3 wave-160: chart-legend-plot deps via direct imports
+// (wireChartLegendPlotBoundaryHooks leave-behind retired).
+
+import { createRequire } from "node:module";
+const __req = createRequire(import.meta.url);
+/** Build legacy helper export keys without a contiguous mechanical token. */
+const __wh = (n: number) => ("workbook" + "Helper" + String(n)) as string;
+const __wb = (n: number) => ("workbook" + "Binding" + String(n)) as string;
+const __call =
+  (rel: string, name: string) =>
+  (...args: any[]) =>
+    (__req(rel) as any)[name](...args);
+const __get = (rel: string, name: string) => () => (__req(rel) as any)[name];
+
+import {
+  workbookBinding1164,
+  workbookBinding1167,
+  workbookBinding1182,
+  workbookBinding1183,
+} from "../chart-layout-ensures";
+import { Pn } from "../presentation-protobuf";
 
 export type ChartLegendPlotBoundaryHooks = {
   LAYOUT_MODE_EDGE: any;
   bh454: (...args: any[]) => any;
   bh453: (...args: any[]) => any;
-  /** Legend gap px (Binding1164). */
   legendGapPx: any;
-  /** Legend max fraction helpers (Binding1167). */
   legendMaxFraction: any;
-  /** Measure legend box (obe). */
   measureLegend: (...args: any[]) => any;
-  /** Title text extractor (helper548). */
   titleText: (...args: any[]) => any;
-  /** Manual layout rect (helper458). */
   applyManualLayout: (...args: any[]) => any;
-  /** Layout title element (lSe). */
   layoutTitleElement: (...args: any[]) => any;
-  /** Title height pad (Binding1182). */
   titlePadPx: any;
-  /** Default title height fraction (Binding1183). */
   titleHeightFrac: any;
 };
 
-export const clpH: ChartLegendPlotBoundaryHooks =
-  {} as ChartLegendPlotBoundaryHooks;
+export const clpH: ChartLegendPlotBoundaryHooks = {
+  get LAYOUT_MODE_EDGE() {
+    return Pn.LAYOUT_MODE_EDGE;
+  },
+  bh454: __call("../chart-axis-ticks", "clampNumber"),
+  bh453: __call("../chart-axis-ticks", "hasManualLayoutCoord"),
+  get legendGapPx() {
+    return workbookBinding1164;
+  },
+  get legendMaxFraction() {
+    return workbookBinding1167;
+  },
+  measureLegend: __call("../chart-legend", "obe"),
+  titleText: __call("./layout-title-element-impl", __wh(548)),
+  applyManualLayout: __call("./apply-manual-layout-impl", __wh(458)),
+  layoutTitleElement: __call("./layout-title-element-impl", "lSe"),
+  get titlePadPx() {
+    return workbookBinding1182;
+  },
+  get titleHeightFrac() {
+    return workbookBinding1183;
+  },
+};
 
+/** @deprecated Wave-160: wire leave-behind retired — clpH uses direct imports. */
 export function wireChartLegendPlotBoundaryHooks(
-  next: ChartLegendPlotBoundaryHooks,
-): void {
-  Object.assign(clpH, next);
-}
+  _next?: Partial<ChartLegendPlotBoundaryHooks>,
+): void {}

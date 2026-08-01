@@ -8,14 +8,17 @@ import { ctlH } from "./boundary-hooks";
 void _presentationMn;
 void ctlH;
 
-export function layoutTreemapPlot(ctlIn830: any, ctlIn831: any, ctlIn832: any, ctlIn833: any, ctlIn834: any, ) {
+export function layoutTreemapPlot(
+  ctlIn830: any,
+  ctlIn831: any,
+  ctlIn832: any,
+  ctlIn833: any,
+  ctlIn834: any,
+) {
   let ctlBind5485 = ctlIn834.maxLeftFrac ?? ctlH.maxLeftFrac,
     ctlBind5486 = ctlIn834.maxRightFrac ?? ctlH.maxRightFrac,
     ctlBind5487 = ctlIn834.maxBottomFrac ?? ctlH.maxBottomFrac,
-    ctlBind5488 = Math.max(
-      0,
-      ctlIn834.availableLeftPaddingPx ?? 0,
-    ),
+    ctlBind5488 = Math.max(0, ctlIn834.availableLeftPaddingPx ?? 0),
     ctlBind5489 = ctlIn834.chartModel.resolveCategories(),
     ctlBind5490 = ctlH.isFlippedX(ctlIn831),
     ctlBind5491 = ctlH.layoutCatAxis({
@@ -44,8 +47,7 @@ export function layoutTreemapPlot(ctlIn830: any, ctlIn831: any, ctlIn832: any, c
       maxRightFrac: ctlBind5486,
     }),
     ctlBind5495 = ctlBind5494;
-  ctlBind5490 &&
-    (ctlBind5495 = Math.max(ctlBind5491, ctlBind5494));
+  ctlBind5490 && (ctlBind5495 = Math.max(ctlBind5491, ctlBind5494));
   let ctlBind5496 = ctlH.crossingRatio({
       chart: ctlIn831,
       chartModel: ctlIn834.chartModel,
@@ -61,10 +63,7 @@ export function layoutTreemapPlot(ctlIn830: any, ctlIn831: any, ctlIn832: any, c
   let ctlBind5498 = {
       x: ctlIn832.x + ctlBind5497,
       y: ctlBind5493.y,
-      width: Math.max(
-        0,
-        ctlIn832.width - ctlBind5497 - ctlBind5495,
-      ),
+      width: Math.max(0, ctlIn832.width - ctlBind5497 - ctlBind5495),
       height: ctlBind5493.height,
     },
     ctlBind5499 = ctlH.layoutValAxisBottom({
@@ -82,29 +81,20 @@ export function layoutTreemapPlot(ctlIn830: any, ctlIn831: any, ctlIn832: any, c
     }),
     ctlBind5502 = ctlBind5501,
     ctlBind5503 = ctlBind5501;
-  ctlBind5500
-    ? (ctlBind5502 += ctlBind5499)
-    : (ctlBind5503 += ctlBind5499);
-  let ctlBind5504 =
-      ctlBind5497 + ctlBind5496 * ctlBind5498.width,
+  ctlBind5500 ? (ctlBind5502 += ctlBind5499) : (ctlBind5503 += ctlBind5499);
+  let ctlBind5504 = ctlBind5497 + ctlBind5496 * ctlBind5498.width,
     ctlBind5505 = ctlBind5488 + ctlBind5504;
-  ctlBind5490 &&
-    (ctlBind5505 = ctlIn832.width - ctlBind5504);
+  ctlBind5490 && (ctlBind5505 = ctlIn832.width - ctlBind5504);
   let ctlBind5506 = Math.max(
     0,
-    ctlBind5505 -
-      ctlH.labelPad -
-      ctlH.axisLabelReserve(ctlIn831.xAxis),
+    ctlBind5505 - ctlH.labelPad - ctlH.axisLabelReserve(ctlIn831.xAxis),
   );
   return {
     plotDims: {
       x: ctlBind5498.x,
       y: ctlBind5498.y + ctlBind5502,
       width: ctlBind5498.width,
-      height: Math.max(
-        0,
-        ctlBind5498.height - ctlBind5502 - ctlBind5503,
-      ),
+      height: Math.max(0, ctlBind5498.height - ctlBind5502 - ctlBind5503),
     },
     reservedLeft: ctlBind5497,
     categoryLabelMaxWidth: ctlBind5506,

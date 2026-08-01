@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-94/111: chart-axis-ticks barrel.
+// Stage-3 wave-94/111/160: chart-axis-ticks barrel (direct imports; wire retired).
 
 export { wireChartAxisTicksBoundaryHooks, catH } from "./boundary-hooks";
 export {

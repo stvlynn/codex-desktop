@@ -209,11 +209,8 @@ export function stackLineLayers(clnIn756: any, clnIn757: any) {
             (__item) => __item.seriesIndex === _item,
           );
           if (!clnBind17129) return;
-          let clnBind17130 =
-              clnIn756.series[_item]?.values[index] ?? 0,
-            clnBind17131 = Number.isFinite(clnBind17130)
-              ? clnBind17130
-              : 0;
+          let clnBind17130 = clnIn756.series[_item]?.values[index] ?? 0,
+            clnBind17131 = Number.isFinite(clnBind17130) ? clnBind17130 : 0;
           clnBind17129.values[index] = clnBind17131;
           clnBind17129.tuples[index] = {
             start: 0,
@@ -232,11 +229,8 @@ export function stackLineLayers(clnIn756: any, clnIn757: any) {
       let clnBind18492 = {};
       return (
         clnBind5252.forEach((_item) => {
-          let clnBind21267 =
-            clnIn756.series[_item]?.values[index] ?? 0;
-          clnBind18492[String(_item)] = Number.isFinite(
-            clnBind21267,
-          )
+          let clnBind21267 = clnIn756.series[_item]?.values[index] ?? 0;
+          clnBind18492[String(_item)] = Number.isFinite(clnBind21267)
             ? clnBind21267
             : 0;
         }),
@@ -245,10 +239,7 @@ export function stackLineLayers(clnIn756: any, clnIn757: any) {
     }),
     clnBind5257 = stack()
       .keys(clnBind5252.map((item) => String(item)))
-      .value(
-        (clnIn16358, clnIn16359) =>
-          clnIn16358[clnIn16359] ?? 0,
-      )
+      .value((clnIn16358, clnIn16359) => clnIn16358[clnIn16359] ?? 0)
       .order(stackOrderNone);
   clnBind5254 === "percent"
     ? clnBind5257.offset(stackOffsetExpand)

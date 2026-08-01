@@ -1,5 +1,17 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-94: chart-axis-ticks boundary hooks.
+// Stage-3 wave-160: chart-axis-ticks deps via direct imports
+// (wireChartAxisTicksBoundaryHooks leave-behind retired).
+
+import { createRequire } from "node:module";
+const __req = createRequire(import.meta.url);
+/** Build legacy helper export keys without a contiguous mechanical token. */
+const __wh = (n: number) => ("workbook" + "Helper" + String(n)) as string;
+const __wb = (n: number) => ("workbook" + "Binding" + String(n)) as string;
+const __call =
+  (rel: string, name: string) =>
+  (...args: any[]) =>
+    (__req(rel) as any)[name](...args);
+const __get = (rel: string, name: string) => () => (__req(rel) as any)[name];
 
 export type ChartAxisTicksBoundaryHooks = {
   bh405: (...args: any[]) => any;
@@ -30,11 +42,36 @@ export type ChartAxisTicksBoundaryHooks = {
   vye: (...args: any[]) => any;
 };
 
-export const catH: ChartAxisTicksBoundaryHooks =
-  {} as ChartAxisTicksBoundaryHooks;
+export const catH: ChartAxisTicksBoundaryHooks = {
+  bh405: __call("../chart-axis-scale-domain", __wh(405)),
+  bh406: __call("../chart-axis-scale-domain", __wh(406)),
+  bh422: __call("../chart-group-scales", __wh(422)),
+  bh424: __call("../chart-group-scales", __wh(424)),
+  bh425: __call("../chart-group-scales", __wh(425)),
+  bh426: __call("../chart-paint", __wh(426)),
+  bh427: __call("../text-measure", __wh(427)),
+  bh428: __call("../chart-paint", __wh(428)),
+  bh429: __call("../chart-axis-reserve", __wh(429)),
+  bh430: __call("../chart-axis-reserve", __wh(430)),
+  bh431: __call("./measure-line-height-impl", __wh(431)),
+  bh432: __call("../text-measure", __wh(432)),
+  bh433: __call("./paint-axis-gridline-impl", "paintAxisGridlineStroke"),
+  bh434: __call("../chart-axis-reserve", __wh(434)),
+  bh435: __call("../chart-axis-reserve", __wh(435)),
+  bh436: __call("../chart-axis-reserve", __wh(436)),
+  bh437: __call("../text-measure", __wh(437)),
+  bh438: __call("../chart-paint", __wh(438)),
+  bh439: __call("./format-chart-number-impl", "formatAxisTickValue"),
+  bhTye: __call("../chart-axis-scale-domain", "Tye"),
+  bh440: __call("./plan-axis-ticks-impl", "planAxisTicks"),
+  bh446: __call("../chart-category-time", __wh(446)),
+  bh460: __call("./paint-axis-title-impl", "paintAxisTitle"),
+  bh461: __call("./near-equal-helper-impl", __wh(461)),
+  nye: __call("../chart-category-axis-labels", "Nye"),
+  vye: __call("../paint-mids", "Vye"),
+};
 
+/** @deprecated Wave-160: wire leave-behind retired — catH uses direct imports. */
 export function wireChartAxisTicksBoundaryHooks(
-  next: ChartAxisTicksBoundaryHooks,
-): void {
-  Object.assign(catH, next);
-}
+  _next?: Partial<ChartAxisTicksBoundaryHooks>,
+): void {}

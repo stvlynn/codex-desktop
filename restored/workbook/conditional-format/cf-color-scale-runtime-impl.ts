@@ -6,7 +6,13 @@ import { cfRtH } from "./boundary-hooks-runtime";
 
 void cfRtH;
 
-export function buildColorScaleRuntime(cfIn2262: any, cfIn2263: any, cfIn2264: any, cfIn2265: any, cfIn2266: any, ) {
+export function buildColorScaleRuntime(
+  cfIn2262: any,
+  cfIn2263: any,
+  cfIn2264: any,
+  cfIn2265: any,
+  cfIn2266: any,
+) {
   let cfBind9324 = cfRtH.rangeStats({
     ranges: cfIn2263,
     getCell: cfIn2265,
@@ -16,11 +22,7 @@ export function buildColorScaleRuntime(cfIn2262: any, cfIn2263: any, cfIn2264: a
     cfBind9326 = cfIn2262.colorScale?.colors ?? [],
     cfBind9327 = [],
     cfBind9328 = [];
-  for (
-    let cfBind15987 = 0;
-    cfBind15987 < cfBind9325.length;
-    cfBind15987 += 1
-  ) {
+  for (let cfBind15987 = 0; cfBind15987 < cfBind9325.length; cfBind15987 += 1) {
     let cfBind16913 = cfBind9325[cfBind15987];
     if (!cfBind16913) continue;
     let cfBind16914 = cfRtH.resolveCfvoPos({
@@ -48,18 +50,10 @@ export function buildColorScaleRuntime(cfIn2262: any, cfIn2263: any, cfIn2264: a
     cfBind9331 = (cfIn15558) =>
       cfBind9330 === cfBind9329
         ? 0
-        : (cfIn15558 - cfBind9329) /
-          (cfBind9330 - cfBind9329);
-  for (
-    let cfBind22037 = 0;
-    cfBind22037 < cfBind9327.length;
-    cfBind22037 += 1
-  ) {
+        : (cfIn15558 - cfBind9329) / (cfBind9330 - cfBind9329);
+  for (let cfBind22037 = 0; cfBind22037 < cfBind9327.length; cfBind22037 += 1) {
     let cfBind22818 = cfBind9327[cfBind22037];
-    cfBind22818 &&
-      (cfBind22818.pos = cfBind9331(
-        cfBind9328[cfBind22037] ?? 0,
-      ));
+    cfBind22818 && (cfBind22818.pos = cfBind9331(cfBind9328[cfBind22037] ?? 0));
   }
   return {
     ranges: cfIn2263,

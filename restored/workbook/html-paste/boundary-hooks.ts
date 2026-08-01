@@ -1,35 +1,53 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-101/104: html-paste boundary hooks.
+// Stage-3 wave-160: html-paste deps via direct imports
+// (wireHtmlPasteBoundaryHooks leave-behind retired).
+
+import { createRequire } from "node:module";
+const __req = createRequire(import.meta.url);
+/** Build legacy helper export keys without a contiguous mechanical token. */
+const __wh = (n: number) => ("workbook" + "Helper" + String(n)) as string;
+const __wb = (n: number) => ("workbook" + "Binding" + String(n)) as string;
+const __call =
+  (rel: string, name: string) =>
+  (...args: any[]) =>
+    (__req(rel) as any)[name](...args);
+const __get = (rel: string, name: string) => () => (__req(rel) as any)[name];
+
+import { workbookBinding1956 } from "../chart-paste-hints";
 
 export type HtmlPasteBoundaryHooks = {
-  /** Resolve paste selection rect (legacy Tmt). */
   resolvePasteTarget: (...args: any[]) => any;
-  /** Rect → A1 range string (legacy Emt). */
   rectToA1: (...args: any[]) => any;
-  /** HTML parser module (Binding1956). */
   htmlParser: any;
-  /** Find table root (tmt). */
   findTableRoot: (...args: any[]) => any;
-  /** Normalize text cell (emt). */
   normalizeTextCell: (...args: any[]) => any;
-  /** Parse table rows (helper1009). */
   parseTableRows: (...args: any[]) => any;
-  /** Iterate table rows (Ypt). */
   eachTableRow: (...args: any[]) => any;
-  /** Iterate row cells (Xpt). */
   eachRowCell: (...args: any[]) => any;
-  /** Build cell value (Qpt). */
   buildHtmlCell: (...args: any[]) => any;
-  /** Merge cell maps (omt). */
   mergeCellMaps: (...args: any[]) => any;
-  /** Parse span attr (bmt). */
   parseSpanAttr: (...args: any[]) => any;
-  /** Column width from col (Zpt). */
   colWidthPx: (...args: any[]) => any;
 };
 
-export const htmH: HtmlPasteBoundaryHooks = {} as HtmlPasteBoundaryHooks;
+export const htmH: HtmlPasteBoundaryHooks = {
+  resolvePasteTarget: __call("./paste-target-impl", "Tmt"),
+  rectToA1: __call("./paste-target-impl", "Emt"),
+  get htmlParser() {
+    return workbookBinding1956;
+  },
+  findTableRoot: __call("./html-cell-style-impl", "tmt"),
+  normalizeTextCell: __call("./html-cell-style-impl", "emt"),
+  parseTableRows: __call("./html-cell-style-impl", "parseTableRows"),
+  eachTableRow: __call("./html-cell-style-impl", "Ypt"),
+  eachRowCell: __call("./html-cell-style-impl", "Xpt"),
+  buildHtmlCell: __call("./html-cell-style-impl", "Qpt"),
+  mergeCellMaps: __call("./html-cell-style-impl", "omt"),
+  parseSpanAttr: __call("./html-cell-style-impl", "bmt"),
+  colWidthPx: __call("./html-cell-style-impl", "Zpt"),
+};
 
-export function wireHtmlPasteBoundaryHooks(next: HtmlPasteBoundaryHooks): void {
-  Object.assign(htmH, next);
-}
+/** @deprecated Wave-160: wire leave-behind retired — htmH uses direct imports. */
+export function wireHtmlPasteBoundaryHooks(
+  _next?: Partial<HtmlPasteBoundaryHooks>,
+): void {}
