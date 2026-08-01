@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~46.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~45.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -247,6 +247,9 @@
 | Clip paint rect (`helper601`) | ~0.09k | **Drained (wave-114)** → `workbook/canvas-paint/` |
 | Cubic bezier split (`helper626`/`627`) | ~0.06k | **Drained (wave-114)** → `workbook/path-geometry/` |
 | Embedded workbook paint (`BTe`/`VTe`/`WTe`) | ~0.11k | **Drained (wave-114)** → `workbook/text-frame-embeds/` |
+| Semantic JSX tags (`MOe`/`XOe`/`YOe`/`ZOe`+Binding154) | ~0.55k | **Drained (wave-115)** → `workbook/compose-jsx-lower/` |
+| Layout blob (`PDe`/`BDe`/`FDe`/`vOe`+693) | ~0.35k | **Drained (wave-115)** → `workbook/compose-element-snapshot/` |
+| Dead chart paint (`CSe`/`SSe`/560) | ~0.09k | **Deleted (wave-115)** |
 
 ## Why it stays in `boundaries/`
 
@@ -1486,4 +1489,12 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary 46792 → 46077 (Δ -715)
 - Peeled: hbe+mbe+407/410/414/497; helper489+Wye/Uye; sbe/cbe; _xe+530/531; helper439/478 (SSF); $L/558/559; helper601; helper626/627; BTe/VTe/WTe
 - Skipped helper603 (ESM Map), helper853 (formula nest), PDe/BDe (incomplete), MOe/XOe (Binding154 ESM), ADe/rze/kht/ict, pye
+- openBoundary remains while mega still large
+
+## Wave 115 (Stage-3 preferred peels)
+
+- Boundary 46076 → 45128 (Δ -948)
+- Peeled: MOe/XOe/YOe/ZOe + Binding154 Sets inlined; HOe/POe/VOe/UOe/$q/702–721/ake; PDe/BDe/FDe/vOe + 690–696/693/bOe/xOe; dead CSe/SSe/560
+- Skipped helper603 (Nwe Map ESM), helper853 (841/850 still local nest), ADe/rze/kht/ict, pye
+- Leave-behind: ADe needs helper672; BDe cluster now drained; rze still blocked on mutation helpers
 - openBoundary remains while mega still large

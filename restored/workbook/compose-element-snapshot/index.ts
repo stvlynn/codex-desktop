@@ -29,3 +29,23 @@ export {
   oOe,
   sOe,
 } from "./table-cells-from-element-impl";
+
+export {
+  buildSlideLayoutBlob,
+  exportLayoutBlob,
+  mapDrawElementProtos,
+  indexComposeAids,
+  buildInheritedLayers,
+  applyOutlineLevelStyles,
+  backgroundFillColor,
+  backgroundFillImage,
+  imageAssetRef,
+  attachOverlappingTableCells,
+  bboxToRect,
+  isBboxTuple,
+  overlapArea,
+  rectArea,
+  frameToLayoutRect,
+  trimNonEmpty,
+  round2,
+} from "./layout-blob-impl";
