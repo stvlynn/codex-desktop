@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~43.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~42.5k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -256,6 +256,9 @@
 | Element fit (`LIe`/`RIe`/`Y$`) | ~0.10k | **Drained (wave-116)** → `workbook/presentation-element-fit/` |
 | Formula token/args (`$Xe`+836–853/`BXe`) | ~0.58k | **Drained (wave-116)** → formula-token-utils + dep-scc |
 | XLSX validate (`Tpt`/`Apt`/`kpt`+catalog) | ~0.60k | **Drained (wave-116)** → `workbook/xlsx-workbook-validate/` |
+| Presentation edit (`lLe`..`bLe`) | ~0.25k | **Drained (wave-117)** → `workbook/presentation-edit/` |
+| HTML cell/table helpers (`Ypt`..`1013`/`Qpt`) | ~0.55k | **Drained (wave-117)** → `workbook/html-paste/` |
+| Chart raster (`Amt`..`Zmt`/`jmt`) | ~0.56k | **Drained (wave-117)** → `workbook/chart-raster/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1512,4 +1515,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Confirmed **ict FALSE HIT** (brace matcher sib=340); mid-file Apt/kpt/Tpt are real top-level peels; ict body now ~14 LOC after peel
 - Skipped helper603 (Nwe Map ESM), ADe+672, rze, kht, Amt chart-raster nest
 - Leave-behind: helper853 now drained; ADe still needs helper672; rze still blocked
+- openBoundary remains while mega still large
+
+## Wave 117 (Stage-3 preferred edit/html/chart-raster)
+
+- Boundary 43777 → 42495 (Δ -1282)
+- Peeled: lLe..bLe presentation-edit cluster; Ypt..helper1013/Qpt html-paste helpers; Amt..Zmt chart-raster nest (incl. jmt)
+- Confirmed all ≥40 inventory entries are REAL (sib=1); ict already cleared wave-116
+- Skipped Llt/Lut/bdt (formula-registry entangled); helper603 (Nwe); ADe+672; rze; kht
+- Leave-behind: ADe still needs helper672; rze/kht still blocked
 - openBoundary remains while mega still large
