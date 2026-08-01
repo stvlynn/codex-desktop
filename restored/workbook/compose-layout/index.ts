@@ -24,3 +24,13 @@ export {
   ensureComposeThemeTokensInit,
   getSlideComposeTheme,
 } from "./compose-theme-tokens";
+export {
+  $H,
+  workbookBinding1325,
+  workbookBinding1326,
+  workbookBinding1327,
+  workbookBinding1328,
+  workbookBinding1329,
+  workbookBinding1330,
+  ensureComposeTracksInit,
+} from "./compose-tracks-impl";

@@ -413,6 +413,14 @@ import {
   ensureComposeThemeTokensInit as workbookBinding1488,
   applySlideCompose as workbookBinding1466,
   getSlideComposeTheme,
+  $H,
+  workbookBinding1325,
+  workbookBinding1326,
+  workbookBinding1327,
+  workbookBinding1328,
+  workbookBinding1329,
+  workbookBinding1330,
+  ensureComposeTracksInit,
 } from "../../workbook/compose-layout";
 
 import type { WorkbookOpsHost } from "../../workbook/workbook-core";
@@ -7981,6 +7989,38 @@ import {
   ensurePresentationScriptsInit,
 } from "../../workbook/presentation-scripts";
 import {
+  workbookBinding1347,
+  workbookBinding1348,
+  workbookBinding1349,
+  pDe,
+  mDe,
+  ensurePlaceholderStylesInit,
+} from "../../workbook/placeholder-styles";
+import {
+  Kht,
+  qht,
+  ensureSpreadsheetViewStateInit,
+} from "../../workbook/spreadsheet-view-state";
+
+import {
+  tze,
+  nze,
+  ensurePresentationPatchInit,
+} from "../../workbook/presentation-patch";
+
+import {
+  workbookBinding1291,
+  workbookBinding1292,
+  workbookBinding1293,
+  workbookE,
+  workbookD,
+  workbookW,
+  _workbookT,
+  ensurePresentationChartsCollectionInit,
+  ensurePresentationImagesCollectionInit,
+} from "../../workbook/presentation-assets";
+
+import {
   PLe,
   FLe,
   ILe,
@@ -9720,456 +9760,20 @@ var workbookBinding1288,
     workbookBinding1288 = "::cell:";
   });
 var yEe = esmInit(() => {
-    workbookBinding1229();
-    _workbookJ();
-    workbookT();
-    workbookZ();
-    /* Binding1266 drained */ void 0;
-    zTe();
-    GTe();
-    eEe();
-    rEe();
-    fEe();
-    workbookO();
-    workbookBinding644();
-    wr();
-  }),
-  workbookBinding1291,
-  workbookBinding1292,
-  workbookBinding1293,
-  workbookE,
-  workbookD = esmInit(() => {
-    qn();
-    workbookBinding722();
-    workbookBinding404();
-    workbookBinding1291 = new Set([
-      "pie",
-      "pie3D",
-      "doughnut",
-      "treemap",
-      "sunburst",
-      "map",
-      "funnel",
-      "ofPie",
-    ]);
-    workbookBinding1292 = "#D4D4D4";
-    workbookBinding1293 = "#666666";
-    workbookE = class {
-      #e;
-      #t;
-      #n;
-      constructor(workbookInput7305, workbookInput7306) {
-        this.#e = workbookInput7305;
-        this.#t = (workbookInput7306 ?? []).map(
-          (item) => new workbookBinding721(item ?? {}, this.#e.fontFamilyCache),
-        );
-        this.#n = new Map(this.#t.map((item) => [item.id, item]));
-      }
-      get items() {
-        return [...this.#t];
-      }
-      getById(workbookInput13681) {
-        if (workbookInput13681) return this.#n.get(workbookInput13681);
-      }
-      add(workbookInput2201) {
-        let workbookBinding9215 = new workbookBinding721(
-          {
-            type: workbookBinding388[workbookInput2201],
-          },
-          this.#e.fontFamilyCache,
-        );
-        return (
-          (workbookBinding9215.hasLegend = true),
-          (workbookBinding9215.legend.position = "bottom"),
-          workbookBinding1291.has(workbookInput2201) ||
-            ((workbookBinding9215.xAxis.line.width = 1),
-            (workbookBinding9215.xAxis.line.style = "solid"),
-            (workbookBinding9215.xAxis.line.fill = workbookBinding1292),
-            (workbookBinding9215.xAxis.textStyle.fill = workbookBinding1293),
-            (workbookBinding9215.yAxis.line.width = 1),
-            (workbookBinding9215.yAxis.line.style = "solid"),
-            (workbookBinding9215.yAxis.line.fill = workbookBinding1292),
-            (workbookBinding9215.yAxis.textStyle.fill = workbookBinding1293),
-            (workbookBinding9215.yAxis.deleted = true)),
-          workbookInput2201 === "scatter" &&
-            workbookBinding9215.scatterOptions.style === undefined &&
-            (workbookBinding9215.scatterOptions.style = "marker"),
-          this.#t.push(workbookBinding9215),
-          this.#n.set(workbookBinding9215.id, workbookBinding9215),
-          workbookBinding9215
-        );
-      }
-      attach(workbookInput10431) {
-        return (
-          this.#n.get(workbookInput10431.id) ||
-          (this.#t.push(workbookInput10431),
-          this.#n.set(workbookInput10431.id, workbookInput10431),
-          workbookInput10431)
-        );
-      }
-      replace(workbookInput8258) {
-        this.#t = (workbookInput8258 ?? []).map(
-          (item) => new workbookBinding721(item ?? {}, this.#e.fontFamilyCache),
-        );
-        this.#n = new Map(this.#t.map((item) => [item.id, item]));
-      }
-      toProto() {
-        return this.#t
-          .map((item) => item.toProto())
-          .filter((item) => !!item)
-          .map((item) => ({
-            ...item,
-            barDirection:
-              item.barDirection ?? _presentationVn.BAR_DIRECTION_UNSPECIFIED,
-          }));
-      }
-    };
-  }),
-  workbookW,
-  _workbookT = esmInit(() => {
-    Jge();
-    workbookW = class {
-      #e;
-      #t;
-      #n;
-      constructor(workbookInput8418, workbookInput8419) {
-        this.#e = workbookInput8418;
-        this.#t = (workbookInput8419 ?? []).map(
-          (item) => new workbookBinding728(this.#r(), item ?? {}),
-        );
-        this.#n = new Map(this.#t.map((item) => [item.id, item]));
-      }
-      get items() {
-        return [...this.#t];
-      }
-      getById(workbookInput13682) {
-        if (workbookInput13682) return this.#n.get(workbookInput13682);
-      }
-      add(workbookInput5197 = {}) {
-        let workbookBinding14718 = {
-            id: workbookInput5197.id ?? "",
-            contentType: workbookInput5197.contentType ?? "",
-            data: workbookInput5197.data
-              ? new Uint8Array(workbookInput5197.data)
-              : new Uint8Array(),
-            prompt: workbookInput5197.prompt,
-            uri: workbookInput5197.uri,
-          },
-          workbookBinding14719 = new workbookBinding728(
-            this.#r(),
-            workbookBinding14718,
-          );
-        return (
-          this.#t.push(workbookBinding14719),
-          this.#n.set(workbookBinding14719.id, workbookBinding14719),
-          workbookBinding14719
-        );
-      }
-      replace(workbookInput9437) {
-        this.#t = (workbookInput9437 ?? []).map(
-          (item) => new workbookBinding728(this.#r(), item ?? {}),
-        );
-        this.#n = new Map(this.#t.map((item) => [item.id, item]));
-      }
-      toProto() {
-        return this.#t.map((item) => item.toProto());
-      }
-      #r() {
-        return this.#e;
-      }
-    };
-  });
-var $H,
-  workbookBinding1325,
-  workbookBinding1326,
-  workbookBinding1327,
-  workbookBinding1328,
-  workbookBinding1329,
-  workbookBinding1330 = esmInit(() => {
-    $H = "auto";
-    workbookBinding1325 = (workbookInput13683 = 1) => ({
-      mode: "fr",
-      value: workbookBinding1329(workbookInput13683, "compose.fr(value)"),
-    });
-    workbookBinding1326 = (workbookInput7467, workbookInput7468) => {
-      if (!Number.isInteger(workbookInput7467) || workbookInput7467 <= 0)
-        throw Error(
-          "compose.repeat(count, value) count must be a positive integer.",
-        );
-      return Array.from(
-        {
-          length: workbookInput7467,
-        },
-        () => workbookInput7468,
-      );
-    };
-    workbookBinding1327 = (
-      workbookInput5395,
-      workbookInput5396 = "compose.track",
-    ) => {
-      if (workbookInput5395 === "auto") return workbookInput5395;
-      if (workbookInput5395.mode === "fr")
-        return {
-          mode: "fr",
-          value: workbookBinding1329(
-            workbookInput5395.value,
-            `${workbookInput5396}.fr.value`,
-          ),
-        };
-      if (workbookInput5395.mode === "fixed")
-        return {
-          mode: "fixed",
-          value: workbookBinding1329(
-            workbookInput5395.value,
-            `${workbookInput5396}.fixed.value`,
-          ),
-        };
-      throw Error(`${workbookInput5396} must be auto, fr(...), or fixed(...).`);
-    };
-    workbookBinding1328 = (
-      workbookInput8124,
-      workbookInput8125 = "compose.tracks",
-    ) => {
-      if (!Array.isArray(workbookInput8124) || workbookInput8124.length === 0)
-        throw Error(`${workbookInput8125} must include at least one track.`);
-      return workbookInput8124.map((item, index) =>
-        workbookBinding1327(item, `${workbookInput8125}[${index}]`),
-      );
-    };
-    workbookBinding1329 = (workbookInput10148, workbookInput10149) => {
-      if (!Number.isFinite(workbookInput10148) || workbookInput10148 <= 0)
-        throw Error(`${workbookInput10149} must be a positive number.`);
-      return workbookInput10148;
-    };
-  });
-var workbookBinding1347,
-  pDe = esmInit(() => {
-    workbookBinding383();
-    workbookBt();
-    workbookBinding433();
-    workbookBinding1347 = class {
-      #e;
-      #t;
-      #n = "text";
-      #r;
-      #i;
-      #a;
-      constructor(workbookInput7628) {
-        this.#t = workbookInput7628.name;
-        this.#r = workbookInput7628.isBuiltIn ?? false;
-        this.#i = workbookInput7628.description;
-        this.#a = workbookInput7628.usageHint;
-        this.#e = new workbookVt(workbookInput7628.textStyle);
-      }
-      get name() {
-        return this.#t;
-      }
-      get kind() {
-        return this.#n;
-      }
-      get isBuiltIn() {
-        return this.#r;
-      }
-      get description() {
-        return this.#i;
-      }
-      set description(workbookInput14544) {
-        this.#i = workbookInput14544;
-      }
-      get usageHint() {
-        return this.#a;
-      }
-      set usageHint(workbookInput14720) {
-        this.#a = workbookInput14720;
-      }
-      get bold() {
-        return this.#e.bold;
-      }
-      set bold(workbookInput14721) {
-        this.#e.bold = workbookInput14721;
-      }
-      get italic() {
-        return this.#e.italic;
-      }
-      set italic(workbookInput14317) {
-        this.#e.italic = workbookInput14317;
-      }
-      get fontSize() {
-        return this.#e.fontSize;
-      }
-      set fontSize(workbookInput13942) {
-        this.#e.fontSize = workbookInput13942;
-      }
-      get underline() {
-        return this.#e.underline;
-      }
-      set underline(workbookInput13735) {
-        this.#e.underline = workbookInput13735;
-      }
-      get alignment() {
-        return workbookHelper100(this.#e.alignment);
-      }
-      set alignment(workbookInput12561) {
-        this.#e.alignment = workbookInput12561
-          ? $f(workbookInput12561)
-          : undefined;
-      }
-      get color() {
-        return this.#o(this.#e.fill);
-      }
-      set color(workbookInput14619) {
-        this.#e.fill = workbookInput14619;
-      }
-      get textStyle() {
-        return this.#e;
-      }
-      describe() {
-        return {
-          name: this.#t,
-          kind: this.#n,
-          description: this.#i,
-          usageHint: this.#a,
-          isBuiltIn: this.#r,
-        };
-      }
-      #o(workbookInput10091) {
-        if (!workbookInput10091) return;
-        let workbookBinding20572 = workbookInput10091.color.toProto();
-        if (workbookBinding20572)
-          return new workbookBinding382({
-            type: "proto",
-            proto: workbookBinding20572,
-          });
-      }
-    };
-  }),
-  workbookBinding1348,
-  workbookBinding1349,
-  mDe = esmInit(() => {
-    pDe();
-    workbookBinding1348 = [
-      {
-        options: {
-          name: "title",
-          isBuiltIn: true,
-          description: "Primary slide title",
-          usageHint:
-            "Use 'title' for the main slide heading, usually once per slide.",
-        },
-        configure: (workbookInput11647) => {
-          workbookInput11647.bold = true;
-          workbookInput11647.fontSize = 36;
-          workbookInput11647.alignment = "center";
-        },
-      },
-      {
-        options: {
-          name: "heading1",
-          isBuiltIn: true,
-          description: "Section heading inside slides",
-          usageHint: "Use 'heading1' for major sections or standout headings.",
-        },
-        configure: (workbookInput11740) => {
-          workbookInput11740.bold = true;
-          workbookInput11740.fontSize = 28;
-          workbookInput11740.alignment = "left";
-        },
-      },
-      {
-        options: {
-          name: "heading2",
-          isBuiltIn: true,
-          description: "Sub-heading within content blocks",
-          usageHint:
-            "Use 'heading2' for secondary headings beneath a heading1.",
-        },
-        configure: (workbookInput11741) => {
-          workbookInput11741.bold = true;
-          workbookInput11741.fontSize = 22;
-          workbookInput11741.alignment = "left";
-        },
-      },
-      {
-        options: {
-          name: "body",
-          isBuiltIn: true,
-          description: "Default body copy",
-          usageHint: "Use 'body' for standard paragraphs and descriptive text.",
-        },
-        configure: (workbookInput12620) => {
-          workbookInput12620.fontSize = 18;
-          workbookInput12620.alignment = "left";
-        },
-      },
-      {
-        options: {
-          name: "list",
-          isBuiltIn: true,
-          description: "Bulleted list formatting",
-          usageHint: "Use 'list' for bulleted bodies when enumerating items.",
-        },
-        configure: (workbookInput12621) => {
-          workbookInput12621.fontSize = 18;
-          workbookInput12621.alignment = "left";
-        },
-      },
-      {
-        options: {
-          name: "numberedList",
-          isBuiltIn: true,
-          description: "Numbered list formatting",
-          usageHint:
-            "Use 'numberedList' for ordered lists or step-wise instructions.",
-        },
-        configure: (workbookInput12622) => {
-          workbookInput12622.fontSize = 18;
-          workbookInput12622.alignment = "left";
-        },
-      },
-    ];
-    workbookBinding1349 = class {
-      #e;
-      constructor() {
-        this.#e = new Map();
-        this.#t();
-      }
-      get(workbookInput10245) {
-        let workbookBinding20705 = this.#e.get(workbookInput10245);
-        if (!workbookBinding20705)
-          throw Error(`Style '${workbookInput10245}' does not exist.`);
-        return workbookBinding20705;
-      }
-      add(workbookInput8993) {
-        let workbookBinding19529 = this.#e.get(workbookInput8993);
-        if (workbookBinding19529) return workbookBinding19529;
-        let workbookBinding19530 = new workbookBinding1347({
-          name: workbookInput8993,
-          isBuiltIn: false,
-        });
-        return (
-          this.#e.set(workbookInput8993, workbookBinding19530),
-          workbookBinding19530
-        );
-      }
-      describe(workbookInput9197) {
-        return typeof workbookInput9197 == "string"
-          ? this.get(workbookInput9197).describe()
-          : Array.from(this.#e.values()).map((item) => item.describe());
-      }
-      resolveTextStyle(workbookInput12743) {
-        return this.#e.get(workbookInput12743)?.textStyle;
-      }
-      #t() {
-        for (let workbookBinding20990 of workbookBinding1348) {
-          let workbookBinding21574 = new workbookBinding1347(
-            workbookBinding20990.options,
-          );
-          workbookBinding20990.configure?.(workbookBinding21574);
-          this.#e.set(workbookBinding21574.name, workbookBinding21574);
-        }
-      }
-    };
-  });
+  workbookBinding1229();
+  _workbookJ();
+  workbookT();
+  workbookZ();
+  /* Binding1266 drained */ void 0;
+  zTe();
+  GTe();
+  eEe();
+  rEe();
+  fEe();
+  workbookO();
+  workbookBinding644();
+  wr();
+});
 var xDe = esmInit(() => {
   workbookBinding1363();
   workbookBinding1357();
@@ -11999,47 +11603,6 @@ var workbookBinding1725,
 var XRe = esmInit(() => {
   workbookBinding647();
 });
-var tze,
-  nze = esmInit(() => {
-    tze = class {
-      #e = [];
-      #t = new WeakMap();
-      #n = {};
-      #r = {};
-      constructor(workbookInput16449) {}
-      record(workbookInput15264) {
-        this.#e.push(workbookInput15264);
-      }
-      getPatch() {
-        return [...this.#e];
-      }
-      getIdMap() {
-        return {
-          ...this.#n,
-        };
-      }
-      assignAlias(workbookInput9040, workbookInput9041, workbookInput9042) {
-        let workbookBinding19602 = this.#t.get(workbookInput9040);
-        if (workbookBinding19602) return workbookBinding19602;
-        let workbookBinding19603 = this.#i(workbookInput9042);
-        return (
-          this.#t.set(workbookInput9040, workbookBinding19603),
-          (this.#n[workbookBinding19603] = workbookInput9041),
-          workbookBinding19603
-        );
-      }
-      targetRefForElement(workbookInput13006, workbookInput13007) {
-        return this.#t.get(workbookInput13006) ?? workbookInput13007;
-      }
-      #i(workbookInput11291) {
-        let workbookBinding21762 = (this.#r[workbookInput11291] ?? 0) + 1;
-        return (
-          (this.#r[workbookInput11291] = workbookBinding21762),
-          `@${workbookInput11291}${workbookBinding21762}`
-        );
-      }
-    };
-  });
 var xze,
   Sze,
   workbookBinding1750,
@@ -14938,215 +14501,7 @@ var workbookBinding1957,
     Qmt = 240;
     $mt = 160;
   });
-var Kht,
-  qht = esmInit(() => {
-    Kht = class {
-      #e = new Map();
-      #t = new Map();
-      #n = [];
-      #r = [];
-      activeSheetName;
-      dialog = null;
-      clipboard = null;
-      showFormulas = false;
-      missingActions = [];
-      constructor(workbookInput12039 = {}) {
-        this.activeSheetName = workbookInput12039.activeSheetName ?? null;
-      }
-      getSheetState(workbookInput9756) {
-        let workbookBinding20290 = this.#e.get(workbookInput9756);
-        if (workbookBinding20290) return workbookBinding20290;
-        let workbookBinding20291 = this.#i(workbookInput9756);
-        return (
-          this.#e.set(workbookInput9756, workbookBinding20291),
-          workbookBinding20291
-        );
-      }
-      setActiveSheetName(workbookInput13455) {
-        this.activeSheetName = workbookInput13455;
-      }
-      renameSheet(workbookInput2149, workbookInput2150) {
-        let workbookBinding9109 = workbookInput2149?.trim(),
-          workbookBinding9110 = workbookInput2150?.trim();
-        if (
-          !workbookBinding9109 ||
-          !workbookBinding9110 ||
-          workbookBinding9109 === workbookBinding9110
-        )
-          return;
-        this.activeSheetName === workbookBinding9109 &&
-          (this.activeSheetName = workbookBinding9110);
-        this.dialog?.args &&
-          this.dialog.args.sheetName === workbookBinding9109 &&
-          (this.dialog = {
-            ...this.dialog,
-            args: {
-              ...this.dialog.args,
-              sheetName: workbookBinding9110,
-            },
-          });
-        this.clipboard?.source.sheetName === workbookBinding9109 &&
-          (this.clipboard = {
-            ...this.clipboard,
-            source: {
-              ...this.clipboard.source,
-              sheetName: workbookBinding9110,
-            },
-          });
-        let workbookBinding9111 = this.#e.get(workbookBinding9109);
-        workbookBinding9111 &&
-          ((workbookBinding9111.sheetName = workbookBinding9110),
-          this.#e.delete(workbookBinding9109),
-          this.#e.set(workbookBinding9110, workbookBinding9111));
-        for (let workbookBinding21553 of this.#t.values())
-          for (let workbookBinding22609 of workbookBinding21553.selections)
-            workbookBinding22609.sheetName === workbookBinding9109 &&
-              (workbookBinding22609.sheetName = workbookBinding9110);
-      }
-      forgetSheet(workbookInput2884) {
-        let workbookBinding10729 = workbookInput2884?.trim();
-        if (workbookBinding10729) {
-          this.activeSheetName === workbookBinding10729 &&
-            (this.activeSheetName = null);
-          this.dialog?.args &&
-            this.dialog.args.sheetName === workbookBinding10729 &&
-            (this.dialog = null);
-          this.clipboard?.source.sheetName === workbookBinding10729 &&
-            (this.clipboard = null);
-          this.#e.delete(workbookBinding10729);
-          for (let [
-            workbookBinding17279,
-            workbookBinding17280,
-          ] of this.#t.entries()) {
-            let workbookBinding18324 = workbookBinding17280.selections.filter(
-              (item) => item.sheetName !== workbookBinding10729,
-            );
-            if (workbookBinding18324.length === 0) {
-              this.#t.delete(workbookBinding17279);
-              continue;
-            }
-            workbookBinding17280.selections = workbookBinding18324;
-          }
-        }
-      }
-      setDialog(workbookInput15170) {
-        this.dialog = workbookInput15170;
-      }
-      setPresenceSelections(
-        workbookInput6417,
-        workbookInput6418,
-        workbookInput6419 = {},
-      ) {
-        if (!workbookInput6417) throw Error("Presence id is required.");
-        let workbookBinding16596 = this.#t.get(workbookInput6417),
-          workbookBinding16597 =
-            workbookInput6419.kind ??
-            workbookBinding16596?.kind ??
-            "collaborator",
-          workbookBinding16598 = workbookInput6418.map((item) => $7(item));
-        this.#t.set(workbookInput6417, {
-          id: workbookInput6417,
-          kind: workbookBinding16597,
-          selections: workbookBinding16598,
-        });
-      }
-      clearPresenceSelections(workbookInput3536, workbookInput3537 = {}) {
-        if (!workbookInput3536) throw Error("Presence id is required.");
-        let workbookBinding12005 = this.#t.get(workbookInput3536);
-        if (!workbookBinding12005) return;
-        if (!workbookInput3537.sheetName) {
-          this.#t.delete(workbookInput3536);
-          return;
-        }
-        let workbookBinding12006 = workbookBinding12005.selections.filter(
-          (item) => item.sheetName !== workbookInput3537.sheetName,
-        );
-        if (workbookBinding12006.length === 0) {
-          this.#t.delete(workbookInput3536);
-          return;
-        }
-        this.#t.set(workbookInput3536, {
-          id: workbookBinding12005.id,
-          kind: workbookBinding12005.kind,
-          selections: workbookBinding12006.map((item) => $7(item)),
-        });
-      }
-      getSelectionsForSheet(workbookInput6960) {
-        let workbookBinding17315 = [];
-        for (let workbookBinding19693 of this.#t.values())
-          for (let workbookBinding20943 of workbookBinding19693.selections)
-            workbookBinding20943.sheetName === workbookInput6960 &&
-              workbookBinding17315.push({
-                presenceId: workbookBinding19693.id,
-                kind: workbookBinding19693.kind,
-                ...$7(workbookBinding20943),
-              });
-        return workbookBinding17315;
-      }
-      recordMissingAction(workbookInput13137) {
-        this.missingActions.push(workbookInput13137);
-      }
-      pushUndoEntry(workbookInput13138) {
-        this.#n.push(workbookInput13138);
-        this.#r = [];
-      }
-      popUndoEntry() {
-        return this.#n.pop() ?? null;
-      }
-      pushRedoEntry(workbookInput14769) {
-        this.#r.push(workbookInput14769);
-      }
-      popRedoEntry() {
-        return this.#r.pop() ?? null;
-      }
-      clearHistory() {
-        this.#n = [];
-        this.#r = [];
-      }
-      #i(workbookInput3270) {
-        let workbookBinding11509 = {
-            row: 0,
-            col: 0,
-          },
-          workbookBinding11510 = {
-            r1: 0,
-            c1: 0,
-            r2: 0,
-            c2: 0,
-          };
-        return {
-          sheetName: workbookInput3270,
-          mode: "grid",
-          activeCell: {
-            ...workbookBinding11509,
-          },
-          anchorCell: {
-            ...workbookBinding11509,
-          },
-          selection: {
-            ...workbookBinding11510,
-          },
-          selectionRanges: [
-            {
-              ...workbookBinding11510,
-            },
-          ],
-          activeRangeIndex: 0,
-          extendSelection: false,
-          selectAllStage: 0,
-          selectionCornerIndex: 0,
-          selectionVisibility: "all",
-          editBuffer: null,
-          scroll: {
-            row: 0,
-            col: 0,
-          },
-          copyOutline: null,
-        };
-      }
-    };
-  }),
-  workbookBinding1963,
+var workbookBinding1963,
   Jht,
   Yht,
   Xht = esmInit(() => {
