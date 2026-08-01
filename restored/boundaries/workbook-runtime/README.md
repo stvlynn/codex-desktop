@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~22.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~21.9k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1744,3 +1744,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: remaining ≥8 live (667/379 nests, Cot/rst/…); Nrt after coupon ensure; _workbookS when presentation leave-behinds drain
+
+## Wave 141 (Stage-3 Binding833/667 + formula ≥8)
+
+- Boundary 22315 → 21976 (Δ -339)
+- Peeled: merged-range-index Binding833+helper379+oye; placeholder-resolve helper667; formula-eng-mids series wrappers t2e/r2e/$2e/u4e…n3e + lookup mids Cot/Pot/Iot/963/Bot/965/rst/ist/sst; chart $O/$I; true-dead Qse/$ye only
+- Skipped: Binding1344 class (deps Binding1340/1294/1342 remain); _3e/v3e (Binding1858); Dot/Tot/Eot stack; wire-only ≥6 (387/426/485…/OTe/kTe/UDe — kept for hooks); wirePresentationRecipes; vYe/_workbookS; helper824
+- Leave-behind: wirePresentationRecipes false inventory; Nwe stub for Iwe→zge; vYe 1-line stub; _workbookS still entangled (~1.2k, no clean owned slice)
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: Binding1344 when 1340/1294/1342 drain; formula _3e/v3e + Dot stack; wire-owned ≥6 peels into chart/compose modules; _workbookS when presentation leave-behinds clear

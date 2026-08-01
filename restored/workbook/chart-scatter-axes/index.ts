@@ -9,3 +9,5 @@ export {
 } from "./chart-scatter-axes-impl";
 
 export { reservePlotAxes } from "./reserve-plot-axes-impl";
+
+export { $I } from "./plan-tick-counts-impl";

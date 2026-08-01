@@ -167,3 +167,33 @@ export {
   s0e,
 } from "./formula-erf-radix-impl";
 export { n2e, Lot, Vot, Rot } from "./formula-ifs-impl";
+
+export {
+  t2e,
+  r2e,
+  $2e,
+  u4e,
+  v4e,
+  y4e,
+  T4e,
+  D4e,
+  X4e,
+  Z4e,
+  Q4e,
+  $4e,
+  e3e,
+  t3e,
+  n3e,
+} from "./formula-series-wrappers-impl";
+
+export {
+  Cot,
+  Pot,
+  Iot,
+  workbookHelper963,
+  Bot,
+  workbookHelper965,
+  rst,
+  ist,
+  sst,
+} from "./formula-lookup-mids-impl";

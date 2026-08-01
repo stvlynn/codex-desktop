@@ -23,9 +23,7 @@ export {
   O_,
   A_,
 } from "./docx-scheme-constants";
-export {
-  mergeParagraphStyleWithBulletExclusivity,
-} from "./merge-bullet-paragraph-style";
+export { mergeParagraphStyleWithBulletExclusivity } from "./merge-bullet-paragraph-style";
 export type { BulletParagraphStyle } from "./merge-bullet-paragraph-style";
 export {
   placeholderTypeToLevelStyleKey,
@@ -85,3 +83,5 @@ export {
   ensureThemeTypefaceInit,
   ensurePlaceholderResolveClusterInit,
 } from "./ensure-placeholder-resolve-init";
+
+export { workbookHelper667 } from "./clone-level-style-impl";

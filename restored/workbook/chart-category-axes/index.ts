@@ -12,3 +12,5 @@ export {
   jye,
   workbookHelper419,
 } from "./normalize-chart-categories-impl";
+
+export { $O } from "./is-max-min-orientation-impl";
