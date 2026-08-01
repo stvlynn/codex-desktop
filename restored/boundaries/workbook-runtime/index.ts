@@ -292,7 +292,6 @@ import {
   DATA_GRANOLA_ZERO_DESCENT as workbookBinding482,
 } from "../../workbook/math-ml";
 import {
-  wireWorksheetDrawingsBoundaryHooks,
   ensureWorksheetDrawingsInit as workbookBinding789,
   createWorksheetDrawingContext as Sve,
   getChartDrawingClass,
@@ -1183,37 +1182,6 @@ wireComposeLayoutBoundaryHooks({
   getWorkbookTt: () => workbookTt,
 });
 
-wireWorksheetDrawingsBoundaryHooks({
-  ensureWorkbookEt: () => {
-    workbookEt();
-  },
-  ensureWorkbookKt: () => {
-    workbookKt();
-  },
-  ensureBinding662: () => {
-    _C();
-  },
-  ensureJge: () => {
-    Jge();
-  },
-  ensureBinding712: () => {
-    workbookBinding712();
-  },
-  ensureBinding722: () => {
-    workbookBinding722();
-  },
-  ensureBinding739: () => {
-    workbookBinding739();
-  },
-  ensureBinding711: () => {
-    workbookBinding712();
-  },
-  getShapeElementClass: () => workbookBinding736,
-  getChartAssetClass: () => workbookBinding721,
-  getImageAssetClass: () => workbookBinding728,
-  getAxisTitleClass: () => workbookBinding711,
-});
-
 wireSparklinesBoundaryHooks({
   ensureBinding662: () => {
     _C();
@@ -1247,7 +1215,6 @@ var _Ie = (src: any) => {
 var lIe = ensureMermaidSlideAdaptersInit;
 var CIe = ensureMermaidSlideAdaptersInit;
 import {
-  wireEntityQueryBoundaryHooks,
   ensureEntityQueryInit,
   R_t,
   B_t,
@@ -1260,24 +1227,6 @@ import {
   bgt,
   vgt,
 } from "../../workbook/entity-query";
-
-wireEntityQueryBoundaryHooks({
-  ensureWorkbookEt: () => {
-    workbookEt();
-  },
-  ensureWr: () => {
-    wr();
-  },
-  ensureXgt: () => {
-    xgt();
-  },
-  ensureYgt: () => {
-    ygt();
-  },
-  bgt: (...args: any[]) => bgt(...args),
-  vgt: (...args: any[]) => vgt(...args),
-  getEmuScale: () => workbookBinding409,
-});
 
 // Thin aliases for WorkbookN / create-ops env bag (legacy Binding1967 cluster).
 import {
@@ -1760,7 +1709,6 @@ import {
 // Thin aliases: chart-jsx-lower cluster drained (wave-93).
 
 import {
-  wireComposeJsxLowerBoundaryHooks,
   parseComposeInput as vke,
   parseSlideComposeInput as yke,
   splitBackgroundChildren as workbookHelper743,
@@ -1876,53 +1824,6 @@ import {
   flattenFragments as workbookHelper712,
 } from "../../workbook/compose-jsx-lower";
 
-wireComposeJsxLowerBoundaryHooks({
-  boxRow: (...args: any[]) => workbookBinding1508(...args),
-  boxCol: (...args: any[]) => workbookBinding1509(...args),
-  boxGrid: (...args: any[]) => workbookBinding1510(...args),
-  bh700: (...args: any[]) => workbookHelper700(...args),
-  bh701: (...args: any[]) => workbookHelper701(...args),
-  lowerSemanticTag: (...args: any[]) => qOe(...args),
-  isSemanticTag: (...args: any[]) => lke(...args),
-  ensureUke: () => {
-    uke();
-  },
-  ensureBinding1544: () => {
-    workbookBinding1544();
-  },
-  ensureBinding1531: () => {
-    workbookBinding1531();
-  },
-  ensureBinding412: () => {
-    workbookBinding412();
-  },
-  ensureBinding1539: () => {
-    ensureSemanticTagSetsInit();
-  },
-  assertAllowedProps: (...args: any[]) => workbookHelper716(...args),
-  panelPropAllowlist: undefined as any,
-  flattenChildren: (...args: any[]) => QOe(...args),
-  isInlineOrTextChild: (...args: any[]) => jOe(...args),
-  resolveTagKind: (...args: any[]) => tke(...args),
-  styleFromProps: (...args: any[]) => rke(...args),
-  createBoxElement: (...args: any[]) => workbookHelper713(...args),
-  elementName: (...args: any[]) => workbookHelper717(...args),
-  sizeToken: (...args: any[]) => workbookHelper721(...args),
-  attachChildren: (...args: any[]) => $Oe(...args),
-  createShapeElement: (...args: any[]) => workbookBinding1511(...args),
-  isLoweredKindBag: (...args: any[]) => cke(...args),
-  hasVisualChrome: (...args: any[]) => ike(...args),
-});
-
-import { cjlH as __cjlHWave104 } from "../../workbook/compose-jsx-lower";
-Object.defineProperties(__cjlHWave104, {
-  panelPropAllowlist: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1545,
-  },
-});
-
 // Thin aliases: compose-jsx-lower cluster drained (wave-93).
 
 import {
@@ -1990,7 +1891,6 @@ wireChartAxisTicksBoundaryHooks({
 });
 
 import {
-  wireShapeGeometryPaintBoundaryHooks,
   paintShapeGeometry as workbookHelper616,
   workbookHelper571,
   workbookHelper572,
@@ -2040,25 +1940,6 @@ import {
   pathCommandsToClipPoints as __cTeForSgp,
 } from "../../workbook/shape-path";
 
-wireShapeGeometryPaintBoundaryHooks({
-  bh608: (...args: any[]) => workbookHelper608(...args),
-  bh612: (...args: any[]) => workbookHelper612(...args),
-  bh613: (...args: any[]) => workbookHelper613(...args),
-  bh617: (...args: any[]) => workbookHelper617(...args),
-  bh618: (...args: any[]) => workbookHelper618(...args),
-  bh623: (...args: any[]) => workbookHelper623(...args),
-  bh630: (...args: any[]) => workbookHelper630(...args),
-  resolveShapeFill: (...args: any[]) => Gwe(...args),
-  resolveShapeEffects: (...args: any[]) => Kwe(...args),
-  isConnectorGeometry: (...args: any[]) => isConnectorGeometryImpl(...args),
-  paintConnectorRoute: (...args: any[]) => Qwe(...args),
-  drawCustomPaths: (...args: any[]) => __RweForSgp(...args),
-  clipShapeGeometry: (...args: any[]) => __cTeForSgp(...args),
-  paintShapeAdjustments: (...args: any[]) => Vwe(...args),
-  drawConnectorArrowheads: (...args: any[]) =>
-    getDrawConnectorArrowheads()(...args),
-});
-
 import {
   wireTableFrameLayoutBoundaryHooks,
   layoutTableFrame as workbookA,
@@ -2086,44 +1967,11 @@ wireTableFrameLayoutBoundaryHooks({
 });
 
 import {
-  wireSlideCanvasRenderBoundaryHooks,
   renderSlideCanvas as vEe,
   paintSlideText as nEe,
   paintViewOverlay as dEe,
-  scrH as __scrHWave105,
   workbookHelper654,
 } from "../../workbook/slide-canvas-render";
-
-wireSlideCanvasRenderBoundaryHooks({
-  paintSlideShape: (...args: any[]) => BTe(...args),
-  paintSlideGroup: (...args: any[]) => _Ee(...args),
-  paintSlideImage: (...args: any[]) => hEe(...args),
-  isHiddenElement: (...args: any[]) => pEe(...args),
-  warmSlideImages: (...args: any[]) => $Te(...args),
-  bh615: (...args: any[]) => workbookHelper615(...args),
-  bh654: (...args: any[]) => workbookHelper654(...args),
-  applyFrameTransform: (...args: any[]) => workbookHelper290(...args),
-  renderDrawingShape: (...args: any[]) => workbookHelper614(...args),
-  layoutPaintedText: (...args: any[]) => workbookHelper110(...args),
-  masterDefaults: (...args: any[]) => workbookHelper218(...args),
-  emuRotation: (...args: any[]) => workbookHelper287(...args),
-  paintTextElement: (...args: any[]) => workbookX(...args),
-  elementTypes: undefined as any,
-  guideEnum: undefined as any,
-});
-
-Object.defineProperties(__scrHWave105, {
-  elementTypes: {
-    enumerable: true,
-    configurable: true,
-    get: () => j,
-  },
-  guideEnum: {
-    enumerable: true,
-    configurable: true,
-    get: () => tt,
-  },
-});
 
 // Thin aliases: chart-axis-ticks + shape-geometry-paint + table-frame-layout + slide-canvas-render drained (wave-94).
 
@@ -2757,9 +2605,7 @@ Object.defineProperty(__clnHWave109, "emuToPx", {
 });
 
 import {
-  wireChartGroupScalesBoundaryHooks,
   buildChartGroupScales as workbookHelper423,
-  cgsH as __cgsHWave99,
   buildNiceChartScale as workbookHelper398,
   wireChartContinuousScaleBoundaryHooks,
   ccsH as __ccsHWave125,
@@ -2802,32 +2648,6 @@ import {
   seriesValueDomain as workbookHelper390,
   categoryCount as _ye,
 } from "../../workbook/chart-stacked-domain";
-
-wireChartGroupScalesBoundaryHooks({
-  expandForecastCategories: (...args: any[]) => Mye(...args),
-  isMaxMinOrientation: (...args: any[]) => $O(...args),
-  waterfallForceZero: (...args: any[]) => Eye(...args),
-  buildContinuousScale: (...args: any[]) => _O(...args),
-  categoryPaddingFallback: undefined as any,
-  bh388: (...args: any[]) => workbookHelper388(...args),
-  bh391: (...args: any[]) => workbookHelper391(...args),
-  bh395: (...args: any[]) => workbookHelper395(...args),
-  bh396: (...args: any[]) => workbookHelper396(...args),
-  bh397: (...args: any[]) => workbookHelper397(...args),
-  bh400: (...args: any[]) => workbookHelper400(...args),
-  bh402: (...args: any[]) => workbookHelper402(...args),
-  bh403: (...args: any[]) => workbookHelper403(...args),
-  bh419: (...args: any[]) => workbookHelper419(...args),
-  bh422: (...args: any[]) => workbookHelper422(...args),
-  scaleLog: (...args: any[]) => appInitialFat(...args),
-});
-Object.defineProperties(__cgsHWave99, {
-  categoryPaddingFallback: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding857,
-  },
-});
 
 wireChartAxisScaleDomainBoundaryHooks({
   majorUnitMap: undefined as any,
@@ -2933,119 +2753,14 @@ wireSlideImagePaintBoundaryHooks({
 });
 
 import {
-  wireChartLegendLayoutBoundaryHooks,
   layoutChartLegend as workbookHelper490,
   legendEntries as ibe,
   measureMapLegend as abe,
   buildMapLegendRamp as workbookHelper489,
   packLegendRows as sbe,
   balanceLegendRows as cbe,
-  cllH as __cllHWave100,
   workbookHelper466,
 } from "../../workbook/chart-legend-layout";
-
-wireChartLegendLayoutBoundaryHooks({
-  isPieLike: (...args: any[]) => tbe(...args),
-  bh347: (...args: any[]) => workbookHelper347(...args),
-  filterDeleted: (...args: any[]) => workbookHelper485(...args),
-  treemapEntries: (...args: any[]) => Qye(...args),
-  seriesChartTypes: (...args: any[]) => rbe(...args),
-  reverseLegend: (...args: any[]) => nbe(...args),
-  ChartAsset: undefined as any,
-  CHART_TYPE_TREEMAP: undefined as any,
-  CHART_TYPE_WATERFALL: undefined as any,
-  swatchSize: undefined as any,
-  legendPad: undefined as any,
-  labelGap: undefined as any,
-  rampHeight: undefined as any,
-  seriesGap: undefined as any,
-  measureMapLegend: (...args: any[]) => abe(...args),
-  legendEntries: (...args: any[]) => ibe(...args),
-  packLegendRows: (...args: any[]) => sbe(...args),
-  bh465: (...args: any[]) => workbookHelper465(...args),
-  bh466: (...args: any[]) => workbookHelper466(...args),
-  bh489: (...args: any[]) => workbookHelper489(...args),
-  bh152: (...args: any[]) => workbookHelper152(...args),
-  bh387: (...args: any[]) => workbookHelper387(...args),
-  bh484: (...args: any[]) => workbookHelper484(...args),
-  bh486: (...args: any[]) => workbookHelper486(...args),
-  bh487: (...args: any[]) => workbookHelper487(...args),
-  bh488: (...args: any[]) => workbookHelper488(...args),
-  markerLabelGap: undefined as any,
-  legendPad: undefined as any,
-  entryGapStacked: undefined as any,
-  entryRowHeight: undefined as any,
-  packedRowGap: undefined as any,
-  waterfallEntries: (...args: any[]) => ebe(...args),
-  paintImagePlaceholder: (...args: any[]) => KTe(...args),
-});
-Object.defineProperties(__cllHWave100, {
-  markerLabelGap: {
-    enumerable: true,
-    configurable: true,
-    get: () => _j,
-  },
-  legendPad: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding905,
-  },
-  entryGapStacked: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding907,
-  },
-  entryRowHeight: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding908,
-  },
-  packedRowGap: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding909,
-  },
-  ChartAsset: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding721,
-  },
-  CHART_TYPE_TREEMAP: {
-    enumerable: true,
-    configurable: true,
-    get: () => Cn.CHART_TYPE_TREEMAP,
-  },
-  CHART_TYPE_WATERFALL: {
-    enumerable: true,
-    configurable: true,
-    get: () => Cn.CHART_TYPE_WATERFALL,
-  },
-  swatchSize: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding899,
-  },
-  legendPad: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding900,
-  },
-  labelGap: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding901,
-  },
-  rampHeight: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding902,
-  },
-  seriesGap: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding903,
-  },
-});
 
 import {
   wireChartAreaSeriesBoundaryHooks,
@@ -3598,13 +3313,6 @@ wireXlsxWorkbookValidateBoundaryHooks({
   initAddressUtils,
 });
 
-__wireCjlWave116({
-  ...(__cjlHWave116 as any),
-  parseUtilityClassTextStyle: (...args: any[]) => workbookHelper262(...args),
-  isCssDeclarationText: (...args: any[]) => workbookHelper80(...args),
-  parseTextStyleCssDeclarations: (...args: any[]) => workbookHelper81(...args),
-});
-
 wireComposeInlineTextBoundaryHooks({
   mergeRunOverride: (...args: any[]) => IOe(...args),
   isEmptyParagraph: (...args: any[]) => KOe(...args),
@@ -3671,85 +3379,13 @@ wireChartWaterfallBarBoundaryHooks({
 });
 
 import {
-  wireChartPieSeriesBoundaryHooks,
   paintPieSeries as workbookHelper496,
   paintPieLabels as fbe,
   paintDonutArcLabels as qSe,
-  cpsH as __cpsHWave102,
   workbookHelper568,
 } from "../../workbook/chart-pie-series";
 
 import { ube, dbe } from "../../workbook/chart-pie-series";
-
-wireChartPieSeriesBoundaryHooks({
-  contrastPair: (...args: any[]) => JSe(...args),
-  formatValue: (...args: any[]) => workbookHelper478(...args),
-  minArcLen: undefined as any,
-  minRing: undefined as any,
-  minValueArc: undefined as any,
-  minValueRing: undefined as any,
-  nameFont: undefined as any,
-  valueFont: undefined as any,
-  lineGap: undefined as any,
-  sliceMid: (...args: any[]) => dbe(...args),
-  bh347: (...args: any[]) => workbookHelper347(...args),
-  bh469: (...args: any[]) => workbookHelper469(...args),
-  bh474: (...args: any[]) => workbookHelper474(...args),
-  bh482: (...args: any[]) => workbookHelper482(...args),
-  bh152: (...args: any[]) => workbookHelper152(...args),
-  resolveColor: (...args: any[]) => workbookSt(...args),
-  bh212: (...args: any[]) => workbookHelper212(...args),
-  bh433: (...args: any[]) => workbookHelper433(...args),
-  defaultMuted: undefined as any,
-  chartFontFamily: undefined as any,
-});
-Object.defineProperties(__cpsHWave102, {
-  defaultMuted: {
-    enumerable: true,
-    configurable: true,
-    get: () => $D,
-  },
-  chartFontFamily: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding837,
-  },
-  minArcLen: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1202,
-  },
-  minRing: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1203,
-  },
-  minValueArc: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1204,
-  },
-  minValueRing: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1205,
-  },
-  nameFont: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1206,
-  },
-  valueFont: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1207,
-  },
-  lineGap: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1208,
-  },
-});
 
 import {
   wireChartBubbleSeriesBoundaryHooks,
@@ -5168,7 +4804,6 @@ wireFloatingPlacementBoundaryHooks({
 });
 
 import {
-  wireComposeElementSnapshotBoundaryHooks,
   buildComposeElementSnapshot as workbookHelper678,
   snapshotParagraphs as workbookHelper685,
   tableCellsFromElement as iOe,
@@ -5213,36 +4848,6 @@ import {
   round2 as workbookHelper696,
 } from "../../workbook/compose-element-snapshot";
 
-wireComposeElementSnapshotBoundaryHooks({
-  runPlain: (...args: any[]) => rOe(...args),
-  bh681: (...args: any[]) => workbookHelper681(...args),
-  bh682: (...args: any[]) => workbookHelper682(...args),
-  bh683: (...args: any[]) => workbookHelper683(...args),
-  bh686: (...args: any[]) => workbookHelper686(...args),
-  bh688: (...args: any[]) => workbookHelper688(...args),
-  bh689: (...args: any[]) => workbookHelper689(...args),
-  bh695: (...args: any[]) => workbookHelper695(...args),
-  bh696: (...args: any[]) => workbookHelper696(...args),
-  paragraphsFromElement: (...args: any[]) => $De(...args),
-  tableCellsFromElement: (...args: any[]) => iOe(...args),
-  cellsPreview: (...args: any[]) => aOe(...args),
-  cellsBbox: (...args: any[]) => GDe(...args),
-  mapKind: (...args: any[]) => UDe(...args),
-  resolvedFontSize: (...args: any[]) => KDe(...args),
-  resolvedTextStyle: (...args: any[]) => qDe(...args),
-  imageCrop: (...args: any[]) => LDe(...args),
-  imageFit: (...args: any[]) => RDe(...args),
-  imageMask: (...args: any[]) => zDe(...args),
-  assetRef: (...args: any[]) => gOe(...args),
-  tableElementClass: undefined as any,
-  geometrySnapshot: (...args: any[]) => TOe(...args),
-  lineWidth: (...args: any[]) => wOe(...args),
-  bh684: (...args: any[]) => workbookHelper684(...args),
-  protoText: (...args: any[]) => eOe(...args),
-  fillColor: (...args: any[]) => SOe(...args),
-  lineColor: (...args: any[]) => COe(...args),
-  fillImage: (...args: any[]) => _Oe(...args),
-});
 import {
   wireFormulaYearfracBoundaryHooks,
   yearFrac as workbookHelper884,
@@ -5540,7 +5145,6 @@ import {
 var ensureFormulaOpcodesCluster = ensureFormulaOpcodesInit;
 import {
   ensureTableElementInit,
-  wireTableElementBoundaryHooks,
   _workbookH,
   _workbookM,
   workbookBinding1331,
@@ -5578,39 +5182,6 @@ import {
 
 var ensureTableElementCluster = ensureTableElementInit;
 
-wireTableElementBoundaryHooks({
-  ensureYEe: () => {
-    YEe();
-  },
-  ensureBinding1321: () => {
-    workbookBinding1321();
-  },
-  ensureQEe: () => {
-    QEe();
-  },
-  ensureDollarEe: () => {
-    $Ee();
-  },
-  ensureBinding1330: () => {
-    workbookBinding1330();
-  },
-  get Binding1316() {
-    return workbookBinding1316;
-  },
-  get Binding1317() {
-    return workbookBinding1317;
-  },
-  get Binding1323() {
-    return workbookBinding1323;
-  },
-  get Binding1324() {
-    return workbookBinding1324;
-  },
-  get Binding1327() {
-    return workbookBinding1327;
-  },
-});
-
 var ensureTableRowRangeCluster = ensureTableRowRangeInit;
 
 wireTableRowRangeBoundaryHooks({});
@@ -5620,7 +5191,6 @@ wireTableRowRangeBoundaryHooks({});
 void Z_t;
 
 import {
-  wireFormulaStatsBoundaryHooks,
   ensureFormulaStatsInit,
   workbookBinding1874,
   YXe,
@@ -6287,36 +5857,6 @@ import {
   iLe,
 } from "../../workbook/presentation-slide";
 
-wireFormulaStatsBoundaryHooks({
-  fn835: workbookHelper835,
-  fn841: workbookHelper841,
-  fn845: workbookHelper845,
-  fn846: workbookHelper846,
-  fn847: workbookHelper847,
-  fn848: workbookHelper848,
-  fn849: workbookHelper849,
-  fn850: workbookHelper850,
-  fn858: averageArgs,
-  fn859: averageNumericArgs,
-  fn864: modeArgs,
-  fn865: geomeanArgs,
-  fn869: romanNumeral,
-  fn870: sqrtFloor,
-  fn872: arabicNumeral,
-  fn875: sumproductArgs,
-  fn880: workbookHelper880,
-  fn881: workbookHelper881,
-  fn887: workbookHelper887,
-  fn888: workbookHelper888,
-  ZXe: ZXe,
-  FZe: FZe,
-  MZe: MZe,
-  PZe: PZe,
-  tZe: tZe,
-  cZe: cZe,
-  jQe: jQe,
-});
-
 // Thin alias: cluster ensure for formula engine stats catalog.
 
 var ensureFormulaRegistryCluster = ensureFormulaRegistryInit;
@@ -6753,7 +6293,6 @@ void Zme;
 // Thin alias: cluster ensure for Excel table/pivot styles (Nme…ahe).
 
 import {
-  wireGoogleSlidesAdapterBoundaryHooks,
   ensureGoogleSlidesClusterInit,
   ensurePresentationTemplatesInit as dJe,
   ensureGoogleSlidesUnitsInit as pJe,
@@ -6780,26 +6319,6 @@ import {
   GoogleSlidesAdapter,
 } from "../../workbook/google-slides-adapter";
 
-wireGoogleSlidesAdapterBoundaryHooks({
-  workbookEt: () => {
-    workbookEt();
-  },
-  emuToPoints: (value: any) => of(value),
-  getPtPerEmu: () => workbookBinding410,
-  ensureZDollar: () => {
-    Z$();
-  },
-  ensureShapeInit: () => {
-    workbookBinding739();
-  },
-  ensureTextParagraphsInit: () => {
-    workbookBinding1389();
-  },
-  getShapeClass: () => workbookBinding736,
-  getSlideClass: () => X$,
-  getNotesClass: () => workbookBinding1388,
-});
-
 void oJe;
 void sJe;
 void cJe;
@@ -6823,7 +6342,6 @@ void pJe;
 // Thin alias: cluster ensure for Google Slides adapter (oJe/pJe/SJe).
 
 import {
-  wireComposeDslBoundaryHooks,
   ensureComposeDslInit,
   ensureComposeLayoutMetaInit as DOe,
   ensureComposeSizeHelpersInit as workbookBinding1499,
@@ -6869,29 +6387,6 @@ import {
   workbookBinding1526,
   workbookBinding1527,
 } from "../../workbook/compose-dsl";
-
-wireComposeDslBoundaryHooks({
-  ensureBinding661: () => {
-    workbookBinding661();
-  },
-  ensureBinding739: () => {
-    workbookBinding739();
-  },
-  ensureBinding1489: () => {
-    workbookBinding1489();
-  },
-  ensureBinding433: () => {
-    workbookBinding433();
-  },
-  ensureBinding1213: () => {
-    workbookBinding1213();
-  },
-  ensureBinding1330: () => {
-    workbookBinding1330();
-  },
-  parseComposeTracks: (tracks: any, label?: string) =>
-    workbookBinding1328(tracks, label),
-});
 
 void workbookBinding1490;
 void workbookBinding1491;

@@ -1,7 +1,12 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-64: boundary deps for entity-query.
-// Stage-3 wave-133: bgt/vgt local impls.
+// Stage-3 wave-159: entity-query deps via direct imports
+// (wireEntityQueryBoundaryHooks leave-behind retired).
+// xgt/ygt inlined to avoid workbook-core ↔ entity-query cycle.
 
+import { workbookEt, workbookBinding409 } from "../emu-units";
+import { wr } from "../presentation-protobuf";
+import { initAddressMetrics } from "../../utils/spreadsheet-address-utils";
+import { ensureStylesheetInit } from "../stylesheet";
 import { bgt as bgtImpl, vgt as vgtImpl } from "./sheet-used-range-style-impl";
 
 export type EntityQueryBoundaryHooks = {
@@ -14,34 +19,21 @@ export type EntityQueryBoundaryHooks = {
   getEmuScale: () => number;
 };
 
-let hooks: EntityQueryBoundaryHooks | null = null;
-
 export function wireEntityQueryBoundaryHooks(
-  next: EntityQueryBoundaryHooks,
-): void {
-  hooks = next;
-}
-
-function requireHooks(): EntityQueryBoundaryHooks {
-  if (!hooks) {
-    throw new Error(
-      "entity-query boundary hooks not wired (call from workbook-runtime)",
-    );
-  }
-  return hooks;
-}
+  _next?: Partial<EntityQueryBoundaryHooks>,
+): void {}
 
 export function ensureWorkbookEt(): void {
-  requireHooks().ensureWorkbookEt();
+  workbookEt();
 }
 export function ensureWr(): void {
-  requireHooks().ensureWr();
+  wr();
 }
 export function ensureXgt(): void {
-  requireHooks().ensureXgt();
+  initAddressMetrics();
 }
 export function ensureYgt(): void {
-  requireHooks().ensureYgt();
+  ensureStylesheetInit();
 }
 export function bgt(...args: any[]): any {
   return bgtImpl(...args);
@@ -50,5 +42,5 @@ export function vgt(...args: any[]): any {
   return vgtImpl(...args);
 }
 export function getEmuScale(): number {
-  return requireHooks().getEmuScale();
+  return workbookBinding409;
 }

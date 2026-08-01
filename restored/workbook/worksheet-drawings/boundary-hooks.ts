@@ -1,8 +1,14 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-60: boundary ensures still owned by workbook-runtime
-// (workbookEt EMU terminal, Binding662/_C, Binding712/722 chart assets,
-// Binding736/739 shape element, Binding711 axis VO, Jge, workbookKt no-op,
-// Binding728 image asset).
+// Stage-3 wave-159: worksheet-drawings deps via direct imports
+// (wireWorksheetDrawingsBoundaryHooks leave-behind retired).
+
+import { workbookEt } from "../emu-units";
+import { workbookKt } from "../workbook-core";
+import { _C } from "../binding662-gate";
+import { Jge, workbookBinding728 } from "../image-connector";
+import { workbookBinding712, workbookBinding711 } from "../chart-elements";
+import { workbookBinding722, workbookBinding721 } from "../chart-asset";
+import { workbookBinding739, workbookBinding736 } from "../shape-element";
 
 export type WorksheetDrawingsBoundaryHooks = {
   ensureWorkbookEt: () => void;
@@ -19,59 +25,46 @@ export type WorksheetDrawingsBoundaryHooks = {
   getAxisTitleClass: () => any;
 };
 
-let hooks: WorksheetDrawingsBoundaryHooks | null = null;
-
 export function wireWorksheetDrawingsBoundaryHooks(
-  next: WorksheetDrawingsBoundaryHooks,
-): void {
-  hooks = next;
-}
-
-function requireHooks(): WorksheetDrawingsBoundaryHooks {
-  if (!hooks) {
-    throw new Error(
-      "worksheet-drawings boundary hooks not wired (call from workbook-runtime)",
-    );
-  }
-  return hooks;
-}
+  _next?: Partial<WorksheetDrawingsBoundaryHooks>,
+): void {}
 
 export function ensureWorkbookEt(): void {
-  requireHooks().ensureWorkbookEt();
+  workbookEt();
 }
 export function ensureWorkbookKt(): void {
-  requireHooks().ensureWorkbookKt();
+  workbookKt();
 }
 export function ensureBinding662(): void {
-  requireHooks().ensureBinding662();
+  _C();
 }
 export function ensureJge(): void {
-  requireHooks().ensureJge();
+  Jge();
 }
 export function ensureBinding712(): void {
-  requireHooks().ensureBinding712();
+  workbookBinding712();
 }
 export function ensureBinding722(): void {
-  requireHooks().ensureBinding722();
+  workbookBinding722();
 }
 export function ensureBinding739(): void {
-  requireHooks().ensureBinding739();
+  workbookBinding739();
 }
 export function ensureBinding711(): void {
-  requireHooks().ensureBinding711();
+  workbookBinding712();
 }
 export function getShapeElementClass(): any {
   ensureBinding739();
-  return requireHooks().getShapeElementClass();
+  return workbookBinding736;
 }
 export function getChartAssetClass(): any {
   ensureBinding722();
-  return requireHooks().getChartAssetClass();
+  return workbookBinding721;
 }
 export function getImageAssetClass(): any {
-  return requireHooks().getImageAssetClass();
+  return workbookBinding728;
 }
 export function getAxisTitleClass(): any {
   ensureBinding711();
-  return requireHooks().getAxisTitleClass();
+  return workbookBinding711;
 }

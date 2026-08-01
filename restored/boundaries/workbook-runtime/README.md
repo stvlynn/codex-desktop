@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~8.4k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~7.9k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1934,4 +1934,15 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept
 - QG PASS on changed modules + boundary `--no-cache --allow-open-boundaries`
 - Next: slim remaining mid-size wires (compose-jsx-lower / chart-legend-layout / table-element / …); reassess openBoundary closeout when mega is thin enough
+
+## Wave 159 (Stage-3 wire slim — mid-size leave-behinds)
+
+- Boundary 8376 → 7871 (Δ -505)
+- Retired 13 mid-size wires → direct imports: compose-jsx-lower, chart-legend-layout, table-element, worksheet-drawings, compose-element-snapshot, formula-stats, compose-dsl, google-slides-adapter, entity-query, shape-geometry-paint, chart-group-scales, slide-canvas-render, chart-pie-series
+- Same-package / reverse-cycle deps use createRequire lazies; Binding433 inlined as no-op; entity-query xgt/ygt inlined off workbook-core
+- Kept: `setFormulaImplBag` mega bag; chart-paint / chart-axis-ticks wires (next)
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept
+- QG PASS on changed modules + boundary `--no-cache --allow-open-boundaries`
+- Next: slim chart-paint / chart-axis-ticks + remaining mid wires; reassess openBoundary closeout when mega is thin enough
+
 

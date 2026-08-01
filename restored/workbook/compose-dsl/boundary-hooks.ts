@@ -1,34 +1,50 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-72: boundary deps for compose-dsl (Binding1490–1528).
+// Stage-3 wave-159: compose-dsl deps via direct imports
+// (wireComposeDslBoundaryHooks leave-behind retired).
+
+import { workbookBinding661 } from "../binding662-gate";
+import { workbookBinding739 } from "../shape-element";
+import { workbookBinding1489 } from "../workbook-shell-ensures";
+import { workbookBinding1213 } from "../chart-layout-ensures";
+import { workbookBinding1330, workbookBinding1328 } from "../compose-layout";
 
 export type ComposeDslBoundaryHooks = {
-  /** Legacy Binding661 ensure. */
   ensureBinding661: () => void;
-  /** Shape element ensure (legacy Binding739). */
   ensureBinding739: () => void;
-  /** Thin compose apply prelude (legacy Binding1489 → workbookOt). */
   ensureBinding1489: () => void;
-  /** No-op / late boundary ensure (legacy Binding433). */
   ensureBinding433: () => void;
-  /** Legacy Binding1213 ensure. */
   ensureBinding1213: () => void;
-  /** Compose tracks ensure (legacy Binding1330 — seeds Binding1328). */
   ensureBinding1330: () => void;
-  /** Parse compose track sizes (legacy Binding1328). */
   parseComposeTracks: (tracks: any, label?: string) => any[];
 };
 
-/** Live bag for boundary leave-behinds / late ensures. */
-export const cdslH: ComposeDslBoundaryHooks = {} as ComposeDslBoundaryHooks;
+/** Binding433 was a protobuf enum side-effect no-op. */
+const workbookBinding433 = (): void => {};
 
+export const cdslH: ComposeDslBoundaryHooks = {
+  ensureBinding661: () => {
+    workbookBinding661();
+  },
+  ensureBinding739: () => {
+    workbookBinding739();
+  },
+  ensureBinding1489: () => {
+    workbookBinding1489();
+  },
+  ensureBinding433: () => {
+    workbookBinding433();
+  },
+  ensureBinding1213: () => {
+    workbookBinding1213();
+  },
+  ensureBinding1330: () => {
+    workbookBinding1330();
+  },
+  parseComposeTracks: (tracks: any, label?: string) =>
+    workbookBinding1328(tracks, label),
+};
+
+/** @deprecated Wave-159: wire leave-behind retired — cdslH uses direct imports. */
 export function wireComposeDslBoundaryHooks(
-  next: ComposeDslBoundaryHooks,
-): void {
-  cdslH.ensureBinding661 = next.ensureBinding661;
-  cdslH.ensureBinding739 = next.ensureBinding739;
-  cdslH.ensureBinding1489 = next.ensureBinding1489;
-  cdslH.ensureBinding433 = next.ensureBinding433;
-  cdslH.ensureBinding1213 = next.ensureBinding1213;
-  cdslH.ensureBinding1330 = next.ensureBinding1330;
-  cdslH.parseComposeTracks = next.parseComposeTracks;
-}
+  _next?: Partial<ComposeDslBoundaryHooks>,
+): void {}

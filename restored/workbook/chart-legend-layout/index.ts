@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-100: chart-legend-layout barrel.
+// Stage-3 wave-100/159: chart-legend-layout barrel (direct imports; wire retired).
 
 export { wireChartLegendLayoutBoundaryHooks, cllH } from "./boundary-hooks";
 export {

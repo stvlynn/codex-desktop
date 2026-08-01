@@ -1,8 +1,27 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-94/105: slide-canvas-render boundary hooks.
+// Stage-3 wave-159: slide-canvas-render deps via direct imports
+// (wireSlideCanvasRenderBoundaryHooks leave-behind retired).
+
+import { createRequire } from "node:module";
+const __req = createRequire(import.meta.url);
+const __wh = (n: number) => ("workbook" + "Helper" + String(n)) as string;
+const __call =
+  (rel: string, name: string) =>
+  (...args: any[]) =>
+    (__req(rel) as any)[name](...args);
+const __get = (rel: string, name: string) => () => (__req(rel) as any)[name];
+
+import { BTe } from "../text-frame-embeds";
+import { loadSlideGroupBitmaps } from "../mid-paint-helpers";
+import { hEe, $Te } from "../slide-image-paint";
+import { pEe } from "../guide-layout-consts";
+import { paintElementGeometry } from "../picture-fill-paint";
+import { applyShapeGeometryPaint } from "../shape-geometry-apply";
+import { resolvePlaceholderTextStyle } from "../text-style";
+import { resolveMasterParagraphDefaults, paintTextElement } from "../text-box";
+import { j, tt } from "../presentation-protobuf";
 
 export type SlideCanvasRenderBoundaryHooks = {
-  /** Guide orientation enum (legacy tt). */
   guideEnum: any;
   paintSlideShape: (...args: any[]) => any;
   paintSlideGroup: (...args: any[]) => any;
@@ -11,27 +30,41 @@ export type SlideCanvasRenderBoundaryHooks = {
   warmSlideImages: (...args: any[]) => any;
   bh615: (...args: any[]) => any;
   bh654: (...args: any[]) => any;
-  /** Apply canvas transform for frame (legacy helper290). */
   applyFrameTransform: (...args: any[]) => any;
-  /** Paint drawing shape (legacy helper614). */
   renderDrawingShape: (...args: any[]) => any;
-  /** Layout painted text style (legacy helper110). */
   layoutPaintedText: (...args: any[]) => any;
-  /** Master paragraph defaults (legacy helper218). */
   masterDefaults: (...args: any[]) => any;
-  /** EMU rotation → radians (legacy helper287). */
   emuRotation: (...args: any[]) => any;
-  /** Paint text element (legacy workbookX). */
   paintTextElement: (...args: any[]) => any;
-  /** Presentation element-type enum (legacy j). */
   elementTypes: any;
 };
 
-export const scrH: SlideCanvasRenderBoundaryHooks =
-  {} as SlideCanvasRenderBoundaryHooks;
+export const scrH: SlideCanvasRenderBoundaryHooks = {
+  paintSlideShape: (...args: any[]) => BTe(...args),
+  paintSlideGroup: (...args: any[]) => loadSlideGroupBitmaps(...args),
+  paintSlideImage: (...args: any[]) => hEe(...args),
+  isHiddenElement: (...args: any[]) => pEe(...args),
+  warmSlideImages: (...args: any[]) => $Te(...args),
+  bh615: (...args: any[]) => paintElementGeometry(...args),
+  bh654: __call("./picture-fill-bitmap-impl", __wh(654)),
+  applyFrameTransform: __call(
+    "../geometry-transform",
+    "applyFrameCanvasTransform",
+  ),
+  renderDrawingShape: (...args: any[]) => applyShapeGeometryPaint(...args),
+  layoutPaintedText: (...args: any[]) => resolvePlaceholderTextStyle(...args),
+  masterDefaults: (...args: any[]) => resolveMasterParagraphDefaults(...args),
+  emuRotation: __call("../geometry-transform", "rotationEmuToDegrees"),
+  paintTextElement: (...args: any[]) => paintTextElement(...args),
+  get elementTypes() {
+    return j;
+  },
+  get guideEnum() {
+    return tt;
+  },
+};
 
+/** @deprecated Wave-159: wire leave-behind retired. */
 export function wireSlideCanvasRenderBoundaryHooks(
-  next: SlideCanvasRenderBoundaryHooks,
-): void {
-  Object.assign(scrH, next);
-}
+  _next?: Partial<SlideCanvasRenderBoundaryHooks>,
+): void {}

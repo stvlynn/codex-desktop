@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-93/104: compose-jsx-lower barrel.
+// Stage-3 wave-93/104/159: compose-jsx-lower barrel (direct imports; wire retired).
 
 export {
   wireComposeJsxLowerBoundaryHooks,

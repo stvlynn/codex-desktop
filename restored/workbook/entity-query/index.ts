@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-64: entity-query barrel (legacy Binding1967 cluster).
+// Stage-3 wave-64/133/159: entity-query barrel (direct imports; wire retired).
 
 export {
   wireEntityQueryBoundaryHooks,

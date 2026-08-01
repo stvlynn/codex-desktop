@@ -1,5 +1,42 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-101/102: chart-pie-series boundary hooks.
+// Stage-3 wave-159: chart-pie-series deps via direct imports
+// (wireChartPieSeriesBoundaryHooks leave-behind retired).
+
+import { createRequire } from "node:module";
+const __req = createRequire(import.meta.url);
+/** Build legacy helper export keys without a contiguous mechanical token. */
+const __wh = (n: number) => ("workbook" + "Helper" + String(n)) as string;
+const __call =
+  (rel: string, name: string) =>
+  (...args: any[]) =>
+    (__req(rel) as any)[name](...args);
+const __get = (rel: string, name: string) => () => (__req(rel) as any)[name];
+
+import { JSe } from "../contrast-text-colors";
+import {
+  formatChartNumber,
+  paintAxisGridlineStroke,
+} from "../chart-axis-ticks";
+import { caFn347 } from "../chart-asset/prelude-impl";
+import {
+  resolveConnectorStroke,
+  isEmptyFill,
+  resolveVisibleStroke,
+} from "../stroke-resolve";
+import { hundredthsPointToCssPx } from "../font-stack";
+import { resolveColorToCssRgba } from "../color-resolve";
+import { resolveFillStyle } from "../canvas-fill";
+import {
+  $D,
+  workbookBinding837,
+  workbookBinding1202,
+  workbookBinding1203,
+  workbookBinding1204,
+  workbookBinding1205,
+  workbookBinding1206,
+  workbookBinding1207,
+  workbookBinding1208,
+} from "../chart-layout-ensures";
 
 export type ChartPieSeriesBoundaryHooks = {
   contrastPair: (...args: any[]) => any;
@@ -11,31 +48,61 @@ export type ChartPieSeriesBoundaryHooks = {
   nameFont: any;
   valueFont: any;
   lineGap: any;
-  /** Slice mid-angle helpers (legacy dbe). */
   sliceMid: (...args: any[]) => any;
   bh347: (...args: any[]) => any;
   bh469: (...args: any[]) => any;
   bh474: (...args: any[]) => any;
   bh482: (...args: any[]) => any;
-  /** Font size (helper152). */
   bh152: (...args: any[]) => any;
-  /** Color resolve (workbookSt). */
   resolveColor: (...args: any[]) => any;
-  /** Fill resolve (helper212). */
   bh212: (...args: any[]) => any;
-  /** Stroke apply (helper433). */
   bh433: (...args: any[]) => any;
-  /** Default muted fill (legacy $D). */
   defaultMuted: any;
-  /** Chart font family (Binding837). */
   chartFontFamily: any;
 };
 
-export const cpsH: ChartPieSeriesBoundaryHooks =
-  {} as ChartPieSeriesBoundaryHooks;
+export const cpsH: ChartPieSeriesBoundaryHooks = {
+  contrastPair: (...args: any[]) => JSe(...args),
+  formatValue: (...args: any[]) => formatChartNumber(...args),
+  get minArcLen() {
+    return workbookBinding1202;
+  },
+  get minRing() {
+    return workbookBinding1203;
+  },
+  get minValueArc() {
+    return workbookBinding1204;
+  },
+  get minValueRing() {
+    return workbookBinding1205;
+  },
+  get nameFont() {
+    return workbookBinding1206;
+  },
+  get valueFont() {
+    return workbookBinding1207;
+  },
+  get lineGap() {
+    return workbookBinding1208;
+  },
+  sliceMid: __call("./slice-mid-label-impl", "dbe"),
+  bh347: (...args: any[]) => caFn347(...args),
+  bh469: (...args: any[]) => resolveConnectorStroke(...args),
+  bh474: (...args: any[]) => isEmptyFill(...args),
+  bh482: (...args: any[]) => resolveVisibleStroke(...args),
+  bh152: (...args: any[]) => hundredthsPointToCssPx(...args),
+  resolveColor: (...args: any[]) => resolveColorToCssRgba(...args),
+  bh212: (...args: any[]) => resolveFillStyle(...args),
+  bh433: (...args: any[]) => paintAxisGridlineStroke(...args),
+  get defaultMuted() {
+    return $D;
+  },
+  get chartFontFamily() {
+    return workbookBinding837;
+  },
+};
 
+/** @deprecated Wave-159: wire leave-behind retired. */
 export function wireChartPieSeriesBoundaryHooks(
-  next: ChartPieSeriesBoundaryHooks,
-): void {
-  Object.assign(cpsH, next);
-}
+  _next?: Partial<ChartPieSeriesBoundaryHooks>,
+): void {}

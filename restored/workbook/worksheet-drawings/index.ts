@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-60/61: worksheet-drawings barrel (Binding740–789 + Lve/Binding790–803 layout).
+// Stage-3 wave-60/61/159: worksheet-drawings barrel (direct imports; wire retired).
 
 export {
   wireWorksheetDrawingsBoundaryHooks,

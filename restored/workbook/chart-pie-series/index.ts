@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-101/102: chart-pie-series barrel.
+// Stage-3 wave-101/102/159: chart-pie-series barrel (direct imports; wire retired).
 
 export { wireChartPieSeriesBoundaryHooks, cpsH } from "./boundary-hooks";
 export {

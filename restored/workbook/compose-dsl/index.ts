@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-72: compose-dsl barrel (legacy Binding1490–1528 / DOe / OOe).
+// Stage-3 wave-72/159: compose-dsl barrel (direct imports; wire retired).
 
 export {
   wireComposeDslBoundaryHooks,

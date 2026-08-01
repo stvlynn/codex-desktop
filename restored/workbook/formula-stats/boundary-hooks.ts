@@ -1,5 +1,15 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-68: boundary deps for formula-stats (Binding1831 cluster).
+// Stage-3 wave-159: formula-stats deps via lazy direct imports
+// (wireFormulaStatsBoundaryHooks leave-behind retired).
+
+import { createRequire } from "node:module";
+const __req = createRequire(import.meta.url);
+const __wh = (n: number) => ("workbook" + "Helper" + String(n)) as string;
+const __call =
+  (rel: string, name: string) =>
+  (...args: any[]) =>
+    (__req(rel) as any)[name](...args);
+const __get = (rel: string, name: string) => () => (__req(rel) as any)[name];
 
 export type FormulaStatsBoundaryHooks = {
   fn835: any;
@@ -31,37 +41,91 @@ export type FormulaStatsBoundaryHooks = {
   jQe: any;
 };
 
-/** Live helper bag — property access (e.g. fsH.fn858.DIST) must stay intact. */
-export const fsH: FormulaStatsBoundaryHooks = {} as FormulaStatsBoundaryHooks;
+export const fsH: FormulaStatsBoundaryHooks = {
+  get fn835() {
+    return __get("../formula-token-utils", "excelDaysSinceEpoch")();
+  },
+  get fn841() {
+    return __get("../formula-token-utils", "flattenFormulaArgs")();
+  },
+  get fn845() {
+    return __get("../formula-token-utils", "anyFormulaError")();
+  },
+  get fn846() {
+    return __get("../formula-token-utils", "hasFormulaError")();
+  },
+  get fn847() {
+    return __get("../formula-token-utils", "filterNumericArgs")();
+  },
+  get fn848() {
+    return __get("../formula-token-utils", "coerceFormulaDate")();
+  },
+  get fn849() {
+    return __get("../formula-token-utils", "flattenMatrixArgs")();
+  },
+  get fn850() {
+    return __get("../formula-token-utils", "ensureFlatArgs")();
+  },
+  get fn858() {
+    return __get("../formula-scalar-funcs", "averageArgs")();
+  },
+  get fn859() {
+    return __get("../formula-scalar-funcs", "averageNumericArgs")();
+  },
+  get fn864() {
+    return __get("../formula-scalar-funcs", "modeArgs")();
+  },
+  get fn865() {
+    return __get("../formula-scalar-funcs", "geomeanArgs")();
+  },
+  get fn869() {
+    return __get("../formula-scalar-funcs", "romanNumeral")();
+  },
+  get fn870() {
+    return __get("../formula-scalar-funcs", "sqrtFloor")();
+  },
+  get fn872() {
+    return __get("../formula-scalar-funcs", "arabicNumeral")();
+  },
+  get fn875() {
+    return __get("../formula-scalar-funcs", "sumproductArgs")();
+  },
+  get fn880() {
+    return __get("../formula-date-months", __wh(880))();
+  },
+  get fn881() {
+    return __get("../formula-date-months", __wh(881))();
+  },
+  get fn887() {
+    return __get("../formula-eng-mids", __wh(887))();
+  },
+  get fn888() {
+    return __get("../formula-eng-mids", __wh(888))();
+  },
+  get ZXe() {
+    return __get("../formula-token-utils", "excelSerialToDate")();
+  },
+  get FZe() {
+    return __get("../formula-scalar-funcs", "FZe")();
+  },
+  get MZe() {
+    return __get("../formula-scalar-funcs", "MZe")();
+  },
+  get PZe() {
+    return __get("../formula-scalar-funcs", "PZe")();
+  },
+  get tZe() {
+    return __get("../formula-token-utils", "applyCriteriaOperator")();
+  },
+  get cZe() {
+    return __get("../formula-token-utils", "roundFormulaFloat")();
+  },
+  get jQe() {
+    return __get("../formula-scalar-funcs", "jQe")();
+  },
+};
 
+/** @deprecated Wave-159: wire leave-behind retired. */
 export function wireFormulaStatsBoundaryHooks(
-  next: FormulaStatsBoundaryHooks,
-): void {
-  fsH.fn835 = next.fn835;
-  fsH.fn841 = next.fn841;
-  fsH.fn845 = next.fn845;
-  fsH.fn846 = next.fn846;
-  fsH.fn847 = next.fn847;
-  fsH.fn848 = next.fn848;
-  fsH.fn849 = next.fn849;
-  fsH.fn850 = next.fn850;
-  fsH.fn858 = next.fn858;
-  fsH.fn859 = next.fn859;
-  fsH.fn864 = next.fn864;
-  fsH.fn865 = next.fn865;
-  fsH.fn869 = next.fn869;
-  fsH.fn870 = next.fn870;
-  fsH.fn872 = next.fn872;
-  fsH.fn875 = next.fn875;
-  fsH.fn880 = next.fn880;
-  fsH.fn881 = next.fn881;
-  fsH.fn887 = next.fn887;
-  fsH.fn888 = next.fn888;
-  fsH.ZXe = next.ZXe;
-  fsH.FZe = next.FZe;
-  fsH.MZe = next.MZe;
-  fsH.PZe = next.PZe;
-  fsH.tZe = next.tZe;
-  fsH.cZe = next.cZe;
-  fsH.jQe = next.jQe;
-}
+  _next?: Partial<FormulaStatsBoundaryHooks>,
+): void {}

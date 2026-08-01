@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-94: shape-geometry-paint barrel.
+// Stage-3 wave-94/159: shape-geometry-paint barrel (direct imports; wire retired).
 
 export { wireShapeGeometryPaintBoundaryHooks, sgpH } from "./boundary-hooks";
 export { paintShapeGeometry } from "./shape-geometry-paint-impl";

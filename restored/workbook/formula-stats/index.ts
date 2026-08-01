@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-68: formula-stats barrel (legacy Binding1831 / Binding1874 cluster).
+// Stage-3 wave-68/159: formula-stats barrel (direct imports; wire retired).
 
 export {
   wireFormulaStatsBoundaryHooks,

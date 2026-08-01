@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-103/106/110: compose-element-snapshot barrel.
+// Stage-3 wave-103/106/110/159: compose-element-snapshot barrel (direct imports; wire retired).
 
 export {
   wireComposeElementSnapshotBoundaryHooks,

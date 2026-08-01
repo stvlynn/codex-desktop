@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-71: google-slides-adapter barrel (legacy oJe / pJe / SJe / bJe).
+// Stage-3 wave-71/159: google-slides-adapter barrel (direct imports; wire retired).
 
 export {
   wireGoogleSlidesAdapterBoundaryHooks,
