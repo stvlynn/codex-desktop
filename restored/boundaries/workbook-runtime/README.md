@@ -1869,3 +1869,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries --allow-flat`
 - openBoundary remains while mega still large
 - Next: workbookBinding1389 slide-element nest; Nrt/workbookBinding1901 formula financial; uke semantic tags; remaining ≥5 inventory
+
+## Wave 153 (Stage-3 Binding1389 + bond coupon/price + semantic tags)
+
+- Boundary 11255 → 10525 (Δ -730)
+- Peeled: speaker-notes Binding1389/1387/1388; formula-bond-basis Srt/Ort/Binding1901/Nrt (jrt/Mrt); compose-jsx-lower Binding1531/1544/uke prop sets
+- Skipped: workbookBinding1229/913 (chart ensure fan-out); HXe/KXe empty stubs; wirePresentationRecipesFromBoundary; rot leave-behind
+- Leave-behind: Binding412 via cjlH.ensureBinding412; rot VALUE/NUM/epoch bag; chart mid nests Binding913/1229
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries --allow-flat`
+- openBoundary remains while mega still large
+- Next: Binding913/1229 chart ensure cluster; rot; remaining ≥50 inventory; closeout when thin

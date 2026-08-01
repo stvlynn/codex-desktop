@@ -59,6 +59,8 @@ export {
   g5e,
   J5e,
   Met,
+  getSerialMonth,
+  getSerialYear,
   workbookHelper937,
   workbookHelper938,
   stt,

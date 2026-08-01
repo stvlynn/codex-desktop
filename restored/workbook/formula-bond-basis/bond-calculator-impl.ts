@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: bond calculator factory + input ensure (legacy Prt/Irt/Lrt).
-// Stage-3 wave-133 — jrt/Mrt remain boundary-owned via fbbH hooks.
+// Stage-3 wave-133 — jrt/Mrt drained wave-153 into coupon-price-yield-impl; fbbH hooks re-pointed.
 
 import { esmInit } from "../../runtime/rolldown-runtime";
 import { fbbH } from "./boundary-hooks";

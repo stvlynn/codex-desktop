@@ -12,6 +12,8 @@ export type ComposeJsxLowerBoundaryHooks = {
   ensureUke: () => void;
   ensureBinding1544: () => void;
   ensureBinding1531: () => void;
+  /** Legacy Binding412 — fill/gradient/outline ensure bag (boundary-owned). */
+  ensureBinding412: () => void;
   /** Legacy Binding1539 — semantic JSX tag-name Sets. */
   ensureBinding1539: () => void;
   /** Prop allowlist check (legacy assertAllowedProps). */

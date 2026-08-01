@@ -150,3 +150,22 @@ export {
   assetRef,
   isEmptyParagraph,
 } from "./image-prop-helpers-impl";
+
+export {
+  workbookBinding1529,
+  workbookBinding1530,
+  workbookBinding1531,
+  ensureBinding1531Init,
+  workbookBinding1540,
+  workbookBinding1541,
+  workbookBinding1542,
+  workbookBinding1543,
+  workbookBinding1544,
+  ensureBinding1544Init,
+  workbookBinding1545,
+  workbookBinding1546,
+  workbookBinding1547,
+  workbookBinding1548,
+  uke,
+  ensureUkeInit,
+} from "./semantic-tag-props-impl";
