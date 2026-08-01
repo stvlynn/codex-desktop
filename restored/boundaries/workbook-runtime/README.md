@@ -287,6 +287,7 @@
 | Measure embed (`NTe`) | ~0.04k | **Drained (wave-125)** → `workbook/text-frame-embeds/` |
 | CF range stats (`mht`/`Sht`/`helper1020`/`1015`) | ~0.19k | **Drained (wave-125)** → `workbook/cf-range-stats/` |
 | Chart axis scale domain (`bbe`/`helper402`/`406`/`wye`…) | ~0.70k body | **Drained (wave-126)** → `workbook/chart-axis-scale-domain/` + presentation-aid/ref + series-endpoint + formula-complex 886/892 + iSe + fill-empty + r3e |
+| Formula BYROW/BYCOL + mids (`Yot`/`YIe`/`Uat`/`tSe`/`zye`/`Rxe`…) | ~0.87k body | **Drained (wave-127)** → formula-byrow + compose-code-children + bond-pv + chart-data-label-font + text-frame-resolve + marker/effects/table + presentation-images + unique-rows + sheet-catalog + newton + dead category-time/label-overflow |
 | Formula SKEW + samples (`W4e`/`s4e`/`c4e`/`helper912`) | ~0.11k | **Drained (wave-124)** → `workbook/formula-skew/` |
 | Path ordinal colors (`helper477`) | ~0.04k | **Drained (wave-124)** → `workbook/chart-path-colors/` |
 | Draw shape paths (`helper608`) | ~0.04k | **Drained (wave-124)** → `workbook/shape-path/` |

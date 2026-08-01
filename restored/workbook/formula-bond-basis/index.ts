@@ -26,3 +26,16 @@ export {
 } from "./bond-basis-helpers-impl";
 export { oat, sat } from "./bond-accrint-impl";
 export { lat, uat, dat, fat } from "./bond-received-yield-impl";
+
+export {
+  computePvAnnuity,
+  presentValue,
+  parseBondPriceArgs,
+  bondPrice,
+  bondYield,
+  Uat,
+  Kit,
+  Wat,
+  gat,
+  _at,
+} from "./bond-pv-price-yield-impl";

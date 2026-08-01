@@ -10,3 +10,5 @@ export {
   kst,
   Ast,
 } from "./formula-unique-impl";
+
+export { uniqueRows, Dst } from "./unique-rows-impl";

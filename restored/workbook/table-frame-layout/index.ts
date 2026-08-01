@@ -10,3 +10,5 @@ export {
   DEFAULT_TABLE_WIDTH_EMU,
   DEFAULT_CELL_MARGINS,
 } from "./table-frame-layout-impl";
+
+export { strokeTableBorders, TTe } from "./stroke-table-borders-impl";

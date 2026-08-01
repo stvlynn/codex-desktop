@@ -11,6 +11,8 @@ export type FormulaBondBasisBoundaryHooks = {
   DAY_MS: number;
   DEFAULT_BASIS: string;
   BASIS_MAP: Record<number, string>;
+  /** Legacy workbookBinding1933 / Prt. */
+  createBondCalculator: (...args: any[]) => any;
 };
 
 export const fbbH: FormulaBondBasisBoundaryHooks =
