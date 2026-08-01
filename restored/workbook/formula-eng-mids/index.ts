@@ -35,4 +35,6 @@ export {
   workbookHelper889,
   workbookHelper890,
   workbookHelper895,
+  coerceFiniteNumbers,
+  workbookHelper917,
 } from "./formula-eng-mids-impl";

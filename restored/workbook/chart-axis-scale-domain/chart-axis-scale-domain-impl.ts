@@ -309,3 +309,31 @@ export const kye = formatLooksPercent;
 export const bbe = layoutValAxisRight;
 export const xbe = crossingRatio;
 export const Sbe = shiftForCrossing;
+
+const DOMAIN_HEADROOM_RATIO = 0.9;
+
+export function expandDomainHeadroom(
+  casdIn6303: any,
+  casdIn6304: any,
+  casdIn6305: any,
+  casdIn6306: any,
+) {
+  if (
+    casdIn6304?.min === undefined ||
+    casdIn6304.min === 0 ||
+    casdIn6304.max !== undefined ||
+    casdIn6305 !== undefined
+  )
+    return;
+  let casdBind16427 = readScaleMajorUnit(casdIn6303),
+    [casdBind16428, casdBind16429] = casdIn6303.domain();
+  casdBind16427 === undefined ||
+    casdBind16428 === undefined ||
+    casdBind16429 === undefined ||
+    casdBind16429 <= casdBind16428 ||
+    (casdIn6306 - casdBind16428) / (casdBind16429 - casdBind16428) <=
+      DOMAIN_HEADROOM_RATIO ||
+    casdIn6303.domain([casdBind16428, casdBind16429 + casdBind16427]);
+}
+
+export const workbookHelper536 = expandDomainHeadroom;

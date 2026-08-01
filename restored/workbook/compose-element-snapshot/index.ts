@@ -42,6 +42,8 @@ export {
   imageAssetRef,
   attachOverlappingTableCells,
   bboxToRect,
+  unionCellsBbox,
+  GDe,
   isBboxTuple,
   overlapArea,
   rectArea,

@@ -333,3 +333,22 @@ export function round2(cesIn11481: any) {
   if (!(cesIn11481 === undefined || !Number.isFinite(cesIn11481)))
     return Math.round(cesIn11481 * 100) / 100;
 }
+
+export function unionCellsBbox(props: any) {
+  let cesBind14737 = props
+    .map((item) => bboxToRect(item.bbox))
+    .filter((item) => item !== undefined);
+  if (cesBind14737.length === 0) return;
+  let cesBind14738 = Math.min(...cesBind14737.map((item) => item.left)),
+    cesBind14739 = Math.min(...cesBind14737.map((item) => item.top)),
+    cesBind14740 = Math.max(...cesBind14737.map((item) => item.right)),
+    cesBind14741 = Math.max(...cesBind14737.map((item) => item.bottom));
+  return [
+    round2(cesBind14738) ?? cesBind14738,
+    round2(cesBind14739) ?? cesBind14739,
+    round2(cesBind14740 - cesBind14738) ?? cesBind14740 - cesBind14738,
+    round2(cesBind14741 - cesBind14739) ?? cesBind14741 - cesBind14739,
+  ];
+}
+
+export const GDe = unionCellsBbox;

@@ -2,7 +2,7 @@
 // Flat boundary facade — vendored oversized workbook runtime module.
 // Intentional oversized vendor-runtime terminal (openBoundary).
 // Not stock npm (Codex popcorn workbook engine). Exit: Stage-3 split into workbook/.
-// Stage-3 waves: shape-geometry; theme-color; presentation-theme (Mae/Sle); fill; stylesheet; line; color-resolve; text-style; placeholder-style + font-metrics; style-resolve + glyph-advance; math-plain-text; math-ml; font-stack; math-layout; document-style/effects; placeholder-resolve; text-layout; canvas-fill; fill-resolve; text-canvas; text-box; design-tokens; ssf-npm; jstat+bessel-npm; yjs-npm; three-npm; highlightjs-npm; zod-npm; presentation-recipes; compose-layout; workbook-core; worksheet-drawings; drawing-layout+sparklines; mermaid-slide-adapters; decimal-npm; canvas-paint (BYe); chart-elements (The/Ohe…ige); formula-stats (Binding1831/1874); mermaid-slide-helpers (Binding1592/SAe…QAe); table-styles (Nme/Ume/ahe); google-slides-adapter (oJe/pJe/SJe); compose-dsl (Binding1490–1528); graphlib+dagre-npm (Binding1671/wNe); image-connector (Binding723–735); chart-asset (She/Che…Binding721); table-vo (fhe/yhe/xhe); charts-collection (CEe/REe/Binding1299/workbookC); mermaid-flowchart ($Ne/Binding1675/OPe/Binding1685/NPe/PPe); deck-kinds (wRe/qRe/Binding1738–1748); shape-element (Binding736/739); slides-collection (_workbookY/_workbookV); constraint-solver (bDe/Binding1364+prelude1350–1363); formula-opcodes (Z_t/X_t); table-element (_workbookH/eDe…cDe/_workbookM); table-row-range (YEe/Binding1321/QEe/$Ee); formula-registry ($dt/Xdt/Zdt); presentation-slide (Z$/X$/cLe/sLe); JEe table-cell reunite; TXe/wXe worksheets; chart-paint (helper579–585); doc-op-apply (Zht/_gt); three-chart-paint (helper521/Qbe/$be); unit-convert (N1e); named-ranges (zXe/RXe); styles-yjs (kgt/Ogt); chart-legend (helper491/lbe); shape-path (helper605–607); html-table-export (Wpt/Gpt/Kpt); chart-jsx-lower (dke/helper722/_ke); compose-jsx-lower (vke/helper745/Cke); chart-axis-ticks (helper462); shape-geometry-paint (helper616); table-frame-layout (workbookA); slide-canvas-render (vEe); chart-bar-direction (Dbe); chart-bar-series (helper501); chart-radar (Txe); chart-plot-layout (Xxe); chart-category-axes (Tbe); chart-scatter-series (nCe); chart-histogram-axes (gCe); chart-data-table (helper561); chart-scatter-axes (helper570); three-chart-camera (rxe); chart-trendline (helper525); chart-scatter-scale (helper540); paint-images (Fwe); constraint-layout (ODe/kDe); selection-style-grid (Upt); chart-data-labels (helper500); chart-legend-plot (jxe/wSe); chart-category-axis-labels (Nxe…Lxe); chart-box-whisker (ECe/OCe/jCe); chart-line-series (helper528); chart-group-scales (helper423); shape-path-endpoints (Vwe); table-cell-paint (STe); text-frame-embeds (helper643); slide-image-paint ($Te); chart-legend-layout (helper490); chart-area-series (helper529); chart-histogram-bars (sCe); chart-surface-map (Kye); compose-inline-text (NOe); chart-waterfall-bar (dCe); chart-pie-series (helper496); chart-bubble-series (aCe); sparkline-paint (YCe); icon-set-symbols (helper594); formula-irr (F0e); html-paste (wmt); formula-ast-remap (helper1022); chart-pie-labels (fbe); chart-treemap-plot-layout (Cbe); chart-histogram-bins (helper555); chart-funnel-segments (helper576); sheet-hidden-boundaries (ewe); slide-background-paint (RTe); formula-matrix-inverse (Alt); chart-axis-auto-domain (bye); chart-bar-series/computeBarSegments (helper421); three-chart-paint/paintPie3d (txe); chart-line-series/stackLineLayers (axe); chart-combo-groups (yxe); chart-funnel-segments/paintFunnelBars (vCe); shape-path-densify (dTe); compose-element-snapshot (helper678); formula-yearfrac (helper884); chart-scatter-axes/planScatterAxes (helper545); chart-legend-plot/reserveTitleBand (uSe); chart-series-values (helper551); icon-set-paint (uwe); table-cell-paint/layoutTableColumns ($B); compose-jsx-lower/lowerPanelSurfaceTag (JOe); formula-irr/computeXirr (Z0e); formula-ast-remap/exprContainsLambda (helper1008); html-paste/Dmt+Jpt; sparkline-paint/XCe+ZCe; canvas-paint/fillCellBackground (helper600); shape-path-densify/trimPathStart (uTe); slide-canvas-render/paintSlideText (nEe); chart-treemap-tiles (Yye); floating-placement (jTe); presentation-code-block (cAe/vAe); canvas-paint/paintCharts (zCe/BCe/VCe); table-styles/helper384; chart-card-paint (ASe); compose-element-snapshot/helper685; formula-dep-scc (VXe); formula-criteria-match (helper896); formula-irr/RATE (W0e); formula-matrix-det (klt); html-paste/Tmt+Emt; formula-ast-remap/Bht; wave-107: chart-trendline/helper524; chart-scatter-scale/helper539; chart-histogram-bins/_Se; chart-pie-series/qSe; chart-waterfall-bar/pCe; shape-path/Rwe+cTe; shape-path-densify/mTe; table-cell-paint/bTe+xTe; slide-canvas-render/dEe-cluster; presentation-theme/VDe; formula-dep-scc/WXe; formula-growth/pQe; formula-securities/k0e+H0e. wave-108: chart-legend-layout/ibe+abe; chart-legend-plot/helper458; chart-combo-groups/helper532; worksheet-used-range/UTe; formula-datedif/helper876; formula-complex/helper893+$4; formula-financial/E0e+D0e; conditional-format/oht+Nht+Pht. wave-109: compose-jsx-lower/helper713; formula-match/DZe; chart-stacked-domain/helper389; chart-line-series/helper480; chart-sunburst-layout/BSe; element-text-layout/XDe+helper676; chart-data-labels/helper495; shape-element/hze; shape-path/NSe. wave-110: formula-criteria-predicate/I8e+F8e; compose-element-snapshot/iOe; compose-jsx-lower/QOe; formula-financial/T0e+O0e+P0e; shape-path/tTe; formula-unique/Ost. wave-111: table-bands/fye+dye+386; axis-title/460; ube+dbe; Zbe+519; err-bars/527; lSe; card/562; fCe; pTe; bAe. wave-112: table-bands/fye+dye+386; helper546; helper440-cluster; swe/Swe; Lwe+647/648. wave-113: scales/388+391+403; axis/433+438+RCe; treemap/475+PSe; series/hxe+Cxe+cxe+Oxe; UCe+JCe; FPe; Qwe-stroke. wave-114: hbe+489+Wye; _xe+530/531; 601; 626; BTe; sbe; 439/478 SSF; 559. wave-115: MOe/XOe/YOe+Binding154-inline; PDe/BDe/vOe+693; dead CSe; 695/696. wave-116: yye/593/ROe+704–711/LIe+RIe/BXe+$Xe+836–853/xlsx-Tpt+Apt+kpt (ict false mid-file). wave-117: presentation-edit lLe..bLe + html-paste Ypt..1013/Qpt + chart-raster Amt..Zmt. wave-118: grid-frame-layout helper672+ADe+jDe + formula-sort-filter helper967. wave-119: formula-criteria-lookup helper976..Rut + formula-text-split vdt..Jdt + cf-icon-color-scale Fht/Iht..Ict (Tct/Pct/wct). wave-120: formula-call-dispatch (eft/Tft/Nft) + formula-range-index (Uft/Gft) + formula-structured-ref (qft/tpt) + cf Rht. wave-121: formula-scalar-funcs (854..days360/qQe/z$e) + formula-bond-basis (oat/sat/Kat/955..961). wave-122: formula-financial annuity (897..Q0e/w0e/fv/pmt) + formula-bond-basis lat/uat/dat/fat + formula-average-a ($3/Q2e/l4e/_4e). wave-123: shape-style-apply fze..vze + formula-dsum-criteria P8e/j8e + formula-averageif g4e + apt/ppt/mpt + jht + Lst + bSe. wave-124: formula-skew W4e/s4e + helper477/608/398/419/595/lwe/MTe + shared-refs 589..592 + opt..bpt + DSe..ISe + text-frame-style 689. wave-125: formula-criteria-shape a3e/h6e/916 + chart-axis-reserve _be/vbe/ybe + _O + NTe + cf-range-stats mht/Sht/1020. wave-126: chart-axis-scale-domain bbe/402/406/wye + presentation-aid ZRe + presentation-ref yze/bze/dze + helper483 + helper892 + iSe + iCe + r3e. wave-127: formula-byrow Yot/Jot nest + compose-code-children YIe + bond Uat/Kit/Wat/gat/_at + tSe + text-frame-resolve + QCe + TTe + Kwe + presentation-images + Dst + jgt + vrt + dead zye/Bye/Rxe/Vxe. wave-128: formula-eng-mids s1e nest + F9e/N9e/_9e + Mst + A8e + v8e + A7e + dead dollarOe/eke + cvt + gSe + owe + Gwe + 614/qwe + mid-paint 470/481/523/596/617/_Ee/700. wave-129: sheet-range-map 587 nest + jwe + uuid-v4/stable-id + formula-ast-walk 1038 + Xwe/Zwe + dead bwe/ySe/$1e + cfvo wht + paint Vye/Zye/awe/597 + F1e/I1e/q1e.
+// Stage-3 waves: shape-geometry; theme-color; presentation-theme (Mae/Sle); fill; stylesheet; line; color-resolve; text-style; placeholder-style + font-metrics; style-resolve + glyph-advance; math-plain-text; math-ml; font-stack; math-layout; document-style/effects; placeholder-resolve; text-layout; canvas-fill; fill-resolve; text-canvas; text-box; design-tokens; ssf-npm; jstat+bessel-npm; yjs-npm; three-npm; highlightjs-npm; zod-npm; presentation-recipes; compose-layout; workbook-core; worksheet-drawings; drawing-layout+sparklines; mermaid-slide-adapters; decimal-npm; canvas-paint (BYe); chart-elements (The/Ohe…ige); formula-stats (Binding1831/1874); mermaid-slide-helpers (Binding1592/SAe…QAe); table-styles (Nme/Ume/ahe); google-slides-adapter (oJe/pJe/SJe); compose-dsl (Binding1490–1528); graphlib+dagre-npm (Binding1671/wNe); image-connector (Binding723–735); chart-asset (She/Che…Binding721); table-vo (fhe/yhe/xhe); charts-collection (CEe/REe/Binding1299/workbookC); mermaid-flowchart ($Ne/Binding1675/OPe/Binding1685/NPe/PPe); deck-kinds (wRe/qRe/Binding1738–1748); shape-element (Binding736/739); slides-collection (_workbookY/_workbookV); constraint-solver (bDe/Binding1364+prelude1350–1363); formula-opcodes (Z_t/X_t); table-element (_workbookH/eDe…cDe/_workbookM); table-row-range (YEe/Binding1321/QEe/$Ee); formula-registry ($dt/Xdt/Zdt); presentation-slide (Z$/X$/cLe/sLe); JEe table-cell reunite; TXe/wXe worksheets; chart-paint (helper579–585); doc-op-apply (Zht/_gt); three-chart-paint (helper521/Qbe/$be); unit-convert (N1e); named-ranges (zXe/RXe); styles-yjs (kgt/Ogt); chart-legend (helper491/lbe); shape-path (helper605–607); html-table-export (Wpt/Gpt/Kpt); chart-jsx-lower (dke/helper722/_ke); compose-jsx-lower (vke/helper745/Cke); chart-axis-ticks (helper462); shape-geometry-paint (helper616); table-frame-layout (workbookA); slide-canvas-render (vEe); chart-bar-direction (Dbe); chart-bar-series (helper501); chart-radar (Txe); chart-plot-layout (Xxe); chart-category-axes (Tbe); chart-scatter-series (nCe); chart-histogram-axes (gCe); chart-data-table (helper561); chart-scatter-axes (helper570); three-chart-camera (rxe); chart-trendline (helper525); chart-scatter-scale (helper540); paint-images (Fwe); constraint-layout (ODe/kDe); selection-style-grid (Upt); chart-data-labels (helper500); chart-legend-plot (jxe/wSe); chart-category-axis-labels (Nxe…Lxe); chart-box-whisker (ECe/OCe/jCe); chart-line-series (helper528); chart-group-scales (helper423); shape-path-endpoints (Vwe); table-cell-paint (STe); text-frame-embeds (helper643); slide-image-paint ($Te); chart-legend-layout (helper490); chart-area-series (helper529); chart-histogram-bars (sCe); chart-surface-map (Kye); compose-inline-text (NOe); chart-waterfall-bar (dCe); chart-pie-series (helper496); chart-bubble-series (aCe); sparkline-paint (YCe); icon-set-symbols (helper594); formula-irr (F0e); html-paste (wmt); formula-ast-remap (helper1022); chart-pie-labels (fbe); chart-treemap-plot-layout (Cbe); chart-histogram-bins (helper555); chart-funnel-segments (helper576); sheet-hidden-boundaries (ewe); slide-background-paint (RTe); formula-matrix-inverse (Alt); chart-axis-auto-domain (bye); chart-bar-series/computeBarSegments (helper421); three-chart-paint/paintPie3d (txe); chart-line-series/stackLineLayers (axe); chart-combo-groups (yxe); chart-funnel-segments/paintFunnelBars (vCe); shape-path-densify (dTe); compose-element-snapshot (helper678); formula-yearfrac (helper884); chart-scatter-axes/planScatterAxes (helper545); chart-legend-plot/reserveTitleBand (uSe); chart-series-values (helper551); icon-set-paint (uwe); table-cell-paint/layoutTableColumns ($B); compose-jsx-lower/lowerPanelSurfaceTag (JOe); formula-irr/computeXirr (Z0e); formula-ast-remap/exprContainsLambda (helper1008); html-paste/Dmt+Jpt; sparkline-paint/XCe+ZCe; canvas-paint/fillCellBackground (helper600); shape-path-densify/trimPathStart (uTe); slide-canvas-render/paintSlideText (nEe); chart-treemap-tiles (Yye); floating-placement (jTe); presentation-code-block (cAe/vAe); canvas-paint/paintCharts (zCe/BCe/VCe); table-styles/helper384; chart-card-paint (ASe); compose-element-snapshot/helper685; formula-dep-scc (VXe); formula-criteria-match (helper896); formula-irr/RATE (W0e); formula-matrix-det (klt); html-paste/Tmt+Emt; formula-ast-remap/Bht; wave-107: chart-trendline/helper524; chart-scatter-scale/helper539; chart-histogram-bins/_Se; chart-pie-series/qSe; chart-waterfall-bar/pCe; shape-path/Rwe+cTe; shape-path-densify/mTe; table-cell-paint/bTe+xTe; slide-canvas-render/dEe-cluster; presentation-theme/VDe; formula-dep-scc/WXe; formula-growth/pQe; formula-securities/k0e+H0e. wave-108: chart-legend-layout/ibe+abe; chart-legend-plot/helper458; chart-combo-groups/helper532; worksheet-used-range/UTe; formula-datedif/helper876; formula-complex/helper893+$4; formula-financial/E0e+D0e; conditional-format/oht+Nht+Pht. wave-109: compose-jsx-lower/helper713; formula-match/DZe; chart-stacked-domain/helper389; chart-line-series/helper480; chart-sunburst-layout/BSe; element-text-layout/XDe+helper676; chart-data-labels/helper495; shape-element/hze; shape-path/NSe. wave-110: formula-criteria-predicate/I8e+F8e; compose-element-snapshot/iOe; compose-jsx-lower/QOe; formula-financial/T0e+O0e+P0e; shape-path/tTe; formula-unique/Ost. wave-111: table-bands/fye+dye+386; axis-title/460; ube+dbe; Zbe+519; err-bars/527; lSe; card/562; fCe; pTe; bAe. wave-112: table-bands/fye+dye+386; helper546; helper440-cluster; swe/Swe; Lwe+647/648. wave-113: scales/388+391+403; axis/433+438+RCe; treemap/475+PSe; series/hxe+Cxe+cxe+Oxe; UCe+JCe; FPe; Qwe-stroke. wave-114: hbe+489+Wye; _xe+530/531; 601; 626; BTe; sbe; 439/478 SSF; 559. wave-115: MOe/XOe/YOe+Binding154-inline; PDe/BDe/vOe+693; dead CSe; 695/696. wave-116: yye/593/ROe+704–711/LIe+RIe/BXe+$Xe+836–853/xlsx-Tpt+Apt+kpt (ict false mid-file). wave-117: presentation-edit lLe..bLe + html-paste Ypt..1013/Qpt + chart-raster Amt..Zmt. wave-118: grid-frame-layout helper672+ADe+jDe + formula-sort-filter helper967. wave-119: formula-criteria-lookup helper976..Rut + formula-text-split vdt..Jdt + cf-icon-color-scale Fht/Iht..Ict (Tct/Pct/wct). wave-120: formula-call-dispatch (eft/Tft/Nft) + formula-range-index (Uft/Gft) + formula-structured-ref (qft/tpt) + cf Rht. wave-121: formula-scalar-funcs (854..days360/qQe/z$e) + formula-bond-basis (oat/sat/Kat/955..961). wave-122: formula-financial annuity (897..Q0e/w0e/fv/pmt) + formula-bond-basis lat/uat/dat/fat + formula-average-a ($3/Q2e/l4e/_4e). wave-123: shape-style-apply fze..vze + formula-dsum-criteria P8e/j8e + formula-averageif g4e + apt/ppt/mpt + jht + Lst + bSe. wave-124: formula-skew W4e/s4e + helper477/608/398/419/595/lwe/MTe + shared-refs 589..592 + opt..bpt + DSe..ISe + text-frame-style 689. wave-125: formula-criteria-shape a3e/h6e/916 + chart-axis-reserve _be/vbe/ybe + _O + NTe + cf-range-stats mht/Sht/1020. wave-126: chart-axis-scale-domain bbe/402/406/wye + presentation-aid ZRe + presentation-ref yze/bze/dze + helper483 + helper892 + iSe + iCe + r3e. wave-127: formula-byrow Yot/Jot nest + compose-code-children YIe + bond Uat/Kit/Wat/gat/_at + tSe + text-frame-resolve + QCe + TTe + Kwe + presentation-images + Dst + jgt + vrt + dead zye/Bye/Rxe/Vxe. wave-128: formula-eng-mids s1e nest + F9e/N9e/_9e + Mst + A8e + v8e + A7e + dead dollarOe/eke + cvt + gSe + owe + Gwe + 614/qwe + mid-paint 470/481/523/596/617/_Ee/700. wave-129: sheet-range-map 587 nest + jwe + uuid-v4/stable-id + formula-ast-walk 1038 + Xwe/Zwe + dead bwe/ySe/$1e + cfvo wht + paint Vye/Zye/awe/597 + F1e/I1e/q1e. wave-130: stroke 473/482 nest + 536 + twe + Jwe/Ywe + 639 + GDe + JSe + weeknum + D-stats + 917 + dollarXe→chart-data-labels + Aht/Mht unlock.
 // Stage-3 wave-6: Line Binding431 stroke VO + dash/compound maps → workbook/line/.
 // Stage-3 wave-7: color-resolve helpers (Sae/Cae/wae/Tae/workbookSt) → workbook/color-resolve/.
 // Stage-3 wave-8: TextStyle VO (workbookVt) + alignment/autofit/caps → workbook/text-style/.
@@ -1491,6 +1491,8 @@ import {
   layoutValAxisRight as bbe,
   crossingRatio as xbe,
   shiftForCrossing as Sbe,
+  expandDomainHeadroom,
+  workbookHelper536,
 } from "../../workbook/chart-axis-scale-domain";
 
 import {
@@ -2360,6 +2362,59 @@ import {
 } from "../../workbook/paint-mids";
 
 import {
+  wireStrokeResolveBoundaryHooks,
+  resolveFillColor as workbookHelper463,
+  resolveSeriesPaintColor as workbookHelper465,
+  resolvePathStyle as workbookHelper468,
+  resolveConnectorStroke as workbookHelper469,
+  resolveStrokePaint as workbookHelper471,
+  resolveDefaultStroke as workbookHelper472,
+  mergeStrokeStyle as workbookHelper473,
+  isEmptyFill as workbookHelper474,
+  resolveVisibleStroke as workbookHelper482,
+} from "../../workbook/stroke-resolve";
+
+import {
+  wirePictureFillPaintBoundaryHooks,
+  workbookHelper609,
+  workbookHelper615,
+  Jwe,
+  Ywe,
+} from "../../workbook/picture-fill-paint";
+
+import {
+  wireTextElementBuildBoundaryHooks,
+  wTe,
+  workbookHelper639,
+  workbookHelper640,
+} from "../../workbook/text-element-build";
+
+import {
+  wireContrastTextColorsBoundaryHooks,
+  JSe,
+} from "../../workbook/contrast-text-colors";
+
+import {
+  wireFormulaWeeknumBoundaryHooks,
+  u1e,
+  y1e,
+} from "../../workbook/formula-weeknum";
+
+import {
+  wireFormulaDStatsBoundaryHooks,
+  l0e,
+  u0e,
+  d0e,
+  f0e,
+  p0e,
+  m0e,
+  g0e,
+  _0e,
+  v0e,
+  y0e,
+} from "../../workbook/formula-d-stats";
+
+import {
   parseSheetRangeRef as UCe,
   normalizeSheetRangeParts as workbookHelper588,
   expandSheetRange as WCe,
@@ -2541,6 +2596,7 @@ import {
   isDataCallout as workbookHelper492,
   isDataLabelDeleted as workbookHelper493,
   seriesShowsValueLabels as workbookHelper494,
+  $xe,
 } from "../../workbook/chart-data-labels";
 
 wireChartDataLabelsBoundaryHooks({
@@ -3324,6 +3380,11 @@ import {
   Tht,
   Eht,
   Dht,
+  Aht,
+  Mht,
+  workbookHelper1021,
+  collectCfRuleRanges,
+  parseCfFormulaExpr,
 } from "../../workbook/cf-range-stats";
 
 import { buildConditionalFormatDxfColorMaps as jht } from "../../workbook/cf-dxf-color-maps";
@@ -4285,6 +4346,12 @@ wireSheetRangeMapBoundaryHooks();
 wireImageSvgDecodeBoundaryHooks();
 wireFormulaAstWalkBoundaryHooks();
 wirePaintMidsBoundaryHooks();
+wireStrokeResolveBoundaryHooks();
+wirePictureFillPaintBoundaryHooks();
+wireTextElementBuildBoundaryHooks();
+wireContrastTextColorsBoundaryHooks();
+wireFormulaWeeknumBoundaryHooks();
+wireFormulaDStatsBoundaryHooks();
 wireChartCategoryTimeBoundaryHooks({
   presentationN: undefined as any,
   formatCategoryLabel: (...args: any[]) => workbookHelper446(...args),
@@ -4755,7 +4822,12 @@ wireChartFunnelSegmentsBoundaryHooks({
   bh474: (...args: any[]) => workbookHelper474(...args),
 });
 
-import { computeHiddenBoundaries as ewe } from "../../workbook/sheet-hidden-boundaries";
+import {
+  computeHiddenBoundaries as ewe,
+  twe,
+  nwe,
+  ensureHiddenBoundaryCacheInit,
+} from "../../workbook/sheet-hidden-boundaries";
 
 import {
   wireSlideBackgroundPaintBoundaryHooks,
@@ -4904,6 +4976,8 @@ import {
   runPlainStyle as rOe,
   snapshotCellRuns as workbookHelper686,
   pickResolvedTextStyle as workbookHelper688,
+  unionCellsBbox,
+  GDe,
 } from "../../workbook/compose-element-snapshot";
 
 import {
@@ -5513,6 +5587,8 @@ import {
   I1e,
   q1e,
   $1e,
+  coerceFiniteNumbers,
+  workbookHelper917,
 } from "../../workbook/formula-eng-mids";
 import {
   wireFormulaDateMonthsBoundaryHooks,
@@ -8710,16 +8786,6 @@ var workbookBinding879,
     workbookBinding880 = 8;
     workbookBinding881 = 0.5;
   });
-function workbookHelper463(
-  workbookInput13052,
-  workbookInput13053,
-  workbookInput13054,
-) {
-  return workbookSt(workbookInput13052, workbookInput13053, {
-    ..._A,
-    defaultFill: workbookInput13054,
-  });
-}
 function workbookHelper464(
   workbookInput11467,
   workbookInput11468,
@@ -8746,27 +8812,6 @@ var _A,
       colorSpace: "drawingml-crgb",
     };
   });
-function workbookHelper465(
-  workbookInput6915,
-  workbookInput6916,
-  workbookInput6917,
-  workbookInput6918 = {},
-) {
-  if (workbookInput6915.fill?.color)
-    return workbookHelper463(workbookInput6915.fill.color, workbookInput6917);
-  let workbookBinding17261 = workbookInput6915.stroke?.fill?.color
-    ? workbookHelper463(workbookInput6915.stroke.fill.color, workbookInput6917)
-    : undefined;
-  if (workbookBinding17261) return workbookBinding17261;
-  let workbookBinding17262 = Wye(
-    workbookInput6916,
-    workbookInput6918.chartStyleIndex,
-  );
-  return (
-    workbookInput6917.colorMap[workbookBinding17262] ||
-    workbookBinding838[workbookInput6916 % workbookBinding838.length]
-  );
-}
 var workbookBinding883,
   workbookBinding884 = esmInit(() => {
     workbookBinding840();
@@ -8841,108 +8886,6 @@ var workbookBinding885,
     workbookBinding885 = "mapbox://mapbox.country-boundaries-v1";
     workbookBinding886 = "country_boundaries";
   });
-function workbookHelper468(workbookInput8596, workbookInput8597) {
-  if (!(!workbookInput8596.points || workbookInput8596.points.length === 0))
-    for (
-      let workbookBinding21298 = 0;
-      workbookBinding21298 < workbookInput8596.points.length;
-      workbookBinding21298++
-    ) {
-      let workbookBinding22496 = workbookInput8596.points[workbookBinding21298];
-      if (
-        (workbookBinding22496?.idx ?? workbookBinding21298) ===
-        workbookInput8597
-      )
-        return workbookBinding22496;
-    }
-}
-function workbookHelper469(
-  workbookInput10616,
-  workbookInput10617,
-  workbookInput10618,
-  workbookInput10619,
-  workbookInput10620,
-) {
-  let workbookBinding21100 = workbookHelper468(
-    workbookInput10616,
-    workbookInput10617,
-  )?.fill;
-  return workbookBinding21100
-    ? workbookBinding21100.color
-      ? workbookHelper463(workbookBinding21100.color, workbookInput10619)
-      : undefined
-    : workbookHelper465(
-        workbookInput10616,
-        workbookInput10618,
-        workbookInput10619,
-        workbookInput10620,
-      );
-}
-function workbookHelper471(workbookInput5318, workbookInput5319) {
-  let workbookBinding14976;
-  workbookInput5318?.fill?.color !== undefined &&
-    (workbookBinding14976 = workbookHelper463(
-      workbookInput5318.fill.color,
-      workbookInput5319,
-    ));
-  let workbookBinding14977;
-  workbookInput5318?.widthEmu !== undefined &&
-    (workbookBinding14977 = workbookInput5318.widthEmu * workbookGt);
-  let workbookBinding14978;
-  return (
-    workbookInput5318 !== undefined &&
-      ((workbookBinding14978 = true),
-      workbookInput5318.fill?.type === tr.FILL_TYPE_UNSPECIFIED &&
-        workbookInput5318.fill.color === undefined &&
-        (workbookBinding14978 = false)),
-    {
-      color: workbookBinding14976,
-      widthPx: workbookBinding14977,
-      visible: workbookBinding14978,
-    }
-  );
-}
-function workbookHelper472(workbookInput15112, workbookInput15113) {
-  return workbookHelper471(workbookInput15112.stroke, workbookInput15113);
-}
-function workbookHelper473(
-  workbookInput6223,
-  workbookInput6224,
-  workbookInput6225,
-) {
-  let workbookBinding16318 = workbookHelper472(
-      workbookInput6223,
-      workbookInput6225,
-    ),
-    workbookBinding16319 = workbookHelper468(
-      workbookInput6223,
-      workbookInput6224,
-    );
-  if (workbookBinding16319?.stroke === undefined) return workbookBinding16318;
-  let workbookBinding16320 = workbookHelper471(
-    workbookBinding16319.stroke,
-    workbookInput6225,
-  );
-  return (
-    workbookBinding16319.stroke.fill === undefined &&
-      ((workbookBinding16320.color = workbookBinding16318.color),
-      (workbookBinding16320.visible = workbookBinding16318.visible)),
-    workbookBinding16319.stroke.widthEmu === undefined &&
-      (workbookBinding16320.widthPx = workbookBinding16318.widthPx),
-    workbookBinding16320
-  );
-}
-function workbookHelper474(workbookInput11905, workbookInput11906) {
-  let workbookBinding22178 = workbookHelper468(
-    workbookInput11905,
-    workbookInput11906,
-  )?.fill;
-  return !!(
-    workbookBinding22178 &&
-    !workbookBinding22178.color &&
-    !workbookBinding22178.pattern
-  );
-}
 var workbookBinding888 = esmInit(() => {
   wr();
   workbookBinding884();
@@ -9003,32 +8946,6 @@ var workbookBinding893 = esmInit(() => {
   workbookT();
   workbookBinding882();
 });
-function workbookHelper482(
-  workbookInput7298,
-  workbookInput7299,
-  workbookInput7300,
-) {
-  let workbookBinding17682 = workbookHelper473(
-      workbookInput7298,
-      workbookInput7299,
-      workbookInput7300,
-    ),
-    workbookBinding17683 = workbookBinding17682.color;
-  workbookBinding17683 === undefined &&
-    (workbookBinding17683 = workbookBinding895);
-  let workbookBinding17684 = workbookBinding17682.widthPx;
-  workbookBinding17684 === undefined &&
-    (workbookBinding17684 = workbookBinding896);
-  let workbookBinding17685 = workbookBinding17684 > 0;
-  return (
-    workbookBinding17682.visible === false && (workbookBinding17685 = false),
-    {
-      color: workbookBinding17683,
-      widthPx: workbookBinding17684,
-      visible: workbookBinding17685,
-    }
-  );
-}
 var workbookBinding894,
   workbookBinding895,
   workbookBinding896,
@@ -9579,33 +9496,6 @@ function workbookHelper535(workbookInput6424, workbookInput6425) {
   )
     return workbookBinding1158;
 }
-function workbookHelper536(
-  workbookInput6303,
-  workbookInput6304,
-  workbookInput6305,
-  workbookInput6306,
-) {
-  if (
-    workbookInput6304?.min === undefined ||
-    workbookInput6304.min === 0 ||
-    workbookInput6304.max !== undefined ||
-    workbookInput6305 !== undefined
-  )
-    return;
-  let workbookBinding16427 = workbookHelper399(workbookInput6303),
-    [workbookBinding16428, workbookBinding16429] = workbookInput6303.domain();
-  workbookBinding16427 === undefined ||
-    workbookBinding16428 === undefined ||
-    workbookBinding16429 === undefined ||
-    workbookBinding16429 <= workbookBinding16428 ||
-    (workbookInput6306 - workbookBinding16428) /
-      (workbookBinding16429 - workbookBinding16428) <=
-      workbookBinding1160 ||
-    workbookInput6303.domain([
-      workbookBinding16428,
-      workbookBinding16429 + workbookBinding16427,
-    ]);
-}
 function workbookHelper537(workbookInput7080, workbookInput7081) {
   if (
     workbookInput7080?.min !== 0 ||
@@ -9901,28 +9791,6 @@ function Qxe(
     reservedTop: Math.min(workbookBinding18534, workbookBinding18533),
   };
 }
-function $xe(workbookInput4362) {
-  let workbookBinding13501 = workbookInput4362.barDirection;
-  if (
-    (workbookInput4362.type === Cn.CHART_TYPE_BAR ||
-      workbookInput4362.type === Cn.CHART_TYPE_BAR_3D) &&
-    workbookBinding13501 === _presentationVn.BAR_DIRECTION_BAR &&
-    (workbookInput4362.yAxis?.deleted === true ||
-      workbookHelper436(workbookInput4362.yAxis))
-  )
-    return;
-  let workbookBinding13502 = workbookInput4362.dataLabels;
-  if (
-    !(
-      workbookBinding13502?.showValue !== true ||
-      !workbookHelper494(workbookInput4362) ||
-      workbookBinding13502.position !== En.DATA_LABEL_POSITION_OUT_END
-    )
-  )
-    return workbookBinding13502.textStyle?.fontSize
-      ? workbookHelper152(workbookBinding13502.textStyle.fontSize)
-      : 10;
-}
 function eSe(workbookInput8771) {
   return (
     workbookInput8771.type === Cn.CHART_TYPE_BAR &&
@@ -10164,30 +10032,6 @@ function workbookHelper568(
   let workbookBinding21405 =
     workbookInput10892.measureText(workbookInput10894).width;
   return (workbookInput10892.restore(), workbookBinding21405);
-}
-function JSe(workbookInput5256) {
-  let workbookBinding14830 = appInitialXat(workbookInput5256);
-  if (!workbookBinding14830)
-    return {
-      primary: "#1a1a1a",
-      secondary: "rgba(0,0,0,0.7)",
-    };
-  let workbookBinding14831 = workbookBinding14830.rgb(),
-    workbookBinding14832 = workbookBinding14831.r / 255,
-    workbookBinding14833 = workbookBinding14831.g / 255,
-    workbookBinding14834 = workbookBinding14831.b / 255;
-  return 0.2126 * workbookBinding14832 +
-    0.7152 * workbookBinding14833 +
-    0.0722 * workbookBinding14834 >
-    0.55
-    ? {
-        primary: "#1a1a1a",
-        secondary: "rgba(0,0,0,0.6)",
-      }
-    : {
-        primary: "#ffffff",
-        secondary: "rgba(255,255,255,0.8)",
-      };
 }
 var workbookBinding1202,
   workbookBinding1203,
@@ -10499,36 +10343,6 @@ var workbookBinding1230,
         return workbookInput10086;
       }
     };
-  });
-function twe(workbookInput5302) {
-  let { worksheet, rowHeights, colWidths, rowIndexRemap } = workbookInput5302,
-    workbookBinding14928 = workbookBinding1236.get(worksheet);
-  if (
-    workbookBinding14928 &&
-    workbookBinding14928.rowRef === rowHeights &&
-    workbookBinding14928.colRef === colWidths &&
-    workbookBinding14928.remapRef === rowIndexRemap
-  )
-    return workbookBinding14928.markers;
-  let workbookBinding14929 = ewe({
-    worksheet,
-    rowHeights,
-    colWidths,
-    rowIndexRemap,
-  });
-  return (
-    workbookBinding1236.set(worksheet, {
-      rowRef: rowHeights,
-      colRef: colWidths,
-      remapRef: rowIndexRemap,
-      markers: workbookBinding14929,
-    }),
-    workbookBinding14929
-  );
-}
-var workbookBinding1236,
-  nwe = esmInit(() => {
-    workbookBinding1236 = new WeakMap();
   });
 var workbookBinding1237,
   workbookBinding1238 = esmInit(() => {
@@ -11036,25 +10850,6 @@ var Hwe = esmInit(() => {
 function Uwe(props) {
   return props?.type === Zn.COLOR_TYPE_SCHEME && props.value === "phClr";
 }
-function workbookHelper609(workbookInput5335) {
-  if (
-    workbookInput5335.geometry !== undefined &&
-    !(
-      workbookInput5335.geometry === workbookDt.SHAPE_GEOMETRY_CUSTOM &&
-      workbookInput5335.customPaths.length === 0
-    ) &&
-    !(
-      workbookInput5335.geometry !== workbookDt.SHAPE_GEOMETRY_CUSTOM &&
-      workbookInput5335.preset === undefined
-    )
-  )
-    return {
-      geometry: workbookInput5335.geometry,
-      preset: workbookInput5335.preset,
-      adjustmentList: workbookInput5335.adjustmentList,
-      customPaths: workbookInput5335.customPaths,
-    };
-}
 function workbookHelper610(workbookInput11372, workbookInput11373) {
   return !Uwe(workbookInput11372) || !workbookInput11373
     ? workbookInput11372
@@ -11096,74 +10891,6 @@ function workbookHelper613(workbookInput10301) {
   workbookInput10301.shadowBlur = 0;
   workbookInput10301.shadowOffsetX = 0;
   workbookInput10301.shadowOffsetY = 0;
-}
-function workbookHelper615(
-  workbookInput9529,
-  workbookInput9530,
-  workbookInput9531,
-  workbookInput9532,
-  workbookInput9533,
-  workbookInput9534 = {},
-) {
-  let { source = workbookInput9529.renderStyleData, ...rest } =
-    workbookInput9534;
-  workbookHelper616(
-    {
-      ...source,
-      proto: source.connector
-        ? workbookHelper611(workbookInput9529)
-        : undefined,
-    },
-    workbookInput9530,
-    workbookInput9531,
-    workbookInput9532,
-    workbookInput9533,
-    rest,
-  );
-}
-function Jwe(
-  workbookInput6288,
-  workbookInput6289,
-  { frame, source, fill, bitmap, contentType },
-) {
-  let workbookBinding16402 = workbookHelper609(source);
-  return workbookBinding16402
-    ? (workbookHelper616(
-        workbookBinding16402,
-        workbookInput6288,
-        undefined,
-        undefined,
-        workbookInput6289,
-        {
-          frame,
-          pictureFillBitmap: {
-            bitmap,
-            contentType,
-          },
-          pictureFill: fill,
-        },
-      ),
-      true)
-    : false;
-}
-function Ywe(workbookInput9285, workbookInput9286, { frame, source, line }) {
-  let workbookBinding19851 = workbookHelper609(source);
-  return workbookBinding19851
-    ? (workbookHelper616(
-        {
-          ...workbookBinding19851,
-          line,
-        },
-        workbookInput9285,
-        undefined,
-        undefined,
-        workbookInput9286,
-        {
-          frame,
-        },
-      ),
-      true)
-    : false;
 }
 function fTe(workbookInput6747, workbookInput6748) {
   let workbookBinding17053 = 1 - workbookInput6748,
@@ -11379,70 +11106,6 @@ var CTe = esmInit(() => {
   workbookBinding1267();
   workbookT();
 });
-function wTe(workbookInput5929) {
-  return !workbookInput5929 || workbookInput5929.length === 0
-    ? workbookInput5929
-    : workbookInput5929.map((item, index) =>
-        index !== 0 && index !== workbookInput5929.length - 1
-          ? item
-          : {
-              ...item,
-              ...(index === 0
-                ? {
-                    spaceBefore: 0,
-                  }
-                : {}),
-              ...(index === workbookInput5929.length - 1
-                ? {
-                    spaceAfter: 0,
-                  }
-                : {}),
-            },
-      );
-}
-function workbookHelper639(
-  workbookInput4219,
-  workbookInput4220,
-  workbookInput4221 = {},
-) {
-  let workbookBinding13273 = workbookHelper640(workbookInput4219.anchor);
-  return {
-    bbox: workbookInput4220,
-    paragraphs:
-      workbookInput4221.collapseParagraphBoundarySpacing === false
-        ? (workbookInput4219.paragraphs ?? [])
-        : (wTe(workbookInput4219.paragraphs) ?? []),
-    textStyle:
-      workbookBinding13273 === undefined
-        ? workbookInput4219.textStyle
-        : {
-            ...(workbookInput4219.textStyle ?? {}),
-            anchor: workbookBinding13273,
-          },
-    levelsStyles: workbookInput4219.levelsStyles ?? [],
-    type: j.ELEMENT_TYPE_TEXT,
-    effects: [],
-    children: [],
-    id: "",
-    citations: [],
-  };
-}
-function workbookHelper640(workbookInput6308) {
-  switch (workbookInput6308) {
-    case "b":
-    case "bottom":
-      return Yn.ANCHOR_TYPE_BOTTOM;
-    case "ctr":
-    case "center":
-    case "middle":
-      return Yn.ANCHOR_TYPE_MIDDLE;
-    case "t":
-    case "top":
-      return Yn.ANCHOR_TYPE_TOP;
-    default:
-      return;
-  }
-}
 function ETe(workbookInput6599, workbookInput6600, workbookInput6601) {
   for (let workbookBinding17598 of workbookInput6601) {
     if (
@@ -14105,32 +13768,6 @@ function WDe(props) {
     workbookBinding18025 > 0 &&
     workbookBinding18026 > 0
   );
-}
-function GDe(props) {
-  let workbookBinding14737 = props
-    .map((item) => workbookHelper693(item.bbox))
-    .filter((item) => item !== undefined);
-  if (workbookBinding14737.length === 0) return;
-  let workbookBinding14738 = Math.min(
-      ...workbookBinding14737.map((item) => item.left),
-    ),
-    workbookBinding14739 = Math.min(
-      ...workbookBinding14737.map((item) => item.top),
-    ),
-    workbookBinding14740 = Math.max(
-      ...workbookBinding14737.map((item) => item.right),
-    ),
-    workbookBinding14741 = Math.max(
-      ...workbookBinding14737.map((item) => item.bottom),
-    );
-  return [
-    workbookHelper696(workbookBinding14738) ?? workbookBinding14738,
-    workbookHelper696(workbookBinding14739) ?? workbookBinding14739,
-    workbookHelper696(workbookBinding14740 - workbookBinding14738) ??
-      workbookBinding14740 - workbookBinding14738,
-    workbookHelper696(workbookBinding14741 - workbookBinding14739) ??
-      workbookBinding14741 - workbookBinding14739,
-  ];
 }
 function workbookHelper684(workbookInput9229, workbookInput9230 = 140) {
   if (!workbookInput9229) return;
@@ -19960,21 +19597,6 @@ function l1e(workbookInput12327) {
       : workbookInput12327.getHours()
   );
 }
-function u1e(workbookInput7553) {
-  if (
-    ((workbookInput7553 = workbookHelper848(workbookInput7553)),
-    workbookInput7553 instanceof Error)
-  )
-    return workbookInput7553;
-  workbookInput7553 = toExcelDate(workbookInput7553);
-  workbookInput7553.setDate(
-    workbookInput7553.getDate() + 4 - (workbookInput7553.getDay() || 7),
-  );
-  let workbookBinding18034 = new Date(workbookInput7553.getFullYear(), 0, 1);
-  return Math.ceil(
-    ((workbookInput7553 - workbookBinding18034) / 864e5 + 1) / 7,
-  );
-}
 function d1e(workbookInput12213) {
   return (
     (workbookInput12213 = workbookHelper848(workbookInput12213)),
@@ -20055,33 +19677,6 @@ function v1e(workbookInput10039, workbookInput10040) {
   workbookInput10040 === undefined && (workbookInput10040 = 1);
   let workbookBinding20520 = workbookInput10039.getDay();
   return y2e[workbookInput10040][workbookBinding20520];
-}
-function y1e(workbookInput5357, workbookInput5358) {
-  if (
-    ((workbookInput5357 = workbookHelper848(workbookInput5357)),
-    workbookInput5357 instanceof Error)
-  )
-    return workbookInput5357;
-  if (
-    (workbookInput5358 === undefined && (workbookInput5358 = 1),
-    workbookInput5358 === 21)
-  )
-    return u1e(workbookInput5357);
-  let workbookBinding15068 = v2e[workbookInput5358],
-    workbookBinding15069 = new Date(workbookInput5357.getFullYear(), 0, 1),
-    workbookBinding15070 = +(
-      workbookBinding15069.getDay() < workbookBinding15068
-    );
-  return (
-    (workbookBinding15069 -=
-      Math.abs(workbookBinding15069.getDay() - workbookBinding15068) *
-      24 *
-      60 *
-      60 *
-      1e3),
-    Math.floor((workbookInput5357 - workbookBinding15069) / 86400000 / 7 + 1) +
-      workbookBinding15070
-  );
 }
 function workbookHelper881(
   workbookInput14405,
@@ -20617,242 +20212,6 @@ function c0e(workbookInput5443, workbookInput5444) {
             ? padStartRepeat("0", workbookInput5444 - r.length) + r
             : workbookBinding1838);
 }
-function l0e(workbookInput6541, workbookInput6542, workbookInput6543) {
-  if (isNaN(workbookInput6542) && typeof workbookInput6542 != "string")
-    return workbookBinding1835;
-  let workbookBinding16782 = workbookHelper896(
-      workbookInput6541,
-      workbookInput6543,
-    ),
-    workbookBinding16783 = [];
-  workbookBinding16783 = workbookHelper843(
-    typeof workbookInput6542 == "string"
-      ? workbookInput6541[
-          workbookHelper844(workbookInput6541, workbookInput6542)
-        ]
-      : workbookInput6541[workbookInput6542],
-  );
-  let workbookBinding16784 = 0;
-  return (
-    workbookHelper839(workbookBinding16782, (workbookInput15859) => {
-      workbookBinding16784 += workbookBinding16783[workbookInput15859];
-    }),
-    workbookBinding16782.length === 0
-      ? workbookBinding1834
-      : workbookBinding16784 / workbookBinding16782.length
-  );
-}
-function u0e(workbookInput7046, workbookInput7047, workbookInput7048) {
-  if (isNaN(workbookInput7047) && typeof workbookInput7047 != "string")
-    return workbookBinding1835;
-  let workbookBinding17391 = workbookHelper896(
-      workbookInput7046,
-      workbookInput7048,
-    ),
-    workbookBinding17392 = [];
-  workbookBinding17392 = workbookHelper843(
-    typeof workbookInput7047 == "string"
-      ? workbookInput7046[
-          workbookHelper844(workbookInput7046, workbookInput7047)
-        ]
-      : workbookInput7046[workbookInput7047],
-  );
-  let workbookBinding17393 = [];
-  return (
-    workbookHelper839(workbookBinding17391, (workbookInput15800) => {
-      workbookBinding17393.push(workbookBinding17392[workbookInput15800]);
-    }),
-    isOddInteger(workbookBinding17393)
-  );
-}
-function d0e(workbookInput7049, workbookInput7050, workbookInput7051) {
-  if (isNaN(workbookInput7050) && typeof workbookInput7050 != "string")
-    return workbookBinding1835;
-  let workbookBinding17394 = workbookHelper896(
-      workbookInput7049,
-      workbookInput7051,
-    ),
-    workbookBinding17395 = [];
-  workbookBinding17395 = workbookHelper843(
-    typeof workbookInput7050 == "string"
-      ? workbookInput7049[
-          workbookHelper844(workbookInput7049, workbookInput7050)
-        ]
-      : workbookInput7049[workbookInput7050],
-  );
-  let workbookBinding17396 = [];
-  return (
-    workbookHelper839(workbookBinding17394, (workbookInput15801) => {
-      workbookBinding17396.push(workbookBinding17395[workbookInput15801]);
-    }),
-    isEvenInteger(workbookBinding17396)
-  );
-}
-function f0e(workbookInput7403, workbookInput7404, workbookInput7405) {
-  if (isNaN(workbookInput7404) && typeof workbookInput7404 != "string")
-    return workbookBinding1835;
-  let workbookBinding17844 = workbookHelper896(
-      workbookInput7403,
-      workbookInput7405,
-    ),
-    workbookBinding17845 = [];
-  return (
-    (workbookBinding17845 = workbookHelper843(
-      typeof workbookInput7404 == "string"
-        ? workbookInput7403[
-            workbookHelper844(workbookInput7403, workbookInput7404)
-          ]
-        : workbookInput7403[workbookInput7404],
-    )),
-    workbookBinding17844.length === 0
-      ? workbookBinding1835
-      : workbookBinding17844.length > 1
-        ? workbookBinding1838
-        : workbookBinding17845[workbookBinding17844[0]]
-  );
-}
-function p0e(workbookInput6829, workbookInput6830, workbookInput6831) {
-  if (isNaN(workbookInput6830) && typeof workbookInput6830 != "string")
-    return workbookBinding1835;
-  let workbookBinding17150 = workbookHelper896(
-      workbookInput6829,
-      workbookInput6831,
-    ),
-    workbookBinding17151 = [];
-  workbookBinding17151 = workbookHelper843(
-    typeof workbookInput6830 == "string"
-      ? workbookInput6829[
-          workbookHelper844(workbookInput6829, workbookInput6830)
-        ]
-      : workbookInput6829[workbookInput6830],
-  );
-  let workbookBinding17152 = workbookBinding17151[workbookBinding17150[0]];
-  return (
-    workbookHelper839(workbookBinding17150, (workbookInput15267) => {
-      workbookBinding17152 < workbookBinding17151[workbookInput15267] &&
-        (workbookBinding17152 = workbookBinding17151[workbookInput15267]);
-    }),
-    workbookBinding17152
-  );
-}
-function m0e(workbookInput6832, workbookInput6833, workbookInput6834) {
-  if (isNaN(workbookInput6833) && typeof workbookInput6833 != "string")
-    return workbookBinding1835;
-  let workbookBinding17153 = workbookHelper896(
-      workbookInput6832,
-      workbookInput6834,
-    ),
-    workbookBinding17154 = [];
-  workbookBinding17154 = workbookHelper843(
-    typeof workbookInput6833 == "string"
-      ? workbookInput6832[
-          workbookHelper844(workbookInput6832, workbookInput6833)
-        ]
-      : workbookInput6832[workbookInput6833],
-  );
-  let workbookBinding17155 = workbookBinding17154[workbookBinding17153[0]];
-  return (
-    workbookHelper839(workbookBinding17153, (workbookInput15268) => {
-      workbookBinding17155 > workbookBinding17154[workbookInput15268] &&
-        (workbookBinding17155 = workbookBinding17154[workbookInput15268]);
-    }),
-    workbookBinding17155
-  );
-}
-function g0e(workbookInput6641, workbookInput6642, workbookInput6643) {
-  if (isNaN(workbookInput6642) && typeof workbookInput6642 != "string")
-    return workbookBinding1835;
-  let workbookBinding16935 = workbookHelper896(
-      workbookInput6641,
-      workbookInput6643,
-    ),
-    workbookBinding16936 = [];
-  workbookBinding16936 = workbookHelper843(
-    typeof workbookInput6642 == "string"
-      ? workbookInput6641[
-          workbookHelper844(workbookInput6641, workbookInput6642)
-        ]
-      : workbookInput6641[workbookInput6642],
-  );
-  let workbookBinding16937 = [];
-  return (
-    workbookHelper839(workbookBinding16935, (workbookInput15802) => {
-      workbookBinding16937.push(workbookBinding16936[workbookInput15802]);
-    }),
-    (workbookBinding16937 = workbookHelper895(workbookBinding16937)),
-    workbookBinding1866.S(workbookBinding16937)
-  );
-}
-function _0e(workbookInput6644, workbookInput6645, workbookInput6646) {
-  if (isNaN(workbookInput6645) && typeof workbookInput6645 != "string")
-    return workbookBinding1835;
-  let workbookBinding16938 = workbookHelper896(
-      workbookInput6644,
-      workbookInput6646,
-    ),
-    workbookBinding16939 = [];
-  workbookBinding16939 = workbookHelper843(
-    typeof workbookInput6645 == "string"
-      ? workbookInput6644[
-          workbookHelper844(workbookInput6644, workbookInput6645)
-        ]
-      : workbookInput6644[workbookInput6645],
-  );
-  let workbookBinding16940 = [];
-  return (
-    workbookHelper839(workbookBinding16938, (workbookInput15803) => {
-      workbookBinding16940.push(workbookBinding16939[workbookInput15803]);
-    }),
-    (workbookBinding16940 = workbookHelper895(workbookBinding16940)),
-    workbookBinding1866.P(workbookBinding16940)
-  );
-}
-function v0e(workbookInput6994, workbookInput6995, workbookInput6996) {
-  if (isNaN(workbookInput6995) && typeof workbookInput6995 != "string")
-    return workbookBinding1835;
-  let workbookBinding17347 = workbookHelper896(
-      workbookInput6994,
-      workbookInput6996,
-    ),
-    workbookBinding17348 = [];
-  workbookBinding17348 = workbookHelper843(
-    typeof workbookInput6995 == "string"
-      ? workbookInput6994[
-          workbookHelper844(workbookInput6994, workbookInput6995)
-        ]
-      : workbookInput6994[workbookInput6995],
-  );
-  let workbookBinding17349 = [];
-  return (
-    workbookHelper839(workbookBinding17347, (workbookInput15804) => {
-      workbookBinding17349.push(workbookBinding17348[workbookInput15804]);
-    }),
-    workbookBinding1867.S(workbookBinding17349)
-  );
-}
-function y0e(workbookInput6997, workbookInput6998, workbookInput6999) {
-  if (isNaN(workbookInput6998) && typeof workbookInput6998 != "string")
-    return workbookBinding1835;
-  let workbookBinding17350 = workbookHelper896(
-      workbookInput6997,
-      workbookInput6999,
-    ),
-    workbookBinding17351 = [];
-  workbookBinding17351 = workbookHelper843(
-    typeof workbookInput6998 == "string"
-      ? workbookInput6997[
-          workbookHelper844(workbookInput6997, workbookInput6998)
-        ]
-      : workbookInput6997[workbookInput6998],
-  );
-  let workbookBinding17352 = [];
-  return (
-    workbookHelper839(workbookBinding17350, (workbookInput15805) => {
-      workbookBinding17352.push(workbookBinding17351[workbookInput15805]);
-    }),
-    workbookBinding1867.P(workbookBinding17352)
-  );
-}
 function $0e() {
   let workbookBinding16619 = workbookHelper841(arguments),
     workbookBinding16620 = workbookBinding1835;
@@ -21143,33 +20502,6 @@ function d4e(workbookInput5609) {
     Math.abs(workbookBinding15447 - 1) <= y6e
     ? null
     : workbookBinding1879;
-}
-function workbookHelper917(workbookInput3423) {
-  let workbookBinding11834 = workbookHelper914(workbookInput3423),
-    workbookBinding11835 = [];
-  for (let workbookBinding12780 of workbookBinding11834) {
-    if (isFormulaErrorToken(workbookBinding12780)) return workbookBinding12780;
-    if (workbookBinding12780 instanceof Error) return workbookBinding1876;
-    if (!(workbookBinding12780 == null || workbookBinding12780 === "")) {
-      if (typeof workbookBinding12780 == "number") {
-        if (Number.isFinite(workbookBinding12780)) {
-          workbookBinding11835.push(workbookBinding12780);
-          continue;
-        }
-        return workbookBinding1876;
-      }
-      if (typeof workbookBinding12780 == "string") {
-        let workbookBinding20190 = workbookBinding12780.trim();
-        if (workbookBinding20190 === "") continue;
-        let workbookBinding20191 = Number(workbookBinding20190);
-        Number.isFinite(workbookBinding20191) &&
-          workbookBinding11835.push(workbookBinding20191);
-        continue;
-      }
-      return workbookBinding1876;
-    }
-  }
-  return workbookBinding11835;
 }
 function v4e(workbookInput14179, workbookInput14180, ...workbookInput14181) {
   return workbookHelper911(
@@ -26059,53 +25391,6 @@ function kht(workbookInput196) {
     dataBarRules: workbookBinding3072,
     iconSetRules: workbookBinding3073,
   });
-}
-function Aht(workbookInput8108, workbookInput8109) {
-  let workbookBinding18612 = [];
-  for (let workbookBinding20157 of workbookInput8108) {
-    if (
-      workbookBinding20157.sheetName &&
-      workbookBinding20157.sheetName !== workbookInput8109
-    )
-      continue;
-    let workbookBinding20658 = parseA1Range(
-      `${workbookBinding20157.startAddress}:${workbookBinding20157.endAddress}`,
-    );
-    workbookBinding20658 &&
-      workbookBinding18612.push(workbookBinding20658.bounds);
-  }
-  return workbookBinding18612;
-}
-function workbookHelper1021(
-  workbookInput9731,
-  workbookInput9732,
-  workbookInput9733,
-) {
-  for (let workbookBinding21491 of workbookInput9733)
-    if (
-      workbookInput9731 >= workbookBinding21491.startRow &&
-      workbookInput9731 <= workbookBinding21491.endRow &&
-      workbookInput9732 >= workbookBinding21491.startCol &&
-      workbookInput9732 <= workbookBinding21491.endCol
-    )
-      return true;
-  return false;
-}
-function Mht(props) {
-  let workbookBinding17578 = Array.isArray(props.formula)
-      ? props.formula[0]
-      : props.formula,
-    workbookBinding17579 =
-      workbookBinding17578 == null ? "" : String(workbookBinding17578).trim();
-  if (!workbookBinding17579) return null;
-  let workbookBinding17580 = workbookHelper328(
-    workbookBinding17579.startsWith("=")
-      ? workbookBinding17579
-      : `=${workbookBinding17579}`,
-  );
-  return workbookBinding17580.errors.length > 0
-    ? null
-    : workbookBinding17580.expr;
 }
 function Lht(workbookInput6909, workbookInput6910) {
   let workbookBinding17250 = 0;

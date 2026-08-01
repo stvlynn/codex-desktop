@@ -12,4 +12,7 @@ export {
   isDataLabelDeleted,
   seriesShowsValueLabels,
   resolveDataLabelText,
+  outEndValueLabelFontSize,
+  $xe,
+  workbookHelper494,
 } from "./resolve-data-label-text-impl";

@@ -4,4 +4,8 @@
 export {
   computeHiddenBoundaries,
   ewe,
+  twe,
+  nwe,
+  cachedHiddenBoundaries,
+  ensureHiddenBoundaryCacheInit,
 } from "./sheet-hidden-boundaries-impl";

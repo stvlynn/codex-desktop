@@ -29,3 +29,12 @@ export {
   Eht,
   Dht,
 } from "./cfvo-resolve-impl";
+
+export {
+  collectCfRuleRanges,
+  pointInCfRanges,
+  parseCfFormulaExpr,
+  Aht,
+  workbookHelper1021,
+  Mht,
+} from "./cf-rule-helpers-impl";

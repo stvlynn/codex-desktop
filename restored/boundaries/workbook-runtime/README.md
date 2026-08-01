@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~29.2k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~28.5k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -287,6 +287,7 @@
 | Measure embed (`NTe`) | ~0.04k | **Drained (wave-125)** → `workbook/text-frame-embeds/` |
 | CF range stats (`mht`/`Sht`/`helper1020`/`1015`) | ~0.19k | **Drained (wave-125)** → `workbook/cf-range-stats/` |
 | Chart axis scale domain (`bbe`/`helper402`/`406`/`wye`…) | ~0.70k body | **Drained (wave-126)** → `workbook/chart-axis-scale-domain/` + presentation-aid/ref + series-endpoint + formula-complex 886/892 + iSe + fill-empty + r3e |
+| Stroke/picture/text mids + D-stats/weeknum + CF unlock (`helper473`/`482`/`Jwe`/`639`/`l0e`/`Aht`/…) | ~0.7k body | **Drained (wave-130)** → stroke-resolve + picture-fill-paint + text-element-build + contrast-text + formula-weeknum + formula-d-stats + eng-mids 917 + sheet-hidden twe + axis 536 + GDe + Aht/Mht |
 | Sheet-range-map + uuid-v4 + formula-ast-walk + paint/cfvo mids (`helper587`/`jwe`/`UEe`/`1038`/…) | ~0.7k body | **Drained (wave-129)** → sheet-range-map + image-svg-decode + stable-id uuid-v4 + formula-ast-walk + cfvo-resolve + paint-mids + eng-mids F1e/I1e/q1e + mid-paint Xwe/Zwe |
 | Formula eng mids + date-months + A1/matrix/DSUM/add-months + paint mids (`s1e`/`F9e`/`Mst`/…) | ~0.80k body | **Drained (wave-128)** → formula-eng-mids + date-months + a1-address + matrix-transpose + dsum-agg + date-add-months + compose-attach-children + doc-shape + bin-width + paint-checkbox + shape-fill/geometry-apply + mid-paint-helpers |
 | Formula BYROW/BYCOL + mids (`Yot`/`YIe`/`Uat`/`tSe`/`zye`/`Rxe`…) | ~0.87k body | **Drained (wave-127)** → formula-byrow + compose-code-children + bond-pv + chart-data-label-font + text-frame-resolve + marker/effects/table + presentation-images + unique-rows + sheet-catalog + newton + dead category-time/label-overflow |
@@ -1677,3 +1678,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: remaining ≥20 mids / rze after vYe ensure / kht after ensure bag / helper603 after Nwe Map ESM
+
+## Wave 130 (Stage-3 preferred ≥20–27 batch + CF unlock)
+
+- Boundary 29234 → 28518 (Δ -716)
+- Peeled: stroke-resolve 463/465/468–474/482; axis helper536; twe+nwe; picture 609/615/Jwe/Ywe; text wTe/639/640; GDe; JSe; weeknum u1e/y1e; D-stats l0e..y0e; eng-mids 917; dollarXe→chart-data-labels; CF unlock Aht/1021/Mht
+- Skipped: helper603 (Nwe Map ESM); rze (vYe/_workbookS ensure); kht (fht+aht bag); fht (aht still gated)
+- Leave-behind: rze still needs vYe ensure fan-out; kht closer (Aht/Mht owned, fht/aht remain); helper603 after Nwe Map ESM
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: remaining ≥20 mids / fht+aht bag → kht / rze after vYe ensure / helper603 after Nwe Map ESM

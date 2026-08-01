@@ -3,6 +3,10 @@
 // Stage-3 wave-109.
 
 import { cdlH } from "./boundary-hooks";
+import { hundredthsPointToCssPx } from "../font-stack";
+import { axisHidesTickLabels } from "../chart-axis-reserve";
+import { Cn } from "../spreadsheet-protobuf";
+import { En, Vn as PresentationVn } from "../presentation-protobuf";
 
 void cdlH;
 
@@ -21,19 +25,22 @@ export function seriesShowsValueLabels(cdlIn7865: any) {
         : item.dataLabels.showValue === true,
   );
 }
-export function resolveDataLabelText(cdlIn2186: any, cdlIn2187: any, cdlIn2188: any, cdlIn2189: any, ) {
+export function resolveDataLabelText(
+  cdlIn2186: any,
+  cdlIn2187: any,
+  cdlIn2188: any,
+  cdlIn2189: any,
+) {
   let cdlBind9192 = cdlIn2186.dataLabels,
     cdlBind9193 = cdlIn2187.dataLabels,
     cdlBind9194;
   if (cdlIn2187.dataLabelOverrides)
     for (
-      let cdlBind19704 =
-        cdlIn2187.dataLabelOverrides.length - 1;
+      let cdlBind19704 = cdlIn2187.dataLabelOverrides.length - 1;
       cdlBind19704 >= 0;
       --cdlBind19704
     ) {
-      let cdlBind21501 =
-        cdlIn2187.dataLabelOverrides[cdlBind19704];
+      let cdlBind21501 = cdlIn2187.dataLabelOverrides[cdlBind19704];
       if (cdlBind21501?.idx === cdlIn2188) {
         cdlBind9194 = cdlBind21501;
         break;
@@ -44,10 +51,7 @@ export function resolveDataLabelText(cdlIn2186: any, cdlIn2187: any, cdlIn2188: 
       (cdlBind9193 === undefined
         ? cdlBind9192?.showValue === true
         : cdlBind9193.showValue === true),
-    cdlBind9196 = isDataLabelDeleted(
-      cdlBind9192,
-      cdlBind9193,
-    ),
+    cdlBind9196 = isDataLabelDeleted(cdlBind9192, cdlBind9193),
     cdlBind9197 =
       cdlBind9194?.position ??
       cdlBind9193?.position ??
@@ -83,3 +87,28 @@ export const workbookHelper492 = isDataCallout;
 export const workbookHelper493 = isDataLabelDeleted;
 export const workbookHelper494 = seriesShowsValueLabels;
 export const workbookHelper495 = resolveDataLabelText;
+
+// Wave-130: out-end value label font size (legacy $xe).
+export function outEndValueLabelFontSize(cdlIn4362: any) {
+  let cdlBind13501 = cdlIn4362.barDirection;
+  if (
+    (cdlIn4362.type === Cn.CHART_TYPE_BAR ||
+      cdlIn4362.type === Cn.CHART_TYPE_BAR_3D) &&
+    cdlBind13501 === PresentationVn.BAR_DIRECTION_BAR &&
+    (cdlIn4362.yAxis?.deleted === true || axisHidesTickLabels(cdlIn4362.yAxis))
+  )
+    return;
+  let cdlBind13502 = cdlIn4362.dataLabels;
+  if (
+    !(
+      cdlBind13502?.showValue !== true ||
+      !seriesShowsValueLabels(cdlIn4362) ||
+      cdlBind13502.position !== En.DATA_LABEL_POSITION_OUT_END
+    )
+  )
+    return cdlBind13502.textStyle?.fontSize
+      ? hundredthsPointToCssPx(cdlBind13502.textStyle.fontSize)
+      : 10;
+}
+
+export const $xe = outEndValueLabelFontSize;

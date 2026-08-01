@@ -34,4 +34,6 @@ export {
   bbe,
   xbe,
   Sbe,
+  expandDomainHeadroom,
+  workbookHelper536,
 } from "./chart-axis-scale-domain-impl";

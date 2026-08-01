@@ -11,6 +11,8 @@ import {
   chooseFormulaValue,
   formulaValueEquals,
 } from "../formula-token-utils";
+import { flattenSingleCellArg } from "../formula-averageif";
+import { isFormulaErrorToken } from "../formula-average-a";
 import { padStartRepeat } from "../formula-scalar-funcs";
 import {
   complexReal,
@@ -361,3 +363,34 @@ export function complexSinh(femIn5926: any) {
 }
 
 export const $1e = complexSinh;
+
+const valueErrorToken = { kind: "Error", code: "#VALUE!" } as const;
+
+export function coerceFiniteNumbers(femIn3423: any) {
+  let femBind11834 = flattenSingleCellArg(femIn3423),
+    femBind11835 = [];
+  for (let femBind12780 of femBind11834) {
+    if (isFormulaErrorToken(femBind12780)) return femBind12780;
+    if (femBind12780 instanceof Error) return valueErrorToken;
+    if (!(femBind12780 == null || femBind12780 === "")) {
+      if (typeof femBind12780 == "number") {
+        if (Number.isFinite(femBind12780)) {
+          femBind11835.push(femBind12780);
+          continue;
+        }
+        return valueErrorToken;
+      }
+      if (typeof femBind12780 == "string") {
+        let femBind20190 = femBind12780.trim();
+        if (femBind20190 === "") continue;
+        let femBind20191 = Number(femBind20190);
+        Number.isFinite(femBind20191) && femBind11835.push(femBind20191);
+        continue;
+      }
+      return valueErrorToken;
+    }
+  }
+  return femBind11835;
+}
+
+export const workbookHelper917 = coerceFiniteNumbers;

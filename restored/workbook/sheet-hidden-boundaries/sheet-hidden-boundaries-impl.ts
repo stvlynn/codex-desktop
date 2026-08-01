@@ -6,28 +6,19 @@ export function computeHiddenBoundaries(shbIn802: any) {
   let { worksheet, rowHeights, colWidths, rowIndexRemap } = shbIn802,
     shbBind5411 = new Set();
   for (let shbBind22598 of worksheet.__getRows())
-    shbBind22598.hidden === true &&
-      shbBind5411.add(shbBind22598.index - 1);
+    shbBind22598.hidden === true && shbBind5411.add(shbBind22598.index - 1);
   let shbBind5412 = [];
   if (shbBind5411.size > 0 && rowHeights.length > 1) {
     let shbBind10598 = rowHeights.length,
       shbBind10599 = Array(shbBind10598);
-    for (
-      let shbBind22546 = 0;
-      shbBind22546 < shbBind10598;
-      shbBind22546++
-    )
+    for (let shbBind22546 = 0; shbBind22546 < shbBind10598; shbBind22546++)
       shbBind10599[shbBind22546] =
         rowIndexRemap && shbBind22546 < rowIndexRemap.length
           ? (rowIndexRemap[shbBind22546] ?? shbBind22546)
           : shbBind22546;
     let shbBind10600 = null,
       shbBind10601 = null;
-    for (
-      let shbBind12481 = 0;
-      shbBind12481 < shbBind10598;
-      shbBind12481++
-    ) {
+    for (let shbBind12481 = 0; shbBind12481 < shbBind10598; shbBind12481++) {
       let shbBind12875 = rowHeights[shbBind12481];
       if (shbBind12875 == null || shbBind12875 <= 0) continue;
       let shbBind12876 = shbBind10599[shbBind12481];
@@ -37,10 +28,8 @@ export function computeHiddenBoundaries(shbIn802: any) {
         continue;
       }
       if (shbBind10600 != null && shbBind10601 != null) {
-        let shbBind17657 =
-            Math.min(shbBind10601, shbBind12876) + 1,
-          shbBind17658 =
-            Math.max(shbBind10601, shbBind12876) - 1;
+        let shbBind17657 = Math.min(shbBind10601, shbBind12876) + 1,
+          shbBind17658 = Math.max(shbBind10601, shbBind12876) - 1;
         if (shbBind17657 <= shbBind17658) {
           for (
             let shbBind21329 = shbBind17657;
@@ -76,21 +65,15 @@ export function computeHiddenBoundaries(shbIn802: any) {
   if (shbBind5413.size > 0 && colWidths.length > 1) {
     let shbBind13000 = colWidths.length,
       shbBind13001 = null;
-    for (
-      let shbBind13899 = 0;
-      shbBind13899 < shbBind13000;
-      shbBind13899++
-    ) {
+    for (let shbBind13899 = 0; shbBind13899 < shbBind13000; shbBind13899++) {
       let shbBind14391 = colWidths[shbBind13899];
       if (
         !(shbBind14391 == null || shbBind14391 <= 0) &&
         !shbBind5413.has(shbBind13899)
       ) {
         if (shbBind13001 != null) {
-          let shbBind17138 =
-              Math.min(shbBind13001, shbBind13899) + 1,
-            shbBind17139 =
-              Math.max(shbBind13001, shbBind13899) - 1;
+          let shbBind17138 = Math.min(shbBind13001, shbBind13899) + 1,
+            shbBind17139 = Math.max(shbBind13001, shbBind13899) - 1;
           if (shbBind17138 <= shbBind17139) {
             for (
               let shbBind21064 = shbBind17138;
@@ -115,3 +98,40 @@ export function computeHiddenBoundaries(shbIn802: any) {
 
 /** Legacy alias. */
 export const ewe = computeHiddenBoundaries;
+
+let hiddenBoundaryCache: WeakMap<object, any> | undefined;
+
+export function ensureHiddenBoundaryCacheInit(): void {
+  hiddenBoundaryCache ??= new WeakMap();
+}
+
+export function cachedHiddenBoundaries(shbIn5302: any) {
+  ensureHiddenBoundaryCacheInit();
+  let { worksheet, rowHeights, colWidths, rowIndexRemap } = shbIn5302,
+    shbBind14928 = hiddenBoundaryCache!.get(worksheet);
+  if (
+    shbBind14928 &&
+    shbBind14928.rowRef === rowHeights &&
+    shbBind14928.colRef === colWidths &&
+    shbBind14928.remapRef === rowIndexRemap
+  )
+    return shbBind14928.markers;
+  let shbBind14929 = computeHiddenBoundaries({
+    worksheet,
+    rowHeights,
+    colWidths,
+    rowIndexRemap,
+  });
+  return (
+    hiddenBoundaryCache!.set(worksheet, {
+      rowRef: rowHeights,
+      colRef: colWidths,
+      remapRef: rowIndexRemap,
+      markers: shbBind14929,
+    }),
+    shbBind14929
+  );
+}
+
+export const twe = cachedHiddenBoundaries;
+export const nwe = ensureHiddenBoundaryCacheInit;
