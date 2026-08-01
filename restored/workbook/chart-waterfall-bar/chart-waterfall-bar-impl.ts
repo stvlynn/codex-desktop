@@ -3,6 +3,7 @@
 // Stage-3 wave-100.
 
 import { cwbH } from "./boundary-hooks";
+import { workbookHelper575 } from "./waterfall-accent-color-impl";
 
 void cwbH;
 
@@ -42,7 +43,7 @@ export function paintWaterfallBar(
     (cwbBind6514 = cwbH.bh463(cwbBind6511.fill.color, cwbIn1123));
   !cwbBind6514 &&
     !cwbBind6513 &&
-    (cwbBind6514 = cwbH.bh575(cwbIn1123, cwbIn1117.kind));
+    (cwbBind6514 = workbookHelper575(cwbIn1123, cwbIn1117.kind));
   let { color: cwbBind6515, widthPx } = cwbH.bh473(
       cwbBind6511,
       cwbIn1117.index,

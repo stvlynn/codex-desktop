@@ -5,6 +5,7 @@
 import { extent as d3Extent } from "d3-array";
 import { scaleLinear as d3ScaleLinear } from "../../vendor/d3-scale-linear";
 import { csmH } from "./boundary-hooks";
+import { workbookHelper467 } from "./case-expr-builder-impl";
 
 void d3Extent;
 void d3ScaleLinear;
@@ -62,8 +63,8 @@ export function paintSurfaceMap(
     csmBind4301.set(index, csmBind4300(item));
     csmBind4302.set(index, 0.9);
   });
-  let csmBind4303 = csmH.bh467(csmBind4301, csmBind4296.fallback),
-    csmBind4304 = csmH.bh467(csmBind4302, 0.55),
+  let csmBind4303 = workbookHelper467(csmBind4301, csmBind4296.fallback),
+    csmBind4304 = workbookHelper467(csmBind4302, 0.55),
     csmBind4305 = csmH.mapElementIdStem(
       csmIn516.elementId ?? csmIn513.id ?? "chart",
     ),

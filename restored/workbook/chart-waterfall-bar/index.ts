@@ -19,3 +19,8 @@ export {
 } from "./paint-bridge-impl";
 
 export { lCe } from "./point-fill-override-impl";
+
+export {
+  workbookHelper575,
+  WATERFALL_ACCENT_DEFAULTS,
+} from "./waterfall-accent-color-impl";

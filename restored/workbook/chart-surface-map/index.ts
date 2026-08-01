@@ -5,3 +5,5 @@ export { wireChartSurfaceMapBoundaryHooks, csmH } from "./boundary-hooks";
 export { paintSurfaceMap, Kye } from "./chart-surface-map-impl";
 
 export { Jye } from "./map-name-filter-impl";
+
+export { workbookHelper467 } from "./case-expr-builder-impl";

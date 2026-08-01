@@ -7,6 +7,11 @@ import { hundredthsPointToCssPx } from "../font-stack";
 import { resolveFillStyle } from "../canvas-fill";
 import { resolveColorToCssRgba } from "../color-resolve";
 import { clH } from "./boundary-hooks";
+import {
+  $A,
+  workbookHelper484,
+  workbookHelper488,
+} from "./legend-marker-size-impl";
 
 /** Legacy Binding899 — map-legend ramp max width. */
 export const LEGEND_RAMP_MAX_WIDTH = 120;
@@ -88,7 +93,7 @@ export function paintChartLegend(
     clBind2746 = clIn105.y + 8,
     clBind2747 = clH.bh487(clBind2742),
     clBind2748 =
-      (clBind2747 ? clH.bh488(clBind2742) : null)?.top ?? LEGEND_INSET;
+      (clBind2747 ? workbookHelper488(clBind2742) : null)?.top ?? LEGEND_INSET;
   if (clBind2747) {
     let clBind21192 = width,
       clBind21193 = Math.max(0, clIn105.width),
@@ -149,7 +154,7 @@ export function paintChartLegend(
         clBind3553 =
           labelWidths[clIn310] ?? clIn103.measureText(clBind3552).width,
         clBind3554 = $A(clIn309.chartType),
-        { width: _width, height: _height } = clH.bh484(clIn309),
+        { width: _width, height: _height } = workbookHelper484(clIn309),
         clBind3555 = clIn309.pointIndex,
         clBind3556 = clIn309.fillColor;
       clBind3556 === undefined &&
@@ -374,7 +379,7 @@ export function paintChartLegend(
         clBind2752(clBind16152, _item, clBind16153, clBind12402);
         let clBind16154 =
             labelWidths[_item] ?? clIn103.measureText(clBind16152.label).width,
-          { width: _width } = clH.bh484(clBind16152);
+          { width: _width } = workbookHelper484(clBind16152);
         clBind7730 ||
           (clBind12401 +=
             _width + LEGEND_LABEL_GAP + clBind16154 + LEGEND_ROW_GAP);

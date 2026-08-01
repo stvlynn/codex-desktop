@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-100: chart-waterfall-bar boundary hooks.
+// Stage-3 wave-100/138: chart-waterfall-bar boundary hooks.
 
 export type ChartWaterfallBarBoundaryHooks = {
   paintBar: (...args: any[]) => any;
@@ -10,7 +10,6 @@ export type ChartWaterfallBarBoundaryHooks = {
   pointFillOverride: (...args: any[]) => any;
   bh463: (...args: any[]) => any;
   bh473: (...args: any[]) => any;
-  bh575: (...args: any[]) => any;
 };
 
 export const cwbH: ChartWaterfallBarBoundaryHooks =

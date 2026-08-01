@@ -22,3 +22,13 @@ export {
 } from "./chart-legend-impl";
 
 export { obe } from "./measure-legend-impl";
+
+export {
+  $A,
+  workbookHelper484,
+  workbookHelper488,
+  LEGEND_LINE_MARKER_W,
+  LEGEND_LINE_MARKER_H,
+  LEGEND_MARKER_INSET,
+  LEGEND_INSET_BOTTOM,
+} from "./legend-marker-size-impl";

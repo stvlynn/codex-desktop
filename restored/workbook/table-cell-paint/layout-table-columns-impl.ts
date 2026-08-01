@@ -12,59 +12,48 @@ export function tableColumnCount(tcpIn9032: any) {
     let tcpBind21708 = 0;
     for (let tcpBind22844 of tcpBind21028.cells)
       tcpH.isMissingSpan(tcpBind22844) ||
-        (tcpBind21708 += tcpH.parseSpan(
-          tcpBind22844.gridSpan,
-        ));
+        (tcpBind21708 += tcpH.parseSpan(tcpBind22844.gridSpan));
     tcpBind19599 = Math.max(tcpBind19599, tcpBind21708);
   }
   return tcpBind19599;
 }
-export function clampColumnWidth(tcpIn11279: any, tcpIn11280: any, tcpIn11281: any, ) {
+export function clampColumnWidth(
+  tcpIn11279: any,
+  tcpIn11280: any,
+  tcpIn11281: any,
+) {
   let tcpBind21753 = 0;
-  for (
-    let tcpBind22904 = 0;
-    tcpBind22904 < tcpIn11281;
-    tcpBind22904 += 1
-  )
-    tcpBind21753 +=
-      tcpIn11279[tcpIn11280 + tcpBind22904] ?? 0;
+  for (let tcpBind22904 = 0; tcpBind22904 < tcpIn11281; tcpBind22904 += 1)
+    tcpBind21753 += tcpIn11279[tcpIn11280 + tcpBind22904] ?? 0;
   return tcpBind21753;
 }
-export function distributeColumnWidths(tcpIn3111: any, tcpIn3112: any, tcpIn3113: any) {
+export function distributeColumnWidths(
+  tcpIn3111: any,
+  tcpIn3112: any,
+  tcpIn3113: any,
+) {
   let tcpBind11215 =
     tcpIn3111.columnWidths
-      ?.map((tcpIn16056) =>
-        tcpIn16056 > 0 ? tcpIn16056 : undefined,
-      )
+      ?.map((tcpIn16056) => (tcpIn16056 > 0 ? tcpIn16056 : undefined))
       .filter((tcpIn16363) => tcpIn16363 !== undefined) ?? [];
   if (tcpBind11215.length === 0) {
-    let tcpBind22677 =
-      tcpIn3113.frameWidthEmu / tcpIn3112;
+    let tcpBind22677 = tcpIn3113.frameWidthEmu / tcpIn3112;
     tcpBind11215 = Array(tcpIn3112).fill(tcpBind22677);
   } else if (tcpBind11215.length < tcpIn3112) {
     let tcpBind21683 =
       tcpBind11215[tcpBind11215.length - 1] ??
       tcpIn3113.frameWidthEmu / tcpIn3112;
     tcpBind11215 = tcpBind11215.concat(
-      Array(tcpIn3112 - tcpBind11215.length).fill(
-        tcpBind21683,
-      ),
+      Array(tcpIn3112 - tcpBind11215.length).fill(tcpBind21683),
     );
   } else
     tcpBind11215.length > tcpIn3112 &&
       (tcpBind11215 = tcpBind11215.slice(0, tcpIn3112));
   if (tcpIn3113.fitColumnWidthsToFrame === true) {
-    let tcpBind20308 = clampColumnWidth(
-      tcpBind11215,
-      0,
-      tcpBind11215.length,
-    );
+    let tcpBind20308 = clampColumnWidth(tcpBind11215, 0, tcpBind11215.length);
     if (tcpBind20308 > 0 && tcpIn3113.frameWidthEmu > 0) {
-      let tcpBind22521 =
-        tcpIn3113.frameWidthEmu / tcpBind20308;
-      tcpBind11215 = tcpBind11215.map(
-        (item) => item * tcpBind22521,
-      );
+      let tcpBind22521 = tcpIn3113.frameWidthEmu / tcpBind20308;
+      tcpBind11215 = tcpBind11215.map((item) => item * tcpBind22521);
     }
   }
   return tcpBind11215;
@@ -78,11 +67,7 @@ export function layoutTableColumns(tcpIn1322: any, tcpIn1323: any) {
       rows: [],
       widthEmu: 0,
     };
-  let tcpBind7036 = distributeColumnWidths(
-      tcpIn1322,
-      tcpBind7035,
-      tcpIn1323,
-    ),
+  let tcpBind7036 = distributeColumnWidths(tcpIn1322, tcpBind7035, tcpIn1323),
     tcpBind7037 = [],
     tcpBind7038 = [];
   for (
@@ -99,15 +84,10 @@ export function layoutTableColumns(tcpIn1322: any, tcpIn1323: any) {
       tcpBind11040 < tcpBind9082.cells.length;
       tcpBind11040 += 1
     ) {
-      let tcpBind11514 =
-        tcpBind9082.cells[tcpBind11040];
-      if (!tcpBind11514 || tcpH.isMissingSpan(tcpBind11514))
-        continue;
-      for (; (tcpBind7037[tcpBind9084] ?? 0) > 0; )
-        tcpBind9084 += 1;
-      let tcpBind11515 = tcpH.parseSpan(
-          tcpBind11514.gridSpan,
-        ),
+      let tcpBind11514 = tcpBind9082.cells[tcpBind11040];
+      if (!tcpBind11514 || tcpH.isMissingSpan(tcpBind11514)) continue;
+      for (; (tcpBind7037[tcpBind9084] ?? 0) > 0; ) tcpBind9084 += 1;
+      let tcpBind11515 = tcpH.parseSpan(tcpBind11514.gridSpan),
         tcpBind11516 = tcpH.parseSpan(tcpBind11514.rowSpan);
       if (
         (tcpBind9083.push({
@@ -118,11 +98,7 @@ export function layoutTableColumns(tcpIn1322: any, tcpIn1323: any) {
           columnSpan: tcpBind11515,
           rowSpan: tcpBind11516,
           xEmu: clampColumnWidth(tcpBind7036, 0, tcpBind9084),
-          widthEmu: clampColumnWidth(
-            tcpBind7036,
-            tcpBind9084,
-            tcpBind11515,
-          ),
+          widthEmu: clampColumnWidth(tcpBind7036, tcpBind9084, tcpBind11515),
         }),
         tcpBind11516 > 1)
       )
@@ -149,18 +125,13 @@ export function layoutTableColumns(tcpIn1322: any, tcpIn1323: any) {
       tcpBind22213 += 1
     )
       (tcpBind7037[tcpBind22213] ?? 0) > 0 &&
-        (tcpBind7037[tcpBind22213] =
-          (tcpBind7037[tcpBind22213] ?? 0) - 1);
+        (tcpBind7037[tcpBind22213] = (tcpBind7037[tcpBind22213] ?? 0) - 1);
   }
   return {
     columnCount: tcpBind7035,
     columnWidthsEmu: tcpBind7036,
     rows: tcpBind7038,
-    widthEmu: clampColumnWidth(
-      tcpBind7036,
-      0,
-      tcpBind7036.length,
-    ),
+    widthEmu: clampColumnWidth(tcpBind7036, 0, tcpBind7036.length),
   };
 }
 

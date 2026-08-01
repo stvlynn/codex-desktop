@@ -94,3 +94,63 @@ export {
   U6e,
   e8e,
 } from "./formula-dist-pass-impl";
+
+export {
+  n4e,
+  r4e,
+  workbookHelper910,
+  workbookHelper911,
+  hasVaryingSeriesValues,
+  callWithDefinedArgs,
+} from "./formula-series-utils-impl";
+
+export {
+  w4e,
+  I4e,
+  L4e,
+  R4e,
+  B4e,
+  V4e,
+  H4e,
+  U4e,
+} from "./formula-rsq-wrappers-impl";
+
+export {
+  T3e,
+  E3e,
+  workbookHelper918,
+  k3e,
+  A3e,
+  j3e,
+  workbookHelper919,
+  M3e,
+  N3e,
+  P3e,
+  F3e,
+  I3e,
+  L3e,
+  R3e,
+  z3e,
+  B3e,
+  V3e,
+  G3e,
+  K3e,
+  q3e,
+  J3e,
+  Q3e,
+  b6e,
+  x6e,
+  w6e,
+  n8e,
+} from "./formula-dist-nest-impl";
+
+export {
+  Y6e,
+  f8e,
+  p8e,
+  m8e,
+  Hot,
+  dst,
+  Nst,
+  Rct,
+} from "./formula-unimplemented-stubs-impl";

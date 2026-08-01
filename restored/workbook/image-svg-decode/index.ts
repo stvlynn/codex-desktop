@@ -8,3 +8,5 @@ export {
   Awe,
   jwe,
 } from "./image-svg-decode-impl";
+
+export { Dwe, Owe, kwe, Mwe } from "./svg-bitmap-helpers-impl";

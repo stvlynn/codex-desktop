@@ -3,6 +3,7 @@
 // Stage-3 wave-107.
 
 import { cwbH } from "./boundary-hooks";
+import { workbookHelper575 } from "./waterfall-accent-color-impl";
 
 void cwbH;
 
@@ -68,7 +69,7 @@ export function paintWaterfallSeries(
           category: item.category,
           seriesName: cwbBind8489.name,
           value: item.value,
-          color: cwbH.bh575(cwbIn1870, item.kind),
+          color: workbookHelper575(cwbIn1870, item.kind),
           anchorX: cwbBind10438,
           anchorY: cwbBind10439.top,
         }),

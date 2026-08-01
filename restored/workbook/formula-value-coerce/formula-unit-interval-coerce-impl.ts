@@ -27,3 +27,6 @@ export function workbookHelper909(fvcIn14975: any) {
     max: UNIT_INTERVAL_MAX,
   });
 }
+
+export const coerceUnitInterval = workbookHelper908;
+export const coercePositiveBoundedInt = workbookHelper909;

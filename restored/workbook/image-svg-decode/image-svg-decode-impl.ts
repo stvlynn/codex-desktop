@@ -6,7 +6,10 @@ export function getGlobalImageCtor() {
   let isdBind22651 = globalThis.Image;
   if (isdBind22651) return isdBind22651;
 }
-export async function decodeSvgBlobToImageBitmap(isdIn3036: any, isdIn3037: any) {
+export async function decodeSvgBlobToImageBitmap(
+  isdIn3036: any,
+  isdIn3037: any,
+) {
   let isdBind11089 = getGlobalImageCtor();
   if (
     !isdBind11089 ||

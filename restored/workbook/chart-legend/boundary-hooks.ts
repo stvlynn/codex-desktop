@@ -12,10 +12,8 @@ export type ChartLegendBoundaryHooks = {
   bh481: (...args: any[]) => any;
   bh482: (...args: any[]) => any;
   bh483: (...args: any[]) => any;
-  bh484: (...args: any[]) => any;
   bh486: (...args: any[]) => any;
   bh487: (...args: any[]) => any;
-  bh488: (...args: any[]) => any;
   bh489: (...args: any[]) => any;
   bh490: (...args: any[]) => any;
 };

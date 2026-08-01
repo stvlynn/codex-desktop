@@ -29,3 +29,11 @@ export {
 } from "./date-construct-impl";
 
 export { A9e, workbookHelper936 } from "./date-eomonth-impl";
+
+export {
+  workbookHelper880,
+  workbookHelper881,
+  f5e,
+  p5e,
+  m5e,
+} from "./networkdays-wrappers-impl";

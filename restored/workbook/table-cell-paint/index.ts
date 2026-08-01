@@ -17,3 +17,5 @@ export {
   bTe,
   xTe,
 } from "./materialize-border-strokes-impl";
+
+export { vTe } from "./has-table-content-impl";

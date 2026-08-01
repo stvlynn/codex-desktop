@@ -4,6 +4,7 @@
 
 import { workbookGt } from "../text-style";
 import { tcpH } from "./boundary-hooks";
+import { vTe } from "./has-table-content-impl";
 import { materializeBorderStrokes } from "./materialize-border-strokes-impl";
 import { layoutTableColumns } from "./layout-table-columns-impl";
 
@@ -12,8 +13,12 @@ void layoutTableColumns;
 void workbookGt;
 void tcpH;
 
-export function paintTableCells(tcpIn657: any, tcpIn658: any, tcpIn659: any = {}) {
-  if (!tcpIn657.table || !tcpH.hasTableContent(tcpIn657)) return [];
+export function paintTableCells(
+  tcpIn657: any,
+  tcpIn658: any,
+  tcpIn659: any = {},
+) {
+  if (!tcpIn657.table || !vTe(tcpIn657)) return [];
   let tcpBind4804 = tcpIn657.bbox?.xEmu ?? 0,
     tcpBind4805 = tcpIn657.bbox?.yEmu ?? 0,
     tcpBind4806 = tcpIn657.bbox?.widthEmu ?? 0,
@@ -34,28 +39,18 @@ export function paintTableCells(tcpIn657: any, tcpIn658: any, tcpIn659: any = {}
     tcpBind4809[tcpBind22575] = tcpBind4812;
     tcpBind4812 += tcpIn658[tcpBind22575] ?? 0;
   }
-  let tcpBind4813 =
-      tcpBind4810 + tcpBind4806 * workbookGt,
+  let tcpBind4813 = tcpBind4810 + tcpBind4806 * workbookGt,
     tcpBind4814 = tcpBind4812,
-    tcpBind4815 = (
-      tcpIn5125,
-      tcpIn5126,
-      tcpIn5127,
-      tcpIn5128,
-    ) =>
+    tcpBind4815 = (tcpIn5125, tcpIn5126, tcpIn5127, tcpIn5128) =>
       tcpIn5125 === "horizontal"
-        ? tcpIn5126 === "top" &&
-          Math.abs(tcpIn5127 - tcpBind4811) <= 0.01
+        ? tcpIn5126 === "top" && Math.abs(tcpIn5127 - tcpBind4811) <= 0.01
           ? tcpIn5127 + tcpIn5128 / 2
-          : tcpIn5126 === "bottom" &&
-              Math.abs(tcpIn5127 - tcpBind4814) <= 0.01
+          : tcpIn5126 === "bottom" && Math.abs(tcpIn5127 - tcpBind4814) <= 0.01
             ? tcpIn5127 - tcpIn5128 / 2
             : tcpIn5127
-        : tcpIn5126 === "left" &&
-            Math.abs(tcpIn5127 - tcpBind4810) <= 0.01
+        : tcpIn5126 === "left" && Math.abs(tcpIn5127 - tcpBind4810) <= 0.01
           ? tcpIn5127 + tcpIn5128 / 2
-          : tcpIn5126 === "right" &&
-              Math.abs(tcpIn5127 - tcpBind4813) <= 0.01
+          : tcpIn5126 === "right" && Math.abs(tcpIn5127 - tcpBind4813) <= 0.01
             ? tcpIn5127 - tcpIn5128 / 2
             : tcpIn5127;
   for (let tcpBind7175 of tcpBind4807.rows)
@@ -64,9 +59,7 @@ export function paintTableCells(tcpIn657: any, tcpIn658: any, tcpIn659: any = {}
         tcpBind7471 =
           tcpBind4809[tcpBind7350.rowIndex] ??
           tcpBind4805 * 0.00010498687664041995,
-        tcpBind7472 =
-          tcpBind4804 * workbookGt +
-          tcpBind7350.xEmu * workbookGt,
+        tcpBind7472 = tcpBind4804 * workbookGt + tcpBind7350.xEmu * workbookGt,
         tcpBind7473 = tcpBind7350.widthEmu * workbookGt,
         tcpBind7474 = 0;
       for (
@@ -74,10 +67,7 @@ export function paintTableCells(tcpIn657: any, tcpIn658: any, tcpIn659: any = {}
         tcpBind22599 < tcpBind7350.rowSpan;
         tcpBind22599 += 1
       )
-        tcpBind7474 +=
-          tcpIn658[
-            tcpBind7350.rowIndex + tcpBind22599
-          ] ?? 0;
+        tcpBind7474 += tcpIn658[tcpBind7350.rowIndex + tcpBind22599] ?? 0;
       let tcpBind7475 = tcpBind7472 + tcpBind7473,
         tcpBind7476 = tcpBind7471 + tcpBind7474,
         tcpBind7477 = (
@@ -102,8 +92,7 @@ export function paintTableCells(tcpIn657: any, tcpIn658: any, tcpIn659: any = {}
               tcpIn3279,
               tcpIn3280,
             ),
-            tcpBind11520 =
-              tcpBind4808.get(tcpBind11519);
+            tcpBind11520 = tcpBind4808.get(tcpBind11519);
           if (!tcpBind11520) {
             tcpBind4808.set(tcpBind11519, {
               orientation: tcpIn3277,
@@ -115,13 +104,9 @@ export function paintTableCells(tcpIn657: any, tcpIn658: any, tcpIn659: any = {}
             });
             return;
           }
-          let tcpBind11521 = tcpH.bh638(
-            tcpBind11520.line,
-            tcpIn3282,
-          );
+          let tcpBind11521 = tcpH.bh638(tcpBind11520.line, tcpIn3282);
           tcpBind11520.line = tcpBind11521;
-          tcpBind11520.widthPx =
-            tcpH.bh636(tcpBind11521);
+          tcpBind11520.widthPx = tcpH.bh636(tcpBind11521);
           tcpBind11520.crossPx = tcpBind4815(
             tcpIn3277,
             tcpIn3281,

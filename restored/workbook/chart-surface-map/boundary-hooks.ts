@@ -8,7 +8,6 @@ export type ChartSurfaceMapBoundaryHooks = {
   mapElementIdStem: (...args: any[]) => any;
   bh465: (...args: any[]) => any;
   bh466: (...args: any[]) => any;
-  bh467: (...args: any[]) => any;
   /** Mapbox country boundaries tileset URL (legacy Binding885). */
   mapSourceUrl: any;
   /** Mapbox source-layer name (legacy Binding886). */

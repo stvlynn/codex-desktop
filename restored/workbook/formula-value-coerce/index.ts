@@ -30,5 +30,7 @@ export {
 export {
   workbookHelper908,
   workbookHelper909,
+  coerceUnitInterval,
+  coercePositiveBoundedInt,
   UNIT_INTERVAL_MAX,
 } from "./formula-unit-interval-coerce-impl";
