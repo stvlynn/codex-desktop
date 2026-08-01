@@ -108,3 +108,26 @@ export { ensureFormulaStatsCoreInit } from "./errors-core-impl";
 export { ensureFormulaStatsDistAInit } from "./stats-dist-a-impl";
 export { ensureFormulaStatsDistBInit } from "./stats-dist-b-impl";
 export { ensureFormulaStatsDistCInit } from "./stats-dist-c-impl";
+
+export {
+  S6e,
+  C6e,
+  O6e,
+  k6e,
+  j6e,
+  M6e,
+  N6e,
+  P6e,
+  L6e,
+  B6e,
+  V6e,
+  H6e,
+  W6e,
+  G6e,
+  K6e,
+  X6e,
+  Z6e,
+  $6e,
+  t8e,
+  s8e,
+} from "./formula-stats-arg-wrappers-impl";

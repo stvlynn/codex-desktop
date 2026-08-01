@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~18.7k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~18.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1793,3 +1793,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: formula ≥3 contiguous wrappers; peel rYe/aYe/iYe presentation leave-behinds; reassess _workbookS when ensure fan-out shrinks
+
+## Wave 146 (Stage-3 rYe/aYe + NLe + formula ≥3 batches)
+
+- Boundary 18710 → 17981 (Δ -729)
+- Peeled: presentation-artifacts rYe/nYe/Binding1816 + aYe/iYe; presentation-list-styles MLe/NLe; formula wrappers e2e…q4e + S6e…s8e + K8e…_5e + x5e…b7e + iot…Fot + Wut…_dt
+- Skipped: wirePresentationRecipes; vYe; Nwe/Iwe; jLe (kLe/OLe bag); full _workbookS (~1.2k — ensure fan-out still ~40+ local); b5e stub kept (K8e uses local epoch)
+- Leave-behind: wirePresentationRecipes false inventory; Nwe stub for Iwe→zge; vYe 1-line stub; _workbookS still entangled (jLe/WorkbookN/FLe…/compose DSL)
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: jLe after kLe/OLe; remaining ≥3 formula; reassess _workbookS when ensure fan-out shrinks further

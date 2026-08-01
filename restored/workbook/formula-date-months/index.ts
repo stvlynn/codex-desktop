@@ -54,7 +54,37 @@ export {
 export { Qnt } from "./set-date-year-impl";
 
 export {
-  l5e, d5e, g5e, J5e,
-  Met, workbookHelper937, workbookHelper938,
-  stt, ltt, dtt,
+  l5e,
+  d5e,
+  g5e,
+  J5e,
+  Met,
+  workbookHelper937,
+  workbookHelper938,
+  stt,
+  ltt,
+  dtt,
 } from "./formula-date-part-wrappers-impl";
+
+export {
+  K8e,
+  q8e,
+  J8e,
+  Y8e,
+  X8e,
+  Z8e,
+  Q8e,
+  $8e,
+  e5e,
+  t5e,
+  n5e,
+  r5e,
+  i5e,
+  a5e,
+  o5e,
+  s5e,
+  c5e,
+  u5e,
+  h5e,
+  _5e,
+} from "./formula-date-serial-wrappers-impl";

@@ -4324,6 +4324,66 @@ import {
   odt,
   sdt,
   gdt,
+  e2e,
+  a2e,
+  E4e,
+  O4e,
+  k4e,
+  A4e,
+  j4e,
+  M4e,
+  N4e,
+  P4e,
+  F4e,
+  G4e,
+  K4e,
+  q4e,
+  iot,
+  aot,
+  oot,
+  sot,
+  cot,
+  lot,
+  uot,
+  dot,
+  fot,
+  pot,
+  mot,
+  hot,
+  got,
+  _ot,
+  vot,
+  yot,
+  Oot,
+  kot,
+  Aot,
+  jot,
+  Mot,
+  Not,
+  Fot,
+  Wut,
+  Gut,
+  Kut,
+  qut,
+  Jut,
+  Xut,
+  Zut,
+  Qut,
+  $ut,
+  edt,
+  tdt,
+  ndt,
+  rdt,
+  idt,
+  adt,
+  cdt,
+  ldt,
+  udt,
+  ddt,
+  pdt,
+  mdt,
+  hdt,
+  _dt,
 } from "../../workbook/formula-scalar-funcs";
 
 import { ost } from "../../workbook/formula-scalar-funcs";
@@ -5868,6 +5928,26 @@ import {
   Y2e,
   X2e,
   Z2e,
+  S6e,
+  C6e,
+  O6e,
+  k6e,
+  j6e,
+  M6e,
+  N6e,
+  P6e,
+  L6e,
+  B6e,
+  V6e,
+  H6e,
+  W6e,
+  G6e,
+  K6e,
+  X6e,
+  Z6e,
+  $6e,
+  t8e,
+  s8e,
 } from "../../workbook/formula-stats";
 
 import {
@@ -6189,6 +6269,59 @@ import {
   workbookHelper924,
   workbookHelper925,
   k8e,
+  x5e,
+  S5e,
+  C5e,
+  w5e,
+  T5e,
+  E5e,
+  D5e,
+  O5e,
+  k5e,
+  A5e,
+  j5e,
+  M5e,
+  N5e,
+  P5e,
+  F5e,
+  I5e,
+  L5e,
+  R5e,
+  z5e,
+  B5e,
+  V5e,
+  H5e,
+  U5e,
+  W5e,
+  G5e,
+  K5e,
+  q5e,
+  Y5e,
+  X5e,
+  Z5e,
+  Q5e,
+  $5e,
+  e7e,
+  t7e,
+  n7e,
+  r7e,
+  i7e,
+  a7e,
+  o7e,
+  s7e,
+  c7e,
+  l7e,
+  u7e,
+  d7e,
+  f7e,
+  p7e,
+  m7e,
+  h7e,
+  g7e,
+  _7e,
+  v7e,
+  y7e,
+  b7e,
 } from "../../workbook/formula-eng-mids";
 
 const workbookBinding1935 = ensureEvalContextStackInit;
@@ -6234,6 +6367,26 @@ import {
   stt,
   ltt,
   dtt,
+  K8e,
+  q8e,
+  J8e,
+  Y8e,
+  X8e,
+  Z8e,
+  Q8e,
+  $8e,
+  e5e,
+  t5e,
+  n5e,
+  r5e,
+  i5e,
+  a5e,
+  o5e,
+  s5e,
+  c5e,
+  u5e,
+  h5e,
+  _5e,
 } from "../../workbook/formula-date-months";
 import {
   wireFormulaA1AddressBoundaryHooks,
@@ -7876,6 +8029,19 @@ import {
   gOe,
   KOe,
 } from "../../workbook/compose-jsx-lower/image-prop-helpers-impl";
+import {
+  workbookBinding1816,
+  nYe,
+  rYe,
+  iYe,
+  aYe,
+  ensurePresentationArtifactsInit,
+} from "../../workbook/presentation-artifacts";
+import {
+  MLe,
+  NLe,
+  ensurePresentationListStylesInit,
+} from "../../workbook/presentation-list-styles";
 
 import { a, c, d as srcD, r as srcR, s, t, u } from "../d3-hierarchy";
 import { Core } from "../highlight-js";
@@ -10963,246 +11129,6 @@ var xLe,
       }
     };
   }),
-  MLe,
-  NLe = esmInit(() => {
-    wr();
-    MLe = [
-      {
-        level: 1,
-        textStyle: {
-          fontSize: 2800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          bulletCharacter: "•",
-          marginLeft: 228600,
-          indent: -228600,
-          lineSpacingPercent: 9e4,
-        },
-        spaceBefore: 1e3,
-      },
-      {
-        level: 2,
-        textStyle: {
-          fontSize: 2400,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          bulletCharacter: "•",
-          marginLeft: 685800,
-          indent: -228600,
-          lineSpacingPercent: 9e4,
-        },
-        spaceBefore: 500,
-      },
-      {
-        level: 3,
-        textStyle: {
-          fontSize: 2e3,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          bulletCharacter: "•",
-          marginLeft: 1143e3,
-          indent: -228600,
-          lineSpacingPercent: 9e4,
-        },
-        spaceBefore: 500,
-      },
-      {
-        level: 4,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          bulletCharacter: "•",
-          marginLeft: 1600200,
-          indent: -228600,
-          lineSpacingPercent: 9e4,
-        },
-        spaceBefore: 500,
-      },
-      {
-        level: 5,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          bulletCharacter: "•",
-          marginLeft: 2057400,
-          indent: -228600,
-          lineSpacingPercent: 9e4,
-        },
-        spaceBefore: 500,
-      },
-      {
-        level: 6,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          bulletCharacter: "•",
-          marginLeft: 2514600,
-          indent: -228600,
-          lineSpacingPercent: 9e4,
-        },
-        spaceBefore: 500,
-      },
-      {
-        level: 7,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          bulletCharacter: "•",
-          marginLeft: 2971800,
-          indent: -228600,
-          lineSpacingPercent: 9e4,
-        },
-        spaceBefore: 500,
-      },
-      {
-        level: 8,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          bulletCharacter: "•",
-          marginLeft: 3429e3,
-          indent: -228600,
-          lineSpacingPercent: 9e4,
-        },
-        spaceBefore: 500,
-      },
-      {
-        level: 9,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          bulletCharacter: "•",
-          marginLeft: 3886200,
-          indent: -228600,
-          lineSpacingPercent: 9e4,
-        },
-        spaceBefore: 500,
-      },
-    ];
-  }),
   PLe,
   FLe = esmInit(() => {
     PLe = {
@@ -12705,203 +12631,6 @@ function Zqe(presentation: any, scriptName: any, params: any = {}) {
   return runPresentationRecipeMod(presentation, scriptName, params);
 }
 
-var workbookBinding1816,
-  nYe,
-  rYe = esmInit(() => {
-    _presentationFn();
-    workbookH();
-    workbookBinding1816 = class {
-      #e;
-      constructor(workbookInput14915) {
-        this.#e = workbookInput14915;
-      }
-      get id() {
-        return this.#e.id;
-      }
-      get kind() {
-        return "workbook";
-      }
-      get title() {
-        return this.#e.title;
-      }
-      set title(workbookInput14558) {
-        this.#e.title = workbookInput14558;
-      }
-      get workbook() {
-        return this.#e.workbook;
-      }
-      toRef() {
-        return {
-          id: this.#e.id,
-          kind: _presentationDn.ARTIFACT_KIND_WORKBOOK,
-          title: this.#e.title,
-        };
-      }
-    };
-    nYe = class {
-      #e;
-      #t = new Map();
-      #n = new WeakMap();
-      constructor(workbookInput14916) {
-        this.#e = workbookInput14916;
-      }
-      get rootArtifactId() {
-        return this.#e;
-      }
-      addWorkbook(workbookInput3291, workbookInput3292 = {}) {
-        let workbookBinding11545 = this.#n.get(workbookInput3291);
-        if (workbookBinding11545) {
-          let workbookBinding18700 = this.#t.get(workbookBinding11545);
-          if (!workbookBinding18700)
-            throw Error(
-              `Workbook artifact ${workbookBinding11545} is not registered.`,
-            );
-          return (
-            workbookInput3292.title !== undefined &&
-              (workbookBinding18700.title = workbookInput3292.title),
-            new workbookBinding1816(workbookBinding18700)
-          );
-        }
-        let workbookBinding11546 =
-          workbookInput3292.id ?? `workbook-${workbookHelper299()}`;
-        if (this.#t.has(workbookBinding11546))
-          throw Error(
-            `Workbook artifact ${workbookBinding11546} is already registered.`,
-          );
-        let workbookBinding11547 = {
-          id: workbookBinding11546,
-          title: workbookInput3292.title,
-          workbook: workbookInput3291,
-        };
-        return (
-          this.#t.set(workbookBinding11546, workbookBinding11547),
-          this.#n.set(workbookInput3291, workbookBinding11546),
-          new workbookBinding1816(workbookBinding11547)
-        );
-      }
-      getWorkbook(workbookInput9537) {
-        let workbookBinding20058 = this.#t.get(workbookInput9537);
-        if (!workbookBinding20058)
-          throw Error(`Workbook artifact ${workbookInput9537} not found.`);
-        return workbookBinding20058.workbook;
-      }
-      getWorkbookArtifact(workbookInput9292) {
-        let workbookBinding19853 = this.#t.get(workbookInput9292);
-        if (!workbookBinding19853)
-          throw Error(`Workbook artifact ${workbookInput9292} not found.`);
-        return new workbookBinding1816(workbookBinding19853);
-      }
-      toArtifacts(workbookInput6411) {
-        let workbookBinding16587 = [
-          {
-            id: this.#e,
-            presentation: workbookInput6411,
-          },
-        ];
-        for (let workbookBinding19746 of this.#t.values())
-          workbookBinding16587.push({
-            id: workbookBinding19746.id,
-            title: workbookBinding19746.title,
-            workbook: workbookBinding19746.workbook.toProto(),
-          });
-        return workbookBinding16587;
-      }
-      toBundle(workbookInput11336) {
-        return {
-          rootArtifactId: this.#e,
-          artifacts: this.toArtifacts(workbookInput11336),
-        };
-      }
-      hydrateWorkbook(
-        workbookInput6550,
-        workbookInput6551,
-        workbookInput6552 = {},
-      ) {
-        if (this.#t.has(workbookInput6550))
-          throw Error(
-            `Workbook artifact ${workbookInput6550} is already registered.`,
-          );
-        let workbookBinding16798 = {
-          id: workbookInput6550,
-          title: workbookInput6552.title,
-          workbook: workbookInput6551,
-        };
-        return (
-          this.#t.set(workbookInput6550, workbookBinding16798),
-          this.#n.set(workbookInput6551, workbookInput6550),
-          new workbookBinding1816(workbookBinding16798)
-        );
-      }
-    };
-  }),
-  iYe,
-  aYe = esmInit(() => {
-    iYe = class {
-      #e;
-      #t;
-      #n = false;
-      constructor(workbookInput11537, workbookInput11538) {
-        this.#e = workbookInput11537;
-        this.#t = workbookInput11538
-          ? structuredClone(workbookInput11538)
-          : undefined;
-      }
-      get gridlinesVisible() {
-        return this.#n;
-      }
-      get guidesVisible() {
-        return this.#t?.slideViewShowGuides === true;
-      }
-      get gridSpacingCxEmu() {
-        return this.#t?.gridSpacingCxEmu;
-      }
-      get gridSpacingCyEmu() {
-        return this.#t?.gridSpacingCyEmu;
-      }
-      showGridlines() {
-        this.#r(true);
-      }
-      hideGridlines() {
-        this.#r(false);
-      }
-      toggleGridlines() {
-        let workbookBinding22299 = !this.#n;
-        return (this.#r(workbookBinding22299), workbookBinding22299);
-      }
-      showGuides() {
-        this.#i(true);
-      }
-      hideGuides() {
-        this.#i(false);
-      }
-      toggleGuides() {
-        let workbookBinding22059 = !this.guidesVisible;
-        return (this.#i(workbookBinding22059), workbookBinding22059);
-      }
-      toProto() {
-        if (!this.#t) return;
-        let workbookBinding18544 = structuredClone(this.#t);
-        return (
-          workbookBinding18544.slideViewShowGuides !== undefined &&
-            (workbookBinding18544.slideViewShowGuides = false),
-          workbookBinding18544
-        );
-      }
-      #r(workbookInput11020) {
-        this.#n !== workbookInput11020 &&
-          ((this.#n = workbookInput11020),
-          this.#e.queuePresentationCollabPublish());
-      }
-      #i(workbookInput8959) {
-        this.guidesVisible !== workbookInput8959 &&
-          ((this.#t = {
-            ...(this.#t ?? {}),
-            slideViewShowGuides: workbookInput8959,
-          }),
-          this.#e.queuePresentationCollabPublish());
-      }
-    };
-  });
 var vYe,
   _workbookO,
   workbookBinding1817,
@@ -14328,48 +14057,6 @@ var KXe = esmInit(() => {});
 var qXe = () => workbookJstat;
 /** Bundle JXe — stock bessel@1.0.2 (was inlined commonJsInit). */
 var JXe = () => workbookBessel;
-function e2e() {
-  return false;
-}
-function a2e() {
-  return true;
-}
-function E4e(workbookInput15348, workbookInput15349) {
-  return uQe(workbookInput15348, workbookInput15349);
-}
-function O4e(workbookInput15755) {
-  return geomeanArgs(workbookInput15755);
-}
-function k4e(workbookInput15658) {
-  return cQe(workbookInput15658);
-}
-function A4e(workbookInput15659) {
-  return lQe(workbookInput15659);
-}
-function j4e(workbookInput14976, workbookInput14977, workbookInput14978) {
-  return PQe(workbookInput14976, workbookInput14977, workbookInput14978);
-}
-function M4e(workbookInput15350, workbookInput15351) {
-  return TQe(workbookInput15350, workbookInput15351);
-}
-function N4e(workbookInput15352, workbookInput15353) {
-  return rQe(workbookInput15352, workbookInput15353);
-}
-function P4e(workbookInput15354, workbookInput15355) {
-  return hQe(workbookInput15354, workbookInput15355);
-}
-function F4e(workbookInput15356, workbookInput15357) {
-  return wQe(workbookInput15356, workbookInput15357);
-}
-function G4e(workbookInput15358, workbookInput15359) {
-  return _Qe(workbookInput15358, workbookInput15359);
-}
-function K4e(workbookInput15360, workbookInput15361) {
-  return NQe(workbookInput15360, workbookInput15361);
-}
-function q4e(workbookInput15362, workbookInput15363) {
-  return zQe(workbookInput15362, workbookInput15363);
-}
 var workbookBinding1875,
   workbookBinding1876,
   workbookBinding1877,
@@ -14405,66 +14092,6 @@ var workbookBinding1875,
     v6e = 1e10;
     y6e = 1e-12;
   });
-function S6e(workbookInput14426, workbookInput14427, ...workbookInput14428) {
-  return K2e(workbookInput14426, workbookInput14427, ...workbookInput14428);
-}
-function C6e(workbookInput14429, workbookInput14430, ...workbookInput14431) {
-  return Y2e(workbookInput14429, workbookInput14430, ...workbookInput14431);
-}
-function O6e(workbookInput15366, workbookInput15367) {
-  return C2e(workbookInput15366, workbookInput15367);
-}
-function k6e(workbookInput15368, workbookInput15369) {
-  return T2e(workbookInput15368, workbookInput15369);
-}
-function j6e(workbookInput14987, workbookInput14988, workbookInput14989) {
-  return k2e(workbookInput14987, workbookInput14988, workbookInput14989);
-}
-function M6e(workbookInput14990, workbookInput14991, workbookInput14992) {
-  return A2e(workbookInput14990, workbookInput14991, workbookInput14992);
-}
-function N6e(workbookInput14993, workbookInput14994, workbookInput14995) {
-  return j2e(workbookInput14993, workbookInput14994, workbookInput14995);
-}
-function P6e(workbookInput14996, workbookInput14997, workbookInput14998) {
-  return N2e(workbookInput14996, workbookInput14997, workbookInput14998);
-}
-function L6e(workbookInput14999, workbookInput15000, workbookInput15001) {
-  return L2e(workbookInput14999, workbookInput15000, workbookInput15001);
-}
-function B6e(workbookInput15002, workbookInput15003, workbookInput15004) {
-  return B2e(workbookInput15002, workbookInput15003, workbookInput15004);
-}
-function V6e(workbookInput15005, workbookInput15006, workbookInput15007) {
-  return z2e(workbookInput15005, workbookInput15006, workbookInput15007);
-}
-function H6e(workbookInput15008, workbookInput15009, workbookInput15010) {
-  return V2e(workbookInput15008, workbookInput15009, workbookInput15010);
-}
-function W6e(workbookInput15663) {
-  return W2e(workbookInput15663);
-}
-function G6e(workbookInput15011, workbookInput15012, workbookInput15013) {
-  return U2e(workbookInput15011, workbookInput15012, workbookInput15013);
-}
-function K6e(workbookInput15664) {
-  return G2e(workbookInput15664);
-}
-function X6e(workbookInput15370, workbookInput15371) {
-  return D2e(workbookInput15370, workbookInput15371);
-}
-function Z6e(workbookInput15372, workbookInput15373) {
-  return O2e(workbookInput15372, workbookInput15373);
-}
-function $6e(workbookInput15374, workbookInput15375) {
-  return F2e(workbookInput15374, workbookInput15375);
-}
-function t8e(workbookInput15014, workbookInput15015, workbookInput15016) {
-  return X2e(workbookInput15014, workbookInput15015, workbookInput15016);
-}
-function s8e(workbookInput14448, workbookInput14449, ...workbookInput14450) {
-  return FZe(workbookInput14448, workbookInput14449, ...workbookInput14450);
-}
 var c8e = esmInit(() => {
   workbookBinding1874();
   workbookBinding1880();
@@ -14483,66 +14110,6 @@ var W8e,
     workbookBinding1881 = Date.UTC(1899, 11, 30);
     workbookBinding1882 = 86400000;
   });
-function K8e(props) {
-  return props instanceof Date ? (props.getTime() - v5e) / y5e : props;
-}
-function q8e(workbookInput15020, workbookInput15021, workbookInput15022) {
-  return i1e(workbookInput15020, workbookInput15021, workbookInput15022);
-}
-function J8e(workbookInput15023, workbookInput15024, workbookInput15025) {
-  return h1e(workbookInput15023, workbookInput15024, workbookInput15025);
-}
-function Y8e(workbookInput15665) {
-  return o1e(workbookInput15665);
-}
-function X8e(workbookInput15666) {
-  return f1e(workbookInput15666);
-}
-function Z8e(workbookInput15667) {
-  return b1e(workbookInput15667);
-}
-function Q8e(workbookInput15376, workbookInput15377) {
-  return v1e(workbookInput15376, workbookInput15377);
-}
-function $8e(workbookInput15668) {
-  return l1e(workbookInput15668);
-}
-function e5e(workbookInput15669) {
-  return d1e(workbookInput15669);
-}
-function t5e(workbookInput15670) {
-  return m1e(workbookInput15670);
-}
-function n5e() {
-  return p1e();
-}
-function r5e(workbookInput15518) {
-  return K8e(a1e(workbookInput15518));
-}
-function i5e(workbookInput15671) {
-  return g1e(workbookInput15671);
-}
-function a5e(workbookInput15145, workbookInput15146, workbookInput15147) {
-  return days360(workbookInput15145, workbookInput15146, workbookInput15147);
-}
-function o5e() {
-  return _1e();
-}
-function s5e(workbookInput15378, workbookInput15379) {
-  return s1e(workbookInput15378, workbookInput15379);
-}
-function c5e(workbookInput15380, workbookInput15381) {
-  return c1e(workbookInput15380, workbookInput15381);
-}
-function u5e(workbookInput15382, workbookInput15383) {
-  return y1e(workbookInput15382, workbookInput15383);
-}
-function h5e(workbookInput15519, workbookInput15520) {
-  return dateDiffDays(workbookInput15519, workbookInput15520);
-}
-function _5e(workbookInput15672) {
-  return u1e(workbookInput15672);
-}
 var v5e,
   y5e,
   b5e = esmInit(() => {
@@ -14550,165 +14117,6 @@ var v5e,
     v5e = Date.UTC(1899, 11, 30);
     y5e = 86400000;
   });
-function x5e(workbookInput15384, workbookInput15385) {
-  return z1e(workbookInput15384, workbookInput15385);
-}
-function S5e(workbookInput15673) {
-  return B1e(workbookInput15673);
-}
-function C5e(workbookInput15386, workbookInput15387) {
-  return V1e(workbookInput15386, workbookInput15387);
-}
-function w5e(workbookInput15388, workbookInput15389) {
-  return P1e(workbookInput15388, workbookInput15389);
-}
-function T5e(workbookInput15390, workbookInput15391) {
-  return F1e(workbookInput15390, workbookInput15391);
-}
-function E5e(workbookInput15392, workbookInput15393) {
-  return I1e(workbookInput15392, workbookInput15393);
-}
-function D5e(workbookInput15394, workbookInput15395) {
-  return o0e(workbookInput15394, workbookInput15395);
-}
-function O5e(workbookInput15396, workbookInput15397) {
-  return c0e(workbookInput15396, workbookInput15397);
-}
-function k5e(workbookInput15674) {
-  return s0e(workbookInput15674);
-}
-function A5e(workbookInput15675) {
-  return T1e(workbookInput15675);
-}
-function j5e(workbookInput15398, workbookInput15399) {
-  return D1e(workbookInput15398, workbookInput15399);
-}
-function M5e(workbookInput15400, workbookInput15401) {
-  return E1e(workbookInput15400, workbookInput15401);
-}
-function N5e(workbookInput15402, workbookInput15403) {
-  return r0e(workbookInput15402, workbookInput15403);
-}
-function P5e(workbookInput15521, workbookInput15522) {
-  return workbookHelper892(workbookInput15521, workbookInput15522);
-}
-function F5e(workbookInput15404, workbookInput15405) {
-  return Y1e(workbookInput15404, workbookInput15405);
-}
-function I5e(workbookInput15759) {
-  return workbookHelper889(workbookInput15759);
-}
-function L5e(workbookInput15676) {
-  return e0e(workbookInput15676);
-}
-function R5e(workbookInput15677) {
-  return K1e(workbookInput15677);
-}
-function z5e(workbookInput15678) {
-  return J1e(workbookInput15678);
-}
-function B5e(workbookInput15679) {
-  return q1e(workbookInput15679);
-}
-function V5e(workbookInput15760) {
-  return workbookHelper894(workbookInput15760);
-}
-function H5e(workbookInput15761) {
-  return workbookHelper891(workbookInput15761);
-}
-function U5e(workbookInput15680) {
-  return G1e(workbookInput15680);
-}
-function W5e(workbookInput15762) {
-  return workbookHelper890(workbookInput15762);
-}
-function G5e(workbookInput15681) {
-  return H1e(workbookInput15681);
-}
-function K5e(workbookInput15763) {
-  return $4(workbookInput15763);
-}
-function q5e(workbookInput15764) {
-  return workbookHelper893(workbookInput15764);
-}
-function Y5e(workbookInput14451, workbookInput14452, ...workbookInput14453) {
-  return i0e(workbookInput14451, workbookInput14452, ...workbookInput14453);
-}
-function X5e(workbookInput14454, workbookInput14455, ...workbookInput14456) {
-  return X1e(workbookInput14454, workbookInput14455, ...workbookInput14456);
-}
-function Z5e(workbookInput15406, workbookInput15407) {
-  return L1e(workbookInput15406, workbookInput15407);
-}
-function Q5e(workbookInput15408, workbookInput15409) {
-  return R1e(workbookInput15408, workbookInput15409);
-}
-function $5e(workbookInput15523, workbookInput15524) {
-  return workbookHelper887(workbookInput15523, workbookInput15524);
-}
-function e7e(workbookInput15765) {
-  return workbookHelper888(workbookInput15765);
-}
-function t7e(workbookInput15410, workbookInput15411) {
-  return S1e(workbookInput15410, workbookInput15411);
-}
-function n7e(workbookInput15412, workbookInput15413) {
-  return C1e(workbookInput15412, workbookInput15413);
-}
-function r7e(workbookInput15414, workbookInput15415) {
-  return w1e(workbookInput15414, workbookInput15415);
-}
-function i7e(workbookInput15416, workbookInput15417) {
-  return x1e(workbookInput15416, workbookInput15417);
-}
-function a7e(workbookInput15026, workbookInput15027, workbookInput15028) {
-  return N1e(workbookInput15026, workbookInput15027, workbookInput15028);
-}
-function o7e(workbookInput15766) {
-  return workbookHelper887(workbookInput15766);
-}
-function s7e(workbookInput15767) {
-  return workbookHelper888(workbookInput15767);
-}
-function c7e(workbookInput15682) {
-  return a0e(workbookInput15682);
-}
-function l7e(workbookInput15683) {
-  return W1e(workbookInput15683);
-}
-function u7e(workbookInput15684) {
-  return t0e(workbookInput15684);
-}
-function d7e(workbookInput15685) {
-  return n0e(workbookInput15685);
-}
-function f7e(workbookInput15686) {
-  return Z1e(workbookInput15686);
-}
-function p7e(workbookInput15687) {
-  return Q1e(workbookInput15687);
-}
-function m7e(workbookInput15418, workbookInput15419) {
-  return O1e(workbookInput15418, workbookInput15419);
-}
-function h7e(workbookInput15420, workbookInput15421) {
-  return A1e(workbookInput15420, workbookInput15421);
-}
-function g7e(workbookInput15422, workbookInput15423) {
-  return M1e(workbookInput15422, workbookInput15423);
-}
-function _7e(workbookInput15424, workbookInput15425) {
-  return k1e(workbookInput15424, workbookInput15425);
-}
-function v7e(workbookInput15426, workbookInput15427) {
-  return j1e(workbookInput15426, workbookInput15427);
-}
-function y7e(workbookInput15688) {
-  return $1e(workbookInput15688);
-}
-function b7e(workbookInput15689) {
-  return U1e(workbookInput15689);
-}
 var x7e = esmInit(() => {
     workbookBinding1874();
   }),
@@ -15783,79 +15191,9 @@ var workbookBinding1927,
     };
     workbookBinding1933 = Prt;
   });
-function iot(workbookInput15690) {
-  return mZe(workbookInput15690);
-}
-function aot(workbookInput15768) {
-  return isErrorOrBlank(workbookInput15768);
-}
-function oot() {
-  return yZe();
-}
-function sot(workbookInput13024) {
-  let workbookBinding22556 = Cot(workbookInput13024);
-  return workbookBinding22556 === null ? 1 : bZe(workbookBinding22556);
-}
-function cot(workbookInput12331) {
-  throw Error(`ISREF is not implemented. value=${String(workbookInput12331)}`);
-}
-function lot(workbookInput15691) {
-  return dZe(workbookInput15691);
-}
-function uot(workbookInput15692) {
-  return _Ze(workbookInput15692);
-}
-function dot(workbookInput15769) {
-  return isFiniteNumber(workbookInput15769);
-}
-function fot(workbookInput15269) {
-  return Cot(workbookInput15269) == null;
-}
-function pot(workbookInput15693) {
-  return vZe(workbookInput15693);
-}
-function mot(workbookInput15694) {
-  return hZe(workbookInput15694);
-}
-function hot(workbookInput15695) {
-  return pZe(workbookInput15695);
-}
-function got(workbookInput15557) {
-  return workbookBinding1848.TYPE(workbookInput15557);
-}
-function _ot(workbookInput15696) {
-  return fZe(workbookInput15696);
-}
-function vot(workbookInput15697) {
-  return gZe(workbookInput15697);
-}
-function yot(workbookInput12332) {
-  throw Error(`SHEET is not implemented. value=${String(workbookInput12332)}`);
-}
 var wot = esmInit(() => {
   workbookBinding1874();
 });
-function Oot(workbookInput15069, workbookInput15070, workbookInput15071) {
-  return t2e(workbookInput15069, workbookInput15070, workbookInput15071);
-}
-function kot() {
-  return a2e();
-}
-function Aot() {
-  return e2e();
-}
-function jot(workbookInput14469, workbookInput14470, ...workbookInput14471) {
-  return $0e(workbookInput14469, workbookInput14470, ...workbookInput14471);
-}
-function Mot(workbookInput14472, workbookInput14473, ...workbookInput14474) {
-  return i2e(workbookInput14472, workbookInput14473, ...workbookInput14474);
-}
-function Not(workbookInput15698) {
-  return r2e(workbookInput15698);
-}
-function Fot(workbookInput14475, workbookInput14476, ...workbookInput14477) {
-  return o2e(workbookInput14475, workbookInput14476, ...workbookInput14477);
-}
 var workbookBinding1936,
   nst = esmInit(() => {
     workbookBinding1874();
@@ -15929,75 +15267,6 @@ var workbookBinding1942,
     Vut = new Set([0, 5, 6, 7]);
     Hut = new Set([2, 3, 6, 7]);
   });
-function Wut(workbookInput15466, workbookInput15467) {
-  return IZe(workbookInput15466, workbookInput15467);
-}
-function Gut(workbookInput15072, workbookInput15073, workbookInput15074) {
-  return zZe(workbookInput15072, workbookInput15073, workbookInput15074);
-}
-function Kut(workbookInput15527, workbookInput15528) {
-  return padStartRepeat(workbookInput15527, workbookInput15528);
-}
-function qut(workbookInput15075, workbookInput15076, workbookInput15077) {
-  return UZe(workbookInput15075, workbookInput15076, workbookInput15077);
-}
-function Jut(workbookInput15734) {
-  return VZe(workbookInput15734);
-}
-function Xut(workbookInput15468, workbookInput15469) {
-  return XZe(workbookInput15468, workbookInput15469);
-}
-function Zut(workbookInput15078, workbookInput15079, workbookInput15080) {
-  return JZe(workbookInput15078, workbookInput15079, workbookInput15080);
-}
-function Qut(workbookInput15735) {
-  return MZe(workbookInput15735);
-}
-function $ut(workbookInput15736) {
-  return HZe(workbookInput15736);
-}
-function edt(workbookInput15737) {
-  return $Ze(workbookInput15737);
-}
-function tdt(workbookInput15738) {
-  return GZe(workbookInput15738);
-}
-function ndt(workbookInput15470, workbookInput15471) {
-  return BZe(workbookInput15470, workbookInput15471);
-}
-function rdt(workbookInput15472, workbookInput15473) {
-  return qZe(workbookInput15472, workbookInput15473);
-}
-function idt(workbookInput15474, workbookInput15475) {
-  return LZe(workbookInput15474, workbookInput15475);
-}
-function adt(workbookInput15739) {
-  return QZe(workbookInput15739);
-}
-function cdt(workbookInput15740) {
-  return PZe(workbookInput15740);
-}
-function ldt(workbookInput15081, workbookInput15082, workbookInput15083) {
-  return RZe(workbookInput15081, workbookInput15082, workbookInput15083);
-}
-function udt(workbookInput15774) {
-  return averageArgs(workbookInput15774);
-}
-function ddt(workbookInput15741) {
-  return NZe(workbookInput15741);
-}
-function pdt(workbookInput15742) {
-  return m2e(workbookInput15742);
-}
-function mdt(workbookInput15743) {
-  return h2e(workbookInput15743);
-}
-function hdt(workbookInput15084, workbookInput15085, workbookInput15086) {
-  return WZe(workbookInput15084, workbookInput15085, workbookInput15086);
-}
-function _dt(workbookInput15087, ...workbookInput15088) {
-  return p2e(workbookInput15087, ...workbookInput15088);
-}
 var workbookBinding1945,
   workbookBinding1946,
   Ydt = esmInit(() => {
