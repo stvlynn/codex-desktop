@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~18.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~17.4k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1803,3 +1803,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: jLe after kLe/OLe; remaining ≥3 formula; reassess _workbookS when ensure fan-out shrinks further
+
+## Wave 147 (Stage-3 kLe/jLe scripts + master defaults + citations + layouts)
+
+- Boundary 17979 → 17445 (Δ -534)
+- Peeled: presentation-scripts kLe/OLe + jLe/ALe; presentation-master-defaults FLe/PLe…QLe/ZLe; presentation-citations bEe/Binding1289–1290; slide-layout dDe/fDe/Binding1345–1346
+- Skipped: wirePresentationRecipes; vYe; Nwe/Iwe; full _workbookS (~1.2k); comments walnut sRe/fRe; mDe/pDe; b5e
+- Leave-behind: wirePresentationRecipes false inventory; Nwe stub for Iwe→zge; vYe 1-line stub; _workbookS still entangled (WorkbookN/compose DSL/yEe/mDe…)
+- _workbookS top ensure calls: 44 → 44; **local esm defs among them: ~22 → 11** (drained jLe/FLe/LLe/zLe/VLe/WLe/XLe/QLe/bEe/dDe/fDe to imports). Remaining local: yEe, workbookD, _workbookT, mDe, workbookEt, CRe, nze, Cze, aJe, WorkbookN, Binding1489
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: mDe/pDe placeholder catalog; yEe ensure bag; WorkbookN method peels; reassess `_workbookS` peel when local ensures drop further

@@ -7966,7 +7966,47 @@ import {
   ensureSlideTablesInit,
   ensureSlideSmartArtInit,
   ensureSlideSmartArtsCollectionInit,
+  workbookBinding1345,
+  workbookBinding1346,
+  dDe,
+  fDe,
+  ensureSlideLayoutsMastersInit,
 } from "../../workbook/slide-layout";
+import {
+  OLe,
+  DLe,
+  kLe,
+  ALe,
+  jLe,
+  ensurePresentationScriptsInit,
+} from "../../workbook/presentation-scripts";
+import {
+  PLe,
+  FLe,
+  ILe,
+  LLe,
+  RLe,
+  zLe,
+  BLe,
+  VLe,
+  WLe,
+  GLe,
+  KLe,
+  qLe,
+  JLe,
+  YLe,
+  XLe,
+  ZLe,
+  QLe,
+  ensurePresentationMasterDefaultsInit,
+} from "../../workbook/presentation-master-defaults";
+import {
+  workbookBinding1289,
+  workbookBinding1290,
+  bEe,
+  ensurePresentationCitationsInit,
+} from "../../workbook/presentation-citations";
+
 import {
   workbookHelper376,
   workbookBinding816,
@@ -9694,70 +9734,6 @@ var yEe = esmInit(() => {
     workbookBinding644();
     wr();
   }),
-  workbookBinding1289,
-  workbookBinding1290,
-  bEe = esmInit(() => {
-    wr();
-    workbookBinding1289 = class {
-      #e;
-      constructor(workbookInput11685, workbookInput11686) {
-        this.#e = (workbookInput11686 ?? []).map(
-          (item) => new workbookBinding1290(this.#t(), item),
-        );
-      }
-      get items() {
-        return [...this.#e];
-      }
-      add() {
-        let workbookBinding16930 = {
-            id: "",
-            type: presentationN.CONTENT_REFERENCE_TYPE_UNSPECIFIED,
-            tetherId: "",
-            targetId: "",
-          },
-          workbookBinding16931 = new workbookBinding1290(
-            this.#t(),
-            workbookBinding16930,
-          );
-        return (this.#e.push(workbookBinding16931), workbookBinding16931);
-      }
-      replace(workbookInput12060) {
-        this.#e = (workbookInput12060 ?? []).map(
-          (item) => new workbookBinding1290(this.#t(), item),
-        );
-      }
-      toProto() {
-        return this.#e.map((item) => item.toProto());
-      }
-      #t() {
-        return {
-          stub: () => {},
-        };
-      }
-    };
-    workbookBinding1290 = class {
-      #e;
-      constructor(workbookInput8486, workbookInput8487) {
-        this.#e = {
-          id: workbookInput8487.id ?? "",
-          uri: workbookInput8487.uri ?? "",
-          title: workbookInput8487.title ?? "",
-          type: workbookInput8487.type ?? undefined,
-        };
-      }
-      get id() {
-        return this.#e.id;
-      }
-      toProto() {
-        return {
-          id: this.#e.id,
-          uri: this.#e.uri ?? "",
-          title: this.#e.title ?? "",
-          type: this.#e.type,
-        };
-      }
-    };
-  }),
   workbookBinding1291,
   workbookBinding1292,
   workbookBinding1293,
@@ -9966,115 +9942,7 @@ var $H,
       return workbookInput10148;
     };
   });
-var workbookBinding1345,
-  dDe = esmInit(() => {
-    ensureSlideLayoutInit();
-    workbookBinding1345 = class {
-      #e;
-      #t;
-      #n;
-      constructor(workbookInput6971, workbookInput6972) {
-        this.#e = workbookInput6971;
-        this.#t = (workbookInput6972 ?? []).map(
-          (item) =>
-            new workbookBinding1344(
-              {
-                proto: item,
-              },
-              this.#r(),
-            ),
-        );
-        this.#n = new Map(
-          this.#t.filter((item) => !!item.id).map((item) => [item.id, item]),
-        );
-      }
-      get items() {
-        return [...this.#t];
-      }
-      getById(workbookInput13685) {
-        if (workbookInput13685) return this.#n.get(workbookInput13685);
-      }
-      add(workbookInput7596, workbookInput7597) {
-        if (!workbookInput7596 || workbookInput7596.length === 0)
-          throw Error("Layout name is required.");
-        let workbookBinding18087 = new workbookBinding1344(
-          {
-            name: workbookInput7596,
-            ...workbookInput7597,
-          },
-          this.#r(),
-        );
-        return (
-          this.#t.push(workbookBinding18087),
-          workbookBinding18087.id &&
-            this.#n.set(workbookBinding18087.id, workbookBinding18087),
-          workbookBinding18087
-        );
-      }
-      replace(workbookInput7803) {
-        this.#t = (workbookInput7803 ?? []).map(
-          (item) =>
-            new workbookBinding1344(
-              {
-                proto: item,
-              },
-              this.#r(),
-            ),
-        );
-        this.#n = new Map(
-          this.#t.filter((item) => !!item.id).map((item) => [item.id, item]),
-        );
-      }
-      getByName(workbookInput12678) {
-        return this.#t.find((item) => item.name === workbookInput12678);
-      }
-      getItem(workbookInput10150) {
-        let workbookBinding20619 = this.getByName(workbookInput10150);
-        if (!workbookBinding20619)
-          throw Error(`Layout "${workbookInput10150}" not found.`);
-        return workbookBinding20619;
-      }
-      removeByName(workbookInput8012) {
-        let workbookBinding18500 = this.#t.findIndex(
-          (item) => item.name === workbookInput8012,
-        );
-        if (workbookBinding18500 >= 0) {
-          let [workbookBinding21843] = this.#t.splice(workbookBinding18500, 1);
-          workbookBinding21843?.id && this.#n.delete(workbookBinding21843.id);
-        }
-      }
-      toProto() {
-        return this.#t.map((item) => item.toProto());
-      }
-      #r() {
-        return this.#e;
-      }
-    };
-  }),
-  workbookBinding1346,
-  fDe = esmInit(() => {
-    workbookBinding1346 = class {
-      #e;
-      constructor(workbookInput15228) {
-        this.#e = workbookInput15228;
-      }
-      get items() {
-        return this.#e.items.filter((item) => item.type === "master");
-      }
-      getDefault() {
-        return this.items[0];
-      }
-      add(workbookInput13253) {
-        return this.#e.add(workbookInput13253, {
-          type: "master",
-        });
-      }
-      toProto() {
-        return this.items.map((item) => item.toProto());
-      }
-    };
-  }),
-  workbookBinding1347,
+var workbookBinding1347,
   pDe = esmInit(() => {
     workbookBinding383();
     workbookBt();
@@ -11006,409 +10874,7 @@ var zIe = esmInit(() => {
     SAe();
     zIe();
   });
-var xLe,
-  SLe,
-  workbookBinding1723,
-  workbookBinding1724,
-  CLe,
-  wLe,
-  TLe,
-  ELe,
-  DLe,
-  OLe,
-  kLe = esmInit(() => {
-    workbookBinding404();
-    xLe = {
-      left: 60,
-      top: 80,
-      width: 600,
-      height: 360,
-    };
-    SLe = {
-      width: 100,
-      height: 100,
-    };
-    workbookBinding1723 = "accent1";
-    workbookBinding1724 = "#000000";
-    CLe = 2;
-    wLe = "bg1";
-    TLe = 1.3333333333333333;
-    ELe = ["accent1", "accent2", "accent3", "accent4"];
-    DLe = {
-      insertSlide: {
-        feature: "walnut_insert_slide_from_layout",
-        run: mLe,
-      },
-      insertShape: {
-        feature: "walnut_insert_shape",
-        run: hLe,
-      },
-      insertChartFromTemplate: {
-        feature: "walnut_insert_chart_from_template",
-        run: gLe,
-      },
-      setShapeFill: {
-        feature: "walnut_set_shape_fill",
-        run: _Le,
-      },
-      setShapeStroke: {
-        feature: "walnut_set_shape_stroke",
-        run: vLe,
-      },
-      setSlideBackgroundFill: {
-        feature: "walnut_set_slide_background_fill",
-        run: yLe,
-      },
-      setTextRangeFormatting: {
-        feature: "walnut_set_text_range_formatting",
-        run: bLe,
-      },
-    };
-    OLe = DLe;
-  }),
-  ALe,
-  jLe = esmInit(() => {
-    kLe();
-    ALe = class {
-      #e;
-      #t = null;
-      #n = null;
-      #r = null;
-      constructor(workbookInput14912) {
-        this.#e = workbookInput14912;
-      }
-      configureRuntime(workbookInput9681) {
-        Object.prototype.hasOwnProperty.call(
-          workbookInput9681,
-          "resolveSlideId",
-        ) && (this.#t = workbookInput9681.resolveSlideId ?? null);
-      }
-      onAfterRun(workbookInput14227) {
-        this.#n = workbookInput14227 ?? null;
-      }
-      onError(workbookInput14555) {
-        this.#r = workbookInput14555 ?? null;
-      }
-      run(workbookInput3202, workbookInput3203) {
-        let workbookBinding11369 = OLe[workbookInput3202];
-        if (!workbookBinding11369) {
-          let workbookBinding20600 = Error(
-            `Unknown presentation script: ${String(workbookInput3202)}`,
-          );
-          return (
-            this.#r?.(workbookBinding20600, {
-              kind: workbookInput3202,
-            }),
-            null
-          );
-        }
-        let workbookBinding11370 = {
-          presentation: this.#e.presentation,
-          slideId: this.#t?.() ?? null,
-        };
-        try {
-          let workbookBinding20053 =
-              workbookBinding11369.run(
-                workbookBinding11370,
-                workbookInput3203,
-              ) ?? undefined,
-            workbookBinding20054 = {
-              kind: workbookInput3202,
-              feature: workbookBinding11369.feature,
-              context: workbookBinding20053,
-            };
-          return (this.#n?.(workbookBinding20054), workbookBinding20054);
-        } catch (workbookBinding22466) {
-          return (
-            this.#r?.(workbookBinding22466, {
-              kind: workbookInput3202,
-            }),
-            null
-          );
-        }
-      }
-    };
-  }),
-  PLe,
-  FLe = esmInit(() => {
-    PLe = {
-      accent1: "accent1",
-      accent2: "accent2",
-      accent3: "accent3",
-      accent4: "accent4",
-      accent5: "accent5",
-      accent6: "accent6",
-      bg1: "lt1",
-      bg2: "lt2",
-      tx1: "dk1",
-      tx2: "dk2",
-      hlink: "hlink",
-      folHlink: "folHlink",
-    };
-  }),
-  ILe,
-  LLe = esmInit(() => {
-    wr();
-    ILe = [
-      {
-        level: 1,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          marginLeft: 0,
-        },
-      },
-      {
-        level: 2,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          marginLeft: 457200,
-        },
-      },
-      {
-        level: 3,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          marginLeft: 914400,
-        },
-      },
-      {
-        level: 4,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          marginLeft: 1371600,
-        },
-      },
-      {
-        level: 5,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          marginLeft: 1828800,
-        },
-      },
-      {
-        level: 6,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          marginLeft: 2286e3,
-        },
-      },
-      {
-        level: 7,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          marginLeft: 2743200,
-        },
-      },
-      {
-        level: 8,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          marginLeft: 3200400,
-        },
-      },
-      {
-        level: 9,
-        textStyle: {
-          fontSize: 1800,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mn-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          marginLeft: 3657600,
-        },
-      },
-    ];
-  }),
-  RLe,
-  zLe = esmInit(() => {
-    RLe = [];
-  }),
-  BLe,
-  VLe = esmInit(() => {
-    wr();
-    BLe = [
-      {
-        level: 1,
-        textStyle: {
-          fontSize: 4400,
-          fill: {
-            type: tr.FILL_TYPE_SOLID,
-            color: {
-              type: Zn.COLOR_TYPE_SCHEME,
-              value: "tx1",
-              transform: undefined,
-            },
-            gradientStops: [],
-            pictureEffects: [],
-          },
-          alignment: Jn.ALIGNMENT_TYPE_LEFT,
-          typeface: "+mj-lt",
-        },
-        paragraphStyle: {
-          tabStops: [],
-          bulletCharacter: "",
-          lineSpacingPercent: 9e4,
-        },
-        spaceBefore: 0,
-      },
-    ];
-  }),
-  WLe = esmInit(() => {}),
-  GLe,
-  KLe = esmInit(() => {
-    GLe = "{5C22544A-7EE6-4342-B048-85BDC9FD1C3A}";
-  }),
-  qLe,
-  JLe = esmInit(() => {
-    qLe =
-      '<a:tblStyleLst xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" def="{5C22544A-7EE6-4342-B048-85BDC9FD1C3A}" />';
-  }),
-  YLe,
-  XLe = esmInit(() => {
-    KLe();
-    JLe();
-    YLe = {
-      defaultStyleId: GLe,
-      outerXml: qLe,
-      definitions: [],
-    };
-  }),
-  ZLe,
-  QLe = esmInit(() => {
-    ZLe = [];
-  }),
-  workbookBinding1725,
+var workbookBinding1725,
   $Le,
   eRe,
   tRe,

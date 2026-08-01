@@ -51,3 +51,13 @@ export {
   workbookBinding1337,
   lDe,
 } from "./ensure-slide-layout-init";
+
+export {
+  workbookBinding1345,
+  workbookBinding1346,
+  dDe,
+  fDe,
+  getPresentationLayoutsClass,
+  getPresentationMastersClass,
+  ensureSlideLayoutsMastersInit,
+} from "./slide-layouts-masters-impl";
