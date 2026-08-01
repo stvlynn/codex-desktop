@@ -38,6 +38,12 @@ export type ComposeJsxLowerBoundaryHooks = {
   attachChildren: (...args: any[]) => any;
   /** Shape element factory (Binding1511). */
   createShapeElement: (...args: any[]) => any;
+  /** Utility-class → textStyle. */
+  parseUtilityClassTextStyle: (...args: any[]) => any;
+  /** CSS declaration text check. */
+  isCssDeclarationText: (...args: any[]) => any;
+  /** Parse CSS declaration textStyle. */
+  parseTextStyleCssDeclarations: (...args: any[]) => any;
 };
 
 export const cjlH: ComposeJsxLowerBoundaryHooks =

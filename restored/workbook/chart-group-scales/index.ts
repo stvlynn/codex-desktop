@@ -26,3 +26,5 @@ export {
   hbe,
   mbe,
 } from "./bar-plot-scales-impl";
+
+export { buildLogChartScale, yye } from "./log-chart-scale-impl";

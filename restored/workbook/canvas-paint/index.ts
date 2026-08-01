@@ -40,6 +40,6 @@ export {
   JCe,
 } from "./paint-sparklines-impl";
 
-export {
-  clipPaintRect,
-} from "./clip-paint-rect-impl";
+export { clipPaintRect } from "./clip-paint-rect-impl";
+
+export { prepareDiagonalStroke } from "./prepare-diagonal-stroke-impl";

@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~45.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~43.8k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -250,6 +250,12 @@
 | Semantic JSX tags (`MOe`/`XOe`/`YOe`/`ZOe`+Binding154) | ~0.55k | **Drained (wave-115)** → `workbook/compose-jsx-lower/` |
 | Layout blob (`PDe`/`BDe`/`FDe`/`vOe`+693) | ~0.35k | **Drained (wave-115)** → `workbook/compose-element-snapshot/` |
 | Dead chart paint (`CSe`/`SSe`/560) | ~0.09k | **Deleted (wave-115)** |
+| Log chart scale (`yye`) | ~0.04k | **Drained (wave-116)** → `workbook/chart-group-scales/` |
+| Diagonal stroke (`helper593`) | ~0.04k | **Drained (wave-116)** → `workbook/canvas-paint/` |
+| Semantic tag style (`ROe`+704–711) | ~0.17k | **Drained (wave-116)** → `workbook/compose-jsx-lower/` |
+| Element fit (`LIe`/`RIe`/`Y$`) | ~0.10k | **Drained (wave-116)** → `workbook/presentation-element-fit/` |
+| Formula token/args (`$Xe`+836–853/`BXe`) | ~0.58k | **Drained (wave-116)** → formula-token-utils + dep-scc |
+| XLSX validate (`Tpt`/`Apt`/`kpt`+catalog) | ~0.60k | **Drained (wave-116)** → `workbook/xlsx-workbook-validate/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1497,4 +1503,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Peeled: MOe/XOe/YOe/ZOe + Binding154 Sets inlined; HOe/POe/VOe/UOe/$q/702–721/ake; PDe/BDe/FDe/vOe + 690–696/693/bOe/xOe; dead CSe/SSe/560
 - Skipped helper603 (Nwe Map ESM), helper853 (841/850 still local nest), ADe/rze/kht/ict, pye
 - Leave-behind: ADe needs helper672; BDe cluster now drained; rze still blocked on mutation helpers
+- openBoundary remains while mega still large
+
+## Wave 116 (Stage-3 preferred + ict-false mid-file)
+
+- Boundary 45128 → 43777 (Δ -1351)
+- Peeled: yye; helper593; ROe+AOe+BOe+zOe+704/705/706/707/711/IOe; LIe+RIe+Y$; BXe; ZXe/$Xe/836–853 nest; Tpt/Ept/Apt/kpt+validation catalog+_WorkbookI
+- Confirmed **ict FALSE HIT** (brace matcher sib=340); mid-file Apt/kpt/Tpt are real top-level peels; ict body now ~14 LOC after peel
+- Skipped helper603 (Nwe Map ESM), ADe+672, rze, kht, Amt chart-raster nest
+- Leave-behind: helper853 now drained; ADe still needs helper672; rze still blocked
 - openBoundary remains while mega still large

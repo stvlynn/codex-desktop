@@ -4,6 +4,7 @@
 import { fillCellBackground as fillCellBackgroundImpl } from "./fill-cell-background-impl";
 import { clipPaintRect as clipPaintRectImpl } from "./clip-paint-rect-impl";
 import { paintCharts as paintChartsImpl } from "./paint-charts-impl";
+import { prepareDiagonalStroke as prepareDiagonalStrokeImpl } from "./prepare-diagonal-stroke-impl";
 
 export type CanvasPaintBoundaryHooks = {
   ensureWorkbookZ: () => void;
@@ -146,7 +147,7 @@ export const dropdownChevronInset = (...args: any[]) =>
 export const strokeCellBorderSide = (...args: any[]) =>
   requirePaintHooks().strokeCellBorderSide(...args);
 export const prepareDiagonalStroke = (...args: any[]) =>
-  requirePaintHooks().prepareDiagonalStroke(...args);
+  prepareDiagonalStrokeImpl(...args);
 export const fillCellBackground = (...args: any[]) =>
   fillCellBackgroundImpl(...args);
 export const clipPaintRect = (...args: any[]) => clipPaintRectImpl(...args);

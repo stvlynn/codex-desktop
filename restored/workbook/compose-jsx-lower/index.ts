@@ -96,3 +96,21 @@ export {
   optionalBoolean,
   optionalSize,
 } from "./semantic-tags-impl";
+
+export {
+  semanticTagStyle,
+  mergeClassNameTextStyle,
+  requireHref,
+  coerceLinkConfig,
+  mergeRunOverride,
+  mergeInlineTextStyle,
+  mergeTextStyleBags,
+  coerceInlineTextStyle,
+  pickCssTextStyleFields,
+  requireNonEmptyString,
+  ROe,
+  AOe,
+  zOe,
+  BOe,
+  IOe,
+} from "./semantic-tag-style-impl";

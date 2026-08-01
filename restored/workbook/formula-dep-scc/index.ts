@@ -11,3 +11,5 @@ export {
   WXe,
   GXe,
 } from "./update-cell-precedents-impl";
+
+export { orderFormulaDeps, BXe } from "./order-formula-deps-impl";

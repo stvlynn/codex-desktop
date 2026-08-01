@@ -22,6 +22,8 @@ export type ChartGroupScalesBoundaryHooks = {
   bh403: (...args: any[]) => any;
   bh419: (...args: any[]) => any;
   bh422: (...args: any[]) => any;
+  /** d3-scale scaleLog factory (legacy appInitialFat). */
+  scaleLog: (...args: any[]) => any;
 };
 
 export const cgsH: ChartGroupScalesBoundaryHooks =
