@@ -18,3 +18,5 @@ export {
   PSe,
   LSe,
 } from "./overlapping-parent-labels-impl";
+
+export { Qye } from "./treemap-legend-entries-impl";

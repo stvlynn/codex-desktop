@@ -11,7 +11,11 @@ void c;
 void srcR;
 void cttH;
 
-export function layoutTreemapTiles(cttIn875: any, cttIn876: any, cttIn877: any) {
+export function layoutTreemapTiles(
+  cttIn875: any,
+  cttIn876: any,
+  cttIn877: any,
+) {
   let cttBind5602 = cttH.bh475(cttIn875);
   if (cttBind5602.length === 0)
     return {
@@ -20,8 +24,7 @@ export function layoutTreemapTiles(cttIn875: any, cttIn876: any, cttIn877: any) 
     };
   let cttBind5603 = c(cttH.bh476(cttH.flattenCategoryPaths(cttBind5602)))
       .sum((cttIn13498) =>
-        typeof cttIn13498.value == "number" &&
-        cttIn13498.value > 0
+        typeof cttIn13498.value == "number" && cttIn13498.value > 0
           ? cttIn13498.value
           : 0,
       )
@@ -37,10 +40,7 @@ export function layoutTreemapTiles(cttIn875: any, cttIn876: any, cttIn877: any) 
       .paddingInner(1)
       .paddingOuter(0)
       .round(true)(cttBind5603),
-    cttBind5607 = cttH.bh477(
-      cttIn877,
-      cttBind5602,
-    );
+    cttBind5607 = cttH.bh477(cttIn877, cttBind5602);
   return {
     leaves: cttBind5606
       .leaves()
@@ -56,10 +56,7 @@ export function layoutTreemapTiles(cttIn875: any, cttIn876: any, cttIn877: any) 
             cttBind10665.length > 0
               ? cttBind10665[cttBind10665.length - 1]
               : undefined,
-          cttBind10667 =
-            cttBind10664.length > 0
-              ? cttBind10664[0]
-              : undefined,
+          cttBind10667 = cttBind10664.length > 0 ? cttBind10664[0] : undefined,
           cttBind10668 =
             cttBind10667 && cttBind10667.length > 0
               ? cttBind10667
@@ -92,10 +89,7 @@ export function layoutTreemapTiles(cttIn875: any, cttIn876: any, cttIn877: any) 
         width: Math.max(0, item.x1 - item.x0),
         height: Math.max(0, item.y1 - item.y0),
       }))
-      .sort(
-        (cttIn16054, cttIn16055) =>
-          cttIn16054.depth - cttIn16055.depth,
-      ),
+      .sort((cttIn16054, cttIn16055) => cttIn16054.depth - cttIn16055.depth),
   };
 }
 

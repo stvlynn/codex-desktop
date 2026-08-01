@@ -49,3 +49,17 @@ export {
   formulaOrFromArgs,
   formulaXorFromArgs,
 } from "./formula-or-xor-impl";
+
+export {
+  d4e,
+  z4e,
+  h3e,
+  g3e,
+  C3e,
+  H3e,
+  U3e,
+  Y3e,
+  X3e,
+  Z3e,
+  PROB_SUM_EPS,
+} from "./formula-dist-wrappers-impl";

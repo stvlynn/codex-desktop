@@ -10,7 +10,12 @@ void workbookDt;
 void shapeGeometryNameToProto;
 void sipH;
 
-export async function paintSlideImage(sipIn653: any, sipIn654: any, sipIn655: any, sipIn656: any = {}, ) {
+export async function paintSlideImage(
+  sipIn653: any,
+  sipIn654: any,
+  sipIn655: any,
+  sipIn656: any = {},
+) {
   if (!sipIn653.imageReferenceId) return;
   let sipBind4785 = sipIn653.resolveFrame(),
     { width, height } = sipBind4785,
@@ -20,8 +25,7 @@ export async function paintSlideImage(sipIn653: any, sipIn654: any, sipIn655: an
     sipBind4789 = 0,
     sipBind4790 = sipBind4786?.width ?? 0,
     sipBind4791 = sipBind4786?.height ?? 0,
-    sipBind4792 = (sipIn16313) =>
-      (sipIn16313 ?? 0) / 1e5,
+    sipBind4792 = (sipIn16313) => (sipIn16313 ?? 0) / 1e5,
     sipBind4793 = sipBind4787.srcRect;
   if (sipBind4786 && sipBind4793) {
     let sipBind18835 = sipBind4792(sipBind4793.l),
@@ -30,11 +34,8 @@ export async function paintSlideImage(sipIn653: any, sipIn654: any, sipIn655: an
       sipBind18838 = sipBind4792(sipBind4793.b);
     sipBind4788 += sipBind18835 * sipBind4786.width;
     sipBind4789 += sipBind18836 * sipBind4786.height;
-    sipBind4790 -=
-      (sipBind18835 + sipBind18837) * sipBind4786.width;
-    sipBind4791 -=
-      (sipBind18836 + sipBind18838) *
-      sipBind4786.height;
+    sipBind4790 -= (sipBind18835 + sipBind18837) * sipBind4786.width;
+    sipBind4791 -= (sipBind18836 + sipBind18838) * sipBind4786.height;
   }
   let sipBind4794 = 0,
     sipBind4795 = 0,
@@ -48,10 +49,8 @@ export async function paintSlideImage(sipIn653: any, sipIn654: any, sipIn655: an
       sipBind20051 = sipBind4792(sipBind4798.b);
     sipBind4794 = sipBind20048 * width;
     sipBind4795 = sipBind20049 * height;
-    sipBind4796 =
-      width * (1 - sipBind20048 - sipBind20050);
-    sipBind4797 =
-      height * (1 - sipBind20049 - sipBind20051);
+    sipBind4796 = width * (1 - sipBind20048 - sipBind20050);
+    sipBind4797 = height * (1 - sipBind20049 - sipBind20051);
   }
   let sipBind4799 = sipIn653.resolveImageMask(),
     sipBind4800 = sipH.hasImageMask(sipBind4799),
@@ -75,14 +74,7 @@ export async function paintSlideImage(sipIn653: any, sipIn654: any, sipIn655: an
       }))
   ) {
     sipH.bh290(sipIn654, sipBind4785);
-    sipH.bh648(
-      sipIn653,
-      sipIn654,
-      sipIn655,
-      sipBind4800,
-      width,
-      height,
-    );
+    sipH.bh648(sipIn653, sipIn654, sipIn655, sipBind4800, width, height);
     sipIn654.restore();
     return;
   }
@@ -140,14 +132,7 @@ export async function paintSlideImage(sipIn653: any, sipIn654: any, sipIn655: an
       themeMap: sipIn655,
     });
   sipBind4800 && sipIn654.restore();
-  sipH.bh648(
-    sipIn653,
-    sipIn654,
-    sipIn655,
-    sipBind4800,
-    width,
-    height,
-  );
+  sipH.bh648(sipIn653, sipIn654, sipIn655, sipBind4800, width, height);
   sipIn654.restore();
 }
 

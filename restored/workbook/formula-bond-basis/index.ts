@@ -47,3 +47,5 @@ export {
   ensureBondInputInit,
   createBondCalculator,
 } from "./bond-calculator-impl";
+
+export { wat, Eat, Dat, Oat, kat, Lat } from "./bond-coup-wrappers-impl";

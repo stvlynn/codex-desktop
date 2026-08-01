@@ -2,8 +2,15 @@
 // Semantic implementation: chart group x/y scales (legacy helper423).
 // Stage-3 wave-99.
 
-import { Cn, Vn as _presentationVn, Yn as _presentationYn } from "../presentation-protobuf";
-import { scaleBand as d3ScaleBand, scalePoint as d3ScalePoint } from "../../vendor/d3-scale-band";
+import {
+  Cn,
+  Vn as _presentationVn,
+  Yn as _presentationYn,
+} from "../presentation-protobuf";
+import {
+  scaleBand as d3ScaleBand,
+  scalePoint as d3ScalePoint,
+} from "../../vendor/d3-scale-band";
 import { scaleLinear as d3ScaleLinear } from "../../vendor/d3-scale-linear";
 import { cgsH } from "./boundary-hooks";
 
@@ -15,7 +22,12 @@ void d3ScalePoint;
 void d3ScaleLinear;
 void cgsH;
 
-export function buildChartGroupScales(cgsIn435: any, cgsIn436: any, cgsIn437: any, cgsIn438: any, ) {
+export function buildChartGroupScales(
+  cgsIn435: any,
+  cgsIn436: any,
+  cgsIn437: any,
+  cgsIn438: any,
+) {
   let cgsBind3950 =
       cgsIn435.type === Cn.CHART_TYPE_BAR ||
       cgsIn435.type === Cn.CHART_TYPE_BAR_3D
@@ -58,14 +70,11 @@ export function buildChartGroupScales(cgsIn435: any, cgsIn436: any, cgsIn437: an
   }
   let cgsBind3957 =
       cgsIn435.type === Cn.CHART_TYPE_BAR &&
-      cgsIn435.barOptions?.direction !==
-        _presentationVn.BAR_DIRECTION_BAR,
-    cgsBind3958 =
-      cgsBind3957 && cgsH.waterfallForceZero(cgsIn435, cgsBind3955),
+      cgsIn435.barOptions?.direction !== _presentationVn.BAR_DIRECTION_BAR,
+    cgsBind3958 = cgsBind3957 && cgsH.waterfallForceZero(cgsIn435, cgsBind3955),
     cgsBind3959 =
       !cgsBind3958 &&
-      (cgsIn435.type !== Cn.CHART_TYPE_COMBO ||
-        cgsBind3956 >= 0),
+      (cgsIn435.type !== Cn.CHART_TYPE_COMBO || cgsBind3956 >= 0),
     cgsBind3960 = cgsH.bh402({
       axis: cgsIn435.yAxis,
       dataMin: cgsBind3955,
@@ -80,10 +89,7 @@ export function buildChartGroupScales(cgsIn435: any, cgsIn436: any, cgsIn437: an
     cgsBind3961 = cgsH.bh396({
       gapWidth: cgsIn435.barOptions?.gapWidth,
       grouping: cgsIn435.barOptions?.grouping,
-      seriesCount: cgsH.bh395(
-        cgsIn435.series.length,
-        cgsIn437,
-      ),
+      seriesCount: cgsH.bh395(cgsIn435.series.length, cgsIn437),
       overlap: cgsIn435.barOptions?.overlap,
     }),
     cgsBind3962 =
@@ -96,17 +102,11 @@ export function buildChartGroupScales(cgsIn435: any, cgsIn436: any, cgsIn437: an
       cgsBind3962 || cgsBind3963
         ? d3ScalePoint()
             .domain(cgsBind3954)
-            .range([
-              cgsIn436.x,
-              cgsIn436.x + cgsIn436.width,
-            ])
+            .range([cgsIn436.x, cgsIn436.x + cgsIn436.width])
             .padding(cgsBind3962 ? 0.5 : 0)
         : d3ScaleBand()
             .domain(cgsBind3954)
-            .range([
-              cgsIn436.x,
-              cgsIn436.x + cgsIn436.width,
-            ])
+            .range([cgsIn436.x, cgsIn436.x + cgsIn436.width])
             .paddingInner(cgsBind3961)
             .paddingOuter(cgsH.bh397(cgsBind3961)),
     cgsBind3965 =
@@ -123,8 +123,7 @@ export function buildChartGroupScales(cgsIn435: any, cgsIn436: any, cgsIn437: an
       cgsBind3956 / cgsBind3955 >= 0.8333333333333334,
     cgsBind3968 =
       cgsBind3957 &&
-      cgsIn435.barOptions?.grouping ===
-        _presentationYn.BAR_GROUPING_STACKED &&
+      cgsIn435.barOptions?.grouping === _presentationYn.BAR_GROUPING_STACKED &&
       cgsIn435.yAxis?.deleted === true &&
       cgsIn435.yAxis.majorGridlines === undefined &&
       !cgsBind3958;
@@ -134,29 +133,21 @@ export function buildChartGroupScales(cgsIn435: any, cgsIn436: any, cgsIn437: an
       cgsIn435.yAxis?.logBase !== undefined ||
       (cgsIn435.chartGroups?.length ?? 0) > 0 ||
       cgsBind3968 ||
-      (cgsIn435.yAxis?.deleted !== true &&
-        (cgsBind3966 || cgsBind3967))
+      (cgsIn435.yAxis?.deleted !== true && (cgsBind3966 || cgsBind3967))
         ? cgsH.buildContinuousScale({
             automaticMin: cgsBind3955,
             automaticMax: cgsBind3956,
             automaticPositiveMin: cgsH.bh400(
               cgsIn435.series.flatMap((item) => item.values),
             ),
-            range: [
-              cgsIn436.y + cgsIn436.height,
-              cgsIn436.y,
-            ],
+            range: [cgsIn436.y + cgsIn436.height, cgsIn436.y],
             axis: cgsIn435.yAxis,
             expandWideValuesToZero: !(
-              cgsIn435.type === Cn.CHART_TYPE_COMBO &&
-              cgsBind3956 < 0
+              cgsIn435.type === Cn.CHART_TYPE_COMBO && cgsBind3956 < 0
             ),
           })
         : cgsH.bh403(
-            d3ScaleLinear().range([
-              cgsIn436.y + cgsIn436.height,
-              cgsIn436.y,
-            ]),
+            d3ScaleLinear().range([cgsIn436.y + cgsIn436.height, cgsIn436.y]),
             cgsBind3960,
             cgsBind3965,
           ),

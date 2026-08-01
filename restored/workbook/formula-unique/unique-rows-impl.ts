@@ -23,8 +23,7 @@ export function uniqueRows(furIn4883: any, furIn4884: any) {
     let furBind22159 = furBind14299.get(furBind21604);
     furBind22159 &&
       (furIn4884
-        ? furBind22159.count === 1 &&
-          furBind14301.push(furBind22159.row)
+        ? furBind22159.count === 1 && furBind14301.push(furBind22159.row)
         : furBind14301.push(furBind22159.row));
   }
   return furBind14301.length === 0 && furIn4883.length > 0

@@ -114,3 +114,5 @@ export {
   BOe,
   IOe,
 } from "./semantic-tag-style-impl";
+
+export { LOe, tke, workbookHelper714 } from "./tag-kind-merge-impl";

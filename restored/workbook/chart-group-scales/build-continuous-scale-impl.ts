@@ -43,10 +43,7 @@ export function buildContinuousScale(ccsIn2030: any) {
     domain[1] < minimumAutomaticMax &&
     (domain[1] = ceilToMajor(minimumAutomaticMax, majorUnit));
   let ccsBind8869 = scaleLinear().domain(domain).range(range);
-  return (
-    ccsH.majorUnitMap.set(ccsBind8869, majorUnit),
-    ccsBind8869
-  );
+  return (ccsH.majorUnitMap.set(ccsBind8869, majorUnit), ccsBind8869);
 }
 
 /** Legacy alias (wave-125). */

@@ -15,3 +15,5 @@ export {
   binLabel,
   valueExtent,
 } from "./bin-label-extent-impl";
+
+export { mSe } from "./parse-bin-label-impl";

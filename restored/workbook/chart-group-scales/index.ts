@@ -38,7 +38,10 @@ export {
   wireChartContinuousScaleBoundaryHooks,
   ccsH,
 } from "./boundary-hooks-continuous";
+export { buildContinuousScale, _O } from "./build-continuous-scale-impl";
+
 export {
-  buildContinuousScale,
-  _O,
-} from "./build-continuous-scale-impl";
+  workbookHelper392,
+  workbookHelper393,
+  workbookHelper394,
+} from "./series-overlap-offset-impl";

@@ -3,3 +3,5 @@
 
 export { wirePaintImagesBoundaryHooks, piH } from "./boundary-hooks";
 export { paintImages } from "./paint-images-impl";
+
+export { Pwe, workbookHelper604 } from "./resolve-image-asset-impl";

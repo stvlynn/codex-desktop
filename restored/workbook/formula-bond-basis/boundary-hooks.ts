@@ -19,6 +19,8 @@ export type FormulaBondBasisBoundaryHooks = {
   bondYieldFn: (...args: any[]) => any;
   /** Legacy Nrt ensure (initializes jrt/Mrt). */
   ensurePriceYieldInit: () => void;
+  /** Legacy workbookBinding1900 — coupon periods between settlement/maturity. */
+  couponNumPeriods: (...args: any[]) => any;
 };
 
 export const fbbH: FormulaBondBasisBoundaryHooks =

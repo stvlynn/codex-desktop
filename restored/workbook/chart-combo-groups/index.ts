@@ -8,3 +8,5 @@ export {
   buildComboRenderGroups,
   workbookHelper532,
 } from "./build-combo-render-groups-impl";
+
+export { rbe, pxe } from "./combo-series-type-impl";

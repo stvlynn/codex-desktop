@@ -20,3 +20,5 @@ export {
   LEGEND_LABEL_GAP,
   DEFAULT_CHART_MUTED,
 } from "./chart-legend-impl";
+
+export { obe } from "./measure-legend-impl";

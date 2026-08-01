@@ -60,3 +60,5 @@ export {
   resolveSlideFrameBbox,
   isPositiveBboxTuple,
 } from "./frame-bbox-tuple-impl";
+
+export { $De } from "./resolve-element-style-impl";

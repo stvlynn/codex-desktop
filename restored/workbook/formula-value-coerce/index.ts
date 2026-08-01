@@ -26,3 +26,9 @@ export {
   coercePositiveInt,
   tTest,
 } from "./formula-ttest-coerce-impl";
+
+export {
+  workbookHelper908,
+  workbookHelper909,
+  UNIT_INTERVAL_MAX,
+} from "./formula-unit-interval-coerce-impl";

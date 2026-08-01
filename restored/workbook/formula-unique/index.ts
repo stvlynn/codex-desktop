@@ -12,3 +12,5 @@ export {
 } from "./formula-unique-impl";
 
 export { uniqueRows, Dst } from "./unique-rows-impl";
+
+export { pst, Tst, Est } from "./unique-by-bool-impl";

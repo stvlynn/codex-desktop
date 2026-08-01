@@ -35,3 +35,5 @@ export {
   cSe,
   lSe,
 } from "./layout-title-element-impl";
+
+export { lxe } from "./inset-plot-rect-impl";

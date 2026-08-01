@@ -6,12 +6,12 @@ import { cjlH } from "./boundary-hooks";
 
 void cjlH;
 
-export function lowerPanelSurfaceTag(cjlIn860: any, cjlIn861: any, cjlIn862: any) {
-  cjlH.assertAllowedProps(
-    cjlIn860,
-    cjlIn861.props,
-    cjlH.panelPropAllowlist,
-  );
+export function lowerPanelSurfaceTag(
+  cjlIn860: any,
+  cjlIn861: any,
+  cjlIn862: any,
+) {
+  cjlH.assertAllowedProps(cjlIn860, cjlIn861.props, cjlH.panelPropAllowlist);
   let cjlBind5531 = cjlH.flattenChildren(
       cjlIn862.toChildArray(cjlIn861.props.children),
       cjlIn860,
@@ -19,10 +19,7 @@ export function lowerPanelSurfaceTag(cjlIn860: any, cjlIn861: any, cjlIn862: any
     ),
     cjlBind5532 = cjlH.resolveTagKind(cjlIn860, cjlIn861.props),
     cjlBind5533 = cjlH.styleFromProps(cjlIn861.props),
-    cjlBind5534 = cjlIn862.readRef(
-      cjlIn861.props.ref,
-      cjlIn860,
-    );
+    cjlBind5534 = cjlIn862.readRef(cjlIn861.props.ref, cjlIn860);
   if (
     !(
       cjlBind5532 === "panel" ||
@@ -35,8 +32,7 @@ export function lowerPanelSurfaceTag(cjlIn860: any, cjlIn861: any, cjlIn862: any
       cjlBind5532,
       {
         name: cjlH.elementName(cjlIn861.props),
-        width:
-          cjlH.sizeToken(cjlIn861.props.width, "width") ?? "fill",
+        width: cjlH.sizeToken(cjlIn861.props.width, "width") ?? "fill",
         height: cjlH.sizeToken(cjlIn861.props.height, "height"),
         gap: cjlIn861.props.gap,
         align: cjlIn861.props.align,
@@ -56,18 +52,12 @@ export function lowerPanelSurfaceTag(cjlIn860: any, cjlIn861: any, cjlIn862: any
       cjlIn860,
     );
     return (
-      cjlIn862.registerRef(
-        cjlBind10262,
-        cjlBind5534,
-        cjlIn860,
-      ),
+      cjlIn862.registerRef(cjlBind10262, cjlBind5534, cjlIn860),
       cjlBind10262
     );
   }
   let cjlBind5535 = cjlH.attachChildren(
-      cjlBind5532 === "panel"
-        ? nke(cjlIn861.props)
-        : cjlBind5532,
+      cjlBind5532 === "panel" ? nke(cjlIn861.props) : cjlBind5532,
       cjlIn861.props,
       cjlBind5531,
       cjlIn860,
@@ -75,8 +65,7 @@ export function lowerPanelSurfaceTag(cjlIn860: any, cjlIn861: any, cjlIn862: any
     cjlBind5536 = cjlH.createShapeElement(
       {
         name: cjlH.elementName(cjlIn861.props),
-        width:
-          cjlH.sizeToken(cjlIn861.props.width, "width") ?? "fill",
+        width: cjlH.sizeToken(cjlIn861.props.width, "width") ?? "fill",
         height: cjlH.sizeToken(cjlIn861.props.height, "height"),
         columnSpan: _J(cjlIn861.props.columnSpan, "columnSpan"),
         rowSpan: _J(cjlIn861.props.rowSpan, "rowSpan"),
@@ -95,11 +84,7 @@ export function lowerPanelSurfaceTag(cjlIn860: any, cjlIn861: any, cjlIn862: any
       cjlBind5535,
     );
   return (
-    cjlIn862.registerRef(
-      cjlBind5536,
-      cjlBind5534,
-      cjlIn860,
-    ),
+    cjlIn862.registerRef(cjlBind5536, cjlBind5534, cjlIn860),
     cjlBind5536
   );
 }

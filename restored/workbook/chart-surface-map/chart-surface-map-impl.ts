@@ -10,28 +10,26 @@ void d3Extent;
 void d3ScaleLinear;
 void csmH;
 
-export function paintSurfaceMap(csmIn512: any, csmIn513: any, csmIn514: any, csmIn515: any, csmIn516: any = {}, ) {
+export function paintSurfaceMap(
+  csmIn512: any,
+  csmIn513: any,
+  csmIn514: any,
+  csmIn515: any,
+  csmIn516: any = {},
+) {
   let csmBind4289 = csmIn512.map;
   if (!csmIn513.series.length) return;
-  if (
-    csmIn516.hiddenSeriesIndices?.has(0) ||
-    csmIn513.series[0] == null
-  ) {
+  if (csmIn516.hiddenSeriesIndices?.has(0) || csmIn513.series[0] == null) {
     csmIn512.clear();
     return;
   }
   let csmBind4290 = csmIn513.series[0],
     csmBind4291 =
-      csmBind4290.categories &&
-      csmBind4290.categories.length > 0
+      csmBind4290.categories && csmBind4290.categories.length > 0
         ? csmBind4290.categories
         : csmIn513.categories,
     csmBind4292 = csmBind4290.values ?? [];
-  if (
-    !csmBind4291 ||
-    csmBind4291.length === 0 ||
-    csmBind4292.length === 0
-  ) {
+  if (!csmBind4291 || csmBind4291.length === 0 || csmBind4292.length === 0) {
     csmIn512.clear();
     return;
   }
@@ -50,12 +48,8 @@ export function paintSurfaceMap(csmIn512: any, csmIn513: any, csmIn514: any, csm
     csmIn512.clear();
     return;
   }
-  let [csmBind4294, csmBind4295] = d3Extent(
-      Array.from(csmBind4293.values()),
-    ),
-    csmBind4296 = csmH.bh466(
-      csmH.bh465(csmBind4290, 0, csmIn515),
-    ),
+  let [csmBind4294, csmBind4295] = d3Extent(Array.from(csmBind4293.values())),
+    csmBind4296 = csmH.bh466(csmH.bh465(csmBind4290, 0, csmIn515)),
     csmBind4297 = csmBind4294 ?? 0,
     csmBind4298 = csmBind4295 ?? csmBind4297,
     csmBind4299 = +(csmBind4298 === csmBind4297),
@@ -68,10 +62,7 @@ export function paintSurfaceMap(csmIn512: any, csmIn513: any, csmIn514: any, csm
     csmBind4301.set(index, csmBind4300(item));
     csmBind4302.set(index, 0.9);
   });
-  let csmBind4303 = csmH.bh467(
-      csmBind4301,
-      csmBind4296.fallback,
-    ),
+  let csmBind4303 = csmH.bh467(csmBind4301, csmBind4296.fallback),
     csmBind4304 = csmH.bh467(csmBind4302, 0.55),
     csmBind4305 = csmH.mapElementIdStem(
       csmIn516.elementId ?? csmIn513.id ?? "chart",
@@ -87,11 +78,7 @@ export function paintSurfaceMap(csmIn512: any, csmIn513: any, csmIn514: any, csm
         }),
         csmIn512.trackSource(csmBind4306));
       csmBind4289.getLayer(csmBind4307)
-        ? (csmBind4289.setPaintProperty(
-            csmBind4307,
-            "fill-color",
-            csmBind4303,
-          ),
+        ? (csmBind4289.setPaintProperty(csmBind4307, "fill-color", csmBind4303),
           csmBind4289.setPaintProperty(
             csmBind4307,
             "fill-opacity",

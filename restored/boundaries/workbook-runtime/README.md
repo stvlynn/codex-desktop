@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~26.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~25.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1719,3 +1719,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: remaining ≥18 mids / Nrt bag / helper603 after Nwe Map ESM / _workbookS peel if clean
+
+## Wave 134 (Stage-3 preferred ≥16–22 mid batch)
+
+- Boundary 26127 → 25337 (Δ -790)
+- Peeled: bond COUP* wat/Eat/Dat/Oat/kat/Lat; dist wrappers h3e…Z3e + d4e/z4e + helper908/909; lookup-text mst/hst/gst nest; unique pst/Est/Tst; chart/compose/paint mids (Qye/obe/mSe/394/Nye/tke/hEe/…); dead Cwe/Qxe
+- Skipped: helper603 (Nwe Map ESM); Nrt/jrt/Mrt bag; qOe (Binding1536/1538); IIe (NIe); helper464 (_A)
+- Leave-behind: helper603 needs Nwe Map ESM; vYe/_workbookS bag still large; Nrt bag still ensure-fan-out
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: remaining ≥16 mids / Nrt after coupon ensure peel / helper603 after Nwe Map ESM / _workbookS if clean

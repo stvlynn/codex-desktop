@@ -6,7 +6,19 @@ import { piH } from "./boundary-hooks";
 
 void piH;
 
-export function paintImages(piIn613: any, piIn614: any, piIn615: any, piIn616: any, piIn617: any, piIn618: any, piIn619: any, piIn620: any, piIn621: any, piIn622: any, piIn623: any = 1, ) {
+export function paintImages(
+  piIn613: any,
+  piIn614: any,
+  piIn615: any,
+  piIn616: any,
+  piIn617: any,
+  piIn618: any,
+  piIn619: any,
+  piIn620: any,
+  piIn621: any,
+  piIn622: any,
+  piIn623: any = 1,
+) {
   let piBind4632 = piIn614.images.items;
   if (piBind4632.length !== 0)
     for (let piBind4816 of piBind4632) {
@@ -54,43 +66,25 @@ export function paintImages(piIn613: any, piIn614: any, piIn615: any, piIn616: a
         let piBind8240 = Number(piBind8239.colId),
           piBind8241 = Number(piBind8239.rowId),
           piBind8242 = piIn616[piBind8240] ?? 0,
-          piBind8243 =
-            piIn616[piBind8240 + 1] ?? piBind8242,
+          piBind8243 = piIn616[piBind8240 + 1] ?? piBind8242,
           piBind8244 = piIn617[piBind8241 - 1] ?? 0,
-          piBind8245 =
-            piIn617[piBind8241] ?? piBind8244,
-          piBind8246 = Math.max(
-            0,
-            piBind8243 - piBind8242,
-          ),
-          piBind8247 = Math.max(
-            0,
-            piBind8245 - piBind8244,
-          ),
-          piBind8248 = piH.bh604(
-            piIn615,
-            piBind4867,
-          );
+          piBind8245 = piIn617[piBind8241] ?? piBind8244,
+          piBind8246 = Math.max(0, piBind8243 - piBind8242),
+          piBind8247 = Math.max(0, piBind8245 - piBind8244),
+          piBind8248 = piH.bh604(piIn615, piBind4867);
         if (!piBind8248) continue;
-        let piBind8249 = piH.imageBitmapById.get(
-          piBind8248.id,
-        );
+        let piBind8249 = piH.imageBitmapById.get(piBind8248.id);
         if (!piBind8249) {
           if (!piH.imageDecodeById.has(piBind8248.id)) {
-            let piBind21550 = piH.bh603(
-              piBind8248,
-              piIn620,
-              piIn621,
-            ).then(
-              (value) => (
-                piH.imageBitmapById.set(piBind8248.id, value),
-                value
-              ),
-            );
-            piH.imageDecodeById.set(
-              piBind8248.id,
-              piBind21550,
-            );
+            let piBind21550 = piH
+              .bh603(piBind8248, piIn620, piIn621)
+              .then(
+                (value) => (
+                  piH.imageBitmapById.set(piBind8248.id, value),
+                  value
+                ),
+              );
+            piH.imageDecodeById.set(piBind8248.id, piBind21550);
           }
           continue;
         }
@@ -107,16 +101,9 @@ export function paintImages(piIn613: any, piIn614: any, piIn615: any, piIn616: a
           piBind8246 / piBind8250,
           piBind8247 / piBind8251,
         );
-        piBind4871 = Math.max(
-          0,
-          Math.floor(piBind8250 * piBind8252),
-        );
-        piBind4872 = Math.max(
-          0,
-          Math.floor(piBind8251 * piBind8252),
-        );
-        let piBind8253 =
-            (piBind8246 - piBind4871) / 2,
+        piBind4871 = Math.max(0, Math.floor(piBind8250 * piBind8252));
+        piBind4872 = Math.max(0, Math.floor(piBind8251 * piBind8252));
+        let piBind8253 = (piBind8246 - piBind4871) / 2,
           piBind8254 = (piBind8247 - piBind4872) / 2;
         piIn613.drawImage(
           piBind8249,
@@ -138,10 +125,7 @@ export function paintImages(piIn613: any, piIn614: any, piIn615: any, piIn616: a
         piBind4870 > piIn621
       )
         continue;
-      let piBind4873 = piH.bh604(
-        piIn615,
-        piBind4867,
-      );
+      let piBind4873 = piH.bh604(piIn615, piBind4867);
       if (!piBind4873) continue;
       let piBind4874 = piH.imageBitmapById.get(piBind4873.id);
       if (piBind4874) {
@@ -159,16 +143,11 @@ export function paintImages(piIn613: any, piIn614: any, piIn615: any, piIn616: a
         continue;
       }
       if (!piH.imageDecodeById.has(piBind4873.id)) {
-        let piBind21937 = piH.bh603(
-          piBind4873,
-          piIn620,
-          piIn621,
-        ).then(
-          (value) => (
-            piH.imageBitmapById.set(piBind4873.id, value),
-            value
-          ),
-        );
+        let piBind21937 = piH
+          .bh603(piBind4873, piIn620, piIn621)
+          .then(
+            (value) => (piH.imageBitmapById.set(piBind4873.id, value), value),
+          );
         piH.imageDecodeById.set(piBind4873.id, piBind21937);
       }
     }

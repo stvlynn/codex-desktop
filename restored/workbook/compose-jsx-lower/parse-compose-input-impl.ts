@@ -2,16 +2,28 @@
 // Semantic implementation: parseComposeInput (legacy vke/yke/split-background-children).
 
 import {
-  isPresentationJsxElement, PRESENTATION_JSX_ELEMENT, PRESENTATION_JSX_FRAGMENT,
+  isPresentationJsxElement,
+  PRESENTATION_JSX_ELEMENT,
+  PRESENTATION_JSX_FRAGMENT,
 } from "../chart-jsx-lower";
 import { cjlH } from "./boundary-hooks";
 import {
-  lowerComposeChildren, lowerComposeElement, collectRefsByPath, toComposeChildArray, isAlreadyLowered,
+  lowerComposeChildren,
+  lowerComposeElement,
+  collectRefsByPath,
+  toComposeChildArray,
+  isAlreadyLowered,
 } from "./lower-element-impl";
 
-void isPresentationJsxElement; void PRESENTATION_JSX_ELEMENT; void PRESENTATION_JSX_FRAGMENT;
-void cjlH; void lowerComposeChildren; void lowerComposeElement; void collectRefsByPath;
-void toComposeChildArray; void isAlreadyLowered;
+void isPresentationJsxElement;
+void PRESENTATION_JSX_ELEMENT;
+void PRESENTATION_JSX_FRAGMENT;
+void cjlH;
+void lowerComposeChildren;
+void lowerComposeElement;
+void collectRefsByPath;
+void toComposeChildArray;
+void isAlreadyLowered;
 
 export function parseComposeInput(cjIn2650: any) {
   if (isAlreadyLowered(cjIn2650))
@@ -20,15 +32,9 @@ export function parseComposeInput(cjIn2650: any) {
       refsByPath: new Map(),
       background: undefined,
     };
-  if (
-    isPresentationJsxElement(cjIn2650) &&
-    cjIn2650.type === "slide"
-  )
+  if (isPresentationJsxElement(cjIn2650) && cjIn2650.type === "slide")
     return parseSlideComposeInput(cjIn2650);
-  if (
-    isPresentationJsxElement(cjIn2650) &&
-    cjIn2650.type === "background"
-  )
+  if (isPresentationJsxElement(cjIn2650) && cjIn2650.type === "background")
     throw Error("<background> can only be used inside <slide>.");
   let cjBind10133 = new WeakMap(),
     cjBind10134 = lowerComposeChildren(
@@ -46,12 +52,7 @@ export function parseComposeInput(cjIn2650: any) {
     throw Error("slide.compose JSX input did not produce a compose node.");
   let cjBind10136 = new Map();
   return (
-    collectRefsByPath(
-      cjBind10135,
-      cjBind10133,
-      cjBind10136,
-      "0",
-    ),
+    collectRefsByPath(cjBind10135, cjBind10133, cjBind10136, "0"),
     {
       node: cjBind10135,
       refsByPath: cjBind10136,
@@ -87,12 +88,7 @@ export function parseSlideComposeInput(cjIn3173: any) {
     ),
     cjBind11335 = new Map();
   return (
-    collectRefsByPath(
-      cjBind11334,
-      cjBind11331,
-      cjBind11335,
-      "0",
-    ),
+    collectRefsByPath(cjBind11334, cjBind11331, cjBind11335, "0"),
     {
       node: cjBind11334,
       refsByPath: cjBind11335,
@@ -103,8 +99,7 @@ export function parseSlideComposeInput(cjIn3173: any) {
 export function splitBackgroundChildren(cjIn2005: any, cjIn2006: any) {
   let cjBind8823 = [],
     cjBind8824 =
-      cjIn2006.fill !== undefined ||
-      cjIn2006.ref !== undefined
+      cjIn2006.fill !== undefined || cjIn2006.ref !== undefined
         ? {
             ...cjIn2006,
           }
@@ -112,16 +107,16 @@ export function splitBackgroundChildren(cjIn2005: any, cjIn2006: any) {
   return (
     cjIn2005.forEach((item) => {
       if (Array.isArray(item)) {
-        let cjBind21512 = splitBackgroundChildren(
-          item,
-          cjBind8824 ?? {},
-        );
+        let cjBind21512 = splitBackgroundChildren(item, cjBind8824 ?? {});
         cjBind8823.push(...cjBind21512.children);
         cjBind8824 = cjBind21512.background;
         return;
       }
       if (!(item == null || typeof item == "boolean")) {
-        if (isPresentationJsxElement(item) && item.type === PRESENTATION_JSX_FRAGMENT) {
+        if (
+          isPresentationJsxElement(item) &&
+          item.type === PRESENTATION_JSX_FRAGMENT
+        ) {
           let cjBind20648 = splitBackgroundChildren(
             toComposeChildArray(item.props.children),
             cjBind8824 ?? {},
@@ -134,7 +129,9 @@ export function splitBackgroundChildren(cjIn2005: any, cjIn2006: any) {
           if (
             toComposeChildArray(item.props.children).some(
               (_item) =>
-                _item != null && _item !== false && !isComposeFormattingWhitespace(_item),
+                _item != null &&
+                _item !== false &&
+                !isComposeFormattingWhitespace(_item),
             )
           )
             throw Error("<background> does not accept children.");
@@ -154,4 +151,3 @@ export function splitBackgroundChildren(cjIn2005: any, cjIn2006: any) {
     }
   );
 }
-
