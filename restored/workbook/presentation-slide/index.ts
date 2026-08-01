@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-87: presentation-slide barrel (legacy Z$/X$/cLe/sLe).
+// Stage-3 wave-87/158: presentation-slide barrel (direct imports; wire retired).
 
 export { ensurePresentationSlideInit } from "./ensure-presentation-slide-init";
 export { ensureSlidesListInit } from "./ensure-slides-list-init";

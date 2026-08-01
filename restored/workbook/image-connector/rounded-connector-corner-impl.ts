@@ -2,7 +2,7 @@
 // Semantic implementation: rounded connector corner geometry.
 // Stage-3 wave-113.
 
-import { CONNECTOR_EPSILON } from "../mermaid-slide-adapters";
+import { CONNECTOR_EPSILON } from "../mermaid-slide-adapters/connector-epsilon";
 
 void CONNECTOR_EPSILON;
 

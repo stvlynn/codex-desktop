@@ -1,6 +1,20 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-86: boundary deps for formula-registry
-// (formula impl ensures + live function bag for registry values).
+// Stage-3 wave-158: formula-registry ensures via direct imports
+// (wireFormulaRegistryBoundaryHooks leave-behind retired).
+// setFormulaImplBag / frBag remain mega-wired until formula impls peel.
+
+import { c8e, g8e, x7e, wot } from "../formula-thin-stubs";
+import {
+  G8e,
+  b5e,
+  rot,
+  nst,
+  Uct,
+  Uut,
+  workbookBinding1880,
+  Ydt,
+} from "../formula-date-epoch";
+import { Lrt, Nrt, workbookBinding1901, Srt, Ort } from "../formula-bond-basis";
 
 export type FormulaRegistryBoundaryHooks = {
   ensureC8e: () => void;
@@ -22,35 +36,68 @@ export type FormulaRegistryBoundaryHooks = {
   ensureOrt: () => void;
 };
 
-/** Live bag for intentional leave-behind ensures. */
-export const frH: FormulaRegistryBoundaryHooks =
-  {} as FormulaRegistryBoundaryHooks;
+export const frH: FormulaRegistryBoundaryHooks = {
+  ensureC8e: () => {
+    c8e();
+  },
+  ensureG8eEmpty: () => {
+    g8e();
+  },
+  ensureG8e: () => {
+    G8e();
+  },
+  ensureB5e: () => {
+    b5e();
+  },
+  ensureX7e: () => {
+    x7e();
+  },
+  ensureRot: () => {
+    rot();
+  },
+  ensureWot: () => {
+    wot();
+  },
+  ensureNst: () => {
+    nst();
+  },
+  ensureUct: () => {
+    Uct();
+  },
+  ensureUut: () => {
+    Uut();
+  },
+  ensureBinding1880: () => {
+    workbookBinding1880();
+  },
+  ensureYdt: () => {
+    Ydt();
+  },
+  ensureLrt: () => {
+    Lrt();
+  },
+  ensureNrt: () => {
+    Nrt();
+  },
+  ensureBinding1901: () => {
+    workbookBinding1901();
+  },
+  ensureSrt: () => {
+    Srt();
+  },
+  ensureOrt: () => {
+    Ort();
+  },
+};
 
-/** Live formula impl functions (hoisted `function` decls in boundary). */
+/** Live formula impl functions (hoisted `function` decls still in mega). */
 export let frBag: Record<string, any> = {};
 
 export function setFormulaImplBag(bag: Record<string, any>): void {
   frBag = bag;
 }
 
+/** @deprecated Wave-158: wire leave-behind retired — frH uses direct imports. */
 export function wireFormulaRegistryBoundaryHooks(
-  next: FormulaRegistryBoundaryHooks,
-): void {
-  frH.ensureC8e = next.ensureC8e;
-  frH.ensureG8eEmpty = next.ensureG8eEmpty;
-  frH.ensureG8e = next.ensureG8e;
-  frH.ensureB5e = next.ensureB5e;
-  frH.ensureX7e = next.ensureX7e;
-  frH.ensureRot = next.ensureRot;
-  frH.ensureWot = next.ensureWot;
-  frH.ensureNst = next.ensureNst;
-  frH.ensureUct = next.ensureUct;
-  frH.ensureUut = next.ensureUut;
-  frH.ensureBinding1880 = next.ensureBinding1880;
-  frH.ensureYdt = next.ensureYdt;
-  frH.ensureLrt = next.ensureLrt;
-  frH.ensureNrt = next.ensureNrt;
-  frH.ensureBinding1901 = next.ensureBinding1901;
-  frH.ensureSrt = next.ensureSrt;
-  frH.ensureOrt = next.ensureOrt;
-}
+  _next?: Partial<FormulaRegistryBoundaryHooks>,
+): void {}

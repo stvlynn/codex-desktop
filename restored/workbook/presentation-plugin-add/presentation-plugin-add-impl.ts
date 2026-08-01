@@ -3,7 +3,7 @@
 // Stage-3 wave-133.
 
 import { isPresentationJsxElement } from "../compose-jsx-lower";
-import { nLe, tLe } from "../presentation-slide";
+import { nLe, tLe } from "../presentation-slide/ps-slots";
 
 export function VIe(props: any) {
   if (isPresentationJsxElement(props)) {

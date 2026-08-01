@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-62: Mermaid→presentation slide adapters barrel
+// Stage-3 wave-62/158: Mermaid→slide adapters barrel (direct imports; wire retired).
 // (legacy Binding1687 cluster / LPe+dFe+DFe+cIe+lIe+CIe).
 
 export {

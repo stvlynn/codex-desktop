@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~8.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~8.4k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1924,3 +1924,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept
 - QG PASS on sheet + workbook-core + presentation-doc + boundary `--no-cache --allow-open-boundaries`
 - Next: slim `wireFormulaCriteriaLookupBoundaryHooks` / `wireCanvasPaintBoundaryHooks` / other large wires; reassess openBoundary closeout when mega is thin enough
+
+## Wave 158 (Stage-3 wire slim — criteria/canvas/slide/registry/mermaid/layout)
+
+- Boundary 8779 → 8376 (Δ -403)
+- Retired `wireFormulaCriteriaLookupBoundaryHooks` / `wireCanvasPaintBoundaryHooks` / `wirePresentationSlideBoundaryHooks` / `wireFormulaRegistryBoundaryHooks` / `wireMermaidSlideAdapterHooks` / `wireSlideLayoutBoundaryHooks` → direct imports in owning modules
+- Cycle edges: presentation-plugin-add → `ps-slots`; image-connector → `connector-epsilon`
+- Kept: `setFormulaImplBag` mega bag (formula impls still in boundary)
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept
+- QG PASS on changed modules + boundary `--no-cache --allow-open-boundaries`
+- Next: slim remaining mid-size wires (compose-jsx-lower / chart-legend-layout / table-element / …); reassess openBoundary closeout when mega is thin enough
+

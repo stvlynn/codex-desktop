@@ -1,6 +1,37 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-87: boundary deps for presentation-slide
-// (leave-behind ensures + element/notes/background/placeholder/layout helpers).
+// Stage-3 wave-158: presentation-slide deps via direct imports
+// (wirePresentationSlideBoundaryHooks leave-behind retired).
+
+import {
+  kDe,
+  workbookBinding1370,
+  workbookBinding1371,
+  $U,
+} from "../constraint-layout";
+import {
+  workbookBinding1296,
+  workbookBinding1341,
+  workbookBinding1343,
+  workbookBinding1340,
+  workbookBinding1294,
+  workbookBinding1342,
+} from "../slide-layout";
+import {
+  ensureGridLayoutInit as jDe,
+  computeGridFrame as workbookHelper672,
+  autoLayoutFrames as ADe,
+} from "../grid-frame-layout";
+import { workbookBinding1389, workbookBinding1388 } from "../speaker-notes";
+import {
+  Cke,
+  workbookBinding1531,
+  parseComposeInput as vke,
+} from "../compose-jsx-lower";
+import { workbookEt } from "../emu-units";
+import { BIe } from "../shell-mid-ensures";
+import { exportLayoutBlob as FDe } from "../compose-element-snapshot";
+import { VIe, IIe } from "../presentation-plugin-add";
+import { addFromCodePlugin } from "../presentation-code-block";
 
 export type PresentationSlideBoundaryHooks = {
   ensureKDe: () => void;
@@ -29,53 +60,62 @@ export type PresentationSlideBoundaryHooks = {
   parseComposeInput: (...args: any[]) => any;
 };
 
-/** Live bag for intentional leave-behind ensures/helpers/classes. */
-export const psH: PresentationSlideBoundaryHooks =
-  {} as PresentationSlideBoundaryHooks;
+export const psH: PresentationSlideBoundaryHooks = {
+  ensureKDe: () => {
+    kDe();
+  },
+  ensureBinding1370: () => {
+    workbookBinding1370();
+  },
+  ensureBinding1296: () => workbookBinding1296(),
+  ensureJDe: () => {
+    jDe();
+  },
+  ensureBinding1341: () => workbookBinding1341(),
+  ensureBinding1389: () => {
+    workbookBinding1389();
+  },
+  ensureBinding1343: () => workbookBinding1343(),
+  ensureCke: () => {
+    Cke();
+  },
+  ensureBinding1531: () => {
+    workbookBinding1531();
+  },
+  ensureWorkbookEt: () => {
+    workbookEt();
+  },
+  ensureBIe: () => {
+    BIe();
+  },
+  get Binding1340() {
+    return workbookBinding1340;
+  },
+  get Binding1388() {
+    return workbookBinding1388;
+  },
+  get Binding1294() {
+    return workbookBinding1294;
+  },
+  get Binding1342() {
+    return workbookBinding1342;
+  },
+  get Binding1371() {
+    return workbookBinding1371;
+  },
+  get layoutDirection() {
+    return $U as any;
+  },
+  gridFrame: (...args: any[]) => workbookHelper672(...args),
+  autoLayoutFrames: (...args: any[]) => ADe(...args),
+  exportLayoutBlob: (...args: any[]) => FDe(...args),
+  normalizeAddConfig: (...args: any[]) => VIe(...args),
+  addFromMermaid: (...args: any[]) => IIe(...args),
+  addFromCodePlugin: (...args: any[]) => addFromCodePlugin(...args),
+  parseComposeInput: (...args: any[]) => vke(...args),
+};
 
+/** @deprecated Wave-158: wire leave-behind retired — psH uses direct imports. */
 export function wirePresentationSlideBoundaryHooks(
-  next: PresentationSlideBoundaryHooks,
-): void {
-  psH.ensureKDe = next.ensureKDe;
-  psH.ensureBinding1370 = next.ensureBinding1370;
-  psH.ensureBinding1296 = next.ensureBinding1296;
-  psH.ensureJDe = next.ensureJDe;
-  psH.ensureBinding1341 = next.ensureBinding1341;
-  psH.ensureBinding1389 = next.ensureBinding1389;
-  psH.ensureBinding1343 = next.ensureBinding1343;
-  psH.ensureCke = next.ensureCke;
-  psH.ensureBinding1531 = next.ensureBinding1531;
-  psH.ensureWorkbookEt = next.ensureWorkbookEt;
-  psH.ensureBIe = next.ensureBIe;
-  Object.defineProperty(psH, "Binding1340", {
-    get: () => next.Binding1340,
-    configurable: true,
-  });
-  Object.defineProperty(psH, "Binding1388", {
-    get: () => next.Binding1388,
-    configurable: true,
-  });
-  Object.defineProperty(psH, "Binding1294", {
-    get: () => next.Binding1294,
-    configurable: true,
-  });
-  Object.defineProperty(psH, "Binding1342", {
-    get: () => next.Binding1342,
-    configurable: true,
-  });
-  Object.defineProperty(psH, "Binding1371", {
-    get: () => next.Binding1371,
-    configurable: true,
-  });
-  Object.defineProperty(psH, "layoutDirection", {
-    get: () => next.layoutDirection,
-    configurable: true,
-  });
-  psH.gridFrame = next.gridFrame;
-  psH.autoLayoutFrames = next.autoLayoutFrames;
-  psH.exportLayoutBlob = next.exportLayoutBlob;
-  psH.normalizeAddConfig = next.normalizeAddConfig;
-  psH.addFromMermaid = next.addFromMermaid;
-  psH.addFromCodePlugin = next.addFromCodePlugin;
-  psH.parseComposeInput = next.parseComposeInput;
-}
+  _next?: Partial<PresentationSlideBoundaryHooks>,
+): void {}

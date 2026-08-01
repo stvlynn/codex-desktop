@@ -1220,65 +1220,12 @@ wireSparklinesBoundaryHooks({
   },
 });
 import {
-  wireMermaidSlideAdapterHooks,
   ensureMermaidSlideAdaptersInit,
   getMermaidSlidePlugins,
   getConvertTreeView,
   getIsTreeViewSource,
   CONNECTOR_EPSILON,
 } from "../../workbook/mermaid-slide-adapters";
-
-wireMermaidSlideAdapterHooks({
-  measureTextBlock: (text: string, opts?: Record<string, any>) =>
-    workbookBinding1615(text, opts),
-  ensureMeasureTextInit: () => {
-    workbookBinding1616();
-  },
-  applyRunTextStyle: (...args: any[]) => workbookBinding1617(...args),
-  ensureApplyRunTextStyleInit: () => {
-    workbookBinding1618();
-  },
-  createScratchSlide: () => workbookBinding1619(),
-  ensureScratchSlideInit: () => {
-    workbookBinding1620();
-  },
-  resolveClassTextStyles: (...args: any[]) => workbookBinding1667(...args),
-  layoutGraphNodes: (...args: any[]) => workbookBinding1675(...args),
-  renderGraphToSlide: (...args: any[]) => workbookBinding1685(...args),
-  get flowchartPlugin() {
-    return NPe;
-  },
-  get chartLikePlugin() {
-    return zAe;
-  },
-  get fallbackPlugin() {
-    return VAe;
-  },
-  ensureChartLikePluginsInit: () => {
-    BAe();
-  },
-  ensureFallbackPluginInit: () => {
-    HAe();
-  },
-  ensureFlowchartPluginInit: () => {
-    PPe();
-  },
-  ensureStateGeometryMapsInit: () => {
-    KAe();
-  },
-  ensureArrowGeometryMapsInit: () => {
-    XAe();
-  },
-  ensureConnectorHelpersInit: () => {
-    OPe();
-  },
-  ensureGraphLayoutInit: () => {
-    $Ne();
-  },
-  stateNodeGeometry: (...args: any[]) => WAe(...args),
-  mindNodeGeometry: (...args: any[]) => GAe(...args),
-  roundedConnectorCorner: (...args: any[]) => IPe(...args),
-} as any);
 
 var workbookBinding1687 = CONNECTOR_EPSILON;
 var P$: any = new Proxy([] as any[], {
@@ -1349,7 +1296,6 @@ import {
 } from "../../workbook/sheet";
 
 import {
-  wireCanvasPaintBoundaryHooks,
   ensureCanvasPaintConstsInit as ensureCpConstsInit,
   paintSpreadsheetCanvas as paintSpreadsheetCanvasFn,
   notifyRowHeights,
@@ -1365,63 +1311,6 @@ import { clipPaintRect as workbookHelper601 } from "../../workbook/canvas-paint"
 import { prepareDiagonalStroke } from "../../workbook/canvas-paint";
 
 import { JCe } from "../../workbook/canvas-paint";
-
-wireCanvasPaintBoundaryHooks({
-  ensureWorkbookZ: () => workbookZ(),
-  ensureWorkbookT: () => workbookT(),
-  ensureWorkbookXt: () => workbookXt(),
-  ensureWr: () => wr(),
-  ensureWorkbookBinding1252: () => workbookBinding1252(),
-  ensureWorkbookBinding1266: () => {},
-  ensureWorkbookS: () => _workbookS(),
-  ensureDollarX: () => $x(),
-  ensureQCe: () => qCe(),
-  ensureDollarCe: () => $Ce(),
-  ensureNwe: () => Nwe(),
-  ensureSpreadsheetVn: () => spreadsheetVn(),
-  ensureWorkbookBinding583: () => workbookBinding583(),
-  ensureWorkbookBinding1238: () => workbookBinding1238(),
-  ensureQt: () => Qt(),
-  ensureIwe: () => Iwe(),
-  ensureCwe: () => cwe(),
-  ensureWwe: () => wwe(),
-  ensureTwe: () => Twe(),
-  ensureEwe: () => Ewe(),
-  ensureWorkbookBinding586: () => workbookBinding586(),
-  ensureWorkbookBinding588: () => workbookBinding588(),
-  ensureWorkbookBinding587: () => workbookBinding587(),
-  ensureWorkbookBinding362: () => workbookBinding362(),
-  ensureWorkbookBinding834: () => ahe(),
-  ensureWorkbookBinding699: () => workbookBinding699,
-  ensureU: () => _u(),
-  paintImages: (...args: any[]) => Fwe(...args),
-  paintSparklines: (...args: any[]) => JCe(...args),
-  checkboxHitTest: (...args: any[]) => awe(...args),
-  paintCheckboxBox: (...args: any[]) => owe(...args),
-  paintDataBarFill: (...args: any[]) => twe(...args),
-  paintIconSetGlyph: (...args: any[]) => __uweWave104(...args),
-  paintUnsupportedBadge: (...args: any[]) => lwe(...args),
-  layoutTextBox: (...args: any[]) => workbookQ(...args),
-  drawCheckboxControl: (...args: any[]) => workbookHelper221(...args),
-  paintCellTextRuns: (...args: any[]) => workbookHelper229(...args),
-  measurePaintTextWidth: (...args: any[]) => workbookHelper232(...args),
-  dropdownChevronInset: (...args: any[]) => workbookHelper233(...args),
-  strokeCellBorderSide: (...args: any[]) => workbookHelper592(...args),
-  prepareDiagonalStroke: (...args: any[]) => prepareDiagonalStroke(...args),
-  fillCellBackground: (...args: any[]) => __fillCellBackgroundWave105(...args),
-  clipPaintRect: (...args: any[]) => workbookHelper601(...args),
-  resolveShapeFillBitmap: (...args: any[]) => workbookHelper602(...args),
-  layoutPaintedText: (...args: any[]) => workbookHelper110(...args),
-  emuToCssPx: (...args: any[]) => workbookHelper287(...args),
-  cssPxToEmu: (...args: any[]) => workbookHelper289(...args),
-  matchPivotStyleName: (...args: any[]) => workbookHelper24(...args),
-  pivotStyleElementOf: (...args: any[]) => getPivotTableProto(...args),
-  renderDrawingShape: (...args: any[]) => workbookHelper614(...args),
-  getWorkbookO: () => _workbookO,
-  indexedExcelColor: (...args: any[]) => indexedExcelColor(...args),
-  hre: (...args: any[]) => parseCellHintKey(...args),
-  workbookSt: (...args: any[]) => workbookSt(...args),
-});
 
 // Thin aliases for legacy BYe / Binding1824 / jYe / bYe / xYe.
 var BYe = paintSpreadsheetCanvasFn;
@@ -3323,7 +3212,6 @@ import {
 } from "../../workbook/formula-sort-filter";
 
 import {
-  wireFormulaCriteriaLookupBoundaryHooks,
   Jct,
   qct,
   filterNestedAggregateCells as workbookHelper976,
@@ -3669,75 +3557,6 @@ import {
 
 import { cloneRichWorkbookMetadata as apt } from "../../workbook/worksheet-metadata-clone";
 
-wireFormulaCriteriaLookupBoundaryHooks({
-  getEvalContext: () => workbookHelper962(),
-  roman: romanNumeral,
-  arabic: arabicNumeral,
-  sqrtFloor: (...args: any[]) => sqrtFloor(...args),
-  absNumber: (...args: any[]) => absNumber(...args),
-  multiGcd: (...args: any[]) => multiGcd(...args),
-  math: {
-    F$e: (...args: any[]) => F$e(...args),
-    t$e: (...args: any[]) => t$e(...args),
-    W$e: (...args: any[]) => W$e(...args),
-    ZQe: (...args: any[]) => ZQe(...args),
-    C$e: (...args: any[]) => C$e(...args),
-    L$e: (...args: any[]) => L$e(...args),
-    u$e: (...args: any[]) => u$e(...args),
-    m$e: (...args: any[]) => m$e(...args),
-    g$e: (...args: any[]) => g$e(...args),
-    HQe: (...args: any[]) => HQe(...args),
-    f$e: (...args: any[]) => f$e(...args),
-    P$e: (...args: any[]) => P$e(...args),
-    O$e: (...args: any[]) => O$e(...args),
-    v$e: (...args: any[]) => v$e(...args),
-    E$e: (...args: any[]) => E$e(...args),
-    QQe: (...args: any[]) => QQe(...args),
-    YQe: (...args: any[]) => YQe(...args),
-    UQe: (...args: any[]) => UQe(...args),
-    h$e: (...args: any[]) => h$e(...args),
-    _$e: (...args: any[]) => _$e(...args),
-    K$e: (...args: any[]) => K$e(...args),
-    A$e: (...args: any[]) => A$e(...args),
-    k$e: (...args: any[]) => k$e(...args),
-    I$e: (...args: any[]) => I$e(...args),
-    n$e: (...args: any[]) => n$e(...args),
-    G$e: (...args: any[]) => G$e(...args),
-    XQe: (...args: any[]) => XQe(...args),
-    WQe: (...args: any[]) => WQe(...args),
-    $Qe: (...args: any[]) => $Qe(...args),
-    l$e: (...args: any[]) => l$e(...args),
-    S$e: (...args: any[]) => S$e(...args),
-    U$e: (...args: any[]) => U$e(...args),
-    V$e: (...args: any[]) => V$e(...args),
-    H$e: (...args: any[]) => H$e(...args),
-    w$e: (...args: any[]) => w$e(...args),
-    T$e: (...args: any[]) => T$e(...args),
-    c$e: (...args: any[]) => c$e(...args),
-    z$e: (...args: any[]) => z$e(...args),
-    D$e: (...args: any[]) => D$e(...args),
-    N$e: (...args: any[]) => N$e(...args),
-    R$e: (...args: any[]) => R$e(...args),
-    y$e: (...args: any[]) => y$e(...args),
-    d$e: (...args: any[]) => d$e(...args),
-    b$e: (...args: any[]) => b$e(...args),
-    p$e: (...args: any[]) => p$e(...args),
-    B$e: (...args: any[]) => B$e(...args),
-    qQe: (...args: any[]) => qQe(...args),
-    GQe: (...args: any[]) => GQe(...args),
-    KQe: (...args: any[]) => KQe(...args),
-    r$e: (...args: any[]) => r$e(...args),
-    i$e: (...args: any[]) => i$e(...args),
-    a$e: (...args: any[]) => a$e(...args),
-    o$e: (...args: any[]) => o$e(...args),
-    j$e: (...args: any[]) => j$e(...args),
-    M$e: (...args: any[]) => M$e(...args),
-    e$e: (...args: any[]) => e$e(...args),
-    s$e: (...args: any[]) => s$e(...args),
-    x$e: (...args: any[]) => x$e(...args),
-    JQe: (...args: any[]) => JQe(...args),
-  },
-});
 wireCfIconColorScaleBoundaryHooks({
   resolveIconSetId: (...args: any[]) => workbookHelper256(...args),
   getIconSetDef: (...args: any[]) => workbookHelper257(...args),
@@ -4223,72 +4042,13 @@ import {
   zQe,
   BQe,
   VQe,
-  HQe,
-  UQe,
-  WQe,
-  GQe,
-  KQe,
   qQe,
-  JQe,
-  YQe,
-  XQe,
-  ZQe,
-  QQe,
-  $Qe,
   romanNumeral,
   sqrtFloor,
-  e$e,
-  t$e,
-  n$e,
-  r$e,
-  i$e,
-  a$e,
-  o$e,
-  s$e,
-  c$e,
-  l$e,
-  u$e,
-  absNumber,
   arabicNumeral,
-  d$e,
-  f$e,
-  p$e,
-  m$e,
-  h$e,
-  g$e,
-  _$e,
-  v$e,
-  y$e,
-  b$e,
-  x$e,
-  S$e,
-  C$e,
-  w$e,
-  multiGcd,
-  T$e,
-  E$e,
-  D$e,
   multiLcm,
-  O$e,
-  k$e,
-  A$e,
-  j$e,
-  M$e,
-  N$e,
-  P$e,
-  F$e,
-  I$e,
-  L$e,
-  R$e,
   z$e,
   sumproductArgs,
-  B$e,
-  V$e,
-  H$e,
-  U$e,
-  W$e,
-  G$e,
-  K$e,
   q$e,
   J$e,
   Y$e,
@@ -6507,7 +6267,6 @@ Object.defineProperty(__fmHWave109, "NA_ERROR", {
 
 import {
   ensureFormulaRegistryInit,
-  wireFormulaRegistryBoundaryHooks,
   setFormulaImplBag,
   $dt,
   Xdt,
@@ -6516,7 +6275,6 @@ import {
 import {
   ensurePresentationSlideInit,
   ensureSlidesListInit,
-  wirePresentationSlideBoundaryHooks,
   Z$,
   cLe,
   X$,
@@ -6562,60 +6320,6 @@ wireFormulaStatsBoundaryHooks({
 // Thin alias: cluster ensure for formula engine stats catalog.
 
 var ensureFormulaRegistryCluster = ensureFormulaRegistryInit;
-
-wireFormulaRegistryBoundaryHooks({
-  ensureC8e: () => {
-    c8e();
-  },
-  ensureG8eEmpty: () => {
-    g8e();
-  },
-  ensureG8e: () => {
-    G8e();
-  },
-  ensureB5e: () => {
-    b5e();
-  },
-  ensureX7e: () => {
-    x7e();
-  },
-  ensureRot: () => {
-    rot();
-  },
-  ensureWot: () => {
-    wot();
-  },
-  ensureNst: () => {
-    nst();
-  },
-  ensureUct: () => {
-    Uct();
-  },
-  ensureUut: () => {
-    Uut();
-  },
-  ensureBinding1880: () => {
-    workbookBinding1880();
-  },
-  ensureYdt: () => {
-    Ydt();
-  },
-  ensureLrt: () => {
-    Lrt();
-  },
-  ensureNrt: () => {
-    Nrt();
-  },
-  ensureBinding1901: () => {
-    workbookBinding1901();
-  },
-  ensureSrt: () => {
-    Srt();
-  },
-  ensureOrt: () => {
-    Ort();
-  },
-});
 
 // prettier-ignore
 setFormulaImplBag({
@@ -6792,112 +6496,6 @@ Object.defineProperties(__pcbHWave105, {
 
 wirePresentationPluginAddBoundaryHooks({
   mermaidToElements: (...args: any[]) => mermaidToElements(...args),
-});
-
-wireSlideLayoutBoundaryHooks({
-  ensureQt: () => {
-    Qt();
-  },
-  ensureWorkbookC: () => {
-    workbookC();
-  },
-  ensureWorkbookX: () => {
-    _workbookX();
-  },
-  ensureZEe: () => {
-    zEe();
-  },
-  ensureWorkbookY: () => {
-    _workbookY();
-  },
-  ensureWorkbookP: () => {
-    _workbookP();
-  },
-  ensureBinding1299: () => {
-    workbookBinding1299();
-  },
-  ensureBinding1303: () => {
-    workbookBinding1303();
-  },
-  ensureBinding661: () => {
-    workbookBinding661();
-  },
-  ensureBinding739: () => {
-    workbookBinding739();
-  },
-  ensureLDe: () => {
-    lDe();
-  },
-  ensureBinding1337: () => {
-    workbookBinding1337();
-  },
-  ensureWorkbookH: () => {
-    workbookH();
-  },
-  ensurePresentationFn: () => {
-    _presentationFn();
-  },
-  ensureWorkbookB: () => {
-    workbookB();
-  },
-  ensureBinding647: () => {
-    workbookBinding647();
-  },
-});
-
-wirePresentationSlideBoundaryHooks({
-  ensureKDe: () => {
-    kDe();
-  },
-  ensureBinding1370: () => {
-    workbookBinding1370();
-  },
-  ensureBinding1296: () => workbookBinding1296(),
-  ensureJDe: () => {
-    jDe();
-  },
-  ensureBinding1341: () => workbookBinding1341(),
-  ensureBinding1389: () => {
-    workbookBinding1389();
-  },
-  ensureBinding1343: () => workbookBinding1343(),
-  ensureCke: () => {
-    Cke();
-  },
-  ensureBinding1531: () => {
-    workbookBinding1531();
-  },
-  ensureWorkbookEt: () => {
-    workbookEt();
-  },
-  ensureBIe: () => {
-    BIe();
-  },
-  get Binding1340() {
-    return workbookBinding1340;
-  },
-  get Binding1388() {
-    return workbookBinding1388;
-  },
-  get Binding1294() {
-    return workbookBinding1294;
-  },
-  get Binding1342() {
-    return workbookBinding1342;
-  },
-  get Binding1371() {
-    return workbookBinding1371;
-  },
-  get layoutDirection() {
-    return $U;
-  },
-  gridFrame: (...args: any[]) => workbookHelper672(...args),
-  autoLayoutFrames: (...args: any[]) => ADe(...args),
-  exportLayoutBlob: (...args: any[]) => FDe(...args),
-  normalizeAddConfig: (...args: any[]) => VIe(...args),
-  addFromMermaid: (...args: any[]) => IIe(...args),
-  addFromCodePlugin: (...args: any[]) => __addFromCodePluginWave105(...args),
-  parseComposeInput: (...args: any[]) => vke(...args),
 });
 
 import {
@@ -7868,7 +7466,6 @@ import {
   SEe,
   uDe,
   ensureSlideLayoutInit,
-  wireSlideLayoutBoundaryHooks,
   _workbookB,
   _workbookF,
   workbookBinding1302,

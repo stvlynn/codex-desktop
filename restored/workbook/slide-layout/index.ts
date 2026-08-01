@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-143: slide-layout barrel.
+// Stage-3 wave-143/158: slide-layout barrel (direct imports; wire retired).
 
 export { wireSlideLayoutBoundaryHooks, slH } from "./boundary-hooks";
 export {

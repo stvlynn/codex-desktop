@@ -1,6 +1,33 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-62: boundary deps for Mermaid→slide adapters
-// (text measure / scratch slide / graph layout / earlier diagram plugins).
+// Stage-3 wave-158: Mermaid→slide adapter deps via direct imports
+// (wireMermaidSlideAdapterHooks leave-behind retired).
+
+import {
+  workbookBinding1615,
+  workbookBinding1616,
+  workbookBinding1617,
+  workbookBinding1618,
+  workbookBinding1619,
+  workbookBinding1620,
+  workbookBinding1667,
+  zAe,
+  VAe,
+  BAe,
+  HAe,
+  KAe,
+  XAe,
+  WAe,
+  GAe,
+} from "../mermaid-slide-helpers";
+import {
+  workbookBinding1675,
+  workbookBinding1685,
+  NPe,
+  PPe,
+  OPe,
+  $Ne,
+} from "../mermaid-flowchart";
+import { IPe } from "../image-connector";
 
 export type MermaidSlideAdapterHooks = {
   measureTextBlock: (text: string, opts?: Record<string, any>) => any;
@@ -27,89 +54,77 @@ export type MermaidSlideAdapterHooks = {
   roundedConnectorCorner: (...args: any[]) => any;
 };
 
-let hooks: MermaidSlideAdapterHooks | null = null;
-
-export function wireMermaidSlideAdapterHooks(
-  next: MermaidSlideAdapterHooks,
-): void {
-  hooks = next;
-}
-
-function requireHooks(): MermaidSlideAdapterHooks {
-  if (!hooks) {
-    throw new Error(
-      "mermaid-slide-adapters hooks not wired (call from workbook-runtime)",
-    );
-  }
-  return hooks;
-}
-
 export function measureTextBlock(
   text: string,
   opts?: Record<string, any>,
 ): any {
-  return requireHooks().measureTextBlock(text, opts);
+  return workbookBinding1615(text, opts);
 }
 export function ensureMeasureTextInit(): void {
-  requireHooks().ensureMeasureTextInit();
+  workbookBinding1616();
 }
 export function applyRunTextStyle(...args: any[]): any {
-  return requireHooks().applyRunTextStyle(...args);
+  return workbookBinding1617(...args);
 }
 export function ensureApplyRunTextStyleInit(): void {
-  requireHooks().ensureApplyRunTextStyleInit();
+  workbookBinding1618();
 }
 export function createScratchSlide(): { slide: any } {
-  return requireHooks().createScratchSlide();
+  return workbookBinding1619();
 }
 export function ensureScratchSlideInit(): void {
-  requireHooks().ensureScratchSlideInit();
+  workbookBinding1620();
 }
 export function resolveClassTextStyles(...args: any[]): any {
-  return requireHooks().resolveClassTextStyles(...args);
+  return workbookBinding1667(...args);
 }
 export function layoutGraphNodes(...args: any[]): any {
-  return requireHooks().layoutGraphNodes(...args);
+  return workbookBinding1675(...args);
 }
 export function renderGraphToSlide(...args: any[]): any {
-  return requireHooks().renderGraphToSlide(...args);
+  return workbookBinding1685(...args);
 }
 export function getFlowchartPlugin(): any {
-  return requireHooks().flowchartPlugin;
+  return NPe;
 }
 export function getChartLikePlugin(): any {
-  return requireHooks().chartLikePlugin;
+  return zAe;
 }
 export function getFallbackPlugin(): any {
-  return requireHooks().fallbackPlugin;
+  return VAe;
 }
 export function ensureChartLikePluginsInit(): void {
-  requireHooks().ensureChartLikePluginsInit();
+  BAe();
 }
 export function ensureFallbackPluginInit(): void {
-  requireHooks().ensureFallbackPluginInit();
+  HAe();
 }
 export function ensureFlowchartPluginInit(): void {
-  requireHooks().ensureFlowchartPluginInit();
+  PPe();
 }
 export function ensureStateGeometryMapsInit(): void {
-  requireHooks().ensureStateGeometryMapsInit();
+  KAe();
 }
 export function ensureArrowGeometryMapsInit(): void {
-  requireHooks().ensureArrowGeometryMapsInit();
+  XAe();
 }
 export function ensureConnectorHelpersInit(): void {
-  requireHooks().ensureConnectorHelpersInit();
+  OPe();
 }
 export function ensureGraphLayoutInit(): void {
-  requireHooks().ensureGraphLayoutInit();
+  $Ne();
 }
 export function stateNodeGeometry(...args: any[]): any {
-  return requireHooks().stateNodeGeometry(...args);
+  return WAe(...args);
 }
 export function mindNodeGeometry(...args: any[]): any {
-  return requireHooks().mindNodeGeometry(...args);
+  return GAe(...args);
 }
 export function roundedConnectorCorner(...args: any[]): any {
-  return requireHooks().roundedConnectorCorner(...args);
+  return IPe(...args);
 }
+
+/** @deprecated Wave-158: wire leave-behind retired — adapters use direct imports. */
+export function wireMermaidSlideAdapterHooks(
+  _next?: Partial<MermaidSlideAdapterHooks>,
+): void {}

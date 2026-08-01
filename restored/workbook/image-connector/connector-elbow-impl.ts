@@ -2,7 +2,7 @@
 // Semantic implementation: orthogonal connector elbow (legacy IPe).
 // Stage-3 wave-132.
 
-import { CONNECTOR_EPSILON } from "../mermaid-slide-adapters";
+import { CONNECTOR_EPSILON } from "../mermaid-slide-adapters/connector-epsilon";
 import { roundedConnectorCorner } from "./rounded-connector-corner-impl";
 
 export function IPe(

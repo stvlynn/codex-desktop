@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-119: formula-criteria-lookup barrel.
+// Stage-3 wave-119/158: formula-criteria-lookup barrel (direct imports; wire retired).
 
 export { wireFormulaCriteriaLookupBoundaryHooks, fclH } from "./boundary-hooks";
 export {

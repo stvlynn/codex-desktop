@@ -1,5 +1,74 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-119: formula-criteria-lookup boundary hooks.
+// Stage-3 wave-158: formula-criteria-lookup deps via direct imports
+// (wireFormulaCriteriaLookupBoundaryHooks leave-behind retired).
+
+import { workbookHelper962 } from "../formula-eng-mids";
+import {
+  romanNumeral,
+  arabicNumeral,
+  sqrtFloor,
+  absNumber,
+  multiGcd,
+  F$e,
+  t$e,
+  W$e,
+  ZQe,
+  C$e,
+  L$e,
+  u$e,
+  m$e,
+  g$e,
+  HQe,
+  f$e,
+  P$e,
+  O$e,
+  v$e,
+  E$e,
+  QQe,
+  YQe,
+  UQe,
+  h$e,
+  _$e,
+  K$e,
+  A$e,
+  k$e,
+  I$e,
+  n$e,
+  G$e,
+  XQe,
+  WQe,
+  $Qe,
+  l$e,
+  S$e,
+  U$e,
+  V$e,
+  H$e,
+  w$e,
+  T$e,
+  c$e,
+  z$e,
+  D$e,
+  N$e,
+  R$e,
+  y$e,
+  d$e,
+  b$e,
+  p$e,
+  B$e,
+  qQe,
+  GQe,
+  KQe,
+  r$e,
+  i$e,
+  a$e,
+  o$e,
+  j$e,
+  M$e,
+  e$e,
+  s$e,
+  x$e,
+  JQe,
+} from "../formula-scalar-funcs";
 
 export type FormulaCriteriaLookupHooks = {
   getEvalContext: () => any;
@@ -8,75 +77,80 @@ export type FormulaCriteriaLookupHooks = {
   sqrtFloor: (...args: any[]) => any;
   absNumber: (...args: any[]) => any;
   multiGcd: (...args: any[]) => any;
-  math: {
-    F$e: (...args: any[]) => any;
-    t$e: (...args: any[]) => any;
-    W$e: (...args: any[]) => any;
-    ZQe: (...args: any[]) => any;
-    C$e: (...args: any[]) => any;
-    L$e: (...args: any[]) => any;
-    u$e: (...args: any[]) => any;
-    m$e: (...args: any[]) => any;
-    g$e: (...args: any[]) => any;
-    HQe: (...args: any[]) => any;
-    f$e: (...args: any[]) => any;
-    P$e: (...args: any[]) => any;
-    O$e: (...args: any[]) => any;
-    v$e: (...args: any[]) => any;
-    E$e: (...args: any[]) => any;
-    QQe: (...args: any[]) => any;
-    YQe: (...args: any[]) => any;
-    UQe: (...args: any[]) => any;
-    h$e: (...args: any[]) => any;
-    _$e: (...args: any[]) => any;
-    K$e: (...args: any[]) => any;
-    A$e: (...args: any[]) => any;
-    k$e: (...args: any[]) => any;
-    I$e: (...args: any[]) => any;
-    n$e: (...args: any[]) => any;
-    G$e: (...args: any[]) => any;
-    XQe: (...args: any[]) => any;
-    WQe: (...args: any[]) => any;
-    $Qe: (...args: any[]) => any;
-    l$e: (...args: any[]) => any;
-    S$e: (...args: any[]) => any;
-    U$e: (...args: any[]) => any;
-    V$e: (...args: any[]) => any;
-    H$e: (...args: any[]) => any;
-    w$e: (...args: any[]) => any;
-    T$e: (...args: any[]) => any;
-    c$e: (...args: any[]) => any;
-    z$e: (...args: any[]) => any;
-    D$e: (...args: any[]) => any;
-    N$e: (...args: any[]) => any;
-    R$e: (...args: any[]) => any;
-    y$e: (...args: any[]) => any;
-    d$e: (...args: any[]) => any;
-    b$e: (...args: any[]) => any;
-    p$e: (...args: any[]) => any;
-    B$e: (...args: any[]) => any;
-    qQe: (...args: any[]) => any;
-    GQe: (...args: any[]) => any;
-    KQe: (...args: any[]) => any;
-    r$e: (...args: any[]) => any;
-    i$e: (...args: any[]) => any;
-    a$e: (...args: any[]) => any;
-    o$e: (...args: any[]) => any;
-    j$e: (...args: any[]) => any;
-    M$e: (...args: any[]) => any;
-    e$e: (...args: any[]) => any;
-    s$e: (...args: any[]) => any;
-    x$e: (...args: any[]) => any;
-    JQe: (...args: any[]) => any;
-  };
+  math: Record<string, (...args: any[]) => any>;
 };
 
-export const fclH: FormulaCriteriaLookupHooks =
-  {} as FormulaCriteriaLookupHooks;
+export const fclH: FormulaCriteriaLookupHooks = {
+  getEvalContext: () => workbookHelper962(),
+  roman: romanNumeral,
+  arabic: arabicNumeral,
+  sqrtFloor,
+  absNumber,
+  multiGcd,
+  math: {
+    F$e,
+    t$e,
+    W$e,
+    ZQe,
+    C$e,
+    L$e,
+    u$e,
+    m$e,
+    g$e,
+    HQe,
+    f$e,
+    P$e,
+    O$e,
+    v$e,
+    E$e,
+    QQe,
+    YQe,
+    UQe,
+    h$e,
+    _$e,
+    K$e,
+    A$e,
+    k$e,
+    I$e,
+    n$e,
+    G$e,
+    XQe,
+    WQe,
+    $Qe,
+    l$e,
+    S$e,
+    U$e,
+    V$e,
+    H$e,
+    w$e,
+    T$e,
+    c$e,
+    z$e,
+    D$e,
+    N$e,
+    R$e,
+    y$e,
+    d$e,
+    b$e,
+    p$e,
+    B$e,
+    qQe,
+    GQe,
+    KQe,
+    r$e,
+    i$e,
+    a$e,
+    o$e,
+    j$e,
+    M$e,
+    e$e,
+    s$e,
+    x$e,
+    JQe,
+  },
+};
 
+/** @deprecated Wave-158: wire leave-behind retired — fclH uses direct imports. */
 export function wireFormulaCriteriaLookupBoundaryHooks(
-  next: FormulaCriteriaLookupHooks,
-): void {
-  Object.assign(fclH, next);
-  if (next.math) fclH.math = { ...fclH.math, ...next.math };
-}
+  _next?: Partial<FormulaCriteriaLookupHooks>,
+): void {}

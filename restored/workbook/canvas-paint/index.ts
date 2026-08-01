@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-66/106: canvas-paint barrel (legacy BYe cluster).
+// Stage-3 wave-66/106/158: canvas-paint barrel (direct imports; wire retired).
 
 export {
   wireCanvasPaintBoundaryHooks,
