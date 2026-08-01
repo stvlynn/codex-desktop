@@ -1,14 +1,4 @@
-import {
-  CJe,
-  workbookHelper820,
-  workbookHelper821,
-  EJe,
-  DJe,
-  OJe,
-  kJe,
-  AJe,
-  $7,
-} from "../../workbook/presentation-presence";
+import { CJe, AJe } from "../../workbook/presentation-presence";
 
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Flat boundary facade — vendored oversized workbook runtime module.
@@ -16,6 +6,7 @@ import {
 // Stage-3 wave-160: slim top chart/compose/html-paste wires (20) → direct imports; openBoundary kept.
 // Stage-3 wave-161: slim remaining ≥5 LOC wires (49) → direct imports; leave-behind consts via getters; defineProperties cleanup; openBoundary kept.
 // Stage-3 wave-162: relocate setFormulaImplBag → formula-impl-bag; trim bag-only imports; drop no-op empty wires; openBoundary kept.
+// Stage-3 wave-163: retire remaining ≤4 LOC wires (31) → direct imports; drop defineProperties leave-behinds; prune dead mega imports; openBoundary kept.
 // Not stock npm (Codex popcorn workbook engine). Exit: Stage-3 split into workbook/.
 // Stage-3 waves: shape-geometry; theme-color; presentation-theme (Mae/Sle); fill; stylesheet; line; color-resolve; text-style; placeholder-style + font-metrics; style-resolve + glyph-advance; math-plain-text; math-ml; font-stack; math-layout; document-style/effects; placeholder-resolve; text-layout; canvas-fill; fill-resolve; text-canvas; text-box; design-tokens; ssf-npm; jstat+bessel-npm; yjs-npm; three-npm; highlightjs-npm; zod-npm; presentation-recipes; compose-layout; workbook-core; worksheet-drawings; drawing-layout+sparklines; mermaid-slide-adapters; decimal-npm; canvas-paint (BYe); chart-elements (The/Ohe…ige); formula-stats (Binding1831/1874); mermaid-slide-helpers (Binding1592/SAe…QAe); table-styles (Nme/Ume/ahe); google-slides-adapter (oJe/pJe/SJe); compose-dsl (Binding1490–1528); graphlib+dagre-npm (Binding1671/wNe); image-connector (Binding723–735); chart-asset (She/Che…Binding721); table-vo (fhe/yhe/xhe); charts-collection (CEe/REe/Binding1299/workbookC); mermaid-flowchart ($Ne/Binding1675/OPe/Binding1685/NPe/PPe); deck-kinds (wRe/qRe/Binding1738–1748); shape-element (Binding736/739); slides-collection (_workbookY/_workbookV); constraint-solver (bDe/Binding1364+prelude1350–1363); formula-opcodes (Z_t/X_t); table-element (_workbookH/eDe…cDe/_workbookM); table-row-range (YEe/Binding1321/QEe/$Ee); formula-registry ($dt/Xdt/Zdt); presentation-slide (Z$/X$/cLe/sLe); JEe table-cell reunite; TXe/wXe worksheets; chart-paint (helper579–585); doc-op-apply (Zht/_gt); three-chart-paint (helper521/Qbe/$be); unit-convert (N1e); named-ranges (zXe/RXe); styles-yjs (kgt/Ogt); chart-legend (helper491/lbe); shape-path (helper605–607); html-table-export (Wpt/Gpt/Kpt); chart-jsx-lower (dke/helper722/_ke); compose-jsx-lower (vke/helper745/Cke); chart-axis-ticks (helper462); shape-geometry-paint (helper616); table-frame-layout (workbookA); slide-canvas-render (vEe); chart-bar-direction (Dbe); chart-bar-series (helper501); chart-radar (Txe); chart-plot-layout (Xxe); chart-category-axes (Tbe); chart-scatter-series (nCe); chart-histogram-axes (gCe); chart-data-table (helper561); chart-scatter-axes (helper570); three-chart-camera (rxe); chart-trendline (helper525); chart-scatter-scale (helper540); paint-images (Fwe); constraint-layout (ODe/kDe); selection-style-grid (Upt); chart-data-labels (helper500); chart-legend-plot (jxe/wSe); chart-category-axis-labels (Nxe…Lxe); chart-box-whisker (ECe/OCe/jCe); chart-line-series (helper528); chart-group-scales (helper423); shape-path-endpoints (Vwe); table-cell-paint (STe); text-frame-embeds (helper643); slide-image-paint ($Te); chart-legend-layout (helper490); chart-area-series (helper529); chart-histogram-bars (sCe); chart-surface-map (Kye); compose-inline-text (NOe); chart-waterfall-bar (dCe); chart-pie-series (helper496); chart-bubble-series (aCe); sparkline-paint (YCe); icon-set-symbols (helper594); formula-irr (F0e); html-paste (wmt); formula-ast-remap (helper1022); chart-pie-labels (fbe); chart-treemap-plot-layout (Cbe); chart-histogram-bins (helper555); chart-funnel-segments (helper576); sheet-hidden-boundaries (ewe); slide-background-paint (RTe); formula-matrix-inverse (Alt); chart-axis-auto-domain (bye); chart-bar-series/computeBarSegments (helper421); three-chart-paint/paintPie3d (txe); chart-line-series/stackLineLayers (axe); chart-combo-groups (yxe); chart-funnel-segments/paintFunnelBars (vCe); shape-path-densify (dTe); compose-element-snapshot (helper678); formula-yearfrac (helper884); chart-scatter-axes/planScatterAxes (helper545); chart-legend-plot/reserveTitleBand (uSe); chart-series-values (helper551); icon-set-paint (uwe); table-cell-paint/layoutTableColumns ($B); compose-jsx-lower/lowerPanelSurfaceTag (JOe); formula-irr/computeXirr (Z0e); formula-ast-remap/exprContainsLambda (helper1008); html-paste/Dmt+Jpt; sparkline-paint/XCe+ZCe; canvas-paint/fillCellBackground (helper600); shape-path-densify/trimPathStart (uTe); slide-canvas-render/paintSlideText (nEe); chart-treemap-tiles (Yye); floating-placement (jTe); presentation-code-block (cAe/vAe); canvas-paint/paintCharts (zCe/BCe/VCe); table-styles/helper384; chart-card-paint (ASe); compose-element-snapshot/helper685; formula-dep-scc (VXe); formula-criteria-match (helper896); formula-irr/RATE (W0e); formula-matrix-det (klt); html-paste/Tmt+Emt; formula-ast-remap/Bht; wave-107: chart-trendline/helper524; chart-scatter-scale/helper539; chart-histogram-bins/_Se; chart-pie-series/qSe; chart-waterfall-bar/pCe; shape-path/Rwe+cTe; shape-path-densify/mTe; table-cell-paint/bTe+xTe; slide-canvas-render/dEe-cluster; presentation-theme/VDe; formula-dep-scc/WXe; formula-growth/pQe; formula-securities/k0e+H0e. wave-108: chart-legend-layout/ibe+abe; chart-legend-plot/helper458; chart-combo-groups/helper532; worksheet-used-range/UTe; formula-datedif/helper876; formula-complex/helper893+$4; formula-financial/E0e+D0e; conditional-format/oht+Nht+Pht. wave-109: compose-jsx-lower/helper713; formula-match/DZe; chart-stacked-domain/helper389; chart-line-series/helper480; chart-sunburst-layout/BSe; element-text-layout/XDe+helper676; chart-data-labels/helper495; shape-element/hze; shape-path/NSe. wave-110: formula-criteria-predicate/I8e+F8e; compose-element-snapshot/iOe; compose-jsx-lower/QOe; formula-financial/T0e+O0e+P0e; shape-path/tTe; formula-unique/Ost. wave-111: table-bands/fye+dye+386; axis-title/460; ube+dbe; Zbe+519; err-bars/527; lSe; card/562; fCe; pTe; bAe. wave-112: table-bands/fye+dye+386; helper546; helper440-cluster; swe/Swe; Lwe+647/648. wave-113: scales/388+391+403; axis/433+438+RCe; treemap/475+PSe; series/hxe+Cxe+cxe+Oxe; UCe+JCe; FPe; Qwe-stroke. wave-114: hbe+489+Wye; _xe+530/531; 601; 626; BTe; sbe; 439/478 SSF; 559. wave-115: MOe/XOe/YOe+Binding154-inline; PDe/BDe/vOe+693; dead CSe; 695/696. wave-116: yye/593/ROe+704–711/LIe+RIe/BXe+$Xe+836–853/xlsx-Tpt+Apt+kpt (ict false mid-file). wave-117: presentation-edit lLe..bLe + html-paste Ypt..1013/Qpt + chart-raster Amt..Zmt. wave-118: grid-frame-layout helper672+ADe+jDe + formula-sort-filter helper967. wave-119: formula-criteria-lookup helper976..Rut + formula-text-split vdt..Jdt + cf-icon-color-scale Fht/Iht..Ict (Tct/Pct/wct). wave-120: formula-call-dispatch (eft/Tft/Nft) + formula-range-index (Uft/Gft) + formula-structured-ref (qft/tpt) + cf Rht. wave-121: formula-scalar-funcs (854..days360/qQe/z$e) + formula-bond-basis (oat/sat/Kat/955..961). wave-122: formula-financial annuity (897..Q0e/w0e/fv/pmt) + formula-bond-basis lat/uat/dat/fat + formula-average-a ($3/Q2e/l4e/_4e). wave-123: shape-style-apply fze..vze + formula-dsum-criteria P8e/j8e + formula-averageif g4e + apt/ppt/mpt + jht + Lst + bSe. wave-124: formula-skew W4e/s4e + helper477/608/398/419/595/lwe/MTe + shared-refs 589..592 + opt..bpt + DSe..ISe + text-frame-style 689. wave-125: formula-criteria-shape a3e/h6e/916 + chart-axis-reserve _be/vbe/ybe + _O + NTe + cf-range-stats mht/Sht/1020. wave-126: chart-axis-scale-domain bbe/402/406/wye + presentation-aid ZRe + presentation-ref yze/bze/dze + helper483 + helper892 + iSe + iCe + r3e. wave-127: formula-byrow Yot/Jot nest + compose-code-children YIe + bond Uat/Kit/Wat/gat/_at + tSe + text-frame-resolve + QCe + TTe + Kwe + presentation-images + Dst + jgt + vrt + dead zye/Bye/Rxe/Vxe. wave-128: formula-eng-mids s1e nest + F9e/N9e/_9e + Mst + A8e + v8e + A7e + dead dollarOe/eke + cvt + gSe + owe + Gwe + 614/qwe + mid-paint 470/481/523/596/617/_Ee/700. wave-129: sheet-range-map 587 nest + jwe + uuid-v4/stable-id + formula-ast-walk 1038 + Xwe/Zwe + dead bwe/ySe/$1e + cfvo wht + paint Vye/Zye/awe/597 + F1e/I1e/q1e. wave-130: stroke 473/482 nest + 536 + twe + Jwe/Ywe + 639 + GDe + JSe + weeknum + D-stats + 917 + dollarXe→chart-data-labels + Aht/Mht unlock. wave-131: cf-engine unlock. wave-132: rze unlock. wave-133: preferred nests. wave-134: Oat/d4e/20s/18s mid batch. wave-135: qOe unlock + IIe + financial/chart ≥15. wave-136: preferred nests + Hit…Hat. wave-137: Binding874→446 + Binding1273→642. wave-138: I4e/910 + E3e/918 nest + Owe/vTe/575/484 + formula ≥10–14. wave-139: CJe/820 + 603 + 572/wOe + AJe + ZTe + ≥10 wire batch. wave-140: helper464/_A + formula g1e…n0e/Qnt/n2e + oYe/$2/$7/Agt + ≥8 wire batch. wave-141: Binding833/379/oye + helper667 + formula u4e…sst/$2e + $O/$I + dead≥6. wave-142: Binding1340/1294/1342→1344 + formula _3e/v3e/Dot + wire≥6 + helper376/824.
 // Stage-3 wave-6: Line Binding431 stroke VO + dash/compound maps → workbook/line/.
@@ -112,196 +103,35 @@ const __vite__mapDeps = (
       "./address-utils-xK0e4BjB.js",
     ]),
 ) => workbookInput1438.map((item) => workbookInput1440[item]);
-import { esmInit, toEsm, commonJsInit } from "../../runtime/rolldown-runtime";
 import {
-  max as appInitialAat,
-  mean as appInitialWat,
-  min as AppInitialNat,
-  sum as appInitialSat,
-} from "../../vendor/d3-array-min";
-import {
-  deviation as AppInitialFat,
-  quantile as appInitialEat,
-  tickStep as AppInitialMat,
-} from "../../vendor/d3-array-stats";
-import { color as appInitialXat } from "../../vendor/d3-color";
-import {
-  format as appInitialAt,
-  formatLocale as appInitialNot,
-} from "../../vendor/d3-format";
-import {
-  scaleBand as AppInitialHat,
-  scalePoint as _appInitialAt,
-} from "../../vendor/d3-scale-band";
-import {
-  scaleLinear as _AppInitialMat,
-  scaleLog as appInitialFat,
-  scaleOrdinal as appInitialYat,
-  scaleSqrt as appInitialUat,
-} from "../../vendor/d3-scale-linear";
-
-import { arc as appInitialNit } from "../../vendor/d3-shape-arc";
-import {
-  curveCardinal as AppInitialEit,
-  curveCatmullRom as appInitialCit,
-  curveLinear as AppInitialMit,
-} from "../../vendor/d3-shape-curves";
-import {
-  line as AppInitialAit,
-  pie as appInitialOit,
-  stack as AppInitialWrt,
-  stackOffsetExpand as AppInitialVrt,
-  stackOffsetNone as AppInitialZrt,
-  stackOrderNone as AppInitialKrt,
-} from "../../vendor/d3-shape-line-pie-stack";
-import {
-  cssNamedColors as Eae,
   ensureCssNamedColorsInit as workbookXt,
-  defaultFont as Dae,
-  defaultPatternFills as workbookBinding416,
-  defaultCellXf as Oae,
-  defaultBorderSide as workbookBinding417,
-  defaultBorders as kae,
-  normalCellStyle as Aae,
-  defaultCellStyleXf as workbookBinding418,
-  chatgptTheme as jae,
   ensureChatgptThemeInit as Mae,
-  slidePlaceholderRoles as Jae,
-  slidePlaceholderRoleAliases as workbookBinding425,
-  ensureSlidePlaceholderRolesInit as workbookBinding426,
-  outerShadowEffect as workbookBinding556,
-  chatgptThemeWarm as workbookBinding557,
   ensureChatgptThemeWarmInit as Sle,
-  ensurePresentationThemeInit,
   placeholderTypeToStyleKey as Vae,
   isFurniturePlaceholderType as Uae,
-  placeholderRoleToShortName as Wae,
-  normalizePlaceholderType as workbookHelper97,
-  expandPlaceholderTypeCandidates as workbookHelper98,
-  isPlaceholderVisibleForLayout as Gae,
-  placeholdersMatch as Kae,
-  normalizePlaceholderLabel as workbookHelper99,
-  resolvePlaceholderLabel as qae,
-  ensurePlaceholderStyleInit as Hae,
-  AXe,
-  jXe,
-  $2,
-  PXe,
-  FXe,
-  MXe,
-  NXe,
-  ensureThemeFormatSchemeInit,
 } from "../../workbook/presentation-theme";
 
-import {
-  wireThemeFontsBoundaryHooks,
-  collectSlideThemeFonts as VDe,
-  normalizeFontScheme as HDe,
-  addTypeface as workbookHelper679,
-} from "../../workbook/presentation-theme";
-
-wireThemeFontsBoundaryHooks({
-  normalizeFontFace: (...args: any[]) => workbookHelper680(...args),
-  trimName: (...args: any[]) => workbookHelper695(...args),
-});
+import { collectSlideThemeFonts as VDe } from "../../workbook/presentation-theme";
 
 import {
-  normalizeFontFamilyToken as soe,
-  splitFontFamilyList as coe,
-  parseFontWeightNumber as loe,
-  normalizeFontStyle as uoe,
-  normalizeFontStretch as doe,
-  fontStretchMatchIndex as workbookHelper112,
-  fontStyleMatchRank as workbookHelper113,
-  stretchDistanceScore as foe,
-  styleDistanceScore as poe,
-  weightDistanceScore as moe,
-  fontMatchDistance as workbookHelper114,
-  isBetterFontMatch as hoe,
-  matchOfficeFontFace as goe,
-  officeFontMetricsByFamily as workbookBinding444,
-  fractionalPart as _oe,
-  getFontMeasureContext as workbookHelper115,
-  invalidateFontMetricsListeners as workbookHelper116,
-  onFontMetricsInvalidate as workbookHelper117,
   workbookHt,
-  buildMeasureFontShorthand as workbookHelper118,
-  fontFaceCacheKey as xoe,
-  positiveOr as workbookHelper119,
-  metricsFromBoundingBoxes as workbookHelper120,
-  FontMetricsCache as workbookBinding445,
-  fontMetricsCache as workbookBinding446,
   ensureFontMetricsInit as workbookMt,
-  sharedFamilyAscentFraction as Soe,
   ensureTextSegmenterInit as workbookFt,
   segmentGraphemes as workbookPt,
-  GLYPH_TOKEN_CACHE_LIMIT as workbookBinding451,
-  KERNING_EPSILON_PX as workbookBinding452,
-  SIZE_BUCKET_SCALE as workbookBinding453,
-  GLYPH_ADVANCE_RESERVED_SIXTH as workbookBinding454,
-  SNAP_ADVANCE_SCRIPT_RE as workbookBinding455,
-  GlyphAdvanceCache as workbookBinding456,
-  ensureGlyphAdvanceCacheInit as $p,
-  ensureFontMetricsClusterInit,
 } from "../../workbook/font-metrics";
 
-import {
-  parseMathFromLatex as Coe,
-  mathAstToPlainText as workbookHelper121,
-  mixedRunsToPlainText as woe,
-  mathNodeToPlainText as workbookHelper122,
-  joinMathSequencePlainText as Toe,
-  formatScriptPlainText as workbookHelper123,
-  mapCharsThroughTable as workbookHelper124,
-  parenIfMultiChar as workbookHelper125,
-  collapseMathWhitespace as workbookHelper126,
-  ASCII_SUPERSCRIPT_SAFE as workbookBinding457,
-  ASCII_SUBSCRIPT_SAFE as workbookBinding458,
-  UNICODE_SUPERSCRIPT as workbookBinding459,
-  UNICODE_SUBSCRIPT as workbookBinding460,
-  LATEX_GREEK_COMMANDS as workbookBinding461,
-  LATEX_OPERATOR_COMMANDS as workbookBinding462,
-  MATRIX_ENVIRONMENT_NAMES as workbookBinding463,
-  MathLatexParser as workbookBinding464,
-  ensureMathPlainTextInit as workbookBinding465,
-  ensureMathPlainTextInit,
-} from "../../workbook/math-plain-text";
+import { parseMathFromLatex as Coe } from "../../workbook/math-plain-text";
 
 import {
-  normalizeMathDocumentViaMathMl as workbookHelper127,
   mathDocumentToMathMlTree as Eoe,
   mathMlTreeToMathDocument as Doe,
-  normalizeMathAstNode as workbookHelper128,
-  mathAstNodeToMathMl as workbookHelper131,
-  mathMlElementToMathAst as workbookHelper132,
-  ensureMathMlInit as $m,
-  ensureMathMlInit,
-  DATA_GRANOLA_STYLE as workbookBinding466,
-  DATA_GRANOLA_PARAGRAPH_PROPERTIES as workbookBinding467,
-  DATA_GRANOLA_TOKEN_KIND as workbookBinding468,
-  DATA_GRANOLA_NODE_KIND as workbookBinding469,
-  DATA_GRANOLA_FRACTION_KIND as workbookBinding470,
-  DATA_GRANOLA_LIMIT_PLACEMENT as workbookBinding471,
-  DATA_GRANOLA_HIDE_SUBSCRIPT as workbookBinding472,
-  DATA_GRANOLA_HIDE_SUPERSCRIPT as workbookBinding473,
-  DATA_GRANOLA_GROW as workbookBinding474,
-  DATA_GRANOLA_SHAPE as workbookBinding475,
-  DATA_GRANOLA_IMPLICIT_DELIMITERS as workbookBinding476,
-  DATA_GRANOLA_BASE_JUSTIFICATION as workbookBinding477,
-  DATA_GRANOLA_JUSTIFICATION as workbookBinding478,
-  DATA_GRANOLA_SHOW as workbookBinding479,
-  DATA_GRANOLA_ZERO_WIDTH as workbookBinding480,
-  DATA_GRANOLA_ZERO_ASCENT as workbookBinding481,
-  DATA_GRANOLA_ZERO_DESCENT as workbookBinding482,
 } from "../../workbook/math-ml";
 import {
-  ensureWorksheetDrawingsInit as workbookBinding789,
   createWorksheetDrawingContext as Sve,
   getChartDrawingClass,
   getWorksheetImageDrawingClass,
   getWorksheetDrawingsClass,
   applyWorksheetDrawingLayout as Lve,
-  ensureDrawingLayoutInit as Rve,
 } from "../../workbook/worksheet-drawings";
 const workbookBinding756 = new Proxy(function workbookBinding756Proxy() {}, {
   construct(_target, args) {
@@ -350,10 +180,6 @@ const workbookBinding788 = new Proxy(function workbookBinding788Proxy() {}, {
   },
 }) as any;
 import {
-  ensureSparklinesInit,
-  ensureCellVoInit as zve,
-  ensureCellGridInit as Bve,
-  ensureSparklineGroupsInit as Kve,
   getCellClass,
   getCellGridClass,
   getSparklineGroupsClass,
@@ -403,22 +229,7 @@ const _D = new Proxy(function _DProxy() {}, {
     return typeof value === "function" ? value.bind(Ctor) : value;
   },
 }) as any;
-import {
-  ensureCaseTransformInit as workbookBinding1393,
-  ensureComposeMeasureInit as workbookBinding1465,
-  ensureComposeApplyInit as workbookBinding1485,
-  ensureComposeThemeTokensInit as workbookBinding1488,
-  applySlideCompose as workbookBinding1466,
-  getSlideComposeTheme,
-  $H,
-  workbookBinding1325,
-  workbookBinding1326,
-  workbookBinding1327,
-  workbookBinding1328,
-  workbookBinding1329,
-  workbookBinding1330,
-  ensureComposeTracksInit,
-} from "../../workbook/compose-layout";
+import { getSlideComposeTheme } from "../../workbook/compose-layout";
 
 const workbookBinding1486 = new Proxy(function SlideComposeThemeProxy() {}, {
   construct(_target, args) {
@@ -436,49 +247,12 @@ const workbookBinding1486 = new Proxy(function SlideComposeThemeProxy() {}, {
     return typeof value === "function" ? value.bind(Ctor) : value;
   },
 }) as any;
-import {
-  wirePresentationRecipeLayoutHooks,
-  ensurePresentationRecipesInit as ensurePresentationRecipesInitMod,
-  runPresentationRecipe as runPresentationRecipeMod,
-  getPresentationRecipe as getPresentationRecipeMod,
-} from "../../workbook/presentation-recipes";
+import { runPresentationRecipe as runPresentationRecipeMod } from "../../workbook/presentation-recipes";
 
 import {
-  normalizeFontFamilyKey as workbookHelper147,
-  stripCssFontFamilyQuotes as sse,
-  warnMissingFontFamily as workbookHelper148,
-  resolveCssFontStack as workbookHelper149,
-  DEFAULT_UI_FONT_STACK as workbookBinding483,
-  SPREADSHEET_DEFAULT_FONT_STACK as workbookBinding484,
-  SPREADSHEET_FALLBACK_AFTER_CARLITO as workbookBinding485,
-  SPREADSHEET_CARLITO_COMPAT_FAMILIES as workbookBinding486,
-  checkFontFamilyAvailable as workbookBinding487,
-  warnedMissingFontFamilies as workbookBinding488,
-  ensureCssFontStackInit as workbookBinding489,
-  GRANOLA_MATH_FONT as workbookBinding490,
-  STIX_TWO_MATH_FONT as workbookBinding491,
-  CAMBRIA_MATH_FONT as workbookBinding492,
-  MATH_FONT_STACK as workbookBinding493,
-  ensureMathFontStackInit as workbookBinding494,
-  getMathLayoutConstants as workbookHelper150,
-  scaleMathConstantToPx as workbookHelper151,
-  mathLayoutConstants as _h,
-  ensureMathLayoutConstantsInit as cse,
-  hundredthsPointToCssPx as workbookHelper152,
-  hundredthsPointToCssPxOrZero as workbookHelper153,
   twipToCssPx as _workbookDt,
-  CSS_PX_PER_POINT as workbookBinding495,
-  TWIPS_PER_POINT as workbookBinding496,
   ensureTypographyUnitsInit as workbookUt,
-  ensureFontStackClusterInit,
-  workbookHelper822,
   oYe,
-  sYe,
-  workbookHelper824,
-  workbookHelper823,
-  cYe,
-  lYe,
-  uYe,
   _workbookC,
   _workbookL,
 } from "../../workbook/font-stack";
@@ -487,13 +261,10 @@ import {
   paragraphIsPureMath as lse,
   layoutParagraphMath as use,
   ensureMathLayoutEngineInit as Hse,
-  layoutMathNode as workbookHelper156,
-  extractSoleMathParagraph as workbookHelper154,
 } from "../../workbook/math-layout";
 
 import {
   EffectList as _g,
-  ensureEffectListInit as workbookBinding516,
   mergeParagraphStyle as workbookLt,
   mergeTextStyle as _workbookCt,
   DocumentStyleResolver as workbookIt,
@@ -502,566 +273,103 @@ import {
   ensureContextualSpacingScheme as WorkbookAt,
   buildThemeStyleMaps as workbookNt,
   ensureThemeStyleMapsInit as workbookRt,
-  resolveListLevelStyle as workbookHelper186,
-  resolveParagraphSpacingOverrides as Xse,
-  spaceValueToCssPx as workbookHelper187,
-  resolveParagraphSpacingWithDefaults as Zse,
-  paragraphSpacingToCssPx as workbookHelper188,
   elementParagraphSpacingPx as workbookDollar,
-  ensureDocumentStyleClusterInit,
 } from "../../workbook/document-style";
 
 import {
   ensurePlaceholderResolveThemeInit as _workbookTt,
-  mergeParagraphStyleWithBulletExclusivity as workbookHelper189,
-  resolvePlaceholderLevelStyles as workbookHelper190,
-  levelStyleAtOutline as workbookHelper191,
-  paragraphOutlineLevel as workbookHelper192,
-  firstDefined as workbookHelper193,
   masterLevelStylesForPlaceholder as ece,
-  placeholderTypeToLevelStyleKey as tce,
-  mergeLevelStyleLayers as nce,
-  ensurePlaceholderResolveDepsInit as workbookBinding521,
-  resolveThemeTypefaceToken as workbookHelper194,
-  expandThemeTypefaceAlias as workbookHelper195,
-  nonEmptyTypeface as workbookHelper196,
-  ensureThemeTypefaceInit as workbookBinding522,
-  emuToCssPxOrZero as workbookHelper197,
-  twipToCssPxOrZero as workbookHelper198,
-  tabStopAlignmentName as rce,
-  tabStopsFromParagraphStyle as ice,
-  styleIdsEqual as ace,
-  paragraphsShareContextualSpacing as $g,
-  normalizeColorTokenKey as oce,
-  e_,
-  sce,
-  t_,
-  highlightColorFromScheme as cce,
-  alignmentFromScheme as lce,
-  schemeFlagEnabled as uce,
-  applySchemeCaps as dce,
-  applyTextCapitalization as fce,
-  applyTextCaseTransforms as pce,
-  complexScriptFontSizeFromScheme as mce,
-  intFromSchemeProperty as hce,
-  typefaceFromScheme as gce,
-  fontSizeFromStyleOrScheme as n_,
-  typefaceFromStyleOrScheme as r_,
-  underlineWithHyperlinkDefault as _ce,
-  toAlphaListLabel as i_,
-  toRomanListLabel as a_,
   formatAutoNumberLabel as vce,
-  v_,
-  y_,
-  b_,
-  x_,
-  S_,
-  C_,
-  w_,
-  T_,
-  O_,
-  A_,
-  ensurePlaceholderResolveClusterInit,
-  workbookHelper667,
 } from "../../workbook/placeholder-resolve";
 
 import {
   tokenizeTextRuns as yce,
-  buildRelativeAdvances as bce,
-  findMaxAdvanceIndex as xce,
-  advanceAt as o_,
-  presentationCompressedBaseline as Sce,
-  officeBaselineFromInk as Cce,
-  resolveLineBoxMetrics as wce,
-  spacerSegmentFromReference as s_,
-  resolveNextTabStop as Tce,
-  tabAlignedWidth as c_,
-  resolveLayoutProfile as Ece,
-  resolveParagraphSpacingUnit as Dce,
-  accumulateLineInkBounds as Oce,
   TextLayoutEngine as j_,
   ensureTextLayoutEngineInit as kce,
-  DEFAULT_FONT_HUNDREDTHS_POINT as l_,
-  DEFAULT_LINE_MULTIPLE as u_,
-  PRESENTATION_LINE_HEIGHT_FACTOR as d_,
-  COMPRESSED_LINE_CONTENT_FACTOR as f_,
-  UNLIMITED_BOX_WIDTH_PX as p_,
-  DEFAULT_TAB_STOP_EMU_FACTOR as m_,
-  DEFAULT_TAB_STOP_FALLBACK_FACTOR as h_,
-  WHITESPACE_RE as g_,
-  TOKENIZE_CACHE_LIMIT as __,
-  DOCX_BREAK_RENDERED_MARKER as E_,
-  DEFAULT_HYPERLINK_COLOR as D_,
-  tokenizeCache as k_,
 } from "../../workbook/text-layout";
 
-import {
-  buildElementTextLayoutMap as XDe,
-  mergeInheritedShapeStyle as workbookHelper676,
-} from "../../workbook/element-text-layout";
-
-import {
-  buildTextFrameStyle as workbookHelper689,
-  coerceFontSizePx as EOe,
-} from "../../workbook/text-frame-style";
+import { buildElementTextLayoutMap as XDe } from "../../workbook/element-text-layout";
 
 import {
   applyCanvasLineDash as M_,
   ensureCanvasLineDashInit as N_,
-  processPictureBitmapEffects as workbookHelper208,
-  ensurePictureEffectCachesInit as workbookBinding542,
-  resolveFillStyle as workbookHelper212,
-  ensureFillResolveInit as workbookBinding543,
-  workbookHelper464,
   _A,
-  DRAWINGML_CRGB_DEFAULTS,
 } from "../../workbook/canvas-fill";
 
-import {
-  polarOffsetFromDirection as workbookHelper213,
-  ensureAngleUnitsInit as workbookBinding545,
-  TextCanvasRenderer as workbookBinding547,
-  ensureTextCanvasRendererInit as yle,
-} from "../../workbook/text-canvas";
+import { ensureTextCanvasRendererInit as yle } from "../../workbook/text-canvas";
 
 import {
-  DEFAULT_TEXT_BOX_INSETS_EMU as workbookBinding548,
   ensureDefaultTextInsetsValuesInit as ble,
-  defaultTextBoxInsetsEmu as workbookBinding549,
-  ensureDefaultTextBoxInsetsInit as workbookBinding550,
-  resolveTextBoxInsetsPx as workbookHelper215,
-  resolveOptionalTextBoxInsetsPx as xle,
-  resolveMasterParagraphDefaults as workbookHelper218,
-  resolveTextBoxPaddingPx as workbookHelper219,
-  resolveTextElementLayoutBox as workbookHelper220,
   layoutTextElement as workbookQ,
-  renderTextLayout as workbookHelper221,
   paintTextElement as workbookX,
   ensureTextBoxClusterInit as workbookZ,
 } from "../../workbook/text-box";
 
 import {
-  DEFAULT_FONT_SIZE_TOKENS as workbookBinding558,
-  resolveSpaceToken as workbookBinding559,
-  resolveFontSizeToken as workbookBinding560,
-  resolveTextStyleTokens as workbookBinding561,
-  assertNonNegativeNumber as workbookBinding562,
-  assertPositiveNumber as workbookBinding563,
-  parseCssLengthWithUnit as workbookBinding564,
-  ensureDesignTokensInit as workbookBinding565,
-  DEFAULT_SCHEME_COLORS as workbookBinding566,
-  DEFAULT_THEME_TEXT_STYLES as _y,
   WorkbookTheme as workbookJ,
-  assertThemeTextStyleName as workbookBinding567,
   nonEmptyStringOrUndefined as by,
-  themeProtoDisplayName as workbookBinding568,
   ensureWorkbookThemeInit as workbookY,
-  themeStyleMapsFromProto as workbookHelper222,
-  THEME_SCHEME_COLOR_ALIASES as workbookBinding569,
-  ensureThemeSchemeColorAliasesInit as workbookBinding570,
 } from "../../workbook/design-tokens";
 
 import { mergeUpdates as yMergeUpdates } from "../../vendor/yjs";
 import {
-  Box3 as ThreeBox3,
-  BoxGeometry as ThreeBoxGeometry,
-  BufferGeometry as ThreeBufferGeometry,
-  CanvasTexture as ThreeCanvasTexture,
-  Color as ThreeColor,
-  CylinderGeometry as ThreeCylinderGeometry,
-  Group as ThreeGroup,
-  Line as ThreeLine,
-  LineBasicMaterial as ThreeLineBasicMaterial,
-  Mesh as ThreeMesh,
-  MathUtils as ThreeMathUtils,
-  MeshPhysicalMaterial as ThreeMeshPhysicalMaterial,
-  Sprite as ThreeSprite,
-  SpriteMaterial as ThreeSpriteMaterial,
-  Vector3 as ThreeVector3,
-  Vector4 as ThreeVector4,
-} from "../../vendor/three";
-import workbookDecimal, { ensureDecimalInit } from "../../vendor/decimal";
-import {
-  applyRgbColorTransform as workbookHelper223,
-  resolveIndexedColorCss as workbookHelper224,
-  resolveIndexedOrSystemColor as workbookHelper225,
-  applyCellXfToFormat as workbookHelper226,
-  stripRedundantCellXfIds as Cle,
-  buildCellXfFormatMap as workbookHelper227,
-  ssfEsmModule as workbookBinding572,
-  spreadsheetMlColorSpaceOpts as workbookBinding573,
-  INDEXED_COLOR_PREFIX as workbookBinding574,
-  ssfBuiltinNumFmtTable as workbookBinding575,
-  excelCurrencyNumFmtOverrides as workbookBinding576,
-  ensureCellXfSsfTableInit as workbookBinding577,
-  measureDefaultDigitWidthPx as workbookHelper228,
-  DEFAULT_DIGIT_FONT_SIZE_PX as workbookBinding578,
-  FALLBACK_DIGIT_WIDTH_PX as workbookBinding579,
-  DIGIT_MEASURE_CHARS as workbookBinding580,
-  ensureDefaultDigitWidthInit as workbookBinding581,
-  normalizeSsfThousandsSeparators as wle,
-  formatCellValueWithNumFmt as workbookHelper229,
-  ssfFormatEsmModule as workbookBinding582,
-  ensureSsfFormatInit as workbookBinding583,
-  computeColumnWidthsPx as workbookHelper230,
-  computeRowHeightsPx as workbookHelper231,
-  ensureColRowExtentsInit as workbookBinding584,
-  stripFontFaceStyleSuffixes as workbookBinding585,
-  ensureStripFontFaceNameInit as workbookBinding586,
-} from "../../workbook/cell-xf-format";
-
-import {
   solidFillFromColor as Tle,
-  mergeCellTextStyleOverrides as workbookHelper232,
-  ensureMergeCellTextStyleInit as workbookBinding587,
-  isListValidationWithoutDropdown as Ele,
-  clampDropdownInsetPx as $y,
-  dropdownExtraWidthForRowHeight as workbookHelper233,
-  ensureDropdownPaddingInit as workbookBinding588,
-  parseColumnSpanAddress as Dle,
-  parseRowSpanAddress as Ole,
-  buildColumnStyleIndexArray as workbookHelper234,
-  buildRowStyleIndexMap as workbookHelper235,
-  resolveCellStyleIndex as workbookHelper236,
-  alignmentFromCellStyle as kle,
-  applyStyleFontToTextRuns as Ale,
-  measureCellTextPx as workbookHelper237,
-  cachedFormatCellDisplay as workbookHelper238,
-  cellHasVisibleContent as jle,
-  tableHeaderCellKeys as Mle,
-  findTableResolverAt as workbookHelper239,
-  filterButtonExtraWidth as Nle,
-  listValidationBounds as Ple,
-  isInListValidationRange as Fle,
-  autofitColumnWidths as Ile,
-  autofitRowHeights as Lle,
   ensureWorksheetAutofitInit as Rle,
 } from "../../workbook/worksheet-autofit";
 
 import {
-  horizontalAlignment as workbookBinding337,
-  cloneFillFromValue as workbookHelper240,
-  cloneFontOrUndefined as workbookHelper241,
-  cloneBordersOrUndefined as workbookHelper242,
-  borderSideConfigFromSide as workbookHelper243,
-  fillFromConfigOrUndefined as workbookHelper244,
-  measure2dArrayShape as zle,
-  uniform2dArrayFirstValue as Ble,
-  cloneWorkbookColor as workbookHelper245,
-  isNonProtoConfig as workbookHelper246,
-  isNonProtoValue as Vle,
-  fillConfigFromFillOrValue as Hle,
-  workbookColorToConfig as workbookHelper247,
-  borderSideToConfig as workbookHelper248,
-  borderPresetToConfig as Ule,
-  bordersConfigFromRecord as Wle,
-  borderSidePartialFromEdge as _b,
-  borderSideFromPartial as workbookHelper249,
-  borderSideSnapshot as workbookHelper250,
-  parseHorizontalAlignment as workbookHelper251,
-  requireHorizontalAlignment as Gle,
-  horizontalAlignmentToName as workbookHelper252,
-  parseVerticalAlignment as workbookHelper253,
-  requireVerticalAlignment as Kle,
-  verticalAlignmentToCss as qle,
-  borderPresetEdges as workbookHelper254,
-  normalizeBorderEdgeKey as workbookHelper255,
   fillSolidColorFromFill as Jle,
-  RangeFormatFill as workbookBinding589,
-  RangeFormat as workbookBinding590,
-  RangeFormatFont as workbookBinding591,
-  RangeFormatBorders as workbookBinding592,
-  RangeFormatBorderEdge as workbookBinding593,
   ensureRangeFormatInit as Yle,
 } from "../../workbook/range-format";
 
 import {
-  normalizeIconSetName as workbookHelper256,
-  lookupIconSet as workbookHelper257,
-  resolveIconCount as workbookHelper258,
-  defaultIconThresholds as workbookHelper259,
-  DEFAULT_ICON_SET_NAME as workbookBinding594,
-  ICON_SET_CATALOG as workbookBinding595,
-  ensureIconSetCatalogInit as workbookBinding596,
-} from "../../workbook/icon-set";
-
-import {
-  DEFAULT_HYPERLINK_ACTION as workbookBinding597,
-  TextRun as workbookBinding598,
-  ensureTextRunInit as workbookBinding599,
-  TextRuns as workbookBinding600,
   ensureTextRunsInit as Xle,
-  cloneParagraphStyle as workbookHelper260,
-  Paragraph as workbookBinding601,
   ensureParagraphInit as Zle,
-  Paragraphs as workbookBinding602,
-  ensureParagraphsInit as workbookBinding603,
-  applyListParagraphDefaults as workbookHelper261,
-  DEFAULT_BULLET_CHARACTER as workbookBinding604,
-  PRESENTATION_LIST_MARGIN_LEFT as workbookBinding605,
-  PRESENTATION_LIST_INDENT as workbookBinding606,
-  PRESENTATION_NUMBERED_MARGIN_LEFT as workbookBinding607,
-  PRESENTATION_NUMBERED_INDENT as workbookBinding608,
-  DEFAULT_AUTO_NUMBER_TYPE as workbookBinding609,
-  DOCUMENT_LIST_MARGIN_LEFT as workbookBinding610,
-  DOCUMENT_LIST_INDENT as $b,
-  DOCUMENT_NUMBERED_MARGIN_LEFT as workbookBinding611,
-  DOCUMENT_NUMBERED_INDENT as tx,
-  ensureListParagraphDefaultsInit as workbookBinding612,
 } from "../../workbook/text-run";
 
 import {
   resolveFontWeightUtilityBold as Qle,
-  FONT_WEIGHT_BOLD_UTILITIES as workbookBinding613,
-  FONT_WEIGHT_NON_BOLD_UTILITIES as workbookBinding614,
-  ensureFontWeightTokensInit as $le,
-  resolveLineHeightUtility as eue,
-  LINE_HEIGHT_RATIO_UTILITIES as workbookBinding615,
-  LINE_HEIGHT_PX_UTILITIES as workbookBinding616,
-  parseLeadingBracketRatio as workbookBinding617,
-  parseLeadingBracketPx as workbookBinding618,
-  ensureLineHeightTokensInit as tue,
-  resolveFontSizeUtility as nue,
-  FONT_SIZE_UTILITIES as workbookBinding619,
-  ensureFontSizeTokensInit as rue,
-  parseUtilityClassStyles as workbookHelper262,
-  ensureStyleTokensInit as workbookBinding620,
   trimNonEmptyString as _x,
-  colorConfigFromValue as workbookHelper263,
-  fillConfigFromValue as workbookHelper264,
-  outlineConfigFromValue as workbookHelper265,
-  textBoxStyleConfigFromPartial as workbookHelper266,
   textRunStyleConfigFromPartial as iue,
   applyStyleConfigToParagraph as aue,
-  normalizeStyleId as workbookHelper267,
-  classNameAndStyleConfigFromPartial as workbookHelper268,
-  colorFromPartialOrFill as workbookHelper269,
-  classNameFromPartial as workbookHelper270,
-  alignmentNameFromValue as workbookHelper271,
-  ensureStyleConfigInit as workbookBinding621,
 } from "../../workbook/style-tokens";
 
 import {
-  TextSelection as workbookBinding622,
-  ensureTextSelectionInit as workbookBinding623,
-} from "../../workbook/text-selection";
-
-import {
-  normalizeMathDisplayMode as workbookHelper272,
-  isMathInline as workbookHelper277,
-  isPlainRunList as workbookHelper281,
-  isParagraphPartial as workbookHelper282,
   isDetachedTextPayload as _workbookQ,
   normalizeParagraphInputs as workbookG,
   ensureDetachedTextHelpersInit as workbookK,
-  DETACHED_TEXT_HOST as workbookBinding625,
-  DetachedText as workbookBinding626,
-  ensureDetachedTextInit as workbookBinding627,
-  FONT_SIZE_UNIT_RE as workbookBinding624,
-  cloneMathRoot as cue,
 } from "../../workbook/detached-text";
 
 import {
   ShapeGeometry as workbookDt,
   ensureShapeGeometryInit as workbookOt,
 } from "../../workbook/shape-geometry";
-import {
-  ensureChartProtoNameMapsInit as workbookBinding404,
-  mapAreaNameToProto as oie,
-  mapAreaProtoToName as sie,
-  mapDataLevelCountryOrNameToProto as cie,
-  mapDataLevelCountryOrProtoToName as lie,
-  mapLabelLayoutNameToProto as uie,
-  mapLabelLayoutProtoToName as die,
-  mapProjectionNameToProto as fie,
-  mapProjectionProtoToName as pie,
-  parentLabelLayoutProtoToName as mie,
-  quartileMethodNameToProto as hie,
-  quartileMethodProtoToName as gie,
-  lengthUnitNameByKey as workbookBinding384,
-  layoutTargetNameToProto as _ie,
-  layoutTargetProtoToName as workbookBinding385,
-  layoutModeNameToProto as workbookBinding386,
-  layoutModeProtoToName as workbookBinding387,
-  chartTypeNameToProto as workbookBinding388,
-  areaGroupingNameToProto as vie,
-  areaGroupingProtoToName as workbookBinding389,
-  lineGroupingNameToProto as yie,
-  lineGroupingProtoToName as workbookBinding390,
-  chartTypeProtoToName as workbookBinding391,
-  textWrappingTypeNameToProto as bie,
-  textWrappingTypeProtoToName as workbookBinding392,
-  shapeGeometryNameToProto as workbookBinding393,
-  legendPositionNameToProto as xie,
-  legendPositionProtoToName as Sie,
-  dataLabelPositionNameToProto as workbookBinding394,
-  dataLabelPositionProtoToName as workbookBinding395,
-  axisPositionNameToProto as Cie,
-  axisPositionProtoToName as wie,
-  axisOrientationMinNameToProto as Tie,
-  axisOrientationMinProtoToName as Eie,
-  tickMarkNameToProto as workbookBinding396,
-  tickMarkProtoToName as workbookBinding397,
-  tickLabelPositionNameToProto as workbookBinding398,
-  tickLabelPositionProtoToName as Die,
-  crossBetweenNameToProto as Oie,
-  crossBetweenProtoToName as kie,
-  crossesAutoNameToProto as Aie,
-  crossesAutoProtoToName as jie,
-  trendlineTypeNameToProto as Mie,
-  trendlineTypeProtoToName as Nie,
-  errorBarValueTypeStandardNameToProto as Pie,
-  errorBarValueTypeStandardProtoToName as workbookBinding399,
-  markerSymbolNameToProto as Fie,
-  markerSymbolProtoToName as Iie,
-  barDirectionNameToProto as workbookBinding400,
-  barDirectionProtoToName as Lie,
-  barGroupingNameToProto as Rie,
-  barGroupingProtoToName as workbookBinding401,
-  scatterStyleNameToProto as zie,
-  scatterStyleProtoToName as Bie,
-  anchorTypeProtoToName as workbookBinding402,
-  patternTypeNameToProto as workbookBinding403,
-} from "../../workbook/chart-proto-name-maps";
+import { mapProjectionProtoToName as pie } from "../../workbook/chart-proto-name-maps";
 
-import {
-  namedCssColors as Kre,
-  themeSchemeColorNames as nie,
-  themeSchemeColorAliases as rie,
-  isThemeSchemeColorName as Yre,
-  colorTypeProtoToName as iie,
-  colorChannelMax as workbookBinding375,
-  colorGamma as workbookBinding376,
-  colorInvGamma as workbookBinding377,
-  ensureColorTransformConstantsInit as Gre,
-  hexToRgb as workbookHelper63,
-  applyColorTransform as Wre,
-  resolveNamedCssColor as workbookHelper68,
-  normalizeColorTransformConfig as _d,
-  parseLightenDarkenSuffix as tie,
-  WorkbookColor as workbookBinding382,
-  ensureWorkbookColorInit as workbookBinding383,
-  PatternFill as workbookBinding407,
-  patternTypeProtoToName as Vie,
-  ensurePatternFillInit as Hie,
-  ensureThemeColorInit,
-} from "../../workbook/theme-color";
+import { patternTypeProtoToName as Vie } from "../../workbook/theme-color";
 
+import { resolveThemeAccentSlot as Wye } from "../../workbook/theme-color";
 import {
-  resolveThemeAccentSlot as Wye,
-  normalizeThemeColorIndex as Uye,
-} from "../../workbook/theme-color";
-import { patternTypeNameToProto as workbookBinding406 } from "../../workbook/chart-proto-name-maps";
-
-import {
-  splitRespectingQuotes as Uie,
-  splitCssValueList as workbookHelper77,
-  extractCssFunctionArgs as Wie,
-  parseCssLengthPx as workbookHelper78,
-  parseAngleDeg as Gie,
-  parsePercentNumber as Kie,
-  unquoteCssString as workbookHelper79,
-  parseLoosePercentNumber as qie,
-  parseGradientFillString as Yie,
-  ensureGradientFillParseInit as eae,
-  ensureGradientFillParseInit,
-  defaultGradientKindName as workbookBinding413,
-  gradientKindProtoToName as workbookBinding414,
-  gradientKindNameToProto as workbookBinding415,
-  resolveGradientKind as yae,
-  normalizeGradientAngleDeg as bae,
-  isExplicitNoneFillProto as xae,
-  emptyWorkbookColor as workbookHelper84,
   Fill as workbookCt,
   ensureFillInit as workbookWt,
-  ensureFillDepsInit,
-  ensureFillClusterInit,
 } from "../../workbook/fill";
 
-import {
-  isUnspecifiedColor as workbookHelper574,
-  isEmptyFill as iCe,
-} from "../../workbook/fill-empty";
-import {
-  Stylesheet as Bae,
-  SpreadsheetFont as workbookBinding419,
-  BorderSide as workbookBinding420,
-  Borders as workbookBinding421,
-  CellXf as workbookBinding422,
-  NumberFormat as workbookBinding423,
-  ensureStylesheetInit as workbookBinding424,
-  spreadsheetMlColorSpace as zae,
-  wireResolveColorProtoToRgbaString,
-} from "../../workbook/stylesheet";
-import {
-  Line as workbookBinding431,
-  ensureLineInit as workbookBinding432,
-} from "../../workbook/line";
-
+import { isEmptyFill as iCe } from "../../workbook/fill-empty";
 import {
   clampRange as Sae,
-  normalizeRgbHex as workbookHelper85,
-  isWorkbookColorInstance as workbookHelper86,
   colorTransformOf as Cae,
-  colorValueOf as workbookHelper87,
-  colorLastColorOf as workbookHelper88,
   isSystemColor as wae,
-  resolveColorToRgba as workbookHelper89,
   resolveColorProtoToRgbaString as Tae,
-  resolveColorToRgbaOrUndefined as workbookHelper90,
   resolveColorToCssRgba as workbookSt,
 } from "../../workbook/color-resolve";
 
 import {
-  alignmentNameToProto as $f,
-  alignmentProtoToName as workbookHelper100,
-  verticalAlignmentNameToAnchor as workbookHelper101,
-  parseAlignment as workbookHelper102,
-  normalizeAlignment as $ae,
-  fontScaleFromProto as eoe,
-  fontScaleToProto as toe,
-  autofitFromProto as roe,
-  autofitToProto as workbookHelper105,
-  capitalizationFromTextTransform as ioe,
-  textTransformFromCapitalization as aoe,
-  isPlainObject as workbookBinding437,
   TextStyle as workbookVt,
   ensureTextStyleInit as workbookBt,
   ensureStyleResolveInit as workbookT,
   workbookGt,
-  isStylePlainObject as workbookHelper106,
-  deepCloneStyleValue as workbookHelper107,
-  deepMergeFillGaps as workbookHelper108,
-  mergeStyleLayers as workbookBinding438,
-  cleanUnspecifiedTextStyleEnums as workbookHelper109,
-  textStyleToCleanProto as _p,
-  resolvePlaceholderTextStyle as workbookHelper110,
-  quoteCssFontFamily as workbookHelper111,
-  wireNormalizeTextShadow,
-  parseOutlineCss as tae,
-  ensureOutlineDashMapInit as rae,
-  isCssDeclarationText as workbookHelper80,
-  parseTextStyleCssDeclarations as workbookHelper81,
-  coerceTextStyleCssOrValue as aae,
-  parseTextAnchorCss as iae,
-  applyFontShorthand as oae,
-  parseFontSizeCssToken as sae,
-  parseSizedFontToken as cae,
-  isFontWeightToken as lae,
-  parseFontWeightBold as uae,
-  parseBooleanLikeCss as dae,
-  parseTextWrapCss as fae,
-  parseUnderlineCss as pae,
-  parseInsetsCss as mae,
-  parseAutofitCss as hae,
-  matchShadowPresetName as workbookHelper82,
-  parseTextShadowCss as workbookHelper83,
-  shadowPresetToCss as _ae,
-  ensureShadowCssParseInit as workbookBinding411,
   normalizeTextShadowFromCss as noe,
   applyTextStylePatch as workbookYt,
-  parseFontSizePx as workbookHelper103,
-  parseTextStyleInput as workbookHelper104,
 } from "../../workbook/text-style";
 
 // Binding433/434 were protobuf enum side-effect inits; remaining call sites are no-ops.
@@ -1069,11 +377,7 @@ const workbookBinding433 = (): void => {};
 const workbookBinding434 = (): void => {};
 
 // Wire extracted CSS-shadow parser into TextStyle.shadow setter.
-wireNormalizeTextShadow(noe);
-
 // Wire extracted Tae (scheme/system color → rgba) into stylesheet helpers.
-wireResolveColorProtoToRgbaString(Tae);
-
 // Whitespace ensure (legacy $d / Jie) — tokenizers now own /\s/ locally.
 const $d = (): void => {};
 const Jie = /\s/;
@@ -1099,41 +403,14 @@ async function vitePreload<T>(
 }
 
 import {
-  resolveElementFramePx as workbookHelper286,
-  rotationEmuToDegrees as workbookHelper287,
-  degreesToRotationEmu as workbookHelper288,
-  rotationEmuToRadians as workbookHelper289,
-  applyFrameCanvasTransform as workbookHelper290,
-  applyElementCanvasTransform as Eue,
-  ensureGeometryTransformDepsInit as workbookBinding628,
-  rotationEmuScale as workbookBinding629,
-  FrameBbox as workbookBinding632,
-  ensureRotationScaleInit as $x,
-  ensureFrameBboxInit as Oue,
-} from "../../workbook/geometry-transform";
-
-import {
   requireWorkbookHelp as kue,
-  requireWorkbookExport as Aue,
-  requirePresentationHelp as jue,
-  requireGoogleSheetsPlugin as Mue,
   installPresetShapeDefinitions as WorkbookW,
-  lookupPresetShapeDefinition as workbookHelper291,
   ensurePluginSlotsInit as workbookU,
-  evalShapeFormula as workbookHelper294,
-  ensureShapeFormulaOpsInit as _S,
-  evalPresetGuides as workbookHelper295,
-  ensureAdjAliasInit as workbookBinding643,
-  resolveShapeTextFrameRect as workbookHelper296,
-  ensurePresetShapeClusterInit as workbookBinding644,
 } from "../../workbook/preset-shape";
 export { WorkbookW };
 
 import {
   measureTextElementMetrics as Rue,
-  computeAutoFitScale as zue,
-  computeAutoFitOuterSize as Bue,
-  computeAutoFitOuterHeight as Vue,
   ensureTextElementAutofitInit as Hue,
 } from "../../workbook/text-element-autofit";
 
@@ -1164,49 +441,23 @@ var _Ie = (src: any) => {
 };
 var lIe = ensureMermaidSlideAdaptersInit;
 var CIe = ensureMermaidSlideAdaptersInit;
-import {
-  ensureEntityQueryInit,
-  R_t,
-  B_t,
-  J_t,
-  Zgt,
-  z_t,
-  H_t,
-  U_t,
-  Ygt,
-  bgt,
-  vgt,
-} from "../../workbook/entity-query";
-
 // Thin aliases for WorkbookN / create-ops env bag (legacy Binding1967 cluster).
 import {
   ensureSheetInit,
   SXe,
   Sheet,
-  ensureSheetAutoHeightInit,
-  parseSheetColWidth,
   sheet as sheetBag,
   ensureWorksheetsCollectionInit,
   TXe,
-  EXe,
-  CXe,
   wXe,
 } from "../../workbook/sheet";
 
 import {
-  ensureCanvasPaintConstsInit as ensureCpConstsInit,
   paintSpreadsheetCanvas as paintSpreadsheetCanvasFn,
-  notifyRowHeights,
   paintSheetShapes,
   ensurePaintEmuMapsInit,
   ensureCanvasPaintClusterInit,
-  fillCellBackground as __fillCellBackgroundWave105,
-  workbookHelper602,
 } from "../../workbook/canvas-paint";
-
-import { clipPaintRect as workbookHelper601 } from "../../workbook/canvas-paint";
-
-import { prepareDiagonalStroke } from "../../workbook/canvas-paint";
 
 import { JCe } from "../../workbook/canvas-paint";
 
@@ -1217,134 +468,28 @@ var xYe = ensurePaintEmuMapsInit;
 var ensureCanvasPaintCluster = ensureCanvasPaintClusterInit;
 
 import {
-  ensureChartPaintInit,
-  chartCornerRadiusPx as workbookHelper579,
-  pathRoundedRect as workbookHelper580,
-  fillChartBackground as workbookHelper581,
-  strokeChartBorder as workbookHelper582,
-  strokePlotAreaBorder as workbookHelper583,
-  paintChartFromProto as workbookHelper584,
-  paintChart as workbookHelper585,
-  paintChartChrome as NCe,
-  axisCrossesZero as FCe,
-  doughnutHoleLayout as ICe,
-  paintChartElement as LCe,
-  ensureChartPaintConsts as PCe,
-  workbookBinding1224,
-  workbookBinding1225,
-  workbookHelper426,
-  workbookHelper552,
-  workbookHelper556,
-  workbookHelper485,
-} from "../../workbook/chart-paint";
-
-import {
-  axisHasVisibleLine as workbookHelper429,
-  axisCanvasFont as workbookHelper430,
-  readAxisTickLabelOpts as workbookHelper434,
-  axisLabelReserve as workbookHelper435,
-  axisHidesTickLabels as workbookHelper436,
   layoutCatAxis as _be,
   layoutValAxisBottom as vbe,
   categoryLabelInset as ybe,
 } from "../../workbook/chart-axis-reserve";
 
 import {
-  wireChartAxisScaleDomainBoundaryHooks,
-  casdH as __casdHWave126,
-  readScaleMajorUnit as workbookHelper399,
-  minPositiveFinite as workbookHelper400,
-  buildContinuousDomain as workbookHelper402,
   padDomainByTickStep as wye,
-  clampToDomain as workbookHelper404,
-  resolveAxisCrossValue as workbookHelper405,
-  planAxisMajorTicks as workbookHelper406,
-  planAxisMinorTicks as Tye,
-  waterfallForceZero as Eye,
-  chartHasPercentFormats as workbookHelper408,
-  chartLooksPercent as Dye,
-  collectChartNumberFormats as workbookHelper409,
-  ticksFromUnit as workbookHelper411,
-  midpointsBetween as Oye,
-  finiteOrUndefined as workbookHelper412,
-  positiveOrUndefined as workbookHelper413,
-  formatLooksPercent as kye,
-  preciseNumber as workbookHelper415,
-  preciseNumberKey as workbookHelper416,
   layoutValAxisRight as bbe,
-  crossingRatio as xbe,
-  shiftForCrossing as Sbe,
-  expandDomainHeadroom,
-  workbookHelper536,
 } from "../../workbook/chart-axis-scale-domain";
 
-import {
-  exportChartPng as Amt,
-  pasteRangeValues as jmt,
-  Hmt,
-  Umt,
-  Nmt,
-  zmt,
-  Rmt,
-  Bmt,
-  Vmt,
-  Pmt,
-  Lmt,
-  Mmt,
-  Fmt,
-  Imt,
-  Wmt,
-  Gmt,
-  Kmt,
-  qmt,
-  Jmt,
-  Ymt,
-  Xmt,
-  Zmt,
-} from "../../workbook/chart-raster";
+import { exportChartPng as Amt, Zmt } from "../../workbook/chart-raster";
 
-import {
-  paintAxisTitleText as workbookHelper438,
-  resolveAxisTextStyle as workbookHelper428,
-  layoutCategoryLabels as RCe,
-  paintRadialGridlines as KSe,
-} from "../../workbook/chart-paint";
+import { layoutCategoryLabels as RCe } from "../../workbook/chart-paint";
 
 import { layoutSunburstArcs as BSe } from "../../workbook/chart-sunburst-layout";
 
-wirePresentationRefBoundaryHooks({
-  NotesSlide: undefined as any,
-  CommentThread: undefined as any,
-});
-Object.defineProperties(__prefHWave126, {
-  NotesSlide: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1388,
-  },
-  CommentThread: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1734,
-  },
-});
 setPresentationRefSlideClass(X$);
-import {
-  paintWaterfallSeries as __pCeForChartPaint,
-  ebe,
-} from "../../workbook/chart-waterfall-bar";
-
 import { fCe } from "../../workbook/chart-waterfall-bar";
 
-import { paintChartCard as ASe, KTe } from "../../workbook/chart-card-paint";
+import { paintChartCard as ASe } from "../../workbook/chart-card-paint";
 
 import {
-  workbookHelper562,
-  workbookHelper563,
-} from "../../workbook/chart-card-paint";
-
-import {
-  wirePaintChartsBoundaryHooks,
   paintCharts as zCe,
   hydrateChartSeries as BCe,
   sheetMapByName as VCe,
@@ -1352,67 +497,37 @@ import {
 
 // Thin aliases: chart-paint cluster drained (wave-89).
 
-import {
-  ensureDocOpApplyInit,
-  applyWorkbookDocOps as Zht,
-  isAliasRef as workbookHelper1024,
-  workbookBinding1964,
-} from "../../workbook/doc-op-apply";
+import { applyWorkbookDocOps as Zht } from "../../workbook/doc-op-apply";
 
 // Thin aliases: doc-op-apply cluster drained (wave-90).
 import {
-  paintThreeChart as $be,
   layoutThreeBarSegments as Qbe,
-  createChartTextSprite as workbookHelper521,
   paintPie3d as txe,
 } from "../../workbook/three-chart-paint";
 
-import { Zbe, workbookHelper519 } from "../../workbook/three-chart-paint";
+import { Zbe } from "../../workbook/three-chart-paint";
 
 // Live leave-behind bindings (populated by exe / font ensures).
 // Thin aliases: three-chart-paint cluster drained (wave-90).
 
 import { convertUnits as N1e } from "../../workbook/unit-convert";
 
-import {
-  wireNamedRangesBoundaryHooks,
-  ensureNamedRangesInit,
-  RXe,
-  zXe,
-} from "../../workbook/named-ranges";
-
-wireNamedRangesBoundaryHooks({
-  ensureRangeClusterInit: (...args: any[]) => workbookBinding675(...args),
-});
+import { RXe, zXe } from "../../workbook/named-ranges";
 
 // Thin aliases: named-ranges cluster drained (wave-91).
 
-import { ensureStylesYjsInit, Ogt, kgt } from "../../workbook/styles-yjs";
+import { Ogt, kgt } from "../../workbook/styles-yjs";
 
 // Thin aliases: styles-yjs cluster drained (wave-91).
 
-import {
-  paintChartLegend as workbookHelper491,
-  paintMapLegend as lbe,
-  obe,
-  $A,
-  workbookHelper484,
-  workbookHelper488,
-  workbookHelper387,
-  workbookHelper487,
-  workbookHelper486,
-} from "../../workbook/chart-legend";
+import { paintMapLegend as lbe } from "../../workbook/chart-legend";
 
 // Thin aliases: chart-legend cluster drained (wave-92).
 
 import {
-  normalizePathAngle as workbookHelper605,
-  adjustEllipseAngle as workbookHelper606,
-  drawShapePath as workbookHelper607,
   drawCustomPaths as Rwe,
   pathCommandsToClipPoints as cTe,
   roundRectPath as NSe,
-  drawShapePaths as workbookHelper608,
 } from "../../workbook/shape-path";
 
 import { pathCommandsBBox as tTe } from "../../workbook/shape-path";
@@ -1422,7 +537,6 @@ import { swe, Swe } from "../../workbook/shape-path";
 // Thin aliases: shape-path cluster drained (wave-92).
 
 import {
-  ensureHtmlTableExportInit,
   escapeHtmlText as Gpt,
   buildExcelHtmlClipboard as Kpt,
   Wpt,
@@ -1433,296 +547,49 @@ import {
 import {
   ensureChartJsxPropAllowlistsInit as _ke,
   lowerChartElement as dke,
-  chartPropsToConfig as fke,
-  parseChartChildren as workbookHelper722,
-  lowerLegendProps as pke,
-  lowerAxisProps as mke,
-  lowerSeriesProps as hke,
-  resolveElementName as gke,
-  lowerLegendConfig as workbookHelper723,
-  lowerAxisConfig as workbookHelper724,
-  mergeAxisChildren as workbookHelper725,
-  lowerTitleChild as workbookHelper726,
-  lowerSeriesChildren as workbookHelper727,
-  lowerTrendlineProps as workbookHelper728,
-  lowerDataLabelProps as workbookHelper729,
-  pickAllowedProps as workbookHelper730,
-  mergeChartType as workbookHelper731,
-  mergeChartConfig as workbookHelper732,
-  mergeDefined as workbookHelper733,
-  assignIfDefined as workbookHelper734,
-  omitUndefined as workbookHelper735,
-  normalizeAxisOptions as workbookHelper736,
-  coerceLineConfig as workbookHelper737,
-  assertAllowedProps as workbookHelper738,
-  assertNoChildren as workbookHelper739,
-  omitKeys as workbookHelper740,
-  toChildArray as workbookHelper741,
-  isFormattingWhitespace as workbookHelper742,
-  workbookBinding1549,
-  workbookBinding1550,
-  workbookBinding1551,
-  workbookBinding1552,
-  workbookBinding1553,
-  workbookBinding1554,
-  workbookBinding1555,
-  workbookBinding1556,
-  $J,
-  workbookBinding1557,
-  workbookBinding1558,
-  workbookBinding1559,
-  workbookBinding1560,
-  workbookBinding1561,
-  workbookBinding1562,
-  workbookBinding1563,
-  workbookBinding1564,
-  workbookBinding1565,
-  workbookBinding1566,
-  workbookBinding1567,
-  workbookBinding1568,
-  workbookBinding1569,
-  workbookBinding1570,
-  workbookBinding1571,
-  workbookBinding1572,
-  workbookBinding1573,
-  _Y,
 } from "../../workbook/chart-jsx-lower";
 
 // Thin aliases: chart-jsx-lower cluster drained (wave-93).
 
 import {
   parseComposeInput as vke,
-  parseSlideComposeInput as yke,
-  splitBackgroundChildren as workbookHelper743,
-  lowerComposeChildren as workbookHelper744,
-  lowerComposeElement as workbookHelper745,
-  lowerTextChildren as workbookHelper746,
-  lowerRunElement as workbookHelper747,
-  resolveImageSource as bke,
-  normalizeComposeProps as xke,
-  assertLeafChildren as workbookHelper748,
   assertAllowedComposeProps as workbookHelper749Compose,
-  pickTextStyleProps as workbookHelper750,
-  omitComposeKeys as workbookHelper751,
-  readComposeRef as workbookHelper752,
-  registerComposeRef as workbookHelper753,
-  collectRefsByPath as workbookHelper754,
-  isComposeNode as workbookHelper755,
-  stripClassName as workbookHelper756,
-  applyClassNameStyle as workbookHelper757,
-  mergePosition as workbookHelper758,
-  isAbsolutePosition as workbookHelper759,
-  toComposeChildArray as workbookHelper760,
-  isAlreadyLowered as workbookHelper761,
-  isComposeFormattingWhitespace as workbookHelper762,
-  lowerTableRows as Ske,
   ensureComposeJsxPropAllowlistsInit as Cke,
-  workbookBinding1574,
-  workbookBinding1575,
-  workbookBinding1576,
-  workbookBinding1577,
-  workbookBinding1578,
-  workbookBinding1579,
-  workbookBinding1580,
-  workbookBinding1581,
-  workbookBinding1582,
-  workbookBinding1583,
-  workbookBinding1584,
-  workbookBinding1585,
-  workbookBinding1586,
-  workbookBinding1587,
-  workbookBinding1588,
-  $Y,
-  workbookBinding1589,
-  LOe,
-  tke,
-  workbookHelper714,
-  ensureSemanticTagSetsInit,
-  kOe,
-  workbookHelper698,
-  workbookHelper699,
-  lke,
   qOe,
-  rke,
-  jOe,
-  workbookHelper701,
-  FOe,
-  ike,
-  cke,
-  workbookBinding1529,
-  workbookBinding1530,
-  workbookBinding1531,
-  ensureBinding1531Init,
-  workbookBinding1540,
-  workbookBinding1541,
-  workbookBinding1542,
-  workbookBinding1543,
-  workbookBinding1544,
-  ensureBinding1544Init,
-  workbookBinding1545,
-  workbookBinding1546,
-  workbookBinding1547,
-  workbookBinding1548,
-  uke,
-  ensureUkeInit,
-} from "../../workbook/compose-jsx-lower";
-
-import {
-  createBoxElement as workbookHelper713,
-  cjlH as __cjlHWave109,
 } from "../../workbook/compose-jsx-lower";
 
 import {
   lowerListChildren as MOe,
-  paragraphsFromChildren as workbookHelper702,
-  lowerParagraphElement as POe,
-  flattenJsxFragments as workbookHelper703,
-  prefixOrderedRuns as VOe,
-  prefixFirstRun as HOe,
-  applyParagraphOptions as $q,
-  mergeParagraphOptions as UOe,
-  mergeParagraphStyle as workbookHelper708,
-  pickParagraphProps as workbookHelper709,
-  assertAllowedProps as workbookHelper710,
   lowerListTag as YOe,
   lowerImgTag as XOe,
-  lowerHrTag as ZOe,
-  resolveImgSourceProps as ake,
-  assertLeafTag as workbookHelper715,
-  assertAllowedProps as workbookHelper716,
-  elementName as workbookHelper717,
-  coerceTextStyle as oke,
-  coerceTransform as ske,
-  optionalString as workbookHelper718,
-  optionalNumber as workbookHelper719,
-  optionalNumber as _J,
-  optionalBoolean as workbookHelper720,
-  optionalSize as workbookHelper721,
-  isPresentationJsxElement as workbookHelper697,
 } from "../../workbook/compose-jsx-lower";
 
-import {
-  flattenComposeChildren as QOe,
-  flattenFragments as workbookHelper712,
-} from "../../workbook/compose-jsx-lower";
+import { flattenComposeChildren as QOe } from "../../workbook/compose-jsx-lower";
 
 // Thin aliases: compose-jsx-lower cluster drained (wave-93).
 
-import {
-  paintChartAxisTicks as workbookHelper462,
-  workbookHelper431,
-  workbookHelper461,
-} from "../../workbook/chart-axis-ticks";
+import { paintSecondaryValueAxis as _xe } from "../../workbook/chart-axis-ticks";
 
-import {
-  hasManualLayoutCoord as workbookHelper453,
-  clampNumber as workbookHelper454,
-  hasTitleManualLayout as workbookHelper457,
-  axisHasTitleManualLayout as workbookHelper459,
-  paintAxisTitle as workbookHelper460,
-} from "../../workbook/chart-axis-ticks";
+import { wOe } from "../../workbook/shape-geometry-paint";
 
-import {
-  planAxisTicks as workbookHelper440,
-  Iye,
-  majorTicksForAxis as workbookHelper441,
-  minorTicksForAxis as workbookHelper442,
-  Lye,
-  Rye,
-  minTickSeparationPx as workbookHelper443,
-} from "../../workbook/chart-axis-ticks";
+import { Lwe } from "../../workbook/shape-geometry-paint";
 
-import { paintAxisGridlineStroke as workbookHelper433 } from "../../workbook/chart-axis-ticks";
-
-import {
-  formatAxisTickValue as workbookHelper439,
-  formatChartNumber as workbookHelper478,
-  paintSecondaryValueAxis as _xe,
-  paintSecondaryAxisTitle as workbookHelper530,
-  nearAxisBaseline as workbookHelper531,
-} from "../../workbook/chart-axis-ticks";
-
-import {
-  paintShapeGeometry as workbookHelper616,
-  workbookHelper571,
-  workbookHelper572,
-  workbookHelper573,
-  wOe,
-  hTe,
-  workbookBinding1265,
-  isConnectorGeometry as isConnectorGeometryImpl,
-  workbookBinding1260,
-  workbookBinding1261,
-  workbookBinding1262,
-  workbookBinding1263,
-  workbookBinding1264,
-  Bwe,
-  ensureConnectorArrowheadsInit,
-  getDrawConnectorArrowheads,
-} from "../../workbook/shape-geometry-paint";
-
-import {
-  Lwe,
-  strokePresetGeometry as workbookHelper647,
-  strokeShapeLine as workbookHelper648,
-} from "../../workbook/shape-geometry-paint";
-
-import {
-  elementStrokeBBox as workbookHelper611,
-  paintConnectorRoute as Qwe,
-  fillRectFallback as workbookHelper618,
-  strokeFillPaint as $we,
-  strokePathBBox as eTe,
-  isLinearGradientFill as nTe,
-  paintGradientOrSolidStroke as workbookHelper619,
-  gradientAxisT as rTe,
-  normalizeGradientStopOffset as iTe,
-  lerpRgbaCss as aTe,
-  parseCssRgba as workbookHelper620,
-  lerpChannel as workbookHelper621,
-  unitInterval as workbookHelper622,
-  round3 as oTe,
-  resolveLineCap as sTe,
-  applyStrokeLineStyle as workbookHelper623,
-  canvasLineDashFromStyle as lTe,
-} from "../../workbook/shape-geometry-paint";
-
-import {
-  drawCustomPaths as __RweForSgp,
-  pathCommandsToClipPoints as __cTeForSgp,
-} from "../../workbook/shape-path";
+import { paintConnectorRoute as Qwe } from "../../workbook/shape-geometry-paint";
 
 import {
   layoutTableFrame as workbookA,
   strokeTableBorders as TTe,
-  ETe,
-  DTe,
-  workbookHelper641,
-  workbookHelper644,
-  ITe,
-  workbookHelper645,
-  LTe,
 } from "../../workbook/table-frame-layout";
 
 import {
   renderSlideCanvas as vEe,
   paintSlideText as nEe,
   paintViewOverlay as dEe,
-  workbookHelper654,
 } from "../../workbook/slide-canvas-render";
 
 // Thin aliases: chart-axis-ticks + shape-geometry-paint + table-frame-layout + slide-canvas-render drained (wave-94).
 
-import {
-  paintBarDirectionSeries as Dbe,
-  nbe,
-} from "../../workbook/chart-bar-direction";
-
-import {
-  paintBarSeries as workbookHelper501,
-  computeBarSegments as workbookHelper421,
-  workbookHelper420,
-} from "../../workbook/chart-bar-series";
+import { paintBarDirectionSeries as Dbe } from "../../workbook/chart-bar-direction";
 
 import { paintRadarChart as Txe } from "../../workbook/chart-radar";
 
@@ -1731,163 +598,36 @@ import { prepareRadarSeries as Cxe } from "../../workbook/chart-radar";
 import {
   layoutCategoryChartPlot as Xxe,
   normalizePlotAreaManualLayout as bSe,
-  coerceManualLayoutFraction as workbookHelper557,
   reserveDataTablePlot as iSe,
-} from "../../workbook/chart-plot-layout";
-
-import {
-  resolveManualLayoutRect as workbookHelper559,
-  resolveEdgeSize as workbookHelper558,
-  $L,
 } from "../../workbook/chart-plot-layout";
 
 // Thin aliases: chart-bar-direction + chart-bar-series + chart-radar + chart-plot-layout drained (wave-95).
 
-import {
-  paintCategoryAxes as Tbe,
-  seriesCategoryLength as Aye,
-  compactSparseCategories as jye,
-  normalizeChartCategories as workbookHelper419,
-  $O,
-  workbookHelper499,
-  workbookHelper498,
-} from "../../workbook/chart-category-axes";
+import { paintCategoryAxes as Tbe } from "../../workbook/chart-category-axes";
 
 import { paintScatterSeries as nCe } from "../../workbook/chart-scatter-series";
-
-import { paintTrendlineLabel as __workbookHelper524ForScatter } from "../../workbook/chart-trendline";
 
 import { resolveTrendlineLabel as cxe } from "../../workbook/chart-trendline";
 
 import { paintHistogramAxes as gCe } from "../../workbook/chart-histogram-axes";
 
-import {
-  paintChartDataTable as workbookHelper561,
-  paintHierarchyDataTable as DSe,
-  workbookHelper564,
-} from "../../workbook/chart-data-table";
+import { paintHierarchyDataTable as DSe } from "../../workbook/chart-data-table";
 
-import {
-  HCe,
-  workbookHelper586,
-  workbookHelper587,
-  _z,
-  GCe,
-  KCe,
-} from "../../workbook/sheet-range-map";
+import { jwe, Owe } from "../../workbook/image-svg-decode";
 
-import {
-  jwe,
-  Awe,
-  Dwe,
-  Owe,
-  kwe,
-  Mwe,
-  workbookHelper603,
-} from "../../workbook/image-svg-decode";
+import { Vye, Zye, awe } from "../../workbook/paint-mids";
 
-import {
-  evt,
-  workbookHelper1036,
-  workbookHelper1037,
-  workbookHelper1038,
-  Q_t,
-  tvt,
-  avt,
-  ensureFormulaAstWalkInit,
-  $_t,
-} from "../../workbook/formula-ast-walk";
-
-import {
-  Vye,
-  Zye,
-  awe,
-  workbookHelper597,
-  cwe,
-} from "../../workbook/paint-mids";
-
-import {
-  resolveFillColor as workbookHelper463,
-  resolveSeriesPaintColor as workbookHelper465,
-  resolvePathStyle as workbookHelper468,
-  resolveConnectorStroke as workbookHelper469,
-  resolveStrokePaint as workbookHelper471,
-  resolveDefaultStroke as workbookHelper472,
-  mergeStrokeStyle as workbookHelper473,
-  isEmptyFill as workbookHelper474,
-  resolveVisibleStroke as workbookHelper482,
-} from "../../workbook/stroke-resolve";
-
-import {
-  workbookHelper609,
-  workbookHelper615,
-  Jwe,
-  Ywe,
-} from "../../workbook/picture-fill-paint";
-
-import {
-  wTe,
-  workbookHelper639,
-  workbookHelper640,
-} from "../../workbook/text-element-build";
+import { Jwe, Ywe } from "../../workbook/picture-fill-paint";
 
 import { JSe } from "../../workbook/contrast-text-colors";
 
-import { u1e, y1e } from "../../workbook/formula-weeknum";
-
-import {
-  l0e,
-  u0e,
-  d0e,
-  f0e,
-  p0e,
-  m0e,
-  g0e,
-  _0e,
-  v0e,
-  y0e,
-} from "../../workbook/formula-d-stats";
-
-import {
-  parseSheetRangeRef as UCe,
-  normalizeSheetRangeParts as workbookHelper588,
-  expandSheetRange as WCe,
-} from "../../workbook/chart-data-table";
-
-import {
-  paintScatterAxes as workbookHelper570,
-  planScatterAxes as workbookHelper545,
-  $I,
-} from "../../workbook/chart-scatter-axes";
-
-import { reservePlotAxes as workbookHelper546 } from "../../workbook/chart-scatter-axes";
+import { parseSheetRangeRef as UCe } from "../../workbook/chart-data-table";
 
 // Thin aliases: chart-category-axes + chart-scatter-series + chart-histogram-axes + chart-data-table + chart-scatter-axes drained (wave-96).
 
-import {
-  wireThreeChartCameraBoundaryHooks,
-  fitThreeChartCamera as rxe,
-  tccH as __tccHWave97,
-} from "../../workbook/three-chart-camera";
+import { fitThreeChartCamera as rxe } from "../../workbook/three-chart-camera";
 
-wireThreeChartCameraBoundaryHooks({
-  cameraDir: undefined as any,
-});
-Object.defineProperties(__tccHWave97, {
-  cameraDir: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1142,
-  },
-});
-
-import {
-  wireChartTrendlineBoundaryHooks,
-  paintChartTrendline as workbookHelper525,
-  paintTrendlineLabel as workbookHelper524,
-  ctlH as __ctlHWave107,
-  sxe,
-} from "../../workbook/chart-trendline";
+import { ctlH as __ctlHWave107, sxe } from "../../workbook/chart-trendline";
 
 __ctlHWave107.hasLabel = (...args: any[]) => sxe(...args);
 __ctlHWave107.resolveLabel = (...args: any[]) => cxe(...args);
@@ -1898,38 +638,12 @@ __ctlHWave107.ALIGNMENT_TYPE_LEFT = Jn.ALIGNMENT_TYPE_LEFT;
 __ctlHWave107.FILL_TYPE_SOLID = tr.FILL_TYPE_SOLID;
 __ctlHWave107.COLOR_TYPE_RGB = Zn.COLOR_TYPE_RGB;
 
-import {
-  buildScatterScale as workbookHelper540,
-  fitBubbleScaleDomain as workbookHelper539,
-  workbookHelper535,
-  workbookHelper537,
-  workbookHelper538,
-} from "../../workbook/chart-scatter-scale";
+import { fitPercentBubbleDomain as Oxe } from "../../workbook/chart-scatter-scale";
 
-import {
-  fitPercentBubbleDomain as Oxe,
-  niceBubbleExtentStep as Dxe,
-  scaledBubbleRadius as workbookHelper534,
-} from "../../workbook/chart-scatter-scale";
-
-import {
-  paintImages as Fwe,
-  Pwe,
-  workbookHelper604,
-  workbookBinding1253,
-  workbookBinding1254,
-  workbookBinding1255,
-  Nwe,
-  Iwe,
-  ensurePaintImageDecodeMapsInit,
-} from "../../workbook/paint-images";
+import { paintImages as Fwe } from "../../workbook/paint-images";
 
 import {
   ensureConstraintLayoutInit as kDe,
-  ensureConstraintLayoutEnumsInit as workbookBinding1370,
-  workbookBinding1371,
-  workbookBinding1369,
-  $U,
   Align as __clAlign,
   Direction as __clDirection,
   AutoLayout as __clAutoLayout,
@@ -1953,52 +667,19 @@ void TDe;
 void CDe;
 void wDe;
 
-import {
-  wireSelectionStyleGridBoundaryHooks,
-  buildSelectionStyleGrid as Upt,
-} from "../../workbook/selection-style-grid";
-
-wireSelectionStyleGridBoundaryHooks({
-  bh229: (...args: any[]) => workbookHelper229(...args),
-});
-
-import {
-  paintChartDataLabel as workbookHelper500,
-  resolveDataLabelText as workbookHelper495,
-  isDataCallout as workbookHelper492,
-  isDataLabelDeleted as workbookHelper493,
-  seriesShowsValueLabels as workbookHelper494,
-  $xe,
-} from "../../workbook/chart-data-labels";
+import { buildSelectionStyleGrid as Upt } from "../../workbook/selection-style-grid";
 
 import {
   layoutLegendAroundPlot as jxe,
   layoutLegendPlot as wSe,
   reserveTitleBand as uSe,
-  applyManualLayout as workbookHelper458,
-  layoutEdgeOffset as workbookHelper455,
-  layoutSizeOffset as workbookHelper456,
 } from "../../workbook/chart-legend-plot";
 
 import { lxe } from "../../workbook/chart-legend-plot";
 
-import {
-  workbookHelper547,
-  oSe,
-  sSe,
-  workbookHelper548,
-  workbookHelper549,
-  cSe,
-  lSe,
-} from "../../workbook/chart-legend-plot";
+import { lSe } from "../../workbook/chart-legend-plot";
 
-import {
-  paintCategoryAxisLabels as Nxe,
-  layoutCategoryAxisLabelBand as Pxe,
-  Nye,
-  Pye,
-  workbookHelper543,
-} from "../../workbook/chart-category-axis-labels";
+import { paintCategoryAxisLabels as Nxe } from "../../workbook/chart-category-axis-labels";
 
 import {
   prepareBoxWhiskerData as ECe,
@@ -2006,536 +687,100 @@ import {
   paintBoxWhiskerChart as jCe,
 } from "../../workbook/chart-box-whisker";
 
-import {
-  paintLineSeries as workbookHelper528,
-  stackLineLayers as axe,
-  paintSeriesMarker as workbookHelper480,
-} from "../../workbook/chart-line-series";
+import { stackLineLayers as axe } from "../../workbook/chart-line-series";
 
-import {
-  seriesHasVisibleMarker as workbookHelper479,
-  paintSeriesEndpoint as workbookHelper483,
-} from "../../workbook/chart-series-endpoint";
+import { buildContinuousScale as _O } from "../../workbook/chart-group-scales";
 
-import {
-  dxe,
-  workbookHelper526,
-  fxe,
-  workbookHelper527,
-} from "../../workbook/chart-line-series";
+import { buildBarPlotScales as hbe } from "../../workbook/chart-group-scales";
 
-import {
-  buildChartGroupScales as workbookHelper423,
-  buildNiceChartScale as workbookHelper398,
-  wireChartContinuousScaleBoundaryHooks,
-  ccsH as __ccsHWave125,
-  buildContinuousScale as _O,
-  workbookHelper392,
-  workbookHelper393,
-  workbookHelper394,
-  vye,
-  workbookHelper395,
-  workbookHelper396,
-  workbookHelper424,
-  workbookHelper425,
-  workbookHelper422,
-} from "../../workbook/chart-group-scales";
-
-import {
-  planComboValueDomains as workbookHelper388,
-  stackSeriesExtents as workbookHelper391,
-  applyNiceContinuousDomain as workbookHelper403,
-  niceTickStep as workbookHelper417,
-  Mye,
-} from "../../workbook/chart-group-scales";
-
-import {
-  buildBarPlotScales as hbe,
-  isMaxMinXOrientation as mbe,
-  isMaxMinYOrientation as workbookHelper497,
-  chartUsesPercentFormats as workbookHelper407,
-  chartHasPercentFormats as workbookHelper410,
-  valueLooksPercent as workbookHelper414,
-} from "../../workbook/chart-group-scales";
-
-import {
-  buildLogChartScale as yye,
-  cgsH as __cgsHWave116,
-} from "../../workbook/chart-group-scales";
-
-import {
-  stackedValueDomain as workbookHelper389,
-  seriesValueDomain as workbookHelper390,
-  categoryCount as _ye,
-} from "../../workbook/chart-stacked-domain";
-
-wireChartAxisScaleDomainBoundaryHooks({
-  majorUnitMap: undefined as any,
-});
-Object.defineProperties(__casdHWave126, {
-  majorUnitMap: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding848,
-  },
-});
+import { buildLogChartScale as yye } from "../../workbook/chart-group-scales";
 
 import { computeShapePathEndpoints as Vwe } from "../../workbook/shape-path-endpoints";
 
-import { pTe, workbookHelper629 } from "../../workbook/shape-path-endpoints";
+import { pTe } from "../../workbook/shape-path-endpoints";
 
 import {
   paintTableCells as STe,
-  layoutTableColumns as $B,
   materializeBorderStrokes as xTe,
   vTe,
-  workbookHelper635,
-  yTe,
-  workbookHelper632,
-  workbookHelper636,
-  workbookHelper637,
-  workbookHelper638,
-  workbookHelper631,
 } from "../../workbook/table-cell-paint";
 
 import {
-  layoutTextFrameEmbeds as workbookHelper643,
-  wireMeasureEmbedElementBoundaryHooks,
-  meeH as __meeHWave125,
   measureEmbedElement as NTe,
-  PTe,
-  gEe,
-  FTe,
   workbookN,
-  OTe,
 } from "../../workbook/text-frame-embeds";
 
-import {
-  paintEmbeddedWorkbookView as BTe,
-  resolveEmbeddedWorksheet as VTe,
-  embeddedViewportMetrics as WTe,
-} from "../../workbook/text-frame-embeds";
+import { paintEmbeddedWorkbookView as BTe } from "../../workbook/text-frame-embeds";
 
-wireMeasureEmbedElementBoundaryHooks({
-  emuPerPx: undefined as any,
-  paintTextElement: (...args: any[]) => workbookX(...args),
-});
-Object.defineProperties(__meeHWave125, {
-  emuPerPx: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1268,
-  },
-});
+import { ZTe } from "../../workbook/slide-image-paint";
 
 import {
-  paintSlideImage as $Te,
-  hEe,
-  JTe,
-  YTe,
-  XTe,
-  ZTe,
-} from "../../workbook/slide-image-paint";
-
-import {
-  layoutChartLegend as workbookHelper490,
   legendEntries as ibe,
   measureMapLegend as abe,
-  buildMapLegendRamp as workbookHelper489,
   packLegendRows as sbe,
-  balanceLegendRows as cbe,
-  workbookHelper466,
 } from "../../workbook/chart-legend-layout";
-
-import { paintAreaSeries as workbookHelper529 } from "../../workbook/chart-area-series";
 
 import { stackAreaLayers as hxe } from "../../workbook/chart-area-series";
 
 import { paintHistogramBars as sCe } from "../../workbook/chart-histogram-bars";
 
-import {
-  paintSurfaceMap as Kye,
-  workbookHelper467,
-  qye,
-  Gye,
-} from "../../workbook/chart-surface-map";
+import { paintSurfaceMap as Kye } from "../../workbook/chart-surface-map";
 
-import { Jye } from "../../workbook/chart-surface-map";
-
-import {
-  lowerInlineTextChildren as NOe,
-  GOe,
-} from "../../workbook/compose-inline-text";
+import { lowerInlineTextChildren as NOe } from "../../workbook/compose-inline-text";
 
 import {
   remapElementIds as LIe,
   fitElementsInBbox as RIe,
-  coercePositionValue as Y$,
-  wirePresentationElementFitBoundaryHooks,
-  pelH as __pelHWave116,
 } from "../../workbook/presentation-element-fit";
 
 import {
-  insertSlideFromLayout as mLe,
-  insertShape as hLe,
-  insertChartFromTemplate as gLe,
-  setShapeFill as _Le,
-  setShapeStroke as vLe,
-  setSlideBackgroundFill as yLe,
   setTextRangeFormatting as bLe,
   centerInFrame as lLe,
-  demoCategories as uLe,
-  demoSeries as dLe,
-  ptToPx as fLe,
-  requireSlide as Q$,
-  requireShape as $$,
-  resolveEditSlide as pLe,
 } from "../../workbook/presentation-edit";
 
 import {
-  computeGridFrame as workbookHelper672,
   autoLayoutFrames as ADe,
   ensureGridLayoutInit as jDe,
 } from "../../workbook/grid-frame-layout";
 
-import {
-  wireFormulaSortFilterBoundaryHooks,
-  coerceMatrixRows as workbookHelper967,
-  coerceNumberVector as workbookHelper968,
-  fallbackIfEmpty as workbookHelper969,
-  compareSortKeys as workbookHelper970,
-  matrixColumnCount as workbookHelper971,
-  buildSortIndex as workbookHelper972,
-  ascendingIndices as workbookHelper973,
-  coerceLookupScalar as workbookHelper974,
-  unwrapCellOrError as workbookHelper975,
-  Rst,
-  zst,
-  Bst,
-  Vst,
-  Hst,
-  Ust,
-  Wst,
-  Gst,
-  Kst,
-  qst,
-  Jst,
-  Yst,
-  Xst,
-  Zst,
-  Qst,
-  $st,
-  ect,
-  tct,
-  nct,
-  rct,
-  ict,
-  act,
-  oct,
-  sct,
-  cct,
-  lct,
-  uct,
-  dct,
-  fct,
-  pct,
-  mct,
-  hct,
-  gct,
-  _ct,
-  vct,
-  yct,
-  bct,
-  xct,
-} from "../../workbook/formula-sort-filter";
+import { ict } from "../../workbook/formula-sort-filter";
 
-import {
-  Jct,
-  qct,
-  filterNestedAggregateCells as workbookHelper976,
-  isErrorKind as workbookHelper977,
-  errorFromThrown as workbookHelper978,
-  coerceToMatrix as workbookHelper979,
-  numberToPrecision as workbookHelper980,
-  coerceFirstCell as workbookHelper981,
-  coerceToNumber as workbookHelper982,
-  coerceIntDefault as workbookHelper983,
-  coerceNonNegDefault as workbookHelper984,
-  criteriaFromMatch as workbookHelper985,
-  aggregateWithIgnoreFlags as workbookHelper986,
-  Wct,
-  Gct,
-  Kct,
-  Yct,
-  Xct,
-  Zct,
-  Qct,
-  $ct,
-  elt,
-  tlt,
-  nlt,
-  rlt,
-  ilt,
-  alt,
-  Olt,
-  Rlt,
-  zlt,
-  $lt,
-  _ut,
-  vut,
-} from "../../workbook/formula-criteria-lookup";
-
-import {
-  coerceToText as workbookHelper987,
-  coerceToBoolean as workbookHelper988,
-  coerceMatchMode as workbookHelper989,
-  unwrapCell as workbookHelper990,
-  valueToString as workbookHelper991,
-  isErrorKind as workbookHelper992,
-  regexEscape as workbookHelper993,
-  regexReplaceAll as workbookHelper994,
-  regexCapture as workbookHelper995,
-  Odt,
-  kdt,
-  Adt,
-  jdt,
-  $5,
-  Mdt,
-  Ndt,
-  Pdt,
-  Fdt,
-  Idt,
-  Ldt,
-  Rdt,
-  zdt,
-  Bdt,
-  Vdt,
-  Hdt,
-  Udt,
-  Wdt,
-  Gdt,
-  Kdt,
-  qdt,
-  Jdt,
-} from "../../workbook/formula-text-split";
+import { Jdt } from "../../workbook/formula-text-split";
 
 import {
   replaceFormulaFunctionName as ppt,
   matchFormulaFunctionNameAt as mpt,
 } from "../../workbook/formula-text-replace";
 
-import {
-  parseA1CellRef as workbookHelper589,
-  columnLettersToIndex as workbookHelper590,
-  columnIndexToLetters as rwe,
-  shiftA1Token as workbookHelper591,
-  shiftSharedFormulaRefs as workbookHelper592,
-} from "../../workbook/formula-shared-refs";
-
 import { Fht, Iht, Rht } from "../../workbook/cf-icon-color-scale";
 
 import {
-  coerceCfCellValue as workbookHelper1014,
-  coerceCfNumeric as workbookHelper1015,
-  parseExcelDate as sht,
-  toExcelSerial as cht,
   collectRangeNumerics as Sht,
-  percentileThreshold as pht,
   aboveAverageThreshold as mht,
-  rangeStats as workbookHelper1020,
   wht,
-  Tht,
-  Eht,
-  Dht,
   Aht,
   Mht,
-  workbookHelper1021,
-  collectCfRuleRanges,
-  parseCfFormulaExpr,
 } from "../../workbook/cf-range-stats";
-
-import {
-  ensureCfEpochInit,
-  Cht,
-  Oht,
-  getExcelEpochUtc,
-  getMsPerDay,
-  getIsoDateRe,
-  workbookHelper1016,
-  workbookHelper1017,
-  workbookHelper1018,
-  workbookHelper1019,
-  fht,
-  aht,
-  tht,
-  nht,
-  rht,
-  iht,
-  hht,
-  ght,
-  _ht,
-  vht,
-  yht,
-  bht,
-  xht,
-  kht,
-  Lht,
-  zht,
-  Vht,
-  Hht,
-  Uht,
-  Wht,
-  workbookBinding1962,
-  ensureCfFillEngineInit,
-  Ght,
-} from "../../workbook/cf-engine";
-
-import {
-  workbookHelper427,
-  workbookHelper432,
-  workbookHelper437,
-} from "../../workbook/text-measure";
-
-import {
-  D3e,
-  O3e,
-  workbookHelper904,
-  workbookHelper905,
-  workbookHelper906,
-  t4e,
-  workbookHelper907,
-  ERR_NUM,
-  ERR_VALUE,
-  workbookHelper908,
-  workbookHelper909,
-} from "../../workbook/formula-value-coerce";
-
-import { i4e, a4e, o4e } from "../../workbook/formula-pair-series";
 
 import { buildConditionalFormatDxfColorMaps as jht } from "../../workbook/cf-dxf-color-maps";
 
-import {
-  requiredArg,
-  isRequiredArgError,
-  mapArgOrDefault,
-  eft,
-  tft,
-  nft,
-  coerceInboundCellValue,
-  rft,
-  ift,
-  normalizeOutboundCellValue,
-  aft,
-  oft,
-  sft,
-  cft,
-  unwrapFirstCell,
-  lft,
-  coerceToFiniteNumber,
-  uft,
-  isFormulaErrorValue,
-  dft,
-  fft,
-  pft,
-  mft,
-  hft,
-  mapMatrixParseNumber,
-  gft,
-  _ft,
-  vft,
-  yft,
-  bft,
-  xft,
-  mapDeepParseNumber,
-  parseNumberish,
-  Sft,
-  Cft,
-  wft,
-  Tft,
-  Eft,
-  Dft,
-  Oft,
-  kft,
-  Aft,
-  jft,
-  Mft,
-  Nft,
-  workbookBinding1948,
-  workbookBinding1949,
-  workbookBinding1950,
-  Pft,
-  workbookBinding1951,
-  Fft,
-  Ift,
-  Lft,
-  Rft,
-  zft,
-  Bft,
-  Vft,
-  Hft,
-} from "../../workbook/formula-call-dispatch";
+import { eft, Tft, Nft } from "../../workbook/formula-call-dispatch";
 
-import {
-  resolveAddressOptions,
-  Uft,
-  Wft,
-  Gft,
-  Kft,
-} from "../../workbook/formula-range-index";
+import { Uft, Gft } from "../../workbook/formula-range-index";
 
-import {
-  qft,
-  Jft,
-  Yft,
-  Xft,
-  Zft,
-  Qft,
-  $ft,
-  ept,
-  tpt,
-} from "../../workbook/formula-structured-ref";
+import { qft, tpt } from "../../workbook/formula-structured-ref";
 
 import { cloneRichWorkbookMetadata as apt } from "../../workbook/worksheet-metadata-clone";
 
+import { semanticTagStyle as ROe } from "../../workbook/compose-jsx-lower";
 import {
-  semanticTagStyle as ROe,
-  mergeRunOverride as IOe,
-  mergeInlineTextStyle as workbookHelper704,
-  mergeTextStyleBags as workbookHelper705,
-  coerceInlineTextStyle as workbookHelper706,
-  pickCssTextStyleFields as workbookHelper707,
-  requireNonEmptyString as workbookHelper711,
-  mergeClassNameTextStyle as AOe,
-  requireHref as zOe,
-  coerceLinkConfig as BOe,
-  cjlH as __cjlHWave116,
-} from "../../workbook/compose-jsx-lower";
-import { wireComposeJsxLowerBoundaryHooks as __wireCjlWave116 } from "../../workbook/compose-jsx-lower";
-
-wirePresentationElementFitBoundaryHooks({
-  emuToPx: (...args: any[]) => of(...args),
-  lengthUnit: undefined as any,
-});
-Object.defineProperty(__pelHWave116, "lengthUnit", {
-  enumerable: true,
-  configurable: true,
-  get: () => workbookBinding384,
-});
-
-import {
-  wireChartWaterfallBarBoundaryHooks,
   paintWaterfallBar as dCe,
   paintWaterfallSeries as pCe,
-  uCe,
-  lCe,
-  workbookHelper575,
 } from "../../workbook/chart-waterfall-bar";
 
 import {
-  paintPieSeries as workbookHelper496,
   paintPieLabels as fbe,
   paintDonutArcLabels as qSe,
-  workbookHelper568,
 } from "../../workbook/chart-pie-series";
 
 import { ube, dbe } from "../../workbook/chart-pie-series";
@@ -2548,28 +793,10 @@ import {
   paintColumnSparkline as ZCe,
 } from "../../workbook/sparkline-paint";
 
-import { paintIconSetSymbols as workbookHelper594 } from "../../workbook/icon-set-symbols";
-
 import {
-  paintIconSetGlyph as __uweWave104,
   uwe,
   layoutUnsupportedIconBadge as lwe,
-  paintRatingBars as workbookHelper595,
-  workbookHelper599,
 } from "../../workbook/icon-set-paint";
-
-import {
-  wireChartSeriesValuesBoundaryHooks,
-  extractChartSeriesValues as workbookHelper551,
-  fSe,
-  pSe,
-  workbookHelper550,
-} from "../../workbook/chart-series-values";
-
-wireChartSeriesValuesBoundaryHooks({
-  coerceChartNumber: (...args: any[]) => workbookHelper347(...args),
-  parseFiniteNumber: (...args: any[]) => workbookHelper550(...args),
-});
 
 import { lowerPanelSurfaceTag as JOe } from "../../workbook/compose-jsx-lower";
 
@@ -2581,218 +808,21 @@ import {
 
 import {
   findFormulaSccs as VXe,
-  expandFormulaRefs as UXe,
   updateCellPrecedents as WXe,
-  sheetKeyOfAddress as GXe,
 } from "../../workbook/formula-dep-scc";
 
 import { orderFormulaDeps as BXe } from "../../workbook/formula-dep-scc";
-import {
-  excelSerialToDate as ZXe,
-  makeFormulaToken as workbookHelper836,
-  coerceNumericToken as QXe,
-  splitCriteriaOperators as $Xe,
-  tokenizeUnaryCriteria as eZe,
-  applyCriteriaOperator as tZe,
-  compareCriteriaValues as nZe,
-  parseCriteriaTokens as workbookHelper837,
-  collectFormulaArgs as workbookHelper838,
-  eachFormulaArg as workbookHelper839,
-  coerceArgNumbers as workbookHelper840,
-  flattenFormulaArgs as workbookHelper841,
-  flattenFormulaArgsDeep as workbookHelper842,
-  zipFormulaArgs as rZe,
-  ensureArrayArg as iZe,
-  isArrayLike as aZe,
-  chooseFormulaValue as workbookHelper843,
-  transposeMatrixArgs as sZe,
-  formulaValueEquals as workbookHelper844,
-  anyFormulaError as workbookHelper845,
-  hasFormulaError as workbookHelper846,
-  roundFormulaFloat as cZe,
-  filterNumericArgs as workbookHelper847,
-  coerceFormulaBoolean as lZe,
-  coerceFormulaDate as workbookHelper848,
-  coerceFormulaDates as uZe,
-  flattenMatrixArgs as workbookHelper849,
-  ensureFlatArgs as workbookHelper850,
-  isBlankLike as workbookHelper851,
-  isAnyStringArg as workbookHelper852,
-  matchCriteriaPairs as workbookHelper853,
-  excelDaysSinceEpoch as workbookHelper835,
-  isFlatArray as oZe,
-} from "../../workbook/formula-token-utils";
+import { qQe, z$e, days360 } from "../../workbook/formula-scalar-funcs";
 
 import {
-  isNonNullArg,
-  dZe,
-  isErrorOrBlank,
-  fZe,
-  pZe,
-  mZe,
-  hZe,
-  isFiniteNumber,
-  gZe,
-  _Ze,
-  vZe,
-  yZe,
-  bZe,
-  xZe,
-  SZe,
-  CZe,
-  wZe,
-  TZe,
-  EZe,
-  OZe,
-  kZe,
-  AZe,
-  jZe,
-  MZe,
-  NZe,
-  PZe,
-  FZe,
-  IZe,
-  LZe,
-  RZe,
-  zZe,
-  BZe,
-  VZe,
-  HZe,
-  UZe,
-  WZe,
-  GZe,
-  KZe,
-  padStartRepeat,
-  qZe,
-  JZe,
-  YZe,
-  averageArgs,
-  XZe,
-  ZZe,
-  QZe,
-  $Ze,
-  eQe,
-  tQe,
-  averageNumericArgs,
-  averageAArgs,
-  nQe,
-  rQe,
-  isOddInteger,
-  isEvenInteger,
-  iQe,
-  aQe,
-  oQe,
-  sQe,
-  cQe,
-  lQe,
-  medianArgs,
-  uQe,
-  modeArgs,
-  geomeanArgs,
-  dQe,
-  fQe,
-  mQe,
-  hQe,
-  gQe,
-  _Qe,
-  harmeanArgs,
-  vQe,
-  trimmeanArgs,
-  yQe,
-  bQe,
-  xQe,
-  percentileArgs,
-  SQe,
-  CQe,
-  wQe,
-  TQe,
-  EQe,
-  DQe,
-  OQe,
-  kQe,
-  AQe,
-  jQe,
-  MQe,
-  NQe,
-  PQe,
-  FQe,
-  IQe,
-  LQe,
-  RQe,
-  zQe,
-  BQe,
-  VQe,
-  qQe,
-  romanNumeral,
-  sqrtFloor,
-  arabicNumeral,
-  multiLcm,
-  z$e,
-  sumproductArgs,
-  q$e,
-  J$e,
-  Y$e,
-  X$e,
-  Z$e,
-  Q$e,
-  $$e,
-  e1e,
-  t1e,
-  n1e,
-  r1e,
-  i1e,
-  a1e,
-  o1e,
-  toExcelDate,
-  dateDiffDays,
-  days360,
-  e2e,
-  a2e,
-} from "../../workbook/formula-scalar-funcs";
-
-import {
-  wireFormulaAverageABoundaryHooks,
-  faaH as __faaHWave122,
-  isFormulaErrorToken,
-  formulaErrorFromMessage,
-  coerceAverageACell,
-  isFormulaErrorToken as $3,
   formulaErrorFromMessage as Q2e,
   coerceAverageACell as l4e,
   averageA as _4e,
 } from "../../workbook/formula-average-a";
 
-import {
-  wireFormulaAverageIfBoundaryHooks,
-  faiH as __faiHWave123,
-  flattenNestedCellArgs as workbookHelper913,
-  flattenSingleCellArg as workbookHelper914,
-  coerceAverageIfCriteriaText as p4e,
-  evalAverageIfPredicate as m4e,
-  coerceAverageIfNumeric as h4e,
-  averageIf as g4e,
-} from "../../workbook/formula-averageif";
+import { averageIf as g4e } from "../../workbook/formula-averageif";
 
-import {
-  wireFormulaSkewBoundaryHooks,
-  fskH as __fskHWave124,
-  collectNumericSamples as s4e,
-  appendNumericSamples as c4e,
-  coerceSkewNumeric as workbookHelper912,
-} from "../../workbook/formula-skew";
-
-import {
-  firstArrayError as workbookHelper902,
-  coerceCellErrorToken as e4e,
-  asFormulaErrorToken as workbookHelper903,
-  arrayShapeOrError as workbookHelper915,
-  sameArrayShapeOrError as workbookHelper916,
-  sameArrayShapeArgsOrError as f4e,
-  coerceNumericMatrix as workbookHelper920,
-  coerceNumericCell as workbookHelper921,
-  coerceCriteriaMatrix as workbookHelper922,
-  lowerStringOrPassthrough as workbookHelper923,
-} from "../../workbook/formula-criteria-shape";
+import { collectNumericSamples as s4e } from "../../workbook/formula-skew";
 
 import { computeGrowth as pQe } from "../../workbook/formula-growth";
 
@@ -2802,97 +832,12 @@ import {
 } from "../../workbook/formula-securities";
 
 import {
-  parseSettlementMaturity,
-  Gat,
-  $8,
   Kat,
-  coerceBondNumber,
-  coerceBondDate,
-  qat,
-  Jat,
-  bondDayCount,
-  bondDaysInYear,
-  unwrapBondArg,
-  Yat,
-  Xat,
-  Zat,
-  Qat,
-  $at,
-  eot,
-  tot,
-  isBondError,
-  isFormulaLambda,
   computePvAnnuity as Uat,
   parseBondPriceArgs as Wat,
-  Prt,
-  Irt,
-  Lrt,
-  ensureBondInputInit,
-  yrt,
-  brt,
-  xrt,
-  Srt,
-  ensureSrtInit,
-  workbookBinding1889,
-  workbookBinding1890,
-  Crt,
-  $6,
-  workbookBinding1891,
-  workbookBinding1892,
-  wrt,
-  workbookBinding1893,
-  Trt,
-  Ert,
-  Drt,
-  Ort,
-  ensureOrtInit,
-  workbookBinding1894,
-  krt,
-  workbookBinding1895,
-  workbookBinding1896,
-  workbookBinding1897,
-  workbookBinding1898,
-  workbookBinding1899,
-  workbookBinding1900,
-  workbookBinding1901,
-  ensureBinding1901Init,
-  workbookBinding1902,
-  Art,
-  jrt,
-  Mrt,
-  Nrt,
-  ensureNrtInit,
-  ensurePriceYieldInit,
 } from "../../workbook/formula-bond-basis";
 
-import {
-  computeUsedRangeBounds as UTe,
-  formatUsedRangeA1 as HTe,
-} from "../../workbook/worksheet-used-range";
-
-import { dateDif as workbookHelper876 } from "../../workbook/formula-datedif";
-
-import {
-  wireFormulaComplexBoundaryHooks,
-  complexReal as workbookHelper893,
-  complexImag as $4,
-  fcxH as __fcxHWave108,
-  formatComplexPair as workbookHelper886,
-  complexDivide as workbookHelper892,
-  H1e,
-  workbookHelper891,
-  U1e,
-  W1e,
-  G1e,
-  K1e,
-  J1e,
-  Z1e,
-  Q1e,
-  workbookHelper894,
-  e0e,
-  i0e,
-  a0e,
-} from "../../workbook/formula-complex";
+import { computeUsedRangeBounds as UTe } from "../../workbook/worksheet-used-range";
 
 import {
   cumIpmt as E0e,
@@ -2900,157 +845,23 @@ import {
   cumPrinc as T0e,
   ddb as O0e,
   ppmt as P0e,
-  isValidDateArg,
-  coerceToDate,
-  b0e,
-  x0e,
-  S0e,
-  C0e,
   w0e,
-  A0e,
-  j0e,
-  M0e,
-  futureValue,
-  N0e,
-  I0e,
-  L0e,
-  R0e,
-  z0e,
-  npvArgs,
-  B0e,
-  computePmt,
-  V0e,
-  U0e,
-  G0e,
-  K0e,
-  q0e,
-  J0e,
-  Y0e,
-  X0e,
   Q0e,
 } from "../../workbook/formula-financial";
 
 import {
   matchesCfDatePeriod as oht,
-  utcDateKey as uht,
   buildColorScaleRuntime as Nht,
   buildDataBarRuntime as Pht,
 } from "../../workbook/conditional-format";
 
-wireFormulaByrowBoundaryHooks({
-  getEvalContext: () => workbookHelper962(),
-  VALUE_ERROR: undefined as any,
-});
-Object.defineProperties(__fbyHWave127, {
-  VALUE_ERROR: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1936,
-  },
-});
-wireFormulaA1AddressBoundaryHooks({
-  isErrorValue: (...args: any[]) => workbookHelper59(...args),
-});
-wireFormulaDateAddMonthsBoundaryHooks({
-  fn930: (...args: any[]) => workbookHelper930(...args),
-  fn931: (...args: any[]) => workbookHelper931(...args),
-});
-wireChartBinWidthBoundaryHooks({
-  coerceBinNumber: (...args: any[]) => workbookHelper554(...args),
-});
-wireShapeFillResolveBoundaryHooks({
-  resolveFillStyle: (...args: any[]) => Wwe(...args),
-});
-wireChartCategoryTimeBoundaryHooks({
-  presentationN: undefined as any,
-});
-Object.defineProperties(__cctHWave127, {
-  presentationN: {
-    enumerable: true,
-    configurable: true,
-    get: () => _presentationN,
-  },
-});
-wireChartLabelOverflowBoundaryHooks({
-  isNonEmptyCategory: (...args: any[]) => workbookHelper543(...args),
-  measureCategoryAdvance: (...args: any[]) => workbookHelper425(...args),
-});
-wireFormulaComplexBoundaryHooks({
-  VALUE_ERROR: undefined as any,
-  NUM_ERROR: undefined as any,
-});
-Object.defineProperties(__fcxHWave108, {
-  VALUE_ERROR: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1835,
-  },
-  NUM_ERROR: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1838,
-  },
-});
-
-wireFormulaAverageABoundaryHooks({
-  DIV0_TOKEN: undefined as any,
-  VALUE_TOKEN: undefined as any,
-});
-Object.defineProperties(__faaHWave122, {
-  DIV0_TOKEN: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1875,
-  },
-  VALUE_TOKEN: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1876,
-  },
-});
-
-wireFormulaAverageIfBoundaryHooks({
-  DIV0_TOKEN: undefined as any,
-  VALUE_TOKEN: undefined as any,
-});
-Object.defineProperties(__faiHWave123, {
-  DIV0_TOKEN: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1875,
-  },
-  VALUE_TOKEN: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1876,
-  },
-});
-
-wireFormulaSkewBoundaryHooks({
-  DIV0_TOKEN: undefined as any,
-});
-Object.defineProperties(__fskHWave124, {
-  DIV0_TOKEN: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1877,
-  },
-});
-
-import { matchCriteriaColumns as workbookHelper896 } from "../../workbook/formula-criteria-match";
-
 import {
   rowMatchesAnyCriteriaGroup as F8e,
   buildCriteriaPredicate as I8e,
-  unwrapCriteriaScalar as L8e,
-  coerceCriteriaNumber as workbookHelper927,
 } from "../../workbook/formula-criteria-predicate";
 
 import {
   cloneMatrixOrArrayValues as j8e,
-  buildColumnNameIndex as M8e,
-  normalizeLookupKey as workbookHelper926,
-  resolveCriteriaColumnIndex as N8e,
   buildDsumCriteriaGroups as P8e,
 } from "../../workbook/formula-dsum-criteria";
 
@@ -3064,166 +875,48 @@ import {
 
 import {
   eachTableRow as Ypt,
-  eachRowCell as Xpt,
-  colWidthPx as Zpt,
   buildHtmlCell as Qpt,
-  normalizeTextCell as emt,
-  findTableRoot as tmt,
-  parseTableRows as workbookHelper1009,
-  mergeCellMaps as omt,
-  parseSpanAttr as bmt,
-  parseCssColor as workbookHelper1013,
-  parseInlineStyle as workbookHelper1010,
-  assignStyleMap as workbookHelper1011,
-  parseDiagonalBorder as workbookHelper1012,
-  $pt,
-  nmt,
-  rmt,
-  imt,
-  amt,
-  smt,
-  cmt,
-  lmt,
-  umt,
-  dmt,
-  fmt,
   pmt,
-  mmt,
-  hmt,
-  gmt,
-  _mt,
-  vmt,
-  ymt,
-  xmt,
-  Smt,
 } from "../../workbook/html-paste";
 
 import {
   validateWorkbook as Tpt,
   workbookR,
-  Bpt,
-  Vpt,
   _workbookA,
   _WorkbookI,
-  XLSX_VALIDATION_RULES as workbookBinding1955,
-  ensureXlsxValidationRulesInit as wpt,
-  validateSheets as Ept,
-  validateFonts as Dpt,
-  validateMergedCells as Opt,
   validateSheetCells as kpt,
   validateTables as Apt,
-  Lpt,
-  Rpt,
-  zpt,
-  Npt,
-  Ppt,
-  Fpt,
-  Ipt,
-  jpt,
-  Mpt,
 } from "../../workbook/xlsx-workbook-validate";
 
-import {
-  annotateDynamicArrayCells as opt,
-  ensureXldapMetadataType as _pt,
-} from "../../workbook/xlsx-dynamic-array-meta";
+import { annotateDynamicArrayCells as opt } from "../../workbook/xlsx-dynamic-array-meta";
 
-import {
-  wireFormulaAstRemapBoundaryHooks,
-  remapFormulaAst as workbookHelper1022,
-  exprContainsLambda as workbookHelper1008,
-  remapRangeRef as Bht,
-} from "../../workbook/formula-ast-remap";
-
-wireFormulaAstRemapBoundaryHooks({
-  remapRangeRef: (...args: any[]) => Bht(...args),
-});
+import { remapRangeRef as Bht } from "../../workbook/formula-ast-remap";
 
 import { layoutTreemapPlot as Cbe } from "../../workbook/chart-treemap-plot-layout";
 
-import {
-  layoutTreemapTiles as __layoutTreemapTilesWave105,
-  layoutTreemapTiles as Yye,
-  Qye,
-  workbookHelper476,
-} from "../../workbook/chart-treemap-tiles";
+import { layoutTreemapTiles as Yye } from "../../workbook/chart-treemap-tiles";
 
-import { buildPathOrdinalColorScale as workbookHelper477 } from "../../workbook/chart-path-colors";
+import { layoutOverlappingParentLabels as PSe } from "../../workbook/chart-treemap-tiles";
 
-import {
-  aggregateTreemapSeriesPaths as workbookHelper475,
-  Xye,
-  layoutOverlappingParentLabels as PSe,
-  isLeafUnderParent as workbookHelper566,
-  treemapLeafKey as workbookHelper565,
-  LSe,
-} from "../../workbook/chart-treemap-tiles";
+import { aggregateHistogramBins as _Se } from "../../workbook/chart-histogram-bins";
 
-import {
-  computeHistogramBins as workbookHelper555,
-  aggregateHistogramBins as _Se,
-  workbookHelper553,
-  hSe,
-  mSe,
-} from "../../workbook/chart-histogram-bins";
-
-import {
-  computeFunnelSegments as workbookHelper576,
-  paintFunnelBars as vCe,
-} from "../../workbook/chart-funnel-segments";
+import { paintFunnelBars as vCe } from "../../workbook/chart-funnel-segments";
 
 import {
   computeHiddenBoundaries as ewe,
   twe,
-  nwe,
-  ensureHiddenBoundaryCacheInit,
 } from "../../workbook/sheet-hidden-boundaries";
 
-import {
-  wireSlideBackgroundPaintBoundaryHooks,
-  paintSlideBackground as RTe,
-} from "../../workbook/slide-background-paint";
-
-wireSlideBackgroundPaintBoundaryHooks({
-  bh212: (...args: any[]) => workbookHelper212(...args),
-  bh208: (...args: any[]) => workbookHelper208(...args),
-});
+import { paintSlideBackground as RTe } from "../../workbook/slide-background-paint";
 
 import {
   invertMatrix as Alt,
   computeDeterminant as klt,
 } from "../../workbook/formula-matrix-inverse";
 
-import {
-  computeAxisAutoDomain as bye,
-  ceilToMajor as workbookHelper401,
-} from "../../workbook/chart-axis-auto-domain";
+import { computeAxisAutoDomain as bye } from "../../workbook/chart-axis-auto-domain";
 
-wireChartContinuousScaleBoundaryHooks({
-  defaultNiceCount: undefined as any,
-  majorUnitMap: undefined as any,
-});
-Object.defineProperties(__ccsHWave125, {
-  defaultNiceCount: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding844,
-  },
-  majorUnitMap: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding848,
-  },
-});
-
-import {
-  paintComboGroups as yxe,
-  buildComboRenderGroups as workbookHelper532,
-  rbe,
-  pxe,
-  xxe,
-  bxe,
-} from "../../workbook/chart-combo-groups";
+import { paintComboGroups as yxe } from "../../workbook/chart-combo-groups";
 
 import {
   densifyShapePath as dTe,
@@ -3234,208 +927,38 @@ import {
 import {
   resolveFloatingPlacement as jTe,
   resolvePlacementOrBBox as MTe,
-  workbookHelper642,
-  ATe,
-  kTe,
 } from "../../workbook/floating-placement";
 
 import {
-  buildComposeElementSnapshot as workbookHelper678,
-  snapshotParagraphs as workbookHelper685,
   tableCellsFromElement as iOe,
-  cellsPreviewText as aOe,
-  runPlainStyle as rOe,
-  snapshotCellRuns as workbookHelper686,
-  pickResolvedTextStyle as workbookHelper688,
-  unionCellsBbox,
   GDe,
-  workbookHelper682,
-  workbookHelper683,
-  WDe,
-  $De,
-  zDe,
-  workbookHelper680,
-  TOe,
-  workbookHelper684,
-  eOe,
-  _Oe,
-  SOe,
-  COe,
-  UDe,
 } from "../../workbook/compose-element-snapshot";
 
 import {
   buildSlideLayoutBlob as PDe,
-  exportLayoutBlob as FDe,
-  mapDrawElementProtos as IDe,
-  indexComposeAids as workbookHelper677,
   buildInheritedLayers as BDe,
-  applyOutlineLevelStyles as nOe,
-  backgroundFillColor as workbookHelper690,
-  backgroundFillImage as workbookHelper691,
-  imageAssetRef as workbookHelper692,
   attachOverlappingTableCells as vOe,
-  bboxToRect as workbookHelper693,
-  isBboxTuple as yOe,
-  overlapArea as bOe,
-  rectArea as xOe,
-  frameToLayoutRect as workbookHelper694,
-  trimNonEmpty as workbookHelper695,
-  round2 as workbookHelper696,
 } from "../../workbook/compose-element-snapshot";
-
-import {
-  wireFormulaYearfracBoundaryHooks,
-  yearFrac as workbookHelper884,
-  isLeapYear as workbookHelper882,
-  dateDiffDays as workbookHelper883,
-} from "../../workbook/formula-yearfrac";
-
-wireFormulaYearfracBoundaryHooks({
-  coerceDate: (...args: any[]) => workbookHelper848(...args),
-});
 
 // Thin aliases: three-chart-camera + chart-trendline + chart-scatter-scale + paint-images + constraint-layout + selection-style-grid drained (wave-97).
 
 var workbookHelper749 = workbookHelper749Compose;
 
-import {
-  ensureChartElementsInit,
-  The,
-  workbookBinding703,
-  Ehe,
-  workbookBinding704,
-  Dhe,
-  workbookBinding705,
-  Ohe,
-  khe,
-  jhe,
-  Nhe,
-  workbookBinding706,
-  workbookBinding707,
-  workbookBinding708,
-  workbookBinding709,
-  Lhe,
-  workbookBinding710,
-  Ahe,
-  Mhe,
-  Phe,
-  Fhe,
-  Ihe,
-  Rhe,
-  zhe,
-  Bhe,
-  workbookBinding711,
-  workbookBinding712,
-  Vhe,
-  Uhe,
-  workbookBinding713,
-  Khe,
-  workbookBinding714,
-  Hhe,
-  Whe,
-  Ghe,
-  qhe,
-  Jhe,
-  workbookBinding715,
-  Xhe,
-  Qhe,
-  workbookBinding716,
-  tge,
-  Yhe,
-  Zhe,
-  $he,
-  ege,
-  nge,
-  rge,
-  workbookBinding717,
-  ige,
-} from "../../workbook/chart-elements";
+import { The, Ohe, ige } from "../../workbook/chart-elements";
 
 // Thin alias: cluster ensure for Binding722 / chart asset init.
 
-import {
-  ensureImageConnectorInit,
-  Ige,
-  Lge,
-  zge,
-  Jge,
-  Yge,
-  Xge,
-  eve,
-  tve,
-  dve,
-  pve,
-  ave,
-  uve,
-  J_e,
-  $_e,
-  icFn353 as workbookHelper353,
-  icFn371 as workbookHelper371,
-  workbookBinding734,
-  q_e,
-  workbookBinding728,
-  workbookBinding735,
-  IPe,
-} from "../../workbook/image-connector";
+import { ensureImageConnectorInit } from "../../workbook/image-connector";
 
 import { roundedConnectorCorner as FPe } from "../../workbook/image-connector";
 
 var ensureImageConnectorCluster = ensureImageConnectorInit;
 
-import {
-  ensureChartAssetInit,
-  wireChartAssetBoundaryHooks,
-  Che,
-  sge,
-  cge,
-  workbookHelper347,
-  workbookHelper348,
-  workbookHelper352,
-  workbookBinding718,
-  workbookBinding720,
-  workbookBinding721,
-  workbookBinding722,
-  She,
-  yge,
-  Fge,
-  Nge,
-  Pge,
-  Zae,
-  Qae,
-} from "../../workbook/chart-asset";
+import { ensureChartAssetInit, Che, She } from "../../workbook/chart-asset";
 
 var ensureChartAssetCluster = ensureChartAssetInit;
 
-wireChartAssetBoundaryHooks({
-  mapDisplayBlanksAs: (name) => Zae(name),
-  mapParentLabelLayout: (name) => Qae(name),
-});
-
-import {
-  ensureTableVoInit,
-  fhe,
-  yhe,
-  xhe,
-  vhe,
-  bhe,
-  _he,
-  workbookBinding700,
-  workbookBinding701,
-  workbookBinding702,
-  lhe,
-  uhe,
-  dhe,
-  ohe,
-  she,
-  che,
-  phe,
-  mhe,
-  hhe,
-  ghe,
-  workbookHelper339,
-  workbookHelper340,
-} from "../../workbook/table-vo";
+import { ensureTableVoInit, fhe, yhe, xhe } from "../../workbook/table-vo";
 
 var ensureTableVoCluster = ensureTableVoInit;
 
@@ -3443,27 +966,17 @@ import {
   ensureChartsCollectionInit,
   workbookC,
   workbookS,
-  workbookBinding1297,
-  workbookBinding1298,
-  workbookBinding1299,
   REe,
   CEe,
-  workbookHelper655,
-  workbookHelper656,
-  workbookHelper657,
-  workbookHelper658,
 } from "../../workbook/charts-collection";
 
 var ensureChartsCollectionCluster = ensureChartsCollectionInit;
 
 import {
   ensureMermaidFlowchartInit,
-  $Ne,
   OPe,
   PPe,
   NPe,
-  workbookBinding1675,
-  workbookBinding1685,
 } from "../../workbook/mermaid-flowchart";
 
 var ensureMermaidFlowchartCluster = ensureMermaidFlowchartInit;
@@ -3474,25 +987,11 @@ var ensureDeckKindsCluster = ensureDeckKindsInit;
 
 import {
   ensureShapeElementInit,
-  workbookBinding736,
-  workbookBinding737,
-  workbookBinding738,
-  workbookBinding739,
-  mve,
-  hve,
-  gve,
-  _ve,
-  vve,
   normalizeShapeAddProps as hze,
-  requireShapeTarget as workbookHelper786,
 } from "../../workbook/shape-element";
 
 import {
   applyShapeElementPatch as fze,
-  applyShapeLinePatch as pze,
-  applyImageElementPatch as mze,
-  applyTextFramePatch as gze,
-  applyParagraphStylePatch as _ze,
   resolveFontSizeFromPtOrPx as vze,
 } from "../../workbook/shape-style-apply";
 
@@ -3502,19 +1001,7 @@ import {
   ensureSlidesCollectionInit,
   _workbookY,
   _workbookV,
-  workbookBinding1313,
 } from "../../workbook/slides-collection";
-
-import {
-  ensureUuidClusterInit,
-  allocateLocalId,
-  UEe,
-  BEe,
-  VEe,
-  workbookHelper659,
-  workbookBinding1312,
-  WEe,
-} from "../../workbook/stable-id";
 
 var ensureSlidesCollectionCluster = ensureSlidesCollectionInit;
 
@@ -3525,23 +1012,8 @@ import {
   createPairMap,
   workbookBinding1350,
   workbookBinding1351,
-  workbookBinding1352,
-  workbookBinding1353,
   workbookBinding1354,
-  workbookBinding1355,
-  workbookBinding1356,
-  workbookBinding1357,
-  workbookBinding1358,
-  workbookBinding1359,
-  workbookBinding1360,
-  workbookBinding1361,
   workbookBinding1362,
-  workbookBinding1363,
-  workbookBinding1364,
-  workbookBinding1365,
-  workbookBinding1366,
-  workbookBinding1367,
-  workbookBinding1368,
 } from "../../workbook/constraint-solver";
 
 var ensureConstraintSolverCluster = ensureConstraintSolverInit;
@@ -3564,35 +1036,16 @@ import {
   ensureTableElementInit,
   _workbookH,
   _workbookM,
-  workbookBinding1331,
-  workbookBinding1332,
-  workbookBinding1333,
   eDe,
-  tDe,
-  nDe,
-  rDe,
-  iDe,
-  aDe,
-  oDe,
-  sDe,
   cDe,
 } from "../../workbook/table-element";
 
 import {
   ensureTableRowRangeInit,
   YEe,
-  workbookBinding1321,
   QEe,
-  $Ee,
-  workbookBinding1316,
-  workbookBinding1317,
-  workbookBinding1323,
-  workbookBinding1324,
   JEe,
-  workbookBinding1314,
-  workbookBinding1315,
   _workbookG,
-  normalizeTableCellAnchor,
   workbookUnderscore,
 } from "../../workbook/table-row-range";
 
@@ -3604,166 +1057,18 @@ var ensureTableRowRangeCluster = ensureTableRowRangeInit;
 
 void Z_t;
 
-import {
-  ensureFormulaStatsInit,
-  workbookBinding1874,
-  YXe,
-  XXe,
-  workbookBinding1831,
-  workbookBinding1832,
-  workbookBinding1833,
-  workbookBinding1834,
-  workbookBinding1835,
-  workbookBinding1836,
-  workbookBinding1837,
-  workbookBinding1838,
-  workbookBinding1839,
-  workbookBinding1840,
-  workbookBinding1841,
-  c2e,
-  workbookBinding1842,
-  l2e,
-  u2e,
-  d2e,
-  workbookBinding1843,
-  workbookBinding1844,
-  f2e,
-  workbookBinding1845,
-  workbookBinding1846,
-  workbookBinding1847,
-  workbookBinding1848,
-  p2e,
-  m2e,
-  h2e,
-  g2e,
-  workbookBinding1849,
-  workbookBinding1850,
-  workbookBinding1851,
-  workbookBinding1852,
-  workbookBinding1853,
-  workbookBinding1854,
-  workbookBinding1855,
-  workbookBinding1856,
-  workbookBinding1857,
-  workbookBinding1858,
-  workbookBinding1859,
-  workbookBinding1860,
-  workbookBinding1861,
-  workbookBinding1862,
-  workbookBinding1863,
-  workbookBinding1864,
-  workbookBinding1865,
-  workbookBinding1866,
-  workbookBinding1867,
-  workbookBinding1868,
-  workbookBinding1869,
-  workbookBinding1870,
-  _2e,
-  v2e,
-  y2e,
-  workbookBinding1871,
-  b2e,
-  x2e,
-  S2e,
-  C2e,
-  w2e,
-  T2e,
-  E2e,
-  D2e,
-  O2e,
-  k2e,
-  A2e,
-  j2e,
-  M2e,
-  N2e,
-  P2e,
-  F2e,
-  I2e,
-  L2e,
-  R2e,
-  z2e,
-  B2e,
-  V2e,
-  H2e,
-  U2e,
-  W2e,
-  G2e,
-  K2e,
-  workbookBinding1872,
-  q2e,
-  workbookBinding1873,
-  J2e,
-  Y2e,
-  X2e,
-  Z2e,
-} from "../../workbook/formula-stats";
-
-import {
-  wireFormulaMatchBoundaryHooks,
-  matchLookup as DZe,
-  fmH as __fmHWave109,
-} from "../../workbook/formula-match";
+import { matchLookup as DZe } from "../../workbook/formula-match";
 
 import {
   uniqueColumns as Ost,
-  columnFingerprintKey as kst,
-  cellFingerprint as Ast,
   uniqueRows as Dst,
-  Est,
-  Tst,
 } from "../../workbook/formula-unique";
 
-import {
-  workbookHelper966,
-  yst,
-  Cst,
-  wst,
-} from "../../workbook/formula-lookup-text";
+import { normalizeCodeChildren as YIe } from "../../workbook/compose-code-children";
 
-import {
-  wireFormulaByrowBoundaryHooks,
-  fbyH as __fbyHWave127,
-  coerceByrowArray as Xot,
-  mapArrayValueCells as Zot,
-  normalizeByrowCell as workbookHelper964,
-  coerceByrowLambda as Qot,
-  firstCellOrValue as $ot,
-  unwrapByrowResult as est,
-  isByrowLambda as tst,
-} from "../../workbook/formula-byrow";
-
-import {
-  normalizeCodeChildren as YIe,
-  isWhitespaceOnlyCodeChild as XIe,
-} from "../../workbook/compose-code-children";
-
-import {
-  walkCodeHtmlIntoParagraphs as workbookHelper763,
-  pushCodeTextRuns as gAe,
-  emptyCodeParagraph as workbookHelper764,
-  codeRunStyleFromClasses as _Ae,
-  splitClassList as yAe,
-} from "../../workbook/compose-code-html-walk";
-import {
-  maxVisibleDataLabelFontPx as tSe,
-  isOutEndDataLabel as nSe,
-} from "../../workbook/chart-data-label-font";
-import {
-  resolvedFontSize as KDe,
-  resolvedTextStyle as qDe,
-  mergeResolvedTextStyle as JDe,
-  patchTextFrameStyle as YDe,
-  applyParagraphTextOverrides as tOe,
-} from "../../workbook/text-frame-resolve";
+import { maxVisibleDataLabelFontPx as tSe } from "../../workbook/chart-data-label-font";
 import { resolveMarkerColor as QCe } from "../../workbook/chart-marker-color";
 import { resolveShapeEffects as Kwe } from "../../workbook/shape-effects";
-import {
-  toImageBytes as dYe,
-  mergePresentationImages as fYe,
-  imageHasPayload as pYe,
-  stripEmptyPresentationImages as mYe,
-  clearMissingImageReference as hYe,
-} from "../../workbook/presentation-images";
 import {
   normalizeSheetCatalog as jgt,
   Agt,
@@ -3772,205 +1077,53 @@ import { newtonRaphson as vrt } from "../../workbook/formula-newton";
 
 import {
   edate as s1e,
-  dec2bin as P1e,
-  hex2bin as z1e,
-  oct2bin as o0e,
-  complexMin as X1e,
-  complexCompare as r0e,
-  complexPower as Y1e,
-  hlookupSum as h0e,
-  chooseValue as s2e,
-  complexAbs as workbookHelper889,
-  complexArg as workbookHelper890,
-  collectNonEmptyArgs as workbookHelper895,
   F1e,
   I1e,
   q1e,
-  $1e,
-  coerceFiniteNumbers,
-  workbookHelper917,
-  formulaAndFromArgs,
-  $0e,
-  V1e,
-  i2e,
-  o2e,
   d4e,
-  c1e,
-  h1e,
-  workbookHelper885,
-  E1e,
-  D1e,
-  O1e,
-  k1e,
-  A1e,
-  j1e,
-  M1e,
-  c0e,
-  x1e,
-  S1e,
-  C1e,
-  w1e,
-  n4e,
-  r4e,
-  workbookHelper910,
-  workbookHelper911,
-  T1e,
-  L1e,
-  workbookHelper887,
-  workbookHelper888,
-  R1e,
-  B1e,
-  t0e,
   n0e,
-  s0e,
   n2e,
-  Vot,
-  t2e,
-  r2e,
-  $2e,
-  Cot,
-  workbookHelper963,
-  Bot,
-  workbookHelper965,
-  Tot,
-  Eot,
   Dot,
-  workbookHelper962,
-  workbookBinding1934,
-  ensureEvalContextStackInit,
-  workbookHelper924,
-  workbookHelper925,
-  k8e,
 } from "../../workbook/formula-eng-mids";
 
 import {
   monthsBetween as _9e,
   isSameMonthEnd as N9e,
   countMonthSteps as F9e,
-  workbookHelper930,
-  workbookHelper931,
-  workbookHelper932,
-  workbookHelper933,
-  H7e,
-  G7e,
-  workbookHelper935,
-  C9e,
-  A9e,
-  workbookHelper936,
-  workbookHelper880,
-  workbookHelper881,
-  workbookHelper934,
-  l1e,
-  d1e,
-  f1e,
-  p1e,
-  m1e,
   g1e,
-  _1e,
-  v1e,
-  b1e,
   Qnt,
-  Met,
-  workbookHelper937,
-  workbookHelper938,
-  stt,
-  ltt,
-  dtt,
-  K8e,
 } from "../../workbook/formula-date-months";
-import {
-  wireFormulaA1AddressBoundaryHooks,
-  faaH as __faaHWave128,
-  workbookHelper375,
-} from "../../workbook/formula-a1-address";
 import { transposeMatrix as A8e } from "../../workbook/formula-matrix-transpose";
-import {
-  wireFormulaDateAddMonthsBoundaryHooks,
-  fdamH as __fdamHWave128,
-  addMonthsClamped as A7e,
-} from "../../workbook/formula-date-add-months";
+import { addMonthsClamped as A7e } from "../../workbook/formula-date-add-months";
 import { normalizeWorkbookDocShape as cvt } from "../../workbook/workbook-doc-shape";
-import {
-  wireChartBinWidthBoundaryHooks,
-  cbwH as __cbwHWave128,
-  resolveHistogramBinWidth as gSe,
-  workbookHelper554,
-} from "../../workbook/chart-bin-width";
+import { resolveHistogramBinWidth as gSe } from "../../workbook/chart-bin-width";
 import { paintCheckboxBox as owe } from "../../workbook/paint-checkbox";
+import { resolveShapeFill as Gwe } from "../../workbook/shape-fill-resolve";
+import { paintMaskedImage as qwe } from "../../workbook/shape-geometry-apply";
 import {
-  wireShapeFillResolveBoundaryHooks,
-  sfrH as __sfrHWave128,
-  resolveShapeFill as Gwe,
-} from "../../workbook/shape-fill-resolve";
-import {
-  applyShapeGeometryPaint as workbookHelper614,
-  paintMaskedImage as qwe,
-} from "../../workbook/shape-geometry-apply";
-import {
-  resolveSeriesFill as workbookHelper470,
-  resolveLineSeriesStroke as workbookHelper481,
-  paintTrendlineStroke as workbookHelper523,
-  paintDirectionTriangle as workbookHelper596,
-  drawPictureBitmap as workbookHelper617,
   loadSlideGroupBitmaps as _Ee,
-  mergeComposeStyle as workbookHelper700,
   Xwe,
   Zwe,
-  workbookHelper598,
-  WOe,
 } from "../../workbook/mid-paint-helpers";
-import { attachComposeChildren as $Oe } from "../../workbook/compose-attach-children";
 import {
-  wireChartCategoryTimeBoundaryHooks,
-  cctH as __cctHWave127,
   filterCategoryDomain as zye,
   buildCategorySeries as Bye,
-  planCategoryTicks as workbookHelper445,
-  resolveTimeUnit as workbookHelper447,
-  floorToTimeUnit as workbookHelper448,
-  categoryTickStep as workbookHelper449,
-  buildTimeCategoryTicks as workbookHelper450,
-  workbookHelper444,
-  workbookHelper446,
-  workbookHelper451,
-  workbookHelper452,
 } from "../../workbook/chart-category-time";
 import {
-  wireChartLabelOverflowBoundaryHooks,
-  cloH as __cloHWave127,
   categoryLabelOverflowPx as Rxe,
   minCategoryLabelGapPx as Vxe,
 } from "../../workbook/chart-label-overflow";
 
-wireFormulaMatchBoundaryHooks({
-  flattenArgs: (...args: any[]) => workbookHelper841(...args),
-  NA_ERROR: undefined as any,
-});
-Object.defineProperty(__fmHWave109, "NA_ERROR", {
-  enumerable: true,
-  configurable: true,
-  get: () => workbookBinding1839,
-});
-
 import {
   ensureFormulaRegistryInit,
-  $dt,
   Xdt,
   Zdt,
 } from "../../workbook/formula-registry";
 import {
-  ensurePresentationSlideInit,
   ensureSlidesListInit,
-  Z$,
   cLe,
-  X$,
   sLe,
-  tLe,
-  nLe,
-  aLe,
-  oLe,
-  rLe,
-  iLe,
+  X$,
 } from "../../workbook/presentation-slide";
 
 // Thin alias: cluster ensure for formula engine stats catalog.
@@ -3980,184 +1133,19 @@ var ensureFormulaRegistryCluster = ensureFormulaRegistryInit;
 var ensureSlidesListCluster = ensureSlidesListInit;
 
 import {
-  addFromCodePlugin as __addFromCodePluginWave105,
   addFromCodePlugin as cAe,
   hljsTokenStyle as vAe,
-  lAe,
-  uAe,
-  dAe,
-  fAe,
-  pAe,
-  mAe,
-  hAe,
 } from "../../workbook/presentation-code-block";
 
-import { VJe, HJe, UJe, WJe, GJe } from "../../workbook/embedded-font-codec";
+import { IIe } from "../../workbook/presentation-plugin-add";
 
-import {
-  HLe,
-  ensurePresentationStubContextInit,
-  workbookHelper825,
-  gYe,
-} from "../../workbook/presentation-stub-context";
+import { bAe } from "../../workbook/presentation-code-block";
 
-import {
-  workbookHelper338,
-  workbookBinding686,
-  ensureGranolaLogInit,
-} from "../../workbook/granola-log";
-
-import {
-  Jve,
-  Yve,
-  Xve,
-  workbookHelper378,
-  workbookBinding820,
-  workbookBinding821,
-  workbookBinding822,
-  ensureSchemaMetaInit,
-} from "../../workbook/schema-meta";
-
-import { VIe, HIe, UIe, eLe } from "../../workbook/presentation-plugin-add";
-
-import {
-  IIe,
-  wIe,
-  wirePresentationPluginAddBoundaryHooks,
-  ppaH as __ppaHWave135,
-} from "../../workbook/presentation-plugin-add";
-
-import {
-  bAe,
-  workbookHelper766,
-  xAe,
-  workbookHelper767,
-} from "../../workbook/presentation-code-block";
-
-wirePresentationPluginAddBoundaryHooks({
-  mermaidToElements: (...args: any[]) => mermaidToElements(...args),
-});
-
-import {
-  ensureMermaidSlideHelpersInit,
-  workbookBinding1592,
-  workbookBinding1593,
-  workbookBinding1594,
-  workbookBinding1595,
-  workbookBinding1596,
-  workbookBinding1597,
-  workbookBinding1598,
-  workbookBinding1599,
-  workbookBinding1600,
-  _X,
-  workbookBinding1601,
-  workbookBinding1602,
-  workbookBinding1603,
-  workbookBinding1604,
-  workbookBinding1605,
-  workbookBinding1606,
-  workbookBinding1607,
-  workbookBinding1608,
-  workbookBinding1609,
-  workbookBinding1610,
-  workbookBinding1611,
-  workbookBinding1612,
-  workbookBinding1613,
-  workbookBinding1614,
-  workbookBinding1615,
-  workbookBinding1617,
-  workbookBinding1619,
-  workbookBinding1621,
-  workbookBinding1622,
-  workbookBinding1623,
-  workbookBinding1624,
-  workbookBinding1625,
-  workbookBinding1626,
-  workbookBinding1627,
-  workbookBinding1628,
-  workbookBinding1629,
-  workbookBinding1630,
-  workbookBinding1631,
-  workbookBinding1632,
-  workbookBinding1633,
-  workbookBinding1634,
-  workbookBinding1635,
-  $X,
-  workbookBinding1636,
-  workbookBinding1637,
-  workbookBinding1638,
-  workbookBinding1639,
-  workbookBinding1640,
-  workbookBinding1641,
-  workbookBinding1642,
-  workbookBinding1643,
-  workbookBinding1644,
-  workbookBinding1645,
-  workbookBinding1646,
-  workbookBinding1647,
-  workbookBinding1648,
-  workbookBinding1649,
-  workbookBinding1650,
-  workbookBinding1651,
-  workbookBinding1652,
-  _Z,
-  workbookBinding1653,
-  workbookBinding1654,
-  workbookBinding1655,
-  workbookBinding1656,
-  workbookBinding1657,
-  workbookBinding1658,
-  workbookBinding1659,
-  workbookBinding1660,
-  workbookBinding1661,
-  workbookBinding1662,
-  CAe,
-  wAe,
-  workbookBinding1663,
-  TAe,
-  EAe,
-  DAe,
-  OAe,
-  kAe,
-  AAe,
-  jAe,
-  MAe,
-  NAe,
-  PAe,
-  FAe,
-  IAe,
-  LAe,
-  RAe,
-  zAe,
-  VAe,
-  UAe,
-  WAe,
-  GAe,
-  workbookBinding1664,
-  qAe,
-  workbookBinding1665,
-  JAe,
-  workbookBinding1666,
-  YAe,
-  workbookBinding1667,
-  ZAe,
-  workbookBinding1668,
-  SAe,
-  workbookBinding1616,
-  workbookBinding1618,
-  workbookBinding1620,
-  BAe,
-  HAe,
-  KAe,
-  XAe,
-  QAe,
-} from "../../workbook/mermaid-slide-helpers";
+import { SAe, QAe } from "../../workbook/mermaid-slide-helpers";
 
 // Thin alias: cluster ensure for mermaid slide helpers (Binding1592…QAe).
 
 import {
-  ensureTableStylesInit,
-  workbookBinding687,
   workbookBinding688,
   Ame,
   jme,
@@ -4177,7 +1165,6 @@ import {
   Ume,
   _w,
   Qme,
-  $me,
   ehe,
   workbookBinding691,
   workbookBinding692,
@@ -4194,7 +1181,6 @@ import {
   workbookBinding699,
   ahe,
   normalizeStyleNameKey,
-  Wme,
   Gme,
   resolvePresetSchemeColor,
   Kme,
@@ -4203,37 +1189,10 @@ import {
   Yme,
   Xme,
   Zme,
-  resolveTableStyleByName,
-  pye,
-  gye,
-  workbookBinding836,
-  workbookBinding835,
+  $me,
 } from "../../workbook/table-styles";
 
-import {
-  wireTableCellStyleBandsBoundaryHooks,
-  resolveTableCellStyleBands as workbookHelper384,
-} from "../../workbook/table-styles";
-
-import {
-  resolveTableRegionStyle as workbookHelper380,
-  cye,
-  lye,
-  resolveBandFillCss as workbookHelper381,
-  resolveBorderStroke as workbookHelper382,
-  pickStripeStyle as workbookHelper383,
-  mergeBandFont as workbookHelper385,
-  uye,
-  dye,
-  fye,
-  mergeTableBandFonts as workbookHelper386,
-  mye,
-  hye,
-} from "../../workbook/table-styles";
-
-wireTableCellStyleBandsBoundaryHooks({
-  regionStyle: (...args: any[]) => workbookHelper380(...args),
-});
+import { dye, fye } from "../../workbook/table-styles";
 
 void workbookBinding688;
 void Ame;
@@ -4282,7 +1241,6 @@ void Zme;
 // Thin alias: cluster ensure for Excel table/pivot styles (Nme…ahe).
 
 import {
-  ensureGoogleSlidesClusterInit,
   ensurePresentationTemplatesInit as dJe,
   ensureGoogleSlidesUnitsInit as pJe,
   ensureGoogleSlidesAdapterInit as SJe,
@@ -4290,7 +1248,6 @@ import {
   sJe,
   cJe,
   lJe,
-  uJe,
   fJe,
   workbookBinding1807,
   workbookBinding1808,
@@ -4303,7 +1260,6 @@ import {
   _Je,
   vJe,
   yJe,
-  bJe,
   xJe,
   GoogleSlidesAdapter,
 } from "../../workbook/google-slides-adapter";
@@ -4331,7 +1287,6 @@ void pJe;
 // Thin alias: cluster ensure for Google Slides adapter (oJe/pJe/SJe).
 
 import {
-  ensureComposeDslInit,
   ensureComposeLayoutMetaInit as DOe,
   ensureComposeSizeHelpersInit as workbookBinding1499,
   ensureComposeElementBuildersInit as OOe,
@@ -4345,7 +1300,6 @@ import {
   workbookBinding1496,
   workbookBinding1497,
   workbookBinding1498,
-  $K,
   workbookBinding1500,
   workbookBinding1501,
   workbookBinding1502,
@@ -4375,6 +1329,7 @@ import {
   workbookBinding1525,
   workbookBinding1526,
   workbookBinding1527,
+  $K,
 } from "../../workbook/compose-dsl";
 
 void workbookBinding1490;
@@ -4459,314 +1414,79 @@ var _Xe: any = new Proxy(function () {} as any, {
 
 import {
   fallbackRandomUuid as Uue,
-  randomUuid as workbookHelper298,
-  randomBase36Id as workbookHelper299,
-  isStableIdToken as Wue,
-  hashToBase36Id as workbookHelper300,
-  normalizeOrHashId as workbookHelper301,
   bracedUuidUpper as workbookV,
-  randomPositiveIntString as Gue,
-  nextNumericIdString as Kue,
-  fnv1aHashString as que,
-  stripIdPrefix as Jue,
   ensureStableIdConstantsInit as workbookH,
-  uuidReplaceRe as Yue,
-  base36Alphabet as workbookBinding645,
-  stableIdTokenRe as Xue,
-  u64Mask as workbookBinding646,
-  fnvOffsetBasis as Zue,
-  fnvPrime as Que,
-  mulberryMultiplier as $ue,
-  mulberryIncrement as ede,
-  composeScopedId as workbookHelper302,
-  resolveLocalIdAlias as tde,
-  stripPrefixedLocalId as nde,
-  defaultHashIdLength as rde,
-  ensureStableIdClusterInit as workbookBinding647,
 } from "../../workbook/stable-id";
 
+import { resolvePresentationAid as ZRe } from "../../workbook/presentation-aid";
 import {
-  ensurePresentationAidInit as eze,
-  findElementByAid as JRe,
-  normalizeAidPrefix as YRe,
-  resolvePresentationAid as ZRe,
-  findSlideById as workbookBinding1749,
-  resolveTextRangeAid as QRe,
-  splitAid as $Re,
-} from "../../workbook/presentation-aid";
-import {
-  wirePresentationRefBoundaryHooks,
-  prefH as __prefHWave126,
   setPresentationRefSlideClass,
   ensureDetachedTextValue as dze,
   parseSchemeColorRef as yze,
   elementToAid as bze,
 } from "../../workbook/presentation-ref";
 
-import {
-  rze,
-  ize,
-  workbookHelper785,
-  workbookHelper787,
-  aze,
-  oze,
-  sze,
-  cze,
-  lze,
-  uze,
-  workbookHelper788,
-} from "../../workbook/presentation-apply";
+import { rze } from "../../workbook/presentation-apply";
 
 import {
-  createStyleReference as workbookHelper303,
   ensureElementStyleReferences as ide,
   isPositiveNumericId as ade,
   SlideElement as _workbookZ,
   ensureSlideElementInit as workbookB,
 } from "../../workbook/slide-element";
 
-import {
-  parseContentTypeMime as ode,
-  sniffImageMimeFromBytes as workbookBinding648,
-  ensureMimeSniffInit as sde,
-  bytesMatchAscii as workbookBinding649,
-  jpegSofMarkerCodes as cde,
-  readPngSize as lde,
-  readGifSize as ude,
-  readJpegSize as dde,
-  readWebpSize as fde,
-  probeImageSize as workbookBinding650,
-  ensureImageDimensionsInit as pde,
-  clampNumber as workbookBinding651,
-  makePercentRect as workbookBinding652,
-  computeObjectFitRects as workbookBinding653,
-  computeContainLayout as workbookBinding654,
-  ensureImageObjectFitInit as mde,
-} from "../../workbook/image-mime";
+import { parseContentTypeMime as ode } from "../../workbook/image-mime";
 
 import {
   resolveBorderRadiusToken as hde,
-  borderRadiusTokens as gde,
   ensureBorderRadiusTokensInit as _de,
-  parseShapeUtilityClasses as workbookHelper304,
-  ensureShapeUtilityInit as workbookBinding655,
-  trimClassName as vde,
-  parseClassNameStyle as yde,
-  coerceBorderRadiusPx as workbookHelper305,
   resolveShadowEffectReference as bde,
 } from "../../workbook/shape-utility";
 
 import {
   insertAxisElbow as xde,
-  pathCommandsToSimplifiedPoints as Sde,
-  simplifyPolyline as workbookHelper306,
-  pointsNearEqual as workbookHelper307,
-  pointsBBox as workbookHelper308,
-  rectCenter as workbookHelper309,
-  nearestRectEdgeToward as Cde,
-  dominantRectSide as wde,
-  scaleOffset as Tde,
-  isAxisMonotonicPolyline as Ede,
-  pointsEqual as Dde,
-  isAxisCollinear as Ode,
-  rectSideHit as kde,
-  normalizeVector as Ade,
-  ratioToFixedPercent as workbookHelper310,
   clampFixedPercent as jde,
 } from "../../workbook/path-geometry";
 
 import {
-  isPlaceholderSchemeColor as Uwe,
-  resolvePlaceholderColor as workbookHelper610,
-  mapFillPlaceholderColor as Wwe,
-  applyCanvasShadow as workbookHelper612,
-  clearCanvasShadow as workbookHelper613,
-  bezierPointAt as fTe,
-  cubicBezierLength as workbookHelper624,
-  cubicBezierParamAtLength as workbookHelper625,
-  normalizeVector2 as workbookHelper628,
-  resolveLineStyleProto as workbookHelper630,
-} from "../../workbook/bezier-stroke";
-
-import {
-  splitCubicBezier as workbookHelper626,
-  lerpPoint2D as workbookHelper627,
-} from "../../workbook/path-geometry";
-
-import {
-  ROUND_RECT_ADJ_MAX as workbookBinding656,
-  clampRoundRectAdj as Nde,
-  buildRoundRectAdjList as $S,
   ensureRoundRectAdjInit as Pde,
   stripUrlPath as Fde,
-  mimeFromPathExtension as Ide,
-  normalizeCropFraction as workbookHelper311,
-  decodeBase64ToBytes as Lde,
-  encodeBytesToBase64 as Rde,
-  isBinaryBuffer as zde,
-  copyUint8Array as Bde,
-  parseDataUrlBase64 as Vde,
-  normalizeImagePayload as workbookHelper312,
-  normalizeImageReplaceProps as workbookHelper313,
-  normalizeImageReplaceProps as Hde,
-  hasImageContent as Ude,
-  normalizeImageOptions as Wde,
-  withDefaultObjectFit as Gde,
   composeImageAid as Kde,
-  DEFAULT_OCTET_STREAM as workbookBinding657,
-  imageExtensionMimeMap as qde,
-  clampUnit as workbookBinding658,
   reverseShapeGeometryNameMap as Jde,
-  hasImageSourceFields as workbookBinding659,
-  ensureImageSourceInit,
 } from "../../workbook/image-source";
 
 import {
-  ImageElement as workbookBinding660,
-  ensureImageElementInit,
-} from "../../workbook/image-element";
-
-import {
   buildThreadAddOp as Yde,
-  buildThreadSelector as Xde,
-  buildChartAddOp as Qde,
-  buildChartSetOp as $de,
-  buildChartSelector as tfe,
-  buildConditionalFormatAddOp as mfe,
-  colorInputToConfig as workbookHelper319,
   buildSparklineSetOp as Sfe,
-  buildSparklineAddOp as Cfe,
-  buildSparklineSelector as wfe,
-  buildDataValidationSetOp as Efe,
-  buildShapeAddOp as Pfe,
-  buildShapeSetOp as Ffe,
-  buildShapeSelector as Ife,
-  buildImageAddOp as Vfe,
-  buildImageSetOp as Hfe,
 } from "../../workbook/mutation-ops";
 
-import {
-  getAttachedWorksheet as workbookHelper333,
-  getWorksheetOwnerMap,
-} from "../../workbook/worksheet-attachment";
-
-import {
-  ConditionalFormattings as xpe,
-  RangeConditionalFormats as Spe,
-  ensureConditionalFormatInit as wpe,
-} from "../../workbook/conditional-format";
-
-import {
-  DataValidations as zpe,
-  RangeDataValidation as workbookBinding665,
-  ensureDataValidationInit as Bpe,
-} from "../../workbook/data-validation";
+import { ensureDataValidationInit as Bpe } from "../../workbook/data-validation";
 
 import {
   tokenizeFormula as WorkbookR,
   parseA1CellRef as WorkbookI,
   parseWholeColumnRef as workbookL,
   columnNumberToLetters as workbookP,
-  columnLettersToNumber as workbookHelper329,
-  parseFormula as workbookHelper328,
   ensureFormulaInit as workbookF,
 } from "../../workbook/formula";
 
-import {
-  isArrayValue as workbookHelper32,
-  getRangeMetadata as workbookHelper36,
-  evaluateFormulaNode as workbookHelper38,
-  isErrorValue as workbookHelper59,
-  ensureFormulaArrayInit as $u,
-} from "../../workbook/formula-array";
-
-import {
-  fillRangeFrom as dme,
-  isCellInBounds as fme,
-  detectFillDirection as pme,
-  mapFillSourceCell as mme,
-  serializeDateOrNull as workbookHelper332,
-  coerceExcelSerialToDate as gme,
-  coerceCellTypedValue as workbookHelper336,
-  ensureRangeFillInit as hme,
-} from "../../workbook/range-fill";
-import {
-  shiftA1FormulaRefs as workbookHelper334,
-  convertR1C1ToA1 as vme,
-  convertA1ToR1C1 as yme,
-} from "../../workbook/formula-address";
-
-import {
-  Range as workbookBinding672Import,
-  ensureRangeInit,
-  EXCEL_EPOCH_UTC_MS,
-  MS_PER_DAY,
-  MAX_WORKSHEET_ROWS,
-  MAX_WORKSHEET_COLS,
-} from "../../workbook/range";
+import { fillRangeFrom as dme } from "../../workbook/range-fill";
+import { Range as workbookBinding672Import } from "../../workbook/range";
 const Range = workbookBinding672Import;
 
-import {
-  PivotCaches as workbookBinding676Import,
-  ensurePivotCachesInit,
-  wirePivotCachesBoundaryHooks,
-  ensurePivotCacheModelInit,
-  PivotCacheModel,
-  hydrateCacheFields,
-} from "../../workbook/pivot-caches";
+import { PivotCaches as workbookBinding676Import } from "../../workbook/pivot-caches";
 const PivotCaches = workbookBinding676Import;
 
 import {
   Slicer as workbookBinding683Import,
   Slicers as workbookBinding684Import,
-  ensureSlicerInit,
-  ensureSlicersInit,
 } from "../../workbook/slicers";
 const Slicer = workbookBinding683Import;
 const Slicers = workbookBinding684Import;
 
-import {
-  PivotTable as workbookBinding369Import,
-  ensurePivotTableInit,
-  wirePivotTableBoundaryHooks,
-  getPivotTableProto,
-  getPivotCacheProto,
-  getPivotTableSource,
-  createOrReusePivotTable,
-  pivotAxisEnum,
-  pivotAxisToken,
-  ensurePivotLayoutInit,
-  cellHintKey as workbookHelper24,
-  parseCellHintKey,
-  PivotLayout,
-} from "../../workbook/pivot-table";
+import { PivotTable as workbookBinding369Import } from "../../workbook/pivot-table";
 const PivotTable = workbookBinding369Import;
 
-import {
-  ensurePivotFieldsInit,
-  ensurePivotFieldEnumsInit,
-  ensurePivotShowAsInit,
-  ensurePivotDataFieldInit,
-  ensurePivotHierarchyClusterInit,
-  ensurePivotHierarchiesInit,
-  ensurePivotFieldInit,
-  ensurePivotHierarchyInit,
-  ensurePivotDataHierarchiesInit,
-  PivotSummarizeBy,
-  PivotShowAsCalculation,
-  PivotShowAs,
-  PivotDataField,
-  PivotField,
-  PivotHierarchy,
-  PivotHierarchies,
-  PivotDataHierarchies,
-  refreshPivotTableLayout,
-  getPivotFieldFromHierarchy,
-  dateFilterToken,
-  labelFilterToken,
-  valueFilterToken,
-} from "../../workbook/pivot-fields";
-import { PivotLayoutType } from "../../workbook/pivot-table";
 const appInitialIit = ensureD3ScaleClusterInit;
 const AppInitialRrt = ensureD3ShapeClusterInit;
 const AppInitialQat = ensureD3FormatClusterInit;
@@ -4794,966 +1514,49 @@ const VideoFrame = (
     VideoFrame?: typeof ImageBitmap;
   }
 ).VideoFrame;
-import { A, D, l, n, nt, r, S } from "../lodash-reduce-runtime";
-import { K, M } from "../lodash-base-for";
-import { n as isEmptyN } from "../lodash-is-empty";
+import { D, S } from "../lodash-reduce-runtime";
+import { K } from "../lodash-base-for";
+import { j, Jn, tr, v, Zn } from "../../workbook/presentation-protobuf";
+import { d, I, p, Z } from "../../workbook/spreadsheet-protobuf";
+import { oye } from "../../workbook/merged-range-index";
 import {
-  normalizeA1Token,
-  rowTokenToIndex,
-  parseSheetRef,
-  columnWidthPx,
-  lettersToColIndex,
-  pointsToPixels,
-  initAddressMetrics,
-  formatA1,
-  defaultCharWidth,
-  indexedExcelColor,
-  formatA1Range,
-  parseA1Range,
-  colIndexToLetters,
-  initAddressUtils,
-  boundsIntersect,
-  boundsSize,
-  oleColorToCss,
-  pxToCharCount,
-  pixelsToPoints,
-  cellPaddingForFontSize,
-} from "../../utils/spreadsheet-address-utils";
-import {
-  An as _presentationAn,
-  Bn as _presentationBn,
-  Cn as _presentationCn,
-  Cr as _presentationCr,
-  Dn as _presentationDn,
-  En as _presentationEn,
-  Fn as _presentationFn,
-  Gn as _presentationGn,
-  Hn as _presentationHn,
-  In as _presentationIn,
-  Jn as _presentationJn,
-  Kn as _presentationKn,
-  Ln as _presentationLn,
-  Mn as _presentationMn,
-  $n as _presentationN,
-  Nn as _presentationNn,
-  On as _presentationOn,
-  Pn as _presentationPn,
-  Rn as _presentationRn,
-  Sr as _presentationSr,
-  Tn as _presentationTn,
-  Un as _presentationUn,
-  Vn as _presentationVn,
-  Wn as _presentationWn,
-  Yn as _presentationYn,
-  Zn as _presentationZn,
-  An,
-  b,
-  Bn,
-  br,
-  C,
-  Cn,
-  Cr,
-  D as presentationD,
-  Dn,
-  $ as presentationDollar,
-  dr,
-  En,
-  Fn,
-  Gn,
-  gr,
-  Hn,
-  In,
-  j,
-  Jn,
-  Kn,
-  Ln,
-  lr,
-  Mn,
-  $n as presentationN,
-  Nn,
-  nr,
-  On,
-  Pn,
-  pr,
-  qn,
-  Qt,
-  _r as presentationR,
-  Rn,
-  rr,
-  S as presentationS,
-  sn,
-  Sr,
-  Tn,
-  tr,
-  tt,
-  Un,
-  ur,
-  v,
-  Vn,
-  Wn,
-  wr,
-  x,
-  xn,
-  Yn,
-  Zn,
-} from "../../workbook/presentation-protobuf";
-import {
-  Cn as spreadsheetCn,
-  d,
-  En as spreadsheetEn,
-  F,
-  Ft,
-  I,
-  j as spreadsheetJ,
-  N,
-  p,
-  Sn,
-  Vn as spreadsheetVn,
-  yt,
-  Z,
-  zt,
-} from "../../workbook/spreadsheet-protobuf";
-import {
-  workbookBinding833,
-  workbookHelper379,
-  oye,
-} from "../../workbook/merged-range-index";
-import {
-  workbookBinding1387,
-  workbookBinding1388,
-  workbookBinding1389,
-  ensureSpeakerNotesInit,
-} from "../../workbook/speaker-notes";
-
-import {
-  workbookBinding1294,
-  workbookBinding1295,
-  workbookBinding1296,
-  workbookBinding1338,
-  workbookBinding1339,
-  workbookBinding1340,
-  workbookBinding1341,
-  workbookBinding1342,
-  workbookBinding1343,
-  workbookBinding1344,
-  xEe,
-  SEe,
-  uDe,
-  ensureSlideLayoutInit,
   _workbookB,
   _workbookF,
-  workbookBinding1302,
-  workbookBinding1304,
-  workbookBinding1335,
-  workbookBinding1336,
-  _U,
   _workbookX,
-  workbookBinding1303,
-  zEe,
   _workbookP,
-  workbookBinding1337,
-  lDe,
-  ensureSlideImagesInit,
-  ensureSlideEmbeddedArtifactInit,
-  ensureSlideArtifactsInit,
-  ensureSlideTablesInit,
-  ensureSlideSmartArtInit,
-  ensureSlideSmartArtsCollectionInit,
-  workbookBinding1345,
-  workbookBinding1346,
-  dDe,
-  fDe,
-  ensureSlideLayoutsMastersInit,
 } from "../../workbook/slide-layout";
-import {
-  OLe,
-  DLe,
-  kLe,
-  ALe,
-  jLe,
-  ensurePresentationScriptsInit,
-} from "../../workbook/presentation-scripts";
-import {
-  DXe,
-  OXe,
-  kXe,
-  ensureProtoItemCollectionInit,
-} from "../../workbook/proto-item-collection";
-
-import {
-  npt,
-  ipt,
-  rpt,
-  ensureTableAreaResolverInit,
-} from "../../workbook/table-area-resolver";
-
-import {
-  workbookBinding1952,
-  workbookBinding1953,
-  workbookBinding1954,
-  xpt,
-  Spt,
-  Cpt,
-  ensureDynamicArrayMetaInit,
-} from "../../workbook/dynamic-array-meta";
-
-import {
-  workbookBinding1963,
-  Jht,
-  Yht,
-  Xht,
-  ensureAliasPatchRecorderInit,
-} from "../../workbook/alias-patch-recorder";
-
-import {
-  workbookBinding1966,
-  Mgt,
-  Ngt,
-  ensureWorksheetTopologyInit,
-} from "../../workbook/worksheet-topology";
-
-import {
-  workbookBinding1985,
-  workbookBinding1986,
-  workbookBinding1987,
-  workbookBinding1988,
-  workbookBinding1989,
-  workbookBinding1990,
-  workbookBinding1991,
-  workbookBinding1992,
-  Y_t,
-  ensureColRowAddressInit,
-} from "../../workbook/col-row-address";
-
-import {
-  workbookBinding1993,
-  ovt,
-  workbookBinding1994,
-  workbookBinding1995,
-  svt,
-  ensureLazyWorkbookLoadersInit,
-} from "../../workbook/lazy-workbook-loaders";
-
-import {
-  _workbookS,
-  ensureWorkbookSInit,
-  vYe,
-  _workbookO,
-  workbookBinding1817,
-  yYe,
-} from "../../workbook/presentation-doc";
+import { _workbookS, _workbookO } from "../../workbook/presentation-doc";
 
 import {
   WorkbookN,
-  ensureWorkbookNInit,
   __workbookT,
-  workbookBinding1996,
-  dvt,
-  fvt,
-  pvt,
-  mvt,
-  hvt,
-  gvt,
-  _vt,
-  workbookBinding1997,
-  workbookBinding1998,
-  vvt,
-  workbookBinding1999,
-  yvt,
-  bvt,
-  workbookBinding2000,
-  xvt,
   workbookKt,
-  xgt,
-  ygt,
 } from "../../workbook/workbook-core";
 
-import {
-  wireCommentsBoundaryHooks,
-  workbookBinding1725,
-  workbookBinding1729,
-  workbookBinding1732,
-  workbookBinding1733,
-  workbookBinding1734,
-  workbookBinding1735,
-  workbookBinding1736,
-  workbookBinding1737,
-  workbookBinding1726,
-  workbookBinding1727,
-  workbookBinding1728,
-  workbookBinding1730,
-  workbookBinding1731,
-  $Le,
-  eRe,
-  tRe,
-  nRe,
-  rRe,
-  iRe,
-  aRe,
-  oRe,
-  cRe,
-  lRe,
-  uRe,
-  dRe,
-  pRe,
-  mRe,
-  hRe,
-  gRe,
-  vRe,
-  yRe,
-  bRe,
-  sRe,
-  fRe,
-  _Re,
-  xRe,
-  WorkbookD,
-  CRe,
-  _workbookU,
-  ensureCommentsInit,
-} from "../../workbook/comments";
+import { WorkbookD, _workbookU } from "../../workbook/comments";
+
+import { aJe } from "../../workbook/workbook-shell-ensures";
+
+import { workbookTt, workbookEt } from "../../workbook/emu-units";
+
+import { workbookO } from "../../workbook/guide-layout-consts";
+import { _u, Mde, _C, Cme, Tme, Eme } from "../../workbook/binding662-gate";
+import { workbookM } from "../../workbook/shell-mid-ensures";
+import { _workbookJ } from "../../workbook/text-frame-insets";
+
+import { exe } from "../../workbook/chart-layout-ensures";
 
 import {
-  S7e,
-  C7e,
-  w7e,
-  T7e,
-  workbookBinding1883,
-  E7e,
-  D7e,
-  workbookBinding1884,
-  O7e,
-  workbookBinding1885,
-  workbookBinding1886,
-  workbookBinding1887,
-  workbookBinding1888,
-  ensureFormulaDateEpochInit,
-  v5e,
-  y5e,
-  b5e,
-  workbookBinding1875,
-  workbookBinding1876,
-  workbookBinding1877,
-  workbookBinding1878,
-  workbookBinding1879,
-  _6e,
-  v6e,
-  y6e,
-  workbookBinding1880,
-  W8e,
-  workbookBinding1881,
-  workbookBinding1882,
-  G8e,
-  workbookBinding1927,
-  workbookBinding1928,
-  workbookBinding1929,
-  workbookBinding1930,
-  workbookBinding1931,
-  workbookBinding1932,
-  workbookBinding1933,
-  rot,
-  workbookBinding1936,
-  nst,
-  workbookBinding1937,
-  workbookBinding1938,
-  workbookBinding1939,
-  workbookBinding1940,
-  workbookBinding1941,
-  Hct,
-  Uct,
-  workbookBinding1942,
-  workbookBinding1943,
-  workbookBinding1944,
-  But,
-  Vut,
-  Hut,
-  Uut,
-  workbookBinding1945,
-  workbookBinding1946,
-  Ydt,
-} from "../../workbook/formula-date-epoch";
-
-import {
-  yEe,
-  Cze,
-  aJe,
-  workbookBinding1489,
-  xze,
-  Sze,
-  workbookBinding1750,
-} from "../../workbook/workbook-shell-ensures";
-
-import {
-  workbookBinding408,
-  workbookBinding409,
-  workbookBinding410,
-  of,
-  workbookTt,
-  workbookEt,
-  ensureWorkbookEtInit,
-} from "../../workbook/emu-units";
-
-import {
-  wwe,
-  workbookBinding1241,
-  workbookBinding1242,
-  workbookBinding1243,
-  workbookBinding1244,
-  workbookBinding1247,
-  workbookBinding1248,
-  workbookBinding1251,
-  $z,
-} from "../../workbook/cf-traffic-colors";
-import {
-  workbookBinding1237,
-  workbookBinding1238,
-  workbookBinding1256,
-  workbookBinding1257,
-  workbookBinding1258,
-  _B,
-  workbookBinding1259,
-  qTe,
-  workbookBinding1276,
-  fEe,
-  workbookBinding1277,
-  workbookBinding1278,
-  workbookBinding1279,
-  workbookBinding1280,
-  workbookBinding1281,
-  workbookBinding1282,
-  workbookBinding1283,
-  workbookBinding1284,
-  workbookBinding1285,
-  workbookBinding1286,
-  workbookBinding1287,
-  workbookBinding1288,
-  pEe,
-  workbookO,
-} from "../../workbook/guide-layout-consts";
-import {
-  _u,
-  gae,
-  vae,
-  workbookBinding412,
-  Mde,
-  workbookBinding661,
-  workbookBinding662,
-  _C,
-  workbookBinding669,
-  workbookBinding670,
-  workbookBinding671,
-  workbookBinding672,
-  workbookBinding673,
-  workbookBinding674,
-  workbookBinding675,
-  workbookBinding676,
-  Cme,
-  workbookBinding683,
-  Tme,
-  workbookBinding684,
-  Eme,
-  workbookBinding369,
-} from "../../workbook/binding662-gate";
-import {
-  workbookBinding362,
-  Twe,
-  Ewe,
-  workbookBinding1252,
-  workbookBinding1267,
-  zwe,
-  Hwe,
-  workbookM,
-  workbookHelper634,
-  CTe,
-  zTe,
-  GTe,
-  QTe,
-  eEe,
-  rEe,
-  xDe,
-  zIe,
-  BIe,
-  XRe,
-} from "../../workbook/shell-mid-ensures";
-import {
-  Cmt,
-  kmt,
-  eht,
-  workbookBinding1956,
-  workbookBinding1957,
-  workbookBinding1958,
-  Qmt,
-  $mt,
-} from "../../workbook/chart-paste-hints";
-import {
-  g8e,
-  HXe,
-  KXe,
-  c8e,
-  x7e,
-  wot,
-} from "../../workbook/formula-thin-stubs";
-import { wirePresentationRecipesFromCompose } from "../../workbook/presentation-recipes";
-
-import {
-  _workbookJ,
-  workbookBinding1268,
-  workbookBinding1269,
-  workbookBinding1270,
-  _V,
-  workbookBinding1271,
-  workbookBinding1272,
-  workbookBinding1273,
-  workbookBinding1274,
-  workbookBinding1275,
-  ensureTextFrameInsetsInit,
-} from "../../workbook/text-frame-insets";
-
-import {
-  $Ce,
-  $R,
-  Axe,
-  DCe,
-  ESe,
-  Ebe,
-  Exe,
-  Fye,
-  GSe,
-  Hye,
-  MCe,
-  Mxe,
-  Obe,
-  RSe,
-  Sxe,
-  TSe,
-  XSe,
-  YSe,
-  Yxe,
-  ZSe,
-  Zxe,
-  _Ce,
-  _L,
-  _R,
-  _j,
-  _k,
-  aSe,
-  cCe,
-  dSe,
-  exe,
-  gbe,
-  gxe,
-  ixe,
-  kCe,
-  mCe,
-  mxe,
-  oCe,
-  oxe,
-  pbe,
-  qCe,
-  rCe,
-  rSe,
-  tbe,
-  vSe,
-  vxe,
-  workbookBinding1041,
-  workbookBinding1060,
-  workbookBinding1072,
-  workbookBinding1073,
-  workbookBinding1077,
-  workbookBinding1090,
-  workbookBinding1091,
-  workbookBinding1099,
-  workbookBinding1100,
-  workbookBinding1101,
-  workbookBinding1103,
-  workbookBinding1135,
-  workbookBinding1136,
-  workbookBinding1137,
-  workbookBinding1138,
-  workbookBinding1139,
-  workbookBinding1140,
-  workbookBinding1141,
-  workbookBinding1142,
-  workbookBinding1143,
-  workbookBinding1144,
-  workbookBinding1145,
-  workbookBinding1146,
-  workbookBinding1147,
-  workbookBinding1148,
-  workbookBinding1149,
-  workbookBinding1150,
-  workbookBinding1151,
-  workbookBinding1152,
-  workbookBinding1153,
-  workbookBinding1154,
-  workbookBinding1155,
-  workbookBinding1156,
-  workbookBinding1157,
-  workbookBinding1158,
-  workbookBinding1159,
-  workbookBinding1160,
-  workbookBinding1161,
-  workbookBinding1162,
-  workbookBinding1163,
-  workbookBinding1164,
-  workbookBinding1165,
-  workbookBinding1166,
-  workbookBinding1167,
-  workbookBinding1168,
-  workbookBinding1169,
-  workbookBinding1170,
-  workbookBinding1171,
-  workbookBinding1172,
-  workbookBinding1173,
-  workbookBinding1174,
-  workbookBinding1175,
-  workbookBinding1176,
-  workbookBinding1177,
-  workbookBinding1178,
-  workbookBinding1179,
-  workbookBinding1180,
-  workbookBinding1181,
-  workbookBinding1182,
-  workbookBinding1183,
-  workbookBinding1184,
-  workbookBinding1185,
-  workbookBinding1186,
-  workbookBinding1187,
-  workbookBinding1188,
-  workbookBinding1189,
-  workbookBinding1190,
-  workbookBinding1191,
-  workbookBinding1192,
-  workbookBinding1193,
-  workbookBinding1194,
-  workbookBinding1195,
-  workbookBinding1196,
-  workbookBinding1197,
-  workbookBinding1198,
-  workbookBinding1199,
-  workbookBinding1200,
-  workbookBinding1201,
-  workbookBinding1202,
-  workbookBinding1203,
-  workbookBinding1204,
-  workbookBinding1205,
-  workbookBinding1206,
-  workbookBinding1207,
-  workbookBinding1208,
-  workbookBinding1209,
-  workbookBinding1210,
-  workbookBinding1211,
-  workbookBinding1212,
-  workbookBinding1213,
-  workbookBinding1214,
-  workbookBinding1215,
-  workbookBinding1216,
-  workbookBinding1217,
-  workbookBinding1218,
-  workbookBinding1219,
-  workbookBinding1220,
-  workbookBinding1221,
-  workbookBinding1222,
-  workbookBinding1223,
-  workbookBinding1226,
-  workbookBinding1227,
-  workbookBinding1228,
-  workbookBinding1229,
-  workbookBinding1230,
-  workbookBinding1231,
-  workbookBinding1232,
-  workbookBinding1233,
-  workbookBinding1234,
-  workbookBinding1235,
-  workbookBinding838,
-  workbookBinding839,
-  workbookBinding840,
-  workbookBinding841,
-  workbookBinding842,
-  workbookBinding843,
-  workbookBinding844,
-  workbookBinding845,
-  workbookBinding846,
-  workbookBinding847,
-  workbookBinding848,
-  workbookBinding849,
-  workbookBinding850,
-  workbookBinding851,
-  workbookBinding852,
-  workbookBinding853,
-  workbookBinding854,
-  workbookBinding855,
-  workbookBinding856,
-  workbookBinding857,
-  workbookBinding858,
-  workbookBinding859,
-  workbookBinding860,
-  workbookBinding861,
-  workbookBinding862,
-  workbookBinding863,
-  workbookBinding864,
-  workbookBinding865,
-  workbookBinding866,
-  workbookBinding867,
-  workbookBinding868,
-  workbookBinding869,
-  workbookBinding870,
-  workbookBinding871,
-  workbookBinding872,
-  workbookBinding873,
-  workbookBinding877,
-  workbookBinding878,
-  workbookBinding879,
-  workbookBinding880,
-  workbookBinding881,
-  workbookBinding882,
-  workbookBinding883,
-  workbookBinding884,
-  workbookBinding885,
-  workbookBinding886,
-  workbookBinding887,
-  workbookBinding888,
-  workbookBinding889,
-  workbookBinding890,
-  workbookBinding891,
-  workbookBinding892,
-  workbookBinding893,
-  workbookBinding894,
-  workbookBinding895,
-  workbookBinding896,
-  workbookBinding897,
-  workbookBinding898,
-  workbookBinding899,
-  workbookBinding900,
-  workbookBinding901,
-  workbookBinding902,
-  workbookBinding903,
-  workbookBinding904,
-  workbookBinding905,
-  workbookBinding906,
-  workbookBinding907,
-  workbookBinding908,
-  workbookBinding909,
-  workbookBinding910,
-  workbookBinding911,
-  workbookBinding912,
-  workbookBinding913,
-  workbookBinding914,
-  workbookBinding915,
-  workbookBinding916,
-  workbookBinding917,
-  workbookBinding918,
-  workbookBinding919,
-  workbookBinding920,
-  workbookBinding921,
-  workbookBinding922,
-  workbookBinding923,
-  workbookBinding924,
-  workbookBinding925,
-  workbookBinding926,
-  workbookBinding927,
-  workbookBinding928,
-  workbookBinding954,
-  workbookBinding957,
-  workbookBinding972,
-  workbookBinding973,
-  workbookHelper397,
-  workbookHelper520,
-  workbookHelper533,
-  workbookHelper544,
-  wxe,
-  xCe,
-  yCe,
-  zSe,
-  ensureChartLayoutEnsuresInit,
-  ensureBinding913Init,
-  ensureBinding1229Init,
-  workbookBinding837,
-  $D,
-  halfChartValue,
-  ratioOrOne,
-  percentToUnit,
-  formatChartAxisTick,
-} from "../../workbook/chart-layout-ensures";
-
-import {
-  EIe,
-  H$,
-  U$,
-  DIe,
-  TIe,
-  NIe,
-  PIe,
-  FIe,
-  ensureMermaidConvertInit,
-  mermaidToElements,
-} from "../../workbook/mermaid-convert";
-
-import {
-  workbookBinding1347,
-  workbookBinding1348,
-  workbookBinding1349,
-  pDe,
-  mDe,
-  ensurePlaceholderStylesInit,
-} from "../../workbook/placeholder-styles";
-import {
-  Kht,
-  qht,
-  ensureSpreadsheetViewStateInit,
-} from "../../workbook/spreadsheet-view-state";
-
-import {
-  tze,
-  nze,
-  ensurePresentationPatchInit,
-} from "../../workbook/presentation-patch";
-
-import {
-  workbookBinding1291,
-  workbookBinding1292,
-  workbookBinding1293,
   workbookE,
   workbookD,
   workbookW,
   _workbookT,
-  ensurePresentationChartsCollectionInit,
-  ensurePresentationImagesCollectionInit,
 } from "../../workbook/presentation-assets";
 
-import {
-  PLe,
-  FLe,
-  ILe,
-  LLe,
-  RLe,
-  zLe,
-  BLe,
-  VLe,
-  WLe,
-  GLe,
-  KLe,
-  qLe,
-  JLe,
-  YLe,
-  XLe,
-  ZLe,
-  QLe,
-  ensurePresentationMasterDefaultsInit,
-} from "../../workbook/presentation-master-defaults";
-import {
-  workbookBinding1289,
-  workbookBinding1290,
-  bEe,
-  ensurePresentationCitationsInit,
-} from "../../workbook/presentation-citations";
-
-import {
-  workbookHelper376,
-  workbookBinding816,
-  workbookBinding817,
-  workbookBinding818,
-  workbookBinding819,
-  workbookBinding824,
-  workbookBinding825,
-  workbookBinding826,
-  workbookBinding827,
-  workbookBinding828,
-  workbookBinding829,
-  workbookBinding830,
-  workbookBinding831,
-  workbookBinding832,
-  workbookHelper377,
-  qve,
-  aye,
-  Zve,
-  Qve,
-  $ve,
-  eye,
-  tye,
-  nye,
-  rye,
-  iye,
-  getStyleRefsCollabClass,
-  getTableStyleClass as getSheetStructureCollabClass,
-  workbookBinding1812,
-  workbookBinding1815,
-  TJe,
-  eYe,
-  tYe,
-  NJe,
-  FJe,
-  LJe,
-  zJe,
-  KJe,
-  JJe,
-  XJe,
-  QJe,
-  Pgt,
-  Igt,
-  Rgt,
-  Bgt,
-  Hgt,
-  Wgt,
-  Ggt,
-} from "../../workbook/collab-snapshot";
 import { _workbookEt } from "../../workbook/mid-paint-helpers/clamp-nonneg-impl";
-import {
-  workbookHelper1035,
-  uvt,
-} from "../../workbook/workbook-core/error-value-helpers-impl";
-import { _Ye } from "../../workbook/presentation-stub-context/structured-clone-impl";
-import {
-  LDe,
-  RDe,
-  workbookHelper681,
-  gOe,
-  KOe,
-} from "../../workbook/compose-jsx-lower/image-prop-helpers-impl";
-import {
-  workbookBinding1816,
-  nYe,
-  rYe,
-  iYe,
-  aYe,
-  ensurePresentationArtifactsInit,
-} from "../../workbook/presentation-artifacts";
-import {
-  MLe,
-  NLe,
-  ensurePresentationListStylesInit,
-} from "../../workbook/presentation-list-styles";
-
-import { a, c, d as srcD, r as srcR, s, t, u } from "../d3-hierarchy";
-import {
-  A as _lodashA,
-  T as _lodashT,
-  A as lodashA,
-  B,
-  C as lodashC,
-  d as lodashD,
-  E,
-  F as lodashF,
-  h,
-  I as lodashI,
-  l as lodashL,
-  M as lodashM,
-  O,
-  p as lodashP,
-  r as lodashR,
-  s as lodashS,
-  T,
-  _,
-  x as lodashX,
-  y,
-  z,
-} from "../lodash-hNqv-runtime";
-import { j as mergeJ, n as mergeN } from "../lodash-merge-internals";
+import { a, c, s, u } from "../d3-hierarchy";
+import { B, O, T, z } from "../lodash-hNqv-runtime";
 var workbookAt = yMergeUpdates;
-wireFormulaSortFilterBoundaryHooks({
-  getEvalContext: () => workbookHelper962(),
-  firstCellOrValue: (...args: any[]) => workbookHelper966(...args),
-});
-
 export {
   workbookA,
   WorkbookAt,

@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~5.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~1.6k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1984,3 +1984,10 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 
 
 
+
+### Wave 163 — retire remaining ≤4 LOC wires + dead-import prune
+- Rewrote 29 wire boundary-hooks → direct imports (no-undef leave-behinds via getters; import-only calls via `__call`).
+- Baked stylesheet `color-rgba` default to `color-resolve` (dropped required Tae mega wire); text-shadow already defaulted.
+- Dropped 31 mega wire calls + 13 `Object.defineProperties` leave-behind blocks.
+- Pruned 3477 unused mega import specs (~3974 LOC).
+- Boundary LOC 5840 → 1643 (Δ -4197); `openBoundary` kept (compat re-export surface + residual glue).

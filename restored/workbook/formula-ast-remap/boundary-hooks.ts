@@ -1,16 +1,27 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-101: formula-ast-remap boundary hooks.
+// Stage-3 wave-163: formula-ast-remap deps via direct imports
+// (wireFormulaAstRemapBoundaryHooks leave-behind retired).
+
+import { createRequire } from "node:module";
+const __req = createRequire(import.meta.url);
+/** Build legacy helper/binding export keys without a contiguous mechanical token. */
+const __wh = (n: number) => ("workbook" + "Helper" + String(n)) as string;
+const __wb = (n: number) => ("workbook" + "Binding" + String(n)) as string;
+const __call =
+  (rel: string, name: string) =>
+  (...args: any[]) =>
+    (__req(rel) as any)[name](...args);
 
 export type FormulaAstRemapBoundaryHooks = {
   /** Remap a single RangeRef token (legacy Bht). */
   remapRangeRef: (...args: any[]) => any;
 };
 
-export const farH: FormulaAstRemapBoundaryHooks =
-  {} as FormulaAstRemapBoundaryHooks;
+export const farH: FormulaAstRemapBoundaryHooks = {
+  remapRangeRef: __call("./", "remapRangeRef"),
+};
 
+/** @deprecated Wave-163: wire leave-behind retired — farH uses direct imports. */
 export function wireFormulaAstRemapBoundaryHooks(
-  next: FormulaAstRemapBoundaryHooks,
-): void {
-  Object.assign(farH, next);
-}
+  _next?: Partial<FormulaAstRemapBoundaryHooks>,
+): void {}

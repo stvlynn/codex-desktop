@@ -1,5 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-5: deferred wire for boundary Tae (scheme/system color → rgba string).
+// Stage-3 wave-163: default color-proto→rgba via color-resolve (mega Tae wire retired).
+
+import { resolveColorProtoToRgbaString as resolveFromColorResolve } from "../color-resolve";
 
 export const spreadsheetMlColorSpace = {
   colorSpace: "spreadsheetml",
@@ -11,9 +13,9 @@ export type ColorProtoToRgbaString = (
   options?: { colorSpace?: string },
 ) => string;
 
-let wired: ColorProtoToRgbaString | null = null;
+let wired: ColorProtoToRgbaString = resolveFromColorResolve;
 
-/** Called once from workbook-runtime after Tae is in scope. */
+/** @deprecated Wave-163: default is color-resolve; override kept for tests. */
 export function wireResolveColorProtoToRgbaString(
   fn: ColorProtoToRgbaString,
 ): void {
@@ -25,8 +27,5 @@ export function resolveColorProtoToRgbaString(
   theme: unknown,
   options?: { colorSpace?: string },
 ): string {
-  if (!wired) {
-    throw new Error("resolveColorProtoToRgbaString not wired (expected Tae)");
-  }
   return wired(color, theme, options);
 }
