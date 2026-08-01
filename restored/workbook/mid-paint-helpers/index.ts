@@ -10,4 +10,8 @@ export {
   drawPictureBitmap,
   loadSlideGroupBitmaps,
   mergeComposeStyle,
+  resolvePictureSrcRect,
+  resolvePictureDstRect,
+  Xwe,
+  Zwe,
 } from "./mid-paint-helpers-impl";

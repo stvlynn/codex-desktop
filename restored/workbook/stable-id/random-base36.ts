@@ -32,7 +32,9 @@ export function randomPositiveIntString(): string {
 }
 
 /** Legacy `Kue` — next numeric id after max of existing. */
-export function nextNumericIdString(existing: Array<string | number> = []): string {
+export function nextNumericIdString(
+  existing: Array<string | number> = [],
+): string {
   let max = 0;
   for (let item of existing) {
     let n = Number(item);

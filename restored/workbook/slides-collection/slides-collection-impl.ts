@@ -35,7 +35,7 @@ import {
   resolveShapeLocalIdAlias,
 } from "./slides-geometry-helpers";
 import { _workbookV, workbookBinding1313 } from "./sc-slots";
-import { scH } from "./boundary-hooks";
+import { ensureUuidClusterInit, allocateLocalId } from "../stable-id";
 
 export const _workbookY = esmInit(() => {
   Qt();
@@ -45,7 +45,7 @@ export const _workbookY = esmInit(() => {
   _S();
   workbookBinding739();
   workbookBinding734();
-  scH.ensureBinding1312();
+  ensureUuidClusterInit();
   workbookBinding647();
   _workbookV = class {
     #e;
@@ -174,7 +174,7 @@ export const _workbookY = esmInit(() => {
     }
     addPlaceholder(scIn3472) {
       let scBind11910 = {
-          id: scH.allocateLocalId(),
+          id: allocateLocalId(),
           name: scIn3472,
           placeholderIndex: this.#l(),
           paragraphs: [],

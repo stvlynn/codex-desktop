@@ -100,6 +100,49 @@ export function paintDirectionTriangle(
     mphIn3562.stroke();
   });
 }
+export function resolvePictureSrcRect(mphIn5681: any, mphIn5682: any) {
+  let mphBind15561 = mphIn5681?.srcRect;
+  if (!mphBind15561)
+    return {
+      sx: 0,
+      sy: 0,
+      sw: mphIn5682.width,
+      sh: mphIn5682.height,
+    };
+  let mphBind15562 = (mphIn16310) => (mphIn16310 ?? 0) / 1e5,
+    mphBind15563 = mphBind15562(mphBind15561.l),
+    mphBind15564 = mphBind15562(mphBind15561.t),
+    mphBind15565 = mphBind15562(mphBind15561.r),
+    mphBind15566 = mphBind15562(mphBind15561.b);
+  return {
+    sx: mphBind15563 * mphIn5682.width,
+    sy: mphBind15564 * mphIn5682.height,
+    sw: mphIn5682.width * (1 - mphBind15563 - mphBind15565),
+    sh: mphIn5682.height * (1 - mphBind15564 - mphBind15566),
+  };
+}
+export function resolvePictureDstRect(mphIn5369: any, mphIn5370: any) {
+  let mphBind15081 = mphIn5369?.stretchFillRect;
+  if (!mphBind15081)
+    return {
+      dx: mphIn5370.x,
+      dy: mphIn5370.y,
+      dw: mphIn5370.width,
+      dh: mphIn5370.height,
+    };
+  let mphBind15082 = (mphIn16311) => (mphIn16311 ?? 0) / 1e5,
+    mphBind15083 = mphBind15082(mphBind15081.l),
+    mphBind15084 = mphBind15082(mphBind15081.t),
+    mphBind15085 = mphBind15082(mphBind15081.r),
+    mphBind15086 = mphBind15082(mphBind15081.b);
+  return {
+    dx: mphIn5370.x + mphBind15083 * mphIn5370.width,
+    dy: mphIn5370.y + mphBind15084 * mphIn5370.height,
+    dw: mphIn5370.width * (1 - mphBind15083 - mphBind15085),
+    dh: mphIn5370.height * (1 - mphBind15084 - mphBind15086),
+  };
+}
+
 export function drawPictureBitmap(
   mphIn4382: any,
   mphIn4383: any,
@@ -108,8 +151,8 @@ export function drawPictureBitmap(
   mphIn4386: any,
 ) {
   let { bitmap, contentType } = mphIn4384,
-    { sx, sy, sw, sh } = mphH.Xwe(mphIn4383, bitmap),
-    { dx, dy, dw, dh } = mphH.Zwe(mphIn4383, mphIn4385),
+    { sx, sy, sw, sh } = resolvePictureSrcRect(mphIn4383, bitmap),
+    { dx, dy, dw, dh } = resolvePictureDstRect(mphIn4383, mphIn4385),
     mphBind13547 = mphH.bh208(bitmap, {
       pictureEffects:
         mphIn4383 && "pictureEffects" in mphIn4383
@@ -183,3 +226,6 @@ export function mergeComposeStyle(
 
 export const workbookHelper481 = resolveLineSeriesStroke;
 export const workbookHelper596 = paintDirectionTriangle;
+
+export const Xwe = resolvePictureSrcRect;
+export const Zwe = resolvePictureDstRect;

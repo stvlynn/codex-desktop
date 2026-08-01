@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-128: mid-paint-helpers hooks.
+// Stage-3 wave-129: mid-paint-helpers hooks (Xwe/Zwe owned).
 
 export type MidPaintHelpersHooks = {
   bh464: (...args: any[]) => any;
@@ -8,8 +8,6 @@ export type MidPaintHelpersHooks = {
   bh472: (...args: any[]) => any;
   bh433: (...args: any[]) => any;
   bh598: (...args: any[]) => any;
-  Xwe: (...args: any[]) => any;
-  Zwe: (...args: any[]) => any;
   bh208: (...args: any[]) => any;
   LOe: (...args: any[]) => any;
   WOe: (...args: any[]) => any;

@@ -13,9 +13,7 @@ export function coerceCfCellValue(crsIn3913: any) {
       return Number.isNaN(crsBind22431) ? null : crsBind22431;
     }
     case crsH.CellDataType.CELL_DATA_TYPE_BOOLEAN:
-      return (
-        crsIn3913.value === "TRUE" || crsIn3913.value === "1"
-      );
+      return crsIn3913.value === "TRUE" || crsIn3913.value === "1";
     case crsH.CellDataType.CELL_DATA_TYPE_DATE:
       return parseExcelDate(crsIn3913.value);
     case crsH.CellDataType.CELL_DATA_TYPE_ERROR:
@@ -51,14 +49,10 @@ export function parseExcelDate(crsIn4714: any) {
   if (typeof crsIn4714 != "string") return null;
   let crsBind14000 = Number(crsIn4714);
   if (Number.isFinite(crsBind14000))
-    return new Date(
-      crsH.excelEpochUtc + crsBind14000 * crsH.msPerDay,
-    );
+    return new Date(crsH.excelEpochUtc + crsBind14000 * crsH.msPerDay);
   if (!crsH.isoDateRe.test(crsIn4714)) return null;
   let crsBind14001 = Date.parse(crsIn4714);
-  return Number.isNaN(crsBind14001)
-    ? null
-    : new Date(crsBind14001);
+  return Number.isNaN(crsBind14001) ? null : new Date(crsBind14001);
 }
 export function toExcelSerial(crsIn11818: any) {
   let crsBind22126 = crsIn11818.getTime();
@@ -82,39 +76,28 @@ export function collectRangeNumerics(crsIn7145: any, crsIn7146: any) {
         let crsBind22566 = coerceCfNumeric(
           crsIn7146(crsBind19625, crsBind21287),
         );
-        crsBind22566 != null &&
-          crsBind17493.push(crsBind22566);
+        crsBind22566 != null && crsBind17493.push(crsBind22566);
       }
   return crsBind17493;
 }
 export function percentileThreshold(crsIn4185: any) {
-  let crsBind13214 = collectRangeNumerics(
-    crsIn4185.ranges,
-    crsIn4185.getCell,
-  );
+  let crsBind13214 = collectRangeNumerics(crsIn4185.ranges, crsIn4185.getCell);
   if (crsBind13214.length === 0) return null;
   let crsBind13215 =
-      typeof crsIn4185.rank == "number" &&
-      Number.isFinite(crsIn4185.rank)
+      typeof crsIn4185.rank == "number" && Number.isFinite(crsIn4185.rank)
         ? crsIn4185.rank
         : 10,
     crsBind13216 = crsIn4185.percent
       ? Math.ceil((crsBind13214.length * crsBind13215) / 100)
       : Math.floor(crsBind13215),
-    crsBind13217 = Math.max(
-      1,
-      Math.min(crsBind13214.length, crsBind13216),
-    ),
+    crsBind13217 = Math.max(1, Math.min(crsBind13214.length, crsBind13216)),
     crsBind13218 = crsIn4185.bottom ?? false,
     crsBind13219 = crsBind13214
       .slice()
       .sort((crsIn15928, crsIn15929) =>
-        crsBind13218
-          ? crsIn15928 - crsIn15929
-          : crsIn15929 - crsIn15928,
+        crsBind13218 ? crsIn15928 - crsIn15929 : crsIn15929 - crsIn15928,
       )[crsBind13217 - 1];
-  return crsBind13219 === undefined ||
-    Number.isNaN(crsBind13219)
+  return crsBind13219 === undefined || Number.isNaN(crsBind13219)
     ? null
     : {
         bottom: crsBind13218,
@@ -122,36 +105,28 @@ export function percentileThreshold(crsIn4185: any) {
       };
 }
 export function aboveAverageThreshold(crsIn3574: any) {
-  let crsBind12063 = collectRangeNumerics(
-    crsIn3574.ranges,
-    crsIn3574.getCell,
-  );
+  let crsBind12063 = collectRangeNumerics(crsIn3574.ranges, crsIn3574.getCell);
   if (crsBind12063.length === 0) return null;
   let crsBind12064 =
-      crsBind12063.reduce(
-        (accumulator, current) => accumulator + current,
-        0,
-      ) / crsBind12063.length,
+      crsBind12063.reduce((accumulator, current) => accumulator + current, 0) /
+      crsBind12063.length,
     crsBind12065 = crsIn3574.aboveAverage ?? true,
     crsBind12066 = crsIn3574.equalAverage ?? false,
     crsBind12067 = crsBind12064,
     crsBind12068 =
-      typeof crsIn3574.stdDev == "number" &&
-      Number.isFinite(crsIn3574.stdDev)
+      typeof crsIn3574.stdDev == "number" && Number.isFinite(crsIn3574.stdDev)
         ? Math.abs(crsIn3574.stdDev)
         : 0;
   if (crsBind12068 > 0) {
     let crsBind21117 =
         crsBind12063.reduce(
-          (accumulator, current) =>
-            accumulator + (current - crsBind12064) ** 2,
+          (accumulator, current) => accumulator + (current - crsBind12064) ** 2,
           0,
         ) / crsBind12063.length,
       crsBind21118 = Math.sqrt(crsBind21117);
     crsBind12067 =
       crsBind12064 +
-      (crsBind12065 ? crsBind21118 : -crsBind21118) *
-        crsBind12068;
+      (crsBind12065 ? crsBind21118 : -crsBind21118) * crsBind12068;
   }
   return {
     aboveAverage: crsBind12065,
@@ -175,24 +150,18 @@ export function rangeStats(props: any) {
         let crsBind22447 = coerceCfNumeric(
           props.getCell(crsBind19382, crsBind21007),
         );
-        crsBind22447 != null &&
-          crsBind13767.push(crsBind22447);
+        crsBind22447 != null && crsBind13767.push(crsBind22447);
       }
   if (crsBind13767.length === 0) return null;
   let crsBind13768 = crsBind13767
       .slice()
-      .sort(
-        (crsIn16575, crsIn16576) =>
-          crsIn16575 - crsIn16576,
-      ),
+      .sort((crsIn16575, crsIn16576) => crsIn16575 - crsIn16576),
     crsBind13769 = crsBind13768[0] ?? 0;
   return {
     values: crsBind13767,
     sortedValues: crsBind13768,
     min: crsBind13769,
-    max:
-      crsBind13768[crsBind13768.length - 1] ??
-      crsBind13769,
+    max: crsBind13768[crsBind13768.length - 1] ?? crsBind13769,
   };
 }
 

@@ -12,11 +12,7 @@ export {
   mulberryIncrement,
   ensureStableIdConstantsInit,
 } from "./ensure-stable-id-constants";
-export {
-  fallbackRandomUuid,
-  randomUuid,
-  bracedUuidUpper,
-} from "./uuid";
+export { fallbackRandomUuid, randomUuid, bracedUuidUpper } from "./uuid";
 export {
   randomBase36Id,
   randomPositiveIntString,
@@ -39,3 +35,17 @@ export {
   defaultHashIdLength,
   ensureStableIdClusterInit,
 } from "./ensure-stable-id-init";
+export {
+  stringifyUuidBytes,
+  rngUuidBytes,
+  uuidV4FromOptions,
+  allocateLocalId,
+  ensureUuidClusterInit,
+  ensureUuidV4HelpersInit,
+  BEe,
+  VEe,
+  UEe,
+  workbookHelper659,
+  workbookBinding1312,
+  WEe,
+} from "./uuid-v4-bytes";

@@ -8,7 +8,11 @@ import {
 } from "./ensure-stable-id-init";
 
 /** Legacy `workbookHelper302`. */
-export function composeScopedId(prefix: string, slideId: string | null | undefined, localId: string, ): string {
+export function composeScopedId(
+  prefix: string,
+  slideId: string | null | undefined,
+  localId: string,
+): string {
   ensureStableIdClusterInit();
   return `${prefix}/${hashToBase36Id(
     `${prefix}:${slideId ? `${slideId}.${localId}` : localId}`,
@@ -17,14 +21,16 @@ export function composeScopedId(prefix: string, slideId: string | null | undefin
 }
 
 /** Legacy `nde` — strip `prefix/` when prefix (or alias) matches. */
-export function stripPrefixedLocalId(value: string, prefix: string, aliases: string[], ): string | undefined {
+export function stripPrefixedLocalId(
+  value: string,
+  prefix: string,
+  aliases: string[],
+): string | undefined {
   let slash = value.indexOf("/");
   if (slash === -1) return value;
   if (slash <= 0 || slash === value.length - 1) return;
   let head = value.slice(0, slash).trim().toLowerCase();
-  if (
-    new Set([prefix, ...aliases.map((item) => item.toLowerCase())]).has(head)
-  )
+  if (new Set([prefix, ...aliases.map((item) => item.toLowerCase())]).has(head))
     return value.slice(slash + 1).trim();
 }
 
@@ -36,7 +42,10 @@ export type ResolveLocalIdOptions = {
 };
 
 /** Legacy `tde` — resolve a local id against scoped compose. */
-export function resolveLocalIdAlias(raw: string, options: ResolveLocalIdOptions, ): string | undefined {
+export function resolveLocalIdAlias(
+  raw: string,
+  options: ResolveLocalIdOptions,
+): string | undefined {
   let trimmed = raw.trim();
   if (!trimmed) return;
   let local = stripPrefixedLocalId(
@@ -53,7 +62,6 @@ export function resolveLocalIdAlias(raw: string, options: ResolveLocalIdOptions,
   if (!options.slideId) return;
   let scoped = `${options.prefix}/${local}`;
   return localIds.find(
-    (item) =>
-      composeScopedId(options.prefix, options.slideId, item) === scoped,
+    (item) => composeScopedId(options.prefix, options.slideId, item) === scoped,
   );
 }

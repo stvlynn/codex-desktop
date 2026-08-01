@@ -30,7 +30,10 @@ export function isStableIdToken(value: string | null | undefined): boolean {
 }
 
 /** Legacy `Jue` — strip `prefix_` / `prefix-` from an id. */
-export function stripIdPrefix(prefix: string | null | undefined, id: string): string {
+export function stripIdPrefix(
+  prefix: string | null | undefined,
+  id: string,
+): string {
   if (!prefix) return id;
   let p = prefix.toLowerCase(),
     lower = id.toLowerCase(),
@@ -58,7 +61,11 @@ export function hashToBase36Id(seed: string, length: number = 8): string {
 }
 
 /** Legacy `workbookHelper301` — keep valid token else hash. */
-export function normalizeOrHashId(prefix: string | null | undefined, id: string | null | undefined, length: number = 8, ): string | null | undefined {
+export function normalizeOrHashId(
+  prefix: string | null | undefined,
+  id: string | null | undefined,
+  length: number = 8,
+): string | null | undefined {
   if (!id) return id;
   let stripped = stripIdPrefix(prefix, id);
   if (isStableIdToken(stripped)) return stripped;

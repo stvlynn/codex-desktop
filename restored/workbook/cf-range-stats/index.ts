@@ -18,3 +18,14 @@ export {
   pht,
   mht,
 } from "./cf-range-stats-impl";
+
+export {
+  resolveCfvoPosition,
+  cfvoPercentOfRange,
+  cfvoPercentileOfSorted,
+  clampPercent,
+  wht,
+  Tht,
+  Eht,
+  Dht,
+} from "./cfvo-resolve-impl";

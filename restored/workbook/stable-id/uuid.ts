@@ -1,7 +1,10 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-35: UUID helpers (legacy Uue / workbookHelper298 / workbookV).
 
-import { ensureStableIdConstantsInit, uuidReplaceRe } from "./ensure-stable-id-constants";
+import {
+  ensureStableIdConstantsInit,
+  uuidReplaceRe,
+} from "./ensure-stable-id-constants";
 
 /** Legacy `Uue` — Math.random UUID v4 fallback. */
 export function fallbackRandomUuid(): string {
@@ -10,9 +13,7 @@ export function fallbackRandomUuid(): string {
     uuidReplaceRe,
     (ch: string) => {
       let nibble = Math.floor(Math.random() * 16);
-      return (
-        ch === "x" ? nibble : (nibble & 3) | 8
-      ).toString(16);
+      return (ch === "x" ? nibble : (nibble & 3) | 8).toString(16);
     },
   );
 }

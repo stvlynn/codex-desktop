@@ -261,6 +261,72 @@ export function chooseValue() {
   return femBind12841;
 }
 
+export function dec2hex(femIn4517: any, femIn4518: any) {
+  if (((femIn4517 = flattenMatrixArgs(femIn4517)), femIn4517 instanceof Error))
+    return femIn4517;
+  if (
+    !/^-?[0-9]{1,12}$/.test(femIn4517) ||
+    femIn4517 < -549755813888 ||
+    femIn4517 > 549755813887
+  )
+    return numError;
+  if (femIn4517 < 0) return (1099511627776 + femIn4517).toString(16);
+  let n = parseInt(femIn4517, 10).toString(16);
+  return femIn4518 === undefined
+    ? n
+    : isNaN(femIn4518)
+      ? valueError
+      : femIn4518 < 0
+        ? numError
+        : ((femIn4518 = Math.floor(femIn4518)),
+          femIn4518 >= n.length
+            ? padStartRepeat("0", femIn4518 - n.length) + n
+            : numError);
+}
+export function dec2oct(femIn4741: any, femIn4742: any) {
+  if (((femIn4741 = flattenMatrixArgs(femIn4741)), femIn4741 instanceof Error))
+    return femIn4741;
+  if (
+    !/^-?[0-9]{1,9}$/.test(femIn4741) ||
+    femIn4741 < -536870912 ||
+    femIn4741 > 536870911
+  )
+    return numError;
+  if (femIn4741 < 0) return (1073741824 + femIn4741).toString(8);
+  let n = parseInt(femIn4741, 10).toString(8);
+  return femIn4742 === undefined
+    ? n
+    : isNaN(femIn4742)
+      ? valueError
+      : femIn4742 < 0
+        ? numError
+        : ((femIn4742 = Math.floor(femIn4742)),
+          femIn4742 >= n.length
+            ? padStartRepeat("0", femIn4742 - n.length) + n
+            : numError);
+}
+export function complexLog10(femIn6194: any) {
+  let femBind16274 = complexReal(femIn6194),
+    femBind16275 = complexImag(femIn6194);
+  if (hasFormulaError(femBind16274, femBind16275)) return valueError;
+  let femBind16276 = femIn6194.substring(femIn6194.length - 1);
+  return (
+    (femBind16276 =
+      femBind16276 === "i" || femBind16276 === "j" ? femBind16276 : "i"),
+    formatComplexPair(
+      Math.log(
+        Math.sqrt(femBind16274 * femBind16274 + femBind16275 * femBind16275),
+      ) / Math.log(10),
+      Math.atan(femBind16275 / femBind16274) / Math.log(10),
+      femBind16276,
+    )
+  );
+}
+
+export const F1e = dec2hex;
+export const I1e = dec2oct;
+export const q1e = complexLog10;
+
 export const s1e = edate;
 export const P1e = dec2bin;
 export const z1e = hex2bin;
@@ -273,3 +339,25 @@ export const s2e = chooseValue;
 export const workbookHelper889 = complexAbs;
 export const workbookHelper890 = complexArg;
 export const workbookHelper895 = collectNonEmptyArgs;
+
+export function complexSinh(femIn5926: any) {
+  let femBind15932 = complexReal(femIn5926),
+    femBind15933 = $4(femIn5926);
+  if (hasFormulaError(femBind15932, femBind15933)) return valueError;
+  let femBind15934 = femIn5926.substring(femIn5926.length - 1);
+  return (
+    (femBind15934 =
+      femBind15934 === "i" || femBind15934 === "j" ? femBind15934 : "i"),
+    formatComplexPair(
+      (Math.cos(femBind15933) *
+        (Math.exp(femBind15932) - Math.exp(-femBind15932))) /
+        2,
+      (Math.sin(femBind15933) *
+        (Math.exp(femBind15932) + Math.exp(-femBind15932))) /
+        2,
+      femBind15934,
+    )
+  );
+}
+
+export const $1e = complexSinh;
