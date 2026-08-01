@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~6.5k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~5.8k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1966,6 +1966,20 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept (~6.5k still above thin closeout bar)
 - QG PASS on changed hooks + boundary `--no-cache --allow-open-boundaries`
 - Next: slim remaining ≤4 LOC / 1-line wires; reassess openBoundary closeout when mega is thin enough
+
+## Wave 162 (Stage-3 formula-impl-bag + empty-wire closeout)
+
+- Boundary 6484 → 5840 (Δ -644)
+- Relocated compact `setFormulaImplBag` (502 impls) → `workbook/formula-registry/formula-impl-bag.ts` (direct imports; `lst`/`ust`/`fst` = `OZe`/`CZe`/`kZe`)
+- Trimmed bag-only formula imports from mega; peeled mega `lst`/`ust`/`fst` wrappers
+- Dropped 32 no-op empty `wire*BoundaryHooks()` leave-behind calls + unused wire imports
+- Post-prettier mega LOC 5840 (import blocks re-expanded; net Δ -644)
+- Remaining: 31 wires (~105 LOC, all ≤4); openBoundary kept (~5.8k still above thin closeout bar)
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept
+- QG PASS on formula-registry + boundary `--no-cache --allow-open-boundaries`
+- Next: slim remaining ≤4 LOC wired hooks (no-undef batch ~16); reassess openBoundary closeout when mega is thin enough
+
+
 
 
 

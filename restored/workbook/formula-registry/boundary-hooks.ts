@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-158: formula-registry ensures via direct imports
 // (wireFormulaRegistryBoundaryHooks leave-behind retired).
-// setFormulaImplBag / frBag remain mega-wired until formula impls peel.
+// Wave-162: frBag filled by formula-impl-bag (no mega setFormulaImplBag).
 
 import { c8e, g8e, x7e, wot } from "../formula-thin-stubs";
 import {
@@ -90,7 +90,7 @@ export const frH: FormulaRegistryBoundaryHooks = {
   },
 };
 
-/** Live formula impl functions (hoisted `function` decls still in mega). */
+/** Live formula impl functions (filled by formula-impl-bag). */
 export let frBag: Record<string, any> = {};
 
 export function setFormulaImplBag(bag: Record<string, any>): void {

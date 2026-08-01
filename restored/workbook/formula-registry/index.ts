@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-86/158: formula-registry barrel (ensure wire retired; frBag still mega-set).
+// Stage-3 wave-86/158/162: formula-registry barrel (frBag via formula-impl-bag).
 // (legacy $dt / Xdt / Zdt / Binding1947 / Qdt).
 
 export { ensureFormulaRegistryInit } from "./ensure-formula-registry-init";
