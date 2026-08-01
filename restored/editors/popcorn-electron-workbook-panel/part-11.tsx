@@ -16,7 +16,7 @@ import {
   workbookL,
   WorkbookR,
   workbookZ,
-} from "../../boundaries/workbook-runtime/index";
+} from "../../workbook/editor-compat";
 import { readPrefersReducedMotionAtom } from "../../motion/use-prefers-reduced-motion";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import { buildMemoryFeatureFlags } from "../../settings/build-memory-feature-flags";

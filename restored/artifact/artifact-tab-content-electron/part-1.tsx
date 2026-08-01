@@ -226,7 +226,7 @@ const __vite__mapDeps = (
       "../../runtime/vite-browser-external",
       "../../runtime/rolldown-runtime",
       "../../workbook/workbook",
-      "../../boundaries/workbook-runtime/index",
+      "../../workbook/editor-compat",
       "./app-initial-C-fROkKo.js",
       "./app-initial-Czet5G9g.css",
       "../../boundaries/lodash-reduce-runtime",

@@ -5,7 +5,7 @@
 
 import { ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
 import { jsxRuntime as getJsxRuntime, react } from "../../boundaries/react-cjs-runtime";
-import { WorkbookD, workbookF, workbookG, workbookH, workbookM, workbookP, workbookUnderscore, workbookV } from "../../boundaries/workbook-runtime/index";
+import { WorkbookD, workbookF, workbookG, workbookH, workbookM, workbookP, workbookUnderscore, workbookV } from "../../workbook/editor-compat";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 
 /** split companion stub */

@@ -29,7 +29,7 @@ const vine: any = undefined;
 
 import { ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
 import { react } from "../../boundaries/react-cjs-runtime";
-import { workbookO, workbookS } from "../../boundaries/workbook-runtime/index";
+import { workbookO, workbookS } from "../../workbook/editor-compat";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import {
   ensureDndAxisLockModifiersInit,

@@ -1,12 +1,12 @@
-# workbook-runtime (intentional oversized terminal)
+# workbook-runtime (thin vendor-runtime compat facade)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~1.6k LOC remaining)  
-**IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
+**Public path:** `boundaries/workbook-runtime/index.ts` (~0.1k LOC remaining)  
+**IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: false`
 
 ## Decision
 
-**Not npm-first.** This is Codex’s popcorn workbook / spreadsheet / presentation / document engine (formula + worksheet + D3 charts + mermaid + xlsx validation), not a stock package such as HyperFormula, SheetJS, Univer, or FortuneSheet.
+**Not npm-first.** This is Codex’s popcorn workbook / spreadsheet / presentation / document engine (formula + worksheet + D3 charts + mermaid + xlsx validation), not a stock package such as HyperFormula, SheetJS, Univer, or FortuneSheet. Wave-164 cleared `openBoundary`: semantic bodies live under `workbook/*`; editors import `workbook/editor-compat`; this path is a thin IMPORT_MAP re-export facade.
 
 ## Domain inventory (wave-1)
 
@@ -306,14 +306,15 @@
 
 ## Why it stays in `boundaries/`
 
-Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable. The file is a documented **vendor-runtime** terminal so full-tree QG does not false-fail on cryptic bindings / flat size. The `// Flat boundary … vendored` header is the per-file exemption (eligible only under `boundaries/`).
+Thin IMPORT_MAP / legacy-alias facade only (wave-164). Semantic bodies live under `workbook/*`; editors import `workbook/editor-compat`. The `openBoundary` flag is cleared.
+
 
 ## Exit criteria
 
-1. Split coherent domains out of the dump into `workbook/` (spreadsheet, presentation, document, formula, chart helpers).
-2. Replace this path with a thin barrel (or delete once all consumers remapped).
-3. Clear `openBoundary` and drop the vendored flat-boundary header.
-4. `quality-gate.ts` on the promoted `workbook/*` modules (not `--vendored`).
+1. Split coherent domains out of the dump into `workbook/` (spreadsheet, presentation, document, formula, chart helpers). ✅
+2. Replace this path with a thin barrel (or delete once all consumers remapped). ✅ thin facade + `workbook/editor-compat`
+3. Clear `openBoundary` and drop the vendored flat-boundary header. ✅ wave-164
+4. `quality-gate.ts` on the promoted `workbook/*` modules (not `--vendored`). ✅ scoped QG without `--allow-open-boundaries`
 
 ## Wave-1 progress
 
@@ -1991,3 +1992,10 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Dropped 31 mega wire calls + 13 `Object.defineProperties` leave-behind blocks.
 - Pruned 3477 unused mega import specs (~3974 LOC).
 - Boundary LOC 5840 → 1643 (Δ -4197); `openBoundary` kept (compat re-export surface + residual glue).
+
+### Wave 164 — closeout: editor remap + thin mega facade
+- Created `workbook/editor-compat.ts` re-exporting all 83 public legacy aliases from semantic `workbook/*` (+ `vendor/yjs` for `workbookAt`).
+- Remapped 108 editor/artifact consumers off `boundaries/workbook-runtime` → `workbook/editor-compat`.
+- Thinned mega 1643 → 90 (Δ -1553): pure re-export shim; residual glue/void keep-alives/proxies dropped.
+- `openBoundary` cleared; Flat boundary header replaced with thin compat header.
+- QG PASS without `--allow-open-boundaries` (thin facade under flat-line bar).
