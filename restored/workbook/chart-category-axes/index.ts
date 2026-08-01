@@ -3,3 +3,12 @@
 
 export { wireChartCategoryAxesBoundaryHooks, ccaH } from "./boundary-hooks";
 export { paintCategoryAxes, Tbe } from "./chart-category-axes-impl";
+
+export {
+  seriesCategoryLength,
+  compactSparseCategories,
+  normalizeChartCategories,
+  Aye,
+  jye,
+  workbookHelper419,
+} from "./normalize-chart-categories-impl";

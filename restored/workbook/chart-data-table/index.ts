@@ -11,3 +11,9 @@ export {
   UCe,
   WCe,
 } from "./sheet-range-ref-impl";
+
+export {
+  paintHierarchyDataTable,
+  DSe,
+  workbookHelper564,
+} from "./hierarchy-data-table-paint-impl";

@@ -24,3 +24,5 @@ export {
   swe,
   Swe,
 } from "./round-rect-arc-to-impl";
+
+export { drawShapePaths, workbookHelper608 } from "./draw-shape-paths-impl";

@@ -15,3 +15,9 @@ export {
   paintIconBoxes,
   uwe,
 } from "./icon-set-paint-impl";
+
+export {
+  layoutUnsupportedIconBadge,
+  lwe,
+} from "./unsupported-badge-layout-impl";
+export { paintRatingBars, workbookHelper595 } from "./paint-rating-bars-impl";

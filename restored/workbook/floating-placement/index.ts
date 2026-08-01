@@ -2,7 +2,6 @@
 // Stage-3 wave-105: floating-placement barrel.
 
 export { wireFloatingPlacementBoundaryHooks, fpH } from "./boundary-hooks";
-export {
-  resolveFloatingPlacement,
-  jTe,
-} from "./floating-placement-impl";
+export { resolveFloatingPlacement, jTe } from "./floating-placement-impl";
+
+export { resolvePlacementOrBBox, MTe } from "./placement-or-bbox-impl";

@@ -1,0 +1,31 @@
+// Restored from ref/webview/assets/workbook-C49Dgk1_.js
+// Stage-3 wave-124: xlsx-dynamic-array-meta barrel.
+
+export {
+  annotateDynamicArrayCells,
+  cellMatchesSpillProjection,
+  cellHasLambdaFormula,
+  formulaExprContainsLambda,
+  stripDynamicArrayFnPrefixes,
+  stripLambdaFnPrefixes,
+  replaceFormulaFnNameList,
+  ensureXldapCellMetadataIndex,
+  createEmptyWorkbookMetadata,
+  ensureXldapMetadataType,
+  ensureDynamicArrayFutureMetadata,
+  createDynamicArrayExtensionUri,
+  findXldapCellMetadataIndex,
+  opt,
+  spt,
+  cpt,
+  lpt,
+  upt,
+  dpt,
+  fpt,
+  hpt,
+  gpt,
+  _pt,
+  vpt,
+  ypt,
+  bpt,
+} from "./xlsx-dynamic-array-meta-impl";

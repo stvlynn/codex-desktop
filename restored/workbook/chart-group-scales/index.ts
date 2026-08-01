@@ -28,3 +28,8 @@ export {
 } from "./bar-plot-scales-impl";
 
 export { buildLogChartScale, yye } from "./log-chart-scale-impl";
+
+export {
+  buildNiceChartScale,
+  workbookHelper398,
+} from "./nice-chart-scale-impl";

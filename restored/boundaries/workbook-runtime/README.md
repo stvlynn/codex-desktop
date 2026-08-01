@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~33.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~32.8k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -281,6 +281,17 @@
 | CF dxf color maps (`jht`) | ~0.04k | **Drained (wave-123)** → `workbook/cf-dxf-color-maps/` |
 | FILTER-by-mask (`Lst`) | ~0.04k | **Drained (wave-123)** → `workbook/formula-sort-filter/` |
 | Plot-area manualLayout (`bSe`) | ~0.04k | **Drained (wave-123)** → `workbook/chart-plot-layout/` |
+| Formula SKEW + samples (`W4e`/`s4e`/`c4e`/`helper912`) | ~0.11k | **Drained (wave-124)** → `workbook/formula-skew/` |
+| Path ordinal colors (`helper477`) | ~0.04k | **Drained (wave-124)** → `workbook/chart-path-colors/` |
+| Draw shape paths (`helper608`) | ~0.04k | **Drained (wave-124)** → `workbook/shape-path/` |
+| Icon badge + rating bars (`lwe`/`helper595`) | ~0.08k | **Drained (wave-124)** → `workbook/icon-set-paint/` |
+| Nice chart scale (`helper398`) | ~0.04k | **Drained (wave-124)** → `workbook/chart-group-scales/` |
+| Placement-or-bbox (`MTe`) | ~0.04k | **Drained (wave-124)** → `workbook/floating-placement/` |
+| Chart categories (`helper419`/`Aye`/`jye`) | ~0.06k | **Drained (wave-124)** → `workbook/chart-category-axes/` |
+| Shared-formula A1 shift (`helper589`..`592`) | ~0.12k | **Drained (wave-124)** → `workbook/formula-shared-refs/` |
+| Dynamic-array / XLDAPR meta (`opt`..`bpt`/`_pt`) | ~0.25k | **Drained (wave-124)** → `workbook/xlsx-dynamic-array-meta/` |
+| Hierarchy data-table paint (`DSe`..`ISe`) | ~0.16k | **Drained (wave-124)** → `workbook/chart-data-table/` |
+| Text-frame style (`helper689`+`cOe`..`hOe`/`EOe`) | ~0.14k | **Drained (wave-124)** → `workbook/text-frame-style/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1599,5 +1610,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Peeled: shape-style-apply fze..vze (rze callers import); formula-dsum-criteria j8e..P8e; formula-averageif helper913/914+p4e..g4e; apt; ppt+mpt; jht (kht caller); Lst; bSe+helper557
 - Skipped W4e (s4e nest); mht/Sht (helper1015 fan-out); helper603 (Nwe); rze; kht
 - Leave-behind: rze still WorkbookN.apply (now imports fze/gze/_ze/mze); kht still ensure bag (now imports jht); helper603 still needs Nwe Map ESM
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`; full tree with `--allow-open-boundaries --allow-flat --allow-mechanical-names`
+- openBoundary remains while mega still large
+
+## Wave 124 (Stage-3 preferred W4e/s4e + mid helpers ≥35)
+
+- Boundary 33826 → 32801 (Δ -1025)
+- Peeled: formula-skew s4e..helper912+W4e; chart-path-colors helper477; shape-path helper608; icon-set-paint lwe+595; chart-group-scales helper398; floating-placement MTe; chart-category-axes 419+Aye+jye; formula-shared-refs 589..592; xlsx-dynamic-array-meta opt..bpt (_pt); chart-data-table DSe..ISe; text-frame-style 689..hOe+EOe
+- Skipped: _be/bbe (chart fan-out); a3e/h6e (helper916 shared with f4e); helper483 (Bn+Binding908); helper603 (Nwe); rze/kht leave-behinds
+- Leave-behind: rze still imports fze/gze/_ze/mze — needs yze/bze/dze + ensure fan-out; kht imports jht — needs mht/Sht/helper1015
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`; full tree with `--allow-open-boundaries --allow-flat --allow-mechanical-names`
 - openBoundary remains while mega still large
