@@ -1,11 +1,33 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-59: WorkbookN / __workbookT core barrel (class in boundary).
+// Stage-3 wave-59: WorkbookN / __workbookT core barrel; wave-151: class shell peeled.
 
 export type { WorkbookOpsHost } from "./types";
 export type { WorkbookCoreEnv } from "./runtime-env";
 export { wireWorkbookCoreEnv, getWorkbookCoreEnv } from "./runtime-env";
 export { getWorkbookOps } from "./ops";
 export { ensureWorkbookCoreInit } from "./ensure-workbook-core-init";
+export { wireWorkbookNHooks, wnH } from "./boundary-hooks";
+export {
+  WorkbookN,
+  ensureWorkbookNInit,
+  __workbookT,
+  workbookBinding1996,
+  dvt,
+  fvt,
+  pvt,
+  mvt,
+  hvt,
+  gvt,
+  _vt,
+  workbookBinding1997,
+  workbookBinding1998,
+  vvt,
+  workbookBinding1999,
+  yvt,
+  bvt,
+  workbookBinding2000,
+  xvt,
+} from "./workbook-class-impl";
 export {
   featureBagCheckboxType,
   featureBagXfControlsType,

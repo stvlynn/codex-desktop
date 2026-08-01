@@ -1847,3 +1847,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: WorkbookN ensure/shell peel when clean; peel `_workbookS` when local ensures ≈0; remaining ≥3 inventory
+
+## Wave 151 (Stage-3 WorkbookN + _workbookS shells)
+
+- Boundary 14620 → 11891 (Δ -2729)
+- Peeled: WorkbookN ensure/shell + __workbookT → `workbook/workbook-core/`; _workbookS + vYe + WorkbookClass3 + yYe → `workbook/presentation-doc/`
+- Skipped: wirePresentationRecipes; Nwe/Iwe; b5e; mid-gap nests (kXe/FXe/ipt/Ngt/Xht/…)
+- Leave-behind: WorkbookN deps/env bag via `wireWorkbookNHooks`; presentation-doc leave-behinds via `wirePresentationDocHooks`
+- _workbookS top ensures: 44 → (imported); **local esm defs among them: 1 → 0** (remaining: none)
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries --allow-flat`
+- openBoundary remains while mega still large
+- Next: mid-gap nests between former shells; thin stubs Nwe/Iwe/b5e; wirePresentationRecipes false inventory; closeout when thin
