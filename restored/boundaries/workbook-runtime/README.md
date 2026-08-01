@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~39.1k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~37.8k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -264,6 +264,10 @@
 | Formula criteria/SUMIF/RANDARRAY (`helper976`..`Rut`/`Llt`/`Lut`) | ~1.35k | **Drained (wave-119)** → `workbook/formula-criteria-lookup/` |
 | Formula TEXTSPLIT/REGEX (`vdt`..`Jdt`/`bdt`/`Edt`) | ~0.70k | **Drained (wave-119)** → `workbook/formula-text-split/` |
 | CF icon-set + color-scale (`Fht`/`Iht`) | ~0.11k | **Drained (wave-119)** → `workbook/cf-icon-color-scale/` |
+| Formula call-dispatch (`helper996`..`Hft`/`Nft`/`eft`/`Tft`) | ~0.79k | **Drained (wave-120)** → `workbook/formula-call-dispatch/` |
+| Formula range-index (`Uft`/`Wft`/`Gft`/`Kft`) | ~0.30k | **Drained (wave-120)** → `workbook/formula-range-index/` |
+| Formula structured-ref (`qft`..`tpt`) | ~0.20k | **Drained (wave-120)** → `workbook/formula-structured-ref/` |
+| CF cell-value compare (`Rht`) | ~0.04k | **Drained (wave-120)** → `workbook/cf-icon-color-scale/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1547,4 +1551,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Confirmed ≥40 inventory entries REAL (sib=1)
 - Skipped eft/Tft/qft/tpt (Nft/Uft ESM); helper603 (Nwe); sat/oat; qQe/z$e/_4e/879; rze; kht body
 - Leave-behind: rze/kht still blocked (kht now imports Fht); helper603 still needs Nwe Map ESM
+- openBoundary remains while mega still large
+
+## Wave 120 (Stage-3 preferred mid-file + Nft/Uft ESM + CF)
+
+- Boundary 39072 → 37827 (Δ -1245)
+- Peeled: helper996..Hft/Nft formula-call-dispatch (eft/Tft); helper1007..Kft formula-range-index (Uft/Wft/Gft/Kft); qft..tpt formula-structured-ref; Rht cf-cell-compare
+- Confirmed Nft/Uft ESM nests real and included; ≥40 inventory entries REAL
+- Skipped helper603 (Nwe); sat/oat (Kat); qQe/z$e/_4e/879 (859 nest); rze; kht
+- Leave-behind: rze/kht still blocked; helper603 still needs Nwe Map ESM
 - openBoundary remains while mega still large

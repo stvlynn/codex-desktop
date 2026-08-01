@@ -4,7 +4,7 @@
 
 import { findFormulaSccs } from "./formula-dep-scc-impl";
 
-function orderFormulaDeps(sccIn2631: any, sccIn2632: any) {
+export function orderFormulaDeps(sccIn2631: any, sccIn2632: any) {
   let sccBind10106 = new Map(),
     sccBind10107 = [],
     sccBind10108 = [];

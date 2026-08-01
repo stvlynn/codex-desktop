@@ -95,3 +95,36 @@ export function Iht(cicIn2241: any, cicIn2242: any) {
   }
   return `rgba(${cicBind9291[0]},${cicBind9291[1]},${cicBind9291[2]},1)`;
 }
+
+export function Rht(cicIn2805: any, cicIn2806: any, cicIn2807: any) {
+  let cicBind10527 = Array.isArray(cicIn2806) ? cicIn2806 : undefined;
+  if (cicIn2807 == null) return false;
+  let cicBind10528 = cicBind10527?.[0] == null ? NaN : Number(cicBind10527[0]),
+    cicBind10529 = cicBind10527?.[1] == null ? NaN : Number(cicBind10527[1]);
+  switch (cicIn2805) {
+    case "greaterThan":
+      return cicIn2807 > cicBind10528;
+    case "greaterThanOrEqual":
+      return cicIn2807 >= cicBind10528;
+    case "lessThan":
+      return cicIn2807 < cicBind10528;
+    case "lessThanOrEqual":
+      return cicIn2807 <= cicBind10528;
+    case "equal":
+      return cicIn2807 === cicBind10528;
+    case "notEqual":
+      return cicIn2807 !== cicBind10528;
+    case "between":
+      return (
+        cicIn2807 >= Math.min(cicBind10528, cicBind10529) &&
+        cicIn2807 <= Math.max(cicBind10528, cicBind10529)
+      );
+    case "notBetween":
+      return !(
+        cicIn2807 >= Math.min(cicBind10528, cicBind10529) &&
+        cicIn2807 <= Math.max(cicBind10528, cicBind10529)
+      );
+    default:
+      return false;
+  }
+}
