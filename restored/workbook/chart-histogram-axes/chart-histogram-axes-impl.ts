@@ -21,21 +21,20 @@ void AXIS_LABEL_INSET;
 void AXIS_TITLE_GAP;
 
 function nearEqualPx(chaIn14391: any, chaIn14392: any) {
-  return (
-    Math.abs(chaIn14391 - chaIn14392) <= AXIS_NEAR_EPS
-  );
+  return Math.abs(chaIn14391 - chaIn14392) <= AXIS_NEAR_EPS;
 }
-export function paintHistogramAxes(chaIn270: any, chaIn271: any, chaIn272: any, chaIn273: any, chaIn274: any, chaIn275: any, ) {
+export function paintHistogramAxes(
+  chaIn270: any,
+  chaIn271: any,
+  chaIn272: any,
+  chaIn273: any,
+  chaIn274: any,
+  chaIn275: any,
+) {
   let chaBind3407 = chaIn271.xAxis,
     chaBind3408 = chaIn271.yAxis,
-    chaBind3409 = chaH.bh428(
-      chaBind3407,
-      chaIn275,
-    ),
-    chaBind3410 = chaH.bh428(
-      chaBind3408,
-      chaIn275,
-    ),
+    chaBind3409 = chaH.bh428(chaBind3407, chaIn275),
+    chaBind3410 = chaH.bh428(chaBind3408, chaIn275),
     chaBind3411 = chaIn273.y + chaIn273.height,
     chaBind3412 = chaIn273.x;
   chaIn270.save();
@@ -49,27 +48,18 @@ export function paintHistogramAxes(chaIn270: any, chaIn271: any, chaIn272: any, 
       ((chaIn270.strokeStyle = chaBind3409.lineColor ?? "#666"),
       chaIn270.beginPath(),
       chaIn270.moveTo(chaIn273.x, chaBind3411),
-      chaIn270.lineTo(
-        chaIn273.x + chaIn273.width,
-        chaBind3411,
-      ),
+      chaIn270.lineTo(chaIn273.x + chaIn273.width, chaBind3411),
       chaIn270.stroke()),
     !chaBind3414 &&
       chaBind3408?.line?.fill?.color &&
       ((chaIn270.strokeStyle = chaBind3410.lineColor ?? "#666"),
       chaIn270.beginPath(),
       chaIn270.moveTo(chaBind3412, chaIn273.y),
-      chaIn270.lineTo(
-        chaBind3412,
-        chaIn273.y + chaIn273.height,
-      ),
+      chaIn270.lineTo(chaBind3412, chaIn273.y + chaIn273.height),
       chaIn270.stroke()),
     !chaBind3414)
   ) {
-    let chaBind6440 = Math.max(
-        2,
-        Math.floor(chaIn273.height / 60),
-      ),
+    let chaBind6440 = Math.max(2, Math.floor(chaIn273.height / 60)),
       chaBind6441 = chaH.bh440({
         ctx: chaIn270,
         axis: chaBind3408,
@@ -83,8 +73,7 @@ export function paintHistogramAxes(chaIn270: any, chaIn271: any, chaIn272: any, 
         chaBind3408.majorTickMark !== _presentationWn.TICK_MARK_UNSPECIFIED &&
         chaBind3408.majorTickMark !== _presentationWn.TICK_MARK_NONE,
       chaBind6444 = !!chaBind3408?.majorGridlines?.fill?.color,
-      chaBind6445 =
-        chaBind3410.gridLineColor ?? chaBind3410.lineColor;
+      chaBind6445 = chaBind3410.gridLineColor ?? chaBind3410.lineColor;
     chaIn270.font = chaH.bh430(chaBind3410);
     chaIn270.fillStyle = chaBind3410.textColor;
     chaIn270.textAlign = "right";
@@ -99,33 +88,19 @@ export function paintHistogramAxes(chaIn270: any, chaIn271: any, chaIn272: any, 
           (chaIn270.strokeStyle = chaBind6445 ?? "#666"),
           chaIn270.beginPath(),
           chaIn270.moveTo(chaIn273.x, chaBind10635),
-          chaIn270.lineTo(
-            chaIn273.x + chaIn273.width,
-            chaBind10635,
-          ),
+          chaIn270.lineTo(chaIn273.x + chaIn273.width, chaBind10635),
           chaIn270.stroke(),
           chaIn270.restore()),
         chaBind6443 &&
-          ((chaIn270.strokeStyle =
-            chaBind3410.lineColor ?? "#666"),
+          ((chaIn270.strokeStyle = chaBind3410.lineColor ?? "#666"),
           chaIn270.beginPath(),
-          chaIn270.moveTo(
-            chaBind3412 - 4,
-            chaBind10635,
-          ),
+          chaIn270.moveTo(chaBind3412 - 4, chaBind10635),
           chaIn270.lineTo(chaBind3412, chaBind10635),
           chaIn270.stroke()),
         !chaBind6441.hideTickLabels)
       ) {
-        let chaBind22082 = chaH.bh439(
-          item,
-          chaBind3408?.numberFormatCode,
-        );
-        chaIn270.fillText(
-          chaBind22082,
-          chaBind3412 - 6,
-          chaBind10635,
-        );
+        let chaBind22082 = chaH.bh439(item, chaBind3408?.numberFormatCode);
+        chaIn270.fillText(chaBind22082, chaBind3412 - 6, chaBind10635);
       }
     });
     chaBind3415 = Math.max(
@@ -137,9 +112,7 @@ export function paintHistogramAxes(chaIn270: any, chaIn271: any, chaIn272: any, 
     let chaBind6523 = chaIn274.bins.length,
       chaBind6524 = chaBind3411 + 4 + 2,
       chaBind6525 =
-        chaBind6523 > 0
-          ? chaBind3409.fontSize + AXIS_LABEL_INSET
-          : 0;
+        chaBind6523 > 0 ? chaBind3409.fontSize + AXIS_LABEL_INSET : 0;
     chaBind6523 > 0 &&
       ((chaIn270.font = chaH.bh430(chaBind3409)),
       (chaIn270.fillStyle = chaBind3409.textColor),
@@ -148,32 +121,19 @@ export function paintHistogramAxes(chaIn270: any, chaIn271: any, chaIn272: any, 
       chaIn274.bins.forEach((item) => {
         let chaBind11949 = chaIn272.x(item.x0),
           chaBind11950 = chaIn272.x(item.x1);
-        if (
-          !Number.isFinite(chaBind11949) ||
-          !Number.isFinite(chaBind11950)
-        )
+        if (!Number.isFinite(chaBind11949) || !Number.isFinite(chaBind11950))
           return;
-        let chaBind11951 =
-            chaBind11949 +
-            (chaBind11950 - chaBind11949) / 2,
+        let chaBind11951 = chaBind11949 + (chaBind11950 - chaBind11949) / 2,
           chaBind11952 = item.label ?? "";
         chaBind3407?.majorTickMark !== undefined &&
           chaBind3407.majorTickMark !== _presentationWn.TICK_MARK_UNSPECIFIED &&
           chaBind3407.majorTickMark !== _presentationWn.TICK_MARK_NONE &&
-          ((chaIn270.strokeStyle =
-            chaBind3409.lineColor ?? "#666"),
+          ((chaIn270.strokeStyle = chaBind3409.lineColor ?? "#666"),
           chaIn270.beginPath(),
           chaIn270.moveTo(chaBind11951, chaBind3411),
-          chaIn270.lineTo(
-            chaBind11951,
-            chaBind3411 + 4,
-          ),
+          chaIn270.lineTo(chaBind11951, chaBind3411 + 4),
           chaIn270.stroke());
-        chaIn270.fillText(
-          chaBind11952,
-          chaBind11951,
-          chaBind6524,
-        );
+        chaIn270.fillText(chaBind11952, chaBind11951, chaBind6524);
       }));
     let chaBind6526 = chaH.bh438(
       chaIn275,
@@ -188,17 +148,13 @@ export function paintHistogramAxes(chaIn270: any, chaIn271: any, chaIn272: any, 
           ? resolveColorToCssRgba(chaBind13743.fill.color, chaIn275)
           : chaBind3409.textColor;
       chaIn270.save();
-      chaIn270.fillStyle =
-        chaBind13744 ?? chaBind3409.textColor;
+      chaIn270.fillStyle = chaBind13744 ?? chaBind3409.textColor;
       chaIn270.font = chaBind6526.font;
       chaIn270.textAlign = "center";
       chaIn270.textBaseline = "middle";
       chaIn270.translate(
         chaIn273.x + chaIn273.width / 2,
-        chaBind3411 +
-          chaBind6525 +
-          AXIS_TITLE_GAP +
-          chaBind6526.height / 2,
+        chaBind3411 + chaBind6525 + AXIS_TITLE_GAP + chaBind6526.height / 2,
       );
       chaIn270.rotate(chaBind6526.rotationRad);
       chaIn270.fillText(chaBind6526.text, 0, 0);
@@ -206,8 +162,7 @@ export function paintHistogramAxes(chaIn270: any, chaIn271: any, chaIn272: any, 
     }
   }
   if (!chaBind3414) {
-    let chaBind11953 =
-        chaBind3415 > 0 ? chaBind3415 + AXIS_LABEL_INSET : 0,
+    let chaBind11953 = chaBind3415 > 0 ? chaBind3415 + AXIS_LABEL_INSET : 0,
       chaBind11954 = chaH.bh438(
         chaIn275,
         chaBind3408?.title,
@@ -221,16 +176,12 @@ export function paintHistogramAxes(chaIn270: any, chaIn271: any, chaIn272: any, 
           ? resolveColorToCssRgba(chaBind13713.fill.color, chaIn275)
           : chaBind3410.textColor;
       chaIn270.save();
-      chaIn270.fillStyle =
-        chaBind13714 ?? chaBind3410.textColor;
+      chaIn270.fillStyle = chaBind13714 ?? chaBind3410.textColor;
       chaIn270.font = chaBind11954.font;
       chaIn270.textAlign = "center";
       chaIn270.textBaseline = "middle";
       chaIn270.translate(
-        chaIn273.x -
-          chaBind11953 -
-          AXIS_TITLE_GAP -
-          chaBind11954.width / 2,
+        chaIn273.x - chaBind11953 - AXIS_TITLE_GAP - chaBind11954.width / 2,
         chaIn273.y + chaIn273.height / 2,
       );
       chaIn270.rotate(chaBind11954.rotationRad);

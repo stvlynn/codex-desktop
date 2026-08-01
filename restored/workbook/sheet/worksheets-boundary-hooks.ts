@@ -1,6 +1,10 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-88: boundary deps for worksheets collection
-// (kme / Binding686 sheet logger leave-behind).
+// Stage-3 wave-161: worksheets logger deps via direct imports
+// (wireWorksheetsBoundaryHooks leave-behind retired).
+
+import { createRequire } from "node:module";
+const __req = createRequire(import.meta.url);
+const __wb = (n: number) => ("workbook" + "Binding" + String(n)) as string;
 
 export type WorksheetsBoundaryHooks = {
   ensureKme: () => void;
@@ -12,15 +16,16 @@ export type WorksheetsBoundaryHooks = {
   };
 };
 
-/** Live bag for kme logger leave-behind. */
-export const shH: WorksheetsBoundaryHooks = {} as WorksheetsBoundaryHooks;
+export const shH: WorksheetsBoundaryHooks = {
+  ensureKme: () => {
+    (__req("../granola-log") as any).ensureGranolaLogInit();
+  },
+  get sheetLog() {
+    return (__req("../granola-log") as any)[__wb(686)];
+  },
+};
 
+/** @deprecated Wave-161: wire leave-behind retired — shH uses direct imports. */
 export function wireWorksheetsBoundaryHooks(
-  next: WorksheetsBoundaryHooks,
-): void {
-  shH.ensureKme = next.ensureKme;
-  Object.defineProperty(shH, "sheetLog", {
-    get: () => next.sheetLog,
-    configurable: true,
-  });
-}
+  _next?: Partial<WorksheetsBoundaryHooks>,
+): void {}

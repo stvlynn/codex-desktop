@@ -14,6 +14,7 @@ import {
 // Flat boundary facade — vendored oversized workbook runtime module.
 // Intentional oversized vendor-runtime terminal (openBoundary).
 // Stage-3 wave-160: slim top chart/compose/html-paste wires (20) → direct imports; openBoundary kept.
+// Stage-3 wave-161: slim remaining ≥5 LOC wires (49) → direct imports; leave-behind consts via getters; defineProperties cleanup; openBoundary kept.
 // Not stock npm (Codex popcorn workbook engine). Exit: Stage-3 split into workbook/.
 // Stage-3 waves: shape-geometry; theme-color; presentation-theme (Mae/Sle); fill; stylesheet; line; color-resolve; text-style; placeholder-style + font-metrics; style-resolve + glyph-advance; math-plain-text; math-ml; font-stack; math-layout; document-style/effects; placeholder-resolve; text-layout; canvas-fill; fill-resolve; text-canvas; text-box; design-tokens; ssf-npm; jstat+bessel-npm; yjs-npm; three-npm; highlightjs-npm; zod-npm; presentation-recipes; compose-layout; workbook-core; worksheet-drawings; drawing-layout+sparklines; mermaid-slide-adapters; decimal-npm; canvas-paint (BYe); chart-elements (The/Ohe…ige); formula-stats (Binding1831/1874); mermaid-slide-helpers (Binding1592/SAe…QAe); table-styles (Nme/Ume/ahe); google-slides-adapter (oJe/pJe/SJe); compose-dsl (Binding1490–1528); graphlib+dagre-npm (Binding1671/wNe); image-connector (Binding723–735); chart-asset (She/Che…Binding721); table-vo (fhe/yhe/xhe); charts-collection (CEe/REe/Binding1299/workbookC); mermaid-flowchart ($Ne/Binding1675/OPe/Binding1685/NPe/PPe); deck-kinds (wRe/qRe/Binding1738–1748); shape-element (Binding736/739); slides-collection (_workbookY/_workbookV); constraint-solver (bDe/Binding1364+prelude1350–1363); formula-opcodes (Z_t/X_t); table-element (_workbookH/eDe…cDe/_workbookM); table-row-range (YEe/Binding1321/QEe/$Ee); formula-registry ($dt/Xdt/Zdt); presentation-slide (Z$/X$/cLe/sLe); JEe table-cell reunite; TXe/wXe worksheets; chart-paint (helper579–585); doc-op-apply (Zht/_gt); three-chart-paint (helper521/Qbe/$be); unit-convert (N1e); named-ranges (zXe/RXe); styles-yjs (kgt/Ogt); chart-legend (helper491/lbe); shape-path (helper605–607); html-table-export (Wpt/Gpt/Kpt); chart-jsx-lower (dke/helper722/_ke); compose-jsx-lower (vke/helper745/Cke); chart-axis-ticks (helper462); shape-geometry-paint (helper616); table-frame-layout (workbookA); slide-canvas-render (vEe); chart-bar-direction (Dbe); chart-bar-series (helper501); chart-radar (Txe); chart-plot-layout (Xxe); chart-category-axes (Tbe); chart-scatter-series (nCe); chart-histogram-axes (gCe); chart-data-table (helper561); chart-scatter-axes (helper570); three-chart-camera (rxe); chart-trendline (helper525); chart-scatter-scale (helper540); paint-images (Fwe); constraint-layout (ODe/kDe); selection-style-grid (Upt); chart-data-labels (helper500); chart-legend-plot (jxe/wSe); chart-category-axis-labels (Nxe…Lxe); chart-box-whisker (ECe/OCe/jCe); chart-line-series (helper528); chart-group-scales (helper423); shape-path-endpoints (Vwe); table-cell-paint (STe); text-frame-embeds (helper643); slide-image-paint ($Te); chart-legend-layout (helper490); chart-area-series (helper529); chart-histogram-bars (sCe); chart-surface-map (Kye); compose-inline-text (NOe); chart-waterfall-bar (dCe); chart-pie-series (helper496); chart-bubble-series (aCe); sparkline-paint (YCe); icon-set-symbols (helper594); formula-irr (F0e); html-paste (wmt); formula-ast-remap (helper1022); chart-pie-labels (fbe); chart-treemap-plot-layout (Cbe); chart-histogram-bins (helper555); chart-funnel-segments (helper576); sheet-hidden-boundaries (ewe); slide-background-paint (RTe); formula-matrix-inverse (Alt); chart-axis-auto-domain (bye); chart-bar-series/computeBarSegments (helper421); three-chart-paint/paintPie3d (txe); chart-line-series/stackLineLayers (axe); chart-combo-groups (yxe); chart-funnel-segments/paintFunnelBars (vCe); shape-path-densify (dTe); compose-element-snapshot (helper678); formula-yearfrac (helper884); chart-scatter-axes/planScatterAxes (helper545); chart-legend-plot/reserveTitleBand (uSe); chart-series-values (helper551); icon-set-paint (uwe); table-cell-paint/layoutTableColumns ($B); compose-jsx-lower/lowerPanelSurfaceTag (JOe); formula-irr/computeXirr (Z0e); formula-ast-remap/exprContainsLambda (helper1008); html-paste/Dmt+Jpt; sparkline-paint/XCe+ZCe; canvas-paint/fillCellBackground (helper600); shape-path-densify/trimPathStart (uTe); slide-canvas-render/paintSlideText (nEe); chart-treemap-tiles (Yye); floating-placement (jTe); presentation-code-block (cAe/vAe); canvas-paint/paintCharts (zCe/BCe/VCe); table-styles/helper384; chart-card-paint (ASe); compose-element-snapshot/helper685; formula-dep-scc (VXe); formula-criteria-match (helper896); formula-irr/RATE (W0e); formula-matrix-det (klt); html-paste/Tmt+Emt; formula-ast-remap/Bht; wave-107: chart-trendline/helper524; chart-scatter-scale/helper539; chart-histogram-bins/_Se; chart-pie-series/qSe; chart-waterfall-bar/pCe; shape-path/Rwe+cTe; shape-path-densify/mTe; table-cell-paint/bTe+xTe; slide-canvas-render/dEe-cluster; presentation-theme/VDe; formula-dep-scc/WXe; formula-growth/pQe; formula-securities/k0e+H0e. wave-108: chart-legend-layout/ibe+abe; chart-legend-plot/helper458; chart-combo-groups/helper532; worksheet-used-range/UTe; formula-datedif/helper876; formula-complex/helper893+$4; formula-financial/E0e+D0e; conditional-format/oht+Nht+Pht. wave-109: compose-jsx-lower/helper713; formula-match/DZe; chart-stacked-domain/helper389; chart-line-series/helper480; chart-sunburst-layout/BSe; element-text-layout/XDe+helper676; chart-data-labels/helper495; shape-element/hze; shape-path/NSe. wave-110: formula-criteria-predicate/I8e+F8e; compose-element-snapshot/iOe; compose-jsx-lower/QOe; formula-financial/T0e+O0e+P0e; shape-path/tTe; formula-unique/Ost. wave-111: table-bands/fye+dye+386; axis-title/460; ube+dbe; Zbe+519; err-bars/527; lSe; card/562; fCe; pTe; bAe. wave-112: table-bands/fye+dye+386; helper546; helper440-cluster; swe/Swe; Lwe+647/648. wave-113: scales/388+391+403; axis/433+438+RCe; treemap/475+PSe; series/hxe+Cxe+cxe+Oxe; UCe+JCe; FPe; Qwe-stroke. wave-114: hbe+489+Wye; _xe+530/531; 601; 626; BTe; sbe; 439/478 SSF; 559. wave-115: MOe/XOe/YOe+Binding154-inline; PDe/BDe/vOe+693; dead CSe; 695/696. wave-116: yye/593/ROe+704–711/LIe+RIe/BXe+$Xe+836–853/xlsx-Tpt+Apt+kpt (ict false mid-file). wave-117: presentation-edit lLe..bLe + html-paste Ypt..1013/Qpt + chart-raster Amt..Zmt. wave-118: grid-frame-layout helper672+ADe+jDe + formula-sort-filter helper967. wave-119: formula-criteria-lookup helper976..Rut + formula-text-split vdt..Jdt + cf-icon-color-scale Fht/Iht..Ict (Tct/Pct/wct). wave-120: formula-call-dispatch (eft/Tft/Nft) + formula-range-index (Uft/Gft) + formula-structured-ref (qft/tpt) + cf Rht. wave-121: formula-scalar-funcs (854..days360/qQe/z$e) + formula-bond-basis (oat/sat/Kat/955..961). wave-122: formula-financial annuity (897..Q0e/w0e/fv/pmt) + formula-bond-basis lat/uat/dat/fat + formula-average-a ($3/Q2e/l4e/_4e). wave-123: shape-style-apply fze..vze + formula-dsum-criteria P8e/j8e + formula-averageif g4e + apt/ppt/mpt + jht + Lst + bSe. wave-124: formula-skew W4e/s4e + helper477/608/398/419/595/lwe/MTe + shared-refs 589..592 + opt..bpt + DSe..ISe + text-frame-style 689. wave-125: formula-criteria-shape a3e/h6e/916 + chart-axis-reserve _be/vbe/ybe + _O + NTe + cf-range-stats mht/Sht/1020. wave-126: chart-axis-scale-domain bbe/402/406/wye + presentation-aid ZRe + presentation-ref yze/bze/dze + helper483 + helper892 + iSe + iCe + r3e. wave-127: formula-byrow Yot/Jot nest + compose-code-children YIe + bond Uat/Kit/Wat/gat/_at + tSe + text-frame-resolve + QCe + TTe + Kwe + presentation-images + Dst + jgt + vrt + dead zye/Bye/Rxe/Vxe. wave-128: formula-eng-mids s1e nest + F9e/N9e/_9e + Mst + A8e + v8e + A7e + dead dollarOe/eke + cvt + gSe + owe + Gwe + 614/qwe + mid-paint 470/481/523/596/617/_Ee/700. wave-129: sheet-range-map 587 nest + jwe + uuid-v4/stable-id + formula-ast-walk 1038 + Xwe/Zwe + dead bwe/ySe/$1e + cfvo wht + paint Vye/Zye/awe/597 + F1e/I1e/q1e. wave-130: stroke 473/482 nest + 536 + twe + Jwe/Ywe + 639 + GDe + JSe + weeknum + D-stats + 917 + dollarXe→chart-data-labels + Aht/Mht unlock. wave-131: cf-engine unlock. wave-132: rze unlock. wave-133: preferred nests. wave-134: Oat/d4e/20s/18s mid batch. wave-135: qOe unlock + IIe + financial/chart ≥15. wave-136: preferred nests + Hit…Hat. wave-137: Binding874→446 + Binding1273→642. wave-138: I4e/910 + E3e/918 nest + Owe/vTe/575/484 + formula ≥10–14. wave-139: CJe/820 + 603 + 572/wOe + AJe + ZTe + ≥10 wire batch. wave-140: helper464/_A + formula g1e…n0e/Qnt/n2e + oYe/$2/$7/Agt + ≥8 wire batch. wave-141: Binding833/379/oye + helper667 + formula u4e…sst/$2e + $O/$I + dead≥6. wave-142: Binding1340/1294/1342→1344 + formula _3e/v3e/Dot + wire≥6 + helper376/824.
 // Stage-3 wave-6: Line Binding431 stroke VO + dash/compound maps → workbook/line/.
@@ -348,7 +349,6 @@ const workbookBinding788 = new Proxy(function workbookBinding788Proxy() {}, {
   },
 }) as any;
 import {
-  wireSparklinesBoundaryHooks,
   ensureSparklinesInit,
   ensureCellVoInit as zve,
   ensureCellGridInit as Bve,
@@ -595,45 +595,14 @@ import {
 } from "../../workbook/text-layout";
 
 import {
-  wireElementTextLayoutBoundaryHooks,
   buildElementTextLayoutMap as XDe,
   mergeInheritedShapeStyle as workbookHelper676,
-  etlH as __etlHWave109,
 } from "../../workbook/element-text-layout";
 
 import {
   buildTextFrameStyle as workbookHelper689,
   coerceFontSizePx as EOe,
 } from "../../workbook/text-frame-style";
-
-wireElementTextLayoutBoundaryHooks({
-  ShapeClass: undefined as any,
-  TEXT_WRAPPING_TYPE_NONE: undefined as any,
-  SHAPE_GEOMETRY_UNSPECIFIED: undefined as any,
-  getFontMeasureContext: (...args: any[]) => workbookHelper115(...args),
-  resolvePlaceholderTextStyle: (...args: any[]) => workbookHelper110(...args),
-  resolveMasterTextStyle: (...args: any[]) => workbookHelper218(...args),
-  resolveElementFramePx: (...args: any[]) => workbookHelper286(...args),
-  computeTextBoxInset: (...args: any[]) => workbookHelper296(...args),
-  layoutElementText: (...args: any[]) => workbookX(...args),
-});
-Object.defineProperties(__etlHWave109, {
-  ShapeClass: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding736,
-  },
-  TEXT_WRAPPING_TYPE_NONE: {
-    enumerable: true,
-    configurable: true,
-    get: () => br.TEXT_WRAPPING_TYPE_NONE,
-  },
-  SHAPE_GEOMETRY_UNSPECIFIED: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookDt.SHAPE_GEOMETRY_UNSPECIFIED,
-  },
-});
 
 import {
   applyCanvasLineDash as M_,
@@ -1168,11 +1137,6 @@ import {
   ensureTextElementAutofitInit as Hue,
 } from "../../workbook/text-element-autofit";
 
-wireSparklinesBoundaryHooks({
-  ensureBinding662: () => {
-    _C();
-  },
-});
 import {
   ensureMermaidSlideAdaptersInit,
   getMermaidSlidePlugins,
@@ -1222,7 +1186,6 @@ import {
   ensureSheetAutoHeightInit,
   parseSheetColWidth,
   sheet as sheetBag,
-  wireWorksheetsBoundaryHooks,
   ensureWorksheetsCollectionInit,
   TXe,
   EXe,
@@ -1276,8 +1239,6 @@ import {
 } from "../../workbook/chart-paint";
 
 import {
-  wireChartAxisReserveBoundaryHooks,
-  carH as __carHWave125,
   axisHasVisibleLine as workbookHelper429,
   axisCanvasFont as workbookHelper430,
   readAxisTickLabelOpts as workbookHelper434,
@@ -1349,30 +1310,7 @@ import {
   paintRadialGridlines as KSe,
 } from "../../workbook/chart-paint";
 
-import {
-  wireChartSunburstLayoutBoundaryHooks,
-  layoutSunburstArcs as BSe,
-  cslH as __cslHWave109,
-} from "../../workbook/chart-sunburst-layout";
-
-wireChartSunburstLayoutBoundaryHooks({
-  bh347: (...args: any[]) => workbookHelper347(...args),
-  pathSep: undefined as any,
-  palette: undefined as any,
-  scaleOrdinal: (...args: any[]) => appInitialYat(...args),
-});
-Object.defineProperties(__cslHWave109, {
-  pathSep: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1201,
-  },
-  palette: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding838,
-  },
-});
+import { layoutSunburstArcs as BSe } from "../../workbook/chart-sunburst-layout";
 
 wirePresentationAidBoundaryHooks();
 wirePresentationRefBoundaryHooks({
@@ -1401,50 +1339,12 @@ import {
 
 import { fCe } from "../../workbook/chart-waterfall-bar";
 
-import {
-  wireChartCardPaintBoundaryHooks,
-  paintChartCard as ASe,
-  ccpH as __ccpHWave106,
-  KTe,
-} from "../../workbook/chart-card-paint";
+import { paintChartCard as ASe, KTe } from "../../workbook/chart-card-paint";
 
 import {
   workbookHelper562,
   workbookHelper563,
 } from "../../workbook/chart-card-paint";
-
-wireChartCardPaintBoundaryHooks({
-  toCssColor: (...args: any[]) => workbookHelper564(...args),
-  layoutCardLines: (...args: any[]) => workbookHelper562(...args),
-  formatCardValue: (...args: any[]) => workbookHelper478(...args),
-  padX: undefined as any,
-  minWidth: undefined as any,
-  minHeight: undefined as any,
-  uiFont: undefined as any,
-});
-
-Object.defineProperties(__ccpHWave106, {
-  padX: {
-    enumerable: true,
-    configurable: true,
-    get: () => _R,
-  },
-  minWidth: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1194,
-  },
-  minHeight: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1195,
-  },
-  uiFont: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding837,
-  },
-});
 
 import {
   wirePaintChartsBoundaryHooks,
@@ -1453,27 +1353,14 @@ import {
   sheetMapByName as VCe,
 } from "../../workbook/canvas-paint";
 
-wirePaintChartsBoundaryHooks({
-  evalSeriesFormula: (...args: any[]) => HCe(...args),
-  evalCategoryFormula: (...args: any[]) => workbookHelper586(...args),
-  paintChartFromProto: (...args: any[]) => workbookHelper584(...args),
-});
-
 // Thin aliases: chart-paint cluster drained (wave-89).
 
 import {
-  wireDocOpApplyBoundaryHooks,
   ensureDocOpApplyInit,
   applyWorkbookDocOps as Zht,
   isAliasRef as workbookHelper1024,
   workbookBinding1964,
 } from "../../workbook/doc-op-apply";
-
-wireDocOpApplyBoundaryHooks({
-  commentThreadClass: workbookBinding1734,
-  ensureCommentsInit: (...args: any[]) => workbookBinding1736(...args),
-  ensureRangeClusterInit: (...args: any[]) => workbookBinding675(...args),
-});
 
 // Thin aliases: doc-op-apply cluster drained (wave-90).
 import {
@@ -1830,22 +1717,9 @@ import {
 // Thin aliases: chart-axis-ticks + shape-geometry-paint + table-frame-layout + slide-canvas-render drained (wave-94).
 
 import {
-  wireChartBarDirectionBoundaryHooks,
   paintBarDirectionSeries as Dbe,
   nbe,
 } from "../../workbook/chart-bar-direction";
-
-wireChartBarDirectionBoundaryHooks({
-  bh393: (...args: any[]) => workbookHelper393(...args),
-  bh394: (...args: any[]) => workbookHelper394(...args),
-  bh404: (...args: any[]) => workbookHelper404(...args),
-  bh469: (...args: any[]) => workbookHelper469(...args),
-  bh470: (...args: any[]) => workbookHelper470(...args),
-  bh473: (...args: any[]) => workbookHelper473(...args),
-  bh474: (...args: any[]) => workbookHelper474(...args),
-  bh495: (...args: any[]) => workbookHelper495(...args),
-  bh500: (...args: any[]) => workbookHelper500(...args),
-});
 
 import {
   paintBarSeries as workbookHelper501,
@@ -1853,22 +1727,9 @@ import {
   workbookHelper420,
 } from "../../workbook/chart-bar-series";
 
-import {
-  wireChartRadarBoundaryHooks,
-  paintRadarChart as Txe,
-} from "../../workbook/chart-radar";
+import { paintRadarChart as Txe } from "../../workbook/chart-radar";
 
 import { prepareRadarSeries as Cxe } from "../../workbook/chart-radar";
-
-wireChartRadarBoundaryHooks({
-  bh428: (...args: any[]) => workbookHelper428(...args),
-  bh430: (...args: any[]) => workbookHelper430(...args),
-  bh465: (...args: any[]) => workbookHelper465(...args),
-  bh469: (...args: any[]) => workbookHelper469(...args),
-  bh473: (...args: any[]) => workbookHelper473(...args),
-  bh474: (...args: any[]) => workbookHelper474(...args),
-  prepareRadarSeries: (...args: any[]) => Cxe(...args),
-});
 
 import {
   layoutCategoryChartPlot as Xxe,
@@ -1901,21 +1762,9 @@ import { paintTrendlineLabel as __workbookHelper524ForScatter } from "../../work
 
 import { resolveTrendlineLabel as cxe } from "../../workbook/chart-trendline";
 
-import {
-  wireChartHistogramAxesBoundaryHooks,
-  paintHistogramAxes as gCe,
-} from "../../workbook/chart-histogram-axes";
-
-wireChartHistogramAxesBoundaryHooks({
-  bh428: (...args: any[]) => workbookHelper428(...args),
-  bh430: (...args: any[]) => workbookHelper430(...args),
-  bh438: (...args: any[]) => workbookHelper438(...args),
-  bh439: (...args: any[]) => workbookHelper439(...args),
-  bh440: (...args: any[]) => workbookHelper440(...args),
-});
+import { paintHistogramAxes as gCe } from "../../workbook/chart-histogram-axes";
 
 import {
-  wireChartDataTableBoundaryHooks,
   paintChartDataTable as workbookHelper561,
   paintHierarchyDataTable as DSe,
   workbookHelper564,
@@ -2023,12 +1872,6 @@ import {
   expandSheetRange as WCe,
 } from "../../workbook/chart-data-table";
 
-wireChartDataTableBoundaryHooks({
-  bh433: (...args: any[]) => workbookHelper433(...args),
-  bh465: (...args: any[]) => workbookHelper465(...args),
-  bh478: (...args: any[]) => workbookHelper478(...args),
-});
-
 import {
   paintScatterAxes as workbookHelper570,
   planScatterAxes as workbookHelper545,
@@ -2064,11 +1907,6 @@ import {
   sxe,
 } from "../../workbook/chart-trendline";
 
-wireChartTrendlineBoundaryHooks({
-  bh352: (...args: any[]) => workbookHelper352(...args),
-  bh523: (...args: any[]) => workbookHelper523(...args),
-  bh524: (...args: any[]) => workbookHelper524(...args),
-});
 __ctlHWave107.hasLabel = (...args: any[]) => sxe(...args);
 __ctlHWave107.resolveLabel = (...args: any[]) => cxe(...args);
 __ctlHWave107.layoutLabel = (...args: any[]) => lxe(...args);
@@ -2093,9 +1931,7 @@ import {
 } from "../../workbook/chart-scatter-scale";
 
 import {
-  wirePaintImagesBoundaryHooks,
   paintImages as Fwe,
-  piH as __piHWave97,
   Pwe,
   workbookHelper604,
   workbookBinding1253,
@@ -2105,25 +1941,6 @@ import {
   Iwe,
   ensurePaintImageDecodeMapsInit,
 } from "../../workbook/paint-images";
-
-wirePaintImagesBoundaryHooks({
-  bh603: (...args: any[]) => workbookHelper603(...args),
-  bh604: (...args: any[]) => workbookHelper604(...args),
-  imageBitmapById: undefined as any,
-  imageDecodeById: undefined as any,
-});
-Object.defineProperties(__piHWave97, {
-  imageBitmapById: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1254,
-  },
-  imageDecodeById: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1255,
-  },
-});
 
 import {
   wireConstraintLayoutBoundaryHooks,
@@ -2166,38 +1983,13 @@ wireSelectionStyleGridBoundaryHooks({
 });
 
 import {
-  wireChartDataLabelsBoundaryHooks,
   paintChartDataLabel as workbookHelper500,
-  cdlH as __cdlHWave98,
   resolveDataLabelText as workbookHelper495,
   isDataCallout as workbookHelper492,
   isDataLabelDeleted as workbookHelper493,
   seriesShowsValueLabels as workbookHelper494,
   $xe,
 } from "../../workbook/chart-data-labels";
-
-wireChartDataLabelsBoundaryHooks({
-  formatNumber: (...args: any[]) => workbookHelper478(...args),
-  formatFallback: (...args: any[]) => appInitialAt(...args),
-  En: undefined as any,
-  bh152: (...args: any[]) => workbookHelper152(...args),
-  resolveColor: (...args: any[]) => workbookSt(...args),
-  defaultMuted: undefined as any,
-  chartFontFamily: undefined as any,
-});
-Object.defineProperties(__cdlHWave98, {
-  defaultMuted: {
-    enumerable: true,
-    configurable: true,
-    get: () => $D,
-  },
-  chartFontFamily: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding837,
-  },
-  En: { enumerable: true, configurable: true, get: () => En },
-});
 
 import {
   layoutLegendAroundPlot as jxe,
@@ -2221,54 +2013,18 @@ import {
 } from "../../workbook/chart-legend-plot";
 
 import {
-  wireChartCategoryAxisLabelsBoundaryHooks,
   paintCategoryAxisLabels as Nxe,
   layoutCategoryAxisLabelBand as Pxe,
-  calH as __calHWave98,
   Nye,
   Pye,
   workbookHelper543,
 } from "../../workbook/chart-category-axis-labels";
 
-wireChartCategoryAxisLabelsBoundaryHooks({
-  bh427: (...args: any[]) => workbookHelper427(...args),
-  bh428: (...args: any[]) => workbookHelper428(...args),
-  bh430: (...args: any[]) => workbookHelper430(...args),
-  bh431: (...args: any[]) => workbookHelper431(...args),
-  bh435: (...args: any[]) => workbookHelper435(...args),
-  bh425: (...args: any[]) => workbookHelper425(...args),
-  bh543: (...args: any[]) => workbookHelper543(...args),
-  overlapEpsilon: undefined as any,
-  chartFontFamily: undefined as any,
-});
-Object.defineProperties(__calHWave98, {
-  overlapEpsilon: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1170,
-  },
-  chartFontFamily: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding837,
-  },
-});
-
 import {
-  wireChartBoxWhiskerBoundaryHooks,
   prepareBoxWhiskerData as ECe,
   buildBoxWhiskerScales as OCe,
   paintBoxWhiskerChart as jCe,
 } from "../../workbook/chart-box-whisker";
-
-wireChartBoxWhiskerBoundaryHooks({
-  bh347: (...args: any[]) => workbookHelper347(...args),
-  bh348: (...args: any[]) => workbookHelper348(...args),
-  bh465: (...args: any[]) => workbookHelper465(...args),
-  bh469: (...args: any[]) => workbookHelper469(...args),
-  bh473: (...args: any[]) => workbookHelper473(...args),
-  bh474: (...args: any[]) => workbookHelper474(...args),
-});
 
 import {
   paintLineSeries as workbookHelper528,
@@ -2350,7 +2106,6 @@ import { computeShapePathEndpoints as Vwe } from "../../workbook/shape-path-endp
 import { pTe, workbookHelper629 } from "../../workbook/shape-path-endpoints";
 
 import {
-  wireTableCellPaintBoundaryHooks,
   paintTableCells as STe,
   layoutTableColumns as $B,
   materializeBorderStrokes as xTe,
@@ -2364,18 +2119,7 @@ import {
   workbookHelper631,
 } from "../../workbook/table-cell-paint";
 
-wireTableCellPaintBoundaryHooks({
-  bh634: (...args: any[]) => workbookHelper634(...args),
-  bh636: (...args: any[]) => workbookHelper636(...args),
-  bh638: (...args: any[]) => workbookHelper638(...args),
-  parseSpan: (...args: any[]) => workbookHelper631(...args),
-  isMissingSpan: (...args: any[]) => workbookHelper632(...args),
-  roundPx1000: (...args: any[]) => workbookHelper635(...args),
-  borderSegmentKey: (...args: any[]) => yTe(...args),
-});
-
 import {
-  wireTextFrameEmbedsBoundaryHooks,
   layoutTextFrameEmbeds as workbookHelper643,
   wireMeasureEmbedElementBoundaryHooks,
   meeH as __meeHWave125,
@@ -2393,17 +2137,6 @@ import {
   embeddedViewportMetrics as WTe,
 } from "../../workbook/text-frame-embeds";
 
-wireTextFrameEmbedsBoundaryHooks({
-  bh640: (...args: any[]) => workbookHelper640(...args),
-  bh642: (...args: any[]) => workbookHelper642(...args),
-  bh644: (...args: any[]) => workbookHelper644(...args),
-  isEmbedElement: (...args: any[]) => OTe(...args),
-  measureEmbedElement: (...args: any[]) => NTe(...args),
-  isAbsoluteChild: (...args: any[]) => PTe(...args),
-  absoluteChildFrame: (...args: any[]) => MTe(...args),
-  normalizeTextContent: (...args: any[]) => workbookN(...args),
-});
-
 wireMeasureEmbedElementBoundaryHooks({
   emuPerPx: undefined as any,
   paintTextElement: (...args: any[]) => workbookX(...args),
@@ -2417,7 +2150,6 @@ Object.defineProperties(__meeHWave125, {
 });
 
 import {
-  wireSlideImagePaintBoundaryHooks,
   paintSlideImage as $Te,
   hEe,
   JTe,
@@ -2425,17 +2157,6 @@ import {
   XTe,
   ZTe,
 } from "../../workbook/slide-image-paint";
-
-wireSlideImagePaintBoundaryHooks({
-  bh208: (...args: any[]) => workbookHelper208(...args),
-  bh290: (...args: any[]) => workbookHelper290(...args),
-  bh647: (...args: any[]) => workbookHelper647(...args),
-  bh648: (...args: any[]) => workbookHelper648(...args),
-  paintMaskedImage: (...args: any[]) => qwe(...args),
-  paintInheritedMask: (...args: any[]) => Jwe(...args),
-  strokeInheritedMask: (...args: any[]) => Ywe(...args),
-  paintImagePlaceholder: (...args: any[]) => KTe(...args),
-});
 
 import {
   layoutChartLegend as workbookHelper490,
@@ -2447,64 +2168,20 @@ import {
   workbookHelper466,
 } from "../../workbook/chart-legend-layout";
 
-import {
-  wireChartAreaSeriesBoundaryHooks,
-  paintAreaSeries as workbookHelper529,
-} from "../../workbook/chart-area-series";
+import { paintAreaSeries as workbookHelper529 } from "../../workbook/chart-area-series";
 
 import { stackAreaLayers as hxe } from "../../workbook/chart-area-series";
 
-wireChartAreaSeriesBoundaryHooks({
-  stackAreaLayers: (...args: any[]) => hxe(...args),
-  bh425: (...args: any[]) => workbookHelper425(...args),
-  bh464: (...args: any[]) => workbookHelper464(...args),
-  bh465: (...args: any[]) => workbookHelper465(...args),
-});
+import { paintHistogramBars as sCe } from "../../workbook/chart-histogram-bars";
 
 import {
-  wireChartHistogramBarsBoundaryHooks,
-  paintHistogramBars as sCe,
-} from "../../workbook/chart-histogram-bars";
-
-wireChartHistogramBarsBoundaryHooks({
-  bh469: (...args: any[]) => workbookHelper469(...args),
-  bh470: (...args: any[]) => workbookHelper470(...args),
-  bh473: (...args: any[]) => workbookHelper473(...args),
-  bh474: (...args: any[]) => workbookHelper474(...args),
-  bh495: (...args: any[]) => workbookHelper495(...args),
-});
-
-import {
-  wireChartSurfaceMapBoundaryHooks,
   paintSurfaceMap as Kye,
-  csmH as __csmHWave100,
   workbookHelper467,
   qye,
   Gye,
 } from "../../workbook/chart-surface-map";
 
 import { Jye } from "../../workbook/chart-surface-map";
-
-wireChartSurfaceMapBoundaryHooks({
-  normalizeMapCategory: (...args: any[]) => qye(...args),
-  mapElementIdStem: (...args: any[]) => Gye(...args),
-  bh465: (...args: any[]) => workbookHelper465(...args),
-  bh466: (...args: any[]) => workbookHelper466(...args),
-  mapSourceUrl: undefined as any,
-  mapSourceLayer: undefined as any,
-});
-Object.defineProperties(__csmHWave100, {
-  mapSourceUrl: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding885,
-  },
-  mapSourceLayer: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding886,
-  },
-});
 
 import {
   lowerInlineTextChildren as NOe,
@@ -2781,16 +2458,9 @@ import {
   shiftSharedFormulaRefs as workbookHelper592,
 } from "../../workbook/formula-shared-refs";
 
-import {
-  wireCfIconColorScaleBoundaryHooks,
-  Fht,
-  Iht,
-  Rht,
-} from "../../workbook/cf-icon-color-scale";
+import { Fht, Iht, Rht } from "../../workbook/cf-icon-color-scale";
 
 import {
-  wireCfRangeStatsBoundaryHooks,
-  crsH as __crsHWave125,
   coerceCfCellValue as workbookHelper1014,
   coerceCfNumeric as workbookHelper1015,
   parseExcelDate as sht,
@@ -2955,15 +2625,6 @@ import {
 
 import { cloneRichWorkbookMetadata as apt } from "../../workbook/worksheet-metadata-clone";
 
-wireCfIconColorScaleBoundaryHooks({
-  resolveIconSetId: (...args: any[]) => workbookHelper256(...args),
-  getIconSetDef: (...args: any[]) => workbookHelper257(...args),
-  iconThresholdMet: (...args: any[]) => workbookHelper258(...args),
-  pickIconIndex: (...args: any[]) => workbookHelper259(...args),
-  buildIconStats: (...args: any[]) => workbookHelper1020(...args),
-  evalIconRule: (...args: any[]) => wht(...args),
-});
-
 import {
   semanticTagStyle as ROe,
   mergeRunOverride as IOe,
@@ -2989,33 +2650,6 @@ Object.defineProperty(__pelHWave116, "lengthUnit", {
   get: () => workbookBinding384,
 });
 
-wireXlsxWorkbookValidateBoundaryHooks({
-  parseA1Range,
-  boundsIntersect,
-  boundsSize,
-  initAddressUtils,
-});
-
-wireCfRangeStatsBoundaryHooks({
-  excelEpochUtc: undefined as any,
-  msPerDay: undefined as any,
-  isoDateRe: undefined as any,
-  CellDataType: undefined as any,
-});
-Object.defineProperties(__crsHWave125, {
-  excelEpochUtc: {
-    enumerable: true,
-    configurable: true,
-    get: () => getExcelEpochUtc(),
-  },
-  msPerDay: { enumerable: true, configurable: true, get: () => getMsPerDay() },
-  isoDateRe: {
-    enumerable: true,
-    configurable: true,
-    get: () => getIsoDateRe(),
-  },
-  CellDataType: { enumerable: true, configurable: true, get: () => d },
-});
 import {
   wireChartWaterfallBarBoundaryHooks,
   paintWaterfallBar as dCe,
@@ -3024,16 +2658,6 @@ import {
   lCe,
   workbookHelper575,
 } from "../../workbook/chart-waterfall-bar";
-
-wireChartWaterfallBarBoundaryHooks({
-  paintBar: (...args: any[]) => dCe(...args),
-  paintConnector: (...args: any[]) => fCe(...args),
-  paintBridge: (...args: any[]) => uCe(...args),
-  bh424: (...args: any[]) => workbookHelper424(...args),
-  pointFillOverride: (...args: any[]) => lCe(...args),
-  bh463: (...args: any[]) => workbookHelper463(...args),
-  bh473: (...args: any[]) => workbookHelper473(...args),
-});
 
 import {
   paintPieSeries as workbookHelper496,
@@ -3044,93 +2668,23 @@ import {
 
 import { ube, dbe } from "../../workbook/chart-pie-series";
 
-import {
-  wireChartBubbleSeriesBoundaryHooks,
-  paintBubbleSeries as aCe,
-} from "../../workbook/chart-bubble-series";
-
-wireChartBubbleSeriesBoundaryHooks({
-  bh465: (...args: any[]) => workbookHelper465(...args),
-  bh469: (...args: any[]) => workbookHelper469(...args),
-  bh470: (...args: any[]) => workbookHelper470(...args),
-  bh473: (...args: any[]) => workbookHelper473(...args),
-  bh474: (...args: any[]) => workbookHelper474(...args),
-  bh533: (...args: any[]) => workbookHelper533(...args),
-  bh534: (...args: any[]) => workbookHelper534(...args),
-});
+import { paintBubbleSeries as aCe } from "../../workbook/chart-bubble-series";
 
 import {
-  wireSparklinePaintBoundaryHooks,
   paintSparkline as YCe,
   paintLineSparkline as XCe,
   paintColumnSparkline as ZCe,
-  spkH as __spkHWave105,
 } from "../../workbook/sparkline-paint";
 
-wireSparklinePaintBoundaryHooks({
-  resolveColor: (...args: any[]) => workbookBinding1235(...args),
-  clamp: (...args: any[]) => workbookBinding1234(...args),
-  defaultSeriesColor: undefined as any,
-  defaultAxisColor: undefined as any,
-  plotInset: undefined as any,
-  markerRadius: undefined as any,
-  resolveMarkerColor: (...args: any[]) => QCe(...args),
-});
-Object.defineProperties(__spkHWave105, {
-  defaultSeriesColor: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1230,
-  },
-  defaultAxisColor: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1231,
-  },
-  plotInset: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1232,
-  },
-  markerRadius: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1233,
-  },
-});
+import { paintIconSetSymbols as workbookHelper594 } from "../../workbook/icon-set-symbols";
 
 import {
-  wireIconSetSymbolsBoundaryHooks,
-  paintIconSetSymbols as workbookHelper594,
-  icsH as __icsHWave101,
-} from "../../workbook/icon-set-symbols";
-
-wireIconSetSymbolsBoundaryHooks({
-  greenFill: undefined as any,
-  greenStroke: undefined as any,
-  yellowFill: undefined as any,
-  yellowStroke: undefined as any,
-  redFill: undefined as any,
-  redStroke: undefined as any,
-  lightFill: undefined as any,
-});
-
-import {
-  wireIconSetPaintBoundaryHooks,
   paintIconSetGlyph as __uweWave104,
   uwe,
   layoutUnsupportedIconBadge as lwe,
   paintRatingBars as workbookHelper595,
   workbookHelper599,
 } from "../../workbook/icon-set-paint";
-
-wireIconSetPaintBoundaryHooks({
-  paintRatingBars: (...args: any[]) => workbookHelper595(...args),
-  strokeIconPath: (...args: any[]) => workbookHelper596(...args),
-  fillIconShape: (...args: any[]) => workbookHelper597(...args),
-  endIconClip: (...args: any[]) => workbookHelper599(...args),
-  withIconClip: (...args: any[]) => workbookHelper598(...args),
-});
 
 import {
   wireChartSeriesValuesBoundaryHooks,
@@ -3147,46 +2701,7 @@ wireChartSeriesValuesBoundaryHooks({
 
 import { lowerPanelSurfaceTag as JOe } from "../../workbook/compose-jsx-lower";
 
-Object.defineProperties(__icsHWave101, {
-  greenFill: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1241,
-  },
-  greenStroke: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1242,
-  },
-  yellowFill: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1243,
-  },
-  yellowStroke: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1244,
-  },
-  redFill: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1247,
-  },
-  redStroke: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1248,
-  },
-  lightFill: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1251,
-  },
-});
-
 import {
-  wireFormulaIrrBoundaryHooks,
   computeIrr as F0e,
   computeXirr as Z0e,
   computeRate as W0e,
@@ -3466,8 +2981,6 @@ import {
 } from "../../workbook/formula-skew";
 
 import {
-  wireFormulaCriteriaShapeBoundaryHooks,
-  fcsH as __fcsHWave125,
   firstArrayError as workbookHelper902,
   coerceCellErrorToken as e4e,
   asFormulaErrorToken as workbookHelper903,
@@ -3485,22 +2998,14 @@ import {
   lowerStringOrPassthrough as workbookHelper923,
 } from "../../workbook/formula-criteria-shape";
 
-import {
-  wireFormulaGrowthBoundaryHooks,
-  computeGrowth as pQe,
-  fgrH as __fgrHWave107,
-} from "../../workbook/formula-growth";
+import { computeGrowth as pQe } from "../../workbook/formula-growth";
 
 import {
-  wireFormulaSecuritiesBoundaryHooks,
   computeYield as k0e,
   computePriceDisc as H0e,
-  fsecH as __fsecHWave107,
 } from "../../workbook/formula-securities";
 
 import {
-  wireFormulaBondBasisBoundaryHooks,
-  fbbH as __fbbHWave121,
   parseSettlementMaturity,
   Gat,
   $8,
@@ -3584,11 +3089,7 @@ import {
   formatUsedRangeA1 as HTe,
 } from "../../workbook/worksheet-used-range";
 
-import {
-  wireFormulaDatedifBoundaryHooks,
-  dateDif as workbookHelper876,
-  fdifH as __fdifHWave108,
-} from "../../workbook/formula-datedif";
+import { dateDif as workbookHelper876 } from "../../workbook/formula-datedif";
 
 import {
   wireFormulaComplexBoundaryHooks,
@@ -3613,13 +3114,11 @@ import {
 } from "../../workbook/formula-complex";
 
 import {
-  wireFormulaFinancialBoundaryHooks,
   cumIpmt as E0e,
   dbDepreciation as D0e,
   cumPrinc as T0e,
   ddb as O0e,
   ppmt as P0e,
-  ffinH as __ffinHWave108,
   isValidDateArg,
   coerceToDate,
   b0e,
@@ -3697,26 +3196,6 @@ import {
   buildDataBarRuntime as Pht,
 } from "../../workbook/conditional-format";
 
-Object.defineProperties(__fbbHWave121, {
-  createBondCalculator: {
-    enumerable: true,
-    configurable: true,
-    get: () => Prt,
-  },
-  bondPriceFn: { enumerable: true, configurable: true, get: () => jrt },
-  bondYieldFn: { enumerable: true, configurable: true, get: () => Mrt },
-  ensurePriceYieldInit: {
-    enumerable: true,
-    configurable: true,
-    get: () => Nrt,
-  },
-  couponNumPeriods: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1900,
-  },
-});
-
 wireFormulaByrowBoundaryHooks({
   getEvalContext: () => workbookHelper962(),
   VALUE_ERROR: undefined as any,
@@ -3737,13 +3216,6 @@ wirePresentationImagesBoundaryHooks();
 wireSheetCatalogBoundaryHooks();
 wireFormulaNewtonBoundaryHooks();
 wireFormulaEngMidsBoundaryHooks();
-wireFormulaDateMonthsBoundaryHooks({
-  fn930: (...args: any[]) => workbookHelper930(...args),
-  fn931: (...args: any[]) => workbookHelper931(...args),
-  fn932: (...args: any[]) => workbookHelper932(...args),
-  fn936: (...args: any[]) => workbookHelper936(...args),
-  A9e: (...args: any[]) => A9e(...args),
-});
 wireFormulaA1AddressBoundaryHooks({
   isErrorValue: (...args: any[]) => workbookHelper59(...args),
 });
@@ -3787,27 +3259,6 @@ wireChartLabelOverflowBoundaryHooks({
   isNonEmptyCategory: (...args: any[]) => workbookHelper543(...args),
   measureCategoryAdvance: (...args: any[]) => workbookHelper425(...args),
 });
-wireFormulaFinancialBoundaryHooks({
-  fn846: (...args: any[]) => workbookHelper846(...args),
-  fn849: (...args: any[]) => workbookHelper849(...args),
-  fn899: (...args: any[]) => futureValue(...args),
-  fn901: (...args: any[]) => computePmt(...args),
-  VALUE_ERROR: undefined as any,
-  NUM_ERROR: undefined as any,
-});
-Object.defineProperties(__ffinHWave108, {
-  VALUE_ERROR: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1835,
-  },
-  NUM_ERROR: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1838,
-  },
-});
-
 wireFormulaComplexBoundaryHooks({
   VALUE_ERROR: undefined as any,
   NUM_ERROR: undefined as any,
@@ -3822,81 +3273,6 @@ Object.defineProperties(__fcxHWave108, {
     enumerable: true,
     configurable: true,
     get: () => workbookBinding1838,
-  },
-});
-
-wireFormulaDatedifBoundaryHooks({
-  coerceDate: (...args: any[]) => workbookHelper848(...args),
-  yearFrac: (...args: any[]) => workbookHelper884(...args),
-  dateDiffDays: (...args: any[]) => dateDiffDays(...args),
-});
-
-wireFormulaSecuritiesBoundaryHooks({
-  fn846: (...args: any[]) => workbookHelper846(...args),
-  fn848: (...args: any[]) => workbookHelper848(...args),
-  fn849: (...args: any[]) => workbookHelper849(...args),
-  dayCount: (...args: any[]) => workbookHelper876(...args),
-  days360: (...args: any[]) => days360(...args),
-  VALUE_ERROR: undefined as any,
-  NUM_ERROR: undefined as any,
-});
-Object.defineProperties(__fsecHWave107, {
-  VALUE_ERROR: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1835,
-  },
-  NUM_ERROR: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1838,
-  },
-});
-
-wireFormulaBondBasisBoundaryHooks({
-  dayCount: (...args: any[]) => workbookBinding1896(...args),
-  VALUE_ERROR: undefined as any,
-  NUM_ERROR: undefined as any,
-  EPOCH_UTC_MS: 0,
-  DAY_MS: 86400000,
-  DEFAULT_BASIS: "30U/360",
-  BASIS_MAP: {},
-});
-Object.defineProperties(__fbbHWave121, {
-  VALUE_ERROR: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1927,
-  },
-  NUM_ERROR: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1928,
-  },
-  EPOCH_UTC_MS: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1929,
-  },
-  DAY_MS: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1930,
-  },
-  DEFAULT_BASIS: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1931,
-  },
-  BASIS_MAP: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1932,
-  },
-  dayCount: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1896,
   },
 });
 
@@ -3945,37 +3321,6 @@ Object.defineProperties(__fskHWave124, {
   },
 });
 
-wireFormulaCriteriaShapeBoundaryHooks({
-  VALUE_TOKEN: undefined as any,
-  DIV0_TOKEN: undefined as any,
-  NA_TOKEN: undefined as any,
-});
-Object.defineProperties(__fcsHWave125, {
-  VALUE_TOKEN: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1876,
-  },
-  DIV0_TOKEN: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1875,
-  },
-  NA_TOKEN: { enumerable: true, configurable: true, get: () => _6e },
-});
-
-wireFormulaGrowthBoundaryHooks({
-  fn841: (...args: any[]) => workbookHelper841(...args),
-  fn846: (...args: any[]) => workbookHelper846(...args),
-  fn850: (...args: any[]) => workbookHelper850(...args),
-  VALUE_ERROR: undefined as any,
-});
-Object.defineProperty(__fgrHWave107, "VALUE_ERROR", {
-  enumerable: true,
-  configurable: true,
-  get: () => workbookBinding1835,
-});
-
 import { matchCriteriaColumns as workbookHelper896 } from "../../workbook/formula-criteria-match";
 
 import {
@@ -3992,16 +3337,6 @@ import {
   resolveCriteriaColumnIndex as N8e,
   buildDsumCriteriaGroups as P8e,
 } from "../../workbook/formula-dsum-criteria";
-
-wireFormulaIrrBoundaryHooks({
-  fn841: (...args: any[]) => workbookHelper841(...args),
-  fn846: (...args: any[]) => workbookHelper846(...args),
-  fn849: (...args: any[]) => workbookHelper849(...args),
-  fn850: (...args: any[]) => workbookHelper850(...args),
-  fn854: (...args: any[]) => isNonNullArg(...args),
-  coerceDates: (...args: any[]) => uZe(...args),
-  dayDiff: (...args: any[]) => dateDiffDays(...args),
-});
 
 import {
   pasteHtmlIntoSheet as wmt,
@@ -4056,7 +3391,6 @@ import {
   _WorkbookI,
   XLSX_VALIDATION_RULES as workbookBinding1955,
   ensureXlsxValidationRulesInit as wpt,
-  wireXlsxWorkbookValidateBoundaryHooks,
   validateSheets as Ept,
   validateFonts as Dpt,
   validateMergedCells as Opt,
@@ -4091,52 +3425,7 @@ wireFormulaAstRemapBoundaryHooks({
 
 import { layoutTreemapPlot as Cbe } from "../../workbook/chart-treemap-plot-layout";
 
-wireChartAxisReserveBoundaryHooks({
-  chartFontStack: undefined as any,
-  titleGapPx: undefined as any,
-  labelGapPx: undefined as any,
-  tickMarkReservePx: undefined as any,
-  pointsPerInch: undefined as any,
-  pixelsPerInch: undefined as any,
-  resolveAxisTextStyle: (...args: any[]) => workbookHelper428(...args),
-  paintAxisTitleText: (...args: any[]) => workbookHelper438(...args),
-  resolveCssFontStack: (...args: any[]) => workbookHelper149(...args),
-});
-Object.defineProperties(__carHWave125, {
-  chartFontStack: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding837,
-  },
-  titleGapPx: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding917,
-  },
-  labelGapPx: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding918,
-  },
-  tickMarkReservePx: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding919,
-  },
-  pointsPerInch: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding863,
-  },
-  pixelsPerInch: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding864,
-  },
-});
-
 import {
-  wireChartTreemapTilesBoundaryHooks,
   layoutTreemapTiles as __layoutTreemapTilesWave105,
   layoutTreemapTiles as Yye,
   Qye,
@@ -4154,50 +3443,18 @@ import {
   LSe,
 } from "../../workbook/chart-treemap-tiles";
 
-wireChartTreemapTilesBoundaryHooks({
-  bh475: (...args: any[]) => workbookHelper475(...args),
-  bh476: (...args: any[]) => workbookHelper476(...args),
-  bh477: (...args: any[]) => workbookHelper477(...args),
-  flattenCategoryPaths: (...args: any[]) => Zye(...args),
-});
-
 import {
-  wireChartHistogramBinsBoundaryHooks,
   computeHistogramBins as workbookHelper555,
   aggregateHistogramBins as _Se,
-  chbinH as __chbinHWave102,
   workbookHelper553,
   hSe,
   mSe,
 } from "../../workbook/chart-histogram-bins";
 
-wireChartHistogramBinsBoundaryHooks({
-  parseBinLabel: (...args: any[]) => mSe(...args),
-  bh347: (...args: any[]) => workbookHelper347(...args),
-  coerceNumber: (...args: any[]) => workbookHelper554(...args),
-  valueExtent: (...args: any[]) => hSe(...args),
-  binWidth: (...args: any[]) => gSe(...args),
-  binLabel: (...args: any[]) => workbookHelper553(...args),
-  INTERVAL_CLOSED_LEFT: undefined as any,
-});
-Object.defineProperty(__chbinHWave102, "INTERVAL_CLOSED_LEFT", {
-  enumerable: true,
-  configurable: true,
-  get: () => _presentationJn.INTERVAL_CLOSED_LEFT,
-});
-
 import {
-  wireChartFunnelSegmentsBoundaryHooks,
   computeFunnelSegments as workbookHelper576,
   paintFunnelBars as vCe,
 } from "../../workbook/chart-funnel-segments";
-
-wireChartFunnelSegmentsBoundaryHooks({
-  seriesCategories: (...args: any[]) => workbookHelper348(...args),
-  bh469: (...args: any[]) => workbookHelper469(...args),
-  bh473: (...args: any[]) => workbookHelper473(...args),
-  bh474: (...args: any[]) => workbookHelper474(...args),
-});
 
 import {
   computeHiddenBoundaries as ewe,
@@ -4217,65 +3474,14 @@ wireSlideBackgroundPaintBoundaryHooks({
 });
 
 import {
-  wireFormulaMatrixInverseBoundaryHooks,
   invertMatrix as Alt,
   computeDeterminant as klt,
-  fmiH as __fmiHWave102,
 } from "../../workbook/formula-matrix-inverse";
 
-wireFormulaMatrixInverseBoundaryHooks({
-  valueError: undefined as any,
-  numError: undefined as any,
-  coerceNumber: (...args: any[]) => workbookHelper980(...args),
-});
-Object.defineProperties(__fmiHWave102, {
-  valueError: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1942,
-  },
-  numError: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding1944,
-  },
-});
-
 import {
-  wireChartAxisAutoDomainBoundaryHooks,
   computeAxisAutoDomain as bye,
   ceilToMajor as workbookHelper401,
-  cadH as __cadHWave103,
 } from "../../workbook/chart-axis-auto-domain";
-
-wireChartAxisAutoDomainBoundaryHooks({
-  maxAutoIncrements: undefined as any,
-  narrowIncrementCap: undefined as any,
-  expandThreshold: undefined as any,
-  narrowTowardZeroRatio: undefined as any,
-});
-Object.defineProperties(__cadHWave103, {
-  maxAutoIncrements: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding844,
-  },
-  narrowIncrementCap: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding845,
-  },
-  expandThreshold: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding846,
-  },
-  narrowTowardZeroRatio: {
-    enumerable: true,
-    configurable: true,
-    get: () => workbookBinding847,
-  },
-});
 
 wireChartContinuousScaleBoundaryHooks({
   defaultNiceCount: undefined as any,
@@ -4295,60 +3501,27 @@ Object.defineProperties(__ccsHWave125, {
 });
 
 import {
-  wireChartComboGroupsBoundaryHooks,
   paintComboGroups as yxe,
   buildComboRenderGroups as workbookHelper532,
-  ccgH as __ccgHWave108,
   rbe,
   pxe,
   xxe,
   bxe,
 } from "../../workbook/chart-combo-groups";
 
-wireChartComboGroupsBoundaryHooks({
-  bh532: (...args: any[]) => workbookHelper532(...args),
-  paintSecondaryValueAxis: (...args: any[]) => _xe(...args),
-  sliceGroupChart: (...args: any[]) => pxe(...args),
-  hiddenSeriesIndices: (...args: any[]) => xxe(...args),
-  axisKey: (...args: any[]) => bxe(...args),
-  bh423: (...args: any[]) => workbookHelper423(...args),
-  ChartAsset: undefined as any,
-});
-Object.defineProperty(__ccgHWave108, "ChartAsset", {
-  enumerable: true,
-  configurable: true,
-  get: () => workbookBinding721,
-});
-
 import {
-  wireShapePathDensifyBoundaryHooks,
   densifyShapePath as dTe,
   trimPathStart as uTe,
   pathEndpointMetrics as mTe,
 } from "../../workbook/shape-path-densify";
 
-wireShapePathDensifyBoundaryHooks({
-  bh624: (...args: any[]) => workbookHelper624(...args),
-  bh625: (...args: any[]) => workbookHelper625(...args),
-  bh626: (...args: any[]) => workbookHelper626(...args),
-  bh628: (...args: any[]) => workbookHelper628(...args),
-});
-
 import {
-  wireFloatingPlacementBoundaryHooks,
   resolveFloatingPlacement as jTe,
-  fpH as __fpHWave105,
   resolvePlacementOrBBox as MTe,
   workbookHelper642,
   ATe,
   kTe,
 } from "../../workbook/floating-placement";
-
-wireFloatingPlacementBoundaryHooks({
-  bh640: (...args: any[]) => workbookHelper640(...args),
-  paragraphAlignment: (...args: any[]) => kTe(...args),
-  isParagraphVCenter: (...args: any[]) => ATe(...args),
-});
 
 import {
   buildComposeElementSnapshot as workbookHelper678,
@@ -4585,7 +3758,6 @@ var ensureDeckKindsCluster = ensureDeckKindsInit;
 
 import {
   ensureShapeElementInit,
-  wireShapeElementBoundaryHooks,
   workbookBinding736,
   workbookBinding737,
   workbookBinding738,
@@ -4597,7 +3769,6 @@ import {
   vve,
   normalizeShapeAddProps as hze,
   requireShapeTarget as workbookHelper786,
-  seH as __seHWave109,
 } from "../../workbook/shape-element";
 
 import {
@@ -4610,17 +3781,6 @@ import {
 } from "../../workbook/shape-style-apply";
 
 var ensureShapeElementCluster = ensureShapeElementInit;
-
-wireShapeElementBoundaryHooks({
-  ensureMde: () => {
-    Mde();
-  },
-});
-Object.defineProperty(__seHWave109, "ShapeClass", {
-  enumerable: true,
-  configurable: true,
-  get: () => workbookBinding736,
-});
 
 import {
   ensureSlidesCollectionInit,
@@ -5226,8 +4386,6 @@ import {
 } from "../../workbook/formula-eng-mids";
 
 import {
-  wireFormulaDateMonthsBoundaryHooks,
-  fdmH as __fdmHWave128,
   monthsBetween as _9e,
   isSameMonthEnd as N9e,
   countMonthSteps as F9e,
@@ -5514,7 +4672,6 @@ wirePresentationPluginAddBoundaryHooks({
 });
 
 import {
-  wireMermaidSlideHelpersBoundaryHooks,
   ensureMermaidSlideHelpersInit,
   workbookBinding1592,
   workbookBinding1593,
@@ -5628,16 +4785,6 @@ import {
   XAe,
   QAe,
 } from "../../workbook/mermaid-slide-helpers";
-
-wireMermaidSlideHelpersBoundaryHooks({
-  workbookEt: () => {
-    workbookEt();
-  },
-  ensureWorkbookS: () => {
-    _workbookS();
-  },
-  getWorkbookO: () => _workbookO,
-});
 
 // Thin alias: cluster ensure for mermaid slide helpers (Binding1592…QAe).
 
@@ -5908,15 +5055,6 @@ void OOe;
 void workbookBinding1528;
 
 // Thin alias: cluster ensure for compose DSL (Binding1490–1528).
-
-wireWorksheetsBoundaryHooks({
-  ensureKme: () => {
-    ensureGranolaLogInit();
-  },
-  get sheetLog() {
-    return workbookBinding686;
-  },
-});
 
 var ensureWorksheetsCollectionCluster = ensureWorksheetsCollectionInit;
 

@@ -6,11 +6,14 @@ import { fgrH } from "./boundary-hooks";
 
 void fgrH;
 
-export function computeGrowth(fgrIn2614: any, fgrIn2615: any, fgrIn2616: any, fgrIn2617: any, ) {
+export function computeGrowth(
+  fgrIn2614: any,
+  fgrIn2615: any,
+  fgrIn2616: any,
+  fgrIn2617: any,
+) {
   if (
-    ((fgrIn2614 = fgrH.fn850(
-      fgrH.fn841(fgrIn2614),
-    )),
+    ((fgrIn2614 = fgrH.fn850(fgrH.fn841(fgrIn2614))),
     fgrIn2614 instanceof Error)
   )
     return fgrIn2614;
@@ -24,12 +27,8 @@ export function computeGrowth(fgrIn2614: any, fgrIn2615: any, fgrIn2616: any, fg
       fgrIn2615.push(fgrBind10058);
   if (
     (fgrIn2616 === undefined && (fgrIn2616 = fgrIn2615),
-    (fgrIn2615 = fgrH.fn850(
-      fgrH.fn841(fgrIn2615),
-    )),
-    (fgrIn2616 = fgrH.fn850(
-      fgrH.fn841(fgrIn2616),
-    )),
+    (fgrIn2615 = fgrH.fn850(fgrH.fn841(fgrIn2615))),
+    (fgrIn2616 = fgrH.fn850(fgrH.fn841(fgrIn2616))),
     fgrH.fn846(fgrIn2615, fgrIn2616))
   )
     return fgrH.VALUE_ERROR;
@@ -39,11 +38,7 @@ export function computeGrowth(fgrIn2614: any, fgrIn2615: any, fgrIn2616: any, fg
     fgrBind10061 = 0,
     fgrBind10062 = 0,
     fgrBind10063 = 0;
-  for (
-    fgrBind10058 = 0;
-    fgrBind10058 < fgrBind10059;
-    fgrBind10058++
-  ) {
+  for (fgrBind10058 = 0; fgrBind10058 < fgrBind10059; fgrBind10058++) {
     let fgrBind21716 = fgrIn2615[fgrBind10058],
       fgrBind21717 = Math.log(fgrIn2614[fgrBind10058]);
     fgrBind10060 += fgrBind21716;
@@ -60,21 +55,12 @@ export function computeGrowth(fgrIn2614: any, fgrIn2615: any, fgrIn2616: any, fg
     ? ((fgrBind10064 =
         (fgrBind10062 - fgrBind10060 * fgrBind10061) /
         (fgrBind10063 - fgrBind10060 * fgrBind10060)),
-      (fgrBind10065 =
-        fgrBind10061 - fgrBind10064 * fgrBind10060))
-    : ((fgrBind10064 = fgrBind10062 / fgrBind10063),
-      (fgrBind10065 = 0));
+      (fgrBind10065 = fgrBind10061 - fgrBind10064 * fgrBind10060))
+    : ((fgrBind10064 = fgrBind10062 / fgrBind10063), (fgrBind10065 = 0));
   let fgrBind10066 = [];
-  for (
-    fgrBind10058 = 0;
-    fgrBind10058 < fgrIn2616.length;
-    fgrBind10058++
-  )
+  for (fgrBind10058 = 0; fgrBind10058 < fgrIn2616.length; fgrBind10058++)
     fgrBind10066.push(
-      Math.exp(
-        fgrBind10065 +
-          fgrBind10064 * fgrIn2616[fgrBind10058],
-      ),
+      Math.exp(fgrBind10065 + fgrBind10064 * fgrIn2616[fgrBind10058]),
     );
   return fgrBind10066;
 }

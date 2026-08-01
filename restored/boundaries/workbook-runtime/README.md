@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~7.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~6.5k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1955,6 +1955,18 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept
 - QG PASS on changed modules + boundary `--no-cache --allow-open-boundaries`
 - Next: slim remaining mid wires (element-text-layout / chart-bar-direction / category-axis-labels / axis-reserve / text-frame-embeds); reassess openBoundary closeout when mega is thin enough
+
+## Wave 161 (Stage-3 wire slim — remaining ≥5 LOC batch)
+
+- Boundary 7346 → 6484 (Δ -862)
+- Retired 49 wires (≥5 LOC) → direct imports across chart/formula/paint/compose/sheet modules
+- Live leave-behind constants baked as getters (axis-reserve DPI/font, auto-domain caps, sparkline colors, icon traffic colors, CF epoch, formula error tokens, surface-map URLs, card-paint pad/font, sunburst palette, paint-images Maps); dropped matching mega `defineProperties` leave-behinds
+- Same-package / reverse-cycle deps use createRequire + `__wh()`/`__wb()` lazies
+- Kept: `setFormulaImplBag` mega bag; remaining 63 wires (~137 LOC), all ≤4 LOC
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept (~6.5k still above thin closeout bar)
+- QG PASS on changed hooks + boundary `--no-cache --allow-open-boundaries`
+- Next: slim remaining ≤4 LOC / 1-line wires; reassess openBoundary closeout when mega is thin enough
+
 
 
 

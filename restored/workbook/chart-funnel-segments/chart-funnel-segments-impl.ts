@@ -9,12 +9,13 @@ void appInitialAat;
 void cfsH;
 
 function clampFunnelGap(cfsIn13603: any, cfsIn13604: any, cfsIn13605: any) {
-  return Math.min(
-    Math.max(cfsIn13603, cfsIn13604),
-    cfsIn13605,
-  );
+  return Math.min(Math.max(cfsIn13603, cfsIn13604), cfsIn13605);
 }
-export function computeFunnelSegments(cfsIn878: any, cfsIn879: any, cfsIn880: any) {
+export function computeFunnelSegments(
+  cfsIn878: any,
+  cfsIn879: any,
+  cfsIn880: any,
+) {
   let cfsBind5615 = cfsIn880 ?? new Set(),
     cfsBind5616 = cfsIn878.series.findIndex(
       (item, index) => !cfsBind5615.has(index),
@@ -25,30 +26,19 @@ export function computeFunnelSegments(cfsIn878: any, cfsIn879: any, cfsIn880: an
       segments: [],
     };
   let cfsBind5617 = cfsIn878.series[cfsBind5616],
-    cfsBind5618 = cfsH.seriesCategories(
-      cfsIn878,
-      cfsBind5616,
-    ),
+    cfsBind5618 = cfsH.seriesCategories(cfsIn878, cfsBind5616),
     cfsBind5619 = cfsBind5617?.values ?? [],
-    cfsBind5620 = Math.max(
-      cfsBind5618.length,
-      cfsBind5619.length,
-    );
+    cfsBind5620 = Math.max(cfsBind5618.length, cfsBind5619.length);
   if (cfsBind5620 === 0)
     return {
       seriesIndex: cfsBind5616,
       segments: [],
     };
   let cfsBind5621 = [];
-  for (
-    let cfsBind20536 = 0;
-    cfsBind20536 < cfsBind5620;
-    cfsBind20536++
-  ) {
+  for (let cfsBind20536 = 0; cfsBind20536 < cfsBind5620; cfsBind20536++) {
     let cfsBind21406 = cfsBind5619[cfsBind20536],
       cfsBind21407 =
-        typeof cfsBind21406 == "number" &&
-        Number.isFinite(cfsBind21406)
+        typeof cfsBind21406 == "number" && Number.isFinite(cfsBind21406)
           ? Math.max(0, cfsBind21406)
           : 0;
     cfsBind5621.push(cfsBind21407);
@@ -61,27 +51,18 @@ export function computeFunnelSegments(cfsIn878: any, cfsIn879: any, cfsIn880: an
     };
   let cfsBind5623 = cfsIn878.funnelOptions?.gapWidth,
     cfsBind5624 =
-      typeof cfsBind5623 == "number" &&
-      Number.isFinite(cfsBind5623)
+      typeof cfsBind5623 == "number" && Number.isFinite(cfsBind5623)
         ? clampFunnelGap(cfsBind5623, 0, 0.8)
         : 0.06,
     cfsBind5625 =
-      cfsBind5620 +
-      (cfsBind5620 > 1
-        ? (cfsBind5620 - 1) * cfsBind5624
-        : 0),
+      cfsBind5620 + (cfsBind5620 > 1 ? (cfsBind5620 - 1) * cfsBind5624 : 0),
     cfsBind5626 = Math.max(0, cfsIn879.height),
-    cfsBind5627 =
-      cfsBind5625 > 0 ? cfsBind5626 / cfsBind5625 : 0,
+    cfsBind5627 = cfsBind5625 > 0 ? cfsBind5626 / cfsBind5625 : 0,
     cfsBind5628 = cfsBind5627 * cfsBind5624,
     cfsBind5629 = cfsIn879.x + cfsIn879.width / 2,
     cfsBind5630 = cfsIn879.y,
     cfsBind5631 = [];
-  for (
-    let cfsBind12033 = 0;
-    cfsBind12033 < cfsBind5620;
-    cfsBind12033++
-  ) {
+  for (let cfsBind12033 = 0; cfsBind12033 < cfsBind5620; cfsBind12033++) {
     let cfsBind12461 = cfsBind5621[cfsBind12033] ?? 0,
       cfsBind12462 = cfsBind12461 / cfsBind5622,
       cfsBind12463 = cfsIn879.width * cfsBind12462,
@@ -113,8 +94,7 @@ export function computeFunnelSegments(cfsIn878: any, cfsIn879: any, cfsIn880: an
   }
   let cfsBind5632 =
     cfsBind5626 -
-    (cfsBind5620 * cfsBind5627 +
-      Math.max(0, cfsBind5620 - 1) * cfsBind5628);
+    (cfsBind5620 * cfsBind5627 + Math.max(0, cfsBind5620 - 1) * cfsBind5628);
   if (cfsBind5632 > 0 && cfsBind5631.length > 0) {
     let cfsBind22183 = cfsBind5632 / 2;
     cfsBind5631.forEach((item) => {
@@ -131,14 +111,16 @@ export function computeFunnelSegments(cfsIn878: any, cfsIn879: any, cfsIn880: an
 /** Legacy alias. */
 export const workbookHelper576 = computeFunnelSegments;
 
-export function paintFunnelBars(cfsIn790: any, cfsIn791: any, cfsIn792: any, cfsIn793: any, cfsIn794: any, cfsIn795: any, ) {
-  if (
-    cfsIn792.seriesIndex === -1 ||
-    cfsIn792.segments.length === 0
-  )
-    return;
-  let cfsBind5392 =
-    cfsIn791.series[cfsIn792.seriesIndex];
+export function paintFunnelBars(
+  cfsIn790: any,
+  cfsIn791: any,
+  cfsIn792: any,
+  cfsIn793: any,
+  cfsIn794: any,
+  cfsIn795: any,
+) {
+  if (cfsIn792.seriesIndex === -1 || cfsIn792.segments.length === 0) return;
+  let cfsBind5392 = cfsIn791.series[cfsIn792.seriesIndex];
   if (!cfsBind5392) return;
   cfsIn790.save();
   cfsIn790.lineJoin = "round";
@@ -149,26 +131,15 @@ export function paintFunnelBars(cfsIn790: any, cfsIn791: any, cfsIn792: any, cfs
     if (cfsBind7081 <= 0) return;
     let cfsBind7082 = cfsH.bh474(cfsBind5392, item.index)
         ? undefined
-        : cfsH.bh469(
-            cfsBind5392,
-            item.index,
-            cfsIn792.seriesIndex,
-            cfsIn793,
-          ),
-      { color, widthPx } = cfsH.bh473(
-        cfsBind5392,
-        item.index,
-        cfsIn793,
-      );
+        : cfsH.bh469(cfsBind5392, item.index, cfsIn792.seriesIndex, cfsIn793),
+      { color, widthPx } = cfsH.bh473(cfsBind5392, item.index, cfsIn793);
     cfsIn790.beginPath();
     cfsIn790.moveTo(item.topLeftX, item.y0);
     cfsIn790.lineTo(item.topRightX, item.y0);
     cfsIn790.lineTo(item.bottomRightX, item.y1);
     cfsIn790.lineTo(item.bottomLeftX, item.y1);
     cfsIn790.closePath();
-    cfsBind7082 &&
-      ((cfsIn790.fillStyle = cfsBind7082),
-      cfsIn790.fill());
+    cfsBind7082 && ((cfsIn790.fillStyle = cfsBind7082), cfsIn790.fill());
     let cfsBind7083 = color ?? (cfsBind7082 || "#ffffff"),
       cfsBind7084 = widthPx ?? +!!color;
     if (
@@ -213,11 +184,7 @@ export function paintFunnelBars(cfsIn790: any, cfsIn791: any, cfsIn792: any, cfs
     (cfsIn790.textAlign = "right"),
     (cfsIn790.textBaseline = "middle"),
     cfsBind5393.forEach((item) => {
-      cfsIn790.fillText(
-        item.text,
-        cfsIn795.labelX,
-        item.centerY,
-      );
+      cfsIn790.fillText(item.text, cfsIn795.labelX, item.centerY);
     }),
     cfsIn790.restore());
   cfsIn790.restore();

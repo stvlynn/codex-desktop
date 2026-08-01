@@ -7,8 +7,7 @@ import { seH } from "./boundary-hooks";
 void seH;
 
 export function requireShapeTarget(seIn11294: any, seIn11295: any) {
-  if (seIn11294 instanceof seH.ShapeClass)
-    return seIn11294;
+  if (seIn11294 instanceof seH.ShapeClass) return seIn11294;
   throw Error(`${seIn11295} requires a shape target.`);
 }
 export function normalizeShapeAddProps(seIn1227: any, seIn1228: any) {
@@ -38,17 +37,11 @@ export function normalizeShapeAddProps(seIn1227: any, seIn1228: any) {
   let seBind6758 =
       seIn1227.from === undefined
         ? undefined
-        : requireShapeTarget(
-            seIn1228(seIn1227.from),
-            "shape.add",
-          ),
+        : requireShapeTarget(seIn1228(seIn1227.from), "shape.add"),
     seBind6759 =
       seIn1227.to === undefined
         ? undefined
-        : requireShapeTarget(
-            seIn1228(seIn1227.to),
-            "shape.add",
-          );
+        : requireShapeTarget(seIn1228(seIn1227.to), "shape.add");
   if (!seBind6758 || !seBind6759)
     throw Error("shape.add connector requires from/to targets.");
   return {

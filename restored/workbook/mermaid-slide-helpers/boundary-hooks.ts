@@ -1,23 +1,27 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-69: boundary deps for mermaid-slide-helpers (Binding1592 cluster).
+// Stage-3 wave-161: mermaid-slide-helpers deps via direct imports
+// (wireMermaidSlideHelpersBoundaryHooks leave-behind retired).
+
+import { workbookEt } from "../emu-units";
+import { _workbookS, _workbookO } from "../presentation-doc";
 
 export type MermaidSlideHelpersBoundaryHooks = {
-  /** Intentional leave-behind ensure (gae/workbookEt terminal). */
   workbookEt: () => void;
-  /** Late workbook shell ensure (live var via closure). */
   ensureWorkbookS: () => void;
-  /** Late Workbook class factory (live var via closure). */
   getWorkbookO: () => any;
 };
 
-/** Live bag for intentional leave-behinds / late workbook ensures. */
-export const mshH: MermaidSlideHelpersBoundaryHooks =
-  {} as MermaidSlideHelpersBoundaryHooks;
+export const mshH: MermaidSlideHelpersBoundaryHooks = {
+  workbookEt: () => {
+    workbookEt();
+  },
+  ensureWorkbookS: () => {
+    _workbookS();
+  },
+  getWorkbookO: () => _workbookO,
+};
 
+/** @deprecated Wave-161: wire leave-behind retired — mshH uses direct imports. */
 export function wireMermaidSlideHelpersBoundaryHooks(
-  next: MermaidSlideHelpersBoundaryHooks,
-): void {
-  mshH.workbookEt = next.workbookEt;
-  mshH.ensureWorkbookS = next.ensureWorkbookS;
-  mshH.getWorkbookO = next.getWorkbookO;
-}
+  _next?: Partial<MermaidSlideHelpersBoundaryHooks>,
+): void {}

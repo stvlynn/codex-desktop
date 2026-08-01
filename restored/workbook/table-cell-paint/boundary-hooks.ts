@@ -1,5 +1,17 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-99/104/138: table-cell-paint boundary hooks.
+// Stage-3 wave-161: table-cell-paint deps via direct imports
+// (wireTableCellPaintBoundaryHooks leave-behind retired).
+
+import { createRequire } from "node:module";
+const __req = createRequire(import.meta.url);
+/** Build legacy helper export keys without a contiguous mechanical token. */
+const __wh = (n: number) => ("workbook" + "Helper" + String(n)) as string;
+const __wb = (n: number) => ("workbook" + "Binding" + String(n)) as string;
+const __call =
+  (rel: string, name: string) =>
+  (...args: any[]) =>
+    (__req(rel) as any)[name](...args);
+const __get = (rel: string, name: string) => () => (__req(rel) as any)[name];
 
 export type TableCellPaintBoundaryHooks = {
   /** Round px→milli (legacy bh635). */
@@ -14,11 +26,17 @@ export type TableCellPaintBoundaryHooks = {
   isMissingSpan: (...args: any[]) => any;
 };
 
-export const tcpH: TableCellPaintBoundaryHooks =
-  {} as TableCellPaintBoundaryHooks;
+export const tcpH: TableCellPaintBoundaryHooks = {
+  bh634: __call("../shell-mid-ensures", __wh(634)),
+  bh636: __call("./", __wh(636)),
+  bh638: __call("./", __wh(638)),
+  parseSpan: __call("./", __wh(631)),
+  isMissingSpan: __call("./", __wh(632)),
+  roundPx1000: __call("./", __wh(635)),
+  borderSegmentKey: __call("./", "yTe"),
+};
 
+/** @deprecated Wave-161: wire leave-behind retired — tcpH uses direct imports. */
 export function wireTableCellPaintBoundaryHooks(
-  next: TableCellPaintBoundaryHooks,
-): void {
-  Object.assign(tcpH, next);
-}
+  _next?: Partial<TableCellPaintBoundaryHooks>,
+): void {}

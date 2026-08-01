@@ -6,13 +6,13 @@ import { isArrayValue } from "../formula-array";
 import { oQe } from "../formula-scalar-funcs";
 import { f4e } from "./formula-criteria-shape-impl";
 
-export function sumIfsShaped(fcsIn5433: any, fcsIn5434: any, ...fcsIn5435: any[]) {
+export function sumIfsShaped(
+  fcsIn5433: any,
+  fcsIn5434: any,
+  ...fcsIn5435: any[]
+) {
   let fcsBind15196 = [fcsIn5433];
-  for (
-    let fcsBind22891 = 0;
-    fcsBind22891 < fcsIn5435.length;
-    fcsBind22891 += 2
-  )
+  for (let fcsBind22891 = 0; fcsBind22891 < fcsIn5435.length; fcsBind22891 += 2)
     fcsBind15196.push(fcsIn5435[fcsBind22891]);
   let fcsBind15197 = f4e(fcsBind15196);
   if (fcsBind15197) return fcsBind15197;
@@ -34,11 +34,7 @@ export function sumIfsShaped(fcsIn5433: any, fcsIn5434: any, ...fcsIn5435: any[]
         : coerceCriteriaMatrix(fcsBind21724),
     );
   }
-  return oQe(
-    fcsBind15198[0],
-    fcsBind15198[1],
-    ...fcsBind15198.slice(2),
-  );
+  return oQe(fcsBind15198[0], fcsBind15198[1], ...fcsBind15198.slice(2));
 }
 export function coerceCriteriaMatrix(fcsIn6590: any) {
   if (Array.isArray(fcsIn6590))
@@ -59,9 +55,7 @@ export function coerceCriteriaMatrix(fcsIn6590: any) {
   return lowerStringOrPassthrough(fcsBind16853);
 }
 export function lowerStringOrPassthrough(fcsIn13021: any) {
-  return typeof fcsIn13021 == "string"
-    ? fcsIn13021.toLowerCase()
-    : fcsIn13021;
+  return typeof fcsIn13021 == "string" ? fcsIn13021.toLowerCase() : fcsIn13021;
 }
 
 /** Legacy aliases (wave-126). */

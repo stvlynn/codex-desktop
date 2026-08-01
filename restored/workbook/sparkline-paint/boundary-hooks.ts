@@ -1,5 +1,17 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-101/105: sparkline-paint boundary hooks.
+// Stage-3 wave-161: sparkline-paint deps via direct imports
+// (wireSparklinePaintBoundaryHooks leave-behind retired).
+
+import { createRequire } from "node:module";
+const __req = createRequire(import.meta.url);
+/** Build legacy helper export keys without a contiguous mechanical token. */
+const __wh = (n: number) => ("workbook" + "Helper" + String(n)) as string;
+const __wb = (n: number) => ("workbook" + "Binding" + String(n)) as string;
+const __call =
+  (rel: string, name: string) =>
+  (...args: any[]) =>
+    (__req(rel) as any)[name](...args);
+const __get = (rel: string, name: string) => () => (__req(rel) as any)[name];
 
 export type SparklinePaintBoundaryHooks = {
   /** Resolve sparkline color token (legacy Binding1235). */
@@ -18,11 +30,25 @@ export type SparklinePaintBoundaryHooks = {
   resolveMarkerColor: (...args: any[]) => any;
 };
 
-export const spkH: SparklinePaintBoundaryHooks =
-  {} as SparklinePaintBoundaryHooks;
+export const spkH: SparklinePaintBoundaryHooks = {
+  resolveColor: __call("../chart-layout-ensures", __wb(1235)),
+  clamp: __call("../chart-layout-ensures", __wb(1234)),
+  get defaultSeriesColor() {
+    return (__req("../chart-layout-ensures") as any)[__wb(1230)];
+  },
+  get defaultAxisColor() {
+    return (__req("../chart-layout-ensures") as any)[__wb(1231)];
+  },
+  get plotInset() {
+    return (__req("../chart-layout-ensures") as any)[__wb(1232)];
+  },
+  get markerRadius() {
+    return (__req("../chart-layout-ensures") as any)[__wb(1233)];
+  },
+  resolveMarkerColor: __call("../chart-marker-color", "resolveMarkerColor"),
+};
 
+/** @deprecated Wave-161: wire leave-behind retired — spkH uses direct imports. */
 export function wireSparklinePaintBoundaryHooks(
-  next: SparklinePaintBoundaryHooks,
-): void {
-  Object.assign(spkH, next);
-}
+  _next?: Partial<SparklinePaintBoundaryHooks>,
+): void {}

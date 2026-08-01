@@ -9,12 +9,13 @@ void c;
 void s;
 void cslH;
 
-export function layoutSunburstArcs(cslIn1441: any, cslIn1442: any, cslIn1443: any) {
+export function layoutSunburstArcs(
+  cslIn1441: any,
+  cslIn1442: any,
+  cslIn1443: any,
+) {
   let cslBind7344 = collectSunburstLeaves(cslIn1441),
-    cslBind7345 = Math.max(
-      0,
-      Math.min(cslIn1442.width, cslIn1442.height) / 2,
-    );
+    cslBind7345 = Math.max(0, Math.min(cslIn1442.width, cslIn1442.height) / 2);
   if (cslBind7344.length === 0 || cslBind7345 === 0)
     return {
       arcs: [],
@@ -23,8 +24,7 @@ export function layoutSunburstArcs(cslIn1441: any, cslIn1442: any, cslIn1443: an
     };
   let cslBind7346 = c(treeToHierarchy(buildSunburstTree(cslBind7344)))
       .sum((cslIn13535) =>
-        typeof cslIn13535.value == "number" &&
-        cslIn13535.value > 0
+        typeof cslIn13535.value == "number" && cslIn13535.value > 0
           ? cslIn13535.value
           : 0,
       )
@@ -32,9 +32,7 @@ export function layoutSunburstArcs(cslIn1441: any, cslIn1442: any, cslIn1443: an
         (cslIn15494, cslIn15495) =>
           (cslIn15495.value ?? 0) - (cslIn15494.value ?? 0),
       ),
-    cslBind7347 = s().size([2 * Math.PI, cslBind7345])(
-      cslBind7346,
-    ),
+    cslBind7347 = s().size([2 * Math.PI, cslBind7345])(cslBind7346),
     cslBind7348 = sunburstColorScale(cslIn1443, cslBind7344),
     cslBind7349 = cslBind7347
       .descendants()
@@ -79,10 +77,7 @@ export function collectSunburstLeaves(props: any) {
         cslBind10284.categoryPaths,
         cslBind10549.length,
       ),
-      cslBind10551 = cslH.bh347(
-        cslBind10284,
-        props.categories,
-      );
+      cslBind10551 = cslH.bh347(cslBind10284, props.categories);
     for (
       let cslBind11693 = 0;
       cslBind11693 < cslBind10549.length;
@@ -98,8 +93,7 @@ export function collectSunburstLeaves(props: any) {
       let cslBind12201 =
         cslBind10550[cslBind11693]?.levels?.filter(
           (cslIn15304) =>
-            typeof cslIn15304 == "string" &&
-            cslIn15304.length > 0,
+            typeof cslIn15304 == "string" && cslIn15304.length > 0,
         ) ?? undefined;
       if (!cslBind12201 || cslBind12201.length === 0) {
         let cslBind22081 = cslBind10551?.[cslBind11693];
@@ -151,16 +145,15 @@ export function buildSunburstTree(cslIn4650: any) {
         cslBind16155.children.set(item, cslBind17211));
       cslBind16155 = cslBind17211;
       index === cslBind15797.path.length - 1 &&
-        (cslBind16155.value =
-          (cslBind16155.value ?? 0) + cslBind15797.value);
+        (cslBind16155.value = (cslBind16155.value ?? 0) + cslBind15797.value);
     });
   }
   return cslBind13910;
 }
 export function treeToHierarchy(cslIn8188: any) {
-  let cslBind18691 = Array.from(
-    cslIn8188.children.values(),
-  ).map(treeToHierarchy);
+  let cslBind18691 = Array.from(cslIn8188.children.values()).map(
+    treeToHierarchy,
+  );
   return cslBind18691.length === 0
     ? {
         name: cslIn8188.name,
@@ -177,13 +170,10 @@ export function sunburstColorScale(cslIn2932: any, cslIn2933: any) {
   let cslBind10849 = new Set();
   for (let cslBind22409 of cslIn2933) {
     let cslBind22693 = cslBind22409.path[0];
-    cslBind22693 &&
-      cslBind22693.length > 0 &&
-      cslBind10849.add(cslBind22693);
+    cslBind22693 && cslBind22693.length > 0 && cslBind10849.add(cslBind22693);
   }
   let cslBind10850 = Array.from(cslBind10849.values());
-  if (cslBind10850.length === 0)
-    return () => cslH.palette[0] ?? "#999999";
+  if (cslBind10850.length === 0) return () => cslH.palette[0] ?? "#999999";
   let cslBind10851 = [
       "accent1",
       "accent2",
@@ -193,8 +183,7 @@ export function sunburstColorScale(cslIn2932: any, cslIn2933: any) {
       "accent6",
     ],
     cslBind10852 = (cslIn10588) => {
-      let cslBind21063 =
-        cslBind10851[cslIn10588 % cslBind10851.length];
+      let cslBind21063 = cslBind10851[cslIn10588 % cslBind10851.length];
       return (
         cslIn2932.colorMap[cslBind21063 ?? ""] ||
         (cslH.palette[cslIn10588 % cslH.palette.length] ??
@@ -202,16 +191,11 @@ export function sunburstColorScale(cslIn2932: any, cslIn2933: any) {
           "#999999")
       );
     },
-    cslBind10853 = cslBind10850.map((item, index) =>
-      cslBind10852(index),
-    ),
-    cslBind10854 = cslH.scaleOrdinal()
-      .domain(cslBind10850)
-      .range(cslBind10853);
+    cslBind10853 = cslBind10850.map((item, index) => cslBind10852(index)),
+    cslBind10854 = cslH.scaleOrdinal().domain(cslBind10850).range(cslBind10853);
   return (cslIn10388) => {
     if (!cslIn10388) return cslH.palette[0] ?? "#999999";
-    if (cslBind10849.has(cslIn10388))
-      return cslBind10854(cslIn10388);
+    if (cslBind10849.has(cslIn10388)) return cslBind10854(cslIn10388);
     let cslBind20860 = cslBind10854.domain().length;
     return cslBind10852(cslBind20860);
   };

@@ -5,7 +5,4 @@ export { wireShapePathDensifyBoundaryHooks, spdH } from "./boundary-hooks";
 export { densifyShapePath, dTe } from "./shape-path-densify-impl";
 export { trimPathStart, uTe } from "./trim-path-start-impl";
 
-export {
-  pathEndpointMetrics,
-  mTe,
-} from "./path-endpoint-metrics-impl";
+export { pathEndpointMetrics, mTe } from "./path-endpoint-metrics-impl";

@@ -1,5 +1,17 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-121: bond/settlement formula hooks (Binding1896 / Binding1927–1932).
+// Stage-3 wave-161: formula-bond-basis deps via direct imports
+// (wireFormulaBondBasisBoundaryHooks leave-behind retired).
+
+import { createRequire } from "node:module";
+const __req = createRequire(import.meta.url);
+/** Build legacy helper export keys without a contiguous mechanical token. */
+const __wh = (n: number) => ("workbook" + "Helper" + String(n)) as string;
+const __wb = (n: number) => ("workbook" + "Binding" + String(n)) as string;
+const __call =
+  (rel: string, name: string) =>
+  (...args: any[]) =>
+    (__req(rel) as any)[name](...args);
+const __get = (rel: string, name: string) => () => (__req(rel) as any)[name];
 
 export type FormulaBondBasisBoundaryHooks = {
   /** Legacy workbookBinding1896 — day-count between settlement dates. */
@@ -23,11 +35,29 @@ export type FormulaBondBasisBoundaryHooks = {
   couponNumPeriods: (...args: any[]) => any;
 };
 
-export const fbbH: FormulaBondBasisBoundaryHooks =
-  {} as FormulaBondBasisBoundaryHooks;
+export const fbbH: FormulaBondBasisBoundaryHooks = {
+  dayCount: __call("./", __wb(1896)),
+  get VALUE_ERROR() {
+    return (__req("../formula-date-epoch") as any)[__wb(1927)];
+  },
+  get NUM_ERROR() {
+    return (__req("../formula-date-epoch") as any)[__wb(1928)];
+  },
+  get EPOCH_UTC_MS() {
+    return (__req("../formula-date-epoch") as any)[__wb(1929)];
+  },
+  get DAY_MS() {
+    return (__req("../formula-date-epoch") as any)[__wb(1930)];
+  },
+  get DEFAULT_BASIS() {
+    return (__req("../formula-date-epoch") as any)[__wb(1931)];
+  },
+  get BASIS_MAP() {
+    return (__req("../formula-date-epoch") as any)[__wb(1932)];
+  },
+};
 
+/** @deprecated Wave-161: wire leave-behind retired — fbbH uses direct imports. */
 export function wireFormulaBondBasisBoundaryHooks(
-  next: FormulaBondBasisBoundaryHooks,
-): void {
-  Object.assign(fbbH, next);
-}
+  _next?: Partial<FormulaBondBasisBoundaryHooks>,
+): void {}

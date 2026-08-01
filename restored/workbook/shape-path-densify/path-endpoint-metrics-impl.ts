@@ -3,11 +3,7 @@
 // Stage-3 wave-107. Pure — no boundary hooks.
 
 export function pathEndpointMetrics(spdIn2127: any) {
-  let spdBind9041,
-    spdBind9042,
-    spdBind9043,
-    spdBind9044,
-    spdBind9045;
+  let spdBind9041, spdBind9042, spdBind9043, spdBind9044, spdBind9045;
   for (let spdBind11833 of spdIn2127)
     if (spdBind11833.cmd === "moveTo") {
       spdBind9045 = {
@@ -22,9 +18,7 @@ export function pathEndpointMetrics(spdIn2127: any) {
         spdBind11833.y - spdBind9045.y,
         spdBind11833.x - spdBind9045.x,
       );
-      spdBind9041 &&
-        spdBind9042 === undefined &&
-        (spdBind9042 = spdBind19744);
+      spdBind9041 && spdBind9042 === undefined && (spdBind9042 = spdBind19744);
       spdBind9045 = {
         x: spdBind11833.x,
         y: spdBind11833.y,
@@ -33,17 +27,12 @@ export function pathEndpointMetrics(spdIn2127: any) {
         ...spdBind9045,
       };
       spdBind9044 = spdBind19744;
-    } else if (
-      spdBind11833.cmd === "cubicBezTo" &&
-      spdBind9045
-    ) {
+    } else if (spdBind11833.cmd === "cubicBezTo" && spdBind9045) {
       let spdBind18648 = Math.atan2(
         spdBind11833.y1 - spdBind9045.y,
         spdBind11833.x1 - spdBind9045.x,
       );
-      spdBind9041 &&
-        spdBind9042 === undefined &&
-        (spdBind9042 = spdBind18648);
+      spdBind9041 && spdBind9042 === undefined && (spdBind9042 = spdBind18648);
       spdBind9045 = {
         x: spdBind11833.x,
         y: spdBind11833.y,

@@ -6,42 +6,27 @@ import { icsH } from "./boundary-hooks";
 
 void icsH;
 
-export function paintIconSetSymbols(icsIn837: any, icsIn838: any, icsIn839: any, icsIn840: any, ) {
+export function paintIconSetSymbols(
+  icsIn837: any,
+  icsIn838: any,
+  icsIn839: any,
+  icsIn840: any,
+) {
   let icsBind5515 = icsIn840.x + icsIn840.width / 2,
     icsBind5516 = icsIn840.y + icsIn840.height / 2,
     icsBind5517 =
       Math.min(icsIn840.width, icsIn840.height) *
       (icsIn838 === "symbols2" ? 0.52 : 0.42),
-    icsBind5518 = [
-      icsH.redFill,
-      icsH.yellowStroke,
-      icsH.greenFill,
-    ];
+    icsBind5518 = [icsH.redFill, icsH.yellowStroke, icsH.greenFill];
   if (icsIn838 !== "symbols2") {
-    let icsBind16995 = [
-        icsH.redFill,
-        icsH.yellowFill,
-        icsH.greenFill,
-      ],
-      icsBind16996 = [
-        icsH.redStroke,
-        icsH.yellowStroke,
-        icsH.greenStroke,
-      ];
+    let icsBind16995 = [icsH.redFill, icsH.yellowFill, icsH.greenFill],
+      icsBind16996 = [icsH.redStroke, icsH.yellowStroke, icsH.greenStroke];
     icsIn837.beginPath();
-    icsIn837.arc(
-      icsBind5515,
-      icsBind5516,
-      icsBind5517,
-      0,
-      Math.PI * 2,
-    );
-    icsIn837.fillStyle =
-      icsBind16995[icsIn839] ?? icsH.yellowFill;
+    icsIn837.arc(icsBind5515, icsBind5516, icsBind5517, 0, Math.PI * 2);
+    icsIn837.fillStyle = icsBind16995[icsIn839] ?? icsH.yellowFill;
     icsIn837.fill();
     icsIn837.lineWidth = Math.max(1, icsBind5517 * 0.12);
-    icsIn837.strokeStyle =
-      icsBind16996[icsIn839] ?? icsH.yellowStroke;
+    icsIn837.strokeStyle = icsBind16996[icsIn839] ?? icsH.yellowStroke;
     icsIn837.stroke();
   }
   if (
@@ -79,14 +64,8 @@ export function paintIconSetSymbols(icsIn837: any, icsIn838: any, icsIn839: any,
   }
   if (icsIn839 === 1) {
     icsIn837.beginPath();
-    icsIn837.moveTo(
-      icsBind5515,
-      icsBind5516 - icsBind5517 * 0.52,
-    );
-    icsIn837.lineTo(
-      icsBind5515,
-      icsBind5516 + icsBind5517 * 0.16,
-    );
+    icsIn837.moveTo(icsBind5515, icsBind5516 - icsBind5517 * 0.52);
+    icsIn837.lineTo(icsBind5515, icsBind5516 + icsBind5517 * 0.16);
     icsIn837.stroke();
     icsIn837.beginPath();
     icsIn837.arc(
