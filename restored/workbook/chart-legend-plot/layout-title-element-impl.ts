@@ -154,3 +154,9 @@ export const workbookHelper548 = titlePlainText;
 export const workbookHelper549 = titleLayoutHeight;
 export const cSe = truncateWithEllipsis;
 export const lSe = layoutTitleElement;
+/** Compat alias for barrels. */
+export const workbookFn547 = workbookHelper547;
+/** Compat alias for barrels. */
+export const workbookFn548 = workbookHelper548;
+/** Compat alias for barrels. */
+export const workbookFn549 = workbookHelper549;

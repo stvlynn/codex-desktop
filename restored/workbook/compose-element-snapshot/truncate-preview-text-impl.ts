@@ -10,3 +10,5 @@ export function workbookHelper684(cesIn9229: any, cesIn9230: any = 140) {
       ? cesBind19797
       : `${cesBind19797.slice(0, Math.max(1, cesIn9230 - 3))}...`;
 }
+/** Compat alias for barrels. */
+export const workbookFn684 = workbookHelper684;

@@ -6,3 +6,5 @@ export function workbookHelper631(tcpIn12059: any) {
   let tcpBind22270 = tcpIn12059 === undefined ? 1 : Math.floor(tcpIn12059);
   return tcpBind22270 > 1 ? tcpBind22270 : 1;
 }
+/** Compat alias for barrels. */
+export const workbookFn631 = workbookHelper631;

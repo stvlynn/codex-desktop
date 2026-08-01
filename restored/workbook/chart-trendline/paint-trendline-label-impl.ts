@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: trendline/data-label card paint (legacy helper524).
+// Semantic implementation: trendline/data-label card paint (legacy helper #524).
 // Stage-3 wave-107.
 
 import { ctlH } from "./boundary-hooks";
@@ -72,4 +72,5 @@ export function paintTrendlineLabel(
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper524 = paintTrendlineLabel;

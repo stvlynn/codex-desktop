@@ -25,8 +25,8 @@ export { obe } from "./measure-legend-impl";
 
 export {
   $A,
-  workbookHelper484,
-  workbookHelper488,
+  workbookFn484,
+  workbookFn488,
   LEGEND_LINE_MARKER_W,
   LEGEND_LINE_MARKER_H,
   LEGEND_MARKER_INSET,
@@ -34,8 +34,8 @@ export {
 } from "./legend-marker-size-impl";
 
 export {
-  workbookHelper387,
-  workbookHelper487,
+  workbookFn387,
+  workbookFn487,
 } from "./legend-typeface-helpers-impl";
 
-export { workbookHelper486 } from "./legend-position-normalize-impl";
+export { workbookFn486 } from "./legend-position-normalize-impl";

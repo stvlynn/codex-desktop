@@ -4,7 +4,7 @@
 export { wireChartGroupScalesBoundaryHooks, cgsH } from "./boundary-hooks";
 export {
   buildChartGroupScales,
-  workbookHelper423,
+  workbookFn423,
 } from "./chart-group-scales-impl";
 
 export {
@@ -31,7 +31,7 @@ export { buildLogChartScale, yye } from "./log-chart-scale-impl";
 
 export {
   buildNiceChartScale,
-  workbookHelper398,
+  workbookFn398,
 } from "./nice-chart-scale-impl";
 
 export {
@@ -41,21 +41,21 @@ export {
 export { buildContinuousScale, _O } from "./build-continuous-scale-impl";
 
 export {
-  workbookHelper392,
-  workbookHelper393,
-  workbookHelper394,
+  workbookFn392,
+  workbookFn393,
+  workbookFn394,
 } from "./series-overlap-offset-impl";
 
 export {
   vye,
-  workbookHelper395,
-  workbookHelper396,
+  workbookFn395,
+  workbookFn396,
 } from "./gap-visible-count-impl";
 
-export { workbookHelper424, workbookHelper425 } from "./band-scale-center-impl";
+export { workbookFn424, workbookFn425 } from "./band-scale-center-impl";
 
 export {
-  workbookHelper422,
+  workbookFn422,
   AXIS_RESERVE_DEFAULT,
   AXIS_RESERVE_WHEN_HIDDEN_GRID,
 } from "./axis-reserve-for-bar-impl";

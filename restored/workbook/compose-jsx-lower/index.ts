@@ -62,7 +62,7 @@ export {
 
 export { lowerPanelSurfaceTag, JOe } from "./lower-panel-impl";
 
-export { createBoxElement, workbookHelper713 } from "./create-box-element-impl";
+export { createBoxElement, createBoxElement } from "./create-box-element-impl";
 
 export {
   flattenComposeChildren,
@@ -115,13 +115,13 @@ export {
   IOe,
 } from "./semantic-tag-style-impl";
 
-export { LOe, tke, workbookHelper714 } from "./tag-kind-merge-impl";
+export { LOe, tke, workbookFn714 } from "./tag-kind-merge-impl";
 
 export {
   ensureSemanticTagSetsInit,
   kOe,
-  workbookHelper698,
-  workbookHelper699,
+  workbookFn698,
+  workbookFn699,
   lke,
   qOe,
   rke,
@@ -134,14 +134,14 @@ export {
   workbookBinding1538,
 } from "./semantic-tag-sets-impl";
 
-export { jOe, workbookHelper701, FOe } from "./jsx-children-normalize-impl";
+export { jOe, workbookFn701, FOe } from "./jsx-children-normalize-impl";
 
 export { ike, cke } from "./element-chrome-kind-impl";
 
 export {
   LDe,
   RDe,
-  workbookHelper681,
+  workbookFn681,
   gOe,
   KOe,
   imageCrop,

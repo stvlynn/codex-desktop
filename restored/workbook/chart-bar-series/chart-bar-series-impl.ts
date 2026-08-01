@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: column/bar series paint (legacy workbook bar-series painter).
-// Stage-3 wave-95/103 (computeBarSegments / helper421).
+// Stage-3 wave-95/103 (computeBarSegments / helper #421).
 
 import { Yn } from "../presentation-protobuf";
 import {
@@ -317,4 +317,5 @@ export function computeBarSegments(cbsIn685: any, cbsIn686: any) {
 }
 
 /** Legacy alias. */
-export const workbookHelper421 = computeBarSegments;
+/** Compat alias for barrels. */
+export const workbookHelper421 = paintBarSeries;

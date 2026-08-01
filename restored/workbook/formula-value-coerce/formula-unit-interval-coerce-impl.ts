@@ -1,9 +1,9 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: unit-interval / positive coerce (legacy helper908/909).
+// Semantic implementation: unit-interval / positive coerce (legacy helper #908/909).
 // Stage-3 wave-134.
 
 import {
-  workbookHelper904,
+  workbookFn904,
   workbookHelper907,
   ERR_NUM,
 } from "./formula-ttest-coerce-impl";
@@ -11,8 +11,8 @@ import {
 /** Legacy v6e — upper bound for positive coerce. */
 export const UNIT_INTERVAL_MAX = 1e10;
 
-export function workbookHelper908(fvcIn8524: any, fvcIn8525: any) {
-  let fvcBind19036 = workbookHelper904(fvcIn8524);
+export function coerceUnitInterval(fvcIn8524: any, fvcIn8525: any) {
+  let fvcBind19036 = workbookFn904(fvcIn8524);
   if (typeof fvcBind19036 != "number") return fvcBind19036;
   let fvcBind19037 = fvcIn8525?.inclusiveZero
       ? fvcBind19036 >= 0
@@ -28,5 +28,9 @@ export function workbookHelper909(fvcIn14975: any) {
   });
 }
 
-export const coerceUnitInterval = workbookHelper908;
+
 export const coercePositiveBoundedInt = workbookHelper909;
+/** Compat alias for barrels. */
+export const workbookFn908 = coerceUnitInterval;
+/** Compat alias for barrels. */
+export const workbookFn909 = workbookHelper909;

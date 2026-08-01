@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: scatter/bubble axis scale builder (legacy helper540).
+// Semantic implementation: scatter/bubble axis scale builder (legacy helper #540).
 // Stage-3 wave-97.
 
 import {

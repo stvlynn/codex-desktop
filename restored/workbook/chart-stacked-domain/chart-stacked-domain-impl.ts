@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: stacked/percent chart value domain (legacy helper389).
+// Semantic implementation: stacked/percent chart value domain (legacy helper #389).
 // Stage-3 wave-109.
 
 import { min as AppInitialNat } from "../../vendor/d3-array-min";
@@ -97,5 +97,7 @@ export function seriesValueDomain(csdIn8662: any) {
 
 /** Legacy aliases. */
 export const _ye = categoryCount;
-export const workbookHelper389 = stackedValueDomain;
-export const workbookHelper390 = seriesValueDomain;
+/** Compat alias for barrels. */
+export const workbookHelper389 = categoryCount;
+/** Compat alias for barrels. */
+export const workbookHelper390 = categoryCount;

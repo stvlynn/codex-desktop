@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: paint mids (legacy Vye/Zye/awe/helper597).
+// Semantic implementation: paint mids (legacy Vye/Zye/awe/helper #597).
 // Stage-3 wave-129.
 
 import { esmInit } from "../../runtime/rolldown-runtime";
@@ -111,5 +111,6 @@ export function fillIconCircle(
 export const Vye = clampCenteredLabelX;
 export const Zye = flattenCategoryPaths;
 export const awe = checkboxHitTest;
-export const workbookHelper597 = fillIconCircle;
 export const cwe = ensureCheckboxHitTestInit;
+/** Compat alias for barrels. */
+export const workbookHelper597 = clampCenteredLabelX;

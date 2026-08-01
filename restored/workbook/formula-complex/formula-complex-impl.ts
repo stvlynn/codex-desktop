@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: complex real/imag coerce (legacy helper893 / $4).
+// Semantic implementation: complex real/imag coerce (legacy helper #893 / $4).
 // Stage-3 wave-108.
 
 import { fcxH } from "./boundary-hooks";
@@ -95,5 +95,4 @@ export function complexImag(fcxIn1680: any) {
 }
 
 /** Legacy aliases. */
-export const workbookHelper893 = complexReal;
 export const $4 = complexImag;

@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: chart trendline paint (legacy helper525).
+// Semantic implementation: chart trendline paint (legacy helper #525).
 // Stage-3 wave-97.
 
 import { Kn } from "../presentation-protobuf";

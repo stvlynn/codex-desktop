@@ -69,3 +69,7 @@ export function sst(femIn9954: any, femIn9955: any, femIn9956: any) {
   }
   return DZe(femBind20474, femIn9955, femIn9956);
 }
+/** Compat alias for barrels. */
+export const workbookFn963 = workbookHelper963;
+/** Compat alias for barrels. */
+export const workbookFn965 = workbookHelper965;

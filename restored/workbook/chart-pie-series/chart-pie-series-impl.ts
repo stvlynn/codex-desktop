@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: pie/doughnut series paint (legacy helper496).
+// Semantic implementation: pie/doughnut series paint (legacy helper #496).
 // Stage-3 wave-101/102 (paintPieLabels / fbe).
 
 import { Cn, En } from "../presentation-protobuf";
@@ -205,4 +205,5 @@ export function paintPieLabels(
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper496 = paintPieSeries;

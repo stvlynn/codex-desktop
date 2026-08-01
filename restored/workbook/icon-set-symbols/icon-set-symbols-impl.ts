@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: CF icon-set 3Symbols/3Symbols2 paint (legacy helper594).
+// Semantic implementation: CF icon-set 3Symbols/3Symbols2 paint (legacy helper #594).
 // Stage-3 wave-101.
 
 import { icsH } from "./boundary-hooks";
@@ -120,4 +120,5 @@ export function paintIconSetSymbols(
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper594 = paintIconSetSymbols;

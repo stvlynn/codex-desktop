@@ -1,8 +1,8 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: coerce bin number (legacy helper554).
+// Semantic implementation: coerce bin number (legacy helper #554).
 // Stage-3 wave-133.
 
-export function workbookHelper554(cbwIn7483: any) {
+export function coerceBinNumber(cbwIn7483: any) {
   if (typeof cbwIn7483 == "number" && Number.isFinite(cbwIn7483))
     return cbwIn7483;
   if (typeof cbwIn7483 == "string") {
@@ -13,4 +13,3 @@ export function workbookHelper554(cbwIn7483: any) {
   }
 }
 
-export const coerceBinNumber = workbookHelper554;

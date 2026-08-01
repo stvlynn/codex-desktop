@@ -12,3 +12,5 @@ export {
   workbookHelper912,
   W4e,
 } from "./formula-skew-impl";
+
+export { workbookHelper912 as workbookFn912 } from "./formula-skew-impl";

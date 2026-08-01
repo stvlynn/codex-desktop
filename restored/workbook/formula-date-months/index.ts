@@ -1,26 +1,15 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-128: formula-date-months barrel.
 
-export { wireFormulaDateMonthsBoundaryHooks, fdmH } from "./boundary-hooks";
 export {
-  monthsBetween,
-  isSameMonthEnd,
-  countMonthSteps,
-  _9e,
-  N9e,
-  F9e,
-} from "./formula-date-months-impl";
-
-export {
-  CONSTRUCT_DATE_FROM,
   DAY_MS,
-  workbookHelper930,
-  workbookHelper931,
-  workbookHelper932,
-  workbookHelper933,
+  workbookFn930,
+  workbookFn931,
+  workbookFn932,
+  workbookFn933,
   H7e,
   G7e,
-  workbookHelper935,
+  workbookFn935,
   C9e,
   utcTimezoneOffsetMs,
   daysBetweenDates,
@@ -28,17 +17,17 @@ export {
   datedifYdUnits,
 } from "./date-construct-impl";
 
-export { A9e, workbookHelper936 } from "./date-eomonth-impl";
+export { A9e, workbookFn936 } from "./date-eomonth-impl";
 
 export {
-  workbookHelper880,
-  workbookHelper881,
+  workbookFn880,
+  workbookFn881,
   f5e,
   p5e,
   m5e,
 } from "./networkdays-wrappers-impl";
 
-export { workbookHelper934 } from "./compare-serial-dates-impl";
+export { workbookFn934 } from "./compare-serial-dates-impl";
 
 export {
   l1e,
@@ -61,8 +50,8 @@ export {
   Met,
   getSerialMonth,
   getSerialYear,
-  workbookHelper937,
-  workbookHelper938,
+  workbookFn937,
+  workbookFn938,
   stt,
   ltt,
   dtt,
@@ -90,3 +79,9 @@ export {
   h5e,
   _5e,
 } from "./formula-date-serial-wrappers-impl";
+/** Compat alias for barrels. */
+
+export { workbookHelper933 } from "./date-construct-impl";
+export { F9e } from "./formula-date-months-impl";
+
+export { workbookHelper936, workbookFn936 } from "./date-eomonth-impl";

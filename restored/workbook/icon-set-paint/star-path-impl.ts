@@ -1,8 +1,8 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: 5-point star path (legacy helper599 / endIconClip hook).
+// Semantic implementation: 5-point star path (legacy helper #599 / endIconClip hook).
 // Stage-3 wave-133.
 
-export function workbookHelper599(ispIn6307: any) {
+export function endIconClip(ispIn6307: any) {
   ispIn6307.beginPath();
   for (let ispBind17862 = 0; ispBind17862 < 10; ispBind17862 += 1) {
     let ispBind18771 = ispBind17862 % 2 == 0 ? 0.46 : 0.2,
@@ -16,5 +16,5 @@ export function workbookHelper599(ispIn6307: any) {
   ispIn6307.closePath();
 }
 
-export const endIconClip = workbookHelper599;
-export const drawStarPath = workbookHelper599;
+
+export const drawStarPath = endIconClip;

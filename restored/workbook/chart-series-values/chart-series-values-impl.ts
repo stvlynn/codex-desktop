@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: extract chart series point arrays (legacy helper551).
+// Semantic implementation: extract chart series point arrays (legacy helper #551).
 // Stage-3 wave-104.
 
 import { csvH } from "./boundary-hooks";
@@ -161,6 +161,7 @@ export function extractChartSeriesValues(csvIn920: any, csvIn921: any = {}) {
 }
 
 /** Legacy aliases. */
-export const workbookHelper551 = extractChartSeriesValues;
 export const fSe = buildSeriesXValues;
 export const pSe = padSeriesValues;
+/** Compat alias for barrels. */
+export const workbookHelper551 = buildSeriesXValues;

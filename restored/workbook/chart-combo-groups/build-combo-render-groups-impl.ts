@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: combo chart render groups (legacy helper532).
+// Semantic implementation: combo chart render groups (legacy helper #532).
 // Stage-3 wave-108.
 
 import { Cn } from "../presentation-protobuf";
@@ -71,4 +71,5 @@ export function buildComboRenderGroups(
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper532 = buildComboRenderGroups;

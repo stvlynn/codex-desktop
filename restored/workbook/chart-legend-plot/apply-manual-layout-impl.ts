@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: chart manual layout rect (legacy helper455/456/458).
+// Semantic implementation: chart manual layout rect (legacy helper #455/456/458).
 // Stage-3 wave-108.
 
 import { clpH } from "./boundary-hooks";
@@ -96,6 +96,9 @@ export function applyManualLayout(
 }
 
 /** Legacy aliases. */
-export const workbookHelper455 = layoutEdgeOffset;
-export const workbookHelper456 = layoutSizeOffset;
-export const workbookHelper458 = applyManualLayout;
+/** Compat alias for barrels. */
+export const workbookFn455 = layoutEdgeOffset;
+/** Compat alias for barrels. */
+export const workbookFn456 = layoutEdgeOffset;
+/** Compat alias for barrels. */
+export const workbookFn458 = layoutEdgeOffset;

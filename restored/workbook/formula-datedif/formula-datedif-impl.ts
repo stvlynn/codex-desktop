@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: Excel DATEDIF / day-count units (legacy helper876).
+// Semantic implementation: Excel DATEDIF / day-count units (legacy helper #876).
 // Stage-3 wave-108.
 
 import { fdifH } from "./boundary-hooks";
@@ -57,4 +57,3 @@ export function dateDif(fdifIn1966: any, fdifIn1967: any, fdifIn1968: any) {
 }
 
 /** Legacy alias. */
-export const workbookHelper876 = dateDif;

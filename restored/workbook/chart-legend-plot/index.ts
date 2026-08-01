@@ -14,9 +14,9 @@ export {
   applyManualLayout,
   layoutEdgeOffset,
   layoutSizeOffset,
-  workbookHelper455,
-  workbookHelper456,
-  workbookHelper458,
+  workbookFn455,
+  workbookFn456,
+  workbookFn458,
 } from "./apply-manual-layout-impl";
 
 export {
@@ -27,11 +27,11 @@ export {
   titleLayoutHeight,
   truncateWithEllipsis,
   layoutTitleElement,
-  workbookHelper547,
+  workbookFn547,
   oSe,
   sSe,
-  workbookHelper548,
-  workbookHelper549,
+  workbookFn548,
+  workbookFn549,
   cSe,
   lSe,
 } from "./layout-title-element-impl";

@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: chart group x/y scales (legacy helper423).
+// Semantic implementation: chart group x/y scales (legacy helper #423).
 // Stage-3 wave-99.
 
 import {
@@ -155,4 +155,5 @@ export function buildChartGroupScales(
 }
 
 /** Legacy alias. */
-export const workbookHelper423 = buildChartGroupScales;
+/** Compat alias for barrels. */
+export const workbookFn423 = buildChartGroupScales;

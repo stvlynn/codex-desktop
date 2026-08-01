@@ -20,3 +20,5 @@ export function workbookHelper936(fdmIn9181: any, fdmIn9182: any) {
     fdmBind19748
   );
 }
+/** Compat alias for barrels. */
+export const workbookFn936 = workbookHelper936;

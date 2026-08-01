@@ -7,11 +7,11 @@ export {
 } from "./boundary-hooks";
 export {
   buildComposeElementSnapshot,
-  workbookHelper678,
+  workbookFn678,
 } from "./compose-element-snapshot-impl";
 export {
   snapshotParagraphs,
-  workbookHelper685,
+  workbookFn685,
 } from "./snapshot-paragraphs-impl";
 
 export {
@@ -53,8 +53,8 @@ export {
 } from "./layout-blob-impl";
 
 export {
-  workbookHelper682,
-  workbookHelper683,
+  workbookFn682,
+  workbookFn683,
   WDe,
   frameToBboxTuple,
   resolveSlideFrameBbox,
@@ -65,11 +65,11 @@ export { $De } from "./resolve-element-style-impl";
 
 export { zDe } from "./image-mask-impl";
 
-export { workbookHelper680 } from "./typeface-triplet-impl";
+export { workbookFn680 } from "./typeface-triplet-impl";
 
 export { TOe } from "./geometry-snapshot-impl";
 
-export { workbookHelper684 } from "./truncate-preview-text-impl";
+export { workbookFn684 } from "./truncate-preview-text-impl";
 export { eOe } from "./proto-text-preview-impl";
 export { _Oe, SOe, COe } from "./element-fill-line-color-impl";
 

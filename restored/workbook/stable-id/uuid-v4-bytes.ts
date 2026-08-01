@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: uuid v4 from bytes (legacy BEe/VEe/UEe/helper659).
+// Semantic implementation: uuid v4 from bytes (legacy BEe/VEe/UEe/helper #659).
 // Stage-3 wave-129.
 
 import { esmInit } from "../../runtime/rolldown-runtime";
@@ -105,6 +105,7 @@ export const ensureUuidClusterInit = esmInit(() => {
 export const BEe = stringifyUuidBytes;
 export const VEe = rngUuidBytes;
 export const UEe = uuidV4FromOptions;
-export const workbookHelper659 = allocateLocalId;
 export const workbookBinding1312 = ensureUuidClusterInit;
 export const WEe = ensureUuidV4HelpersInit;
+/** Compat alias for barrels. */
+export const workbookHelper659 = stringifyUuidBytes;

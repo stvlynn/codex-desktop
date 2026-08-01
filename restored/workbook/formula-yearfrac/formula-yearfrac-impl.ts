@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: Excel YEARFRAC basis math (legacy helper884 + 882/883).
+// Semantic implementation: Excel YEARFRAC basis math (legacy helper #884 + 882/883).
 // Stage-3 wave-103.
 
 import { fyfH } from "./boundary-hooks";
@@ -117,6 +117,9 @@ export function yearFrac(fyfIn1045: any, fyfIn1046: any, fyfIn1047: any, ) {
 }
 
 /** Legacy aliases. */
+/** Compat alias for barrels. */
 export const workbookHelper882 = isLeapYear;
-export const workbookHelper883 = dateDiffDays;
-export const workbookHelper884 = yearFrac;
+/** Compat alias for barrels. */
+export const workbookHelper883 = isLeapYear;
+/** Compat alias for barrels. */
+export const workbookHelper884 = isLeapYear;

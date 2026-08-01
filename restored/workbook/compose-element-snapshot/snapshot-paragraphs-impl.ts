@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: paragraph/run snapshot VO (legacy helper685).
+// Semantic implementation: paragraph/run snapshot VO (legacy helper #685).
 // Stage-3 wave-106.
 
 import { cesH } from "./boundary-hooks";
@@ -90,4 +90,7 @@ export function snapshotParagraphs(cesIn1182: any, cesIn1183: any) {
 }
 
 /** Legacy alias. */
-export const workbookHelper685 = snapshotParagraphs;
+/** Compat alias for barrels. */
+export const workbookFn685 = snapshotParagraphs;
+/** Compat alias for barrels. */
+export const workbookHelper685 = workbookFn685;

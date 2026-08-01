@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: treemap hierarchy node normalize (legacy helper476).
+// Semantic implementation: treemap hierarchy node normalize (legacy helper #476).
 // Stage-3 wave-135.
 
 export function workbookHelper476(cttIn8177: any) {

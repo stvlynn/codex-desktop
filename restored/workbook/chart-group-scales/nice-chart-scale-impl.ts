@@ -42,3 +42,5 @@ export function buildNiceChartScale({
 
 /** Legacy alias (wave-124). */
 export const workbookHelper398 = buildNiceChartScale;
+/** Compat alias for barrels. */
+export const workbookFn398 = workbookHelper398;

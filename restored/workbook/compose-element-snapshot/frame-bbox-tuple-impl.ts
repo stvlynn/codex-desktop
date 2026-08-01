@@ -1,11 +1,11 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: frame bbox tuple helpers (legacy helper682/683/WDe).
+// Semantic implementation: frame bbox tuple helpers (legacy helper #682/683/WDe).
 // Stage-3 wave-133.
 
 import { round2 } from "./layout-blob-impl";
 import { resolveElementFramePx } from "../geometry-transform";
 
-export function workbookHelper682(cesIn7804: any) {
+export function frameToBboxTuple(cesIn7804: any) {
   if (!cesIn7804) return;
   let cesBind18286 = round2(cesIn7804.left),
     cesBind18287 = round2(cesIn7804.top),
@@ -22,7 +22,7 @@ export function workbookHelper682(cesIn7804: any) {
     return [cesBind18286, cesBind18287, cesBind18288, cesBind18289];
 }
 export function workbookHelper683(cesIn6331: any, cesIn6332: any) {
-  let cesBind16475 = workbookHelper682(cesIn6332);
+  let cesBind16475 = frameToBboxTuple(cesIn6332);
   if (
     WDe(cesBind16475) ||
     cesIn6331.scope !== "slide" ||
@@ -35,7 +35,7 @@ export function workbookHelper683(cesIn6331: any, cesIn6332: any) {
     cesIn6331.presentation,
     cesIn6331.slide,
   );
-  return workbookHelper682({
+  return frameToBboxTuple({
     left: cesBind16476.x,
     top: cesBind16476.y,
     width: cesBind16476.width,
@@ -57,6 +57,10 @@ export function WDe(props: any) {
   );
 }
 
-export const frameToBboxTuple = workbookHelper682;
+
 export const resolveSlideFrameBbox = workbookHelper683;
 export const isPositiveBboxTuple = WDe;
+/** Compat alias for barrels. */
+export const workbookFn682 = frameToBboxTuple;
+/** Compat alias for barrels. */
+export const workbookFn683 = workbookHelper683;

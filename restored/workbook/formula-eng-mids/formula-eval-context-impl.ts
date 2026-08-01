@@ -29,3 +29,7 @@ export let workbookBinding1934: any[] = [];
 export function ensureEvalContextStackInit(): void {
   workbookBinding1934 = [];
 }
+/** Compat alias for barrels. */
+export const workbookFn962 = workbookHelper962;
+
+export const workbookHelper962 = workbookFn962;

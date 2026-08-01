@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: chart data-label paint (legacy helper500).
+// Semantic implementation: chart data-label paint (legacy helper #500).
 // Stage-3 wave-98.
 
 import { En } from "../presentation-protobuf";
@@ -166,4 +166,5 @@ export function paintChartDataLabel(
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper500 = paintChartDataLabel;

@@ -216,3 +216,11 @@ export function w6e(femIn14984: any, femIn14985: any, femIn14986: any) {
 export function n8e(femIn15514: any, femIn15515: any) {
   return workbookHelper918(femIn15514, femIn15515);
 }
+/** Compat alias for barrels. */
+export const workbookFn918 = workbookHelper918;
+/** Compat alias for barrels. */
+export const workbookFn919 = workbookHelper919;
+
+export const workbookHelper918 = workbookFn918;
+
+export const workbookHelper919 = workbookFn919;

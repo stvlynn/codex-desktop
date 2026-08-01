@@ -108,7 +108,7 @@ export function layoutLegendAroundPlot(
       break;
     }
     case Mn.LEGEND_POSITION_LEFT: {
-      let { reserveWidth, legendWidth } = clpHelper541(
+      let { reserveWidth, legendWidth } = clpFn541(
         clpBind3740.width,
         clpBind3743,
         clpBind3744,
@@ -137,7 +137,7 @@ export function layoutLegendAroundPlot(
     }
     case Mn.LEGEND_POSITION_RIGHT:
     default: {
-      let { reserveWidth, legendWidth } = clpHelper541(
+      let { reserveWidth, legendWidth } = clpFn541(
         clpBind3740.width,
         clpBind3743,
         clpBind3744,
@@ -166,10 +166,10 @@ export function layoutLegendAroundPlot(
     }
   }
   let clpBind3747 = clpIn366.legend?.manualLayout;
-  return clpBind3747 && clpBind3745 && clpHelper457(clpBind3747)
+  return clpBind3747 && clpBind3745 && clpFn457(clpBind3747)
     ? {
         plotDims: clpIn367,
-        legendRect: clpHelper458(
+        legendRect: clpFn458(
           clpIn369.outerDims ?? clpIn367,
           clpBind3745,
           clpBind3747,
@@ -226,10 +226,10 @@ export function layoutLegendPlot(
   }
   let clpBind4581 = bSe(clpIn591);
   clpBind4581?.target === "outer" &&
-    (clpBind4578 = clpHelper559(clpIn592, clpBind4578, clpBind4581));
+    (clpBind4578 = clpFn559(clpIn592, clpBind4578, clpBind4581));
   let clpBind4582 =
       clpBind4581?.target === "inner"
-        ? clpHelper559(clpIn592, clpBind4578, clpBind4581)
+        ? clpFn559(clpIn592, clpBind4578, clpBind4581)
         : clpBind4578,
     clpBind4583 = Math.max(0, clpBind4582.y - clpBind4576.y),
     clpBind4584 =
@@ -304,7 +304,7 @@ export function layoutLegendPlot(
       legendRect: clpBind4579,
       legendPosition: clpBind4580,
       axesLayout: clpBind4585,
-      xAxisPlan: clpHelper560(clpIn591) ? undefined : clpBind4585?.xAxisPlan,
+      xAxisPlan: clpFn560(clpIn591) ? undefined : clpBind4585?.xAxisPlan,
       dataTableRect: clpBind4587.tableRect,
       manualLayout: clpBind4581,
     }

@@ -40,3 +40,7 @@ export function workbookHelper488(clIn10690: any) {
         bottom: LEGEND_MARKER_INSET,
       };
 }
+/** Compat alias for barrels. */
+export const workbookFn484 = workbookHelper484;
+/** Compat alias for barrels. */
+export const workbookFn488 = workbookHelper488;

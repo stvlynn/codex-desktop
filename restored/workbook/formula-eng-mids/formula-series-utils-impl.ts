@@ -42,3 +42,7 @@ export function workbookHelper911(
 export const hasVaryingSeriesValues = workbookHelper910;
 /** Semantic alias: call fn with defined trailing args (legacy bh911). */
 export const callWithDefinedArgs = workbookHelper911;
+/** Compat alias for barrels. */
+export const workbookFn910 = workbookHelper910;
+/** Compat alias for barrels. */
+export const workbookFn911 = workbookHelper911;

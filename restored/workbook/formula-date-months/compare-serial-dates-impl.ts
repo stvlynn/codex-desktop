@@ -9,3 +9,5 @@ export function workbookHelper934(fdmIn12220: any, fdmIn12221: any) {
     workbookHelper931(fdmIn12220) - +workbookHelper931(fdmIn12221);
   return fdmBind22328 < 0 ? -1 : fdmBind22328 > 0 ? 1 : fdmBind22328;
 }
+/** Compat alias for barrels. */
+export const workbookFn934 = workbookHelper934;

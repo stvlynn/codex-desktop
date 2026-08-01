@@ -3,10 +3,10 @@
 // Stage-3 wave-135b.
 
 import {
-  coerceFormulaDate as workbookHelper848,
-  flattenMatrixArgs as workbookHelper849,
-  hasFormulaError as workbookHelper846,
-  excelDaysSinceEpoch as workbookHelper835,
+  coerceFormulaDate as workbookFn848,
+  flattenMatrixArgs as workbookFn849,
+  hasFormulaError as workbookFn846,
+  excelDaysSinceEpoch as workbookFn835,
 } from "../formula-token-utils";
 import {
   workbookBinding1835,
@@ -16,7 +16,7 @@ import {
 import { padStartRepeat } from "../formula-scalar-funcs";
 
 export function c1e(femIn7988: any, femIn7989: any) {
-  if (((femIn7988 = workbookHelper848(femIn7988)), femIn7988 instanceof Error))
+  if (((femIn7988 = workbookFn848(femIn7988)), femIn7988 instanceof Error))
     return femIn7988;
   if (isNaN(femIn7989)) return workbookBinding1835;
   femIn7989 = parseInt(femIn7989, 10);
@@ -25,25 +25,25 @@ export function c1e(femIn7988: any, femIn7989: any) {
     femIn7988.getMonth() + femIn7989 + 1,
     0,
   );
-  return workbookBinding1842 ? workbookHelper835(femBind18473) : femBind18473;
+  return workbookBinding1842 ? workbookFn835(femBind18473) : femBind18473;
 }
 export function h1e(femIn8240: any, femIn8241: any, femIn8242: any) {
   return (
-    (femIn8240 = workbookHelper849(femIn8240)),
-    (femIn8241 = workbookHelper849(femIn8241)),
-    (femIn8242 = workbookHelper849(femIn8242)),
-    workbookHelper846(femIn8240, femIn8241, femIn8242)
+    (femIn8240 = workbookFn849(femIn8240)),
+    (femIn8241 = workbookFn849(femIn8241)),
+    (femIn8242 = workbookFn849(femIn8242)),
+    workbookFn846(femIn8240, femIn8241, femIn8242)
       ? workbookBinding1835
       : femIn8240 < 0 || femIn8241 < 0 || femIn8242 < 0
         ? workbookBinding1838
         : (3600 * femIn8240 + 60 * femIn8241 + femIn8242) / 86400
   );
 }
-export function workbookHelper885(femIn14740: any) {
+export function workbookFn885(femIn14740: any) {
   return /^[01]{1,10}$/.test(femIn14740);
 }
 export function E1e(femIn4849: any, femIn4850: any) {
-  if (!workbookHelper885(femIn4849)) return workbookBinding1838;
+  if (!workbookFn885(femIn4849)) return workbookBinding1838;
   let n = femIn4849.toString();
   if (n.length === 10 && n.substring(0, 1) === "1")
     return (0xfffffffe00 + parseInt(n.substring(1), 2)).toString(16);
@@ -60,7 +60,7 @@ export function E1e(femIn4849: any, femIn4850: any) {
             : workbookBinding1838);
 }
 export function D1e(femIn4881: any, femIn4882: any) {
-  if (!workbookHelper885(femIn4881)) return workbookBinding1838;
+  if (!workbookFn885(femIn4881)) return workbookBinding1838;
   let n = femIn4881.toString();
   if (n.length === 10 && n.substring(0, 1) === "1")
     return (1073741312 + parseInt(n.substring(1), 2)).toString(8);
@@ -78,9 +78,9 @@ export function D1e(femIn4881: any, femIn4882: any) {
 }
 export function O1e(femIn6346: any, femIn6347: any) {
   return (
-    (femIn6346 = workbookHelper849(femIn6346)),
-    (femIn6347 = workbookHelper849(femIn6347)),
-    workbookHelper846(femIn6346, femIn6347)
+    (femIn6346 = workbookFn849(femIn6346)),
+    (femIn6347 = workbookFn849(femIn6347)),
+    workbookFn846(femIn6346, femIn6347)
       ? workbookBinding1835
       : femIn6346 < 0 ||
           femIn6347 < 0 ||
@@ -94,9 +94,9 @@ export function O1e(femIn6346: any, femIn6347: any) {
 }
 export function k1e(femIn7265: any, femIn7266: any) {
   return (
-    (femIn7265 = workbookHelper849(femIn7265)),
-    (femIn7266 = workbookHelper849(femIn7266)),
-    workbookHelper846(femIn7265, femIn7266)
+    (femIn7265 = workbookFn849(femIn7265)),
+    (femIn7266 = workbookFn849(femIn7266)),
+    workbookFn846(femIn7265, femIn7266)
       ? workbookBinding1835
       : femIn7265 < 0 ||
           Math.floor(femIn7265) !== femIn7265 ||
@@ -110,9 +110,9 @@ export function k1e(femIn7265: any, femIn7266: any) {
 }
 export function A1e(femIn6348: any, femIn6349: any) {
   return (
-    (femIn6348 = workbookHelper849(femIn6348)),
-    (femIn6349 = workbookHelper849(femIn6349)),
-    workbookHelper846(femIn6348, femIn6349)
+    (femIn6348 = workbookFn849(femIn6348)),
+    (femIn6349 = workbookFn849(femIn6349)),
+    workbookFn846(femIn6348, femIn6349)
       ? workbookBinding1835
       : femIn6348 < 0 ||
           femIn6349 < 0 ||
@@ -126,9 +126,9 @@ export function A1e(femIn6348: any, femIn6349: any) {
 }
 export function j1e(femIn7267: any, femIn7268: any) {
   return (
-    (femIn7267 = workbookHelper849(femIn7267)),
-    (femIn7268 = workbookHelper849(femIn7268)),
-    workbookHelper846(femIn7267, femIn7268)
+    (femIn7267 = workbookFn849(femIn7267)),
+    (femIn7268 = workbookFn849(femIn7268)),
+    workbookFn846(femIn7267, femIn7268)
       ? workbookBinding1835
       : femIn7267 < 0 ||
           Math.floor(femIn7267) !== femIn7267 ||
@@ -142,9 +142,9 @@ export function j1e(femIn7267: any, femIn7268: any) {
 }
 export function M1e(femIn6350: any, femIn6351: any) {
   return (
-    (femIn6350 = workbookHelper849(femIn6350)),
-    (femIn6351 = workbookHelper849(femIn6351)),
-    workbookHelper846(femIn6350, femIn6351)
+    (femIn6350 = workbookFn849(femIn6350)),
+    (femIn6351 = workbookFn849(femIn6351)),
+    workbookFn846(femIn6350, femIn6351)
       ? workbookBinding1835
       : femIn6350 < 0 ||
           femIn6351 < 0 ||
@@ -173,3 +173,5 @@ export function c0e(femIn5443: any, femIn5444: any) {
             ? padStartRepeat("0", femIn5444 - r.length) + r
             : workbookBinding1838);
 }
+/** Compat alias for barrels. */
+export const workbookHelper885 = workbookFn885;

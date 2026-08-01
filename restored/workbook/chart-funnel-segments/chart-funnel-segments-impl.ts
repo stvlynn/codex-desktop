@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: funnel segment geometry (legacy helper576 + bCe).
+// Semantic implementation: funnel segment geometry (legacy helper #576 + bCe).
 // Stage-3 wave-102/103 (paintFunnelBars / vCe).
 
 import { max as appInitialAat } from "../../vendor/d3-array-min";
@@ -109,8 +109,6 @@ export function computeFunnelSegments(
 }
 
 /** Legacy alias. */
-export const workbookHelper576 = computeFunnelSegments;
-
 export function paintFunnelBars(
   cfsIn790: any,
   cfsIn791: any,
@@ -192,3 +190,5 @@ export function paintFunnelBars(
 
 /** Legacy alias. */
 export const vCe = paintFunnelBars;
+/** Compat alias for barrels. */
+export const workbookHelper576 = computeFunnelSegments;

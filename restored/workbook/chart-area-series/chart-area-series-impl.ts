@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: chart area-series paint (legacy helper529).
+// Semantic implementation: chart area-series paint (legacy helper #529).
 // Stage-3 wave-100.
 
 import { tr } from "../presentation-protobuf";
@@ -114,4 +114,3 @@ export function paintAreaSeries(
 }
 
 /** Legacy alias. */
-export const workbookHelper529 = paintAreaSeries;

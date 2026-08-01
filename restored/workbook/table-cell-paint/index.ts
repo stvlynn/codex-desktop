@@ -20,13 +20,13 @@ export {
 
 export { vTe } from "./has-table-content-impl";
 
-export { workbookHelper635, yTe } from "./border-segment-key-impl";
+export { workbookFn635, yTe } from "./border-segment-key-impl";
 
 export {
-  workbookHelper632,
-  workbookHelper636,
-  workbookHelper637,
-  workbookHelper638,
+  workbookFn632,
+  workbookFn636,
+  workbookFn637,
+  workbookFn638,
 } from "./border-merge-helpers-impl";
 
-export { workbookHelper631 } from "./parse-span-helper-impl";
+export { workbookFn631 } from "./parse-span-helper-impl";

@@ -45,3 +45,7 @@ export {
   getSerialMonth as workbookHelper937,
   getSerialYear as workbookHelper938,
 };
+/** Compat alias for barrels. */
+export const workbookFn937 = workbookHelper937;
+/** Compat alias for barrels. */
+export const workbookFn938 = workbookHelper938;

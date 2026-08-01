@@ -35,3 +35,7 @@ export function m5e(
 ) {
   return workbookHelper881.INTL(fdmIn14115, fdmIn14116, fdmIn14117, fdmIn14118);
 }
+/** Compat alias for barrels. */
+export const workbookFn880 = workbookHelper880;
+/** Compat alias for barrels. */
+export const workbookFn881 = workbookHelper881;

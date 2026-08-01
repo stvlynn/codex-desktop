@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: map sheet A1 ranges to cells (legacy helper587 nest).
+// Semantic implementation: map sheet A1 ranges to cells (legacy helper #587 nest).
 // Stage-3 wave-129.
 
 import { parseSheetRangeRef } from "../chart-data-table";
@@ -97,5 +97,7 @@ export const _z = normalizeSheetNameKey;
 export const GCe = resolveSheetByName;
 export const KCe = getSheetCell;
 export const HCe = mapSeriesNumericCells;
-export const workbookHelper586 = mapCategoryTextCells;
-export const workbookHelper587 = mapSheetRangeCells;
+/** Compat alias for barrels. */
+export const workbookHelper586 = normalizeSheetNameKey;
+/** Compat alias for barrels. */
+export const workbookHelper587 = normalizeSheetNameKey;

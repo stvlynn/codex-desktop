@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: detect LAMBDA / lambda-defined-name in formula AST (legacy helper1008).
+// Semantic implementation: detect LAMBDA / lambda-defined-name in formula AST (legacy helper #1008).
 // Stage-3 wave-104.
 
 export function exprContainsLambda(farIn539: any) {
@@ -97,4 +97,5 @@ export function exprContainsLambda(farIn539: any) {
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper1008 = exprContainsLambda;

@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: histogram binning (legacy helper555).
+// Semantic implementation: histogram binning (legacy helper #555).
 // Stage-3 wave-102.
 
 import { Jn as _presentationJn } from "../presentation-protobuf";
@@ -107,4 +107,5 @@ export function computeHistogramBins(chbIn937: any, chbIn938: any) {
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper555 = computeHistogramBins;

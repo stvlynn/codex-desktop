@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: map legend ramp colors from base (legacy helper466).
+// Semantic implementation: map legend ramp colors from base (legacy helper #466).
 // Stage-3 wave-135.
 
 import { color as appInitialXat } from "../../vendor/d3-color";

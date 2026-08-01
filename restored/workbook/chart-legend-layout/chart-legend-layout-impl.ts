@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: chart legend measure/layout (legacy helper490).
+// Semantic implementation: chart legend measure/layout (legacy helper #490).
 // Stage-3 wave-100.
 
 import { Cn, Mn, j } from "../presentation-protobuf";
@@ -146,4 +146,5 @@ export function layoutChartLegend(
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper490 = layoutChartLegend;

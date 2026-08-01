@@ -13,3 +13,5 @@ export function yTe(
 ) {
   return `${tcpIn12935}:${workbookHelper635(tcpIn12936)}:${workbookHelper635(tcpIn12937)}:${workbookHelper635(tcpIn12938)}`;
 }
+/** Compat alias for barrels. */
+export const workbookFn635 = workbookHelper635;

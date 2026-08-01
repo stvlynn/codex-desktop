@@ -88,3 +88,7 @@ export function rke(cjlIn7282: any) {
     shadow: cjlIn7282.shadow ?? cjlBind17661?.shadow,
   };
 }
+/** Compat alias for barrels. */
+export const workbookFn698 = workbookHelper698;
+/** Compat alias for barrels. */
+export const workbookFn699 = workbookHelper699;

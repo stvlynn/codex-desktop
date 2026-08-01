@@ -3,12 +3,12 @@
 // Chart-paint still wires this as paintAxis for back-compat.
 // Stage-3 wave-105.
 
-import { a, c, r as srcR } from "../../boundaries/d3-hierarchy";
+import { a, c, hierarchy as d3Hierarchy } from "../../boundaries/d3-hierarchy";
 import { cttH } from "./boundary-hooks";
 
 void a;
 void c;
-void srcR;
+void d3Hierarchy;
 void cttH;
 
 export function layoutTreemapTiles(
@@ -34,7 +34,7 @@ export function layoutTreemapTiles(
       ),
     cttBind5604 = Math.max(0, cttIn876.width),
     cttBind5605 = Math.max(0, cttIn876.height),
-    cttBind5606 = srcR()
+    cttBind5606 = d3Hierarchy()
       .tile(a)
       .size([cttBind5604, cttBind5605])
       .paddingInner(1)

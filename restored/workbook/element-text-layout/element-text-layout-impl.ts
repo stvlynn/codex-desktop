@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: element text layout map (legacy XDe + helper676).
+// Semantic implementation: element text layout map (legacy XDe + helper #676).
 // Stage-3 wave-109.
 
 import { etlH } from "./boundary-hooks";
@@ -135,7 +135,8 @@ export function resolveTextLayoutSource(etlIn9317: any, etlIn9318: any) {
 }
 
 /** Legacy aliases. */
-export const workbookHelper676 = mergeInheritedShapeStyle;
 export const XDe = buildElementTextLayoutMap;
 export const ZDe = summarizeTextLayout;
 export const QDe = resolveTextLayoutSource;
+/** Compat alias for barrels. */
+export const workbookHelper676 = mergeInheritedShapeStyle;

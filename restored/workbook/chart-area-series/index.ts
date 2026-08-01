@@ -2,6 +2,6 @@
 // Stage-3 wave-100: chart-area-series barrel.
 
 export { wireChartAreaSeriesBoundaryHooks, casH } from "./boundary-hooks";
-export { paintAreaSeries, workbookHelper529 } from "./chart-area-series-impl";
+export { paintAreaSeries, paintAreaSeries } from "./chart-area-series-impl";
 
 export { stackAreaLayers, hxe } from "./stack-area-layers-impl";

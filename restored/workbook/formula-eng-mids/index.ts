@@ -32,11 +32,11 @@ export {
   Y1e,
   h0e,
   s2e,
-  workbookHelper889,
-  workbookHelper890,
-  workbookHelper895,
+  workbookFn889,
+  workbookFn890,
+  workbookFn895,
   coerceFiniteNumbers,
-  workbookHelper917,
+  workbookFn917,
   V1e,
   hex2oct,
 } from "./formula-eng-mids-impl";
@@ -69,7 +69,7 @@ export { W3e, $3e, T6e, E6e, zot } from "./formula-dist-aliases-impl";
 export {
   c1e,
   h1e,
-  workbookHelper885,
+  workbookFn885,
   E1e,
   D1e,
   O1e,
@@ -98,8 +98,8 @@ export {
 export {
   n4e,
   r4e,
-  workbookHelper910,
-  workbookHelper911,
+  workbookFn910,
+  workbookFn911,
   hasVaryingSeriesValues,
   callWithDefinedArgs,
 } from "./formula-series-utils-impl";
@@ -118,11 +118,11 @@ export {
 export {
   T3e,
   E3e,
-  workbookHelper918,
+  workbookFn918,
   k3e,
   A3e,
   j3e,
-  workbookHelper919,
+  workbookFn919,
   M3e,
   N3e,
   P3e,
@@ -158,8 +158,8 @@ export {
 export {
   T1e,
   L1e,
-  workbookHelper887,
-  workbookHelper888,
+  workbookFn887,
+  workbookFn888,
   R1e,
   B1e,
   t0e,
@@ -190,9 +190,9 @@ export {
   Cot,
   Pot,
   Iot,
-  workbookHelper963,
+  workbookFn963,
   Bot,
-  workbookHelper965,
+  workbookFn965,
   rst,
   ist,
   sst,
@@ -261,7 +261,7 @@ export {
   Tot,
   Eot,
   Dot,
-  workbookHelper962,
+  workbookFn962,
   workbookBinding1934,
   ensureEvalContextStackInit,
 } from "./formula-eval-context-impl";
@@ -278,8 +278,8 @@ export {
   E8e,
   D8e,
   O8e,
-  workbookHelper924,
-  workbookHelper925,
+  workbookFn924,
+  workbookFn925,
   k8e,
 } from "./formula-dstats-arg-wrappers-impl";
 
@@ -338,3 +338,9 @@ export {
   y7e,
   b7e,
 } from "./formula-eng-thin-wrappers-impl";
+
+export { workbookHelper918 } from "./formula-dist-nest-impl";
+
+export { workbookHelper919 } from "./formula-dist-nest-impl";
+
+export { workbookHelper962 } from "./formula-eval-context-impl";

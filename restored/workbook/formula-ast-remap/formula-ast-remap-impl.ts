@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: recursive formula AST range remap (legacy helper1022).
+// Semantic implementation: recursive formula AST range remap (legacy helper #1022).
 // Stage-3 wave-101/106 (Bht remapRangeRef).
 
 import { farH } from "./boundary-hooks";
@@ -126,4 +126,5 @@ export function remapFormulaAst(farIn1053: any, farIn1054: any, farIn1055: any, 
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper1022 = remapFormulaAst;

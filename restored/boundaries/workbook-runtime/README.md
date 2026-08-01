@@ -1999,3 +1999,7 @@ Thin IMPORT_MAP / legacy-alias facade only (wave-164). Semantic bodies live unde
 - Thinned mega 1643 → 90 (Δ -1553): pure re-export shim; residual glue/void keep-alives/proxies dropped.
 - `openBoundary` cleared; Flat boundary header replaced with thin compat header.
 - QG PASS without `--allow-open-boundaries` (thin facade under flat-line bar).
+
+## Wave 165 (QG drift closeout)
+
+- Full-tree `quality-gate.ts restored/` green after boundary-hooks dir barrels, alias sync, and `*-impl/index` semanticImplementation exemption.

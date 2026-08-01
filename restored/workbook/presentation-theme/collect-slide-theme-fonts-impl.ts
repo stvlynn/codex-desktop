@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: collect slide theme typefaces (legacy VDe/HDe/helper679).
+// Semantic implementation: collect slide theme typefaces (legacy VDe/HDe/helper #679).
 // Stage-3 wave-107.
 
 import { ptfH } from "./boundary-hooks-theme-fonts";
@@ -70,4 +70,5 @@ export function normalizeFontScheme(props: any) {
 /** Legacy aliases. */
 export const VDe = collectSlideThemeFonts;
 export const HDe = normalizeFontScheme;
-export const workbookHelper679 = addTypeface;
+/** Compat alias for barrels. */
+export const workbookHelper679 = collectSlideThemeFonts;

@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: chart line-series paint (legacy helper528).
+// Semantic implementation: chart line-series paint (legacy helper #528).
 // Stage-3 wave-99/103 (stackLineLayers / axe).
 
 import { line as d3Line } from "../../vendor/d3-shape-line-pie-stack";
@@ -278,5 +278,6 @@ export function stackLineLayers(clnIn756: any, clnIn757: any) {
 }
 
 /** Legacy aliases. */
-export const workbookHelper528 = paintLineSeries;
 export const axe = stackLineLayers;
+/** Compat alias for barrels. */
+export const workbookHelper528 = paintLineSeries;

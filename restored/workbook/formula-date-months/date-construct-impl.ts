@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: date construct / day-diff helpers (legacy helper930–935 nest).
-// Stage-3 wave-133 — unlocks helper935 preferred peel (H7e/w7e nest).
+// Semantic implementation: date construct / day-diff helpers (legacy helper #930–935 nest).
+// Stage-3 wave-133 — unlocks helper #935 preferred peel (H7e/w7e nest).
 
 export const CONSTRUCT_DATE_FROM = Symbol.for("constructDateFrom");
 export const DAY_MS = 864e5;
@@ -60,7 +60,7 @@ export function G7e(fdmIn9270: any, fdmIn9271: any, fdmIn9272: any) {
     fdmBind19827 = +fdmBind19825 - H7e(fdmBind19825);
   return Math.round((fdmBind19826 - fdmBind19827) / DAY_MS);
 }
-export function workbookHelper935(
+export function datedifYdUnits(
   fdmIn7955: any,
   fdmIn7956: any,
   fdmIn7957: any,
@@ -93,4 +93,13 @@ export function C9e(fdmIn5548: any, fdmIn5549: any) {
 export const utcTimezoneOffsetMs = H7e;
 export const daysBetweenDates = G7e;
 export const compareDateTime = C9e;
-export const datedifYdUnits = workbookHelper935;
+/** Compat alias for barrels. */
+export const workbookFn930 = workbookHelper930;
+/** Compat alias for barrels. */
+export const workbookFn931 = workbookHelper931;
+/** Compat alias for barrels. */
+export const workbookFn932 = workbookHelper932;
+/** Compat alias for barrels. */
+export const workbookFn933 = workbookHelper933;
+/** Compat alias for barrels. */
+export const workbookFn935 = datedifYdUnits;

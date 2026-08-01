@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: series overlap offset (legacy helper392–394).
+// Semantic implementation: series overlap offset (legacy helper #392–394).
 // Stage-3 wave-134.
 
 export function workbookHelper392(cgsIn10752: any) {
@@ -25,3 +25,9 @@ export function workbookHelper394(cgsIn7924: any) {
     workbookHelper393(cgsBind18400, cgsIn7924.overlap)
   );
 }
+/** Compat alias for barrels. */
+export const workbookFn392 = workbookHelper392;
+/** Compat alias for barrels. */
+export const workbookFn393 = workbookHelper393;
+/** Compat alias for barrels. */
+export const workbookFn394 = workbookHelper394;

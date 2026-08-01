@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: series marker paint (legacy helper480).
+// Semantic implementation: series marker paint (legacy helper #480).
 // Stage-3 wave-109.
 
 import { clnH } from "./boundary-hooks";
@@ -60,4 +60,5 @@ export function paintSeriesMarker(
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper480 = paintSeriesMarker;

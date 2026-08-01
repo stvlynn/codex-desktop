@@ -85,3 +85,7 @@ export function s0e(femIn10313: any) {
   let femBind20785 = parseInt(femIn10313, 8);
   return femBind20785 >= 536870912 ? femBind20785 - 1073741824 : femBind20785;
 }
+/** Compat alias for barrels. */
+export const workbookFn887 = workbookHelper887;
+/** Compat alias for barrels. */
+export const workbookFn888 = workbookHelper888;

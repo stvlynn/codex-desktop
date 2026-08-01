@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: AVERAGEIF(S) criteria-column matcher (legacy helper896).
+// Semantic implementation: AVERAGEIF(S) criteria-column matcher (legacy helper #896).
 // Stage-3 wave-106.
 
 export function matchCriteriaColumns(fcmIn1913: any, fcmIn1914: any) {
@@ -86,4 +86,5 @@ export function matchCriteriaColumns(fcmIn1913: any, fcmIn1914: any) {
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper896 = matchCriteriaColumns;

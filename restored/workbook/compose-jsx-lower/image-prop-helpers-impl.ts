@@ -34,3 +34,5 @@ export const imageFit = RDe;
 export const snapshotValue = workbookHelper681;
 export const assetRef = gOe;
 export const isEmptyParagraph = KOe;
+/** Compat alias for barrels. */
+export const workbookFn681 = workbookHelper681;

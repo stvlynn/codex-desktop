@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: slide canvas background fill/image (legacy RTe + helper646).
+// Semantic implementation: slide canvas background fill/image (legacy RTe + helper #646).
 // Stage-3 wave-102.
 
 import { sbgH } from "./boundary-hooks";

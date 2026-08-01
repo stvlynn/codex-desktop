@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: compose/slide element snapshot VO (legacy helper678).
+// Semantic implementation: compose/slide element snapshot VO (legacy helper #678).
 // Stage-3 wave-103.
 
 import { cesH } from "./boundary-hooks";
@@ -102,4 +102,5 @@ export function buildComposeElementSnapshot(cesIn639: any) {
 }
 
 /** Legacy alias. */
-export const workbookHelper678 = buildComposeElementSnapshot;
+/** Compat alias for barrels. */
+export const workbookFn678 = buildComposeElementSnapshot;

@@ -28,21 +28,21 @@ export function paintCategoryAxisLabels(props: any) {
     (calBind3836.fontSize = Math.round(calBind3835.fontSize * 75));
   let calBind3837 = labelHeightPx ?? calH.bh431(ctx, calBind3835.fontSize),
     calBind3838 = calH.bh435(axis),
-    calBind3839 = calHelper436(axis),
+    calBind3839 = calFn436(axis),
     calBind3840 = zxe(axis),
     calBind3841 = Bxe(axis),
     calBind3842 =
-      axis && calHelper444(axis) ? Bye(axis, categories) : undefined,
+      axis && calFn444(axis) ? Bye(axis, categories) : undefined,
     calBind3843 =
       axis && calBind3842
-        ? calHelper445(axis, categories.map(Number))
+        ? calFn445(axis, categories.map(Number))
         : undefined,
     calBind3844 =
       calBind3842?.map(({ positionCategory }) => positionCategory) ??
       categories,
     calBind3845 =
       calBind3842?.map(({ label }) => label) ??
-      calBind3844.map((item) => calHelper446(item, axis)),
+      calBind3844.map((item) => calFn446(item, axis)),
     calBind3846 =
       calBind3842 && calBind3843
         ? calBind3842.map(({ serial }) => Hxe(serial, calBind3843, plotDims))
@@ -55,7 +55,7 @@ export function paintCategoryAxisLabels(props: any) {
       labelMaxWidthPx: 0,
       labelBandHeight: 0,
       labelLinesByIndex: {},
-      visibleIndices: calHelper542(calBind3844.length, calBind3840 ?? 1),
+      visibleIndices: calFn542(calBind3844.length, calBind3840 ?? 1),
       hideTickLabels: calBind3839,
       tickLabelDistancePx: calBind3838,
       autoRotation: false,
@@ -140,7 +140,7 @@ export function paintCategoryAxisLabels(props: any) {
       labelMaxWidthPx: 0,
       labelBandHeight: 0,
       labelLinesByIndex: {},
-      visibleIndices: calHelper542(
+      visibleIndices: calFn542(
         calBind3844.length,
         calBind3840 ?? Math.max(1, calBind3844.length),
       ),
@@ -174,7 +174,7 @@ export function layoutCategoryAxisLabelBand(props: any) {
       explicitStep,
       tickPositionsPx,
     } = props,
-    calBind5021 = calHelper542(categories.length, step),
+    calBind5021 = calFn542(categories.length, step),
     calBind5022 = Vxe(scale, categories, calBind5021, tickPositionsPx),
     calBind5023 = Kxe(rotationDeg),
     calBind5024 = Math.max(
@@ -224,7 +224,7 @@ export function layoutCategoryAxisLabelBand(props: any) {
             width: calBind5032,
             height: calBind5033 * labelHeightPx,
           }
-        : calHelper437(calBind5032, labelHeightPx, calBind5023),
+        : calFn437(calBind5032, labelHeightPx, calBind5023),
     calBind5036 =
       calBind5021.length > 0
         ? calBind5035.height + calBind1168 + tickLabelDistancePx

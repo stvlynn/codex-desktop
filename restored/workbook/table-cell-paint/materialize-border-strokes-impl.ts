@@ -1,7 +1,7 @@
-import { workbookHelper635 } from "./border-segment-key-impl";
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: merge + materialize table border strokes (legacy bTe/xTe).
 // Stage-3 wave-107.
+import { workbookHelper635 } from "./border-segment-key-impl";
 
 import { tcpH } from "./boundary-hooks";
 

@@ -9,3 +9,5 @@ export function workbookHelper486(clIn10324: any) {
     ? Mn.LEGEND_POSITION_RIGHT
     : (clIn10324 ?? Mn.LEGEND_POSITION_RIGHT);
 }
+/** Compat alias for barrels. */
+export const workbookFn486 = workbookHelper486;

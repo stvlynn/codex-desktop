@@ -108,3 +108,7 @@ export function k8e(femIn11441: any) {
       ? A8e(femIn11441.values)
       : femIn11441;
 }
+/** Compat alias for barrels. */
+export const workbookFn924 = workbookHelper924;
+/** Compat alias for barrels. */
+export const workbookFn925 = workbookHelper925;

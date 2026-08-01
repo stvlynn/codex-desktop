@@ -15,3 +15,5 @@ export function workbookHelper680(cesIn6702: any) {
     ? cesBind16999
     : undefined;
 }
+/** Compat alias for barrels. */
+export const workbookFn680 = workbookHelper680;

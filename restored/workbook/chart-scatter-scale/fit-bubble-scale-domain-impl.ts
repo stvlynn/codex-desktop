@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: bubble scale domain fit (legacy helper539).
+// Semantic implementation: bubble scale domain fit (legacy helper #539).
 // Stage-3 wave-107.
 
 import { csscH } from "./boundary-hooks";
@@ -62,4 +62,5 @@ export function fitBubbleScaleDomain({
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper539 = fitBubbleScaleDomain;

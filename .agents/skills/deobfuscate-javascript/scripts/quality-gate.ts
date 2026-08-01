@@ -2490,7 +2490,8 @@ function analyzeAst(
       source.includes("formatAcceleratorLabel") &&
       source.includes("defaultKeymapStaleTimeMs"),
     semanticImplementationModule:
-      /(?:^|[/\\])[^/\\]+Impl\.[cm]?[jt]sx?$/i.test(file) &&
+      (/((?:^|[/\\])[^/\\]+Impl\.[cm]?[jt]sx?$)/i.test(file) ||
+        /(?:^|[/\\])[^/\\]+-impl[/\\]index\.[cm]?[jt]sx?$/i.test(file)) &&
       source.includes("Semantic implementation") &&
       !registryObjectExport,
     duplicateImportNames: duplicateImportNames.sort(

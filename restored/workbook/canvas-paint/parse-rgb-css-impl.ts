@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: parse rgb()/rgba() CSS to [r,g,b] (legacy helper602).
+// Semantic implementation: parse rgb()/rgba() CSS to [r,g,b] (legacy helper #602).
 // Stage-3 wave-135.
 
 export function workbookHelper602(cpIn6948: any) {

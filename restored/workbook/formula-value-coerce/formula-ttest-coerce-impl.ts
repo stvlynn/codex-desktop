@@ -9,7 +9,7 @@ import { averageArgs } from "../formula-scalar-funcs";
 export const ERR_VALUE = { kind: "Error", code: "#VALUE!" } as const;
 export const ERR_NUM = { kind: "Error", code: "#NUM!" } as const;
 
-export function workbookHelper904(fvcIn9052: any) {
+export function coerceFormulaNumberOrValueError(fvcIn9052: any) {
   if (fvcIn9052 === undefined) return ERR_VALUE;
   let fvcBind19616 = O3e(fvcIn9052);
   if (fvcBind19616 === undefined) return ERR_VALUE;
@@ -21,19 +21,19 @@ export function workbookHelper904(fvcIn9052: any) {
       : fvcBind19617;
 }
 export function workbookHelper905(fvcIn12216: any) {
-  let fvcBind22326 = workbookHelper904(fvcIn12216);
+  let fvcBind22326 = coerceFormulaNumberOrValueError(fvcIn12216);
   return typeof fvcBind22326 == "number" && fvcBind22326 < 0
     ? ERR_NUM
     : fvcBind22326;
 }
 export function workbookHelper906(fvcIn12154: any) {
-  let fvcBind22305 = workbookHelper904(fvcIn12154);
+  let fvcBind22305 = coerceFormulaNumberOrValueError(fvcIn12154);
   return typeof fvcBind22305 == "number" && fvcBind22305 <= 0
     ? ERR_NUM
     : fvcBind22305;
 }
 export function t4e(fvcIn5798: any, fvcIn5799: any) {
-  let fvcBind15710 = workbookHelper904(fvcIn5798);
+  let fvcBind15710 = coerceFormulaNumberOrValueError(fvcIn5798);
   if (typeof fvcBind15710 != "number") return fvcBind15710;
   let fvcBind15711 = Math.trunc(fvcBind15710);
   return fvcBind15711 !== fvcBind15710 ||
@@ -72,9 +72,19 @@ export function a6e(
     : fvcBind18845;
 }
 
-export const coerceFormulaNumberOrValueError = workbookHelper904;
+
 export const coerceNonNegNumber = workbookHelper905;
 export const coercePositiveNumber = workbookHelper906;
 export const coerceIntInRange = t4e;
 export const coercePositiveInt = workbookHelper907;
 export const tTest = a6e;
+/** Compat alias for barrels. */
+export const workbookLegacy904 = coerceFormulaNumberOrValueError;
+/** Compat alias for barrels. */
+export const workbookFn904 = workbookLegacy904;
+/** Compat alias for barrels. */
+export const workbookFn905 = workbookHelper905;
+/** Compat alias for barrels. */
+export const workbookFn906 = workbookHelper906;
+/** Compat alias for barrels. */
+export const workbookFn907 = workbookHelper907;

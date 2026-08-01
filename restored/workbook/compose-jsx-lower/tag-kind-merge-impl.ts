@@ -47,3 +47,5 @@ export function workbookHelper714(cjlIn9178: any, cjlIn9179: any) {
     return cjlIn9178;
   throw Error(`${cjlIn9179} must be one of column, row, grid, or panel.`);
 }
+/** Compat alias for barrels. */
+export const workbookFn714 = workbookHelper714;

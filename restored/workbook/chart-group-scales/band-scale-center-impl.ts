@@ -16,3 +16,7 @@ export function workbookHelper425(cgsIn9192: any, cgsIn9193: any) {
     return cgsIn9192(cgsIn9193);
   }
 }
+/** Compat alias for barrels. */
+export const workbookFn424 = workbookHelper424;
+/** Compat alias for barrels. */
+export const workbookFn425 = workbookHelper425;

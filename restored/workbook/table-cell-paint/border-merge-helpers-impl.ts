@@ -24,3 +24,11 @@ export function workbookHelper638(whIn14539: any, whIn14540: any) {
     ? whIn14540
     : whIn14539;
 }
+/** Compat alias for barrels. */
+export const workbookFn632 = workbookHelper632;
+/** Compat alias for barrels. */
+export const workbookFn636 = workbookHelper636;
+/** Compat alias for barrels. */
+export const workbookFn637 = workbookHelper637;
+/** Compat alias for barrels. */
+export const workbookFn638 = workbookHelper638;

@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: formula range-ref remapper (legacy Bht/helper1023).
+// Semantic implementation: formula range-ref remapper (legacy Bht/helper #1023).
 // Stage-3 wave-106.
 
 export function remapRangeRef(farIn2061: any, farIn2062: any, farIn2063: any) {
@@ -103,4 +103,5 @@ export function shiftCellAddr(farIn9411: any, farIn9412: any, farIn9413: any) {
 
 /** Legacy aliases. */
 export const Bht = remapRangeRef;
-export const workbookHelper1023 = shiftCellAddr;
+/** Compat alias for barrels. */
+export const workbookHelper1023 = remapRangeRef;

@@ -22,4 +22,4 @@ export {
 } from "./unsupported-badge-layout-impl";
 export { paintRatingBars, workbookHelper595 } from "./paint-rating-bars-impl";
 
-export { workbookHelper599, endIconClip, drawStarPath } from "./star-path-impl";
+export { endIconClip, endIconClip, drawStarPath } from "./star-path-impl";

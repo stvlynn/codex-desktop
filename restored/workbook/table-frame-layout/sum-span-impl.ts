@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: sum row/col span sizes (legacy helper645).
+// Semantic implementation: sum row/col span sizes (legacy helper #645).
 // Stage-3 wave-135.
 
 export function workbookHelper645(

@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: data-label text resolve (legacy helper495).
+// Semantic implementation: data-label text resolve (legacy helper #495).
 // Stage-3 wave-109.
 
 import { cdlH } from "./boundary-hooks";
@@ -83,11 +83,6 @@ export function resolveDataLabelText(
 }
 
 /** Legacy aliases. */
-export const workbookHelper492 = isDataCallout;
-export const workbookHelper493 = isDataLabelDeleted;
-export const workbookHelper494 = seriesShowsValueLabels;
-export const workbookHelper495 = resolveDataLabelText;
-
 // Wave-130: out-end value label font size (legacy $xe).
 export function outEndValueLabelFontSize(cdlIn4362: any) {
   let cdlBind13501 = cdlIn4362.barDirection;
@@ -112,3 +107,5 @@ export function outEndValueLabelFontSize(cdlIn4362: any) {
 }
 
 export const $xe = outEndValueLabelFontSize;
+/** Compat alias for barrels. */
+export const workbookHelper494 = isDataCallout;

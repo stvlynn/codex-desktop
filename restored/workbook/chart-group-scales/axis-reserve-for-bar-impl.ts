@@ -17,3 +17,5 @@ export function workbookHelper422(cgsIn8176: any) {
     ? AXIS_RESERVE_WHEN_HIDDEN_GRID
     : AXIS_RESERVE_DEFAULT;
 }
+/** Compat alias for barrels. */
+export const workbookFn422 = workbookHelper422;

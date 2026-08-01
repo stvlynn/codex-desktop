@@ -417,3 +417,11 @@ export function V1e(femIn4778: any, femIn4779: any) {
 }
 
 export const hex2oct = V1e;
+/** Compat alias for barrels. */
+export const workbookFn917 = workbookHelper917;
+/** Compat alias for barrels. */
+export const workbookFn889 = workbookHelper889;
+/** Compat alias for barrels. */
+export const workbookFn890 = workbookHelper890;
+/** Compat alias for barrels. */
+export const workbookFn895 = workbookHelper895;

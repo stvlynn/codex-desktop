@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: double-edge cell border stroke (legacy helper600).
+// Semantic implementation: double-edge cell border stroke (legacy helper #600).
 // Wired historically as fillCellBackground.
 // Stage-3 wave-105.
 
@@ -56,4 +56,5 @@ export function fillCellBackground(
 }
 
 /** Legacy alias. */
+/** Compat alias for barrels. */
 export const workbookHelper600 = fillCellBackground;

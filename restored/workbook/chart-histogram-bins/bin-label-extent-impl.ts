@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: histogram bin label + value extent (legacy helper553/hSe).
+// Semantic implementation: histogram bin label + value extent (legacy helper #553/hSe).
 // Stage-3 wave-133.
 
 import { format as d3Format } from "../../vendor/d3-format";
@@ -7,7 +7,7 @@ import { min as d3Min } from "../../vendor/d3-array-min";
 import { Jn } from "../presentation-protobuf";
 import { workbookHelper554 } from "../chart-bin-width";
 
-export function workbookHelper553(
+export function binLabel(
   chbIn5170: any,
   chbIn5171: any,
   chbIn5172: any,
@@ -42,5 +42,7 @@ export function hSe(chbIn6509: any, chbIn6510: any) {
       : [chbBind16723, chbBind16722];
 }
 
-export const binLabel = workbookHelper553;
+
 export const valueExtent = hSe;
+/** Compat alias for barrels. */
+export const workbookHelper553 = binLabel;

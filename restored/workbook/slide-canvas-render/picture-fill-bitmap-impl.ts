@@ -2,7 +2,7 @@
 // Semantic implementation: resolve picture-fill bitmap + content type (legacy workbookHelper654).
 // Stage-3 wave-137.
 
-export async function workbookHelper654(scrIn7641, scrIn7642) {
+export async function workbookHelper654(scrIn7641: any, scrIn7642: any) {
   let scrBind18135 = await scrIn7641.getPictureFillBitmap();
   if (!scrBind18135) return;
   let scrBind18136 = scrIn7641.fill.imageReference?.id;

@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: compose box/row/grid factory (legacy helper713).
+// Semantic implementation: compose box/row/grid factory (legacy helper #713).
 // Stage-3 wave-109.
 
 import { cjlH } from "./boundary-hooks";
@@ -67,4 +67,3 @@ export function createBoxElement(
 }
 
 /** Legacy alias. */
-export const workbookHelper713 = createBoxElement;

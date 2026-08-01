@@ -31,3 +31,7 @@ export function workbookHelper396(cgsIn6675: any) {
     workbookHelper393(Math.max(1, Math.floor(seriesCount)), overlap);
   return cgsBind16967 / (1 + cgsBind16967);
 }
+/** Compat alias for barrels. */
+export const workbookFn395 = workbookHelper395;
+/** Compat alias for barrels. */
+export const workbookFn396 = workbookHelper396;

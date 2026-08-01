@@ -13,11 +13,11 @@ export {
 export {
   ERR_VALUE,
   ERR_NUM,
-  workbookHelper904,
-  workbookHelper905,
-  workbookHelper906,
+  workbookFn904,
+  workbookFn905,
+  workbookFn906,
   t4e,
-  workbookHelper907,
+  workbookFn907,
   a6e,
   coerceFormulaNumberOrValueError,
   coerceNonNegNumber,
@@ -28,8 +28,8 @@ export {
 } from "./formula-ttest-coerce-impl";
 
 export {
-  workbookHelper908,
-  workbookHelper909,
+  workbookFn908,
+  workbookFn909,
   coerceUnitInterval,
   coercePositiveBoundedInt,
   UNIT_INTERVAL_MAX,

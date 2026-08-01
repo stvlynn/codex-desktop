@@ -15,3 +15,7 @@ export function workbookHelper487(whIn11731: any) {
     whIn11731 === Mn.LEGEND_POSITION_BOTTOM
   );
 }
+/** Compat alias for barrels. */
+export const workbookFn387 = workbookHelper387;
+/** Compat alias for barrels. */
+export const workbookFn487 = workbookHelper487;

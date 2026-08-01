@@ -40,3 +40,5 @@ export function FOe(props: any) {
   }
   return props;
 }
+/** Compat alias for barrels. */
+export const workbookFn701 = workbookHelper701;

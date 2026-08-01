@@ -1,6 +1,6 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: scatter/bubble XY axis paint (legacy bh570 peel).
-// Stage-3 wave-96/104 (planScatterAxes / helper545).
+// Stage-3 wave-96/104 (planScatterAxes / helper #545).
 
 import { Wn } from "../presentation-protobuf";
 import { csaH } from "./boundary-hooks";
@@ -242,4 +242,5 @@ export function planScatterAxes(
 }
 
 /** Legacy alias. */
-export const workbookHelper545 = planScatterAxes;
+/** Compat alias for barrels. */
+export const workbookHelper545 = paintScatterAxes;
