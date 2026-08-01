@@ -20,7 +20,6 @@ export {
   wireMeasureEmbedElementBoundaryHooks,
   meeH,
 } from "./boundary-hooks-measure";
-export {
-  measureEmbedElement,
-  NTe,
-} from "./measure-embed-element-impl";
+export { measureEmbedElement, NTe } from "./measure-embed-element-impl";
+
+export { PTe, isAbsoluteChild } from "./absolute-child-size-impl";

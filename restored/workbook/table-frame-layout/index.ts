@@ -12,3 +12,17 @@ export {
 } from "./table-frame-layout-impl";
 
 export { strokeTableBorders, TTe } from "./stroke-table-borders-impl";
+
+export {
+  ETe,
+  DTe,
+  workbookHelper641,
+  workbookHelper644,
+  ITe,
+  TABLE_STROKE_FALLBACK,
+  fillTableBackground,
+  strokeTableGuide,
+  strokeDoubleCompound,
+  resolveMarginsFromStyle,
+  resolveCellMargins,
+} from "./table-stroke-margins-impl";

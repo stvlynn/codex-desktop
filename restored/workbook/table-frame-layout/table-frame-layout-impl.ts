@@ -28,7 +28,12 @@ export const DEFAULT_CELL_MARGINS = {
   bottom: 0,
 };
 
-export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tflIn136: any = {}, ) {
+export function layoutTableFrame(
+  tflIn133: any,
+  tflIn134: any,
+  tflIn135: any,
+  tflIn136: any = {},
+) {
   if (!tflIn133.table) return;
   let tflBind2840 = tflIn133.table.rows.length,
     tflBind2841 = tflIn136.drawDefaultCellBorders ?? true,
@@ -36,8 +41,7 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
     tflBind2843 = {
       ...tflIn133.bbox,
       heightEmu:
-        tflIn133.bbox?.heightEmu ??
-        DEFAULT_ROW_HEIGHT_EMU * tflBind2840,
+        tflIn133.bbox?.heightEmu ?? DEFAULT_ROW_HEIGHT_EMU * tflBind2840,
       widthEmu: tflIn133.bbox?.widthEmu ?? DEFAULT_TABLE_WIDTH_EMU,
       xEmu: tflIn133.bbox?.xEmu ?? 0,
       yEmu: tflIn133.bbox?.yEmu ?? 0,
@@ -48,8 +52,7 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
     }),
     tflBind2845 = tflBind2844.columnCount;
   if (tflBind2845 <= 0) return;
-  let tflBind2846 =
-      tflIn136.explicitRowHeightBehavior ?? "exact",
+  let tflBind2846 = tflIn136.explicitRowHeightBehavior ?? "exact",
     tflBind2847 =
       tflIn136.autoRowMinimumHeightPx ?? DEFAULT_AUTO_ROW_MIN_HEIGHT_PX,
     tflBind2848 = Array(tflIn133.table.rows.length).fill(0),
@@ -62,10 +65,7 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
     for (let tflBind7667 of tflBind6070.cells) {
       let tflBind7785 = tflBind7667.widthEmu,
         tflBind7786 = tflBind7667.cell,
-        tflBind7787 = tflH.bh644(
-          tflBind7786,
-          tflBind2842,
-        ),
+        tflBind7787 = tflH.bh644(tflBind7786, tflBind2842),
         tflBind7788 = tflH.bh639(
           tflBind7786,
           {
@@ -93,14 +93,11 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
             paddingPx: tflBind7787,
             paragraphSpacingUnit: tflIn136?.paragraphSpacingUnit,
             masterDefaults: tflIn136?.masterDefaults,
-            documentGridLinePitchTwips:
-              tflIn136?.documentGridLinePitchTwips,
+            documentGridLinePitchTwips: tflIn136?.documentGridLinePitchTwips,
           },
         ),
         tflBind7790 = Math.max(
-          (tflBind7789?.height ?? 0) +
-            tflBind7787.top +
-            tflBind7787.bottom,
+          (tflBind7789?.height ?? 0) + tflBind7787.top + tflBind7787.bottom,
           tflH.measureEmbeddedHeight(
             tflBind7786,
             {
@@ -134,15 +131,9 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
       tflBind6177;
     tflBind6177 = tflBind6176
       ? tflBind2846 === "atLeast"
-        ? Math.max(
-            tflBind6175,
-            tflBind2849[tflBind6173] ?? 0,
-          )
+        ? Math.max(tflBind6175, tflBind2849[tflBind6173] ?? 0)
         : tflBind6175
-      : Math.max(
-          tflBind2847,
-          tflBind2849[tflBind6173] ?? 0,
-        );
+      : Math.max(tflBind2847, tflBind2849[tflBind6173] ?? 0);
     tflBind2848[tflBind6173] = Math.max(
       DEFAULT_TABLE_ROW_HEIGHT_SCALE,
       tflBind6177,
@@ -167,22 +158,18 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
         tflBind13942.rowIndex,
         tflBind13942.rowSpan,
       );
-      if (tflBind14293 >= tflBind13942.requiredHeightPx)
-        continue;
-      let tflBind14294 =
-          tflBind13942.requiredHeightPx - tflBind14293,
+      if (tflBind14293 >= tflBind13942.requiredHeightPx) continue;
+      let tflBind14294 = tflBind13942.requiredHeightPx - tflBind14293,
         tflBind14295 = Array(tflBind13942.rowSpan)
           .fill(0)
           .map((item, index) => tflBind13942.rowIndex + index)
           .filter((item) => item < tflBind2848.length);
       if (tflBind14295.length === 0) continue;
-      let tflBind14296 =
-        tflBind14294 / tflBind14295.length;
+      let tflBind14296 = tflBind14294 / tflBind14295.length;
       for (let tflBind22845 of tflBind14295)
         tflBind2848[tflBind22845] = Math.max(
           DEFAULT_TABLE_ROW_HEIGHT_SCALE,
-          (tflBind2848[tflBind22845] ?? tflBind2847) +
-            tflBind14296,
+          (tflBind2848[tflBind22845] ?? tflBind2847) + tflBind14296,
         );
     }
   if (tflBind2846 === "exact")
@@ -192,32 +179,24 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
         tflBind12182.rowIndex,
         tflBind12182.rowSpan,
       );
-      if (tflBind12430 >= tflBind12182.requiredHeightPx)
-        continue;
-      let tflBind12431 =
-        tflBind12182.requiredHeightPx - tflBind12430;
+      if (tflBind12430 >= tflBind12182.requiredHeightPx) continue;
+      let tflBind12431 = tflBind12182.requiredHeightPx - tflBind12430;
       for (
         let tflBind14909 = tflBind12182.rowSpan - 1;
         tflBind14909 >= 0;
         --tflBind14909
       ) {
-        let tflBind15743 =
-            tflBind12182.rowIndex + tflBind14909,
-          tflBind15744 =
-            tflIn133.table.rows[tflBind15743];
+        let tflBind15743 = tflBind12182.rowIndex + tflBind14909,
+          tflBind15744 = tflIn133.table.rows[tflBind15743];
         if (
           tflBind15744 === undefined ||
-          (tflBind15744.heightEmu !== undefined &&
-            tflBind15744.heightEmu > 0)
+          (tflBind15744.heightEmu !== undefined && tflBind15744.heightEmu > 0)
         )
           continue;
         let tflBind15745 = tflBind2848[tflBind15743];
         if (tflBind15745 === undefined)
-          throw Error(
-            `Missing table row height at index ${tflBind15743}.`,
-          );
-        tflBind2848[tflBind15743] =
-          tflBind15745 + tflBind12431;
+          throw Error(`Missing table row height at index ${tflBind15743}.`);
+        tflBind2848[tflBind15743] = tflBind15745 + tflBind12431;
         break;
       }
     }
@@ -242,18 +221,14 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
     for (let tflBind4763 of tflBind4570.cells) {
       let tflBind4821 = tflBind4763.cell,
         tflBind4822 = tflBind4763.columnIndex,
-        tflBind4823 =
-          tflBind2843.xEmu + tflBind4763.xEmu,
+        tflBind4823 = tflBind2843.xEmu + tflBind4763.xEmu,
         tflBind4824 = tflBind4763.widthEmu,
         tflBind4825 = tflH.sumRowSpan(
           tflBind2853,
           tflBind4588,
           tflBind4763.rowSpan,
         ),
-        tflBind4826 = tflH.bh644(
-          tflBind4821,
-          tflBind2842,
-        ),
+        tflBind4826 = tflH.bh644(tflBind4821, tflBind2842),
         tflBind4827 = tflH.bh639(
           tflBind4821,
           {
@@ -287,12 +262,7 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
         tflIn135,
         "transparent",
       );
-      tflIn134.fillRect(
-        tflBind4829,
-        tflBind4830,
-        tflBind4831,
-        tflBind4832,
-      );
+      tflIn134.fillRect(tflBind4829, tflBind4830, tflBind4831, tflBind4832);
       let tflBind4833 = paintTextElement(
         tflBind4827,
         tflIn134,
@@ -303,8 +273,7 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
           paddingPx: tflBind4826,
           paragraphSpacingUnit: tflIn136?.paragraphSpacingUnit,
           masterDefaults: tflIn136?.masterDefaults,
-          documentGridLinePitchTwips:
-            tflIn136?.documentGridLinePitchTwips,
+          documentGridLinePitchTwips: tflIn136?.documentGridLinePitchTwips,
         },
       );
       tflBind4833 &&
@@ -356,10 +325,8 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
           tflBind4830,
           tflBind4831,
           tflBind4832,
-          tflBind4822 + tflBind4763.columnSpan >=
-            tflBind2845,
-          tflBind4588 + tflBind4763.rowSpan >=
-            tflIn133.table.rows.length,
+          tflBind4822 + tflBind4763.columnSpan >= tflBind2845,
+          tflBind4588 + tflBind4763.rowSpan >= tflIn133.table.rows.length,
         );
       tflBind2856.push({
         row: tflBind4588,
@@ -373,8 +340,7 @@ export function layoutTableFrame(tflIn133: any, tflIn134: any, tflIn135: any, tf
     tflBind2855 += tflBind4589;
   }
   return (
-    tflBind2852 &&
-      tflH.fillTableBackground(tflIn134, tflIn135, tflBind2851),
+    tflBind2852 && tflH.fillTableBackground(tflIn134, tflIn135, tflBind2851),
     tflIn134.restore(),
     {
       cellRects: tflBind2856,

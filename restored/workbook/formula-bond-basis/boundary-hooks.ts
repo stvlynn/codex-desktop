@@ -13,6 +13,12 @@ export type FormulaBondBasisBoundaryHooks = {
   BASIS_MAP: Record<number, string>;
   /** Legacy workbookBinding1933 / Prt. */
   createBondCalculator: (...args: any[]) => any;
+  /** Legacy jrt — PRICE engine inside Nrt ensure. */
+  bondPriceFn: (...args: any[]) => any;
+  /** Legacy Mrt — YIELD engine inside Nrt ensure. */
+  bondYieldFn: (...args: any[]) => any;
+  /** Legacy Nrt ensure (initializes jrt/Mrt). */
+  ensurePriceYieldInit: () => void;
 };
 
 export const fbbH: FormulaBondBasisBoundaryHooks =

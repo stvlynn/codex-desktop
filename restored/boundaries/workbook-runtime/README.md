@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~26.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~26.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1709,3 +1709,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: helper935/Prt/a6e/ETe nests / remaining ≥18 mids / helper603 after Nwe Map ESM
+
+## Wave 133 (Stage-3 preferred nests + ≥18/21 mid batch)
+
+- Boundary 26826 → 26127 (Δ -699)
+- Peeled: formula-date-months helper930–935/H7e/G7e/C9e; formula-bond-basis Prt+Irt; formula-value-coerce 904–907/t4e/a6e; formula-eng-mids i2e/o2e; table-frame-layout ETe/DTe/641/644/ITe; text-frame-embeds PTe; entity-query bgt/vgt; chart-histogram-bins 553/hSe + chart-bin-width 554; compose-element-snapshot 682/683/WDe; chart-waterfall-bar uCe; icon-set-paint 599; presentation-plugin-add VIe nest
+- Skipped: helper603 (Nwe Map ESM); Nrt/jrt/Mrt remain hooked; _workbookS/vYe ensure bag still large
+- Leave-behind: helper603 needs Nwe Map ESM; vYe/_workbookS bag still large (no clean owned cluster this wave)
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: remaining ≥18 mids / Nrt bag / helper603 after Nwe Map ESM / _workbookS peel if clean

@@ -15,10 +15,7 @@ export function paintIconSetGlyph(ispIn1426: any, ispIn1427: any) {
   if (!ispBind7294) return;
   let ispBind7295 = Math.max(
     0,
-    Math.min(
-      ispBind7294.iconCount - 1,
-      Math.round(ispIn1427.iconIndex),
-    ),
+    Math.min(ispBind7294.iconCount - 1, Math.round(ispIn1427.iconIndex)),
   );
   switch ((ispIn1426.save(), ispBind7294.name)) {
     case "3Arrows":
@@ -27,12 +24,7 @@ export function paintIconSetGlyph(ispIn1426: any, ispIn1427: any) {
     case "4ArrowsGray":
     case "5Arrows":
     case "5ArrowsGray":
-      paintIconArrows(
-        ispIn1426,
-        ispBind7294.name,
-        ispBind7295,
-        ispIn1427,
-      );
+      paintIconArrows(ispIn1426, ispBind7294.name, ispBind7295, ispIn1427);
       break;
     case "3Triangles":
       paintIconTriangles(ispIn1426, ispBind7295, ispIn1427);
@@ -54,20 +46,10 @@ export function paintIconSetGlyph(ispIn1426: any, ispIn1427: any) {
       paintIconRedToBlack(ispIn1426, ispBind7295, ispIn1427);
       break;
     case "3Symbols":
-      paintIconSetSymbols(
-        ispIn1426,
-        "symbols",
-        ispBind7295,
-        ispIn1427,
-      );
+      paintIconSetSymbols(ispIn1426, "symbols", ispBind7295, ispIn1427);
       break;
     case "3Symbols2":
-      paintIconSetSymbols(
-        ispIn1426,
-        "symbols2",
-        ispBind7295,
-        ispIn1427,
-      );
+      paintIconSetSymbols(ispIn1426, "symbols2", ispBind7295, ispIn1427);
       break;
     case "3Flags":
       paintIconFlags(ispIn1426, ispBind7295, ispIn1427);
@@ -82,61 +64,34 @@ export function paintIconSetGlyph(ispIn1426: any, ispIn1427: any) {
       paintIconBoxes(ispIn1426, ispBind7295, ispIn1427);
       break;
     case "4Rating":
-      ispH.paintRatingBars(
-        ispIn1426,
-        4,
-        ispBind7295 + 1,
-        ispIn1427,
-      );
+      ispH.paintRatingBars(ispIn1426, 4, ispBind7295 + 1, ispIn1427);
       break;
     case "5Rating":
-      ispH.paintRatingBars(
-        ispIn1426,
-        4,
-        ispBind7295,
-        ispIn1427,
-      );
+      ispH.paintRatingBars(ispIn1426, 4, ispBind7295, ispIn1427);
       break;
   }
   ispIn1426.restore();
 }
-export function paintIconArrows(ispIn2119: any, ispIn2120: any, ispIn2121: any, ispIn2122: any, ) {
+export function paintIconArrows(
+  ispIn2119: any,
+  ispIn2120: any,
+  ispIn2121: any,
+  ispIn2122: any,
+) {
   let ispBind9032 = ispIn2120.includes("Gray"),
     ispBind9033 = ispBind9032
       ? ["#D7DCE3", "#B6BEC8", "#8F98A3", "#697380", "#47505C"]
       : ispIn2120 === "5Arrows"
-        ? [
-            ispBind1247,
-            ispBind1245,
-            ispBind1243,
-            ispBind1243,
-            ispBind1241,
-          ]
+        ? [ispBind1247, ispBind1245, ispBind1243, ispBind1243, ispBind1241]
         : ispIn2120 === "4Arrows"
-          ? [
-              ispBind1247,
-              ispBind1243,
-              "#93C54B",
-              ispBind1241,
-            ]
+          ? [ispBind1247, ispBind1243, "#93C54B", ispBind1241]
           : [ispBind1247, ispBind1243, ispBind1241],
     ispBind9034 = ispBind9032
       ? ["#9EA7B2", "#7F8995", "#5F6875", "#434B57", "#2F3640"]
       : ispIn2120 === "5Arrows"
-        ? [
-            ispBind1248,
-            ispBind1246,
-            ispBind1244,
-            ispBind1244,
-            ispBind1242,
-          ]
+        ? [ispBind1248, ispBind1246, ispBind1244, ispBind1244, ispBind1242]
         : ispIn2120 === "4Arrows"
-          ? [
-              ispBind1248,
-              ispBind1244,
-              "#5E8D2A",
-              ispBind1242,
-            ]
+          ? [ispBind1248, ispBind1244, "#5E8D2A", ispBind1242]
           : [ispBind1248, ispBind1244, ispBind1242];
   bwe(
     ispIn2119,
@@ -154,23 +109,18 @@ export function paintIconArrows(ispIn2119: any, ispIn2120: any, ispIn2121: any, 
       ispBind1242,
   );
 }
-export function paintIconTriangles(ispIn4324: any, ispIn4325: any, ispIn4326: any) {
+export function paintIconTriangles(
+  ispIn4324: any,
+  ispIn4325: any,
+  ispIn4326: any,
+) {
   if (ispIn4325 === 1) {
     let ispBind15733 = ispIn4326.width * 0.72,
       ispBind15734 = ispIn4326.height * 0.3,
-      ispBind15735 =
-        ispIn4326.x +
-        (ispIn4326.width - ispBind15733) / 2,
-      ispBind15736 =
-        ispIn4326.y +
-        (ispIn4326.height - ispBind15734) / 2;
+      ispBind15735 = ispIn4326.x + (ispIn4326.width - ispBind15733) / 2,
+      ispBind15736 = ispIn4326.y + (ispIn4326.height - ispBind15734) / 2;
     ispIn4324.fillStyle = ispBind1243;
-    ispIn4324.fillRect(
-      ispBind15735,
-      ispBind15736,
-      ispBind15733,
-      ispBind15734,
-    );
+    ispIn4324.fillRect(ispBind15735, ispBind15736, ispBind15733, ispBind15734);
     ispIn4324.lineWidth = Math.max(
       1,
       Math.min(ispBind15733, ispBind15734) * 0.14,
@@ -192,18 +142,17 @@ export function paintIconTriangles(ispIn4324: any, ispIn4325: any, ispIn4326: an
     ispIn4325 === 0 ? ispBind1248 : ispBind1242,
   );
 }
-export function paintIconTrafficLights(ispIn1776: any, ispIn1777: any, ispIn1778: any, ispIn1779: any, ) {
+export function paintIconTrafficLights(
+  ispIn1776: any,
+  ispIn1777: any,
+  ispIn1778: any,
+  ispIn1779: any,
+) {
   let ispBind8282 =
       ispIn1777 === "4TrafficLights"
-        ? [
-            ispBind1247,
-            ispBind1245,
-            ispBind1243,
-            ispBind1241,
-          ]
+        ? [ispBind1247, ispBind1245, ispBind1243, ispBind1241]
         : [ispBind1247, ispBind1243, ispBind1241],
-    ispBind8283 =
-      ispBind8282[ispIn1778] ?? ispBind1243,
+    ispBind8283 = ispBind8282[ispIn1778] ?? ispBind1243,
     ispBind8284 =
       ispIn1777 === "4TrafficLights" && ispIn1778 === 1
         ? ispBind1246
@@ -215,30 +164,17 @@ export function paintIconTrafficLights(ispIn1776: any, ispIn1777: any, ispIn1778
     ispBind8285 = ispIn1777 !== "3TrafficLights1",
     ispBind8286 = ispIn1779.x + ispIn1779.width / 2,
     ispBind8287 = ispIn1779.y + ispIn1779.height / 2,
-    ispBind8288 =
-      Math.min(ispIn1779.width, ispIn1779.height) * 0.34;
+    ispBind8288 = Math.min(ispIn1779.width, ispIn1779.height) * 0.34;
   ispBind8285 &&
     (ispIn1776.beginPath(),
-    ispIn1776.arc(
-      ispBind8286,
-      ispBind8287,
-      ispBind8288 * 1.18,
-      0,
-      Math.PI * 2,
-    ),
+    ispIn1776.arc(ispBind8286, ispBind8287, ispBind8288 * 1.18, 0, Math.PI * 2),
     (ispIn1776.fillStyle = "rgba(17, 24, 39, 0.1)"),
     ispIn1776.fill(),
     (ispIn1776.lineWidth = Math.max(1, ispBind8288 * 0.22)),
     (ispIn1776.strokeStyle = $z),
     ispIn1776.stroke());
   ispIn1776.beginPath();
-  ispIn1776.arc(
-    ispBind8286,
-    ispBind8287,
-    ispBind8288,
-    0,
-    Math.PI * 2,
-  );
+  ispIn1776.arc(ispBind8286, ispBind8287, ispBind8288, 0, Math.PI * 2);
   ispIn1776.fillStyle = ispBind8283;
   ispIn1776.fill();
   ispIn1776.lineWidth = Math.max(1, ispBind8288 * 0.12);
@@ -257,32 +193,20 @@ export function paintIconTrafficLights(ispIn1776: any, ispIn1777: any, ispIn1778
 }
 export function paintIconSigns(ispIn9345: any, ispIn9346: any, ispIn9347: any) {
   if (ispIn9346 === 2) {
-    xwe(
-      ispIn9345,
-      ispIn9347,
-      ispBind1241,
-      ispBind1242,
-    );
+    xwe(ispIn9345, ispIn9347, ispBind1241, ispBind1242);
     return;
   }
   if (ispIn9346 === 1) {
-    ispH.strokeIconPath(
-      ispIn9345,
-      ispIn9347,
-      "up",
-      ispBind1243,
-      ispBind1244,
-    );
+    ispH.strokeIconPath(ispIn9345, ispIn9347, "up", ispBind1243, ispBind1244);
     return;
   }
-  ispH.fillIconShape(
-    ispIn9345,
-    ispIn9347,
-    ispBind1247,
-    ispBind1248,
-  );
+  ispH.fillIconShape(ispIn9345, ispIn9347, ispBind1247, ispBind1248);
 }
-export function paintIconRedToBlack(ispIn9397: any, ispIn9398: any, ispIn9399: any) {
+export function paintIconRedToBlack(
+  ispIn9397: any,
+  ispIn9398: any,
+  ispIn9399: any,
+) {
   ispH.fillIconShape(
     ispIn9397,
     ispIn9399,
@@ -291,21 +215,11 @@ export function paintIconRedToBlack(ispIn9397: any, ispIn9398: any, ispIn9399: a
   );
 }
 export function paintIconFlags(ispIn2904: any, ispIn2905: any, ispIn2906: any) {
-  let ispBind10778 = [
-      ispBind1247,
-      ispBind1243,
-      ispBind1241,
-    ],
-    ispBind10779 = [
-      ispBind1248,
-      ispBind1244,
-      ispBind1242,
-    ],
+  let ispBind10778 = [ispBind1247, ispBind1243, ispBind1241],
+    ispBind10779 = [ispBind1248, ispBind1244, ispBind1242],
     ispBind10780 = ispIn2906.x + ispIn2906.width * 0.26,
-    ispBind10781 =
-      ispIn2906.y + ispIn2906.height * 0.14,
-    ispBind10782 =
-      ispIn2906.y + ispIn2906.height * 0.86;
+    ispBind10781 = ispIn2906.y + ispIn2906.height * 0.14,
+    ispBind10782 = ispIn2906.y + ispIn2906.height * 0.86;
   ispIn2904.lineWidth = Math.max(1, ispIn2906.width * 0.07);
   ispIn2904.strokeStyle = "#4B5563";
   ispIn2904.beginPath();
@@ -313,25 +227,17 @@ export function paintIconFlags(ispIn2904: any, ispIn2905: any, ispIn2906: any) {
   ispIn2904.lineTo(ispBind10780, ispBind10782);
   ispIn2904.stroke();
   ispIn2904.beginPath();
-  ispIn2904.moveTo(
-    ispBind10780,
-    ispBind10781 + ispIn2906.height * 0.03,
-  );
+  ispIn2904.moveTo(ispBind10780, ispBind10781 + ispIn2906.height * 0.03);
   ispIn2904.lineTo(
     ispIn2906.x + ispIn2906.width * 0.82,
     ispIn2906.y + ispIn2906.height * 0.24,
   );
-  ispIn2904.lineTo(
-    ispBind10780,
-    ispIn2906.y + ispIn2906.height * 0.46,
-  );
+  ispIn2904.lineTo(ispBind10780, ispIn2906.y + ispIn2906.height * 0.46);
   ispIn2904.closePath();
-  ispIn2904.fillStyle =
-    ispBind10778[ispIn2905] ?? ispBind1243;
+  ispIn2904.fillStyle = ispBind10778[ispIn2905] ?? ispBind1243;
   ispIn2904.fill();
   ispIn2904.lineWidth = Math.max(1, ispIn2906.width * 0.06);
-  ispIn2904.strokeStyle =
-    ispBind10779[ispIn2905] ?? ispBind1244;
+  ispIn2904.strokeStyle = ispBind10779[ispIn2905] ?? ispBind1244;
   ispIn2904.stroke();
 }
 export function paintIconStars(ispIn2994: any, ispIn2995: any, ispIn2996: any) {
@@ -361,31 +267,22 @@ export function paintIconStars(ispIn2994: any, ispIn2995: any, ispIn2996: any) {
       ispIn2994.restore());
   });
 }
-export function paintIconQuarters(ispIn2534: any, ispIn2535: any, ispIn2536: any) {
+export function paintIconQuarters(
+  ispIn2534: any,
+  ispIn2535: any,
+  ispIn2536: any,
+) {
   let ispBind9906 = ispIn2536.x + ispIn2536.width / 2,
     ispBind9907 = ispIn2536.y + ispIn2536.height / 2,
-    ispBind9908 =
-      Math.min(ispIn2536.width, ispIn2536.height) * 0.42,
+    ispBind9908 = Math.min(ispIn2536.width, ispIn2536.height) * 0.42,
     ispBind9909 = [0, 0.25, 0.5, 0.75, 1][ispIn2535] ?? 0;
   ispIn2534.beginPath();
-  ispIn2534.arc(
-    ispBind9906,
-    ispBind9907,
-    ispBind9908,
-    0,
-    Math.PI * 2,
-  );
+  ispIn2534.arc(ispBind9906, ispBind9907, ispBind9908, 0, Math.PI * 2);
   ispIn2534.fillStyle = ispBind1251;
   ispIn2534.fill();
   ispBind9909 >= 1
     ? (ispIn2534.beginPath(),
-      ispIn2534.arc(
-        ispBind9906,
-        ispBind9907,
-        ispBind9908,
-        0,
-        Math.PI * 2,
-      ),
+      ispIn2534.arc(ispBind9906, ispBind9907, ispBind9908, 0, Math.PI * 2),
       (ispIn2534.fillStyle = $z),
       ispIn2534.fill())
     : ispBind9909 > 0 &&
@@ -404,13 +301,7 @@ export function paintIconQuarters(ispIn2534: any, ispIn2535: any, ispIn2536: any
   ispIn2534.lineWidth = Math.max(1, ispBind9908 * 0.12);
   ispIn2534.strokeStyle = $z;
   ispIn2534.beginPath();
-  ispIn2534.arc(
-    ispBind9906,
-    ispBind9907,
-    ispBind9908,
-    0,
-    Math.PI * 2,
-  );
+  ispIn2534.arc(ispBind9906, ispBind9907, ispBind9908, 0, Math.PI * 2);
   ispIn2534.stroke();
 }
 export function paintIconBoxes(ispIn2320: any, ispIn2321: any, ispIn2322: any) {
@@ -429,11 +320,8 @@ export function paintIconBoxes(ispIn2320: any, ispIn2321: any, ispIn2322: any) {
     ),
     ispBind9446 = ispBind9445 * 2 + 1,
     ispBind9447 = ispBind9445 * 2 + 1,
-    ispBind9448 =
-      ispIn2322.x + (ispIn2322.width - ispBind9446) / 2,
-    ispBind9449 =
-      ispIn2322.y +
-      (ispIn2322.height - ispBind9447) / 2,
+    ispBind9448 = ispIn2322.x + (ispIn2322.width - ispBind9446) / 2,
+    ispBind9449 = ispIn2322.y + (ispIn2322.height - ispBind9447) / 2,
     ispBind9450 = [
       {
         x: ispBind9448,

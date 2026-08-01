@@ -9,3 +9,20 @@ export {
   coerceTruncNumber,
   unwrapFirstCell,
 } from "./formula-trunc-coerce-impl";
+
+export {
+  ERR_VALUE,
+  ERR_NUM,
+  workbookHelper904,
+  workbookHelper905,
+  workbookHelper906,
+  t4e,
+  workbookHelper907,
+  a6e,
+  coerceFormulaNumberOrValueError,
+  coerceNonNegNumber,
+  coercePositiveNumber,
+  coerceIntInRange,
+  coercePositiveInt,
+  tTest,
+} from "./formula-ttest-coerce-impl";

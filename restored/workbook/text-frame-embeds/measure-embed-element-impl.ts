@@ -4,7 +4,13 @@
 
 import { meeH } from "./boundary-hooks-measure";
 
-export function measureEmbedElement(meeIn3467: any, meeIn3468: any, meeIn3469: any, meeIn3470: any, meeIn3471: any, ) {
+export function measureEmbedElement(
+  meeIn3467: any,
+  meeIn3468: any,
+  meeIn3469: any,
+  meeIn3470: any,
+  meeIn3471: any,
+) {
   let meeBind11909 = meeH.paintTextElement(
     {
       ...meeIn3467,

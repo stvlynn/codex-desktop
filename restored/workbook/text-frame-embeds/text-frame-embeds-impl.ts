@@ -11,18 +11,20 @@ void Yn;
 void workbookGt;
 void tfeH;
 
-export function layoutTextFrameEmbeds(tfeIn703: any, tfeIn704: any, tfeIn705: any, tfeIn706: any, tfeIn707: any, tfeIn708: any, ) {
-  let tfeBind4998 = tfeH.bh644(
-      tfeIn703,
-      tfeIn705,
-    ),
+export function layoutTextFrameEmbeds(
+  tfeIn703: any,
+  tfeIn704: any,
+  tfeIn705: any,
+  tfeIn706: any,
+  tfeIn707: any,
+  tfeIn708: any,
+) {
+  let tfeBind4998 = tfeH.bh644(tfeIn703, tfeIn705),
     tfeBind4999 = tfeIn704.xPx + tfeBind4998.left,
     tfeBind5000 = tfeIn704.yPx + tfeBind4998.top,
     tfeBind5001 = Math.max(
       0,
-      tfeIn704.widthPx -
-        tfeBind4998.left -
-        tfeBind4998.right,
+      tfeIn704.widthPx - tfeBind4998.left - tfeBind4998.right,
     ),
     tfeBind5002 = tfeBind5000,
     tfeBind5003 = tfeBind5000,
@@ -35,10 +37,7 @@ export function layoutTextFrameEmbeds(tfeIn703: any, tfeIn704: any, tfeIn705: an
       let tfeBind14642 =
           tfeBind7189.bbox?.widthEmu !== undefined &&
           tfeBind7189.bbox.widthEmu > 0
-            ? Math.min(
-                tfeBind5001,
-                tfeBind7189.bbox.widthEmu * workbookGt,
-              )
+            ? Math.min(tfeBind5001, tfeBind7189.bbox.widthEmu * workbookGt)
             : tfeBind5001,
         tfeBind14643 = tfeH.measureEmbedElement(
           tfeBind7189,
@@ -71,10 +70,7 @@ export function layoutTextFrameEmbeds(tfeIn703: any, tfeIn704: any, tfeIn705: an
             (tfeBind5001 - tfeBind11594.widthPx) / 2,
           ))
         : tfeBind11596 === Jn.ALIGNMENT_TYPE_RIGHT &&
-          (tfeBind11597 += Math.max(
-            0,
-            tfeBind5001 - tfeBind11594.widthPx,
-          ));
+          (tfeBind11597 += Math.max(0, tfeBind5001 - tfeBind11594.widthPx));
       tfeBind5004.push({
         element: tfeBind7189,
         xPx: tfeBind11597,
@@ -84,9 +80,7 @@ export function layoutTextFrameEmbeds(tfeIn703: any, tfeIn704: any, tfeIn705: an
       });
       tfeBind5005.push(tfeBind5004.length - 1);
       tfeBind5002 +=
-        tfeBind11595.topPx +
-        tfeBind11594.heightPx +
-        tfeBind11595.bottomPx;
+        tfeBind11595.topPx + tfeBind11594.heightPx + tfeBind11595.bottomPx;
       tfeBind5003 = Math.max(tfeBind5003, tfeBind5002);
       continue;
     }
@@ -106,15 +100,10 @@ export function layoutTextFrameEmbeds(tfeIn703: any, tfeIn704: any, tfeIn705: an
         tfeBind7418.yPx + tfeBind7418.heightPx,
       )));
   }
-  let tfeBind5007 = Math.max(
-      0,
-      tfeBind5002 - tfeBind5000,
-    ),
+  let tfeBind5007 = Math.max(0, tfeBind5002 - tfeBind5000),
     tfeBind5008 = Math.max(
       0,
-      tfeIn704.heightPx -
-        tfeBind4998.top -
-        tfeBind4998.bottom,
+      tfeIn704.heightPx - tfeBind4998.top - tfeBind4998.bottom,
     ),
     tfeBind5009 = tfeH.bh640(tfeIn703.anchor),
     tfeBind5010 = 0;
@@ -144,10 +133,7 @@ export function layoutTextFrameEmbeds(tfeIn703: any, tfeIn704: any, tfeIn705: an
     );
   }
   return {
-    heightPx: Math.max(
-      0,
-      tfeBind5003 - tfeIn704.yPx + tfeBind4998.bottom,
-    ),
+    heightPx: Math.max(0, tfeBind5003 - tfeIn704.yPx + tfeBind4998.bottom),
     frames: tfeBind5004,
   };
 }

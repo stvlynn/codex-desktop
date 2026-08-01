@@ -51,3 +51,12 @@ export {
   trimNonEmpty,
   round2,
 } from "./layout-blob-impl";
+
+export {
+  workbookHelper682,
+  workbookHelper683,
+  WDe,
+  frameToBboxTuple,
+  resolveSlideFrameBbox,
+  isPositiveBboxTuple,
+} from "./frame-bbox-tuple-impl";

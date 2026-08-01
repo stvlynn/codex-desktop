@@ -7,7 +7,11 @@ export {
   workbookHelper555,
 } from "./chart-histogram-bins-impl";
 
+export { aggregateHistogramBins, _Se } from "./aggregate-histogram-bins-impl";
+
 export {
-  aggregateHistogramBins,
-  _Se,
-} from "./aggregate-histogram-bins-impl";
+  workbookHelper553,
+  hSe,
+  binLabel,
+  valueExtent,
+} from "./bin-label-extent-impl";

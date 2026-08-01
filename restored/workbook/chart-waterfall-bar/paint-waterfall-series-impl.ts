@@ -6,12 +6,15 @@ import { cwbH } from "./boundary-hooks";
 
 void cwbH;
 
-export function paintWaterfallSeries(cwbIn1866: any, cwbIn1867: any, cwbIn1868: any, cwbIn1869: any, cwbIn1870: any, cwbIn1871: any = {}, ) {
-  if (
-    !cwbH.bh424(cwbIn1868.x) ||
-    cwbIn1869.seriesIndex === -1
-  )
-    return;
+export function paintWaterfallSeries(
+  cwbIn1866: any,
+  cwbIn1867: any,
+  cwbIn1868: any,
+  cwbIn1869: any,
+  cwbIn1870: any,
+  cwbIn1871: any = {},
+) {
+  if (!cwbH.bh424(cwbIn1868.x) || cwbIn1869.seriesIndex === -1) return;
   let cwbBind8485 = cwbIn1868.x,
     cwbBind8486 = cwbIn1868.y,
     cwbBind8487 = cwbBind8485.bandwidth(),

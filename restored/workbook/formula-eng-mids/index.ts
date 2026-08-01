@@ -42,3 +42,10 @@ export {
 } from "./formula-eng-mids-impl";
 
 export { formulaAndFromArgs, $0e } from "./formula-and-impl";
+
+export {
+  i2e,
+  o2e,
+  formulaOrFromArgs,
+  formulaXorFromArgs,
+} from "./formula-or-xor-impl";

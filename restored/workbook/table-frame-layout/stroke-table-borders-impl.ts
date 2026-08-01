@@ -4,13 +4,19 @@
 
 const TABLE_BORDER_COLOR = "#000000";
 
-export function strokeTableBorders(tflbIn4557: any, tflbIn4558: any, tflbIn4559: any, tflbIn4560: any, tflbIn4561: any, tflbIn4562: any, tflbIn4563: any, ) {
+export function strokeTableBorders(
+  tflbIn4557: any,
+  tflbIn4558: any,
+  tflbIn4559: any,
+  tflbIn4560: any,
+  tflbIn4561: any,
+  tflbIn4562: any,
+  tflbIn4563: any,
+) {
   let tflbBind13833 = Math.round(tflbIn4558) + 0.5,
     tflbBind13834 = Math.round(tflbIn4559) + 0.5,
-    tflbBind13835 =
-      Math.round(tflbIn4558 + tflbIn4560) + 0.5,
-    tflbBind13836 =
-      Math.round(tflbIn4559 + tflbIn4561) + 0.5;
+    tflbBind13835 = Math.round(tflbIn4558 + tflbIn4560) + 0.5,
+    tflbBind13836 = Math.round(tflbIn4559 + tflbIn4561) + 0.5;
   tflbIn4557.strokeStyle = TABLE_BORDER_COLOR;
   tflbIn4557.lineWidth = 1;
   tflbIn4557.beginPath();

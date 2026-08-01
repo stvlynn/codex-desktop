@@ -32,9 +32,7 @@ export function computeHistogramBins(chbIn937: any, chbIn938: any) {
     );
     if (chbBind22874) return chbBind22874;
   }
-  let chbBind5957 = (
-    chbIn937.series[chbBind5955]?.values ?? []
-  )
+  let chbBind5957 = (chbIn937.series[chbBind5955]?.values ?? [])
     .map((item) => chbinH.coerceNumber(item))
     .filter((item) => item !== undefined);
   if (chbBind5957.length === 0)
@@ -46,36 +44,22 @@ export function computeHistogramBins(chbIn937: any, chbIn938: any) {
       },
       seriesIndex: chbBind5955,
     };
-  let [chbBind5958, chbBind5959] = chbinH.valueExtent(
-      chbBind5957,
-      chbBind5956,
-    ),
-    chbBind5960 = Math.max(
-      chbBind5959 - chbBind5958,
-      1,
-    ),
-    chbBind5961 = chbinH.binWidth(
-      chbBind5957,
-      chbBind5960,
-      chbBind5956,
-    ),
+  let [chbBind5958, chbBind5959] = chbinH.valueExtent(chbBind5957, chbBind5956),
+    chbBind5960 = Math.max(chbBind5959 - chbBind5958, 1),
+    chbBind5961 = chbinH.binWidth(chbBind5957, chbBind5960, chbBind5956),
     chbBind5962 = chbinH.coerceNumber(chbBind5956?.binCount),
     chbBind5963 =
       chbBind5962 !== undefined && chbBind5962 > 0
         ? Math.max(1, Math.floor(chbBind5962))
         : Math.max(1, Math.ceil(chbBind5960 / chbBind5961)),
-    chbBind5964 =
-      chbBind5958 + chbBind5963 * chbBind5961,
-    chbBind5965 =
-      chbBind5956?.intervalClosed ===
-      chbinH.INTERVAL_CLOSED_LEFT,
+    chbBind5964 = chbBind5958 + chbBind5963 * chbBind5961,
+    chbBind5965 = chbBind5956?.intervalClosed === chbinH.INTERVAL_CLOSED_LEFT,
     chbBind5966 = Array.from(
       {
         length: chbBind5963,
       },
       (chbIn8219, chbIn8220) => {
-        let chbBind18724 =
-            chbBind5958 + chbIn8220 * chbBind5961,
+        let chbBind18724 = chbBind5958 + chbIn8220 * chbBind5961,
           chbBind18725 =
             chbIn8220 === chbBind5963 - 1
               ? chbBind5964

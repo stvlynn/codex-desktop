@@ -1,5 +1,8 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-64: boundary deps for entity-query.
+// Stage-3 wave-133: bgt/vgt local impls.
+
+import { bgt as bgtImpl, vgt as vgtImpl } from "./sheet-used-range-style-impl";
 
 export type EntityQueryBoundaryHooks = {
   ensureWorkbookEt: () => void;
@@ -41,10 +44,10 @@ export function ensureYgt(): void {
   requireHooks().ensureYgt();
 }
 export function bgt(...args: any[]): any {
-  return requireHooks().bgt(...args);
+  return bgtImpl(...args);
 }
 export function vgt(...args: any[]): any {
-  return requireHooks().vgt(...args);
+  return vgtImpl(...args);
 }
 export function getEmuScale(): number {
   return requireHooks().getEmuScale();

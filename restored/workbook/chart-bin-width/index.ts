@@ -3,3 +3,5 @@
 
 export { wireChartBinWidthBoundaryHooks, cbwH } from "./boundary-hooks";
 export { resolveHistogramBinWidth, gSe } from "./chart-bin-width-impl";
+
+export { workbookHelper554, coerceBinNumber } from "./coerce-bin-number-impl";

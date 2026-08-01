@@ -34,3 +34,10 @@ export {
   ensurePathSplitInit,
   ensureThreadCommentsInit,
 } from "./thread-comments";
+
+export {
+  bgt,
+  vgt,
+  computeUsedRangeA1,
+  formatToCellStyleProto,
+} from "./sheet-used-range-style-impl";

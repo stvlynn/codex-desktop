@@ -15,7 +15,8 @@ export type TableFrameLayoutBoundaryHooks = {
   fillTableBackground: (...args: any[]) => any;
 };
 
-export const tflH: TableFrameLayoutBoundaryHooks = {} as TableFrameLayoutBoundaryHooks;
+export const tflH: TableFrameLayoutBoundaryHooks =
+  {} as TableFrameLayoutBoundaryHooks;
 
 export function wireTableFrameLayoutBoundaryHooks(
   next: TableFrameLayoutBoundaryHooks,
