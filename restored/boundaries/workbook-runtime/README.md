@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~42.5k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~41.0k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -259,6 +259,8 @@
 | Presentation edit (`lLe`..`bLe`) | ~0.25k | **Drained (wave-117)** → `workbook/presentation-edit/` |
 | HTML cell/table helpers (`Ypt`..`1013`/`Qpt`) | ~0.55k | **Drained (wave-117)** → `workbook/html-paste/` |
 | Chart raster (`Amt`..`Zmt`/`jmt`) | ~0.56k | **Drained (wave-117)** → `workbook/chart-raster/` |
+| Grid frame layout (`helper672`/`ADe`+`jDe`) | ~0.31k | **Drained (wave-118)** → `workbook/grid-frame-layout/` |
+| Formula SORT/FILTER (`helper967`..`Ict`/`Tct`/`Pct`) | ~1.28k | **Drained (wave-118)** → `workbook/formula-sort-filter/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1524,4 +1526,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Confirmed all ≥40 inventory entries are REAL (sib=1); ict already cleared wave-116
 - Skipped Llt/Lut/bdt (formula-registry entangled); helper603 (Nwe); ADe+672; rze; kht
 - Leave-behind: ADe still needs helper672; rze/kht still blocked
+- openBoundary remains while mega still large
+
+## Wave 118 (Stage-3 preferred mid-file + leave-behind unlock)
+
+- Boundary 42495 → 40982 (Δ -1513)
+- Peeled: helper672+ADe grid-frame-layout (Binding1372–1386/jDe inlined); helper967..Ict formula-sort-filter (Tct/Pct/wct + SORT/FILTER helpers; Binding1939–1941/Hct inlined; helper962/966 via hooks)
+- Confirmed all ≥40 inventory entries are REAL (sib=1)
+- Skipped Llt/Lut/bdt/Edt/Tft/qft (adjacent helper nests); helper603 (Nwe); rze; kht; sat/oat; qQe/z$e
+- Leave-behind: ADe+672 **unlocked/drained**; rze/kht still blocked; helper603 still needs Nwe Map ESM
 - openBoundary remains while mega still large
