@@ -13,6 +13,7 @@ import { workbookGt } from "../text-style";
 import { ShapeGeometry as workbookDt } from "../shape-geometry";
 import { ur, v, C } from "../presentation-protobuf";
 import { sgpH } from "./boundary-hooks";
+import { isConnectorGeometry } from "./is-connector-geometry-impl";
 import {
   workbookHelper571,
   workbookHelper572,
@@ -69,7 +70,7 @@ export function paintShapeGeometry(
       ur.LINE_STYLE_SOLID,
     sgpBind2902 = sgpH.resolveShapeEffects(sgpIn150, sgpIn154),
     sgpBind2903 =
-      !!sgpIn150.connector && sgpH.isConnectorGeometry(geometry ?? undefined),
+      !!sgpIn150.connector && isConnectorGeometry(geometry ?? undefined),
     sgpBind2904 = !!(
       sgpIn150.connector?.fromElementId && sgpIn150.connector.toElementId
     );

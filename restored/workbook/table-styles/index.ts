@@ -93,3 +93,13 @@ export {
   mye,
   hye,
 } from "./table-cell-bands-impl";
+
+export {
+  workbookBinding836,
+  workbookBinding835,
+  pye,
+  gye,
+  ensureGye,
+  buildSparklinePreview,
+  TableStylePreview,
+} from "./table-style-preview-impl";

@@ -137,3 +137,16 @@ export {
 export { jOe, workbookHelper701, FOe } from "./jsx-children-normalize-impl";
 
 export { ike, cke } from "./element-chrome-kind-impl";
+
+export {
+  LDe,
+  RDe,
+  workbookHelper681,
+  gOe,
+  KOe,
+  imageCrop,
+  imageFit,
+  snapshotValue,
+  assetRef,
+  isEmptyParagraph,
+} from "./image-prop-helpers-impl";

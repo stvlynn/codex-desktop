@@ -48,3 +48,9 @@ export {
   wOe,
   DEFAULT_LINE_WIDTH_PX,
 } from "./resolve-line-width-impl";
+
+export {
+  hTe,
+  isConnectorGeometry,
+  workbookBinding1265,
+} from "./is-connector-geometry-impl";

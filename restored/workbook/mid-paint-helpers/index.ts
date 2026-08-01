@@ -19,3 +19,5 @@ export {
 export { workbookHelper598 } from "./with-transformed-clip-impl";
 
 export { WOe } from "./join-class-names-impl";
+
+export { _workbookEt, clampNonNegativeMin } from "./clamp-nonneg-impl";

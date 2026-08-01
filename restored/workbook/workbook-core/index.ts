@@ -24,3 +24,10 @@ export {
   TRACE_ERROR_TOKEN,
   CIRC_ERROR_TOKEN,
 } from "./constants";
+
+export {
+  workbookHelper1035,
+  uvt,
+  makeFormulaErrorValue,
+  normalizeValidateOptions,
+} from "./error-value-helpers-impl";

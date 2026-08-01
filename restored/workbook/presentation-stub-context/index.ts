@@ -7,3 +7,5 @@ export {
   workbookHelper825,
   gYe,
 } from "./presentation-stub-context-impl";
+
+export { _Ye, structuredCloneJson } from "./structured-clone-impl";

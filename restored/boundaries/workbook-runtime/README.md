@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~20.2k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~19.4k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1774,3 +1774,12 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - openBoundary remains while mega still large
 - Next: Binding836→pye / Binding1265→hTe / remaining ≥5; _workbookS when presentation leave-behinds clear
 
+## Wave 144 (Stage-3 Binding836/1265 unlock + collab nest + ≥3 batch)
+
+- Boundary 20245 → 19422 (Δ -823)
+- Peeled: collab-snapshot Binding816/817 + Binding818/819 + helper377/qve + Binding824–832/aye; table-styles pye/Binding836/gye; shape-geometry-paint hTe/Binding1265; stubs _workbookEt/helper1035/uvt/_Ye; compose LDe/RDe/681/gOe/KOe
+- Skipped: formula ≥3 wrappers (cross-barrel callee risk); wirePresentationRecipes; vYe; Nwe/Iwe; _workbookS (~1.2k); presentation Binding1812+/Pgt wrappers (still import Binding818)
+- Leave-behind: wirePresentationRecipes false inventory; Nwe stub for Iwe→zge; vYe 1-line stub; _workbookS still entangled (presentation leave-behinds + Binding1812 collab fan-out)
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: presentation Binding1812+/tYe collab wrappers after Binding818; formula ≥3 batch; _workbookS when presentation leave-behinds clear
