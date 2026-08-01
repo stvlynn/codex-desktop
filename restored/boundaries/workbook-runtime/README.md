@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~32.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~29.9k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -287,6 +287,7 @@
 | Measure embed (`NTe`) | ~0.04k | **Drained (wave-125)** → `workbook/text-frame-embeds/` |
 | CF range stats (`mht`/`Sht`/`helper1020`/`1015`) | ~0.19k | **Drained (wave-125)** → `workbook/cf-range-stats/` |
 | Chart axis scale domain (`bbe`/`helper402`/`406`/`wye`…) | ~0.70k body | **Drained (wave-126)** → `workbook/chart-axis-scale-domain/` + presentation-aid/ref + series-endpoint + formula-complex 886/892 + iSe + fill-empty + r3e |
+| Formula eng mids + date-months + A1/matrix/DSUM/add-months + paint mids (`s1e`/`F9e`/`Mst`/…) | ~0.80k body | **Drained (wave-128)** → formula-eng-mids + date-months + a1-address + matrix-transpose + dsum-agg + date-add-months + compose-attach-children + doc-shape + bin-width + paint-checkbox + shape-fill/geometry-apply + mid-paint-helpers |
 | Formula BYROW/BYCOL + mids (`Yot`/`YIe`/`Uat`/`tSe`/`zye`/`Rxe`…) | ~0.87k body | **Drained (wave-127)** → formula-byrow + compose-code-children + bond-pv + chart-data-label-font + text-frame-resolve + marker/effects/table + presentation-images + unique-rows + sheet-catalog + newton + dead category-time/label-overflow |
 | Formula SKEW + samples (`W4e`/`s4e`/`c4e`/`helper912`) | ~0.11k | **Drained (wave-124)** → `workbook/formula-skew/` |
 | Path ordinal colors (`helper477`) | ~0.04k | **Drained (wave-124)** → `workbook/chart-path-colors/` |
@@ -1647,3 +1648,21 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: Yot nest / remaining ≥30 mids (YIe/F9e/Uat/zye/…) / rze after ensure readiness / kht after ensure bag / helper603 after Nwe Map ESM
+
+## Wave 127 (Stage-3 preferred Yot nest + mids)
+
+- Boundary 31568 → 30699 (Δ -869)
+- Peeled: formula-byrow Yot/Jot nest; compose-code-children YIe; bond Uat/Kit/Wat/gat/_at; tSe; text-frame-resolve; QCe/TTe/Kwe; presentation-images; Dst/jgt/vrt; dead zye/Bye/Rxe/Vxe
+- Skipped: F9e (N9e/date bag); s1e nest; Mst; helper603; rze/kht
+- QG PASS; openBoundary kept
+
+## Wave 128 (Stage-3 preferred F9e/s1e/Mst + ≥28 mids)
+
+- Boundary 30699 → 29902 (Δ -797)
+- Peeled: formula-eng-mids s1e/P1e/X1e/r0e/Y1e/o0e/z1e/h0e/s2e+889/890/895; formula-date-months F9e/N9e/_9e; Mst; A8e; v8e; A7e; compose-attach-children dollarOe/eke; cvt; gSe; owe; Gwe; helper614/qwe; mid-paint 470/481/523/596/617/_Ee/700
+- Skipped: helper603 (Nwe Map ESM); rze/kht leave-behinds; helper587/jwe/UEe/1038 (non-ensure outs)
+- Leave-behind: rze still needs vYe ensure fan-out; kht still needs Aht/Mht/fht+ensure bag
+- Remaining ≥28: rze/kht/helper603/587/jwe/UEe/1038
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: helper587/jwe/UEe/1038 mids / rze after vYe ensure / kht after ensure bag / helper603 after Nwe Map ESM
