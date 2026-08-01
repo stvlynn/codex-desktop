@@ -2142,6 +2142,14 @@ import {
   hTe,
   workbookBinding1265,
   isConnectorGeometry as isConnectorGeometryImpl,
+  workbookBinding1260,
+  workbookBinding1261,
+  workbookBinding1262,
+  workbookBinding1263,
+  workbookBinding1264,
+  Bwe,
+  ensureConnectorArrowheadsInit,
+  getDrawConnectorArrowheads,
 } from "../../workbook/shape-geometry-paint";
 
 import {
@@ -2190,7 +2198,8 @@ wireShapeGeometryPaintBoundaryHooks({
   drawCustomPaths: (...args: any[]) => __RweForSgp(...args),
   clipShapeGeometry: (...args: any[]) => __cTeForSgp(...args),
   paintShapeAdjustments: (...args: any[]) => Vwe(...args),
-  drawConnectorArrowheads: (...args: any[]) => workbookBinding1260(...args),
+  drawConnectorArrowheads: (...args: any[]) =>
+    getDrawConnectorArrowheads()(...args),
 });
 
 import {
@@ -6778,7 +6787,7 @@ Object.defineProperties(__pcbHWave105, {
 });
 
 wirePresentationPluginAddBoundaryHooks({
-  mermaidToElements: (...args: any[]) => NIe(...args),
+  mermaidToElements: (...args: any[]) => mermaidToElements(...args),
 });
 
 wireSlideLayoutBoundaryHooks({
@@ -7989,6 +7998,57 @@ import {
   ensurePresentationScriptsInit,
 } from "../../workbook/presentation-scripts";
 import {
+  S7e,
+  C7e,
+  w7e,
+  T7e,
+  workbookBinding1883,
+  E7e,
+  D7e,
+  workbookBinding1884,
+  O7e,
+  workbookBinding1885,
+  workbookBinding1886,
+  workbookBinding1887,
+  workbookBinding1888,
+  ensureFormulaDateEpochInit,
+} from "../../workbook/formula-date-epoch";
+
+import {
+  wireWorkbookShellEnsureHooks,
+  yEe,
+  Cze,
+  aJe,
+  workbookBinding1489,
+  xze,
+  Sze,
+  workbookBinding1750,
+} from "../../workbook/workbook-shell-ensures";
+
+import {
+  workbookBinding408,
+  workbookBinding409,
+  workbookBinding410,
+  of,
+  workbookTt,
+  workbookEt,
+  ensureWorkbookEtInit,
+} from "../../workbook/emu-units";
+
+import {
+  EIe,
+  H$,
+  U$,
+  DIe,
+  TIe,
+  NIe,
+  PIe,
+  FIe,
+  ensureMermaidConvertInit,
+  mermaidToElements,
+} from "../../workbook/mermaid-convert";
+
+import {
   workbookBinding1347,
   workbookBinding1348,
   workbookBinding1349,
@@ -8210,24 +8270,10 @@ function workbookHelper59(workbookInput12589) {
 }
 var $u = ensureFormulaArrayInit;
 var gae = esmInit(() => {
-    wr();
-    rae();
-    $d();
-  }),
-  workbookBinding408,
-  workbookBinding409,
-  workbookBinding410,
-  of,
-  workbookTt,
-  workbookEt = esmInit(() => {
-    workbookBinding408 = 9525;
-    workbookBinding409 = 1 / workbookBinding408;
-    workbookBinding410 = 0.75;
-    of = (workbookInput15846) =>
-      workbookInput15846 == null ? 0 : workbookInput15846 * workbookBinding409;
-    workbookTt = (workbookInput16146) =>
-      Math.round(workbookInput16146 * workbookBinding408);
-  });
+  wr();
+  rae();
+  $d();
+});
 var vae = esmInit(() => {
     Qt();
     workbookEt();
@@ -9405,239 +9451,8 @@ var workbookBinding1256,
     _B = 1e-6;
   });
 var zwe = esmInit(() => {
-    workbookT();
-  }),
-  workbookBinding1260,
-  workbookBinding1261,
-  workbookBinding1262,
-  workbookBinding1263,
-  workbookBinding1264,
-  Bwe = esmInit(() => {
-    workbookBinding628();
-    workbookBinding1260 = (
-      workbookInput454,
-      workbookInput455,
-      workbookInput456,
-      workbookInput457,
-      workbookInput458,
-      workbookInput459,
-      workbookInput460,
-      workbookInput461,
-    ) => {
-      if (!(workbookInput454.connector && workbookInput459 > 0)) return;
-      let workbookBinding4016 =
-          workbookInput460 ??
-          workbookBinding1264(
-            workbookInput454,
-            workbookInput456,
-            workbookInput457,
-          ),
-        workbookBinding4017 = workbookBinding4016?.start,
-        workbookBinding4018 = workbookBinding4016?.end;
-      if (!workbookBinding4017 || !workbookBinding4018) return;
-      let workbookBinding4019 =
-          Math.atan2(
-            workbookBinding4018.y - workbookBinding4017.y,
-            workbookBinding4018.x - workbookBinding4017.x,
-          ) || 0,
-        workbookBinding4020 =
-          typeof workbookBinding4018.angle == "number" &&
-          Number.isFinite(workbookBinding4018.angle)
-            ? workbookBinding4018.angle
-            : workbookBinding4019,
-        workbookBinding4021 =
-          typeof workbookBinding4017.angle == "number" &&
-          Number.isFinite(workbookBinding4017.angle)
-            ? workbookBinding4017.angle
-            : workbookBinding4019,
-        workbookBinding4022 = (
-          workbookInput608,
-          workbookInput609,
-          workbookInput610,
-          workbookInput611,
-        ) => {
-          let workbookBinding4628 =
-            workbookInput611 === "head"
-              ? workbookInput454.connector?.lineStyle?.head
-              : workbookInput454.connector?.lineStyle?.tail;
-          if (!workbookBinding4628) return;
-          let workbookBinding4629 = workbookBinding1262(
-            workbookBinding4628,
-            workbookInput459,
-          );
-          if (!workbookBinding4629) return;
-          let { type, halfWidthPx, lengthPx } = workbookBinding4629,
-            workbookBinding4630 =
-              workbookInput461?.[workbookInput611] ?? workbookInput458;
-          if (
-            (workbookInput455.save(),
-            workbookInput455.translate(workbookInput608, workbookInput609),
-            workbookInput455.rotate(workbookInput610),
-            (workbookInput455.fillStyle = workbookBinding4630),
-            (workbookInput455.strokeStyle = workbookBinding4630),
-            (workbookInput455.lineWidth = Math.max(1, workbookInput459)),
-            type === 5)
-          ) {
-            workbookInput455.beginPath();
-            workbookInput455.ellipse(
-              0,
-              0,
-              halfWidthPx,
-              halfWidthPx,
-              0,
-              0,
-              Math.PI * 2,
-            );
-            workbookInput455.fill();
-          } else if (type === 4) {
-            workbookInput455.beginPath();
-            workbookInput455.moveTo(0, 0);
-            workbookInput455.lineTo(-lengthPx / 2, -halfWidthPx);
-            workbookInput455.lineTo(-lengthPx, 0);
-            workbookInput455.lineTo(-lengthPx / 2, halfWidthPx);
-            workbookInput455.closePath();
-            workbookInput455.fill();
-          } else if (type === 6) {
-            workbookInput455.save();
-            let workbookBinding11325 = workbookInput455.lineCap,
-              workbookBinding11326 = workbookInput455.lineJoin,
-              workbookBinding11327 = workbookInput455.miterLimit ?? 10;
-            workbookInput455.lineCap = "round";
-            workbookInput455.lineJoin = "round";
-            workbookInput455.miterLimit = 3.5;
-            workbookInput455.beginPath();
-            workbookInput455.moveTo(0, 0);
-            workbookInput455.lineTo(-lengthPx, -halfWidthPx);
-            workbookInput455.moveTo(0, 0);
-            workbookInput455.lineTo(-lengthPx, halfWidthPx);
-            workbookInput455.stroke();
-            workbookInput455.lineCap = workbookBinding11325;
-            workbookInput455.lineJoin = workbookBinding11326;
-            workbookInput455.miterLimit = workbookBinding11327;
-            workbookInput455.restore();
-          } else if (type === 3) {
-            let workbookBinding16972 = -workbookBinding1263(lengthPx);
-            workbookInput455.beginPath();
-            workbookInput455.moveTo(0, 0);
-            workbookInput455.lineTo(-lengthPx, -halfWidthPx);
-            workbookInput455.lineTo(workbookBinding16972, 0);
-            workbookInput455.lineTo(-lengthPx, halfWidthPx);
-            workbookInput455.closePath();
-            workbookInput455.fill();
-          } else {
-            workbookInput455.beginPath();
-            workbookInput455.moveTo(0, 0);
-            workbookInput455.lineTo(-lengthPx, -halfWidthPx);
-            workbookInput455.lineTo(-lengthPx, halfWidthPx);
-            workbookInput455.closePath();
-            workbookInput455.fill();
-          }
-          workbookInput455.restore();
-        };
-      workbookBinding4022(
-        workbookBinding4017.x,
-        workbookBinding4017.y,
-        workbookBinding4021 + Math.PI,
-        "head",
-      );
-      workbookBinding4022(
-        workbookBinding4018.x,
-        workbookBinding4018.y,
-        workbookBinding4020,
-        "tail",
-      );
-    };
-    workbookBinding1261 = (workbookInput8122, workbookInput8123) => {
-      let workbookBinding18619 = workbookBinding1262(
-          workbookInput8122.connector?.lineStyle?.head,
-          workbookInput8123,
-        ),
-        workbookBinding18620 = workbookBinding1262(
-          workbookInput8122.connector?.lineStyle?.tail,
-          workbookInput8123,
-        );
-      return {
-        startPx: workbookBinding18619?.strokeInsetPx ?? 0,
-        endPx: workbookBinding18620?.strokeInsetPx ?? 0,
-      };
-    };
-    workbookBinding1262 = (workbookInput3434, workbookInput3435) => {
-      if (!workbookInput3434) return;
-      let workbookBinding11865 = workbookInput3434.type;
-      if (!workbookBinding11865 || workbookBinding11865 === 1) return;
-      let workbookBinding11866 = workbookInput3434.width,
-        workbookBinding11867 = workbookInput3434.length,
-        workbookBinding11868 =
-          workbookBinding11866 === 3
-            ? 5.5
-            : workbookBinding11866 === 2
-              ? 4.5
-              : 3.5,
-        workbookBinding11869 =
-          workbookBinding11867 === 3
-            ? 6.5
-            : workbookBinding11867 === 2
-              ? 5.5
-              : 4.5,
-        workbookBinding11870 = (workbookBinding11868 * workbookInput3435) / 2,
-        workbookBinding11871 = workbookBinding11869 * workbookInput3435,
-        workbookBinding11872 =
-          workbookBinding11865 === 3
-            ? workbookBinding11871 * 0.72
-            : workbookBinding11871;
-      return {
-        type: workbookBinding11865,
-        halfWidthPx: workbookBinding11870,
-        lengthPx: workbookBinding11872,
-        strokeInsetPx:
-          workbookBinding11865 === 4
-            ? workbookBinding11872 / 2
-            : workbookBinding11865 === 5 || workbookBinding11865 === 6
-              ? 0
-              : workbookBinding11865 === 3
-                ? workbookBinding1263(workbookBinding11872)
-                : workbookBinding11872,
-      };
-    };
-    workbookBinding1263 = (workbookInput16534) => workbookInput16534 * 0.68;
-    workbookBinding1264 = (
-      workbookInput4397,
-      workbookInput4398,
-      workbookInput4399,
-    ) => {
-      let { width, height } = workbookHelper286(
-        workbookInput4397,
-        workbookInput4398,
-        workbookInput4399,
-      );
-      if (!(width === 0 && height === 0))
-        return width >= height
-          ? {
-              start: {
-                x: 0,
-                y: height / 2,
-                angle: 0,
-              },
-              end: {
-                x: width,
-                y: height / 2,
-                angle: 0,
-              },
-            }
-          : {
-              start: {
-                x: width / 2,
-                y: 0,
-                angle: Math.PI / 2,
-              },
-              end: {
-                x: width / 2,
-                y: height,
-                angle: Math.PI / 2,
-              },
-            };
-    };
-  });
+  workbookT();
+});
 var Hwe = esmInit(() => {
   workbookT();
 });
@@ -9759,21 +9574,6 @@ var workbookBinding1288,
   workbookO = esmInit(() => {
     workbookBinding1288 = "::cell:";
   });
-var yEe = esmInit(() => {
-  workbookBinding1229();
-  _workbookJ();
-  workbookT();
-  workbookZ();
-  /* Binding1266 drained */ void 0;
-  zTe();
-  GTe();
-  eEe();
-  rEe();
-  fEe();
-  workbookO();
-  workbookBinding644();
-  wr();
-});
 var xDe = esmInit(() => {
   workbookBinding1363();
   workbookBinding1357();
@@ -9988,9 +9788,6 @@ var workbookBinding1387,
       }
     };
   });
-var workbookBinding1489 = esmInit(() => {
-  workbookOt();
-});
 var workbookBinding1529,
   workbookBinding1530,
   workbookBinding1531 = esmInit(() => {
@@ -10124,351 +9921,6 @@ function wNe(workbookInput7398: any, _workbookInput7399?: any): void {
   dagreLayout(workbookInput7398);
 }
 
-var TIe = esmInit(() => {}),
-  EIe,
-  H$,
-  U$,
-  DIe = esmInit(() => {
-    EIe = (props) => {
-      if (!props.bbox) return;
-      let workbookBinding16948 = Number(props.bbox.xEmu ?? 0),
-        workbookBinding16949 = Number(props.bbox.yEmu ?? 0),
-        workbookBinding16950 = Number(props.bbox.widthEmu ?? 0),
-        workbookBinding16951 = Number(props.bbox.heightEmu ?? 0);
-      return {
-        minX: workbookBinding16948,
-        minY: workbookBinding16949,
-        maxX: workbookBinding16948 + workbookBinding16950,
-        maxY: workbookBinding16949 + workbookBinding16951,
-      };
-    };
-    H$ = (workbookInput3864) => {
-      let workbookBinding12702;
-      return (
-        workbookInput3864.forEach((item) => {
-          let workbookBinding14276 = EIe(item);
-          if (workbookBinding14276) {
-            if (!workbookBinding12702) {
-              workbookBinding12702 = {
-                ...workbookBinding14276,
-              };
-              return;
-            }
-            workbookBinding12702.minX = Math.min(
-              workbookBinding12702.minX,
-              workbookBinding14276.minX,
-            );
-            workbookBinding12702.minY = Math.min(
-              workbookBinding12702.minY,
-              workbookBinding14276.minY,
-            );
-            workbookBinding12702.maxX = Math.max(
-              workbookBinding12702.maxX,
-              workbookBinding14276.maxX,
-            );
-            workbookBinding12702.maxY = Math.max(
-              workbookBinding12702.maxY,
-              workbookBinding14276.maxY,
-            );
-          }
-        }),
-        workbookBinding12702
-      );
-    };
-    U$ = (workbookInput7158) =>
-      workbookInput7158
-        ? {
-            xEmu: workbookInput7158.minX,
-            yEmu: workbookInput7158.minY,
-            widthEmu: workbookInput7158.maxX - workbookInput7158.minX,
-            heightEmu: workbookInput7158.maxY - workbookInput7158.minY,
-          }
-        : {
-            xEmu: 0,
-            yEmu: 0,
-            widthEmu: 0,
-            heightEmu: 0,
-          };
-  }),
-  W$,
-  G$,
-  K$,
-  OIe,
-  q$,
-  kIe,
-  AIe,
-  jIe,
-  MIe,
-  J$,
-  NIe,
-  PIe = esmInit(() => {
-    lIe();
-    CIe();
-    TIe();
-    DIe();
-    appInitialGmt();
-    W$ = false;
-    K$ = false;
-    OIe = "/node_modules/mermaid/";
-    q$ = "dompurify/dist/purify.es.mjs";
-    kIe = (workbookInput4651) => {
-      let workbookBinding13911 = new URL(workbookInput4651);
-      if (workbookBinding13911.protocol !== "file:") return;
-      let workbookBinding13912 = workbookBinding13911.href.lastIndexOf(OIe);
-      if (workbookBinding13912 < 0) return;
-      let workbookBinding13913 = new URL(
-          workbookBinding13911.href.slice(0, workbookBinding13912 + 14),
-        ),
-        workbookBinding13914 = new URL(q$, workbookBinding13913);
-      if (
-        !(
-          !workbookBinding13914.href.startsWith(workbookBinding13913.href) ||
-          !workbookBinding13914.pathname.endsWith(`/node_modules/${q$}`)
-        )
-      )
-        return workbookBinding13914.href;
-    };
-    AIe = async () => {
-      if (K$) return;
-      K$ = true;
-      let workbookBinding10518 = import.meta.resolve;
-      if (typeof workbookBinding10518 == "function")
-        try {
-          let workbookBinding12309 = workbookBinding10518("mermaid"),
-            workbookBinding12310 = kIe(workbookBinding12309);
-          if (!workbookBinding12310) return;
-          let workbookBinding12311 = (
-            await appInitialWmt(
-              () => import(workbookBinding12310),
-              [],
-              import.meta.url,
-            )
-          ).default;
-          if (!workbookBinding12311) return;
-          typeof workbookBinding12311.sanitize != "function" &&
-            (workbookBinding12311.sanitize = (workbookInput16673) =>
-              workbookInput16673);
-          typeof workbookBinding12311.addHook != "function" &&
-            (workbookBinding12311.addHook = () => {});
-          typeof workbookBinding12311.removeHook != "function" &&
-            (workbookBinding12311.removeHook = () => {});
-          typeof workbookBinding12311.setConfig != "function" &&
-            (workbookBinding12311.setConfig = () => {});
-        } catch {}
-    };
-    jIe = async () =>
-      G$ ||
-      ((G$ = (
-        await appInitialWmt(
-          () => import("../../workbook/lazy-mermaid-core"),
-          __vite__mapDeps([
-            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-            19, 20, 21, 22, 23, 24, 25,
-          ]),
-          import.meta.url,
-        )
-      ).default),
-      G$);
-    MIe = async () => {
-      if (W$ && G$) return G$;
-      let workbookBinding7151 = globalThis;
-      workbookBinding7151.injected ||= {
-        includeLargeFeatures: true,
-        version: "c-star",
-      };
-      let workbookBinding7152 = workbookBinding7151.document ?? {};
-      workbookBinding7152.nodeType = workbookBinding7152.nodeType ?? 9;
-      workbookBinding7152.getElementById =
-        workbookBinding7152.getElementById ??
-        (() => ({
-          innerHTML: "{}",
-        }));
-      workbookBinding7152.createElement =
-        workbookBinding7152.createElement ??
-        (() => ({
-          getContext: () => null,
-        }));
-      workbookBinding7152.createElementNS =
-        workbookBinding7152.createElementNS ??
-        (() => ({
-          getContext: () => null,
-        }));
-      workbookBinding7151.document = workbookBinding7152;
-      let workbookBinding7153 = workbookBinding7151.window ?? globalThis;
-      workbookBinding7151.window = workbookBinding7153;
-      workbookBinding7151.Element ||= class {};
-      workbookBinding7153.document = workbookBinding7152;
-      workbookBinding7153.Element =
-        workbookBinding7153.Element ?? workbookBinding7151.Element;
-      workbookBinding7153.addEventListener =
-        workbookBinding7153.addEventListener ?? (() => {});
-      workbookBinding7151.addEventListener =
-        workbookBinding7151.addEventListener ?? (() => {});
-      let workbookBinding7154 = await jIe();
-      return (
-        await AIe(),
-        workbookBinding7154.mermaidAPI.initialize({
-          startOnLoad: false,
-          securityLevel: "loose",
-          flowchart: {
-            htmlLabels: false,
-          },
-        }),
-        (W$ = true),
-        workbookBinding7154
-      );
-    };
-    J$ = (workbookInput1275) => {
-      let workbookBinding6915 = workbookInput1275
-          .replace(/\r\n?/g, "\n")
-          .split("\n"),
-        workbookBinding6916 = 0,
-        workbookBinding6917 = () => {
-          for (; workbookBinding6916 < workbookBinding6915.length; ) {
-            let workbookBinding21478 =
-              workbookBinding6915[workbookBinding6916]?.trim() ?? "";
-            if (((workbookBinding6916 += 1), workbookBinding21478.length > 0))
-              return workbookBinding21478;
-          }
-        },
-        workbookBinding6918 = workbookBinding6917();
-      if (!workbookBinding6918) return;
-      if (workbookBinding6918 === "---") {
-        for (; workbookBinding6916 < workbookBinding6915.length; ) {
-          let workbookBinding21799 =
-            workbookBinding6915[workbookBinding6916]?.trim() ?? "";
-          if (((workbookBinding6916 += 1), workbookBinding21799 === "---"))
-            break;
-        }
-        let workbookBinding18579 = workbookBinding6917();
-        return workbookBinding18579 ? J$(workbookBinding18579) : undefined;
-      }
-      if (workbookBinding6918.startsWith("%%")) {
-        let workbookBinding22550 = workbookBinding6917();
-        return workbookBinding22550 ? J$(workbookBinding22550) : undefined;
-      }
-      let workbookBinding6919 =
-        workbookBinding6918.trimStart().split(/\s+/)[0]?.trim() ?? "";
-      if (workbookBinding6919)
-        switch (workbookBinding6919) {
-          case "pie":
-          case "quadrantChart":
-          case "timeline":
-          case "gantt":
-          case "sankey":
-          case "xychart":
-          case "treemap":
-          case "radar":
-            return workbookBinding6919;
-          case "packet":
-          case "packet-beta":
-            return "packet";
-          default:
-            return;
-        }
-    };
-    NIe = async (workbookInput732, workbookInput733 = {}) => {
-      let workbookBinding5160 = wIe(workbookInput732),
-        workbookBinding5161 = [],
-        workbookBinding5162 = (workbookInput14047) => {
-          workbookBinding5161.push(workbookInput14047);
-          workbookInput733.warn?.(workbookInput14047);
-        };
-      if (
-        workbookInput733.diagramType === "treeView" ||
-        workbookInput733.diagramType === "treeView-beta" ||
-        _Ie(workbookBinding5160)
-      ) {
-        let workbookBinding17893 = SIe(workbookBinding5160),
-          workbookBinding17894 = workbookBinding17893.elements;
-        return {
-          elements: workbookBinding17894,
-          bboxEmu: U$(H$(workbookBinding17894)),
-          meta: {
-            diagramType: "treeView",
-            idMap: workbookBinding17893.idMap,
-            warnings: workbookBinding5161,
-          },
-        };
-      }
-      let workbookBinding5163 = await MIe(),
-        workbookBinding5164 =
-          workbookInput733.diagramType ?? J$(workbookBinding5160);
-      if (
-        workbookBinding5164 &&
-        [
-          "pie",
-          "quadrantChart",
-          "timeline",
-          "gantt",
-          "sankey",
-          "xychart",
-          "treemap",
-          "radar",
-          "packet",
-        ].includes(workbookBinding5164)
-      ) {
-        let workbookBinding12611 = P$.find((item) => item.id === "chart-like");
-        if (!workbookBinding12611)
-          throw Error("Chart-like plugin is not registered.");
-        await workbookBinding5163.mermaidAPI.parse(workbookBinding5160);
-        let workbookBinding12612 =
-            await workbookBinding5163.mermaidAPI.getDiagramFromText(
-              workbookBinding5160,
-            ),
-          workbookBinding12613 = await workbookBinding12611.convert(
-            workbookBinding12612,
-            {
-              options: workbookInput733,
-              warn: workbookBinding5162,
-            },
-          ),
-          workbookBinding12614 = workbookBinding12613.elements;
-        return {
-          elements: workbookBinding12614,
-          bboxEmu: U$(H$(workbookBinding12614)),
-          meta: {
-            diagramType: workbookBinding12612.type,
-            idMap: workbookBinding12613.idMap,
-            warnings: workbookBinding5161,
-          },
-        };
-      }
-      await workbookBinding5163.mermaidAPI.parse(workbookBinding5160);
-      let workbookBinding5165 =
-          await workbookBinding5163.mermaidAPI.getDiagramFromText(
-            workbookBinding5160,
-          ),
-        workbookBinding5166 =
-          workbookInput733.diagramType ?? workbookBinding5165.type,
-        workbookBinding5167 = P$.find((item) =>
-          item.supports(workbookBinding5166),
-        );
-      if (!workbookBinding5167)
-        throw Error(`No plugin found for diagram type ${workbookBinding5166}`);
-      let workbookBinding5168 = await workbookBinding5167.convert(
-          workbookBinding5165,
-          {
-            options: workbookInput733,
-            warn: workbookBinding5162,
-          },
-        ),
-        workbookBinding5169 = workbookBinding5168.elements;
-      return {
-        elements: workbookBinding5169,
-        bboxEmu: U$(H$(workbookBinding5169)),
-        meta: {
-          diagramType: workbookBinding5165.type,
-          idMap: workbookBinding5168.idMap,
-          warnings: workbookBinding5161,
-        },
-      };
-    };
-  }),
-  FIe = esmInit(() => {
-    PIe();
-    TIe();
-  });
 var zIe = esmInit(() => {
     FIe();
     workbookBinding404();
@@ -11603,23 +11055,6 @@ var workbookBinding1725,
 var XRe = esmInit(() => {
   workbookBinding647();
 });
-var xze,
-  Sze,
-  workbookBinding1750,
-  Cze = esmInit(() => {
-    workbookBinding647();
-    Z$();
-    workbookBinding661();
-    workbookBinding739();
-    workbookBinding1389();
-    workbookBinding627();
-    workbookBt();
-    workbookBinding623();
-    workbookBinding1736();
-    xze = ":";
-    Sze = 1001;
-    workbookBinding1750 = "bg1";
-  });
 /** Bundle Zod — stock zod@^4.4.3 via vendor/zod (was inlined helper789 / $Zod* / Binding1790–1799). */
 var workbookHelper816 = zodString;
 var workbookHelper817 = zodNumber;
@@ -11649,16 +11084,47 @@ function wirePresentationRecipesFromBoundary(): void {
     composeRepeat: (...args: any[]) => workbookBinding1326(...args),
   });
 }
-var aJe = esmInit(() => {
-  wirePresentationRecipesFromBoundary();
-  ensurePresentationRecipesInitMod();
-});
 function Xqe(name: any) {
   return getPresentationRecipeMod(name);
 }
 function Zqe(presentation: any, scriptName: any, params: any = {}) {
   return runPresentationRecipeMod(presentation, scriptName, params);
 }
+
+wireWorkbookShellEnsureHooks({
+  ensureYEeDeps: () => {
+    workbookBinding1229();
+    _workbookJ();
+    workbookT();
+    workbookZ();
+    zTe();
+    GTe();
+    eEe();
+    rEe();
+    fEe();
+    workbookO();
+    workbookBinding644();
+    wr();
+  },
+  ensureCzeDeps: () => {
+    workbookBinding647();
+    Z$();
+    workbookBinding661();
+    workbookBinding739();
+    workbookBinding1389();
+    workbookBinding627();
+    workbookBt();
+    workbookBinding623();
+    workbookBinding1736();
+  },
+  ensureAJeDeps: () => {
+    wirePresentationRecipesFromBoundary();
+    ensurePresentationRecipesInitMod();
+  },
+  ensureBinding1489Deps: () => {
+    workbookOt();
+  },
+});
 
 var vYe,
   _workbookO,
@@ -13147,576 +12613,8 @@ var v5e,
     y5e = 86400000;
   });
 var x7e = esmInit(() => {
-    workbookBinding1874();
-  }),
-  S7e,
-  C7e,
-  w7e,
-  T7e,
-  workbookBinding1883,
-  E7e,
-  D7e,
-  workbookBinding1884,
-  O7e = esmInit(() => {
-    S7e = 365.2425;
-    C7e = 8640000000000000;
-    -C7e;
-    w7e = 864e5;
-    T7e = 3600;
-    workbookBinding1883 = T7e * 24;
-    workbookBinding1883 * 7;
-    E7e = workbookBinding1883 * S7e;
-    D7e = E7e / 12;
-    D7e * 3;
-    workbookBinding1884 = Symbol.for("constructDateFrom");
-  });
-var workbookBinding1885 = esmInit(() => {
-  O7e();
+  workbookBinding1874();
 });
-var workbookBinding1886 = esmInit(() => {
-    workbookBinding1885();
-  }),
-  k7e = esmInit(() => {});
-var j7e = esmInit(() => {
-    workbookBinding1885();
-    workbookBinding1886();
-  }),
-  M7e = esmInit(() => {}),
-  N7e = esmInit(() => {}),
-  P7e = esmInit(() => {}),
-  F7e = esmInit(() => {}),
-  I7e = esmInit(() => {}),
-  L7e = esmInit(() => {}),
-  R7e = esmInit(() => {}),
-  z7e = esmInit(() => {}),
-  B7e = esmInit(() => {}),
-  V7e = esmInit(() => {});
-var U7e = esmInit(() => {
-  workbookBinding1886();
-});
-var workbookBinding1887 = esmInit(() => {
-  workbookBinding1885();
-});
-var W7e = esmInit(() => {
-  workbookBinding1886();
-});
-var K7e = esmInit(() => {
-    U7e();
-    workbookBinding1887();
-    O7e();
-    W7e();
-  }),
-  q7e = esmInit(() => {}),
-  J7e = esmInit(() => {}),
-  Y7e = esmInit(() => {}),
-  X7e = esmInit(() => {}),
-  Z7e = esmInit(() => {}),
-  Q7e = esmInit(() => {}),
-  $7e = esmInit(() => {}),
-  e9e = esmInit(() => {}),
-  t9e = esmInit(() => {}),
-  n9e = esmInit(() => {}),
-  r9e = esmInit(() => {}),
-  i9e = esmInit(() => {}),
-  a9e = esmInit(() => {}),
-  o9e = esmInit(() => {});
-var s9e = esmInit(() => {
-    workbookBinding1886();
-  }),
-  c9e = esmInit(() => {}),
-  l9e = esmInit(() => {}),
-  u9e = esmInit(() => {}),
-  d9e = esmInit(() => {}),
-  f9e = esmInit(() => {}),
-  p9e = esmInit(() => {}),
-  m9e = esmInit(() => {}),
-  h9e = esmInit(() => {}),
-  g9e = esmInit(() => {});
-var v9e = esmInit(() => {
-    workbookBinding1887();
-  }),
-  y9e = esmInit(() => {}),
-  b9e = esmInit(() => {}),
-  x9e = esmInit(() => {}),
-  S9e = esmInit(() => {});
-var w9e = esmInit(() => {
-    workbookBinding1887();
-    K7e();
-  }),
-  T9e = esmInit(() => {}),
-  E9e = esmInit(() => {}),
-  D9e = esmInit(() => {}),
-  O9e = esmInit(() => {}),
-  k9e = esmInit(() => {});
-var j9e = esmInit(() => {
-  workbookBinding1886();
-});
-var M9e = esmInit(() => {
-  workbookBinding1886();
-});
-var P9e = esmInit(() => {
-  j9e();
-  M9e();
-  workbookBinding1886();
-});
-var I9e = esmInit(() => {
-    workbookBinding1887();
-    s9e();
-    v9e();
-    P9e();
-  }),
-  L9e = esmInit(() => {}),
-  R9e = esmInit(() => {}),
-  z9e = esmInit(() => {}),
-  B9e = esmInit(() => {}),
-  V9e = esmInit(() => {}),
-  H9e = esmInit(() => {}),
-  U9e = esmInit(() => {}),
-  W9e = esmInit(() => {}),
-  G9e = esmInit(() => {}),
-  K9e = esmInit(() => {}),
-  q9e = esmInit(() => {}),
-  J9e = esmInit(() => {}),
-  Y9e = esmInit(() => {}),
-  X9e = esmInit(() => {}),
-  Z9e = esmInit(() => {}),
-  Q9e = esmInit(() => {}),
-  $9e = esmInit(() => {}),
-  eet = esmInit(() => {}),
-  tet = esmInit(() => {}),
-  net = esmInit(() => {}),
-  ret = esmInit(() => {}),
-  iet = esmInit(() => {}),
-  aet = esmInit(() => {}),
-  oet = esmInit(() => {}),
-  set = esmInit(() => {}),
-  cet = esmInit(() => {}),
-  uet = esmInit(() => {}),
-  det = esmInit(() => {}),
-  fet = esmInit(() => {}),
-  pet = esmInit(() => {}),
-  met = esmInit(() => {}),
-  het = esmInit(() => {}),
-  get = esmInit(() => {}),
-  _et = esmInit(() => {}),
-  vet = esmInit(() => {}),
-  yet = esmInit(() => {}),
-  bet = esmInit(() => {}),
-  xet = esmInit(() => {}),
-  Cet = esmInit(() => {}),
-  wet = esmInit(() => {}),
-  Tet = esmInit(() => {}),
-  Eet = esmInit(() => {}),
-  Det = esmInit(() => {}),
-  Oet = esmInit(() => {}),
-  ket = esmInit(() => {}),
-  Aet = esmInit(() => {}),
-  jet = esmInit(() => {});
-var Net = esmInit(() => {
-    workbookBinding1886();
-  }),
-  Pet = esmInit(() => {}),
-  Fet = esmInit(() => {}),
-  Iet = esmInit(() => {}),
-  Let = esmInit(() => {}),
-  Ret = esmInit(() => {}),
-  zet = esmInit(() => {}),
-  Bet = esmInit(() => {}),
-  Vet = esmInit(() => {}),
-  Het = esmInit(() => {}),
-  Uet = esmInit(() => {}),
-  Wet = esmInit(() => {});
-var Get = esmInit(() => {
-    workbookBinding1886();
-  }),
-  Ket = esmInit(() => {}),
-  qet = esmInit(() => {}),
-  Jet = esmInit(() => {}),
-  Yet = esmInit(() => {}),
-  Xet = esmInit(() => {}),
-  Zet = esmInit(() => {}),
-  Qet = esmInit(() => {});
-var $et = esmInit(() => {
-    workbookBinding1886();
-  }),
-  ett = esmInit(() => {}),
-  ttt = esmInit(() => {}),
-  ntt = esmInit(() => {}),
-  rtt = esmInit(() => {}),
-  itt = esmInit(() => {}),
-  att = esmInit(() => {}),
-  ott = esmInit(() => {});
-var ctt = esmInit(() => {
-  workbookBinding1886();
-});
-var utt = esmInit(() => {
-  workbookBinding1886();
-});
-var ftt = esmInit(() => {
-    workbookBinding1886();
-  }),
-  ptt = esmInit(() => {}),
-  mtt = esmInit(() => {}),
-  htt = esmInit(() => {}),
-  gtt = esmInit(() => {}),
-  _tt = esmInit(() => {}),
-  vtt = esmInit(() => {}),
-  ytt = esmInit(() => {}),
-  btt = esmInit(() => {}),
-  xtt = esmInit(() => {}),
-  Stt = esmInit(() => {}),
-  Ctt = esmInit(() => {}),
-  wtt = esmInit(() => {}),
-  Ttt = esmInit(() => {}),
-  Ett = esmInit(() => {}),
-  Dtt = esmInit(() => {}),
-  Ott = esmInit(() => {}),
-  ktt = esmInit(() => {}),
-  Att = esmInit(() => {}),
-  jtt = esmInit(() => {}),
-  Mtt = esmInit(() => {}),
-  Ntt = esmInit(() => {}),
-  Ptt = esmInit(() => {}),
-  Ftt = esmInit(() => {}),
-  Itt = esmInit(() => {}),
-  Ltt = esmInit(() => {}),
-  Rtt = esmInit(() => {}),
-  ztt = esmInit(() => {}),
-  Btt = esmInit(() => {}),
-  Vtt = esmInit(() => {}),
-  Htt = esmInit(() => {}),
-  Utt = esmInit(() => {}),
-  Wtt = esmInit(() => {}),
-  Gtt = esmInit(() => {}),
-  Ktt = esmInit(() => {}),
-  qtt = esmInit(() => {}),
-  Jtt = esmInit(() => {}),
-  Ytt = esmInit(() => {}),
-  Xtt = esmInit(() => {}),
-  Ztt = esmInit(() => {}),
-  Qtt = esmInit(() => {}),
-  $tt = esmInit(() => {}),
-  ent = esmInit(() => {}),
-  tnt = esmInit(() => {}),
-  nnt = esmInit(() => {}),
-  rnt = esmInit(() => {}),
-  int = esmInit(() => {}),
-  ant = esmInit(() => {}),
-  ont = esmInit(() => {}),
-  snt = esmInit(() => {}),
-  cnt = esmInit(() => {}),
-  lnt = esmInit(() => {}),
-  unt = esmInit(() => {}),
-  dnt = esmInit(() => {}),
-  fnt = esmInit(() => {}),
-  pnt = esmInit(() => {}),
-  mnt = esmInit(() => {}),
-  hnt = esmInit(() => {}),
-  gnt = esmInit(() => {}),
-  _nt = esmInit(() => {}),
-  vnt = esmInit(() => {}),
-  ynt = esmInit(() => {}),
-  bnt = esmInit(() => {}),
-  xnt = esmInit(() => {}),
-  Snt = esmInit(() => {}),
-  Cnt = esmInit(() => {}),
-  wnt = esmInit(() => {}),
-  Tnt = esmInit(() => {}),
-  Ent = esmInit(() => {}),
-  Dnt = esmInit(() => {}),
-  Ont = esmInit(() => {}),
-  knt = esmInit(() => {}),
-  Ant = esmInit(() => {}),
-  jnt = esmInit(() => {}),
-  Mnt = esmInit(() => {}),
-  Nnt = esmInit(() => {}),
-  Pnt = esmInit(() => {}),
-  Fnt = esmInit(() => {}),
-  Int = esmInit(() => {}),
-  Lnt = esmInit(() => {}),
-  Rnt = esmInit(() => {}),
-  znt = esmInit(() => {}),
-  Bnt = esmInit(() => {}),
-  Vnt = esmInit(() => {}),
-  Hnt = esmInit(() => {}),
-  Unt = esmInit(() => {}),
-  Wnt = esmInit(() => {}),
-  Gnt = esmInit(() => {}),
-  Knt = esmInit(() => {}),
-  qnt = esmInit(() => {}),
-  Jnt = esmInit(() => {}),
-  Ynt = esmInit(() => {}),
-  Xnt = esmInit(() => {}),
-  Znt = esmInit(() => {});
-var $nt = esmInit(() => {
-    workbookBinding1885();
-    workbookBinding1886();
-  }),
-  ert = esmInit(() => {}),
-  trt = esmInit(() => {}),
-  nrt = esmInit(() => {}),
-  rrt = esmInit(() => {}),
-  irt = esmInit(() => {}),
-  art = esmInit(() => {}),
-  ort = esmInit(() => {}),
-  srt = esmInit(() => {}),
-  crt = esmInit(() => {}),
-  lrt = esmInit(() => {}),
-  urt = esmInit(() => {}),
-  drt = esmInit(() => {}),
-  frt = esmInit(() => {}),
-  prt = esmInit(() => {}),
-  mrt = esmInit(() => {}),
-  hrt = esmInit(() => {}),
-  grt = esmInit(() => {}),
-  _rt = esmInit(() => {}),
-  workbookBinding1888 = esmInit(() => {
-    M7e();
-    I7e();
-    k7e();
-    R7e();
-    Y7e();
-    L7e();
-    X7e();
-    j7e();
-    Z7e();
-    Q7e();
-    $7e();
-    e9e();
-    t9e();
-    i9e();
-    a9e();
-    o9e();
-    s9e();
-    c9e();
-    workbookBinding1885();
-    l9e();
-    u9e();
-    m9e();
-    K7e();
-    h9e();
-    g9e();
-    v9e();
-    b9e();
-    x9e();
-    S9e();
-    w9e();
-    T9e();
-    D9e();
-    O9e();
-    k9e();
-    I9e();
-    L9e();
-    R9e();
-    z9e();
-    B9e();
-    V9e();
-    H9e();
-    U9e();
-    W9e();
-    K9e();
-    q9e();
-    J9e();
-    X9e();
-    $9e();
-    eet();
-    j9e();
-    tet();
-    net();
-    iet();
-    aet();
-    oet();
-    M9e();
-    set();
-    cet();
-    uet();
-    det();
-    ret();
-    Z9e();
-    fet();
-    vet();
-    yet();
-    bet();
-    xet();
-    Cet();
-    wet();
-    Tet();
-    Eet();
-    Det();
-    Oet();
-    ket();
-    Aet();
-    jet();
-    Net();
-    Pet();
-    pet();
-    Fet();
-    Let();
-    Ret();
-    zet();
-    Bet();
-    Vet();
-    met();
-    V7e();
-    Het();
-    Uet();
-    Wet();
-    Get();
-    Ket();
-    y9e();
-    qet();
-    Jet();
-    Yet();
-    _et();
-    Xet();
-    het();
-    Qet();
-    $et();
-    ett();
-    ttt();
-    ntt();
-    rtt();
-    itt();
-    att();
-    ott();
-    ctt();
-    utt();
-    f9e();
-    ftt();
-    ptt();
-    mtt();
-    htt();
-    gtt();
-    P9e();
-    Iet();
-    Ctt();
-    wtt();
-    Ttt();
-    d9e();
-    Dtt();
-    ktt();
-    Att();
-    Mtt();
-    Ntt();
-    Ptt();
-    Itt();
-    Ott();
-    Ltt();
-    N7e();
-    P7e();
-    Rtt();
-    ztt();
-    Btt();
-    Vtt();
-    Htt();
-    Utt();
-    Wtt();
-    Gtt();
-    Ktt();
-    qtt();
-    Jtt();
-    Ytt();
-    p9e();
-    Xtt();
-    F7e();
-    Ztt();
-    $tt();
-    ent();
-    nnt();
-    rnt();
-    Zet();
-    int();
-    tnt();
-    ant();
-    ont();
-    n9e();
-    snt();
-    cnt();
-    lnt();
-    unt();
-    r9e();
-    dnt();
-    fnt();
-    pnt();
-    mnt();
-    hnt();
-    gnt();
-    _nt();
-    vnt();
-    ynt();
-    bnt();
-    xnt();
-    Snt();
-    Cnt();
-    Stt();
-    wnt();
-    Tnt();
-    Ent();
-    Dnt();
-    Ont();
-    knt();
-    Ant();
-    jnt();
-    Mnt();
-    Nnt();
-    Pnt();
-    Fnt();
-    Int();
-    Lnt();
-    Rnt();
-    znt();
-    Bnt();
-    Hnt();
-    Unt();
-    btt();
-    Wnt();
-    Gnt();
-    Knt();
-    xtt();
-    ytt();
-    J7e();
-    qnt();
-    Jnt();
-    Vnt();
-    Ynt();
-    Xnt();
-    vtt();
-    Znt();
-    $nt();
-    W7e();
-    ert();
-    Ett();
-    B7e();
-    q7e();
-    jtt();
-    Y9e();
-    G9e();
-    Ftt();
-    trt();
-    nrt();
-    z7e();
-    get();
-    Q9e();
-    rrt();
-    art();
-    ort();
-    Qtt();
-    srt();
-    E9e();
-    crt();
-    lrt();
-    irt();
-    urt();
-    drt();
-    frt();
-    prt();
-    workbookBinding1886();
-    _tt();
-    mrt();
-    hrt();
-    grt();
-    _rt();
-  });
 var yrt,
   brt,
   xrt,

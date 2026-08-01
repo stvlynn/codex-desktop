@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~16.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~15.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1825,3 +1825,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: peel yEe/workbookEt/Cze thin bags if clean; WorkbookN method peels; sRe/fRe comments when walnut clears; reassess `_workbookS` when local ensures near zero
+
+## Wave 149 (Stage-3 Bwe/PIe + workbookEt + thin ensures + Binding1888 stub collapse)
+
+- Boundary 16800 → 15698 (Δ -1102)
+- Peeled: shape-geometry-paint Bwe/Binding1260–1264; mermaid-convert DIe/PIe/FIe/NIe; emu-units workbookEt/of/Tt; workbook-shell-ensures yEe/Cze/aJe/Binding1489; formula-date-epoch O7e/1885–1888 (collapsed ~220 exclusive empty stubs)
+- Skipped: wirePresentationRecipes; vYe; Nwe/Iwe; full _workbookS; comments walnut sRe/fRe; CRe; WorkbookN method peels; b5e
+- Leave-behind: wirePresentationRecipes false inventory; Nwe stub for Iwe→zge; vYe 1-line stub; _workbookS still entangled
+- _workbookS top ensures: 44 → 44; **local esm defs among them: 7 → 2** (remaining: CRe, WorkbookN)
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: WorkbookN method peels; sRe/fRe comments when walnut clears; peel `_workbookS` when local ensures ≈0; remaining ≥3 inventory

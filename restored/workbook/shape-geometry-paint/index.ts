@@ -54,3 +54,13 @@ export {
   isConnectorGeometry,
   workbookBinding1265,
 } from "./is-connector-geometry-impl";
+export {
+  workbookBinding1260,
+  workbookBinding1261,
+  workbookBinding1262,
+  workbookBinding1263,
+  workbookBinding1264,
+  Bwe,
+  ensureConnectorArrowheadsInit,
+  getDrawConnectorArrowheads,
+} from "./connector-arrowheads-impl";
