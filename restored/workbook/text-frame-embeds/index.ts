@@ -15,3 +15,12 @@ export {
   VTe,
   WTe,
 } from "./paint-embedded-workbook-impl";
+
+export {
+  wireMeasureEmbedElementBoundaryHooks,
+  meeH,
+} from "./boundary-hooks-measure";
+export {
+  measureEmbedElement,
+  NTe,
+} from "./measure-embed-element-impl";

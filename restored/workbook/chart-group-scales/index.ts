@@ -33,3 +33,12 @@ export {
   buildNiceChartScale,
   workbookHelper398,
 } from "./nice-chart-scale-impl";
+
+export {
+  wireChartContinuousScaleBoundaryHooks,
+  ccsH,
+} from "./boundary-hooks-continuous";
+export {
+  buildContinuousScale,
+  _O,
+} from "./build-continuous-scale-impl";

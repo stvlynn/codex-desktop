@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~32.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~32.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -281,6 +281,11 @@
 | CF dxf color maps (`jht`) | ~0.04k | **Drained (wave-123)** → `workbook/cf-dxf-color-maps/` |
 | FILTER-by-mask (`Lst`) | ~0.04k | **Drained (wave-123)** → `workbook/formula-sort-filter/` |
 | Plot-area manualLayout (`bSe`) | ~0.04k | **Drained (wave-123)** → `workbook/chart-plot-layout/` |
+| Formula criteria shape (`a3e`/`h6e`/`helper916`/`f4e`/`d6e`) | ~0.24k | **Drained (wave-125)** → `workbook/formula-criteria-shape/` |
+| Chart axis reserve (`_be`/`vbe`/`ybe` + mid 429..436) | ~0.14k | **Drained (wave-125)** → `workbook/chart-axis-reserve/` |
+| Continuous scale (`_O`) | ~0.04k | **Drained (wave-125)** → `workbook/chart-group-scales/` |
+| Measure embed (`NTe`) | ~0.04k | **Drained (wave-125)** → `workbook/text-frame-embeds/` |
+| CF range stats (`mht`/`Sht`/`helper1020`/`1015`) | ~0.19k | **Drained (wave-125)** → `workbook/cf-range-stats/` |
 | Formula SKEW + samples (`W4e`/`s4e`/`c4e`/`helper912`) | ~0.11k | **Drained (wave-124)** → `workbook/formula-skew/` |
 | Path ordinal colors (`helper477`) | ~0.04k | **Drained (wave-124)** → `workbook/chart-path-colors/` |
 | Draw shape paths (`helper608`) | ~0.04k | **Drained (wave-124)** → `workbook/shape-path/` |
@@ -1619,5 +1624,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Peeled: formula-skew s4e..helper912+W4e; chart-path-colors helper477; shape-path helper608; icon-set-paint lwe+595; chart-group-scales helper398; floating-placement MTe; chart-category-axes 419+Aye+jye; formula-shared-refs 589..592; xlsx-dynamic-array-meta opt..bpt (_pt); chart-data-table DSe..ISe; text-frame-style 689..hOe+EOe
 - Skipped: _be/bbe (chart fan-out); a3e/h6e (helper916 shared with f4e); helper483 (Bn+Binding908); helper603 (Nwe); rze/kht leave-behinds
 - Leave-behind: rze still imports fze/gze/_ze/mze — needs yze/bze/dze + ensure fan-out; kht imports jht — needs mht/Sht/helper1015
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`; full tree with `--allow-open-boundaries --allow-flat --allow-mechanical-names`
+- openBoundary remains while mega still large
+
+## Wave 125 (Stage-3 preferred a3e/h6e/_be + mid peels)
+
+- Boundary 32803 → 32266 (Δ -537)
+- Peeled: formula-criteria-shape helper902..903/915/916/f4e/a3e/d3e/d6e/920/921/h6e; chart-axis-reserve 429/430/434..436+_be/vbe/ybe; chart-group-scales _O; text-frame-embeds NTe; cf-range-stats 1014/1015/sht/cht/Sht/pht/mht/1020
+- Skipped: bbe (402/406 fan-out); helper483 (Binding908); helper892; Yot/ZRe; helper603 (Nwe); rze/yze/bze/dze; kht (ensure bag)
+- Leave-behind: rze still needs yze/bze/dze + ensure; kht now has mht/Sht/1015 owned — still needs ensure/Sht peers in bag; bbe needs helper402/406 nest
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`; full tree with `--allow-open-boundaries --allow-flat --allow-mechanical-names`
 - openBoundary remains while mega still large
