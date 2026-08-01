@@ -21,7 +21,7 @@ import {
   ensureComposerEsm_RV_Init,
   ensureComposerEsm_Sut_Init,
   ensureComposerEsm_Utt_Init,
-} from "../boundaries/composer-esm-inits";
+} from "../composer/composer-esm-inits";
 import { useNavigate } from "../boundaries/react-router-navigation";
 import { CONVERSATIONAL_ONBOARDING_COMPLETED_BY_ACCOUNT_ID_KEY } from "../home/onboarding-storage-keys";
 import { MemoizedFormattedMessage } from "../i18n/memoized-formatted-message";

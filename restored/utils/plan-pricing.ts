@@ -95,3 +95,8 @@ export function formatPlanPrice(options: PlanPricingAmountOptions): string | nul
         planCurrencyFormatOptions(currencyCode, minorUnitExponent),
       );
 }
+
+// --- missing-relative-export aliases ---
+export { formatPlanPriceParts as planPricingN };
+export { initPlanPricing as planPricingR };
+export { formatPlanPrice as planPricingT };

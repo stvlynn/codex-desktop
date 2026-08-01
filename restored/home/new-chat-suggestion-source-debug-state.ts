@@ -6,8 +6,8 @@ import { appScopeAtom } from "../runtime/app-scope-runtime";
 import {
   createAppScopeDerivedAtom,
   createAppScopeQueryAtom,
-} from "../boundaries/composer-appscope-atoms";
-import { createPersistedScopeSignal } from "../boundaries/turn-sources-runtime";
+} from "../composer/composer-appscope-atoms";
+import { createPersistedScopeSignal } from "../conversation/turn-sources-runtime";
 import {
   clearPersistedAtomsByPrefix,
   createNamedAppScopeQueryAtom,

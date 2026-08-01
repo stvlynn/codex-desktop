@@ -41,3 +41,6 @@ export function useInfiniteListQuery(e: unknown, t: unknown, n: unknown = !0, r:
     staleTime: peers.Hf.ONE_MINUTE,
   });
 }
+
+// --- missing-relative-export aliases ---
+export { useInfiniteListQuery as UseInfiniteListQuery };

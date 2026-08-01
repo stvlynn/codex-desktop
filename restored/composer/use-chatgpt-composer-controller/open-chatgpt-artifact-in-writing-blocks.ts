@@ -14,7 +14,7 @@ import {
   ensureComposerEsm_PA_Init as ensureComposerPaInit,
   ensureComposerEsm_TI_Init as ensureComposerTiInit,
   ensureComposerEsm_xH_Init as ensureComposerXhInit,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   react,
   reactCompilerRuntime,

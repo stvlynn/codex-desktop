@@ -16,7 +16,7 @@ import { AppIconFB } from "../icons/app-icon-fb";
 import { AppIcond } from "../icons/app-icon-d";
 import { AppIconZlt } from "../icons/app-icon-zlt";
 import { cx } from "../ui/cx";
-import { ensureComposerEsm_IB_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_IB_Init } from "../composer/composer-esm-inits";
 ensureDropdownMenuInit();
 ensureDropdownMenuPopoverInit();
 ensureComposerEsm_IB_Init();

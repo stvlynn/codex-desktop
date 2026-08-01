@@ -13,13 +13,13 @@ import {
   chatgptThreadDerivedAtomBP as appInitialBP,
   createAppScopeQueryAtom as appInitialAvt,
   writingBlocksControllerAtom as appInitialCI,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_TI_Init as appInitialTI,
   ensureComposerEsm_XP_Init as appInitialXP,
   ensureComposerEsm_cP_Init as appInitialCP,
   ensureComposerEsm_udt_Init as appInitialUdt,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { reactCompilerRuntime as _appInitialIvt } from "../../boundaries/react-cjs-runtime";
 import { setConversationBooleanFlag as AppInitialP } from "../../conversation/set-conversation-boolean-flag";
 import { patchConversationMessage as appInitialQP } from "../../conversation/patch-conversation-message";

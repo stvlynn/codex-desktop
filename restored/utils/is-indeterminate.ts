@@ -5,3 +5,6 @@
 export function isIndeterminate(value: unknown): value is "indeterminate" {
   return value === "indeterminate";
 }
+
+// --- split/export lane aliases ---
+export { isIndeterminate as IsIndeterminate };

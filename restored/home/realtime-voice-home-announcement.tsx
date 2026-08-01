@@ -8,7 +8,7 @@ import { useIntl } from "../i18n/use-intl";
 import { CloseIcon } from "../icons/close-icon";
 import { OnboardingBanner } from "../onboarding/onboarding-banner";
 import { useAppScope } from "../runtime/app-scope-runtime";
-import { useAppScopeValue } from "../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../composer/composer-appscope-atoms";
 import { appScopeAtom } from "../runtime/app-scope-runtime";
 import {
   createRealtimeVoiceStartHandler,

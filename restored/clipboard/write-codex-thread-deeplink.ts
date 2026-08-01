@@ -7,3 +7,6 @@ import { writeClipboardContents } from "./write-clipboard-contents.ts";
 export function writeCodexThreadDeeplink(threadId: string | null | undefined): void {
   if (threadId) void writeClipboardContents(`codex://threads/${threadId}`);
 }
+
+// --- split/export lane aliases ---
+export { writeCodexThreadDeeplink as WriteCodexThreadDeeplink };

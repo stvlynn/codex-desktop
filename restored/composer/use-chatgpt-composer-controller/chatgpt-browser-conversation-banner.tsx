@@ -13,8 +13,8 @@ import {
   useAppScopeAtomValue as appInitialIT,
   useAppScopeStore as appInitialFT,
   useAppScopeValue as appInitialRT,
-} from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_J0_Init as _appInitialJ0 } from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_J0_Init as _appInitialJ0 } from "../../composer/composer-esm-inits";
 import {
   react,
   reactCompilerRuntime,

@@ -2,7 +2,7 @@
 // Turn-sources footnote popover for ChatGPT browser conversation rows.
 
 import { AppLogoFromHref as AppInitialBL } from "../../apps/app-logo-from-href";
-import { useAppScopeAtomValue as appInitialIT } from "../../boundaries/composer-appscope-atoms";
+import { useAppScopeAtomValue as appInitialIT } from "../../composer/composer-appscope-atoms";
 import {
   react,
   reactCompilerRuntime,

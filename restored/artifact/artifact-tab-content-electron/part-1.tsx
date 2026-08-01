@@ -40,7 +40,7 @@ import {
   ensureComposerEsm_S8_Init,
   ensureComposerEsm_Tft_Init,
   ensureComposerEsm_Z8_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import {
   react,
@@ -145,7 +145,7 @@ const NotebookPreviewOpenActions: any = undefined;
 const AppInitialCN: any = undefined;
 /** Unresolved companion (missing-export:ui/deferred-ui-dh.tsx) */
 const deferredUiDH: any = undefined;
-/** Unresolved companion (jsx-collision:ensureComposerEsm_DN_Init@boundaries/composer-esm-inits.ts) */
+/** Unresolved companion (jsx-collision:ensureComposerEsm_DN_Init@composer/composer-esm-inits.ts) */
 const AppInitialDN: any = undefined;
 /** Unresolved companion (jsx-collision:ensureThreadFindStoreInit@thread/thread-find-atoms.ts) */
 const AppInitialGH: any = undefined;
@@ -159,7 +159,7 @@ const ZoomPercentMenuControl: any = undefined;
 const deferredUiHX: any = undefined;
 /** Unresolved companion (jsx-collision:pickPreferredOpenTarget@files/pick-preferred-open-target.ts) */
 const AppInitialIH: any = undefined;
-/** Unresolved companion (jsx-collision:ensureComposerEsm_NH_Init@boundaries/composer-esm-inits.ts) */
+/** Unresolved companion (jsx-collision:ensureComposerEsm_NH_Init@composer/composer-esm-inits.ts) */
 const AppInitialNH: any = undefined;
 /** Unresolved companion (missing-export:navigation/data-app-action-review-file-expanded-2.ts) */
 const dataAppActionReviewFileExpanded: any = undefined;

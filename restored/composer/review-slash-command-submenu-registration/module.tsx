@@ -13,7 +13,7 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CODEX_REVIEW_TARGET_SELECTED_TYPE } from "../../analytics/codex-review-target-selected-type";
 import { logProductEvent } from "../../analytics/log-product-event";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Utt_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_A0_Init } from "../../conversation/conversation-page-esm-inits";
 import { reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -49,7 +49,7 @@ import { ensurePersonalizationK0Init, ensureSettingsGlyphI0Init } from "../../ut
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 
 const ensureUseGitRepoLiveQueryInit: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_AG_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_AG_Init@composer/composer-esm-inits.ts) */
 const AppInitialAG: any = undefined;
 /** Wave FY unresolved companion (missing-export:conversation/local-thread2.ts) */
 const localThread2: any = undefined;

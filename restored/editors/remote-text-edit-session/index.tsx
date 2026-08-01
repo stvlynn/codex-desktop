@@ -3,7 +3,7 @@
 // Soft-deferred host replaced; NOT app-initial extractFn / promote / producer barrel.
 // Residual companion stubs: 6 (verified 13/19).
 
-import { ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { jsxRuntime as getJsxRuntime, react } from "../../boundaries/react-cjs-runtime";
 import { WorkbookD, workbookF, workbookG, workbookH, workbookM, workbookP, workbookUnderscore, workbookV } from "../../workbook/editor-compat";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";

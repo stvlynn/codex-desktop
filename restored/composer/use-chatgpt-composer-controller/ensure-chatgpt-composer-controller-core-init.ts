@@ -10,7 +10,7 @@ import {
   ensureComposerEsm_ML_Init as appInitialML,
   ensureComposerEsm_U__Init as AppInitialU,
   ensureComposerEsm_XP_Init as appInitialXP,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   reactCompilerRuntime as appInitialIvt,

@@ -9,7 +9,7 @@ import {
 import {
   chatgptConversationServerIdAtom as appInitialFP,
   writingBlocksControllerAtom as appInitialCI,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import { useChatgptComposerControllerHelper248 } from "./chatgpt-moderation-disclaimers";
 import { useChatgptComposerControllerHelper255 } from "./chatgpt-assistant-message-content";
 import { useChatgptComposerControllerHelper284 } from "./chatgpt-subagent-activity-panel";

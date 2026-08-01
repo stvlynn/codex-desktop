@@ -19,8 +19,8 @@ import { logProductEvent } from "../../analytics/log-product-event";
 import { ensureChatgptSiteSuffixesInit } from "../../appgen/chatgpt-site-suffixes";
 import { queueAutomationRun } from "../../automation/queue-automation-run";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { createAppScopeQueryAtom } from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Wdt_Init, ensureComposerEsm_Wlt_Init } from "../../boundaries/composer-esm-inits";
+import { createAppScopeQueryAtom } from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Wdt_Init, ensureComposerEsm_Wlt_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
 import { useAtomPair } from "../../boundaries/persisted-atom";
 import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
@@ -143,7 +143,7 @@ const AppInitialF: any = undefined;
 const AppInitialF3: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:useThreadHandoffDisabledReason@conversation/use-thread-handoff-disabled-reason.ts) */
 const AppInitialFg: any = undefined;
-/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_FZ_Init@boundaries/composer-esm-inits.ts) */
+/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_FZ_Init@composer/composer-esm-inits.ts) */
 const AppInitialFZ: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:isUsageRateLimitBlocked@usage/is-usage-rate-limit-blocked.ts) */
 const AppInitialGb: any = undefined;
@@ -157,7 +157,7 @@ const AppInitialHb: any = undefined;
 const Queued: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:defaultViewFromTarget@dom/default-view-from-target.ts) */
 const AppInitialHv: any = undefined;
-/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_IB_Init@boundaries/composer-esm-inits.ts) */
+/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_IB_Init@composer/composer-esm-inits.ts) */
 const AppInitialIB: any = undefined;
 /** Wave GA unresolved companion (missing-export:navigation/pending-pasted-text-attachments.ts) */
 const pendingPastedTextAttachments: any = undefined;
@@ -173,7 +173,7 @@ const RealtimeVoiceHostId: any = undefined;
 const AppInitialJg: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:buildRateLimitUsageSnapshot@account/build-rate-limit-usage-snapshot.ts) */
 const AppInitialKb: any = undefined;
-/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_Kg_Init@boundaries/composer-esm-inits.ts) */
+/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_Kg_Init@composer/composer-esm-inits.ts) */
 const AppInitialKg: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:deferredConversationLJ@conversation/deferred-conversation-lj.ts) */
 const AppInitialLJ: any = undefined;
@@ -263,7 +263,7 @@ const deferredProjectsYx: any = undefined;
 const chatProcessRegister: any = undefined;
 /** Wave GA unresolved companion (missing-export:ui/deferred-zd.tsx) */
 const DeferredZd: any = undefined;
-/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_ZE_Init@boundaries/composer-esm-inits.ts) */
+/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_ZE_Init@composer/composer-esm-inits.ts) */
 const AppInitialZE: any = undefined;
 function alpha(apex, brook, cliff) {
   let dusk = falcon.useDeferredValue(apex),

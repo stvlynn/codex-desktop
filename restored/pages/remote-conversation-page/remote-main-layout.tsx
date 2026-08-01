@@ -3,7 +3,7 @@
 
 import { useState, type ReactElement } from "react";
 
-import { useAppScopeValue } from "../../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../../composer/composer-appscope-atoms";
 import { deferredConversationHJ } from "../../conversation/deferred-conversation-hj";
 import { withComposerSuggestionPlacement } from "../../composer/with-composer-suggestion-placement";
 import { useRouteParams } from "../../hooks/use-route-params";

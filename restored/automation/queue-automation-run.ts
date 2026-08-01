@@ -26,3 +26,6 @@ export function queueAutomationRun<T extends { stepIds: string[] }>(
     hasUnseenTerminalState: false,
   };
 }
+
+// --- split/export lane aliases ---
+export { queueAutomationRun as QueueAutomationRun };

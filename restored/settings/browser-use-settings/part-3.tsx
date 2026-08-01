@@ -39,7 +39,7 @@ import {
   ensureComposerEsm_Tft_Init,
   ensureComposerEsm_Utt_Init,
   ensureComposerEsm_Wlt_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   react,
   reactCompilerRuntime,

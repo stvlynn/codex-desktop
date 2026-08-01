@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Entity side-panel tab open + async launch dialog state (Helper91–92).
 
-import { ensureComposerEsm_UL_Init as AppInitialUL } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_UL_Init as AppInitialUL } from "../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   react as appInitialLvt,

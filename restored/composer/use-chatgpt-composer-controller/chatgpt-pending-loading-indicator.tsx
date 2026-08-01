@@ -8,7 +8,7 @@ import {
 import { ChatMessageContent } from "../../chat/chat-message-content";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit } from "../../i18n/use-intl";
-import { ensureComposerEsm_Sd_Init as ensureComposerDisclaimerInit } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Sd_Init as ensureComposerDisclaimerInit } from "../../composer/composer-esm-inits";
 import {
   rolldownRuntimeN,
   rolldownRuntimeS,

@@ -6,7 +6,7 @@ import {
   ensureComposerEsm_Tft_Init as appInitialTft,
   ensureComposerEsm_UL_Init as AppInitialUL,
   ensureComposerEsm_oL_Init as AppInitialOL,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { jsxRuntime as appInitialJvt, reactCompilerRuntime as appInitialIvt } from "../../boundaries/react-cjs-runtime";
 import { rolldownRuntimeN } from "../../runtime/rolldown-runtime";
 

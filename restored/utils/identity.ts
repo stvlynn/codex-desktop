@@ -5,3 +5,6 @@
 export function identity<T>(value: T): T {
   return value;
 }
+
+// --- split/export lane aliases ---
+export { identity as Identity };

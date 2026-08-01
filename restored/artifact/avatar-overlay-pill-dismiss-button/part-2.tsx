@@ -6,7 +6,7 @@
 // Careful split 2/5
 /* split-lane-import-depth:1 */
 
-import { ensureComposerEsm_Rst_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Rst_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Ist_Init } from "../../conversation/conversation-page-esm-inits";
 import { reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { dictationErrorMessages } from "../../composer/dictation-error-messages";

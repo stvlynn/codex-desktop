@@ -15,7 +15,7 @@ import {
   chatgptConversationBranchAtom as _appInitialRP,
   chatgptConversationQueryAtomKP as _AppInitialKP,
   useAppScopeValue as appInitialRT,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import {
   react,
   reactCompilerRuntime,

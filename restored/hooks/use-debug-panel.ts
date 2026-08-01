@@ -8,7 +8,7 @@ import {
   appScopeAtom,
   createScopedSignal,
 } from "../runtime/app-scope-runtime";
-import { useAppScopeValue } from "../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../composer/composer-appscope-atoms";
 import { CodexBuildEnvironment } from "../env/codex-build-environment";
 import { getBuildFlavor } from "../desktop/get-build-flavor";
 import {

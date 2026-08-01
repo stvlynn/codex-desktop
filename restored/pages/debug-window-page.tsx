@@ -4,7 +4,7 @@
 // Companion imports rewritten via IMPORT_MAP + app-initial exportSources (17/17).
 
 import { isBusinessPlan } from "../account/plan-type-helpers";
-import { ensureComposerEsm_K1_Init, ensureComposerEsm_P5_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_K1_Init, ensureComposerEsm_P5_Init } from "../composer/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { Navigate } from "../boundaries/react-router-navigation";
 import { DebugModal, ensureDebugModalInit } from "../desktop/debug-modal";

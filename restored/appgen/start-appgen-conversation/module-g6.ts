@@ -10,8 +10,8 @@ import { CodexAutomationCapabilityOrigin } from "../../analytics/codex-automatio
 import { CodexAutomationFailureReason } from "../../analytics/codex-automation-failure-reason";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { localeMessagesAtom } from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_E4_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { localeMessagesAtom } from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_E4_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { ensurePluginMentionPromptInit } from "../../browser/browser-use-helpers";

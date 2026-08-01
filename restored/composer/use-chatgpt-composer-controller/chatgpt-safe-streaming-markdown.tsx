@@ -1,8 +1,8 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // SafeStreamingMarkdown wrapper with host egress + directive defaults.
 
-import { useAppScopeValue as appInitialRT } from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_J0_Init as appInitialJ0 } from "../../boundaries/composer-esm-inits";
+import { useAppScopeValue as appInitialRT } from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_J0_Init as appInitialJ0 } from "../../composer/composer-esm-inits";
 import { codexDirectiveMarkedExtensions as appInitialQF } from "../../markdown/codex-directive-marked-extensions";
 import { SafeStreamingMarkdown as appInitialIN } from "../../markdown/safe-streaming-markdown";
 import { useChatgptComposerControllerHelper31 } from "./chatgpt-browser-host-context";

@@ -2,7 +2,7 @@
 // Live-query wrapper for git `config-value` lookups.
 // Stage 3: xA/SA→git-config-value-query; I3→mergeGitLiveQueryOptions; I_t→useAppScopeAtomValue.
 
-import { useAppScopeAtomValue } from "../boundaries/composer-appscope-atoms";
+import { useAppScopeAtomValue } from "../composer/composer-appscope-atoms";
 import {
   ensureGitConfigValueQueryInit,
   gitConfigValueFromTargetAtom,

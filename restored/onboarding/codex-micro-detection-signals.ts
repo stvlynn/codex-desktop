@@ -5,7 +5,7 @@
 import {
   createPersistedScopeSignal,
   ensurePersistedScopeSignalInit,
-} from "../boundaries/turn-sources-runtime";
+} from "../conversation/turn-sources-runtime";
 ensurePersistedScopeSignalInit();
 
 /** Bundle `b9o` / export `Kw` — whether a micro device was ever detected. */

@@ -25,3 +25,6 @@ export function coerceLocalFilesystemPath(value: string | null | undefined): str
   const normalized = toForwardSlashes(trimmed);
   return isAbsolutePath(normalized) ? normalized : null;
 }
+
+// --- split/export lane aliases ---
+export { coerceLocalFilesystemPath as CoerceLocalFilesystemPath };

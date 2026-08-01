@@ -20,7 +20,7 @@ import {
   ensurePersistedAtomInit,
   useAtomPair,
 } from "../boundaries/persisted-atom";
-import { useTurnSourcesReducedMotion } from "../boundaries/turn-sources-runtime";
+import { useTurnSourcesReducedMotion } from "../conversation/turn-sources-runtime";
 import { cx } from "../ui/cx";
 ensurePersistedAtomInit();
 const CORNER_CLASS: Record<string, string> = {

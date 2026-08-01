@@ -3,7 +3,7 @@
 
 import type { ReactElement } from "react";
 
-import { useAppScopeValue } from "../../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../../composer/composer-appscope-atoms";
 import { Navigate } from "../../boundaries/react-router-navigation";
 import { deferredConversationHJ } from "../../conversation/deferred-conversation-hj";
 import { useHotkeyWindowDetailLayout } from "../../hooks/use-hotkey-window-detail-layout";

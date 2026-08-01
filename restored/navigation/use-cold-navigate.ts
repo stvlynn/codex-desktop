@@ -50,3 +50,6 @@ export function useColdNavigate(): (input: unknown) => void {
     }
   };
 }
+
+// --- missing-relative-export aliases ---
+export { useColdNavigate as UseColdNavigate };

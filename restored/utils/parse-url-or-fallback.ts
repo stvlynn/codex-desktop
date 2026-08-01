@@ -23,3 +23,6 @@ export function parseUrlOrFallback(e: unknown, t: unknown) {
   let n = peers.Drs.safeParse(e.url);
   return n.success ? n.data : t;
 }
+
+// --- missing-relative-export aliases ---
+export { parseUrlOrFallback as ParseUrlOrFallback };

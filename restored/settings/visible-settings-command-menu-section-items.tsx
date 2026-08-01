@@ -22,7 +22,7 @@ import {
   ensureComposerEsm_Qtt_Init,
   ensureComposerEsm_Utt_Init,
   ensureComposerEsm_tlt_Init,
-} from "../boundaries/composer-esm-inits";
+} from "../composer/composer-esm-inits";
 import { useFeatureGateEnabled } from "../feature-gates/use-feature-gate-enabled";
 import {
   ensureUseVisibleSettingsSectionsInit,

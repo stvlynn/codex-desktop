@@ -17,7 +17,7 @@ import { AppInstallProgressDialog } from "../../apps/app-install-progress-dialog
 import { ArtifactPreviewZoomToFitLabel } from "../../artifact/artifact-preview-zoom-to-fit-label";
 import { decayZoomPercent } from "../../artifact/clamp-zoom-percent";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
 import { createPersistedAtom, ensurePersistedAtomInit } from "../../boundaries/persisted-atom";
 import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { WritingBlockRenderer } from "../../composer/writing-block-renderer";
@@ -87,7 +87,7 @@ const RealtimeVoiceHostId: any = undefined;
 const AppInitialJK: any = undefined;
 /** Wave GA unresolved companion (missing-export:ui/deferred-ui-lc.ts) */
 const deferredUiLC: any = undefined;
-/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_LR_Init@boundaries/composer-esm-inits.ts) */
+/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_LR_Init@composer/composer-esm-inits.ts) */
 const AppInitialLR: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:resolvePluginMarketplaceDirectRoute@plugins/plugin-marketplace-route.ts) */
 const AppInitialLz: any = undefined;

@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Banner UI for accepting / rejecting a ChatGPT → Codex handoff suggestion.
 
-import { ensureComposerEsm_I__Init as ensureComposerIInit } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_I__Init as ensureComposerIInit } from "../../composer/composer-esm-inits";
 import {
   jsxRuntime,
   reactCompilerRuntime,

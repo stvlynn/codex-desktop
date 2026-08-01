@@ -4,7 +4,7 @@
 
 import type { ReactElement } from "react";
 import { MemoizedFormattedMessage } from "../i18n/memoized-formatted-message";
-import { useAppScopeValue } from "../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../composer/composer-appscope-atoms";
 import { useRouteParams } from "../hooks/use-route-params";
 import { EmptyState } from "../skills/skills-page-helpers";
 import {

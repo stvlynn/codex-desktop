@@ -8,7 +8,7 @@
 // Late methods attached via attachWorkbookControllerLateMethods (part-24).
 import { attachWorkbookControllerLateMethods } from "./part-24";
 
-import { ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { ensurePersistedAtomInit } from "../../boundaries/persisted-atom";
 import { react } from "../../boundaries/react-cjs-runtime";
 import {

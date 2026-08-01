@@ -16,7 +16,7 @@ import { ShellLayoutMetricsContext } from "../../app-shell/shell-layout-metrics-
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { decayZoomPercent } from "../../artifact/clamp-zoom-percent";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_FH_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wlt_Init as EnsureComposerEsm_Wlt_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_FH_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wlt_Init as EnsureComposerEsm_Wlt_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
 import { cloneTypedArray } from "../../boundaries/lodash-clone-deep-guts";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
@@ -96,7 +96,7 @@ const AppInitialM5: any = undefined;
 const AppInitialO: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:ensureTrafficLightInsetsInit@boundaries/quick-chat-window-facades.tsx) */
 const AppInitialOZ: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_P5_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_P5_Init@composer/composer-esm-inits.ts) */
 const AppInitialP5: any = undefined;
 /** Wave FZ unresolved companion (missing-export:clipboard/write-clipboard-contents.ts) */
 const writeClipboardContents: any = undefined;

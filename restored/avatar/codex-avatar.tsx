@@ -15,7 +15,7 @@ import {
   getIconPixelSize,
 } from "../ui/icon-pixel-size";
 import { cx } from "../ui/cx";
-import { useTurnSourcesReducedMotion } from "../boundaries/turn-sources-runtime";
+import { useTurnSourcesReducedMotion } from "../conversation/turn-sources-runtime";
 ensureIconPixelSizeInit();
 
 // Filenames match the co-located webview asset chunk URLs.

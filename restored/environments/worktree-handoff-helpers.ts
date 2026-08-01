@@ -32,3 +32,6 @@ export function clearSuccessfulWorktreeOperation<
 >(operation: T): T | null {
   return operation?.status === "success" ? null : (operation ?? null);
 }
+
+// --- split/export lane aliases ---
+export { resolveWorktreeHandoffDirection as ResolveWorktreeHandoffDirection };

@@ -17,8 +17,8 @@ import { CodexRemoteSshConnectionAction } from "../../analytics/codex-remote-ssh
 import { AppQueryClientProvider } from "../../app/app-query-client-provider";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationFlagsAtom, chatgptConversationServerIdAtom, chatgptConversationTitleAtom } from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_BI_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_RV_Init as EnsureComposerEsm_RV_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_ZI_Init } from "../../boundaries/composer-esm-inits";
+import { chatgptConversationFlagsAtom, chatgptConversationServerIdAtom, chatgptConversationTitleAtom } from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_BI_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_RV_Init as EnsureComposerEsm_RV_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_ZI_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_Mx_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -66,7 +66,7 @@ const AppInitialAx: any = undefined;
 const AppInitialBx: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:resolveCodexCompanionById@pets/resolve-codex-companion-by-id.ts) */
 const AppInitialDr: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:chatgptConversationStatusAtom@boundaries/composer-appscope-atoms.ts) */
+/** Wave FZ unresolved companion (jsx-collision:chatgptConversationStatusAtom@composer/composer-appscope-atoms.ts) */
 const AppInitialGP: any = undefined;
 /** Wave FZ unresolved companion (missing-export:boundaries/quick-chat-window-facades.tsx) */
 const useQuickChatConversationFilter: any = undefined;

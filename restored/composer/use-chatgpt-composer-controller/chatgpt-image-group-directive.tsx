@@ -11,7 +11,7 @@ import {
   chatgptConversationServerIdAtom as appInitialFP,
   useAppScopeAtomValue as appInitialIT,
   writingBlocksControllerAtom as appInitialCI,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_Dc_Init as appInitialDc,
   ensureComposerEsm_Ec_Init as appInitialEc,
@@ -19,7 +19,7 @@ import {
   ensureComposerEsm_TI_Init as appInitialTI,
   ensureComposerEsm_udt_Init as appInitialUdt,
   ensureComposerEsm_XP_Init as appInitialXP,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   react,
   reactCompilerRuntime,

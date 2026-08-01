@@ -17,7 +17,7 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { clampZoomPercent } from "../../artifact/clamp-zoom-percent";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wdt_Init, ensureComposerEsm_Wlt_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wdt_Init, ensureComposerEsm_Wlt_Init } from "../../composer/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { Navigate, useLocation, useMatch, useNavigate } from "../../boundaries/react-router-navigation";
 import { SUPPORTED_NODE_PLATFORMS } from "../../config/supported-node-platforms";
@@ -76,7 +76,7 @@ const AppInitialCO: any = undefined;
 const deferredUiEnt: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:deferredUiFC@ui/deferred-ui-fc.ts) */
 const AppInitialFC: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_FZ_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_FZ_Init@composer/composer-esm-inits.ts) */
 const AppInitialFZ: any = undefined;
 /** Wave FZ unresolved companion (missing-export:voice/set-account-voice-and-invalidate-catalog.ts) */
 const setAccountVoiceAndInvalidateCatalog: any = undefined;

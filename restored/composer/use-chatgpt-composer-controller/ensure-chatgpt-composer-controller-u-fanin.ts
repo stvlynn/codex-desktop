@@ -6,7 +6,7 @@ import {
   ensureAppScopeHostInit as appInitialMT,
   ensureAppScopeInit as appInitialIft,
 } from "../../runtime/app-scope-runtime";
-import { chatgptConversationFlagsAtom as _appInitialLP } from "../../boundaries/composer-appscope-atoms";
+import { chatgptConversationFlagsAtom as _appInitialLP } from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_AG_Init as appInitialAG,
   ensureComposerEsm_a8_Init as AppInitialA8,
@@ -53,7 +53,7 @@ import {
   ensureComposerEsm_XP_Init as appInitialXP,
   ensureComposerEsm_YL_Init as appInitialYL,
   ensureComposerEsm_Ytt_Init as appInitialYtt,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   react as appInitialLvt,

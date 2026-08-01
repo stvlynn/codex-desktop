@@ -11,8 +11,8 @@ import { ensureAppScopeHostInit } from "../runtime/app-scope-runtime";
 import {
   useAppScopeValue,
   type BindableAtom,
-} from "../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_M0_Init } from "../boundaries/composer-esm-inits";
+} from "../composer/composer-appscope-atoms";
+import { ensureComposerEsm_M0_Init } from "../composer/composer-esm-inits";
 import {
   ensureConversationPageEsm_A0_Init,
   ensureConversationPageEsm_B0_Init,

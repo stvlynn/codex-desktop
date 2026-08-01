@@ -2,7 +2,7 @@
 // Settings search scoring, document loading, and search-index enrichment.
 
 import { useEffect, useState } from "react";
-import { useAppScopeAtomValue } from "../../boundaries/composer-appscope-atoms";
+import { useAppScopeAtomValue } from "../../composer/composer-appscope-atoms";
 import { codexMicroDeviceNameMessages } from "../../devices/codex-micro-device-name-messages";
 import { DEFAULT_LOCALE } from "../../i18n/default-locale";
 import { displayLanguageName } from "../../i18n/display-language-name";

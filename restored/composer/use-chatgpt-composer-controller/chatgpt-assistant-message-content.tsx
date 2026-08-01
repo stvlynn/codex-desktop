@@ -6,12 +6,12 @@ import {
   chatgptConversationServerIdAtom as appInitialFP,
   useAppScopeAtomValue as appInitialIT,
   useAppScopeValue as appInitialRT,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_BI_Init as _appInitialBI,
   ensureComposerEsm_J0_Init as appInitialJ0,
   ensureComposerEsm_cP_Init as appInitialCP,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   react,
   reactCompilerRuntime,

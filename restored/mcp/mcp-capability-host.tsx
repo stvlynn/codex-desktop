@@ -4,7 +4,7 @@
 import {
   createAppScopeQueryAtom,
   type BindableAtom,
-} from "../boundaries/composer-appscope-atoms";
+} from "../composer/composer-appscope-atoms";
 
 export type McpCapabilityCatalogEntry = {
   entrypoint: string;

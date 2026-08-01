@@ -9,11 +9,11 @@ import {
 import {
   createAppScopeSelectAtom as appInitialTvt,
   writingBlocksControllerAtom as appInitialCI,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_TI_Init as appInitialTI,
   ensureComposerEsm_pdt_Init as appInitialPdt,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { QueryStaleTimes as appInitialFdt } from "../../config/query-stale-times";
 import { rolldownRuntimeN } from "../../runtime/rolldown-runtime";
 

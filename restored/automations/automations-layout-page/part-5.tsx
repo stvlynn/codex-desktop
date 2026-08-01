@@ -40,7 +40,7 @@ import {
 import {
   useAppScopeValue,
   useStepsProseAtom,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm__8_Init,
   ensureComposerEsm_AG_Init,
@@ -61,7 +61,7 @@ import {
   ensureComposerEsm_udt_Init,
   ensureComposerEsm_wct_Init,
   ensureComposerEsm_YS_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   ensureConversationPageEsm_GZ_Init,
   ensureConversationPageEsm_pvt_Init,

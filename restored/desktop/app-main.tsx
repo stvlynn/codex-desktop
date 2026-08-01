@@ -9,7 +9,7 @@ import {
 } from "react";
 import { createRoot, type Root } from "react-dom/client";
 import { disposeArtifactPreviewSpans } from "../artifact/artifact-preview-span-tracker";
-import { ensureComposerEsm_udt_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_udt_Init } from "../composer/composer-esm-inits";
 import { ensurePersistedAtomStoreInit } from "../boundaries/persisted-atom-store";
 import { jsxRuntime, react } from "../boundaries/react-cjs-runtime";
 import { bindMcpServerElicitation } from "../conversation/mcp-server-elicitation";

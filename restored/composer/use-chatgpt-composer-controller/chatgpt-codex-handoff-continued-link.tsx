@@ -4,7 +4,7 @@
 import {
   useAppScopeAtomValue as appInitialIT,
   useStepsProseAtom as appInitialL7,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import { ChatMessageContent as appInitialQd } from "../../chat/chat-message-content";
 import { INLINE_MENTION_GROUP_CLASS as AppInitialXL } from "../../composer/inline-mention-class-names";
 import { InlineMention as appInitialQL } from "../../composer/inline-mention";

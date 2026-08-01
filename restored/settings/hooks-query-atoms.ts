@@ -2,7 +2,7 @@
 // Wave ED — invalidateHooksQueries via extractFn(internal `W4i`) / export `kz`.
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import type { BindableAtom } from "../boundaries/composer-appscope-atoms";
+import type { BindableAtom } from "../composer/composer-appscope-atoms";
 function placeholder(brand: string): BindableAtom {
   return {
     __brand: brand,

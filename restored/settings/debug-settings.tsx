@@ -6,7 +6,7 @@
 // R_t→useAppScopeValue; L_t→useAppScope; Fft→appScopeAtom; Gft/Jft i18n.
 
 import { appScopeAtom, useAppScope } from "../runtime/app-scope-runtime";
-import { useAppScopeValue } from "../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../composer/composer-appscope-atoms";
 import { MemoizedFormattedMessage } from "../i18n/memoized-formatted-message";
 import { useIntl } from "../i18n/use-intl";
 import { Switch } from "../ui/switch";

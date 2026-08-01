@@ -2,7 +2,7 @@
 // Composer-controller aux init D (Value359 deps + _D overlay materialization).
 
 import { ensureAppScopeHostInit as appInitialMT } from "../../runtime/app-scope-runtime";
-import { chatgptConversationFlagsAtom as _appInitialLP } from "../../boundaries/composer-appscope-atoms";
+import { chatgptConversationFlagsAtom as _appInitialLP } from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_BF_Init as appInitialBF,
   ensureComposerEsm_DP_Init as appInitialDP,
@@ -10,7 +10,7 @@ import {
   ensureComposerEsm_MF_Init as AppInitialMF,
   ensureComposerEsm_Tft_Init as appInitialTft,
   ensureComposerEsm_XP_Init as appInitialXP,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   reactCompilerRuntime as appInitialIvt,

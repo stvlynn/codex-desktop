@@ -2,7 +2,7 @@
 // Live-query wrapper for git `submodule-paths` via shared method-query factory.
 // Stage 3: aW/oW/I3/L3→git-method-query-atoms; I_t→useAppScopeAtomValue; fdt→QueryStaleTimes.
 
-import { useAppScopeAtomValue } from "../boundaries/composer-appscope-atoms";
+import { useAppScopeAtomValue } from "../composer/composer-appscope-atoms";
 import { QueryStaleTimes } from "../config/query-stale-times";
 import {
   createGitMethodQueryAtoms,

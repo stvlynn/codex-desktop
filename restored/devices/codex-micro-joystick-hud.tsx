@@ -5,7 +5,7 @@
 // Wave FZ-support — PascalCase invalid JSX tags: renamedId→CodexMicroJoystickHudHelper1.
 
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_Tft_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_MT_Init, ensureComposerEsm_Tft_Init } from "../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { ensureCodexMicroAnalogActionTitleInit, getAnalogActionTitle } from "../desktop/codex-micro-analog-action-title";
 import { ensureCodexMicroJoystickFeedbackInit, resetJoystickFeedback } from "../desktop/codex-micro-joystick-feedback";

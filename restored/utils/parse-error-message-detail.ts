@@ -27,3 +27,6 @@ export function parseErrorMessageDetail(e: unknown) {
     return null;
   }
 }
+
+// --- missing-relative-export aliases ---
+export { parseErrorMessageDetail as ParseErrorMessageDetail };

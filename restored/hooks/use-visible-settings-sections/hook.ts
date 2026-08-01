@@ -21,11 +21,11 @@ import {
 import {
   chatgptConversationsGateAtom,
   useAppScopeValue,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_B7_Init,
   ensureComposerEsm_tlt_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { bindBrowserUseExternal } from "../../desktop/browser-use-external";
 import { useComputerUseWindowsGate } from "../../devices/use-computer-use-windows-gate";
 import { APPS_CONNECTORS_FEATURE_GATE_ID } from "../../feature-gates/feature-gate-ids";

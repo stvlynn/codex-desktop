@@ -12,13 +12,13 @@ import {
   chatgptThreadDerivedAtomBP as appInitialBP,
   createAppScopeQueryAtom as appInitialAvt,
   writingBlocksControllerAtom as appInitialCI,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_CF_Init as appInitialCF,
   ensureComposerEsm_II_Init as appInitialII,
   ensureComposerEsm_XP_Init as appInitialXP,
   ensureComposerEsm_udt_Init as appInitialUdt,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { buildConversationTurnModels as AppInitialSF } from "../../conversation/build-conversation-turn-models";
 import { ConversationAsyncStatus as AppInitialPI } from "../../conversation/conversation-async-status";
 import { appLogger as appInitialDdt } from "../../logging/app-logger";

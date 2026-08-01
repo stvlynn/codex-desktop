@@ -3,7 +3,7 @@
 
 import { useEffect, useState, type ReactElement, type ReactNode } from "react";
 
-import { useAppScopeValue } from "../../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../../composer/composer-appscope-atoms";
 import { deferredConversationHJ } from "../../conversation/deferred-conversation-hj";
 import { deferredConversationUJ } from "../../conversation/deferred-conversation-uj";
 import { THREAD_DETAIL_LEVEL_STEPS_PROSE } from "../../conversation/thread-detail-level-ids";

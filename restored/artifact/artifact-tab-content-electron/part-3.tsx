@@ -43,7 +43,7 @@ import {
   ensureComposerEsm_S8_Init,
   ensureComposerEsm_Tft_Init,
   ensureComposerEsm_Z8_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import {
   react,

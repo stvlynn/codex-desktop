@@ -8,7 +8,7 @@ import { CodexBrowserSurfaceActionType } from "../analytics/codex-browser-surfac
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
 import { appScopeAtom, ensureAppScopeInit } from "../runtime/app-scope-runtime";
 import { ensureBrowserUseGateInit } from "../boundaries/browser-use-gate-facades";
-import { ensureComposerEsm_MT_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_MT_Init } from "../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { appServices } from "../desktop/desktop-services";
 import { LOCAL_HOST_ID } from "../hosts/local-host-id";

@@ -5,7 +5,7 @@
 import {
   createPersistedScopeSignal,
   ensurePersistedScopeSignalInit,
-} from "../boundaries/turn-sources-runtime";
+} from "../conversation/turn-sources-runtime";
 ensurePersistedScopeSignalInit();
 
 /** Bundle export `t` — Statsig / debug gate id. */

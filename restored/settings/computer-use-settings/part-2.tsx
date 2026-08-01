@@ -21,7 +21,7 @@ import { AppInstallProgressDialog } from "../../apps/app-install-progress-dialog
 import { isCustomAuthMethod } from "../../auth/is-custom-auth-method";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { ensureBrowserUseGateInit, useExternalBrowserUseGate } from "../../boundaries/browser-use-gate-facades";
-import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_MR_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { Navigate, useMatch, useNavigate } from "../../boundaries/react-router-navigation";

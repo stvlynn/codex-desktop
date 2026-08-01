@@ -1,6 +1,8 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
 // Materialized via extractFn(internal `yql`) / export `Fa`.
 
+import { REMOTE_CODEX_NOT_FOUND_ERROR_CODE } from "../ui/remote-codex-not-found";
+
 export type LogHostLoginSurfaceEventPeers = {
   B5: (...args: unknown[]) => unknown;
   _ql: (...args: unknown[]) => unknown;
@@ -55,7 +57,7 @@ export function logHostLoginSurfaceEvent(
           label: o,
           message: i,
         };
-      case "remote-codex-not-found":
+      case REMOTE_CODEX_NOT_FOUND_ERROR_CODE:
         return {
           action: {
             kind: "install-codex",

@@ -56,3 +56,6 @@ export function resolveBrowserTabPanelSide(conversationId: string, focusArea: st
   if (side == null) return null;
   return side === "bottom" ? bottomId : rightId;
 }
+
+// --- missing-relative-export aliases ---
+export { resolveBrowserTabPanelSide as ResolveBrowserTabPanelSide };

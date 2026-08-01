@@ -35,7 +35,7 @@ import {
   ensureComposerEsm_P5_Init,
   ensureComposerEsm_S8_Init,
   ensureComposerEsm_Sut_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
 import {
   react,

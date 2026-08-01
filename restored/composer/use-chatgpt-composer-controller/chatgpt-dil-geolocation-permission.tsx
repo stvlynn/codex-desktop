@@ -10,7 +10,7 @@ import {
   ensureComposerEsm_GS_Init as appInitialG,
   ensureComposerEsm_YS_Init as appInitialY,
   ensureComposerEsm_udt_Init as appInitialUdt,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { MemoizedFormattedMessage as appInitialGft } from "../../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit as appInitialHft } from "../../i18n/use-intl";
 import { appLogger as appInitialDdt } from "../../logging/app-logger";

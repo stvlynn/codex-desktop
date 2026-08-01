@@ -9,7 +9,7 @@ import {
 } from "../../../runtime/app-scope-runtime";
 import {
   writingBlocksControllerAtom as appInitialCI,
-} from "../../../boundaries/composer-appscope-atoms";
+} from "../../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_FH_Init as appInitialFH,
   ensureComposerEsm_Hlt_Init as appInitialHlt,
@@ -20,7 +20,7 @@ import {
   ensureComposerEsm_Sut_Init as appInitialSut,
   ensureComposerEsm_TI_Init as appInitialTI,
   ensureComposerEsm_Tft_Init as appInitialTft,
-} from "../../../boundaries/composer-esm-inits";
+} from "../../../composer/composer-esm-inits";
 import {
   reactCompilerRuntime as appInitialIvt,
   jsxRuntime as appInitialJvt,

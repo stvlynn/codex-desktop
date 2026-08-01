@@ -6,7 +6,7 @@ import {
   chatgptConversationStatusAtom as appInitialGP,
   chatgptThreadDerivedAtomBP as appInitialBP,
   writingBlocksControllerAtom as appInitialCI,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import { chatgptMessageFallbackId as _appInitialIF } from "../../conversation/chatgpt-message-fallback-id";
 import { appLogger as appInitialDdt } from "../../logging/app-logger";
 

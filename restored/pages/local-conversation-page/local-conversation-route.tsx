@@ -4,7 +4,7 @@
 import { useEffect, useMemo, useState, type ReactElement } from "react";
 
 import { Navigate } from "../../boundaries/react-router-navigation";
-import { useAppScopeValue } from "../../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../../composer/composer-appscope-atoms";
 import { isClientNewThreadId } from "../../conversation/client-new-thread-id";
 import { localThreadConversationId } from "../../conversation/local-thread-conversation-id";
 import {

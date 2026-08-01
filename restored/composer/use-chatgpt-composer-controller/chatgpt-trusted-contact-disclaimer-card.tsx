@@ -11,8 +11,8 @@ import {
   appScopeAtom as appInitialFft,
   useAppScope as appInitialLT,
 } from "../../runtime/app-scope-runtime";
-import { writingBlocksControllerAtom as appInitialCI } from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_Llt_Init as appInitialLlt } from "../../boundaries/composer-esm-inits";
+import { writingBlocksControllerAtom as appInitialCI } from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_Llt_Init as appInitialLlt } from "../../composer/composer-esm-inits";
 import {
   react,
   reactCompilerRuntime,

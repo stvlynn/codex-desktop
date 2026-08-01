@@ -2,7 +2,7 @@
 // Bundle export `k4` / internal `U5n` — appshots-allowed derived atom for the active host.
 // IMPORT_MAP incorrectly pointed `k4` at hooksEventMessages (local name collision); usage is useAppScopeValue(k4).
 
-import type { BindableAtom } from "../boundaries/composer-appscope-atoms";
+import type { BindableAtom } from "../composer/composer-appscope-atoms";
 
 export type AppshotsHostAllowedAtomPeers = {
   /** `Ma` — createAppScopeDerivedAtom(scope, compute). */

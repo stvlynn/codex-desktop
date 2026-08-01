@@ -15,7 +15,7 @@ import {
   ensureAppScopeInit,
   useAppScope,
 } from "../../runtime/app-scope-runtime";
-import { useAppScopeValue } from "../../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_GS_Init,
   ensureComposerEsm_Hlt_Init,
@@ -27,7 +27,7 @@ import {
   ensureComposerEsm_wct_Init,
   ensureComposerEsm_Wdt_Init,
   ensureComposerEsm_YS_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   ensureConversationPageEsm_pvt_Init,
   ensureConversationPageEsm_RS_Init,

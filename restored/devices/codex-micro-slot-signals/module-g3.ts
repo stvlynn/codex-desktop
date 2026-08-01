@@ -12,7 +12,7 @@ import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-res
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { ARTIFACT_GENERATION_STAGE_IDS } from "../../artifacts/artifact-generation-ids";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_MT_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_MT_Init } from "../../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { composerToolsuggestionInstallMessages } from "../../composer/composer-toolsuggestion-install-messages";

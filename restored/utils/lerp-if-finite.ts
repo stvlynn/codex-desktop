@@ -9,3 +9,6 @@ function isFiniteNumber(value: unknown): value is number {
 export function lerpIfFinite(a: unknown, b: unknown, t: number): unknown {
   return isFiniteNumber(a) && isFiniteNumber(b) ? a + t * (b - a) : b;
 }
+
+// --- missing-relative-export aliases ---
+export { lerpIfFinite as LerpIfFinite };

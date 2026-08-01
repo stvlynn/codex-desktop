@@ -14,7 +14,7 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { useResolvedAppByIdOrDisplayName } from "../../apps/use-resolved-app-by-id-or-display-name";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Cd_Init, ensureComposerEsm_Ed_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Td_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Cd_Init, ensureComposerEsm_Ed_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Td_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { Link } from "../../boundaries/react-router-link";
 import { useLocation } from "../../boundaries/react-router-navigation";
@@ -157,7 +157,7 @@ const AppInitialLd: any = undefined;
 const AppInitialNi: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:ensureHooksQueriesInit@settings/hooks-query-atoms.ts) */
 const AppInitialOz: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_Qtt_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_Qtt_Init@composer/composer-esm-inits.ts) */
 const AppInitialQtt: any = undefined;
 /** Wave FZ unresolved companion (missing-export:utils/wave-at-gap-ensure-inits.ts) */
 const ensureEnvironmentLabelsR3Init: any = undefined;

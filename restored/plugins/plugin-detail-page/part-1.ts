@@ -20,7 +20,7 @@ import { logProductEvent } from "../../analytics/log-product-event";
 import { AppCardAdminDisabledBadge } from "../../apps/app-card-admin-disabled-badge";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
 import { useExternalBrowserUseGate } from "../../boundaries/browser-use-gate-facades";
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Wlt_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_AG_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Wlt_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_Jj_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
@@ -196,7 +196,7 @@ const AppInitialCN: any = undefined;
 const AppInitialD: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:requireRemotePluginId@plugins/require-remote-plugin-id.ts) */
 const AppInitialDK: any = undefined;
-/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_DN_Init@boundaries/composer-esm-inits.ts) */
+/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_DN_Init@composer/composer-esm-inits.ts) */
 const AppInitialDN: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:useInAppBrowserFeature@boundaries/browser-use-gate-facades.ts) */
 const AppInitialDO: any = undefined;
@@ -224,7 +224,7 @@ const AppInitialFC: any = undefined;
 const AppInitialFt: any = undefined;
 /** Wave GA unresolved companion (missing-export:plugins/plugin-scheduled-tasks.tsx) */
 const PluginScheduledTasks: any = undefined;
-/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_FZ_Init@boundaries/composer-esm-inits.ts) */
+/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_FZ_Init@composer/composer-esm-inits.ts) */
 const AppInitialFZ: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:ensureComputerUseGateInit@boundaries/browser-use-gate-facades.ts) */
 const AppInitialGK: any = undefined;
@@ -340,7 +340,7 @@ const IntlProvider: any = undefined;
 const deferredConversationWH3: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:useComputerUseWindowsGate@devices/use-computer-use-windows-gate.ts) */
 const AppInitialWK: any = undefined;
-/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_Wl_Init@boundaries/composer-esm-inits.ts) */
+/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_Wl_Init@composer/composer-esm-inits.ts) */
 const AppInitialWl: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:analogDirectionFromJoystick@desktop/codex-micro-joystick-geometry.ts) */
 const AppInitialWw: any = undefined;

@@ -17,7 +17,7 @@ import {
   appScopeAtom,
   createScopedSignal,
 } from "../../runtime/app-scope-runtime";
-import { useAppScopeValue } from "../../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../../composer/composer-appscope-atoms";
 import { esmInit } from "../../runtime/rolldown-runtime";
 import { closePopoverOnUnmount } from "./summary-panel-display-helpers";
 import { resolveSummaryDisplayMode } from "./summary-panel-display-helpers";

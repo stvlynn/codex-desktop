@@ -6,7 +6,7 @@ import {
   ensureAppScopeHostInit as appInitialMT,
   ensureAppScopeInit as appInitialIft,
 } from "../../runtime/app-scope-runtime";
-import { createAppScopeDerivedAtom as appInitialZT } from "../../boundaries/composer-appscope-atoms";
+import { createAppScopeDerivedAtom as appInitialZT } from "../../composer/composer-appscope-atoms";
 import { rolldownRuntimeN } from "../../runtime/rolldown-runtime";
 import {
   chatgptConversationUpdatesSubscriptionAtom,

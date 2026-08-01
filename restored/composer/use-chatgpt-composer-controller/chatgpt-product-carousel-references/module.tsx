@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Product carousel / attribution / calculator / webpage group (Helper114–123).
 
-import { ensureComposerEsm_oL_Init as AppInitialOL } from "../../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_oL_Init as AppInitialOL } from "../../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   reactCompilerRuntime as appInitialIvt,

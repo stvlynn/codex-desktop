@@ -3,7 +3,7 @@
 
 import {
   ensureComposerEsm_oL_Init as AppInitialOL,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   react as appInitialLvt,

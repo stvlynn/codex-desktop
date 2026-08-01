@@ -118,7 +118,7 @@ import { APP_VERSION } from "../../app/app-version";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { PULL_REQUEST_FIX_AUTOMATION_PROMPT_HEADER } from "../../automations/pull-request-fix-prompt-header";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_CU_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_CU_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
@@ -257,7 +257,7 @@ const AppInitialHQ: any = undefined;
 const AppInitialI: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:remoteConnectionStatusMessages@thread/remote-connection-status-messages.ts) */
 const AppInitialIa: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_IB_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_IB_Init@composer/composer-esm-inits.ts) */
 const AppInitialIB: any = undefined;
 /** Wave FZ unresolved companion (missing-export:conversation/dismiss.ts) */
 const Dismiss: any = undefined;
@@ -275,7 +275,7 @@ const AppInitialJQ: any = undefined;
 const AppInitialLj: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:ensureOpenLinkPreferenceAnalyticsInit@boundaries/browser-use-plugin-facades.ts) */
 const AppInitialMtt: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_NH_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_NH_Init@composer/composer-esm-inits.ts) */
 const AppInitialNH: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:deferredAccountNi@account/deferred-account-ni.ts) */
 const AppInitialNi: any = undefined;
@@ -337,7 +337,7 @@ const AppInitialXQ: any = undefined;
 const AppInitialYC: any = undefined;
 /** Wave FZ unresolved companion (missing-export:remote-control/pair-remote-control-client.ts) */
 const pairRemoteControlClient: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_Ytt_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_Ytt_Init@composer/composer-esm-inits.ts) */
 const AppInitialYtt: any = undefined;
 /** Wave FZ unresolved companion (missing-export:onboarding/read-login-route-query-snapshot.ts) */
 const readLoginRouteQuerySnapshotStub: any = undefined;

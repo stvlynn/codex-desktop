@@ -14,7 +14,7 @@ import {
   type Ref,
 } from "react";
 
-import { useAppScopeAtomValue } from "../../boundaries/composer-appscope-atoms";
+import { useAppScopeAtomValue } from "../../composer/composer-appscope-atoms";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { localThreadPath } from "../../conversation/local-thread-path";
 import { useEventCallback } from "../../hooks/use-event-callback";

@@ -4,7 +4,7 @@
 import {
   createAppScopeQueryAtom,
   type BindableAtom,
-} from "../boundaries/composer-appscope-atoms";
+} from "../composer/composer-appscope-atoms";
 
 /** Open boundary placeholder — active find-match cursor for a thread. */
 export const conversationFindActiveMatchAtom: BindableAtom<{

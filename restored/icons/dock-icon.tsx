@@ -34,3 +34,6 @@ export function DockIcon(props: DockIconProps): ReactElement {
 }
 
 export function ensureDockIconInit(): void {}
+
+// --- split/export lane aliases ---
+export { ensureDockIconInit as EnsureDockIconInit };

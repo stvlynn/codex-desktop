@@ -10,7 +10,7 @@ import { resolveSafeMarkdownHref as _appInitialIL } from "../../markdown/resolve
 import {
   ensureComposerEsm_LL_Init as appInitialLL,
   ensureComposerEsm_cL_Init as appInitialCL,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   react as appInitialLvt,

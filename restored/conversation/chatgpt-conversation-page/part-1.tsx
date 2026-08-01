@@ -23,8 +23,8 @@ import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-as
 import { defaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationBranchAtom, chatgptConversationFlagsAtom, chatgptConversationLoadQueryAtom, chatgptConversationPreviewAtom, chatgptConversationServerIdAtom, chatgptConversationsGateAtom, chatgptConversationStatusAtom, chatgptConversationTitleAtom, chatgptThreadDerivedAtomBP, useStepsProseAtom, writingBlocksControllerAtom } from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_BF_Init, ensureComposerEsm_BI_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_II_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KF_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MF_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_Ytt_Init, ensureComposerEsm_ZI_Init } from "../../boundaries/composer-esm-inits";
+import { chatgptConversationBranchAtom, chatgptConversationFlagsAtom, chatgptConversationLoadQueryAtom, chatgptConversationPreviewAtom, chatgptConversationServerIdAtom, chatgptConversationsGateAtom, chatgptConversationStatusAtom, chatgptConversationTitleAtom, chatgptThreadDerivedAtomBP, useStepsProseAtom, writingBlocksControllerAtom } from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_AG_Init, ensureComposerEsm_BF_Init, ensureComposerEsm_BI_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_II_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KF_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MF_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_Ytt_Init, ensureComposerEsm_ZI_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Jj_Init, ensureConversationPageEsm_Lo_Init, ensureConversationPageEsm_Mx_Init, ensureConversationPageEsm_Qa_Init, ensureConversationPageEsm_SP_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
 import { isIterateeCall } from "../../boundaries/lodash-clone-deep-guts";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
@@ -161,13 +161,13 @@ const branchConversationAtMessage: any = undefined;
 const AppInitialBN: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:gpuTearingDebugSettingsAtom@settings/gpu-tearing-debug-settings.ts) */
 const AppInitialD: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_DF_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_DF_Init@composer/composer-esm-inits.ts) */
 const AppInitialDF: any = undefined;
 /** Wave FZ unresolved companion (missing-export:utils/wave-at-gap-ensure-inits.ts) */
 const ensureSelectWorkspaceDhInit: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:useInAppBrowserFeature@boundaries/browser-use-gate-facades.ts) */
 const AppInitialDO: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_DP_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_DP_Init@composer/composer-esm-inits.ts) */
 const AppInitialDP: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:resolveCodexCompanionById@pets/resolve-codex-companion-by-id.ts) */
 const AppInitialDr: any = undefined;
@@ -197,15 +197,15 @@ const AppInitialGS: any = undefined;
 const AppInitialIh: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:getProjectGizmoId@conversation/get-project-gizmo-id.ts) */
 const AppInitialIN: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:chatgptConversationMetaAtom@boundaries/composer-appscope-atoms.ts) */
+/** Wave FZ unresolved companion (jsx-collision:chatgptConversationMetaAtom@composer/composer-appscope-atoms.ts) */
 const AppInitialIP: any = undefined;
 /** Wave FZ unresolved companion (missing-export:conversation/realtime-voice-host-id.tsx) */
 const RealtimeVoiceHostId: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_JN_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_JN_Init@composer/composer-esm-inits.ts) */
 const AppInitialJN: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:ensureKeyboardShortcutsJZInit@utils/wave-as-gap-ensure-inits.ts) */
 const AppInitialJZ: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:chatgptConversationQueryAtomKP@boundaries/composer-appscope-atoms.ts) */
+/** Wave FZ unresolved companion (jsx-collision:chatgptConversationQueryAtomKP@composer/composer-appscope-atoms.ts) */
 const AppInitialKP: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:useChronicleSettingsSection@settings/use-chronicle-settings-section.ts) */
 const AppInitialL: any = undefined;
@@ -213,7 +213,7 @@ const AppInitialL: any = undefined;
 const AppInitialLh: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:ensureNewThreadLmInit@utils/wave-av-gap-ensure-inits.ts) */
 const AppInitialLm: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_MF_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_MF_Init@composer/composer-esm-inits.ts) */
 const AppInitialMF: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:conversationArchiveInFlightAtom@conversation/conversation-page-family-atoms.ts) */
 const AppInitialMN: any = undefined;
@@ -231,7 +231,7 @@ const AppInitialNZ: any = undefined;
 const ensureSelectWorkspaceOhInit: any = undefined;
 /** Wave FZ unresolved companion (missing-export:files/deferred-ol.tsx) */
 const AppInitialOL: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:chatgptConversationLoadQueryAtom@boundaries/composer-appscope-atoms.ts) */
+/** Wave FZ unresolved companion (jsx-collision:chatgptConversationLoadQueryAtom@composer/composer-appscope-atoms.ts) */
 const AppInitialOP: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:conversationsSidebarMessages@chatgpt/conversations-sidebar-messages.ts) */
 const AppInitialOS: any = undefined;
@@ -267,19 +267,19 @@ const AppInitialTT: any = undefined;
 const deferredUiU: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:useRouteParams@hooks/use-route-params.ts) */
 const AppInitialU5: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_UL_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_UL_Init@composer/composer-esm-inits.ts) */
 const AppInitialUL: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:useReviewPaneSnapshotMetrics@diff/use-review-pane-snapshot-metrics.ts) */
 const AppInitialUm: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:useIsVoiceRecordingSupported@voice/use-is-voice-recording-supported.ts) */
 const AppInitialUO: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:hasChatgptServerIdAtom@boundaries/composer-appscope-atoms.ts) */
+/** Wave FZ unresolved companion (jsx-collision:hasChatgptServerIdAtom@composer/composer-appscope-atoms.ts) */
 const AppInitialUP: any = undefined;
 /** Wave FZ unresolved companion (missing-export:thread/thread-find-atoms.ts) */
 const ensureThreadFindDiffProviderInit: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:isVisuallyHiddenFromConversation@conversation/is-visually-hidden-from-conversation.ts) */
 const AppInitialVF: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:chatgptConversationPreviewAtom@boundaries/composer-appscope-atoms.ts) */
+/** Wave FZ unresolved companion (jsx-collision:chatgptConversationPreviewAtom@composer/composer-appscope-atoms.ts) */
 const AppInitialVP: any = undefined;
 /** Wave FZ unresolved companion (jsx-collision:boldFirstMarkdownSegment@markdown/bold-first-markdown-segment.ts) */
 const AppInitialW8: any = undefined;
@@ -293,9 +293,9 @@ const IntlProvider: any = undefined;
 const AppInitialWo: any = undefined;
 /** Wave FZ unresolved companion (missing-export:boundaries/quick-chat-window-facades.tsx) */
 const quickChatConversationTitleAtom: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_XF_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_XF_Init@composer/composer-esm-inits.ts) */
 const AppInitialXF: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_XP_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_XP_Init@composer/composer-esm-inits.ts) */
 const AppInitialXP: any = undefined;
 /** Wave FZ unresolved companion (missing-export:ui/deferred-ui-xt.ts) */
 const deferredUiXT: any = undefined;
@@ -307,7 +307,7 @@ const AppInitialYP: any = undefined;
 const readLoginRouteQuerySnapshot: any = undefined;
 /** Wave FZ unresolved companion (missing-export:ui/chat-process-register.ts) */
 const chatProcessRegister: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_ZE_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_ZE_Init@composer/composer-esm-inits.ts) */
 const AppInitialZE: any = undefined;
 /** Wave FZ unresolved companion (sib-missing:hooks/use-floating-window-pointer-drag.ts) */
 const useFloatingWindowPointerDragT: any = undefined;

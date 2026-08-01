@@ -7,7 +7,7 @@ import {
   appScopeAtom as appInitialFft,
   useAppScope as appInitialLT,
 } from "../../../runtime/app-scope-runtime";
-import { writingBlocksControllerAtom as appInitialCI } from "../../../boundaries/composer-appscope-atoms";
+import { writingBlocksControllerAtom as appInitialCI } from "../../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_b8_Init as appInitialB8,
   ensureComposerEsm_drt_Init as appInitialDrt,
@@ -27,7 +27,7 @@ import {
   ensureComposerEsm_udt_Init as appInitialUdt,
   ensureComposerEsm_xH_Init as appInitialXH,
   ensureComposerEsm_ZI_Init as appInitialZI,
-} from "../../../boundaries/composer-esm-inits";
+} from "../../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   react as appInitialLvt,

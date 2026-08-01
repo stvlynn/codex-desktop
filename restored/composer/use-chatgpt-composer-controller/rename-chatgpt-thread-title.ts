@@ -6,7 +6,7 @@ import {
   chatgptConversationTitleAtom,
   chatgptConversationsGateAtom,
   writingBlocksControllerAtom,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import { loadPriorConversationsForHandoff } from "../../chatgpt/load-prior-conversations-for-handoff";
 import { buildChatgptConversationMention } from "../../composer/build-chatgpt-conversation-mention";
 import { buildComposerPromptWithContext } from "../../composer/build-composer-prompt-with-context";

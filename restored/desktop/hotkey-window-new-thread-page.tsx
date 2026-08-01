@@ -5,7 +5,7 @@
 
 import { CodexBrowserProfileImportCookieStatus } from "../analytics/codex-browser-profile-import-cookie-status";
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
-import { ensureComposerEsm_MT_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_MT_Init } from "../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { ConversationDiffSourceBridge } from "../conversation/conversation-diff-source-bridge";
 import { ensureHasSeenRealtimeVoiceNuxAtomInit } from "../home/realtime-voice-nux";

@@ -5,7 +5,7 @@
 import {
   createPersistedScopeSignal,
   ensurePersistedScopeSignalInit,
-} from "../boundaries/turn-sources-runtime";
+} from "../conversation/turn-sources-runtime";
 import {
   codexMicroHasEverBeenDetected,
   codexMicroLastDetectedDeviceModel,

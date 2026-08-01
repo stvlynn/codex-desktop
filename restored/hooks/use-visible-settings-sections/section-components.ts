@@ -6,7 +6,7 @@ import {
   ensureComposerEsm_Ytt_Init,
   ensureComposerEsm_lv_Init,
   ensureComposerEsm_rK_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_f__Init } from "../../conversation/conversation-page-esm-inits";
 import { AppIconbi } from "../../icons/app-icon-bi";
 import { AppIconcv } from "../../icons/app-icon-cv";

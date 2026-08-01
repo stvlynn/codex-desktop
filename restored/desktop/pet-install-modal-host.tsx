@@ -7,7 +7,7 @@ import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result
 import { CodexPluginActionType } from "../analytics/codex-plugin-action-type-enum";
 import { AvatarMascotButton, ensureAvatarMascotButtonInit } from "../avatar/avatar-mascot-button";
 import { appScopeAtom, ensureAppScopeInit } from "../runtime/app-scope-runtime";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init } from "../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { VSCODE_EDITOR_ID } from "../config/vscode-editor-id";
 import { ensureGitRepoWatchAtomsInit } from "../hooks/git-method-query-atoms";

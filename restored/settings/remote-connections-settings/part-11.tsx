@@ -144,7 +144,7 @@ import {
   ensureComposerEsm_Sut_Init,
   ensureComposerEsm_Tft_Init,
   ensureComposerEsm_Utt_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import {
   react,

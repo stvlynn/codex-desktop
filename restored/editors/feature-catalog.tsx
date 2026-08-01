@@ -3,7 +3,7 @@
 // Soft-deferred host replaced; NOT app-initial extractFn / promote / producer barrel.
 // Residual companion stubs: 1 (verified 9/10).
 
-import { ensureComposerEsm_Tft_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Tft_Init } from "../composer/composer-esm-inits";
 import { jsxRuntime as getJsxRuntime, react } from "../boundaries/react-cjs-runtime";
 import { commonJsInit, esmInit } from "../runtime/rolldown-runtime";
 import { RemoteTextEditSessionLowerC, RemoteTextEditSessionLowerL, RemoteTextEditSessionLowerO, RemoteTextEditSessionLowerS } from "./remote-text-edit-session/index";

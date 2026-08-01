@@ -13,8 +13,8 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { useStepsProseAtom } from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init } from "../../boundaries/composer-esm-inits";
+import { useStepsProseAtom } from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init } from "../../composer/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { useLocation, useNavigate } from "../../boundaries/react-router-navigation";
 import { deferredConversationN } from "../../conversation/deferred-conversation-n";
@@ -99,9 +99,9 @@ const AppInitialF3: any = undefined;
 const branch: any = undefined;
 /** Wave FY unresolved companion (missing-export:ui/deferred-ui-h222.tsx) */
 const DeferredUiH222: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_IB_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_IB_Init@composer/composer-esm-inits.ts) */
 const AppInitialIB: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_Kg_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_Kg_Init@composer/composer-esm-inits.ts) */
 const AppInitialKg: any = undefined;
 /** Wave FY unresolved companion (jsx-collision:hero@worktree/hero.ts) */
 const AppInitialKm: any = undefined;

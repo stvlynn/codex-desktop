@@ -4,7 +4,7 @@
 // Residual companion stubs: 5 (verified 9/14).
 // Wave FZ-support — PascalCase invalid JSX tags: renamedId→PrimaryComposerAtMentionListHelper1.
 
-import { ensureComposerEsm_KM_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_KM_Init } from "../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { esmInit } from "../runtime/rolldown-runtime";
 import { AvatarCornerBadge } from "../ui/avatar-corner-badge";

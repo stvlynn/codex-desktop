@@ -7,7 +7,7 @@ import { ensureAccountPlanQueryInit } from "../account/ensure-account-plan-query
 import { appActionSidebarProjectRefSchema } from "../actions/app-action-payload-schemas";
 import { CodexBrowserSurfaceActionType } from "../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
-import { ensureComposerEsm_MT_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_MT_Init } from "../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { USER_CONFIG_PATH } from "../config/user-config-path";
 import { fileExtensionFromPath } from "../files/file-extension-from-path";

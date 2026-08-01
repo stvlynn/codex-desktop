@@ -13,8 +13,8 @@ import {
 import {
   createAppScopeSelectAtom,
   type BindableAtom,
-} from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_Sdt_Init } from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_Sdt_Init } from "../../composer/composer-esm-inits";
 import {
   callMcpTool,
   createPersistedScopeSignal,
@@ -24,7 +24,7 @@ import {
   parseResourceActivitiesMeta,
   useTurnSourcesReducedMotion,
   type McpToolResult,
-} from "../../boundaries/turn-sources-runtime";
+} from "../../conversation/turn-sources-runtime";
 import { QueryStaleTimes } from "../../config/query-stale-times";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { cx } from "../../ui/cx";

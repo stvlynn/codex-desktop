@@ -21,3 +21,7 @@ export function TrendingTopicsIcon(props: TrendingTopicsIconProps): ReactElement
 }
 
 export function ensureTrendingTopicsIconInit(): void {}
+
+// --- missing-relative-export aliases ---
+export { TrendingTopicsIcon as trendingTopicsN };
+export { ensureTrendingTopicsIconInit as trendingTopicsT };

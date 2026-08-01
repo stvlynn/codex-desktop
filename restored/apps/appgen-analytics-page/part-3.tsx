@@ -30,7 +30,7 @@ import {
 import {
   createAppScopeSelectAtom,
   useAppScopeAtomValue,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm__U_Init,
   ensureComposerEsm_K1_Init,
@@ -40,7 +40,7 @@ import {
   ensureComposerEsm_Sut_Init,
   ensureComposerEsm_Tft_Init,
   ensureComposerEsm_tlt_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   ensureConversationPageEsm_Act_Init,
   ensureConversationPageEsm_B0_Init,

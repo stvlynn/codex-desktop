@@ -2,7 +2,7 @@
 // Thin AppScope query wrapper for a host's home directory path.
 // Stage 3: I_t→useAppScopeAtomValue; Q4→homeDirectoryQueryAtom; e3 init; Ivt dropped.
 
-import { useAppScopeAtomValue } from "../boundaries/composer-appscope-atoms";
+import { useAppScopeAtomValue } from "../composer/composer-appscope-atoms";
 import {
   ensureHomeDirectoryQueriesInit,
   homeDirectoryQueryAtom,

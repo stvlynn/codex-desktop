@@ -9,7 +9,7 @@ import {
   chatgptConversationQueryAtomKP,
   useAppScopeAtomValue,
   useStepsProseAtom,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import { rewriteThreadUrlPlaceholder } from "../../composer/rewrite-thread-url-placeholder";
 import { HANDOFF_KIND } from "../../config/handoff-kind";
 import { setConversationBooleanFlag as conversationSelectedModelAtom } from "../../conversation/set-conversation-boolean-flag";

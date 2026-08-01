@@ -21,7 +21,7 @@ import { AvatarOverlayPillDismissButton, ensureAvatarOverlayPillDismissButtonUiI
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { AUTOMATION_MISSING_IN_APP_ERROR } from "../../automations/automation-missing-error";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Utt_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
 import { getPersistedAtomItem } from "../../boundaries/persisted-atom-store";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -98,7 +98,7 @@ const AppInitialM9: any = undefined;
 const setLocalStorageItem: any = undefined;
 /** Wave FY unresolved companion (jsx-collision:readSharedObjectSnapshotValue@utils/read-shared-object-snapshot-value.ts) */
 const AppInitialMot: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_MT_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_MT_Init@composer/composer-esm-inits.ts) */
 const AppInitialMT: any = undefined;
 /** Wave FY unresolved companion (missing-export:ui/deferred-ui-n2.tsx) */
 const DeferredUiN2: any = undefined;

@@ -15,7 +15,7 @@ import {
   ensureComposerEsm_Hlt_Init,
   ensureComposerEsm_Kg_Init,
   ensureComposerEsm_Tft_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { chatgpt2 } from "../../browser/chatgpt2";

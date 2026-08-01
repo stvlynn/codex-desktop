@@ -22,7 +22,7 @@ import {
   ensureComposerEsm_Qtt_Init,
   ensureComposerEsm_Tft_Init,
   ensureComposerEsm_Utt_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import {
   Navigate,
@@ -72,7 +72,7 @@ import {
 import { useCreditAutoReloadSettingsQuery } from "../use-credit-auto-reload-settings-query";
 
 const deferredUiEnt: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_FZ_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_FZ_Init@composer/composer-esm-inits.ts) */
 const AppInitialFZ: any = undefined;
 /** Wave FY unresolved companion (jsx-collision:quickChatDockPositionAtom@windows/quick-chat-atoms.ts) */
 const AppInitialIx: any = undefined;

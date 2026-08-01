@@ -8,7 +8,7 @@ import {
 import {
   chatgptConversationServerIdAtom as appInitialFP,
   writingBlocksControllerAtom as appInitialCI,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import { ToneSectionEditor as _appInitialHl } from "../../composer/tone-section-editor";
 import { GeneratedImageTabs as AppInitialTc } from "../../conversation/generated-image-tabs";
 import { appLogger as appInitialDdt } from "../../logging/app-logger";

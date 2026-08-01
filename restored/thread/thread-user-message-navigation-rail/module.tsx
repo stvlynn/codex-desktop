@@ -10,7 +10,7 @@ import { CodexSourcesSectionType } from "../../analytics/codex-sources-section-t
 import { AppLogoFromHref } from "../../apps/app-logo-from-href";
 import { ArtifactPreviewPageNav } from "../../artifact/artifact-preview-page-nav";
 import { hypotDistance } from "../../artifact/hypot-distance";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_JL_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Rst_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Ytt_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_JL_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Rst_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Ytt_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime, reactDom } from "../../boundaries/react-cjs-runtime";
 import { isAppUri } from "../../composer/app-plugin-uri";
@@ -70,7 +70,7 @@ const ensureAppgenSiteQueriesInit: any = undefined;
 const fileCsv: any = undefined;
 /** Wave FZ unresolved companion (missing-export:conversation/deferred-conversation-vj.ts) */
 const deferredConversationVJ: any = undefined;
-/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_VL_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FZ unresolved companion (jsx-collision:ensureComposerEsm_VL_Init@composer/composer-esm-inits.ts) */
 const AppInitialVL: any = undefined;
 /** Wave FZ unresolved companion (missing-export:boundaries/quick-chat-window-facades.tsx) */
 const QuickChatConversationTitleAtom: any = undefined;

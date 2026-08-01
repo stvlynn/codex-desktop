@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Host capability check for temporary workspace files used by writing-blocks.
 
-import { ensureComposerEsm_Hut_Init as chatgptHostWorkspaceApi } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Hut_Init as chatgptHostWorkspaceApi } from "../../composer/composer-esm-inits";
 
 type TemporaryWorkspaceFilesApi = {
   createTemporaryFile?: unknown;

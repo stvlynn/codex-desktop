@@ -14,7 +14,7 @@ import { CodexBrowserProfileImportCookieStatus } from "../../analytics/codex-bro
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { useLocation, useNavigate } from "../../boundaries/react-router-navigation";
 import { resolveCodexCloudAccess } from "../../cloud/resolve-codex-cloud-access";
@@ -86,7 +86,7 @@ const AppInitialF: any = undefined;
 const AppInitialF3: any = undefined;
 /** Wave FY unresolved companion (missing-export:projects/codex-cloud-access.tsx) */
 const CodexCloudAccess: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_IB_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_IB_Init@composer/composer-esm-inits.ts) */
 const AppInitialIB: any = undefined;
 /** Wave FY unresolved companion (missing-export:ui/ide-context.tsx) */
 const IdeContext: any = undefined;

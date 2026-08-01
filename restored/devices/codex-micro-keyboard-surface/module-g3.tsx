@@ -10,7 +10,7 @@ import { resolveReferralProgram } from "../../account/resolve-referral-program";
 import { CodexAutomationCapabilityOrigin } from "../../analytics/codex-automation-capability-origin";
 import { CodexPluginDirectoryEntrypoint } from "../../analytics/codex-plugin-directory-entrypoint";
 import { CodexReferralInviteModalBackendErrorType } from "../../analytics/codex-referral-invite-modal-backend-error-type";
-import { ensureComposerEsm_CU_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Kg_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_CU_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Kg_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { chatgpt2 } from "../../browser/chatgpt2";

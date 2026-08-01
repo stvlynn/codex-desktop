@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
 // Materialized via extractFn(internal `J2s`) / export `Nh`.
 
-import { createAppScopeQueryAtom } from "../boundaries/composer-appscope-atoms";
+import { createAppScopeQueryAtom } from "../composer/composer-appscope-atoms";
 
 /**
  * Bundle export `Nh` / internal `J2s` — `Ta(Q, false)` i.e.

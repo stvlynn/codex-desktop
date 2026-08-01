@@ -7,7 +7,7 @@ import {
   ensureAppScopeHostInit,
   ensureAppScopeInit,
 } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_P5_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_P5_Init } from "../../composer/composer-esm-inits";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { ensureSkillsPageHelpersInit } from "../../skills/skills-page-helpers";
 import { OnboardingShell } from "./onboarding-shell";

@@ -5,3 +5,6 @@
 export function isString(value: unknown): value is string {
   return typeof value === "string";
 }
+
+// --- missing-relative-export aliases ---
+export { isString as IsString };

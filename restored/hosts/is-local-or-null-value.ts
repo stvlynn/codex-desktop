@@ -42,3 +42,6 @@ export function isLocalOrNullValue() {
     J6i = peers.c(), peers.Qt(), peers.Ho(), peers.Au(), Y6i = peers.r(peers.o(), 1), peers.$u(), peers.ih(), peers.EM(), peers.Lqr(), peers.I6i(), peers.Kb(), peers.gT(), peers.U_(), peers.Uf(), peers.z6i();
   });
 }
+
+// --- split/export lane aliases ---
+export { isLocalOrNullValue as IsLocalOrNullValue };

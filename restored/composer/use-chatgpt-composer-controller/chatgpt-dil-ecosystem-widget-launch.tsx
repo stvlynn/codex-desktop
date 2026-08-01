@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Apps SDK ecosystem widget launch / MCP bridge (Helper56–63) + Mapbox token.
 
-import { ensureComposerEsm_tst_Init as appInitialTst } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_tst_Init as appInitialTst } from "../../composer/composer-esm-inits";
 import { toConnectorOrMcpTarget as appInitialAV } from "../../apps/to-connector-or-mcp-target";
 import {
   mcpCallToolResultSchema as appInitialOt,

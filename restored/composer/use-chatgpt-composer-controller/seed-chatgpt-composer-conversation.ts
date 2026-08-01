@@ -7,8 +7,8 @@ import {
   ensureAppScopeInit,
   useAppScope,
 } from "../../runtime/app-scope-runtime";
-import { appLogoCacheAtom } from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_Rj_Init as ensureComposerRjInit } from "../../boundaries/composer-esm-inits";
+import { appLogoCacheAtom } from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_Rj_Init as ensureComposerRjInit } from "../../composer/composer-esm-inits";
 import {
   react,
   reactCompilerRuntime,

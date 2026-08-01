@@ -6,11 +6,11 @@ import {
   chatgptConversationStatusAtom as appInitialGP,
   chatgptThreadDerivedAtomBP as appInitialBP,
   useAppScopeAtomValue as appInitialIT,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_Dc_Init as _appInitialDc,
   ensureComposerEsm_cP_Init as appInitialCP,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { buildSubagentActivityModel as appInitialJF } from "../../conversation/build-subagent-activity-model";
 import { isWaitingOrWorkingStatus as appInitialNF } from "../../conversation/is-waiting-or-working-status";
 import {

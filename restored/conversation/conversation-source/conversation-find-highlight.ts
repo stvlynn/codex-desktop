@@ -4,7 +4,7 @@
 // DOM highlight adapter for conversation find-in-thread matches.
 
 import * as React from "react";
-import { useAppScopeValue } from "../../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../../composer/composer-appscope-atoms";
 import { CODEX_THREAD_FIND_ACTIVE_EVENT } from "../../thread/thread-find-active-event";
 import {
   conversationFindActiveMatchAtom,

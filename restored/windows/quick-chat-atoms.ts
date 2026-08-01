@@ -4,7 +4,7 @@
 //   bms/`Rx` collapsed, CZ surface session, yms window-mode, xms has-opened.
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { createPersistedScopeSignal } from "../boundaries/turn-sources-runtime";
+import { createPersistedScopeSignal } from "../conversation/turn-sources-runtime";
 import {
   appScopeAtom,
   createScopedSignal,

@@ -9,7 +9,7 @@ import {
   useAppScopeAtomValue as appInitialIT,
   chatgptConversationServerIdAtom as appInitialFP,
   chatgptThreadDerivedAtomBP as appInitialBP,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import { flushChatgptConversation as AppInitialKS } from "../../chatgpt/flush-chatgpt-conversation";
 import { scheduleWritingBlockUpdate as AppInitialJS } from "../../chatgpt/schedule-writing-block-update";
 import { alignToneSectionIds as appInitialE7 } from "../../composer/align-tone-section-ids";

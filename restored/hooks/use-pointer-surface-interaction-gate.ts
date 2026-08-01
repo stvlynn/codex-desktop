@@ -156,3 +156,6 @@ export function usePointerSurfaceInteractionGate(e: unknown) {
   let k;
   return ((k = [h, s]), peers.V9.useEffect(O, k), enabled ? _ : undefined);
 }
+
+// Semantic export aliases (split/export lane)
+export { usePointerSurfaceInteractionGate as UsePointerSurfaceInteractionGate };

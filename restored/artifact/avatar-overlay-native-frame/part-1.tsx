@@ -11,7 +11,7 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { AUTOMATION_MISSING_IN_APP_ERROR } from "../../automations/automation-missing-error";
 import { AvatarMascotButton, ensureAvatarMascotButtonInit } from "../../avatar/avatar-mascot-button";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
 import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -70,7 +70,7 @@ const applySvg: any = undefined;
 const AppInitialGct: any = undefined;
 /** Wave GA unresolved companion (jsx-collision:getChromeGlobal@browser/get-chrome-global.ts) */
 const AppInitialHct: any = undefined;
-/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_Hlt_Init@boundaries/composer-esm-inits.ts) */
+/** Wave GA unresolved companion (jsx-collision:ensureComposerEsm_Hlt_Init@composer/composer-esm-inits.ts) */
 const AppInitialHlt: any = undefined;
 /** Wave GA unresolved companion (missing-export:conversation/user-message3.tsx) */
 const AppInitialHt: any = undefined;

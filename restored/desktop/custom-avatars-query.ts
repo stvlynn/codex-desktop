@@ -6,7 +6,7 @@ import { appScopeAtom } from "../runtime/app-scope-runtime";
 import {
   createAppScopeQueryAtom,
   createAppScopeSelectAtom,
-} from "../boundaries/composer-appscope-atoms";
+} from "../composer/composer-appscope-atoms";
 import { QueryStaleTimes } from "../config/query-stale-times";
 import { getDesktopServices } from "../desktop/desktop-services";
 

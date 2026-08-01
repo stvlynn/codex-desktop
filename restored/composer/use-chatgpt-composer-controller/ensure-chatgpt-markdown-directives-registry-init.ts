@@ -4,7 +4,7 @@
 import {
   ensureComposerEsm_KF_Init as appInitialKF,
   ensureComposerEsm_S8_Init as appInitial8,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   reactCompilerRuntime as appInitialIvt,

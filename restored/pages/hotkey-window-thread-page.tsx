@@ -7,7 +7,7 @@
 import { CodexBrowserSurfaceActionType } from "../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../analytics/codex-plugin-action-type-enum";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_S8_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_S8_Init } from "../composer/composer-esm-inits";
 import {
   useSummaryContentShift,
   useSummaryPanelDisplaySync,

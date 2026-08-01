@@ -5,8 +5,8 @@ import {
   appScopeAtom as _appInitial8,
   useAppScope as appInitialLT,
 } from "../../runtime/app-scope-runtime";
-import { localeMessagesAtom as appInitialD4 } from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_Dc_Init as _appInitialDc } from "../../boundaries/composer-esm-inits";
+import { localeMessagesAtom as appInitialD4 } from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_Dc_Init as _appInitialDc } from "../../composer/composer-esm-inits";
 import { MemoizedFormattedMessage as appInitialGft } from "../../i18n/memoized-formatted-message";
 import { useIntl as appInitialJft } from "../../i18n/use-intl";
 import { AppIconEP as appInitialEP } from "../../icons/app-icon-ep";

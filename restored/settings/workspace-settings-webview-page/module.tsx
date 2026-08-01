@@ -11,7 +11,7 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { PublicationTermsBanner } from "../../apps/publication-terms-banner";
 import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { Navigate, useLocation } from "../../boundaries/react-router-navigation";
 import { BrowserWebviewPanel } from "../../browser/browser-webview-panel";

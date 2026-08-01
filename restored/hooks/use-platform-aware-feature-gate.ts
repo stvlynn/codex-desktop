@@ -61,3 +61,6 @@ export function usePlatformAwareFeatureGate() {
     l
   );
 }
+
+// --- missing-relative-export aliases ---
+export { usePlatformAwareFeatureGate as UsePlatformAwareFeatureGate };

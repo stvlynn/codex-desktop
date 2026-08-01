@@ -1,7 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Content-reference thumbnail link card (Helper73–74).
 
-import { ensureComposerEsm_oL_Init as AppInitialOL } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_oL_Init as AppInitialOL } from "../../composer/composer-esm-inits";
 import { ThreadResourceCard as _appInitialYI } from "../../thread/thread-resource-card";
 import {
   jsxRuntime as appInitialJvt,

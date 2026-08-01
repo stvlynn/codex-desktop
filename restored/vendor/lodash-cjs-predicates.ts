@@ -78,3 +78,6 @@ export function isTypedArray(): typeof lodashIsTypedArray {
 export function keysIn(): typeof lodashKeysIn {
   return lodashKeysIn;
 }
+
+// --- split/export lane aliases ---
+export { keysIn as KeysIn };

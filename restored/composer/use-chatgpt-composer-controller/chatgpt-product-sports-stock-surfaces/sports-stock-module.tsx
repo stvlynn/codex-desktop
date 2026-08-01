@@ -9,7 +9,7 @@ import {
   ensureComposerEsm_wct_Init as appInitialWct,
   ensureComposerEsm_I__Init as _appInitialI,
   ensureComposerEsm_MI_Init as _appInitialMI,
-} from "../../../boundaries/composer-esm-inits";
+} from "../../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   react as appInitialLvt,

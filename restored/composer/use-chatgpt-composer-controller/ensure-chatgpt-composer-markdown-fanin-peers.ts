@@ -32,7 +32,7 @@ import {
   ensureComposerEsm_Wlt_Init as appInitialWlt,
   ensureComposerEsm_xI_Init as AppInitialXI,
   ensureComposerEsm_XP_Init as appInitialXP,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   react as appInitialLvt,

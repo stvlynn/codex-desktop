@@ -5,7 +5,7 @@
 
 import { CodexBrowserProfileImportCookieStatus } from "../analytics/codex-browser-profile-import-cookie-status";
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Tft_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Tft_Init } from "../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { Navigate } from "../boundaries/react-router-navigation";
 import { CodexHomeAnnouncements, ensureCodexHomeAnnouncementsInit } from "../home/codex-home-announcements";

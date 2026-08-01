@@ -151,3 +151,11 @@ export function ensureImportSettingsEsInit(): void {}
 
 /** Bundle export `Gct`. */
 export function ensureImportSettingsGctInit(): void {}
+
+// --- split/export lane aliases ---
+export { ensurePullRequestMediaBDInit as EnsurePullRequestMediaBDInit };
+export { ensureSettingsGlyphBnInit as EnsureSettingsGlyphBnInit };
+
+// --- missing-relative-export aliases ---
+export { ensureKeyboardShortcutsGtInit as EnsureKeyboardShortcutsGtInit };
+export { ensurePersonalizationCInit as EnsurePersonalizationCInit };

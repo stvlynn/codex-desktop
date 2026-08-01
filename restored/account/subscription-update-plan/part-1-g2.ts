@@ -5,7 +5,7 @@
 // Group 2/2
 /* split-lane-import-depth:1 */
 
-import { ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { usePointerSurfaceInteractionGate as UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";

@@ -177,3 +177,6 @@ export function useChromeAndCodeThemeSync(e: unknown) {
     theme: C.theme,
   };
 }
+
+// --- missing-relative-export aliases ---
+export { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync };

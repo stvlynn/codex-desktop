@@ -21,7 +21,7 @@ import { readPrefersReducedMotionAtom } from "../../motion/use-prefers-reduced-m
 import {
   useAppScopeAtomValue,
   useAppScopeValue,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import { esmInit } from "../../runtime/rolldown-runtime";
 import { summaryPanelDisplayAtom } from "./summary-panel-display-atom";
 import {

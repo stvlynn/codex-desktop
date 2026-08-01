@@ -23,3 +23,6 @@ export function areVisualizationFeatureGatesEnabled(): boolean {
     checkFeatureGate(VISUALIZATION_SECONDARY_FEATURE_GATE_ID)
   );
 }
+
+// --- split/export lane aliases ---
+export { areVisualizationFeatureGatesEnabled as AreVisualizationFeatureGatesEnabled };

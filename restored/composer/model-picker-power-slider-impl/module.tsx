@@ -7,7 +7,7 @@
 /* split-lane-import-depth:1 */
 
 import { AppQueryClientProvider } from "../../app/app-query-client-provider";
-import { EnsureComposerEsm_Ul_Init } from "../../boundaries/composer-esm-inits";
+import { EnsureComposerEsm_Ul_Init } from "../../composer/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { AssistantMessageActions } from "../../conversation/assistant-message-actions";
 import { FormattedDate } from "../../i18n/formatted-date";
@@ -21,9 +21,9 @@ import { replaceInMemoryStorageEntries } from "../../utils/replace-in-memory-sto
 /** split companion stub */
 const WebGLRenderingContext: any = undefined;
 
-/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_Fl_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_Fl_Init@composer/composer-esm-inits.ts) */
 const AppInitialFl: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_Ll_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_Ll_Init@composer/composer-esm-inits.ts) */
 const AppInitialLl: any = undefined;
 function bravo(field, grain) {
   let haven = Math.sin((field + 1) * 12.9898 + grain * 78.233) * 43758.5453;

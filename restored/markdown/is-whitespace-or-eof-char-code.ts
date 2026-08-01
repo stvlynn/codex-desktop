@@ -5,3 +5,6 @@
 export function isWhitespaceOrEofCharCode(code: number): boolean {
   return code === -2 || code === -1 || code === 32;
 }
+
+// --- split/export lane aliases ---
+export { isWhitespaceOrEofCharCode as IsWhitespaceOrEofCharCode };

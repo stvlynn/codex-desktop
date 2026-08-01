@@ -9,7 +9,7 @@
 import { CodexConversationalOnboardingExecutionAction } from "../../analytics/codex-conversational-onboarding-execution-action";
 import { CodexOnboardingWizardAction } from "../../analytics/codex-onboarding-wizard-action";
 import { CodexReferralInviteModalAction } from "../../analytics/codex-referral-invite-modal-action";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Ist_Init } from "../../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { buildCodexDesktopRequestHeaders } from "../../desktop/codex-desktop-request-headers";

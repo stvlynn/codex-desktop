@@ -117,7 +117,7 @@ const zephyr15: any = undefined;
 
 // Careful split 11/19
 
-import { ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { ensurePersistedAtomInit } from "../../boundaries/persisted-atom";
 import { react } from "../../boundaries/react-cjs-runtime";
 import {

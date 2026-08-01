@@ -3,7 +3,7 @@
 // Soft-deferred host replaced; NOT app-initial extractFn / promote / producer barrel.
 // Residual companion stubs: 7 (verified 22/28).
 
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Wlt_Init } from "../boundaries/composer-esm-inits";
+import { ensureComposerEsm_AG_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Wlt_Init } from "../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { CONVERSATIONAL_ONBOARDING_COMPLETED_BY_ACCOUNT_ID_KEY } from "../home/onboarding-storage-keys";
 import { usePointerSurfaceInteractionGate } from "../hooks/use-pointer-surface-interaction-gate";

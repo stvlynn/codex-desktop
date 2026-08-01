@@ -6,7 +6,7 @@ import {
   ensureComposerEsm_II_Init as appInitialII,
   ensureComposerEsm_MI_Init as appInitialMI,
   ensureComposerEsm_odt_Init as appInitialOdt,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { isChatgptMessageNode as AppInitialNI } from "../../conversation/is-chatgpt-message-node";
 import { ThreadResourceCard as _appInitialYI } from "../../thread/thread-resource-card";
 import { rolldownRuntimeN } from "../../runtime/rolldown-runtime";

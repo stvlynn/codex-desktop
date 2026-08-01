@@ -44,3 +44,6 @@ export function AppIconkh({ ...props }: AppIconkhProps): ReactElement {
 
 /** Bundle `u4s` / export `Ah` — Rolldown ESM init that defined `l4s` / `kh`. */
 export function ensureAppIconKhInit(): void {}
+
+// --- split/export lane aliases ---
+export { ensureAppIconKhInit as EnsureAppIconKhInit };

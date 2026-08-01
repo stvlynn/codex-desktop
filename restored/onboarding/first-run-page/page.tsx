@@ -16,7 +16,7 @@ import {
   ensureComposerEsm_P5_Init,
   ensureComposerEsm_Sdt_Init,
   ensureComposerEsm_Sut_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { DesktopPersistenceKeys } from "../../desktop/persistence-keys";
 import { ensureAuthProviderInit } from "../../hooks/use-auth";

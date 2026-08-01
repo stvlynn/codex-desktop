@@ -10,12 +10,12 @@ import {
   ensureAppScopeInit,
   useAppScope,
 } from "../../runtime/app-scope-runtime";
-import { useAppScopeValue } from "../../boundaries/composer-appscope-atoms";
+import { useAppScopeValue } from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_K9_Init,
   ensureComposerEsm_P5_Init,
   ensureComposerEsm_Utt_Init,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   Navigate,
   useLocation,

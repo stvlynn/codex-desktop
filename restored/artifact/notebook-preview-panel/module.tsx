@@ -8,7 +8,7 @@
 
 import { ensureAccountPlanQueryInit } from "../../account/ensure-account-plan-query-init";
 import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
-import { ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Ist_Init } from "../../conversation/conversation-page-esm-inits";
 import { reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { chatgptProjectQueryKey } from "../../conversation/chatgpt-conversation-query-keys";
@@ -35,7 +35,7 @@ const deferredNavigationFT: any = undefined;
 const AppInitialJa: any = undefined;
 /** Wave FY unresolved companion (jsx-collision:renameProjectMessages@sidebar/rename-project-messages.ts) */
 const AppInitialMa: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_NH_Init@boundaries/composer-esm-inits.ts) */
+/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_NH_Init@composer/composer-esm-inits.ts) */
 const AppInitialNH: any = undefined;
 /** Wave FY unresolved companion (missing-export:ui/intl-provider.tsx) */
 const IntlProvider: any = undefined;

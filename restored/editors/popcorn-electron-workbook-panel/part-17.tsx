@@ -11,7 +11,7 @@ const Icon: any = undefined;
 // Wave5d — FZ repair from clean staging/FZ; JSX PascalCase + careful split.
 // Careful split 17/19
 
-import { ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { ensurePersistedAtomInit } from "../../boundaries/persisted-atom";
 import { react } from "../../boundaries/react-cjs-runtime";
 import {

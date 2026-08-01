@@ -2,8 +2,8 @@
 // Start a ChatGPT sidebar conversation stream and track cancel/completion.
 
 import { isLocalChatgptId } from "../../chatgpt/is-local-chatgpt-id";
-import { writingBlocksControllerAtom } from "../../boundaries/composer-appscope-atoms";
-import { chatgptConversationServerIdAtom } from "../../boundaries/composer-appscope-atoms";
+import { writingBlocksControllerAtom } from "../../composer/composer-appscope-atoms";
+import { chatgptConversationServerIdAtom } from "../../composer/composer-appscope-atoms";
 import { cancelConversationStream } from "../../conversation/cancel-conversation-stream";
 import { markConversationError } from "../../conversation/mark-conversation-error";
 import { markConversationIdle } from "../../conversation/mark-conversation-idle";

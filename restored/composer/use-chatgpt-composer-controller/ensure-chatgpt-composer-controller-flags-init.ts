@@ -4,7 +4,7 @@
 import {
   ensureComposerEsm_CF_Init as appInitialCF,
   ensureComposerEsm_XF_Init as AppInitialXF,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { rolldownRuntimeN } from "../../runtime/rolldown-runtime";
 
 const slot11 = rolldownRuntimeN(() => {});

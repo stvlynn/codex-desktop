@@ -12,7 +12,7 @@ import {
   ensureComposerEsm_b8_Init as appInitialB8,
   ensureComposerEsm_fV_Init as appInitialFV,
   ensureComposerEsm_hB_Init as AppInitialHB,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   react as appInitialLvt,

@@ -7,7 +7,7 @@ import {
   ensureAppScopeInit,
   useAppScope,
 } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_XP_Init as ensureComposerXpInit } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_XP_Init as ensureComposerXpInit } from "../../composer/composer-esm-inits";
 import {
   react,
   reactCompilerRuntime,

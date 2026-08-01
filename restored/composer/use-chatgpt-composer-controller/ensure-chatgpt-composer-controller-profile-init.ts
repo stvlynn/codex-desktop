@@ -6,7 +6,7 @@ import {
   ensureComposerEsm_nP_Init as ensureComposerNpInit,
   ensureComposerEsm_TI_Init as ensureComposerTiInit,
   ensureComposerEsm_XP_Init as ensureComposerXpInit,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { rolldownRuntimeN } from "../../runtime/rolldown-runtime";
 
 /** Ensure profile-related composer ESM inits are materialized. */

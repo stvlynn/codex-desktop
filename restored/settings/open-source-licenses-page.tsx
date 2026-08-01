@@ -8,7 +8,7 @@ import { appScopeAtom } from "../runtime/app-scope-runtime";
 import {
   createAppScopeQueryAtom,
   useAppScopeValue,
-} from "../boundaries/composer-appscope-atoms";
+} from "../composer/composer-appscope-atoms";
 import {
   useLocation,
   useNavigate,

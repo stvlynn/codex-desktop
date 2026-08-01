@@ -5,8 +5,8 @@ import { collectUniqueAppgenApps as AppInitialO5 } from "../../apps/collect-uniq
 import {
   chatgptConversationFlagsAtom as appInitialCP,
   useAppScopeAtomValue as appInitialIT,
-} from "../../boundaries/composer-appscope-atoms";
-import { ensureComposerEsm_umt_Init as appInitialUmt } from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-appscope-atoms";
+import { ensureComposerEsm_umt_Init as appInitialUmt } from "../../composer/composer-esm-inits";
 import {
   react,
   reactCompilerRuntime,

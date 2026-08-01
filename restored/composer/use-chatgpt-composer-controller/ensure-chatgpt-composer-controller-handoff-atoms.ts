@@ -12,7 +12,7 @@ import {
   chatgptThreadDerivedAtomBP,
   createAppScopeDerivedAtom,
   createAppScopeQueryAtom,
-} from "../../boundaries/composer-appscope-atoms";
+} from "../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_B7_Init as ensureComposerB7Init,
   ensureComposerEsm_BF_Init as ensureComposerBfInit,
@@ -29,7 +29,7 @@ import {
   ensureComposerEsm_Utt_Init as ensureComposerUttInit,
   ensureComposerEsm_xJ_Init as ensureComposerXjInit,
   ensureComposerEsm_XP_Init as ensureComposerXpInit,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import { HANDOFF_KIND } from "../../config/handoff-kind";
 import { chatgptMessageFallbackId } from "../../conversation/chatgpt-message-fallback-id";
 import { walkChatgptMessageTree } from "../../conversation/walk-chatgpt-message-tree";

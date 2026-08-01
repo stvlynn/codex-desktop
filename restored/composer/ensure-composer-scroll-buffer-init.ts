@@ -5,7 +5,7 @@ import { ensureAppShellAtomsInit } from "../navigation/app-shell-atoms";
 import {
   ensureComposerEsm_Qct_Init,
   ensureComposerEsm_odt_Init,
-} from "../boundaries/composer-esm-inits";
+} from "../composer/composer-esm-inits";
 import { ensureCloudApiClientInit } from "../settings/cloud-api-client";
 
 /** Fan-in ensure-init shim (bundle body only calls mapped ensure*Init peers). */

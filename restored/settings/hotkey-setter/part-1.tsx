@@ -5,7 +5,7 @@
 // AST split 1/2
 /* split-lane-import-depth:1 */
 
-import { ensureComposerEsm_FZ_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Tft_Init } from "../../boundaries/composer-esm-inits";
+import { ensureComposerEsm_FZ_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
 import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { invokeDesktopRpc } from "../../desktop/invoke-desktop-rpc";
 import { useHostPlatformModifierSymbol } from "../../hotkeys/use-host-platform-modifier-symbol";

@@ -6,7 +6,7 @@ import {
   ensureComposerEsm_jP_Init as appInitialJP,
   ensureComposerEsm_M0_Init as appInitialM0,
   ensureComposerEsm_XP_Init as appInitialXP,
-} from "../../boundaries/composer-esm-inits";
+} from "../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   react as appInitialLvt,
