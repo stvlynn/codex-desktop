@@ -1879,3 +1879,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries --allow-flat`
 - openBoundary remains while mega still large
 - Next: Binding913/1229 chart ensure cluster; rot; remaining ≥50 inventory; closeout when thin
+
+## Wave 154 (Stage-3 chart-layout ensures + formula error/epoch bags)
+
+- Boundary 10525 → 9650 (Δ -875)
+- Peeled: chart-layout-ensures Binding840…1229 + qCe + $Ce; text-frame-insets _workbookJ; formula-date-epoch Binding1880/G8e/rot/nst/Uct/Uut/Ydt
+- Skipped: HXe/KXe empty stubs; wirePresentationRecipesFromBoundary
+- Leave-behind: thin interleaved formula stubs (c8e/g8e/wot/x7e); no ≥20 nests remain (largest `_C` ~18)
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries --allow-flat`
+- openBoundary remains while mega still ~9.6k (not thin enough for safe closeout)
+- Next: remaining ≥10–18 nests (`_C`/`Binding675`/`fEe`/`wwe`/`Cme`/`eht`); wirePresentationRecipes; closeout when thin
