@@ -27,3 +27,5 @@ export {
   compareDateTime,
   datedifYdUnits,
 } from "./date-construct-impl";
+
+export { A9e, workbookHelper936 } from "./date-eomonth-impl";

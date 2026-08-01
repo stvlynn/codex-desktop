@@ -79,3 +79,5 @@ export {
   M1e,
   c0e,
 } from "./formula-radix-impl";
+
+export { x1e, S1e, C1e, w1e } from "./formula-bessel-impl";

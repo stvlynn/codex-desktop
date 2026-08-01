@@ -8,9 +8,7 @@ void pcbH;
 
 export function hljsTokenStyle(pcbIn930: any) {
   let pcbBind5931 = new Set(
-    pcbIn930.map((item) =>
-      item.startsWith("hljs-") ? item.slice(5) : item,
-    ),
+    pcbIn930.map((item) => (item.startsWith("hljs-") ? item.slice(5) : item)),
   );
   return setHasAny(pcbBind5931, ["comment", "quote"])
     ? {
@@ -21,12 +19,7 @@ export function hljsTokenStyle(pcbIn930: any) {
       ? {
           color: pcbH.theme.red,
         }
-      : setHasAny(pcbBind5931, [
-            "keyword",
-            "doctag",
-            "formula",
-            "operator",
-          ])
+      : setHasAny(pcbBind5931, ["keyword", "doctag", "formula", "operator"])
         ? {
             color: pcbH.theme.pink,
           }

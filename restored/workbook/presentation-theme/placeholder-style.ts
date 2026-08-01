@@ -156,8 +156,8 @@ export function placeholdersMatch(
     : overlap.some(isFurniturePlaceholderType)
       ? true
       : left.placeholderIndex === undefined ||
-          right.placeholderIndex === undefined ||
-          left.placeholderIndex === right.placeholderIndex;
+        right.placeholderIndex === undefined ||
+        left.placeholderIndex === right.placeholderIndex;
 }
 
 /** Legacy normalize-placeholder-label — canonicalize a label for matching. */

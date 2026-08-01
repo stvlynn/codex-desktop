@@ -2,16 +2,9 @@
 // Stage-3 wave-108: formula-complex barrel.
 
 export { wireFormulaComplexBoundaryHooks, fcxH } from "./boundary-hooks";
-export {
-  complexReal,
-  complexImag,
-  $4
-} from "./formula-complex-impl";
+export { complexReal, complexImag, $4 } from "./formula-complex-impl";
 
-export {
-  formatComplexPair,
-  complexDivide
-} from "./complex-divide-impl";
+export { formatComplexPair, complexDivide } from "./complex-divide-impl";
 
 export {
   H1e,
@@ -37,3 +30,5 @@ export {
   complexSinhAlt,
   complexSqrt,
 } from "./complex-trig-impl";
+
+export { i0e, a0e } from "./complex-sum-reciprocal-impl";

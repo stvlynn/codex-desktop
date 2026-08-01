@@ -3,3 +3,5 @@
 
 export { wireFormulaA1AddressBoundaryHooks, faaH } from "./boundary-hooks";
 export { formatA1Address, Mst } from "./formula-a1-address-impl";
+
+export { workbookHelper375 } from "./parse-a1-cell-impl";

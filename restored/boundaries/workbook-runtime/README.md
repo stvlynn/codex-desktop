@@ -1740,3 +1740,12 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - openBoundary remains while mega still large
 - Next: remaining ≥15 / Nrt after coupon ensure / helper603 after Nwe Map ESM / i0e after complex coerce peel
 
+## Wave 136 (Stage-3 preferred nests + ≥12 mid/dead batch)
+
+- Boundary 24669 → 24017 (Δ -652)
+- Peeled: granola-log 338 nest; helper375; schema-meta 378/Xve/Jve/Yve+Binding820–823; presentation-code-block lAe…hAe (dAe); stub-context 825/gYe/HLe; embedded-font-codec WJe/GJe/VJe/HJe/UJe; theme AXe/jXe; date A9e/936; complex i0e/a0e; bessel x1e…w1e; financial Hit…Hat; dead kxe/541/Bxe/542/Uxe/Wxe/nke/_workbookK
+- Skipped: helper603 (Nwe Map ESM); helper464 (_A); 446 (Binding874); 642 (Binding1273); wirePresentationRecipes; Nrt/jrt/Mrt; vYe/_workbookS
+- Leave-behind: helper603 needs Nwe Map ESM; vYe/_workbookS bag still large; Nrt bag still ensure-fan-out; 446/642 still ensure-gated on Binding874/1273
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: remaining ≥12 / Binding874→446 / Binding1273→642 / helper603 after Nwe / Nrt after coupon ensure

@@ -54,3 +54,5 @@ export {
   HDe,
   workbookHelper679,
 } from "./collect-slide-theme-fonts-impl";
+
+export { AXe, jXe } from "./color-scheme-clone-impl";

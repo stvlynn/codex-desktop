@@ -1,10 +1,32 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Semantic implementation: financial formula aliases + ODDF* stubs (legacy Uit…Fat).
-// Stage-3 wave-135.
+// Semantic implementation: financial formula aliases + stubs (legacy Uit…Fat + Hit…Hat).
+// Stage-3 wave-135/136.
 
-import { U0e, futureValue, z0e, V0e } from "./formula-annuity-impl";
+import {
+  U0e,
+  futureValue,
+  z0e,
+  V0e,
+  npvArgs,
+  L0e,
+  K0e,
+  q0e,
+  I0e,
+  Q0e,
+  J0e,
+  Y0e,
+  X0e,
+  A0e,
+  j0e,
+  R0e,
+  M0e,
+  w0e,
+  N0e,
+  B0e,
+  G0e,
+} from "./formula-annuity-impl";
 import { E0e, D0e, T0e, O0e, P0e } from "./formula-financial-impl";
-import { W0e } from "../formula-irr";
+import { W0e, F0e, Z0e } from "../formula-irr";
 
 export function Uit(
   ffaIn13867: any,
@@ -170,5 +192,198 @@ export function Fat(
 ) {
   throw Error(
     `ODDFYIELD is not implemented. settlement=${String(ffaIn6084)}, maturity=${String(ffaIn6085)}, issue=${String(ffaIn6086)}, firstCoupon=${String(ffaIn6087)}, rate=${String(ffaIn6088)}, pr=${String(ffaIn6089)}, redemption=${String(ffaIn6090)}, frequency=${String(ffaIn6091)}, basis=${String(ffaIn6092)}`,
+  );
+}
+
+// Stage-3 wave-136: Hit…Hat aliases/stubs.
+
+export function Hit(
+  ffaIn13979: any,
+  ffaIn13980: any,
+  ffaIn13981: any,
+  ...ffaIn13982: any[]
+) {
+  return npvArgs(ffaIn13979, ffaIn13980, ffaIn13981, ...ffaIn13982);
+}
+export function Jit(ffaIn15042: any, ffaIn15043: any, ffaIn15044: any) {
+  return L0e(ffaIn15042, ffaIn15043, ffaIn15044);
+}
+export function Yit(ffaIn15428: any, ffaIn15429: any) {
+  return F0e(ffaIn15428, ffaIn15429);
+}
+export function Xit(ffaIn15045: any, ffaIn15046: any, ffaIn15047: any) {
+  return K0e(ffaIn15045, ffaIn15046, ffaIn15047);
+}
+export function Zit(
+  ffaIn14457: any,
+  ffaIn14458: any,
+  ffaIn14459: any,
+  ffaIn14460: any,
+) {
+  return q0e(ffaIn14457, ffaIn14458, ffaIn14459, ffaIn14460);
+}
+export function tat(
+  ffaIn7207: any,
+  ffaIn7208: any,
+  ffaIn7209: any,
+  ffaIn7210: any,
+  ffaIn7211: any,
+  ffaIn7212: any,
+  ffaIn7213: any,
+) {
+  throw Error(
+    `VDB is not implemented. cost=${String(ffaIn7207)}, salvage=${String(ffaIn7208)}, life=${String(ffaIn7209)}, startPeriod=${String(ffaIn7210)}, endPeriod=${String(ffaIn7211)}, factor=${String(ffaIn7212)}, noSwitch=${String(ffaIn7213)}`,
+  );
+}
+export function rat(
+  ffaIn14461: any,
+  ffaIn14462: any,
+  ffaIn14463: any,
+  ffaIn14464: any,
+) {
+  return I0e(ffaIn14461, ffaIn14462, ffaIn14463, ffaIn14464);
+}
+export function iat(ffaIn15048: any, ffaIn15049: any, ffaIn15050: any) {
+  return Z0e(ffaIn15048, ffaIn15049, ffaIn15050);
+}
+export function aat(ffaIn15051: any, ffaIn15052: any, ffaIn15053: any) {
+  return Q0e(ffaIn15051, ffaIn15052, ffaIn15053);
+}
+export function cat(
+  ffaIn8158: any,
+  ffaIn8159: any,
+  ffaIn8160: any,
+  ffaIn8161: any,
+  ffaIn8162: any,
+) {
+  throw Error(
+    `INTRATE is not implemented. settlement=${String(ffaIn8158)}, maturity=${String(ffaIn8159)}, investment=${String(ffaIn8160)}, redemption=${String(ffaIn8161)}, basis=${String(ffaIn8162)}`,
+  );
+}
+export function pat(ffaIn15054: any, ffaIn15055: any, ffaIn15056: any) {
+  return J0e(ffaIn15054, ffaIn15055, ffaIn15056);
+}
+export function mat(ffaIn15057: any, ffaIn15058: any, ffaIn15059: any) {
+  return Y0e(ffaIn15057, ffaIn15058, ffaIn15059);
+}
+export function hat(ffaIn15060: any, ffaIn15061: any, ffaIn15062: any) {
+  return X0e(ffaIn15060, ffaIn15061, ffaIn15062);
+}
+export function vat(ffaIn15430: any, ffaIn15431: any) {
+  return A0e(ffaIn15430, ffaIn15431);
+}
+export function yat(ffaIn15432: any, ffaIn15433: any) {
+  return j0e(ffaIn15432, ffaIn15433);
+}
+export function bat(ffaIn15434: any, ffaIn15435: any) {
+  return R0e(ffaIn15434, ffaIn15435);
+}
+export function xat(ffaIn15436: any, ffaIn15437: any) {
+  return M0e(ffaIn15436, ffaIn15437);
+}
+export function Tat(
+  ffaIn14465: any,
+  ffaIn14466: any,
+  ffaIn14467: any,
+  ffaIn14468: any,
+) {
+  return w0e(ffaIn14465, ffaIn14466, ffaIn14467, ffaIn14468);
+}
+export function Aat(
+  ffaIn7681: any,
+  ffaIn7682: any,
+  ffaIn7683: any,
+  ffaIn7684: any,
+  ffaIn7685: any,
+  ffaIn7686: any,
+) {
+  throw Error(
+    `DURATION is not implemented. settlement=${String(ffaIn7681)}, maturity=${String(ffaIn7682)}, coupon=${String(ffaIn7683)}, yld=${String(ffaIn7684)}, frequency=${String(ffaIn7685)}, basis=${String(ffaIn7686)}`,
+  );
+}
+export function jat(
+  ffaIn7653: any,
+  ffaIn7654: any,
+  ffaIn7655: any,
+  ffaIn7656: any,
+  ffaIn7657: any,
+  ffaIn7658: any,
+) {
+  throw Error(
+    `MDURATION is not implemented. settlement=${String(ffaIn7653)}, maturity=${String(ffaIn7654)}, coupon=${String(ffaIn7655)}, yld=${String(ffaIn7656)}, frequency=${String(ffaIn7657)}, basis=${String(ffaIn7658)}`,
+  );
+}
+export function Mat(
+  ffaIn6454: any,
+  ffaIn6455: any,
+  ffaIn6456: any,
+  ffaIn6457: any,
+  ffaIn6458: any,
+  ffaIn6459: any,
+  ffaIn6460: any,
+  ffaIn6461: any,
+) {
+  throw Error(
+    `ODDLPRICE is not implemented. settlement=${String(ffaIn6454)}, maturity=${String(ffaIn6455)}, lastInterest=${String(ffaIn6456)}, rate=${String(ffaIn6457)}, yld=${String(ffaIn6458)}, redemption=${String(ffaIn6459)}, frequency=${String(ffaIn6460)}, basis=${String(ffaIn6461)}`,
+  );
+}
+export function Nat(
+  ffaIn6478: any,
+  ffaIn6479: any,
+  ffaIn6480: any,
+  ffaIn6481: any,
+  ffaIn6482: any,
+  ffaIn6483: any,
+  ffaIn6484: any,
+  ffaIn6485: any,
+) {
+  throw Error(
+    `ODDLYIELD is not implemented. settlement=${String(ffaIn6478)}, maturity=${String(ffaIn6479)}, lastInterest=${String(ffaIn6480)}, rate=${String(ffaIn6481)}, pr=${String(ffaIn6482)}, redemption=${String(ffaIn6483)}, frequency=${String(ffaIn6484)}, basis=${String(ffaIn6485)}`,
+  );
+}
+export function Iat(
+  ffaIn7056: any,
+  ffaIn7057: any,
+  ffaIn7058: any,
+  ffaIn7059: any,
+  ffaIn7060: any,
+  ffaIn7061: any,
+  ffaIn7062: any,
+) {
+  throw Error(
+    `AMORLINC is not implemented. cost=${String(ffaIn7056)}, datePurchased=${String(ffaIn7057)}, firstPeriod=${String(ffaIn7058)}, salvage=${String(ffaIn7059)}, period=${String(ffaIn7060)}, rate=${String(ffaIn7061)}, basis=${String(ffaIn7062)}`,
+  );
+}
+export function Rat(
+  ffaIn8613: any,
+  ffaIn8614: any,
+  ffaIn8615: any,
+  ffaIn8616: any,
+  ffaIn8617: any,
+) {
+  throw Error(
+    `ACCRINTM is not implemented. issue=${String(ffaIn8613)}, settlement=${String(ffaIn8614)}, rate=${String(ffaIn8615)}, par=${String(ffaIn8616)}, basis=${String(ffaIn8617)}`,
+  );
+}
+export function zat(ffaIn15438: any, ffaIn15439: any) {
+  return N0e(ffaIn15438, ffaIn15439);
+}
+export function Bat(ffaIn15063: any, ffaIn15064: any, ffaIn15065: any) {
+  return B0e(ffaIn15063, ffaIn15064, ffaIn15065);
+}
+export function Vat(ffaIn15066: any, ffaIn15067: any, ffaIn15068: any) {
+  return G0e(ffaIn15066, ffaIn15067, ffaIn15068);
+}
+export function Hat(
+  ffaIn6769: any,
+  ffaIn6770: any,
+  ffaIn6771: any,
+  ffaIn6772: any,
+  ffaIn6773: any,
+  ffaIn6774: any,
+  ...ffaIn6775: any[]
+) {
+  throw Error(
+    `STOCKHISTORY is not implemented. stock=${String(ffaIn6769)}, startDate=${String(ffaIn6770)}, endDate=${String(ffaIn6771)}, interval=${String(ffaIn6772)}, headers=${String(ffaIn6773)}, properties1=${String(ffaIn6774)}, rest.length=${ffaIn6775.length}`,
   );
 }

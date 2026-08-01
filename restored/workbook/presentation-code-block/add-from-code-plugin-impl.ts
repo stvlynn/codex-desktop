@@ -10,8 +10,7 @@ export function addFromCodePlugin(pcbIn903: any, pcbIn904: any) {
   let pcbBind5730 = pcbH.parseCodeMeta(pcbIn904),
     pcbBind5731 = pcbBind5730.code,
     pcbBind5732 = pcbBind5730.label,
-    pcbBind5733 =
-      pcbIn904.showHeader ?? pcbBind5732 !== undefined,
+    pcbBind5733 = pcbIn904.showHeader ?? pcbBind5732 !== undefined,
     pcbBind5734 = pcbH.resolveFit(pcbIn904),
     pcbBind5735 = pcbH.computePosition(
       pcbIn903,
@@ -80,8 +79,7 @@ export function addFromCodePlugin(pcbIn903: any, pcbIn904: any) {
     (pcbBind5739.text.typeface = pcbH.typeface),
     (pcbBind5739.text.color = pcbH.theme.codeText),
     (pcbBind5739.text = pcbBind5730.paragraphs),
-    (pcbBind5739.text.lineSpacing =
-      pcbH.padToken / pcbH.fontSize),
+    (pcbBind5739.text.lineSpacing = pcbH.padToken / pcbH.fontSize),
     (pcbBind5739.text.wrap = "none"),
     (pcbBind5739.text.verticalAlignment = "top"),
     (pcbBind5739.text.insets = {

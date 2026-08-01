@@ -6,58 +6,30 @@ import { ptfH } from "./boundary-hooks-theme-fonts";
 
 void ptfH;
 
-export function collectSlideThemeFonts(ptfIn1351: any, ptfIn1352: any, ptfIn1353: any) {
+export function collectSlideThemeFonts(
+  ptfIn1351: any,
+  ptfIn1352: any,
+  ptfIn1353: any,
+) {
   if (!ptfIn1351) return;
   let ptfBind7104 = new Set(),
     ptfBind7105 = normalizeFontScheme(ptfIn1351.theme.fontScheme);
-  addTypeface(
-    ptfBind7104,
-    ptfBind7105?.majorFont?.latinTypeface,
-  );
-  addTypeface(
-    ptfBind7104,
-    ptfBind7105?.minorFont?.latinTypeface,
-  );
+  addTypeface(ptfBind7104, ptfBind7105?.majorFont?.latinTypeface);
+  addTypeface(ptfBind7104, ptfBind7105?.minorFont?.latinTypeface);
   let ptfBind7106 = (ptfIn2934) => {
-    addTypeface(
-      ptfBind7104,
-      ptfIn2934.resolvedTextStyle?.typeface,
-    );
-    addTypeface(
-      ptfBind7104,
-      ptfIn2934.resolvedTextStyle?.name,
-    );
+    addTypeface(ptfBind7104, ptfIn2934.resolvedTextStyle?.typeface);
+    addTypeface(ptfBind7104, ptfIn2934.resolvedTextStyle?.name);
     ptfIn2934.paragraphs?.forEach((ptfIn9439) => {
-      addTypeface(
-        ptfBind7104,
-        ptfIn9439.resolvedTextStyle?.typeface,
-      );
-      addTypeface(
-        ptfBind7104,
-        ptfIn9439.resolvedTextStyle?.name,
-      );
-      ptfIn9439.runs.forEach((item) =>
-        addTypeface(ptfBind7104, item.typeface),
-      );
+      addTypeface(ptfBind7104, ptfIn9439.resolvedTextStyle?.typeface);
+      addTypeface(ptfBind7104, ptfIn9439.resolvedTextStyle?.name);
+      ptfIn9439.runs.forEach((item) => addTypeface(ptfBind7104, item.typeface));
     });
     ptfIn2934.cells?.forEach((ptfIn5751) => {
-      addTypeface(
-        ptfBind7104,
-        ptfIn5751.resolvedTextStyle?.typeface,
-      );
-      addTypeface(
-        ptfBind7104,
-        ptfIn5751.resolvedTextStyle?.name,
-      );
+      addTypeface(ptfBind7104, ptfIn5751.resolvedTextStyle?.typeface);
+      addTypeface(ptfBind7104, ptfIn5751.resolvedTextStyle?.name);
       ptfIn5751.paragraphs?.forEach((ptfIn8926) => {
-        addTypeface(
-          ptfBind7104,
-          ptfIn8926.resolvedTextStyle?.typeface,
-        );
-        addTypeface(
-          ptfBind7104,
-          ptfIn8926.resolvedTextStyle?.name,
-        );
+        addTypeface(ptfBind7104, ptfIn8926.resolvedTextStyle?.typeface);
+        addTypeface(ptfBind7104, ptfIn8926.resolvedTextStyle?.name);
         ptfIn8926.runs.forEach((item) =>
           addTypeface(ptfBind7104, item.typeface),
         );
@@ -69,15 +41,11 @@ export function collectSlideThemeFonts(ptfIn1351: any, ptfIn1352: any, ptfIn1353
     ptfIn15308.elements.forEach(ptfBind7106);
   });
   let ptfBind7107 = {
-    colorSchemeName: ptfH.trimName(
-      ptfIn1351.theme.colorScheme.name,
-    ),
+    colorSchemeName: ptfH.trimName(ptfIn1351.theme.colorScheme.name),
     colors: ptfIn1351.theme.hexColorMap,
     fontScheme: ptfBind7105,
     typefaces:
-      ptfBind7104.size > 0
-        ? Array.from(ptfBind7104).sort()
-        : undefined,
+      ptfBind7104.size > 0 ? Array.from(ptfBind7104).sort() : undefined,
   };
   return Object.values(ptfBind7107).some((item) => item !== undefined)
     ? ptfBind7107

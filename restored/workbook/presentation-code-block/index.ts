@@ -20,3 +20,5 @@ export {
   xAe,
   workbookHelper767,
 } from "./compute-position-impl";
+
+export { lAe, uAe, dAe, fAe, pAe, mAe, hAe } from "./parse-code-meta-impl";
