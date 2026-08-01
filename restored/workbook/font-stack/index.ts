@@ -51,3 +51,17 @@ export {
 } from "./font-scheme-parse-impl";
 
 export { workbookHelper824 } from "./clone-embedded-fonts-impl";
+
+export {
+  normalizeFontFamilyKeyLower,
+  workbookHelper823,
+  isDocxMathFontSchemeToken,
+  cYe,
+  lYe,
+  uYe,
+  DocxFontFamilyCollector,
+  _workbookC,
+  _workbookL,
+  getDocxFontCollectorClass,
+  ensureDocxFontCollectorInit,
+} from "./docx-font-collector-impl";
