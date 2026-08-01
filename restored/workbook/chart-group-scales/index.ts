@@ -45,3 +45,9 @@ export {
   workbookHelper393,
   workbookHelper394,
 } from "./series-overlap-offset-impl";
+
+export {
+  vye,
+  workbookHelper395,
+  workbookHelper396,
+} from "./gap-visible-count-impl";

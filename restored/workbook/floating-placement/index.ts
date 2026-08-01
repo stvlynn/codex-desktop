@@ -5,3 +5,8 @@ export { wireFloatingPlacementBoundaryHooks, fpH } from "./boundary-hooks";
 export { resolveFloatingPlacement, jTe } from "./floating-placement-impl";
 
 export { resolvePlacementOrBBox, MTe } from "./placement-or-bbox-impl";
+
+export {
+  workbookHelper642,
+  FLOATING_PLACEMENT_TYPE,
+} from "./placement-alignment-impl";

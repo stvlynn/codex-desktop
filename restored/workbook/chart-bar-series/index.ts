@@ -7,3 +7,5 @@ export {
   computeBarSegments,
   workbookHelper421,
 } from "./chart-bar-series-impl";
+
+export { workbookHelper420 } from "./value-index-map-impl";

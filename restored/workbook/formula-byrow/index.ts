@@ -24,3 +24,5 @@ export {
 } from "./formula-byrow-impl";
 
 export { Bct } from "./pivotby-stub-impl";
+
+export { zct } from "./groupby-stub-impl";

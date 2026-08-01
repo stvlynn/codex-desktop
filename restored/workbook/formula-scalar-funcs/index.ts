@@ -192,3 +192,15 @@ export {
 } from "./scalar-funcs-c-impl";
 
 export { ost } from "./ost-alias-impl";
+
+export {
+  b4e,
+  x4e,
+  S4e,
+  C4e,
+  g6e,
+  ast,
+  odt,
+  sdt,
+  gdt,
+} from "./formula-thin-aliases-impl";

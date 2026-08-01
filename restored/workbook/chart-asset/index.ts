@@ -47,3 +47,5 @@ export {
 } from "./regression-impl";
 
 export { workbookBinding722 } from "./chart-class-impl";
+
+export { Zae, Qae } from "./display-blanks-parent-label-impl";

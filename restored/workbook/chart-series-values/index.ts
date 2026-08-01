@@ -10,3 +10,5 @@ export {
   fSe,
   pSe,
 } from "./chart-series-values-impl";
+
+export { workbookHelper550 } from "./parse-finite-number-impl";

@@ -20,3 +20,5 @@ export {
   uEe,
   iEe,
 } from "./paint-view-overlay-impl";
+
+export { workbookHelper654 } from "./picture-fill-bitmap-impl";

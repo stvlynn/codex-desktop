@@ -5,14 +5,23 @@
 import { Jn, Yn } from "../presentation-protobuf";
 import { workbookGt as EMU_TO_CSS_PX } from "../text-style";
 import { fpH } from "./boundary-hooks";
+import {
+  workbookHelper642,
+  FLOATING_PLACEMENT_TYPE,
+} from "./placement-alignment-impl";
 
 void Jn;
 void Yn;
 void EMU_TO_CSS_PX;
 void fpH;
 
-export function resolveFloatingPlacement(fpIn1412: any, fpIn1413: any, fpIn1414: any, fpIn1415: any, ) {
-  if (fpIn1412.placement?.type !== fpH.floatingPlacementType) return;
+export function resolveFloatingPlacement(
+  fpIn1412: any,
+  fpIn1413: any,
+  fpIn1414: any,
+  fpIn1415: any,
+) {
+  if (fpIn1412.placement?.type !== FLOATING_PLACEMENT_TYPE) return;
   let fpBind7243 =
       fpIn1412.bbox?.widthEmu === undefined
         ? undefined
@@ -30,66 +39,33 @@ export function resolveFloatingPlacement(fpIn1412: any, fpIn1413: any, fpIn1414:
     return;
   let fpBind7245 = fpIn1414.xPx + fpIn1415.left,
     fpBind7246 = fpIn1414.yPx + fpIn1415.top,
-    fpBind7247 = Math.max(
-      0,
-      fpIn1414.widthPx -
-        fpIn1415.left -
-        fpIn1415.right,
-    ),
+    fpBind7247 = Math.max(0, fpIn1414.widthPx - fpIn1415.left - fpIn1415.right),
     fpBind7248 = Math.max(
       0,
-      fpIn1414.heightPx -
-        fpIn1415.top -
-        fpIn1415.bottom,
+      fpIn1414.heightPx - fpIn1415.top - fpIn1415.bottom,
     ),
     fpBind7249 = fpIn1412.placement.anchorParagraphId,
     fpBind7250 = fpH.paragraphAlignment(fpIn1413, fpBind7249),
-    fpBind7251 =
-      fpBind7250 ?? fpH.bh642(fpIn1412),
+    fpBind7251 = fpBind7250 ?? workbookHelper642(fpIn1412),
     fpBind7252 = fpH.bh640(fpIn1413.anchor),
     fpBind7253 = fpBind7245;
   fpBind7251 === Jn.ALIGNMENT_TYPE_CENTER
-    ? (fpBind7253 += Math.max(
-        0,
-        (fpBind7247 - fpBind7243) / 2,
-      ))
+    ? (fpBind7253 += Math.max(0, (fpBind7247 - fpBind7243) / 2))
     : fpBind7251 === Jn.ALIGNMENT_TYPE_RIGHT &&
-      (fpBind7253 += Math.max(
-        0,
-        fpBind7247 - fpBind7243,
-      ));
+      (fpBind7253 += Math.max(0, fpBind7247 - fpBind7243));
   let fpBind7254 = fpBind7246;
   fpBind7252 === Yn.ANCHOR_TYPE_MIDDLE
-    ? (fpBind7254 += Math.max(
-        0,
-        (fpBind7248 - fpBind7244) / 2,
-      ))
+    ? (fpBind7254 += Math.max(0, (fpBind7248 - fpBind7244) / 2))
     : fpBind7252 === Yn.ANCHOR_TYPE_BOTTOM
-      ? (fpBind7254 += Math.max(
-          0,
-          fpBind7248 - fpBind7244,
-        ))
+      ? (fpBind7254 += Math.max(0, fpBind7248 - fpBind7244))
       : fpBind7250 === Jn.ALIGNMENT_TYPE_CENTER &&
         fpH.isParagraphVCenter(fpIn1413, fpBind7249) &&
-        (fpBind7254 += Math.max(
-          0,
-          (fpBind7248 - fpBind7244) / 2,
-        ));
-  let fpBind7255 =
-      fpBind7245 +
-      Math.max(0, fpBind7247 - fpBind7243),
-    fpBind7256 =
-      fpBind7246 +
-      Math.max(0, fpBind7248 - fpBind7244);
+        (fpBind7254 += Math.max(0, (fpBind7248 - fpBind7244) / 2));
+  let fpBind7255 = fpBind7245 + Math.max(0, fpBind7247 - fpBind7243),
+    fpBind7256 = fpBind7246 + Math.max(0, fpBind7248 - fpBind7244);
   return {
-    xPx: Math.min(
-      Math.max(fpBind7253, fpBind7245),
-      fpBind7255,
-    ),
-    yPx: Math.min(
-      Math.max(fpBind7254, fpBind7246),
-      fpBind7256,
-    ),
+    xPx: Math.min(Math.max(fpBind7253, fpBind7245), fpBind7255),
+    yPx: Math.min(Math.max(fpBind7254, fpBind7246), fpBind7256),
     widthPx: fpBind7243,
     heightPx: fpBind7244,
   };

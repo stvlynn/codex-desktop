@@ -44,3 +44,5 @@ export {
   nearAxisBaseline,
   _xe,
 } from "./paint-secondary-value-axis-impl";
+
+export { workbookHelper431 } from "./measure-line-height-impl";

@@ -3,6 +3,11 @@
 // Stage-3 wave-127.
 
 import { cctH } from "./boundary-hooks";
+import {
+  workbookHelper446,
+  workbookHelper451,
+  workbookHelper452,
+} from "./category-label-serial-impl";
 
 export function planCategoryTicks(cctIn6616: any, cctIn6617: any) {
   let cctBind16900 = cctIn6617.filter(Number.isFinite);
@@ -27,40 +32,26 @@ export function planCategoryTicks(cctIn6616: any, cctIn6617: any) {
 export function filterCategoryDomain(cctIn5422: any, cctIn5423: any) {
   let cctBind15174 = cctIn5423[0],
     cctBind15175 = cctIn5423[cctIn5423.length - 1];
-  if (cctBind15174 === undefined || cctBind15175 === undefined)
-    return;
+  if (cctBind15174 === undefined || cctBind15175 === undefined) return;
   let cctBind15176 = resolveTimeUnit(cctIn5422);
   if (!cctBind15176) return;
-  let cctBind15177 = Math.min(
-      cctBind15174,
-      cctBind15175,
-    ),
+  let cctBind15177 = Math.min(cctBind15174, cctBind15175),
     cctBind15178 = Math.max(cctBind15174, cctBind15175),
-    cctBind15179 = categoryTickStep(
-      cctBind15177,
-      cctBind15176,
-    ),
+    cctBind15179 = categoryTickStep(cctBind15177, cctBind15176),
     cctBind15180 = [];
   for (
     let cctBind22532 = cctBind15179;
     cctBind22532 <= cctBind15178;
-    cctBind22532 = buildTimeCategoryTicks(
-      cctBind22532,
-      cctBind15176,
-    )
+    cctBind22532 = buildTimeCategoryTicks(cctBind22532, cctBind15176)
   )
     cctBind15180.push(Number(cctBind22532.toPrecision(15)));
   return (
-    cctBind15175 < cctBind15174 &&
-      cctBind15180.reverse(),
+    cctBind15175 < cctBind15174 && cctBind15180.reverse(),
     cctBind15180.map(String)
   );
 }
 export function buildCategorySeries(cctIn3259: any, cctIn3260: any) {
-  let cctBind11485 = planCategoryTicks(
-    cctIn3259,
-    cctIn3260.map(Number),
-  );
+  let cctBind11485 = planCategoryTicks(cctIn3259, cctIn3260.map(Number));
   if (!cctBind11485) return;
   let cctBind11486 = filterCategoryDomain(cctIn3259, cctBind11485);
   if (!cctBind11486) return;
@@ -83,14 +74,13 @@ export function buildCategorySeries(cctIn3259: any, cctIn3260: any) {
       return {
         positionCategory: cctBind16126.category,
         serial: cctBind16125,
-        label: cctH.formatCategoryLabel(item, cctIn3259),
+        label: workbookHelper446(item, cctIn3259),
       };
     });
 }
 export function resolveTimeUnit(cctIn5295: any) {
   let cctBind14907 = cctIn5295.majorUnit,
-    cctBind14908 =
-      cctIn5295.majorTimeUnit ?? cctIn5295.baseTimeUnit;
+    cctBind14908 = cctIn5295.majorTimeUnit ?? cctIn5295.baseTimeUnit;
   if (
     !(
       cctBind14907 === undefined ||
@@ -112,39 +102,24 @@ export function resolveTimeUnit(cctIn5295: any) {
 }
 export function floorToTimeUnit(cctIn4347: any, cctIn4348: any) {
   if (cctIn4348.unit === cctH.presentationN.TIME_UNIT_DAYS)
-    return (
-      Math.floor(cctIn4347 / cctIn4348.count) *
-      cctIn4348.count
-    );
-  let cctBind13473 = cctH.excelSerialToUtcDate(cctIn4347);
+    return Math.floor(cctIn4347 / cctIn4348.count) * cctIn4348.count;
+  let cctBind13473 = workbookHelper451(cctIn4347);
   if (cctIn4348.unit === cctH.presentationN.TIME_UNIT_MONTHS) {
     let cctBind19646 =
-        cctBind13473.getUTCFullYear() * 12 +
-        cctBind13473.getUTCMonth(),
+        cctBind13473.getUTCFullYear() * 12 + cctBind13473.getUTCMonth(),
       cctBind19647 =
-        Math.floor(cctBind19646 / cctIn4348.count) *
-        cctIn4348.count;
-    return cctH.utcDateToExcelSerial(
-      new Date(
-        Date.UTC(
-          Math.floor(cctBind19647 / 12),
-          cctBind19647 % 12,
-          1,
-        ),
-      ),
+        Math.floor(cctBind19646 / cctIn4348.count) * cctIn4348.count;
+    return workbookHelper452(
+      new Date(Date.UTC(Math.floor(cctBind19647 / 12), cctBind19647 % 12, 1)),
     );
   }
   let cctBind13474 =
-    Math.floor(
-      cctBind13473.getUTCFullYear() / cctIn4348.count,
-    ) * cctIn4348.count;
-  return cctH.utcDateToExcelSerial(new Date(Date.UTC(cctBind13474, 0, 1)));
+    Math.floor(cctBind13473.getUTCFullYear() / cctIn4348.count) *
+    cctIn4348.count;
+  return workbookHelper452(new Date(Date.UTC(cctBind13474, 0, 1)));
 }
 export function categoryTickStep(cctIn12876: any, cctIn12877: any) {
-  let cctBind22520 = floorToTimeUnit(
-    cctIn12876,
-    cctIn12877,
-  );
+  let cctBind22520 = floorToTimeUnit(cctIn12876, cctIn12877);
   return cctBind22520 >= cctIn12876
     ? cctBind22520
     : buildTimeCategoryTicks(cctBind22520, cctIn12877);
@@ -152,9 +127,9 @@ export function categoryTickStep(cctIn12876: any, cctIn12877: any) {
 export function buildTimeCategoryTicks(cctIn6407: any, cctIn6408: any) {
   if (cctIn6408.unit === cctH.presentationN.TIME_UNIT_DAYS)
     return cctIn6407 + cctIn6408.count;
-  let cctBind16583 = cctH.excelSerialToUtcDate(cctIn6407);
+  let cctBind16583 = workbookHelper451(cctIn6407);
   return cctIn6408.unit === cctH.presentationN.TIME_UNIT_MONTHS
-    ? cctH.utcDateToExcelSerial(
+    ? workbookHelper452(
         new Date(
           Date.UTC(
             cctBind16583.getUTCFullYear(),
@@ -163,13 +138,9 @@ export function buildTimeCategoryTicks(cctIn6407: any, cctIn6408: any) {
           ),
         ),
       )
-    : cctH.utcDateToExcelSerial(
+    : workbookHelper452(
         new Date(
-          Date.UTC(
-            cctBind16583.getUTCFullYear() + cctIn6408.count,
-            0,
-            1,
-          ),
+          Date.UTC(cctBind16583.getUTCFullYear() + cctIn6408.count, 0, 1),
         ),
       );
 }

@@ -133,3 +133,9 @@ export {
   workbookBinding1537,
   workbookBinding1538,
 } from "./semantic-tag-sets-impl";
+
+export {
+  jOe,
+  workbookHelper701,
+  FOe,
+} from "./jsx-children-normalize-impl";

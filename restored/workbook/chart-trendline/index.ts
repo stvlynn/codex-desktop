@@ -10,3 +10,5 @@ export {
 } from "./paint-trendline-label-impl";
 
 export { resolveTrendlineLabel, cxe } from "./resolve-trendline-label-impl";
+
+export { sxe } from "./has-trendline-label-impl";

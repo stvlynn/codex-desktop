@@ -3,3 +3,5 @@
 
 export { wireChartBarDirectionBoundaryHooks, cbdH } from "./boundary-hooks";
 export { paintBarDirectionSeries, Dbe } from "./chart-bar-direction-impl";
+
+export { nbe } from "./reverse-legend-bar-impl";

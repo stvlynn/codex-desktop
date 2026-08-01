@@ -10,3 +10,5 @@ export {
 } from "./build-combo-render-groups-impl";
 
 export { rbe, pxe } from "./combo-series-type-impl";
+
+export { xxe } from "./hidden-series-indices-impl";

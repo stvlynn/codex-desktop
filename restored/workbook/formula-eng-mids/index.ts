@@ -81,3 +81,16 @@ export {
 } from "./formula-radix-impl";
 
 export { x1e, S1e, C1e, w1e } from "./formula-bessel-impl";
+
+export {
+  o3e,
+  y3e,
+  e6e,
+  n6e,
+  l6e,
+  D6e,
+  I6e,
+  z6e,
+  U6e,
+  e8e,
+} from "./formula-dist-pass-impl";
