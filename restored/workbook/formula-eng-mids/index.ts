@@ -63,3 +63,19 @@ export {
   Z3e,
   PROB_SUM_EPS,
 } from "./formula-dist-wrappers-impl";
+
+export { W3e, $3e, T6e, E6e, zot } from "./formula-dist-aliases-impl";
+
+export {
+  c1e,
+  h1e,
+  workbookHelper885,
+  E1e,
+  D1e,
+  O1e,
+  k1e,
+  A1e,
+  j1e,
+  M1e,
+  c0e,
+} from "./formula-radix-impl";

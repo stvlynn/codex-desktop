@@ -33,19 +33,10 @@ export function fitBubbleScaleDomain({
   )
     for (;;) {
       let [csscBind11311, csscBind11312] = scale.domain();
-      if (
-        csscBind11311 === undefined ||
-        csscBind11312 === undefined
-      )
+      if (csscBind11311 === undefined || csscBind11312 === undefined)
         throw Error("Expected a two-value bubble scale domain");
-      let csscBind11313 = Math.min(
-          csscBind11311,
-          csscBind11312,
-        ),
-        csscBind11314 = Math.max(
-          csscBind11311,
-          csscBind11312,
-        ),
+      let csscBind11313 = Math.min(csscBind11311, csscBind11312),
+        csscBind11314 = Math.max(csscBind11311, csscBind11312),
         csscBind11315 = csscBind11314 - csscBind11313;
       if (csscBind11315 <= 0) return;
       let csscBind11316 = false,
@@ -53,17 +44,10 @@ export function fitBubbleScaleDomain({
       for (let csscBind19557 of points) {
         let csscBind20093 = value(csscBind19557),
           csscBind20094 =
-            csscH.bh534(
-              csscBind19557.size,
-              radiusScale,
-              scaleMultiplier,
-            ) / csscBind7707,
-          csscBind20095 =
-            (csscBind20093 - csscBind11313) /
-            csscBind11315;
-        csscBind7703 &&
-          csscBind20095 < csscBind20094 &&
-          (csscBind11316 = true);
+            csscH.bh534(csscBind19557.size, radiusScale, scaleMultiplier) /
+            csscBind7707,
+          csscBind20095 = (csscBind20093 - csscBind11313) / csscBind11315;
+        csscBind7703 && csscBind20095 < csscBind20094 && (csscBind11316 = true);
         csscBind7704 &&
           1 - csscBind20095 < csscBind20094 &&
           (csscBind11317 = true);

@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~25.3k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~24.7k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1729,3 +1729,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: remaining ≥16 mids / Nrt after coupon ensure peel / helper603 after Nwe Map ESM / _workbookS if clean
+
+## Wave 135 (Stage-3 qOe unlock + financial/chart/eng ≥15 batch)
+
+- Boundary 25337 → 24669 (Δ -668)
+- Peeled: compose qOe nest (Binding1532–1539/kOe/698/699/lke) + rke; IIe/wIe (NIe hooked); financial aliases Uit…Fat + zot/ost/Bct; dist W3e/$3e/T6e/E6e; chart 466/476/535/537/538/602/645/lCe; eng radix c1e/h1e/E1e/D1e/O1e/k1e/A1e/j1e/M1e/c0e+885; workbookN; zDe
+- Skipped: helper603 (Nwe Map ESM); Nrt/jrt/Mrt bag; helper464 (_A); live nests 338/375/378/825/936; dAe/WJe/GJe/jXe; i0e (841/$4); 642 (Binding1273 bag); 446 (Binding874)
+- Leave-behind: helper603 needs Nwe Map ESM; vYe/_workbookS bag still large; Nrt bag still ensure-fan-out; NIe remains in mermaid init bag
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: remaining ≥15 / Nrt after coupon ensure / helper603 after Nwe Map ESM / i0e after complex coerce peel
+

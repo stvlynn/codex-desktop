@@ -17,3 +17,5 @@ export {
   BRIDGE_STROKE,
   BRIDGE_WIDTH,
 } from "./paint-bridge-impl";
+
+export { lCe } from "./point-fill-override-impl";

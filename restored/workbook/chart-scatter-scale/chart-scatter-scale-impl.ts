@@ -2,7 +2,11 @@
 // Semantic implementation: scatter/bubble axis scale builder (legacy helper540).
 // Stage-3 wave-97.
 
-import { Cn as _presentationCn, Mn as _presentationMn, xn as _presentationXn } from "../presentation-protobuf";
+import {
+  Cn as _presentationCn,
+  Mn as _presentationMn,
+  xn as _presentationXn,
+} from "../presentation-protobuf";
 import {
   scaleLinear as d3ScaleLinear,
   scaleSqrt as d3ScaleSqrt,
@@ -20,7 +24,12 @@ void d3ScaleSqrt;
 void csscH;
 void BUBBLE_RADIUS_FRACTION;
 
-export function buildScatterScale(csscIn428: any, csscIn429: any, csscIn430: any, csscIn431: any, ) {
+export function buildScatterScale(
+  csscIn428: any,
+  csscIn429: any,
+  csscIn430: any,
+  csscIn431: any,
+) {
   let csscBind3882 = csscIn428.xAxis ?? csscIn428.yAxis,
     csscBind3883 = csscIn428.yAxis ?? csscIn428.xAxis,
     csscBind3884 = csscIn430.extents.size,
@@ -29,20 +38,15 @@ export function buildScatterScale(csscIn428: any, csscIn429: any, csscIn430: any
   if (csscBind3884 !== undefined) {
     let csscBind16446 = csscBind3884[1],
       csscBind16447 =
-        (Math.min(csscIn429.width, csscIn429.height) *
-          BUBBLE_RADIUS_FRACTION) /
+        (Math.min(csscIn429.width, csscIn429.height) * BUBBLE_RADIUS_FRACTION) /
         2;
     csscBind3886 =
       csscBind16446 <= 0 || csscBind16447 <= 0
         ? () => 0
         : csscIn428.bubbleOptions?.sizeRepresents ===
             _presentationXn.SIZE_REPRESENTS_WIDTH
-          ? d3ScaleLinear()
-              .domain([0, csscBind16446])
-              .range([0, csscBind16447])
-          : d3ScaleSqrt()
-              .domain([0, csscBind16446])
-              .range([0, csscBind16447]);
+          ? d3ScaleLinear().domain([0, csscBind16446]).range([0, csscBind16447])
+          : d3ScaleSqrt().domain([0, csscBind16446]).range([0, csscBind16447]);
   }
   let csscBind3887 = [
       csscBind3882?.min ?? csscIn430.extents.x[0],
@@ -54,18 +58,12 @@ export function buildScatterScale(csscIn428: any, csscIn429: any, csscIn430: any
     ],
     csscBind3889 = csscH.bh538(csscBind3887),
     csscBind3890 = csscH.bh538(csscBind3888),
-    csscBind3891 = [
-      csscIn429.x,
-      csscIn429.x + csscIn429.width,
-    ],
-    csscBind3892 = [
-      csscIn429.y + csscIn429.height,
-      csscIn429.y,
-    ];
-  csscBind3882?.orientation ===
-    _presentationMn.AXIS_ORIENTATION_MAX_MIN && csscBind3891.reverse();
-  csscBind3883?.orientation ===
-    _presentationMn.AXIS_ORIENTATION_MAX_MIN && csscBind3892.reverse();
+    csscBind3891 = [csscIn429.x, csscIn429.x + csscIn429.width],
+    csscBind3892 = [csscIn429.y + csscIn429.height, csscIn429.y];
+  csscBind3882?.orientation === _presentationMn.AXIS_ORIENTATION_MAX_MIN &&
+    csscBind3891.reverse();
+  csscBind3883?.orientation === _presentationMn.AXIS_ORIENTATION_MAX_MIN &&
+    csscBind3892.reverse();
   let { xTickCount, yTickCount } = csscH.tickCounts(csscIn429),
     csscBind3893 = csscIn431?.niceXDomain ?? true,
     csscBind3894 = csscIn430.series.flatMap(({ points }) =>
@@ -74,20 +72,10 @@ export function buildScatterScale(csscIn428: any, csscIn429: any, csscIn430: any
     csscBind3895 = csscIn430.series.flatMap(({ points }) =>
       points.map((item) => item.y),
     ),
-    csscBind3896 = csscIn430.series.flatMap(
-      (item) => item.points,
-    ),
-    csscBind3897 = csscH.bh533(
-      csscIn428.bubbleOptions?.scale,
-    ),
-    csscBind3898 = csscH.bh537(
-      csscBind3882,
-      csscBind3889[1],
-    ),
-    csscBind3899 = csscH.bh537(
-      csscBind3883,
-      csscBind3890[1],
-    ),
+    csscBind3896 = csscIn430.series.flatMap((item) => item.points),
+    csscBind3897 = csscH.bh533(csscIn428.bubbleOptions?.scale),
+    csscBind3898 = csscH.bh537(csscBind3882, csscBind3889[1]),
+    csscBind3899 = csscH.bh537(csscBind3883, csscBind3890[1]),
     csscBind3900;
   if (csscBind3885)
     csscBind3900 = csscH.niceAxisDomain({
@@ -98,10 +86,7 @@ export function buildScatterScale(csscIn428: any, csscIn429: any, csscIn430: any
       axis: csscBind3882,
       expandWideValuesToZero: false,
       expandNarrowValuesTowardZero: false,
-      maximumAutoMainIncrementCount: csscH.bh535(
-        csscBind3882,
-        csscBind3898,
-      ),
+      maximumAutoMainIncrementCount: csscH.bh535(csscBind3882, csscBind3898),
       minimumAutomaticMax: csscBind3898,
     });
   else {
@@ -153,18 +138,8 @@ export function buildScatterScale(csscIn428: any, csscIn429: any, csscIn430: any
         })),
     csscBind3885 &&
       csscBind3886 !== undefined &&
-      (csscH.bh536(
-        csscBind3900,
-        csscBind3882,
-        csscBind3898,
-        csscBind3889[1],
-      ),
-      csscH.bh536(
-        csscBind3902,
-        csscBind3883,
-        csscBind3899,
-        csscBind3890[1],
-      ),
+      (csscH.bh536(csscBind3900, csscBind3882, csscBind3898, csscBind3889[1]),
+      csscH.bh536(csscBind3902, csscBind3883, csscBind3899, csscBind3890[1]),
       csscH.bh539({
         scale: csscBind3900,
         axis: csscBind3882,

@@ -22,3 +22,5 @@ export {
   est,
   tst,
 } from "./formula-byrow-impl";
+
+export { Bct } from "./pivotby-stub-impl";

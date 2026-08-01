@@ -190,3 +190,5 @@ export {
   dateDiffDays,
   days360,
 } from "./scalar-funcs-c-impl";
+
+export { ost } from "./ost-alias-impl";

@@ -44,3 +44,18 @@ export {
   X0e,
   Q0e,
 } from "./formula-annuity-impl";
+
+export {
+  Uit,
+  Wit,
+  Git,
+  qit,
+  Qit,
+  $it,
+  eat,
+  nat,
+  Sat,
+  Cat,
+  Pat,
+  Fat,
+} from "./formula-alias-wrappers-impl";

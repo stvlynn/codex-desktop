@@ -20,3 +20,5 @@ export {
 } from "./overlapping-parent-labels-impl";
 
 export { Qye } from "./treemap-legend-entries-impl";
+
+export { workbookHelper476 } from "./treemap-hierarchy-node-impl";

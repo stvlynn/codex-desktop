@@ -16,3 +16,9 @@ export {
   Dxe,
   Oxe,
 } from "./fit-percent-bubble-domain-impl";
+
+export {
+  workbookHelper535,
+  workbookHelper537,
+  workbookHelper538,
+} from "./scatter-domain-helpers-impl";

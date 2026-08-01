@@ -16,3 +16,6 @@ export {
   eLe,
   normalizeAddConfig,
 } from "./presentation-plugin-add-impl";
+
+export { wirePresentationPluginAddBoundaryHooks, ppaH } from "./boundary-hooks";
+export { wIe, IIe } from "./add-from-mermaid-impl";

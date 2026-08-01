@@ -26,3 +26,5 @@ export {
   resolveMarginsFromStyle,
   resolveCellMargins,
 } from "./table-stroke-margins-impl";
+
+export { workbookHelper645 } from "./sum-span-impl";

@@ -18,3 +18,5 @@ export {
   sbe,
   cbe,
 } from "./pack-legend-rows-impl";
+
+export { workbookHelper466 } from "./map-ramp-colors-impl";

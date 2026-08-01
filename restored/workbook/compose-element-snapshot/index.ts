@@ -62,3 +62,5 @@ export {
 } from "./frame-bbox-tuple-impl";
 
 export { $De } from "./resolve-element-style-impl";
+
+export { zDe } from "./image-mask-impl";

@@ -116,3 +116,20 @@ export {
 } from "./semantic-tag-style-impl";
 
 export { LOe, tke, workbookHelper714 } from "./tag-kind-merge-impl";
+
+export {
+  ensureSemanticTagSetsInit,
+  kOe,
+  workbookHelper698,
+  workbookHelper699,
+  lke,
+  qOe,
+  rke,
+  PANEL_SURFACE_TAGS,
+  INLINE_TAGS,
+  LIST_TAGS,
+  MEDIA_TAGS,
+  workbookBinding1536,
+  workbookBinding1537,
+  workbookBinding1538,
+} from "./semantic-tag-sets-impl";

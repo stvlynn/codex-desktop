@@ -43,3 +43,5 @@ export {
 export { clipPaintRect } from "./clip-paint-rect-impl";
 
 export { prepareDiagonalStroke } from "./prepare-diagonal-stroke-impl";
+
+export { workbookHelper602 } from "./parse-rgb-css-impl";

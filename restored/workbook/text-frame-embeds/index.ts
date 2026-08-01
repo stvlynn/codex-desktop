@@ -27,3 +27,5 @@ export { PTe, isAbsoluteChild } from "./absolute-child-size-impl";
 export { gEe } from "./collect-picture-fill-ids-impl";
 
 export { FTe } from "./embed-height-impl";
+
+export { workbookN } from "./normalize-text-content-impl";
