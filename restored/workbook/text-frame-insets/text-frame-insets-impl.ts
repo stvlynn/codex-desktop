@@ -1,9 +1,18 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: text-frame inset consts (legacy _workbookJ).
-// Stage-3 wave-154.
+// Stage-3 wave-156b: direct imports (wire leave-behind removed).
 
 import { esmInit } from "../../runtime/rolldown-runtime";
-import { tfiH } from "./boundary-hooks";
+import { Qt, wr } from "../presentation-protobuf";
+import { ensureTextBoxClusterInit as workbookZ } from "../text-box";
+import {
+  ensureTypographyUnitsInit as workbookUt,
+  twipToCssPx,
+} from "../font-stack";
+import { ensureStyleResolveInit as workbookT, workbookGt } from "../text-style";
+import { ensureCssNamedColorsInit as workbookXt } from "../presentation-theme";
+import { ensureFillResolveInit as workbookBinding543 } from "../canvas-fill";
+import { workbookM, workbookBinding1267, CTe } from "../shell-mid-ensures";
 
 export let workbookBinding1268: number;
 export let workbookBinding1269: number;
@@ -21,8 +30,17 @@ export let workbookBinding1275: {
 };
 
 export const _workbookJ = esmInit(() => {
-  tfiH.ensureTextFrameInsetDeps();
-  workbookBinding1268 = 1 / tfiH.getWorkbookGt();
+  workbookZ();
+  Qt();
+  wr();
+  workbookUt();
+  workbookT();
+  workbookXt();
+  workbookBinding543();
+  workbookM();
+  workbookBinding1267();
+  CTe();
+  workbookBinding1268 = 1 / workbookGt;
   workbookBinding1269 = 24;
   workbookBinding1270 = 24;
   _V = "#000000";
@@ -31,8 +49,8 @@ export const _workbookJ = esmInit(() => {
   workbookBinding1273 = 1;
   workbookBinding1274 = 108;
   workbookBinding1275 = {
-    left: tfiH.twipToCssPx(workbookBinding1274),
-    right: tfiH.twipToCssPx(workbookBinding1274),
+    left: twipToCssPx(workbookBinding1274),
+    right: twipToCssPx(workbookBinding1274),
     top: 0,
     bottom: 0,
   };

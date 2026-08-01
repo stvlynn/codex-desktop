@@ -66,7 +66,7 @@ import {
 // Stage-3 wave-54: inlined Three.js (Binding929/Xbe + helper502–Ybe) → vendor/three npm shim (three@0.170.0); inlined body deleted.
 // Stage-3 wave-55: inlined highlight.js grammars (wke…aAe) + oAe/sAe → boundaries/highlight-js Core() (highlight.js@^11.11.1); Binding1574/Cke layout schemas retained; inlined HLJS body deleted.
 // Stage-3 wave-56: inlined Zod (helper789 / Binding1751… / $Zod* / Binding1790–1799) → vendor/zod npm shim (zod@^4.4.3); recipe cluster qWe… kept with helper816–819/YUe/Binding1799 aliases; inlined Zod body deleted.
-// Stage-3 wave-57: presentation recipes Binding1800/qWe…Yqe + Xqe/Zqe/aJe → workbook/presentation-recipes/; dJe templates + Google Slides adapter retained; thin aJe/Xqe/Zqe stubs + layout hooks.
+// Stage-3 wave-57: presentation recipes Binding1800/qWe…Yqe + Xqe/runPresentationRecipeMod/aJe → workbook/presentation-recipes/; dJe templates + Google Slides adapter retained; thin aJe/Xqe/runPresentationRecipeMod stubs + layout hooks.
 // Stage-3 wave-58: compose-layout engine Binding1390/MDe…Binding1488 → workbook/compose-layout/; compose DSL Binding1490–1528 → workbook/compose-dsl (wave-72).
 // Stage-3 wave-59: Binding1996 WorkbookN / __workbookT → workbook/workbook-core/ (method peels); Binding662/_C + Binding1574/Cke + compose DSL + intentional terminals retained.
 // Stage-3 wave-60: helper373…xve/Sve + Binding740–789 worksheet drawings → workbook/worksheet-drawings/.
@@ -151,14 +151,6 @@ import {
   stackOffsetNone as AppInitialZrt,
   stackOrderNone as AppInitialKrt,
 } from "../../vendor/d3-shape-line-pie-stack";
-import {
-  ensureZodRuntime as appInitialBst,
-  zodString,
-  zodNumber,
-  zodArray,
-  zodObject,
-  zodEnum,
-} from "../../vendor/zod";
 import {
   cssNamedColors as Eae,
   ensureCssNamedColorsInit as workbookXt,
@@ -723,9 +715,6 @@ import {
   ensureThemeSchemeColorAliasesInit as workbookBinding570,
 } from "../../workbook/design-tokens";
 
-import workbookSsf from "../../vendor/ssf";
-import workbookJstat from "../../vendor/jstat";
-import workbookBessel from "../../vendor/bessel";
 import {
   Array as YArray,
   Doc as YDoc,
@@ -755,9 +744,6 @@ import {
   Vector4 as ThreeVector4,
 } from "../../vendor/three";
 import workbookDecimal, { ensureDecimalInit } from "../../vendor/decimal";
-import { Graph as GraphlibGraph } from "../../vendor/graphlib";
-import { layout as dagreLayout } from "../../vendor/dagre";
-
 import {
   applyRgbColorTransform as workbookHelper223,
   resolveIndexedColorCss as workbookHelper224,
@@ -1379,7 +1365,6 @@ wireEntityQueryBoundaryHooks({
 });
 
 // Thin aliases for WorkbookN / create-ops env bag (legacy Binding1967 cluster).
-var ensureEntityQueryClusterInit = ensureEntityQueryInit;
 import {
   wireSheetBoundaryHooks,
   ensureSheetInit,
@@ -1463,11 +1448,11 @@ wireCanvasPaintBoundaryHooks({
   emuToCssPx: (...args: any[]) => workbookHelper287(...args),
   cssPxToEmu: (...args: any[]) => workbookHelper289(...args),
   matchPivotStyleName: (...args: any[]) => workbookHelper24(...args),
-  pivotStyleElementOf: (...args: any[]) => workbookHelper27(...args),
+  pivotStyleElementOf: (...args: any[]) => getPivotTableProto(...args),
   renderDrawingShape: (...args: any[]) => workbookHelper614(...args),
   getWorkbookO: () => _workbookO,
   indexedExcelColor: (...args: any[]) => indexedExcelColor(...args),
-  hre: (...args: any[]) => hre(...args),
+  hre: (...args: any[]) => parseCellHintKey(...args),
   workbookSt: (...args: any[]) => workbookSt(...args),
 });
 
@@ -1714,7 +1699,6 @@ wireChartPaintBoundaryHooks({
 });
 
 // Thin aliases: chart-paint cluster drained (wave-89).
-var ensurePCe = PCe;
 
 import {
   wireDocOpApplyBoundaryHooks,
@@ -1802,12 +1786,10 @@ wireNamedRangesBoundaryHooks({
 });
 
 // Thin aliases: named-ranges cluster drained (wave-91).
-var ensureZXe = ensureNamedRangesInit;
 
 import { ensureStylesYjsInit, Ogt, kgt } from "../../workbook/styles-yjs";
 
 // Thin aliases: styles-yjs cluster drained (wave-91).
-var ensureKgt = ensureStylesYjsInit;
 
 import {
   wireChartLegendBoundaryHooks,
@@ -1864,7 +1846,6 @@ import {
 } from "../../workbook/html-table-export";
 
 // Thin aliases: html-table-export cluster drained (wave-92).
-var ensureWpt = ensureHtmlTableExportInit;
 
 import {
   ensureChartJsxPropAllowlistsInit as _ke,
@@ -5608,7 +5589,6 @@ import {
 } from "../../workbook/chart-elements";
 
 // Thin alias: cluster ensure for Binding722 / chart asset init.
-var ensureChartElementsCluster = ensureChartElementsInit;
 
 import {
   ensureImageConnectorInit,
@@ -5913,7 +5893,6 @@ var ensureTableRowRangeCluster = ensureTableRowRangeInit;
 wireTableRowRangeBoundaryHooks({});
 
 // Thin aliases: JEe / Binding1315 reunited into table-row-range (wave-88).
-var ensureJEe = JEe;
 
 void Z_t;
 
@@ -6619,7 +6598,6 @@ wireFormulaStatsBoundaryHooks({
 });
 
 // Thin alias: cluster ensure for formula engine stats catalog.
-var ensureFormulaStatsCluster = ensureFormulaStatsInit;
 
 var ensureFormulaRegistryCluster = ensureFormulaRegistryInit;
 
@@ -6723,7 +6701,6 @@ setFormulaImplBag({
   vdt, ydt, bdt, xdt, Sdt, Cdt, wdt, Tdt, Edt, Ddt,
 });
 
-var ensurePresentationSlideCluster = ensurePresentationSlideInit;
 var ensureSlidesListCluster = ensureSlidesListInit;
 
 import {
@@ -7088,7 +7065,6 @@ wireMermaidSlideHelpersBoundaryHooks({
 });
 
 // Thin alias: cluster ensure for mermaid slide helpers (Binding1592…QAe).
-var ensureMermaidSlideHelpersCluster = ensureMermaidSlideHelpersInit;
 
 import {
   ensureTableStylesInit,
@@ -7215,7 +7191,6 @@ void Xme;
 void Zme;
 
 // Thin alias: cluster ensure for Excel table/pivot styles (Nme…ahe).
-var ensureTableStylesCluster = ensureTableStylesInit;
 
 import {
   wireGoogleSlidesAdapterBoundaryHooks,
@@ -7286,7 +7261,6 @@ void GoogleSlidesAdapter;
 void pJe;
 
 // Thin alias: cluster ensure for Google Slides adapter (oJe/pJe/SJe).
-var ensureGoogleSlidesAdapterCluster = ensureGoogleSlidesClusterInit;
 
 import {
   wireComposeDslBoundaryHooks,
@@ -7404,7 +7378,6 @@ void OOe;
 void workbookBinding1528;
 
 // Thin alias: cluster ensure for compose DSL (Binding1490–1528).
-var ensureComposeDslCluster = ensureComposeDslInit;
 
 wireSheetBoundaryHooks({
   ensureRangeClusterInit: () => {
@@ -7765,14 +7738,11 @@ import {
 } from "../../workbook/formula";
 
 import {
-  createArrayValue,
-  isArrayValue,
-  attachRangeMetadata,
-  getRangeMetadata,
-  copyRangeMetadata,
-  evaluateFormulaNode,
-  isErrorValue,
-  ensureFormulaArrayInit,
+  isArrayValue as workbookHelper32,
+  getRangeMetadata as workbookHelper36,
+  evaluateFormulaNode as workbookHelper38,
+  isErrorValue as workbookHelper59,
+  ensureFormulaArrayInit as $u,
 } from "../../workbook/formula-array";
 
 import {
@@ -7831,7 +7801,7 @@ import {
   pivotAxisEnum,
   pivotAxisToken,
   ensurePivotLayoutInit,
-  cellHintKey,
+  cellHintKey as workbookHelper24,
   parseCellHintKey,
   PivotLayout,
 } from "../../workbook/pivot-table";
@@ -8268,7 +8238,6 @@ import {
 } from "../../workbook/formula-date-epoch";
 
 import {
-  wireWorkbookShellEnsureHooks,
   yEe,
   Cze,
   aJe,
@@ -8326,7 +8295,6 @@ import {
   workbookO,
 } from "../../workbook/guide-layout-consts";
 import {
-  wireBinding662GateHooks,
   _u,
   gae,
   vae,
@@ -8351,7 +8319,6 @@ import {
   workbookBinding369,
 } from "../../workbook/binding662-gate";
 import {
-  wireShellMidEnsureHooks,
   workbookBinding362,
   Twe,
   Ewe,
@@ -8373,7 +8340,6 @@ import {
   XRe,
 } from "../../workbook/shell-mid-ensures";
 import {
-  wireChartPasteHintsHooks,
   Cmt,
   kmt,
   eht,
@@ -8405,25 +8371,7 @@ import {
   workbookBinding1274,
   workbookBinding1275,
   ensureTextFrameInsetsInit,
-  wireTextFrameInsetsHooks,
 } from "../../workbook/text-frame-insets";
-
-wireTextFrameInsetsHooks({
-  ensureTextFrameInsetDeps: () => {
-    workbookZ();
-    Qt();
-    wr();
-    workbookUt();
-    workbookT();
-    workbookXt();
-    workbookBinding543();
-    workbookM();
-    workbookBinding1267();
-    CTe();
-  },
-  twipToCssPx: (n) => _workbookDt(n),
-  getWorkbookGt: () => workbookGt,
-});
 
 import {
   $Ce,
@@ -8684,7 +8632,6 @@ import {
   ensureChartLayoutEnsuresInit,
   ensureBinding913Init,
   ensureBinding1229Init,
-  wireChartLayoutEnsureHooks,
   workbookBinding837,
   $D,
   halfChartValue,
@@ -8692,12 +8639,6 @@ import {
   percentToUnit,
   formatChartAxisTick,
 } from "../../workbook/chart-layout-ensures";
-
-wireChartLayoutEnsureHooks({
-  ensureInitAddressMetrics: () => {
-    initAddressMetrics();
-  },
-});
 
 import {
   EIe,
@@ -8848,7 +8789,6 @@ import {
 } from "../../workbook/presentation-list-styles";
 
 import { a, c, d as srcD, r as srcR, s, t, u } from "../d3-hierarchy";
-import { Core } from "../highlight-js";
 import {
   A as _lodashA,
   T as _lodashT,
@@ -8884,282 +8824,9 @@ var os = yDecodeUpdate;
 var workbookAt = yMergeUpdates;
 var workbookKt = () => {};
 
-function workbookHelper24(workbookInput15285, workbookInput15286) {
-  return cellHintKey(workbookInput15285, workbookInput15286);
-}
-function hre(workbookInput7148) {
-  return parseCellHintKey(workbookInput7148);
-}
-function workbookHelper27(workbookInput11184) {
-  return getPivotTableProto(workbookInput11184);
-}
-var workbookBinding333 = ensurePivotCacheModelInit;
-var workbookBinding352 = ensurePivotHierarchyClusterInit;
 wireFormulaSortFilterBoundaryHooks({
   getEvalContext: () => workbookHelper962(),
   firstCellOrValue: (...args: any[]) => workbookHelper966(...args),
-});
-
-function workbookHelper31(workbookInput6792) {
-  return createArrayValue(workbookInput6792);
-}
-function workbookHelper32(workbookInput11663) {
-  return isArrayValue(workbookInput11663);
-}
-function workbookHelper35(workbookInput11314, workbookInput11315) {
-  attachRangeMetadata(workbookInput11314, workbookInput11315);
-}
-function workbookHelper36(workbookInput13034) {
-  return getRangeMetadata(workbookInput13034);
-}
-function workbookHelper37(workbookInput14286, workbookInput14287) {
-  copyRangeMetadata(workbookInput14286, workbookInput14287);
-}
-function workbookHelper38(workbookInput2845, workbookInput2846) {
-  return evaluateFormulaNode(workbookInput2845, workbookInput2846);
-}
-function workbookHelper59(workbookInput12589) {
-  return isErrorValue(workbookInput12589);
-}
-var $u = ensureFormulaArrayInit;
-/** Bundle Binding571 — stock ssf@0.11.2 (was inlined commonJsInit). */
-var workbookBinding571 = () => workbookSsf;
-/** Bundle highlight.js — stock highlight.js via boundaries/highlight-js Core() (was inlined wke…aAe + oAe/sAe). */
-var workbookBinding1591 = Core();
-var sAe = () => {};
-
-/** Bundle graphlib + dagre — stock graphlib@^2.1.8 + dagre@^0.8.5 (was inlined Binding1671 + layout). */
-var workbookBinding1671 = GraphlibGraph;
-var workbookBinding1672 = () => {};
-var YNe = () => {};
-function wNe(workbookInput7398: any, _workbookInput7399?: any): void {
-  dagreLayout(workbookInput7398);
-}
-
-/** Bundle Zod — stock zod@^4.4.3 via vendor/zod (was inlined helper789 / $Zod* / Binding1790–1799). */
-var workbookHelper816 = zodString;
-var workbookHelper817 = zodNumber;
-var workbookHelper818 = zodArray;
-var workbookHelper819 = zodObject;
-var YUe = zodEnum;
-var workbookBinding1799 = appInitialBst;
-
-function Xqe(name: any) {
-  return getPresentationRecipeMod(name);
-}
-function Zqe(presentation: any, scriptName: any, params: any = {}) {
-  return runPresentationRecipeMod(presentation, scriptName, params);
-}
-
-wireBinding662GateHooks({
-  ensureUDeps: () => {
-    spreadsheetVn();
-    ensurePivotLayoutInit();
-    ensurePivotFieldsInit();
-    ensurePivotCacheModelInit();
-    initAddressUtils();
-    ensurePivotTableInit();
-  },
-  ensureGaeDeps: () => {
-    wr();
-    rae();
-    $d();
-  },
-  ensureVaeDeps: () => {
-    Qt();
-    workbookEt();
-    workbookBinding383();
-    $d();
-    workbookBinding411();
-  },
-  ensureBinding412Deps: () => {
-    ensureGradientFillParseInit();
-    rae();
-    gae();
-    vae();
-  },
-  ensureMdeDeps: () => {
-    _de();
-    workbookBinding411();
-    workbookBinding412();
-    workbookBinding655();
-  },
-  ensureBinding661Deps: () => {
-    workbookEt();
-    Mde();
-    ensureImageElementInit();
-  },
-  ensureCDeps: () => {
-    spreadsheetVn();
-    wr();
-    workbookBinding661();
-    workbookBinding404();
-    workbookBinding383();
-    workbookWt();
-    Hie();
-    workbookBinding675();
-  },
-  ensureBinding675Deps: () => {
-    spreadsheetVn();
-    initAddressUtils();
-    $u();
-    Yle();
-    wpe();
-    Bpe();
-    workbookF();
-    hme();
-    ensureRangeInit();
-  },
-  ensureCmeDeps: () => {
-    initAddressUtils();
-    workbookBinding333();
-    _u();
-    workbookBinding675();
-    workbookBinding352();
-    ensurePivotCachesInit();
-  },
-  ensureTmeDeps: () => {
-    workbookBinding352();
-    ensureSlicerInit();
-  },
-  ensureEmeDeps: () => {
-    Tme();
-    ensureSlicersInit();
-  },
-  getShapeGeometryNameToProto: () => workbookBinding393,
-  getWorksheetOwnerMap: () => getWorksheetOwnerMap(),
-  getExcelEpochUtcMs: () => EXCEL_EPOCH_UTC_MS,
-  getMsPerDay: () => MS_PER_DAY,
-  getRangeClass: () => Range,
-  getMaxWorksheetRows: () => MAX_WORKSHEET_ROWS,
-  getMaxWorksheetCols: () => MAX_WORKSHEET_COLS,
-  getPivotTableClass: () => PivotTable,
-  getPivotCachesClass: () => PivotCaches,
-  getSlicerClass: () => Slicer,
-  getSlicersClass: () => Slicers,
-  wirePivotCachesHooks: () => {
-    wirePivotCachesBoundaryHooks({
-      refreshPivotTableLayout: refreshPivotTableLayout,
-      PivotCacheModel: PivotCacheModel,
-    });
-  },
-});
-wireShellMidEnsureHooks({
-  ensureQTeDeps: () => {
-    workbookOt();
-    wr();
-    workbookBinding404();
-    workbookU();
-    workbookBinding1259();
-    N_();
-    workbookBinding543();
-  },
-  ensureEEeDeps: () => {
-    workbookOt();
-    $x();
-    workbookBinding404();
-    qTe();
-    workbookBinding542();
-    QTe();
-  },
-  ensureREeDeps: () => {
-    Qt();
-    workbookZ();
-    $x();
-    workbookT();
-  },
-  ensureGTeDeps: () => {
-    workbookBinding1824();
-    initAddressMetrics();
-    initAddressUtils();
-  },
-  ensureXDeDeps: () => {
-    workbookBinding1363();
-    workbookBinding1357();
-    bDe();
-    workbookBinding1359();
-    workbookBinding1355();
-  },
-  ensureZIeDeps: () => {
-    FIe();
-    workbookBinding404();
-    workbookEt();
-  },
-  ensureBIeDeps: () => {
-    SAe();
-    zIe();
-  },
-  ensureXReDeps: () => {
-    workbookBinding647();
-  },
-  ensureZweDeps: () => {
-    workbookT();
-  },
-  ensureHweDeps: () => {
-    workbookT();
-  },
-  ensureWorkbookMDeps: () => {
-    workbookT();
-  },
-  ensureCTeDeps: () => {
-    workbookBinding1267();
-    workbookT();
-  },
-  ensureZTeDeps: () => {
-    workbookBinding543();
-    workbookBinding542();
-  },
-});
-wireChartPasteHintsHooks({
-  ensureEhtDeps: () => {
-    workbookBinding1229();
-    workbookBinding661();
-    pde();
-    initAddressUtils();
-    workbookBinding584();
-    workbookBinding570();
-    initAddressMetrics();
-  },
-  ensureKmtDeps: () => {
-    initAddressUtils();
-    initAddressMetrics();
-  },
-  ensureCmtDeps: () => {},
-  createAppInitialBst: () => appInitialBst(),
-});
-wireWorkbookShellEnsureHooks({
-  ensureYEeDeps: () => {
-    workbookBinding1229();
-    _workbookJ();
-    workbookT();
-    workbookZ();
-    zTe();
-    GTe();
-    eEe();
-    rEe();
-    fEe();
-    workbookO();
-    workbookBinding644();
-    wr();
-  },
-  ensureCzeDeps: () => {
-    workbookBinding647();
-    Z$();
-    workbookBinding661();
-    workbookBinding739();
-    workbookBinding1389();
-    workbookBinding627();
-    workbookBt();
-    workbookBinding623();
-    workbookBinding1736();
-  },
-  ensureAJeDeps: () => {
-    wirePresentationRecipesFromCompose();
-    ensurePresentationRecipesInitMod();
-  },
-  ensureBinding1489Deps: () => {
-    workbookOt();
-  },
 });
 
 // Thin empty ensure restored after wave-151 lead-scan over-drop.
@@ -9466,7 +9133,7 @@ wirePresentationDocHooks({
     xJe,
     mYe,
     wRe,
-    Zqe,
+    runPresentationRecipeMod,
     uJe,
     _Ye,
     ZRe,
@@ -9501,9 +9168,6 @@ wirePresentationDocHooks({
   }),
 });
 
-/** Bundle qXe — stock jstat@1.9.6 (was inlined commonJsInit). */
-var qXe = () => workbookJstat;
-/** Bundle JXe — stock bessel@1.0.2 (was inlined commonJsInit). */
 /** Bundle Decimal — stock decimal.js@10.6.0 via vendor/decimal (was inlined helper939…/Binding1906/Vit). */
 function lst(workbookInput15699) {
   return OZe(workbookInput15699);

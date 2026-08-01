@@ -7,6 +7,7 @@ import { formatLocale as appInitialNot } from "../../vendor/d3-format";
 import { Vector3 as ThreeVector3 } from "../../vendor/three";
 import workbookSsf from "../../vendor/ssf";
 import { Cn, Jn, Kn, qn, Qt, wr } from "../presentation-protobuf";
+import { initAddressMetrics } from "../../utils/spreadsheet-address-utils";
 import {
   schemeSet2 as chartSchemeSet2,
   t as d3HierarchyInitT,
@@ -30,7 +31,6 @@ import { ensureCssNamedColorsInit as workbookXt } from "../presentation-theme";
 import { resolveColorToCssRgba as workbookSt } from "../color-resolve";
 import { ensureStyleResolveInit as workbookT } from "../text-style";
 import { ensureTextBoxClusterInit as workbookZ } from "../text-box";
-import { cleH } from "./boundary-hooks";
 
 /** Empty D3 cluster ensures (same no-ops as boundary mid-file stubs). */
 function AppInitialQat(): void {}
@@ -46,7 +46,6 @@ export let workbookBinding839: any;
 
 const workbookBinding571 = () => workbookSsf;
 
-// Replace initAddressMetrics() calls with hook
 (workbookBinding838,
   workbookBinding839,
   (workbookBinding840 = esmInit(() => {
@@ -1025,7 +1024,7 @@ var workbookBinding1226,
   });
 var qCe = esmInit(() => {
   workbookBinding1229();
-  cleH.ensureInitAddressMetrics();
+  initAddressMetrics();
 });
 var workbookBinding1230,
   workbookBinding1231,
@@ -1034,7 +1033,7 @@ var workbookBinding1230,
   workbookBinding1234,
   workbookBinding1235,
   $Ce = esmInit(() => {
-    cleH.ensureInitAddressMetrics();
+    initAddressMetrics();
     workbookXt();
     workbookBinding1230 = "#4f81bd";
     workbookBinding1231 = "#666666";

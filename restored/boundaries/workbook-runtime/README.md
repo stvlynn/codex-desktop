@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~9.6k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~9.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1900,3 +1900,17 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - openBoundary remains while mega still ~9.6k (wire block offsets peel LOC)
 - Nest inventory: **no ≥5 esm nests remain** in mega
 - Next: slim binding662/shell-mid wires via direct imports; helper31–59 aliases; closeout when thin
+
+## Wave 156 (Stage-3 wire slim + helper/vendor peel)
+
+- Boundary 9607 → 9271 (Δ -336)
+- `binding662-gate` / `shell-mid-ensures` / `chart-paste-hints`: retired wire leave-behinds → direct module imports
+- helper31–59 formula-array aliases → import renames; dead helper31/35/37 dropped
+- Dead vendor comment shims (ssf/hljs/graphlib/zod/Xqe/wNe) removed; consumers already use module/npm paths
+- Boundary wired via line-range drain (no mega-file StrReplace); `openBoundary` kept (~9353 LOC still above thin closeout bar)
+
+### Wave 156b follow-up
+
+- Slimmed `workbook-shell-ensures` / `text-frame-insets` / `chart-layout-ensures` wires → direct imports
+- Dropped dead ensure* cluster aliases + helper24 wrapper + leftover jstat/bessel comment shims
+- `openBoundary` kept
