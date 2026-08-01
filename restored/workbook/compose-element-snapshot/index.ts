@@ -72,3 +72,5 @@ export { TOe } from "./geometry-snapshot-impl";
 export { workbookHelper684 } from "./truncate-preview-text-impl";
 export { eOe } from "./proto-text-preview-impl";
 export { _Oe, SOe, COe } from "./element-fill-line-color-impl";
+
+export { UDe } from "./map-kind-helper-impl";

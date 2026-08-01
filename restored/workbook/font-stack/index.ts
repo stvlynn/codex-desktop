@@ -49,3 +49,5 @@ export {
   DOCX_COMPLEX_SCRIPT_TYPEFACE_PREFIX,
   DOCX_EAST_ASIA_TYPEFACE_PREFIX,
 } from "./font-scheme-parse-impl";
+
+export { workbookHelper824 } from "./clone-embedded-fonts-impl";

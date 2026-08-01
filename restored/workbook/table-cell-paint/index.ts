@@ -21,3 +21,5 @@ export {
 export { vTe } from "./has-table-content-impl";
 
 export { workbookHelper635, yTe } from "./border-segment-key-impl";
+
+export { workbookHelper632, workbookHelper636, workbookHelper637, workbookHelper638 } from "./border-merge-helpers-impl";

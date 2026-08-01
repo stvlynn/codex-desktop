@@ -12,3 +12,5 @@ export {
 export { rbe, pxe } from "./combo-series-type-impl";
 
 export { xxe } from "./hidden-series-indices-impl";
+
+export { bxe } from "./axis-key-helper-impl";

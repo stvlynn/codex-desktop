@@ -32,3 +32,5 @@ export {
   LEGEND_MARKER_INSET,
   LEGEND_INSET_BOTTOM,
 } from "./legend-marker-size-impl";
+
+export { workbookHelper387, workbookHelper487 } from "./legend-typeface-helpers-impl";

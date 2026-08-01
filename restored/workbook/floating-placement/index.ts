@@ -12,3 +12,5 @@ export {
 } from "./placement-alignment-impl";
 
 export { ATe } from "./is-paragraph-vcenter-impl";
+
+export { kTe } from "./paragraph-alignment-helper-impl";

@@ -14,3 +14,5 @@ export {
 } from "./normalize-chart-categories-impl";
 
 export { $O } from "./is-max-min-orientation-impl";
+
+export { workbookHelper499 } from "./axis-orientation-helpers-impl";

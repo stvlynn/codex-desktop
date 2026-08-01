@@ -29,3 +29,5 @@ export { gEe } from "./collect-picture-fill-ids-impl";
 export { FTe } from "./embed-height-impl";
 
 export { workbookN } from "./normalize-text-content-impl";
+
+export { OTe } from "./is-embed-element-helper-impl";

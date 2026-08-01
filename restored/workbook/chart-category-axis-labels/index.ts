@@ -13,3 +13,5 @@ export {
 } from "./chart-category-axis-labels-impl";
 
 export { Nye, Pye } from "./rotated-label-paint-impl";
+
+export { workbookHelper543 } from "./nonempty-string-helper-impl";

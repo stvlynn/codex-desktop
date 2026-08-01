@@ -34,3 +34,7 @@ export {
 } from "./layout-category-labels-impl";
 
 export { paintRadialGridlines, KSe } from "./paint-radial-gridlines-impl";
+
+export { workbookHelper426, workbookHelper552, workbookHelper556 } from "./chart-paint-wire-helpers-impl";
+
+export { workbookHelper485 } from "./filter-hidden-indices-helper-impl";
