@@ -134,8 +134,6 @@ export {
   workbookBinding1538,
 } from "./semantic-tag-sets-impl";
 
-export {
-  jOe,
-  workbookHelper701,
-  FOe,
-} from "./jsx-children-normalize-impl";
+export { jOe, workbookHelper701, FOe } from "./jsx-children-normalize-impl";
+
+export { ike, cke } from "./element-chrome-kind-impl";

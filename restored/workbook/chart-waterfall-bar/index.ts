@@ -24,3 +24,5 @@ export {
   workbookHelper575,
   WATERFALL_ACCENT_DEFAULTS,
 } from "./waterfall-accent-color-impl";
+
+export { ebe, WATERFALL_LEGEND_ENTRIES } from "./waterfall-legend-entries-impl";

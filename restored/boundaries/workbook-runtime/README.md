@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~22.7k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~22.3k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1734,3 +1734,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: remaining ≥10 live nests / helper464 after \_A / formula g1e… wrappers / oYe scheme parse
+
+## Wave 140 (Stage-3 helper464/_A + formula/theme nests + ≥8 wire batch)
+
+- Boundary 22668 → 22316 (Δ -352)
+- Peeled: canvas-fill helper464+_A (fix stroke-resolve `_A` import); formula-date time parts l1e…b1e + Qnt; formula-eng-mids erf/radix t0e/n0e/887… + IFS n2e/Lot/Vot/Rot; font-stack oYe/sYe/822; presentation-theme $2; presentation-presence $7; sheet-catalog Agt; wire/dead ≥8 (422/ebe/KTe/yTe+635/684/eOe/_Oe/SOe/COe/ike/cke + dead 418/Hxe/xSe/ooe)
+- Skipped: helper667 (Binding1344); helper379 (Binding833); wirePresentationRecipes; vYe/_workbookS
+- Leave-behind: helper464 **unlocked** (_A owned in canvas-fill); wirePresentationRecipes false inventory; Nwe stub remains for Iwe→zge; vYe 1-line stub
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: remaining ≥8 live (667/379 nests, Cot/rst/…); Nrt after coupon ensure; _workbookS when presentation leave-behinds drain

@@ -36,8 +36,11 @@ export {
   processPictureBitmapWithOpacity,
   ensurePictureEffectCachesInit,
 } from "./picture-effects";
-export {
-  resolveFillStyle,
-  ensureFillResolveInit,
-} from "./fill-resolve";
+export { resolveFillStyle, ensureFillResolveInit } from "./fill-resolve";
 export { ensureCanvasFillClusterInit } from "./ensure-canvas-fill-init";
+
+export {
+  DRAWINGML_CRGB_DEFAULTS,
+  _A,
+  workbookHelper464,
+} from "./drawingml-fill-defaults-impl";

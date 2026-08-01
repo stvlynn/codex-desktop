@@ -41,3 +41,11 @@ export {
   twipToCssPx,
 } from "./typography-units";
 export { ensureFontStackClusterInit } from "./ensure-font-stack-init";
+
+export {
+  workbookHelper822,
+  oYe,
+  sYe,
+  DOCX_COMPLEX_SCRIPT_TYPEFACE_PREFIX,
+  DOCX_EAST_ASIA_TYPEFACE_PREFIX,
+} from "./font-scheme-parse-impl";

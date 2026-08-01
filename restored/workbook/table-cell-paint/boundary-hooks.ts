@@ -3,7 +3,6 @@
 
 export type TableCellPaintBoundaryHooks = {
   /** Round px→milli (legacy bh635). */
-  roundPx1000: (...args: any[]) => any;
   /** Border segment key (legacy yTe). */
   borderSegmentKey: (...args: any[]) => any;
   bh634: (...args: any[]) => any;

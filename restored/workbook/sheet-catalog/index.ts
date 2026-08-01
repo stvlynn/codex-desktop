@@ -3,3 +3,5 @@
 
 export { wireSheetCatalogBoundaryHooks, scaH } from "./boundary-hooks";
 export { normalizeSheetCatalog, jgt } from "./sheet-catalog-impl";
+
+export { Agt } from "./normalize-sheet-entry-impl";

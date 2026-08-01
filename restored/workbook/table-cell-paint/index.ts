@@ -19,3 +19,5 @@ export {
 } from "./materialize-border-strokes-impl";
 
 export { vTe } from "./has-table-content-impl";
+
+export { workbookHelper635, yTe } from "./border-segment-key-impl";

@@ -68,3 +68,7 @@ export { zDe } from "./image-mask-impl";
 export { workbookHelper680 } from "./typeface-triplet-impl";
 
 export { TOe } from "./geometry-snapshot-impl";
+
+export { workbookHelper684 } from "./truncate-preview-text-impl";
+export { eOe } from "./proto-text-preview-impl";
+export { _Oe, SOe, COe } from "./element-fill-line-color-impl";

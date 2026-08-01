@@ -2,7 +2,6 @@
 // Stage-3 wave-129: mid-paint-helpers hooks (Xwe/Zwe owned).
 
 export type MidPaintHelpersHooks = {
-  bh464: (...args: any[]) => any;
   bh465: (...args: any[]) => any;
   bh468: (...args: any[]) => any;
   bh472: (...args: any[]) => any;

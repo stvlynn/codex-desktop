@@ -56,3 +56,5 @@ export {
 } from "./collect-slide-theme-fonts-impl";
 
 export { AXe, jXe } from "./color-scheme-clone-impl";
+
+export { $2 } from "./clone-style-list-impl";

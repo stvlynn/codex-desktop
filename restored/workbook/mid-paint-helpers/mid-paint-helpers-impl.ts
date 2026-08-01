@@ -3,6 +3,7 @@
 // Stage-3 wave-128.
 
 import { workbookHelper598 } from "./with-transformed-clip-impl";
+import { workbookHelper464 } from "../canvas-fill";
 
 import { mphH } from "./boundary-hooks";
 
@@ -22,7 +23,13 @@ export function resolveSeriesFill(
       !mphBind18204.fill.color &&
       !mphBind18204.fill.pattern
       ? undefined
-      : mphH.bh464(mphIn7707, mphIn7708, mphBind18205, mphIn7712, "transparent")
+      : workbookHelper464(
+          mphIn7707,
+          mphIn7708,
+          mphBind18205,
+          mphIn7712,
+          "transparent",
+        )
     : mphH.bh465(mphIn7709, mphIn7711, mphIn7712, mphIn7713);
 }
 export function resolveLineSeriesStroke(

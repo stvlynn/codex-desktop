@@ -154,3 +154,16 @@ export {
   Nst,
   Rct,
 } from "./formula-unimplemented-stubs-impl";
+
+export {
+  T1e,
+  L1e,
+  workbookHelper887,
+  workbookHelper888,
+  R1e,
+  B1e,
+  t0e,
+  n0e,
+  s0e,
+} from "./formula-erf-radix-impl";
+export { n2e, Lot, Vot, Rot } from "./formula-ifs-impl";

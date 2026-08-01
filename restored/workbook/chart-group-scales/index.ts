@@ -53,3 +53,9 @@ export {
 } from "./gap-visible-count-impl";
 
 export { workbookHelper424, workbookHelper425 } from "./band-scale-center-impl";
+
+export {
+  workbookHelper422,
+  AXIS_RESERVE_DEFAULT,
+  AXIS_RESERVE_WHEN_HIDDEN_GRID,
+} from "./axis-reserve-for-bar-impl";

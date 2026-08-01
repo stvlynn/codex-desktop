@@ -39,3 +39,16 @@ export {
 } from "./networkdays-wrappers-impl";
 
 export { workbookHelper934 } from "./compare-serial-dates-impl";
+
+export {
+  l1e,
+  d1e,
+  f1e,
+  p1e,
+  m1e,
+  g1e,
+  _1e,
+  v1e,
+  b1e,
+} from "./formula-time-parts-impl";
+export { Qnt } from "./set-date-year-impl";

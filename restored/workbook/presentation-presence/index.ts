@@ -18,3 +18,5 @@ export {
   SCHEMA_VERSION_KEY,
   SLIDES_BY_ID_KEY,
 } from "./presentation-state-ymap-impl";
+
+export { $7 } from "./clone-sheet-selection-impl";

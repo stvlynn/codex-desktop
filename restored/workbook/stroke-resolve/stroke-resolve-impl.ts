@@ -6,6 +6,7 @@ import { resolveColorToCssRgba } from "../color-resolve";
 import { resolveThemeAccentSlot } from "../theme-color";
 import { schemeSet2 as defaultSeriesColors } from "../../boundaries/d3-hierarchy";
 import { tr } from "../presentation-protobuf";
+import { DRAWINGML_CRGB_DEFAULTS as _A } from "../canvas-fill";
 
 const DEFAULT_STROKE_COLOR = "#fff";
 const DEFAULT_STROKE_WIDTH_PX = 1;

@@ -1,3 +1,4 @@
+import { workbookHelper635 } from "./border-segment-key-impl";
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Semantic implementation: merge + materialize table border strokes (legacy bTe/xTe).
 // Stage-3 wave-107.
@@ -42,7 +43,7 @@ export function mergeCollinearBorderStrokes(tcpIn2052: any) {
 export function materializeBorderStrokes(tcpIn1551: any) {
   let tcpBind7624 = new Map();
   for (let tcpBind19907 of tcpIn1551) {
-    let tcpBind20442 = `${tcpBind19907.orientation}:${tcpH.roundPx1000(tcpBind19907.crossPx)}`,
+    let tcpBind20442 = `${tcpBind19907.orientation}:${workbookHelper635(tcpBind19907.crossPx)}`,
       tcpBind20443 = tcpBind7624.get(tcpBind20442);
     if (tcpBind20443) {
       tcpBind20443.push(tcpBind19907);
@@ -55,8 +56,8 @@ export function materializeBorderStrokes(tcpIn1551: any) {
     let tcpBind9404 = [
       ...new Set(
         tcpBind9170.flatMap((item) => [
-          tcpH.roundPx1000(item.startPx),
-          tcpH.roundPx1000(item.endPx),
+          workbookHelper635(item.startPx),
+          workbookHelper635(item.endPx),
         ]),
       ),
     ]
