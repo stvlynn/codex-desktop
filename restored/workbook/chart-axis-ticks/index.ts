@@ -46,3 +46,5 @@ export {
 } from "./paint-secondary-value-axis-impl";
 
 export { workbookHelper431 } from "./measure-line-height-impl";
+
+export { workbookHelper461 } from "./near-equal-helper-impl";

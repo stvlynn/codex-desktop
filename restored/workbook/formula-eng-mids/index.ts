@@ -265,3 +265,8 @@ export {
   workbookBinding1934,
   ensureEvalContextStackInit,
 } from "./formula-eval-context-impl";
+
+export {
+  _8e, y8e, b8e, x8e, S8e, C8e, w8e, T8e, E8e, D8e, O8e,
+  workbookHelper924, workbookHelper925, k8e,
+} from "./formula-dstats-arg-wrappers-impl";

@@ -52,3 +52,9 @@ export {
   b1e,
 } from "./formula-time-parts-impl";
 export { Qnt } from "./set-date-year-impl";
+
+export {
+  l5e, d5e, g5e, J5e,
+  Met, workbookHelper937, workbookHelper938,
+  stt, ltt, dtt,
+} from "./formula-date-part-wrappers-impl";

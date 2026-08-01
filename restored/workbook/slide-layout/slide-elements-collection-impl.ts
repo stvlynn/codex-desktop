@@ -7,7 +7,15 @@ import { workbookS, workbookBinding1298 } from "../charts-collection";
 import { workbookBinding736 } from "../shape-element";
 import { ImageElement as workbookBinding660 } from "../image-element";
 import { _workbookM } from "../table-element";
-import { slH } from "./boundary-hooks";
+import { _workbookB } from "./slide-images-collection-impl";
+import { workbookBinding1302 } from "./slide-embedded-artifact-impl";
+import { workbookBinding1304 } from "./slide-artifacts-collection-impl";
+import { _workbookF } from "./slide-tables-collection-impl";
+import {
+  workbookBinding1335,
+  workbookBinding1336,
+  _U,
+} from "./slide-smart-art-impl";
 
 export const workbookBinding1338 = (slIn10591: any) => {
   if (!slIn10591) return;
@@ -64,10 +72,10 @@ export class workbookBinding1340 {
     this.#s = new Map();
     this.#c = true;
     this.#e = new (_workbookV as any)(this.#l, []);
-    this.#t = new slH.WorkbookB(this.#l, []);
-    this.#n = new slH.WorkbookF(this.#l, []);
+    this.#t = new _workbookB(this.#l, []);
+    this.#n = new _workbookF(this.#l, []);
     this.#r = new (workbookS as any)(this.#l, []);
-    this.#i = new slH.Binding1304(this.#l, []);
+    this.#i = new workbookBinding1304(this.#l, []);
     this.#a = new _U(this.#l, []);
     let slBind9435 = workbookBinding1339(slIn2315 ?? []);
     for (let slBind21868 of slBind9435) {
@@ -155,11 +163,11 @@ export class workbookBinding1340 {
         this.#r.deleteById(slIn2222);
         return;
       }
-      if (slBind9262 instanceof slH.Binding1302) {
+      if (slBind9262 instanceof workbookBinding1302) {
         this.#i.deleteById(slIn2222);
         return;
       }
-      if (slBind9262 instanceof slH.Binding1336) {
+      if (slBind9262 instanceof workbookBinding1336) {
         this.#a.deleteById(slIn2222);
         return;
       }
@@ -207,7 +215,7 @@ export class workbookBinding1340 {
         return this.#i.add({
           proto: slIn2179,
         });
-      case slH.Binding1335:
+      case workbookBinding1335:
         return this.#a.add({
           proto: slIn2179,
         });

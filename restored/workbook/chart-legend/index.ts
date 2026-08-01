@@ -34,3 +34,5 @@ export {
 } from "./legend-marker-size-impl";
 
 export { workbookHelper387, workbookHelper487 } from "./legend-typeface-helpers-impl";
+
+export { workbookHelper486 } from "./legend-position-normalize-impl";

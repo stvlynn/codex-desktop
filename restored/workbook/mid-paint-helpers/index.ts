@@ -17,3 +17,5 @@ export {
 } from "./mid-paint-helpers-impl";
 
 export { workbookHelper598 } from "./with-transformed-clip-impl";
+
+export { WOe } from "./join-class-names-impl";

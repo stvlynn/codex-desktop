@@ -16,3 +16,5 @@ export {
 export { $O } from "./is-max-min-orientation-impl";
 
 export { workbookHelper499 } from "./axis-orientation-helpers-impl";
+
+export { workbookHelper498 } from "./is-right-axis-helper-impl";

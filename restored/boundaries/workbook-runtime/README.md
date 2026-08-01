@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~21.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~20.2k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1764,3 +1764,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
 - openBoundary remains while mega still large
 - Next: peel GAP element VO leave-behinds (_workbookB/F/1302/…) to unlock thinner slide-layout hooks; remaining ≥5 formula/mids; _workbookS when presentation leave-behinds clear
+## Wave 143 (Stage-3 GAP element VOs + formula/date ≥5 + wire)
+
+- Boundary 21036 → 20245 (Δ -791)
+- Peeled: slide-layout GAP (_workbookB/X, Binding1302/1304, _workbookF/P, Binding1335–1337, _U/lDe); formula-eng-mids D* wrappers (_8e…O8e/k8e/924–925); formula-date-months Met/937/938/stt/ltt/dtt + l5e/d5e/g5e/J5e; wire qye/Gye/WOe/631/486/498/461; dead Gxe/Jxe/Kxe
+- Skipped: pye (Binding836 leave); hTe (Binding1265 ensure bag); wirePresentationRecipes; vYe; Nwe/Iwe; _workbookS (~1.2k); Binding1330 compose tracks
+- Leave-behind: wirePresentationRecipes false inventory; Nwe stub for Iwe→zge; vYe 1-line stub; _workbookS still entangled
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`
+- openBoundary remains while mega still large
+- Next: Binding836→pye / Binding1265→hTe / remaining ≥5; _workbookS when presentation leave-behinds clear
+

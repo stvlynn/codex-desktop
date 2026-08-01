@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-142: slide-layout hooks for GAP leave-behinds still on the mega boundary.
+// Stage-3 wave-143: slide-layout ensure hooks (GAP VOs owned in slide-layout).
 
 export type SlideLayoutBoundaryHooks = {
   ensureQt: () => void;
@@ -15,12 +15,9 @@ export type SlideLayoutBoundaryHooks = {
   ensureLDe: () => void;
   ensureBinding1337: () => void;
   ensureWorkbookH: () => void;
-  WorkbookB: any;
-  WorkbookF: any;
-  Binding1304: any;
-  Binding1302: any;
-  Binding1336: any;
-  Binding1335: any;
+  ensurePresentationFn: () => void;
+  ensureWorkbookB: () => void;
+  ensureBinding647: () => void;
 };
 
 /** Live bag — wired from workbook-runtime after peel. */

@@ -6,6 +6,7 @@ import { workbookHelper598 } from "./with-transformed-clip-impl";
 import { workbookHelper464 } from "../canvas-fill";
 
 import { mphH } from "./boundary-hooks";
+import { WOe } from "./join-class-names-impl";
 
 export function resolveSeriesFill(
   mphIn7707: any,
@@ -228,7 +229,7 @@ export function mergeComposeStyle(
   if (mphBind14839)
     return (
       mphIn5261 &&
-        (mphBind14839.className = mphH.WOe(mphBind14839.className, mphIn5261)),
+        (mphBind14839.className = WOe(mphBind14839.className, mphIn5261)),
       mphBind14839
     );
 }
