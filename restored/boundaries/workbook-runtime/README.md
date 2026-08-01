@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~35.0k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~34.2k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -270,6 +270,9 @@
 | CF cell-value compare (`Rht`) | ~0.04k | **Drained (wave-120)** → `workbook/cf-icon-color-scale/` |
 | Formula scalar-funcs (`isNonNullArg`..`days360`/`qQe`/`z$e`) | ~2.71k | **Drained (wave-121)** → `workbook/formula-scalar-funcs/` |
 | Bond basis + ACCRINT (`oat`/`sat`/`Kat`/`parseSettlementMaturity`..) | ~0.36k | **Drained (wave-121)** → `workbook/formula-bond-basis/` |
+| Formula financial annuity (`helper897`..`Q0e` / `w0e` / `fv`/`pmt`) | ~0.63k | **Drained (wave-122)** → `workbook/formula-financial/` |
+| Bond RECEIVED/YIELD wrappers (`lat`/`uat`/`dat`/`fat`) | ~0.10k | **Drained (wave-122)** → `workbook/formula-bond-basis/` |
+| Formula AVERAGEA + error tokens (`$3`/`Q2e`/`l4e`/`_4e`) | ~0.09k | **Drained (wave-122)** → `workbook/formula-average-a/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1571,4 +1574,13 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Skipped _4e (Q2e/l4e); helper603 (Nwe Map ESM); rze; kht
 - Leave-behind: rze still 1 caller in WorkbookN apply; kht still in ensure bag; helper603 still needs Nwe Map ESM
 - QG PASS on new modules + boundary `--no-cache --allow-open-boundaries`; full tree with `--allow-open-boundaries --allow-flat --allow-mechanical-names`
+- openBoundary remains while mega still large
+
+## Wave 122 (Stage-3 preferred _4e + mid-batch financial)
+
+- Boundary 34979 → 34213 (Δ -766)
+- Peeled: formula-financial annuity helper897..Q0e (w0e/fv/npvArgs/pmt; closes ffinH fn899/fn901); formula-bond-basis lat/uat/dat/fat; formula-average-a $3/Q2e/l4e/_4e (owns Q2e/l4e for preferred _4e)
+- Skipped P8e (j8e/I8e); fze.._ze (rze callsites); helper603 (Nwe); rze; kht
+- Leave-behind: rze still WorkbookN.apply; kht still ensure bag; helper603 still needs Nwe Map ESM
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries`; full tree with `--allow-open-boundaries --allow-flat --allow-mechanical-names`
 - openBoundary remains while mega still large

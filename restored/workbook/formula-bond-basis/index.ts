@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-121: formula-bond-basis barrel.
+// Stage-3 wave-121/122: formula-bond-basis barrel.
 
 export { wireFormulaBondBasisBoundaryHooks, fbbH } from "./boundary-hooks";
 export {
@@ -25,3 +25,4 @@ export {
   isFormulaLambda,
 } from "./bond-basis-helpers-impl";
 export { oat, sat } from "./bond-accrint-impl";
+export { lat, uat, dat, fat } from "./bond-received-yield-impl";

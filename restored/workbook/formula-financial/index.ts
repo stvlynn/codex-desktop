@@ -1,5 +1,5 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
-// Stage-3 wave-108: formula-financial barrel.
+// Stage-3 wave-108/110/122: formula-financial barrel.
 
 export { wireFormulaFinancialBoundaryHooks, ffinH } from "./boundary-hooks";
 export {
@@ -14,3 +14,33 @@ export {
   O0e,
   P0e,
 } from "./formula-financial-impl";
+export {
+  isValidDateArg,
+  coerceToDate,
+  b0e,
+  x0e,
+  S0e,
+  C0e,
+  w0e,
+  A0e,
+  j0e,
+  M0e,
+  futureValue,
+  N0e,
+  I0e,
+  L0e,
+  R0e,
+  z0e,
+  npvArgs,
+  B0e,
+  computePmt,
+  V0e,
+  U0e,
+  G0e,
+  K0e,
+  q0e,
+  J0e,
+  Y0e,
+  X0e,
+  Q0e,
+} from "./formula-annuity-impl";
