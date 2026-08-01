@@ -12,6 +12,10 @@ export {
   type ChartLabelAlign,
 } from "./chart-label-align";
 export {
+  wirePresentationRecipesFromCompose,
+  wirePresentationRecipesFromBoundary,
+} from "./wire-from-compose";
+export {
   wirePresentationRecipeLayoutHooks,
   type PresentationRecipeLayoutHooks,
   COMPOSE_AUTO_TRACK,

@@ -6623,8 +6623,6 @@ var ensureFormulaStatsCluster = ensureFormulaStatsInit;
 
 var ensureFormulaRegistryCluster = ensureFormulaRegistryInit;
 
-var g8e = esmInit(() => {});
-
 wireFormulaRegistryBoundaryHooks({
   ensureC8e: () => {
     c8e();
@@ -8291,6 +8289,111 @@ import {
 } from "../../workbook/emu-units";
 
 import {
+  wwe,
+  workbookBinding1241,
+  workbookBinding1242,
+  workbookBinding1243,
+  workbookBinding1244,
+  workbookBinding1247,
+  workbookBinding1248,
+  workbookBinding1251,
+  $z,
+} from "../../workbook/cf-traffic-colors";
+import {
+  workbookBinding1237,
+  workbookBinding1238,
+  workbookBinding1256,
+  workbookBinding1257,
+  workbookBinding1258,
+  _B,
+  workbookBinding1259,
+  qTe,
+  workbookBinding1276,
+  fEe,
+  workbookBinding1277,
+  workbookBinding1278,
+  workbookBinding1279,
+  workbookBinding1280,
+  workbookBinding1281,
+  workbookBinding1282,
+  workbookBinding1283,
+  workbookBinding1284,
+  workbookBinding1285,
+  workbookBinding1286,
+  workbookBinding1287,
+  workbookBinding1288,
+  pEe,
+  workbookO,
+} from "../../workbook/guide-layout-consts";
+import {
+  wireBinding662GateHooks,
+  _u,
+  gae,
+  vae,
+  workbookBinding412,
+  Mde,
+  workbookBinding661,
+  workbookBinding662,
+  _C,
+  workbookBinding669,
+  workbookBinding670,
+  workbookBinding671,
+  workbookBinding672,
+  workbookBinding673,
+  workbookBinding674,
+  workbookBinding675,
+  workbookBinding676,
+  Cme,
+  workbookBinding683,
+  Tme,
+  workbookBinding684,
+  Eme,
+  workbookBinding369,
+} from "../../workbook/binding662-gate";
+import {
+  wireShellMidEnsureHooks,
+  workbookBinding362,
+  Twe,
+  Ewe,
+  workbookBinding1252,
+  workbookBinding1267,
+  zwe,
+  Hwe,
+  workbookM,
+  workbookHelper634,
+  CTe,
+  zTe,
+  GTe,
+  QTe,
+  eEe,
+  rEe,
+  xDe,
+  zIe,
+  BIe,
+  XRe,
+} from "../../workbook/shell-mid-ensures";
+import {
+  wireChartPasteHintsHooks,
+  Cmt,
+  kmt,
+  eht,
+  workbookBinding1956,
+  workbookBinding1957,
+  workbookBinding1958,
+  Qmt,
+  $mt,
+} from "../../workbook/chart-paste-hints";
+import {
+  g8e,
+  HXe,
+  KXe,
+  c8e,
+  x7e,
+  wot,
+} from "../../workbook/formula-thin-stubs";
+import { wirePresentationRecipesFromCompose } from "../../workbook/presentation-recipes";
+
+import {
   _workbookJ,
   workbookBinding1268,
   workbookBinding1269,
@@ -8792,17 +8895,6 @@ function workbookHelper27(workbookInput11184) {
 }
 var workbookBinding333 = ensurePivotCacheModelInit;
 var workbookBinding352 = ensurePivotHierarchyClusterInit;
-var workbookBinding362 = esmInit(() => {});
-var workbookBinding369,
-  _u = esmInit(() => {
-    spreadsheetVn();
-    ensurePivotLayoutInit();
-    ensurePivotFieldsInit();
-    ensurePivotCacheModelInit();
-    initAddressUtils();
-    ensurePivotTableInit();
-    workbookBinding369 = PivotTable;
-  });
 wireFormulaSortFilterBoundaryHooks({
   getEvalContext: () => workbookHelper962(),
   firstCellOrValue: (...args: any[]) => workbookHelper966(...args),
@@ -8830,248 +8922,8 @@ function workbookHelper59(workbookInput12589) {
   return isErrorValue(workbookInput12589);
 }
 var $u = ensureFormulaArrayInit;
-var gae = esmInit(() => {
-  wr();
-  rae();
-  $d();
-});
-var vae = esmInit(() => {
-    Qt();
-    workbookEt();
-    workbookBinding383();
-    $d();
-    workbookBinding411();
-  }),
-  workbookBinding412 = esmInit(() => {
-    ensureGradientFillParseInit();
-    rae();
-    gae();
-    vae();
-  });
 /** Bundle Binding571 — stock ssf@0.11.2 (was inlined commonJsInit). */
 var workbookBinding571 = () => workbookSsf;
-var Mde = esmInit(() => {
-  _de();
-  workbookBinding411();
-  workbookBinding412();
-  workbookBinding655();
-});
-var workbookBinding661 = esmInit(() => {
-  workbookEt();
-  Mde();
-  ensureImageElementInit();
-});
-var workbookBinding662,
-  _C = esmInit(() => {
-    spreadsheetVn();
-    wr();
-    workbookBinding661();
-    workbookBinding404();
-    workbookBinding383();
-    workbookWt();
-    Hie();
-    workbookBinding675();
-    workbookBinding662 = Object.entries(workbookBinding393).reduce(
-      (accumulator, [workbookInput15537, workbookInput15538]) => (
-        workbookInput15538 in accumulator ||
-          (accumulator[workbookInput15538] = workbookInput15537),
-        accumulator
-      ),
-      {},
-    );
-  });
-var workbookBinding669,
-  workbookBinding670,
-  workbookBinding671,
-  workbookBinding672,
-  workbookBinding673,
-  workbookBinding674,
-  workbookBinding675 = esmInit(() => {
-    spreadsheetVn();
-    initAddressUtils();
-    $u();
-    Yle();
-    wpe();
-    Bpe();
-    workbookF();
-    hme();
-    ensureRangeInit();
-    workbookBinding669 = getWorksheetOwnerMap();
-    workbookBinding670 = EXCEL_EPOCH_UTC_MS;
-    workbookBinding671 = MS_PER_DAY;
-    workbookBinding672 = Range;
-    workbookBinding673 = MAX_WORKSHEET_ROWS;
-    workbookBinding674 = MAX_WORKSHEET_COLS;
-  }),
-  workbookBinding676,
-  Cme = esmInit(() => {
-    initAddressUtils();
-    workbookBinding333();
-    _u();
-    workbookBinding675();
-    workbookBinding352();
-    wirePivotCachesBoundaryHooks({
-      refreshPivotTableLayout: refreshPivotTableLayout,
-      PivotCacheModel: PivotCacheModel,
-    });
-    ensurePivotCachesInit();
-    workbookBinding676 = PivotCaches;
-  });
-var workbookBinding683,
-  Tme = esmInit(() => {
-    workbookBinding352();
-    ensureSlicerInit();
-    workbookBinding683 = Slicer;
-  }),
-  workbookBinding684,
-  Eme = esmInit(() => {
-    Tme();
-    ensureSlicersInit();
-    workbookBinding684 = Slicers;
-  });
-var workbookBinding1237,
-  workbookBinding1238 = esmInit(() => {
-    workbookBinding1237 =
-      /((?:'[^']+'|[A-Za-z0-9_.]+)!)?(\$?[A-Za-z]{1,3}\$?\d{1,7})(?::(\$?[A-Za-z]{1,3}\$?\d{1,7}))?/g;
-  });
-var workbookBinding1241,
-  workbookBinding1242,
-  workbookBinding1243,
-  workbookBinding1244,
-  workbookBinding1245,
-  workbookBinding1246,
-  workbookBinding1247,
-  workbookBinding1248,
-  workbookBinding1249,
-  workbookBinding1250,
-  $z,
-  workbookBinding1251,
-  wwe = esmInit(() => {
-    workbookBinding596();
-    workbookBinding1241 = "#4CAF50";
-    workbookBinding1242 = "#2E7D32";
-    workbookBinding1243 = "#F4C542";
-    workbookBinding1244 = "#B88700";
-    workbookBinding1245 = "#F28C38";
-    workbookBinding1246 = "#B85A00";
-    workbookBinding1247 = "#D64541";
-    workbookBinding1248 = "#8D2B2A";
-    workbookBinding1249 = "#3F83F8";
-    workbookBinding1250 = "#1D4ED8";
-    $z = "#2F2F2F";
-    workbookBinding1251 = "#FAFAFA";
-  });
-var Twe = esmInit(() => {});
-var Ewe = esmInit(() => {});
-var workbookBinding1252 = esmInit(() => {});
-var workbookBinding1256,
-  workbookBinding1257,
-  workbookBinding1258,
-  _B,
-  workbookBinding1259 = esmInit(() => {
-    workbookBinding643();
-    _S();
-    workbookBinding1256 = Math.PI * 2;
-    workbookBinding1257 = 180 / Math.PI;
-    workbookBinding1258 = Math.PI / 180;
-    _B = 1e-6;
-  });
-var zwe = esmInit(() => {
-  workbookT();
-});
-var Hwe = esmInit(() => {
-  workbookT();
-});
-var workbookM = esmInit(() => {
-  workbookT();
-});
-var workbookBinding1267 = esmInit(() => {});
-function workbookHelper634(workbookInput15226) {
-  return !!workbookInput15226?.fill?.color;
-}
-var CTe = esmInit(() => {
-  workbookBinding1267();
-  workbookT();
-});
-var zTe = esmInit(() => {
-  workbookBinding543();
-  workbookBinding542();
-});
-var GTe = esmInit(() => {
-  workbookBinding1824();
-  initAddressMetrics();
-  initAddressUtils();
-});
-var workbookBinding1276,
-  qTe = esmInit(() => {
-    workbookBinding1276 = "#F7F7F7";
-  });
-var QTe = esmInit(() => {
-  workbookOt();
-  wr();
-  workbookBinding404();
-  workbookU();
-  workbookBinding1259();
-  N_();
-  workbookBinding543();
-});
-var eEe = esmInit(() => {
-  workbookOt();
-  $x();
-  workbookBinding404();
-  qTe();
-  workbookBinding542();
-  /* Binding1266 drained */ void 0;
-  QTe();
-});
-var rEe = esmInit(() => {
-  Qt();
-  /* Binding1266 drained */ void 0;
-  workbookZ();
-  $x();
-  workbookT();
-});
-var workbookBinding1277,
-  workbookBinding1278,
-  workbookBinding1279,
-  workbookBinding1280,
-  workbookBinding1281,
-  workbookBinding1282,
-  workbookBinding1283,
-  workbookBinding1284,
-  workbookBinding1285,
-  workbookBinding1286,
-  workbookBinding1287,
-  fEe = esmInit(() => {
-    Qt();
-    workbookXt();
-    workbookEt();
-    workbookBinding1277 = 8;
-    workbookBinding1278 = 2;
-    workbookBinding1279 = 4;
-    workbookBinding1280 = "#B1B1B1";
-    workbookBinding1281 = 1;
-    workbookBinding1282 = 12;
-    workbookBinding1283 = "rgba(37, 99, 235, 0.9)";
-    workbookBinding1284 = 6;
-    workbookBinding1285 = 4;
-    workbookBinding1286 = 3;
-    workbookBinding1287 = 1e-6;
-  });
-function pEe(workbookInput14958, workbookInput14959) {
-  return `${workbookInput14958}${workbookBinding1288}${workbookInput14959}`;
-}
-var workbookBinding1288,
-  workbookO = esmInit(() => {
-    workbookBinding1288 = "::cell:";
-  });
-var xDe = esmInit(() => {
-  workbookBinding1363();
-  workbookBinding1357();
-  bDe();
-  workbookBinding1359();
-  workbookBinding1355();
-});
 /** Bundle highlight.js — stock highlight.js via boundaries/highlight-js Core() (was inlined wke…aAe + oAe/sAe). */
 var workbookBinding1591 = Core();
 var sAe = () => {};
@@ -9084,18 +8936,6 @@ function wNe(workbookInput7398: any, _workbookInput7399?: any): void {
   dagreLayout(workbookInput7398);
 }
 
-var zIe = esmInit(() => {
-    FIe();
-    workbookBinding404();
-    workbookEt();
-  }),
-  BIe = esmInit(() => {
-    SAe();
-    zIe();
-  });
-var XRe = esmInit(() => {
-  workbookBinding647();
-});
 /** Bundle Zod — stock zod@^4.4.3 via vendor/zod (was inlined helper789 / $Zod* / Binding1790–1799). */
 var workbookHelper816 = zodString;
 var workbookHelper817 = zodNumber;
@@ -9104,27 +8944,6 @@ var workbookHelper819 = zodObject;
 var YUe = zodEnum;
 var workbookBinding1799 = appInitialBst;
 
-/** Presentation recipes — drained to workbook/presentation-recipes (wave-57). */
-function wirePresentationRecipesFromBoundary(): void {
-  wirePresentationRecipeLayoutHooks({
-    ensureComposeLayoutInit: () => {
-      workbookBinding1528();
-    },
-    composeText: (...args: any[]) => workbookBinding1501(...args),
-    composeRule: (...args: any[]) => workbookBinding1502(...args),
-    composeShape: (...args: any[]) => workbookBinding1503(...args),
-    composeImage: (...args: any[]) => workbookBinding1505(...args),
-    composeTable: (...args: any[]) => workbookBinding1506(...args),
-    composeChart: (...args: any[]) => workbookBinding1507(...args),
-    composeRow: (...args: any[]) => workbookBinding1508(...args),
-    composeColumn: (...args: any[]) => workbookBinding1509(...args),
-    composeGrid: (...args: any[]) => workbookBinding1510(...args),
-    composeWrap: (...args: any[]) => workbookBinding1496(...args),
-    composeFixed: (...args: any[]) => workbookBinding1494(...args),
-    composeFr: (...args: any[]) => workbookBinding1325(...args),
-    composeRepeat: (...args: any[]) => workbookBinding1326(...args),
-  });
-}
 function Xqe(name: any) {
   return getPresentationRecipeMod(name);
 }
@@ -9132,6 +8951,182 @@ function Zqe(presentation: any, scriptName: any, params: any = {}) {
   return runPresentationRecipeMod(presentation, scriptName, params);
 }
 
+wireBinding662GateHooks({
+  ensureUDeps: () => {
+    spreadsheetVn();
+    ensurePivotLayoutInit();
+    ensurePivotFieldsInit();
+    ensurePivotCacheModelInit();
+    initAddressUtils();
+    ensurePivotTableInit();
+  },
+  ensureGaeDeps: () => {
+    wr();
+    rae();
+    $d();
+  },
+  ensureVaeDeps: () => {
+    Qt();
+    workbookEt();
+    workbookBinding383();
+    $d();
+    workbookBinding411();
+  },
+  ensureBinding412Deps: () => {
+    ensureGradientFillParseInit();
+    rae();
+    gae();
+    vae();
+  },
+  ensureMdeDeps: () => {
+    _de();
+    workbookBinding411();
+    workbookBinding412();
+    workbookBinding655();
+  },
+  ensureBinding661Deps: () => {
+    workbookEt();
+    Mde();
+    ensureImageElementInit();
+  },
+  ensureCDeps: () => {
+    spreadsheetVn();
+    wr();
+    workbookBinding661();
+    workbookBinding404();
+    workbookBinding383();
+    workbookWt();
+    Hie();
+    workbookBinding675();
+  },
+  ensureBinding675Deps: () => {
+    spreadsheetVn();
+    initAddressUtils();
+    $u();
+    Yle();
+    wpe();
+    Bpe();
+    workbookF();
+    hme();
+    ensureRangeInit();
+  },
+  ensureCmeDeps: () => {
+    initAddressUtils();
+    workbookBinding333();
+    _u();
+    workbookBinding675();
+    workbookBinding352();
+    ensurePivotCachesInit();
+  },
+  ensureTmeDeps: () => {
+    workbookBinding352();
+    ensureSlicerInit();
+  },
+  ensureEmeDeps: () => {
+    Tme();
+    ensureSlicersInit();
+  },
+  getShapeGeometryNameToProto: () => workbookBinding393,
+  getWorksheetOwnerMap: () => getWorksheetOwnerMap(),
+  getExcelEpochUtcMs: () => EXCEL_EPOCH_UTC_MS,
+  getMsPerDay: () => MS_PER_DAY,
+  getRangeClass: () => Range,
+  getMaxWorksheetRows: () => MAX_WORKSHEET_ROWS,
+  getMaxWorksheetCols: () => MAX_WORKSHEET_COLS,
+  getPivotTableClass: () => PivotTable,
+  getPivotCachesClass: () => PivotCaches,
+  getSlicerClass: () => Slicer,
+  getSlicersClass: () => Slicers,
+  wirePivotCachesHooks: () => {
+    wirePivotCachesBoundaryHooks({
+      refreshPivotTableLayout: refreshPivotTableLayout,
+      PivotCacheModel: PivotCacheModel,
+    });
+  },
+});
+wireShellMidEnsureHooks({
+  ensureQTeDeps: () => {
+    workbookOt();
+    wr();
+    workbookBinding404();
+    workbookU();
+    workbookBinding1259();
+    N_();
+    workbookBinding543();
+  },
+  ensureEEeDeps: () => {
+    workbookOt();
+    $x();
+    workbookBinding404();
+    qTe();
+    workbookBinding542();
+    QTe();
+  },
+  ensureREeDeps: () => {
+    Qt();
+    workbookZ();
+    $x();
+    workbookT();
+  },
+  ensureGTeDeps: () => {
+    workbookBinding1824();
+    initAddressMetrics();
+    initAddressUtils();
+  },
+  ensureXDeDeps: () => {
+    workbookBinding1363();
+    workbookBinding1357();
+    bDe();
+    workbookBinding1359();
+    workbookBinding1355();
+  },
+  ensureZIeDeps: () => {
+    FIe();
+    workbookBinding404();
+    workbookEt();
+  },
+  ensureBIeDeps: () => {
+    SAe();
+    zIe();
+  },
+  ensureXReDeps: () => {
+    workbookBinding647();
+  },
+  ensureZweDeps: () => {
+    workbookT();
+  },
+  ensureHweDeps: () => {
+    workbookT();
+  },
+  ensureWorkbookMDeps: () => {
+    workbookT();
+  },
+  ensureCTeDeps: () => {
+    workbookBinding1267();
+    workbookT();
+  },
+  ensureZTeDeps: () => {
+    workbookBinding543();
+    workbookBinding542();
+  },
+});
+wireChartPasteHintsHooks({
+  ensureEhtDeps: () => {
+    workbookBinding1229();
+    workbookBinding661();
+    pde();
+    initAddressUtils();
+    workbookBinding584();
+    workbookBinding570();
+    initAddressMetrics();
+  },
+  ensureKmtDeps: () => {
+    initAddressUtils();
+    initAddressMetrics();
+  },
+  ensureCmtDeps: () => {},
+  createAppInitialBst: () => appInitialBst(),
+});
 wireWorkbookShellEnsureHooks({
   ensureYEeDeps: () => {
     workbookBinding1229();
@@ -9159,7 +9154,7 @@ wireWorkbookShellEnsureHooks({
     workbookBinding1736();
   },
   ensureAJeDeps: () => {
-    wirePresentationRecipesFromBoundary();
+    wirePresentationRecipesFromCompose();
     ensurePresentationRecipesInitMod();
   },
   ensureBinding1489Deps: () => {
@@ -9506,22 +9501,10 @@ wirePresentationDocHooks({
   }),
 });
 
-var HXe = esmInit(() => {});
-var KXe = esmInit(() => {});
 /** Bundle qXe — stock jstat@1.9.6 (was inlined commonJsInit). */
 var qXe = () => workbookJstat;
 /** Bundle JXe — stock bessel@1.0.2 (was inlined commonJsInit). */
-var c8e = esmInit(() => {
-  workbookBinding1874();
-  workbookBinding1880();
-});
-var x7e = esmInit(() => {
-  workbookBinding1874();
-});
 /** Bundle Decimal — stock decimal.js@10.6.0 via vendor/decimal (was inlined helper939…/Binding1906/Vit). */
-var wot = esmInit(() => {
-  workbookBinding1874();
-});
 function lst(workbookInput15699) {
   return OZe(workbookInput15699);
 }
@@ -9532,32 +9515,6 @@ function fst(workbookInput15701) {
   return kZe(workbookInput15701);
 }
 var qpt = esmInit(() => {});
-var workbookBinding1956,
-  Cmt = esmInit(() => {
-    workbookBinding1956 = appInitialBst();
-  });
-var kmt = esmInit(() => {
-  initAddressUtils();
-  initAddressMetrics();
-  Cmt();
-});
-var workbookBinding1957,
-  workbookBinding1958,
-  Qmt,
-  $mt,
-  eht = esmInit(() => {
-    workbookBinding1229();
-    workbookBinding661();
-    pde();
-    initAddressUtils();
-    workbookBinding584();
-    workbookBinding570();
-    initAddressMetrics();
-    workbookBinding1957 = "image/png";
-    workbookBinding1958 = 1;
-    Qmt = 240;
-    $mt = 160;
-  });
 var ygt = esmInit(() => {
   workbookBinding424();
 });

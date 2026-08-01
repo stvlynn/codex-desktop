@@ -5,6 +5,7 @@
 import { lookupIconSet } from "../icon-set";
 import { paintIconSetSymbols } from "../icon-set-symbols";
 import { ispH } from "./boundary-hooks";
+import { $z } from "../cf-traffic-colors";
 
 void lookupIconSet;
 void paintIconSetSymbols;

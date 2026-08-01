@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~14.6k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~9.6k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -1889,3 +1889,14 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries --allow-flat`
 - openBoundary remains while mega still ~9.6k (not thin enough for safe closeout)
 - Next: remaining ≥10–18 nests (`_C`/`Binding675`/`fEe`/`wwe`/`Cme`/`eht`); wirePresentationRecipes; closeout when thin
+
+## Wave 155 (Stage-3 mid-ensure residue + recipe wire)
+
+- Boundary 9650 → 9607 (Δ -43)
+- Peeled: cf-traffic-colors wwe; guide-layout-consts fEe/Binding1259/Binding1238/workbookO; binding662-gate _C/Binding675/Cme/Tme/Eme/_u/gae…661; shell-mid-ensures QTe/eEe/rEe/…; chart-paste-hints eht/kmt; formula-thin-stubs c8e/x7e/wot/g8e/HXe/KXe; wirePresentationRecipesFromCompose
+- Skipped: vendor hljs/graphlib/zod/ssf leave comments; helper31–59 thin formula-array aliases (already drained callees)
+- Leave-behind: binding662-gate + shell-mid-ensures + chart-paste-hints still use wire*Hooks (cf-traffic/guide/formula-thin now direct-import)
+- QG PASS on new/changed modules + boundary `--no-cache --allow-open-boundaries --allow-flat`
+- openBoundary remains while mega still ~9.6k (wire block offsets peel LOC)
+- Nest inventory: **no ≥5 esm nests remain** in mega
+- Next: slim binding662/shell-mid wires via direct imports; helper31–59 aliases; closeout when thin
