@@ -9,11 +9,7 @@ export type {
   RectSide,
   EdgeHit,
 } from "./types";
-export {
-  pointsNearEqual,
-  pointsEqual,
-  isAxisCollinear,
-} from "./point-ops";
+export { pointsNearEqual, pointsEqual, isAxisCollinear } from "./point-ops";
 export { insertAxisElbow, simplifyPolyline } from "./simplify-polyline";
 export { pathCommandsToSimplifiedPoints } from "./path-commands";
 export { pointsBBox, rectCenter } from "./bbox";
@@ -29,3 +25,8 @@ export {
   clampFixedPercent,
   ratioToFixedPercent,
 } from "./vector-scale";
+
+export {
+  splitCubicBezier,
+  lerpPoint2D,
+} from "./split-cubic-bezier-impl";

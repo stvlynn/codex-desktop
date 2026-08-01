@@ -1,7 +1,7 @@
 # workbook-runtime (intentional oversized terminal)
 
 **Chunk:** `workbook-C49Dgk1_`  
-**Public path:** `boundaries/workbook-runtime/index.ts` (~46.8k LOC remaining)  
+**Public path:** `boundaries/workbook-runtime/index.ts` (~46.1k LOC remaining)  
 **IMPORT_MAP:** `vendor: "runtime"`, `classification: "vendor-runtime"`, `openBoundary: true`
 
 ## Decision
@@ -238,6 +238,15 @@
 | Data-table + sparklines (`UCe`/`JCe`) | ~0.14k | **Drained (wave-113)** → `chart-data-table/` + `canvas-paint/` |
 | Connector stroke unlock (`Qwe`+611/618–623) | ~0.37k | **Drained (wave-113)** → `workbook/shape-geometry-paint/` |
 | Rounded connector corner (`FPe`) | ~0.05k | **Drained (wave-113)** → `workbook/image-connector/` |
+| Bar plot scales (`hbe`+407/410/414/497/mbe) | ~0.08k | **Drained (wave-114)** → `workbook/chart-group-scales/` |
+| Map legend ramp + accent (`helper489`/Wye/Uye) | ~0.07k | **Drained (wave-114)** → legend-layout + theme-color |
+| Legend row pack (`sbe`/`cbe`) | ~0.09k | **Drained (wave-114)** → `workbook/chart-legend-layout/` |
+| Secondary value axis (`_xe`+530/531) | ~0.17k | **Drained (wave-114)** → `workbook/chart-axis-ticks/` |
+| Chart number format (`helper439`/`478` SSF) | ~0.03k | **Drained (wave-114)** → `workbook/chart-axis-ticks/` |
+| Manual layout rect (`$L`/558/559) | ~0.06k | **Drained (wave-114)** → `workbook/chart-plot-layout/` |
+| Clip paint rect (`helper601`) | ~0.09k | **Drained (wave-114)** → `workbook/canvas-paint/` |
+| Cubic bezier split (`helper626`/`627`) | ~0.06k | **Drained (wave-114)** → `workbook/path-geometry/` |
+| Embedded workbook paint (`BTe`/`VTe`/`WTe`) | ~0.11k | **Drained (wave-114)** → `workbook/text-frame-embeds/` |
 
 ## Why it stays in `boundaries/`
 
@@ -1470,4 +1479,11 @@ Full Stage-3 rewrite of a ~230kLOC flat dump is not a single-session deliverable
 - Boundary 48247 → 46792 (Δ -1455)
 - Peeled: helper388/391/403+417/Mye; helper433/438/428+RCe/KSe; helper475+Xye; PSe+565/566+LSe; cxe/hxe/Cxe; Oxe+Dxe+534; UCe+588+WCe; JCe; FPe; helper611+Qwe stroke cluster (618–623/$we/eTe/nTe/rTe/iTe/aTe/oTe/sTe/lTe)
 - Skipped pye/Binding836 (Binding836 absent), helper489 (SSF), helper603, hbe extras, ADe/BDe, rze, kht FALSE
+- openBoundary remains while mega still large
+
+## Wave 114 (Stage-3 preferred peels)
+
+- Boundary 46792 → 46077 (Δ -715)
+- Peeled: hbe+mbe+407/410/414/497; helper489+Wye/Uye; sbe/cbe; _xe+530/531; helper439/478 (SSF); $L/558/559; helper601; helper626/627; BTe/VTe/WTe
+- Skipped helper603 (ESM Map), helper853 (formula nest), PDe/BDe (incomplete), MOe/XOe (Binding154 ESM), ADe/rze/kht/ict, pye
 - openBoundary remains while mega still large

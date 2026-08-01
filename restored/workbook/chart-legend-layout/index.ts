@@ -9,3 +9,12 @@ export {
 
 export { legendEntries, ibe } from "./legend-entries-impl";
 export { measureMapLegend, abe } from "./measure-map-legend-impl";
+
+export { buildMapLegendRamp } from "./map-legend-ramp-impl";
+
+export {
+  packLegendRows,
+  balanceLegendRows,
+  sbe,
+  cbe,
+} from "./pack-legend-rows-impl";

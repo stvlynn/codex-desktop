@@ -8,3 +8,10 @@ export {
   AXIS_LABEL_PAD_PX,
   DEFAULT_MAX_BOTTOM_FRAC,
 } from "./chart-plot-layout-impl";
+
+export {
+  clampUnitInterval,
+  resolveEdgeSize,
+  resolveManualLayoutRect,
+  $L,
+} from "./manual-layout-rect-impl";

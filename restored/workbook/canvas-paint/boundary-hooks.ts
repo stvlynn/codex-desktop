@@ -2,6 +2,7 @@
 // Stage-3 wave-66/105/106: boundary deps for canvas-paint cluster.
 
 import { fillCellBackground as fillCellBackgroundImpl } from "./fill-cell-background-impl";
+import { clipPaintRect as clipPaintRectImpl } from "./clip-paint-rect-impl";
 import { paintCharts as paintChartsImpl } from "./paint-charts-impl";
 
 export type CanvasPaintBoundaryHooks = {
@@ -148,8 +149,7 @@ export const prepareDiagonalStroke = (...args: any[]) =>
   requirePaintHooks().prepareDiagonalStroke(...args);
 export const fillCellBackground = (...args: any[]) =>
   fillCellBackgroundImpl(...args);
-export const clipPaintRect = (...args: any[]) =>
-  requirePaintHooks().clipPaintRect(...args);
+export const clipPaintRect = (...args: any[]) => clipPaintRectImpl(...args);
 export const resolveShapeFillBitmap = (...args: any[]) =>
   requirePaintHooks().resolveShapeFillBitmap(...args);
 export const layoutPaintedText = (...args: any[]) =>

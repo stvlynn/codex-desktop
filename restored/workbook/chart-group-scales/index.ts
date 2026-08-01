@@ -15,3 +15,14 @@ export {
   expandForecastCategories,
   Mye,
 } from "./scale-domain-helpers-impl";
+
+export {
+  buildBarPlotScales,
+  isMaxMinXOrientation,
+  isMaxMinYOrientation,
+  chartUsesPercentFormats,
+  chartHasPercentFormats,
+  valueLooksPercent,
+  hbe,
+  mbe,
+} from "./bar-plot-scales-impl";

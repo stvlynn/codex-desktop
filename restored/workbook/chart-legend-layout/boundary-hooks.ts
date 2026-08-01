@@ -28,6 +28,9 @@ export type ChartLegendLayoutBoundaryHooks = {
   bh486: (...args: any[]) => any;
   bh487: (...args: any[]) => any;
   bh488: (...args: any[]) => any;
+  bh465: (...args: any[]) => any;
+  bh466: (...args: any[]) => any;
+  bh489: (...args: any[]) => any;
   /** Marker→label gap (legacy _j). */
   markerLabelGap: any;
   /** Legend padding (legacy Binding905). */

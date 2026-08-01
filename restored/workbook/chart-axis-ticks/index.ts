@@ -32,3 +32,15 @@ export {
 } from "./plan-axis-ticks-impl";
 
 export { paintAxisGridlineStroke } from "./paint-axis-gridline-impl";
+
+export {
+  formatAxisTickValue,
+  formatChartNumber,
+} from "./format-chart-number-impl";
+
+export {
+  paintSecondaryValueAxis,
+  paintSecondaryAxisTitle,
+  nearAxisBaseline,
+  _xe,
+} from "./paint-secondary-value-axis-impl";

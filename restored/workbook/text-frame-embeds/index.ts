@@ -6,3 +6,12 @@ export {
   layoutTextFrameEmbeds,
   workbookHelper643,
 } from "./text-frame-embeds-impl";
+
+export {
+  paintEmbeddedWorkbookView,
+  resolveEmbeddedWorksheet,
+  embeddedViewportMetrics,
+  BTe,
+  VTe,
+  WTe,
+} from "./paint-embedded-workbook-impl";

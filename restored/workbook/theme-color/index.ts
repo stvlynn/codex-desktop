@@ -49,3 +49,10 @@ export {
   ensureThemeColorInit,
   ensureColorTransformConstantsClusterInit,
 } from "./ensure-theme-color-init";
+
+export {
+  normalizeThemeColorIndex,
+  resolveThemeAccentSlot,
+  Uye,
+  Wye,
+} from "./theme-accent-slot-impl";

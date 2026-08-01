@@ -39,3 +39,7 @@ export {
   paintSparklines as paintSparklinesImpl,
   JCe,
 } from "./paint-sparklines-impl";
+
+export {
+  clipPaintRect,
+} from "./clip-paint-rect-impl";
