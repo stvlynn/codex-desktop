@@ -9,5 +9,5 @@ export function bindAppgenSettingsPage(_next: unknown): void {}
 export function ensureAppgenSettingsPageInit(): void {}
 
 // Semantic export aliases (split/export lane)
-export { appgenSettingsPageN as AppgenSettingsPage } from "./part-2";
+export { appgenSettingsPageN as AppgenSettingsPage } from "./part-2-c";
 export { appgenSettingsPageT as AppgenSettingsPageContent } from "./part-3";

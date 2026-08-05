@@ -4,8 +4,8 @@
 // Residual companion stubs: 19 (verified 58/76).
 // Public barrel.
 // Wave QG — fixed Hft/Wft collisions (motion/cx), real overflow bindables, react-dom/findLastIndex.
-export * from "./module";
+export { ThreadUserMessageNavigationRailIcon } from "./navigation-rail";
 export * from "./runtime-bridges";
 
 // Semantic export aliases
-export { ThreadUserMessageNavigationRailIcon as ThreadUserMessageNavigationRail } from "./module";
+export { ThreadUserMessageNavigationRailIcon as ThreadUserMessageNavigationRail } from "./navigation-rail";

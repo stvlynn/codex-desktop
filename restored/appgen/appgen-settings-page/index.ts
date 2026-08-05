@@ -3,11 +3,16 @@
 // Soft-deferred host replaced; NOT app-initial extractFn / promote / producer barrel.
 // Residual companion stubs: 34 (verified 76/109).
 // Public barrel.
-export * from "./part-1";
-export * from "./part-2";
+export * from "./part-1-a";
+export * from "./part-1-b";
+export * from "./part-1-c";
+export * from "./part-1-d";
+export * from "./part-2-a";
+export * from "./part-2-b";
+export * from "./part-2-c";
 export * from "./part-3";
 export * from "./runtime-bridges";
 
 // Semantic export aliases
-export { appgenSettingsPageN as AppgenSettingsPage } from "./part-2";
+export { appgenSettingsPageN as AppgenSettingsPage } from "./part-2-c";
 export { appgenSettingsPageT as AppgenSettingsPageContent } from "./part-3";

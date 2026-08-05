@@ -3,7 +3,10 @@
 // Soft-deferred host replaced; NOT app-initial extractFn / promote / producer barrel.
 // Residual companion stubs: 45 (verified 89/133).
 // Public barrel.
-export * from "./part-1-g1";
+export * from "./part-1-g1-a";
+export * from "./part-1-g1-b";
+export * from "./part-1-g1-c";
+export * from "./part-1-g1-d";
 export * from "./part-1-g2";
 export * from "./part-2";
 export * from "./part-3";

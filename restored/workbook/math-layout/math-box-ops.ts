@@ -6,8 +6,8 @@ import { layoutMathNode } from "./layout-math-node";
 import {
   measureStyledGlyphBox,
   normalizeBinAtomClasses,
-  texAtomSpacingPx,
-} from "./math-atom-spacing";
+} from "./math-atom-classes";
+import { texAtomSpacingPx } from "./math-atom-spacing";
 import { mathRunFontDescriptor } from "./resolve-math-style";
 export function hboxMathBoxes(
   mathIn2935: unknown,

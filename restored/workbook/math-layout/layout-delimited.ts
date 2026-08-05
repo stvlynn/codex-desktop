@@ -12,11 +12,13 @@ import {
 } from "./layout-tuning";
 import {
   atomClassPair,
-  atomSpacingForClasses,
-  italicCorrectionGapPx,
   leftmostMathAtomNode,
   measureStyledGlyphBox,
   rightmostMathAtomNode,
+} from "./math-atom-classes";
+import {
+  atomSpacingForClasses,
+  italicCorrectionGapPx,
 } from "./math-atom-spacing";
 import { hboxMathBoxes, layoutMathNodeChild } from "./math-box-ops";
 import { measureMathGlyphBox } from "./resolve-math-style";

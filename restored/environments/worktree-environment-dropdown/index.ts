@@ -4,7 +4,8 @@
 // Residual companion stubs: 19 (verified 55/73).
 // Public barrel.
 export * from "./part-1";
-export * from "./part-2";
+export * from "./part-2-a";
+export * from "./part-2-b";
 
 // --- split/export lane aliases ---
 /** missing-relative-exports companion */

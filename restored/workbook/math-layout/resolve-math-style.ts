@@ -17,7 +17,7 @@ import {
   isMathVariantGlyphText,
   isNamedMathOperatorToken,
   isOperatorLikeToken,
-} from "./math-atom-spacing";
+} from "./math-token-classifiers";
 export function resolveMathNodeStyle(
   mathIn5644: unknown,
   mathIn5645: unknown,

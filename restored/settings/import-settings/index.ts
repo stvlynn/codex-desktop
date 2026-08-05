@@ -3,6 +3,7 @@
 // Soft-deferred host replaced; NOT app-initial extractFn / promote / producer barrel.
 // Residual companion stubs: 29 (verified 66/95).
 // Public barrel.
-export * from "./part-1";
+export * from "./part-1-a";
+export * from "./part-1-b";
 export * from "./part-2";
 export * from "./runtime-bridges";

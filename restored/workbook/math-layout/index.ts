@@ -37,13 +37,15 @@ export {
 } from "./math-box-ops";
 export {
   texAtomSpacingPx,
-  normalizeBinAtomClasses,
   atomSpacingForClasses,
   texAtomSpacingClass,
   italicCorrectionGapPx,
+} from "./math-atom-spacing";
+export {
+  normalizeBinAtomClasses,
   measureStyledGlyphBox,
   atomClassForToken,
-} from "./math-atom-spacing";
+} from "./math-atom-classes";
 export { layoutMathToken } from "./layout-token";
 export { layoutMathFraction } from "./layout-fraction";
 export { layoutMathRadical } from "./layout-radical";

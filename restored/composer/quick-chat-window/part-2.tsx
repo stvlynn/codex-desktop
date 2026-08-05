@@ -2,7 +2,7 @@
 // Wave FZ — full polished body from `quick-chat-window-_GO18s8K/auto-polished.tsx` with companion import rewrite.
 // Soft-deferred host replaced; NOT app-initial extractFn / promote / producer barrel.
 // Residual companion stubs: 36 (verified 102/137).
-// AST split 2/3
+// AST split 2/3 — main lane (quickChatWindowT)
 /* split-lane-import-depth:1 */
 
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
@@ -115,6 +115,16 @@ import {
   setQuickChatDockPosition,
   setQuickChatSize,
 } from "../../windows/quick-chat-surface-helpers";
+import {
+  createQuickChatWindowActions,
+  QuickChatWindowHelper24,
+} from "./part-2-a";
+import {
+  createQuickChatWindowDockHandlers,
+  north,
+  QuickChatWindowStackedPanels,
+} from "./part-2-b";
+import { QuickChatWindowComposer, QuickChatWindowHeader } from "./part-2-c";
 
 /** split companion stub */
 const quill: any = undefined;
@@ -174,112 +184,6 @@ const AppInitialS: any = undefined;
 const AppInitialNn: any = undefined;
 const AppInitialDr: any = undefined;
 
-function QuickChatWindowHelper24(yellowPrime) {
-  let {
-      children,
-      footer,
-      initialScrollMode = "follow",
-      isWindowZoomApplied = true,
-      scrollOrigin = "bottom",
-      variant = "floating",
-    } = yellowPrime,
-    zincPrime = useIntl(),
-    {
-      contentRef,
-      footerRef,
-      scrollToLatest,
-      showScrollToLatest,
-      spacerRef: amberPrime,
-      viewportRef,
-    } = quill(scrollOrigin, initialScrollMode, isWindowZoomApplied),
-    basaltPrime =
-      footer == null ? null : (
-        <div
-          ref={footerRef}
-          className="absolute inset-x-0 bottom-0 z-10 w-full shrink-0"
-          data-thread-scroll-footer="true"
-        >
-          <div className="relative z-10">
-            {scrollOrigin === "bottom" ? (
-              <div className="relative h-0">
-                <AppInitialNn
-                  className="bottom-[calc(100%+6*var(--spacing))]"
-                  label={zincPrime.formatMessage({
-                    id: "quickChat.scrollToLatestMessage",
-                    defaultMessage: "Scroll to latest message",
-                    description:
-                      "Label for the button that returns a quick chat to the latest message",
-                  })}
-                  onClick={scrollToLatest}
-                  show={showScrollToLatest}
-                />
-              </div>
-            ) : null}
-            {footer}
-          </div>
-        </div>
-      );
-  let cedarPrime = basaltPrime,
-    daisyPrime =
-      footer == null ? honey.headerScrollFade : honey.windowScrollMask,
-    emberPrime = IntlProvider(
-      daisyPrime,
-      "[container-type:inline-size] flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto [container-name:thread-content] [overflow-anchor:none] focus:outline-none",
-    );
-  let flintPrime = footer != null && honey.scrollContent,
-    garnetPrime = IntlProvider("flex min-h-full shrink-0 flex-col", flintPrime);
-  let hazelPrime = variant === "window" ? "px-5" : "px-4",
-    ivoryPrime = IntlProvider("flex flex-1 shrink-0 flex-col pt-4", hazelPrime);
-  let jasperPrime = (
-    <div
-      ref={contentRef}
-      className={ivoryPrime}
-      data-quick-chat-thread-scroll-content="true"
-    >
-      {children}
-    </div>
-  );
-  let kelpPrime = (
-    <div
-      ref={amberPrime}
-      aria-hidden={true}
-      className="shrink-0"
-      data-quick-chat-thread-scroll-spacer="true"
-    />
-  );
-  let lotusPrime = (
-    <div className={garnetPrime}>
-      {jasperPrime}
-      {kelpPrime}
-    </div>
-  );
-  let mintPrime = (
-    <div
-      ref={viewportRef}
-      className={emberPrime}
-      data-quick-chat-thread-scroll-container="true"
-      tabIndex={0}
-    >
-      {lotusPrime}
-    </div>
-  );
-  return (
-    <div className="relative flex min-h-0 flex-1 flex-col">
-      {mintPrime}
-      {cedarPrime}
-    </div>
-  );
-}
-var jewel,
-  knoll,
-  lunar = esmInit(() => {
-    jewel = reactCompilerRuntime();
-    ensureComposerEsm_Tft_Init();
-    ensureIntlFormattersInit();
-    AppInitialPn();
-    drift();
-    iris();
-  });
 export function quickChatWindowT(vaporPrime: unknown) {
   let {
       canPopOut,
@@ -493,204 +397,52 @@ export function quickChatWindowT(vaporPrime: unknown) {
       },
       acornPrime,
       bloomPrime,
-    ),
+    );
+  let {
     fjordPrime,
     glenPrime,
     hearthPrime,
     inletPrime,
     jettyPrime,
+    knobPrime,
     _n,
-    knobPrime;
-  {
-    fjordPrime = async () => {
-      if (valePrime != null) {
-        DeferredUiQx(wheatPrime, {
-          action:
-            CodexRemoteControlRefreshSource.CODEX_QUICK_CHAT_LIFECYCLE_ACTION_ADD_TO_CODEX_CLICKED,
-          dockPosition: frostPrime,
-          hasConversation: apexPrime,
-          source:
-            CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_ADD_TO_CODEX_BUTTON,
-          surface: knollPrime,
-        });
-        havenPrime(true);
-        try {
-          await onAddToComposer({
-            conversationId: valePrime,
-            title:
-              leafPrime?.trim() ||
-              yarnPrime.formatMessage({
-                id: "quickChat.untitledConversation",
-                defaultMessage: "Untitled conversation",
-                description:
-                  "Fallback title when adding an untitled Quick Chat conversation to Codex",
-              }),
-          });
-        } catch {
-          DeferredUiQx(wheatPrime, {
-            action:
-              CodexRemoteControlRefreshSource.CODEX_QUICK_CHAT_LIFECYCLE_ACTION_ADD_TO_CODEX_FAILED,
-            dockPosition: frostPrime,
-            hasConversation: apexPrime,
-            source:
-              CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_ADD_TO_CODEX_BUTTON,
-            surface: knollPrime,
-          });
-          havenPrime(false);
-          eaglePrime.warning(
-            yarnPrime.formatMessage({
-              id: "quickChat.addToComposerFailed",
-              defaultMessage: "Could not add this chat to Codex yet",
-              description:
-                "Toast shown when Quick Chat cannot be added to a Codex composer",
-            }),
-          );
-          return;
-        }
-        DeferredUiQx(wheatPrime, {
-          action:
-            CodexRemoteControlRefreshSource.CODEX_QUICK_CHAT_LIFECYCLE_ACTION_ADD_TO_CODEX_SUCCEEDED,
-          dockPosition: frostPrime,
-          hasConversation: apexPrime,
-          source:
-            CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_ADD_TO_CODEX_BUTTON,
-          surface: knollPrime,
-        });
-        glenPrime(
-          CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_ADD_TO_CODEX_BUTTON,
-        );
-      }
-    };
-    let eccentricPrime;
-    eccentricPrime = (journalPrime) => {
-      let { cancel, conversationId: _conversationId } =
-        useChatgptComposerControllerT(wheatPrime, journalPrime);
-      meadowPrime((kingpinPrime) => [
-        ...kingpinPrime,
-        {
-          cancel,
-          conversationId: _conversationId,
-          returnFocus: orbit(),
-          title: journalPrime.query,
-        },
-      ]);
-    };
-    jettyPrime = eccentricPrime;
-    let followerPrime;
-    followerPrime = (landPrime) => {
-      oakPrime({
-        ...landPrime,
-        returnFocus: orbit(),
-      });
-    };
-    _n = followerPrime;
-    let guidePrime;
-    guidePrime = () => {
-      let meshPrime = nestPrime?.returnFocus;
-      oakPrime(null);
-      requestAnimationFrame(() => {
-        meshPrime?.focus();
-      });
-    };
-    hearthPrime = guidePrime;
-    let helixPrime;
-    helixPrime = (neckPrime) => {
-      let padPrime = lagoonPrime.slice(neckPrime),
-        quillshaftPrime = padPrime[0]?.returnFocus;
-      if (padPrime.length !== 0) {
-        for (let rollerPrime of padPrime) rollerPrime.cancel();
-        meadowPrime((spindlePrime) => spindlePrime.slice(0, neckPrime));
-        requestAnimationFrame(() => {
-          quillshaftPrime?.focus();
-        });
-      }
-    };
-    knobPrime = helixPrime;
-    let impellerPrime;
-    impellerPrime = () => {
-      knobPrime(lagoonPrime.length - 1);
-    };
-    inletPrime = impellerPrime;
-    glenPrime = (thrustPrime) => {
-      for (let yokePrime of lagoonPrime) yokePrime.cancel();
-      onClose(thrustPrime);
-    };
-  }
-  let ledgePrime = (bafflePrime, capstanPrime) => {
-    let diaphragmPrime =
-        capstanPrime === undefined
-          ? {
-              height: cragPrime,
-              width: domePrime,
-            }
-          : capstanPrime,
-      elbowPrime = umbra(frostPrime, diaphragmPrime, acornPrime, bloomPrime),
-      ferrulePrime = {
-        x: elbowPrime.x + mossPrime.get(),
-        y: elbowPrime.y + northPrime.get(),
-      },
-      grommetPrime = umbra(bafflePrime, diaphragmPrime, acornPrime, bloomPrime);
-    mossPrime.stop();
-    northPrime.stop();
-    mossPrime.jump(ferrulePrime.x - grommetPrime.x);
-    northPrime.jump(ferrulePrime.y - grommetPrime.y);
-    bafflePrime !== frostPrime &&
-      tide.flushSync(() => {
-        setQuickChatDockPosition(wheatPrime, bafflePrime, {
-          source: CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_DRAG,
-          surface: knollPrime,
-        });
-      });
-    AppQueryClientProvider(mossPrime, 0, wave);
-    AppQueryClientProvider(northPrime, 0, wave);
-  };
-  let mirePrime = ledgePrime,
-    nookPrime = (headerPrime, injectorPrime) => {
-      let jumperPrime = willow(
-          frostPrime,
-          headerPrime,
-          {
-            height: cragPrime,
-            width: domePrime,
-          },
-          mossPrime.get(),
-          injectorPrime.width,
-          acornPrime,
-          bloomPrime,
-        ),
-        kerfPrime = eddyPrime.y + northPrime.get() + cragPrime,
-        louverPrime = umbra(frostPrime, injectorPrime, acornPrime, bloomPrime),
-        manifoldPrime = north(
-          kerfPrime - injectorPrime.height,
-          16,
-          acornPrime - injectorPrime.height - 16,
-        );
-      mossPrime.stop();
-      northPrime.stop();
-      tide.flushSync(() => {
-        canyonPrime(injectorPrime);
-      });
-      mossPrime.jump(jumperPrime);
-      northPrime.jump(manifoldPrime - louverPrime.y);
-    };
-  let oxbowPrime = nookPrime,
-    pondPrime = (nipPrime) => {
-      setQuickChatSize(wheatPrime, nipPrime, {
-        source:
-          CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_RESIZE_HANDLE,
-        surface: knollPrime,
-      });
-      mirePrime(frostPrime, nipPrime);
-    };
-  let quarryPrime = pondPrime,
-    rapidsPrime = (outletPrime, packingPrime) => {
-      attachQuickChatProject(wheatPrime, outletPrime, packingPrime);
-    };
-  let spurPrime = rapidsPrime,
-    torPrime = brookPrime == null ? "-ml-2" : undefined,
-    updraftPrime = (reducerPrime) => {
-      wheatPrime.set(quickChatSurfaceCollapsedAtom, reducerPrime);
-    };
+  } = createQuickChatWindowActions({
+    apexPrime,
+    eaglePrime,
+    frostPrime,
+    havenPrime,
+    knollPrime,
+    lagoonPrime,
+    leafPrime,
+    meadowPrime,
+    nestPrime,
+    oakPrime,
+    onAddToComposer,
+    onClose,
+    valePrime,
+    wheatPrime,
+    yarnPrime,
+  });
+  let {
+    ledgePrime: mirePrime,
+    nookPrime: oxbowPrime,
+    pondPrime: quarryPrime,
+    rapidsPrime: spurPrime,
+    updraftPrime,
+  } = createQuickChatWindowDockHandlers({
+    acornPrime,
+    bloomPrime,
+    canyonPrime,
+    cragPrime,
+    domePrime,
+    eddyPrime,
+    frostPrime,
+    knollPrime,
+    mossPrime,
+    northPrime,
+    wheatPrime,
+  });
+  let torPrime = brookPrime == null ? "-ml-2" : undefined;
   let vergePrime = (
     <AppInitialS
       breadcrumbTriggerClassName={torPrime}
@@ -835,307 +587,63 @@ export function quickChatWindowT(vaporPrime: unknown) {
           paddingInlineStart: Math.max(coralPrime.left / zephyrPrime, 12),
         }
       : undefined;
-  let torquePrime = everPrime ? (
-    <div className="flex min-w-0 flex-1 items-center gap-1">
-      {
-        <ReadLoginRouteQuerySnapshot
-          {...{
-            "aria-label": opalPrime,
-            autoFocus: true,
-            className: "-ml-1",
-            color: "ghostActive",
-            size: "toolbar",
-            uniform: true,
-            onClick: () => {
-              fieldPrime(false);
-            },
-            children: (
-              <AppIconYlt
-                {...{
-                  className: "icon-xs rotate-180",
-                }}
-              />
-            ),
-          }}
-        />
-      }
-      <h2 id={driftPrime} className="truncate text-base font-medium">
-        {
-          <MemoizedFormattedMessage
-            {...{
-              id: "quickChat.history.title",
-              defaultMessage: "History",
-              description: "Title of the Quick Chat conversation history view",
-            }}
-          />
-        }
-      </h2>
-    </div>
-  ) : (
-    <div className="flex min-w-0 flex-1 items-center gap-1">
-      {apexPrime ? (
-        <>
-          {
-            <OptionalTooltip
-              {...{
-                tooltipContent: silkPrime,
-                delayOpen: true,
-                children: (
-                  <ReadLoginRouteQuerySnapshot
-                    {...{
-                      "aria-label": silkPrime,
-                      className: "-ml-1",
-                      color: "ghostActive",
-                      size: "toolbar",
-                      uniform: true,
-                      onClick: () =>
-                        AppInitialWx(wheatPrime, {
-                          source:
-                            CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_HEADER_NEW_CHAT,
-                          surface: knollPrime,
-                        }),
-                      children: (
-                        <AppIconYm
-                          {...{
-                            className: "icon-xs",
-                          }}
-                        />
-                      ),
-                    }}
-                  />
-                ),
-              }}
-            />
-          }
-          <div
-            aria-hidden={true}
-            className="mx-1 h-4 w-px shrink-0 bg-token-border"
-          />
-        </>
-      ) : null}
-      <h2 id={driftPrime} className="min-w-0 flex-1">
-        {
-          <ToolbarBreadcrumb
-            {...{
-              textSm: true,
-              ancestors:
-                brookPrime == null
-                  ? []
-                  : [
-                      {
-                        id: "quick-chat-project",
-                        content: weirPrime,
-                      },
-                    ],
-              current: apexPrime ? (
-                <ReadLoginRouteQuerySnapshot
-                  {...{
-                    allowShrink: true,
-                    "aria-label": quillowPrime,
-                    className:
-                      "group/history -mx-2 w-full text-sm font-medium text-token-text-secondary",
-                    color: "ghostMuted",
-                    size: "toolbar",
-                    onClick: () => {
-                      fieldPrime(true);
-                    },
-                    children: [
-                      <span className="truncate">{nimbusPrime}</span>,
-                      <AppIconYlt
-                        {...{
-                          className:
-                            "icon-xs shrink-0 opacity-0 group-hover/header:opacity-60 group-focus-visible/history:opacity-60",
-                        }}
-                      />,
-                    ],
-                  }}
-                />
-              ) : brookPrime == null ? (
-                weirPrime
-              ) : (
-                nimbusPrime
-              ),
-            }}
-          />
-        }
-      </h2>
-    </div>
-  );
-  let _quickChatWindowT =
-    everPrime || valePrime == null ? null : (
-      <OptionalTooltip
-        {...{
-          tooltipContent: (
-            <MemoizedFormattedMessage
-              {...{
-                id: "quickChat.addToTaskTooltip",
-                defaultMessage: "Add this Quick Chat to the current chat",
-                description:
-                  "Tooltip for adding the Quick Chat conversation to the current chat",
-              }}
-            />
-          ),
-          delayOpen: true,
-          children: (
-            <ReadLoginRouteQuerySnapshot
-              {...{
-                color: "ghostActive",
-                disabled: grainPrime,
-                size: "toolbar",
-                onClick: () => {
-                  fjordPrime();
-                },
-                children: [
-                  <CodexPluginActionType
-                    {...{
-                      className: "icon-xs",
-                    }}
-                  />,
-                  <MemoizedFormattedMessage
-                    {...{
-                      id: "quickChat.addToTask",
-                      defaultMessage: "Add to chat",
-                      description:
-                        "Visible label for adding the Quick Chat conversation to the current chat",
-                    }}
-                  />,
-                ],
-              }}
-            />
-          ),
-        }}
-      />
-    );
-  let _quickChatWindowN = canPopOut ? (
-    <OptionalTooltip
+  let _r = (
+    <QuickChatWindowHeader
       {...{
-        tooltipContent: uplandPrime,
-        delayOpen: true,
-        children: (
-          <ReadLoginRouteQuerySnapshot
-            {...{
-              "aria-label": uplandPrime,
-              color: "ghostActive",
-              size: "icon",
-              onClick: (event) => {
-                let unionPrime = event.currentTarget
-                  .closest('[data-pip-obstacle="quick-chat"]')
-                  ?.getBoundingClientRect();
-                unionPrime != null &&
-                  (DeferredUiQx(wheatPrime, {
-                    action:
-                      CodexRemoteControlRefreshSource.CODEX_QUICK_CHAT_LIFECYCLE_ACTION_POPPED_OUT,
-                    dockPosition: frostPrime,
-                    hasConversation: apexPrime,
-                    source:
-                      CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_POPOUT_BUTTON,
-                    surface: knollPrime,
-                  }),
-                  onPopOut?.(
-                    valePrime ?? conversationId,
-                    olive(unionPrime, zephyrPrime),
-                  ));
-              },
-              children: <AppInitialDr className="icon-xs" />,
-            }}
-          />
-        ),
+        apexPrime,
+        brookPrime,
+        canPopOut,
+        conversationId,
+        driftPrime,
+        everPrime,
+        fieldPrime,
+        fjordPrime,
+        frostPrime,
+        glenPrime,
+        grainPrime,
+        knollPrime,
+        maplePrime,
+        motorPrime,
+        nimbusPrime,
+        onPopOut,
+        opalPrime,
+        quillowPrime,
+        rivetPrime,
+        screwPrime,
+        silkPrime,
+        uplandPrime,
+        valePrime,
+        variant,
+        weirPrime,
+        wheatPrime,
+        zephyrPrime,
       }}
     />
-  ) : null;
-  let valvePrime =
-    variant === "floating" ? (
-      <ReadLoginRouteQuerySnapshot
-        {...{
-          "aria-label": maplePrime,
-          color: "ghostActive",
-          size: "icon",
-          onClick: () => {
-            glenPrime(
-              CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_CLOSE_BUTTON,
-            );
-          },
-          children: (
-            <EnsureComposerEsm_RV_Init
-              {...{
-                className: "icon-xs",
-              }}
-            />
-          ),
-        }}
-      />
-    ) : null;
-  let axlePrime = (
-    <div className="flex shrink-0 gap-1">
-      {_quickChatWindowT}
-      {_quickChatWindowN}
-      {valvePrime}
-    </div>
   );
-  let _r = (
-    <header
-      data-quick-chat-drag-handle={motorPrime}
-      className={rivetPrime}
-      style={screwPrime}
-    >
-      {torquePrime}
-      {axlePrime}
-    </header>
+  let drillPrime = (
+    <QuickChatWindowComposer
+      {...{
+        $e,
+        apexPrime,
+        brookPrime,
+        contextSourceConversationId,
+        conversationId,
+        duskPrime,
+        grovePrime,
+        hillPrime,
+        islePrime,
+        knollPrime,
+        onClose,
+        quietPrime,
+        rainPrime,
+        spurPrime,
+        trailPrime,
+        valePrime,
+        variant,
+        wheatPrime,
+      }}
+    />
   );
-  let bracketPrime =
-      variant === "window"
-        ? "px-5 pb-5"
-        : FloatingSurfaceCssClass.floatingComposerInset,
-    clampPrime =
-      islePrime == null || $e ? (
-        <QuickChatWindowHelper26
-          key={conversationId}
-          {...{
-            ref: rainPrime,
-            autoPrepare: false,
-            conversationId,
-            getExtraDeveloperInstructions:
-              contextSourceConversationId == null || valePrime != null
-                ? undefined
-                : () => AppInitialAx(wheatPrime, contextSourceConversationId),
-            projectId: brookPrime,
-            projectName: duskPrime,
-            radiusVariant: "single-line",
-            isPrimaryComposer: false,
-            showLockdownSlashCommand: true,
-            surfaceVariant: variant === "window" ? "opaque" : "default",
-            onProjectChangeFromSlashCommand: apexPrime ? null : spurPrime,
-            onFileDropTargetChange: (ventPrime) => {
-              let { disabled, onFilesDropped } = ventPrime;
-              quietPrime.current = onFilesDropped;
-              trailPrime(disabled);
-            },
-            onSubmitAccepted: () => {
-              markQuickChatConversationStarted(wheatPrime, conversationId, {
-                fileCount: grovePrime?.length ?? 0,
-                selectedTextAttachmentCount: hillPrime?.length ?? 0,
-                source:
-                  CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_COMPOSER,
-                surface: knollPrime,
-              });
-            },
-          }}
-        />
-      ) : (
-        <UseChatgptComposerControllerP
-          {...{
-            conversationId,
-            isTemporaryChat: false,
-            onContinueSuccess: () => {
-              onClose(
-                CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_UNSPECIFIED,
-              );
-            },
-            request: islePrime,
-          }}
-        />
-      );
-  let drillPrime = <div className={bracketPrime}>{clampPrime}</div>;
   let enginePrime = variant === "floating",
     framePrime = everPrime ? "top" : "bottom",
     gasketPrime = everPrime ? true : undefined,
@@ -1271,74 +779,21 @@ export function quickChatWindowT(vaporPrime: unknown) {
       {idlerPrime}
     </div>
   );
-  let keeperPrime = lagoonPrime.map((item, index) => (
-    <QuickChatWindowHelper9
-      key={item.conversationId}
+  let keeperPrime = (
+    <QuickChatWindowStackedPanels
       {...{
-        ancestors: [
-          {
-            id: conversationId,
-            label: nimbusPrime,
-            onClick: () => {
-              knobPrime(0);
-            },
-          },
-          ...lagoonPrime.slice(0, index).map((_item, _index) => ({
-            id: _item.conversationId,
-            label: _item.title,
-            onClick: () => {
-              knobPrime(_index + 1);
-            },
-          })),
-        ],
-        isActive: nestPrime == null && index === lagoonPrime.length - 1,
-        minimizeLabel: variant === "floating" ? maplePrime : undefined,
-        onMinimize:
-          variant === "floating"
-            ? () => {
-                glenPrime(
-                  CodexRemoteSshConnectionAction.CODEX_QUICK_CHAT_SOURCE_CLOSE_BUTTON,
-                );
-              }
-            : undefined,
-        title: item.title,
-        variant: variant,
-        children: [
-          index === lagoonPrime.length - 1 ? (
-            <_useChatgptComposerControllerR
-              {...{
-                conversationId: item.conversationId,
-              }}
-            />
-          ) : null,
-          <QuickChatWindowHelper24
-            {...{
-              footer: null,
-              scrollOrigin: "top",
-              variant: variant,
-              children: (
-                <UseChatgptComposerControllerV
-                  {...{
-                    value: _n,
-                    children: (
-                      <UseChatgptComposerControllerA
-                        {...{
-                          browserConversationId: undefined,
-                          conversationId: item.conversationId,
-                          renderInitialContentAsComplete: true,
-                          renderMode: "sidebar",
-                        }}
-                      />
-                    ),
-                  }}
-                />
-              ),
-            }}
-          />,
-        ],
+        _n,
+        conversationId,
+        glenPrime,
+        knobPrime,
+        lagoonPrime,
+        maplePrime,
+        nestPrime,
+        nimbusPrime,
+        variant,
       }}
     />
-  ));
+  );
   let lugPrime = (
     <UseChatgptComposerControllerB
       {...{
@@ -1390,32 +845,6 @@ function $n(novaPrime) {
   return novaPrime.kind === "optimistic"
     ? [ensureComposerEsm_ZI_Init(novaPrime.conversationId)]
     : [];
-}
-function QuickChatWindowHelper26(olivePrime) {
-  let prismPrime = {
-    conversationId: olivePrime.conversationId,
-  };
-  let quillPrime = useChatgptComposerControllerN(prismPrime);
-  return (
-    <AppInitialTT>
-      {
-        <ProjectMarkerIcon
-          {...{
-            ...olivePrime,
-            composerController: quillPrime,
-          }}
-        />
-      }
-    </AppInitialTT>
-  );
-}
-function north(reefPrime, sagePrime, topazPrime) {
-  return Math.min(Math.max(reefPrime, sagePrime), topazPrime);
-}
-function orbit() {
-  return document.activeElement instanceof HTMLElement
-    ? document.activeElement
-    : null;
 }
 function pine(ultraPrime) {
   return (

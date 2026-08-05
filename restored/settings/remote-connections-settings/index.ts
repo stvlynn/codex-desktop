@@ -5,15 +5,23 @@
 // Wave5d — FZ repair; JSX PascalCase + careful split for quality-gate flat limit.
 // Public barrel.
 export * from "./part-1";
+export * from "./part-1-b";
 export * from "./part-2";
 export * from "./part-3";
+export * from "./part-3-b";
 export * from "./part-4";
+export * from "./part-4-b";
 export * from "./part-5";
+export * from "./part-5-b";
 export * from "./part-6";
+export * from "./part-6-b";
 export * from "./part-7";
+export * from "./part-7-b";
 export * from "./part-8";
+export * from "./part-8-b";
 export * from "./part-9";
 export * from "./part-10";
+export * from "./part-10-a";
 export * from "./part-11";
 export * from "./part-12";
 export * from "./part-13";

@@ -3,7 +3,7 @@
 // Soft-deferred host replaced; NOT app-initial extractFn / promote / producer barrel.
 // Residual companion stubs: 38 (verified 101/139).
 // Wave FZ-support — PascalCase invalid JSX tags: coerceLocalFilesystemPath→CoerceLocalFilesystemPath, renamedId→ComposerUtilityBarHelper1, renamedId→ComposerUtilityBarHelper2, renamedId→ComposerUtilityBarHelper4, renamedId→ComposerUtilityBarHelper5, ensureWorktreeEnvironmentDropdownInit→EnsureWorktreeEnvironmentDropdownInit, localRemoteDropdownR→LocalRemoteDropdownR, localRemoteDropdownT→LocalRemoteDropdownT, readLoginRouteQuerySnapshot→ReadLoginRouteQuerySnapshot, worktreeEnvironmentDropdownR→WorktreeEnvironmentDropdownR.
-// AST split 1/1
+// AST split 1/6 — ComposerUtilityBar host component and the top-level lazy init.
 /* split-lane-import-depth:1 */
 
 import { dataFileBlameAuthor } from "../../account/data-file-blame-author";
@@ -40,7 +40,6 @@ import { THREAD_DETAIL_LEVEL_STEPS_PROSE } from "../../conversation/thread-detai
 import { DebugNameProbe } from "../../debug/debug-name-probe";
 import { DesktopPersistenceKeys } from "../../desktop/persistence-keys";
 import { ProjectSelectorControl } from "../../desktop/project-selector-control";
-import { ensureDiffCommentComposerInit } from "../../editors/ensure-diff-comment-composer-init";
 import {
   EnsureWorktreeEnvironmentDropdownInit,
   WorktreeEnvironmentDropdown,
@@ -52,9 +51,7 @@ import {
 import { pathContainsWorktreesDir } from "../../files/path-contains-worktrees-dir";
 import { visualizationIdFromPath } from "../../files/visualization-html-path";
 import { worktreeLeafName } from "../../files/worktree-leaf-name";
-import { ProjectPinnedActionsMenu } from "../../home/project-pinned-actions-menu";
 import { getHostConfigId } from "../../hooks/host-rpc-client";
-import { HostConnectionStatusBadge } from "../../hosts/host-connection-status-badge";
 import { HostCwdPathLabel } from "../../hosts/host-cwd-path-label";
 import { useResolvedHostConfigValue } from "../../hosts/use-resolved-host-config-value";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
@@ -62,18 +59,11 @@ import { ensureIntlFormattersInit } from "../../i18n/use-intl";
 import { AppIconBO } from "../../icons/app-icon-bo";
 import { AppIconFB } from "../../icons/app-icon-fb";
 import { AppIconMA } from "../../icons/app-icon-ma";
-import { AppIconSR } from "../../icons/app-icon-sr";
 import { AppIconYlt } from "../../icons/app-icon-ylt";
-import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { ProjectDropdownGlyphIcon } from "../../icons/project-dropdown-glyph-icon";
 import { isWhitespaceOrEofCharCode } from "../../markdown/is-whitespace-or-eof-char-code";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { copilotDefaultModel } from "../../models/copilot-default-model";
-import {
-  readScrollTop,
-  scrollAppActionTargetByTurn,
-  scrollAppActionTargetTo,
-} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
 import { isCurrentSpecialWindowRoute } from "../../navigation/is-special-window-route";
@@ -89,17 +79,11 @@ import {
 } from "../../skills/skills-page-helpers";
 import { cloud4 } from "../../ui/cloud4";
 import { deferredT } from "../../ui/deferred-t";
-import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import {
-  DropdownMenuPopover,
-  ensureDropdownMenuPopoverInit,
-} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { UtilityBarCategoryValue } from "../../ui/utility-bar-category-value";
 import { codexProjectKey } from "../../utils/codex-project-key";
 import { CoerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
-import { identity } from "../../utils/identity";
 import {
   ensurePersonalizationG0Init,
   ensurePersonalizationK0Init,
@@ -107,7 +91,6 @@ import {
 } from "../../utils/wave-as-gap-ensure-inits";
 import { identityCwd } from "../../utils/workspace-paths";
 import { buildSkillMentionMarkdown } from "../build-skill-mention-markdown";
-import { ComposerCategoryValueChip } from "../composer-category-value-chip";
 import { ComposerProjectSelector } from "../composer-project-selector";
 import { DesignComposerSurface } from "../design-composer-surface";
 import { findSkillByName } from "../find-skill-by-name";
@@ -120,537 +103,49 @@ import {
   LocalRemoteDropdownR,
   LocalRemoteDropdownT,
 } from "../local-remote-dropdown";
+import {
+  ComposerUtilityBarHelper1,
+  echo,
+} from "./cloud-follow-up-mode-dropdown";
+import {
+  AppInitialAT,
+  AppInitialCW,
+  AppInitialF3,
+  AppInitialIB,
+  AppInitialKg,
+  AppInitialKm,
+  AppInitialNO,
+  AppInitialP3,
+  AppInitialPa,
+  AppInitialQq,
+  AppInitialRS,
+  AppInitialSW,
+  AppInitialTg,
+  AppInitialTY,
+  AppInitialV2,
+  AppInitialWY,
+  AppInitialXO,
+  branch,
+  composerScope,
+  DeferredTC,
+  DeferredUiD2,
+  deferredUiE1,
+  DeferredUiH222,
+  deferredUiPJ,
+  DeferredUiU232,
+  DeferredUiV2,
+  DeferredUiX232,
+  ensureComposerProjectSelectorInit,
+  ensureSelectWorkspacePXInit,
+  InitialRoute3,
+  NativeContextMenuSurface,
+  ReadLoginRouteQuerySnapshot,
+  useLocalEnvironmentEditorState,
+} from "./companion-stubs";
+import { ComposerUtilityBarHelper4, onyx } from "./custom-cli-badge";
+import { ComposerUtilityBarHelper5 } from "./remote-connection-chip";
+import { ComposerUtilityBarHelper2, kite } from "./starting-state-dropdown";
 
-const AppInitialAT: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:deferredUiBa@ui/deferred-ui-ba-2.tsx) */
-const AppInitialBa: any = undefined;
-/** Wave FY unresolved companion (missing-export:ui/deferred-ui-cr.tsx) */
-const deferredUiCR: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:deferredUiCW@ui/deferred-ui-cw.ts) */
-const AppInitialCW: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:gpuTearingDebugSettingsAtom@settings/gpu-tearing-debug-settings.ts) */
-const AppInitialD: any = undefined;
-/** Wave FY unresolved companion (missing-export:ui/deferred-ui-d2.tsx) */
-const DeferredUiD2: any = undefined;
-/** Wave FY unresolved companion (missing-export:ui/deferred-ui-e1.ts) */
-const deferredUiE1: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:tokenInvalidated@hosts/token-invalidated.ts) */
-const AppInitialF: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureEnvironmentLabelsF3Init@utils/wave-at-gap-ensure-inits.ts) */
-const AppInitialF3: any = undefined;
-/** Wave FY unresolved companion (missing-export:worktree/branch.ts) */
-const branch: any = undefined;
-/** Wave FY unresolved companion (missing-export:ui/deferred-ui-h222.tsx) */
-const DeferredUiH222: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_IB_Init@composer/composer-esm-inits.ts) */
-const AppInitialIB: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureComposerEsm_Kg_Init@composer/composer-esm-inits.ts) */
-const AppInitialKg: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:hero@worktree/hero.ts) */
-const AppInitialKm: any = undefined;
-/** Wave FY unresolved companion (missing-export:settings/use-local-environment-editor-state.ts) */
-const useLocalEnvironmentEditorState: any = undefined;
-/** Wave FY unresolved companion (missing-export:navigation/initial-route3.tsx) */
-const InitialRoute3: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:useClearBrowserUseHostStateMutation@boundaries/browser-use-mutation-facades.ts) */
-const AppInitialNO: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureEnvironmentLabelsP3Init@utils/wave-at-gap-ensure-inits.ts) */
-const AppInitialP3: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:textTokenDescriptionForeground@ui/text-token-description-foreground-2.tsx) */
-const AppInitialPa: any = undefined;
-/** Wave FY unresolved companion (missing-export:navigation/data-app-action-review-file-expanded-2.ts) */
-const dataAppActionReviewFileExpanded: any = undefined;
-/** Wave FY unresolved companion (missing-export:ui/deferred-ui-pj.ts) */
-const deferredUiPJ: any = undefined;
-/** Wave FY unresolved companion (missing-export:utils/wave-at-gap-ensure-inits.ts) */
-const ensureSelectWorkspacePXInit: any = undefined;
-/** Wave FY unresolved companion (missing-export:conversation/composer-scope.ts) */
-const composerScope: any = undefined;
-/** Wave FY unresolved companion (missing-export:composer/composer-project-selector.tsx) */
-const ensureComposerProjectSelectorInit: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:deferredComposerQq@composer/deferred-composer-qq.ts) */
-const AppInitialQq: any = undefined;
-/** Wave FY unresolved companion (missing-export:artifact/native-context-menu-surface.tsx) */
-const NativeContextMenuSurface: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:composerNavigation2@composer/composer-navigation2.ts) */
-const AppInitialRS: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:deferredUiSW@ui/deferred-ui-sw.ts) */
-const AppInitialSW: any = undefined;
-/** Wave FY unresolved companion (missing-export:composer/deferred-tc.tsx) */
-const DeferredTC: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:shouldShowWorktreeChrome@environments/worktree-handoff-helpers.ts) */
-const AppInitialTg: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:environment3@environments/environment3.ts) */
-const AppInitialTY: any = undefined;
-/** Wave FY unresolved companion (missing-export:ui/deferred-ui-u232.tsx) */
-const DeferredUiU232: any = undefined;
-/** Wave FY unresolved companion (missing-export:ui/deferred-ui-v2.tsx) */
-const DeferredUiV2: any = undefined;
-/** Wave FY unresolved companion (missing-export:ui/deferred-ui-v2.tsx) */
-const AppInitialV2: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:useHostChatgptAuthMethod@hosts/use-host-chatgpt-auth-method.ts) */
-const AppInitialWY: any = undefined;
-/** Wave FY unresolved companion (missing-export:ui/deferred-ui-x232.tsx) */
-const DeferredUiX232: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:deferredNavigationXO@navigation/deferred-navigation-xo.ts) */
-const AppInitialXO: any = undefined;
-/** Wave FY unresolved companion (missing-export:onboarding/read-login-route-query-snapshot.ts) */
-const ReadLoginRouteQuerySnapshot: any = undefined;
-function ComposerUtilityBarHelper1(river) {
-  let { composerMode, setComposerMode } = river,
-    slate = CodexPluginActionType(HostCwdPathLabel),
-    timber = CodexPluginActionResult(deferredUiPJ),
-    [umbra, violet] = bravo.useState(false),
-    willow = useVoiceSettingsHostConfig(),
-    xenon = CodexPluginActionResult(getHostConfigId),
-    yellow =
-      willow.cwd == null
-        ? null
-        : {
-            cwd: willow.cwd,
-            hostConfig: willow.hostConfig,
-          };
-  let zinc = {
-    retainRepoWatch: xenon,
-  };
-  let { data, isLoading } = AppInitialF3(
-      yellow,
-      "cloud_follow_up_local_remote_dropdown",
-      zinc,
-    ),
-    amber = data?.root != null,
-    basalt = timber?.type === "cloud" && timber.hasAppliedCodeLocally,
-    cedar,
-    daisy;
-  cedar = () => {
-    basalt && cloud4(slate, "local");
-  };
-  daisy = [basalt, slate];
-  bravo.useEffect(cedar, daisy);
-  let ember, flint;
-  ember = () => {
-    isLoading || amber || cloud4(slate, "local");
-  };
-  flint = [amber, isLoading, slate];
-  bravo.useEffect(ember, flint);
-  let garnet =
-    composerMode === "local" ? (
-      <MemoizedFormattedMessage
-        {...{
-          ...delta.local,
-        }}
-      />
-    ) : (
-      <MemoizedFormattedMessage
-        {...{
-          ...delta.cloud,
-        }}
-      />
-    );
-  let hazel = garnet,
-    ivory = (
-      <MemoizedFormattedMessage
-        {...{
-          ...delta.tooltip,
-        }}
-      />
-    );
-  let jasper =
-    composerMode === "cloud" ? (
-      <AppInitialD className="icon-xs" />
-    ) : (
-      <AppIconFB
-        {...{
-          className: "icon-xs",
-        }}
-      />
-    );
-  let kelp = (
-    <OptionalTooltip
-      {...{
-        tooltipContent: ivory,
-        children: (
-          <ComposerCategoryValueChip
-            data-composer-navigation-target="run-location"
-            categoryLabel={null}
-            collapse="xs"
-            icon={jasper}
-            indicator="chevron"
-            value={hazel}
-            valueClassName="max-w-40"
-          />
-        ),
-      }}
-    />
-  );
-  let lotus = (
-    <DropdownMenu.Title
-      {...{
-        children: (
-          <MemoizedFormattedMessage
-            {...{
-              id: "composer.mode.newTask.header",
-              defaultMessage: "Continue in",
-              description: "Header label above agent mode options",
-            }}
-          />
-        ),
-      }}
-    />
-  );
-  let mint = composerMode === "local" ? AppIconZlt : undefined,
-    nova = () => {
-      setComposerMode("local");
-      violet(false);
-    };
-  let olive = (
-    <MemoizedFormattedMessage
-      {...{
-        ...delta.local,
-      }}
-    />
-  );
-  let prism = (
-    <DropdownMenu.Item
-      {...{
-        LeftIcon: AppIconFB,
-        RightIcon: mint,
-        onClick: nova,
-        children: olive,
-      }}
-    />
-  );
-  let quill = amber ? (
-    <DropdownMenu.Item
-      {...{
-        LeftIcon: AppInitialD,
-        RightIcon: composerMode === "cloud" ? AppIconZlt : undefined,
-        onClick: () => {
-          setComposerMode("cloud");
-          violet(false);
-        },
-        children: (
-          <MemoizedFormattedMessage
-            {...{
-              ...delta.cloud,
-            }}
-          />
-        ),
-      }}
-    />
-  ) : null;
-  let reef = (
-    <div className="flex w-44 flex-col">
-      {lotus}
-      {prism}
-      {quill}
-    </div>
-  );
-  return (
-    <DropdownMenuPopover
-      {...{
-        open: umbra,
-        onOpenChange: violet,
-        triggerButton: kelp,
-        children: reef,
-      }}
-    />
-  );
-}
-var alpha,
-  bravo,
-  copper,
-  delta,
-  echo = esmInit(() => {
-    alpha = reactCompilerRuntime();
-    ensureComposerEsm_MT_Init();
-    bravo = commonJsInit(react(), 1);
-    ensureIntlFormattersInit();
-    ensureDropdownMenuInit();
-    ensureComposerEsm_Hlt_Init();
-    AppInitialP3();
-    copilotDefaultModel();
-    ensureDropdownMenuPopoverInit();
-    AppInitialF();
-    AppInitialIB();
-    useLocalEnvironmentEditorState();
-    composerScope();
-    AppInitialRS();
-    cloud4();
-    getPluginShortDescription();
-    delta = identity({
-      local: {
-        id: "composer.cloudFollowUp.local",
-        defaultMessage: "Local",
-        description: "Local follow-up option",
-      },
-      cloud: {
-        id: "composer.cloudFollowUp.cloud",
-        defaultMessage: "Cloud",
-        description: "Cloud follow-up option",
-      },
-      tooltip: {
-        id: "composer.cloudFollowUp.whereRun",
-        defaultMessage: "Where should this follow-up run?",
-        description: "Tooltip for choosing between local and cloud follow-ups",
-      },
-    });
-  });
-function ComposerUtilityBarHelper2(sage) {
-  let { startingState, setStartingState } = sage,
-    [topaz, ultra] = harbor.useState(false),
-    vapor =
-      startingState === "working-tree" ? (
-        <MemoizedFormattedMessage
-          {...{
-            ...jade.workingTree,
-          }}
-        />
-      ) : (
-        <MemoizedFormattedMessage
-          {...{
-            ...jade.directFollowUp,
-          }}
-        />
-      );
-  let wheat = vapor,
-    yarn = (
-      <div className="flex flex-col gap-2">
-        {
-          <MemoizedFormattedMessage
-            {...{
-              id: "composer.remote.startingPoint",
-              defaultMessage: "What code should this chat start from?",
-              description: "Section label for remote starting point selector",
-            }}
-          />
-        }
-      </div>
-    );
-  let zephyr = (
-    <MemoizedFormattedMessage
-      {...{
-        id: "composer.followUpStartingState.footerCategory",
-        defaultMessage: "Starting from",
-        description:
-          "Category label for the follow-up starting state control in the composer footer",
-      }}
-    />
-  );
-  let acorn = startingState === "working-tree",
-    bloom = (
-      <CoerceLocalFilesystemPath
-        {...{
-          className: "icon-xs",
-        }}
-      />
-    );
-  let coral = (
-    <ProjectPinnedActionsMenu
-      borderColor="border-token-side-bar-background"
-      badgeEnabled={acorn}
-    >
-      {bloom}
-    </ProjectPinnedActionsMenu>
-  );
-  let drift = (
-    <OptionalTooltip
-      {...{
-        tooltipContent: yarn,
-        children: (
-          <ComposerCategoryValueChip
-            data-composer-navigation-target="starting-state"
-            categoryLabel={zephyr}
-            collapse="none"
-            icon={coral}
-            indicator="chevron"
-            value={wheat}
-            valueClassName="max-[440px]:hidden"
-          />
-        ),
-      }}
-    />
-  );
-  let eagle = (
-    <MemoizedFormattedMessage
-      {...{
-        id: "composer.remote.currentEditsSuffix.followUp",
-        defaultMessage: "Create a new chat that references this cloud chat.",
-        description:
-          "Suffix text indicating the selection includes current edits",
-      }}
-    />
-  );
-  let frost = startingState === "working-tree" ? AppIconZlt : undefined,
-    glide = () => {
-      setStartingState("working-tree");
-      ultra(false);
-    };
-  let honey = (
-    <MemoizedFormattedMessage
-      {...{
-        ...jade.workingTree,
-      }}
-    />
-  );
-  let iris = (
-    <OptionalTooltip
-      {...{
-        tooltipContent: eagle,
-        children: (
-          <DropdownMenu.Item
-            {...{
-              LeftIcon: falcon,
-              RightIcon: frost,
-              onClick: glide,
-              children: honey,
-            }}
-          />
-        ),
-      }}
-    />
-  );
-  let jewel = startingState === "direct-follow-up" ? AppIconZlt : undefined,
-    knoll = () => {
-      setStartingState("direct-follow-up");
-      ultra(false);
-    };
-  let lunar = (
-    <MemoizedFormattedMessage
-      {...{
-        ...jade.directFollowUp,
-      }}
-    />
-  );
-  let moss = (
-    <DropdownMenu.Item
-      {...{
-        LeftIcon: CoerceLocalFilesystemPath,
-        RightIcon: jewel,
-        onClick: knoll,
-        children: lunar,
-      }}
-    />
-  );
-  let north = (
-    <div className="flex flex-col gap-1 pt-1">
-      {iris}
-      {moss}
-    </div>
-  );
-  return (
-    <DropdownMenuPopover
-      {...{
-        open: topaz,
-        onOpenChange: ultra,
-        triggerButton: drift,
-        children: north,
-      }}
-    />
-  );
-}
-function falcon(orbit) {
-  let { className } = orbit;
-  return (
-    <ProjectPinnedActionsMenu borderColor="border-token-dropdown-background">
-      {
-        <CoerceLocalFilesystemPath
-          {...{
-            className,
-          }}
-        />
-      }
-    </ProjectPinnedActionsMenu>
-  );
-}
-var gamma,
-  harbor,
-  indigo,
-  jade,
-  kite = esmInit(() => {
-    gamma = reactCompilerRuntime();
-    harbor = commonJsInit(react(), 1);
-    ensureIntlFormattersInit();
-    AppInitialBa();
-    ensureDropdownMenuInit();
-    ensureComposerEsm_Hlt_Init();
-    usePluginsFeatureEnabled();
-    ensureDropdownMenuPopoverInit();
-    ensureDiffCommentComposerInit();
-    AppInitialRS();
-    jade = identity({
-      workingTree: {
-        id: "composer.remote.localWorkingTree",
-        defaultMessage: "Use local changes",
-        description:
-          "Label for local working tree selection in remote composer",
-      },
-      directFollowUp: {
-        id: "composer.remote.directFollowUp",
-        defaultMessage: "Don't use local changes",
-        description: "Label for direct follow-up selection in remote composer",
-      },
-    });
-  });
-function ComposerUtilityBarHelper4() {
-  let { data } = CodexPluginActionResult(nickel);
-  if (!(data?.hasCustomCliExecutable ?? false)) return null;
-  let pine = (
-    <MemoizedFormattedMessage
-      {...{
-        id: "composer.customCliTooltip",
-        defaultMessage: "Using a custom CLI executable",
-        description:
-          "Tooltip text shown when the user has set a custom Codex CLI executable in their VS Code settings.",
-      }}
-    />
-  );
-  return (
-    <OptionalTooltip
-      {...{
-        tooltipContent: pine,
-        children: (
-          <ReadLoginRouteQuerySnapshot
-            {...{
-              color: "ghost",
-              size: "composerSm",
-              uniform: true,
-              className: "-mx-2",
-              children: (
-                <AppIconSR
-                  {...{
-                    className: "icon-xs text-token-editor-warning-foreground",
-                  }}
-                />
-              ),
-            }}
-          />
-        ),
-      }}
-    />
-  );
-}
-var lemon,
-  marble,
-  nickel,
-  onyx = esmInit(() => {
-    lemon = reactCompilerRuntime();
-    ensureComposerEsm_MT_Init();
-    ensureIntlFormattersInit();
-    ensureSettingsQueryAtomsInit();
-    ensureComposerEsm_Hlt_Init();
-    deferredUiCR();
-    ensureAppScopeInit();
-    dataAppActionReviewFileExpanded();
-    scrollAppActionTargetTo();
-    nickel = scrollAppActionTargetByTurn(
-      appScopeAtom,
-      "has-custom-cli-executable",
-      {
-        staleTime: readScrollTop.FIVE_SECONDS,
-      },
-    );
-  });
 export function ComposerUtilityBar({
   variant,
   composerMode,
@@ -1240,32 +735,7 @@ export function ComposerUtilityBar({
     </AppIconYlt>
   );
 }
-function ComposerUtilityBarHelper5(quest) {
-  let { hostId, connectionDisplayName, projectPath } = quest;
-  if (hostId == null) return null;
-  let ridge = projectPath == null,
-    storm = connectionDisplayName ?? hostId,
-    tide = <span className="max-w-40 min-w-0 truncate">{storm}</span>;
-  let unity = <HostConnectionStatusBadge hostId={hostId} />;
-  let vale = (
-    <OptionalTooltip
-      collapse="sm"
-      className="flex min-w-0 items-center gap-1 text-sm"
-    >
-      {tide}
-      {unity}
-    </OptionalTooltip>
-  );
-  return (
-    <OptionalTooltip
-      {...{
-        tooltipContent: projectPath,
-        disabled: ridge,
-        children: vale,
-      }}
-    />
-  );
-}
+
 var $t, pearl, $, quartz;
 esmInit(() => {
   $t = reactCompilerRuntime();

@@ -312,6 +312,95 @@ const wheat: any = undefined;
 const yarrow: any = undefined;
 const yonder: any = undefined;
 
+var knob,
+  ledge,
+  mire,
+  nook,
+  oxbow = esmInit(() => {
+    knob = reactCompilerRuntime();
+    ensureComposerEsm_Tft_Init();
+    ensureComposerEsm_MT_Init();
+    strongMarkerFromOptions();
+    ledge = commonJsInit(react(), 1);
+    ensureIntlFormattersInit();
+    conversationsSidebarMessages();
+    ensureGitMetadataQueryInit();
+    ensureCodexMobileSetupDialogInit();
+    AppInitialBQ();
+    ensureSettingsQueryAtomsInit();
+    findProcessManagerRow();
+    useOpenLocatorInMainWindow();
+    ensureImportSettingsCLInit();
+    AppInitialUj();
+    useClearBrowserBrowsingDataMutation();
+    useTeenOnboardingAgeGate();
+    ensureComposerEsm_Sut_Init();
+    ensureComposerEsm_Ilt_Init();
+    AppInitialBC();
+    ensureComposerEsm_Hlt_Init();
+    apex();
+    isIndeterminate();
+    useEventCallback();
+    ensureDynamicScriptLoadInit();
+    ensureAppScopeInit();
+    codexCommandTheme();
+    AppInitialVC();
+    AppInitialFC();
+    ensureSkillsPageHelpersInit();
+    ensureComposerEsm_FH_Init();
+    posixPathBasename();
+    ensureRemoteConnectionsFeatureInit();
+    elm();
+    codexMobileSetupFlowL();
+    amber();
+    yarrow();
+    tokenInvalidated();
+    field();
+    yonder();
+    daisy();
+    nook = "—";
+  }),
+  pond,
+  quarry = esmInit(() => {
+    pond =
+      "" +
+      new URL(
+        "remote-control-authorization-dialog-artwork-BDkdoGfj.png",
+        import.meta.url,
+      ).href;
+  });
+var tor,
+  updraft,
+  verge = esmInit(() => {
+    tor = reactCompilerRuntime();
+    ensureIntlFormattersInit();
+    quarry();
+    ensureCodexMobileSetupDialogStylesInit();
+    ensureSettingsQueryAtomsInit();
+    findProcessManagerRow();
+    macOS4();
+  });
+var cog,
+  disc,
+  edge = esmInit(() => {
+    cog = reactCompilerRuntime();
+    ensureIntlFormattersInit();
+    ensureSettingsQueryAtomsInit();
+    openMcpAppSidePanelTab();
+    ensureImportSettingsCLInit();
+    ensureComposerEsm_Hlt_Init();
+    macOS4();
+    useEventCallback();
+    AppInitialVC();
+    timber();
+    wheat();
+  });
+
+/** split companion stub */
+const weir: any = undefined;
+/** split companion stub */
+const yard: any = undefined;
+
 function no(lotusThird, mintThird, novaThird) {
   if (lotusThird.source === "remote-control") {
     let reefThird = lotusThird.hostName || nook,
@@ -536,63 +625,6 @@ async function jetty({ connection, environmentId }) {
       );
     }
 }
-var knob,
-  ledge,
-  mire,
-  nook,
-  oxbow = esmInit(() => {
-    knob = reactCompilerRuntime();
-    ensureComposerEsm_Tft_Init();
-    ensureComposerEsm_MT_Init();
-    strongMarkerFromOptions();
-    ledge = commonJsInit(react(), 1);
-    ensureIntlFormattersInit();
-    conversationsSidebarMessages();
-    ensureGitMetadataQueryInit();
-    ensureCodexMobileSetupDialogInit();
-    AppInitialBQ();
-    ensureSettingsQueryAtomsInit();
-    findProcessManagerRow();
-    useOpenLocatorInMainWindow();
-    ensureImportSettingsCLInit();
-    AppInitialUj();
-    useClearBrowserBrowsingDataMutation();
-    useTeenOnboardingAgeGate();
-    ensureComposerEsm_Sut_Init();
-    ensureComposerEsm_Ilt_Init();
-    AppInitialBC();
-    ensureComposerEsm_Hlt_Init();
-    apex();
-    isIndeterminate();
-    useEventCallback();
-    ensureDynamicScriptLoadInit();
-    ensureAppScopeInit();
-    codexCommandTheme();
-    AppInitialVC();
-    AppInitialFC();
-    ensureSkillsPageHelpersInit();
-    ensureComposerEsm_FH_Init();
-    posixPathBasename();
-    ensureRemoteConnectionsFeatureInit();
-    elm();
-    codexMobileSetupFlowL();
-    amber();
-    yarrow();
-    tokenInvalidated();
-    field();
-    yonder();
-    daisy();
-    nook = "—";
-  }),
-  pond,
-  quarry = esmInit(() => {
-    pond =
-      "" +
-      new URL(
-        "remote-control-authorization-dialog-artwork-BDkdoGfj.png",
-        import.meta.url,
-      ).href;
-  });
 function rapids(bloomThird) {
   let { authorizing, open, onAuthorize, onOpenChange } = bloomThird,
     coralThird = useIntl(),
@@ -743,17 +775,6 @@ function spur() {
     </div>
   );
 }
-var tor,
-  updraft,
-  verge = esmInit(() => {
-    tor = reactCompilerRuntime();
-    ensureIntlFormattersInit();
-    quarry();
-    ensureCodexMobileSetupDialogStylesInit();
-    ensureSettingsQueryAtomsInit();
-    findProcessManagerRow();
-    macOS4();
-  });
 function _o(pineThird) {
   let {
       connections,
@@ -965,188 +986,3 @@ function _o(pineThird) {
     />
   );
 }
-function weir(event) {
-  event.stopPropagation();
-}
-function yard(event) {
-  event.stopPropagation();
-}
-function anchor(lagoonThird) {
-  let { connection } = lagoonThird,
-    meadowThird = connection.online
-      ? "block size-2 rounded-full bg-token-charts-green"
-      : "block size-2 rounded-full bg-gray-400",
-    nestThird = <span className={meadowThird} />;
-  let oakThird = connection.online ? (
-    <MemoizedFormattedMessage
-      {...{
-        id: "settings.remoteConnections.remoteControlDiscoveryDialog.online",
-        defaultMessage: "Online",
-        description:
-          "Status label for an available signed-in device in the add-device dialog",
-      }}
-    />
-  ) : connection.lastSeenAt == null ? (
-    <MemoizedFormattedMessage
-      {...{
-        id: "settings.remoteConnections.remoteControlDiscoveryDialog.offline",
-        defaultMessage: "Offline",
-        description:
-          "Status label for an unavailable signed-in device in the add-device dialog",
-      }}
-    />
-  ) : (
-    <MemoizedFormattedMessage
-      {...{
-        id: "settings.remoteConnections.remoteControlDiscoveryDialog.lastUsed",
-        defaultMessage: "Last used {date}",
-        description:
-          "Status label for a signed-in device that was seen previously in the add-device dialog",
-        values: {
-          date: (
-            <INLINE_MENTION_GROUP_CLASS
-              key={"last-used-at"}
-              {...{
-                dateString: connection.lastSeenAt,
-              }}
-            />
-          ),
-        },
-      }}
-    />
-  );
-  return (
-    <div className="flex items-center gap-2">
-      {nestThird}
-      {oakThird}
-    </div>
-  );
-}
-function bolt() {
-  let { platform } = useHostPlatformModifierSymbol(),
-    petalThird,
-    quietThird;
-  petalThird = (
-    <li>
-      {
-        <MemoizedFormattedMessage
-          {...{
-            id: "settings.remoteConnections.remoteControlDiscoveryDialog.tooltip.openApp",
-            defaultMessage: "Go to the ChatGPT app on your device",
-            description:
-              "First tooltip step for making another device discoverable",
-          }}
-        />
-      }
-    </li>
-  );
-  quietThird = (
-    <li>
-      {
-        <MemoizedFormattedMessage
-          {...{
-            id: "settings.remoteConnections.remoteControlDiscoveryDialog.tooltip.openConnections",
-            defaultMessage: "Open Connections tab",
-            description:
-              "Second tooltip step for making another device discoverable",
-          }}
-        />
-      }
-    </li>
-  );
-  let rainThird = (
-    <ol className="list-decimal space-y-0 pl-4">
-      {petalThird}
-      {quietThird}
-      <li>
-        {
-          <MemoizedFormattedMessage
-            {...{
-              id: "settings.remoteConnections.remoteControlDiscoveryDialog.tooltip.clickSetup",
-              defaultMessage:
-                "Click “{setupLabel}” to make your device discoverable",
-              description:
-                "Third tooltip step for making another device discoverable",
-              values: {
-                setupLabel: (
-                  <strong>
-                    {
-                      <MemoizedFormattedMessage
-                        {...{
-                          id: "settings.remoteConnections.remoteControlDiscoveryDialog.tooltip.setupLabel",
-                          defaultMessage: "Set up",
-                          description:
-                            "Inline button label quoted inside the missing-device tooltip",
-                        }}
-                      />
-                    }
-                  </strong>
-                ),
-              },
-            }}
-          />
-        }
-      </li>
-    </ol>
-  );
-  return (
-    <div className="space-y-4 text-left">
-      {rainThird}
-      <div>
-        {
-          <MemoizedFormattedMessage
-            {...{
-              id: "settings.remoteConnections.remoteControlDiscoveryDialog.tooltip.enableHost",
-              defaultMessage:
-                "Or turn on {settingLabel} if the device is already set up",
-              description:
-                "Fallback tooltip guidance for making another device discoverable",
-              values: {
-                settingLabel: (
-                  <strong>
-                    {platform === "windows" ? (
-                      <MemoizedFormattedMessage
-                        {...{
-                          id: "settings.remoteConnections.remoteControlDiscoveryDialog.tooltip.settingLabel.windows",
-                          defaultMessage:
-                            "Allow this PC to be discovered and controlled",
-                          description:
-                            "Inline settings label quoted inside the missing-device tooltip on Windows",
-                        }}
-                      />
-                    ) : (
-                      <MemoizedFormattedMessage
-                        {...{
-                          id: "settings.remoteConnections.remoteControlDiscoveryDialog.tooltip.settingLabel",
-                          defaultMessage:
-                            "Allow this Mac to be discovered and controlled",
-                          description:
-                            "Inline settings label quoted inside the missing-device tooltip",
-                        }}
-                      />
-                    )}
-                  </strong>
-                ),
-              },
-            }}
-          />
-        }
-      </div>
-    </div>
-  );
-}
-var cog,
-  disc,
-  edge = esmInit(() => {
-    cog = reactCompilerRuntime();
-    ensureIntlFormattersInit();
-    ensureSettingsQueryAtomsInit();
-    openMcpAppSidePanelTab();
-    ensureImportSettingsCLInit();
-    ensureComposerEsm_Hlt_Init();
-    macOS4();
-    useEventCallback();
-    AppInitialVC();
-    timber();
-    wheat();
-  });

@@ -493,17 +493,6 @@ var alpha,
       </svg>
     );
   });
-function jade(race) {
-  let { onClose } = race;
-  return (
-    <CodexMobileSetupFlowT
-      {...{
-        onClose,
-        variant: "dialog",
-      }}
-    />
-  );
-}
 var kite,
   lemon,
   marble = esmInit(() => {
@@ -530,6 +519,57 @@ var kite,
       </svg>
     );
   });
+var slate,
+  timber = esmInit(() => {
+    AppInitialNH();
+    pearl();
+    AppInitialQS();
+    AppInitialIB();
+    ensureComposerEsm_CU_Init();
+  });
+var $r,
+  willow,
+  xenon,
+  yellow,
+  zinc,
+  amber = esmInit(() => {
+    $r = reactCompilerRuntime();
+    serializeCharacterReferenceNode();
+    ensureComposerEsm_MT_Init();
+    ensureIntlFormattersInit();
+    ensureSettingsQueryAtomsInit();
+    ensureImportSettingsCLInit();
+    ensureComposerEsm_Ilt_Init();
+    ensureAppScopeInit();
+    AppInitialVC();
+    AppInitialFC();
+    posixPathBasename();
+    timber();
+    AppInitialGQ();
+    xenon = "remote-control-client-revoke-success";
+    yellow = "remote-control-client-revoke-error";
+    zinc = "[remote-connections/settings]";
+  });
+var cedar,
+  daisy = esmInit(() => {
+    cedar = reactCompilerRuntime();
+    serializeCharacterReferenceNode();
+    ensureComposerEsm_MT_Init();
+    ensureAppScopeInit();
+    codexMobileSetupFlowO();
+  });
+
+function jade(race) {
+  let { onClose } = race;
+  return (
+    <CodexMobileSetupFlowT
+      {...{
+        onClose,
+        variant: "dialog",
+      }}
+    />
+  );
+}
 function quartz(trunnion) {
   switch (trunnion.deviceType) {
     case "phone":
@@ -580,14 +620,6 @@ function river(boss) {
       return <AppIconKS className="icon-sm" />;
   }
 }
-var slate,
-  timber = esmInit(() => {
-    AppInitialNH();
-    pearl();
-    AppInitialQS();
-    AppInitialIB();
-    ensureComposerEsm_CU_Init();
-  });
 function umbra(cam) {
   let {
       clients,
@@ -730,29 +762,6 @@ function violet(thrust) {
     />
   );
 }
-var $r,
-  willow,
-  xenon,
-  yellow,
-  zinc,
-  amber = esmInit(() => {
-    $r = reactCompilerRuntime();
-    serializeCharacterReferenceNode();
-    ensureComposerEsm_MT_Init();
-    ensureIntlFormattersInit();
-    ensureSettingsQueryAtomsInit();
-    ensureImportSettingsCLInit();
-    ensureComposerEsm_Ilt_Init();
-    ensureAppScopeInit();
-    AppInitialVC();
-    AppInitialFC();
-    posixPathBasename();
-    timber();
-    AppInitialGQ();
-    xenon = "remote-control-client-revoke-success";
-    yellow = "remote-control-client-revoke-error";
-    zinc = "[remote-connections/settings]";
-  });
 function basalt(yoke) {
   let { hostId } = yoke,
     baffle = CodexPluginActionType(appScopeAtom),
@@ -775,14 +784,6 @@ function basalt(yoke) {
     mutateAsync,
   };
 }
-var cedar,
-  daisy = esmInit(() => {
-    cedar = reactCompilerRuntime();
-    serializeCharacterReferenceNode();
-    ensureComposerEsm_MT_Init();
-    ensureAppScopeInit();
-    codexMobileSetupFlowO();
-  });
 function ember() {
   let kerf = NativeContextMenuSurface(MOBILE_MFA_SETUP_FEATURE_GATE_ID),
     { data, isLoading } = ensurePersonalizationK0Init(
@@ -821,201 +822,5 @@ function ember() {
         />
       }
     </>
-  );
-}
-function flint(nip) {
-  let { oneToOnePairingInAppEnabled } = nip,
-    outlet = CodexPluginActionType(appScopeAtom),
-    packing = useIntl(),
-    { platform } = useHostPlatformModifierSymbol(),
-    reducer = useSettingValue(
-      generalDesktopSettingsDefinitions.keepRemoteControlAwakeWhilePluggedIn,
-    ),
-    strainer = (
-      <UseChromeAndCodeThemeSync.Header
-        {...{
-          title: (
-            <MemoizedFormattedMessage
-              {...{
-                id: "settings.remoteConnections.localHost.otherSettings.title",
-                defaultMessage: "Other settings",
-                description:
-                  "Header title for additional local remote control settings",
-              }}
-            />
-          ),
-        }}
-      />
-    );
-  let tee = oneToOnePairingInAppEnabled ? null : (
-    <Ui
-      {...{
-        oneToOnePairingInAppEnabled: false,
-      }}
-    />
-  );
-  let union = <AppInitialZn className="icon-sm" />;
-  let vent =
-    platform === "macOS" ? (
-      <MemoizedFormattedMessage
-        {...{
-          ..._i.keepLiveMacLabel,
-        }}
-      />
-    ) : (
-      <MemoizedFormattedMessage
-        {...{
-          ..._i.keepLiveWindowsLabel,
-        }}
-      />
-    );
-  let wye = (
-    <MemoizedFormattedMessage
-      {...{
-        id: "settings.remoteConnections.localHost.keepLive.description",
-        defaultMessage:
-          "Prevent sleep when computer is plugged in and remote access is enabled",
-        description: "Description for keeping the local computer awake",
-      }}
-    />
-  );
-  let zener = reducer ?? false,
-    alphaPrime = (echoPrime) => {
-      setSettingValue(
-        outlet,
-        generalDesktopSettingsDefinitions.keepRemoteControlAwakeWhilePluggedIn,
-        echoPrime,
-      );
-    };
-  let bravoPrime =
-    platform === "macOS"
-      ? packing.formatMessage(_i.keepLiveMacLabel)
-      : packing.formatMessage(_i.keepLiveWindowsLabel);
-  let copperPrime = (
-    <AppInitialYC
-      checked={zener}
-      onChange={alphaPrime}
-      ariaLabel={bravoPrime}
-    />
-  );
-  let deltaPrime = (
-    <EnsurePersonalizationCInit
-      {...{
-        icon: union,
-        label: vent,
-        description: wye,
-        control: copperPrime,
-      }}
-    />
-  );
-  return (
-    <UseChromeAndCodeThemeSync
-      {...{
-        children: [
-          strainer,
-          <UseChromeAndCodeThemeSync.Content
-            {...{
-              children: (
-                <ParseUrlOrFallback
-                  {...{
-                    children: [tee, deltaPrime],
-                  }}
-                />
-              ),
-            }}
-          />,
-        ],
-      }}
-    />
-  );
-}
-function Ui(falconPrime) {
-  let { oneToOnePairingInAppEnabled } = falconPrime,
-    gammaPrime = CodexPluginActionType(appScopeAtom),
-    harborPrime = useIntl(),
-    indigoPrime = CodexBrowserSurfaceActionType(AppInitialX3, LOCAL_HOST_ID),
-    jadePrime = {
-      hostId: LOCAL_HOST_ID,
-    };
-  let kitePrime = basalt(jadePrime),
-    lemonPrime = async (timberPrime) => {
-      logProductEvent(gammaPrime, AppInitialYtt, {
-        enabled: timberPrime,
-      });
-      try {
-        await kitePrime.mutateAsync(timberPrime);
-      } catch (umbraPrime) {
-        if (useChronicleSettingsSection(gammaPrime, umbraPrime)) return;
-        gammaPrime.get(toastAtom).danger(
-          harborPrime.formatMessage({
-            id: "settings.remoteConnections.localHost.remoteControlUpdateError",
-            defaultMessage: "Couldn’t update remote control availability",
-            description:
-              "Toast shown when enabling or disabling local remote control fails",
-          }),
-        );
-      }
-    };
-  let marblePrime = lemonPrime,
-    nickelPrime = oneToOnePairingInAppEnabled ? undefined : (
-      <CodexMobileSetupDialogConfig
-        {...{
-          className: "icon-sm",
-        }}
-      />
-    );
-  let onyxPrime, pearlPrime;
-  onyxPrime = oneToOnePairingInAppEnabled ? (
-    <MemoizedFormattedMessage
-      {...{
-        ..._i.allowConnectionsLabel,
-      }}
-    />
-  ) : (
-    <MemoizedFormattedMessage
-      {...{
-        id: "settings.remoteConnections.localHost.remoteControl.label",
-        defaultMessage: "Allow this device to be discovered and controlled",
-        description: "Label for allowing remote control on this device",
-      }}
-    />
-  );
-  pearlPrime = oneToOnePairingInAppEnabled ? undefined : (
-    <MemoizedFormattedMessage
-      {...{
-        id: "settings.remoteConnections.localHost.remoteControl.description",
-        defaultMessage:
-          "Authorized devices on your ChatGPT account can discover and control this device",
-        description: "Description for allowing remote control on this device",
-      }}
-    />
-  );
-  let quartzPrime = (violetPrime) => {
-    marblePrime(violetPrime);
-  };
-  let riverPrime = oneToOnePairingInAppEnabled
-    ? harborPrime.formatMessage(_i.allowConnectionsLabel)
-    : harborPrime.formatMessage({
-        id: "settings.remoteConnections.localHost.remoteControl.label",
-        defaultMessage: "Allow this device to be discovered and controlled",
-        description: "Label for allowing remote control on this device",
-      });
-  let slatePrime = (
-    <AppInitialYC
-      checked={indigoPrime}
-      disabled={kitePrime.isPending}
-      onChange={quartzPrime}
-      ariaLabel={riverPrime}
-    />
-  );
-  return (
-    <EnsurePersonalizationCInit
-      {...{
-        icon: nickelPrime,
-        label: onyxPrime,
-        description: pearlPrime,
-        control: slatePrime,
-      }}
-    />
   );
 }

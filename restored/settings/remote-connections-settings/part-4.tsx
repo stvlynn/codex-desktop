@@ -302,6 +302,91 @@ const SetRemoteControlEnabledForHost: any = undefined;
 const honey: any = undefined;
 const jewel: any = undefined;
 
+var quest,
+  ridge,
+  storm = esmInit(() => {
+    quest = reactCompilerRuntime();
+    ensureTanstackReactFormApiInit();
+    ensureIntlFormattersInit();
+    ensureSettingsQueryAtomsInit();
+    findProcessManagerRow();
+    useOpenLocatorInMainWindow();
+    useTeenOnboardingAgeGate();
+    WritingBlockRenderer();
+    jewel();
+  });
+var unity = esmInit(() => {
+    ensureComposerEsm_Utt_Init();
+    strongMarkerFromOptions();
+  }),
+  vale,
+  wave,
+  apex = esmInit(() => {
+    react();
+    wave = (eccentricPrime) => (
+      <svg
+        width={20}
+        height={17}
+        viewBox="0 0 20 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        {...eccentricPrime}
+      >
+        <path
+          d="M15.249 2.12305C15.5937 2.12349 15.8739 2.40328 15.874 2.74805C15.874 3.09295 15.5938 3.37261 15.249 3.37305H13.582C13.2369 3.37305 12.957 3.09322 12.957 2.74805C12.9572 2.40301 13.237 2.12305 13.582 2.12305H15.249Z"
+          fill="currentColor"
+        />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M16.6055 0C18.0772 0.000106171 19.2705 1.19327 19.2705 2.66504V13.665C19.2705 15.1368 18.0772 16.33 16.6055 16.3301H11.665C10.1932 16.3301 9 15.1369 9 13.665V2.66504C9 1.1932 10.1932 0 11.665 0H16.6055ZM11.665 1.33008C10.9277 1.33008 10.3301 1.92774 10.3301 2.66504V13.665C10.3301 14.4023 10.9277 15 11.665 15H16.6055C17.3427 14.9999 17.9404 14.4023 17.9404 13.665V2.66504C17.9404 1.9278 17.3427 1.33018 16.6055 1.33008H11.665Z"
+          fill="currentColor"
+        />
+        <path
+          d="M7.01172 2.42871C7.37613 2.43246 7.66968 2.72836 7.66992 3.09277C7.66992 3.4626 7.36785 3.76144 6.99805 3.75781L5.16797 3.74023C4.69057 3.74023 4.37242 3.74078 4.12793 3.76074C3.95074 3.77522 3.8451 3.79797 3.77441 3.82324L3.71387 3.84961C3.57265 3.92156 3.45081 4.0254 3.3584 4.15234L3.27539 4.28711C3.24032 4.35598 3.20684 4.46466 3.1875 4.70117C3.16752 4.94573 3.16699 5.2645 3.16699 5.74219V11.9932L7.00781 12.0137C7.37397 12.0157 7.66992 12.3135 7.66992 12.6797C7.66991 13.0482 7.37043 13.347 7.00195 13.3457L1.33008 13.3232V13.9082C1.33008 14.4614 1.77883 14.9102 2.33203 14.9102H7.73438C8.10163 14.9102 8.39941 15.2079 8.39941 15.5752C8.39941 15.9425 8.10163 16.2402 7.73438 16.2402H2.33203C1.04429 16.2402 0 15.1959 0 13.9082V12.6582L0.0136719 12.5244C0.0757242 12.2214 0.343718 11.9932 0.665039 11.9932H1.83691V5.74219C1.83691 5.28645 1.8359 4.90405 1.86133 4.59277C1.8874 4.27389 1.94437 3.9711 2.09082 3.68359L2.18066 3.52246C2.40467 3.15734 2.7256 2.85963 3.10938 2.66406L3.21777 2.61328C3.47293 2.50382 3.74025 2.45836 4.01953 2.43555C4.33074 2.41013 4.71239 2.41016 5.16797 2.41016L7.01172 2.42871Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
+  });
+var brook,
+  cliff,
+  dusk,
+  elm = esmInit(() => {
+    brook = reactCompilerRuntime();
+    ensureComposerEsm_Hlt_Init();
+    dusk = "—";
+  });
+var grove,
+  hill,
+  isle = esmInit(() => {
+    grove = reactCompilerRuntime();
+    ensureIntlFormattersInit();
+    ensureDropdownMenuInit();
+    ensurePinnedConversationsQueryInit();
+    svgToDataUri();
+    AppInitialDi();
+    isIndeterminate();
+    useEventCallback();
+    AppInitialVO();
+  });
+var lagoon,
+  meadow,
+  nest = esmInit(() => {
+    lagoon = reactCompilerRuntime();
+    useTeenOnboardingAgeGate();
+    AppInitialVC();
+    elm();
+  });
+var quiet = esmInit(() => {
+  strongMarkerFromOptions();
+});
+
+/** split companion stub */
+const lunar: any = undefined;
+/** split companion stub */
+const moss: any = undefined;
+
 function knoll(gearPrime) {
   let {
       open,
@@ -710,486 +795,3 @@ function knoll(gearPrime) {
     />
   );
 }
-function lunar(mandrelPrime) {
-  return mandrelPrime.values.authMode;
-}
-function moss(nipplePrime) {
-  return nipplePrime.length > 0 ? (
-    <DeferredUiU
-      {...{
-        children: (
-          <div className="border-token-border-error rounded-md border p-2 text-sm text-token-error-foreground">
-            {nipplePrime.map(north)}
-          </div>
-        ),
-      }}
-    />
-  ) : null;
-}
-function north(orificePrime) {
-  return <div key={orificePrime}>{pine(orificePrime)}</div>;
-}
-function orbit(pinPrime) {
-  let {
-      label,
-      description,
-      value,
-      placeholder,
-      onChange,
-      onBlur,
-      disabled = false,
-    } = pinPrime,
-    racePrime = (
-      <span className="text-xs font-medium text-token-text-primary">
-        {label}
-      </span>
-    );
-  let sleevePrime = (event) => onChange(event.target.value);
-  let trunnionPrime = (
-    <input
-      className="w-full rounded-md border border-token-input-border bg-token-input-background px-2.5 py-1.5 text-sm text-token-input-foreground outline-none placeholder:text-token-input-placeholder-foreground focus:border-token-focus-border disabled:bg-token-foreground/5 disabled:text-token-text-secondary disabled:opacity-100"
-      value={value}
-      disabled={disabled}
-      onChange={sleevePrime}
-      onBlur={onBlur}
-      placeholder={placeholder}
-    />
-  );
-  let bossPrime = description ? (
-    <span className="text-xs text-token-text-secondary">{description}</span>
-  ) : null;
-  return (
-    <label className="flex flex-col gap-1">
-      {racePrime}
-      {trunnionPrime}
-      {bossPrime}
-    </label>
-  );
-}
-function pine(camPrime) {
-  switch (camPrime) {
-    case "displayNameRequired":
-      return (
-        <MemoizedFormattedMessage
-          {...{
-            id: "settings.remoteConnections.dialog.field.displayName.error",
-            defaultMessage: "Display name is required",
-            description:
-              "Error message for display name field in remote connection editor dialog",
-          }}
-        />
-      );
-    case "sshHostRequired":
-      return (
-        <MemoizedFormattedMessage
-          {...{
-            id: "settings.remoteConnections.dialog.field.sshHost.error",
-            defaultMessage: "Hostname is required",
-            description:
-              "Error message for SSH target field in remote connection editor dialog",
-          }}
-        />
-      );
-    case "sshPortInteger":
-      return (
-        <MemoizedFormattedMessage
-          {...{
-            id: "settings.remoteConnections.dialog.field.sshPort.intError",
-            defaultMessage: "SSH port must be an integer",
-            description:
-              "Error message for SSH port field when the input is not an integer",
-          }}
-        />
-      );
-    case "sshPortRange":
-      return (
-        <MemoizedFormattedMessage
-          {...{
-            id: "settings.remoteConnections.dialog.field.sshPort.rangeError",
-            defaultMessage: "SSH port must be between 1 and 65535",
-            description:
-              "Error message for SSH port field when the input is not between 1 and 65535",
-          }}
-        />
-      );
-    case "identityRequired":
-      return (
-        <MemoizedFormattedMessage
-          {...{
-            id: "settings.remoteConnections.dialog.field.identity.error",
-            defaultMessage: "Identity file path is required",
-            description:
-              "Error message for identity file path field in remote connection editor dialog",
-          }}
-        />
-      );
-    case "duplicateDisplayName":
-      return (
-        <MemoizedFormattedMessage
-          {...{
-            id: "settings.remoteConnections.dialog.field.displayName.duplicateError",
-            defaultMessage:
-              "A connection with this display name already exists",
-            description:
-              "Error message for duplicate display name in the remote connection editor dialog",
-          }}
-        />
-      );
-  }
-}
-var quest,
-  ridge,
-  storm = esmInit(() => {
-    quest = reactCompilerRuntime();
-    ensureTanstackReactFormApiInit();
-    ensureIntlFormattersInit();
-    ensureSettingsQueryAtomsInit();
-    findProcessManagerRow();
-    useOpenLocatorInMainWindow();
-    useTeenOnboardingAgeGate();
-    WritingBlockRenderer();
-    jewel();
-  });
-function tide(detentPrime) {
-  return {
-    refreshSource:
-      CodexRemoteControlRefreshSource.CODEX_REMOTE_CONTROL_REFRESH_SOURCE_SETTINGS,
-    connectionCount: detentPrime.length,
-    onlineConnectionCount: detentPrime.filter((item) => item.online).length,
-    busyConnectionCount: detentPrime.filter((item) => item.busy).length,
-    autoConnectConnectionCount: detentPrime.filter((item) => item.autoConnect)
-      .length,
-    unsupportedAppServerVersionConnectionCount: detentPrime.filter(
-      (item) => !GuardianApproval(item.appServerVersion),
-    ).length,
-  };
-}
-var unity = esmInit(() => {
-    ensureComposerEsm_Utt_Init();
-    strongMarkerFromOptions();
-  }),
-  vale,
-  wave,
-  apex = esmInit(() => {
-    react();
-    wave = (eccentricPrime) => (
-      <svg
-        width={20}
-        height={17}
-        viewBox="0 0 20 17"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        {...eccentricPrime}
-      >
-        <path
-          d="M15.249 2.12305C15.5937 2.12349 15.8739 2.40328 15.874 2.74805C15.874 3.09295 15.5938 3.37261 15.249 3.37305H13.582C13.2369 3.37305 12.957 3.09322 12.957 2.74805C12.9572 2.40301 13.237 2.12305 13.582 2.12305H15.249Z"
-          fill="currentColor"
-        />
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M16.6055 0C18.0772 0.000106171 19.2705 1.19327 19.2705 2.66504V13.665C19.2705 15.1368 18.0772 16.33 16.6055 16.3301H11.665C10.1932 16.3301 9 15.1369 9 13.665V2.66504C9 1.1932 10.1932 0 11.665 0H16.6055ZM11.665 1.33008C10.9277 1.33008 10.3301 1.92774 10.3301 2.66504V13.665C10.3301 14.4023 10.9277 15 11.665 15H16.6055C17.3427 14.9999 17.9404 14.4023 17.9404 13.665V2.66504C17.9404 1.9278 17.3427 1.33018 16.6055 1.33008H11.665Z"
-          fill="currentColor"
-        />
-        <path
-          d="M7.01172 2.42871C7.37613 2.43246 7.66968 2.72836 7.66992 3.09277C7.66992 3.4626 7.36785 3.76144 6.99805 3.75781L5.16797 3.74023C4.69057 3.74023 4.37242 3.74078 4.12793 3.76074C3.95074 3.77522 3.8451 3.79797 3.77441 3.82324L3.71387 3.84961C3.57265 3.92156 3.45081 4.0254 3.3584 4.15234L3.27539 4.28711C3.24032 4.35598 3.20684 4.46466 3.1875 4.70117C3.16752 4.94573 3.16699 5.2645 3.16699 5.74219V11.9932L7.00781 12.0137C7.37397 12.0157 7.66992 12.3135 7.66992 12.6797C7.66991 13.0482 7.37043 13.347 7.00195 13.3457L1.33008 13.3232V13.9082C1.33008 14.4614 1.77883 14.9102 2.33203 14.9102H7.73438C8.10163 14.9102 8.39941 15.2079 8.39941 15.5752C8.39941 15.9425 8.10163 16.2402 7.73438 16.2402H2.33203C1.04429 16.2402 0 15.1959 0 13.9082V12.6582L0.0136719 12.5244C0.0757242 12.2214 0.343718 11.9932 0.665039 11.9932H1.83691V5.74219C1.83691 5.28645 1.8359 4.90405 1.86133 4.59277C1.8874 4.27389 1.94437 3.9711 2.09082 3.68359L2.18066 3.52246C2.40467 3.15734 2.7256 2.85963 3.10938 2.66406L3.21777 2.61328C3.47293 2.50382 3.74025 2.45836 4.01953 2.43555C4.33074 2.41013 4.71239 2.41016 5.16797 2.41016L7.01172 2.42871Z"
-          fill="currentColor"
-        />
-      </svg>
-    );
-  });
-function DollarI(followerPrime) {
-  let { value, placeholder } = followerPrime,
-    guidePrime = value?.trim() ?? "";
-  let helixPrime = guidePrime;
-  if (helixPrime === "") {
-    let journalPrime = placeholder ?? dusk,
-      kingpinPrime;
-    return <div className="truncate">{journalPrime}</div>;
-  }
-  let impellerPrime = <div className="truncate">{helixPrime}</div>;
-  return (
-    <OptionalTooltip
-      {...{
-        tooltipContent: helixPrime,
-        openWhen: "trigger-overflows",
-        children: impellerPrime,
-      }}
-    />
-  );
-}
-var brook,
-  cliff,
-  dusk,
-  elm = esmInit(() => {
-    brook = reactCompilerRuntime();
-    ensureComposerEsm_Hlt_Init();
-    dusk = "—";
-  });
-function fern(landPrime) {
-  let {
-      actionsLabel,
-      deleteDisabled,
-      deleteLabel,
-      deleteTooltip,
-      DetailsIcon,
-      detailsLabel,
-      editAction,
-      onDelete,
-      onDetails,
-      onLogout,
-      onRestart,
-      restartLabel,
-    } = landPrime,
-    meshPrime =
-      DetailsIcon === undefined ? ShellLayoutMetricsContext : DetailsIcon,
-    neckPrime = (
-      <CoerceLocalFilesystemPath
-        {...{
-          label: actionsLabel,
-        }}
-      />
-    );
-  let padPrime = (
-    <DropdownMenu.Item
-      {...{
-        LeftIcon: meshPrime,
-        onSelect: onDetails,
-        children: detailsLabel,
-      }}
-    />
-  );
-  let quillshaftPrime =
-    editAction == null ? null : (
-      <DropdownMenu.Item
-        {...{
-          LeftIcon: CopyButton,
-          disabled: editAction.disabled,
-          onSelect: editAction.onSelect,
-          tooltipText: editAction.disabled ? editAction.tooltip : null,
-          children: editAction.label,
-        }}
-      />
-    );
-  let rollerPrime =
-    restartLabel != null && onRestart != null ? (
-      <DropdownMenu.Item
-        {...{
-          LeftIcon: AppIconAlt,
-          onSelect: onRestart,
-          children: restartLabel,
-        }}
-      />
-    ) : null;
-  let spindlePrime =
-    onLogout == null ? null : (
-      <DropdownMenu.Item
-        {...{
-          LeftIcon: AppIconEi,
-          onSelect: onLogout,
-          children: (
-            <MemoizedFormattedMessage
-              {...{
-                id: "settings.remoteConnections.logout",
-                defaultMessage: "Logout",
-                description:
-                  "Menu item label to log out of a connected remote connection",
-              }}
-            />
-          ),
-        }}
-      />
-    );
-  let thrustPrime =
-    deleteLabel != null && onDelete != null ? (
-      <>
-        {<DropdownMenu.Separator {...{}} />}
-        {
-          <DropdownMenu.Item
-            {...{
-              LeftIcon: AppIconBO,
-              disabled: deleteDisabled,
-              onSelect: onDelete,
-              tooltipText: deleteDisabled ? (deleteTooltip ?? null) : null,
-              children: deleteLabel,
-            }}
-          />
-        }
-      </>
-    ) : null;
-  return (
-    <DropdownMenuPopover
-      {...{
-        align: "end",
-        contentWidth: "menu",
-        triggerButton: neckPrime,
-        children: [
-          padPrime,
-          quillshaftPrime,
-          rollerPrime,
-          spindlePrime,
-          thrustPrime,
-        ],
-      }}
-    />
-  );
-}
-var grove,
-  hill,
-  isle = esmInit(() => {
-    grove = reactCompilerRuntime();
-    ensureIntlFormattersInit();
-    ensureDropdownMenuInit();
-    ensurePinnedConversationsQueryInit();
-    svgToDataUri();
-    AppInitialDi();
-    isIndeterminate();
-    useEventCallback();
-    AppInitialVO();
-  });
-function juniper(yokePrime) {
-  let {
-      className,
-      control,
-      description,
-      displayName,
-      hostId,
-      icon,
-      label,
-      status,
-    } = yokePrime,
-    bafflePrime = label ?? (
-      <DollarI
-        {...{
-          value: displayName,
-        }}
-      />
-    );
-  let capstanPrime = bafflePrime,
-    diaphragmPrime = icon ?? status,
-    elbowPrime = (
-      <span className="inline-flex size-3.5 shrink-0 items-center justify-center">
-        {
-          <DeferredConversationSh
-            {...{
-              className: "icon-2xs",
-              hostId,
-            }}
-          />
-        }
-      </span>
-    );
-  let ferrulePrime = <div className="min-w-0">{capstanPrime}</div>;
-  let grommetPrime = (
-    <div className="flex min-w-0 items-center gap-1.5">
-      {elbowPrime}
-      {ferrulePrime}
-    </div>
-  );
-  let headerPrime =
-    icon != null && status != null ? (
-      <span className="inline-flex size-3.5 shrink-0 items-center justify-center">
-        {status}
-      </span>
-    ) : null;
-  let injectorPrime = (
-    <div className="flex min-w-0 items-center gap-1 text-token-text-secondary">
-      {headerPrime}
-      {description}
-    </div>
-  );
-  let jumperPrime = (
-    <div className="flex min-w-0 flex-col gap-1">
-      {grommetPrime}
-      {injectorPrime}
-    </div>
-  );
-  let kerfPrime = (
-    <EnsurePersonalizationCInit
-      {...{
-        className,
-        icon: diaphragmPrime,
-        label: jumperPrime,
-        control,
-      }}
-    />
-  );
-  return (
-    <div aria-label={displayName} role="group">
-      {kerfPrime}
-    </div>
-  );
-}
-var lagoon,
-  meadow,
-  nest = esmInit(() => {
-    lagoon = reactCompilerRuntime();
-    useTeenOnboardingAgeGate();
-    AppInitialVC();
-    elm();
-  });
-function oak(louverPrime, manifoldPrime) {
-  return !louverPrime.online || !GuardianApproval(louverPrime.appServerVersion)
-    ? "block size-2 rounded-full bg-gray-400"
-    : manifoldPrime === "error"
-      ? "block size-2 rounded-full bg-token-charts-red"
-      : manifoldPrime === "connected"
-        ? louverPrime.busy
-          ? "block size-2 rounded-full bg-token-charts-yellow"
-          : "block size-2 rounded-full bg-token-charts-green"
-        : "block size-2 rounded-full bg-gray-400";
-}
-function petal(nipPrime, outletPrime, packingPrime) {
-  return outletPrime.online
-    ? GuardianApproval(outletPrime.appServerVersion)
-      ? packingPrime === "connecting" || packingPrime === "restarting"
-        ? nipPrime.formatMessage({
-            id: "settings.remoteControlConnections.availability.connecting",
-            defaultMessage: "Connecting",
-            description:
-              "Availability label for a remote control environment that is connecting",
-          })
-        : packingPrime === "error"
-          ? nipPrime.formatMessage({
-              id: "settings.remoteControlConnections.availability.connectionFailed",
-              defaultMessage: "Connection failed",
-              description:
-                "Availability label for a remote control environment whose app-server transport failed",
-            })
-          : packingPrime === "connected"
-            ? outletPrime.busy
-              ? nipPrime.formatMessage({
-                  id: "settings.remoteControlConnections.availability.busy",
-                  defaultMessage: "busy",
-                  description:
-                    "Availability label for a remote control environment that is busy",
-                })
-              : nipPrime.formatMessage({
-                  id: "settings.remoteControlConnections.availability.online",
-                  defaultMessage: "online",
-                  description:
-                    "Availability label for a remote control environment that is online",
-                })
-            : nipPrime.formatMessage({
-                id: "threadPage.remoteConnectionStatusBadge.disconnected",
-                defaultMessage: "Disconnected",
-                description:
-                  "Label shown when remote connection is unavailable",
-              })
-      : nipPrime.formatMessage({
-          id: "settings.remoteControlConnections.availability.remoteCodexUpdateRequired",
-          defaultMessage:
-            "Please update ChatGPT on the remote device to the latest version",
-          description:
-            "Availability label for an online remote Codex device that requires a newer version",
-        })
-    : nipPrime.formatMessage({
-        id: "settings.remoteControlConnections.availability.offline",
-        defaultMessage: "offline",
-        description:
-          "Availability label for a remote control environment that is offline",
-      });
-}
-var quiet = esmInit(() => {
-  strongMarkerFromOptions();
-});

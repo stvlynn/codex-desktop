@@ -3,68 +3,35 @@
 // Soft-deferred host replaced; NOT app-initial extractFn / promote / producer barrel.
 // Residual companion stubs: 31 (verified 56/87).
 // Wave FZ-support — PascalCase invalid JSX tags: deferredUiB→DeferredUiB, deferredUiH→DeferredUiH, deferredUiU→DeferredUiU, ensurePullRequestMediaBDInit→EnsurePullRequestMediaBDInit, EnvironmentLabelsHelper10→EnvironmentLabelsHelper10, EnvironmentLabelsHelper11→EnvironmentLabelsHelper11, EnvironmentLabelsHelper9→EnvironmentLabelsHelper9, torqueFourth→NutFourth, valveFourth→PistonFourth, axleFourth→RivetFourth, bracketFourth→ScrewFourth, readLoginRouteQuerySnapshot→ReadLoginRouteQuerySnapshot.
-// Careful split 1/2
+// Careful split 1/2 — branch switcher components (query/mutation helpers live in part-1-a.tsx / part-1-b.tsx).
 /* split-lane-import-depth:1 */
 
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
-import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import {
-  appScopeAtom,
-  ensureAppScopeInit,
-} from "../../runtime/app-scope-runtime";
+import { appScopeAtom } from "../../runtime/app-scope-runtime";
 import {
   ensureComposerEsm_E4_Init,
-  ensureComposerEsm_Ilt_Init,
-  ensureComposerEsm_MT_Init,
-  ensureComposerEsm_Wdt_Init,
   ensureComposerEsm_Wlt_Init,
 } from "../../composer/composer-esm-inits";
-import {
-  react,
-  reactCompilerRuntime,
-} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
-import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
-import { invokeDesktopRpc } from "../../desktop/invoke-desktop-rpc";
-import { DiffLinesStatsBadge } from "../../diff/diff-lines-stats-badge";
-import { openFileInPanelTab } from "../../files/open-file-in-panel-tab";
-import { cloud5 } from "../../git/cloud5";
-import { remoteUpstreamUrl } from "../../git/remote-upstream-url";
-import {
-  ensureHostConfigIdInit,
-  getHostConfigId,
-  getHostRpcClient,
-} from "../../hooks/host-rpc-client";
-import { useGitRepoLiveQuery } from "../../hooks/use-git-repo-live-query";
 import { UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
-import { useQuery } from "../../hooks/use-query";
-import { useQueryClient } from "../../hooks/use-query-client";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
-import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
-import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
-import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import {
-  readScrollTop,
-  scrollAppActionTargetTo,
-} from "../../navigation/app-action-dom";
-import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
-import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
+import { useIntl } from "../../i18n/use-intl";
 import { gitSettingsDefinitions } from "../../settings/git-settings-definitions";
-import { gpuTearingDebugSettingsAtom } from "../../settings/gpu-tearing-debug-settings";
-import { ensureSettingsQueryAtomsInit } from "../../settings/settings-ipc";
 import { useSettingValue } from "../../settings/use-setting-value";
-import { parseSkillsManagePath } from "../../skills/parse-skills-manage-path";
-import { ensureSkillsPageHelpersInit } from "../../skills/skills-page-helpers";
 import { DeferredUiB } from "../../ui/deferred-ui-b";
 import { DeferredUiH } from "../../ui/deferred-ui-h";
-import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
+import { DropdownMenu } from "../../ui/dropdown-menu";
 import { DropdownMenuPopover } from "../../ui/dropdown-menu-popover";
 import { semanticAccentColors } from "../../ui/semantic-accent-colors";
-import { noop } from "../../utils/noop";
 import { EnsurePullRequestMediaBDInit } from "../../utils/wave-as-gap-ensure-inits";
-import { identityCwd, toPosixPath } from "../../utils/workspace-paths";
 import { clearPendingWorktreeConversationStart } from "../../worktree/clear-pending-worktree-conversation-start";
+import {
+  environmentLabelsC,
+  environmentLabelsL,
+  environmentLabelsO,
+} from "./part-1-a";
+import { harbor, kite, marble } from "./part-1-b";
 
 // Cross-part stubs.
 const $: any = undefined;
@@ -72,356 +39,31 @@ const EnvironmentLabelsHelper11: any = undefined;
 const river: any = undefined;
 const umbra: any = undefined;
 
-const ensureUseGitRepoLiveQueryInit: any = undefined;
-/** Wave FY unresolved companion (missing-export:conversation/commit-modal.ts) */
-const commitModal: any = undefined;
-/** Wave FY unresolved companion (missing-export:utils/wave-at-gap-ensure-inits.ts) */
-const ensureEnvironmentLabelsD3Init: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureEnvironmentLabelsF3Init@utils/wave-at-gap-ensure-inits.ts) */
-const AppInitialF3: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureEnvironmentLabelsFDInit@utils/wave-at-gap-ensure-inits.ts) */
-const AppInitialFD: any = undefined;
 /** Wave FY unresolved companion (missing-export:settings/chatgpt2.tsx) */
 const Chatgpt2: any = undefined;
 /** Wave FY unresolved companion (missing-export:ui/set-prefix-label.tsx) */
 const AppInitialHE: any = undefined;
-/** Wave FY unresolved companion (missing-export:plugins/has-seen-knowledge-work-announcement.tsx) */
-const HasSeenKnowledgeWorkAnnouncement: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureEnvironmentLabelsIDInit@utils/wave-at-gap-ensure-inits.ts) */
-const AppInitialID: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:mergeChromeThemeWithDefaults@appearance/chrome-theme-defaults.ts) */
-const AppInitialIW: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:filterArtifactTemplatePlugins@plugins/filter-artifact-template-plugins.ts) */
-const AppInitialJ3: any = undefined;
-/** Wave FY unresolved companion (missing-export:ui/editor-diff-page-view.tsx) */
-const EditorDiffPage: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:stripDisallowedPathChars@utils/strip-disallowed-path-chars.ts) */
-const AppInitialJg: any = undefined;
-/** Wave FY unresolved companion (missing-export:utils/wave-at-gap-ensure-inits.ts) */
-const ensureEnvironmentLabelsLDInit: any = undefined;
-/** Wave FY unresolved companion (missing-export:settings/use-local-environment-editor-state.ts) */
-const useLocalEnvironmentEditorState: any = undefined;
 /** Wave FY unresolved companion (missing-export:hosts/git-action-include-unstaged-changes.tsx) */
 const GitActionIncludeUnstagedChanges: any = undefined;
 /** Wave FY unresolved companion (missing-export:review/review-branch-picker.tsx) */
 const ReviewBranchPicker: any = undefined;
 /** Wave FY unresolved companion (missing-export:utils/wave-at-gap-ensure-inits.ts) */
 const ensureEnvironmentLabelsO3Init: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureEnvironmentLabelsP3Init@utils/wave-at-gap-ensure-inits.ts) */
-const AppInitialP3: any = undefined;
-/** Wave FY unresolved companion (missing-export:utils/wave-at-gap-ensure-inits.ts) */
-const ensureEnvironmentLabelsPDInit: any = undefined;
-/** Wave FY unresolved companion (missing-export:navigation/data-app-action-review-file-expanded-2.ts) */
-const dataAppActionReviewFileExpanded: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:deferredUiQg@ui/deferred-ui-qg.tsx) */
-const AppInitialQg: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:ensureEnvironmentLabelsR3Init@utils/wave-at-gap-ensure-inits.ts) */
-const AppInitialR3: any = undefined;
 /** Wave FY unresolved companion (jsx-collision:indexAppActionRunners@navigation/create-app-action-handler.ts) */
 const AppInitialRW: any = undefined;
 /** Wave FY unresolved companion (missing-export:utils/wave-at-gap-ensure-inits.ts) */
 const ensureEnvironmentLabelsSDInit: any = undefined;
 /** Wave FY unresolved companion (missing-export:ui/deferred-ui-u.ts) */
 const DeferredUiU: any = undefined;
-/** Wave FY unresolved companion (jsx-collision:worktreeBranchSetupModal@worktree/worktree-branch-setup-modal.ts) */
-const AppInitialUE: any = undefined;
 /** Wave FY unresolved companion (missing-export:hosts/set-remote-control-enabled-for-host.ts) */
 const SetRemoteControlEnabledForHost: any = undefined;
-/** Wave FY unresolved companion (missing-export:ui/deferred-ui-v2.tsx) */
-const DeferredUiV2: any = undefined;
-/** Wave FY unresolved companion (missing-export:review/wham-toggle-all-diffs.ts) */
-const whamToggleAllDiffs: any = undefined;
+/** Wave FY unresolved companion (missing-export:ui/editor-diff-page-view.tsx) */
+const EditorDiffPage: any = undefined;
+/** Wave FY unresolved companion (jsx-collision:stripDisallowedPathChars@utils/strip-disallowed-path-chars.ts) */
+const AppInitialJg: any = undefined;
 /** Wave FY unresolved companion (missing-export:onboarding/read-login-route-query-snapshot.ts) */
 const ReadLoginRouteQuerySnapshot: any = undefined;
-function alpha({ cwd, enabled, hostConfig, operationSource }) {
-  return JSON.stringify({
-    cwd: cwd ?? null,
-    enabled,
-    hostConfig,
-    operationSource,
-  });
-}
-function bravo({
-  cwd,
-  enabled,
-  hostConfig,
-  operationSource,
-  preserveRemoteRefs = false,
-  query,
-}) {
-  return JSON.stringify({
-    cwd: cwd ?? null,
-    enabled,
-    hostConfig,
-    operationSource,
-    preserveRemoteRefs,
-    query,
-  });
-}
-var copper,
-  environmentLabelsL,
-  environmentLabelsU = esmInit(() => {
-    ensureComposerEsm_MT_Init();
-    ensureAppScopeInit();
-    dataAppActionReviewFileExpanded();
-    ensureUseGitRepoLiveQueryInit();
-    parseSkillsManagePath();
-    ensureHostConfigIdInit();
-    copper = useQuery(
-      appScopeAtom,
-      ({ cwd, enabled, hostConfig, operationSource }) =>
-        AppInitialR3(
-          cwd,
-          getHostConfigId(hostConfig),
-          hostConfig,
-          operationSource,
-          {
-            enabled,
-          },
-        ),
-      {
-        key: alpha,
-      },
-    );
-    environmentLabelsL = useQuery(
-      appScopeAtom,
-      (
-        {
-          cwd,
-          enabled,
-          hostConfig,
-          operationSource,
-          preserveRemoteRefs = false,
-          query,
-        },
-        { get },
-      ) => {
-        let xenon = get(copper, {
-          cwd,
-          enabled,
-          hostConfig,
-          operationSource,
-        }).data;
-        return getHostRpcClient(
-          "search-branches",
-          xenon,
-          xenon == null
-            ? null
-            : {
-                root: xenon.root,
-                operationSource,
-                preserveRemoteRefs,
-                query,
-                limit: 20,
-              },
-          getHostConfigId(hostConfig),
-          hostConfig,
-          {
-            enabled,
-            staleTime: readScrollTop.FIVE_SECONDS,
-          },
-        );
-      },
-      {
-        key: bravo,
-      },
-    );
-  });
-function environmentLabelsC(yellow, zinc, amber, basalt) {
-  let cedar = basalt === undefined ? {} : basalt;
-  let daisy = cedar,
-    ember = yellow ?? "",
-    flint = identityCwd(ember);
-  let garnet = {
-    cwd: flint,
-    includeUntrackedFiles: false,
-    operationSource: amber,
-  };
-  let hazel = garnet,
-    ivory = {
-      ...hazel,
-      includeUntrackedFiles: true,
-    };
-  let jasper = ivory,
-    kelp = {
-      method: "status-summary",
-      params: jasper,
-    };
-  let lotus;
-  return (
-    (lotus = {
-      liveQuery: kelp,
-      staleTime: 1 / 0,
-      ...daisy,
-    }),
-    useGitRepoLiveQuery(yellow, zinc, "status-summary", hazel, amber, lotus)
-  );
-}
-var delta,
-  environmentLabelsS = esmInit(() => {
-    delta = reactCompilerRuntime();
-    strongMarkerFromOptions();
-    ensureUseGitRepoLiveQueryInit();
-  });
-function environmentLabelsO(mint, nova, olive, prism) {
-  let quill = (sage) => {
-    let { root } = sage;
-    return {
-      operationSource: olive,
-      root,
-      limit: 100,
-    };
-  };
-  let reef;
-  return (
-    (reef = {
-      liveQuery: falcon,
-      select: echo,
-      staleTime: 1 / 0,
-      ...prism,
-    }),
-    useGitRepoLiveQuery(mint, nova, "recent-branches", quill, olive, reef)
-  );
-}
-function echo(topaz) {
-  return topaz.branches;
-}
-function falcon(ultra) {
-  return {
-    method: "recent-branches",
-    params: ultra,
-  };
-}
-var gamma,
-  environmentLabelsA = esmInit(() => {
-    gamma = reactCompilerRuntime();
-    ensureUseGitRepoLiveQueryInit();
-  });
-function harbor(vapor, wheat) {
-  let yarn = useQueryClient(),
-    zephyr = CodexPluginActionResult(getHostConfigId),
-    acorn = {
-      retainRepoWatch: zephyr,
-    };
-  let { data } = AppInitialF3(vapor, wheat, acorn),
-    bloom = vapor?.cwd ?? null,
-    coral = vapor?.hostId ?? null,
-    drift = ["vscode", "git-checkout-branch", bloom, coral];
-  let eagle = async (honey) => {
-    if (vapor == null) throw Error("Expected a repository target");
-    return invokeDesktopRpc("git-checkout-branch", {
-      params: {
-        ...honey,
-        cwd: vapor.cwd,
-        hostId: vapor.hostId,
-      },
-      source: wheat,
-    });
-  };
-  let frost = (iris) => {
-    vapor != null &&
-      data != null &&
-      iris?.status === "success" &&
-      AppInitialJ3(
-        yarn,
-        {
-          commonDir: data.commonDir,
-          root: data.root,
-        },
-        {
-          changeType: "head",
-          hostKey: getHostConfigId(vapor.hostConfig),
-        },
-      );
-  };
-  let glide;
-  return (
-    (glide = {
-      mutationKey: drift,
-      mutationFn: eagle,
-      networkMode: "always",
-      onSettled: frost,
-    }),
-    noop(glide)
-  );
-}
-var indigo,
-  jade = esmInit(() => {
-    indigo = reactCompilerRuntime();
-    serializeCharacterReferenceNode();
-    ensureComposerEsm_MT_Init();
-    ensureUseGitRepoLiveQueryInit();
-    ensureHostConfigIdInit();
-    AppInitialP3();
-    useLocalEnvironmentEditorState();
-    scrollAppActionTargetTo();
-  });
-function kite(jewel, knoll) {
-  let lunar = useQueryClient(),
-    moss = CodexPluginActionResult(getHostConfigId),
-    north = {
-      retainRepoWatch: moss,
-    };
-  let { data } = AppInitialF3(jewel, knoll, north),
-    orbit = jewel?.cwd ?? null,
-    pine = jewel?.hostId ?? null,
-    quest = ["vscode", "git-create-branch", orbit, pine];
-  let ridge = async (unity) => {
-    if (jewel == null) throw Error("Expected a repository target");
-    return invokeDesktopRpc("git-create-branch", {
-      params: {
-        ...unity,
-        cwd: jewel.cwd,
-        hostId: jewel.hostId,
-      },
-      source: knoll,
-    });
-  };
-  let storm = (vale, wave, apex) => {
-    if (jewel != null && data != null) {
-      let brook = apex.mode === "synced" ? "synced-branch" : "head";
-      AppInitialJ3(lunar, data, {
-        changeType: brook,
-        hostKey: getHostConfigId(jewel.hostConfig),
-      });
-    }
-  };
-  let tide;
-  return (
-    (tide = {
-      mutationKey: quest,
-      mutationFn: ridge,
-      networkMode: "always",
-      onSettled: storm,
-    }),
-    noop(tide)
-  );
-}
-var $e,
-  lemon = esmInit(() => {
-    $e = reactCompilerRuntime();
-    serializeCharacterReferenceNode();
-    ensureComposerEsm_MT_Init();
-    ensureUseGitRepoLiveQueryInit();
-    ensureHostConfigIdInit();
-    AppInitialP3();
-    useLocalEnvironmentEditorState();
-    scrollAppActionTargetTo();
-  });
-function marble({ disabled, hasNoCommits, statusSummary }) {
-  return {
-    branchSelectionDisabled: disabled,
-    createAndCheckoutDisabled: hasNoCommits || disabled,
-    uncommittedFileCount: nickel(statusSummary),
-  };
-}
-function nickel(cliff) {
-  return cliff?.type === "success"
-    ? Math.max(cliff.stagedCount, cliff.unstagedCount) +
-        (cliff.untrackedCount ?? 0)
-    : 0;
-}
-var onyx = esmInit(() => {});
+
 export function environmentLabelsR(dusk: unknown) {
   let {
       gitRoot,

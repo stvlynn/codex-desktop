@@ -306,6 +306,119 @@ const quiet: any = undefined;
 const river: any = undefined;
 const timber: any = undefined;
 
+var trail,
+  urn,
+  vine,
+  wind,
+  yarrow = esmInit(() => {
+    trail = reactCompilerRuntime();
+    ensureComposerEsm_MT_Init();
+    strongMarkerFromOptions();
+    urn = commonJsInit(react(), 1);
+    ensureIntlFormattersInit();
+    conversationsSidebarMessages();
+    DeferredUiV2();
+    ensureSettingsQueryAtomsInit();
+    AppInitialBC();
+    ensureComposerEsm_Hlt_Init();
+    ensureDropdownMenuPopoverInit();
+    svgToDataUri();
+    ensureConversationPageEsm_Act_Init();
+    timber();
+    isle();
+    nest();
+    quiet();
+    wind = identity({
+      signedInDeviceAuthorizationRequiredOfflineSubtitle: {
+        id: "settings.remoteConnections.deviceConnections.signedInDeviceAuthorizationRequiredOfflineSubtitle",
+        defaultMessage: "Requires authorization · Offline",
+        description:
+          "Subtitle for unauthorized offline signed-in-device rows in the device connections table",
+      },
+      signedInDeviceAuthorizationRequiredSubtitle: {
+        id: "settings.remoteConnections.deviceConnections.signedInDeviceAuthorizationRequiredSubtitle",
+        defaultMessage: "Requires authorization",
+        description:
+          "Subtitle for unauthorized signed-in-device rows in the device connections table",
+      },
+      signedInDeviceOfflineSubtitle: {
+        id: "settings.remoteConnections.deviceConnections.signedInDeviceOfflineSubtitle",
+        defaultMessage: "Offline",
+        description:
+          "Subtitle for offline signed-in-device rows in the device connections table",
+      },
+      remoteCodexUpdateRequiredSubtitle: {
+        id: "settings.remoteConnections.deviceConnections.remoteCodexUpdateRequiredSubtitle",
+        defaultMessage:
+          "Please update ChatGPT on the remote device to the latest version",
+        description:
+          "Subtitle for online signed-in-device rows that require a newer Codex version",
+      },
+      signedInDeviceConnectingSubtitle: {
+        id: "settings.remoteConnections.deviceConnections.signedInDeviceConnectingSubtitle",
+        defaultMessage: "Connecting",
+        description:
+          "Subtitle for signed-in-device rows whose app-server transport is connecting",
+      },
+      signedInDeviceConnectionFailedSubtitle: {
+        id: "settings.remoteConnections.deviceConnections.signedInDeviceConnectionFailedSubtitle",
+        defaultMessage: "Connection failed",
+        description:
+          "Subtitle for signed-in-device rows whose app-server transport failed",
+      },
+      signedInDeviceDisconnectedSubtitle: {
+        id: "settings.remoteConnections.deviceConnections.signedInDeviceDisconnectedSubtitle",
+        defaultMessage: "Disconnected",
+        description:
+          "Subtitle for signed-in-device rows whose app-server transport is disconnected",
+      },
+      signedInDeviceOnlineSubtitle: {
+        id: "settings.remoteConnections.deviceConnections.signedInDeviceOnlineSubtitle",
+        defaultMessage: "Connected",
+        description:
+          "Subtitle for online signed-in-device rows in the device connections table",
+      },
+    });
+  }),
+  azure,
+  birch = esmInit(() => {
+    azure =
+      "" +
+      new URL(
+        "dialog-artwork-ssh-remote-control-allow-Cx1m-RXh.png",
+        import.meta.url,
+      ).href;
+  });
+var dew,
+  ever,
+  field = esmInit(() => {
+    dew = reactCompilerRuntime();
+    ensureIntlFormattersInit();
+    birch();
+    ensureSettingsQueryAtomsInit();
+    findProcessManagerRow();
+  }),
+  grain,
+  haven,
+  ink = esmInit(() => {
+    react();
+    haven = (glideSecond) => (
+      <svg
+        width={18}
+        height={18}
+        viewBox="0 0 18 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        {...glideSecond}
+      >
+        <path
+          d="M13.6835 15.7501V14.0986H12.0321C11.7015 14.0986 11.4335 13.8306 11.4335 13.5001C11.4335 13.1695 11.7015 12.9015 12.0321 12.9015H13.6835V11.2501C13.6835 10.9195 13.9515 10.6515 14.2821 10.6515C14.6124 10.6518 14.8797 10.9197 14.8797 11.2501V12.9015H16.5321C16.8624 12.9018 17.1297 13.1697 17.1297 13.5001C17.1297 13.8304 16.8624 14.0983 16.5321 14.0986H14.8797V15.7501C14.8797 16.0804 14.6124 16.3483 14.2821 16.3486C13.9515 16.3486 13.6835 16.0806 13.6835 15.7501ZM1.90796 11.4302V6.56988C1.90796 5.98128 1.90715 5.50346 1.93872 5.11704C1.97087 4.72385 2.03942 4.37253 2.20591 4.04566L2.31138 3.85669C2.57426 3.42813 2.95166 3.07898 3.4021 2.84946L3.52603 2.79146C3.81758 2.66646 4.12951 2.6104 4.47349 2.58228C4.85991 2.55071 5.33772 2.55152 5.92632 2.55152H6.5521C6.68097 2.55152 6.7706 2.55136 6.85884 2.55679L7.08736 2.58052C7.61505 2.65783 8.11055 2.88791 8.51118 3.24497L8.73179 3.4603C8.83268 3.56206 8.8658 3.59515 8.8979 3.62378L8.9981 3.70552C9.23801 3.88571 9.52644 3.99279 9.82779 4.01138L10.0616 4.01402H12.3221C12.8248 4.01402 13.2325 4.01367 13.564 4.03687C13.9011 4.06047 14.2044 4.1102 14.4921 4.23286L14.7294 4.348C15.2673 4.6414 15.6939 5.10866 15.9362 5.67691L16.0144 5.89488C16.0811 6.11589 16.1135 6.3479 16.1313 6.59888C16.1547 6.92815 16.155 7.33277 16.155 7.83023C16.155 7.98873 16.0921 8.14082 15.9801 8.25298C15.8679 8.36522 15.7152 8.42876 15.5565 8.42876H3.10503V11.4302C3.10503 12.0386 3.10561 12.4591 3.13228 12.7855C3.15838 13.1047 3.20659 13.2811 3.2729 13.4113L3.33179 13.5176C3.47964 13.7586 3.69197 13.9546 3.94527 14.0836L4.05337 14.1302C4.17281 14.1729 4.33182 14.2047 4.57105 14.2243C4.89742 14.2509 5.31798 14.2515 5.92632 14.2515H8.46812L8.58941 14.2638C8.86198 14.3197 9.06665 14.5609 9.06665 14.8501C9.06665 15.1392 8.86198 15.3804 8.58941 15.4363L8.46812 15.4486H5.92632C5.33772 15.4486 4.85991 15.4494 4.47349 15.4178C4.12951 15.3897 3.81758 15.3336 3.52603 15.2086L3.4021 15.1506C2.95166 14.9211 2.57426 14.572 2.31138 14.1434L2.20591 13.9544C2.03943 13.6276 1.97087 13.2763 1.93872 12.8831C1.90715 12.4966 1.90796 12.0188 1.90796 11.4302ZM3.10503 7.23169H14.9553C14.953 7.01598 14.9487 6.83804 14.9377 6.68413C14.9233 6.48053 14.8995 6.34366 14.8683 6.24029L14.8349 6.14624C14.6987 5.82675 14.4588 5.56421 14.1564 5.39917L14.0228 5.33413C13.9089 5.28556 13.755 5.25052 13.4805 5.2313C13.2005 5.2117 12.8416 5.21109 12.3221 5.21109H10.0616L9.75396 5.20581C9.21821 5.17277 8.70567 4.98302 8.27915 4.66265L8.10161 4.51763C8.03549 4.45868 7.97286 4.39405 7.88189 4.3023L7.71489 4.13882C7.48938 3.93777 7.21043 3.80782 6.91333 3.76441L6.78589 3.75122C6.74288 3.74857 6.69573 3.74859 6.5521 3.74859H5.92632C5.31798 3.74859 4.89742 3.74917 4.57105 3.77583C4.33182 3.79539 4.17281 3.82718 4.05337 3.86988L3.94527 3.91646C3.69197 4.04554 3.47964 4.24149 3.33179 4.48247L3.2729 4.58882C3.20659 4.71897 3.15838 4.89536 3.13228 5.2146C3.10561 5.54098 3.10503 5.96154 3.10503 6.56988V7.23169Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
+  });
+
 function rain(reducerPrime) {
   let {
       connection,
@@ -723,528 +836,4 @@ function _a(quillSecond, reefSecond, sageSecond, topazSecond, ultraSecond) {
       : ultraSecond === "connected"
         ? wind.signedInDeviceOnlineSubtitle
         : wind.signedInDeviceDisconnectedSubtitle;
-}
-var trail,
-  urn,
-  vine,
-  wind,
-  yarrow = esmInit(() => {
-    trail = reactCompilerRuntime();
-    ensureComposerEsm_MT_Init();
-    strongMarkerFromOptions();
-    urn = commonJsInit(react(), 1);
-    ensureIntlFormattersInit();
-    conversationsSidebarMessages();
-    DeferredUiV2();
-    ensureSettingsQueryAtomsInit();
-    AppInitialBC();
-    ensureComposerEsm_Hlt_Init();
-    ensureDropdownMenuPopoverInit();
-    svgToDataUri();
-    ensureConversationPageEsm_Act_Init();
-    timber();
-    isle();
-    nest();
-    quiet();
-    wind = identity({
-      signedInDeviceAuthorizationRequiredOfflineSubtitle: {
-        id: "settings.remoteConnections.deviceConnections.signedInDeviceAuthorizationRequiredOfflineSubtitle",
-        defaultMessage: "Requires authorization · Offline",
-        description:
-          "Subtitle for unauthorized offline signed-in-device rows in the device connections table",
-      },
-      signedInDeviceAuthorizationRequiredSubtitle: {
-        id: "settings.remoteConnections.deviceConnections.signedInDeviceAuthorizationRequiredSubtitle",
-        defaultMessage: "Requires authorization",
-        description:
-          "Subtitle for unauthorized signed-in-device rows in the device connections table",
-      },
-      signedInDeviceOfflineSubtitle: {
-        id: "settings.remoteConnections.deviceConnections.signedInDeviceOfflineSubtitle",
-        defaultMessage: "Offline",
-        description:
-          "Subtitle for offline signed-in-device rows in the device connections table",
-      },
-      remoteCodexUpdateRequiredSubtitle: {
-        id: "settings.remoteConnections.deviceConnections.remoteCodexUpdateRequiredSubtitle",
-        defaultMessage:
-          "Please update ChatGPT on the remote device to the latest version",
-        description:
-          "Subtitle for online signed-in-device rows that require a newer Codex version",
-      },
-      signedInDeviceConnectingSubtitle: {
-        id: "settings.remoteConnections.deviceConnections.signedInDeviceConnectingSubtitle",
-        defaultMessage: "Connecting",
-        description:
-          "Subtitle for signed-in-device rows whose app-server transport is connecting",
-      },
-      signedInDeviceConnectionFailedSubtitle: {
-        id: "settings.remoteConnections.deviceConnections.signedInDeviceConnectionFailedSubtitle",
-        defaultMessage: "Connection failed",
-        description:
-          "Subtitle for signed-in-device rows whose app-server transport failed",
-      },
-      signedInDeviceDisconnectedSubtitle: {
-        id: "settings.remoteConnections.deviceConnections.signedInDeviceDisconnectedSubtitle",
-        defaultMessage: "Disconnected",
-        description:
-          "Subtitle for signed-in-device rows whose app-server transport is disconnected",
-      },
-      signedInDeviceOnlineSubtitle: {
-        id: "settings.remoteConnections.deviceConnections.signedInDeviceOnlineSubtitle",
-        defaultMessage: "Connected",
-        description:
-          "Subtitle for online signed-in-device rows in the device connections table",
-      },
-    });
-  }),
-  azure,
-  birch = esmInit(() => {
-    azure =
-      "" +
-      new URL(
-        "dialog-artwork-ssh-remote-control-allow-Cx1m-RXh.png",
-        import.meta.url,
-      ).href;
-  });
-function canyon(vaporSecond) {
-  let { allowing, open, onAllow, onOpenChange } = vaporSecond,
-    wheatSecond = useIntl(),
-    yarnSecond = (event) => {
-      event.preventDefault();
-      onAllow();
-    };
-  let zephyrSecond = wheatSecond.formatMessage({
-    id: "settings.remoteConnections.details.allowSignedInDevicesDialog.artworkAlt",
-    defaultMessage:
-      "iPhone Pro and Samsung Galaxy devices connected to ChatGPT on a computer",
-    description:
-      "Alternative text for artwork in the dialog confirming that authorized devices can control a remote host connection",
-  });
-  let acornSecond = (
-    <div className="relative aspect-[1440/642] overflow-hidden">
-      <img
-        alt={zephyrSecond}
-        className="h-full w-full object-cover"
-        src={azure}
-      />
-    </div>
-  );
-  let bloomSecond = (
-    <RealtimeVoiceHostId
-      {...{
-        className: "heading-dialog font-semibold text-pretty",
-        children: (
-          <MemoizedFormattedMessage
-            {...{
-              id: "settings.remoteConnections.details.allowSignedInDevicesDialog.title",
-              defaultMessage: "Allow devices to control this connection?",
-              description:
-                "Title for the dialog confirming that other authorized devices can control a remote host connection",
-            }}
-          />
-        ),
-      }}
-    />
-  );
-  let coralSecond = (
-    <div className="flex flex-col gap-2">
-      {bloomSecond}
-      {
-        <IsStartingProcessExpired
-          {...{
-            className:
-              "text-base leading-normal tracking-normal text-pretty text-token-description-foreground",
-            children: (
-              <MemoizedFormattedMessage
-                {...{
-                  id: "settings.remoteConnections.details.allowSignedInDevicesDialog.description",
-                  defaultMessage:
-                    "This will allow authorized devices like your phone to discover and control ChatGPT on this connection",
-                  description:
-                    "Description for the dialog confirming that other authorized devices can control a remote host connection",
-                }}
-              />
-            ),
-          }}
-        />
-      }
-    </div>
-  );
-  let driftSecond = (
-    <MemoizedFormattedMessage
-      {...{
-        id: "settings.remoteConnections.details.allowSignedInDevicesDialog.allow",
-        defaultMessage: "Allow",
-        description:
-          "Primary action for allowing authorized devices to control a remote host connection",
-      }}
-    />
-  );
-  let eagleSecond = (
-    <div className="flex flex-col items-center gap-6 px-8 py-7 text-center">
-      {coralSecond}
-      {
-        <ReadLoginRouteQuerySnapshot
-          {...{
-            type: "submit",
-            size: "large",
-            className: "justify-center",
-            loading: allowing,
-            children: driftSecond,
-          }}
-        />
-      }
-    </div>
-  );
-  let frostSecond = (
-    <form
-      className="pointer-events-auto flex flex-col overflow-hidden"
-      onSubmit={yarnSecond}
-    >
-      {acornSecond}
-      {eagleSecond}
-    </form>
-  );
-  return (
-    <UsePointerSurfaceInteractionGate
-      {...{
-        open,
-        onOpenChange,
-        contentClassName: "w-[420px] bg-token-bg-primary",
-        dialogCloseClassName: "[&>svg]:icon-sm",
-        size: "feature",
-        children: frostSecond,
-      }}
-    />
-  );
-}
-var dew,
-  ever,
-  field = esmInit(() => {
-    dew = reactCompilerRuntime();
-    ensureIntlFormattersInit();
-    birch();
-    ensureSettingsQueryAtomsInit();
-    findProcessManagerRow();
-  }),
-  grain,
-  haven,
-  ink = esmInit(() => {
-    react();
-    haven = (glideSecond) => (
-      <svg
-        width={18}
-        height={18}
-        viewBox="0 0 18 18"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        {...glideSecond}
-      >
-        <path
-          d="M13.6835 15.7501V14.0986H12.0321C11.7015 14.0986 11.4335 13.8306 11.4335 13.5001C11.4335 13.1695 11.7015 12.9015 12.0321 12.9015H13.6835V11.2501C13.6835 10.9195 13.9515 10.6515 14.2821 10.6515C14.6124 10.6518 14.8797 10.9197 14.8797 11.2501V12.9015H16.5321C16.8624 12.9018 17.1297 13.1697 17.1297 13.5001C17.1297 13.8304 16.8624 14.0983 16.5321 14.0986H14.8797V15.7501C14.8797 16.0804 14.6124 16.3483 14.2821 16.3486C13.9515 16.3486 13.6835 16.0806 13.6835 15.7501ZM1.90796 11.4302V6.56988C1.90796 5.98128 1.90715 5.50346 1.93872 5.11704C1.97087 4.72385 2.03942 4.37253 2.20591 4.04566L2.31138 3.85669C2.57426 3.42813 2.95166 3.07898 3.4021 2.84946L3.52603 2.79146C3.81758 2.66646 4.12951 2.6104 4.47349 2.58228C4.85991 2.55071 5.33772 2.55152 5.92632 2.55152H6.5521C6.68097 2.55152 6.7706 2.55136 6.85884 2.55679L7.08736 2.58052C7.61505 2.65783 8.11055 2.88791 8.51118 3.24497L8.73179 3.4603C8.83268 3.56206 8.8658 3.59515 8.8979 3.62378L8.9981 3.70552C9.23801 3.88571 9.52644 3.99279 9.82779 4.01138L10.0616 4.01402H12.3221C12.8248 4.01402 13.2325 4.01367 13.564 4.03687C13.9011 4.06047 14.2044 4.1102 14.4921 4.23286L14.7294 4.348C15.2673 4.6414 15.6939 5.10866 15.9362 5.67691L16.0144 5.89488C16.0811 6.11589 16.1135 6.3479 16.1313 6.59888C16.1547 6.92815 16.155 7.33277 16.155 7.83023C16.155 7.98873 16.0921 8.14082 15.9801 8.25298C15.8679 8.36522 15.7152 8.42876 15.5565 8.42876H3.10503V11.4302C3.10503 12.0386 3.10561 12.4591 3.13228 12.7855C3.15838 13.1047 3.20659 13.2811 3.2729 13.4113L3.33179 13.5176C3.47964 13.7586 3.69197 13.9546 3.94527 14.0836L4.05337 14.1302C4.17281 14.1729 4.33182 14.2047 4.57105 14.2243C4.89742 14.2509 5.31798 14.2515 5.92632 14.2515H8.46812L8.58941 14.2638C8.86198 14.3197 9.06665 14.5609 9.06665 14.8501C9.06665 15.1392 8.86198 15.3804 8.58941 15.4363L8.46812 15.4486H5.92632C5.33772 15.4486 4.85991 15.4494 4.47349 15.4178C4.12951 15.3897 3.81758 15.3336 3.52603 15.2086L3.4021 15.1506C2.95166 14.9211 2.57426 14.572 2.31138 14.1434L2.20591 13.9544C2.03943 13.6276 1.97087 13.2763 1.93872 12.8831C1.90715 12.4966 1.90796 12.0188 1.90796 11.4302ZM3.10503 7.23169H14.9553C14.953 7.01598 14.9487 6.83804 14.9377 6.68413C14.9233 6.48053 14.8995 6.34366 14.8683 6.24029L14.8349 6.14624C14.6987 5.82675 14.4588 5.56421 14.1564 5.39917L14.0228 5.33413C13.9089 5.28556 13.755 5.25052 13.4805 5.2313C13.2005 5.2117 12.8416 5.21109 12.3221 5.21109H10.0616L9.75396 5.20581C9.21821 5.17277 8.70567 4.98302 8.27915 4.66265L8.10161 4.51763C8.03549 4.45868 7.97286 4.39405 7.88189 4.3023L7.71489 4.13882C7.48938 3.93777 7.21043 3.80782 6.91333 3.76441L6.78589 3.75122C6.74288 3.74857 6.69573 3.74859 6.5521 3.74859H5.92632C5.31798 3.74859 4.89742 3.74917 4.57105 3.77583C4.33182 3.79539 4.17281 3.82718 4.05337 3.86988L3.94527 3.91646C3.69197 4.04554 3.47964 4.24149 3.33179 4.48247L3.2729 4.58882C3.20659 4.71897 3.15838 4.89536 3.13228 5.2146C3.10561 5.54098 3.10503 5.96154 3.10503 6.56988V7.23169Z"
-          fill="currentColor"
-        />
-      </svg>
-    );
-  });
-function jadeite(honeySecond) {
-  let {
-      action,
-      connectionKind,
-      error,
-      isRestartAvailableNotice,
-      restartAvailableNotice,
-      statusMessage,
-    } = honeySecond,
-    irisSecond = useIntl();
-  if (
-    action != null &&
-    (isRestartAvailableNotice || error?.code === "restart-required")
-  ) {
-    let northSecond = <CliffFifth {...{}} />;
-    let orbitSecond = (
-      <MemoizedFormattedMessage
-        {...{
-          id: "settings.remoteConnections.restartNotice.message",
-          defaultMessage:
-            "<restart>Restart</restart> to update your CLI version",
-          description:
-            "Inline update message shown when a connected SSH remote has an installed Codex update ready",
-          values: {
-            restart: (ridgeSecond) => (
-              <button
-                key="restart"
-                className="cursor-interaction border-0 bg-transparent p-0 text-token-text-link-foreground hover:underline"
-                type="button"
-                onClick={action.onClick}
-              >
-                {ridgeSecond}
-              </button>
-            ),
-          },
-        }}
-      />
-    );
-    let pineSecond =
-      restartAvailableNotice == null ? null : (
-        <OptionalTooltip
-          {...{
-            side: "bottom",
-            tooltipContent: irisSecond.formatMessage(
-              {
-                id: "settings.remoteConnections.restartNotice.tooltip",
-                defaultMessage:
-                  "Update available: {installedVersion}. Currently running {currentVersion}",
-                description:
-                  "Tooltip shown from the inline update notice with the installed and current CLI versions",
-              },
-              {
-                currentVersion: restartAvailableNotice.currentVersion,
-                installedVersion: restartAvailableNotice.installedVersion,
-              },
-            ),
-            children: (
-              <span
-                aria-label={irisSecond.formatMessage({
-                  id: "settings.remoteConnections.restartNotice.details",
-                  defaultMessage: "Update details",
-                  description:
-                    "Accessible label for the inline update details tooltip trigger",
-                })}
-                className="text-token-text-secondary"
-              >
-                {
-                  <ShellLayoutMetricsContext
-                    {...{
-                      "aria-hidden": true,
-                      className: "icon-xs shrink-0",
-                    }}
-                  />
-                }
-              </span>
-            ),
-          }}
-        />
-      );
-    let questSecond;
-    return (
-      <>
-        {northSecond}
-        <span className="inline-flex min-w-0 items-center gap-1">
-          {orbitSecond}
-          {pineSecond}
-        </span>
-      </>
-    );
-  }
-  if (error == null || statusMessage == null) return null;
-  let jewelSecond = <CliffFifth {...{}} />;
-  let knollSecond =
-    error.code === "connection-failed" ? (
-      <BrookFifth
-        {...{
-          connectionKind,
-          statusMessage,
-        }}
-      />
-    ) : error.code === "update-required" ? (
-      <span className="inline-flex min-w-0 items-center gap-1">
-        {
-          <MemoizedFormattedMessage
-            {...{
-              id: "settings.remoteConnections.updateRequiredInline",
-              defaultMessage: "Update your CLI version",
-              description:
-                "Concise inline message shown when an SSH remote requires a newer Codex version",
-            }}
-          />
-        }
-        {
-          <OptionalTooltip
-            {...{
-              side: "bottom",
-              tooltipContent:
-                connectionKind === "wsl"
-                  ? irisSecond.formatMessage(
-                      {
-                        id: "settings.remoteConnections.updateRequiredInline.wslTooltip",
-                        defaultMessage:
-                          "Open your WSL distro and update the Codex CLI to {minRequiredVersion} or newer. Currently installed: {currentVersion}",
-                        description:
-                          "Tooltip shown from the inline update-required notice for WSL connections",
-                      },
-                      {
-                        currentVersion: error.currentVersion,
-                        minRequiredVersion: error.minRequiredVersion,
-                      },
-                    )
-                  : irisSecond.formatMessage(
-                      {
-                        id: "settings.remoteConnections.updateRequiredInline.tooltip",
-                        defaultMessage:
-                          "Minimum required: {minRequiredVersion}. Currently installed: {currentVersion}",
-                        description:
-                          "Tooltip shown from the inline update-required notice with the installed and minimum required CLI versions",
-                      },
-                      {
-                        currentVersion: error.currentVersion,
-                        minRequiredVersion: error.minRequiredVersion,
-                      },
-                    ),
-              children: (
-                <span
-                  aria-label={irisSecond.formatMessage({
-                    id: "settings.remoteConnections.updateRequiredInline.details",
-                    defaultMessage: "Update details",
-                    description:
-                      "Accessible label for the inline update-required details tooltip trigger",
-                  })}
-                  className="text-token-text-secondary"
-                >
-                  {
-                    <ShellLayoutMetricsContext
-                      {...{
-                        "aria-hidden": true,
-                        className: "icon-xs shrink-0",
-                      }}
-                    />
-                  }
-                </span>
-              ),
-            }}
-          />
-        }
-      </span>
-    ) : (
-      statusMessage
-    );
-  let lunarSecond = <span className="min-w-0 break-words">{knollSecond}</span>;
-  let mossSecond = (
-    <ElmFifth
-      {...{
-        action,
-      }}
-    />
-  );
-  return (
-    <>
-      {jewelSecond}
-      <span className="inline-flex min-w-0 items-center gap-1">
-        {lunarSecond}
-        {mossSecond}
-      </span>
-    </>
-  );
-}
-function kernel(stormSecond) {
-  let { connectionKind, statusMessage } = stormSecond,
-    tideSecond = useIntl(),
-    unitySecond =
-      connectionKind === "wsl" ? (
-        <MemoizedFormattedMessage
-          {...{
-            id: "settings.remoteConnections.genericWslError",
-            defaultMessage: "WSL connection failed",
-            description:
-              "Concise inline message shown for generic WSL connection failures",
-          }}
-        />
-      ) : (
-        <MemoizedFormattedMessage
-          {...{
-            id: "settings.remoteConnections.genericSshError",
-            defaultMessage: "SSH connection failed",
-            description:
-              "Concise inline message shown for generic SSH connection failures",
-          }}
-        />
-      );
-  let valeSecond =
-    connectionKind === "wsl"
-      ? tideSecond.formatMessage({
-          id: "settings.remoteConnections.genericWslError.details",
-          defaultMessage: "Error details",
-          description:
-            "Accessible label for the generic WSL error details tooltip trigger",
-        })
-      : tideSecond.formatMessage({
-          id: "settings.remoteConnections.genericSshError.details",
-          defaultMessage: "Error details",
-          description:
-            "Accessible label for the generic SSH error details tooltip trigger",
-        });
-  let waveSecond = (
-    <ShellLayoutMetricsContext
-      {...{
-        "aria-hidden": true,
-        className: "icon-xs shrink-0",
-      }}
-    />
-  );
-  let apexSecond = (
-    <span aria-label={valeSecond} className="text-token-text-secondary">
-      {waveSecond}
-    </span>
-  );
-  let brookSecond = (
-    <OptionalTooltip
-      {...{
-        side: "bottom",
-        tooltipContent: statusMessage,
-        children: apexSecond,
-      }}
-    />
-  );
-  return (
-    <span className="inline-flex min-w-0 items-center gap-1">
-      {unitySecond}
-      {brookSecond}
-    </span>
-  );
-}
-function leaf() {
-  return <span aria-hidden={true}>{"·"}</span>;
-}
-function maple(cliffSecond) {
-  let { action } = cliffSecond;
-  if (action == null) return null;
-  let duskSecond = action.disabled === true || action.loading === true,
-    elmSecond =
-      action.loading === true && action.loadingLabel != null
-        ? action.loadingLabel
-        : action.label,
-    fernSecond = (
-      <button
-        type="button"
-        className="cursor-interaction border-0 bg-transparent p-0 text-token-text-link-foreground hover:underline disabled:cursor-default disabled:text-token-text-secondary disabled:no-underline"
-        disabled={duskSecond}
-        onClick={action.onClick}
-      >
-        {elmSecond}
-      </button>
-    );
-  let groveSecond = fernSecond,
-    hillSecond =
-      action.renderInElectronOnly === true ? (
-        <ElectronOnly
-          {...{
-            electron: true,
-            children: groveSecond,
-          }}
-        />
-      ) : (
-        groveSecond
-      );
-  let isleSecond = hillSecond;
-  return action.tooltipText == null ? (
-    isleSecond
-  ) : (
-    <OptionalTooltip
-      {...{
-        tooltipContent: action.tooltipText,
-        children: isleSecond,
-      }}
-    />
-  );
 }
