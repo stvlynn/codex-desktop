@@ -14,7 +14,9 @@ export type UseBatchWriteMcpServerConfigPeers = {
 let peers: UseBatchWriteMcpServerConfigPeers | null = null;
 
 /** Wire useBatchWriteMcpServerConfig peers once companions land. */
-export function setUseBatchWriteMcpServerConfigPeers(next: UseBatchWriteMcpServerConfigPeers): void {
+export function setUseBatchWriteMcpServerConfigPeers(
+  next: UseBatchWriteMcpServerConfigPeers,
+): void {
   peers = next;
 }
 

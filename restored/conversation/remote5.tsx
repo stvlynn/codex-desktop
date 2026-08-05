@@ -22,10 +22,10 @@ export function bindBindRemote5() {
   }
 
   return peers.wa(`ThreadScope`, {
-    key: e => e.clientThreadId,
+    key: (e) => e.clientThreadId,
     parent: peers.Q,
     retain: {
-      max: 20
-    }
+      max: 20,
+    },
   });
 }

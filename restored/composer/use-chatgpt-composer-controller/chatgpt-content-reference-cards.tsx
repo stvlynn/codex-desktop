@@ -18,7 +18,10 @@ import {
 } from "../../boundaries/react-cjs-runtime";
 import { cx as appInitialWft } from "../../ui/cx";
 import { RemoteHrefIcon as AppInitialHL } from "../../ui/remote-href-icon";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../runtime/rolldown-runtime";
 import { useChatgptComposerControllerHelper24 } from "./chatgpt-markdown-citation-directive";
 import { useChatgptComposerControllerHelper31 } from "./chatgpt-browser-host-context";
 import { useChatgptComposerControllerHelper65 } from "./chatgpt-composer-confirmation-link";
@@ -95,22 +98,16 @@ export function useChatgptComposerControllerHelper67(request2985: any) {
     useChatgptComposerControllerHelper24;
   let { isTerminalInline, reference } = request2985,
     slot8019 = AppInitialSI(reference);
-  let slot8020 =
-      slot8019,
+  let slot8020 = slot8019,
     slot8021 = _AppInitialOI(reference);
-  let slot8022 =
-    slot8021;
+  let slot8022 = slot8021;
   if (slot8022 == null) {
     let slot15021;
     return <UseChatgptComposerControllerHelper70 reference={reference} />;
   }
   if (slot8020 == null) {
     let slot13881;
-    return (
-      <span className="text-token-text-secondary">
-        {slot8022}
-      </span>
-    );
+    return <span className="text-token-text-secondary">{slot8022}</span>;
   }
   let slot8023 = {
     label: slot8022,
@@ -129,14 +126,11 @@ export function useChatgptComposerControllerHelper68(request777: any) {
     useChatgptComposerControllerHelper71;
   let { reference } = request777,
     slot3663 = _AppInitialOI(reference);
-  let slot3664 =
-      slot3663,
+  let slot3664 = slot3663,
     slot3665 = AppInitialAI(reference);
-  let slot3666 =
-      slot3665,
+  let slot3666 = slot3665,
     slot3667 = _AppInitialNI(reference);
-  let slot3668 =
-      slot3667,
+  let slot3668 = slot3667,
     slot3669,
     slot3670,
     slot3671,
@@ -145,12 +139,9 @@ export function useChatgptComposerControllerHelper68(request777: any) {
     slot3674,
     slot3675,
     slot3676;
-  slot3670 = Symbol.for(
-    "react.early_return_sentinel",
-  );
+  slot3670 = Symbol.for("react.early_return_sentinel");
   bb0: {
-    let slot5917 =
-      useChatgptComposerControllerHelper72(reference);
+    let slot5917 = useChatgptComposerControllerHelper72(reference);
     if (
       slot3664 == null &&
       slot3666 == null &&
@@ -163,21 +154,15 @@ export function useChatgptComposerControllerHelper68(request777: any) {
     let slot5918;
     {
       let slot15692 = AppInitialSI(reference);
-      slot5918 =
-        slot15692 == null
-          ? null
-          : _appInitialIL(slot15692);
+      slot5918 = slot15692 == null ? null : _appInitialIL(slot15692);
     }
-    slot3669 =
-      slot5918;
+    slot3669 = slot5918;
     slot3671 =
       "my-3 max-w-[36rem] rounded-lg border border-token-border-light bg-token-bg-secondary px-3 py-2 text-sm text-token-text-primary";
     slot3672 = "chatgpt-content-reference-card";
     slot3673 =
       slot3664 == null ? null : (
-        <div className="font-medium text-token-text-primary">
-          {slot3664}
-        </div>
+        <div className="font-medium text-token-text-primary">{slot3664}</div>
       );
     slot3674 =
       slot3666 == null ? null : (
@@ -186,9 +171,7 @@ export function useChatgptComposerControllerHelper68(request777: any) {
         </div>
       );
     slot3675 =
-      slot3668 == null ||
-      slot3668 ===
-        slot3664 ? null : (
+      slot3668 == null || slot3668 === slot3664 ? null : (
         <div className="mt-1 line-clamp-2 text-token-text-secondary">
           {slot3668}
         </div>
@@ -196,46 +179,33 @@ export function useChatgptComposerControllerHelper68(request777: any) {
     slot3676 =
       slot5917.length === 0 ? null : (
         <div className="mt-2 flex flex-col gap-1">
-          {slot5917.map(
-            useChatgptComposerControllerHelper69,
-          )}
+          {slot5917.map(useChatgptComposerControllerHelper69)}
         </div>
       );
   }
-  if (
-    slot3670 !==
-    Symbol.for("react.early_return_sentinel")
-  )
-    return slot3670;
+  if (slot3670 !== Symbol.for("react.early_return_sentinel")) return slot3670;
   let slot3677 = (
-    <div
-      className={slot3671}
-      data-testid={slot3672}
-    >
+    <div className={slot3671} data-testid={slot3672}>
       {slot3673}
       {slot3674}
       {slot3675}
       {slot3676}
     </div>
   );
-  let slot3678 =
-    slot3677;
-  if (slot3669 == null)
-    return slot3678;
+  let slot3678 = slot3677;
+  if (slot3669 == null) return slot3678;
   return (
-    <UseChatgptComposerControllerHelper71
-      href={slot3669}
-    >
+    <UseChatgptComposerControllerHelper71 href={slot3669}>
       {slot3678}
     </UseChatgptComposerControllerHelper71>
   );
 }
-export function useChatgptComposerControllerHelper69(request9523: any, request9524: any) {
+export function useChatgptComposerControllerHelper69(
+  request9523: any,
+  request9524: any,
+) {
   return (
-    <div
-      key={`${request9523}-${String(request9524)}`}
-      className="truncate"
-    >
+    <div key={`${request9523}-${String(request9524)}`} className="truncate">
       {request9523}
     </div>
   );
@@ -243,11 +213,8 @@ export function useChatgptComposerControllerHelper69(request9523: any, request95
 export function useChatgptComposerControllerHelper70(request6636: any) {
   let { reference } = request6636,
     slot12980 = _AppInitialNI(reference);
-  let slot12981 =
-    slot12980;
-  return slot12981 == null ? null : (
-    <>{slot12981}</>
-  );
+  let slot12981 = slot12980;
+  return slot12981 == null ? null : <>{slot12981}</>;
 }
 export function useChatgptComposerControllerHelper71(request5268: any) {
   const UseChatgptComposerControllerHelper65 =
@@ -264,22 +231,14 @@ export function useChatgptComposerControllerHelper71(request5268: any) {
   );
 }
 export function useChatgptComposerControllerHelper72(request5780: any) {
-  return (
-    Array.isArray(request5780.items)
-      ? request5780.items
-      : []
-  )
+  return (Array.isArray(request5780.items) ? request5780.items : [])
     .map((item) => {
       if (typeof item != "object" || !item) return null;
-      let slot13315 =
-          "title" in item ? item.title : null,
-        slot13316 =
-          "name" in item ? item.name : null;
-      return typeof slot13315 == "string" &&
-        slot13315.trim().length > 0
+      let slot13315 = "title" in item ? item.title : null,
+        slot13316 = "name" in item ? item.name : null;
+      return typeof slot13315 == "string" && slot13315.trim().length > 0
         ? slot13315
-        : typeof slot13316 == "string" &&
-            slot13316.trim().length > 0
+        : typeof slot13316 == "string" && slot13316.trim().length > 0
           ? slot13316
           : null;
     })

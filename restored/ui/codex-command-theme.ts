@@ -26,6 +26,6 @@ export function codexCommandTheme() {
   }
 
   return peers.e(() => {
-    $iu = peers.c(), peers.$u(), eau = peers.J();
+    (($iu = peers.c()), peers.$u(), (eau = peers.J()));
   });
 }

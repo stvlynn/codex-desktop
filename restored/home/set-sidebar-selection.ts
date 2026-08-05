@@ -23,7 +23,10 @@ export function setSidebarSelection(store: StoreSet, value: unknown): void {
 }
 
 /** Bundle `cti` / export `bG` — set selection + mirror. */
-export function setSidebarSelectionWithMirror(store: StoreSet, value: unknown): void {
+export function setSidebarSelectionWithMirror(
+  store: StoreSet,
+  value: unknown,
+): void {
   setSidebarSelection(store, value);
   store.set(sidebarSelectionMirrorAtom, value);
 }

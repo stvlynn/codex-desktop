@@ -26,7 +26,10 @@ function idRank(id: string): number {
 }
 
 /** Sort comparator for command-menu entries (group, fixed ids, locale). */
-export function compareCommandMenuEntries(left: CommandMenuEntryLike, right: CommandMenuEntryLike): number {
+export function compareCommandMenuEntries(
+  left: CommandMenuEntryLike,
+  right: CommandMenuEntryLike,
+): number {
   const byGroup = groupRank(left) - groupRank(right);
   if (byGroup !== 0) return byGroup;
   const byId = idRank(left.id) - idRank(right.id);

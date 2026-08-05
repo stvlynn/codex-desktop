@@ -21,7 +21,9 @@ export type HostPlanDefaultKindsPeers = {
 let peers: HostPlanDefaultKindsPeers | null = null;
 
 /** Wire hostPlanDefaultKinds peers once companions land. */
-export function setHostPlanDefaultKindsPeers(next: HostPlanDefaultKindsPeers): void {
+export function setHostPlanDefaultKindsPeers(
+  next: HostPlanDefaultKindsPeers,
+): void {
   peers = next;
 }
 
@@ -34,8 +36,13 @@ export function hostPlanDefaultKinds() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.DD(), peers.Vf(), peers.ed(), peers.Uf(), N2r = [`plan`, `default`], P2r = peers.ka(peers.Q, e => peers.M2r(peers.e)), F2r = peers.Ia(peers.Q, ({
-      get: e
-    }) => peers.M2r(peers.e(peers.SD)));
+    (peers.Ho(),
+      peers.DD(),
+      peers.Vf(),
+      peers.ed(),
+      peers.Uf(),
+      (N2r = [`plan`, `default`]),
+      (P2r = peers.ka(peers.Q, (e) => peers.M2r(peers.e))),
+      (F2r = peers.Ia(peers.Q, ({ get: e }) => peers.M2r(peers.e(peers.SD)))));
   });
 }

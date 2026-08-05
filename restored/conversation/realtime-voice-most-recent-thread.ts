@@ -43,7 +43,9 @@ export type BindRealtimeVoiceMostRecentThreadPeers = {
 let peers: BindRealtimeVoiceMostRecentThreadPeers | null = null;
 
 /** Wire bindRealtimeVoiceMostRecentThread peers once companions land. */
-export function setBindRealtimeVoiceMostRecentThreadPeers(next: BindRealtimeVoiceMostRecentThreadPeers): void {
+export function setBindRealtimeVoiceMostRecentThreadPeers(
+  next: BindRealtimeVoiceMostRecentThreadPeers,
+): void {
   peers = next;
 }
 
@@ -52,25 +54,49 @@ export function setBindRealtimeVoiceMostRecentThreadPeers(next: BindRealtimeVoic
  */
 export function bindRealtimeVoiceMostRecentThread() {
   if (peers == null) {
-    throw new Error("bindRealtimeVoiceMostRecentThread peers are not configured");
+    throw new Error(
+      "bindRealtimeVoiceMostRecentThread peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.Au(), peers.Eu(), peers.Sl(), peers.DD(), peers.Pot(), peers.ed(), peers.wp(), peers.od(), peers.Im(), peers.I_(), peers.VE(), Der = [`[STATUS]`, `[ATTENTION]`, `[COMPLETE]`], Oer = peers.qEe(), ker = peers.sl({
-      conversationId: peers.X().transform(peers.kl),
-      hostId: peers.X(),
-      version: peers.rl().int().nonnegative()
-    }), Aer = `realtime-voice-most-recent-thread`, HE = peers.Pm(peers.Aer, null), jer = peers.Ta(peers.Q, null), Mer = peers.Ma(peers.Q, ({
-      get: e
-    }) => {
-      let t = peers.Eer(peers.e(peers.HE)),
-        n = peers.e(peers.ger);
-      return n != null && t?.version === peers.per(n, peers.xp(peers.e, peers.Oer.screenContextEnabled)) ? t.locator : null;
-    }), Ner = peers.Ma(peers.Q, ({
-      get: e
-    }) => {
-      let t = peers.e(peers.Mer);
-      return t == null || !peers.e(peers.aD, t.hostId).includes(t.conversationId) ? null : t;
-    });
+    (peers.Ho(),
+      peers.Au(),
+      peers.Eu(),
+      peers.Sl(),
+      peers.DD(),
+      peers.Pot(),
+      peers.ed(),
+      peers.wp(),
+      peers.od(),
+      peers.Im(),
+      peers.I_(),
+      peers.VE(),
+      (Der = [`[STATUS]`, `[ATTENTION]`, `[COMPLETE]`]),
+      (Oer = peers.qEe()),
+      (ker = peers.sl({
+        conversationId: peers.X().transform(peers.kl),
+        hostId: peers.X(),
+        version: peers.rl().int().nonnegative(),
+      })),
+      (Aer = `realtime-voice-most-recent-thread`),
+      (HE = peers.Pm(peers.Aer, null)),
+      (jer = peers.Ta(peers.Q, null)),
+      (Mer = peers.Ma(peers.Q, ({ get: e }) => {
+        let t = peers.Eer(peers.e(peers.HE)),
+          n = peers.e(peers.ger);
+        return n != null &&
+          t?.version ===
+            peers.per(n, peers.xp(peers.e, peers.Oer.screenContextEnabled))
+          ? t.locator
+          : null;
+      })),
+      (Ner = peers.Ma(peers.Q, ({ get: e }) => {
+        let t = peers.e(peers.Mer);
+        return t == null ||
+          !peers.e(peers.aD, t.hostId).includes(t.conversationId)
+          ? null
+          : t;
+      })));
   });
 }

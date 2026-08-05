@@ -17,7 +17,9 @@ export type UseConnectorLogoQueriesPeers = {
 let peers: UseConnectorLogoQueriesPeers | null = null;
 
 /** Wire useConnectorLogoQueries peers once companions land. */
-export function setUseConnectorLogoQueriesPeers(next: UseConnectorLogoQueriesPeers): void {
+export function setUseConnectorLogoQueriesPeers(
+  next: UseConnectorLogoQueriesPeers,
+): void {
   peers = next;
 }
 

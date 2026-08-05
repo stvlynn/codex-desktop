@@ -58,7 +58,9 @@ export type RateLimitUsageEntry = {
 };
 
 /** Bundle `M_s` / export `Hb`. */
-export function collectRateLimitUsageSnapshots(payload: RateLimitPayload | null | undefined): RateLimitUsageEntry[] {
+export function collectRateLimitUsageSnapshots(
+  payload: RateLimitPayload | null | undefined,
+): RateLimitUsageEntry[] {
   if (payload == null) return [];
   const out: RateLimitUsageEntry[] = [];
   const primaryName = trimRateLimitName(payload);

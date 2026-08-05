@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Cn,
-} from "../presentation-protobuf";
+import { Cn } from "../presentation-protobuf";
 
 export const chartTypeProtoToName = {
   [Cn.CHART_TYPE_LINE]: "line",

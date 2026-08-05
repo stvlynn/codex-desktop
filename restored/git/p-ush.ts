@@ -99,8 +99,13 @@ export function pUSH() {
     Ow = peers.r(peers.o(), 1);
     peers.o();
     peers.$l();
-    WVn = (alpha => {
-      return alpha.Pop = "POP", alpha.Push = "PUSH", alpha.Replace = "REPLACE", alpha;
+    WVn = ((alpha) => {
+      return (
+        (alpha.Pop = "POP"),
+        (alpha.Push = "PUSH"),
+        (alpha.Replace = "REPLACE"),
+        alpha
+      );
     })(peers.WVn || {});
     GVn = /^:[\w-]+$/;
     KVn = 3;
@@ -108,31 +113,44 @@ export function pUSH() {
     JVn = 1;
     YVn = 10;
     XVn = -2;
-    ZVn = bravo => {
+    ZVn = (bravo) => {
       return bravo === "*";
     };
     QVn = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
-    kw = copper => {
+    kw = (copper) => {
       return copper.join("/").replace(/\/\/+/g, "/");
     };
-    $Vn = delta => {
+    $Vn = (delta) => {
       return delta.replace(/\/+$/, "").replace(/^\/*/, "/");
     };
-    eHn = echo => {
-      return !echo || echo === "?" ? "" : echo.startsWith("?") ? echo : "?" + echo;
+    eHn = (echo) => {
+      return !echo || echo === "?"
+        ? ""
+        : echo.startsWith("?")
+          ? echo
+          : "?" + echo;
     };
-    tHn = falcon => {
-      return !falcon || falcon === "#" ? "" : falcon.startsWith("#") ? falcon : "#" + falcon;
+    tHn = (falcon) => {
+      return !falcon || falcon === "#"
+        ? ""
+        : falcon.startsWith("#")
+          ? falcon
+          : "#" + falcon;
     };
     nHn = class {
       constructor(gamma, harbor, indigo, jade = false) {
         this.status = gamma;
         this.statusText = harbor || "";
         this.internal = jade;
-        indigo instanceof Error ? (this.data = indigo.toString(), this.error = indigo) : this.data = indigo;
+        indigo instanceof Error
+          ? ((this.data = indigo.toString()), (this.error = indigo))
+          : (this.data = indigo);
       }
     };
-    rHn = typeof window < "u" && window.document !== undefined && window.document.createElement !== undefined;
+    rHn =
+      typeof window < "u" &&
+      window.document !== undefined &&
+      window.document.createElement !== undefined;
     Object.getOwnPropertyNames(Object.prototype).sort().join("\0");
     iHn = ["POST", "PUT", "PATCH", "DELETE"];
     new Set(peers.iHn);
@@ -144,7 +162,7 @@ export function pUSH() {
     peers.sHn.displayName = "DataRouterState";
     cHn = peers.ww.createContext(false);
     lHn = peers.ww.createContext({
-      isTransitioning: false
+      isTransitioning: false,
     });
     peers.lHn.displayName = "ViewTransition";
     uHn = peers.ww.createContext(new Map());
@@ -158,7 +176,7 @@ export function pUSH() {
     Mw = peers.ww.createContext({
       outlet: null,
       matches: [],
-      isDataRoute: false
+      isDataRoute: false,
     });
     peers.Mw.displayName = "Route";
     fHn = peers.ww.createContext(null);
@@ -166,7 +184,8 @@ export function pUSH() {
     pHn = "REACT_ROUTER_ERROR";
     mHn = "REDIRECT";
     hHn = "ROUTE_ERROR_RESPONSE";
-    gHn = "You should call navigate() in a React.useEffect(), not when your component is first rendered.";
+    gHn =
+      "You should call navigate() in a React.useEffect(), not when your component is first rendered.";
     _Hn = peers.Tw.createContext(null);
     vHn = peers.Tw.createElement(peers.MBn, null);
     yHn = class extends peers.Tw.Component {
@@ -175,43 +194,70 @@ export function pUSH() {
         this.state = {
           location: kite.location,
           revalidation: kite.revalidation,
-          error: kite.error
+          error: kite.error,
         };
       }
       static getDerivedStateFromError(lemon) {
         return {
-          error: lemon
+          error: lemon,
         };
       }
       static getDerivedStateFromProps(marble, nickel) {
-        return nickel.location !== marble.location || nickel.revalidation !== "idle" && marble.revalidation === "idle" ? {
-          error: marble.error,
-          location: marble.location,
-          revalidation: marble.revalidation
-        } : {
-          error: marble.error === undefined ? nickel.error : marble.error,
-          location: nickel.location,
-          revalidation: marble.revalidation || nickel.revalidation
-        };
+        return nickel.location !== marble.location ||
+          (nickel.revalidation !== "idle" && marble.revalidation === "idle")
+          ? {
+              error: marble.error,
+              location: marble.location,
+              revalidation: marble.revalidation,
+            }
+          : {
+              error: marble.error === undefined ? nickel.error : marble.error,
+              location: nickel.location,
+              revalidation: marble.revalidation || nickel.revalidation,
+            };
       }
       componentDidCatch(onyx, pearl) {
-        this.props.onError ? this.props.onError(onyx, pearl) : console.error("React Router caught the following error during render", onyx);
+        this.props.onError
+          ? this.props.onError(onyx, pearl)
+          : console.error(
+              "React Router caught the following error during render",
+              onyx,
+            );
       }
       render() {
         let quartz = this.state.error;
-        if (this.context && typeof quartz == "object" && quartz && "digest" in quartz && typeof quartz.digest == "string") {
+        if (
+          this.context &&
+          typeof quartz == "object" &&
+          quartz &&
+          "digest" in quartz &&
+          typeof quartz.digest == "string"
+        ) {
           let slate = peers.xBn(quartz.digest);
           slate && (quartz = slate);
         }
-        let river = quartz === undefined ? this.props.children : peers.Tw.createElement(peers.Mw.Provider, {
-          value: this.props.routeContext
-        }, peers.Tw.createElement(peers.fHn.Provider, {
-          value: quartz,
-          children: this.props.component
-        }));
-        return this.context ? peers.Tw.createElement(peers.NBn, {
-          error: quartz
-        }, river) : river;
+        let river =
+          quartz === undefined
+            ? this.props.children
+            : peers.Tw.createElement(
+                peers.Mw.Provider,
+                {
+                  value: this.props.routeContext,
+                },
+                peers.Tw.createElement(peers.fHn.Provider, {
+                  value: quartz,
+                  children: this.props.component,
+                }),
+              );
+        return this.context
+          ? peers.Tw.createElement(
+              peers.NBn,
+              {
+                error: quartz,
+              },
+              river,
+            )
+          : river;
       }
     };
     peers.yHn.contextType = peers.cHn;
@@ -223,57 +269,76 @@ export function pUSH() {
     CHn = "get";
     wHn = "application/x-www-form-urlencoded";
     THn = null;
-    EHn = new Set(["application/x-www-form-urlencoded", "multipart/form-data", "text/plain"]);
+    EHn = new Set([
+      "application/x-www-form-urlencoded",
+      "multipart/form-data",
+      "text/plain",
+    ]);
     Object.getOwnPropertyNames(Object.prototype).sort().join("\0");
     DHn = {
       "&": "\\u0026",
       ">": "\\u003e",
       "<": "\\u003c",
       "\u2028": "\\u2028",
-      "\u2029": "\\u2029"
+      "\u2029": "\\u2029",
     };
     OHn = /[&><\u2028\u2029]/g;
     kHn = peers.Dw.createContext(undefined);
     peers.kHn.displayName = "FrameworkContext";
     peers.UVn.Component;
-    AHn = typeof window < "u" && window.document !== undefined && window.document.createElement !== undefined;
+    AHn =
+      typeof window < "u" &&
+      window.document !== undefined &&
+      window.document.createElement !== undefined;
     try {
       peers.AHn && (window.__reactRouterVersion = "7.13.1");
     } catch {}
     peers.AVn.displayName = "unstable_HistoryRouter";
     jHn = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
-    MHn = peers.Ow.forwardRef(function ({
-      onClick,
-      discover = "render",
-      prefetch = "none",
-      relative,
-      reloadDocument,
-      replace,
-      unstable_mask,
-      state,
-      target,
-      to,
-      preventScrollReset,
-      viewTransition,
-      unstable_defaultShouldRevalidate,
-      ...rest
-    }, timber) {
+    MHn = peers.Ow.forwardRef(function (
+      {
+        onClick,
+        discover = "render",
+        prefetch = "none",
+        relative,
+        reloadDocument,
+        replace,
+        unstable_mask,
+        state,
+        target,
+        to,
+        preventScrollReset,
+        viewTransition,
+        unstable_defaultShouldRevalidate,
+        ...rest
+      },
+      timber,
+    ) {
       let {
           basename,
           navigator,
-          unstable_useTransitions: umbra
+          unstable_useTransitions: umbra,
         } = peers.Ow.useContext(peers.Aw),
         violet = typeof to == "string" && peers.jHn.test(to),
         willow = peers.yBn(to, basename);
       to = willow.to;
       let b = peers.SBn(to, {
-          relative
+          relative,
         }),
         xenon = peers.vw(),
         yellow = null;
       if (unstable_mask) {
-        let garnet = peers.gBn(unstable_mask, [], xenon.unstable_mask ? xenon.unstable_mask.pathname : "/", true);
-        basename !== "/" && (garnet.pathname = garnet.pathname === "/" ? basename : peers.kw([basename, garnet.pathname]));
+        let garnet = peers.gBn(
+          unstable_mask,
+          [],
+          xenon.unstable_mask ? xenon.unstable_mask.pathname : "/",
+          true,
+        );
+        basename !== "/" &&
+          (garnet.pathname =
+            garnet.pathname === "/"
+              ? basename
+              : peers.kw([basename, garnet.pathname]));
         yellow = navigator.createHref(garnet);
       }
       let [zinc, amber, basalt] = peers.wVn(prefetch, rest),
@@ -286,7 +351,7 @@ export function pUSH() {
           relative,
           viewTransition,
           unstable_defaultShouldRevalidate,
-          unstable_useTransitions: umbra
+          unstable_useTransitions: umbra,
         });
       function daisy(hazel) {
         onClick && onClick(hazel);
@@ -300,117 +365,163 @@ export function pUSH() {
           onClick: ember ? peers.D : onClick,
           ref: peers.kVn(timber, amber),
           target,
-          "data-discover": !violet && discover === "render" ? "true" : undefined
+          "data-discover":
+            !violet && discover === "render" ? "true" : undefined,
         });
-      return zinc && !violet ? peers.Ow.createElement(peers.Ow.Fragment, null, flint, peers.Ow.createElement(peers.EVn, {
-        page: b
-      })) : flint;
+      return zinc && !violet
+        ? peers.Ow.createElement(
+            peers.Ow.Fragment,
+            null,
+            flint,
+            peers.Ow.createElement(peers.EVn, {
+              page: b,
+            }),
+          )
+        : flint;
     });
     peers.MHn.displayName = "Link";
-    NHn = peers.Ow.forwardRef(function ({
-      "aria-current": ivory = "page",
-      caseSensitive = false,
-      className = "",
-      end = false,
-      style,
-      to,
-      viewTransition,
-      children,
-      ...rest
-    }, jasper) {
+    NHn = peers.Ow.forwardRef(function (
+      {
+        "aria-current": ivory = "page",
+        caseSensitive = false,
+        className = "",
+        end = false,
+        style,
+        to,
+        viewTransition,
+        children,
+        ...rest
+      },
+      jasper,
+    ) {
       let u = peers.kBn(to, {
-          relative: rest.relative
+          relative: rest.relative,
         }),
         kelp = peers.vw(),
         lotus = peers.Ow.useContext(peers.sHn),
-        {
-          navigator,
-          basename
-        } = peers.Ow.useContext(peers.Aw),
+        { navigator, basename } = peers.Ow.useContext(peers.Aw),
         mint = lotus != null && peers.HVn(u) && viewTransition === true,
-        nova = navigator.encodeLocation ? navigator.encodeLocation(u).pathname : u.pathname,
+        nova = navigator.encodeLocation
+          ? navigator.encodeLocation(u).pathname
+          : u.pathname,
         olive = kelp.pathname,
-        prism = lotus && lotus.navigation && lotus.navigation.location ? lotus.navigation.location.pathname : null;
-      caseSensitive || (olive = olive.toLowerCase(), prism = prism ? prism.toLowerCase() : null, nova = nova.toLowerCase());
+        prism =
+          lotus && lotus.navigation && lotus.navigation.location
+            ? lotus.navigation.location.pathname
+            : null;
+      caseSensitive ||
+        ((olive = olive.toLowerCase()),
+        (prism = prism ? prism.toLowerCase() : null),
+        (nova = nova.toLowerCase()));
       prism && basename && (prism = peers._w(prism, basename) || prism);
-      let quill = nova !== "/" && nova.endsWith("/") ? nova.length - 1 : nova.length,
-        b = olive === nova || !end && olive.startsWith(nova) && olive.charAt(quill) === "/",
-        reef = prism != null && (prism === nova || !end && prism.startsWith(nova) && prism.charAt(nova.length) === "/"),
+      let quill =
+          nova !== "/" && nova.endsWith("/") ? nova.length - 1 : nova.length,
+        b =
+          olive === nova ||
+          (!end && olive.startsWith(nova) && olive.charAt(quill) === "/"),
+        reef =
+          prism != null &&
+          (prism === nova ||
+            (!end &&
+              prism.startsWith(nova) &&
+              prism.charAt(nova.length) === "/")),
         sage = {
           isActive: b,
           isPending: reef,
-          isTransitioning: mint
+          isTransitioning: mint,
         },
         topaz = b ? ivory : undefined,
         ultra;
-      ultra = typeof className == "function" ? className(sage) : [className, b ? "active" : null, reef ? "pending" : null, mint ? "transitioning" : null].filter(Boolean).join(" ");
+      ultra =
+        typeof className == "function"
+          ? className(sage)
+          : [
+              className,
+              b ? "active" : null,
+              reef ? "pending" : null,
+              mint ? "transitioning" : null,
+            ]
+              .filter(Boolean)
+              .join(" ");
       let vapor = typeof style == "function" ? style(sage) : style;
-      return peers.Ow.createElement(peers.MHn, {
-        ...rest,
-        "aria-current": topaz,
-        className: ultra,
-        ref: jasper,
-        style: vapor,
-        to,
-        viewTransition
-      }, typeof children == "function" ? children(sage) : children);
+      return peers.Ow.createElement(
+        peers.MHn,
+        {
+          ...rest,
+          "aria-current": topaz,
+          className: ultra,
+          ref: jasper,
+          style: vapor,
+          to,
+          viewTransition,
+        },
+        typeof children == "function" ? children(sage) : children,
+      );
     });
     peers.NHn.displayName = "NavLink";
-    PHn = peers.Ow.forwardRef(({
-      discover = "render",
-      fetcherKey,
-      navigate,
-      reloadDocument,
-      replace,
-      state,
-      method = peers.CHn,
-      action,
-      onSubmit,
-      relative,
-      preventScrollReset,
-      viewTransition,
-      unstable_defaultShouldRevalidate,
-      ...rest
-    }, wheat) => {
-      let {
-          unstable_useTransitions
-        } = peers.Ow.useContext(peers.Aw),
-        yarn = peers.LVn(),
-        zephyr = peers.RVn(action, {
-          relative
-        }),
-        acorn = method.toLowerCase() === "get" ? "get" : "post",
-        bloom = typeof action == "string" && peers.jHn.test(action);
-      return peers.Ow.createElement("form", {
-        ref: wheat,
-        method: acorn,
-        action: zephyr,
-        onSubmit: reloadDocument ? onSubmit : event => {
-          if (onSubmit && onSubmit(event), event.defaultPrevented) return;
-          event.preventDefault();
-          let coral = event.nativeEvent.submitter,
-            s = coral?.getAttribute("formmethod") || method,
-            p = () => {
-              return yarn(coral || event.currentTarget, {
-                fetcherKey,
-                method: s,
-                navigate,
-                replace,
-                state,
-                relative,
-                preventScrollReset,
-                viewTransition,
-                unstable_defaultShouldRevalidate
-              });
-            };
-          unstable_useTransitions && navigate !== false ? peers.Ow.startTransition(() => {
-            return p();
-          }) : p();
+    PHn = peers.Ow.forwardRef(
+      (
+        {
+          discover = "render",
+          fetcherKey,
+          navigate,
+          reloadDocument,
+          replace,
+          state,
+          method = peers.CHn,
+          action,
+          onSubmit,
+          relative,
+          preventScrollReset,
+          viewTransition,
+          unstable_defaultShouldRevalidate,
+          ...rest
         },
-        ...rest,
-        "data-discover": !bloom && discover === "render" ? "true" : undefined
-      });
-    });
+        wheat,
+      ) => {
+        let { unstable_useTransitions } = peers.Ow.useContext(peers.Aw),
+          yarn = peers.LVn(),
+          zephyr = peers.RVn(action, {
+            relative,
+          }),
+          acorn = method.toLowerCase() === "get" ? "get" : "post",
+          bloom = typeof action == "string" && peers.jHn.test(action);
+        return peers.Ow.createElement("form", {
+          ref: wheat,
+          method: acorn,
+          action: zephyr,
+          onSubmit: reloadDocument
+            ? onSubmit
+            : (event) => {
+                if ((onSubmit && onSubmit(event), event.defaultPrevented))
+                  return;
+                event.preventDefault();
+                let coral = event.nativeEvent.submitter,
+                  s = coral?.getAttribute("formmethod") || method,
+                  p = () => {
+                    return yarn(coral || event.currentTarget, {
+                      fetcherKey,
+                      method: s,
+                      navigate,
+                      replace,
+                      state,
+                      relative,
+                      preventScrollReset,
+                      viewTransition,
+                      unstable_defaultShouldRevalidate,
+                    });
+                  };
+                unstable_useTransitions && navigate !== false
+                  ? peers.Ow.startTransition(() => {
+                      return p();
+                    })
+                  : p();
+              },
+          ...rest,
+          "data-discover": !bloom && discover === "render" ? "true" : undefined,
+        });
+      },
+    );
     peers.PHn.displayName = "Form";
     peers.jVn.displayName = "ScrollRestoration";
     FHn = 0;

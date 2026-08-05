@@ -9,7 +9,9 @@ export type DeferredConversationNPeers = {
 let peers: DeferredConversationNPeers | null = null;
 
 /** Wire deferredConversationN peers once companions land. */
-export function setDeferredConversationNPeers(next: DeferredConversationNPeers): void {
+export function setDeferredConversationNPeers(
+  next: DeferredConversationNPeers,
+): void {
   peers = next;
 }
 
@@ -21,5 +23,5 @@ export function deferredConversationN() {
     throw new Error("deferredConversationN peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => !1);
+  return peers.Da(peers.Q, (e) => !1);
 }

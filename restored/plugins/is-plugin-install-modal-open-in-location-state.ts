@@ -8,7 +8,9 @@ export type IsPluginInstallModalOpenInLocationStatePeers = {
 let peers: IsPluginInstallModalOpenInLocationStatePeers | null = null;
 
 /** Wire isPluginInstallModalOpenInLocationState peers once companions land. */
-export function setIsPluginInstallModalOpenInLocationStatePeers(next: IsPluginInstallModalOpenInLocationStatePeers): void {
+export function setIsPluginInstallModalOpenInLocationStatePeers(
+  next: IsPluginInstallModalOpenInLocationStatePeers,
+): void {
   peers = next;
 }
 

@@ -25,6 +25,6 @@ export function Chatgpt3() {
     throw new Error("Chatgpt3 peers are not configured");
   }
   return peers.e(() => {
-    q6s = peers.c(), peers.uir(), J6s = peers.J();
+    ((q6s = peers.c()), peers.uir(), (J6s = peers.J()));
   });
 }

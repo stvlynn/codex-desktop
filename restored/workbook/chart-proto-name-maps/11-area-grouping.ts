@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Pn as _presentationPn,
-} from "../presentation-protobuf";
+import { Pn as _presentationPn } from "../presentation-protobuf";
 
 export const areaGroupingNameToProto = {
   standard: _presentationPn.AREA_GROUPING_STANDARD,

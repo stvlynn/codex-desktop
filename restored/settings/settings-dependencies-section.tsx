@@ -16,7 +16,9 @@ export type SettingsDependenciesSectionPeers = {
 let peers: SettingsDependenciesSectionPeers | null = null;
 
 /** Wire SettingsDependenciesSection peers once companions land. */
-export function setSettingsDependenciesSectionPeers(next: SettingsDependenciesSectionPeers): void {
+export function setSettingsDependenciesSectionPeers(
+  next: SettingsDependenciesSectionPeers,
+): void {
   peers = next;
 }
 

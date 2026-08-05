@@ -10,4 +10,7 @@ export * from "./runtime-bridges";
 
 // Semantic export aliases
 export { quickChatWindowT as QuickChatWindow } from "./part-2";
-export type QuickChatWindowSession = { conversationId?: string | null; [key: string]: unknown };
+export type QuickChatWindowSession = {
+  conversationId?: string | null;
+  [key: string]: unknown;
+};

@@ -7,7 +7,9 @@ export type MessageContentCarrier = {
   content?: unknown;
 };
 
-export function messageContentToPlainText(message: MessageContentCarrier): string {
+export function messageContentToPlainText(
+  message: MessageContentCarrier,
+): string {
   const content = asRecord(message.content);
   if (content == null) return "";
   if (typeof content.text === "string") return content.text;

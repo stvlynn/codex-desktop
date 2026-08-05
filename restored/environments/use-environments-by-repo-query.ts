@@ -16,7 +16,9 @@ export type UseEnvironmentsByRepoQueryPeers = {
 let peers: UseEnvironmentsByRepoQueryPeers | null = null;
 
 /** Wire useEnvironmentsByRepoQuery peers once companions land. */
-export function setUseEnvironmentsByRepoQueryPeers(next: UseEnvironmentsByRepoQueryPeers): void {
+export function setUseEnvironmentsByRepoQueryPeers(
+  next: UseEnvironmentsByRepoQueryPeers,
+): void {
   peers = next;
 }
 

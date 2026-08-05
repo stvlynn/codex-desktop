@@ -4,7 +4,9 @@
 import { writeClipboardContents } from "./write-clipboard-contents.ts";
 
 /** Copy a `codex://threads/<id>` deeplink when id is truthy. */
-export function writeCodexThreadDeeplink(threadId: string | null | undefined): void {
+export function writeCodexThreadDeeplink(
+  threadId: string | null | undefined,
+): void {
   if (threadId) void writeClipboardContents(`codex://threads/${threadId}`);
 }
 

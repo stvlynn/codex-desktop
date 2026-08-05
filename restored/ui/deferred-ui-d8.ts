@@ -23,9 +23,7 @@ export function bindDeferredUiD8() {
     throw new Error("bindDeferredUiD8 peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     let n = t(peers.cT)[e] ?? [];
     return t(peers.uT) || n.length > 0;
   });

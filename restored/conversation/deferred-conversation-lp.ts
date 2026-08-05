@@ -9,7 +9,9 @@ export type DeferredConversationLpPeers = {
 let peers: DeferredConversationLpPeers | null = null;
 
 /** Wire deferredConversationLp peers once companions land. */
-export function setDeferredConversationLpPeers(next: DeferredConversationLpPeers): void {
+export function setDeferredConversationLpPeers(
+  next: DeferredConversationLpPeers,
+): void {
   peers = next;
 }
 
@@ -23,6 +25,6 @@ export function deferredConversationLp() {
 
   return peers.sl({
     iconAppId: peers.X().min(1).optional(),
-    label: peers.X().min(1)
+    label: peers.X().min(1),
   });
 }

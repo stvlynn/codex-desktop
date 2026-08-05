@@ -5,7 +5,13 @@ import { buildThemeStyleMaps } from "../document-style";
 import { WorkbookTheme } from "./workbook-theme";
 import { THEME_SCHEME_COLOR_ALIASES } from "./theme-color-aliases";
 export function themeStyleMapsFromProto(dtIn13286: unknown) {
-  return buildThemeStyleMaps(new WorkbookTheme({
-    stub: () => {}
-  }, dtIn13286), THEME_SCHEME_COLOR_ALIASES);
+  return buildThemeStyleMaps(
+    new WorkbookTheme(
+      {
+        stub: () => {},
+      },
+      dtIn13286,
+    ),
+    THEME_SCHEME_COLOR_ALIASES,
+  );
 }

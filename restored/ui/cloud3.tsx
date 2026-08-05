@@ -29,33 +29,36 @@ export function bindCloud3() {
     throw new Error("bindCloud3 peers are not configured");
   }
 
-  return peers.Ma(peers.hT, ({
-    get: e
-  }) => {
-    if (e(peers.HI) === `cloud`) return {
-      isLoading: !1,
-      metrics: null
-    };
+  return peers.Ma(peers.hT, ({ get: e }) => {
+    if (e(peers.HI) === `cloud`)
+      return {
+        isLoading: !1,
+        metrics: null,
+      };
     if (e(peers.LP) === `branch`) {
       let t = e(peers.VI),
         n = t.data;
-      if (n?.type === `success`) return {
-        isLoading: !1,
-        metrics: peers.gLi(n)
-      };
-      if (e(peers.UI) && !t.isError && (t.isFetching || t.isPending)) return {
-        isLoading: !0,
-        metrics: null
-      };
+      if (n?.type === `success`)
+        return {
+          isLoading: !1,
+          metrics: peers.gLi(n),
+        };
+      if (e(peers.UI) && !t.isError && (t.isFetching || t.isPending))
+        return {
+          isLoading: !0,
+          metrics: null,
+        };
     }
     let t = e(peers.iLi),
       n = peers._Li(t.data);
-    return n == null ? {
-      isLoading: t.isFetching,
-      metrics: null
-    } : {
-      isLoading: !1,
-      metrics: n
-    };
+    return n == null
+      ? {
+          isLoading: t.isFetching,
+          metrics: null,
+        }
+      : {
+          isLoading: !1,
+          metrics: n,
+        };
   });
 }

@@ -8,7 +8,11 @@
 
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
 import { openInBrowser } from "../../account/open-in-browser";
-import { appActionSidebarProjectRefSchema, appActionSidebarSectionRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  appActionSidebarSectionRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { ensureReviewFileAppActionAttrsInit } from "../../actions/ensure-review-file-app-action-attrs-init";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
@@ -19,14 +23,49 @@ import { CodexPluginPageName } from "../../analytics/codex-plugin-page-name";
 import { logProductEvent } from "../../analytics/log-product-event";
 import { useChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { AppCardAdminDisabledBadge } from "../../apps/app-card-admin-disabled-badge";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Wlt_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_Jj_Init } from "../../conversation/conversation-page-esm-inits";
-import { createPersistedAtom, ensurePersistedAtomInit } from "../../boundaries/persisted-atom";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_AG_Init,
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_J0_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_M0_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_RV_Init,
+  ensureComposerEsm_Sst_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+  ensureComposerEsm_Wlt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_Jj_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  createPersistedAtom,
+  ensurePersistedAtomInit,
+} from "../../boundaries/persisted-atom";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
-import { ensurePluginMentionPromptInit, firstNonEmptyTrimmedString } from "../../browser/browser-use-helpers";
+import {
+  ensurePluginMentionPromptInit,
+  firstNonEmptyTrimmedString,
+} from "../../browser/browser-use-helpers";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
 import { buildAppUri } from "../../composer/app-plugin-uri";
 import { composerNavigation } from "../../composer/composer-navigation";
@@ -38,13 +77,19 @@ import { deferredConversationP } from "../../conversation/deferred-conversation-
 import { deferredConversationSh } from "../../conversation/deferred-conversation-sh";
 import { ensurePinnedConversationsQueryInit } from "../../conversation/ensure-pinned-conversations-query-init";
 import { findCachedConversationItem } from "../../conversation/find-cached-conversation-item";
-import { setCodexMicroHudOpen, setCodexMicroJoystickOnStore } from "../../desktop/codex-micro-input-state";
+import {
+  setCodexMicroHudOpen,
+  setCodexMicroJoystickOnStore,
+} from "../../desktop/codex-micro-input-state";
 import { ensureCodexMicroJoystickGeometryInit } from "../../desktop/codex-micro-joystick-geometry";
 import { ensureClientCoordinationServiceInit } from "../../desktop/ensure-client-coordination-service-init";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { DEVELOPERS_OPENAI_COM_CODEX_MCP_URL } from "../../docs/codex-doc-urls";
 import { fileExtensionFromPath } from "../../files/file-extension-from-path";
-import { ensureTanstackReactFormApiInit, useTanstackForm } from "../../forms/tanstack-react-form";
+import {
+  ensureTanstackReactFormApiInit,
+  useTanstackForm,
+} from "../../forms/tanstack-react-form";
 import { CONVERSATIONAL_ONBOARDING_COMPLETED_BY_ACCOUNT_ID_KEY } from "../../home/onboarding-storage-keys";
 import { homeDirectoryQueryAtom } from "../../hooks/home-directory-query";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
@@ -53,9 +98,16 @@ import { useDvtBindable } from "../../hooks/use-dvt-bindable";
 import { useEventCallback } from "../../hooks/use-event-callback";
 import { useGateEnabledWithAccountData } from "../../hooks/use-gate-enabled-with-account-data";
 import { useGitRepoLiveQuery } from "../../hooks/use-git-repo-live-query";
-import { ensureUseHomeDirectoryInit, useHomeDirectory, useHomeDirectoryQuery } from "../../hooks/use-home-directory";
+import {
+  ensureUseHomeDirectoryInit,
+  useHomeDirectory,
+  useHomeDirectoryQuery,
+} from "../../hooks/use-home-directory";
 import { useHostWorkspaceRoot } from "../../hooks/use-host-workspace-root";
-import { ensureUseMediaQueryInit, useMediaQuery } from "../../hooks/use-media-query";
+import {
+  ensureUseMediaQueryInit,
+  useMediaQuery,
+} from "../../hooks/use-media-query";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQueryClient } from "../../hooks/use-query-client";
 import { HostFeatureConfigToggles } from "../../hosts/host-feature-config-toggles";
@@ -84,7 +136,11 @@ import { serializeCharacterReferenceNode } from "../../markdown/serialize-charac
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { useBatchWriteMcpServerConfig } from "../../mcp/use-batch-write-mcp-server-config";
 import { usePrefersReducedMotion } from "../../motion/use-prefers-reduced-motion";
-import { findSidebarSectionElement, scrollAppActionTargetTo, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  scrollAppActionTargetTo,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
@@ -102,26 +158,38 @@ import { SettingsCommandMenuSectionItem } from "../../settings/settings-command-
 import { ensureSettingsQueryAtomsInit } from "../../settings/settings-ipc";
 import { useToggleMcpServerEnabledMutation } from "../../settings/use-toggle-mcp-server-enabled-mutation";
 import { collectUniqueMappedPresenceEntries } from "../../shell/collect-unique-mapped-presence-entries";
-import { ensureSkillsPageHelpersInit, usePluginsFeatureEnabled } from "../../skills/skills-page-helpers";
+import {
+  ensureSkillsPageHelpersInit,
+  usePluginsFeatureEnabled,
+} from "../../skills/skills-page-helpers";
 import { usePluginDetailQuery } from "../../skills/use-plugin-detail-query";
 import { AriaIconBadge } from "../../ui/aria-icon-badge";
 import { ChartsPurpleBadge } from "../../ui/charts-purple-badge";
 import { CircularProgressRing } from "../../ui/circular-progress-ring";
 import { codexCommandTheme } from "../../ui/codex-command-theme";
 import { CompoundButtonMenu } from "../../ui/compound-button-menu";
-import { ConnectorLogoStack, ensureConnectorLogoStackInit } from "../../ui/connector-logo-stack";
+import {
+  ConnectorLogoStack,
+  ensureConnectorLogoStackInit,
+} from "../../ui/connector-logo-stack";
 import { ControlGroup, ensureControlGroupInit } from "../../ui/control-group";
 import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { deferredUiZG } from "../../ui/deferred-ui-zg";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ght } from "../../ui/ght";
 import { MenuBorderSeparator } from "../../ui/menu-border-separator";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { SearchableDetailPageLayout } from "../../ui/searchable-detail-page-layout";
 import { StackedCardHeader } from "../../ui/stacked-card-header";
-import { initToolbarBreadcrumb, ToolbarBreadcrumb } from "../../ui/toolbar-breadcrumb";
+import {
+  initToolbarBreadcrumb,
+  ToolbarBreadcrumb,
+} from "../../ui/toolbar-breadcrumb";
 import { coalesceTruthy } from "../../utils/coalesce-truthy";
 import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { countLeadingZeroBits32 } from "../../utils/count-leading-zero-bits-32";
@@ -137,7 +205,11 @@ import { posixPathBasename } from "../../utils/posix-path-basename";
 import { reuseArrayIfShallowEqual } from "../../utils/reuse-array-if-shallow-equal";
 import { sortedArrayFrom } from "../../utils/sorted-array-from";
 import { titleCaseColonSegments } from "../../utils/title-case-colon-segments";
-import { ensureAppMainI9Init, ensurePersonalizationCInit, ensureSettingsGlyphNltInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureAppMainI9Init,
+  ensurePersonalizationCInit,
+  ensureSettingsGlyphNltInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { produce } from "../../vendor/immer";
 import { ensureZodRuntime } from "../../vendor/zod";
@@ -150,7 +222,17 @@ import { isUnavailableKnownConnector } from "../is-unavailable-known-connector";
 import { matchesOptionalHostPluginIds } from "../matches-optional-host-plugin-ids";
 import { normalizeConnectorCatalogId } from "../normalize-connector-catalog-id";
 import { parsePluginProductEventContext } from "../parse-plugin-product-event-context";
-import { ensurePluginDetailPageInit, ManagePluginDetailPage, pluginDetailF, pluginDetailG, pluginDetailH, pluginDetailI, pluginDetailL, pluginDetailM, pluginDetailP } from "../plugin-detail-page";
+import {
+  ensurePluginDetailPageInit,
+  ManagePluginDetailPage,
+  pluginDetailF,
+  pluginDetailG,
+  pluginDetailH,
+  pluginDetailI,
+  pluginDetailL,
+  pluginDetailM,
+  pluginDetailP,
+} from "../plugin-detail-page";
 import { PluginInstallDetailsPanel } from "../plugin-install-details-panel";
 import { pluginInstallIdentityKey } from "../plugin-install-identity-key";
 import { pluginManagePathForCatalogEntry } from "../plugin-manage-path-for-catalog-entry";
@@ -246,154 +328,180 @@ var prism,
       pageLoading: {
         id: "plugins.page.loading",
         defaultMessage: "Loading plugins…",
-        description: "Loading title on the plugins page"
+        description: "Loading title on the plugins page",
       },
       loadErrorTitle: {
         id: "plugins.page.loadError.title",
         defaultMessage: "Failed to load plugins",
-        description: "Title shown when plugins could not be loaded"
+        description: "Title shown when plugins could not be loaded",
       },
       enableToggleTooltip: {
         id: "plugins.card.enableToggleTooltip",
         defaultMessage: "Enable plugin",
-        description: "Tooltip label for enabling a plugin"
+        description: "Tooltip label for enabling a plugin",
       },
       disableToggleTooltip: {
         id: "plugins.card.disableToggleTooltip",
         defaultMessage: "Disable plugin",
-        description: "Tooltip label for disabling a plugin"
+        description: "Tooltip label for disabling a plugin",
       },
       toggleAria: {
         id: "plugins.card.toggleAria",
         defaultMessage: "Toggle plugin enabled state",
-        description: "Accessible label for the plugin enablement toggle"
+        description: "Accessible label for the plugin enablement toggle",
       },
       enabledStatus: {
         id: "plugins.card.enabledStatus",
         defaultMessage: "Plugin enabled",
-        description: "Status label for an installed plugin that is enabled"
+        description: "Status label for an installed plugin that is enabled",
       },
       enableButton: {
         id: "plugins.card.enableButton",
         defaultMessage: "Enable",
-        description: "Button label for enabling a disabled plugin from a plugin card"
+        description:
+          "Button label for enabling a disabled plugin from a plugin card",
       },
       disabledStatus: {
         id: "plugins.card.disabledStatus",
         defaultMessage: "Plugin disabled",
-        description: "Status label for an installed plugin that is disabled"
+        description: "Status label for an installed plugin that is disabled",
       },
       installTooltip: {
         id: "plugins.card.installTooltip",
         defaultMessage: "Install plugin",
-        description: "Tooltip label for installing a plugin"
+        description: "Tooltip label for installing a plugin",
       },
       installLoading: {
         id: "plugins.card.loading",
         defaultMessage: "Loading",
-        description: "Plugin card action while plugin setup is loading"
+        description: "Plugin card action while plugin setup is loading",
       },
       installing: {
         id: "plugins.card.installing",
         defaultMessage: "Installing",
-        description: "Plugin card action while installation is in progress"
+        description: "Plugin card action while installation is in progress",
       },
       uninstalling: {
         id: "plugins.card.uninstalling",
         defaultMessage: "Uninstalling",
-        description: "Plugin card action while uninstall is in progress"
+        description: "Plugin card action while uninstall is in progress",
       },
       unavailableInCurrentContext: {
         id: "plugins.card.unavailableInCurrentContext",
         defaultMessage: "Unavailable in this context",
-        description: "Status label for an installed plugin that cannot be used in the current context"
+        description:
+          "Status label for an installed plugin that cannot be used in the current context",
       },
       disabledByAdmin: {
         id: "plugins.card.disabledByAdmin",
         defaultMessage: "Disabled by admin",
-        description: "Plugin card label when a plugin is disabled by an admin"
+        description: "Plugin card label when a plugin is disabled by an admin",
       },
       disabledInstallTooltip: {
         id: "plugins.card.disabledInstallTooltip",
         defaultMessage: "Access is turned off by your admin",
-        description: "Tooltip shown for the admin-disabled plugin install treatment in the plugins grid."
+        description:
+          "Tooltip shown for the admin-disabled plugin install treatment in the plugins grid.",
       },
       shareMenuItem: {
         id: "plugins.card.shareMenuItem",
         defaultMessage: "Share",
-        description: "Menu item label for sharing a locally editable plugin"
+        description: "Menu item label for sharing a locally editable plugin",
       },
       moreActions: {
         id: "plugins.card.moreActions",
         defaultMessage: "More actions",
-        description: "Aria label for the more actions menu in an installed plugin card"
+        description:
+          "Aria label for the more actions menu in an installed plugin card",
       },
       uninstallMenuItem: {
         id: "plugins.card.uninstallMenuItem",
         defaultMessage: "Uninstall",
-        description: "Menu item label for uninstalling a plugin from a plugin card"
+        description:
+          "Menu item label for uninstalling a plugin from a plugin card",
       },
       installedByAdminAction: {
         id: "plugins.installedByDefault.actionLabel",
         defaultMessage: "Installed by admin",
-        description: "Disabled action label shown for a plugin installed by an admin"
+        description:
+          "Disabled action label shown for a plugin installed by an admin",
       },
       sharedBy: {
         id: "plugins.card.sharedBy",
         defaultMessage: "Shared by {name}",
-        description: "Footer label for the person who shared a plugin"
-      }
+        description: "Footer label for the person who shared a plugin",
+      },
     });
   });
 function topaz(jadeitePrime) {
-  let {
-      forceReloadPlugins,
-      hostId
-    } = jadeitePrime,
+  let { forceReloadPlugins, hostId } = jadeitePrime,
     kernelPrime = CodexPluginActionType(appScopeAtom),
     leafPrime = useIntl();
-  return async maplePrime => {
+  return async (maplePrime) => {
     let nimbusPrime = await indigo({
       forceReloadPlugins,
       onReloadError: ultra,
       params: maplePrime,
-      sendAddMarketplace: opalPrime => canonicalizeWorkspacePathKey("add-marketplace", {
-        hostId,
-        ...opalPrime
-      })
+      sendAddMarketplace: (opalPrime) =>
+        canonicalizeWorkspacePathKey("add-marketplace", {
+          hostId,
+          ...opalPrime,
+        }),
     });
     if (nimbusPrime.kind === "reload-failed") {
-      kernelPrime.get(toastAtom).warning(leafPrime.formatMessage({
-        id: "skills.appsPage.addMarketplace.refreshFailed",
-        defaultMessage: "{marketplaceName} marketplace is configured, but failed to refresh the plugin list",
-        description: "Toast shown after a marketplace add request succeeds but refreshing the plugin list fails"
-      }, {
-        marketplaceName: nimbusPrime.marketplaceName
-      }));
+      kernelPrime.get(toastAtom).warning(
+        leafPrime.formatMessage(
+          {
+            id: "skills.appsPage.addMarketplace.refreshFailed",
+            defaultMessage:
+              "{marketplaceName} marketplace is configured, but failed to refresh the plugin list",
+            description:
+              "Toast shown after a marketplace add request succeeds but refreshing the plugin list fails",
+          },
+          {
+            marketplaceName: nimbusPrime.marketplaceName,
+          },
+        ),
+      );
       return;
     }
-    kernelPrime.get(toastAtom).success(nimbusPrime.alreadyAdded ? leafPrime.formatMessage({
-      id: "skills.appsPage.addMarketplace.alreadyAdded",
-      defaultMessage: "{marketplaceName} is already added",
-      description: "Toast shown after adding a marketplace that was already configured"
-    }, {
-      marketplaceName: nimbusPrime.marketplaceName
-    }) : leafPrime.formatMessage({
-      id: "skills.appsPage.addMarketplace.success",
-      defaultMessage: "{marketplaceName} marketplace added",
-      description: "Toast shown after successfully adding a plugin marketplace"
-    }, {
-      marketplaceName: nimbusPrime.marketplaceName
-    }));
+    kernelPrime.get(toastAtom).success(
+      nimbusPrime.alreadyAdded
+        ? leafPrime.formatMessage(
+            {
+              id: "skills.appsPage.addMarketplace.alreadyAdded",
+              defaultMessage: "{marketplaceName} is already added",
+              description:
+                "Toast shown after adding a marketplace that was already configured",
+            },
+            {
+              marketplaceName: nimbusPrime.marketplaceName,
+            },
+          )
+        : leafPrime.formatMessage(
+            {
+              id: "skills.appsPage.addMarketplace.success",
+              defaultMessage: "{marketplaceName} marketplace added",
+              description:
+                "Toast shown after successfully adding a plugin marketplace",
+            },
+            {
+              marketplaceName: nimbusPrime.marketplaceName,
+            },
+          ),
+    );
   };
 }
 function ultra(plumePrime) {
-  appActionSidebarProjectRefSchema.error("Failed to refresh plugins after adding marketplace", {
-    safe: {},
-    sensitive: {
-      error: plumePrime
-    }
-  });
+  appActionSidebarProjectRefSchema.error(
+    "Failed to refresh plugins after adding marketplace",
+    {
+      safe: {},
+      sensitive: {
+        error: plumePrime,
+      },
+    },
+  );
 }
 var vapor,
   wheat = esmInit(() => {
@@ -407,153 +515,149 @@ var vapor,
     jade();
   });
 function yarn(quillowPrime) {
-  let {
-      hostId,
-      tab
-    } = quillowPrime,
+  let { hostId, tab } = quillowPrime,
     rootPrime = hostId === undefined ? LOCAL_HOST_ID : hostId,
     silkPrime = useIntl(),
     thornPrime = useHomeDirectory(rootPrime),
-    {
-      availablePlugins,
-      featuredPluginIds
-    } = matchesOptionalHostPluginIds(rootPrime),
+    { availablePlugins, featuredPluginIds } =
+      matchesOptionalHostPluginIds(rootPrime),
     uplandPrime = NativeContextMenuSurface("1269116100"),
     vistaPrime = NativeContextMenuSurface("4218407052"),
-    {
-      value
-    } = ensureSettingsGlyphNltInit("2817990312"),
+    { value } = ensureSettingsGlyphNltInit("2817990312"),
     wispPrime = violet(value),
-    {
-      value: _value
-    } = ensureSettingsGlyphNltInit("1349514884"),
-    {
-      hiddenPluginIds
-    } = yellow(_value),
+    { value: _value } = ensureSettingsGlyphNltInit("1349514884"),
+    { hiddenPluginIds } = yellow(_value),
     yonderPrime = tab === "personal" && uplandPrime,
     zenithPrime = {
       enabled: yonderPrime,
       hostId: rootPrime,
-      marketplaceKind: "shared-with-me"
+      marketplaceKind: "shared-with-me",
     };
-  let {
-      data: anvilPrime
-    } = AppInitialMK(zenithPrime),
+  let { data: anvilPrime } = AppInitialMK(zenithPrime),
     beaconPrime = tab === "workspace" && uplandPrime,
     cragPrime = {
       enabled: beaconPrime,
       hostId: rootPrime,
-      marketplaceKind: "workspace-directory"
+      marketplaceKind: "workspace-directory",
     };
-  let {
-      data
-    } = AppInitialMK(cragPrime),
+  let { data } = AppInitialMK(cragPrime),
     domePrime = tab === "personal" && vistaPrime,
     eddyPrime = {
       enabled: domePrime,
       hostId: rootPrime,
-      marketplaceKind: "created-by-me-remote"
+      marketplaceKind: "created-by-me-remote",
     };
-  let {
-      data: _data
-    } = AppInitialMK(eddyPrime),
+  let { data: _data } = AppInitialMK(eddyPrime),
     fjordPrime = tab === "personal" && uplandPrime,
     glenPrime = {
       enabled: fjordPrime,
-      hostId: rootPrime
+      hostId: rootPrime,
     };
-  let {
-      data: __data
-    } = ManagePluginDetailPage(glenPrime),
-    hearthPrime = SettingsCommandMenuSectionItem(availablePlugins, hiddenPluginIds),
-    inletPrime = SettingsCommandMenuSectionItem(anvilPrime ?? [], hiddenPluginIds),
+  let { data: __data } = ManagePluginDetailPage(glenPrime),
+    hearthPrime = SettingsCommandMenuSectionItem(
+      availablePlugins,
+      hiddenPluginIds,
+    ),
+    inletPrime = SettingsCommandMenuSectionItem(
+      anvilPrime ?? [],
+      hiddenPluginIds,
+    ),
     jettyPrime = SettingsCommandMenuSectionItem(data ?? [], hiddenPluginIds),
     knobPrime = SettingsCommandMenuSectionItem(_data ?? [], hiddenPluginIds),
-    ledgePrime = __data == null ? null : SettingsCommandMenuSectionItem(__data, hiddenPluginIds),
+    ledgePrime =
+      __data == null
+        ? null
+        : SettingsCommandMenuSectionItem(__data, hiddenPluginIds),
     mirePrime = AppInitialVw(hearthPrime),
     nookPrime = AppInitialVw(inletPrime).filter(acorn),
     oxbowPrime = AppInitialVw(jettyPrime),
-    {
-      marketplaceFilterValue,
-      plugins
-    } = AppInitialFw({
+    { marketplaceFilterValue, plugins } = AppInitialFw({
       availablePlugins: hearthPrime,
       createdByMeRemotePlugins: knobPrime,
       homeDirectory: thornPrime,
       pluginShares: ledgePrime,
-      storefrontPlugins: mirePrime
+      storefrontPlugins: mirePrime,
     });
   switch (tab) {
     case "openai":
-      return bloom(AppInitialW({
-        categoryOrder: wispPrime.categoryIds,
-        categorySections: wispPrime.sections,
-        collapsedCategoryIds: wispPrime.collapsedCategoryIds,
-        connectedPlugins: [],
-        featuredPluginIds,
-        plugins: mirePrime.filter(pluginShareStandaloneAction)
-      }));
+      return bloom(
+        AppInitialW({
+          categoryOrder: wispPrime.categoryIds,
+          categorySections: wispPrime.sections,
+          collapsedCategoryIds: wispPrime.collapsedCategoryIds,
+          connectedPlugins: [],
+          featuredPluginIds,
+          plugins: mirePrime.filter(pluginShareStandaloneAction),
+        }),
+      );
     case "workspace":
-      return bloom(AppInitialW({
-        connectedPlugins: [],
-        plugins: oxbowPrime
-      }));
-    case "personal":
-      {
-        let pondPrime = mirePrime.filter(item => !pluginShareStandaloneAction(item) && (marketplaceFilterValue == null || useComputerUseGate(item) !== marketplaceFilterValue));
-        return [{
+      return bloom(
+        AppInitialW({
+          connectedPlugins: [],
+          plugins: oxbowPrime,
+        }),
+      );
+    case "personal": {
+      let pondPrime = mirePrime.filter(
+        (item) =>
+          !pluginShareStandaloneAction(item) &&
+          (marketplaceFilterValue == null ||
+            useComputerUseGate(item) !== marketplaceFilterValue),
+      );
+      return [
+        {
           id: "plugins-created-by-you",
           title: silkPrime.formatMessage({
             id: "skills.appsPage.section.createdByYou",
             defaultMessage: "Created by you",
-            description: "Heading for plugins created by the current user"
+            description: "Heading for plugins created by the current user",
           }),
           plugins: setCodexMicroJoystickOnStore({
             plugins,
-            query: ""
-          })
-        }, {
+            query: "",
+          }),
+        },
+        {
           id: "plugins-shared-with-you",
           title: silkPrime.formatMessage({
             id: "skills.appsPage.section.sharedWithYou",
             defaultMessage: "Shared with you",
-            description: "Heading for plugins shared with the current user"
+            description: "Heading for plugins shared with the current user",
           }),
           plugins: setCodexMicroJoystickOnStore({
             plugins: nookPrime,
-            query: ""
-          })
-        }, ...ensureCodexMicroJoystickGeometryInit(pondPrime).map(item => ({
+            query: "",
+          }),
+        },
+        ...ensureCodexMicroJoystickGeometryInit(pondPrime).map((item) => ({
           id: `plugins-marketplace-${encodeURIComponent(item.value)}`,
-          title: item.subLabel == null ? item.label : `${item.label} · ${item.subLabel}`,
+          title:
+            item.subLabel == null
+              ? item.label
+              : `${item.label} · ${item.subLabel}`,
           plugins: setCodexMicroJoystickOnStore({
             marketplaceFilterValue: item.value,
             plugins: pondPrime,
-            query: ""
-          })
-        }))].filter(zephyr);
-      }
+            query: "",
+          }),
+        })),
+      ].filter(zephyr);
+    }
   }
 }
 function zephyr(quarryPrime) {
-  let {
-    plugins
-  } = quarryPrime;
+  let { plugins } = quarryPrime;
   return plugins.length > 0;
 }
 function acorn(rapidsPrime) {
   return rapidsPrime.remoteMarketplaceName === drift;
 }
 function bloom(spurPrime) {
-  return spurPrime.map(({
-    plugins,
-    section,
-    visibleItemLimit
-  }) => ({
+  return spurPrime.map(({ plugins, section, visibleItemLimit }) => ({
     id: section.id,
     title: section.title,
     plugins,
-    visibleItemLimit
+    visibleItemLimit,
   }));
 }
 var coral,

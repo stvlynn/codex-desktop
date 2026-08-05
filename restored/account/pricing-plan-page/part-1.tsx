@@ -23,7 +23,10 @@ import {
   ensureComposerEsm_Tft_Init,
   ensureComposerEsm_Utt_Init,
 } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import {
   Navigate,
   useLocation,
@@ -50,7 +53,10 @@ import { installModalBrowserExtensionMessages } from "../../plugins/install-moda
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import { ensureSettingsQueryAtomsInit } from "../../settings/settings-ipc";
 import { ensureSkillsPageHelpersInit } from "../../skills/skills-page-helpers";
-import { formatPlanPriceParts, initPlanPricing } from "../../utils/plan-pricing";
+import {
+  formatPlanPriceParts,
+  initPlanPricing,
+} from "../../utils/plan-pricing";
 import { reuseArrayIfShallowEqual } from "../../utils/reuse-array-if-shallow-equal";
 import { ChatGptPlanId, ensureChatGptPlanIdInit } from "../chatgpt-plan-ids";
 import { validateCreditTargetAgainstMinimum } from "../credit-auto-reload-validators";

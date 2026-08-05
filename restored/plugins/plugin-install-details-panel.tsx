@@ -19,7 +19,9 @@ export type PluginInstallDetailsPanelPeers = {
 let peers: PluginInstallDetailsPanelPeers | null = null;
 
 /** Wire PluginInstallDetailsPanel peers once companions land. */
-export function setPluginInstallDetailsPanelPeers(next: PluginInstallDetailsPanelPeers): void {
+export function setPluginInstallDetailsPanelPeers(
+  next: PluginInstallDetailsPanelPeers,
+): void {
   peers = next;
 }
 

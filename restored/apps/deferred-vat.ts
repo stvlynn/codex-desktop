@@ -24,6 +24,6 @@ export function deferredVat() {
   }
 
   return peers.e(() => {
-    peers.ov(), peers.lv(), bNt = Symbol(`implicit`);
+    (peers.ov(), peers.lv(), (bNt = Symbol(`implicit`)));
   });
 }

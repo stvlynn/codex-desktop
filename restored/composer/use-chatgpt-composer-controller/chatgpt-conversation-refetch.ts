@@ -10,12 +10,12 @@ import {
 import { chatgptMessageFallbackId as _appInitialIF } from "../../conversation/chatgpt-message-fallback-id";
 import { appLogger as appInitialDdt } from "../../logging/app-logger";
 
-export function useChatgptComposerControllerHelper16(request3043: any, request3044: any, request3045: any) {
-  let slot8169 =
-    request3043.get(
-      appInitialGP,
-      request3044,
-    );
+export function useChatgptComposerControllerHelper16(
+  request3043: any,
+  request3044: any,
+  request3045: any,
+) {
+  let slot8169 = request3043.get(appInitialGP, request3044);
   return (
     appInitialDdt.info("chatgpt_conversation_refetch_started", {
       safe: {
@@ -33,29 +33,16 @@ export function useChatgptComposerControllerHelper16(request3043: any, request30
         _appInitialIF(request3043, value, {
           mergeActiveBranch: true,
         });
-        let slot10892 =
-          request3043.get(
-            appInitialBP,
-            request3044,
-          );
+        let slot10892 = request3043.get(appInitialBP, request3044);
         appInitialDdt.info("chatgpt_conversation_refetch_completed", {
           safe: {
             asyncStatus: value.async_status ?? null,
             currentNodeApplied:
-              request3043.get(
-                appInitialRP,
-                request3044,
-              ) === value.current_node,
-            mappingSize:
-              slot10892 == null
-                ? 0
-                : Object.keys(slot10892).length,
+              request3043.get(appInitialRP, request3044) === value.current_node,
+            mappingSize: slot10892 == null ? 0 : Object.keys(slot10892).length,
             reason: request3045,
             snapshotMappingSize: Object.keys(value.mapping).length,
-            statusAfter: request3043.get(
-              appInitialGP,
-              request3044,
-            ),
+            statusAfter: request3043.get(appInitialGP, request3044),
             statusBefore: slot8169,
           },
           sensitive: {

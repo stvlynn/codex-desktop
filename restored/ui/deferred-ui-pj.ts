@@ -22,16 +22,15 @@ export function bindDeferredUiPJ() {
     throw new Error("bindDeferredUiPJ peers are not configured");
   }
 
-  return peers.Ma(peers.GM, ({
-    get: e,
-    scope: t
-  }) => {
+  return peers.Ma(peers.GM, ({ get: e, scope: t }) => {
     switch (t.value.kind) {
       case `local`:
-        return t.value.conversationId == null ? void 0 : {
-          type: `local`,
-          localConversationId: t.value.conversationId
-        };
+        return t.value.conversationId == null
+          ? void 0
+          : {
+              type: `local`,
+              localConversationId: t.value.conversationId,
+            };
       case `cloud`:
         return e(peers.D$r);
       case `chatgpt`:

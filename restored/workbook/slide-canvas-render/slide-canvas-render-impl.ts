@@ -4,12 +4,8 @@
 
 import { layoutTableFrame } from "../table-frame-layout";
 import { paintChartElement } from "../chart-paint";
-import {
-  resolvePlaceholderTextStyle,
-} from "../text-style";
-import {
-  resolveMasterParagraphDefaults,
-} from "../text-box";
+import { resolvePlaceholderTextStyle } from "../text-style";
+import { resolveMasterParagraphDefaults } from "../text-box";
 import { resolveShapeTextFrameRect } from "../preset-shape";
 import { scrH } from "./boundary-hooks";
 import { paintViewOverlay } from "./paint-view-overlay-impl";
@@ -26,7 +22,19 @@ void resolveShapeTextFrameRect;
 void scrH;
 void paintSlideBackground;
 
-export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: any, scrIn168: any, scrIn169: any, scrIn170: any, scrIn171: any, scrIn172: any, scrIn173: any, scrIn174: any, scrIn175: any, ) {
+export async function renderSlideCanvas(
+  scrIn165: any,
+  scrIn166: any,
+  scrIn167: any,
+  scrIn168: any,
+  scrIn169: any,
+  scrIn170: any,
+  scrIn171: any,
+  scrIn172: any,
+  scrIn173: any,
+  scrIn174: any,
+  scrIn175: any,
+) {
   let scrBind2965 = scrIn165.resolveRenderContext(),
     { themeMap } = scrBind2965,
     scrBind2966 = scrIn165.frame.width,
@@ -50,10 +58,7 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
     ),
     scrBind2965.usesBackgroundFill)
   ) {
-    let scrBind20393 = scrIn167.createPattern(
-      scrIn167.canvas,
-      "no-repeat",
-    );
+    let scrBind20393 = scrIn167.createPattern(scrIn167.canvas, "no-repeat");
     if (!scrBind20393)
       throw Error("Unable to create a slide-background fill pattern.");
     scrBind2968 = scrBind20393;
@@ -72,10 +77,8 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
     scrBind3094 < scrBind2965.drawElements.length;
     scrBind3094 += 1
   ) {
-    let scrBind3114 =
-        scrBind2965.drawElements[scrBind3094],
-      scrBind3115 =
-        scrBind2965.drawElementProtos[scrBind3094];
+    let scrBind3114 = scrBind2965.drawElements[scrBind3094],
+      scrBind3115 = scrBind2965.drawElementProtos[scrBind3094];
     if (!scrBind3115)
       throw Error(
         `Missing presentation render proto for element ${scrBind3114.id}.`,
@@ -84,9 +87,7 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
       if (
         (await scrH.warmSlideImages(scrBind3114, scrIn167, themeMap, {
           inheritedMaskSource:
-            scrBind2965.drawElementInheritedMaskSources[
-              scrBind3094
-            ],
+            scrBind2965.drawElementInheritedMaskSources[scrBind3094],
         }),
         scrIn168 && scrBind3114.hyperlink)
       ) {
@@ -131,25 +132,20 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
       scrBind3114.type === "table")
     ) {
       let scrBind9085 = scrBind3115,
-        scrBind9086 = layoutTableFrame(
-          scrBind9085,
-          scrIn167,
-          themeMap,
-          {
-            resolvedStyle: resolvePlaceholderTextStyle(
-              scrBind9085,
-              scrIn166,
-              scrIn165,
-            ),
-            masterDefaults: resolveMasterParagraphDefaults(
-              scrBind9085,
-              scrIn166,
-              scrIn165,
-            ),
-            autoRowMinimumHeightPx: 0,
-            explicitRowHeightBehavior: "atLeast",
-          },
-        );
+        scrBind9086 = layoutTableFrame(scrBind9085, scrIn167, themeMap, {
+          resolvedStyle: resolvePlaceholderTextStyle(
+            scrBind9085,
+            scrIn166,
+            scrIn165,
+          ),
+          masterDefaults: resolveMasterParagraphDefaults(
+            scrBind9085,
+            scrIn166,
+            scrIn165,
+          ),
+          autoRowMinimumHeightPx: 0,
+          explicitRowHeightBehavior: "atLeast",
+        });
       if (scrBind9086 && scrIn174)
         for (let scrBind11427 of scrBind9086.cellLayouts ?? [])
           scrBind11427.cellId &&
@@ -165,23 +161,16 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
                 height: scrBind11427.heightPx,
               },
               getRunText: (scrIn10087, scrIn10088) =>
-                scrBind9085.table?.rows?.[scrBind11427.row]
-                  ?.cells?.[scrBind11427.col]?.paragraphs?.[
-                  scrIn10087
-                ]?.runs?.[scrIn10088]?.text ?? "",
+                scrBind9085.table?.rows?.[scrBind11427.row]?.cells?.[
+                  scrBind11427.col
+                ]?.paragraphs?.[scrIn10087]?.runs?.[scrIn10088]?.text ?? "",
             });
     }
     if (
       (scrBind3114.type === "embeddedArtifact" &&
         scrH.paintSlideShape(scrBind3114, scrIn167),
       scrBind3114.type === "smartArt" &&
-        paintSlideText(
-          scrBind3114,
-          scrIn167,
-          scrIn166,
-          scrIn165,
-          themeMap,
-        ),
+        paintSlideText(scrBind3114, scrIn167, scrIn166, scrIn165, themeMap),
       scrBind3114.type === "shape")
     ) {
       let scrBind6786;
@@ -189,66 +178,44 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
         (scrBind2965.masterElements.includes(scrBind3114)
           ? (scrBind2970 === undefined &&
               scrBind2965.masterLayout !== undefined &&
-              (scrBind2970 =
-                scrBind2965.masterLayout.elements.map((item) =>
-                  item.toProto(),
-                )),
+              (scrBind2970 = scrBind2965.masterLayout.elements.map((item) =>
+                item.toProto(),
+              )),
             (scrBind6786 = scrBind2970))
           : scrBind2965.layoutElements.includes(scrBind3114) &&
             (scrBind2971 === undefined &&
               scrBind2965.layout !== undefined &&
-              (scrBind2971 = scrBind2965.layout.elements.map(
-                (item) => item.toProto(),
+              (scrBind2971 = scrBind2965.layout.elements.map((item) =>
+                item.toProto(),
               )),
             (scrBind6786 = scrBind2971)));
-      let scrBind6787 =
-        scrBind2965.drawElementShapeRenderSources[scrBind3094];
+      let scrBind6787 = scrBind2965.drawElementShapeRenderSources[scrBind3094];
       if (scrBind6787) {
         let { source, pictureFillSource } = scrBind6787;
         scrBind3118 = source;
         let scrBind14450;
         source.useBackgroundFill ||
-          (scrBind14450 = await scrH.bh654(
-            pictureFillSource,
-            scrIn166,
-          ));
-        scrH.bh615(
-          scrBind3114,
-          scrIn167,
-          scrIn166,
-          scrIn165,
-          themeMap,
-          {
-            frame: scrBind3116,
-            backgroundFillPaint: scrBind2968,
-            pictureFillBitmap: scrBind14450,
-            pictureFill: pictureFillSource.fill,
-            source,
-            connectorRouteElements: scrBind6786,
-          },
-        );
+          (scrBind14450 = await scrH.bh654(pictureFillSource, scrIn166));
+        scrH.bh615(scrBind3114, scrIn167, scrIn166, scrIn165, themeMap, {
+          frame: scrBind3116,
+          backgroundFillPaint: scrBind2968,
+          pictureFillBitmap: scrBind14450,
+          pictureFill: pictureFillSource.fill,
+          source,
+          connectorRouteElements: scrBind6786,
+        });
       } else {
         scrBind3118 = scrBind3114.renderStyleData;
         let scrBind15689;
         scrBind3114.useBackgroundFill ||
-          (scrBind15689 = await scrH.bh654(
-            scrBind3114,
-            scrIn166,
-          ));
-        scrH.bh615(
-          scrBind3114,
-          scrIn167,
-          scrIn166,
-          scrIn165,
-          themeMap,
-          {
-            frame: scrBind3116,
-            backgroundFillPaint: scrBind2968,
-            pictureFillBitmap: scrBind15689,
-            pictureFill: scrBind3114.fill,
-            connectorRouteElements: scrBind6786,
-          },
-        );
+          (scrBind15689 = await scrH.bh654(scrBind3114, scrIn166));
+        scrH.bh615(scrBind3114, scrIn167, scrIn166, scrIn165, themeMap, {
+          frame: scrBind3116,
+          backgroundFillPaint: scrBind2968,
+          pictureFillBitmap: scrBind15689,
+          pictureFill: scrBind3114.fill,
+          connectorRouteElements: scrBind6786,
+        });
       }
     }
     if (scrBind3114.paragraphs.length > 0) {
@@ -263,14 +230,9 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
           scrIn166,
           scrIn165,
         ),
-        scrBind7392 =
-          scrBind7391?.wrap !== br.TEXT_WRAPPING_TYPE_NONE,
-        scrBind7393 =
-          scrBind7391?.autoFit?.normalAutoFit?.fontScale,
-        scrBind7394 =
-          typeof scrBind7393 == "number"
-            ? scrBind7393 / 1e5
-            : 1,
+        scrBind7392 = scrBind7391?.wrap !== br.TEXT_WRAPPING_TYPE_NONE,
+        scrBind7393 = scrBind7391?.autoFit?.normalAutoFit?.fontScale,
+        scrBind7394 = typeof scrBind7393 == "number" ? scrBind7393 / 1e5 : 1,
         scrBind7395 = await scrH.paintSlideGroup(
           scrBind7389,
           scrIn166,
@@ -279,24 +241,18 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
         scrBind7396 = scrH.paintSlideImage(scrIn167, scrBind3116),
         scrBind7397;
       try {
-        scrBind7397 = workbookX(
-          scrBind7389,
-          scrIn167,
-          themeMap,
-          scrIn168,
-          {
-            resolvedStyle: scrBind7391,
-            masterDefaults: resolveMasterParagraphDefaults(
-              scrBind7389,
-              scrIn166,
-              scrIn165,
-            ),
-            bboxPx: scrBind7390,
-            wrap: scrBind7392,
-            textScale: scrBind7394,
-            pictureFillBitmaps: scrBind7395,
-          },
-        );
+        scrBind7397 = workbookX(scrBind7389, scrIn167, themeMap, scrIn168, {
+          resolvedStyle: scrBind7391,
+          masterDefaults: resolveMasterParagraphDefaults(
+            scrBind7389,
+            scrIn166,
+            scrIn165,
+          ),
+          bboxPx: scrBind7390,
+          wrap: scrBind7392,
+          textScale: scrBind7394,
+          pictureFillBitmaps: scrBind7395,
+        });
       } finally {
         scrBind7396 && scrIn167.restore();
       }
@@ -309,8 +265,7 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
           id: scrBind12588,
           layout: scrBind7397,
           rotationDeg:
-            (scrBind3116.rotation ?? 0) +
-            (scrBind7391?.rotation ?? 0),
+            (scrBind3116.rotation ?? 0) + (scrBind7391?.rotation ?? 0),
           zIndex: scrBind7389.zIndex ?? 0,
           hitBox: {
             x: scrBind7390.x,
@@ -319,9 +274,8 @@ export async function renderSlideCanvas(scrIn165: any, scrIn166: any, scrIn167: 
             height: scrBind7390.height,
           },
           getRunText: (scrIn14819, scrIn14820) =>
-            scrBind7389.paragraphs?.[scrIn14819]?.runs?.[
-              scrIn14820
-            ]?.text ?? "",
+            scrBind7389.paragraphs?.[scrIn14819]?.runs?.[scrIn14820]?.text ??
+            "",
         });
       }
     }

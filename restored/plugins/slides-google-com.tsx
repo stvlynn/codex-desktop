@@ -9,7 +9,9 @@ export type BindBindSlidesGoogleComPeers = {
 let peers: BindBindSlidesGoogleComPeers | null = null;
 
 /** Wire bindBindSlidesGoogleCom peers once companions land. */
-export function setBindBindSlidesGoogleComPeers(next: BindBindSlidesGoogleComPeers): void {
+export function setBindBindSlidesGoogleComPeers(
+  next: BindBindSlidesGoogleComPeers,
+): void {
   peers = next;
 }
 

@@ -8,7 +8,9 @@ import {
 import { slugifyConnectorToken } from "./slugify-connector-token";
 
 /** Resolve a connector icon catalog key from a raw / slug token. */
-export function connectorIconKeyFromSlug(token: string): ConnectorIconKey | null {
+export function connectorIconKeyFromSlug(
+  token: string,
+): ConnectorIconKey | null {
   const stripped = token.replace(/^connector-/u, "");
   const candidates = [token, stripped, stripped.replace(/-mcp-server$/u, "")];
   for (const candidate of candidates) {
@@ -20,6 +22,8 @@ export function connectorIconKeyFromSlug(token: string): ConnectorIconKey | null
 }
 
 /** `dei` / `zG`: slugify then look up. */
-export function connectorIconKeyFromToken(token: string): ConnectorIconKey | null {
+export function connectorIconKeyFromToken(
+  token: string,
+): ConnectorIconKey | null {
   return connectorIconKeyFromSlug(slugifyConnectorToken(token));
 }

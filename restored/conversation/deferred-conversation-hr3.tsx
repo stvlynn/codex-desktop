@@ -16,7 +16,9 @@ export type BindDeferredConversationHr3Peers = {
 let peers: BindDeferredConversationHr3Peers | null = null;
 
 /** Wire bindDeferredConversationHr3 peers once companions land. */
-export function setBindDeferredConversationHr3Peers(next: BindDeferredConversationHr3Peers): void {
+export function setBindDeferredConversationHr3Peers(
+  next: BindDeferredConversationHr3Peers,
+): void {
   peers = next;
 }
 
@@ -28,14 +30,14 @@ export function bindDeferredConversationHr3() {
     throw new Error("bindDeferredConversationHr3 peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => peers.R8l({
-    hasConversation: t(peers.iD, e),
-    hostId: t(peers.rD, e),
-    latestTurnId: t(peers.Xnr, e),
-    latestTurnStatus: t(peers.Znr, e),
-    pendingRequestType: t(peers.z8l, e),
-    resumeState: t(peers.hD, e)
-  }));
+  return peers.Oa(peers.Q, (e, { get: t }) =>
+    peers.R8l({
+      hasConversation: t(peers.iD, e),
+      hostId: t(peers.rD, e),
+      latestTurnId: t(peers.Xnr, e),
+      latestTurnStatus: t(peers.Znr, e),
+      pendingRequestType: t(peers.z8l, e),
+      resumeState: t(peers.hD, e),
+    }),
+  );
 }

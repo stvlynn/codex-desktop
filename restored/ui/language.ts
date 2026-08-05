@@ -25,6 +25,6 @@ export function language() {
   }
 
   return peers.e(() => {
-    peers.mHi(), peers.Nqr(), peers.hxo(), peers.p1o();
+    (peers.mHi(), peers.Nqr(), peers.hxo(), peers.p1o());
   });
 }

@@ -12,7 +12,9 @@ export type BindBindSubAgentThreadSpawnPeers = {
 let peers: BindBindSubAgentThreadSpawnPeers | null = null;
 
 /** Wire bindBindSubAgentThreadSpawn peers once companions land. */
-export function setBindBindSubAgentThreadSpawnPeers(next: BindBindSubAgentThreadSpawnPeers): void {
+export function setBindBindSubAgentThreadSpawnPeers(
+  next: BindBindSubAgentThreadSpawnPeers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,9 @@ export function bindBindSubAgentThreadSpawn() {
   }
 
   return peers.e(() => {
-    DDe = [], ODe = [`subAgentThreadSpawn`], kDe = `composer_link`, ADe = `pull_request_fix_automation`;
+    ((DDe = []),
+      (ODe = [`subAgentThreadSpawn`]),
+      (kDe = `composer_link`),
+      (ADe = `pull_request_fix_automation`));
   });
 }

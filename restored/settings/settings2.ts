@@ -30,6 +30,12 @@ export function bindSettings2() {
   }
 
   return peers.e(() => {
-    g2l = peers.c(), peers.sd(), peers.Ho(), peers.QWr(), peers.$D(), peers.YIr(), S7 = peers.J();
+    ((g2l = peers.c()),
+      peers.sd(),
+      peers.Ho(),
+      peers.QWr(),
+      peers.$D(),
+      peers.YIr(),
+      (S7 = peers.J()));
   });
 }

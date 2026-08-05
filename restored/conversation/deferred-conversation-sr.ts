@@ -10,7 +10,9 @@ export type DeferredConversationSrPeers = {
 let peers: DeferredConversationSrPeers | null = null;
 
 /** Wire deferredConversationSr peers once companions land. */
-export function setDeferredConversationSrPeers(next: DeferredConversationSrPeers): void {
+export function setDeferredConversationSrPeers(
+  next: DeferredConversationSrPeers,
+): void {
   peers = next;
 }
 
@@ -23,6 +25,6 @@ export function deferredConversationSr() {
   }
 
   return peers.e(() => {
-    wnu = `3026692602`, Tnu = `3502101112`;
+    ((wnu = `3026692602`), (Tnu = `3502101112`));
   });
 }

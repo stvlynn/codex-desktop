@@ -29,26 +29,37 @@ export function bindCard() {
   }
 
   return peers.e(() => {
-    peers.Sl(), TTe = `remote_control_enrollment_account_mismatch`, peers.sl({
-      accountUserId: peers.X(),
-      algorithm: peers.ml(`ecdsa_p256_sha256`),
-      clientId: peers.X(),
-      keyId: peers.X(),
-      protectionClass: peers.pl([`hardware_secure_enclave`, `hardware_tpm`, `os_protected_nonextractable`]),
-      publicKeySpkiDerBase64: peers.X()
-    }), peers.sl({
-      iat: peers.rl(),
-      pwd_auth_time: peers.rl(),
-      scope: peers.X().optional(),
-      scp: peers.ol(peers.X()).optional(),
-      "https://api.openai.com/auth": peers.sl({
-        amr: peers.ol(peers.X()).optional(),
-        account_id: peers.X().optional(),
-        chatgpt_account_user_id: peers.X().optional(),
-        chatgpt_account_id: peers.X().optional(),
-        account_user_id: peers.X().optional(),
-        user_id: peers.X().optional()
-      }).passthrough()
-    }).passthrough();
+    (peers.Sl(),
+      (TTe = `remote_control_enrollment_account_mismatch`),
+      peers.sl({
+        accountUserId: peers.X(),
+        algorithm: peers.ml(`ecdsa_p256_sha256`),
+        clientId: peers.X(),
+        keyId: peers.X(),
+        protectionClass: peers.pl([
+          `hardware_secure_enclave`,
+          `hardware_tpm`,
+          `os_protected_nonextractable`,
+        ]),
+        publicKeySpkiDerBase64: peers.X(),
+      }),
+      peers
+        .sl({
+          iat: peers.rl(),
+          pwd_auth_time: peers.rl(),
+          scope: peers.X().optional(),
+          scp: peers.ol(peers.X()).optional(),
+          "https://api.openai.com/auth": peers
+            .sl({
+              amr: peers.ol(peers.X()).optional(),
+              account_id: peers.X().optional(),
+              chatgpt_account_user_id: peers.X().optional(),
+              chatgpt_account_id: peers.X().optional(),
+              account_user_id: peers.X().optional(),
+              user_id: peers.X().optional(),
+            })
+            .passthrough(),
+        })
+        .passthrough());
   });
 }

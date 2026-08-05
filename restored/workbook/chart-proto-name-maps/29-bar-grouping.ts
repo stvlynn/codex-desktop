@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Yn as _presentationYn,
-} from "../presentation-protobuf";
+import { Yn as _presentationYn } from "../presentation-protobuf";
 
 export const barGroupingNameToProto = {
   clustered: _presentationYn.BAR_GROUPING_CLUSTERED,

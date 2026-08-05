@@ -30,7 +30,9 @@ export type BindBindAutoReviewApprovalNudgePeers = {
 let peers: BindBindAutoReviewApprovalNudgePeers | null = null;
 
 /** Wire bindBindAutoReviewApprovalNudge peers once companions land. */
-export function setBindBindAutoReviewApprovalNudgePeers(next: BindBindAutoReviewApprovalNudgePeers): void {
+export function setBindBindAutoReviewApprovalNudgePeers(
+  next: BindBindAutoReviewApprovalNudgePeers,
+): void {
   peers = next;
 }
 
@@ -43,10 +45,26 @@ export function bindBindAutoReviewApprovalNudge() {
   }
 
   return peers.e(() => {
-    peers.Hb(), peers.Ho(), peers.Sl(), peers.Vf(), peers.nUn(), peers.Kb(), peers.ed(), peers.Im(), VSs = `994057110`, HSs = peers.Ma(peers.Q, ({
-      get: e
-    }) => peers.e(peers.Iw).filter(t => peers.e(peers.Lw, t)?.type === `autoReviewApprovalNudge`)), USs = peers.sl({
-      manual_approval_threshold: peers.rl().int().positive()
-    }), WSs = peers.Pm(`auto-review-approval-nudge-dismissed-v1`, !1), GSs = peers.Da(peers.Q, e => 0);
+    (peers.Hb(),
+      peers.Ho(),
+      peers.Sl(),
+      peers.Vf(),
+      peers.nUn(),
+      peers.Kb(),
+      peers.ed(),
+      peers.Im(),
+      (VSs = `994057110`),
+      (HSs = peers.Ma(peers.Q, ({ get: e }) =>
+        peers
+          .e(peers.Iw)
+          .filter(
+            (t) => peers.e(peers.Lw, t)?.type === `autoReviewApprovalNudge`,
+          ),
+      )),
+      (USs = peers.sl({
+        manual_approval_threshold: peers.rl().int().positive(),
+      })),
+      (WSs = peers.Pm(`auto-review-approval-nudge-dismissed-v1`, !1)),
+      (GSs = peers.Da(peers.Q, (e) => 0)));
   });
 }

@@ -17,7 +17,9 @@ export type BindThreadArchiveHistoryRedoErrorPeers = {
 let peers: BindThreadArchiveHistoryRedoErrorPeers | null = null;
 
 /** Wire bindThreadArchiveHistoryRedoError peers once companions land. */
-export function setBindThreadArchiveHistoryRedoErrorPeers(next: BindThreadArchiveHistoryRedoErrorPeers): void {
+export function setBindThreadArchiveHistoryRedoErrorPeers(
+  next: BindThreadArchiveHistoryRedoErrorPeers,
+): void {
   peers = next;
 }
 
@@ -26,10 +28,20 @@ export function setBindThreadArchiveHistoryRedoErrorPeers(next: BindThreadArchiv
  */
 export function bindThreadArchiveHistoryRedoError() {
   if (peers == null) {
-    throw new Error("bindThreadArchiveHistoryRedoError peers are not configured");
+    throw new Error(
+      "bindThreadArchiveHistoryRedoError peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Au(), peers.ASo(), peers.IA(), peers.oT(), peers.NSo(), peers.ZA(), peers.HA(), peers.TK(), peers.Gf();
+    (peers.Au(),
+      peers.ASo(),
+      peers.IA(),
+      peers.oT(),
+      peers.NSo(),
+      peers.ZA(),
+      peers.HA(),
+      peers.TK(),
+      peers.Gf());
   });
 }

@@ -10,7 +10,10 @@ export type WorkspaceBindingTarget = {
 };
 
 /** Bundle `uRi` — true when two workspace targets refer to the same place. */
-export function workspaceBindingTargetsMatch(left: WorkspaceBindingTarget | null | undefined, right: WorkspaceBindingTarget): boolean {
+export function workspaceBindingTargetsMatch(
+  left: WorkspaceBindingTarget | null | undefined,
+  right: WorkspaceBindingTarget,
+): boolean {
   if (left == null) return false;
   if (
     left.hostId != null &&

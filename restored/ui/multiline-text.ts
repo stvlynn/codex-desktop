@@ -29,6 +29,11 @@ export function multilineText() {
   }
 
   return peers.e(() => {
-    Y8o = peers.c(), peers.sd(), peers.Iet(), peers.q8o(), peers.jet(), X8o = peers.J();
+    ((Y8o = peers.c()),
+      peers.sd(),
+      peers.Iet(),
+      peers.q8o(),
+      peers.jet(),
+      (X8o = peers.J()));
   });
 }

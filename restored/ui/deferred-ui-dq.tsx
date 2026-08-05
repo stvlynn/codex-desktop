@@ -10,7 +10,9 @@ export type BindBindDeferredUiDQPeers = {
 let peers: BindBindDeferredUiDQPeers | null = null;
 
 /** Wire bindBindDeferredUiDQ peers once companions land. */
-export function setBindBindDeferredUiDQPeers(next: BindBindDeferredUiDQPeers): void {
+export function setBindBindDeferredUiDQPeers(
+  next: BindBindDeferredUiDQPeers,
+): void {
   peers = next;
 }
 
@@ -22,10 +24,10 @@ export function bindBindDeferredUiDQ() {
     throw new Error("bindBindDeferredUiDQ peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => e.flatMap(e => {
-    let n = t(peers.rj, e);
-    return n == null ? [] : [n];
-  }));
+  return peers.Oa(peers.Q, (e, { get: t }) =>
+    e.flatMap((e) => {
+      let n = t(peers.rj, e);
+      return n == null ? [] : [n];
+    }),
+  );
 }

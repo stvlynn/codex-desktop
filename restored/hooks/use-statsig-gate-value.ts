@@ -10,7 +10,9 @@ export type UseStatsigGateValuePeers = {
 let peers: UseStatsigGateValuePeers | null = null;
 
 /** Wire useStatsigGateValue peers once companions land. */
-export function setUseStatsigGateValuePeers(next: UseStatsigGateValuePeers): void {
+export function setUseStatsigGateValuePeers(
+  next: UseStatsigGateValuePeers,
+): void {
   peers = next;
 }
 

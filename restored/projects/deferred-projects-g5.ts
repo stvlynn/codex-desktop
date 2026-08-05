@@ -15,7 +15,9 @@ export type BindDeferredProjectsG5Peers = {
 let peers: BindDeferredProjectsG5Peers | null = null;
 
 /** Wire bindDeferredProjectsG5 peers once companions land. */
-export function setBindDeferredProjectsG5Peers(next: BindDeferredProjectsG5Peers): void {
+export function setBindDeferredProjectsG5Peers(
+  next: BindDeferredProjectsG5Peers,
+): void {
   peers = next;
 }
 
@@ -27,31 +29,45 @@ export function bindDeferredProjectsG5() {
     throw new Error("bindDeferredProjectsG5 peers are not configured");
   }
 
-  return peers.ja(peers.Q, e => ({
+  return peers.ja(peers.Q, (e) => ({
     mutationKey: [...peers.Vw, e, `delete`],
     mutationFn: async () => {
-      let t = peers.SWn.parse(await peers.Bw(`sites_delete_site`, {
-        project_id: e
-      }, peers.SWn, peers.CWn));
-      if (!t.was_deleted || t.project_id !== e) throw Error(`Site was not deleted`);
+      let t = peers.SWn.parse(
+        await peers.Bw(
+          `sites_delete_site`,
+          {
+            project_id: e,
+          },
+          peers.SWn,
+          peers.CWn,
+        ),
+      );
+      if (!t.was_deleted || t.project_id !== e)
+        throw Error(`Site was not deleted`);
       return t;
     },
-    onSuccess: async (t, n, r, {
-      client: i
-    }) => {
-      i.setQueryData(peers.cWn, t => t == null ? t : {
-        ...t,
-        pages: t.pages.map(t => ({
-          ...t,
-          items: t.items.filter(t => t.id !== e)
-        }))
-      }), await Promise.all([i.invalidateQueries({
-        queryKey: [...peers.Vw, e],
-        refetchType: `none`
-      }), i.invalidateQueries({
-        queryKey: [...peers.uWn, e],
-        refetchType: `none`
-      })]);
-    }
+    onSuccess: async (t, n, r, { client: i }) => {
+      (i.setQueryData(peers.cWn, (t) =>
+        t == null
+          ? t
+          : {
+              ...t,
+              pages: t.pages.map((t) => ({
+                ...t,
+                items: t.items.filter((t) => t.id !== e),
+              })),
+            },
+      ),
+        await Promise.all([
+          i.invalidateQueries({
+            queryKey: [...peers.Vw, e],
+            refetchType: `none`,
+          }),
+          i.invalidateQueries({
+            queryKey: [...peers.uWn, e],
+            refetchType: `none`,
+          }),
+        ]));
+    },
   }));
 }

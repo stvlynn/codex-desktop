@@ -17,7 +17,9 @@ export type BindBindUserMessage3Peers = {
 let peers: BindBindUserMessage3Peers | null = null;
 
 /** Wire bindBindUserMessage3 peers once companions land. */
-export function setBindBindUserMessage3Peers(next: BindBindUserMessage3Peers): void {
+export function setBindBindUserMessage3Peers(
+  next: BindBindUserMessage3Peers,
+): void {
   peers = next;
 }
 
@@ -30,10 +32,19 @@ export function bindBindUserMessage3() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.Lpu(), peers.ed(), Bpu = 300, Vpu = peers.Ta(peers.Q, !1), Hpu = peers.Ta(peers.Q, () => [], {
-      onMount: (e, t) => (t.set(peers.Vpu, !0), () => {
-        t.set(peers.Vpu, !1);
-      })
-    }), Upu = peers.Ta(peers.Q, 0);
+    (peers.Ho(),
+      peers.Lpu(),
+      peers.ed(),
+      (Bpu = 300),
+      (Vpu = peers.Ta(peers.Q, !1)),
+      (Hpu = peers.Ta(peers.Q, () => [], {
+        onMount: (e, t) => (
+          t.set(peers.Vpu, !0),
+          () => {
+            t.set(peers.Vpu, !1);
+          }
+        ),
+      })),
+      (Upu = peers.Ta(peers.Q, 0)));
   });
 }

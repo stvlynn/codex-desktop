@@ -73,7 +73,9 @@ export type ConversationComposerHostDeps = {
 
 let deps: ConversationComposerHostDeps | null = null;
 
-export function setConversationComposerHostDeps(next: ConversationComposerHostDeps): void {
+export function setConversationComposerHostDeps(
+  next: ConversationComposerHostDeps,
+): void {
   deps = next;
 }
 
@@ -88,7 +90,9 @@ function requireDeps(): ConversationComposerHostDeps {
  * Bundle `ids` / export `hS`.
  * Typed host shell: normalizes props, then delegates the heavy surface to deps.
  */
-export function ConversationComposerHost(props: ConversationComposerHostProps): ReactNode {
+export function ConversationComposerHost(
+  props: ConversationComposerHostProps,
+): ReactNode {
   const { allocateConversationId, useConversationOrigin, renderSurface } =
     requireDeps();
 

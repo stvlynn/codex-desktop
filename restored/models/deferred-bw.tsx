@@ -36,16 +36,24 @@ export function bindDeferredBw() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), peers.S9o(), peers.A9o(), R9o = peers.Ta(peers.Q, {
-      status: `not-detected`,
-      transport: null,
-      model: null,
-      error: null,
-      battery: null
-    }), z9o = peers.Ma(peers.Q, ({
-      get: e
-    }) => peers.e(peers.R9o).model ?? peers.e(peers.x9o) ?? null), gX = peers.Ta(peers.Q, peers.O9o), B9o = peers.Ma(peers.Q, ({
-      get: e
-    }) => peers.e(peers.gX).joystick), V9o = peers.Ta(peers.Q, !1), H9o = peers.Ta(peers.Q, `idle`);
+    (peers.Ho(),
+      peers.ed(),
+      peers.S9o(),
+      peers.A9o(),
+      (R9o = peers.Ta(peers.Q, {
+        status: `not-detected`,
+        transport: null,
+        model: null,
+        error: null,
+        battery: null,
+      })),
+      (z9o = peers.Ma(
+        peers.Q,
+        ({ get: e }) => peers.e(peers.R9o).model ?? peers.e(peers.x9o) ?? null,
+      )),
+      (gX = peers.Ta(peers.Q, peers.O9o)),
+      (B9o = peers.Ma(peers.Q, ({ get: e }) => peers.e(peers.gX).joystick)),
+      (V9o = peers.Ta(peers.Q, !1)),
+      (H9o = peers.Ta(peers.Q, `idle`)));
   });
 }

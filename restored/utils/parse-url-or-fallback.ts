@@ -8,7 +8,9 @@ export type ParseUrlOrFallbackPeers = {
 let peers: ParseUrlOrFallbackPeers | null = null;
 
 /** Wire parseUrlOrFallback peers once companions land. */
-export function setParseUrlOrFallbackPeers(next: ParseUrlOrFallbackPeers): void {
+export function setParseUrlOrFallbackPeers(
+  next: ParseUrlOrFallbackPeers,
+): void {
   peers = next;
 }
 

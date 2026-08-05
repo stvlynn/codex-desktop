@@ -16,17 +16,46 @@ const ensureSelectWorkspaceNstInit: any = undefined;
 // Wave5d careful split 3/4
 /* split-lane-import-depth:1 */
 
-import { appActionSidebarProjectRefSchema, appActionSidebarSectionRefSchema } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  appActionSidebarSectionRefSchema,
+} from "../../actions/app-action-payload-schemas";
 import { ensureReviewFileAppActionAttrsInit } from "../../actions/ensure-review-file-app-action-attrs-init";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_Ist_Init } from "../../conversation/conversation-page-esm-inits";
-import { createPersistedAtom, ensurePersistedAtomInit, useAtomPair } from "../../boundaries/persisted-atom";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { useLocation, useMatch, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_Ist_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  createPersistedAtom,
+  ensurePersistedAtomInit,
+  useAtomPair,
+} from "../../boundaries/persisted-atom";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  useLocation,
+  useMatch,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { getChromeGlobal } from "../../browser/get-chrome-global";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
@@ -38,7 +67,10 @@ import { ConversationNavListItem } from "../../conversation/conversation-nav-lis
 import { deferredConversationN } from "../../conversation/deferred-conversation-n";
 import { deferredConversationSQ } from "../../conversation/deferred-conversation-sq-2";
 import { ensurePinnedConversationsQueryInit } from "../../conversation/ensure-pinned-conversations-query-init";
-import { ensureSidebarThreadKeyPrefixesInit, toLocalSidebarThreadKey } from "../../conversation/sidebar-thread-keys";
+import {
+  ensureSidebarThreadKeyPrefixesInit,
+  toLocalSidebarThreadKey,
+} from "../../conversation/sidebar-thread-keys";
 import { ensureChromeRuntimeMessagingInit } from "../../desktop/ensure-chrome-runtime-messaging-init";
 import { isRemoteControlConnectionFailedError } from "../../desktop/remote-control-connection-failed-error";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
@@ -53,7 +85,10 @@ import { AppIconSft, ensureAppIconSftInit } from "../../icons/app-icon-sft";
 import { AppIconTk, ensureAppIconTkInit } from "../../icons/app-icon-tk";
 import { AppIconYm } from "../../icons/app-icon-ym";
 import { AppIconZlt } from "../../icons/app-icon-zlt";
-import { DockIcon, ensureDockIconInit as EnsureDockIconInit } from "../../icons/dock-icon";
+import {
+  DockIcon,
+  ensureDockIconInit as EnsureDockIconInit,
+} from "../../icons/dock-icon";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { resolveScienceModelLabel } from "../../models/resolve-science-model-label";
 import { PdfPermissionFlag } from "../../pdf/pdf-permission-flag";
@@ -73,35 +108,46 @@ import { ensureHotkeyThreadN8Init } from "../../utils/wave-av-gap-ensure-inits";
 import { StableWorktreeStatusDialog } from "../../worktrees/stable-worktree-status-dialog-view";
 import { deferredT } from "../deferred-t";
 import { DropdownMenu, ensureDropdownMenuInit } from "../dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../dropdown-menu-popover";
 import { ElectronOnly } from "../electron-only";
 import { inProgress2 } from "../in-progress2";
 import { InsetBorderPanel } from "../inset-border-panel";
 import { OptionalTooltip } from "../optional-tooltip";
 
 // Wave5d soft JSX companions.
-function Alpha(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Bravo(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Bravo(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Copper(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Copper(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -222,14 +268,20 @@ const seed: any = undefined;
 const trail: any = undefined;
 const urn: any = undefined;
 function vine(vista, wisp) {
-  return vista.map(item => {
+  return vista.map((item) => {
     let yonder = wisp.get(item.key);
     if (yonder == null || yonder.at !== item.at) return item;
     switch (item.kind) {
       case "remote":
-        return yonder.kind === "remote" && yonder.task === item.task ? yonder : item;
+        return yonder.kind === "remote" && yonder.task === item.task
+          ? yonder
+          : item;
       case "local":
-        return yonder.kind === "local" && yonder.conversation === item.conversation && yonder.pendingWorktree === item.pendingWorktree ? yonder : item;
+        return yonder.kind === "local" &&
+          yonder.conversation === item.conversation &&
+          yonder.pendingWorktree === item.pendingWorktree
+          ? yonder
+          : item;
     }
   });
 }
@@ -255,161 +307,301 @@ function birch(zenith) {
       localConversations,
       onClose,
       autoFocusSearch = false,
-      showFilters = true
+      showFilters = true,
     } = zenith,
     anvil = useIntl(),
     beacon = composerNavigation(),
-    {
-      authMethod
-    } = useAuth(),
+    { authMethod } = useAuth(),
     [crag, dome] = useAtomPair(jadeite),
     [eddy] = useAtomPair(quill),
     fjord = showFilters ? crag : "recent",
     glen = useMatch("/local/:conversationId")?.params?.conversationId ?? null,
-    {
-      data
-    } = AppInitialMY(),
+    { data } = AppInitialMY(),
     hearth = AppInitialEM(),
-    inlet = showFilters ? data?.find(forge => forge.id === eddy) ?? null : null;
+    inlet = showFilters
+      ? (data?.find((forge) => forge.id === eddy) ?? null)
+      : null;
   let jetty = inlet,
-    knob = gear => delta({
-      conversation: gear,
-      isBackgroundSubagentsEnabled: hearth
-    });
+    knob = (gear) =>
+      delta({
+        conversation: gear,
+        isBackgroundSubagentsEnabled: hearth,
+      });
   let ledge = localConversations.filter(knob),
     mire = echo(cloudtasksQuery.data, localConversations, jetty),
     [nook, oxbow] = haven.useState(""),
     pond = haven.useDeferredValue(nook).trim().toLowerCase(),
     quarry = pond.length > 0,
     rapids = mire.filter(canyon),
-    spur = quarry ? rapids.filter(item => {
-      let {
-        task
-      } = item;
-      return AppInitialWN(task.title, pond);
-    }) : rapids,
-    tor = quarry ? ledge.filter(item => AppInitialWN(AppInitialNst(item), pond)) : ledge,
-    updraft = quarry ? mire.filter(item => item.kind === "remote" ? AppInitialWN(item.task.title, pond) : AppInitialWN(item.conversation == null ? dew(item.pendingWorktree, anvil) : AppInitialNst(item.conversation), pond)) : mire,
-    verge = <DropdownMenu.Section {...{
-      children: <$t {...{
-        searchQuery: nook,
-        onQueryChange: oxbow,
-        autoFocus: autoFocusSearch
-      }} />
-    }} />;
-  let weir = <div className="mx-2 border-t-[0.5px] border-token-border" aria-hidden={true} />;
-  let yard = showFilters && authMethod === "chatgpt" && <DropdownMenu.Section {...{
-    className: "flex items-center justify-between px-[var(--padding-row-x)]",
-    children: [<HeaderHelper12 {...{
-      filter: crag,
-      onSelect: dome
-    }} />, crag !== "local" && <HeaderHelper10 {...{}} />]
-  }} />;
+    spur = quarry
+      ? rapids.filter((item) => {
+          let { task } = item;
+          return AppInitialWN(task.title, pond);
+        })
+      : rapids,
+    tor = quarry
+      ? ledge.filter((item) => AppInitialWN(AppInitialNst(item), pond))
+      : ledge,
+    updraft = quarry
+      ? mire.filter((item) =>
+          item.kind === "remote"
+            ? AppInitialWN(item.task.title, pond)
+            : AppInitialWN(
+                item.conversation == null
+                  ? dew(item.pendingWorktree, anvil)
+                  : AppInitialNst(item.conversation),
+                pond,
+              ),
+        )
+      : mire,
+    verge = (
+      <DropdownMenu.Section
+        {...{
+          children: (
+            <$t
+              {...{
+                searchQuery: nook,
+                onQueryChange: oxbow,
+                autoFocus: autoFocusSearch,
+              }}
+            />
+          ),
+        }}
+      />
+    );
+  let weir = (
+    <div
+      className="mx-2 border-t-[0.5px] border-token-border"
+      aria-hidden={true}
+    />
+  );
+  let yard = showFilters && authMethod === "chatgpt" && (
+    <DropdownMenu.Section
+      {...{
+        className:
+          "flex items-center justify-between px-[var(--padding-row-x)]",
+        children: [
+          <HeaderHelper12
+            {...{
+              filter: crag,
+              onSelect: dome,
+            }}
+          />,
+          crag !== "local" && <HeaderHelper10 {...{}} />,
+        ],
+      }}
+    />
+  );
   let anchor = DropdownMenu,
-    bolt = fjord === "cloud" && (cloudtasksQuery.isError ? <HeaderHelper23 {...{
-      onRetry: () => {
-        cloudtasksQuery.refetch();
-      }
-    }} /> : cloudtasksQuery.isLoading ? <HeaderHelper22 {...{}} /> : spur.length === 0 ? quarry ? <HeaderHelper14 {...{}} /> : <HeaderHelper9 {...{}} /> : spur.map(item => <AppInitialYo key={item.key} task={item.task} onClose={onClose} />)),
-    cog = fjord === "local" && (tor.length ? tor.map(item => <Bravo key={item.id} {...{
-      conversationId: item.id,
-      updatedAt: item.recencyAt ?? item.updatedAt,
-      isActive: glen === item.id,
-      onClose,
-      onActiveArchiveStart: beacon
-    }} />) : quarry ? <HeaderHelper14 {...{}} /> : <HeaderHelper9 {...{}} />),
-    disc = fjord === "recent" && (cloudtasksQuery.isError && mire.length === 0 ? <HeaderHelper23 {...{
-      onRetry: () => {
-        cloudtasksQuery.refetch();
-      }
-    }} /> : cloudtasksQuery.isLoading && mire.length === 0 ? <HeaderHelper22 {...{}} /> : updraft.length === 0 ? quarry ? <HeaderHelper14 {...{}} /> : <HeaderHelper9 {...{}} /> : <>
-          {cloudtasksQuery.isError && <div className="mx-1 my-1 flex items-center justify-between gap-2 px-1 text-base text-token-foreground">
-              {<MemoizedFormattedMessage {...{
-          id: "codex.recentTasksMenu.errorCloud.inline",
-          defaultMessage: "Failed to load cloud chats.",
-          description: "Inline error indicator for cloud tasks in recent feed"
-        }} />}
-              {<ReadLoginRouteQuerySnapshot {...{
-          size: "default",
-          color: "outline",
-          onClick: () => {
-            cloudtasksQuery.refetch();
-          },
-          children: <MemoizedFormattedMessage {...{
-            id: "codex.common.retry",
-            defaultMessage: "Retry",
-            description: "Retry button"
-          }} />
-        }} />}
-            </div>}
-          {cloudtasksQuery.isPending && !mire.length && <div className="mx-1 my-1 flex items-center gap-2 text-sm text-token-input-placeholder-foreground">
-              {<VSCODE_EDITOR_ID {...{
-          className: "icon-xs"
-        }} />}
-            </div>}
-          {updraft.map(item => <Copper key={item.key} {...{
-        item,
-        isActive: item.kind === "local" && item.conversation != null && glen === item.conversation.id,
-        onClose,
-        onActiveArchiveStart: beacon
-      }} />)}
-        </>);
-  let edge = <Alpha.Section {...{
-    className: "vertical-scroll-fade-mask flex max-h-[60vh] flex-col gap-0 overflow-y-auto pb-1",
-    children: [bolt, cog, disc]
-  }} />;
-  return <div className="flex max-h-[300px] w-[calc(var(--radix-popper-available-width)_-_var(--padding-panel))] flex-col gap-1">
+    bolt =
+      fjord === "cloud" &&
+      (cloudtasksQuery.isError ? (
+        <HeaderHelper23
+          {...{
+            onRetry: () => {
+              cloudtasksQuery.refetch();
+            },
+          }}
+        />
+      ) : cloudtasksQuery.isLoading ? (
+        <HeaderHelper22 {...{}} />
+      ) : spur.length === 0 ? (
+        quarry ? (
+          <HeaderHelper14 {...{}} />
+        ) : (
+          <HeaderHelper9 {...{}} />
+        )
+      ) : (
+        spur.map((item) => (
+          <AppInitialYo key={item.key} task={item.task} onClose={onClose} />
+        ))
+      )),
+    cog =
+      fjord === "local" &&
+      (tor.length ? (
+        tor.map((item) => (
+          <Bravo
+            key={item.id}
+            {...{
+              conversationId: item.id,
+              updatedAt: item.recencyAt ?? item.updatedAt,
+              isActive: glen === item.id,
+              onClose,
+              onActiveArchiveStart: beacon,
+            }}
+          />
+        ))
+      ) : quarry ? (
+        <HeaderHelper14 {...{}} />
+      ) : (
+        <HeaderHelper9 {...{}} />
+      )),
+    disc =
+      fjord === "recent" &&
+      (cloudtasksQuery.isError && mire.length === 0 ? (
+        <HeaderHelper23
+          {...{
+            onRetry: () => {
+              cloudtasksQuery.refetch();
+            },
+          }}
+        />
+      ) : cloudtasksQuery.isLoading && mire.length === 0 ? (
+        <HeaderHelper22 {...{}} />
+      ) : updraft.length === 0 ? (
+        quarry ? (
+          <HeaderHelper14 {...{}} />
+        ) : (
+          <HeaderHelper9 {...{}} />
+        )
+      ) : (
+        <>
+          {cloudtasksQuery.isError && (
+            <div className="mx-1 my-1 flex items-center justify-between gap-2 px-1 text-base text-token-foreground">
+              {
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "codex.recentTasksMenu.errorCloud.inline",
+                    defaultMessage: "Failed to load cloud chats.",
+                    description:
+                      "Inline error indicator for cloud tasks in recent feed",
+                  }}
+                />
+              }
+              {
+                <ReadLoginRouteQuerySnapshot
+                  {...{
+                    size: "default",
+                    color: "outline",
+                    onClick: () => {
+                      cloudtasksQuery.refetch();
+                    },
+                    children: (
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "codex.common.retry",
+                          defaultMessage: "Retry",
+                          description: "Retry button",
+                        }}
+                      />
+                    ),
+                  }}
+                />
+              }
+            </div>
+          )}
+          {cloudtasksQuery.isPending && !mire.length && (
+            <div className="mx-1 my-1 flex items-center gap-2 text-sm text-token-input-placeholder-foreground">
+              {
+                <VSCODE_EDITOR_ID
+                  {...{
+                    className: "icon-xs",
+                  }}
+                />
+              }
+            </div>
+          )}
+          {updraft.map((item) => (
+            <Copper
+              key={item.key}
+              {...{
+                item,
+                isActive:
+                  item.kind === "local" &&
+                  item.conversation != null &&
+                  glen === item.conversation.id,
+                onClose,
+                onActiveArchiveStart: beacon,
+              }}
+            />
+          ))}
+        </>
+      ));
+  let edge = (
+    <Alpha.Section
+      {...{
+        className:
+          "vertical-scroll-fade-mask flex max-h-[60vh] flex-col gap-0 overflow-y-auto pb-1",
+        children: [bolt, cog, disc],
+      }}
+    />
+  );
+  return (
+    <div className="flex max-h-[300px] w-[calc(var(--radix-popper-available-width)_-_var(--padding-panel))] flex-col gap-1">
       {verge}
       {weir}
       {yard}
       {edge}
-    </div>;
+    </div>
+  );
 }
 function canyon(hinge) {
   return hinge.kind === "remote";
 }
 function dew(iron, joint) {
   let keystone = iron.label?.trim();
-  return keystone && keystone.length > 0 ? keystone : iron.phase === "failed" ? joint.formatMessage({
-    id: "recentTasks.worktreeInitFailedTitle",
-    defaultMessage: "Worktree init failed",
-    description: "Worktree row title when the init script fails"
-  }) : joint.formatMessage({
-    id: "recentTasks.worktreeSettingUpTitle",
-    defaultMessage: "Setting up worktree",
-    description: "Worktree row title while init is pending"
-  });
+  return keystone && keystone.length > 0
+    ? keystone
+    : iron.phase === "failed"
+      ? joint.formatMessage({
+          id: "recentTasks.worktreeInitFailedTitle",
+          defaultMessage: "Worktree init failed",
+          description: "Worktree row title when the init script fails",
+        })
+      : joint.formatMessage({
+          id: "recentTasks.worktreeSettingUpTitle",
+          defaultMessage: "Setting up worktree",
+          description: "Worktree row title while init is pending",
+        });
 }
 function ever() {
-  return <div className="flex h-48 items-center justify-center gap-2 text-sm text-token-input-placeholder-foreground">
-      {<VSCODE_EDITOR_ID {...{
-      className: "icon-xs"
-    }} />}
-    </div>;
+  return (
+    <div className="flex h-48 items-center justify-center gap-2 text-sm text-token-input-placeholder-foreground">
+      {
+        <VSCODE_EDITOR_ID
+          {...{
+            className: "icon-xs",
+          }}
+        />
+      }
+    </div>
+  );
 }
 function field(latch) {
-  let {
-      onRetry
-    } = latch,
-    motor = <MemoizedFormattedMessage {...{
-      id: "codex.recentTasksMenu.errorCloud",
-      defaultMessage: "Failed to load chats.",
-      description: "Error state for cloud tasks in recent tasks menu"
-    }} />;
-  let nut = <MemoizedFormattedMessage {...{
-    id: "codex.common.retry",
-    defaultMessage: "Retry",
-    description: "Retry button"
-  }} />;
-  return <div className="flex h-48 items-center justify-center gap-3 text-sm text-token-input-placeholder-foreground">
+  let { onRetry } = latch,
+    motor = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.recentTasksMenu.errorCloud",
+          defaultMessage: "Failed to load chats.",
+          description: "Error state for cloud tasks in recent tasks menu",
+        }}
+      />
+    );
+  let nut = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.common.retry",
+        defaultMessage: "Retry",
+        description: "Retry button",
+      }}
+    />
+  );
+  return (
+    <div className="flex h-48 items-center justify-center gap-3 text-sm text-token-input-placeholder-foreground">
       {motor}
-      {<ReadLoginRouteQuerySnapshot {...{
-      size: "default",
-      color: "outline",
-      onClick: onRetry,
-      children: nut
-    }} />}
-    </div>;
+      {
+        <ReadLoginRouteQuerySnapshot
+          {...{
+            size: "default",
+            color: "outline",
+            onClick: onRetry,
+            children: nut,
+          }}
+        />
+      }
+    </div>
+  );
 }
 var grain,
   haven,
@@ -456,67 +648,87 @@ var grain,
           updatedAt,
           isActive,
           onClose,
-          onActiveArchiveStart
+          onActiveArchiveStart,
         } = piston,
-        rivet = updatedAt == null ? undefined : <INLINE_MENTION_GROUP_CLASS {...{
-          dateString: new Date(updatedAt).toISOString()
-        }} />;
-      return <ConversationNavListItem conversationId={conversationId} isActive={isActive} metaContent={rivet} onClick={onClose} onActiveArchiveStart={onActiveArchiveStart} />;
+        rivet =
+          updatedAt == null ? undefined : (
+            <INLINE_MENTION_GROUP_CLASS
+              {...{
+                dateString: new Date(updatedAt).toISOString(),
+              }}
+            />
+          );
+      return (
+        <ConversationNavListItem
+          conversationId={conversationId}
+          isActive={isActive}
+          metaContent={rivet}
+          onClick={onClose}
+          onActiveArchiveStart={onActiveArchiveStart}
+        />
+      );
     });
     leaf = haven.memo(function (screw) {
-      let {
-          item,
-          isActive,
-          onClose,
-          onActiveArchiveStart
-        } = screw,
+      let { item, isActive, onClose, onActiveArchiveStart } = screw,
         torque = CodexPluginActionType(appScopeAtom),
-        {
-          cancelPendingWorktree
-        } = StableWorktreeStatusDialog();
+        { cancelPendingWorktree } = StableWorktreeStatusDialog();
       switch (item.kind) {
-        case "remote":
-          {
-            let valve;
-            return <AppInitialYo task={item.task} onClose={onClose} />;
+        case "remote": {
+          let valve;
+          return <AppInitialYo task={item.task} onClose={onClose} />;
+        }
+        case "local": {
+          if (item.conversation == null) {
+            let clamp = () => {
+              ensurePetNotificationMenuInit(torque, item.pendingWorktree);
+              onClose();
+            };
+            let drill = () => {
+              cancelPendingWorktree(item.pendingWorktree.id);
+            };
+            let engine;
+            return (
+              <AppInitialHo
+                task={item.pendingWorktree}
+                hasAttention={item.pendingWorktree.needsAttention}
+                onClick={clamp}
+                onArchive={drill}
+              />
+            );
           }
-        case "local":
-          {
-            if (item.conversation == null) {
-              let clamp = () => {
-                ensurePetNotificationMenuInit(torque, item.pendingWorktree);
-                onClose();
-              };
-              let drill = () => {
-                cancelPendingWorktree(item.pendingWorktree.id);
-              };
-              let engine;
-              return <AppInitialHo task={item.pendingWorktree} hasAttention={item.pendingWorktree.needsAttention} onClick={clamp} onArchive={drill} />;
-            }
-            let axle = (item.conversation.recencyAt ?? item.conversation.updatedAt) == null ? undefined : <INLINE_MENTION_GROUP_CLASS {...{
-              dateString: new Date(item.conversation.recencyAt ?? item.conversation.updatedAt).toISOString()
-            }} />;
-            let bracket;
-            return <ConversationNavListItem conversationId={item.conversation.id} isActive={isActive} metaContent={axle} onClick={onClose} onActiveArchiveStart={onActiveArchiveStart} />;
-          }
+          let axle =
+            (item.conversation.recencyAt ?? item.conversation.updatedAt) ==
+            null ? undefined : (
+              <INLINE_MENTION_GROUP_CLASS
+                {...{
+                  dateString: new Date(
+                    item.conversation.recencyAt ?? item.conversation.updatedAt,
+                  ).toISOString(),
+                }}
+              />
+            );
+          let bracket;
+          return (
+            <ConversationNavListItem
+              conversationId={item.conversation.id}
+              isActive={isActive}
+              metaContent={axle}
+              onClick={onClose}
+              onActiveArchiveStart={onActiveArchiveStart}
+            />
+          );
+        }
       }
     });
   });
 function nimbus(frame) {
   let gasket = frame === undefined ? {} : frame;
-  let {
-      label,
-      showFilters = true
-    } = gasket,
+  let { label, showFilters = true } = gasket,
     handle = useIntl(),
-    {
-      authMethod
-    } = useAuth(),
+    { authMethod } = useAuth(),
     insert = useLocation(),
     jacket = CodexPluginActionResult(thorn),
-    {
-      data = []
-    } = AppInitialYX(),
+    { data = [] } = AppInitialYX(),
     knurl = AppInitialEM(),
     [lever, mount] = root.useState(false),
     nozzle = () => {
@@ -526,7 +738,7 @@ function nimbus(frame) {
     ratchet = {
       taskFilter: "current",
       limit: 20,
-      enabled: lever
+      enabled: lever,
     };
   let shim = composerScope(ratchet),
     tappet = shim.data ?? [];
@@ -535,29 +747,41 @@ function nimbus(frame) {
     collar;
   {
     let impeller;
-    impeller = journal => delta({
-      conversation: journal,
-      isBackgroundSubagentsEnabled: knurl
-    });
+    impeller = (journal) =>
+      delta({
+        conversation: journal,
+        isBackgroundSubagentsEnabled: knurl,
+      });
     collar = (data ?? []).filter(impeller).filter(opal);
   }
   let dowel = collar,
     flange = bushing.length + dowel.length,
     gib = insert.pathname !== "/" && flange > 0,
     hub = label != null,
-    idler = jacket ? handle.formatMessage({
-      id: "codex.recentTasksMenu.triggerWithUnread",
-      defaultMessage: "Recent chats. {count, plural, one {# in progress} other {# in progress}}. Unread chat updates",
-      description: "Accessible label for opening the recent tasks menu when unread task updates are present"
-    }, {
-      count: flange
-    }) : handle.formatMessage({
-      id: "codex.recentTasksMenu.trigger",
-      defaultMessage: "Recent chats. {count, plural, one {# in progress} other {# in progress}}",
-      description: "Accessible label for opening the recent tasks menu"
-    }, {
-      count: flange
-    });
+    idler = jacket
+      ? handle.formatMessage(
+          {
+            id: "codex.recentTasksMenu.triggerWithUnread",
+            defaultMessage:
+              "Recent chats. {count, plural, one {# in progress} other {# in progress}}. Unread chat updates",
+            description:
+              "Accessible label for opening the recent tasks menu when unread task updates are present",
+          },
+          {
+            count: flange,
+          },
+        )
+      : handle.formatMessage(
+          {
+            id: "codex.recentTasksMenu.trigger",
+            defaultMessage:
+              "Recent chats. {count, plural, one {# in progress} other {# in progress}}",
+            description: "Accessible label for opening the recent tasks menu",
+          },
+          {
+            count: flange,
+          },
+        );
   let jig = idler,
     keeper = () => {
       lever && authMethod === "chatgpt" && shim.refetch();
@@ -567,71 +791,125 @@ function nimbus(frame) {
   root.useEffect(keeper, lug);
   let mandrel, nipple;
   mandrel = () => {
-    let kingpin = land => mount(true);
-    return window.addEventListener("open-recent-tasks-menu", kingpin), () => window.removeEventListener("open-recent-tasks-menu", kingpin);
+    let kingpin = (land) => mount(true);
+    return (
+      window.addEventListener("open-recent-tasks-menu", kingpin),
+      () => window.removeEventListener("open-recent-tasks-menu", kingpin)
+    );
   };
   nipple = [];
   root.useEffect(mandrel, nipple);
-  let orifice = <MemoizedFormattedMessage {...{
-    id: "codex.recentTasksMenu.tooltip",
-    defaultMessage: "Chat history",
-    description: "Tooltip text for recent tasks menu"
-  }} />;
+  let orifice = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.recentTasksMenu.tooltip",
+        defaultMessage: "Chat history",
+        description: "Tooltip text for recent tasks menu",
+      }}
+    />
+  );
   let pin = hub ? "ghostActive" : "ghost",
     race = hub ? "default" : "icon",
-    sleeve = hub && "max-w-full min-w-0 !px-0 !py-0 hover:!bg-transparent hover:opacity-80",
+    sleeve =
+      hub &&
+      "max-w-full min-w-0 !px-0 !py-0 hover:!bg-transparent hover:opacity-80",
     trunnion = IntlProvider("relative", sleeve);
   let boss = hub ? undefined : jig,
-    cam = jacket ? <span aria-hidden="true" className="absolute top-0.5 right-0.5 size-1.5 rounded-full" style={{
-      backgroundColor: "var(--vscode-textLink-foreground)"
-    }} /> : null;
-  let detent = hub ? <>
+    cam = jacket ? (
+      <span
+        aria-hidden="true"
+        className="absolute top-0.5 right-0.5 size-1.5 rounded-full"
+        style={{
+          backgroundColor: "var(--vscode-textLink-foreground)",
+        }}
+      />
+    ) : null;
+  let detent = hub ? (
+    <>
       <span className={IntlProvider("min-w-0 truncate", false)}>{label}</span>
-      {<AppIconSft {...{
-      className: "icon-2xs shrink-0 text-token-text-tertiary"
-    }} />}
-    </> : gib ? <span className="relative inline-flex size-4 justify-center">
-      {<VSCODE_EDITOR_ID {...{
-      className: "icon-xs"
-    }} />}
-    </span> : <AppIconKA {...{
-    className: "icon-xs hover:opacity-80"
-  }} />;
-  let eccentric = handle.formatMessage({
-    id: "codex.recentTasksMenu.count",
-    defaultMessage: "{count, plural, =0 {No chats in progress} one {# chat in progress} other {# chats in progress}}",
-    description: "Live region text announcing in-progress task count for recent tasks trigger"
-  }, {
-    count: flange
-  });
-  let follower = <span className="sr-only" aria-live="polite" aria-atomic="true">
+      {
+        <AppIconSft
+          {...{
+            className: "icon-2xs shrink-0 text-token-text-tertiary",
+          }}
+        />
+      }
+    </>
+  ) : gib ? (
+    <span className="relative inline-flex size-4 justify-center">
+      {
+        <VSCODE_EDITOR_ID
+          {...{
+            className: "icon-xs",
+          }}
+        />
+      }
+    </span>
+  ) : (
+    <AppIconKA
+      {...{
+        className: "icon-xs hover:opacity-80",
+      }}
+    />
+  );
+  let eccentric = handle.formatMessage(
+    {
+      id: "codex.recentTasksMenu.count",
+      defaultMessage:
+        "{count, plural, =0 {No chats in progress} one {# chat in progress} other {# chats in progress}}",
+      description:
+        "Live region text announcing in-progress task count for recent tasks trigger",
+    },
+    {
+      count: flange,
+    },
+  );
+  let follower = (
+    <span className="sr-only" aria-live="polite" aria-atomic="true">
       {eccentric}
-    </span>;
-  let guide = <OptionalTooltip {...{
-    tooltipContent: orifice,
-    children: <ReadLoginRouteQuerySnapshot {...{
-      color: pin,
-      size: race,
-      className: trunnion,
-      allowShrink: hub,
-      "aria-label": boss,
-      children: [cam, detent, follower]
-    }} />
-  }} />;
-  let helix = <HeaderHelper19 {...{
-    cloudtasksQuery: shim,
-    localConversations: data,
-    onClose: platen,
-    autoFocusSearch: lever,
-    showFilters: showFilters
-  }} />;
-  return <DropdownMenuPopover {...{
-    contentClassName: "!pb-0 mt-[9px]",
-    triggerButton: guide,
-    open: lever,
-    onOpenChange: mount,
-    children: helix
-  }} />;
+    </span>
+  );
+  let guide = (
+    <OptionalTooltip
+      {...{
+        tooltipContent: orifice,
+        children: (
+          <ReadLoginRouteQuerySnapshot
+            {...{
+              color: pin,
+              size: race,
+              className: trunnion,
+              allowShrink: hub,
+              "aria-label": boss,
+              children: [cam, detent, follower],
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let helix = (
+    <HeaderHelper19
+      {...{
+        cloudtasksQuery: shim,
+        localConversations: data,
+        onClose: platen,
+        autoFocusSearch: lever,
+        showFilters: showFilters,
+      }}
+    />
+  );
+  return (
+    <DropdownMenuPopover
+      {...{
+        contentClassName: "!pb-0 mt-[9px]",
+        triggerButton: guide,
+        open: lever,
+        onOpenChange: mount,
+        children: helix,
+      }}
+    />
+  );
 }
 function opal(mesh) {
   return ensureComposerEsm_K9_Init(mesh);
@@ -667,7 +945,5 @@ var quillow,
     ensureDropdownMenuPopoverInit();
     maple();
     meadow();
-    thorn = deferredUiXT(appScopeAtom, ({
-      get
-    }) => false);
+    thorn = deferredUiXT(appScopeAtom, ({ get }) => false);
   });

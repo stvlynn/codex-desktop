@@ -23,4 +23,3 @@ export { avatarOverlayNativeFrameR as avatarOverlayNativeFrame_r } from "./part-
 export { AvatarOverlayNativeFrameS as avatarOverlayNativeFrame_s } from "./part-1";
 export { avatarOverlayNativeFrameT as avatarOverlayNativeFrame_t } from "./part-4";
 export { avatarOverlayNativeFrameT as AvatarOverlayNativeFrame_t } from "./part-4";
-

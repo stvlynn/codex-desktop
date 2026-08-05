@@ -11,7 +11,9 @@ export type AppFsObjectContainPeers = {
 let peers: AppFsObjectContainPeers | null = null;
 
 /** Wire appFsObjectContain peers once companions land. */
-export function setAppFsObjectContainPeers(next: AppFsObjectContainPeers): void {
+export function setAppFsObjectContainPeers(
+  next: AppFsObjectContainPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function appFsObjectContain() {
   }
 
   return peers.e(() => {
-    peers.Au(), _na = `app://fs`, vna = `/@fs`;
+    (peers.Au(), (_na = `app://fs`), (vna = `/@fs`));
   });
 }

@@ -9,7 +9,9 @@ export type ArtifactTabLoadingPeers = {
 let peers: ArtifactTabLoadingPeers | null = null;
 
 /** Wire artifactTabLoading peers once companions land. */
-export function setArtifactTabLoadingPeers(next: ArtifactTabLoadingPeers): void {
+export function setArtifactTabLoadingPeers(
+  next: ArtifactTabLoadingPeers,
+): void {
   peers = next;
 }
 

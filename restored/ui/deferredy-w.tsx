@@ -34,28 +34,43 @@ export function bindDeferredyW() {
   }
 
   return peers.e(() => {
-    peers.CI(), sFi = peers.r(peers.ZPi(), 1), peers.Au(), peers.Gf(), peers.c_(), peers.zmi(), cFi = 50, lFi = 2e5, TI = new Map(), uFi = e => {
-      let t = new Set(),
-        n = -1;
-      for (let r of peers.e.split(/\r?\n/)) {
-        if (peers.r.startsWith(`diff --git `)) {
-          n += 1;
-          continue;
+    (peers.CI(),
+      (sFi = peers.r(peers.ZPi(), 1)),
+      peers.Au(),
+      peers.Gf(),
+      peers.c_(),
+      peers.zmi(),
+      (cFi = 50),
+      (lFi = 2e5),
+      (TI = new Map()),
+      (uFi = (e) => {
+        let t = new Set(),
+          n = -1;
+        for (let r of peers.e.split(/\r?\n/)) {
+          if (peers.r.startsWith(`diff --git `)) {
+            n += 1;
+            continue;
+          }
+          peers.r.startsWith(`GIT binary patch`) && n >= 0 && t.add(n);
         }
-        peers.r.startsWith(`GIT binary patch`) && n >= 0 && t.add(n);
-      }
-      return t;
-    }, dFi = e => {
-      let t = new Set(),
-        n = -1;
-      for (let r of peers.e.split(/\r?\n/)) {
-        if (peers.r.startsWith(`diff --git `)) {
-          n += 1;
-          continue;
+        return t;
+      }),
+      (dFi = (e) => {
+        let t = new Set(),
+          n = -1;
+        for (let r of peers.e.split(/\r?\n/)) {
+          if (peers.r.startsWith(`diff --git `)) {
+            n += 1;
+            continue;
+          }
+          n >= 0 &&
+            (/^(?:new file mode|deleted file mode|old mode|new mode) 160000$/.test(
+              peers.r,
+            ) ||
+              /^index [0-9a-f]+\.\.[0-9a-f]+ 160000$/.test(peers.r)) &&
+            t.add(n);
         }
-        n >= 0 && (/^(?:new file mode|deleted file mode|old mode|new mode) 160000$/.test(peers.r) || /^index [0-9a-f]+\.\.[0-9a-f]+ 160000$/.test(peers.r)) && t.add(n);
-      }
-      return t;
-    };
+        return t;
+      }));
   });
 }

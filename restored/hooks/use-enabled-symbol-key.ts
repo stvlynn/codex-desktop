@@ -12,7 +12,9 @@ export type UseEnabledSymbolKeyPeers = {
 let peers: UseEnabledSymbolKeyPeers | null = null;
 
 /** Wire useEnabledSymbolKey peers once companions land. */
-export function setUseEnabledSymbolKeyPeers(next: UseEnabledSymbolKeyPeers): void {
+export function setUseEnabledSymbolKeyPeers(
+  next: UseEnabledSymbolKeyPeers,
+): void {
   peers = next;
 }
 

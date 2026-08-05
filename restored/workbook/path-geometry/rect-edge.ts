@@ -42,27 +42,16 @@ export function rectSideHit(
 }
 
 /** Legacy `wde` — dominant side from center toward a target. */
-export function dominantRectSide(
-  from: Point2D,
-  to: Point2D,
-): RectSide {
+export function dominantRectSide(from: Point2D, to: Point2D): RectSide {
   const dx = to.x - from.x;
   const dy = to.y - from.y;
-  return Math.abs(dx) >= Math.abs(dy)
-    ? dx >= 0
-      ? 3
-      : 1
-    : dy >= 0
-      ? 2
-      : 0;
+  return Math.abs(dx) >= Math.abs(dy) ? (dx >= 0 ? 3 : 1) : dy >= 0 ? 2 : 0;
 }
 
 /** Legacy `Ade` — unit vector (or zero if near-zero). */
 export function normalizeVector(v: Point2D): Point2D {
   const len = Math.hypot(v.x, v.y);
-  return len < 0.001
-    ? { x: 0, y: 0 }
-    : { x: v.x / len, y: v.y / len };
+  return len < 0.001 ? { x: 0, y: 0 } : { x: v.x / len, y: v.y / len };
 }
 
 /**

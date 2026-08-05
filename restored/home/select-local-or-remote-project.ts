@@ -10,7 +10,9 @@ export type SelectLocalOrRemoteProjectPeers = {
 let peers: SelectLocalOrRemoteProjectPeers | null = null;
 
 /** Wire selectLocalOrRemoteProject peers once companions land. */
-export function setSelectLocalOrRemoteProjectPeers(next: SelectLocalOrRemoteProjectPeers): void {
+export function setSelectLocalOrRemoteProjectPeers(
+  next: SelectLocalOrRemoteProjectPeers,
+): void {
   peers = next;
 }
 

@@ -12,7 +12,9 @@ export type UseTeenOnboardingAgeGatePeers = {
 let peers: UseTeenOnboardingAgeGatePeers | null = null;
 
 /** Wire useTeenOnboardingAgeGate peers once companions land. */
-export function setUseTeenOnboardingAgeGatePeers(next: UseTeenOnboardingAgeGatePeers): void {
+export function setUseTeenOnboardingAgeGatePeers(
+  next: UseTeenOnboardingAgeGatePeers,
+): void {
   peers = next;
 }
 

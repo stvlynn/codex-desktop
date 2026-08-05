@@ -11,7 +11,9 @@ export type BindDeferredConversationFqPeers = {
 let peers: BindDeferredConversationFqPeers | null = null;
 
 /** Wire bindDeferredConversationFq peers once companions land. */
-export function setBindDeferredConversationFqPeers(next: BindDeferredConversationFqPeers): void {
+export function setBindDeferredConversationFqPeers(
+  next: BindDeferredConversationFqPeers,
+): void {
   peers = next;
 }
 
@@ -23,7 +25,10 @@ export function bindDeferredConversationFq() {
     throw new Error("bindDeferredConversationFq peers are not configured");
   }
 
-  return peers.Pn(e => e(peers.U4r) ?? peers.nd(`last_completed_onboarding`, null), (e, t, n) => {
-    n != null && peers.Tar(), t(peers.U4r, n);
-  });
+  return peers.Pn(
+    (e) => e(peers.U4r) ?? peers.nd(`last_completed_onboarding`, null),
+    (e, t, n) => {
+      (n != null && peers.Tar(), t(peers.U4r, n));
+    },
+  );
 }

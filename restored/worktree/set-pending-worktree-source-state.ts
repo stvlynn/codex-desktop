@@ -8,7 +8,9 @@ export type PendingWorktreeSourceStatePeers = {
 let peers: PendingWorktreeSourceStatePeers | null = null;
 
 /** Wire setPendingWorktreeSourceState peers once companions land. */
-export function setPendingWorktreeSourceStatePeers(next: PendingWorktreeSourceStatePeers): void {
+export function setPendingWorktreeSourceStatePeers(
+  next: PendingWorktreeSourceStatePeers,
+): void {
   peers = next;
 }
 

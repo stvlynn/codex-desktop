@@ -24,7 +24,9 @@ export type AutomationDraftValidation = {
 };
 
 /** Validate required fields on an automation create/edit draft. */
-export function validateAutomationDraft(draft: AutomationDraft): AutomationDraftValidation {
+export function validateAutomationDraft(
+  draft: AutomationDraft,
+): AutomationDraftValidation {
   const trimmedName = draft.name.trim();
   const trimmedPrompt = draft.prompt.trim();
   const missingRequirements: string[] = [];

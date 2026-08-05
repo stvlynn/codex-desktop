@@ -13,7 +13,9 @@ export type AmbientSuggestionsEnabledPeers = {
 let peers: AmbientSuggestionsEnabledPeers | null = null;
 
 /** Wire ambientSuggestionsEnabled peers once companions land. */
-export function setAmbientSuggestionsEnabledPeers(next: AmbientSuggestionsEnabledPeers): void {
+export function setAmbientSuggestionsEnabledPeers(
+  next: AmbientSuggestionsEnabledPeers,
+): void {
   peers = next;
 }
 
@@ -26,14 +28,16 @@ export function ambientSuggestionsEnabled() {
   }
 
   return peers.e(() => {
-    peers._u(), peers.xu(), CEe = {
-      enabled: peers.yu({
-        agentAccess: `read-write`,
-        default: !0,
-        description: `Whether home-page ambient suggestions are enabled`,
-        key: `ambient-suggestions-enabled`,
-        schema: peers.hu
-      })
-    };
+    (peers._u(),
+      peers.xu(),
+      (CEe = {
+        enabled: peers.yu({
+          agentAccess: `read-write`,
+          default: !0,
+          description: `Whether home-page ambient suggestions are enabled`,
+          key: `ambient-suggestions-enabled`,
+          schema: peers.hu,
+        }),
+      }));
   });
 }

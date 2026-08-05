@@ -27,10 +27,7 @@ import type { DetachedTextHost, DetachedTextOptions } from "./types";
 import { DETACHED_TEXT_HOST } from "./detached-text-host";
 import { isDetachedTextPayload } from "./text-input-guards";
 import { normalizeParagraphInputs } from "./text-input-build";
-import {
-  isPlainRunList,
-  isMathInline,
-} from "./text-input-guards";
+import { isPlainRunList, isMathInline } from "./text-input-guards";
 import { paragraphToConfig } from "./text-input-serialize";
 import {
   getDetachedBold,
@@ -109,59 +106,35 @@ export class DetachedText {
       dtBind21856?.name && (this.#a = dtBind21856.name);
     }
     dtIn2235.autoFit !== undefined &&
-      this.#D(
-        dtIn2235.autoFit,
-        (dtIn14357, dtIn14358) => {
-          dtIn14357.autoFit = dtIn14358;
-        },
-      );
-  }
-  static create(
-    dtIn6189 = "",
-    dtIn6190 = DETACHED_TEXT_HOST,
-  ) {
-    let dtBind16268 = new Paragraphs(
-        dtIn6190,
-        [],
-      ),
-      dtBind16269 = new DetachedText(dtBind16268, {
-        resolveTextStyle: (dtIn15863) =>
-          dtIn6190.getTextStyleByName(dtIn15863),
-        listPresetProfile:
-          dtIn6190.getListPresetProfile?.() ?? "presentation",
+      this.#D(dtIn2235.autoFit, (dtIn14357, dtIn14358) => {
+        dtIn14357.autoFit = dtIn14358;
       });
-    return (
-      dtBind16269.set(dtIn6189),
-      dtBind16269
-    );
+  }
+  static create(dtIn6189 = "", dtIn6190 = DETACHED_TEXT_HOST) {
+    let dtBind16268 = new Paragraphs(dtIn6190, []),
+      dtBind16269 = new DetachedText(dtBind16268, {
+        resolveTextStyle: (dtIn15863) => dtIn6190.getTextStyleByName(dtIn15863),
+        listPresetProfile: dtIn6190.getListPresetProfile?.() ?? "presentation",
+      });
+    return (dtBind16269.set(dtIn6189), dtBind16269);
   }
   toString() {
     return this.#e.toPlainText();
   }
   get(dtIn6209) {
-    if (!dtIn6209)
-      return TextSelection.empty(this.#e, this.#G());
+    if (!dtIn6209) return TextSelection.empty(this.#e, this.#G());
     let dtBind16288 = this.toString().indexOf(dtIn6209);
-    if (dtBind16288 === -1)
-      return TextSelection.empty(this.#e, this.#G());
-    let dtBind16289 =
-        dtBind16288 + dtIn6209.length,
-      dtBind16290 = this.#V(
-        dtBind16288,
-        dtBind16289,
-      );
+    if (dtBind16288 === -1) return TextSelection.empty(this.#e, this.#G());
+    let dtBind16289 = dtBind16288 + dtIn6209.length,
+      dtBind16290 = this.#V(dtBind16288, dtBind16289);
     return new TextSelection(this.#e, dtBind16290, this.#G());
   }
   getRange(dtIn5333, dtIn5334) {
     let dtBind15013 = Math.max(0, Math.floor(dtIn5333)),
       dtBind15014 = Math.max(0, Math.floor(dtIn5334));
-    if (dtBind15014 === 0)
-      return TextSelection.empty(this.#e, this.#G());
+    if (dtBind15014 === 0) return TextSelection.empty(this.#e, this.#G());
     let dtBind15015 = dtBind15013 + dtBind15014,
-      dtBind15016 = this.#V(
-        dtBind15013,
-        dtBind15015,
-      );
+      dtBind15016 = this.#V(dtBind15013, dtBind15015);
     return dtBind15016.length === 0
       ? TextSelection.empty(this.#e, this.#G())
       : new TextSelection(this.#e, dtBind15016, this.#G());
@@ -175,10 +148,7 @@ export class DetachedText {
       : new TextSelection(this.#e, dtBind16554, this.#G());
   }
   set(dtIn4010) {
-    if (
-      (this.#b(dtIn4010),
-      dtIn4010 instanceof DetachedText)
-    ) {
+    if ((this.#b(dtIn4010), dtIn4010 instanceof DetachedText)) {
       this.#T(dtIn4010);
       this.#K();
       return;
@@ -209,8 +179,7 @@ export class DetachedText {
           this.#K();
           return;
         }
-        for (let dtBind23083 of dtIn4298)
-          this.add(dtBind23083);
+        for (let dtBind23083 of dtIn4298) this.add(dtBind23083);
         return;
       }
       if (dtIn4298 instanceof DetachedText) {
@@ -229,8 +198,7 @@ export class DetachedText {
     if (!dtIn9520) return;
     this.#x(dtIn9520, dtIn9521);
     let dtBind20037 = this.get(dtIn9520);
-    dtBind20037.isEmpty ||
-      (dtBind20037.replace(dtIn9521), this.#K());
+    dtBind20037.isEmpty || (dtBind20037.replace(dtIn9521), this.#K());
   }
   get bold() {
     return getDetachedBold(this.#styleHost());
@@ -341,8 +309,7 @@ export class DetachedText {
       this.#p(dtBind19092);
       return;
     }
-    (dtIn8589 !== undefined &&
-      typeof dtIn8589 != "string") ||
+    (dtIn8589 !== undefined && typeof dtIn8589 != "string") ||
       this.#f(dtIn8589);
   }
   #f(styleId: string | undefined, opts: { record?: boolean } = {}) {
@@ -364,7 +331,11 @@ export class DetachedText {
     applyBoxOnlyFieldsPeel(this.#styleApplyHost(), partial);
   }
   #v(partial: Record<string, unknown>, styleName: string | undefined) {
-    return styleRecordFromPartialPeel(this.#styleApplyHost(), partial, styleName);
+    return styleRecordFromPartialPeel(
+      this.#styleApplyHost(),
+      partial,
+      styleName,
+    );
   }
   #y(paragraph: any) {
     clearRunStylesPeel(paragraph);
@@ -392,9 +363,7 @@ export class DetachedText {
   }
   #S(dtIn6793) {
     if (
-      !Object.values(dtIn6793).some(
-        (item) => item !== undefined,
-      ) ||
+      !Object.values(dtIn6793).some((item) => item !== undefined) ||
       (this.#q(), !this.#l)
     )
       return;
@@ -421,12 +390,8 @@ export class DetachedText {
     let dtBind11419 = dtBind11418.map((item) =>
         paragraphToConfig(item.toProto()),
       ),
-      dtBind11420 = dtBind11419.every((item) =>
-        isPlainRunList(item),
-      ),
-      dtBind11421 = dtBind11419.filter((item) =>
-        isPlainRunList(item),
-      );
+      dtBind11420 = dtBind11419.every((item) => isPlainRunList(item)),
+      dtBind11421 = dtBind11419.filter((item) => isPlainRunList(item));
     if (
       dtBind11420 &&
       dtBind11421.every((item) =>
@@ -438,13 +403,9 @@ export class DetachedText {
       let dtBind20697 = dtBind11421.map((item) =>
         item.map((_item) => String(_item)).join(""),
       );
-      return dtBind20697.length === 1
-        ? (dtBind20697[0] ?? "")
-        : dtBind20697;
+      return dtBind20697.length === 1 ? (dtBind20697[0] ?? "") : dtBind20697;
     }
-    return dtBind11419.length === 1
-      ? (dtBind11419[0] ?? "")
-      : dtBind11419;
+    return dtBind11419.length === 1 ? (dtBind11419[0] ?? "") : dtBind11419;
   }
   #T(dtIn2354) {
     let dtBind9506 = dtIn2354.paragraphs.items,
@@ -484,13 +445,8 @@ export class DetachedText {
         .filter((item) => !!item),
       dtBind13332 = this.#G();
     return (
-      dtIn4277?.recordOps === false &&
-        (dtBind13332.recordOp = undefined),
-      new TextSelection(
-        this.#e,
-        dtBind13331,
-        dtBind13332,
-      )
+      dtIn4277?.recordOps === false && (dtBind13332.recordOp = undefined),
+      new TextSelection(this.#e, dtBind13331, dtBind13332)
     );
   }
   #D(dtIn7965, dtIn7966) {
@@ -511,36 +467,26 @@ export class DetachedText {
     let dtBind19678 =
       dtIn9093.length === 0
         ? []
-        : dtIn9093
-            .split(/\r?\n/)
-            .map((item) => item.replace(/\r$/, ""));
+        : dtIn9093.split(/\r?\n/).map((item) => item.replace(/\r$/, ""));
     this.#A(dtBind19678);
   }
   #A(dtIn3361) {
-    let dtBind11682 = (dtIn3361 ?? []).map((item) =>
-        String(item ?? ""),
-      ),
-      dtBind11683 =
-        dtBind11682.length === 0 ? [""] : dtBind11682,
+    let dtBind11682 = (dtIn3361 ?? []).map((item) => String(item ?? "")),
+      dtBind11683 = dtBind11682.length === 0 ? [""] : dtBind11682,
       dtBind11684 = this.#e.items,
-      dtBind11685 =
-        dtBind11684[dtBind11684.length - 1];
+      dtBind11685 = dtBind11684[dtBind11684.length - 1];
     for (
       let dtBind17046 = 0;
       dtBind17046 < dtBind11683.length;
       dtBind17046 += 1
     ) {
-      let dtBind18075 =
-          dtBind11683[dtBind17046] ?? "",
+      let dtBind18075 = dtBind11683[dtBind17046] ?? "",
         dtBind18076 = dtBind11684[dtBind17046];
       if (dtBind18076) {
         this.#j(dtBind18076, dtBind18075);
         continue;
       }
-      let dtBind18077 = this.#M(
-        dtBind11685,
-        dtBind18075,
-      );
+      let dtBind18077 = this.#M(dtBind11685, dtBind18075);
       this.#e.append(dtBind18077);
     }
     for (
@@ -559,18 +505,12 @@ export class DetachedText {
       return;
     }
     let dtBind14417 =
-      dtBind14416.find((item) => item.text.length > 0) ??
-      dtBind14416[0];
+      dtBind14416.find((item) => item.text.length > 0) ?? dtBind14416[0];
     if (!dtBind14417) {
       dtIn5000.setPlainText(dtIn5001);
       return;
     }
-    dtBind14415.replace([
-      dtBind14415.cloneWithText(
-        dtBind14417,
-        dtIn5001,
-      ),
-    ]);
+    dtBind14415.replace([dtBind14415.cloneWithText(dtBind14417, dtIn5001)]);
     dtIn5000.inlineNodes = [];
   }
   #M(dtIn2701, dtIn2702) {
@@ -602,9 +542,8 @@ export class DetachedText {
         dtBind10281)
       : ((dtBind10281.runs = [
           {
-            ...(dtBind10282.find(
-              (item) => (item.text ?? "").length > 0,
-            ) ?? dtBind10282[0]),
+            ...(dtBind10282.find((item) => (item.text ?? "").length > 0) ??
+              dtBind10282[0]),
             id: "",
             text: dtIn2702,
           },
@@ -615,16 +554,13 @@ export class DetachedText {
     let dtBind18951 = normalizeParagraphInputs(dtIn8449);
     if ((this.#e.clear(), dtBind18951.length === 0))
       this.#e.setFromPlainText("");
-    else
-      for (let dtBind23052 of dtBind18951)
-        this.#e.append(dtBind23052);
+    else for (let dtBind23052 of dtBind18951) this.#e.append(dtBind23052);
     this.#I();
   }
   #P(dtIn9522) {
     let dtBind20038 = normalizeParagraphInputs(dtIn9522);
     if (dtBind20038.length !== 0) {
-      for (let dtBind23053 of dtBind20038)
-        this.#e.append(dtBind23053);
+      for (let dtBind23053 of dtBind20038) this.#e.append(dtBind23053);
       this.#I();
     }
   }
@@ -641,22 +577,18 @@ export class DetachedText {
   }
   #I() {
     let dtBind22207 = this.#e.items;
-    for (let dtBind23088 of dtBind22207)
-      this.#L(dtBind23088);
+    for (let dtBind23088 of dtBind22207) this.#L(dtBind23088);
   }
   #L(dtIn6043) {
     let dtBind16074 = this.#a ? this.#a.trim() : undefined,
       dtBind16075 = this.defaultTextStyle;
     dtBind16074 &&
-      (!dtIn6043.styleId ||
-        dtIn6043.styleId.length === 0) &&
+      (!dtIn6043.styleId || dtIn6043.styleId.length === 0) &&
       ((dtIn6043.styleId = dtBind16074),
       applyListParagraphDefaults(dtIn6043, dtBind16074, this.#i));
     dtBind16075 &&
       !dtIn6043.textStyle &&
-      (dtIn6043.textStyle = new TextStyle(
-        dtBind16075.toProto(),
-      ));
+      (dtIn6043.textStyle = new TextStyle(dtBind16075.toProto()));
   }
   #R(dtIn5712) {
     if (dtIn5712.length === 0) return;
@@ -679,25 +611,18 @@ export class DetachedText {
       ...(dtIn8137 ?? {}),
     };
     if (dtIn8138)
-      for (let [
-        dtBind22641,
-        dtBind22642,
-      ] of Object.entries(dtIn8138))
-        dtBind22642 !== undefined &&
-          (dtBind18638[dtBind22641] =
-            dtBind22642);
+      for (let [dtBind22641, dtBind22642] of Object.entries(dtIn8138))
+        dtBind22642 !== undefined && (dtBind18638[dtBind22641] = dtBind22642);
     return dtBind18638;
   }
   #B(dtIn8735) {
     let dtBind19248 = dtIn8735.toProto();
     return (
       (dtBind19248.id = ""),
-      (dtBind19248.runs &&= dtBind19248.runs.map(
-        (item) => ({
-          ...item,
-          id: "",
-        }),
-      )),
+      (dtBind19248.runs &&= dtBind19248.runs.map((item) => ({
+        ...item,
+        id: "",
+      }))),
       dtBind19248
     );
   }
@@ -709,16 +634,9 @@ export class DetachedText {
       dtBind11052.forEach((item, index) => {
         let dtBind13221 = item.toPlainText(),
           dtBind13222 = dtBind11053,
-          dtBind13223 =
-            dtBind13222 + dtBind13221.length,
-          dtBind13224 = Math.max(
-            dtBind13222,
-            dtIn3019,
-          ),
-          dtBind13225 = Math.min(
-            dtBind13223,
-            dtIn3020,
-          );
+          dtBind13223 = dtBind13222 + dtBind13221.length,
+          dtBind13224 = Math.max(dtBind13222, dtIn3019),
+          dtBind13225 = Math.min(dtBind13223, dtIn3020);
         dtBind13224 < dtBind13225 &&
           dtBind11051.push({
             paragraphIndex: index,
@@ -726,8 +644,7 @@ export class DetachedText {
             endOffset: dtBind13225 - dtBind13222,
           });
         dtBind11053 = dtBind13223;
-        index < dtBind11052.length - 1 &&
-          (dtBind11053 += 1);
+        index < dtBind11052.length - 1 && (dtBind11053 += 1);
       }),
       dtBind11051
     );
@@ -735,9 +652,7 @@ export class DetachedText {
   #H(dtIn2703) {
     let dtBind10283 = [];
     for (let dtBind10978 of dtIn2703) {
-      let dtBind11165 = this.#e.getItem(
-        dtBind10978.paragraphIndex,
-      );
+      let dtBind11165 = this.#e.getItem(dtBind10978.paragraphIndex);
       if (!dtBind11165) continue;
       let dtBind11166 = dtBind11165.runs.items;
       if (
@@ -745,20 +660,12 @@ export class DetachedText {
         dtBind10978.runIndex >= dtBind11166.length
       )
         continue;
-      let dtBind11167 =
-        dtBind11166[dtBind10978.runIndex];
+      let dtBind11167 = dtBind11166[dtBind10978.runIndex];
       if (!dtBind11167) continue;
       let dtBind11168 = dtBind11167.text ?? "",
-        dtBind11169 = this.#U(
-          dtBind11165,
-          dtBind10978.runIndex,
-        ),
-        dtBind11170 =
-          dtBind11169 +
-          this.#W(dtBind11168, dtBind10978.start),
-        dtBind11171 =
-          dtBind11169 +
-          this.#W(dtBind11168, dtBind10978.end);
+        dtBind11169 = this.#U(dtBind11165, dtBind10978.runIndex),
+        dtBind11170 = dtBind11169 + this.#W(dtBind11168, dtBind10978.start),
+        dtBind11171 = dtBind11169 + this.#W(dtBind11168, dtBind10978.end);
       dtBind11171 <= dtBind11170 ||
         dtBind10283.push({
           paragraphIndex: dtBind10978.paragraphIndex,
@@ -771,44 +678,30 @@ export class DetachedText {
   #U(dtIn6582, dtIn6583) {
     let dtBind16846 = dtIn6582.runs.items,
       dtBind16847 = 0,
-      dtBind16848 = Math.max(
-        0,
-        Math.min(dtIn6583, dtBind16846.length),
-      );
-    for (
-      let dtBind21354 = 0;
-      dtBind21354 < dtBind16848;
-      dtBind21354 += 1
-    ) {
+      dtBind16848 = Math.max(0, Math.min(dtIn6583, dtBind16846.length));
+    for (let dtBind21354 = 0; dtBind21354 < dtBind16848; dtBind21354 += 1) {
       let dtBind22313 = dtBind16846[dtBind21354];
-      dtBind22313?.text &&
-        (dtBind16847 += dtBind22313.text.length);
+      dtBind22313?.text && (dtBind16847 += dtBind22313.text.length);
     }
     return dtBind16847;
   }
   #W(dtIn7253, dtIn7254) {
     if (!dtIn7253 || dtIn7254 <= 0) return 0;
     let dtBind17619 = segmentGraphemes(dtIn7253),
-      dtBind17620 = Math.max(
-        0,
-        Math.min(dtIn7254, dtBind17619.length),
-      ),
+      dtBind17620 = Math.max(0, Math.min(dtIn7254, dtBind17619.length)),
       dtBind17621 = 0;
-    for (
-      let dtBind22836 = 0;
-      dtBind22836 < dtBind17620;
-      dtBind22836 += 1
-    )
-      dtBind17621 +=
-        dtBind17619[dtBind22836]?.length ?? 0;
+    for (let dtBind22836 = 0; dtBind22836 < dtBind17620; dtBind22836 += 1)
+      dtBind17621 += dtBind17619[dtBind22836]?.length ?? 0;
     return dtBind17621;
   }
   #styleHost() {
     const self = this;
     return {
       fullSelection: (opts?: { recordOps?: boolean }) => self.#E(opts),
-      patchDefaultStyle: (value: unknown, mutator: (style: any, value: unknown) => void) =>
-        self.#D(value, mutator),
+      patchDefaultStyle: (
+        value: unknown,
+        mutator: (style: any, value: unknown) => void,
+      ) => self.#D(value, mutator),
       recordStyle: (props: Record<string, unknown>) => self.#S(props),
       notifyChanged: () => self.#K(),
       get defaultTextStyle() {
@@ -844,14 +737,18 @@ export class DetachedText {
       },
       resolveTextStyle: self.#r,
       fullSelection: (opts?: { recordOps?: boolean }) => self.#E(opts),
-      patchDefaultStyle: (value: unknown, mutator: (style: any, value: unknown) => void) =>
-        self.#D(value, mutator),
+      patchDefaultStyle: (
+        value: unknown,
+        mutator: (style: any, value: unknown) => void,
+      ) => self.#D(value, mutator),
       recordStyle: (props: Record<string, unknown>) => self.#S(props),
       notifyChanged: () => self.#K(),
       notifyMutatedOnly: () => self.#q(),
       clearRunStyles: (paragraph: any) => clearRunStylesPeel(paragraph),
-      applyNamedStyle: (styleId: string | undefined, opts?: { record?: boolean }) =>
-        applyNamedStylePeel(self.#styleApplyHost(), styleId, opts),
+      applyNamedStyle: (
+        styleId: string | undefined,
+        opts?: { record?: boolean },
+      ) => applyNamedStylePeel(self.#styleApplyHost(), styleId, opts),
       applyStyleConfigPartial: (
         partial: Record<string, unknown>,
         opts?: { record?: boolean },
@@ -861,8 +758,10 @@ export class DetachedText {
       styleRecordFromPartial: (
         partial: Record<string, unknown>,
         styleName: string | undefined,
-      ) => styleRecordFromPartialPeel(self.#styleApplyHost(), partial, styleName),
-      mergeStyleProtos: (primary: any, fallback: any) => self.#z(primary, fallback),
+      ) =>
+        styleRecordFromPartialPeel(self.#styleApplyHost(), partial, styleName),
+      mergeStyleProtos: (primary: any, fallback: any) =>
+        self.#z(primary, fallback),
     };
   }
   #G() {

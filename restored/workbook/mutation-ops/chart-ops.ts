@@ -40,21 +40,21 @@ export function buildChartSetOp(opIn7508: ChartMutationProps): LooseBag | null {
       }
     : null;
 }
-export function buildChartProps(opIn2033: LooseBag, opIn2034: string, opIn2035?: { includeId?: boolean }): LooseBag {
+export function buildChartProps(
+  opIn2033: LooseBag,
+  opIn2034: string,
+  opIn2035?: { includeId?: boolean },
+): LooseBag {
   let opBind8873 = {
     chartType: opIn2034,
     anchor: cloneChartAnchor(opIn2033.anchor),
   };
-  opIn2035?.includeId &&
-    (opBind8873.id = opIn2033.id);
-  opIn2033.titleText !== undefined &&
-    (opBind8873.title = opIn2033.titleText);
+  opIn2035?.includeId && (opBind8873.id = opIn2033.id);
+  opIn2033.titleText !== undefined && (opBind8873.title = opIn2033.titleText);
   let opBind8874 = opIn2033.categories;
-  opBind8874.length > 0 &&
-    (opBind8873.categories = [...opBind8874]);
+  opBind8874.length > 0 && (opBind8873.categories = [...opBind8874]);
   let opBind8875 = mapChartSeries(opIn2033.series.items);
-  opBind8875.length > 0 &&
-    (opBind8873.series = opBind8875);
+  opBind8875.length > 0 && (opBind8873.series = opBind8875);
   opIn2033.hasLegend !== undefined &&
     (opBind8873.hasLegend = opIn2033.hasLegend);
   let opBind8876 = opIn2033.legend.position;
@@ -71,8 +71,7 @@ export function buildChartProps(opIn2033: LooseBag, opIn2034: string, opIn2035?:
   let opBind8879 = serializePieOptions(opIn2033);
   opBind8879 && (opBind8873.pieOptions = opBind8879);
   let opBind8880 = serializeDoughnutOptions(opIn2033);
-  opBind8880 &&
-    (opBind8873.doughnutOptions = opBind8880);
+  opBind8880 && (opBind8873.doughnutOptions = opBind8880);
   let opBind8881 = serializeChartAreaStyle(
     opIn2033.plotAreaFill,
     opIn2033.plotAreaLine,
@@ -82,16 +81,10 @@ export function buildChartProps(opIn2033: LooseBag, opIn2034: string, opIn2035?:
     opIn2033.chartFill,
     opIn2033.chartLine,
   );
-  return (
-    opBind8882 &&
-      (opBind8873.chartArea = opBind8882),
-    opBind8873
-  );
+  return (opBind8882 && (opBind8873.chartArea = opBind8882), opBind8873);
 }
 export function buildChartSelector(opIn8139: LooseBag): LooseBag {
-  let opBind18641 = opIn8139.series.items.map(
-    (item) => item.name,
-  );
+  let opBind18641 = opIn8139.series.items.map((item) => item.name);
   return {
     anchor: cloneChartAnchor(opIn8139.anchor),
     chartType: opIn8139.type,

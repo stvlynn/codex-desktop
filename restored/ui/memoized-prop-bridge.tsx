@@ -12,7 +12,9 @@ export type MemoizedPropBridgePeers = {
 let peers: MemoizedPropBridgePeers | null = null;
 
 /** Wire MemoizedPropBridge peers once companions land. */
-export function setMemoizedPropBridgePeers(next: MemoizedPropBridgePeers): void {
+export function setMemoizedPropBridgePeers(
+  next: MemoizedPropBridgePeers,
+): void {
   peers = next;
 }
 

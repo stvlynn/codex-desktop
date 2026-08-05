@@ -13,7 +13,9 @@ export type UseOwnerProfileEmailByAppQueriesPeers = {
 let peers: UseOwnerProfileEmailByAppQueriesPeers | null = null;
 
 /** Wire UseOwnerProfileEmailByAppQueries peers once companions land. */
-export function setUseOwnerProfileEmailByAppQueriesPeers(next: UseOwnerProfileEmailByAppQueriesPeers): void {
+export function setUseOwnerProfileEmailByAppQueriesPeers(
+  next: UseOwnerProfileEmailByAppQueriesPeers,
+): void {
   peers = next;
 }
 

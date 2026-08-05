@@ -6,7 +6,9 @@ import {
   normalizeUnitOrPercent,
 } from "./color-unit-helpers";
 
-export function normalizeColorTransformConfig(colorCfg2243: Record<string, number> | null | undefined) {
+export function normalizeColorTransformConfig(
+  colorCfg2243: Record<string, number> | null | undefined,
+) {
   if (
     !colorCfg2243 ||
     !Object.values(colorCfg2243).some((item) => item !== undefined)
@@ -25,7 +27,9 @@ export function normalizeColorTransformConfig(colorCfg2243: Record<string, numbe
   let workbookBinding9292 = {};
   if (
     (typeof opacity == "number" &&
-      (workbookBinding9292.alpha = Math.round(normalizeUnitOrPercent(opacity) * 1e5)),
+      (workbookBinding9292.alpha = Math.round(
+        normalizeUnitOrPercent(opacity) * 1e5,
+      )),
     typeof lighten == "number" && lighten !== 0)
   ) {
     let workbookBinding21673 = normalizeUnitOrPercent(lighten);
@@ -50,7 +54,9 @@ export function normalizeColorTransformConfig(colorCfg2243: Record<string, numbe
     ? workbookBinding9292
     : undefined;
 }
-export function colorTransformToConfig(props: Record<string, number> | null | undefined) {
+export function colorTransformToConfig(
+  props: Record<string, number> | null | undefined,
+) {
   if (!props) return;
   let workbookBinding7369 = props.alpha,
     workbookBinding7370 = props.tint,
@@ -110,7 +116,9 @@ export function colorTransformToConfig(props: Record<string, number> | null | un
     ? workbookBinding7374
     : undefined;
 }
-export function normalizeProtoTint(props: Record<string, number> | null | undefined) {
+export function normalizeProtoTint(
+  props: Record<string, number> | null | undefined,
+) {
   if (!props) return;
   let workbookBinding16385 = props.tint;
   if (typeof workbookBinding16385 != "number" || workbookBinding16385 >= 0)
@@ -147,4 +155,3 @@ function parseOpacityToken(props) {
         : workbookBinding16540,
     );
 }
-

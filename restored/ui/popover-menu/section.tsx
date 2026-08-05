@@ -98,10 +98,7 @@ function PopoverMenuSectionHeader(props: SectionHeaderProps): ReactElement {
     mode === "dropdown" && hasDropdownOptions ? (
       <DropdownMenuPopover triggerButton={titleButton}>
         {sectionOptions.map((option) => (
-          <DropdownMenu.Item
-            key={option}
-            onSelect={() => onChange?.(option)}
-          >
+          <DropdownMenu.Item key={option} onSelect={() => onChange?.(option)}>
             {option}
           </DropdownMenu.Item>
         ))}
@@ -193,12 +190,7 @@ export function PopoverMenuSection(
       sectionAutoCollapseStatusAtom.write(sectionKey, "collapsed");
     }, SECTION_AUTO_COLLAPSE_MS);
     return () => window.clearTimeout(timeoutId);
-  }, [
-    autoCollapse,
-    autoCollapseActive,
-    autoCollapseStatus,
-    sectionKey,
-  ]);
+  }, [autoCollapse, autoCollapseActive, autoCollapseStatus, sectionKey]);
 
   const showContent =
     mode === "headerless" || isExpanded || mode === "dropdown";

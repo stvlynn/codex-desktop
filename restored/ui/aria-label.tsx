@@ -37,6 +37,19 @@ export function bindBindAriaLabel() {
   }
 
   return peers.e(() => {
-    XVl = peers.c(), peers.Ho(), peers.$u(), peers.YB(), peers.CM(), peers.x_(), peers.OK(), peers.ed(), peers.JVl(), peers.gR(), peers.wRl(), peers.vzl(), peers.Dzl(), ZVl = peers.J();
+    ((XVl = peers.c()),
+      peers.Ho(),
+      peers.$u(),
+      peers.YB(),
+      peers.CM(),
+      peers.x_(),
+      peers.OK(),
+      peers.ed(),
+      peers.JVl(),
+      peers.gR(),
+      peers.wRl(),
+      peers.vzl(),
+      peers.Dzl(),
+      (ZVl = peers.J()));
   });
 }

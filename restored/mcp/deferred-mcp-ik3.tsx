@@ -10,7 +10,9 @@ export type BindDeferredMcpIK3Peers = {
 let peers: BindDeferredMcpIK3Peers | null = null;
 
 /** Wire bindDeferredMcpIK3 peers once companions land. */
-export function setBindDeferredMcpIK3Peers(next: BindDeferredMcpIK3Peers): void {
+export function setBindDeferredMcpIK3Peers(
+  next: BindDeferredMcpIK3Peers,
+): void {
   peers = next;
 }
 
@@ -22,5 +24,5 @@ export function bindDeferredMcpIK3() {
     throw new Error("bindDeferredMcpIK3 peers are not configured");
   }
 
-  return peers.ka(peers.Q, e => peers.U7r(e));
+  return peers.ka(peers.Q, (e) => peers.U7r(e));
 }

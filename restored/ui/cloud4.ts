@@ -33,37 +33,38 @@ export function cloud4() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.E$r(), peers.KM(), peers.gT(), D$r = peers.Ma(peers.hT, ({
-      get: e
-    }) => {
-      let {
-          data: t
-        } = peers.e(peers.b$r),
-        n = peers.e(peers.w$r);
-      if (!(t == null || n == null)) return {
-        type: `cloud`,
-        hasAppliedCodeLocally: peers.e(peers.T$r),
-        taskDetails: t,
-        selectedTurnId: n.id,
-        selectedTurn: n
-      };
-    }), oN = peers.Ma(peers.GM, ({
-      get: e,
-      scope: t
-    }) => {
-      switch (t.value.kind) {
-        case `local`:
-          return t.value.conversationId == null ? void 0 : {
-            type: `local`,
-            localConversationId: t.value.conversationId
+    (peers.Ho(),
+      peers.E$r(),
+      peers.KM(),
+      peers.gT(),
+      (D$r = peers.Ma(peers.hT, ({ get: e }) => {
+        let { data: t } = peers.e(peers.b$r),
+          n = peers.e(peers.w$r);
+        if (!(t == null || n == null))
+          return {
+            type: `cloud`,
+            hasAppliedCodeLocally: peers.e(peers.T$r),
+            taskDetails: t,
+            selectedTurnId: n.id,
+            selectedTurn: n,
           };
-        case `cloud`:
-          return peers.e(peers.D$r);
-        case `chatgpt`:
-        case `new`:
-        case `other`:
-          return;
-      }
-    });
+      })),
+      (oN = peers.Ma(peers.GM, ({ get: e, scope: t }) => {
+        switch (t.value.kind) {
+          case `local`:
+            return t.value.conversationId == null
+              ? void 0
+              : {
+                  type: `local`,
+                  localConversationId: t.value.conversationId,
+                };
+          case `cloud`:
+            return peers.e(peers.D$r);
+          case `chatgpt`:
+          case `new`:
+          case `other`:
+            return;
+        }
+      })));
   });
 }

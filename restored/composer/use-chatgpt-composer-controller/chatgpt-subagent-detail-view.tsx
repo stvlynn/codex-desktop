@@ -7,9 +7,7 @@ import { cx as appInitialWft } from "../../ui/cx";
 import { subagentPanelT } from "../../composer/subagent-panel";
 import { useChatgptComposerControllerHelper247 } from "./chatgpt-safe-streaming-markdown";
 
-function useChatgptComposerControllerHelper281(
-  request330,
-) {
+function useChatgptComposerControllerHelper281(request330) {
   const AppInitialGft = appInitialGft;
   const SubagentPanelT = subagentPanelT;
   const UseChatgptComposerControllerHelper282 =
@@ -28,13 +26,12 @@ function useChatgptComposerControllerHelper281(
       onBack,
     } = request330,
     slot2121 = appInitialJft(),
-    slot2122 =
-      slot2121.formatMessage({
-        id: "chatgptConversations.subagents.panel.back",
-        defaultMessage: "Back to subagents",
-        description:
-          "Accessible label for a button in the Work subagents right side panel that returns from one agent's detail view to the agent list.",
-      });
+    slot2122 = slot2121.formatMessage({
+      id: "chatgptConversations.subagents.panel.back",
+      defaultMessage: "Back to subagents",
+      description:
+        "Accessible label for a button in the Work subagents right side panel that returns from one agent's detail view to the agent list.",
+    });
   let slot2123 = subagent?.displayName ?? (
     <AppInitialGft
       id="chatgptConversations.subagents.nameFallback"
@@ -165,9 +162,7 @@ function useChatgptComposerControllerHelper281(
     </div>
   );
 }
-function useChatgptComposerControllerHelper282(
-  request3857,
-) {
+function useChatgptComposerControllerHelper282(request3857) {
   let { children, title } = request3857,
     slot9713 = (
       <h2 className="mb-2 text-sm font-medium text-token-text-tertiary">
@@ -184,9 +179,7 @@ function useChatgptComposerControllerHelper282(
     </section>
   );
 }
-function useChatgptComposerControllerHelper283(
-  request1395,
-) {
+function useChatgptComposerControllerHelper283(request1395) {
   const AppInitialGft = appInitialGft;
   let { status } = request1395;
   switch (status) {
@@ -232,8 +225,6 @@ function useChatgptComposerControllerHelper283(
     }
   }
 }
-
-
 
 export {
   useChatgptComposerControllerHelper281,

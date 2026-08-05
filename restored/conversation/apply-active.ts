@@ -39,7 +39,7 @@ export function applyActive() {
 
   return class {
     transcriptState = peers.Vnt();
-    client = new peers.Qnt(e => {
+    client = new peers.Qnt((e) => {
       peers.Hnt(this.transcriptState, peers.e);
     });
     audioContext = null;
@@ -47,21 +47,39 @@ export function applyActive() {
     processor = null;
     async start(e) {
       let t = window.AudioContext;
-      if (t == null) throw new peers.Rh(`AudioContext is not available for streaming dictation.`);
+      if (t == null)
+        throw new peers.Rh(
+          `AudioContext is not available for streaming dictation.`,
+        );
       let n = new t();
-      this.audioContext = n, this.source = n.createMediaStreamSource(peers.e), this.processor = n.createScriptProcessor(2048, 1, 1), this.processor.onaudioprocess = e => {
-        let t = peers.e.inputBuffer.getChannelData(0);
-        this.client.appendPCM16(peers.Bnt(t));
-      }, this.source.connect(this.processor), this.processor.connect(n.destination), await this.client.connect(n.sampleRate);
+      ((this.audioContext = n),
+        (this.source = n.createMediaStreamSource(peers.e)),
+        (this.processor = n.createScriptProcessor(2048, 1, 1)),
+        (this.processor.onaudioprocess = (e) => {
+          let t = peers.e.inputBuffer.getChannelData(0);
+          this.client.appendPCM16(peers.Bnt(t));
+        }),
+        this.source.connect(this.processor),
+        this.processor.connect(n.destination),
+        await this.client.connect(n.sampleRate));
     }
     async finish() {
-      return this.stopAudioCapture(), await this.client.finish(), peers.Wnt(this.transcriptState);
+      return (
+        this.stopAudioCapture(),
+        await this.client.finish(),
+        peers.Wnt(this.transcriptState)
+      );
     }
     close() {
-      this.stopAudioCapture(), this.client.close();
+      (this.stopAudioCapture(), this.client.close());
     }
     stopAudioCapture() {
-      this.processor?.disconnect(), this.source?.disconnect(), this.processor = null, this.source = null, this.audioContext?.close().catch(() => {}), this.audioContext = null;
+      (this.processor?.disconnect(),
+        this.source?.disconnect(),
+        (this.processor = null),
+        (this.source = null),
+        this.audioContext?.close().catch(() => {}),
+        (this.audioContext = null));
     }
   };
 }

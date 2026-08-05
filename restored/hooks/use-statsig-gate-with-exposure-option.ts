@@ -11,7 +11,9 @@ export type UseStatsigGateWithExposureOptionPeers = {
 let peers: UseStatsigGateWithExposureOptionPeers | null = null;
 
 /** Wire useStatsigGateWithExposureOption peers once companions land. */
-export function setUseStatsigGateWithExposureOptionPeers(next: UseStatsigGateWithExposureOptionPeers): void {
+export function setUseStatsigGateWithExposureOptionPeers(
+  next: UseStatsigGateWithExposureOptionPeers,
+): void {
   peers = next;
 }
 

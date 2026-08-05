@@ -16,31 +16,78 @@ import { isBusinessPlan } from "../../account/plan-type-helpers";
 import { ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Z8_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_ML_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Z8_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_GZ_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
 import { composerNavigation } from "../../composer/composer-navigation";
 import { COMPOSER_NAVIGATION_ID } from "../../composer/composer-navigation-id";
 import { buildPullRequestRoutePath } from "../../conversation/github-pull-request-urls";
-import { ensureSidebarThreadKeyPrefixesInit, parseSidebarThreadKey } from "../../conversation/sidebar-thread-keys";
-import { hideJoystickFeedback, joystickFeedbackAtom, resetJoystickFeedback, updateJoystickFeedback, updateJoystickGameGesture } from "../../desktop/codex-micro-joystick-feedback";
-import { activeMiniGameAtom, advanceMiniGameRotationGesture, buildMiniGameThreadSlots, clearActiveMiniGame, emptyRotationGestureState, ensureCodexMicroMiniGamesInit, getFocusedMiniGameOwner, isAsteroidsFireKey, shouldHandleAsteroidsFire } from "../../desktop/codex-micro-mini-games";
-import { findCodexMicroWebviewCommand, getCodexMicroWebviewCommands } from "../../desktop/codex-micro-webview-commands";
+import {
+  ensureSidebarThreadKeyPrefixesInit,
+  parseSidebarThreadKey,
+} from "../../conversation/sidebar-thread-keys";
+import {
+  hideJoystickFeedback,
+  joystickFeedbackAtom,
+  resetJoystickFeedback,
+  updateJoystickFeedback,
+  updateJoystickGameGesture,
+} from "../../desktop/codex-micro-joystick-feedback";
+import {
+  activeMiniGameAtom,
+  advanceMiniGameRotationGesture,
+  buildMiniGameThreadSlots,
+  clearActiveMiniGame,
+  emptyRotationGestureState,
+  ensureCodexMicroMiniGamesInit,
+  getFocusedMiniGameOwner,
+  isAsteroidsFireKey,
+  shouldHandleAsteroidsFire,
+} from "../../desktop/codex-micro-mini-games";
+import {
+  findCodexMicroWebviewCommand,
+  getCodexMicroWebviewCommands,
+} from "../../desktop/codex-micro-webview-commands";
 import { appServices } from "../../desktop/desktop-services";
-import { collectDebugPanelTurnFiles, ensureDebugPanelTurnFilesInit } from "../../hooks/debug-panel-turn-files";
+import {
+  collectDebugPanelTurnFiles,
+  ensureDebugPanelTurnFilesInit,
+} from "../../hooks/debug-panel-turn-files";
 import { useEventCallback } from "../../hooks/use-event-callback";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit } from "../../i18n/use-intl";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { findSidebarSectionElement, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { newConversationEntrypointId } from "../../navigation/new-conversation-entrypoint-id";
 import { useColdNavigate } from "../../navigation/use-cold-navigate";
-import { codexMicroHasEverBeenDetected, ensureCodexMicroDetectionSignalsInit } from "../../onboarding/codex-micro-detection-signals";
+import {
+  codexMicroHasEverBeenDetected,
+  ensureCodexMicroDetectionSignalsInit,
+} from "../../onboarding/codex-micro-detection-signals";
 import { PdfPermissionFlag } from "../../pdf/pdf-permission-flag";
 import { parsePullRequestFilterQuery } from "../../pull-requests/parse-pull-request-filter-query";
 import { ensureDynamicScriptLoadInit } from "../../runtime/ensure-dynamic-script-load-init";
@@ -56,9 +103,29 @@ import { hasInputItemsField } from "../../utils/has-input-items-field";
 import { subscribeToListenerSet } from "../../utils/subscribe-to-listener-set";
 import { thinCallWithUndefined } from "../../utils/thin-call-with-undefined";
 import { ensureHotkeyThreadN8Init } from "../../utils/wave-av-gap-ensure-inits";
-import { ensureCodexMicroLayoutInit, parseStreamDeckLayout } from "../codex-micro-layout";
-import { codexMicroOnboardingAgentSlotsAtom, ensureCodexMicroOnboardingAnimationAtomsInit, ensureCodexMicroOnboardingAnimationInit, trackCodexMicroDeviceLifecycle } from "../codex-micro-onboarding-animation";
-import { codexMicroSlotSignalA, codexMicroSlotSignalD, codexMicroSlotSignalF, codexMicroSlotSignalI, codexMicroSlotSignalL, codexMicroSlotSignalO, codexMicroSlotSignalP, codexMicroSlotSignalR, codexMicroSlotSignalS, codexMicroSlotSignalT, codexMicroSlotSignalU } from "../codex-micro-slot-signals";
+import {
+  ensureCodexMicroLayoutInit,
+  parseStreamDeckLayout,
+} from "../codex-micro-layout";
+import {
+  codexMicroOnboardingAgentSlotsAtom,
+  ensureCodexMicroOnboardingAnimationAtomsInit,
+  ensureCodexMicroOnboardingAnimationInit,
+  trackCodexMicroDeviceLifecycle,
+} from "../codex-micro-onboarding-animation";
+import {
+  codexMicroSlotSignalA,
+  codexMicroSlotSignalD,
+  codexMicroSlotSignalF,
+  codexMicroSlotSignalI,
+  codexMicroSlotSignalL,
+  codexMicroSlotSignalO,
+  codexMicroSlotSignalP,
+  codexMicroSlotSignalR,
+  codexMicroSlotSignalS,
+  codexMicroSlotSignalT,
+  codexMicroSlotSignalU,
+} from "../codex-micro-slot-signals";
 
 // Wave5d soft stubs.
 const AppInitialGJ: any = undefined;
@@ -190,9 +257,7 @@ const yonder: any = undefined;
 const zenith: any = undefined;
 const anvil: any = undefined;
 function beacon(glen) {
-  let {
-      miniGameRearmRequiredRef
-    } = glen,
+  let { miniGameRearmRequiredRef } = glen,
     hearth = CodexPluginActionType(appScopeAtom),
     inlet = useLocation(),
     jetty = inlet.pathname.startsWith("/settings/codex-micro");
@@ -206,23 +271,27 @@ function beacon(glen) {
     rapids = CodexPluginActionResult(codexMicroSlotSignalU),
     spur = parseStreamDeckLayout(pond);
   let tor = spur,
-    updraft = NativeContextMenuSurface("2380644311") && tor.voiceButtonMode === "realtime" ? "realtime" : "push-to-talk",
+    updraft =
+      NativeContextMenuSurface("2380644311") &&
+      tor.voiceButtonMode === "realtime"
+        ? "realtime"
+        : "push-to-talk",
     verge = quarry && updraft === "realtime",
     weir = {
       enabled: verge,
-      isCodexMicroSettings: knob
+      isCodexMicroSettings: knob,
     };
-  let {
-      handleGesture
-    } = bravo(weir),
-    yard = Object.values(tor.slots).some(fjord) || Object.values(tor.analogStick).some(eddy) || oxbow === "custom" && Object.values(rapids ?? codexMicroSlotSignalO).some($t);
+  let { handleGesture } = bravo(weir),
+    yard =
+      Object.values(tor.slots).some(fjord) ||
+      Object.values(tor.analogStick).some(eddy) ||
+      (oxbow === "custom" &&
+        Object.values(rapids ?? codexMicroSlotSignalO).some($t));
   let anchor = yard,
     bolt = {
-      enabled: anchor
+      enabled: anchor,
     };
-  let {
-      skills
-    } = usePetsSettingsController(undefined, undefined, bolt),
+  let { skills } = usePetsSettingsController(undefined, undefined, bolt),
     cog = frost.useRef(null),
     disc = frost.useRef(emptyRotationGestureState),
     edge = new Set();
@@ -237,11 +306,18 @@ function beacon(glen) {
     nut = frost.useRef(null),
     piston = frost.useRef(null),
     _e = function () {
-      return piston.current ??= new eagle(dowel => hearth.set(coral, dowel), dome), piston.current;
+      return (
+        (piston.current ??= new eagle(
+          (dowel) => hearth.set(coral, dowel),
+          dome,
+        )),
+        piston.current
+      );
     };
   let rivet = _e,
     screw = function () {
-      nut.current != null && (globalThis.clearTimeout(nut.current), nut.current = null);
+      nut.current != null &&
+        (globalThis.clearTimeout(nut.current), (nut.current = null));
     };
   let torque = screw,
     valve = function () {
@@ -257,15 +333,20 @@ function beacon(glen) {
       let gib = globalThis.performance.now(),
         hub = nickel(gear.current, flange, gib);
       gear.current = hub.state;
-      hinge.current != null && (globalThis.clearTimeout(hinge.current), hinge.current = null);
+      hinge.current != null &&
+        (globalThis.clearTimeout(hinge.current), (hinge.current = null));
       alpha(hub.action);
       let idler = hub.timeoutAt;
-      idler != null && (hinge.current = globalThis.setTimeout(() => {
-        hinge.current = null;
-        let jig = nickel(gear.current, "timeout", idler);
-        gear.current = jig.state;
-        alpha(jig.action);
-      }, Math.max(0, idler - gib)));
+      idler != null &&
+        (hinge.current = globalThis.setTimeout(
+          () => {
+            hinge.current = null;
+            let jig = nickel(gear.current, "timeout", idler);
+            gear.current = jig.state;
+            alpha(jig.action);
+          },
+          Math.max(0, idler - gib),
+        ));
     };
   let clamp = bracket,
     drill = function () {
@@ -279,16 +360,25 @@ function beacon(glen) {
         forge.current.delete(orifice);
         nipple(lug() ? "triggered" : "unavailable");
       }, glide);
-      return forge.current.add(orifice), null;
+      return (forge.current.add(orifice), null);
     };
   let gasket = frame,
     handle = function (pin) {
       let race = isBusinessPlan(),
-        sleeve = skills.find(item => item.enabled && item.name === pin.skillName && item.path === pin.skillPath && deferredVM(item, race));
-      return sleeve == null ? false : (ensureAppActionPayloadSchemasInit.dispatchHostMessage({
-        type: "codex-micro-insert-skill-mention",
-        skill: AppInitialGJ(sleeve)
-      }), true);
+        sleeve = skills.find(
+          (item) =>
+            item.enabled &&
+            item.name === pin.skillName &&
+            item.path === pin.skillPath &&
+            deferredVM(item, race),
+        );
+      return sleeve == null
+        ? false
+        : (ensureAppActionPayloadSchemasInit.dispatchHostMessage({
+            type: "codex-micro-insert-skill-mention",
+            skill: AppInitialGJ(sleeve),
+          }),
+          true);
     };
   let insert = handle,
     jacket = function (trunnion, boss) {
@@ -301,22 +391,29 @@ function beacon(glen) {
     };
   let knurl = jacket,
     lever = () => {
-      hinge.current != null && (globalThis.clearTimeout(hinge.current), hinge.current = null);
-      gear.current.type !== "idle" && gear.current.type !== "suppressing-presses" && alpha("stop");
+      hinge.current != null &&
+        (globalThis.clearTimeout(hinge.current), (hinge.current = null));
+      gear.current.type !== "idle" &&
+        gear.current.type !== "suppressing-presses" &&
+        alpha("stop");
       gear.current = opal;
     };
   let mount = frost.useEffectEvent(lever),
     nozzle = () => {
-      iron.current !== updraft && (iron.current = updraft, mount());
+      iron.current !== updraft && ((iron.current = updraft), mount());
     };
   let platen;
   platen = [updraft];
   frost.useEffect(nozzle, platen);
   let ratchet = () => {
     let cam = () => {
-        joint.current != null && (globalThis.clearTimeout(joint.current), joint.current = null);
-        keystone.current != null && (globalThis.clearTimeout(keystone.current), keystone.current = null);
-        latch.current != null && (globalThis.clearTimeout(latch.current), latch.current = null);
+        joint.current != null &&
+          (globalThis.clearTimeout(joint.current), (joint.current = null));
+        keystone.current != null &&
+          (globalThis.clearTimeout(keystone.current),
+          (keystone.current = null));
+        latch.current != null &&
+          (globalThis.clearTimeout(latch.current), (latch.current = null));
         motor.current = false;
         torque();
         piston.current?.dispose();
@@ -329,10 +426,8 @@ function beacon(glen) {
         hearth.set(DeferredUiRw, crag);
         updateJoystickFeedback(hearth);
       },
-      detent = hearth.watch(eccentric => {
-        let {
-          get
-        } = eccentric;
+      detent = hearth.watch((eccentric) => {
+        let { get } = eccentric;
         get($) || cam();
       });
     return () => {
@@ -343,33 +438,60 @@ function beacon(glen) {
   let shim;
   shim = [hearth];
   frost.useEffect(ratchet, shim);
-  let tappet = follower => {
-    let {
-      event
-    } = follower;
+  let tappet = (follower) => {
+    let { event } = follower;
     ensureCodexMicroDetectionSignalsInit(hearth, event);
     let guide = event.slot == null ? null : codexMicroSlotSignalD(event.slot),
-      helix = guide != null && getSettingValue(hearth.get, AppInitialNpt.agentSource) === "custom" ? (hearth.get(codexMicroSlotSignalU) ?? codexMicroSlotSignalO)[guide] : null,
+      helix =
+        guide != null &&
+        getSettingValue(hearth.get, AppInitialNpt.agentSource) === "custom"
+          ? (hearth.get(codexMicroSlotSignalU) ?? codexMicroSlotSignalO)[guide]
+          : null,
       impeller = helix != null && !("threadKey" in helix);
-    if (ensureCodexMicroMiniGamesInit(hearth.get(clearActiveMiniGame), event)) return;
+    if (ensureCodexMicroMiniGamesInit(hearth.get(clearActiveMiniGame), event))
+      return;
     if (event.act === 1 && knoll.test(event.key) && !impeller) {
       let mesh = echo();
       if (mesh != null) {
-        event.key === lunar && copper("Escape", (mesh.matches(moss) ? mesh.closest("[data-codex-composer-root]")?.querySelector("[data-codex-composer]") : null) ?? mesh);
+        event.key === lunar &&
+          copper(
+            "Escape",
+            (mesh.matches(moss)
+              ? mesh
+                  .closest("[data-codex-composer-root]")
+                  ?.querySelector("[data-codex-composer]")
+              : null) ?? mesh,
+          );
         return;
       }
     }
-    event.act === 2 && (event.key === "ENC_CW" || event.key === "ENC_CC") && (joint.current != null && globalThis.clearTimeout(joint.current), joint.current = globalThis.setTimeout(() => {
-      AppInitialNw(hearth);
-      joint.current = null;
-    }, 180));
+    event.act === 2 &&
+      (event.key === "ENC_CW" || event.key === "ENC_CC") &&
+      (joint.current != null && globalThis.clearTimeout(joint.current),
+      (joint.current = globalThis.setTimeout(() => {
+        AppInitialNw(hearth);
+        joint.current = null;
+      }, 180)));
     let journal = marble(event);
     if (journal != null) {
       if (tor.encoderMode === "reasoning") {
         if (lemon() != null) return;
         let roller = ensureConversationPageEsm_GZ_Init();
-        if (roller == null || rivet().getActivationTarget(roller.root, roller.composerId, "reasoning") == null) return;
-        thinCallWithUndefined(journal === "ArrowUp" ? "composer.decreaseReasoningEffort" : "composer.increaseReasoningEffort", "codex_micro_encoder");
+        if (
+          roller == null ||
+          rivet().getActivationTarget(
+            roller.root,
+            roller.composerId,
+            "reasoning",
+          ) == null
+        )
+          return;
+        thinCallWithUndefined(
+          journal === "ArrowUp"
+            ? "composer.decreaseReasoningEffort"
+            : "composer.increaseReasoningEffort",
+          "codex_micro_encoder",
+        );
         falcon() != null && axle();
         return;
       }
@@ -389,7 +511,12 @@ function beacon(glen) {
         return;
       }
       let quillshaft = ensureConversationPageEsm_GZ_Init();
-      quillshaft != null && rivet().move(quillshaft.root, journal === "ArrowDown" ? "next" : "previous", quillshaft.composerId);
+      quillshaft != null &&
+        rivet().move(
+          quillshaft.root,
+          journal === "ArrowDown" ? "next" : "previous",
+          quillshaft.composerId,
+        );
       return;
     }
     let kingpin = kite(event, tor, helix);
@@ -409,14 +536,22 @@ function beacon(glen) {
         return;
       }
       if (latch.current == null) return;
-      if (globalThis.clearTimeout(latch.current), latch.current = null, tor.encoderMode === "conversation-scroll") {
+      if (
+        (globalThis.clearTimeout(latch.current),
+        (latch.current = null),
+        tor.encoderMode === "conversation-scroll")
+      ) {
         on("bottom");
         return;
       }
       let spindle = echo();
       if (spindle != null) {
         let className = falcon();
-        if (tor.encoderMode === "reasoning" && className != null && gamma(className)) {
+        if (
+          tor.encoderMode === "reasoning" &&
+          className != null &&
+          gamma(className)
+        ) {
           let elbow = indigo(className);
           if (elbow != null) {
             torque();
@@ -425,12 +560,21 @@ function beacon(glen) {
             return;
           }
         }
-        let diaphragm = tor.encoderMode === "reasoning" && className != null && harbor(className) && spindle !== className && spindle.matches('[role="menu"][data-state="open"]');
+        let diaphragm =
+          tor.encoderMode === "reasoning" &&
+          className != null &&
+          harbor(className) &&
+          spindle !== className &&
+          spindle.matches('[role="menu"][data-state="open"]');
         copper("Enter", spindle);
-        diaphragm && globalThis.queueMicrotask(() => {
-          spindle.isConnected && copper("ArrowLeft", spindle);
-        });
-        tor.encoderMode === "reasoning" && className != null && harbor(className) && axle();
+        diaphragm &&
+          globalThis.queueMicrotask(() => {
+            spindle.isConnected && copper("ArrowLeft", spindle);
+          });
+        tor.encoderMode === "reasoning" &&
+          className != null &&
+          harbor(className) &&
+          axle();
         return;
       }
       let thrust = lemon();
@@ -444,10 +588,19 @@ function beacon(glen) {
         return;
       }
       let baffle = ensureConversationPageEsm_GZ_Init(),
-        capstan = baffle == null ? null : rivet().getActivationTarget(baffle.root, baffle.composerId, tor.encoderMode === "reasoning" ? "reasoning" : undefined) ?? null;
+        capstan =
+          baffle == null
+            ? null
+            : (rivet().getActivationTarget(
+                baffle.root,
+                baffle.composerId,
+                tor.encoderMode === "reasoning" ? "reasoning" : undefined,
+              ) ?? null);
       if (capstan != null) {
         tor.encoderMode !== "reasoning" && capstan.focus();
-        capstan.dataset.composerNavigationTarget === "add-context" ? capstan.click() : copper("Enter", capstan);
+        capstan.dataset.composerNavigationTarget === "add-context"
+          ? capstan.click()
+          : copper("Enter", capstan);
         tor.encoderMode === "reasoning" && axle();
         return;
       }
@@ -455,24 +608,26 @@ function beacon(glen) {
       return;
     }
     if (kingpin?.type === "command") {
-      !thinCallWithUndefined(kingpin.command, "codex_micro_hid") && !knob && hearth.get(toastAtom).warning(<CodexMicroBridgeHelper1 {...{}} />, {
-        duration: 3,
-        hasCloseButton: false,
-        id: "codex-micro-command-unavailable"
-      });
+      !thinCallWithUndefined(kingpin.command, "codex_micro_hid") &&
+        !knob &&
+        hearth.get(toastAtom).warning(<CodexMicroBridgeHelper1 {...{}} />, {
+          duration: 3,
+          hasCloseButton: false,
+          id: "codex-micro-command-unavailable",
+        });
       return;
     }
     if (kingpin?.type === "external-url") {
       PdfPermissionFlag({
         href: kingpin.url,
-        initiator: "open_in_browser_bridge"
+        initiator: "open_in_browser_bridge",
       });
       return;
     }
     if (kingpin?.type === "composer-text") {
       ensureAppActionPayloadSchemasInit.dispatchHostMessage({
         type: "codex-micro-insert-composer-text",
-        text: kingpin.text
+        text: kingpin.text,
       });
       return;
     }
@@ -480,7 +635,10 @@ function beacon(glen) {
       insert(kingpin);
       return;
     }
-    if (kingpin?.type === "push-to-talk-press" || kingpin?.type === "push-to-talk-release") {
+    if (
+      kingpin?.type === "push-to-talk-press" ||
+      kingpin?.type === "push-to-talk-release"
+    ) {
       let ferrule = kingpin.type === "push-to-talk-press" ? "press" : "release";
       updraft === "realtime" ? handleGesture(ferrule) : clamp(ferrule);
       return;
@@ -488,7 +646,16 @@ function beacon(glen) {
     if (event.act !== 1 || event.slot == null) return;
     let land = parseSidebarThreadKey(event.threadKey);
     if (land == null) {
-      event.threadKey == null && getSettingValue(hearth.get, AppInitialNpt.agentSource) === "custom" && guide != null && helix == null && codexMicroSlotSignalS(hearth, guide, hearth.get(collectDebugPanelTurnFiles, jewel)) && nook();
+      event.threadKey == null &&
+        getSettingValue(hearth.get, AppInitialNpt.agentSource) === "custom" &&
+        guide != null &&
+        helix == null &&
+        codexMicroSlotSignalS(
+          hearth,
+          guide,
+          hearth.get(collectDebugPanelTurnFiles, jewel),
+        ) &&
+        nook();
       return;
     }
     event.slot != null && codexMicroSlotSignalP(hearth, event.slot, land.key);
@@ -496,12 +663,20 @@ function beacon(glen) {
     parsePullRequestFilterQuery(hearth, land.key, mire, ledge);
   };
   let arbor;
-  arbor = [handleGesture, knob, tor, ledge, mire, hearth, skills, nook, updraft];
+  arbor = [
+    handleGesture,
+    knob,
+    tor,
+    ledge,
+    mire,
+    hearth,
+    skills,
+    nook,
+    updraft,
+  ];
   writeScrollTop("codex-micro-hid-event", tappet, arbor);
-  let bushing = grommet => {
-    let {
-      event
-    } = grommet;
+  let bushing = (grommet) => {
+    let { event } = grommet;
     AppInitialMw(hearth, event);
     let header = cog.current,
       injector = hearth.get(AppInitialPw),
@@ -518,15 +693,19 @@ function beacon(glen) {
       return;
     }
     if (jumper != null && !injector) {
-      let outlet = getFocusedMiniGameOwner(disc.current, event, globalThis.performance.now());
-      if (disc.current = outlet.state, outlet.activated) {
+      let outlet = getFocusedMiniGameOwner(
+        disc.current,
+        event,
+        globalThis.performance.now(),
+      );
+      if (((disc.current = outlet.state), outlet.activated)) {
         engine();
         miniGameRearmRequiredRef.current = true;
         cog.current = null;
         advanceMiniGameRotationGesture(hearth);
         hearth.set(clearActiveMiniGame, {
           composerId: jumper,
-          game: isAsteroidsFireKey()
+          game: isAsteroidsFireKey(),
         });
         knurl(event, 1);
         return;
@@ -541,25 +720,32 @@ function beacon(glen) {
     let kerf = onyx(event, header, tor.analogStick, injector);
     cog.current = kerf.activeDirection;
     let louver = function (packing) {
-        keystone.current != null && (globalThis.clearTimeout(keystone.current), keystone.current = null);
+        keystone.current != null &&
+          (globalThis.clearTimeout(keystone.current),
+          (keystone.current = null));
         joystickFeedbackAtom(hearth, {
           activeDirection: kerf.activeDirection,
           enabled: !injector,
           event,
           executionStatus: packing,
           mapping: tor.analogStick,
-          previousActiveDirection: header
-        }).visible && (keystone.current = globalThis.setTimeout(() => {
-          keystone.current = null;
-          cog.current = null;
-          updateJoystickGameGesture(hearth);
-        }, 600));
+          previousActiveDirection: header,
+        }).visible &&
+          (keystone.current = globalThis.setTimeout(() => {
+            keystone.current = null;
+            cog.current = null;
+            updateJoystickGameGesture(hearth);
+          }, 600));
       },
       manifold = false,
       nip = null;
     if (kerf.action?.type === "command") {
       let reducer = kerf.action.command;
-      nip = gasket(() => thinCallWithUndefined(reducer, "codex_micro_joystick"), jumper != null, louver);
+      nip = gasket(
+        () => thinCallWithUndefined(reducer, "codex_micro_joystick"),
+        jumper != null,
+        louver,
+      );
       manifold = nip == null;
     } else if (kerf.action?.type === "skill") {
       let strainer = kerf.action;
@@ -569,17 +755,21 @@ function beacon(glen) {
     manifold || louver(nip);
   };
   let collar;
-  return collar = [tor.analogStick, hearth, skills], writeScrollTop("codex-micro-joystick-event", bushing, collar), null;
+  return (
+    (collar = [tor.analogStick, hearth, skills]),
+    writeScrollTop("codex-micro-joystick-event", bushing, collar),
+    null
+  );
 }
 function crag(tee) {
   return {
     ...tee,
     joystick: {
       angle: 0,
-      distance: 0
+      distance: 0,
     },
     knobPulse: null,
-    pressedKeys: []
+    pressedKeys: [],
   };
 }
 function dome() {

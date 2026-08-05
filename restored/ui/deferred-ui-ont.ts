@@ -26,7 +26,9 @@ export function bindDeferredUiOnt() {
 
   return class extends peers.Iy {
     constructor(e, t, n) {
-      super(peers.e, `ResponseException`), this.status = peers.t, this.missing = peers.n;
+      (super(peers.e, `ResponseException`),
+        (this.status = peers.t),
+        (this.missing = peers.n));
     }
   };
 }

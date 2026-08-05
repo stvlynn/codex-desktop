@@ -15,7 +15,9 @@ export type BindBindConversationSearchKitPeers = {
 let peers: BindBindConversationSearchKitPeers | null = null;
 
 /** Wire bindBindConversationSearchKit peers once companions land. */
-export function setBindBindConversationSearchKitPeers(next: BindBindConversationSearchKitPeers): void {
+export function setBindBindConversationSearchKitPeers(
+  next: BindBindConversationSearchKitPeers,
+): void {
   peers = next;
 }
 
@@ -34,6 +36,6 @@ export function bindBindConversationSearchKit() {
     DomainToggle: peers.o2s,
     Navigation: peers.C2s,
     ResultLabel: peers.D2s,
-    Close: peers.n2s
+    Close: peers.n2s,
   });
 }

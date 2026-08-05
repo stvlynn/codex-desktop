@@ -130,92 +130,130 @@ function copper(event) {
   event.stopPropagation();
 }
 function GeneralSettingsHelper12(umbra) {
-  let {
-      ariaLabel,
-      placeholder,
-      value = "",
-      onChange
-    } = umbra,
+  let { ariaLabel, placeholder, value = "", onChange } = umbra,
     violet = `${ariaLabel}:${value ?? ""}`,
     willow,
     xenon;
-  willow = event => {
+  willow = (event) => {
     let yellow = event.currentTarget.value.trim();
     event.currentTarget.value = yellow;
     onChange(yellow.length > 0 ? yellow : null);
   };
-  xenon = event => {
+  xenon = (event) => {
     if (event.key !== "Enter") return;
     event.preventDefault();
     let zinc = event.currentTarget.value.trim();
     event.currentTarget.value = zinc;
     onChange(zinc.length > 0 ? zinc : null);
   };
-  return <input key={violet} aria-label={ariaLabel} className="focus-visible:ring-token-focus h-7 w-full max-w-[8.5rem] rounded-lg border border-token-border bg-token-input-background px-2 text-xs text-token-text-primary shadow-sm outline-none focus-visible:ring-2 max-sm:max-w-none" defaultValue={value} placeholder={placeholder} spellCheck={false} type="text" onBlur={willow} onKeyDown={xenon} />;
+  return (
+    <input
+      key={violet}
+      aria-label={ariaLabel}
+      className="focus-visible:ring-token-focus h-7 w-full max-w-[8.5rem] rounded-lg border border-token-border bg-token-input-background px-2 text-xs text-token-text-primary shadow-sm outline-none focus-visible:ring-2 max-sm:max-w-none"
+      defaultValue={value}
+      placeholder={placeholder}
+      spellCheck={false}
+      type="text"
+      onBlur={willow}
+      onKeyDown={xenon}
+    />
+  );
 }
 function GeneralSettingsHelper13(amber) {
-  let {
-      ariaLabel,
-      theme,
-      value,
-      onChange
-    } = amber,
-    basalt = event => {
+  let { ariaLabel, theme, value, onChange } = amber,
+    basalt = (event) => {
       onChange(Number(event.target.value));
     };
   let cedar = `linear-gradient(90deg, color-mix(in srgb, ${theme.accent} 35%, ${theme.surface}) 0%, ${theme.accent} 32%, ${theme.accent} 100%)`,
     daisy = {
       background: cedar,
-      color: "var(--color-token-foreground)"
+      color: "var(--color-token-foreground)",
     };
-  let ember = <input aria-label={ariaLabel} className="h-0.5 flex-1 appearance-none rounded-full [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border [&::-moz-range-thumb]:border-transparent [&::-moz-range-thumb]:bg-current [&::-moz-range-thumb]:shadow-sm [&::-moz-range-track]:h-0.5 [&::-moz-range-track]:rounded-full [&::-webkit-slider-runnable-track]:h-0.5 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-thumb]:mt-[-9px] [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-transparent [&::-webkit-slider-thumb]:bg-current [&::-webkit-slider-thumb]:shadow-sm" max={100} min={0} onChange={basalt} step={1} style={daisy} type="range" value={value} />;
-  let flint = <span className="w-9 text-right text-sm text-token-text-primary tabular-nums">
+  let ember = (
+    <input
+      aria-label={ariaLabel}
+      className="h-0.5 flex-1 appearance-none rounded-full [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border [&::-moz-range-thumb]:border-transparent [&::-moz-range-thumb]:bg-current [&::-moz-range-thumb]:shadow-sm [&::-moz-range-track]:h-0.5 [&::-moz-range-track]:rounded-full [&::-webkit-slider-runnable-track]:h-0.5 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-thumb]:mt-[-9px] [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-transparent [&::-webkit-slider-thumb]:bg-current [&::-webkit-slider-thumb]:shadow-sm"
+      max={100}
+      min={0}
+      onChange={basalt}
+      step={1}
+      style={daisy}
+      type="range"
+      value={value}
+    />
+  );
+  let flint = (
+    <span className="w-9 text-right text-sm text-token-text-primary tabular-nums">
       {value}
-    </span>;
-  return <div className="flex h-9 min-w-[12rem] items-center gap-2.5 max-sm:w-full max-sm:min-w-0">
+    </span>
+  );
+  return (
+    <div className="flex h-9 min-w-[12rem] items-center gap-2.5 max-sm:w-full max-sm:min-w-0">
       {ember}
       {flint}
-    </div>;
+    </div>
+  );
 }
 function delta(garnet) {
-  return garnet === "light" ? <MemoizedFormattedMessage {...{
-    id: "settings.general.appearance.lightChromeTheme",
-    defaultMessage: "Light theme",
-    description: "Label for light chrome theme controls in appearance settings"
-  }} /> : <MemoizedFormattedMessage {...{
-    id: "settings.general.appearance.darkChromeTheme",
-    defaultMessage: "Dark theme",
-    description: "Label for dark chrome theme controls in appearance settings"
-  }} />;
+  return garnet === "light" ? (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.general.appearance.lightChromeTheme",
+        defaultMessage: "Light theme",
+        description:
+          "Label for light chrome theme controls in appearance settings",
+      }}
+    />
+  ) : (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.general.appearance.darkChromeTheme",
+        defaultMessage: "Dark theme",
+        description:
+          "Label for dark chrome theme controls in appearance settings",
+      }}
+    />
+  );
 }
 function echo(hazel, ivory) {
-  return ivory === "light" ? hazel.formatMessage({
-    id: "settings.general.appearance.theme.light",
-    defaultMessage: "Light",
-    description: "Light theme option"
-  }) : hazel.formatMessage({
-    id: "settings.general.appearance.theme.dark",
-    defaultMessage: "Dark",
-    description: "Dark theme option"
-  });
+  return ivory === "light"
+    ? hazel.formatMessage({
+        id: "settings.general.appearance.theme.light",
+        defaultMessage: "Light",
+        description: "Light theme option",
+      })
+    : hazel.formatMessage({
+        id: "settings.general.appearance.theme.dark",
+        defaultMessage: "Dark",
+        description: "Dark theme option",
+      });
 }
 function falcon(jasper) {
   let kelp = indigo(jasper);
-  return kelp == null || (kelp.red * 0.2126 + kelp.green * 0.7152 + kelp.blue * 0.0722) / 255 > 0.62 ? "#101010" : "#ffffff";
+  return kelp == null ||
+    (kelp.red * 0.2126 + kelp.green * 0.7152 + kelp.blue * 0.0722) / 255 > 0.62
+    ? "#101010"
+    : "#ffffff";
 }
 function gamma(lotus) {
-  let mint = lotus.toUpperCase().replace(/[^0-9A-F#]/g, "").replaceAll("#", "");
+  let mint = lotus
+    .toUpperCase()
+    .replace(/[^0-9A-F#]/g, "")
+    .replaceAll("#", "");
   return mint.length === 0 ? "#" : `#${mint.slice(0, 6)}`;
 }
 function harbor(nova) {
   return /^#[0-9A-F]{6}$/.test(nova) ? nova.toLowerCase() : null;
 }
 function indigo(olive) {
-  return /^#[0-9a-fA-F]{6}$/.test(olive) ? {
-    blue: Number.parseInt(olive.slice(5, 7), 16),
-    green: Number.parseInt(olive.slice(3, 5), 16),
-    red: Number.parseInt(olive.slice(1, 3), 16)
-  } : null;
+  return /^#[0-9a-fA-F]{6}$/.test(olive)
+    ? {
+        blue: Number.parseInt(olive.slice(5, 7), 16),
+        green: Number.parseInt(olive.slice(3, 5), 16),
+        red: Number.parseInt(olive.slice(1, 3), 16),
+      }
+    : null;
 }
 var jade,
   kite,
@@ -255,16 +293,21 @@ var jade,
     deferredUiU();
     ensureComposerEsm_FH_Init();
     AppInitialLn();
-    marble = 'const themePreview: ThemeConfig = {\n  surface: "sidebar",\n  accent: "#2563eb",\n  contrast: 42,\n};\n';
-    nickel = 'const themePreview: ThemeConfig = {\n  surface: "sidebar-elevated",\n  accent: "#0ea5e9",\n  contrast: 68,\n};\n';
+    marble =
+      'const themePreview: ThemeConfig = {\n  surface: "sidebar",\n  accent: "#2563eb",\n  contrast: 42,\n};\n';
+    nickel =
+      'const themePreview: ThemeConfig = {\n  surface: "sidebar-elevated",\n  accent: "#0ea5e9",\n  contrast: 68,\n};\n';
     $r = '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-    onyx = parseDiffFromFile({
-      name: "src/theme-preview.ts",
-      contents: marble
-    }, {
-      name: "src/theme-preview.ts",
-      contents: nickel
-    });
+    onyx = parseDiffFromFile(
+      {
+        name: "src/theme-preview.ts",
+        contents: marble,
+      },
+      {
+        name: "src/theme-preview.ts",
+        contents: nickel,
+      },
+    );
   });
 function quartz(prism) {
   return AppInitialDC(prism, DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL);
@@ -284,7 +327,7 @@ function GeneralSettingsHelper21() {
   let wheat = vapor,
     yarn = {
       conversationId: null,
-      hostId: LOCAL_HOST_ID
+      hostId: LOCAL_HOST_ID,
     };
   let zephyr = useConversationHostFeatureFlags(yarn),
     acorn;
@@ -292,15 +335,11 @@ function GeneralSettingsHelper21() {
     let dusk = resolveDefaultAgentMode(zephyr);
     acorn = resolveGuardianApprovalWorkspaceWriteMode({
       ...zephyr,
-      defaultWorkspaceWriteMode: dusk
+      defaultWorkspaceWriteMode: dusk,
     });
   }
-  let {
-      showGuardianOption
-    } = acorn,
-    {
-      value
-    } = ensureSettingsGlyphNltInit(river),
+  let { showGuardianOption } = acorn,
+    { value } = ensureSettingsGlyphNltInit(river),
     bloom,
     coral,
     drift,
@@ -319,83 +358,145 @@ function GeneralSettingsHelper21() {
     frost = quartz(value);
     let elm;
     elm = (isle, juniper) => {
-      quill.set(ReferralInviteEligibility, lagoon => ReferralInviteTracking({
-        mode: isle,
-        visible: juniper,
-        settings: lagoon
-      }));
+      quill.set(ReferralInviteEligibility, (lagoon) =>
+        ReferralInviteTracking({
+          mode: isle,
+          visible: juniper,
+          settings: lagoon,
+        }),
+      );
     };
     glide = elm;
     eagle = UseChromeAndCodeThemeSync;
-    iris = <UseChromeAndCodeThemeSync.Header {...{
-      title: <MemoizedFormattedMessage {...{
-        ...AppInitialAn.permissions
-      }} />
-    }} />;
+    iris = (
+      <UseChromeAndCodeThemeSync.Header
+        {...{
+          title: (
+            <MemoizedFormattedMessage
+              {...{
+                ...AppInitialAn.permissions,
+              }}
+            />
+          ),
+        }}
+      />
+    );
     drift = ParseUrlOrFallback;
     let fern, grove;
-    fern = <MemoizedFormattedMessage {...{
-      ...AppInitialAn.defaultPermissions
-    }} />;
-    grove = <MemoizedFormattedMessage {...{
-      id: "settings.agent.permissionsMode.default.description",
-      defaultMessage: "By default, ChatGPT can read and edit files in its workspace. It can ask for additional access when needed",
-      description: "Description for default permissions mode"
-    }} />;
+    fern = (
+      <MemoizedFormattedMessage
+        {...{
+          ...AppInitialAn.defaultPermissions,
+        }}
+      />
+    );
+    grove = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.agent.permissionsMode.default.description",
+          defaultMessage:
+            "By default, ChatGPT can read and edit files in its workspace. It can ask for additional access when needed",
+          description: "Description for default permissions mode",
+        }}
+      />
+    );
     let hill;
     hill = reef.formatMessage({
       id: "settings.agent.permissionsMode.default.toggle",
       defaultMessage: "Default permissions are always shown",
-      description: "Accessible label for disabled default permissions toggle"
+      description: "Accessible label for disabled default permissions toggle",
     });
-    orbit = <EnsurePersonalizationCInit {...{
-      label: fern,
-      description: grove,
-      control: <AppInitialYC checked={true} disabled={true} onChange={timber} ariaLabel={hill} />
-    }} />;
-    honey = showGuardianOption && <EnsurePersonalizationCInit {...{
-      label: <MemoizedFormattedMessage {...{
-        id: "settings.agent.permissionsMode.autoReview.title",
-        defaultMessage: "Auto-review",
-        description: "Title for the Auto-review composer visibility row"
-      }} />,
-      description: <MemoizedFormattedMessage {...{
-        id: "settings.agent.permissionsMode.autoReview.description",
-        defaultMessage: "ChatGPT can read and edit files in its workspace. ChatGPT automatically reviews requests for additional access. Auto-review can make mistakes. <a>Learn more</a> about elevated risks.",
-        description: "Description for Auto-review permissions mode",
-        values: {
-          a: jacketFourth("https://developers.openai.com/codex/concepts/sandboxing/auto-review")
-        }
-      }} />,
-      control: <AppInitialYC checked={wheat["guardian-approvals"]} onChange={meadow => {
-        glide("guardian-approvals", meadow);
-      }} ariaLabel={reef.formatMessage({
-        id: "settings.agent.permissionsMode.autoReview.toggle",
-        defaultMessage: "Show Auto-review in the composer",
-        description: "Accessible label for Auto-review visibility toggle"
-      })} />
-    }} />;
+    orbit = (
+      <EnsurePersonalizationCInit
+        {...{
+          label: fern,
+          description: grove,
+          control: (
+            <AppInitialYC
+              checked={true}
+              disabled={true}
+              onChange={timber}
+              ariaLabel={hill}
+            />
+          ),
+        }}
+      />
+    );
+    honey = showGuardianOption && (
+      <EnsurePersonalizationCInit
+        {...{
+          label: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.agent.permissionsMode.autoReview.title",
+                defaultMessage: "Auto-review",
+                description:
+                  "Title for the Auto-review composer visibility row",
+              }}
+            />
+          ),
+          description: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.agent.permissionsMode.autoReview.description",
+                defaultMessage:
+                  "ChatGPT can read and edit files in its workspace. ChatGPT automatically reviews requests for additional access. Auto-review can make mistakes. <a>Learn more</a> about elevated risks.",
+                description: "Description for Auto-review permissions mode",
+                values: {
+                  a: jacketFourth(
+                    "https://developers.openai.com/codex/concepts/sandboxing/auto-review",
+                  ),
+                },
+              }}
+            />
+          ),
+          control: (
+            <AppInitialYC
+              checked={wheat["guardian-approvals"]}
+              onChange={(meadow) => {
+                glide("guardian-approvals", meadow);
+              }}
+              ariaLabel={reef.formatMessage({
+                id: "settings.agent.permissionsMode.autoReview.toggle",
+                defaultMessage: "Show Auto-review in the composer",
+                description:
+                  "Accessible label for Auto-review visibility toggle",
+              })}
+            />
+          ),
+        }}
+      />
+    );
     coral = EnsurePersonalizationCInit;
-    north = <MemoizedFormattedMessage {...{
-      ...AppInitialAn.fullAccess
-    }} />;
+    north = (
+      <MemoizedFormattedMessage
+        {...{
+          ...AppInitialAn.fullAccess,
+        }}
+      />
+    );
     bloom = MemoizedFormattedMessage;
     knoll = "settings.agent.permissionsMode.fullAccess.description";
-    lunar = "When ChatGPT runs with full access, it can edit any file on your computer and run commands with network, without your approval. This significantly increases the risk of data loss, leaks, or unexpected behavior. <a>Learn more</a> about elevated risks.";
+    lunar =
+      "When ChatGPT runs with full access, it can edit any file on your computer and run commands with network, without your approval. This significantly increases the risk of data loss, leaks, or unexpected behavior. <a>Learn more</a> about elevated risks.";
     moss = "Description for full access permissions mode";
     jewel = jacketFourth(frost);
   }
   let pine = {
-    a: jewel
+    a: jewel,
   };
-  let quest = <MemoizedFormattedMessage {...{
-    id: knoll,
-    defaultMessage: lunar,
-    description: moss,
-    values: pine
-  }} />;
+  let quest = (
+    <MemoizedFormattedMessage
+      {...{
+        id: knoll,
+        defaultMessage: lunar,
+        description: moss,
+        values: pine,
+      }}
+    />
+  );
   let ridge = wheat["full-access"],
-    storm = nest => {
+    storm = (nest) => {
       if (nest) {
         topaz(true);
         return;
@@ -405,33 +506,53 @@ function GeneralSettingsHelper21() {
   let tide = reef.formatMessage({
     id: "settings.agent.permissionsMode.fullAccess.toggle",
     defaultMessage: "Show Full access in the composer",
-    description: "Accessible label for full access visibility toggle"
+    description: "Accessible label for full access visibility toggle",
   });
-  let unity = <AppInitialYC checked={ridge} onChange={storm} ariaLabel={tide} />;
-  let vale = <EnsurePersonalizationCInit {...{
-    label: north,
-    description: quest,
-    control: unity
-  }} />;
-  let wave = <ParseUrlOrFallback {...{
-    children: [orbit, honey, vale]
-  }} />;
-  let apex = <UseChromeAndCodeThemeSync {...{
-    children: [iris, wave]
-  }} />;
+  let unity = (
+    <AppInitialYC checked={ridge} onChange={storm} ariaLabel={tide} />
+  );
+  let vale = (
+    <EnsurePersonalizationCInit
+      {...{
+        label: north,
+        description: quest,
+        control: unity,
+      }}
+    />
+  );
+  let wave = (
+    <ParseUrlOrFallback
+      {...{
+        children: [orbit, honey, vale],
+      }}
+    />
+  );
+  let apex = (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [iris, wave],
+      }}
+    />
+  );
   let brook = () => {
     glide("full-access", true);
     topaz(false);
   };
-  let cliff = <GeneralSettingsHelper23 {...{
-    open: sage,
-    onOpenChange: topaz,
-    onConfirm: brook,
-    permissionsLearnMoreUrl: frost
-  }} />;
-  return <>
+  let cliff = (
+    <GeneralSettingsHelper23
+      {...{
+        open: sage,
+        onOpenChange: topaz,
+        onConfirm: brook,
+        permissionsLearnMoreUrl: frost,
+      }}
+    />
+  );
+  return (
+    <>
       {apex}
       {cliff}
-    </>;
+    </>
+  );
 }
 function timber() {}

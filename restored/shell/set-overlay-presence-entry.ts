@@ -8,7 +8,9 @@ export type OverlayPresenceEntryPeers = {
 let peers: OverlayPresenceEntryPeers | null = null;
 
 /** Wire setOverlayPresenceEntry peers once companions land. */
-export function setOverlayPresenceEntryPeers(next: OverlayPresenceEntryPeers): void {
+export function setOverlayPresenceEntryPeers(
+  next: OverlayPresenceEntryPeers,
+): void {
   peers = next;
 }
 

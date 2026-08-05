@@ -21,7 +21,9 @@ export type UseUpgradeMarketplacesMutationPeers = {
 let peers: UseUpgradeMarketplacesMutationPeers | null = null;
 
 /** Wire useUpgradeMarketplacesMutation peers once companions land. */
-export function setUseUpgradeMarketplacesMutationPeers(next: UseUpgradeMarketplacesMutationPeers): void {
+export function setUseUpgradeMarketplacesMutationPeers(
+  next: UseUpgradeMarketplacesMutationPeers,
+): void {
   peers = next;
 }
 

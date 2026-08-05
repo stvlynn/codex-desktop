@@ -10,7 +10,9 @@ export type BindBindRealtimeVoiceHostIdPeers = {
 let peers: BindBindRealtimeVoiceHostIdPeers | null = null;
 
 /** Wire bindBindRealtimeVoiceHostId peers once companions land. */
-export function setBindBindRealtimeVoiceHostIdPeers(next: BindBindRealtimeVoiceHostIdPeers): void {
+export function setBindBindRealtimeVoiceHostIdPeers(
+  next: BindBindRealtimeVoiceHostIdPeers,
+): void {
   peers = next;
 }
 
@@ -23,6 +25,6 @@ export function bindBindRealtimeVoiceHostId() {
   }
 
   return peers.e(() => {
-    peers.Au(), Tbu = `realtimeVoiceHostId`;
+    (peers.Au(), (Tbu = `realtimeVoiceHostId`));
   });
 }

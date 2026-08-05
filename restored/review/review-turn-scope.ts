@@ -25,7 +25,9 @@ export type BindReviewTurnScopePeers = {
 let peers: BindReviewTurnScopePeers | null = null;
 
 /** Wire bindReviewTurnScope peers once companions land. */
-export function setBindReviewTurnScopePeers(next: BindReviewTurnScopePeers): void {
+export function setBindReviewTurnScopePeers(
+  next: BindReviewTurnScopePeers,
+): void {
   peers = next;
 }
 

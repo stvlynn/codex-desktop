@@ -18,7 +18,9 @@ export type CopilotDefaultModelPeers = {
 let peers: CopilotDefaultModelPeers | null = null;
 
 /** Wire copilotDefaultModel peers once companions land. */
-export function setCopilotDefaultModelPeers(next: CopilotDefaultModelPeers): void {
+export function setCopilotDefaultModelPeers(
+  next: CopilotDefaultModelPeers,
+): void {
   peers = next;
 }
 
@@ -31,6 +33,14 @@ export function copilotDefaultModel() {
   }
 
   return peers.e(() => {
-    _Yr = peers.c(), peers.Ho(), peers.Au(), peers.DD(), peers.hYr(), peers.CA(), peers.OE(), peers.K_(), peers.V_();
+    ((_Yr = peers.c()),
+      peers.Ho(),
+      peers.Au(),
+      peers.DD(),
+      peers.hYr(),
+      peers.CA(),
+      peers.OE(),
+      peers.K_(),
+      peers.V_());
   });
 }

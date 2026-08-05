@@ -10,7 +10,9 @@ export type BindDeferredComposerQPeers = {
 let peers: BindDeferredComposerQPeers | null = null;
 
 /** Wire bindDeferredComposerQ peers once companions land. */
-export function setBindDeferredComposerQPeers(next: BindDeferredComposerQPeers): void {
+export function setBindDeferredComposerQPeers(
+  next: BindDeferredComposerQPeers,
+): void {
   peers = next;
 }
 
@@ -22,7 +24,8 @@ export function bindDeferredComposerQ() {
     throw new Error("bindDeferredComposerQ peers are not configured");
   }
 
-  return peers.Ma(peers.GM, ({
-    get: e
-  }) => e(peers.yN).asyncThreadStartingState);
+  return peers.Ma(
+    peers.GM,
+    ({ get: e }) => e(peers.yN).asyncThreadStartingState,
+  );
 }

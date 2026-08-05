@@ -24,6 +24,6 @@ export function deferredUiYk() {
   }
 
   return peers.e(() => {
-    peers.AQn(), peers.Kb(), peers.Gf();
+    (peers.AQn(), peers.Kb(), peers.Gf());
   });
 }

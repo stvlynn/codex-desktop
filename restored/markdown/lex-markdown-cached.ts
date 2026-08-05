@@ -59,7 +59,10 @@ export function setLexMarkdownCachedCore(core: MarkdownLexerCore): void {
 }
 
 /** Bundle `vS` / export `p7`. */
-export function lexMarkdownCached(text: string, options?: unknown): MarkdownToken[] {
+export function lexMarkdownCached(
+  text: string,
+  options?: unknown,
+): MarkdownToken[] {
   if (lexerCore == null) {
     throw new Error("lexMarkdownCached core has not been configured");
   }

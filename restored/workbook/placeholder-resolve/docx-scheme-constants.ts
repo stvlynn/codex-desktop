@@ -11,8 +11,7 @@ export const DOCX_ALIGN_PREFIX = "__docxAlign:";
 /** Legacy `x_`. */
 export const DOCX_CAPS_PREFIX = "__docxCaps:";
 /** Legacy `S_`. */
-export const DOCX_PARAGRAPH_RIGHT_INDENT_PREFIX =
-  "__docxParagraphRightIndent:";
+export const DOCX_PARAGRAPH_RIGHT_INDENT_PREFIX = "__docxParagraphRightIndent:";
 /** Legacy `C_`. */
 export const DOCX_COMPLEX_SCRIPT_FONT_SIZE_PREFIX =
   "__docxComplexScriptFontSize:";

@@ -13,14 +13,40 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CodexPluginMarketplaceSurface } from "../../analytics/codex-plugin-marketplace-surface";
 import { logProductEvent } from "../../analytics/log-product-event";
 import { ShellLayoutMetricsContext } from "../../app-shell/shell-layout-metrics-context";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S6_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S6_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { QueuedMessageTraySurface } from "../../conversation/queued-message-tray-surface";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
-import { CHATGPT_CODEX_CLOUD_ENVIRONMENTS_SETTINGS_URL, CHATGPT_CODEX_CLOUD_URL } from "../../docs/chatgpt-cloud-urls";
-import { DEVELOPERS_OPENAI_COM_CODEX_APP_COMPUTER_USE_URL, DEVELOPERS_OPENAI_COM_CODEX_APP_LOCAL_ENVIRONMENTS_URL, DEVELOPERS_OPENAI_COM_CODEX_CONCEPTS_SANDBOXING_AUTO_REVIEW_URL, DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL, DEVELOPERS_OPENAI_COM_CODEX_GUIDES_AGENTS_MD_URL, DEVELOPERS_OPENAI_COM_CODEX_IDE_URL, DEVELOPERS_OPENAI_COM_CODEX_MCP_URL } from "../../docs/codex-doc-urls";
+import {
+  CHATGPT_CODEX_CLOUD_ENVIRONMENTS_SETTINGS_URL,
+  CHATGPT_CODEX_CLOUD_URL,
+} from "../../docs/chatgpt-cloud-urls";
+import {
+  DEVELOPERS_OPENAI_COM_CODEX_APP_COMPUTER_USE_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_APP_LOCAL_ENVIRONMENTS_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_CONCEPTS_SANDBOXING_AUTO_REVIEW_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_GUIDES_AGENTS_MD_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_IDE_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_MCP_URL,
+} from "../../docs/codex-doc-urls";
 import { ensureHostRpcClientsInit } from "../../hooks/host-rpc-client";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
@@ -50,8 +76,18 @@ import { quickChatSurfaceCollapsedAtom } from "../../windows/quick-chat-atoms";
 import { setQuickChatSize } from "../../windows/quick-chat-surface-helpers";
 import { appendLoginHintToPurchaseUrl } from "../append-login-hint-to-purchase-url";
 import { resolveAutoReloadMutationAction } from "../auto-reload-save-payload";
-import { formatCreditReloadAmountWithoutSymbol, formatCreditReloadCurrency, formatCreditReloadCurrencySymbol, formatCreditReloadShortfallCost, initCreditReloadDialogFormatting } from "../credit-reload-dialog-formatting";
-import { CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS, parseFormattedCreditsQuantityString, validateCreditsPurchaseQuantity } from "../credits-purchase-field-validators";
+import {
+  formatCreditReloadAmountWithoutSymbol,
+  formatCreditReloadCurrency,
+  formatCreditReloadCurrencySymbol,
+  formatCreditReloadShortfallCost,
+  initCreditReloadDialogFormatting,
+} from "../credit-reload-dialog-formatting";
+import {
+  CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS,
+  parseFormattedCreditsQuantityString,
+  validateCreditsPurchaseQuantity,
+} from "../credits-purchase-field-validators";
 import { CREDIT_RECHARGE_TARGET_OPTIONS } from "../credits-recharge-defaults";
 import { DeferredAccountRy } from "../deferred-account-ry";
 
@@ -75,14 +111,18 @@ const deferredUiU: any = undefined;
 const readLoginRouteQuerySnapshot: any = undefined;
 const setRemoteControlEnabledForHost: any = undefined;
 function delta(zinc) {
-  return <Alpha {...{
-    children: zinc
-  }} />;
+  return (
+    <Alpha
+      {...{
+        children: zinc,
+      }}
+    />
+  );
 }
 function echo(amber) {
   PdfPermissionFlag({
     href: amber.url,
-    initiator: "open_in_browser_bridge"
+    initiator: "open_in_browser_bridge",
   });
 }
 async function falcon() {
@@ -101,130 +141,202 @@ function gamma(basalt) {
     isDiscountOfferPending,
     shouldFocusTurnOff,
     onBack,
-    onTurnOff
+    onTurnOff,
   } = basalt;
   if (variant === "add-credits") {
-    let hazel = isOneTimeAddCreditsPurchase ? <MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.continueToCheckout",
-      defaultMessage: "Continue to checkout",
-      description: "Button label to open checkout from a credit purchase modal"
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.enable",
-      defaultMessage: "Enable auto-reload",
-      description: "Button label to enable automatic reload from the add credits modal"
-    }} />;
+    let hazel = isOneTimeAddCreditsPurchase ? (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.usage.creditReload.continueToCheckout",
+          defaultMessage: "Continue to checkout",
+          description:
+            "Button label to open checkout from a credit purchase modal",
+        }}
+      />
+    ) : (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.usage.creditReload.autoReload.enable",
+          defaultMessage: "Enable auto-reload",
+          description:
+            "Button label to enable automatic reload from the add credits modal",
+        }}
+      />
+    );
     let ivory;
-    return <SetRemoteControlEnabledForHost {...{
-      className: "w-auto",
-      children: <ReadLoginRouteQuerySnapshot {...{
+    return (
+      <SetRemoteControlEnabledForHost
+        {...{
+          className: "w-auto",
+          children: (
+            <ReadLoginRouteQuerySnapshot
+              {...{
+                color: "primary",
+                type: "submit",
+                className: xenon,
+                loading: isSavePending,
+                disabled: isAddCreditsSubmitDisabled,
+                children: hazel,
+              }}
+            />
+          ),
+        }}
+      />
+    );
+  }
+  let cedar =
+    variant === "manage-auto-reload" ? (
+      <ReadLoginRouteQuerySnapshot
+        {...{
+          color: "outline",
+          autoFocus: shouldFocusTurnOff,
+          loading: isDisablePending,
+          disabled: isActionPending,
+          onClick: onTurnOff,
+          children: isDiscountedAutoReloadExperience ? (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.usage.creditReload.autoReload.turnOffDiscounted",
+                defaultMessage: "Turn auto-reload off",
+                description:
+                  "Button label that opens the confirmation for turning off auto reload with an active discount",
+              }}
+            />
+          ) : (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.usage.creditReload.autoReload.turnOff",
+                defaultMessage: "Turn off",
+                description: "Button label to turn off auto reload",
+              }}
+            />
+          ),
+        }}
+      />
+    ) : null;
+  let daisy = isDiscountedAutoReloadExperience ? (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "outline",
+        disabled: isActionPending,
+        onClick: onBack,
+        children: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.usage.creditReload.autoReload.back",
+              defaultMessage: "Back",
+              description:
+                "Button that closes the discounted auto reload modal without saving changes",
+            }}
+          />
+        ),
+      }}
+    />
+  ) : null;
+  let ember = isSavePending || isDiscountOfferPending,
+    flint =
+      isDiscountedAutoReloadExperience && variant === "setup-auto-reload" ? (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.usage.creditReload.autoReload.turnOn",
+            defaultMessage: "Turn on auto-reload",
+            description:
+              "Button label to enable automatic reload with a server-authorized discount offer",
+          }}
+        />
+      ) : (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.usage.creditReload.autoReload.save",
+            defaultMessage: "Save",
+            description: "Button label to save automatic reload settings",
+          }}
+        />
+      );
+  let garnet = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
         color: "primary",
         type: "submit",
         className: xenon,
-        loading: isSavePending,
-        disabled: isAddCreditsSubmitDisabled,
-        children: hazel
-      }} />
-    }} />;
-  }
-  let cedar = variant === "manage-auto-reload" ? <ReadLoginRouteQuerySnapshot {...{
-    color: "outline",
-    autoFocus: shouldFocusTurnOff,
-    loading: isDisablePending,
-    disabled: isActionPending,
-    onClick: onTurnOff,
-    children: isDiscountedAutoReloadExperience ? <MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.turnOffDiscounted",
-      defaultMessage: "Turn auto-reload off",
-      description: "Button label that opens the confirmation for turning off auto reload with an active discount"
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.turnOff",
-      defaultMessage: "Turn off",
-      description: "Button label to turn off auto reload"
-    }} />
-  }} /> : null;
-  let daisy = isDiscountedAutoReloadExperience ? <ReadLoginRouteQuerySnapshot {...{
-    color: "outline",
-    disabled: isActionPending,
-    onClick: onBack,
-    children: <MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.back",
-      defaultMessage: "Back",
-      description: "Button that closes the discounted auto reload modal without saving changes"
-    }} />
-  }} /> : null;
-  let ember = isSavePending || isDiscountOfferPending,
-    flint = isDiscountedAutoReloadExperience && variant === "setup-auto-reload" ? <MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.turnOn",
-      defaultMessage: "Turn on auto-reload",
-      description: "Button label to enable automatic reload with a server-authorized discount offer"
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.save",
-      defaultMessage: "Save",
-      description: "Button label to save automatic reload settings"
-    }} />;
-  let garnet = <ReadLoginRouteQuerySnapshot {...{
-    color: "primary",
-    type: "submit",
-    className: xenon,
-    loading: ember,
-    disabled: isAutoReloadSettingsSubmitDisabled,
-    children: flint
-  }} />;
-  return <SetRemoteControlEnabledForHost {...{
-    className: "w-auto",
-    children: [cedar, daisy, garnet]
-  }} />;
+        loading: ember,
+        disabled: isAutoReloadSettingsSubmitDisabled,
+        children: flint,
+      }}
+    />
+  );
+  return (
+    <SetRemoteControlEnabledForHost
+      {...{
+        className: "w-auto",
+        children: [cedar, daisy, garnet],
+      }}
+    />
+  );
 }
 function harbor(jasper) {
-  let {
-      intl,
-      targetBalance,
-      minimumBalance,
-      monthlyLimit,
-      pricingInfo
-    } = jasper,
+  let { intl, targetBalance, minimumBalance, monthlyLimit, pricingInfo } =
+      jasper,
     kelp = formatCreditReloadCurrency({
       intl,
       creditQuantity: Number.parseInt(trimOptionalString(minimumBalance), 10),
-      pricingInfo
+      pricingInfo,
     });
   let lotus = kelp,
     mint = formatCreditReloadCurrency({
       intl,
       creditQuantity: Number.parseInt(trimOptionalString(targetBalance), 10),
-      pricingInfo
+      pricingInfo,
     });
   let nova = mint,
     olive = formatCreditReloadCurrency({
       intl,
       creditQuantity: Number.parseInt(trimOptionalString(monthlyLimit), 10),
-      pricingInfo
+      pricingInfo,
     });
   let prism = olive;
-  return <p className="text-sm leading-5 text-token-text-secondary">
-      {lotus == null || nova == null ? <MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.description.pending",
-      defaultMessage: "If your balance falls below the minimum, Codex will automatically reload your credits",
-      description: "Fallback description shown while pricing is loading"
-    }} /> : prism == null ? <MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.description.noLimit",
-      defaultMessage: "When my balance hits {thresholdAmount}, top up to {targetAmount}, with no monthly maximum",
-      description: "Description explaining how automatic reload works without a monthly limit",
-      values: {
-        thresholdAmount: lotus,
-        targetAmount: nova
-      }
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.description",
-      defaultMessage: "When my balance hits {thresholdAmount}, top up to {targetAmount}, up to {monthlyLimitAmount} per month",
-      description: "Description explaining how automatic reload works",
-      values: {
-        thresholdAmount: lotus,
-        targetAmount: nova,
-        monthlyLimitAmount: prism
-      }
-    }} />}
-    </p>;
+  return (
+    <p className="text-sm leading-5 text-token-text-secondary">
+      {lotus == null || nova == null ? (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.usage.creditReload.autoReload.description.pending",
+            defaultMessage:
+              "If your balance falls below the minimum, Codex will automatically reload your credits",
+            description: "Fallback description shown while pricing is loading",
+          }}
+        />
+      ) : prism == null ? (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.usage.creditReload.autoReload.description.noLimit",
+            defaultMessage:
+              "When my balance hits {thresholdAmount}, top up to {targetAmount}, with no monthly maximum",
+            description:
+              "Description explaining how automatic reload works without a monthly limit",
+            values: {
+              thresholdAmount: lotus,
+              targetAmount: nova,
+            },
+          }}
+        />
+      ) : (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.usage.creditReload.autoReload.description",
+            defaultMessage:
+              "When my balance hits {thresholdAmount}, top up to {targetAmount}, up to {monthlyLimitAmount} per month",
+            description: "Description explaining how automatic reload works",
+            values: {
+              thresholdAmount: lotus,
+              targetAmount: nova,
+              monthlyLimitAmount: prism,
+            },
+          }}
+        />
+      )}
+    </p>
+  );
 }
 function indigo(quill) {
   let {
@@ -233,92 +345,124 @@ function indigo(quill) {
       minimumBalance,
       monthlyLimit,
       pricingInfo,
-      rateCardLinkMode = "button"
+      rateCardLinkMode = "button",
     } = quill,
-    reef = <Bravo {...{
-      intl,
-      targetBalance,
-      minimumBalance,
-      monthlyLimit,
-      pricingInfo
-    }} />;
-  let sage = rateCardLinkMode === "button" ? <Alpha {...{
-    children: <Copper {...{}} />
-  }} /> : <Copper {...{}} />;
-  return <div className="flex flex-col gap-1">
+    reef = (
+      <Bravo
+        {...{
+          intl,
+          targetBalance,
+          minimumBalance,
+          monthlyLimit,
+          pricingInfo,
+        }}
+      />
+    );
+  let sage =
+    rateCardLinkMode === "button" ? (
+      <Alpha
+        {...{
+          children: <Copper {...{}} />,
+        }}
+      />
+    ) : (
+      <Copper {...{}} />
+    );
+  return (
+    <div className="flex flex-col gap-1">
       {reef}
       {sage}
-    </div>;
+    </div>
+  );
 }
 function jade() {
-  return <MemoizedFormattedMessage {...{
-    id: "settings.usage.creditReload.viewRateCard",
-    defaultMessage: "View rate card",
-    description: "Button label to view the credit rate card"
-  }} />;
+  return (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.usage.creditReload.viewRateCard",
+        defaultMessage: "View rate card",
+        description: "Button label to view the credit rate card",
+      }}
+    />
+  );
 }
 function kite(topaz) {
-  let {
-    children
-  } = topaz;
-  return <button type="button" className="cursor-interaction text-left text-token-link" onClick={lemon}>
+  let { children } = topaz;
+  return (
+    <button
+      type="button"
+      className="cursor-interaction text-left text-token-link"
+      onClick={lemon}
+    >
       {children}
-    </button>;
+    </button>
+  );
 }
 function lemon(ultra) {
   deferredUiEnt({
     event: ultra,
     href: willow,
-    initiator: "open_in_browser_bridge"
+    initiator: "open_in_browser_bridge",
   });
 }
 function marble(vapor) {
-  let {
-      intl,
-      creditDetails,
-      pricingInfo,
-      actions
-    } = vapor,
+  let { intl, creditDetails, pricingInfo, actions } = vapor,
     wheat = nickel({
       intl,
       creditDetails,
-      pricingInfo
+      pricingInfo,
     });
   let yarn = wheat,
-    zephyr = <span className="text-xs text-token-text-secondary">
-        {creditDetails?.unlimited ? <MemoizedFormattedMessage {...{
-        id: "settings.usage.credit.remaining.unlimited",
-        defaultMessage: "Unlimited credit",
-        description: "Title shown when the account has unlimited credit"
-      }} /> : yarn == null ? <MemoizedFormattedMessage {...{
-        id: "settings.usage.creditReload.currentBalance.unavailable",
-        defaultMessage: "Current balance unavailable",
-        description: "Fallback shown when the current credits balance cannot be loaded in a credit reload modal footer"
-      }} /> : <MemoizedFormattedMessage {...{
-        id: "settings.usage.creditReload.currentBalance",
-        defaultMessage: "Current balance: {balance}",
-        description: "Current credits balance shown in a credit reload modal footer",
-        values: {
-          balance: yarn
-        }
-      }} />}
-      </span>;
+    zephyr = (
+      <span className="text-xs text-token-text-secondary">
+        {creditDetails?.unlimited ? (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.usage.credit.remaining.unlimited",
+              defaultMessage: "Unlimited credit",
+              description: "Title shown when the account has unlimited credit",
+            }}
+          />
+        ) : yarn == null ? (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.usage.creditReload.currentBalance.unavailable",
+              defaultMessage: "Current balance unavailable",
+              description:
+                "Fallback shown when the current credits balance cannot be loaded in a credit reload modal footer",
+            }}
+          />
+        ) : (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.usage.creditReload.currentBalance",
+              defaultMessage: "Current balance: {balance}",
+              description:
+                "Current credits balance shown in a credit reload modal footer",
+              values: {
+                balance: yarn,
+              },
+            }}
+          />
+        )}
+      </span>
+    );
   let acorn = <div className="shrink-0">{actions}</div>;
-  return <div className="flex items-center justify-between gap-4">
+  return (
+    <div className="flex items-center justify-between gap-4">
       {zephyr}
       {acorn}
-    </div>;
+    </div>
+  );
 }
-function nickel({
-  intl,
-  creditDetails,
-  pricingInfo
-}) {
-  return creditDetails == null || creditDetails.unlimited ? null : formatCreditReloadCurrency({
-    intl,
-    creditQuantity: Math.floor(Number(creditDetails.balance ?? 0)),
-    pricingInfo
-  }) ?? intl.formatNumber(0);
+function nickel({ intl, creditDetails, pricingInfo }) {
+  return creditDetails == null || creditDetails.unlimited
+    ? null
+    : (formatCreditReloadCurrency({
+        intl,
+        creditQuantity: Math.floor(Number(creditDetails.balance ?? 0)),
+        pricingInfo,
+      }) ?? intl.formatNumber(0));
 }
 function onyx({
   autoTopUpEnabled,
@@ -330,78 +474,93 @@ function onyx({
   onOpenChange,
   postCreditPurchaseAction,
   statsigClient,
-  tryOpenEmbeddedCreditCheckout
+  tryOpenEmbeddedCreditCheckout,
 }) {
   let bloom = trimOptionalString(quantity);
   return tryOpenEmbeddedCreditCheckout({
     autoTopUpEnabled,
     postCreditPurchaseAction,
-    quantity: bloom
-  }) ? (logProductEvent(scope, CodexPluginMarketplaceSurface, {
-    creditQuantity: CodexAutomationDeleteStatus(bloom),
-    source
-  }), CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS(scope, {
-    audience: "personal",
-    checkoutKind: "standalone_credit",
-    entryPoint: "credit_reload_dialog"
-  }), onOpenChange(false), true) : fallbackToExternal ? (logProductEvent(scope, CodexPluginMarketplaceSurface, {
-    creditQuantity: CodexAutomationDeleteStatus(bloom),
-    source
-  }), CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS(scope, {
-    audience: "personal",
-    checkoutKind: "standalone_credit",
-    entryPoint: "credit_reload_dialog"
-  }), PdfPermissionFlag({
-    href: AppInitialLy({
-      loginHint: email,
-      statsigClient,
-      url: validateCreditsPurchaseQuantity(bloom, {
-        autoTopUpEnabled
-      })
-    }),
-    initiator: "open_in_browser_bridge"
-  }), onOpenChange(false), true) : false;
+    quantity: bloom,
+  })
+    ? (logProductEvent(scope, CodexPluginMarketplaceSurface, {
+        creditQuantity: CodexAutomationDeleteStatus(bloom),
+        source,
+      }),
+      CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS(scope, {
+        audience: "personal",
+        checkoutKind: "standalone_credit",
+        entryPoint: "credit_reload_dialog",
+      }),
+      onOpenChange(false),
+      true)
+    : fallbackToExternal
+      ? (logProductEvent(scope, CodexPluginMarketplaceSurface, {
+          creditQuantity: CodexAutomationDeleteStatus(bloom),
+          source,
+        }),
+        CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS(scope, {
+          audience: "personal",
+          checkoutKind: "standalone_credit",
+          entryPoint: "credit_reload_dialog",
+        }),
+        PdfPermissionFlag({
+          href: AppInitialLy({
+            loginHint: email,
+            statsigClient,
+            url: validateCreditsPurchaseQuantity(bloom, {
+              autoTopUpEnabled,
+            }),
+          }),
+          initiator: "open_in_browser_bridge",
+        }),
+        onOpenChange(false),
+        true)
+      : false;
 }
-function pearl({
-  scope,
-  intl,
-  intent,
-  kind
-}) {
+function pearl({ scope, intl, intent, kind }) {
   let coral;
   switch (intent) {
     case "enable":
-      coral = kind === "success" ? intl.formatMessage({
-        id: "settings.usage.creditReload.autoReload.enable.success",
-        defaultMessage: "Enabled auto-reload",
-        description: "Toast shown when enabling auto reload succeeds"
-      }) : intl.formatMessage({
-        id: "settings.usage.creditReload.autoReload.enable.error",
-        defaultMessage: "Failed to enable auto-reload",
-        description: "Toast shown when enabling auto reload fails"
-      });
+      coral =
+        kind === "success"
+          ? intl.formatMessage({
+              id: "settings.usage.creditReload.autoReload.enable.success",
+              defaultMessage: "Enabled auto-reload",
+              description: "Toast shown when enabling auto reload succeeds",
+            })
+          : intl.formatMessage({
+              id: "settings.usage.creditReload.autoReload.enable.error",
+              defaultMessage: "Failed to enable auto-reload",
+              description: "Toast shown when enabling auto reload fails",
+            });
       break;
     case "update":
-      coral = kind === "success" ? intl.formatMessage({
-        id: "settings.usage.creditReload.autoReload.update.success",
-        defaultMessage: "Updated auto-reload settings",
-        description: "Toast shown when updating auto reload succeeds"
-      }) : intl.formatMessage({
-        id: "settings.usage.creditReload.autoReload.update.error",
-        defaultMessage: "Failed to update auto-reload",
-        description: "Toast shown when updating auto reload fails"
-      });
+      coral =
+        kind === "success"
+          ? intl.formatMessage({
+              id: "settings.usage.creditReload.autoReload.update.success",
+              defaultMessage: "Updated auto-reload settings",
+              description: "Toast shown when updating auto reload succeeds",
+            })
+          : intl.formatMessage({
+              id: "settings.usage.creditReload.autoReload.update.error",
+              defaultMessage: "Failed to update auto-reload",
+              description: "Toast shown when updating auto reload fails",
+            });
       break;
     case "disable":
-      coral = kind === "success" ? intl.formatMessage({
-        id: "settings.usage.creditReload.autoReload.disable.success",
-        defaultMessage: "Disabled auto-reload",
-        description: "Toast shown when disabling auto reload succeeds"
-      }) : intl.formatMessage({
-        id: "settings.usage.creditReload.autoReload.disable.error",
-        defaultMessage: "Failed to disable auto-reload",
-        description: "Toast shown when disabling auto reload fails"
-      });
+      coral =
+        kind === "success"
+          ? intl.formatMessage({
+              id: "settings.usage.creditReload.autoReload.disable.success",
+              defaultMessage: "Disabled auto-reload",
+              description: "Toast shown when disabling auto reload succeeds",
+            })
+          : intl.formatMessage({
+              id: "settings.usage.creditReload.autoReload.disable.error",
+              defaultMessage: "Failed to disable auto-reload",
+              description: "Toast shown when disabling auto reload fails",
+            });
   }
   if (kind === "success") {
     scope.get(toastAtom).success(coral, violet);
@@ -411,7 +570,7 @@ function pearl({
 }
 function quartz(drift) {
   let eagle = trimOptionalString(drift);
-  return CREDIT_RECHARGE_TARGET_OPTIONS.some(item => String(item) === eagle);
+  return CREDIT_RECHARGE_TARGET_OPTIONS.some((item) => String(item) === eagle);
 }
 function river(frost) {
   let {
@@ -422,35 +581,57 @@ function river(frost) {
       headerSubtitle,
       footer,
       onSubmit,
-      children
+      children,
     } = frost,
-    glide = event => {
+    glide = (event) => {
       event.preventDefault();
       onSubmit();
     };
-  let honey = <RealtimeVoiceHostId {...{
-    asChild: true,
-    children: <h2 className="sr-only">{screenReaderTitle}</h2>
-  }} />;
-  let iris = <div id={dialogDescriptionId} className="sr-only">
+  let honey = (
+    <RealtimeVoiceHostId
+      {...{
+        asChild: true,
+        children: <h2 className="sr-only">{screenReaderTitle}</h2>,
+      }}
+    />
+  );
+  let iris = (
+    <div id={dialogDescriptionId} className="sr-only">
       {screenReaderDescription}
-    </div>;
-  let jewel = <DeferredUiH {...{
-    title: headerTitle,
-    subtitle: headerSubtitle
-  }} />;
-  let knoll = <DeferredUiU {...{
-    children: [honey, iris, jewel]
-  }} />;
-  let lunar = <DeferredUiU {...{
-    className: "pt-4",
-    children: footer
-  }} />;
-  return <DeferredUiB {...{
-    as: "form",
-    onSubmit: glide,
-    children: [knoll, children, lunar]
-  }} />;
+    </div>
+  );
+  let jewel = (
+    <DeferredUiH
+      {...{
+        title: headerTitle,
+        subtitle: headerSubtitle,
+      }}
+    />
+  );
+  let knoll = (
+    <DeferredUiU
+      {...{
+        children: [honey, iris, jewel],
+      }}
+    />
+  );
+  let lunar = (
+    <DeferredUiU
+      {...{
+        className: "pt-4",
+        children: footer,
+      }}
+    />
+  );
+  return (
+    <DeferredUiB
+      {...{
+        as: "form",
+        onSubmit: glide,
+        children: [knoll, children, lunar],
+      }}
+    />
+  );
 }
 var slate,
   timber,
@@ -488,7 +669,7 @@ var slate,
     CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS();
     resolveAutoReloadMutationAction();
     violet = {
-      duration: 3
+      duration: 3,
     };
     willow = "https://help.openai.com/en/articles/20001106-codex-rate-card";
     xenon = "min-w-[88px] justify-center";

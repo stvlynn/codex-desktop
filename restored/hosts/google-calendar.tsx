@@ -9,7 +9,9 @@ export type BindGoogleCalendarPeers = {
 let peers: BindGoogleCalendarPeers | null = null;
 
 /** Wire bindGoogleCalendar peers once companions land. */
-export function setBindGoogleCalendarPeers(next: BindGoogleCalendarPeers): void {
+export function setBindGoogleCalendarPeers(
+  next: BindGoogleCalendarPeers,
+): void {
   peers = next;
 }
 
@@ -22,39 +24,51 @@ export function bindGoogleCalendar() {
   }
 
   return peers.e(() => {
-    aRn = [{
-      appId: `google-calendar`,
-      hostnames: [`calendar.google.com`]
-    }, {
-      appId: `google-drive`,
-      hostnames: [`docs.google.com`]
-    }, {
-      appId: `google-drive`,
-      hostnames: [`drive.google.com`]
-    }, {
-      appId: `figma`,
-      hostnames: [`figma.com`]
-    }, {
-      appId: `github`,
-      hostnames: [`github.com`]
-    }, {
-      appId: `linear`,
-      hostnames: [`linear.app`]
-    }, {
-      appId: `gmail`,
-      hostnames: [`mail.google.com`]
-    }, {
-      appId: `notion`,
-      hostnames: [`app.notion.com`, `notion.so`]
-    }, {
-      appId: `google-drive`,
-      hostnames: [`sheets.google.com`]
-    }, {
-      appId: `slack`,
-      hostnames: [`slack.com`]
-    }, {
-      appId: `google-drive`,
-      hostnames: [`slides.google.com`]
-    }];
+    aRn = [
+      {
+        appId: `google-calendar`,
+        hostnames: [`calendar.google.com`],
+      },
+      {
+        appId: `google-drive`,
+        hostnames: [`docs.google.com`],
+      },
+      {
+        appId: `google-drive`,
+        hostnames: [`drive.google.com`],
+      },
+      {
+        appId: `figma`,
+        hostnames: [`figma.com`],
+      },
+      {
+        appId: `github`,
+        hostnames: [`github.com`],
+      },
+      {
+        appId: `linear`,
+        hostnames: [`linear.app`],
+      },
+      {
+        appId: `gmail`,
+        hostnames: [`mail.google.com`],
+      },
+      {
+        appId: `notion`,
+        hostnames: [`app.notion.com`, `notion.so`],
+      },
+      {
+        appId: `google-drive`,
+        hostnames: [`sheets.google.com`],
+      },
+      {
+        appId: `slack`,
+        hostnames: [`slack.com`],
+      },
+      {
+        appId: `google-drive`,
+        hostnames: [`slides.google.com`],
+      },
+    ];
   });
 }

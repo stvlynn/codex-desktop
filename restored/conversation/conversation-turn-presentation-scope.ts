@@ -20,7 +20,9 @@ export type BindConversationTurnPresentationScopePeers = {
 let peers: BindConversationTurnPresentationScopePeers | null = null;
 
 /** Wire bindConversationTurnPresentationScope peers once companions land. */
-export function setBindConversationTurnPresentationScopePeers(next: BindConversationTurnPresentationScopePeers): void {
+export function setBindConversationTurnPresentationScopePeers(
+  next: BindConversationTurnPresentationScopePeers,
+): void {
   peers = next;
 }
 
@@ -29,18 +31,24 @@ export function setBindConversationTurnPresentationScopePeers(next: BindConversa
  */
 export function bindConversationTurnPresentationScope() {
   if (peers == null) {
-    throw new Error("bindConversationTurnPresentationScope peers are not configured");
+    throw new Error(
+      "bindConversationTurnPresentationScope peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.KM(), peers.gT(), VKc = peers.Ta(peers.hT, null), HKc = peers.Oa(peers.hT, (e, {
-      get: t,
-      scope: n
-    }) => t(peers.VKc) ?? (peers.e ?? peers.pT(n.value), !1)), UKc = peers.wa(`ConversationTurnPresentationScope`, {
-      key: ({
-        turnKey: e
-      }) => peers.e,
-      parent: peers.GM
-    });
+    (peers.Ho(),
+      peers.KM(),
+      peers.gT(),
+      (VKc = peers.Ta(peers.hT, null)),
+      (HKc = peers.Oa(
+        peers.hT,
+        (e, { get: t, scope: n }) =>
+          t(peers.VKc) ?? (peers.e ?? peers.pT(n.value), !1),
+      )),
+      (UKc = peers.wa(`ConversationTurnPresentationScope`, {
+        key: ({ turnKey: e }) => peers.e,
+        parent: peers.GM,
+      })));
   });
 }

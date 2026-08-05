@@ -8,7 +8,9 @@ export type ListCopiedEnumValuesPeers = {
 let peers: ListCopiedEnumValuesPeers | null = null;
 
 /** Wire listCopiedEnumValues peers once companions land. */
-export function setListCopiedEnumValuesPeers(next: ListCopiedEnumValuesPeers): void {
+export function setListCopiedEnumValuesPeers(
+  next: ListCopiedEnumValuesPeers,
+): void {
   peers = next;
 }
 

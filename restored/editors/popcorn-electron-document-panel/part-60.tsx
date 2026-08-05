@@ -7,12 +7,82 @@
 /* split-lane-import-depth:1 */
 
 import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { jsxRuntime as getJsxRuntime, react } from "../../boundaries/react-cjs-runtime";
-import { __workbookT, _workbookT, workbookA, workbookB, workbookC, workbookD, workbookE, workbookF, workbookG, WorkbookI, workbookIt, workbookJ, workbookK, workbookL, workbookLt, workbookM, workbookN, workbookNt, workbookO, workbookOt, workbookP, workbookQ, WorkbookR, workbookRt, workbookS, workbookSt, workbookU, workbookUnderscore, workbookV, workbookW, WorkbookW, workbookX, workbookY, workbookZ } from "../../workbook/editor-compat";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  __workbookT,
+  _workbookT,
+  workbookA,
+  workbookB,
+  workbookC,
+  workbookD,
+  workbookE,
+  workbookF,
+  workbookG,
+  WorkbookI,
+  workbookIt,
+  workbookJ,
+  workbookK,
+  workbookL,
+  workbookLt,
+  workbookM,
+  workbookN,
+  workbookNt,
+  workbookO,
+  workbookOt,
+  workbookP,
+  workbookQ,
+  WorkbookR,
+  workbookRt,
+  workbookS,
+  workbookSt,
+  workbookU,
+  workbookUnderscore,
+  workbookV,
+  workbookW,
+  WorkbookW,
+  workbookX,
+  workbookY,
+  workbookZ,
+} from "../../workbook/editor-compat";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
-import { ensureFeatureCatalogAtomsInit, ensureFeatureCatalogInit, getFeatureCatalogEntries, PopcornFindBar } from "../feature-catalog";
-import { ensurePopcornPageNumberNavigationInit, PopcornPageNumberNavigation } from "../popcorn-page-number-navigation";
-import { ensureRemoteTextEditSessionInit, RemoteTextEditSessionA, RemoteTextEditSessionB, RemoteTextEditSessionC, RemoteTextEditSessionChrome, RemoteTextEditSessionE, RemoteTextEditSessionF, RemoteTextEditSessionH, RemoteTextEditSessionI, RemoteTextEditSessionLowerT, RemoteTextEditSessionM, RemoteTextEditSessionN, RemoteTextEditSessionO, RemoteTextEditSessionP, RemoteTextEditSessionR, RemoteTextEditSessionS, RemoteTextEditSessionSurfaceKind, RemoteTextEditSessionU, RemoteTextEditSessionV, RemoteTextEditSessionW, RemoteTextEditSessionX, RemoteTextEditSessionY, RemoteTextEditSessionZoomControl } from "../remote-text-edit-session/index";
+import {
+  ensureFeatureCatalogAtomsInit,
+  ensureFeatureCatalogInit,
+  getFeatureCatalogEntries,
+  PopcornFindBar,
+} from "../feature-catalog";
+import {
+  ensurePopcornPageNumberNavigationInit,
+  PopcornPageNumberNavigation,
+} from "../popcorn-page-number-navigation";
+import {
+  ensureRemoteTextEditSessionInit,
+  RemoteTextEditSessionA,
+  RemoteTextEditSessionB,
+  RemoteTextEditSessionC,
+  RemoteTextEditSessionChrome,
+  RemoteTextEditSessionE,
+  RemoteTextEditSessionF,
+  RemoteTextEditSessionH,
+  RemoteTextEditSessionI,
+  RemoteTextEditSessionLowerT,
+  RemoteTextEditSessionM,
+  RemoteTextEditSessionN,
+  RemoteTextEditSessionO,
+  RemoteTextEditSessionP,
+  RemoteTextEditSessionR,
+  RemoteTextEditSessionS,
+  RemoteTextEditSessionSurfaceKind,
+  RemoteTextEditSessionU,
+  RemoteTextEditSessionV,
+  RemoteTextEditSessionW,
+  RemoteTextEditSessionX,
+  RemoteTextEditSessionY,
+  RemoteTextEditSessionZoomControl,
+} from "../remote-text-edit-session/index";
 
 // Wave5d soft stubs.
 const C: any = undefined;
@@ -78,23 +148,23 @@ var hillR14,
         this.#p = pineR18?.differentFirstPage ?? false;
         this.#i = new irisR14({
           elements: pineR18?.elements ?? orbitR4.fallbackElements ?? [],
-          context: orbitR4.context
+          context: orbitR4.context,
         });
         this.#a = new irisR14({
           elements: pineR18?.header?.elements ?? [],
-          context: orbitR4.context
+          context: orbitR4.context,
         });
         this.#o = new irisR14({
           elements: pineR18?.footer?.elements ?? [],
-          context: orbitR4.context
+          context: orbitR4.context,
         });
         this.#s = new irisR14({
           elements: pineR18?.firstHeader?.elements ?? [],
-          context: orbitR4.context
+          context: orbitR4.context,
         });
         this.#c = new irisR14({
           elements: pineR18?.firstFooter?.elements ?? [],
-          context: orbitR4.context
+          context: orbitR4.context,
         });
         this.#l = !!pineR18?.header;
         this.#u = !!pineR18?.footer;
@@ -129,16 +199,16 @@ var hillR14,
         this.#m.invalidateLayout();
       }
       get header() {
-        return this.#l = true, this.#a;
+        return ((this.#l = true), this.#a);
       }
       get footer() {
-        return this.#u = true, this.#o;
+        return ((this.#u = true), this.#o);
       }
       get firstHeader() {
-        return this.#d = true, this.#s;
+        return ((this.#d = true), this.#s);
       }
       get firstFooter() {
-        return this.#f = true, this.#c;
+        return ((this.#f = true), this.#c);
       }
       get differentFirstPage() {
         return this.#p;
@@ -198,20 +268,27 @@ var hillR14,
             differentFirstPage: this.#p || undefined,
             firstHeader: undefined,
             firstFooter: undefined,
-            documentGrid: harborR2(this.#v)
+            documentGrid: harborR2(this.#v),
           },
           novaR19 = this.#a.toProto();
         this.#l && jadeR2(novaR19) && (mintR19.header = this.#y(novaR19));
         let oliveR19 = this.#o.toProto();
         this.#u && jadeR2(oliveR19) && (mintR19.footer = this.#y(oliveR19));
         let prismR19 = this.#s.toProto();
-        this.#d && jadeR2(prismR19) && (mintR19.firstHeader = this.#y(prismR19));
+        this.#d &&
+          jadeR2(prismR19) &&
+          (mintR19.firstHeader = this.#y(prismR19));
         let quillR19 = this.#c.toProto();
-        return this.#f && jadeR2(quillR19) && (mintR19.firstFooter = this.#y(quillR19)), mintR19;
+        return (
+          this.#f &&
+            jadeR2(quillR19) &&
+            (mintR19.firstFooter = this.#y(quillR19)),
+          mintR19
+        );
       }
       #y(tideR12) {
         return {
-          elements: tideR12
+          elements: tideR12,
         };
       }
     };
@@ -227,15 +304,22 @@ var hillR14,
       constructor(eagleR3) {
         this.#n = eagleR3.context;
         let pineR20 = eagleR3.sections ?? [];
-        pineR20.length > 0 ? this.#e = pineR20.map((item, index) => new hillR14({
-          section: item,
-          context: this.#n,
-          defaultId: `doc-section-${index + 1}`
-        })) : this.#e = [new hillR14({
-          fallbackElements: eagleR3.fallbackElements ?? [],
-          context: this.#n,
-          defaultId: "doc-section-1"
-        })];
+        pineR20.length > 0
+          ? (this.#e = pineR20.map(
+              (item, index) =>
+                new hillR14({
+                  section: item,
+                  context: this.#n,
+                  defaultId: `doc-section-${index + 1}`,
+                }),
+            ))
+          : (this.#e = [
+              new hillR14({
+                fallbackElements: eagleR3.fallbackElements ?? [],
+                context: this.#n,
+                defaultId: "doc-section-1",
+              }),
+            ]);
         this.#t = this.#e.length + 1;
       }
       get items() {
@@ -258,26 +342,32 @@ var hillR14,
             firstFooter: questR12.firstFooter,
             startsWithPageBreak: questR12.startsWithPageBreak ?? false,
             pageNumberStart: questR12.pageNumberStart,
-            pageNumberFormat: questR12.pageNumberFormat
+            pageNumberFormat: questR12.pageNumberFormat,
           },
           lemonR20 = new hillR14({
             section: kiteR20,
             context: this.#n,
-            defaultId: kiteR20.id
+            defaultId: kiteR20.id,
           });
-        return this.#e.push(lemonR20), this.#n.invalidateLayout(), lemonR20;
+        return (this.#e.push(lemonR20), this.#n.invalidateLayout(), lemonR20);
       }
       toProto() {
-        return this.#e.map(item => item.toProto());
+        return this.#e.map((item) => item.toProto());
       }
       #r() {
         let marbleR14 = `doc-section-${this.#t}`;
-        return this.#t += 1, marbleR14;
+        return ((this.#t += 1), marbleR14);
       }
     };
   });
 function kiteR2(frostR7) {
-  return frostR7.numberingFormat === undefined && frostR7.defaultNoteIds.length === 0 && frostR7.numberingStart === undefined && frostR7.numberingRestart === undefined && frostR7.position === undefined;
+  return (
+    frostR7.numberingFormat === undefined &&
+    frostR7.defaultNoteIds.length === 0 &&
+    frostR7.numberingStart === undefined &&
+    frostR7.numberingRestart === undefined &&
+    frostR7.position === undefined
+  );
 }
 var falconR15,
   gammaR15,
@@ -288,9 +378,11 @@ var falconR15,
       #e;
       #t;
       constructor(hazelR10, jasperR10) {
-        this.#e = bravo(hazelR10 ?? {
-          defaultNoteIds: []
-        });
+        this.#e = bravo(
+          hazelR10 ?? {
+            defaultNoteIds: [],
+          },
+        );
         this.#t = jasperR10;
       }
       get numberingFormat() {
@@ -329,9 +421,11 @@ var falconR15,
         this.#t?.();
       }
       replace(bravoR11) {
-        this.#e = bravo(bravoR11 ?? {
-          defaultNoteIds: []
-        });
+        this.#e = bravo(
+          bravoR11 ?? {
+            defaultNoteIds: [],
+          },
+        );
         this.#t?.();
       }
       toProto() {
@@ -377,10 +471,13 @@ var falconR15,
         this.#i?.();
       }
       get backgroundFill() {
-        return this.#r ||= new workbookS({
-          type: "proto",
-          proto: this.#e.backgroundFill
-        }), this.#r;
+        return (
+          (this.#r ||= new workbookS({
+            type: "proto",
+            proto: this.#e.backgroundFill,
+          })),
+          this.#r
+        );
       }
       set backgroundFill(brookR8) {
         this.#r = brookR8 === undefined ? undefined : new workbookS(brookR8);
@@ -396,10 +493,16 @@ var falconR15,
         return this.#r ? this.#r.toProto() : this.#e.backgroundFill;
       }
       get footnoteProperties() {
-        return this.#t ||= new falconR15(this.#e.footnoteProperties, this.#i), this.#t;
+        return (
+          (this.#t ||= new falconR15(this.#e.footnoteProperties, this.#i)),
+          this.#t
+        );
       }
       get endnoteProperties() {
-        return this.#n ||= new falconR15(this.#e.endnoteProperties, this.#i), this.#n;
+        return (
+          (this.#n ||= new falconR15(this.#e.endnoteProperties, this.#i)),
+          this.#n
+        );
       }
       clearFootnoteProperties() {
         this.#t = undefined;
@@ -426,31 +529,46 @@ var falconR15,
             ...bravo(this.#e),
             footnoteProperties: this.#t ? gammaR20 : this.#e.footnoteProperties,
             endnoteProperties: this.#n ? harborR20 : this.#e.endnoteProperties,
-            backgroundFill: this.#r ? indigoR20 : this.#e.backgroundFill
+            backgroundFill: this.#r ? indigoR20 : this.#e.backgroundFill,
           };
-        if (!(jadeR20.defaultTabStop === undefined && jadeR20.autoHyphenation === undefined && jadeR20.mirrorMargins === undefined && jadeR20.displayBackgroundShape === undefined && jadeR20.footnoteProperties === undefined && jadeR20.endnoteProperties === undefined && jadeR20.backgroundFill === undefined)) return jadeR20;
+        if (
+          !(
+            jadeR20.defaultTabStop === undefined &&
+            jadeR20.autoHyphenation === undefined &&
+            jadeR20.mirrorMargins === undefined &&
+            jadeR20.displayBackgroundShape === undefined &&
+            jadeR20.footnoteProperties === undefined &&
+            jadeR20.endnoteProperties === undefined &&
+            jadeR20.backgroundFill === undefined
+          )
+        )
+          return jadeR20;
       }
     };
   });
 function lemonR2(quillR10) {
   if (!quillR10) return;
   let jadeR14 = bravo(quillR10);
-  return jadeR14.tabStops = jadeR14.tabStops ?? [], jadeR14;
+  return ((jadeR14.tabStops = jadeR14.tabStops ?? []), jadeR14);
 }
 function nickelR2(violetR5) {
   return {
     ...violetR5,
-    wholeTable: violetR5.wholeTable ? {
-      ...violetR5.wholeTable,
-      paragraphStyle: lemonR2(violetR5.wholeTable.paragraphStyle)
-    } : undefined,
-    conditionalStyles: (violetR5.conditionalStyles ?? []).map(item => ({
+    wholeTable: violetR5.wholeTable
+      ? {
+          ...violetR5.wholeTable,
+          paragraphStyle: lemonR2(violetR5.wholeTable.paragraphStyle),
+        }
+      : undefined,
+    conditionalStyles: (violetR5.conditionalStyles ?? []).map((item) => ({
       ...item,
-      style: item.style ? {
-        ...item.style,
-        paragraphStyle: lemonR2(item.style.paragraphStyle)
-      } : undefined
-    }))
+      style: item.style
+        ? {
+            ...item.style,
+            paragraphStyle: lemonR2(item.style.paragraphStyle),
+          }
+        : undefined,
+    })),
   };
 }
 var indigoR15,
@@ -472,19 +590,27 @@ var indigoR15,
       }
       getById(ivoryR9) {
         if (!ivoryR9) return;
-        let yarnR26 = this.#e.find(item => item.id === ivoryR9);
+        let yarnR26 = this.#e.find((item) => item.id === ivoryR9);
         return yarnR26 ? nickelR2(bravo(yarnR26)) : undefined;
       }
       getByName(violetR9) {
         if (!violetR9) return;
-        let prismR26 = this.#e.find(item => item.name === violetR9);
+        let prismR26 = this.#e.find((item) => item.name === violetR9);
         return prismR26 ? nickelR2(bravo(prismR26)) : undefined;
       }
       set(umbraR6) {
         let brookR23 = nickelR2(bravo(umbraR6));
         this.#r(brookR23);
-        let cliffR23 = this.#e.findIndex(item => item.id === brookR23.id || item.name === brookR23.name);
-        return cliffR23 >= 0 ? this.#e[cliffR23] = brookR23 : this.#e.push(brookR23), this.#t?.(), nickelR2(bravo(brookR23));
+        let cliffR23 = this.#e.findIndex(
+          (item) => item.id === brookR23.id || item.name === brookR23.name,
+        );
+        return (
+          cliffR23 >= 0
+            ? (this.#e[cliffR23] = brookR23)
+            : this.#e.push(brookR23),
+          this.#t?.(),
+          nickelR2(bravo(brookR23))
+        );
       }
       addOfficeWordDefaults() {
         let northR22 = ivoryR1(),
@@ -492,14 +618,26 @@ var indigoR15,
         for (let lemonR25 of northR22) {
           let wheatR25 = nickelR2(bravo(lemonR25));
           this.#r(wheatR25);
-          let yarnR25 = orbitR22.findIndex(item => item.id === wheatR25.id || item.name === wheatR25.name);
-          yarnR25 >= 0 ? orbitR22[yarnR25] = wheatR25 : orbitR22.push(wheatR25);
+          let yarnR25 = orbitR22.findIndex(
+            (item) => item.id === wheatR25.id || item.name === wheatR25.name,
+          );
+          yarnR25 >= 0
+            ? (orbitR22[yarnR25] = wheatR25)
+            : orbitR22.push(wheatR25);
         }
-        return this.#e = orbitR22, this.#t?.(), bravo(northR22).map(nickelR2);
+        return (
+          (this.#e = orbitR22),
+          this.#t?.(),
+          bravo(northR22).map(nickelR2)
+        );
       }
       delete(tideR8) {
-        let kiteR26 = this.#e.findIndex(item => item.id === tideR8 || item.name === tideR8);
-        return kiteR26 < 0 ? false : (this.#e.splice(kiteR26, 1), this.#t?.(), true);
+        let kiteR26 = this.#e.findIndex(
+          (item) => item.id === tideR8 || item.name === tideR8,
+        );
+        return kiteR26 < 0
+          ? false
+          : (this.#e.splice(kiteR26, 1), this.#t?.(), true);
       }
       replace(honeyR9) {
         this.#e = bravo(honeyR9).map(nickelR2);
@@ -511,18 +649,19 @@ var indigoR15,
       }
       #r(xenonR8) {
         this.#n?.addTextStyle(xenonR8.wholeTable?.textStyle);
-        for (let willowR14 of xenonR8.conditionalStyles ?? []) this.#n?.addTextStyle(willowR14.style?.textStyle);
+        for (let willowR14 of xenonR8.conditionalStyles ?? [])
+          this.#n?.addTextStyle(willowR14.style?.textStyle);
       }
     };
   });
 function onyxR2(reefR10) {
   if (!reefR10) return;
   let kiteR14 = bravo(reefR10);
-  return kiteR14.tabStops = kiteR14.tabStops ?? [], kiteR14;
+  return ((kiteR14.tabStops = kiteR14.tabStops ?? []), kiteR14);
 }
 function pearlR2(driftR11) {
   return {
     ...driftR11,
-    paragraphStyle: onyxR2(driftR11.paragraphStyle)
+    paragraphStyle: onyxR2(driftR11.paragraphStyle),
   };
 }

@@ -11,10 +11,7 @@ import {
   ConversationalOnboardingProgressBar,
   type ConversationalPhase,
 } from "./conversational-continue-footer";
-import {
-  ONBOARDING_STEPS,
-  type OnboardingRole,
-} from "./constants";
+import { ONBOARDING_STEPS, type OnboardingRole } from "./constants";
 import { RoleSelectionPanel } from "./role-selection-step";
 
 export type ConversationalOnboardingStepProps = {

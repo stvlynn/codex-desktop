@@ -39,7 +39,9 @@ export type BindSidebarTaskPrChipPeers = {
 let peers: BindSidebarTaskPrChipPeers | null = null;
 
 /** Wire bindSidebarTaskPrChip peers once companions land. */
-export function setBindSidebarTaskPrChipPeers(next: BindSidebarTaskPrChipPeers): void {
+export function setBindSidebarTaskPrChipPeers(
+  next: BindSidebarTaskPrChipPeers,
+): void {
   peers = next;
 }
 
@@ -52,29 +54,51 @@ export function bindSidebarTaskPrChip() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.DD(), peers.fb(), peers.Zh(), peers.RE(), peers.uHl(), peers.gHl(), peers.BUo(), peers.Tqo(), peers.yHl(), peers.Oqo(), peers.ed(), peers.rS(), peers.K_(), THl = peers.J(), EHl = peers.Ma(peers.Q, ({
-      get: e
-    }) => !peers.eS(peers.e)), DHl = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => !t(peers.EHl) || peers.e == null ? null : peers.xHl(peers.e, t(peers.LE))), OHl = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => {
-      if (!t(peers.EHl)) return null;
-      let n = t(peers.oD, peers.e),
-        r = t(peers.cD, peers.e),
-        i = t(peers.Cnr, peers.e),
-        a = t(peers.rD, peers.e) ?? `local`;
-      if (peers.e == null || n == null || r == null) return null;
-      let {
-        data: o
-      } = t(peers.dJ, {
-        cwd: n,
-        headBranch: r,
-        hostId: a,
-        operationSource: `sidebar_task_pr_chip`,
-        originUrl: i
-      });
-      return o == null ? null : o.details == null ? peers.xHl(o.state === `open` && o.isDraft ? `draft` : o.state, t(peers.LE), o.title, o.url) : peers.CHl(o.details, t(peers.LE));
-    });
+    (peers.Ho(),
+      peers.DD(),
+      peers.fb(),
+      peers.Zh(),
+      peers.RE(),
+      peers.uHl(),
+      peers.gHl(),
+      peers.BUo(),
+      peers.Tqo(),
+      peers.yHl(),
+      peers.Oqo(),
+      peers.ed(),
+      peers.rS(),
+      peers.K_(),
+      (THl = peers.J()),
+      (EHl = peers.Ma(peers.Q, ({ get: e }) => !peers.eS(peers.e))),
+      (DHl = peers.Oa(peers.Q, (e, { get: t }) =>
+        !t(peers.EHl) || peers.e == null
+          ? null
+          : peers.xHl(peers.e, t(peers.LE)),
+      )),
+      (OHl = peers.Oa(peers.Q, (e, { get: t }) => {
+        if (!t(peers.EHl)) return null;
+        let n = t(peers.oD, peers.e),
+          r = t(peers.cD, peers.e),
+          i = t(peers.Cnr, peers.e),
+          a = t(peers.rD, peers.e) ?? `local`;
+        if (peers.e == null || n == null || r == null) return null;
+        let { data: o } = t(peers.dJ, {
+          cwd: n,
+          headBranch: r,
+          hostId: a,
+          operationSource: `sidebar_task_pr_chip`,
+          originUrl: i,
+        });
+        return o == null
+          ? null
+          : o.details == null
+            ? peers.xHl(
+                o.state === `open` && o.isDraft ? `draft` : o.state,
+                t(peers.LE),
+                o.title,
+                o.url,
+              )
+            : peers.CHl(o.details, t(peers.LE));
+      })));
   });
 }

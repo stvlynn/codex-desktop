@@ -10,7 +10,9 @@ export type BindMapKeyboardCodeToGlyphPeers = {
 let peers: BindMapKeyboardCodeToGlyphPeers | null = null;
 
 /** Wire bindMapKeyboardCodeToGlyph peers once companions land. */
-export function setBindMapKeyboardCodeToGlyphPeers(next: BindMapKeyboardCodeToGlyphPeers): void {
+export function setBindMapKeyboardCodeToGlyphPeers(
+  next: BindMapKeyboardCodeToGlyphPeers,
+): void {
   peers = next;
 }
 
@@ -23,6 +25,25 @@ export function bindMapKeyboardCodeToGlyph() {
   }
 
   return peers.e(() => {
-    sHr = new Map([[`Backquote`, "`"], [`Minus`, `-`], [`Equal`, `=`], [`BracketLeft`, `[`], [`BracketRight`, `]`], [`Backslash`, `\\`], [`Semicolon`, `;`], [`Quote`, `'`], [`Comma`, `,`], [`Period`, `.`], [`Slash`, `/`], [`Space`, ` `], [`NumpadMultiply`, `*`], [`NumpadAdd`, `+`], [`NumpadSubtract`, `-`], [`NumpadDecimal`, `.`], [`NumpadDivide`, `/`]]), cHr = null;
+    ((sHr = new Map([
+      [`Backquote`, "`"],
+      [`Minus`, `-`],
+      [`Equal`, `=`],
+      [`BracketLeft`, `[`],
+      [`BracketRight`, `]`],
+      [`Backslash`, `\\`],
+      [`Semicolon`, `;`],
+      [`Quote`, `'`],
+      [`Comma`, `,`],
+      [`Period`, `.`],
+      [`Slash`, `/`],
+      [`Space`, ` `],
+      [`NumpadMultiply`, `*`],
+      [`NumpadAdd`, `+`],
+      [`NumpadSubtract`, `-`],
+      [`NumpadDecimal`, `.`],
+      [`NumpadDivide`, `/`],
+    ])),
+      (cHr = null));
   });
 }

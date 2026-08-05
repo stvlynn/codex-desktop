@@ -16,27 +16,34 @@ const messages: Record<string, string> = {
   "widgets.baseCarousel.previousItems": "मागील कॅरोसेल आयटम",
   "widgets.cardCarousel.goToArticle": "लेखाकडे जा",
   "widgets.cardCarousel.nextCards": "पुढील कार्डे",
-  "widgets.cardCarousel.nextCardsInCarousel": "{carouselLabel} मधील पुढील कार्डे",
+  "widgets.cardCarousel.nextCardsInCarousel":
+    "{carouselLabel} मधील पुढील कार्डे",
   "widgets.cardCarousel.previousCards": "मागील कार्डे",
-  "widgets.cardCarousel.previousCardsInCarousel": "{carouselLabel} मधील मागील कार्डे",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "{carouselLabel} मधील मागील कार्डे",
   "widgets.debug.hideCurrentState": "सध्याची स्थिती लपवा",
   "widgets.debug.nextState": "पुढील स्थिती",
   "widgets.debug.previousState": "मागील स्थिती",
   "widgets.debug.selectedState": "निवडलेली स्थिती",
   "widgets.debug.showCurrentState": "सध्याची स्थिती दाखवा",
   "widgets.debug.state": "स्थिती",
-  "widgets.debug.unableToSerializeSelectedState": "निवडलेली स्थिती सिरीअलाइझ करता आली नाही.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "निवडलेली स्थिती सिरीअलाइझ करता आली नाही.",
   "widgets.hermes.artifact.viewMore": "आणखी {count} पहा",
   "widgets.hermes.calendarEvent.moreAttendees": "+{count} आणखी",
   "widgets.hermes.calendarEvent.singleTime": "{date} रोजी {time} वाजता",
-  "widgets.hermes.calendarEvent.timeRange": "{date} रोजी {startTime} - {endTime} दरम्यान",
-  "widgets.hermes.elicitation.connectorAuth.title": "पुढे सुरू ठेवण्यासाठी {agentName} ला प्रवेश आवश्यक आहे",
-  "widgets.hermes.elicitation.toolApproval.title": "पुढे सुरू ठेवण्यासाठी {agentName} ला तुमच्या परवानगीची गरज आहे",
+  "widgets.hermes.calendarEvent.timeRange":
+    "{date} रोजी {startTime} - {endTime} दरम्यान",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "पुढे सुरू ठेवण्यासाठी {agentName} ला प्रवेश आवश्यक आहे",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "पुढे सुरू ठेवण्यासाठी {agentName} ला तुमच्या परवानगीची गरज आहे",
   "widgets.hermes.genericResponse.viewFullscreen": "फुल स्क्रीनमध्ये पहा",
   "widgets.hermes.genericTool.details": "तपशील",
   "widgets.hermes.genericTool.read": "वाचा",
   "widgets.hermes.genericTool.request": "विनंती",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} ला {connectorName} वापरून {toolName} चालवायचे आहे.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} ला {connectorName} वापरून {toolName} चालवायचे आहे.",
   "widgets.hermes.genericTool.viewFullscreen": "फुल स्क्रीनमध्ये पहा",
   "widgets.hermes.genericTool.write": "लिहा",
   "widgets.hermes.googleCalendarCreate.create": "तयार करा",
@@ -44,12 +51,14 @@ const messages: Record<string, string> = {
   "widgets.hermes.inlineResponse.accept": "मंजूर करा",
   "widgets.hermes.inlineResponse.decline": "रद्द करा",
   "widgets.hermes.permission.connect": "कनेक्ट करा",
-  "widgets.hermes.permission.connectToConnector": "{connectorName} सोबत कनेक्ट करा",
+  "widgets.hermes.permission.connectToConnector":
+    "{connectorName} सोबत कनेक्ट करा",
   "widgets.hermes.permission.connected": "कनेक्ट झाले",
   "widgets.hermes.permission.moreInformation": "अधिक माहिती",
   "widgets.hermes.permission.notNow": "आत्ता नको",
   "widgets.hermes.permission.reconnect": "पुन्हा कनेक्ट करा",
-  "widgets.hermes.permission.reconnectToConnector": "{connectorName} शी पुन्हा कनेक्ट करा",
+  "widgets.hermes.permission.reconnectToConnector":
+    "{connectorName} शी पुन्हा कनेक्ट करा",
   "widgets.hermes.sendEmail.approveAction": "कृती मंजूर करा",
   "widgets.hermes.sendEmail.bcc": "Bcc",
   "widgets.hermes.sendEmail.cc": "Cc",
@@ -62,69 +71,130 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "कमी दाखवा",
   "widgets.hermes.taskStatus.canceled": "कार्य रद्द केले",
   "widgets.hermes.taskStatus.canceling": "रद्द होत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "मागील संदेश तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "मागील संदेश तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "मागील संदेश तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "मागील संदेश पाहत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "मागील संदेश पाहत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "मागील संदेश वाचत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "मागील संदेश तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "मागील संदेश पुन्हा पाहत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "मागील संदेश स्कॅन करत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "मागील संदेश तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "मागील संदेश तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "संदर्भ तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "संदर्भ तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "संदर्भ तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "संदर्भ वाचत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "संदर्भ तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "संदर्भ पुन्हा तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "संदर्भ तपासत आहे",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "संदर्भ तपासत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "एजंट सक्रिय होत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "एजंट सुरू होत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "एजंट सुरू करत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "एजंटला बोलावत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "एजंटशी कनेक्ट करत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "एजंटशी कनेक्ट होत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "एजंटला उठवत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "एजंट सुरू करत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "एजंटला जागं करत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "एजंट तयार होत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "एजंटला बोलावत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "संगणक सक्रिय करत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "संगणक सुरू होत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "संगणक ऑनलाइन करत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "संगणक तयार करत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "संगणक सुरू होत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "संगणक सुरू करत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "संगणक सुरू करत आहे",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "संगणक जागवत आहे",
-  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "मार्ग आखत आहे",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "योजना आखत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "मागील संदेश तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "मागील संदेश तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "मागील संदेश तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "मागील संदेश पाहत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "मागील संदेश पाहत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "मागील संदेश वाचत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "मागील संदेश तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "मागील संदेश पुन्हा पाहत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "मागील संदेश स्कॅन करत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "मागील संदेश तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "मागील संदेश तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "संदर्भ तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "संदर्भ तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "संदर्भ तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "संदर्भ वाचत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "संदर्भ तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "संदर्भ पुन्हा तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "संदर्भ तपासत आहे",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "संदर्भ तपासत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "एजंट सक्रिय होत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "एजंट सुरू होत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "एजंट सुरू करत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "एजंटला बोलावत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "एजंटशी कनेक्ट करत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "एजंटशी कनेक्ट होत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "एजंटला उठवत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "एजंट सुरू करत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "एजंटला जागं करत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "एजंट तयार होत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "एजंटला बोलावत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "संगणक सक्रिय करत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "संगणक सुरू होत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "संगणक ऑनलाइन करत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "संगणक तयार करत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "संगणक सुरू होत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "संगणक सुरू करत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "संगणक सुरू करत आहे",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "संगणक जागवत आहे",
+  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse":
+    "मार्ग आखत आहे",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "योजना आखत आहे",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "योजना आखत आहे",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "योजना आखत आहे",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "योजना आखत आहे",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "पुढील पावले आखत आहे",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "योजना आखत आहे",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "योजना आखत आहे",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "पुढील पावले आखत आहे",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "योजना आखत आहे",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "दिशा ठरवत आहे",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "दिशा ठरवत आहे",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "योजना आखत आहे",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "मार्गांचा विचार करत आहे",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "पद्धत ठरवत आहे",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "तपशील गोळा करत आहे",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "तपशील गोळा करत आहे",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "तपशील भरत आहे",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "तपशील गोळा करत आहे",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "तपशील जुळवत आहे",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "तपशील गोळा करत आहे",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "तपशील गोळा करत आहे",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "तपशील निश्चित करत आहे",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "तपशीलांचा आढावा घेत आहे",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "तपशील शोधत आहे",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "याला नेहमीपेक्षा जास्त वेळ लागत आहे",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "अजूनही काम सुरू आहे",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "थोड्या वेळाने पुन्हा पाहा",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "दिशा ठरवत आहे",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "दिशा ठरवत आहे",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "योजना आखत आहे",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "मार्गांचा विचार करत आहे",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "पद्धत ठरवत आहे",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "तपशील गोळा करत आहे",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "तपशील गोळा करत आहे",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "तपशील भरत आहे",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "तपशील गोळा करत आहे",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "तपशील जुळवत आहे",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "तपशील गोळा करत आहे",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "तपशील गोळा करत आहे",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "तपशील निश्चित करत आहे",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "तपशीलांचा आढावा घेत आहे",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "तपशील शोधत आहे",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "याला नेहमीपेक्षा जास्त वेळ लागत आहे",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "अजूनही काम सुरू आहे",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "थोड्या वेळाने पुन्हा पाहा",
   "widgets.hermes.workflow.canceled": "कार्य रद्द केले",
   "widgets.hermes.workflow.canceledItemLabel": "रद्द",
   "widgets.hermes.workflow.codeBlock.hideLines": "ओळी लपवा",
@@ -134,7 +204,8 @@ const messages: Record<string, string> = {
   "widgets.hermes.workflow.fileWorked": "स्कॅन केलेला दस्तऐवज",
   "widgets.hermes.workflow.fileWorking": "दस्तऐवज स्कॅन करत आहे",
   "widgets.hermes.workflow.group.readingConnector": "{connectorName} वाचत आहे",
-  "widgets.hermes.workflow.group.writingConnector": "{connectorName} मध्ये लिहिणे",
+  "widgets.hermes.workflow.group.writingConnector":
+    "{connectorName} मध्ये लिहिणे",
   "widgets.hermes.workflow.imageWorked": "प्रतिमेचे विश्लेषण केले",
   "widgets.hermes.workflow.imageWorking": "प्रतिमेचे विश्लेषण करत आहे",
   "widgets.hermes.workflow.preparingResponse": "उत्तर तयार करत आहे",
@@ -148,7 +219,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "कमी दाखवा",
   "widgets.listView.showMore": "आणखी {count} दाखवा",
   "widgets.radioGroup.options": "पर्याय",
-  "widgets.segmentedControl.selectAnOption": "एक पर्याय निवडा"
+  "widgets.segmentedControl.selectAnOption": "एक पर्याय निवडा",
 };
 
 export default messages;

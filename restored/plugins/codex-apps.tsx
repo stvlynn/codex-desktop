@@ -26,6 +26,6 @@ export function bindBindCodexApps() {
   }
 
   return peers.e(() => {
-    peers.Au(), `${peers.S_e}${peers.Wl}`, gUn = `${peers.N_e}@${peers.Wl}`;
+    (peers.Au(), `${peers.S_e}${peers.Wl}`, (gUn = `${peers.N_e}@${peers.Wl}`));
   });
 }

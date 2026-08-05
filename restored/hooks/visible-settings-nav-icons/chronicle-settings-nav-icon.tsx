@@ -5,7 +5,9 @@ import type { ReactElement, SVGProps } from "react";
 
 export type ChronicleSettingsNavIconProps = SVGProps<SVGSVGElement>;
 
-export function ChronicleSettingsNavIcon(props: ChronicleSettingsNavIconProps): ReactElement {
+export function ChronicleSettingsNavIcon(
+  props: ChronicleSettingsNavIconProps,
+): ReactElement {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

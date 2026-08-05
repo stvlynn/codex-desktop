@@ -5,8 +5,10 @@
 // AST split 3/3
 /* split-lane-import-depth:1 */
 
-
-import { ChatGptPlanId, ensureChatGptPlanIdInit } from "../../account/chatgpt-plan-ids";
+import {
+  ChatGptPlanId,
+  ensureChatGptPlanIdInit,
+} from "../../account/chatgpt-plan-ids";
 import { openInBrowser } from "../../account/open-in-browser";
 import { RateLimitResetCreditsDialog } from "../../account/rate-limit-reset-credits-dialog";
 import { pickHighestUsageWindow } from "../../account/rate-limit-window-usage";
@@ -20,13 +22,35 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CODEX_PRICING_PLAN_PAGE_CTA_CLICKED_TYPE } from "../../analytics/codex-pricing-plan-page-cta-clicked-type";
 import { CODEX_PRICING_PLAN_PAGE_SHOWN_TYPE } from "../../analytics/codex-pricing-plan-page-shown-type";
 import { logProductEvent } from "../../analytics/log-product-event";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { localeMessagesAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_E4_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_E4_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { createPersistedAtom, ensurePersistedAtomInit, useAtomPair } from "../../boundaries/persisted-atom";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  createPersistedAtom,
+  ensurePersistedAtomInit,
+  useAtomPair,
+} from "../../boundaries/persisted-atom";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { getAccountInfoQueryConfig } from "../../cloud/account-info-query";
 import { managedConfigFilePath } from "../../config/managed-config-file-path";
@@ -49,10 +73,16 @@ import { AddContextSquareIcon } from "../../icons/add-context-square-icon";
 import { AppIconAi } from "../../icons/app-icon-ai";
 import { AppIconAlt } from "../../icons/app-icon-alt";
 import { AppIconSR } from "../../icons/app-icon-sr";
-import { ensureTeamIconInit as EnsureTeamIconInit, TeamIcon } from "../../icons/team-icon";
+import {
+  ensureTeamIconInit as EnsureTeamIconInit,
+  TeamIcon,
+} from "../../icons/team-icon";
 import { copilotDefaultModel } from "../../models/copilot-default-model";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
-import { ensureOnboardingBannerInit as EnsureOnboardingBannerInit, OnboardingBanner } from "../../onboarding/onboarding-banner";
+import {
+  ensureOnboardingBannerInit as EnsureOnboardingBannerInit,
+  OnboardingBanner,
+} from "../../onboarding/onboarding-banner";
 import { CodexPluginDirectoryEntrypoint } from "../../plugins/codex-plugin-directory-entrypoint";
 import { PLEASE_IMPLEMENT_THIS_PLAN_HEADER } from "../../prompts/please-implement-this-plan-header";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
@@ -132,12 +162,20 @@ export const codexHomeAnnouncementsR = esmInit(() => {
   grove();
   ensureViteModulepreloadRuntime();
   lazyWithSuspense(async () => () => null);
-  Isle = lazyWithSuspense(async () => (await vitePreload(async () => {
-    let {
-      RealtimeVoiceHomeAnnouncement
-    } = await import("../realtime-voice-home-announcement");
-    return {
-      RealtimeVoiceHomeAnnouncement
-    };
-  }, __vite__mapDeps([0, 1, 2, 3, 4]), import.meta.url)).RealtimeVoiceHomeAnnouncement);
+  Isle = lazyWithSuspense(
+    async () =>
+      (
+        await vitePreload(
+          async () => {
+            let { RealtimeVoiceHomeAnnouncement } =
+              await import("../realtime-voice-home-announcement");
+            return {
+              RealtimeVoiceHomeAnnouncement,
+            };
+          },
+          __vite__mapDeps([0, 1, 2, 3, 4]),
+          import.meta.url,
+        )
+      ).RealtimeVoiceHomeAnnouncement,
+  );
 });

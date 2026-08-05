@@ -41,6 +41,23 @@ export function bindBindChatgpt5() {
   }
 
   return peers.e(() => {
-    c1l = peers.c(), peers.sd(), peers.$u(), peers.$Qe(), peers.qR(), peers.fb(), peers.FD(), peers.Mp(), peers.rQ(), peers.Um(), peers.ZTs(), peers.qx(), peers.q_s(), peers.NZ(), peers.t1l(), d7 = peers.J(), l1l = `icon-xs shrink-0 opacity-75 group-focus:opacity-100 group-hover:opacity-100`, u1l = `https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan#h_8dd84c836b`;
+    ((c1l = peers.c()),
+      peers.sd(),
+      peers.$u(),
+      peers.$Qe(),
+      peers.qR(),
+      peers.fb(),
+      peers.FD(),
+      peers.Mp(),
+      peers.rQ(),
+      peers.Um(),
+      peers.ZTs(),
+      peers.qx(),
+      peers.q_s(),
+      peers.NZ(),
+      peers.t1l(),
+      (d7 = peers.J()),
+      (l1l = `icon-xs shrink-0 opacity-75 group-focus:opacity-100 group-hover:opacity-100`),
+      (u1l = `https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan#h_8dd84c836b`));
   });
 }

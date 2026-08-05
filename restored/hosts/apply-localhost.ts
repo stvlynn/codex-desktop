@@ -27,6 +27,11 @@ export function applyLocalhost() {
   }
 
   return peers.e(() => {
-    peers.Tpe(), peers.p_e(), eve = /\.html?$/i, tve = new Set([`localhost`, `127.0.0.1`, `0.0.0.0`, `[::1]`, `::1`]), nve = new Set([`mailto:`, `sms:`, `tel:`]), rve = new Set([`file`, `vscode-remote`]);
+    (peers.Tpe(),
+      peers.p_e(),
+      (eve = /\.html?$/i),
+      (tve = new Set([`localhost`, `127.0.0.1`, `0.0.0.0`, `[::1]`, `::1`])),
+      (nve = new Set([`mailto:`, `sms:`, `tel:`])),
+      (rve = new Set([`file`, `vscode-remote`])));
   });
 }

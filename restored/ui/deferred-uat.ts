@@ -24,6 +24,8 @@ export function bindDeferredUat() {
   }
 
   return peers.e(() => {
-    peers.Gjt(), Zjt = /[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g, Qjt = new RegExp(peers.Zjt.source, `g`);
+    (peers.Gjt(),
+      (Zjt = /[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g),
+      (Qjt = new RegExp(peers.Zjt.source, `g`)));
   });
 }

@@ -16,7 +16,9 @@ export type UseInboxItemsControllerPeers = {
 let peers: UseInboxItemsControllerPeers | null = null;
 
 /** Wire useInboxItemsController peers once companions land. */
-export function setUseInboxItemsControllerPeers(next: UseInboxItemsControllerPeers): void {
+export function setUseInboxItemsControllerPeers(
+  next: UseInboxItemsControllerPeers,
+): void {
   peers = next;
 }
 

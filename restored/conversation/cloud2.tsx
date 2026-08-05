@@ -24,6 +24,6 @@ export function bindCloud2() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.Kg(), peers.Xg();
+    (peers.Au(), peers.Kg(), peers.Xg());
   });
 }

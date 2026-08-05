@@ -20,7 +20,9 @@ let Spinner: ComponentType<SpinnerProps> | null = null;
 export function setImageGenerationLoadingIntl(hook: () => IntlLike): void {
   useIntl = hook;
 }
-export function setImageGenerationLoadingSpinner(impl: ComponentType<SpinnerProps>): void {
+export function setImageGenerationLoadingSpinner(
+  impl: ComponentType<SpinnerProps>,
+): void {
   Spinner = impl;
 }
 

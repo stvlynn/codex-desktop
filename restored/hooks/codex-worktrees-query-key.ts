@@ -2,7 +2,10 @@
 // Query-key helpers for Codex managed worktrees (X_/Z_).
 
 /** Bundle export `X_` — TanStack query key for `codex-worktrees`. */
-export function codexWorktreesQueryKey(hostId: string, worktreesRoot?: string | null): unknown[] {
+export function codexWorktreesQueryKey(
+  hostId: string,
+  worktreesRoot?: string | null,
+): unknown[] {
   const key: unknown[] = ["git", hostId, "codex-worktrees"];
   return worktreesRoot == null ? key : [...key, worktreesRoot];
 }

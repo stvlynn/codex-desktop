@@ -18,7 +18,9 @@ export type NativeDesktopAppByBundleIdPeers = {
 let peers: NativeDesktopAppByBundleIdPeers | null = null;
 
 /** Wire NativeDesktopAppByBundleId peers once companions land. */
-export function setNativeDesktopAppByBundleIdPeers(next: NativeDesktopAppByBundleIdPeers): void {
+export function setNativeDesktopAppByBundleIdPeers(
+  next: NativeDesktopAppByBundleIdPeers,
+): void {
   peers = next;
 }
 
@@ -30,23 +32,34 @@ export function NativeDesktopAppByBundleId() {
     throw new Error("NativeDesktopAppByBundleId peers are not configured");
   }
   return peers.e(() => {
-    peers.Ho(), peers.ed(), peers.Uf(), peers.ap(), YHc = peers.tp(peers.Q, `native-desktop-app-by-bundle-id`, e => ({
-      enabled: peers.e != null,
-      params: peers.e == null ? void 0 : {
-        bundleId: peers.e
-      },
-      refetchOnWindowFocus: !1,
-      select: e => peers.e.app,
-      staleTime: peers.Hf.FIVE_MINUTES
-    })), XHc = peers.tp(peers.Q, `native-desktop-apps`, e => ({
-      cacheKey: [`computer-use-tool-row-display-name`, peers.e],
-      enabled: peers.e != null,
-      params: {
-        order: `usage`
-      },
-      refetchOnWindowFocus: !1,
-      select: t => t.apps.find(t => t.displayName.toLowerCase() === peers.e?.toLowerCase()) ?? null,
-      staleTime: peers.Hf.FIVE_MINUTES
-    }));
+    (peers.Ho(),
+      peers.ed(),
+      peers.Uf(),
+      peers.ap(),
+      (YHc = peers.tp(peers.Q, `native-desktop-app-by-bundle-id`, (e) => ({
+        enabled: peers.e != null,
+        params:
+          peers.e == null
+            ? void 0
+            : {
+                bundleId: peers.e,
+              },
+        refetchOnWindowFocus: !1,
+        select: (e) => peers.e.app,
+        staleTime: peers.Hf.FIVE_MINUTES,
+      }))),
+      (XHc = peers.tp(peers.Q, `native-desktop-apps`, (e) => ({
+        cacheKey: [`computer-use-tool-row-display-name`, peers.e],
+        enabled: peers.e != null,
+        params: {
+          order: `usage`,
+        },
+        refetchOnWindowFocus: !1,
+        select: (t) =>
+          t.apps.find(
+            (t) => t.displayName.toLowerCase() === peers.e?.toLowerCase(),
+          ) ?? null,
+        staleTime: peers.Hf.FIVE_MINUTES,
+      }))));
   });
 }

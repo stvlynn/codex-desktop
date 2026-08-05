@@ -43,4 +43,3 @@ export function bindPluginDetailP(_next: unknown): void {}
 
 /** Wave GA: bind no longer required after full body promote */
 export function bindPluginDetailRt(_next: unknown): void {}
-

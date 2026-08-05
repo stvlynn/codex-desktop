@@ -20,7 +20,9 @@ export type DeferredDefaultHelperPeers = {
 let peers: DeferredDefaultHelperPeers | null = null;
 
 /** Wire deferredDefaultHelper peers once companions land. */
-export function setDeferredDefaultHelperPeers(next: DeferredDefaultHelperPeers): void {
+export function setDeferredDefaultHelperPeers(
+  next: DeferredDefaultHelperPeers,
+): void {
   peers = next;
 }
 
@@ -33,6 +35,15 @@ export function deferredDefaultHelper() {
   }
 
   return peers.e(() => {
-    iul = peers.c(), peers.sd(), peers.$u(), peers.xB(), peers.Vas(), peers.XR(), peers.S5c(), peers.K1(), peers.MWc(), $6 = peers.J();
+    ((iul = peers.c()),
+      peers.sd(),
+      peers.$u(),
+      peers.xB(),
+      peers.Vas(),
+      peers.XR(),
+      peers.S5c(),
+      peers.K1(),
+      peers.MWc(),
+      ($6 = peers.J()));
   });
 }

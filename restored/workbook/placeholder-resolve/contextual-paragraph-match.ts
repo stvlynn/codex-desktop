@@ -18,8 +18,14 @@ export function styleIdsEqual(
  * trailing paragraph enables contextual spacing.
  */
 export function paragraphsShareContextualSpacing(
-  previous: { styleId?: string; textStyle?: { scheme?: string } } | null | undefined,
-  current: { styleId?: string; textStyle?: { scheme?: string } } | null | undefined,
+  previous:
+    | { styleId?: string; textStyle?: { scheme?: string } }
+    | null
+    | undefined,
+  current:
+    | { styleId?: string; textStyle?: { scheme?: string } }
+    | null
+    | undefined,
 ): boolean {
   return (
     styleIdsEqual(previous?.styleId, current?.styleId) &&

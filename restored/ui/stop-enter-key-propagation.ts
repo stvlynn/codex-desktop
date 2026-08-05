@@ -26,7 +26,9 @@ export type StopEnterKeyPropagationPeers = {
 let peers: StopEnterKeyPropagationPeers | null = null;
 
 /** Wire stopEnterKeyPropagation peers once companions land. */
-export function setStopEnterKeyPropagationPeers(next: StopEnterKeyPropagationPeers): void {
+export function setStopEnterKeyPropagationPeers(
+  next: StopEnterKeyPropagationPeers,
+): void {
   peers = next;
 }
 
@@ -39,17 +41,27 @@ export function stopEnterKeyPropagation() {
   }
 
   return peers.e(() => {
-    ZJ = peers.c(), peers.sd(), peers.XH(), peers.zm(), peers.zR(), peers.XYi(), peers.vA(), peers.$m(), QJ = peers.J(), $J = {
-      content: `flex w-full items-center gap-1.5`,
-      icon: `shrink-0 opacity-75 group-focus:opacity-100 group-hover:opacity-100 group-aria-[selected=true]:opacity-100`,
-      itemBase: `text-token-foreground outline-hidden rounded-lg px-[var(--padding-row-x)] py-[var(--padding-row-y)] text-sm`,
-      itemInteractive: `group hover:bg-token-list-hover-background focus:bg-token-list-hover-background aria-[selected=true]:bg-token-list-hover-background cursor-interaction`
-    }, eY = {
-      Action: peers.eXo,
-      Input: peers.ZYo,
-      Item: peers.$Yo,
-      List: peers.QYo,
-      Root: peers.XYo
-    };
+    ((ZJ = peers.c()),
+      peers.sd(),
+      peers.XH(),
+      peers.zm(),
+      peers.zR(),
+      peers.XYi(),
+      peers.vA(),
+      peers.$m(),
+      (QJ = peers.J()),
+      ($J = {
+        content: `flex w-full items-center gap-1.5`,
+        icon: `shrink-0 opacity-75 group-focus:opacity-100 group-hover:opacity-100 group-aria-[selected=true]:opacity-100`,
+        itemBase: `text-token-foreground outline-hidden rounded-lg px-[var(--padding-row-x)] py-[var(--padding-row-y)] text-sm`,
+        itemInteractive: `group hover:bg-token-list-hover-background focus:bg-token-list-hover-background aria-[selected=true]:bg-token-list-hover-background cursor-interaction`,
+      }),
+      (eY = {
+        Action: peers.eXo,
+        Input: peers.ZYo,
+        Item: peers.$Yo,
+        List: peers.QYo,
+        Root: peers.XYo,
+      }));
   });
 }

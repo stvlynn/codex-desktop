@@ -72,15 +72,11 @@ export function resolvePlaceholderTextStyle(
     shape.placeholderType !== undefined || shape.placeholderIndex !== undefined
       ? placeholderTypeToStyleKey(shape.placeholderType)
       : "otherStyle";
-  if (
-    shape.placeholderType === "subTitle" &&
-    styleKey === "titleStyle"
-  )
+  if (shape.placeholderType === "subTitle" && styleKey === "titleStyle")
     styleKey = "bodyStyle";
   const { layout, masterLayout } = slide.resolveRenderContext();
   const allowIndexOnly =
-    shape.placeholderIndex !== undefined &&
-    shape.placeholderType === undefined;
+    shape.placeholderIndex !== undefined && shape.placeholderType === undefined;
   const ownStyle = textStyleToCleanProto(shape.textStyle as never) ?? {};
   const level0Style = shape.levelsStyles?.[0]?.textStyle;
   let layoutPlaceholderStyle: Record<string, unknown> | undefined;

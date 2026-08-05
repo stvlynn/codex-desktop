@@ -10,7 +10,9 @@ export type RemoteControlEnabledForHostPeers = {
 let peers: RemoteControlEnabledForHostPeers | null = null;
 
 /** Wire setRemoteControlEnabledForHost peers once companions land. */
-export function setRemoteControlEnabledForHostPeers(next: RemoteControlEnabledForHostPeers): void {
+export function setRemoteControlEnabledForHostPeers(
+  next: RemoteControlEnabledForHostPeers,
+): void {
   peers = next;
 }
 

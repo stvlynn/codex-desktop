@@ -13,7 +13,9 @@ export type NavListContentReferenceAttributes = {
 };
 
 /** Bundle `uSa`. */
-export function extractNavListContentReferenceAttributes(ref: Record<string, unknown>): NavListContentReferenceAttributes[] {
+export function extractNavListContentReferenceAttributes(
+  ref: Record<string, unknown>,
+): NavListContentReferenceAttributes[] {
   const navList =
     ref.type === "nav_list"
       ? ref

@@ -13,7 +13,9 @@ export type UseAmbientSuggestionsAppEnabledQueryPeers = {
 let peers: UseAmbientSuggestionsAppEnabledQueryPeers | null = null;
 
 /** Wire useAmbientSuggestionsAppEnabledQuery peers once companions land. */
-export function setUseAmbientSuggestionsAppEnabledQueryPeers(next: UseAmbientSuggestionsAppEnabledQueryPeers): void {
+export function setUseAmbientSuggestionsAppEnabledQueryPeers(
+  next: UseAmbientSuggestionsAppEnabledQueryPeers,
+): void {
   peers = next;
 }
 

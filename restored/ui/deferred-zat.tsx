@@ -26,6 +26,6 @@ export function bindDeferredZat() {
   }
 
   return peers.e(() => {
-    peers.Tjt(), peers.Fjt(), _Mt = peers.gMt(peers.Mjt);
+    (peers.Tjt(), peers.Fjt(), (_Mt = peers.gMt(peers.Mjt)));
   });
 }

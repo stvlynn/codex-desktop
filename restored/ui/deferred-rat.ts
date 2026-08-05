@@ -28,14 +28,33 @@ export function deferredRat() {
   }
 
   return peers.e(() => {
-    peers.hv(), peers.jPt(), NPt = peers.mv(e => {
-      peers.e.setTime(peers.e - peers.e.getMilliseconds() - peers.e.getSeconds() * peers.gv);
-    }, (e, t) => {
-      peers.e.setTime(+peers.e + t * peers._v);
-    }, (e, t) => (t - peers.e) / peers._v, e => peers.e.getMinutes()), peers.NPt.range, PPt = peers.mv(e => {
-      peers.e.setUTCSeconds(0, 0);
-    }, (e, t) => {
-      peers.e.setTime(+peers.e + t * peers._v);
-    }, (e, t) => (t - peers.e) / peers._v, e => peers.e.getUTCMinutes()), peers.PPt.range;
+    (peers.hv(),
+      peers.jPt(),
+      (NPt = peers.mv(
+        (e) => {
+          peers.e.setTime(
+            peers.e -
+              peers.e.getMilliseconds() -
+              peers.e.getSeconds() * peers.gv,
+          );
+        },
+        (e, t) => {
+          peers.e.setTime(+peers.e + t * peers._v);
+        },
+        (e, t) => (t - peers.e) / peers._v,
+        (e) => peers.e.getMinutes(),
+      )),
+      peers.NPt.range,
+      (PPt = peers.mv(
+        (e) => {
+          peers.e.setUTCSeconds(0, 0);
+        },
+        (e, t) => {
+          peers.e.setTime(+peers.e + t * peers._v);
+        },
+        (e, t) => (t - peers.e) / peers._v,
+        (e) => peers.e.getUTCMinutes(),
+      )),
+      peers.PPt.range);
   });
 }

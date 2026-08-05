@@ -17,7 +17,9 @@ export type BindGuardianApprovalsPeers = {
 let peers: BindGuardianApprovalsPeers | null = null;
 
 /** Wire bindGuardianApprovals peers once companions land. */
-export function setBindGuardianApprovalsPeers(next: BindGuardianApprovalsPeers): void {
+export function setBindGuardianApprovalsPeers(
+  next: BindGuardianApprovalsPeers,
+): void {
   peers = next;
 }
 
@@ -30,11 +32,24 @@ export function bindGuardianApprovals() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.Ap(), peers.od(), peers.Z2r(), e4r = peers.kp(peers.ime, {}, {
-      getOnInit: !1
-    }), t4r = peers.kp(peers.X2r, {}, {
-      getOnInit: !1
-    });
+    (peers.Au(),
+      peers.Ap(),
+      peers.od(),
+      peers.Z2r(),
+      (e4r = peers.kp(
+        peers.ime,
+        {},
+        {
+          getOnInit: !1,
+        },
+      )),
+      (t4r = peers.kp(
+        peers.X2r,
+        {},
+        {
+          getOnInit: !1,
+        },
+      )));
   });
 }
 

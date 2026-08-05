@@ -27,8 +27,11 @@ export function bindDeferredUiWp() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), ioc = {
-      status: `idle`
-    }, aoc = peers.Ta(peers.Q, peers.ioc);
+    (peers.Ho(),
+      peers.ed(),
+      (ioc = {
+        status: `idle`,
+      }),
+      (aoc = peers.Ta(peers.Q, peers.ioc)));
   });
 }

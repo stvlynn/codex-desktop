@@ -5,17 +5,36 @@
 // AST split 2/2
 /* split-lane-import-depth:1 */
 
-
 import { isStartingProcessExpired as IsStartingProcessExpired } from "../../account/is-starting-process-expired";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Ytt_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_Jj_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Ytt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_Jj_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { Link } from "../../boundaries/react-router-link";
 import { useMatch } from "../../boundaries/react-router-navigation";
-import { ensureShareInviteAutocompleteInit, ShareInviteAutocomplete } from "../../boundaries/share-invite-autocomplete/index";
+import {
+  ensureShareInviteAutocompleteInit,
+  ShareInviteAutocomplete,
+} from "../../boundaries/share-invite-autocomplete/index";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
@@ -107,23 +126,23 @@ export const appgenShareDialogN = esmInit(() => {
     admins_only: {
       id: "appgenAccess.state.ownerOnly",
       defaultMessage: "Just me",
-      description: "Label for a site whose access is limited to its owner"
+      description: "Label for a site whose access is limited to its owner",
     },
     custom: {
       id: "appgenAccess.state.privatelyShared",
       defaultMessage: "Only those invited",
-      description: "Label for a site shared privately with invited people"
+      description: "Label for a site shared privately with invited people",
     },
     public: {
       id: "appgenAccess.state.public",
       defaultMessage: "Anyone on the Internet",
-      description: "Label for a site shared publicly on the internet"
+      description: "Label for a site shared publicly on the internet",
     },
     workspace_all: {
       id: "appgenAccess.state.workspaceAll",
       defaultMessage: "Anyone in this workspace with the link",
-      description: "Label for a site shared with anyone in the workspace"
-    }
+      description: "Label for a site shared with anyone in the workspace",
+    },
   });
 });
 export { appgenShareDialogI, AppgenShareDialogR as appgenShareDialogR };

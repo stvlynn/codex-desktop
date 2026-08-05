@@ -21,7 +21,9 @@ export type UseCodexImageSrcCachePeers = {
 let peers: UseCodexImageSrcCachePeers | null = null;
 
 /** Wire useCodexImageSrcCache peers once companions land. */
-export function setUseCodexImageSrcCachePeers(next: UseCodexImageSrcCachePeers): void {
+export function setUseCodexImageSrcCachePeers(
+  next: UseCodexImageSrcCachePeers,
+): void {
   peers = next;
 }
 

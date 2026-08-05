@@ -7,7 +7,10 @@ export type FileChange =
   | { type: "delete"; content: string };
 
 /** Format a file change as a unified diff patch. */
-export function formatFileChangeDiff(pathValue: string, change: FileChange): string | null {
+export function formatFileChangeDiff(
+  pathValue: string,
+  change: FileChange,
+): string | null {
   if (change.type === "update") {
     const fromPath = pathValue;
     const toPath = change.move_path ?? pathValue;

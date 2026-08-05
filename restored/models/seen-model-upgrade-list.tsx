@@ -14,7 +14,9 @@ export type BindBindSeenModelUpgradeListPeers = {
 let peers: BindBindSeenModelUpgradeListPeers | null = null;
 
 /** Wire bindBindSeenModelUpgradeList peers once companions land. */
-export function setBindBindSeenModelUpgradeListPeers(next: BindBindSeenModelUpgradeListPeers): void {
+export function setBindBindSeenModelUpgradeListPeers(
+  next: BindBindSeenModelUpgradeListPeers,
+): void {
   peers = next;
 }
 
@@ -27,6 +29,6 @@ export function bindBindSeenModelUpgradeList() {
   }
 
   return peers.e(() => {
-    AYr = peers.c(), peers.Ho(), peers.DD(), peers.xM(), peers.IE();
+    ((AYr = peers.c()), peers.Ho(), peers.DD(), peers.xM(), peers.IE());
   });
 }

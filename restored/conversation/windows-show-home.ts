@@ -41,7 +41,9 @@ export type BindWindowsShowHomePeers = {
 let peers: BindWindowsShowHomePeers | null = null;
 
 /** Wire bindWindowsShowHome peers once companions land. */
-export function setBindWindowsShowHomePeers(next: BindWindowsShowHomePeers): void {
+export function setBindWindowsShowHomePeers(
+  next: BindWindowsShowHomePeers,
+): void {
   peers = next;
 }
 

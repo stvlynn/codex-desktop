@@ -9,7 +9,9 @@ export type BindBindDeferredWorkspaceTA2Peers = {
 let peers: BindBindDeferredWorkspaceTA2Peers | null = null;
 
 /** Wire bindBindDeferredWorkspaceTA2 peers once companions land. */
-export function setBindBindDeferredWorkspaceTA2Peers(next: BindBindDeferredWorkspaceTA2Peers): void {
+export function setBindBindDeferredWorkspaceTA2Peers(
+  next: BindBindDeferredWorkspaceTA2Peers,
+): void {
   peers = next;
 }
 
@@ -21,5 +23,5 @@ export function bindBindDeferredWorkspaceTA2() {
     throw new Error("bindBindDeferredWorkspaceTA2 peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => null);
+  return peers.Da(peers.Q, (e) => null);
 }

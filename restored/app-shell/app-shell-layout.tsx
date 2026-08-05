@@ -32,7 +32,9 @@ export type BindAppShellLayoutPeers = {
 let peers: BindAppShellLayoutPeers | null = null;
 
 /** Wire bindAppShellLayout peers once companions land. */
-export function setBindAppShellLayoutPeers(next: BindAppShellLayoutPeers): void {
+export function setBindAppShellLayoutPeers(
+  next: BindAppShellLayoutPeers,
+): void {
   peers = next;
 }
 
@@ -82,7 +84,9 @@ export const AppShellLayout: ReturnType<typeof bindAppShellLayout> = new Proxy(
   {} as ReturnType<typeof bindAppShellLayout>,
   {
     get(_target, prop) {
-      return bindAppShellLayout()[prop as keyof ReturnType<typeof bindAppShellLayout>];
+      return bindAppShellLayout()[
+        prop as keyof ReturnType<typeof bindAppShellLayout>
+      ];
     },
   },
 );

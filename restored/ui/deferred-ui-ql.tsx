@@ -22,7 +22,9 @@ export type BindBindDeferredUiQlPeers = {
 let peers: BindBindDeferredUiQlPeers | null = null;
 
 /** Wire bindBindDeferredUiQl peers once companions land. */
-export function setBindBindDeferredUiQlPeers(next: BindBindDeferredUiQlPeers): void {
+export function setBindBindDeferredUiQlPeers(
+  next: BindBindDeferredUiQlPeers,
+): void {
   peers = next;
 }
 
@@ -35,6 +37,17 @@ export function bindBindDeferredUiQl() {
   }
 
   return peers.e(() => {
-    U1c = peers.c(), peers.Ho(), peers.$u(), peers.nO(), peers.Mp(), peers.Zh(), peers.PM(), peers.gT(), peers.HAr(), peers.R1c(), peers.QQc(), w3 = peers.J();
+    ((U1c = peers.c()),
+      peers.Ho(),
+      peers.$u(),
+      peers.nO(),
+      peers.Mp(),
+      peers.Zh(),
+      peers.PM(),
+      peers.gT(),
+      peers.HAr(),
+      peers.R1c(),
+      peers.QQc(),
+      (w3 = peers.J()));
   });
 }

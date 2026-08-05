@@ -14,7 +14,9 @@ export type BindWorktreeBranchSetupModalPeers = {
 let peers: BindWorktreeBranchSetupModalPeers | null = null;
 
 /** Wire bindWorktreeBranchSetupModal peers once companions land. */
-export function setBindWorktreeBranchSetupModalPeers(next: BindWorktreeBranchSetupModalPeers): void {
+export function setBindWorktreeBranchSetupModalPeers(
+  next: BindWorktreeBranchSetupModalPeers,
+): void {
   peers = next;
 }
 
@@ -27,6 +29,6 @@ export function bindWorktreeBranchSetupModal() {
   }
 
   return peers.e(() => {
-    RYo = peers.c(), peers.$u(), peers.Nw(), zYo = peers.J();
+    ((RYo = peers.c()), peers.$u(), peers.Nw(), (zYo = peers.J()));
   });
 }

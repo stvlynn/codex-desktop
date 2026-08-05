@@ -23,17 +23,36 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { defaultHourlyScheduleConfig as DefaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { createAppScopeQueryAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sut_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Sut_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { WritingBlockRenderer } from "../../composer/writing-block-renderer";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { ensurePinnedConversationsQueryInit } from "../../conversation/ensure-pinned-conversations-query-init";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
-import { ensureTanstackReactFormApiInit, useTanstackForm } from "../../forms/tanstack-react-form";
+import {
+  ensureTanstackReactFormApiInit,
+  useTanstackForm,
+} from "../../forms/tanstack-react-form";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
 import { useEventCallback } from "../../hooks/use-event-callback";
 import { useGateEnabledWithAccountData } from "../../hooks/use-gate-enabled-with-account-data";
@@ -57,11 +76,17 @@ import { CopyButton } from "../../ui/copy-button";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { isRestoring } from "../../ui/is-restoring";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
-import { initToolbarBreadcrumb, ToolbarBreadcrumb } from "../../ui/toolbar-breadcrumb";
+import {
+  initToolbarBreadcrumb,
+  ToolbarBreadcrumb,
+} from "../../ui/toolbar-breadcrumb";
 import { coerceLocalFilesystemPath as CoerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { decodeBase64ToBytes } from "../../utils/decode-base64-to-bytes";
 import { hvtBindableHelper } from "../../utils/hvt-bindable-helper";
@@ -71,9 +96,15 @@ import { isSvgHyphenatedTag } from "../../utils/is-svg-hyphenated-tag";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
 import { ensureCloudApiClientInit } from "../cloud-api-client";
-import { previewCloudFilenamePattern, useCloudUserPreferences } from "../cloud-preferences";
+import {
+  previewCloudFilenamePattern,
+  useCloudUserPreferences,
+} from "../cloud-preferences";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 
 // Wave5d soft stubs.
 const CloudEnvironmentsSettingsPageHelper46: any = undefined;
@@ -126,213 +157,319 @@ var cedar,
     ensureAppScopeInit();
     dataAppActionReviewFileExpanded();
     zinc();
-    cedar = useQuery(appScopeAtom, ultra => ({
+    cedar = useQuery(appScopeAtom, (ultra) => ({
       queryKey: ["cloud-environments", "details", ultra],
       queryFn: () => bravo(ultra),
       refetchOnMount: true,
-      staleTime: readScrollTop.FIVE_MINUTES
+      staleTime: readScrollTop.FIVE_MINUTES,
     }));
     daisy = createAppScopeQueryAtom(appScopeAtom, () => ({
       queryKey: ["cloud-environments", "machines"],
       queryFn: $t,
       refetchOnMount: true,
       retry: false,
-      staleTime: readScrollTop.FIVE_MINUTES
+      staleTime: readScrollTop.FIVE_MINUTES,
     }));
     ember = createAppScopeQueryAtom(appScopeAtom, () => ({
       queryKey: ["cloud-environments", "github-connectors"],
       queryFn: copper,
       refetchOnMount: true,
       retry: false,
-      staleTime: readScrollTop.FIVE_MINUTES
+      staleTime: readScrollTop.FIVE_MINUTES,
     }));
-    _n = useQuery(appScopeAtom, ({
-      connectorId,
-      query
-    }) => ({
+    _n = useQuery(appScopeAtom, ({ connectorId, query }) => ({
       queryKey: ["cloud-environments", "repositories", connectorId, query],
       enabled: query !== "" && connectorId != null,
       queryFn: () => {
-        if (connectorId == null) throw Error("A connector ID is required to search repositories");
+        if (connectorId == null)
+          throw Error("A connector ID is required to search repositories");
         return delta(query, connectorId);
       },
       refetchOnMount: true,
       retry: false,
-      staleTime: readScrollTop.FIVE_MINUTES
+      staleTime: readScrollTop.FIVE_MINUTES,
     }));
-    flint = isRestoring(appScopeAtom, ({
-      scope
-    }) => ({
+    flint = isRestoring(appScopeAtom, ({ scope }) => ({
       mutationFn: echo,
-      onSuccess: () => indigo(scope)
+      onSuccess: () => indigo(scope),
     }));
-    garnet = isRestoring(appScopeAtom, ({
-      scope
-    }) => ({
-      mutationFn: vapor => falcon(vapor),
-      onSuccess: async (wheat, {
-        environmentId
-      }) => {
-        await Promise.all([indigo(scope), scope.query.invalidate(cedar, environmentId, {
-          exact: true
-        })]);
-      }
+    garnet = isRestoring(appScopeAtom, ({ scope }) => ({
+      mutationFn: (vapor) => falcon(vapor),
+      onSuccess: async (wheat, { environmentId }) => {
+        await Promise.all([
+          indigo(scope),
+          scope.query.invalidate(cedar, environmentId, {
+            exact: true,
+          }),
+        ]);
+      },
     }));
-    hazel = isRestoring(appScopeAtom, ({
-      scope
-    }) => ({
+    hazel = isRestoring(appScopeAtom, ({ scope }) => ({
       mutationFn: gamma,
       onSuccess: async (yarn, zephyr) => {
         scope.queryClient.removeQueries({
-          queryKey: scope.query.getOptions(cedar, zephyr).queryKey
+          queryKey: scope.query.getOptions(cedar, zephyr).queryKey,
         });
         await indigo(scope);
-      }
+      },
     }));
-    ivory = isRestoring(appScopeAtom, ({
-      scope
-    }) => ({
-      mutationFn: acorn => on(acorn),
-      onSuccess: (bloom, coral) => scope.query.invalidate(cedar, coral, {
-        exact: true
-      })
+    ivory = isRestoring(appScopeAtom, ({ scope }) => ({
+      mutationFn: (acorn) => on(acorn),
+      onSuccess: (bloom, coral) =>
+        scope.query.invalidate(cedar, coral, {
+          exact: true,
+        }),
     }));
-    jasper = isRestoring(appScopeAtom, ({
-      scope
-    }) => ({
-      mutationFn: drift => harbor(drift),
-      onSuccess: async (eagle, {
-        environmentId
-      }) => {
-        await Promise.all([indigo(scope), scope.query.invalidate(cedar, environmentId, {
-          exact: true
-        })]);
-      }
+    jasper = isRestoring(appScopeAtom, ({ scope }) => ({
+      mutationFn: (drift) => harbor(drift),
+      onSuccess: async (eagle, { environmentId }) => {
+        await Promise.all([
+          indigo(scope),
+          scope.query.invalidate(cedar, environmentId, {
+            exact: true,
+          }),
+        ]);
+      },
     }));
   });
 function lotus(frost) {
-  let {
-      form,
-      isPending,
-      preferredConnectorId
-    } = frost,
+  let { form, isPending, preferredConnectorId } = frost,
     glide = useIntl(),
     [honey, iris] = olive.useState(""),
     jewel = honey.trim();
   let knoll = Chatgpt2(jewel, 200),
     [lunar, moss] = olive.useState(null),
     north = CodexPluginActionResult(ember),
-    orbit = north.data?.find(vale => vale.id === (lunar ?? preferredConnectorId))?.id ?? north.data?.[0]?.id ?? null;
+    orbit =
+      north.data?.find((vale) => vale.id === (lunar ?? preferredConnectorId))
+        ?.id ??
+      north.data?.[0]?.id ??
+      null;
   let pine = orbit,
     quest = {
       connectorId: pine,
-      query: knoll
+      query: knoll,
     };
   let ridge = CodexBrowserSurfaceActionType(_n, quest),
     storm = honey.trim();
   let tide = knoll !== storm,
-    unity = wave => {
-      let {
-        repositoryId,
-        repositoryName
-      } = wave;
-      return <DropdownMenuPopover {...{
-        contentMaxHeight: "list",
-        contentWidth: "menu",
-        disabled: isPending || north.isPending,
-        triggerButton: <DropdownTriggerButton disabled={isPending || north.isPending}>
-                {repositoryId === "" ? <MemoizedFormattedMessage {...{
-            id: "settings.cloudEnvironments.editor.repository.select",
-            defaultMessage: "Select a repository",
-            description: "Placeholder for the cloud environment repository selector"
-          }} /> : repositoryName}
-              </DropdownTriggerButton>,
-        children: [north.isError ? <DropdownMenu.Item {...{
-          onSelect: () => void north.refetch(),
-          children: <MemoizedFormattedMessage {...{
-            id: "settings.cloudEnvironments.editor.connector.retry",
-            defaultMessage: "Retry loading GitHub connections",
-            description: "Button label for retrying GitHub connections in the cloud environment repository selector"
-          }} />
-        }} /> : north.data?.length === 0 ? <DropdownMenu.Message {...{
-          centered: true,
-          children: <MemoizedFormattedMessage {...{
-            id: "settings.cloudEnvironments.editor.connector.empty",
-            defaultMessage: "No GitHub connections available",
-            description: "Empty state when no GitHub connection can be used for a cloud environment"
-          }} />
-        }} /> : north.data != null && north.data.length > 1 ? <>
-                  {<DropdownMenu.Section {...{
-            children: [<DropdownMenu.SectionLabel {...{
-              children: <MemoizedFormattedMessage {...{
-                id: "settings.cloudEnvironments.editor.connector",
-                defaultMessage: "GitHub connection",
-                description: "Label for choosing a GitHub connection when creating a cloud environment"
-              }} />
-            }} />, north.data.map(item => <DropdownMenu.Item key={item.id} {...{
-              RightIcon: item.id === pine ? AppIconZlt : undefined,
-              onSelect: () => {
-                moss(item.id);
-                form.setFieldValue("githubConnectorId", item.id);
-                form.setFieldValue("repositoryId", "");
-                form.setFieldValue("repositoryName", "");
-              },
-              children: item.name
-            }} />)]
-          }} />}
+    unity = (wave) => {
+      let { repositoryId, repositoryName } = wave;
+      return (
+        <DropdownMenuPopover
+          {...{
+            contentMaxHeight: "list",
+            contentWidth: "menu",
+            disabled: isPending || north.isPending,
+            triggerButton: (
+              <DropdownTriggerButton disabled={isPending || north.isPending}>
+                {repositoryId === "" ? (
+                  <MemoizedFormattedMessage
+                    {...{
+                      id: "settings.cloudEnvironments.editor.repository.select",
+                      defaultMessage: "Select a repository",
+                      description:
+                        "Placeholder for the cloud environment repository selector",
+                    }}
+                  />
+                ) : (
+                  repositoryName
+                )}
+              </DropdownTriggerButton>
+            ),
+            children: [
+              north.isError ? (
+                <DropdownMenu.Item
+                  {...{
+                    onSelect: () => void north.refetch(),
+                    children: (
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "settings.cloudEnvironments.editor.connector.retry",
+                          defaultMessage: "Retry loading GitHub connections",
+                          description:
+                            "Button label for retrying GitHub connections in the cloud environment repository selector",
+                        }}
+                      />
+                    ),
+                  }}
+                />
+              ) : north.data?.length === 0 ? (
+                <DropdownMenu.Message
+                  {...{
+                    centered: true,
+                    children: (
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "settings.cloudEnvironments.editor.connector.empty",
+                          defaultMessage: "No GitHub connections available",
+                          description:
+                            "Empty state when no GitHub connection can be used for a cloud environment",
+                        }}
+                      />
+                    ),
+                  }}
+                />
+              ) : north.data != null && north.data.length > 1 ? (
+                <>
+                  {
+                    <DropdownMenu.Section
+                      {...{
+                        children: [
+                          <DropdownMenu.SectionLabel
+                            {...{
+                              children: (
+                                <MemoizedFormattedMessage
+                                  {...{
+                                    id: "settings.cloudEnvironments.editor.connector",
+                                    defaultMessage: "GitHub connection",
+                                    description:
+                                      "Label for choosing a GitHub connection when creating a cloud environment",
+                                  }}
+                                />
+                              ),
+                            }}
+                          />,
+                          north.data.map((item) => (
+                            <DropdownMenu.Item
+                              key={item.id}
+                              {...{
+                                RightIcon:
+                                  item.id === pine ? AppIconZlt : undefined,
+                                onSelect: () => {
+                                  moss(item.id);
+                                  form.setFieldValue(
+                                    "githubConnectorId",
+                                    item.id,
+                                  );
+                                  form.setFieldValue("repositoryId", "");
+                                  form.setFieldValue("repositoryName", "");
+                                },
+                                children: item.name,
+                              }}
+                            />
+                          )),
+                        ],
+                      }}
+                    />
+                  }
                   {<DropdownMenu.Separator {...{}} />}
-                </> : null, pine == null ? null : <>
-                  {<DropdownMenu.SearchInput {...{
-            "aria-label": glide.formatMessage(quill.repositorySearch),
-            autoFocus: true,
-            placeholder: glide.formatMessage(quill.repositorySearch),
-            trailingContent: ridge.isFetching || tide ? <VSCODE_EDITOR_ID {...{
-              className: "icon-2xs"
-            }} /> : undefined,
-            value: honey,
-            onChange: event => iris(event.currentTarget.value)
-          }} />}
-                  {tide ? null : knoll === "" ? <DropdownMenu.Message {...{
-            centered: true,
-            children: <MemoizedFormattedMessage {...{
-              id: "settings.cloudEnvironments.editor.repository.searchPrompt",
-              defaultMessage: "Search by repository name",
-              description: "Prompt shown before searching for a cloud environment repository"
-            }} />
-          }} /> : ridge.isError ? <DropdownMenu.Message {...{
-            centered: true,
-            children: <MemoizedFormattedMessage {...{
-              id: "settings.cloudEnvironments.editor.repository.error",
-              defaultMessage: "Unable to load repositories",
-              description: "Error shown when repository search fails"
-            }} />
-          }} /> : ridge.data?.repositories.length === 0 ? <DropdownMenu.Message {...{
-            centered: true,
-            children: <MemoizedFormattedMessage {...{
-              id: "settings.cloudEnvironments.editor.repository.empty",
-              defaultMessage: "No repositories found",
-              description: "Empty state for cloud environment repository search"
-            }} />
-          }} /> : ridge.data?.repositories.map(apex => <DropdownMenu.Item key={apex.id} {...{
-            onSelect: () => {
-              form.setFieldValue("repositoryId", apex.id);
-              form.setFieldValue("repositoryName", apex.repository_full_name);
-              form.setFieldValue("githubConnectorId", alpha(apex.id) ?? pine);
-            },
-            children: apex.repository_full_name
-          }} />)}
-                </>]
-      }} />;
+                </>
+              ) : null,
+              pine == null ? null : (
+                <>
+                  {
+                    <DropdownMenu.SearchInput
+                      {...{
+                        "aria-label": glide.formatMessage(
+                          quill.repositorySearch,
+                        ),
+                        autoFocus: true,
+                        placeholder: glide.formatMessage(
+                          quill.repositorySearch,
+                        ),
+                        trailingContent:
+                          ridge.isFetching || tide ? (
+                            <VSCODE_EDITOR_ID
+                              {...{
+                                className: "icon-2xs",
+                              }}
+                            />
+                          ) : undefined,
+                        value: honey,
+                        onChange: (event) => iris(event.currentTarget.value),
+                      }}
+                    />
+                  }
+                  {tide ? null : knoll === "" ? (
+                    <DropdownMenu.Message
+                      {...{
+                        centered: true,
+                        children: (
+                          <MemoizedFormattedMessage
+                            {...{
+                              id: "settings.cloudEnvironments.editor.repository.searchPrompt",
+                              defaultMessage: "Search by repository name",
+                              description:
+                                "Prompt shown before searching for a cloud environment repository",
+                            }}
+                          />
+                        ),
+                      }}
+                    />
+                  ) : ridge.isError ? (
+                    <DropdownMenu.Message
+                      {...{
+                        centered: true,
+                        children: (
+                          <MemoizedFormattedMessage
+                            {...{
+                              id: "settings.cloudEnvironments.editor.repository.error",
+                              defaultMessage: "Unable to load repositories",
+                              description:
+                                "Error shown when repository search fails",
+                            }}
+                          />
+                        ),
+                      }}
+                    />
+                  ) : ridge.data?.repositories.length === 0 ? (
+                    <DropdownMenu.Message
+                      {...{
+                        centered: true,
+                        children: (
+                          <MemoizedFormattedMessage
+                            {...{
+                              id: "settings.cloudEnvironments.editor.repository.empty",
+                              defaultMessage: "No repositories found",
+                              description:
+                                "Empty state for cloud environment repository search",
+                            }}
+                          />
+                        ),
+                      }}
+                    />
+                  ) : (
+                    ridge.data?.repositories.map((apex) => (
+                      <DropdownMenu.Item
+                        key={apex.id}
+                        {...{
+                          onSelect: () => {
+                            form.setFieldValue("repositoryId", apex.id);
+                            form.setFieldValue(
+                              "repositoryName",
+                              apex.repository_full_name,
+                            );
+                            form.setFieldValue(
+                              "githubConnectorId",
+                              alpha(apex.id) ?? pine,
+                            );
+                          },
+                          children: apex.repository_full_name,
+                        }}
+                      />
+                    ))
+                  )}
+                </>
+              ),
+            ],
+          }}
+        />
+      );
     };
-  return <form.Subscribe {...{
-    selector: mint,
-    children: unity
-  }} />;
+  return (
+    <form.Subscribe
+      {...{
+        selector: mint,
+        children: unity,
+      }}
+    />
+  );
 }
 function mint(brook) {
   return {
     repositoryId: brook.values.repositoryId,
-    repositoryName: brook.values.repositoryName
+    repositoryName: brook.values.repositoryName,
   };
 }
 var nova,
@@ -355,40 +492,47 @@ var nova,
       repositorySearch: {
         id: "settings.cloudEnvironments.editor.repository.search",
         defaultMessage: "Search repositories",
-        description: "Accessible label and placeholder for searching repositories when creating a cloud environment"
-      }
+        description:
+          "Accessible label and placeholder for searching repositories when creating a cloud environment",
+      },
     });
   });
 function sage(cliff) {
-  let {
-    environment,
-    onCancel,
-    onSaved
-  } = cliff;
+  let { environment, onCancel, onSaved } = cliff;
   if (environment == null) {
     let dusk;
-    return <CloudEnvironmentsSettingsPageHelper46 {...{
-      onCancel,
-      onSaved
-    }} />;
+    return (
+      <CloudEnvironmentsSettingsPageHelper46
+        {...{
+          onCancel,
+          onSaved,
+        }}
+      />
+    );
   }
-  return <CloudEnvironmentsSettingsPageHelper47 {...{
-    environment,
-    onCancel,
-    onSaved,
-    preferredConnectorId: null
-  }} />;
+  return (
+    <CloudEnvironmentsSettingsPageHelper47
+      {...{
+        environment,
+        onCancel,
+        onSaved,
+        preferredConnectorId: null,
+      }}
+    />
+  );
 }
 function topaz(elm) {
-  let {
-      onCancel,
-      onSaved
-    } = elm,
-    fern = useCloudUserPreferences().data?.preferred_github_connector_id ?? null;
-  return <CloudEnvironmentsSettingsPageHelper47 {...{
-    environment: null,
-    onCancel,
-    onSaved,
-    preferredConnectorId: fern
-  }} />;
+  let { onCancel, onSaved } = elm,
+    fern =
+      useCloudUserPreferences().data?.preferred_github_connector_id ?? null;
+  return (
+    <CloudEnvironmentsSettingsPageHelper47
+      {...{
+        environment: null,
+        onCancel,
+        onSaved,
+        preferredConnectorId: fern,
+      }}
+    />
+  );
 }

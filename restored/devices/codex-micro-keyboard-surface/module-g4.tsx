@@ -10,9 +10,17 @@ import { resolveReferralProgram } from "../../account/resolve-referral-program";
 import { CodexAutomationCapabilityOrigin } from "../../analytics/codex-automation-capability-origin";
 import { CodexPluginDirectoryEntrypoint } from "../../analytics/codex-plugin-directory-entrypoint";
 import { CodexReferralInviteModalBackendErrorType } from "../../analytics/codex-referral-invite-modal-backend-error-type";
-import { ensureComposerEsm_CU_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Kg_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_CU_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Kg_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_PRODUCT_ID } from "../../config/chatgpt-product-id";
 import { deferredConversationR } from "../../conversation/deferred-conversation-r";
@@ -32,9 +40,15 @@ import { AppIconTv } from "../../icons/app-icon-tv";
 import { AppIconYm } from "../../icons/app-icon-ym";
 import { ensureFlaskIconInit, FlaskIcon } from "../../icons/flask-icon";
 import { ensureHooksFocusIconInit } from "../../icons/hooks-settings-icons";
-import { ensurePlayOutlineIconInit, PlayOutlineIcon } from "../../icons/play-outline-icon";
+import {
+  ensurePlayOutlineIconInit,
+  PlayOutlineIcon,
+} from "../../icons/play-outline-icon";
 import { ProjectDropdownGlyphIcon } from "../../icons/project-dropdown-glyph-icon";
-import { ensureStarOutlineIconInit, StarOutlineIcon } from "../../icons/star-outline-icon";
+import {
+  ensureStarOutlineIconInit,
+  StarOutlineIcon,
+} from "../../icons/star-outline-icon";
 import { TerminalFileIcon } from "../../icons/terminal-file-icon";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { esmInit } from "../../runtime/rolldown-runtime";
@@ -46,16 +60,22 @@ import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { identity } from "../../utils/identity";
 import { lerpIfFinite } from "../../utils/lerp-if-finite";
-import { ensureSettingsGlyphI0Init, ensureSettingsGlyphNltInit, ensureSettingsGlyphRBInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureSettingsGlyphI0Init,
+  ensureSettingsGlyphNltInit,
+  ensureSettingsGlyphRBInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 export function codexMicroKeyboardSurfaceR() {
-  return <div className="relative z-10 flex items-center justify-center gap-1">
+  return (
+    <div className="relative z-10 flex items-center justify-center gap-1">
       <div className="flex flex-col gap-0.5">
         <span className="size-1 rounded-full bg-[#9ebdff] shadow-[0_0_5px_rgba(158,189,255,0.9)]" />
         <span className="size-1 rounded-full bg-[#b8b98b]" />
         <span className="size-1 rounded-full bg-[#b8b98b]" />
       </div>
       <div className="size-[58%] rounded-full bg-[#2d2925] shadow-[0_1px_2px_rgba(79,72,63,0.24)] dark:bg-[#202127] dark:shadow-[0_1px_2px_rgba(0,0,0,0.36)]" />
-    </div>;
+    </div>
+  );
 }
 var alpha, $;
 export const codexMicroKeyboardSurfaceA = esmInit(() => {

@@ -75,9 +75,7 @@ export const ensureChatgptImageGroupDirectiveInit = rolldownRuntimeN(() => {
   imageGroupThreadId = appInitialVgt("chatgpt:image-group");
 });
 
-export function useChatgptComposerControllerHelper112(image: {
-  src: string;
-}): {
+export function useChatgptComposerControllerHelper112(image: { src: string }): {
   attribution: null;
   destinationUrl: null;
   src: string;
@@ -175,7 +173,10 @@ export function useChatgptComposerControllerHelper111({
   const imageAssetResolver =
     serverId == null
       ? undefined
-      : useChatgptComposerControllerHelper104(scope.get(appInitialCI), serverId);
+      : useChatgptComposerControllerHelper104(
+          scope.get(appInitialCI),
+          serverId,
+        );
   const onOpenImage =
     openLightbox == null
       ? undefined
@@ -225,10 +226,7 @@ export function useChatgptComposerControllerHelper106(props: {
   }
   if (early !== Symbol.for("react.early_return_sentinel")) return early as null;
   const resolved = images ?? [];
-  if (
-    turnContext?.shouldBlockExternalEgress === true &&
-    resolved.length === 0
-  )
+  if (turnContext?.shouldBlockExternalEgress === true && resolved.length === 0)
     return null;
   if (resolved.length === 0) {
     const Shimmer = useChatgptComposerControllerHelper109;
@@ -255,17 +253,12 @@ export function useChatgptComposerControllerHelper107(props: {
     AppInitialUI(reference, contentReferenceIndex),
     turnContext?.shouldBlockExternalEgress === true,
   );
-  if (
-    turnContext?.shouldBlockExternalEgress === true &&
-    images.length === 0
-  )
+  if (turnContext?.shouldBlockExternalEgress === true && images.length === 0)
     return null;
   if (images.length === 0) {
     const Shimmer = useChatgptComposerControllerHelper109;
     return <Shimmer />;
   }
   const ImageGroup = useChatgptComposerControllerHelper111;
-  return (
-    <ImageGroup conversationId={conversationId} images={images} />
-  );
+  return <ImageGroup conversationId={conversationId} images={images} />;
 }

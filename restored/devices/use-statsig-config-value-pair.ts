@@ -13,7 +13,9 @@ export type UseStatsigConfigValuePairPeers = {
 let peers: UseStatsigConfigValuePairPeers | null = null;
 
 /** Wire useStatsigConfigValuePair peers once companions land. */
-export function setUseStatsigConfigValuePairPeers(next: UseStatsigConfigValuePairPeers): void {
+export function setUseStatsigConfigValuePairPeers(
+  next: UseStatsigConfigValuePairPeers,
+): void {
   peers = next;
 }
 

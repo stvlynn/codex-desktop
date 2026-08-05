@@ -26,14 +26,16 @@ export function macMenuBarEnabled() {
   }
 
   return peers.e(() => {
-    peers._u(), peers.xu(), MEe = {
-      alwaysHidePictureInPicture: peers.vu({
-        agentAccess: `hidden`,
-        default: !1,
-        description: `Whether Computer Use picture in picture is always hidden`,
-        key: `computerUseAlwaysHidePictureInPicture`,
-        schema: peers.hu
-      })
-    };
+    (peers._u(),
+      peers.xu(),
+      (MEe = {
+        alwaysHidePictureInPicture: peers.vu({
+          agentAccess: `hidden`,
+          default: !1,
+          description: `Whether Computer Use picture in picture is always hidden`,
+          key: `computerUseAlwaysHidePictureInPicture`,
+          schema: peers.hu,
+        }),
+      }));
   });
 }

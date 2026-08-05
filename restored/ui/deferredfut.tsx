@@ -46,48 +46,69 @@ export function bindDeferredfut() {
   }
 
   return peers.e(() => {
-    peers.T2e(), dm = peers.r(peers.o(), 1), j2e = peers.r(peers.o(), 1), M2e = peers.r(peers.ju(), 1), N2e = typeof document < `u` ? peers.j2e.useLayoutEffect : function () {}, P2e = e => {
-      function t(e) {
-        return {}.hasOwnProperty.call(peers.e, `current`);
-      }
-      return {
-        name: `arrow`,
-        options: peers.e,
-        fn(n) {
-          let {
-            element: r,
-            padding: i
-          } = typeof peers.e == `function` ? peers.e(peers.n) : peers.e;
-          return peers.r && peers.t(peers.r) ? peers.r.current == null ? {} : peers.S2e({
-            element: peers.r.current,
-            padding: i
-          }).fn(peers.n) : peers.r ? peers.S2e({
-            element: peers.r,
-            padding: i
-          }).fn(peers.n) : {};
+    (peers.T2e(),
+      (dm = peers.r(peers.o(), 1)),
+      (j2e = peers.r(peers.o(), 1)),
+      (M2e = peers.r(peers.ju(), 1)),
+      (N2e =
+        typeof document < `u` ? peers.j2e.useLayoutEffect : function () {}),
+      (P2e = (e) => {
+        function t(e) {
+          return {}.hasOwnProperty.call(peers.e, `current`);
         }
-      };
-    }, fm = (e, t) => ({
-      ...peers._2e(peers.e),
-      options: [peers.e, peers.t]
-    }), pm = (e, t) => ({
-      ...peers.v2e(peers.e),
-      options: [peers.e, peers.t]
-    }), F2e = (e, t) => ({
-      ...peers.C2e(peers.e),
-      options: [peers.e, peers.t]
-    }), mm = (e, t) => ({
-      ...peers.y2e(peers.e),
-      options: [peers.e, peers.t]
-    }), I2e = (e, t) => ({
-      ...peers.b2e(peers.e),
-      options: [peers.e, peers.t]
-    }), L2e = (e, t) => ({
-      ...peers.x2e(peers.e),
-      options: [peers.e, peers.t]
-    }), R2e = (e, t) => ({
-      ...peers.P2e(peers.e),
-      options: [peers.e, peers.t]
-    });
+        return {
+          name: `arrow`,
+          options: peers.e,
+          fn(n) {
+            let { element: r, padding: i } =
+              typeof peers.e == `function` ? peers.e(peers.n) : peers.e;
+            return peers.r && peers.t(peers.r)
+              ? peers.r.current == null
+                ? {}
+                : peers
+                    .S2e({
+                      element: peers.r.current,
+                      padding: i,
+                    })
+                    .fn(peers.n)
+              : peers.r
+                ? peers
+                    .S2e({
+                      element: peers.r,
+                      padding: i,
+                    })
+                    .fn(peers.n)
+                : {};
+          },
+        };
+      }),
+      (fm = (e, t) => ({
+        ...peers._2e(peers.e),
+        options: [peers.e, peers.t],
+      })),
+      (pm = (e, t) => ({
+        ...peers.v2e(peers.e),
+        options: [peers.e, peers.t],
+      })),
+      (F2e = (e, t) => ({
+        ...peers.C2e(peers.e),
+        options: [peers.e, peers.t],
+      })),
+      (mm = (e, t) => ({
+        ...peers.y2e(peers.e),
+        options: [peers.e, peers.t],
+      })),
+      (I2e = (e, t) => ({
+        ...peers.b2e(peers.e),
+        options: [peers.e, peers.t],
+      })),
+      (L2e = (e, t) => ({
+        ...peers.x2e(peers.e),
+        options: [peers.e, peers.t],
+      })),
+      (R2e = (e, t) => ({
+        ...peers.P2e(peers.e),
+        options: [peers.e, peers.t],
+      })));
   });
 }

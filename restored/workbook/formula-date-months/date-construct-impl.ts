@@ -60,11 +60,7 @@ export function G7e(fdmIn9270: any, fdmIn9271: any, fdmIn9272: any) {
     fdmBind19827 = +fdmBind19825 - H7e(fdmBind19825);
   return Math.round((fdmBind19826 - fdmBind19827) / DAY_MS);
 }
-export function datedifYdUnits(
-  fdmIn7955: any,
-  fdmIn7956: any,
-  fdmIn7957: any,
-) {
+export function datedifYdUnits(fdmIn7955: any, fdmIn7956: any, fdmIn7957: any) {
   let [fdmBind18436, fdmBind18437] = workbookHelper932(
       fdmIn7957?.in,
       fdmIn7955,

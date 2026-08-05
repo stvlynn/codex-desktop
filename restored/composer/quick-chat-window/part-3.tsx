@@ -5,7 +5,6 @@
 // AST split 3/3
 /* split-lane-import-depth:1 */
 
-
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
 import { CodexBrowserProfileImportCookieStatus } from "../../analytics/codex-browser-profile-import-cookie-status";
 import { CodexBrowserProfileImportPasswordStatus } from "../../analytics/codex-browser-profile-import-password-status";
@@ -16,13 +15,53 @@ import { CodexRemoteControlRefreshSource } from "../../analytics/codex-remote-co
 import { CodexRemoteSshConnectionAction } from "../../analytics/codex-remote-ssh-connection-action";
 import { AppQueryClientProvider } from "../../app/app-query-client-provider";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationFlagsAtom, chatgptConversationServerIdAtom, chatgptConversationTitleAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_BI_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_RV_Init as EnsureComposerEsm_RV_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_ZI_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_Mx_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationFlagsAtom,
+  chatgptConversationServerIdAtom,
+  chatgptConversationTitleAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_BI_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_RV_Init as EnsureComposerEsm_RV_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_XP_Init,
+  ensureComposerEsm_ZI_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_GS_Init,
+  ensureConversationPageEsm_Mx_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
-import { _useChatgptComposerControllerI, _useChatgptComposerControllerR, _useChatgptComposerControllerT, useChatgptComposerControllerA as UseChatgptComposerControllerA, useChatgptComposerControllerB as UseChatgptComposerControllerB, useChatgptComposerControllerF, useChatgptComposerControllerI, useChatgptComposerControllerN, useChatgptComposerControllerO, useChatgptComposerControllerP as UseChatgptComposerControllerP, useChatgptComposerControllerR, useChatgptComposerControllerT, useChatgptComposerControllerV as UseChatgptComposerControllerV, useChatgptComposerControllerW, useChatgptComposerControllerX, useChatgptComposerControllerY } from "../../composer/use-chatgpt-composer-controller";
+import {
+  _useChatgptComposerControllerI,
+  _useChatgptComposerControllerR,
+  _useChatgptComposerControllerT,
+  useChatgptComposerControllerA as UseChatgptComposerControllerA,
+  useChatgptComposerControllerB as UseChatgptComposerControllerB,
+  useChatgptComposerControllerF,
+  useChatgptComposerControllerI,
+  useChatgptComposerControllerN,
+  useChatgptComposerControllerO,
+  useChatgptComposerControllerP as UseChatgptComposerControllerP,
+  useChatgptComposerControllerR,
+  useChatgptComposerControllerT,
+  useChatgptComposerControllerV as UseChatgptComposerControllerV,
+  useChatgptComposerControllerW,
+  useChatgptComposerControllerX,
+  useChatgptComposerControllerY,
+} from "../../composer/use-chatgpt-composer-controller";
 import { activateConversationSurface } from "../../conversation/activate-conversation-surface";
 import { ArtifactReferenceLink } from "../../conversation/artifact-reference-link";
 import { isCustomAgentId } from "../../conversation/is-custom-agent-id";
@@ -51,15 +90,31 @@ import { useBrowserExtensionPluginSetupQuery } from "../../skills/use-browser-ex
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
 import { DropdownMenuPopover } from "../../ui/dropdown-menu-popover";
 import { FloatingSurfaceCssClass } from "../../ui/floating-surface-css-classes";
-import { ensureIconPixelSizeInit, getIconPixelSize } from "../../ui/icon-pixel-size";
+import {
+  ensureIconPixelSizeInit,
+  getIconPixelSize,
+} from "../../ui/icon-pixel-size";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
-import { initToolbarBreadcrumb, ToolbarBreadcrumb } from "../../ui/toolbar-breadcrumb";
+import {
+  initToolbarBreadcrumb,
+  ToolbarBreadcrumb,
+} from "../../ui/toolbar-breadcrumb";
 import { createInMemoryStorageAdapter } from "../../utils/create-in-memory-storage-adapter";
 import { identity as Identity } from "../../utils/identity";
 import { identityValue } from "../../utils/identity-value";
 import { safeZodValue } from "../../utils/safe-zod-value";
-import { quickChatDockPositionAtom, quickChatSurfaceCollapsedAtom } from "../../windows/quick-chat-atoms";
-import { attachQuickChatProject, mapQuickChatSurfaceMode, markQuickChatConversationStarted, openOrFocusQuickChat, setQuickChatDockPosition, setQuickChatSize } from "../../windows/quick-chat-surface-helpers";
+import {
+  quickChatDockPositionAtom,
+  quickChatSurfaceCollapsedAtom,
+} from "../../windows/quick-chat-atoms";
+import {
+  attachQuickChatProject,
+  mapQuickChatSurfaceMode,
+  markQuickChatConversationStarted,
+  openOrFocusQuickChat,
+  setQuickChatDockPosition,
+  setQuickChatSize,
+} from "../../windows/quick-chat-surface-helpers";
 
 /** split companion stub */
 const $t: any = undefined;
@@ -158,16 +213,22 @@ export const quickChatWindowN = esmInit(() => {
   wave = {
     type: "spring",
     bounce: 0.16,
-    duration: 0.42
+    duration: 0.42,
   };
-  apex = clearActiveOverlayAfterNavigate(appScopeAtom, (copperSecond, {
-    get
-  }) => copperSecond.map(item => get(AppInitialWP, item)), {
-    isEqual: isStartingProcessExpired
-  });
-  brook = clearActiveOverlayAfterNavigate(appScopeAtom, (deltaSecond, {
-    get
-  }) => deltaSecond.map(item => get(chatgptConversationServerIdAtom, item)), {
-    isEqual: isStartingProcessExpired
-  });
+  apex = clearActiveOverlayAfterNavigate(
+    appScopeAtom,
+    (copperSecond, { get }) =>
+      copperSecond.map((item) => get(AppInitialWP, item)),
+    {
+      isEqual: isStartingProcessExpired,
+    },
+  );
+  brook = clearActiveOverlayAfterNavigate(
+    appScopeAtom,
+    (deltaSecond, { get }) =>
+      deltaSecond.map((item) => get(chatgptConversationServerIdAtom, item)),
+    {
+      isEqual: isStartingProcessExpired,
+    },
+  );
 });

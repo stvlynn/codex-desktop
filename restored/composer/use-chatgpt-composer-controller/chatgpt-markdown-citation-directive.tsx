@@ -30,9 +30,7 @@ reactCompilerRuntime();
 
 const React = rolldownRuntimeS(react(), 1) as {
   useContext: (context: unknown) => unknown;
-  useState: <T>(
-    init: T,
-  ) => [T, (v: T | ((prev: T) => T)) => void];
+  useState: <T>(init: T) => [T, (v: T | ((prev: T) => T)) => void];
 };
 
 const AppInitialPZ = appInitialPZ;
@@ -56,9 +54,7 @@ export function useChatgptComposerControllerHelper25({
   sources,
 }: {
   currentSourceIndex: number;
-  setCurrentSourceIndex: (
-    value: number | ((prev: number) => number),
-  ) => void;
+  setCurrentSourceIndex: (value: number | ((prev: number) => number)) => void;
   sources: Array<ChatgptCitationSource & { href: string }>;
 }) {
   const intl = appInitialJft();
@@ -66,10 +62,7 @@ export function useChatgptComposerControllerHelper25({
   const current = sources[currentSourceIndex] ?? sources[0];
   if (current == null) return null;
   const multi = sources.length > 1;
-  const onKeyDown = (event: {
-    key: string;
-    preventDefault: () => void;
-  }) => {
+  const onKeyDown = (event: { key: string; preventDefault: () => void }) => {
     if (event.key === "Escape") appInitialUlt();
     if (!multi) return;
     if (event.key === "ArrowLeft") {
@@ -205,9 +198,8 @@ export function useChatgptComposerControllerHelper24(
     { kind: "primary", label, title, url, href },
   );
   const active =
-    (tooltipOpen
-      ? resolvedSources[currentSourceIndex]
-      : resolvedSources[0]) ?? resolvedSources[0];
+    (tooltipOpen ? resolvedSources[currentSourceIndex] : resolvedSources[0]) ??
+    resolvedSources[0];
   if (active == null) return null;
 
   const supportingLabel =

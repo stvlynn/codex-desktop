@@ -13,7 +13,9 @@ export type UseAppsByIdsForHostPeers = {
 let peers: UseAppsByIdsForHostPeers | null = null;
 
 /** Wire useAppsByIdsForHost peers once companions land. */
-export function setUseAppsByIdsForHostPeers(next: UseAppsByIdsForHostPeers): void {
+export function setUseAppsByIdsForHostPeers(
+  next: UseAppsByIdsForHostPeers,
+): void {
   peers = next;
 }
 

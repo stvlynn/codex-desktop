@@ -4,7 +4,7 @@
 import type { FormulaEnv } from "./types";
 
 /** Legacy `Iue` — build `w/h/l/t/r/b/hc/…` guide env for a bbox. */
-export function buildGuideVariables(width: number, height: number, ): FormulaEnv {
+export function buildGuideVariables(width: number, height: number): FormulaEnv {
   let ss = Math.min(width, height);
   return {
     w: width,

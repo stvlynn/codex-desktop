@@ -25,6 +25,6 @@ export function macOS4() {
   }
 
   return peers.e(() => {
-    tSr = peers.c(), peers.$xr(), peers.Gw();
+    ((tSr = peers.c()), peers.$xr(), peers.Gw());
   });
 }

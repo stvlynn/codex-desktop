@@ -13,7 +13,9 @@ export type UseResolvedHostConfigValuePeers = {
 let peers: UseResolvedHostConfigValuePeers | null = null;
 
 /** Wire useResolvedHostConfigValue peers once companions land. */
-export function setUseResolvedHostConfigValuePeers(next: UseResolvedHostConfigValuePeers): void {
+export function setUseResolvedHostConfigValuePeers(
+  next: UseResolvedHostConfigValuePeers,
+): void {
   peers = next;
 }
 

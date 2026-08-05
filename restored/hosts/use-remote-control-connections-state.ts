@@ -11,7 +11,9 @@ export type UseRemoteControlConnectionsStatePeers = {
 let peers: UseRemoteControlConnectionsStatePeers | null = null;
 
 /** Wire useRemoteControlConnectionsState peers once companions land. */
-export function setUseRemoteControlConnectionsStatePeers(next: UseRemoteControlConnectionsStatePeers): void {
+export function setUseRemoteControlConnectionsStatePeers(
+  next: UseRemoteControlConnectionsStatePeers,
+): void {
   peers = next;
 }
 

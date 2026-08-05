@@ -26,6 +26,10 @@ export function bindDeferredUiXR() {
   }
 
   return peers.e(() => {
-    t8i = [25, 50, 100, 150, 200], n8i = peers.t8i, r8i = 10, i8i = 400, a8i = 0.01;
+    ((t8i = [25, 50, 100, 150, 200]),
+      (n8i = peers.t8i),
+      (r8i = 10),
+      (i8i = 400),
+      (a8i = 0.01));
   });
 }

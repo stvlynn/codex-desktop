@@ -17,7 +17,9 @@ export type BindSelectedAvatarIdPeers = {
 let peers: BindSelectedAvatarIdPeers | null = null;
 
 /** Wire bindSelectedAvatarId peers once companions land. */
-export function setBindSelectedAvatarIdPeers(next: BindSelectedAvatarIdPeers): void {
+export function setBindSelectedAvatarIdPeers(
+  next: BindSelectedAvatarIdPeers,
+): void {
   peers = next;
 }
 
@@ -30,28 +32,32 @@ export function bindSelectedAvatarId() {
   }
 
   return peers.e(() => {
-    peers.Sl(), peers._Ee(), peers._u(), peers.xu(), GEe = {
-      defaultServiceTier: peers.bu({
-        agentAccess: `read-write`,
-        default: null,
-        description: `Preferred model speed tier`,
-        key: peers.gEe,
-        schema: peers.bEe
-      }),
-      selectedAvatarId: peers.bu({
-        agentAccess: `read-write`,
-        default: null,
-        description: `Selected Codex avatar`,
-        key: `selected-avatar-id`,
-        schema: peers.bEe
-      }),
-      petSize: peers.bu({
-        agentAccess: `read-write`,
-        default: 112,
-        description: `Size of the floating Codex pet`,
-        key: `avatar-overlay-mascot-width-px`,
-        schema: peers.rl().int().min(80).max(224)
-      })
-    };
+    (peers.Sl(),
+      peers._Ee(),
+      peers._u(),
+      peers.xu(),
+      (GEe = {
+        defaultServiceTier: peers.bu({
+          agentAccess: `read-write`,
+          default: null,
+          description: `Preferred model speed tier`,
+          key: peers.gEe,
+          schema: peers.bEe,
+        }),
+        selectedAvatarId: peers.bu({
+          agentAccess: `read-write`,
+          default: null,
+          description: `Selected Codex avatar`,
+          key: `selected-avatar-id`,
+          schema: peers.bEe,
+        }),
+        petSize: peers.bu({
+          agentAccess: `read-write`,
+          default: 112,
+          description: `Size of the floating Codex pet`,
+          key: `avatar-overlay-mascot-width-px`,
+          schema: peers.rl().int().min(80).max(224),
+        }),
+      }));
   });
 }

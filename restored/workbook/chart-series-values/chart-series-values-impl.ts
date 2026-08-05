@@ -6,13 +6,14 @@ import { csvH } from "./boundary-hooks";
 
 void csvH;
 
-export function buildSeriesXValues(csvIn3395: any, csvIn3396: any, csvIn3397: any) {
+export function buildSeriesXValues(
+  csvIn3395: any,
+  csvIn3396: any,
+  csvIn3397: any,
+) {
   let csvBind11769 = [],
     csvBind11770 = csvIn3396.xValues ?? [],
-    csvBind11771 = csvH.coerceChartNumber(
-      csvIn3396,
-      csvIn3395.categories,
-    ),
+    csvBind11771 = csvH.coerceChartNumber(csvIn3396, csvIn3395.categories),
     csvBind11772 = csvIn3397.length,
     csvBind11773 =
       csvBind11770.length > csvBind11772 &&
@@ -20,18 +21,13 @@ export function buildSeriesXValues(csvIn3395: any, csvIn3396: any, csvIn3397: an
     csvBind11774 =
       csvBind11771.length > csvBind11772 &&
       csvIn3397.every((item) => item < csvBind11771.length);
-  for (let [
-    csvBind15890,
-    csvBind15891,
-  ] of csvIn3397.entries()) {
+  for (let [csvBind15890, csvBind15891] of csvIn3397.entries()) {
     let csvBind16635 = csvBind15890;
     if (
       (csvBind11773 && (csvBind16635 = csvBind15891),
       csvBind16635 < csvBind11770.length)
     ) {
-      csvBind11769.push(
-        csvH.parseFiniteNumber(csvBind11770[csvBind16635]),
-      );
+      csvBind11769.push(csvH.parseFiniteNumber(csvBind11770[csvBind16635]));
       continue;
     }
     let csvBind16636 = csvBind15890;
@@ -39,9 +35,7 @@ export function buildSeriesXValues(csvIn3395: any, csvIn3396: any, csvIn3397: an
       (csvBind11774 && (csvBind16636 = csvBind15891),
       csvBind16636 < csvBind11771.length)
     ) {
-      let csvBind21751 = csvH.parseFiniteNumber(
-        csvBind11771[csvBind16636],
-      );
+      let csvBind21751 = csvH.parseFiniteNumber(csvBind11771[csvBind16636]);
       if (csvBind21751 !== undefined) {
         csvBind11769.push(csvBind21751);
         continue;
@@ -77,23 +71,14 @@ export function extractChartSeriesValues(csvIn920: any, csvIn921: any = {}) {
       csvBind9858 = item.bubbleSizes ?? [],
       csvBind9859 =
         csvBind9858.length > csvBind9855 &&
-        csvBind9856.every(
-          (_item) => _item < csvBind9858.length,
-        ),
+        csvBind9856.every((_item) => _item < csvBind9858.length),
       csvBind9860 = [];
-    for (let [
-      csvBind13342,
-      csvBind13343,
-    ] of csvBind9856.entries()) {
+    for (let [csvBind13342, csvBind13343] of csvBind9856.entries()) {
       let csvBind13922 = csvBind9854[csvBind13342],
         csvBind13923 = csvBind9857[csvBind13342],
         csvBind13924 = csvH.parseFiniteNumber(csvBind13922),
         csvBind13925 = csvH.parseFiniteNumber(csvBind13923);
-      if (
-        csvBind13925 === undefined ||
-        csvBind13924 === undefined
-      )
-        continue;
+      if (csvBind13925 === undefined || csvBind13924 === undefined) continue;
       let csvBind13926 = {
         idx: csvBind13343,
         x: csvBind13925,
@@ -139,16 +124,10 @@ export function extractChartSeriesValues(csvIn920: any, csvIn921: any = {}) {
   let csvBind5867;
   if (csvIn921.includeBubbleSize && csvBind5860.length > 0) {
     let csvBind18996 = AppInitialNat(csvBind5860);
-    if (
-      csvBind18996[0] === undefined ||
-      csvBind18996[1] === undefined
-    )
+    if (csvBind18996[0] === undefined || csvBind18996[1] === undefined)
       throw Error("Expected a non-empty bubble size extent");
     let csvBind18997 = Math.max(0, csvBind18996[0]);
-    csvBind5867 = [
-      csvBind18997,
-      Math.max(csvBind18997, csvBind18996[1]),
-    ];
+    csvBind5867 = [csvBind18997, Math.max(csvBind18997, csvBind18996[1])];
   }
   return {
     series: csvBind5857,

@@ -22,7 +22,9 @@ export type UseResolvedBillingCurrencyQueryPeers = {
 let peers: UseResolvedBillingCurrencyQueryPeers | null = null;
 
 /** Wire useResolvedBillingCurrencyQuery peers once companions land. */
-export function setUseResolvedBillingCurrencyQueryPeers(next: UseResolvedBillingCurrencyQueryPeers): void {
+export function setUseResolvedBillingCurrencyQueryPeers(
+  next: UseResolvedBillingCurrencyQueryPeers,
+): void {
   peers = next;
 }
 

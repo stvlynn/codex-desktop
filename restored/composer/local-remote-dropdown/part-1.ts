@@ -5,7 +5,10 @@
 // Careful split export-budget 1/2
 /* split-lane-import-depth:1 */
 
-import { getCreditsPurchaseMinimumQuantity, parseFormattedCreditsQuantityString } from "../../account/credits-purchase-field-validators";
+import {
+  getCreditsPurchaseMinimumQuantity,
+  parseFormattedCreditsQuantityString,
+} from "../../account/credits-purchase-field-validators";
 import { RateLimitResetCreditsDialog } from "../../account/rate-limit-reset-credits-dialog";
 import { trimRateLimitName } from "../../account/trim-rate-limit-name";
 import { useProfileUsageQuery as UseProfileUsageQuery } from "../../account/use-profile-usage-query";
@@ -18,12 +21,31 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { logProductEvent } from "../../analytics/log-product-event";
 import { ensureChatgptSiteSuffixesInit } from "../../appgen/chatgpt-site-suffixes";
 import { queueAutomationRun } from "../../automation/queue-automation-run";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { createAppScopeQueryAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Wdt_Init, ensureComposerEsm_Wlt_Init } from "../../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+  ensureComposerEsm_Wdt_Init,
+  ensureComposerEsm_Wlt_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
 import { useAtomPair } from "../../boundaries/persisted-atom";
-import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { resolveCodexCloudAccess } from "../../cloud/resolve-codex-cloud-access";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
@@ -31,17 +53,35 @@ import { deferredConversationSh as DeferredConversationSh } from "../../conversa
 import { ensureSteeringUserMessageClusterInit } from "../../conversation/ensure-steering-user-message-cluster-init";
 import { hasLoadedOldestItems } from "../../conversation/has-loaded-oldest-items";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
-import { CHATGPT_CODEX_CLOUD_ENVIRONMENTS_SETTINGS_URL, CHATGPT_CODEX_CLOUD_URL } from "../../docs/chatgpt-cloud-urls";
+import {
+  CHATGPT_CODEX_CLOUD_ENVIRONMENTS_SETTINGS_URL,
+  CHATGPT_CODEX_CLOUD_URL,
+} from "../../docs/chatgpt-cloud-urls";
 import { ensureDiffCommentComposerInit } from "../../editors/ensure-diff-comment-composer-init";
-import { environmentLabelsA, environmentLabelsC, environmentLabelsO, environmentLabelsS } from "../../environments/environment-labels";
+import {
+  environmentLabelsA,
+  environmentLabelsC,
+  environmentLabelsO,
+  environmentLabelsS,
+} from "../../environments/environment-labels";
 import { CLOUD_ENVIRONMENT_SELECTOR_FEATURE_GATE_ID } from "../../feature-gates/feature-gate-ids";
 import { pathContainsWorktreesDir } from "../../files/path-contains-worktrees-dir";
 import { visualizationIdFromPath } from "../../files/visualization-html-path";
 import { remoteUpstreamUrl } from "../../git/remote-upstream-url";
-import { ensureHostRpcClientsInit, getHostConfigId, getHostRpcClient } from "../../hooks/host-rpc-client";
-import { ensureUseCodexWorktreesInit, useCodexWorktrees } from "../../hooks/use-codex-worktrees";
+import {
+  ensureHostRpcClientsInit,
+  getHostConfigId,
+  getHostRpcClient,
+} from "../../hooks/host-rpc-client";
+import {
+  ensureUseCodexWorktreesInit,
+  useCodexWorktrees,
+} from "../../hooks/use-codex-worktrees";
 import { useGitRepoLiveQuery } from "../../hooks/use-git-repo-live-query";
-import { ensureUseGitSubmodulePathsInit, useGitSubmodulePaths } from "../../hooks/use-git-submodule-paths";
+import {
+  ensureUseGitSubmodulePathsInit,
+  useGitSubmodulePaths,
+} from "../../hooks/use-git-submodule-paths";
 import { usePlatformAwareFeatureGate } from "../../hooks/use-platform-aware-feature-gate";
 import { UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
@@ -82,10 +122,16 @@ import { ensureSettingsQueryAtomsInit } from "../../settings/settings-ipc";
 import { useSettingValue } from "../../settings/use-setting-value";
 import { useVoiceSettingsHostConfig } from "../../settings/use-voice-settings-host-config";
 import { collectUniqueMappedPresenceEntries } from "../../shell/collect-unique-mapped-presence-entries";
-import { ensureSkillsPageHelpersInit, usePluginsFeatureEnabled } from "../../skills/skills-page-helpers";
+import {
+  ensureSkillsPageHelpersInit,
+  usePluginsFeatureEnabled,
+} from "../../skills/skills-page-helpers";
 import { ChromeBackgroundPanel } from "../../ui/chrome-background-panel";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { OperationStatusOverlay } from "../../ui/operation-status-overlay";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -270,18 +316,22 @@ function alpha(apex, brook, cliff) {
     elm = brook?.id,
     fern = {
       envQuery: dusk,
-      selectedEnvironmentId: elm
+      selectedEnvironmentId: elm,
     };
   let {
       availableEnvironments,
       errorLoadingAllEnvironments,
       isLoadingAllEnvironments,
-      listToShow
+      listToShow,
     } = CodexBrowserSurfaceActionType(indigo, fern),
     grove = NativeContextMenuSurface("1907601843"),
-    hill = brook == null ? null : availableEnvironments.find(item => item.id === brook.id) ?? null;
+    hill =
+      brook == null
+        ? null
+        : (availableEnvironments.find((item) => item.id === brook.id) ?? null);
   let isle = hill,
-    juniper = grove && !isLoadingAllEnvironments && availableEnvironments.length === 0,
+    juniper =
+      grove && !isLoadingAllEnvironments && availableEnvironments.length === 0,
     lagoon,
     meadow;
   lagoon = () => {
@@ -289,27 +339,45 @@ function alpha(apex, brook, cliff) {
   };
   meadow = [availableEnvironments, isle, cliff];
   falcon.useEffect(lagoon, meadow);
-  let nest = errorLoadingAllEnvironments instanceof ensureReviewFileAppActionAttrsInit && errorLoadingAllEnvironments.status === 404,
-    oak = listToShow.length > 0 ? "list" : isLoadingAllEnvironments ? "loading" : errorLoadingAllEnvironments && !nest ? "error" : apex.length > 0 ? "none-found" : "empty";
+  let nest =
+      errorLoadingAllEnvironments instanceof
+        ensureReviewFileAppActionAttrsInit &&
+      errorLoadingAllEnvironments.status === 404,
+    oak =
+      listToShow.length > 0
+        ? "list"
+        : isLoadingAllEnvironments
+          ? "loading"
+          : errorLoadingAllEnvironments && !nest
+            ? "error"
+            : apex.length > 0
+              ? "none-found"
+              : "empty";
   return {
     envListState: oak,
     listToShow,
-    zeroEnvironments: juniper
+    zeroEnvironments: juniper,
   };
 }
 async function bravo(petal) {
-  return (await Promise.all(petal.map(({
-    owner,
-    repoName
-  }) => decodeBase64ToBytes.safeGet("/wham/environments/by-repo/{provider}/{repo_owner}/{repo_name}", {
-    parameters: {
-      path: {
-        provider: "github",
-        repo_owner: owner,
-        repo_name: repoName
-      }
-    }
-  })))).flat();
+  return (
+    await Promise.all(
+      petal.map(({ owner, repoName }) =>
+        decodeBase64ToBytes.safeGet(
+          "/wham/environments/by-repo/{provider}/{repo_owner}/{repo_name}",
+          {
+            parameters: {
+              path: {
+                provider: "github",
+                repo_owner: owner,
+                repo_name: repoName,
+              },
+            },
+          },
+        ),
+      ),
+    )
+  ).flat();
 }
 var copper,
   delta,
@@ -337,62 +405,70 @@ var copper,
       queryKey: ["environments"],
       queryFn: async () => decodeBase64ToBytes.safeGet("/wham/environments"),
       placeholderData: identityValue,
-      staleTime: readScrollTop.FIVE_MINUTES
+      staleTime: readScrollTop.FIVE_MINUTES,
     }));
-    gamma = createAppScopeQueryAtom(appScopeAtom, ({
-      get
-    }) => {
+    gamma = createAppScopeQueryAtom(appScopeAtom, ({ get }) => {
       let quiet = get(collectUniqueMappedPresenceEntries, {
           params: undefined,
-          source: "workspace_repo_owner_names"
+          source: "workspace_repo_owner_names",
         }),
         rain = uniqueGithubOrigins(quiet.data?.origins ?? []);
       return {
-        queryKey: ["workspace", "environments-by-repo", "results", ...delta.default(rain, ["owner", "repoName"]).flatMap(({
-          owner,
-          repoName
-        }) => [owner, repoName])],
+        queryKey: [
+          "workspace",
+          "environments-by-repo",
+          "results",
+          ...delta
+            .default(rain, ["owner", "repoName"])
+            .flatMap(({ owner, repoName }) => [owner, repoName]),
+        ],
         enabled: quiet.isSuccess,
         staleTime: readScrollTop.FIVE_MINUTES,
-        queryFn: bravo.bind(null, rain)
+        queryFn: bravo.bind(null, rain),
       };
     });
-    harbor = deferredUiXT(appScopeAtom, ({
-      get
-    }) => echo.default([...(get(gamma).data ?? []), ...(get(_r).data ?? [])], seed => seed.id));
-    indigo = clearActiveOverlayAfterNavigate(appScopeAtom, ({
-      envQuery,
-      selectedEnvironmentId
-    }, {
-      get
-    }) => {
-      let trail = get(_r),
-        urn = get(gamma).data ?? [],
-        vine = new Set(urn.map(item => item.id)),
-        wind = get(harbor),
-        yarrow = envQuery.trim().toLowerCase(),
-        azure = [...(yarrow.length > 0 ? wind.filter(item => item.label?.toLowerCase().includes(yarrow)) : wind)].sort((birch, canyon) => {
-          if (birch.id === selectedEnvironmentId) return -1;
-          if (canyon.id === selectedEnvironmentId) return 1;
-          let dew = vine.has(birch.id);
-          if (dew !== vine.has(canyon.id)) return dew ? -1 : 1;
-          if (!!birch.is_pinned != !!canyon.is_pinned) return birch.is_pinned ? -1 : 1;
-          let ever = (canyon.task_count ?? 0) - (birch.task_count ?? 0);
-          return ever === 0 ? (birch.label ?? "").localeCompare(canyon.label ?? "") : ever;
-        });
-      return {
-        availableEnvironments: wind,
-        errorLoadingAllEnvironments: trail.error,
-        isLoadingAllEnvironments: trail.isLoading,
-        listToShow: azure
-      };
-    });
+    harbor = deferredUiXT(appScopeAtom, ({ get }) =>
+      echo.default(
+        [...(get(gamma).data ?? []), ...(get(_r).data ?? [])],
+        (seed) => seed.id,
+      ),
+    );
+    indigo = clearActiveOverlayAfterNavigate(
+      appScopeAtom,
+      ({ envQuery, selectedEnvironmentId }, { get }) => {
+        let trail = get(_r),
+          urn = get(gamma).data ?? [],
+          vine = new Set(urn.map((item) => item.id)),
+          wind = get(harbor),
+          yarrow = envQuery.trim().toLowerCase(),
+          azure = [
+            ...(yarrow.length > 0
+              ? wind.filter((item) =>
+                  item.label?.toLowerCase().includes(yarrow),
+                )
+              : wind),
+          ].sort((birch, canyon) => {
+            if (birch.id === selectedEnvironmentId) return -1;
+            if (canyon.id === selectedEnvironmentId) return 1;
+            let dew = vine.has(birch.id);
+            if (dew !== vine.has(canyon.id)) return dew ? -1 : 1;
+            if (!!birch.is_pinned != !!canyon.is_pinned)
+              return birch.is_pinned ? -1 : 1;
+            let ever = (canyon.task_count ?? 0) - (birch.task_count ?? 0);
+            return ever === 0
+              ? (birch.label ?? "").localeCompare(canyon.label ?? "")
+              : ever;
+          });
+        return {
+          availableEnvironments: wind,
+          errorLoadingAllEnvironments: trail.error,
+          isLoadingAllEnvironments: trail.isLoading,
+          listToShow: azure,
+        };
+      },
+    );
   });
-function kite({
-  cloudAccess,
-  hasGitRepository,
-  isBrowser
-}) {
+function kite({ cloudAccess, hasGitRepository, isBrowser }) {
   return (hasGitRepository || isBrowser) && cloudAccess === "enabled";
 }
 export function localRemoteDropdownO(yarrowSecond: unknown) {

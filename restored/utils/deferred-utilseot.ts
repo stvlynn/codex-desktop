@@ -10,7 +10,9 @@ export type BindDeferredUtilseotPeers = {
 let peers: BindDeferredUtilseotPeers | null = null;
 
 /** Wire bindDeferredUtilseot peers once companions land. */
-export function setBindDeferredUtilseotPeers(next: BindDeferredUtilseotPeers): void {
+export function setBindDeferredUtilseotPeers(
+  next: BindDeferredUtilseotPeers,
+): void {
   peers = next;
 }
 
@@ -23,10 +25,11 @@ export function bindDeferredUtilseot() {
   }
 
   return peers.e(() => {
-    peers.dAt(), peers.fAt({
-      thousands: `,`,
-      grouping: [3],
-      currency: [`$`, ``]
-    });
+    (peers.dAt(),
+      peers.fAt({
+        thousands: `,`,
+        grouping: [3],
+        currency: [`$`, ``],
+      }));
   });
 }

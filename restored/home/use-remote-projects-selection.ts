@@ -15,7 +15,9 @@ export type UseRemoteProjectsSelectionPeers = {
 let peers: UseRemoteProjectsSelectionPeers | null = null;
 
 /** Wire useRemoteProjectsSelection peers once companions land. */
-export function setUseRemoteProjectsSelectionPeers(next: UseRemoteProjectsSelectionPeers): void {
+export function setUseRemoteProjectsSelectionPeers(
+  next: UseRemoteProjectsSelectionPeers,
+): void {
   peers = next;
 }
 

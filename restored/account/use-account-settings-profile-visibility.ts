@@ -17,7 +17,9 @@ export type UseAccountSettingsProfileVisibilityPeers = {
 let peers: UseAccountSettingsProfileVisibilityPeers | null = null;
 
 /** Wire useAccountSettingsProfileVisibility peers once companions land. */
-export function setUseAccountSettingsProfileVisibilityPeers(next: UseAccountSettingsProfileVisibilityPeers): void {
+export function setUseAccountSettingsProfileVisibilityPeers(
+  next: UseAccountSettingsProfileVisibilityPeers,
+): void {
   peers = next;
 }
 

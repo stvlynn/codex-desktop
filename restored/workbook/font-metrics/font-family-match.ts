@@ -108,9 +108,7 @@ export function normalizeFontStyle(
 }
 
 /** Legacy `doe` — normalize CSS font-stretch keyword. */
-export function normalizeFontStretch(
-  raw: string | null | undefined,
-): string {
+export function normalizeFontStretch(raw: string | null | undefined): string {
   switch (raw?.trim().toLowerCase()) {
     case "ultra-condensed":
     case "extra-condensed":
@@ -128,7 +126,11 @@ export function normalizeFontStretch(
 
 /** Legacy stretch-match-index — stretch keyword → match index (default 5 = normal). */
 export function fontStretchMatchIndex(raw: string | null | undefined): number {
-  return STRETCH_ORDER.indexOf(normalizeFontStretch(raw) as (typeof STRETCH_ORDER)[number]) || 5;
+  return (
+    STRETCH_ORDER.indexOf(
+      normalizeFontStretch(raw) as (typeof STRETCH_ORDER)[number],
+    ) || 5
+  );
 }
 
 /** Legacy style-match-rank — style → match rank. */
@@ -210,10 +212,7 @@ export function fontMatchDistance(
 }
 
 /** Legacy `hoe` — whether `left` beats `right` lexicographically. */
-export function isBetterFontMatch(
-  left: number[],
-  right: number[],
-): boolean {
+export function isBetterFontMatch(left: number[], right: number[]): boolean {
   for (let i = 0; i < left.length; i += 1) {
     const delta = (left[i] ?? 0) - (right[i] ?? 0);
     if (delta !== 0) return delta > 0;

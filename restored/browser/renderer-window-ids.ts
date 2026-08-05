@@ -26,7 +26,9 @@ export type BrowserCommentPopupWindowKeyProps = {
  * Bundle `age` (co-located with `cge`).
  * Build a unique partition / key for the browser comment popup window.
  */
-export function buildRendererWindowKey(props: BrowserCommentPopupWindowKeyProps): string {
+export function buildRendererWindowKey(
+  props: BrowserCommentPopupWindowKeyProps,
+): string {
   switch (props.windowId) {
     case RendererWindowId.BROWSER_COMMENT_POPUP:
       return `${RENDERER_WINDOW_PARTITION_PREFIX}${props.windowId}:${encodeURIComponent(`${props.conversationId}\0${props.browserTabId}`)}:${encodeURIComponent(props.sessionId)}`;

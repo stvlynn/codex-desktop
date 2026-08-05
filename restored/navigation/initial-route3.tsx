@@ -14,7 +14,9 @@ export type BindBindInitialRoute3Peers = {
 let peers: BindBindInitialRoute3Peers | null = null;
 
 /** Wire bindBindInitialRoute3 peers once companions land. */
-export function setBindBindInitialRoute3Peers(next: BindBindInitialRoute3Peers): void {
+export function setBindBindInitialRoute3Peers(
+  next: BindBindInitialRoute3Peers,
+): void {
   peers = next;
 }
 
@@ -27,6 +29,16 @@ export function bindBindInitialRoute3() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.Nw(), KHn = `/avatar-overlay`, qHn = [`/global-dictation`, `/global-dictation/*`, `/hotkey-window`, `/hotkey-window/*`, peers.eTe, peers.tTe];
+    (peers.Au(),
+      peers.Nw(),
+      (KHn = `/avatar-overlay`),
+      (qHn = [
+        `/global-dictation`,
+        `/global-dictation/*`,
+        `/hotkey-window`,
+        `/hotkey-window/*`,
+        peers.eTe,
+        peers.tTe,
+      ]));
   });
 }

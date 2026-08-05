@@ -30,7 +30,9 @@ export type SvgCurrentColorFillPeers = {
 let peers: SvgCurrentColorFillPeers | null = null;
 
 /** Wire svgCurrentColorFill peers once companions land. */
-export function setSvgCurrentColorFillPeers(next: SvgCurrentColorFillPeers): void {
+export function setSvgCurrentColorFillPeers(
+  next: SvgCurrentColorFillPeers,
+): void {
   peers = next;
 }
 
@@ -43,10 +45,28 @@ export function svgCurrentColorFill() {
   }
 
   return peers.e(() => {
-    oDs = peers.c(), peers.af(), sDs = 80, cDs = 1220, lDs = 160, uDs = 360, dDs = 40, fDs = 520, pDs = 0.68, mDs = 580, hDs = 0.58, gDs = `currentColor`, _Ds = `#5865F2`, vDs = 1300, yDs = 1961, bDs = peers.vd(0.25, 0.1, 0.25, 1), dQ = peers.vd(0.4, 0, 0.2, 1), xDs = peers.iIe([0, 0.16, 0.42, 0.7, 1], [0, 0.14, peers.hDs, 0.3, 0], {
-      ease: peers.dQ
-    }), SDs = peers.iIe([0, 0.42, 0.7, 1], [0.93, 0.985, 1, 1], {
-      ease: peers.dQ
-    });
+    ((oDs = peers.c()),
+      peers.af(),
+      (sDs = 80),
+      (cDs = 1220),
+      (lDs = 160),
+      (uDs = 360),
+      (dDs = 40),
+      (fDs = 520),
+      (pDs = 0.68),
+      (mDs = 580),
+      (hDs = 0.58),
+      (gDs = `currentColor`),
+      (_Ds = `#5865F2`),
+      (vDs = 1300),
+      (yDs = 1961),
+      (bDs = peers.vd(0.25, 0.1, 0.25, 1)),
+      (dQ = peers.vd(0.4, 0, 0.2, 1)),
+      (xDs = peers.iIe([0, 0.16, 0.42, 0.7, 1], [0, 0.14, peers.hDs, 0.3, 0], {
+        ease: peers.dQ,
+      })),
+      (SDs = peers.iIe([0, 0.42, 0.7, 1], [0.93, 0.985, 1, 1], {
+        ease: peers.dQ,
+      })));
   });
 }

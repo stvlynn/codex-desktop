@@ -10,15 +10,34 @@ import { ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payl
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { getAppSurfaceDisplayName } from "../../app/app-surface-display-name";
-import { ensureArtifactAnalyticsInit, logArtifactAnnotationSubmitted, logArtifactRefreshClicked } from "../../artifact/artifact-analytics";
-import { buildArtifactAnnotationCommentForTarget, collectRemovedArtifactAnnotationIds, nextArtifactAnnotationCommentLine } from "../../artifact/artifact-annotation-comment";
+import {
+  ensureArtifactAnalyticsInit,
+  logArtifactAnnotationSubmitted,
+  logArtifactRefreshClicked,
+} from "../../artifact/artifact-analytics";
+import {
+  buildArtifactAnnotationCommentForTarget,
+  collectRemovedArtifactAnnotationIds,
+  nextArtifactAnnotationCommentLine,
+} from "../../artifact/artifact-annotation-comment";
 import { ArtifactPreviewDownloadButton } from "../../artifact/artifact-preview-download-button";
 import { artifactTabLoading } from "../../artifact/artifact-tab-loading";
 import { hypotDistance } from "../../artifact/hypot-distance";
 import { QueueAutomationRun } from "../../automation/queue-automation-run";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Z8_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Z8_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { deferredComposerBV } from "../../composer/deferred-composer-bv";
 import { DesignComposerSurface } from "../../composer/design-composer-surface";
 import { filterConversationTimelineItems } from "../../conversation/filter-conversation-timeline-items";
@@ -40,7 +59,10 @@ import { newConversationEntrypointId } from "../../navigation/new-conversation-e
 import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import { ensureViteModulepreloadRuntime } from "../../runtime/vite-preload";
-import { ArtifactPreviewStatus, ensureArtifactPreviewStatusInit } from "../../ui/artifact-preview-status";
+import {
+  ArtifactPreviewStatus,
+  ensureArtifactPreviewStatusInit,
+} from "../../ui/artifact-preview-status";
 import { deferredT1 } from "../../ui/deferred-t1";
 import { getIconPixelSize } from "../../ui/icon-pixel-size";
 import { MemoizedValueBridge } from "../../ui/memoized-value-bridge";
@@ -68,12 +90,15 @@ var basalt,
     useThreadHandoffDisabledReason();
     ToWorktree();
   });
-function ember({
-  pageElement,
-  pageSize
-}) {
+function ember({ pageElement, pageSize }) {
   let bushing = pageElement.ownerDocument.getSelection();
-  if (bushing == null || bushing.isCollapsed || bushing.rangeCount === 0 || !nova(bushing, pageElement)) return null;
+  if (
+    bushing == null ||
+    bushing.isCollapsed ||
+    bushing.rangeCount === 0 ||
+    !nova(bushing, pageElement)
+  )
+    return null;
   let collar = quill(bushing.toString());
   if (collar.length === 0) return null;
   let dowel = bushing.getRangeAt(0);
@@ -82,32 +107,35 @@ function ember({
     gib = echo({
       clientRects: flange,
       pageElement,
-      pageSize
+      pageSize,
     });
   if (gib == null) return null;
   let hub = falcon({
     clientRects: flange,
     pageElement,
-    pageSize
+    pageSize,
   });
   return {
-    askForEditAnchor: harbor({
-      clientRects: flange,
-      pageElement,
-      pageSize,
-      selection: bushing
-    }) ?? undefined,
+    askForEditAnchor:
+      harbor({
+        clientRects: flange,
+        pageElement,
+        pageSize,
+        selection: bushing,
+      }) ?? undefined,
     contentPreview: {
       type: "text",
-      text: collar
+      text: collar,
     },
     kind: "region",
     rect: gib,
-    ...(hub.length <= 1 ? {} : {
-      selectionRects: hub
-    }),
+    ...(hub.length <= 1
+      ? {}
+      : {
+          selectionRects: hub,
+        }),
     selectedText: collar,
-    selectionKind: "text"
+    selectionKind: "text",
   };
 }
 function flint({
@@ -117,136 +145,180 @@ function flint({
   layerElement,
   pageElement,
   pageSize,
-  selectionKindFilter
+  selectionKindFilter,
 }) {
-  let idler = (pageElement.ownerDocument.elementsFromPoint?.(clientX, clientY) ?? []).find(item => item !== layerElement && !layerElement.contains(item) && pageElement.contains(item));
-  return idler == null ? null : garnet({
-    includePreviewMetadata,
-    pageElement,
-    pageSize,
-    selectionKindFilter,
-    target: idler
-  });
+  let idler = (
+    pageElement.ownerDocument.elementsFromPoint?.(clientX, clientY) ?? []
+  ).find(
+    (item) =>
+      item !== layerElement &&
+      !layerElement.contains(item) &&
+      pageElement.contains(item),
+  );
+  return idler == null
+    ? null
+    : garnet({
+        includePreviewMetadata,
+        pageElement,
+        pageSize,
+        selectionKindFilter,
+        target: idler,
+      });
 }
 function garnet({
   includePreviewMetadata,
   pageElement,
   pageSize,
   selectionKindFilter,
-  target
+  target,
 }) {
   let jig = hazel(target, pageElement);
-  if (jig == null || selectionKindFilter != null && !selectionKindFilter(jig.selectionKind)) return null;
+  if (
+    jig == null ||
+    (selectionKindFilter != null && !selectionKindFilter(jig.selectionKind))
+  )
+    return null;
   let keeper = echo({
     clientRects: [jig.element.getBoundingClientRect()],
     pageElement,
-    pageSize
+    pageSize,
   });
   if (keeper == null) return null;
   let lug = includePreviewMetadata ? olive(jig.element) : "",
-    mandrel = includePreviewMetadata ? ivory({
-      element: jig.element,
-      nearbyText: lug,
-      selectionKind: jig.selectionKind
-    }) : null;
+    mandrel = includePreviewMetadata
+      ? ivory({
+          element: jig.element,
+          nearbyText: lug,
+          selectionKind: jig.selectionKind,
+        })
+      : null;
   return {
-    askForEditAnchor: jig.selectionKind === "image" || jig.selectionKind === "drawing" ? {
-      alignment: "end",
-      placement: "below",
-      point: {
-        x: keeper.x + keeper.width,
-        y: keeper.y + keeper.height
-      }
-    } : undefined,
+    askForEditAnchor:
+      jig.selectionKind === "image" || jig.selectionKind === "drawing"
+        ? {
+            alignment: "end",
+            placement: "below",
+            point: {
+              x: keeper.x + keeper.width,
+              y: keeper.y + keeper.height,
+            },
+          }
+        : undefined,
     contentPreview: mandrel ?? undefined,
     kind: "region",
     rect: keeper,
     selectionKind: jig.selectionKind,
-    ...(lug.length === 0 ? {} : {
-      nearbyText: lug
-    })
+    ...(lug.length === 0
+      ? {}
+      : {
+          nearbyText: lug,
+        }),
   };
 }
 function hazel(nipple, orifice) {
-  let pin = lotus(nipple, orifice, boss => boss.matches("img"));
-  if (pin != null) return {
-    element: pin,
-    selectionKind: "image"
-  };
+  let pin = lotus(nipple, orifice, (boss) => boss.matches("img"));
+  if (pin != null)
+    return {
+      element: pin,
+      selectionKind: "image",
+    };
   let race = lotus(nipple, orifice, mint);
-  if (race != null) return {
-    element: race,
-    selectionKind: "drawing"
-  };
-  let sleeve = lotus(nipple, orifice, cam => cam.matches("table"));
-  if (sleeve != null) return {
-    element: sleeve,
-    selectionKind: "table"
-  };
-  let trunnion = lotus(nipple, orifice, detent => detent.matches("p"));
-  return trunnion == null ? null : {
-    element: trunnion,
-    selectionKind: "paragraph"
-  };
+  if (race != null)
+    return {
+      element: race,
+      selectionKind: "drawing",
+    };
+  let sleeve = lotus(nipple, orifice, (cam) => cam.matches("table"));
+  if (sleeve != null)
+    return {
+      element: sleeve,
+      selectionKind: "table",
+    };
+  let trunnion = lotus(nipple, orifice, (detent) => detent.matches("p"));
+  return trunnion == null
+    ? null
+    : {
+        element: trunnion,
+        selectionKind: "paragraph",
+      };
 }
-function ivory({
-  element,
-  nearbyText,
-  selectionKind
-}) {
+function ivory({ element, nearbyText, selectionKind }) {
   if (selectionKind === "image" || selectionKind === "drawing") {
     let eccentric = jasper(element);
     if (eccentric != null) return eccentric;
   }
-  return nearbyText.length === 0 ? null : {
-    type: "text",
-    text: nearbyText
-  };
+  return nearbyText.length === 0
+    ? null
+    : {
+        type: "text",
+        text: nearbyText,
+      };
 }
 function jasper(follower) {
   let guide = kelp(follower);
   if (guide != null) {
-    let impeller = guide.currentSrc.trim() || guide.getAttribute("src")?.trim() || guide.src.trim();
+    let impeller =
+      guide.currentSrc.trim() ||
+      guide.getAttribute("src")?.trim() ||
+      guide.src.trim();
     if (impeller) {
       let journal = guide.alt.trim();
       return {
         type: "image",
         src: impeller,
-        ...(journal.length === 0 ? {} : {
-          alt: journal
-        })
+        ...(journal.length === 0
+          ? {}
+          : {
+              alt: journal,
+            }),
       };
     }
   }
   let helix = _t(follower);
-  return helix == null ? null : {
-    type: "image",
-    src: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(helix))}`
-  };
+  return helix == null
+    ? null
+    : {
+        type: "image",
+        src: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(helix))}`,
+      };
 }
 function kelp(kingpin) {
-  return kingpin instanceof HTMLImageElement ? kingpin : kingpin.querySelector("img");
+  return kingpin instanceof HTMLImageElement
+    ? kingpin
+    : kingpin.querySelector("img");
 }
 function _t(land) {
   return land instanceof SVGSVGElement ? land : land.querySelector("svg");
 }
 function lotus(mesh, neck, pad) {
   let quillshaft = mesh;
-  for (; quillshaft != null && quillshaft !== neck;) {
+  for (; quillshaft != null && quillshaft !== neck; ) {
     if (pad(quillshaft)) return quillshaft;
     quillshaft = quillshaft.parentElement;
   }
   return null;
 }
 function mint(roller) {
-  return roller.matches("svg") || roller instanceof HTMLElement && roller.tagName === "DIV" && roller.style.display === "inline-block" && roller.style.position === "relative" && roller.querySelector("img, svg") != null;
+  return (
+    roller.matches("svg") ||
+    (roller instanceof HTMLElement &&
+      roller.tagName === "DIV" &&
+      roller.style.display === "inline-block" &&
+      roller.style.position === "relative" &&
+      roller.querySelector("img, svg") != null)
+  );
 }
 function nova(spindle, thrust) {
-  return spindle.anchorNode != null && spindle.focusNode != null && thrust.contains(spindle.anchorNode) && thrust.contains(spindle.focusNode);
+  return (
+    spindle.anchorNode != null &&
+    spindle.focusNode != null &&
+    thrust.contains(spindle.anchorNode) &&
+    thrust.contains(spindle.focusNode)
+  );
 }
 function olive(yoke) {
   let baffle = [];
-  return prism(yoke, baffle), quill(baffle.join(" "));
+  return (prism(yoke, baffle), quill(baffle.join(" ")));
 }
 function prism(capstan, diaphragm) {
   if (capstan.nodeType === Node.TEXT_NODE) {

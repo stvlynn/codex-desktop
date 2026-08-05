@@ -10,7 +10,9 @@ export type UsePendingWorktreeStorePeers = {
 let peers: UsePendingWorktreeStorePeers | null = null;
 
 /** Wire usePendingWorktreeStore peers once companions land. */
-export function setUsePendingWorktreeStorePeers(next: UsePendingWorktreeStorePeers): void {
+export function setUsePendingWorktreeStorePeers(
+  next: UsePendingWorktreeStorePeers,
+): void {
   peers = next;
 }
 

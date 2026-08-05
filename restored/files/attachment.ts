@@ -29,6 +29,11 @@ export function bindAttachment() {
   }
 
   return peers.e(() => {
-    peers.Hb(), peers.Ho(), peers.Kb(), peers.KM(), hti = peers.Ta(peers.GM, null), gti = peers.Ta(peers.GM, null);
+    (peers.Hb(),
+      peers.Ho(),
+      peers.Kb(),
+      peers.KM(),
+      (hti = peers.Ta(peers.GM, null)),
+      (gti = peers.Ta(peers.GM, null)));
   });
 }

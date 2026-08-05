@@ -25,6 +25,6 @@ export function automationUpdate() {
   }
 
   return peers.e(() => {
-    Zqn = peers.r(peers.Il(), 1), peers.c_();
+    ((Zqn = peers.r(peers.Il(), 1)), peers.c_());
   });
 }

@@ -29,10 +29,7 @@ export {
 
 export { buildLogChartScale, yye } from "./log-chart-scale-impl";
 
-export {
-  buildNiceChartScale,
-  workbookFn398,
-} from "./nice-chart-scale-impl";
+export { buildNiceChartScale, workbookFn398 } from "./nice-chart-scale-impl";
 
 export {
   wireChartContinuousScaleBoundaryHooks,
@@ -46,11 +43,7 @@ export {
   workbookFn394,
 } from "./series-overlap-offset-impl";
 
-export {
-  vye,
-  workbookFn395,
-  workbookFn396,
-} from "./gap-visible-count-impl";
+export { vye, workbookFn395, workbookFn396 } from "./gap-visible-count-impl";
 
 export { workbookFn424, workbookFn425 } from "./band-scale-center-impl";
 

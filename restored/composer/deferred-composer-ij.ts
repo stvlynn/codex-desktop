@@ -10,7 +10,9 @@ export type BindDeferredComposerIJPeers = {
 let peers: BindDeferredComposerIJPeers | null = null;
 
 /** Wire bindDeferredComposerIJ peers once companions land. */
-export function setBindDeferredComposerIJPeers(next: BindDeferredComposerIJPeers): void {
+export function setBindDeferredComposerIJPeers(
+  next: BindDeferredComposerIJPeers,
+): void {
   peers = next;
 }
 
@@ -22,7 +24,5 @@ export function bindDeferredComposerIJ() {
     throw new Error("bindDeferredComposerIJ peers are not configured");
   }
 
-  return peers.Ma(peers.GM, ({
-    get: e
-  }) => e(peers.yN).pullRequestChecks);
+  return peers.Ma(peers.GM, ({ get: e }) => e(peers.yN).pullRequestChecks);
 }

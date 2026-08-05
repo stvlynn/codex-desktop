@@ -12,7 +12,9 @@ export type ReplaceInMemoryStorageEntriesPeers = {
 let peers: ReplaceInMemoryStorageEntriesPeers | null = null;
 
 /** Wire replaceInMemoryStorageEntries peers once companions land. */
-export function setReplaceInMemoryStorageEntriesPeers(next: ReplaceInMemoryStorageEntriesPeers): void {
+export function setReplaceInMemoryStorageEntriesPeers(
+  next: ReplaceInMemoryStorageEntriesPeers,
+): void {
   peers = next;
 }
 

@@ -27,7 +27,9 @@ export type BindDeferredWorktreeKPeers = {
 let peers: BindDeferredWorktreeKPeers | null = null;
 
 /** Wire bindDeferredWorktreeK peers once companions land. */
-export function setBindDeferredWorktreeKPeers(next: BindDeferredWorktreeKPeers): void {
+export function setBindDeferredWorktreeKPeers(
+  next: BindDeferredWorktreeKPeers,
+): void {
   peers = next;
 }
 

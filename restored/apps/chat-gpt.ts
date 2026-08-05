@@ -26,9 +26,18 @@ export function chatGPT() {
   }
 
   return peers.e(() => {
-    peers.Sl(), El = {
-      Codex: `codex`,
-      ChatGPT: `chatgpt`
-    }, peers.pl([peers.El.Codex, peers.El.ChatGPT]), Wme = peers.vl(e => peers.e === `codex-light` || peers.e === `codex-dark` ? `codex-system` : peers.e, peers.pl([`app-default`, `codex-system`]));
+    (peers.Sl(),
+      (El = {
+        Codex: `codex`,
+        ChatGPT: `chatgpt`,
+      }),
+      peers.pl([peers.El.Codex, peers.El.ChatGPT]),
+      (Wme = peers.vl(
+        (e) =>
+          peers.e === `codex-light` || peers.e === `codex-dark`
+            ? `codex-system`
+            : peers.e,
+        peers.pl([`app-default`, `codex-system`]),
+      )));
   });
 }

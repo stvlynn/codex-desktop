@@ -28,6 +28,11 @@ export function bindDeferredUiFo() {
   }
 
   return peers.e(() => {
-    peers.sd(), peers.Bqs(), oHl = peers.J(), sHl = 5.75, cHl = 2 * Math.PI * peers.sHl, lHl = 1.5;
+    (peers.sd(),
+      peers.Bqs(),
+      (oHl = peers.J()),
+      (sHl = 5.75),
+      (cHl = 2 * Math.PI * peers.sHl),
+      (lHl = 1.5));
   });
 }

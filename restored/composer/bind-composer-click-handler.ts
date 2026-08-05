@@ -13,7 +13,9 @@ export type BindComposerClickHandlerPeers = {
 let peers: BindComposerClickHandlerPeers | null = null;
 
 /** Wire bindComposerClickHandler peers once companions land. */
-export function setBindComposerClickHandlerPeers(next: BindComposerClickHandlerPeers): void {
+export function setBindComposerClickHandlerPeers(
+  next: BindComposerClickHandlerPeers,
+): void {
   peers = next;
 }
 
@@ -26,6 +28,6 @@ export function bindComposerClickHandler() {
   }
 
   return peers.e(() => {
-    Jt = peers.r(peers.o(), 1), peers.Ze(), peers.at();
+    ((Jt = peers.r(peers.o(), 1)), peers.Ze(), peers.at());
   });
 }

@@ -11,7 +11,9 @@ export type CodexCommandInstallPrimaryRuntimeInstallingPeers = {
 let peers: CodexCommandInstallPrimaryRuntimeInstallingPeers | null = null;
 
 /** Wire codexCommandInstallPrimaryRuntimeInstalling peers once companions land. */
-export function setCodexCommandInstallPrimaryRuntimeInstallingPeers(next: CodexCommandInstallPrimaryRuntimeInstallingPeers): void {
+export function setCodexCommandInstallPrimaryRuntimeInstallingPeers(
+  next: CodexCommandInstallPrimaryRuntimeInstallingPeers,
+): void {
   peers = next;
 }
 
@@ -20,10 +22,12 @@ export function setCodexCommandInstallPrimaryRuntimeInstallingPeers(next: CodexC
  */
 export function codexCommandInstallPrimaryRuntimeInstalling() {
   if (peers == null) {
-    throw new Error("codexCommandInstallPrimaryRuntimeInstalling peers are not configured");
+    throw new Error(
+      "codexCommandInstallPrimaryRuntimeInstalling peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers._p(), tiu = new Map(), niu = Promise.resolve();
+    (peers._p(), (tiu = new Map()), (niu = Promise.resolve()));
   });
 }

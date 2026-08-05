@@ -13,12 +13,8 @@ export function mergePresentationImages(pimIn3704: any, pimIn3705: any) {
   );
   return pimIn3705.map((item) => {
     let pimBind15353 = toImageBytes(item.data),
-      pimBind15354 = item.id
-        ? pimBind12375.get(item.id)
-        : undefined,
-      pimBind15355 = pimBind15354
-        ? toImageBytes(pimBind15354.data)
-        : undefined,
+      pimBind15354 = item.id ? pimBind12375.get(item.id) : undefined,
+      pimBind15355 = pimBind15354 ? toImageBytes(pimBind15354.data) : undefined,
       pimBind15356 =
         pimBind15353.byteLength === 0 &&
         (pimBind15355?.byteLength ?? 0) > 0 &&
@@ -27,9 +23,7 @@ export function mergePresentationImages(pimIn3704: any, pimIn3705: any) {
         pimBind15354?.uri === item.uri;
     return {
       ...item,
-      data: pimBind15356
-        ? (pimBind15355 ?? pimBind15353)
-        : pimBind15353,
+      data: pimBind15356 ? (pimBind15355 ?? pimBind15353) : pimBind15353,
     };
   });
 }

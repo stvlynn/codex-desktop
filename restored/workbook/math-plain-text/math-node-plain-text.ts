@@ -60,11 +60,7 @@ export function collapseMathWhitespace(text: string): string {
 /** Legacy workbookHelper 125 — parenthesize multi-char fragments. */
 export function parenIfMultiChar(text: string): string {
   const trimmed = text.trim();
-  return trimmed
-    ? trimmed.length === 1
-      ? trimmed
-      : `(${trimmed})`
-    : "";
+  return trimmed ? (trimmed.length === 1 ? trimmed : `(${trimmed})`) : "";
 }
 
 /** Legacy workbookHelper 124 — map every char through a glyph table. */

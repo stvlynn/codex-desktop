@@ -14,7 +14,9 @@ export type OpenLocalLabelRenameModalPeers = {
 let peers: OpenLocalLabelRenameModalPeers | null = null;
 
 /** Wire openLocalLabelRenameModal peers once companions land. */
-export function setOpenLocalLabelRenameModalPeers(next: OpenLocalLabelRenameModalPeers): void {
+export function setOpenLocalLabelRenameModalPeers(
+  next: OpenLocalLabelRenameModalPeers,
+): void {
   peers = next;
 }
 
@@ -26,15 +28,18 @@ export function openLocalLabelRenameModal(e: unknown, t: unknown) {
     throw new Error("openLocalLabelRenameModal peers are not configured");
   }
 
-  peers.H5(t) && peers.Wk(e, peers.URl, {
-    initialValue: t.label,
-    messages: peers.Iql,
-    onSave: n => {
-      peers.Pql(e, t, n).catch(() => {
-        e.get(peers.rh).danger(e.get(peers.LE).formatMessage(peers.Iql.error));
-      });
-    },
-    requireNonEmpty: t.projectKind === `local`,
-    trimOnSave: !0
-  });
+  peers.H5(t) &&
+    peers.Wk(e, peers.URl, {
+      initialValue: t.label,
+      messages: peers.Iql,
+      onSave: (n) => {
+        peers.Pql(e, t, n).catch(() => {
+          e.get(peers.rh).danger(
+            e.get(peers.LE).formatMessage(peers.Iql.error),
+          );
+        });
+      },
+      requireNonEmpty: t.projectKind === `local`,
+      trimOnSave: !0,
+    });
 }

@@ -9,7 +9,9 @@ export type DeferredConversationSoPeers = {
 let peers: DeferredConversationSoPeers | null = null;
 
 /** Wire deferredConversationSo peers once companions land. */
-export function setDeferredConversationSoPeers(next: DeferredConversationSoPeers): void {
+export function setDeferredConversationSoPeers(
+  next: DeferredConversationSoPeers,
+): void {
   peers = next;
 }
 

@@ -15,7 +15,9 @@ export type UsePullRequestCommentsForConversationPeers = {
 let peers: UsePullRequestCommentsForConversationPeers | null = null;
 
 /** Wire usePullRequestCommentsForConversation peers once companions land. */
-export function setUsePullRequestCommentsForConversationPeers(next: UsePullRequestCommentsForConversationPeers): void {
+export function setUsePullRequestCommentsForConversationPeers(
+  next: UsePullRequestCommentsForConversationPeers,
+): void {
   peers = next;
 }
 

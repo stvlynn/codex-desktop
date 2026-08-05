@@ -11,7 +11,9 @@ export type UseBillingCurrencyAmountPerCreditQueryPeers = {
 let peers: UseBillingCurrencyAmountPerCreditQueryPeers | null = null;
 
 /** Wire useBillingCurrencyAmountPerCreditQuery peers once companions land. */
-export function setUseBillingCurrencyAmountPerCreditQueryPeers(next: UseBillingCurrencyAmountPerCreditQueryPeers): void {
+export function setUseBillingCurrencyAmountPerCreditQueryPeers(
+  next: UseBillingCurrencyAmountPerCreditQueryPeers,
+): void {
   peers = next;
 }
 

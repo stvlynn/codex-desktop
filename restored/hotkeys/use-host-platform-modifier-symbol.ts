@@ -12,7 +12,9 @@ export type UseHostPlatformModifierSymbolPeers = {
 let peers: UseHostPlatformModifierSymbolPeers | null = null;
 
 /** Wire useHostPlatformModifierSymbol peers once companions land. */
-export function setUseHostPlatformModifierSymbolPeers(next: UseHostPlatformModifierSymbolPeers): void {
+export function setUseHostPlatformModifierSymbolPeers(
+  next: UseHostPlatformModifierSymbolPeers,
+): void {
   peers = next;
 }
 

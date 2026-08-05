@@ -36,6 +36,20 @@ export function bindDeferredUiQk() {
   }
 
   return peers.e(() => {
-    peers.DD(), peers.Vf(), peers.ih(), peers.Vxo(), peers.RE(), peers.sSo(), peers.OE(), peers.K_(), peers.mSo(), peers.Gf(), peers.ap(), peers.tz(), peers.gR(), peers.TSo(), peers.OK();
+    (peers.DD(),
+      peers.Vf(),
+      peers.ih(),
+      peers.Vxo(),
+      peers.RE(),
+      peers.sSo(),
+      peers.OE(),
+      peers.K_(),
+      peers.mSo(),
+      peers.Gf(),
+      peers.ap(),
+      peers.tz(),
+      peers.gR(),
+      peers.TSo(),
+      peers.OK());
   });
 }

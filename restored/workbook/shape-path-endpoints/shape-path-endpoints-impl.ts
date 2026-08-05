@@ -6,23 +6,17 @@ import { workbookGt } from "../text-style";
 
 void workbookGt;
 
-export function computeShapePathEndpoints(speIn758: any, speIn759: any, speIn760: any) {
-  let speBind5264,
-    speBind5265,
-    speBind5266,
-    speBind5267,
-    speBind5268;
+export function computeShapePathEndpoints(
+  speIn758: any,
+  speIn759: any,
+  speIn760: any,
+) {
+  let speBind5264, speBind5265, speBind5266, speBind5267, speBind5268;
   for (let speBind5996 of speIn758) {
     if (speBind5996.moveTo) {
       speBind5268 = {
-        x:
-          Number(speBind5996.moveTo.x ?? 0) *
-          workbookGt *
-          speIn759,
-        y:
-          Number(speBind5996.moveTo.y ?? 0) *
-          workbookGt *
-          speIn760,
+        x: Number(speBind5996.moveTo.x ?? 0) * workbookGt * speIn759,
+        y: Number(speBind5996.moveTo.y ?? 0) * workbookGt * speIn760,
       };
       speBind5264 ||= {
         ...speBind5268,
@@ -31,20 +25,14 @@ export function computeShapePathEndpoints(speIn758: any, speIn759: any, speIn760
     }
     if (speBind5996.lineTo && speBind5268) {
       let speBind16825 =
-          Number(speBind5996.lineTo.x ?? speBind5268.x) *
-          workbookGt *
-          speIn759,
+          Number(speBind5996.lineTo.x ?? speBind5268.x) * workbookGt * speIn759,
         speBind16826 =
-          Number(speBind5996.lineTo.y ?? speBind5268.y) *
-          workbookGt *
-          speIn760,
+          Number(speBind5996.lineTo.y ?? speBind5268.y) * workbookGt * speIn760,
         speBind16827 = Math.atan2(
           speBind16826 - speBind5268.y,
           speBind16825 - speBind5268.x,
         );
-      speBind5264 &&
-        speBind5265 === undefined &&
-        (speBind5265 = speBind16827);
+      speBind5264 && speBind5265 === undefined && (speBind5265 = speBind16827);
       speBind5268 = {
         x: speBind16825,
         y: speBind16826,
@@ -76,9 +64,7 @@ export function computeShapePathEndpoints(speIn758: any, speIn759: any, speIn760
           speBind14011 - speBind5268.y,
           speBind14010 - speBind5268.x,
         );
-      speBind5264 &&
-        speBind5265 === undefined &&
-        (speBind5265 = speBind14014);
+      speBind5264 && speBind5265 === undefined && (speBind5265 = speBind14014);
       speBind5268 = {
         x: speBind14012,
         y: speBind14013,
@@ -121,9 +107,7 @@ export function computeShapePathEndpoints(speIn758: any, speIn759: any, speIn760
           speBind12520 - speBind5268.y,
           speBind12519 - speBind5268.x,
         );
-      speBind5264 &&
-        speBind5265 === undefined &&
-        (speBind5265 = speBind12525);
+      speBind5264 && speBind5265 === undefined && (speBind5265 = speBind12525);
       speBind5268 = {
         x: speBind12523,
         y: speBind12524,

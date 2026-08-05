@@ -6,9 +6,7 @@ import { normalizeImagePayload } from "./normalize-image-payload";
 import type { ImageOptionsBag } from "./types";
 
 /** Legacy `Wde` — normalize image element options (+ blob → dataUrl). */
-export function normalizeImageOptions(
-  props: ImageOptionsBag,
-): ImageOptionsBag {
+export function normalizeImageOptions(props: ImageOptionsBag): ImageOptionsBag {
   const out: ImageOptionsBag = {};
   const fromBlob =
     "blob" in props && isBinaryBuffer(props.blob)
@@ -23,8 +21,7 @@ export function normalizeImageOptions(
     out.position = { ...props.position };
   if ("frame" in props && props.frame !== undefined)
     out.frame = { ...props.frame };
-  if ("crop" in props && props.crop !== undefined)
-    out.crop = { ...props.crop };
+  if ("crop" in props && props.crop !== undefined) out.crop = { ...props.crop };
   if ("geometry" in props && props.geometry !== undefined)
     out.geometry = props.geometry;
   if ("borderRadius" in props && props.borderRadius !== undefined)
@@ -37,11 +34,7 @@ export function normalizeImageOptions(
   if ("uri" in props && typeof props.uri == "string") out.uri = props.uri;
   if ("dataUrl" in props && typeof props.dataUrl == "string")
     out.dataUrl = props.dataUrl;
-  if (
-    fromBlob?.data &&
-    fromBlob.data.length > 0 &&
-    fromBlob.contentType
-  )
+  if (fromBlob?.data && fromBlob.data.length > 0 && fromBlob.contentType)
     out.dataUrl = `data:${fromBlob.contentType};base64,${encodeBytesToBase64(fromBlob.data)}`;
   return out;
 }

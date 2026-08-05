@@ -11,7 +11,9 @@ export type OpenMainWindowThenContinuePeers = {
 let peers: OpenMainWindowThenContinuePeers | null = null;
 
 /** Wire openMainWindowThenContinue peers once companions land. */
-export function setOpenMainWindowThenContinuePeers(next: OpenMainWindowThenContinuePeers): void {
+export function setOpenMainWindowThenContinuePeers(
+  next: OpenMainWindowThenContinuePeers,
+): void {
   peers = next;
 }
 

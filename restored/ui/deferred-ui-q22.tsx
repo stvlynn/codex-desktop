@@ -10,7 +10,9 @@ export type BindBindDeferredUiQ22Peers = {
 let peers: BindBindDeferredUiQ22Peers | null = null;
 
 /** Wire bindBindDeferredUiQ22 peers once companions land. */
-export function setBindBindDeferredUiQ22Peers(next: BindBindDeferredUiQ22Peers): void {
+export function setBindBindDeferredUiQ22Peers(
+  next: BindBindDeferredUiQ22Peers,
+): void {
   peers = next;
 }
 
@@ -22,5 +24,9 @@ export function bindBindDeferredUiQ22() {
     throw new Error("bindBindDeferredUiQ22 peers are not configured");
   }
 
-  return peers.JE(e => e.turnHistory?.kind === `canonical` ? peers.fot(e.turnHistory.history) : null);
+  return peers.JE((e) =>
+    e.turnHistory?.kind === `canonical`
+      ? peers.fot(e.turnHistory.history)
+      : null,
+  );
 }

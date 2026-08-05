@@ -27,6 +27,9 @@ export function bindQueued() {
   }
 
   return peers.e(() => {
-    MKi = peers.r(peers.o(), 1), NKi = new Set(), mR = new Map(), PKi = [];
+    ((MKi = peers.r(peers.o(), 1)),
+      (NKi = new Set()),
+      (mR = new Map()),
+      (PKi = []));
   });
 }

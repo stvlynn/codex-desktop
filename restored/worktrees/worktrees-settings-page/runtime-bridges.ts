@@ -8,4 +8,3 @@
 /** Wave FY: bind no longer required after full body promote */
 export function bindWorktreesSettingsPage(_next: unknown): void {}
 export function ensureWorktreesSettingsPageInit(): void {}
-

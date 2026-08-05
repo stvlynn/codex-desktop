@@ -12,7 +12,9 @@ export type UseBrowserExtensionStatusQueryPeers = {
 let peers: UseBrowserExtensionStatusQueryPeers | null = null;
 
 /** Wire useBrowserExtensionStatusQuery peers once companions land. */
-export function setUseBrowserExtensionStatusQueryPeers(next: UseBrowserExtensionStatusQueryPeers): void {
+export function setUseBrowserExtensionStatusQueryPeers(
+  next: UseBrowserExtensionStatusQueryPeers,
+): void {
   peers = next;
 }
 

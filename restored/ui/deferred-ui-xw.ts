@@ -28,6 +28,12 @@ export function bindDeferredUiXW() {
   }
 
   return peers.e(() => {
-    peers.yF(), peers.uI(), peers.Rki(), peers.FAi(), peers.Nji(), peers.LPi(), peers.qPi();
+    (peers.yF(),
+      peers.uI(),
+      peers.Rki(),
+      peers.FAi(),
+      peers.Nji(),
+      peers.LPi(),
+      peers.qPi());
   });
 }

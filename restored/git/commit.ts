@@ -26,6 +26,6 @@ export function bindCommit() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.gT(), Vri = peers.Ta(peers.hT, null);
+    (peers.Ho(), peers.gT(), (Vri = peers.Ta(peers.hT, null)));
   });
 }

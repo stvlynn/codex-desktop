@@ -10,7 +10,9 @@ export type BindDeferredConversationJ83Peers = {
 let peers: BindDeferredConversationJ83Peers | null = null;
 
 /** Wire bindDeferredConversationJ83 peers once companions land. */
-export function setBindDeferredConversationJ83Peers(next: BindDeferredConversationJ83Peers): void {
+export function setBindDeferredConversationJ83Peers(
+  next: BindDeferredConversationJ83Peers,
+): void {
   peers = next;
 }
 
@@ -22,5 +24,5 @@ export function bindDeferredConversationJ83() {
     throw new Error("bindDeferredConversationJ83 peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => peers.bge());
+  return peers.Da(peers.Q, (e) => peers.bge());
 }

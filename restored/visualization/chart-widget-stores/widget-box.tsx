@@ -61,7 +61,12 @@ function useOnceVisible(
   const fire = useEventCallback(onVisible ?? (() => {}));
   const firedRef = useRef(false);
   useEffect(() => {
-    if (!node || !onVisible || firedRef.current || typeof IntersectionObserver === "undefined") {
+    if (
+      !node ||
+      !onVisible ||
+      firedRef.current ||
+      typeof IntersectionObserver === "undefined"
+    ) {
       return;
     }
     const observer = new IntersectionObserver(
@@ -250,9 +255,7 @@ export function WidgetBox({
  * Box that merges `boxRef`/`ref` and fires `onVisibleAction` once in view.
  * Bundle binding1250.
  */
-export function WidgetBoxWithVisibleAction(
-  props: WidgetBoxProps,
-): ReactNode {
+export function WidgetBoxWithVisibleAction(props: WidgetBoxProps): ReactNode {
   const setVisibleNode = useVisibleActionRef(props.onVisibleAction);
   const combinedRef = useCallback(
     (node: Element | null) => {

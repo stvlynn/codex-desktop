@@ -10,7 +10,9 @@ export type UseContentRectSizePeers = {
 let peers: UseContentRectSizePeers | null = null;
 
 /** Wire useContentRectSize peers once companions land. */
-export function setUseContentRectSizePeers(next: UseContentRectSizePeers): void {
+export function setUseContentRectSizePeers(
+  next: UseContentRectSizePeers,
+): void {
   peers = next;
 }
 

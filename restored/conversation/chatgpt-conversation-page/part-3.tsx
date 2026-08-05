@@ -8,7 +8,10 @@
 
 import { ensureAccountPlanQueryInit } from "../../account/ensure-account-plan-query-init";
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
-import { appActionSidebarProjectRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { CodexBrowserProfileImportCookieStatus } from "../../analytics/codex-browser-profile-import-cookie-status";
 import { CodexBrowserProfileImportPasswordStatus } from "../../analytics/codex-browser-profile-import-password-status";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
@@ -18,23 +21,119 @@ import { CodexPluginDirectoryEntrypoint } from "../../analytics/codex-plugin-dir
 import { CodexReferralInviteModalBackendErrorType } from "../../analytics/codex-referral-invite-modal-backend-error-type";
 import { shellPanelPinnedDerivedAtom } from "../../app-shell/shell-panel-pin";
 import { AppQueryClientProvider } from "../../app/app-query-client-provider";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { defaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationBranchAtom, chatgptConversationFlagsAtom, chatgptConversationLoadQueryAtom, chatgptConversationPreviewAtom, chatgptConversationServerIdAtom, chatgptConversationsGateAtom, chatgptConversationStatusAtom, chatgptConversationTitleAtom, chatgptThreadDerivedAtomBP, useStepsProseAtom, writingBlocksControllerAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_BF_Init, ensureComposerEsm_BI_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_II_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KF_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MF_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_Ytt_Init, ensureComposerEsm_ZI_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Jj_Init, ensureConversationPageEsm_Lo_Init, ensureConversationPageEsm_Mx_Init, ensureConversationPageEsm_Qa_Init, ensureConversationPageEsm_SP_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationBranchAtom,
+  chatgptConversationFlagsAtom,
+  chatgptConversationLoadQueryAtom,
+  chatgptConversationPreviewAtom,
+  chatgptConversationServerIdAtom,
+  chatgptConversationsGateAtom,
+  chatgptConversationStatusAtom,
+  chatgptConversationTitleAtom,
+  chatgptThreadDerivedAtomBP,
+  useStepsProseAtom,
+  writingBlocksControllerAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_AG_Init,
+  ensureComposerEsm_BF_Init,
+  ensureComposerEsm_BI_Init,
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_II_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_J0_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KF_Init,
+  ensureComposerEsm_M0_Init,
+  ensureComposerEsm_MF_Init,
+  ensureComposerEsm_ML_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_TI_Init,
+  ensureComposerEsm_XP_Init,
+  ensureComposerEsm_Ytt_Init,
+  ensureComposerEsm_ZI_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_FR_Init,
+  ensureConversationPageEsm_GS_Init,
+  ensureConversationPageEsm_GZ_Init,
+  ensureConversationPageEsm_Ist_Init,
+  ensureConversationPageEsm_Jj_Init,
+  ensureConversationPageEsm_Lo_Init,
+  ensureConversationPageEsm_Mx_Init,
+  ensureConversationPageEsm_Qa_Init,
+  ensureConversationPageEsm_SP_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import {
   createConversationSearchAdapter,
   ensureConversationSearchMaxMatchesInit,
 } from "../conversation-source";
 import { isIterateeCall } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
-import { _useChatgptComposerControllerA, _useChatgptComposerControllerC, _useChatgptComposerControllerD, _useChatgptComposerControllerF, _useChatgptComposerControllerI, _useChatgptComposerControllerL, _useChatgptComposerControllerM, _useChatgptComposerControllerN, _useChatgptComposerControllerO, _useChatgptComposerControllerP, _useChatgptComposerControllerR, _useChatgptComposerControllerS, useChatgptComposerControllerA, useChatgptComposerControllerC, useChatgptComposerControllerD, useChatgptComposerControllerE, useChatgptComposerControllerF, useChatgptComposerControllerG, useChatgptComposerControllerH, useChatgptComposerControllerI, useChatgptComposerControllerJ, useChatgptComposerControllerK, useChatgptComposerControllerL, useChatgptComposerControllerM, useChatgptComposerControllerN, useChatgptComposerControllerO, useChatgptComposerControllerP, useChatgptComposerControllerR, useChatgptComposerControllerS, useChatgptComposerControllerT, useChatgptComposerControllerU, useChatgptComposerControllerUnderscore } from "../../composer/use-chatgpt-composer-controller";
+import {
+  _useChatgptComposerControllerA,
+  _useChatgptComposerControllerC,
+  _useChatgptComposerControllerD,
+  _useChatgptComposerControllerF,
+  _useChatgptComposerControllerI,
+  _useChatgptComposerControllerL,
+  _useChatgptComposerControllerM,
+  _useChatgptComposerControllerN,
+  _useChatgptComposerControllerO,
+  _useChatgptComposerControllerP,
+  _useChatgptComposerControllerR,
+  _useChatgptComposerControllerS,
+  useChatgptComposerControllerA,
+  useChatgptComposerControllerC,
+  useChatgptComposerControllerD,
+  useChatgptComposerControllerE,
+  useChatgptComposerControllerF,
+  useChatgptComposerControllerG,
+  useChatgptComposerControllerH,
+  useChatgptComposerControllerI,
+  useChatgptComposerControllerJ,
+  useChatgptComposerControllerK,
+  useChatgptComposerControllerL,
+  useChatgptComposerControllerM,
+  useChatgptComposerControllerN,
+  useChatgptComposerControllerO,
+  useChatgptComposerControllerP,
+  useChatgptComposerControllerR,
+  useChatgptComposerControllerS,
+  useChatgptComposerControllerT,
+  useChatgptComposerControllerU,
+  useChatgptComposerControllerUnderscore,
+} from "../../composer/use-chatgpt-composer-controller";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_CITATION_ID } from "../../chatgpt/chatgpt-citation-id";
 import { CHATGPT_CONTENT_REFERENCE_ID } from "../../chatgpt/chatgpt-content-reference-id";
@@ -53,7 +152,12 @@ import { ensureHasSeenRealtimeVoiceNuxAtomInit } from "../../home/realtime-voice
 import { ensureDebugPanelParsersInit } from "../../hooks/debug-panel-turn-files";
 import { ContextMenuRegistration } from "../../hooks/use-context-menu-registration";
 import { useEventCallback } from "../../hooks/use-event-callback";
-import { clampFloatingWindowRect, initFloatingWindowPointerDragConstants, resizeFloatingWindowRect, useFloatingWindowPointerDrag } from "../../hooks/use-floating-window-pointer-drag";
+import {
+  clampFloatingWindowRect,
+  initFloatingWindowPointerDragConstants,
+  resizeFloatingWindowRect,
+  useFloatingWindowPointerDrag,
+} from "../../hooks/use-floating-window-pointer-drag";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { HostFeatureConfigToggles } from "../../hosts/host-feature-config-toggles";
@@ -75,7 +179,11 @@ import { codexDirectiveMarkedExtensions } from "../../markdown/codex-directive-m
 import { markdownToPlainText } from "../../markdown/markdown-to-plain-text";
 import { rewriteFileCitationMarkers } from "../../markdown/rewrite-file-citation-markers";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
-import { findSidebarSectionElement, readScrollTop, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  readScrollTop,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
 import { NavigationAllowContext } from "../../navigation/navigation-allow-context";
@@ -97,16 +205,33 @@ import { openRightPanel } from "../../shell/open-right-panel";
 import { setRightPanelConversation } from "../../shell/set-right-panel-conversation";
 import { ProjectHoverCardBody } from "../../sidebar/project-hover-card-body";
 import { useBrowserExtensionPluginSetupQuery } from "../../skills/use-browser-extension-plugin-setup-query";
-import { initThreadPanelToggleButton, ThreadPanelToggleButton } from "../../thread/thread-panel-toggle-button";
+import {
+  initThreadPanelToggleButton,
+  ThreadPanelToggleButton,
+} from "../../thread/thread-panel-toggle-button";
 import { ThreadResourceCard } from "../../thread/thread-resource-card";
-import { initThreadScrollControllerContext, useThreadScrollController } from "../../thread/thread-scroll-controller-context";
-import { initThreadScrollLayout, ThreadScrollLayout } from "../../thread/thread-scroll-layout";
-import { initToggleThreadSummaryPanel, initToggleThreadSummaryPanelAtoms, toggleThreadSummaryPanel, ToggleThreadSummaryPanel } from "../../thread/toggle-thread-summary-panel";
+import {
+  initThreadScrollControllerContext,
+  useThreadScrollController,
+} from "../../thread/thread-scroll-controller-context";
+import {
+  initThreadScrollLayout,
+  ThreadScrollLayout,
+} from "../../thread/thread-scroll-layout";
+import {
+  initToggleThreadSummaryPanel,
+  initToggleThreadSummaryPanelAtoms,
+  toggleThreadSummaryPanel,
+  ToggleThreadSummaryPanel,
+} from "../../thread/toggle-thread-summary-panel";
 import { BrandedIcon } from "../../ui/branded-icon";
 import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { InsetBorderPanel } from "../../ui/inset-border-panel";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -127,11 +252,18 @@ import { slugifyLoose } from "../../utils/slugify-loose";
 import { sortedArrayFrom } from "../../utils/sorted-array-from";
 import { tryParseJsonText } from "../../utils/try-parse-json-text";
 import { waitForDoubleAnimationFrame } from "../../utils/wait-for-double-animation-frame";
-import { ensureImportSettingsCLInit, ensureSettingsGlyphI0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensureSettingsGlyphI0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { activateConversationSurface } from "../activate-conversation-surface";
 import { BrowserConversationPanel } from "../browser-conversation-panel";
 import { chatgptMessageFallbackId } from "../chatgpt-message-fallback-id";
-import { initChatgptTemporaryChatUi, TemporaryChatHeaderControl, TemporaryChatOnboarding } from "../chatgpt-temporary-chat-ui/index";
+import {
+  initChatgptTemporaryChatUi,
+  TemporaryChatHeaderControl,
+  TemporaryChatOnboarding,
+} from "../chatgpt-temporary-chat-ui/index";
 import { ConversationDiffSourceBridge } from "../conversation-diff-source-bridge";
 import { ensureConversationWorkRouteInit } from "../conversation-work-path";
 import { deferredConversationR } from "../deferred-conversation-r";
@@ -153,9 +285,7 @@ import { walkChatgptMessageTree } from "../walk-chatgpt-message-tree";
 const AppInitialF: any = undefined;
 const AppInitialNI: any = undefined;
 function alpha(umbra) {
-  let {
-      onResponseSpacerStateChange
-    } = umbra,
+  let { onResponseSpacerStateChange } = umbra,
     violet = createInMemoryStorageAdapter(0),
     willow = delta.useRef(0),
     xenon = delta.useRef(null),
@@ -163,7 +293,8 @@ function alpha(umbra) {
     zinc = delta.useRef(false),
     amber = useThreadScrollController(),
     basalt = () => {
-      xenon.current != null && (window.cancelAnimationFrame(xenon.current), xenon.current = null);
+      xenon.current != null &&
+        (window.cancelAnimationFrame(xenon.current), (xenon.current = null));
       willow.current = 0;
     };
   let cedar = useEventCallback(basalt),
@@ -176,13 +307,22 @@ function alpha(umbra) {
   let ember = useEventCallback(daisy),
     flint = () => {
       let topaz = violet.get();
-      if (topaz <= 0) return zinc.current = false, false;
+      if (topaz <= 0) return ((zinc.current = false), false);
       let ultra = amber.getLastScrollDistanceFromBottomPx(),
         vapor = ultra >= topaz;
-      return !zinc.current && !vapor ? false : (violet.stop(), violet.jump(0), zinc.current = false, amber.scrollToDistanceFromBottomPx(Math.max(0, ultra - topaz), "instant"), true);
+      return !zinc.current && !vapor
+        ? false
+        : (violet.stop(),
+          violet.jump(0),
+          (zinc.current = false),
+          amber.scrollToDistanceFromBottomPx(
+            Math.max(0, ultra - topaz),
+            "instant",
+          ),
+          true);
     };
   let garnet = useEventCallback(flint),
-    hazel = wheat => {
+    hazel = (wheat) => {
       if (wheat <= 0) return;
       let yarn = violet.get(),
         zephyr = Math.max(0, yarn - wheat);
@@ -215,20 +355,27 @@ function alpha(umbra) {
   nova = () => {
     let drift = amber.getScrollElement(),
       eagle = yellow.current;
-    if (drift == null || eagle == null || typeof IntersectionObserver > "u") return;
-    let frost = new IntersectionObserver(glide => {
-      let honey = glide.at(-1);
-      if (honey == null) return;
-      let iris = Math.max(0, honey.intersectionRect.height - bravo(drift));
-      zinc.current = violet.get() > 0 && iris <= gamma;
-      garnet();
-    }, {
-      root: drift,
-      threshold: harbor
-    });
-    return frost.observe(eagle), () => {
-      frost.disconnect();
-    };
+    if (drift == null || eagle == null || typeof IntersectionObserver > "u")
+      return;
+    let frost = new IntersectionObserver(
+      (glide) => {
+        let honey = glide.at(-1);
+        if (honey == null) return;
+        let iris = Math.max(0, honey.intersectionRect.height - bravo(drift));
+        zinc.current = violet.get() > 0 && iris <= gamma;
+        garnet();
+      },
+      {
+        root: drift,
+        threshold: harbor,
+      },
+    );
+    return (
+      frost.observe(eagle),
+      () => {
+        frost.disconnect();
+      }
+    );
   };
   olive = [garnet, violet, amber];
   delta.useLayoutEffect(nova, olive);
@@ -237,7 +384,9 @@ function alpha(umbra) {
     let jewel = amber.addUserScrollListener((knoll, lunar) => {
       if (lunar == null) return;
       let moss = knoll - lunar;
-      moss <= 0 || (willow.current += moss, xenon.current ??= window.requestAnimationFrame(kelp));
+      moss <= 0 ||
+        ((willow.current += moss),
+        (xenon.current ??= window.requestAnimationFrame(kelp)));
     });
     return () => {
       jewel();
@@ -247,26 +396,35 @@ function alpha(umbra) {
   prism = [cedar, kelp, amber];
   delta.useLayoutEffect(quill, prism);
   let reef, sage;
-  reef = () => (onResponseSpacerStateChange({
-    clear: ember,
-    getHeightPx: () => violet.get(),
-    place: mint
-  }), () => {
-    onResponseSpacerStateChange(null);
-  });
+  reef = () => (
+    onResponseSpacerStateChange({
+      clear: ember,
+      getHeightPx: () => violet.get(),
+      place: mint,
+    }),
+    () => {
+      onResponseSpacerStateChange(null);
+    }
+  );
   sage = [ember, onResponseSpacerStateChange, mint, violet];
   delta.useLayoutEffect(reef, sage);
-  return <ensureIntlFormattersInit.div {...{
-    "aria-hidden": true,
-    ref: yellow,
-    className: "shrink-0",
-    style: {
-      height: violet
-    }
-  }} />;
+  return (
+    <ensureIntlFormattersInit.div
+      {...{
+        "aria-hidden": true,
+        ref: yellow,
+        className: "shrink-0",
+        style: {
+          height: violet,
+        },
+      }}
+    />
+  );
 }
 function bravo(north) {
-  let orbit = Number.parseFloat(north.style.getPropertyValue("--thread-scroll-padding-bottom"));
+  let orbit = Number.parseFloat(
+    north.style.getPropertyValue("--thread-scroll-padding-bottom"),
+  );
   return Number.isFinite(orbit) ? orbit : 0;
 }
 var copper,
@@ -286,70 +444,88 @@ var copper,
     ensureDropdownMenuPopoverInit();
     falcon = 0.6666666666666666;
     gamma = 1;
-    harbor = Array.from({
-      length: 101
-    }, (pine, quest) => quest / 100);
+    harbor = Array.from(
+      {
+        length: 101,
+      },
+      (pine, quest) => quest / 100,
+    );
     indigo = 1;
     jade = {
       type: "spring",
       bounce: 0,
-      duration: 0.5
+      duration: 0.5,
     };
   });
-function lemon({
-  getTurns,
-  routeContextId,
-  scrollAdapter
-}) {
+function lemon({ getTurns, routeContextId, scrollAdapter }) {
   return createConversationSearchAdapter({
     contextId: routeContextId,
-    getTurns: () => getTurns().map(({
-      id,
-      turn
-    }) => ({
-      turnKey: id,
-      units: turn.items.flatMap((item, index) => {
-        if (item.type === "user-message") {
-          let ridge = item.message.trim();
-          return ridge.length === 0 ? [] : [{
-            unitId: CHATGPT_IMAGE_GROUP_ID("user", index),
-            text: ridge
-          }];
-        }
-        if (item.type === "assistant-message") {
-          let storm = marble(item.content, item.contentReferences);
-          return storm.length === 0 ? [] : [{
-            unitId: CHATGPT_IMAGE_GROUP_ID("assistant", index),
-            text: storm
-          }];
-        }
-        return [];
-      })
-    })),
-    scrollAdapter
+    getTurns: () =>
+      getTurns().map(({ id, turn }) => ({
+        turnKey: id,
+        units: turn.items.flatMap((item, index) => {
+          if (item.type === "user-message") {
+            let ridge = item.message.trim();
+            return ridge.length === 0
+              ? []
+              : [
+                  {
+                    unitId: CHATGPT_IMAGE_GROUP_ID("user", index),
+                    text: ridge,
+                  },
+                ];
+          }
+          if (item.type === "assistant-message") {
+            let storm = marble(item.content, item.contentReferences);
+            return storm.length === 0
+              ? []
+              : [
+                  {
+                    unitId: CHATGPT_IMAGE_GROUP_ID("assistant", index),
+                    text: storm,
+                  },
+                ];
+          }
+          return [];
+        }),
+      })),
+    scrollAdapter,
   });
 }
 function marble(tide, unity) {
-  return markdownToPlainText(nickel(isTunAtomEqualToNS(tide, codexDirectiveMarkedExtensions), tide, unity));
+  return markdownToPlainText(
+    nickel(
+      isTunAtomEqualToNS(tide, codexDirectiveMarkedExtensions),
+      tide,
+      unity,
+    ),
+  );
 }
 function nickel(vale, wave, apex) {
   let brook = "",
     cliff = 0;
   for (let dusk of vale) {
     let elm = wave.indexOf(dusk.raw, cliff);
-    elm !== -1 && (brook += wave.slice(cliff, elm), brook += onyx(dusk, apex), cliff = elm + dusk.raw.length);
+    elm !== -1 &&
+      ((brook += wave.slice(cliff, elm)),
+      (brook += onyx(dusk, apex)),
+      (cliff = elm + dusk.raw.length));
   }
   return brook + wave.slice(cliff);
 }
 function onyx(fern, grove) {
   if ($o(fern)) return pearl(fern, grove) ?? fern.raw;
-  if ("tokens" in fern && Array.isArray(fern.tokens)) return nickel(fern.tokens, fern.raw, grove);
+  if ("tokens" in fern && Array.isArray(fern.tokens))
+    return nickel(fern.tokens, fern.raw, grove);
   if (!quartz(fern)) return fern.raw;
   let hill = "",
     isle = 0;
   for (let juniper of fern.items) {
     let lagoon = fern.raw.indexOf(juniper.raw, isle);
-    lagoon !== -1 && (hill += fern.raw.slice(isle, lagoon), hill += nickel(juniper.tokens, juniper.raw, grove), isle = lagoon + juniper.raw.length);
+    lagoon !== -1 &&
+      ((hill += fern.raw.slice(isle, lagoon)),
+      (hill += nickel(juniper.tokens, juniper.raw, grove)),
+      (isle = lagoon + juniper.raw.length));
   }
   return hill + fern.raw.slice(isle);
 }
@@ -357,18 +533,40 @@ function pearl(meadow, nest) {
   if (meadow.name === "chatgpt-content-reference") {
     let oak = useChatgptComposerControllerE(meadow.attributes),
       petal = useChatgptComposerControllerD(meadow.attributes),
-      quiet = oak == null ? petal == null ? undefined : nest.find(item => identity(item) === petal) : nest[oak];
+      quiet =
+        oak == null
+          ? petal == null
+            ? undefined
+            : nest.find((item) => identity(item) === petal)
+          : nest[oak];
     if (quiet == null) return "";
     let rain = ensureComposerEsm_TI_Init(quiet);
-    return rain === "hidden" || rain === "block" ? "" : AppInitialNI(quiet) ?? "";
+    return rain === "hidden" || rain === "block"
+      ? ""
+      : (AppInitialNI(quiet) ?? "");
   }
-  return meadow.name === "chatgpt-citation" ? THREAD_DETAIL_LEVEL_STEPS_PROSE(meadow.attributes, "label") ?? "" : meadow.name === "chatgpt-dil" || meadow.name === "chatgpt-image-group" ? "" : meadow.name === "writing" ? meadow.text ?? "" : null;
+  return meadow.name === "chatgpt-citation"
+    ? (THREAD_DETAIL_LEVEL_STEPS_PROSE(meadow.attributes, "label") ?? "")
+    : meadow.name === "chatgpt-dil" || meadow.name === "chatgpt-image-group"
+      ? ""
+      : meadow.name === "writing"
+        ? (meadow.text ?? "")
+        : null;
 }
 function $o(seed) {
-  return seed.type === "codexDirective" && "name" in seed && typeof seed.name == "string" && "attributes" in seed && seed.attributes != null && typeof seed.attributes == "object";
+  return (
+    seed.type === "codexDirective" &&
+    "name" in seed &&
+    typeof seed.name == "string" &&
+    "attributes" in seed &&
+    seed.attributes != null &&
+    typeof seed.attributes == "object"
+  );
 }
 function quartz(trail) {
-  return trail.type === "list" && "items" in trail && Array.isArray(trail.items);
+  return (
+    trail.type === "list" && "items" in trail && Array.isArray(trail.items)
+  );
 }
 var river = esmInit(() => {
   ensureComposerEsm_S8_Init();
@@ -381,40 +579,47 @@ var river = esmInit(() => {
   AppInitialF();
   ensureComposerEsm_KF_Init();
 });
-async function slate({
-  client,
-  conversationId,
-  currentNodeId,
-  title
-}) {
+async function slate({ client, conversationId, currentNodeId, title }) {
   let urn = await client.createShareLink({
       conversation_id: conversationId,
       current_node_id: currentNodeId,
-      is_anonymous: true
+      is_anonymous: true,
     }),
     vine = urn.current_node_id;
   if (timber(urn.moderation_state)) throw new is();
-  if (urn.is_public && urn.is_visible && urn.is_anonymous) return {
-    currentNodeId: vine,
-    shareLinkId: urn.share_id,
-    shareLinkUrl: urn.share_url
-  };
-  if (timber((await client.updateShareLink(urn.share_id, {
-    current_node_id: vine,
-    highlighted_message_id: urn.highlighted_message_id,
-    is_anonymous: true,
-    is_public: true,
-    is_visible: true,
-    title: title ?? urn.title
-  })).moderation_state)) throw new is();
+  if (urn.is_public && urn.is_visible && urn.is_anonymous)
+    return {
+      currentNodeId: vine,
+      shareLinkId: urn.share_id,
+      shareLinkUrl: urn.share_url,
+    };
+  if (
+    timber(
+      (
+        await client.updateShareLink(urn.share_id, {
+          current_node_id: vine,
+          highlighted_message_id: urn.highlighted_message_id,
+          is_anonymous: true,
+          is_public: true,
+          is_visible: true,
+          title: title ?? urn.title,
+        })
+      ).moderation_state,
+    )
+  )
+    throw new is();
   return {
     currentNodeId: vine,
     shareLinkId: urn.share_id,
-    shareLinkUrl: urn.share_url
+    shareLinkUrl: urn.share_url,
   };
 }
 function timber(wind) {
-  return wind.has_been_auto_blocked === true || wind.has_been_auto_moderated === true || wind.has_been_blocked === true;
+  return (
+    wind.has_been_auto_blocked === true ||
+    wind.has_been_auto_moderated === true ||
+    wind.has_been_blocked === true
+  );
 }
 var is,
   as = esmInit(() => {

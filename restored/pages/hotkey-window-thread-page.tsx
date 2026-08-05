@@ -7,7 +7,11 @@
 import { CodexBrowserSurfaceActionType } from "../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../analytics/codex-plugin-action-type-enum";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_S8_Init } from "../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_S8_Init,
+} from "../composer/composer-esm-inits";
 import {
   useSummaryContentShift,
   useSummaryPanelDisplaySync,
@@ -16,19 +20,35 @@ import { react, reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { Navigate } from "../boundaries/react-router-navigation";
 import { deferredConversationN } from "../conversation/deferred-conversation-n";
 import { filterConversationTimelineItems } from "../conversation/filter-conversation-timeline-items";
-import { ensureLocalConversationStreamRoleProductEventHelpersInit, ensureLocalConversationStreamRoleProductEventInit, LocalConversationStreamRoleProductEvent, LocalConversationStreamRoleProductEventWatcher } from "../conversation/local-conversation-stream-role-product-event";
+import {
+  ensureLocalConversationStreamRoleProductEventHelpersInit,
+  ensureLocalConversationStreamRoleProductEventInit,
+  LocalConversationStreamRoleProductEvent,
+  LocalConversationStreamRoleProductEventWatcher,
+} from "../conversation/local-conversation-stream-role-product-event";
 import { appServices } from "../desktop/desktop-services";
-import { HotkeyWindowDetailLayoutContext, useHotkeyWindowDetailLayout } from "../hooks/use-hotkey-window-detail-layout";
+import {
+  HotkeyWindowDetailLayoutContext,
+  useHotkeyWindowDetailLayout,
+} from "../hooks/use-hotkey-window-detail-layout";
 import { usePlatformAwareFeatureGate } from "../hooks/use-platform-aware-feature-gate";
 import { ensureIntlFormattersInit, useIntl } from "../i18n/use-intl";
 import { strongMarkerFromOptions } from "../markdown/strong-marker-from-options";
 import { ensureDynamicScriptLoadInit } from "../runtime/ensure-dynamic-script-load-init";
 import { commonJsInit, esmInit } from "../runtime/rolldown-runtime";
 import { ensureGpuTearingDebugSettingsInit } from "../settings/gpu-tearing-debug-settings";
-import { localConversationThreadUpperA, LocalConversationThreadUpperI } from "../thread/local-conversation-thread";
+import {
+  localConversationThreadUpperA,
+  LocalConversationThreadUpperI,
+} from "../thread/local-conversation-thread";
 import { AriaIconBadge } from "../ui/aria-icon-badge";
 import { deferredT } from "../ui/deferred-t";
-import { ensureHotkeyThreadB1Init, ensureHotkeyThreadL8Init, ensureHotkeyThreadN8Init, ensureHotkeyThreadV1Init } from "../utils/wave-av-gap-ensure-inits";
+import {
+  ensureHotkeyThreadB1Init,
+  ensureHotkeyThreadL8Init,
+  ensureHotkeyThreadN8Init,
+  ensureHotkeyThreadV1Init,
+} from "../utils/wave-av-gap-ensure-inits";
 import { identityCwd } from "../utils/workspace-paths";
 
 /** Wave FY unresolved companion (missing-export:worktree/self-serve-business-usage-based.tsx) */
@@ -50,19 +70,16 @@ const DeferredUiV2: any = undefined;
 export function HotkeyWindowThreadPage() {
   let delta = CodexPluginActionType(ensureComposerEsm_S8_Init),
     echo = useIntl(),
-    {
-      conversationId
-    } = AppInitialU5(),
-    {
-      clientThreadId
-    } = delta.value,
+    { conversationId } = AppInitialU5(),
+    { clientThreadId } = delta.value,
     falcon = CodexPluginActionResult(ensureHotkeyThreadL8Init),
-    gamma = falcon == null && SelfServeBusinessUsageBased(clientThreadId) ? clientThreadId : null;
+    gamma =
+      falcon == null && SelfServeBusinessUsageBased(clientThreadId)
+        ? clientThreadId
+        : null;
   let harbor = gamma,
     indigo = CodexBrowserSurfaceActionType(ensureHotkeyThreadV1Init, harbor),
-    {
-      data
-    } = CodexPluginActionResult(ensureGpuTearingDebugSettingsInit),
+    { data } = CodexPluginActionResult(ensureGpuTearingDebugSettingsInit),
     jade = data == null || data.configuredHotkey != null,
     kite = AppInitialRmt(jade);
   let lemon = kite,
@@ -74,9 +91,11 @@ export function HotkeyWindowThreadPage() {
     river = quartz == null ? "/" : AriaIconBadge(quartz);
   let slate = river,
     timber = () => {
-      !SelfServeBusinessUsageBased(clientThreadId) || falcon == null || appServices.hotkeyWindowHotkeys?.open({
-        path: AppInitialQpt(falcon)
-      });
+      !SelfServeBusinessUsageBased(clientThreadId) ||
+        falcon == null ||
+        appServices.hotkeyWindowHotkeys?.open({
+          path: AppInitialQpt(falcon),
+        });
     };
   let umbra = bravo.useEffectEvent(timber),
     _HotkeyWindowThreadPage = () => {
@@ -87,47 +106,82 @@ export function HotkeyWindowThreadPage() {
   bravo.useEffect(_HotkeyWindowThreadPage, violet);
   useSummaryPanelDisplaySync(delta);
   let willow;
-  if (willow = conversationId == null ? null : {
-    title: <div className="flex max-w-full min-w-0 items-baseline gap-2">
+  if (
+    ((willow =
+      conversationId == null
+        ? null
+        : {
+            title: (
+              <div className="flex max-w-full min-w-0 items-baseline gap-2">
                 <div className="min-w-0 shrink-[999] truncate text-token-foreground">
-                  {indigo?.label ?? marble ?? echo.formatMessage({
-          id: "hotkeyWindow.defaultTitle",
-          defaultMessage: "Codex",
-          description: "Fallback title for hotkey window thread header"
-        })}
+                  {indigo?.label ??
+                    marble ??
+                    echo.formatMessage({
+                      id: "hotkeyWindow.defaultTitle",
+                      defaultMessage: "Codex",
+                      description:
+                        "Fallback title for hotkey window thread header",
+                    })}
                 </div>
-                {pearl == null ? null : <div className="flex shrink-0 items-center gap-1 whitespace-nowrap text-token-description-foreground">
-                    <span className="truncate">
-                      {pearl}
-                    </span>
-                  </div>}
-              </div>,
-    mainWindowPath: slate
-  }, useHotkeyWindowDetailLayout(willow), conversationId == null) {
+                {pearl == null ? null : (
+                  <div className="flex shrink-0 items-center gap-1 whitespace-nowrap text-token-description-foreground">
+                    <span className="truncate">{pearl}</span>
+                  </div>
+                )}
+              </div>
+            ),
+            mainWindowPath: slate,
+          }),
+    useHotkeyWindowDetailLayout(willow),
+    conversationId == null)
+  ) {
     let zinc;
-    return <Navigate {...{
-      to: lemon,
-      replace: true
-    }} />;
+    return (
+      <Navigate
+        {...{
+          to: lemon,
+          replace: true,
+        }}
+      />
+    );
   }
-  let xenon = falcon == null ? null : <>
-        {<LocalConversationStreamRoleProductEventWatcher {...{
-      conversationId: falcon
-    }} />}
-        {<LocalConversationStreamRoleProductEvent {...{
-      conversationId: falcon
-    }} />}
-      </>;
-  let yellow = <div className="h-full [--padding-panel:calc(var(--padding-panel-base)/2)]">
-      {<LocalConversationThreadUpperI {...{
-      allowMissingConversation: true,
-      showUtilityBar: true
-    }} />}
-    </div>;
-  return <>
+  let xenon =
+    falcon == null ? null : (
+      <>
+        {
+          <LocalConversationStreamRoleProductEventWatcher
+            {...{
+              conversationId: falcon,
+            }}
+          />
+        }
+        {
+          <LocalConversationStreamRoleProductEvent
+            {...{
+              conversationId: falcon,
+            }}
+          />
+        }
+      </>
+    );
+  let yellow = (
+    <div className="h-full [--padding-panel:calc(var(--padding-panel-base)/2)]">
+      {
+        <LocalConversationThreadUpperI
+          {...{
+            allowMissingConversation: true,
+            showUtilityBar: true,
+          }}
+        />
+      }
+    </div>
+  );
+  return (
+    <>
       {xenon}
       {yellow}
-    </>;
+    </>
+  );
 }
 var alpha, bravo, copper;
 esmInit(() => {

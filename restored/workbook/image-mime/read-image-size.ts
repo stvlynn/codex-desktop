@@ -13,9 +13,7 @@ export const jpegSofMarkerCodes: ReadonlySet<number> = new Set([
 ]);
 
 /** Legacy `lde` — PNG IHDR width/height. */
-export function readPngSize(
-  bytes: Uint8Array,
-): ImagePixelSize | undefined {
+export function readPngSize(bytes: Uint8Array): ImagePixelSize | undefined {
   if (
     bytes.byteLength < 24 ||
     bytes[0] !== 137 ||
@@ -35,9 +33,7 @@ export function readPngSize(
 }
 
 /** Legacy `ude` — GIF logical screen descriptor size. */
-export function readGifSize(
-  bytes: Uint8Array,
-): ImagePixelSize | undefined {
+export function readGifSize(bytes: Uint8Array): ImagePixelSize | undefined {
   if (bytes.byteLength < 10 || !bytesMatchAscii(bytes, 0, "GIF")) return;
   let view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength),
     width = view.getUint16(6, true),
@@ -50,9 +46,7 @@ export function readGifSize(
 }
 
 /** Legacy `dde` — JPEG SOF frame size. */
-export function readJpegSize(
-  bytes: Uint8Array,
-): ImagePixelSize | undefined {
+export function readJpegSize(bytes: Uint8Array): ImagePixelSize | undefined {
   if (bytes.byteLength < 4) return;
   let view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
   if (view.getUint8(0) !== 255 || view.getUint8(1) !== 216) return;
@@ -73,10 +67,8 @@ export function readJpegSize(
     if (segmentLength < 2 || offset + 2 + segmentLength > bytes.byteLength)
       break;
     if (jpegSofMarkerCodes.has(marker)) {
-      let height =
-          (view.getUint8(offset + 5) << 8) + view.getUint8(offset + 6),
-        width =
-          (view.getUint8(offset + 7) << 8) + view.getUint8(offset + 8);
+      let height = (view.getUint8(offset + 5) << 8) + view.getUint8(offset + 6),
+        width = (view.getUint8(offset + 7) << 8) + view.getUint8(offset + 8);
       return height <= 0 || width <= 0
         ? undefined
         : {
@@ -89,9 +81,7 @@ export function readJpegSize(
 }
 
 /** Legacy `fde` — WEBP VP8X / VP8L / VP8 size. */
-export function readWebpSize(
-  bytes: Uint8Array,
-): ImagePixelSize | undefined {
+export function readWebpSize(bytes: Uint8Array): ImagePixelSize | undefined {
   if (
     bytes.byteLength < 30 ||
     !bytesMatchAscii(bytes, 0, "RIFF") ||
@@ -146,10 +136,8 @@ export function readWebpSize(
         view.getUint8(25) !== 42
       )
         return;
-      let width =
-          (view.getUint8(26) | (view.getUint8(27) << 8)) & 16383,
-        height =
-          (view.getUint8(28) | (view.getUint8(29) << 8)) & 16383;
+      let width = (view.getUint8(26) | (view.getUint8(27) << 8)) & 16383,
+        height = (view.getUint8(28) | (view.getUint8(29) << 8)) & 16383;
       return width <= 0 || height <= 0
         ? undefined
         : {

@@ -36,6 +36,17 @@ export function deferredSl() {
   }
 
   return peers.e(() => {
-    bnl = peers.c(), peers.Ho(), xnl = peers.r(peers.o(), 1), peers.UD(), peers.nO(), peers.m7c(), peers._nl(), peers.Qtl(), peers.gT(), peers.Dh(), peers.nL(), peers.YGi();
+    ((bnl = peers.c()),
+      peers.Ho(),
+      (xnl = peers.r(peers.o(), 1)),
+      peers.UD(),
+      peers.nO(),
+      peers.m7c(),
+      peers._nl(),
+      peers.Qtl(),
+      peers.gT(),
+      peers.Dh(),
+      peers.nL(),
+      peers.YGi());
   });
 }

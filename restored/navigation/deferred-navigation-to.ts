@@ -18,7 +18,9 @@ export type BindDeferredNavigationToPeers = {
 let peers: BindDeferredNavigationToPeers | null = null;
 
 /** Wire bindDeferredNavigationTo peers once companions land. */
-export function setBindDeferredNavigationToPeers(next: BindDeferredNavigationToPeers): void {
+export function setBindDeferredNavigationToPeers(
+  next: BindDeferredNavigationToPeers,
+): void {
   peers = next;
 }
 
@@ -30,24 +32,29 @@ export function bindDeferredNavigationTo() {
     throw new Error("bindDeferredNavigationTo peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     if (!t(peers.EHl)) return null;
     let n = t(peers.oD, e),
       r = t(peers.cD, e),
       i = t(peers.Cnr, e),
       a = t(peers.rD, e) ?? `local`;
     if (e == null || n == null || r == null) return null;
-    let {
-      data: o
-    } = t(peers.dJ, {
+    let { data: o } = t(peers.dJ, {
       cwd: n,
       headBranch: r,
       hostId: a,
       operationSource: `sidebar_task_pr_chip`,
-      originUrl: i
+      originUrl: i,
     });
-    return o == null ? null : o.details == null ? peers.xHl(o.state === `open` && o.isDraft ? `draft` : o.state, t(peers.LE), o.title, o.url) : peers.CHl(o.details, t(peers.LE));
+    return o == null
+      ? null
+      : o.details == null
+        ? peers.xHl(
+            o.state === `open` && o.isDraft ? `draft` : o.state,
+            t(peers.LE),
+            o.title,
+            o.url,
+          )
+        : peers.CHl(o.details, t(peers.LE));
   });
 }

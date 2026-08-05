@@ -55,7 +55,9 @@ export type SemanticAccentColorsPeers = {
 let peers: SemanticAccentColorsPeers | null = null;
 
 /** Wire semanticAccentColors peers once companions land. */
-export function setSemanticAccentColorsPeers(next: SemanticAccentColorsPeers): void {
+export function setSemanticAccentColorsPeers(
+  next: SemanticAccentColorsPeers,
+): void {
   peers = next;
 }
 

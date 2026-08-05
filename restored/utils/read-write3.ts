@@ -28,28 +28,31 @@ export function bindReadWrite3() {
   }
 
   return peers.e(() => {
-    peers.Sl(), peers._u(), peers.xu(), UEe = {
-      turnMode: peers.yu({
-        agentAccess: `read-write`,
-        default: `unfocused`,
-        description: `When turn-completion notifications are shown`,
-        key: `notifications-turn-mode`,
-        schema: peers.pl([`off`, `unfocused`, `always`])
-      }),
-      permissionsEnabled: peers.yu({
-        agentAccess: `read-write`,
-        default: !0,
-        description: `Whether permission notifications are shown`,
-        key: `notifications-permissions-enabled`,
-        schema: peers.hu
-      }),
-      questionsEnabled: peers.yu({
-        agentAccess: `read-write`,
-        default: !0,
-        description: `Whether question notifications are shown`,
-        key: `notifications-questions-enabled`,
-        schema: peers.hu
-      })
-    };
+    (peers.Sl(),
+      peers._u(),
+      peers.xu(),
+      (UEe = {
+        turnMode: peers.yu({
+          agentAccess: `read-write`,
+          default: `unfocused`,
+          description: `When turn-completion notifications are shown`,
+          key: `notifications-turn-mode`,
+          schema: peers.pl([`off`, `unfocused`, `always`]),
+        }),
+        permissionsEnabled: peers.yu({
+          agentAccess: `read-write`,
+          default: !0,
+          description: `Whether permission notifications are shown`,
+          key: `notifications-permissions-enabled`,
+          schema: peers.hu,
+        }),
+        questionsEnabled: peers.yu({
+          agentAccess: `read-write`,
+          default: !0,
+          description: `Whether question notifications are shown`,
+          key: `notifications-questions-enabled`,
+          schema: peers.hu,
+        }),
+      }));
   });
 }

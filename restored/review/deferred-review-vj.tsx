@@ -11,7 +11,9 @@ export type BindBindDeferredReviewVjPeers = {
 let peers: BindBindDeferredReviewVjPeers | null = null;
 
 /** Wire bindBindDeferredReviewVj peers once companions land. */
-export function setBindBindDeferredReviewVjPeers(next: BindBindDeferredReviewVjPeers): void {
+export function setBindBindDeferredReviewVjPeers(
+  next: BindBindDeferredReviewVjPeers,
+): void {
   peers = next;
 }
 
@@ -23,7 +25,7 @@ export function bindBindDeferredReviewVj() {
     throw new Error("bindBindDeferredReviewVj peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => e == null ? peers.Vpo : peers.R_(t, `diff_comments`)?.[e] ?? peers.Vpo);
+  return peers.Oa(peers.Q, (e, { get: t }) =>
+    e == null ? peers.Vpo : (peers.R_(t, `diff_comments`)?.[e] ?? peers.Vpo),
+  );
 }

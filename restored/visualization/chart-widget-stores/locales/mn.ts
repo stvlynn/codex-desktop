@@ -16,27 +16,33 @@ const messages: Record<string, string> = {
   "widgets.baseCarousel.previousItems": "Каруселийн өмнөх зүйлс",
   "widgets.cardCarousel.goToArticle": "Нийтлэл рүү очих",
   "widgets.cardCarousel.nextCards": "Дараагийн картууд",
-  "widgets.cardCarousel.nextCardsInCarousel": "{carouselLabel}-ийн дараагийн картууд",
+  "widgets.cardCarousel.nextCardsInCarousel":
+    "{carouselLabel}-ийн дараагийн картууд",
   "widgets.cardCarousel.previousCards": "Өмнөх картууд",
-  "widgets.cardCarousel.previousCardsInCarousel": "{carouselLabel} дэх өмнөх картууд",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "{carouselLabel} дэх өмнөх картууд",
   "widgets.debug.hideCurrentState": "Одоогийн төлөвийг нуух",
   "widgets.debug.nextState": "Дараагийн төлөв",
   "widgets.debug.previousState": "Өмнөх төлөв",
   "widgets.debug.selectedState": "Сонгосон төлөв",
   "widgets.debug.showCurrentState": "Одоогийн төлөвийг харуулах",
   "widgets.debug.state": "Төлөв",
-  "widgets.debug.unableToSerializeSelectedState": "Сонгосон төлөвийг цувруулж чадсангүй.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "Сонгосон төлөвийг цувруулж чадсангүй.",
   "widgets.hermes.artifact.viewMore": "Нэмэлт {count}-г харах",
   "widgets.hermes.calendarEvent.moreAttendees": "+{count} гаруй",
   "widgets.hermes.calendarEvent.singleTime": "{date} {time} цагт",
   "widgets.hermes.calendarEvent.timeRange": "{date} {startTime}–{endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "Үргэлжлүүлэхийн тулд {agentName}-д хандалт хэрэгтэй",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName} үргэлжлүүлэхийн тулд таны зөвшөөрөл хэрэгтэй",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "Үргэлжлүүлэхийн тулд {agentName}-д хандалт хэрэгтэй",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName} үргэлжлүүлэхийн тулд таны зөвшөөрөл хэрэгтэй",
   "widgets.hermes.genericResponse.viewFullscreen": "Дэлгэц дүүрэн харах",
   "widgets.hermes.genericTool.details": "Дэлгэрэнгүй",
   "widgets.hermes.genericTool.read": "Унших",
   "widgets.hermes.genericTool.request": "Хүсэлт",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} нь {connectorName}-г ашиглан {toolName}-г ажиллуулахыг хүсэж байна.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} нь {connectorName}-г ашиглан {toolName}-г ажиллуулахыг хүсэж байна.",
   "widgets.hermes.genericTool.viewFullscreen": "Дэлгэц дүүрэн харах",
   "widgets.hermes.genericTool.write": "Бичих",
   "widgets.hermes.googleCalendarCreate.create": "Үүсгэх",
@@ -49,7 +55,8 @@ const messages: Record<string, string> = {
   "widgets.hermes.permission.moreInformation": "Дэлгэрэнгүй мэдээлэл",
   "widgets.hermes.permission.notNow": "Одоо биш",
   "widgets.hermes.permission.reconnect": "Дахин холбох",
-  "widgets.hermes.permission.reconnectToConnector": "{connectorName}-д дахин холбогдох",
+  "widgets.hermes.permission.reconnectToConnector":
+    "{connectorName}-д дахин холбогдох",
   "widgets.hermes.sendEmail.approveAction": "Үйлдлийг зөвшөөрөх",
   "widgets.hermes.sendEmail.bcc": "Далд хуулбар",
   "widgets.hermes.sendEmail.cc": "Хуулбар",
@@ -62,73 +69,136 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "багаар үзүүлэх",
   "widgets.hermes.taskStatus.canceled": "Даалгавар цуцлагдсан",
   "widgets.hermes.taskStatus.canceling": "Цуцлагдаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Өмнөх мессежүүдийг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Өмнөх зурвасуудыг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Өмнөх зурвасуудыг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Өмнөх зурвасуудыг нягталж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Өмнөх зурвасуудыг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Өмнөх мессежүүдийг уншиж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Өмнөх зурвасуудыг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Өмнөх зурвасуудыг дахин шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Өмнөх зурвасуудыг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Өмнөх зурвасуудыг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Өмнөх зурвасуудыг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Контекстыг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Контекстыг нягталж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Контекстийг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Контекст уншиж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Контекстийг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Контекстийг дахин шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Контекстийг шалгаж байна",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Контекстийг нягталж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Агентийг идэвхжүүлж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Агентыг эхлүүлж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Агентийг идэвхжүүлж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Агентыг дуудаж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Агенттай холбогдож байна",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "Агенттай холбогдож байна",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Агентыг сэрээж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Агентийг бэлтгэж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Агентыг сэрээж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Агентыг эхлүүлж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "Агентыг дуудаж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Компьютерийг идэвхжүүлж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Компьютер ачаалж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Компьютерийг онлайн болгож байна",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Компьютерийг бэлтгэж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Компьютер асааж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Компьютерийг эхлүүлж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Компьютерийг асааж байна",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Компьютерыг сэрээж байна",
-  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Чиглэлээ тогтоож байна",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Төлөвлөгөө гаргаж байна",
-  "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Төлөвлөгөө гаргаж байна",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Төлөвлөж байна",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Төлөвлөж байна",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Дараагийн алхмуудыг төлөвлөж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Өмнөх мессежүүдийг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Өмнөх зурвасуудыг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Өмнөх зурвасуудыг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Өмнөх зурвасуудыг нягталж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Өмнөх зурвасуудыг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Өмнөх мессежүүдийг уншиж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Өмнөх зурвасуудыг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Өмнөх зурвасуудыг дахин шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Өмнөх зурвасуудыг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Өмнөх зурвасуудыг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Өмнөх зурвасуудыг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Контекстыг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Контекстыг нягталж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Контекстийг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Контекст уншиж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Контекстийг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Контекстийг дахин шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Контекстийг шалгаж байна",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Контекстийг нягталж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Агентийг идэвхжүүлж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Агентыг эхлүүлж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Агентийг идэвхжүүлж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Агентыг дуудаж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Агенттай холбогдож байна",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "Агенттай холбогдож байна",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Агентыг сэрээж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Агентийг бэлтгэж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Агентыг сэрээж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Агентыг эхлүүлж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "Агентыг дуудаж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Компьютерийг идэвхжүүлж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Компьютер ачаалж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Компьютерийг онлайн болгож байна",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Компьютерийг бэлтгэж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Компьютер асааж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Компьютерийг эхлүүлж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Компьютерийг асааж байна",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Компьютерыг сэрээж байна",
+  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse":
+    "Чиглэлээ тогтоож байна",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "Төлөвлөгөө гаргаж байна",
+  "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan":
+    "Төлөвлөгөө гаргаж байна",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Төлөвлөж байна",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "Төлөвлөж байна",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Дараагийн алхмуудыг төлөвлөж байна",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Төлөвлөж байна",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Чиглэл тогтоож байна",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Чиглэл тогтоож байна",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Төлөвлөгөө гаргаж байна",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Арга замыг тунгааж байна",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Арга замаа тодорхойлж байна",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Дэлгэрэнгүйг бүрдүүлж байна",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Дэлгэрэнгүй мэдээлэл цуглуулж байна",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Дэлгэрэнгүйг бөглөж байна",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Дэлгэрэнгүй мэдээлэл цуглуулж байна",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Дэлгэрэнгүйг нэгтгэж байна",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Дэлгэрэнгүйг цуглуулж байна",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Дэлгэрэнгүйг цуглуулж байна",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Дэлгэрэнгүйг цэгцэлж байна",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Дэлгэрэнгүйг нягталж байна",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Дэлгэрэнгүйг тодруулж байна",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Ердийнхөөс илүү удаж байна",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Одоогоор боловсруулж байна",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Түр хүлээгээд дахин шалгаарай",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Чиглэл тогтоож байна",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Чиглэл тогтоож байна",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Төлөвлөгөө гаргаж байна",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Арга замыг тунгааж байна",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Арга замаа тодорхойлж байна",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Дэлгэрэнгүйг бүрдүүлж байна",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Дэлгэрэнгүй мэдээлэл цуглуулж байна",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Дэлгэрэнгүйг бөглөж байна",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Дэлгэрэнгүй мэдээлэл цуглуулж байна",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Дэлгэрэнгүйг нэгтгэж байна",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Дэлгэрэнгүйг цуглуулж байна",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Дэлгэрэнгүйг цуглуулж байна",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Дэлгэрэнгүйг цэгцэлж байна",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Дэлгэрэнгүйг нягталж байна",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Дэлгэрэнгүйг тодруулж байна",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Ердийнхөөс илүү удаж байна",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Одоогоор боловсруулж байна",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Түр хүлээгээд дахин шалгаарай",
   "widgets.hermes.workflow.canceled": "Даалгавар цуцлагдсан",
   "widgets.hermes.workflow.canceledItemLabel": "Цуцлагдсан",
   "widgets.hermes.workflow.codeBlock.hideLines": "Мөрүүдийг нуух",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Бүх {lineCount} мөрийг харах",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Бүх {lineCount} мөрийг харах",
   "widgets.hermes.workflow.customWorked": "Хэсэг хугацаанд ажилласан",
   "widgets.hermes.workflow.customWorking": "Ажиллаж байна",
   "widgets.hermes.workflow.fileWorked": "Сканнердсан баримт бичиг",
@@ -148,7 +218,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Багаар харах",
   "widgets.listView.showMore": "Дахин {count}-г харуулах",
   "widgets.radioGroup.options": "сонголтууд",
-  "widgets.segmentedControl.selectAnOption": "Сонголт хийх"
+  "widgets.segmentedControl.selectAnOption": "Сонголт хийх",
 };
 
 export default messages;

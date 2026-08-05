@@ -23,6 +23,6 @@ export function bindDeferredMvt() {
   }
 
   return peers.e(() => {
-    peers.Ze(), peers.At();
+    (peers.Ze(), peers.At());
   });
 }

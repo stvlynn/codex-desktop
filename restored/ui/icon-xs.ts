@@ -29,6 +29,11 @@ export function iconXs() {
   }
 
   return peers.e(() => {
-    kus = peers.c(), peers.Ho(), peers.Cus(), peers.Eus(), peers.uZ(), Aus = peers.J();
+    ((kus = peers.c()),
+      peers.Ho(),
+      peers.Cus(),
+      peers.Eus(),
+      peers.uZ(),
+      (Aus = peers.J()));
   });
 }

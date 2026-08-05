@@ -23,7 +23,9 @@ export type BindBindUnifiedSidebarChatOrderV12Peers = {
 let peers: BindBindUnifiedSidebarChatOrderV12Peers | null = null;
 
 /** Wire bindBindUnifiedSidebarChatOrderV12 peers once companions land. */
-export function setBindBindUnifiedSidebarChatOrderV12Peers(next: BindBindUnifiedSidebarChatOrderV12Peers): void {
+export function setBindBindUnifiedSidebarChatOrderV12Peers(
+  next: BindBindUnifiedSidebarChatOrderV12Peers,
+): void {
   peers = next;
 }
 
@@ -32,10 +34,26 @@ export function setBindBindUnifiedSidebarChatOrderV12Peers(next: BindBindUnified
  */
 export function bindBindUnifiedSidebarChatOrderV12() {
   if (peers == null) {
-    throw new Error("bindBindUnifiedSidebarChatOrderV12 peers are not configured");
+    throw new Error(
+      "bindBindUnifiedSidebarChatOrderV12 peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Au(), peers.DD(), peers.Vf(), peers.Vxo(), peers.RE(), peers.yK(), peers.sSo(), peers.OK(), peers.OE(), peers._Co(), peers.mSo(), peers.tz(), peers.gR(), RRc = `The fork contains completed history only. If the source thread was running, the active turn and unfinished response are not in the child. Send a follow-up message to threadId only if the task requires work to continue there.`, zRc = `The worktree is being created asynchronously, so no child thread id exists yet. Wait for worktree setup to finish, then send a follow-up message to the child only if the task requires work to continue there.`;
+    (peers.Au(),
+      peers.DD(),
+      peers.Vf(),
+      peers.Vxo(),
+      peers.RE(),
+      peers.yK(),
+      peers.sSo(),
+      peers.OK(),
+      peers.OE(),
+      peers._Co(),
+      peers.mSo(),
+      peers.tz(),
+      peers.gR(),
+      (RRc = `The fork contains completed history only. If the source thread was running, the active turn and unfinished response are not in the child. Send a follow-up message to threadId only if the task requires work to continue there.`),
+      (zRc = `The worktree is being created asynchronously, so no child thread id exists yet. Wait for worktree setup to finish, then send a follow-up message to the child only if the task requires work to continue there.`));
   });
 }

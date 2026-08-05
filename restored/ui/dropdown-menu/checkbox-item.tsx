@@ -14,14 +14,7 @@ import type { DropdownMenuCheckboxItemProps } from "./types";
 export function DropdownMenuCheckboxItem(
   props: DropdownMenuCheckboxItemProps,
 ): ReactElement {
-  const {
-    children,
-    className,
-    disabled,
-    onSelect,
-    SubText,
-    ...rest
-  } = props;
+  const { children, className, disabled, onSelect, SubText, ...rest } = props;
 
   const childArray = Children.toArray(children);
   const leadingItemIcon =

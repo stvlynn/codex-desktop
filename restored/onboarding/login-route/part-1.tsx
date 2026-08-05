@@ -6,7 +6,13 @@
 // Wave5d careful split 1/4
 /* split-lane-import-depth:1 */
 
-import { buildChatgptDesktopAuthUrl, ensureBuildChatgptDesktopAuthUrlInit, ensureChatgptDesktopAuthUrlInit, getCodexAppVersionFromScope, loginWithChatgptDeviceCode } from "../../account/chatgpt-desktop-auth-url";
+import {
+  buildChatgptDesktopAuthUrl,
+  ensureBuildChatgptDesktopAuthUrlInit,
+  ensureChatgptDesktopAuthUrlInit,
+  getCodexAppVersionFromScope,
+  loginWithChatgptDeviceCode,
+} from "../../account/chatgpt-desktop-auth-url";
 import { deferredAccountXq } from "../../account/deferred-account-xq";
 import { selfServeBusinessUsageBased } from "../../account/self-serve-business-usage-based";
 import { CODEX_LOGIN_METHOD_SELECTED_TYPE } from "../../analytics/codex-login-method-selected-type";
@@ -17,17 +23,41 @@ import { CodexProfileEditSaveApiStatus } from "../../analytics/codex-profile-edi
 import { logProductEvent } from "../../analytics/log-product-event";
 import { AppSurfaceId } from "../../app/app-surface-ids";
 import { useUpdateAuthNonce } from "../../auth/use-update-auth-nonce";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_FH_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_FR_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_PRODUCT_ID } from "../../config/chatgpt-product-id";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { invokeDesktopRpc } from "../../desktop/invoke-desktop-rpc";
-import { AsciiEngineView, ensureAsciiEngineInit, ensureAsciiEngineViewInit, useAsciiEngine } from "../../hooks/use-ascii-engine";
+import {
+  AsciiEngineView,
+  ensureAsciiEngineInit,
+  ensureAsciiEngineViewInit,
+  useAsciiEngine,
+} from "../../hooks/use-ascii-engine";
 import { ensureAuthProviderInit } from "../../hooks/use-auth";
 import { useQueryClient } from "../../hooks/use-query-client";
 import { HostFeatureConfigToggles } from "../../hosts/host-feature-config-toggles";
@@ -57,28 +87,43 @@ import { ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
 import { size12AriaIcon } from "../../ui/size12-aria-icon";
 import { countLeadingZeroBits32 } from "../../utils/count-leading-zero-bits-32";
 import { identityValue } from "../../utils/identity-value";
-import { ensureImportSettingsGctInit, ensurePersonalizationG0Init, ensurePersonalizationJutInit, ensurePersonalizationK0Init, ensureSettingsGlyphI0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsGctInit,
+  ensurePersonalizationG0Init,
+  ensurePersonalizationJutInit,
+  ensurePersonalizationK0Init,
+  ensureSettingsGlyphI0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { AppBrandMark } from "../app-brand-mark";
-import { initOnboardingLoginContent, OnboardingLoginContent } from "../onboarding-login-content";
+import {
+  initOnboardingLoginContent,
+  OnboardingLoginContent,
+} from "../onboarding-login-content";
 const readLoginRouteQuerySnapshot: any = undefined;
 // Wave5d soft JSX companions.
-function At(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function At(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Alpha(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -194,14 +239,17 @@ function $e() {
     [fern, grove] = jade.useState(""),
     [hill, isle] = jade.useState(false),
     juniper = jade.useRef(null),
-    lagoon = trail => {
-      let urn = ridge.formatMessage({
-        id: "codex.signInFailed.message",
-        defaultMessage: "Sign-in failed: {rawMessage}",
-        description: "Sign-in failure toast message with error details"
-      }, {
-        rawMessage: trail
-      });
+    lagoon = (trail) => {
+      let urn = ridge.formatMessage(
+        {
+          id: "codex.signInFailed.message",
+          defaultMessage: "Sign-in failed: {rawMessage}",
+          description: "Sign-in failure toast message with error details",
+        },
+        {
+          rawMessage: trail,
+        },
+      );
       orbit.get(toastAtom).warning(urn);
     };
   jade.useEffect(() => {
@@ -209,19 +257,22 @@ function $e() {
   }, [wave]);
   jade.useEffect(() => {
     let vine = false;
-    return (async () => {
-      try {
-        let wind = await invokeDesktopRpc("openai-api-key");
-        if (vine) return;
-        let yarrow = wind?.value ?? null;
-        elm(yarrow);
-        grove(azure => azure.length > 0 ? azure : yarrow ?? "");
-      } catch {
-        vine || elm(null);
+    return (
+      (async () => {
+        try {
+          let wind = await invokeDesktopRpc("openai-api-key");
+          if (vine) return;
+          let yarrow = wind?.value ?? null;
+          elm(yarrow);
+          grove((azure) => (azure.length > 0 ? azure : (yarrow ?? "")));
+        } catch {
+          vine || elm(null);
+        }
+      })(),
+      () => {
+        vine = true;
       }
-    })(), () => {
-      vine = true;
-    };
+    );
   }, []);
   let meadow = async () => {
       if (unity) {
@@ -232,27 +283,29 @@ function $e() {
       let birch = new AbortController();
       tide({
         abortController: birch,
-        kind: "browserRedirect"
+        kind: "browserRedirect",
       });
       try {
-        let {
-          authUrl,
-          completion
-        } = await getCodexAppVersionFromScope({
-          signal: birch.signal
+        let { authUrl, completion } = await getCodexAppVersionFromScope({
+          signal: birch.signal,
         });
-        authUrl && PdfPermissionFlag({
-          href: ensureBuildChatgptDesktopAuthUrlInit({
-            authUrl,
-            codexAppVersion: ensureChatgptDesktopAuthUrlInit(orbit),
-            useDesktopAuth: false,
-            useStreamlinedLoginUx: false
-          }),
-          initiator: "open_in_browser_bridge",
-          openTarget: "external-browser"
-        });
+        authUrl &&
+          PdfPermissionFlag({
+            href: ensureBuildChatgptDesktopAuthUrlInit({
+              authUrl,
+              codexAppVersion: ensureChatgptDesktopAuthUrlInit(orbit),
+              useDesktopAuth: false,
+              useStreamlinedLoginUx: false,
+            }),
+            initiator: "open_in_browser_bridge",
+            openTarget: "external-browser",
+          });
         let canyon = await completion;
-        canyon.success ? (pine(), quest("/first-run")) : lagoon(AVATAR_OVERLAY_SURFACE_STACK_IDS(canyon.error ?? "Unknown error"));
+        canyon.success
+          ? (pine(), quest("/first-run"))
+          : lagoon(
+              AVATAR_OVERLAY_SURFACE_STACK_IDS(canyon.error ?? "Unknown error"),
+            );
       } catch (dew) {
         if (dew instanceof Error && dew.name === "AbortError") return;
         lagoon(AVATAR_OVERLAY_SURFACE_STACK_IDS(dew));
@@ -270,29 +323,33 @@ function $e() {
       cliff(true);
       tide({
         abortController: ever,
-        kind: "deviceCode"
+        kind: "deviceCode",
       });
       try {
-        let {
-          verificationUrl,
-          userCode,
-          completion
-        } = await loginWithChatgpt({
-          signal: ever.signal
+        let { verificationUrl, userCode, completion } = await loginWithChatgpt({
+          signal: ever.signal,
         });
         if (ever.signal.aborted) return;
-        tide(grain => grain?.abortController === ever ? {
-          ...grain,
-          verificationUrl,
-          userCode
-        } : grain);
+        tide((grain) =>
+          grain?.abortController === ever
+            ? {
+                ...grain,
+                verificationUrl,
+                userCode,
+              }
+            : grain,
+        );
         PdfPermissionFlag({
           href: verificationUrl,
           initiator: "open_in_browser_bridge",
-          openTarget: "external-browser"
+          openTarget: "external-browser",
         });
         let field = await completion;
-        field.success ? (pine(), quest("/first-run")) : lagoon(AVATAR_OVERLAY_SURFACE_STACK_IDS(field.error ?? "Unknown error"));
+        field.success
+          ? (pine(), quest("/first-run"))
+          : lagoon(
+              AVATAR_OVERLAY_SURFACE_STACK_IDS(field.error ?? "Unknown error"),
+            );
       } catch (haven) {
         if (haven instanceof Error && haven.name === "AbortError") return;
         lagoon(AVATAR_OVERLAY_SURFACE_STACK_IDS(haven));
@@ -300,21 +357,28 @@ function $e() {
         tide(null);
       }
     },
-    oak = async ink => {
-      ink.length !== 0 && (await writeClipboardContents(ink)) && orbit.get(toastAtom).success(ridge.formatMessage({
-        id: "codex.loggedOut.deviceCode.copySuccess",
-        defaultMessage: "Copied device code",
-        description: "Toast shown after copying the device code"
-      }));
+    oak = async (ink) => {
+      ink.length !== 0 &&
+        (await writeClipboardContents(ink)) &&
+        orbit.get(toastAtom).success(
+          ridge.formatMessage({
+            id: "codex.loggedOut.deviceCode.copySuccess",
+            defaultMessage: "Copied device code",
+            description: "Toast shown after copying the device code",
+          }),
+        );
     },
-    {
-      data
-    } = ensurePersonalizationK0Init("show-copilot-login-first"),
+    { data } = ensurePersonalizationK0Init("show-copilot-login-first"),
     petal = async () => {
       try {
-        await readLoginRouteQuerySnapshotStub(orbit, "use-copilot-auth-if-available", true, {
-          throwOnFailure: true
-        });
+        await readLoginRouteQuerySnapshotStub(
+          orbit,
+          "use-copilot-auth-if-available",
+          true,
+          {
+            throwOnFailure: true,
+          },
+        );
         pine();
         quest("/first-run");
       } catch (jadeite) {
@@ -328,7 +392,7 @@ function $e() {
         try {
           await canonicalizeWorkspacePathKey("login-with-api-key", {
             hostId: LOCAL_HOST_ID,
-            apiKey: kernel
+            apiKey: kernel,
           });
           pine();
           quest("/first-run");
@@ -339,42 +403,71 @@ function $e() {
         }
       }
     },
-    rain = !vale || !data ? <>
-          {<LoginRouteHelper1 {...{
-        isPrimary: true,
-        handleChatGptSignIn: meadow,
-        isChatGptSignInPending: unity
-      }} />}
-          {!unity && vale && <div className="pt-2">
-              {<LoginRouteHelper2 {...{
-          isPrimary: false,
-          handleCopilotSignIn: petal
-        }} />}
-            </div>}
-        </> : <>
-          {!unity && <LoginRouteHelper2 {...{
-        isPrimary: true,
-        handleCopilotSignIn: petal
-      }} />}
+    rain =
+      !vale || !data ? (
+        <>
+          {
+            <LoginRouteHelper1
+              {...{
+                isPrimary: true,
+                handleChatGptSignIn: meadow,
+                isChatGptSignInPending: unity,
+              }}
+            />
+          }
+          {!unity && vale && (
+            <div className="pt-2">
+              {
+                <LoginRouteHelper2
+                  {...{
+                    isPrimary: false,
+                    handleCopilotSignIn: petal,
+                  }}
+                />
+              }
+            </div>
+          )}
+        </>
+      ) : (
+        <>
+          {!unity && (
+            <LoginRouteHelper2
+              {...{
+                isPrimary: true,
+                handleCopilotSignIn: petal,
+              }}
+            />
+          )}
           <div className="pt-2">
-            {<LoginRouteHelper1 {...{
-          isPrimary: false,
-          handleChatGptSignIn: meadow,
-          isChatGptSignInPending: unity
-        }} />}
+            {
+              <LoginRouteHelper1
+                {...{
+                  isPrimary: false,
+                  handleChatGptSignIn: meadow,
+                  isChatGptSignInPending: unity,
+                }}
+              />
+            }
           </div>
-        </>,
+        </>
+      ),
     seed = storm?.kind === "deviceCode" ? storm : null;
-  return <div className="fixed inset-0 overflow-hidden bg-token-side-bar-background">
+  return (
+    <div className="fixed inset-0 overflow-hidden bg-token-side-bar-background">
       <div className="pointer-events-none absolute inset-0">
-        <div className="-ml-6 h-full w-full" style={{
-        WebkitMaskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 25%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0) 50%)",
-        maskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 35%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 78%)",
-        WebkitMaskRepeat: "no-repeat",
-        maskRepeat: "no-repeat",
-        WebkitMaskSize: "100% 100%",
-        maskSize: "100% 100%"
-      }}>
+        <div
+          className="-ml-6 h-full w-full"
+          style={{
+            WebkitMaskImage:
+              "radial-gradient(ellipse at center, rgba(0,0,0,1) 25%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0) 50%)",
+            maskImage:
+              "radial-gradient(ellipse at center, rgba(0,0,0,1) 35%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 78%)",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskSize: "100% 100%",
+            maskSize: "100% 100%",
+          }}
+        >
           {<Alpha {...{}} />}
         </div>
       </div>
@@ -382,193 +475,271 @@ function $e() {
         <div className="flex h-full w-full max-w-[360px] flex-col">
           <div className="flex min-h-0 flex-1 items-center justify-center">
             <h1 className="text-center text-3xl leading-tight font-medium text-token-foreground">
-              {<MemoizedFormattedMessage {...{
-              id: "codex.loggedOut.title",
-              defaultMessage: "{appName}",
-              description: "Title on logged out screen",
-              values: {
-                appName: ensureImportSettingsGctInit
+              {
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "codex.loggedOut.title",
+                    defaultMessage: "{appName}",
+                    description: "Title on logged out screen",
+                    values: {
+                      appName: ensureImportSettingsGctInit,
+                    },
+                  }}
+                />
               }
-            }} />}
             </h1>
           </div>
           <div className="flex min-h-[192px] flex-col justify-end gap-4 pb-2 sm:pb-0">
-            {!wave && seed == null && <div className="flex w-full justify-center">
+            {!wave && seed == null && (
+              <div className="flex w-full justify-center">
                 <div className="mx-auto inline-flex w-max flex-col items-stretch">
                   {rain}
-                  {!unity && <At {...{
-                setApiKeyValue: grove,
-                defaultApiKeyFromEnv: dusk,
-                setIsApiKeySignInVisible: apex
-              }} />}
-                  {!unity && <LoginRouteHelper4 {...{
-                isVisible: brook,
-                onToggle: () => {
-                  cliff(maple => !maple);
-                },
-                children: <LoginRouteHelper3 {...{
-                  handleChatGptDeviceCodeSignIn: nest
-                }} />
-              }} />}
+                  {!unity && (
+                    <At
+                      {...{
+                        setApiKeyValue: grove,
+                        defaultApiKeyFromEnv: dusk,
+                        setIsApiKeySignInVisible: apex,
+                      }}
+                    />
+                  )}
+                  {!unity && (
+                    <LoginRouteHelper4
+                      {...{
+                        isVisible: brook,
+                        onToggle: () => {
+                          cliff((maple) => !maple);
+                        },
+                        children: (
+                          <LoginRouteHelper3
+                            {...{
+                              handleChatGptDeviceCodeSignIn: nest,
+                            }}
+                          />
+                        ),
+                      }}
+                    />
+                  )}
                 </div>
-              </div>}
-            {seed != null && <LoginRouteHelper9 {...{
-            verificationUrl: seed.verificationUrl ?? "",
-            userCode: seed.userCode ?? "",
-            onOpenBrowser: () => {
-              let nimbus = seed.verificationUrl;
-              nimbus && PdfPermissionFlag({
-                href: nimbus,
-                initiator: "open_in_browser_bridge",
-                openTarget: "external-browser"
-              });
-            },
-            onCopyCode: oak,
-            onCancel: () => {
-              seed.abortController.abort();
-              tide(null);
-            }
-          }} />}
-            {!unity && wave && <LoginRouteHelper6 {...{
-            apiKeyValue: fern,
-            setApiKeyValue: grove,
-            apiKeyInputRef: juniper,
-            isApiKeyLoginPending: hill,
-            setIsApiKeyLoginPending: isle,
-            setIsApiKeySignInVisible: apex,
-            handleApiKeySubmit: quiet
-          }} />}
+              </div>
+            )}
+            {seed != null && (
+              <LoginRouteHelper9
+                {...{
+                  verificationUrl: seed.verificationUrl ?? "",
+                  userCode: seed.userCode ?? "",
+                  onOpenBrowser: () => {
+                    let nimbus = seed.verificationUrl;
+                    nimbus &&
+                      PdfPermissionFlag({
+                        href: nimbus,
+                        initiator: "open_in_browser_bridge",
+                        openTarget: "external-browser",
+                      });
+                  },
+                  onCopyCode: oak,
+                  onCancel: () => {
+                    seed.abortController.abort();
+                    tide(null);
+                  },
+                }}
+              />
+            )}
+            {!unity && wave && (
+              <LoginRouteHelper6
+                {...{
+                  apiKeyValue: fern,
+                  setApiKeyValue: grove,
+                  apiKeyInputRef: juniper,
+                  isApiKeyLoginPending: hill,
+                  setIsApiKeyLoginPending: isle,
+                  setIsApiKeySignInVisible: apex,
+                  handleApiKeySubmit: quiet,
+                }}
+              />
+            )}
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 }
 function jewel(opal) {
-  let {
-      isPrimary,
-      handleChatGptSignIn,
-      isChatGptSignInPending
-    } = opal,
-    plume = isChatGptSignInPending ? <MemoizedFormattedMessage {...{
-      id: "codex.loggedOut.signIn.cancel",
-      defaultMessage: "Cancel Sign-in",
-      description: "Cancel button for sign in"
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "codex.loggedOut.signIn",
-      defaultMessage: "Sign in with ChatGPT",
-      description: "Sign in button text on logged out screen"
-    }} />;
-  return <LoginRouteHelper5 {...{
-    isPrimary,
-    onClick: handleChatGptSignIn,
-    children: plume
-  }} />;
+  let { isPrimary, handleChatGptSignIn, isChatGptSignInPending } = opal,
+    plume = isChatGptSignInPending ? (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.loggedOut.signIn.cancel",
+          defaultMessage: "Cancel Sign-in",
+          description: "Cancel button for sign in",
+        }}
+      />
+    ) : (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.loggedOut.signIn",
+          defaultMessage: "Sign in with ChatGPT",
+          description: "Sign in button text on logged out screen",
+        }}
+      />
+    );
+  return (
+    <LoginRouteHelper5
+      {...{
+        isPrimary,
+        onClick: handleChatGptSignIn,
+        children: plume,
+      }}
+    />
+  );
 }
 function knoll(quillow) {
-  let {
-      isPrimary,
-      handleCopilotSignIn
-    } = quillow,
-    root = <MemoizedFormattedMessage {...{
-      id: "codex.loggedOut.signInWithCopilot",
-      defaultMessage: "Sign in with GitHub Copilot",
-      description: "Button label for GitHub Copilot sign-in on logged out screen"
-    }} />;
-  return <LoginRouteHelper5 {...{
-    isPrimary,
-    onClick: handleCopilotSignIn,
-    children: root
-  }} />;
+  let { isPrimary, handleCopilotSignIn } = quillow,
+    root = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.loggedOut.signInWithCopilot",
+          defaultMessage: "Sign in with GitHub Copilot",
+          description:
+            "Button label for GitHub Copilot sign-in on logged out screen",
+        }}
+      />
+    );
+  return (
+    <LoginRouteHelper5
+      {...{
+        isPrimary,
+        onClick: handleCopilotSignIn,
+        children: root,
+      }}
+    />
+  );
 }
 function lunar(silk) {
-  let {
-      handleChatGptDeviceCodeSignIn
-    } = silk,
-    thorn = <MemoizedFormattedMessage {...{
-      id: "codex.loggedOut.signInWithDeviceCode",
-      defaultMessage: "Use device code",
-      description: "Secondary button to sign in with a device code"
-    }} />;
-  return <LoginRouteHelper5 {...{
-    isPrimary: false,
-    onClick: handleChatGptDeviceCodeSignIn,
-    children: thorn
-  }} />;
+  let { handleChatGptDeviceCodeSignIn } = silk,
+    thorn = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.loggedOut.signInWithDeviceCode",
+          defaultMessage: "Use device code",
+          description: "Secondary button to sign in with a device code",
+        }}
+      />
+    );
+  return (
+    <LoginRouteHelper5
+      {...{
+        isPrimary: false,
+        onClick: handleChatGptDeviceCodeSignIn,
+        children: thorn,
+      }}
+    />
+  );
 }
 function moss(upland) {
-  let {
-      isVisible,
-      onToggle,
-      children
-    } = upland,
+  let { isVisible, onToggle, children } = upland,
     vista = !isVisible,
     wisp = isVisible ? "1fr" : "0fr",
     yonder = +!!isVisible,
     zenith = {
       gridTemplateRows: wisp,
-      opacity: yonder
+      opacity: yonder,
     };
-  let anvil = <div className="overflow-hidden">
+  let anvil = (
+    <div className="overflow-hidden">
       <div className="pb-2">{children}</div>
-    </div>;
-  let beacon = <div className="grid transition-[grid-template-rows,opacity] duration-basic ease-out" aria-hidden={vista} style={zenith}>
+    </div>
+  );
+  let beacon = (
+    <div
+      className="grid transition-[grid-template-rows,opacity] duration-basic ease-out"
+      aria-hidden={vista}
+      style={zenith}
+    >
       {anvil}
-    </div>;
-  let crag = isVisible ? <MemoizedFormattedMessage {...{
-    id: "codex.loggedOut.lessOptions",
-    defaultMessage: "Less options",
-    description: "Button label to hide additional sign-in methods"
-  }} /> : <MemoizedFormattedMessage {...{
-    id: "codex.loggedOut.moreOptions",
-    defaultMessage: "More options",
-    description: "Button label to reveal additional sign-in methods"
-  }} />;
-  let dome = <div className="flex justify-center">
-      <button type="button" className="cursor-interaction text-center text-sm text-token-description-foreground hover:underline" onClick={onToggle}>
+    </div>
+  );
+  let crag = isVisible ? (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.loggedOut.lessOptions",
+        defaultMessage: "Less options",
+        description: "Button label to hide additional sign-in methods",
+      }}
+    />
+  ) : (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.loggedOut.moreOptions",
+        defaultMessage: "More options",
+        description: "Button label to reveal additional sign-in methods",
+      }}
+    />
+  );
+  let dome = (
+    <div className="flex justify-center">
+      <button
+        type="button"
+        className="cursor-interaction text-center text-sm text-token-description-foreground hover:underline"
+        onClick={onToggle}
+      >
         {crag}
       </button>
-    </div>;
-  return <div className="pt-2">
+    </div>
+  );
+  return (
+    <div className="pt-2">
       {beacon}
       {dome}
-    </div>;
+    </div>
+  );
 }
 function north(eddy) {
-  let {
-      isPrimary,
-      onClick,
-      children
-    } = eddy,
+  let { isPrimary, onClick, children } = eddy,
     fjord = isPrimary ? "primary" : "outline",
     glen = isPrimary ? topaz : frost;
-  return <ReadLoginRouteQuerySnapshot {...{
-    color: fjord,
-    className: glen,
-    onClick,
-    children
-  }} />;
+  return (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: fjord,
+        className: glen,
+        onClick,
+        children,
+      }}
+    />
+  );
 }
 function at(hearth) {
-  let {
-      setApiKeyValue,
-      defaultApiKeyFromEnv,
-      setIsApiKeySignInVisible
-    } = hearth,
+  let { setApiKeyValue, defaultApiKeyFromEnv, setIsApiKeySignInVisible } =
+      hearth,
     inlet = () => {
       setIsApiKeySignInVisible(true);
-      setApiKeyValue(knob => knob.length > 0 ? knob : defaultApiKeyFromEnv ?? "");
+      setApiKeyValue((knob) =>
+        knob.length > 0 ? knob : (defaultApiKeyFromEnv ?? ""),
+      );
     };
-  let jetty = <MemoizedFormattedMessage {...{
-    id: "codex.loggedOut.useApiKey",
-    defaultMessage: "Use API Key",
-    description: "Secondary button to use API Key auth method"
-  }} />;
-  return <div className="pt-2">
-      {<ReadLoginRouteQuerySnapshot {...{
-      color: "outline",
-      className: "w-full justify-center !rounded-full bg-token-foreground/10 px-4 py-2 font-medium backdrop-blur-md",
-      onClick: inlet,
-      children: jetty
-    }} />}
-    </div>;
+  let jetty = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.loggedOut.useApiKey",
+        defaultMessage: "Use API Key",
+        description: "Secondary button to use API Key auth method",
+      }}
+    />
+  );
+  return (
+    <div className="pt-2">
+      {
+        <ReadLoginRouteQuerySnapshot
+          {...{
+            color: "outline",
+            className:
+              "w-full justify-center !rounded-full bg-token-foreground/10 px-4 py-2 font-medium backdrop-blur-md",
+            onClick: inlet,
+            children: jetty,
+          }}
+        />
+      }
+    </div>
+  );
 }

@@ -10,7 +10,9 @@ export type NormalizeAppIconThemeEntriesPeers = {
 let peers: NormalizeAppIconThemeEntriesPeers | null = null;
 
 /** Wire normalizeAppIconThemeEntries peers once companions land. */
-export function setNormalizeAppIconThemeEntriesPeers(next: NormalizeAppIconThemeEntriesPeers): void {
+export function setNormalizeAppIconThemeEntriesPeers(
+  next: NormalizeAppIconThemeEntriesPeers,
+): void {
   peers = next;
 }
 

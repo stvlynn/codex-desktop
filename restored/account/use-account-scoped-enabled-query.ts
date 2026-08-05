@@ -14,7 +14,9 @@ export type UseAccountScopedEnabledQueryPeers = {
 let peers: UseAccountScopedEnabledQueryPeers | null = null;
 
 /** Wire useAccountScopedEnabledQuery peers once companions land. */
-export function setUseAccountScopedEnabledQueryPeers(next: UseAccountScopedEnabledQueryPeers): void {
+export function setUseAccountScopedEnabledQueryPeers(
+  next: UseAccountScopedEnabledQueryPeers,
+): void {
   peers = next;
 }
 

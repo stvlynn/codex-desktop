@@ -94,10 +94,20 @@ const WindFifth: any = undefined;
 /** split companion stub */
 const YarrowFifth: any = undefined;
 
-import { buildChatgptDesktopAuthUrl, ensureBuildChatgptDesktopAuthUrlInit, ensureChatgptDesktopAuthUrlInit, getCodexAppVersionFromScope, loginWithChatgptDeviceCode } from "../../account/chatgpt-desktop-auth-url";
+import {
+  buildChatgptDesktopAuthUrl,
+  ensureBuildChatgptDesktopAuthUrlInit,
+  ensureChatgptDesktopAuthUrlInit,
+  getCodexAppVersionFromScope,
+  loginWithChatgptDeviceCode,
+} from "../../account/chatgpt-desktop-auth-url";
 import { isStartingProcessExpired as IsStartingProcessExpired } from "../../account/is-starting-process-expired";
 import { openInBrowser as OpenInBrowser } from "../../account/open-in-browser";
-import { appActionSidebarProjectRefSchema, appActionSidebarSectionRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  appActionSidebarSectionRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { ensureReviewFileAppActionAttrsInit } from "../../actions/ensure-review-file-app-action-attrs-init";
 import { buildRemoteSshConnectionsRefreshedPayload } from "../../analytics/build-remote-ssh-connections-refreshed-payload";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
@@ -117,11 +127,34 @@ import { ShellWidthDeltaContext } from "../../app-shell/shell-width-delta-contex
 import { APP_VERSION } from "../../app/app-version";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { PULL_REQUEST_FIX_AUTOMATION_PROMPT_HEADER } from "../../automations/pull-request-fix-prompt-header";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_CU_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_CU_Init,
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { Chatgpt2 } from "../../browser/chatgpt2";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
@@ -137,11 +170,37 @@ import { appServices } from "../../desktop/desktop-services";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { invokeDesktopRpc } from "../../desktop/invoke-desktop-rpc";
 import { DesktopPersistenceKeys } from "../../desktop/persistence-keys";
-import { CodexMobileSetupDialog, codexMobileSetupDialogConfig as CodexMobileSetupDialogConfig, CodexMobileSetupDialogOption, ensureCodexMobileSetupDialogInit, ensureCodexMobileSetupDialogLayoutInit, ensureCodexMobileSetupDialogStylesInit } from "../../devices/codex-mobile-setup-dialog";
-import { codexMobileSetupFlowC, codexMobileSetupFlowD, codexMobileSetupFlowF, codexMobileSetupFlowL, codexMobileSetupFlowN, codexMobileSetupFlowO, codexMobileSetupFlowP, codexMobileSetupFlowS, codexMobileSetupFlowT as CodexMobileSetupFlowT, codexMobileSetupFlowU } from "../../devices/codex-mobile-setup-flow";
-import { isWslHostSource, remoteControlHostKey, remoteSshCodexManagedHostKey, remoteSshDiscoveredHostKey } from "../../environments/remote-host-keys";
+import {
+  CodexMobileSetupDialog,
+  codexMobileSetupDialogConfig as CodexMobileSetupDialogConfig,
+  CodexMobileSetupDialogOption,
+  ensureCodexMobileSetupDialogInit,
+  ensureCodexMobileSetupDialogLayoutInit,
+  ensureCodexMobileSetupDialogStylesInit,
+} from "../../devices/codex-mobile-setup-dialog";
+import {
+  codexMobileSetupFlowC,
+  codexMobileSetupFlowD,
+  codexMobileSetupFlowF,
+  codexMobileSetupFlowL,
+  codexMobileSetupFlowN,
+  codexMobileSetupFlowO,
+  codexMobileSetupFlowP,
+  codexMobileSetupFlowS,
+  codexMobileSetupFlowT as CodexMobileSetupFlowT,
+  codexMobileSetupFlowU,
+} from "../../devices/codex-mobile-setup-flow";
+import {
+  isWslHostSource,
+  remoteControlHostKey,
+  remoteSshCodexManagedHostKey,
+  remoteSshDiscoveredHostKey,
+} from "../../environments/remote-host-keys";
 import { MOBILE_MFA_SETUP_FEATURE_GATE_ID } from "../../feature-gates/feature-gate-ids";
-import { ensureTanstackReactFormApiInit, useTanstackForm } from "../../forms/tanstack-react-form";
+import {
+  ensureTanstackReactFormApiInit,
+  useTanstackForm,
+} from "../../forms/tanstack-react-form";
 import { ensureGitMetadataQueryInit } from "../../git/ensure-git-metadata-query-init";
 import { useEventCallback } from "../../hooks/use-event-callback";
 import { useGateEnabledWithAccountData } from "../../hooks/use-gate-enabled-with-account-data";
@@ -167,11 +226,17 @@ import { ensureHooksFocusIconInit } from "../../icons/hooks-settings-icons";
 import { TerminalFileIcon } from "../../icons/terminal-file-icon";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { findSidebarSectionElement, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
-import { initOnboardingLoginContent, OnboardingLoginContent } from "../../onboarding/onboarding-login-content";
+import {
+  initOnboardingLoginContent,
+  OnboardingLoginContent,
+} from "../../onboarding/onboarding-login-content";
 import { useTeenOnboardingAgeGate } from "../../onboarding/use-teen-onboarding-age-gate";
 import { AVATAR_OVERLAY_SURFACE_STACK_IDS } from "../../overlay/avatar-overlay-surface-stack-ids";
 import { PdfPermissionFlag } from "../../pdf/pdf-permission-flag";
@@ -188,7 +253,10 @@ import { CopyButton } from "../../ui/copy-button";
 import { DeferredUiB } from "../../ui/deferred-ui-b";
 import { DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { iconXs } from "../../ui/icon-xs";
 import { macOS4 } from "../../ui/mac-os4";
@@ -205,11 +273,20 @@ import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { posixPathBasename } from "../../utils/posix-path-basename";
 import { svgToDataUri } from "../../utils/svg-to-data-uri";
-import { ensureImportSettingsCLInit, ensurePersonalizationCInit as EnsurePersonalizationCInit, ensurePersonalizationG0Init, ensurePersonalizationJutInit, ensurePersonalizationK0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+  ensurePersonalizationG0Init,
+  ensurePersonalizationJutInit,
+  ensurePersonalizationK0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { generalDesktopSettingsDefinitions } from "../general-desktop-settings-definitions";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { useChronicleSettingsSection } from "../use-chronicle-settings-section";
 import { useSettingValue } from "../use-setting-value";
 
@@ -234,251 +311,423 @@ function knoll(gearPrime) {
       editingHostId,
       onOpenChange,
       onSubmit,
-      isSaving
+      isSaving,
     } = gearPrime,
     hingePrime = useIntl(),
     ironPrime = mode === "edit" && draft.targetKind === "alias",
-    jointPrime = tappetPrime => {
+    jointPrime = (tappetPrime) => {
       let arborPrime = honey({
         draft: tappetPrime,
         existingConnections,
-        editingHostId
+        editingHostId,
       });
       if (arborPrime.length !== 0) return arborPrime;
     };
   let keystonePrime = jointPrime,
     latchPrime = {
-      onChange: bushingPrime => {
-        let {
-          value
-        } = bushingPrime;
+      onChange: (bushingPrime) => {
+        let { value } = bushingPrime;
         return keystonePrime(value);
       },
-      onSubmit: collarPrime => {
-        let {
-          value
-        } = collarPrime;
+      onSubmit: (collarPrime) => {
+        let { value } = collarPrime;
         return keystonePrime(value);
-      }
+      },
     };
-  let motorPrime = dowelPrime => {
-    let {
-      value
-    } = dowelPrime;
+  let motorPrime = (dowelPrime) => {
+    let { value } = dowelPrime;
     isSaving || onSubmit(value);
   };
   let nutPrime = {
     defaultValues: draft,
     validators: latchPrime,
-    onSubmit: motorPrime
+    onSubmit: motorPrime,
   };
   let PistonPrime = useTanstackForm(nutPrime),
-    rivetPrime = <MemoizedFormattedMessage {...{
-      id: "settings.remoteConnections.dialog.close",
-      defaultMessage: "Close",
-      description: "Accessible label for closing the remote connection editor dialog"
-    }} />;
+    rivetPrime = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.remoteConnections.dialog.close",
+          defaultMessage: "Close",
+          description:
+            "Accessible label for closing the remote connection editor dialog",
+        }}
+      />
+    );
   let screwPrime = mode === "add" ? "default" : "compact",
-    torquePrime = event => {
+    torquePrime = (event) => {
       event.preventDefault();
       PistonPrime.handleSubmit();
     };
-  let valvePrime = mode === "add" ? <MemoizedFormattedMessage {...{
-    id: "settings.remoteConnections.dialog.addTitle",
-    defaultMessage: "Add SSH connection",
-    description: "Title for add remote connection dialog"
-  }} /> : <MemoizedFormattedMessage {...{
-    id: "settings.remoteConnections.dialog.editTitle",
-    defaultMessage: "Edit SSH connection",
-    description: "Title for edit remote connection dialog"
-  }} />;
-  let axlePrime = mode === "edit" && editingHostId != null ? <span className="inline-flex min-w-0 items-center gap-1.5">
-        {<DeferredConversationSh {...{
-      className: "icon-xs shrink-0",
-      hostId: editingHostId
-    }} />}
+  let valvePrime =
+    mode === "add" ? (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.remoteConnections.dialog.addTitle",
+          defaultMessage: "Add SSH connection",
+          description: "Title for add remote connection dialog",
+        }}
+      />
+    ) : (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.remoteConnections.dialog.editTitle",
+          defaultMessage: "Edit SSH connection",
+          description: "Title for edit remote connection dialog",
+        }}
+      />
+    );
+  let axlePrime =
+    mode === "edit" && editingHostId != null ? (
+      <span className="inline-flex min-w-0 items-center gap-1.5">
+        {
+          <DeferredConversationSh
+            {...{
+              className: "icon-xs shrink-0",
+              hostId: editingHostId,
+            }}
+          />
+        }
         <span className="truncate">{draft.displayName}</span>
-      </span> : undefined;
-  let bracketPrime = <DeferredUiU {...{
-    children: <DeferredUiH {...{
-      title: valvePrime,
-      subtitle: axlePrime
-    }} />
-  }} />;
-  let clampPrime = flangePrime => isSaving || flangePrime.submissionAttempts === 0 ? [] : flangePrime.errorMap.onChange ?? flangePrime.errorMap.onSubmit ?? [];
-  let drillPrime = <PistonPrime.Subscribe {...{
-    selector: clampPrime,
-    children: moss
-  }} />;
-  let enginePrime = gibPrime => <RidgeFifth {...{
-    label: <MemoizedFormattedMessage {...{
-      id: "settings.remoteConnections.dialog.field.displayName",
-      defaultMessage: "Display name",
-      description: "Label for display name field in remote connection editor dialog"
-    }} />,
-    value: gibPrime.state.value,
-    onChange: gibPrime.handleChange,
-    onBlur: gibPrime.handleBlur,
-    disabled: isSaving
-  }} />;
-  let framePrime = <PistonPrime.Field {...{
-    name: "displayName",
-    children: enginePrime
-  }} />;
-  let gasketPrime = hubPrime => <RidgeFifth {...{
-    label: ironPrime ? <MemoizedFormattedMessage {...{
-      id: "settings.remoteConnections.dialog.field.alias",
-      defaultMessage: "Alias",
-      description: "Label for SSH alias field in remote connection editor dialog"
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "settings.remoteConnections.dialog.field.sshHost",
-      defaultMessage: "Hostname",
-      description: "Label for SSH target field in remote connection editor dialog"
-    }} />,
-    placeholder: ironPrime ? undefined : hingePrime.formatMessage({
-      id: "settings.remoteConnections.dialog.field.sshHost.placeholder",
-      defaultMessage: "host.com or user@host.com",
-      description: "Placeholder for SSH target field in remote connection editor dialog"
-    }),
-    value: hubPrime.state.value,
-    onChange: hubPrime.handleChange,
-    onBlur: hubPrime.handleBlur,
-    disabled: isSaving || ironPrime
-  }} />;
-  let handlePrime = <PistonPrime.Field {...{
-    name: "sshHost",
-    children: gasketPrime
-  }} />;
-  let insertPrime = ironPrime ? null : <>
-        {<PistonPrime.Field {...{
-      name: "sshPort",
-      children: idlerPrime => <RidgeFifth {...{
-        label: <>
-                        {<MemoizedFormattedMessage {...{
-            id: "settings.remoteConnections.dialog.field.sshPort",
-            defaultMessage: "SSH port",
-            description: "Label for SSH port field in remote connection editor dialog"
-          }} />}{" "}
-                        <span className="font-normal text-token-text-secondary">
-                          {<MemoizedFormattedMessage {...{
-              id: "settings.remoteConnections.dialog.field.optional",
-              defaultMessage: "(optional)",
-              description: "Marker shown next to optional fields in the remote connection editor dialog"
-            }} />}
-                        </span>
-                      </>,
-        value: idlerPrime.state.value,
-        onChange: idlerPrime.handleChange,
-        onBlur: idlerPrime.handleBlur,
-        disabled: isSaving
-      }} />
-    }} />}
-        {<PistonPrime.Field {...{
-      name: "authMode",
-      children: jigPrime => <AppInitialPl ariaLabel={hingePrime.formatMessage({
-        id: "settings.remoteConnections.dialog.authMode.ariaLabel",
-        defaultMessage: "SSH authentication method",
-        description: "Accessible label for choosing the SSH authentication method in the remote connection editor dialog"
-      })} fullWidth={true} options={[{
-        id: "none",
+      </span>
+    ) : undefined;
+  let bracketPrime = (
+    <DeferredUiU
+      {...{
+        children: (
+          <DeferredUiH
+            {...{
+              title: valvePrime,
+              subtitle: axlePrime,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let clampPrime = (flangePrime) =>
+    isSaving || flangePrime.submissionAttempts === 0
+      ? []
+      : (flangePrime.errorMap.onChange ?? flangePrime.errorMap.onSubmit ?? []);
+  let drillPrime = (
+    <PistonPrime.Subscribe
+      {...{
+        selector: clampPrime,
+        children: moss,
+      }}
+    />
+  );
+  let enginePrime = (gibPrime) => (
+    <RidgeFifth
+      {...{
+        label: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.remoteConnections.dialog.field.displayName",
+              defaultMessage: "Display name",
+              description:
+                "Label for display name field in remote connection editor dialog",
+            }}
+          />
+        ),
+        value: gibPrime.state.value,
+        onChange: gibPrime.handleChange,
+        onBlur: gibPrime.handleBlur,
         disabled: isSaving,
-        label: <MemoizedFormattedMessage {...{
-          id: "settings.remoteConnections.dialog.authMode.none",
-          defaultMessage: "No Auth",
-          description: "Option label for using no explicit SSH identity file"
-        }} />
-      }, {
-        id: "identity",
-        disabled: isSaving,
-        label: <MemoizedFormattedMessage {...{
-          id: "settings.remoteConnections.dialog.authMode.identity",
-          defaultMessage: "Identity",
-          description: "Option label for using an SSH identity file"
-        }} />
-      }]} selectedId={jigPrime.state.value} onSelect={jigPrime.handleChange} />
-    }} />}
-        {<PistonPrime.Subscribe {...{
-      selector: lunar,
-      children: keeperPrime => keeperPrime === "identity" ? <PistonPrime.Field {...{
-        name: "identity",
-        children: lugPrime => <RidgeFifth {...{
-          label: <MemoizedFormattedMessage {...{
-            id: "settings.remoteConnections.dialog.field.identity",
-            defaultMessage: "Identity file path",
-            description: "Label for required identity file path field in remote connection editor dialog"
-          }} />,
-          value: lugPrime.state.value,
-          onChange: lugPrime.handleChange,
-          onBlur: lugPrime.handleBlur,
-          disabled: isSaving
-        }} />
-      }} /> : null
-    }} />}
-      </>;
-  let jacketPrime = <DeferredUiU {...{
-    children: <div className="grid grid-cols-1 gap-4">
+      }}
+    />
+  );
+  let framePrime = (
+    <PistonPrime.Field
+      {...{
+        name: "displayName",
+        children: enginePrime,
+      }}
+    />
+  );
+  let gasketPrime = (hubPrime) => (
+    <RidgeFifth
+      {...{
+        label: ironPrime ? (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.remoteConnections.dialog.field.alias",
+              defaultMessage: "Alias",
+              description:
+                "Label for SSH alias field in remote connection editor dialog",
+            }}
+          />
+        ) : (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.remoteConnections.dialog.field.sshHost",
+              defaultMessage: "Hostname",
+              description:
+                "Label for SSH target field in remote connection editor dialog",
+            }}
+          />
+        ),
+        placeholder: ironPrime
+          ? undefined
+          : hingePrime.formatMessage({
+              id: "settings.remoteConnections.dialog.field.sshHost.placeholder",
+              defaultMessage: "host.com or user@host.com",
+              description:
+                "Placeholder for SSH target field in remote connection editor dialog",
+            }),
+        value: hubPrime.state.value,
+        onChange: hubPrime.handleChange,
+        onBlur: hubPrime.handleBlur,
+        disabled: isSaving || ironPrime,
+      }}
+    />
+  );
+  let handlePrime = (
+    <PistonPrime.Field
+      {...{
+        name: "sshHost",
+        children: gasketPrime,
+      }}
+    />
+  );
+  let insertPrime = ironPrime ? null : (
+    <>
+      {
+        <PistonPrime.Field
+          {...{
+            name: "sshPort",
+            children: (idlerPrime) => (
+              <RidgeFifth
+                {...{
+                  label: (
+                    <>
+                      {
+                        <MemoizedFormattedMessage
+                          {...{
+                            id: "settings.remoteConnections.dialog.field.sshPort",
+                            defaultMessage: "SSH port",
+                            description:
+                              "Label for SSH port field in remote connection editor dialog",
+                          }}
+                        />
+                      }{" "}
+                      <span className="font-normal text-token-text-secondary">
+                        {
+                          <MemoizedFormattedMessage
+                            {...{
+                              id: "settings.remoteConnections.dialog.field.optional",
+                              defaultMessage: "(optional)",
+                              description:
+                                "Marker shown next to optional fields in the remote connection editor dialog",
+                            }}
+                          />
+                        }
+                      </span>
+                    </>
+                  ),
+                  value: idlerPrime.state.value,
+                  onChange: idlerPrime.handleChange,
+                  onBlur: idlerPrime.handleBlur,
+                  disabled: isSaving,
+                }}
+              />
+            ),
+          }}
+        />
+      }
+      {
+        <PistonPrime.Field
+          {...{
+            name: "authMode",
+            children: (jigPrime) => (
+              <AppInitialPl
+                ariaLabel={hingePrime.formatMessage({
+                  id: "settings.remoteConnections.dialog.authMode.ariaLabel",
+                  defaultMessage: "SSH authentication method",
+                  description:
+                    "Accessible label for choosing the SSH authentication method in the remote connection editor dialog",
+                })}
+                fullWidth={true}
+                options={[
+                  {
+                    id: "none",
+                    disabled: isSaving,
+                    label: (
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "settings.remoteConnections.dialog.authMode.none",
+                          defaultMessage: "No Auth",
+                          description:
+                            "Option label for using no explicit SSH identity file",
+                        }}
+                      />
+                    ),
+                  },
+                  {
+                    id: "identity",
+                    disabled: isSaving,
+                    label: (
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "settings.remoteConnections.dialog.authMode.identity",
+                          defaultMessage: "Identity",
+                          description:
+                            "Option label for using an SSH identity file",
+                        }}
+                      />
+                    ),
+                  },
+                ]}
+                selectedId={jigPrime.state.value}
+                onSelect={jigPrime.handleChange}
+              />
+            ),
+          }}
+        />
+      }
+      {
+        <PistonPrime.Subscribe
+          {...{
+            selector: lunar,
+            children: (keeperPrime) =>
+              keeperPrime === "identity" ? (
+                <PistonPrime.Field
+                  {...{
+                    name: "identity",
+                    children: (lugPrime) => (
+                      <RidgeFifth
+                        {...{
+                          label: (
+                            <MemoizedFormattedMessage
+                              {...{
+                                id: "settings.remoteConnections.dialog.field.identity",
+                                defaultMessage: "Identity file path",
+                                description:
+                                  "Label for required identity file path field in remote connection editor dialog",
+                              }}
+                            />
+                          ),
+                          value: lugPrime.state.value,
+                          onChange: lugPrime.handleChange,
+                          onBlur: lugPrime.handleBlur,
+                          disabled: isSaving,
+                        }}
+                      />
+                    ),
+                  }}
+                />
+              ) : null,
+          }}
+        />
+      }
+    </>
+  );
+  let jacketPrime = (
+    <DeferredUiU
+      {...{
+        children: (
+          <div className="grid grid-cols-1 gap-4">
             {framePrime}
             {handlePrime}
             {insertPrime}
           </div>
-  }} />;
+        ),
+      }}
+    />
+  );
   let knurlPrime = () => onOpenChange(false);
-  let leverPrime = <MemoizedFormattedMessage {...{
-    id: "settings.remoteConnections.dialog.cancel",
-    defaultMessage: "Cancel",
-    description: "Cancel button for remote connection editor dialog"
-  }} />;
-  let mountPrime = <ReadLoginRouteQuerySnapshot {...{
-    color: "ghost",
-    type: "button",
-    disabled: isSaving,
-    onClick: knurlPrime,
-    children: leverPrime
-  }} />;
-  let nozzlePrime = <MemoizedFormattedMessage {...{
-    id: "settings.remoteConnections.dialog.apply",
-    defaultMessage: "Save",
-    description: "Save button for remote connection editor dialog"
-  }} />;
-  let platenPrime = <ReadLoginRouteQuerySnapshot {...{
-    color: "primary",
-    type: "submit",
-    loading: isSaving,
-    children: nozzlePrime
-  }} />;
-  let ratchetPrime = <DeferredUiU {...{
-    className: "pt-4",
-    children: <SetRemoteControlEnabledForHost {...{
-      children: [mountPrime, platenPrime]
-    }} />
-  }} />;
-  let shimPrime = <DeferredUiB {...{
-    as: "form",
-    onSubmit: torquePrime,
-    children: [bracketPrime, drillPrime, jacketPrime, ratchetPrime]
-  }} />;
-  return <UsePointerSurfaceInteractionGate {...{
-    open,
-    onOpenChange,
-    dialogCloseLabel: rivetPrime,
-    size: screwPrime,
-    children: shimPrime
-  }} />;
+  let leverPrime = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.remoteConnections.dialog.cancel",
+        defaultMessage: "Cancel",
+        description: "Cancel button for remote connection editor dialog",
+      }}
+    />
+  );
+  let mountPrime = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "ghost",
+        type: "button",
+        disabled: isSaving,
+        onClick: knurlPrime,
+        children: leverPrime,
+      }}
+    />
+  );
+  let nozzlePrime = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.remoteConnections.dialog.apply",
+        defaultMessage: "Save",
+        description: "Save button for remote connection editor dialog",
+      }}
+    />
+  );
+  let platenPrime = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "primary",
+        type: "submit",
+        loading: isSaving,
+        children: nozzlePrime,
+      }}
+    />
+  );
+  let ratchetPrime = (
+    <DeferredUiU
+      {...{
+        className: "pt-4",
+        children: (
+          <SetRemoteControlEnabledForHost
+            {...{
+              children: [mountPrime, platenPrime],
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let shimPrime = (
+    <DeferredUiB
+      {...{
+        as: "form",
+        onSubmit: torquePrime,
+        children: [bracketPrime, drillPrime, jacketPrime, ratchetPrime],
+      }}
+    />
+  );
+  return (
+    <UsePointerSurfaceInteractionGate
+      {...{
+        open,
+        onOpenChange,
+        dialogCloseLabel: rivetPrime,
+        size: screwPrime,
+        children: shimPrime,
+      }}
+    />
+  );
 }
 function lunar(mandrelPrime) {
   return mandrelPrime.values.authMode;
 }
 function moss(nipplePrime) {
-  return nipplePrime.length > 0 ? <DeferredUiU {...{
-    children: <div className="border-token-border-error rounded-md border p-2 text-sm text-token-error-foreground">
+  return nipplePrime.length > 0 ? (
+    <DeferredUiU
+      {...{
+        children: (
+          <div className="border-token-border-error rounded-md border p-2 text-sm text-token-error-foreground">
             {nipplePrime.map(north)}
           </div>
-  }} /> : null;
+        ),
+      }}
+    />
+  ) : null;
 }
 function north(orificePrime) {
-  return <div key={orificePrime}>
-      {pine(orificePrime)}
-    </div>;
+  return <div key={orificePrime}>{pine(orificePrime)}</div>;
 }
 function orbit(pinPrime) {
   let {
@@ -488,58 +737,104 @@ function orbit(pinPrime) {
       placeholder,
       onChange,
       onBlur,
-      disabled = false
+      disabled = false,
     } = pinPrime,
-    racePrime = <span className="text-xs font-medium text-token-text-primary">
+    racePrime = (
+      <span className="text-xs font-medium text-token-text-primary">
         {label}
-      </span>;
-  let sleevePrime = event => onChange(event.target.value);
-  let trunnionPrime = <input className="w-full rounded-md border border-token-input-border bg-token-input-background px-2.5 py-1.5 text-sm text-token-input-foreground outline-none placeholder:text-token-input-placeholder-foreground focus:border-token-focus-border disabled:bg-token-foreground/5 disabled:text-token-text-secondary disabled:opacity-100" value={value} disabled={disabled} onChange={sleevePrime} onBlur={onBlur} placeholder={placeholder} />;
-  let bossPrime = description ? <span className="text-xs text-token-text-secondary">{description}</span> : null;
-  return <label className="flex flex-col gap-1">
+      </span>
+    );
+  let sleevePrime = (event) => onChange(event.target.value);
+  let trunnionPrime = (
+    <input
+      className="w-full rounded-md border border-token-input-border bg-token-input-background px-2.5 py-1.5 text-sm text-token-input-foreground outline-none placeholder:text-token-input-placeholder-foreground focus:border-token-focus-border disabled:bg-token-foreground/5 disabled:text-token-text-secondary disabled:opacity-100"
+      value={value}
+      disabled={disabled}
+      onChange={sleevePrime}
+      onBlur={onBlur}
+      placeholder={placeholder}
+    />
+  );
+  let bossPrime = description ? (
+    <span className="text-xs text-token-text-secondary">{description}</span>
+  ) : null;
+  return (
+    <label className="flex flex-col gap-1">
       {racePrime}
       {trunnionPrime}
       {bossPrime}
-    </label>;
+    </label>
+  );
 }
 function pine(camPrime) {
   switch (camPrime) {
     case "displayNameRequired":
-      return <MemoizedFormattedMessage {...{
-        id: "settings.remoteConnections.dialog.field.displayName.error",
-        defaultMessage: "Display name is required",
-        description: "Error message for display name field in remote connection editor dialog"
-      }} />;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.remoteConnections.dialog.field.displayName.error",
+            defaultMessage: "Display name is required",
+            description:
+              "Error message for display name field in remote connection editor dialog",
+          }}
+        />
+      );
     case "sshHostRequired":
-      return <MemoizedFormattedMessage {...{
-        id: "settings.remoteConnections.dialog.field.sshHost.error",
-        defaultMessage: "Hostname is required",
-        description: "Error message for SSH target field in remote connection editor dialog"
-      }} />;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.remoteConnections.dialog.field.sshHost.error",
+            defaultMessage: "Hostname is required",
+            description:
+              "Error message for SSH target field in remote connection editor dialog",
+          }}
+        />
+      );
     case "sshPortInteger":
-      return <MemoizedFormattedMessage {...{
-        id: "settings.remoteConnections.dialog.field.sshPort.intError",
-        defaultMessage: "SSH port must be an integer",
-        description: "Error message for SSH port field when the input is not an integer"
-      }} />;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.remoteConnections.dialog.field.sshPort.intError",
+            defaultMessage: "SSH port must be an integer",
+            description:
+              "Error message for SSH port field when the input is not an integer",
+          }}
+        />
+      );
     case "sshPortRange":
-      return <MemoizedFormattedMessage {...{
-        id: "settings.remoteConnections.dialog.field.sshPort.rangeError",
-        defaultMessage: "SSH port must be between 1 and 65535",
-        description: "Error message for SSH port field when the input is not between 1 and 65535"
-      }} />;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.remoteConnections.dialog.field.sshPort.rangeError",
+            defaultMessage: "SSH port must be between 1 and 65535",
+            description:
+              "Error message for SSH port field when the input is not between 1 and 65535",
+          }}
+        />
+      );
     case "identityRequired":
-      return <MemoizedFormattedMessage {...{
-        id: "settings.remoteConnections.dialog.field.identity.error",
-        defaultMessage: "Identity file path is required",
-        description: "Error message for identity file path field in remote connection editor dialog"
-      }} />;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.remoteConnections.dialog.field.identity.error",
+            defaultMessage: "Identity file path is required",
+            description:
+              "Error message for identity file path field in remote connection editor dialog",
+          }}
+        />
+      );
     case "duplicateDisplayName":
-      return <MemoizedFormattedMessage {...{
-        id: "settings.remoteConnections.dialog.field.displayName.duplicateError",
-        defaultMessage: "A connection with this display name already exists",
-        description: "Error message for duplicate display name in the remote connection editor dialog"
-      }} />;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.remoteConnections.dialog.field.displayName.duplicateError",
+            defaultMessage:
+              "A connection with this display name already exists",
+            description:
+              "Error message for duplicate display name in the remote connection editor dialog",
+          }}
+        />
+      );
   }
 }
 var quest,
@@ -557,12 +852,16 @@ var quest,
   });
 function tide(detentPrime) {
   return {
-    refreshSource: CodexRemoteControlRefreshSource.CODEX_REMOTE_CONTROL_REFRESH_SOURCE_SETTINGS,
+    refreshSource:
+      CodexRemoteControlRefreshSource.CODEX_REMOTE_CONTROL_REFRESH_SOURCE_SETTINGS,
     connectionCount: detentPrime.length,
-    onlineConnectionCount: detentPrime.filter(item => item.online).length,
-    busyConnectionCount: detentPrime.filter(item => item.busy).length,
-    autoConnectConnectionCount: detentPrime.filter(item => item.autoConnect).length,
-    unsupportedAppServerVersionConnectionCount: detentPrime.filter(item => !GuardianApproval(item.appServerVersion)).length
+    onlineConnectionCount: detentPrime.filter((item) => item.online).length,
+    busyConnectionCount: detentPrime.filter((item) => item.busy).length,
+    autoConnectConnectionCount: detentPrime.filter((item) => item.autoConnect)
+      .length,
+    unsupportedAppServerVersionConnectionCount: detentPrime.filter(
+      (item) => !GuardianApproval(item.appServerVersion),
+    ).length,
   };
 }
 var unity = esmInit(() => {
@@ -573,17 +872,34 @@ var unity = esmInit(() => {
   wave,
   apex = esmInit(() => {
     react();
-    wave = eccentricPrime => <svg width={20} height={17} viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg" {...eccentricPrime}>
-        <path d="M15.249 2.12305C15.5937 2.12349 15.8739 2.40328 15.874 2.74805C15.874 3.09295 15.5938 3.37261 15.249 3.37305H13.582C13.2369 3.37305 12.957 3.09322 12.957 2.74805C12.9572 2.40301 13.237 2.12305 13.582 2.12305H15.249Z" fill="currentColor" />
-        <path fillRule="evenodd" clipRule="evenodd" d="M16.6055 0C18.0772 0.000106171 19.2705 1.19327 19.2705 2.66504V13.665C19.2705 15.1368 18.0772 16.33 16.6055 16.3301H11.665C10.1932 16.3301 9 15.1369 9 13.665V2.66504C9 1.1932 10.1932 0 11.665 0H16.6055ZM11.665 1.33008C10.9277 1.33008 10.3301 1.92774 10.3301 2.66504V13.665C10.3301 14.4023 10.9277 15 11.665 15H16.6055C17.3427 14.9999 17.9404 14.4023 17.9404 13.665V2.66504C17.9404 1.9278 17.3427 1.33018 16.6055 1.33008H11.665Z" fill="currentColor" />
-        <path d="M7.01172 2.42871C7.37613 2.43246 7.66968 2.72836 7.66992 3.09277C7.66992 3.4626 7.36785 3.76144 6.99805 3.75781L5.16797 3.74023C4.69057 3.74023 4.37242 3.74078 4.12793 3.76074C3.95074 3.77522 3.8451 3.79797 3.77441 3.82324L3.71387 3.84961C3.57265 3.92156 3.45081 4.0254 3.3584 4.15234L3.27539 4.28711C3.24032 4.35598 3.20684 4.46466 3.1875 4.70117C3.16752 4.94573 3.16699 5.2645 3.16699 5.74219V11.9932L7.00781 12.0137C7.37397 12.0157 7.66992 12.3135 7.66992 12.6797C7.66991 13.0482 7.37043 13.347 7.00195 13.3457L1.33008 13.3232V13.9082C1.33008 14.4614 1.77883 14.9102 2.33203 14.9102H7.73438C8.10163 14.9102 8.39941 15.2079 8.39941 15.5752C8.39941 15.9425 8.10163 16.2402 7.73438 16.2402H2.33203C1.04429 16.2402 0 15.1959 0 13.9082V12.6582L0.0136719 12.5244C0.0757242 12.2214 0.343718 11.9932 0.665039 11.9932H1.83691V5.74219C1.83691 5.28645 1.8359 4.90405 1.86133 4.59277C1.8874 4.27389 1.94437 3.9711 2.09082 3.68359L2.18066 3.52246C2.40467 3.15734 2.7256 2.85963 3.10938 2.66406L3.21777 2.61328C3.47293 2.50382 3.74025 2.45836 4.01953 2.43555C4.33074 2.41013 4.71239 2.41016 5.16797 2.41016L7.01172 2.42871Z" fill="currentColor" />
-      </svg>;
+    wave = (eccentricPrime) => (
+      <svg
+        width={20}
+        height={17}
+        viewBox="0 0 20 17"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        {...eccentricPrime}
+      >
+        <path
+          d="M15.249 2.12305C15.5937 2.12349 15.8739 2.40328 15.874 2.74805C15.874 3.09295 15.5938 3.37261 15.249 3.37305H13.582C13.2369 3.37305 12.957 3.09322 12.957 2.74805C12.9572 2.40301 13.237 2.12305 13.582 2.12305H15.249Z"
+          fill="currentColor"
+        />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M16.6055 0C18.0772 0.000106171 19.2705 1.19327 19.2705 2.66504V13.665C19.2705 15.1368 18.0772 16.33 16.6055 16.3301H11.665C10.1932 16.3301 9 15.1369 9 13.665V2.66504C9 1.1932 10.1932 0 11.665 0H16.6055ZM11.665 1.33008C10.9277 1.33008 10.3301 1.92774 10.3301 2.66504V13.665C10.3301 14.4023 10.9277 15 11.665 15H16.6055C17.3427 14.9999 17.9404 14.4023 17.9404 13.665V2.66504C17.9404 1.9278 17.3427 1.33018 16.6055 1.33008H11.665Z"
+          fill="currentColor"
+        />
+        <path
+          d="M7.01172 2.42871C7.37613 2.43246 7.66968 2.72836 7.66992 3.09277C7.66992 3.4626 7.36785 3.76144 6.99805 3.75781L5.16797 3.74023C4.69057 3.74023 4.37242 3.74078 4.12793 3.76074C3.95074 3.77522 3.8451 3.79797 3.77441 3.82324L3.71387 3.84961C3.57265 3.92156 3.45081 4.0254 3.3584 4.15234L3.27539 4.28711C3.24032 4.35598 3.20684 4.46466 3.1875 4.70117C3.16752 4.94573 3.16699 5.2645 3.16699 5.74219V11.9932L7.00781 12.0137C7.37397 12.0157 7.66992 12.3135 7.66992 12.6797C7.66991 13.0482 7.37043 13.347 7.00195 13.3457L1.33008 13.3232V13.9082C1.33008 14.4614 1.77883 14.9102 2.33203 14.9102H7.73438C8.10163 14.9102 8.39941 15.2079 8.39941 15.5752C8.39941 15.9425 8.10163 16.2402 7.73438 16.2402H2.33203C1.04429 16.2402 0 15.1959 0 13.9082V12.6582L0.0136719 12.5244C0.0757242 12.2214 0.343718 11.9932 0.665039 11.9932H1.83691V5.74219C1.83691 5.28645 1.8359 4.90405 1.86133 4.59277C1.8874 4.27389 1.94437 3.9711 2.09082 3.68359L2.18066 3.52246C2.40467 3.15734 2.7256 2.85963 3.10938 2.66406L3.21777 2.61328C3.47293 2.50382 3.74025 2.45836 4.01953 2.43555C4.33074 2.41013 4.71239 2.41016 5.16797 2.41016L7.01172 2.42871Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
   });
 function DollarI(followerPrime) {
-  let {
-      value,
-      placeholder
-    } = followerPrime,
+  let { value, placeholder } = followerPrime,
     guidePrime = value?.trim() ?? "";
   let helixPrime = guidePrime;
   if (helixPrime === "") {
@@ -592,11 +908,15 @@ function DollarI(followerPrime) {
     return <div className="truncate">{journalPrime}</div>;
   }
   let impellerPrime = <div className="truncate">{helixPrime}</div>;
-  return <OptionalTooltip {...{
-    tooltipContent: helixPrime,
-    openWhen: "trigger-overflows",
-    children: impellerPrime
-  }} />;
+  return (
+    <OptionalTooltip
+      {...{
+        tooltipContent: helixPrime,
+        openWhen: "trigger-overflows",
+        children: impellerPrime,
+      }}
+    />
+  );
 }
 var brook,
   cliff,
@@ -619,54 +939,100 @@ function fern(landPrime) {
       onDetails,
       onLogout,
       onRestart,
-      restartLabel
+      restartLabel,
     } = landPrime,
-    meshPrime = DetailsIcon === undefined ? ShellLayoutMetricsContext : DetailsIcon,
-    neckPrime = <CoerceLocalFilesystemPath {...{
-      label: actionsLabel
-    }} />;
-  let padPrime = <DropdownMenu.Item {...{
-    LeftIcon: meshPrime,
-    onSelect: onDetails,
-    children: detailsLabel
-  }} />;
-  let quillshaftPrime = editAction == null ? null : <DropdownMenu.Item {...{
-    LeftIcon: CopyButton,
-    disabled: editAction.disabled,
-    onSelect: editAction.onSelect,
-    tooltipText: editAction.disabled ? editAction.tooltip : null,
-    children: editAction.label
-  }} />;
-  let rollerPrime = restartLabel != null && onRestart != null ? <DropdownMenu.Item {...{
-    LeftIcon: AppIconAlt,
-    onSelect: onRestart,
-    children: restartLabel
-  }} /> : null;
-  let spindlePrime = onLogout == null ? null : <DropdownMenu.Item {...{
-    LeftIcon: AppIconEi,
-    onSelect: onLogout,
-    children: <MemoizedFormattedMessage {...{
-      id: "settings.remoteConnections.logout",
-      defaultMessage: "Logout",
-      description: "Menu item label to log out of a connected remote connection"
-    }} />
-  }} />;
-  let thrustPrime = deleteLabel != null && onDelete != null ? <>
+    meshPrime =
+      DetailsIcon === undefined ? ShellLayoutMetricsContext : DetailsIcon,
+    neckPrime = (
+      <CoerceLocalFilesystemPath
+        {...{
+          label: actionsLabel,
+        }}
+      />
+    );
+  let padPrime = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: meshPrime,
+        onSelect: onDetails,
+        children: detailsLabel,
+      }}
+    />
+  );
+  let quillshaftPrime =
+    editAction == null ? null : (
+      <DropdownMenu.Item
+        {...{
+          LeftIcon: CopyButton,
+          disabled: editAction.disabled,
+          onSelect: editAction.onSelect,
+          tooltipText: editAction.disabled ? editAction.tooltip : null,
+          children: editAction.label,
+        }}
+      />
+    );
+  let rollerPrime =
+    restartLabel != null && onRestart != null ? (
+      <DropdownMenu.Item
+        {...{
+          LeftIcon: AppIconAlt,
+          onSelect: onRestart,
+          children: restartLabel,
+        }}
+      />
+    ) : null;
+  let spindlePrime =
+    onLogout == null ? null : (
+      <DropdownMenu.Item
+        {...{
+          LeftIcon: AppIconEi,
+          onSelect: onLogout,
+          children: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.remoteConnections.logout",
+                defaultMessage: "Logout",
+                description:
+                  "Menu item label to log out of a connected remote connection",
+              }}
+            />
+          ),
+        }}
+      />
+    );
+  let thrustPrime =
+    deleteLabel != null && onDelete != null ? (
+      <>
         {<DropdownMenu.Separator {...{}} />}
-        {<DropdownMenu.Item {...{
-      LeftIcon: AppIconBO,
-      disabled: deleteDisabled,
-      onSelect: onDelete,
-      tooltipText: deleteDisabled ? deleteTooltip ?? null : null,
-      children: deleteLabel
-    }} />}
-      </> : null;
-  return <DropdownMenuPopover {...{
-    align: "end",
-    contentWidth: "menu",
-    triggerButton: neckPrime,
-    children: [padPrime, quillshaftPrime, rollerPrime, spindlePrime, thrustPrime]
-  }} />;
+        {
+          <DropdownMenu.Item
+            {...{
+              LeftIcon: AppIconBO,
+              disabled: deleteDisabled,
+              onSelect: onDelete,
+              tooltipText: deleteDisabled ? (deleteTooltip ?? null) : null,
+              children: deleteLabel,
+            }}
+          />
+        }
+      </>
+    ) : null;
+  return (
+    <DropdownMenuPopover
+      {...{
+        align: "end",
+        contentWidth: "menu",
+        triggerButton: neckPrime,
+        children: [
+          padPrime,
+          quillshaftPrime,
+          rollerPrime,
+          spindlePrime,
+          thrustPrime,
+        ],
+      }}
+    />
+  );
 }
 var grove,
   hill,
@@ -690,44 +1056,69 @@ function juniper(yokePrime) {
       hostId,
       icon,
       label,
-      status
+      status,
     } = yokePrime,
-    bafflePrime = label ?? <DollarI {...{
-      value: displayName
-    }} />;
+    bafflePrime = label ?? (
+      <DollarI
+        {...{
+          value: displayName,
+        }}
+      />
+    );
   let capstanPrime = bafflePrime,
     diaphragmPrime = icon ?? status,
-    elbowPrime = <span className="inline-flex size-3.5 shrink-0 items-center justify-center">
-        {<DeferredConversationSh {...{
-        className: "icon-2xs",
-        hostId
-      }} />}
-      </span>;
+    elbowPrime = (
+      <span className="inline-flex size-3.5 shrink-0 items-center justify-center">
+        {
+          <DeferredConversationSh
+            {...{
+              className: "icon-2xs",
+              hostId,
+            }}
+          />
+        }
+      </span>
+    );
   let ferrulePrime = <div className="min-w-0">{capstanPrime}</div>;
-  let grommetPrime = <div className="flex min-w-0 items-center gap-1.5">
+  let grommetPrime = (
+    <div className="flex min-w-0 items-center gap-1.5">
       {elbowPrime}
       {ferrulePrime}
-    </div>;
-  let headerPrime = icon != null && status != null ? <span className="inline-flex size-3.5 shrink-0 items-center justify-center">
+    </div>
+  );
+  let headerPrime =
+    icon != null && status != null ? (
+      <span className="inline-flex size-3.5 shrink-0 items-center justify-center">
         {status}
-      </span> : null;
-  let injectorPrime = <div className="flex min-w-0 items-center gap-1 text-token-text-secondary">
+      </span>
+    ) : null;
+  let injectorPrime = (
+    <div className="flex min-w-0 items-center gap-1 text-token-text-secondary">
       {headerPrime}
       {description}
-    </div>;
-  let jumperPrime = <div className="flex min-w-0 flex-col gap-1">
+    </div>
+  );
+  let jumperPrime = (
+    <div className="flex min-w-0 flex-col gap-1">
       {grommetPrime}
       {injectorPrime}
-    </div>;
-  let kerfPrime = <EnsurePersonalizationCInit {...{
-    className,
-    icon: diaphragmPrime,
-    label: jumperPrime,
-    control
-  }} />;
-  return <div aria-label={displayName} role="group">
+    </div>
+  );
+  let kerfPrime = (
+    <EnsurePersonalizationCInit
+      {...{
+        className,
+        icon: diaphragmPrime,
+        label: jumperPrime,
+        control,
+      }}
+    />
+  );
+  return (
+    <div aria-label={displayName} role="group">
       {kerfPrime}
-    </div>;
+    </div>
+  );
 }
 var lagoon,
   meadow,
@@ -738,38 +1129,66 @@ var lagoon,
     elm();
   });
 function oak(louverPrime, manifoldPrime) {
-  return !louverPrime.online || !GuardianApproval(louverPrime.appServerVersion) ? "block size-2 rounded-full bg-gray-400" : manifoldPrime === "error" ? "block size-2 rounded-full bg-token-charts-red" : manifoldPrime === "connected" ? louverPrime.busy ? "block size-2 rounded-full bg-token-charts-yellow" : "block size-2 rounded-full bg-token-charts-green" : "block size-2 rounded-full bg-gray-400";
+  return !louverPrime.online || !GuardianApproval(louverPrime.appServerVersion)
+    ? "block size-2 rounded-full bg-gray-400"
+    : manifoldPrime === "error"
+      ? "block size-2 rounded-full bg-token-charts-red"
+      : manifoldPrime === "connected"
+        ? louverPrime.busy
+          ? "block size-2 rounded-full bg-token-charts-yellow"
+          : "block size-2 rounded-full bg-token-charts-green"
+        : "block size-2 rounded-full bg-gray-400";
 }
 function petal(nipPrime, outletPrime, packingPrime) {
-  return outletPrime.online ? GuardianApproval(outletPrime.appServerVersion) ? packingPrime === "connecting" || packingPrime === "restarting" ? nipPrime.formatMessage({
-    id: "settings.remoteControlConnections.availability.connecting",
-    defaultMessage: "Connecting",
-    description: "Availability label for a remote control environment that is connecting"
-  }) : packingPrime === "error" ? nipPrime.formatMessage({
-    id: "settings.remoteControlConnections.availability.connectionFailed",
-    defaultMessage: "Connection failed",
-    description: "Availability label for a remote control environment whose app-server transport failed"
-  }) : packingPrime === "connected" ? outletPrime.busy ? nipPrime.formatMessage({
-    id: "settings.remoteControlConnections.availability.busy",
-    defaultMessage: "busy",
-    description: "Availability label for a remote control environment that is busy"
-  }) : nipPrime.formatMessage({
-    id: "settings.remoteControlConnections.availability.online",
-    defaultMessage: "online",
-    description: "Availability label for a remote control environment that is online"
-  }) : nipPrime.formatMessage({
-    id: "threadPage.remoteConnectionStatusBadge.disconnected",
-    defaultMessage: "Disconnected",
-    description: "Label shown when remote connection is unavailable"
-  }) : nipPrime.formatMessage({
-    id: "settings.remoteControlConnections.availability.remoteCodexUpdateRequired",
-    defaultMessage: "Please update ChatGPT on the remote device to the latest version",
-    description: "Availability label for an online remote Codex device that requires a newer version"
-  }) : nipPrime.formatMessage({
-    id: "settings.remoteControlConnections.availability.offline",
-    defaultMessage: "offline",
-    description: "Availability label for a remote control environment that is offline"
-  });
+  return outletPrime.online
+    ? GuardianApproval(outletPrime.appServerVersion)
+      ? packingPrime === "connecting" || packingPrime === "restarting"
+        ? nipPrime.formatMessage({
+            id: "settings.remoteControlConnections.availability.connecting",
+            defaultMessage: "Connecting",
+            description:
+              "Availability label for a remote control environment that is connecting",
+          })
+        : packingPrime === "error"
+          ? nipPrime.formatMessage({
+              id: "settings.remoteControlConnections.availability.connectionFailed",
+              defaultMessage: "Connection failed",
+              description:
+                "Availability label for a remote control environment whose app-server transport failed",
+            })
+          : packingPrime === "connected"
+            ? outletPrime.busy
+              ? nipPrime.formatMessage({
+                  id: "settings.remoteControlConnections.availability.busy",
+                  defaultMessage: "busy",
+                  description:
+                    "Availability label for a remote control environment that is busy",
+                })
+              : nipPrime.formatMessage({
+                  id: "settings.remoteControlConnections.availability.online",
+                  defaultMessage: "online",
+                  description:
+                    "Availability label for a remote control environment that is online",
+                })
+            : nipPrime.formatMessage({
+                id: "threadPage.remoteConnectionStatusBadge.disconnected",
+                defaultMessage: "Disconnected",
+                description:
+                  "Label shown when remote connection is unavailable",
+              })
+      : nipPrime.formatMessage({
+          id: "settings.remoteControlConnections.availability.remoteCodexUpdateRequired",
+          defaultMessage:
+            "Please update ChatGPT on the remote device to the latest version",
+          description:
+            "Availability label for an online remote Codex device that requires a newer version",
+        })
+    : nipPrime.formatMessage({
+        id: "settings.remoteControlConnections.availability.offline",
+        defaultMessage: "offline",
+        description:
+          "Availability label for a remote control environment that is offline",
+      });
 }
 var quiet = esmInit(() => {
   strongMarkerFromOptions();

@@ -11,7 +11,9 @@ let TopicClientImpl: TopicClientConstructor | null = null;
 let sharedClient: TopicClient | null = null;
 
 /** Wire analytics topic client class (`bva` in the bundle). */
-export function setAnalyticsTopicClientClass(ctor: TopicClientConstructor): void {
+export function setAnalyticsTopicClientClass(
+  ctor: TopicClientConstructor,
+): void {
   TopicClientImpl = ctor;
   sharedClient = null;
 }

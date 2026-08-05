@@ -11,7 +11,10 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { ARTIFACT_GENERATION_STAGE_IDS } from "../../artifacts/artifact-generation-ids";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_MT_Init } from "../../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -20,7 +23,11 @@ import { chats2 } from "../../conversation/chats2";
 import { codexProjectKey } from "../../conversation/codex-project-key";
 import { codexThreadKey } from "../../conversation/codex-thread-key";
 import { deferredConversationN } from "../../conversation/deferred-conversation-n";
-import { ensureSidebarThreadKeyPrefixesInit, localThreadIdFromSidebarKey, toLocalSidebarThreadKey } from "../../conversation/sidebar-thread-keys";
+import {
+  ensureSidebarThreadKeyPrefixesInit,
+  localThreadIdFromSidebarKey,
+  toLocalSidebarThreadKey,
+} from "../../conversation/sidebar-thread-keys";
 import { sortThreadsByAttention } from "../../conversation/sort-threads-by-attention";
 import { isRemoteControlConnectionFailedError } from "../../desktop/remote-control-connection-failed-error";
 import { positiveBoundingClientRect } from "../../dom/positive-bounding-client-rect";
@@ -110,20 +117,14 @@ export function codexMicroSlotSignalsI(sage: unknown) {
     preserveSelectionLighting: !!sage.preserveSelectionLighting,
     snakingAmbientStatus: sage.snakingAmbientStatus,
     suspendDeviceStatusRefresh: !!sage.suspendDeviceStatusRefresh,
-    slots: sage.slots.map(({
-      id,
-      pulsing,
-      selected,
-      status,
-      threadKey
-    }) => ({
+    slots: sage.slots.map(({ id, pulsing, selected, status, threadKey }) => ({
       id,
       pulsing: !!pulsing,
       selected,
       status,
-      threadKey
+      threadKey,
     })),
-    voiceState: sage.voiceState
+    voiceState: sage.voiceState,
   });
 }
 export const codexMicroSlotSignalsR = esmInit(() => {
@@ -149,12 +150,8 @@ export const codexMicroSlotSignalsR = esmInit(() => {
   UnifiedSidebarChatOrderV1();
   applyFooterUoylu22();
   codexMicroSlotSignalsF();
-  codexMicroSlotSignalsN = deferredUiXT(appScopeAtom, ({
-    get
-  }) => {
-    let {
-        pinnedThreadKeys
-      } = get(AppInitialZT),
+  codexMicroSlotSignalsN = deferredUiXT(appScopeAtom, ({ get }) => {
+    let { pinnedThreadKeys } = get(AppInitialZT),
       topaz = getSettingValue(get, AppInitialNpt.agentSource),
       ultra = get(codexMicroSlotSignalsU) ?? codexMicroSlotSignalsO,
       vapor = get(deferredUiKT),
@@ -162,12 +159,12 @@ export const codexMicroSlotSignalsR = esmInit(() => {
       yarn = get(deferredConversationXp, {
         canStartProjectlessChat: vapor,
         localProjectActionsEnabled: wheat,
-        sidebarMode: "codex"
+        sidebarMode: "codex",
       }),
       zephyr = get(AppInitialZp, {
         canStartProjectlessChat: vapor,
         localProjectActionsEnabled: wheat,
-        sidebarMode: "codex"
+        sidebarMode: "codex",
       }),
       acorn = get(toastAtom, "12346831"),
       bloom = [],
@@ -181,37 +178,53 @@ export const codexMicroSlotSignalsR = esmInit(() => {
         bloom = knoll.pinnedProjectThreadKeys;
       } else {
         iris = get(zephyr).recentRenderableThreadKeys;
-        bloom = get(yarn).pinnedProjectGroups.flatMap(item => item.threadKeys);
+        bloom = get(yarn).pinnedProjectGroups.flatMap(
+          (item) => item.threadKeys,
+        );
       }
       let jewel = new Map();
-      for (let lunar of [...iris, ...pinnedThreadKeys, ...bloom]) jewel.set(lunar, get(composerToolsuggestionInstallMessages, lunar));
+      for (let lunar of [...iris, ...pinnedThreadKeys, ...bloom])
+        jewel.set(lunar, get(composerToolsuggestionInstallMessages, lunar));
       drift = gamma({
         unpinnedThreadKeys: iris,
         pinnedThreadKeys,
         pinnedProjectThreadKeys: bloom,
-        updatedAtByThreadKey: jewel
+        updatedAtByThreadKey: jewel,
       });
     } else if (topaz === "pinned") {
       let moss = get(yarn);
       if (acorn) {
-        let north = AppInitialOB(moss.pinnedProjectGroups, get(deferredNavigationFT, "codex").pinnedProjectThreadKeys),
-          orbit = new Map(moss.pinnedThreadKeys.map(item => [codexThreadKey(item), item])),
-          pine = new Map(north.map(item => [codexProjectKey(item.projectId), item.threadKeys]));
+        let north = AppInitialOB(
+            moss.pinnedProjectGroups,
+            get(deferredNavigationFT, "codex").pinnedProjectThreadKeys,
+          ),
+          orbit = new Map(
+            moss.pinnedThreadKeys.map((item) => [codexThreadKey(item), item]),
+          ),
+          pine = new Map(
+            north.map((item) => [
+              codexProjectKey(item.projectId),
+              item.threadKeys,
+            ]),
+          );
         coral = useCurrentAccountExposureGate({
-          entries: [...moss.pinnedThreadKeys.map(item => ({
-            key: codexThreadKey(item)
-          })), ...north.map(item => ({
-            key: codexProjectKey(item.projectId)
-          }))],
+          entries: [
+            ...moss.pinnedThreadKeys.map((item) => ({
+              key: codexThreadKey(item),
+            })),
+            ...north.map((item) => ({
+              key: codexProjectKey(item.projectId),
+            })),
+          ],
           pinnedOrder: get(AppInitialVd),
-          pinnedSortMode: get(CodexPluginActionType)
-        }).flatMap(item => {
+          pinnedSortMode: get(CodexPluginActionType),
+        }).flatMap((item) => {
           let quest = orbit.get(item);
-          return quest == null ? pine.get(item) ?? [] : [quest];
+          return quest == null ? (pine.get(item) ?? []) : [quest];
         });
       } else {
         coral = moss.pinnedThreadKeys;
-        bloom = moss.pinnedProjectGroups.flatMap(item => item.threadKeys);
+        bloom = moss.pinnedProjectGroups.flatMap((item) => item.threadKeys);
       }
     }
     let eagle = [];
@@ -220,7 +233,7 @@ export const codexMicroSlotSignalsR = esmInit(() => {
       eagle = harbor({
         threadKeys: ridge.threadKeys,
         attentionStateByThreadKey: ridge.threadAttentionStateByKey,
-        recencyAtByThreadKey: ridge.threadRecencyAtByKey
+        recencyAtByThreadKey: ridge.threadRecencyAtByKey,
       });
     }
     let frost = falcon({
@@ -229,73 +242,100 @@ export const codexMicroSlotSignalsR = esmInit(() => {
         pinnedProjectThreadKeys: bloom,
         recentlyUpdatedThreadKeys: drift,
         priorityThreadKeys: eagle,
-        customAgentThreadKeys: ARTIFACT_GENERATION_STAGE_IDS.map(item => {
+        customAgentThreadKeys: ARTIFACT_GENERATION_STAGE_IDS.map((item) => {
           let storm = ultra[item];
           return storm != null && "threadKey" in storm ? storm.threadKey : null;
-        })
+        }),
       }),
-      glide = frost.flatMap(item => {
+      glide = frost.flatMap((item) => {
         if (item == null) return [];
         let tide = get(remoteConnectionStatusAtom, item);
         if (tide == null) return [];
         switch (tide.kind) {
           case "local":
-            return tide.conversation == null ? [{
-              threadKey: item,
-              title: tide.pendingWorktree.label
-            }] : [{
-              threadKey: item,
-              title: get(deferredConversationN, tide.conversation.id),
-              localStatus: {
-                status: get(AppInitialO, tide.conversation.id),
-                pendingChip: get(AppInitialA, tide.conversation.id),
-                unread: get(AppInitialG2, tide.conversation.id) === true
-              }
-            }];
-          case "remote":
-            {
-              let unity = tide.task.task_status_display?.latest_turn_status_display?.turn_status,
-                vale = unity === "pending" || unity === "in_progress" || unity === "failed" ? unity : null;
-              return [{
+            return tide.conversation == null
+              ? [
+                  {
+                    threadKey: item,
+                    title: tide.pendingWorktree.label,
+                  },
+                ]
+              : [
+                  {
+                    threadKey: item,
+                    title: get(deferredConversationN, tide.conversation.id),
+                    localStatus: {
+                      status: get(AppInitialO, tide.conversation.id),
+                      pendingChip: get(AppInitialA, tide.conversation.id),
+                      unread: get(AppInitialG2, tide.conversation.id) === true,
+                    },
+                  },
+                ];
+          case "remote": {
+            let unity =
+                tide.task.task_status_display?.latest_turn_status_display
+                  ?.turn_status,
+              vale =
+                unity === "pending" ||
+                unity === "in_progress" ||
+                unity === "failed"
+                  ? unity
+                  : null;
+            return [
+              {
                 threadKey: item,
                 title: tide.task.title ?? null,
                 remoteStatus: {
                   latestTurnStatus: vale,
-                  unread: tide.task.has_unread_turn === true
-                }
-              }];
-            }
+                  unread: tide.task.has_unread_turn === true,
+                },
+              },
+            ];
+          }
         }
       });
     if (topaz === "custom") {
-      let wave = new Set(glide.map(item => item.threadKey));
-      for (let apex of Object.values(ultra)) apex != null && "threadKey" in apex && !wave.has(apex.threadKey) && glide.push({
-        threadKey: apex.threadKey,
-        title: apex.title
-      });
+      let wave = new Set(glide.map((item) => item.threadKey));
+      for (let apex of Object.values(ultra))
+        apex != null &&
+          "threadKey" in apex &&
+          !wave.has(apex.threadKey) &&
+          glide.push({
+            threadKey: apex.threadKey,
+            title: apex.title,
+          });
     }
     let honey = echo({
       isAppWindowFocused: get(positiveBoundingClientRect) === true,
       threadKeys: frost,
       threads: glide,
-      selectedThreadKey: get(pairRemoteControlClient)
+      selectedThreadKey: get(pairRemoteControlClient),
     });
-    return topaz === "custom" ? honey.map(item => {
-      let brook = ARTIFACT_GENERATION_STAGE_IDS[item.id],
-        cliff = brook == null ? null : ultra[brook];
-      return cliff == null || "threadKey" in cliff ? item : {
-        ...item,
-        title: cliff.type === "command" ? cliff.commandId : cliff.type === "skill" ? `$${cliff.skillName}` : cliff.keycapId,
-        status: "idle"
-      };
-    }) : honey;
+    return topaz === "custom"
+      ? honey.map((item) => {
+          let brook = ARTIFACT_GENERATION_STAGE_IDS[item.id],
+            cliff = brook == null ? null : ultra[brook];
+          return cliff == null || "threadKey" in cliff
+            ? item
+            : {
+                ...item,
+                title:
+                  cliff.type === "command"
+                    ? cliff.commandId
+                    : cliff.type === "skill"
+                      ? `$${cliff.skillName}`
+                      : cliff.keycapId,
+                status: "idle",
+              };
+        })
+      : honey;
   });
-  codexMicroSlotSignalsT = deferredUiXT(appScopeAtom, ({
-    get
-  }) => ({
+  codexMicroSlotSignalsT = deferredUiXT(appScopeAtom, ({ get }) => ({
     brightness: getSettingValue(get, AppInitialNpt.lightingBrightness) / 100,
-    inactivityTimeoutMs: lazyWithSuspense(getSettingValue(get, AppInitialNpt.lightingAutoOff)),
+    inactivityTimeoutMs: lazyWithSuspense(
+      getSettingValue(get, AppInitialNpt.lightingAutoOff),
+    ),
     slots: get(codexMicroSlotSignalsN),
-    voiceState: get(AppInitialZw)
+    voiceState: get(AppInitialZw),
   }));
 });

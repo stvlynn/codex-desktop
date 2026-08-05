@@ -9,7 +9,9 @@ export type UsePendingWorktreeConversationStartPeers = {
 let peers: UsePendingWorktreeConversationStartPeers | null = null;
 
 /** Wire usePendingWorktreeConversationStart peers once companions land. */
-export function setUsePendingWorktreeConversationStartPeers(next: UsePendingWorktreeConversationStartPeers): void {
+export function setUsePendingWorktreeConversationStartPeers(
+  next: UsePendingWorktreeConversationStartPeers,
+): void {
   peers = next;
 }
 
@@ -18,7 +20,9 @@ export function setUsePendingWorktreeConversationStartPeers(next: UsePendingWork
  */
 export function usePendingWorktreeConversationStart() {
   if (peers == null) {
-    throw new Error("usePendingWorktreeConversationStart peers are not configured");
+    throw new Error(
+      "usePendingWorktreeConversationStart peers are not configured",
+    );
   }
 
   return peers.Y(peers._V);

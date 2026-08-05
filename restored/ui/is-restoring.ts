@@ -30,6 +30,12 @@ export function isRestoring() {
   }
 
   return peers.e(() => {
-    Et = peers.r(peers.o(), 1), peers.Ze(), peers.at(), peers.lt(), peers.mt(), peers.yt(), peers.wt();
+    ((Et = peers.r(peers.o(), 1)),
+      peers.Ze(),
+      peers.at(),
+      peers.lt(),
+      peers.mt(),
+      peers.yt(),
+      peers.wt());
   });
 }

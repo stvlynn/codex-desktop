@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Zn as _presentationZn,
-} from "../presentation-protobuf";
+import { Zn as _presentationZn } from "../presentation-protobuf";
 
 export const mapProjectionNameToProto = {
   mercator: _presentationZn.MAP_PROJECTION_MERCATOR,

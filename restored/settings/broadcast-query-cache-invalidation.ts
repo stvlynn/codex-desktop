@@ -19,12 +19,16 @@ let coordinationClient: QueryCacheInvalidationClient | null | undefined;
 let logger: QueryCacheInvalidationLogger | null = null;
 
 /** Wire the app-host clientCoordination service (from `gp.clientCoordination`). */
-export function setQueryCacheCoordinationClient(client: QueryCacheInvalidationClient | null | undefined): void {
+export function setQueryCacheCoordinationClient(
+  client: QueryCacheInvalidationClient | null | undefined,
+): void {
   coordinationClient = client;
 }
 
 /** Optional logger sink (bundle uses `Wf.warning`). */
-export function setQueryCacheInvalidationLogger(nextLogger: QueryCacheInvalidationLogger): void {
+export function setQueryCacheInvalidationLogger(
+  nextLogger: QueryCacheInvalidationLogger,
+): void {
   logger = nextLogger;
 }
 

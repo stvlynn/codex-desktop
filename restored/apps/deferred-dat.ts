@@ -26,6 +26,6 @@ export function deferredDat() {
   }
 
   return peers.e(() => {
-    peers.ov(), peers.CAt(), peers.WNt(), peers.dv(), peers.lv();
+    (peers.ov(), peers.CAt(), peers.WNt(), peers.dv(), peers.lv());
   });
 }

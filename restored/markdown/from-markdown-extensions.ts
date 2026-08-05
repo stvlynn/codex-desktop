@@ -9,7 +9,9 @@ export type FromMarkdownExtensionsPeers = {
 let peers: FromMarkdownExtensionsPeers | null = null;
 
 /** Wire fromMarkdownExtensions peers once companions land. */
-export function setFromMarkdownExtensionsPeers(next: FromMarkdownExtensionsPeers): void {
+export function setFromMarkdownExtensionsPeers(
+  next: FromMarkdownExtensionsPeers,
+): void {
   peers = next;
 }
 

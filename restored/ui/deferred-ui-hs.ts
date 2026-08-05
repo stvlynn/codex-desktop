@@ -24,9 +24,7 @@ export function bindDeferredUiHs() {
     throw new Error("bindDeferredUiHs peers are not configured");
   }
 
-  return peers.Oa(peers.j2, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.j2, (e, { get: t }) => {
     let n = t(peers.zMl);
     return n?.taskId === e ? n.entry : t(peers.GMl, e);
   });

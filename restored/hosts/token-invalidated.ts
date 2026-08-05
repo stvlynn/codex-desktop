@@ -12,7 +12,9 @@ export type BindTokenInvalidatedPeers = {
 let peers: BindTokenInvalidatedPeers | null = null;
 
 /** Wire bindTokenInvalidated peers once companions land. */
-export function setBindTokenInvalidatedPeers(next: BindTokenInvalidatedPeers): void {
+export function setBindTokenInvalidatedPeers(
+  next: BindTokenInvalidatedPeers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,6 @@ export function bindTokenInvalidated() {
   }
 
   return peers.e(() => {
-    peers.cE(), peers.ih(), peers.RE(), gxu = `token_invalidated`;
+    (peers.cE(), peers.ih(), peers.RE(), (gxu = `token_invalidated`));
   });
 }

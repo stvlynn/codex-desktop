@@ -9,7 +9,9 @@ export type ParseMemoriesConfigOverlayPeers = {
 let peers: ParseMemoriesConfigOverlayPeers | null = null;
 
 /** Wire parseMemoriesConfigOverlay peers once companions land. */
-export function setParseMemoriesConfigOverlayPeers(next: ParseMemoriesConfigOverlayPeers): void {
+export function setParseMemoriesConfigOverlayPeers(
+  next: ParseMemoriesConfigOverlayPeers,
+): void {
   peers = next;
 }
 

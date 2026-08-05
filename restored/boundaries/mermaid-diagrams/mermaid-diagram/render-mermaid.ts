@@ -12,17 +12,10 @@ const INIT_DIRECTIVE_RE =
 
 /** Strip init directives and normalize newlines for Mermaid render input. */
 export function normalizeMermaidSource(code: string): string {
-  return code
-    .replace(INIT_DIRECTIVE_RE, "")
-    .replaceAll("\\n", "<br/>")
-    .trim();
+  return code.replace(INIT_DIRECTIVE_RE, "").replaceAll("\\n", "<br/>").trim();
 }
 
-function readCssColor(
-  el: Element,
-  cssVar: string,
-  fallback: string,
-): string {
+function readCssColor(el: Element, cssVar: string, fallback: string): string {
   const view = el.ownerDocument.defaultView;
   if (view == null) return fallback;
   const probe = el.ownerDocument.createElement("span");

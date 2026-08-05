@@ -6,10 +6,14 @@ export class RangeFormatFill extends Fill {
   #e;
   constructor(rfIn10206, rfIn10207) {
     let rfBind20670 = rfIn10206.toProto();
-    super(rfBind20670 ? {
-      type: "proto",
-      proto: rfBind20670
-    } : undefined);
+    super(
+      rfBind20670
+        ? {
+            type: "proto",
+            proto: rfBind20670,
+          }
+        : undefined,
+    );
     this.#e = rfIn10207;
   }
   get color() {

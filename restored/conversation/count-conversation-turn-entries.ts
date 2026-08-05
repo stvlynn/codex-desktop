@@ -10,7 +10,9 @@ type ConversationTurnCountLike = {
 };
 
 /** Count turns, preferring canonical island entries when present. */
-export function countConversationTurnEntries(conversation: ConversationTurnCountLike): number {
+export function countConversationTurnEntries(
+  conversation: ConversationTurnCountLike,
+): number {
   return conversation.turnHistory?.kind === "canonical"
     ? (conversation.turnHistory.history?.islands ?? []).reduce(
         (sum, island) => sum + (island.entries?.length ?? 0),

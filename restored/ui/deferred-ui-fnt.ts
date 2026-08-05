@@ -26,14 +26,16 @@ export function bindDeferredUiFnt() {
     static get commentForegroundColor() {
       let e = document.createElement(`span`);
       e.classList.add(`comment`, `sidebar`);
-      let {
-        style: t
-      } = e;
-      t.width = t.height = `0`, t.display = `none`, t.color = `var(--comment-fg-color)`, document.body.append(e);
-      let {
-        color: n
-      } = window.getComputedStyle(e);
-      return e.remove(), peers.hy(this, `commentForegroundColor`, peers.by(n));
+      let { style: t } = e;
+      ((t.width = t.height = `0`),
+        (t.display = `none`),
+        (t.color = `var(--comment-fg-color)`),
+        document.body.append(e));
+      let { color: n } = window.getComputedStyle(e);
+      return (
+        e.remove(),
+        peers.hy(this, `commentForegroundColor`, peers.by(n))
+      );
     }
   };
 }

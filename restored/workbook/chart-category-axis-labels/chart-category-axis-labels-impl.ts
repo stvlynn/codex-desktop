@@ -31,12 +31,9 @@ export function paintCategoryAxisLabels(props: any) {
     calBind3839 = calFn436(axis),
     calBind3840 = zxe(axis),
     calBind3841 = Bxe(axis),
-    calBind3842 =
-      axis && calFn444(axis) ? Bye(axis, categories) : undefined,
+    calBind3842 = axis && calFn444(axis) ? Bye(axis, categories) : undefined,
     calBind3843 =
-      axis && calBind3842
-        ? calFn445(axis, categories.map(Number))
-        : undefined,
+      axis && calBind3842 ? calFn445(axis, categories.map(Number)) : undefined,
     calBind3844 =
       calBind3842?.map(({ positionCategory }) => positionCategory) ??
       categories,

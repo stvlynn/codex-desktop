@@ -19,12 +19,26 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
 import { ARTIFACT_GENERATION_STAGE_IDS } from "../../artifacts/artifact-generation-ids";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { BrowserWebviewPanel } from "../../browser/browser-webview-panel";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { composerConnectorauthReconnectMessages } from "../../composer/composer-connectorauth-reconnect-messages";
@@ -33,8 +47,15 @@ import { getPluginShortDescription } from "../../composer/get-plugin-short-descr
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { collaborationModeFromTurnOrParams } from "../../conversation/collaboration-mode-fields";
 import { recentConversationsMetaQueryKey } from "../../conversation/recent-conversations-meta-query-key";
-import { ensureCodexMicroAnalogActionTitleInit, getAnalogActionTitle } from "../../desktop/codex-micro-analog-action-title";
-import { ensureCodexMicroWebviewCommandsInit, findCodexMicroWebviewCommand, getCodexMicroWebviewCommands } from "../../desktop/codex-micro-webview-commands";
+import {
+  ensureCodexMicroAnalogActionTitleInit,
+  getAnalogActionTitle,
+} from "../../desktop/codex-micro-analog-action-title";
+import {
+  ensureCodexMicroWebviewCommandsInit,
+  findCodexMicroWebviewCommand,
+  getCodexMicroWebviewCommands,
+} from "../../desktop/codex-micro-webview-commands";
 import { appServices } from "../../desktop/desktop-services";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { DiffLinesStatsBadge } from "../../diff/diff-lines-stats-badge";
@@ -43,7 +64,10 @@ import { ensureDebugPanelTurnFilesInit } from "../../hooks/debug-panel-turn-file
 import { usePointerSurfaceInteractionGate as UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { LOCAL_HOST_ID } from "../../hosts/local-host-id";
-import { ensureRemoteConnectionsFeatureInit, getEnabledRemoteConnectionState } from "../../hosts/remote-connections-feature";
+import {
+  ensureRemoteConnectionsFeatureInit,
+  getEnabledRemoteConnectionState,
+} from "../../hosts/remote-connections-feature";
 import { useHostPlatformModifierSymbol } from "../../hotkeys/use-host-platform-modifier-symbol";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
@@ -75,25 +99,59 @@ import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { deferredVM } from "../../ui/deferred-vm";
 import { deferredZft as DeferredZft } from "../../ui/deferred-zft";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { macOS4 } from "../../ui/mac-os4";
 import { MenuBorderSeparator } from "../../ui/menu-border-separator";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { remote } from "../../ui/remote";
-import { ensureSelectableListRowActivationInit, ensureSelectableListRowInit as EnsureSelectableListRowInit } from "../../ui/selectable-list-row";
+import {
+  ensureSelectableListRowActivationInit,
+  ensureSelectableListRowInit as EnsureSelectableListRowInit,
+} from "../../ui/selectable-list-row";
 import { sortable } from "../../ui/sortable";
 import { VerticalScrollFadeMask } from "../../ui/vertical-scroll-fade-mask";
 import { findByModel as FindByModel } from "../../utils/find-by-model";
 import { identity } from "../../utils/identity";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { thinCallWithUndefined } from "../../utils/thin-call-with-undefined";
-import { ensureKeyboardShortcutsGtInit as EnsureKeyboardShortcutsGtInit, ensureKeyboardShortcutsHMInit, ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureKeyboardShortcutsGtInit as EnsureKeyboardShortcutsGtInit,
+  ensureKeyboardShortcutsHMInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { pendingWorktreeConversationStartApi } from "../../worktree/pending-worktree-conversation-start-api";
-import { CodexMicroKeyboardSurface, codexMicroKeyboardSurfaceFlags, CodexMicroKeyboardSurfaceLabel, CodexMicroKeyboardSurfaceOverlay, CodexMicroKeyboardSurfacePanel, codexMicroKeyboardSurfaceState, CodexMicroKeyboardSurfaceTile, ensureCodexMicroKeyboardSurfaceAtomsInit, ensureCodexMicroKeyboardSurfaceHelpersInit, ensureCodexMicroKeyboardSurfaceInit, ensureCodexMicroKeyboardSurfaceUiInit, renderCodexMicroKeyboardSurface as RenderCodexMicroKeyboardSurface, useCodexMicroKeyboardSurface as UseCodexMicroKeyboardSurface } from "../codex-micro-keyboard-surface";
-import { ensureCodexMicroLayoutInit, parseStreamDeckLayout } from "../codex-micro-layout";
-import { codexMicroSlotSignalC, codexMicroSlotSignalF, codexMicroSlotSignalO, codexMicroSlotSignalR, codexMicroSlotSignalU, ensureCodexMicroSlotSignalsInit } from "../codex-micro-slot-signals";
+import {
+  CodexMicroKeyboardSurface,
+  codexMicroKeyboardSurfaceFlags,
+  CodexMicroKeyboardSurfaceLabel,
+  CodexMicroKeyboardSurfaceOverlay,
+  CodexMicroKeyboardSurfacePanel,
+  codexMicroKeyboardSurfaceState,
+  CodexMicroKeyboardSurfaceTile,
+  ensureCodexMicroKeyboardSurfaceAtomsInit,
+  ensureCodexMicroKeyboardSurfaceHelpersInit,
+  ensureCodexMicroKeyboardSurfaceInit,
+  ensureCodexMicroKeyboardSurfaceUiInit,
+  renderCodexMicroKeyboardSurface as RenderCodexMicroKeyboardSurface,
+  useCodexMicroKeyboardSurface as UseCodexMicroKeyboardSurface,
+} from "../codex-micro-keyboard-surface";
+import {
+  ensureCodexMicroLayoutInit,
+  parseStreamDeckLayout,
+} from "../codex-micro-layout";
+import {
+  codexMicroSlotSignalC,
+  codexMicroSlotSignalF,
+  codexMicroSlotSignalO,
+  codexMicroSlotSignalR,
+  codexMicroSlotSignalU,
+  ensureCodexMicroSlotSignalsInit,
+} from "../codex-micro-slot-signals";
 
 // Wave5d soft stubs.
 const AppInitialBw: any = undefined;
@@ -176,20 +234,20 @@ esmInit(() => {
   jade = {
     pinned: {
       label: delta.pinnedChats,
-      description: delta.pinnedChatsDescription
+      description: delta.pinnedChatsDescription,
     },
     recent: {
       label: delta.recentChats,
-      description: delta.recentChatsDescription
+      description: delta.recentChatsDescription,
     },
     priority: {
       label: delta.priorityChats,
-      description: delta.priorityChatsDescription
+      description: delta.priorityChatsDescription,
     },
     custom: {
       label: delta.customChats,
-      description: delta.customChatsDescription
-    }
+      description: delta.customChatsDescription,
+    },
   };
   kite = {
     off: delta.lightingAutoOffOff,
@@ -198,7 +256,7 @@ esmInit(() => {
     "3-minutes": delta.lightingAutoOff3Minutes,
     "10-minutes": delta.lightingAutoOff10Minutes,
     "30-minutes": delta.lightingAutoOff30Minutes,
-    "1-hour": delta.lightingAutoOff1Hour
+    "1-hour": delta.lightingAutoOff1Hour,
   };
   lemon = {
     "composer-navigation": {
@@ -206,54 +264,61 @@ esmInit(() => {
       description: delta.knobComposerNavigationDescription,
       turnRightAction: delta.knobComposerNavigationTurnRight,
       turnLeftAction: delta.knobComposerNavigationTurnLeft,
-      clickAction: delta.knobComposerNavigationClick
+      clickAction: delta.knobComposerNavigationClick,
     },
     reasoning: {
       label: delta.knobReasoning,
       description: delta.knobReasoningDescription,
       turnRightAction: delta.knobReasoningTurnRight,
       turnLeftAction: delta.knobReasoningTurnLeft,
-      clickAction: delta.knobReasoningClick
+      clickAction: delta.knobReasoningClick,
     },
     "conversation-scroll": {
       label: delta.knobConversationScroll,
       description: delta.knobConversationScrollDescription,
       turnRightAction: delta.knobConversationScrollTurnRight,
       turnLeftAction: delta.knobConversationScrollTurnLeft,
-      clickAction: delta.knobConversationScrollClick
-    }
+      clickAction: delta.knobConversationScrollClick,
+    },
   };
   marble = {
     "connection-failed": {
       description: delta.connectionFailedDescription,
-      label: delta.connectionFailed
+      label: delta.connectionFailed,
     },
     "discovery-failed": {
       description: delta.discoveryFailedDescription,
-      label: delta.discoveryFailed
+      label: delta.discoveryFailed,
     },
     "transport-unavailable": {
       description: delta.transportUnavailableDescription,
-      label: delta.transportUnavailable
-    }
+      label: delta.transportUnavailable,
+    },
   };
-  nickel = [{
-    slotId: "ACT06",
-    keys: ["ACT06"]
-  }, {
-    slotId: "ACT07",
-    keys: ["ACT07"]
-  }, {
-    slotId: "ACT08",
-    keys: ["ACT08"]
-  }, {
-    slotId: "ACT09",
-    keys: ["ACT09"]
-  }, {
-    slotId: "ACT10_ACT11",
-    keys: ["ACT10", "ACT11"]
-  }, {
-    slotId: "ACT12",
-    keys: ["ACT12"]
-  }];
+  nickel = [
+    {
+      slotId: "ACT06",
+      keys: ["ACT06"],
+    },
+    {
+      slotId: "ACT07",
+      keys: ["ACT07"],
+    },
+    {
+      slotId: "ACT08",
+      keys: ["ACT08"],
+    },
+    {
+      slotId: "ACT09",
+      keys: ["ACT09"],
+    },
+    {
+      slotId: "ACT10_ACT11",
+      keys: ["ACT10", "ACT11"],
+    },
+    {
+      slotId: "ACT12",
+      keys: ["ACT12"],
+    },
+  ];
 })();

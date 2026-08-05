@@ -11,10 +11,7 @@ export function exprContainsLambda(farIn539: any) {
         .toUpperCase();
       if (
         farBind12615 === "LAMBDA" ||
-        farIn539.hasLambdaDefinedName(
-          farBind12615,
-          farIn539.contextSheet,
-        )
+        farIn539.hasLambdaDefinedName(farBind12615, farIn539.contextSheet)
       )
         return true;
       for (let farBind16351 of farIn539.expr.args)
@@ -23,8 +20,7 @@ export function exprContainsLambda(farIn539: any) {
             expr: farBind16351,
             contextSheet: farIn539.contextSheet,
             hasLambdaDefinedName: farIn539.hasLambdaDefinedName,
-            stripCompatibilityPrefixes:
-              farIn539.stripCompatibilityPrefixes,
+            stripCompatibilityPrefixes: farIn539.stripCompatibilityPrefixes,
           })
         )
           return true;
@@ -36,8 +32,7 @@ export function exprContainsLambda(farIn539: any) {
           expr: farIn539.expr.callee,
           contextSheet: farIn539.contextSheet,
           hasLambdaDefinedName: farIn539.hasLambdaDefinedName,
-          stripCompatibilityPrefixes:
-            farIn539.stripCompatibilityPrefixes,
+          stripCompatibilityPrefixes: farIn539.stripCompatibilityPrefixes,
         })
       )
         return true;
@@ -47,8 +42,7 @@ export function exprContainsLambda(farIn539: any) {
             expr: farBind16352,
             contextSheet: farIn539.contextSheet,
             hasLambdaDefinedName: farIn539.hasLambdaDefinedName,
-            stripCompatibilityPrefixes:
-              farIn539.stripCompatibilityPrefixes,
+            stripCompatibilityPrefixes: farIn539.stripCompatibilityPrefixes,
           })
         )
           return true;
@@ -66,15 +60,13 @@ export function exprContainsLambda(farIn539: any) {
           expr: farIn539.expr.left,
           contextSheet: farIn539.contextSheet,
           hasLambdaDefinedName: farIn539.hasLambdaDefinedName,
-          stripCompatibilityPrefixes:
-            farIn539.stripCompatibilityPrefixes,
+          stripCompatibilityPrefixes: farIn539.stripCompatibilityPrefixes,
         }) ||
         exprContainsLambda({
           expr: farIn539.expr.right,
           contextSheet: farIn539.contextSheet,
           hasLambdaDefinedName: farIn539.hasLambdaDefinedName,
-          stripCompatibilityPrefixes:
-            farIn539.stripCompatibilityPrefixes,
+          stripCompatibilityPrefixes: farIn539.stripCompatibilityPrefixes,
         })
       );
     case "ArrayLiteral":
@@ -85,8 +77,7 @@ export function exprContainsLambda(farIn539: any) {
               expr: farBind16164,
               contextSheet: farIn539.contextSheet,
               hasLambdaDefinedName: farIn539.hasLambdaDefinedName,
-              stripCompatibilityPrefixes:
-                farIn539.stripCompatibilityPrefixes,
+              stripCompatibilityPrefixes: farIn539.stripCompatibilityPrefixes,
             })
           )
             return true;

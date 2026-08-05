@@ -39,11 +39,9 @@ export function computeObjectFitRects(
       padY = 0;
     return (
       imageAspect > frameAspect
-        ? (padY =
-            (frameHeight - frameWidth / imageAspect) / 2 / frameHeight)
+        ? (padY = (frameHeight - frameWidth / imageAspect) / 2 / frameHeight)
         : imageAspect < frameAspect &&
-          (padX =
-            (frameWidth - frameHeight * imageAspect) / 2 / frameWidth),
+          (padX = (frameWidth - frameHeight * imageAspect) / 2 / frameWidth),
       {
         srcRect: makePercentRect(0, 0, 0, 0),
         stretchFillRect: makePercentRect(padX, padY, padX, padY),

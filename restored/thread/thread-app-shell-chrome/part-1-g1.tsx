@@ -11,12 +11,48 @@ import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-res
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { listAvailableCodeThemes } from "../../appearance/code-theme-catalog";
 import { ensureChatgptSiteSuffixesInit } from "../../appgen/chatgpt-site-suffixes";
-import { ArtifactFilePreviewIcon, ensureArtifactFilePreviewIconInit as EnsureArtifactFilePreviewIconInit } from "../../artifact/artifact-file-preview-icon";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationsGateAtom, useStepsProseAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_BU_Init, ensureComposerEsm_CU_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_IB_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_LR_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_NA_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wdt_Init, ensureComposerEsm_Wlt_Init as EnsureComposerEsm_Wlt_Init, ensureComposerEsm_Ytt_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_GZ_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  ArtifactFilePreviewIcon,
+  ensureArtifactFilePreviewIconInit as EnsureArtifactFilePreviewIconInit,
+} from "../../artifact/artifact-file-preview-icon";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationsGateAtom,
+  useStepsProseAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_BU_Init,
+  ensureComposerEsm_CU_Init,
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_IB_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_J0_Init,
+  ensureComposerEsm_LR_Init,
+  ensureComposerEsm_M0_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_NA_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_RV_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Wdt_Init,
+  ensureComposerEsm_Wlt_Init as EnsureComposerEsm_Wlt_Init,
+  ensureComposerEsm_Ytt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_GZ_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_PRODUCT_ID } from "../../config/chatgpt-product-id";
@@ -33,7 +69,10 @@ import { openOrFocusFilePanelTab } from "../../files/open-or-focus-file-panel-ta
 import { pickPreferredOpenTarget } from "../../files/pick-preferred-open-target";
 import { useContentRectSize } from "../../hooks/use-content-rect-size";
 import { ContextMenuRegistration } from "../../hooks/use-context-menu-registration";
-import { ensureUseMediaQueryInit, useMediaQuery } from "../../hooks/use-media-query";
+import {
+  ensureUseMediaQueryInit,
+  useMediaQuery,
+} from "../../hooks/use-media-query";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
 import { AppIconAA } from "../../icons/app-icon-aa";
@@ -50,8 +89,14 @@ import { TerminalFileIcon } from "../../icons/terminal-file-icon";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { buildMcpToolCallItem } from "../../mcp/build-mcp-tool-call-item";
 import { readPrefersReducedMotionAtom } from "../../motion/use-prefers-reduced-motion";
-import { findSidebarSectionElement, writeScrollTop } from "../../navigation/app-action-dom";
-import { ensureAppShellAtomsInit, reviewFilesAtom } from "../../navigation/app-shell-atoms";
+import {
+  findSidebarSectionElement,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
+import {
+  ensureAppShellAtomsInit,
+  reviewFilesAtom,
+} from "../../navigation/app-shell-atoms";
 import { isCurrentSpecialWindowRoute } from "../../navigation/is-special-window-route";
 import { listConversationBrowserTabMatches } from "../../navigation/list-conversation-browser-tab-matches";
 import { panelControllerForSide } from "../../navigation/panel-controller-for-side";
@@ -83,14 +128,28 @@ import { codexProjectKey } from "../../utils/codex-project-key";
 import { formatUrlHostPath } from "../../utils/format-url-host-path";
 import { identity } from "../../utils/identity";
 import { posixPathBasename } from "../../utils/posix-path-basename";
-import { ensurePersonalizationJutInit, ensureSettingsGlyphI0Init, ensureSettingsGlyphRBInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensurePersonalizationJutInit,
+  ensureSettingsGlyphI0Init,
+  ensureSettingsGlyphRBInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { ensureHotkeyThreadB1Init } from "../../utils/wave-av-gap-ensure-inits";
 import { identityCwd } from "../../utils/workspace-paths";
 import { requestRealtimeVoicePresentationSurface } from "../../voice/request-realtime-voice-presentation-surface";
 import { getRecentConversationsQueryKey } from "../../worktrees/get-recent-conversations-query-key";
-import { localConversationThreadUpperA, localConversationThreadUpperL as LocalConversationThreadUpperL, localConversationThreadUpperR } from "../local-conversation-thread";
-import { threadOverflowMenuO, threadOverflowMenuS } from "../thread-overflow-menu";
-import { initThreadPanelToggleButton as InitThreadPanelToggleButton, ThreadPanelToggleButton } from "../thread-panel-toggle-button";
+import {
+  localConversationThreadUpperA,
+  localConversationThreadUpperL as LocalConversationThreadUpperL,
+  localConversationThreadUpperR,
+} from "../local-conversation-thread";
+import {
+  threadOverflowMenuO,
+  threadOverflowMenuS,
+} from "../thread-overflow-menu";
+import {
+  initThreadPanelToggleButton as InitThreadPanelToggleButton,
+  ThreadPanelToggleButton,
+} from "../thread-panel-toggle-button";
 import { ThreadAppShellChromeHelper17 } from "./part-1-g2";
 
 const deferredUiA4: any = undefined;
@@ -198,27 +257,58 @@ var alpha,
   Bravo,
   copper = esmInit(() => {
     react();
-    Bravo = sage => <svg width={20} height={20} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...sage}>
-        <path d="M13.334 12.2529C13.701 12.2533 13.999 12.5509 13.999 12.918C13.9988 13.2849 13.7008 13.5827 13.334 13.583H6.66699C6.29984 13.583 6.00215 13.2851 6.00195 12.918C6.00195 12.5507 6.29972 12.2529 6.66699 12.2529H13.334Z" fill="currentColor" />
-        <path fillRule="evenodd" clipRule="evenodd" d="M15 3.08594C16.748 3.08594 18.165 4.503 18.165 6.25098V13.751C18.165 15.499 16.748 16.916 15 16.916H5C3.25202 16.916 1.83496 15.499 1.83496 13.751V6.25098C1.83496 4.503 3.25202 3.08594 5 3.08594H15ZM5 4.41602C3.98656 4.41602 3.16504 5.23753 3.16504 6.25098V13.751C3.16504 14.7644 3.98656 15.5859 5 15.5859H15C16.0134 15.5859 16.835 14.7644 16.835 13.751V6.25098C16.835 5.23753 16.0134 4.41602 15 4.41602H5Z" fill="currentColor" />
-      </svg>;
+    Bravo = (sage) => (
+      <svg
+        width={20}
+        height={20}
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        {...sage}
+      >
+        <path
+          d="M13.334 12.2529C13.701 12.2533 13.999 12.5509 13.999 12.918C13.9988 13.2849 13.7008 13.5827 13.334 13.583H6.66699C6.29984 13.583 6.00215 13.2851 6.00195 12.918C6.00195 12.5507 6.29972 12.2529 6.66699 12.2529H13.334Z"
+          fill="currentColor"
+        />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M15 3.08594C16.748 3.08594 18.165 4.503 18.165 6.25098V13.751C18.165 15.499 16.748 16.916 15 16.916H5C3.25202 16.916 1.83496 15.499 1.83496 13.751V6.25098C1.83496 4.503 3.25202 3.08594 5 3.08594H15ZM5 4.41602C3.98656 4.41602 3.16504 5.23753 3.16504 6.25098V13.751C3.16504 14.7644 3.98656 15.5859 5 15.5859H15C16.0134 15.5859 16.835 14.7644 16.835 13.751V6.25098C16.835 5.23753 16.0134 4.41602 15 4.41602H5Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
   }),
   delta,
   Echo,
   falcon = esmInit(() => {
     react();
-    Echo = topaz => <svg width={20} height={20} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...topaz}>
-        <path fillRule="evenodd" clipRule="evenodd" d="M15 3.08594C16.748 3.08594 18.165 4.503 18.165 6.25098V13.751C18.165 15.499 16.748 16.916 15 16.916H5C3.25202 16.916 1.83496 15.499 1.83496 13.751V6.25098C1.83496 4.503 3.25202 3.08594 5 3.08594H15ZM5 4.41602C3.98656 4.41602 3.16504 5.23753 3.16504 6.25098V13.751C3.16504 14.7644 3.98656 15.5859 5 15.5859H15C16.0134 15.5859 16.835 14.7644 16.835 13.751V6.25098C16.835 5.23753 16.0134 4.41602 15 4.41602H5Z" fill="currentColor" />
-        <path d="M3.16504 12.2529H16.835V13.583H3.16504V12.2529Z" fill="currentColor" />
-      </svg>;
+    Echo = (topaz) => (
+      <svg
+        width={20}
+        height={20}
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        {...topaz}
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M15 3.08594C16.748 3.08594 18.165 4.503 18.165 6.25098V13.751C18.165 15.499 16.748 16.916 15 16.916H5C3.25202 16.916 1.83496 15.499 1.83496 13.751V6.25098C1.83496 4.503 3.25202 3.08594 5 3.08594H15ZM5 4.41602C3.98656 4.41602 3.16504 5.23753 3.16504 6.25098V13.751C3.16504 14.7644 3.98656 15.5859 5 15.5859H15C16.0134 15.5859 16.835 14.7644 16.835 13.751V6.25098C16.835 5.23753 16.0134 4.41602 15 4.41602H5Z"
+          fill="currentColor"
+        />
+        <path
+          d="M3.16504 12.2529H16.835V13.583H3.16504V12.2529Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
   });
 export const threadAppShellChromeR = esmInit(() => {
   localConversationThreadUpperA();
 });
-function gamma({
-  onClose,
-  target
-}) {
+function gamma({ onClose, target }) {
   let ultra = CodexPluginActionType(ensureComposerEsm_S8_Init),
     vapor = useIntl(),
     wheat = AppInitialV7(),
@@ -233,7 +323,10 @@ function gamma({
     glide = CodexPluginActionResult(AppInitialEW)[0] ?? null,
     honey = CodexPluginActionResult(requestRealtimeVoicePresentationSurface),
     iris = deferredUiD8(ultra),
-    jewel = ultra.value.routeKind === "local-thread" ? ultra.value.conversationId : null,
+    jewel =
+      ultra.value.routeKind === "local-thread"
+        ? ultra.value.conversationId
+        : null,
     knoll = CodexBrowserSurfaceActionType(deferredUiA4, jewel);
   CodexBrowserSurfaceActionType(DeferredUiL2, jewel);
   let lunar = CodexBrowserSurfaceActionType(DeferredUiU232, jewel),
@@ -242,45 +335,60 @@ function gamma({
     orbit = CodexBrowserSurfaceActionType(deferredUiE1, "openSideChat"),
     pine = CodexBrowserSurfaceActionType(deferredUiE1, "openBrowserTab"),
     quest = CodexBrowserSurfaceActionType(deferredUiE1, "openReviewTab"),
-    ridge = CodexBrowserSurfaceActionType(AppInitialOk, {
-      conversationId: jewel,
-      hostId: honey.id
-    }, {
-      enabled: false
-    }),
+    ridge = CodexBrowserSurfaceActionType(
+      AppInitialOk,
+      {
+        conversationId: jewel,
+        hostId: honey.id,
+      },
+      {
+        enabled: false,
+      },
+    ),
     storm = knoll !== "projectless" && glide != null,
     tide = jewel != null && false,
     unity = jewel != null && !isCurrentSpecialWindowRoute(),
-    vale = coral && (drift || !acorn.some(item => Remote6(item))),
-    wave = !eagle && (frost.kind === "git" || false) && !acorn.some(item => item.tabId === buildMcpToolCallItem.DIFF),
-    apex = tide && !acorn.some(item => item.tabId === buildMcpToolCallItem.TIMELINE),
+    vale = coral && (drift || !acorn.some((item) => Remote6(item))),
+    wave =
+      !eagle &&
+      (frost.kind === "git" || false) &&
+      !acorn.some((item) => item.tabId === buildMcpToolCallItem.DIFF),
+    apex =
+      tide &&
+      !acorn.some((item) => item.tabId === buildMcpToolCallItem.TIMELINE),
     brook = (!eagle || target !== "right") && AppInitialAU(ultra),
     cliff = wheat.status === "allowed" || wheat.status === "loading",
     dusk = cliff && frost.kind !== "git" ? ridge : null,
     elm = dusk != null && dusk.length > 0,
     fern = () => {
-      jewel != null && threadOverflowMenuS(ultra, localConversationThreadUpperR, {
-        sourceConversationId: jewel,
-        cwd: frost.cwd,
-        hostId: lunar,
-        collaborationMode: moss,
-        intl: vapor,
-        target
-      }).then(() => {
-        onClose?.();
-      }).catch(error => {
-        appActionSidebarProjectRefSchema.error("Error opening side chat", {
-          safe: {},
-          sensitive: {
-            error
-          }
-        });
-        ultra.get(toastAtom).danger(vapor.formatMessage({
-          id: "thread.sidePanel.openSideChatError",
-          defaultMessage: "Failed to open side chat",
-          description: "Error message shown when opening a side chat from the chat side panel fails"
-        }));
-      });
+      jewel != null &&
+        threadOverflowMenuS(ultra, localConversationThreadUpperR, {
+          sourceConversationId: jewel,
+          cwd: frost.cwd,
+          hostId: lunar,
+          collaborationMode: moss,
+          intl: vapor,
+          target,
+        })
+          .then(() => {
+            onClose?.();
+          })
+          .catch((error) => {
+            appActionSidebarProjectRefSchema.error("Error opening side chat", {
+              safe: {},
+              sensitive: {
+                error,
+              },
+            });
+            ultra.get(toastAtom).danger(
+              vapor.formatMessage({
+                id: "thread.sidePanel.openSideChatError",
+                defaultMessage: "Failed to open side chat",
+                description:
+                  "Error message shown when opening a side chat from the chat side panel fails",
+              }),
+            );
+          });
     },
     grove = () => {
       AppInitialVE(ultra, true, target) && onClose?.();
@@ -292,20 +400,22 @@ function gamma({
         cwd: frost.cwd,
         initiator: "side_panel_menu",
         source: "manual",
-        target: drift ? target : "right"
+        target: drift ? target : "right",
       }) != null && onClose?.();
     },
     isle = () => {
       deferredUiYE(ultra, jewel, {
-        target
+        target,
       }) && onClose?.();
     },
     juniper = () => {
-      glide != null && (openFileInPanelTab(ultra, null, {
-        hostId: honey.id,
-        target,
-        workspaceRoot: glide
-      }), onClose?.());
+      glide != null &&
+        (openFileInPanelTab(ultra, null, {
+          hostId: honey.id,
+          target,
+          workspaceRoot: glide,
+        }),
+        onClose?.());
     },
     lagoon = () => {
       AppInitialLU(ultra, target);
@@ -316,7 +426,7 @@ function gamma({
         PdfPermissionFlag({
           href: petal,
           initiator: "mcp_app_resource",
-          originHostId: rain
+          originHostId: rain,
         });
         return;
       }
@@ -324,7 +434,7 @@ function gamma({
         event: quiet,
         href: petal,
         initiator: "mcp_app_resource",
-        originHostId: rain
+        originHostId: rain,
       });
     },
     nest = (event, seed) => {
@@ -338,7 +448,7 @@ function gamma({
             browserSidebarEnabled: coral,
             hostConfig: honey,
             hostId: honey.id,
-            openInSidePanel: true
+            openInSidePanel: true,
           });
           return;
         case "google-drive":
@@ -359,90 +469,160 @@ function gamma({
             cwd: glide == null ? null : identityCwd(glide),
             browserSidebarEnabled: coral,
             hostConfig: honey,
-            hostId: honey.id
+            hostId: honey.id,
           });
       }
     },
-    oak = [...(storm ? [{
-      deferSelectionUntilDropdownClose: true,
-      id: "open-file",
-      Icon: AppIconIR,
-      keyboardShortcut: north,
-      onSelect: juniper,
-      requiresCodexAccess: true,
-      title: <MemoizedFormattedMessage {...{
-        id: "thread.sidePanel.openFile",
-        defaultMessage: "Files",
-        description: "Action label for opening the workspace file browser from the task side panel"
-      }} />
-    }] : []), ...(unity ? [{
-      id: "side-chat",
-      Icon: AppInitialP,
-      keyboardShortcut: orbit,
-      onSelect: fern,
-      requiresCodexAccess: true,
-      title: <MemoizedFormattedMessage {...{
-        id: "thread.sidePanel.openSideChat",
-        defaultMessage: "Side chat",
-        description: "Action label for opening a side chat from the chat side panel"
-      }} />
-    }] : []), ...(vale ? [{
-      deferSelectionUntilDropdownClose: true,
-      id: "browser",
-      Icon: AppIconJtt,
-      keyboardShortcut: pine,
-      onSelect: hill,
-      title: <MemoizedFormattedMessage {...{
-        id: "thread.sidePanel.openBrowserTab",
-        defaultMessage: "Browser",
-        description: "Action label for opening the browser tab from the task side panel"
-      }} />
-    }] : []), ...(wave ? [{
-      id: "review",
-      Icon: AppIconAA,
-      keyboardShortcut: quest,
-      onSelect: grove,
-      requiresCodexAccess: true,
-      title: <MemoizedFormattedMessage {...{
-        id: "thread.sidePanel.openReviewTab",
-        defaultMessage: "Review",
-        description: "Action label for opening the review tab from the task side panel"
-      }} />
-    }] : []), ...(apex ? [{
-      id: "timeline",
-      Icon: AppIconCct,
-      onSelect: isle,
-      requiresCodexAccess: true,
-      title: <MemoizedFormattedMessage {...{
-        id: "thread.sidePanel.newTab.detail.title",
-        defaultMessage: "Detail",
-        description: "Action label for opening Detail from the side panel New tab page. Short label."
-      }} />
-    }] : []), ...(target === "right" ? bloom.map(item => ({
-      id: `${item.hostId}:${item.server}:${item.tool.name}`,
-      Icon: AppIconLV,
-      mcpServerIcon: item.icon,
-      onSelect: () => {
-        ensureSettingsGlyphRBInit(ultra, item) != null && onClose?.();
-      },
-      requiresCodexAccess: true,
-      title: item.title
-    })) : []), ...(brook ? [{
-      id: "terminal",
-      Icon: TerminalFileIcon,
-      onSelect: lagoon,
-      requiresCodexAccess: true,
-      title: <MemoizedFormattedMessage {...{
-        id: "thread.sidePanel.newTab.terminal.title",
-        defaultMessage: "Terminal",
-        description: "Action label for opening the terminal from a panel New tab page"
-      }} />
-    }] : [])].filter(item => cliff || !item.requiresCodexAccess);
+    oak = [
+      ...(storm
+        ? [
+            {
+              deferSelectionUntilDropdownClose: true,
+              id: "open-file",
+              Icon: AppIconIR,
+              keyboardShortcut: north,
+              onSelect: juniper,
+              requiresCodexAccess: true,
+              title: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "thread.sidePanel.openFile",
+                    defaultMessage: "Files",
+                    description:
+                      "Action label for opening the workspace file browser from the task side panel",
+                  }}
+                />
+              ),
+            },
+          ]
+        : []),
+      ...(unity
+        ? [
+            {
+              id: "side-chat",
+              Icon: AppInitialP,
+              keyboardShortcut: orbit,
+              onSelect: fern,
+              requiresCodexAccess: true,
+              title: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "thread.sidePanel.openSideChat",
+                    defaultMessage: "Side chat",
+                    description:
+                      "Action label for opening a side chat from the chat side panel",
+                  }}
+                />
+              ),
+            },
+          ]
+        : []),
+      ...(vale
+        ? [
+            {
+              deferSelectionUntilDropdownClose: true,
+              id: "browser",
+              Icon: AppIconJtt,
+              keyboardShortcut: pine,
+              onSelect: hill,
+              title: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "thread.sidePanel.openBrowserTab",
+                    defaultMessage: "Browser",
+                    description:
+                      "Action label for opening the browser tab from the task side panel",
+                  }}
+                />
+              ),
+            },
+          ]
+        : []),
+      ...(wave
+        ? [
+            {
+              id: "review",
+              Icon: AppIconAA,
+              keyboardShortcut: quest,
+              onSelect: grove,
+              requiresCodexAccess: true,
+              title: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "thread.sidePanel.openReviewTab",
+                    defaultMessage: "Review",
+                    description:
+                      "Action label for opening the review tab from the task side panel",
+                  }}
+                />
+              ),
+            },
+          ]
+        : []),
+      ...(apex
+        ? [
+            {
+              id: "timeline",
+              Icon: AppIconCct,
+              onSelect: isle,
+              requiresCodexAccess: true,
+              title: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "thread.sidePanel.newTab.detail.title",
+                    defaultMessage: "Detail",
+                    description:
+                      "Action label for opening Detail from the side panel New tab page. Short label.",
+                  }}
+                />
+              ),
+            },
+          ]
+        : []),
+      ...(target === "right"
+        ? bloom.map((item) => ({
+            id: `${item.hostId}:${item.server}:${item.tool.name}`,
+            Icon: AppIconLV,
+            mcpServerIcon: item.icon,
+            onSelect: () => {
+              ensureSettingsGlyphRBInit(ultra, item) != null && onClose?.();
+            },
+            requiresCodexAccess: true,
+            title: item.title,
+          }))
+        : []),
+      ...(brook
+        ? [
+            {
+              id: "terminal",
+              Icon: TerminalFileIcon,
+              onSelect: lagoon,
+              requiresCodexAccess: true,
+              title: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "thread.sidePanel.newTab.terminal.title",
+                    defaultMessage: "Terminal",
+                    description:
+                      "Action label for opening the terminal from a panel New tab page",
+                  }}
+                />
+              ),
+            },
+          ]
+        : []),
+    ].filter((item) => cliff || !item.requiresCodexAccess);
   return {
-    actions: frost.kind === "git" ? [...oak].sort((trail, urn) => (jade[trail.id] ?? oak.length) - (jade[urn.id] ?? oak.length)) : oak,
+    actions:
+      frost.kind === "git"
+        ? [...oak].sort(
+            (trail, urn) =>
+              (jade[trail.id] ?? oak.length) - (jade[urn.id] ?? oak.length),
+          )
+        : oak,
     hasOutputArtifacts: elm,
     onOpenArtifact: nest,
-    outputArtifacts: dusk
+    outputArtifacts: dusk,
   };
 }
 var harbor,
@@ -485,14 +665,14 @@ var harbor,
     resolvePinnedPanelPlacement();
     sidebarelectronProductmodeChatgptMessages();
     localThread2();
-    indigo = deferredUiXT(appScopeAtom, ({
-      get
-    }) => get(AppInitialWX).filter(item => item.entrypoint === "thread"));
+    indigo = deferredUiXT(appScopeAtom, ({ get }) =>
+      get(AppInitialWX).filter((item) => item.entrypoint === "thread"),
+    );
     jade = {
       review: 0,
       terminal: 1,
       browser: 2,
-      "open-file": 3
+      "open-file": 3,
     };
   });
 function lemon(event) {
@@ -553,49 +733,61 @@ var pearl = esmInit(() => {
   ensureComposerEsm_Wdt_Init();
 });
 function ThreadAppShellChromeHelper6(yarrow) {
-  let {
-    artifact,
-    iconClassName,
-    imageClassName
-  } = yarrow;
+  let { artifact, iconClassName, imageClassName } = yarrow;
   switch (artifact.type) {
-    case "external-resource":
-      {
-        let azure;
-        return <LocalConversationThreadUpperL {...{
-          className: iconClassName,
-          resource: artifact.resource
-        }} />;
-      }
+    case "external-resource": {
+      let azure;
+      return (
+        <LocalConversationThreadUpperL
+          {...{
+            className: iconClassName,
+            resource: artifact.resource,
+          }}
+        />
+      );
+    }
     case "file":
-    case "generated-image":
-      {
-        let birch;
-        return <EnsureArtifactFilePreviewIconInit {...{
-          iconClassName,
-          imageClassName,
-          path: artifact.path
-        }} />;
-      }
-    case "google-drive":
-      {
-        let canyon;
-        return <AppInitialC className={iconClassName} resourceKind={artifact.resourceKind} />;
-      }
-    case "appgen-app":
-      {
-        let dew;
-        return <AppIconHG {...{
-          className: iconClassName
-        }} />;
-      }
-    case "website":
-      {
-        let ever;
-        return <AppIconJtt {...{
-          className: iconClassName
-        }} />;
-      }
+    case "generated-image": {
+      let birch;
+      return (
+        <EnsureArtifactFilePreviewIconInit
+          {...{
+            iconClassName,
+            imageClassName,
+            path: artifact.path,
+          }}
+        />
+      );
+    }
+    case "google-drive": {
+      let canyon;
+      return (
+        <AppInitialC
+          className={iconClassName}
+          resourceKind={artifact.resourceKind}
+        />
+      );
+    }
+    case "appgen-app": {
+      let dew;
+      return (
+        <AppIconHG
+          {...{
+            className: iconClassName,
+          }}
+        />
+      );
+    }
+    case "website": {
+      let ever;
+      return (
+        <AppIconJtt
+          {...{
+            className: iconClassName,
+          }}
+        />
+      );
+    }
   }
 }
 var quartz,
@@ -614,60 +806,114 @@ function ThreadAppShellChromeHelper7(field) {
       hasOutputArtifacts,
       onActionSelect,
       onOpenArtifact,
-      outputArtifacts
+      outputArtifacts,
     } = field,
-    grain = hasOutputArtifacts && outputArtifacts != null && outputArtifacts.length > 0;
+    grain =
+      hasOutputArtifacts &&
+      outputArtifacts != null &&
+      outputArtifacts.length > 0;
   if (actions.length === 0 && !grain) {
     let jadeite;
-    return <DropdownMenu.Message {...{
-      compact: true,
-      children: <MemoizedFormattedMessage {...{
-        id: "thread.sidePanel.newTab.empty",
-        defaultMessage: "No tabs are available for this chat",
-        description: "Empty message on the side panel New tab page when the current chat has no available side panel tab actions."
-      }} />
-    }} />;
+    return (
+      <DropdownMenu.Message
+        {...{
+          compact: true,
+          children: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "thread.sidePanel.newTab.empty",
+                defaultMessage: "No tabs are available for this chat",
+                description:
+                  "Empty message on the side panel New tab page when the current chat has no available side panel tab actions.",
+              }}
+            />
+          ),
+        }}
+      />
+    );
   }
   let haven;
   {
     let kernel;
-    kernel = leaf => <DropdownMenu.Item key={leaf.id} {...{
-      LeftIcon: leaf.mcpServerIcon == null ? leaf.Icon : undefined,
-      keyboardShortcut: leaf.keyboardShortcut,
-      onSelect: () => onActionSelect(leaf),
-      children: [leaf.mcpServerIcon == null ? null : <DropdownMenu.ItemIcon {...{
-        children: ensureComposerEsm_IB_Init(leaf.mcpServerIcon)
-      }} />, leaf.title]
-    }} />;
+    kernel = (leaf) => (
+      <DropdownMenu.Item
+        key={leaf.id}
+        {...{
+          LeftIcon: leaf.mcpServerIcon == null ? leaf.Icon : undefined,
+          keyboardShortcut: leaf.keyboardShortcut,
+          onSelect: () => onActionSelect(leaf),
+          children: [
+            leaf.mcpServerIcon == null ? null : (
+              <DropdownMenu.ItemIcon
+                {...{
+                  children: ensureComposerEsm_IB_Init(leaf.mcpServerIcon),
+                }}
+              />
+            ),
+            leaf.title,
+          ],
+        }}
+      />
+    );
     haven = actions.map(kernel);
   }
-  let ink = grain ? <>
+  let ink = grain ? (
+    <>
       {actions.length > 0 ? <DropdownMenu.Separator {...{}} /> : null}
-      {<DropdownMenu.SectionLabel {...{
-      children: <MemoizedFormattedMessage {...{
-        id: "thread.sidePanel.newTab.suggested.heading",
-        defaultMessage: "Suggested",
-        description: "Heading for suggested artifacts shown on the side panel New tab page"
-      }} />
-    }} />}
-      {outputArtifacts.map(item => <DropdownMenu.Item key={lemon(item)} {...{
-      onClickCapture: event => {
-        installModalBrowserExtensionMessages(event) && (event.preventDefault(), event.stopPropagation(), onOpenArtifact(item, event));
-      },
-      onSelect: () => onOpenArtifact(item),
-      children: [<DropdownMenu.ItemIcon {...{
-        children: <ThreadAppShellChromeHelper6 {...{
-          artifact: item,
-          iconClassName: "icon-xs",
-          imageClassName: "size-[18px] rounded-sm"
-        }} />
-      }} />, marble(item)]
-    }} />)}
-    </> : null;
-  return <>
+      {
+        <DropdownMenu.SectionLabel
+          {...{
+            children: (
+              <MemoizedFormattedMessage
+                {...{
+                  id: "thread.sidePanel.newTab.suggested.heading",
+                  defaultMessage: "Suggested",
+                  description:
+                    "Heading for suggested artifacts shown on the side panel New tab page",
+                }}
+              />
+            ),
+          }}
+        />
+      }
+      {outputArtifacts.map((item) => (
+        <DropdownMenu.Item
+          key={lemon(item)}
+          {...{
+            onClickCapture: (event) => {
+              installModalBrowserExtensionMessages(event) &&
+                (event.preventDefault(),
+                event.stopPropagation(),
+                onOpenArtifact(item, event));
+            },
+            onSelect: () => onOpenArtifact(item),
+            children: [
+              <DropdownMenu.ItemIcon
+                {...{
+                  children: (
+                    <ThreadAppShellChromeHelper6
+                      {...{
+                        artifact: item,
+                        iconClassName: "icon-xs",
+                        imageClassName: "size-[18px] rounded-sm",
+                      }}
+                    />
+                  ),
+                }}
+              />,
+              marble(item),
+            ],
+          }}
+        />
+      ))}
+    </>
+  ) : null;
+  return (
+    <>
       {haven}
       {ink}
-    </>;
+    </>
+  );
 }
 var timber,
   umbra,
@@ -681,10 +927,7 @@ var timber,
     slate();
   });
 function ThreadAppShellChromeHelper8(maple) {
-  let {
-      cwd,
-      hostConfig
-    } = maple,
+  let { cwd, hostConfig } = maple,
     nimbus = useIntl(),
     opal = useMediaQuery("(max-width: 920px)"),
     plume = useStepsProseAtom() === THREAD_DETAIL_LEVEL_STEPS_PROSE,
@@ -693,7 +936,7 @@ function ThreadAppShellChromeHelper8(maple) {
     upland = {
       cwd,
       deferEnrichment: true,
-      hostId: thorn
+      hostId: thorn,
     };
   let {
     canLoadTargets,
@@ -701,31 +944,60 @@ function ThreadAppShellChromeHelper8(maple) {
     targets,
     availableTargets,
     hasLoadedTargets,
-    open
+    open,
   } = AppInitialQR(upland);
   if (!cwd || !canLoadTargets) return null;
-  let vista, wisp, yonder, zenith, anvil, beacon, crag, dome, eddy, fjord, glen, hearth, inlet, jetty, knob, ledge, mire;
+  let vista,
+    wisp,
+    yonder,
+    zenith,
+    anvil,
+    beacon,
+    crag,
+    dome,
+    eddy,
+    fjord,
+    glen,
+    hearth,
+    inlet,
+    jetty,
+    knob,
+    ledge,
+    mire;
   eddy = Symbol.for("react.early_return_sentinel");
   bb0: {
     mire = plume ? targets.filter(yellow) : targets;
     let spur = new Set(availableTargets);
     let tor = spur,
-      updraft = plume ? mire.find(item => item.target === "fileManager" && !item.hidden && tor.has(item.target)) ?? null : null,
+      updraft = plume
+        ? (mire.find(
+            (item) =>
+              item.target === "fileManager" &&
+              !item.hidden &&
+              tor.has(item.target),
+          ) ?? null)
+        : null,
       verge = pickPreferredOpenTarget({
         preferredTarget,
         targets: mire,
         availableTargets,
-        mode: "editor"
+        mode: "editor",
       });
-    wisp = verge?.target === "systemDefault" && updraft != null ? updraft : verge;
-    yonder = opal || wisp != null && preferredTarget === wisp.target;
-    let weir = wisp ? nimbus.formatMessage({
-        id: "localConversationPage.openPrimaryTarget.tooltip",
-        defaultMessage: "Open in {target}",
-        description: "Tooltip for the primary open button"
-      }, {
-        target: wisp.label
-      }) : undefined,
+    wisp =
+      verge?.target === "systemDefault" && updraft != null ? updraft : verge;
+    yonder = opal || (wisp != null && preferredTarget === wisp.target);
+    let weir = wisp
+        ? nimbus.formatMessage(
+            {
+              id: "localConversationPage.openPrimaryTarget.tooltip",
+              defaultMessage: "Open in {target}",
+              description: "Tooltip for the primary open button",
+            },
+            {
+              target: wisp.label,
+            },
+          )
+        : undefined,
       yard = !hasLoadedTargets || mire.some($n),
       anchor = mire.filter(xenon);
     if (!yard && wisp == null && anchor.length === 0 && quillow == null) {
@@ -744,67 +1016,112 @@ function ThreadAppShellChromeHelper8(maple) {
     anvil = "pt-2";
     beacon = yonder ? cedar.openPrimaryTarget : undefined;
     crag = yonder ? weir : undefined;
-    dome = anchor.length === 0 ? <ThreadAppShellChromeHelper12 {...{}} /> : anchor.map(item => <DropdownMenu.Item key={item.id} {...{
-      onSelect: () => {
-        open(item.target, {
-          appPath: item.appPath,
-          openMode: "workspace",
-          persistPreferred: true
-        });
-      },
-      children: [<DropdownMenu.ItemIcon {...{
-        children: <ThreadAppShellChromeHelper13 {...{
-          alt: "",
-          src: quillow == null ? item.resolvedIcon ?? item.icon : quillow.get(item.id) ?? item.icon,
-          className: "icon-sm"
-        }} />
-      }} />, <span className="truncate">{item.label}</span>]
-    }} />);
+    dome =
+      anchor.length === 0 ? (
+        <ThreadAppShellChromeHelper12 {...{}} />
+      ) : (
+        anchor.map((item) => (
+          <DropdownMenu.Item
+            key={item.id}
+            {...{
+              onSelect: () => {
+                open(item.target, {
+                  appPath: item.appPath,
+                  openMode: "workspace",
+                  persistPreferred: true,
+                });
+              },
+              children: [
+                <DropdownMenu.ItemIcon
+                  {...{
+                    children: (
+                      <ThreadAppShellChromeHelper13
+                        {...{
+                          alt: "",
+                          src:
+                            quillow == null
+                              ? (item.resolvedIcon ?? item.icon)
+                              : (quillow.get(item.id) ?? item.icon),
+                          className: "icon-sm",
+                        }}
+                      />
+                    ),
+                  }}
+                />,
+                <span className="truncate">{item.label}</span>,
+              ],
+            }}
+          />
+        ))
+      );
   }
   if (eddy !== Symbol.for("react.early_return_sentinel")) return eddy;
-  let nook = bolt => {
+  let nook = (bolt) => {
     silk(bolt ? new Map(mire.map(willow)) : null);
   };
-  let oxbow = wisp == null ? undefined : () => {
-    open(wisp.target, {
-      appPath: wisp.appPath,
-      openMode: "workspace",
-      persistPreferred: false
-    });
-  };
-  let pond = <span className="icon-xs inline-flex shrink-0 items-center justify-center">
-      {wisp == null ? <span className="size-4 rounded bg-token-bg-tertiary" /> : <ThreadAppShellChromeHelper13 {...{
-      alt: yonder ? wisp.label : "",
-      src: wisp.icon,
-      className: "icon-xs"
-    }} />}
-    </span>;
-  let quarry = yonder ? null : <span className="truncate">
-      {<MemoizedFormattedMessage {...{
-      ...cedar.openPrimaryTarget
-    }} />}
-    </span>;
-  let rapids = <span className="flex items-center gap-1.5">
+  let oxbow =
+    wisp == null
+      ? undefined
+      : () => {
+          open(wisp.target, {
+            appPath: wisp.appPath,
+            openMode: "workspace",
+            persistPreferred: false,
+          });
+        };
+  let pond = (
+    <span className="icon-xs inline-flex shrink-0 items-center justify-center">
+      {wisp == null ? (
+        <span className="size-4 rounded bg-token-bg-tertiary" />
+      ) : (
+        <ThreadAppShellChromeHelper13
+          {...{
+            alt: yonder ? wisp.label : "",
+            src: wisp.icon,
+            className: "icon-xs",
+          }}
+        />
+      )}
+    </span>
+  );
+  let quarry = yonder ? null : (
+    <span className="truncate">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            ...cedar.openPrimaryTarget,
+          }}
+        />
+      }
+    </span>
+  );
+  let rapids = (
+    <span className="flex items-center gap-1.5">
       {pond}
       {quarry}
-    </span>;
-  return <CompoundButtonMenu {...{
-    color: fjord,
-    size: glen,
-    primaryClassName: hearth,
-    dropdownButtonClassName: inlet,
-    primaryDisabled: jetty,
-    dropdownAlign: knob,
-    dropdownContentMaxHeight: ledge,
-    dropdownContentWidth: zenith,
-    dropdownContentClassName: anvil,
-    primaryAriaLabel: beacon,
-    tooltipContent: crag,
-    dropdownContent: dome,
-    onDropdownOpenChange: nook,
-    onClick: oxbow,
-    children: rapids
-  }} />;
+    </span>
+  );
+  return (
+    <CompoundButtonMenu
+      {...{
+        color: fjord,
+        size: glen,
+        primaryClassName: hearth,
+        dropdownButtonClassName: inlet,
+        primaryDisabled: jetty,
+        dropdownAlign: knob,
+        dropdownContentMaxHeight: ledge,
+        dropdownContentWidth: zenith,
+        dropdownContentClassName: anvil,
+        primaryAriaLabel: beacon,
+        tooltipContent: crag,
+        dropdownContent: dome,
+        onDropdownOpenChange: nook,
+        onClick: oxbow,
+        children: rapids,
+      }}
+    />
+  );
 }
 function willow(cog) {
   return [cog.id, cog.resolvedIcon ?? cog.icon];
@@ -819,20 +1136,27 @@ function yellow(forge) {
   return forge.kind !== "editor" && forge.kind !== "terminal";
 }
 function ThreadAppShellChromeHelper12() {
-  return <DropdownMenu.Item {...{
-    disabled: true,
-    "aria-hidden": "true",
-    children: [<DropdownMenu.ItemIcon {...{
-      children: <span className="size-4 rounded bg-token-bg-tertiary" />
-    }} />, <span className="h-3 w-24 rounded bg-token-bg-tertiary" />]
-  }} />;
+  return (
+    <DropdownMenu.Item
+      {...{
+        disabled: true,
+        "aria-hidden": "true",
+        children: [
+          <DropdownMenu.ItemIcon
+            {...{
+              children: (
+                <span className="size-4 rounded bg-token-bg-tertiary" />
+              ),
+            }}
+          />,
+          <span className="h-3 w-24 rounded bg-token-bg-tertiary" />,
+        ],
+      }}
+    />
+  );
 }
 function ThreadAppShellChromeHelper13(gear) {
-  let {
-      alt,
-      className,
-      src
-    } = gear,
+  let { alt, className, src } = gear,
     [hinge, iron] = amber.useState(null);
   if (src === hinge) return null;
   let joint = () => iron(src);
@@ -856,29 +1180,41 @@ var zinc,
       openPrimaryTarget: {
         id: "localConversationPage.openPrimaryTarget",
         defaultMessage: "Open in",
-        description: "Primary open button label"
-      }
+        description: "Primary open button label",
+      },
     });
   });
 function ThreadAppShellChromeHelper14(keystone) {
-  let {
-      conversationId
-    } = keystone,
+  let { conversationId } = keystone,
     latch = CodexPluginActionResult(requestRealtimeVoicePresentationSurface),
     motor = CodexPluginActionResult(AppInitialQU),
     nut = CodexBrowserSurfaceActionType(DeferredUiH222, conversationId),
     piston = motor.cwd == null ? null : identityCwd(motor.cwd);
   let rivet = piston;
-  if (rivet == null || !nut || motor.kind !== "git" || latch.kind === "remote-control") return null;
-  return <AppIconAZ.HeaderAction {...{
-    actionId: "thread-local-project-actions",
-    align: "end",
-    order: 100,
-    children: <ThreadAppShellChromeHelper8 {...{
-      cwd: rivet,
-      hostConfig: latch
-    }} />
-  }} />;
+  if (
+    rivet == null ||
+    !nut ||
+    motor.kind !== "git" ||
+    latch.kind === "remote-control"
+  )
+    return null;
+  return (
+    <AppIconAZ.HeaderAction
+      {...{
+        actionId: "thread-local-project-actions",
+        align: "end",
+        order: 100,
+        children: (
+          <ThreadAppShellChromeHelper8
+            {...{
+              cwd: rivet,
+              hostConfig: latch,
+            }}
+          />
+        ),
+      }}
+    />
+  );
 }
 var daisy,
   ember,
@@ -894,18 +1230,12 @@ var daisy,
   });
 function ThreadAppShellChromeHelper15(screw) {
   let torque = screw === undefined ? {} : screw;
-  let {
-      onClose
-    } = torque,
+  let { onClose } = torque,
     valve = {
       onClose,
-      target: "right"
+      target: "right",
     };
-  let {
-      actions,
-      onOpenArtifact,
-      outputArtifacts
-    } = gamma(valve),
+  let { actions, onOpenArtifact, outputArtifacts } = gamma(valve),
     axle = actions.find(garnet);
   let bracket = axle,
     clamp = () => {
@@ -914,14 +1244,18 @@ function ThreadAppShellChromeHelper15(screw) {
   let drill = bracket != null,
     engine;
   engine = {
-    enabled: drill
+    enabled: drill,
   };
   ContextMenuRegistration("openSideChat", clamp, engine);
-  return <ThreadAppShellChromeHelper17 {...{
-    actions,
-    onOpenArtifact,
-    outputArtifacts
-  }} />;
+  return (
+    <ThreadAppShellChromeHelper17
+      {...{
+        actions,
+        onOpenArtifact,
+        outputArtifacts,
+      }}
+    />
+  );
 }
 function garnet(frame) {
   return frame.id === "side-chat";

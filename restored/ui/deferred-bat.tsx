@@ -28,6 +28,9 @@ export function bindDeferredBat() {
   }
 
   return peers.e(() => {
-    peers.Gjt(), peers.dMt(), pMt = peers.fMt(peers.cMt, `px, `, `px)`, `deg)`), mMt = peers.fMt(peers.lMt, `, `, `)`, `)`);
+    (peers.Gjt(),
+      peers.dMt(),
+      (pMt = peers.fMt(peers.cMt, `px, `, `px)`, `deg)`)),
+      (mMt = peers.fMt(peers.lMt, `, `, `)`, `)`)));
   });
 }

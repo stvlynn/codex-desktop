@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Markdown-directive surface ensure (Value311) — fans into Value308 registry fill.
 
-import {
-  ensureAppScopeHostInit as appInitialMT,
-} from "../../runtime/app-scope-runtime";
+import { ensureAppScopeHostInit as appInitialMT } from "../../runtime/app-scope-runtime";
 import {
   ensureComposerEsm_q0_Init as appInitialQ0,
   ensureComposerEsm_rN_Init as appInitialRN,

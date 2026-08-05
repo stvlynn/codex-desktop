@@ -5,7 +5,10 @@
  * Prefer `features.<name>` then nested `features[name]`.
  * Bundle `Ope` / export `Ygt`.
  */
-export function readConfigFeatureFlag(config: Record<string, unknown> | null | undefined, featureName: string): boolean | undefined {
+export function readConfigFeatureFlag(
+  config: Record<string, unknown> | null | undefined,
+  featureName: string,
+): boolean | undefined {
   const dotted = config?.[`features.${featureName}`];
   if (typeof dotted === "boolean") return dotted;
 

@@ -40,76 +40,88 @@ const AppInitialY: any = undefined;
 export function chronicleConfigQueriesR() {
   let kite = useQueryClient(),
     lemon = CodexPluginActionResult(DeferredUiF22),
-    {
-      data
-    } = CodexBrowserSurfaceActionType(homeDirectoryQueryAtom, lemon),
+    { data } = CodexBrowserSurfaceActionType(homeDirectoryQueryAtom, lemon),
     marble = ensureGitRepoWatchAtomsInit(),
     nickel = [...USER_CONFIG_PATH, lemon];
   let onyx = nickel,
-    pearl = umbra => {
-      let {
-        enabled
-      } = umbra;
+    pearl = (umbra) => {
+      let { enabled } = umbra;
       return canonicalizeWorkspacePathKey("batch-write-config-value", {
         hostId: lemon,
-        edits: [{
-          keyPath: copper,
-          value: enabled,
-          mergeStrategy: "upsert"
-        }],
+        edits: [
+          {
+            keyPath: copper,
+            value: enabled,
+            mergeStrategy: "upsert",
+          },
+        ],
         filePath: data?.configWriteTarget?.filePath ?? null,
         expectedVersion: null,
-        reloadUserConfig: true
+        reloadUserConfig: true,
       });
     };
   let quartz, river;
-  quartz = async violet => {
-    let {
-      enabled
-    } = violet;
+  quartz = async (violet) => {
+    let { enabled } = violet;
     await kite.cancelQueries({
-      queryKey: onyx
+      queryKey: onyx,
     });
     let willow = kite.getQueryData(onyx);
-    return kite.setQueryData(onyx, xenon => xenon == null ? xenon : {
-      ...xenon,
-      config: chronicleConfigQueriesT(xenon.config, enabled)
-    }), {
-      previousUserConfig: willow
-    };
+    return (
+      kite.setQueryData(onyx, (xenon) =>
+        xenon == null
+          ? xenon
+          : {
+              ...xenon,
+              config: chronicleConfigQueriesT(xenon.config, enabled),
+            },
+      ),
+      {
+        previousUserConfig: willow,
+      }
+    );
   };
   river = (yellow, zinc, amber) => {
-    appActionSidebarProjectRefSchema.error("Failed to update Chronicle config", {
-      safe: {
-        error: String(yellow)
+    appActionSidebarProjectRefSchema.error(
+      "Failed to update Chronicle config",
+      {
+        safe: {
+          error: String(yellow),
+        },
+        sensitive: {},
       },
-      sensitive: {}
-    });
+    );
     kite.setQueryData(onyx, amber?.previousUserConfig);
   };
   let slate = async () => {
-    await Promise.all([marble(USER_CONFIG_PATH), marble(["user-saved-config"])]);
+    await Promise.all([
+      marble(USER_CONFIG_PATH),
+      marble(["user-saved-config"]),
+    ]);
   };
   let timber;
-  return timber = {
-    mutationFn: pearl,
-    onMutate: quartz,
-    onError: river,
-    onSettled: slate
-  }, noop(timber);
+  return (
+    (timber = {
+      mutationFn: pearl,
+      onMutate: quartz,
+      onError: river,
+      onSettled: slate,
+    }),
+    noop(timber)
+  );
 }
 function chronicleConfigQueriesT(echo, falcon) {
   return Object.assign(structuredClone(echo), {
     features: {
-      ...alpha(echo.features, AppInitialY, falcon)
-    }
+      ...alpha(echo.features, AppInitialY, falcon),
+    },
   });
 }
 function alpha(gamma, harbor, indigo) {
   let jade = delta.safeParse(gamma);
   return {
     ...(jade.success ? jade.data : {}),
-    [harbor]: indigo
+    [harbor]: indigo,
   };
 }
 var bravo, copper, delta;

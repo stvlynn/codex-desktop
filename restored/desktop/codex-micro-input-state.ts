@@ -39,12 +39,17 @@ export const DEFAULT_CODEX_MICRO_INPUT_STATE: CodexMicroInputState = {
 };
 
 /** Bundle `D9o` — clear knob pulse. */
-export function clearCodexMicroKnobPulse(state: CodexMicroInputState): CodexMicroInputState {
+export function clearCodexMicroKnobPulse(
+  state: CodexMicroInputState,
+): CodexMicroInputState {
   return state.knobPulse == null ? state : { ...state, knobPulse: null };
 }
 
 /** Bundle `w9o` — apply joystick sample + derived analog direction. */
-export function applyCodexMicroJoystick(state: CodexMicroInputState, joystick: AnalogJoystickEvent): CodexMicroInputState {
+export function applyCodexMicroJoystick(
+  state: CodexMicroInputState,
+  joystick: AnalogJoystickEvent,
+): CodexMicroInputState {
   const selectedAnalogDirection =
     analogDirectionFromJoystick(joystick) ?? state.selectedAnalogDirection;
   return state.joystick.angle === joystick.angle &&
@@ -55,14 +60,20 @@ export function applyCodexMicroJoystick(state: CodexMicroInputState, joystick: A
 }
 
 /** Bundle `T9o` — set selected analog direction. */
-export function setCodexMicroAnalogDirection(state: CodexMicroInputState, direction: AnalogDirection): CodexMicroInputState {
+export function setCodexMicroAnalogDirection(
+  state: CodexMicroInputState,
+  direction: AnalogDirection,
+): CodexMicroInputState {
   return state.selectedAnalogDirection === direction
     ? state
     : { ...state, selectedAnalogDirection: direction };
 }
 
 /** Bundle `C9o` — apply encoder / key act event. */
-export function applyCodexMicroKeyEvent(state: CodexMicroInputState, event: CodexMicroKeyEvent): CodexMicroInputState {
+export function applyCodexMicroKeyEvent(
+  state: CodexMicroInputState,
+  event: CodexMicroKeyEvent,
+): CodexMicroInputState {
   if (event.key === "ENC_CW" && event.act === 2) {
     return { ...state, knobPulse: "clockwise" };
   }
@@ -86,38 +97,62 @@ type StoreSet = {
 };
 
 /** Bundle `L9o` / export `Nw` — clear knob pulse via input atom. */
-export function clearCodexMicroKnobPulseOnStore(store: StoreSet, inputAtom: unknown): void {
+export function clearCodexMicroKnobPulseOnStore(
+  store: StoreSet,
+  inputAtom: unknown,
+): void {
   store.set(inputAtom, clearCodexMicroKnobPulse);
 }
 
 /** Bundle `P9o` / export `Mw` — write joystick sample. */
-export function setCodexMicroJoystickOnStore(store: StoreSet, inputAtom: unknown, joystick: AnalogJoystickEvent): void {
+export function setCodexMicroJoystickOnStore(
+  store: StoreSet,
+  inputAtom: unknown,
+  joystick: AnalogJoystickEvent,
+): void {
   store.set(inputAtom, (state: CodexMicroInputState) =>
     applyCodexMicroJoystick(state, joystick),
   );
 }
 
 /** Bundle `F9o` / export `Vw` — write selected analog direction. */
-export function setCodexMicroAnalogDirectionOnStore(store: StoreSet, inputAtom: unknown, direction: AnalogDirection): void {
+export function setCodexMicroAnalogDirectionOnStore(
+  store: StoreSet,
+  inputAtom: unknown,
+  direction: AnalogDirection,
+): void {
   store.set(inputAtom, (state: CodexMicroInputState) =>
     setCodexMicroAnalogDirection(state, direction),
   );
 }
 
 /** Bundle `N9o` / export `jw` — apply key/encoder event. */
-export function applyCodexMicroKeyEventOnStore(store: StoreSet, inputAtom: unknown, event: CodexMicroKeyEvent): void {
+export function applyCodexMicroKeyEventOnStore(
+  store: StoreSet,
+  inputAtom: unknown,
+  event: CodexMicroKeyEvent,
+): void {
   store.set(inputAtom, (state: CodexMicroInputState) =>
     applyCodexMicroKeyEvent(state, event),
   );
 }
 
 /** Bundle `I9o` / export `Hw` — set micro HUD open flag. */
-export function setCodexMicroHudOpen(store: StoreSet, hudOpenAtom: unknown, open: boolean): void {
+export function setCodexMicroHudOpen(
+  store: StoreSet,
+  hudOpenAtom: unknown,
+  open: boolean,
+): void {
   store.set(hudOpenAtom, open);
 }
 
 /** Bundle `M9o` / export `Uw` — write device status; reset input when disconnected. */
-export function setCodexMicroDeviceStatusOnStore(store: StoreSet, statusAtom: unknown, inputAtom: unknown, status: CodexMicroDeviceStatus): void {
+export function setCodexMicroDeviceStatusOnStore(
+  store: StoreSet,
+  statusAtom: unknown,
+  inputAtom: unknown,
+  status: CodexMicroDeviceStatus,
+): void {
   store.set(statusAtom, status);
   if (status.status !== "connected") {
     store.set(inputAtom, DEFAULT_CODEX_MICRO_INPUT_STATE);

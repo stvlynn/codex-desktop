@@ -7,9 +7,7 @@ import { useHostFeatureGate } from "./use-host-feature-gate";
  * Bundle `BN` semantics under public name `useIsBrowserPluginEnabled` (zK).
  * zK itself was an ESM init thunk; the live probe is the host `plugins` feature.
  */
-export function useIsBrowserPluginEnabled(args: {
-  hostId: string;
-}): boolean {
+export function useIsBrowserPluginEnabled(args: { hostId: string }): boolean {
   const gate = useHostFeatureGate({
     featureName: "plugins",
     hostId: args.hostId,

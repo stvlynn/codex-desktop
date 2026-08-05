@@ -14,7 +14,9 @@ export type UseAppHostUpdateStatusInfiniteQueryPeers = {
 let peers: UseAppHostUpdateStatusInfiniteQueryPeers | null = null;
 
 /** Wire UseAppHostUpdateStatusInfiniteQuery peers once companions land. */
-export function setUseAppHostUpdateStatusInfiniteQueryPeers(next: UseAppHostUpdateStatusInfiniteQueryPeers): void {
+export function setUseAppHostUpdateStatusInfiniteQueryPeers(
+  next: UseAppHostUpdateStatusInfiniteQueryPeers,
+): void {
   peers = next;
 }
 

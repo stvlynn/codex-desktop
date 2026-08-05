@@ -10,23 +10,54 @@ import { debugOverride } from "../../account/debug-override";
 import { ensureAccountPlanQueryInit } from "../../account/ensure-account-plan-query-init";
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
 import { isBusinessPlan } from "../../account/plan-type-helpers";
-import { appActionSidebarProjectRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { CODEX_APPSHOT_SHORTCUT_CHANGED_TYPE } from "../../analytics/codex-appshot-shortcut-changed-type";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexConversationalOnboardingExecutionAction } from "../../analytics/codex-conversational-onboarding-execution-action";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { ShellLayoutMetricsContext } from "../../app-shell/shell-layout-metrics-context";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
-import { clampZoomPercent, decayZoomPercent } from "../../artifact/clamp-zoom-percent";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
+import {
+  clampZoomPercent,
+  decayZoomPercent,
+} from "../../artifact/clamp-zoom-percent";
 import { useUpdateAuthNonce } from "../../auth/use-update-auth-nonce";
 import { clearUpcomingLocalDatetimeEntries } from "../../automation/clear-upcoming-local-datetime-entries";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { writingBlocksControllerAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_E4_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sp_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_Mx_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_E4_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_ML_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Sp_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_TI_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_Mx_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { useAtomPair } from "../../boundaries/persisted-atom";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { ensureCommandQueueActiveHelpersInit } from "../../commands/ensure-command-queue-active-helpers-init";
@@ -39,15 +70,30 @@ import { GeneratedImageTabs } from "../../conversation/generated-image-tabs";
 import { CodexBuildEnvironment } from "../../env/codex-build-environment";
 import { ensureRemoteSshConnectionEventInit } from "../../environments/ensure-remote-ssh-connection-event-init";
 import { firstRepoMapEntry } from "../../environments/first-repo-map-entry";
-import { CLOUD_ENVIRONMENT_SELECTOR_FEATURE_GATE_ID, PLAYGROUND_ONBOARDING_FEATURE_GATE_ID } from "../../feature-gates/feature-gate-ids";
+import {
+  CLOUD_ENVIRONMENT_SELECTOR_FEATURE_GATE_ID,
+  PLAYGROUND_ONBOARDING_FEATURE_GATE_ID,
+} from "../../feature-gates/feature-gate-ids";
 import { filterOpenTargets } from "../../files/filter-open-targets";
 import { WorkspaceDirectoryTreeSearch } from "../../files/workspace-directory-tree-search";
 import { ONBOARDING_HIDE_GOOGLE_TILES_DEBUG_OVERRIDE_PREFERENCE_KEY } from "../../home/onboarding-preference-keys";
 import { ensureDebugPanelTurnFilesInit } from "../../hooks/debug-panel-turn-files";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
-import { ensureUseDebugPanelInit, ensureUseDebugPanelParsersInit, useDebugPanelEditedFilePaths, useDebugPanelEntries, useDebugPanelReferencedFilePaths } from "../../hooks/use-debug-panel";
+import {
+  ensureUseDebugPanelInit,
+  ensureUseDebugPanelParsersInit,
+  useDebugPanelEditedFilePaths,
+  useDebugPanelEntries,
+  useDebugPanelReferencedFilePaths,
+} from "../../hooks/use-debug-panel";
 import { useEventCallback } from "../../hooks/use-event-callback";
-import { clampFloatingWindowRect, getCenteredFloatingWindowRect, initFloatingWindowPointerDragConstants, resizeFloatingWindowRect, useFloatingWindowPointerDrag } from "../../hooks/use-floating-window-pointer-drag";
+import {
+  clampFloatingWindowRect,
+  getCenteredFloatingWindowRect,
+  initFloatingWindowPointerDragConstants,
+  resizeFloatingWindowRect,
+  useFloatingWindowPointerDrag,
+} from "../../hooks/use-floating-window-pointer-drag";
 import { useHostWorkspaceRoot } from "../../hooks/use-host-workspace-root";
 import { usePlatformAwareFeatureGate } from "../../hooks/use-platform-aware-feature-gate";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
@@ -71,7 +117,12 @@ import { serializeCharacterReferenceNode } from "../../markdown/serialize-charac
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { codex3 } from "../../models/codex3";
 import { resolveScienceModelLabel } from "../../models/resolve-science-model-label";
-import { findSidebarSectionElement, readScrollTop, scrollAppActionTargetByTurn, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  readScrollTop,
+  scrollAppActionTargetByTurn,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { SIDEBAR_HIT_TEST_SELECTOR } from "../../navigation/sidebar-hit-test-selector";
@@ -99,7 +150,10 @@ import { deferredUiH } from "../../ui/deferred-ui-h";
 import { deferredUiYn } from "../../ui/deferred-ui-yn";
 import { deferredVM } from "../../ui/deferred-vm";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { ensureContextMenuProviderInit } from "../../ui/ensure-context-menu-provider-init";
 import { ght } from "../../ui/ght";
@@ -117,9 +171,20 @@ import { noop } from "../../utils/noop";
 import { posixPathBasename } from "../../utils/posix-path-basename";
 import { sortedArrayFrom } from "../../utils/sorted-array-from";
 import { svgToDataUri } from "../../utils/svg-to-data-uri";
-import { buildThreadVirtualizerLayout, initThreadVirtualizer, visibleRangeFromDistance } from "../../utils/thread-virtualizer";
+import {
+  buildThreadVirtualizerLayout,
+  initThreadVirtualizer,
+  visibleRangeFromDistance,
+} from "../../utils/thread-virtualizer";
 import { toggleSortedIdList } from "../../utils/toggle-sorted-id-list";
-import { ensureImportSettingsB4Init, ensureKeyboardShortcutsHMInit, ensurePersonalizationCInit, ensurePersonalizationG0Init, ensurePersonalizationJutInit, ensurePersonalizationK0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsB4Init,
+  ensureKeyboardShortcutsHMInit,
+  ensurePersonalizationCInit,
+  ensurePersonalizationG0Init,
+  ensurePersonalizationJutInit,
+  ensurePersonalizationK0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { identityCwd } from "../../utils/workspace-paths";
 import { getRecentConversationsQueryKey } from "../../worktrees/get-recent-conversations-query-key";
@@ -129,42 +194,53 @@ import { getBuildFlavor } from "../get-build-flavor";
 import { DesktopPersistenceKeys } from "../persistence-keys";
 import { isRemoteControlConnectionFailedError } from "../remote-control-connection-failed-error";
 
-
 // Wave5d soft JSX companions.
-function Basalt2(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Basalt2(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Cedar2(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Cedar2(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Copper(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Copper(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Daisy2(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Daisy2(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Falcon(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Falcon(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Lotus2(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Lotus2(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -223,20 +299,26 @@ function $d() {
     vine23 = useAuth(),
     wind23 = NativeContextMenuSurface("3207467860"),
     yarrow23 = useNavigate(),
-    {
-      client
-    } = ensureComposerEsm_Ilt_Init(),
+    { client } = ensureComposerEsm_Ilt_Init(),
     [azure23, birch23] = useAtomPair(AppInitialPq),
     [canyon23] = useAtomPair(AppInitialMq),
     [dew23] = useAtomPair(AppInitialQ),
     [alpha24] = useAtomPair(ensurePromptHistoryStorageInit),
-    bravo24 = CodexPluginActionResult(CodexConversationalOnboardingExecutionAction),
+    bravo24 = CodexPluginActionResult(
+      CodexConversationalOnboardingExecutionAction,
+    ),
     copper24 = CodexPluginActionResult(AppInitialXb),
-    delta24 = vine23.accountId != null && isUsageRateLimitBlocked(bravo24, vine23.accountId, copper24) != null;
+    delta24 =
+      vine23.accountId != null &&
+      isUsageRateLimitBlocked(bravo24, vine23.accountId, copper24) != null;
   let echo24 = delta24,
     falcon24 = CodexPluginActionResult(newChatSuggestionSourceDebugStateNState),
-    gamma24 = CodexPluginActionResult(CLOUD_ENVIRONMENT_SELECTOR_FEATURE_GATE_ID),
-    harbor24 = CodexPluginActionResult(ONBOARDING_HIDE_GOOGLE_TILES_DEBUG_OVERRIDE_PREFERENCE_KEY),
+    gamma24 = CodexPluginActionResult(
+      CLOUD_ENVIRONMENT_SELECTOR_FEATURE_GATE_ID,
+    ),
+    harbor24 = CodexPluginActionResult(
+      ONBOARDING_HIDE_GOOGLE_TILES_DEBUG_OVERRIDE_PREFERENCE_KEY,
+    ),
     indigo24 = CodexPluginActionResult(codexAppHomeBeaconDebugStateNState),
     [, jade24] = useAtomPair(AppInitialYq),
     [kite24, lemon24] = useAtomPair(AppInitialBq),
@@ -250,219 +332,491 @@ function $d() {
     [willow24, xenon24] = urn3.useState(false),
     yellow24 = willow24 && true,
     zinc24 = {
-      enabled: yellow24
+      enabled: yellow24,
     };
-  let {
-      data,
-      isError,
-      isLoading
-    } = firstRepoMapEntry(zinc24),
+  let { data, isError, isLoading } = firstRepoMapEntry(zinc24),
     amber24 = {
-      hostId: LOCAL_HOST_ID
+      hostId: LOCAL_HOST_ID,
     };
   let basalt24 = willow24 && true,
     cedar24 = {
       params: amber24,
       queryConfig: {
-        enabled: basalt24
-      }
+        enabled: basalt24,
+      },
     };
-  let daisy24 = SIDEBAR_HIT_TEST_SELECTOR("workspace-root-options", cedar24).data?.roots.length ?? 0,
-    ember24 = [{
-      value: "auto",
-      label: "Auto"
-    }, {
-      value: "login",
-      label: "Login"
-    }, {
-      value: "welcome",
-      label: "Welcome"
-    }, {
-      value: "workspace",
-      label: "Project"
-    }, {
-      value: "app",
-      label: "App"
-    }];
+  let daisy24 =
+      SIDEBAR_HIT_TEST_SELECTOR("workspace-root-options", cedar24).data?.roots
+        .length ?? 0,
+    ember24 = [
+      {
+        value: "auto",
+        label: "Auto",
+      },
+      {
+        value: "login",
+        label: "Login",
+      },
+      {
+        value: "welcome",
+        label: "Welcome",
+      },
+      {
+        value: "workspace",
+        label: "Project",
+      },
+      {
+        value: "app",
+        label: "App",
+      },
+    ];
   let flint24 = ember24,
-    garnet24 = [{
-      value: "auto",
-      label: "Auto"
-    }, {
-      value: "control",
-      label: "Control"
-    }, {
-      value: "t2_direct_folder_picker",
-      label: "T2 Picker"
-    }, {
-      value: "t3_auto_playground",
-      label: "T3 Playground"
-    }, {
-      value: "t4_modal_copy_cta_playground",
-      label: "T4 Copy+CTA"
-    }, {
-      value: T5_ONBOARDING_V2_ID,
-      label: "T5 Onboarding V2"
-    }];
+    garnet24 = [
+      {
+        value: "auto",
+        label: "Auto",
+      },
+      {
+        value: "control",
+        label: "Control",
+      },
+      {
+        value: "t2_direct_folder_picker",
+        label: "T2 Picker",
+      },
+      {
+        value: "t3_auto_playground",
+        label: "T3 Playground",
+      },
+      {
+        value: "t4_modal_copy_cta_playground",
+        label: "T4 Copy+CTA",
+      },
+      {
+        value: T5_ONBOARDING_V2_ID,
+        label: "T5 Onboarding V2",
+      },
+    ];
   let _e = garnet24,
-    hazel24 = [{
-      value: "auto",
-      label: "Auto"
-    }, {
-      value: "initial",
-      label: "Initial"
-    }, {
-      value: "allow-host",
-      label: "Allow host"
-    }, {
-      value: "waiting",
-      label: "Waiting"
-    }, {
-      value: "mfa-required",
-      label: "MFA required"
-    }, {
-      value: "connected",
-      label: "Connected"
-    }];
+    hazel24 = [
+      {
+        value: "auto",
+        label: "Auto",
+      },
+      {
+        value: "initial",
+        label: "Initial",
+      },
+      {
+        value: "allow-host",
+        label: "Allow host",
+      },
+      {
+        value: "waiting",
+        label: "Waiting",
+      },
+      {
+        value: "mfa-required",
+        label: "MFA required",
+      },
+      {
+        value: "connected",
+        label: "Connected",
+      },
+    ];
   let ivory24 = hazel24,
-    be = [{
-      value: null,
-      label: "Auto"
-    }, {
-      value: "google",
-      label: "Google"
-    }, {
-      value: "microsoft",
-      label: "Microsoft"
-    }];
+    be = [
+      {
+        value: null,
+        label: "Auto",
+      },
+      {
+        value: "google",
+        label: "Google",
+      },
+      {
+        value: "microsoft",
+        label: "Microsoft",
+      },
+    ];
   let jasper24 = be,
-    kelp24 = [{
-      label: "Initial",
-      setupInProgress: false,
-      showStartSetupError: false,
-      step: "initial"
-    }, {
-      label: "Initial starting",
-      setupInProgress: true,
-      showStartSetupError: false,
-      step: "initial"
-    }, {
-      label: "Initial error",
-      setupInProgress: false,
-      showStartSetupError: true,
-      step: "initial"
-    }, {
-      label: "Allow host",
-      setupInProgress: false,
-      showStartSetupError: false,
-      step: "allow-host"
-    }, {
-      label: "Allow host starting",
-      setupInProgress: true,
-      showStartSetupError: false,
-      step: "allow-host"
-    }, {
-      label: "Waiting",
-      setupInProgress: false,
-      showStartSetupError: false,
-      step: "waiting"
-    }, {
-      label: "MFA required",
-      setupInProgress: false,
-      showStartSetupError: false,
-      step: "mfa-required"
-    }, {
-      label: "Connected",
-      setupInProgress: false,
-      showStartSetupError: false,
-      step: "connected"
-    }];
+    kelp24 = [
+      {
+        label: "Initial",
+        setupInProgress: false,
+        showStartSetupError: false,
+        step: "initial",
+      },
+      {
+        label: "Initial starting",
+        setupInProgress: true,
+        showStartSetupError: false,
+        step: "initial",
+      },
+      {
+        label: "Initial error",
+        setupInProgress: false,
+        showStartSetupError: true,
+        step: "initial",
+      },
+      {
+        label: "Allow host",
+        setupInProgress: false,
+        showStartSetupError: false,
+        step: "allow-host",
+      },
+      {
+        label: "Allow host starting",
+        setupInProgress: true,
+        showStartSetupError: false,
+        step: "allow-host",
+      },
+      {
+        label: "Waiting",
+        setupInProgress: false,
+        showStartSetupError: false,
+        step: "waiting",
+      },
+      {
+        label: "MFA required",
+        setupInProgress: false,
+        showStartSetupError: false,
+        step: "mfa-required",
+      },
+      {
+        label: "Connected",
+        setupInProgress: false,
+        showStartSetupError: false,
+        step: "connected",
+      },
+    ];
   let lotus24 = kelp24,
     mint24 = kite24?.arm ?? "auto",
     nova24 = alpha24.roles.length === 0 ? "none" : alpha24.roles.join(", ");
   let olive24 = nova24,
     prism24,
     quill24;
-  vine23.authMethod === "chatgpt" ? data == null ? isLoading ? (prism24 = "loading…", quill24 = "loading…") : isError ? (prism24 = "error", quill24 = "error") : (prism24 = "unavailable", quill24 = "unavailable") : (prism24 = data.desktop_onboarding_completed_at == null ? "no" : "yes", quill24 = data.role ?? "none") : (prism24 = "unavailable (ChatGPT auth required)", quill24 = "unavailable (ChatGPT auth required)");
+  vine23.authMethod === "chatgpt"
+    ? data == null
+      ? isLoading
+        ? ((prism24 = "loading…"), (quill24 = "loading…"))
+        : isError
+          ? ((prism24 = "error"), (quill24 = "error"))
+          : ((prism24 = "unavailable"), (quill24 = "unavailable"))
+      : ((prism24 =
+          data.desktop_onboarding_completed_at == null ? "no" : "yes"),
+        (quill24 = data.role ?? "none"))
+    : ((prism24 = "unavailable (ChatGPT auth required)"),
+      (quill24 = "unavailable (ChatGPT auth required)"));
   let reef24 = dew23 ? "yes" : prism24,
-    sage24 = willow24 ? <div className="flex flex-col gap-3 pb-4"><div className="text-xs text-token-description-foreground">{`Auth: ${vine23.authMethod ?? "none"} · Projects: ${daisy24}`}</div><div className="text-xs text-token-description-foreground">{`Codex runtime: ${violet24 == null ? "idle" : Rain3(violet24)}`}</div><div className="flex flex-wrap gap-2">{flint24.map(item => <button key={item.value} type="button" className={IntlProvider("rounded border px-3 py-1 text-xs", item.value === azure23 ? "border-token-focus-border text-token-foreground" : "border-token-border text-token-description-foreground hover:bg-token-foreground/5")} onClick={() => {
-          if (item.value === "welcome") {
-            ensureCommandQueueActiveHelpersInit(LOCAL_HOST_ID);
-            AppInitialSf(urn23);
-            Dusk3(urn23);
-            birch23(item.value);
-            yarrow23("/", {
-              replace: true
-            });
-            return;
-          }
-          item.value === "workspace" && jade24(false);
-          birch23(item.value);
-        }}>{item.label}</button>)}</div><div className="flex items-start gap-2 text-xs"><div className="flex flex-col text-token-description-foreground"><div>{`Onboarding welcome pending: ${canyon23 ? "pending" : "off"}`}</div><div>{"Completed: "}{reef24}</div><div>{`V2 checklist enabled: ${echo24 ? "yes" : "no"}`}</div><div>{`Local roles: ${olive24}`}</div><div>{"Backend role: "}{quill24}</div></div>{null}</div>{<Basalt2 {...{
-        source: falcon24,
-        onSourceChange: topaz24 => {
-          urn23.set(newChatSuggestionSourceDebugStateNState, topaz24);
-        },
-        roles: alpha24.roles
-      }} />}<div className="flex flex-wrap items-center gap-2"><span className="text-xs text-token-description-foreground">{"MX lookup:"}</span><div aria-label="MX lookup" className="flex items-center gap-2" role="group">{jasper24.map(item => <button key={item.label} type="button" aria-pressed={gamma24 === item.value} className={IntlProvider("cursor-interaction rounded border px-3 py-1 text-xs", gamma24 === item.value ? "border-token-focus-border text-token-foreground" : "border-token-border text-token-description-foreground hover:bg-token-foreground/5")} onClick={() => {
-            item.value == null && gamma24 != null && urn23.queryClient.removeQueries({
-              queryKey: buildVscodeQueryKey("email-domain-mail-provider")
-            });
-            urn23.set(CLOUD_ENVIRONMENT_SELECTOR_FEATURE_GATE_ID, item.value);
-          }}>{item.label}</button>)}<button type="button" aria-pressed={harbor24} className={IntlProvider("cursor-interaction rounded border px-3 py-1 text-xs", harbor24 ? "border-token-focus-border text-token-foreground" : "border-token-border text-token-description-foreground hover:bg-token-foreground/5")} onClick={() => {
-            urn23.set(ONBOARDING_HIDE_GOOGLE_TILES_DEBUG_OVERRIDE_PREFERENCE_KEY, !harbor24);
-          }}>{"Hide Google tiles"}</button><button type="button" aria-pressed={indigo24} className={IntlProvider("cursor-interaction rounded border px-3 py-1 text-xs", indigo24 ? "border-token-focus-border text-token-foreground" : "border-token-border text-token-description-foreground hover:bg-token-foreground/5")} onClick={() => {
-            urn23.set(codexAppHomeBeaconDebugStateNState, !indigo24);
-          }}>{"Show Beacon banner"}</button></div></div>{<ElectronOnly {...{
-        electron: true,
-        children: [wind23 ? <Cedar2 {...{}} /> : null, <Daisy2 {...{}} />]
-      }} />}<div className="flex flex-col gap-2"><div className="text-xs text-token-description-foreground">{`Workspace onboarding experiment: ${mint24}`}</div><div className="flex flex-wrap gap-2">{_e.map(item => <button key={item.value} type="button" className={IntlProvider("rounded border px-3 py-1 text-xs", item.value === mint24 ? "border-token-focus-border text-token-foreground" : "border-token-border text-token-description-foreground hover:bg-token-foreground/5")} onClick={() => {
-            if (item.value === "auto") {
-              lemon24(null);
-              return;
-            }
-            lemon24({
-              arm: item.value,
-              assignedAtMs: Date.now(),
-              experimentName: PLAYGROUND_ONBOARDING_FEATURE_GATE_ID
-            });
-          }}>{item.label}</button>)}</div></div><div className="flex items-center gap-2 text-xs"><button type="button" className="rounded border border-token-border px-3 py-1 text-token-description-foreground hover:bg-token-foreground/5" onClick={() => {
-          client.updateUserAsync(client.getContext().user);
-        }}>{"Refetch skill config"}</button></div><div className="flex items-center gap-2 text-xs"><div className="text-token-description-foreground">{`Work plugins announcement: ${quartz24 ? "seen" : "unseen"}`}</div><button type="button" className="cursor-interaction rounded border border-token-border px-3 py-1 text-token-description-foreground hover:bg-token-foreground/5" onClick={() => {
-          river24(false);
-          slate24(false);
-          client.updateUserAsync(client.getContext().user);
-        }}>{"Reset announcement"}</button></div><div className="flex flex-col gap-2"><div className="text-xs text-token-description-foreground">{`Remote setup page: ${marble24}`}</div><div className="flex flex-wrap gap-2">{ivory24.map(item => <button key={item.value} type="button" className={IntlProvider("rounded border px-3 py-1 text-xs", item.value === marble24 ? "border-token-focus-border text-token-foreground" : "border-token-border text-token-description-foreground hover:bg-token-foreground/5")} onClick={() => {
-            nickel24(item.value);
-            yarrow23("/codex-mobile");
-          }}>{item.label}</button>)}</div></div><div className="flex flex-col gap-2"><div className="text-xs text-token-description-foreground">{"Remote"}{" setup dialog"}</div><div className="flex flex-wrap gap-2">{lotus24.map(item => <button key={item.label} type="button" className="rounded border border-token-border px-3 py-1 text-xs text-token-description-foreground hover:bg-token-foreground/5" onClick={() => {
-            chatProcessRegister(urn23, Ridge3, {
-              setupInProgress: item.setupInProgress,
-              showStartSetupError: item.showStartSetupError,
-              step: item.step
-            });
-          }}>{item.label}</button>)}</div></div><div className="flex items-center gap-2 text-xs"><div className="text-token-description-foreground">{`Quick Chat NUX: ${umbra24 ? "seen" : "unseen"}`}</div><button type="button" className="cursor-interaction rounded border border-token-border px-3 py-1 text-token-description-foreground hover:bg-token-foreground/5" onClick={() => {
-          urn23.set(getBuildFlavor, false);
-        }}>{"Reset NUX"}</button></div><div className="flex items-center gap-2 text-xs"><div className="text-token-description-foreground">{`Browser profile import NUX: ${timber24 ? "seen" : "unseen"}`}</div><button type="button" className="cursor-interaction rounded border border-token-border px-3 py-1 text-token-description-foreground hover:bg-token-foreground/5" onClick={() => {
-          urn23.set(AppInitialEk, false);
-        }}>{"Reset NUX"}</button></div><div className="flex items-center gap-2 text-xs"><div className="text-token-description-foreground">{`Browser comment mode coachmark: ${onyx24 ? "seen" : "unseen"}`}</div><button type="button" className="rounded border border-token-border px-3 py-1 text-token-description-foreground hover:bg-token-foreground/5" onClick={() => {
-          pearl24(false);
-        }}>{"Reset coachmark"}</button></div></div> : null;
-  return <Copper {...{
-    storageKey: "debug-onboarding",
-    title: "Onboarding",
-    onToggle: xenon24,
-    variant: "global",
-    children: sage24
-  }} />;
+    sage24 = willow24 ? (
+      <div className="flex flex-col gap-3 pb-4">
+        <div className="text-xs text-token-description-foreground">{`Auth: ${vine23.authMethod ?? "none"} · Projects: ${daisy24}`}</div>
+        <div className="text-xs text-token-description-foreground">{`Codex runtime: ${violet24 == null ? "idle" : Rain3(violet24)}`}</div>
+        <div className="flex flex-wrap gap-2">
+          {flint24.map((item) => (
+            <button
+              key={item.value}
+              type="button"
+              className={IntlProvider(
+                "rounded border px-3 py-1 text-xs",
+                item.value === azure23
+                  ? "border-token-focus-border text-token-foreground"
+                  : "border-token-border text-token-description-foreground hover:bg-token-foreground/5",
+              )}
+              onClick={() => {
+                if (item.value === "welcome") {
+                  ensureCommandQueueActiveHelpersInit(LOCAL_HOST_ID);
+                  AppInitialSf(urn23);
+                  Dusk3(urn23);
+                  birch23(item.value);
+                  yarrow23("/", {
+                    replace: true,
+                  });
+                  return;
+                }
+                item.value === "workspace" && jade24(false);
+                birch23(item.value);
+              }}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+        <div className="flex items-start gap-2 text-xs">
+          <div className="flex flex-col text-token-description-foreground">
+            <div>{`Onboarding welcome pending: ${canyon23 ? "pending" : "off"}`}</div>
+            <div>
+              {"Completed: "}
+              {reef24}
+            </div>
+            <div>{`V2 checklist enabled: ${echo24 ? "yes" : "no"}`}</div>
+            <div>{`Local roles: ${olive24}`}</div>
+            <div>
+              {"Backend role: "}
+              {quill24}
+            </div>
+          </div>
+          {null}
+        </div>
+        {
+          <Basalt2
+            {...{
+              source: falcon24,
+              onSourceChange: (topaz24) => {
+                urn23.set(newChatSuggestionSourceDebugStateNState, topaz24);
+              },
+              roles: alpha24.roles,
+            }}
+          />
+        }
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs text-token-description-foreground">
+            {"MX lookup:"}
+          </span>
+          <div
+            aria-label="MX lookup"
+            className="flex items-center gap-2"
+            role="group"
+          >
+            {jasper24.map((item) => (
+              <button
+                key={item.label}
+                type="button"
+                aria-pressed={gamma24 === item.value}
+                className={IntlProvider(
+                  "cursor-interaction rounded border px-3 py-1 text-xs",
+                  gamma24 === item.value
+                    ? "border-token-focus-border text-token-foreground"
+                    : "border-token-border text-token-description-foreground hover:bg-token-foreground/5",
+                )}
+                onClick={() => {
+                  item.value == null &&
+                    gamma24 != null &&
+                    urn23.queryClient.removeQueries({
+                      queryKey: buildVscodeQueryKey(
+                        "email-domain-mail-provider",
+                      ),
+                    });
+                  urn23.set(
+                    CLOUD_ENVIRONMENT_SELECTOR_FEATURE_GATE_ID,
+                    item.value,
+                  );
+                }}
+              >
+                {item.label}
+              </button>
+            ))}
+            <button
+              type="button"
+              aria-pressed={harbor24}
+              className={IntlProvider(
+                "cursor-interaction rounded border px-3 py-1 text-xs",
+                harbor24
+                  ? "border-token-focus-border text-token-foreground"
+                  : "border-token-border text-token-description-foreground hover:bg-token-foreground/5",
+              )}
+              onClick={() => {
+                urn23.set(
+                  ONBOARDING_HIDE_GOOGLE_TILES_DEBUG_OVERRIDE_PREFERENCE_KEY,
+                  !harbor24,
+                );
+              }}
+            >
+              {"Hide Google tiles"}
+            </button>
+            <button
+              type="button"
+              aria-pressed={indigo24}
+              className={IntlProvider(
+                "cursor-interaction rounded border px-3 py-1 text-xs",
+                indigo24
+                  ? "border-token-focus-border text-token-foreground"
+                  : "border-token-border text-token-description-foreground hover:bg-token-foreground/5",
+              )}
+              onClick={() => {
+                urn23.set(codexAppHomeBeaconDebugStateNState, !indigo24);
+              }}
+            >
+              {"Show Beacon banner"}
+            </button>
+          </div>
+        </div>
+        {
+          <ElectronOnly
+            {...{
+              electron: true,
+              children: [
+                wind23 ? <Cedar2 {...{}} /> : null,
+                <Daisy2 {...{}} />,
+              ],
+            }}
+          />
+        }
+        <div className="flex flex-col gap-2">
+          <div className="text-xs text-token-description-foreground">{`Workspace onboarding experiment: ${mint24}`}</div>
+          <div className="flex flex-wrap gap-2">
+            {_e.map((item) => (
+              <button
+                key={item.value}
+                type="button"
+                className={IntlProvider(
+                  "rounded border px-3 py-1 text-xs",
+                  item.value === mint24
+                    ? "border-token-focus-border text-token-foreground"
+                    : "border-token-border text-token-description-foreground hover:bg-token-foreground/5",
+                )}
+                onClick={() => {
+                  if (item.value === "auto") {
+                    lemon24(null);
+                    return;
+                  }
+                  lemon24({
+                    arm: item.value,
+                    assignedAtMs: Date.now(),
+                    experimentName: PLAYGROUND_ONBOARDING_FEATURE_GATE_ID,
+                  });
+                }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center gap-2 text-xs">
+          <button
+            type="button"
+            className="rounded border border-token-border px-3 py-1 text-token-description-foreground hover:bg-token-foreground/5"
+            onClick={() => {
+              client.updateUserAsync(client.getContext().user);
+            }}
+          >
+            {"Refetch skill config"}
+          </button>
+        </div>
+        <div className="flex items-center gap-2 text-xs">
+          <div className="text-token-description-foreground">{`Work plugins announcement: ${quartz24 ? "seen" : "unseen"}`}</div>
+          <button
+            type="button"
+            className="cursor-interaction rounded border border-token-border px-3 py-1 text-token-description-foreground hover:bg-token-foreground/5"
+            onClick={() => {
+              river24(false);
+              slate24(false);
+              client.updateUserAsync(client.getContext().user);
+            }}
+          >
+            {"Reset announcement"}
+          </button>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="text-xs text-token-description-foreground">{`Remote setup page: ${marble24}`}</div>
+          <div className="flex flex-wrap gap-2">
+            {ivory24.map((item) => (
+              <button
+                key={item.value}
+                type="button"
+                className={IntlProvider(
+                  "rounded border px-3 py-1 text-xs",
+                  item.value === marble24
+                    ? "border-token-focus-border text-token-foreground"
+                    : "border-token-border text-token-description-foreground hover:bg-token-foreground/5",
+                )}
+                onClick={() => {
+                  nickel24(item.value);
+                  yarrow23("/codex-mobile");
+                }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <div className="text-xs text-token-description-foreground">
+            {"Remote"}
+            {" setup dialog"}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {lotus24.map((item) => (
+              <button
+                key={item.label}
+                type="button"
+                className="rounded border border-token-border px-3 py-1 text-xs text-token-description-foreground hover:bg-token-foreground/5"
+                onClick={() => {
+                  chatProcessRegister(urn23, Ridge3, {
+                    setupInProgress: item.setupInProgress,
+                    showStartSetupError: item.showStartSetupError,
+                    step: item.step,
+                  });
+                }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center gap-2 text-xs">
+          <div className="text-token-description-foreground">{`Quick Chat NUX: ${umbra24 ? "seen" : "unseen"}`}</div>
+          <button
+            type="button"
+            className="cursor-interaction rounded border border-token-border px-3 py-1 text-token-description-foreground hover:bg-token-foreground/5"
+            onClick={() => {
+              urn23.set(getBuildFlavor, false);
+            }}
+          >
+            {"Reset NUX"}
+          </button>
+        </div>
+        <div className="flex items-center gap-2 text-xs">
+          <div className="text-token-description-foreground">{`Browser profile import NUX: ${timber24 ? "seen" : "unseen"}`}</div>
+          <button
+            type="button"
+            className="cursor-interaction rounded border border-token-border px-3 py-1 text-token-description-foreground hover:bg-token-foreground/5"
+            onClick={() => {
+              urn23.set(AppInitialEk, false);
+            }}
+          >
+            {"Reset NUX"}
+          </button>
+        </div>
+        <div className="flex items-center gap-2 text-xs">
+          <div className="text-token-description-foreground">{`Browser comment mode coachmark: ${onyx24 ? "seen" : "unseen"}`}</div>
+          <button
+            type="button"
+            className="rounded border border-token-border px-3 py-1 text-token-description-foreground hover:bg-token-foreground/5"
+            onClick={() => {
+              pearl24(false);
+            }}
+          >
+            {"Reset coachmark"}
+          </button>
+        </div>
+      </div>
+    ) : null;
+  return (
+    <Copper
+      {...{
+        storageKey: "debug-onboarding",
+        title: "Onboarding",
+        onToggle: xenon24,
+        variant: "global",
+        children: sage24,
+      }}
+    />
+  );
 }
-function Rain3({
-  downloadedBytes,
-  errorMessage,
-  phase,
-  totalBytes
-}) {
-  return [phase, downloadedBytes == null ? null : totalBytes == null ? `${Seed3(downloadedBytes)} downloaded` : `${Seed3(downloadedBytes)} / ${Seed3(totalBytes)}`, errorMessage].filter(Boolean).join(" · ");
+function Rain3({ downloadedBytes, errorMessage, phase, totalBytes }) {
+  return [
+    phase,
+    downloadedBytes == null
+      ? null
+      : totalBytes == null
+        ? `${Seed3(downloadedBytes)} downloaded`
+        : `${Seed3(downloadedBytes)} / ${Seed3(totalBytes)}`,
+    errorMessage,
+  ]
+    .filter(Boolean)
+    .join(" · ");
 }
 function Seed3(ultra24) {
   return `${(ultra24 / 1024 / 1024).toFixed(1)}MB`;
@@ -506,44 +860,99 @@ var trail3,
     quiet3();
   });
 function of(vapor24) {
-  let {
-      nativePetUiEnabled
-    } = vapor24,
+  let { nativePetUiEnabled } = vapor24,
     wheat24 = CodexPluginActionType(appScopeAtom),
     yarn24 = CodexPluginActionResult(avatarOverlayDebugStateTState),
     zephyr24 = CodexPluginActionResult(avatarOverlayDebugStateNState),
     acorn24 = CodexPluginActionResult(avatarOverlayDebugStateRState),
-    bloom24 = nativePetUiEnabled ? null : <Falcon {...{
-      label: "Resize button",
-      value: acorn24 ? "Hidden" : "Visible"
-    }} />;
+    bloom24 = nativePetUiEnabled ? null : (
+      <Falcon
+        {...{
+          label: "Resize button",
+          value: acorn24 ? "Hidden" : "Visible",
+        }}
+      />
+    );
   let coral24 = yarn24 ? "Visible" : "Hidden",
-    drift24 = <Falcon {...{
-      label: "Window border",
-      value: coral24
-    }} />;
-  let eagle24 = nativePetUiEnabled ? <Falcon {...{
-    label: "Backing material",
-    value: zephyr24 ? "CSS (forced)" : "Automatic"
-  }} /> : null;
-  let frost24 = <div className="flex flex-col py-1.5">{bloom24}{drift24}{eagle24}</div>;
-  let glide24 = nativePetUiEnabled ? null : <div className="flex items-center justify-between gap-3 py-1.5"><div className="text-xs text-token-description-foreground">{"Hide the pet resize button."}</div><AppInitialYC ariaLabel="Hide pet resize button" checked={acorn24} onChange={lunar24 => {
-      wheat24.set(avatarOverlayDebugStateRState, lunar24);
-    }} /></div>;
-  let honey24 = <div className="text-xs text-token-description-foreground">{"Draw a red border around the pet window"}</div>;
-  let iris24 = moss24 => {
+    drift24 = (
+      <Falcon
+        {...{
+          label: "Window border",
+          value: coral24,
+        }}
+      />
+    );
+  let eagle24 = nativePetUiEnabled ? (
+    <Falcon
+      {...{
+        label: "Backing material",
+        value: zephyr24 ? "CSS (forced)" : "Automatic",
+      }}
+    />
+  ) : null;
+  let frost24 = (
+    <div className="flex flex-col py-1.5">
+      {bloom24}
+      {drift24}
+      {eagle24}
+    </div>
+  );
+  let glide24 = nativePetUiEnabled ? null : (
+    <div className="flex items-center justify-between gap-3 py-1.5">
+      <div className="text-xs text-token-description-foreground">
+        {"Hide the pet resize button."}
+      </div>
+      <AppInitialYC
+        ariaLabel="Hide pet resize button"
+        checked={acorn24}
+        onChange={(lunar24) => {
+          wheat24.set(avatarOverlayDebugStateRState, lunar24);
+        }}
+      />
+    </div>
+  );
+  let honey24 = (
+    <div className="text-xs text-token-description-foreground">
+      {"Draw a red border around the pet window"}
+    </div>
+  );
+  let iris24 = (moss24) => {
     wheat24.set(avatarOverlayDebugStateTState, moss24);
   };
-  let jewel24 = <div className="flex items-center justify-between gap-3 py-1.5">{honey24}<AppInitialYC ariaLabel="Show pet window border" checked={yarn24} onChange={iris24} /></div>;
-  let knoll24 = nativePetUiEnabled ? <div className="flex items-center justify-between gap-3 py-1.5"><div className="text-xs text-token-description-foreground">{"Force the pet backing material to use CSS"}</div><AppInitialYC ariaLabel="Force CSS pet material" checked={zephyr24} onChange={north24 => {
-      wheat24.set(avatarOverlayDebugStateNState, north24);
-    }} /></div> : null;
-  return <Copper {...{
-    title: "Pet",
-    storageKey: "debug-pet",
-    variant: "global",
-    children: [frost24, glide24, jewel24, knoll24]
-  }} />;
+  let jewel24 = (
+    <div className="flex items-center justify-between gap-3 py-1.5">
+      {honey24}
+      <AppInitialYC
+        ariaLabel="Show pet window border"
+        checked={yarn24}
+        onChange={iris24}
+      />
+    </div>
+  );
+  let knoll24 = nativePetUiEnabled ? (
+    <div className="flex items-center justify-between gap-3 py-1.5">
+      <div className="text-xs text-token-description-foreground">
+        {"Force the pet backing material to use CSS"}
+      </div>
+      <AppInitialYC
+        ariaLabel="Force CSS pet material"
+        checked={zephyr24}
+        onChange={(north24) => {
+          wheat24.set(avatarOverlayDebugStateNState, north24);
+        }}
+      />
+    </div>
+  ) : null;
+  return (
+    <Copper
+      {...{
+        title: "Pet",
+        storageKey: "debug-pet",
+        variant: "global",
+        children: [frost24, glide24, jewel24, knoll24],
+      }}
+    />
+  );
 }
 var yarrow3,
   azure3,
@@ -564,54 +973,110 @@ function Canyon3() {
     [storm24, tide24] = bravo4.useState(false),
     unity24 = () => {
       let juniper24 = window.electronBridge?.sendMessageFromView;
-      juniper24 == null || storm24 || (tide24(true), juniper24({
-        type: "reload-bundled-plugins"
-      }).catch(Dew3).finally(() => {
-        tide24(false);
-      }));
+      juniper24 == null ||
+        storm24 ||
+        (tide24(true),
+        juniper24({
+          type: "reload-bundled-plugins",
+        })
+          .catch(Dew3)
+          .finally(() => {
+            tide24(false);
+          }));
     };
   let vale24 = unity24,
     wave24 = orbit24.length.toString();
-  let apex24 = <Falcon {...{
-    label: "Catalog entries",
-    value: wave24
-  }} />;
+  let apex24 = (
+    <Falcon
+      {...{
+        label: "Catalog entries",
+        value: wave24,
+      }}
+    />
+  );
   let brook24 = ridge24.length.toString();
-  let cliff24 = <Falcon {...{
-    label: "Views",
-    value: brook24
-  }} />;
+  let cliff24 = (
+    <Falcon
+      {...{
+        label: "Views",
+        value: brook24,
+      }}
+    />
+  );
   let dusk24 = pine24.length.toString();
-  let elm24 = <Falcon {...{
-    label: "File viewers",
-    value: dusk24
-  }} />;
+  let elm24 = (
+    <Falcon
+      {...{
+        label: "File viewers",
+        value: dusk24,
+      }}
+    />
+  );
   let fern24 = quest24.length.toString();
-  let grove24 = <Falcon {...{
-    label: "Mention servers",
-    value: fern24
-  }} />;
-  let hill24 = storm24 ? <VSCODE_EDITOR_ID {...{
-    className: "icon-2xs"
-  }} /> : null;
-  let isle24 = <ElectronOnly {...{
-    electron: true,
-    children: <div className="flex border-t-[0.5px] border-token-border py-1.5"><button type="button" className="inline-flex cursor-interaction items-center gap-1.5 rounded px-1.5 py-0.5 text-xs hover:bg-token-foreground/10 disabled:cursor-not-allowed disabled:opacity-50" disabled={storm24} onClick={vale24}>{hill24}{"Reload bundled plugins"}</button></div>
-  }} />;
-  return <Copper {...{
-    storageKey: "debug-plugins-section",
-    title: "Plugins",
-    variant: "global",
-    children: <div className="flex flex-col py-1.5">{apex24}{cliff24}{elm24}{grove24}{isle24}</div>
-  }} />;
+  let grove24 = (
+    <Falcon
+      {...{
+        label: "Mention servers",
+        value: fern24,
+      }}
+    />
+  );
+  let hill24 = storm24 ? (
+    <VSCODE_EDITOR_ID
+      {...{
+        className: "icon-2xs",
+      }}
+    />
+  ) : null;
+  let isle24 = (
+    <ElectronOnly
+      {...{
+        electron: true,
+        children: (
+          <div className="flex border-t-[0.5px] border-token-border py-1.5">
+            <button
+              type="button"
+              className="inline-flex cursor-interaction items-center gap-1.5 rounded px-1.5 py-0.5 text-xs hover:bg-token-foreground/10 disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={storm24}
+              onClick={vale24}
+            >
+              {hill24}
+              {"Reload bundled plugins"}
+            </button>
+          </div>
+        ),
+      }}
+    />
+  );
+  return (
+    <Copper
+      {...{
+        storageKey: "debug-plugins-section",
+        title: "Plugins",
+        variant: "global",
+        children: (
+          <div className="flex flex-col py-1.5">
+            {apex24}
+            {cliff24}
+            {elm24}
+            {grove24}
+            {isle24}
+          </div>
+        ),
+      }}
+    />
+  );
 }
 function Dew3(lagoon24) {
-  appActionSidebarProjectRefSchema.error("Failed to reload bundled plugins from debug page", {
-    safe: {},
-    sensitive: {
-      error: lagoon24
-    }
-  });
+  appActionSidebarProjectRefSchema.error(
+    "Failed to reload bundled plugins from debug page",
+    {
+      safe: {},
+      sensitive: {
+        error: lagoon24,
+      },
+    },
+  );
 }
 var alpha4,
   bravo4,
@@ -629,19 +1094,25 @@ var alpha4,
   });
 function Echo4() {
   let meadow24 = AppInitialVr();
-  return <Copper {...{
-    storageKey: "debug-product-events-section",
-    title: "Product events",
-    variant: "global",
-    children: <_f {...{
-      productEvents: meadow24
-    }} />
-  }} />;
+  return (
+    <Copper
+      {...{
+        storageKey: "debug-product-events-section",
+        title: "Product events",
+        variant: "global",
+        children: (
+          <_f
+            {...{
+              productEvents: meadow24,
+            }}
+          />
+        ),
+      }}
+    />
+  );
 }
 function _f(nest24) {
-  let {
-      productEvents
-    } = nest24,
+  let { productEvents } = nest24,
     [oak24, petal24] = quartz4.useState(""),
     quiet24,
     rain24,
@@ -652,25 +1123,68 @@ function _f(nest24) {
   {
     let yarrow24 = Kite4(productEvents, oak24);
     urn24 = "flex flex-col";
-    let azure24 = event => {
+    let azure24 = (event) => {
       petal24(event.currentTarget.value);
     };
-    let birch24 = <input type="text" aria-label="Search product events" placeholder="Search event name or payload" value={oak24} className="h-8 w-full rounded-md border border-token-border bg-token-main-surface-primary px-2 text-sm text-token-foreground outline-none placeholder:text-token-description-foreground focus:border-token-focus-border" onChange={azure24} />;
+    let birch24 = (
+      <input
+        type="text"
+        aria-label="Search product events"
+        placeholder="Search event name or payload"
+        value={oak24}
+        className="h-8 w-full rounded-md border border-token-border bg-token-main-surface-primary px-2 text-sm text-token-foreground outline-none placeholder:text-token-description-foreground focus:border-token-focus-border"
+        onChange={azure24}
+      />
+    );
     let canyon24;
-    canyon24 = <div className="mt-2 grid grid-cols-[88px_90px_minmax(0,1fr)] gap-3 text-xs font-medium text-token-description-foreground uppercase"><span>{"Status"}</span><span>{"Time"}</span><span>{"Event"}</span></div>;
-    vine24 = <div className="sticky top-0 z-10 border-b border-token-border/60 bg-token-dropdown-background/95 pt-3 pb-4 backdrop-blur">{birch24}{canyon24}</div>;
+    canyon24 = (
+      <div className="mt-2 grid grid-cols-[88px_90px_minmax(0,1fr)] gap-3 text-xs font-medium text-token-description-foreground uppercase">
+        <span>{"Status"}</span>
+        <span>{"Time"}</span>
+        <span>{"Event"}</span>
+      </div>
+    );
+    vine24 = (
+      <div className="sticky top-0 z-10 border-b border-token-border/60 bg-token-dropdown-background/95 pt-3 pb-4 backdrop-blur">
+        {birch24}
+        {canyon24}
+      </div>
+    );
     quiet24 = "flex flex-col";
-    rain24 = productEvents.length === 0 ? <Lotus2 {...{
-      lines: [{
-        label: "Status",
-        value: "No product event activity yet"
-      }]
-    }} /> : null;
-    seed24 = productEvents.length > 0 && yarrow24.length === 0 ? <div className="py-3 text-sm text-token-description-foreground">{"No matching product events"}</div> : null;
+    rain24 =
+      productEvents.length === 0 ? (
+        <Lotus2
+          {...{
+            lines: [
+              {
+                label: "Status",
+                value: "No product event activity yet",
+              },
+            ],
+          }}
+        />
+      ) : null;
+    seed24 =
+      productEvents.length > 0 && yarrow24.length === 0 ? (
+        <div className="py-3 text-sm text-token-description-foreground">
+          {"No matching product events"}
+        </div>
+      ) : null;
     trail24 = yarrow24.map(Falcon4);
   }
-  let wind24 = <div className={quiet24}>{rain24}{seed24}{trail24}</div>;
-  return <div className={urn24}>{vine24}{wind24}</div>;
+  let wind24 = (
+    <div className={quiet24}>
+      {rain24}
+      {seed24}
+      {trail24}
+    </div>
+  );
+  return (
+    <div className={urn24}>
+      {vine24}
+      {wind24}
+    </div>
+  );
 }
 function Falcon4(dew24) {
   let alpha25 = dew24.event.payload,
@@ -678,24 +1192,84 @@ function Falcon4(dew24) {
     copper25 = dew24.event.eventType,
     delta25 = Harbor4({
       payload: alpha25,
-      statsigUser: dew24.statsigUser
+      statsigUser: dew24.statsigUser,
     });
-  return <div key={dew24.id} className="border-t border-token-border/60 py-4 first:border-t-0"><div className="grid grid-cols-[88px_90px_minmax(0,1fr)] items-start gap-3 text-sm"><span className={IntlProvider("w-fit rounded-full px-2 py-0.5 text-xs font-medium", Jade4(dew24.status))}>{Indigo4(dew24.status)}</span><span className="text-token-description-foreground tabular-nums">{slate4.format(dew24.timestampMs)}</span><span className="min-w-0"><span className="block font-medium break-words">{bravo25}</span>{copper25 === bravo25 ? null : <span className="block font-mono text-xs break-all text-token-description-foreground">{copper25}</span>}</span></div>{dew24.reason == null ? null : <div className="mt-1 text-xs text-token-description-foreground">{"Reason: "}{dew24.reason}</div>}{delta25.length === 0 ? null : <div className={IntlProvider("mt-2 grid gap-2", delta25.length > 1 && "sm:grid-cols-2")}>{delta25.map(Gamma4)}</div>}</div>;
+  return (
+    <div
+      key={dew24.id}
+      className="border-t border-token-border/60 py-4 first:border-t-0"
+    >
+      <div className="grid grid-cols-[88px_90px_minmax(0,1fr)] items-start gap-3 text-sm">
+        <span
+          className={IntlProvider(
+            "w-fit rounded-full px-2 py-0.5 text-xs font-medium",
+            Jade4(dew24.status),
+          )}
+        >
+          {Indigo4(dew24.status)}
+        </span>
+        <span className="text-token-description-foreground tabular-nums">
+          {slate4.format(dew24.timestampMs)}
+        </span>
+        <span className="min-w-0">
+          <span className="block font-medium break-words">{bravo25}</span>
+          {copper25 === bravo25 ? null : (
+            <span className="block font-mono text-xs break-all text-token-description-foreground">
+              {copper25}
+            </span>
+          )}
+        </span>
+      </div>
+      {dew24.reason == null ? null : (
+        <div className="mt-1 text-xs text-token-description-foreground">
+          {"Reason: "}
+          {dew24.reason}
+        </div>
+      )}
+      {delta25.length === 0 ? null : (
+        <div
+          className={IntlProvider(
+            "mt-2 grid gap-2",
+            delta25.length > 1 && "sm:grid-cols-2",
+          )}
+        >
+          {delta25.map(Gamma4)}
+        </div>
+      )}
+    </div>
+  );
 }
 function Gamma4(echo25) {
-  return <div key={echo25.label} className="min-w-0"><div className="text-xs font-medium text-token-description-foreground">{echo25.label}</div><pre className="mt-1 h-72 overflow-auto rounded-md border border-token-border bg-token-foreground/[0.035] p-2 font-mono text-xs leading-relaxed break-words whitespace-pre-wrap text-token-foreground">{Onyx4(echo25.value)}</pre></div>;
+  return (
+    <div key={echo25.label} className="min-w-0">
+      <div className="text-xs font-medium text-token-description-foreground">
+        {echo25.label}
+      </div>
+      <pre className="mt-1 h-72 overflow-auto rounded-md border border-token-border bg-token-foreground/[0.035] p-2 font-mono text-xs leading-relaxed break-words whitespace-pre-wrap text-token-foreground">
+        {Onyx4(echo25.value)}
+      </pre>
+    </div>
+  );
 }
-function Harbor4({
-  payload,
-  statsigUser
-}) {
-  return [...(payload == null ? [] : [{
-    label: "Payload",
-    value: payload
-  }]), ...(statsigUser === undefined ? [] : [{
-    label: "Statsig user",
-    value: statsigUser
-  }])];
+function Harbor4({ payload, statsigUser }) {
+  return [
+    ...(payload == null
+      ? []
+      : [
+          {
+            label: "Payload",
+            value: payload,
+          },
+        ]),
+    ...(statsigUser === undefined
+      ? []
+      : [
+          {
+            label: "Statsig user",
+            value: statsigUser,
+          },
+        ]),
+  ];
 }
 function Indigo4(falcon25) {
   switch (falcon25) {
@@ -724,16 +1298,24 @@ function Jade4(gamma25) {
 function Kite4(harbor25, indigo25) {
   let jade25 = [...harbor25].reverse(),
     kite25 = indigo25.trim();
-  return kite25.length === 0 ? jade25 : jade25.filter(item => Lemon4(item, kite25));
+  return kite25.length === 0
+    ? jade25
+    : jade25.filter((item) => Lemon4(item, kite25));
 }
 function Lemon4(lemon25, marble25) {
   let nickel25 = Nickel4(lemon25);
-  return ensureKeyboardShortcutsHMInit(Marble4(lemon25), marble25) > 0 || ensureKeyboardShortcutsHMInit(lemon25.event.eventType, marble25) > 0 || ensureKeyboardShortcutsHMInit(nickel25, marble25) > 0;
+  return (
+    ensureKeyboardShortcutsHMInit(Marble4(lemon25), marble25) > 0 ||
+    ensureKeyboardShortcutsHMInit(lemon25.event.eventType, marble25) > 0 ||
+    ensureKeyboardShortcutsHMInit(nickel25, marble25) > 0
+  );
 }
 function Marble4(onyx25) {
   let pearl25 = onyx25.event.eventType.split(".");
   return pearl25[pearl25.length - 1] ?? onyx25.event.eventType;
 }
 function Nickel4(quartz25) {
-  return [quartz25.event.payload, quartz25.statsigUser].flatMap(item => item == null ? [] : [Onyx4(item)]).join("\n");
+  return [quartz25.event.payload, quartz25.statsigUser]
+    .flatMap((item) => (item == null ? [] : [Onyx4(item)]))
+    .join("\n");
 }

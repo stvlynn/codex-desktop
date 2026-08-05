@@ -36,7 +36,9 @@ export function setComputerUseSoundMode(mode: string): Promise<unknown> {
 }
 
 /** Bundle `f_u` / export `bt`. */
-export function setComputerUseLockedUseEnabled(enabled: boolean): Promise<unknown> {
+export function setComputerUseLockedUseEnabled(
+  enabled: boolean,
+): Promise<unknown> {
   const api = computerUseSettings();
   if (api.setLockedUseEnabled == null) {
     return Promise.reject(Error("Computer use settings unavailable"));

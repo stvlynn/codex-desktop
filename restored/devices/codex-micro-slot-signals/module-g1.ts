@@ -11,7 +11,10 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { ARTIFACT_GENERATION_STAGE_IDS } from "../../artifacts/artifact-generation-ids";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_MT_Init } from "../../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -20,7 +23,11 @@ import { chats2 } from "../../conversation/chats2";
 import { codexProjectKey } from "../../conversation/codex-project-key";
 import { codexThreadKey } from "../../conversation/codex-thread-key";
 import { deferredConversationN } from "../../conversation/deferred-conversation-n";
-import { ensureSidebarThreadKeyPrefixesInit, localThreadIdFromSidebarKey, toLocalSidebarThreadKey } from "../../conversation/sidebar-thread-keys";
+import {
+  ensureSidebarThreadKeyPrefixesInit,
+  localThreadIdFromSidebarKey,
+  toLocalSidebarThreadKey,
+} from "../../conversation/sidebar-thread-keys";
 import { sortThreadsByAttention } from "../../conversation/sort-threads-by-attention";
 import { isRemoteControlConnectionFailedError } from "../../desktop/remote-control-connection-failed-error";
 import { positiveBoundingClientRect } from "../../dom/positive-bounding-client-rect";
@@ -100,13 +107,17 @@ const AppInitialZT: any = undefined;
 const AppInitialZw: any = undefined;
 function alpha(jade, kite, lemon) {
   let marble = {
-    ...jade
+    ...jade,
   };
-  if (lemon != null && "threadKey" in lemon) for (let nickel of ARTIFACT_GENERATION_STAGE_IDS) {
-    let onyx = marble[nickel];
-    onyx != null && "threadKey" in onyx && onyx.threadKey === lemon.threadKey && (marble[nickel] = null);
-  }
-  return marble[kite] = lemon, marble;
+  if (lemon != null && "threadKey" in lemon)
+    for (let nickel of ARTIFACT_GENERATION_STAGE_IDS) {
+      let onyx = marble[nickel];
+      onyx != null &&
+        "threadKey" in onyx &&
+        onyx.threadKey === lemon.threadKey &&
+        (marble[nickel] = null);
+    }
+  return ((marble[kite] = lemon), marble);
 }
 function bravo({
   assignments,
@@ -114,21 +125,41 @@ function bravo({
   conversationId,
   hostId,
   pending,
-  title
+  title,
 }) {
-  return pending?.clientThreadId === clientThreadId ? alpha(assignments, pending.agentKeyId, {
-    hostId,
-    threadKey: toLocalSidebarThreadKey(conversationId),
-    title
-  }) : null;
+  return pending?.clientThreadId === clientThreadId
+    ? alpha(assignments, pending.agentKeyId, {
+        hostId,
+        threadKey: toLocalSidebarThreadKey(conversationId),
+        title,
+      })
+    : null;
 }
-export function codexMicroSlotSignalsS(basalt: unknown, cedar: unknown, daisy: unknown) {
-  return SelfServeBusinessUsageBased(daisy) ? (basalt.set(delta, {
-    agentKeyId: cedar,
-    clientThreadId: daisy
-  }), true) : false;
+export function codexMicroSlotSignalsS(
+  basalt: unknown,
+  cedar: unknown,
+  daisy: unknown,
+) {
+  return SelfServeBusinessUsageBased(daisy)
+    ? (basalt.set(delta, {
+        agentKeyId: cedar,
+        clientThreadId: daisy,
+      }),
+      true)
+    : false;
 }
-export function codexMicroSlotSignalsC(ember: unknown, flint: unknown, garnet: unknown) {
-  ember.set(codexMicroSlotSignalsU, alpha(ember.get(codexMicroSlotSignalsU) ?? codexMicroSlotSignalsO, flint, garnet));
+export function codexMicroSlotSignalsC(
+  ember: unknown,
+  flint: unknown,
+  garnet: unknown,
+) {
+  ember.set(
+    codexMicroSlotSignalsU,
+    alpha(
+      ember.get(codexMicroSlotSignalsU) ?? codexMicroSlotSignalsO,
+      flint,
+      garnet,
+    ),
+  );
   ember.get(delta)?.agentKeyId === flint && ember.set(delta, null);
 }

@@ -24,6 +24,9 @@ export type ProductEventLogger = {
  * Bundle form is `Ub(scope, GQt, payload)` where `Ub` reads the product-analytics
  * atom; here the logger is passed explicitly.
  */
-export function logCreditPurchaseButtonClicked(logger: ProductEventLogger, payload: CreditPurchaseButtonClickedPayload): void {
+export function logCreditPurchaseButtonClicked(
+  logger: ProductEventLogger,
+  payload: CreditPurchaseButtonClickedPayload,
+): void {
   logger.logProductEvent(CODEX_CREDIT_PURCHASE_BUTTON_CLICKED_TYPE, payload);
 }

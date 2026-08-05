@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Mn as _presentationMn,
-} from "../presentation-protobuf";
+import { Mn as _presentationMn } from "../presentation-protobuf";
 
 export const axisOrientationMinNameToProto = {
   minMax: _presentationMn.AXIS_ORIENTATION_MIN_MAX,

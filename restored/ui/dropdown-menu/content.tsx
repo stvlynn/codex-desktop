@@ -10,9 +10,7 @@ import { dropdownMenuSurfaceClassName } from "./surface";
 import type { DropdownMenuContentProps } from "./types";
 
 /** Focusable menu items after `from` within the nearest `[role=menu]`. */
-export function queryFocusableMenuItemsAfter(
-  from: Element,
-): HTMLElement[] {
+export function queryFocusableMenuItemsAfter(from: Element): HTMLElement[] {
   const menu = from.closest('[role="menu"]');
   if (menu == null) return [];
   const nodes = Array.from(
@@ -55,7 +53,8 @@ export function DropdownMenuContent(
       return;
     }
     const input = event.currentTarget.querySelector("input");
-    const firstItem = input == null ? undefined : queryFocusableMenuItemsAfter(input)[0];
+    const firstItem =
+      input == null ? undefined : queryFocusableMenuItemsAfter(input)[0];
     if (
       !(event.target instanceof HTMLElement) ||
       event.target.closest(

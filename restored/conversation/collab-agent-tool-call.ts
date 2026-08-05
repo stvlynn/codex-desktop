@@ -12,7 +12,9 @@ export type CollabAgentToolCallPeers = {
 let peers: CollabAgentToolCallPeers | null = null;
 
 /** Wire collabAgentToolCall peers once companions land. */
-export function setCollabAgentToolCallPeers(next: CollabAgentToolCallPeers): void {
+export function setCollabAgentToolCallPeers(
+  next: CollabAgentToolCallPeers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,9 @@ export function collabAgentToolCall() {
   }
 
   return peers.e(() => {
-    peers.wSt(), peers.g_(), ann = `Interrupted before the steer was accepted.`, onn = `Run ended before the steer was accepted.`;
+    (peers.wSt(),
+      peers.g_(),
+      (ann = `Interrupted before the steer was accepted.`),
+      (onn = `Run ended before the steer was accepted.`));
   });
 }

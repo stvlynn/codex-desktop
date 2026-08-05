@@ -23,6 +23,6 @@ export function bindBindChatgpt4() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.U_();
+    (peers.Au(), peers.U_());
   });
 }

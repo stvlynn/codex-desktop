@@ -11,7 +11,10 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { ARTIFACT_GENERATION_STAGE_IDS } from "../../artifacts/artifact-generation-ids";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { ensureComposerEsm_MT_Init } from "../../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -20,7 +23,11 @@ import { chats2 } from "../../conversation/chats2";
 import { codexProjectKey } from "../../conversation/codex-project-key";
 import { codexThreadKey } from "../../conversation/codex-thread-key";
 import { deferredConversationN } from "../../conversation/deferred-conversation-n";
-import { ensureSidebarThreadKeyPrefixesInit, localThreadIdFromSidebarKey, toLocalSidebarThreadKey } from "../../conversation/sidebar-thread-keys";
+import {
+  ensureSidebarThreadKeyPrefixesInit,
+  localThreadIdFromSidebarKey,
+  toLocalSidebarThreadKey,
+} from "../../conversation/sidebar-thread-keys";
 import { sortThreadsByAttention } from "../../conversation/sort-threads-by-attention";
 import { isRemoteControlConnectionFailedError } from "../../desktop/remote-control-connection-failed-error";
 import { positiveBoundingClientRect } from "../../dom/positive-bounding-client-rect";
@@ -49,8 +56,16 @@ const bravo: any = undefined;
 /** split companion stub */
 const persistSettingValue: any = undefined;
 
-export function codexMicroSlotSignalsL(hazel: unknown, ivory: unknown, jasper: unknown) {
-  if (!SelfServeBusinessUsageBased(ivory) || getSettingValue(hazel.get, AppInitialNpt.agentSource) !== "custom") return false;
+export function codexMicroSlotSignalsL(
+  hazel: unknown,
+  ivory: unknown,
+  jasper: unknown,
+) {
+  if (
+    !SelfServeBusinessUsageBased(ivory) ||
+    getSettingValue(hazel.get, AppInitialNpt.agentSource) !== "custom"
+  )
+    return false;
   let kelp = hazel.get(delta),
     lotus = bravo({
       assignments: hazel.get(codexMicroSlotSignalsU) ?? codexMicroSlotSignalsO,
@@ -58,17 +73,35 @@ export function codexMicroSlotSignalsL(hazel: unknown, ivory: unknown, jasper: u
       conversationId: jasper,
       hostId: hazel.get(DeferredUi2, jasper) ?? "local",
       pending: kelp,
-      title: hazel.get(deferredConversationN, jasper)
+      title: hazel.get(deferredConversationN, jasper),
     });
-  return lotus == null ? false : (hazel.set(codexMicroSlotSignalsU, lotus), hazel.get(delta) === kelp && hazel.set(delta, null), true);
+  return lotus == null
+    ? false
+    : (hazel.set(codexMicroSlotSignalsU, lotus),
+      hazel.get(delta) === kelp && hazel.set(delta, null),
+      true);
 }
-export function codexMicroSlotSignalsP(mint: unknown, nova: unknown, olive: unknown) {
+export function codexMicroSlotSignalsP(
+  mint: unknown,
+  nova: unknown,
+  olive: unknown,
+) {
   if (getSettingValue(mint.get, AppInitialNpt.agentSource) !== "custom") return;
   let prism = codexMicroSlotSignalsD(nova),
-    quill = prism == null ? null : (mint.get(codexMicroSlotSignalsU) ?? codexMicroSlotSignalsO)[prism];
-  if (quill == null || !("threadKey" in quill) || quill.threadKey !== olive || quill.hostId == null) return;
+    quill =
+      prism == null
+        ? null
+        : (mint.get(codexMicroSlotSignalsU) ?? codexMicroSlotSignalsO)[prism];
+  if (
+    quill == null ||
+    !("threadKey" in quill) ||
+    quill.threadKey !== olive ||
+    quill.hostId == null
+  )
+    return;
   let reef = localThreadIdFromSidebarKey(quill.threadKey);
-  reef != null && DeferredUiQ22(mint, resolveScienceModelLabel(reef), quill.hostId);
+  reef != null &&
+    DeferredUiQ22(mint, resolveScienceModelLabel(reef), quill.hostId);
 }
 function codexMicroSlotSignalsD(pearl) {
   return ARTIFACT_GENERATION_STAGE_IDS[pearl] ?? null;
@@ -94,8 +127,11 @@ var copper,
       AG02: null,
       AG03: null,
       AG04: null,
-      AG05: null
+      AG05: null,
     };
-    codexMicroSlotSignalsU = persistSettingValue(copper, codexMicroSlotSignalsO);
+    codexMicroSlotSignalsU = persistSettingValue(
+      copper,
+      codexMicroSlotSignalsO,
+    );
     delta = reactCompilerRuntime(appScopeAtom, null);
   });

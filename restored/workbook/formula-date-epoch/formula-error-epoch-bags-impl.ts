@@ -7,15 +7,9 @@ import { esmInit } from "../../runtime/rolldown-runtime";
 import workbookDecimal, { ensureDecimalInit } from "../../vendor/decimal";
 import { workbookBinding1874 } from "../formula-stats";
 import { ensureFormulaArrayInit } from "../formula-array";
-import {
-  ensureEvalContextStackInit,
-} from "../formula-eng-mids";
+import { ensureEvalContextStackInit } from "../formula-eng-mids";
 import { Jct } from "../formula-criteria-lookup";
-import {
-  Lrt,
-  Prt,
-  workbookBinding1901,
-} from "../formula-bond-basis";
+import { Lrt, Prt, workbookBinding1901 } from "../formula-bond-basis";
 import { initAddressMetrics } from "../../utils/spreadsheet-address-utils";
 
 const $u = ensureFormulaArrayInit;

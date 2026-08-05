@@ -33,6 +33,17 @@ export function bindBindSkills() {
   }
 
   return peers.e(() => {
-    peers.KT(), peers.h2n(), x2n = `.codex`, S2n = `.agents`, C2n = `skills`, w2n = `_import`, T2n = `.system`, E2n = `scripts`, D2n = `plugins`, O2n = `cache`, k2n = `skill.md`, A2n = `internal-knowledge`;
+    (peers.KT(),
+      peers.h2n(),
+      (x2n = `.codex`),
+      (S2n = `.agents`),
+      (C2n = `skills`),
+      (w2n = `_import`),
+      (T2n = `.system`),
+      (E2n = `scripts`),
+      (D2n = `plugins`),
+      (O2n = `cache`),
+      (k2n = `skill.md`),
+      (A2n = `internal-knowledge`));
   });
 }

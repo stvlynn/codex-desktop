@@ -26,7 +26,10 @@ export type PathMatch = {
 };
 
 /** Match a pathname against a path pattern. */
-export function matchPathPattern(pattern: PathPattern, pathname: string): PathMatch | null {
+export function matchPathPattern(
+  pattern: PathPattern,
+  pathname: string,
+): PathMatch | null {
   if (compilePath == null) return null;
   let normalized =
     typeof pattern === "string"

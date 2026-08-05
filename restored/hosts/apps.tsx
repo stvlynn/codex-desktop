@@ -25,6 +25,6 @@ export function bindBindApps() {
   }
 
   return peers.e(() => {
-    V7r = peers.c(), peers.Ho(), peers.kD();
+    ((V7r = peers.c()), peers.Ho(), peers.kD());
   });
 }

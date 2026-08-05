@@ -10,7 +10,9 @@ export type MentionedFileHeading = {
 };
 
 /** Parse a `## label: /abs/path` mentioned-file heading. */
-export function parseMentionedFileHeading(line: string): MentionedFileHeading | null {
+export function parseMentionedFileHeading(
+  line: string,
+): MentionedFileHeading | null {
   const title = line.match(/^##\s+(.+)$/)?.[1];
   if (title == null) return null;
   let idx = title.lastIndexOf(": ");

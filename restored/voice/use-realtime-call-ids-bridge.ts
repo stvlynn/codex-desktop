@@ -19,7 +19,9 @@ export type UseRealtimeCallIdsBridgePeers = {
 let peers: UseRealtimeCallIdsBridgePeers | null = null;
 
 /** Wire useRealtimeCallIdsBridge peers once companions land. */
-export function setUseRealtimeCallIdsBridgePeers(next: UseRealtimeCallIdsBridgePeers): void {
+export function setUseRealtimeCallIdsBridgePeers(
+  next: UseRealtimeCallIdsBridgePeers,
+): void {
   peers = next;
 }
 

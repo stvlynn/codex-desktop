@@ -32,6 +32,14 @@ export function bindDeferredUisN() {
   }
 
   return peers.e(() => {
-    BLa = peers.c(), peers.Fh(), peers.yk(), peers.Mga(), peers.$ga(), peers.r_a(), peers.LLa(), peers.yS(), VLa = peers.J();
+    ((BLa = peers.c()),
+      peers.Fh(),
+      peers.yk(),
+      peers.Mga(),
+      peers.$ga(),
+      peers.r_a(),
+      peers.LLa(),
+      peers.yS(),
+      (VLa = peers.J()));
   });
 }

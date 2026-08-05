@@ -25,6 +25,6 @@ export function bindUpt() {
   }
 
   return peers.e(() => {
-    LTe = peers.r(peers.Il()), RTe = `/.codex`;
+    ((LTe = peers.r(peers.Il())), (RTe = `/.codex`));
   });
 }

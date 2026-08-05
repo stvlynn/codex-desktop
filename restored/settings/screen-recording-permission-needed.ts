@@ -15,7 +15,9 @@ export type BindScreenRecordingPermissionNeededPeers = {
 let peers: BindScreenRecordingPermissionNeededPeers | null = null;
 
 /** Wire bindScreenRecordingPermissionNeeded peers once companions land. */
-export function setBindScreenRecordingPermissionNeededPeers(next: BindScreenRecordingPermissionNeededPeers): void {
+export function setBindScreenRecordingPermissionNeededPeers(
+  next: BindScreenRecordingPermissionNeededPeers,
+): void {
   peers = next;
 }
 
@@ -24,10 +26,12 @@ export function setBindScreenRecordingPermissionNeededPeers(next: BindScreenReco
  */
 export function bindScreenRecordingPermissionNeeded() {
   if (peers == null) {
-    throw new Error("bindScreenRecordingPermissionNeeded peers are not configured");
+    throw new Error(
+      "bindScreenRecordingPermissionNeeded peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    qSu = peers.c(), peers.$u(), peers.Pp(), peers._p(), U9 = peers.J();
+    ((qSu = peers.c()), peers.$u(), peers.Pp(), peers._p(), (U9 = peers.J()));
   });
 }

@@ -17,7 +17,9 @@ type BrowserProfileImportDialogModalImpl = (
 let impl: BrowserProfileImportDialogModalImpl | null = null;
 
 /** Wire the full BrowserProfileImportDialogModal once deeper companion restore lands. */
-export function bindBrowserProfileImportDialogModal(next: BrowserProfileImportDialogModalImpl): void {
+export function bindBrowserProfileImportDialogModal(
+  next: BrowserProfileImportDialogModalImpl,
+): void {
   impl = next;
 }
 

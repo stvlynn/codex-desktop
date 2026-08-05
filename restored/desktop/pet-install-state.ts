@@ -2,10 +2,7 @@
 // Pet (custom avatar) install preview/install state machine + IPC invoke.
 // Stage 3: Zut→invokeDesktopRpc; ivt→createScopedSignal; Fft→appScopeAtom; tdt init.
 
-import {
-  appScopeAtom,
-  createScopedSignal,
-} from "../runtime/app-scope-runtime";
+import { appScopeAtom, createScopedSignal } from "../runtime/app-scope-runtime";
 import { invokeDesktopRpc } from "../desktop/invoke-desktop-rpc";
 export type PetInstallPreviewParams = {
   name: string;

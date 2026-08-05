@@ -27,6 +27,6 @@ export function round() {
   }
 
   return peers.e(() => {
-    khu = peers.c(), peers.sd(), peers.fh(), C9 = peers.J();
+    ((khu = peers.c()), peers.sd(), peers.fh(), (C9 = peers.J()));
   });
 }

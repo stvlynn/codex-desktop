@@ -24,6 +24,8 @@ export function bindBindUltra() {
   }
 
   return peers.e(() => {
-    NJr = `gpt-5.5`, PJr = `medium`, FJr = [`minimal`, `low`, `medium`, `high`, `xhigh`, `max`];
+    ((NJr = `gpt-5.5`),
+      (PJr = `medium`),
+      (FJr = [`minimal`, `low`, `medium`, `high`, `xhigh`, `max`]));
   });
 }

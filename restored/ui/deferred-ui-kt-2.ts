@@ -24,7 +24,8 @@ export function bindDeferredUiKT() {
     throw new Error("bindDeferredUiKT peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => e(peers.DY) && e(peers.DE, e(peers.SD)).kind === `local`);
+  return peers.Ma(
+    peers.Q,
+    ({ get: e }) => e(peers.DY) && e(peers.DE, e(peers.SD)).kind === `local`,
+  );
 }

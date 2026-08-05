@@ -27,12 +27,12 @@ export function bindDeferredUiA() {
     throw new Error("bindDeferredUiA peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => peers.WAr({
-    pendingRequestType: t(peers.mD, e)?.type ?? null,
-    requests: t(peers.pD, e),
-    resumeState: t(peers.hD, e),
-    threadRuntimeStatus: t(peers.Knr, e)
-  }));
+  return peers.Oa(peers.Q, (e, { get: t }) =>
+    peers.WAr({
+      pendingRequestType: t(peers.mD, e)?.type ?? null,
+      requests: t(peers.pD, e),
+      resumeState: t(peers.hD, e),
+      threadRuntimeStatus: t(peers.Knr, e),
+    }),
+  );
 }

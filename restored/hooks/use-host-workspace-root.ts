@@ -20,7 +20,9 @@ export type UseHostWorkspaceRootPeers = {
 let peers: UseHostWorkspaceRootPeers | null = null;
 
 /** Wire useHostWorkspaceRoot peers once companions land. */
-export function setUseHostWorkspaceRootPeers(next: UseHostWorkspaceRootPeers): void {
+export function setUseHostWorkspaceRootPeers(
+  next: UseHostWorkspaceRootPeers,
+): void {
   peers = next;
 }
 

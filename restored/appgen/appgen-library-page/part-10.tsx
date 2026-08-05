@@ -12,13 +12,37 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useAppgenScreenshotDataUrlQuery } from "../../apps/use-appgen-screenshot-data-url-query";
-import { ArtifactFilePreviewIcon, ensureArtifactFilePreviewIconInit } from "../../artifact/artifact-file-preview-icon";
+import {
+  ArtifactFilePreviewIcon,
+  ensureArtifactFilePreviewIconInit,
+} from "../../artifact/artifact-file-preview-icon";
 import { ArtifactPreviewDownloadButton } from "../../artifact/artifact-preview-download-button";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KM_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KM_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { cloneTypedArray } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 } from "../../browser/chatgpt2";
@@ -79,14 +103,20 @@ import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { deferredUiYV } from "../../ui/deferred-ui-yv";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { EmptyMemoSlot } from "../../ui/empty-memo-slot";
 import { ensureShapeColorTokenClusterInit } from "../../ui/ensure-shape-color-token-cluster-init";
 import { macOS4 } from "../../ui/mac-os4";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { SearchableDetailPageLayout } from "../../ui/searchable-detail-page-layout";
-import { ensureUseSearchablePageTitleVisibilityInit, useSearchablePageTitleVisibility } from "../../ui/use-searchable-page-title-visibility";
+import {
+  ensureUseSearchablePageTitleVisibilityInit,
+  useSearchablePageTitleVisibility,
+} from "../../ui/use-searchable-page-title-visibility";
 import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { formatUrlHostPath } from "../../utils/format-url-host-path";
 import { hvtBindableHelper } from "../../utils/hvt-bindable-helper";
@@ -94,72 +124,109 @@ import { identity } from "../../utils/identity";
 import { isIndeterminate } from "../../utils/is-indeterminate";
 import { lerpIfFinite } from "../../utils/lerp-if-finite";
 import { slugifyLoose } from "../../utils/slugify-loose";
-import { ensureImportSettingsCLInit, ensurePersonalizationK0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensurePersonalizationK0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { ensureNewThreadBhInit } from "../../utils/wave-av-gap-ensure-inits";
 import { keysIn } from "../../vendor/lodash-cjs-predicates";
-import { appgenShareDialogT, ensureAppgenShareDialogInit } from "../appgen-share-dialog";
+import {
+  appgenShareDialogT,
+  ensureAppgenShareDialogInit,
+} from "../appgen-share-dialog";
 import { ensureChatgptSiteSuffixesInit } from "../chatgpt-site-suffixes";
-import { createAppgenConversation, dismissAppgenConversationPrompt, ensureStartAppgenConversationHelpersInit, ensureStartAppgenConversationInit, formatAppgenConversationPrefill, listAppgenConversationActions, prepareAppgenConversation, startAppgenConversation, startAppgenConversationFromLibrary, useStartAppgenConversation } from "../start-appgen-conversation";
+import {
+  createAppgenConversation,
+  dismissAppgenConversationPrompt,
+  ensureStartAppgenConversationHelpersInit,
+  ensureStartAppgenConversationInit,
+  formatAppgenConversationPrefill,
+  listAppgenConversationActions,
+  prepareAppgenConversation,
+  startAppgenConversation,
+  startAppgenConversationFromLibrary,
+  useStartAppgenConversation,
+} from "../start-appgen-conversation";
 
 // Wave5d soft JSX companions.
-function Alpha1(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha1(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Bravo1(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Bravo1(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Canyon(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Canyon(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Dew(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Dew(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function EnsureAppIconKhInit(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function EnsureAppIconKhInit(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Grove(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Grove(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function North(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function North(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Tide(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Tide(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Wind(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Wind(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -217,114 +284,185 @@ const vale: any = undefined;
 const vine: any = undefined;
 const yarrow: any = undefined;
 export function AppgenLibraryPageIcon__splitRest2(__splitParams: any) {
-  return <div className="relative flex h-full min-h-0 flex-col bg-token-main-surface-primary" onDragEnter={honey} onDragOver={iris} onDragLeave={jewel} onDrop={knoll}>
-      {<ElectronOnly {...{
-      extension: true,
-      children: lunar
-    }} />}
-      {<ElectronOnly {...{
-      browser: true,
-      chromeExtension: true,
-      electron: true,
-      children: <AppIconAZ.Header {...{
-        children: lunar
-      }} />
-    }} />}
-      {moss == null ? null : <AppIconAZ.RightPanelOutlet {...{
-      children: <North {...{
-        cloudPreviewRenderer,
-        item: moss,
-        onClose: orbit
-      }} />
-    }} />}
-      <SearchableDetailPageLayout contentClassName="!pt-6" headerVariant="inset" scrollContainerRef={scrollContainerRef} title={<MemoizedFormattedMessage {...{
-      id: "appgenPage.library.title",
-      defaultMessage: "Library",
-      description: "Title shown at the top of the Library page"
-    }} />} subtitle={localSourcesEnabled ? <MemoizedFormattedMessage {...{
-      id: "appgenPage.library.subtitle",
-      defaultMessage: "Organize and reuse files, images and sites created across chats",
-      description: "Subtitle shown at the top of the Library page"
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "appgenPage.library.subtitleCloudFiles",
-      defaultMessage: "Organize and reuse files and images created across chats",
-      description: "Subtitle shown at the top of the cloud-only Library page"
-    }} />} titleRef={titleRef} search={{
-      id: "appgen-library-search",
-      label: pine,
-      onSearchQueryChange: pearl => {
-        quest(pearl);
-        ridge([]);
-      },
-      placeholder: pine,
-      searchQuery: storm
-    }} controls={<Tide {...{
-      accessFilter: unity,
-      canvasEnabled: false,
-      contentType: vale,
-      fileFilter: apex,
-      localSourcesEnabled,
-      viewMode: brook,
-      onAccessFilterChange: cliff,
-      onContentTypeChange: dusk,
-      onFileFilterChange: elm,
-      onViewModeChange: fern
-    }} />}>
-        {<Grove {...{
-        accessFilter: unity,
-        canvasSource: undefined,
-        cloudFileActions: cloudFileActions == null ? undefined : {
-          mutatingFileIds: hill,
-          selectedFileIds: isle,
-          onDelete: quartz => juniper({
-            type: "delete",
-            files: [quartz]
-          }),
-          onDownload: river => {
-            lagoon(river);
-          },
-          onRename: slate => juniper({
-            type: "rename",
-            file: slate
-          }),
-          onToggleSelection: meadow
-        },
-        cloudFileThumbnailResolver,
-        cloudSource: nest,
-        cloudUploadingFiles: oak,
-        contentType: vale,
-        createAction: petal,
-        fileFilter: apex,
-        localSourcesEnabled,
-        searchQuery: storm,
-        viewMode: brook,
-        onCreate: quiet,
-        onEdit: rain,
-        onFileEdit: seed,
-        onImageEdit: trail,
-        onPreview: urn
-      }} />}
-      </SearchableDetailPageLayout>
-      {vine == null ? null : <Wind {...{
-      action: vine,
-      isMutating: hill.length > 0,
-      onDelete: () => {
-        vine.type === "delete" && yarrow(vine.files);
-      },
-      onOpenChange: timber => {
-        !timber && hill.length === 0 && juniper(null);
-      },
-      onRename: umbra => {
-        vine.type === "rename" && azure(vine.file, umbra);
+  return (
+    <div
+      className="relative flex h-full min-h-0 flex-col bg-token-main-surface-primary"
+      onDragEnter={honey}
+      onDragOver={iris}
+      onDragLeave={jewel}
+      onDrop={knoll}
+    >
+      {
+        <ElectronOnly
+          {...{
+            extension: true,
+            children: lunar,
+          }}
+        />
       }
-    }} />}
+      {
+        <ElectronOnly
+          {...{
+            browser: true,
+            chromeExtension: true,
+            electron: true,
+            children: (
+              <AppIconAZ.Header
+                {...{
+                  children: lunar,
+                }}
+              />
+            ),
+          }}
+        />
+      }
+      {moss == null ? null : (
+        <AppIconAZ.RightPanelOutlet
+          {...{
+            children: (
+              <North
+                {...{
+                  cloudPreviewRenderer,
+                  item: moss,
+                  onClose: orbit,
+                }}
+              />
+            ),
+          }}
+        />
+      )}
+      <SearchableDetailPageLayout
+        contentClassName="!pt-6"
+        headerVariant="inset"
+        scrollContainerRef={scrollContainerRef}
+        title={
+          <MemoizedFormattedMessage
+            {...{
+              id: "appgenPage.library.title",
+              defaultMessage: "Library",
+              description: "Title shown at the top of the Library page",
+            }}
+          />
+        }
+        subtitle={
+          localSourcesEnabled ? (
+            <MemoizedFormattedMessage
+              {...{
+                id: "appgenPage.library.subtitle",
+                defaultMessage:
+                  "Organize and reuse files, images and sites created across chats",
+                description: "Subtitle shown at the top of the Library page",
+              }}
+            />
+          ) : (
+            <MemoizedFormattedMessage
+              {...{
+                id: "appgenPage.library.subtitleCloudFiles",
+                defaultMessage:
+                  "Organize and reuse files and images created across chats",
+                description:
+                  "Subtitle shown at the top of the cloud-only Library page",
+              }}
+            />
+          )
+        }
+        titleRef={titleRef}
+        search={{
+          id: "appgen-library-search",
+          label: pine,
+          onSearchQueryChange: (pearl) => {
+            quest(pearl);
+            ridge([]);
+          },
+          placeholder: pine,
+          searchQuery: storm,
+        }}
+        controls={
+          <Tide
+            {...{
+              accessFilter: unity,
+              canvasEnabled: false,
+              contentType: vale,
+              fileFilter: apex,
+              localSourcesEnabled,
+              viewMode: brook,
+              onAccessFilterChange: cliff,
+              onContentTypeChange: dusk,
+              onFileFilterChange: elm,
+              onViewModeChange: fern,
+            }}
+          />
+        }
+      >
+        {
+          <Grove
+            {...{
+              accessFilter: unity,
+              canvasSource: undefined,
+              cloudFileActions:
+                cloudFileActions == null
+                  ? undefined
+                  : {
+                      mutatingFileIds: hill,
+                      selectedFileIds: isle,
+                      onDelete: (quartz) =>
+                        juniper({
+                          type: "delete",
+                          files: [quartz],
+                        }),
+                      onDownload: (river) => {
+                        lagoon(river);
+                      },
+                      onRename: (slate) =>
+                        juniper({
+                          type: "rename",
+                          file: slate,
+                        }),
+                      onToggleSelection: meadow,
+                    },
+              cloudFileThumbnailResolver,
+              cloudSource: nest,
+              cloudUploadingFiles: oak,
+              contentType: vale,
+              createAction: petal,
+              fileFilter: apex,
+              localSourcesEnabled,
+              searchQuery: storm,
+              viewMode: brook,
+              onCreate: quiet,
+              onEdit: rain,
+              onFileEdit: seed,
+              onImageEdit: trail,
+              onPreview: urn,
+            }}
+          />
+        }
+      </SearchableDetailPageLayout>
+      {vine == null ? null : (
+        <Wind
+          {...{
+            action: vine,
+            isMutating: hill.length > 0,
+            onDelete: () => {
+              vine.type === "delete" && yarrow(vine.files);
+            },
+            onOpenChange: (timber) => {
+              !timber && hill.length === 0 && juniper(null);
+            },
+            onRename: (umbra) => {
+              vine.type === "rename" && azure(vine.file, umbra);
+            },
+          }}
+        />
+      )}
       {birch > 0 ? <Canyon {...{}} /> : null}
-    </div>;
+    </div>
+  );
   return undefined as any;
 }
 function gamma(violet) {
   let willow = AppInitialEM(violet, {
-    includeDirectories: false
+    includeDirectories: false,
   });
   return [...willow.imageFiles, ...willow.otherFiles];
 }
@@ -354,7 +492,21 @@ function indigo(zinc, amber) {
 }
 function jade(cedar) {
   let daisy = cedar.type.toLowerCase();
-  return daisy.startsWith("image/") ? "image" : daisy.startsWith("video/") ? "video" : daisy.startsWith("audio/") ? "audio" : daisy === "application/pdf" || cedar.name.toLowerCase().endsWith(".pdf") ? "pdf" : daisy.startsWith("text/") || daisy === "application/json" || cedar.name.toLowerCase().endsWith(".md") || cedar.name.toLowerCase().endsWith(".mdx") ? "text" : "other";
+  return daisy.startsWith("image/")
+    ? "image"
+    : daisy.startsWith("video/")
+      ? "video"
+      : daisy.startsWith("audio/")
+        ? "audio"
+        : daisy === "application/pdf" ||
+            cedar.name.toLowerCase().endsWith(".pdf")
+          ? "pdf"
+          : daisy.startsWith("text/") ||
+              daisy === "application/json" ||
+              cedar.name.toLowerCase().endsWith(".md") ||
+              cedar.name.toLowerCase().endsWith(".mdx")
+            ? "text"
+            : "other";
 }
 function kite(ember) {
   let {
@@ -368,40 +520,54 @@ function kite(ember) {
       showTitle,
       showFiles,
       showImages,
-      showSites
+      showSites,
     } = ember,
     flint = useIntl(),
     garnet = flint.formatMessage({
       id: "appgenPage.library.refresh",
       defaultMessage: "Refresh library",
-      description: "Accessible label for refreshing the Library"
+      description: "Accessible label for refreshing the Library",
     });
   let hazel = garnet,
-    ivory = showTitle ? <MemoizedFormattedMessage {...{
-      id: "appgenPage.library.title",
-      defaultMessage: "Library",
-      description: "Title shown at the top of the Library page"
-    }} /> : null;
-  let jasper = <Dew {...{
-    canvasSource,
-    cloudSource,
-    localSourcesEnabled,
-    refreshLabel: hazel,
-    showCanvases,
-    showFiles,
-    showImages,
-    showSites
-  }} />;
+    ivory = showTitle ? (
+      <MemoizedFormattedMessage
+        {...{
+          id: "appgenPage.library.title",
+          defaultMessage: "Library",
+          description: "Title shown at the top of the Library page",
+        }}
+      />
+    ) : null;
+  let jasper = (
+    <Dew
+      {...{
+        canvasSource,
+        cloudSource,
+        localSourcesEnabled,
+        refreshLabel: hazel,
+        showCanvases,
+        showFiles,
+        showImages,
+        showSites,
+      }}
+    />
+  );
   let kelp = cloudSelectionActions ?? cloudUploadAction,
-    lotus = <div className="flex items-center gap-2">
+    lotus = (
+      <div className="flex items-center gap-2">
         {jasper}
         {kelp}
         {createAction}
-      </div>;
-  return <EnsureAppIconKhInit {...{
-    start: ivory,
-    trailing: lotus
-  }} />;
+      </div>
+    );
+  return (
+    <EnsureAppIconKhInit
+      {...{
+        start: ivory,
+        trailing: lotus,
+      }}
+    />
+  );
 }
 function lemon(mint) {
   let {
@@ -412,42 +578,50 @@ function lemon(mint) {
       showCanvases,
       showFiles,
       showImages,
-      showSites
+      showSites,
     } = mint,
     nova = canvasSource?.isLoading === true,
     olive = canvasSource?.isRefetching === true;
   if (!localSourcesEnabled) {
-    let prism = cloudSource?.isRefetching === true || showCanvases && olive,
+    let prism = cloudSource?.isRefetching === true || (showCanvases && olive),
       quill = () => {
         cloudSource?.isEnabled === true && cloudSource.refetch();
         showCanvases && canvasSource != null && canvasSource.refetch();
       };
     let reef;
-    return <Alpha1 {...{
-      cloudSource,
-      isLoadingCanvases: nova,
-      isLoadingFiles: false,
-      isLoadingImages: false,
-      isLoadingSites: false,
-      isRefreshing: prism,
-      isFetchingNextSitePage: false,
-      refreshLabel,
-      showCanvases,
-      showFiles: false,
-      showImages: false,
-      showSites: false,
-      onRefresh: quill
-    }} />;
+    return (
+      <Alpha1
+        {...{
+          cloudSource,
+          isLoadingCanvases: nova,
+          isLoadingFiles: false,
+          isLoadingImages: false,
+          isLoadingSites: false,
+          isRefreshing: prism,
+          isFetchingNextSitePage: false,
+          refreshLabel,
+          showCanvases,
+          showFiles: false,
+          showImages: false,
+          showSites: false,
+          onRefresh: quill,
+        }}
+      />
+    );
   }
-  return <Bravo1 {...{
-    canvasSource,
-    cloudSource,
-    refreshLabel,
-    showCanvases,
-    showFiles,
-    showImages,
-    showSites
-  }} />;
+  return (
+    <Bravo1
+      {...{
+        canvasSource,
+        cloudSource,
+        refreshLabel,
+        showCanvases,
+        showFiles,
+        showImages,
+        showSites,
+      }}
+    />
+  );
 }
 function marble(sage) {
   let {
@@ -457,47 +631,56 @@ function marble(sage) {
       showCanvases,
       showFiles,
       showImages,
-      showSites
+      showSites,
     } = sage,
     topaz = CodexPluginActionType(ensureComposerEsm_S8_Init),
     ultra = {
-      enabled: showSites
+      enabled: showSites,
     };
-  let {
-      isFetchingNextPage,
-      isLoading,
-      isRefetching,
-      refetch
-    } = useAppHostUpdateStatusInfiniteQuery(ultra),
-    {
-      isLoading: _isLoading,
-      isRefetching: _isRefetching
-    } = CodexPluginActionResult(falcon),
-    {
-      isLoading: vapor,
-      isRefetching: __isRefetching
-    } = CodexPluginActionResult(echo),
+  let { isFetchingNextPage, isLoading, isRefetching, refetch } =
+      useAppHostUpdateStatusInfiniteQuery(ultra),
+    { isLoading: _isLoading, isRefetching: _isRefetching } =
+      CodexPluginActionResult(falcon),
+    { isLoading: vapor, isRefetching: __isRefetching } =
+      CodexPluginActionResult(echo),
     wheat = canvasSource?.isLoading === true,
     yarn = canvasSource?.isRefetching === true,
-    zephyr = isRefetching || _isRefetching || __isRefetching || showCanvases && yarn || cloudSource?.isRefetching === true,
+    zephyr =
+      isRefetching ||
+      _isRefetching ||
+      __isRefetching ||
+      (showCanvases && yarn) ||
+      cloudSource?.isRefetching === true,
     acorn = () => {
-      Promise.all([...(showSites ? [refetch()] : []), ...(showFiles ? [topaz.query.invalidate(falcon)] : []), ...(showImages ? [topaz.query.invalidate(echo)] : []), ...(showCanvases && canvasSource != null ? [canvasSource.refetch()] : []), ...(cloudSource?.isEnabled === true ? [cloudSource.refetch()] : [])]);
+      Promise.all([
+        ...(showSites ? [refetch()] : []),
+        ...(showFiles ? [topaz.query.invalidate(falcon)] : []),
+        ...(showImages ? [topaz.query.invalidate(echo)] : []),
+        ...(showCanvases && canvasSource != null
+          ? [canvasSource.refetch()]
+          : []),
+        ...(cloudSource?.isEnabled === true ? [cloudSource.refetch()] : []),
+      ]);
     };
-  return <Alpha1 {...{
-    cloudSource,
-    isLoadingCanvases: wheat,
-    isLoadingFiles: _isLoading,
-    isLoadingImages: vapor,
-    isLoadingSites: isLoading,
-    isRefreshing: zephyr,
-    isFetchingNextSitePage: isFetchingNextPage,
-    refreshLabel,
-    showCanvases,
-    showFiles,
-    showImages,
-    showSites,
-    onRefresh: acorn
-  }} />;
+  return (
+    <Alpha1
+      {...{
+        cloudSource,
+        isLoadingCanvases: wheat,
+        isLoadingFiles: _isLoading,
+        isLoadingImages: vapor,
+        isLoadingSites: isLoading,
+        isRefreshing: zephyr,
+        isFetchingNextSitePage: isFetchingNextPage,
+        refreshLabel,
+        showCanvases,
+        showFiles,
+        showImages,
+        showSites,
+        onRefresh: acorn,
+      }}
+    />
+  );
 }
 function nickel(bloom) {
   let {
@@ -513,51 +696,91 @@ function nickel(bloom) {
       showCanvases,
       showFiles,
       showImages,
-      showSites
+      showSites,
     } = bloom,
-    coral = showSites && isLoadingSites || showFiles && isLoadingFiles || showImages && isLoadingImages || showCanvases && isLoadingCanvases || cloudSource?.isLoading === true || isRefreshing || isFetchingNextSitePage || cloudSource?.isFetchingNextPage === true,
-    drift = isRefreshing ? null : <AppIconAlt {...{
-      className: "icon-xs"
-    }} />;
-  let eagle = <ReadLoginRouteQuerySnapshot {...{
-    "aria-label": refreshLabel,
-    color: "ghost",
-    disabled: coral,
-    loading: isRefreshing,
-    onClick: onRefresh,
-    size: "toolbar",
-    uniform: true,
-    children: drift
-  }} />;
-  return <OptionalTooltip {...{
-    tooltipContent: refreshLabel,
-    children: eagle
-  }} />;
+    coral =
+      (showSites && isLoadingSites) ||
+      (showFiles && isLoadingFiles) ||
+      (showImages && isLoadingImages) ||
+      (showCanvases && isLoadingCanvases) ||
+      cloudSource?.isLoading === true ||
+      isRefreshing ||
+      isFetchingNextSitePage ||
+      cloudSource?.isFetchingNextPage === true,
+    drift = isRefreshing ? null : (
+      <AppIconAlt
+        {...{
+          className: "icon-xs",
+        }}
+      />
+    );
+  let eagle = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        "aria-label": refreshLabel,
+        color: "ghost",
+        disabled: coral,
+        loading: isRefreshing,
+        onClick: onRefresh,
+        size: "toolbar",
+        uniform: true,
+        children: drift,
+      }}
+    />
+  );
+  return (
+    <OptionalTooltip
+      {...{
+        tooltipContent: refreshLabel,
+        children: eagle,
+      }}
+    />
+  );
 }
 function onyx() {
-  let frost = <div className="flex size-24 items-center justify-center rounded-3xl bg-token-editor-background text-token-foreground shadow-lg">
-      {<AppIconUD {...{
-      className: "size-12"
-    }} />}
-    </div>;
-  let glide = <div className="text-2xl leading-8 font-medium text-token-foreground">
-      {<MemoizedFormattedMessage {...{
-      id: "appgenPage.cloudUpload.dropTitle",
-      defaultMessage: "Add anything",
-      description: "Primary heading in the cloud Library drag-and-drop overlay"
-    }} />}
-    </div>;
-  return <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center bg-token-main-surface-primary/85">
+  let frost = (
+    <div className="flex size-24 items-center justify-center rounded-3xl bg-token-editor-background text-token-foreground shadow-lg">
+      {
+        <AppIconUD
+          {...{
+            className: "size-12",
+          }}
+        />
+      }
+    </div>
+  );
+  let glide = (
+    <div className="text-2xl leading-8 font-medium text-token-foreground">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "appgenPage.cloudUpload.dropTitle",
+            defaultMessage: "Add anything",
+            description:
+              "Primary heading in the cloud Library drag-and-drop overlay",
+          }}
+        />
+      }
+    </div>
+  );
+  return (
+    <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center bg-token-main-surface-primary/85">
       <div className="flex flex-col items-center gap-3 text-center">
         {frost}
         {glide}
         <div className="text-base text-token-description-foreground">
-          {<MemoizedFormattedMessage {...{
-          id: "appgenPage.cloudUpload.dropDescription",
-          defaultMessage: "Drop any file here to add it to your library",
-          description: "Instruction text in the cloud Library drag-and-drop overlay"
-        }} />}
+          {
+            <MemoizedFormattedMessage
+              {...{
+                id: "appgenPage.cloudUpload.dropDescription",
+                defaultMessage: "Drop any file here to add it to your library",
+                description:
+                  "Instruction text in the cloud Library drag-and-drop overlay",
+              }}
+            />
+          }
         </div>
       </div>
-    </div>;
+    </div>
+  );
 }

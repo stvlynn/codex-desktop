@@ -18,7 +18,9 @@ export type BindBindDeferredExPeers = {
 let peers: BindBindDeferredExPeers | null = null;
 
 /** Wire bindBindDeferredEx peers once companions land. */
-export function setBindBindDeferredExPeers(next: BindBindDeferredExPeers): void {
+export function setBindBindDeferredExPeers(
+  next: BindBindDeferredExPeers,
+): void {
   peers = next;
 }
 
@@ -31,8 +33,13 @@ export function bindBindDeferredEx() {
   }
 
   return peers.e(() => {
-    ohs = peers.c(), peers.sd(), shs = peers.r(peers.o(), 1), peers.FHa(), chs = peers.J(), lhs = (0, peers.shs.createContext)({
-      expandedTopTray: !1
-    });
+    ((ohs = peers.c()),
+      peers.sd(),
+      (shs = peers.r(peers.o(), 1)),
+      peers.FHa(),
+      (chs = peers.J()),
+      (lhs = (0, peers.shs.createContext)({
+        expandedTopTray: !1,
+      })));
   });
 }

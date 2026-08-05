@@ -9,4 +9,3 @@
 export function bindCodexMicroBridge(_next: unknown): void {}
 
 export function ensureCodexMicroBridgeInit(): void {}
-

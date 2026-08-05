@@ -18,7 +18,9 @@ export type BindLinearMotionJumpResetPeers = {
 let peers: BindLinearMotionJumpResetPeers | null = null;
 
 /** Wire bindLinearMotionJumpReset peers once companions land. */
-export function setBindLinearMotionJumpResetPeers(next: BindLinearMotionJumpResetPeers): void {
+export function setBindLinearMotionJumpResetPeers(
+  next: BindLinearMotionJumpResetPeers,
+): void {
   peers = next;
 }
 

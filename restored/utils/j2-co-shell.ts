@@ -20,7 +20,5 @@ export function bindJ2CoShell() {
     throw new Error("bindJ2CoShell peers are not configured");
   }
 
-  return peers.JE(({
-    requests: e
-  }) => e.at(-1) ?? null);
+  return peers.JE(({ requests: e }) => e.at(-1) ?? null);
 }

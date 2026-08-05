@@ -10,20 +10,16 @@ import {
 } from "./chatgpt-conversation-update-schemas";
 
 export function useChatgptComposerControllerHelper11(request1633: any) {
-  let slot5441 =
-    chatgptConversationUpdateEventSchema.safeParse(
-      request1633,
-    );
+  let slot5441 = chatgptConversationUpdateEventSchema.safeParse(request1633);
   if (slot5441.success) {
     let { conversation_id, update_content, update_type } =
       slot5441.data.payload;
     switch (update_type) {
       case "async-task-completed":
       case "async-task-update-message": {
-        let slot14506 =
-          chatgptMessageNodeSchema.safeParse(
-            update_content?.message,
-          );
+        let slot14506 = chatgptMessageNodeSchema.safeParse(
+          update_content?.message,
+        );
         return slot14506.success
           ? [
               {
@@ -73,56 +69,48 @@ export function useChatgptComposerControllerHelper11(request1633: any) {
         return [];
     }
   }
-  let slot5442 =
-    chatgptConversationUpdatesBatchSchema.safeParse(
-      request1633,
-    );
+  let slot5442 = chatgptConversationUpdatesBatchSchema.safeParse(request1633);
   return slot5442.success
-    ? slot5442.data.payload.updates.flatMap(
-        (item) => {
-          let slot9368 =
-            chatgptConversationUpdateItemSchema.safeParse(item);
-          if (!slot9368.success) return [];
-          let { conversation_id, type } =
-            slot9368.data;
-          if (
-            type === "add-turn-message" ||
-            type === "replace-turn-message" ||
-            type === "stream-message-start" ||
-            type === "upsert-turn-message"
-          ) {
-            let slot14363 =
-              chatgptMessageNodeSchema.safeParse(
-                slot9368.data.message,
-              );
-            return slot14363.success
-              ? [
-                  {
-                    conversationId: conversation_id,
-                    message: slot14363.data,
-                    type: "message",
-                  },
-                ]
-              : [
-                  {
-                    conversationId: conversation_id,
-                    type: "refetch",
-                  },
-                ];
-          }
-          return type === "add-conversation-item" ||
-            type === "convert-turn-to-paragen" ||
-            type === "discard-items" ||
-            type === "resolve-paragen" ||
-            type === "stream-message-done"
+    ? slot5442.data.payload.updates.flatMap((item) => {
+        let slot9368 = chatgptConversationUpdateItemSchema.safeParse(item);
+        if (!slot9368.success) return [];
+        let { conversation_id, type } = slot9368.data;
+        if (
+          type === "add-turn-message" ||
+          type === "replace-turn-message" ||
+          type === "stream-message-start" ||
+          type === "upsert-turn-message"
+        ) {
+          let slot14363 = chatgptMessageNodeSchema.safeParse(
+            slot9368.data.message,
+          );
+          return slot14363.success
             ? [
+                {
+                  conversationId: conversation_id,
+                  message: slot14363.data,
+                  type: "message",
+                },
+              ]
+            : [
                 {
                   conversationId: conversation_id,
                   type: "refetch",
                 },
-              ]
-            : [];
-        },
-      )
+              ];
+        }
+        return type === "add-conversation-item" ||
+          type === "convert-turn-to-paragen" ||
+          type === "discard-items" ||
+          type === "resolve-paragen" ||
+          type === "stream-message-done"
+          ? [
+              {
+                conversationId: conversation_id,
+                type: "refetch",
+              },
+            ]
+          : [];
+      })
     : [];
 }

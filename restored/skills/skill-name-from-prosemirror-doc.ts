@@ -10,7 +10,10 @@ export type ProseMirrorNodeLike = {
 };
 
 /** Prefer an existing skill path, else the last skill/plugin mention path. */
-export function skillNameFromProsemirrorDoc(doc: ProseMirrorNodeLike, preferred: string | null = null): string | null {
+export function skillNameFromProsemirrorDoc(
+  doc: ProseMirrorNodeLike,
+  preferred: string | null = null,
+): string | null {
   let last: string | null = null;
   let matchedPreferred = false;
   doc.descendants?.((node) => {

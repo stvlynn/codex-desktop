@@ -9,7 +9,9 @@ export type BindBindGeneralSettingsPeers = {
 let peers: BindBindGeneralSettingsPeers | null = null;
 
 /** Wire bindBindGeneralSettings peers once companions land. */
-export function setBindBindGeneralSettingsPeers(next: BindBindGeneralSettingsPeers): void {
+export function setBindBindGeneralSettingsPeers(
+  next: BindBindGeneralSettingsPeers,
+): void {
   peers = next;
 }
 
@@ -22,6 +24,9 @@ export function bindBindGeneralSettings() {
   }
 
   return peers.e(() => {
-    $3o = `general-settings.import.profile.keyboard-shortcuts.codex-micro.appshots.appearance.voice.pets.chronicle.agent.git-settings.data-controls.cloud-settings.cloud-environments.code-review.personalization.usage.debug.browser-use.computer-use.local-environments.worktrees.environments.mcp-settings.hooks-settings.connections.plugins-settings.skills-settings`.split(`.`);
+    $3o =
+      `general-settings.import.profile.keyboard-shortcuts.codex-micro.appshots.appearance.voice.pets.chronicle.agent.git-settings.data-controls.cloud-settings.cloud-environments.code-review.personalization.usage.debug.browser-use.computer-use.local-environments.worktrees.environments.mcp-settings.hooks-settings.connections.plugins-settings.skills-settings`.split(
+        `.`,
+      );
   });
 }

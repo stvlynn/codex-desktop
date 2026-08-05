@@ -13,7 +13,9 @@ export type UseClearPrewarmedThreadsForHostPeers = {
 let peers: UseClearPrewarmedThreadsForHostPeers | null = null;
 
 /** Wire useClearPrewarmedThreadsForHost peers once companions land. */
-export function setUseClearPrewarmedThreadsForHostPeers(next: UseClearPrewarmedThreadsForHostPeers): void {
+export function setUseClearPrewarmedThreadsForHostPeers(
+  next: UseClearPrewarmedThreadsForHostPeers,
+): void {
   peers = next;
 }
 

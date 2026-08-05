@@ -39,26 +39,35 @@ export function bindDeferredUiIrt() {
       return peers.hy(this, `isEvalSupported`, peers.BGt());
     }
     static get isOffscreenCanvasSupported() {
-      return peers.hy(this, `isOffscreenCanvasSupported`, typeof peers.OffscreenCanvas < `u`);
+      return peers.hy(
+        this,
+        `isOffscreenCanvasSupported`,
+        typeof peers.OffscreenCanvas < `u`,
+      );
     }
     static get isImageDecoderSupported() {
-      return peers.hy(this, `isImageDecoderSupported`, typeof peers.ImageDecoder < `u`);
+      return peers.hy(
+        this,
+        `isImageDecoderSupported`,
+        typeof peers.ImageDecoder < `u`,
+      );
     }
     static get platform() {
-      let {
-        platform: e,
-        userAgent: t
-      } = navigator;
+      let { platform: e, userAgent: t } = navigator;
       return peers.hy(this, `platform`, {
         isAndroid: t.includes(`Android`),
         isLinux: e.includes(`Linux`),
         isMac: e.includes(`Mac`),
         isWindows: e.includes(`Win`),
-        isFirefox: t.includes(`Firefox`)
+        isFirefox: t.includes(`Firefox`),
       });
     }
     static get isCSSRoundSupported() {
-      return peers.hy(this, `isCSSRoundSupported`, globalThis.CSS?.supports?.(`width: round(1.5px, 1px)`));
+      return peers.hy(
+        this,
+        `isCSSRoundSupported`,
+        globalThis.CSS?.supports?.(`width: round(1.5px, 1px)`),
+      );
     }
   };
 }

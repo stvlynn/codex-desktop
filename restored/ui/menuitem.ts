@@ -53,23 +53,35 @@ export function menuitem() {
   }
 
   return peers.e(() => {
-    nX = peers.c(), peers.sd(), peers.af(), x5o = peers.r(peers.o(), 1), peers.Op(), peers.Nk(), peers.r5o(), rX = peers.J(), S5o = `a[href], button, input, select, textarea, [contenteditable='true'], [draggable='true'], [role='button'], [role='link'], [role='menuitem'], [role='option'], [tabindex]:not([tabindex='-1'])`, C5o = (0, peers.x5o.createContext)(null), w5o = (0, peers.x5o.createContext)(`default`), T5o = {
-      duration: 300 / 1e3,
-      ease: peers.Bwr
-    }, iX = Object.assign(peers.a5o, {
-      AdaptiveFooter: peers.i5o,
-      Attachments: peers.o5o,
-      Body: peers.y5o,
-      UtilityBarSlot: peers.c5o,
-      Footer: peers.u5o,
-      FooterAction: peers.d5o,
-      FooterActions: peers.p5o,
-      FooterControls: peers.m5o,
-      FooterDivider: peers._5o,
-      FooterExpandingControls: peers.g5o,
-      FooterInlineControls: peers.h5o,
-      FooterLabel: peers.v5o,
-      Input: peers.s5o
-    });
+    ((nX = peers.c()),
+      peers.sd(),
+      peers.af(),
+      (x5o = peers.r(peers.o(), 1)),
+      peers.Op(),
+      peers.Nk(),
+      peers.r5o(),
+      (rX = peers.J()),
+      (S5o = `a[href], button, input, select, textarea, [contenteditable='true'], [draggable='true'], [role='button'], [role='link'], [role='menuitem'], [role='option'], [tabindex]:not([tabindex='-1'])`),
+      (C5o = (0, peers.x5o.createContext)(null)),
+      (w5o = (0, peers.x5o.createContext)(`default`)),
+      (T5o = {
+        duration: 300 / 1e3,
+        ease: peers.Bwr,
+      }),
+      (iX = Object.assign(peers.a5o, {
+        AdaptiveFooter: peers.i5o,
+        Attachments: peers.o5o,
+        Body: peers.y5o,
+        UtilityBarSlot: peers.c5o,
+        Footer: peers.u5o,
+        FooterAction: peers.d5o,
+        FooterActions: peers.p5o,
+        FooterControls: peers.m5o,
+        FooterDivider: peers._5o,
+        FooterExpandingControls: peers.g5o,
+        FooterInlineControls: peers.h5o,
+        FooterLabel: peers.v5o,
+        Input: peers.s5o,
+      })));
   });
 }

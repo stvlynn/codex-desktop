@@ -8,7 +8,9 @@ export type StartAppshotTaskSelectionPhasePeers = {
 let peers: StartAppshotTaskSelectionPhasePeers | null = null;
 
 /** Wire startAppshotTaskSelectionPhase peers once companions land. */
-export function setStartAppshotTaskSelectionPhasePeers(next: StartAppshotTaskSelectionPhasePeers): void {
+export function setStartAppshotTaskSelectionPhasePeers(
+  next: StartAppshotTaskSelectionPhasePeers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,6 @@ export function startAppshotTaskSelectionPhase(e: unknown, t: unknown) {
     phase: `task`,
     selectedRole: t,
     selectedTask: null,
-    permissionStatus: `not-requested`
+    permissionStatus: `not-requested`,
   });
 }

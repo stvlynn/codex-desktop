@@ -77,7 +77,9 @@ export function deferredUid7() {
       constructor(alpha, bravo, copper) {
         this.$anchor = alpha;
         this.$head = bravo;
-        this.ranges = copper || [new peers.Txn(alpha.min(bravo), alpha.max(bravo))];
+        this.ranges = copper || [
+          new peers.Txn(alpha.min(bravo), alpha.max(bravo)),
+        ];
       }
       get anchor() {
         return this.$anchor.pos;
@@ -99,7 +101,8 @@ export function deferredUid7() {
       }
       get empty() {
         let delta = this.ranges;
-        for (let echo = 0; echo < delta.length; echo++) if (delta[echo].$from.pos != delta[echo].$to.pos) return false;
+        for (let echo = 0; echo < delta.length; echo++)
+          if (delta[echo].$from.pos != delta[echo].$to.pos) return false;
         return true;
       }
       content() {
@@ -115,56 +118,104 @@ export function deferredUid7() {
         let i = falcon.steps.length,
           a = this.ranges;
         for (let kite = 0; kite < a.length; kite++) {
-          let {
-              $from,
-              $to
-            } = a[kite],
+          let { $from, $to } = a[kite],
             lemon = falcon.mapping.slice(i);
-          falcon.replaceRange(lemon.map($from.pos), lemon.map($to.pos), kite ? peers.DS.empty : gamma);
-          kite == 0 && peers.bxn(falcon, i, (harbor ? harbor.isInline : indigo && indigo.isTextblock) ? -1 : 1);
+          falcon.replaceRange(
+            lemon.map($from.pos),
+            lemon.map($to.pos),
+            kite ? peers.DS.empty : gamma,
+          );
+          kite == 0 &&
+            peers.bxn(
+              falcon,
+              i,
+              (harbor ? harbor.isInline : indigo && indigo.isTextblock)
+                ? -1
+                : 1,
+            );
         }
       }
       replaceWith(marble, nickel) {
         let onyx = marble.steps.length,
           pearl = this.ranges;
         for (let i = 0; i < pearl.length; i++) {
-          let {
-              $from,
-              $to
-            } = pearl[i],
+          let { $from, $to } = pearl[i],
             s = marble.mapping.slice(onyx),
             quartz = s.map($from.pos),
             river = s.map($to.pos);
-          i ? marble.deleteRange(quartz, river) : (marble.replaceRangeWith(quartz, river, nickel), peers.bxn(marble, onyx, nickel.isInline ? -1 : 1));
+          i
+            ? marble.deleteRange(quartz, river)
+            : (marble.replaceRangeWith(quartz, river, nickel),
+              peers.bxn(marble, onyx, nickel.isInline ? -1 : 1));
         }
       }
       static findFrom(slate, timber, umbra = false) {
-        let violet = slate.parent.inlineContent ? new peers.RS(slate) : peers.yxn(slate.node(0), slate.parent, slate.pos, slate.index(), timber, umbra);
+        let violet = slate.parent.inlineContent
+          ? new peers.RS(slate)
+          : peers.yxn(
+              slate.node(0),
+              slate.parent,
+              slate.pos,
+              slate.index(),
+              timber,
+              umbra,
+            );
         if (violet) return violet;
         for (let willow = slate.depth - 1; willow >= 0; willow--) {
-          let i = timber < 0 ? peers.yxn(slate.node(0), slate.node(willow), slate.before(willow + 1), slate.index(willow), timber, umbra) : peers.yxn(slate.node(0), slate.node(willow), slate.after(willow + 1), slate.index(willow) + 1, timber, umbra);
+          let i =
+            timber < 0
+              ? peers.yxn(
+                  slate.node(0),
+                  slate.node(willow),
+                  slate.before(willow + 1),
+                  slate.index(willow),
+                  timber,
+                  umbra,
+                )
+              : peers.yxn(
+                  slate.node(0),
+                  slate.node(willow),
+                  slate.after(willow + 1),
+                  slate.index(willow) + 1,
+                  timber,
+                  umbra,
+                );
           if (i) return i;
         }
         return null;
       }
       static near(xenon, yellow = 1) {
-        return this.findFrom(xenon, yellow) || this.findFrom(xenon, -yellow) || new peers.BS(xenon.node(0));
+        return (
+          this.findFrom(xenon, yellow) ||
+          this.findFrom(xenon, -yellow) ||
+          new peers.BS(xenon.node(0))
+        );
       }
       static atStart(zinc) {
         return peers.yxn(zinc, zinc, 0, 0, 1) || new peers.BS(zinc);
       }
       static atEnd(amber) {
-        return peers.yxn(amber, amber, amber.content.size, amber.childCount, -1) || new peers.BS(amber);
+        return (
+          peers.yxn(amber, amber, amber.content.size, amber.childCount, -1) ||
+          new peers.BS(amber)
+        );
       }
       static fromJSON(basalt, cedar) {
-        if (!cedar || !cedar.type) throw peers.RangeError("Invalid input for Selection.fromJSON");
+        if (!cedar || !cedar.type)
+          throw peers.RangeError("Invalid input for Selection.fromJSON");
         let daisy = peers.wxn[cedar.type];
-        if (!daisy) throw peers.RangeError(`No selection type ${cedar.type} defined`);
+        if (!daisy)
+          throw peers.RangeError(`No selection type ${cedar.type} defined`);
         return daisy.fromJSON(basalt, cedar);
       }
       static jsonID(ember, flint) {
-        if (ember in peers.wxn) throw peers.RangeError("Duplicate use of selection JSON ID " + ember);
-        return peers.wxn[ember] = flint, flint.prototype.jsonID = ember, flint;
+        if (ember in peers.wxn)
+          throw peers.RangeError("Duplicate use of selection JSON ID " + ember);
+        return (
+          (peers.wxn[ember] = flint),
+          (flint.prototype.jsonID = ember),
+          flint
+        );
       }
       getBookmark() {
         return peers.RS.between(this.$anchor, this.$head).getBookmark();
@@ -194,13 +245,17 @@ export function deferredUid7() {
         return new ivory(i.parent.inlineContent ? i : nova, nova);
       }
       replace(olive, prism = peers.DS.empty) {
-        if (super.replace(olive, prism), prism == peers.DS.empty) {
+        if ((super.replace(olive, prism), prism == peers.DS.empty)) {
           let quill = this.$from.marksAcross(this.$to);
           quill && olive.ensureMarks(quill);
         }
       }
       eq(reef) {
-        return reef instanceof ivory && reef.anchor == this.anchor && reef.head == this.head;
+        return (
+          reef instanceof ivory &&
+          reef.anchor == this.anchor &&
+          reef.head == this.head
+        );
       }
       getBookmark() {
         return new peers.Dxn(this.anchor, this.head);
@@ -209,11 +264,12 @@ export function deferredUid7() {
         return {
           type: "text",
           anchor: this.anchor,
-          head: this.head
+          head: this.head,
         };
       }
       static fromJSON(sage, topaz) {
-        if (typeof topaz.anchor != "number" || typeof topaz.head != "number") throw peers.RangeError("Invalid input for TextSelection.fromJSON");
+        if (typeof topaz.anchor != "number" || typeof topaz.head != "number")
+          throw peers.RangeError("Invalid input for TextSelection.fromJSON");
         return new ivory(sage.resolve(topaz.anchor), sage.resolve(topaz.head));
       }
       static create(ultra, vapor, wheat = vapor) {
@@ -222,11 +278,27 @@ export function deferredUid7() {
       }
       static between(zephyr, acorn, bloom) {
         let i = zephyr.pos - acorn.pos;
-        if ((!bloom || i) && (bloom = i >= 0 ? 1 : -1), !acorn.parent.inlineContent) {
-          let coral = peers.LS.findFrom(acorn, bloom, true) || peers.LS.findFrom(acorn, -bloom, true);
-          if (coral) acorn = coral.$head;else return peers.LS.near(acorn, bloom);
+        if (
+          ((!bloom || i) && (bloom = i >= 0 ? 1 : -1),
+          !acorn.parent.inlineContent)
+        ) {
+          let coral =
+            peers.LS.findFrom(acorn, bloom, true) ||
+            peers.LS.findFrom(acorn, -bloom, true);
+          if (coral) acorn = coral.$head;
+          else return peers.LS.near(acorn, bloom);
         }
-        return zephyr.parent.inlineContent || (i == 0 ? zephyr = acorn : (zephyr = (peers.LS.findFrom(zephyr, -bloom, true) || peers.LS.findFrom(zephyr, bloom, true)).$anchor, zephyr.pos < acorn.pos != i < 0 && (zephyr = acorn))), new ivory(zephyr, acorn);
+        return (
+          zephyr.parent.inlineContent ||
+            (i == 0
+              ? (zephyr = acorn)
+              : ((zephyr = (
+                  peers.LS.findFrom(zephyr, -bloom, true) ||
+                  peers.LS.findFrom(zephyr, bloom, true)
+                ).$anchor),
+                zephyr.pos < acorn.pos != i < 0 && (zephyr = acorn))),
+          new ivory(zephyr, acorn)
+        );
       }
     };
     peers.LS.jsonID("text", peers.RS);
@@ -239,7 +311,10 @@ export function deferredUid7() {
         return new drift(glide.map(this.anchor), glide.map(this.head));
       }
       resolve(honey) {
-        return peers.RS.between(honey.resolve(this.anchor), honey.resolve(this.head));
+        return peers.RS.between(
+          honey.resolve(this.anchor),
+          honey.resolve(this.head),
+        );
       }
     };
     zS = class iris extends peers.LS {
@@ -250,10 +325,7 @@ export function deferredUid7() {
         this.node = knoll;
       }
       map(moss, north) {
-        let {
-            deleted,
-            pos
-          } = north.mapResult(this.anchor),
+        let { deleted, pos } = north.mapResult(this.anchor),
           a = moss.resolve(pos);
         return deleted ? peers.LS.near(a) : new iris(a);
       }
@@ -266,14 +338,15 @@ export function deferredUid7() {
       toJSON() {
         return {
           type: "node",
-          anchor: this.anchor
+          anchor: this.anchor,
         };
       }
       getBookmark() {
         return new peers.Oxn(this.anchor);
       }
       static fromJSON(pine, quest) {
-        if (typeof quest.anchor != "number") throw peers.RangeError("Invalid input for NodeSelection.fromJSON");
+        if (typeof quest.anchor != "number")
+          throw peers.RangeError("Invalid input for NodeSelection.fromJSON");
         return new iris(pine.resolve(quest.anchor));
       }
       static create(ridge, storm) {
@@ -290,16 +363,15 @@ export function deferredUid7() {
         this.anchor = vale;
       }
       map(wave) {
-        let {
-          deleted,
-          pos
-        } = wave.mapResult(this.anchor);
+        let { deleted, pos } = wave.mapResult(this.anchor);
         return deleted ? new peers.Dxn(pos, pos) : new unity(pos);
       }
       resolve(apex) {
         let brook = apex.resolve(this.anchor),
           cliff = brook.nodeAfter;
-        return cliff && peers.zS.isSelectable(cliff) ? new peers.zS(brook) : peers.LS.near(brook);
+        return cliff && peers.zS.isSelectable(cliff)
+          ? new peers.zS(brook)
+          : peers.LS.near(brook);
       }
     };
     BS = class dusk extends peers.LS {
@@ -315,7 +387,7 @@ export function deferredUid7() {
       }
       toJSON() {
         return {
-          type: "all"
+          type: "all",
         };
       }
       static fromJSON(isle) {
@@ -338,7 +410,7 @@ export function deferredUid7() {
       },
       resolve(meadow) {
         return new peers.BS(meadow);
-      }
+      },
     };
     Axn = 1;
     jxn = 2;
@@ -354,26 +426,53 @@ export function deferredUid7() {
         this.storedMarks = nest.storedMarks;
       }
       get selection() {
-        return this.curSelectionFor < this.steps.length && (this.curSelection = this.curSelection.map(this.doc, this.mapping.slice(this.curSelectionFor)), this.curSelectionFor = this.steps.length), this.curSelection;
+        return (
+          this.curSelectionFor < this.steps.length &&
+            ((this.curSelection = this.curSelection.map(
+              this.doc,
+              this.mapping.slice(this.curSelectionFor),
+            )),
+            (this.curSelectionFor = this.steps.length)),
+          this.curSelection
+        );
       }
       setSelection(oak) {
-        if (oak.$from.doc != this.doc) throw peers.RangeError("Selection passed to setSelection must point at the current document");
-        return this.curSelection = oak, this.curSelectionFor = this.steps.length, this.updated = (this.updated | peers.Axn) & -3, this.storedMarks = null, this;
+        if (oak.$from.doc != this.doc)
+          throw peers.RangeError(
+            "Selection passed to setSelection must point at the current document",
+          );
+        return (
+          (this.curSelection = oak),
+          (this.curSelectionFor = this.steps.length),
+          (this.updated = (this.updated | peers.Axn) & -3),
+          (this.storedMarks = null),
+          this
+        );
       }
       get selectionSet() {
         return (this.updated & peers.Axn) > 0;
       }
       setStoredMarks(petal) {
-        return this.storedMarks = petal, this.updated |= peers.jxn, this;
+        return ((this.storedMarks = petal), (this.updated |= peers.jxn), this);
       }
       ensureMarks(quiet) {
-        return peers.ES.sameSet(this.storedMarks || this.selection.$from.marks(), quiet) || this.setStoredMarks(quiet), this;
+        return (
+          peers.ES.sameSet(
+            this.storedMarks || this.selection.$from.marks(),
+            quiet,
+          ) || this.setStoredMarks(quiet),
+          this
+        );
       }
       addStoredMark(rain) {
-        return this.ensureMarks(rain.addToSet(this.storedMarks || this.selection.$head.marks()));
+        return this.ensureMarks(
+          rain.addToSet(this.storedMarks || this.selection.$head.marks()),
+        );
       }
       removeStoredMark(seed) {
-        return this.ensureMarks(seed.removeFromSet(this.storedMarks || this.selection.$head.marks()));
+        return this.ensureMarks(
+          seed.removeFromSet(this.storedMarks || this.selection.$head.marks()),
+        );
       }
       get storedMarksSet() {
         return (this.updated & peers.jxn) > 0;
@@ -384,33 +483,58 @@ export function deferredUid7() {
         this.storedMarks = null;
       }
       setTime(vine) {
-        return this.time = vine, this;
+        return ((this.time = vine), this);
       }
       replaceSelection(wind) {
-        return this.selection.replace(this, wind), this;
+        return (this.selection.replace(this, wind), this);
       }
       replaceSelectionWith(yarrow, azure = true) {
         let birch = this.selection;
-        return azure && (yarrow = yarrow.mark(this.storedMarks || (birch.empty ? birch.$from.marks() : birch.$from.marksAcross(birch.$to) || peers.ES.none))), birch.replaceWith(this, yarrow), this;
+        return (
+          azure &&
+            (yarrow = yarrow.mark(
+              this.storedMarks ||
+                (birch.empty
+                  ? birch.$from.marks()
+                  : birch.$from.marksAcross(birch.$to) || peers.ES.none),
+            )),
+          birch.replaceWith(this, yarrow),
+          this
+        );
       }
       deleteSelection() {
-        return this.selection.replace(this), this;
+        return (this.selection.replace(this), this);
       }
       insertText(canyon, dew, ever) {
         let field = this.doc.type.schema;
-        if (dew == null) return canyon ? this.replaceSelectionWith(field.text(canyon), true) : this.deleteSelection();
+        if (dew == null)
+          return canyon
+            ? this.replaceSelectionWith(field.text(canyon), true)
+            : this.deleteSelection();
         {
-          if (ever ??= dew, !canyon) return this.deleteRange(dew, ever);
+          if (((ever ??= dew), !canyon)) return this.deleteRange(dew, ever);
           let i = this.storedMarks;
           if (!i) {
             let grain = this.doc.resolve(dew);
-            i = ever == dew ? grain.marks() : grain.marksAcross(this.doc.resolve(ever));
+            i =
+              ever == dew
+                ? grain.marks()
+                : grain.marksAcross(this.doc.resolve(ever));
           }
-          return this.replaceRangeWith(dew, ever, field.text(canyon, i)), !this.selection.empty && this.selection.to == dew + canyon.length && this.setSelection(peers.LS.near(this.selection.$to)), this;
+          return (
+            this.replaceRangeWith(dew, ever, field.text(canyon, i)),
+            !this.selection.empty &&
+              this.selection.to == dew + canyon.length &&
+              this.setSelection(peers.LS.near(this.selection.$to)),
+            this
+          );
         }
       }
       setMeta(event, haven) {
-        return this.meta[typeof event == "string" ? event : event.key] = haven, this;
+        return (
+          (this.meta[typeof event == "string" ? event : event.key] = haven),
+          this
+        );
       }
       getMeta(event) {
         return this.meta[typeof event == "string" ? event : event.key];
@@ -420,7 +544,7 @@ export function deferredUid7() {
         return true;
       }
       scrollIntoView() {
-        return this.updated |= peers.Mxn, this;
+        return ((this.updated |= peers.Mxn), this);
       }
       get scrolledIntoView() {
         return (this.updated & peers.Mxn) > 0;
@@ -433,47 +557,59 @@ export function deferredUid7() {
         this.apply = peers.xxn(kernel.apply, leaf);
       }
     };
-    Fxn = [new peers.Pxn("doc", {
-      init(maple) {
-        return maple.doc || maple.schema.topNodeType.createAndFill();
-      },
-      apply(nimbus) {
-        return nimbus.doc;
-      }
-    }), new peers.Pxn("selection", {
-      init(opal, plume) {
-        return opal.selection || peers.LS.atStart(plume.doc);
-      },
-      apply(quillow) {
-        return quillow.selection;
-      }
-    }), new peers.Pxn("storedMarks", {
-      init(root) {
-        return root.storedMarks || null;
-      },
-      apply(silk, thorn, upland, vista) {
-        return vista.selection.$cursor ? silk.storedMarks : null;
-      }
-    }), new peers.Pxn("scrollToSelection", {
-      init() {
-        return 0;
-      },
-      apply(wisp, yonder) {
-        return wisp.scrolledIntoView ? yonder + 1 : yonder;
-      }
-    })];
+    Fxn = [
+      new peers.Pxn("doc", {
+        init(maple) {
+          return maple.doc || maple.schema.topNodeType.createAndFill();
+        },
+        apply(nimbus) {
+          return nimbus.doc;
+        },
+      }),
+      new peers.Pxn("selection", {
+        init(opal, plume) {
+          return opal.selection || peers.LS.atStart(plume.doc);
+        },
+        apply(quillow) {
+          return quillow.selection;
+        },
+      }),
+      new peers.Pxn("storedMarks", {
+        init(root) {
+          return root.storedMarks || null;
+        },
+        apply(silk, thorn, upland, vista) {
+          return vista.selection.$cursor ? silk.storedMarks : null;
+        },
+      }),
+      new peers.Pxn("scrollToSelection", {
+        init() {
+          return 0;
+        },
+        apply(wisp, yonder) {
+          return wisp.scrolledIntoView ? yonder + 1 : yonder;
+        },
+      }),
+    ];
     Ixn = class {
       constructor(zenith, anvil) {
         this.schema = zenith;
         this.plugins = [];
         this.pluginsByKey = Object.create(null);
         this.fields = peers.Fxn.slice();
-        anvil && anvil.forEach(item => {
-          if (this.pluginsByKey[item.key]) throw peers.RangeError("Adding different instances of a keyed plugin (" + item.key + ")");
-          this.plugins.push(item);
-          this.pluginsByKey[item.key] = item;
-          item.spec.state && this.fields.push(new peers.Pxn(item.key, item.spec.state, item));
-        });
+        anvil &&
+          anvil.forEach((item) => {
+            if (this.pluginsByKey[item.key])
+              throw peers.RangeError(
+                "Adding different instances of a keyed plugin (" +
+                  item.key +
+                  ")",
+              );
+            this.plugins.push(item);
+            this.pluginsByKey[item.key] = item;
+            item.spec.state &&
+              this.fields.push(new peers.Pxn(item.key, item.spec.state, item));
+          });
       }
     };
     Lxn = class beacon {
@@ -490,17 +626,23 @@ export function deferredUid7() {
         return this.applyTransaction(dome).state;
       }
       filterTransaction(eddy, fjord = -1) {
-        for (let glen = 0; glen < this.config.plugins.length; glen++) if (glen != fjord) {
-          let hearth = this.config.plugins[glen];
-          if (hearth.spec.filterTransaction && !hearth.spec.filterTransaction.call(hearth, eddy, this)) return false;
-        }
+        for (let glen = 0; glen < this.config.plugins.length; glen++)
+          if (glen != fjord) {
+            let hearth = this.config.plugins[glen];
+            if (
+              hearth.spec.filterTransaction &&
+              !hearth.spec.filterTransaction.call(hearth, eddy, this)
+            )
+              return false;
+          }
         return true;
       }
       applyTransaction(inlet) {
-        if (!this.filterTransaction(inlet)) return {
-          state: this,
-          transactions: []
-        };
+        if (!this.filterTransaction(inlet))
+          return {
+            state: this,
+            transactions: [],
+          };
         let jetty = [inlet],
           knob = this.applyInner(inlet),
           ledge = null;
@@ -511,36 +653,51 @@ export function deferredUid7() {
             if (mire.spec.appendTransaction) {
               let s = ledge ? ledge[a].n : 0,
                 nook = ledge ? ledge[a].state : this,
-                oxbow = s < jetty.length && mire.spec.appendTransaction.call(mire, s ? jetty.slice(s) : jetty, nook, knob);
+                oxbow =
+                  s < jetty.length &&
+                  mire.spec.appendTransaction.call(
+                    mire,
+                    s ? jetty.slice(s) : jetty,
+                    nook,
+                    knob,
+                  );
               if (oxbow && knob.filterTransaction(oxbow, a)) {
-                if (oxbow.setMeta("appendedTransaction", inlet), !ledge) {
+                if ((oxbow.setMeta("appendedTransaction", inlet), !ledge)) {
                   ledge = [];
-                  for (let pond = 0; pond < this.config.plugins.length; pond++) ledge.push(pond < a ? {
-                    state: knob,
-                    n: jetty.length
-                  } : {
-                    state: this,
-                    n: 0
-                  });
+                  for (let pond = 0; pond < this.config.plugins.length; pond++)
+                    ledge.push(
+                      pond < a
+                        ? {
+                            state: knob,
+                            n: jetty.length,
+                          }
+                        : {
+                            state: this,
+                            n: 0,
+                          },
+                    );
                 }
                 jetty.push(oxbow);
                 knob = knob.applyInner(oxbow);
                 i = true;
               }
-              ledge && (ledge[a] = {
-                state: knob,
-                n: jetty.length
-              });
+              ledge &&
+                (ledge[a] = {
+                  state: knob,
+                  n: jetty.length,
+                });
             }
           }
-          if (!i) return {
-            state: knob,
-            transactions: jetty
-          };
+          if (!i)
+            return {
+              state: knob,
+              transactions: jetty,
+            };
         }
       }
       applyInner(quarry) {
-        if (!quarry.before.eq(this.doc)) throw peers.RangeError("Applying a mismatched transaction");
+        if (!quarry.before.eq(this.doc))
+          throw peers.RangeError("Applying a mismatched transaction");
         let rapids = new beacon(this.config),
           spur = this.config.fields;
         for (let tor = 0; tor < spur.length; tor++) {
@@ -553,9 +710,16 @@ export function deferredUid7() {
         return new peers.Nxn(this);
       }
       static create(updraft) {
-        let verge = new peers.Ixn(updraft.doc ? updraft.doc.type.schema : updraft.schema, updraft.plugins),
+        let verge = new peers.Ixn(
+            updraft.doc ? updraft.doc.type.schema : updraft.schema,
+            updraft.plugins,
+          ),
           weir = new beacon(verge);
-        for (let yard = 0; yard < verge.fields.length; yard++) weir[verge.fields[yard].name] = verge.fields[yard].init(updraft, weir);
+        for (let yard = 0; yard < verge.fields.length; yard++)
+          weir[verge.fields[yard].name] = verge.fields[yard].init(
+            updraft,
+            weir,
+          );
         return weir;
       }
       reconfigure(bolt) {
@@ -564,43 +728,75 @@ export function deferredUid7() {
           i = new beacon(cog);
         for (let edge = 0; edge < disc.length; edge++) {
           let forge = disc[edge].name;
-          i[forge] = this.hasOwnProperty(forge) ? this[forge] : disc[edge].init(bolt, i);
+          i[forge] = this.hasOwnProperty(forge)
+            ? this[forge]
+            : disc[edge].init(bolt, i);
         }
         return i;
       }
       toJSON(gear) {
         let hinge = {
           doc: this.doc.toJSON(),
-          selection: this.selection.toJSON()
+          selection: this.selection.toJSON(),
         };
-        if (this.storedMarks && (hinge.storedMarks = this.storedMarks.map(item => {
-          return item.toJSON();
-        })), gear && typeof gear == "object") for (let iron in gear) {
-          if (iron == "doc" || iron == "selection") throw peers.RangeError("The JSON fields `doc` and `selection` are reserved");
-          let joint = gear[iron],
-            i = joint.spec.state;
-          i && i.toJSON && (hinge[iron] = i.toJSON.call(joint, this[joint.key]));
-        }
+        if (
+          (this.storedMarks &&
+            (hinge.storedMarks = this.storedMarks.map((item) => {
+              return item.toJSON();
+            })),
+          gear && typeof gear == "object")
+        )
+          for (let iron in gear) {
+            if (iron == "doc" || iron == "selection")
+              throw peers.RangeError(
+                "The JSON fields `doc` and `selection` are reserved",
+              );
+            let joint = gear[iron],
+              i = joint.spec.state;
+            i &&
+              i.toJSON &&
+              (hinge[iron] = i.toJSON.call(joint, this[joint.key]));
+          }
         return hinge;
       }
       static fromJSON(keystone, latch, motor) {
-        if (!latch) throw peers.RangeError("Invalid input for EditorState.fromJSON");
-        if (!keystone.schema) throw peers.RangeError("Required config field 'schema' missing");
+        if (!latch)
+          throw peers.RangeError("Invalid input for EditorState.fromJSON");
+        if (!keystone.schema)
+          throw peers.RangeError("Required config field 'schema' missing");
         let i = new peers.Ixn(keystone.schema, keystone.plugins),
           a = new beacon(i);
-        return i.fields.forEach(item => {
-          if (item.name == "doc") a.doc = peers.OS.fromJSON(keystone.schema, latch.doc);else if (item.name == "selection") a.selection = peers.LS.fromJSON(a.doc, latch.selection);else if (item.name == "storedMarks") latch.storedMarks && (a.storedMarks = latch.storedMarks.map(keystone.schema.markFromJSON));else {
-            if (motor) for (let i in motor) {
-              let nut = motor[i],
-                s = nut.spec.state;
-              if (nut.key == item.name && s && s.fromJSON && Object.prototype.hasOwnProperty.call(latch, i)) {
-                a[item.name] = s.fromJSON.call(nut, keystone, latch[i], a);
-                return;
-              }
+        return (
+          i.fields.forEach((item) => {
+            if (item.name == "doc")
+              a.doc = peers.OS.fromJSON(keystone.schema, latch.doc);
+            else if (item.name == "selection")
+              a.selection = peers.LS.fromJSON(a.doc, latch.selection);
+            else if (item.name == "storedMarks")
+              latch.storedMarks &&
+                (a.storedMarks = latch.storedMarks.map(
+                  keystone.schema.markFromJSON,
+                ));
+            else {
+              if (motor)
+                for (let i in motor) {
+                  let nut = motor[i],
+                    s = nut.spec.state;
+                  if (
+                    nut.key == item.name &&
+                    s &&
+                    s.fromJSON &&
+                    Object.prototype.hasOwnProperty.call(latch, i)
+                  ) {
+                    a[item.name] = s.fromJSON.call(nut, keystone, latch[i], a);
+                    return;
+                  }
+                }
+              a[item.name] = item.init(keystone, a);
             }
-            a[item.name] = item.init(keystone, a);
-          }
-        }), a;
+          }),
+          a
+        );
       }
     };
     VS = class {

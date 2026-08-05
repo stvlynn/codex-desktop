@@ -23,7 +23,7 @@ export function bindThreadStarted() {
   }
 
   return peers.e(() => {
-    Wxe = {
+    ((Wxe = {
       error: !0,
       "thread/started": !0,
       "thread/name/updated": !0,
@@ -167,7 +167,11 @@ export function bindThreadStarted() {
       "remoteControl/status/changed": !0,
       "rawResponse/completed": !1,
       guardianWarning: !0,
-      warning: !1
-    }, Gxe = new Set([`process/outputDelta`, `process/exited`, `fs/changed`]), Object.entries(peers.Wxe).filter(([e, t]) => !t && !peers.Gxe.has(peers.e)).map(([e]) => peers.e);
+      warning: !1,
+    }),
+      (Gxe = new Set([`process/outputDelta`, `process/exited`, `fs/changed`])),
+      Object.entries(peers.Wxe)
+        .filter(([e, t]) => !t && !peers.Gxe.has(peers.e))
+        .map(([e]) => peers.e));
   });
 }

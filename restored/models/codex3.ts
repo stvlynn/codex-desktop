@@ -25,6 +25,6 @@ export function codex3() {
   }
 
   return peers.e(() => {
-    peers.NZ(), peers.PZ(), peers.k_s(), K_s = `codex`;
+    (peers.NZ(), peers.PZ(), peers.k_s(), (K_s = `codex`));
   });
 }

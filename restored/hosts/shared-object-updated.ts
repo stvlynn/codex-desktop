@@ -19,7 +19,9 @@ export type BindSharedObjectUpdatedPeers = {
 let peers: BindSharedObjectUpdatedPeers | null = null;
 
 /** Wire bindSharedObjectUpdated peers once companions land. */
-export function setBindSharedObjectUpdatedPeers(next: BindSharedObjectUpdatedPeers): void {
+export function setBindSharedObjectUpdatedPeers(
+  next: BindSharedObjectUpdatedPeers,
+): void {
   peers = next;
 }
 

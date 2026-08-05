@@ -11,14 +11,22 @@ export type LogAutomationCronProductEventPeers = {
 let peers: LogAutomationCronProductEventPeers | null = null;
 
 /** Wire logAutomationCronProductEvent peers once companions land. */
-export function setLogAutomationCronProductEventPeers(next: LogAutomationCronProductEventPeers): void {
+export function setLogAutomationCronProductEventPeers(
+  next: LogAutomationCronProductEventPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `Hu` / internal `o3`.
  */
-async function logAutomationCronProductEvent(e, t, n, r, i = n?.kind === `cron` && `pluginTemplateId` in n ? n : null) {
+async function logAutomationCronProductEvent(
+  e,
+  t,
+  n,
+  r,
+  i = n?.kind === `cron` && `pluginTemplateId` in n ? n : null,
+) {
   if (peers == null) {
     throw new Error("logAutomationCronProductEvent peers are not configured");
   }
@@ -27,6 +35,6 @@ async function logAutomationCronProductEvent(e, t, n, r, i = n?.kind === `cron` 
   e.logProductEvent(peers.xQn, {
     ...t,
     ...(n == null ? {} : peers.gZc(n)),
-    ...(await peers.JXc(a, r))
+    ...(await peers.JXc(a, r)),
   });
 }

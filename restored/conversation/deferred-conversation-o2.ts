@@ -12,7 +12,9 @@ export type DeferredConversationO2Peers = {
 let peers: DeferredConversationO2Peers | null = null;
 
 /** Wire deferredConversationO2 peers once companions land. */
-export function setDeferredConversationO2Peers(next: DeferredConversationO2Peers): void {
+export function setDeferredConversationO2Peers(
+  next: DeferredConversationO2Peers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,6 @@ export function deferredConversationO2() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers._3o(), peers.Gk(), peers.KVl();
+    (peers.Au(), peers._3o(), peers.Gk(), peers.KVl());
   });
 }

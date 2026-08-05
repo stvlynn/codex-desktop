@@ -25,7 +25,8 @@ export function bindDeferredUiDnt() {
 
   return class extends peers.Iy {
     constructor(e, t = 0) {
-      super(peers.e, `RenderingCancelledException`), this.extraDelay = peers.t;
+      (super(peers.e, `RenderingCancelledException`),
+        (this.extraDelay = peers.t));
     }
   };
 }

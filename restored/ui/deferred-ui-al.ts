@@ -29,6 +29,10 @@ export function bindDeferredUiAL() {
   }
 
   return peers.e(() => {
-    peers.Pca(), Lca = peers.r(peers.o(), 1), Rca = peers.J(), zca = (0, peers.Lca.createContext)(void 0), Bca = 0;
+    (peers.Pca(),
+      (Lca = peers.r(peers.o(), 1)),
+      (Rca = peers.J()),
+      (zca = (0, peers.Lca.createContext)(void 0)),
+      (Bca = 0));
   });
 }

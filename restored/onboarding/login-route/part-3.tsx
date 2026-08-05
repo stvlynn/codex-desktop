@@ -6,7 +6,13 @@
 // Wave5d careful split 3/4
 /* split-lane-import-depth:1 */
 
-import { buildChatgptDesktopAuthUrl, ensureBuildChatgptDesktopAuthUrlInit, ensureChatgptDesktopAuthUrlInit, getCodexAppVersionFromScope, loginWithChatgptDeviceCode } from "../../account/chatgpt-desktop-auth-url";
+import {
+  buildChatgptDesktopAuthUrl,
+  ensureBuildChatgptDesktopAuthUrlInit,
+  ensureChatgptDesktopAuthUrlInit,
+  getCodexAppVersionFromScope,
+  loginWithChatgptDeviceCode,
+} from "../../account/chatgpt-desktop-auth-url";
 import { deferredAccountXq } from "../../account/deferred-account-xq";
 import { selfServeBusinessUsageBased } from "../../account/self-serve-business-usage-based";
 import { CODEX_LOGIN_METHOD_SELECTED_TYPE } from "../../analytics/codex-login-method-selected-type";
@@ -17,17 +23,41 @@ import { CodexProfileEditSaveApiStatus } from "../../analytics/codex-profile-edi
 import { logProductEvent } from "../../analytics/log-product-event";
 import { AppSurfaceId } from "../../app/app-surface-ids";
 import { useUpdateAuthNonce } from "../../auth/use-update-auth-nonce";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_FH_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_FR_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_PRODUCT_ID } from "../../config/chatgpt-product-id";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { invokeDesktopRpc } from "../../desktop/invoke-desktop-rpc";
-import { AsciiEngineView, ensureAsciiEngineInit, ensureAsciiEngineViewInit, useAsciiEngine } from "../../hooks/use-ascii-engine";
+import {
+  AsciiEngineView,
+  ensureAsciiEngineInit,
+  ensureAsciiEngineViewInit,
+  useAsciiEngine,
+} from "../../hooks/use-ascii-engine";
 import { ensureAuthProviderInit } from "../../hooks/use-auth";
 import { useQueryClient } from "../../hooks/use-query-client";
 import { HostFeatureConfigToggles } from "../../hosts/host-feature-config-toggles";
@@ -57,16 +87,27 @@ import { ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
 import { size12AriaIcon } from "../../ui/size12-aria-icon";
 import { countLeadingZeroBits32 } from "../../utils/count-leading-zero-bits-32";
 import { identityValue } from "../../utils/identity-value";
-import { ensureImportSettingsGctInit, ensurePersonalizationG0Init, ensurePersonalizationJutInit, ensurePersonalizationK0Init, ensureSettingsGlyphI0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsGctInit,
+  ensurePersonalizationG0Init,
+  ensurePersonalizationJutInit,
+  ensurePersonalizationK0Init,
+  ensureSettingsGlyphI0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { AppBrandMark } from "../app-brand-mark";
-import { initOnboardingLoginContent, OnboardingLoginContent } from "../onboarding-login-content";
+import {
+  initOnboardingLoginContent,
+  OnboardingLoginContent,
+} from "../onboarding-login-content";
 
 // Wave5d soft JSX companions.
-function Alpha(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -159,10 +200,7 @@ const isle: any = undefined;
 const juniper: any = undefined;
 const lagoon: any = undefined;
 function meadow(ever) {
-  let {
-      onExit,
-      audioContextRef
-    } = ever,
+  let { onExit, audioContextRef } = ever,
     field = oak.useRef(null),
     grain = oak.useRef(null),
     haven = oak.useRef(null),
@@ -170,7 +208,7 @@ function meadow(ever) {
   let jadeite = oak.useRef(ink),
     kernel = {
       x: 0,
-      y: 0
+      y: 0,
     };
   let leaf = oak.useRef(kernel),
     maple = oak.useRef("right"),
@@ -180,7 +218,7 @@ function meadow(ever) {
       rows: quiet,
       cellSize: rain,
       width: quiet * rain,
-      height: quiet * rain
+      height: quiet * rain,
     };
   let plume = oak.useRef(opal),
     quillow = oak.useRef(null),
@@ -208,45 +246,58 @@ function meadow(ever) {
     };
   let thorn = oak.useEffectEvent(silk),
     upland = () => {
-      haven.current != null && (window.clearInterval(haven.current), haven.current = null);
+      haven.current != null &&
+        (window.clearInterval(haven.current), (haven.current = null));
     };
   let vista = upland,
     wisp = () => {
       if (quillow.current) return quillow.current;
       let spur = field.current;
-      if (spur == null) return {
-        snake: "#ffffff",
-        food: "#f97316"
-      };
+      if (spur == null)
+        return {
+          snake: "#ffffff",
+          food: "#f97316",
+        };
       let tor = getComputedStyle(spur).color || "#ffffff",
         updraft = getComputedStyle(document.documentElement),
         verge = {
           snake: tor,
-          food: updraft.getPropertyValue("--vscode-charts-red").trim() || updraft.getPropertyValue("--vscode-charts-orange").trim() || "#f97316"
+          food:
+            updraft.getPropertyValue("--vscode-charts-red").trim() ||
+            updraft.getPropertyValue("--vscode-charts-orange").trim() ||
+            "#f97316",
         };
-      return quillow.current = verge, verge;
+      return ((quillow.current = verge), verge);
     };
   let yonder = wisp,
     zenith = () => {
       if (field.current == null) return null;
       let weir = Math.max(1, Math.floor(window.devicePixelRatio || 1));
       field.current.width = Math.max(1, Math.floor(plume.current.width * weir));
-      field.current.height = Math.max(1, Math.floor(plume.current.height * weir));
+      field.current.height = Math.max(
+        1,
+        Math.floor(plume.current.height * weir),
+      );
       field.current.style.width = `${plume.current.width}px`;
       field.current.style.height = `${plume.current.height}px`;
       let yard = field.current.getContext("2d");
-      return yard == null ? null : (yard.setTransform(weir, 0, 0, weir, 0, 0), yard.imageSmoothingEnabled = false, yard);
+      return yard == null
+        ? null
+        : (yard.setTransform(weir, 0, 0, weir, 0, 0),
+          (yard.imageSmoothingEnabled = false),
+          yard);
     };
   let anvil = zenith,
-    beacon = anchor => {
+    beacon = (anchor) => {
       let bolt = {
         x: Math.floor(Math.random() * plume.current.columns),
-        y: Math.floor(Math.random() * plume.current.rows)
+        y: Math.floor(Math.random() * plume.current.rows),
       };
-      for (; anchor.some(item => item.x === bolt.x && item.y === bolt.y);) bolt = {
-        x: Math.floor(Math.random() * plume.current.columns),
-        y: Math.floor(Math.random() * plume.current.rows)
-      };
+      for (; anchor.some((item) => item.x === bolt.x && item.y === bolt.y); )
+        bolt = {
+          x: Math.floor(Math.random() * plume.current.columns),
+          y: Math.floor(Math.random() * plume.current.rows),
+        };
       return bolt;
     };
   let crag = beacon,
@@ -256,24 +307,39 @@ function meadow(ever) {
       let disc = yonder();
       cog.clearRect(0, 0, plume.current.width, plume.current.height);
       cog.fillStyle = disc.snake;
-      for (let edge of jadeite.current) cog.fillRect(edge.x * plume.current.cellSize, edge.y * plume.current.cellSize, plume.current.cellSize, plume.current.cellSize);
+      for (let edge of jadeite.current)
+        cog.fillRect(
+          edge.x * plume.current.cellSize,
+          edge.y * plume.current.cellSize,
+          plume.current.cellSize,
+          plume.current.cellSize,
+        );
       cog.fillStyle = disc.food;
-      cog.fillRect(leaf.current.x * plume.current.cellSize, leaf.current.y * plume.current.cellSize, plume.current.cellSize, plume.current.cellSize);
+      cog.fillRect(
+        leaf.current.x * plume.current.cellSize,
+        leaf.current.y * plume.current.cellSize,
+        plume.current.cellSize,
+        plume.current.cellSize,
+      );
     };
   let eddy = oak.useEffectEvent(dome),
     fjord = () => {
       let forge = Math.floor(plume.current.columns / 2),
         gear = Math.floor(plume.current.rows / 2);
-      jadeite.current = [{
-        x: forge,
-        y: gear
-      }, {
-        x: forge - 1,
-        y: gear
-      }, {
-        x: forge - 2,
-        y: gear
-      }];
+      jadeite.current = [
+        {
+          x: forge,
+          y: gear,
+        },
+        {
+          x: forge - 1,
+          y: gear,
+        },
+        {
+          x: forge - 2,
+          y: gear,
+        },
+      ];
       maple.current = "right";
       nimbus.current = "right";
       leaf.current = crag(jadeite.current);
@@ -293,56 +359,86 @@ function meadow(ever) {
         rows: motor,
         cellSize: latch,
         width: iron,
-        height: joint
+        height: joint,
       };
       glen();
     };
   let inlet = oak.useEffectEvent(hearth),
     jetty = () => {
       inlet();
-      let nut = event => {
+      let nut = (event) => {
         let piston = null;
-        event.key === "ArrowUp" || event.key === "w" || event.key === "W" ? piston = "up" : event.key === "ArrowDown" || event.key === "s" || event.key === "S" ? piston = "down" : event.key === "ArrowLeft" || event.key === "a" || event.key === "A" ? piston = "left" : (event.key === "ArrowRight" || event.key === "d" || event.key === "D") && (piston = "right");
-        piston != null && (event.preventDefault(), urn[maple.current] !== piston && (nimbus.current = piston));
+        event.key === "ArrowUp" || event.key === "w" || event.key === "W"
+          ? (piston = "up")
+          : event.key === "ArrowDown" || event.key === "s" || event.key === "S"
+            ? (piston = "down")
+            : event.key === "ArrowLeft" ||
+                event.key === "a" ||
+                event.key === "A"
+              ? (piston = "left")
+              : (event.key === "ArrowRight" ||
+                  event.key === "d" ||
+                  event.key === "D") &&
+                (piston = "right");
+        piston != null &&
+          (event.preventDefault(),
+          urn[maple.current] !== piston && (nimbus.current = piston));
       };
-      return window.addEventListener("keydown", nut), haven.current = window.setInterval(() => {
-        let rivet = jadeite.current,
-          screw = rivet[0],
-          torque = nimbus.current,
-          valve = trail[torque],
-          axle = {
-            x: screw.x + valve.x,
-            y: screw.y + valve.y
-          };
-        if (axle.x < 0 || axle.y < 0 || axle.x >= plume.current.columns || axle.y >= plume.current.rows) {
+      return (
+        window.addEventListener("keydown", nut),
+        (haven.current = window.setInterval(() => {
+          let rivet = jadeite.current,
+            screw = rivet[0],
+            torque = nimbus.current,
+            valve = trail[torque],
+            axle = {
+              x: screw.x + valve.x,
+              y: screw.y + valve.y,
+            };
+          if (
+            axle.x < 0 ||
+            axle.y < 0 ||
+            axle.x >= plume.current.columns ||
+            axle.y >= plume.current.rows
+          ) {
+            vista();
+            thorn(140, 220, "sawtooth");
+            root();
+            return;
+          }
+          let bracket = axle.x === leaf.current.x && axle.y === leaf.current.y;
+          if (
+            (bracket ? rivet : rivet.slice(0, -1)).some(
+              (item) => item.x === axle.x && item.y === axle.y,
+            )
+          ) {
+            vista();
+            thorn(160, 220, "sawtooth");
+            root();
+            return;
+          }
+          let clamp = bracket
+            ? [axle, ...rivet]
+            : [axle, ...rivet.slice(0, -1)];
+          jadeite.current = clamp;
+          maple.current = torque;
+          bracket && ((leaf.current = crag(clamp)), thorn(660, 120, "square"));
+          eddy();
+        }, seed)),
+        () => {
           vista();
-          thorn(140, 220, "sawtooth");
-          root();
-          return;
+          window.removeEventListener("keydown", nut);
         }
-        let bracket = axle.x === leaf.current.x && axle.y === leaf.current.y;
-        if ((bracket ? rivet : rivet.slice(0, -1)).some(item => item.x === axle.x && item.y === axle.y)) {
-          vista();
-          thorn(160, 220, "sawtooth");
-          root();
-          return;
-        }
-        let clamp = bracket ? [axle, ...rivet] : [axle, ...rivet.slice(0, -1)];
-        jadeite.current = clamp;
-        maple.current = torque;
-        bracket && (leaf.current = crag(clamp), thorn(660, 120, "square"));
-        eddy();
-      }, seed), () => {
-        vista();
-        window.removeEventListener("keydown", nut);
-      };
+      );
     };
   let knob;
   knob = [];
   oak.useEffect(jetty, knob);
-  return <div className="h-full w-full" ref={grain}>
+  return (
+    <div className="h-full w-full" ref={grain}>
       <canvas className="h-full w-full text-token-foreground" ref={field} />
-    </div>;
+    </div>
+  );
 }
 var nest,
   oak,
@@ -361,26 +457,26 @@ var nest,
     trail = {
       up: {
         x: 0,
-        y: -1
+        y: -1,
       },
       down: {
         x: 0,
-        y: 1
+        y: 1,
       },
       left: {
         x: -1,
-        y: 0
+        y: 0,
       },
       right: {
         x: 1,
-        y: 0
-      }
+        y: 0,
+      },
     };
     urn = {
       up: "down",
       down: "up",
       left: "right",
-      right: "left"
+      right: "left",
     };
   });
 function wind(drill, engine) {
@@ -410,13 +506,33 @@ var yarrow = esmInit(() => {}),
   birch,
   canyon = esmInit(() => {
     react();
-    birch = gasket => <svg height={24} viewBox="0 0 24 24" width={24} xmlns="http://www.w3.org/2000/svg" {...gasket}>
-        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
-        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
-        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
-        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+    birch = (gasket) => (
+      <svg
+        height={24}
+        viewBox="0 0 24 24"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+        {...gasket}
+      >
+        <path
+          d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+          fill="#4285F4"
+        />
+        <path
+          d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+          fill="#34A853"
+        />
+        <path
+          d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+          fill="#FBBC05"
+        />
+        <path
+          d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+          fill="#EA4335"
+        />
         <path d="M1 1h22v22H1z" fill="none" />
-      </svg>;
+      </svg>
+    );
   });
 function dew(handle) {
   let {
@@ -432,148 +548,270 @@ function dew(handle) {
       onChatGptSignUp,
       onPlaySnake,
       onResetApiKeyEntry,
-      onShowApiKeyEntry: insert
+      onShowApiKeyEntry: insert,
     } = handle,
     jacket = useIntl(),
     knurl = appBrand === AppSurfaceId.ChatGPT;
   if (isChatGptSignInPending && !isApiKeyEntryVisible) {
     let dowel = knurl ? "size-10" : "size-[52px]",
       flange = IntlProvider("shrink-0", dowel);
-    let gib = <AppBrandMark {...{
-      appBrand,
-      className: flange
-    }} />;
-    let hub = <p className="text-center text-[14px] leading-5 font-normal text-token-description-foreground">
-        {<MemoizedFormattedMessage {...{
-        id: "electron.onboarding.login.browserPending.welcomeV2",
-        defaultMessage: "Continue signing in with your browser",
-        description: "Message shown while ChatGPT sign-in continues in the browser"
-      }} />}
-      </p>;
+    let gib = (
+      <AppBrandMark
+        {...{
+          appBrand,
+          className: flange,
+        }}
+      />
+    );
+    let hub = (
+      <p className="text-center text-[14px] leading-5 font-normal text-token-description-foreground">
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "electron.onboarding.login.browserPending.welcomeV2",
+              defaultMessage: "Continue signing in with your browser",
+              description:
+                "Message shown while ChatGPT sign-in continues in the browser",
+            }}
+          />
+        }
+      </p>
+    );
     let idler = () => onChatGptSignIn();
-    let jig = <MemoizedFormattedMessage {...{
-      id: "electron.onboarding.login.chatgpt.cancel.welcomeV2",
-      defaultMessage: "Cancel sign-in",
-      description: "Cancel button label while ChatGPT sign-in is in progress on desktop onboarding"
-    }} />;
-    let keeper = <button className="flex h-[42px] w-full cursor-interaction items-center justify-center rounded-full border border-token-border bg-token-main-surface-primary text-[14px] leading-5 font-medium text-token-description-foreground hover:bg-token-list-hover-background" type="button" onClick={idler}>
+    let jig = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "electron.onboarding.login.chatgpt.cancel.welcomeV2",
+          defaultMessage: "Cancel sign-in",
+          description:
+            "Cancel button label while ChatGPT sign-in is in progress on desktop onboarding",
+        }}
+      />
+    );
+    let keeper = (
+      <button
+        className="flex h-[42px] w-full cursor-interaction items-center justify-center rounded-full border border-token-border bg-token-main-surface-primary text-[14px] leading-5 font-medium text-token-description-foreground hover:bg-token-list-hover-background"
+        type="button"
+        onClick={idler}
+      >
         {jig}
-      </button>;
+      </button>
+    );
     let lug;
-    return <div className="flex h-full w-full items-center justify-center overflow-hidden bg-token-main-surface-primary pb-12 text-token-foreground">
+    return (
+      <div className="flex h-full w-full items-center justify-center overflow-hidden bg-token-main-surface-primary pb-12 text-token-foreground">
         <div className="flex w-[340px] flex-col items-center gap-8">
           {gib}
           {hub}
           {keeper}
         </div>
-      </div>;
+      </div>
+    );
   }
   let lever = knurl ? "gap-4" : "gap-8",
     mount = IntlProvider("flex w-full flex-col items-center", lever);
   let nozzle = jacket.formatMessage({
     id: "electron.onboarding.login.snake.start",
     defaultMessage: "Play Snake",
-    description: "Aria label for the Codex logo button to start Snake"
+    description: "Aria label for the Codex logo button to start Snake",
   });
   let platen = !knurl && "size-[52px]",
     ratchet = IntlProvider("shrink-0", platen);
-  let shim = <AppBrandMark {...{
-    appBrand,
-    className: ratchet
-  }} />;
-  let tappet = <button className="group flex cursor-interaction items-center justify-center rounded-full" type="button" aria-label={nozzle} onClick={onPlaySnake}>
+  let shim = (
+    <AppBrandMark
+      {...{
+        appBrand,
+        className: ratchet,
+      }}
+    />
+  );
+  let tappet = (
+    <button
+      className="group flex cursor-interaction items-center justify-center rounded-full"
+      type="button"
+      aria-label={nozzle}
+      onClick={onPlaySnake}
+    >
       {shim}
-    </button>;
-  let arbor = <h1 className="w-[316px] text-center text-[28px] leading-9 font-normal text-token-foreground">
-      {knurl ? <MemoizedFormattedMessage {...{
-      id: "electron.onboarding.login.welcomeV2.title.chatgptSignIn",
-      defaultMessage: "Sign in to ChatGPT",
-      description: "Title on the v2 desktop onboarding login page for streamlined ChatGPT sign-in"
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "electron.onboarding.login.welcomeV2.title",
-      defaultMessage: "Get started with {appName}",
-      description: "Title on the v2 desktop onboarding login page",
-      values: {
-        appName: AppInitialPgt(appBrand)
-      }
-    }} />}
-    </h1>;
-  let bushing = <div className={mount}>
+    </button>
+  );
+  let arbor = (
+    <h1 className="w-[316px] text-center text-[28px] leading-9 font-normal text-token-foreground">
+      {knurl ? (
+        <MemoizedFormattedMessage
+          {...{
+            id: "electron.onboarding.login.welcomeV2.title.chatgptSignIn",
+            defaultMessage: "Sign in to ChatGPT",
+            description:
+              "Title on the v2 desktop onboarding login page for streamlined ChatGPT sign-in",
+          }}
+        />
+      ) : (
+        <MemoizedFormattedMessage
+          {...{
+            id: "electron.onboarding.login.welcomeV2.title",
+            defaultMessage: "Get started with {appName}",
+            description: "Title on the v2 desktop onboarding login page",
+            values: {
+              appName: AppInitialPgt(appBrand),
+            },
+          }}
+        />
+      )}
+    </h1>
+  );
+  let bushing = (
+    <div className={mount}>
       {tappet}
       {arbor}
-    </div>;
-  let collar = isApiKeyEntryVisible ? <div className="w-full">
-      {<OnboardingLoginContent {...{
-      apiKeyValue,
-      isApiKeyEntryVisible,
-      isApiKeySignInPending,
-      isChatGptSignInPending,
-      onApiKeySecondaryAction: onResetApiKeyEntry,
-      onApiKeySubmit,
-      onApiKeyValueChange,
-      onChatGptSignIn,
-      onShowApiKeyEntry: insert,
-      apiKeySecondaryActionLabel: <MemoizedFormattedMessage {...{
-        id: "electron.onboarding.login.apikey.cancel",
-        defaultMessage: "Cancel",
-        description: "Cancel button label for API key entry on desktop onboarding"
-      }} />
-    }} />}
-    </div> : <div className="flex w-full flex-col items-center gap-3">
-      <button className="flex h-[48px] w-full cursor-interaction items-center justify-center gap-2 rounded-full border border-transparent bg-token-foreground text-[14px] leading-5 font-medium text-token-dropdown-background hover:bg-token-foreground/80" type="button" onClick={() => onChatGptSignIn()}>
-        {<AppIconF0 {...{
-        className: "size-6 shrink-0 text-token-dropdown-background"
-      }} />}
-        {knurl ? <MemoizedFormattedMessage {...{
-        id: "electron.onboarding.login.chatgpt.continueToSignIn",
-        defaultMessage: "Continue to sign in",
-        description: "Button label for streamlined ChatGPT sign-in on desktop onboarding"
-      }} /> : <MemoizedFormattedMessage {...{
-        id: "electron.onboarding.login.chatgpt.signIn",
-        defaultMessage: "Sign in with ChatGPT",
-        description: "Button label to sign in with ChatGPT on desktop onboarding"
-      }} />}
+    </div>
+  );
+  let collar = isApiKeyEntryVisible ? (
+    <div className="w-full">
+      {
+        <OnboardingLoginContent
+          {...{
+            apiKeyValue,
+            isApiKeyEntryVisible,
+            isApiKeySignInPending,
+            isChatGptSignInPending,
+            onApiKeySecondaryAction: onResetApiKeyEntry,
+            onApiKeySubmit,
+            onApiKeyValueChange,
+            onChatGptSignIn,
+            onShowApiKeyEntry: insert,
+            apiKeySecondaryActionLabel: (
+              <MemoizedFormattedMessage
+                {...{
+                  id: "electron.onboarding.login.apikey.cancel",
+                  defaultMessage: "Cancel",
+                  description:
+                    "Cancel button label for API key entry on desktop onboarding",
+                }}
+              />
+            ),
+          }}
+        />
+      }
+    </div>
+  ) : (
+    <div className="flex w-full flex-col items-center gap-3">
+      <button
+        className="flex h-[48px] w-full cursor-interaction items-center justify-center gap-2 rounded-full border border-transparent bg-token-foreground text-[14px] leading-5 font-medium text-token-dropdown-background hover:bg-token-foreground/80"
+        type="button"
+        onClick={() => onChatGptSignIn()}
+      >
+        {
+          <AppIconF0
+            {...{
+              className: "size-6 shrink-0 text-token-dropdown-background",
+            }}
+          />
+        }
+        {knurl ? (
+          <MemoizedFormattedMessage
+            {...{
+              id: "electron.onboarding.login.chatgpt.continueToSignIn",
+              defaultMessage: "Continue to sign in",
+              description:
+                "Button label for streamlined ChatGPT sign-in on desktop onboarding",
+            }}
+          />
+        ) : (
+          <MemoizedFormattedMessage
+            {...{
+              id: "electron.onboarding.login.chatgpt.signIn",
+              defaultMessage: "Sign in with ChatGPT",
+              description:
+                "Button label to sign in with ChatGPT on desktop onboarding",
+            }}
+          />
+        )}
       </button>
-      {showChatGptProviderSignIn ? <>
-          <button className="flex h-[46px] w-full cursor-interaction items-center justify-center gap-2 rounded-full border border-token-border bg-token-main-surface-primary text-[14px] leading-5 font-medium text-token-foreground hover:bg-token-list-hover-background" type="button" onClick={() => onChatGptSignIn("google")}>
-            {<Alpha {...{
-          className: "size-5 shrink-0",
-          "aria-hidden": "true"
-        }} />}
-            {<MemoizedFormattedMessage {...{
-          id: "electron.onboarding.login.google.signIn",
-          defaultMessage: "Continue with Google",
-          description: "Button label for Google sign-in on desktop onboarding"
-        }} />}
+      {showChatGptProviderSignIn ? (
+        <>
+          <button
+            className="flex h-[46px] w-full cursor-interaction items-center justify-center gap-2 rounded-full border border-token-border bg-token-main-surface-primary text-[14px] leading-5 font-medium text-token-foreground hover:bg-token-list-hover-background"
+            type="button"
+            onClick={() => onChatGptSignIn("google")}
+          >
+            {
+              <Alpha
+                {...{
+                  className: "size-5 shrink-0",
+                  "aria-hidden": "true",
+                }}
+              />
+            }
+            {
+              <MemoizedFormattedMessage
+                {...{
+                  id: "electron.onboarding.login.google.signIn",
+                  defaultMessage: "Continue with Google",
+                  description:
+                    "Button label for Google sign-in on desktop onboarding",
+                }}
+              />
+            }
           </button>
-          <button className="flex h-[46px] w-full cursor-interaction items-center justify-center gap-2 rounded-full border border-token-border bg-token-main-surface-primary text-[14px] leading-5 font-medium text-token-foreground hover:bg-token-list-hover-background" type="button" onClick={() => onChatGptSignIn("microsoft")}>
+          <button
+            className="flex h-[46px] w-full cursor-interaction items-center justify-center gap-2 rounded-full border border-token-border bg-token-main-surface-primary text-[14px] leading-5 font-medium text-token-foreground hover:bg-token-list-hover-background"
+            type="button"
+            onClick={() => onChatGptSignIn("microsoft")}
+          >
             <AppInitialLb className="size-5 shrink-0" aria-hidden="true" />
-            {<MemoizedFormattedMessage {...{
-          id: "electron.onboarding.login.microsoft.signIn",
-          defaultMessage: "Continue with Microsoft",
-          description: "Button label for Microsoft sign-in on desktop onboarding"
-        }} />}
+            {
+              <MemoizedFormattedMessage
+                {...{
+                  id: "electron.onboarding.login.microsoft.signIn",
+                  defaultMessage: "Continue with Microsoft",
+                  description:
+                    "Button label for Microsoft sign-in on desktop onboarding",
+                }}
+              />
+            }
           </button>
-        </> : null}
-      <button className="flex h-[46px] w-full cursor-interaction items-center justify-center rounded-full border border-token-border bg-token-main-surface-primary text-[14px] leading-5 font-medium text-token-foreground hover:bg-token-list-hover-background" type="button" onClick={insert}>
-        {<MemoizedFormattedMessage {...{
-        id: "electron.onboarding.login.apikey.open.welcomeV2",
-        defaultMessage: "Sign in another way",
-        description: "Button label to open another sign-in method on v2 desktop onboarding"
-      }} />}
+        </>
+      ) : null}
+      <button
+        className="flex h-[46px] w-full cursor-interaction items-center justify-center rounded-full border border-token-border bg-token-main-surface-primary text-[14px] leading-5 font-medium text-token-foreground hover:bg-token-list-hover-background"
+        type="button"
+        onClick={insert}
+      >
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "electron.onboarding.login.apikey.open.welcomeV2",
+              defaultMessage: "Sign in another way",
+              description:
+                "Button label to open another sign-in method on v2 desktop onboarding",
+            }}
+          />
+        }
       </button>
-      <button className="flex h-9 cursor-interaction items-center justify-center px-2 text-[14px] leading-5 font-medium text-token-description-foreground underline hover:text-token-foreground" type="button" onClick={onChatGptSignUp}>
-        {<MemoizedFormattedMessage {...{
-        id: "electron.onboarding.login.signup.welcomeV2",
-        defaultMessage: "Sign up",
-        description: "Sign-up link on v2 desktop onboarding"
-      }} />}
+      <button
+        className="flex h-9 cursor-interaction items-center justify-center px-2 text-[14px] leading-5 font-medium text-token-description-foreground underline hover:text-token-foreground"
+        type="button"
+        onClick={onChatGptSignUp}
+      >
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "electron.onboarding.login.signup.welcomeV2",
+              defaultMessage: "Sign up",
+              description: "Sign-up link on v2 desktop onboarding",
+            }}
+          />
+        }
       </button>
-    </div>;
-  return <div className="flex h-full w-full items-center justify-center overflow-hidden bg-token-main-surface-primary pb-6 text-token-foreground">
+    </div>
+  );
+  return (
+    <div className="flex h-full w-full items-center justify-center overflow-hidden bg-token-main-surface-primary pb-6 text-token-foreground">
       <div className="flex w-[340px] flex-col items-center gap-8">
         {bushing}
         {collar}
       </div>
-    </div>;
+    </div>
+  );
 }

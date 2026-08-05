@@ -123,7 +123,10 @@ function resolveHostId(
  * Bundle `f1o` — open a file / browser / terminal / review tab in the visible
  * thread's Codex panel.
  */
-export function openWindowsTab(payload: Pick<WindowsTabsOpenPayload, "placement" | "target" | "threadId">, context: TabsOpenContext): WindowsTabsOpenResult {
+export function openWindowsTab(
+  payload: Pick<WindowsTabsOpenPayload, "placement" | "target" | "threadId">,
+  context: TabsOpenContext,
+): WindowsTabsOpenResult {
   const scope = context.scope as AppActionScope | undefined;
   if (scope == null) throw new Error("windows.tabs.open requires an app view");
 
@@ -257,7 +260,9 @@ let boundRunner:
     ) => WindowsTabsOpenResult)
   | null = openWindowsTab;
 
-export function bindWindowsTabsOpenRunner(runner: typeof openWindowsTab | null): void {
+export function bindWindowsTabsOpenRunner(
+  runner: typeof openWindowsTab | null,
+): void {
   boundRunner = runner;
 }
 

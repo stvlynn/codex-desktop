@@ -10,7 +10,9 @@ export type UseExternalStoreSnapshotPeers = {
 let peers: UseExternalStoreSnapshotPeers | null = null;
 
 /** Wire useExternalStoreSnapshot peers once companions land. */
-export function setUseExternalStoreSnapshotPeers(next: UseExternalStoreSnapshotPeers): void {
+export function setUseExternalStoreSnapshotPeers(
+  next: UseExternalStoreSnapshotPeers,
+): void {
   peers = next;
 }
 

@@ -34,7 +34,9 @@ type WordAltFlagReader = () => boolean;
 let readWordAltLineDiff: WordAltFlagReader = () => false;
 
 /** Wire the app-scope flag that selects `word-alt` vs `none` line diffs. */
-export function bindShikiWordAltLineDiffReader(reader: WordAltFlagReader): void {
+export function bindShikiWordAltLineDiffReader(
+  reader: WordAltFlagReader,
+): void {
   readWordAltLineDiff = reader;
 }
 
@@ -73,9 +75,7 @@ export function ShikiHighlightProvider(
 ): ReactElement {
   const { children } = props;
   const colorScheme = usePreferredColorScheme(getAppearanceThemeMode());
-  const lightCodeThemeId = useSettingValue(
-    AppearanceSettings.lightCodeThemeId,
-  );
+  const lightCodeThemeId = useSettingValue(AppearanceSettings.lightCodeThemeId);
   const darkCodeThemeId = useSettingValue(AppearanceSettings.darkCodeThemeId);
   const preferWordAlt = readWordAltLineDiff();
 

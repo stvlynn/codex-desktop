@@ -24,6 +24,6 @@ export function deferredGat() {
   }
 
   return peers.e(() => {
-    peers.ov(), peers.lv(), peers.xNt();
+    (peers.ov(), peers.lv(), peers.xNt());
   });
 }

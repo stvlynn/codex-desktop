@@ -24,7 +24,9 @@ export type BindAppIcon3dMeshesDcozGRqSBinPeers = {
 let peers: BindAppIcon3dMeshesDcozGRqSBinPeers | null = null;
 
 /** Wire bindAppIcon3dMeshesDcozGRqSBin peers once companions land. */
-export function setBindAppIcon3dMeshesDcozGRqSBinPeers(next: BindAppIcon3dMeshesDcozGRqSBinPeers): void {
+export function setBindAppIcon3dMeshesDcozGRqSBinPeers(
+  next: BindAppIcon3dMeshesDcozGRqSBinPeers,
+): void {
   peers = next;
 }
 
@@ -37,10 +39,22 @@ export function bindAppIcon3dMeshesDcozGRqSBin() {
   }
 
   return peers.e(() => {
-    peers.fr(), S5s = peers.r(peers.o(), 1), peers.zZ(), peers.Ap(), peers.ap(), C5s = 45 * 6e4, w5s = 10080 * 60 * 1e3, T5s = 128, E5s = 3600 * 1e3, D5s = 3600 * 1e3, O5s = 1440 * 60 * 1e3, k5s = peers.kp(`fast-mode-personalized-estimate`, null), g1 = {
-      failedAtMs: null,
-      inFlight: null,
-      lastStartedBucket: null
-    };
+    (peers.fr(),
+      (S5s = peers.r(peers.o(), 1)),
+      peers.zZ(),
+      peers.Ap(),
+      peers.ap(),
+      (C5s = 45 * 6e4),
+      (w5s = 10080 * 60 * 1e3),
+      (T5s = 128),
+      (E5s = 3600 * 1e3),
+      (D5s = 3600 * 1e3),
+      (O5s = 1440 * 60 * 1e3),
+      (k5s = peers.kp(`fast-mode-personalized-estimate`, null)),
+      (g1 = {
+        failedAtMs: null,
+        inFlight: null,
+        lastStartedBucket: null,
+      }));
   });
 }

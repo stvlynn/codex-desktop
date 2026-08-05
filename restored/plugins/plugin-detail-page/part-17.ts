@@ -7,7 +7,10 @@
 /* split-lane-import-depth:1 */
 
 import { NativeDesktopAppByBundleId } from "../../account/native-desktop-app-by-bundle-id";
-import { ensureUsageSettingsAccessInit, useUsageSettingsAccess } from "../../account/use-usage-settings-access";
+import {
+  ensureUsageSettingsAccessInit,
+  useUsageSettingsAccess,
+} from "../../account/use-usage-settings-access";
 import { appActionSidebarProjectRefSchema } from "../../actions/app-action-payload-schemas";
 import { ChatgptTrustedContactEntryPoint } from "../../analytics/chatgpt-trusted-contact-entry-point";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
@@ -18,15 +21,54 @@ import { CodexPluginMarketplaceSurface } from "../../analytics/codex-plugin-mark
 import { CODEX_SKILL_TRY_CLICKED_TYPE } from "../../analytics/codex-skill-try-clicked-type";
 import { logProductEvent } from "../../analytics/log-product-event";
 import { AppCardAdminDisabledBadge } from "../../apps/app-card-admin-disabled-badge";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { useExternalBrowserUseGate } from "../../boundaries/browser-use-gate-facades";
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Wlt_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_Jj_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
-import { ensureShareInviteAutocompleteInit, ShareInviteAutocomplete } from "../../boundaries/share-invite-autocomplete/index";
+import {
+  ensureComposerEsm_AG_Init,
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_J0_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_M0_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_RV_Init,
+  ensureComposerEsm_Sst_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+  ensureComposerEsm_Wlt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_FR_Init,
+  ensureConversationPageEsm_Jj_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
+import {
+  ensureShareInviteAutocompleteInit,
+  ShareInviteAutocomplete,
+} from "../../boundaries/share-invite-autocomplete/index";
 import { toastAtom } from "../../boundaries/toast-atom";
-import { ensurePluginMentionPromptInit, firstNonEmptyTrimmedString } from "../../browser/browser-use-helpers";
+import {
+  ensurePluginMentionPromptInit,
+  firstNonEmptyTrimmedString,
+} from "../../browser/browser-use-helpers";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
 import { buildAppUri } from "../../composer/app-plugin-uri";
@@ -50,7 +92,10 @@ import { walkAssistantBranchPath } from "../../conversation/walk-assistant-branc
 import { buildCodexDesktopRequestHeaders } from "../../desktop/codex-desktop-request-headers";
 import { ensureClientCoordinationServiceInit } from "../../desktop/ensure-client-coordination-service-init";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
-import { DEVELOPERS_OPENAI_COM_CODEX_SKILLS_URL, GITHUB_COM_OPENAI_PLUGINS_URL } from "../../docs/codex-doc-urls";
+import {
+  DEVELOPERS_OPENAI_COM_CODEX_SKILLS_URL,
+  GITHUB_COM_OPENAI_PLUGINS_URL,
+} from "../../docs/codex-doc-urls";
 import { lazyWithSuspense } from "../../environments/lazy-with-suspense";
 import { remoteControlHostKey } from "../../environments/remote-host-keys";
 import { areVisualizationFeatureGatesEnabled } from "../../feature-gates/are-visualization-feature-gates-enabled";
@@ -58,14 +103,23 @@ import { repoWorktreeWorkspaceRoots } from "../../git/repo-worktree-workspace-ro
 import { ensureGitRepoWatchAtomsInit } from "../../hooks/git-method-query-atoms";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
 import { useGitRepoLiveQuery } from "../../hooks/use-git-repo-live-query";
-import { ensureUseHomeDirectoryInit, useHomeDirectory } from "../../hooks/use-home-directory";
+import {
+  ensureUseHomeDirectoryInit,
+  useHomeDirectory,
+} from "../../hooks/use-home-directory";
 import { useHostWorkspaceRoot } from "../../hooks/use-host-workspace-root";
 import { useInfiniteListQuery } from "../../hooks/use-infinite-list-query";
-import { ensureUsePluginScheduledTasksInit, usePluginScheduledTasksN } from "../../hooks/use-plugin-scheduled-tasks";
+import {
+  ensureUsePluginScheduledTasksInit,
+  usePluginScheduledTasksN,
+} from "../../hooks/use-plugin-scheduled-tasks";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { useQueryClient } from "../../hooks/use-query-client";
-import { ensureUseRecommendedSkillsInit, useRecommendedSkills } from "../../hooks/use-recommended-skills";
+import {
+  ensureUseRecommendedSkillsInit,
+  useRecommendedSkills,
+} from "../../hooks/use-recommended-skills";
 import { useResizeObserver } from "../../hooks/use-resize-observer";
 import { HostFeatureConfigToggles } from "../../hosts/host-feature-config-toggles";
 import { LOCAL_HOST_ID } from "../../hosts/local-host-id";
@@ -89,7 +143,12 @@ import { ensureTeamIconInit, TeamIcon } from "../../icons/team-icon";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { usePrefersReducedMotion } from "../../motion/use-prefers-reduced-motion";
-import { findSidebarSectionElement, readScrollTop, scrollAppActionTargetTo, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  readScrollTop,
+  scrollAppActionTargetTo,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { getRouteContextValue } from "../../navigation/get-route-context-value";
@@ -108,8 +167,15 @@ import { buildVscodeQueryKey } from "../../settings/vscode-query-key";
 import { collectUniqueMappedPresenceEntries } from "../../shell/collect-unique-mapped-presence-entries";
 import { parseSkillsManagePath } from "../../skills/parse-skills-manage-path";
 import { partitionPluginSkills } from "../../skills/partition-plugin-skills";
-import { ensureRecommendedSkillStatsigOverridesInit, getRecommendedSkillStatsigOverride, useRecommendedSkillStatsigOverrides } from "../../skills/recommended-skill-statsig-overrides";
-import { ensureSkillsPageHelpersInit, usePluginsFeatureEnabled } from "../../skills/skills-page-helpers";
+import {
+  ensureRecommendedSkillStatsigOverridesInit,
+  getRecommendedSkillStatsigOverride,
+  useRecommendedSkillStatsigOverrides,
+} from "../../skills/recommended-skill-statsig-overrides";
+import {
+  ensureSkillsPageHelpersInit,
+  usePluginsFeatureEnabled,
+} from "../../skills/skills-page-helpers";
 import { useBrowserExtensionPluginSetupQuery } from "../../skills/use-browser-extension-plugin-setup-query";
 import { usePluginDetailQuery } from "../../skills/use-plugin-detail-query";
 import { AriaIconBadge } from "../../ui/aria-icon-badge";
@@ -119,15 +185,29 @@ import { CompoundButtonMenu } from "../../ui/compound-button-menu";
 import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { deferredUiU } from "../../ui/deferred-ui-u";
-import { DETAIL_PAGE_STACK_CLASS, DetailPage, DetailPageSection, DetailPageSectionHeader, ensureDetailPageInit, ensureDetailPageSectionHeaderInit, ensureDetailPageSectionInit } from "../../ui/detail-page";
+import {
+  DETAIL_PAGE_STACK_CLASS,
+  DetailPage,
+  DetailPageSection,
+  DetailPageSectionHeader,
+  ensureDetailPageInit,
+  ensureDetailPageSectionHeaderInit,
+  ensureDetailPageSectionInit,
+} from "../../ui/detail-page";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { ght } from "../../ui/ght";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { SearchableDetailPageLayout } from "../../ui/searchable-detail-page-layout";
 import { StackedCardHeader } from "../../ui/stacked-card-header";
-import { initToolbarBreadcrumb, ToolbarBreadcrumb } from "../../ui/toolbar-breadcrumb";
+import {
+  initToolbarBreadcrumb,
+  ToolbarBreadcrumb,
+} from "../../ui/toolbar-breadcrumb";
 import { coalesceTruthy } from "../../utils/coalesce-truthy";
 import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { compareSemver } from "../../utils/compare-semver";
@@ -154,7 +234,10 @@ import { matchesOptionalHostPluginIds } from "../matches-optional-host-plugin-id
 import { mergeDirectoryPluginApps } from "../merge-directory-plugin-apps";
 import { pluginManagePathForCatalogEntry } from "../plugin-manage-path-for-catalog-entry";
 import { pluginMarketplaceRequestFields } from "../plugin-marketplace-request-fields";
-import { parsePluginMarketplaceQuery, resolvePluginMarketplaceDirectRoute } from "../plugin-marketplace-route";
+import {
+  parsePluginMarketplaceQuery,
+  resolvePluginMarketplaceDirectRoute,
+} from "../plugin-marketplace-route";
 import { pluginProductBrowseNav } from "../plugin-product-browse-nav";
 import { resolveRequestedPluginSummary } from "../resolve-requested-plugin-summary";
 import { ensureInstalledPluginsQueryInit } from "../use-installed-plugins-query";
@@ -170,14 +253,20 @@ const Jasper: any = undefined;
 const River: any = undefined;
 const kelp: any = undefined;
 export function pluginDetailPageL(hazel3: unknown) {
-  let ivory3 = readCodexHomeFromQuery(hazel3 === undefined ? LOCAL_HOST_ID : hazel3),
+  let ivory3 = readCodexHomeFromQuery(
+      hazel3 === undefined ? LOCAL_HOST_ID : hazel3,
+    ),
     jasper3 = ivory3 != null,
-    kelp3 = ivory3 == null ? null : kelp.default.join(ivory3, "vendor_imports", "skills");
-  let lotus3 = ivory3 == null ? null : `${ivory3}/skills/.system/skill-creator/SKILL.md`;
+    kelp3 =
+      ivory3 == null
+        ? null
+        : kelp.default.join(ivory3, "vendor_imports", "skills");
+  let lotus3 =
+    ivory3 == null ? null : `${ivory3}/skills/.system/skill-creator/SKILL.md`;
   return {
     canInstallRecommendedSkills: jasper3,
     defaultRecommendedRepoRoot: kelp3,
-    skillCreatorPath: lotus3
+    skillCreatorPath: lotus3,
   };
 }
 export function pluginDetailPageF(mint3: unknown) {
@@ -185,17 +274,15 @@ export function pluginDetailPageF(mint3: unknown) {
     olive3 = ensureGitRepoWatchAtomsInit(),
     [, prism3] = PLEASE_IMPLEMENT_THIS_PLAN_HEADER("skills_refresh_nonce"),
     quill3 = {
-      hostId: nova3
+      hostId: nova3,
     };
   let reef3 = CodexBrowserSurfaceActionType(AppInitialA3, quill3),
     sage3 = reef3.data?.roots ?? [];
   let topaz3 = sage3,
-    {
-      skills,
-      isFetching,
-      isLoading,
-      forceReload
-    } = usePetsSettingsController(topaz3, nova3),
+    { skills, isFetching, isLoading, forceReload } = usePetsSettingsController(
+      topaz3,
+      nova3,
+    ),
     ultra3 = async () => {
       await forceReload();
     };
@@ -218,7 +305,7 @@ export function pluginDetailPageF(mint3: unknown) {
       Jasper({
         forceReload: vapor3,
         invalidateQueriesAndBroadcast: olive3,
-        setSkillsRefreshNonce: prism3
+        setSkillsRefreshNonce: prism3,
       });
     };
   return {
@@ -230,6 +317,6 @@ export function pluginDetailPageF(mint3: unknown) {
     markSkillsUpdated: drift3,
     skills: wheat3,
     standaloneInstalledSkills: yarn3,
-    workspaceRoots: topaz3
+    workspaceRoots: topaz3,
   };
 }

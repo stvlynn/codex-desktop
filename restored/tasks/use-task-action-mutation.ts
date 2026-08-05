@@ -11,7 +11,9 @@ export type UseTaskActionMutationPeers = {
 let peers: UseTaskActionMutationPeers | null = null;
 
 /** Wire useTaskActionMutation peers once companions land. */
-export function setUseTaskActionMutationPeers(next: UseTaskActionMutationPeers): void {
+export function setUseTaskActionMutationPeers(
+  next: UseTaskActionMutationPeers,
+): void {
   peers = next;
 }
 

@@ -32,6 +32,12 @@ export function bindMacOS6() {
   }
 
   return peers.e(() => {
-    Wis = peers.c(), peers.sd(), RX = peers.r(peers.o(), 1), peers.$u(), peers.Um(), peers.Aat(), zX = peers.J();
+    ((Wis = peers.c()),
+      peers.sd(),
+      (RX = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.Um(),
+      peers.Aat(),
+      (zX = peers.J()));
   });
 }

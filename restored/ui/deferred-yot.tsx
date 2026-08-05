@@ -24,6 +24,8 @@ export function bindDeferredYot() {
   }
 
   return peers.e(() => {
-    GEt = `PLEASE IMPLEMENT THIS PLAN:`, KEt = `item/plan/requestImplementation`, qEt = `implement-plan:`;
+    ((GEt = `PLEASE IMPLEMENT THIS PLAN:`),
+      (KEt = `item/plan/requestImplementation`),
+      (qEt = `implement-plan:`));
   });
 }

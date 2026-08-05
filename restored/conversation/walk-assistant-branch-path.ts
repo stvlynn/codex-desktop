@@ -10,7 +10,10 @@ export type AssistantBranchWalkNode = {
 };
 
 /** Walk the active assistant branch, optionally biased by `activeTurnId`. */
-export function walkAssistantBranchPath(root: AssistantBranchWalkNode | null | undefined, activeTurnId?: string | null): Array<{ node: AssistantBranchWalkNode; activeId: string | null }> {
+export function walkAssistantBranchPath(
+  root: AssistantBranchWalkNode | null | undefined,
+  activeTurnId?: string | null,
+): Array<{ node: AssistantBranchWalkNode; activeId: string | null }> {
   if (!root) return [];
   const path: Array<{
     node: AssistantBranchWalkNode;

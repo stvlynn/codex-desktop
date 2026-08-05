@@ -11,7 +11,9 @@ export type BindBindDeferredUiI22Peers = {
 let peers: BindBindDeferredUiI22Peers | null = null;
 
 /** Wire bindBindDeferredUiI22 peers once companions land. */
-export function setBindBindDeferredUiI22Peers(next: BindBindDeferredUiI22Peers): void {
+export function setBindBindDeferredUiI22Peers(
+  next: BindBindDeferredUiI22Peers,
+): void {
   peers = next;
 }
 
@@ -24,11 +26,11 @@ export function bindBindDeferredUiI22() {
   }
 
   return peers.Ta(peers.Q, peers.itn, {
-    onMount: e => {
+    onMount: (e) => {
       let t = () => {
         e(peers.itn());
       };
-      return t(), peers.rtn(t);
-    }
+      return (t(), peers.rtn(t));
+    },
   });
 }

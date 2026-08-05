@@ -39,29 +39,54 @@ export function bindIntlProvider() {
   }
 
   return peers.e(() => {
-    peers.Iu(), peers.sje(), Wje = peers.r(peers.o()), peers.gje(), peers.Rje(), peers.Tje(), Gje = function (e) {
-      peers.Mu(peers.t, peers.e);
-      function t() {
-        var t = peers.e !== null && peers.e.apply(this, arguments) || this;
-        return peers.t.cache = peers.gAe(), peers.t.state = {
-          cache: peers.t.cache,
-          intl: peers.Lje(peers.Uje(peers.t.props), peers.t.cache),
-          prevConfig: peers.Uje(peers.t.props)
-        }, peers.t;
-      }
-      return peers.t.getDerivedStateFromProps = function (e, t) {
-        var n = peers.t.prevConfig,
-          r = peers.t.cache,
-          i = peers.Uje(peers.e);
-        return peers.dje(n, i) ? null : {
-          intl: peers.Lje(i, peers.r),
-          prevConfig: i
-        };
-      }, peers.t.prototype.render = function () {
-        return peers.lje(this.state.intl), peers.Wje.createElement(peers.Cje, {
-          value: this.state.intl
-        }, this.props.children);
-      }, peers.t.displayName = `IntlProvider`, peers.t.defaultProps = peers.pje, peers.t;
-    }(peers.Wje.PureComponent);
+    (peers.Iu(),
+      peers.sje(),
+      (Wje = peers.r(peers.o())),
+      peers.gje(),
+      peers.Rje(),
+      peers.Tje(),
+      (Gje = (function (e) {
+        peers.Mu(peers.t, peers.e);
+        function t() {
+          var t = (peers.e !== null && peers.e.apply(this, arguments)) || this;
+          return (
+            (peers.t.cache = peers.gAe()),
+            (peers.t.state = {
+              cache: peers.t.cache,
+              intl: peers.Lje(peers.Uje(peers.t.props), peers.t.cache),
+              prevConfig: peers.Uje(peers.t.props),
+            }),
+            peers.t
+          );
+        }
+        return (
+          (peers.t.getDerivedStateFromProps = function (e, t) {
+            var n = peers.t.prevConfig,
+              r = peers.t.cache,
+              i = peers.Uje(peers.e);
+            return peers.dje(n, i)
+              ? null
+              : {
+                  intl: peers.Lje(i, peers.r),
+                  prevConfig: i,
+                };
+          }),
+          (peers.t.prototype.render = function () {
+            return (
+              peers.lje(this.state.intl),
+              peers.Wje.createElement(
+                peers.Cje,
+                {
+                  value: this.state.intl,
+                },
+                this.props.children,
+              )
+            );
+          }),
+          (peers.t.displayName = `IntlProvider`),
+          (peers.t.defaultProps = peers.pje),
+          peers.t
+        );
+      })(peers.Wje.PureComponent)));
   });
 }

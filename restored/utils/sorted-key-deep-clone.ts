@@ -4,7 +4,10 @@
 import { isObjectPrototypePlain } from "./is-object-prototype-plain";
 
 /** Deep-clone plain objects with sorted keys; arrays recurse; exclude optional keys. */
-export function sortedKeyDeepClone(value: unknown, excludeKeys?: Set<string>): unknown {
+export function sortedKeyDeepClone(
+  value: unknown,
+  excludeKeys?: Set<string>,
+): unknown {
   if (Array.isArray(value))
     return value.map((entry) => sortedKeyDeepClone(entry));
   if (!isObjectPrototypePlain(value)) return value;

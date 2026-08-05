@@ -9,7 +9,9 @@ export type OpenReviewFileSourceTabsPeers = {
 let peers: OpenReviewFileSourceTabsPeers | null = null;
 
 /** Wire setOpenReviewFileSourceTabs peers once companions land. */
-export function setOpenReviewFileSourceTabsPeers(next: OpenReviewFileSourceTabsPeers): void {
+export function setOpenReviewFileSourceTabsPeers(
+  next: OpenReviewFileSourceTabsPeers,
+): void {
   peers = next;
 }
 

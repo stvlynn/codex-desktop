@@ -10,7 +10,9 @@ export type UseIsLoginMethodAvailablePeers = {
 let peers: UseIsLoginMethodAvailablePeers | null = null;
 
 /** Wire useIsLoginMethodAvailable peers once companions land. */
-export function setUseIsLoginMethodAvailablePeers(next: UseIsLoginMethodAvailablePeers): void {
+export function setUseIsLoginMethodAvailablePeers(
+  next: UseIsLoginMethodAvailablePeers,
+): void {
   peers = next;
 }
 
@@ -22,8 +24,6 @@ export function useIsLoginMethodAvailable() {
     throw new Error("useIsLoginMethodAvailable peers are not configured");
   }
 
-  let {
-    data: e
-  } = peers.Y(peers.RGr);
+  let { data: e } = peers.Y(peers.RGr);
   return e?.available ?? !1;
 }

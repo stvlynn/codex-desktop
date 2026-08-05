@@ -16,7 +16,9 @@ export type BindBindDeferredqCPeers = {
 let peers: BindBindDeferredqCPeers | null = null;
 
 /** Wire bindBindDeferredqC peers once companions land. */
-export function setBindBindDeferredqCPeers(next: BindBindDeferredqCPeers): void {
+export function setBindBindDeferredqCPeers(
+  next: BindBindDeferredqCPeers,
+): void {
   peers = next;
 }
 
@@ -29,10 +31,16 @@ export function bindBindDeferredqC() {
   }
 
   return peers.e(() => {
-    _ts = peers.c(), peers.YN(), peers.tP(), peers.wz(), peers.its(), vts = [], yts = {
-      apps: [],
-      plugins: [],
-      skills: []
-    };
+    ((_ts = peers.c()),
+      peers.YN(),
+      peers.tP(),
+      peers.wz(),
+      peers.its(),
+      (vts = []),
+      (yts = {
+        apps: [],
+        plugins: [],
+        skills: [],
+      }));
   });
 }

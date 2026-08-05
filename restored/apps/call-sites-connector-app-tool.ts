@@ -11,7 +11,9 @@ export type CallSitesConnectorAppToolPeers = {
 let peers: CallSitesConnectorAppToolPeers | null = null;
 
 /** Wire callSitesConnectorAppTool peers once companions land. */
-export function setCallSitesConnectorAppToolPeers(next: CallSitesConnectorAppToolPeers): void {
+export function setCallSitesConnectorAppToolPeers(
+  next: CallSitesConnectorAppToolPeers,
+): void {
   peers = next;
 }
 

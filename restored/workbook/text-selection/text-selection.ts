@@ -1,7 +1,12 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-31: TextSelection VO (legacy Binding622 WorkbookClass6); ops/compare peeled.
 
-import { TextStyle, alignmentProtoToName, parseTextStyleInput, applyTextStylePatch } from "../text-style";
+import {
+  TextStyle,
+  alignmentProtoToName,
+  parseTextStyleInput,
+  applyTextStylePatch,
+} from "../text-style";
 import { applyListParagraphDefaults } from "../text-run";
 import {
   colorConfigFromValue,
@@ -46,11 +51,7 @@ export class TextSelection {
   #n: TextSelectionOptions;
   #r = false;
   #i: string | undefined;
-  constructor(
-    tsIn4365,
-    tsIn4366,
-    tsIn4367 = {},
-  ) {
+  constructor(tsIn4365, tsIn4366, tsIn4367 = {}) {
     this.#e = tsIn4365;
     this.#t = tsIn4366
       .map((item) => ({
@@ -58,11 +59,9 @@ export class TextSelection {
       }))
       .filter((item) => item.startOffset < item.endOffset)
       .sort((tsIn9115, tsIn9116) =>
-        tsIn9115.paragraphIndex ===
-        tsIn9116.paragraphIndex
+        tsIn9115.paragraphIndex === tsIn9116.paragraphIndex
           ? tsIn9115.startOffset - tsIn9116.startOffset
-          : tsIn9115.paragraphIndex -
-            tsIn9116.paragraphIndex,
+          : tsIn9115.paragraphIndex - tsIn9116.paragraphIndex,
       );
     this.#n = {
       ...tsIn4367,
@@ -79,8 +78,7 @@ export class TextSelection {
   }
   set bold(tsIn10114) {
     this.#s((tsIn13929, tsIn13930) => {
-      this.#b(tsIn13930, tsIn13929).bold =
-        tsIn10114;
+      this.#b(tsIn13930, tsIn13929).bold = tsIn10114;
     });
     this.#l({
       bold: tsIn10114,
@@ -91,8 +89,7 @@ export class TextSelection {
   }
   set italic(tsIn9881) {
     this.#s((tsIn13715, tsIn13716) => {
-      this.#b(tsIn13716, tsIn13715).italic =
-        tsIn9881;
+      this.#b(tsIn13716, tsIn13715).italic = tsIn9881;
     });
     this.#l({
       italic: tsIn9881,
@@ -103,8 +100,7 @@ export class TextSelection {
   }
   set fontSize(tsIn9703) {
     this.#s((tsIn13583, tsIn13584) => {
-      this.#b(tsIn13584, tsIn13583).fontSize =
-        tsIn9703;
+      this.#b(tsIn13584, tsIn13583).fontSize = tsIn9703;
     });
     this.#l({
       fontSize: tsIn9703,
@@ -115,8 +111,7 @@ export class TextSelection {
   }
   set typeface(tsIn9704) {
     this.#s((tsIn13585, tsIn13586) => {
-      this.#b(tsIn13586, tsIn13585).typeface =
-        tsIn9704;
+      this.#b(tsIn13586, tsIn13585).typeface = tsIn9704;
     });
     this.#l({
       typeface: tsIn9704,
@@ -127,8 +122,7 @@ export class TextSelection {
   }
   set underline(tsIn9598) {
     this.#s((tsIn13467, tsIn13468) => {
-      this.#b(tsIn13468, tsIn13467).underline =
-        tsIn9598;
+      this.#b(tsIn13468, tsIn13467).underline = tsIn9598;
     });
     this.#l({
       underline: tsIn9598,
@@ -138,20 +132,14 @@ export class TextSelection {
     return this.#d(
       (tsIn11322) => {
         let tsBind21785 = tsIn11322.color;
-        return tsBind21785?.toProto()
-          ? tsBind21785
-          : undefined;
+        return tsBind21785?.toProto() ? tsBind21785 : undefined;
       },
-      (tsIn16217, tsIn16218) =>
-        this.#k(tsIn16217, tsIn16218),
+      (tsIn16217, tsIn16218) => this.#k(tsIn16217, tsIn16218),
     );
   }
   set color(tsIn8410) {
     this.#s((tsIn11037, tsIn11038) => {
-      let tsBind21564 = this.#b(
-        tsIn11038,
-        tsIn11037,
-      );
+      let tsBind21564 = this.#b(tsIn11038, tsIn11037);
       tsBind21564.fill = {
         type: "solid",
         color: tsIn8410,
@@ -165,20 +153,14 @@ export class TextSelection {
     return this.#d(
       (tsIn11353) => {
         let tsBind21831 = tsIn11353.fill;
-        return tsBind21831?.toProto()
-          ? tsBind21831
-          : undefined;
+        return tsBind21831?.toProto() ? tsBind21831 : undefined;
       },
-      (tsIn16219, tsIn16220) =>
-        this.#A(tsIn16219, tsIn16220),
+      (tsIn16219, tsIn16220) => this.#A(tsIn16219, tsIn16220),
     );
   }
   set fill(tsIn9218) {
     this.#s((tsIn12283, tsIn12284) => {
-      let tsBind22378 = this.#b(
-        tsIn12284,
-        tsIn12283,
-      );
+      let tsBind22378 = this.#b(tsIn12284, tsIn12283);
       tsBind22378.fill = tsIn9218;
     });
     this.#l({
@@ -189,18 +171,14 @@ export class TextSelection {
     return this.#d(
       (tsIn11154) => {
         let tsBind21638 = tsIn11154.highlight;
-        return tsBind21638?.toProto()
-          ? tsBind21638
-          : undefined;
+        return tsBind21638?.toProto() ? tsBind21638 : undefined;
       },
-      (tsIn16221, tsIn16222) =>
-        this.#k(tsIn16221, tsIn16222),
+      (tsIn16221, tsIn16222) => this.#k(tsIn16221, tsIn16222),
     );
   }
   set highlight(tsIn9490) {
     this.#s((tsIn13469, tsIn13470) => {
-      this.#b(tsIn13470, tsIn13469).highlight =
-        tsIn9490;
+      this.#b(tsIn13470, tsIn13469).highlight = tsIn9490;
     });
     this.#l({
       highlight: colorConfigFromValue(tsIn9490),
@@ -210,20 +188,14 @@ export class TextSelection {
     return this.#d(
       (tsIn11231) => {
         let tsBind21702 = tsIn11231.outline;
-        return tsBind21702?.toProto()
-          ? tsBind21702
-          : undefined;
+        return tsBind21702?.toProto() ? tsBind21702 : undefined;
       },
-      (tsIn16223, tsIn16224) =>
-        this.#j(tsIn16223, tsIn16224),
+      (tsIn16223, tsIn16224) => this.#j(tsIn16223, tsIn16224),
     );
   }
   set outline(tsIn8941) {
     this.#s((tsIn12112, tsIn12113) => {
-      let tsBind22286 = this.#b(
-        tsIn12113,
-        tsIn12112,
-      );
+      let tsBind22286 = this.#b(tsIn12113, tsIn12112);
       tsBind22286.outline = tsIn8941;
     });
     this.#l({
@@ -234,16 +206,12 @@ export class TextSelection {
     return this.#d(
       (tsIn16508) => tsIn16508.shadow,
       (tsIn14862, tsIn14863) =>
-        JSON.stringify(tsIn14862) ===
-        JSON.stringify(tsIn14863),
+        JSON.stringify(tsIn14862) === JSON.stringify(tsIn14863),
     );
   }
   set shadow(tsIn9167) {
     this.#s((tsIn12168, tsIn12169) => {
-      let tsBind22312 = this.#b(
-        tsIn12169,
-        tsIn12168,
-      );
+      let tsBind22312 = this.#b(tsIn12169, tsIn12168);
       tsBind22312.shadow = tsIn9167;
     });
     this.#l({
@@ -252,10 +220,8 @@ export class TextSelection {
   }
   get hyperlink() {
     return this.#f(
-      (tsIn16306, tsIn16307) =>
-        tsIn16306.hyperlink,
-      (tsIn16225, tsIn16226) =>
-        this.#O(tsIn16225, tsIn16226),
+      (tsIn16306, tsIn16307) => tsIn16306.hyperlink,
+      (tsIn16225, tsIn16226) => this.#O(tsIn16225, tsIn16226),
     );
   }
   set hyperlink(tsIn9026) {
@@ -283,14 +249,11 @@ export class TextSelection {
   get citations() {
     return this.#f(
       (tsIn16384) => tsIn16384.citations,
-      (tsIn16227, tsIn16228) =>
-        this.#E(tsIn16227, tsIn16228),
+      (tsIn16227, tsIn16228) => this.#E(tsIn16227, tsIn16228),
     );
   }
   set citations(tsIn10287) {
-    let tsBind20764 = tsIn10287
-      ? [...tsIn10287]
-      : [];
+    let tsBind20764 = tsIn10287 ? [...tsIn10287] : [];
     this.#s((tsIn14864) => {
       tsIn14864.citations = tsBind20764;
     });
@@ -304,9 +267,7 @@ export class TextSelection {
     });
   }
   get alignment() {
-    return this.#p((tsIn16257) =>
-      alignmentProtoToName(tsIn16257.alignment),
-    );
+    return this.#p((tsIn16257) => alignmentProtoToName(tsIn16257.alignment));
   }
   set alignment(tsIn9067) {
     this.#c((tsIn12357) => {
@@ -329,18 +290,13 @@ export class TextSelection {
     });
   }
   get lineSpacing() {
-    let tsBind20887 = this.#m(
-      (tsIn16048) => tsIn16048.lineSpacingPercent,
-    );
-    if (tsBind20887 !== undefined)
-      return tsBind20887 / 1e5;
+    let tsBind20887 = this.#m((tsIn16048) => tsIn16048.lineSpacingPercent);
+    if (tsBind20887 !== undefined) return tsBind20887 / 1e5;
   }
   set lineSpacing(tsIn8411) {
     this.#c((tsIn11354) => {
       tsIn11354.lineSpacingPercent =
-        tsIn8411 === undefined
-          ? undefined
-          : Math.round(tsIn8411 * 1e5);
+        tsIn8411 === undefined ? undefined : Math.round(tsIn8411 * 1e5);
     });
     this.#l({
       lineSpacing: tsIn8411,
@@ -380,16 +336,12 @@ export class TextSelection {
     });
   }
   get style() {
-    let tsBind16061 = this.#m(
-      (tsIn16459) => tsIn16459.styleId,
-    );
+    let tsBind16061 = this.#m((tsIn16459) => tsIn16459.styleId);
     if (tsBind16061 !== undefined) return tsBind16061;
     if (
       !this.#h().some((item) => {
         let tsBind21742 = item.styleId;
-        return (
-          tsBind21742 !== undefined && tsBind21742 !== ""
-        );
+        return tsBind21742 !== undefined && tsBind21742 !== "";
       })
     )
       return this.#S()?.name;
@@ -400,14 +352,9 @@ export class TextSelection {
       this.#a(tsBind10914);
       return;
     }
-    if (
-      tsIn2969 !== undefined &&
-      typeof tsIn2969 != "string"
-    )
-      return;
+    if (tsIn2969 !== undefined && typeof tsIn2969 != "string") return;
     let tsBind10915 =
-        typeof tsIn2969 == "string" &&
-        tsIn2969.trim().length > 0
+        typeof tsIn2969 == "string" && tsIn2969.trim().length > 0
           ? tsIn2969
           : undefined,
       tsBind10916 = tsBind10915
@@ -441,13 +388,11 @@ export class TextSelection {
       });
   }
   #a(tsIn5077) {
-    let { className, styleConfig } = classNameAndStyleConfigFromPartial(tsIn5077);
+    let { className, styleConfig } =
+      classNameAndStyleConfigFromPartial(tsIn5077);
     className !== undefined && (this.#i = className);
     this.#s((tsIn13717, tsIn13718) => {
-      applyTextStylePatch(
-        this.#b(tsIn13718, tsIn13717),
-        styleConfig,
-      );
+      applyTextStylePatch(this.#b(tsIn13718, tsIn13717), styleConfig);
     });
     this.#c((tsIn15098) => {
       applyStyleConfigToParagraph(tsIn15098, styleConfig);
@@ -462,10 +407,7 @@ export class TextSelection {
       tsBind20852 = tsBind20851
         ? new TextStyle(tsBind20851.toProto())
         : new TextStyle();
-    return (
-      applyTextStylePatch(tsBind20852, tsIn10380),
-      tsBind20852
-    );
+    return (applyTextStylePatch(tsBind20852, tsIn10380), tsBind20852);
   }
   getTextRange() {
     if (this.isEmpty || this.#t.length === 0) return;
@@ -476,8 +418,7 @@ export class TextSelection {
         (tsBind14688[tsBind14686.paragraphIndex] ?? 0) +
         tsBind14686.startOffset,
       tsBind14690 =
-        (tsBind14688[tsBind14687.paragraphIndex] ?? 0) +
-        tsBind14687.endOffset;
+        (tsBind14688[tsBind14687.paragraphIndex] ?? 0) + tsBind14687.endOffset;
     return {
       startCp: tsBind14689,
       length: Math.max(0, tsBind14690 - tsBind14689),
@@ -505,10 +446,7 @@ export class TextSelection {
     if (!tsBind13055) return;
     let tsBind13056 = this.getTextRange();
     if (!tsBind13056 || tsBind13056.length <= 0) return;
-    let tsBind13057 = this.#u(
-      tsBind13055,
-      tsBind13056,
-    );
+    let tsBind13057 = this.#u(tsBind13055, tsBind13056);
     tsBind13057 &&
       this.#n.recordOp({
         op: "textrange.style.set",
@@ -520,18 +458,9 @@ export class TextSelection {
     if (tsIn5702.startsWith("@"))
       return `tr/${tsIn5702}/${tsIn5703.startCp}/${tsIn5703.length}`;
     let tsBind15616 = tsIn5702.indexOf("/");
-    if (
-      tsBind15616 <= 0 ||
-      tsBind15616 === tsIn5702.length - 1
-    )
-      return;
-    let tsBind15617 = tsIn5702.slice(
-        0,
-        tsBind15616,
-      ),
-      tsBind15618 = tsIn5702.slice(
-        tsBind15616 + 1,
-      );
+    if (tsBind15616 <= 0 || tsBind15616 === tsIn5702.length - 1) return;
+    let tsBind15617 = tsIn5702.slice(0, tsBind15616),
+      tsBind15618 = tsIn5702.slice(tsBind15616 + 1);
     if (!(!tsBind15617 || !tsBind15618))
       return `tr/${tsBind15617}/${tsBind15618}/${tsIn5703.startCp}/${tsIn5703.length}`;
   }
@@ -548,9 +477,7 @@ export class TextSelection {
         if (tsBind22288 !== undefined) return tsBind22288;
       }
       let tsBind14672 = this.#S();
-      return tsBind14672
-        ? tsIn4360(tsBind14672)
-        : undefined;
+      return tsBind14672 ? tsIn4360(tsBind14672) : undefined;
     }, tsIn4361);
   }
   #f(tsIn5035, tsIn5036 = this.#T) {
@@ -565,8 +492,7 @@ export class TextSelection {
         tsBind14488 = tsBind19641;
         continue;
       }
-      if (!tsIn5036(tsBind14488, tsBind19641))
-        return;
+      if (!tsIn5036(tsBind14488, tsBind19641)) return;
     }
     return tsBind14488;
   }
@@ -578,9 +504,7 @@ export class TextSelection {
         if (tsBind22289 !== undefined) return tsBind22289;
       }
       let tsBind17954 = this.#S();
-      return tsBind17954
-        ? tsIn6249(tsBind17954)
-        : undefined;
+      return tsBind17954 ? tsIn6249(tsBind17954) : undefined;
     }, tsIn6250);
   }
   #m(tsIn5353, tsIn5354 = this.#T) {
@@ -595,8 +519,7 @@ export class TextSelection {
         tsBind15062 = tsBind19734;
         continue;
       }
-      if (!tsIn5354(tsBind15062, tsBind19734))
-        return;
+      if (!tsIn5354(tsBind15062, tsBind19734)) return;
     }
     return tsBind15062;
   }
@@ -606,8 +529,7 @@ export class TextSelection {
     return (
       this.#v((tsIn12980) => {
         tsBind18595.has(tsIn12980) ||
-          (tsBind18595.add(tsIn12980),
-          tsBind18594.push(tsIn12980));
+          (tsBind18595.add(tsIn12980), tsBind18594.push(tsIn12980));
       }),
       tsBind18594
     );
@@ -630,10 +552,7 @@ export class TextSelection {
   }
   #_(tsIn2095) {
     let tsBind8999 = this.#y();
-    for (let [
-      tsBind9511,
-      tsBind9512,
-    ] of tsBind8999.entries()) {
+    for (let [tsBind9511, tsBind9512] of tsBind8999.entries()) {
       let tsBind9723 = this.#e.getItem(tsBind9511);
       if (!tsBind9723) continue;
       let tsBind9724 = tsBind9723.runs.items;
@@ -648,23 +567,18 @@ export class TextSelection {
         let tsBind13265 = tsBind12985.text.length;
         if (tsBind13265 === 0) continue;
         let tsBind13266 = tsBind9726,
-          tsBind13267 =
-            tsBind13266 + tsBind13265;
+          tsBind13267 = tsBind13266 + tsBind13265;
         for (
           ;
           tsBind9727 < tsBind9725.length &&
-          !(
-            tsBind9725[tsBind9727].endOffset >
-            tsBind13266
-          );
+          !(tsBind9725[tsBind9727].endOffset > tsBind13266);
         )
           tsBind9727 += 1;
         let tsBind13268 = tsBind9725[tsBind9727];
         if (!tsBind13268) break;
         tsBind13268.startOffset <= tsBind13266 &&
           tsBind13267 <= tsBind13268.endOffset &&
-          tsBind13268.startOffset !==
-            tsBind13268.endOffset &&
+          tsBind13268.startOffset !== tsBind13268.endOffset &&
           tsIn2095(tsBind12985, tsBind9723);
         tsBind9726 = tsBind13267;
       }
@@ -682,9 +596,7 @@ export class TextSelection {
     for (let tsBind20587 of this.#t) {
       tsBind18303.has(tsBind20587.paragraphIndex) ||
         tsBind18303.set(tsBind20587.paragraphIndex, []);
-      tsBind18303
-        .get(tsBind20587.paragraphIndex)
-        .push(tsBind20587);
+      tsBind18303.get(tsBind20587.paragraphIndex).push(tsBind20587);
     }
     return tsBind18303;
   }
@@ -715,8 +627,7 @@ export class TextSelection {
   }
   #C(tsIn11459) {
     let tsBind21892 = tsIn11459.runs.items;
-    for (let tsBind23031 of tsBind21892)
-      tsBind23031.textStyle = undefined;
+    for (let tsBind23031 of tsBind21892) tsBind23031.textStyle = undefined;
   }
   #w() {
     splitRunsAtSelectionBoundaries(this.#mutationHost());

@@ -35,6 +35,15 @@ export function bindPresentation() {
   }
 
   return peers.e(() => {
-    q2i = peers.c(), peers.sd(), J2i = peers.r(peers.o(), 1), peers.$u(), peers.qR(), peers.ld(), peers.Pp(), peers.t$e(), peers.$m(), bz = peers.J();
+    ((q2i = peers.c()),
+      peers.sd(),
+      (J2i = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.qR(),
+      peers.ld(),
+      peers.Pp(),
+      peers.t$e(),
+      peers.$m(),
+      (bz = peers.J()));
   });
 }

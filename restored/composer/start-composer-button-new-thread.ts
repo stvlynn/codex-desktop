@@ -13,7 +13,9 @@ export type StartComposerButtonNewThreadPeers = {
 let peers: StartComposerButtonNewThreadPeers | null = null;
 
 /** Wire StartComposerButtonNewThread peers once companions land. */
-export function setStartComposerButtonNewThreadPeers(next: StartComposerButtonNewThreadPeers): void {
+export function setStartComposerButtonNewThreadPeers(
+  next: StartComposerButtonNewThreadPeers,
+): void {
   peers = next;
 }
 

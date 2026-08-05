@@ -16,27 +16,34 @@ const messages: Record<string, string> = {
   "widgets.baseCarousel.previousItems": "Vipengee vya awali vya kikaroseli",
   "widgets.cardCarousel.goToArticle": "Nenda kwenye makala",
   "widgets.cardCarousel.nextCards": "Kadi zinazofuata",
-  "widgets.cardCarousel.nextCardsInCarousel": "Kadi zinazofuata katika {carouselLabel}",
+  "widgets.cardCarousel.nextCardsInCarousel":
+    "Kadi zinazofuata katika {carouselLabel}",
   "widgets.cardCarousel.previousCards": "Kadi zilizotangulia",
-  "widgets.cardCarousel.previousCardsInCarousel": "Kadi zilizotangulia katika {carouselLabel}",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "Kadi zilizotangulia katika {carouselLabel}",
   "widgets.debug.hideCurrentState": "Ficha hali ya sasa",
   "widgets.debug.nextState": "Hali inayofuata",
   "widgets.debug.previousState": "Hali iliyotangulia",
   "widgets.debug.selectedState": "Hali iliyochaguliwa",
   "widgets.debug.showCurrentState": "Onyesha hali ya sasa",
   "widgets.debug.state": "Hali",
-  "widgets.debug.unableToSerializeSelectedState": "Imeshindikana kusawazisha hali iliyochaguliwa.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "Imeshindikana kusawazisha hali iliyochaguliwa.",
   "widgets.hermes.artifact.viewMore": "Tazama {count} zaidi",
   "widgets.hermes.calendarEvent.moreAttendees": "+{count} zaidi",
   "widgets.hermes.calendarEvent.singleTime": "{date} saa {time}",
-  "widgets.hermes.calendarEvent.timeRange": "{date} saa {startTime} - {endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "{agentName} anahitaji ufikiaji ili kuendelea",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName} anahitaji ruhusa yako ili aendelee",
+  "widgets.hermes.calendarEvent.timeRange":
+    "{date} saa {startTime} - {endTime}",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "{agentName} anahitaji ufikiaji ili kuendelea",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName} anahitaji ruhusa yako ili aendelee",
   "widgets.hermes.genericResponse.viewFullscreen": "Tazama skrini nzima",
   "widgets.hermes.genericTool.details": "Maelezo",
   "widgets.hermes.genericTool.read": "Soma",
   "widgets.hermes.genericTool.request": "Ombi",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} anataka kutumia {connectorName} kuendesha {toolName}.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} anataka kutumia {connectorName} kuendesha {toolName}.",
   "widgets.hermes.genericTool.viewFullscreen": "Tazama skrini nzima",
   "widgets.hermes.genericTool.write": "Andika",
   "widgets.hermes.googleCalendarCreate.create": "Buni",
@@ -44,12 +51,14 @@ const messages: Record<string, string> = {
   "widgets.hermes.inlineResponse.accept": "Idhinisha",
   "widgets.hermes.inlineResponse.decline": "Ghairi",
   "widgets.hermes.permission.connect": "Unganisha",
-  "widgets.hermes.permission.connectToConnector": "Unganisha kwenye {connectorName}",
+  "widgets.hermes.permission.connectToConnector":
+    "Unganisha kwenye {connectorName}",
   "widgets.hermes.permission.connected": "Imeunganishwa",
   "widgets.hermes.permission.moreInformation": "Maelezo zaidi",
   "widgets.hermes.permission.notNow": "Si sasa",
   "widgets.hermes.permission.reconnect": "Unganisha tena",
-  "widgets.hermes.permission.reconnectToConnector": "Unganisha tena na {connectorName}",
+  "widgets.hermes.permission.reconnectToConnector":
+    "Unganisha tena na {connectorName}",
   "widgets.hermes.sendEmail.approveAction": "Idhinisha kitendo",
   "widgets.hermes.sendEmail.bcc": "Bcc",
   "widgets.hermes.sendEmail.cc": "Cc",
@@ -62,79 +71,142 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "onyesha kidogo",
   "widgets.hermes.taskStatus.canceled": "Kazi imeghairiwa",
   "widgets.hermes.taskStatus.canceling": "Inaghairiwa",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Inakagua ujumbe wa awali",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Inapitia jumbe za awali",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Inapitia ujumbe wa awali",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Kukagua jumbe za awali",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Inapitia jumbe za awali",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Inapitia ujumbe wa awali",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Inakagua ujumbe wa awali",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Inapitia tena ujumbe wa awali",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Inachanganua ujumbe za awali",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Kuchambua ujumbe wa awali",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Inapitia ujumbe wa awali",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Inakagua muktadha",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Inapitia muktadha",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Inakagua muktadha",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Inasoma muktadha",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Inapitia muktadha",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Inapitia muktadha tena",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Inachanganua muktadha",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Inapitia muktadha",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Inawezesha ajenti",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Inaanzisha ajenti",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Kuweka ajenti mtandaoni",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Inaita ajenti",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Inaunganisha na ajenti",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "Inaunganisha ajenti",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Inawasha ajenti",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Inaanzisha ajenti",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Kuamsha ajenti",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Inaandaa ajenti",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "Inaita ajenti",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Inaamilisha kompyuta",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Kuanzisha kompyuta",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Inaweka kompyuta mtandaoni",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Inaanzisha kompyuta",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Inawasha kompyuta",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Inawasha kompyuta",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Inaanzisha kompyuta",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Inaamsha kompyuta",
-  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Kupanga mwelekeo",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Kuandaa mpango",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Inakagua ujumbe wa awali",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Inapitia jumbe za awali",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Inapitia ujumbe wa awali",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Kukagua jumbe za awali",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Inapitia jumbe za awali",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Inapitia ujumbe wa awali",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Inakagua ujumbe wa awali",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Inapitia tena ujumbe wa awali",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Inachanganua ujumbe za awali",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Kuchambua ujumbe wa awali",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Inapitia ujumbe wa awali",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Inakagua muktadha",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Inapitia muktadha",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Inakagua muktadha",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Inasoma muktadha",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Inapitia muktadha",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Inapitia muktadha tena",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Inachanganua muktadha",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Inapitia muktadha",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Inawezesha ajenti",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Inaanzisha ajenti",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Kuweka ajenti mtandaoni",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Inaita ajenti",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Inaunganisha na ajenti",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "Inaunganisha ajenti",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Inawasha ajenti",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Inaanzisha ajenti",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Kuamsha ajenti",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Inaandaa ajenti",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "Inaita ajenti",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Inaamilisha kompyuta",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Kuanzisha kompyuta",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Inaweka kompyuta mtandaoni",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Inaanzisha kompyuta",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Inawasha kompyuta",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Inawasha kompyuta",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Inaanzisha kompyuta",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Inaamsha kompyuta",
+  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse":
+    "Kupanga mwelekeo",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "Kuandaa mpango",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Kuandaa mpango",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Kupanga hatua",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Kupanga mambo",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Kupanga hatua zinazofuata",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Kupanga hatua",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "Kupanga mambo",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Kupanga hatua zinazofuata",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Kupanga",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Kuweka mwelekeo",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Kuweka mwelekeo",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Kupanga mkakati",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Inatafakari mbinu",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Kupanga mbinu",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Inakusanya maelezo",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Inakusanya maelezo",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Kujaza maelezo",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Inakusanya maelezo",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Kukusanya maelezo",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Inakusanya maelezo",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Inakusanya maelezo",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Inapanga maelezo",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Kukusanya maelezo",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Kutafuta maelezo",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Hii inachukua muda mrefu kuliko kawaida",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Bado inafanyiwa kazi",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Angalia tena baada ya muda mfupi",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Kuweka mwelekeo",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Kuweka mwelekeo",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Kupanga mkakati",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Inatafakari mbinu",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Kupanga mbinu",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Inakusanya maelezo",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Inakusanya maelezo",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Kujaza maelezo",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Inakusanya maelezo",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Kukusanya maelezo",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Inakusanya maelezo",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Inakusanya maelezo",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Inapanga maelezo",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Kukusanya maelezo",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Kutafuta maelezo",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Hii inachukua muda mrefu kuliko kawaida",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Bado inafanyiwa kazi",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Angalia tena baada ya muda mfupi",
   "widgets.hermes.workflow.canceled": "Kazi imeghairiwa",
   "widgets.hermes.workflow.canceledItemLabel": "Imeghairiwa",
   "widgets.hermes.workflow.codeBlock.hideLines": "Ficha mistari",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Ona mistari yote {lineCount}",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Ona mistari yote {lineCount}",
   "widgets.hermes.workflow.customWorked": "Ilifanya kazi kwa muda",
   "widgets.hermes.workflow.customWorking": "Inaendelea",
   "widgets.hermes.workflow.fileWorked": "Hati iliyoskaniwa",
   "widgets.hermes.workflow.fileWorking": "Inaskani hati",
   "widgets.hermes.workflow.group.readingConnector": "Kusoma {connectorName}",
-  "widgets.hermes.workflow.group.writingConnector": "Kuandika kwenye {connectorName}",
+  "widgets.hermes.workflow.group.writingConnector":
+    "Kuandika kwenye {connectorName}",
   "widgets.hermes.workflow.imageWorked": "Picha imechanganuliwa",
   "widgets.hermes.workflow.imageWorking": "Inachanganua picha",
   "widgets.hermes.workflow.preparingResponse": "Kuandaa jibu",
@@ -148,7 +220,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Onyesha kidogo",
   "widgets.listView.showMore": "Onyesha zaidi {count}",
   "widgets.radioGroup.options": "chaguo",
-  "widgets.segmentedControl.selectAnOption": "Chagua chaguo"
+  "widgets.segmentedControl.selectAnOption": "Chagua chaguo",
 };
 
 export default messages;

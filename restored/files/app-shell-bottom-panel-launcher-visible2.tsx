@@ -10,7 +10,9 @@ export type BindBindAppShellBottomPanelLauncherVisible2Peers = {
 let peers: BindBindAppShellBottomPanelLauncherVisible2Peers | null = null;
 
 /** Wire bindBindAppShellBottomPanelLauncherVisible2 peers once companions land. */
-export function setBindBindAppShellBottomPanelLauncherVisible2Peers(next: BindBindAppShellBottomPanelLauncherVisible2Peers): void {
+export function setBindBindAppShellBottomPanelLauncherVisible2Peers(
+  next: BindBindAppShellBottomPanelLauncherVisible2Peers,
+): void {
   peers = next;
 }
 
@@ -19,7 +21,9 @@ export function setBindBindAppShellBottomPanelLauncherVisible2Peers(next: BindBi
  */
 export function bindBindAppShellBottomPanelLauncherVisible2() {
   if (peers == null) {
-    throw new Error("bindBindAppShellBottomPanelLauncherVisible2 peers are not configured");
+    throw new Error(
+      "bindBindAppShellBottomPanelLauncherVisible2 peers are not configured",
+    );
   }
 
   return peers.Ta(peers.rT, () => new peers.JRe(0));

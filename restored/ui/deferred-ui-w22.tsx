@@ -8,7 +8,9 @@ export type BindBindDeferredUiW22Peers = {
 let peers: BindBindDeferredUiW22Peers | null = null;
 
 /** Wire bindBindDeferredUiW22 peers once companions land. */
-export function setBindBindDeferredUiW22Peers(next: BindBindDeferredUiW22Peers): void {
+export function setBindBindDeferredUiW22Peers(
+  next: BindBindDeferredUiW22Peers,
+): void {
   peers = next;
 }
 
@@ -20,7 +22,5 @@ export function bindBindDeferredUiW22() {
     throw new Error("bindBindDeferredUiW22 peers are not configured");
   }
 
-  return peers.JE(({
-    resumeState: e
-  }) => e);
+  return peers.JE(({ resumeState: e }) => e);
 }

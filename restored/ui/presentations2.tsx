@@ -11,7 +11,9 @@ export type BindPresentations2Peers = {
 let peers: BindPresentations2Peers | null = null;
 
 /** Wire bindPresentations2 peers once companions land. */
-export function setBindPresentations2Peers(next: BindPresentations2Peers): void {
+export function setBindPresentations2Peers(
+  next: BindPresentations2Peers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function bindPresentations2() {
   }
 
   return peers.e(() => {
-    peers.ZL(), peers.iti(), peers.BUi();
+    (peers.ZL(), peers.iti(), peers.BUi());
   });
 }

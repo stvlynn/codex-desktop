@@ -20,7 +20,7 @@ export function bindDeferredGitDJ(e: unknown, t: unknown, n: unknown) {
     throw new Error("bindDeferredGitDJ peers are not configured");
   }
 
-  peers.gN(e, e => {
+  peers.gN(e, (e) => {
     e[t] = typeof n == `function` ? n(e[t]) : n;
   });
 }

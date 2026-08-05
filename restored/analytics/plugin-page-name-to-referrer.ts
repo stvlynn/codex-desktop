@@ -10,7 +10,9 @@ type PluginPageReferrer =
   (typeof CodexPluginPageReferrer)[keyof typeof CodexPluginPageReferrer];
 
 /** Map a plugin page-name enum to its analytics referrer enum. */
-export function pluginPageNameToReferrer(pageName: PluginPageName): PluginPageReferrer {
+export function pluginPageNameToReferrer(
+  pageName: PluginPageName,
+): PluginPageReferrer {
   switch (pageName) {
     case CodexPluginPageName.CODEX_PLUGIN_PAGE_NAME_DIRECTORY:
       return CodexPluginPageReferrer.CODEX_PLUGIN_PAGE_REFERRER_DIRECTORY;

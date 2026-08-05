@@ -22,6 +22,6 @@ export function statsig2() {
     throw new Error("statsig2 peers are not configured");
   }
   return peers.Ta(peers.Q, null, {
-    isEqual: peers.mer.default
+    isEqual: peers.mer.default,
   });
 }

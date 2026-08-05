@@ -11,7 +11,9 @@ export type BindBindSendCliRequestForHostPeers = {
 let peers: BindBindSendCliRequestForHostPeers | null = null;
 
 /** Wire bindBindSendCliRequestForHost peers once companions land. */
-export function setBindBindSendCliRequestForHostPeers(next: BindBindSendCliRequestForHostPeers): void {
+export function setBindBindSendCliRequestForHostPeers(
+  next: BindBindSendCliRequestForHostPeers,
+): void {
   peers = next;
 }
 

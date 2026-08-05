@@ -8,24 +8,12 @@ import {
 } from "./color-transform-constants";
 import { clampNumber, type RgbColor } from "./rgb-hex";
 
-function rgbToHsl(
-  colorCfg3670,
-  colorCfg3671,
-  colorCfg3672,
-) {
+function rgbToHsl(colorCfg3670, colorCfg3671, colorCfg3672) {
   colorCfg3670 /= 255;
   colorCfg3671 /= 255;
   colorCfg3672 /= 255;
-  let workbookBinding12282 = Math.max(
-      colorCfg3670,
-      colorCfg3671,
-      colorCfg3672,
-    ),
-    workbookBinding12283 = Math.min(
-      colorCfg3670,
-      colorCfg3671,
-      colorCfg3672,
-    ),
+  let workbookBinding12282 = Math.max(colorCfg3670, colorCfg3671, colorCfg3672),
+    workbookBinding12283 = Math.min(colorCfg3670, colorCfg3671, colorCfg3672),
     workbookBinding12284 = 0,
     workbookBinding12285 = 0,
     workbookBinding12286 = (workbookBinding12282 + workbookBinding12283) / 2;
@@ -62,11 +50,7 @@ function rgbToHsl(
     l: workbookBinding12286,
   };
 }
-function hslToRgb(
-  colorCfg3138,
-  colorCfg3139,
-  colorCfg3140,
-) {
+function hslToRgb(colorCfg3138, colorCfg3139, colorCfg3140) {
   let workbookBinding11260, workbookBinding11261, workbookBinding11262;
   if (colorCfg3139 === 0)
     workbookBinding11260 =
@@ -74,16 +58,11 @@ function hslToRgb(
       workbookBinding11262 =
         colorCfg3140;
   else {
-    let workbookBinding13847 = (
-        colorCfg7021,
-        colorCfg7022,
-        colorCfg7023,
-      ) => (
+    let workbookBinding13847 = (colorCfg7021, colorCfg7022, colorCfg7023) => (
         colorCfg7023 < 0 && (colorCfg7023 += 1),
         colorCfg7023 > 1 && --colorCfg7023,
         colorCfg7023 < 0.16666666666666666
-          ? colorCfg7021 +
-            (colorCfg7022 - colorCfg7021) * 6 * colorCfg7023
+          ? colorCfg7021 + (colorCfg7022 - colorCfg7021) * 6 * colorCfg7023
           : colorCfg7023 < 0.5
             ? colorCfg7022
             : colorCfg7023 < 0.6666666666666666
@@ -96,9 +75,7 @@ function hslToRgb(
       workbookBinding13848 =
         colorCfg3140 < 0.5
           ? colorCfg3140 * (1 + colorCfg3139)
-          : colorCfg3140 +
-            colorCfg3139 -
-            colorCfg3140 * colorCfg3139,
+          : colorCfg3140 + colorCfg3139 - colorCfg3140 * colorCfg3139,
       workbookBinding13849 = 2 * colorCfg3140 - workbookBinding13848;
     workbookBinding11260 = workbookBinding13847(
       workbookBinding13849,
@@ -173,14 +150,12 @@ function rgbChannelToLinear(colorCfg13207) {
 }
 function linearToRgbChannel(colorCfg13283) {
   return Math.floor(
-    (clampNumber(colorCfg13283, 0, colorChannelMax) * 255) /
-      colorChannelMax,
+    (clampNumber(colorCfg13283, 0, colorChannelMax) * 255) / colorChannelMax,
   );
 }
 function applyGamma(colorCfg12797, colorCfg12798) {
   return Math.round(
-    (clampNumber(colorCfg12797, 0, colorChannelMax) /
-      colorChannelMax) **
+    (clampNumber(colorCfg12797, 0, colorChannelMax) / colorChannelMax) **
       +colorCfg12798 *
       colorChannelMax,
   );
@@ -200,11 +175,7 @@ function linearToRgb(props) {
   };
 }
 function applyShadeCrGb(colorCfg9060, colorCfg9061) {
-  let workbookBinding19630 = clampNumber(
-      colorCfg9061 / colorChannelMax,
-      0,
-      1,
-    ),
+  let workbookBinding19630 = clampNumber(colorCfg9061 / colorChannelMax, 0, 1),
     workbookBinding19631 = rgbToLinear(colorCfg9060);
   return linearToRgb({
     r: Math.floor(workbookBinding19631.r * workbookBinding19630),
@@ -213,11 +184,7 @@ function applyShadeCrGb(colorCfg9060, colorCfg9061) {
   });
 }
 function applyTintCrGb(colorCfg8019, colorCfg8020) {
-  let workbookBinding18512 = clampNumber(
-      colorCfg8020 / colorChannelMax,
-      0,
-      1,
-    ),
+  let workbookBinding18512 = clampNumber(colorCfg8020 / colorChannelMax, 0, 1),
     workbookBinding18513 = rgbToLinear(colorCfg8019);
   return linearToRgb({
     r: Math.floor(
@@ -249,11 +216,7 @@ function applyTintSpreadsheet(colorCfg6321, colorCfg6322) {
         : workbookBinding16444 * (1 - workbookBinding16442) +
             (255 - Math.floor(255 * (1 - workbookBinding16442))),
     )),
-    (workbookBinding16443.l = clampNumber(
-      workbookBinding16444 / 255,
-      0,
-      1,
-    )),
+    (workbookBinding16443.l = clampNumber(workbookBinding16444 / 255, 0, 1)),
     hslToRgb(
       workbookBinding16443.h,
       workbookBinding16443.s,
@@ -309,7 +272,10 @@ function applyColorTransformImpl(
     (typeof colorCfg1799.satMod == "number" ||
       typeof colorCfg1799.lumMod == "number" ||
       typeof colorCfg1799.lumOff == "number") &&
-      (workbookBinding8325 = applySatLumMods(workbookBinding8325, colorCfg1799)),
+      (workbookBinding8325 = applySatLumMods(
+        workbookBinding8325,
+        colorCfg1799,
+      )),
     typeof colorCfg1799.tint == "number" &&
       (workbookBinding8325 =
         colorCfg1800 === "spreadsheetml"
@@ -336,4 +302,3 @@ function applyColorTransformImpl(
     }
   );
 }
-

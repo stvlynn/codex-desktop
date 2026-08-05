@@ -20,7 +20,9 @@ export type BindBindLocalEnvSelectionsByWorkspacePeers = {
 let peers: BindBindLocalEnvSelectionsByWorkspacePeers | null = null;
 
 /** Wire bindBindLocalEnvSelectionsByWorkspace peers once companions land. */
-export function setBindBindLocalEnvSelectionsByWorkspacePeers(next: BindBindLocalEnvSelectionsByWorkspacePeers): void {
+export function setBindBindLocalEnvSelectionsByWorkspacePeers(
+  next: BindBindLocalEnvSelectionsByWorkspacePeers,
+): void {
   peers = next;
 }
 
@@ -29,10 +31,21 @@ export function setBindBindLocalEnvSelectionsByWorkspacePeers(next: BindBindLoca
  */
 export function bindBindLocalEnvSelectionsByWorkspace() {
   if (peers == null) {
-    throw new Error("bindBindLocalEnvSelectionsByWorkspace peers are not configured");
+    throw new Error(
+      "bindBindLocalEnvSelectionsByWorkspace peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    iSo = peers.c(), peers.fr(), peers.Au(), peers.Gxo(), peers.nE(), peers.Xxo(), peers.jf(), peers.Ap(), peers.ap(), vK = peers.kp(`local-env-selections-by-workspace`, {});
+    ((iSo = peers.c()),
+      peers.fr(),
+      peers.Au(),
+      peers.Gxo(),
+      peers.nE(),
+      peers.Xxo(),
+      peers.jf(),
+      peers.Ap(),
+      peers.ap(),
+      (vK = peers.kp(`local-env-selections-by-workspace`, {})));
   });
 }

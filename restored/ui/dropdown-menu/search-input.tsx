@@ -45,7 +45,10 @@ export function DropdownMenuInput(props: DropdownMenuInputProps): ReactElement {
       autoFocus
       onKeyDown={(event) => {
         event.stopPropagation();
-        if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "a") {
+        if (
+          (event.metaKey || event.ctrlKey) &&
+          event.key.toLowerCase() === "a"
+        ) {
           event.preventDefault();
           event.currentTarget.select();
           return;

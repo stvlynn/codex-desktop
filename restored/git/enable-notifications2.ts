@@ -21,7 +21,9 @@ export type BindEnableNotifications2Peers = {
 let peers: BindEnableNotifications2Peers | null = null;
 
 /** Wire bindEnableNotifications2 peers once companions land. */
-export function setBindEnableNotifications2Peers(next: BindEnableNotifications2Peers): void {
+export function setBindEnableNotifications2Peers(
+  next: BindEnableNotifications2Peers,
+): void {
   peers = next;
 }
 
@@ -34,16 +36,37 @@ export function bindEnableNotifications2() {
   }
 
   return peers.e(() => {
-    peers.Sl(), peers.IN(), peers.jVs(), peers.qx(), $oc = `2214619544`, esc = 10, tsc = [`enable_notifications`, `create_automation`, `triage_github_prs`, `catch_up_linear`], nsc = [`enable_notifications`, `create_automation`, `summarize_inbox`, `catch_up_updates_and_blockers`, `summarize_current_priorities`], rsc = new Set([`gmail`, `google-calendar`, `google-drive`]), isc = {
-      product_management: `review_roadmaps_and_projects`,
-      design: `review_design_briefs`,
-      marketing: `review_campaigns`,
-      sales: `review_account_plans`,
-      finance: `review_forecasts`,
-      operations: `review_operating_plans`,
-      people_hr: `review_people_plans_and_policies`,
-      legal: `review_contracts_and_policies`,
-      student: `review_class_materials`
-    }, asc = peers.ol(peers.X().min(1));
+    (peers.Sl(),
+      peers.IN(),
+      peers.jVs(),
+      peers.qx(),
+      ($oc = `2214619544`),
+      (esc = 10),
+      (tsc = [
+        `enable_notifications`,
+        `create_automation`,
+        `triage_github_prs`,
+        `catch_up_linear`,
+      ]),
+      (nsc = [
+        `enable_notifications`,
+        `create_automation`,
+        `summarize_inbox`,
+        `catch_up_updates_and_blockers`,
+        `summarize_current_priorities`,
+      ]),
+      (rsc = new Set([`gmail`, `google-calendar`, `google-drive`])),
+      (isc = {
+        product_management: `review_roadmaps_and_projects`,
+        design: `review_design_briefs`,
+        marketing: `review_campaigns`,
+        sales: `review_account_plans`,
+        finance: `review_forecasts`,
+        operations: `review_operating_plans`,
+        people_hr: `review_people_plans_and_policies`,
+        legal: `review_contracts_and_policies`,
+        student: `review_class_materials`,
+      }),
+      (asc = peers.ol(peers.X().min(1))));
   });
 }

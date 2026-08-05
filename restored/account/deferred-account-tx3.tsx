@@ -11,7 +11,9 @@ export type DeferredAccountTx3Peers = {
 let peers: DeferredAccountTx3Peers | null = null;
 
 /** Wire DeferredAccountTx3 peers once companions land. */
-export function setDeferredAccountTx3Peers(next: DeferredAccountTx3Peers): void {
+export function setDeferredAccountTx3Peers(
+  next: DeferredAccountTx3Peers,
+): void {
   peers = next;
 }
 
@@ -22,7 +24,8 @@ export function DeferredAccountTx3() {
   if (peers == null) {
     throw new Error("DeferredAccountTx3 peers are not configured");
   }
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => new Set(peers.xp(e, peers.Tu.enabledReasoningEfforts)));
+  return peers.Ma(
+    peers.Q,
+    ({ get: e }) => new Set(peers.xp(e, peers.Tu.enabledReasoningEfforts)),
+  );
 }

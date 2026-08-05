@@ -25,6 +25,6 @@ export function bindBindFile() {
   }
 
   return peers.e(() => {
-    peers.pfa(), peers.yfa(), Sfa = peers.sfa();
+    (peers.pfa(), peers.yfa(), (Sfa = peers.sfa()));
   });
 }

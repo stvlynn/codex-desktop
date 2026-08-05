@@ -42,11 +42,12 @@ export function serializePieOptions(opIn10796: LooseBag): LooseBag | undefined {
         firstSliceAngle: opBind21326,
       };
 }
-export function serializeDoughnutOptions(opIn6496: LooseBag): LooseBag | undefined {
+export function serializeDoughnutOptions(
+  opIn6496: LooseBag,
+): LooseBag | undefined {
   let opBind16701 = opIn6496.doughnutOptions.holeSize,
     opBind16702 = opIn6496.doughnutOptions.firstSliceAngle;
-  return opBind16701 !== undefined ||
-    opBind16702 !== undefined
+  return opBind16701 !== undefined || opBind16702 !== undefined
     ? {
         ...(opBind16701 === undefined
           ? {}
@@ -61,12 +62,13 @@ export function serializeDoughnutOptions(opIn6496: LooseBag): LooseBag | undefin
       }
     : undefined;
 }
-export function serializeChartAreaStyle(opIn8172: unknown, opIn8173: LooseBag): LooseBag | undefined {
+export function serializeChartAreaStyle(
+  opIn8172: unknown,
+  opIn8173: LooseBag,
+): LooseBag | undefined {
   let opBind18681 = fillToConfig(opIn8172),
     opBind18682 = serializeChartStroke(opIn8173);
-  if (
-    !(opBind18681 === undefined && opBind18682 === undefined)
-  )
+  if (!(opBind18681 === undefined && opBind18682 === undefined))
     return {
       ...(opBind18681 === undefined
         ? {}

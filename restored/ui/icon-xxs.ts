@@ -27,6 +27,6 @@ export function iconXxs() {
   }
 
   return peers.e(() => {
-    pNo = peers.c(), peers.sd(), peers.dNo(), mNo = peers.J();
+    ((pNo = peers.c()), peers.sd(), peers.dNo(), (mNo = peers.J()));
   });
 }

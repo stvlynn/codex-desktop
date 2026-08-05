@@ -9,7 +9,9 @@ export type SetPrimaryRuntimeInstallRelease2Peers = {
 let peers: SetPrimaryRuntimeInstallRelease2Peers | null = null;
 
 /** Wire setPrimaryRuntimeInstallRelease2 peers once companions land. */
-export function setSetPrimaryRuntimeInstallRelease2Peers(next: SetPrimaryRuntimeInstallRelease2Peers): void {
+export function setSetPrimaryRuntimeInstallRelease2Peers(
+  next: SetPrimaryRuntimeInstallRelease2Peers,
+): void {
   peers = next;
 }
 
@@ -18,7 +20,9 @@ export function setSetPrimaryRuntimeInstallRelease2Peers(next: SetPrimaryRuntime
  */
 export function setPrimaryRuntimeInstallRelease2() {
   if (peers == null) {
-    throw new Error("setPrimaryRuntimeInstallRelease2 peers are not configured");
+    throw new Error(
+      "setPrimaryRuntimeInstallRelease2 peers are not configured",
+    );
   }
 
   return peers.Ta(peers.Q, `latest`);

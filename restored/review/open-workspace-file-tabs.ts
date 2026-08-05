@@ -21,7 +21,9 @@ export type OpenWorkspaceFile = {
  * Map a review source tab to an open-file entry when it is a workspace file
  * (`kWi`). Previewable artifacts use manual refresh.
  */
-export function parseWorkspaceFileTab(tab: ReviewSourceTabLike): OpenWorkspaceFile | null {
+export function parseWorkspaceFileTab(
+  tab: ReviewSourceTabLike,
+): OpenWorkspaceFile | null {
   if (!tab.kind?.startsWith(WORKSPACE_FILE_URI_PREFIX)) return null;
   const { props } = tab;
   if (

@@ -9,7 +9,9 @@ export type CadencedLegacyModeKeyPeers = {
 let peers: CadencedLegacyModeKeyPeers | null = null;
 
 /** Wire cadencedLegacyModeKey peers once companions land. */
-export function setCadencedLegacyModeKeyPeers(next: CadencedLegacyModeKeyPeers): void {
+export function setCadencedLegacyModeKeyPeers(
+  next: CadencedLegacyModeKeyPeers,
+): void {
   peers = next;
 }
 

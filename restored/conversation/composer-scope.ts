@@ -29,12 +29,21 @@ export function bindComposerScope() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.tT(), peers.gT(), peers.oT(), GM = peers.wa(`ComposerScope`, {
-      key: e => peers.e.kind === `new` && peers.e.entrypoint === `home` && peers.e.focusComposerNonce != null ? `${peers.WM(peers.e)}:${peers.e.focusComposerNonce}` : peers.WM(peers.e),
-      parent: peers.hT,
-      retain: {
-        max: 100
-      }
-    });
+    (peers.Ho(),
+      peers.tT(),
+      peers.gT(),
+      peers.oT(),
+      (GM = peers.wa(`ComposerScope`, {
+        key: (e) =>
+          peers.e.kind === `new` &&
+          peers.e.entrypoint === `home` &&
+          peers.e.focusComposerNonce != null
+            ? `${peers.WM(peers.e)}:${peers.e.focusComposerNonce}`
+            : peers.WM(peers.e),
+        parent: peers.hT,
+        retain: {
+          max: 100,
+        },
+      })));
   });
 }

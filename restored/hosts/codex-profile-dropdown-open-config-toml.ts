@@ -12,7 +12,9 @@ export type BindCodexProfileDropdownOpenConfigTomlPeers = {
 let peers: BindCodexProfileDropdownOpenConfigTomlPeers | null = null;
 
 /** Wire bindCodexProfileDropdownOpenConfigToml peers once companions land. */
-export function setBindCodexProfileDropdownOpenConfigTomlPeers(next: BindCodexProfileDropdownOpenConfigTomlPeers): void {
+export function setBindCodexProfileDropdownOpenConfigTomlPeers(
+  next: BindCodexProfileDropdownOpenConfigTomlPeers,
+): void {
   peers = next;
 }
 
@@ -21,10 +23,12 @@ export function setBindCodexProfileDropdownOpenConfigTomlPeers(next: BindCodexPr
  */
 export function bindCodexProfileDropdownOpenConfigToml() {
   if (peers == null) {
-    throw new Error("bindCodexProfileDropdownOpenConfigToml peers are not configured");
+    throw new Error(
+      "bindCodexProfileDropdownOpenConfigToml peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    hKr = peers.c(), peers.Ho(), peers.pKr();
+    ((hKr = peers.c()), peers.Ho(), peers.pKr());
   });
 }

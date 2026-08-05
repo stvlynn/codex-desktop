@@ -16,20 +16,49 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CodexPluginPageName } from "../../analytics/codex-plugin-page-name";
 import { NOOP_ANALYTICS_CLIENT } from "../../analytics/noop-analytics-client";
 import { APP_VERSION } from "../../app/app-version";
-import { avatarOverlayNativeFrame_a, avatarOverlayNativeFrame_i, avatarOverlayNativeFrame_n, avatarOverlayNativeFrame_o, avatarOverlayNativeFrame_r, avatarOverlayNativeFrame_t } from "../../artifact/avatar-overlay-native-frame";
-import { AvatarOverlayPillDismissButton, ensureAvatarOverlayPillDismissButtonUiInit } from "../../artifact/avatar-overlay-pill-dismiss-button";
+import {
+  avatarOverlayNativeFrame_a,
+  avatarOverlayNativeFrame_i,
+  avatarOverlayNativeFrame_n,
+  avatarOverlayNativeFrame_o,
+  avatarOverlayNativeFrame_r,
+  avatarOverlayNativeFrame_t,
+} from "../../artifact/avatar-overlay-native-frame";
+import {
+  AvatarOverlayPillDismissButton,
+  ensureAvatarOverlayPillDismissButtonUiInit,
+} from "../../artifact/avatar-overlay-pill-dismiss-button";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { AUTOMATION_MISSING_IN_APP_ERROR } from "../../automations/automation-missing-error";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
 import { getPersistedAtomItem } from "../../boundaries/persisted-atom-store";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { buildMcpToolApprovalResult } from "../../composer/mcp-tool-approval-result";
 import { recentConversationsMetaQueryKey } from "../../conversation/recent-conversations-meta-query-key";
-import { avatarOverlayMascotAspectRatio, defaultAvatarOverlayMascotWidthPx, ensureAvatarOverlayMascotSizeInit, useAvatarOverlayMascotSize } from "../../desktop/avatar-overlay-mascot-size";
+import {
+  avatarOverlayMascotAspectRatio,
+  defaultAvatarOverlayMascotWidthPx,
+  ensureAvatarOverlayMascotSizeInit,
+  useAvatarOverlayMascotSize,
+} from "../../desktop/avatar-overlay-mascot-size";
 import { ensureRemoteSshConnectionEventInit } from "../../environments/ensure-remote-ssh-connection-event-init";
-import { ensureUseFloatingWindowPointerInteractivityInit, useFloatingWindowPointerInteractivity } from "../../hooks/use-floating-window-pointer-interactivity";
+import {
+  ensureUseFloatingWindowPointerInteractivityInit,
+  useFloatingWindowPointerInteractivity,
+} from "../../hooks/use-floating-window-pointer-interactivity";
 import { useIsDarkAppearance } from "../../hooks/use-is-dark-appearance";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { LOCAL_HOST_ID } from "../../hosts/local-host-id";
@@ -38,7 +67,10 @@ import { AppIconJG } from "../../icons/app-icon-jg";
 import { AppIconMlt } from "../../icons/app-icon-mlt";
 import { AppIconPlt } from "../../icons/app-icon-plt";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { findSidebarSectionElement, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
@@ -54,7 +86,27 @@ import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { REALTIME_VOICE_MODE_ID } from "../../voice/realtime-voice-mode-id";
 import { AVATAR_OVERLAY_SURFACE_STACK_IDS } from "../avatar-overlay-surface-stack-ids";
 import { buildAvatarOverlayAnalyticsPayload } from "../build-avatar-overlay-analytics-payload";
-import { avatarOverlaySelectionB, avatarOverlaySelectionD, avatarOverlaySelectionF, avatarOverlaySelectionG, avatarOverlaySelectionH, avatarOverlaySelectionI, avatarOverlaySelectionL, avatarOverlaySelectionM, avatarOverlaySelectionN, avatarOverlaySelectionO, avatarOverlaySelectionP, avatarOverlaySelectionR, avatarOverlaySelectionT, avatarOverlaySelectionU, avatarOverlaySelectionUpperC, avatarOverlaySelectionUpperS, avatarOverlaySelectionV, avatarOverlaySelectionX, avatarOverlaySelectionY } from "../use-avatar-overlay-selection";
+import {
+  avatarOverlaySelectionB,
+  avatarOverlaySelectionD,
+  avatarOverlaySelectionF,
+  avatarOverlaySelectionG,
+  avatarOverlaySelectionH,
+  avatarOverlaySelectionI,
+  avatarOverlaySelectionL,
+  avatarOverlaySelectionM,
+  avatarOverlaySelectionN,
+  avatarOverlaySelectionO,
+  avatarOverlaySelectionP,
+  avatarOverlaySelectionR,
+  avatarOverlaySelectionT,
+  avatarOverlaySelectionU,
+  avatarOverlaySelectionUpperC,
+  avatarOverlaySelectionUpperS,
+  avatarOverlaySelectionV,
+  avatarOverlaySelectionX,
+  avatarOverlaySelectionY,
+} from "../use-avatar-overlay-selection";
 
 // Wave5d soft stubs.
 const vapor: any = undefined;
@@ -77,9 +129,7 @@ const ensureUseSelectedAvatarInit: any = undefined;
 const useAvatarOverlaySelectionUnderscore: any = undefined;
 function copper() {}
 function delta(daisy) {
-  let {
-    copy
-  } = daisy;
+  let { copy } = daisy;
   return copy;
 }
 function echo(ember) {
@@ -89,29 +139,31 @@ function falcon(flint) {
   return Math.max(Date.now(), flint + 1);
 }
 function gamma(garnet) {
-  ensureAppActionPayloadSchemasInit.dispatchMessage("avatar-overlay-keyboard-interaction-changed", {
-    isInteractive: garnet
-  });
+  ensureAppActionPayloadSchemasInit.dispatchMessage(
+    "avatar-overlay-keyboard-interaction-changed",
+    {
+      isInteractive: garnet,
+    },
+  );
 }
 function harbor(hazel) {
   return hazel + 1;
 }
 function indigo(ivory) {
-  let {
-    id
-  } = ivory;
+  let { id } = ivory;
   return id === "voice-status";
 }
 function jade(jasper) {
-  let {
-    id
-  } = jasper;
+  let { id } = jasper;
   return id === "realtime-caption";
 }
 function kite(kelp) {
-  ensureAppActionPayloadSchemasInit.dispatchMessage("avatar-overlay-pointer-interaction-changed", {
-    isInteractive: kelp
-  });
+  ensureAppActionPayloadSchemasInit.dispatchMessage(
+    "avatar-overlay-pointer-interaction-changed",
+    {
+      isInteractive: kelp,
+    },
+  );
 }
 function _n(lotus) {
   return lotus.source === "cloud" && lotus.status === "running";
@@ -126,22 +178,53 @@ function nickel() {
   return new Map();
 }
 function onyx(nova, olive) {
-  return SettingsSectionChrome(nova, olive) || getPersistedAtomItem(amber, []).includes(nova.id) ? null : {
-    avatarId: nova.id,
-    petName: nova.displayName,
-    startedAtMs: Date.now()
-  };
+  return SettingsSectionChrome(nova, olive) ||
+    getPersistedAtomItem(amber, []).includes(nova.id)
+    ? null
+    : {
+        avatarId: nova.id,
+        petName: nova.displayName,
+        startedAtMs: Date.now(),
+      };
 }
 function pearl(prism, quill) {
-  return SettingsSectionChrome(prism, quill) ? "pending-custom-avatar" : "ready";
+  return SettingsSectionChrome(prism, quill)
+    ? "pending-custom-avatar"
+    : "ready";
 }
 function quartz(reef, sage) {
-  return reef != null && reef.isGlobalRealtimeVoiceTransitioning === sage.isGlobalRealtimeVoiceTransitioning && reef.nativeCompositionEnabled === sage.nativeCompositionEnabled && reef.realtimeCaptionBelowMascotPx === sage.realtimeCaptionBelowMascotPx && reef.showsVoiceControls === sage.showsVoiceControls && reef.mascot.width === sage.mascot.width && reef.mascot.height === sage.mascot.height && river(reef.tray, sage.tray);
+  return (
+    reef != null &&
+    reef.isGlobalRealtimeVoiceTransitioning ===
+      sage.isGlobalRealtimeVoiceTransitioning &&
+    reef.nativeCompositionEnabled === sage.nativeCompositionEnabled &&
+    reef.realtimeCaptionBelowMascotPx === sage.realtimeCaptionBelowMascotPx &&
+    reef.showsVoiceControls === sage.showsVoiceControls &&
+    reef.mascot.width === sage.mascot.width &&
+    reef.mascot.height === sage.mascot.height &&
+    river(reef.tray, sage.tray)
+  );
 }
 function river(topaz, ultra) {
-  return topaz === ultra || topaz != null && ultra != null && topaz.width === ultra.width && topaz.height === ultra.height;
+  return (
+    topaz === ultra ||
+    (topaz != null &&
+      ultra != null &&
+      topaz.width === ultra.width &&
+      topaz.height === ultra.height)
+  );
 }
-var slate, timber, umbra, violet, willow, xenon, yellow, zinc, amber, basalt, cedar;
+var slate,
+  timber,
+  umbra,
+  violet,
+  willow,
+  xenon,
+  yellow,
+  zinc,
+  amber,
+  basalt,
+  cedar;
 esmInit(() => {
   slate = reactCompilerRuntime();
   ensureComposerEsm_Utt_Init();
@@ -206,18 +289,18 @@ esmInit(() => {
       left: 244,
       top: 207,
       width: ensureAvatarOverlayMascotSizeInit,
-      height: 121
+      height: 121,
     },
     placement: "top-end",
     tray: {
       left: 19.5,
       top: 70,
       width: 345,
-      height: 120
+      height: 120,
     },
     viewport: {
       width: 384,
-      height: 400
-    }
+      height: 400,
+    },
   };
 })();

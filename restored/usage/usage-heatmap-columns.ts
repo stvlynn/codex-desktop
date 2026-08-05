@@ -11,7 +11,9 @@ export type UsageHeatmapColumnsPeers = {
 let peers: UsageHeatmapColumnsPeers | null = null;
 
 /** Wire usageHeatmapColumns peers once companions land. */
-export function setUsageHeatmapColumnsPeers(next: UsageHeatmapColumnsPeers): void {
+export function setUsageHeatmapColumnsPeers(
+  next: UsageHeatmapColumnsPeers,
+): void {
   peers = next;
 }
 
@@ -20,16 +22,20 @@ export function setUsageHeatmapColumnsPeers(next: UsageHeatmapColumnsPeers): voi
  */
 export function usageHeatmapColumns({
   dailyUsage: e,
-  todayIso: t
+  todayIso: t,
 }: Record<string, unknown>) {
   if (peers == null) {
     throw new Error("usageHeatmapColumns peers are not configured");
   }
   let n = peers.CQl(peers.yQl(t), -175);
-  return peers.fQl(peers.vQl({
-    columnCount: 26,
-    dailyUsage: e,
-    startDateIso: n,
-    todayIso: t
-  })).map((e, r) => peers.CQl(n, r) > t ? null : e);
+  return peers
+    .fQl(
+      peers.vQl({
+        columnCount: 26,
+        dailyUsage: e,
+        startDateIso: n,
+        todayIso: t,
+      }),
+    )
+    .map((e, r) => (peers.CQl(n, r) > t ? null : e));
 }

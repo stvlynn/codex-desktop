@@ -27,6 +27,9 @@ export function bindEnvironment2() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.KM(), qM = peers.Ta(peers.GM, !1), OXr = peers.Ta(peers.GM, null);
+    (peers.Ho(),
+      peers.KM(),
+      (qM = peers.Ta(peers.GM, !1)),
+      (OXr = peers.Ta(peers.GM, null)));
   });
 }

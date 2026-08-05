@@ -23,6 +23,6 @@ export function bindMacOS() {
   }
 
   return peers.e(() => {
-    peers.Gf(), rtu = 1;
+    (peers.Gf(), (rtu = 1));
   });
 }

@@ -9,4 +9,3 @@
 export function bindHooksSettings(_next: unknown): void {}
 
 export function ensureHooksSettingsInit(): void {}
-

@@ -3,10 +3,19 @@
 
 import { esmInit } from "../../runtime/rolldown-runtime";
 import { wr, Qt } from "../presentation-protobuf";
-import { initAddressMetrics, initAddressUtils } from "../../utils/spreadsheet-address-utils";
+import {
+  initAddressMetrics,
+  initAddressUtils,
+} from "../../utils/spreadsheet-address-utils";
 import { ensureTextBoxClusterInit } from "../text-box";
 import { ensureThemeSchemeColorAliasesInit } from "../design-tokens";
-import { ensureCellXfSsfTableInit, ensureDefaultDigitWidthInit, ensureSsfFormatInit, ensureColRowExtentsInit, ensureStripFontFaceNameInit } from "../cell-xf-format";
+import {
+  ensureCellXfSsfTableInit,
+  ensureDefaultDigitWidthInit,
+  ensureSsfFormatInit,
+  ensureColRowExtentsInit,
+  ensureStripFontFaceNameInit,
+} from "../cell-xf-format";
 import { ensureMergeCellTextStyleInit } from "./merge-cell-text-style";
 import { ensureDropdownPaddingInit } from "./dropdown-padding";
 export var ensureWorksheetAutofitInit = esmInit(() => {

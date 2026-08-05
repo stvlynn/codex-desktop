@@ -24,7 +24,9 @@ export type BindBindDesktopWorkspaceDiscoveryPeers = {
 let peers: BindBindDesktopWorkspaceDiscoveryPeers | null = null;
 
 /** Wire bindBindDesktopWorkspaceDiscovery peers once companions land. */
-export function setBindBindDesktopWorkspaceDiscoveryPeers(next: BindBindDesktopWorkspaceDiscoveryPeers): void {
+export function setBindBindDesktopWorkspaceDiscoveryPeers(
+  next: BindBindDesktopWorkspaceDiscoveryPeers,
+): void {
   peers = next;
 }
 
@@ -33,13 +35,28 @@ export function setBindBindDesktopWorkspaceDiscoveryPeers(next: BindBindDesktopW
  */
 export function bindBindDesktopWorkspaceDiscovery() {
   if (peers == null) {
-    throw new Error("bindBindDesktopWorkspaceDiscovery peers are not configured");
+    throw new Error(
+      "bindBindDesktopWorkspaceDiscovery peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.ex(), peers.nx(), peers.L5t(), peers.C5t(), peers.w7t(), peers.Au(), peers.ix(), peers._p(), N7t = new peers.m8t(), P7t = 4, ox = null, F7t = new peers.X5t(0), I7t = [], L7t = {
-      shouldSample: (e, t) => peers.F7t.shouldSample(peers.e, t),
-      toString: () => peers.F7t.toString()
-    };
+    (peers.ex(),
+      peers.nx(),
+      peers.L5t(),
+      peers.C5t(),
+      peers.w7t(),
+      peers.Au(),
+      peers.ix(),
+      peers._p(),
+      (N7t = new peers.m8t()),
+      (P7t = 4),
+      (ox = null),
+      (F7t = new peers.X5t(0)),
+      (I7t = []),
+      (L7t = {
+        shouldSample: (e, t) => peers.F7t.shouldSample(peers.e, t),
+        toString: () => peers.F7t.toString(),
+      }));
   });
 }

@@ -7,4 +7,6 @@ export * from "./part-1";
 export * from "./part-2";
 
 // Semantic export aliases
-export function useIsDarkAppearance(): boolean { return false; }
+export function useIsDarkAppearance(): boolean {
+  return false;
+}

@@ -62,7 +62,10 @@ export function isComputerUseConnectorId(connectorId: string): boolean {
 }
 
 /** Resolve the app display name from tool params (`vOt`). */
-export function resolveComputerUseAppDisplayName(approval: McpToolCallApproval, elicitation: Pick<McpToolCallElicitation, "toolParamsDisplay">): string | null {
+export function resolveComputerUseAppDisplayName(
+  approval: McpToolCallApproval,
+  elicitation: Pick<McpToolCallElicitation, "toolParamsDisplay">,
+): string | null {
   const fromDisplay = elicitation.toolParamsDisplay?.find(
     (entry) => entry.name === "app",
   )?.value;

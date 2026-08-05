@@ -61,7 +61,9 @@ export type SelectedTextOverlayDeps = {
 
 let deps: SelectedTextOverlayDeps | null = null;
 
-export function setSelectedTextOverlayDeps(next: SelectedTextOverlayDeps): void {
+export function setSelectedTextOverlayDeps(
+  next: SelectedTextOverlayDeps,
+): void {
   deps = next;
 }
 

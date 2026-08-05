@@ -12,7 +12,9 @@ export type BindDeferredComposerRJPeers = {
 let peers: BindDeferredComposerRJPeers | null = null;
 
 /** Wire bindDeferredComposerRJ peers once companions land. */
-export function setBindDeferredComposerRJPeers(next: BindDeferredComposerRJPeers): void {
+export function setBindDeferredComposerRJPeers(
+  next: BindDeferredComposerRJPeers,
+): void {
   peers = next;
 }
 
@@ -24,10 +26,7 @@ export function bindDeferredComposerRJ() {
     throw new Error("bindDeferredComposerRJ peers are not configured");
   }
 
-  return peers.Ma(peers.GM, ({
-    get: e,
-    scope: t
-  }) => {
+  return peers.Ma(peers.GM, ({ get: e, scope: t }) => {
     if (t.value.kind === `local` && t.value.conversationId != null) {
       let n = e(peers.z0r, t.value.conversationId);
       if (n != null) return n.prompt;

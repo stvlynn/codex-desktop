@@ -11,7 +11,9 @@ export type BindDeferredGitHelperIotPeers = {
 let peers: BindDeferredGitHelperIotPeers | null = null;
 
 /** Wire bindDeferredGitHelperIot peers once companions land. */
-export function setBindDeferredGitHelperIotPeers(next: BindDeferredGitHelperIotPeers): void {
+export function setBindDeferredGitHelperIotPeers(
+  next: BindDeferredGitHelperIotPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function bindDeferredGitHelperIot() {
   }
 
   return peers.e(() => {
-    peers.Lmt(), peers.Vht(), Fkt = {};
+    (peers.Lmt(), peers.Vht(), (Fkt = {}));
   });
 }

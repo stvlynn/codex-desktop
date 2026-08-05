@@ -8,7 +8,9 @@ export type BindBindOpenaiBundledPeers = {
 let peers: BindBindOpenaiBundledPeers | null = null;
 
 /** Wire bindBindOpenaiBundled peers once companions land. */
-export function setBindBindOpenaiBundledPeers(next: BindBindOpenaiBundledPeers): void {
+export function setBindBindOpenaiBundledPeers(
+  next: BindBindOpenaiBundledPeers,
+): void {
   peers = next;
 }
 

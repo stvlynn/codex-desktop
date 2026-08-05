@@ -18,7 +18,9 @@ export type ClosedConnectionStatePeers = {
 let peers: ClosedConnectionStatePeers | null = null;
 
 /** Wire closedConnectionState peers once companions land. */
-export function setClosedConnectionStatePeers(next: ClosedConnectionStatePeers): void {
+export function setClosedConnectionStatePeers(
+  next: ClosedConnectionStatePeers,
+): void {
   peers = next;
 }
 
@@ -31,8 +33,14 @@ export function closedConnectionState() {
   }
 
   return peers.e(() => {
-    A3r = peers.c(), peers.Ho(), peers.ed(), j3r = {
-      kind: `closed`
-    }, zN = peers.Ta(peers.Q, peers.j3r), M3r = 0, N3r = new Map();
+    ((A3r = peers.c()),
+      peers.Ho(),
+      peers.ed(),
+      (j3r = {
+        kind: `closed`,
+      }),
+      (zN = peers.Ta(peers.Q, peers.j3r)),
+      (M3r = 0),
+      (N3r = new Map()));
   });
 }

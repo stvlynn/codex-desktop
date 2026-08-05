@@ -45,7 +45,4 @@ export {
   accumulateLineInkBounds,
 } from "./line-box-helpers";
 export { TextLayoutEngine } from "./text-layout-engine";
-export {
-  ensureTextLayoutEngineInit,
-  kce,
-} from "./ensure-text-layout-init";
+export { ensureTextLayoutEngineInit, kce } from "./ensure-text-layout-init";

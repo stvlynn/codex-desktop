@@ -8,7 +8,9 @@ export type BindMcpCapability2Peers = {
 let peers: BindMcpCapability2Peers | null = null;
 
 /** Wire bindMcpCapability2 peers once companions land. */
-export function setBindMcpCapability2Peers(next: BindMcpCapability2Peers): void {
+export function setBindMcpCapability2Peers(
+  next: BindMcpCapability2Peers,
+): void {
   peers = next;
 }
 

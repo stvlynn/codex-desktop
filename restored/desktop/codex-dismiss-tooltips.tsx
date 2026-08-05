@@ -13,7 +13,9 @@ export type BindCodexDismissTooltipsPeers = {
 let peers: BindCodexDismissTooltipsPeers | null = null;
 
 /** Wire bindCodexDismissTooltips peers once companions land. */
-export function setBindCodexDismissTooltipsPeers(next: BindCodexDismissTooltipsPeers): void {
+export function setBindCodexDismissTooltipsPeers(
+  next: BindCodexDismissTooltipsPeers,
+): void {
   peers = next;
 }
 
@@ -26,6 +28,6 @@ export function bindCodexDismissTooltips() {
   }
 
   return peers.e(() => {
-    H7e = peers.c(), peers.sd(), U7e = peers.J();
+    ((H7e = peers.c()), peers.sd(), (U7e = peers.J()));
   });
 }

@@ -8,7 +8,9 @@ export type AppshotSelectedTaskPhasePeers = {
 let peers: AppshotSelectedTaskPhasePeers | null = null;
 
 /** Wire setAppshotSelectedTaskPhase peers once companions land. */
-export function setAppshotSelectedTaskPhasePeers(next: AppshotSelectedTaskPhasePeers): void {
+export function setAppshotSelectedTaskPhasePeers(
+  next: AppshotSelectedTaskPhasePeers,
+): void {
   peers = next;
 }
 

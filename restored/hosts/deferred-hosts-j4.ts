@@ -11,7 +11,9 @@ export type BindDeferredHostsJ4Peers = {
 let peers: BindDeferredHostsJ4Peers | null = null;
 
 /** Wire bindDeferredHostsJ4 peers once companions land. */
-export function setBindDeferredHostsJ4Peers(next: BindDeferredHostsJ4Peers): void {
+export function setBindDeferredHostsJ4Peers(
+  next: BindDeferredHostsJ4Peers,
+): void {
   peers = next;
 }
 
@@ -23,7 +25,7 @@ export function bindDeferredHostsJ4() {
     throw new Error("bindDeferredHostsJ4 peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => e(peers.SE) ? null : e(peers.Z8n)[0] ?? null);
+  return peers.Ma(peers.Q, ({ get: e }) =>
+    e(peers.SE) ? null : (e(peers.Z8n)[0] ?? null),
+  );
 }

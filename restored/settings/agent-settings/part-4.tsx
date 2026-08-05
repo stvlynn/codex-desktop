@@ -22,10 +22,28 @@ import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../ap
 import { normalizeAppIconThemeEntries } from "../../apps/normalize-app-icon-theme-entries";
 import { automationsNotShallowEqual } from "../../automation/automations-not-shallow-equal";
 import { isBlankAutomationDraft as IsBlankAutomationDraft } from "../../automation/is-blank-automation-draft";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useLocation } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
@@ -64,7 +82,10 @@ import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { mcpGlobalCapabilityCatalogAtom as McpGlobalCapabilityCatalogAtom } from "../../mcp/mcp-capability-host";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { resolveBrowserTabPanelSide as ResolveBrowserTabPanelSide } from "../../navigation/resolve-browser-tab-panel-side";
@@ -79,7 +100,10 @@ import { codexCommandTheme } from "../../ui/codex-command-theme";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiYn } from "../../ui/deferred-ui-yn";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { FloatingSurfaceCssClass } from "../../ui/floating-surface-css-classes";
@@ -91,20 +115,31 @@ import { isXcodeLicenseError } from "../../utils/is-xcode-license-error";
 import { lerpIfFinite as LerpIfFinite } from "../../utils/lerp-if-finite";
 import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
-import { ensureImportSettingsGctInit, ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsGctInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { identityCwd } from "../../utils/workspace-paths";
 import { pendingWorktreeConversationStartApi } from "../../worktree/pending-worktree-conversation-start-api";
 import { readCodexHomeFromQuery } from "../read-codex-home-from-query";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { initSettingsLoadingRow, SettingsLoadingRow } from "../settings-loading-row";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  initSettingsLoadingRow,
+  SettingsLoadingRow,
+} from "../settings-loading-row";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 
 // Wave5d soft JSX companions.
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -186,9 +221,7 @@ const deferredUiOX3: any = undefined;
 const openInBrowser: any = undefined;
 const parseUrlOrFallback: any = undefined;
 const useChromeAndCodeThemeSync: any = undefined;
-function orbit({
-  hostId
-}) {
+function orbit({ hostId }) {
   let pine = CodexPluginActionType(appScopeAtom),
     quest = useIntl(),
     ridge = useLocation(),
@@ -197,28 +230,31 @@ function orbit({
     [wave, apex] = mint.useState({}),
     brook = CodexPluginActionResult(deferredHostsJ4),
     cliff = settingsRouteStateNState(ridge.state),
-    dusk = cliff.hasValue ? hostId === "local" ? cliff.workspaceRoot : null : hostId === "local" ? brook : null,
+    dusk = cliff.hasValue
+      ? hostId === "local"
+        ? cliff.workspaceRoot
+        : null
+      : hostId === "local"
+        ? brook
+        : null,
     elm = readCodexHomeFromQuery(hostId),
-    {
-      data: fern,
-      isPending
-    } = useLocalCwdModeHostConfig(dusk, {
+    { data: fern, isPending } = useLocalCwdModeHostConfig(dusk, {
       hostId,
-      cwdMode: hostId === "local" ? "fallback-to-workspace" : "preserve-null"
+      cwdMode: hostId === "local" ? "fallback-to-workspace" : "preserve-null",
     }),
-    {
-      data,
-      isPending: _isPending
-    } = CodexBrowserSurfaceActionType(ensureConfigQueryAtomsInit, {
-      hostId
-    }),
+    { data, isPending: _isPending } = CodexBrowserSurfaceActionType(
+      ensureConfigQueryAtomsInit,
+      {
+        hostId,
+      },
+    ),
     grove = fern?.config ?? null,
     hill = fern?.layers ?? null,
     isle = fern?.origins ?? null,
     juniper = data?.requirements ?? null,
     lagoon = alpha(hill, quest),
-    meadow = hill?.find(upland => upland.name.type === "user") ?? null,
-    nest = hill?.find(vista => AppInitialZ4(vista.name)) ?? null,
+    meadow = hill?.find((upland) => upland.name.type === "user") ?? null,
+    nest = hill?.find((vista) => AppInitialZ4(vista.name)) ?? null,
     oak = elm == null ? null : `${elm}/config.toml`,
     petal = meadow == null ? oak : managedConfigFilePath(meadow.name),
     quiet = {
@@ -229,31 +265,42 @@ function orbit({
       filePath: petal,
       expectedVersion: meadow?.version ?? null,
       workspaceRoot: null,
-      layer: meadow
+      layer: meadow,
     },
-    rain = nest == null ? null : {
-      key: "managed",
-      kind: "managed",
-      label: quest.formatMessage(reef.adminConfig),
-      tooltipText: quest.formatMessage({
-        id: "settings.agent.configuration.scope.managedDescription",
-        defaultMessage: "Managed by admin policy",
-        description: "Tooltip text for the admin config scope in configuration settings"
-      }),
-      filePath: managedConfigFilePath(nest.name),
-      expectedVersion: nest.version,
-      workspaceRoot: null,
-      layer: nest
-    },
+    rain =
+      nest == null
+        ? null
+        : {
+            key: "managed",
+            kind: "managed",
+            label: quest.formatMessage(reef.adminConfig),
+            tooltipText: quest.formatMessage({
+              id: "settings.agent.configuration.scope.managedDescription",
+              defaultMessage: "Managed by admin policy",
+              description:
+                "Tooltip text for the admin config scope in configuration settings",
+            }),
+            filePath: managedConfigFilePath(nest.name),
+            expectedVersion: nest.version,
+            workspaceRoot: null,
+            layer: nest,
+          },
     seed = [...lagoon, quiet, ...(rain == null ? [] : [rain])],
     trail = lagoon.length > 0,
-    urn = dusk == null ? seed[0]?.key ?? null : `project:${dusk}`,
-    vine = seed.find(item => item.key === storm) ?? seed.find(item => item.key === urn) ?? seed[0] ?? null,
-    {
-      data: _data
-    } = CodexBrowserSurfaceActionType(deferredUiOX3, {
-      cwd: vine?.workspaceRoot == null ? dusk == null ? null : identityCwd(dusk) : identityCwd(vine.workspaceRoot),
-      hostId
+    urn = dusk == null ? (seed[0]?.key ?? null) : `project:${dusk}`,
+    vine =
+      seed.find((item) => item.key === storm) ??
+      seed.find((item) => item.key === urn) ??
+      seed[0] ??
+      null,
+    { data: _data } = CodexBrowserSurfaceActionType(deferredUiOX3, {
+      cwd:
+        vine?.workspaceRoot == null
+          ? dusk == null
+            ? null
+            : identityCwd(dusk)
+          : identityCwd(vine.workspaceRoot),
+      hostId,
     }),
     wind = bravo(vine?.layer?.config ?? null),
     yarrow = harbor(grove?.approval_policy ?? null) ?? "on-request",
@@ -264,49 +311,78 @@ function orbit({
     ever = wind.sandboxMode ?? azure,
     _e = echo(dew),
     field = gamma(ever),
-    grain = wind.networkAccess ?? grove?.sandbox_workspace_write?.network_access ?? false,
-    be = isle == null ? null : AppInitialH4(isle, "approval_policy", ["approvalPolicy"]),
+    grain =
+      wind.networkAccess ??
+      grove?.sandbox_workspace_write?.network_access ??
+      false,
+    be =
+      isle == null
+        ? null
+        : AppInitialH4(isle, "approval_policy", ["approvalPolicy"]),
     haven = isle == null ? null : AppInitialH4(isle, "sandbox_mode"),
-    ink = isle == null ? null : AppInitialH4(isle, "sandbox_workspace_write", ["network_access"]),
-    jadeite = vine?.kind === "project" ? vine.layer?.disabledReason ?? null : null,
+    ink =
+      isle == null
+        ? null
+        : AppInitialH4(isle, "sandbox_workspace_write", ["network_access"]),
+    jadeite =
+      vine?.kind === "project" ? (vine.layer?.disabledReason ?? null) : null,
     kernel = copper(vine, quest),
-    leaf = nova.filter(item => juniper?.allowedApprovalPolicies == null || juniper.allowedApprovalPolicies.length === 0 ? true : juniper.allowedApprovalPolicies.includes(item.value)),
-    maple = olive.filter(item => juniper?.allowedSandboxModes == null || juniper.allowedSandboxModes.length === 0 ? true : juniper.allowedSandboxModes.includes(item.value));
+    leaf = nova.filter((item) =>
+      juniper?.allowedApprovalPolicies == null ||
+      juniper.allowedApprovalPolicies.length === 0
+        ? true
+        : juniper.allowedApprovalPolicies.includes(item.value),
+    ),
+    maple = olive.filter((item) =>
+      juniper?.allowedSandboxModes == null ||
+      juniper.allowedSandboxModes.length === 0
+        ? true
+        : juniper.allowedSandboxModes.includes(item.value),
+    );
   async function nimbus(wisp, yonder, zenith) {
     if (!(vine == null || vine.filePath == null) && unity == null) {
       vale(wisp);
-      apex(anvil => ({
+      apex((anvil) => ({
         ...anvil,
-        [wisp]: undefined
+        [wisp]: undefined,
       }));
       try {
-        if (vine.kind === "project") await falcon({
-          filePath: vine.filePath,
-          keyPath: yonder,
-          value: zenith
-        });else {
-          let beacon = vine.kind === "user" ? await AppInitialI4(pine.queryClient, hostId) : null;
+        if (vine.kind === "project")
+          await falcon({
+            filePath: vine.filePath,
+            keyPath: yonder,
+            value: zenith,
+          });
+        else {
+          let beacon =
+            vine.kind === "user"
+              ? await AppInitialI4(pine.queryClient, hostId)
+              : null;
           await canonicalizeWorkspacePathKey("write-config-value", {
             hostId,
             keyPath: yonder,
             value: zenith,
             mergeStrategy: "upsert",
             filePath: beacon ? beacon.filePath : vine.filePath,
-            expectedVersion: beacon == null ? vine.expectedVersion : beacon.expectedVersion
+            expectedVersion:
+              beacon == null ? vine.expectedVersion : beacon.expectedVersion,
           });
         }
         await pine.queryClient.invalidateQueries({
-          queryKey: [...LAYERED_RESPONSE_CONFIG_PATH, hostId]
+          queryKey: [...LAYERED_RESPONSE_CONFIG_PATH, hostId],
         });
-        await Promise.all([pine.queryClient.invalidateQueries({
-          queryKey: [...AppInitialJ4, hostId]
-        }), pine.queryClient.invalidateQueries({
-          queryKey: [...USER_CONFIG_PATH, hostId]
-        })]);
+        await Promise.all([
+          pine.queryClient.invalidateQueries({
+            queryKey: [...AppInitialJ4, hostId],
+          }),
+          pine.queryClient.invalidateQueries({
+            queryKey: [...USER_CONFIG_PATH, hostId],
+          }),
+        ]);
       } catch (crag) {
-        apex(dome => ({
+        apex((dome) => ({
           ...dome,
-          [wisp]: crag instanceof Error ? crag.message : "Unable to save"
+          [wisp]: crag instanceof Error ? crag.message : "Unable to save",
         }));
       } finally {
         vale(null);
@@ -323,8 +399,9 @@ function orbit({
       restrictedMessage: quest.formatMessage({
         id: "settings.agent.configuration.approval.restricted",
         defaultMessage: "Approval policy is restricted by this installation.",
-        description: "Restriction message for approval policy in configuration settings"
-      })
+        description:
+          "Restriction message for approval policy in configuration settings",
+      }),
     }),
     quillow = delta({
       intl: quest,
@@ -335,8 +412,9 @@ function orbit({
       restrictedMessage: quest.formatMessage({
         id: "settings.agent.configuration.sandbox.restricted",
         defaultMessage: "Sandbox mode is restricted by this installation.",
-        description: "Restriction message for sandbox mode in configuration settings"
-      })
+        description:
+          "Restriction message for sandbox mode in configuration settings",
+      }),
     }),
     root = delta({
       intl: quest,
@@ -344,177 +422,385 @@ function orbit({
       origin: ink,
       selectedScope: vine,
       hasOptions: true,
-      restrictedMessage: ""
+      restrictedMessage: "",
     }),
     silk = opal || unity != null || jadeite != null,
-    thorn = eddy => {
+    thorn = (eddy) => {
       tide(eddy);
       apex({});
     };
-  return <UseChromeAndCodeThemeSync {...{
-    children: [<UseChromeAndCodeThemeSync.Header {...{
-      title: <DropdownMenuPopover {...{
-        align: "start",
-        contentWidth: "menuWide",
-        disabled: seed.length === 0,
-        triggerButton: <DropdownTriggerButton disabled={seed.length === 0} contentClassName="truncate">
-                        {vine?.label ?? quest.formatMessage({
-            id: "settings.agent.configuration.scope.loading",
-            defaultMessage: "Loading…",
-            description: "Fallback label while config scope options are loading"
-          })}
-                      </DropdownTriggerButton>,
-        children: [trail ? <>
-                          {<DropdownMenu.Section {...{
-            children: [<DropdownMenu.SectionLabel {...{
-              children: <MemoizedFormattedMessage {...{
-                ...reef.projectConfig
-              }} />
-            }} />, lagoon.map(item => <AgentSettingsHelper21 key={item.key} {...{
-              scopeOption: item,
-              selected: vine?.key === item.key,
-              onSelect: () => {
-                thorn(item.key);
-              }
-            }} />)]
-          }} />}
+  return (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [
+          <UseChromeAndCodeThemeSync.Header
+            {...{
+              title: (
+                <DropdownMenuPopover
+                  {...{
+                    align: "start",
+                    contentWidth: "menuWide",
+                    disabled: seed.length === 0,
+                    triggerButton: (
+                      <DropdownTriggerButton
+                        disabled={seed.length === 0}
+                        contentClassName="truncate"
+                      >
+                        {vine?.label ??
+                          quest.formatMessage({
+                            id: "settings.agent.configuration.scope.loading",
+                            defaultMessage: "Loading…",
+                            description:
+                              "Fallback label while config scope options are loading",
+                          })}
+                      </DropdownTriggerButton>
+                    ),
+                    children: [
+                      trail ? (
+                        <>
+                          {
+                            <DropdownMenu.Section
+                              {...{
+                                children: [
+                                  <DropdownMenu.SectionLabel
+                                    {...{
+                                      children: (
+                                        <MemoizedFormattedMessage
+                                          {...{
+                                            ...reef.projectConfig,
+                                          }}
+                                        />
+                                      ),
+                                    }}
+                                  />,
+                                  lagoon.map((item) => (
+                                    <AgentSettingsHelper21
+                                      key={item.key}
+                                      {...{
+                                        scopeOption: item,
+                                        selected: vine?.key === item.key,
+                                        onSelect: () => {
+                                          thorn(item.key);
+                                        },
+                                      }}
+                                    />
+                                  )),
+                                ],
+                              }}
+                            />
+                          }
                           {<DropdownMenu.Separator {...{}} />}
-                        </> : null, <DropdownMenu.Section {...{
-          children: [<DropdownMenu.SectionLabel {...{
-            children: <MemoizedFormattedMessage {...{
-              ...reef.globalConfig
-            }} />
-          }} />, <AgentSettingsHelper21 {...{
-            scopeOption: quiet,
-            selected: vine?.key === quiet.key,
-            onSelect: () => {
-              thorn(quiet.key);
-            }
-          }} />, rain == null ? null : <AgentSettingsHelper21 {...{
-            scopeOption: rain,
-            selected: vine?.key === rain.key,
-            onSelect: () => {
-              thorn(rain.key);
-            }
-          }} />]
-        }} />]
-      }} />,
-      actions: <ReadLoginRouteQuerySnapshot {...{
-        color: "ghost",
-        size: "toolbar",
-        disabled: vine?.filePath == null,
-        onClick: () => {
-          vine?.filePath != null && readCodexHomeFromQuery({
-            path: vine.filePath,
-            cwd: vine.workspaceRoot == null ? null : identityCwd(vine.workspaceRoot),
-            hostId,
-            target: _data?.preferredTarget
-          });
-        },
-        children: [<MemoizedFormattedMessage {...{
-          id: "settings.agent.configuration.scope.open",
-          defaultMessage: "Open config.toml",
-          description: "Button label to open the selected config file"
-        }} />, <UsePluginNavigationTelemetry {...{
-          className: "icon-2xs"
-        }} />]
-      }} />
-    }} />, <UseChromeAndCodeThemeSync.Content {...{
-      children: [jadeite == null ? null : <ResolveBrowserTabPanelSide {...{
-        content: jadeite,
-        Icon: applyActive,
-        type: "warning"
-      }} />, <ParseUrlOrFallback {...{
-        children: [<EnsurePersonalizationCInit {...{
-          label: <MemoizedFormattedMessage {...{
-            ...reef.approvalPolicy
-          }} />,
-          description: <AgentSettingsHelper22 {...{
-            error: wave.approval,
-            lockReason: plume,
-            children: <MemoizedFormattedMessage {...{
-              id: "settings.agent.configuration.approval.definition",
-              defaultMessage: "Choose when ChatGPT asks for approval",
-              description: "Definition for approval policy in configuration settings"
-            }} />
-          }} />,
-          control: <DropdownMenuPopover {...{
-            align: "end",
-            contentWidth: "panelWide",
-            disabled: silk || plume != null,
-            triggerButton: <DropdownTriggerButton disabled={silk || plume != null} contentClassName="truncate">
-                                    {_e == null ? dew : quest.formatMessage(_e.label)}
-                                  </DropdownTriggerButton>,
-            children: leaf.map(item => <DropdownMenu.Item key={item.value} {...{
-              RightIcon: item.value === dew ? AppIconZlt : undefined,
-              subTextAllowWrap: true,
-              onSelect: () => {
-                nimbus("approval", "approval_policy", item.value);
-              },
-              SubText: <div className="pt-1 text-sm text-token-text-secondary">
+                        </>
+                      ) : null,
+                      <DropdownMenu.Section
+                        {...{
+                          children: [
+                            <DropdownMenu.SectionLabel
+                              {...{
+                                children: (
+                                  <MemoizedFormattedMessage
+                                    {...{
+                                      ...reef.globalConfig,
+                                    }}
+                                  />
+                                ),
+                              }}
+                            />,
+                            <AgentSettingsHelper21
+                              {...{
+                                scopeOption: quiet,
+                                selected: vine?.key === quiet.key,
+                                onSelect: () => {
+                                  thorn(quiet.key);
+                                },
+                              }}
+                            />,
+                            rain == null ? null : (
+                              <AgentSettingsHelper21
+                                {...{
+                                  scopeOption: rain,
+                                  selected: vine?.key === rain.key,
+                                  onSelect: () => {
+                                    thorn(rain.key);
+                                  },
+                                }}
+                              />
+                            ),
+                          ],
+                        }}
+                      />,
+                    ],
+                  }}
+                />
+              ),
+              actions: (
+                <ReadLoginRouteQuerySnapshot
+                  {...{
+                    color: "ghost",
+                    size: "toolbar",
+                    disabled: vine?.filePath == null,
+                    onClick: () => {
+                      vine?.filePath != null &&
+                        readCodexHomeFromQuery({
+                          path: vine.filePath,
+                          cwd:
+                            vine.workspaceRoot == null
+                              ? null
+                              : identityCwd(vine.workspaceRoot),
+                          hostId,
+                          target: _data?.preferredTarget,
+                        });
+                    },
+                    children: [
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "settings.agent.configuration.scope.open",
+                          defaultMessage: "Open config.toml",
+                          description:
+                            "Button label to open the selected config file",
+                        }}
+                      />,
+                      <UsePluginNavigationTelemetry
+                        {...{
+                          className: "icon-2xs",
+                        }}
+                      />,
+                    ],
+                  }}
+                />
+              ),
+            }}
+          />,
+          <UseChromeAndCodeThemeSync.Content
+            {...{
+              children: [
+                jadeite == null ? null : (
+                  <ResolveBrowserTabPanelSide
+                    {...{
+                      content: jadeite,
+                      Icon: applyActive,
+                      type: "warning",
+                    }}
+                  />
+                ),
+                <ParseUrlOrFallback
+                  {...{
+                    children: [
+                      <EnsurePersonalizationCInit
+                        {...{
+                          label: (
+                            <MemoizedFormattedMessage
+                              {...{
+                                ...reef.approvalPolicy,
+                              }}
+                            />
+                          ),
+                          description: (
+                            <AgentSettingsHelper22
+                              {...{
+                                error: wave.approval,
+                                lockReason: plume,
+                                children: (
+                                  <MemoizedFormattedMessage
+                                    {...{
+                                      id: "settings.agent.configuration.approval.definition",
+                                      defaultMessage:
+                                        "Choose when ChatGPT asks for approval",
+                                      description:
+                                        "Definition for approval policy in configuration settings",
+                                    }}
+                                  />
+                                ),
+                              }}
+                            />
+                          ),
+                          control: (
+                            <DropdownMenuPopover
+                              {...{
+                                align: "end",
+                                contentWidth: "panelWide",
+                                disabled: silk || plume != null,
+                                triggerButton: (
+                                  <DropdownTriggerButton
+                                    disabled={silk || plume != null}
+                                    contentClassName="truncate"
+                                  >
+                                    {_e == null
+                                      ? dew
+                                      : quest.formatMessage(_e.label)}
+                                  </DropdownTriggerButton>
+                                ),
+                                children: leaf.map((item) => (
+                                  <DropdownMenu.Item
+                                    key={item.value}
+                                    {...{
+                                      RightIcon:
+                                        item.value === dew
+                                          ? AppIconZlt
+                                          : undefined,
+                                      subTextAllowWrap: true,
+                                      onSelect: () => {
+                                        nimbus(
+                                          "approval",
+                                          "approval_policy",
+                                          item.value,
+                                        );
+                                      },
+                                      SubText: (
+                                        <div className="pt-1 text-sm text-token-text-secondary">
                                           {item.description}
-                                        </div>,
-              children: <span className="text-sm">
+                                        </div>
+                                      ),
+                                      children: (
+                                        <span className="text-sm">
                                           {quest.formatMessage(item.label)}
                                         </span>
-            }} />)
-          }} />
-        }} />, <EnsurePersonalizationCInit {...{
-          label: <MemoizedFormattedMessage {...{
-            ...reef.sandboxSettings
-          }} />,
-          description: <AgentSettingsHelper22 {...{
-            error: wave.sandbox,
-            lockReason: quillow,
-            children: <MemoizedFormattedMessage {...{
-              id: "settings.agent.configuration.sandbox.definition",
-              defaultMessage: "Choose how much ChatGPT can do when running commands",
-              description: "Definition for sandbox settings in configuration settings"
-            }} />
-          }} />,
-          control: <DropdownMenuPopover {...{
-            align: "end",
-            contentWidth: "panelWide",
-            disabled: silk || quillow != null,
-            triggerButton: <DropdownTriggerButton disabled={silk || quillow != null} contentClassName="truncate">
-                                    {field == null ? ever : quest.formatMessage(field.label)}
-                                  </DropdownTriggerButton>,
-            children: maple.map(item => <DropdownMenu.Item key={item.value} {...{
-              RightIcon: item.value === ever ? AppIconZlt : undefined,
-              subTextAllowWrap: true,
-              onSelect: () => {
-                nimbus("sandbox", "sandbox_mode", item.value);
-              },
-              SubText: <div className="pt-1 text-sm text-token-text-secondary">
+                                      ),
+                                    }}
+                                  />
+                                )),
+                              }}
+                            />
+                          ),
+                        }}
+                      />,
+                      <EnsurePersonalizationCInit
+                        {...{
+                          label: (
+                            <MemoizedFormattedMessage
+                              {...{
+                                ...reef.sandboxSettings,
+                              }}
+                            />
+                          ),
+                          description: (
+                            <AgentSettingsHelper22
+                              {...{
+                                error: wave.sandbox,
+                                lockReason: quillow,
+                                children: (
+                                  <MemoizedFormattedMessage
+                                    {...{
+                                      id: "settings.agent.configuration.sandbox.definition",
+                                      defaultMessage:
+                                        "Choose how much ChatGPT can do when running commands",
+                                      description:
+                                        "Definition for sandbox settings in configuration settings",
+                                    }}
+                                  />
+                                ),
+                              }}
+                            />
+                          ),
+                          control: (
+                            <DropdownMenuPopover
+                              {...{
+                                align: "end",
+                                contentWidth: "panelWide",
+                                disabled: silk || quillow != null,
+                                triggerButton: (
+                                  <DropdownTriggerButton
+                                    disabled={silk || quillow != null}
+                                    contentClassName="truncate"
+                                  >
+                                    {field == null
+                                      ? ever
+                                      : quest.formatMessage(field.label)}
+                                  </DropdownTriggerButton>
+                                ),
+                                children: maple.map((item) => (
+                                  <DropdownMenu.Item
+                                    key={item.value}
+                                    {...{
+                                      RightIcon:
+                                        item.value === ever
+                                          ? AppIconZlt
+                                          : undefined,
+                                      subTextAllowWrap: true,
+                                      onSelect: () => {
+                                        nimbus(
+                                          "sandbox",
+                                          "sandbox_mode",
+                                          item.value,
+                                        );
+                                      },
+                                      SubText: (
+                                        <div className="pt-1 text-sm text-token-text-secondary">
                                           {item.description}
-                                        </div>,
-              children: <span className="text-sm">
+                                        </div>
+                                      ),
+                                      children: (
+                                        <span className="text-sm">
                                           {quest.formatMessage(item.label)}
                                         </span>
-            }} />)
-          }} />
-        }} />, canyon ? <EnsurePersonalizationCInit {...{
-          label: <MemoizedFormattedMessage {...{
-            ...reef.networkAccess
-          }} />,
-          description: <AgentSettingsHelper22 {...{
-            error: wave.network,
-            lockReason: root,
-            children: <MemoizedFormattedMessage {...{
-              id: "settings.agent.configuration.network.definition",
-              defaultMessage: "Allow network access when the sandbox is set to workspace write",
-              description: "Definition for network access in configuration settings"
-            }} />
-          }} />,
-          control: <AppInitialYC checked={grain} disabled={silk || root != null} onChange={fjord => {
-            nimbus("network", "sandbox_workspace_write.network_access", fjord);
-          }} ariaLabel={quest.formatMessage({
-            id: "settings.agent.configuration.network.ariaLabel",
-            defaultMessage: "Allow network access",
-            description: "Aria label for network access toggle in configuration settings"
-          })} />
-        }} /> : null]
-      }} />]
-    }} />]
-  }} />;
+                                      ),
+                                    }}
+                                  />
+                                )),
+                              }}
+                            />
+                          ),
+                        }}
+                      />,
+                      canyon ? (
+                        <EnsurePersonalizationCInit
+                          {...{
+                            label: (
+                              <MemoizedFormattedMessage
+                                {...{
+                                  ...reef.networkAccess,
+                                }}
+                              />
+                            ),
+                            description: (
+                              <AgentSettingsHelper22
+                                {...{
+                                  error: wave.network,
+                                  lockReason: root,
+                                  children: (
+                                    <MemoizedFormattedMessage
+                                      {...{
+                                        id: "settings.agent.configuration.network.definition",
+                                        defaultMessage:
+                                          "Allow network access when the sandbox is set to workspace write",
+                                        description:
+                                          "Definition for network access in configuration settings",
+                                      }}
+                                    />
+                                  ),
+                                }}
+                              />
+                            ),
+                            control: (
+                              <AppInitialYC
+                                checked={grain}
+                                disabled={silk || root != null}
+                                onChange={(fjord) => {
+                                  nimbus(
+                                    "network",
+                                    "sandbox_workspace_write.network_access",
+                                    fjord,
+                                  );
+                                }}
+                                ariaLabel={quest.formatMessage({
+                                  id: "settings.agent.configuration.network.ariaLabel",
+                                  defaultMessage: "Allow network access",
+                                  description:
+                                    "Aria label for network access toggle in configuration settings",
+                                })}
+                              />
+                            ),
+                          }}
+                        />
+                      ) : null,
+                    ],
+                  }}
+                />,
+              ],
+            }}
+          />,
+        ],
+      }}
+    />
+  );
 }

@@ -94,10 +94,20 @@ const WindFifth: any = undefined;
 /** split companion stub */
 const YarrowFifth: any = undefined;
 
-import { buildChatgptDesktopAuthUrl, ensureBuildChatgptDesktopAuthUrlInit, ensureChatgptDesktopAuthUrlInit, getCodexAppVersionFromScope, loginWithChatgptDeviceCode } from "../../account/chatgpt-desktop-auth-url";
+import {
+  buildChatgptDesktopAuthUrl,
+  ensureBuildChatgptDesktopAuthUrlInit,
+  ensureChatgptDesktopAuthUrlInit,
+  getCodexAppVersionFromScope,
+  loginWithChatgptDeviceCode,
+} from "../../account/chatgpt-desktop-auth-url";
 import { isStartingProcessExpired as IsStartingProcessExpired } from "../../account/is-starting-process-expired";
 import { openInBrowser as OpenInBrowser } from "../../account/open-in-browser";
-import { appActionSidebarProjectRefSchema, appActionSidebarSectionRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  appActionSidebarSectionRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { ensureReviewFileAppActionAttrsInit } from "../../actions/ensure-review-file-app-action-attrs-init";
 import { buildRemoteSshConnectionsRefreshedPayload } from "../../analytics/build-remote-ssh-connections-refreshed-payload";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
@@ -117,11 +127,34 @@ import { ShellWidthDeltaContext } from "../../app-shell/shell-width-delta-contex
 import { APP_VERSION } from "../../app/app-version";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { PULL_REQUEST_FIX_AUTOMATION_PROMPT_HEADER } from "../../automations/pull-request-fix-prompt-header";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_CU_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_CU_Init,
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { Chatgpt2 } from "../../browser/chatgpt2";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
@@ -137,11 +170,37 @@ import { appServices } from "../../desktop/desktop-services";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { invokeDesktopRpc } from "../../desktop/invoke-desktop-rpc";
 import { DesktopPersistenceKeys } from "../../desktop/persistence-keys";
-import { CodexMobileSetupDialog, codexMobileSetupDialogConfig as CodexMobileSetupDialogConfig, CodexMobileSetupDialogOption, ensureCodexMobileSetupDialogInit, ensureCodexMobileSetupDialogLayoutInit, ensureCodexMobileSetupDialogStylesInit } from "../../devices/codex-mobile-setup-dialog";
-import { codexMobileSetupFlowC, codexMobileSetupFlowD, codexMobileSetupFlowF, codexMobileSetupFlowL, codexMobileSetupFlowN, codexMobileSetupFlowO, codexMobileSetupFlowP, codexMobileSetupFlowS, codexMobileSetupFlowT as CodexMobileSetupFlowT, codexMobileSetupFlowU } from "../../devices/codex-mobile-setup-flow";
-import { isWslHostSource, remoteControlHostKey, remoteSshCodexManagedHostKey, remoteSshDiscoveredHostKey } from "../../environments/remote-host-keys";
+import {
+  CodexMobileSetupDialog,
+  codexMobileSetupDialogConfig as CodexMobileSetupDialogConfig,
+  CodexMobileSetupDialogOption,
+  ensureCodexMobileSetupDialogInit,
+  ensureCodexMobileSetupDialogLayoutInit,
+  ensureCodexMobileSetupDialogStylesInit,
+} from "../../devices/codex-mobile-setup-dialog";
+import {
+  codexMobileSetupFlowC,
+  codexMobileSetupFlowD,
+  codexMobileSetupFlowF,
+  codexMobileSetupFlowL,
+  codexMobileSetupFlowN,
+  codexMobileSetupFlowO,
+  codexMobileSetupFlowP,
+  codexMobileSetupFlowS,
+  codexMobileSetupFlowT as CodexMobileSetupFlowT,
+  codexMobileSetupFlowU,
+} from "../../devices/codex-mobile-setup-flow";
+import {
+  isWslHostSource,
+  remoteControlHostKey,
+  remoteSshCodexManagedHostKey,
+  remoteSshDiscoveredHostKey,
+} from "../../environments/remote-host-keys";
 import { MOBILE_MFA_SETUP_FEATURE_GATE_ID } from "../../feature-gates/feature-gate-ids";
-import { ensureTanstackReactFormApiInit, useTanstackForm } from "../../forms/tanstack-react-form";
+import {
+  ensureTanstackReactFormApiInit,
+  useTanstackForm,
+} from "../../forms/tanstack-react-form";
 import { ensureGitMetadataQueryInit } from "../../git/ensure-git-metadata-query-init";
 import { useEventCallback } from "../../hooks/use-event-callback";
 import { useGateEnabledWithAccountData } from "../../hooks/use-gate-enabled-with-account-data";
@@ -167,11 +226,17 @@ import { ensureHooksFocusIconInit } from "../../icons/hooks-settings-icons";
 import { TerminalFileIcon } from "../../icons/terminal-file-icon";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { findSidebarSectionElement, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
-import { initOnboardingLoginContent, OnboardingLoginContent } from "../../onboarding/onboarding-login-content";
+import {
+  initOnboardingLoginContent,
+  OnboardingLoginContent,
+} from "../../onboarding/onboarding-login-content";
 import { useTeenOnboardingAgeGate } from "../../onboarding/use-teen-onboarding-age-gate";
 import { AVATAR_OVERLAY_SURFACE_STACK_IDS } from "../../overlay/avatar-overlay-surface-stack-ids";
 import { PdfPermissionFlag } from "../../pdf/pdf-permission-flag";
@@ -188,7 +253,10 @@ import { CopyButton } from "../../ui/copy-button";
 import { DeferredUiB } from "../../ui/deferred-ui-b";
 import { DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { iconXs } from "../../ui/icon-xs";
 import { macOS4 } from "../../ui/mac-os4";
@@ -205,11 +273,20 @@ import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { posixPathBasename } from "../../utils/posix-path-basename";
 import { svgToDataUri } from "../../utils/svg-to-data-uri";
-import { ensureImportSettingsCLInit, ensurePersonalizationCInit as EnsurePersonalizationCInit, ensurePersonalizationG0Init, ensurePersonalizationJutInit, ensurePersonalizationK0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+  ensurePersonalizationG0Init,
+  ensurePersonalizationJutInit,
+  ensurePersonalizationK0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { generalDesktopSettingsDefinitions } from "../general-desktop-settings-definitions";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { useChronicleSettingsSection } from "../use-chronicle-settings-section";
 import { useSettingValue } from "../use-setting-value";
 
@@ -224,78 +301,125 @@ const pond: any = undefined;
 const quarry: any = undefined;
 
 function forge(seedThird) {
-  let {
-      connection,
-      open,
-      isDeleting,
-      onOpenChange,
-      onConfirm
-    } = seedThird,
-    trailThird = event => {
+  let { connection, open, isDeleting, onOpenChange, onConfirm } = seedThird,
+    trailThird = (event) => {
       event.preventDefault();
       onConfirm();
     };
   let urnThird = trailThird,
     vineThird = connection?.displayName ?? "",
-    windThird = <MemoizedFormattedMessage {...{
-      id: "settings.remoteControlConnections.deleteDialog.title",
-      defaultMessage: "Delete {connectionName}?",
-      description: "Title for dialog confirming deletion of a remote control environment",
-      values: {
-        connectionName: vineThird
-      }
-    }} />;
-  let yarrowThird = <MemoizedFormattedMessage {...{
-    id: "settings.remoteControlConnections.deleteDialog.subtitle",
-    defaultMessage: "This removes the environment and its remote control tasks from ChatGPT. This cannot be undone.",
-    description: "Subtitle for dialog confirming deletion of a remote control environment"
-  }} />;
-  let azureThird = <DeferredUiU {...{
-    children: <DeferredUiH {...{
-      title: windThird,
-      subtitle: yarrowThird
-    }} />
-  }} />;
+    windThird = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.remoteControlConnections.deleteDialog.title",
+          defaultMessage: "Delete {connectionName}?",
+          description:
+            "Title for dialog confirming deletion of a remote control environment",
+          values: {
+            connectionName: vineThird,
+          },
+        }}
+      />
+    );
+  let yarrowThird = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.remoteControlConnections.deleteDialog.subtitle",
+        defaultMessage:
+          "This removes the environment and its remote control tasks from ChatGPT. This cannot be undone.",
+        description:
+          "Subtitle for dialog confirming deletion of a remote control environment",
+      }}
+    />
+  );
+  let azureThird = (
+    <DeferredUiU
+      {...{
+        children: (
+          <DeferredUiH
+            {...{
+              title: windThird,
+              subtitle: yarrowThird,
+            }}
+          />
+        ),
+      }}
+    />
+  );
   let birchThird = () => onOpenChange(false);
-  let canyonThird = <MemoizedFormattedMessage {...{
-    id: "settings.remoteControlConnections.deleteDialog.cancel",
-    defaultMessage: "Cancel",
-    description: "Cancel button label for remote control environment delete dialog"
-  }} />;
-  let dewThird = <ReadLoginRouteQuerySnapshot {...{
-    color: "ghost",
-    disabled: isDeleting,
-    type: "button",
-    onClick: birchThird,
-    children: canyonThird
-  }} />;
-  let everThird = <MemoizedFormattedMessage {...{
-    id: "settings.remoteControlConnections.deleteDialog.confirm",
-    defaultMessage: "Delete",
-    description: "Confirm button label for remote control environment delete dialog"
-  }} />;
-  let fieldThird = <ReadLoginRouteQuerySnapshot {...{
-    color: "danger",
-    loading: isDeleting,
-    type: "submit",
-    children: everThird
-  }} />;
-  let grainThird = <DeferredUiU {...{
-    children: <SetRemoteControlEnabledForHost {...{
-      children: [dewThird, fieldThird]
-    }} />
-  }} />;
-  let havenThird = <DeferredUiB {...{
-    as: "form",
-    onSubmit: urnThird,
-    children: [azureThird, grainThird]
-  }} />;
-  return <UsePointerSurfaceInteractionGate {...{
-    open,
-    onOpenChange,
-    size: "compact",
-    children: havenThird
-  }} />;
+  let canyonThird = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.remoteControlConnections.deleteDialog.cancel",
+        defaultMessage: "Cancel",
+        description:
+          "Cancel button label for remote control environment delete dialog",
+      }}
+    />
+  );
+  let dewThird = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "ghost",
+        disabled: isDeleting,
+        type: "button",
+        onClick: birchThird,
+        children: canyonThird,
+      }}
+    />
+  );
+  let everThird = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.remoteControlConnections.deleteDialog.confirm",
+        defaultMessage: "Delete",
+        description:
+          "Confirm button label for remote control environment delete dialog",
+      }}
+    />
+  );
+  let fieldThird = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "danger",
+        loading: isDeleting,
+        type: "submit",
+        children: everThird,
+      }}
+    />
+  );
+  let grainThird = (
+    <DeferredUiU
+      {...{
+        children: (
+          <SetRemoteControlEnabledForHost
+            {...{
+              children: [dewThird, fieldThird],
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let havenThird = (
+    <DeferredUiB
+      {...{
+        as: "form",
+        onSubmit: urnThird,
+        children: [azureThird, grainThird],
+      }}
+    />
+  );
+  return (
+    <UsePointerSurfaceInteractionGate
+      {...{
+        open,
+        onOpenChange,
+        size: "compact",
+        children: havenThird,
+      }}
+    />
+  );
 }
 var gear,
   hinge,
@@ -307,51 +431,78 @@ var gear,
     useOpenLocatorInMainWindow();
   });
 function joint(inkThird) {
-  let {
-      isPairingCodeDisabled,
-      onOpenChange,
-      onPairingCodeEntered,
-      open
-    } = inkThird,
+  let { isPairingCodeDisabled, onOpenChange, onPairingCodeEntered, open } =
+      inkThird,
     [jadeiteThird, kernelThird] = screw.useState(""),
-    leafThird = eddyThird => {
+    leafThird = (eddyThird) => {
       kernelThird(eddyThird);
-      !(eddyThird.length !== valve || isPairingCodeDisabled) && onPairingCodeEntered(piston(eddyThird));
+      !(eddyThird.length !== valve || isPairingCodeDisabled) &&
+        onPairingCodeEntered(piston(eddyThird));
     };
   let mapleThird = leafThird,
-    nimbusThird = event => {
+    nimbusThird = (event) => {
       event.preventDefault();
       mapleThird(jadeiteThird);
     };
   let opalThird = nimbusThird,
-    plumeThird = <RealtimeVoiceHostId {...{
-      className: "sr-only",
-      children: <MemoizedFormattedMessage {...{
-        id: "settings.remoteConnections.manualPairingDialog.title",
-        defaultMessage: "Add a device",
-        description: "Accessible title for the manual remote control pairing dialog"
-      }} />
-    }} />;
-  let quillowThird = <div className="relative h-[214px] overflow-hidden">
-      <img className="h-full w-full object-cover" alt="" aria-hidden={true} src={pond} />
-    </div>;
-  let rootThird = <div className="heading-dialog text-center font-semibold">
-      {<MemoizedFormattedMessage {...{
-      id: "settings.remoteConnections.manualPairingDialog.heading",
-      defaultMessage: "Add a device",
-      description: "Heading for the manual remote control pairing dialog"
-    }} />}
-    </div>;
-  let silkThird = <li>
-      {<MemoizedFormattedMessage {...{
-      id: "settings.remoteConnections.manualPairingDialog.instructions.openCodex",
-      defaultMessage: "Open the ChatGPT app on the computer you want to control, or <a>connect to it over SSH</a>",
-      description: "First step for finding a manual remote control pairing code",
-      values: {
-        a: keystone
+    plumeThird = (
+      <RealtimeVoiceHostId
+        {...{
+          className: "sr-only",
+          children: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.remoteConnections.manualPairingDialog.title",
+                defaultMessage: "Add a device",
+                description:
+                  "Accessible title for the manual remote control pairing dialog",
+              }}
+            />
+          ),
+        }}
+      />
+    );
+  let quillowThird = (
+    <div className="relative h-[214px] overflow-hidden">
+      <img
+        className="h-full w-full object-cover"
+        alt=""
+        aria-hidden={true}
+        src={pond}
+      />
+    </div>
+  );
+  let rootThird = (
+    <div className="heading-dialog text-center font-semibold">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.remoteConnections.manualPairingDialog.heading",
+            defaultMessage: "Add a device",
+            description: "Heading for the manual remote control pairing dialog",
+          }}
+        />
       }
-    }} />}
-    </li>;
+    </div>
+  );
+  let silkThird = (
+    <li>
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.remoteConnections.manualPairingDialog.instructions.openCodex",
+            defaultMessage:
+              "Open the ChatGPT app on the computer you want to control, or <a>connect to it over SSH</a>",
+            description:
+              "First step for finding a manual remote control pairing code",
+            values: {
+              a: keystone,
+            },
+          }}
+        />
+      }
+    </li>
+  );
   let thornThird, uplandThird, vistaThird, wispThird, yonderThird, zenithThird;
   wispThird = latch("settings");
   yonderThird = latch("connections");
@@ -359,123 +510,224 @@ function joint(inkThird) {
   thornThird = latch("pc");
   uplandThird = latch("add");
   vistaThird = latch("ssh");
-  let anvilThird = <GrainFifth {...{
-    "aria-hidden": true,
-    className: "h-3.5 w-auto stroke-current stroke-[0.5]"
-  }} />;
-  let beaconThird = <div className="flex w-full flex-col gap-3">
+  let anvilThird = (
+    <GrainFifth
+      {...{
+        "aria-hidden": true,
+        className: "h-3.5 w-auto stroke-current stroke-[0.5]",
+      }}
+    />
+  );
+  let beaconThird = (
+    <div className="flex w-full flex-col gap-3">
       {rootThird}
-      {<IsStartingProcessExpired {...{
-      asChild: true,
-      children: <ol className="flex list-decimal flex-col gap-3 pl-5 text-base leading-normal tracking-normal text-token-foreground">
+      {
+        <IsStartingProcessExpired
+          {...{
+            asChild: true,
+            children: (
+              <ol className="flex list-decimal flex-col gap-3 pl-5 text-base leading-normal tracking-normal text-token-foreground">
                 {silkThird}
                 <li>
-                  {<MemoizedFormattedMessage {...{
-            id: "settings.remoteConnections.manualPairingDialog.instructions.openConnections",
-            defaultMessage: "Go to <settings>Settings</settings> > <connections>Connections</connections> > <controlMac>Control this Mac</controlMac> or <pc>PC</pc>, then click <add>Add</add>. For SSH connections, select the <ssh>SSH</ssh> tab and click {icon}.",
-            description: "Second step for finding a manual remote control pairing code",
-            values: {
-              settings: wispThird,
-              connections: yonderThird,
-              controlMac: zenithThird,
-              pc: thornThird,
-              add: uplandThird,
-              ssh: vistaThird,
-              icon: <strong key="remote-control-icon" className="inline-flex items-center align-[-2px] font-semibold">
+                  {
+                    <MemoizedFormattedMessage
+                      {...{
+                        id: "settings.remoteConnections.manualPairingDialog.instructions.openConnections",
+                        defaultMessage:
+                          "Go to <settings>Settings</settings> > <connections>Connections</connections> > <controlMac>Control this Mac</controlMac> or <pc>PC</pc>, then click <add>Add</add>. For SSH connections, select the <ssh>SSH</ssh> tab and click {icon}.",
+                        description:
+                          "Second step for finding a manual remote control pairing code",
+                        values: {
+                          settings: wispThird,
+                          connections: yonderThird,
+                          controlMac: zenithThird,
+                          pc: thornThird,
+                          add: uplandThird,
+                          ssh: vistaThird,
+                          icon: (
+                            <strong
+                              key="remote-control-icon"
+                              className="inline-flex items-center align-[-2px] font-semibold"
+                            >
                               {anvilThird}
                               <span className="sr-only">
-                                {<MemoizedFormattedMessage {...{
-                    id: "settings.remoteConnections.manualPairingDialog.instructions.remoteControlIcon",
-                    defaultMessage: "Remote control",
-                    description: "Accessible label for the remote control icon in the second manual pairing instruction"
-                  }} />}
+                                {
+                                  <MemoizedFormattedMessage
+                                    {...{
+                                      id: "settings.remoteConnections.manualPairingDialog.instructions.remoteControlIcon",
+                                      defaultMessage: "Remote control",
+                                      description:
+                                        "Accessible label for the remote control icon in the second manual pairing instruction",
+                                    }}
+                                  />
+                                }
                               </span>
                             </strong>
-            }
-          }} />}
+                          ),
+                        },
+                      }}
+                    />
+                  }
                 </li>
                 <li>
-                  {<MemoizedFormattedMessage {...{
-            id: "settings.remoteConnections.manualPairingDialog.instructions.enterPin",
-            defaultMessage: "Enter the 8-digit PIN below:",
-            description: "Third step for entering a manual remote control pairing code"
-          }} />}
+                  {
+                    <MemoizedFormattedMessage
+                      {...{
+                        id: "settings.remoteConnections.manualPairingDialog.instructions.enterPin",
+                        defaultMessage: "Enter the 8-digit PIN below:",
+                        description:
+                          "Third step for entering a manual remote control pairing code",
+                      }}
+                    />
+                  }
                 </li>
               </ol>
-    }} />}
-    </div>;
-  let cragThird = <YarrowFifth {...{
-    disabled: isPairingCodeDisabled,
-    pairingCode: jadeiteThird,
-    onPairingCodeChange: mapleThird
-  }} />;
-  let domeThird = <div className="pointer-events-auto flex flex-col overflow-hidden">
+            ),
+          }}
+        />
+      }
+    </div>
+  );
+  let cragThird = (
+    <YarrowFifth
+      {...{
+        disabled: isPairingCodeDisabled,
+        pairingCode: jadeiteThird,
+        onPairingCodeChange: mapleThird,
+      }}
+    />
+  );
+  let domeThird = (
+    <div className="pointer-events-auto flex flex-col overflow-hidden">
       {plumeThird}
       {quillowThird}
-      <form className="flex flex-col items-center gap-6 px-8 pt-6 pb-12" onSubmit={opalThird}>
+      <form
+        className="flex flex-col items-center gap-6 px-8 pt-6 pb-12"
+        onSubmit={opalThird}
+      >
         {beaconThird}
         {cragThird}
       </form>
-    </div>;
-  return <UsePointerSurfaceInteractionGate {...{
-    open,
-    onOpenChange,
-    children: domeThird
-  }} />;
+    </div>
+  );
+  return (
+    <UsePointerSurfaceInteractionGate
+      {...{
+        open,
+        onOpenChange,
+        children: domeThird,
+      }}
+    />
+  );
 }
 function keystone(fjordThird) {
-  return <RelativeDateStringLabel key="ssh-instructions-link" className="cursor-interaction underline underline-offset-2" href={bracket} initiator="open_in_browser_bridge" isBrowserSidebarEnabled={false}>
+  return (
+    <RelativeDateStringLabel
+      key="ssh-instructions-link"
+      className="cursor-interaction underline underline-offset-2"
+      href={bracket}
+      initiator="open_in_browser_bridge"
+      isBrowserSidebarEnabled={false}
+    >
       {screw.Children.toArray(fjordThird)}
-    </RelativeDateStringLabel>;
+    </RelativeDateStringLabel>
+  );
 }
 function latch(glenThird) {
-  return hearthThird => <strong key={glenThird} className="font-semibold">
+  return (hearthThird) => (
+    <strong key={glenThird} className="font-semibold">
       {screw.Children.toArray(hearthThird)}
-    </strong>;
+    </strong>
+  );
 }
 function motor(inletThird) {
-  let {
-      disabled,
-      onPairingCodeChange,
-      pairingCode
-    } = inletThird,
+  let { disabled, onPairingCodeChange, pairingCode } = inletThird,
     jettyThird = useIntl(),
-    knobThird = <legend className="sr-only">
-        {<MemoizedFormattedMessage {...{
-        id: "settings.remoteConnections.manualPairingDialog.codeLabel",
-        defaultMessage: "Pairing code",
-        description: "Accessible label for the manual remote control pairing code fields"
-      }} />}
-      </legend>;
+    knobThird = (
+      <legend className="sr-only">
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.remoteConnections.manualPairingDialog.codeLabel",
+              defaultMessage: "Pairing code",
+              description:
+                "Accessible label for the manual remote control pairing code fields",
+            }}
+          />
+        }
+      </legend>
+    );
   let ledgeThird = jettyThird.formatMessage({
     id: "settings.remoteConnections.manualPairingDialog.codeInput",
     defaultMessage: "Pairing code",
-    description: "Accessible label for the manual remote control pairing code input"
+    description:
+      "Accessible label for the manual remote control pairing code input",
   });
-  let mireThird = event => {
+  let mireThird = (event) => {
     onPairingCodeChange(nut(event.currentTarget.value));
   };
-  let nookThird = <input className="absolute inset-0 z-10 cursor-interaction opacity-0 outline-none disabled:cursor-not-allowed" aria-label={ledgeThird} autoCapitalize="characters" autoComplete="one-time-code" autoCorrect="off" autoFocus={true} disabled={disabled} inputMode="text" spellCheck={false} type="text" value={pairingCode} onChange={mireThird} />;
-  let oxbowThird = Array.from({
-    length: valve
-  }, (pondThird, quarryThird) => <div key={`manual-pairing-code-character-${quarryThird}`} className="contents">
-        {quarryThird === axle ? <span aria-hidden={true} className="px-1 text-2xl text-token-description-foreground">
+  let nookThird = (
+    <input
+      className="absolute inset-0 z-10 cursor-interaction opacity-0 outline-none disabled:cursor-not-allowed"
+      aria-label={ledgeThird}
+      autoCapitalize="characters"
+      autoComplete="one-time-code"
+      autoCorrect="off"
+      autoFocus={true}
+      disabled={disabled}
+      inputMode="text"
+      spellCheck={false}
+      type="text"
+      value={pairingCode}
+      onChange={mireThird}
+    />
+  );
+  let oxbowThird = Array.from(
+    {
+      length: valve,
+    },
+    (pondThird, quarryThird) => (
+      <div
+        key={`manual-pairing-code-character-${quarryThird}`}
+        className="contents"
+      >
+        {quarryThird === axle ? (
+          <span
+            aria-hidden={true}
+            className="px-1 text-2xl text-token-description-foreground"
+          >
             {"-"}
-          </span> : null}
-        <span aria-hidden={true} className={IntlProvider("flex h-[72px] w-12 items-center justify-center rounded-2xl border border-token-border bg-token-input-background text-xl font-medium text-token-input-foreground group-has-[:disabled]:cursor-not-allowed group-has-[:disabled]:opacity-40", !disabled && quarryThird === Math.min(pairingCode.length, valve - 1) && "group-focus-within:border-token-focus-border")}>
+          </span>
+        ) : null}
+        <span
+          aria-hidden={true}
+          className={IntlProvider(
+            "flex h-[72px] w-12 items-center justify-center rounded-2xl border border-token-border bg-token-input-background text-xl font-medium text-token-input-foreground group-has-[:disabled]:cursor-not-allowed group-has-[:disabled]:opacity-40",
+            !disabled &&
+              quarryThird === Math.min(pairingCode.length, valve - 1) &&
+              "group-focus-within:border-token-focus-border",
+          )}
+        >
           {pairingCode[quarryThird]}
         </span>
-      </div>);
-  return <fieldset className="m-0 flex items-center justify-center border-0 p-0">
+      </div>
+    ),
+  );
+  return (
+    <fieldset className="m-0 flex items-center justify-center border-0 p-0">
       {knobThird}
       <label className="group relative flex items-center justify-center gap-2">
         {nookThird}
         {oxbowThird}
       </label>
-    </fieldset>;
+    </fieldset>
+  );
 }
 function nut(rapidsThird) {
-  return rapidsThird.replace(/[^a-z0-9]/giu, "").toUpperCase().slice(0, valve);
+  return rapidsThird
+    .replace(/[^a-z0-9]/giu, "")
+    .toUpperCase()
+    .slice(0, valve);
 }
 function piston(spurThird) {
   return `${spurThird.slice(0, axle)}-${spurThird.slice(axle)}`;
@@ -497,13 +749,18 @@ var rivet,
     apex();
     valve = 8;
     axle = 4;
-    bracket = "https://developers.openai.com/codex/remote-connections#connect-to-an-ssh-host";
+    bracket =
+      "https://developers.openai.com/codex/remote-connections#connect-to-an-ssh-host";
   });
 function drill({
   remoteControlConnectionsAuthorized,
   remoteControlConnectionsAuthRequired,
-  showRemoteControlConnectionsSection
+  showRemoteControlConnectionsSection,
 }) {
-  return showRemoteControlConnectionsSection && !remoteControlConnectionsAuthRequired && !remoteControlConnectionsAuthorized;
+  return (
+    showRemoteControlConnectionsSection &&
+    !remoteControlConnectionsAuthRequired &&
+    !remoteControlConnectionsAuthorized
+  );
 }
 var engine = esmInit(() => {});

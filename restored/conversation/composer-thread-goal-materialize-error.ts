@@ -10,7 +10,9 @@ export type BindComposerThreadGoalMaterializeErrorPeers = {
 let peers: BindComposerThreadGoalMaterializeErrorPeers | null = null;
 
 /** Wire bindComposerThreadGoalMaterializeError peers once companions land. */
-export function setBindComposerThreadGoalMaterializeErrorPeers(next: BindComposerThreadGoalMaterializeErrorPeers): void {
+export function setBindComposerThreadGoalMaterializeErrorPeers(
+  next: BindComposerThreadGoalMaterializeErrorPeers,
+): void {
   peers = next;
 }
 
@@ -19,10 +21,12 @@ export function setBindComposerThreadGoalMaterializeErrorPeers(next: BindCompose
  */
 export function bindComposerThreadGoalMaterializeError() {
   if (peers == null) {
-    throw new Error("bindComposerThreadGoalMaterializeError peers are not configured");
+    throw new Error(
+      "bindComposerThreadGoalMaterializeError peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Au(), peers.HAo();
+    (peers.Au(), peers.HAo());
   });
 }

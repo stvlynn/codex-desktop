@@ -9,9 +9,21 @@
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_E4_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Wdt_Init, ensureComposerEsm_Wlt_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_E4_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Wdt_Init,
+  ensureComposerEsm_Wlt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { invokeDesktopRpc } from "../../desktop/invoke-desktop-rpc";
@@ -19,7 +31,11 @@ import { DiffLinesStatsBadge } from "../../diff/diff-lines-stats-badge";
 import { openFileInPanelTab } from "../../files/open-file-in-panel-tab";
 import { cloud5 } from "../../git/cloud5";
 import { remoteUpstreamUrl } from "../../git/remote-upstream-url";
-import { ensureHostConfigIdInit, getHostConfigId, getHostRpcClient } from "../../hooks/host-rpc-client";
+import {
+  ensureHostConfigIdInit,
+  getHostConfigId,
+  getHostRpcClient,
+} from "../../hooks/host-rpc-client";
 import { useGitRepoLiveQuery } from "../../hooks/use-git-repo-live-query";
 import { UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
@@ -28,7 +44,10 @@ import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message"
 import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import { gitSettingsDefinitions } from "../../settings/git-settings-definitions";
@@ -83,40 +102,48 @@ function EnvironmentLabelsHelper11(elbow) {
       gitRoot,
       hostConfig,
       targetBranch,
-      onContinue
+      onContinue,
     } = elbow,
-    {
-      data
-    } = environmentLabelsC(gitRoot, hostConfig, $),
+    { data } = environmentLabelsC(gitRoot, hostConfig, $),
     ferrule = identityCwd(gitRoot);
   let grommet = {
     cwd: ferrule,
     includeUntrackedFiles: false,
     operationSource: $,
-    source: "staged"
+    source: "staged",
   };
   let header = {
     enabled: open,
     liveQuery: quartz,
-    staleTime: 1 / 0
+    staleTime: 1 / 0,
   };
-  let {
-      data: _data
-    } = useGitRepoLiveQuery(gitRoot, hostConfig, "review-summary", grommet, $, header),
+  let { data: _data } = useGitRepoLiveQuery(
+      gitRoot,
+      hostConfig,
+      "review-summary",
+      grommet,
+      $,
+      header,
+    ),
     injector = identityCwd(gitRoot);
   let jumper = {
     cwd: injector,
     operationSource: $,
-    source: "unstaged"
+    source: "unstaged",
   };
   let kerf = {
     enabled: open,
     liveQuery: pearl,
-    staleTime: 1 / 0
+    staleTime: 1 / 0,
   };
-  let {
-      data: __data
-    } = useGitRepoLiveQuery(gitRoot, hostConfig, "review-summary", jumper, $, kerf),
+  let { data: __data } = useGitRepoLiveQuery(
+      gitRoot,
+      hostConfig,
+      "review-summary",
+      jumper,
+      $,
+      kerf,
+    ),
     Louver,
     Manifold,
     Nip,
@@ -140,152 +167,262 @@ function EnvironmentLabelsHelper11(elbow) {
     packing = open;
     reducer = onOpenChange;
     Manifold = DeferredUiB;
-    union = <DeferredUiU {...{
-      children: <DeferredUiH {...{
-        title: <MemoizedFormattedMessage {...{
-          id: "composer.footer.branchSwitch.uncommittedDialog.title",
-          defaultMessage: "Commit changes to switch branch",
-          description: "Title for dialog shown when branch switching is blocked by uncommitted changes"
-        }} />
-      }} />
-    }} />;
+    union = (
+      <DeferredUiU
+        {...{
+          children: (
+            <DeferredUiH
+              {...{
+                title: (
+                  <MemoizedFormattedMessage
+                    {...{
+                      id: "composer.footer.branchSwitch.uncommittedDialog.title",
+                      defaultMessage: "Commit changes to switch branch",
+                      description:
+                        "Title for dialog shown when branch switching is blocked by uncommitted changes",
+                    }}
+                  />
+                ),
+              }}
+            />
+          ),
+        }}
+      />
+    );
     Louver = DeferredUiU;
     strainer = "text-token-description-foreground";
-    tee = kitePrime ? <div className="flex flex-col gap-2 text-sm">
-        {<MemoizedFormattedMessage {...{
-        id: "composer.footer.branchSwitch.uncommittedDialog.conflict.bodyPrefix",
-        defaultMessage: "Your changes to the following files would be overwritten by checkout:",
-        description: "Message shown in the uncommitted changes dialog before listing files that block checkout"
-      }} />}
+    tee = kitePrime ? (
+      <div className="flex flex-col gap-2 text-sm">
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "composer.footer.branchSwitch.uncommittedDialog.conflict.bodyPrefix",
+              defaultMessage:
+                "Your changes to the following files would be overwritten by checkout:",
+              description:
+                "Message shown in the uncommitted changes dialog before listing files that block checkout",
+            }}
+          />
+        }
         <div className="flex flex-col gap-1">
           {conflictFiles.map((item, index) => {
-          let nickelPrime = AppInitialFD(item, falconPrime);
-          return <div key={`${item}:${index}`} className="inline-flex items-center gap-1 text-token-foreground">
+            let nickelPrime = AppInitialFD(item, falconPrime);
+            return (
+              <div
+                key={`${item}:${index}`}
+                className="inline-flex items-center gap-1 text-token-foreground"
+              >
                 <span>{item}</span>
-                {nickelPrime == null ? null : <DiffLinesStatsBadge {...{
-              className: "inline-flex align-middle",
-              linesAdded: nickelPrime.linesAdded,
-              linesRemoved: nickelPrime.linesRemoved
-            }} />}
-              </div>;
-        })}
+                {nickelPrime == null ? null : (
+                  <DiffLinesStatsBadge
+                    {...{
+                      className: "inline-flex align-middle",
+                      linesAdded: nickelPrime.linesAdded,
+                      linesRemoved: nickelPrime.linesRemoved,
+                    }}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
-        {<MemoizedFormattedMessage {...{
-        id: "composer.footer.branchSwitch.uncommittedDialog.conflict.bodySuffix",
-        defaultMessage: "Please commit your changes to continue",
-        description: "Message shown in the uncommitted changes dialog after listing files that block checkout"
-      }} />}
-      </div> : jadePrime ? <span className="inline-flex items-center gap-1 whitespace-nowrap">
-        {targetBranch == null ? <MemoizedFormattedMessage {...{
-        id: "composer.footer.branchSwitch.uncommittedDialog.body.withDiff.unknownBranch",
-        defaultMessage: "Commit <diffStats></diffStats> changes in {fileCount, plural, one {# file} other {# files}} to check out the selected branch.",
-        description: "Body text in the uncommitted changes dialog when diff stats are available but the target branch name is unavailable",
-        values: {
-          fileCount: marblePrime,
-          diffStats: () => <DiffLinesStatsBadge {...{
-            className: "inline-flex align-middle",
-            linesAdded: harborPrime,
-            linesRemoved: indigoPrime
-          }} />
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "composer.footer.branchSwitch.uncommittedDialog.conflict.bodySuffix",
+              defaultMessage: "Please commit your changes to continue",
+              description:
+                "Message shown in the uncommitted changes dialog after listing files that block checkout",
+            }}
+          />
         }
-      }} /> : <MemoizedFormattedMessage {...{
-        id: "composer.footer.branchSwitch.uncommittedDialog.body.withDiff.namedBranch",
-        defaultMessage: "Commit <diffStats></diffStats> changes in {fileCount, plural, one {# file} other {# files}} to check out {branchName}.",
-        description: "Body text in the uncommitted changes dialog when diff stats and the target branch name are available",
-        values: {
-          fileCount: marblePrime,
-          branchName: targetBranch,
-          diffStats: () => <DiffLinesStatsBadge {...{
-            className: "inline-flex align-middle",
-            linesAdded: harborPrime,
-            linesRemoved: indigoPrime
-          }} />
-        }
-      }} />}
-      </span> : targetBranch == null ? <MemoizedFormattedMessage {...{
-      id: "composer.footer.branchSwitch.uncommittedDialog.body.noDiff.unknownBranch",
-      defaultMessage: "Commit changes in {fileCount, plural, one {# file} other {# files}} to check out the selected branch.",
-      description: "Body text in the uncommitted changes dialog when diff stats and the target branch name are unavailable",
-      values: {
-        fileCount: marblePrime
-      }
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "composer.footer.branchSwitch.uncommittedDialog.body.noDiff.namedBranch",
-      defaultMessage: "Commit changes in {fileCount, plural, one {# file} other {# files}} to check out {branchName}.",
-      description: "Body text in the uncommitted changes dialog when diff stats are unavailable but the target branch name is available",
-      values: {
-        fileCount: marblePrime,
-        branchName: targetBranch
-      }
-    }} />;
+      </div>
+    ) : jadePrime ? (
+      <span className="inline-flex items-center gap-1 whitespace-nowrap">
+        {targetBranch == null ? (
+          <MemoizedFormattedMessage
+            {...{
+              id: "composer.footer.branchSwitch.uncommittedDialog.body.withDiff.unknownBranch",
+              defaultMessage:
+                "Commit <diffStats></diffStats> changes in {fileCount, plural, one {# file} other {# files}} to check out the selected branch.",
+              description:
+                "Body text in the uncommitted changes dialog when diff stats are available but the target branch name is unavailable",
+              values: {
+                fileCount: marblePrime,
+                diffStats: () => (
+                  <DiffLinesStatsBadge
+                    {...{
+                      className: "inline-flex align-middle",
+                      linesAdded: harborPrime,
+                      linesRemoved: indigoPrime,
+                    }}
+                  />
+                ),
+              },
+            }}
+          />
+        ) : (
+          <MemoizedFormattedMessage
+            {...{
+              id: "composer.footer.branchSwitch.uncommittedDialog.body.withDiff.namedBranch",
+              defaultMessage:
+                "Commit <diffStats></diffStats> changes in {fileCount, plural, one {# file} other {# files}} to check out {branchName}.",
+              description:
+                "Body text in the uncommitted changes dialog when diff stats and the target branch name are available",
+              values: {
+                fileCount: marblePrime,
+                branchName: targetBranch,
+                diffStats: () => (
+                  <DiffLinesStatsBadge
+                    {...{
+                      className: "inline-flex align-middle",
+                      linesAdded: harborPrime,
+                      linesRemoved: indigoPrime,
+                    }}
+                  />
+                ),
+              },
+            }}
+          />
+        )}
+      </span>
+    ) : targetBranch == null ? (
+      <MemoizedFormattedMessage
+        {...{
+          id: "composer.footer.branchSwitch.uncommittedDialog.body.noDiff.unknownBranch",
+          defaultMessage:
+            "Commit changes in {fileCount, plural, one {# file} other {# files}} to check out the selected branch.",
+          description:
+            "Body text in the uncommitted changes dialog when diff stats and the target branch name are unavailable",
+          values: {
+            fileCount: marblePrime,
+          },
+        }}
+      />
+    ) : (
+      <MemoizedFormattedMessage
+        {...{
+          id: "composer.footer.branchSwitch.uncommittedDialog.body.noDiff.namedBranch",
+          defaultMessage:
+            "Commit changes in {fileCount, plural, one {# file} other {# files}} to check out {branchName}.",
+          description:
+            "Body text in the uncommitted changes dialog when diff stats are unavailable but the target branch name is available",
+          values: {
+            fileCount: marblePrime,
+            branchName: targetBranch,
+          },
+        }}
+      />
+    );
   }
-  let vent = <Louver {...{
-    className: strainer,
-    children: tee
-  }} />;
+  let vent = (
+    <Louver
+      {...{
+        className: strainer,
+        children: tee,
+      }}
+    />
+  );
   let wye = () => {
     onOpenChange(false);
   };
-  let zener = <MemoizedFormattedMessage {...{
-    id: "composer.footer.branchSwitch.uncommittedDialog.cancel",
-    defaultMessage: "Cancel",
-    description: "Secondary button label in branch switching blocked dialog shown in the composer footer"
-  }} />;
-  let alphaPrime = <ReadLoginRouteQuerySnapshot {...{
-    color: "secondary",
-    onClick: wye,
-    children: zener
-  }} />;
-  let bravoPrime = <MemoizedFormattedMessage {...{
-    id: "composer.footer.branchSwitch.uncommittedDialog.commit",
-    defaultMessage: "Commit and switch branch…",
-    description: "Primary button label in branch switching blocked dialog shown in the composer footer"
-  }} />;
-  let copperPrime = <ReadLoginRouteQuerySnapshot {...{
-    color: "primary",
-    onClick: onContinue,
-    children: bravoPrime
-  }} />;
-  let deltaPrime = <DeferredUiU {...{
-    children: <SetRemoteControlEnabledForHost {...{
-      children: [alphaPrime, copperPrime]
-    }} />
-  }} />;
-  let echoPrime = <Manifold {...{
-    children: [union, vent, deltaPrime]
-  }} />;
-  return <Nip {...{
-    size: outlet,
-    open: packing,
-    onOpenChange: reducer,
-    children: echoPrime
-  }} />;
+  let zener = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "composer.footer.branchSwitch.uncommittedDialog.cancel",
+        defaultMessage: "Cancel",
+        description:
+          "Secondary button label in branch switching blocked dialog shown in the composer footer",
+      }}
+    />
+  );
+  let alphaPrime = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "secondary",
+        onClick: wye,
+        children: zener,
+      }}
+    />
+  );
+  let bravoPrime = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "composer.footer.branchSwitch.uncommittedDialog.commit",
+        defaultMessage: "Commit and switch branch…",
+        description:
+          "Primary button label in branch switching blocked dialog shown in the composer footer",
+      }}
+    />
+  );
+  let copperPrime = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "primary",
+        onClick: onContinue,
+        children: bravoPrime,
+      }}
+    />
+  );
+  let deltaPrime = (
+    <DeferredUiU
+      {...{
+        children: (
+          <SetRemoteControlEnabledForHost
+            {...{
+              children: [alphaPrime, copperPrime],
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let echoPrime = (
+    <Manifold
+      {...{
+        children: [union, vent, deltaPrime],
+      }}
+    />
+  );
+  return (
+    <Nip
+      {...{
+        size: outlet,
+        open: packing,
+        onOpenChange: reducer,
+        children: echoPrime,
+      }}
+    />
+  );
 }
 function pearl(onyxPrime) {
   return {
     method: "review-summary",
-    params: onyxPrime
+    params: onyxPrime,
   };
 }
 function quartz(pearlPrime) {
   return {
     method: "review-summary",
-    params: pearlPrime
+    params: pearlPrime,
   };
 }
-function river({
-  branches,
-  currentBranch,
-  defaultBranch
-}) {
+function river({ branches, currentBranch, defaultBranch }) {
   let quartzPrime = new Set(),
     riverPrime = [];
-  return slate(defaultBranch, riverPrime, quartzPrime), slate(currentBranch, riverPrime, quartzPrime), branches.forEach(item => {
-    slate(item, riverPrime, quartzPrime);
-  }), riverPrime;
+  return (
+    slate(defaultBranch, riverPrime, quartzPrime),
+    slate(currentBranch, riverPrime, quartzPrime),
+    branches.forEach((item) => {
+      slate(item, riverPrime, quartzPrime);
+    }),
+    riverPrime
+  );
 }
 function slate(slatePrime, timberPrime, umbraPrime) {
-  !slatePrime || umbraPrime.has(slatePrime) || (umbraPrime.add(slatePrime), timberPrime.push(slatePrime));
+  !slatePrime ||
+    umbraPrime.has(slatePrime) ||
+    (umbraPrime.add(slatePrime), timberPrime.push(slatePrime));
 }
 var timber, umbra, violet, $;
 export const environmentLabelsI = esmInit(() => {
@@ -329,7 +466,10 @@ function willow(violetPrime, willowPrime) {
   return willowPrime?.trim() || _t(violetPrime);
 }
 export function environmentLabelsT(xenonPrime: unknown) {
-  return willow(xenonPrime.configPath, xenonPrime.type === "success" ? xenonPrime.environment.name : null);
+  return willow(
+    xenonPrime.configPath,
+    xenonPrime.type === "success" ? xenonPrime.environment.name : null,
+  );
 }
 function _t(yellowPrime) {
   let zincPrime = toPosixPath(yellowPrime),

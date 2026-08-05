@@ -10,20 +10,12 @@ export function isLeapYear(fyfIn13550: any) {
   return new Date(fyfIn13550, 1, 29).getMonth() === 1;
 }
 export function dateDiffDays(fyfIn13019: any, fyfIn13020: any) {
-  return Math.ceil(
-    (fyfIn13020 - fyfIn13019) / 1e3 / 60 / 60 / 24,
-  );
+  return Math.ceil((fyfIn13020 - fyfIn13019) / 1e3 / 60 / 60 / 24);
 }
-export function yearFrac(fyfIn1045: any, fyfIn1046: any, fyfIn1047: any, ) {
-  if (
-    ((fyfIn1045 = fyfH.coerceDate(fyfIn1045)),
-    fyfIn1045 instanceof Error)
-  )
+export function yearFrac(fyfIn1045: any, fyfIn1046: any, fyfIn1047: any) {
+  if (((fyfIn1045 = fyfH.coerceDate(fyfIn1045)), fyfIn1045 instanceof Error))
     return fyfIn1045;
-  if (
-    ((fyfIn1046 = fyfH.coerceDate(fyfIn1046)),
-    fyfIn1046 instanceof Error)
-  )
+  if (((fyfIn1046 = fyfH.coerceDate(fyfIn1046)), fyfIn1046 instanceof Error))
     return fyfIn1046;
   fyfIn1047 ||= 0;
   let fyfBind6265 = fyfIn1045.getDate(),
@@ -39,15 +31,11 @@ export function yearFrac(fyfIn1045: any, fyfIn1046: any, fyfIn1047: any, ) {
           ? ((fyfBind6265 = 30), (fyfBind6268 = 30))
           : fyfBind6265 === 31
             ? (fyfBind6265 = 30)
-            : fyfBind6265 === 30 &&
-              fyfBind6268 === 31 &&
-              (fyfBind6268 = 30),
+            : fyfBind6265 === 30 && fyfBind6268 === 31 && (fyfBind6268 = 30),
         (fyfBind6268 +
           fyfBind6269 * 30 +
           fyfBind6270 * 360 -
-          (fyfBind6265 +
-            fyfBind6266 * 30 +
-            fyfBind6267 * 360)) /
+          (fyfBind6265 + fyfBind6266 * 30 + fyfBind6267 * 360)) /
           360
       );
     case 1: {
@@ -73,31 +61,24 @@ export function yearFrac(fyfIn1045: any, fyfIn1046: any, fyfIn1047: any, ) {
         fyfBind6267 === fyfBind6270 ||
         (fyfBind6267 + 1 === fyfBind6270 &&
           (fyfBind6266 > fyfBind6269 ||
-            (fyfBind6266 === fyfBind6269 &&
-              fyfBind6265 >= fyfBind6268)))
+            (fyfBind6266 === fyfBind6269 && fyfBind6265 >= fyfBind6268)))
       )
         return (
-          ((fyfBind6267 === fyfBind6270 &&
-            isLeapYear(fyfBind6267)) ||
+          ((fyfBind6267 === fyfBind6270 && isLeapYear(fyfBind6267)) ||
             fyfBind10763(fyfIn1045, fyfIn1046) ||
             (fyfBind6269 === 1 && fyfBind6268 === 29)) &&
             (fyfBind10764 = 366),
-          dateDiffDays(fyfIn1045, fyfIn1046) /
-            fyfBind10764
+          dateDiffDays(fyfIn1045, fyfIn1046) / fyfBind10764
         );
       let fyfBind10765 = fyfBind6270 - fyfBind6267 + 1,
         fyfBind10766 =
-          (new Date(fyfBind6270 + 1, 0, 1) -
-            new Date(fyfBind6267, 0, 1)) /
+          (new Date(fyfBind6270 + 1, 0, 1) - new Date(fyfBind6267, 0, 1)) /
           1e3 /
           60 /
           60 /
           24 /
           fyfBind10765;
-      return (
-        dateDiffDays(fyfIn1045, fyfIn1046) /
-        fyfBind10766
-      );
+      return dateDiffDays(fyfIn1045, fyfIn1046) / fyfBind10766;
     }
     case 2:
       return dateDiffDays(fyfIn1045, fyfIn1046) / 360;
@@ -108,9 +89,7 @@ export function yearFrac(fyfIn1045: any, fyfIn1046: any, fyfIn1047: any, ) {
         (fyfBind6268 +
           fyfBind6269 * 30 +
           fyfBind6270 * 360 -
-          (fyfBind6265 +
-            fyfBind6266 * 30 +
-            fyfBind6267 * 360)) /
+          (fyfBind6265 + fyfBind6266 * 30 + fyfBind6267 * 360)) /
         360
       );
   }

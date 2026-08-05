@@ -31,7 +31,11 @@ export function bindDeferredUiGnt() {
       return this.#e;
     }
     static set workerPort(e) {
-      if (!(typeof peers.Worker < `u` && peers.e instanceof peers.Worker) && peers.e !== null) throw Error("Invalid `workerPort` type.");
+      if (
+        !(typeof peers.Worker < `u` && peers.e instanceof peers.Worker) &&
+        peers.e !== null
+      )
+        throw Error("Invalid `workerPort` type.");
       this.#e = peers.e;
     }
     static get workerSrc() {

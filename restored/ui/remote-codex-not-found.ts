@@ -8,7 +8,8 @@
 // Soft bindable host removed — typed constants match real usage.
 
 /** Host / app-server connection error code (`error.code`). */
-export const REMOTE_CODEX_NOT_FOUND_ERROR_CODE = "remote-codex-not-found" as const;
+export const REMOTE_CODEX_NOT_FOUND_ERROR_CODE =
+  "remote-codex-not-found" as const;
 
 export type RemoteCodexNotFoundErrorCode =
   typeof REMOTE_CODEX_NOT_FOUND_ERROR_CODE;

@@ -13,7 +13,9 @@ export function setFileCitationPathResolver(resolver: PathResolver): void {
   resolveCitationPath = resolver;
 }
 
-export function rewriteFileCitationMarkers(text: string, shouldKeepPath?: (resolvedPath: string) => boolean,
+export function rewriteFileCitationMarkers(
+  text: string,
+  shouldKeepPath?: (resolvedPath: string) => boolean,
 ): string {
   return text.replace(
     FILE_CITATION_MARKER_RE,

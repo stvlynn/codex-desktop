@@ -144,8 +144,7 @@ export const shapeGeometryNameToProto = {
   flowChartInternalStorage:
     ShapeGeometry.SHAPE_GEOMETRY_FLOW_CHART_INTERNAL_STORAGE,
   flowChartDocument: ShapeGeometry.SHAPE_GEOMETRY_FLOW_CHART_DOCUMENT,
-  flowChartMultidocument:
-    ShapeGeometry.SHAPE_GEOMETRY_FLOW_CHART_MULTIDOCUMENT,
+  flowChartMultidocument: ShapeGeometry.SHAPE_GEOMETRY_FLOW_CHART_MULTIDOCUMENT,
   flowChartTerminator: ShapeGeometry.SHAPE_GEOMETRY_FLOW_CHART_TERMINATOR,
   flowChartPreparation: ShapeGeometry.SHAPE_GEOMETRY_FLOW_CHART_PREPARATION,
   flowChartManualInput: ShapeGeometry.SHAPE_GEOMETRY_FLOW_CHART_MANUAL_INPUT,

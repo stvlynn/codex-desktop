@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/use-chatgpt-composer-controller-CXc9FuAU.js
 // Map / businesses_map content-reference widgets (Helper182–207 + Value273).
 
-import {
-  ensureComposerEsm_oL_Init as AppInitialOL,
-} from "../../composer/composer-esm-inits";
+import { ensureComposerEsm_oL_Init as AppInitialOL } from "../../composer/composer-esm-inits";
 import {
   jsxRuntime as appInitialJvt,
   react as appInitialLvt,
@@ -12,11 +10,12 @@ import {
 import { extractMapEntitiesFromContentReference as appInitialDI } from "../../content/extract-map-entities-from-content-reference";
 import { MemoizedFormattedMessage as appInitialGft } from "../../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit as appInitialHft } from "../../i18n/use-intl";
-import {
-  NavigationAllowContext as _appInitialIL,
-} from "../../navigation/navigation-allow-context";
+import { NavigationAllowContext as _appInitialIL } from "../../navigation/navigation-allow-context";
 import { ThreadResourceCard as _appInitialYI } from "../../thread/thread-resource-card";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../runtime/rolldown-runtime";
 import {
   chatgptMapboxGlRuntime as slot249,
   chatgptMapboxGlWorkerUrl as slot250,
@@ -56,9 +55,7 @@ export function useChatgptComposerControllerHelper182(request6235: any) {
       return null;
   }
 }
-function useChatgptComposerControllerHelper183(
-  request926,
-) {
+function useChatgptComposerControllerHelper183(request926) {
   const UseChatgptComposerControllerHelper68 =
     useChatgptComposerControllerHelper68;
   const UseChatgptComposerControllerHelper189 =
@@ -70,56 +67,33 @@ function useChatgptComposerControllerHelper183(
   const UseChatgptComposerControllerHelper186 =
     useChatgptComposerControllerHelper186;
   let { reference } = request926,
-    slot3983 =
-      useChatgptComposerControllerHelper31(),
+    slot3983 = useChatgptComposerControllerHelper31(),
     slot3984,
     slot3985,
     slot3986,
     slot3987;
-  slot3987 = Symbol.for(
-    "react.early_return_sentinel",
-  );
+  slot3987 = Symbol.for("react.early_return_sentinel");
   bb0: {
-    if (
-      ((slot3985 = appInitialDI(reference)),
-      slot3985.length === 0)
-    ) {
-      slot3987 = (
-        <UseChatgptComposerControllerHelper68 reference={reference} />
-      );
+    if (((slot3985 = appInitialDI(reference)), slot3985.length === 0)) {
+      slot3987 = <UseChatgptComposerControllerHelper68 reference={reference} />;
       break bb0;
     }
-    slot3984 =
-      useChatgptComposerControllerHelper201(reference);
-    slot3986 =
-      slot3985.filter(
-        useChatgptComposerControllerHelper203,
-      );
+    slot3984 = useChatgptComposerControllerHelper201(reference);
+    slot3986 = slot3985.filter(useChatgptComposerControllerHelper203);
   }
-  if (
-    slot3987 !==
-    Symbol.for("react.early_return_sentinel")
-  )
-    return slot3987;
-  let slot3988 =
-    slot3986;
-  if (
-    slot3988.length === 0 ||
-    slot3983?.shouldBlockExternalEgress === true
-  ) {
+  if (slot3987 !== Symbol.for("react.early_return_sentinel")) return slot3987;
+  let slot3988 = slot3986;
+  if (slot3988.length === 0 || slot3983?.shouldBlockExternalEgress === true) {
     let slot13623;
     return (
       <div className="my-3 max-w-[36rem]">
-        {
-          <UseChatgptComposerControllerHelper189
-            places={slot3985}
-          />
-        }
+        {<UseChatgptComposerControllerHelper189 places={slot3985} />}
       </div>
     );
   }
-  let slot3989 =
-      useChatgptComposerControllerHelper202(reference) ? "pb-2" : "pt-4",
+  let slot3989 = useChatgptComposerControllerHelper202(reference)
+      ? "pb-2"
+      : "pt-4",
     slot3990 = `${String(slot3984)}px`,
     slot3991 = {
       maxHeight: slot3990,
@@ -128,19 +102,12 @@ function useChatgptComposerControllerHelper183(
   let slot3992 = {
     height: slot3984,
   };
-  let slot3993 = (
-    <UseChatgptComposerControllerHelper184
-      places={slot3988}
-    />
-  );
-  let slot3994,
-    slot3995;
+  let slot3993 = <UseChatgptComposerControllerHelper184 places={slot3988} />;
+  let slot3994, slot3995;
   slot3994 = (
     <div className="pointer-events-none absolute inset-0 z-2 rounded-3xl ring-1 ring-token-border-default/50 ring-inset" />
   );
-  slot3995 = (
-    <UseChatgptComposerControllerHelper191 />
-  );
+  slot3995 = <UseChatgptComposerControllerHelper191 />;
   let slot3996 = (
     <div className="relative h-full overflow-hidden rounded-3xl">
       {slot3993}
@@ -157,23 +124,12 @@ function useChatgptComposerControllerHelper183(
     </div>
   );
   let slot3998 = (
-    <div
-      className={slot263}
-      style={slot3991}
-    >
+    <div className={slot263} style={slot3991}>
       {slot3997}
     </div>
   );
-  let slot3999 = (
-    <div className={slot3989}>
-      {slot3998}
-    </div>
-  );
-  let slot4000 = (
-    <UseChatgptComposerControllerHelper186
-      places={slot3985}
-    />
-  );
+  let slot3999 = <div className={slot3989}>{slot3998}</div>;
+  let slot4000 = <UseChatgptComposerControllerHelper186 places={slot3985} />;
   return (
     <div
       className="not-prose my-3 max-w-[36rem]"
@@ -184,43 +140,31 @@ function useChatgptComposerControllerHelper183(
     </div>
   );
 }
-function useChatgptComposerControllerHelper184(
-  request1662,
-) {
+function useChatgptComposerControllerHelper184(request1662) {
   let { places } = request1662,
-    slot5567 =
-      slot255.useRef(null),
+    slot5567 = slot255.useRef(null),
     slot5568,
     slot5569;
   slot5568 = () => {
-    let slot7279 =
-        slot5567.current,
-      slot7280 =
-        useChatgptComposerControllerHelper204(places);
-    if (
-      slot7279 == null ||
-      slot7280 == null ||
-      !slot254.default.supported()
-    )
+    let slot7279 = slot5567.current,
+      slot7280 = useChatgptComposerControllerHelper204(places);
+    if (slot7279 == null || slot7280 == null || !slot254.default.supported())
       return;
-    slot254.default.accessToken =
-      slot77;
-    slot254.default.workerUrl =
-      slot250;
+    slot254.default.accessToken = slot77;
+    slot254.default.workerUrl = slot250;
     let slot7281;
     try {
-      slot7281 =
-        new slot254.default.Map({
-          attributionControl: false,
-          bearing: 0,
-          center: slot7280,
-          container: slot7279,
-          cooperativeGestures: true,
-          pitch: 0,
-          renderWorldCopies: false,
-          style: slot257,
-          zoom: 12,
-        });
+      slot7281 = new slot254.default.Map({
+        attributionControl: false,
+        bearing: 0,
+        center: slot7280,
+        container: slot7279,
+        cooperativeGestures: true,
+        pitch: 0,
+        renderWorldCopies: false,
+        style: slot257,
+        zoom: 12,
+      });
     } catch {
       return;
     }
@@ -230,17 +174,13 @@ function useChatgptComposerControllerHelper184(
       }),
       "top-right",
     );
-    let slot7282 =
-        new slot254.default.LngLatBounds(),
+    let slot7282 = new slot254.default.LngLatBounds(),
       slot7283 = [];
     return (
       places.forEach((item) => {
-        let slot14281 =
-          useChatgptComposerControllerHelper205(item);
+        let slot14281 = useChatgptComposerControllerHelper205(item);
         slot14281 != null &&
-          (slot7282.extend(
-            slot14281,
-          ),
+          (slot7282.extend(slot14281),
           slot7283.push(
             new slot254.default.Marker({
               element: useChatgptComposerControllerHelper206(item),
@@ -249,32 +189,24 @@ function useChatgptComposerControllerHelper184(
               .addTo(slot7281),
           ));
       }),
-      slot7281.fitBounds(
-        slot7282,
-        {
-          duration: 0,
-          maxZoom: slot264,
-          padding: {
-            bottom: $v,
-            left: slot259,
-            right: slot260,
-            top: slot258,
-          },
+      slot7281.fitBounds(slot7282, {
+        duration: 0,
+        maxZoom: slot264,
+        padding: {
+          bottom: $v,
+          left: slot259,
+          right: slot260,
+          top: slot258,
         },
-      ),
+      }),
       () => {
-        slot7283.forEach(
-          useChatgptComposerControllerHelper185,
-        );
+        slot7283.forEach(useChatgptComposerControllerHelper185);
         slot7281.remove();
       }
     );
   };
   slot5569 = [places];
-  slot255.useEffect(
-    slot5568,
-    slot5569,
-  );
+  slot255.useEffect(slot5568, slot5569);
   return (
     <div className="absolute inset-0">
       <div
@@ -285,14 +217,10 @@ function useChatgptComposerControllerHelper184(
     </div>
   );
 }
-function useChatgptComposerControllerHelper185(
-  request11381,
-) {
+function useChatgptComposerControllerHelper185(request11381) {
   return request11381.remove();
 }
-function useChatgptComposerControllerHelper186(
-  request3730,
-) {
+function useChatgptComposerControllerHelper186(request3730) {
   const AppInitialGft = appInitialGft;
   let { places } = request3730,
     slot9506 = (
@@ -302,9 +230,7 @@ function useChatgptComposerControllerHelper186(
         description="Screen-reader-only heading for places shown on a map content reference"
       />
     );
-  let slot9507 = places.map(
-    useChatgptComposerControllerHelper187,
-  );
+  let slot9507 = places.map(useChatgptComposerControllerHelper187);
   return (
     <div className="sr-only" data-testid="chatgpt-map-accessible-place-list">
       {slot9506}
@@ -312,34 +238,20 @@ function useChatgptComposerControllerHelper186(
     </div>
   );
 }
-function useChatgptComposerControllerHelper187(
-  request8890,
-  request8891,
-) {
+function useChatgptComposerControllerHelper187(request8890, request8891) {
   return (
-    <li
-      key={`${request8890.name}-${String(request8891)}`}
-    >
+    <li key={`${request8890.name}-${String(request8891)}`}>
       <span>{request8890.name}</span>
-      {useChatgptComposerControllerHelper200(
-        request8890,
-      ).map(useChatgptComposerControllerHelper188)}
+      {useChatgptComposerControllerHelper200(request8890).map(
+        useChatgptComposerControllerHelper188,
+      )}
     </li>
   );
 }
-function useChatgptComposerControllerHelper188(
-  request10935,
-) {
-  return (
-    <span key={request10935}>
-      {" "}
-      {request10935}
-    </span>
-  );
+function useChatgptComposerControllerHelper188(request10935) {
+  return <span key={request10935}> {request10935}</span>;
 }
-function useChatgptComposerControllerHelper189(
-  request2906,
-) {
+function useChatgptComposerControllerHelper189(request2906) {
   const AppInitialGft = appInitialGft;
   let { places } = request2906,
     slot7865 = (
@@ -353,25 +265,18 @@ function useChatgptComposerControllerHelper189(
         }
       </div>
     );
-  let slot7866 = places
-    .slice(0, 5)
-    .map(useChatgptComposerControllerHelper190);
+  let slot7866 = places.slice(0, 5).map(useChatgptComposerControllerHelper190);
   return (
     <div
       className="rounded-lg border border-token-border-light bg-token-bg-secondary px-3 py-2 text-sm text-token-text-primary"
       data-testid="chatgpt-content-reference-card"
     >
       {slot7865}
-      <div className="mt-3 flex flex-col gap-2">
-        {slot7866}
-      </div>
+      <div className="mt-3 flex flex-col gap-2">{slot7866}</div>
     </div>
   );
 }
-function useChatgptComposerControllerHelper190(
-  request10650,
-  request10651,
-) {
+function useChatgptComposerControllerHelper190(request10650, request10651) {
   const UseChatgptComposerControllerHelper192 =
     useChatgptComposerControllerHelper192;
   return (
@@ -385,20 +290,14 @@ function useChatgptComposerControllerHelper191() {
   const UseChatgptComposerControllerHelper195 =
     useChatgptComposerControllerHelper195;
   const AppInitialGft = appInitialGft;
-  let slot6604,
-    slot6605,
-    slot6606;
-  slot6604 = (
-    <span aria-hidden={true}>{slot267}</span>
-  );
+  let slot6604, slot6605, slot6606;
+  slot6604 = <span aria-hidden={true}>{slot267}</span>;
   slot6605 = (
     <UseChatgptComposerControllerHelper195 href="https://www.mapbox.com/about/maps">
       {slot271}
     </UseChatgptComposerControllerHelper195>
   );
-  slot6606 = (
-    <span aria-hidden={true}>{slot268}</span>
-  );
+  slot6606 = <span aria-hidden={true}>{slot268}</span>;
   return (
     <div className="absolute start-3 bottom-3 z-[1001] rounded-full bg-token-main-surface-primary/80 px-2 py-1 text-[10px] font-light whitespace-nowrap text-token-text-primary backdrop-blur-xl">
       {slot6604}
@@ -422,63 +321,42 @@ function useChatgptComposerControllerHelper191() {
     </div>
   );
 }
-function useChatgptComposerControllerHelper192(
-  request1557,
-) {
+function useChatgptComposerControllerHelper192(request1557) {
   const UseChatgptComposerControllerHelper195 =
     useChatgptComposerControllerHelper195;
   let { place } = request1557,
-    slot5294 =
-      useChatgptComposerControllerHelper197(place);
-  let slot5295 =
-      slot5294,
-    slot5296 =
-      useChatgptComposerControllerHelper198(place);
-  let slot5297 =
-      slot5296,
-    slot5298 =
-      useChatgptComposerControllerHelper207(place.address);
-  let slot5299 =
-    useChatgptComposerControllerHelper207(place.price_str);
-  let slot5300 = [
-    slot5298,
-    slot5297,
-    slot5299,
-  ].filter(useChatgptComposerControllerHelper194);
-  let slot5301 =
-      slot5300,
-    slot5302 =
-      useChatgptComposerControllerHelper199(place);
-  let slot5303 =
-      slot5302,
+    slot5294 = useChatgptComposerControllerHelper197(place);
+  let slot5295 = slot5294,
+    slot5296 = useChatgptComposerControllerHelper198(place);
+  let slot5297 = slot5296,
+    slot5298 = useChatgptComposerControllerHelper207(place.address);
+  let slot5299 = useChatgptComposerControllerHelper207(place.price_str);
+  let slot5300 = [slot5298, slot5297, slot5299].filter(
+    useChatgptComposerControllerHelper194,
+  );
+  let slot5301 = slot5300,
+    slot5302 = useChatgptComposerControllerHelper199(place);
+  let slot5303 = slot5302,
     slot5304 =
       slot5295 == null ? (
         place.name
       ) : (
-        <UseChatgptComposerControllerHelper195
-          href={slot5295}
-        >
+        <UseChatgptComposerControllerHelper195 href={slot5295}>
           {place.name}
         </UseChatgptComposerControllerHelper195>
       );
   let slot5305 = (
-    <div className="font-medium text-token-text-primary">
-      {slot5304}
-    </div>
+    <div className="font-medium text-token-text-primary">{slot5304}</div>
   );
   let slot5306 =
     slot5301.length === 0 ? null : (
       <div className="mt-1 flex flex-wrap gap-x-1 text-token-text-secondary">
-        {slot5301.map(
-          useChatgptComposerControllerHelper193,
-        )}
+        {slot5301.map(useChatgptComposerControllerHelper193)}
       </div>
     );
   let slot5307 =
     slot5303 == null ? null : (
-      <div className="mt-1 text-token-text-secondary">
-        {slot5303}
-      </div>
+      <div className="mt-1 text-token-text-secondary">{slot5303}</div>
     );
   return (
     <div className="rounded-md border border-token-border-light p-2">
@@ -488,27 +366,18 @@ function useChatgptComposerControllerHelper192(
     </div>
   );
 }
-function useChatgptComposerControllerHelper193(
-  request8057,
-  request8058,
-) {
+function useChatgptComposerControllerHelper193(request8057, request8058) {
   return (
     <span key={request8057}>
-      {request8058 === 0 ? null : (
-        <span aria-hidden={true}>{slot270}</span>
-      )}
+      {request8058 === 0 ? null : <span aria-hidden={true}>{slot270}</span>}
       {request8057}
     </span>
   );
 }
-function useChatgptComposerControllerHelper194(
-  request11385,
-) {
+function useChatgptComposerControllerHelper194(request11385) {
   return request11385 != null;
 }
-function useChatgptComposerControllerHelper195(
-  request5505,
-) {
+function useChatgptComposerControllerHelper195(request5505) {
   const UseChatgptComposerControllerHelper65 =
     useChatgptComposerControllerHelper65;
   let { children, href } = request5505;
@@ -522,158 +391,89 @@ function useChatgptComposerControllerHelper195(
     </UseChatgptComposerControllerHelper65>
   );
 }
-function useChatgptComposerControllerHelper196(
-  request10493,
-) {
-  return typeof request10493.type == "string" &&
-    request10493.type.length > 0
+function useChatgptComposerControllerHelper196(request10493) {
+  return typeof request10493.type == "string" && request10493.type.length > 0
     ? request10493.type
     : null;
 }
-function useChatgptComposerControllerHelper197(
-  request9801,
-) {
+function useChatgptComposerControllerHelper197(request9801) {
   let slot15599 =
-    useChatgptComposerControllerHelper207(
-      request9801.provider_url,
-    ) ??
-    useChatgptComposerControllerHelper207(
-      request9801.website_url,
-    );
-  return slot15599 == null
-    ? null
-    : (_appInitialIL(slot15599) ?? null);
+    useChatgptComposerControllerHelper207(request9801.provider_url) ??
+    useChatgptComposerControllerHelper207(request9801.website_url);
+  return slot15599 == null ? null : (_appInitialIL(slot15599) ?? null);
 }
-function useChatgptComposerControllerHelper198(
-  request8748,
-) {
+function useChatgptComposerControllerHelper198(request8748) {
   return request8748.rating == null
     ? null
     : request8748.review_count == null
-      ? slot265.format(
-          request8748.rating,
-        )
+      ? slot265.format(request8748.rating)
       : `${slot265.format(request8748.rating)} (${slot266.format(request8748.review_count)})`;
 }
-function useChatgptComposerControllerHelper199(
-  request9443,
-) {
-  let slot15358 =
-    request9443.categories
-      ?.map(useChatgptComposerControllerHelper207)
-      .filter((request11638) => {
-        return request11638 != null;
-      });
-  return slot15358 == null ||
-    slot15358.length === 0
+function useChatgptComposerControllerHelper199(request9443) {
+  let slot15358 = request9443.categories
+    ?.map(useChatgptComposerControllerHelper207)
+    .filter((request11638) => {
+      return request11638 != null;
+    });
+  return slot15358 == null || slot15358.length === 0
     ? null
     : slot15358.join(", ");
 }
-function useChatgptComposerControllerHelper200(
-  request9936,
-) {
+function useChatgptComposerControllerHelper200(request9936) {
   return [
-    useChatgptComposerControllerHelper207(
-      request9936.address,
-    ),
-    useChatgptComposerControllerHelper198(
-      request9936,
-    ),
-    useChatgptComposerControllerHelper207(
-      request9936.price_str,
-    ),
-    useChatgptComposerControllerHelper199(
-      request9936,
-    ),
+    useChatgptComposerControllerHelper207(request9936.address),
+    useChatgptComposerControllerHelper198(request9936),
+    useChatgptComposerControllerHelper207(request9936.price_str),
+    useChatgptComposerControllerHelper199(request9936),
   ].filter((item) => {
     return item != null;
   });
 }
-function useChatgptComposerControllerHelper201(
-  request11347,
-) {
-  return useChatgptComposerControllerHelper202(
-    request11347,
-  )
+function useChatgptComposerControllerHelper201(request11347) {
+  return useChatgptComposerControllerHelper202(request11347)
     ? slot262
     : slot261;
 }
-function useChatgptComposerControllerHelper202(
-  request10885,
-) {
+function useChatgptComposerControllerHelper202(request10885) {
   return (
-    typeof request10885.start_idx == "number" &&
-    request10885.start_idx < 4
+    typeof request10885.start_idx == "number" && request10885.start_idx < 4
   );
 }
-function useChatgptComposerControllerHelper203(
-  request11089,
-) {
-  return (
-    request11089.latitude != null &&
-    request11089.longitude != null
-  );
+function useChatgptComposerControllerHelper203(request11089) {
+  return request11089.latitude != null && request11089.longitude != null;
 }
-function useChatgptComposerControllerHelper204(
-  request10019,
-) {
+function useChatgptComposerControllerHelper204(request10019) {
   for (let slot15882 of request10019) {
-    let slot16019 =
-      useChatgptComposerControllerHelper205(
-        slot15882,
-      );
-    if (slot16019 != null)
-      return slot16019;
+    let slot16019 = useChatgptComposerControllerHelper205(slot15882);
+    if (slot16019 != null) return slot16019;
   }
   return null;
 }
-function useChatgptComposerControllerHelper205(
-  request9556,
-) {
-  return request9556.latitude == null ||
-    request9556.longitude == null
+function useChatgptComposerControllerHelper205(request9556) {
+  return request9556.latitude == null || request9556.longitude == null
     ? null
     : {
         lat: request9556.latitude,
         lng: request9556.longitude,
       };
 }
-function useChatgptComposerControllerHelper206(
-  request6635,
-) {
+function useChatgptComposerControllerHelper206(request6635) {
   let slot12977 = document.createElement("div");
   if (
     ((slot12977.className = "chatgpt-map-marker"),
-    (slot12977.title =
-      request6635.name),
+    (slot12977.title = request6635.name),
     request6635.rating == null)
   )
-    return (
-      slot12977.setAttribute(
-        "aria-label",
-        request6635.name,
-      ),
-      slot12977
-    );
-  let slot12978 =
-    slot265.format(
-      request6635.rating,
-    );
+    return (slot12977.setAttribute("aria-label", request6635.name), slot12977);
+  let slot12978 = slot265.format(request6635.rating);
   return (
-    (slot12977.textContent =
-      slot12978),
-    slot12977.setAttribute(
-      "aria-label",
-      `${request6635.name}, ${slot12978}`,
-    ),
+    (slot12977.textContent = slot12978),
+    slot12977.setAttribute("aria-label", `${request6635.name}, ${slot12978}`),
     slot12977
   );
 }
-function useChatgptComposerControllerHelper207(
-  request10769,
-) {
-  return typeof request10769 == "string" &&
-    request10769.trim().length > 0
+function useChatgptComposerControllerHelper207(request10769) {
+  return typeof request10769 == "string" && request10769.trim().length > 0
     ? request10769
     : null;
 }
@@ -699,44 +499,41 @@ let slot270: any;
 let slot271: any;
 let slot272: any;
 const slot273 = rolldownRuntimeN(() => {
-    slot253 = appInitialIvt();
-    slot254 = rolldownRuntimeS(
-      slot249(),
-      1,
-    );
-    slot251();
-    slot255 = rolldownRuntimeS(appInitialLvt(), 1);
-    appInitialHft();
-    AppInitialOL();
-    _appInitialYI();
-    slot85();
-    slot78();
-    slot43();
-    slot88();
-    _v();
-    slot252();
-    slot256 = appInitialJvt();
-    slot257 = "mapbox://styles/mapbox/streets-v12";
-    slot258 = 50;
-    slot259 = 20;
-    slot260 = 20;
-    $v = 20;
-    slot261 = 400;
-    slot262 = 300;
-    slot263 =
-      "relative overflow-hidden motion-safe:transition-[max-height,opacity] motion-safe:duration-relaxed motion-safe:ease-out";
-    slot264 = 13.5;
-    slot265 = new Intl.NumberFormat(undefined, {
-      maximumFractionDigits: 1,
-      minimumFractionDigits: 1,
-    });
-    slot266 = new Intl.NumberFormat(undefined);
-    slot267 = "© ";
-    slot268 = " ";
-    slot269 = " © ";
-    slot270 = "· ";
-    slot271 = "Mapbox";
-    slot272 = "OpenStreetMap";
+  slot253 = appInitialIvt();
+  slot254 = rolldownRuntimeS(slot249(), 1);
+  slot251();
+  slot255 = rolldownRuntimeS(appInitialLvt(), 1);
+  appInitialHft();
+  AppInitialOL();
+  _appInitialYI();
+  slot85();
+  slot78();
+  slot43();
+  slot88();
+  _v();
+  slot252();
+  slot256 = appInitialJvt();
+  slot257 = "mapbox://styles/mapbox/streets-v12";
+  slot258 = 50;
+  slot259 = 20;
+  slot260 = 20;
+  $v = 20;
+  slot261 = 400;
+  slot262 = 300;
+  slot263 =
+    "relative overflow-hidden motion-safe:transition-[max-height,opacity] motion-safe:duration-relaxed motion-safe:ease-out";
+  slot264 = 13.5;
+  slot265 = new Intl.NumberFormat(undefined, {
+    maximumFractionDigits: 1,
+    minimumFractionDigits: 1,
+  });
+  slot266 = new Intl.NumberFormat(undefined);
+  slot267 = "© ";
+  slot268 = " ";
+  slot269 = " © ";
+  slot270 = "· ";
+  slot271 = "Mapbox";
+  slot272 = "OpenStreetMap";
 });
 
 export const ensureChatgptMapContentReferenceInit = slot273;

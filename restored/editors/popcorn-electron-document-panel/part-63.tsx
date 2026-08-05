@@ -7,12 +7,82 @@
 /* split-lane-import-depth:1 */
 
 import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { jsxRuntime as getJsxRuntime, react } from "../../boundaries/react-cjs-runtime";
-import { __workbookT, _workbookT, workbookA, workbookB, workbookC, workbookD, workbookE, workbookF, workbookG, WorkbookI, workbookIt, workbookJ, workbookK, workbookL, workbookLt, workbookM, workbookN, workbookNt, workbookO, workbookOt, workbookP, workbookQ, WorkbookR, workbookRt, workbookS, workbookSt, workbookU, workbookUnderscore, workbookV, workbookW, WorkbookW, workbookX, workbookY, workbookZ } from "../../workbook/editor-compat";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  __workbookT,
+  _workbookT,
+  workbookA,
+  workbookB,
+  workbookC,
+  workbookD,
+  workbookE,
+  workbookF,
+  workbookG,
+  WorkbookI,
+  workbookIt,
+  workbookJ,
+  workbookK,
+  workbookL,
+  workbookLt,
+  workbookM,
+  workbookN,
+  workbookNt,
+  workbookO,
+  workbookOt,
+  workbookP,
+  workbookQ,
+  WorkbookR,
+  workbookRt,
+  workbookS,
+  workbookSt,
+  workbookU,
+  workbookUnderscore,
+  workbookV,
+  workbookW,
+  WorkbookW,
+  workbookX,
+  workbookY,
+  workbookZ,
+} from "../../workbook/editor-compat";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
-import { ensureFeatureCatalogAtomsInit, ensureFeatureCatalogInit, getFeatureCatalogEntries, PopcornFindBar } from "../feature-catalog";
-import { ensurePopcornPageNumberNavigationInit, PopcornPageNumberNavigation } from "../popcorn-page-number-navigation";
-import { ensureRemoteTextEditSessionInit, RemoteTextEditSessionA, RemoteTextEditSessionB, RemoteTextEditSessionC, RemoteTextEditSessionChrome, RemoteTextEditSessionE, RemoteTextEditSessionF, RemoteTextEditSessionH, RemoteTextEditSessionI, RemoteTextEditSessionLowerT, RemoteTextEditSessionM, RemoteTextEditSessionN, RemoteTextEditSessionO, RemoteTextEditSessionP, RemoteTextEditSessionR, RemoteTextEditSessionS, RemoteTextEditSessionSurfaceKind, RemoteTextEditSessionU, RemoteTextEditSessionV, RemoteTextEditSessionW, RemoteTextEditSessionX, RemoteTextEditSessionY, RemoteTextEditSessionZoomControl } from "../remote-text-edit-session/index";
+import {
+  ensureFeatureCatalogAtomsInit,
+  ensureFeatureCatalogInit,
+  getFeatureCatalogEntries,
+  PopcornFindBar,
+} from "../feature-catalog";
+import {
+  ensurePopcornPageNumberNavigationInit,
+  PopcornPageNumberNavigation,
+} from "../popcorn-page-number-navigation";
+import {
+  ensureRemoteTextEditSessionInit,
+  RemoteTextEditSessionA,
+  RemoteTextEditSessionB,
+  RemoteTextEditSessionC,
+  RemoteTextEditSessionChrome,
+  RemoteTextEditSessionE,
+  RemoteTextEditSessionF,
+  RemoteTextEditSessionH,
+  RemoteTextEditSessionI,
+  RemoteTextEditSessionLowerT,
+  RemoteTextEditSessionM,
+  RemoteTextEditSessionN,
+  RemoteTextEditSessionO,
+  RemoteTextEditSessionP,
+  RemoteTextEditSessionR,
+  RemoteTextEditSessionS,
+  RemoteTextEditSessionSurfaceKind,
+  RemoteTextEditSessionU,
+  RemoteTextEditSessionV,
+  RemoteTextEditSessionW,
+  RemoteTextEditSessionX,
+  RemoteTextEditSessionY,
+  RemoteTextEditSessionZoomControl,
+} from "../remote-text-edit-session/index";
 
 // Wave5d soft stubs.
 const _l: any = undefined;
@@ -55,31 +125,38 @@ var garnetR15,
       #s = [];
       #c = {
         searchFragments: [],
-        objectTargets: []
+        objectTargets: [],
       };
       #l = false;
       constructor(marbleR12 = {}) {
         let deltaR20 = (marbleR12.workerFactory ?? basaltR2)();
-        this.#n = new RemoteTextEditSessionV(deltaR20, quillR13 => this.#f(quillR13), orbitR12 => {
-          throw Error(orbitR12);
-        });
+        this.#n = new RemoteTextEditSessionV(
+          deltaR20,
+          (quillR13) => this.#f(quillR13),
+          (orbitR12) => {
+            throw Error(orbitR12);
+          },
+        );
         let echoR20 = amberR2(marbleR12);
         this.#n.bootstrap({
           documentProto: echoR20,
           initialPageIndex: marbleR12.initialPageIndex,
-          initialZoom: marbleR12.initialZoom
+          initialZoom: marbleR12.initialZoom,
         });
-        this.#r = timberR2().then(() => {
-          let amberR23 = RemoteTextEditSessionB();
-          this.#e.debug("font-render-deps-ready", {
-            fontCount: amberR23.length,
-            fontDebug: RemoteTextEditSessionX()
-          });
-          amberR23.length !== 0 && this.#n.dispatch({
-            kind: "install-font-faces",
-            fonts: amberR23
-          });
-        }).catch(() => {});
+        this.#r = timberR2()
+          .then(() => {
+            let amberR23 = RemoteTextEditSessionB();
+            this.#e.debug("font-render-deps-ready", {
+              fontCount: amberR23.length,
+              fontDebug: RemoteTextEditSessionX(),
+            });
+            amberR23.length !== 0 &&
+              this.#n.dispatch({
+                kind: "install-font-faces",
+                fonts: amberR23,
+              });
+          })
+          .catch(() => {});
       }
       subscribe(willowR12) {
         return this.#t.subscribe(willowR12);
@@ -97,26 +174,53 @@ var garnetR15,
       attachPageCanvas(driftR4) {
         this.#d(driftR4.surfaceId);
         let yarnR18 = driftR4.dpr ?? window.devicePixelRatio ?? 1;
-        if (driftR4.canvas.style.width = `${driftR4.width}px`, driftR4.canvas.style.height = `${driftR4.height}px`, !zincR2()) return driftR4.canvas.width = Math.max(1, Math.round(driftR4.width * yarnR18)), driftR4.canvas.height = Math.max(1, Math.round(driftR4.height * yarnR18)), false;
-        if (this.#a.get(driftR4.surfaceId) === driftR4.canvas) return this.resizePageCanvas({
-          surfaceId: driftR4.surfaceId,
-          width: driftR4.width,
-          height: driftR4.height,
-          dpr: yarnR18
-        }), true;
+        if (
+          ((driftR4.canvas.style.width = `${driftR4.width}px`),
+          (driftR4.canvas.style.height = `${driftR4.height}px`),
+          !zincR2())
+        )
+          return (
+            (driftR4.canvas.width = Math.max(
+              1,
+              Math.round(driftR4.width * yarnR18),
+            )),
+            (driftR4.canvas.height = Math.max(
+              1,
+              Math.round(driftR4.height * yarnR18),
+            )),
+            false
+          );
+        if (this.#a.get(driftR4.surfaceId) === driftR4.canvas)
+          return (
+            this.resizePageCanvas({
+              surfaceId: driftR4.surfaceId,
+              width: driftR4.width,
+              height: driftR4.height,
+              dpr: yarnR18,
+            }),
+            true
+          );
         this.#a.set(driftR4.surfaceId, driftR4.canvas);
         let zephyrR18 = driftR4.canvas.transferControlToOffscreen();
-        return this.#r.then(() => {
-          this.#l || this.#a.get(driftR4.surfaceId) === driftR4.canvas && this.#n.dispatch({
-            kind: "attach-page-canvas",
-            surfaceId: driftR4.surfaceId,
-            pageIndex: driftR4.pageIndex,
-            canvas: zephyrR18,
-            width: driftR4.width,
-            height: driftR4.height,
-            dpr: yarnR18
-          }, [zephyrR18]);
-        }), true;
+        return (
+          this.#r.then(() => {
+            this.#l ||
+              (this.#a.get(driftR4.surfaceId) === driftR4.canvas &&
+                this.#n.dispatch(
+                  {
+                    kind: "attach-page-canvas",
+                    surfaceId: driftR4.surfaceId,
+                    pageIndex: driftR4.pageIndex,
+                    canvas: zephyrR18,
+                    width: driftR4.width,
+                    height: driftR4.height,
+                    dpr: yarnR18,
+                  },
+                  [zephyrR18],
+                ));
+          }),
+          true
+        );
       }
       resizePageCanvas(onyxR6) {
         let unityR23 = onyxR6.dpr ?? window.devicePixelRatio ?? 1;
@@ -125,7 +229,7 @@ var garnetR15,
           surfaceId: onyxR6.surfaceId,
           width: onyxR6.width,
           height: onyxR6.height,
-          dpr: unityR23
+          dpr: unityR23,
         });
       }
       detachPageCanvas(apexR5) {
@@ -133,17 +237,21 @@ var garnetR15,
         let quillR23 = window.setTimeout(() => {
           this.#o.delete(apexR5);
           this.#a.delete(apexR5);
-          !this.#l && this.#n.dispatch({
-            kind: "detach-page-canvas",
-            surfaceId: apexR5
-          });
+          !this.#l &&
+            this.#n.dispatch({
+              kind: "detach-page-canvas",
+              surfaceId: apexR5,
+            });
         }, 0);
         this.#o.set(apexR5, quillR23);
       }
       subscribeRenderedPages(valeR8) {
-        return this.#i.add(valeR8), () => {
-          this.#i.delete(valeR8);
-        };
+        return (
+          this.#i.add(valeR8),
+          () => {
+            this.#i.delete(valeR8);
+          }
+        );
       }
       getRenderedPages() {
         return this.#s;
@@ -155,26 +263,32 @@ var garnetR15,
         return this.#c.objectTargets;
       }
       requestExport(duskR5) {
-        return this.#n.request({
-          kind: "export",
-          format: duskR5?.format ?? "proto"
-        }).then(value => {
-          if (value.kind !== "export") throw Error(`Unexpected export response: ${value.kind}`);
-          return value.result;
-        });
+        return this.#n
+          .request({
+            kind: "export",
+            format: duskR5?.format ?? "proto",
+          })
+          .then((value) => {
+            if (value.kind !== "export")
+              throw Error(`Unexpected export response: ${value.kind}`);
+            return value.result;
+          });
       }
       exportDocumentProto() {
         return this.requestExport({
-          format: "proto"
-        }).then(value => value.documentProto);
+          format: "proto",
+        }).then((value) => value.documentProto);
       }
       replaceFromProto(indigoR6) {
-        return this.#n.request({
-          kind: "replace-from-proto",
-          documentProto: indigoR6
-        }).then(value => {
-          if (value.kind !== "replace-from-proto") throw Error(`Unexpected replace response: ${value.kind}`);
-        });
+        return this.#n
+          .request({
+            kind: "replace-from-proto",
+            documentProto: indigoR6,
+          })
+          .then((value) => {
+            if (value.kind !== "replace-from-proto")
+              throw Error(`Unexpected replace response: ${value.kind}`);
+          });
       }
       replaceDocument(garnetR11) {
         return this.replaceFromProto(garnetR11.toProto());
@@ -192,157 +306,184 @@ var garnetR15,
       setZoom(ivoryR11) {
         this.#n.dispatch({
           kind: "set-zoom",
-          zoom: ivoryR11
+          zoom: ivoryR11,
         });
       }
       setPageIndex(lunarR8, mossR8) {
         this.#n.dispatch({
           kind: "set-page-index",
           pageIndex: lunarR8,
-          origin: mossR8?.origin
+          origin: mossR8?.origin,
         });
       }
       goToPreviousPage() {
         this.setPageIndex(this.getSnapshot().pageIndex - 1, {
-          origin: "navigation"
+          origin: "navigation",
         });
       }
       goToNextPage() {
         this.setPageIndex(this.getSnapshot().pageIndex + 1, {
-          origin: "navigation"
+          origin: "navigation",
         });
       }
       setSelectedTextBlockId(falconR8, gammaR8) {
         this.#n.dispatch({
           kind: "select-text-block",
           blockId: falconR8,
-          pageIndex: gammaR8?.pageIndex
+          pageIndex: gammaR8?.pageIndex,
         });
       }
       setSelectedObject(zephyrR10) {
         this.#n.dispatch({
           kind: "select-object",
-          target: zephyrR10
+          target: zephyrR10,
         });
       }
       clearSelection() {
         this.#n.dispatch({
-          kind: "clear-selection"
+          kind: "clear-selection",
         });
       }
       deleteSelectedObject() {
         this.#n.dispatch({
-          kind: "delete-selected-object"
+          kind: "delete-selected-object",
         });
       }
       appendParagraph(bloomR10) {
         this.#n.dispatch({
           kind: "append-paragraph",
-          text: bloomR10
+          text: bloomR10,
         });
       }
       openFind() {
         this.#n.dispatch({
-          kind: "open-find"
+          kind: "open-find",
         });
       }
       closeFind() {
         this.#n.dispatch({
-          kind: "close-find"
+          kind: "close-find",
         });
       }
       setFindQuery(duskR10) {
         this.#n.dispatch({
           kind: "set-find-query",
-          query: duskR10
+          query: duskR10,
         });
       }
       goToNextFindResult() {
         this.#n.dispatch({
-          kind: "go-to-next-find-result"
+          kind: "go-to-next-find-result",
         });
       }
       goToPreviousFindResult() {
         this.#n.dispatch({
-          kind: "go-to-previous-find-result"
+          kind: "go-to-previous-find-result",
         });
       }
       textPointerDown(coralR6, driftR6, frostR6) {
-        return this.#n.dispatch({
-          kind: "text-pointer-down",
-          pageIndex: coralR6,
-          point: driftR6,
-          shiftKey: frostR6?.shiftKey
-        }), true;
+        return (
+          this.#n.dispatch({
+            kind: "text-pointer-down",
+            pageIndex: coralR6,
+            point: driftR6,
+            shiftKey: frostR6?.shiftKey,
+          }),
+          true
+        );
       }
       textPointerMove(quartzR9) {
-        return this.#n.dispatch({
-          kind: "text-pointer-move",
-          point: quartzR9
-        }), true;
+        return (
+          this.#n.dispatch({
+            kind: "text-pointer-move",
+            point: quartzR9,
+          }),
+          true
+        );
       }
       textPointerUp() {
         this.#n.dispatch({
-          kind: "text-pointer-up"
+          kind: "text-pointer-up",
         });
       }
       textSelectWordAtPoint(hillR6, isleR6) {
-        return this.#n.dispatch({
-          kind: "text-select-word-at-point",
-          pageIndex: hillR6,
-          point: isleR6
-        }), true;
+        return (
+          this.#n.dispatch({
+            kind: "text-select-word-at-point",
+            pageIndex: hillR6,
+            point: isleR6,
+          }),
+          true
+        );
       }
       textSelectParagraphAtPoint(tideR6, unityR6) {
-        return this.#n.dispatch({
-          kind: "text-select-paragraph-at-point",
-          pageIndex: tideR6,
-          point: unityR6
-        }), true;
+        return (
+          this.#n.dispatch({
+            kind: "text-select-paragraph-at-point",
+            pageIndex: tideR6,
+            point: unityR6,
+          }),
+          true
+        );
       }
       textActivateBlockEnd(cliffR8) {
-        return this.#n.dispatch({
-          kind: "text-activate-block-end",
-          blockId: cliffR8
-        }), true;
+        return (
+          this.#n.dispatch({
+            kind: "text-activate-block-end",
+            blockId: cliffR8,
+          }),
+          true
+        );
       }
       textClear() {
         this.#n.dispatch({
-          kind: "text-clear"
+          kind: "text-clear",
         });
       }
       textHandleKeyDown(kiteR10) {
-        return this.#n.dispatch({
-          kind: "text-keydown",
-          event: kiteR10
-        }), true;
+        return (
+          this.#n.dispatch({
+            kind: "text-keydown",
+            event: kiteR10,
+          }),
+          true
+        );
       }
       textHandleBeforeInput(bravoR9) {
-        return this.#n.dispatch({
-          kind: "text-before-input",
-          event: bravoR9
-        }), true;
+        return (
+          this.#n.dispatch({
+            kind: "text-before-input",
+            event: bravoR9,
+          }),
+          true
+        );
       }
       textHandleInput(timberR10) {
-        return this.#n.dispatch({
-          kind: "text-input",
-          event: timberR10
-        }), true;
+        return (
+          this.#n.dispatch({
+            kind: "text-input",
+            event: timberR10,
+          }),
+          true
+        );
       }
       textHandleCompositionEnd(fernR8) {
-        return this.#n.dispatch({
-          kind: "text-composition-end",
-          event: fernR8
-        }), true;
+        return (
+          this.#n.dispatch({
+            kind: "text-composition-end",
+            event: fernR8,
+          }),
+          true
+        );
       }
       undo() {
         this.#n.dispatch({
-          kind: "undo"
+          kind: "undo",
         });
       }
       redo() {
         this.#n.dispatch({
-          kind: "redo"
+          kind: "redo",
         });
       }
       #u() {
@@ -350,7 +491,8 @@ var garnetR15,
       }
       #d(jewelR9) {
         let valeR26 = this.#o.get(jewelR9);
-        valeR26 !== undefined && (window.clearTimeout(valeR26), this.#o.delete(jewelR9));
+        valeR26 !== undefined &&
+          (window.clearTimeout(valeR26), this.#o.delete(jewelR9));
       }
       #f(yarnR13) {
         switch (yarnR13.kind) {
@@ -365,7 +507,7 @@ var garnetR15,
             this.#c = yarnR13.metadata;
             this.#t.patch({
               pageCount: yarnR13.pageLayouts.length,
-              pageLayouts: yarnR13.pageLayouts
+              pageLayouts: yarnR13.pageLayouts,
             });
             return;
           case "rendered-pages":
@@ -373,7 +515,10 @@ var garnetR15,
             this.#u();
             return;
           case "debug-log":
-            RemoteTextEditSessionM(yarnR13.namespace).debug(yarnR13.message, yarnR13.details);
+            RemoteTextEditSessionM(yarnR13.namespace).debug(
+              yarnR13.message,
+              yarnR13.details,
+            );
             return;
           default:
             return yarnR13;
@@ -389,7 +534,9 @@ function daisyR2(mossR6, northR6) {
   let xenonR24 = Math.max(0, northR6.overscanPx ?? 0),
     yellowR24 = northR6.scrollTop - xenonR24,
     zincR24 = northR6.scrollTop + northR6.viewportHeight + xenonR24;
-  return mossR6.filter(item => item.top + item.height >= yellowR24 && item.top <= zincR24);
+  return mossR6.filter(
+    (item) => item.top + item.height >= yellowR24 && item.top <= zincR24,
+  );
 }
 function emberR2(frostR11) {
   let topazR14 = frostR11.at(-1);
@@ -418,7 +565,7 @@ function garnetR2(willowR10) {
         summary: sageR23.findSummary,
         resultCount: sageR23.findResultCount,
         activeResultIndex: sageR23.findActiveResultIndex,
-        selectedTextBlockId: sageR23.selectedTextBlockId
+        selectedTextBlockId: sageR23.selectedTextBlockId,
       };
     },
     getSearchFragments: () => willowR10.controller.getSearchFragments(),
@@ -431,7 +578,7 @@ function garnetR2(willowR10) {
         pageLayouts: basaltR23.pageLayouts,
         pageRects: willowR10.getPageRects(),
         renderedPages: willowR10.getRenderedPages(),
-        textLayoutBlockCount: willowR10.getTextLayoutBlocks().length
+        textLayoutBlockCount: willowR10.getTextLayoutBlocks().length,
       };
     },
     captureState: () => {
@@ -444,7 +591,7 @@ function garnetR2(willowR10) {
           pageLayouts: vaporR19.pageLayouts,
           pageRects: willowR10.getPageRects(),
           renderedPages: willowR10.getRenderedPages(),
-          textLayoutBlockCount: willowR10.getTextLayoutBlocks().length
+          textLayoutBlockCount: willowR10.getTextLayoutBlocks().length,
         },
         bodyText: vaporR19.bodyText,
         textLayoutBlocks: willowR10.getTextLayoutBlocks(),
@@ -455,21 +602,25 @@ function garnetR2(willowR10) {
           summary: vaporR19.findSummary,
           resultCount: vaporR19.findResultCount,
           activeResultIndex: vaporR19.findActiveResultIndex,
-          selectedTextBlockId: vaporR19.selectedTextBlockId
+          selectedTextBlockId: vaporR19.selectedTextBlockId,
         },
         searchFragments: willowR10.controller.getSearchFragments(),
         objectTargets: willowR10.controller.getObjectTargets(),
-        logCount: (stormR17.__POPCORN_LOGS__ ?? []).length
+        logCount: (stormR17.__POPCORN_LOGS__ ?? []).length,
       };
     },
     getLogs: () => [...(stormR17.__POPCORN_LOGS__ ?? [])],
     clearLogs: () => {
       stormR17.__POPCORN_LOGS__ = [];
+    },
+  };
+  return (
+    (stormR17.__POPCORN_DOCUMENT_DEVTOOLS__ = tideR17),
+    () => {
+      stormR17.__POPCORN_DOCUMENT_DEVTOOLS__ === tideR17 &&
+        delete stormR17.__POPCORN_DOCUMENT_DEVTOOLS__;
     }
-  };
-  return stormR17.__POPCORN_DOCUMENT_DEVTOOLS__ = tideR17, () => {
-    stormR17.__POPCORN_DOCUMENT_DEVTOOLS__ === tideR17 && delete stormR17.__POPCORN_DOCUMENT_DEVTOOLS__;
-  };
+  );
 }
 var mintR15 = esmInit(() => {
   ensureRemoteTextEditSessionInit();
@@ -477,23 +628,41 @@ var mintR15 = esmInit(() => {
 function hazelR2(pearlR6, quartzR6) {
   for (let kelpR24 = pearlR6.length - 1; kelpR24 >= 0; --kelpR24) {
     let nickelR25 = pearlR6[kelpR24];
-    if (nickelR25 && quartzR6.x >= nickelR25.hitBox.x && quartzR6.x <= nickelR25.hitBox.x + nickelR25.hitBox.width && quartzR6.y >= nickelR25.hitBox.y && quartzR6.y <= nickelR25.hitBox.y + nickelR25.hitBox.height) return nickelR25;
+    if (
+      nickelR25 &&
+      quartzR6.x >= nickelR25.hitBox.x &&
+      quartzR6.x <= nickelR25.hitBox.x + nickelR25.hitBox.width &&
+      quartzR6.y >= nickelR25.hitBox.y &&
+      quartzR6.y <= nickelR25.hitBox.y + nickelR25.hitBox.height
+    )
+      return nickelR25;
   }
   return null;
 }
 function jasperR2(sageR11, topazR11) {
-  return topazR11 ? sageR11.find(item => item.id === topazR11) ?? null : null;
+  return topazR11
+    ? (sageR11.find((item) => item.id === topazR11) ?? null)
+    : null;
 }
 var novaR15 = esmInit(() => {});
 function kelpR2(riverR6, slateR6) {
   for (let lotusR24 = riverR6.length - 1; lotusR24 >= 0; --lotusR24) {
     let onyxR25 = riverR6[lotusR24];
-    if (onyxR25 && slateR6.x >= onyxR25.hitBox.x && slateR6.x <= onyxR25.hitBox.x + onyxR25.hitBox.width && slateR6.y >= onyxR25.hitBox.y && slateR6.y <= onyxR25.hitBox.y + onyxR25.hitBox.height) return onyxR25;
+    if (
+      onyxR25 &&
+      slateR6.x >= onyxR25.hitBox.x &&
+      slateR6.x <= onyxR25.hitBox.x + onyxR25.hitBox.width &&
+      slateR6.y >= onyxR25.hitBox.y &&
+      slateR6.y <= onyxR25.hitBox.y + onyxR25.hitBox.height
+    )
+      return onyxR25;
   }
   return null;
 }
 function lotusR2(ultraR11, vaporR11) {
-  return vaporR11 ? ultraR11.find(item => item.id === vaporR11) ?? null : null;
+  return vaporR11
+    ? (ultraR11.find((item) => item.id === vaporR11) ?? null)
+    : null;
 }
 var oliveR15 = esmInit(() => {});
 function mintR2(onyxR4, pearlR4, quartzR4 = {}) {
@@ -502,12 +671,44 @@ function mintR2(onyxR4, pearlR4, quartzR4 = {}) {
     basaltR21 = quartzR4.stroke ?? "rgba(51, 108, 255, 0.95)",
     cedarR21 = quartzR4.lineWidth ?? 1.5;
   onyxR4.save();
-  amberR21 && (onyxR4.fillStyle = amberR21, onyxR4.fillRect(pearlR4.hitBox.x, pearlR4.hitBox.y, pearlR4.hitBox.width, pearlR4.hitBox.height));
-  basaltR21 && (onyxR4.strokeStyle = basaltR21, onyxR4.lineWidth = cedarR21, onyxR4.strokeRect(pearlR4.hitBox.x + 0.5, pearlR4.hitBox.y + 0.5, Math.max(0, pearlR4.hitBox.width - 1), Math.max(0, pearlR4.hitBox.height - 1)));
+  amberR21 &&
+    ((onyxR4.fillStyle = amberR21),
+    onyxR4.fillRect(
+      pearlR4.hitBox.x,
+      pearlR4.hitBox.y,
+      pearlR4.hitBox.width,
+      pearlR4.hitBox.height,
+    ));
+  basaltR21 &&
+    ((onyxR4.strokeStyle = basaltR21),
+    (onyxR4.lineWidth = cedarR21),
+    onyxR4.strokeRect(
+      pearlR4.hitBox.x + 0.5,
+      pearlR4.hitBox.y + 0.5,
+      Math.max(0, pearlR4.hitBox.width - 1),
+      Math.max(0, pearlR4.hitBox.height - 1),
+    ));
   onyxR4.restore();
 }
 var prismR15 = esmInit(() => {});
 function novaR2(copperR5, deltaR5) {
-  deltaR5 && (copperR5.save(), copperR5.strokeStyle = "rgba(51, 108, 255, 0.95)", copperR5.fillStyle = "rgba(51, 108, 255, 0.08)", copperR5.lineWidth = 1.5, copperR5.fillRect(deltaR5.hitBox.x, deltaR5.hitBox.y, deltaR5.hitBox.width, deltaR5.hitBox.height), copperR5.strokeRect(deltaR5.hitBox.x + 0.5, deltaR5.hitBox.y + 0.5, Math.max(0, deltaR5.hitBox.width - 1), Math.max(0, deltaR5.hitBox.height - 1)), copperR5.restore());
+  deltaR5 &&
+    (copperR5.save(),
+    (copperR5.strokeStyle = "rgba(51, 108, 255, 0.95)"),
+    (copperR5.fillStyle = "rgba(51, 108, 255, 0.08)"),
+    (copperR5.lineWidth = 1.5),
+    copperR5.fillRect(
+      deltaR5.hitBox.x,
+      deltaR5.hitBox.y,
+      deltaR5.hitBox.width,
+      deltaR5.hitBox.height,
+    ),
+    copperR5.strokeRect(
+      deltaR5.hitBox.x + 0.5,
+      deltaR5.hitBox.y + 0.5,
+      Math.max(0, deltaR5.hitBox.width - 1),
+      Math.max(0, deltaR5.hitBox.height - 1),
+    ),
+    copperR5.restore());
 }
 var quillR15 = esmInit(() => {});

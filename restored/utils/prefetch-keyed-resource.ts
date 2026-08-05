@@ -8,7 +8,9 @@ export type PrefetchKeyedResourcePeers = {
 let peers: PrefetchKeyedResourcePeers | null = null;
 
 /** Wire prefetchKeyedResource peers once companions land. */
-export function setPrefetchKeyedResourcePeers(next: PrefetchKeyedResourcePeers): void {
+export function setPrefetchKeyedResourcePeers(
+  next: PrefetchKeyedResourcePeers,
+): void {
   peers = next;
 }
 

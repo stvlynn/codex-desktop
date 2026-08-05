@@ -46,8 +46,27 @@ export function bindMicrosoft2() {
   }
 
   return peers.e(() => {
-    l3r = peers.c(), peers.Hb(), peers.Ho(), peers.DD(), peers.Vf(), peers.xM(), peers.MJr(), peers.jYr(), peers.Kb(), peers.IE(), peers.PM(), peers.ed(), peers.s3r(), peers.Gf(), peers.IM(), peers.qE(), peers.VM(), peers.RM(), u3r = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => t(peers.yD, peers.e)?.params.serviceTier);
+    ((l3r = peers.c()),
+      peers.Hb(),
+      peers.Ho(),
+      peers.DD(),
+      peers.Vf(),
+      peers.xM(),
+      peers.MJr(),
+      peers.jYr(),
+      peers.Kb(),
+      peers.IE(),
+      peers.PM(),
+      peers.ed(),
+      peers.s3r(),
+      peers.Gf(),
+      peers.IM(),
+      peers.qE(),
+      peers.VM(),
+      peers.RM(),
+      (u3r = peers.Oa(
+        peers.Q,
+        (e, { get: t }) => t(peers.yD, peers.e)?.params.serviceTier,
+      )));
   });
 }

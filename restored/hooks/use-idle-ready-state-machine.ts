@@ -19,7 +19,9 @@ export type UseIdleReadyStateMachinePeers = {
 let peers: UseIdleReadyStateMachinePeers | null = null;
 
 /** Wire useIdleReadyStateMachine peers once companions land. */
-export function setUseIdleReadyStateMachinePeers(next: UseIdleReadyStateMachinePeers): void {
+export function setUseIdleReadyStateMachinePeers(
+  next: UseIdleReadyStateMachinePeers,
+): void {
   peers = next;
 }
 

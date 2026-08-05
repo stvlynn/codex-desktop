@@ -4,7 +4,11 @@
 import { localConversationPath } from "./local-conversation-path";
 
 /** True when ids match, or left equals the local path for `conversationId`. */
-export function equalsIdOrLocalPath(left: string, right: string, conversationId?: string | null): boolean {
+export function equalsIdOrLocalPath(
+  left: string,
+  right: string,
+  conversationId?: string | null,
+): boolean {
   return (
     left === right ||
     (conversationId != null && left === localConversationPath(conversationId))

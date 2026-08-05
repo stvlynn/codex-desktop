@@ -28,7 +28,9 @@ export function borderFromConfig(props: Record<string, unknown>): Borders {
     styleBind16501
   );
 }
-export function borderSideFromConfig(styleCfg8054: Record<string, unknown> | null | undefined): BorderSide | undefined {
+export function borderSideFromConfig(
+  styleCfg8054: Record<string, unknown> | null | undefined,
+): BorderSide | undefined {
   if (!styleCfg8054) return;
   let styleBind18564 = new BorderSide();
   return (
@@ -51,7 +53,9 @@ export function cloneFill(props: Fill): Fill {
   });
 }
 
-export function coerceSolidFillToPattern(props: Record<string, unknown>): Record<string, unknown> {
+export function coerceSolidFillToPattern(
+  props: Record<string, unknown>,
+): Record<string, unknown> {
   return props.type === fillTypeEnum.FILL_TYPE_SOLID
     ? {
         ...props,
@@ -63,7 +67,10 @@ export function coerceSolidFillToPattern(props: Record<string, unknown>): Record
       }
     : props;
 }
-export function applyThemeColorsToDxf(styleCfg3881: Record<string, any>, styleCfg3882: unknown): void {
+export function applyThemeColorsToDxf(
+  styleCfg3881: Record<string, any>,
+  styleCfg3882: unknown,
+): void {
   if (styleCfg3881.fill?.color) {
     let styleBind22337 = resolveSchemeColorToRgbProto(
       styleCfg3881.fill.color,
@@ -104,7 +111,10 @@ export function applyThemeColorsToDxf(styleCfg3881: Record<string, any>, styleCf
     ),
   };
 }
-export function applyThemeColorToBorderSide(styleCfg10947: Record<string, any> | null | undefined, styleCfg10948: unknown): Record<string, any> | null | undefined {
+export function applyThemeColorToBorderSide(
+  styleCfg10947: Record<string, any> | null | undefined,
+  styleCfg10948: unknown,
+): Record<string, any> | null | undefined {
   if (!styleCfg10947?.color) return styleCfg10947;
   let styleBind21453 = resolveSchemeColorToRgbProto(
     styleCfg10947.color,
@@ -117,14 +127,21 @@ export function applyThemeColorToBorderSide(styleCfg10947: Record<string, any> |
       }
     : styleCfg10947;
 }
-export function resolveSchemeColorToRgbProto(styleCfg4443: Record<string, any>, styleCfg4444: unknown): Record<string, unknown> {
+export function resolveSchemeColorToRgbProto(
+  styleCfg4443: Record<string, any>,
+  styleCfg4444: unknown,
+): Record<string, unknown> {
   if (
     styleCfg4443.type !== colorTypeEnum.COLOR_TYPE_SCHEME &&
     styleCfg4443.type !== colorTypeEnum.COLOR_TYPE_SYSTEM
   )
     return styleCfg4443;
   let styleBind13679 = parseRgbaCss(
-    resolveColorProtoToRgbaString(styleCfg4443, styleCfg4444, spreadsheetMlColorSpace),
+    resolveColorProtoToRgbaString(
+      styleCfg4443,
+      styleCfg4444,
+      spreadsheetMlColorSpace,
+    ),
   );
   if (!styleBind13679) return styleCfg4443;
   let { r: styleBind13680, g, b, a } = styleBind13679,
@@ -140,33 +157,21 @@ export function resolveSchemeColorToRgbProto(styleCfg4443: Record<string, any>, 
     transform: undefined,
   };
 }
-export function parseRgbaCss(props: string): { r: number; g: number; b: number; a: number } | null {
+export function parseRgbaCss(
+  props: string,
+): { r: number; g: number; b: number; a: number } | null {
   let styleBind13597 = props.match(
     /^rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)(?:\s*,\s*([\d.]+))?\)$/i,
   );
   if (!styleBind13597) return null;
-  let styleBind13598 = Math.max(
-      0,
-      Math.min(255, Number(styleBind13597[1])),
-    ),
-    styleBind13599 = Math.max(
-      0,
-      Math.min(255, Number(styleBind13597[2])),
-    ),
-    styleBind13600 = Math.max(
-      0,
-      Math.min(255, Number(styleBind13597[3])),
-    ),
+  let styleBind13598 = Math.max(0, Math.min(255, Number(styleBind13597[1]))),
+    styleBind13599 = Math.max(0, Math.min(255, Number(styleBind13597[2]))),
+    styleBind13600 = Math.max(0, Math.min(255, Number(styleBind13597[3]))),
     styleBind13601 =
-      styleBind13597[4] === undefined
-        ? 1
-        : Number(styleBind13597[4]);
-  return [
-    styleBind13598,
-    styleBind13599,
-    styleBind13600,
-    styleBind13601,
-  ].some((item) => Number.isNaN(item))
+      styleBind13597[4] === undefined ? 1 : Number(styleBind13597[4]);
+  return [styleBind13598, styleBind13599, styleBind13600, styleBind13601].some(
+    (item) => Number.isNaN(item),
+  )
     ? null
     : {
         r: styleBind13598,

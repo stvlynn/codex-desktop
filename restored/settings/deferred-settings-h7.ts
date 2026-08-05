@@ -10,7 +10,9 @@ export type BindDeferredSettingsH7Peers = {
 let peers: BindDeferredSettingsH7Peers | null = null;
 
 /** Wire bindDeferredSettingsH7 peers once companions land. */
-export function setBindDeferredSettingsH7Peers(next: BindDeferredSettingsH7Peers): void {
+export function setBindDeferredSettingsH7Peers(
+  next: BindDeferredSettingsH7Peers,
+): void {
   peers = next;
 }
 
@@ -22,7 +24,5 @@ export function bindDeferredSettingsH7() {
     throw new Error("bindDeferredSettingsH7 peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => e(peers.Zx).status === `allowed`);
+  return peers.Ma(peers.Q, ({ get: e }) => e(peers.Zx).status === `allowed`);
 }

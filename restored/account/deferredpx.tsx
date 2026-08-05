@@ -22,6 +22,6 @@ export function Deferredpx() {
     throw new Error("Deferredpx peers are not configured");
   }
   return peers.e(() => {
-    peers.NZ(), peers.qx();
+    (peers.NZ(), peers.qx());
   });
 }

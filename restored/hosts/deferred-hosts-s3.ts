@@ -9,7 +9,9 @@ export type BindDeferredHostsS3Peers = {
 let peers: BindDeferredHostsS3Peers | null = null;
 
 /** Wire bindDeferredHostsS3 peers once companions land. */
-export function setBindDeferredHostsS3Peers(next: BindDeferredHostsS3Peers): void {
+export function setBindDeferredHostsS3Peers(
+  next: BindDeferredHostsS3Peers,
+): void {
   peers = next;
 }
 
@@ -21,5 +23,5 @@ export function bindDeferredHostsS3() {
     throw new Error("bindDeferredHostsS3 peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => null);
+  return peers.Da(peers.Q, (e) => null);
 }

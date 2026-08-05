@@ -23,7 +23,10 @@ export function getCodexMicroCommands(): CodexMicroCommand[] {
 /**
  * Bundle export `y1` — whether a command is available in a given host flavor.
  */
-export function isCommandAvailableIn(command: CodexMicroCommand, host: string): boolean {
+export function isCommandAvailableIn(
+  command: CodexMicroCommand,
+  host: string,
+): boolean {
   return command.availableIn?.includes(host) ?? true;
 }
 

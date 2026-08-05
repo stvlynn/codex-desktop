@@ -24,7 +24,7 @@ export function bindWindows() {
     throw new Error("bindWindows peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => peers.ZGn(e(peers.YGn).data?.platform));
+  return peers.Ma(peers.Q, ({ get: e }) =>
+    peers.ZGn(e(peers.YGn).data?.platform),
+  );
 }

@@ -95,8 +95,7 @@ export function useChatgptComposerControllerHelper73(request1087: any) {
       {slot4385}
     </div>
   );
-  let slot4387 =
-    slot4386;
+  let slot4387 = slot4386;
   return url == null ? (
     slot4387
   ) : (
@@ -112,15 +111,10 @@ export function useChatgptComposerControllerHelper74(request4252: any) {
   const UseChatgptComposerControllerHelper65 =
     useChatgptComposerControllerHelper65;
   let { children, className, href } = request4252,
-    slot10217 =
-      href == null ? null : _appInitialIL(href);
-  let slot10218 =
-    slot10217;
+    slot10217 = href == null ? null : _appInitialIL(href);
+  let slot10218 = slot10217;
   if (slot10218 == null) return null;
-  let slot10219 = appInitialWft(
-    "cursor-interaction",
-    className,
-  );
+  let slot10219 = appInitialWft("cursor-interaction", className);
   return (
     <UseChatgptComposerControllerHelper65
       className={slot10219}

@@ -14,7 +14,9 @@ export type BindComposerThreadSearchPeers = {
 let peers: BindComposerThreadSearchPeers | null = null;
 
 /** Wire bindComposerThreadSearch peers once companions land. */
-export function setBindComposerThreadSearchPeers(next: BindComposerThreadSearchPeers): void {
+export function setBindComposerThreadSearchPeers(
+  next: BindComposerThreadSearchPeers,
+): void {
   peers = next;
 }
 
@@ -27,6 +29,6 @@ export function bindComposerThreadSearch() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.WH(), peers.x_(), peers.oT(), peers.K_(), peers.HA();
+    (peers.Au(), peers.WH(), peers.x_(), peers.oT(), peers.K_(), peers.HA());
   });
 }

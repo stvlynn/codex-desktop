@@ -41,7 +41,9 @@ export type BrowserProfileImportTelemetryPeers = {
 let peers: BrowserProfileImportTelemetryPeers | null = null;
 
 /** Wire browser profile import telemetry enums/helpers once companions land. */
-export function setBrowserProfileImportTelemetryPeers(next: BrowserProfileImportTelemetryPeers): void {
+export function setBrowserProfileImportTelemetryPeers(
+  next: BrowserProfileImportTelemetryPeers,
+): void {
   peers = next;
 }
 
@@ -84,7 +86,12 @@ export function logBrowserProfileImportDialogClosed(
 }
 
 /** Bundle `oEo` / export `xk`. */
-export function logBrowserProfileImportAttemptStarted(store: unknown, entryPoint: unknown, source: unknown, attempt: unknown): void {
+export function logBrowserProfileImportAttemptStarted(
+  store: unknown,
+  entryPoint: unknown,
+  source: unknown,
+  attempt: unknown,
+): void {
   const p = requirePeers();
   p.logProductEvent(store, p.productEvent, {
     stepType: p.attemptStartedStep,
@@ -93,7 +100,11 @@ export function logBrowserProfileImportAttemptStarted(store: unknown, entryPoint
 }
 
 /** Bundle `iEo` / export `wk`. */
-export function logBrowserProfileImportWindowsChromeNoticeShown(store: unknown, entryPoint: unknown, flowId: unknown): void {
+export function logBrowserProfileImportWindowsChromeNoticeShown(
+  store: unknown,
+  entryPoint: unknown,
+  flowId: unknown,
+): void {
   const p = requirePeers();
   p.logProductEvent(store, p.productEvent, {
     stepType: p.noticeShownStep,
@@ -106,7 +117,11 @@ export function logBrowserProfileImportWindowsChromeNoticeShown(store: unknown, 
 }
 
 /** Bundle `aEo` / export `Ck`. */
-export function logBrowserProfileImportWindowsChromeNoticeAcked(store: unknown, entryPoint: unknown, flowId: unknown): void {
+export function logBrowserProfileImportWindowsChromeNoticeAcked(
+  store: unknown,
+  entryPoint: unknown,
+  flowId: unknown,
+): void {
   const p = requirePeers();
   p.logProductEvent(store, p.productEvent, {
     stepType: p.noticeAckedStep,
@@ -119,7 +134,13 @@ export function logBrowserProfileImportWindowsChromeNoticeAcked(store: unknown, 
 }
 
 /** Bundle `sEo` / export `bk`. */
-export function logBrowserProfileImportAttemptFinished(store: unknown, entryPoint: unknown, source: unknown, attempt: unknown, result: unknown): void {
+export function logBrowserProfileImportAttemptFinished(
+  store: unknown,
+  entryPoint: unknown,
+  source: unknown,
+  attempt: unknown,
+  result: unknown,
+): void {
   const p = requirePeers();
   const finished = p.attemptResultPayload(result, result);
   p.logProductEvent(store, p.productEvent, {

@@ -14,7 +14,9 @@ export type BindBindAgentModeByHostIdPeers = {
 let peers: BindBindAgentModeByHostIdPeers | null = null;
 
 /** Wire bindBindAgentModeByHostId peers once companions land. */
-export function setBindBindAgentModeByHostIdPeers(next: BindBindAgentModeByHostIdPeers): void {
+export function setBindBindAgentModeByHostIdPeers(
+  next: BindBindAgentModeByHostIdPeers,
+): void {
   peers = next;
 }
 

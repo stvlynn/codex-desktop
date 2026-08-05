@@ -33,6 +33,16 @@ export function bindMacOS2() {
   }
 
   return peers.e(() => {
-    UKa = peers.c(), peers.Ho(), peers._ti(), peers.pUn(), peers.bXr(), peers.kXr(), peers.K3r(), peers.zw(), peers.ed(), peers.KM(), peers.fN();
+    ((UKa = peers.c()),
+      peers.Ho(),
+      peers._ti(),
+      peers.pUn(),
+      peers.bXr(),
+      peers.kXr(),
+      peers.K3r(),
+      peers.zw(),
+      peers.ed(),
+      peers.KM(),
+      peers.fN());
   });
 }

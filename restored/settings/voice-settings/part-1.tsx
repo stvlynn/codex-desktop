@@ -6,11 +6,7 @@
 /* split-lane-import-depth:1 */
 
 /** FormatJS rich-text tag stub */
-function At({
-  children
-}: {
-  children?: unknown;
-}) {
+function At({ children }: { children?: unknown }) {
   return children;
 }
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
@@ -19,10 +15,22 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Wlt_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Wlt_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_FR_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { OPENAI_CURATED_ID } from "../../config/openai-curated-id";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { appServices } from "../../desktop/desktop-services";
@@ -42,7 +50,11 @@ import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { copilotDefaultModel } from "../../models/copilot-default-model";
-import { readScrollTop, scrollAppActionTargetByTurn, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetByTurn,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { openMainWindowThenContinue } from "../../navigation/open-main-window-then-continue";
 import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
 import { ensureDynamicScriptLoadInit } from "../../runtime/ensure-dynamic-script-load-init";
@@ -53,7 +65,10 @@ import { deferredT1 } from "../../ui/deferred-t1";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { ensureContextMenuProviderInit } from "../../ui/ensure-context-menu-provider-init";
@@ -67,7 +82,10 @@ import { ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../
 import { generalDesktopSettingsDefinitions } from "../general-desktop-settings-definitions";
 import { ensureHotkeySetterInit, HotkeySetter } from "../hotkey-setter";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { useSettingValue } from "../use-setting-value";
 import { useVoiceSettingsHostConfig } from "../use-voice-settings-host-config";
 import { buildVscodeQueryKey } from "../vscode-query-key";
@@ -135,7 +153,7 @@ function VoiceSettingsHelper1({
   open,
   previewEnabled = true,
   triggerContent,
-  voices
+  voices,
 }) {
   let marble = useIntl(),
     [nickel, onyx] = alpha.useState(initialVoice),
@@ -148,76 +166,135 @@ function VoiceSettingsHelper1({
         await onSave(nickel);
         onOpenChange(false);
       } catch {
-        slate(marble.formatMessage({
-          id: "settings.general.realtimeVoice.saveError",
-          defaultMessage: "Unable to save voice",
-          description: "Error shown when saving the realtime voice fails"
-        }));
+        slate(
+          marble.formatMessage({
+            id: "settings.general.realtimeVoice.saveError",
+            defaultMessage: "Unable to save voice",
+            description: "Error shown when saving the realtime voice fails",
+          }),
+        );
       } finally {
         quartz(false);
       }
     };
-  return <UsePointerSurfaceInteractionGate {...{
-    open,
-    contentProps: {
-      "aria-describedby": undefined
-    },
-    dialogCloseLabel: marble.formatMessage({
-      id: "settings.general.realtimeVoice.dialog.close",
-      defaultMessage: "Close",
-      description: "Accessible label for closing the voice picker dialog"
-    }),
-    triggerContent,
-    onOpenChange: umbra => {
-      umbra && onyx(initialVoice);
-      slate(null);
-      onOpenChange(umbra);
-    },
-    size: "default",
-    children: <DeferredUiB {...{
-      as: "form",
-      onSubmit: event => {
-        event.preventDefault();
-        timber();
-      },
-      children: [<DeferredUiU {...{
-        children: [<DeferredUiH {...{
-          className: "pr-8",
-          title: <RealtimeVoiceHostId {...{
-            children: <MemoizedFormattedMessage {...{
-              id: "settings.general.realtimeVoice.dialog.title",
-              defaultMessage: "Choose a voice",
-              description: "Title of the realtime voice picker dialog"
-            }} />
-          }} />
-        }} />, <AppInitialAC initialVoice={initialVoice} previewEnabled={previewEnabled} voices={voices} onVoiceChange={onyx} />, river == null ? null : <p role="alert" className="mt-2 text-center text-sm text-token-error-foreground">
+  return (
+    <UsePointerSurfaceInteractionGate
+      {...{
+        open,
+        contentProps: {
+          "aria-describedby": undefined,
+        },
+        dialogCloseLabel: marble.formatMessage({
+          id: "settings.general.realtimeVoice.dialog.close",
+          defaultMessage: "Close",
+          description: "Accessible label for closing the voice picker dialog",
+        }),
+        triggerContent,
+        onOpenChange: (umbra) => {
+          umbra && onyx(initialVoice);
+          slate(null);
+          onOpenChange(umbra);
+        },
+        size: "default",
+        children: (
+          <DeferredUiB
+            {...{
+              as: "form",
+              onSubmit: (event) => {
+                event.preventDefault();
+                timber();
+              },
+              children: [
+                <DeferredUiU
+                  {...{
+                    children: [
+                      <DeferredUiH
+                        {...{
+                          className: "pr-8",
+                          title: (
+                            <RealtimeVoiceHostId
+                              {...{
+                                children: (
+                                  <MemoizedFormattedMessage
+                                    {...{
+                                      id: "settings.general.realtimeVoice.dialog.title",
+                                      defaultMessage: "Choose a voice",
+                                      description:
+                                        "Title of the realtime voice picker dialog",
+                                    }}
+                                  />
+                                ),
+                              }}
+                            />
+                          ),
+                        }}
+                      />,
+                      <AppInitialAC
+                        initialVoice={initialVoice}
+                        previewEnabled={previewEnabled}
+                        voices={voices}
+                        onVoiceChange={onyx}
+                      />,
+                      river == null ? null : (
+                        <p
+                          role="alert"
+                          className="mt-2 text-center text-sm text-token-error-foreground"
+                        >
                           {river}
-                        </p>]
-      }} />, <SetRemoteControlEnabledForHost {...{
-        className: "mt-5",
-        children: [<ReadLoginRouteQuerySnapshot {...{
-          color: "secondary",
-          disabled: pearl,
-          type: "button",
-          onClick: () => onOpenChange(false),
-          children: <MemoizedFormattedMessage {...{
-            id: "settings.general.realtimeVoice.dialog.cancel",
-            defaultMessage: "Cancel",
-            description: "Button to cancel changing the realtime voice"
-          }} />
-        }} />, <ReadLoginRouteQuerySnapshot {...{
-          color: "primary",
-          loading: pearl,
-          type: "submit",
-          children: <MemoizedFormattedMessage {...{
-            id: "settings.general.realtimeVoice.dialog.done",
-            defaultMessage: "Done",
-            description: "Button to save the selected realtime voice"
-          }} />
-        }} />]
-      }} />]
-    }} />
-  }} />;
+                        </p>
+                      ),
+                    ],
+                  }}
+                />,
+                <SetRemoteControlEnabledForHost
+                  {...{
+                    className: "mt-5",
+                    children: [
+                      <ReadLoginRouteQuerySnapshot
+                        {...{
+                          color: "secondary",
+                          disabled: pearl,
+                          type: "button",
+                          onClick: () => onOpenChange(false),
+                          children: (
+                            <MemoizedFormattedMessage
+                              {...{
+                                id: "settings.general.realtimeVoice.dialog.cancel",
+                                defaultMessage: "Cancel",
+                                description:
+                                  "Button to cancel changing the realtime voice",
+                              }}
+                            />
+                          ),
+                        }}
+                      />,
+                      <ReadLoginRouteQuerySnapshot
+                        {...{
+                          color: "primary",
+                          loading: pearl,
+                          type: "submit",
+                          children: (
+                            <MemoizedFormattedMessage
+                              {...{
+                                id: "settings.general.realtimeVoice.dialog.done",
+                                defaultMessage: "Done",
+                                description:
+                                  "Button to save the selected realtime voice",
+                              }}
+                            />
+                          ),
+                        }}
+                      />,
+                    ],
+                  }}
+                />,
+              ],
+            }}
+          />
+        ),
+      }}
+    />
+  );
 }
 var alpha,
   bravo,
@@ -232,25 +309,21 @@ var alpha,
 function at() {
   let violet = CodexPluginActionType(appScopeAtom),
     willow = NativeContextMenuSurface("2380644311"),
-    {
-      platform
-    } = useHostPlatformModifierSymbol(),
-    {
-      hostId
-    } = useVoiceSettingsHostConfig(),
+    { platform } = useHostPlatformModifierSymbol(),
+    { hostId } = useVoiceSettingsHostConfig(),
     xenon = CodexBrowserSurfaceActionType(AppInitialA4, hostId),
     yellow = CodexPluginActionResult(deferredHostsY4),
     zinc = {
       enabled: willow,
-      hostId
+      hostId,
     };
-  let {
-      data,
-      error,
-      refetch
-    } = CodexPluginActionResult(deferredNavigationFT(AppInitialVC, zinc)),
+  let { data, error, refetch } = CodexPluginActionResult(
+      deferredNavigationFT(AppInitialVC, zinc),
+    ),
     [amber, basalt] = echo.useState(false),
-    cedar = data?.voices.find(olive => olive.slug === data.effectiveVoiceSlug);
+    cedar = data?.voices.find(
+      (olive) => olive.slug === data.effectiveVoiceSlug,
+    );
   let daisy = cedar,
     ember = error != null || data?.accountVoiceStatus === "unavailable";
   if (!willow) return null;
@@ -259,93 +332,167 @@ function at() {
     let prism = () => {
       refetch();
     };
-    let quill = <MemoizedFormattedMessage {...{
-      id: "settings.general.realtimeVoice.retry",
-      defaultMessage: "Retry",
-      description: "Button to retry loading compatible realtime voices"
-    }} />;
+    let quill = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.general.realtimeVoice.retry",
+          defaultMessage: "Retry",
+          description: "Button to retry loading compatible realtime voices",
+        }}
+      />
+    );
     let reef;
-    reef = <ReadLoginRouteQuerySnapshot {...{
-      color: "secondary",
-      size: "toolbar",
-      onClick: prism,
-      children: quill
-    }} />;
+    reef = (
+      <ReadLoginRouteQuerySnapshot
+        {...{
+          color: "secondary",
+          size: "toolbar",
+          onClick: prism,
+          children: quill,
+        }}
+      />
+    );
     flint = reef;
   } else if (data == null || daisy == null) {
     let sage;
-    sage = <ReadLoginRouteQuerySnapshot {...{
-      color: "secondary",
-      size: "toolbar",
-      disabled: true,
-      children: <MemoizedFormattedMessage {...{
-        id: "settings.general.realtimeVoice.loading",
-        defaultMessage: "Loading…",
-        description: "Label shown while the selected realtime voice loads"
-      }} />
-    }} />;
+    sage = (
+      <ReadLoginRouteQuerySnapshot
+        {...{
+          color: "secondary",
+          size: "toolbar",
+          disabled: true,
+          children: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.general.realtimeVoice.loading",
+                defaultMessage: "Loading…",
+                description:
+                  "Label shown while the selected realtime voice loads",
+              }}
+            />
+          ),
+        }}
+      />
+    );
     flint = sage;
   } else {
-    let topaz = <span aria-hidden={true} className="size-3 rounded-full bg-token-charts-blue" />;
-    let ultra = <ReadLoginRouteQuerySnapshot {...{
-      color: "secondary",
-      size: "toolbar",
-      children: [topaz, daisy.name]
-    }} />;
-    let vapor = yarn => AppInitialHC(violet, yarn.slug);
+    let topaz = (
+      <span
+        aria-hidden={true}
+        className="size-3 rounded-full bg-token-charts-blue"
+      />
+    );
+    let ultra = (
+      <ReadLoginRouteQuerySnapshot
+        {...{
+          color: "secondary",
+          size: "toolbar",
+          children: [topaz, daisy.name],
+        }}
+      />
+    );
+    let vapor = (yarn) => AppInitialHC(violet, yarn.slug);
     let wheat;
-    wheat = <VoiceSettingsHelper1 {...{
-      open: amber,
-      initialVoice: daisy,
-      triggerContent: ultra,
-      voices: data.voices,
-      onOpenChange: basalt,
-      onSave: vapor
-    }} />;
+    wheat = (
+      <VoiceSettingsHelper1
+        {...{
+          open: amber,
+          initialVoice: daisy,
+          triggerContent: ultra,
+          voices: data.voices,
+          onOpenChange: basalt,
+          onSave: vapor,
+        }}
+      />
+    );
     flint = wheat;
   }
-  let garnet = <UseChromeAndCodeThemeSync.Header {...{
-    title: <MemoizedFormattedMessage {...{
-      id: "settings.general.realtimeVoice",
-      defaultMessage: "Voice chat",
-      description: "Heading for realtime voice settings group"
-    }} />
-  }} />;
-  let hazel = <MemoizedFormattedMessage {...{
-    id: "settings.general.realtimeVoice.voice.label",
-    defaultMessage: "Voice",
-    description: "Label for the selected realtime voice"
-  }} />;
-  let ivory = <MemoizedFormattedMessage {...{
-    id: "settings.general.realtimeVoice.voice.description",
-    defaultMessage: "Choose the voice Codex uses for new voice chats",
-    description: "Description for the realtime voice selector"
-  }} />;
-  let jasper = ember ? <span className="text-token-error-foreground">
-      {<MemoizedFormattedMessage {...{
-      id: "settings.general.realtimeVoice.loadError",
-      defaultMessage: "Unable to load voice settings",
-      description: "Error shown when realtime voice settings cannot load"
-    }} />}
-    </span> : null;
-  let kelp = <div className="flex flex-col gap-1">
+  let garnet = (
+    <UseChromeAndCodeThemeSync.Header
+      {...{
+        title: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.general.realtimeVoice",
+              defaultMessage: "Voice chat",
+              description: "Heading for realtime voice settings group",
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let hazel = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.general.realtimeVoice.voice.label",
+        defaultMessage: "Voice",
+        description: "Label for the selected realtime voice",
+      }}
+    />
+  );
+  let ivory = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.general.realtimeVoice.voice.description",
+        defaultMessage: "Choose the voice Codex uses for new voice chats",
+        description: "Description for the realtime voice selector",
+      }}
+    />
+  );
+  let jasper = ember ? (
+    <span className="text-token-error-foreground">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.general.realtimeVoice.loadError",
+            defaultMessage: "Unable to load voice settings",
+            description: "Error shown when realtime voice settings cannot load",
+          }}
+        />
+      }
+    </span>
+  ) : null;
+  let kelp = (
+    <div className="flex flex-col gap-1">
       {ivory}
       {jasper}
-    </div>;
-  let lotus = <EnsurePersonalizationCInit {...{
-    label: hazel,
-    description: kelp,
-    control: flint
-  }} />;
+    </div>
+  );
+  let lotus = (
+    <EnsurePersonalizationCInit
+      {...{
+        label: hazel,
+        description: kelp,
+        control: flint,
+      }}
+    />
+  );
   let mint = <VoiceSettingsHelper3 {...{}} />;
-  let nova = platform === "macOS" && xenon && yellow?.dynamicTools.appshotsEnabled ? <VoiceSettingsHelper2 {...{}} /> : null;
-  return <UseChromeAndCodeThemeSync {...{
-    children: [garnet, <UseChromeAndCodeThemeSync.Content {...{
-      children: <ParseUrlOrFallback {...{
-        children: [lotus, mint, nova]
-      }} />
-    }} />]
-  }} />;
+  let nova =
+    platform === "macOS" && xenon && yellow?.dynamicTools.appshotsEnabled ? (
+      <VoiceSettingsHelper2 {...{}} />
+    ) : null;
+  return (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [
+          garnet,
+          <UseChromeAndCodeThemeSync.Content
+            {...{
+              children: (
+                <ParseUrlOrFallback
+                  {...{
+                    children: [lotus, mint, nova],
+                  }}
+                />
+              ),
+            }}
+          />,
+        ],
+      }}
+    />
+  );
 }
 function VoiceSettingsHelper2() {
   let zephyr = CodexPluginActionType(appScopeAtom),
@@ -353,17 +500,26 @@ function VoiceSettingsHelper2() {
     bloom = useSettingValue(gamma.screenContextEnabled),
     coral,
     drift;
-  coral = <MemoizedFormattedMessage {...{
-    id: "settings.general.realtimeVoiceScreenContext.label",
-    defaultMessage: "Screen context",
-    description: "Label for realtime voice screen context setting"
-  }} />;
-  drift = <MemoizedFormattedMessage {...{
-    id: "settings.general.realtimeVoiceScreenContext.description",
-    defaultMessage: "Let Codex inspect the foreground app when you refer to what's on screen. macOS asks for access the first time Codex needs it",
-    description: "Description for realtime voice screen context setting"
-  }} />;
-  let eagle = glide => {
+  coral = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.general.realtimeVoiceScreenContext.label",
+        defaultMessage: "Screen context",
+        description: "Label for realtime voice screen context setting",
+      }}
+    />
+  );
+  drift = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.general.realtimeVoiceScreenContext.description",
+        defaultMessage:
+          "Let Codex inspect the foreground app when you refer to what's on screen. macOS asks for access the first time Codex needs it",
+        description: "Description for realtime voice screen context setting",
+      }}
+    />
+  );
+  let eagle = (glide) => {
     if (!glide) {
       setSettingValue(zephyr, gamma.screenContextEnabled, false);
       return;
@@ -375,32 +531,34 @@ function VoiceSettingsHelper2() {
   let frost = acorn.formatMessage({
     id: "settings.general.realtimeVoiceScreenContext.ariaLabel",
     defaultMessage: "Enable screen context for voice chat",
-    description: "Aria label for the realtime voice screen context toggle"
+    description: "Aria label for the realtime voice screen context toggle",
   });
-  return <EnsurePersonalizationCInit {...{
-    label: coral,
-    description: drift,
-    control: <AppInitialYC checked={bloom} onChange={eagle} ariaLabel={frost} />
-  }} />;
+  return (
+    <EnsurePersonalizationCInit
+      {...{
+        label: coral,
+        description: drift,
+        control: (
+          <AppInitialYC checked={bloom} onChange={eagle} ariaLabel={frost} />
+        ),
+      }}
+    />
+  );
 }
 function VoiceSettingsHelper3() {
   let honey = useIntl(),
-    {
-      platform
-    } = useHostPlatformModifierSymbol(),
+    { platform } = useHostPlatformModifierSymbol(),
     iris = useQueryClient(),
     jewel = ensureGitRepoWatchAtomsInit(),
-    {
-      data
-    } = CodexPluginActionResult(isStartingProcessExpired),
+    { data } = CodexPluginActionResult(isStartingProcessExpired),
     [knoll, lunar] = echo.useState(false),
     [moss, north] = echo.useState(null),
     orbit = {
-      onSuccess: meadow => {
+      onSuccess: (meadow) => {
         let nest = buildVscodeQueryKey("codex-command-keymap-state");
         iris.setQueryData(nest, meadow);
         jewel(nest);
-      }
+      },
     };
   let pine = applyU0000U001FU007F2("set-codex-command-keybinding", orbit),
     quest = async function (oak) {
@@ -408,20 +566,28 @@ function VoiceSettingsHelper3() {
       try {
         await pine.mutateAsync({
           commandId: "realtimeVoice",
-          update: oak == null ? {
-            type: "clear"
-          } : {
-            type: "set",
-            accelerator: oak
-          }
+          update:
+            oak == null
+              ? {
+                  type: "clear",
+                }
+              : {
+                  type: "set",
+                  accelerator: oak,
+                },
         });
       } catch (petal) {
         let quiet = petal;
-        north(quiet instanceof Error ? quiet.message : honey.formatMessage({
-          id: "settings.general.realtimeVoiceHotkey.errorGeneric",
-          defaultMessage: "Failed to update voice chat hotkey",
-          description: "Fallback error shown when realtime voice hotkey update fails"
-        }));
+        north(
+          quiet instanceof Error
+            ? quiet.message
+            : honey.formatMessage({
+                id: "settings.general.realtimeVoiceHotkey.errorGeneric",
+                defaultMessage: "Failed to update voice chat hotkey",
+                description:
+                  "Fallback error shown when realtime voice hotkey update fails",
+              }),
+        );
       }
     };
   let ridge = quest;
@@ -430,42 +596,54 @@ function VoiceSettingsHelper3() {
   storm = deferredT1("realtimeVoice", data, platform)[0]?.accelerator ?? null;
   tide = storm == null ? null : moveArrayItem(storm);
   let unity = tide,
-    vale = <MemoizedFormattedMessage {...{
-      id: "settings.general.realtimeVoiceHotkey.label",
-      defaultMessage: "Voice chat hotkey",
-      description: "Label for realtime voice hotkey setting"
-    }} />;
-  let wave = <MemoizedFormattedMessage {...{
-    id: "settings.general.realtimeVoiceHotkey.description",
-    defaultMessage: "Start voice chat from anywhere on desktop",
-    description: "Description for realtime voice hotkey setting"
-  }} />;
-  let apex = moss ? <span className="text-token-error-foreground">{moss}</span> : null;
-  let brook = <div className="flex flex-col gap-1">
+    vale = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.general.realtimeVoiceHotkey.label",
+          defaultMessage: "Voice chat hotkey",
+          description: "Label for realtime voice hotkey setting",
+        }}
+      />
+    );
+  let wave = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.general.realtimeVoiceHotkey.description",
+        defaultMessage: "Start voice chat from anywhere on desktop",
+        description: "Description for realtime voice hotkey setting",
+      }}
+    />
+  );
+  let apex = moss ? (
+    <span className="text-token-error-foreground">{moss}</span>
+  ) : null;
+  let brook = (
+    <div className="flex flex-col gap-1">
       {wave}
       {apex}
-    </div>;
+    </div>
+  );
   let cliff = honey.formatMessage({
     id: "settings.general.realtimeVoiceHotkey.captureAriaLabel",
     defaultMessage: "Voice chat hotkey capture",
-    description: "Aria label for realtime voice hotkey capture input"
+    description: "Aria label for realtime voice hotkey capture input",
   });
   let dusk = pine.isPending,
     elm = honey.formatMessage({
       id: "settings.general.realtimeVoiceHotkey.off",
       defaultMessage: "Off",
-      description: "Status label when realtime voice hotkey is disabled"
+      description: "Status label when realtime voice hotkey is disabled",
     });
   let fern = honey.formatMessage({
     id: "settings.general.realtimeVoiceHotkey.label",
     defaultMessage: "Voice chat hotkey",
-    description: "Label for realtime voice hotkey setting"
+    description: "Label for realtime voice hotkey setting",
   });
   let grove = () => {
     lunar(false);
   };
   let hill, isle;
-  hill = rain => {
+  hill = (rain) => {
     lunar(false);
     ridge(rain);
   };
@@ -476,25 +654,33 @@ function VoiceSettingsHelper3() {
     north(null);
     lunar(true);
   };
-  let lagoon = <HotkeySetter {...{
-    accelerator: storm,
-    acceleratorLabel: unity,
-    allowsBareModifiers: true,
-    captureAriaLabel: cliff,
-    disabled: dusk,
-    emptyLabel: elm,
-    hotkeyName: fern,
-    isCapturing: knoll,
-    onCancelCapture: grove,
-    onCapture: hill,
-    onClear: isle,
-    onStartCapture: juniper
-  }} />;
-  return <EnsurePersonalizationCInit {...{
-    label: vale,
-    description: brook,
-    control: lagoon
-  }} />;
+  let lagoon = (
+    <HotkeySetter
+      {...{
+        accelerator: storm,
+        acceleratorLabel: unity,
+        allowsBareModifiers: true,
+        captureAriaLabel: cliff,
+        disabled: dusk,
+        emptyLabel: elm,
+        hotkeyName: fern,
+        isCapturing: knoll,
+        onCancelCapture: grove,
+        onCapture: hill,
+        onClear: isle,
+        onStartCapture: juniper,
+      }}
+    />
+  );
+  return (
+    <EnsurePersonalizationCInit
+      {...{
+        label: vale,
+        description: brook,
+        control: lagoon,
+      }}
+    />
+  );
 }
 var delta,
   echo,
@@ -538,39 +724,76 @@ var jade,
     ensureAppScopeInit();
     dataAppActionReviewFileExpanded();
     scrollAppActionTargetTo();
-    jade = scrollAppActionTargetByTurn(appScopeAtom, "global-dictation-history", {
-      staleTime: readScrollTop.FIVE_SECONDS
-    });
-    kite = scrollAppActionTargetByTurn(appScopeAtom, "global-dictation-hotkey-state", {
-      staleTime: readScrollTop.FIVE_SECONDS
-    });
+    jade = scrollAppActionTargetByTurn(
+      appScopeAtom,
+      "global-dictation-history",
+      {
+        staleTime: readScrollTop.FIVE_SECONDS,
+      },
+    );
+    kite = scrollAppActionTargetByTurn(
+      appScopeAtom,
+      "global-dictation-hotkey-state",
+      {
+        staleTime: readScrollTop.FIVE_SECONDS,
+      },
+    );
   });
 export function VoiceSettings() {
   let trail = NativeContextMenuSurface("1244621283"),
     urn = NativeContextMenuSurface("4100906017"),
     vine = <SettingsSectionTitle slug="voice" />;
-  let wind = <UseChromeAndCodeThemeSync.Header {...{
-    title: <MemoizedFormattedMessage {...{
-      id: "settings.voice.general",
-      defaultMessage: "General",
-      description: "Heading for general voice settings"
-    }} />
-  }} />;
+  let wind = (
+    <UseChromeAndCodeThemeSync.Header
+      {...{
+        title: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.voice.general",
+              defaultMessage: "General",
+              description: "Heading for general voice settings",
+            }}
+          />
+        ),
+      }}
+    />
+  );
   let yarrow, azure;
-  yarrow = <UseChromeAndCodeThemeSync {...{
-    children: [wind, <UseChromeAndCodeThemeSync.Content {...{
-      children: <ParseUrlOrFallback {...{
-        children: <VoiceSettingsHelper5 {...{}} />
-      }} />
-    }} />]
-  }} />;
+  yarrow = (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [
+          wind,
+          <UseChromeAndCodeThemeSync.Content
+            {...{
+              children: (
+                <ParseUrlOrFallback
+                  {...{
+                    children: <VoiceSettingsHelper5 {...{}} />,
+                  }}
+                />
+              ),
+            }}
+          />,
+        ],
+      }}
+    />
+  );
   azure = <At {...{}} />;
   let birch = trail && urn ? <VoiceSettingsHelper7 {...{}} /> : null;
-  return <OpenInBrowser {...{
-    title: vine,
-    children: <ElectronOnly {...{
-      electron: true,
-      children: [yarrow, azure, birch]
-    }} />
-  }} />;
+  return (
+    <OpenInBrowser
+      {...{
+        title: vine,
+        children: (
+          <ElectronOnly
+            {...{
+              electron: true,
+              children: [yarrow, azure, birch],
+            }}
+          />
+        ),
+      }}
+    />
+  );
 }

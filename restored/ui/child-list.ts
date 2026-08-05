@@ -35,11 +35,17 @@ export function bindChildList() {
   }
 
   return peers.e(() => {
-    Sei = peers.c(), peers.Ho(), peers.gei(), peers.xM(), peers.H7r(), peers.tP(), peers.ed(), peers.K_(), Cei = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => {
-      let n = t(peers.g9r, peers.e).data;
-      return n == null ? void 0 : peers._ei(n);
-    });
+    ((Sei = peers.c()),
+      peers.Ho(),
+      peers.gei(),
+      peers.xM(),
+      peers.H7r(),
+      peers.tP(),
+      peers.ed(),
+      peers.K_(),
+      (Cei = peers.Oa(peers.Q, (e, { get: t }) => {
+        let n = t(peers.g9r, peers.e).data;
+        return n == null ? void 0 : peers._ei(n);
+      })));
   });
 }

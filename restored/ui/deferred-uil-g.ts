@@ -25,6 +25,6 @@ export function deferredUilG() {
   }
 
   return peers.e(() => {
-    peers.jti(), peers.kXr(), peers.TN(), peers._ti();
+    (peers.jti(), peers.kXr(), peers.TN(), peers._ti());
   });
 }

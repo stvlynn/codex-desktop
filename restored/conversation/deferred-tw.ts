@@ -29,6 +29,11 @@ export function deferredTw() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.Au(), peers._p(), peers.ed(), peers.Gf(), yX = peers.Ta(peers.Q, null);
+    (peers.Ho(),
+      peers.Au(),
+      peers._p(),
+      peers.ed(),
+      peers.Gf(),
+      (yX = peers.Ta(peers.Q, null)));
   });
 }

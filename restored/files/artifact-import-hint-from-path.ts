@@ -9,7 +9,9 @@ export type ArtifactImportHint = {
 };
 
 /** Artifact type + import kind hint from a file path. */
-export function artifactImportHintFromPath(filePath: string): ArtifactImportHint | null {
+export function artifactImportHintFromPath(
+  filePath: string,
+): ArtifactImportHint | null {
   const kind = importKindFromPath(filePath);
   if (kind == null) return null;
   switch (kind) {

@@ -10,7 +10,9 @@ export type UseFeatureGateEnabledPeers = {
 let peers: UseFeatureGateEnabledPeers | null = null;
 
 /** Wire useFeatureGateEnabled peers once companions land. */
-export function setUseFeatureGateEnabledPeers(next: UseFeatureGateEnabledPeers): void {
+export function setUseFeatureGateEnabledPeers(
+  next: UseFeatureGateEnabledPeers,
+): void {
   peers = next;
 }
 
@@ -22,5 +24,5 @@ export function useFeatureGateEnabled(e: unknown) {
     throw new Error("useFeatureGateEnabled peers are not configured");
   }
 
-  return peers.knt(), peers.Fo(peers.Eh, e);
+  return (peers.knt(), peers.Fo(peers.Eh, e));
 }

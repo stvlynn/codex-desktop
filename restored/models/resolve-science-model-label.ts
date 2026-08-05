@@ -12,6 +12,8 @@ export type ResolveScienceModelLabelProps = {
  * Bundle `sme` / export `Vgt`.
  * Returns `"science"` for Rosalind / Heisenberg models, otherwise `null`.
  */
-export function resolveScienceModelLabel(props: ResolveScienceModelLabelProps): "science" | null {
+export function resolveScienceModelLabel(
+  props: ResolveScienceModelLabelProps,
+): "science" | null {
   return isScienceModel(props) ? "science" : null;
 }

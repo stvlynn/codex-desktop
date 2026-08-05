@@ -16,7 +16,9 @@ import type {
 } from "./types";
 
 /** Legacy `Rue` — outer / text-frame / content metrics for one text element. */
-export function measureTextElementMetrics(props: TextElementAutofitProps, ): TextElementLayoutMetrics {
+export function measureTextElementMetrics(
+  props: TextElementAutofitProps,
+): TextElementLayoutMetrics {
   let { element, presentation, slide, wrap, textScale } = props,
     { themeMap } = slide.resolveRenderContext(),
     fontMeasure = getFontMeasureContext(),
@@ -29,25 +31,19 @@ export function measureTextElementMetrics(props: TextElementAutofitProps, ): Tex
       props.resolvedStyle ??
       resolvePlaceholderTextStyle(element, presentation, slide),
     paddingPx = resolveTextBoxPaddingPx(resolvedStyle),
-    layout = paintTextElement(
-      element,
-      fontMeasure,
-      themeMap,
-      undefined,
-      {
-        mode: "layout",
-        resolvedStyle,
-        masterDefaults: resolveMasterParagraphDefaults(
-          element,
-          presentation,
-          slide,
-        ),
-        bboxPx: textFrameBboxPx,
-        paddingPx,
-        textScale,
-        wrap,
-      },
-    ),
+    layout = paintTextElement(element, fontMeasure, themeMap, undefined, {
+      mode: "layout",
+      resolvedStyle,
+      masterDefaults: resolveMasterParagraphDefaults(
+        element,
+        presentation,
+        slide,
+      ),
+      bboxPx: textFrameBboxPx,
+      paddingPx,
+      textScale,
+      wrap,
+    }),
     contentWidthPx = Math.max(
       0,
       textFrameBboxPx.width - (paddingPx.left + paddingPx.right),

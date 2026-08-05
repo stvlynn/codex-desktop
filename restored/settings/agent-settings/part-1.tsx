@@ -20,10 +20,28 @@ import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../ap
 import { normalizeAppIconThemeEntries } from "../../apps/normalize-app-icon-theme-entries";
 import { automationsNotShallowEqual } from "../../automation/automations-not-shallow-equal";
 import { isBlankAutomationDraft as IsBlankAutomationDraft } from "../../automation/is-blank-automation-draft";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useLocation } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
@@ -62,7 +80,10 @@ import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { mcpGlobalCapabilityCatalogAtom as McpGlobalCapabilityCatalogAtom } from "../../mcp/mcp-capability-host";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { resolveBrowserTabPanelSide as ResolveBrowserTabPanelSide } from "../../navigation/resolve-browser-tab-panel-side";
@@ -77,7 +98,10 @@ import { codexCommandTheme } from "../../ui/codex-command-theme";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiYn } from "../../ui/deferred-ui-yn";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { FloatingSurfaceCssClass } from "../../ui/floating-surface-css-classes";
@@ -89,32 +113,47 @@ import { isXcodeLicenseError } from "../../utils/is-xcode-license-error";
 import { lerpIfFinite as LerpIfFinite } from "../../utils/lerp-if-finite";
 import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
-import { ensureImportSettingsGctInit, ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsGctInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { identityCwd } from "../../utils/workspace-paths";
 import { pendingWorktreeConversationStartApi } from "../../worktree/pending-worktree-conversation-start-api";
 import { readCodexHomeFromQuery } from "../read-codex-home-from-query";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { initSettingsLoadingRow, SettingsLoadingRow } from "../settings-loading-row";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  initSettingsLoadingRow,
+  SettingsLoadingRow,
+} from "../settings-loading-row";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 const DeferredDX: any = undefined;
 // Wave5d soft JSX companions.
-function Alpha(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Bravo(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Bravo(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Copper(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Copper(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -280,7 +319,11 @@ function acorn(apex) {
     case "checking":
       return 0;
     case "downloading":
-      return apex.downloadedBytes == null || apex.totalBytes == null ? 0 : Math.floor(Math.min(apex.downloadedBytes / apex.totalBytes * 100, 100));
+      return apex.downloadedBytes == null || apex.totalBytes == null
+        ? 0
+        : Math.floor(
+            Math.min((apex.downloadedBytes / apex.totalBytes) * 100, 100),
+          );
     case "verifying":
     case "extracting":
       return 98;
@@ -299,30 +342,45 @@ function bloom(brook, cliff) {
     case "checking":
     case "downloading":
     case "error":
-      return <MemoizedFormattedMessage {...{
-        id: "localConversation.primaryRuntimeInstallStatus.downloading",
-        defaultMessage: "Setting up your workspace: {percent}%",
-        description: "Thread status shown while Codex downloads required local runtime tools before starting a response",
-        values: {
-          percent: cliff
-        }
-      }} />;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "localConversation.primaryRuntimeInstallStatus.downloading",
+            defaultMessage: "Setting up your workspace: {percent}%",
+            description:
+              "Thread status shown while Codex downloads required local runtime tools before starting a response",
+            values: {
+              percent: cliff,
+            },
+          }}
+        />
+      );
     case "extracting":
-      return <MemoizedFormattedMessage {...{
-        id: "localConversation.primaryRuntimeInstallStatus.extracting",
-        defaultMessage: "Preparing your workspace",
-        description: "Thread status shown while Codex extracts required local runtime tools before starting a response"
-      }} />;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "localConversation.primaryRuntimeInstallStatus.extracting",
+            defaultMessage: "Preparing your workspace",
+            description:
+              "Thread status shown while Codex extracts required local runtime tools before starting a response",
+          }}
+        />
+      );
     case "verifying":
     case "validating":
     case "installed":
     case "configuring":
     case "ready":
-      return <MemoizedFormattedMessage {...{
-        id: "localConversation.primaryRuntimeInstallStatus.finalizing",
-        defaultMessage: "Finalizing your workspace",
-        description: "Thread status shown while Codex finalizes required local runtime tools before starting a response"
-      }} />;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "localConversation.primaryRuntimeInstallStatus.finalizing",
+            defaultMessage: "Finalizing your workspace",
+            description:
+              "Thread status shown while Codex finalizes required local runtime tools before starting a response",
+          }}
+        />
+      );
   }
 }
 var coral,
@@ -336,162 +394,172 @@ var coral,
       customConfig: {
         id: "settings.agent.customConfig.sectionTitle",
         defaultMessage: "Custom config.toml settings",
-        description: "Heading for the custom config.toml settings section"
+        description: "Heading for the custom config.toml settings section",
       },
       projectConfig: {
         id: "settings.agent.configuration.scope.projectGroup",
         defaultMessage: "Project config",
-        description: "Section label for project config scopes"
+        description: "Section label for project config scopes",
       },
       globalConfig: {
         id: "settings.agent.configuration.scope.globalGroup",
         defaultMessage: "Global config",
-        description: "Section label for user and admin config scopes"
+        description: "Section label for user and admin config scopes",
       },
       userConfig: {
         id: "settings.agent.configuration.scope.user",
         defaultMessage: "User config",
-        description: "Label for the user config scope in configuration settings"
+        description:
+          "Label for the user config scope in configuration settings",
       },
       adminConfig: {
         id: "settings.agent.configuration.scope.managed",
         defaultMessage: "Admin config",
-        description: "Label for the admin config scope in configuration settings"
+        description:
+          "Label for the admin config scope in configuration settings",
       },
       approvalPolicy: {
         id: "settings.agent.configuration.approval.label",
         defaultMessage: "Approval policy",
-        description: "Label for approval policy in configuration settings"
+        description: "Label for approval policy in configuration settings",
       },
       untrusted: {
         id: "settings.agent.configuration.approval.option.untrusted",
         defaultMessage: "Untrusted",
-        description: "Label for the untrusted approval policy option"
+        description: "Label for the untrusted approval policy option",
       },
       onFailure: {
         id: "settings.agent.configuration.approval.option.onFailure",
         defaultMessage: "On failure",
-        description: "Label for the legacy on-failure approval policy option"
+        description: "Label for the legacy on-failure approval policy option",
       },
       onRequest: {
         id: "settings.agent.configuration.approval.option.onRequest",
         defaultMessage: "On request",
-        description: "Label for the on request approval policy option"
+        description: "Label for the on request approval policy option",
       },
       never: {
         id: "settings.agent.configuration.approval.option.never",
         defaultMessage: "Never ask for approval",
-        description: "Label for the never approval policy option"
+        description: "Label for the never approval policy option",
       },
       sandboxSettings: {
         id: "settings.agent.configuration.sandbox.label",
         defaultMessage: "Sandbox settings",
-        description: "Label for sandbox settings in configuration settings"
+        description: "Label for sandbox settings in configuration settings",
       },
       readOnly: {
         id: "settings.agent.configuration.sandbox.option.readOnly",
         defaultMessage: "Read only",
-        description: "Label for the read only sandbox option"
+        description: "Label for the read only sandbox option",
       },
       workspaceWrite: {
         id: "settings.agent.configuration.sandbox.option.workspaceWrite",
         defaultMessage: "Workspace write",
-        description: "Label for the workspace write sandbox option"
+        description: "Label for the workspace write sandbox option",
       },
       fullAccess: {
         id: "settings.agent.configuration.sandbox.option.fullAccess",
         defaultMessage: "Full access",
-        description: "Label for the full access sandbox option"
+        description: "Label for the full access sandbox option",
       },
       networkAccess: {
         id: "settings.agent.configuration.network.label",
         defaultMessage: "Allow network access",
-        description: "Label for network access in configuration settings"
+        description: "Label for network access in configuration settings",
       },
       workspaceDependencies: {
         id: "settings.agent.dependencies.sectionTitle",
         defaultMessage: "Workspace Dependencies",
-        description: "Heading for the Codex dependencies settings section"
+        description: "Heading for the Codex dependencies settings section",
       },
       currentDependencyVersion: {
         id: "settings.agent.dependencies.bundleVersion.label",
         defaultMessage: "Current version:",
-        description: "Footer label for the installed Codex dependency bundle version"
+        description:
+          "Footer label for the installed Codex dependency bundle version",
       },
       codexDependencies: {
         id: "settings.agent.dependencies.enabled.label",
         defaultMessage: "Codex dependencies",
-        description: "Label for the Codex dependencies enabled toggle"
+        description: "Label for the Codex dependencies enabled toggle",
       },
       diagnoseWorkspaceDependencies: {
         id: "settings.agent.dependencies.diagnose.label",
         defaultMessage: "Diagnose issues in Codex Workspace",
-        description: "Label for dependency diagnostics in settings"
+        description: "Label for dependency diagnostics in settings",
       },
       resetWorkspaceDependencies: {
         id: "settings.agent.dependencies.reset.label",
         defaultMessage: "Reset and install Workspace",
-        description: "Label for resetting and reinstalling dependencies in settings"
+        description:
+          "Label for resetting and reinstalling dependencies in settings",
       },
       experimentalFeatures: {
         id: "settings.general.experimentalFeatures",
         defaultMessage: "Experimental features (Beta)",
-        description: "Heading for beta experimental features settings group"
-      }
+        description: "Heading for beta experimental features settings group",
+      },
     });
   });
-async function glide({
-  filePath,
-  keyPath,
-  value
-}) {
+async function glide({ filePath, keyPath, value }) {
   let dusk = iris(keyPath, value);
-  if (dusk == null) throw Error("Unsupported config key for project config write.");
+  if (dusk == null)
+    throw Error("Unsupported config key for project config write.");
   await honey({
     filePath,
-    field: dusk
+    field: dusk,
   });
 }
-async function honey({
-  filePath,
-  field
-}) {
+async function honey({ filePath, field }) {
   let elm = "";
   try {
-    elm = (await invokeDesktopRpc("read-file", {
-      params: {
-        path: filePath
-      }
-    })).contents;
+    elm = (
+      await invokeDesktopRpc("read-file", {
+        params: {
+          path: filePath,
+        },
+      })
+    ).contents;
   } catch (grove) {
     if (!north(grove)) throw Error("Failed to read project config.");
   }
   let fern = jewel(elm, field.name, field.value);
-  if (fern !== elm) try {
-    await invokeDesktopRpc("local-environment-config-save", {
-      params: {
-        configPath: filePath,
-        raw: fern
-      }
-    });
-  } catch {
-    throw Error("Failed to save project config.");
-  }
+  if (fern !== elm)
+    try {
+      await invokeDesktopRpc("local-environment-config-save", {
+        params: {
+          configPath: filePath,
+          raw: fern,
+        },
+      });
+    } catch {
+      throw Error("Failed to save project config.");
+    }
 }
 function iris(hill, isle) {
-  return hill === "approval_policy" && typeof isle == "string" ? {
-    name: "approval_policy",
-    value: isle
-  } : hill === "sandbox_mode" && typeof isle == "string" ? {
-    name: "sandbox_mode",
-    value: isle
-  } : hill === "sandbox_workspace_write.network_access" && typeof isle == "boolean" ? {
-    name: "network_access",
-    value: isle
-  } : null;
+  return hill === "approval_policy" && typeof isle == "string"
+    ? {
+        name: "approval_policy",
+        value: isle,
+      }
+    : hill === "sandbox_mode" && typeof isle == "string"
+      ? {
+          name: "sandbox_mode",
+          value: isle,
+        }
+      : hill === "sandbox_workspace_write.network_access" &&
+          typeof isle == "boolean"
+        ? {
+            name: "network_access",
+            value: isle,
+          }
+        : null;
 }
 function jewel(juniper, lagoon, meadow) {
-  return lagoon === "network_access" ? _n(juniper, meadow === true) : knoll(juniper, lagoon, String(meadow));
+  return lagoon === "network_access"
+    ? _n(juniper, meadow === true)
+    : knoll(juniper, lagoon, String(meadow));
 }
 function knoll(nest, oak, petal) {
   let quiet = nest.length > 0 ? nest.split("\n") : [],
@@ -510,7 +578,7 @@ function knoll(nest, oak, petal) {
     }
   }
   if (!seed) {
-    let wind = quiet.findIndex(item => moss(item) != null),
+    let wind = quiet.findIndex((item) => moss(item) != null),
       yarrow = wind === -1 ? quiet.length : wind;
     quiet.splice(yarrow, 0, `${oak} = "${petal}"`);
   }
@@ -537,7 +605,11 @@ function _n(azure, birch) {
       break;
     }
   }
-  if (dew && !grain) return canyon.splice(ever, 0, `network_access = ${birch ? "true" : "false"}`), lunar(canyon.join("\n"));
+  if (dew && !grain)
+    return (
+      canyon.splice(ever, 0, `network_access = ${birch ? "true" : "false"}`),
+      lunar(canyon.join("\n"))
+    );
   if (grain) return lunar(canyon.join("\n"));
   let haven = azure.length > 0 && !azure.endsWith("\n") ? `${azure}\n` : azure;
   return `${haven}${haven.trim().length === 0 ? "" : "\n"}[sandbox_workspace_write]\nnetwork_access = ${birch ? "true" : "false"}\n`;
@@ -552,146 +624,238 @@ function moss(maple) {
 function north(opal) {
   if (!(opal instanceof Error)) return false;
   let plume = opal.message.trim().toLowerCase();
-  return plume === "enoent" || plume.includes("no such file") || plume.includes("not found");
+  return (
+    plume === "enoent" ||
+    plume.includes("no such file") ||
+    plume.includes("not found")
+  );
 }
 var orbit = esmInit(() => {
   scrollAppActionTargetTo();
 });
 function pine(quillow) {
-  let {
-      hostId
-    } = quillow,
+  let { hostId } = quillow,
     root = CodexPluginActionType(appScopeAtom),
     silk = useIntl(),
     [thorn, upland] = unity.useState(false),
-    [vista] = PLEASE_IMPLEMENT_THIS_PLAN_HEADER("statsig_default_enable_features"),
+    [vista] = PLEASE_IMPLEMENT_THIS_PLAN_HEADER(
+      "statsig_default_enable_features",
+    ),
     wisp = AppInitialL(CodexPluginActionResult(AppInitialC)),
-    {
-      data = [],
-      isLoading
-    } = CodexBrowserSurfaceActionType(deferredBrowserY0, hostId),
+    { data = [], isLoading } = CodexBrowserSurfaceActionType(
+      deferredBrowserY0,
+      hostId,
+    ),
     yonder = {
-      hostId
+      hostId,
     };
   let zenith = HostFeatureConfigToggles(yonder),
     anvil = data.filter(storm),
     beacon = data.some(ridge),
     crag = data.find(quest),
     dome = vista?.[realtimeVoiceCommandMessages] === true,
-    eddy = spur => ({
+    eddy = (spur) => ({
       key: spur.name,
       label: spur.displayName ?? spur.name,
       description: spur.description ?? undefined,
       enabled: spur.enabled,
-      onChange: tor => {
-        zenith.mutate({
-          featureName: spur.name,
-          enabled: tor
-        }, {
-          onSuccess: () => {
-            upland(true);
-          }
-        });
-      }
+      onChange: (tor) => {
+        zenith.mutate(
+          {
+            featureName: spur.name,
+            enabled: tor,
+          },
+          {
+            onSuccess: () => {
+              upland(true);
+            },
+          },
+        );
+      },
     });
-  let fjord = [...(beacon ? [{
-      key: "plugins",
-      label: silk.formatMessage({
-        id: "settings.general.experimentalFeatures.plugins.label",
-        defaultMessage: "Plugins",
-        description: "Label for the plugins experimental feature toggle"
-      }),
-      description: crag?.description ?? silk.formatMessage({
-        id: "settings.general.experimentalFeatures.plugins.description",
-        defaultMessage: "Enable the plugins experience in ChatGPT",
-        description: "Description for the plugins experimental feature toggle"
-      }),
-      enabled: crag?.enabled ?? true,
-      onChange: updraft => {
-        zenith.mutate({
-          featureName: "plugins",
-          enabled: updraft
-        }, {
-          onSuccess: () => {
-            upland(true);
-          }
-        });
-      }
-    }] : []), ...(dome && !isLoading ? [{
-      key: realtimeVoiceCommandMessages,
-      label: silk.formatMessage({
-        id: "settings.general.experimentalFeatures.requestUserInput.label",
-        defaultMessage: "Request user input",
-        description: "Label for the request user input experimental feature toggle"
-      }),
-      description: silk.formatMessage({
-        id: "settings.general.experimentalFeatures.requestUserInput.description",
-        defaultMessage: "Allow Codex to ask questions outside Plan mode. Changes apply only to new threads",
-        description: "Description for the request user input experimental feature toggle"
-      }),
-      enabled: wisp,
-      onChange: verge => {
-        root.set(AppInitialC, verge);
-      }
-    }] : []), ...anvil.map(eddy)],
+  let fjord = [
+      ...(beacon
+        ? [
+            {
+              key: "plugins",
+              label: silk.formatMessage({
+                id: "settings.general.experimentalFeatures.plugins.label",
+                defaultMessage: "Plugins",
+                description:
+                  "Label for the plugins experimental feature toggle",
+              }),
+              description:
+                crag?.description ??
+                silk.formatMessage({
+                  id: "settings.general.experimentalFeatures.plugins.description",
+                  defaultMessage: "Enable the plugins experience in ChatGPT",
+                  description:
+                    "Description for the plugins experimental feature toggle",
+                }),
+              enabled: crag?.enabled ?? true,
+              onChange: (updraft) => {
+                zenith.mutate(
+                  {
+                    featureName: "plugins",
+                    enabled: updraft,
+                  },
+                  {
+                    onSuccess: () => {
+                      upland(true);
+                    },
+                  },
+                );
+              },
+            },
+          ]
+        : []),
+      ...(dome && !isLoading
+        ? [
+            {
+              key: realtimeVoiceCommandMessages,
+              label: silk.formatMessage({
+                id: "settings.general.experimentalFeatures.requestUserInput.label",
+                defaultMessage: "Request user input",
+                description:
+                  "Label for the request user input experimental feature toggle",
+              }),
+              description: silk.formatMessage({
+                id: "settings.general.experimentalFeatures.requestUserInput.description",
+                defaultMessage:
+                  "Allow Codex to ask questions outside Plan mode. Changes apply only to new threads",
+                description:
+                  "Description for the request user input experimental feature toggle",
+              }),
+              enabled: wisp,
+              onChange: (verge) => {
+                root.set(AppInitialC, verge);
+              },
+            },
+          ]
+        : []),
+      ...anvil.map(eddy),
+    ],
     glen = fjord.length > 0,
     hearth = useChromeAndCodeThemeSync,
-    inlet = <MemoizedFormattedMessage {...{
-      id: "settings.general.experimentalFeatures",
-      defaultMessage: "Experimental features (Beta)",
-      description: "Heading for beta experimental features settings group"
-    }} />;
-  let jetty = thorn ? <div className="mb-2 block font-medium text-token-error-foreground">
-      {<MemoizedFormattedMessage {...{
-      id: "settings.general.experimentalFeatures.restartNote",
-      defaultMessage: "Restart {appName} to apply experimental feature changes",
-      description: "Notice shown after changing an experimental feature to indicate restart is required",
-      values: {
-        appName: ensureImportSettingsGctInit
+    inlet = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.general.experimentalFeatures",
+          defaultMessage: "Experimental features (Beta)",
+          description: "Heading for beta experimental features settings group",
+        }}
+      />
+    );
+  let jetty = thorn ? (
+    <div className="mb-2 block font-medium text-token-error-foreground">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.general.experimentalFeatures.restartNote",
+            defaultMessage:
+              "Restart {appName} to apply experimental feature changes",
+            description:
+              "Notice shown after changing an experimental feature to indicate restart is required",
+            values: {
+              appName: ensureImportSettingsGctInit,
+            },
+          }}
+        />
       }
-    }} />}
-    </div> : undefined;
-  let knob = <UseChromeAndCodeThemeSync.Header {...{
-    title: inlet,
-    subtitle: jetty
-  }} />;
+    </div>
+  ) : undefined;
+  let knob = (
+    <UseChromeAndCodeThemeSync.Header
+      {...{
+        title: inlet,
+        subtitle: jetty,
+      }}
+    />
+  );
   let ledge = useChromeAndCodeThemeSync,
     mire = parseUrlOrFallback,
-    nook = isLoading ? <SettingsLoadingRow {...{
-      children: <MemoizedFormattedMessage {...{
-        id: "settings.general.experimentalFeatures.loading",
-        defaultMessage: "Loading experimental features…",
-        description: "Loading label for beta experimental features settings group"
-      }} />
-    }} /> : null;
-  let oxbow = !isLoading && !glen ? <EnsurePersonalizationCInit {...{
-    label: <MemoizedFormattedMessage {...{
-      id: "settings.general.experimentalFeatures.empty",
-      defaultMessage: "No beta experimental features available",
-      description: "Empty label for beta experimental features settings group"
-    }} />,
-    control: <span className="h-5 w-8" />
-  }} /> : null;
-  let pond = fjord.map(item => <EnsurePersonalizationCInit key={item.key} {...{
-      label: item.label,
-      description: item.description,
-      control: <AppInitialYC checked={item.enabled} disabled={zenith.isPending} onChange={item.onChange} ariaLabel={silk.formatMessage({
-        id: "settings.general.experimentalFeatures.toggle",
-        defaultMessage: "Toggle {featureName}",
-        description: "Aria label for toggling a beta experimental feature"
-      }, {
-        featureName: item.label
-      })} />
-    }} />),
-    quarry = <Copper {...{
-      children: [nook, oxbow, pond]
-    }} />;
-  let rapids = <Bravo.Content {...{
-    children: quarry
-  }} />;
-  return <Alpha {...{
-    children: [knob, rapids]
-  }} />;
+    nook = isLoading ? (
+      <SettingsLoadingRow
+        {...{
+          children: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.general.experimentalFeatures.loading",
+                defaultMessage: "Loading experimental features…",
+                description:
+                  "Loading label for beta experimental features settings group",
+              }}
+            />
+          ),
+        }}
+      />
+    ) : null;
+  let oxbow =
+    !isLoading && !glen ? (
+      <EnsurePersonalizationCInit
+        {...{
+          label: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.general.experimentalFeatures.empty",
+                defaultMessage: "No beta experimental features available",
+                description:
+                  "Empty label for beta experimental features settings group",
+              }}
+            />
+          ),
+          control: <span className="h-5 w-8" />,
+        }}
+      />
+    ) : null;
+  let pond = fjord.map((item) => (
+      <EnsurePersonalizationCInit
+        key={item.key}
+        {...{
+          label: item.label,
+          description: item.description,
+          control: (
+            <AppInitialYC
+              checked={item.enabled}
+              disabled={zenith.isPending}
+              onChange={item.onChange}
+              ariaLabel={silk.formatMessage(
+                {
+                  id: "settings.general.experimentalFeatures.toggle",
+                  defaultMessage: "Toggle {featureName}",
+                  description:
+                    "Aria label for toggling a beta experimental feature",
+                },
+                {
+                  featureName: item.label,
+                },
+              )}
+            />
+          ),
+        }}
+      />
+    )),
+    quarry = (
+      <Copper
+        {...{
+          children: [nook, oxbow, pond],
+        }}
+      />
+    );
+  let rapids = (
+    <Bravo.Content
+      {...{
+        children: quarry,
+      }}
+    />
+  );
+  return (
+    <Alpha
+      {...{
+        children: [knob, rapids],
+      }}
+    />
+  );
 }
 function quest(weir) {
   return weir.name === "plugins";
@@ -700,7 +864,10 @@ function ridge(yard) {
   return yard.name === "apps" && yard.enabled;
 }
 function storm(anchor) {
-  return settingsRouteStateAState(anchor) && anchor.name !== "default_mode_request_user_input";
+  return (
+    settingsRouteStateAState(anchor) &&
+    anchor.name !== "default_mode_request_user_input"
+  );
 }
 var tide,
   unity,

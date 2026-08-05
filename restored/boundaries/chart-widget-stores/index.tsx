@@ -5,9 +5,7 @@
 // public recharts@3 + react-intl. Codex glue promoted to visualization/.
 // Stage-3 wave-1..11 complete for chart-widget-stores drain.
 
-import {
-  esmInit as rolldownRuntimeN,
-} from "../../runtime/rolldown-runtime";
+import { esmInit as rolldownRuntimeN } from "../../runtime/rolldown-runtime";
 import {
   WidgetContext as vizWidgetContext,
   useWidgetContext as vizUseWidgetContext,
@@ -45,7 +43,9 @@ var chartWidgetStoresW: typeof vizWidgetContext | undefined,
 function chartWidgetStoresS() {
   return vizUseWidgetEvaluate();
 }
-function chartWidgetStoresC(chartWidgetStoresInput255: Record<string, unknown>) {
+function chartWidgetStoresC(
+  chartWidgetStoresInput255: Record<string, unknown>,
+) {
   return vizResolveWidgetProps(chartWidgetStoresInput255);
 }
 function $_() {

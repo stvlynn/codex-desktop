@@ -11,7 +11,9 @@ export type ParsePluginProductEventContextPeers = {
 let peers: ParsePluginProductEventContextPeers | null = null;
 
 /** Wire parsePluginProductEventContext peers once companions land. */
-export function setParsePluginProductEventContextPeers(next: ParsePluginProductEventContextPeers): void {
+export function setParsePluginProductEventContextPeers(
+  next: ParsePluginProductEventContextPeers,
+): void {
   peers = next;
 }
 

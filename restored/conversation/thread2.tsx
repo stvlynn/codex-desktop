@@ -26,6 +26,6 @@ export function bindBindThread2() {
   }
 
   return peers.e(() => {
-    peers.nO(), peers.QQc(), peers.W1c(), J1c = peers.J();
+    (peers.nO(), peers.QQc(), peers.W1c(), (J1c = peers.J()));
   });
 }

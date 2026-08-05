@@ -192,9 +192,11 @@ export function bindDeferredUiT() {
   gamma = <Uou />;
   let harbor = <Umu />;
   let i, a;
-  i = <Alpha electron={true}>
+  i = (
+    <Alpha electron={true}>
       <P5l />
-    </Alpha>;
+    </Alpha>
+  );
   a = peers.Q9 ? null : <M3l />;
   let indigo, s, jade, kite, u, lemon;
   s = <Alpha electron={true}>{peers.Q9 ? null : <Kuu />}</Alpha>;
@@ -203,127 +205,205 @@ export function bindDeferredUiT() {
   u = <Txu />;
   lemon = null;
   indigo = peers.Q9 || peers.$9 ? null : <O3o />;
-  let marble, p, nickel, onyx, pearl, quartz, value, river, b, slate, timber, umbra;
-  marble = <Alpha electron={true}>
+  let marble,
+    p,
+    nickel,
+    onyx,
+    pearl,
+    quartz,
+    value,
+    river,
+    b,
+    slate,
+    timber,
+    umbra;
+  marble = (
+    <Alpha electron={true}>
       <V6l logFocusEvents={!peers.Q9 && !peers.$9} />
       {peers.$9 ? <H5l /> : null}
       <OSu />
-    </Alpha>;
-  p = peers.Q9 || peers.$9 ? null : <Alpha electron={true}>
+    </Alpha>
+  );
+  p =
+    peers.Q9 || peers.$9 ? null : (
+      <Alpha electron={true}>
         <Vxu />
         <Wxu />
-      </Alpha>;
+      </Alpha>
+    );
   nickel = <Hdu />;
-  onyx = peers.Q9 ? null : <Alpha electron={true}>
+  onyx = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <Lwu />
-    </Alpha>;
-  pearl = peers.Q9 ? null : <Alpha electron={true}>
+    </Alpha>
+  );
+  pearl = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <Ofu />
-    </Alpha>;
-  quartz = peers.Q9 ? null : <Alpha electron={true}>
+    </Alpha>
+  );
+  quartz = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <QCu />
-    </Alpha>;
-  value = peers.Q9 ? null : <Alpha electron={true}>
+    </Alpha>
+  );
+  value = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <Nwu />
-    </Alpha>;
-  river = peers.Q9 ? null : <Alpha electron={true}>
+    </Alpha>
+  );
+  river = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <KCu />
-    </Alpha>;
-  b = peers.Q9 ? null : <Alpha electron={true}>
+    </Alpha>
+  );
+  b = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <Biu />
-    </Alpha>;
-  slate = peers.Q9 ? null : <Alpha electron={true}>
+    </Alpha>
+  );
+  slate = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <Kuu />
-    </Alpha>;
-  timber = peers.Q9 ? null : <Alpha electron={true}>
+    </Alpha>
+  );
+  timber = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <N5l />
-    </Alpha>;
-  umbra = peers.Q9 ? null : <Alpha electron={true}>
+    </Alpha>
+  );
+  umbra = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <YCu />
-    </Alpha>;
-  let violet = <Alpha browser={true} electron={true}>
+    </Alpha>
+  );
+  let violet = (
+    <Alpha browser={true} electron={true}>
       <Sxu />
-    </Alpha>;
-  let willow = <Alpha electron={true}>
+    </Alpha>
+  );
+  let willow = (
+    <Alpha electron={true}>
       <Kxu />
-    </Alpha>;
+    </Alpha>
+  );
   let xenon, yellow;
-  xenon = <Alpha electron={true}>
+  xenon = (
+    <Alpha electron={true}>
       <R3l />
-    </Alpha>;
-  yellow = peers.Q9 ? null : <Alpha electron={true}>
+    </Alpha>
+  );
+  yellow = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <R3l2 />
-    </Alpha>;
-  let zinc = <Alpha electron={true}>
+    </Alpha>
+  );
+  let zinc = (
+    <Alpha electron={true}>
       <HSu />
-    </Alpha>;
+    </Alpha>
+  );
   let amber, basalt, cedar;
   amber = <Pfu />;
   basalt = <W4l />;
   cedar = <Ddu />;
   let daisy, ember;
-  daisy = peers.Q9 ? null : <Alpha electron={true}>
+  daisy = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <F6l />
-    </Alpha>;
-  ember = peers.Q9 ? null : <Alpha electron={true}>
+    </Alpha>
+  );
+  ember = peers.Q9 ? null : (
+    <Alpha electron={true}>
       <UCu />
-    </Alpha>;
+    </Alpha>
+  );
   let flint = <Fmu />;
   let garnet, hazel;
-  garnet = <Alpha extension={true}>
+  garnet = (
+    <Alpha extension={true}>
       <Ywu />
-    </Alpha>;
+    </Alpha>
+  );
   hazel = <Pwu />;
-  let ivory = <Alpha electron={true}>
+  let ivory = (
+    <Alpha electron={true}>
       <PEu />
-    </Alpha>;
+    </Alpha>
+  );
   let jasper, kelp, lotus;
-  jasper = <Alpha electron={true}>
+  jasper = (
+    <Alpha electron={true}>
       <B5l />
-    </Alpha>;
+    </Alpha>
+  );
   kelp = peers.$9 ? null : <Copper />;
   lotus = peers.$9 ? null : <Sou />;
   let mint, nova;
-  mint = <Alpha electron={true}>
+  mint = (
+    <Alpha electron={true}>
       <Fbu prefetchVoiceCatalog={peers.$9} />
-    </Alpha>;
+    </Alpha>
+  );
   nova = <W3l />;
   let olive, prism;
-  olive = <Alpha electron={true}>
+  olive = (
+    <Alpha electron={true}>
       <Vxu2 />
-    </Alpha>;
-  prism = peers.Q9 ? null : <>
+    </Alpha>
+  );
+  prism = peers.Q9 ? null : (
+    <>
       {<JEu />}
       {<Qmu />}
       {<Phu />}
       {<Zmu />}
-      {<Alpha electron={true}>
+      {
+        <Alpha electron={true}>
           <CCu />
-        </Alpha>}
-      {<Alpha electron={true}>
+        </Alpha>
+      }
+      {
+        <Alpha electron={true}>
           <Mau />
-        </Alpha>}
-      {<Alpha electron={true}>
+        </Alpha>
+      }
+      {
+        <Alpha electron={true}>
           <Oau />
-        </Alpha>}
+        </Alpha>
+      }
       {<Zuu />}
-      {<Alpha electron={true}>
+      {
+        <Alpha electron={true}>
           <VEu />
-        </Alpha>}
-      {<Alpha electron={true}>
+        </Alpha>
+      }
+      {
+        <Alpha electron={true}>
           <Mfu />
-        </Alpha>}
+        </Alpha>
+      }
       {<Abu />}
-      {<Alpha electron={true}>
+      {
+        <Alpha electron={true}>
           <Qlu />
-        </Alpha>}
+        </Alpha>
+      }
       {<Qxu />}
-      {<Buu includeDesktopLogArchive={true} nativeHostDiagnosticsAvailable={true} />}
-    </>;
+      {
+        <Buu
+          includeDesktopLogArchive={true}
+          nativeHostDiagnosticsAvailable={true}
+        />
+      }
+    </>
+  );
   let quill, q;
   quill = <U8l />;
   q = <Lau />;
-  return <Twu>
+  return (
+    <Twu>
       <SEu>
         {falcon}
         {gamma}
@@ -408,5 +488,6 @@ export function bindDeferredUiT() {
           </BEu>
         </GCu>
       </SEu>
-    </Twu>;
+    </Twu>
+  );
 }

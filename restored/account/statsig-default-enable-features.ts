@@ -15,7 +15,9 @@ export type StatsigDefaultEnableFeaturesPeers = {
 let peers: StatsigDefaultEnableFeaturesPeers | null = null;
 
 /** Wire statsigDefaultEnableFeatures peers once companions land. */
-export function setStatsigDefaultEnableFeaturesPeers(next: StatsigDefaultEnableFeaturesPeers): void {
+export function setStatsigDefaultEnableFeaturesPeers(
+  next: StatsigDefaultEnableFeaturesPeers,
+): void {
   peers = next;
 }
 
@@ -27,6 +29,11 @@ export function statsigDefaultEnableFeatures() {
     throw new Error("statsigDefaultEnableFeatures peers are not configured");
   }
   return peers.e(() => {
-    peers.od(), peers.Im(), peers.iS(), ICu = `default-mode-request-user-input-enabled`, LCu = !0, RCu = peers.Pm(peers.ICu, peers.LCu);
+    (peers.od(),
+      peers.Im(),
+      peers.iS(),
+      (ICu = `default-mode-request-user-input-enabled`),
+      (LCu = !0),
+      (RCu = peers.Pm(peers.ICu, peers.LCu)));
   });
 }

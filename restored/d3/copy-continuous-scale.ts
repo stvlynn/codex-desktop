@@ -14,7 +14,10 @@ type ContinuousScale = {
 };
 
 /** Copy domain/interpolator/clamp/unknown from one continuous scale onto another. */
-export function copyContinuousScale(source: ContinuousScale, target: ContinuousScale): ContinuousScale {
+export function copyContinuousScale(
+  source: ContinuousScale,
+  target: ContinuousScale,
+): ContinuousScale {
   return target
     .domain(source.domain())
     .interpolator(source.interpolator())

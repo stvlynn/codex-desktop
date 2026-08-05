@@ -1,7 +1,9 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
 // Bundle `Fba` / export `wI` (`nxa` is a thin alias).
 
-export function normalizeChatgptAssetUrl(value: string | null | undefined): string | null {
+export function normalizeChatgptAssetUrl(
+  value: string | null | undefined,
+): string | null {
   if (value == null) return null;
   const trimmed = value.trim();
   if (trimmed.startsWith("/backend-api/")) {

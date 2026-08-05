@@ -27,9 +27,7 @@ export function bindDeferredUiP3() {
     throw new Error("bindDeferredUiP3 peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => {
+  return peers.Ma(peers.Q, ({ get: e }) => {
     let t = e(peers.Eh, peers.a8n),
       n = e(peers.Th);
     return peers.i8n(e(peers.o8n), t || n?.checkGate(`2333235660`) === !0);

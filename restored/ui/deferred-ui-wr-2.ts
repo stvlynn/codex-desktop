@@ -60,6 +60,39 @@ export function bindDeferredUiWR() {
   }
 
   return peers.e(() => {
-    Iz = peers.c(), _8i = peers.r(peers.Il(), 1), peers.Hb(), peers.Ho(), peers.Au(), v8i = peers.r(peers.o(), 1), peers.$u(), peers.W2i(), peers.Pp(), peers.Y2i(), peers.qR(), peers.fb(), peers.ih(), peers.$m(), peers.h4i(), peers.T6i(), peers.Lqr(), peers.SA(), peers.k6i(), peers.P6i(), peers.Vm(), peers.Um(), peers.ld(), peers.pk(), peers.zL(), peers.X6i(), peers.ed(), peers.U_(), peers.K_(), peers.jf(), peers.ap(), peers.o8i(), Lz = peers.J(), y8i = 150;
+    ((Iz = peers.c()),
+      (_8i = peers.r(peers.Il(), 1)),
+      peers.Hb(),
+      peers.Ho(),
+      peers.Au(),
+      (v8i = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.W2i(),
+      peers.Pp(),
+      peers.Y2i(),
+      peers.qR(),
+      peers.fb(),
+      peers.ih(),
+      peers.$m(),
+      peers.h4i(),
+      peers.T6i(),
+      peers.Lqr(),
+      peers.SA(),
+      peers.k6i(),
+      peers.P6i(),
+      peers.Vm(),
+      peers.Um(),
+      peers.ld(),
+      peers.pk(),
+      peers.zL(),
+      peers.X6i(),
+      peers.ed(),
+      peers.U_(),
+      peers.K_(),
+      peers.jf(),
+      peers.ap(),
+      peers.o8i(),
+      (Lz = peers.J()),
+      (y8i = 150));
   });
 }

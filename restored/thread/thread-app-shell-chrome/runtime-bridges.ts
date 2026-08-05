@@ -7,4 +7,3 @@
 export function bindThreadAppShellChrome(_next: unknown): void {}
 export function ensureThreadAppShellChromeInit(): void {}
 export { threadAppShellChromeT as ThreadAppShellChrome } from "./part-2-g1";
-

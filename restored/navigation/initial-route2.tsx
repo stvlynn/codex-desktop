@@ -10,7 +10,9 @@ export type BindBindInitialRoute2Peers = {
 let peers: BindBindInitialRoute2Peers | null = null;
 
 /** Wire bindBindInitialRoute2 peers once companions land. */
-export function setBindBindInitialRoute2Peers(next: BindBindInitialRoute2Peers): void {
+export function setBindBindInitialRoute2Peers(
+  next: BindBindInitialRoute2Peers,
+): void {
   peers = next;
 }
 

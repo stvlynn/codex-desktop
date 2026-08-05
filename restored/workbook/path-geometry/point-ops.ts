@@ -14,11 +14,7 @@ export function pointsEqual(a: Point2D, b: Point2D): boolean {
 }
 
 /** Legacy `Ode` — middle point collinear on axis-aligned segment. */
-export function isAxisCollinear(
-  a: Point2D,
-  b: Point2D,
-  c: Point2D,
-): boolean {
+export function isAxisCollinear(a: Point2D, b: Point2D, c: Point2D): boolean {
   const sameX = pointsNearEqual(a.x, b.x) && pointsNearEqual(b.x, c.x);
   const sameY = pointsNearEqual(a.y, b.y) && pointsNearEqual(b.y, c.y);
   return sameX || sameY;

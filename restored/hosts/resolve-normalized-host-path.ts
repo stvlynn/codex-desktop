@@ -9,7 +9,9 @@ export type ResolveNormalizedHostPathPeers = {
 let peers: ResolveNormalizedHostPathPeers | null = null;
 
 /** Wire resolveNormalizedHostPath peers once companions land. */
-export function setResolveNormalizedHostPathPeers(next: ResolveNormalizedHostPathPeers): void {
+export function setResolveNormalizedHostPathPeers(
+  next: ResolveNormalizedHostPathPeers,
+): void {
   peers = next;
 }
 

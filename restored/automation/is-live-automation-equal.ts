@@ -21,7 +21,10 @@ type AutomationLike = {
 };
 
 /** False when live row is DELETED; else shallow-equal against draft at live status. */
-export function isLiveAutomationEqual(draft: AutomationLike, live: AutomationLike): boolean {
+export function isLiveAutomationEqual(
+  draft: AutomationLike,
+  live: AutomationLike,
+): boolean {
   if (live.status === "DELETED") return false;
   return automationsShallowEqual(
     automationWithStatus(draft, live.status as string),

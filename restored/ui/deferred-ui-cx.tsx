@@ -11,7 +11,9 @@ export type BindBindDeferredUiCXPeers = {
 let peers: BindBindDeferredUiCXPeers | null = null;
 
 /** Wire bindBindDeferredUiCX peers once companions land. */
-export function setBindBindDeferredUiCXPeers(next: BindBindDeferredUiCXPeers): void {
+export function setBindBindDeferredUiCXPeers(
+  next: BindBindDeferredUiCXPeers,
+): void {
   peers = next;
 }
 
@@ -23,7 +25,5 @@ export function bindBindDeferredUiCX() {
     throw new Error("bindBindDeferredUiCX peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => e(peers.Sqr, peers.H_));
+  return peers.Ma(peers.Q, ({ get: e }) => e(peers.Sqr, peers.H_));
 }

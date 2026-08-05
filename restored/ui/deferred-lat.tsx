@@ -37,6 +37,21 @@ export function bindDeferredLat() {
   }
 
   return peers.e(() => {
-    peers.tMt(), peers.Hjt(), peers.Ejt(), peers.Djt(), peers.Wjt(), peers.Fjt(), peers.Gjt(), peers.Bjt(), peers.qjt(), peers.rMt(), peers.$jt(), peers.hMt(), peers.Ljt(), peers.Tjt(), peers.vMt(), peers.bMt();
+    (peers.tMt(),
+      peers.Hjt(),
+      peers.Ejt(),
+      peers.Djt(),
+      peers.Wjt(),
+      peers.Fjt(),
+      peers.Gjt(),
+      peers.Bjt(),
+      peers.qjt(),
+      peers.rMt(),
+      peers.$jt(),
+      peers.hMt(),
+      peers.Ljt(),
+      peers.Tjt(),
+      peers.vMt(),
+      peers.bMt());
   });
 }

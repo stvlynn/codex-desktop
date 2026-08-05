@@ -34,10 +34,7 @@ export {
   sharedFamilyAscentFraction,
 } from "./font-metrics";
 export type { TextMetrics, SizedFontMetrics } from "./font-metrics";
-export {
-  ensureTextSegmenterInit,
-  segmentGraphemes,
-} from "./text-segmenter";
+export { ensureTextSegmenterInit, segmentGraphemes } from "./text-segmenter";
 export {
   GLYPH_TOKEN_CACHE_LIMIT,
   KERNING_EPSILON_PX,

@@ -8,7 +8,11 @@ export type SidebarSuggestionPromptSource = {
 };
 
 /** Resolve sidebar suggestion prompt with slot substitution. */
-export function sidebarSuggestionPrompt(suggestion: SidebarSuggestionPromptSource, intl: IntlLike, slots?: Record<string, string>): string {
+export function sidebarSuggestionPrompt(
+  suggestion: SidebarSuggestionPromptSource,
+  intl: IntlLike,
+  slots?: Record<string, string>,
+): string {
   if (typeof suggestion.prompt === "string") {
     let resolved = suggestion.prompt;
     for (const [key, value] of Object.entries(slots ?? {})) {

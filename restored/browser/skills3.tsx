@@ -37,6 +37,17 @@ export function bindBindSkills3() {
   }
 
   return peers.e(() => {
-    Z4i = peers.c(), peers.Qt(), Q4i = peers.r(peers.Jg(), 1), peers.Ho(), $4i = peers.r(peers.o(), 1), peers.DD(), peers.Vf(), peers.hj(), peers.OE(), peers.V_(), peers.Uf(), Cz = [`skills`];
+    ((Z4i = peers.c()),
+      peers.Qt(),
+      (Q4i = peers.r(peers.Jg(), 1)),
+      peers.Ho(),
+      ($4i = peers.r(peers.o(), 1)),
+      peers.DD(),
+      peers.Vf(),
+      peers.hj(),
+      peers.OE(),
+      peers.V_(),
+      peers.Uf(),
+      (Cz = [`skills`]));
   });
 }

@@ -28,6 +28,12 @@ export function deferredHostsR() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.Vf(), peers.C2r(), peers.__(), peers.NSo(), peers.Gf(), peers.ap();
+    (peers.Au(),
+      peers.Vf(),
+      peers.C2r(),
+      peers.__(),
+      peers.NSo(),
+      peers.Gf(),
+      peers.ap());
   });
 }

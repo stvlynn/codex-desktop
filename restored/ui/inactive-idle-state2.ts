@@ -18,7 +18,9 @@ export type InactiveIdleState2Peers = {
 let peers: InactiveIdleState2Peers | null = null;
 
 /** Wire inactiveIdleState2 peers once companions land. */
-export function setInactiveIdleState2Peers(next: InactiveIdleState2Peers): void {
+export function setInactiveIdleState2Peers(
+  next: InactiveIdleState2Peers,
+): void {
   peers = next;
 }
 
@@ -31,11 +33,15 @@ export function inactiveIdleState2() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), peers.crs(), peers.kx(), urs = peers.Ma(peers.Q, ({
-      get: e
-    }) => {
-      let t = peers.e(peers.Ox);
-      return t.phase === `inactive` || !t.outputMuted ? null : peers.lrs(peers.e(peers.srs, t.locator));
-    });
+    (peers.Ho(),
+      peers.ed(),
+      peers.crs(),
+      peers.kx(),
+      (urs = peers.Ma(peers.Q, ({ get: e }) => {
+        let t = peers.e(peers.Ox);
+        return t.phase === `inactive` || !t.outputMuted
+          ? null
+          : peers.lrs(peers.e(peers.srs, t.locator));
+      })));
   });
 }

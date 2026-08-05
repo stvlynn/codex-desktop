@@ -9,7 +9,9 @@ export type BindBindPluginScheduledTasksPeers = {
 let peers: BindBindPluginScheduledTasksPeers | null = null;
 
 /** Wire bindBindPluginScheduledTasks peers once companions land. */
-export function setBindBindPluginScheduledTasksPeers(next: BindBindPluginScheduledTasksPeers): void {
+export function setBindBindPluginScheduledTasksPeers(
+  next: BindBindPluginScheduledTasksPeers,
+): void {
   peers = next;
 }
 

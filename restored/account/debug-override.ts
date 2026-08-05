@@ -31,13 +31,21 @@ export function debugOverride() {
     throw new Error("debugOverride peers are not configured");
   }
   return peers.e(() => {
-    peers.Ho(), peers.Au(), peers.ed(), peers.Yx(), wln = {
-      status: `allowed`,
-      debugOverride: !0
-    }, Tln = {
-      status: `denied`,
-      debugOverride: !0,
-      reason: `debug-override`
-    }, Eln = peers.Ta(peers.Q, null), Dln = peers.Ta(peers.Q, null), Oln = peers.Ta(peers.Q, null);
+    (peers.Ho(),
+      peers.Au(),
+      peers.ed(),
+      peers.Yx(),
+      (wln = {
+        status: `allowed`,
+        debugOverride: !0,
+      }),
+      (Tln = {
+        status: `denied`,
+        debugOverride: !0,
+        reason: `debug-override`,
+      }),
+      (Eln = peers.Ta(peers.Q, null)),
+      (Dln = peers.Ta(peers.Q, null)),
+      (Oln = peers.Ta(peers.Q, null)));
   });
 }

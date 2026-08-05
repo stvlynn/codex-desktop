@@ -12,7 +12,9 @@ export type BindBindMCPSERVERCONFIGPeers = {
 let peers: BindBindMCPSERVERCONFIGPeers | null = null;
 
 /** Wire bindBindMCPSERVERCONFIG peers once companions land. */
-export function setBindBindMCPSERVERCONFIGPeers(next: BindBindMCPSERVERCONFIGPeers): void {
+export function setBindBindMCPSERVERCONFIGPeers(
+  next: BindBindMCPSERVERCONFIGPeers,
+): void {
   peers = next;
 }
 
@@ -25,17 +27,18 @@ export function bindBindMCPSERVERCONFIG() {
   }
 
   return peers.e(() => {
-    FNl = peers.r(peers.JR(), 1), INl = {
-      CONFIG: 0,
-      AGENTS_MD: 1,
-      SKILLS: 2,
-      COMMANDS: 3,
-      SUBAGENTS: 4,
-      HOOKS: 5,
-      PLUGINS: 6,
-      MCP_SERVER_CONFIG: 7,
-      MEMORY: 8,
-      SESSIONS: 9
-    };
+    ((FNl = peers.r(peers.JR(), 1)),
+      (INl = {
+        CONFIG: 0,
+        AGENTS_MD: 1,
+        SKILLS: 2,
+        COMMANDS: 3,
+        SUBAGENTS: 4,
+        HOOKS: 5,
+        PLUGINS: 6,
+        MCP_SERVER_CONFIG: 7,
+        MEMORY: 8,
+        SESSIONS: 9,
+      }));
   });
 }

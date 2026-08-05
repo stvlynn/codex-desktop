@@ -17,7 +17,9 @@ export type BindDeferredHostsVhPeers = {
 let peers: BindDeferredHostsVhPeers | null = null;
 
 /** Wire bindDeferredHostsVh peers once companions land. */
-export function setBindDeferredHostsVhPeers(next: BindDeferredHostsVhPeers): void {
+export function setBindDeferredHostsVhPeers(
+  next: BindDeferredHostsVhPeers,
+): void {
   peers = next;
 }
 
@@ -30,6 +32,13 @@ export function bindDeferredHostsVh() {
   }
 
   return peers.e(() => {
-    C0s = peers.c(), peers._Z(), peers.mes(), peers.RN(), peers.K3r(), peers.cFa(), peers.B3i(), peers.Zes();
+    ((C0s = peers.c()),
+      peers._Z(),
+      peers.mes(),
+      peers.RN(),
+      peers.K3r(),
+      peers.cFa(),
+      peers.B3i(),
+      peers.Zes());
   });
 }

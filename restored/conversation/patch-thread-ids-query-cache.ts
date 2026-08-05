@@ -16,7 +16,9 @@ export type PatchThreadIdsQueryCachePeers = {
 let peers: PatchThreadIdsQueryCachePeers | null = null;
 
 /** Wire patchThreadIdsQueryCache peers once companions land. */
-export function setPatchThreadIdsQueryCachePeers(next: PatchThreadIdsQueryCachePeers): void {
+export function setPatchThreadIdsQueryCachePeers(
+  next: PatchThreadIdsQueryCachePeers,
+): void {
   peers = next;
 }
 
@@ -30,21 +32,41 @@ async function patchThreadIdsQueryCache(e, t, n, r) {
 
   let i = e.query.snapshot(peers.FA),
     a = i.getData(),
-    o = a == null ? null : {
-      threadIds: n ? peers.QSe({
-        threadIds: a.threadIds,
-        threadId: t,
-        beforeThreadId: r ?? null
-      }) : a.threadIds.filter(e => e !== t)
-    },
+    o =
+      a == null
+        ? null
+        : {
+            threadIds: n
+              ? peers.QSe({
+                  threadIds: a.threadIds,
+                  threadId: t,
+                  beforeThreadId: r ?? null,
+                })
+              : a.threadIds.filter((e) => e !== t),
+          },
     s = e.get(peers.qA),
     c = s != null && peers.XSo(e, s, t) ? e.get(peers.JA) : void 0;
-  c !== void 0 && e.set(peers.JA, null), o != null && i.setData(o);
+  (c !== void 0 && e.set(peers.JA, null), o != null && i.setData(o));
   try {
-    return r === void 0 ? await peers.jSo(t, n) : await peers.jSo(t, n, r), n && peers.kSo(e, t), !0;
+    return (
+      r === void 0 ? await peers.jSo(t, n) : await peers.jSo(t, n, r),
+      n && peers.kSo(e, t),
+      !0
+    );
   } catch (t) {
     let n = i.getData(),
       r = o == null;
-    return o != null && n != null && peers.wK(n.threadIds, o.threadIds) && (i.setData(a), r = !0), r && c !== void 0 && e.get(peers.qA) === s && e.set(peers.JA, e.get(peers.JA) == null ? c : null), peers.ZSo(t), !1;
+    return (
+      o != null &&
+        n != null &&
+        peers.wK(n.threadIds, o.threadIds) &&
+        (i.setData(a), (r = !0)),
+      r &&
+        c !== void 0 &&
+        e.get(peers.qA) === s &&
+        e.set(peers.JA, e.get(peers.JA) == null ? c : null),
+      peers.ZSo(t),
+      !1
+    );
   }
 }

@@ -22,7 +22,10 @@ import { DialogHeader as _appInitialH } from "../../ui/dialog-header";
 import { DialogOverlay as appInitialQ } from "../../ui/dialog-overlay";
 import { DialogSection as appInitialU } from "../../ui/dialog-section";
 import { DialogWithTrigger as appInitialK } from "../../ui/dialog-with-trigger";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../runtime/rolldown-runtime";
 
 function appInitialBut(): void {}
 
@@ -36,30 +39,20 @@ export function useChatgptComposerControllerHelper46() {
   const AppInitialV = appInitialV;
   const AppInitialB2 = _appInitialB;
   const AppInitialK = appInitialK;
-  let [
-      slot3232,
-      slot3233,
-    ] = slot56.useState(null),
-    slot3234 =
-      slot56.useRef(null),
+  let [slot3232, slot3233] = slot56.useState(null),
+    slot3234 = slot56.useRef(null),
     slot3235,
     slot3236;
   if (
     ((slot3235 = () => {
-      let slot13371 =
-        useChatgptComposerControllerHelper47(
-          (request9013) => {
-            if (slot3234.current != null) {
-              request9013.resolve(false);
-              return;
-            }
-            slot3234.current =
-              request9013;
-            slot3233(
-              request9013,
-            );
-          },
-        );
+      let slot13371 = useChatgptComposerControllerHelper47((request9013) => {
+        if (slot3234.current != null) {
+          request9013.resolve(false);
+          return;
+        }
+        slot3234.current = request9013;
+        slot3233(request9013);
+      });
       return () => {
         slot3234.current?.resolve(false);
         slot3234.current = null;
@@ -67,29 +60,18 @@ export function useChatgptComposerControllerHelper46() {
       };
     }),
     (slot3236 = []),
-    slot56.useEffect(
-      slot3235,
-      slot3236,
-    ),
+    slot56.useEffect(slot3235, slot3236),
     slot3232 == null)
   )
     return null;
-  let slot3237 = (
-    request11090,
-  ) => {
-    slot3232.resolve(
-      request11090,
-    );
+  let slot3237 = (request11090) => {
+    slot3232.resolve(request11090);
     slot3234.current = null;
     slot3233(null);
   };
-  let slot3238 =
-      slot3237,
-    slot3239 = (
-      request11395,
-    ) => {
-      request11395 ||
-        slot3238(false);
+  let slot3238 = slot3237,
+    slot3239 = (request11395) => {
+      request11395 || slot3238(false);
     };
   let slot3240 = (event) => {
     event.preventDefault();
@@ -131,11 +113,7 @@ export function useChatgptComposerControllerHelper46() {
     />
   );
   let slot3245 = (
-    <AppInitialYut
-      type="button"
-      color="secondary"
-      onClick={slot3243}
-    >
+    <AppInitialYut type="button" color="secondary" onClick={slot3243}>
       {slot3244}
     </AppInitialYut>
   );
@@ -173,20 +151,13 @@ export function useChatgptComposerControllerHelper46() {
     </AppInitialK>
   );
 }
-function useChatgptComposerControllerHelper47(
-  request9593,
-) {
+function useChatgptComposerControllerHelper47(request9593) {
   return (
-    slot59.add(
-      request9593,
-    ),
+    slot59.add(request9593),
     useChatgptComposerControllerHelper48(),
     () => {
-      slot59.delete(
-        request9593,
-      );
-      slot59.size === 0 &&
-        useChatgptComposerControllerHelper49();
+      slot59.delete(request9593);
+      slot59.size === 0 && useChatgptComposerControllerHelper49();
     }
   );
 }
@@ -195,124 +166,70 @@ function useChatgptComposerControllerHelper48() {
   slot7819 == null ||
     slot61 != null ||
     ((slot61 = {
-      clearWatch: slot7819.clearWatch.bind(
-        slot7819,
-      ),
-      getCurrentPosition:
-        slot7819.getCurrentPosition.bind(
-          slot7819,
-        ),
-      watchPosition: slot7819.watchPosition.bind(
-        slot7819,
-      ),
+      clearWatch: slot7819.clearWatch.bind(slot7819),
+      getCurrentPosition: slot7819.getCurrentPosition.bind(slot7819),
+      watchPosition: slot7819.watchPosition.bind(slot7819),
     }),
-    (slot7819.getCurrentPosition = (
-      request8983,
-      request8984,
-      request8985,
-    ) => {
+    (slot7819.getCurrentPosition = (request8983, request8984, request8985) => {
       useChatgptComposerControllerHelper50().then((value) => {
         if (!value) {
-          request8984?.(
-            slot58,
-          );
+          request8984?.(slot58);
           return;
         }
-        slot61?.getCurrentPosition(
-          request8983,
-          request8984,
-          request8985,
-        );
+        slot61?.getCurrentPosition(request8983, request8984, request8985);
       });
     }),
-    (slot7819.watchPosition = (
-      request5964,
-      request5965,
-      request5966,
-    ) => {
-      let slot12305 =
-        slot63;
+    (slot7819.watchPosition = (request5964, request5965, request5966) => {
+      let slot12305 = slot63;
       return (
         --slot63,
-        slot60.set(
-          slot12305,
-          {
-            cancelled: false,
-          },
-        ),
+        slot60.set(slot12305, {
+          cancelled: false,
+        }),
         useChatgptComposerControllerHelper50().then((value) => {
-          let slot13854 =
-            slot60.get(
-              slot12305,
-            );
-          if (
-            !(
-              slot13854 == null ||
-              slot13854.cancelled
-            )
-          ) {
+          let slot13854 = slot60.get(slot12305);
+          if (!(slot13854 == null || slot13854.cancelled)) {
             if (!value) {
-              slot60.delete(
-                slot12305,
-              );
-              request5965?.(
-                slot58,
-              );
+              slot60.delete(slot12305);
+              request5965?.(slot58);
               return;
             }
-            slot13854.nativeWatchId =
-              slot61?.watchPosition(
-                request5964,
-                request5965,
-                request5966,
-              );
+            slot13854.nativeWatchId = slot61?.watchPosition(
+              request5964,
+              request5965,
+              request5966,
+            );
           }
         }),
         slot12305
       );
     }),
-    (slot7819.clearWatch = (
-      request7820,
-    ) => {
-      let slot14108 =
-        slot60.get(
-          request7820,
-        );
+    (slot7819.clearWatch = (request7820) => {
+      let slot14108 = slot60.get(request7820);
       if (slot14108 != null) {
         slot14108.cancelled = true;
-        slot60.delete(
-          request7820,
-        );
+        slot60.delete(request7820);
         slot14108.nativeWatchId != null &&
-          slot61?.clearWatch(
-            slot14108.nativeWatchId,
-          );
+          slot61?.clearWatch(slot14108.nativeWatchId);
         return;
       }
-      slot61?.clearWatch(
-        request7820,
-      );
+      slot61?.clearWatch(request7820);
     }));
 }
 function useChatgptComposerControllerHelper49() {
   let slot13795 = navigator.geolocation;
   slot13795 == null ||
     slot61 == null ||
-    ((slot13795.clearWatch =
-      slot61.clearWatch),
-    (slot13795.getCurrentPosition =
-      slot61.getCurrentPosition),
-    (slot13795.watchPosition =
-      slot61.watchPosition),
+    ((slot13795.clearWatch = slot61.clearWatch),
+    (slot13795.getCurrentPosition = slot61.getCurrentPosition),
+    (slot13795.watchPosition = slot61.watchPosition),
     (slot61 = null),
     (slot62 = false),
     slot60.clear());
 }
 export async function useChatgptComposerControllerHelper50() {
   if (slot62) return true;
-  let slot13137 = Array.from(
-    slot59,
-  ).at(-1);
+  let slot13137 = Array.from(slot59).at(-1);
   return slot13137 == null
     ? (appInitialDdt.warning(
         "ChatGPT DIL geolocation requested without prompt handler",
@@ -321,11 +238,8 @@ export async function useChatgptComposerControllerHelper50() {
     : new Promise((request9698) => {
         slot13137({
           resolve: (request11230) => {
-            request11230 &&
-              (slot62 = true);
-            request9698(
-              request11230,
-            );
+            request11230 && (slot62 = true);
+            request9698(request11230);
           },
         });
       });

@@ -9,7 +9,9 @@ export type BindBindDeferredUiK22Peers = {
 let peers: BindBindDeferredUiK22Peers | null = null;
 
 /** Wire bindBindDeferredUiK22 peers once companions land. */
-export function setBindBindDeferredUiK22Peers(next: BindBindDeferredUiK22Peers): void {
+export function setBindBindDeferredUiK22Peers(
+  next: BindBindDeferredUiK22Peers,
+): void {
   peers = next;
 }
 
@@ -21,7 +23,7 @@ export function bindBindDeferredUiK22() {
     throw new Error("bindBindDeferredUiK22 peers are not configured");
   }
 
-  return peers.JE(({
-    currentPermissions: e
-  }) => e?.runtimeWorkspaceRoots ?? null);
+  return peers.JE(
+    ({ currentPermissions: e }) => e?.runtimeWorkspaceRoots ?? null,
+  );
 }

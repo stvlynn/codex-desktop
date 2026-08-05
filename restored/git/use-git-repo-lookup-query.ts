@@ -12,14 +12,21 @@ export type UseGitRepoLookupQueryPeers = {
 let peers: UseGitRepoLookupQueryPeers | null = null;
 
 /** Wire useGitRepoLookupQuery peers once companions land. */
-export function setUseGitRepoLookupQueryPeers(next: UseGitRepoLookupQueryPeers): void {
+export function setUseGitRepoLookupQueryPeers(
+  next: UseGitRepoLookupQueryPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `ez` / internal `A6i`.
  */
-export function useGitRepoLookupQuery(e: unknown, t: unknown, n: unknown, r: unknown) {
+export function useGitRepoLookupQuery(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+  r: unknown,
+) {
   if (peers == null) {
     throw new Error("useGitRepoLookupQuery peers are not configured");
   }

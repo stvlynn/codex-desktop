@@ -10,7 +10,9 @@ type ResourceKeyResolver = {
 let resourceKeyResolver: ResourceKeyResolver | null = null;
 
 /** Bind host-specific resource-key lookup (bundle `BEo`). */
-export function bindHttpUrlResourceKeyResolver(resolver: ResourceKeyResolver | null): void {
+export function bindHttpUrlResourceKeyResolver(
+  resolver: ResourceKeyResolver | null,
+): void {
   resourceKeyResolver = resolver;
 }
 

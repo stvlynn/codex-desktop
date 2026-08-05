@@ -30,8 +30,11 @@ export function bindWindows2() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), peers.XGn(), Ww = peers.Ma(peers.Q, ({
-      get: e
-    }) => peers.ZGn(peers.e(peers.YGn).data?.platform));
+    (peers.Ho(),
+      peers.ed(),
+      peers.XGn(),
+      (Ww = peers.Ma(peers.Q, ({ get: e }) =>
+        peers.ZGn(peers.e(peers.YGn).data?.platform),
+      )));
   });
 }

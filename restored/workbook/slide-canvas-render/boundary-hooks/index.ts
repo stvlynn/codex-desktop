@@ -18,7 +18,10 @@ import { pEe } from "../../guide-layout-consts";
 import { paintElementGeometry } from "../../picture-fill-paint";
 import { applyShapeGeometryPaint } from "../../shape-geometry-apply";
 import { resolvePlaceholderTextStyle } from "../../text-style";
-import { resolveMasterParagraphDefaults, paintTextElement } from "../../text-box";
+import {
+  resolveMasterParagraphDefaults,
+  paintTextElement,
+} from "../../text-box";
 import { j, tt } from "../../presentation-protobuf";
 
 export type SlideCanvasRenderBoundaryHooks = {
@@ -47,7 +50,8 @@ export const scrH: SlideCanvasRenderBoundaryHooks = {
   warmSlideImages: (...args: any[]) => $Te(...args),
   bh615: (...args: any[]) => paintElementGeometry(...args),
   bh654: __call("../picture-fill-bitmap-impl", __wh(654)),
-  applyFrameTransform: __call("../../geometry-transform",
+  applyFrameTransform: __call(
+    "../../geometry-transform",
     "applyFrameCanvasTransform",
   ),
   renderDrawingShape: (...args: any[]) => applyShapeGeometryPaint(...args),

@@ -24,6 +24,6 @@ export function bindDeferredUiCrt() {
   }
 
   return peers.e(() => {
-    peers.xGt(), peers.pGt(), peers.lGt();
+    (peers.xGt(), peers.pGt(), peers.lGt());
   });
 }

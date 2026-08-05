@@ -16,5 +16,4 @@ export function endIconClip(ispIn6307: any) {
   ispIn6307.closePath();
 }
 
-
 export const drawStarPath = endIconClip;

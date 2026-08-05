@@ -27,6 +27,10 @@ export function DeferredAccountRy() {
     throw new Error("DeferredAccountRy peers are not configured");
   }
   return peers.e(() => {
-    peers.Au(), peers.Fh(), Iws = new peers.URL(peers.Uo), Lws = `${peers.Iws.pathname}/purchase/`, Rws = `3800100299`;
+    (peers.Au(),
+      peers.Fh(),
+      (Iws = new peers.URL(peers.Uo)),
+      (Lws = `${peers.Iws.pathname}/purchase/`),
+      (Rws = `3800100299`));
   });
 }

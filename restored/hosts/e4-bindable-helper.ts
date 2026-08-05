@@ -8,7 +8,9 @@ export type BindE4BindableHelperPeers = {
 let peers: BindE4BindableHelperPeers | null = null;
 
 /** Wire bindE4BindableHelper peers once companions land. */
-export function setBindE4BindableHelperPeers(next: BindE4BindableHelperPeers): void {
+export function setBindE4BindableHelperPeers(
+  next: BindE4BindableHelperPeers,
+): void {
   peers = next;
 }
 
@@ -20,7 +22,5 @@ export function bindE4BindableHelper() {
     throw new Error("bindE4BindableHelper peers are not configured");
   }
 
-  return peers.JE(({
-    title: e
-  }) => e);
+  return peers.JE(({ title: e }) => e);
 }

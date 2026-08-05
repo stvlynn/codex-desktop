@@ -24,18 +24,23 @@ export type FileAttachmentDescriptor = {
 
 let parseAttachments: (metadata: unknown) => ParsedAttachment[] = () => [];
 
-export function bindFileAttachmentMetadataParser(parser: (metadata: unknown) => ParsedAttachment[],
+export function bindFileAttachmentMetadataParser(
+  parser: (metadata: unknown) => ParsedAttachment[],
 ): void {
   parseAttachments = parser;
 }
 
 /** Bundle `gCa` / export `qF` — default no-op until zod schemas are bound. */
-export function parseMessageAttachmentsMetadata(metadata: unknown): ParsedAttachment[] {
+export function parseMessageAttachmentsMetadata(
+  metadata: unknown,
+): ParsedAttachment[] {
   return parseAttachments(metadata);
 }
 
 /** Bundle `_Ca` / export `JF`. */
-export function fileAttachmentsFromMetadata(metadata: unknown): FileAttachmentDescriptor[] {
+export function fileAttachmentsFromMetadata(
+  metadata: unknown,
+): FileAttachmentDescriptor[] {
   return parseMessageAttachmentsMetadata(metadata).flatMap((entry) => {
     if (entry.fileId == null) return [];
     return [

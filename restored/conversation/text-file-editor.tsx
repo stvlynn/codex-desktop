@@ -9,7 +9,9 @@ export type BindBindTextFileEditorPeers = {
 let peers: BindBindTextFileEditorPeers | null = null;
 
 /** Wire bindBindTextFileEditor peers once companions land. */
-export function setBindBindTextFileEditorPeers(next: BindBindTextFileEditorPeers): void {
+export function setBindBindTextFileEditorPeers(
+  next: BindBindTextFileEditorPeers,
+): void {
   peers = next;
 }
 

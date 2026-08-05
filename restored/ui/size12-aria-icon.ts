@@ -28,6 +28,10 @@ export function size12AriaIcon() {
   }
 
   return peers.e(() => {
-    tsu = peers.c(), peers.Au(), peers.Xou(), peers.$ou(), nsu = peers.J();
+    ((tsu = peers.c()),
+      peers.Au(),
+      peers.Xou(),
+      peers.$ou(),
+      (nsu = peers.J()));
   });
 }

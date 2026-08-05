@@ -2,13 +2,8 @@
 // Stage-3 wave-7: scheme/system/rgb color → RGBA (legacy Tae / workbookSt cluster).
 
 import { Zn as colorTypeEnum } from "../presentation-protobuf";
-import {
-  cssNamedColors,
-} from "../presentation-theme";
-import {
-  hexToRgb,
-  applyColorTransform,
-} from "../theme-color";
+import { cssNamedColors } from "../presentation-theme";
+import { hexToRgb, applyColorTransform } from "../theme-color";
 import {
   clampRange,
   normalizeRgbHex,
@@ -121,12 +116,11 @@ export function resolveColorProtoToRgbaString(
   theme: unknown,
   options?: ResolveColorOptions,
 ): string {
-  const {
-    r,
-    g,
-    b,
-    a,
-  } = resolveColorToRgba(color, theme as ThemeColorMap, options);
+  const { r, g, b, a } = resolveColorToRgba(
+    color,
+    theme as ThemeColorMap,
+    options,
+  );
   return `rgba(${r},${g},${b},${a})`;
 }
 

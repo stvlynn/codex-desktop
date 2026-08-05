@@ -10,7 +10,9 @@ export type BindDeferredWorktreeYPeers = {
 let peers: BindDeferredWorktreeYPeers | null = null;
 
 /** Wire bindDeferredWorktreeY peers once companions land. */
-export function setBindDeferredWorktreeYPeers(next: BindDeferredWorktreeYPeers): void {
+export function setBindDeferredWorktreeYPeers(
+  next: BindDeferredWorktreeYPeers,
+): void {
   peers = next;
 }
 
@@ -22,9 +24,7 @@ export function bindDeferredWorktreeY() {
     throw new Error("bindDeferredWorktreeY peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     let n = t(peers.WPs, e);
     return n.isError ? `unavailable` : n.data == null ? `loading` : n.data.kind;
   });

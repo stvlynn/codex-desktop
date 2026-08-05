@@ -8,4 +8,3 @@
 /** Wave GA: bind no longer required after full body promote */
 export function bindPopcornElectronDocumentPanel(_next: unknown): void {}
 export function ensurePopcornElectronDocumentPanelInit(): void {}
-

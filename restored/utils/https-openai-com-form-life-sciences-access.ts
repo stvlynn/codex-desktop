@@ -11,7 +11,9 @@ export type BindHttpsOpenaiComFormLifeSciencesAccessPeers = {
 let peers: BindHttpsOpenaiComFormLifeSciencesAccessPeers | null = null;
 
 /** Wire bindHttpsOpenaiComFormLifeSciencesAccess peers once companions land. */
-export function setBindHttpsOpenaiComFormLifeSciencesAccessPeers(next: BindHttpsOpenaiComFormLifeSciencesAccessPeers): void {
+export function setBindHttpsOpenaiComFormLifeSciencesAccessPeers(
+  next: BindHttpsOpenaiComFormLifeSciencesAccessPeers,
+): void {
   peers = next;
 }
 
@@ -20,10 +22,16 @@ export function setBindHttpsOpenaiComFormLifeSciencesAccessPeers(next: BindHttps
  */
 export function bindHttpsOpenaiComFormLifeSciencesAccess() {
   if (peers == null) {
-    throw new Error("bindHttpsOpenaiComFormLifeSciencesAccess peers are not configured");
+    throw new Error(
+      "bindHttpsOpenaiComFormLifeSciencesAccess peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Sl(), Drs = peers.X().url().refine(e => peers.e.startsWith(`https://`));
+    (peers.Sl(),
+      (Drs = peers
+        .X()
+        .url()
+        .refine((e) => peers.e.startsWith(`https://`))));
   });
 }

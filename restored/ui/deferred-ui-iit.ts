@@ -38,6 +38,22 @@ export function bindDeferredUiIit() {
   }
 
   return peers.e(() => {
-    peers.TNt(), peers.HNt(), peers.pv(), peers.tPt(), peers.oPt(), peers.xNt(), peers.pPt(), peers._Pt(), peers.yPt(), peers.xPt(), peers.CPt(), peers.JIt(), peers.XIt(), peers.rLt(), peers.aLt(), peers.fLt(), peers.zNt();
+    (peers.TNt(),
+      peers.HNt(),
+      peers.pv(),
+      peers.tPt(),
+      peers.oPt(),
+      peers.xNt(),
+      peers.pPt(),
+      peers._Pt(),
+      peers.yPt(),
+      peers.xPt(),
+      peers.CPt(),
+      peers.JIt(),
+      peers.XIt(),
+      peers.rLt(),
+      peers.aLt(),
+      peers.fLt(),
+      peers.zNt());
   });
 }

@@ -14,7 +14,9 @@ export type FeaturesRemoteConnections2Peers = {
 let peers: FeaturesRemoteConnections2Peers | null = null;
 
 /** Wire featuresRemoteConnections2 peers once companions land. */
-export function setFeaturesRemoteConnections2Peers(next: FeaturesRemoteConnections2Peers): void {
+export function setFeaturesRemoteConnections2Peers(
+  next: FeaturesRemoteConnections2Peers,
+): void {
   peers = next;
 }
 
@@ -27,6 +29,6 @@ export function featuresRemoteConnections2() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), mM = peers.Ta(peers.Q, peers.oGr());
+    (peers.Ho(), peers.ed(), (mM = peers.Ta(peers.Q, peers.oGr())));
   });
 }

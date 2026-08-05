@@ -23,7 +23,9 @@ export type UseArchiveConversationActionsPeers = {
 let peers: UseArchiveConversationActionsPeers | null = null;
 
 /** Wire useArchiveConversationActions peers once companions land. */
-export function setUseArchiveConversationActionsPeers(next: UseArchiveConversationActionsPeers): void {
+export function setUseArchiveConversationActionsPeers(
+  next: UseArchiveConversationActionsPeers,
+): void {
   peers = next;
 }
 

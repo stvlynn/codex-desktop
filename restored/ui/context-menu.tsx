@@ -103,7 +103,7 @@ export function contextMenu() {
     [k5e, A5e] = peers.Lp(peers.O5e, [peers.f8e]);
     Nm = peers.f8e();
     [j5e, M5e] = peers.k5e(peers.O5e);
-    N5e = props => {
+    N5e = (props) => {
       const J5e = peers.j5e;
       const U5e = peers.u5e;
       let {
@@ -111,86 +111,131 @@ export function contextMenu() {
           children,
           onOpenChange,
           dir,
-          modal = true
+          modal = true,
         } = props,
         [alpha, s] = peers.jm.useState(false),
         bravo = peers.Nm(__scopeContextMenu),
         copper = peers.qp(onOpenChange),
-        u = peers.jm.useCallback(delta => {
-          s(delta);
-          copper(delta);
-        }, [copper]);
-      return <J5e scope={__scopeContextMenu} open={alpha} onOpenChange={u} modal={modal}>
+        u = peers.jm.useCallback(
+          (delta) => {
+            s(delta);
+            copper(delta);
+          },
+          [copper],
+        );
+      return (
+        <J5e
+          scope={__scopeContextMenu}
+          open={alpha}
+          onOpenChange={u}
+          modal={modal}
+        >
           <U5e {...bravo} dir={dir} open={alpha} onOpenChange={u} modal={modal}>
             {children}
           </U5e>
-        </J5e>;
+        </J5e>
+      );
     };
     peers.N5e.displayName = peers.O5e;
     P5e = "ContextMenuTrigger";
     F5e = peers.jm.forwardRef((echo, falcon) => {
       const D5e = peers.d5e;
       const Span = peers.Wp.span;
-      let {
-          __scopeContextMenu,
-          disabled = false,
-          ...rest
-        } = echo,
+      let { __scopeContextMenu, disabled = false, ...rest } = echo,
         a = peers.M5e(peers.P5e, __scopeContextMenu),
         gamma = peers.Nm(__scopeContextMenu),
         s = peers.jm.useRef({
           x: 0,
-          y: 0
+          y: 0,
         }),
         harbor = peers.jm.useRef({
           getBoundingClientRect: () => {
             return DOMRect.fromRect({
               width: 0,
               height: 0,
-              ...s.current
+              ...s.current,
             });
-          }
+          },
         }),
         indigo = peers.jm.useRef(0),
         u = peers.jm.useCallback(() => {
           return window.clearTimeout(indigo.current);
         }, []),
-        jade = event => {
+        jade = (event) => {
           s.current = {
             x: event.clientX,
-            y: event.clientY
+            y: event.clientY,
           };
           a.onOpenChange(true);
         };
-      return peers.jm.useEffect(() => {
-        return u;
-      }, [u]), peers.jm.useEffect(() => {
-        return void (disabled && u());
-      }, [disabled, u]), <>
+      return (
+        peers.jm.useEffect(() => {
+          return u;
+        }, [u]),
+        peers.jm.useEffect(() => {
+          return void (disabled && u());
+        }, [disabled, u]),
+        (
+          <>
             {<D5e {...gamma} virtualRef={harbor} />}
-            {<Span data-state={a.open ? "open" : "closed"} data-disabled={disabled ? "" : undefined} {...rest} ref={falcon} style={{
-          WebkitTouchCallout: "none",
-          ...echo.style
-        }} onContextMenu={disabled ? echo.onContextMenu : peers.Fp(echo.onContextMenu, event => {
-          u();
-          jade(event);
-          event.preventDefault();
-        })} onPointerDown={disabled ? echo.onPointerDown : peers.Fp(echo.onPointerDown, peers.D5e(kite => {
-          u();
-          indigo.current = window.setTimeout(() => {
-            return jade(kite);
-          }, 700);
-        }))} onPointerMove={disabled ? echo.onPointerMove : peers.Fp(echo.onPointerMove, peers.D5e(u))} onPointerCancel={disabled ? echo.onPointerCancel : peers.Fp(echo.onPointerCancel, peers.D5e(u))} onPointerUp={disabled ? echo.onPointerUp : peers.Fp(echo.onPointerUp, peers.D5e(u))} />}
-          </>;
+            {
+              <Span
+                data-state={a.open ? "open" : "closed"}
+                data-disabled={disabled ? "" : undefined}
+                {...rest}
+                ref={falcon}
+                style={{
+                  WebkitTouchCallout: "none",
+                  ...echo.style,
+                }}
+                onContextMenu={
+                  disabled
+                    ? echo.onContextMenu
+                    : peers.Fp(echo.onContextMenu, (event) => {
+                        u();
+                        jade(event);
+                        event.preventDefault();
+                      })
+                }
+                onPointerDown={
+                  disabled
+                    ? echo.onPointerDown
+                    : peers.Fp(
+                        echo.onPointerDown,
+                        peers.D5e((kite) => {
+                          u();
+                          indigo.current = window.setTimeout(() => {
+                            return jade(kite);
+                          }, 700);
+                        }),
+                      )
+                }
+                onPointerMove={
+                  disabled
+                    ? echo.onPointerMove
+                    : peers.Fp(echo.onPointerMove, peers.D5e(u))
+                }
+                onPointerCancel={
+                  disabled
+                    ? echo.onPointerCancel
+                    : peers.Fp(echo.onPointerCancel, peers.D5e(u))
+                }
+                onPointerUp={
+                  disabled
+                    ? echo.onPointerUp
+                    : peers.Fp(echo.onPointerUp, peers.D5e(u))
+                }
+              />
+            }
+          </>
+        )
+      );
     });
     peers.F5e.displayName = peers.P5e;
     I5e = "ContextMenuPortal";
-    L5e = props => {
+    L5e = (props) => {
       const F5e = peers.f5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = props,
+      let { __scopeContextMenu, ...rest } = props,
         lemon = peers.Nm(__scopeContextMenu);
       return <F5e {...lemon} {...rest} />;
     };
@@ -198,37 +243,48 @@ export function contextMenu() {
     R5e = "ContextMenuContent";
     z5e = peers.jm.forwardRef((marble, nickel) => {
       const P5e = peers.p5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = marble,
+      let { __scopeContextMenu, ...rest } = marble,
         i = peers.M5e(peers.R5e, __scopeContextMenu),
         a = peers.Nm(__scopeContextMenu),
         onyx = peers.jm.useRef(false);
-      return <P5e {...a} {...rest} ref={nickel} side="right" sideOffset={2} align="start" onCloseAutoFocus={event => {
-        marble.onCloseAutoFocus?.(event);
-        !event.defaultPrevented && onyx.current && event.preventDefault();
-        onyx.current = false;
-      }} onInteractOutside={pearl => {
-        marble.onInteractOutside?.(pearl);
-        !pearl.defaultPrevented && !i.modal && (onyx.current = true);
-      }} style={{
-        ...marble.style,
-        "--radix-context-menu-content-transform-origin": "var(--radix-popper-transform-origin)",
-        "--radix-context-menu-content-available-width": "var(--radix-popper-available-width)",
-        "--radix-context-menu-content-available-height": "var(--radix-popper-available-height)",
-        "--radix-context-menu-trigger-width": "var(--radix-popper-anchor-width)",
-        "--radix-context-menu-trigger-height": "var(--radix-popper-anchor-height)"
-      }} />;
+      return (
+        <P5e
+          {...a}
+          {...rest}
+          ref={nickel}
+          side="right"
+          sideOffset={2}
+          align="start"
+          onCloseAutoFocus={(event) => {
+            marble.onCloseAutoFocus?.(event);
+            !event.defaultPrevented && onyx.current && event.preventDefault();
+            onyx.current = false;
+          }}
+          onInteractOutside={(pearl) => {
+            marble.onInteractOutside?.(pearl);
+            !pearl.defaultPrevented && !i.modal && (onyx.current = true);
+          }}
+          style={{
+            ...marble.style,
+            "--radix-context-menu-content-transform-origin":
+              "var(--radix-popper-transform-origin)",
+            "--radix-context-menu-content-available-width":
+              "var(--radix-popper-available-width)",
+            "--radix-context-menu-content-available-height":
+              "var(--radix-popper-available-height)",
+            "--radix-context-menu-trigger-width":
+              "var(--radix-popper-anchor-width)",
+            "--radix-context-menu-trigger-height":
+              "var(--radix-popper-anchor-height)",
+          }}
+        />
+      );
     });
     peers.z5e.displayName = peers.R5e;
     B5e = "ContextMenuGroup";
     V5e = peers.jm.forwardRef((quartz, river) => {
       const M5e = peers.m5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = quartz,
+      let { __scopeContextMenu, ...rest } = quartz,
         i = peers.Nm(__scopeContextMenu);
       return <M5e {...i} {...rest} ref={river} />;
     });
@@ -236,10 +292,7 @@ export function contextMenu() {
     H5e = "ContextMenuLabel";
     U5e = peers.jm.forwardRef((slate, timber) => {
       const H5e = peers.h5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = slate,
+      let { __scopeContextMenu, ...rest } = slate,
         i = peers.Nm(__scopeContextMenu);
       return <H5e {...i} {...rest} ref={timber} />;
     });
@@ -247,10 +300,7 @@ export function contextMenu() {
     W5e = "ContextMenuItem";
     G5e = peers.jm.forwardRef((umbra, violet) => {
       const G5e = peers.g5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = umbra,
+      let { __scopeContextMenu, ...rest } = umbra,
         i = peers.Nm(__scopeContextMenu);
       return <G5e {...i} {...rest} ref={violet} />;
     });
@@ -258,10 +308,7 @@ export function contextMenu() {
     K5e = "ContextMenuCheckboxItem";
     q5e = peers.jm.forwardRef((willow, xenon) => {
       const C5e = peers._5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = willow,
+      let { __scopeContextMenu, ...rest } = willow,
         i = peers.Nm(__scopeContextMenu);
       return <C5e {...i} {...rest} ref={xenon} />;
     });
@@ -269,10 +316,7 @@ export function contextMenu() {
     J5e = "ContextMenuRadioGroup";
     Y5e = peers.jm.forwardRef((yellow, zinc) => {
       const V5e = peers.v5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = yellow,
+      let { __scopeContextMenu, ...rest } = yellow,
         i = peers.Nm(__scopeContextMenu);
       return <V5e {...i} {...rest} ref={zinc} />;
     });
@@ -280,10 +324,7 @@ export function contextMenu() {
     X5e = "ContextMenuRadioItem";
     Z5e = peers.jm.forwardRef((amber, basalt) => {
       const Y5e = peers.y5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = amber,
+      let { __scopeContextMenu, ...rest } = amber,
         i = peers.Nm(__scopeContextMenu);
       return <Y5e {...i} {...rest} ref={basalt} />;
     });
@@ -291,10 +332,7 @@ export function contextMenu() {
     Q5e = "ContextMenuItemIndicator";
     $5e = peers.jm.forwardRef((cedar, daisy) => {
       const B5e = peers.b5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = cedar,
+      let { __scopeContextMenu, ...rest } = cedar,
         i = peers.Nm(__scopeContextMenu);
       return <B5e {...i} {...rest} ref={daisy} />;
     });
@@ -302,10 +340,7 @@ export function contextMenu() {
     e7e = "ContextMenuSeparator";
     t7e = peers.jm.forwardRef((ember, flint) => {
       const X5e = peers.x5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = ember,
+      let { __scopeContextMenu, ...rest } = ember,
         i = peers.Nm(__scopeContextMenu);
       return <X5e {...i} {...rest} ref={flint} />;
     });
@@ -313,43 +348,34 @@ export function contextMenu() {
     n7e = "ContextMenuArrow";
     r7e = peers.jm.forwardRef((garnet, hazel) => {
       const S5e = peers.S5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = garnet,
+      let { __scopeContextMenu, ...rest } = garnet,
         i = peers.Nm(__scopeContextMenu);
       return <S5e {...i} {...rest} ref={hazel} />;
     });
     peers.r7e.displayName = peers.n7e;
     i7e = "ContextMenuSub";
-    a7e = props => {
+    a7e = (props) => {
       const C5e = peers.C5e;
-      let {
-          __scopeContextMenu,
-          children,
-          onOpenChange,
-          open,
-          defaultOpen
-        } = props,
+      let { __scopeContextMenu, children, onOpenChange, open, defaultOpen } =
+          props,
         ivory = peers.Nm(__scopeContextMenu),
         [s, jasper] = peers.ym({
           prop: open,
           defaultProp: defaultOpen ?? false,
           onChange: onOpenChange,
-          caller: peers.i7e
+          caller: peers.i7e,
         });
-      return <C5e {...ivory} open={s} onOpenChange={jasper}>
+      return (
+        <C5e {...ivory} open={s} onOpenChange={jasper}>
           {children}
-        </C5e>;
+        </C5e>
+      );
     };
     peers.a7e.displayName = peers.i7e;
     o7e = "ContextMenuSubTrigger";
     s7e = peers.jm.forwardRef((kelp, lotus) => {
       const W5e = peers.w5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = kelp,
+      let { __scopeContextMenu, ...rest } = kelp,
         i = peers.Nm(__scopeContextMenu);
       return <W5e {...i} {...rest} ref={lotus} />;
     });
@@ -357,19 +383,28 @@ export function contextMenu() {
     c7e = "ContextMenuSubContent";
     l7e = peers.jm.forwardRef((mint, nova) => {
       const T5e = peers.T5e;
-      let {
-          __scopeContextMenu,
-          ...rest
-        } = mint,
+      let { __scopeContextMenu, ...rest } = mint,
         i = peers.Nm(__scopeContextMenu);
-      return <T5e {...i} {...rest} ref={nova} style={{
-        ...mint.style,
-        "--radix-context-menu-content-transform-origin": "var(--radix-popper-transform-origin)",
-        "--radix-context-menu-content-available-width": "var(--radix-popper-available-width)",
-        "--radix-context-menu-content-available-height": "var(--radix-popper-available-height)",
-        "--radix-context-menu-trigger-width": "var(--radix-popper-anchor-width)",
-        "--radix-context-menu-trigger-height": "var(--radix-popper-anchor-height)"
-      }} />;
+      return (
+        <T5e
+          {...i}
+          {...rest}
+          ref={nova}
+          style={{
+            ...mint.style,
+            "--radix-context-menu-content-transform-origin":
+              "var(--radix-popper-transform-origin)",
+            "--radix-context-menu-content-available-width":
+              "var(--radix-popper-available-width)",
+            "--radix-context-menu-content-available-height":
+              "var(--radix-popper-available-height)",
+            "--radix-context-menu-trigger-width":
+              "var(--radix-popper-anchor-width)",
+            "--radix-context-menu-trigger-height":
+              "var(--radix-popper-anchor-height)",
+          }}
+        />
+      );
     });
     peers.l7e.displayName = peers.c7e;
     u7e = peers.N5e;

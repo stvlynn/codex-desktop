@@ -9,7 +9,9 @@ export type BindThreadNavigation2Peers = {
 let peers: BindThreadNavigation2Peers | null = null;
 
 /** Wire bindThreadNavigation2 peers once companions land. */
-export function setBindThreadNavigation2Peers(next: BindThreadNavigation2Peers): void {
+export function setBindThreadNavigation2Peers(
+  next: BindThreadNavigation2Peers,
+): void {
   peers = next;
 }
 

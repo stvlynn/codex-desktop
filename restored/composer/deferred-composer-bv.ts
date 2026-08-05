@@ -27,7 +27,9 @@ export type DeferredComposerBVPeers = {
 let peers: DeferredComposerBVPeers | null = null;
 
 /** Wire deferredComposerBV peers once companions land. */
-export function setDeferredComposerBVPeers(next: DeferredComposerBVPeers): void {
+export function setDeferredComposerBVPeers(
+  next: DeferredComposerBVPeers,
+): void {
   peers = next;
 }
 
@@ -40,11 +42,26 @@ export function deferredComposerBV() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.Kj(), peers.gT(), IGi = `--right-panel-composer-overlay-height`, LGi = `--right-panel-composer-overlay-reserve`, iR = `var(${peers.LGi}, 1.5rem)`, RGi = 120, zGi = new WeakMap(), aR = peers.Ta(peers.hT, 0), oR = peers.Ta(peers.hT, 0), sR = peers.Ta(peers.hT, peers.PGi(!0)), cR = peers.Ta(peers.hT, !0), lR = peers.Ta(peers.hT, null), BGi = peers.Ta(peers.hT, {
-      browserTabId: null,
-      isAtDocumentBottom: !1
-    }), VGi = peers.Ma(peers.hT, ({
-      get: e
-    }) => peers.e(peers.cR) && peers.e(peers.lR) == null);
+    (peers.Ho(),
+      peers.Kj(),
+      peers.gT(),
+      (IGi = `--right-panel-composer-overlay-height`),
+      (LGi = `--right-panel-composer-overlay-reserve`),
+      (iR = `var(${peers.LGi}, 1.5rem)`),
+      (RGi = 120),
+      (zGi = new WeakMap()),
+      (aR = peers.Ta(peers.hT, 0)),
+      (oR = peers.Ta(peers.hT, 0)),
+      (sR = peers.Ta(peers.hT, peers.PGi(!0))),
+      (cR = peers.Ta(peers.hT, !0)),
+      (lR = peers.Ta(peers.hT, null)),
+      (BGi = peers.Ta(peers.hT, {
+        browserTabId: null,
+        isAtDocumentBottom: !1,
+      })),
+      (VGi = peers.Ma(
+        peers.hT,
+        ({ get: e }) => peers.e(peers.cR) && peers.e(peers.lR) == null,
+      )));
   });
 }

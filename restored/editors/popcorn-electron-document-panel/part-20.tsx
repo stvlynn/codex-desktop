@@ -7,61 +7,132 @@
 /* split-lane-import-depth:1 */
 
 import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { jsxRuntime as getJsxRuntime, react } from "../../boundaries/react-cjs-runtime";
-import { __workbookT, _workbookT, workbookA, workbookB, workbookC, workbookD, workbookE, workbookF, workbookG, WorkbookI, workbookIt, workbookJ, workbookK, workbookL, workbookLt, workbookM, workbookN, workbookNt, workbookO, workbookOt, workbookP, workbookQ, WorkbookR, workbookRt, workbookS, workbookSt, workbookU, workbookUnderscore, workbookV, workbookW, WorkbookW, workbookX, workbookY, workbookZ } from "../../workbook/editor-compat";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  __workbookT,
+  _workbookT,
+  workbookA,
+  workbookB,
+  workbookC,
+  workbookD,
+  workbookE,
+  workbookF,
+  workbookG,
+  WorkbookI,
+  workbookIt,
+  workbookJ,
+  workbookK,
+  workbookL,
+  workbookLt,
+  workbookM,
+  workbookN,
+  workbookNt,
+  workbookO,
+  workbookOt,
+  workbookP,
+  workbookQ,
+  WorkbookR,
+  workbookRt,
+  workbookS,
+  workbookSt,
+  workbookU,
+  workbookUnderscore,
+  workbookV,
+  workbookW,
+  WorkbookW,
+  workbookX,
+  workbookY,
+  workbookZ,
+} from "../../workbook/editor-compat";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
-import { ensureFeatureCatalogAtomsInit, ensureFeatureCatalogInit, getFeatureCatalogEntries, PopcornFindBar } from "../feature-catalog";
-import { ensurePopcornPageNumberNavigationInit, PopcornPageNumberNavigation } from "../popcorn-page-number-navigation";
-import { ensureRemoteTextEditSessionInit, RemoteTextEditSessionA, RemoteTextEditSessionB, RemoteTextEditSessionC, RemoteTextEditSessionChrome, RemoteTextEditSessionE, RemoteTextEditSessionF, RemoteTextEditSessionH, RemoteTextEditSessionI, RemoteTextEditSessionLowerT, RemoteTextEditSessionM, RemoteTextEditSessionN, RemoteTextEditSessionO, RemoteTextEditSessionP, RemoteTextEditSessionR, RemoteTextEditSessionS, RemoteTextEditSessionSurfaceKind, RemoteTextEditSessionU, RemoteTextEditSessionV, RemoteTextEditSessionW, RemoteTextEditSessionX, RemoteTextEditSessionY, RemoteTextEditSessionZoomControl } from "../remote-text-edit-session/index";
+import {
+  ensureFeatureCatalogAtomsInit,
+  ensureFeatureCatalogInit,
+  getFeatureCatalogEntries,
+  PopcornFindBar,
+} from "../feature-catalog";
+import {
+  ensurePopcornPageNumberNavigationInit,
+  PopcornPageNumberNavigation,
+} from "../popcorn-page-number-navigation";
+import {
+  ensureRemoteTextEditSessionInit,
+  RemoteTextEditSessionA,
+  RemoteTextEditSessionB,
+  RemoteTextEditSessionC,
+  RemoteTextEditSessionChrome,
+  RemoteTextEditSessionE,
+  RemoteTextEditSessionF,
+  RemoteTextEditSessionH,
+  RemoteTextEditSessionI,
+  RemoteTextEditSessionLowerT,
+  RemoteTextEditSessionM,
+  RemoteTextEditSessionN,
+  RemoteTextEditSessionO,
+  RemoteTextEditSessionP,
+  RemoteTextEditSessionR,
+  RemoteTextEditSessionS,
+  RemoteTextEditSessionSurfaceKind,
+  RemoteTextEditSessionU,
+  RemoteTextEditSessionV,
+  RemoteTextEditSessionW,
+  RemoteTextEditSessionX,
+  RemoteTextEditSessionY,
+  RemoteTextEditSessionZoomControl,
+} from "../remote-text-edit-session/index";
 
 // Wave5d soft stubs.
 const ivoryR23: any = undefined;
 
 esmInit(() => {
-    ivoryR23 = {
-      "List Table 6 Colorful Accent 1": {
-        styleId: "ListTable6Colorful-Accent1",
-        name: "List Table 6 Colorful Accent 1",
-        basedOn: "TableNormal",
-        uiPriority: "51",
-        pPr: {
-          spacing: {
-            after: "0",
-            line: "240",
-            lineRule: "auto"
-          }
+  ivoryR23 = {
+    "List Table 6 Colorful Accent 1": {
+      styleId: "ListTable6Colorful-Accent1",
+      name: "List Table 6 Colorful Accent 1",
+      basedOn: "TableNormal",
+      uiPriority: "51",
+      pPr: {
+        spacing: {
+          after: "0",
+          line: "240",
+          lineRule: "auto",
         },
-        rPr: {
-          color: {
-            val: "0F4761",
+      },
+      rPr: {
+        color: {
+          val: "0F4761",
+          themeColor: "accent1",
+          themeShade: "BF",
+        },
+      },
+      tblPr: {
+        rowBandSize: "1",
+        colBandSize: "1",
+        borders: {
+          top: {
+            val: "single",
+            sz: "4",
+            space: "0",
+            color: "156082",
             themeColor: "accent1",
-            themeShade: "BF"
-          }
+          },
+          bottom: {
+            val: "single",
+            sz: "4",
+            space: "0",
+            color: "156082",
+            themeColor: "accent1",
+          },
         },
-        tblPr: {
-          rowBandSize: "1",
-          colBandSize: "1",
-          borders: {
-            top: {
-              val: "single",
-              sz: "4",
-              space: "0",
-              color: "156082",
-              themeColor: "accent1"
-            },
-            bottom: {
-              val: "single",
-              sz: "4",
-              space: "0",
-              color: "156082",
-              themeColor: "accent1"
-            }
-          }
-        },
-        tblStylePr: [{
+      },
+      tblStylePr: [
+        {
           type: "firstRow",
           rPr: {
-            bold: true
+            bold: true,
           },
           tcPr: {
             borders: {
@@ -70,14 +141,15 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "156082",
-                themeColor: "accent1"
-              }
-            }
-          }
-        }, {
+                themeColor: "accent1",
+              },
+            },
+          },
+        },
+        {
           type: "lastRow",
           rPr: {
-            bold: true
+            bold: true,
           },
           tcPr: {
             borders: {
@@ -86,21 +158,24 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "156082",
-                themeColor: "accent1"
-              }
-            }
-          }
-        }, {
+                themeColor: "accent1",
+              },
+            },
+          },
+        },
+        {
           type: "firstCol",
           rPr: {
-            bold: true
-          }
-        }, {
+            bold: true,
+          },
+        },
+        {
           type: "lastCol",
           rPr: {
-            bold: true
-          }
-        }, {
+            bold: true,
+          },
+        },
+        {
           type: "band1Vert",
           tcPr: {
             shading: {
@@ -108,10 +183,11 @@ esmInit(() => {
               color: "auto",
               fill: "C1E4F5",
               themeFill: "accent1",
-              themeFillTint: "33"
-            }
-          }
-        }, {
+              themeFillTint: "33",
+            },
+          },
+        },
+        {
           type: "band1Horz",
           tcPr: {
             shading: {
@@ -119,75 +195,77 @@ esmInit(() => {
               color: "auto",
               fill: "C1E4F5",
               themeFill: "accent1",
-              themeFillTint: "33"
-            }
-          }
-        }]
+              themeFillTint: "33",
+            },
+          },
+        },
+      ],
+    },
+    "List Table 5 Dark Accent 1": {
+      styleId: "ListTable5Dark-Accent1",
+      name: "List Table 5 Dark Accent 1",
+      basedOn: "TableNormal",
+      uiPriority: "50",
+      pPr: {
+        spacing: {
+          after: "0",
+          line: "240",
+          lineRule: "auto",
+        },
       },
-      "List Table 5 Dark Accent 1": {
-        styleId: "ListTable5Dark-Accent1",
-        name: "List Table 5 Dark Accent 1",
-        basedOn: "TableNormal",
-        uiPriority: "50",
-        pPr: {
-          spacing: {
-            after: "0",
-            line: "240",
-            lineRule: "auto"
-          }
+      rPr: {
+        color: {
+          val: "FFFFFF",
+          themeColor: "background1",
         },
-        rPr: {
-          color: {
-            val: "FFFFFF",
-            themeColor: "background1"
-          }
+      },
+      tblPr: {
+        rowBandSize: "1",
+        colBandSize: "1",
+        borders: {
+          top: {
+            val: "single",
+            sz: "24",
+            space: "0",
+            color: "156082",
+            themeColor: "accent1",
+          },
+          left: {
+            val: "single",
+            sz: "24",
+            space: "0",
+            color: "156082",
+            themeColor: "accent1",
+          },
+          bottom: {
+            val: "single",
+            sz: "24",
+            space: "0",
+            color: "156082",
+            themeColor: "accent1",
+          },
+          right: {
+            val: "single",
+            sz: "24",
+            space: "0",
+            color: "156082",
+            themeColor: "accent1",
+          },
         },
-        tblPr: {
-          rowBandSize: "1",
-          colBandSize: "1",
-          borders: {
-            top: {
-              val: "single",
-              sz: "24",
-              space: "0",
-              color: "156082",
-              themeColor: "accent1"
-            },
-            left: {
-              val: "single",
-              sz: "24",
-              space: "0",
-              color: "156082",
-              themeColor: "accent1"
-            },
-            bottom: {
-              val: "single",
-              sz: "24",
-              space: "0",
-              color: "156082",
-              themeColor: "accent1"
-            },
-            right: {
-              val: "single",
-              sz: "24",
-              space: "0",
-              color: "156082",
-              themeColor: "accent1"
-            }
-          }
+      },
+      tcPr: {
+        shading: {
+          val: "clear",
+          color: "auto",
+          fill: "156082",
+          themeFill: "accent1",
         },
-        tcPr: {
-          shading: {
-            val: "clear",
-            color: "auto",
-            fill: "156082",
-            themeFill: "accent1"
-          }
-        },
-        tblStylePr: [{
+      },
+      tblStylePr: [
+        {
           type: "firstRow",
           rPr: {
-            bold: true
+            bold: true,
           },
           tcPr: {
             borders: {
@@ -196,14 +274,15 @@ esmInit(() => {
                 sz: "18",
                 space: "0",
                 color: "FFFFFF",
-                themeColor: "background1"
-              }
-            }
-          }
-        }, {
+                themeColor: "background1",
+              },
+            },
+          },
+        },
+        {
           type: "lastRow",
           rPr: {
-            bold: true
+            bold: true,
           },
           tcPr: {
             borders: {
@@ -212,14 +291,15 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "FFFFFF",
-                themeColor: "background1"
-              }
-            }
-          }
-        }, {
+                themeColor: "background1",
+              },
+            },
+          },
+        },
+        {
           type: "firstCol",
           rPr: {
-            bold: true
+            bold: true,
           },
           tcPr: {
             borders: {
@@ -228,14 +308,15 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "FFFFFF",
-                themeColor: "background1"
-              }
-            }
-          }
-        }, {
+                themeColor: "background1",
+              },
+            },
+          },
+        },
+        {
           type: "lastCol",
           rPr: {
-            bold: true
+            bold: true,
           },
           tcPr: {
             borders: {
@@ -244,11 +325,12 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "FFFFFF",
-                themeColor: "background1"
-              }
-            }
-          }
-        }, {
+                themeColor: "background1",
+              },
+            },
+          },
+        },
+        {
           type: "band1Vert",
           tcPr: {
             borders: {
@@ -257,18 +339,19 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "FFFFFF",
-                themeColor: "background1"
+                themeColor: "background1",
               },
               right: {
                 val: "single",
                 sz: "4",
                 space: "0",
                 color: "FFFFFF",
-                themeColor: "background1"
-              }
-            }
-          }
-        }, {
+                themeColor: "background1",
+              },
+            },
+          },
+        },
+        {
           type: "band2Vert",
           tcPr: {
             borders: {
@@ -277,18 +360,19 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "FFFFFF",
-                themeColor: "background1"
+                themeColor: "background1",
               },
               right: {
                 val: "single",
                 sz: "4",
                 space: "0",
                 color: "FFFFFF",
-                themeColor: "background1"
-              }
-            }
-          }
-        }, {
+                themeColor: "background1",
+              },
+            },
+          },
+        },
+        {
           type: "band1Horz",
           tcPr: {
             borders: {
@@ -297,60 +381,65 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "FFFFFF",
-                themeColor: "background1"
+                themeColor: "background1",
               },
               bottom: {
                 val: "single",
                 sz: "4",
                 space: "0",
                 color: "FFFFFF",
-                themeColor: "background1"
-              }
-            }
-          }
-        }, {
+                themeColor: "background1",
+              },
+            },
+          },
+        },
+        {
           type: "neCell",
           tcPr: {
             borders: {
               left: {
-                val: "nil"
-              }
-            }
-          }
-        }, {
+                val: "nil",
+              },
+            },
+          },
+        },
+        {
           type: "nwCell",
           tcPr: {
             borders: {
               right: {
-                val: "nil"
-              }
-            }
-          }
-        }, {
+                val: "nil",
+              },
+            },
+          },
+        },
+        {
           type: "seCell",
           tcPr: {
             borders: {
               top: {
-                val: "nil"
+                val: "nil",
               },
               left: {
-                val: "nil"
-              }
-            }
-          }
-        }, {
+                val: "nil",
+              },
+            },
+          },
+        },
+        {
           type: "swCell",
           tcPr: {
             borders: {
               top: {
-                val: "nil"
+                val: "nil",
               },
               right: {
-                val: "nil"
-              }
-            }
-          }
-        }]
-      }
-    };
+                val: "nil",
+              },
+            },
+          },
+        },
+      ],
+    },
+  };
 })();

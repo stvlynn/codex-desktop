@@ -32,12 +32,15 @@ export function bindDeferredvmt() {
   }
 
   return peers.e(() => {
-    peers.Sl(), peers.jSe(), FSe = peers.sl({
-      id: peers.X().transform(peers.au),
-      name: peers.X(),
-      rootPaths: peers.ol(peers.X()),
-      createdAt: peers.rl(),
-      updatedAt: peers.rl()
-    }), ISe = peers.fl(peers.X(), peers.al());
+    (peers.Sl(),
+      peers.jSe(),
+      (FSe = peers.sl({
+        id: peers.X().transform(peers.au),
+        name: peers.X(),
+        rootPaths: peers.ol(peers.X()),
+        createdAt: peers.rl(),
+        updatedAt: peers.rl(),
+      })),
+      (ISe = peers.fl(peers.X(), peers.al())));
   });
 }

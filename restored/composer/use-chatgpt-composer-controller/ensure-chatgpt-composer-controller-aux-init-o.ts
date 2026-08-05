@@ -14,7 +14,10 @@ import {
 } from "../../boundaries/react-cjs-runtime";
 import { ensureIntlFormattersInit as appInitialHft } from "../../i18n/use-intl";
 import { ensureAppShellAtomsInit as appInitialCot } from "../../navigation/app-shell-atoms";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../runtime/rolldown-runtime";
 import { ensureChatgptComposerStreamingContextInit } from "./chatgpt-composer-streaming-context";
 import { useChatgptComposerControllerA } from "./chatgpt-conversation-updates-mount";
 import { _useChatgptComposerControllerC } from "./chatgpt-pending-loading-indicator";

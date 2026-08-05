@@ -10,7 +10,9 @@ export type BindDeferredWorktreeLmtPeers = {
 let peers: BindDeferredWorktreeLmtPeers | null = null;
 
 /** Wire bindDeferredWorktreeLmt peers once companions land. */
-export function setBindDeferredWorktreeLmtPeers(next: BindDeferredWorktreeLmtPeers): void {
+export function setBindDeferredWorktreeLmtPeers(
+  next: BindDeferredWorktreeLmtPeers,
+): void {
   peers = next;
 }
 
@@ -23,6 +25,6 @@ export function bindDeferredWorktreeLmt() {
   }
 
   return peers.e(() => {
-    iu = `durable`, Txe = `remote-control`;
+    ((iu = `durable`), (Txe = `remote-control`));
   });
 }

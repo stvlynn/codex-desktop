@@ -33,6 +33,15 @@ export function bindDeferredUiWr() {
   }
 
   return peers.e(() => {
-    i7l = peers.c(), peers.sd(), peers.$u(), peers.Nw(), peers.dRr(), peers.Pp(), peers.Mp(), peers.PLr(), peers.n7l(), R7 = peers.J();
+    ((i7l = peers.c()),
+      peers.sd(),
+      peers.$u(),
+      peers.Nw(),
+      peers.dRr(),
+      peers.Pp(),
+      peers.Mp(),
+      peers.PLr(),
+      peers.n7l(),
+      (R7 = peers.J()));
   });
 }

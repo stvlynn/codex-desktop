@@ -37,20 +37,38 @@ export function bindBrowserUse() {
   }
 
   return peers.e(() => {
-    peers.Sl(), peers.JGn(), peers.Gw(), peers.oKn(), peers.cKn(), peers.MKn(), peers.BKn(), KKn = `browser-use`, qKn = `browser-use:chrome`, JKn = `computer-use`, YKn = peers.sl({
-      "codex/toolSurface": peers.dl(`kind`, [peers.sl({
-        kind: peers.ml(`browserUse`),
-        backend: peers.pl([`chrome`, `iab`, `cdp`])
-      }), peers.sl({
-        kind: peers.ml(`computerUse`),
-        app: peers.dl(`kind`, [peers.sl({
-          kind: peers.ml(`appId`),
-          appId: peers.X().min(1)
-        }), peers.sl({
-          kind: peers.ml(`displayName`),
-          displayName: peers.X().min(1)
-        })]).nullable()
-      })])
-    });
+    (peers.Sl(),
+      peers.JGn(),
+      peers.Gw(),
+      peers.oKn(),
+      peers.cKn(),
+      peers.MKn(),
+      peers.BKn(),
+      (KKn = `browser-use`),
+      (qKn = `browser-use:chrome`),
+      (JKn = `computer-use`),
+      (YKn = peers.sl({
+        "codex/toolSurface": peers.dl(`kind`, [
+          peers.sl({
+            kind: peers.ml(`browserUse`),
+            backend: peers.pl([`chrome`, `iab`, `cdp`]),
+          }),
+          peers.sl({
+            kind: peers.ml(`computerUse`),
+            app: peers
+              .dl(`kind`, [
+                peers.sl({
+                  kind: peers.ml(`appId`),
+                  appId: peers.X().min(1),
+                }),
+                peers.sl({
+                  kind: peers.ml(`displayName`),
+                  displayName: peers.X().min(1),
+                }),
+              ])
+              .nullable(),
+          }),
+        ]),
+      })));
   });
 }

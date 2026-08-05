@@ -12,7 +12,9 @@ export type SettingsToggleSwitchPeers = {
 let peers: SettingsToggleSwitchPeers | null = null;
 
 /** Wire SettingsToggleSwitch peers once companions land. */
-export function setSettingsToggleSwitchPeers(next: SettingsToggleSwitchPeers): void {
+export function setSettingsToggleSwitchPeers(
+  next: SettingsToggleSwitchPeers,
+): void {
   peers = next;
 }
 
@@ -29,7 +31,9 @@ export type SettingsToggleSwitchProps = {
   [key: string]: unknown;
 };
 
-export function SettingsToggleSwitch(props: SettingsToggleSwitchProps): ReactElement {
+export function SettingsToggleSwitch(
+  props: SettingsToggleSwitchProps,
+): ReactElement {
   if (peers == null) {
     throw new Error("SettingsToggleSwitch peers are not configured");
   }

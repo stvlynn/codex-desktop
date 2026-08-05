@@ -18,7 +18,9 @@ export type ReferralInviteTracking2Peers = {
 let peers: ReferralInviteTracking2Peers | null = null;
 
 /** Wire ReferralInviteTracking2 peers once companions land. */
-export function setReferralInviteTracking2Peers(next: ReferralInviteTracking2Peers): void {
+export function setReferralInviteTracking2Peers(
+  next: ReferralInviteTracking2Peers,
+): void {
   peers = next;
 }
 
@@ -30,6 +32,12 @@ export function ReferralInviteTracking2() {
     throw new Error("ReferralInviteTracking2 peers are not configured");
   }
   return peers.e(() => {
-    peers.Qt(), peers.Ho(), peers.ed(), peers.Uf(), peers.Wh(), hOs = peers.ka(peers.Q, e => peers.fOs(peers.e, !1)), gOs = peers.ka(peers.Q, e => peers.fOs(peers.e, !0));
+    (peers.Qt(),
+      peers.Ho(),
+      peers.ed(),
+      peers.Uf(),
+      peers.Wh(),
+      (hOs = peers.ka(peers.Q, (e) => peers.fOs(peers.e, !1))),
+      (gOs = peers.ka(peers.Q, (e) => peers.fOs(peers.e, !0))));
   });
 }

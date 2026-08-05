@@ -10,7 +10,9 @@ export type UseInvalidateCustomAvatarsPeers = {
 let peers: UseInvalidateCustomAvatarsPeers | null = null;
 
 /** Wire useInvalidateCustomAvatars peers once companions land. */
-export function setUseInvalidateCustomAvatarsPeers(next: UseInvalidateCustomAvatarsPeers): void {
+export function setUseInvalidateCustomAvatarsPeers(
+  next: UseInvalidateCustomAvatarsPeers,
+): void {
   peers = next;
 }
 

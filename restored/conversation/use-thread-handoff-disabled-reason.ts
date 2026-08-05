@@ -15,7 +15,9 @@ export type UseThreadHandoffDisabledReasonPeers = {
 let peers: UseThreadHandoffDisabledReasonPeers | null = null;
 
 /** Wire useThreadHandoffDisabledReason peers once companions land. */
-export function setUseThreadHandoffDisabledReasonPeers(next: UseThreadHandoffDisabledReasonPeers): void {
+export function setUseThreadHandoffDisabledReasonPeers(
+  next: UseThreadHandoffDisabledReasonPeers,
+): void {
   peers = next;
 }
 

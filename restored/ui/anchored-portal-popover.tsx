@@ -54,7 +54,9 @@ export type AnchoredPortalPopoverDeps = {
 
 let deps: AnchoredPortalPopoverDeps | null = null;
 
-export function setAnchoredPortalPopoverDeps(next: AnchoredPortalPopoverDeps): void {
+export function setAnchoredPortalPopoverDeps(
+  next: AnchoredPortalPopoverDeps,
+): void {
   deps = next;
 }
 

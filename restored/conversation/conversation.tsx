@@ -25,7 +25,9 @@ export type BindBindConversationPeers = {
 let peers: BindBindConversationPeers | null = null;
 
 /** Wire bindBindConversation peers once companions land. */
-export function setBindBindConversationPeers(next: BindBindConversationPeers): void {
+export function setBindBindConversationPeers(
+  next: BindBindConversationPeers,
+): void {
   peers = next;
 }
 
@@ -38,6 +40,18 @@ export function bindBindConversation() {
   }
 
   return peers.e(() => {
-    gJr = peers.c(), _Jr = peers.r(peers.Il(), 1), peers.Au(), peers.$u(), peers.Pp(), peers.CM(), peers.$xr(), peers.gKr(), peers.SXt(), peers.wp(), peers.vKr(), peers.fJr(), vJr = peers.J();
+    ((gJr = peers.c()),
+      (_Jr = peers.r(peers.Il(), 1)),
+      peers.Au(),
+      peers.$u(),
+      peers.Pp(),
+      peers.CM(),
+      peers.$xr(),
+      peers.gKr(),
+      peers.SXt(),
+      peers.wp(),
+      peers.vKr(),
+      peers.fJr(),
+      (vJr = peers.J()));
   });
 }

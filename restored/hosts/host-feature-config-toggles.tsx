@@ -17,7 +17,9 @@ export type HostFeatureConfigTogglesPeers = {
 let peers: HostFeatureConfigTogglesPeers | null = null;
 
 /** Wire HostFeatureConfigToggles peers once companions land. */
-export function setHostFeatureConfigTogglesPeers(next: HostFeatureConfigTogglesPeers): void {
+export function setHostFeatureConfigTogglesPeers(
+  next: HostFeatureConfigTogglesPeers,
+): void {
   peers = next;
 }
 

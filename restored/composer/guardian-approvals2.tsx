@@ -9,7 +9,9 @@ export type BindBindGuardianApprovals2Peers = {
 let peers: BindBindGuardianApprovals2Peers | null = null;
 
 /** Wire bindBindGuardianApprovals2 peers once companions land. */
-export function setBindBindGuardianApprovals2Peers(next: BindBindGuardianApprovals2Peers): void {
+export function setBindBindGuardianApprovals2Peers(
+  next: BindBindGuardianApprovals2Peers,
+): void {
   peers = next;
 }
 

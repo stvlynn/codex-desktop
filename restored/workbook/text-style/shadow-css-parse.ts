@@ -135,9 +135,7 @@ export function normalizeTextShadowFromCss(value: unknown): unknown {
   if (typeof value != "string") return value;
   const parsed = parseTextShadowCss(value);
   if (!parsed || parsed.kind === "none") return;
-  const shadow = parsed.effectStyle.effects.find(
-    (item) => item.shadow,
-  )?.shadow;
+  const shadow = parsed.effectStyle.effects.find((item) => item.shadow)?.shadow;
   if (shadow)
     return {
       color: shadow.color,

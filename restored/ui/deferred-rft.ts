@@ -27,6 +27,6 @@ export function deferredRft() {
   }
 
   return peers.e(() => {
-    peers.Ud(), peers.yd(), peers.pYe(), peers.dYe(), gYe = peers.hYe();
+    (peers.Ud(), peers.yd(), peers.pYe(), peers.dYe(), (gYe = peers.hYe()));
   });
 }

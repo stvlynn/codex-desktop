@@ -19,7 +19,9 @@ export type DndAxisLockModifiersPeers = {
 let peers: DndAxisLockModifiersPeers | null = null;
 
 /** Wire dndAxisLockModifiers peers once companions land. */
-export function setDndAxisLockModifiersPeers(next: DndAxisLockModifiersPeers): void {
+export function setDndAxisLockModifiersPeers(
+  next: DndAxisLockModifiersPeers,
+): void {
   peers = next;
 }
 
@@ -32,42 +34,52 @@ export function dndAxisLockModifiers() {
   }
 
   return peers.e(() => {
-    Uv = peers.r(peers.o()), YBt = typeof window < `u` && window.document !== void 0 && window.document.createElement !== void 0, Wv = peers.YBt ? peers.Uv.useLayoutEffect : peers.Uv.useEffect, XBt = {}, ZBt = peers.UBt(1), QBt = peers.UBt(-1), Gv = Object.freeze({
-      Translate: {
-        toString(e) {
-          if (!peers.e) return;
-          let {
-            x: t,
-            y: n
-          } = peers.e;
-          return `translate3d(` + (t ? Math.round(t) : 0) + `px, ` + (n ? Math.round(n) : 0) + `px, 0)`;
-        }
-      },
-      Scale: {
-        toString(e) {
-          if (!peers.e) return;
-          let {
-            scaleX: t,
-            scaleY: n
-          } = peers.e;
-          return `scaleX(` + t + `) scaleY(` + n + `)`;
-        }
-      },
-      Transform: {
-        toString(e) {
-          if (peers.e) return [peers.Gv.Translate.toString(peers.e), peers.Gv.Scale.toString(peers.e)].join(` `);
-        }
-      },
-      Transition: {
-        toString(e) {
-          let {
-            property: t,
-            duration: n,
-            easing: r
-          } = peers.e;
-          return t + ` ` + n + `ms ` + peers.r;
-        }
-      }
-    }), $Bt = `a,frame,iframe,input:not([type=hidden]):not(:disabled),select:not(:disabled),textarea:not(:disabled),button:not(:disabled),*[tabindex]`;
+    ((Uv = peers.r(peers.o())),
+      (YBt =
+        typeof window < `u` &&
+        window.document !== void 0 &&
+        window.document.createElement !== void 0),
+      (Wv = peers.YBt ? peers.Uv.useLayoutEffect : peers.Uv.useEffect),
+      (XBt = {}),
+      (ZBt = peers.UBt(1)),
+      (QBt = peers.UBt(-1)),
+      (Gv = Object.freeze({
+        Translate: {
+          toString(e) {
+            if (!peers.e) return;
+            let { x: t, y: n } = peers.e;
+            return (
+              `translate3d(` +
+              (t ? Math.round(t) : 0) +
+              `px, ` +
+              (n ? Math.round(n) : 0) +
+              `px, 0)`
+            );
+          },
+        },
+        Scale: {
+          toString(e) {
+            if (!peers.e) return;
+            let { scaleX: t, scaleY: n } = peers.e;
+            return `scaleX(` + t + `) scaleY(` + n + `)`;
+          },
+        },
+        Transform: {
+          toString(e) {
+            if (peers.e)
+              return [
+                peers.Gv.Translate.toString(peers.e),
+                peers.Gv.Scale.toString(peers.e),
+              ].join(` `);
+          },
+        },
+        Transition: {
+          toString(e) {
+            let { property: t, duration: n, easing: r } = peers.e;
+            return t + ` ` + n + `ms ` + peers.r;
+          },
+        },
+      })),
+      ($Bt = `a,frame,iframe,input:not([type=hidden]):not(:disabled),select:not(:disabled),textarea:not(:disabled),button:not(:disabled),*[tabindex]`));
   });
 }

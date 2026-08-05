@@ -35,7 +35,9 @@ export function useRecommendedSkillStatsigOverrides(): RecommendedSkillMarkdownB
   return parseRecommendedSkillStatsigOverrides(value);
 }
 
-export function parseRecommendedSkillStatsigOverrides(raw: unknown): RecommendedSkillMarkdownById {
+export function parseRecommendedSkillStatsigOverrides(
+  raw: unknown,
+): RecommendedSkillMarkdownById {
   const parsed = recommendedSkillOverridesSchema.parse(raw);
   const result: RecommendedSkillMarkdownById = {};
   for (const [skillId, markdown] of Object.entries(
@@ -52,7 +54,10 @@ export function parseRecommendedSkillStatsigOverrides(raw: unknown): Recommended
 /**
  * Bundle export `t` — lookup one skill markdown override by id.
  */
-export function getRecommendedSkillStatsigOverride(overrides: RecommendedSkillMarkdownById, skillId: string): string | undefined {
+export function getRecommendedSkillStatsigOverride(
+  overrides: RecommendedSkillMarkdownById,
+  skillId: string,
+): string | undefined {
   return overrides[skillId];
 }
 

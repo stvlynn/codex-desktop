@@ -26,6 +26,8 @@ export function bindCommitted() {
   }
 
   return peers.e(() => {
-    DRr = peers.r(peers.o(), 1), ORr = (0, peers.DRr.createContext)(null), kRr = (0, peers.DRr.createContext)(null);
+    ((DRr = peers.r(peers.o(), 1)),
+      (ORr = (0, peers.DRr.createContext)(null)),
+      (kRr = (0, peers.DRr.createContext)(null)));
   });
 }

@@ -26,6 +26,6 @@ export function bindDeferredGvt() {
   }
 
   return peers.e(() => {
-    Jt = peers.r(peers.o(), 1), peers.Ze(), peers.at();
+    ((Jt = peers.r(peers.o(), 1)), peers.Ze(), peers.at());
   });
 }

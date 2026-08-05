@@ -24,6 +24,6 @@ export function bindDeferredwW() {
   }
 
   return peers.e(() => {
-    peers.FAi(), peers.Aji(), Mji = `/dev/null`;
+    (peers.FAi(), peers.Aji(), (Mji = `/dev/null`));
   });
 }

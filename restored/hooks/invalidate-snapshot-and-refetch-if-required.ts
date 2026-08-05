@@ -9,7 +9,9 @@ export type InvalidateSnapshotAndRefetchIfRequiredPeers = {
 let peers: InvalidateSnapshotAndRefetchIfRequiredPeers | null = null;
 
 /** Wire invalidateSnapshotAndRefetchIfRequired peers once companions land. */
-export function setInvalidateSnapshotAndRefetchIfRequiredPeers(next: InvalidateSnapshotAndRefetchIfRequiredPeers): void {
+export function setInvalidateSnapshotAndRefetchIfRequiredPeers(
+  next: InvalidateSnapshotAndRefetchIfRequiredPeers,
+): void {
   peers = next;
 }
 
@@ -18,17 +20,26 @@ export function setInvalidateSnapshotAndRefetchIfRequiredPeers(next: InvalidateS
  */
 async function invalidateSnapshotAndRefetchIfRequired(e) {
   if (peers == null) {
-    throw new Error("invalidateSnapshotAndRefetchIfRequired peers are not configured");
+    throw new Error(
+      "invalidateSnapshotAndRefetchIfRequired peers are not configured",
+    );
   }
 
   let t = e.query.snapshot(peers.Hjr);
-  if (await t.invalidate({
-    exact: !0,
-    refetchType: `none`
-  }), (await t.fetch()) !== `required`) return !1;
+  if (
+    (await t.invalidate({
+      exact: !0,
+      refetchType: `none`,
+    }),
+    (await t.fetch()) !== `required`)
+  )
+    return !1;
   let n = e.query.snapshot(peers.Ujr);
-  return await n.invalidate({
-    exact: !0,
-    refetchType: `none`
-  }), !(await n.fetch());
+  return (
+    await n.invalidate({
+      exact: !0,
+      refetchType: `none`,
+    }),
+    !(await n.fetch())
+  );
 }

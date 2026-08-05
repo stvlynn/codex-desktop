@@ -12,7 +12,9 @@ export type ChatgptConversationTree = {
   mapping: Record<string, ChatgptConversationMappingNode | undefined>;
 };
 
-export function walkChatgptMessageTree(conversation: ChatgptConversationTree): ChatgptConversationMappingNode[] {
+export function walkChatgptMessageTree(
+  conversation: ChatgptConversationTree,
+): ChatgptConversationMappingNode[] {
   const nodes: ChatgptConversationMappingNode[] = [];
   const seen = new Set<string>();
   let cursor: string | null = conversation.current_node ?? null;

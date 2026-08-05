@@ -47,20 +47,19 @@ export function DropdownMenuFlyoutSubmenuItem(
       ? "m-0 p-0"
       : cx("m-px px-1 py-1", dropdownMenuSurfaceClassName(contentSurface));
 
-  const triggerBody =
-    triggerContent ?? (
-      <div className={ITEM_CLASS.content}>
-        {LeftIcon ? (
-          <LeftIcon
-            className={cx(leftIconClassName ?? "icon-xs", ITEM_CLASS.icon)}
-          />
-        ) : null}
-        <span className="min-w-0 flex-1 truncate">{label}</span>
-        <DropdownMenuChevronRightIcon
-          className={cx("icon-xs", ITEM_CLASS.icon)}
+  const triggerBody = triggerContent ?? (
+    <div className={ITEM_CLASS.content}>
+      {LeftIcon ? (
+        <LeftIcon
+          className={cx(leftIconClassName ?? "icon-xs", ITEM_CLASS.icon)}
         />
-      </div>
-    );
+      ) : null}
+      <span className="min-w-0 flex-1 truncate">{label}</span>
+      <DropdownMenuChevronRightIcon
+        className={cx("icon-xs", ITEM_CLASS.icon)}
+      />
+    </div>
+  );
 
   const trigger = (
     <DropdownMenuPrimitive.SubTrigger

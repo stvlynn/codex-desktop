@@ -8,7 +8,9 @@ export type BindHasOpenedQuickChatV1Peers = {
 let peers: BindHasOpenedQuickChatV1Peers | null = null;
 
 /** Wire bindHasOpenedQuickChatV1 peers once companions land. */
-export function setBindHasOpenedQuickChatV1Peers(next: BindHasOpenedQuickChatV1Peers): void {
+export function setBindHasOpenedQuickChatV1Peers(
+  next: BindHasOpenedQuickChatV1Peers,
+): void {
   peers = next;
 }
 

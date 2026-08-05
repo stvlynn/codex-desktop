@@ -22,4 +22,3 @@ export function bindLocalRemoteDropdownR(_next: unknown): void {}
 /** Wave GA: bind no longer required after full body promote */
 export function bindLocalRemoteDropdownT(_next: unknown): void {}
 export function ensureLocalRemoteDropdownInit(): void {}
-

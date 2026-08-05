@@ -9,7 +9,9 @@ import {
 import { sliceBetweenAnnotationsAndRequest } from "./slice-between-annotations-and-request";
 
 /** Parse mentioned-file headings from a composed user prompt. */
-export function parseMentionedFilesFromPrompt(text: string): MentionedFileHeading[] {
+export function parseMentionedFilesFromPrompt(
+  text: string,
+): MentionedFileHeading[] {
   const body = sliceBetweenAnnotationsAndRequest(text);
   if (body == null) return [];
   const at = body.indexOf(FILES_MENTIONED_BY_USER_HEADER);

@@ -13,7 +13,10 @@ const __call =
     (__req(rel) as any)[name](...args);
 const __get = (rel: string, name: string) => () => (__req(rel) as any)[name];
 
-import { workbookBinding1530, workbookBinding1543 } from "../../compose-jsx-lower";
+import {
+  workbookBinding1530,
+  workbookBinding1543,
+} from "../../compose-jsx-lower";
 
 export type ComposeInlineTextBoundaryHooks = {
   collapseText: (...args: any[]) => any;
@@ -31,7 +34,8 @@ export type ComposeInlineTextBoundaryHooks = {
 export const citH: ComposeInlineTextBoundaryHooks = {
   collapseText: __call("../collapse-text-impl", "GOe"),
   mergeRunOverride: __call("../../compose-jsx-lower", "mergeRunOverride"),
-  isEmptyParagraph: __call("../../compose-jsx-lower/image-prop-helpers-impl",
+  isEmptyParagraph: __call(
+    "../../compose-jsx-lower/image-prop-helpers-impl",
     "KOe",
   ),
   semanticTagStyle: __call("../../compose-jsx-lower", "semanticTagStyle"),

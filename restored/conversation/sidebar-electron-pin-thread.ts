@@ -9,7 +9,9 @@ export type BindSidebarElectronPinThreadPeers = {
 let peers: BindSidebarElectronPinThreadPeers | null = null;
 
 /** Wire bindSidebarElectronPinThread peers once companions land. */
-export function setBindSidebarElectronPinThreadPeers(next: BindSidebarElectronPinThreadPeers): void {
+export function setBindSidebarElectronPinThreadPeers(
+  next: BindSidebarElectronPinThreadPeers,
+): void {
   peers = next;
 }
 

@@ -7,7 +7,9 @@ import {
 } from "./google-docs-url-kind";
 
 /** Parse an http(s) URL and classify Google Docs kinds; else null. */
-export function classifyHttpUrlAsGoogleDoc(raw: string): GoogleDocsUrlKind | null {
+export function classifyHttpUrlAsGoogleDoc(
+  raw: string,
+): GoogleDocsUrlKind | null {
   let url: URL;
   try {
     url = new URL(raw);

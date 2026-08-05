@@ -69,7 +69,10 @@ import {
 } from "../../conversation/turn-sources-model";
 import { ensureIntlFormattersInit as appInitialHft } from "../../i18n/use-intl";
 import { ensureAppShellAtomsInit as appInitialOpt } from "../../navigation/app-shell-atoms";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../runtime/rolldown-runtime";
 import { ThreadResourceCard as _appInitialYI } from "../../thread/thread-resource-card";
 import { activityStatusMessages as appInitialYd } from "../../visualization/activity-status-messages";
 import { zodString as _appInitialCT } from "../../vendor/zod";

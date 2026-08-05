@@ -18,7 +18,9 @@ export type BindRemoteHostedPipHiddenThreadIdsPeers = {
 let peers: BindRemoteHostedPipHiddenThreadIdsPeers | null = null;
 
 /** Wire bindRemoteHostedPipHiddenThreadIds peers once companions land. */
-export function setBindRemoteHostedPipHiddenThreadIdsPeers(next: BindRemoteHostedPipHiddenThreadIdsPeers): void {
+export function setBindRemoteHostedPipHiddenThreadIdsPeers(
+  next: BindRemoteHostedPipHiddenThreadIdsPeers,
+): void {
   peers = next;
 }
 
@@ -27,12 +29,21 @@ export function setBindRemoteHostedPipHiddenThreadIdsPeers(next: BindRemoteHoste
  */
 export function bindRemoteHostedPipHiddenThreadIds() {
   if (peers == null) {
-    throw new Error("bindRemoteHostedPipHiddenThreadIds peers are not configured");
+    throw new Error(
+      "bindRemoteHostedPipHiddenThreadIds peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), peers.Im(), Lxu = peers.Pm(`remote-hosted-pip-hidden-thread-ids`, []), Rxu = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => peers.e == null || !(t(peers.Lxu) ?? []).includes(peers.e)), zxu = peers.Da(peers.Q, e => !1);
+    (peers.Ho(),
+      peers.ed(),
+      peers.Im(),
+      (Lxu = peers.Pm(`remote-hosted-pip-hidden-thread-ids`, [])),
+      (Rxu = peers.Oa(
+        peers.Q,
+        (e, { get: t }) =>
+          peers.e == null || !(t(peers.Lxu) ?? []).includes(peers.e),
+      )),
+      (zxu = peers.Da(peers.Q, (e) => !1)));
   });
 }

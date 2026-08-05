@@ -25,13 +25,13 @@ export function bindDeferredUiIs() {
     throw new Error("bindDeferredUiIs peers are not configured");
   }
 
-  return peers.Ma(peers.j2, ({
-    get: e
-  }) => {
+  return peers.Ma(peers.j2, ({ get: e }) => {
     let t = e(peers.D8);
     if (t.visibleTaskIds == null || e(peers.LMl) == null) return null;
     let n = e(peers.qMl),
       r = e(peers.BMl);
-    return t.visibleTaskIds.filter(e => t.pluginNames.has(e) && !n.has(e) && !r.includes(e));
+    return t.visibleTaskIds.filter(
+      (e) => t.pluginNames.has(e) && !n.has(e) && !r.includes(e),
+    );
   });
 }

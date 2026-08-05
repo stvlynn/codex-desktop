@@ -5,12 +5,15 @@ export type CloseThreadMcpAppSidePanelTabPeers = {
   JGi: (...args: unknown[]) => unknown;
   pR: (...args: unknown[]) => unknown;
 
-  eO: any;};
+  eO: any;
+};
 
 let peers: CloseThreadMcpAppSidePanelTabPeers | null = null;
 
 /** Wire closeThreadMcpAppSidePanelTab peers once companions land. */
-export function setCloseThreadMcpAppSidePanelTabPeers(next: CloseThreadMcpAppSidePanelTabPeers): void {
+export function setCloseThreadMcpAppSidePanelTabPeers(
+  next: CloseThreadMcpAppSidePanelTabPeers,
+): void {
   peers = next;
 }
 
@@ -22,5 +25,7 @@ export function closeThreadMcpAppSidePanelTab(e: unknown, t: unknown) {
     throw new Error("closeThreadMcpAppSidePanelTab peers are not configured");
   }
   let n = peers.pR(t);
-  e.get(peers.eO.tabs$).some(e => e.tabId === n) && (peers.eO.closeTab(e, n), e.get(peers.eO.tabs$).length === 0 && peers.JGi(e));
+  e.get(peers.eO.tabs$).some((e) => e.tabId === n) &&
+    (peers.eO.closeTab(e, n),
+    e.get(peers.eO.tabs$).length === 0 && peers.JGi(e));
 }

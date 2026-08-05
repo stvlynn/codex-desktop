@@ -20,27 +20,21 @@ import {
 
 let useChatgptComposerControllerK: any;
 export const useChatgptComposerControllerA = rolldownRuntimeN(() => {
-    appInitialMT();
-    appInitialIft();
-    ensureChatgptConversationUpdatesSubscriptionInit();
-    ensureChatgptImageGenerationPollInit();
-    useChatgptComposerControllerK = appInitialZT(
-      appInitialFft,
-      (request11273, { get }) => {
-        return (
-          get(chatgptConversationUpdatesSubscriptionAtom),
-          get(
-            chatgptConversationGenUiRefreshAtom,
-            request11273,
-          ),
-          get(
-            chatgptImageGenerationPollAtom,
-            request11273,
-          ),
-          null
-        );
-      },
-    );
-  });
+  appInitialMT();
+  appInitialIft();
+  ensureChatgptConversationUpdatesSubscriptionInit();
+  ensureChatgptImageGenerationPollInit();
+  useChatgptComposerControllerK = appInitialZT(
+    appInitialFft,
+    (request11273, { get }) => {
+      return (
+        get(chatgptConversationUpdatesSubscriptionAtom),
+        get(chatgptConversationGenUiRefreshAtom, request11273),
+        get(chatgptImageGenerationPollAtom, request11273),
+        null
+      );
+    },
+  );
+});
 
 export { useChatgptComposerControllerK };

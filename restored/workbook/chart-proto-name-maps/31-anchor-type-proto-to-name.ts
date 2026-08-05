@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Yn,
-} from "../presentation-protobuf";
+import { Yn } from "../presentation-protobuf";
 
 export const anchorTypeProtoToName = {
   [Yn.ANCHOR_TYPE_TOP]: "top",

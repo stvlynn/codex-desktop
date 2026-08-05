@@ -23,7 +23,9 @@ export type UsePluginConnectorAvailabilityPeers = {
 let peers: UsePluginConnectorAvailabilityPeers | null = null;
 
 /** Wire usePluginConnectorAvailability peers once companions land. */
-export function setUsePluginConnectorAvailabilityPeers(next: UsePluginConnectorAvailabilityPeers): void {
+export function setUsePluginConnectorAvailabilityPeers(
+  next: UsePluginConnectorAvailabilityPeers,
+): void {
   peers = next;
 }
 

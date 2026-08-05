@@ -5,7 +5,9 @@ import type { ReactElement, SVGProps } from "react";
 
 export type SecuritySettingsNavIconProps = SVGProps<SVGSVGElement>;
 
-export function SecuritySettingsNavIcon(props: SecuritySettingsNavIconProps): ReactElement {
+export function SecuritySettingsNavIcon(
+  props: SecuritySettingsNavIconProps,
+): ReactElement {
   return (
     <svg
       width={20}

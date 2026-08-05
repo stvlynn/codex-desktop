@@ -2,7 +2,10 @@
 // Bundle export `fft` — pure helper.
 
 /** Longest run of consecutive `substring` occurrences in `value`. */
-export function maxConsecutiveSubstringRuns(value: unknown, substring: string): number {
+export function maxConsecutiveSubstringRuns(
+  value: unknown,
+  substring: string,
+): number {
   const text = String(value);
   let index = text.indexOf(substring);
   let next = index;

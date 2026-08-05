@@ -18,7 +18,9 @@ export type ProductEventDebugLogPeers = {
 let peers: ProductEventDebugLogPeers | null = null;
 
 /** Wire productEventDebugLog peers once companions land. */
-export function setProductEventDebugLogPeers(next: ProductEventDebugLogPeers): void {
+export function setProductEventDebugLogPeers(
+  next: ProductEventDebugLogPeers,
+): void {
   peers = next;
 }
 
@@ -31,6 +33,16 @@ export function productEventDebugLog() {
   }
 
   return peers.e(() => {
-    z9l = peers.r(peers.o(), 1), B9l = 200, V9l = typeof peers.crypto < `u` && typeof peers.crypto.randomUUID == `function` ? peers.crypto.randomUUID() : `product-event-debug-log`, H9l = new Set(), H7 = new Map(), U9l = [], W9l = 0;
+    ((z9l = peers.r(peers.o(), 1)),
+      (B9l = 200),
+      (V9l =
+        typeof peers.crypto < `u` &&
+        typeof peers.crypto.randomUUID == `function`
+          ? peers.crypto.randomUUID()
+          : `product-event-debug-log`),
+      (H9l = new Set()),
+      (H7 = new Map()),
+      (U9l = []),
+      (W9l = 0));
   });
 }

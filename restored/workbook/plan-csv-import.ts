@@ -115,7 +115,10 @@ function parseCsvGrid(csv: string, separator: string): string[][] {
     return padded;
   });
 }
-export function planCsvImport(csv: string, options?: CsvImportOptions): CsvImportPlan {
+export function planCsvImport(
+  csv: string,
+  options?: CsvImportOptions,
+): CsvImportPlan {
   initAddressUtils();
   const separator = requireSingleCharSeparator(options?.separator);
   const parsedAnchor = parseSheetRef(options?.anchor ?? "A1");

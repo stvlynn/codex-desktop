@@ -10,7 +10,9 @@ export type EnsureLocalGizmoProjectTrackedPeers = {
 let peers: EnsureLocalGizmoProjectTrackedPeers | null = null;
 
 /** Wire ensureLocalGizmoProjectTracked peers once companions land. */
-export function setEnsureLocalGizmoProjectTrackedPeers(next: EnsureLocalGizmoProjectTrackedPeers): void {
+export function setEnsureLocalGizmoProjectTrackedPeers(
+  next: EnsureLocalGizmoProjectTrackedPeers,
+): void {
   peers = next;
 }
 

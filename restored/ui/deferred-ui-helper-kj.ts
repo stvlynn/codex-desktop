@@ -16,7 +16,9 @@ export type BindDeferredUiHelperKjPeers = {
 let peers: BindDeferredUiHelperKjPeers | null = null;
 
 /** Wire bindDeferredUiHelperKj peers once companions land. */
-export function setBindDeferredUiHelperKjPeers(next: BindDeferredUiHelperKjPeers): void {
+export function setBindDeferredUiHelperKjPeers(
+  next: BindDeferredUiHelperKjPeers,
+): void {
   peers = next;
 }
 
@@ -29,6 +31,11 @@ export function bindDeferredUiHelperKj() {
   }
 
   return peers.e(() => {
-    rpo = peers.c(), peers.$u(), peers.Pp(), peers.zR(), peers.Jh(), zG = peers.J();
+    ((rpo = peers.c()),
+      peers.$u(),
+      peers.Pp(),
+      peers.zR(),
+      peers.Jh(),
+      (zG = peers.J()));
   });
 }

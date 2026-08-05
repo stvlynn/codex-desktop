@@ -34,6 +34,15 @@ export function home2() {
   }
 
   return peers.e(() => {
-    L4s = peers.c(), peers.fr(), peers.Ho(), R4s = peers.r(peers.o(), 1), peers.aN(), peers.zZ(), peers.OE(), peers.Fh(), peers.NN(), peers.O4s();
+    ((L4s = peers.c()),
+      peers.fr(),
+      peers.Ho(),
+      (R4s = peers.r(peers.o(), 1)),
+      peers.aN(),
+      peers.zZ(),
+      peers.OE(),
+      peers.Fh(),
+      peers.NN(),
+      peers.O4s());
   });
 }

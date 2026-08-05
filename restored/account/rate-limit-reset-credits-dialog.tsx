@@ -27,7 +27,9 @@ export type RateLimitResetCreditsDialogParts = {
 let parts: RateLimitResetCreditsDialogParts | null = null;
 
 /** Wire redeem mutation / credits UI once companions land. */
-export function setRateLimitResetCreditsDialogParts(next: RateLimitResetCreditsDialogParts): void {
+export function setRateLimitResetCreditsDialogParts(
+  next: RateLimitResetCreditsDialogParts,
+): void {
   parts = next;
 }
 
@@ -35,7 +37,9 @@ export function setRateLimitResetCreditsDialogParts(next: RateLimitResetCreditsD
  * Bundle export `Mv` / internal `aOs`.
  * Rate-limit reset credits dialog with a real Stage-3 scaffold.
  */
-export function RateLimitResetCreditsDialog(props: RateLimitResetCreditsDialogProps): ReactElement {
+export function RateLimitResetCreditsDialog(
+  props: RateLimitResetCreditsDialogProps,
+): ReactElement {
   if (parts != null) {
     return parts.render(props) as ReactElement;
   }

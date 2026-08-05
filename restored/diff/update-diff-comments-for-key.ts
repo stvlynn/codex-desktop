@@ -9,7 +9,9 @@ export type UpdateDiffCommentsForKeyPeers = {
 let peers: UpdateDiffCommentsForKeyPeers | null = null;
 
 /** Wire updateDiffCommentsForKey peers once companions land. */
-export function setUpdateDiffCommentsForKeyPeers(next: UpdateDiffCommentsForKeyPeers): void {
+export function setUpdateDiffCommentsForKeyPeers(
+  next: UpdateDiffCommentsForKeyPeers,
+): void {
   peers = next;
 }
 
@@ -21,18 +23,19 @@ export function updateDiffCommentsForKey(e: unknown, t: unknown, n: unknown) {
     throw new Error("updateDiffCommentsForKey peers are not configured");
   }
 
-  peers.L_(e, `diff_comments`, e => {
+  peers.L_(e, `diff_comments`, (e) => {
     let r = e?.[t] ?? peers.Vpo,
       i = typeof n == `function` ? n(r) : n;
     if (i === r) return e;
-    if (i.length > 0) return {
-      ...e,
-      [t]: i
-    };
+    if (i.length > 0)
+      return {
+        ...e,
+        [t]: i,
+      };
     if (e?.[t] == null) return e;
     let a = {
-      ...e
+      ...e,
     };
-    return delete a[t], Object.keys(a).length === 0 ? void 0 : a;
+    return (delete a[t], Object.keys(a).length === 0 ? void 0 : a);
   });
 }

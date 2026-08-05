@@ -11,7 +11,9 @@ export type BindBindCodexMobileMfaSetupRequired2Peers = {
 let peers: BindBindCodexMobileMfaSetupRequired2Peers | null = null;
 
 /** Wire bindBindCodexMobileMfaSetupRequired2 peers once companions land. */
-export function setBindBindCodexMobileMfaSetupRequired2Peers(next: BindBindCodexMobileMfaSetupRequired2Peers): void {
+export function setBindBindCodexMobileMfaSetupRequired2Peers(
+  next: BindBindCodexMobileMfaSetupRequired2Peers,
+): void {
   peers = next;
 }
 
@@ -20,16 +22,16 @@ export function setBindBindCodexMobileMfaSetupRequired2Peers(next: BindBindCodex
  */
 export function bindBindCodexMobileMfaSetupRequired2() {
   if (peers == null) {
-    throw new Error("bindBindCodexMobileMfaSetupRequired2 peers are not configured");
+    throw new Error(
+      "bindBindCodexMobileMfaSetupRequired2 peers are not configured",
+    );
   }
 
-  return peers.Ia(peers.Q, ({
-    get: e
-  }) => ({
+  return peers.Ia(peers.Q, ({ get: e }) => ({
     enabled: e(peers.Hjr).data === `required`,
     queryKey: [`remote-control-mfa-enabled`],
     queryFn: peers.mjr,
     refetchOnWindowFocus: `always`,
-    staleTime: 0
+    staleTime: 0,
   }));
 }

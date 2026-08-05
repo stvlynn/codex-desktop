@@ -35,7 +35,9 @@ export type BindLastCompletedOnboardingPeers = {
 let peers: BindLastCompletedOnboardingPeers | null = null;
 
 /** Wire bindLastCompletedOnboarding peers once companions land. */
-export function setBindLastCompletedOnboardingPeers(next: BindLastCompletedOnboardingPeers): void {
+export function setBindLastCompletedOnboardingPeers(
+  next: BindLastCompletedOnboardingPeers,
+): void {
   peers = next;
 }
 
@@ -48,11 +50,32 @@ export function bindLastCompletedOnboarding() {
   }
 
   return peers.e(() => {
-    w4r = peers.c(), peers.fr(), peers.Ho(), peers.Au(), peers.DD(), peers.Vf(), peers.V2r(), peers.pA(), peers.IE(), peers.Y2r(), peers.ed(), peers.OE(), peers.K_(), peers.V_(), peers.Fh(), peers.Gf(), peers.n4r(), peers.m4r(), T4r = {
-      isSet: !1,
-      value: null
-    }, E4r = peers.Ta(peers.Q, () => ({})), D4r = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => t(peers.bD, peers.e)?.at(-1) ?? null);
+    ((w4r = peers.c()),
+      peers.fr(),
+      peers.Ho(),
+      peers.Au(),
+      peers.DD(),
+      peers.Vf(),
+      peers.V2r(),
+      peers.pA(),
+      peers.IE(),
+      peers.Y2r(),
+      peers.ed(),
+      peers.OE(),
+      peers.K_(),
+      peers.V_(),
+      peers.Fh(),
+      peers.Gf(),
+      peers.n4r(),
+      peers.m4r(),
+      (T4r = {
+        isSet: !1,
+        value: null,
+      }),
+      (E4r = peers.Ta(peers.Q, () => ({}))),
+      (D4r = peers.Oa(
+        peers.Q,
+        (e, { get: t }) => t(peers.bD, peers.e)?.at(-1) ?? null,
+      )));
   });
 }

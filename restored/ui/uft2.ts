@@ -27,6 +27,6 @@ export function uft2() {
   }
 
   return peers.e(() => {
-    peers.Ud(), _Je = peers.r(peers.o(), 1), peers.zze(), peers.ud();
+    (peers.Ud(), (_Je = peers.r(peers.o(), 1)), peers.zze(), peers.ud());
   });
 }

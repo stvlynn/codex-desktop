@@ -5,8 +5,10 @@
 // AST split 2/3
 /* split-lane-import-depth:1 */
 
-
-import { ChatGptPlanId, ensureChatGptPlanIdInit } from "../../account/chatgpt-plan-ids";
+import {
+  ChatGptPlanId,
+  ensureChatGptPlanIdInit,
+} from "../../account/chatgpt-plan-ids";
 import { openInBrowser } from "../../account/open-in-browser";
 import { RateLimitResetCreditsDialog } from "../../account/rate-limit-reset-credits-dialog";
 import { pickHighestUsageWindow } from "../../account/rate-limit-window-usage";
@@ -20,13 +22,35 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CODEX_PRICING_PLAN_PAGE_CTA_CLICKED_TYPE } from "../../analytics/codex-pricing-plan-page-cta-clicked-type";
 import { CODEX_PRICING_PLAN_PAGE_SHOWN_TYPE } from "../../analytics/codex-pricing-plan-page-shown-type";
 import { logProductEvent } from "../../analytics/log-product-event";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { localeMessagesAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_E4_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_E4_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { createPersistedAtom, ensurePersistedAtomInit, useAtomPair } from "../../boundaries/persisted-atom";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  createPersistedAtom,
+  ensurePersistedAtomInit,
+  useAtomPair,
+} from "../../boundaries/persisted-atom";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { getAccountInfoQueryConfig } from "../../cloud/account-info-query";
 import { managedConfigFilePath } from "../../config/managed-config-file-path";
@@ -49,10 +73,16 @@ import { AddContextSquareIcon } from "../../icons/add-context-square-icon";
 import { AppIconAi } from "../../icons/app-icon-ai";
 import { AppIconAlt } from "../../icons/app-icon-alt";
 import { AppIconSR } from "../../icons/app-icon-sr";
-import { ensureTeamIconInit as EnsureTeamIconInit, TeamIcon } from "../../icons/team-icon";
+import {
+  ensureTeamIconInit as EnsureTeamIconInit,
+  TeamIcon,
+} from "../../icons/team-icon";
 import { copilotDefaultModel } from "../../models/copilot-default-model";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
-import { ensureOnboardingBannerInit as EnsureOnboardingBannerInit, OnboardingBanner } from "../../onboarding/onboarding-banner";
+import {
+  ensureOnboardingBannerInit as EnsureOnboardingBannerInit,
+  OnboardingBanner,
+} from "../../onboarding/onboarding-banner";
 import { CodexPluginDirectoryEntrypoint } from "../../plugins/codex-plugin-directory-entrypoint";
 import { PLEASE_IMPLEMENT_THIS_PLAN_HEADER } from "../../prompts/please-implement-this-plan-header";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
@@ -116,15 +146,13 @@ const CodexHomeAnnouncementsHelper17: any = undefined;
 const CodexHomeAnnouncementsHelper14: any = undefined;
 
 function CodexHomeAnnouncementsHelper27(willowPrime) {
-  let {
-      onDismiss,
-      onOpenGiftCredits
-    } = willowPrime,
+  let { onDismiss, onOpenGiftCredits } = willowPrime,
     xenonPrime = CodexPluginActionType(appScopeAtom),
     yellowPrime = useIntl(),
     zincPrime = north.useRef(false),
     amberPrime = () => {
-      zincPrime.current || (zincPrime.current = true, xenonPrime.set(jewel, lunar));
+      zincPrime.current ||
+        ((zincPrime.current = true), xenonPrime.set(jewel, lunar));
     };
   let basaltPrime = north.useEffectEvent(amberPrime),
     cedarPrime = () => {
@@ -134,48 +162,69 @@ function CodexHomeAnnouncementsHelper27(willowPrime) {
   daisyPrime = [];
   north.useEffect(cedarPrime, daisyPrime);
   let emberPrime, flintPrime, garnetPrime, hazelPrime;
-  emberPrime = <MemoizedFormattedMessage {...{
-    id: "codex.giftCredits.homeBanner.chatgptCredits.title",
-    defaultMessage: "Gift credits",
-    description: "Title shown in the Codex home banner promoting gift credits"
-  }} />;
-  flintPrime = <MemoizedFormattedMessage {...{
-    id: "codex.giftCredits.homeBanner.chatgptCredits.description",
-    defaultMessage: "Send a friend credits they can use for work or Codex tasks",
-    description: "Description shown in the Codex home banner promoting gift credits"
-  }} />;
+  emberPrime = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.giftCredits.homeBanner.chatgptCredits.title",
+        defaultMessage: "Gift credits",
+        description:
+          "Title shown in the Codex home banner promoting gift credits",
+      }}
+    />
+  );
+  flintPrime = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.giftCredits.homeBanner.chatgptCredits.description",
+        defaultMessage:
+          "Send a friend credits they can use for work or Codex tasks",
+        description:
+          "Description shown in the Codex home banner promoting gift credits",
+      }}
+    />
+  );
   garnetPrime = <AppIconAi aria-hidden={true} className="icon-sm" />;
-  hazelPrime = <MemoizedFormattedMessage {...{
-    id: "codex.giftCredits.homeBanner.action",
-    defaultMessage: "Gift credits",
-    description: "Button label that opens the ChatGPT gift credits purchase flow"
-  }} />;
+  hazelPrime = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.giftCredits.homeBanner.action",
+        defaultMessage: "Gift credits",
+        description:
+          "Button label that opens the ChatGPT gift credits purchase flow",
+      }}
+    />
+  );
   let ivoryPrime = {
     label: hazelPrime,
-    onClick: onOpenGiftCredits
+    onClick: onOpenGiftCredits,
   };
   let jasperPrime = yellowPrime.formatMessage({
     id: "codex.giftCredits.homeBanner.dismiss",
     defaultMessage: "Dismiss gift credits banner",
-    description: "Accessible label for dismissing the Codex gift credits home banner"
+    description:
+      "Accessible label for dismissing the Codex gift credits home banner",
   });
   let kelpPrime = {
     ariaLabel: jasperPrime,
     icon: chatgpt2,
-    onClick: onDismiss
+    onClick: onDismiss,
   };
-  return <EnsureOnboardingBannerInit {...{
-    title: emberPrime,
-    description: flintPrime,
-    leadingVisual: garnetPrime,
-    primaryAction: ivoryPrime,
-    dismissAction: kelpPrime
-  }} />;
+  return (
+    <EnsureOnboardingBannerInit
+      {...{
+        title: emberPrime,
+        description: flintPrime,
+        leadingVisual: garnetPrime,
+        primaryAction: ivoryPrime,
+        dismissAction: kelpPrime,
+      }}
+    />
+  );
 }
 function lunar(lotusPrime) {
   return {
     lastShownAtMs: Date.now(),
-    shownCount: (lotusPrime?.shownCount ?? 0) + 1
+    shownCount: (lotusPrime?.shownCount ?? 0) + 1,
   };
 }
 var moss,
@@ -199,31 +248,38 @@ function quest(mintPrime) {
   }
   return null;
 }
-function CodexHomeAnnouncementsHelper30({
-  entries
-}) {
+function CodexHomeAnnouncementsHelper30({ entries }) {
   let prismPrime = storm.useRef(undefined),
     quillPrime = prismPrime.current;
   if (quillPrime === undefined) {
     let sagePrime = quest(entries);
-    sagePrime !== undefined && (prismPrime.current = sagePrime, quillPrime = sagePrime);
+    sagePrime !== undefined &&
+      ((prismPrime.current = sagePrime), (quillPrime = sagePrime));
   }
   if (quillPrime == null) return null;
   let reefPrime = entries[quillPrime];
-  return reefPrime == null || reefPrime.isLoading || !reefPrime.isEligible || reefPrime.content == null ? null : <$n {...{
-    children: reefPrime.content
-  }} />;
+  return reefPrime == null ||
+    reefPrime.isLoading ||
+    !reefPrime.isEligible ||
+    reefPrime.content == null ? null : (
+    <$n
+      {...{
+        children: reefPrime.content,
+      }}
+    />
+  );
 }
 function $n(topazPrime) {
-  let {
-      children
-    } = topazPrime,
+  let { children } = topazPrime,
     ultraPrime = CodexPluginActionType(appScopeAtom),
     vaporPrime,
     wheatPrime;
-  vaporPrime = () => (ultraPrime.set(AppInitialNh, true), () => {
-    ultraPrime.set(AppInitialNh, false);
-  });
+  vaporPrime = () => (
+    ultraPrime.set(AppInitialNh, true),
+    () => {
+      ultraPrime.set(AppInitialNh, false);
+    }
+  );
   wheatPrime = [ultraPrime];
   storm.useLayoutEffect(vaporPrime, wheatPrime);
   return <>{children}</>;
@@ -239,73 +295,96 @@ var ridge,
     ensureAppScopeInit();
   });
 function CodexHomeAnnouncementsHelper31(yarnPrime) {
-  let {
-      availableCount,
-      onDismiss
-    } = yarnPrime,
+  let { availableCount, onDismiss } = yarnPrime,
     zephyrPrime = CodexPluginActionType(appScopeAtom),
     acornPrime = () => {
       chatProcessRegister(zephyrPrime, RateLimitResetCreditsDialog, {
         initialAvailableCount: availableCount,
         isRateLimitReached: false,
-        onResetComplete: vale
+        onResetComplete: vale,
       });
     };
-  return <Or {...{
-    onDismiss,
-    onSeeResets: acornPrime
-  }} />;
+  return (
+    <Or
+      {...{
+        onDismiss,
+        onSeeResets: acornPrime,
+      }}
+    />
+  );
 }
 function vale() {}
 function Or(bloomPrime) {
-  let {
-      onDismiss,
-      onSeeResets
-    } = bloomPrime,
+  let { onDismiss, onSeeResets } = bloomPrime,
     coralPrime = useIntl(),
     driftPrime,
     eaglePrime,
     frostPrime,
     glidePrime;
-  driftPrime = <MemoizedFormattedMessage {...{
-    id: "codex.rateLimitResetHomeBanner.title",
-    defaultMessage: "You have a new rate limit reset available",
-    description: "Title shown in the home banner when a Codex rate limit reset credit is available"
-  }} />;
-  eaglePrime = <MemoizedFormattedMessage {...{
-    id: "codex.rateLimitResetHomeBanner.description",
-    defaultMessage: "You were granted a rate limit reset that will expire in 30 days.",
-    description: "Description shown in the home banner when a Codex rate limit reset credit is available"
-  }} />;
-  frostPrime = <AppIconSR {...{
-    className: "size-8"
-  }} />;
-  glidePrime = <MemoizedFormattedMessage {...{
-    id: "codex.rateLimitResetHomeBanner.seeResets",
-    defaultMessage: "See resets",
-    description: "Button label that opens the available Codex rate limit resets modal"
-  }} />;
+  driftPrime = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.rateLimitResetHomeBanner.title",
+        defaultMessage: "You have a new rate limit reset available",
+        description:
+          "Title shown in the home banner when a Codex rate limit reset credit is available",
+      }}
+    />
+  );
+  eaglePrime = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.rateLimitResetHomeBanner.description",
+        defaultMessage:
+          "You were granted a rate limit reset that will expire in 30 days.",
+        description:
+          "Description shown in the home banner when a Codex rate limit reset credit is available",
+      }}
+    />
+  );
+  frostPrime = (
+    <AppIconSR
+      {...{
+        className: "size-8",
+      }}
+    />
+  );
+  glidePrime = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.rateLimitResetHomeBanner.seeResets",
+        defaultMessage: "See resets",
+        description:
+          "Button label that opens the available Codex rate limit resets modal",
+      }}
+    />
+  );
   let honeyPrime = {
     label: glidePrime,
-    onClick: onSeeResets
+    onClick: onSeeResets,
   };
   let irisPrime = coralPrime.formatMessage({
     id: "codex.rateLimitResetHomeBanner.dismiss",
     defaultMessage: "Dismiss rate limit reset banner",
-    description: "Accessible label for dismissing the Codex rate limit reset home banner"
+    description:
+      "Accessible label for dismissing the Codex rate limit reset home banner",
   });
   let jewelPrime = {
     ariaLabel: irisPrime,
     icon: chatgpt2,
-    onClick: onDismiss
+    onClick: onDismiss,
   };
-  return <EnsureOnboardingBannerInit {...{
-    title: driftPrime,
-    description: eaglePrime,
-    leadingVisual: frostPrime,
-    primaryAction: honeyPrime,
-    dismissAction: jewelPrime
-  }} />;
+  return (
+    <EnsureOnboardingBannerInit
+      {...{
+        title: driftPrime,
+        description: eaglePrime,
+        leadingVisual: frostPrime,
+        primaryAction: honeyPrime,
+        dismissAction: jewelPrime,
+      }}
+    />
+  );
 }
 var wave,
   apex,
@@ -322,47 +401,44 @@ var wave,
   });
 function cliff() {
   let knollPrime = CodexPluginActionType(appScopeAtom),
-    {
-      accountId,
-      isLoading
-    } = useAuth(),
-    {
-      data,
-      isLoading: _isLoading
-    } = reuseArrayIfShallowEqual(),
+    { accountId, isLoading } = useAuth(),
+    { data, isLoading: _isLoading } = reuseArrayIfShallowEqual(),
     lunarPrime = AppIconAlt(),
     mossPrime = CodexPluginActionResult(fern),
-    {
-      data: _data = null,
-      isLoading: __isLoading
-    } = CodexPluginActionResult(titleCaseColonSegments),
+    { data: _data = null, isLoading: __isLoading } = CodexPluginActionResult(
+      titleCaseColonSegments,
+    ),
     northPrime = _data?.rate_limit_reset_credits?.available_count ?? 0,
     orbitPrime = pickHighestUsageWindow(_data);
   let pinePrime = orbitPrime,
     questPrime = useCurrentAccountExposureGate(lunarPrime, {
       currentAccount: data,
-      disableExposureLog: true
+      disableExposureLog: true,
     });
-  let {
-      config
-    } = questPrime,
+  let { config } = questPrime,
     ridgePrime = accountId == null ? null : mossPrime?.[accountId],
     stormPrime = Date.now(),
     tidePrime = () => {
-      accountId != null && knollPrime.set(fern, wavePrime => ({
-        ...wavePrime,
-        [accountId]: {
-          dismissedAtMs: Date.now()
-        }
-      }));
+      accountId != null &&
+        knollPrime.set(fern, (wavePrime) => ({
+          ...wavePrime,
+          [accountId]: {
+            dismissedAtMs: Date.now(),
+          },
+        }));
     };
-  let unityPrime = accountId != null && northPrime > 0 && pinePrime != null && pinePrime.remainingPercent <= config.remainingThresholdPercent && (ridgePrime == null || stormPrime - ridgePrime.dismissedAtMs >= elm),
-    valePrime = isLoading || _isLoading || _data == null && __isLoading;
+  let unityPrime =
+      accountId != null &&
+      northPrime > 0 &&
+      pinePrime != null &&
+      pinePrime.remainingPercent <= config.remainingThresholdPercent &&
+      (ridgePrime == null || stormPrime - ridgePrime.dismissedAtMs >= elm),
+    valePrime = isLoading || _isLoading || (_data == null && __isLoading);
   return {
     availableCount: northPrime,
     dismiss: tidePrime,
     isEligible: unityPrime,
-    isLoading: valePrime
+    isLoading: valePrime,
   };
 }
 var dusk,
@@ -380,60 +456,87 @@ var dusk,
     ensureSkillsPageHelpersInit();
     getSettingValue();
     elm = 86400000;
-    fern = persistSettingValue("rate-limit-reset-home-announcement-dismissal-by-account-id", {});
+    fern = persistSettingValue(
+      "rate-limit-reset-home-announcement-dismissal-by-account-id",
+      {},
+    );
   });
 export function codexHomeAnnouncementsN(isle: unknown) {
-  let {
-      entryPoint
-    } = isle,
-    uplandPrime = entryPoint === "codex" && "electron:mx-[var(--home-composer-inline-inset)]",
+  let { entryPoint } = isle,
+    uplandPrime =
+      entryPoint === "codex" &&
+      "electron:mx-[var(--home-composer-inline-inset)]",
     vistaPrime = IntlProvider("empty:hidden", uplandPrime);
-  let wispPrime = <Isle {...{
-    entryPoint
-  }} />;
-  return <ElectronOnly {...{
-    electron: true,
-    children: <div className={vistaPrime}>
-            {wispPrime}
-          </div>
-  }} />;
+  let wispPrime = (
+    <Isle
+      {...{
+        entryPoint,
+      }}
+    />
+  );
+  return (
+    <ElectronOnly
+      {...{
+        electron: true,
+        children: <div className={vistaPrime}>{wispPrime}</div>,
+      }}
+    />
+  );
 }
 export function codexHomeAnnouncementsT(yonderPrime: unknown) {
   let {
       homeRunLocationRemoteProject = null,
-      includeGitCheckoutWarning = true
+      includeGitCheckoutWarning = true,
     } = yonderPrime,
     zenithPrime = useLocation(),
     anvilPrime = useDvtBindable(ONBOARDING_STORAGE_KEYS),
     beaconPrime = AppInitialTq({
       hideFirstNewThreadOnboardingPromos: anvilPrime,
-      pathname: zenithPrime.pathname
+      pathname: zenithPrime.pathname,
     });
   let cragPrime = beaconPrime,
-    domePrime = <ElectronOnly {...{
-      electron: true,
-      children: <CodexHomeAnnouncementsHelper34 {...{
-        homeRunLocationRemoteProject: homeRunLocationRemoteProject,
-        includeGitCheckoutWarning: includeGitCheckoutWarning,
-        shouldHideOnboardingPromos: cragPrime
-      }} />
-    }} />;
-  let eddyPrime = <ElectronOnly {...{
-    extension: true,
-    children: <_r {...{
-      shouldHideOnboardingPromos: cragPrime
-    }} />
-  }} />;
-  return <>
+    domePrime = (
+      <ElectronOnly
+        {...{
+          electron: true,
+          children: (
+            <CodexHomeAnnouncementsHelper34
+              {...{
+                homeRunLocationRemoteProject: homeRunLocationRemoteProject,
+                includeGitCheckoutWarning: includeGitCheckoutWarning,
+                shouldHideOnboardingPromos: cragPrime,
+              }}
+            />
+          ),
+        }}
+      />
+    );
+  let eddyPrime = (
+    <ElectronOnly
+      {...{
+        extension: true,
+        children: (
+          <_r
+            {...{
+              shouldHideOnboardingPromos: cragPrime,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  return (
+    <>
       {domePrime}
       {eddyPrime}
-    </>;
+    </>
+  );
 }
 function CodexHomeAnnouncementsHelper34(apexPrime) {
   let {
       homeRunLocationRemoteProject,
       includeGitCheckoutWarning,
-      shouldHideOnboardingPromos
+      shouldHideOnboardingPromos,
     } = apexPrime,
     brookPrime = cliff(),
     cliffPrime = eagle(),
@@ -443,76 +546,105 @@ function CodexHomeAnnouncementsHelper34(apexPrime) {
     grovePrime = !duskPrime.shouldSuppressVanillaPromos,
     hillPrime = !shouldHideOnboardingPromos && cliffPrime.isEligible,
     islePrime = !shouldHideOnboardingPromos && cliffPrime.isLoading,
-    juniperPrime = cliffPrime.isEligible ? <CodexHomeAnnouncementsHelper27 {...{
-      onDismiss: cliffPrime.dismiss,
-      onOpenGiftCredits: cliffPrime.openGiftCredits
-    }} /> : null;
+    juniperPrime = cliffPrime.isEligible ? (
+      <CodexHomeAnnouncementsHelper27
+        {...{
+          onDismiss: cliffPrime.dismiss,
+          onOpenGiftCredits: cliffPrime.openGiftCredits,
+        }}
+      />
+    ) : null;
   let lagoonPrime = {
     isEligible: hillPrime,
     isLoading: islePrime,
-    content: juniperPrime
+    content: juniperPrime,
   };
-  let meadowPrime = <CodexHomeAnnouncementsHelper31 {...{
-    availableCount: brookPrime.availableCount,
-    onDismiss: brookPrime.dismiss
-  }} />;
+  let meadowPrime = (
+    <CodexHomeAnnouncementsHelper31
+      {...{
+        availableCount: brookPrime.availableCount,
+        onDismiss: brookPrime.dismiss,
+      }}
+    />
+  );
   let nestPrime = {
     isEligible: brookPrime.isEligible,
     isLoading: brookPrime.isLoading,
-    content: meadowPrime
+    content: meadowPrime,
   };
   let oakPrime = !shouldHideOnboardingPromos && duskPrime.isEligible,
     petalPrime = !shouldHideOnboardingPromos && duskPrime.isLoading,
-    quietPrime = duskPrime.beacon != null && duskPrime.accountId != null ? <CodexHomeAnnouncementsHelper14 {...{
-      accountId: duskPrime.accountId,
-      beacon: duskPrime.beacon
-    }} /> : null;
+    quietPrime =
+      duskPrime.beacon != null && duskPrime.accountId != null ? (
+        <CodexHomeAnnouncementsHelper14
+          {...{
+            accountId: duskPrime.accountId,
+            beacon: duskPrime.beacon,
+          }}
+        />
+      ) : null;
   let rainPrime = {
     isEligible: oakPrime,
     isLoading: petalPrime,
-    content: quietPrime
+    content: quietPrime,
   };
-  let seedPrime = !shouldHideOnboardingPromos && grovePrime && elmPrime.isEligible,
-    trailPrime = !shouldHideOnboardingPromos && grovePrime && elmPrime.isLoading,
+  let seedPrime =
+      !shouldHideOnboardingPromos && grovePrime && elmPrime.isEligible,
+    trailPrime =
+      !shouldHideOnboardingPromos && grovePrime && elmPrime.isLoading,
     urnPrime = <CodexHomeAnnouncementsHelper24 {...{}} />;
   let vinePrime = {
     isEligible: seedPrime,
     isLoading: trailPrime,
-    content: urnPrime
+    content: urnPrime,
   };
-  let windPrime = !shouldHideOnboardingPromos && grovePrime && fernPrime.isEligible,
-    yarrowPrime = !shouldHideOnboardingPromos && grovePrime && fernPrime.isLoading,
-    azurePrime = fernPrime.content == null ? null : <CodexHomeAnnouncementsHelper20 {...{
-      ...fernPrime
-    }} />;
+  let windPrime =
+      !shouldHideOnboardingPromos && grovePrime && fernPrime.isEligible,
+    yarrowPrime =
+      !shouldHideOnboardingPromos && grovePrime && fernPrime.isLoading,
+    azurePrime =
+      fernPrime.content == null ? null : (
+        <CodexHomeAnnouncementsHelper20
+          {...{
+            ...fernPrime,
+          }}
+        />
+      );
   let birchPrime = {
     isEligible: windPrime,
     isLoading: yarrowPrime,
-    content: azurePrime
+    content: azurePrime,
   };
   let canyonPrime = [lagoonPrime, nestPrime, rainPrime, vinePrime, birchPrime];
   let dewPrime = canyonPrime;
-  return <CodexHomeAnnouncementsHelper30 {...{
-    entries: dewPrime
-  }} />;
+  return (
+    <CodexHomeAnnouncementsHelper30
+      {...{
+        entries: dewPrime,
+      }}
+    />
+  );
 }
 function _r(everPrime) {
-  let {
-      shouldHideOnboardingPromos
-    } = everPrime,
+  let { shouldHideOnboardingPromos } = everPrime,
     fieldPrime = flint(),
     grainPrime = sage(),
     havenPrime = mint(),
     inkPrime = !shouldHideOnboardingPromos && fieldPrime.isEligible,
     jadeitePrime = !shouldHideOnboardingPromos && fieldPrime.isLoading,
-    kernelPrime = fieldPrime.message == null ? null : <CodexHomeAnnouncementsHelper17 {...{
-      message: fieldPrime.message,
-      setHasSeenAppUpsellBanner: fieldPrime.setHasSeenAppUpsellBanner
-    }} />;
+    kernelPrime =
+      fieldPrime.message == null ? null : (
+        <CodexHomeAnnouncementsHelper17
+          {...{
+            message: fieldPrime.message,
+            setHasSeenAppUpsellBanner: fieldPrime.setHasSeenAppUpsellBanner,
+          }}
+        />
+      );
   let leafPrime = {
     isEligible: inkPrime,
     isLoading: jadeitePrime,
-    content: kernelPrime
+    content: kernelPrime,
   };
   let maplePrime = !shouldHideOnboardingPromos && grainPrime.isEligible,
     nimbusPrime = !shouldHideOnboardingPromos && grainPrime.isLoading,
@@ -520,20 +652,29 @@ function _r(everPrime) {
   let plumePrime = {
     isEligible: maplePrime,
     isLoading: nimbusPrime,
-    content: opalPrime
+    content: opalPrime,
   };
   let quillowPrime = !shouldHideOnboardingPromos && havenPrime.isEligible,
     rootPrime = !shouldHideOnboardingPromos && havenPrime.isLoading,
-    silkPrime = havenPrime.content == null ? null : <CodexHomeAnnouncementsHelper20 {...{
-      ...havenPrime
-    }} />;
+    silkPrime =
+      havenPrime.content == null ? null : (
+        <CodexHomeAnnouncementsHelper20
+          {...{
+            ...havenPrime,
+          }}
+        />
+      );
   let thornPrime = {
     isEligible: quillowPrime,
     isLoading: rootPrime,
-    content: silkPrime
+    content: silkPrime,
   };
-  return <CodexHomeAnnouncementsHelper30 {...{
-    entries: [leafPrime, plumePrime, thornPrime]
-  }} />;
+  return (
+    <CodexHomeAnnouncementsHelper30
+      {...{
+        entries: [leafPrime, plumePrime, thornPrime],
+      }}
+    />
+  );
 }
 var hill, $, Isle;

@@ -29,6 +29,12 @@ export function draft() {
   }
 
   return peers.e(() => {
-    peers.$u(), peers.jz(), peers.pHl(), peers.Zh(), peers.FK(), peers.uHl(), p5 = peers.J();
+    (peers.$u(),
+      peers.jz(),
+      peers.pHl(),
+      peers.Zh(),
+      peers.FK(),
+      peers.uHl(),
+      (p5 = peers.J()));
   });
 }

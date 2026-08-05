@@ -37,6 +37,23 @@ export function bindBindSkills2() {
   }
 
   return peers.e(() => {
-    Ges = peers.r(peers.JR(), 1), Kes = peers.r(peers.ZN(), 1), peers.Au(), peers.ies(), peers.YN(), peers.jf(), peers.mes(), qes = `/.agents/plugins/marketplace.json`, Jes = `/marketplace.json`, Yes = 6, Xes = [`computer-use@${peers.Wl}`, `${peers.S_e}@${peers.Wl}`, `chrome@${peers.Wl}`, `chrome-internal@${peers.Wl}`, `spreadsheets@openai-primary-runtime`, `presentations@openai-primary-runtime`];
+    ((Ges = peers.r(peers.JR(), 1)),
+      (Kes = peers.r(peers.ZN(), 1)),
+      peers.Au(),
+      peers.ies(),
+      peers.YN(),
+      peers.jf(),
+      peers.mes(),
+      (qes = `/.agents/plugins/marketplace.json`),
+      (Jes = `/marketplace.json`),
+      (Yes = 6),
+      (Xes = [
+        `computer-use@${peers.Wl}`,
+        `${peers.S_e}@${peers.Wl}`,
+        `chrome@${peers.Wl}`,
+        `chrome-internal@${peers.Wl}`,
+        `spreadsheets@openai-primary-runtime`,
+        `presentations@openai-primary-runtime`,
+      ]));
   });
 }

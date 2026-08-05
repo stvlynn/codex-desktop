@@ -24,7 +24,9 @@ export type BindRemoteControlConnectionsStatePeers = {
 let peers: BindRemoteControlConnectionsStatePeers | null = null;
 
 /** Wire bindRemoteControlConnectionsState peers once companions land. */
-export function setBindRemoteControlConnectionsStatePeers(next: BindRemoteControlConnectionsStatePeers): void {
+export function setBindRemoteControlConnectionsStatePeers(
+  next: BindRemoteControlConnectionsStatePeers,
+): void {
   peers = next;
 }
 
@@ -33,17 +35,32 @@ export function setBindRemoteControlConnectionsStatePeers(next: BindRemoteContro
  */
 export function bindRemoteControlConnectionsState() {
   if (peers == null) {
-    throw new Error("bindRemoteControlConnectionsState peers are not configured");
+    throw new Error(
+      "bindRemoteControlConnectionsState peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.IE(), peers.K1l(), peers.ed(), peers.z_(), peers.Dh(), vhu = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => t(peers.Eh, `2296472986`) && peers.U1l({
-      remoteControlConnectionsState: peers.R_(t, `remote_control_connections_state`),
-      slingshotEnabled: t(peers.Eh, `1042620455`)
-    }) && t(peers.PE, {
-      hostId: peers.e
-    }).data?.requirements?.computerUse?.allowLockedComputerUse !== !1);
+    (peers.Ho(),
+      peers.IE(),
+      peers.K1l(),
+      peers.ed(),
+      peers.z_(),
+      peers.Dh(),
+      (vhu = peers.Oa(
+        peers.Q,
+        (e, { get: t }) =>
+          t(peers.Eh, `2296472986`) &&
+          peers.U1l({
+            remoteControlConnectionsState: peers.R_(
+              t,
+              `remote_control_connections_state`,
+            ),
+            slingshotEnabled: t(peers.Eh, `1042620455`),
+          }) &&
+          t(peers.PE, {
+            hostId: peers.e,
+          }).data?.requirements?.computerUse?.allowLockedComputerUse !== !1,
+      )));
   });
 }

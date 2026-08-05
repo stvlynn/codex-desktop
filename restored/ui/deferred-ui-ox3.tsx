@@ -13,7 +13,9 @@ export type BindBinddeferredUiOX3Peers = {
 let peers: BindBinddeferredUiOX3Peers | null = null;
 
 /** Wire bindBinddeferredUiOX3 peers once companions land. */
-export function setBindBinddeferredUiOX3Peers(next: BindBinddeferredUiOX3Peers): void {
+export function setBindBinddeferredUiOX3Peers(
+  next: BindBinddeferredUiOX3Peers,
+): void {
   peers = next;
 }
 

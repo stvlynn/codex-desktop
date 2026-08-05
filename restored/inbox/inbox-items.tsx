@@ -37,15 +37,25 @@ export function bindInboxItems() {
   }
 
   return peers.e(() => {
-    uMr = peers.r(peers.Mo(), 1), peers.Ho(), peers.Au(), peers.ed(), dMr = {
-      initialized: !1,
-      revision: 0,
-      isComplete: !1,
-      hostsById: new Map(),
-      entries: [],
-      entriesByKey: new Map()
-    }, jA = peers.Ta(peers.Q, !1), fMr = peers.Ta(peers.Q, !1), MA = peers.Ta(peers.Q, null), pMr = peers.Ta(peers.Q, []), NA = peers.Ta(peers.Q, peers.dMr), mMr = peers.Da(peers.Q, e => null, {
-      isEqual: peers.uMr.default
-    });
+    ((uMr = peers.r(peers.Mo(), 1)),
+      peers.Ho(),
+      peers.Au(),
+      peers.ed(),
+      (dMr = {
+        initialized: !1,
+        revision: 0,
+        isComplete: !1,
+        hostsById: new Map(),
+        entries: [],
+        entriesByKey: new Map(),
+      }),
+      (jA = peers.Ta(peers.Q, !1)),
+      (fMr = peers.Ta(peers.Q, !1)),
+      (MA = peers.Ta(peers.Q, null)),
+      (pMr = peers.Ta(peers.Q, [])),
+      (NA = peers.Ta(peers.Q, peers.dMr)),
+      (mMr = peers.Da(peers.Q, (e) => null, {
+        isEqual: peers.uMr.default,
+      })));
   });
 }

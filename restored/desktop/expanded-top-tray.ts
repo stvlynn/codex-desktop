@@ -16,7 +16,9 @@ export type BindExpandedTopTrayPeers = {
 let peers: BindExpandedTopTrayPeers | null = null;
 
 /** Wire bindExpandedTopTray peers once companions land. */
-export function setBindExpandedTopTrayPeers(next: BindExpandedTopTrayPeers): void {
+export function setBindExpandedTopTrayPeers(
+  next: BindExpandedTopTrayPeers,
+): void {
   peers = next;
 }
 
@@ -29,6 +31,10 @@ export function bindExpandedTopTray() {
   }
 
   return peers.e(() => {
-    _Qa = peers.c(), peers.Ho(), vQa = peers.r(peers.o(), 1), peers.pQa(), peers.KM();
+    ((_Qa = peers.c()),
+      peers.Ho(),
+      (vQa = peers.r(peers.o(), 1)),
+      peers.pQa(),
+      peers.KM());
   });
 }

@@ -16,7 +16,9 @@ export type CollectDebugPanelTurnFilesPeers = {
 let peers: CollectDebugPanelTurnFilesPeers | null = null;
 
 /** Wire collectDebugPanelTurnFiles peers once companions land. */
-export function setCollectDebugPanelTurnFilesPeers(next: CollectDebugPanelTurnFilesPeers): void {
+export function setCollectDebugPanelTurnFilesPeers(
+  next: CollectDebugPanelTurnFilesPeers,
+): void {
   peers = next;
 }
 
@@ -47,16 +49,24 @@ export function collectDebugPanelTurnFiles(e: DebugPanelTurnLike) {
   let t = peers.Rqn(),
     n = peers.Kat(e),
     r = peers.MSt(e.items);
-  for (let [i, a] of e.items.entries()) if (a) {
-    if (a.type === `fileChange`) peers.zqn(t, a);else if (a.type === `agentMessage`) {
-      let o = e.status === `inProgress` && i === r,
-        s = peers.PSt(a.text, o);
-      if (s.removed && s.content.length === 0) continue;
-      peers.Bqn(t, (o ? null : peers.Rat({
-        content: s.content,
-        isHeartbeatAutomationTurn: n
-      }))?.artifactScanContent ?? s.content);
+  for (let [i, a] of e.items.entries())
+    if (a) {
+      if (a.type === `fileChange`) peers.zqn(t, a);
+      else if (a.type === `agentMessage`) {
+        let o = e.status === `inProgress` && i === r,
+          s = peers.PSt(a.text, o);
+        if (s.removed && s.content.length === 0) continue;
+        peers.Bqn(
+          t,
+          (o
+            ? null
+            : peers.Rat({
+                content: s.content,
+                isHeartbeatAutomationTurn: n,
+              })
+          )?.artifactScanContent ?? s.content,
+        );
+      }
     }
-  }
   return peers.Vqn(t);
 }

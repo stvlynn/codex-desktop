@@ -38,24 +38,49 @@ export function bindHourly() {
   }
 
   return peers.e(() => {
-    peers.Sl(), sCe = [`MO`, `TU`, `WE`, `TH`, `FR`, `SA`, `SU`], new Map(peers.sCe.map((e, t) => [peers.e, t])), peers.sCe.slice(0, 5), cCe = peers.pl(peers.sCe), lCe = peers.X().regex(/^(?:[01]\d|2[0-3]):[0-5]\d$/), uCe = peers.ol(peers.cCe).min(1).refine(e => new Set(peers.e).size === peers.e.length), dCe = peers.sl({
-      type: peers.ml(`hourly`),
-      intervalHours: peers.rl().int().positive(),
-      days: peers.uCe.optional()
-    }).strict(), fCe = peers.sl({
-      type: peers.ml(`daily`),
-      time: peers.lCe
-    }).strict(), pCe = peers.sl({
-      type: peers.ml(`weekdays`),
-      time: peers.lCe
-    }).strict(), mCe = peers.sl({
-      type: peers.ml(`weekly`),
-      days: peers.uCe,
-      time: peers.lCe
-    }).strict(), hCe = peers.dl(`type`, [peers.dCe, peers.fCe, peers.pCe, peers.mCe]), peers.sl({
-      name: peers.X().trim().min(1),
-      prompt: peers.X().trim().min(1),
-      schedule: peers.hCe
-    }).strict();
+    (peers.Sl(),
+      (sCe = [`MO`, `TU`, `WE`, `TH`, `FR`, `SA`, `SU`]),
+      new Map(peers.sCe.map((e, t) => [peers.e, t])),
+      peers.sCe.slice(0, 5),
+      (cCe = peers.pl(peers.sCe)),
+      (lCe = peers.X().regex(/^(?:[01]\d|2[0-3]):[0-5]\d$/)),
+      (uCe = peers
+        .ol(peers.cCe)
+        .min(1)
+        .refine((e) => new Set(peers.e).size === peers.e.length)),
+      (dCe = peers
+        .sl({
+          type: peers.ml(`hourly`),
+          intervalHours: peers.rl().int().positive(),
+          days: peers.uCe.optional(),
+        })
+        .strict()),
+      (fCe = peers
+        .sl({
+          type: peers.ml(`daily`),
+          time: peers.lCe,
+        })
+        .strict()),
+      (pCe = peers
+        .sl({
+          type: peers.ml(`weekdays`),
+          time: peers.lCe,
+        })
+        .strict()),
+      (mCe = peers
+        .sl({
+          type: peers.ml(`weekly`),
+          days: peers.uCe,
+          time: peers.lCe,
+        })
+        .strict()),
+      (hCe = peers.dl(`type`, [peers.dCe, peers.fCe, peers.pCe, peers.mCe])),
+      peers
+        .sl({
+          name: peers.X().trim().min(1),
+          prompt: peers.X().trim().min(1),
+          schedule: peers.hCe,
+        })
+        .strict());
   });
 }

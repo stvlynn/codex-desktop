@@ -50,6 +50,29 @@ export function deferredUh() {
   }
 
   return peers.e(() => {
-    s3s = peers.c(), peers.sd(), peers.af(), peers.Ho(), G$ = peers.r(peers.o(), 1), c3s = peers.r(peers.ju(), 1), peers.$u(), peers.zm(), peers.kFo(), peers.ARr(), peers.JHr(), peers.UD(), peers.nO(), peers.Kj(), peers.Op(), peers.ld(), peers.Z4s(), peers.gT(), peers.Fh(), peers.nbs(), peers.uR(), peers.CT(), peers.n3s(), K$ = peers.J();
+    ((s3s = peers.c()),
+      peers.sd(),
+      peers.af(),
+      peers.Ho(),
+      (G$ = peers.r(peers.o(), 1)),
+      (c3s = peers.r(peers.ju(), 1)),
+      peers.$u(),
+      peers.zm(),
+      peers.kFo(),
+      peers.ARr(),
+      peers.JHr(),
+      peers.UD(),
+      peers.nO(),
+      peers.Kj(),
+      peers.Op(),
+      peers.ld(),
+      peers.Z4s(),
+      peers.gT(),
+      peers.Fh(),
+      peers.nbs(),
+      peers.uR(),
+      peers.CT(),
+      peers.n3s(),
+      (K$ = peers.J()));
   });
 }

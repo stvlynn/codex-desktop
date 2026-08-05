@@ -12,7 +12,9 @@ export type UseReadyHostManagerPeers = {
 let peers: UseReadyHostManagerPeers | null = null;
 
 /** Wire useReadyHostManager peers once companions land. */
-export function setUseReadyHostManagerPeers(next: UseReadyHostManagerPeers): void {
+export function setUseReadyHostManagerPeers(
+  next: UseReadyHostManagerPeers,
+): void {
   peers = next;
 }
 

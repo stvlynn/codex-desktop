@@ -28,14 +28,16 @@ export function deferredUst() {
   }
 
   return peers.e(() => {
-    peers.Sl(), cxt = peers.sl({
-      role: peers.X(),
-      text: peers.X()
-    }), lxt = peers.sl({
-      type: peers.ml(`handoff_request`),
-      handoff_id: peers.X(),
-      input_transcript: peers.X(),
-      active_transcript: peers.ol(peers.cxt)
-    });
+    (peers.Sl(),
+      (cxt = peers.sl({
+        role: peers.X(),
+        text: peers.X(),
+      })),
+      (lxt = peers.sl({
+        type: peers.ml(`handoff_request`),
+        handoff_id: peers.X(),
+        input_transcript: peers.X(),
+        active_transcript: peers.ol(peers.cxt),
+      })));
   });
 }

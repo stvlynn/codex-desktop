@@ -9,4 +9,3 @@
 export function bindAppgenLibraryPage(_next: unknown): void {}
 
 export function ensureAppgenLibraryPageInit(): void {}
-

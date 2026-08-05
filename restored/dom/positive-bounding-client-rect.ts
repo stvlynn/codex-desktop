@@ -9,7 +9,9 @@ export type ClientRectBox = {
 };
 
 /** `getBoundingClientRect` when width/height are positive; else null. */
-export function positiveBoundingClientRect(element: Element): ClientRectBox | null {
+export function positiveBoundingClientRect(
+  element: Element,
+): ClientRectBox | null {
   const { x, y, width, height } = element.getBoundingClientRect();
   return width > 0 && height > 0 ? { x, y, width, height } : null;
 }

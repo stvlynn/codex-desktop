@@ -11,7 +11,9 @@ let parseProducts: ProductsParser | null = null;
 let parseProduct: ProductParser | null = null;
 
 /** Wire products-list parser (`HSa` in the bundle). */
-export function setContentReferenceProductsParser(parser: ProductsParser): void {
+export function setContentReferenceProductsParser(
+  parser: ProductsParser,
+): void {
   parseProducts = parser;
 }
 
@@ -20,7 +22,9 @@ export function setContentReferenceProductParser(parser: ProductParser): void {
   parseProduct = parser;
 }
 
-export function extractContentReferenceProducts(ref: Record<string, unknown>): unknown[] {
+export function extractContentReferenceProducts(
+  ref: Record<string, unknown>,
+): unknown[] {
   switch (nonEmptyStringOrNull(ref.type)) {
     case "products":
     case "explore_more":

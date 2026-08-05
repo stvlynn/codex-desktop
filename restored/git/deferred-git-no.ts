@@ -24,7 +24,7 @@ export function bindDeferredGitNo() {
     throw new Error("bindDeferredGitNo peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => !t(peers.EHl) || e == null ? null : peers.xHl(e, t(peers.LE)));
+  return peers.Oa(peers.Q, (e, { get: t }) =>
+    !t(peers.EHl) || e == null ? null : peers.xHl(e, t(peers.LE)),
+  );
 }

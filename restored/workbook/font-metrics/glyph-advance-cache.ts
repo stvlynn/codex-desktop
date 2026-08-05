@@ -7,10 +7,7 @@ import {
   sharedFamilyAscentFraction,
   ensureFontMetricsInit,
 } from "./font-metrics";
-import {
-  ensureTextSegmenterInit,
-  segmentGraphemes,
-} from "./text-segmenter";
+import { ensureTextSegmenterInit, segmentGraphemes } from "./text-segmenter";
 
 /** Legacy Binding451 — max token-width cache entries. */
 export const GLYPH_TOKEN_CACHE_LIMIT = 2000;
@@ -193,8 +190,10 @@ export class GlyphAdvanceCache {
   }
 
   #context(): MeasureContext {
-    return ((this.#measureCtx ||= getFontMeasureContext() as MeasureContext),
-    this.#measureCtx);
+    return (
+      (this.#measureCtx ||= getFontMeasureContext() as MeasureContext),
+      this.#measureCtx
+    );
   }
 
   getGlyphWidth(

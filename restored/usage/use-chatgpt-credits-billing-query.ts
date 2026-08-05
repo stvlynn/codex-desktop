@@ -15,7 +15,9 @@ export type UseChatgptCreditsBillingQueryPeers = {
 let peers: UseChatgptCreditsBillingQueryPeers | null = null;
 
 /** Wire useChatgptCreditsBillingQuery peers once companions land. */
-export function setUseChatgptCreditsBillingQueryPeers(next: UseChatgptCreditsBillingQueryPeers): void {
+export function setUseChatgptCreditsBillingQueryPeers(
+  next: UseChatgptCreditsBillingQueryPeers,
+): void {
   peers = next;
 }
 

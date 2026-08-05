@@ -26,6 +26,6 @@ export function useDndSensor() {
   }
 
   return peers.e(() => {
-    peers.HLt(), peers.mLt(), peers.GLt(), peers.jLt(), peers.JLt();
+    (peers.HLt(), peers.mLt(), peers.GLt(), peers.jLt(), peers.JLt());
   });
 }

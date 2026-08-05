@@ -4,4 +4,6 @@
 // conversation/conversation-page-derived-atoms.ts (Ma/Oa bindable).
 
 /** @deprecated No remaining placeholders — kept for call-site stability. */
-export function bindConversationPageAppScopeAtoms(_next: Partial<Record<string, unknown>>): void {}
+export function bindConversationPageAppScopeAtoms(
+  _next: Partial<Record<string, unknown>>,
+): void {}

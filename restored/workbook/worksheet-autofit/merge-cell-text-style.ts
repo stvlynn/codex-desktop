@@ -8,7 +8,7 @@ export function solidFillFromColor(afIn10557: unknown) {
     color: afIn10557,
     type: tr.FILL_TYPE_SOLID,
     gradientStops: [],
-    pictureEffects: []
+    pictureEffects: [],
   };
 }
 export function mergeCellTextStyleOverrides({
@@ -19,14 +19,34 @@ export function mergeCellTextStyleOverrides({
   pivotFontColor,
   pivotBold,
   conditionalFormattingTextColor,
-  numberFormatColorOverride
+  numberFormatColorOverride,
 }: unknown) {
   let afBind10562 = {},
-    afBind10563 = baseStyle.fontSources?.color === "cell" ? baseStyleFontColor : null,
-    afBind10564 = baseStyle.fontSources?.color === "cell" ? null : baseStyleFontColor;
-  pivotBold || tableCellStyle?.font?.bold === true ? afBind10562.bold = true : currentTextStyle.bold == null ? tableCellStyle?.font?.bold == null ? baseStyle.font?.bold != null && (afBind10562.bold = !!baseStyle.font.bold) : afBind10562.bold = tableCellStyle.font.bold : afBind10562.bold = currentTextStyle.bold;
-  let afBind10565 = conditionalFormattingTextColor ?? numberFormatColorOverride ?? pivotFontColor ?? afBind10563 ?? tableCellStyle?.font?.color ?? currentTextStyle.fill?.color ?? afBind10564 ?? null;
-  return afBind10565 && (afBind10562.fill = solidFillFromColor(afBind10565)), afBind10562;
+    afBind10563 =
+      baseStyle.fontSources?.color === "cell" ? baseStyleFontColor : null,
+    afBind10564 =
+      baseStyle.fontSources?.color === "cell" ? null : baseStyleFontColor;
+  pivotBold || tableCellStyle?.font?.bold === true
+    ? (afBind10562.bold = true)
+    : currentTextStyle.bold == null
+      ? tableCellStyle?.font?.bold == null
+        ? baseStyle.font?.bold != null &&
+          (afBind10562.bold = !!baseStyle.font.bold)
+        : (afBind10562.bold = tableCellStyle.font.bold)
+      : (afBind10562.bold = currentTextStyle.bold);
+  let afBind10565 =
+    conditionalFormattingTextColor ??
+    numberFormatColorOverride ??
+    pivotFontColor ??
+    afBind10563 ??
+    tableCellStyle?.font?.color ??
+    currentTextStyle.fill?.color ??
+    afBind10564 ??
+    null;
+  return (
+    afBind10565 && (afBind10562.fill = solidFillFromColor(afBind10565)),
+    afBind10562
+  );
 }
 export var ensureMergeCellTextStyleInit = esmInit(() => {
   wr();

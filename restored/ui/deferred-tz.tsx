@@ -31,6 +31,15 @@ export function bindDeferredTZ() {
   }
 
   return peers.e(() => {
-    IBr = new Map(), LBr = new Map(), RBr = new Map(), zBr = new Map(), BBr = new Map(), Nj = new Map(), VBr = new Set(), HBr = 0, Pj = new Map(), UBr = new Map();
+    ((IBr = new Map()),
+      (LBr = new Map()),
+      (RBr = new Map()),
+      (zBr = new Map()),
+      (BBr = new Map()),
+      (Nj = new Map()),
+      (VBr = new Set()),
+      (HBr = 0),
+      (Pj = new Map()),
+      (UBr = new Map()));
   });
 }

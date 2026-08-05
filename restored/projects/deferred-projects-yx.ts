@@ -14,7 +14,9 @@ export type BindDeferredProjectsYxPeers = {
 let peers: BindDeferredProjectsYxPeers | null = null;
 
 /** Wire bindDeferredProjectsYx peers once companions land. */
-export function setBindDeferredProjectsYxPeers(next: BindDeferredProjectsYxPeers): void {
+export function setBindDeferredProjectsYxPeers(
+  next: BindDeferredProjectsYxPeers,
+): void {
   peers = next;
 }
 
@@ -27,6 +29,6 @@ export function bindDeferredProjectsYx() {
   }
 
   return peers.e(() => {
-    peers.DD(), peers.UE(), peers.$w(), peers.Nps(), peers.OA(), peers.$l();
+    (peers.DD(), peers.UE(), peers.$w(), peers.Nps(), peers.OA(), peers.$l());
   });
 }

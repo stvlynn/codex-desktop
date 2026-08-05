@@ -11,7 +11,9 @@ export type BindBindSetThreadPinnedPeers = {
 let peers: BindBindSetThreadPinnedPeers | null = null;
 
 /** Wire bindBindSetThreadPinned peers once companions land. */
-export function setBindBindSetThreadPinnedPeers(next: BindBindSetThreadPinnedPeers): void {
+export function setBindBindSetThreadPinnedPeers(
+  next: BindBindSetThreadPinnedPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function bindBindSetThreadPinned() {
   }
 
   return peers.e(() => {
-    peers.DD(), peers.z_(), peers.CSo();
+    (peers.DD(), peers.z_(), peers.CSo());
   });
 }

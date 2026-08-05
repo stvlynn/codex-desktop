@@ -34,7 +34,9 @@ export type BindTextTokenDescriptionForegroundPeers = {
 let peers: BindTextTokenDescriptionForegroundPeers | null = null;
 
 /** Wire bindTextTokenDescriptionForeground peers once companions land. */
-export function setBindTextTokenDescriptionForegroundPeers(next: BindTextTokenDescriptionForegroundPeers): void {
+export function setBindTextTokenDescriptionForegroundPeers(
+  next: BindTextTokenDescriptionForegroundPeers,
+): void {
   peers = next;
 }
 
@@ -43,39 +45,57 @@ export function setBindTextTokenDescriptionForegroundPeers(next: BindTextTokenDe
  */
 export function bindTextTokenDescriptionForeground() {
   if (peers == null) {
-    throw new Error("bindTextTokenDescriptionForeground peers are not configured");
+    throw new Error(
+      "bindTextTokenDescriptionForeground peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    _qo = peers.c(), peers.sd(), peers.$u(), peers.XKo(), peers.OKo(), peers.$Ko(), peers.nqo(), peers.aqo(), peers.cqo(), peers.dqo(), vqo = peers.J(), yqo = {
-      draft: peers.DKo,
-      open: peers.iqo,
-      merged: peers.tqo,
-      closed: peers.YKo
-    }, bqo = {
-      draft: `text-token-description-foreground`,
-      open: `text-token-description-foreground`,
-      merged: `text-token-charts-purple`,
-      closed: `text-token-charts-red`
-    }, xqo = {
-      draft: peers.DKo,
-      failing: peers.QKo,
-      in_progress: peers.sqo,
-      merged: peers.tqo,
-      ready: peers.uqo,
-      successful: peers.uqo
-    }, Sqo = {
-      draft: `text-token-description-foreground`,
-      failing: `text-token-description-foreground [--pr-status-dot-color:var(--color-token-charts-red)]`,
-      in_progress: `text-token-description-foreground [--pr-status-dot-color:var(--color-token-charts-yellow)]`,
-      merged: `text-token-charts-purple`,
-      ready: `text-token-description-foreground [--pr-status-dot-color:var(--color-token-charts-green)]`,
-      successful: `text-token-description-foreground [--pr-status-dot-color:var(--color-token-charts-green)]`
-    }, Cqo = {
-      failing: `[--pr-status-dot-color:var(--color-token-charts-red)]`,
-      in_progress: `[--pr-status-dot-color:var(--color-token-charts-yellow)]`,
-      ready: `[--pr-status-dot-color:var(--color-token-charts-green)]`,
-      successful: `[--pr-status-dot-color:var(--color-token-charts-green)]`
-    }, wqo = `text-token-description-foreground`;
+    ((_qo = peers.c()),
+      peers.sd(),
+      peers.$u(),
+      peers.XKo(),
+      peers.OKo(),
+      peers.$Ko(),
+      peers.nqo(),
+      peers.aqo(),
+      peers.cqo(),
+      peers.dqo(),
+      (vqo = peers.J()),
+      (yqo = {
+        draft: peers.DKo,
+        open: peers.iqo,
+        merged: peers.tqo,
+        closed: peers.YKo,
+      }),
+      (bqo = {
+        draft: `text-token-description-foreground`,
+        open: `text-token-description-foreground`,
+        merged: `text-token-charts-purple`,
+        closed: `text-token-charts-red`,
+      }),
+      (xqo = {
+        draft: peers.DKo,
+        failing: peers.QKo,
+        in_progress: peers.sqo,
+        merged: peers.tqo,
+        ready: peers.uqo,
+        successful: peers.uqo,
+      }),
+      (Sqo = {
+        draft: `text-token-description-foreground`,
+        failing: `text-token-description-foreground [--pr-status-dot-color:var(--color-token-charts-red)]`,
+        in_progress: `text-token-description-foreground [--pr-status-dot-color:var(--color-token-charts-yellow)]`,
+        merged: `text-token-charts-purple`,
+        ready: `text-token-description-foreground [--pr-status-dot-color:var(--color-token-charts-green)]`,
+        successful: `text-token-description-foreground [--pr-status-dot-color:var(--color-token-charts-green)]`,
+      }),
+      (Cqo = {
+        failing: `[--pr-status-dot-color:var(--color-token-charts-red)]`,
+        in_progress: `[--pr-status-dot-color:var(--color-token-charts-yellow)]`,
+        ready: `[--pr-status-dot-color:var(--color-token-charts-green)]`,
+        successful: `[--pr-status-dot-color:var(--color-token-charts-green)]`,
+      }),
+      (wqo = `text-token-description-foreground`));
   });
 }

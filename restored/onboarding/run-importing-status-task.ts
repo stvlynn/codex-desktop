@@ -8,7 +8,9 @@ export type RunImportingStatusTaskPeers = {
 let peers: RunImportingStatusTaskPeers | null = null;
 
 /** Wire runImportingStatusTask peers once companions land. */
-export function setRunImportingStatusTaskPeers(next: RunImportingStatusTaskPeers): void {
+export function setRunImportingStatusTaskPeers(
+  next: RunImportingStatusTaskPeers,
+): void {
   peers = next;
 }
 
@@ -22,17 +24,21 @@ async function runImportingStatusTask(e, t) {
 
   e.set(peers.aoc, {
     status: `importing`,
-    startedAtMs: Date.now()
+    startedAtMs: Date.now(),
   });
   try {
-    await t(), e.set(peers.aoc, {
-      status: `success`,
-      completedAtMs: Date.now()
-    });
+    (await t(),
+      e.set(peers.aoc, {
+        status: `success`,
+        completedAtMs: Date.now(),
+      }));
   } catch (t) {
-    throw e.set(peers.aoc, {
-      status: `error`,
-      completedAtMs: Date.now()
-    }), t;
+    throw (
+      e.set(peers.aoc, {
+        status: `error`,
+        completedAtMs: Date.now(),
+      }),
+      t
+    );
   }
 }

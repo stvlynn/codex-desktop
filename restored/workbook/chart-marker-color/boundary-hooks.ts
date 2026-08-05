@@ -3,4 +3,6 @@
 
 export type ChartMarkerColorHooks = Record<string, never>;
 export const cmcH: ChartMarkerColorHooks = {} as ChartMarkerColorHooks;
-export function wireChartMarkerColorBoundaryHooks(_next: Partial<ChartMarkerColorHooks> = {}): void {}
+export function wireChartMarkerColorBoundaryHooks(
+  _next: Partial<ChartMarkerColorHooks> = {},
+): void {}

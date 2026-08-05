@@ -5,7 +5,10 @@
 // Group 1/2
 /* split-lane-import-depth:1 */
 
-import { ChatGptPlanId, ensureChatGptPlanIdInit } from "../../account/chatgpt-plan-ids";
+import {
+  ChatGptPlanId,
+  ensureChatGptPlanIdInit,
+} from "../../account/chatgpt-plan-ids";
 import { openInBrowser } from "../../account/open-in-browser";
 import { RateLimitResetCreditsDialog } from "../../account/rate-limit-reset-credits-dialog";
 import { pickHighestUsageWindow } from "../../account/rate-limit-window-usage";
@@ -19,13 +22,38 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CODEX_PRICING_PLAN_PAGE_CTA_CLICKED_TYPE } from "../../analytics/codex-pricing-plan-page-cta-clicked-type";
 import { CODEX_PRICING_PLAN_PAGE_SHOWN_TYPE } from "../../analytics/codex-pricing-plan-page-shown-type";
 import { logProductEvent } from "../../analytics/log-product-event";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { createAppScopeQueryAtom, localeMessagesAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_E4_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  createAppScopeQueryAtom,
+  localeMessagesAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_E4_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { createPersistedAtom, ensurePersistedAtomInit, useAtomPair } from "../../boundaries/persisted-atom";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  createPersistedAtom,
+  ensurePersistedAtomInit,
+  useAtomPair,
+} from "../../boundaries/persisted-atom";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { getAccountInfoQueryConfig } from "../../cloud/account-info-query";
 import { managedConfigFilePath } from "../../config/managed-config-file-path";
@@ -48,10 +76,16 @@ import { AddContextSquareIcon } from "../../icons/add-context-square-icon";
 import { AppIconAi } from "../../icons/app-icon-ai";
 import { AppIconAlt } from "../../icons/app-icon-alt";
 import { AppIconSR } from "../../icons/app-icon-sr";
-import { ensureTeamIconInit as EnsureTeamIconInit, TeamIcon } from "../../icons/team-icon";
+import {
+  ensureTeamIconInit as EnsureTeamIconInit,
+  TeamIcon,
+} from "../../icons/team-icon";
 import { copilotDefaultModel } from "../../models/copilot-default-model";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
-import { ensureOnboardingBannerInit as EnsureOnboardingBannerInit, OnboardingBanner } from "../../onboarding/onboarding-banner";
+import {
+  ensureOnboardingBannerInit as EnsureOnboardingBannerInit,
+  OnboardingBanner,
+} from "../../onboarding/onboarding-banner";
 import { CodexPluginDirectoryEntrypoint } from "../../plugins/codex-plugin-directory-entrypoint";
 import { PLEASE_IMPLEMENT_THIS_PLAN_HEADER } from "../../prompts/please-implement-this-plan-header";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
@@ -158,79 +192,96 @@ const codexAppHomeBeaconDebugStateNState: any = undefined;
 const codexAppHomeBeaconDebugStateRState: any = undefined;
 /** Wave FZ unresolved companion (sib-missing:home/codex-app-home-beacon-debug-state.ts) */
 const codexAppHomeBeaconDebugStateTState: any = undefined;
-const __vite__mapDeps = (juniper, lagoon = __vite__mapDeps, meadow = lagoon.f || (lagoon.f = ["./realtime-voice-home-announcement-BBLBSud5.js", "./rolldown-runtime-BG2f4sTM.js", "./app-initial-C-fROkKo.js", "./app-initial-Czet5G9g.css", "./onboarding-banner-C3hNSPU0.js"])) => juniper.map(item => meadow[item]);
-function alpha({
-  actionId,
-  beaconId
-}) {
+const __vite__mapDeps = (
+  juniper,
+  lagoon = __vite__mapDeps,
+  meadow = lagoon.f ||
+    (lagoon.f = [
+      "./realtime-voice-home-announcement-BBLBSud5.js",
+      "./rolldown-runtime-BG2f4sTM.js",
+      "./app-initial-C-fROkKo.js",
+      "./app-initial-Czet5G9g.css",
+      "./onboarding-banner-C3hNSPU0.js",
+    ]),
+) => juniper.map((item) => meadow[item]);
+function alpha({ actionId, beaconId }) {
   return `${beaconId}:${actionId}`;
 }
 function bravo(nest) {
   let oak = nest.beacon_ui_response;
-  return oak?.ui_info.type === "beacon_banner_info" ? {
-    ...oak,
-    ui_info: oak.ui_info
-  } : null;
+  return oak?.ui_info.type === "beacon_banner_info"
+    ? {
+        ...oak,
+        ui_info: oak.ui_info,
+      }
+    : null;
 }
-function copper({
-  accountId,
-  response
-}) {
-  return response.beacon_ui_response == null ? {
-    accountId,
-    beacon: null,
-    shouldKeepLastServedBeacon: true
-  } : {
-    accountId,
-    beacon: bravo(response),
-    shouldKeepLastServedBeacon: false
-  };
+function copper({ accountId, response }) {
+  return response.beacon_ui_response == null
+    ? {
+        accountId,
+        beacon: null,
+        shouldKeepLastServedBeacon: true,
+      }
+    : {
+        accountId,
+        beacon: bravo(response),
+        shouldKeepLastServedBeacon: false,
+      };
 }
 function delta(petal) {
   let quiet = echo(petal.action_v2);
   return quiet != null && falcon(quiet) ? quiet : null;
 }
 function echo(rain) {
-  return "url" in rain && rain.url != null ? rain.url : "web_url" in rain && rain.web_url != null ? rain.web_url : null;
+  return "url" in rain && rain.url != null
+    ? rain.url
+    : "web_url" in rain && rain.web_url != null
+      ? rain.web_url
+      : null;
 }
 function falcon(seed) {
-  return seed.startsWith("http://") || seed.startsWith("https://") || seed.startsWith("/") && !seed.startsWith("//");
+  return (
+    seed.startsWith("http://") ||
+    seed.startsWith("https://") ||
+    (seed.startsWith("/") && !seed.startsWith("//"))
+  );
 }
-function gamma({
-  accountId,
-  authMethod,
-  isAuthLoading
-}) {
+function gamma({ accountId, authMethod, isAuthLoading }) {
   return !isAuthLoading && authMethod === "chatgpt" && accountId != null;
 }
-function harbor({
-  isAuthLoading
-}) {
+function harbor({ isAuthLoading }) {
   return isAuthLoading;
 }
 async function indigo(trail, urn, vine) {
-  if (!codexAppHomeBeaconDebugStateIState(trail.beacon_id)) try {
-    await decodeBase64ToBytes.safePost("/beacons/event", {
-      requestBody: vine == null ? {
-        beacon_id: trail.beacon_id,
-        event_type: urn
-      } : {
-        beacon_id: trail.beacon_id,
-        event_type: urn,
-        event_cta_id: vine
-      }
-    });
-  } catch {}
+  if (!codexAppHomeBeaconDebugStateIState(trail.beacon_id))
+    try {
+      await decodeBase64ToBytes.safePost("/beacons/event", {
+        requestBody:
+          vine == null
+            ? {
+                beacon_id: trail.beacon_id,
+                event_type: urn,
+              }
+            : {
+                beacon_id: trail.beacon_id,
+                event_type: urn,
+                event_cta_id: vine,
+              },
+      });
+    } catch {}
 }
 function jade(wind, yarrow) {
   return `${wind}:${yarrow}`;
 }
 function kite(azure, birch, canyon) {
   let dew = jade(birch, canyon.beacon_id);
-  azure.get(river).has(dew) || (azure.set(river, ever => {
-    let field = new Set(ever);
-    return field.add(dew), field;
-  }), indigo(canyon, "view"));
+  azure.get(river).has(dew) ||
+    (azure.set(river, (ever) => {
+      let field = new Set(ever);
+      return (field.add(dew), field);
+    }),
+    indigo(canyon, "view"));
 }
 function lemon(grain, haven, ink) {
   if (codexAppHomeBeaconDebugStateIState(ink.beacon_id)) {
@@ -238,23 +289,16 @@ function lemon(grain, haven, ink) {
     return;
   }
   let jadeite = jade(haven, ink.beacon_id);
-  grain.set(slate, kernel => {
+  grain.set(slate, (kernel) => {
     let leaf = new Set(kernel);
-    return leaf.add(jadeite), leaf;
+    return (leaf.add(jadeite), leaf);
   });
   indigo(ink, "dismiss");
 }
 function marble() {
   let maple = CodexPluginActionType(appScopeAtom),
-    {
-      accountId,
-      authMethod,
-      isLoading,
-      userId
-    } = useAuth(),
-    {
-      data
-    } = reuseArrayIfShallowEqual(),
+    { accountId, authMethod, isLoading, userId } = useAuth(),
+    { data } = reuseArrayIfShallowEqual(),
     nimbus = AppIconAlt(),
     opal = CodexPluginActionResult(slate),
     plume = CodexPluginActionResult(codexAppHomeBeaconDebugStateNState),
@@ -269,12 +313,12 @@ function marble() {
     upland = gamma({
       accountId: thorn,
       authMethod,
-      isAuthLoading: isLoading
+      isAuthLoading: isLoading,
     });
   }
   let vista = upland,
     wisp = harbor({
-      isAuthLoading: isLoading
+      isAuthLoading: isLoading,
     });
   let yonder = wisp,
     zenith,
@@ -287,30 +331,45 @@ function marble() {
   onyx.useLayoutEffect(zenith, anvil);
   let crag, dome;
   crag = () => {
-    quillow.data?.accountId != null && quillow.data.beacon != null && maple.set($t, {
-      accountId: quillow.data.accountId,
-      beacon: quillow.data.beacon
-    });
+    quillow.data?.accountId != null &&
+      quillow.data.beacon != null &&
+      maple.set($t, {
+        accountId: quillow.data.accountId,
+        beacon: quillow.data.beacon,
+      });
   };
   dome = [quillow.data, maple];
   onyx.useLayoutEffect(crag, dome);
-  let eddy = quillow.data?.accountId === thorn ? quillow.data.beacon ?? (quillow.data.shouldKeepLastServedBeacon && silk?.accountId === thorn ? silk.beacon : null) : null,
+  let eddy =
+      quillow.data?.accountId === thorn
+        ? (quillow.data.beacon ??
+          (quillow.data.shouldKeepLastServedBeacon && silk?.accountId === thorn
+            ? silk.beacon
+            : null))
+        : null,
     fjord;
   {
-    let ledge = eddy != null && thorn != null ? jade(thorn, eddy.beacon_id) : null;
+    let ledge =
+      eddy != null && thorn != null ? jade(thorn, eddy.beacon_id) : null;
     fjord = null;
-    plume ? fjord = timber : vista && eddy != null && ledge != null && !opal.has(ledge) && (fjord = eddy);
+    plume
+      ? (fjord = timber)
+      : vista &&
+        eddy != null &&
+        ledge != null &&
+        !opal.has(ledge) &&
+        (fjord = eddy);
   }
   let glen = yonder || fjord != null,
     hearth = plume ? "debug" : thorn,
     inlet = fjord != null,
-    jetty = !plume && (yonder || vista && (!root || quillow.isLoading));
+    jetty = !plume && (yonder || (vista && (!root || quillow.isLoading)));
   return {
     accountId: hearth,
     beacon: fjord,
     isEligible: inlet,
     isLoading: jetty,
-    shouldSuppressVanillaPromos: glen
+    shouldSuppressVanillaPromos: glen,
   };
 }
 var nickel,
@@ -353,26 +412,30 @@ var nickel,
         icon_image_size: "large",
         banner_position: null,
         banner_design: "default",
-        dismiss_variant: "dismiss_on_send"
+        dismiss_variant: "dismiss_on_send",
       },
-      action_items: [{
-        id: "learn_more",
-        action_v2: {
-          action_enum: "open_url",
-          url: "/settings"
+      action_items: [
+        {
+          id: "learn_more",
+          action_v2: {
+            action_enum: "open_url",
+            url: "/settings",
+          },
+          text: "Learn more",
+          type: "primary",
+          icon_url: null,
+          description: null,
         },
-        text: "Learn more",
-        type: "primary",
-        icon_url: null,
-        description: null
-      }]
+      ],
     };
-    umbra = createAppScopeQueryAtom(appScopeAtom, ({
-      get
-    }) => {
+    umbra = createAppScopeQueryAtom(appScopeAtom, ({ get }) => {
       let mire = get(pearl);
       return {
-        queryKey: ["codex-app-home-beacon", mire, get(localeMessagesAtom).locale],
+        queryKey: [
+          "codex-app-home-beacon",
+          mire,
+          get(localeMessagesAtom).locale,
+        ],
         enabled: get(quartz),
         refetchOnMount: false,
         refetchOnReconnect: false,
@@ -383,25 +446,21 @@ var nickel,
           accountId: mire,
           response: await decodeBase64ToBytes.safeGet("/beacons/home", {
             additionalHeaders: {
-              "Cache-Control": "no-store"
+              "Cache-Control": "no-store",
             },
             parameters: {
               query: {
-                product: "codex"
-              }
-            }
-          })
+                product: "codex",
+              },
+            },
+          }),
         }),
-        select: copper
+        select: copper,
       };
     });
   });
 function CodexHomeAnnouncementsHelper14(nook) {
-  let {
-      accountId,
-      beacon,
-      localActionHandlers
-    } = nook,
+  let { accountId, beacon, localActionHandlers } = nook,
     oxbow = CodexPluginActionType(appScopeAtom),
     pond,
     quarry;
@@ -413,18 +472,18 @@ function CodexHomeAnnouncementsHelper14(nook) {
   let rapids = () => {
     lemon(oxbow, accountId, beacon);
   };
-  return <CodexHomeAnnouncementsHelper15 {...{
-    beacon,
-    localActionHandlers,
-    onDismiss: rapids
-  }} />;
+  return (
+    <CodexHomeAnnouncementsHelper15
+      {...{
+        beacon,
+        localActionHandlers,
+        onDismiss: rapids,
+      }}
+    />
+  );
 }
 function CodexHomeAnnouncementsHelper15(spur) {
-  let {
-      beacon,
-      localActionHandlers,
-      onDismiss
-    } = spur,
+  let { beacon, localActionHandlers, onDismiss } = spur,
     tor = useIntl(),
     updraft = useNavigate(),
     verge,
@@ -437,64 +496,83 @@ function CodexHomeAnnouncementsHelper15(spur) {
   {
     let hinge = beacon.action_items.find(willow),
       iron = beacon.action_items.find(on),
-      joint = keystone => {
+      joint = (keystone) => {
         if (keystone == null || keystone.text == null) return;
-        let latch = localActionHandlers?.[alpha({
-            actionId: keystone.id,
-            beaconId: beacon.beacon_id
-          })],
+        let latch =
+            localActionHandlers?.[
+              alpha({
+                actionId: keystone.id,
+                beaconId: beacon.beacon_id,
+              })
+            ],
           motor = delta(keystone);
-        if (!(motor == null && latch == null)) return {
-          label: keystone.text,
-          onClick: nut => {
-            if (indigo(beacon, "click", keystone.id), latch?.({
-              action: keystone,
-              beacon
-            }) !== true && motor != null) {
-              if (!motor.startsWith("/")) {
-                deferredUiEnt({
-                  event: nut,
-                  href: motor,
-                  initiator: "open_in_browser_bridge"
-                });
-                return;
+        if (!(motor == null && latch == null))
+          return {
+            label: keystone.text,
+            onClick: (nut) => {
+              if (
+                (indigo(beacon, "click", keystone.id),
+                latch?.({
+                  action: keystone,
+                  beacon,
+                }) !== true && motor != null)
+              ) {
+                if (!motor.startsWith("/")) {
+                  deferredUiEnt({
+                    event: nut,
+                    href: motor,
+                    initiator: "open_in_browser_bridge",
+                  });
+                  return;
+                }
+                updraft(motor);
               }
-              updraft(motor);
-            }
-          }
-        };
+            },
+          };
       };
     disc = AppInitialJh;
     verge = EnsureOnboardingBannerInit;
     weir = beacon.ui_info.title;
     yard = beacon.ui_info.description;
-    anchor = beacon.ui_info.icon_image_url ? <img alt="" src={beacon.ui_info.icon_image_url} className="h-8 w-8 shrink-0" /> : undefined;
+    anchor = beacon.ui_info.icon_image_url ? (
+      <img
+        alt=""
+        src={beacon.ui_info.icon_image_url}
+        className="h-8 w-8 shrink-0"
+      />
+    ) : undefined;
     bolt = joint(hinge);
     cog = joint(iron);
   }
-  let edge = tor.formatMessage({
-    id: "codexAppHomeBeaconAnnouncement.dismiss",
-    defaultMessage: "Dismiss {appName} beacon banner",
-    description: "Accessible label for dismissing the backend-driven Codex app home banner"
-  }, {
-    appName: ensureImportSettingsGctInit
-  });
+  let edge = tor.formatMessage(
+    {
+      id: "codexAppHomeBeaconAnnouncement.dismiss",
+      defaultMessage: "Dismiss {appName} beacon banner",
+      description:
+        "Accessible label for dismissing the backend-driven Codex app home banner",
+    },
+    {
+      appName: ensureImportSettingsGctInit,
+    },
+  );
   let forge = {
     ariaLabel: edge,
     icon: chatgpt2,
-    onClick: onDismiss
+    onClick: onDismiss,
   };
-  let gear = <EnsureOnboardingBannerInit {...{
-    title: weir,
-    description: yard,
-    leadingVisual: anchor,
-    primaryAction: bolt,
-    secondaryAction: cog,
-    dismissAction: forge
-  }} />;
-  return <div className={disc}>
-      {gear}
-    </div>;
+  let gear = (
+    <EnsureOnboardingBannerInit
+      {...{
+        title: weir,
+        description: yard,
+        leadingVisual: anchor,
+        primaryAction: bolt,
+        secondaryAction: cog,
+        dismissAction: forge,
+      }}
+    />
+  );
+  return <div className={disc}>{gear}</div>;
 }
 function on(piston) {
   return piston.type === "secondary";
@@ -520,38 +598,44 @@ var xenon,
     ensureAppScopeInit();
   });
 function CodexHomeAnnouncementsHelper17(screw) {
-  let {
-      message,
-      setHasSeenAppUpsellBanner
-    } = screw,
+  let { message, setHasSeenAppUpsellBanner } = screw,
     torque = useIntl(),
-    valve = <MemoizedFormattedMessage {...{
-      id: "codex.appUpsellBanner.title",
-      defaultMessage: "ChatGPT app",
-      description: "Title shown in the app upsell banner"
-    }} />;
+    valve = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.appUpsellBanner.title",
+          defaultMessage: "ChatGPT app",
+          description: "Title shown in the app upsell banner",
+        }}
+      />
+    );
   let axle, bracket;
   axle = <img alt="" src={appIconUrl} className="h-8 w-8 shrink-0" />;
-  bracket = <MemoizedFormattedMessage {...{
-    id: "codex.appUpsellBanner.download",
-    defaultMessage: "Download",
-    description: "Primary action label to download the ChatGPT app"
-  }} />;
+  bracket = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.appUpsellBanner.download",
+        defaultMessage: "Download",
+        description: "Primary action label to download the ChatGPT app",
+      }}
+    />
+  );
   let clamp = {
     label: bracket,
-    onClick: gasket => {
+    onClick: (gasket) => {
       setHasSeenAppUpsellBanner(true);
       deferredUiEnt({
         event: gasket,
         href: "https://persistent.oaistatic.com/codex-app-prod/Codex.dmg",
-        initiator: "open_in_browser_bridge"
+        initiator: "open_in_browser_bridge",
       });
-    }
+    },
   };
   let drill = torque.formatMessage({
     id: "codex.appUpsellBanner.dismissLabel",
     defaultMessage: "Dismiss ChatGPT app banner",
-    description: "Accessible label for dismissing the ChatGPT app upsell banner"
+    description:
+      "Accessible label for dismissing the ChatGPT app upsell banner",
   });
   let engine = () => {
     setHasSeenAppUpsellBanner(true);
@@ -559,15 +643,19 @@ function CodexHomeAnnouncementsHelper17(screw) {
   let frame = {
     ariaLabel: drill,
     icon: chatgpt2,
-    onClick: engine
+    onClick: engine,
   };
-  return <EnsureOnboardingBannerInit {...{
-    title: valve,
-    description: message,
-    leadingVisual: axle,
-    primaryAction: clamp,
-    dismissAction: frame
-  }} />;
+  return (
+    <EnsureOnboardingBannerInit
+      {...{
+        title: valve,
+        description: message,
+        leadingVisual: axle,
+        primaryAction: clamp,
+        dismissAction: frame,
+      }}
+    />
+  );
 }
 var basalt,
   cedar,
@@ -580,66 +668,79 @@ var basalt,
     ensureConversationPageEsm_Act_Init();
   });
 function ember(handle) {
-  let {
-      platform,
-      isLoading
-    } = useHostPlatformModifierSymbol(),
-    {
-      authMethod,
-      planAtLogin,
-      isLoading: _isLoading
-    } = useAuth(),
+  let { platform, isLoading } = useHostPlatformModifierSymbol(),
+    { authMethod, planAtLogin, isLoading: _isLoading } = useAuth(),
     insert = authMethod === "chatgpt",
     jacket = authMethod === "apikey",
     knurl = insert || jacket,
     lever = {
-      enabled: knurl
+      enabled: knurl,
     };
-  let {
-      data,
-      isLoading: __isLoading
-    } = getAccountInfoQueryConfig(lever),
+  let { data, isLoading: __isLoading } = getAccountInfoQueryConfig(lever),
     mount = authMethod === "copilot",
     nozzle = platform === "macOS",
     platen = data?.plan ?? planAtLogin,
     ratchet = platen === ChatGptPlanId.FREE || platen === ChatGptPlanId.GO,
-    shim = !handle && (_isLoading || isLoading || insert && __isLoading),
+    shim = !handle && (_isLoading || isLoading || (insert && __isLoading)),
     tappet = null;
-  if (!shim && nozzle && !handle && !mount && authMethod && data && (insert && !ratchet || jacket)) {
+  if (
+    !shim &&
+    nozzle &&
+    !handle &&
+    !mount &&
+    authMethod &&
+    data &&
+    ((insert && !ratchet) || jacket)
+  ) {
     let arbor;
-    arbor = <MemoizedFormattedMessage {...{
-      id: "codex.appUpsellBanner.cbpApi.message",
-      defaultMessage: "Build faster with the ChatGPT app. Download now or {learnMoreLink}",
-      description: "Message shown in the app upsell banner for paid ChatGPT and API key users",
-      values: {
-        learnMoreLink: <a className="text-token-link focus:ring-0 focus:outline-none focus-visible:ring-0 focus-visible:outline-none" href="https://chatgpt.com/codex" target="_blank" rel="noopener noreferrer">
-                {<MemoizedFormattedMessage {...{
-            id: "codex.appUpsellBanner.learnMoreLowercase",
-            defaultMessage: "learn more",
-            description: "Lowercase learn more link text in the app upsell banner"
-          }} />}
+    arbor = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.appUpsellBanner.cbpApi.message",
+          defaultMessage:
+            "Build faster with the ChatGPT app. Download now or {learnMoreLink}",
+          description:
+            "Message shown in the app upsell banner for paid ChatGPT and API key users",
+          values: {
+            learnMoreLink: (
+              <a
+                className="text-token-link focus:ring-0 focus:outline-none focus-visible:ring-0 focus-visible:outline-none"
+                href="https://chatgpt.com/codex"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {
+                  <MemoizedFormattedMessage
+                    {...{
+                      id: "codex.appUpsellBanner.learnMoreLowercase",
+                      defaultMessage: "learn more",
+                      description:
+                        "Lowercase learn more link text in the app upsell banner",
+                    }}
+                  />
+                }
               </a>
-      }
-    }} />;
+            ),
+          },
+        }}
+      />
+    );
     tappet = arbor;
   }
   return {
     isLoading: shim,
-    message: tappet
+    message: tappet,
   };
 }
 function flint() {
   let [bushing, collar] = useAtomPair(_n),
-    {
-      isLoading,
-      message
-    } = ember(bushing),
+    { isLoading, message } = ember(bushing),
     dowel = message != null;
   return {
     isEligible: dowel,
     isLoading,
     message,
-    setHasSeenAppUpsellBanner: collar
+    setHasSeenAppUpsellBanner: collar,
   };
 }
 var garnet,
@@ -664,36 +765,50 @@ function CodexHomeAnnouncementsHelper20(flange) {
       isSubmitting,
       setHasSeenFastModeHomeBanner,
       setIsSubmitting,
-      setServiceTier
+      setServiceTier,
     } = flange,
     gib = CodexPluginActionType(appScopeAtom),
-    hub = <MemoizedFormattedMessage {...{
-      id: "codex.fastModeHomeBanner.title",
-      defaultMessage: "Enable Fast mode",
-      description: "Title shown in the Fast mode home banner"
-    }} />;
+    hub = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.fastModeHomeBanner.title",
+          defaultMessage: "Enable Fast mode",
+          description: "Title shown in the Fast mode home banner",
+        }}
+      />
+    );
   let idler, jig;
   idler = <AppInitialAm className="icon-sm text-token-charts-yellow" />;
-  jig = <MemoizedFormattedMessage {...{
-    id: "codex.fastModeHomeBanner.cta.primary",
-    defaultMessage: "Enable now",
-    description: "Primary CTA shown in the Fast mode home banner"
-  }} />;
+  jig = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.fastModeHomeBanner.cta.primary",
+        defaultMessage: "Enable now",
+        description: "Primary CTA shown in the Fast mode home banner",
+      }}
+    />
+  );
   let keeper = () => {
-    fastModeModel != null && (setIsSubmitting(true), logProductEvent(gib, CODEX_PRICING_PLAN_PAGE_SHOWN_TYPE, {}), setServiceTier(realtimeVoiceConfigOverride(fastModeModel)?.id ?? "priority", "home_banner").finally(() => {
-      setHasSeenFastModeHomeBanner(true);
-      setIsSubmitting(false);
-    }));
+    fastModeModel != null &&
+      (setIsSubmitting(true),
+      logProductEvent(gib, CODEX_PRICING_PLAN_PAGE_SHOWN_TYPE, {}),
+      setServiceTier(
+        realtimeVoiceConfigOverride(fastModeModel)?.id ?? "priority",
+        "home_banner",
+      ).finally(() => {
+        setHasSeenFastModeHomeBanner(true);
+        setIsSubmitting(false);
+      }));
   };
   let lug = {
     label: jig,
     onClick: keeper,
-    disabled: isSubmitting
+    disabled: isSubmitting,
   };
   let mandrel = intl.formatMessage({
     id: "codex.fastModeHomeBanner.dismissLabel",
     defaultMessage: "Dismiss Fast mode banner",
-    description: "Accessible label for dismissing the Fast mode home banner"
+    description: "Accessible label for dismissing the Fast mode home banner",
   });
   let nipple = () => {
     logProductEvent(gib, AppInitialEt, {});
@@ -703,15 +818,19 @@ function CodexHomeAnnouncementsHelper20(flange) {
     ariaLabel: mandrel,
     icon: chatgpt2,
     onClick: nipple,
-    disabled: isSubmitting
+    disabled: isSubmitting,
   };
-  return <EnsureOnboardingBannerInit {...{
-    title: hub,
-    description: content,
-    leadingVisual: idler,
-    primaryAction: lug,
-    dismissAction: orifice
-  }} />;
+  return (
+    <EnsureOnboardingBannerInit
+      {...{
+        title: hub,
+        description: content,
+        leadingVisual: idler,
+        primaryAction: lug,
+        dismissAction: orifice,
+      }}
+    />
+  );
 }
 var jasper,
   kelp,
@@ -730,49 +849,56 @@ var jasper,
 function mint() {
   let pin = CodexPluginActionType(appScopeAtom),
     race = useIntl(),
-    {
-      isServiceTierAllowed
-    } = useHostChatgptAuthMethod(),
-    {
-      data
-    } = findProcessManagerRow(),
+    { isServiceTierAllowed } = useHostChatgptAuthMethod(),
+    { data } = findProcessManagerRow(),
     [sleeve, trunnion] = useAtomPair(quill),
-    {
-      modelSettings
-    } = Models(),
-    {
-      serviceTierSettings,
-      setServiceTier
-    } = ensureSelectWorkspaceCqInit(),
+    { modelSettings } = Models(),
+    { serviceTierSettings, setServiceTier } = ensureSelectWorkspaceCqInit(),
     [boss, cam] = olive.useState(false),
     detent = olive.useRef(false),
     eccentric = data?.models,
     follower = deferredVoiceC4(eccentric, modelSettings.model, macOS3);
   let guide = follower,
-    helix = isServiceTierAllowed && guide != null && !sleeve && serviceTierSettings.selectedServiceTier == null && !serviceTierSettings.isLoading,
-    {
-      estimate,
-      estimateStatus
-    } = parsePullRequestRouteParams(helix),
-    impeller = !sleeve && helix && estimateStatus !== "ready" && estimateStatus !== "failed",
+    helix =
+      isServiceTierAllowed &&
+      guide != null &&
+      !sleeve &&
+      serviceTierSettings.selectedServiceTier == null &&
+      !serviceTierSettings.isLoading,
+    { estimate, estimateStatus } = parsePullRequestRouteParams(helix),
+    impeller =
+      !sleeve &&
+      helix &&
+      estimateStatus !== "ready" &&
+      estimateStatus !== "failed",
     journal = helix && estimateStatus === "ready" && estimate != null,
     kingpin,
     land;
   kingpin = () => {
-    !journal || detent.current || (detent.current = true, logProductEvent(pin, CodexPluginDirectoryEntrypoint, {}));
+    !journal ||
+      detent.current ||
+      ((detent.current = true),
+      logProductEvent(pin, CodexPluginDirectoryEntrypoint, {}));
   };
   land = [pin, journal];
   olive.useEffect(kingpin, land);
-  let mesh = !journal || estimate == null ? null : <MemoizedFormattedMessage {...{
-    id: "codex.fastModeHomeBanner.body.personalizedEstimate",
-    defaultMessage: "Based on your work last week across {threadCount, plural, one {# chat} other {# chats}}, Fast could have saved about {savedHours, plural, =0 {{savedMinutes, plural, one {# minute} other {# minutes}}} one {# hour{savedMinutes, plural, =0 {} one { # minute} other { # minutes}}} other {# hours{savedMinutes, plural, =0 {} one { # minute} other { # minutes}}}}. Increases plan usage.",
-    description: "Personalized estimate shown in the Fast mode home banner",
-    values: {
-      savedHours: estimate.savedHours,
-      savedMinutes: estimate.savedMinutes,
-      threadCount: estimate.threadCount
-    }
-  }} />;
+  let mesh =
+    !journal || estimate == null ? null : (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.fastModeHomeBanner.body.personalizedEstimate",
+          defaultMessage:
+            "Based on your work last week across {threadCount, plural, one {# chat} other {# chats}}, Fast could have saved about {savedHours, plural, =0 {{savedMinutes, plural, one {# minute} other {# minutes}}} one {# hour{savedMinutes, plural, =0 {} one { # minute} other { # minutes}}} other {# hours{savedMinutes, plural, =0 {} one { # minute} other { # minutes}}}}. Increases plan usage.",
+          description:
+            "Personalized estimate shown in the Fast mode home banner",
+          values: {
+            savedHours: estimate.savedHours,
+            savedMinutes: estimate.savedMinutes,
+            threadCount: estimate.threadCount,
+          },
+        }}
+      />
+    );
   let neck = mesh;
   return {
     content: neck,
@@ -783,7 +909,7 @@ function mint() {
     fastModeModel: guide,
     setHasSeenFastModeHomeBanner: trunnion,
     setIsSubmitting: cam,
-    setServiceTier
+    setServiceTier,
   };
 }
 var nova,
@@ -809,22 +935,20 @@ var nova,
     quill = createPersistedAtom("has-seen-fast-mode-home-banner", false);
   });
 function sage() {
-  let {
-      hostId
-    } = useVoiceSettingsHostConfig(DeferredUiQl()),
+  let { hostId } = useVoiceSettingsHostConfig(DeferredUiQl()),
     pad = AppInitialEM(),
     [quillshaft] = useAtomPair(wheat),
-    {
-      data,
-      isLoading
-    } = CodexBrowserSurfaceActionType(deferredBrowserY0, hostId),
+    { data, isLoading } = CodexBrowserSurfaceActionType(
+      deferredBrowserY0,
+      hostId,
+    ),
     roller = data?.some(topaz) ?? false;
   let spindle = roller,
     thrust = pad && !quillshaft && isLoading,
     yoke = pad && !quillshaft && !spindle;
   return {
     isEligible: yoke,
-    isLoading: thrust
+    isLoading: thrust,
   };
 }
 function topaz(baffle) {
@@ -846,13 +970,11 @@ var ultra,
     wheat = createPersistedAtom("has-seen-multi-agent-composer-banner", false);
   });
 function CodexHomeAnnouncementsHelper24(capstan) {
-  let {
-      onTryNow
-    } = capstan,
+  let { onTryNow } = capstan,
     diaphragm = CodexPluginActionType(appScopeAtom),
     elbow = useIntl(),
     ferrule = {
-      hostId: LOCAL_HOST_ID
+      hostId: LOCAL_HOST_ID,
     };
   let grommet = HostFeatureConfigToggles(ferrule),
     [, header] = PLEASE_IMPLEMENT_THIS_PLAN_HEADER("composer_prefill"),
@@ -862,58 +984,90 @@ function CodexHomeAnnouncementsHelper24(capstan) {
     nip = !injector,
     outlet,
     packing;
-  if (outlet = () => {
-    !nip || manifold.current || (manifold.current = true, logProductEvent(diaphragm, CODEX_MULTI_AGENT_BANNER_VIEWED_TYPE, {}));
-  }, packing = [diaphragm, nip], acorn.useEffect(outlet, packing), !nip) return null;
+  if (
+    ((outlet = () => {
+      !nip ||
+        manifold.current ||
+        ((manifold.current = true),
+        logProductEvent(diaphragm, CODEX_MULTI_AGENT_BANNER_VIEWED_TYPE, {}));
+    }),
+    (packing = [diaphragm, nip]),
+    acorn.useEffect(outlet, packing),
+    !nip)
+  )
+    return null;
   let reducer, strainer, tee, union;
-  reducer = <MemoizedFormattedMessage {...{
-    id: "codex.multiAgentComposerBanner.title",
-    defaultMessage: "Subagents in Codex",
-    description: "Title shown in the multi-agent composer banner"
-  }} />;
-  strainer = <MemoizedFormattedMessage {...{
-    id: "codex.multiAgentComposerBanner.body",
-    defaultMessage: "Delegate work to subagents that work in parallel. Note: may increase token usage.",
-    description: "Body shown in the multi-agent composer banner"
-  }} />;
-  tee = <EnsureTeamIconInit {...{
-    className: "icon-sm"
-  }} />;
-  union = <MemoizedFormattedMessage {...{
-    id: "codex.multiAgentComposerBanner.cta.primary",
-    defaultMessage: "Try now",
-    description: "Primary CTA shown in the multi-agent composer banner"
-  }} />;
+  reducer = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.multiAgentComposerBanner.title",
+        defaultMessage: "Subagents in Codex",
+        description: "Title shown in the multi-agent composer banner",
+      }}
+    />
+  );
+  strainer = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.multiAgentComposerBanner.body",
+        defaultMessage:
+          "Delegate work to subagents that work in parallel. Note: may increase token usage.",
+        description: "Body shown in the multi-agent composer banner",
+      }}
+    />
+  );
+  tee = (
+    <EnsureTeamIconInit
+      {...{
+        className: "icon-sm",
+      }}
+    />
+  );
+  union = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "codex.multiAgentComposerBanner.cta.primary",
+        defaultMessage: "Try now",
+        description: "Primary CTA shown in the multi-agent composer banner",
+      }}
+    />
+  );
   let vent = () => {
     louver(true);
     let copperPrime = elbow.formatMessage({
       id: "composer.multiAgentBanner.tryNow.prompt",
       defaultMessage: "Spawn a subagent to explore this repo.",
-      description: "Prompt inserted when the user clicks Try now on the multi-agent composer banner"
+      description:
+        "Prompt inserted when the user clicks Try now on the multi-agent composer banner",
     });
     logProductEvent(diaphragm, CODEX_PRICING_PLAN_PAGE_CTA_CLICKED_TYPE, {
-      action: "try_now"
+      action: "try_now",
     });
-    grommet.mutateAsync({
-      featureName: coral,
-      enabled: true
-    }).finally(() => {
-      onTryNow ? onTryNow() : header({
-        text: copperPrime
+    grommet
+      .mutateAsync({
+        featureName: coral,
+        enabled: true,
+      })
+      .finally(() => {
+        onTryNow
+          ? onTryNow()
+          : header({
+              text: copperPrime,
+            });
+        jumper(true);
+        louver(false);
       });
-      jumper(true);
-      louver(false);
-    });
   };
   let wye = {
     label: union,
     onClick: vent,
-    disabled: kerf
+    disabled: kerf,
   };
   let zener = elbow.formatMessage({
     id: "codex.multiAgentComposerBanner.dismissLabel",
     defaultMessage: "Dismiss subagent banner",
-    description: "Accessible label for dismissing the multi-agent composer banner"
+    description:
+      "Accessible label for dismissing the multi-agent composer banner",
   });
   let alphaPrime = () => {
     logProductEvent(diaphragm, CODEX_MULTI_AGENT_BANNER_DISMISSED_TYPE, {});
@@ -923,15 +1077,19 @@ function CodexHomeAnnouncementsHelper24(capstan) {
     ariaLabel: zener,
     icon: chatgpt2,
     onClick: alphaPrime,
-    disabled: kerf
+    disabled: kerf,
   };
-  return <EnsureOnboardingBannerInit {...{
-    title: reducer,
-    description: strainer,
-    leadingVisual: tee,
-    primaryAction: wye,
-    dismissAction: bravoPrime
-  }} />;
+  return (
+    <EnsureOnboardingBannerInit
+      {...{
+        title: reducer,
+        description: strainer,
+        leadingVisual: tee,
+        primaryAction: wye,
+        dismissAction: bravoPrime,
+      }}
+    />
+  );
 }
 var zephyr,
   acorn,

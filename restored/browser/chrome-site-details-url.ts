@@ -22,7 +22,9 @@ export function originFromHttpUrl(url: string): string | null {
  * Bundle `fve` / export `Eht` — site-details chrome URL for a site origin.
  * Returns null when `site` is missing or not an http(s) origin.
  */
-export function buildChromeSiteDetailsUrl(site: string | null | undefined): string | null {
+export function buildChromeSiteDetailsUrl(
+  site: string | null | undefined,
+): string | null {
   if (site == null) return null;
   const origin = originFromHttpUrl(site);
   if (origin == null) return null;

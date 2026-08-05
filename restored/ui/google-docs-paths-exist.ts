@@ -15,7 +15,9 @@ export type BindGoogleDocsPathsExistPeers = {
 let peers: BindGoogleDocsPathsExistPeers | null = null;
 
 /** Wire bindGoogleDocsPathsExist peers once companions land. */
-export function setBindGoogleDocsPathsExistPeers(next: BindGoogleDocsPathsExistPeers): void {
+export function setBindGoogleDocsPathsExistPeers(
+  next: BindGoogleDocsPathsExistPeers,
+): void {
   peers = next;
 }
 

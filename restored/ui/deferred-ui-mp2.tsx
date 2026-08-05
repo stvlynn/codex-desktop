@@ -10,7 +10,9 @@ export type BindBindDeferredUiMP2Peers = {
 let peers: BindBindDeferredUiMP2Peers | null = null;
 
 /** Wire bindBindDeferredUiMP2 peers once companions land. */
-export function setBindBindDeferredUiMP2Peers(next: BindBindDeferredUiMP2Peers): void {
+export function setBindBindDeferredUiMP2Peers(
+  next: BindBindDeferredUiMP2Peers,
+): void {
   peers = next;
 }
 
@@ -22,10 +24,8 @@ export function bindBindDeferredUiMP2() {
     throw new Error("bindBindDeferredUiMP2 peers are not configured");
   }
 
-  return peers.Ra(peers.Q, ({
-    scope: e
-  }) => ({
-    mutationFn: t => peers.NOa(e, t),
-    mutationKey: [`set-chatgpt-ultra-effort-enabled`]
+  return peers.Ra(peers.Q, ({ scope: e }) => ({
+    mutationFn: (t) => peers.NOa(e, t),
+    mutationKey: [`set-chatgpt-ultra-effort-enabled`],
   }));
 }

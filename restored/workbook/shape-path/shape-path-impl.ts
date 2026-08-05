@@ -16,23 +16,17 @@ export const PATH_EPS = 1e-6;
 export function normalizePathAngle(spIn11090: any) {
   if (!Number.isFinite(spIn11090)) return spIn11090;
   let spBind21594 = spIn11090 % TAU;
-  return (
-    spBind21594 < 0 && (spBind21594 += TAU),
-    spBind21594
-  );
+  return (spBind21594 < 0 && (spBind21594 += TAU), spBind21594);
 }
-export function adjustEllipseAngle(spIn4735: any, spIn4736: any, spIn4737: any, ) {
-  if (
-    !Number.isFinite(spIn4735) ||
-    spIn4736 === 0 ||
-    spIn4737 === 0
-  )
+export function adjustEllipseAngle(
+  spIn4735: any,
+  spIn4736: any,
+  spIn4737: any,
+) {
+  if (!Number.isFinite(spIn4735) || spIn4736 === 0 || spIn4737 === 0)
     return normalizePathAngle(spIn4735);
   let spBind14075 = (spIn4735 * RAD_TO_DEG) % 360,
-    spBind14076 =
-      spBind14075 < 0
-        ? spBind14075 + 360
-        : spBind14075;
+    spBind14076 = spBind14075 < 0 ? spBind14075 + 360 : spBind14075;
   if (
     spBind14076 === 0 ||
     spBind14076 === 90 ||
@@ -43,21 +37,20 @@ export function adjustEllipseAngle(spIn4735: any, spIn4736: any, spIn4737: any, 
   let spBind14077 = spBind14076 * DEG_TO_RAD,
     spBind14078 = spIn4737 * Math.cos(spBind14077),
     spBind14079 = spIn4736 * Math.sin(spBind14077);
-  if (
-    Math.abs(spBind14078) < 1e-12 &&
-    Math.abs(spBind14079) < 1e-12
-  )
+  if (Math.abs(spBind14078) < 1e-12 && Math.abs(spBind14079) < 1e-12)
     return spBind14077;
-  let spBind14080 = Math.atan2(
-    spBind14079,
-    spBind14078,
-  );
-  return (
-    spBind14080 < 0 && (spBind14080 += TAU),
-    spBind14080
-  );
+  let spBind14080 = Math.atan2(spBind14079, spBind14078);
+  return (spBind14080 < 0 && (spBind14080 += TAU), spBind14080);
 }
-export function drawShapePath(spIn222: any, spIn223: any, spIn224: any, spIn225: any = true, spIn226: any = true, spIn227: any = false, spIn228: any = true, ) {
+export function drawShapePath(
+  spIn222: any,
+  spIn223: any,
+  spIn224: any,
+  spIn225: any = true,
+  spIn226: any = true,
+  spIn227: any = false,
+  spIn228: any = true,
+) {
   spIn228 && spIn222.beginPath();
   let spBind3236 = 0,
     spBind3237 = 0,
@@ -66,62 +59,38 @@ export function drawShapePath(spIn222: any, spIn223: any, spIn224: any, spIn225:
     spBind3240 = spIn227 ? {} : undefined,
     spBind3241 = /^-?\d+(?:\.\d+)?$/,
     spBind3242 =
-      spIn223.w && spBind3241.test(spIn223.w)
-        ? Number(spIn223.w)
-        : undefined,
+      spIn223.w && spBind3241.test(spIn223.w) ? Number(spIn223.w) : undefined,
     spBind3243 =
-      spIn223.h && spBind3241.test(spIn223.h)
-        ? Number(spIn223.h)
-        : undefined,
-    spBind3244 = spBind3242
-      ? spIn224.w / spBind3242
-      : undefined,
-    spBind3245 = spBind3243
-      ? spIn224.h / spBind3243
-      : undefined,
-    spBind3246 =
-      typeof spBind3244 == "number" &&
-      Number.isFinite(spBind3244),
-    spBind3247 =
-      typeof spBind3245 == "number" &&
-      Number.isFinite(spBind3245),
+      spIn223.h && spBind3241.test(spIn223.h) ? Number(spIn223.h) : undefined,
+    spBind3244 = spBind3242 ? spIn224.w / spBind3242 : undefined,
+    spBind3245 = spBind3243 ? spIn224.h / spBind3243 : undefined,
+    spBind3246 = typeof spBind3244 == "number" && Number.isFinite(spBind3244),
+    spBind3247 = typeof spBind3245 == "number" && Number.isFinite(spBind3245),
     spBind3248 = (spIn7751, spIn7752) => {
       if (!spIn7751) return NaN;
       if (
         spBind3241.test(spIn7751) &&
-        ((spIn7752 === "x" && spBind3246) ||
-          (spIn7752 === "y" && spBind3247))
+        ((spIn7752 === "x" && spBind3246) || (spIn7752 === "y" && spBind3247))
       ) {
         let spBind22210 =
-          spIn7752 === "x"
-            ? (spBind3244 ?? 1)
-            : (spBind3245 ?? 1);
+          spIn7752 === "x" ? (spBind3244 ?? 1) : (spBind3245 ?? 1);
         return Number(spIn7751) * spBind22210;
       }
       return evalShapeFormula(spIn7751, spIn224);
     },
     spBind3249 = (spIn7594, spIn7595) => {
-      if (!spIn7594)
-        return evalShapeFormula(spIn7594, spIn224);
+      if (!spIn7594) return evalShapeFormula(spIn7594, spIn224);
       if (
         spBind3241.test(spIn7594) &&
-        ((spIn7595 === "x" && spBind3246) ||
-          (spIn7595 === "y" && spBind3247))
+        ((spIn7595 === "x" && spBind3246) || (spIn7595 === "y" && spBind3247))
       ) {
         let spBind22211 =
-          spIn7595 === "x"
-            ? (spBind3244 ?? 1)
-            : (spBind3245 ?? 1);
+          spIn7595 === "x" ? (spBind3244 ?? 1) : (spBind3245 ?? 1);
         return Number(spIn7594) * spBind22211;
       }
       return evalShapeFormula(spIn7594, spIn224);
     },
-    spBind3250 = (
-      spIn6537,
-      spIn6538,
-      spIn6539,
-      spIn6540,
-    ) => {
+    spBind3250 = (spIn6537, spIn6538, spIn6539, spIn6540) => {
       !spBind3240 ||
         spBind3240.start ||
         !Number.isFinite(spIn6537) ||
@@ -135,12 +104,7 @@ export function drawShapePath(spIn222: any, spIn223: any, spIn224: any, spIn225:
           angle: Math.atan2(spIn6540, spIn6539),
         });
     },
-    spBind3251 = (
-      spIn6733,
-      spIn6734,
-      spIn6735,
-      spIn6736,
-    ) => {
+    spBind3251 = (spIn6733, spIn6734, spIn6735, spIn6736) => {
       spBind3240 &&
         (!Number.isFinite(spIn6733) ||
           !Number.isFinite(spIn6734) ||
@@ -166,52 +130,24 @@ export function drawShapePath(spIn222: any, spIn223: any, spIn224: any, spIn225:
         spBind3252(spBind4314.x, spBind4314.y);
         break;
       case "lineTo": {
-        let spBind17541 = spBind3248(
-            spBind4314.x,
-            "x",
-          ),
-          spBind17542 = spBind3248(
-            spBind4314.y,
-            "y",
-          ),
+        let spBind17541 = spBind3248(spBind4314.x, "x"),
+          spBind17542 = spBind3248(spBind4314.y, "y"),
           spBind17543 = spBind3236,
           spBind17544 = spBind3237;
         spBind3236 = spBind17541;
         spBind3237 = spBind17542;
         let spBind17545 = spBind17541 - spBind17543,
           spBind17546 = spBind17542 - spBind17544;
-        spBind3250(
-          spBind17543,
-          spBind17544,
-          spBind17545,
-          spBind17546,
-        );
-        spBind3251(
-          spBind17541,
-          spBind17542,
-          spBind17545,
-          spBind17546,
-        );
+        spBind3250(spBind17543, spBind17544, spBind17545, spBind17546);
+        spBind3251(spBind17541, spBind17542, spBind17545, spBind17546);
         spIn222.lineTo(spBind17541, spBind17542);
         break;
       }
       case "quadBezTo": {
-        let spBind15737 = spBind3248(
-            spBind4314.x1,
-            "x",
-          ),
-          spBind15738 = spBind3248(
-            spBind4314.y1,
-            "y",
-          ),
-          spBind15739 = spBind3248(
-            spBind4314.x,
-            "x",
-          ),
-          spBind15740 = spBind3248(
-            spBind4314.y,
-            "y",
-          ),
+        let spBind15737 = spBind3248(spBind4314.x1, "x"),
+          spBind15738 = spBind3248(spBind4314.y1, "y"),
+          spBind15739 = spBind3248(spBind4314.x, "x"),
+          spBind15740 = spBind3248(spBind4314.y, "y"),
           spBind15741 = spBind3236,
           spBind15742 = spBind3237;
         spBind3236 = spBind15739;
@@ -237,30 +173,12 @@ export function drawShapePath(spIn222: any, spIn223: any, spIn224: any, spIn225:
         break;
       }
       case "cubicBezTo": {
-        let spBind14508 = spBind3248(
-            spBind4314.x1,
-            "x",
-          ),
-          spBind14509 = spBind3248(
-            spBind4314.y1,
-            "y",
-          ),
-          spBind14510 = spBind3248(
-            spBind4314.x2,
-            "x",
-          ),
-          spBind14511 = spBind3248(
-            spBind4314.y2,
-            "y",
-          ),
-          spBind14512 = spBind3248(
-            spBind4314.x,
-            "x",
-          ),
-          spBind14513 = spBind3248(
-            spBind4314.y,
-            "y",
-          ),
+        let spBind14508 = spBind3248(spBind4314.x1, "x"),
+          spBind14509 = spBind3248(spBind4314.y1, "y"),
+          spBind14510 = spBind3248(spBind4314.x2, "x"),
+          spBind14511 = spBind3248(spBind4314.y2, "y"),
+          spBind14512 = spBind3248(spBind4314.x, "x"),
+          spBind14513 = spBind3248(spBind4314.y, "y"),
           spBind14514 = spBind3236,
           spBind14515 = spBind3237;
         spBind3236 = spBind14512;
@@ -288,14 +206,8 @@ export function drawShapePath(spIn222: any, spIn223: any, spIn224: any, spIn225:
         break;
       }
       case "arcTo": {
-        let spBind7904 = spBind3249(
-            spBind4314.wR,
-            "x",
-          ),
-          spBind7905 = spBind3249(
-            spBind4314.hR,
-            "y",
-          ),
+        let spBind7904 = spBind3249(spBind4314.wR, "x"),
+          spBind7905 = spBind3249(spBind4314.hR, "y"),
           spBind7906 = Math.abs(spBind7904),
           spBind7907 = Math.abs(spBind7905),
           spBind7908 = spHelper1141(
@@ -304,44 +216,24 @@ export function drawShapePath(spIn222: any, spIn223: any, spIn224: any, spIn225:
           spBind7909 = spHelper1141(
             evalShapeFormula(spBind4314.swAng, spIn224),
           );
-        spBind7909 > TAU &&
-          (spBind7909 = TAU);
-        spBind7909 < -TAU &&
-          (spBind7909 = -TAU);
+        spBind7909 > TAU && (spBind7909 = TAU);
+        spBind7909 < -TAU && (spBind7909 = -TAU);
         let spBind7910 = spBind7908 + spBind7909,
-          spBind7911 = adjustEllipseAngle(
-            spBind7908,
-            spBind7906,
-            spBind7907,
-          ),
-          spBind7912 = adjustEllipseAngle(
-            spBind7910,
-            spBind7906,
-            spBind7907,
-          ),
+          spBind7911 = adjustEllipseAngle(spBind7908, spBind7906, spBind7907),
+          spBind7912 = adjustEllipseAngle(spBind7910, spBind7906, spBind7907),
           spBind7913 = spBind7909 < 0,
           spBind7914 = spBind7912 - spBind7911;
         spBind7909 < 0 && spBind7914 >= 0
-          ? ((spBind7912 -= TAU),
-            (spBind7914 = spBind7912 - spBind7911))
+          ? ((spBind7912 -= TAU), (spBind7914 = spBind7912 - spBind7911))
           : spBind7909 > 0 &&
             spBind7914 <= 0 &&
-            ((spBind7912 += TAU),
-            (spBind7914 = spBind7912 - spBind7911));
+            ((spBind7912 += TAU), (spBind7914 = spBind7912 - spBind7911));
         Math.abs(spBind7909) > 1e-9 &&
           Math.abs(spBind7914) < 1e-9 &&
-          ((spBind7912 =
-            spBind7911 +
-            (spBind7909 < 0
-              ? -TAU
-              : TAU)),
+          ((spBind7912 = spBind7911 + (spBind7909 < 0 ? -TAU : TAU)),
           (spBind7914 = spBind7912 - spBind7911));
-        let spBind7915 =
-            spBind3236 -
-            spBind7904 * Math.cos(spBind7911),
-          spBind7916 =
-            spBind3237 -
-            spBind7905 * Math.sin(spBind7911),
+        let spBind7915 = spBind3236 - spBind7904 * Math.cos(spBind7911),
+          spBind7916 = spBind3237 - spBind7905 * Math.sin(spBind7911),
           spBind7917 = spBind7913 ? -1 : 1,
           spBind7918 = normalizePathAngle(spBind7911),
           spBind7919 = normalizePathAngle(spBind7912);
@@ -358,28 +250,16 @@ export function drawShapePath(spIn222: any, spIn223: any, spIn224: any, spIn225:
         spBind3250(
           spBind3236,
           spBind3237,
-          spBind7917 *
-            -spBind7904 *
-            Math.sin(spBind7911),
-          spBind7917 *
-            spBind7905 *
-            Math.cos(spBind7911),
+          spBind7917 * -spBind7904 * Math.sin(spBind7911),
+          spBind7917 * spBind7905 * Math.cos(spBind7911),
         );
-        spBind3236 =
-          spBind7915 +
-          spBind7904 * Math.cos(spBind7912);
-        spBind3237 =
-          spBind7916 +
-          spBind7905 * Math.sin(spBind7912);
+        spBind3236 = spBind7915 + spBind7904 * Math.cos(spBind7912);
+        spBind3237 = spBind7916 + spBind7905 * Math.sin(spBind7912);
         spBind3251(
           spBind3236,
           spBind3237,
-          spBind7917 *
-            -spBind7904 *
-            Math.sin(spBind7912),
-          spBind7917 *
-            spBind7905 *
-            Math.cos(spBind7912),
+          spBind7917 * -spBind7904 * Math.sin(spBind7912),
+          spBind7917 * spBind7905 * Math.cos(spBind7912),
         );
         break;
       }
@@ -391,18 +271,8 @@ export function drawShapePath(spIn222: any, spIn223: any, spIn224: any, spIn225:
         spBind3237 = spBind3239;
         let spBind18899 = spBind3236 - spBind18897,
           spBind18900 = spBind3237 - spBind18898;
-        spBind3250(
-          spBind18897,
-          spBind18898,
-          spBind18899,
-          spBind18900,
-        );
-        spBind3251(
-          spBind3236,
-          spBind3237,
-          spBind18899,
-          spBind18900,
-        );
+        spBind3250(spBind18897, spBind18898, spBind18899, spBind18900);
+        spBind3251(spBind3236, spBind3237, spBind18899, spBind18900);
         break;
       }
     }
@@ -411,17 +281,10 @@ export function drawShapePath(spIn222: any, spIn223: any, spIn224: any, spIn225:
   }
   let spBind3253 = spIn222.globalCompositeOperation;
   return (
-    spIn223.fill === "darken" &&
-      (spIn222.globalCompositeOperation = "darken"),
-    spIn223.fill &&
-      spIn223.fill !== "none" &&
-      spIn225 &&
-      spIn222.fill(),
-    (spIn223.stroke ?? true) &&
-      spIn226 &&
-      spIn222.stroke(),
+    spIn223.fill === "darken" && (spIn222.globalCompositeOperation = "darken"),
+    spIn223.fill && spIn223.fill !== "none" && spIn225 && spIn222.fill(),
+    (spIn223.stroke ?? true) && spIn226 && spIn222.stroke(),
     (spIn222.globalCompositeOperation = spBind3253),
     spBind3240
   );
 }
-

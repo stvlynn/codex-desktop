@@ -9,7 +9,9 @@ export type OauthCallbackPayload = {
 };
 
 /** Narrow an unknown host payload into an OAuth callback shape. */
-export function parseOauthCallbackPayload(value: unknown): OauthCallbackPayload | null {
+export function parseOauthCallbackPayload(
+  value: unknown,
+): OauthCallbackPayload | null {
   if (typeof value !== "object" || !value) return null;
   const fullRedirectUrl = Reflect.get(value, "fullRedirectUrl");
   const returnTo = Reflect.get(value, "returnTo");

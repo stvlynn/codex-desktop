@@ -24,6 +24,6 @@ export function browser() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.jf(), qvt = `/dev/null`;
+    (peers.Au(), peers.jf(), (qvt = `/dev/null`));
   });
 }

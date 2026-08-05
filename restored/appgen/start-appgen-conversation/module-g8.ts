@@ -9,10 +9,24 @@ import { ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payl
 import { CodexAutomationCapabilityOrigin } from "../../analytics/codex-automation-capability-origin";
 import { CodexAutomationFailureReason } from "../../analytics/codex-automation-failure-reason";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { localeMessagesAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_E4_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  ensureComposerEsm_E4_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Sst_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { ensurePluginMentionPromptInit } from "../../browser/browser-use-helpers";
 import { isAppUri } from "../../composer/app-plugin-uri";
@@ -23,7 +37,10 @@ import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
 import { AppIconDG } from "../../icons/app-icon-dg";
 import { AppIconYj } from "../../icons/app-icon-yj";
 import { ensureHooksFocusIconInit } from "../../icons/hooks-settings-icons";
-import { ensureTrendingTopicsIconInit, TrendingTopicsIcon } from "../../icons/trending-topics-icon";
+import {
+  ensureTrendingTopicsIconInit,
+  TrendingTopicsIcon,
+} from "../../icons/trending-topics-icon";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { toMarkdownLink } from "../../markdown/to-markdown-link";
 import { resolveScienceModelLabel } from "../../models/resolve-science-model-label";
@@ -42,12 +59,19 @@ import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-p
 import { hasInputItemsField } from "../../utils/has-input-items-field";
 import { isBareAllowedPermission } from "../../utils/is-bare-allowed-permission";
 import { ensureImportSettingsCLInit } from "../../utils/wave-as-gap-ensure-inits";
-import { appgenShareDialogT, ensureAppgenShareDialogInit } from "../appgen-share-dialog";
+import {
+  appgenShareDialogT,
+  ensureAppgenShareDialogInit,
+} from "../appgen-share-dialog";
 
 /** split companion stub */
 const deferredConversationBJ: any = undefined;
 
-export function startAppgenConversationR(eddy: unknown, fjord: unknown, glen: unknown) {
+export function startAppgenConversationR(
+  eddy: unknown,
+  fjord: unknown,
+  glen: unknown,
+) {
   let hearth = eddy.get(localeMessagesAtom),
     inlet;
   switch (glen.type) {
@@ -57,35 +81,39 @@ export function startAppgenConversationR(eddy: unknown, fjord: unknown, glen: un
           inlet = hearth.formatMessage({
             id: "appgenPage.createMenu.documentPrompt",
             defaultMessage: "Create a document that …",
-            description: "Prefill prompt for creating a document from the Library"
+            description:
+              "Prefill prompt for creating a document from the Library",
           });
           break;
         case "spreadsheet":
           inlet = hearth.formatMessage({
             id: "appgenPage.createMenu.spreadsheetPrompt",
             defaultMessage: "Create a spreadsheet that …",
-            description: "Prefill prompt for creating a spreadsheet from the Library"
+            description:
+              "Prefill prompt for creating a spreadsheet from the Library",
           });
           break;
         case "presentation":
           inlet = hearth.formatMessage({
             id: "appgenPage.createMenu.presentationPrompt",
-defaultMessage: "Create a presentation that …",
-            description: "Prefill prompt for creating a presentation from the Library"
+            defaultMessage: "Create a presentation that …",
+            description:
+              "Prefill prompt for creating a presentation from the Library",
           });
           break;
         case "pdf":
           inlet = hearth.formatMessage({
             id: "appgenPage.createMenu.pdfPrompt",
             defaultMessage: "Create a PDF that …",
-            description: "Prefill prompt for creating a PDF from the Library"
+            description: "Prefill prompt for creating a PDF from the Library",
           });
           break;
         case "image":
           inlet = hearth.formatMessage({
             id: "appgenPage.createMenu.imagePrompt",
             defaultMessage: "Create an image of …",
-            description: "Prefill prompt for creating an image from the Library"
+            description:
+              "Prefill prompt for creating an image from the Library",
           });
           break;
       }
@@ -94,20 +122,24 @@ defaultMessage: "Create a presentation that …",
       inlet = hearth.formatMessage({
         id: "appgenConversation.createPrompt",
         defaultMessage: "Create a website that …",
-        description: "Prompt for starting a new site from the Sites page"
+        description: "Prompt for starting a new site from the Sites page",
       });
       break;
     case "edit":
-      inlet = hearth.formatMessage({
-        id: "appgenConversation.editPrompt",
-        defaultMessage: "{siteMention} make these changes…",
-        description: "Prompt for continuing work on an existing site from the Sites page"
-      }, {
-        siteMention: deferredConversationBJ({
-          projectId: glen.projectId,
-          title: glen.projectTitle
-        })
-      });
+      inlet = hearth.formatMessage(
+        {
+          id: "appgenConversation.editPrompt",
+          defaultMessage: "{siteMention} make these changes…",
+          description:
+            "Prompt for continuing work on an existing site from the Sites page",
+        },
+        {
+          siteMention: deferredConversationBJ({
+            projectId: glen.projectId,
+            title: glen.projectTitle,
+          }),
+        },
+      );
       break;
   }
   let jetty;
@@ -116,7 +148,7 @@ defaultMessage: "Create a presentation that …",
       jetty = isBareAllowedPermission({
         defaultPrompt: inlet,
         pluginDisplayName: "Sites",
-        pluginId: SITES_OPENAI_BUNDLED_PLUGIN_ID
+        pluginId: SITES_OPENAI_BUNDLED_PLUGIN_ID,
       });
       break;
     case "edit":
@@ -129,14 +161,16 @@ defaultMessage: "Create a presentation that …",
   fjord({
     activeProject: null,
     prefillPrompt: jetty,
-    startInSidebar: true
+    startInSidebar: true,
   });
-  glen.type === "edit" && glen.liveUrl != null && ensureAppActionPayloadSchemasInit.dispatchMessage("open-in-browser", {
-    initiator: "sites_library",
-    openTarget: "in-app-browser",
-    source: "manual",
-    url: glen.liveUrl
-  });
+  glen.type === "edit" &&
+    glen.liveUrl != null &&
+    ensureAppActionPayloadSchemasInit.dispatchMessage("open-in-browser", {
+      initiator: "sites_library",
+      openTarget: "in-app-browser",
+      source: "manual",
+      url: glen.liveUrl,
+    });
 }
 export const startAppgenConversationN = esmInit(() => {
   strongMarkerFromOptions();

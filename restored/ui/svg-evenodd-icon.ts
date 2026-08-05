@@ -38,6 +38,20 @@ export function svgEvenoddIcon() {
   }
 
   return peers.e(() => {
-    F3s = peers.c(), peers.Ho(), peers.Au(), peers.hZ(), peers.D3s(), peers.pj(), peers.PFi(), peers.kM(), peers.Yf(), peers.II(), peers.gT(), peers.jI(), peers.Gm(), peers.N3s(), I3s = peers.J();
+    ((F3s = peers.c()),
+      peers.Ho(),
+      peers.Au(),
+      peers.hZ(),
+      peers.D3s(),
+      peers.pj(),
+      peers.PFi(),
+      peers.kM(),
+      peers.Yf(),
+      peers.II(),
+      peers.gT(),
+      peers.jI(),
+      peers.Gm(),
+      peers.N3s(),
+      (I3s = peers.J()));
   });
 }

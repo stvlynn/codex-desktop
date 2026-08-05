@@ -28,6 +28,11 @@ export function bindDeferredgj() {
   }
 
   return peers.e(() => {
-    hmo = peers.c(), peers.Ho(), peers.Au(), peers.DD(), peers.zpo(), peers.pmo();
+    ((hmo = peers.c()),
+      peers.Ho(),
+      peers.Au(),
+      peers.DD(),
+      peers.zpo(),
+      peers.pmo());
   });
 }

@@ -10,9 +10,20 @@ import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-res
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { clampZoomPercent } from "../../artifact/clamp-zoom-percent";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { WritingBlockRenderer } from "../../composer/writing-block-renderer";
 import { SUPPORTED_NODE_PLATFORMS } from "../../config/supported-node-platforms";
@@ -20,9 +31,15 @@ import { X_CODEX_BINARY_RESPONSE_HEADER } from "../../config/x-codex-binary-resp
 import { deferredConversationN } from "../../conversation/deferred-conversation-n";
 import { ensureSteeringUserMessageClusterInit } from "../../conversation/ensure-steering-user-message-cluster-init";
 import { appServices } from "../../desktop/desktop-services";
-import { CODEX_WORKTREE_PATH_ENV_KEY, LOCAL_ENVIRONMENT_CONFIG_PATH_KEY } from "../../env/codex-path-env-keys";
+import {
+  CODEX_WORKTREE_PATH_ENV_KEY,
+  LOCAL_ENVIRONMENT_CONFIG_PATH_KEY,
+} from "../../env/codex-path-env-keys";
 import { pathContainsWorktreesDir } from "../../files/path-contains-worktrees-dir";
-import { ensureTanstackReactFormApiInit, useTanstackForm } from "../../forms/tanstack-react-form";
+import {
+  ensureTanstackReactFormApiInit,
+  useTanstackForm,
+} from "../../forms/tanstack-react-form";
 import { getHostConfigId } from "../../hooks/host-rpc-client";
 import { usePointerSurfaceInteractionGate as UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
@@ -31,7 +48,10 @@ import { AppIconBO } from "../../icons/app-icon-bo";
 import { AppIconMA } from "../../icons/app-icon-ma";
 import { ensureFlaskIconInit, FlaskIcon } from "../../icons/flask-icon";
 import { ensureHooksFocusIconInit } from "../../icons/hooks-settings-icons";
-import { ensurePlayOutlineIconInit, PlayOutlineIcon } from "../../icons/play-outline-icon";
+import {
+  ensurePlayOutlineIconInit,
+  PlayOutlineIcon,
+} from "../../icons/play-outline-icon";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { scrollAppActionTargetTo } from "../../navigation/app-action-dom";
@@ -48,7 +68,10 @@ import { identity } from "../../utils/identity";
 import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { toggleSortedIdList as ToggleSortedIdList } from "../../utils/toggle-sorted-id-list";
-import { ensureLocalEnvironmentWorkflowMessagesInit, localEnvironmentWorkflowMessages } from "../local-environment-workflow-messages";
+import {
+  ensureLocalEnvironmentWorkflowMessagesInit,
+  localEnvironmentWorkflowMessages,
+} from "../local-environment-workflow-messages";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
 import { buildVscodeQueryKey } from "../vscode-query-key";
 
@@ -71,4 +94,22 @@ const localEnvironmentEditorUnderscore: any = undefined;
 const localEnvironmentEditorV: any = undefined;
 const localEnvironmentEditorY: any = undefined;
 
-export { localEnvironmentEditorUnderscore, LocalEnvironmentEditorA as localEnvironmentEditorA, localEnvironmentEditorC, localEnvironmentEditorD, localEnvironmentEditorF, LocalEnvironmentEditorG as localEnvironmentEditorG, localEnvironmentEditorH, localEnvironmentEditorI, localEnvironmentEditorL, localEnvironmentEditorM, localEnvironmentEditorO, localEnvironmentEditorP, LocalEnvironmentEditorR as localEnvironmentEditorR, localEnvironmentEditorS, localEnvironmentEditorU, localEnvironmentEditorV, localEnvironmentEditorY };
+export {
+  localEnvironmentEditorUnderscore,
+  LocalEnvironmentEditorA as localEnvironmentEditorA,
+  localEnvironmentEditorC,
+  localEnvironmentEditorD,
+  localEnvironmentEditorF,
+  LocalEnvironmentEditorG as localEnvironmentEditorG,
+  localEnvironmentEditorH,
+  localEnvironmentEditorI,
+  localEnvironmentEditorL,
+  localEnvironmentEditorM,
+  localEnvironmentEditorO,
+  localEnvironmentEditorP,
+  LocalEnvironmentEditorR as localEnvironmentEditorR,
+  localEnvironmentEditorS,
+  localEnvironmentEditorU,
+  localEnvironmentEditorV,
+  localEnvironmentEditorY,
+};

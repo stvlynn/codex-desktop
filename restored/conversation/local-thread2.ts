@@ -52,6 +52,32 @@ export function bindLocalThread2() {
   }
 
   return peers.e(() => {
-    n$o = peers.c(), peers.Ho(), r$o = peers.r(peers.o(), 1), peers.$u(), peers.Pp(), peers.qR(), peers.$m(), peers.PI(), peers.PQo(), peers.LQo(), peers.BQo(), peers.bxo(), peers.UQo(), peers.Hti(), peers.fUi(), peers.xUi(), peers.P8i(), peers.ch(), peers.GQo(), peers.qQo(), peers.XQo(), peers.aV(), peers.L8i(), peers.ed(), peers.uQo(), peers.Lzo(), mY = peers.J();
+    ((n$o = peers.c()),
+      peers.Ho(),
+      (r$o = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.Pp(),
+      peers.qR(),
+      peers.$m(),
+      peers.PI(),
+      peers.PQo(),
+      peers.LQo(),
+      peers.BQo(),
+      peers.bxo(),
+      peers.UQo(),
+      peers.Hti(),
+      peers.fUi(),
+      peers.xUi(),
+      peers.P8i(),
+      peers.ch(),
+      peers.GQo(),
+      peers.qQo(),
+      peers.XQo(),
+      peers.aV(),
+      peers.L8i(),
+      peers.ed(),
+      peers.uQo(),
+      peers.Lzo(),
+      (mY = peers.J()));
   });
 }

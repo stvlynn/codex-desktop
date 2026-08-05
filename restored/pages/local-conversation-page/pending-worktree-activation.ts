@@ -32,10 +32,7 @@ export type ExecutePendingWorktreeActivationArgs = {
   conversationId: string;
   navigate: (path: string) => void;
   /** Bundle `Fx` — soft callers must catch peer-gated throws. */
-  tryActivate?: (
-    conversationId: string,
-    options?: unknown,
-  ) => boolean;
+  tryActivate?: (conversationId: string, options?: unknown) => boolean;
   options?: unknown;
 };
 

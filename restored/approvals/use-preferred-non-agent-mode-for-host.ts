@@ -11,7 +11,9 @@ export type UsePreferredNonAgentModeForHostPeers = {
 let peers: UsePreferredNonAgentModeForHostPeers | null = null;
 
 /** Wire usePreferredNonAgentModeForHost peers once companions land. */
-export function setUsePreferredNonAgentModeForHostPeers(next: UsePreferredNonAgentModeForHostPeers): void {
+export function setUsePreferredNonAgentModeForHostPeers(
+  next: UsePreferredNonAgentModeForHostPeers,
+): void {
   peers = next;
 }
 

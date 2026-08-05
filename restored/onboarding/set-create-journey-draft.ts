@@ -10,7 +10,9 @@ export type CreateJourneyDraftPeers = {
 let peers: CreateJourneyDraftPeers | null = null;
 
 /** Wire setCreateJourneyDraft peers once companions land. */
-export function setCreateJourneyDraftPeers(next: CreateJourneyDraftPeers): void {
+export function setCreateJourneyDraftPeers(
+  next: CreateJourneyDraftPeers,
+): void {
   peers = next;
 }
 

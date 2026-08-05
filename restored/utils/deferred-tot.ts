@@ -31,6 +31,33 @@ export function deferredTot() {
   }
 
   return peers.e(() => {
-    peers.Hkt(), peers.Wkt(), peers.Kkt(), peers.Xkt(), peers.Qkt(), peers.aAt(), peers.tAt(), peers.sAt(), lAt = Array.prototype.map, uAt = [`y`, `z`, `a`, `f`, `p`, `n`, `µ`, `m`, ``, `k`, `M`, `G`, `T`, `P`, `E`, `Z`, `Y`];
+    (peers.Hkt(),
+      peers.Wkt(),
+      peers.Kkt(),
+      peers.Xkt(),
+      peers.Qkt(),
+      peers.aAt(),
+      peers.tAt(),
+      peers.sAt(),
+      (lAt = Array.prototype.map),
+      (uAt = [
+        `y`,
+        `z`,
+        `a`,
+        `f`,
+        `p`,
+        `n`,
+        `µ`,
+        `m`,
+        ``,
+        `k`,
+        `M`,
+        `G`,
+        `T`,
+        `P`,
+        `E`,
+        `Z`,
+        `Y`,
+      ]));
   });
 }

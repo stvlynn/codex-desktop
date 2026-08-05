@@ -32,9 +32,7 @@ const React = rolldownRuntimeS(react(), 1) as {
 const FADE_SEGMENT_DELAY_MS = 16;
 const FADE_SEGMENT_MAX_DELAY_MS = 96;
 
-function useChatgptComposerControllerHelper255(
-  request398,
-) {
+function useChatgptComposerControllerHelper255(request398) {
   const UseChatgptComposerControllerHelper247 =
     useChatgptComposerControllerHelper247;
   const UseChatgptComposerControllerHelper248 =
@@ -52,21 +50,10 @@ function useChatgptComposerControllerHelper255(
     } = request398,
     slot2344 = appInitialRT(appInitialJ0),
     slot2345 =
-      React.useContext(
-        chatgptComposerStreamingContext,
-      ) && !item.completed,
-    slot2346 = appInitialIT(
-      appInitialFP,
-      conversationId,
-    ),
-    slot2347 = appInitialIT(
-      appInitialLP,
-      conversationId,
-    ),
-    slot2348 = appInitialIT(
-      appInitialCP,
-      conversationId,
-    ),
+      React.useContext(chatgptComposerStreamingContext) && !item.completed,
+    slot2346 = appInitialIT(appInitialFP, conversationId),
+    slot2347 = appInitialIT(appInitialLP, conversationId),
+    slot2348 = appInitialIT(appInitialCP, conversationId),
     slot2349,
     slot2350,
     slot2351,
@@ -85,8 +72,7 @@ function useChatgptComposerControllerHelper255(
       browserConversationId === undefined
         ? (slot2346 ?? conversationId)
         : browserConversationId;
-    slot2350 =
-      chatgptBrowserHostContext.Provider;
+    slot2350 = chatgptBrowserHostContext.Provider;
     slot2356 = {
       browserConversationId: slot2351,
       conversationOrigin: slot2347,
@@ -102,8 +88,7 @@ function useChatgptComposerControllerHelper255(
       writingBlockIndexes: item.writingBlockIndexes,
     };
     slot2349 = appInitialIL.Provider;
-    slot2355 =
-      slot2348 ? "restricted" : "allow";
+    slot2355 = slot2348 ? "restricted" : "allow";
     slot2352 = "group flex min-w-0 flex-col";
     let slot3482;
     slot3482 = {
@@ -136,9 +121,7 @@ function useChatgptComposerControllerHelper255(
     slot2354 =
       slot3481.length > 0 ? (
         <div className="mt-2">
-          {slot3481.map(
-            useChatgptComposerControllerHelper256,
-          )}
+          {slot3481.map(useChatgptComposerControllerHelper256)}
         </div>
       ) : null;
   }
@@ -157,20 +140,8 @@ function useChatgptComposerControllerHelper255(
       {slot2357}
     </div>
   );
-  let slot2359 = (
-    <AllowProvider
-      value={slot2355}
-    >
-      {slot2358}
-    </AllowProvider>
-  );
-  return (
-    <HostProvider
-      value={slot2356}
-    >
-      {slot2359}
-    </HostProvider>
-  );
+  let slot2359 = <AllowProvider value={slot2355}>{slot2358}</AllowProvider>;
+  return <HostProvider value={slot2356}>{slot2359}</HostProvider>;
 }
 
 export { useChatgptComposerControllerHelper255 };

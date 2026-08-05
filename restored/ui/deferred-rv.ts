@@ -28,6 +28,6 @@ export function deferredRv() {
   }
 
   return peers.e(() => {
-    ADs = peers.c(), peers.sd(), peers.af(), peers.DDs(), jDs = peers.J();
+    ((ADs = peers.c()), peers.sd(), peers.af(), peers.DDs(), (jDs = peers.J()));
   });
 }

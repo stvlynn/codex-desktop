@@ -15,14 +15,21 @@ export type HydrateAppServerHistorySnapshotPeers = {
 let peers: HydrateAppServerHistorySnapshotPeers | null = null;
 
 /** Wire hydrateAppServerHistorySnapshot peers once companions land. */
-export function setHydrateAppServerHistorySnapshotPeers(next: HydrateAppServerHistorySnapshotPeers): void {
+export function setHydrateAppServerHistorySnapshotPeers(
+  next: HydrateAppServerHistorySnapshotPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `im` / internal `snc`.
  */
-export function hydrateAppServerHistorySnapshot(e: unknown, t: unknown, n: unknown, r: unknown) {
+export function hydrateAppServerHistorySnapshot(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+  r: unknown,
+) {
   if (peers == null) {
     throw new Error("hydrateAppServerHistorySnapshot peers are not configured");
   }

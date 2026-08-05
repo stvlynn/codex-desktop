@@ -2,7 +2,11 @@
 // Bundle export `sat` — pure helper.
 
 /** Median normalized audio level over `samples[start..end)`. */
-export function medianAudioLevel(samples: ArrayLike<number>, start: number, end: number): number {
+export function medianAudioLevel(
+  samples: ArrayLike<number>,
+  start: number,
+  end: number,
+): number {
   const levels: number[] = [];
   for (let i = start; i < end; i += 1) {
     const clamped = Math.max(-100, Math.min(-10, samples[i] ?? -100));

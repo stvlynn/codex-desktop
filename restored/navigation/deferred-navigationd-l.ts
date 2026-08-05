@@ -15,7 +15,9 @@ export type BindDeferredNavigationdLPeers = {
 let peers: BindDeferredNavigationdLPeers | null = null;
 
 /** Wire bindDeferredNavigationdL peers once companions land. */
-export function setBindDeferredNavigationdLPeers(next: BindDeferredNavigationdLPeers): void {
+export function setBindDeferredNavigationdLPeers(
+  next: BindDeferredNavigationdLPeers,
+): void {
   peers = next;
 }
 
@@ -28,6 +30,12 @@ export function bindDeferredNavigationdL() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.$u(), peers.Gfa(), peers.Ufa(), peers.VL(), peers.fb(), peers._Xt();
+    (peers.Au(),
+      peers.$u(),
+      peers.Gfa(),
+      peers.Ufa(),
+      peers.VL(),
+      peers.fb(),
+      peers._Xt());
   });
 }

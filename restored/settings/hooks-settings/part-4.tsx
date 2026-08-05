@@ -16,9 +16,25 @@ import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-res
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { useResolvedAppByIdOrDisplayName } from "../../apps/use-resolved-app-by-id-or-display-name";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Cd_Init, ensureComposerEsm_Ed_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Td_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Cd_Init,
+  ensureComposerEsm_Ed_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_RV_Init,
+  ensureComposerEsm_Td_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { Link } from "../../boundaries/react-router-link";
 import { useLocation } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -64,12 +80,21 @@ import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-
 import { resetStoreAtomValueSf as ResetStoreAtomValueSf } from "../../utils/set-store-atom-value";
 import { ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
 import { identityCwd } from "../../utils/workspace-paths";
-import { computeHookAttention, summarizeHooksByEvent } from "../hooks-event-helpers";
+import {
+  computeHookAttention,
+  summarizeHooksByEvent,
+} from "../hooks-event-helpers";
 import { listHooksForHostQueryAtom } from "../hooks-query-atoms";
 import { readCodexHomeFromQuery } from "../read-codex-home-from-query";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { initSettingsLoadingRow, SettingsLoadingRow } from "../settings-loading-row";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  initSettingsLoadingRow,
+  SettingsLoadingRow,
+} from "../settings-loading-row";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { useChronicleSettingsSection as UseChronicleSettingsSection } from "../use-chronicle-settings-section";
 
 // Wave5d soft stubs.
@@ -133,20 +158,14 @@ export function HooksSettingsIcon() {
     quill = useLocation(),
     [reef, sage] = AppInitialW5(),
     topaz = useQueryClient(),
-    {
-      selectedHostId,
-      setSelectedHostId
-    } = useSelectedHost(),
+    { selectedHostId, setSelectedHostId } = useSelectedHost(),
     ultra = ensureSteeringUserMessageClusterInit(selectedHostId),
     vapor = CodexPluginActionResult(AppInitialX4),
     wheat = CodexPluginActionResult(ensureEnvironmentLabelsR3Init),
     yarn = {
-      hostId: selectedHostId
+      hostId: selectedHostId,
     };
-  let {
-      data,
-      isPending
-    } = CodexBrowserSurfaceActionType(AppInitialA3, yarn),
+  let { data, isPending } = CodexBrowserSurfaceActionType(AppInitialA3, yarn),
     zephyr = reef.get("hostId");
   let acorn = zephyr,
     bloom = acorn == null || acorn === selectedHostId,
@@ -156,22 +175,29 @@ export function HooksSettingsIcon() {
     let wave = bloom ? reef.get("projectRoot") : null,
       apex = bloom ? reef.get("pluginId") : null,
       brook = [];
-    selectedHostId === "local" ? brook = vapor : wheat?.hostId === selectedHostId && (brook = [wheat.remotePath]);
-    coral = data == null ? undefined : useResolvedAppByIdOrDisplayName(data.roots, brook, wave);
-    drift = bloom ? ExpandableStatusSection({
-      pluginId: apex,
-      source: reef.get("source"),
-      projectRoot: wave,
-      projectRoots: coral
-    }) : null;
+    selectedHostId === "local"
+      ? (brook = vapor)
+      : wheat?.hostId === selectedHostId && (brook = [wheat.remotePath]);
+    coral =
+      data == null
+        ? undefined
+        : useResolvedAppByIdOrDisplayName(data.roots, brook, wave);
+    drift = bloom
+      ? ExpandableStatusSection({
+          pluginId: apex,
+          source: reef.get("source"),
+          projectRoot: wave,
+          projectRoots: coral,
+        })
+      : null;
   }
   let eagle = drift,
     frost = {
       hostId: selectedHostId,
-      cwds: coral
+      cwds: coral,
     };
   let glide = CodexBrowserSurfaceActionType(listHooksForHostQueryAtom, frost),
-    honey = cliff => {
+    honey = (cliff) => {
       setSelectedHostId(cliff);
     };
   let iris = mint.useEffectEvent(honey),
@@ -181,7 +207,7 @@ export function HooksSettingsIcon() {
         return;
       }
       AppInitialKz(topaz, selectedHostId, {
-        refetchType: "active"
+        refetchType: "active",
       });
     };
   let knoll;
@@ -189,23 +215,28 @@ export function HooksSettingsIcon() {
   mint.useEffect(jewel, knoll);
   let lunar = CodexBrowserSurfaceActionType(AppInitialAz, selectedHostId),
     moss = () => {
-      glide.refetch().then(async value => {
-        value.isSuccess && (await AppInitialKz(topaz, selectedHostId, {
-          broadcast: true,
-          refetchType: "none"
-        }), olive.get(toastAtom).success(prism.formatMessage({
-          id: "settings.hooks.refresh.success",
-          defaultMessage: "Refreshed hooks",
-          description: "Success toast shown after manually refreshing hooks"
-        })));
+      glide.refetch().then(async (value) => {
+        value.isSuccess &&
+          (await AppInitialKz(topaz, selectedHostId, {
+            broadcast: true,
+            refetchType: "none",
+          }),
+          olive.get(toastAtom).success(
+            prism.formatMessage({
+              id: "settings.hooks.refresh.success",
+              defaultMessage: "Refreshed hooks",
+              description:
+                "Success toast shown after manually refreshing hooks",
+            }),
+          ));
       });
     };
   let north = moss,
-    orbit = dusk => {
+    orbit = (dusk) => {
       let elm = new URLSearchParams(reef);
       AppInitialEl(elm, selectedHostId, dusk);
       sage(elm, {
-        replace: true
+        replace: true,
       });
     };
   let pine = orbit,
@@ -216,33 +247,41 @@ export function HooksSettingsIcon() {
     unity,
     vale;
   unity = (event, fern) => {
-    lunar.mutate([{
-      key: event.key,
-      enabled: fern
-    }]);
+    lunar.mutate([
+      {
+        key: event.key,
+        enabled: fern,
+      },
+    ]);
   };
-  vale = event => {
-    lunar.mutate([{
-      key: event.key,
-      trustedHash: event.currentHash
-    }]);
+  vale = (event) => {
+    lunar.mutate([
+      {
+        key: event.key,
+        trustedHash: event.currentHash,
+      },
+    ]);
   };
-  return <HooksSettingsHelper13 {...{
-    entries: quest,
-    hostId: selectedHostId,
-    isRemoteHost: ridge,
-    isLoadingProjectRoots: isPending,
-    loadError: glide.error,
-    isLoading: glide.isPending,
-    isRefreshing: storm,
-    projectRootLabels: tide,
-    projectRoots: coral,
-    selectedSourceSection: eagle,
-    onSelectSourceSection: pine,
-    onRefreshHooks: north,
-    onToggleHookEnabled: unity,
-    onTrustHook: vale
-  }} />;
+  return (
+    <HooksSettingsHelper13
+      {...{
+        entries: quest,
+        hostId: selectedHostId,
+        isRemoteHost: ridge,
+        isLoadingProjectRoots: isPending,
+        loadError: glide.error,
+        isLoading: glide.isPending,
+        isRefreshing: storm,
+        projectRootLabels: tide,
+        projectRoots: coral,
+        selectedSourceSection: eagle,
+        onSelectSourceSection: pine,
+        onRefreshHooks: north,
+        onToggleHookEnabled: unity,
+        onTrustHook: vale,
+      }}
+    />
+  );
 }
 var $t, mint, nova;
 esmInit(() => {

@@ -5,7 +5,9 @@ import type { ReactElement, SVGProps } from "react";
 
 export type KeyboardShortcutsSettingsNavIconProps = SVGProps<SVGSVGElement>;
 
-export function KeyboardShortcutsSettingsNavIcon(props: KeyboardShortcutsSettingsNavIconProps): ReactElement {
+export function KeyboardShortcutsSettingsNavIcon(
+  props: KeyboardShortcutsSettingsNavIconProps,
+): ReactElement {
   return (
     <svg
       width={20}

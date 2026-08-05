@@ -25,6 +25,6 @@ export function heartbeatSchedule() {
   }
 
   return peers.e(() => {
-    t1c = peers.c(), n1c = peers.J();
+    ((t1c = peers.c()), (n1c = peers.J()));
   });
 }

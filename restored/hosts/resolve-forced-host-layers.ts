@@ -9,7 +9,9 @@ export type ResolveForcedHostLayersPeers = {
 let peers: ResolveForcedHostLayersPeers | null = null;
 
 /** Wire resolveForcedHostLayers peers once companions land. */
-export function setResolveForcedHostLayersPeers(next: ResolveForcedHostLayersPeers): void {
+export function setResolveForcedHostLayersPeers(
+  next: ResolveForcedHostLayersPeers,
+): void {
   peers = next;
 }
 
@@ -21,8 +23,6 @@ async function resolveForcedHostLayers(e, t) {
     throw new Error("resolveForcedHostLayers peers are not configured");
   }
 
-  let {
-    layers: n
-  } = await peers.u5n(e, t, null, !0);
+  let { layers: n } = await peers.u5n(e, t, null, !0);
   return peers.O5n(n);
 }

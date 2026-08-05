@@ -24,9 +24,7 @@ export function hostConfig2() {
     throw new Error("hostConfig2 peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     let n = t(peers.K8n);
     return n != null && e === n.id ? n : peers.G_(e, t(peers.q8n));
   });

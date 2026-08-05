@@ -8,20 +8,14 @@ export const DETACHED_TEXT_HOST: DetachedTextHost = {
   stub: () => {},
   getImageById: () => undefined,
   createImageAsset: () => {
-    throw Error(
-      "createImageAsset is not available in detached text contexts.",
-    );
+    throw Error("createImageAsset is not available in detached text contexts.");
   },
   getChartById: () => undefined,
   getTextStyleByName: () => undefined,
   createChartAsset: () => {
-    throw Error(
-      "createChartAsset is not available in detached text contexts.",
-    );
+    throw Error("createChartAsset is not available in detached text contexts.");
   },
   attachChartAsset: (_asset: unknown) => {
-    throw Error(
-      "attachChartAsset is not available in detached text contexts.",
-    );
+    throw Error("attachChartAsset is not available in detached text contexts.");
   },
 };

@@ -48,7 +48,10 @@ export type InAppBrowserFeatureSlice = {
 };
 
 export type PluginInstallFlowController = {
-  installPlugin: (plugin: unknown, options?: Record<string, unknown>) => unknown;
+  installPlugin: (
+    plugin: unknown,
+    options?: Record<string, unknown>,
+  ) => unknown;
   showPluginInstallDetails: (
     plugin: unknown,
     options?: Record<string, unknown>,
@@ -62,9 +65,10 @@ export type BrowserUseGatePeers = {
   readAtom: <T>(atom: unknown) => T;
   browserSidebarEnabledAtom: unknown;
   isGateEnabled: (gateId: string) => boolean;
-  useHostFeaturesQuery: (
-    hostId: string,
-  ) => { data?: Array<{ name: string; enabled?: boolean }>; isLoading: boolean };
+  useHostFeaturesQuery: (hostId: string) => {
+    data?: Array<{ name: string; enabled?: boolean }>;
+    isLoading: boolean;
+  };
   resolveBrowserUseAvailability: (input: {
     isBrowserAgentGateEnabled: boolean;
     isBrowserSidebarEnabled: unknown;

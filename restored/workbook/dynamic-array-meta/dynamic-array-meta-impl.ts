@@ -17,29 +17,29 @@ export const Cpt = esmInit(() => {
   spreadsheetVn();
   initAddressUtils();
   workbookF();
-      workbookBinding1952 = "XLDAPR";
-      workbookBinding1953 = "{bdbb8cdc-fa1e-496e-a857-3c3f30c029c3}";
-      workbookBinding1954 = 12e4;
-      xpt = [
-        {
-          name: "FILTER",
-          prefix: "_xlfn._xlws.",
-        },
-        {
-          name: "SORT",
-          prefix: "_xlfn._xlws.",
-        },
-        {
-          name: "UNIQUE",
-          prefix: "_xlfn.",
-        },
-      ];
-      Spt = [
-        {
-          name: "LAMBDA",
-          prefix: "_xlfn.",
-        },
-      ];
+  workbookBinding1952 = "XLDAPR";
+  workbookBinding1953 = "{bdbb8cdc-fa1e-496e-a857-3c3f30c029c3}";
+  workbookBinding1954 = 12e4;
+  xpt = [
+    {
+      name: "FILTER",
+      prefix: "_xlfn._xlws.",
+    },
+    {
+      name: "SORT",
+      prefix: "_xlfn._xlws.",
+    },
+    {
+      name: "UNIQUE",
+      prefix: "_xlfn.",
+    },
+  ];
+  Spt = [
+    {
+      name: "LAMBDA",
+      prefix: "_xlfn.",
+    },
+  ];
 });
 
 export function ensureDynamicArrayMetaInit(): void {

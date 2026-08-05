@@ -9,10 +9,7 @@ export {
   buildComposeElementSnapshot,
   workbookFn678,
 } from "./compose-element-snapshot-impl";
-export {
-  snapshotParagraphs,
-  workbookFn685,
-} from "./snapshot-paragraphs-impl";
+export { snapshotParagraphs, workbookFn685 } from "./snapshot-paragraphs-impl";
 
 export {
   snapshotCellRuns,

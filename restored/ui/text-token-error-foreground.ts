@@ -13,7 +13,9 @@ export type TextTokenErrorForegroundPeers = {
 let peers: TextTokenErrorForegroundPeers | null = null;
 
 /** Wire textTokenErrorForeground peers once companions land. */
-export function setTextTokenErrorForegroundPeers(next: TextTokenErrorForegroundPeers): void {
+export function setTextTokenErrorForegroundPeers(
+  next: TextTokenErrorForegroundPeers,
+): void {
   peers = next;
 }
 
@@ -26,6 +28,6 @@ export function textTokenErrorForeground() {
   }
 
   return peers.e(() => {
-    NZl = peers.c(), peers.sd(), PZl = peers.J();
+    ((NZl = peers.c()), peers.sd(), (PZl = peers.J()));
   });
 }

@@ -71,9 +71,7 @@ export function parseUtilityClassStyles(
           type: "rgb",
           value: named.hex,
           transform:
-            named.alpha === undefined
-              ? undefined
-              : { opacity: named.alpha },
+            named.alpha === undefined ? undefined : { opacity: named.alpha },
         };
         matched = true;
       }

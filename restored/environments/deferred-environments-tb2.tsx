@@ -22,7 +22,9 @@ export type BindBindDeferredEnvironmentsTB2Peers = {
 let peers: BindBindDeferredEnvironmentsTB2Peers | null = null;
 
 /** Wire bindBindDeferredEnvironmentsTB2 peers once companions land. */
-export function setBindBindDeferredEnvironmentsTB2Peers(next: BindBindDeferredEnvironmentsTB2Peers): void {
+export function setBindBindDeferredEnvironmentsTB2Peers(
+  next: BindBindDeferredEnvironmentsTB2Peers,
+): void {
   peers = next;
 }
 

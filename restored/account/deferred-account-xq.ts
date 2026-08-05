@@ -23,7 +23,8 @@ export function deferredAccountXq() {
   if (peers == null) {
     throw new Error("deferredAccountXq peers are not configured");
   }
-  return peers.Ma(peers.GM, ({
-    get: e
-  }) => e(peers.qM) && peers.gXr(e(peers.xN)) != null);
+  return peers.Ma(
+    peers.GM,
+    ({ get: e }) => e(peers.qM) && peers.gXr(e(peers.xN)) != null,
+  );
 }

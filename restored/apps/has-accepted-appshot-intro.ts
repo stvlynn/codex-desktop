@@ -14,7 +14,9 @@ export type HasAcceptedAppshotIntroPeers = {
 let peers: HasAcceptedAppshotIntroPeers | null = null;
 
 /** Wire hasAcceptedAppshotIntro peers once companions land. */
-export function setHasAcceptedAppshotIntroPeers(next: HasAcceptedAppshotIntroPeers): void {
+export function setHasAcceptedAppshotIntroPeers(
+  next: HasAcceptedAppshotIntroPeers,
+): void {
   peers = next;
 }
 
@@ -27,6 +29,10 @@ export function hasAcceptedAppshotIntro() {
   }
 
   return peers.e(() => {
-    peers.Gk(), peers.Yf(), peers.Im(), peers.yis(), xis = peers.Pm(`has-accepted-appshot-intro`, !1);
+    (peers.Gk(),
+      peers.Yf(),
+      peers.Im(),
+      peers.yis(),
+      (xis = peers.Pm(`has-accepted-appshot-intro`, !1)));
   });
 }

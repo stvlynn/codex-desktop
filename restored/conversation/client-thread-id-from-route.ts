@@ -48,7 +48,9 @@ export function threadIdFromRouteValue(route: AppRouteValue): string | null {
  * Bundle `yT` / export `d8` — prefer a client-new-thread id on the route
  * atom, otherwise fall back to `threadIdFromRouteValue`.
  */
-export function clientThreadIdFromRouteAtom(route: RouteAtomLike): string | null {
+export function clientThreadIdFromRouteAtom(
+  route: RouteAtomLike,
+): string | null {
   const clientThreadId = route.value.clientThreadId;
   if (
     typeof clientThreadId === "string" &&

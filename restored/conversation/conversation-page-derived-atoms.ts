@@ -10,7 +10,9 @@ export type BindConversationPageDerivedAtomsPeers = {
 let peers: BindConversationPageDerivedAtomsPeers | null = null;
 
 /** Wire bindConversationPageDerivedAtoms peers once companions land. */
-export function setBindConversationPageDerivedAtomsPeers(next: BindConversationPageDerivedAtomsPeers): void {
+export function setBindConversationPageDerivedAtomsPeers(
+  next: BindConversationPageDerivedAtomsPeers,
+): void {
   peers = next;
 }
 
@@ -19,10 +21,10 @@ export function setBindConversationPageDerivedAtomsPeers(next: BindConversationP
  */
 export function bindConversationPageDerivedAtoms() {
   if (peers == null) {
-    throw new Error("bindConversationPageDerivedAtoms peers are not configured");
+    throw new Error(
+      "bindConversationPageDerivedAtoms peers are not configured",
+    );
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => t(peers.fEr, e)[0] ?? null);
+  return peers.Oa(peers.Q, (e, { get: t }) => t(peers.fEr, e)[0] ?? null);
 }

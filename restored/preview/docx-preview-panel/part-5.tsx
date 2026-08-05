@@ -10,15 +10,34 @@ import { ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payl
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { getAppSurfaceDisplayName } from "../../app/app-surface-display-name";
-import { ensureArtifactAnalyticsInit, logArtifactAnnotationSubmitted, logArtifactRefreshClicked } from "../../artifact/artifact-analytics";
-import { buildArtifactAnnotationCommentForTarget, collectRemovedArtifactAnnotationIds, nextArtifactAnnotationCommentLine } from "../../artifact/artifact-annotation-comment";
+import {
+  ensureArtifactAnalyticsInit,
+  logArtifactAnnotationSubmitted,
+  logArtifactRefreshClicked,
+} from "../../artifact/artifact-analytics";
+import {
+  buildArtifactAnnotationCommentForTarget,
+  collectRemovedArtifactAnnotationIds,
+  nextArtifactAnnotationCommentLine,
+} from "../../artifact/artifact-annotation-comment";
 import { ArtifactPreviewDownloadButton } from "../../artifact/artifact-preview-download-button";
 import { artifactTabLoading } from "../../artifact/artifact-tab-loading";
 import { hypotDistance } from "../../artifact/hypot-distance";
 import { QueueAutomationRun } from "../../automation/queue-automation-run";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Z8_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Z8_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { deferredComposerBV } from "../../composer/deferred-composer-bv";
 import { DesignComposerSurface } from "../../composer/design-composer-surface";
 import { filterConversationTimelineItems } from "../../conversation/filter-conversation-timeline-items";
@@ -40,7 +59,10 @@ import { newConversationEntrypointId } from "../../navigation/new-conversation-e
 import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import { ensureViteModulepreloadRuntime } from "../../runtime/vite-preload";
-import { ArtifactPreviewStatus, ensureArtifactPreviewStatusInit } from "../../ui/artifact-preview-status";
+import {
+  ArtifactPreviewStatus,
+  ensureArtifactPreviewStatusInit,
+} from "../../ui/artifact-preview-status";
 import { deferredT1 } from "../../ui/deferred-t1";
 import { getIconPixelSize } from "../../ui/icon-pixel-size";
 import { MemoizedValueBridge } from "../../ui/memoized-value-bridge";
@@ -88,7 +110,8 @@ esmInit(() => {
   zephyr();
   ensureViteModulepreloadRuntime();
   $ = "codex-docx-preview";
-  ridge = "h-full min-h-0 overflow-auto bg-token-side-bar-background overscroll-contain";
+  ridge =
+    "h-full min-h-0 overflow-auto bg-token-side-bar-background overscroll-contain";
   storm = `
   .${$}-wrapper {
     min-height: 100%;
@@ -141,14 +164,17 @@ esmInit(() => {
   tide = 75;
   unity = 12;
   vale = `section.${$}`;
-  wave = vitePreload(async () => {
-    let {
-      renderAsync
-    } = await import("docx-preview");
-    return {
-      renderAsync
-    };
-  }, __vite__mapDeps([0, 1]), import.meta.url).then(({
-    renderAsync
-  }) => renderAsync, () => null);
+  wave = vitePreload(
+    async () => {
+      let { renderAsync } = await import("docx-preview");
+      return {
+        renderAsync,
+      };
+    },
+    __vite__mapDeps([0, 1]),
+    import.meta.url,
+  ).then(
+    ({ renderAsync }) => renderAsync,
+    () => null,
+  );
 })();

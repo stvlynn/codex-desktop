@@ -73,12 +73,16 @@ export class DocumentStyleResolver {
     if (key) return this.#idByName.get(key);
   }
 
-  resolveByName(name: string | null | undefined): ResolvedDocumentStyle | undefined {
+  resolveByName(
+    name: string | null | undefined,
+  ): ResolvedDocumentStyle | undefined {
     const id = this.resolveStyleIdByName(name);
     if (id) return this.resolveExplicit(id);
   }
 
-  resolveExplicit(styleId: string | null | undefined): ResolvedDocumentStyle | undefined {
+  resolveExplicit(
+    styleId: string | null | undefined,
+  ): ResolvedDocumentStyle | undefined {
     if (!styleId) return;
     if (this.#resolved.has(styleId))
       return this.#resolved.get(styleId) ?? undefined;
@@ -93,7 +97,10 @@ export class DocumentStyleResolver {
     this.#resolving.delete(styleId);
     const resolved: ResolvedDocumentStyle = {
       textStyle: mergeTextStyle(def.textStyle, base?.textStyle),
-      paragraphStyle: mergeParagraphStyle(def.paragraphStyle, base?.paragraphStyle),
+      paragraphStyle: mergeParagraphStyle(
+        def.paragraphStyle,
+        base?.paragraphStyle,
+      ),
       spaceBefore: def.spaceBefore ?? base?.spaceBefore,
       spaceAfter: def.spaceAfter ?? base?.spaceAfter,
       contextualSpacing:

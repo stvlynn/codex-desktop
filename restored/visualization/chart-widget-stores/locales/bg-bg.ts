@@ -16,27 +16,33 @@ const messages: Record<string, string> = {
   "widgets.baseCarousel.previousItems": "Предишни елементи от въртележката",
   "widgets.cardCarousel.goToArticle": "Към статията",
   "widgets.cardCarousel.nextCards": "Следващи карти",
-  "widgets.cardCarousel.nextCardsInCarousel": "Следващи карти в {carouselLabel}",
+  "widgets.cardCarousel.nextCardsInCarousel":
+    "Следващи карти в {carouselLabel}",
   "widgets.cardCarousel.previousCards": "Предишни карти",
-  "widgets.cardCarousel.previousCardsInCarousel": "Предишни карти в {carouselLabel}",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "Предишни карти в {carouselLabel}",
   "widgets.debug.hideCurrentState": "Скриване на текущото състояние",
   "widgets.debug.nextState": "Следващо състояние",
   "widgets.debug.previousState": "Предишно състояние",
   "widgets.debug.selectedState": "Избрано състояние",
   "widgets.debug.showCurrentState": "Покажи текущото състояние",
   "widgets.debug.state": "Състояние",
-  "widgets.debug.unableToSerializeSelectedState": "Неуспешно сериализиране на избраното състояние.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "Неуспешно сериализиране на избраното състояние.",
   "widgets.hermes.artifact.viewMore": "Показване на още {count}",
   "widgets.hermes.calendarEvent.moreAttendees": "+още {count}",
   "widgets.hermes.calendarEvent.singleTime": "{date} в {time}",
   "widgets.hermes.calendarEvent.timeRange": "{date}, {startTime} – {endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "{agentName} се нуждае от достъп, за да продължи",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName} се нуждае от вашето разрешение, за да продължи",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "{agentName} се нуждае от достъп, за да продължи",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName} се нуждае от вашето разрешение, за да продължи",
   "widgets.hermes.genericResponse.viewFullscreen": "Преглед на цял екран",
   "widgets.hermes.genericTool.details": "Подробности",
   "widgets.hermes.genericTool.read": "Прочитане",
   "widgets.hermes.genericTool.request": "Заявка",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} иска да използва {connectorName}, за да стартира {toolName}.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} иска да използва {connectorName}, за да стартира {toolName}.",
   "widgets.hermes.genericTool.viewFullscreen": "Преглед на цял екран",
   "widgets.hermes.genericTool.write": "Запис",
   "widgets.hermes.googleCalendarCreate.create": "Създаване",
@@ -49,7 +55,8 @@ const messages: Record<string, string> = {
   "widgets.hermes.permission.moreInformation": "Още информация",
   "widgets.hermes.permission.notNow": "Не сега",
   "widgets.hermes.permission.reconnect": "Свържете отново",
-  "widgets.hermes.permission.reconnectToConnector": "Свържете се отново с {connectorName}",
+  "widgets.hermes.permission.reconnectToConnector":
+    "Свържете се отново с {connectorName}",
   "widgets.hermes.sendEmail.approveAction": "Одобряване на действие",
   "widgets.hermes.sendEmail.bcc": "Скрито копие",
   "widgets.hermes.sendEmail.cc": "Копие",
@@ -62,79 +69,141 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "покажи по-малко",
   "widgets.hermes.taskStatus.canceled": "Задачата е отменена",
   "widgets.hermes.taskStatus.canceling": "Отменяне",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Преглеждане на предишни съобщения",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Преглеждане на предишни съобщения",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Преглеждане на предишни съобщения",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Преглеждане на предишни съобщения",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Преглежда предишни съобщения",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Преглеждане на предишни съобщения",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Преглеждане на предишни съобщения",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Преглеждане на предишни съобщения",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Преглеждане на предишни съобщения",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Преглеждане на предишни съобщения",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Преглеждане на предишни съобщения",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Проверяване на контекста",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Преглеждане на контекста",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Преглеждане на контекста",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Преглеждане на контекста",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Преглеждане на контекста",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Преглеждане на контекста отново",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Сканиране на контекста",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Преглеждане на контекста",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Активиране на агента",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Стартиране на агента",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Активиране на агента",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Извикване на агент",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Свързване с агент",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "Свързване с агента",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Събуждане на агента",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Инициализиране на агента",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Събуждане на агента",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Стартиране на агента",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "Извикване на агент",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Активиране на компютъра",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Стартиране на компютъра",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Стартиране на компютъра",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Инициализиране на компютъра",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Стартиране на компютъра",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Стартиране на компютъра",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Стартиране на компютъра",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Събуждане на компютъра",
-  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Очертаване на курса",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Преглеждане на предишни съобщения",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Преглеждане на предишни съобщения",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Преглеждане на предишни съобщения",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Преглеждане на предишни съобщения",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Преглежда предишни съобщения",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Преглеждане на предишни съобщения",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Преглеждане на предишни съобщения",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Преглеждане на предишни съобщения",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Преглеждане на предишни съобщения",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Преглеждане на предишни съобщения",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Преглеждане на предишни съобщения",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Проверяване на контекста",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Преглеждане на контекста",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Преглеждане на контекста",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Преглеждане на контекста",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Преглеждане на контекста",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Преглеждане на контекста отново",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Сканиране на контекста",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Преглеждане на контекста",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Активиране на агента",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Стартиране на агента",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Активиране на агента",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Извикване на агент",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Свързване с агент",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "Свързване с агента",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Събуждане на агента",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Инициализиране на агента",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Събуждане на агента",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Стартиране на агента",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "Извикване на агент",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Активиране на компютъра",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Стартиране на компютъра",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Стартиране на компютъра",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Инициализиране на компютъра",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Стартиране на компютъра",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Стартиране на компютъра",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Стартиране на компютъра",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Събуждане на компютъра",
+  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse":
+    "Очертаване на курса",
   "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Изготвя план",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Планиране",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Планиране на стъпките",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Планира",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Организиране на следващите стъпки",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Планиране на стъпките",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "Планира",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Организиране на следващите стъпки",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Планиране",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Определяне на посока",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Определяне на насоката",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Изготвяне на план",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Обмисляне на подходи",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Обмислям подход",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Събиране на подробности",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Събира подробности",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Попълване на подробностите",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Събиране на подробности",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Събиране на подробности",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Събиране на подробности",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Събиране на подробности",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Уточняване на детайли",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Преглед на подробностите",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Издирване на подробности",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Отнема повече време от обикновено",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Още работим по него",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Проверете пак след малко",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Определяне на посока",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Определяне на насоката",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Изготвяне на план",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Обмисляне на подходи",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Обмислям подход",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Събиране на подробности",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Събира подробности",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Попълване на подробностите",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Събиране на подробности",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Събиране на подробности",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Събиране на подробности",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Събиране на подробности",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Уточняване на детайли",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Преглед на подробностите",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Издирване на подробности",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Отнема повече време от обикновено",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Още работим по него",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Проверете пак след малко",
   "widgets.hermes.workflow.canceled": "Задачата е отменена",
   "widgets.hermes.workflow.canceledItemLabel": "Отменена",
   "widgets.hermes.workflow.codeBlock.hideLines": "Скрий редовете",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Вижте всички {lineCount} реда",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Вижте всички {lineCount} реда",
   "widgets.hermes.workflow.customWorked": "Работи известно време",
   "widgets.hermes.workflow.customWorking": "В процес",
   "widgets.hermes.workflow.fileWorked": "Сканиран документ",
   "widgets.hermes.workflow.fileWorking": "Сканиране на документ",
   "widgets.hermes.workflow.group.readingConnector": "Четене от {connectorName}",
-  "widgets.hermes.workflow.group.writingConnector": "Записване в {connectorName}",
+  "widgets.hermes.workflow.group.writingConnector":
+    "Записване в {connectorName}",
   "widgets.hermes.workflow.imageWorked": "Анализирано изображение",
   "widgets.hermes.workflow.imageWorking": "Анализиране на изображение",
   "widgets.hermes.workflow.preparingResponse": "Подготвя се отговор",
@@ -148,7 +217,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Покажи по-малко",
   "widgets.listView.showMore": "Покажи още {count}",
   "widgets.radioGroup.options": "опции",
-  "widgets.segmentedControl.selectAnOption": "Изберете опция"
+  "widgets.segmentedControl.selectAnOption": "Изберете опция",
 };
 
 export default messages;

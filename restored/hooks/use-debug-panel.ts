@@ -4,10 +4,7 @@
 // ivt→createScopedSignal; Fft→appScopeAtom; q7/Jht plan helpers.
 
 import { isValidElement, type ReactNode } from "react";
-import {
-  appScopeAtom,
-  createScopedSignal,
-} from "../runtime/app-scope-runtime";
+import { appScopeAtom, createScopedSignal } from "../runtime/app-scope-runtime";
 import { useAppScopeValue } from "../composer/composer-appscope-atoms";
 import { CodexBuildEnvironment } from "../env/codex-build-environment";
 import { getBuildFlavor } from "../desktop/get-build-flavor";

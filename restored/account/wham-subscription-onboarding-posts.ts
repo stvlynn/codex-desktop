@@ -11,7 +11,9 @@ export type WhamSubscriptionOnboardingPostsPeers = {
 let peers: WhamSubscriptionOnboardingPostsPeers | null = null;
 
 /** Wire WHAM safePost peers once companions land. */
-export function setWhamSubscriptionOnboardingPostsPeers(next: WhamSubscriptionOnboardingPostsPeers): void {
+export function setWhamSubscriptionOnboardingPostsPeers(
+  next: WhamSubscriptionOnboardingPostsPeers,
+): void {
   peers = next;
 }
 

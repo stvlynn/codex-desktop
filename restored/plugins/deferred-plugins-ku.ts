@@ -27,7 +27,9 @@ export type BindDeferredPluginsKuPeers = {
 let peers: BindDeferredPluginsKuPeers | null = null;
 
 /** Wire bindDeferredPluginsKu peers once companions land. */
-export function setBindDeferredPluginsKuPeers(next: BindDeferredPluginsKuPeers): void {
+export function setBindDeferredPluginsKuPeers(
+  next: BindDeferredPluginsKuPeers,
+): void {
   peers = next;
 }
 
@@ -40,6 +42,30 @@ export function bindDeferredPluginsKu() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.TR(), peers.DR(), VXc = 100, HXc = [`skill`, `connector`, `plugin`], UXc = [`firstParty`, `marketplace`, `custom`], WXc = new Set([`codex-official`, peers.Wl, `openai-primary-runtime`]), GXc = new Set([...peers.WXc, peers.du, peers.fu]), KXc = new Set([...[peers.P_e, peers.F_e, peers.I_e, peers.R_e, peers.L_e, peers.N_e, peers.z_e, `chrome`, `chrome-dev`].map(e => `${peers.e}@${peers.Wl}`), `documents@openai-primary-runtime`, `pdf@openai-primary-runtime`, `presentations@openai-primary-runtime`, `spreadsheets@openai-primary-runtime`]);
+    (peers.Au(),
+      peers.TR(),
+      peers.DR(),
+      (VXc = 100),
+      (HXc = [`skill`, `connector`, `plugin`]),
+      (UXc = [`firstParty`, `marketplace`, `custom`]),
+      (WXc = new Set([`codex-official`, peers.Wl, `openai-primary-runtime`])),
+      (GXc = new Set([...peers.WXc, peers.du, peers.fu])),
+      (KXc = new Set([
+        ...[
+          peers.P_e,
+          peers.F_e,
+          peers.I_e,
+          peers.R_e,
+          peers.L_e,
+          peers.N_e,
+          peers.z_e,
+          `chrome`,
+          `chrome-dev`,
+        ].map((e) => `${peers.e}@${peers.Wl}`),
+        `documents@openai-primary-runtime`,
+        `pdf@openai-primary-runtime`,
+        `presentations@openai-primary-runtime`,
+        `spreadsheets@openai-primary-runtime`,
+      ])));
   });
 }

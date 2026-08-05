@@ -23,6 +23,6 @@ export function deferredAccountB4() {
     throw new Error("deferredAccountB4 peers are not configured");
   }
   return peers.Ta(peers.Q, peers.her, {
-    isEqual: peers.mer.default
+    isEqual: peers.mer.default,
   });
 }

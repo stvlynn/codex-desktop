@@ -32,9 +32,7 @@ export function buildRoundRectAdjList(
     radiusPx < 0
   )
     return;
-  const adj = Math.round(
-    (radiusPx / Math.min(widthPx, heightPx)) * 1e5,
-  );
+  const adj = Math.round((radiusPx / Math.min(widthPx, heightPx)) * 1e5);
   return [
     {
       name: "adj",

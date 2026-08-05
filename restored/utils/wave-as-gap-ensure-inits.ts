@@ -4,7 +4,10 @@
 // Full bodies remain deferred in app-initial until deeper Stage 3.
 
 /** Bundle export `B9` — electron chrome mode. */
-export function resolveElectronChromeMode(windowType: string, platform: string): "native" | "application-menu" {
+export function resolveElectronChromeMode(
+  windowType: string,
+  platform: string,
+): "native" | "application-menu" {
   if (windowType !== "electron") return "native";
   switch (platform) {
     case "win32":

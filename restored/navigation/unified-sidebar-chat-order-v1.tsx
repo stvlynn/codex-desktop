@@ -24,7 +24,9 @@ export type BindBindUnifiedSidebarChatOrderV1Peers = {
 let peers: BindBindUnifiedSidebarChatOrderV1Peers | null = null;
 
 /** Wire bindBindUnifiedSidebarChatOrderV1 peers once companions land. */
-export function setBindBindUnifiedSidebarChatOrderV1Peers(next: BindBindUnifiedSidebarChatOrderV1Peers): void {
+export function setBindBindUnifiedSidebarChatOrderV1Peers(
+  next: BindBindUnifiedSidebarChatOrderV1Peers,
+): void {
   peers = next;
 }
 
@@ -33,16 +35,33 @@ export function setBindBindUnifiedSidebarChatOrderV1Peers(next: BindBindUnifiedS
  */
 export function bindBindUnifiedSidebarChatOrderV1() {
   if (peers == null) {
-    throw new Error("bindBindUnifiedSidebarChatOrderV1 peers are not configured");
+    throw new Error(
+      "bindBindUnifiedSidebarChatOrderV1 peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), peers.LY(), peers.Im(), WRc = [], GRc = [], KRc = [], qRc = peers.Pm(`unified-sidebar-chat-order-v1`, peers.WRc), JRc = peers.Pm(`unified-sidebar-pinned-order-v1`, peers.GRc), YRc = peers.Pm(`unified-sidebar-project-order-v1`, peers.KRc), XRc = peers.Ma(peers.Q, ({
-      get: e
-    }) => peers.e(peers.qRc) ?? peers.WRc), ZRc = peers.Ma(peers.Q, ({
-      get: e
-    }) => peers.e(peers.JRc) ?? peers.GRc), QRc = peers.Ma(peers.Q, ({
-      get: e
-    }) => peers.e(peers.YRc) ?? peers.KRc);
+    (peers.Ho(),
+      peers.ed(),
+      peers.LY(),
+      peers.Im(),
+      (WRc = []),
+      (GRc = []),
+      (KRc = []),
+      (qRc = peers.Pm(`unified-sidebar-chat-order-v1`, peers.WRc)),
+      (JRc = peers.Pm(`unified-sidebar-pinned-order-v1`, peers.GRc)),
+      (YRc = peers.Pm(`unified-sidebar-project-order-v1`, peers.KRc)),
+      (XRc = peers.Ma(
+        peers.Q,
+        ({ get: e }) => peers.e(peers.qRc) ?? peers.WRc,
+      )),
+      (ZRc = peers.Ma(
+        peers.Q,
+        ({ get: e }) => peers.e(peers.JRc) ?? peers.GRc,
+      )),
+      (QRc = peers.Ma(
+        peers.Q,
+        ({ get: e }) => peers.e(peers.YRc) ?? peers.KRc,
+      )));
   });
 }

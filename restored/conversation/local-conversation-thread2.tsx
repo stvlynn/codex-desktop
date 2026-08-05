@@ -14,7 +14,9 @@ export type BindBindLocalConversationThread2Peers = {
 let peers: BindBindLocalConversationThread2Peers | null = null;
 
 /** Wire bindBindLocalConversationThread2 peers once companions land. */
-export function setBindBindLocalConversationThread2Peers(next: BindBindLocalConversationThread2Peers): void {
+export function setBindBindLocalConversationThread2Peers(
+  next: BindBindLocalConversationThread2Peers,
+): void {
   peers = next;
 }
 
@@ -23,18 +25,18 @@ export function setBindBindLocalConversationThread2Peers(next: BindBindLocalConv
  */
 export function bindBindLocalConversationThread2() {
   if (peers == null) {
-    throw new Error("bindBindLocalConversationThread2 peers are not configured");
+    throw new Error(
+      "bindBindLocalConversationThread2 peers are not configured",
+    );
   }
 
-  return peers.Ma(peers.hT, ({
-    get: e
-  }) => {
+  return peers.Ma(peers.hT, ({ get: e }) => {
     let t = e(peers.qFi).data ?? null;
     return peers.GFi({
       codexHome: e(peers.mFi),
       cwd: e(peers.DI),
       gitMetadata: t,
-      hostId: e(peers.OI)
+      hostId: e(peers.OI),
     });
   });
 }

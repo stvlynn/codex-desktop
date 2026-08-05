@@ -38,8 +38,21 @@ export function bindDeferredGitCQ() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.DD(), peers.Vf(), peers.RAr(), peers.ed(), peers.K_(), peers.aj(), peers.HA(), peers.Wh(), sPr = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => peers.iPr(t(peers.XNr, peers.e), (e, n) => [...(t(peers.Enr, peers.e) ?? n ? [peers.e] : []), ...t(peers.IAr, peers.e)])), cPr = 8;
+    (peers.Ho(),
+      peers.DD(),
+      peers.Vf(),
+      peers.RAr(),
+      peers.ed(),
+      peers.K_(),
+      peers.aj(),
+      peers.HA(),
+      peers.Wh(),
+      (sPr = peers.Oa(peers.Q, (e, { get: t }) =>
+        peers.iPr(t(peers.XNr, peers.e), (e, n) => [
+          ...((t(peers.Enr, peers.e) ?? n) ? [peers.e] : []),
+          ...t(peers.IAr, peers.e),
+        ]),
+      )),
+      (cPr = 8));
   });
 }

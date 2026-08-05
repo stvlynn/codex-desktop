@@ -26,6 +26,6 @@ export function bindFormatDate() {
   }
 
   return peers.e(() => {
-    Eje = peers.r(peers.o()), peers.gje(), peers.Tje();
+    ((Eje = peers.r(peers.o())), peers.gje(), peers.Tje());
   });
 }

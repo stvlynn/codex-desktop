@@ -30,28 +30,33 @@ export function deferredEft() {
   }
 
   return peers.e(() => {
-    peers.ud(), yYe = class {
-      constructor() {
-        this.componentControls = new Set();
-      }
-      subscribe(e) {
-        return this.componentControls.add(peers.e), () => this.componentControls.delete(peers.e);
-      }
-      start(e, t) {
-        this.componentControls.forEach(n => {
-          n.start(peers.e.nativeEvent || peers.e, peers.t);
-        });
-      }
-      cancel() {
-        this.componentControls.forEach(e => {
-          peers.e.cancel();
-        });
-      }
-      stop() {
-        this.componentControls.forEach(e => {
-          peers.e.stop();
-        });
-      }
-    }, bYe = () => new peers.yYe();
+    (peers.ud(),
+      (yYe = class {
+        constructor() {
+          this.componentControls = new Set();
+        }
+        subscribe(e) {
+          return (
+            this.componentControls.add(peers.e),
+            () => this.componentControls.delete(peers.e)
+          );
+        }
+        start(e, t) {
+          this.componentControls.forEach((n) => {
+            n.start(peers.e.nativeEvent || peers.e, peers.t);
+          });
+        }
+        cancel() {
+          this.componentControls.forEach((e) => {
+            peers.e.cancel();
+          });
+        }
+        stop() {
+          this.componentControls.forEach((e) => {
+            peers.e.stop();
+          });
+        }
+      }),
+      (bYe = () => new peers.yYe()));
   });
 }

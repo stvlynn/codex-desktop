@@ -13,7 +13,9 @@ export {
 export type BindDeferredUiCnt2Peers = Record<string, unknown>;
 
 /** @deprecated No-op; AnnotationEditor APIs come from pdfjs-dist. */
-export function setBindDeferredUiCnt2Peers(_next: BindDeferredUiCnt2Peers): void {}
+export function setBindDeferredUiCnt2Peers(
+  _next: BindDeferredUiCnt2Peers,
+): void {}
 
 /**
  * Bundle annotation-editor UI companion init.

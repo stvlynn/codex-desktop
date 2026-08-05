@@ -20,7 +20,9 @@ export type UseLocalCwdModeHostConfigPeers = {
 let peers: UseLocalCwdModeHostConfigPeers | null = null;
 
 /** Wire useLocalCwdModeHostConfig peers once companions land. */
-export function setUseLocalCwdModeHostConfigPeers(next: UseLocalCwdModeHostConfigPeers): void {
+export function setUseLocalCwdModeHostConfigPeers(
+  next: UseLocalCwdModeHostConfigPeers,
+): void {
   peers = next;
 }
 

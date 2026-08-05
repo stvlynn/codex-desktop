@@ -5,16 +5,26 @@
 // AST split 1/1
 /* split-lane-import-depth:1 */
 
-
 import { ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { CODEX_THREAD_OPEN_STREAM_ROLE_RESOLVED_TYPE } from "../../analytics/codex-thread-open-stream-role-resolved-type";
 import { logProductEvent } from "../../analytics/log-product-event";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { findSidebarSectionElement } from "../../navigation/app-action-dom";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import { ensureSkillsPageHelpersInit } from "../../skills/skills-page-helpers";
@@ -48,31 +58,52 @@ const DeferredUiX232: any = undefined;
 /** Wave FY unresolved companion (jsx-collision:ensureSettingsSectionTitleInit@settings/settings-section-title.tsx) */
 const AppInitialZr: any = undefined;
 export function localConversationStreamRoleProductEventR(echo: unknown) {
-  let {
-      conversationId
-    } = echo,
+  let { conversationId } = echo,
     falcon = CodexPluginActionType(appScopeAtom),
     gamma = NativeContextMenuSurface("1488233300"),
     harbor = CodexBrowserSurfaceActionType(AppInitialHr, conversationId),
     indigo = CodexBrowserSurfaceActionType(DeferredUiO22, conversationId),
-    jade = CodexBrowserSurfaceActionType(HeartbeatThreadPermissionsById, conversationId),
+    jade = CodexBrowserSurfaceActionType(
+      HeartbeatThreadPermissionsById,
+      conversationId,
+    ),
     kite = CodexPluginActionResult(AppInitialZr)?.[conversationId],
     lemon = () => {
       let nickel = falcon.get(DeferredUiN2, conversationId),
         onyx = falcon.get(DeferredUiM22, conversationId),
         pearl = AppInitialLr(nickel, onyx),
         quartz = AppInitialRr(nickel, onyx, kite);
-      gamma && pearl != null && falcon.set(AppInitialZr, river => AppInitialIr(river ?? {}, conversationId, pearl));
-      ensureAppActionPayloadSchemasInit.dispatchMessage("heartbeat-automation-thread-state-changed", {
-        threadId: gamma ? conversationId : null,
-        isEligible: gamma && harbor.isEligible,
-        collaborationMode: gamma ? indigo : null,
-        permissions: gamma ? quartz : null,
-        reason: gamma ? harbor.reason : null
-      });
+      gamma &&
+        pearl != null &&
+        falcon.set(AppInitialZr, (river) =>
+          AppInitialIr(river ?? {}, conversationId, pearl),
+        );
+      ensureAppActionPayloadSchemasInit.dispatchMessage(
+        "heartbeat-automation-thread-state-changed",
+        {
+          threadId: gamma ? conversationId : null,
+          isEligible: gamma && harbor.isEligible,
+          collaborationMode: gamma ? indigo : null,
+          permissions: gamma ? quartz : null,
+          reason: gamma ? harbor.reason : null,
+        },
+      );
     };
   let marble;
-  return marble = [kite, conversationId, harbor.isEligible, harbor.reason, jade, gamma, indigo, falcon], bravo.useEffect(lemon, marble), null;
+  return (
+    (marble = [
+      kite,
+      conversationId,
+      harbor.isEligible,
+      harbor.reason,
+      jade,
+      gamma,
+      indigo,
+      falcon,
+    ]),
+    bravo.useEffect(lemon, marble),
+    null
+  );
 }
 var alpha, bravo;
 export const localConversationStreamRoleProductEventI = esmInit(() => {
@@ -87,24 +118,28 @@ export const localConversationStreamRoleProductEventI = esmInit(() => {
   AppInitialVr();
 });
 export function localConversationStreamRoleProductEventT(slate: unknown) {
-  let {
-      conversationId
-    } = slate,
+  let { conversationId } = slate,
     timber = CodexPluginActionType(ensureComposerEsm_S8_Init),
     umbra,
     violet;
-  return umbra = () => {
-    let willow = false;
-    return timber.watch(xenon => {
-      let {
-          get
-        } = xenon,
-        yellow = get(DeferredUiX232, conversationId);
-      yellow == null || willow || (willow = true, logProductEvent(timber, CODEX_THREAD_OPEN_STREAM_ROLE_RESOLVED_TYPE, {
-        streamRole: yellow.role
-      }));
-    });
-  }, violet = [conversationId, timber], delta.useEffect(umbra, violet), null;
+  return (
+    (umbra = () => {
+      let willow = false;
+      return timber.watch((xenon) => {
+        let { get } = xenon,
+          yellow = get(DeferredUiX232, conversationId);
+        yellow == null ||
+          willow ||
+          ((willow = true),
+          logProductEvent(timber, CODEX_THREAD_OPEN_STREAM_ROLE_RESOLVED_TYPE, {
+            streamRole: yellow.role,
+          }));
+      });
+    }),
+    (violet = [conversationId, timber]),
+    delta.useEffect(umbra, violet),
+    null
+  );
 }
 var copper, delta;
 export const localConversationStreamRoleProductEventN = esmInit(() => {

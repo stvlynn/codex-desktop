@@ -26,7 +26,9 @@ export type BindPtBindableHelperPeers = {
 let peers: BindPtBindableHelperPeers | null = null;
 
 /** Wire bindPtBindableHelper peers once companions land. */
-export function setBindPtBindableHelperPeers(next: BindPtBindableHelperPeers): void {
+export function setBindPtBindableHelperPeers(
+  next: BindPtBindableHelperPeers,
+): void {
   peers = next;
 }
 
@@ -39,6 +41,18 @@ export function bindPtBindableHelper() {
   }
 
   return peers.e(() => {
-    Lo = peers.c(), peers.Hn(), ate = peers.r(peers.Mo(), 1), Ro = peers.r(peers.o(), 1), peers.Ha(), peers.Qr(), peers.Ca(), ote = peers.J(), zo = (0, peers.Ro.createContext)(new Map()), ste = (0, peers.Ro.createContext)(void 0), cte = {}, Bo = () => {}, Vo = 0;
+    ((Lo = peers.c()),
+      peers.Hn(),
+      (ate = peers.r(peers.Mo(), 1)),
+      (Ro = peers.r(peers.o(), 1)),
+      peers.Ha(),
+      peers.Qr(),
+      peers.Ca(),
+      (ote = peers.J()),
+      (zo = (0, peers.Ro.createContext)(new Map())),
+      (ste = (0, peers.Ro.createContext)(void 0)),
+      (cte = {}),
+      (Bo = () => {}),
+      (Vo = 0));
   });
 }

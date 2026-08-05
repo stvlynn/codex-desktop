@@ -25,6 +25,7 @@ export function imagePlayground() {
   }
 
   return peers.e(() => {
-    ebs = peers.r(peers.o(), 1), tbs = (0, peers.ebs.createContext)(`default`);
+    ((ebs = peers.r(peers.o(), 1)),
+      (tbs = (0, peers.ebs.createContext)(`default`)));
   });
 }

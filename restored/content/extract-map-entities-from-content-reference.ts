@@ -19,7 +19,9 @@ export function setMapEntitiesParser(parser: MapEntitiesParser): void {
   parseMapEntities = parser;
 }
 
-export function extractMapEntitiesFromContentReference(ref: Record<string, unknown>): unknown[] {
+export function extractMapEntitiesFromContentReference(
+  ref: Record<string, unknown>,
+): unknown[] {
   const type = nonEmptyStringOrNull(ref.type);
   if (type === "businesses_map") return parseBusinesses?.(ref) ?? [];
   if (type !== "map") return [];

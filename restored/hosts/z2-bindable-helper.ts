@@ -10,7 +10,9 @@ export type BindZ2BindableHelperPeers = {
 let peers: BindZ2BindableHelperPeers | null = null;
 
 /** Wire bindZ2BindableHelper peers once companions land. */
-export function setBindZ2BindableHelperPeers(next: BindZ2BindableHelperPeers): void {
+export function setBindZ2BindableHelperPeers(
+  next: BindZ2BindableHelperPeers,
+): void {
   peers = next;
 }
 
@@ -22,8 +24,8 @@ export function bindZ2BindableHelper() {
     throw new Error("bindZ2BindableHelper peers are not configured");
   }
 
-  return peers.JE(({
-    parentThreadId: e,
-    source: t
-  }) => e ?? peers.fg(t)?.parentThreadId ?? null);
+  return peers.JE(
+    ({ parentThreadId: e, source: t }) =>
+      e ?? peers.fg(t)?.parentThreadId ?? null,
+  );
 }

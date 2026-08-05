@@ -13,14 +13,40 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CodexPluginMarketplaceSurface } from "../../analytics/codex-plugin-marketplace-surface";
 import { logProductEvent } from "../../analytics/log-product-event";
 import { ShellLayoutMetricsContext } from "../../app-shell/shell-layout-metrics-context";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S6_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S6_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { QueuedMessageTraySurface } from "../../conversation/queued-message-tray-surface";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
-import { CHATGPT_CODEX_CLOUD_ENVIRONMENTS_SETTINGS_URL, CHATGPT_CODEX_CLOUD_URL } from "../../docs/chatgpt-cloud-urls";
-import { DEVELOPERS_OPENAI_COM_CODEX_APP_COMPUTER_USE_URL, DEVELOPERS_OPENAI_COM_CODEX_APP_LOCAL_ENVIRONMENTS_URL, DEVELOPERS_OPENAI_COM_CODEX_CONCEPTS_SANDBOXING_AUTO_REVIEW_URL, DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL, DEVELOPERS_OPENAI_COM_CODEX_GUIDES_AGENTS_MD_URL, DEVELOPERS_OPENAI_COM_CODEX_IDE_URL, DEVELOPERS_OPENAI_COM_CODEX_MCP_URL } from "../../docs/codex-doc-urls";
+import {
+  CHATGPT_CODEX_CLOUD_ENVIRONMENTS_SETTINGS_URL,
+  CHATGPT_CODEX_CLOUD_URL,
+} from "../../docs/chatgpt-cloud-urls";
+import {
+  DEVELOPERS_OPENAI_COM_CODEX_APP_COMPUTER_USE_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_APP_LOCAL_ENVIRONMENTS_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_CONCEPTS_SANDBOXING_AUTO_REVIEW_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_GUIDES_AGENTS_MD_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_IDE_URL,
+  DEVELOPERS_OPENAI_COM_CODEX_MCP_URL,
+} from "../../docs/codex-doc-urls";
 import { ensureHostRpcClientsInit } from "../../hooks/host-rpc-client";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
@@ -50,8 +76,18 @@ import { quickChatSurfaceCollapsedAtom } from "../../windows/quick-chat-atoms";
 import { setQuickChatSize } from "../../windows/quick-chat-surface-helpers";
 import { appendLoginHintToPurchaseUrl } from "../append-login-hint-to-purchase-url";
 import { resolveAutoReloadMutationAction } from "../auto-reload-save-payload";
-import { formatCreditReloadAmountWithoutSymbol, formatCreditReloadCurrency, formatCreditReloadCurrencySymbol, formatCreditReloadShortfallCost, initCreditReloadDialogFormatting } from "../credit-reload-dialog-formatting";
-import { CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS, parseFormattedCreditsQuantityString, validateCreditsPurchaseQuantity } from "../credits-purchase-field-validators";
+import {
+  formatCreditReloadAmountWithoutSymbol,
+  formatCreditReloadCurrency,
+  formatCreditReloadCurrencySymbol,
+  formatCreditReloadShortfallCost,
+  initCreditReloadDialogFormatting,
+} from "../credit-reload-dialog-formatting";
+import {
+  CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS,
+  parseFormattedCreditsQuantityString,
+  validateCreditsPurchaseQuantity,
+} from "../credits-purchase-field-validators";
 import { CREDIT_RECHARGE_TARGET_OPTIONS } from "../credits-recharge-defaults";
 import { DeferredAccountRy } from "../deferred-account-ry";
 
@@ -83,156 +119,237 @@ function _t(kite) {
       disabled,
       onChange,
       onInvalidCurrencyDraftChange,
-      onBlur
+      onBlur,
     } = kite,
     lemon = harbor.useId(),
     marble = Number.parseInt(minimumBalance, 10),
     nickel = Number.parseInt(value, 10),
-    onyx = Number.isFinite(marble) && Number.isFinite(nickel) ? nickel - marble : 0,
+    onyx =
+      Number.isFinite(marble) && Number.isFinite(nickel) ? nickel - marble : 0,
     pearl = tiers.filter(falcon),
     quartz = [...(pearl.length > 0 ? pearl : tiers)].sort(echo),
-    river = hazel => hazel.minimum_quantity === onyx;
+    river = (hazel) => hazel.minimum_quantity === onyx;
   let slate = quartz.some(river),
     [timber, umbra] = harbor.useState(false),
     violet = timber || !slate,
     willow = error == null ? undefined : lemon,
-    xenon = <legend className="sr-only">
-        {<MemoizedFormattedMessage {...{
-        id: "settings.usage.creditReload.autoReload.discount.reloadAmount.label",
-        defaultMessage: "Minimum reload amount",
-        description: "Accessible group label for the minimum reload amount cards in the discounted auto reload modal"
-      }} />}
-      </legend>;
-  let yellow = quartz.map(item => {
+    xenon = (
+      <legend className="sr-only">
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.usage.creditReload.autoReload.discount.reloadAmount.label",
+              defaultMessage: "Minimum reload amount",
+              description:
+                "Accessible group label for the minimum reload amount cards in the discounted auto reload modal",
+            }}
+          />
+        }
+      </legend>
+    );
+  let yellow = quartz.map((item) => {
       let ivory = formatCreditReloadCurrency({
           intl,
           creditQuantity: item.minimum_quantity,
-          pricingInfo
+          pricingInfo,
         }),
         jasper = !violet && item.minimum_quantity === onyx;
-      return <Alpha key={item.minimum_quantity} {...{
-        ariaLabel: intl.formatMessage({
-          id: "settings.usage.creditReload.autoReload.discount.reloadAmount.option.ariaLabel",
-          defaultMessage: "{price} ({creditCount, number} credits) {discountPercent, number}% off",
-          description: "Accessible label for a discounted auto reload amount card"
-        }, {
-          price: ivory ?? intl.formatNumber(item.minimum_quantity),
-          creditCount: item.minimum_quantity,
-          discountPercent: item.percent_off
-        }),
-        disabled,
-        isSelected: jasper,
-        variant: "discount",
-        onClick: () => {
-          Number.isFinite(marble) && (umbra(false), onInvalidCurrencyDraftChange(false), onChange(String(marble + item.minimum_quantity)), onBlur());
-        },
-        children: [<span className="text-base font-medium text-token-text-primary tabular-nums">
-                  {ivory ?? intl.formatNumber(item.minimum_quantity)}
-                </span>, <span className="text-xs leading-4 font-normal text-token-text-secondary tabular-nums">
-                  {<MemoizedFormattedMessage {...{
-            id: "settings.usage.creditReload.autoReload.discount.reloadAmount.credits",
-            defaultMessage: "{creditCount, number} credits",
-            description: "Credit count shown below an auto reload amount card",
-            values: {
-              creditCount: item.minimum_quantity
-            }
-          }} />}
-                </span>, <Bravo {...{
-          discountPercent: item.percent_off
-        }} />]
-      }} />;
+      return (
+        <Alpha
+          key={item.minimum_quantity}
+          {...{
+            ariaLabel: intl.formatMessage(
+              {
+                id: "settings.usage.creditReload.autoReload.discount.reloadAmount.option.ariaLabel",
+                defaultMessage:
+                  "{price} ({creditCount, number} credits) {discountPercent, number}% off",
+                description:
+                  "Accessible label for a discounted auto reload amount card",
+              },
+              {
+                price: ivory ?? intl.formatNumber(item.minimum_quantity),
+                creditCount: item.minimum_quantity,
+                discountPercent: item.percent_off,
+              },
+            ),
+            disabled,
+            isSelected: jasper,
+            variant: "discount",
+            onClick: () => {
+              Number.isFinite(marble) &&
+                (umbra(false),
+                onInvalidCurrencyDraftChange(false),
+                onChange(String(marble + item.minimum_quantity)),
+                onBlur());
+            },
+            children: [
+              <span className="text-base font-medium text-token-text-primary tabular-nums">
+                {ivory ?? intl.formatNumber(item.minimum_quantity)}
+              </span>,
+              <span className="text-xs leading-4 font-normal text-token-text-secondary tabular-nums">
+                {
+                  <MemoizedFormattedMessage
+                    {...{
+                      id: "settings.usage.creditReload.autoReload.discount.reloadAmount.credits",
+                      defaultMessage: "{creditCount, number} credits",
+                      description:
+                        "Credit count shown below an auto reload amount card",
+                      values: {
+                        creditCount: item.minimum_quantity,
+                      },
+                    }}
+                  />
+                }
+              </span>,
+              <Bravo
+                {...{
+                  discountPercent: item.percent_off,
+                }}
+              />,
+            ],
+          }}
+        />
+      );
     }),
     zinc = intl.formatMessage({
       id: "settings.usage.creditReload.autoReload.discount.reloadAmount.other.ariaLabel",
       defaultMessage: "Other amount",
-      description: "Accessible label for the custom auto reload amount card"
+      description: "Accessible label for the custom auto reload amount card",
     });
   let amber = () => {
     umbra(true);
   };
-  let basalt = <span className="text-base font-medium text-token-text-primary">
-      {<MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.discount.reloadAmount.other",
-      defaultMessage: "Other",
-      description: "Option label for entering a custom auto reload amount"
-    }} />}
-    </span>;
-  let cedar = <span className="text-xs leading-4 font-normal text-token-text-secondary">
-      {<MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.discount.reloadAmount.otherHint",
-      defaultMessage: "Custom amount",
-      description: "Helper text on the Other amount card in the discounted auto reload modal"
-    }} />}
-    </span>;
-  let daisy = <Alpha {...{
-    ariaLabel: zinc,
-    disabled,
-    isSelected: violet,
-    variant: "discount",
-    onClick: amber,
-    children: [basalt, cedar]
-  }} />;
-  let ember = <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+  let basalt = (
+    <span className="text-base font-medium text-token-text-primary">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.usage.creditReload.autoReload.discount.reloadAmount.other",
+            defaultMessage: "Other",
+            description:
+              "Option label for entering a custom auto reload amount",
+          }}
+        />
+      }
+    </span>
+  );
+  let cedar = (
+    <span className="text-xs leading-4 font-normal text-token-text-secondary">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.usage.creditReload.autoReload.discount.reloadAmount.otherHint",
+            defaultMessage: "Custom amount",
+            description:
+              "Helper text on the Other amount card in the discounted auto reload modal",
+          }}
+        />
+      }
+    </span>
+  );
+  let daisy = (
+    <Alpha
+      {...{
+        ariaLabel: zinc,
+        disabled,
+        isSelected: violet,
+        variant: "discount",
+        onClick: amber,
+        children: [basalt, cedar],
+      }}
+    />
+  );
+  let ember = (
+    <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
       {yellow}
       {daisy}
-    </div>;
-  let flint = violet ? <Copper {...{
-    intl,
-    value: onyx > 0 ? String(onyx) : "",
-    pricingInfo,
-    placeholder: intl.formatMessage({
-      id: "settings.usage.creditReload.autoReload.discount.reloadAmount.custom.placeholder",
-      defaultMessage: "Enter amount",
-      description: "Placeholder for the custom currency-denominated auto reload amount input"
-    }),
-    hasError: error != null,
-    disabled,
-    errorDescriptionId: error == null ? undefined : lemon,
-    ariaLabel: intl.formatMessage({
-      id: "settings.usage.creditReload.autoReload.discount.reloadAmount.custom.ariaLabel",
-      defaultMessage: "Custom reload amount",
-      description: "Accessible label for the custom currency-denominated auto reload amount input"
-    }),
-    showCreditQuantity: true,
-    showCurrencyPrefixWhenEmpty: true,
-    discountPercent: DEVELOPERS_OPENAI_COM_CODEX_GUIDES_AGENTS_MD_URL({
-      tiers,
-      targetBalance: value,
-      minimumBalance
-    }),
-    onInvalidCurrencyDraftChange,
-    onBlur,
-    onChange: kelp => {
-      if (!Number.isFinite(marble)) return;
-      let lotus = Number.parseInt(kelp, 10);
-      onChange(Number.isFinite(lotus) ? String(marble + lotus) : "");
-    }
-  }} /> : null;
-  let garnet = error === "target-balance-below-minimum" ? <p id={lemon} className="text-sm text-token-error-foreground">
-        {<MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.discount.reloadAmount.minimum",
-      defaultMessage: "Choose a reload amount of At least {minimumCredits, number} credits",
-      description: "Validation message shown when a discounted auto-reload amount is below the minimum supported amount",
-      values: {
-        minimumCredits: 125
-      }
-    }} />}
-      </p> : error === "missing" ? <p id={lemon} className="text-sm text-token-error-foreground">
-        {<MemoizedFormattedMessage {...{
-      id: "settings.usage.creditReload.autoReload.discount.reloadAmount.required",
-      defaultMessage: "Enter a reload amount",
-      description: "Validation message shown when the custom discounted auto-reload amount is empty"
-    }} />}
-      </p> : <At {...{
-    id: lemon,
-    fieldError: error
-  }} />;
-  return <fieldset className="flex min-w-0 flex-col gap-2" aria-describedby={willow}>
+    </div>
+  );
+  let flint = violet ? (
+    <Copper
+      {...{
+        intl,
+        value: onyx > 0 ? String(onyx) : "",
+        pricingInfo,
+        placeholder: intl.formatMessage({
+          id: "settings.usage.creditReload.autoReload.discount.reloadAmount.custom.placeholder",
+          defaultMessage: "Enter amount",
+          description:
+            "Placeholder for the custom currency-denominated auto reload amount input",
+        }),
+        hasError: error != null,
+        disabled,
+        errorDescriptionId: error == null ? undefined : lemon,
+        ariaLabel: intl.formatMessage({
+          id: "settings.usage.creditReload.autoReload.discount.reloadAmount.custom.ariaLabel",
+          defaultMessage: "Custom reload amount",
+          description:
+            "Accessible label for the custom currency-denominated auto reload amount input",
+        }),
+        showCreditQuantity: true,
+        showCurrencyPrefixWhenEmpty: true,
+        discountPercent: DEVELOPERS_OPENAI_COM_CODEX_GUIDES_AGENTS_MD_URL({
+          tiers,
+          targetBalance: value,
+          minimumBalance,
+        }),
+        onInvalidCurrencyDraftChange,
+        onBlur,
+        onChange: (kelp) => {
+          if (!Number.isFinite(marble)) return;
+          let lotus = Number.parseInt(kelp, 10);
+          onChange(Number.isFinite(lotus) ? String(marble + lotus) : "");
+        },
+      }}
+    />
+  ) : null;
+  let garnet =
+    error === "target-balance-below-minimum" ? (
+      <p id={lemon} className="text-sm text-token-error-foreground">
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.usage.creditReload.autoReload.discount.reloadAmount.minimum",
+              defaultMessage:
+                "Choose a reload amount of At least {minimumCredits, number} credits",
+              description:
+                "Validation message shown when a discounted auto-reload amount is below the minimum supported amount",
+              values: {
+                minimumCredits: 125,
+              },
+            }}
+          />
+        }
+      </p>
+    ) : error === "missing" ? (
+      <p id={lemon} className="text-sm text-token-error-foreground">
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.usage.creditReload.autoReload.discount.reloadAmount.required",
+              defaultMessage: "Enter a reload amount",
+              description:
+                "Validation message shown when the custom discounted auto-reload amount is empty",
+            }}
+          />
+        }
+      </p>
+    ) : (
+      <At
+        {...{
+          id: lemon,
+          fieldError: error,
+        }}
+      />
+    );
+  return (
+    <fieldset className="flex min-w-0 flex-col gap-2" aria-describedby={willow}>
       {xenon}
       {ember}
       {flint}
       {garnet}
-    </fieldset>;
+    </fieldset>
+  );
 }
 function echo(mint, nova) {
   return mint.minimum_quantity - nova.minimum_quantity;

@@ -23,6 +23,6 @@ export function cloud2() {
   }
 
   return peers.e(() => {
-    peers.jf(), peers.Xg();
+    (peers.jf(), peers.Xg());
   });
 }

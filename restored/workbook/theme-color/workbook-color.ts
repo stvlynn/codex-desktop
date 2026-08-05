@@ -27,7 +27,10 @@ export class WorkbookColor {
   #t = false;
   #n;
   #r;
-  constructor(colorCfg567: unknown, colorCfg568?: { resolveThemeColor?: (name: string) => string | undefined }) {
+  constructor(
+    colorCfg567: unknown,
+    colorCfg568?: { resolveThemeColor?: (name: string) => string | undefined },
+  ) {
     if (
       ((this.#r = colorCfg568),
       (this.#t = true),
@@ -82,8 +85,7 @@ export class WorkbookColor {
       this.#e = {
         type: colorTypeEnum.COLOR_TYPE_RGB,
         value:
-          workbookBinding10677?.value ??
-          normalizeHexColor(colorCfg567.value),
+          workbookBinding10677?.value ?? normalizeHexColor(colorCfg567.value),
         transform: normalizeColorTransformConfig({
           opacity: workbookBinding10678,
           lighten: colorCfg567.transform?.lighten,
@@ -255,7 +257,8 @@ export class WorkbookColor {
       this.#n = undefined;
       return;
     }
-    let workbookBinding8366 = this.#e.type ?? colorTypeEnum.COLOR_TYPE_UNSPECIFIED;
+    let workbookBinding8366 =
+      this.#e.type ?? colorTypeEnum.COLOR_TYPE_UNSPECIFIED;
     if (workbookBinding8366 === colorTypeEnum.COLOR_TYPE_RGB) {
       this.#n = applyTransformToHex(this.#e.value, this.#e.transform);
       return;

@@ -8,7 +8,10 @@
 
 import { ensureAccountPlanQueryInit } from "../../account/ensure-account-plan-query-init";
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
-import { appActionSidebarProjectRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { CodexBrowserProfileImportCookieStatus } from "../../analytics/codex-browser-profile-import-cookie-status";
 import { CodexBrowserProfileImportPasswordStatus } from "../../analytics/codex-browser-profile-import-password-status";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
@@ -18,24 +21,120 @@ import { CodexPluginDirectoryEntrypoint } from "../../analytics/codex-plugin-dir
 import { CodexReferralInviteModalBackendErrorType } from "../../analytics/codex-referral-invite-modal-backend-error-type";
 import { shellPanelPinnedDerivedAtom } from "../../app-shell/shell-panel-pin";
 import { AppQueryClientProvider } from "../../app/app-query-client-provider";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { defaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationBranchAtom, chatgptConversationFlagsAtom, chatgptConversationLoadQueryAtom, chatgptConversationPreviewAtom, chatgptConversationServerIdAtom, chatgptConversationsGateAtom, chatgptConversationStatusAtom, chatgptConversationTitleAtom, chatgptThreadDerivedAtomBP, useStepsProseAtom, writingBlocksControllerAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_BF_Init, ensureComposerEsm_BI_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_II_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KF_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MF_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_Ytt_Init, ensureComposerEsm_ZI_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Jj_Init, ensureConversationPageEsm_Lo_Init, ensureConversationPageEsm_Mx_Init, ensureConversationPageEsm_Qa_Init, ensureConversationPageEsm_SP_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationBranchAtom,
+  chatgptConversationFlagsAtom,
+  chatgptConversationLoadQueryAtom,
+  chatgptConversationPreviewAtom,
+  chatgptConversationServerIdAtom,
+  chatgptConversationsGateAtom,
+  chatgptConversationStatusAtom,
+  chatgptConversationTitleAtom,
+  chatgptThreadDerivedAtomBP,
+  useStepsProseAtom,
+  writingBlocksControllerAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_AG_Init,
+  ensureComposerEsm_BF_Init,
+  ensureComposerEsm_BI_Init,
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_II_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_J0_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KF_Init,
+  ensureComposerEsm_M0_Init,
+  ensureComposerEsm_MF_Init,
+  ensureComposerEsm_ML_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_TI_Init,
+  ensureComposerEsm_XP_Init,
+  ensureComposerEsm_Ytt_Init,
+  ensureComposerEsm_ZI_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_FR_Init,
+  ensureConversationPageEsm_GS_Init,
+  ensureConversationPageEsm_GZ_Init,
+  ensureConversationPageEsm_Ist_Init,
+  ensureConversationPageEsm_Jj_Init,
+  ensureConversationPageEsm_Lo_Init,
+  ensureConversationPageEsm_Mx_Init,
+  ensureConversationPageEsm_Qa_Init,
+  ensureConversationPageEsm_SP_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import {
   conversationSourceUnusedExport,
   ensureSummaryPanelDisplayRuntimeInit,
   ensureVirtualizedConversationRowMemoInit,
 } from "../conversation-source";
 import { isIterateeCall } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
-import { _useChatgptComposerControllerA, _useChatgptComposerControllerC, _useChatgptComposerControllerD, _useChatgptComposerControllerF, _useChatgptComposerControllerI, _useChatgptComposerControllerL, _useChatgptComposerControllerM, _useChatgptComposerControllerN, _useChatgptComposerControllerO, _useChatgptComposerControllerP, _useChatgptComposerControllerR, _useChatgptComposerControllerS, useChatgptComposerControllerA, useChatgptComposerControllerC, useChatgptComposerControllerD, useChatgptComposerControllerE, useChatgptComposerControllerF, useChatgptComposerControllerG, useChatgptComposerControllerH, useChatgptComposerControllerI, useChatgptComposerControllerJ, useChatgptComposerControllerK, useChatgptComposerControllerL, useChatgptComposerControllerM, useChatgptComposerControllerN, useChatgptComposerControllerO, useChatgptComposerControllerP, useChatgptComposerControllerR, useChatgptComposerControllerS, useChatgptComposerControllerT, useChatgptComposerControllerU, useChatgptComposerControllerUnderscore } from "../../composer/use-chatgpt-composer-controller";
+import {
+  _useChatgptComposerControllerA,
+  _useChatgptComposerControllerC,
+  _useChatgptComposerControllerD,
+  _useChatgptComposerControllerF,
+  _useChatgptComposerControllerI,
+  _useChatgptComposerControllerL,
+  _useChatgptComposerControllerM,
+  _useChatgptComposerControllerN,
+  _useChatgptComposerControllerO,
+  _useChatgptComposerControllerP,
+  _useChatgptComposerControllerR,
+  _useChatgptComposerControllerS,
+  useChatgptComposerControllerA,
+  useChatgptComposerControllerC,
+  useChatgptComposerControllerD,
+  useChatgptComposerControllerE,
+  useChatgptComposerControllerF,
+  useChatgptComposerControllerG,
+  useChatgptComposerControllerH,
+  useChatgptComposerControllerI,
+  useChatgptComposerControllerJ,
+  useChatgptComposerControllerK,
+  useChatgptComposerControllerL,
+  useChatgptComposerControllerM,
+  useChatgptComposerControllerN,
+  useChatgptComposerControllerO,
+  useChatgptComposerControllerP,
+  useChatgptComposerControllerR,
+  useChatgptComposerControllerS,
+  useChatgptComposerControllerT,
+  useChatgptComposerControllerU,
+  useChatgptComposerControllerUnderscore,
+} from "../../composer/use-chatgpt-composer-controller";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_CITATION_ID } from "../../chatgpt/chatgpt-citation-id";
 import { CHATGPT_CONTENT_REFERENCE_ID } from "../../chatgpt/chatgpt-content-reference-id";
@@ -54,7 +153,12 @@ import { ensureHasSeenRealtimeVoiceNuxAtomInit } from "../../home/realtime-voice
 import { ensureDebugPanelParsersInit } from "../../hooks/debug-panel-turn-files";
 import { ContextMenuRegistration } from "../../hooks/use-context-menu-registration";
 import { useEventCallback } from "../../hooks/use-event-callback";
-import { clampFloatingWindowRect, initFloatingWindowPointerDragConstants, resizeFloatingWindowRect, useFloatingWindowPointerDrag } from "../../hooks/use-floating-window-pointer-drag";
+import {
+  clampFloatingWindowRect,
+  initFloatingWindowPointerDragConstants,
+  resizeFloatingWindowRect,
+  useFloatingWindowPointerDrag,
+} from "../../hooks/use-floating-window-pointer-drag";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { HostFeatureConfigToggles } from "../../hosts/host-feature-config-toggles";
@@ -76,7 +180,11 @@ import { codexDirectiveMarkedExtensions } from "../../markdown/codex-directive-m
 import { markdownToPlainText } from "../../markdown/markdown-to-plain-text";
 import { rewriteFileCitationMarkers } from "../../markdown/rewrite-file-citation-markers";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
-import { findSidebarSectionElement, readScrollTop, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  readScrollTop,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
 import { NavigationAllowContext } from "../../navigation/navigation-allow-context";
@@ -98,16 +206,33 @@ import { openRightPanel } from "../../shell/open-right-panel";
 import { setRightPanelConversation } from "../../shell/set-right-panel-conversation";
 import { ProjectHoverCardBody } from "../../sidebar/project-hover-card-body";
 import { useBrowserExtensionPluginSetupQuery } from "../../skills/use-browser-extension-plugin-setup-query";
-import { initThreadPanelToggleButton, ThreadPanelToggleButton } from "../../thread/thread-panel-toggle-button";
+import {
+  initThreadPanelToggleButton,
+  ThreadPanelToggleButton,
+} from "../../thread/thread-panel-toggle-button";
 import { ThreadResourceCard } from "../../thread/thread-resource-card";
-import { initThreadScrollControllerContext, useThreadScrollController } from "../../thread/thread-scroll-controller-context";
-import { initThreadScrollLayout, ThreadScrollLayout } from "../../thread/thread-scroll-layout";
-import { initToggleThreadSummaryPanel, initToggleThreadSummaryPanelAtoms, toggleThreadSummaryPanel, ToggleThreadSummaryPanel } from "../../thread/toggle-thread-summary-panel";
+import {
+  initThreadScrollControllerContext,
+  useThreadScrollController,
+} from "../../thread/thread-scroll-controller-context";
+import {
+  initThreadScrollLayout,
+  ThreadScrollLayout,
+} from "../../thread/thread-scroll-layout";
+import {
+  initToggleThreadSummaryPanel,
+  initToggleThreadSummaryPanelAtoms,
+  toggleThreadSummaryPanel,
+  ToggleThreadSummaryPanel,
+} from "../../thread/toggle-thread-summary-panel";
 import { BrandedIcon } from "../../ui/branded-icon";
 import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { InsetBorderPanel } from "../../ui/inset-border-panel";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -128,11 +253,18 @@ import { slugifyLoose } from "../../utils/slugify-loose";
 import { sortedArrayFrom } from "../../utils/sorted-array-from";
 import { tryParseJsonText } from "../../utils/try-parse-json-text";
 import { waitForDoubleAnimationFrame } from "../../utils/wait-for-double-animation-frame";
-import { ensureImportSettingsCLInit, ensureSettingsGlyphI0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensureSettingsGlyphI0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { activateConversationSurface } from "../activate-conversation-surface";
 import { BrowserConversationPanel } from "../browser-conversation-panel";
 import { chatgptMessageFallbackId } from "../chatgpt-message-fallback-id";
-import { initChatgptTemporaryChatUi, TemporaryChatHeaderControl, TemporaryChatOnboarding } from "../chatgpt-temporary-chat-ui/index";
+import {
+  initChatgptTemporaryChatUi,
+  TemporaryChatHeaderControl,
+  TemporaryChatOnboarding,
+} from "../chatgpt-temporary-chat-ui/index";
 import { ConversationDiffSourceBridge } from "../conversation-diff-source-bridge";
 import { ensureConversationWorkRouteInit } from "../conversation-work-path";
 import { deferredConversationR } from "../deferred-conversation-r";
@@ -205,110 +337,188 @@ function jade(quartz) {
       onTogglePin,
       onToggleDebugPanel,
       serverConversationId,
-      showHandoff
+      showHandoff,
     } = quartz,
     river = useIntl(),
     slate = river.formatMessage({
       id: "chatgptConversations.actionsMenu",
       defaultMessage: "ChatGPT conversation actions",
-      description: "Accessible label for the ChatGPT conversation actions menu"
+      description: "Accessible label for the ChatGPT conversation actions menu",
     });
   let timber = slate,
-    umbra = serverConversationId == null ? null : `https://chatgpt.com/c/${encodeURIComponent(serverConversationId)}`,
-    violet = prism => {
-      umbra != null && deferredUiEnt({
-        event: prism,
-        href: umbra,
-        initiator: "open_in_browser_bridge"
-      });
+    umbra =
+      serverConversationId == null
+        ? null
+        : `https://chatgpt.com/c/${encodeURIComponent(serverConversationId)}`,
+    violet = (prism) => {
+      umbra != null &&
+        deferredUiEnt({
+          event: prism,
+          href: umbra,
+          initiator: "open_in_browser_bridge",
+        });
     };
   let willow = violet,
-    xenon = <AppIconQI {...{
-      className: "icon-sm"
-    }} />;
-  let yellow = <ReadLoginRouteQuerySnapshot {...{
-    size: "icon",
-    color: "ghost",
-    className: "no-drag",
-    "aria-label": timber,
-    children: xenon
-  }} />;
-  let zinc = showHandoff ? <DropdownMenu.Item {...{
-    disabled: onHandoff == null || isHandoffPending,
-    LeftIcon: isHandoffPending ? VSCODE_EDITOR_ID : AppInitialLm,
-    onSelect: onHandoff == null ? undefined : event => {
-      event.preventDefault();
-      onHandoff();
-    },
-    children: isHandoffPending ? <MemoizedFormattedMessage {...{
-      id: "chatgptConversations.handoff.menuItemPending",
-      defaultMessage: "Creating chat…",
-      description: "Loading state shown while handing off a ChatGPT conversation to a Codex task"
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "chatgptConversations.handoff.menuItem",
-      defaultMessage: "Continue in work mode",
-      description: "Menu item that continues a ChatGPT conversation in work mode"
-    }} />
-  }} /> : null;
+    xenon = (
+      <AppIconQI
+        {...{
+          className: "icon-sm",
+        }}
+      />
+    );
+  let yellow = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        size: "icon",
+        color: "ghost",
+        className: "no-drag",
+        "aria-label": timber,
+        children: xenon,
+      }}
+    />
+  );
+  let zinc = showHandoff ? (
+    <DropdownMenu.Item
+      {...{
+        disabled: onHandoff == null || isHandoffPending,
+        LeftIcon: isHandoffPending ? VSCODE_EDITOR_ID : AppInitialLm,
+        onSelect:
+          onHandoff == null
+            ? undefined
+            : (event) => {
+                event.preventDefault();
+                onHandoff();
+              },
+        children: isHandoffPending ? (
+          <MemoizedFormattedMessage
+            {...{
+              id: "chatgptConversations.handoff.menuItemPending",
+              defaultMessage: "Creating chat…",
+              description:
+                "Loading state shown while handing off a ChatGPT conversation to a Codex task",
+            }}
+          />
+        ) : (
+          <MemoizedFormattedMessage
+            {...{
+              id: "chatgptConversations.handoff.menuItem",
+              defaultMessage: "Continue in work mode",
+              description:
+                "Menu item that continues a ChatGPT conversation in work mode",
+            }}
+          />
+        ),
+      }}
+    />
+  ) : null;
   let amber = onTogglePin == null,
     basalt = isPinned ? AppIconZa : defaultHourlyScheduleConfig,
-    cedar = isPinned ? conversationsSidebarMessages.unpin : conversationsSidebarMessages.pin,
-    daisy = <MemoizedFormattedMessage {...{
-      ...cedar
-    }} />;
-  let ember = <DropdownMenu.Item {...{
-    disabled: amber,
-    LeftIcon: basalt,
-    onSelect: onTogglePin,
-    children: daisy
-  }} />;
-  let flint = <MemoizedFormattedMessage {...{
-    id: "chatgptConversations.debugPanel.menuItem",
-    defaultMessage: "Debug",
-    description: "Menu item that toggles the ChatGPT conversation debug panel"
-  }} />;
-  let garnet = <DropdownMenu.Item {...{
-    LeftIcon: AppIconOH,
-    onSelect: onToggleDebugPanel,
-    children: flint
-  }} />;
-  let hazel = <MemoizedFormattedMessage {...{
-    id: "chatgptConversations.openInQuickChat",
-    defaultMessage: "Open in quick chat",
-    description: "Menu item that opens the current ChatGPT conversation in Quick Chat"
-  }} />;
-  let ivory = <DropdownMenu.Item {...{
-    LeftIcon: AppInitialDr,
-    onSelect: onOpenInQuickChat,
-    children: hazel
-  }} />;
+    cedar = isPinned
+      ? conversationsSidebarMessages.unpin
+      : conversationsSidebarMessages.pin,
+    daisy = (
+      <MemoizedFormattedMessage
+        {...{
+          ...cedar,
+        }}
+      />
+    );
+  let ember = (
+    <DropdownMenu.Item
+      {...{
+        disabled: amber,
+        LeftIcon: basalt,
+        onSelect: onTogglePin,
+        children: daisy,
+      }}
+    />
+  );
+  let flint = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "chatgptConversations.debugPanel.menuItem",
+        defaultMessage: "Debug",
+        description:
+          "Menu item that toggles the ChatGPT conversation debug panel",
+      }}
+    />
+  );
+  let garnet = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppIconOH,
+        onSelect: onToggleDebugPanel,
+        children: flint,
+      }}
+    />
+  );
+  let hazel = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "chatgptConversations.openInQuickChat",
+        defaultMessage: "Open in quick chat",
+        description:
+          "Menu item that opens the current ChatGPT conversation in Quick Chat",
+      }}
+    />
+  );
+  let ivory = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppInitialDr,
+        onSelect: onOpenInQuickChat,
+        children: hazel,
+      }}
+    />
+  );
   let jasper = umbra == null,
     kelp = umbra ?? undefined,
     lotus = umbra ?? "https://chatgpt.com/",
-    mint = <DropdownMenu.ItemIcon {...{
-      size: "xs",
-      children: <HostFeatureConfigToggles {...{
-        href: lotus,
-        className: "icon-xs"
-      }} />
-    }} />;
-  let nova = <MemoizedFormattedMessage {...{
-    id: "chatgptConversations.openInChatGpt",
-    defaultMessage: "Open on chatgpt.com",
-    description: "Menu item that opens the ChatGPT conversation on chatgpt.com"
-  }} />;
-  let olive = <DropdownMenu.Item {...{
-    disabled: jasper,
-    href: kelp,
-    onClick: willow,
-    children: [mint, nova]
-  }} />;
-  return <DropdownMenuPopover {...{
-    align: "start",
-    contentWidth: "menu",
-    triggerButton: yellow,
-    children: [zinc, ember, garnet, ivory, olive]
-  }} />;
+    mint = (
+      <DropdownMenu.ItemIcon
+        {...{
+          size: "xs",
+          children: (
+            <HostFeatureConfigToggles
+              {...{
+                href: lotus,
+                className: "icon-xs",
+              }}
+            />
+          ),
+        }}
+      />
+    );
+  let nova = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "chatgptConversations.openInChatGpt",
+        defaultMessage: "Open on chatgpt.com",
+        description:
+          "Menu item that opens the ChatGPT conversation on chatgpt.com",
+      }}
+    />
+  );
+  let olive = (
+    <DropdownMenu.Item
+      {...{
+        disabled: jasper,
+        href: kelp,
+        onClick: willow,
+        children: [mint, nova],
+      }}
+    />
+  );
+  return (
+    <DropdownMenuPopover
+      {...{
+        align: "start",
+        contentWidth: "menu",
+        triggerButton: yellow,
+        children: [zinc, ember, garnet, ivory, olive],
+      }}
+    />
+  );
 }
 var kite, lemon, $, marble, nickel, onyx, pearl;
 esmInit(() => {
@@ -410,33 +620,40 @@ esmInit(() => {
   ensureConversationWorkRouteInit();
   marble = "data-chatgpt-conversation-selection-target";
   nickel = `[${marble}]`;
-  onyx = clearActiveOverlayAfterNavigate(appScopeAtom, (quill, {
-    get
-  }) => get(isIterateeCall, {
-    enabled: true,
-    threadKeys: get(visibleRemoteControlConnections)
-  }).groups.find(item => item.projectKind === "local" && item.projectId === quill) ?? null);
+  onyx = clearActiveOverlayAfterNavigate(
+    appScopeAtom,
+    (quill, { get }) =>
+      get(isIterateeCall, {
+        enabled: true,
+        threadKeys: get(visibleRemoteControlConnections),
+      }).groups.find(
+        (item) => item.projectKind === "local" && item.projectId === quill,
+      ) ?? null,
+  );
   useChatgptComposerControllerC(alpha);
   pearl = identity({
     share: {
       id: "chatgptConversations.share",
       defaultMessage: "Share",
-      description: "Button label that opens the ChatGPT conversation share dialog"
+      description:
+        "Button label that opens the ChatGPT conversation share dialog",
     },
     shareDisabledNotReady: {
       id: "chatgptConversations.shareDisabled.notReady",
       defaultMessage: "Load the conversation before sharing",
-      description: "Tooltip for a disabled ChatGPT conversation share action before the conversation is ready"
+      description:
+        "Tooltip for a disabled ChatGPT conversation share action before the conversation is ready",
     },
     shareDisabledStreaming: {
       id: "chatgptConversations.shareDisabled.streaming",
       defaultMessage: "Wait for ChatGPT to finish responding",
-      description: "Tooltip for a disabled ChatGPT conversation share action while the response is still streaming"
+      description:
+        "Tooltip for a disabled ChatGPT conversation share action while the response is still streaming",
     },
     toggleSidePanel: {
       id: "chatgptConversations.sidePanel.toggle",
       defaultMessage: "Toggle side panel",
-      description: "Toggles the ChatGPT conversation side panel"
-    }
+      description: "Toggles the ChatGPT conversation side panel",
+    },
   });
 })();

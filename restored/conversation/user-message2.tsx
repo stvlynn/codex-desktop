@@ -10,7 +10,9 @@ export type BindBindUserMessage2Peers = {
 let peers: BindBindUserMessage2Peers | null = null;
 
 /** Wire bindBindUserMessage2 peers once companions land. */
-export function setBindBindUserMessage2Peers(next: BindBindUserMessage2Peers): void {
+export function setBindBindUserMessage2Peers(
+  next: BindBindUserMessage2Peers,
+): void {
   peers = next;
 }
 
@@ -23,6 +25,6 @@ export function bindBindUserMessage2() {
   }
 
   return peers.e(() => {
-    peers.Au(), ZAr = `## Pull request fix automation:`;
+    (peers.Au(), (ZAr = `## Pull request fix automation:`));
   });
 }

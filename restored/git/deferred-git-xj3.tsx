@@ -14,7 +14,9 @@ export type BindBinddeferredGitXj3Peers = {
 let peers: BindBinddeferredGitXj3Peers | null = null;
 
 /** Wire bindBinddeferredGitXj3 peers once companions land. */
-export function setBindBinddeferredGitXj3Peers(next: BindBinddeferredGitXj3Peers): void {
+export function setBindBinddeferredGitXj3Peers(
+  next: BindBinddeferredGitXj3Peers,
+): void {
   peers = next;
 }
 

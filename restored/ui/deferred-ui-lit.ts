@@ -26,6 +26,6 @@ export function bindDeferredUiLit() {
   }
 
   return peers.e(() => {
-    peers.hFt(), peers.UIt(), peers.dv(), peers.lv(), peers.WNt();
+    (peers.hFt(), peers.UIt(), peers.dv(), peers.lv(), peers.WNt());
   });
 }

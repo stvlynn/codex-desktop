@@ -36,7 +36,10 @@ export const tfeH: TextFrameEmbedsBoundaryHooks = {
   isEmbedElement: __call("../", "OTe"),
   measureEmbedElement: __call("../", "measureEmbedElement"),
   isAbsoluteChild: __call("../", "PTe"),
-  absoluteChildFrame: __call("../../floating-placement", "resolvePlacementOrBBox"),
+  absoluteChildFrame: __call(
+    "../../floating-placement",
+    "resolvePlacementOrBBox",
+  ),
   normalizeTextContent: __call("../", "workbookN"),
 };
 

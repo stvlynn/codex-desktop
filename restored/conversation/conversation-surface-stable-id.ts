@@ -24,7 +24,9 @@ export type ConversationSurfaceRef =
   | { kind: "other" };
 
 /** Stable id for a conversation surface / draft key. */
-export function conversationSurfaceStableId(surface: ConversationSurfaceRef): string | undefined {
+export function conversationSurfaceStableId(
+  surface: ConversationSurfaceRef,
+): string | undefined {
   switch (surface.kind) {
     case "new":
       switch (surface.entrypoint) {

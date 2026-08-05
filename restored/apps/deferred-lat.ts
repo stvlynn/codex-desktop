@@ -24,6 +24,6 @@ export function deferredLat() {
   }
 
   return peers.e(() => {
-    peers.pv(), peers.dv(), peers.lv();
+    (peers.pv(), peers.dv(), peers.lv());
   });
 }

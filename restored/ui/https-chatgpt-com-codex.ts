@@ -9,7 +9,9 @@ export type BindHttpsChatgptComCodexPeers = {
 let peers: BindHttpsChatgptComCodexPeers | null = null;
 
 /** Wire bindHttpsChatgptComCodex peers once companions land. */
-export function setBindHttpsChatgptComCodexPeers(next: BindHttpsChatgptComCodexPeers): void {
+export function setBindHttpsChatgptComCodexPeers(
+  next: BindHttpsChatgptComCodexPeers,
+): void {
   peers = next;
 }
 

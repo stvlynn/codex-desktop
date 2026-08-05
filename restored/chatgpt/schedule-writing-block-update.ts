@@ -24,7 +24,9 @@ type ResolveScheduler = (store: unknown) => ConversationScheduler;
 let resolveScheduler: ResolveScheduler | null = null;
 
 /** Wire conversation scheduler resolver (`Bls` in the bundle). */
-export function setWritingBlockSchedulerResolver(resolver: ResolveScheduler): void {
+export function setWritingBlockSchedulerResolver(
+  resolver: ResolveScheduler,
+): void {
   resolveScheduler = resolver;
 }
 

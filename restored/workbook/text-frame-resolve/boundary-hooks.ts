@@ -3,4 +3,6 @@
 
 export type TextFrameResolveHooks = Record<string, never>;
 export const tfrH: TextFrameResolveHooks = {} as TextFrameResolveHooks;
-export function wireTextFrameResolveBoundaryHooks(_next: Partial<TextFrameResolveHooks> = {}): void {}
+export function wireTextFrameResolveBoundaryHooks(
+  _next: Partial<TextFrameResolveHooks> = {},
+): void {}

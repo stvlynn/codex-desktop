@@ -12,7 +12,9 @@ export type UseComputerUseNativeDesktopAppIconQueryPeers = {
 let peers: UseComputerUseNativeDesktopAppIconQueryPeers | null = null;
 
 /** Wire useComputerUseNativeDesktopAppIconQuery peers once companions land. */
-export function setUseComputerUseNativeDesktopAppIconQueryPeers(next: UseComputerUseNativeDesktopAppIconQueryPeers): void {
+export function setUseComputerUseNativeDesktopAppIconQueryPeers(
+  next: UseComputerUseNativeDesktopAppIconQueryPeers,
+): void {
   peers = next;
 }
 

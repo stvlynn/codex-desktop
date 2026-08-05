@@ -29,6 +29,12 @@ export function bindDeferredxw() {
   }
 
   return peers.e(() => {
-    des = peers.c(), peers.Qt(), peers.XN(), peers.tP(), peers.U4i(), fes = `DISABLED_BY_ADMIN`, pes = `DISABLED_BY_ADMIN`;
+    ((des = peers.c()),
+      peers.Qt(),
+      peers.XN(),
+      peers.tP(),
+      peers.U4i(),
+      (fes = `DISABLED_BY_ADMIN`),
+      (pes = `DISABLED_BY_ADMIN`));
   });
 }

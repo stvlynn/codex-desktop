@@ -16,7 +16,10 @@ export function setClearMcpAppSidePanelStateAtom(atom: unknown): void {
   sidePanelAtom = atom;
 }
 
-export function clearMcpAppSidePanelState(scope: ScopeLike, mcpAppId: string): void {
+export function clearMcpAppSidePanelState(
+  scope: ScopeLike,
+  mcpAppId: string,
+): void {
   scope.set(sidePanelAtom, (prev) => {
     let next = prev;
     if (prev.has(mcpAppId)) {

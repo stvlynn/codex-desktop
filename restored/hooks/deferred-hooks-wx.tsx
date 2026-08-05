@@ -11,7 +11,9 @@ export type BindBindDeferredHooksWXPeers = {
 let peers: BindBindDeferredHooksWXPeers | null = null;
 
 /** Wire bindBindDeferredHooksWX peers once companions land. */
-export function setBindBindDeferredHooksWXPeers(next: BindBindDeferredHooksWXPeers): void {
+export function setBindBindDeferredHooksWXPeers(
+  next: BindBindDeferredHooksWXPeers,
+): void {
   peers = next;
 }
 
@@ -23,7 +25,5 @@ export function bindBindDeferredHooksWX() {
     throw new Error("bindBindDeferredHooksWX peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => peers.eqr(e(peers.bqr)));
+  return peers.Ma(peers.Q, ({ get: e }) => peers.eqr(e(peers.bqr)));
 }

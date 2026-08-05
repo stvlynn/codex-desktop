@@ -50,8 +50,29 @@ export function bindDeferredUiWX() {
   }
 
   return peers.e(() => {
-    NGr = peers.c(), peers.Qt(), peers.Ho(), _M = peers.r(peers.o(), 1), peers.rGr(), peers.DD(), peers.aGr(), peers.Vf(), peers.hM(), peers.cGr(), peers.Fw(), peers.mGr(), peers.ed(), peers.K_(), peers.ZA(), peers.Dh(), peers.i9t(), peers.Gf(), peers.Uf(), PGr = peers.Ma(peers.Q, ({
-      get: e
-    }) => !peers.Pw() || peers.e(peers.mM) === !0 ? !0 : peers.WHn() && peers.e(peers.sGr) === !0);
+    ((NGr = peers.c()),
+      peers.Qt(),
+      peers.Ho(),
+      (_M = peers.r(peers.o(), 1)),
+      peers.rGr(),
+      peers.DD(),
+      peers.aGr(),
+      peers.Vf(),
+      peers.hM(),
+      peers.cGr(),
+      peers.Fw(),
+      peers.mGr(),
+      peers.ed(),
+      peers.K_(),
+      peers.ZA(),
+      peers.Dh(),
+      peers.i9t(),
+      peers.Gf(),
+      peers.Uf(),
+      (PGr = peers.Ma(peers.Q, ({ get: e }) =>
+        !peers.Pw() || peers.e(peers.mM) === !0
+          ? !0
+          : peers.WHn() && peers.e(peers.sGr) === !0,
+      )));
   });
 }

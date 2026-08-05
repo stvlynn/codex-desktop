@@ -26,6 +26,6 @@ export function bindDeferredzM() {
   }
 
   return peers.e(() => {
-    peers.$u(), peers.WH(), peers.ZL(), peers.vB(), peers.g2i();
+    (peers.$u(), peers.WH(), peers.ZL(), peers.vB(), peers.g2i());
   });
 }

@@ -111,4 +111,3 @@ export function bindPullRequestDetailX(_next: unknown): void {}
 
 /** Wave GA: bind no longer required after full body promote */
 export function bindPullRequestDetailY(_next: unknown): void {}
-

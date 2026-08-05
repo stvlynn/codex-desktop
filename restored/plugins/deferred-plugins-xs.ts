@@ -14,7 +14,9 @@ export type BindDeferredPluginsXsPeers = {
 let peers: BindDeferredPluginsXsPeers | null = null;
 
 /** Wire bindDeferredPluginsXs peers once companions land. */
-export function setBindDeferredPluginsXsPeers(next: BindDeferredPluginsXsPeers): void {
+export function setBindDeferredPluginsXsPeers(
+  next: BindDeferredPluginsXsPeers,
+): void {
   peers = next;
 }
 
@@ -27,6 +29,11 @@ export function bindDeferredPluginsXs() {
   }
 
   return peers.e(() => {
-    peers.Vf(), peers.YN(), peers.Gf(), Wjl = new Map(), Gjl = 500, Kjl = 30;
+    (peers.Vf(),
+      peers.YN(),
+      peers.Gf(),
+      (Wjl = new Map()),
+      (Gjl = 500),
+      (Kjl = 30));
   });
 }

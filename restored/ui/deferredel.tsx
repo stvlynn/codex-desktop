@@ -38,8 +38,26 @@ export function bindDeferredel() {
   }
 
   return peers.e(() => {
-    peers.Sl(), peers.oKn(), peers.MKn(), peers.trl(), peers.frl(), peers.Arl(), peers.Wrl(), peers.nil(), peers.pil(), peers.Gil(), peers.aal(), peers.bal(), peers.Ral(), aol = 80, ool = peers.sl({
-      title: peers.X().transform(e => peers.e.trim().replace(/\s+/g, ` `)).pipe(peers.X().min(1)).optional()
-    });
+    (peers.Sl(),
+      peers.oKn(),
+      peers.MKn(),
+      peers.trl(),
+      peers.frl(),
+      peers.Arl(),
+      peers.Wrl(),
+      peers.nil(),
+      peers.pil(),
+      peers.Gil(),
+      peers.aal(),
+      peers.bal(),
+      peers.Ral(),
+      (aol = 80),
+      (ool = peers.sl({
+        title: peers
+          .X()
+          .transform((e) => peers.e.trim().replace(/\s+/g, ` `))
+          .pipe(peers.X().min(1))
+          .optional(),
+      })));
   });
 }

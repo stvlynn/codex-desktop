@@ -15,7 +15,9 @@ export type UseHostSkillsRootQueryPeers = {
 let peers: UseHostSkillsRootQueryPeers | null = null;
 
 /** Wire useHostSkillsRootQuery peers once companions land. */
-export function setUseHostSkillsRootQueryPeers(next: UseHostSkillsRootQueryPeers): void {
+export function setUseHostSkillsRootQueryPeers(
+  next: UseHostSkillsRootQueryPeers,
+): void {
   peers = next;
 }
 

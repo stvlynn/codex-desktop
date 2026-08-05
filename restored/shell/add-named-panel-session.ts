@@ -11,7 +11,9 @@ export type AddNamedPanelSessionPeers = {
 let peers: AddNamedPanelSessionPeers | null = null;
 
 /** Wire addNamedPanelSession peers once companions land. */
-export function setAddNamedPanelSessionPeers(next: AddNamedPanelSessionPeers): void {
+export function setAddNamedPanelSessionPeers(
+  next: AddNamedPanelSessionPeers,
+): void {
   peers = next;
 }
 

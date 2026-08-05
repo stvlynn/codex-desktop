@@ -27,12 +27,16 @@ export function codexManaged() {
     throw new Error("codexManaged peers are not configured");
   }
   return peers.e(() => {
-    peers.Ho(), peers.ed(), Wb = {
-      logProductEvent: () => {},
-      logEventWithStatsig: () => {},
-      trackCounter: async () => {},
-      flush: async () => {},
-      submitCodexAnalyticsEvent: null
-    }, Gb = peers.Ta(peers.Q, peers.Wb), h0t = peers.Ta(peers.Q, !1);
+    (peers.Ho(),
+      peers.ed(),
+      (Wb = {
+        logProductEvent: () => {},
+        logEventWithStatsig: () => {},
+        trackCounter: async () => {},
+        flush: async () => {},
+        submitCodexAnalyticsEvent: null,
+      }),
+      (Gb = peers.Ta(peers.Q, peers.Wb)),
+      (h0t = peers.Ta(peers.Q, !1)));
   });
 }

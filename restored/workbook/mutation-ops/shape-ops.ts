@@ -8,8 +8,7 @@ const shapeProtoToGeometryName = Object.entries(
   shapeGeometryNameToProto,
 ).reduce(
   (accumulator: Record<number, string>, [name, proto]) => (
-    (proto as number) in accumulator ||
-      (accumulator[proto as number] = name),
+    (proto as number) in accumulator || (accumulator[proto as number] = name),
     accumulator
   ),
   {} as Record<number, string>,

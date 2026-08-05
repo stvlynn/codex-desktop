@@ -32,24 +32,20 @@ const slot92 = rolldownRuntimeN(() => {});
 export let slot240: any;
 export let slot241: any;
 export const slot242 = rolldownRuntimeN(() => {
-    slot240 = appInitialIvt();
-    _appInitialYI();
-    D_();
-    slot88();
-    j_();
-    slot241 = appInitialJvt();
-  });
-export function useChatgptComposerControllerHelper181(
-  request2676: any) {
+  slot240 = appInitialIvt();
+  _appInitialYI();
+  D_();
+  slot88();
+  j_();
+  slot241 = appInitialJvt();
+});
+export function useChatgptComposerControllerHelper181(request2676: any) {
   let { reference } = request2676,
     slot7423 = appInitialJft(),
     slot7424 = E_(reference);
-  let slot7425 =
-      slot7424,
-    slot7426 =
-      useChatgptComposerControllerHelper76(reference.provider);
-  let slot7427 =
-      slot7426,
+  let slot7425 = slot7424,
+    slot7426 = useChatgptComposerControllerHelper76(reference.provider);
+  let slot7427 = slot7426,
     slot7428 =
       slot7427 === "google_maps"
         ? slot245
@@ -59,8 +55,7 @@ export function useChatgptComposerControllerHelper181(
             defaultMessage: "Maps",
             description: "Fallback label for a location search citation link",
           }));
-  let slot7429 =
-      slot7428,
+  let slot7429 = slot7428,
     slot7430 = `${slot246}${slot7429}${slot247}`;
   if (slot7425 == null) {
     let slot14989;
@@ -69,9 +64,7 @@ export function useChatgptComposerControllerHelper181(
   return (
     <span>
       {slot246}
-      <O_ href={slot7425}>
-        {slot7429}
-      </O_>
+      <O_ href={slot7425}>{slot7429}</O_>
       {slot247}
     </span>
   );
@@ -82,14 +75,14 @@ export let slot245: any;
 export let slot246: any;
 export let slot247: any;
 export const slot248 = rolldownRuntimeN(() => {
-    slot243 = appInitialIvt();
-    appInitialHft();
-    _appInitialYI();
-    D_();
-    j_();
-    slot92();
-    slot244 = appInitialJvt();
-    slot245 = "Google Maps";
-    slot246 = " (";
-    slot247 = ") ";
-  });
+  slot243 = appInitialIvt();
+  appInitialHft();
+  _appInitialYI();
+  D_();
+  j_();
+  slot92();
+  slot244 = appInitialJvt();
+  slot245 = "Google Maps";
+  slot246 = " (";
+  slot247 = ") ";
+});

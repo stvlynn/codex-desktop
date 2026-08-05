@@ -45,7 +45,9 @@ function findServiceTierById(
 }
 
 /** Bundle `ftr` / export `s4`. */
-export function findFastServiceTier(config: ServiceTierModelConfig | null | undefined): ServiceTierOption | null {
+export function findFastServiceTier(
+  config: ServiceTierModelConfig | null | undefined,
+): ServiceTierOption | null {
   return (
     config?.serviceTiers?.find(
       (tier) =>
@@ -70,7 +72,10 @@ export function findServiceTierConfigForModel(
 }
 
 /** Resolve a stored selection to a concrete tier id (`ytr`). */
-export function resolveServiceTierId(selection: ServiceTierSelection, fromConfigTierId: string | null): string | null {
+export function resolveServiceTierId(
+  selection: ServiceTierSelection,
+  fromConfigTierId: string | null,
+): string | null {
   switch (selection.type) {
     case "fromConfig":
       return fromConfigTierId;
@@ -87,7 +92,9 @@ export function coerceServiceTierId(tierId: string | null | undefined): string {
 }
 
 /** Build a selection object from an optional custom tier id (`vtr`). */
-export function serviceTierSelectionFromId(tierId: string | null | undefined): ServiceTierSelection {
+export function serviceTierSelectionFromId(
+  tierId: string | null | undefined,
+): ServiceTierSelection {
   return tierId == null
     ? { type: "standard" }
     : { type: "custom", serviceTier: tierId };
@@ -97,7 +104,11 @@ export function serviceTierSelectionFromId(tierId: string | null | undefined): S
  * Resolve the tier id to send on a request (`gtr`).
  * When `allowCustom` is false, always returns null.
  */
-export function resolveServiceTierForRequest(config: ServiceTierModelConfig | null | undefined, selectedTierId: string | null | undefined, allowCustom: boolean = true): string | null {
+export function resolveServiceTierForRequest(
+  config: ServiceTierModelConfig | null | undefined,
+  selectedTierId: string | null | undefined,
+  allowCustom: boolean = true,
+): string | null {
   if (!allowCustom) return null;
   if (selectedTierId == null) {
     const defaultTier = config?.defaultServiceTier ?? null;

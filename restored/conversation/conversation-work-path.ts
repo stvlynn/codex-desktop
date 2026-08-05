@@ -32,7 +32,10 @@ export function ensureConversationWorkRouteInit(): void {}
 /**
  * Bundle `EYn` / export `S8` — set or clear `temporary-chat` on a search string.
  */
-export function setTemporaryChatSearchParam(search: string, isTemporaryChat: boolean): string {
+export function setTemporaryChatSearchParam(
+  search: string,
+  isTemporaryChat: boolean,
+): string {
   const params = new URLSearchParams(search);
   if (isTemporaryChat) params.set(TEMPORARY_CHAT_QUERY_PARAM, "true");
   else params.delete(TEMPORARY_CHAT_QUERY_PARAM);

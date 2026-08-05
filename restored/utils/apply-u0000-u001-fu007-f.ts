@@ -8,7 +8,9 @@ export type BindApplyU0000U001FU007FPeers = {
 let peers: BindApplyU0000U001FU007FPeers | null = null;
 
 /** Wire bindApplyU0000U001FU007F peers once companions land. */
-export function setBindApplyU0000U001FU007FPeers(next: BindApplyU0000U001FU007FPeers): void {
+export function setBindApplyU0000U001FU007FPeers(
+  next: BindApplyU0000U001FU007FPeers,
+): void {
   peers = next;
 }
 

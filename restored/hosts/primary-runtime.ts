@@ -9,7 +9,9 @@ export type BindPrimaryRuntimePeers = {
 let peers: BindPrimaryRuntimePeers | null = null;
 
 /** Wire bindPrimaryRuntime peers once companions land. */
-export function setBindPrimaryRuntimePeers(next: BindPrimaryRuntimePeers): void {
+export function setBindPrimaryRuntimePeers(
+  next: BindPrimaryRuntimePeers,
+): void {
   peers = next;
 }
 

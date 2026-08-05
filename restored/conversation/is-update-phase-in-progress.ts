@@ -12,7 +12,9 @@ export type BindIsUpdatePhaseInProgressPeers = {
 let peers: BindIsUpdatePhaseInProgressPeers | null = null;
 
 /** Wire bindIsUpdatePhaseInProgress peers once companions land. */
-export function setBindIsUpdatePhaseInProgressPeers(next: BindIsUpdatePhaseInProgressPeers): void {
+export function setBindIsUpdatePhaseInProgressPeers(
+  next: BindIsUpdatePhaseInProgressPeers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,6 @@ export function bindIsUpdatePhaseInProgress() {
   }
 
   return peers.e(() => {
-    peers.Hb(), peers.Gf(), peers.Zru(), peers.riu();
+    (peers.Hb(), peers.Gf(), peers.Zru(), peers.riu());
   });
 }

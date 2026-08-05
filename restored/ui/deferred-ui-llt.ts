@@ -23,15 +23,17 @@ export function bindDeferredUiLlt() {
     throw new Error("bindDeferredUiLlt peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => !1, {
+  return peers.Da(peers.Q, (e) => !1, {
     onMount: (e, t) => {
-      let {
-          key: n
-        } = t,
+      let { key: n } = t,
         r = t.get(peers.Th);
-      return r != null && e(r.checkGate(n)), t.set(peers.bnt, e => e.includes(n) ? e : [...e, n]), () => {
-        t.set(peers.bnt, e => e.filter(e => e !== n));
-      };
-    }
+      return (
+        r != null && e(r.checkGate(n)),
+        t.set(peers.bnt, (e) => (e.includes(n) ? e : [...e, n])),
+        () => {
+          t.set(peers.bnt, (e) => e.filter((e) => e !== n));
+        }
+      );
+    },
   });
 }

@@ -15,7 +15,9 @@ export type AppgenPublicationTermsRouteProps = {
 };
 
 /** Bundle export `AppgenPublicationTermsRoute`. */
-export function AppgenPublicationTermsRoute(props: AppgenPublicationTermsRouteProps): ReactElement {
+export function AppgenPublicationTermsRoute(
+  props: AppgenPublicationTermsRouteProps,
+): ReactElement {
   const { children } = props;
   return (
     <>

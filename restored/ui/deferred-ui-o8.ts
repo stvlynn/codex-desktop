@@ -23,7 +23,5 @@ export function bindDeferredUiO8() {
     throw new Error("bindDeferredUiO8 peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => e(peers.sT, peers.$Te).data === !0);
+  return peers.Ma(peers.Q, ({ get: e }) => e(peers.sT, peers.$Te).data === !0);
 }

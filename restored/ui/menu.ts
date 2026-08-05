@@ -39,6 +39,21 @@ export function menu() {
   }
 
   return peers.e(() => {
-    qYo = peers.c(), peers.Ho(), peers.nO(), peers.$D(), peers.IFi(), peers.K_(), peers.vT(), peers.gKo(), peers.VKo(), peers.qKo(), peers.dYo(), peers._Yo(), peers.SWo(), peers.EJ(), peers.WYo(), XJ = peers.J();
+    ((qYo = peers.c()),
+      peers.Ho(),
+      peers.nO(),
+      peers.$D(),
+      peers.IFi(),
+      peers.K_(),
+      peers.vT(),
+      peers.gKo(),
+      peers.VKo(),
+      peers.qKo(),
+      peers.dYo(),
+      peers._Yo(),
+      peers.SWo(),
+      peers.EJ(),
+      peers.WYo(),
+      (XJ = peers.J()));
   });
 }

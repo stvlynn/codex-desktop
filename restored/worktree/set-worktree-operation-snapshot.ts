@@ -9,14 +9,22 @@ export type WorktreeOperationSnapshotPeers = {
 let peers: WorktreeOperationSnapshotPeers | null = null;
 
 /** Wire setWorktreeOperationSnapshot peers once companions land. */
-export function setWorktreeOperationSnapshotPeers(next: WorktreeOperationSnapshotPeers): void {
+export function setWorktreeOperationSnapshotPeers(
+  next: WorktreeOperationSnapshotPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `setWorktreeOperationSnapshot` / internal `$xo`.
  */
-export function setWorktreeOperationSnapshot(e: unknown, t: unknown, n: unknown, r: unknown, i: unknown) {
+export function setWorktreeOperationSnapshot(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+  r: unknown,
+  i: unknown,
+) {
   if (peers == null) {
     throw new Error("setWorktreeOperationSnapshot peers are not configured");
   }

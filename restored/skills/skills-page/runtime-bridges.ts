@@ -4,11 +4,9 @@
 // Residual companion stubs: 16 (verified 71/86).
 // Bind/ensure bridges.
 
-
 /** Wave FZ: bind no longer required after full body promote */
 export function bindSkillsPage(_next: unknown): void {}
 export function ensureSkillsPageInit(): void {}
 
 // Semantic export aliases
 export { skillsPageT as SkillsPage } from "./part-1";
-

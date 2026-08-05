@@ -29,6 +29,10 @@ export function bindDeferredFt() {
   }
 
   return peers.e(() => {
-    QBe = peers.J(), $Be = peers.r(peers.o(), 1), peers.zze(), peers.XBe(), peers.ud();
+    ((QBe = peers.J()),
+      ($Be = peers.r(peers.o(), 1)),
+      peers.zze(),
+      peers.XBe(),
+      peers.ud());
   });
 }

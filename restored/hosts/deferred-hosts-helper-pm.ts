@@ -18,7 +18,9 @@ export type BindDeferredHostsHelperPmPeers = {
 let peers: BindDeferredHostsHelperPmPeers | null = null;
 
 /** Wire bindDeferredHostsHelperPm peers once companions land. */
-export function setBindDeferredHostsHelperPmPeers(next: BindDeferredHostsHelperPmPeers): void {
+export function setBindDeferredHostsHelperPmPeers(
+  next: BindDeferredHostsHelperPmPeers,
+): void {
   peers = next;
 }
 
@@ -31,11 +33,38 @@ export function bindDeferredHostsHelperPm() {
   }
 
   return peers.e(() => {
-    peers.Sl(), F8s = `/pull-requests/:githubHost/:owner/:repository/:pullRequestNumber`, I8s = new Set([`archived assignee author base checks closed commenter comments created draft head in interactions involves is label language linked`, `merged mentions milestone no org project reactions repo review review-involves review-requested reviewed-by sort state status team team-review-requested type updated user user-review-requested`].join(` `).split(` `)), L8s = new Set(`assignee author commenter involves mentions review-involves review-requested reviewed-by team team-review-requested user-review-requested`.split(` `)), R8s = new Set(`closed draft merged state`.split(` `)), z8s = peers.sl({
-      githubHost: peers.X().transform(peers.d1).pipe(peers.X().min(1)),
-      owner: peers.X().trim().min(1),
-      pullRequestNumber: peers.X().trim().regex(/^\d+$/u).transform(Number).pipe(peers.rl().int().positive().max(2 ** 53 - 1)),
-      repository: peers.X().trim().min(1)
-    });
+    (peers.Sl(),
+      (F8s = `/pull-requests/:githubHost/:owner/:repository/:pullRequestNumber`),
+      (I8s = new Set(
+        [
+          `archived assignee author base checks closed commenter comments created draft head in interactions involves is label language linked`,
+          `merged mentions milestone no org project reactions repo review review-involves review-requested reviewed-by sort state status team team-review-requested type updated user user-review-requested`,
+        ]
+          .join(` `)
+          .split(` `),
+      )),
+      (L8s = new Set(
+        `assignee author commenter involves mentions review-involves review-requested reviewed-by team team-review-requested user-review-requested`.split(
+          ` `,
+        ),
+      )),
+      (R8s = new Set(`closed draft merged state`.split(` `))),
+      (z8s = peers.sl({
+        githubHost: peers.X().transform(peers.d1).pipe(peers.X().min(1)),
+        owner: peers.X().trim().min(1),
+        pullRequestNumber: peers
+          .X()
+          .trim()
+          .regex(/^\d+$/u)
+          .transform(Number)
+          .pipe(
+            peers
+              .rl()
+              .int()
+              .positive()
+              .max(2 ** 53 - 1),
+          ),
+        repository: peers.X().trim().min(1),
+      })));
   });
 }

@@ -14,7 +14,9 @@ export type BindWhamToggleAllDiffsPeers = {
 let peers: BindWhamToggleAllDiffsPeers | null = null;
 
 /** Wire bindWhamToggleAllDiffs peers once companions land. */
-export function setBindWhamToggleAllDiffsPeers(next: BindWhamToggleAllDiffsPeers): void {
+export function setBindWhamToggleAllDiffsPeers(
+  next: BindWhamToggleAllDiffsPeers,
+): void {
   peers = next;
 }
 
@@ -27,6 +29,8 @@ export function bindWhamToggleAllDiffs() {
   }
 
   return peers.e(() => {
-    wBo = peers.c(), TBo = peers.r(peers.o(), 1), EBo = `wham-toggle-all-diffs`;
+    ((wBo = peers.c()),
+      (TBo = peers.r(peers.o(), 1)),
+      (EBo = `wham-toggle-all-diffs`));
   });
 }

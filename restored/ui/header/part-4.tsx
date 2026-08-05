@@ -16,17 +16,46 @@ const windowsShowHome: any = undefined;
 // Wave5d careful split 4/4
 /* split-lane-import-depth:1 */
 
-import { appActionSidebarProjectRefSchema, appActionSidebarSectionRefSchema } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  appActionSidebarSectionRefSchema,
+} from "../../actions/app-action-payload-schemas";
 import { ensureReviewFileAppActionAttrsInit } from "../../actions/ensure-review-file-app-action-attrs-init";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_Ist_Init } from "../../conversation/conversation-page-esm-inits";
-import { createPersistedAtom, ensurePersistedAtomInit, useAtomPair } from "../../boundaries/persisted-atom";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { useLocation, useMatch, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_Ist_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  createPersistedAtom,
+  ensurePersistedAtomInit,
+  useAtomPair,
+} from "../../boundaries/persisted-atom";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  useLocation,
+  useMatch,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { getChromeGlobal } from "../../browser/get-chrome-global";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
@@ -38,7 +67,10 @@ import { ConversationNavListItem } from "../../conversation/conversation-nav-lis
 import { deferredConversationN } from "../../conversation/deferred-conversation-n";
 import { deferredConversationSQ } from "../../conversation/deferred-conversation-sq-2";
 import { ensurePinnedConversationsQueryInit } from "../../conversation/ensure-pinned-conversations-query-init";
-import { ensureSidebarThreadKeyPrefixesInit, toLocalSidebarThreadKey } from "../../conversation/sidebar-thread-keys";
+import {
+  ensureSidebarThreadKeyPrefixesInit,
+  toLocalSidebarThreadKey,
+} from "../../conversation/sidebar-thread-keys";
 import { ensureChromeRuntimeMessagingInit } from "../../desktop/ensure-chrome-runtime-messaging-init";
 import { isRemoteControlConnectionFailedError } from "../../desktop/remote-control-connection-failed-error";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
@@ -53,7 +85,10 @@ import { AppIconSft, ensureAppIconSftInit } from "../../icons/app-icon-sft";
 import { AppIconTk, ensureAppIconTkInit } from "../../icons/app-icon-tk";
 import { AppIconYm } from "../../icons/app-icon-ym";
 import { AppIconZlt } from "../../icons/app-icon-zlt";
-import { DockIcon, ensureDockIconInit as EnsureDockIconInit } from "../../icons/dock-icon";
+import {
+  DockIcon,
+  ensureDockIconInit as EnsureDockIconInit,
+} from "../../icons/dock-icon";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { resolveScienceModelLabel } from "../../models/resolve-science-model-label";
 import { PdfPermissionFlag } from "../../pdf/pdf-permission-flag";
@@ -73,17 +108,22 @@ import { ensureHotkeyThreadN8Init } from "../../utils/wave-av-gap-ensure-inits";
 import { StableWorktreeStatusDialog } from "../../worktrees/stable-worktree-status-dialog-view";
 import { deferredT } from "../deferred-t";
 import { DropdownMenu, ensureDropdownMenuInit } from "../dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../dropdown-menu-popover";
 import { ElectronOnly } from "../electron-only";
 import { inProgress2 } from "../in-progress2";
 import { InsetBorderPanel } from "../inset-border-panel";
 import { OptionalTooltip } from "../optional-tooltip";
 
 // Wave5d soft JSX companions.
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -155,63 +195,101 @@ export function headerT(acorn: any) {
       desktopDeepLinkConversationId,
       title,
       onBack,
-      trailing
+      trailing,
     } = acorn,
     bloom = useLocation(),
     coral = onBack ?? ultra,
     drift = bloom.pathname === "/",
     eagle = $n,
-    {
-      data = []
-    } = AppInitialYX(),
+    { data = [] } = AppInitialYX(),
     frost = drift,
     glide = {
       taskFilter: "current",
       limit: 20,
-      enabled: frost
+      enabled: frost,
     };
   let honey = composerScope(glide);
   let iris = alpha(honey.data, data, null),
     jewel = IntlProvider("draggable extension:px-panel", className);
-  let knoll = IntlProvider("flex items-center electron:h-toolbar extension:py-row-y", "justify-between");
-  let lunar = <div className="mr-3 line-clamp-1 flex min-w-0 flex-1 items-center gap-1 truncate" style={{
-    viewTransitionName: "header-title"
-  }}>
-      {title ? <div className="flex min-w-0 flex-1 items-center gap-1">
-          {<HeaderHelper29 {...{
-        onClick: coral
-      }} />}
-          {<ReadLoginRouteQuerySnapshot {...{
-        color: "ghostActive",
-        type: "button",
-        onClick: eagle,
-        className: "min-w-0 flex-1 truncate !px-0 !py-0 text-left text-sm text-token-foreground hover:!bg-transparent hover:opacity-80 electron:font-medium",
-        children: <span className="truncate">{title}</span>
-      }} />}
-        </div> : <span className="text-token-description-foreground">
-          {<HeaderHelper28 {...{
-        mergedTasks: iris,
-        onBack: coral,
-        showBackButton: true
-      }} />}
-        </span>}
-    </div>;
+  let knoll = IntlProvider(
+    "flex items-center electron:h-toolbar extension:py-row-y",
+    "justify-between",
+  );
+  let lunar = (
+    <div
+      className="mr-3 line-clamp-1 flex min-w-0 flex-1 items-center gap-1 truncate"
+      style={{
+        viewTransitionName: "header-title",
+      }}
+    >
+      {title ? (
+        <div className="flex min-w-0 flex-1 items-center gap-1">
+          {
+            <HeaderHelper29
+              {...{
+                onClick: coral,
+              }}
+            />
+          }
+          {
+            <ReadLoginRouteQuerySnapshot
+              {...{
+                color: "ghostActive",
+                type: "button",
+                onClick: eagle,
+                className:
+                  "min-w-0 flex-1 truncate !px-0 !py-0 text-left text-sm text-token-foreground hover:!bg-transparent hover:opacity-80 electron:font-medium",
+                children: <span className="truncate">{title}</span>,
+              }}
+            />
+          }
+        </div>
+      ) : (
+        <span className="text-token-description-foreground">
+          {
+            <HeaderHelper28
+              {...{
+                mergedTasks: iris,
+                onBack: coral,
+                showBackButton: true,
+              }}
+            />
+          }
+        </span>
+      )}
+    </div>
+  );
   let moss = <HeaderHelper24 {...{}} />;
-  let north = <ElectronOnly {...{
-    chromeExtension: true,
-    children: <HeaderHelper1 {...{
-      conversationId: desktopDeepLinkConversationId
-    }} />
-  }} />;
-  let orbit = <ElectronOnly {...{
-    extension: true,
-    children: <AppInitialVi />
-  }} />;
+  let north = (
+    <ElectronOnly
+      {...{
+        chromeExtension: true,
+        children: (
+          <HeaderHelper1
+            {...{
+              conversationId: desktopDeepLinkConversationId,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let orbit = (
+    <ElectronOnly
+      {...{
+        extension: true,
+        children: <AppInitialVi />,
+      }}
+    />
+  );
   let pine = <HeaderHelper5 {...{}} />;
-  let quest = <ElectronOnly {...{
-    chromeExtension: true,
-    extension: true,
-    children: <div className="flex flex-shrink-0 items-center">
+  let quest = (
+    <ElectronOnly
+      {...{
+        chromeExtension: true,
+        extension: true,
+        children: (
+          <div className="flex flex-shrink-0 items-center">
             <div className="flex items-center gap-1">
               {moss}
               {north}
@@ -219,34 +297,56 @@ export function headerT(acorn: any) {
               {pine}
             </div>
           </div>
-  }} />;
-  let ridge = <div className="flex flex-shrink-0 items-center gap-1">
+        ),
+      }}
+    />
+  );
+  let ridge = (
+    <div className="flex flex-shrink-0 items-center gap-1">
       {trailing}
       {quest}
-    </div>;
-  let storm = <div className={knoll}>
+    </div>
+  );
+  let storm = (
+    <div className={knoll}>
       {null}
       {lunar}
       {ridge}
-    </div>;
-  let tide = centerContent == null ? null : <div className="no-drag flex items-center justify-center extension:pb-row-y">
+    </div>
+  );
+  let tide =
+    centerContent == null ? null : (
+      <div className="no-drag flex items-center justify-center extension:pb-row-y">
         {centerContent}
-      </div>;
-  let unity = drift && <div>
-      {<HeaderHelper6 {...{
-      tasksQuery: honey,
-      mergedTasks: iris
-    }} />}
-    </div>;
-  let vale = <ElectronOnly {...{
-    extension: true,
-    children: unity
-  }} />;
-  return <div className={jewel}>
+      </div>
+    );
+  let unity = drift && (
+    <div>
+      {
+        <HeaderHelper6
+          {...{
+            tasksQuery: honey,
+            mergedTasks: iris,
+          }}
+        />
+      }
+    </div>
+  );
+  let vale = (
+    <ElectronOnly
+      {...{
+        extension: true,
+        children: unity,
+      }}
+    />
+  );
+  return (
+    <div className={jewel}>
       {storm}
       {tide}
       {vale}
-    </div>;
+    </div>
+  );
 }
 function $n() {
   window.dispatchEvent(new CustomEvent("open-recent-tasks-menu"));
@@ -255,90 +355,128 @@ function ultra() {
   thinCallWithUndefined("newTask", "header_new_thread");
 }
 function vapor(wave) {
-  let {
-      mergedTasks,
-      onBack,
-      showBackButton
-    } = wave,
+  let { mergedTasks, onBack, showBackButton } = wave,
     apex = useLocation().pathname === "/",
     brook = useMatch("/local/:conversationId")?.params?.conversationId ?? null,
     cliff = brook == null ? null : resolveScienceModelLabel(brook);
   let dusk = cliff,
     elm = useMatch("/remote/:taskId")?.params?.taskId ?? null,
-    {
-      data
-    } = SeenModelUpgradeList(elm),
+    { data } = SeenModelUpgradeList(elm),
     fern = CodexBrowserSurfaceActionType(DeferredUiH222, dusk),
     grove = CodexBrowserSurfaceActionType(AppInitialR, dusk);
   if (elm && data?.task?.title) {
-    let hill = showBackButton ? <HeaderHelper29 {...{
-      onClick: onBack
-    }} /> : null;
-    let isle = <span className="min-w-0 flex-1 text-base text-token-foreground">
+    let hill = showBackButton ? (
+      <HeaderHelper29
+        {...{
+          onClick: onBack,
+        }}
+      />
+    ) : null;
+    let isle = (
+      <span className="min-w-0 flex-1 text-base text-token-foreground">
         {data.task.title}
-      </span>;
+      </span>
+    );
     let juniper;
-    return <div className="flex min-w-0 items-center gap-1">
+    return (
+      <div className="flex min-w-0 items-center gap-1">
         {hill}
         {isle}
-      </div>;
+      </div>
+    );
   }
   if (dusk && fern) {
-    let lagoon = showBackButton ? <HeaderHelper29 {...{
-      onClick: onBack
-    }} /> : null;
-    let meadow = grove || <MemoizedFormattedMessage {...{
-      id: "codex.taskRow.title",
-      defaultMessage: "New chat",
-      description: "Default title for a Codex task that doesn't have a title"
-    }} />;
-    let nest = <span className="min-w-0 flex-1 text-base text-token-foreground">
+    let lagoon = showBackButton ? (
+      <HeaderHelper29
+        {...{
+          onClick: onBack,
+        }}
+      />
+    ) : null;
+    let meadow = grove || (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.taskRow.title",
+          defaultMessage: "New chat",
+          description:
+            "Default title for a Codex task that doesn't have a title",
+        }}
+      />
+    );
+    let nest = (
+      <span className="min-w-0 flex-1 text-base text-token-foreground">
         {meadow}
-      </span>;
+      </span>
+    );
     let oak;
-    return <div className="flex min-w-0 items-center gap-1">
+    return (
+      <div className="flex min-w-0 items-center gap-1">
         {lagoon}
         {nest}
-      </div>;
+      </div>
+    );
   }
   if (apex) {
     if (mergedTasks.length === 0) return null;
     let petal;
-    return <MemoizedFormattedMessage {...{
-      id: "header.recentChats",
-      defaultMessage: "Chats",
-      description: "Header label for recent tasks"
-    }} />;
+    return (
+      <MemoizedFormattedMessage
+        {...{
+          id: "header.recentChats",
+          defaultMessage: "Chats",
+          description: "Header label for recent tasks",
+        }}
+      />
+    );
   }
   return null;
 }
 function wheat(quiet) {
-  let {
-      onClick
-    } = quiet,
+  let { onClick } = quiet,
     rain = useIntl(),
-    seed = <MemoizedFormattedMessage {...{
-      ...zephyr.backButton
-    }} />;
+    seed = (
+      <MemoizedFormattedMessage
+        {...{
+          ...zephyr.backButton,
+        }}
+      />
+    );
   let trail = rain.formatMessage(zephyr.backButton);
-  let urn = <AppIconPZ {...{
-    className: "size-3"
-  }} />;
-  return <ElectronOnly {...{
-    chromeExtension: true,
-    extension: true,
-    children: <OptionalTooltip {...{
-      tooltipContent: seed,
-      children: <ReadLoginRouteQuerySnapshot {...{
-        color: "ghost",
-        size: "icon",
-        onClick,
-        className: "opacity-70 hover:bg-transparent hover:opacity-100 focus:bg-transparent active:bg-transparent",
-        "aria-label": trail,
-        children: urn
-      }} />
-    }} />
-  }} />;
+  let urn = (
+    <AppIconPZ
+      {...{
+        className: "size-3",
+      }}
+    />
+  );
+  return (
+    <ElectronOnly
+      {...{
+        chromeExtension: true,
+        extension: true,
+        children: (
+          <OptionalTooltip
+            {...{
+              tooltipContent: seed,
+              children: (
+                <ReadLoginRouteQuerySnapshot
+                  {...{
+                    color: "ghost",
+                    size: "icon",
+                    onClick,
+                    className:
+                      "opacity-70 hover:bg-transparent hover:opacity-100 focus:bg-transparent active:bg-transparent",
+                    "aria-label": trail,
+                    children: urn,
+                  }}
+                />
+              ),
+            }}
+          />
+        ),
+      }}
+    />
+  );
 }
 var yarn, $, zephyr;
 export const headerN = esmInit(() => {
@@ -368,12 +506,13 @@ export const headerN = esmInit(() => {
     backButton: {
       id: "header.back",
       defaultMessage: "Back",
-      description: "Back button label for returning to the previous screen"
+      description: "Back button label for returning to the previous screen",
     },
     newChatTitle: {
       id: "header.newChatTitle",
       defaultMessage: "New chat",
-      description: "Fallback title shown in the Chrome extension side panel header before a task exists"
-    }
+      description:
+        "Fallback title shown in the Chrome extension side panel header before a task exists",
+    },
   });
 });

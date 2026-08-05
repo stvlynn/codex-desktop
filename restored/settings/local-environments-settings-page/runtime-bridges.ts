@@ -8,4 +8,3 @@
 export function bindLocalEnvironmentsSettings(_next: unknown): void {}
 
 export function ensureLocalEnvironmentsSettingsInit(): void {}
-

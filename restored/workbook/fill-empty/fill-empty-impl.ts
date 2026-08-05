@@ -5,9 +5,7 @@
 import { Zn, dr, tr } from "../presentation-protobuf";
 
 export function isUnspecifiedColor(fempIn12887: any) {
-  return fempIn12887
-    ? fempIn12887.type === Zn.COLOR_TYPE_UNSPECIFIED
-    : true;
+  return fempIn12887 ? fempIn12887.type === Zn.COLOR_TYPE_UNSPECIFIED : true;
 }
 export function isEmptyFill(fempIn2492: any) {
   if (!fempIn2492) return false;

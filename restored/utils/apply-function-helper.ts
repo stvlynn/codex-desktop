@@ -17,7 +17,9 @@ export type BindApplyFunctionHelperPeers = {
 let peers: BindApplyFunctionHelperPeers | null = null;
 
 /** Wire bindApplyFunctionHelper peers once companions land. */
-export function setBindApplyFunctionHelperPeers(next: BindApplyFunctionHelperPeers): void {
+export function setBindApplyFunctionHelperPeers(
+  next: BindApplyFunctionHelperPeers,
+): void {
   peers = next;
 }
 
@@ -30,6 +32,12 @@ export function bindApplyFunctionHelper() {
   }
 
   return peers.e(() => {
-    Et = peers.r(peers.o(), 1), peers.Ze(), peers.at(), peers.lt(), peers.mt(), peers.yt(), peers.wt();
+    ((Et = peers.r(peers.o(), 1)),
+      peers.Ze(),
+      peers.at(),
+      peers.lt(),
+      peers.mt(),
+      peers.yt(),
+      peers.wt());
   });
 }

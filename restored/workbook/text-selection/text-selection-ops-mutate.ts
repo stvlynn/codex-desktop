@@ -102,8 +102,7 @@ export function replaceTextSelection(
   if (covered.length === 0) return;
   const styleParagraph = firstParagraphFromPayload(input);
   const plainLength = paragraph.toPlainText().length;
-  const replacesWholeParagraph =
-    startOffset === 0 && endOffset === plainLength;
+  const replacesWholeParagraph = startOffset === 0 && endOffset === plainLength;
   const replacement = buildReplacementRuns(input, runsCollection, covered[0]);
   const nextRuns: any[] = [];
   cursor = 0;

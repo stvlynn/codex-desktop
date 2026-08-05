@@ -11,7 +11,9 @@ export type BindDeferredHostsRqPeers = {
 let peers: BindDeferredHostsRqPeers | null = null;
 
 /** Wire bindDeferredHostsRq peers once companions land. */
-export function setBindDeferredHostsRqPeers(next: BindDeferredHostsRqPeers): void {
+export function setBindDeferredHostsRqPeers(
+  next: BindDeferredHostsRqPeers,
+): void {
   peers = next;
 }
 
@@ -23,7 +25,5 @@ export function bindDeferredHostsRq() {
     throw new Error("bindDeferredHostsRq peers are not configured");
   }
 
-  return peers.Ia(peers.Q, ({
-    get: e
-  }) => peers.M2r(e(peers.SD)));
+  return peers.Ia(peers.Q, ({ get: e }) => peers.M2r(e(peers.SD)));
 }

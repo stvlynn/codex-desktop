@@ -34,17 +34,34 @@ export function bindBindMessage() {
   }
 
   return peers.e(() => {
-    peers.Sl(), hbe = `configLoad`, gbe = peers.rl().int().positive().finite(), _be = peers.sl({
-      reason: peers.ml(peers.hbe),
-      filePath: peers.X().nullable().optional().transform(e => peers.e ?? null),
-      line: peers.gbe.nullable().optional().transform(e => peers.e ?? null),
-      column: peers.gbe.nullable().optional().transform(e => peers.e ?? null),
-      detail: peers.X()
-    }), vbe = peers.pbe, ybe = e => {
-      if (typeof peers.e == `string`) return peers.mbe(peers.e);
-      if (typeof peers.e != `object` || !peers.e || !(`message` in peers.e)) return null;
-      let t = peers.e.message;
-      return typeof t == `string` ? peers.mbe(t) : null;
-    }, bbe = [peers.vbe, peers.ybe];
+    (peers.Sl(),
+      (hbe = `configLoad`),
+      (gbe = peers.rl().int().positive().finite()),
+      (_be = peers.sl({
+        reason: peers.ml(peers.hbe),
+        filePath: peers
+          .X()
+          .nullable()
+          .optional()
+          .transform((e) => peers.e ?? null),
+        line: peers.gbe
+          .nullable()
+          .optional()
+          .transform((e) => peers.e ?? null),
+        column: peers.gbe
+          .nullable()
+          .optional()
+          .transform((e) => peers.e ?? null),
+        detail: peers.X(),
+      })),
+      (vbe = peers.pbe),
+      (ybe = (e) => {
+        if (typeof peers.e == `string`) return peers.mbe(peers.e);
+        if (typeof peers.e != `object` || !peers.e || !(`message` in peers.e))
+          return null;
+        let t = peers.e.message;
+        return typeof t == `string` ? peers.mbe(t) : null;
+      }),
+      (bbe = [peers.vbe, peers.ybe]));
   });
 }

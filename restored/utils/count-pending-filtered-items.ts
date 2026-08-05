@@ -9,7 +9,9 @@ export type CountPendingFilteredItemsPeers = {
 let peers: CountPendingFilteredItemsPeers | null = null;
 
 /** Wire countPendingFilteredItems peers once companions land. */
-export function setCountPendingFilteredItemsPeers(next: CountPendingFilteredItemsPeers): void {
+export function setCountPendingFilteredItemsPeers(
+  next: CountPendingFilteredItemsPeers,
+): void {
   peers = next;
 }
 
@@ -22,10 +24,13 @@ export function countPendingFilteredItems(e: unknown, t: unknown) {
   }
 
   let n = peers.rt(t);
-  return peers.Wt({
-    filters: {
-      ...e,
-      status: `pending`
-    }
-  }, n).length;
+  return peers.Wt(
+    {
+      filters: {
+        ...e,
+        status: `pending`,
+      },
+    },
+    n,
+  ).length;
 }

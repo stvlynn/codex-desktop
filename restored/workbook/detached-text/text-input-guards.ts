@@ -10,25 +10,19 @@ export function isRunLike(dtIn12867: any) {
 }
 
 export function isLatexInline(dtIn11588: any) {
-  return !dtIn11588 ||
-    typeof dtIn11588 != "object" ||
-    Array.isArray(dtIn11588)
+  return !dtIn11588 || typeof dtIn11588 != "object" || Array.isArray(dtIn11588)
     ? false
     : "latex" in dtIn11588;
 }
 
 export function isMathAstInline(dtIn11622: any) {
-  return !dtIn11622 ||
-    typeof dtIn11622 != "object" ||
-    Array.isArray(dtIn11622)
+  return !dtIn11622 || typeof dtIn11622 != "object" || Array.isArray(dtIn11622)
     ? false
     : "math" in dtIn11622;
 }
 
 export function isMathNodeInline(dtIn11589: any) {
-  return !dtIn11589 ||
-    typeof dtIn11589 != "object" ||
-    Array.isArray(dtIn11589)
+  return !dtIn11589 || typeof dtIn11589 != "object" || Array.isArray(dtIn11589)
     ? false
     : "node" in dtIn11589;
 }
@@ -57,16 +51,11 @@ export function mathInlineDisplayMode(dtIn9996: any) {
 }
 
 export function isPlainRunList(dtIn13769: any) {
-  return (
-    Array.isArray(dtIn13769) &&
-    dtIn13769.every(isInlineAtom)
-  );
+  return Array.isArray(dtIn13769) && dtIn13769.every(isInlineAtom);
 }
 
 export function isParagraphPartial(dtIn5911: any) {
-  return !dtIn5911 ||
-    typeof dtIn5911 != "object" ||
-    Array.isArray(dtIn5911)
+  return !dtIn5911 || typeof dtIn5911 != "object" || Array.isArray(dtIn5911)
     ? false
     : "runs" in dtIn5911 ||
         "bulletCharacter" in dtIn5911 ||
@@ -79,28 +68,21 @@ export function isParagraphPartial(dtIn5911: any) {
 }
 
 export function isParagraphOrRunList(dtIn15252: any) {
-  return (
-    isPlainRunList(dtIn15252) ||
-    isParagraphPartial(dtIn15252)
-  );
+  return isPlainRunList(dtIn15252) || isParagraphPartial(dtIn15252);
 }
 
 export function isMixedRunList(dtIn11623: any) {
   return (
     Array.isArray(dtIn11623) &&
     dtIn11623.every(isInlineAtom) &&
-    dtIn11623.some(
-      (item) => isRunLike(item) || isMathInline(item),
-    )
+    dtIn11623.some((item) => isRunLike(item) || isMathInline(item))
   );
 }
 
 export function isInlineAtom(dtIn11590: any) {
-  return typeof dtIn11590 == "string" ||
-    typeof dtIn11590 == "number"
+  return typeof dtIn11590 == "string" || typeof dtIn11590 == "number"
     ? true
-    : isRunLike(dtIn11590) ||
-        isMathInline(dtIn11590);
+    : isRunLike(dtIn11590) || isMathInline(dtIn11590);
 }
 
 export function isDetachedTextPayload(dtIn11621: any) {
@@ -112,4 +94,3 @@ export function isDetachedTextPayload(dtIn11621: any) {
         : dtIn11621.every(isParagraphOrRunList)
       : false;
 }
-

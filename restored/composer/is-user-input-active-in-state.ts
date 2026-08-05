@@ -9,7 +9,9 @@ export type BindComposerUserInputStateApiPeers = {
 let peers: BindComposerUserInputStateApiPeers | null = null;
 
 /** Wire bindComposerUserInputStateApi peers once companions land. */
-export function setBindComposerUserInputStateApiPeers(next: BindComposerUserInputStateApiPeers): void {
+export function setBindComposerUserInputStateApiPeers(
+  next: BindComposerUserInputStateApiPeers,
+): void {
   peers = next;
 }
 

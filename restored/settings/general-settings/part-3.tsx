@@ -23,11 +23,36 @@ import { AppSurfaceId } from "../../app/app-surface-ids";
 import { ensureCodeThemeRegistryInit } from "../../appearance/code-theme-catalog";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { resolveGuardianApprovalWorkspaceWriteMode } from "../../approvals/resolve-guardian-approval-workspace-write-mode";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationsGateAtom, createAppScopeQueryAtom, localeMessagesAtom, useStepsProseAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_BU_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_ZE_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationsGateAtom,
+  createAppScopeQueryAtom,
+  localeMessagesAtom,
+  useStepsProseAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_BU_Init,
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+  ensureComposerEsm_ZE_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { Link } from "../../boundaries/react-router-link";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -73,7 +98,10 @@ import { AppIconVn } from "../../icons/app-icon-vn";
 import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
 import { resolveOnboardingCatalogKind } from "../../onboarding/resolve-onboarding-catalog-kind";
@@ -90,7 +118,10 @@ import { deferredRv } from "../../ui/deferred-rv";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { ensureContextMenuProviderInit } from "../../ui/ensure-context-menu-provider-init";
@@ -106,16 +137,30 @@ import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { setKeyedStoreAtomValueXU } from "../../utils/set-keyed-store-atom-value";
 import { toggleSortedIdList as ToggleSortedIdList } from "../../utils/toggle-sorted-id-list";
-import { ensureImportSettingsGctInit, ensurePersonalizationCInit as EnsurePersonalizationCInit, ensurePullRequestMediaGUInit, ensureSettingsGlyphNltInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsGctInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+  ensurePullRequestMediaGUInit,
+  ensureSettingsGlyphNltInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { CodeThemePreviewGlyph } from "../code-theme-preview-glyph";
 import { ensureGranularPermissionsClusterInit } from "../ensure-granular-permissions-cluster-init";
 import { generalDesktopSettingsDefinitions } from "../general-desktop-settings-definitions";
 import { ensureGpuTearingDebugSettingsInit } from "../gpu-tearing-debug-settings";
-import { hotkeySetterN, hotkeySetterT as HotkeySetterT } from "../hotkey-setter";
+import {
+  hotkeySetterN,
+  hotkeySetterT as HotkeySetterT,
+} from "../hotkey-setter";
 import { readCodexHomeFromQuery } from "../read-codex-home-from-query";
-import { ensureReviewDeliverySettingsRowInit, ReviewDeliverySettingsRow } from "../review-delivery-settings-row";
+import {
+  ensureReviewDeliverySettingsRowInit,
+  ReviewDeliverySettingsRow,
+} from "../review-delivery-settings-row";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { getSettingValue } from "../settings-values";
 import { useSettingValue } from "../use-setting-value";
 import { buildVscodeQueryKey } from "../vscode-query-key";
@@ -180,93 +225,166 @@ const AppInitialYC: any = undefined;
 const AppInitialVO: any = undefined;
 const AppInitialA: any = undefined;
 function GeneralSettingsHelper23(zinc) {
-  let {
-      open,
-      onOpenChange,
-      onConfirm,
-      permissionsLearnMoreUrl
-    } = zinc,
-    amber = event => {
+  let { open, onOpenChange, onConfirm, permissionsLearnMoreUrl } = zinc,
+    amber = (event) => {
       event.preventDefault();
       onConfirm();
     };
-  let basalt = <DeferredUiUStub {...{
-    children: <DeferredUiH {...{
-      title: <span className="flex items-center gap-2">
+  let basalt = (
+    <DeferredUiUStub
+      {...{
+        children: (
+          <DeferredUiH
+            {...{
+              title: (
+                <span className="flex items-center gap-2">
                   <AppInitialVO className="icon-sm shrink-0" />
-                  {<MemoizedFormattedMessage {...{
-          id: "settings.agent.permissionsMode.fullAccess.confirm.title",
-          defaultMessage: "Make Full Access available?",
-          description: "Title for the confirmation dialog shown before exposing Full access in the composer"
-        }} />}
+                  {
+                    <MemoizedFormattedMessage
+                      {...{
+                        id: "settings.agent.permissionsMode.fullAccess.confirm.title",
+                        defaultMessage: "Make Full Access available?",
+                        description:
+                          "Title for the confirmation dialog shown before exposing Full access in the composer",
+                      }}
+                    />
+                  }
                 </span>
-    }} />
-  }} />;
-  let cedar = <p>
-      {<MemoizedFormattedMessage {...{
-      id: "settings.agent.permissionsMode.fullAccess.confirm.body",
-      defaultMessage: "When selected, ChatGPT can access the internet and read and edit files without asking for approval — including potentially destructive commands",
-      description: "Body copy in the confirmation dialog shown before exposing Full access in the composer"
-    }} />}
-    </p>;
+              ),
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let cedar = (
+    <p>
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.agent.permissionsMode.fullAccess.confirm.body",
+            defaultMessage:
+              "When selected, ChatGPT can access the internet and read and edit files without asking for approval — including potentially destructive commands",
+            description:
+              "Body copy in the confirmation dialog shown before exposing Full access in the composer",
+          }}
+        />
+      }
+    </p>
+  );
   let daisy = alpha(permissionsLearnMoreUrl);
-  let ember = <DeferredUiUStub {...{
-    className: "flex flex-col gap-4 text-token-description-foreground",
-    children: [cedar, <p>
-            {<MemoizedFormattedMessage {...{
-        id: "settings.agent.permissionsMode.fullAccess.confirm.availabilityDescription",
-        defaultMessage: "Turning this on adds Full Access to the permissions menu. It does not turn Full Access on. <a>Learn more</a>",
-        description: "Clarification in the confirmation dialog that exposing Full Access does not select it",
-        values: {
-          a: daisy
-        }
-      }} />}
-          </p>]
-  }} />;
+  let ember = (
+    <DeferredUiUStub
+      {...{
+        className: "flex flex-col gap-4 text-token-description-foreground",
+        children: [
+          cedar,
+          <p>
+            {
+              <MemoizedFormattedMessage
+                {...{
+                  id: "settings.agent.permissionsMode.fullAccess.confirm.availabilityDescription",
+                  defaultMessage:
+                    "Turning this on adds Full Access to the permissions menu. It does not turn Full Access on. <a>Learn more</a>",
+                  description:
+                    "Clarification in the confirmation dialog that exposing Full Access does not select it",
+                  values: {
+                    a: daisy,
+                  },
+                }}
+              />
+            }
+          </p>,
+        ],
+      }}
+    />
+  );
   let flint = () => {
     onOpenChange(false);
   };
-  let garnet = <MemoizedFormattedMessage {...{
-    id: "settings.agent.permissionsMode.fullAccess.confirm.cancel",
-    defaultMessage: "Cancel",
-    description: "Cancel button label in the confirmation dialog shown before exposing Full access in the composer"
-  }} />;
-  let hazel = <ReadLoginRouteQuerySnapshot {...{
-    color: "secondary",
-    type: "button",
-    onClick: flint,
-    children: garnet
-  }} />;
-  let ivory = <ReadLoginRouteQuerySnapshot {...{
-    color: "danger",
-    type: "submit",
-    children: [<AppInitialVO className="icon-xs shrink-0" />, <MemoizedFormattedMessage {...{
-      id: "settings.agent.permissionsMode.fullAccess.confirm.confirm",
-      defaultMessage: "Confirm",
-      description: "Confirm button label in the confirmation dialog shown before exposing Full access in the composer"
-    }} />]
-  }} />;
-  let jasper = <DeferredUiUStub {...{
-    children: <SetRemoteControlEnabledForHost {...{
-      children: [hazel, ivory]
-    }} />
-  }} />;
-  let kelp = <DeferredUiB {...{
-    as: "form",
-    onSubmit: amber,
-    children: [basalt, ember, jasper]
-  }} />;
-  return <UsePointerSurfaceInteractionGate {...{
-    open,
-    showDialogClose: false,
-    onOpenChange,
-    children: kelp
-  }} />;
+  let garnet = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.agent.permissionsMode.fullAccess.confirm.cancel",
+        defaultMessage: "Cancel",
+        description:
+          "Cancel button label in the confirmation dialog shown before exposing Full access in the composer",
+      }}
+    />
+  );
+  let hazel = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "secondary",
+        type: "button",
+        onClick: flint,
+        children: garnet,
+      }}
+    />
+  );
+  let ivory = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "danger",
+        type: "submit",
+        children: [
+          <AppInitialVO className="icon-xs shrink-0" />,
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.agent.permissionsMode.fullAccess.confirm.confirm",
+              defaultMessage: "Confirm",
+              description:
+                "Confirm button label in the confirmation dialog shown before exposing Full access in the composer",
+            }}
+          />,
+        ],
+      }}
+    />
+  );
+  let jasper = (
+    <DeferredUiUStub
+      {...{
+        children: (
+          <SetRemoteControlEnabledForHost
+            {...{
+              children: [hazel, ivory],
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let kelp = (
+    <DeferredUiB
+      {...{
+        as: "form",
+        onSubmit: amber,
+        children: [basalt, ember, jasper],
+      }}
+    />
+  );
+  return (
+    <UsePointerSurfaceInteractionGate
+      {...{
+        open,
+        showDialogClose: false,
+        onOpenChange,
+        children: kelp,
+      }}
+    />
+  );
 }
 function alpha(lotus) {
-  return mint => <a className="inline-flex cursor-interaction text-token-text-link-foreground" href={lotus} target="_blank" rel="noreferrer">
+  return (mint) => (
+    <a
+      className="inline-flex cursor-interaction text-token-text-link-foreground"
+      href={lotus}
+      target="_blank"
+      rel="noreferrer"
+    >
       {mint}
-    </a>;
+    </a>
+  );
 }
 var bravo,
   ui,
@@ -304,13 +422,13 @@ var bravo,
     echo = createAppScopeQueryAtom(appScopeAtom, () => ({
       enabled: appServices.terminal != null,
       queryKey: ["terminal-shells"],
-      queryFn: async ({
-        signal
-      }) => {
+      queryFn: async ({ signal }) => {
         let nova = appServices.terminal;
-        return nova == null ? [] : awaitWithAbort(nova.getAvailableShells(), signal);
+        return nova == null
+          ? []
+          : awaitWithAbort(nova.getAvailableShells(), signal);
       },
-      staleTime: readScrollTop.ONE_MINUTE
+      staleTime: readScrollTop.ONE_MINUTE,
     }));
   });
 function GeneralSettingsHelper25() {
@@ -320,116 +438,184 @@ function GeneralSettingsHelper25() {
     reef = useSettingValue(AppInitialWpt.permissionsEnabled),
     sage = useSettingValue(AppInitialWpt.questionsEnabled),
     topaz = quill ?? "unfocused",
-    ultra = <MemoizedFormattedMessage {...{
-      ...AppInitialAn.never
-    }} />;
+    ultra = (
+      <MemoizedFormattedMessage
+        {...{
+          ...AppInitialAn.never,
+        }}
+      />
+    );
   let vapor = prism.formatMessage(AppInitialAn.never);
   let wheat = {
     id: "off",
     label: ultra,
-    ariaLabel: vapor
+    ariaLabel: vapor,
   };
-  let yarn = <MemoizedFormattedMessage {...{
-    ...AppInitialAn.onlyWhenUnfocused
-  }} />;
+  let yarn = (
+    <MemoizedFormattedMessage
+      {...{
+        ...AppInitialAn.onlyWhenUnfocused,
+      }}
+    />
+  );
   let zephyr = prism.formatMessage(AppInitialAn.onlyWhenUnfocused);
   let acorn = {
     id: "unfocused",
     label: yarn,
-    ariaLabel: zephyr
+    ariaLabel: zephyr,
   };
-  let bloom = <MemoizedFormattedMessage {...{
-    ...AppInitialAn.always
-  }} />;
+  let bloom = (
+    <MemoizedFormattedMessage
+      {...{
+        ...AppInitialAn.always,
+      }}
+    />
+  );
   let coral = prism.formatMessage(AppInitialAn.always);
   let drift = {
     id: "always",
     label: bloom,
-    ariaLabel: coral
+    ariaLabel: coral,
   };
   let eagle = [wheat, acorn, drift];
   let frost = eagle,
     glide,
     honey;
-  glide = <MemoizedFormattedMessage {...{
-    ...AppInitialAn.turnCompletionNotifications
-  }} />;
-  honey = <MemoizedFormattedMessage {...{
-    id: "notifications.turnMode.description",
-    defaultMessage: "Set when ChatGPT alerts you that it's finished",
-    description: "Description for turn completion notification settings"
-  }} />;
-  let iris = frost.find(item => item.id === topaz)?.label,
-    jewel = <DropdownTriggerButton>
+  glide = (
+    <MemoizedFormattedMessage
+      {...{
+        ...AppInitialAn.turnCompletionNotifications,
+      }}
+    />
+  );
+  honey = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "notifications.turnMode.description",
+        defaultMessage: "Set when ChatGPT alerts you that it's finished",
+        description: "Description for turn completion notification settings",
+      }}
+    />
+  );
+  let iris = frost.find((item) => item.id === topaz)?.label,
+    jewel = (
+      <DropdownTriggerButton>
         <span className="truncate">{iris}</span>
-      </DropdownTriggerButton>;
-  let knoll = <div className="max-h-80 overflow-y-auto">
-      {frost.map(item => {
-      let brook = item.id === topaz;
-      return <DropdownMenu.Item key={item.id} {...{
-        RightIcon: brook ? AppIconZlt : undefined,
-        onSelect: () => {
-          setSettingValue(olive, AppInitialWpt.turnMode, item.id);
-        },
-        "aria-label": item.ariaLabel,
-        children: <span className="truncate">{item.label}</span>
-      }} />;
-    })}
-    </div>;
-  let lunar = <EnsurePersonalizationCInit {...{
-    label: glide,
-    description: honey,
-    control: <DropdownMenuPopover {...{
-      contentWidth: "menuWide",
-      align: "end",
-      triggerButton: jewel,
-      children: knoll
-    }} />
-  }} />;
+      </DropdownTriggerButton>
+    );
+  let knoll = (
+    <div className="max-h-80 overflow-y-auto">
+      {frost.map((item) => {
+        let brook = item.id === topaz;
+        return (
+          <DropdownMenu.Item
+            key={item.id}
+            {...{
+              RightIcon: brook ? AppIconZlt : undefined,
+              onSelect: () => {
+                setSettingValue(olive, AppInitialWpt.turnMode, item.id);
+              },
+              "aria-label": item.ariaLabel,
+              children: <span className="truncate">{item.label}</span>,
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+  let lunar = (
+    <EnsurePersonalizationCInit
+      {...{
+        label: glide,
+        description: honey,
+        control: (
+          <DropdownMenuPopover
+            {...{
+              contentWidth: "menuWide",
+              align: "end",
+              triggerButton: jewel,
+              children: knoll,
+            }}
+          />
+        ),
+      }}
+    />
+  );
   let moss, north;
-  moss = <MemoizedFormattedMessage {...{
-    ...AppInitialAn.permissionNotifications
-  }} />;
-  north = <MemoizedFormattedMessage {...{
-    id: "notifications.permissions.description",
-    defaultMessage: "Show alerts when notification permissions are required",
-    description: "Description for permission notification toggle"
-  }} />;
+  moss = (
+    <MemoizedFormattedMessage
+      {...{
+        ...AppInitialAn.permissionNotifications,
+      }}
+    />
+  );
+  north = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "notifications.permissions.description",
+        defaultMessage:
+          "Show alerts when notification permissions are required",
+        description: "Description for permission notification toggle",
+      }}
+    />
+  );
   let orbit = reef ?? true,
-    pine = cliff => {
+    pine = (cliff) => {
       setSettingValue(olive, AppInitialWpt.permissionsEnabled, cliff);
     };
   let quest = prism.formatMessage(AppInitialAn.permissionNotifications);
-  let ridge = <EnsurePersonalizationCInit {...{
-    label: moss,
-    description: north,
-    control: <AppInitialYC checked={orbit} onChange={pine} ariaLabel={quest} />
-  }} />;
+  let ridge = (
+    <EnsurePersonalizationCInit
+      {...{
+        label: moss,
+        description: north,
+        control: (
+          <AppInitialYC checked={orbit} onChange={pine} ariaLabel={quest} />
+        ),
+      }}
+    />
+  );
   let storm, tide;
-  storm = <MemoizedFormattedMessage {...{
-    ...AppInitialAn.questionNotifications
-  }} />;
-  tide = <MemoizedFormattedMessage {...{
-    id: "notifications.questions.description",
-    defaultMessage: "Show alerts when input is needed to continue",
-    description: "Description for question notification toggle"
-  }} />;
+  storm = (
+    <MemoizedFormattedMessage
+      {...{
+        ...AppInitialAn.questionNotifications,
+      }}
+    />
+  );
+  tide = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "notifications.questions.description",
+        defaultMessage: "Show alerts when input is needed to continue",
+        description: "Description for question notification toggle",
+      }}
+    />
+  );
   let unity = sage ?? true,
-    vale = dusk => {
+    vale = (dusk) => {
       setSettingValue(olive, AppInitialWpt.questionsEnabled, dusk);
     };
   let wave = prism.formatMessage(AppInitialAn.questionNotifications);
-  let apex = <EnsurePersonalizationCInit {...{
-    label: storm,
-    description: tide,
-    control: <AppInitialYC checked={unity} onChange={vale} ariaLabel={wave} />
-  }} />;
-  return <>
+  let apex = (
+    <EnsurePersonalizationCInit
+      {...{
+        label: storm,
+        description: tide,
+        control: (
+          <AppInitialYC checked={unity} onChange={vale} ariaLabel={wave} />
+        ),
+      }}
+    />
+  );
+  return (
+    <>
       {lunar}
       {ridge}
       {apex}
       {null}
-    </>;
+    </>
+  );
 }
 var gamma,
   harbor,
@@ -450,43 +636,59 @@ var gamma,
 function _i() {
   let elm = CodexPluginActionType(appScopeAtom),
     fern = useIntl(),
-    {
-      authMethod,
-      email,
-      planAtLogin
-    } = useAuth(),
-    {
-      data
-    } = getChatGptAccountInfoQueryConfig(),
+    { authMethod, email, planAtLogin } = useAuth(),
+    { data } = getChatGptAccountInfoQueryConfig(),
     grove = useSettingValue(AppInitialVpt.enabled);
-  if (!IN_APP_BROWSER_OPEN_TARGET({
-    authMethod,
-    email: data?.email ?? email,
-    plan: data?.plan ?? planAtLogin
-  })) return null;
+  if (
+    !IN_APP_BROWSER_OPEN_TARGET({
+      authMethod,
+      email: data?.email ?? email,
+      plan: data?.plan ?? planAtLogin,
+    })
+  )
+    return null;
   let hill, isle;
-  hill = <MemoizedFormattedMessage {...{
-    ...AppInitialAn.suggestedPrompts
-  }} />;
-  isle = <MemoizedFormattedMessage {...{
-    id: "settings.agent.ambientSuggestions.rowLabel",
-    defaultMessage: "Suggest what to do next by searching project files and connected apps",
-    description: "Description for the ambient suggestions setting row"
-  }} />;
+  hill = (
+    <MemoizedFormattedMessage
+      {...{
+        ...AppInitialAn.suggestedPrompts,
+      }}
+    />
+  );
+  isle = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.agent.ambientSuggestions.rowLabel",
+        defaultMessage:
+          "Suggest what to do next by searching project files and connected apps",
+        description: "Description for the ambient suggestions setting row",
+      }}
+    />
+  );
   let juniper = grove === true,
     lagoon = fern.formatMessage({
       id: "settings.agent.ambientSuggestions.toggleLabel",
       defaultMessage: "Enable ambient suggestions",
-      description: "Aria label for the ambient suggestions toggle"
+      description: "Aria label for the ambient suggestions toggle",
     });
-  let meadow = nest => {
+  let meadow = (nest) => {
     setSettingValue(elm, AppInitialVpt.enabled, nest);
   };
-  return <EnsurePersonalizationCInit {...{
-    label: hill,
-    description: isle,
-    control: <AppInitialYC checked={juniper} ariaLabel={lagoon} onChange={meadow} />
-  }} />;
+  return (
+    <EnsurePersonalizationCInit
+      {...{
+        label: hill,
+        description: isle,
+        control: (
+          <AppInitialYC
+            checked={juniper}
+            ariaLabel={lagoon}
+            onChange={meadow}
+          />
+        ),
+      }}
+    />
+  );
 }
 var jade,
   kite,
@@ -505,21 +707,22 @@ var jade,
   });
 function GeneralSettingsHelper26() {
   let oak = readCodexHomeFromQuery(LOCAL_HOST_ID),
-    {
-      data,
-      isLoading
-    } = CodexPluginActionResult(deferredHostsZ4),
+    { data, isLoading } = CodexPluginActionResult(deferredHostsZ4),
     petal = CodexPluginActionResult(AppInitialX4),
     quiet = CodexPluginActionResult(deferredHostsY4),
     rain = isLoading || quiet,
     seed = data == null ? undefined : petal;
-  return <WorkspaceImportSettingsSection {...{
-    variant: "general-row",
-    codexHome: oak,
-    hostId: LOCAL_HOST_ID,
-    isActiveWorkspaceLoading: rain,
-    workspaceRoots: seed
-  }} />;
+  return (
+    <WorkspaceImportSettingsSection
+      {...{
+        variant: "general-row",
+        codexHome: oak,
+        hostId: LOCAL_HOST_ID,
+        isActiveWorkspaceLoading: rain,
+        workspaceRoots: seed,
+      }}
+    />
+  );
 }
 var marble,
   nickel,
@@ -532,46 +735,76 @@ var marble,
     ensureAppShellAtomsInit();
   });
 function GeneralSettingsHelper27(trail) {
-  let {
-      onCreateWslProject,
-      wslConnectionHostId,
-      wslConnectionState
-    } = trail,
-    urn = wslConnectionHostId != null && wslConnectionState === "connected" ? <MemoizedFormattedMessage {...{
-      id: "settings.agentEnvironment.legacyWsl.deprecation.withConnection",
-      defaultMessage: "The legacy WSL agent environment is deprecated. Use a project from your WSL connection instead, or <addProject>add a new one</addProject>",
-      description: "Deprecation guidance shown to legacy WSL agent environment users who can add a project from their WSL connection",
-      values: {
-        addProject: yarrow => <button type="button" className="cursor-interaction border-0 bg-transparent p-0 text-token-text-link-foreground hover:underline" onClick={() => {
-          onCreateWslProject(wslConnectionHostId);
-        }}>
+  let { onCreateWslProject, wslConnectionHostId, wslConnectionState } = trail,
+    urn =
+      wslConnectionHostId != null && wslConnectionState === "connected" ? (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.agentEnvironment.legacyWsl.deprecation.withConnection",
+            defaultMessage:
+              "The legacy WSL agent environment is deprecated. Use a project from your WSL connection instead, or <addProject>add a new one</addProject>",
+            description:
+              "Deprecation guidance shown to legacy WSL agent environment users who can add a project from their WSL connection",
+            values: {
+              addProject: (yarrow) => (
+                <button
+                  type="button"
+                  className="cursor-interaction border-0 bg-transparent p-0 text-token-text-link-foreground hover:underline"
+                  onClick={() => {
+                    onCreateWslProject(wslConnectionHostId);
+                  }}
+                >
                   {yarrow}
                 </button>
-      }
-    }} /> : null;
-  let vine = wslConnectionHostId != null && wslConnectionState !== "connected" ? <MemoizedFormattedMessage {...{
-    id: "settings.agentEnvironment.legacyWsl.deprecation.connectionNotReady",
-    defaultMessage: "The legacy WSL agent environment is deprecated. <connectionsLink>Open WSL connections</connectionsLink> to continue",
-    description: "Deprecation guidance shown to legacy WSL agent environment users whose remote WSL connection is not ready",
-    values: {
-      connectionsLink: pearl
-    }
-  }} /> : null;
-  let wind = wslConnectionHostId == null ? <MemoizedFormattedMessage {...{
-    id: "settings.agentEnvironment.legacyWsl.deprecation.withoutConnection",
-    defaultMessage: "The legacy WSL agent environment is deprecated. Install WSL and the Codex CLI inside your WSL distribution, then restart ChatGPT to use remote WSL connections",
-    description: "Deprecation guidance shown to legacy WSL agent environment users without a remote WSL connection"
-  }} /> : null;
-  return <span className="text-token-editor-warning-foreground">
+              ),
+            },
+          }}
+        />
+      ) : null;
+  let vine =
+    wslConnectionHostId != null && wslConnectionState !== "connected" ? (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.agentEnvironment.legacyWsl.deprecation.connectionNotReady",
+          defaultMessage:
+            "The legacy WSL agent environment is deprecated. <connectionsLink>Open WSL connections</connectionsLink> to continue",
+          description:
+            "Deprecation guidance shown to legacy WSL agent environment users whose remote WSL connection is not ready",
+          values: {
+            connectionsLink: pearl,
+          },
+        }}
+      />
+    ) : null;
+  let wind =
+    wslConnectionHostId == null ? (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.agentEnvironment.legacyWsl.deprecation.withoutConnection",
+          defaultMessage:
+            "The legacy WSL agent environment is deprecated. Install WSL and the Codex CLI inside your WSL distribution, then restart ChatGPT to use remote WSL connections",
+          description:
+            "Deprecation guidance shown to legacy WSL agent environment users without a remote WSL connection",
+        }}
+      />
+    ) : null;
+  return (
+    <span className="text-token-editor-warning-foreground">
       {urn}
       {vine}
       {wind}
-    </span>;
+    </span>
+  );
 }
 function pearl(azure) {
-  return <Link className="cursor-interaction text-token-text-link-foreground hover:underline" to="/settings/connections/wsl">
+  return (
+    <Link
+      className="cursor-interaction text-token-text-link-foreground hover:underline"
+      to="/settings/connections/wsl"
+    >
       {azure}
-    </Link>;
+    </Link>
+  );
 }
 var quartz,
   river,
@@ -584,86 +817,116 @@ function timber({
   hasUsedLegacyWslAgentEnvironment,
   remoteWslConnectionsEnabled,
   runCodexInWsl,
-  supportsRunningInWsl
+  supportsRunningInWsl,
 }) {
-  return remoteWslConnectionsEnabled ? runCodexInWsl || hasUsedLegacyWslAgentEnvironment : supportsRunningInWsl;
+  return remoteWslConnectionsEnabled
+    ? runCodexInWsl || hasUsedLegacyWslAgentEnvironment
+    : supportsRunningInWsl;
 }
 var umbra = esmInit(() => {});
 function GeneralSettingsHelper30() {
   let birch = useIntl(),
-    {
-      isServiceTierAllowed
-    } = useHostChatgptAuthMethod(),
-    {
-      serviceTierSettings,
-      setServiceTier
-    } = ensureSelectWorkspaceCqInit();
-  if (!isServiceTierAllowed || serviceTierSettings.availableOptions.length <= 1) return null;
-  let canyon = serviceTierSettings.availableOptions.find(item => item.value === serviceTierSettings.selectedServiceTier) ?? serviceTierSettings.availableOptions[0];
+    { isServiceTierAllowed } = useHostChatgptAuthMethod(),
+    { serviceTierSettings, setServiceTier } = ensureSelectWorkspaceCqInit();
+  if (!isServiceTierAllowed || serviceTierSettings.availableOptions.length <= 1)
+    return null;
+  let canyon =
+    serviceTierSettings.availableOptions.find(
+      (item) => item.value === serviceTierSettings.selectedServiceTier,
+    ) ?? serviceTierSettings.availableOptions[0];
   let dew = canyon,
     ever,
     field;
-  ever = <MemoizedFormattedMessage {...{
-    ...xenon.label
-  }} />;
-  field = <MemoizedFormattedMessage {...{
-    ...xenon.description
-  }} />;
+  ever = (
+    <MemoizedFormattedMessage
+      {...{
+        ...xenon.label,
+      }}
+    />
+  );
+  field = (
+    <MemoizedFormattedMessage
+      {...{
+        ...xenon.description,
+      }}
+    />
+  );
   let grain = serviceTierSettings.isLoading,
     haven = AppInitialZS(birch, dew.label);
-  let ink = <DropdownTriggerButton disabled={grain}>
-      {haven}
-    </DropdownTriggerButton>;
-  let jadeite = leaf => {
+  let ink = (
+    <DropdownTriggerButton disabled={grain}>{haven}</DropdownTriggerButton>
+  );
+  let jadeite = (leaf) => {
     setServiceTier(leaf, "settings");
   };
-  let kernel = <GeneralSettingsHelper31 {...{
-    disabled: serviceTierSettings.isLoading,
-    onSelect: jadeite,
-    options: serviceTierSettings.availableOptions,
-    selectedServiceTier: serviceTierSettings.selectedServiceTier
-  }} />;
-  return <EnsurePersonalizationCInit {...{
-    label: ever,
-    description: field,
-    control: <DropdownMenuPopover {...{
-      contentWidth: "menuWide",
-      align: "end",
-      triggerButton: ink,
-      children: kernel
-    }} />
-  }} />;
+  let kernel = (
+    <GeneralSettingsHelper31
+      {...{
+        disabled: serviceTierSettings.isLoading,
+        onSelect: jadeite,
+        options: serviceTierSettings.availableOptions,
+        selectedServiceTier: serviceTierSettings.selectedServiceTier,
+      }}
+    />
+  );
+  return (
+    <EnsurePersonalizationCInit
+      {...{
+        label: ever,
+        description: field,
+        control: (
+          <DropdownMenuPopover
+            {...{
+              contentWidth: "menuWide",
+              align: "end",
+              triggerButton: ink,
+              children: kernel,
+            }}
+          />
+        ),
+      }}
+    />
+  );
 }
 function GeneralSettingsHelper31(maple) {
-  let {
-      disabled,
-      onSelect,
-      options,
-      selectedServiceTier
-    } = maple,
+  let { disabled, onSelect, options, selectedServiceTier } = maple,
     nimbus;
   {
     let opal;
-    opal = plume => {
+    opal = (plume) => {
       let quillow = AppInitialA(plume.iconKind);
-      return <DropdownMenu.Item key={plume.value ?? "standard"} {...{
-        disabled,
-        tooltipText: AppInitialVS(plume.description),
-        tooltipSide: "top",
-        RightIcon: plume.value === selectedServiceTier ? AppIconZlt : undefined,
-        SubText: <span className="text-token-description-foreground">
+      return (
+        <DropdownMenu.Item
+          key={plume.value ?? "standard"}
+          {...{
+            disabled,
+            tooltipText: AppInitialVS(plume.description),
+            tooltipSide: "top",
+            RightIcon:
+              plume.value === selectedServiceTier ? AppIconZlt : undefined,
+            SubText: (
+              <span className="text-token-description-foreground">
                 {AppInitialVS(plume.description)}
-              </span>,
-        onSelect: () => onSelect(plume.value),
-        children: <span className="inline-flex max-w-full min-w-0 items-center gap-1 align-middle">
-                {quillow == null ? null : <AppInitialA {...{
-            className: "icon-2xs text-token-link-foreground shrink-0"
-          }} />}
+              </span>
+            ),
+            onSelect: () => onSelect(plume.value),
+            children: (
+              <span className="inline-flex max-w-full min-w-0 items-center gap-1 align-middle">
+                {quillow == null ? null : (
+                  <AppInitialA
+                    {...{
+                      className: "icon-2xs text-token-link-foreground shrink-0",
+                    }}
+                  />
+                )}
                 <span className="min-w-0 truncate">
                   {AppInitialVS(plume.label)}
                 </span>
               </span>
-      }} />;
+            ),
+          }}
+        />
+      );
     };
     nimbus = options.map(opal);
   }
@@ -686,20 +949,29 @@ var violet,
     xenon = identity({
       description: {
         id: "settings.agent.speed.description",
-        defaultMessage: "Choose how quickly ChatGPT runs across chats, subagents, and compaction",
-        description: "Description for the speed setting"
+        defaultMessage:
+          "Choose how quickly ChatGPT runs across chats, subagents, and compaction",
+        description: "Description for the speed setting",
       },
       label: {
         id: "settings.agent.speed.label",
         defaultMessage: "Speed",
-        description: "Label for the Fast mode speed setting"
-      }
+        description: "Label for the Fast mode speed setting",
+      },
     });
   });
 export function generalSettingsI() {
   let root = CodexPluginActionResult(chatgptConversationsGateAtom);
-  return <OpenInBrowser {...{
-    title: <SettingsSectionTitle slug="general-settings" />,
-    children: root ? <GeneralSettingsHelper32 {...{}} /> : <GeneralSettingsHelper33 {...{}} />
-  }} />;
+  return (
+    <OpenInBrowser
+      {...{
+        title: <SettingsSectionTitle slug="general-settings" />,
+        children: root ? (
+          <GeneralSettingsHelper32 {...{}} />
+        ) : (
+          <GeneralSettingsHelper33 {...{}} />
+        ),
+      }}
+    />
+  );
 }

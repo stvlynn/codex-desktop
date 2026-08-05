@@ -159,9 +159,7 @@ export function resolveEvaluationState(
   );
 }
 
-export function isForbiddenPathSegment(
-  segment: string | undefined,
-): boolean {
+export function isForbiddenPathSegment(segment: string | undefined): boolean {
   return segment != null && FORBIDDEN_PATH_SEGMENTS.has(segment);
 }
 

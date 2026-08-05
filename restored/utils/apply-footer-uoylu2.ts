@@ -26,7 +26,9 @@ export type BindApplyFooterUoylu2Peers = {
 let peers: BindApplyFooterUoylu2Peers | null = null;
 
 /** Wire bindApplyFooterUoylu2 peers once companions land. */
-export function setBindApplyFooterUoylu2Peers(next: BindApplyFooterUoylu2Peers): void {
+export function setBindApplyFooterUoylu2Peers(
+  next: BindApplyFooterUoylu2Peers,
+): void {
   peers = next;
 }
 
@@ -57,6 +59,6 @@ export function bindApplyFooterUoylu2() {
     labelSm: peers.Det,
     labelXs: peers.Oet,
     secondaryLabel: peers.ket,
-    secondaryChevron: peers.Aet
+    secondaryChevron: peers.Aet,
   };
 }

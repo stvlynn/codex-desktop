@@ -9,7 +9,9 @@ export type BrowserUseFullCdpAccessPeers = {
 let peers: BrowserUseFullCdpAccessPeers | null = null;
 
 /** Wire browserUseFullCdpAccess peers once companions land. */
-export function setBrowserUseFullCdpAccessPeers(next: BrowserUseFullCdpAccessPeers): void {
+export function setBrowserUseFullCdpAccessPeers(
+  next: BrowserUseFullCdpAccessPeers,
+): void {
   peers = next;
 }
 

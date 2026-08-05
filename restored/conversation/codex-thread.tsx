@@ -26,6 +26,6 @@ export function bindCodexThread() {
   }
 
   return peers.e(() => {
-    peers.L1(), peers.o0o(), peers.HA(), peers.TK(), hic = `codex:thread:`;
+    (peers.L1(), peers.o0o(), peers.HA(), peers.TK(), (hic = `codex:thread:`));
   });
 }

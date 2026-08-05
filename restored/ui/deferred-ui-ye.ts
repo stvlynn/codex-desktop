@@ -30,6 +30,12 @@ export function deferredUiYE() {
   }
 
   return peers.e(() => {
-    PJo = peers.c(), peers.$u(), peers.Pp(), peers.Mp(), peers.uh(), peers.MJo(), VJ = peers.J();
+    ((PJo = peers.c()),
+      peers.$u(),
+      peers.Pp(),
+      peers.Mp(),
+      peers.uh(),
+      peers.MJo(),
+      (VJ = peers.J()));
   });
 }

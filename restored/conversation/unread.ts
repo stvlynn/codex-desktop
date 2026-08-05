@@ -26,7 +26,7 @@ export function bindUnread() {
       waiting: 0,
       unread: 1,
       active: 2,
-      idle: 3
+      idle: 3,
     };
   });
 }

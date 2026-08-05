@@ -26,7 +26,7 @@ export function deferredT() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), ASu = peers.Ta(peers.Q, null);
+    (peers.Ho(), peers.ed(), (ASu = peers.Ta(peers.Q, null)));
   });
 }
 

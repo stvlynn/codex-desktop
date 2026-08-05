@@ -47,25 +47,34 @@ export function needsResume() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.DD(), peers.VAr(), peers.RAr(), peers.$Dt(), peers.ed(), peers.K_(), GAr = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => {
-      let n = t(peers.vnr, peers.e),
-        r = t(peers.rD, peers.e) ?? n?.hostId ?? `local`;
-      return peers.UAr({
-        hasInProgressOwnedWork: t(peers.FAr, peers.e) || t(peers.BAr, r).has(peers.e),
-        isResponseInProgress: t(peers.lD, peers.e),
-        resumeState: t(peers.hD, peers.e) ?? (n == null ? null : `needs_resume`),
-        threadRuntimeStatus: t(peers.Knr, peers.e) ?? n?.threadRuntimeStatus ?? null,
-        latestTurnHasSystemError: t(peers.Qnr, peers.e) === !0
-      });
-    }), KAr = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => peers.WAr({
-      pendingRequestType: t(peers.mD, peers.e)?.type ?? null,
-      requests: t(peers.pD, peers.e),
-      resumeState: t(peers.hD, peers.e),
-      threadRuntimeStatus: t(peers.Knr, peers.e)
-    }));
+    (peers.Ho(),
+      peers.DD(),
+      peers.VAr(),
+      peers.RAr(),
+      peers.$Dt(),
+      peers.ed(),
+      peers.K_(),
+      (GAr = peers.Oa(peers.Q, (e, { get: t }) => {
+        let n = t(peers.vnr, peers.e),
+          r = t(peers.rD, peers.e) ?? n?.hostId ?? `local`;
+        return peers.UAr({
+          hasInProgressOwnedWork:
+            t(peers.FAr, peers.e) || t(peers.BAr, r).has(peers.e),
+          isResponseInProgress: t(peers.lD, peers.e),
+          resumeState:
+            t(peers.hD, peers.e) ?? (n == null ? null : `needs_resume`),
+          threadRuntimeStatus:
+            t(peers.Knr, peers.e) ?? n?.threadRuntimeStatus ?? null,
+          latestTurnHasSystemError: t(peers.Qnr, peers.e) === !0,
+        });
+      })),
+      (KAr = peers.Oa(peers.Q, (e, { get: t }) =>
+        peers.WAr({
+          pendingRequestType: t(peers.mD, peers.e)?.type ?? null,
+          requests: t(peers.pD, peers.e),
+          resumeState: t(peers.hD, peers.e),
+          threadRuntimeStatus: t(peers.Knr, peers.e),
+        }),
+      )));
   });
 }

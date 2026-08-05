@@ -11,7 +11,9 @@ export type BindBindEnvironmentsPeers = {
 let peers: BindBindEnvironmentsPeers | null = null;
 
 /** Wire bindBindEnvironments peers once companions land. */
-export function setBindBindEnvironmentsPeers(next: BindBindEnvironmentsPeers): void {
+export function setBindBindEnvironmentsPeers(
+  next: BindBindEnvironmentsPeers,
+): void {
   peers = next;
 }
 

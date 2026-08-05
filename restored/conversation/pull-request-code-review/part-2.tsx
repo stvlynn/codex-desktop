@@ -10,8 +10,19 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { ensureCodeThemeRegistryInit } from "../../appearance/code-theme-catalog";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_LR_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wdt_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_LR_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Wdt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { OPENAI_PRIMARY_RUNTIME_ID } from "../../config/openai-primary-runtime-id";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { diffVirtualizationMetrics } from "../../diff/diff-virtualization-metrics";
@@ -78,7 +89,7 @@ function quartz(river) {
       isLeftOpen = true,
       isRightOpen = true,
       onLeftOpenChange: slate,
-      onRightOpenChange
+      onRightOpenChange,
     } = river,
     timber = minLeftWidth === undefined ? onyx : minLeftWidth,
     umbra = minRightWidth === undefined ? onyx : minRightWidth,
@@ -124,20 +135,23 @@ function quartz(river) {
   let eagle = () => {
     let pine = lotus.current;
     if (!pine || typeof ResizeObserver > "u") return;
-    let quest = new ResizeObserver(ridge => {
+    let quest = new ResizeObserver((ridge) => {
       let storm = ridge[0]?.contentRect.width ?? 0;
       ivory(storm);
     });
-    return quest.observe(pine), () => {
-      quest.disconnect();
-    };
+    return (
+      quest.observe(pine),
+      () => {
+        quest.disconnect();
+      }
+    );
   };
   let frost;
   frost = [];
   nickel.useEffect(eagle, frost);
   let glide, honey;
   glide = () => {
-    !hazel || !yellow || !isLeftOpen && !isRightOpen && slate?.(true);
+    !hazel || !yellow || (!isLeftOpen && !isRightOpen && slate?.(true));
   };
   honey = [hazel, yellow, isLeftOpen, isRightOpen, slate];
   nickel.useEffect(glide, honey);
@@ -148,8 +162,12 @@ function quartz(river) {
     if (!unity) return;
     let vale = quill.current,
       wave = reef.current,
-      apex = vale != null && Math.abs(vale - unity) >= 1 || wave != null && wave !== amber;
-    prism.current ? apex && harbor([sage, topaz, ultra], nova) : (harbor([sage, topaz, ultra], nova), prism.current = true);
+      apex =
+        (vale != null && Math.abs(vale - unity) >= 1) ||
+        (wave != null && wave !== amber);
+    prism.current
+      ? apex && harbor([sage, topaz, ultra], nova)
+      : (harbor([sage, topaz, ultra], nova), (prism.current = true));
     let brook = () => {
       quill.current = unity;
       reef.current = amber;
@@ -162,7 +180,7 @@ function quartz(river) {
         minRightWidth: umbra,
         isOpen: zinc,
         node: tide,
-        rafRef: mint
+        rafRef: mint,
       });
       brook();
       return;
@@ -178,23 +196,21 @@ function quartz(river) {
         node: tide,
         rafRef: mint,
         opts: {
-          immediate: true
-        }
+          immediate: true,
+        },
       });
       brook();
       return;
     }
     if (!zinc) {
       let fern = cliff * marble(vapor.current),
-        {
-          rightWidth: _rightWidth,
-          boundedLeftRatio: _boundedLeftRatio
-        } = copper({
-          containerWidth: unity,
-          minLeftWidth: timber,
-          minRightWidth: umbra,
-          leftWidth: fern
-        });
+        { rightWidth: _rightWidth, boundedLeftRatio: _boundedLeftRatio } =
+          copper({
+            containerWidth: unity,
+            minLeftWidth: timber,
+            minRightWidth: umbra,
+            leftWidth: fern,
+          });
       vapor.current = _boundedLeftRatio;
       let grove = bravo(wheat.current > 0 ? wheat.current : _rightWidth, cliff);
       wheat.current = grove;
@@ -207,8 +223,8 @@ function quartz(river) {
         node: tide,
         rafRef: mint,
         opts: {
-          immediate: true
-        }
+          immediate: true,
+        },
       });
       brook();
       return;
@@ -225,22 +241,18 @@ function quartz(river) {
         node: tide,
         rafRef: mint,
         opts: {
-          immediate: true
-        }
+          immediate: true,
+        },
       });
       brook();
       return;
     }
     let dusk = cliff * marble(vapor.current),
-      {
-        boundedLeftWidth,
-        rightWidth,
-        boundedLeftRatio
-      } = copper({
+      { boundedLeftWidth, rightWidth, boundedLeftRatio } = copper({
         containerWidth: unity,
         minLeftWidth: timber,
         minRightWidth: umbra,
-        leftWidth: dusk
+        leftWidth: dusk,
       });
     wheat.current = rightWidth;
     vapor.current = boundedLeftRatio;
@@ -254,20 +266,42 @@ function quartz(river) {
       node: tide,
       rafRef: mint,
       opts: {
-        immediate: true
-      }
+        immediate: true,
+      },
     });
     brook();
     let elm = mint.current;
     return () => {
-      elm != null && (cancelAnimationFrame(elm), mint.current === elm && (mint.current = null));
-      nova.current != null && (cancelAnimationFrame(nova.current), nova.current = null);
+      elm != null &&
+        (cancelAnimationFrame(elm),
+        mint.current === elm && (mint.current = null));
+      nova.current != null &&
+        (cancelAnimationFrame(nova.current), (nova.current = null));
     };
   };
   let iris;
-  iris = [hazel, amber, zinc, bloom, willow, drawerMaxWidth, drawerVisibleInset, zephyr, yellow, acorn, isLeftOpen, isRightOpen, jasper, timber, umbra, xenon, basalt, cedar];
+  iris = [
+    hazel,
+    amber,
+    zinc,
+    bloom,
+    willow,
+    drawerMaxWidth,
+    drawerVisibleInset,
+    zephyr,
+    yellow,
+    acorn,
+    isLeftOpen,
+    isRightOpen,
+    jasper,
+    timber,
+    umbra,
+    xenon,
+    basalt,
+    cedar,
+  ];
   nickel.useLayoutEffect(_e, iris);
-  let jewel = event => {
+  let jewel = (event) => {
     if (event.button !== 0) return;
     let isle = lotus.current,
       juniper = lemon(hazel, isle);
@@ -283,21 +317,17 @@ function quartz(river) {
   let be = jewel,
     knoll = () => {
       if (!jasper) return;
-      let meadow = event => {
+      let meadow = (event) => {
           event.preventDefault();
           let petal = lotus.current,
             quiet = lemon(hazel, petal);
           if (!petal || !quiet) return;
           let rain = jade(event, petal, olive),
-            {
-              boundedLeftWidth,
-              rightWidth,
-              boundedLeftRatio
-            } = copper({
+            { boundedLeftWidth, rightWidth, boundedLeftRatio } = copper({
               containerWidth: quiet,
               minLeftWidth: timber,
               minRightWidth: umbra,
-              leftWidth: rain
+              leftWidth: rain,
             });
           wheat.current = rightWidth;
           vapor.current = boundedLeftRatio;
@@ -308,10 +338,10 @@ function quartz(river) {
             rightWidth,
             rightTranslate: 0,
             node: petal,
-            rafRef: mint
+            rafRef: mint,
           });
         },
-        nest = event => {
+        nest = (event) => {
           event.preventDefault();
           let seed = lotus.current,
             trail = lemon(hazel, seed);
@@ -320,15 +350,11 @@ function quartz(river) {
             return;
           }
           let urn = jade(event, seed, olive),
-            {
-              boundedLeftWidth,
-              rightWidth,
-              boundedLeftRatio
-            } = copper({
+            { boundedLeftWidth, rightWidth, boundedLeftRatio } = copper({
               containerWidth: trail,
               minLeftWidth: timber,
               minRightWidth: umbra,
-              leftWidth: urn
+              leftWidth: urn,
             });
           wheat.current = rightWidth;
           vapor.current = boundedLeftRatio;
@@ -341,10 +367,12 @@ function quartz(river) {
             node: seed,
             rafRef: mint,
             opts: {
-              immediate: true
-            }
+              immediate: true,
+            },
           });
-          isLeftOpen && isRightOpen && echo(basalt, cedar, yarn, boundedLeftRatio);
+          isLeftOpen &&
+            isRightOpen &&
+            echo(basalt, cedar, yarn, boundedLeftRatio);
           olive.current = null;
           kelp(false);
         },
@@ -352,18 +380,34 @@ function quartz(river) {
           olive.current = null;
           kelp(false);
         };
-      return window.addEventListener("pointermove", meadow), window.addEventListener("pointerup", nest), window.addEventListener("pointercancel", nest), window.addEventListener("blur", oak), () => {
-        window.removeEventListener("pointermove", meadow);
-        window.removeEventListener("pointerup", nest);
-        window.removeEventListener("pointercancel", nest);
-        window.removeEventListener("blur", oak);
-        olive.current = null;
-      };
+      return (
+        window.addEventListener("pointermove", meadow),
+        window.addEventListener("pointerup", nest),
+        window.addEventListener("pointercancel", nest),
+        window.addEventListener("blur", oak),
+        () => {
+          window.removeEventListener("pointermove", meadow);
+          window.removeEventListener("pointerup", nest);
+          window.removeEventListener("pointercancel", nest);
+          window.removeEventListener("blur", oak);
+          olive.current = null;
+        }
+      );
     };
   let lunar;
-  lunar = [hazel, bloom, isLeftOpen, jasper, isRightOpen, timber, umbra, basalt, cedar];
+  lunar = [
+    hazel,
+    bloom,
+    isLeftOpen,
+    jasper,
+    isRightOpen,
+    timber,
+    umbra,
+    basalt,
+    cedar,
+  ];
   nickel.useEffect(knoll, lunar);
-  let moss = vine => {
+  let moss = (vine) => {
     if (vine === "left") {
       if (!isLeftOpen) return;
       indigo([sage, topaz, ultra], nova);
@@ -382,8 +426,8 @@ function quartz(river) {
         node: dew,
         rafRef: mint,
         opts: {
-          immediate: true
-        }
+          immediate: true,
+        },
       });
       return;
     }
@@ -401,20 +445,17 @@ function quartz(river) {
         minRightWidth: umbra,
         isOpen: false,
         node: wind,
-        rafRef: mint
+        rafRef: mint,
       });
       return;
     }
     let azure = kite(yarrow),
       birch = azure * marble(vapor.current),
-      {
-        rightWidth,
-        boundedLeftRatio
-      } = copper({
+      { rightWidth, boundedLeftRatio } = copper({
         containerWidth: yarrow,
         minLeftWidth: timber,
         minRightWidth: umbra,
-        leftWidth: birch
+        leftWidth: birch,
       });
     vapor.current = boundedLeftRatio;
     let canyon = bravo(wheat.current > 0 ? wheat.current : rightWidth, azure);
@@ -428,8 +469,8 @@ function quartz(river) {
       node: wind,
       rafRef: mint,
       opts: {
-        immediate: true
-      }
+        immediate: true,
+      },
     });
   };
   return undefined as any;

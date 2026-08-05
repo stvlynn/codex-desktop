@@ -24,6 +24,6 @@ export function bindDeferredc7() {
   }
 
   return peers.e(() => {
-    VIn = `options`, HIn = `active_option_id`, UIn = `tone`;
+    ((VIn = `options`), (HIn = `active_option_id`), (UIn = `tone`));
   });
 }

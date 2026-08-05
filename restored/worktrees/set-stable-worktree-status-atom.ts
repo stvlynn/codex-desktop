@@ -7,7 +7,9 @@ export type StableWorktreeStatusAtomPeers = {
 let peers: StableWorktreeStatusAtomPeers | null = null;
 
 /** Wire setStableWorktreeStatusAtom peers once companions land. */
-export function setStableWorktreeStatusAtomPeers(next: StableWorktreeStatusAtomPeers): void {
+export function setStableWorktreeStatusAtomPeers(
+  next: StableWorktreeStatusAtomPeers,
+): void {
   peers = next;
 }
 

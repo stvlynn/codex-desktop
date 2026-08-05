@@ -9,7 +9,9 @@ export type BindConversationalOnboardingTaskScope2Peers = {
 let peers: BindConversationalOnboardingTaskScope2Peers | null = null;
 
 /** Wire bindConversationalOnboardingTaskScope2 peers once companions land. */
-export function setBindConversationalOnboardingTaskScope2Peers(next: BindConversationalOnboardingTaskScope2Peers): void {
+export function setBindConversationalOnboardingTaskScope2Peers(
+  next: BindConversationalOnboardingTaskScope2Peers,
+): void {
   peers = next;
 }
 
@@ -18,7 +20,9 @@ export function setBindConversationalOnboardingTaskScope2Peers(next: BindConvers
  */
 export function bindConversationalOnboardingTaskScope2() {
   if (peers == null) {
-    throw new Error("bindConversationalOnboardingTaskScope2 peers are not configured");
+    throw new Error(
+      "bindConversationalOnboardingTaskScope2 peers are not configured",
+    );
   }
 
   return peers.Ta(peers.j2, null);

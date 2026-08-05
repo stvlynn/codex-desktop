@@ -31,6 +31,12 @@ export function home2() {
   }
 
   return peers.e(() => {
-    _Hr = peers.c(), Jj = peers.r(peers.o(), 1), peers.Bk(), peers.lHr(), peers.$Tr(), vHr = `[data-codex-shortcut-capture]`, yHr = `input,textarea,select,[contenteditable='true'],[data-codex-composer],[data-codex-terminal]`;
+    ((_Hr = peers.c()),
+      (Jj = peers.r(peers.o(), 1)),
+      peers.Bk(),
+      peers.lHr(),
+      peers.$Tr(),
+      (vHr = `[data-codex-shortcut-capture]`),
+      (yHr = `input,textarea,select,[contenteditable='true'],[data-codex-composer],[data-codex-terminal]`));
   });
 }

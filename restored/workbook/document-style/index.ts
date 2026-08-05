@@ -10,7 +10,11 @@ export {
   mergeParagraphStyle,
   mergeTextStyle,
 } from "./merge-style-props";
-export type { BorderBox, ParagraphStyleProto, TextStyleProto } from "./merge-style-props";
+export type {
+  BorderBox,
+  ParagraphStyleProto,
+  TextStyleProto,
+} from "./merge-style-props";
 export {
   CONTEXTUAL_SPACING_TAG,
   CONTEXTUAL_SPACING_SCHEME_PREFIX,

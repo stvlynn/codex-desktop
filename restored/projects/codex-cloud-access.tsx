@@ -32,7 +32,9 @@ export type BindBindCodexCloudAccessPeers = {
 let peers: BindBindCodexCloudAccessPeers | null = null;
 
 /** Wire bindBindCodexCloudAccess peers once companions land. */
-export function setBindBindCodexCloudAccessPeers(next: BindBindCodexCloudAccessPeers): void {
+export function setBindBindCodexCloudAccessPeers(
+  next: BindBindCodexCloudAccessPeers,
+): void {
   peers = next;
 }
 
@@ -45,6 +47,23 @@ export function bindBindCodexCloudAccess() {
   }
 
   return peers.e(() => {
-    _2r = peers.c(), peers.Qt(), peers.fr(), peers.Ho(), v2r = peers.r(peers.o(), 1), peers.aN(), peers.ed(), peers.Fh(), peers.Gf(), peers.Ap(), peers.Uf(), peers.Wh(), peers.qx(), peers.Qf(), peers.xM(), peers.DN(), y2r = peers.kp(`codexCloudAccess`, null), b2r = peers.Ta(peers.Q, () => null);
+    ((_2r = peers.c()),
+      peers.Qt(),
+      peers.fr(),
+      peers.Ho(),
+      (v2r = peers.r(peers.o(), 1)),
+      peers.aN(),
+      peers.ed(),
+      peers.Fh(),
+      peers.Gf(),
+      peers.Ap(),
+      peers.Uf(),
+      peers.Wh(),
+      peers.qx(),
+      peers.Qf(),
+      peers.xM(),
+      peers.DN(),
+      (y2r = peers.kp(`codexCloudAccess`, null)),
+      (b2r = peers.Ta(peers.Q, () => null)));
   });
 }

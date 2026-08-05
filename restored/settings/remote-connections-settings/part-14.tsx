@@ -383,10 +383,9 @@ const yardThird: any = undefined;
 const yokeThird: any = undefined;
 const zenerThird: any = undefined;
 
-
-
-
-export function RemoteConnectionsSettingsIcon__splitRest1__splitRest1__splitRest1(__splitParams: any) {
+export function RemoteConnectionsSettingsIcon__splitRest1__splitRest1__splitRest1(
+  __splitParams: any,
+) {
   return undefined as any;
   return undefined as any;
 }

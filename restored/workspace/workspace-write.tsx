@@ -15,7 +15,9 @@ export type BindBindWorkspaceWritePeers = {
 let peers: BindBindWorkspaceWritePeers | null = null;
 
 /** Wire bindBindWorkspaceWrite peers once companions land. */
-export function setBindBindWorkspaceWritePeers(next: BindBindWorkspaceWritePeers): void {
+export function setBindBindWorkspaceWritePeers(
+  next: BindBindWorkspaceWritePeers,
+): void {
   peers = next;
 }
 
@@ -28,9 +30,17 @@ export function bindBindWorkspaceWrite() {
   }
 
   return peers.e(() => {
-    peers.Sl(), peers.Fh(), _un = `1574672957`, vun = peers.X().trim().transform(e => peers.e || void 0).optional(), yun = peers.sl({
-      desktop_context_section: peers.vun,
-      workspace_dependencies_section: peers.vun
-    });
+    (peers.Sl(),
+      peers.Fh(),
+      (_un = `1574672957`),
+      (vun = peers
+        .X()
+        .trim()
+        .transform((e) => peers.e || void 0)
+        .optional()),
+      (yun = peers.sl({
+        desktop_context_section: peers.vun,
+        workspace_dependencies_section: peers.vun,
+      })));
   });
 }

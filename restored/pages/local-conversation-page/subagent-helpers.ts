@@ -49,10 +49,7 @@ export function toSubagentPanelRowFields(item: LocalSubagentListItem): {
   isWorkingFallback: boolean;
 } {
   const preview =
-    item.objective ??
-    item.lastAssistantMessage ??
-    item.statusSummary ??
-    null;
+    item.objective ?? item.lastAssistantMessage ?? item.statusSummary ?? null;
   return {
     avatarSeed: item.conversationId,
     id: item.conversationId,

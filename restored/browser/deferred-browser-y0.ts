@@ -13,7 +13,9 @@ export type BindDeferredBrowserY0Peers = {
 let peers: BindDeferredBrowserY0Peers | null = null;
 
 /** Wire bindDeferredBrowserY0 peers once companions land. */
-export function setBindDeferredBrowserY0Peers(next: BindDeferredBrowserY0Peers): void {
+export function setBindDeferredBrowserY0Peers(
+  next: BindDeferredBrowserY0Peers,
+): void {
   peers = next;
 }
 

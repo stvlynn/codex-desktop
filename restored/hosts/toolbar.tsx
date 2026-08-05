@@ -23,6 +23,6 @@ export function bindBindToolbar() {
   }
 
   return peers.e(() => {
-    peers.EM(), peers.kM();
+    (peers.EM(), peers.kM());
   });
 }

@@ -12,7 +12,9 @@ export type UsePlatformAwareFeatureGatePeers = {
 let peers: UsePlatformAwareFeatureGatePeers | null = null;
 
 /** Wire usePlatformAwareFeatureGate peers once companions land. */
-export function setUsePlatformAwareFeatureGatePeers(next: UsePlatformAwareFeatureGatePeers): void {
+export function setUsePlatformAwareFeatureGatePeers(
+  next: UsePlatformAwareFeatureGatePeers,
+): void {
   peers = next;
 }
 

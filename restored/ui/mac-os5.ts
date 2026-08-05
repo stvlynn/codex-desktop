@@ -25,6 +25,6 @@ export function macOS5() {
   }
 
   return peers.e(() => {
-    Qxr = peers.c(), peers.Ho(), peers.XGn();
+    ((Qxr = peers.c()), peers.Ho(), peers.XGn());
   });
 }

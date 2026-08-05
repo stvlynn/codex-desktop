@@ -6,9 +6,16 @@
 /* split-lane-import-depth:1 */
 
 import { ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
-import { ensureComposerEsm_Qct_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_Qct_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { applyActive2 } from "../../conversation/apply-active2";
@@ -16,7 +23,10 @@ import { useEventCallback } from "../../hooks/use-event-callback";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
 import { AppIconAlt } from "../../icons/app-icon-alt";
-import { findSidebarSectionElement, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { ensureDynamicScriptLoadInit } from "../../runtime/ensure-dynamic-script-load-init";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import { ScrollingOrbBackdrop } from "../../ui/scrolling-orb-backdrop";
@@ -32,4 +42,9 @@ const globalDictationOrbO: any = undefined;
 /** split companion stub */
 const globalDictationOrbR: any = undefined;
 
-export { globalDictationOrbA, globalDictationOrbI, globalDictationOrbO, globalDictationOrbR };
+export {
+  globalDictationOrbA,
+  globalDictationOrbI,
+  globalDictationOrbO,
+  globalDictationOrbR,
+};

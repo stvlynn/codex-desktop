@@ -20,7 +20,8 @@ let DropImpl: (props: FileDropZoneProps) => ReactNode = ({
   className,
 }) => <div className={cx("relative", className)}>{children}</div>;
 
-export function bindFileDropZone(impl: (props: FileDropZoneProps) => ReactNode,
+export function bindFileDropZone(
+  impl: (props: FileDropZoneProps) => ReactNode,
 ): void {
   DropImpl = impl;
 }

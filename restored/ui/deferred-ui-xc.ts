@@ -26,6 +26,6 @@ export function bindDeferredUiXc() {
   }
 
   return peers.e(() => {
-    Dsl = peers.c(), peers.sd(), Osl = peers.J();
+    ((Dsl = peers.c()), peers.sd(), (Osl = peers.J()));
   });
 }

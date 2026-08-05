@@ -9,7 +9,9 @@ export type CreateConfiguredMarkdownParserPeers = {
 let peers: CreateConfiguredMarkdownParserPeers | null = null;
 
 /** Wire createConfiguredMarkdownParser peers once companions land. */
-export function setCreateConfiguredMarkdownParserPeers(next: CreateConfiguredMarkdownParserPeers): void {
+export function setCreateConfiguredMarkdownParserPeers(
+  next: CreateConfiguredMarkdownParserPeers,
+): void {
   peers = next;
 }
 
@@ -28,7 +30,7 @@ export function createConfiguredMarkdownParser(e: unknown) {
       ...t.data(`settings`),
       ...e,
       extensions: t.data(`micromarkExtensions`) || [],
-      mdastExtensions: t.data(`fromMarkdownExtensions`) || []
+      mdastExtensions: t.data(`fromMarkdownExtensions`) || [],
     });
   }
 }

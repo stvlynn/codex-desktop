@@ -8,7 +8,9 @@ export type FindLatestMatchingOperationPeers = {
 let peers: FindLatestMatchingOperationPeers | null = null;
 
 /** Wire findLatestMatchingOperation peers once companions land. */
-export function setFindLatestMatchingOperationPeers(next: FindLatestMatchingOperationPeers): void {
+export function setFindLatestMatchingOperationPeers(
+  next: FindLatestMatchingOperationPeers,
+): void {
   peers = next;
 }
 
@@ -20,9 +22,7 @@ export function findLatestMatchingOperation(e: unknown) {
     throw new Error("findLatestMatchingOperation peers are not configured");
   }
 
-  let {
-    operations: t
-  } = peers.dJs();
+  let { operations: t } = peers.dJs();
   if (e == null) return null;
   for (let n = t.length - 1; n >= 0; --n) {
     let r = t[n];

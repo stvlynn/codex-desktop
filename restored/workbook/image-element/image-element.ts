@@ -62,30 +62,23 @@ export class ImageElement extends SlideElement {
       (this.#i = false),
       (this.#a = this.#S(imgIn1008)),
       (this.#o = this.#C(imgIn1008)),
-      (this.#s = imgIn1008.imageMask?.adjustmentList?.map(
-        (imgIn16412) => ({
-          ...imgIn16412,
-        }),
-      )),
+      (this.#s = imgIn1008.imageMask?.adjustmentList?.map((imgIn16412) => ({
+        ...imgIn16412,
+      }))),
       (this.#c = undefined),
       (this.#l = undefined),
       !this.data.imageReference && imgBind6151)
     ) {
       let imgBind13175 = {};
       imgBind6151.data && imgBind6151.data.length > 0
-        ? ((imgBind13175.data = new Uint8Array(
-            imgBind6151.data,
-          )),
+        ? ((imgBind13175.data = new Uint8Array(imgBind6151.data)),
           (imgBind13175.contentType =
-            imgBind6151.contentType &&
-            imgBind6151.contentType.length > 0
+            imgBind6151.contentType && imgBind6151.contentType.length > 0
               ? imgBind6151.contentType
               : DEFAULT_OCTET_STREAM))
         : imgBind6151.contentType &&
-          (imgBind13175.contentType =
-            imgBind6151.contentType);
-      let imgBind13176 =
-        this.context.createImageAsset(imgBind13175);
+          (imgBind13175.contentType = imgBind6151.contentType);
+      let imgBind13176 = this.context.createImageAsset(imgBind13175);
       this.setImageReference(imgBind13176.id);
     }
     this.data.shape = undefined;
@@ -96,7 +89,9 @@ export class ImageElement extends SlideElement {
     return this.data.id;
   }
   get aid() {
-    return this.slideId ? composeImageAid("im", this.slideId, this.id) : undefined;
+    return this.slideId
+      ? composeImageAid("im", this.slideId, this.id)
+      : undefined;
   }
   toSnapshot() {
     this.#v();
@@ -124,8 +119,7 @@ export class ImageElement extends SlideElement {
   }
   get image() {
     let imgBind21016 = this.data.imageReference?.id;
-    if (imgBind21016)
-      return this.context.getImageById(imgBind21016);
+    if (imgBind21016) return this.context.getImageById(imgBind21016);
   }
   get imageReferenceId() {
     return this.data.imageReference?.id;
@@ -142,10 +136,7 @@ export class ImageElement extends SlideElement {
     if (this.#x(imgBind9745)) return;
     let imgBind9746 = this.resolveFrame();
     try {
-      return await imgBind9745.getBitmap(
-        imgBind9746.width,
-        imgBind9746.height,
-      );
+      return await imgBind9745.getBitmap(imgBind9746.width, imgBind9746.height);
     } catch (imgBind15404) {
       console.warn(
         "Image element asset decode failure",
@@ -237,11 +228,7 @@ export class ImageElement extends SlideElement {
       this.#O();
       return;
     }
-    if (
-      this.#o !== undefined &&
-      this.#o !== "rect" &&
-      this.#o !== "roundRect"
-    )
+    if (this.#o !== undefined && this.#o !== "rect" && this.#o !== "roundRect")
       throw Error(
         "image.borderRadius only supports rect or roundRect image masks.",
       );
@@ -336,38 +323,28 @@ export class ImageElement extends SlideElement {
     return this.position.width;
   }
   set width(imgIn6505) {
-    let imgBind16714 = Number.isFinite(imgIn6505)
-        ? Math.max(0, imgIn6505)
-        : 0,
+    let imgBind16714 = Number.isFinite(imgIn6505) ? Math.max(0, imgIn6505) : 0,
       imgBind16715 = this.#d(),
-      imgBind16716 = this.#e
-        ? this.#f(imgBind16715)
-        : undefined;
+      imgBind16716 = this.#e ? this.#f(imgBind16715) : undefined;
     imgBind16715.width = imgBind16714;
     imgBind16716 &&
       imgBind16716 > 0 &&
       this.#e &&
-      (imgBind16715.height =
-        imgBind16714 / imgBind16716);
+      (imgBind16715.height = imgBind16714 / imgBind16716);
     this.position = imgBind16715;
   }
   get height() {
     return this.position.height;
   }
   set height(imgIn6495) {
-    let imgBind16698 = Number.isFinite(imgIn6495)
-        ? Math.max(0, imgIn6495)
-        : 0,
+    let imgBind16698 = Number.isFinite(imgIn6495) ? Math.max(0, imgIn6495) : 0,
       imgBind16699 = this.#d(),
-      imgBind16700 = this.#e
-        ? this.#f(imgBind16699)
-        : undefined;
+      imgBind16700 = this.#e ? this.#f(imgBind16699) : undefined;
     imgBind16699.height = imgBind16698;
     imgBind16700 &&
       imgBind16700 > 0 &&
       this.#e &&
-      (imgBind16699.width =
-        imgBind16698 * imgBind16700);
+      (imgBind16699.width = imgBind16698 * imgBind16700);
     this.position = imgBind16699;
   }
   get size() {
@@ -378,10 +355,8 @@ export class ImageElement extends SlideElement {
   }
   set size(imgIn8301) {
     let imgBind18802 = this.#d();
-    imgIn8301.width !== undefined &&
-      (imgBind18802.width = imgIn8301.width);
-    imgIn8301.height !== undefined &&
-      (imgBind18802.height = imgIn8301.height);
+    imgIn8301.width !== undefined && (imgBind18802.width = imgIn8301.width);
+    imgIn8301.height !== undefined && (imgBind18802.height = imgIn8301.height);
     this.position = imgBind18802;
   }
   get flipHorizontal() {
@@ -409,12 +384,10 @@ export class ImageElement extends SlideElement {
         (this.alt = imgBind10400.alt);
       "fit" in imgBind10400 &&
         imgBind10400.fit !== undefined &&
-        ((this.fit = imgBind10400.fit),
-        (this.lockAspectRatio = true));
+        ((this.fit = imgBind10400.fit), (this.lockAspectRatio = true));
       "prompt" in imgBind10400
         ? (this.prompt = imgBind10400.prompt)
-        : hasImageSourceFields(imgBind10400) &&
-          (this.prompt = undefined);
+        : hasImageSourceFields(imgBind10400) && (this.prompt = undefined);
       let imgBind13707 = normalizeImagePayload(imgBind10400);
       this.applyAssetPayload(imgBind13707);
       this.#v();
@@ -590,11 +563,8 @@ export class ImageElement extends SlideElement {
     if (this.#l !== undefined) return this.#l;
     let imgBind17763 = this.#m();
     if (!imgBind17763) return;
-    let imgBind17764 =
-      imgBind17763.width / imgBind17763.height;
-    if (
-      !(!Number.isFinite(imgBind17764) || imgBind17764 <= 0)
-    )
+    let imgBind17764 = imgBind17763.width / imgBind17763.height;
+    if (!(!Number.isFinite(imgBind17764) || imgBind17764 <= 0))
       return ((this.#l = imgBind17764), imgBind17764);
   }
   #m() {
@@ -602,10 +572,7 @@ export class ImageElement extends SlideElement {
     if (!imgBind19679) return;
     let imgBind19680 = imgBind19679.data;
     return imgBind19680 && imgBind19680.byteLength > 0
-      ? probeImageSize(
-          imgBind19680,
-          imgBind19679.contentType,
-        )
+      ? probeImageSize(imgBind19680, imgBind19679.contentType)
       : undefined;
   }
   #h(imgIn1065) {
@@ -629,12 +596,8 @@ export class ImageElement extends SlideElement {
             : {},
           imgBind15498 = this.position.left,
           imgBind15499 = this.position.top;
-        imgBind15497.xEmu = frameUnitToEmu(
-          imgBind15498 + offsetX,
-        );
-        imgBind15497.yEmu = frameUnitToEmu(
-          imgBind15499 + offsetY,
-        );
+        imgBind15497.xEmu = frameUnitToEmu(imgBind15498 + offsetX);
+        imgBind15497.yEmu = frameUnitToEmu(imgBind15499 + offsetY);
         imgBind15497.widthEmu = frameUnitToEmu(width);
         imgBind15497.heightEmu = frameUnitToEmu(height);
         imgIn1065.bbox = imgBind15497;
@@ -667,8 +630,7 @@ export class ImageElement extends SlideElement {
     Array.isArray(imgBind6353.gradientStops) ||
       (imgBind6353.gradientStops = []);
     imgBind6353.srcRect = imgBind6352.srcRect;
-    imgBind6353.stretchFillRect =
-      imgBind6352.stretchFillRect;
+    imgBind6353.stretchFillRect = imgBind6352.stretchFillRect;
     imgIn1065.fill = imgBind6353;
   }
   #g() {
@@ -681,48 +643,38 @@ export class ImageElement extends SlideElement {
     );
   }
   #_(imgIn2979, imgIn2980) {
-    (imgIn2980.data ||
-      imgIn2980.uri !== undefined ||
-      imgIn2980.contentType) &&
+    (imgIn2980.data || imgIn2980.uri !== undefined || imgIn2980.contentType) &&
       (this.#l = undefined);
     imgIn2980.data &&
       ((imgIn2979.data = imgIn2980.data),
       (imgIn2980.contentType ||= DEFAULT_OCTET_STREAM),
       (imgIn2979.uri = imgIn2980.uri ?? undefined),
       (imgIn2979.prompt = imgIn2980.prompt ?? undefined));
-    imgIn2980.contentType &&
-      (imgIn2979.contentType = imgIn2980.contentType);
+    imgIn2980.contentType && (imgIn2979.contentType = imgIn2980.contentType);
     imgIn2980.uri === undefined
       ? imgIn2980.data && (imgIn2979.uri = undefined)
       : ((imgIn2979.uri = imgIn2980.uri),
-        imgIn2980.data ||
-          (imgIn2979.data = new Uint8Array()));
+        imgIn2980.data || (imgIn2979.data = new Uint8Array()));
     imgIn2980.prompt === undefined
-      ? (imgIn2980.data || imgIn2980.uri) &&
-        (imgIn2979.prompt = undefined)
+      ? (imgIn2980.data || imgIn2980.uri) && (imgIn2979.prompt = undefined)
       : (imgIn2979.prompt = imgIn2980.prompt);
   }
   #v() {
     let imgBind20138 = this.image,
-      imgBind20139 = this.#y(
-        imgBind20138?.prompt ?? this.#r,
-      );
+      imgBind20139 = this.#y(imgBind20138?.prompt ?? this.#r);
     this.#r = imgBind20139;
     this.#i = !!(imgBind20139 && !this.#b(imgBind20138));
   }
   #y(imgIn10289) {
     if (typeof imgIn10289 != "string") return;
     let imgBind20768 = imgIn10289.trim();
-    return imgBind20768.length > 0
-      ? imgBind20768
-      : undefined;
+    return imgBind20768.length > 0 ? imgBind20768 : undefined;
   }
   #b(imgIn8902) {
     return imgIn8902
       ? imgIn8902.data.byteLength > 0
         ? true
-        : typeof imgIn8902.uri == "string" &&
-          imgIn8902.uri.trim().length > 0
+        : typeof imgIn8902.uri == "string" && imgIn8902.uri.trim().length > 0
       : false;
   }
   #x(imgIn13294) {
@@ -732,9 +684,7 @@ export class ImageElement extends SlideElement {
     let imgBind18046 = imgIn7567.fill?.srcRect;
     if (!imgBind18046) return;
     let imgBind18047 = (imgIn15104) =>
-      imgIn15104 === undefined
-        ? 0
-        : clampUnit(imgIn15104, 0, 1e5) / 1e5;
+      imgIn15104 === undefined ? 0 : clampUnit(imgIn15104, 0, 1e5) / 1e5;
     return {
       left: imgBind18047(imgBind18046.l),
       top: imgBind18047(imgBind18046.t),
@@ -796,13 +746,11 @@ export class ImageElement extends SlideElement {
   #E(imgIn5190) {
     if (
       this.#u ||
-      (this.#O(),
-      !Object.values(imgIn5190).some((item) => item !== undefined))
+      (this.#O(), !Object.values(imgIn5190).some((item) => item !== undefined))
     )
       return;
     let imgBind14704 = this.elementAnchor();
-    if (!imgBind14704 || !imgBind14704.startsWith("im/"))
-      return;
+    if (!imgBind14704 || !imgBind14704.startsWith("im/")) return;
     let imgBind14705 = this.recordTargetRef(imgBind14704);
     imgBind14705 &&
       this.recordPatchOp({
@@ -814,8 +762,7 @@ export class ImageElement extends SlideElement {
   #D(imgIn5564) {
     if (this.#u) return;
     let imgBind15381 = this.elementAnchor();
-    if (!imgBind15381 || !imgBind15381.startsWith("im/"))
-      return;
+    if (!imgBind15381 || !imgBind15381.startsWith("im/")) return;
     let imgBind15382 = this.recordTargetRef(imgBind15381);
     imgBind15382 &&
       this.recordPatchOp({

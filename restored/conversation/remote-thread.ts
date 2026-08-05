@@ -47,40 +47,59 @@ export function bindRemoteThread() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.aN(), peers.ed(), peers.gT(), peers._$r(), b$r = peers.Ia(peers.hT, ({
-      scope: e
-    }) => peers.fQr(peers.e.value.routeKind === `remote-thread` ? peers.e.value.taskId : null)), x$r = peers.Ia(peers.hT, ({
-      scope: e
-    }) => peers.pQr(peers.e.value.routeKind === `remote-thread` ? peers.e.value.taskId : null)), S$r = peers.Da(peers.Q, e => !1), C$r = peers.Ma(peers.hT, ({
-      get: e
-    }) => {
-      let {
-        data: t
-      } = peers.e(peers.b$r);
-      return peers.l$r({
-        taskTurns: peers.e(peers.x$r).data,
-        fallbackUserTurn: t?.current_user_turn ?? null,
-        fallbackAssistantTurn: t?.current_assistant_turn ?? null
-      });
-    }), w$r = peers.Ma(peers.hT, ({
-      get: e
-    }) => {
-      let {
-          data: t
-        } = peers.e(peers.b$r),
-        n = t?.current_assistant_turn;
-      if (n && !n.discarded) return n;
-      let r = peers.e(peers.C$r);
-      if (!n) {
-        let e = peers.h$r(peers.u$r(r), peers.d$r(r)).at(-1);
-        return peers.e ? peers.f$r(peers.e.node.assistantTurns, peers.e.activeId) : null;
-      }
-      return peers.f$r(r.filter(e => !peers.c$r(peers.e) && peers.e.previous_turn_id === n.previous_turn_id), n.id) ?? n;
-    }), T$r = peers.Ma(peers.hT, ({
-      get: e
-    }) => {
-      let t = peers.e(peers.w$r);
-      return t == null ? !1 : peers.e(peers.S$r, t.id);
-    });
+    (peers.Ho(),
+      peers.aN(),
+      peers.ed(),
+      peers.gT(),
+      peers._$r(),
+      (b$r = peers.Ia(peers.hT, ({ scope: e }) =>
+        peers.fQr(
+          peers.e.value.routeKind === `remote-thread`
+            ? peers.e.value.taskId
+            : null,
+        ),
+      )),
+      (x$r = peers.Ia(peers.hT, ({ scope: e }) =>
+        peers.pQr(
+          peers.e.value.routeKind === `remote-thread`
+            ? peers.e.value.taskId
+            : null,
+        ),
+      )),
+      (S$r = peers.Da(peers.Q, (e) => !1)),
+      (C$r = peers.Ma(peers.hT, ({ get: e }) => {
+        let { data: t } = peers.e(peers.b$r);
+        return peers.l$r({
+          taskTurns: peers.e(peers.x$r).data,
+          fallbackUserTurn: t?.current_user_turn ?? null,
+          fallbackAssistantTurn: t?.current_assistant_turn ?? null,
+        });
+      })),
+      (w$r = peers.Ma(peers.hT, ({ get: e }) => {
+        let { data: t } = peers.e(peers.b$r),
+          n = t?.current_assistant_turn;
+        if (n && !n.discarded) return n;
+        let r = peers.e(peers.C$r);
+        if (!n) {
+          let e = peers.h$r(peers.u$r(r), peers.d$r(r)).at(-1);
+          return peers.e
+            ? peers.f$r(peers.e.node.assistantTurns, peers.e.activeId)
+            : null;
+        }
+        return (
+          peers.f$r(
+            r.filter(
+              (e) =>
+                !peers.c$r(peers.e) &&
+                peers.e.previous_turn_id === n.previous_turn_id,
+            ),
+            n.id,
+          ) ?? n
+        );
+      })),
+      (T$r = peers.Ma(peers.hT, ({ get: e }) => {
+        let t = peers.e(peers.w$r);
+        return t == null ? !1 : peers.e(peers.S$r, t.id);
+      })));
   });
 }

@@ -8,7 +8,9 @@ export type BindBindDeferredUiY23Peers = {
 let peers: BindBindDeferredUiY23Peers | null = null;
 
 /** Wire bindBindDeferredUiY23 peers once companions land. */
-export function setBindBindDeferredUiY23Peers(next: BindBindDeferredUiY23Peers): void {
+export function setBindBindDeferredUiY23Peers(
+  next: BindBindDeferredUiY23Peers,
+): void {
   peers = next;
 }
 
@@ -20,7 +22,5 @@ export function bindBindDeferredUiY23() {
     throw new Error("bindBindDeferredUiY23 peers are not configured");
   }
 
-  return peers.JE(({
-    source: e
-  }) => e ?? null);
+  return peers.JE(({ source: e }) => e ?? null);
 }

@@ -20,7 +20,5 @@ export function bindL2CoShell() {
     throw new Error("bindL2CoShell peers are not configured");
   }
 
-  return peers.JE(({
-    modelProvider: e
-  }) => e ?? null);
+  return peers.JE(({ modelProvider: e }) => e ?? null);
 }

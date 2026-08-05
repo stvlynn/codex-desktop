@@ -8,4 +8,3 @@
 /** Wave GA: bind no longer required after full body promote */
 export function bindavatarOverlayNativeFrame_a(_next: unknown): void {}
 export function ensureavatarOverlayNativeFrame_aInit(): void {}
-

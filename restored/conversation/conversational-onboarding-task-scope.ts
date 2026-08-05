@@ -18,7 +18,9 @@ export type BindConversationalOnboardingTaskScopePeers = {
 let peers: BindConversationalOnboardingTaskScopePeers | null = null;
 
 /** Wire bindConversationalOnboardingTaskScope peers once companions land. */
-export function setBindConversationalOnboardingTaskScopePeers(next: BindConversationalOnboardingTaskScopePeers): void {
+export function setBindConversationalOnboardingTaskScopePeers(
+  next: BindConversationalOnboardingTaskScopePeers,
+): void {
   peers = next;
 }
 
@@ -27,12 +29,20 @@ export function setBindConversationalOnboardingTaskScopePeers(next: BindConversa
  */
 export function bindConversationalOnboardingTaskScope() {
   if (peers == null) {
-    throw new Error("bindConversationalOnboardingTaskScope peers are not configured");
+    throw new Error(
+      "bindConversationalOnboardingTaskScope peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), j2 = peers.wa(`ConversationalOnboardingTaskScope`, {
-      parent: peers.Q
-    }), M2 = peers.Ta(peers.j2, !1), zPc = peers.Ta(peers.j2, null), N2 = peers.Ta(peers.j2, !1), P2 = peers.Ta(peers.j2, !1);
+    (peers.Ho(),
+      peers.ed(),
+      (j2 = peers.wa(`ConversationalOnboardingTaskScope`, {
+        parent: peers.Q,
+      })),
+      (M2 = peers.Ta(peers.j2, !1)),
+      (zPc = peers.Ta(peers.j2, null)),
+      (N2 = peers.Ta(peers.j2, !1)),
+      (P2 = peers.Ta(peers.j2, !1)));
   });
 }

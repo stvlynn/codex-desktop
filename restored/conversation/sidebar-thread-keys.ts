@@ -25,7 +25,9 @@ export type ParsedSidebarThreadKey =
  * Bundle `zA` / export `OQ`.
  * Bundle uses `Al(t) ? t : kl(t)` where `kl` is identity — always keep `t`.
  */
-export function parseSidebarThreadKey(key: string | null | undefined): ParsedSidebarThreadKey | null {
+export function parseSidebarThreadKey(
+  key: string | null | undefined,
+): ParsedSidebarThreadKey | null {
   if (key == null) return null;
 
   if (key.startsWith(LOCAL_SIDEBAR_THREAD_KEY_PREFIX)) {
@@ -50,7 +52,9 @@ export function parseSidebarThreadKey(key: string | null | undefined): ParsedSid
 }
 
 /** Bundle `BA` / export `TQ`. */
-export function localThreadIdFromSidebarKey(key: string | null | undefined): string | null {
+export function localThreadIdFromSidebarKey(
+  key: string | null | undefined,
+): string | null {
   const parsed = parseSidebarThreadKey(key);
   return parsed?.kind === "local" ? parsed.threadId : null;
 }

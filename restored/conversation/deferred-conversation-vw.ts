@@ -10,7 +10,9 @@ export type BindDeferredConversationVWPeers = {
 let peers: BindDeferredConversationVWPeers | null = null;
 
 /** Wire bindDeferredConversationVW peers once companions land. */
-export function setBindDeferredConversationVWPeers(next: BindDeferredConversationVWPeers): void {
+export function setBindDeferredConversationVWPeers(
+  next: BindDeferredConversationVWPeers,
+): void {
   peers = next;
 }
 
@@ -22,7 +24,5 @@ export function bindDeferredConversationVW() {
     throw new Error("bindDeferredConversationVW peers are not configured");
   }
 
-  return peers.Ma(peers.hT, ({
-    get: e
-  }) => e(peers.pFi).hostId);
+  return peers.Ma(peers.hT, ({ get: e }) => e(peers.pFi).hostId);
 }

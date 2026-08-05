@@ -13,7 +13,9 @@ export function serializeCfFill(opIn11075: unknown): unknown {
           serializeFillFromProto(opIn11075.toProto()))
       : serializeFillConfig(opIn11075);
 }
-export function serializeFillConfig(opIn1489: any): LooseBag | string | undefined {
+export function serializeFillConfig(
+  opIn1489: any,
+): LooseBag | string | undefined {
   if (opIn1489) {
     if (typeof opIn1489 == "string") return opIn1489;
     switch (opIn1489.type) {
@@ -67,7 +69,9 @@ export function serializeFillConfig(opIn1489: any): LooseBag | string | undefine
     }
   }
 }
-export function serializeFillFromProto(opIn1488: unknown): LooseBag | undefined {
+export function serializeFillFromProto(
+  opIn1488: unknown,
+): LooseBag | undefined {
   if (!opIn1488) return;
   let opBind7457 = new Fill({
     type: "proto",
@@ -132,7 +136,9 @@ export function serializeFillFromProto(opIn1488: unknown): LooseBag | undefined 
       pattern: opBind7459,
     };
 }
-export function serializePatternFillConfig(opIn6984: any): LooseBag | undefined {
+export function serializePatternFillConfig(
+  opIn6984: any,
+): LooseBag | undefined {
   if (!opIn6984) return;
   let opBind17338 =
     opIn6984.type === "proto"
@@ -152,9 +158,7 @@ export function serializePatternFillConfig(opIn6984: any): LooseBag | undefined 
 export function serializeColorValue(opIn6860: unknown): unknown {
   if (!opIn6860) return;
   let opBind17172 = (
-    opIn6860 instanceof WorkbookColor
-      ? opIn6860
-      : new WorkbookColor(opIn6860)
+    opIn6860 instanceof WorkbookColor ? opIn6860 : new WorkbookColor(opIn6860)
   ).toConfig();
   if (opBind17172) {
     if (
@@ -172,9 +176,7 @@ export function serializeColorValue(opIn6860: unknown): unknown {
 }
 export function colorInputToConfig(opIn9632: unknown): unknown {
   if (opIn9632 === undefined) return;
-  let opBind20169 = new WorkbookColor(
-    opIn9632,
-  ).toConfig();
+  let opBind20169 = new WorkbookColor(opIn9632).toConfig();
   if (opBind20169)
     return typeof opBind20169 == "string"
       ? opBind20169

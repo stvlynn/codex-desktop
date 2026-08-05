@@ -87,7 +87,10 @@ export const artifactCreationPrompts: Record<
 /**
  * Bundle export `n` — format a creation prompt with an @-mention markdown link.
  */
-export function formatArtifactCreationPrompt(intl: Pick<IntlShape, "formatMessage">, kind: ArtifactCreationKind): string {
+export function formatArtifactCreationPrompt(
+  intl: Pick<IntlShape, "formatMessage">,
+  kind: ArtifactCreationKind,
+): string {
   const { artifact, prompt } = artifactCreationPrompts[kind];
   return intl.formatMessage(prompt, {
     artifact: toMarkdownLink(

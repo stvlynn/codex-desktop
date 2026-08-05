@@ -12,7 +12,9 @@ export type BindBindPendingWorktreesPeers = {
 let peers: BindBindPendingWorktreesPeers | null = null;
 
 /** Wire bindBindPendingWorktrees peers once companions land. */
-export function setBindBindPendingWorktreesPeers(next: BindBindPendingWorktreesPeers): void {
+export function setBindBindPendingWorktreesPeers(
+  next: BindBindPendingWorktreesPeers,
+): void {
   peers = next;
 }
 
@@ -24,14 +26,13 @@ export function bindBindPendingWorktrees() {
     throw new Error("bindBindPendingWorktrees peers are not configured");
   }
 
-  return peers.Ma(peers.hT, ({
-    get: e,
-    scope: t
-  }) => {
+  return peers.Ma(peers.hT, ({ get: e, scope: t }) => {
     if (t.value.routeKind !== `client-local-thread`) return `ready`;
-    let {
-      clientThreadId: n
-    } = t.value;
-    return e(peers.iT, n) == null ? e(peers.vSr, n)?.phase === `failed` ? `failed` : `provisioning` : `ready`;
+    let { clientThreadId: n } = t.value;
+    return e(peers.iT, n) == null
+      ? e(peers.vSr, n)?.phase === `failed`
+        ? `failed`
+        : `provisioning`
+      : `ready`;
   });
 }

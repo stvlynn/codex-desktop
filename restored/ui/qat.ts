@@ -27,6 +27,11 @@ export function qat() {
   }
 
   return peers.e(() => {
-    peers.gAt(), peers.dAt(), peers.Xkt(), peers.vAt(), peers.bAt(), peers.SAt();
+    (peers.gAt(),
+      peers.dAt(),
+      peers.Xkt(),
+      peers.vAt(),
+      peers.bAt(),
+      peers.SAt());
   });
 }

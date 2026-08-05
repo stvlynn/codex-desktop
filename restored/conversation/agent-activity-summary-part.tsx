@@ -16,7 +16,9 @@ let SummaryImpl:
     }) => ReactNode)
   | null = null;
 
-export function setAgentActivitySummaryPartImpl(impl: NonNullable<typeof SummaryImpl>): void {
+export function setAgentActivitySummaryPartImpl(
+  impl: NonNullable<typeof SummaryImpl>,
+): void {
   SummaryImpl = impl;
 }
 
@@ -29,7 +31,9 @@ export type AgentActivitySummaryPartProps = {
   variant?: string;
 };
 
-export function AgentActivitySummaryPart(props: AgentActivitySummaryPartProps): ReactNode {
+export function AgentActivitySummaryPart(
+  props: AgentActivitySummaryPartProps,
+): ReactNode {
   if (SummaryImpl == null) {
     throw new Error("AgentActivitySummaryPart impl has not been configured");
   }

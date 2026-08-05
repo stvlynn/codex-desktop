@@ -10,11 +10,23 @@ import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-res
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { CODEX_THREAD_OPEN_STREAM_ROLE_RESOLVED_TYPE } from "../../analytics/codex-thread-open-stream-role-resolved-type";
 import { logProductEvent } from "../../analytics/log-product-event";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { createAppScopeQueryAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
 import { useAtomPair } from "../../boundaries/persisted-atom";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { deferredConversationR } from "../../conversation/deferred-conversation-r";
@@ -38,7 +50,14 @@ import { countLeadingZeroBits32 } from "../../utils/count-leading-zero-bits-32";
 import { noop } from "../../utils/noop";
 import { readSharedObjectSnapshotValue } from "../../utils/read-shared-object-snapshot-value";
 import { setSuppressRemoteControlError } from "../../utils/set-suppress-remote-control-error";
-import { CodexMobileSetupDialog, codexMobileSetupDialogUtils, ensureCodexMobileSetupDialogAtomsInit, ensureCodexMobileSetupDialogDepsInit, ensureCodexMobileSetupDialogInit, useCodexMobileSetupDialog as UseCodexMobileSetupDialog } from "../codex-mobile-setup-dialog";
+import {
+  CodexMobileSetupDialog,
+  codexMobileSetupDialogUtils,
+  ensureCodexMobileSetupDialogAtomsInit,
+  ensureCodexMobileSetupDialogDepsInit,
+  ensureCodexMobileSetupDialogInit,
+  useCodexMobileSetupDialog as UseCodexMobileSetupDialog,
+} from "../codex-mobile-setup-dialog";
 
 const remoteSshConnections: any = undefined;
 /** Wave FY unresolved companion (missing-export:hosts/codex-mobile-mfa-setup-required.tsx) */
@@ -84,26 +103,34 @@ const AppInitialXtt: any = undefined;
 /** Wave FY unresolved companion (missing-export:ui/chat-process-register.ts) */
 const chatProcessRegister: any = undefined;
 function codexMobileSetupFlowF(marble, nickel) {
-  if (marble != null) return nickel == null ? marble : marble.filter(item => item.clientId !== nickel);
+  if (marble != null)
+    return nickel == null
+      ? marble
+      : marble.filter((item) => item.clientId !== nickel);
 }
 function alpha(onyx, pearl) {
-  return onyx?.some(quartz => !pearl.has(quartz.clientId)) === true;
+  return onyx?.some((quartz) => !pearl.has(quartz.clientId)) === true;
 }
 function bravo(river, slate) {
-  return river == null || !alpha(river, slate) ? null : slate.size === 0 && river.length === 1 ? "connected" : "dismiss";
+  return river == null || !alpha(river, slate)
+    ? null
+    : slate.size === 0 && river.length === 1
+      ? "connected"
+      : "dismiss";
 }
 var codexMobileSetupFlowP = esmInit(() => {});
 function copper({
   existingClientIds,
   hostId,
   localRemoteControlClientId,
-  waiting
+  waiting,
 }) {
   return JSON.stringify({
-    existingClientIds: existingClientIds == null ? null : Array.from(existingClientIds).sort(),
+    existingClientIds:
+      existingClientIds == null ? null : Array.from(existingClientIds).sort(),
     hostId,
     localRemoteControlClientId,
-    waiting
+    waiting,
   });
 }
 var delta,
@@ -120,107 +147,152 @@ var delta,
     AppInitialGQ();
     codexMobileSetupFlowP();
     delta = 3e4;
-    codexMobileSetupFlowU = createAppScopeQueryAtom(appScopeAtom, ({
-      get
-    }) => {
-      let timber = readSharedObjectSnapshotValue(get, "local_remote_control_environment_id") ?? null,
+    codexMobileSetupFlowU = createAppScopeQueryAtom(appScopeAtom, ({ get }) => {
+      let timber =
+          readSharedObjectSnapshotValue(
+            get,
+            "local_remote_control_environment_id",
+          ) ?? null,
         umbra = !get(toastAtom, "2055603567");
       return {
         queryKey: ["remote-control-clients", timber, umbra],
-        queryFn: () => AppInitialKQ(timber, {
-          includeBrowserClients: umbra
-        }),
-        staleTime: delta
+        queryFn: () =>
+          AppInitialKQ(timber, {
+            includeBrowserClients: umbra,
+          }),
+        staleTime: delta,
       };
     });
-    codexMobileSetupFlowC = useQuery(appScopeAtom, (violet, {
-      get
-    }) => {
+    codexMobileSetupFlowC = useQuery(appScopeAtom, (violet, { get }) => {
       let willow = get(deferredHostsS3, violet),
         xenon = willow?.environmentId;
       return {
         enabled: xenon != null,
-        queryKey: ["remote-control-clients", "app-server", violet, willow?.installationId],
-        queryFn: () => xenon == null ? Promise.resolve([]) : AppInitialKQ(xenon, {
-          appServerHostId: violet
-        }),
-        staleTime: delta
+        queryKey: [
+          "remote-control-clients",
+          "app-server",
+          violet,
+          willow?.installationId,
+        ],
+        queryFn: () =>
+          xenon == null
+            ? Promise.resolve([])
+            : AppInitialKQ(xenon, {
+                appServerHostId: violet,
+              }),
+        staleTime: delta,
       };
     });
-    echo = useQuery(appScopeAtom, (yellow, {
-      get
-    }) => {
-      let zinc = readSharedObjectSnapshotValue(get, "local_remote_control_environment_id") ?? null,
+    echo = useQuery(appScopeAtom, (yellow, { get }) => {
+      let zinc =
+          readSharedObjectSnapshotValue(
+            get,
+            "local_remote_control_environment_id",
+          ) ?? null,
         amber = !get(toastAtom, "2055603567");
       return {
         enabled: yellow,
         queryKey: ["remote-control-clients", zinc, amber],
-        queryFn: () => AppInitialKQ(zinc, {
-          includeBrowserClients: amber
-        }),
+        queryFn: () =>
+          AppInitialKQ(zinc, {
+            includeBrowserClients: amber,
+          }),
         refetchInterval: yellow ? 1e3 : false,
-        staleTime: 0
+        staleTime: 0,
       };
     });
-    codexMobileSetupFlowD = useQuery(appScopeAtom, ({
-      existingClientIds,
-      hostId,
-      localRemoteControlClientId,
-      waiting
-    }, {
-      get,
-      queryClient
-    }) => {
-      let basalt = null,
-        cedar = null,
-        daisy = !get(toastAtom, "2055603567");
-      if (waiting && hostId == null) basalt = readSharedObjectSnapshotValue(get, "local_remote_control_environment_id") ?? null;else if (waiting) {
-        let flint = get(deferredHostsS3, hostId);
-        basalt = flint?.environmentId;
-        cedar = flint?.installationId;
-      }
-      let ember = ["remote-control-clients", "waiting-for-added", hostId, daisy, hostId == null ? basalt : cedar, existingClientIds == null ? null : Array.from(existingClientIds).sort(), localRemoteControlClientId];
-      return {
-        enabled: waiting && existingClientIds != null && (hostId == null || basalt != null),
-        gcTime: 0,
-        queryKey: ember,
-        queryFn: async () => {
-          let garnet = queryClient.getQueryData(ember);
-          if (garnet != null || existingClientIds == null) return garnet ?? null;
-          let hazel = await AppInitialKQ(basalt ?? null, {
-            appServerHostId: hostId ?? undefined,
-            includeBrowserClients: daisy
-          });
-          return hostId != null && queryClient.setQueryData(["remote-control-clients", "app-server", hostId, cedar], hazel), bravo(codexMobileSetupFlowF(hazel, localRemoteControlClientId), existingClientIds);
-        },
-        refetchInterval: ivory => waiting && ivory.state.data == null ? 1e3 : false,
-        staleTime: 0
-      };
-    }, {
-      key: copper
-    });
+    codexMobileSetupFlowD = useQuery(
+      appScopeAtom,
+      (
+        { existingClientIds, hostId, localRemoteControlClientId, waiting },
+        { get, queryClient },
+      ) => {
+        let basalt = null,
+          cedar = null,
+          daisy = !get(toastAtom, "2055603567");
+        if (waiting && hostId == null)
+          basalt =
+            readSharedObjectSnapshotValue(
+              get,
+              "local_remote_control_environment_id",
+            ) ?? null;
+        else if (waiting) {
+          let flint = get(deferredHostsS3, hostId);
+          basalt = flint?.environmentId;
+          cedar = flint?.installationId;
+        }
+        let ember = [
+          "remote-control-clients",
+          "waiting-for-added",
+          hostId,
+          daisy,
+          hostId == null ? basalt : cedar,
+          existingClientIds == null
+            ? null
+            : Array.from(existingClientIds).sort(),
+          localRemoteControlClientId,
+        ];
+        return {
+          enabled:
+            waiting &&
+            existingClientIds != null &&
+            (hostId == null || basalt != null),
+          gcTime: 0,
+          queryKey: ember,
+          queryFn: async () => {
+            let garnet = queryClient.getQueryData(ember);
+            if (garnet != null || existingClientIds == null)
+              return garnet ?? null;
+            let hazel = await AppInitialKQ(basalt ?? null, {
+              appServerHostId: hostId ?? undefined,
+              includeBrowserClients: daisy,
+            });
+            return (
+              hostId != null &&
+                queryClient.setQueryData(
+                  ["remote-control-clients", "app-server", hostId, cedar],
+                  hazel,
+                ),
+              bravo(
+                codexMobileSetupFlowF(hazel, localRemoteControlClientId),
+                existingClientIds,
+              )
+            );
+          },
+          refetchInterval: (ivory) =>
+            waiting && ivory.state.data == null ? 1e3 : false,
+          staleTime: 0,
+        };
+      },
+      {
+        key: copper,
+      },
+    );
   });
 async function codexMobileSetupFlowS(jasper, kelp, lotus) {
   if (!lotus) return falcon(jasper, kelp, false);
   setSuppressRemoteControlError(jasper, kelp, false);
   let mint = AppInitialW3(jasper, kelp, {
-    ignoreCurrentError: true
+    ignoreCurrentError: true,
   });
   try {
     let nova = falcon(jasper, kelp, true);
     return await Promise.race([mint, nova.then(() => mint)]);
   } catch (olive) {
-    throw setSuppressRemoteControlError(jasper, kelp, true), olive;
+    throw (setSuppressRemoteControlError(jasper, kelp, true), olive);
   }
 }
 async function falcon(prism, quill, reef) {
-  return quill === "local" ? (await invokeDesktopRpc("set-local-remote-control-enabled", {
-    params: {
-      enabled: reef
-    }
-  }), chatProcessRegister(prism, reef, {
-    force: true
-  })) : setRemoteControlEnabledForHost(prism, quill, reef);
+  return quill === "local"
+    ? (await invokeDesktopRpc("set-local-remote-control-enabled", {
+        params: {
+          enabled: reef,
+        },
+      }),
+      chatProcessRegister(prism, reef, {
+        force: true,
+      }))
+    : setRemoteControlEnabledForHost(prism, quill, reef);
 }
 var codexMobileSetupFlowO = esmInit(() => {
   deferredUiB();
@@ -232,27 +304,50 @@ var codexMobileSetupFlowO = esmInit(() => {
 export function codexMobileSetupFlowR({
   isMfaSetupRequiredError,
   mfaSetupRequired,
-  remoteControlStatus
-}: { isMfaSetupRequiredError?: unknown; mfaSetupRequired?: unknown; remoteControlStatus?: unknown; [key: string]: unknown }) {
-  return indigo(remoteControlStatus) || isMfaSetupRequiredError ? "initial" : mfaSetupRequired ? "mfa-required" : undefined;
+  remoteControlStatus,
+}: {
+  isMfaSetupRequiredError?: unknown;
+  mfaSetupRequired?: unknown;
+  remoteControlStatus?: unknown;
+  [key: string]: unknown;
+}) {
+  return indigo(remoteControlStatus) || isMfaSetupRequiredError
+    ? "initial"
+    : mfaSetupRequired
+      ? "mfa-required"
+      : undefined;
 }
 export function codexMobileSetupFlowA({
   initialRemoteControlStatus,
   isMfaSetupRequiredError,
   mfaSetupRequired,
   remoteControlStatus,
-  setupStepDebugOverride
-}: { initialRemoteControlStatus?: unknown; isMfaSetupRequiredError?: unknown; mfaSetupRequired?: unknown; remoteControlStatus?: unknown; setupStepDebugOverride?: unknown; [key: string]: unknown }) {
-  return isMfaSetupRequiredError || !!mfaSetupRequired || indigo(remoteControlStatus) || indigo(initialRemoteControlStatus) || setupStepDebugOverride !== "auto";
-}
-function gamma({
-  remoteControlHostEnabled,
-  hasEnrolledRemoteControlClient
+  setupStepDebugOverride,
+}: {
+  initialRemoteControlStatus?: unknown;
+  isMfaSetupRequiredError?: unknown;
+  mfaSetupRequired?: unknown;
+  remoteControlStatus?: unknown;
+  setupStepDebugOverride?: unknown;
+  [key: string]: unknown;
 }) {
-  return remoteControlHostEnabled ? hasEnrolledRemoteControlClient ? "connected" : "waiting" : "initial";
+  return (
+    isMfaSetupRequiredError ||
+    !!mfaSetupRequired ||
+    indigo(remoteControlStatus) ||
+    indigo(initialRemoteControlStatus) ||
+    setupStepDebugOverride !== "auto"
+  );
+}
+function gamma({ remoteControlHostEnabled, hasEnrolledRemoteControlClient }) {
+  return remoteControlHostEnabled
+    ? hasEnrolledRemoteControlClient
+      ? "connected"
+      : "waiting"
+    : "initial";
 }
 function harbor(sage) {
-  return sage.some(item => item instanceof AppInitialJQ);
+  return sage.some((item) => item instanceof AppInitialJQ);
 }
 function indigo(topaz) {
   switch (topaz) {

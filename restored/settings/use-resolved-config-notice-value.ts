@@ -11,7 +11,9 @@ export type UseResolvedConfigNoticeValuePeers = {
 let peers: UseResolvedConfigNoticeValuePeers | null = null;
 
 /** Wire useResolvedConfigNoticeValue peers once companions land. */
-export function setUseResolvedConfigNoticeValuePeers(next: UseResolvedConfigNoticeValuePeers): void {
+export function setUseResolvedConfigNoticeValuePeers(
+  next: UseResolvedConfigNoticeValuePeers,
+): void {
   peers = next;
 }
 

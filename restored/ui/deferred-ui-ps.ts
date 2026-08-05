@@ -22,7 +22,8 @@ export function bindDeferredUiPs() {
     throw new Error("bindDeferredUiPs peers are not configured");
   }
 
-  return peers.Oa(peers.j2, (e, {
-    get: t
-  }) => t(peers.D8).entries.get(e) ?? null);
+  return peers.Oa(
+    peers.j2,
+    (e, { get: t }) => t(peers.D8).entries.get(e) ?? null,
+  );
 }

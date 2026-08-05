@@ -25,18 +25,26 @@ export function bindAppgen2() {
     throw new Error("bindAppgen2 peers are not configured");
   }
 
-  return peers.ja(peers.Q, e => ({
+  return peers.ja(peers.Q, (e) => ({
     mutationKey: [...peers.fWn, e, `remove`],
-    mutationFn: t => peers.Bw(`sites_remove_custom_domain`, {
-      custom_domain_id: t,
-      project_id: e
-    }, peers.DWn),
-    onSuccess: async (t, n, r, {
-      client: i
-    }) => {
-      t.status === `active` && (await peers.iWn(i, [e])), i.setQueryData([...peers.fWn, e], e => e == null ? e : {
-        items: e.items.filter(e => e.id !== t.id)
-      });
-    }
+    mutationFn: (t) =>
+      peers.Bw(
+        `sites_remove_custom_domain`,
+        {
+          custom_domain_id: t,
+          project_id: e,
+        },
+        peers.DWn,
+      ),
+    onSuccess: async (t, n, r, { client: i }) => {
+      (t.status === `active` && (await peers.iWn(i, [e])),
+        i.setQueryData([...peers.fWn, e], (e) =>
+          e == null
+            ? e
+            : {
+                items: e.items.filter((e) => e.id !== t.id),
+              },
+        ));
+    },
   }));
 }

@@ -38,7 +38,9 @@ function reviewCommentLineSpan(comment: ReviewCommentLike): string {
 }
 
 /** Virtualization key: path|side|span|plainText. */
-export function reviewCommentVirtualizationKey(comment: ReviewCommentLike): string {
+export function reviewCommentVirtualizationKey(
+  comment: ReviewCommentLike,
+): string {
   const { path, side } = comment.position;
   return `${path}|${side}|${reviewCommentLineSpan(comment)}|${reviewCommentPlainText(comment)}`;
 }

@@ -5,16 +5,26 @@
 
 import { CodexBrowserProfileImportCookieStatus } from "../analytics/codex-browser-profile-import-cookie-status";
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Tft_Init } from "../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { Navigate } from "../boundaries/react-router-navigation";
-import { CodexHomeAnnouncements, ensureCodexHomeAnnouncementsInit } from "../home/codex-home-announcements";
+import {
+  CodexHomeAnnouncements,
+  ensureCodexHomeAnnouncementsInit,
+} from "../home/codex-home-announcements";
 import { ensureHasSeenRealtimeVoiceNuxAtomInit } from "../home/realtime-voice-nux";
 import { useSelectedHost } from "../hosts/use-selected-host";
 import { ensureIntlFormattersInit, useIntl } from "../i18n/use-intl";
 import { esmInit } from "../runtime/rolldown-runtime";
 import { getCodeThemeRegistration } from "../themes/get-code-theme-registration";
-import { ensureNewThreadBhInit, ensureNewThreadRmInit } from "../utils/wave-av-gap-ensure-inits";
+import {
+  ensureNewThreadBhInit,
+  ensureNewThreadRmInit,
+} from "../utils/wave-av-gap-ensure-inits";
 
 /** Wave FY unresolved companion (jsx-collision:ensureNewThreadBhInit@utils/wave-av-gap-ensure-inits.ts) */
 const AppInitialBh: any = undefined;
@@ -39,42 +49,69 @@ export function NewThreadPanelPage() {
     echo = CodexPluginActionResult(getCodeThemeRegistration);
   {
     let marble;
-    return <Navigate {...{
-      to: "/",
-      replace: true
-    }} />;
+    return (
+      <Navigate
+        {...{
+          to: "/",
+          replace: true,
+        }}
+      />
+    );
   }
-  let falcon = deferredHostsVh.isRecording() ? <AppInitialOO onPaint={alpha} /> : null;
+  let falcon = deferredHostsVh.isRecording() ? (
+    <AppInitialOO onPaint={alpha} />
+  ) : null;
   let gamma = delta.formatMessage({
     id: "homePage.mainContent",
     defaultMessage: "Main content",
-    description: "Main landmark label for the home page"
+    description: "Main landmark label for the home page",
   });
-  let harbor = <div className="mx-auto flex w-full max-w-3xl flex-col gap-3 px-panel">
+  let harbor = (
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-3 px-panel">
       <div className="flex-1" />
-    </div>;
-  let indigo = <div className="[container-type:size] relative flex w-full flex-1 flex-col items-center justify-center overflow-hidden [container-name:home-main-content]" role="main" aria-label={gamma}>
+    </div>
+  );
+  let indigo = (
+    <div
+      className="[container-type:size] relative flex w-full flex-1 flex-col items-center justify-center overflow-hidden [container-name:home-main-content]"
+      role="main"
+      aria-label={gamma}
+    >
       {harbor}
-    </div>;
-  let jade = IntlProvider(ensureSelectWorkspaceDhInit, "z-10 -mt-[var(--thread-footer-overlap)] flex flex-col gap-2 pb-2");
-  let kite = <div className="home-banners mt-2 flex flex-col gap-2 empty:hidden">
+    </div>
+  );
+  let jade = IntlProvider(
+    ensureSelectWorkspaceDhInit,
+    "z-10 -mt-[var(--thread-footer-overlap)] flex flex-col gap-2 pb-2",
+  );
+  let kite = (
+    <div className="home-banners mt-2 flex flex-col gap-2 empty:hidden">
       {<CodexHomeAnnouncements {...{}} />}
-    </div>;
-  let lemon = <div className={jade}>
+    </div>
+  );
+  let lemon = (
+    <div className={jade}>
       {kite}
       <AppInitialTT>
         <AppInitialZh className="electron:hidden" selectedProject={echo} />
       </AppInitialTT>
-    </div>;
-  return <AppInitialLm>
+    </div>
+  );
+  return (
+    <AppInitialLm>
       {falcon}
-      <div className="flex h-full flex-col" data-vscode-context={'{"chatgpt.supportsNewChatMenu": true}'} tabIndex={0}>
+      <div
+        className="flex h-full flex-col"
+        data-vscode-context={'{"chatgpt.supportsNewChatMenu": true}'}
+        tabIndex={0}
+      >
         <div className="relative flex h-full flex-col">
           {indigo}
           {lemon}
         </div>
       </div>
-    </AppInitialLm>;
+    </AppInitialLm>
+  );
 }
 function alpha() {
   return deferredHostsVh.markHomeVisible();

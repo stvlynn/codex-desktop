@@ -16,27 +16,34 @@ const messages: Record<string, string> = {
   "widgets.baseCarousel.previousItems": "Előző elemek",
   "widgets.cardCarousel.goToArticle": "Ugrás a cikkre",
   "widgets.cardCarousel.nextCards": "Következő kártyák",
-  "widgets.cardCarousel.nextCardsInCarousel": "Következő kártyák: {carouselLabel}",
+  "widgets.cardCarousel.nextCardsInCarousel":
+    "Következő kártyák: {carouselLabel}",
   "widgets.cardCarousel.previousCards": "Előző kártyák",
-  "widgets.cardCarousel.previousCardsInCarousel": "{carouselLabel} előző kártyái",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "{carouselLabel} előző kártyái",
   "widgets.debug.hideCurrentState": "Aktuális állapot elrejtése",
   "widgets.debug.nextState": "Következő állapot",
   "widgets.debug.previousState": "Előző állapot",
   "widgets.debug.selectedState": "Kijelölt állapot",
   "widgets.debug.showCurrentState": "Aktuális állapot megjelenítése",
   "widgets.debug.state": "Állapot",
-  "widgets.debug.unableToSerializeSelectedState": "A kijelölt állapot nem szerializálható.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "A kijelölt állapot nem szerializálható.",
   "widgets.hermes.artifact.viewMore": "További {count} megtekintése",
   "widgets.hermes.calendarEvent.moreAttendees": "+{count} további",
   "widgets.hermes.calendarEvent.singleTime": "{date} {time}",
   "widgets.hermes.calendarEvent.timeRange": "{date} {startTime}–{endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "{agentName} hozzáférést kér a folytatáshoz",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName} engedélyt kér a folytatáshoz",
-  "widgets.hermes.genericResponse.viewFullscreen": "Megtekintés teljes képernyőn",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "{agentName} hozzáférést kér a folytatáshoz",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName} engedélyt kér a folytatáshoz",
+  "widgets.hermes.genericResponse.viewFullscreen":
+    "Megtekintés teljes képernyőn",
   "widgets.hermes.genericTool.details": "Részletek",
   "widgets.hermes.genericTool.read": "Olvasás",
   "widgets.hermes.genericTool.request": "Kérés",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} a(z) {connectorName} használatával szeretné futtatni ezt: {toolName}.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} a(z) {connectorName} használatával szeretné futtatni ezt: {toolName}.",
   "widgets.hermes.genericTool.viewFullscreen": "Megtekintés teljes képernyőn",
   "widgets.hermes.genericTool.write": "Írás",
   "widgets.hermes.googleCalendarCreate.create": "Létrehozás",
@@ -44,12 +51,14 @@ const messages: Record<string, string> = {
   "widgets.hermes.inlineResponse.accept": "Jóváhagyás",
   "widgets.hermes.inlineResponse.decline": "Mégse",
   "widgets.hermes.permission.connect": "Csatlakozás",
-  "widgets.hermes.permission.connectToConnector": "Csatlakozás a(z) {connectorName} szolgáltatáshoz",
+  "widgets.hermes.permission.connectToConnector":
+    "Csatlakozás a(z) {connectorName} szolgáltatáshoz",
   "widgets.hermes.permission.connected": "Csatlakoztatva",
   "widgets.hermes.permission.moreInformation": "További információ",
   "widgets.hermes.permission.notNow": "Most nem",
   "widgets.hermes.permission.reconnect": "Újracsatlakozás",
-  "widgets.hermes.permission.reconnectToConnector": "Kapcsolódjon újra ehhez: {connectorName}",
+  "widgets.hermes.permission.reconnectToConnector":
+    "Kapcsolódjon újra ehhez: {connectorName}",
   "widgets.hermes.sendEmail.approveAction": "Művelet jóváhagyása",
   "widgets.hermes.sendEmail.bcc": "Titkos másolat",
   "widgets.hermes.sendEmail.cc": "Másolat",
@@ -62,73 +71,135 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "kevesebb mutatása",
   "widgets.hermes.taskStatus.canceled": "Feladat megszakítva",
   "widgets.hermes.taskStatus.canceling": "Megszakítás",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Korábbi üzenetek átnézése",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Korábbi üzenetek átnézése",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Korábbi üzenetek átnézése",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Korábbi üzenetek átnézése",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Korábbi üzenetek átnézése",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Korábbi üzenetek átolvasása",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Korábbi üzenetek áttekintése",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Korábbi üzenetek áttekintése",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Korábbi üzenetek átnézése",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Korábbi üzenetek átnézése",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Korábbi üzenetek átnézése",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Kontextus ellenőrzése",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Kontextus áttekintése",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Kontextus vizsgálata",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Kontextus olvasása",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Kontextus áttekintése",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Kontextus újbóli áttekintése",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Kontextus vizsgálata",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Kontextus áttekintése",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Ügynök aktiválása",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Ügynök indítása",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Ügynök indítása",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Ügynök előhívása",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Kapcsolódás az MI-ügynökhöz",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "Kapcsolódás az ügynökhöz",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Ügynök ébresztése",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Ügynök inicializálása",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Ügynök ébresztgetése",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Ügynök indítása",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "Ügynök hívása",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Számítógép aktiválása",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Számítógép indítása",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Számítógép indítása",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Számítógép inicializálása",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Számítógép bekapcsolása",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Számítógép előkészítése",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Számítógép indítása",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Számítógép felébresztése",
-  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Irány meghatározása",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Terv felvázolása",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Korábbi üzenetek átnézése",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Korábbi üzenetek átnézése",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Korábbi üzenetek átnézése",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Korábbi üzenetek átnézése",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Korábbi üzenetek átnézése",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Korábbi üzenetek átolvasása",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Korábbi üzenetek áttekintése",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Korábbi üzenetek áttekintése",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Korábbi üzenetek átnézése",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Korábbi üzenetek átnézése",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Korábbi üzenetek átnézése",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Kontextus ellenőrzése",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Kontextus áttekintése",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Kontextus vizsgálata",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Kontextus olvasása",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Kontextus áttekintése",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Kontextus újbóli áttekintése",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Kontextus vizsgálata",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Kontextus áttekintése",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Ügynök aktiválása",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Ügynök indítása",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Ügynök indítása",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Ügynök előhívása",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Kapcsolódás az MI-ügynökhöz",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "Kapcsolódás az ügynökhöz",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Ügynök ébresztése",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Ügynök inicializálása",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Ügynök ébresztgetése",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Ügynök indítása",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "Ügynök hívása",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Számítógép aktiválása",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Számítógép indítása",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Számítógép indítása",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Számítógép inicializálása",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Számítógép bekapcsolása",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Számítógép előkészítése",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Számítógép indítása",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Számítógép felébresztése",
+  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse":
+    "Irány meghatározása",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "Terv felvázolása",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Terv készítése",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Terv felvázolása",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Lépések tervezése",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Következő lépések szervezése",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Terv felvázolása",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "Lépések tervezése",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Következő lépések szervezése",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Tervezés",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Irány meghatározása",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Irány kijelölése",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Terv vázolása",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Megközelítések átgondolása",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Megközelítés kidolgozása",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Részletek összeállítása",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Részletek gyűjtése",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Részletek megadása",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Részletek gyűjtése",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Részletek összeállítása",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Részletek összegyűjtése",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Részletek összegyűjtése",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Részletek tisztázása",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Részletek felmérése",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Részletek felkutatása",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Ez tovább tart a szokásosnál",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Még dolgozom rajta",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Nézz vissza egy pillanat múlva",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Irány meghatározása",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Irány kijelölése",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Terv vázolása",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Megközelítések átgondolása",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Megközelítés kidolgozása",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Részletek összeállítása",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Részletek gyűjtése",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Részletek megadása",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Részletek gyűjtése",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Részletek összeállítása",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Részletek összegyűjtése",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Részletek összegyűjtése",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Részletek tisztázása",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Részletek felmérése",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Részletek felkutatása",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Ez tovább tart a szokásosnál",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Még dolgozom rajta",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Nézz vissza egy pillanat múlva",
   "widgets.hermes.workflow.canceled": "Feladat megszakítva",
   "widgets.hermes.workflow.canceledItemLabel": "Megszakítva",
   "widgets.hermes.workflow.codeBlock.hideLines": "Sorok elrejtése",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Mind a {lineCount} sor megjelenítése",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Mind a {lineCount} sor megjelenítése",
   "widgets.hermes.workflow.customWorked": "Dolgozott egy ideig",
   "widgets.hermes.workflow.customWorking": "Folyamatban",
   "widgets.hermes.workflow.fileWorked": "Beolvasott dokumentum",
@@ -148,7 +219,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Kevesebb",
   "widgets.listView.showMore": "Mutass még {count}-t",
   "widgets.radioGroup.options": "beállítások",
-  "widgets.segmentedControl.selectAnOption": "Válassz egy lehetőséget"
+  "widgets.segmentedControl.selectAnOption": "Válassz egy lehetőséget",
 };
 
 export default messages;

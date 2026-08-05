@@ -11,7 +11,9 @@ export type BindCodexVscodeCopilotPeers = {
 let peers: BindCodexVscodeCopilotPeers | null = null;
 
 /** Wire bindCodexVscodeCopilot peers once companions land. */
-export function setBindCodexVscodeCopilotPeers(next: BindCodexVscodeCopilotPeers): void {
+export function setBindCodexVscodeCopilotPeers(
+  next: BindCodexVscodeCopilotPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function bindCodexVscodeCopilot() {
   }
 
   return peers.e(() => {
-    peers.rme(), DSe = `codex_vscode_copilot`, OSe = `Copilot`;
+    (peers.rme(), (DSe = `codex_vscode_copilot`), (OSe = `Copilot`));
   });
 }

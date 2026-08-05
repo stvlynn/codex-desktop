@@ -7,14 +7,14 @@ import { remapRangeRef } from "./remap-range-ref-impl";
 
 void farH;
 
-export function remapFormulaAst(farIn1053: any, farIn1054: any, farIn1055: any, ) {
+export function remapFormulaAst(
+  farIn1053: any,
+  farIn1054: any,
+  farIn1055: any,
+) {
   switch (farIn1053.kind) {
     case "RangeRef": {
-      let farBind22402 = remapRangeRef(
-        farIn1053.ref,
-        farIn1054,
-        farIn1055,
-      );
+      let farBind22402 = remapRangeRef(farIn1053.ref, farIn1054, farIn1055);
       return farBind22402
         ? {
             ...farIn1053,
@@ -23,11 +23,7 @@ export function remapFormulaAst(farIn1053: any, farIn1054: any, farIn1055: any, 
         : null;
     }
     case "UnaryOp": {
-      let farBind22392 = remapFormulaAst(
-        farIn1053.expr,
-        farIn1054,
-        farIn1055,
-      );
+      let farBind22392 = remapFormulaAst(farIn1053.expr, farIn1054, farIn1055);
       return farBind22392
         ? {
             ...farIn1053,
@@ -36,17 +32,9 @@ export function remapFormulaAst(farIn1053: any, farIn1054: any, farIn1055: any, 
         : null;
     }
     case "BinaryOp": {
-      let farBind20217 = remapFormulaAst(
-        farIn1053.left,
-        farIn1054,
-        farIn1055,
-      );
+      let farBind20217 = remapFormulaAst(farIn1053.left, farIn1054, farIn1055);
       if (!farBind20217) return null;
-      let farBind20218 = remapFormulaAst(
-        farIn1053.right,
-        farIn1054,
-        farIn1055,
-      );
+      let farBind20218 = remapFormulaAst(farIn1053.right, farIn1054, farIn1055);
       return farBind20218
         ? {
             ...farIn1053,
@@ -58,11 +46,7 @@ export function remapFormulaAst(farIn1053: any, farIn1054: any, farIn1055: any, 
     case "FunctionCall": {
       let farBind19626 = [];
       for (let farBind21579 of farIn1053.args) {
-        let farBind22276 = remapFormulaAst(
-          farBind21579,
-          farIn1054,
-          farIn1055,
-        );
+        let farBind22276 = remapFormulaAst(farBind21579, farIn1054, farIn1055);
         if (!farBind22276) return null;
         farBind19626.push(farBind22276);
       }
@@ -80,11 +64,7 @@ export function remapFormulaAst(farIn1053: any, farIn1054: any, farIn1055: any, 
       if (!farBind17494) return null;
       let farBind17495 = [];
       for (let farBind21580 of farIn1053.args) {
-        let farBind22277 = remapFormulaAst(
-          farBind21580,
-          farIn1054,
-          farIn1055,
-        );
+        let farBind22277 = remapFormulaAst(farBind21580, farIn1054, farIn1055);
         if (!farBind22277) return null;
         farBind17495.push(farBind22277);
       }

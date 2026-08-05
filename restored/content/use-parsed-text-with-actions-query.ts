@@ -12,7 +12,9 @@ export type UseParsedTextWithActionsQueryPeers = {
 let peers: UseParsedTextWithActionsQueryPeers | null = null;
 
 /** Wire useParsedTextWithActionsQuery peers once companions land. */
-export function setUseParsedTextWithActionsQueryPeers(next: UseParsedTextWithActionsQueryPeers): void {
+export function setUseParsedTextWithActionsQueryPeers(
+  next: UseParsedTextWithActionsQueryPeers,
+): void {
   peers = next;
 }
 

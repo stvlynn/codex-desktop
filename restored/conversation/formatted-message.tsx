@@ -17,7 +17,9 @@ export type BindBindFormattedMessagePeers = {
 let peers: BindBindFormattedMessagePeers | null = null;
 
 /** Wire bindBindFormattedMessage peers once companions land. */
-export function setBindBindFormattedMessagePeers(next: BindBindFormattedMessagePeers): void {
+export function setBindBindFormattedMessagePeers(
+  next: BindBindFormattedMessagePeers,
+): void {
   peers = next;
 }
 
@@ -30,6 +32,12 @@ export function bindBindFormattedMessage() {
   }
 
   return peers.e(() => {
-    peers.Iu(), Vje = peers.r(peers.o()), peers.gje(), peers.Dje(), peers.Bje.displayName = `FormattedMessage`, Z = peers.Vje.memo(peers.Bje, peers.zje), peers.Z.displayName = `MemoizedFormattedMessage`;
+    (peers.Iu(),
+      (Vje = peers.r(peers.o())),
+      peers.gje(),
+      peers.Dje(),
+      (peers.Bje.displayName = `FormattedMessage`),
+      (Z = peers.Vje.memo(peers.Bje, peers.zje)),
+      (peers.Z.displayName = `MemoizedFormattedMessage`));
   });
 }

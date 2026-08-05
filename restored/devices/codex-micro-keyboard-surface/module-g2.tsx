@@ -10,9 +10,17 @@ import { resolveReferralProgram } from "../../account/resolve-referral-program";
 import { CodexAutomationCapabilityOrigin } from "../../analytics/codex-automation-capability-origin";
 import { CodexPluginDirectoryEntrypoint } from "../../analytics/codex-plugin-directory-entrypoint";
 import { CodexReferralInviteModalBackendErrorType } from "../../analytics/codex-referral-invite-modal-backend-error-type";
-import { ensureComposerEsm_CU_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Kg_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_CU_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Kg_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_PRODUCT_ID } from "../../config/chatgpt-product-id";
 import { deferredConversationR } from "../../conversation/deferred-conversation-r";
@@ -32,9 +40,15 @@ import { AppIconTv } from "../../icons/app-icon-tv";
 import { AppIconYm } from "../../icons/app-icon-ym";
 import { ensureFlaskIconInit, FlaskIcon } from "../../icons/flask-icon";
 import { ensureHooksFocusIconInit } from "../../icons/hooks-settings-icons";
-import { ensurePlayOutlineIconInit, PlayOutlineIcon } from "../../icons/play-outline-icon";
+import {
+  ensurePlayOutlineIconInit,
+  PlayOutlineIcon,
+} from "../../icons/play-outline-icon";
 import { ProjectDropdownGlyphIcon } from "../../icons/project-dropdown-glyph-icon";
-import { ensureStarOutlineIconInit, StarOutlineIcon } from "../../icons/star-outline-icon";
+import {
+  ensureStarOutlineIconInit,
+  StarOutlineIcon,
+} from "../../icons/star-outline-icon";
 import { TerminalFileIcon } from "../../icons/terminal-file-icon";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { esmInit } from "../../runtime/rolldown-runtime";
@@ -46,7 +60,11 @@ import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { identity } from "../../utils/identity";
 import { lerpIfFinite } from "../../utils/lerp-if-finite";
-import { ensureSettingsGlyphI0Init, ensureSettingsGlyphNltInit, ensureSettingsGlyphRBInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureSettingsGlyphI0Init,
+  ensureSettingsGlyphNltInit,
+  ensureSettingsGlyphRBInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 
 /** split companion stub */
 const IntlProvider: any = undefined;
@@ -64,49 +82,53 @@ export const codexMicroKeyboardSurfaceS = esmInit(() => {
     working: {
       id: "settings.codexMicro.agentKeyPreview.status.working",
       defaultMessage: "Working",
-      description: "Working status for a Codex Micro agent key"
+      description: "Working status for a Codex Micro agent key",
     },
     unread: {
       id: "settings.codexMicro.agentKeyPreview.status.unread",
       defaultMessage: "Unread",
-      description: "Unread status for a Codex Micro agent key"
+      description: "Unread status for a Codex Micro agent key",
     },
     idle: {
       id: "settings.codexMicro.agentKeyPreview.status.idle",
       defaultMessage: "Idle",
-      description: "Idle status for a Codex Micro agent key"
+      description: "Idle status for a Codex Micro agent key",
     },
     "awaiting-approval": {
       id: "settings.codexMicro.agentKeyPreview.status.awaitingApproval",
       defaultMessage: "Awaiting approval",
-      description: "Awaiting approval status for a Codex Micro agent key"
+      description: "Awaiting approval status for a Codex Micro agent key",
     },
     "awaiting-response": {
       id: "settings.codexMicro.agentKeyPreview.status.awaitingResponse",
       defaultMessage: "Awaiting response",
-      description: "Awaiting response status for a Codex Micro agent key"
+      description: "Awaiting response status for a Codex Micro agent key",
     },
     error: {
       id: "settings.codexMicro.agentKeyPreview.status.error",
       defaultMessage: "Error",
-      description: "Error status for a Codex Micro agent key"
+      description: "Error status for a Codex Micro agent key",
     },
     off: {
       id: "settings.codexMicro.agentKeyPreview.status.off",
       defaultMessage: "Off",
-      description: "Off status for an unassigned Codex Micro agent key"
-    }
+      description: "Off status for an unassigned Codex Micro agent key",
+    },
   });
 });
 export function codexMicroKeyboardSurfaceI(alpha: unknown) {
-  let {
-      children,
-      className
-    } = alpha,
-    bravo = IntlProvider("relative grid aspect-square w-full max-w-[15rem] grid-cols-4 grid-rows-4 gap-1 rounded-xl border border-white/[0.82] bg-[#ebe8e2] p-2.5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.72),0_1px_0_rgba(255,255,255,0.65)] dark:border-white/[0.1] dark:bg-[#18191e] dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08),0_1px_0_rgba(0,0,0,0.28)]", className);
-  let copper = <div className="pointer-events-none absolute top-[2.85rem] right-2.5 left-[3.1rem] h-[4.85rem] rounded-full bg-[#8db5ff]/28 blur-2xl" />;
-  return <div className={bravo}>
+  let { children, className } = alpha,
+    bravo = IntlProvider(
+      "relative grid aspect-square w-full max-w-[15rem] grid-cols-4 grid-rows-4 gap-1 rounded-xl border border-white/[0.82] bg-[#ebe8e2] p-2.5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.72),0_1px_0_rgba(255,255,255,0.65)] dark:border-white/[0.1] dark:bg-[#18191e] dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08),0_1px_0_rgba(0,0,0,0.28)]",
+      className,
+    );
+  let copper = (
+    <div className="pointer-events-none absolute top-[2.85rem] right-2.5 left-[3.1rem] h-[4.85rem] rounded-full bg-[#8db5ff]/28 blur-2xl" />
+  );
+  return (
+    <div className={bravo}>
       {copper}
       {children}
-    </div>;
+    </div>
+  );
 }

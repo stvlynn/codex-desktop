@@ -10,7 +10,9 @@ export type ArtifactPreviewStatusKind = "ready" | "loading" | "error" | string;
 /**
  * Bundle export `n` — null when ready; otherwise loading/error copy.
  */
-export function ArtifactPreviewStatus(status: ArtifactPreviewStatusKind): ReactNode {
+export function ArtifactPreviewStatus(
+  status: ArtifactPreviewStatusKind,
+): ReactNode {
   if (status === "ready") return null;
   return (
     <div className="flex h-full items-center justify-center px-6 text-center text-sm text-token-text-tertiary">

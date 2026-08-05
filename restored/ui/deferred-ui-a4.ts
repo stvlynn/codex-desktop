@@ -25,14 +25,10 @@ export function bindDeferredUiA4() {
     throw new Error("bindDeferredUiA4 peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     if (t(peers.Ww) !== `macOS` || !t(peers.Eh, `1304276663`)) return !1;
-    let {
-      data: n
-    } = t(peers.PE, {
-      hostId: e
+    let { data: n } = t(peers.PE, {
+      hostId: e,
     });
     return n != null && n.requirements?.allowAppshots !== !1;
   });

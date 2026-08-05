@@ -7,7 +7,10 @@ export type AssistantBranchNode = {
 };
 
 /** Path of assistant turn ids from root to `targetId`. */
-export function findAssistantTurnIdPath(node: AssistantBranchNode, targetId: string): string[] | null {
+export function findAssistantTurnIdPath(
+  node: AssistantBranchNode,
+  targetId: string,
+): string[] | null {
   for (const turn of node.assistantTurns) {
     if (turn.id === targetId) return [turn.id];
     const child = node.children[turn.id];

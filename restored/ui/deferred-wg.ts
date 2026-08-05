@@ -25,6 +25,6 @@ export function deferredWG() {
   }
 
   return peers.e(() => {
-    ati = peers.r(peers.o(), 1), oti = (0, peers.ati.createContext)(null);
+    ((ati = peers.r(peers.o(), 1)), (oti = (0, peers.ati.createContext)(null)));
   });
 }

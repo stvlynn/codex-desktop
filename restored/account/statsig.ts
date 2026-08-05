@@ -39,16 +39,28 @@ export function statsig() {
     throw new Error("statsig peers are not configured");
   }
   return peers.e(() => {
-    mer = peers.r(peers.Mo(), 1), peers.Ho(), peers.ed(), peers.Im(), peers.H7n(), peers.x9n(), peers.R9n(), peers.der(), her = {
-      canUseLocalOverride: !1,
-      error: null,
-      override: peers.R7n,
-      source: `statsig`,
-      statsigValue: {}
-    }, ger = peers.Ta(peers.Q, null, {
-      isEqual: peers.mer.default
-    }), _er = peers.Ta(peers.Q, peers.her, {
-      isEqual: peers.mer.default
-    }), ver = peers.Ta(peers.Q, !1), yer = peers.Pm(`realtime-voice-mode-debug-disabled`, !1);
+    ((mer = peers.r(peers.Mo(), 1)),
+      peers.Ho(),
+      peers.ed(),
+      peers.Im(),
+      peers.H7n(),
+      peers.x9n(),
+      peers.R9n(),
+      peers.der(),
+      (her = {
+        canUseLocalOverride: !1,
+        error: null,
+        override: peers.R7n,
+        source: `statsig`,
+        statsigValue: {},
+      }),
+      (ger = peers.Ta(peers.Q, null, {
+        isEqual: peers.mer.default,
+      })),
+      (_er = peers.Ta(peers.Q, peers.her, {
+        isEqual: peers.mer.default,
+      })),
+      (ver = peers.Ta(peers.Q, !1)),
+      (yer = peers.Pm(`realtime-voice-mode-debug-disabled`, !1)));
   });
 }

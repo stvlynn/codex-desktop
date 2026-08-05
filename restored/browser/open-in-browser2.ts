@@ -36,7 +36,9 @@ export type BindOpenInBrowser2Peers = {
 let peers: BindOpenInBrowser2Peers | null = null;
 
 /** Wire bindOpenInBrowser2 peers once companions land. */
-export function setBindOpenInBrowser2Peers(next: BindOpenInBrowser2Peers): void {
+export function setBindOpenInBrowser2Peers(
+  next: BindOpenInBrowser2Peers,
+): void {
   peers = next;
 }
 
@@ -49,6 +51,29 @@ export function bindOpenInBrowser2() {
   }
 
   return peers.e(() => {
-    l7 = peers.c(), peers.sd(), peers.af(), peers.Ho(), k$l = peers.r(peers.o(), 1), peers.$u(), peers.Nw(), peers.DD(), peers.aN(), peers.Pp(), peers.qR(), peers.YB(), peers.E3(), peers.hE(), peers.IZ(), peers.NZ(), peers.PA(), peers.Fh(), peers.MJo(), peers.kB(), peers._$l(), u7 = peers.J(), A$l = [0.22, 1, 0.36, 1], j$l = 3;
+    ((l7 = peers.c()),
+      peers.sd(),
+      peers.af(),
+      peers.Ho(),
+      (k$l = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.Nw(),
+      peers.DD(),
+      peers.aN(),
+      peers.Pp(),
+      peers.qR(),
+      peers.YB(),
+      peers.E3(),
+      peers.hE(),
+      peers.IZ(),
+      peers.NZ(),
+      peers.PA(),
+      peers.Fh(),
+      peers.MJo(),
+      peers.kB(),
+      peers._$l(),
+      (u7 = peers.J()),
+      (A$l = [0.22, 1, 0.36, 1]),
+      (j$l = 3));
   });
 }

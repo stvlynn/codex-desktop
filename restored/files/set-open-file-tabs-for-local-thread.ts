@@ -9,7 +9,9 @@ export type OpenFileTabsForLocalThreadPeers = {
 let peers: OpenFileTabsForLocalThreadPeers | null = null;
 
 /** Wire setOpenFileTabsForLocalThread peers once companions land. */
-export function setOpenFileTabsForLocalThreadPeers(next: OpenFileTabsForLocalThreadPeers): void {
+export function setOpenFileTabsForLocalThreadPeers(
+  next: OpenFileTabsForLocalThreadPeers,
+): void {
   peers = next;
 }
 

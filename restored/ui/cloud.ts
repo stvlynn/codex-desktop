@@ -25,6 +25,6 @@ export function cloud() {
   }
 
   return peers.e(() => {
-    yjs = peers.r(peers.o(), 1), bjs = (0, peers.yjs.createContext)(null);
+    ((yjs = peers.r(peers.o(), 1)), (bjs = (0, peers.yjs.createContext)(null)));
   });
 }

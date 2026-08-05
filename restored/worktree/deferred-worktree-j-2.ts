@@ -12,7 +12,9 @@ export type BindDeferredWorktreeJPeers = {
 let peers: BindDeferredWorktreeJPeers | null = null;
 
 /** Wire bindDeferredWorktreeJ peers once companions land. */
-export function setBindDeferredWorktreeJPeers(next: BindDeferredWorktreeJPeers): void {
+export function setBindDeferredWorktreeJPeers(
+  next: BindDeferredWorktreeJPeers,
+): void {
   peers = next;
 }
 
@@ -24,11 +26,11 @@ export function bindDeferredWorktreeJ() {
     throw new Error("bindDeferredWorktreeJ peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => t(peers.UPs, {
-    conversationId: e,
-    cwd: t(peers.oD, e),
-    hostId: t(peers.wD, e)
-  }));
+  return peers.Oa(peers.Q, (e, { get: t }) =>
+    t(peers.UPs, {
+      conversationId: e,
+      cwd: t(peers.oD, e),
+      hostId: t(peers.wD, e),
+    }),
+  );
 }

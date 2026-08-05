@@ -13,9 +13,25 @@ import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-res
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { useResolvedAppByIdOrDisplayName } from "../../apps/use-resolved-app-by-id-or-display-name";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Cd_Init, ensureComposerEsm_Ed_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Td_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Cd_Init,
+  ensureComposerEsm_Ed_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_RV_Init,
+  ensureComposerEsm_Td_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { Link } from "../../boundaries/react-router-link";
 import { useLocation } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -61,25 +77,38 @@ import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-
 import { resetStoreAtomValueSf as ResetStoreAtomValueSf } from "../../utils/set-store-atom-value";
 import { ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
 import { identityCwd } from "../../utils/workspace-paths";
-import { computeHookAttention, summarizeHooksByEvent } from "../hooks-event-helpers";
+import {
+  computeHookAttention,
+  summarizeHooksByEvent,
+} from "../hooks-event-helpers";
 import { listHooksForHostQueryAtom } from "../hooks-query-atoms";
 import { readCodexHomeFromQuery } from "../read-codex-home-from-query";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { initSettingsLoadingRow, SettingsLoadingRow } from "../settings-loading-row";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  initSettingsLoadingRow,
+  SettingsLoadingRow,
+} from "../settings-loading-row";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { useChronicleSettingsSection as UseChronicleSettingsSection } from "../use-chronicle-settings-section";
 const deferredUiU: any = undefined;
 // Wave5d soft JSX companions.
-function Alpha(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -182,30 +211,49 @@ const AppInitialYC: any = undefined;
 /** Wave FZ unresolved companion (missing-export:onboarding/read-login-route-query-snapshot.ts) */
 const readLoginRouteQuerySnapshot: any = undefined;
 function basalt(quill, reef) {
-  let sage = quill.issueCount > 0 ? reef.formatMessage({
-      id: "settings.hooks.summary.issueCounts",
-      defaultMessage: "{issueCount, plural, one {# issue} other {# issues}}",
-      description: "Hook load issue count for a project row"
-    }, {
-      issueCount: quill.issueCount
-    }) : "",
-    topaz = quill.needsReview > 0 ? reef.formatMessage({
-      id: "settings.hooks.summary.reviewCounts",
-      defaultMessage: "{needsReview, plural, one {# needs review} other {# need review}}",
-      description: "Review-needed hook count for a project row"
-    }, {
-      needsReview: quill.needsReview
-    }) : "";
-  return <MemoizedFormattedMessage {...{
-    id: "settings.hooks.summary.attentionCounts",
-    defaultMessage: "{issueCount}{separator}{needsReview}",
-    description: "Combined hook load issue and review-needed counts for a project row",
-    values: {
-      issueCount: sage,
-      separator: sage !== "" && topaz !== "" ? " · " : "",
-      needsReview: topaz
-    }
-  }} />;
+  let sage =
+      quill.issueCount > 0
+        ? reef.formatMessage(
+            {
+              id: "settings.hooks.summary.issueCounts",
+              defaultMessage:
+                "{issueCount, plural, one {# issue} other {# issues}}",
+              description: "Hook load issue count for a project row",
+            },
+            {
+              issueCount: quill.issueCount,
+            },
+          )
+        : "",
+    topaz =
+      quill.needsReview > 0
+        ? reef.formatMessage(
+            {
+              id: "settings.hooks.summary.reviewCounts",
+              defaultMessage:
+                "{needsReview, plural, one {# needs review} other {# need review}}",
+              description: "Review-needed hook count for a project row",
+            },
+            {
+              needsReview: quill.needsReview,
+            },
+          )
+        : "";
+  return (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.hooks.summary.attentionCounts",
+        defaultMessage: "{issueCount}{separator}{needsReview}",
+        description:
+          "Combined hook load issue and review-needed counts for a project row",
+        values: {
+          issueCount: sage,
+          separator: sage !== "" && topaz !== "" ? " · " : "",
+          needsReview: topaz,
+        },
+      }}
+    />
+  );
 }
 var cedar,
   daisy = esmInit(() => {
@@ -215,10 +263,23 @@ var cedar,
   flint,
   garnet = esmInit(() => {
     react();
-    flint = ultra => <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="currentColor" viewBox="0 0 24 24" {...ultra}>
+    flint = (ultra) => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={24}
+        height={24}
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        {...ultra}
+      >
         <path d="M15.344 10.036a1 1 0 1 0-1.688-1.072l-2.474 3.896-.943-1.034a1 1 0 0 0-1.478 1.348l1.826 2a1 1 0 0 0 1.583-.138l3.174-5Z" />
-        <path fillRule="evenodd" d="M13.203 1.935a3 3 0 0 0-2.405 0l-6 2.625A3 3 0 0 0 3 7.308V13a9 9 0 1 0 18 0V7.308a3 3 0 0 0-1.797-2.748l-6-2.625Zm-1.604 1.832a1 1 0 0 1 .802 0l6 2.625a1 1 0 0 1 .599.916V13a7 7 0 1 1-14 0V7.308a1 1 0 0 1 .6-.916l6-2.625Z" clipRule="evenodd" />
-      </svg>;
+        <path
+          fillRule="evenodd"
+          d="M13.203 1.935a3 3 0 0 0-2.405 0l-6 2.625A3 3 0 0 0 3 7.308V13a9 9 0 1 0 18 0V7.308a3 3 0 0 0-1.797-2.748l-6-2.625Zm-1.604 1.832a1 1 0 0 1 .802 0l6 2.625a1 1 0 0 1 .599.916V13a7 7 0 1 1-14 0V7.308a1 1 0 0 1 .6-.916l6-2.625Z"
+          clipRule="evenodd"
+        />
+      </svg>
+    );
   });
 function hazel(vapor) {
   let {
@@ -228,7 +289,7 @@ function hazel(vapor) {
       hooks,
       projectRoot,
       onToggleHookEnabled,
-      onTrustHook
+      onTrustHook,
     } = vapor,
     wheat = useIntl(),
     [yarn, zephyr] = mint.useState(null),
@@ -244,97 +305,209 @@ function hazel(vapor) {
       let honey = ensureComposerEsm_Cd_Init(event),
         iris = !isRemoteHost && !event.isManaged,
         jewel = yarn === event.key;
-      return <div key={event.key} className={IntlProvider(jewel && "pb-2")}>
+      return (
+        <div key={event.key} className={IntlProvider(jewel && "pb-2")}>
           <div className="-mx-3 flex items-center gap-2 px-3 hover:bg-token-list-hover-background">
             <div className="relative flex min-w-0 flex-1">
-              <button type="button" aria-expanded={jewel} className={IntlProvider("flex min-w-0 flex-1 cursor-interaction appearance-none items-center border-0 bg-transparent py-2 pl-7 text-left text-sm text-inherit [font:inherit] focus-visible:rounded-md focus-visible:ring-2 focus-visible:ring-token-focus-border focus-visible:outline-none", iris ? "pr-12" : "pr-6")} onClick={() => {
-              zephyr(jewel ? null : event.key);
-            }}>
+              <button
+                type="button"
+                aria-expanded={jewel}
+                className={IntlProvider(
+                  "flex min-w-0 flex-1 cursor-interaction appearance-none items-center border-0 bg-transparent py-2 pl-7 text-left text-sm text-inherit [font:inherit] focus-visible:rounded-md focus-visible:ring-2 focus-visible:ring-token-focus-border focus-visible:outline-none",
+                  iris ? "pr-12" : "pr-6",
+                )}
+                onClick={() => {
+                  zephyr(jewel ? null : event.key);
+                }}
+              >
                 <span className="shrink-0 text-token-text-primary">
                   {AppInitialDd(glide, wheat)}
                 </span>
               </button>
-              {iris ? <OptionalTooltip {...{
-              triggerAsChild: true,
-              tooltipContent: <MemoizedFormattedMessage {...{
-                ...olive.openConfigFile
-              }} />,
-              children: <button type="button" aria-label={wheat.formatMessage(olive.openConfigFile)} className="absolute top-1/2 right-6 inline-flex size-5 -translate-y-1/2 cursor-interaction items-center justify-center rounded-md text-token-text-tertiary hover:bg-token-list-hover-background hover:text-token-text-primary focus-visible:ring-2 focus-visible:ring-token-focus-border focus-visible:outline-none" onClick={() => {
-                readCodexHomeFromQuery({
-                  cwd: event.source === "project" ? identityCwd(projectRoot) : null,
-                  hostId,
-                  path: event.sourcePath
-                });
-              }}>
-                        {<AppIconKtt {...{
-                  className: "icon-xxs",
-                  "aria-hidden": true
-                }} />}
+              {iris ? (
+                <OptionalTooltip
+                  {...{
+                    triggerAsChild: true,
+                    tooltipContent: (
+                      <MemoizedFormattedMessage
+                        {...{
+                          ...olive.openConfigFile,
+                        }}
+                      />
+                    ),
+                    children: (
+                      <button
+                        type="button"
+                        aria-label={wheat.formatMessage(olive.openConfigFile)}
+                        className="absolute top-1/2 right-6 inline-flex size-5 -translate-y-1/2 cursor-interaction items-center justify-center rounded-md text-token-text-tertiary hover:bg-token-list-hover-background hover:text-token-text-primary focus-visible:ring-2 focus-visible:ring-token-focus-border focus-visible:outline-none"
+                        onClick={() => {
+                          readCodexHomeFromQuery({
+                            cwd:
+                              event.source === "project"
+                                ? identityCwd(projectRoot)
+                                : null,
+                            hostId,
+                            path: event.sourcePath,
+                          });
+                        }}
+                      >
+                        {
+                          <AppIconKtt
+                            {...{
+                              className: "icon-xxs",
+                              "aria-hidden": true,
+                            }}
+                          />
+                        }
                       </button>
-            }} /> : null}
-              {<AppIconSft {...{
-              "aria-hidden": true,
-              className: IntlProvider("icon-2xs pointer-events-none absolute top-1/2 right-1 -translate-y-1/2 text-token-text-secondary", jewel && "rotate-180")
-            }} />}
+                    ),
+                  }}
+                />
+              ) : null}
+              {
+                <AppIconSft
+                  {...{
+                    "aria-hidden": true,
+                    className: IntlProvider(
+                      "icon-2xs pointer-events-none absolute top-1/2 right-1 -translate-y-1/2 text-token-text-secondary",
+                      jewel && "rotate-180",
+                    ),
+                  }}
+                />
+              }
             </div>
             <div className="flex shrink-0 items-center gap-2">
-              {honey ? <OptionalTooltip {...{
-              delayDuration: 0,
-              tooltipContent: event.trustStatus === "modified" ? <MemoizedFormattedMessage {...{
-                id: "settings.hooks.event.changedReviewReason",
-                defaultMessage: "Hook changed since last trusted",
-                description: "Tooltip shown for changed hooks awaiting review"
-              }} /> : <MemoizedFormattedMessage {...{
-                id: "settings.hooks.event.untrustedReviewReason",
-                defaultMessage: "New hook",
-                description: "Tooltip shown for hooks awaiting first review"
-              }} />,
-              children: <ReadLoginRouteQuerySnapshot {...{
-                color: "outline",
-                size: "composerSm",
-                onClick: () => {
-                  onTrustHook(event);
-                },
-                children: [<Alpha {...{
-                  className: "icon-2xs"
-                }} />, <MemoizedFormattedMessage {...{
-                  id: "settings.hooks.event.trust",
-                  defaultMessage: "Trust",
-                  description: "Button label to trust a hook"
-                }} />]
-              }} />
-            }} /> : null}
-              {event.isManaged ? <OptionalTooltip {...{
-              delayDuration: 0,
-              tooltipContent: <MemoizedFormattedMessage {...{
-                id: "settings.hooks.event.managedTooltip",
-                defaultMessage: "Managed hooks are always on",
-                description: "Tooltip shown for admin-managed hooks"
-              }} />,
-              children: <span className="inline-flex cursor-not-allowed" tabIndex={0}>
-                        <AppInitialYC ariaLabel={AppInitialDd(glide, wheat)} checked={true} className="pointer-events-none" disabled={true} onChange={ivory} />
+              {honey ? (
+                <OptionalTooltip
+                  {...{
+                    delayDuration: 0,
+                    tooltipContent:
+                      event.trustStatus === "modified" ? (
+                        <MemoizedFormattedMessage
+                          {...{
+                            id: "settings.hooks.event.changedReviewReason",
+                            defaultMessage: "Hook changed since last trusted",
+                            description:
+                              "Tooltip shown for changed hooks awaiting review",
+                          }}
+                        />
+                      ) : (
+                        <MemoizedFormattedMessage
+                          {...{
+                            id: "settings.hooks.event.untrustedReviewReason",
+                            defaultMessage: "New hook",
+                            description:
+                              "Tooltip shown for hooks awaiting first review",
+                          }}
+                        />
+                      ),
+                    children: (
+                      <ReadLoginRouteQuerySnapshot
+                        {...{
+                          color: "outline",
+                          size: "composerSm",
+                          onClick: () => {
+                            onTrustHook(event);
+                          },
+                          children: [
+                            <Alpha
+                              {...{
+                                className: "icon-2xs",
+                              }}
+                            />,
+                            <MemoizedFormattedMessage
+                              {...{
+                                id: "settings.hooks.event.trust",
+                                defaultMessage: "Trust",
+                                description: "Button label to trust a hook",
+                              }}
+                            />,
+                          ],
+                        }}
+                      />
+                    ),
+                  }}
+                />
+              ) : null}
+              {event.isManaged ? (
+                <OptionalTooltip
+                  {...{
+                    delayDuration: 0,
+                    tooltipContent: (
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "settings.hooks.event.managedTooltip",
+                          defaultMessage: "Managed hooks are always on",
+                          description: "Tooltip shown for admin-managed hooks",
+                        }}
+                      />
+                    ),
+                    children: (
+                      <span
+                        className="inline-flex cursor-not-allowed"
+                        tabIndex={0}
+                      >
+                        <AppInitialYC
+                          ariaLabel={AppInitialDd(glide, wheat)}
+                          checked={true}
+                          className="pointer-events-none"
+                          disabled={true}
+                          onChange={ivory}
+                        />
                       </span>
-            }} /> : <OptionalTooltip {...{
-              delayDuration: 0,
-              tooltipContent: honey ? <MemoizedFormattedMessage {...{
-                id: "settings.hooks.event.disabledUntilTrustedTooltip",
-                defaultMessage: "Disabled until hook is trusted",
-                description: "Tooltip shown for review-needed hooks whose toggle cannot be enabled yet"
-              }} /> : null,
-              children: <span className={honey ? "inline-flex cursor-not-allowed" : ""} tabIndex={honey ? 0 : undefined}>
-                        <AppInitialYC ariaLabel={AppInitialDd(glide, wheat)} checked={event.enabled && !honey} className={honey ? "pointer-events-none" : ""} disabled={honey} onChange={knoll => {
-                  onToggleHookEnabled(event, knoll);
-                }} />
+                    ),
+                  }}
+                />
+              ) : (
+                <OptionalTooltip
+                  {...{
+                    delayDuration: 0,
+                    tooltipContent: honey ? (
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "settings.hooks.event.disabledUntilTrustedTooltip",
+                          defaultMessage: "Disabled until hook is trusted",
+                          description:
+                            "Tooltip shown for review-needed hooks whose toggle cannot be enabled yet",
+                        }}
+                      />
+                    ) : null,
+                    children: (
+                      <span
+                        className={
+                          honey ? "inline-flex cursor-not-allowed" : ""
+                        }
+                        tabIndex={honey ? 0 : undefined}
+                      >
+                        <AppInitialYC
+                          ariaLabel={AppInitialDd(glide, wheat)}
+                          checked={event.enabled && !honey}
+                          className={honey ? "pointer-events-none" : ""}
+                          disabled={honey}
+                          onChange={(knoll) => {
+                            onToggleHookEnabled(event, knoll);
+                          }}
+                        />
                       </span>
-            }} />}
+                    ),
+                  }}
+                />
+              )}
             </div>
           </div>
-          {jewel ? <div className="pl-7">
-              {<HooksSettingsHelper4 {...{
-            hook: event
-          }} />}
-            </div> : null}
-        </div>;
+          {jewel ? (
+            <div className="pl-7">
+              {
+                <HooksSettingsHelper4
+                  {...{
+                    hook: event,
+                  }}
+                />
+              }
+            </div>
+          ) : null}
+        </div>
+      );
     };
     bloom = eagle.map(frost);
   }
@@ -343,61 +516,116 @@ function hazel(vapor) {
 }
 function ivory() {}
 function jasper(lunar) {
-  let {
-      hook
-    } = lunar,
-    moss = <MemoizedFormattedMessage {...{
-      id: "settings.hooks.event.handler",
-      defaultMessage: "Handler",
-      description: "Label for the handler type of a configured hook"
-    }} />;
-  let north = <_t {...{
-    label: moss,
-    children: <HooksSettingsHelper5 {...{
-      handlerType: hook.handlerType
-    }} />
-  }} />;
-  let orbit = hook.command == null ? null : <_t {...{
-    label: <MemoizedFormattedMessage {...{
-      id: "settings.hooks.event.command",
-      defaultMessage: "Command",
-      description: "Label for the command executed by a hook"
-    }} />,
-    children: <code className="block font-mono text-xs break-all whitespace-pre-wrap">
+  let { hook } = lunar,
+    moss = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.hooks.event.handler",
+          defaultMessage: "Handler",
+          description: "Label for the handler type of a configured hook",
+        }}
+      />
+    );
+  let north = (
+    <_t
+      {...{
+        label: moss,
+        children: (
+          <HooksSettingsHelper5
+            {...{
+              handlerType: hook.handlerType,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let orbit =
+    hook.command == null ? null : (
+      <_t
+        {...{
+          label: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.hooks.event.command",
+                defaultMessage: "Command",
+                description: "Label for the command executed by a hook",
+              }}
+            />
+          ),
+          children: (
+            <code className="block font-mono text-xs break-all whitespace-pre-wrap">
               {hook.command}
             </code>
-  }} />;
-  let pine = hook.matcher == null ? null : <_t {...{
-    label: <MemoizedFormattedMessage {...{
-      id: "settings.hooks.event.matcher",
-      defaultMessage: "Matcher",
-      description: "Label for the matcher configured for a hook"
-    }} />,
-    children: <code className="font-mono text-xs break-all">{hook.matcher}</code>
-  }} />;
-  let quest = <MemoizedFormattedMessage {...{
-    id: "settings.hooks.event.timeout",
-    defaultMessage: "Timeout",
-    description: "Label for a hook execution timeout"
-  }} />;
-  let ridge = <_t {...{
-    label: quest,
-    children: <DeferredZft {...{
-      value: hook.timeoutSec,
-      style: "unit",
-      unit: "second",
-      unitDisplay: "narrow"
-    }} />
-  }} />;
-  let storm = hook.statusMessage == null ? null : <_t {...{
-    label: <MemoizedFormattedMessage {...{
-      id: "settings.hooks.event.statusMessage",
-      defaultMessage: "Status message",
-      description: "Label for the status message configured for a hook"
-    }} />,
-    children: hook.statusMessage
-  }} />;
-  return <div className="mt-2 overflow-hidden rounded-md border border-token-border text-sm">
+          ),
+        }}
+      />
+    );
+  let pine =
+    hook.matcher == null ? null : (
+      <_t
+        {...{
+          label: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.hooks.event.matcher",
+                defaultMessage: "Matcher",
+                description: "Label for the matcher configured for a hook",
+              }}
+            />
+          ),
+          children: (
+            <code className="font-mono text-xs break-all">{hook.matcher}</code>
+          ),
+        }}
+      />
+    );
+  let quest = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.hooks.event.timeout",
+        defaultMessage: "Timeout",
+        description: "Label for a hook execution timeout",
+      }}
+    />
+  );
+  let ridge = (
+    <_t
+      {...{
+        label: quest,
+        children: (
+          <DeferredZft
+            {...{
+              value: hook.timeoutSec,
+              style: "unit",
+              unit: "second",
+              unitDisplay: "narrow",
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let storm =
+    hook.statusMessage == null ? null : (
+      <_t
+        {...{
+          label: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.hooks.event.statusMessage",
+                defaultMessage: "Status message",
+                description:
+                  "Label for the status message configured for a hook",
+              }}
+            />
+          ),
+          children: hook.statusMessage,
+        }}
+      />
+    );
+  return (
+    <div className="mt-2 overflow-hidden rounded-md border border-token-border text-sm">
       <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-2 px-3 py-3">
         {north}
         {orbit}
@@ -405,52 +633,59 @@ function jasper(lunar) {
         {ridge}
         {storm}
       </dl>
-    </div>;
+    </div>
+  );
 }
 function _t(tide) {
-  let {
-      label,
-      children
-    } = tide,
+  let { label, children } = tide,
     unity = <dt className="text-token-text-secondary">{label}</dt>;
   let vale = <dd className="min-w-0 text-token-text-primary">{children}</dd>;
-  return <>
+  return (
+    <>
       {unity}
       {vale}
-    </>;
+    </>
+  );
 }
 function kelp(wave) {
-  let {
-    handlerType
-  } = wave;
+  let { handlerType } = wave;
   switch (handlerType) {
-    case "command":
-      {
-        let apex;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.hooks.event.commandHandler",
-          defaultMessage: "Command",
-          description: "Label for a command hook handler type"
-        }} />;
-      }
-    case "prompt":
-      {
-        let brook;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.hooks.event.promptHandler",
-          defaultMessage: "Prompt",
-          description: "Label for a prompt hook handler type"
-        }} />;
-      }
-    case "agent":
-      {
-        let cliff;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.hooks.event.agentHandler",
-          defaultMessage: "Agent",
-          description: "Label for an agent hook handler type"
-        }} />;
-      }
+    case "command": {
+      let apex;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.hooks.event.commandHandler",
+            defaultMessage: "Command",
+            description: "Label for a command hook handler type",
+          }}
+        />
+      );
+    }
+    case "prompt": {
+      let brook;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.hooks.event.promptHandler",
+            defaultMessage: "Prompt",
+            description: "Label for a prompt hook handler type",
+          }}
+        />
+      );
+    }
+    case "agent": {
+      let cliff;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.hooks.event.agentHandler",
+            defaultMessage: "Agent",
+            description: "Label for an agent hook handler type",
+          }}
+        />
+      );
+    }
   }
 }
 var lotus,
@@ -476,7 +711,8 @@ var lotus,
       openConfigFile: {
         id: "settings.hooks.event.openConfigFile",
         defaultMessage: "Open config file",
-        description: "Button label for opening the config file that defines a hook"
-      }
+        description:
+          "Button label for opening the config file that defines a hook",
+      },
     });
   });

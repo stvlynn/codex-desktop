@@ -53,7 +53,11 @@ export function setRebaseConversationIdDeps(args: {
   atoms = args.atoms;
 }
 
-export function rebaseConversationId(scope: ScopeLike, fromId: string, toId: string): void {
+export function rebaseConversationId(
+  scope: ScopeLike,
+  fromId: string,
+  toId: string,
+): void {
   if (fromId === toId) return;
   const resolvedFrom = resolveId(scope.get, fromId);
   if (resolvedFrom == null) return;

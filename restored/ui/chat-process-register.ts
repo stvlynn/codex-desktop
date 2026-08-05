@@ -11,7 +11,9 @@ export type BindChatProcessRegisterPeers = {
 let peers: BindChatProcessRegisterPeers | null = null;
 
 /** Wire bindChatProcessRegister peers once companions land. */
-export function setBindChatProcessRegisterPeers(next: BindChatProcessRegisterPeers): void {
+export function setBindChatProcessRegisterPeers(
+  next: BindChatProcessRegisterPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function bindChatProcessRegister() {
   }
 
   return peers.e(() => {
-    peers.Wvu(), cyu = 3, lyu = 1e3;
+    (peers.Wvu(), (cyu = 3), (lyu = 1e3));
   });
 }

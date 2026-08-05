@@ -30,6 +30,12 @@ export function deferredUiob() {
   }
 
   return peers.e(() => {
-    Kxs = peers.c(), peers.$u(), peers.Pp(), peers.CB(), peers.Jh(), peers.kxs(), QZ = peers.J();
+    ((Kxs = peers.c()),
+      peers.$u(),
+      peers.Pp(),
+      peers.CB(),
+      peers.Jh(),
+      peers.kxs(),
+      (QZ = peers.J()));
   });
 }

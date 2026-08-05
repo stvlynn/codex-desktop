@@ -23,6 +23,6 @@ export function bindBindPlugin() {
   }
 
   return peers.e(() => {
-    uRn = `app://`, dRn = `plugin://`;
+    ((uRn = `app://`), (dRn = `plugin://`));
   });
 }

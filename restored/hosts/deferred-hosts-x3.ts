@@ -12,7 +12,9 @@ export type BindDeferredHostsX3Peers = {
 let peers: BindDeferredHostsX3Peers | null = null;
 
 /** Wire bindDeferredHostsX3 peers once companions land. */
-export function setBindDeferredHostsX3Peers(next: BindDeferredHostsX3Peers): void {
+export function setBindDeferredHostsX3Peers(
+  next: BindDeferredHostsX3Peers,
+): void {
   peers = next;
 }
 
@@ -24,10 +26,11 @@ export function bindDeferredHostsX3() {
     throw new Error("bindDeferredHostsX3 peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     let n = t(peers.sE, e);
-    return !t(peers.L6n, e) && (n?.status === `connecting` || n?.status === `connected`);
+    return (
+      !t(peers.L6n, e) &&
+      (n?.status === `connecting` || n?.status === `connected`)
+    );
   });
 }

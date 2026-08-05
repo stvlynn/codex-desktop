@@ -10,7 +10,9 @@ export type ArchiveConversationalOnboardingThreadsPeers = {
 let peers: ArchiveConversationalOnboardingThreadsPeers | null = null;
 
 /** Wire archiveConversationalOnboardingThreads peers once companions land. */
-export function setArchiveConversationalOnboardingThreadsPeers(next: ArchiveConversationalOnboardingThreadsPeers): void {
+export function setArchiveConversationalOnboardingThreadsPeers(
+  next: ArchiveConversationalOnboardingThreadsPeers,
+): void {
   peers = next;
 }
 
@@ -19,12 +21,19 @@ export function setArchiveConversationalOnboardingThreadsPeers(next: ArchiveConv
  */
 async function archiveConversationalOnboardingThreads(e) {
   if (peers == null) {
-    throw new Error("archiveConversationalOnboardingThreads peers are not configured");
+    throw new Error(
+      "archiveConversationalOnboardingThreads peers are not configured",
+    );
   }
 
-  await Promise.all(peers.BAl().map(t => peers.Bf(`archive-conversation`, {
-    conversationId: t,
-    hostId: e,
-    source: `conversational-onboarding-complete`
-  }))), peers.VAl();
+  (await Promise.all(
+    peers.BAl().map((t) =>
+      peers.Bf(`archive-conversation`, {
+        conversationId: t,
+        hostId: e,
+        source: `conversational-onboarding-complete`,
+      }),
+    ),
+  ),
+    peers.VAl());
 }

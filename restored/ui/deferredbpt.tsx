@@ -30,14 +30,29 @@ export function bindDeferredbpt() {
   }
 
   return peers.e(() => {
-    peers.Sl(), peers._u(), peers.xu(), JEe = [`juniper`, `maple`, `spruce`, `ember`, `vale`, `breeze`, `arbor`, `sol`, `cove`], YEe = peers.pl(peers.JEe), XEe = {
-      screenContextEnabled: peers.vu({
-        agentAccess: `hidden`,
-        default: !0,
-        description: `Whether realtime voice can inspect the foreground app when the user refers to screen content`,
-        key: `realtimeVoiceScreenContextEnabled`,
-        schema: peers.hu
-      })
-    };
+    (peers.Sl(),
+      peers._u(),
+      peers.xu(),
+      (JEe = [
+        `juniper`,
+        `maple`,
+        `spruce`,
+        `ember`,
+        `vale`,
+        `breeze`,
+        `arbor`,
+        `sol`,
+        `cove`,
+      ]),
+      (YEe = peers.pl(peers.JEe)),
+      (XEe = {
+        screenContextEnabled: peers.vu({
+          agentAccess: `hidden`,
+          default: !0,
+          description: `Whether realtime voice can inspect the foreground app when the user refers to screen content`,
+          key: `realtimeVoiceScreenContextEnabled`,
+          schema: peers.hu,
+        }),
+      }));
   });
 }

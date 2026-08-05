@@ -6,31 +6,23 @@ import { MemoizedFormattedMessage as appInitialGft } from "../../i18n/memoized-f
 import { cx as appInitialWft } from "../../ui/cx";
 import { useChatgptComposerControllerHelper283 } from "./chatgpt-subagent-detail-view";
 
-function useChatgptComposerControllerHelper278(
-  request11215,
-) {
+function useChatgptComposerControllerHelper278(request11215) {
   let { status } = request11215;
   return !appInitialNF(status);
 }
 
-function useChatgptComposerControllerHelper279(
-  request11221,
-) {
+function useChatgptComposerControllerHelper279(request11221) {
   let { status } = request11221;
   return appInitialNF(status);
 }
 
-function useChatgptComposerControllerHelper280(
-  request2420,
-) {
+function useChatgptComposerControllerHelper280(request2420) {
   const AppInitialGft = appInitialGft;
   const UseChatgptComposerControllerHelper283 =
     useChatgptComposerControllerHelper283;
   let slot6954 =
     request2420.statusMessage ??
-    (appInitialNF(request2420.status)
-      ? request2420.prompt
-      : null);
+    (appInitialNF(request2420.status) ? request2420.prompt : null);
   return {
     avatarSeed: request2420.threadId,
     id: request2420.threadId,
@@ -43,9 +35,8 @@ function useChatgptComposerControllerHelper280(
     ),
     preview:
       slot6954 ??
-      (appInitialNF(
-        request2420.status,
-      ) ? null : request2420.status === "done" ? (
+      (appInitialNF(request2420.status) ? null : request2420.status ===
+        "done" ? (
         <AppInitialGft
           id="chatgptConversations.subagents.panel.preview.finished"
           defaultMessage="Finished"
@@ -62,15 +53,10 @@ function useChatgptComposerControllerHelper280(
     trailing: (
       <span
         className={appInitialWft(
-          request2420.status === "failed" &&
-            "text-token-charts-red",
+          request2420.status === "failed" && "text-token-charts-red",
         )}
       >
-        {
-          <UseChatgptComposerControllerHelper283
-            status={request2420.status}
-          />
-        }
+        {<UseChatgptComposerControllerHelper283 status={request2420.status} />}
       </span>
     ),
   };

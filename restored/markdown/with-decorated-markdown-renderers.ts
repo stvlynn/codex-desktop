@@ -17,12 +17,16 @@ let renderTokensImpl:
   | ((tokens: unknown, renderer: Renderer) => unknown)
   | null = null;
 
-export function setDecoratedMarkdownRenderers(renderTokens: (tokens: unknown, renderer: Renderer) => unknown,
+export function setDecoratedMarkdownRenderers(
+  renderTokens: (tokens: unknown, renderer: Renderer) => unknown,
 ): void {
   renderTokensImpl = renderTokens;
 }
 
-export function withDecoratedMarkdownRenderers(_tokens: unknown, base: Renderer): Renderer {
+export function withDecoratedMarkdownRenderers(
+  _tokens: unknown,
+  base: Renderer,
+): Renderer {
   return {
     ...base,
     decorateText: true,

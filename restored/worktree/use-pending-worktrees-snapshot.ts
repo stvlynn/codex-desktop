@@ -9,7 +9,9 @@ export type UsePendingWorktreesSnapshotPeers = {
 let peers: UsePendingWorktreesSnapshotPeers | null = null;
 
 /** Wire usePendingWorktreesSnapshot peers once companions land. */
-export function setUsePendingWorktreesSnapshotPeers(next: UsePendingWorktreesSnapshotPeers): void {
+export function setUsePendingWorktreesSnapshotPeers(
+  next: UsePendingWorktreesSnapshotPeers,
+): void {
   peers = next;
 }
 

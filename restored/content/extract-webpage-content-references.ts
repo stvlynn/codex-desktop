@@ -5,7 +5,9 @@ import { nonEmptyStringOrNull } from "../utils/non-empty-string-or-null";
 import { asRecord } from "../utils/as-record";
 import { normalizeWebpageContentReference } from "./normalize-webpage-content-reference";
 
-export function extractWebpageContentReferences(ref: Record<string, unknown>): ReturnType<typeof normalizeWebpageContentReference>[] {
+export function extractWebpageContentReferences(
+  ref: Record<string, unknown>,
+): ReturnType<typeof normalizeWebpageContentReference>[] {
   switch (nonEmptyStringOrNull(ref.type)) {
     case "grouped_webpages":
     case "grouped_webpages_v2":

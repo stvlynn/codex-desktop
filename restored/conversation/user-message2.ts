@@ -27,6 +27,6 @@ export function bindUserMessage2() {
   }
 
   return peers.e(() => {
-    peers.Wg(), peers.dg(), peers.Kg(), peers.A_t(), peers.g_(), peers.wSt();
+    (peers.Wg(), peers.dg(), peers.Kg(), peers.A_t(), peers.g_(), peers.wSt());
   });
 }

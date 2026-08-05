@@ -6,9 +6,7 @@ import { resolveBorderRadiusToken } from "./border-radius-tokens";
 /**
  * Legacy workbookHelper 305 — coerce borderRadius to a non-negative px.
  */
-export function coerceBorderRadiusPx(
-  value: number | string,
-): number {
+export function coerceBorderRadiusPx(value: number | string): number {
   if (typeof value == "number") {
     if (!Number.isFinite(value) || value < 0)
       throw Error("borderRadius must be a non-negative finite number (px).");

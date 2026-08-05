@@ -25,30 +25,26 @@ export function bindDeferredUiZ2() {
     throw new Error("bindDeferredUiZ2 peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => [], {
+  return peers.Da(peers.Q, (e) => [], {
     onMount: (e, t) => {
-      let {
-          key: n
-        } = t,
+      let { key: n } = t,
         r = [],
-        i = t.watch(({
-          get: i
-        }) => {
+        i = t.watch(({ get: i }) => {
           let a = i(peers.eD, n),
-            o = i => {
-              e(i), peers.Otr(t, n, r, i), r = i;
+            o = (i) => {
+              (e(i), peers.Otr(t, n, r, i), (r = i));
             };
-          if (o(a?.getRecentConversations().map(({
-            id: e
-          }) => e) ?? []), a != null) return a.addAnyConversationMetaCallback(e => {
-            o(e.map(({
-              id: e
-            }) => e));
-          });
+          if (
+            (o(a?.getRecentConversations().map(({ id: e }) => e) ?? []),
+            a != null)
+          )
+            return a.addAnyConversationMetaCallback((e) => {
+              o(e.map(({ id: e }) => e));
+            });
         });
       return () => {
-        i(), peers.Otr(t, n, r, []);
+        (i(), peers.Otr(t, n, r, []));
       };
-    }
+    },
   });
 }

@@ -9,7 +9,9 @@ export type BindCloudApiClientPeers = {
 let peers: BindCloudApiClientPeers | null = null;
 
 /** Wire bindCloudApiClient peers once companions land. */
-export function setBindCloudApiClientPeers(next: BindCloudApiClientPeers): void {
+export function setBindCloudApiClientPeers(
+  next: BindCloudApiClientPeers,
+): void {
   peers = next;
 }
 
@@ -22,7 +24,7 @@ export function bindCloudApiClient() {
   }
 
   return new peers.Trt({
-    getAdditionalHeaders: peers.Crt
+    getAdditionalHeaders: peers.Crt,
   });
 }
 
@@ -35,7 +37,9 @@ export const cloudApiClient: ReturnType<typeof bindCloudApiClient> = new Proxy(
   {} as ReturnType<typeof bindCloudApiClient>,
   {
     get(_target, prop) {
-      return bindCloudApiClient()[prop as keyof ReturnType<typeof bindCloudApiClient>];
+      return bindCloudApiClient()[
+        prop as keyof ReturnType<typeof bindCloudApiClient>
+      ];
     },
   },
 );

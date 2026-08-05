@@ -42,8 +42,7 @@ const M_ = useChatgptComposerControllerFileContentReference;
 const H_ = useChatgptComposerControllerEntityRichCard;
 const Y_ = useChatgptComposerControllerForecastCard;
 
-export function useChatgptComposerControllerHelper243(
-  request328: any) {
+export function useChatgptComposerControllerHelper243(request328: any) {
   const UseChatgptComposerControllerHelper107 =
     useChatgptComposerControllerHelper107;
   const UseChatgptComposerControllerHelper119 =

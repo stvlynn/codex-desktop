@@ -11,7 +11,9 @@ export type ExtractColonPrefixedNamedTokensPeers = {
 let peers: ExtractColonPrefixedNamedTokensPeers | null = null;
 
 /** Wire extractColonPrefixedNamedTokens peers once companions land. */
-export function setExtractColonPrefixedNamedTokensPeers(next: ExtractColonPrefixedNamedTokensPeers): void {
+export function setExtractColonPrefixedNamedTokensPeers(
+  next: ExtractColonPrefixedNamedTokensPeers,
+): void {
   peers = next;
 }
 

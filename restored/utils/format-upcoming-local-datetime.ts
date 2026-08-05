@@ -4,7 +4,9 @@
 const SECONDS_PER_DAY = 60 * 1440;
 
 /** Format an upcoming instant: relative now, short time today, else month/day. */
-export function formatUpcomingLocalDatetime(date: Date, now: Date = new Date(),
+export function formatUpcomingLocalDatetime(
+  date: Date,
+  now: Date = new Date(),
 ): string {
   const deltaSeconds = Math.floor((date.getTime() - now.getTime()) / 1000);
   if (deltaSeconds <= 0) {

@@ -64,9 +64,7 @@ export function useChatgptComposerControllerHelper101(
   return typeof value == "string" && value.trim().length > 0 ? value : null;
 }
 
-export function useChatgptComposerControllerHelper99(
-  child: unknown,
-): unknown {
+export function useChatgptComposerControllerHelper99(child: unknown): unknown {
   return typeof child == "string"
     ? child.trim().length > 0
       ? child

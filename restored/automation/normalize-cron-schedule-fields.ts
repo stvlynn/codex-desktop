@@ -22,7 +22,9 @@ export type NormalizeCronScheduleFieldsPeers = {
 let peers: NormalizeCronScheduleFieldsPeers | null = null;
 
 /** Wire normalizeCronScheduleFields peers once companions land. */
-export function setNormalizeCronScheduleFieldsPeers(next: NormalizeCronScheduleFieldsPeers): void {
+export function setNormalizeCronScheduleFieldsPeers(
+  next: NormalizeCronScheduleFieldsPeers,
+): void {
   peers = next;
 }
 

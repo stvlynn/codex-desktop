@@ -16,27 +16,34 @@ const messages: Record<string, string> = {
   "widgets.baseCarousel.previousItems": "Iepriekšējie karuseļa vienumi",
   "widgets.cardCarousel.goToArticle": "Atvērt rakstu",
   "widgets.cardCarousel.nextCards": "Nākamās kartītes",
-  "widgets.cardCarousel.nextCardsInCarousel": "Nākamās kartītes karuselī {carouselLabel}",
+  "widgets.cardCarousel.nextCardsInCarousel":
+    "Nākamās kartītes karuselī {carouselLabel}",
   "widgets.cardCarousel.previousCards": "Iepriekšējās kartītes",
-  "widgets.cardCarousel.previousCardsInCarousel": "Iepriekšējās kartītes karuselī {carouselLabel}",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "Iepriekšējās kartītes karuselī {carouselLabel}",
   "widgets.debug.hideCurrentState": "Paslēpt pašreizējo stāvokli",
   "widgets.debug.nextState": "Nākamais stāvoklis",
   "widgets.debug.previousState": "Iepriekšējais stāvoklis",
   "widgets.debug.selectedState": "Atlasītais stāvoklis",
   "widgets.debug.showCurrentState": "Rādīt pašreizējo stāvokli",
   "widgets.debug.state": "Stāvoklis",
-  "widgets.debug.unableToSerializeSelectedState": "Neizdevās serializēt atlasīto stāvokli.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "Neizdevās serializēt atlasīto stāvokli.",
   "widgets.hermes.artifact.viewMore": "Skatīt vēl {count}",
   "widgets.hermes.calendarEvent.moreAttendees": "+ vēl {count}",
   "widgets.hermes.calendarEvent.singleTime": "{date} plkst. {time}",
-  "widgets.hermes.calendarEvent.timeRange": "{date} plkst. {startTime}–{endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "{agentName} nepieciešama piekļuve, lai turpinātu",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName} nepieciešama jūsu atļauja, lai turpinātu",
+  "widgets.hermes.calendarEvent.timeRange":
+    "{date} plkst. {startTime}–{endTime}",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "{agentName} nepieciešama piekļuve, lai turpinātu",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName} nepieciešama jūsu atļauja, lai turpinātu",
   "widgets.hermes.genericResponse.viewFullscreen": "Skatīt pilnekrānā",
   "widgets.hermes.genericTool.details": "Informācija",
   "widgets.hermes.genericTool.read": "Nolasīt",
   "widgets.hermes.genericTool.request": "Pieprasījums",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} vēlas izmantot {connectorName}, lai palaistu {toolName}.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} vēlas izmantot {connectorName}, lai palaistu {toolName}.",
   "widgets.hermes.genericTool.viewFullscreen": "Skatīt pilnekrānā",
   "widgets.hermes.genericTool.write": "Rakstīt",
   "widgets.hermes.googleCalendarCreate.create": "Izveidot",
@@ -49,7 +56,8 @@ const messages: Record<string, string> = {
   "widgets.hermes.permission.moreInformation": "Plašāka informācija",
   "widgets.hermes.permission.notNow": "Ne tagad",
   "widgets.hermes.permission.reconnect": "Atkārtoti savienot",
-  "widgets.hermes.permission.reconnectToConnector": "Atkārtoti savienot ar {connectorName}",
+  "widgets.hermes.permission.reconnectToConnector":
+    "Atkārtoti savienot ar {connectorName}",
   "widgets.hermes.sendEmail.approveAction": "Apstiprināt darbību",
   "widgets.hermes.sendEmail.bcc": "Diskrētā kopija",
   "widgets.hermes.sendEmail.cc": "Kopija",
@@ -62,79 +70,142 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "rādīt mazāk",
   "widgets.hermes.taskStatus.canceled": "Uzdevums atcelts",
   "widgets.hermes.taskStatus.canceling": "Atcelšana",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Pārskata iepriekšējos ziņojumus",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Pārskata iepriekšējās ziņas",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Pārskata iepriekšējās ziņas",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Pārskata iepriekšējās ziņas",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Pārskatot iepriekšējos ziņojumus",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Pārskatot iepriekšējās ziņas",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Pārskata iepriekšējās ziņas",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Pārskatot iepriekšējās ziņas",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Pārskata iepriekšējos ziņojumus",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Pārskata iepriekšējās ziņas",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Pārskata iepriekšējās ziņas",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Pārbauda kontekstu",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Izskata kontekstu",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Pārbauda kontekstu",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Lasa kontekstu",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Pārskata kontekstu",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Pārskata kontekstu",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Analizē kontekstu",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Pārskata kontekstu",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Aģenta aktivizēšana",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Palaiž aģentu",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Aģenta aktivizēšana",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Izsauc aģentu",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Savienojas ar aģentu",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "Veido savienojumu ar aģentu",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Modinām aģentu",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Inicializē aģentu",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Modinām aģentu",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Palaiž aģentu",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "Izsauc aģentu",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Aktivizē datoru",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Datora sāknēšana",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Datora palaišana",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Datora inicializēšana",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Ieslēdz datoru",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Palaiž datoru",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Palaiž datoru",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Datora modināšana",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Pārskata iepriekšējos ziņojumus",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Pārskata iepriekšējās ziņas",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Pārskata iepriekšējās ziņas",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Pārskata iepriekšējās ziņas",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Pārskatot iepriekšējos ziņojumus",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Pārskatot iepriekšējās ziņas",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Pārskata iepriekšējās ziņas",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Pārskatot iepriekšējās ziņas",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Pārskata iepriekšējos ziņojumus",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Pārskata iepriekšējās ziņas",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Pārskata iepriekšējās ziņas",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Pārbauda kontekstu",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Izskata kontekstu",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Pārbauda kontekstu",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Lasa kontekstu",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Pārskata kontekstu",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Pārskata kontekstu",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Analizē kontekstu",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Pārskata kontekstu",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Aģenta aktivizēšana",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Palaiž aģentu",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Aģenta aktivizēšana",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Izsauc aģentu",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Savienojas ar aģentu",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "Veido savienojumu ar aģentu",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Modinām aģentu",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Inicializē aģentu",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Modinām aģentu",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Palaiž aģentu",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "Izsauc aģentu",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Aktivizē datoru",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Datora sāknēšana",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Datora palaišana",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Datora inicializēšana",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Ieslēdz datoru",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Palaiž datoru",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Palaiž datoru",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Datora modināšana",
   "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Nosaka kursu",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Izstrādā plānu",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "Izstrādā plānu",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Plāno",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Plāno nākamos soļus",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Plānojot",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Organizē nākamos soļus",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Plāno nākamos soļus",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "Plānojot",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Organizē nākamos soļus",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Plāno",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Nosakot virzienu",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Nosaka virzienu",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Plāno nākamos soļus",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Apsver pieejas",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Izstrādā pieeju",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Apkopo informāciju",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Apkopo informāciju",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Precizē detaļas",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Vāc informāciju",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Apkopojot detaļas",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Apkopo informāciju",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Apkopo detaļas",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Precizē detaļas",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Apkopojot detaļas",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Precizē detaļas",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Tas aizņem ilgāk nekā parasti",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Vēl strādājam pie tā",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Droši atgriezieties pēc brīža",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Nosakot virzienu",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Nosaka virzienu",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Plāno nākamos soļus",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Apsver pieejas",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Izstrādā pieeju",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Apkopo informāciju",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Apkopo informāciju",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Precizē detaļas",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Vāc informāciju",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Apkopojot detaļas",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Apkopo informāciju",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Apkopo detaļas",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Precizē detaļas",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Apkopojot detaļas",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Precizē detaļas",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Tas aizņem ilgāk nekā parasti",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Vēl strādājam pie tā",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Droši atgriezieties pēc brīža",
   "widgets.hermes.workflow.canceled": "Uzdevums atcelts",
   "widgets.hermes.workflow.canceledItemLabel": "Atcelts",
   "widgets.hermes.workflow.codeBlock.hideLines": "Slēpt rindas",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Skatīt visas {lineCount} rindas",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Skatīt visas {lineCount} rindas",
   "widgets.hermes.workflow.customWorked": "Darbojās kādu laiku",
   "widgets.hermes.workflow.customWorking": "Notiek darbs",
   "widgets.hermes.workflow.fileWorked": "Skenēts dokuments",
   "widgets.hermes.workflow.fileWorking": "Dokumenta skenēšana",
-  "widgets.hermes.workflow.group.readingConnector": "Lasīšana no {connectorName}",
-  "widgets.hermes.workflow.group.writingConnector": "Rakstīšana lietotnē {connectorName}",
+  "widgets.hermes.workflow.group.readingConnector":
+    "Lasīšana no {connectorName}",
+  "widgets.hermes.workflow.group.writingConnector":
+    "Rakstīšana lietotnē {connectorName}",
   "widgets.hermes.workflow.imageWorked": "Analizēts attēls",
   "widgets.hermes.workflow.imageWorking": "Analizē attēlu",
   "widgets.hermes.workflow.preparingResponse": "Gatavo atbildi",
@@ -148,7 +219,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Rādīt mazāk",
   "widgets.listView.showMore": "Rādīt vēl {count}",
   "widgets.radioGroup.options": "opcijas",
-  "widgets.segmentedControl.selectAnOption": "Izvēlieties opciju"
+  "widgets.segmentedControl.selectAnOption": "Izvēlieties opciju",
 };
 
 export default messages;

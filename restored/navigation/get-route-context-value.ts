@@ -8,7 +8,9 @@ export type GetRouteContextValuePeers = {
 let peers: GetRouteContextValuePeers | null = null;
 
 /** Wire getRouteContextValue peers once companions land. */
-export function setGetRouteContextValuePeers(next: GetRouteContextValuePeers): void {
+export function setGetRouteContextValuePeers(
+  next: GetRouteContextValuePeers,
+): void {
   peers = next;
 }
 

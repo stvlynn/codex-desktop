@@ -18,25 +18,30 @@ const messages: Record<string, string> = {
   "widgets.cardCarousel.nextCards": "次のカード",
   "widgets.cardCarousel.nextCardsInCarousel": "{carouselLabel}の次のカード",
   "widgets.cardCarousel.previousCards": "前のカード",
-  "widgets.cardCarousel.previousCardsInCarousel": "{carouselLabel}内の前のカード",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "{carouselLabel}内の前のカード",
   "widgets.debug.hideCurrentState": "現在の状態を非表示",
   "widgets.debug.nextState": "次の状態",
   "widgets.debug.previousState": "前の状態",
   "widgets.debug.selectedState": "選択された状態",
   "widgets.debug.showCurrentState": "現在の状態を表示",
   "widgets.debug.state": "状態",
-  "widgets.debug.unableToSerializeSelectedState": "選択した状態をシリアル化できません。",
+  "widgets.debug.unableToSerializeSelectedState":
+    "選択した状態をシリアル化できません。",
   "widgets.hermes.artifact.viewMore": "{count}件をさらに表示",
   "widgets.hermes.calendarEvent.moreAttendees": "+{count}人追加",
   "widgets.hermes.calendarEvent.singleTime": "{date} {time}",
   "widgets.hermes.calendarEvent.timeRange": "{date} {startTime}〜{endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "続行するには{agentName}のアクセスが必要です",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName}が続行するには許可が必要です",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "続行するには{agentName}のアクセスが必要です",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName}が続行するには許可が必要です",
   "widgets.hermes.genericResponse.viewFullscreen": "全画面表示",
   "widgets.hermes.genericTool.details": "詳細",
   "widgets.hermes.genericTool.read": "読み取り",
   "widgets.hermes.genericTool.request": "リクエスト",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName}は{connectorName}を使って{toolName}を実行しようとしています。",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName}は{connectorName}を使って{toolName}を実行しようとしています。",
   "widgets.hermes.genericTool.viewFullscreen": "全画面で表示",
   "widgets.hermes.genericTool.write": "書き込み",
   "widgets.hermes.googleCalendarCreate.create": "作成",
@@ -62,69 +67,129 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "折りたたむ",
   "widgets.hermes.taskStatus.canceled": "タスクがキャンセルされました",
   "widgets.hermes.taskStatus.canceling": "キャンセル中",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "過去のメッセージを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "過去のメッセージを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "過去のメッセージを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "過去のメッセージを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "過去のメッセージを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "過去のメッセージを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "過去のメッセージを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "過去のメッセージを再確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "過去のメッセージを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "過去のメッセージを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "過去のメッセージを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "コンテキストを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "コンテキストを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "コンテキストを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "コンテキストを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "コンテキストを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "コンテキストを再確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "コンテキストを確認中",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "コンテキストを整理中",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "エージェントを起動中",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "エージェントを起動中",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "エージェントを起動中",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "エージェントを呼び出し中",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "エージェントに接続中",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "エージェントに接続中",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "エージェントを起こしています",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "エージェントを初期化中",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "エージェントを起こしています",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "エージェントを起動中",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "エージェントを呼び出し中",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "コンピューターを起動中",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "コンピューターを起動中",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "コンピューターを起動中",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "コンピューターを初期化中",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "コンピューターを起動中",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "コンピューターを起動中",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "コンピューターを起動中",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "コンピューターを起動中",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "過去のメッセージを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "過去のメッセージを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "過去のメッセージを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "過去のメッセージを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "過去のメッセージを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "過去のメッセージを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "過去のメッセージを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "過去のメッセージを再確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "過去のメッセージを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "過去のメッセージを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "過去のメッセージを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "コンテキストを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "コンテキストを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "コンテキストを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "コンテキストを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "コンテキストを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "コンテキストを再確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "コンテキストを確認中",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "コンテキストを整理中",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "エージェントを起動中",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "エージェントを起動中",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "エージェントを起動中",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "エージェントを呼び出し中",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "エージェントに接続中",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "エージェントに接続中",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "エージェントを起こしています",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "エージェントを初期化中",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "エージェントを起こしています",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "エージェントを起動中",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "エージェントを呼び出し中",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "コンピューターを起動中",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "コンピューターを起動中",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "コンピューターを起動中",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "コンピューターを初期化中",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "コンピューターを起動中",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "コンピューターを起動中",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "コンピューターを起動中",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "コンピューターを起動中",
   "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "方針を検討中",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "計画を立てています",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "計画を立てています",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "計画中",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "段取りを整理中",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "進め方を整理中",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "次の手順を整理中",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "段取りを整理中",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "進め方を整理中",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "次の手順を整理中",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "計画中",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "方針を設定中",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "方針を設定中",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "作戦を練り中",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "進め方を検討中",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "進め方を検討中",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "詳細を整理中",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "詳細を収集中",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "詳細を補完中",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "詳細を収集中",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "詳細を整理中",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "詳細を収集中",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "詳細を収集中",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "詳細を整理中",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "詳細を確認中",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "詳細を確認中",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "通常より時間がかかっています",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "まだ処理中です",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "少ししたらまたご確認ください",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "方針を設定中",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "方針を設定中",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "作戦を練り中",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "進め方を検討中",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "進め方を検討中",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "詳細を整理中",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "詳細を収集中",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "詳細を補完中",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "詳細を収集中",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "詳細を整理中",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "詳細を収集中",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "詳細を収集中",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "詳細を整理中",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "詳細を確認中",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "詳細を確認中",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "通常より時間がかかっています",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "まだ処理中です",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "少ししたらまたご確認ください",
   "widgets.hermes.workflow.canceled": "タスクがキャンセルされました",
   "widgets.hermes.workflow.canceledItemLabel": "キャンセル済み",
   "widgets.hermes.workflow.codeBlock.hideLines": "行を非表示",
@@ -133,8 +198,10 @@ const messages: Record<string, string> = {
   "widgets.hermes.workflow.customWorking": "進行中",
   "widgets.hermes.workflow.fileWorked": "ドキュメントをスキャンしました",
   "widgets.hermes.workflow.fileWorking": "ドキュメントをスキャン中",
-  "widgets.hermes.workflow.group.readingConnector": "{connectorName} の読み取り",
-  "widgets.hermes.workflow.group.writingConnector": "{connectorName}への書き込み",
+  "widgets.hermes.workflow.group.readingConnector":
+    "{connectorName} の読み取り",
+  "widgets.hermes.workflow.group.writingConnector":
+    "{connectorName}への書き込み",
   "widgets.hermes.workflow.imageWorked": "画像を分析しました",
   "widgets.hermes.workflow.imageWorking": "画像を解析中",
   "widgets.hermes.workflow.preparingResponse": "返信を準備中",
@@ -148,7 +215,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "表示を減らす",
   "widgets.listView.showMore": "さらに{count}件表示",
   "widgets.radioGroup.options": "オプション",
-  "widgets.segmentedControl.selectAnOption": "オプションを選択"
+  "widgets.segmentedControl.selectAnOption": "オプションを選択",
 };
 
 export default messages;

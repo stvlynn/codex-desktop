@@ -12,7 +12,9 @@ export type BindBindRemoteHostGlobeColorByHostIdPeers = {
 let peers: BindBindRemoteHostGlobeColorByHostIdPeers | null = null;
 
 /** Wire bindBindRemoteHostGlobeColorByHostId peers once companions land. */
-export function setBindBindRemoteHostGlobeColorByHostIdPeers(next: BindBindRemoteHostGlobeColorByHostIdPeers): void {
+export function setBindBindRemoteHostGlobeColorByHostIdPeers(
+  next: BindBindRemoteHostGlobeColorByHostIdPeers,
+): void {
   peers = next;
 }
 
@@ -21,10 +23,12 @@ export function setBindBindRemoteHostGlobeColorByHostIdPeers(next: BindBindRemot
  */
 export function bindBindRemoteHostGlobeColorByHostId() {
   if (peers == null) {
-    throw new Error("bindBindRemoteHostGlobeColorByHostId peers are not configured");
+    throw new Error(
+      "bindBindRemoteHostGlobeColorByHostId peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    rus = peers.r(peers.JR(), 1), peers.WH();
+    ((rus = peers.r(peers.JR(), 1)), peers.WH());
   });
 }

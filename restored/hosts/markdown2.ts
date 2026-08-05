@@ -25,6 +25,6 @@ export function markdown2() {
   }
 
   return peers.e(() => {
-    peers.gT(), peers.nL(), peers.l2i(), peers.g2i();
+    (peers.gT(), peers.nL(), peers.l2i(), peers.g2i());
   });
 }

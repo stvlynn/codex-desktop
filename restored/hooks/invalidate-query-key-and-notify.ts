@@ -8,7 +8,9 @@ export type InvalidateQueryKeyAndNotifyPeers = {
 let peers: InvalidateQueryKeyAndNotifyPeers | null = null;
 
 /** Wire invalidateQueryKeyAndNotify peers once companions land. */
-export function setInvalidateQueryKeyAndNotifyPeers(next: InvalidateQueryKeyAndNotifyPeers): void {
+export function setInvalidateQueryKeyAndNotifyPeers(
+  next: InvalidateQueryKeyAndNotifyPeers,
+): void {
   peers = next;
 }
 
@@ -20,7 +22,8 @@ async function invalidateQueryKeyAndNotify(e, t) {
     throw new Error("invalidateQueryKeyAndNotify peers are not configured");
   }
 
-  await e.invalidateQueries({
-    queryKey: t
-  }), peers.vp(t);
+  (await e.invalidateQueries({
+    queryKey: t,
+  }),
+    peers.vp(t));
 }

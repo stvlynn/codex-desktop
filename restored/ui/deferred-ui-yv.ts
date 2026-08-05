@@ -35,20 +35,27 @@ export function deferredUiYV() {
   }
 
   return peers.e(() => {
-    XWi = peers.c(), ZWi = peers.r(peers.o(), 1), peers.$u(), QWi = peers.J(), peers.$l(), $Wi = (0, peers.ZWi.lazy)(async () => {
-      let {
-        ArtifactTabContent: e
-      } = await peers.Ql(async () => {
-        let {
-          ArtifactTabContent: e
-        } = await import(`./artifact-tab-content.electron-z_W871m1.js`);
+    ((XWi = peers.c()),
+      (ZWi = peers.r(peers.o(), 1)),
+      peers.$u(),
+      (QWi = peers.J()),
+      peers.$l(),
+      ($Wi = (0, peers.ZWi.lazy)(async () => {
+        let { ArtifactTabContent: e } = await peers.Ql(
+          async () => {
+            let { ArtifactTabContent: e } = await import(
+              `./artifact-tab-content.electron-z_W871m1.js`
+            );
+            return {
+              ArtifactTabContent: peers.e,
+            };
+          },
+          peers.__vite__mapDeps([434, 1, 435, 436, 437]),
+          import.meta.url,
+        );
         return {
-          ArtifactTabContent: peers.e
+          default: peers.e,
         };
-      }, peers.__vite__mapDeps([434, 1, 435, 436, 437]), import.meta.url);
-      return {
-        default: peers.e
-      };
-    });
+      })));
   });
 }

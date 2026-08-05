@@ -2,7 +2,9 @@
 // Bundle `Wqr` / export `gX`.
 
 /** True for text-like workbook kinds that open in-editor. */
-export function isTextualWorkbookKind(kind: string | null | undefined): boolean | undefined {
+export function isTextualWorkbookKind(
+  kind: string | null | undefined,
+): boolean | undefined {
   switch (kind) {
     case "csv":
     case "ipynb":

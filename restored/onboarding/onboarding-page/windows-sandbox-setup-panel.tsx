@@ -262,11 +262,7 @@ export function WindowsSandboxSetupPanel(
             Your workspace requires this setup
           </div>
         ) : null}
-        <div
-          className={
-            requiresElevatedSandboxByPolicy ? "mt-6" : "mt-[22px]"
-          }
-        >
+        <div className={requiresElevatedSandboxByPolicy ? "mt-6" : "mt-[22px]"}>
           <WindowsUacPreview
             disabled={isPending}
             showArrow={!elevatedBusy}
@@ -293,9 +289,7 @@ export function WindowsSandboxSetupPanel(
             {hasError ? "Try Windows setup again" : "Finish setup"}
           </Button>
           <div className="absolute top-12 left-1/2 -translate-x-1/2">
-            {allowElevatedSetup &&
-            allowUnelevatedFallback &&
-            showUnelevated ? (
+            {allowElevatedSetup && allowUnelevatedFallback && showUnelevated ? (
               <Button
                 className="justify-center px-3 py-1.5 focus-visible:ring-2 focus-visible:ring-token-focus-border"
                 color="ghostTertiary"

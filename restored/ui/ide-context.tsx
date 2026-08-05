@@ -29,6 +29,10 @@ export function bindIdeContext() {
   }
 
   return peers.e(() => {
-    S1s = peers.c(), peers.Ho(), C1s = peers.r(peers.o(), 1), peers.pQa(), peers.KM();
+    ((S1s = peers.c()),
+      peers.Ho(),
+      (C1s = peers.r(peers.o(), 1)),
+      peers.pQa(),
+      peers.KM());
   });
 }

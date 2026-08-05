@@ -7,12 +7,82 @@
 /* split-lane-import-depth:1 */
 
 import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { jsxRuntime as getJsxRuntime, react } from "../../boundaries/react-cjs-runtime";
-import { __workbookT, _workbookT, workbookA, workbookB, workbookC, workbookD, workbookE, workbookF, workbookG, WorkbookI, workbookIt, workbookJ, workbookK, workbookL, workbookLt, workbookM, workbookN, workbookNt, workbookO, workbookOt, workbookP, workbookQ, WorkbookR, workbookRt, workbookS, workbookSt, workbookU, workbookUnderscore, workbookV, workbookW, WorkbookW, workbookX, workbookY, workbookZ } from "../../workbook/editor-compat";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  __workbookT,
+  _workbookT,
+  workbookA,
+  workbookB,
+  workbookC,
+  workbookD,
+  workbookE,
+  workbookF,
+  workbookG,
+  WorkbookI,
+  workbookIt,
+  workbookJ,
+  workbookK,
+  workbookL,
+  workbookLt,
+  workbookM,
+  workbookN,
+  workbookNt,
+  workbookO,
+  workbookOt,
+  workbookP,
+  workbookQ,
+  WorkbookR,
+  workbookRt,
+  workbookS,
+  workbookSt,
+  workbookU,
+  workbookUnderscore,
+  workbookV,
+  workbookW,
+  WorkbookW,
+  workbookX,
+  workbookY,
+  workbookZ,
+} from "../../workbook/editor-compat";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
-import { ensureFeatureCatalogAtomsInit, ensureFeatureCatalogInit, getFeatureCatalogEntries, PopcornFindBar } from "../feature-catalog";
-import { ensurePopcornPageNumberNavigationInit, PopcornPageNumberNavigation } from "../popcorn-page-number-navigation";
-import { ensureRemoteTextEditSessionInit, RemoteTextEditSessionA, RemoteTextEditSessionB, RemoteTextEditSessionC, RemoteTextEditSessionChrome, RemoteTextEditSessionE, RemoteTextEditSessionF, RemoteTextEditSessionH, RemoteTextEditSessionI, RemoteTextEditSessionLowerT, RemoteTextEditSessionM, RemoteTextEditSessionN, RemoteTextEditSessionO, RemoteTextEditSessionP, RemoteTextEditSessionR, RemoteTextEditSessionS, RemoteTextEditSessionSurfaceKind, RemoteTextEditSessionU, RemoteTextEditSessionV, RemoteTextEditSessionW, RemoteTextEditSessionX, RemoteTextEditSessionY, RemoteTextEditSessionZoomControl } from "../remote-text-edit-session/index";
+import {
+  ensureFeatureCatalogAtomsInit,
+  ensureFeatureCatalogInit,
+  getFeatureCatalogEntries,
+  PopcornFindBar,
+} from "../feature-catalog";
+import {
+  ensurePopcornPageNumberNavigationInit,
+  PopcornPageNumberNavigation,
+} from "../popcorn-page-number-navigation";
+import {
+  ensureRemoteTextEditSessionInit,
+  RemoteTextEditSessionA,
+  RemoteTextEditSessionB,
+  RemoteTextEditSessionC,
+  RemoteTextEditSessionChrome,
+  RemoteTextEditSessionE,
+  RemoteTextEditSessionF,
+  RemoteTextEditSessionH,
+  RemoteTextEditSessionI,
+  RemoteTextEditSessionLowerT,
+  RemoteTextEditSessionM,
+  RemoteTextEditSessionN,
+  RemoteTextEditSessionO,
+  RemoteTextEditSessionP,
+  RemoteTextEditSessionR,
+  RemoteTextEditSessionS,
+  RemoteTextEditSessionSurfaceKind,
+  RemoteTextEditSessionU,
+  RemoteTextEditSessionV,
+  RemoteTextEditSessionW,
+  RemoteTextEditSessionX,
+  RemoteTextEditSessionY,
+  RemoteTextEditSessionZoomControl,
+} from "../remote-text-edit-session/index";
 
 // Wave5d soft stubs.
 const $t: any = undefined;
@@ -76,23 +146,33 @@ var kiteR15,
       }
       getById(jasperR9) {
         if (!jasperR9) return;
-        let zephyrR26 = this.#e.find(item => item.id === jasperR9);
+        let zephyrR26 = this.#e.find((item) => item.id === jasperR9);
         return zephyrR26 ? pearlR2(bravo(zephyrR26)) : undefined;
       }
       getByName(willowR9) {
         if (!willowR9) return;
-        let quillR26 = this.#e.find(item => item.name === willowR9);
+        let quillR26 = this.#e.find((item) => item.name === willowR9);
         return quillR26 ? pearlR2(bravo(quillR26)) : undefined;
       }
       set(cliffR5) {
         let wheatR23 = pearlR2(bravo(cliffR5));
         this.#n?.addTextStyle(wheatR23.textStyle);
-        let yarnR23 = this.#e.findIndex(item => item.id === wheatR23.id || item.name === wheatR23.name);
-        return yarnR23 >= 0 ? this.#e[yarnR23] = wheatR23 : this.#e.push(wheatR23), this.#t?.(), pearlR2(bravo(wheatR23));
+        let yarnR23 = this.#e.findIndex(
+          (item) => item.id === wheatR23.id || item.name === wheatR23.name,
+        );
+        return (
+          yarnR23 >= 0 ? (this.#e[yarnR23] = wheatR23) : this.#e.push(wheatR23),
+          this.#t?.(),
+          pearlR2(bravo(wheatR23))
+        );
       }
       delete(unityR8) {
-        let lemonR26 = this.#e.findIndex(item => item.id === unityR8 || item.name === unityR8);
-        return lemonR26 < 0 ? false : (this.#e.splice(lemonR26, 1), this.#t?.(), true);
+        let lemonR26 = this.#e.findIndex(
+          (item) => item.id === unityR8 || item.name === unityR8,
+        );
+        return lemonR26 < 0
+          ? false
+          : (this.#e.splice(lemonR26, 1), this.#t?.(), true);
       }
       replace(pearlR9) {
         this.#e = bravo(pearlR9).map(pearlR2);
@@ -115,13 +195,16 @@ var kiteR15,
       constructor(willowR5, xenonR5 = {}) {
         this.#t = willowR5 !== undefined;
         this.#n = xenonR5.onMutated;
-        this.#e = new workbookM({
-          stub: () => {},
-          queueCollaborativePublish: () => {
-            this.#t = true;
-            this.#n?.();
-          }
-        }, willowR5);
+        this.#e = new workbookM(
+          {
+            stub: () => {},
+            queueCollaborativePublish: () => {
+              this.#t = true;
+              this.#n?.();
+            },
+          },
+          willowR5,
+        );
       }
       get colorScheme() {
         let stormR19 = this.#e.colorScheme;
@@ -143,8 +226,8 @@ var kiteR15,
             dk2: stormR19.themeColors.dk2.hex,
             lt2: stormR19.themeColors.lt2.hex,
             hlink: stormR19.themeColors.hlink.hex,
-            folHlink: stormR19.themeColors.folHlink.hex
-          }
+            folHlink: stormR19.themeColors.folHlink.hex,
+          },
         };
       }
       set colorScheme(willowR11) {
@@ -177,9 +260,14 @@ var kiteR15,
   });
 function quartzR2(fernR6) {
   let coralR24 = fernR6.buffer;
-  if (coralR24 instanceof ArrayBuffer && fernR6.byteOffset === 0 && fernR6.byteLength === coralR24.byteLength) return new Uint8Array(coralR24);
+  if (
+    coralR24 instanceof ArrayBuffer &&
+    fernR6.byteOffset === 0 &&
+    fernR6.byteLength === coralR24.byteLength
+  )
+    return new Uint8Array(coralR24);
   let driftR24 = new Uint8Array(fernR6.byteLength);
-  return driftR24.set(fernR6), driftR24;
+  return (driftR24.set(fernR6), driftR24);
 }
 function riverR2(gammaR5, harborR5) {
   if (Array.isArray(gammaR5)) {
@@ -188,9 +276,14 @@ function riverR2(gammaR5, harborR5) {
   }
   if (typeof gammaR5 != "object" || !gammaR5) return;
   let kelpR22 = gammaR5;
-  if (kelpR22.type === d.COLOR_TYPE_SCHEME && typeof kelpR22.value == "string" && kelpR22.lastColor === undefined) {
+  if (
+    kelpR22.type === d.COLOR_TYPE_SCHEME &&
+    typeof kelpR22.value == "string" &&
+    kelpR22.lastColor === undefined
+  ) {
     let harborR14 = harborR5[kelpR22.value] ?? waveR18[kelpR22.value];
-    harborR14 !== undefined && (kelpR22.lastColor = harborR14.replace(/^#/, ""));
+    harborR14 !== undefined &&
+      (kelpR22.lastColor = harborR14.replace(/^#/, ""));
   }
   for (let valeR14 of Object.values(kelpR22)) riverR2(valeR14, harborR5);
 }
@@ -247,57 +340,69 @@ var pearlR15,
           id: duskR8.id ?? "",
           name: duskR8.name ?? "Untitled document",
           widthEmu: duskR8.widthEmu ?? 0,
-          heightEmu: duskR8.heightEmu ?? 0
+          heightEmu: duskR8.heightEmu ?? 0,
         };
         this.#t = new ivoryR15();
-        this.charts = new WorkbookW({
-          fontFamilyCache: this.#n,
-          stub: () => {}
-        }, duskR8.charts ?? []);
-        this.images = new WorkbookW({
-          stub: () => {}
-        }, duskR8.images ?? []);
+        this.charts = new WorkbookW(
+          {
+            fontFamilyCache: this.#n,
+            stub: () => {},
+          },
+          duskR8.charts ?? [],
+        );
+        this.images = new WorkbookW(
+          {
+            stub: () => {},
+          },
+          duskR8.images ?? [],
+        );
         this.textStyles = new kiteR15(duskR8.textStyles ?? [], {
           fontFamilyCache: this.#n,
-          onMutated: () => this.invalidateLayoutCache()
+          onMutated: () => this.invalidateLayoutCache(),
         });
-        this.tableStyleDefinitions = new indigoR15(duskR8.tableStyleDefinitions ?? [], {
-          fontFamilyCache: this.#n,
-          onMutated: () => this.invalidateLayoutCache()
-        });
+        this.tableStyleDefinitions = new indigoR15(
+          duskR8.tableStyleDefinitions ?? [],
+          {
+            fontFamilyCache: this.#n,
+            onMutated: () => this.invalidateLayoutCache(),
+          },
+        );
         this.fonts = new gammaR16(duskR8.fonts ?? [], {
-          onMutated: () => this.invalidateLayoutCache()
+          onMutated: () => this.invalidateLayoutCache(),
         });
         this.settings = new gammaR15(duskR8.settings, {
-          onMutated: () => this.invalidateLayoutCache()
+          onMutated: () => this.invalidateLayoutCache(),
         });
         this.theme = new nickelR15(duskR8.theme, {
-          onMutated: () => this.invalidateLayoutCache()
+          onMutated: () => this.invalidateLayoutCache(),
         });
         this.#n.addThemeFontScheme(duskR8.theme?.fontScheme);
         this.commentContents = new riverR24(duskR8.comments ?? [], {
-          onMutated: () => this.invalidateLayoutCache()
+          onMutated: () => this.invalidateLayoutCache(),
         });
         this.commentReferences = new northR13(duskR8.commentReferences ?? [], {
-          onMutated: () => this.invalidateLayoutCache()
+          onMutated: () => this.invalidateLayoutCache(),
         });
         this.#i = {
           fontFamilyCache: this.#n,
           charts: this.charts,
           images: this.images,
           getExistingElementIds: () => [...this.#r],
-          registerElementId: stormR11 => {
+          registerElementId: (stormR11) => {
             stormR11.length > 0 && this.#r.add(stormR11);
           },
           readTextStyleDefinitions: () => this.textStyles.toProto(),
-          invalidateLayout: () => this.invalidateLayoutCache()
+          invalidateLayout: () => this.invalidateLayoutCache(),
         };
         this.sections = new deltaR15({
           sections: duskR8.sections ?? [],
           fallbackElements: duskR8.elements ?? [],
-          context: this.#i
+          context: this.#i,
         });
-        this.numbering = new questR21(duskR8.numberingDefinitions ?? [], duskR8.paragraphNumberings ?? []);
+        this.numbering = new questR21(
+          duskR8.numberingDefinitions ?? [],
+          duskR8.paragraphNumberings ?? [],
+        );
         let reefR17 = this.sections.first.body,
           sageR17 = this.sections.first.pageSetup;
         sageR17?.widthEmu && (this.#e.widthEmu = sageR17.widthEmu);
@@ -307,7 +412,7 @@ var pearlR15,
           threads: [],
           documentId: this.#e.id,
           textElementId: reefR17.textElementId,
-          resolveTextRange: garnetR13 => garnetR13.getTextRange()
+          resolveTextRange: (garnetR13) => garnetR13.getTextRange(),
         });
         this.citations = new mossR13(quillR17.contentReferences ?? []);
         this.footnotes = new oliveR16({
@@ -315,16 +420,16 @@ var pearlR15,
           fontFamilyCache: this.#n,
           documentId: this.#e.id,
           textElementId: reefR17.textElementId,
-          resolveTextRange: hazelR13 => hazelR13.getTextRange(),
-          onMutated: () => this.invalidateLayoutCache()
+          resolveTextRange: (hazelR13) => hazelR13.getTextRange(),
+          onMutated: () => this.invalidateLayoutCache(),
         });
         this.endnotes = new questR15({
           endnotes: duskR8.endnotes ?? [],
           fontFamilyCache: this.#n,
           documentId: this.#e.id,
           textElementId: reefR17.textElementId,
-          resolveTextRange: ivoryR13 => ivoryR13.getTextRange(),
-          onMutated: () => this.invalidateLayoutCache()
+          resolveTextRange: (ivoryR13) => ivoryR13.getTextRange(),
+          onMutated: () => this.invalidateLayoutCache(),
         });
         this.revisions = new cedarR22(duskR8.reviewMarks ?? []);
       }
@@ -360,15 +465,23 @@ var pearlR15,
       }
       get pagePaintContext() {
         return {
-          chartsById: new Map(this.charts.toProto().filter(item => !!item.id).map(item => [item.id, item])),
-          pageBackgroundFill: this.settings.displayBackgroundShape === false ? undefined : this.settings.resolveRenderBackgroundFill(),
-          themeMap: this.theme.resolveRenderThemeMap()
+          chartsById: new Map(
+            this.charts
+              .toProto()
+              .filter((item) => !!item.id)
+              .map((item) => [item.id, item]),
+          ),
+          pageBackgroundFill:
+            this.settings.displayBackgroundShape === false
+              ? undefined
+              : this.settings.resolveRenderBackgroundFill(),
+          themeMap: this.theme.resolveRenderThemeMap(),
         };
       }
       toProto() {
         let reefR18 = this.comments.toProto(),
           sageR18 = this.sections.toProto(),
-          topazR18 = sageR18.flatMap(item => item.elements ?? []),
+          topazR18 = sageR18.flatMap((item) => item.elements ?? []),
           ultraR18 = this.numbering.toProto(),
           vaporR18 = sageR18[0]?.pageSetup,
           wheatR18 = {
@@ -391,17 +504,25 @@ var pearlR15,
             endnotes: this.endnotes.toProto(),
             settings: this.settings.toProto(),
             theme: this.theme.toProto(),
-            fonts: this.fonts.toProto()
+            fonts: this.fonts.toProto(),
           };
-        return wheatR18.people = reefR18.people, wheatR18.threads = reefR18.threads, wheatR18.contentReferences = this.citations.toProto(), riverR2(wheatR18, this.theme.hexColorMap), wheatR18;
+        return (
+          (wheatR18.people = reefR18.people),
+          (wheatR18.threads = reefR18.threads),
+          (wheatR18.contentReferences = this.citations.toProto()),
+          riverR2(wheatR18, this.theme.hexColorMap),
+          wheatR18
+        );
       }
       toDocumentBytes() {
         return quartzR2(oStub.encode(this.toProto()).finish());
       }
       save() {}
-      export(kelpR7 = {
-        format: "layout"
-      }) {
+      export(
+        kelpR7 = {
+          format: "layout",
+        },
+      ) {
         let echoR25 = kelpR7.format ?? "layout";
         if (echoR25 === "layout") return Promise.resolve(flintR1(this));
         throw Error(`Unsupported document export format: ${echoR25}`);
@@ -416,9 +537,45 @@ function SlateR2({
   toolbar,
   sidebar,
   footer,
-  children
+  children,
 }) {
-  return <div className={IntlProvider("bg-token-bg-primary text-token-text-primary flex h-full min-h-0 flex-col", className)}>{header ?? <header className="border-token-border-light flex items-center justify-between border-b px-4 py-3"><div className="min-w-0"><div className="text-token-text-tertiary text-xs font-medium uppercase tracking-[0.12em]">{artifactLabel}</div><div className="truncate text-sm font-semibold">{title}</div></div>{toolbar ? <div className="ms-4 flex shrink-0 items-center gap-2">{toolbar}</div> : null}</header>}<div className="flex min-h-0 flex-1 overflow-hidden">{sidebar ? <aside className="border-token-border-light bg-token-bg-secondary min-h-0 w-[240px] shrink-0 overflow-auto border-e">{sidebar}</aside> : null}<div className="min-h-0 min-w-0 flex-1">{children}</div></div>{footer ? <footer className="border-token-border-light bg-token-bg-secondary border-t">{footer}</footer> : null}</div>;
+  return (
+    <div
+      className={IntlProvider(
+        "bg-token-bg-primary text-token-text-primary flex h-full min-h-0 flex-col",
+        className,
+      )}
+    >
+      {header ?? (
+        <header className="border-token-border-light flex items-center justify-between border-b px-4 py-3">
+          <div className="min-w-0">
+            <div className="text-token-text-tertiary text-xs font-medium uppercase tracking-[0.12em]">
+              {artifactLabel}
+            </div>
+            <div className="truncate text-sm font-semibold">{title}</div>
+          </div>
+          {toolbar ? (
+            <div className="ms-4 flex shrink-0 items-center gap-2">
+              {toolbar}
+            </div>
+          ) : null}
+        </header>
+      )}
+      <div className="flex min-h-0 flex-1 overflow-hidden">
+        {sidebar ? (
+          <aside className="border-token-border-light bg-token-bg-secondary min-h-0 w-[240px] shrink-0 overflow-auto border-e">
+            {sidebar}
+          </aside>
+        ) : null}
+        <div className="min-h-0 min-w-0 flex-1">{children}</div>
+      </div>
+      {footer ? (
+        <footer className="border-token-border-light bg-token-bg-secondary border-t">
+          {footer}
+        </footer>
+      ) : null}
+    </div>
+  );
 }
 var riverR15,
   slateR15 = esmInit(() => {
@@ -428,33 +585,45 @@ var riverR15,
 function $c(willowR4) {
   let [prismR21, quillR21] = el.useState({
     width: 0,
-    height: 0
+    height: 0,
   });
-  return el.useEffect(() => {
-    let emberR22 = willowR4.current;
-    if (!emberR22) return;
-    let flintR22 = () => {
-      let driftR25 = emberR22.getBoundingClientRect();
-      quillR21({
-        width: Math.max(0, Math.round(driftR25.width)),
-        height: Math.max(0, Math.round(driftR25.height))
-      });
-    };
-    flintR22();
-    let garnetR22 = new ResizeObserver(flintR22);
-    return garnetR22.observe(emberR22), () => {
-      garnetR22.disconnect();
-    };
-  }, [willowR4]), prismR21;
+  return (
+    el.useEffect(() => {
+      let emberR22 = willowR4.current;
+      if (!emberR22) return;
+      let flintR22 = () => {
+        let driftR25 = emberR22.getBoundingClientRect();
+        quillR21({
+          width: Math.max(0, Math.round(driftR25.width)),
+          height: Math.max(0, Math.round(driftR25.height)),
+        });
+      };
+      flintR22();
+      let garnetR22 = new ResizeObserver(flintR22);
+      return (
+        garnetR22.observe(emberR22),
+        () => {
+          garnetR22.disconnect();
+        }
+      );
+    }, [willowR4]),
+    prismR21
+  );
 }
 var el,
   timberR15 = esmInit(() => {
     el = commonJsInit(react());
   });
 function timberR2() {
-  return umbraR15 ??= Promise.all([RemoteTextEditSessionU(), Promise.resolve().then(() => {
-    RemoteTextEditSessionP();
-  })]).then(() => {}), umbraR15;
+  return (
+    (umbraR15 ??= Promise.all([
+      RemoteTextEditSessionU(),
+      Promise.resolve().then(() => {
+        RemoteTextEditSessionP();
+      }),
+    ]).then(() => {})),
+    umbraR15
+  );
 }
 var umbraR15,
   violetR15 = esmInit(() => {
@@ -463,14 +632,14 @@ var umbraR15,
     umbraR15 = null;
   });
 function umbraR2() {
-  return getFeatureCatalogEntries().map(item => ({
+  return getFeatureCatalogEntries().map((item) => ({
     text: `${violetR2(item.artifact)} / ${item.area}: ${item.feature}. ${item.summary}`,
     style: {
       bulletCharacter: "•",
       marginLeft: 720,
       indent: 360,
-      spaceAfter: 120
-    }
+      spaceAfter: 120,
+    },
   }));
 }
 function violetR2(hillR11) {

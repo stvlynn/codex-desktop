@@ -13,7 +13,9 @@ export type BindDataAppShellFocusAreaPeers = {
 let peers: BindDataAppShellFocusAreaPeers | null = null;
 
 /** Wire bindDataAppShellFocusArea peers once companions land. */
-export function setBindDataAppShellFocusAreaPeers(next: BindDataAppShellFocusAreaPeers): void {
+export function setBindDataAppShellFocusAreaPeers(
+  next: BindDataAppShellFocusAreaPeers,
+): void {
   peers = next;
 }
 
@@ -26,8 +28,10 @@ export function bindDataAppShellFocusArea() {
   }
 
   return peers.e(() => {
-    GHr = peers.r(peers.o(), 1), KHr = (0, peers.GHr.createContext)({
-      current: null
-    }), qHr = (0, peers.GHr.createContext)(null);
+    ((GHr = peers.r(peers.o(), 1)),
+      (KHr = (0, peers.GHr.createContext)({
+        current: null,
+      })),
+      (qHr = (0, peers.GHr.createContext)(null)));
   });
 }

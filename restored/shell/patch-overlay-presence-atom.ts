@@ -9,7 +9,9 @@ export type PatchOverlayPresenceAtomPeers = {
 let peers: PatchOverlayPresenceAtomPeers | null = null;
 
 /** Wire patchOverlayPresenceAtom peers once companions land. */
-export function setPatchOverlayPresenceAtomPeers(next: PatchOverlayPresenceAtomPeers): void {
+export function setPatchOverlayPresenceAtomPeers(
+  next: PatchOverlayPresenceAtomPeers,
+): void {
   peers = next;
 }
 

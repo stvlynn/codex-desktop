@@ -12,7 +12,9 @@ export type UseTaskTurnLogsQueryPeers = {
 let peers: UseTaskTurnLogsQueryPeers | null = null;
 
 /** Wire useTaskTurnLogsQuery peers once companions land. */
-export function setUseTaskTurnLogsQueryPeers(next: UseTaskTurnLogsQueryPeers): void {
+export function setUseTaskTurnLogsQueryPeers(
+  next: UseTaskTurnLogsQueryPeers,
+): void {
   peers = next;
 }
 

@@ -24,10 +24,28 @@ import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../ap
 import { normalizeAppIconThemeEntries } from "../../apps/normalize-app-icon-theme-entries";
 import { automationsNotShallowEqual } from "../../automation/automations-not-shallow-equal";
 import { isBlankAutomationDraft as IsBlankAutomationDraft } from "../../automation/is-blank-automation-draft";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useLocation } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
@@ -66,7 +84,10 @@ import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { mcpGlobalCapabilityCatalogAtom as McpGlobalCapabilityCatalogAtom } from "../../mcp/mcp-capability-host";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { resolveBrowserTabPanelSide as ResolveBrowserTabPanelSide } from "../../navigation/resolve-browser-tab-panel-side";
@@ -81,7 +102,10 @@ import { codexCommandTheme } from "../../ui/codex-command-theme";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiYn } from "../../ui/deferred-ui-yn";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { FloatingSurfaceCssClass } from "../../ui/floating-surface-css-classes";
@@ -93,44 +117,63 @@ import { isXcodeLicenseError } from "../../utils/is-xcode-license-error";
 import { lerpIfFinite as LerpIfFinite } from "../../utils/lerp-if-finite";
 import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
-import { ensureImportSettingsGctInit, ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsGctInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { identityCwd } from "../../utils/workspace-paths";
 import { pendingWorktreeConversationStartApi } from "../../worktree/pending-worktree-conversation-start-api";
 import { readCodexHomeFromQuery } from "../read-codex-home-from-query";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { initSettingsLoadingRow, SettingsLoadingRow } from "../settings-loading-row";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  initSettingsLoadingRow,
+  SettingsLoadingRow,
+} from "../settings-loading-row";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 
 // Wave5d soft JSX companions.
-function Alpha(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Bravo(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Bravo(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Copper(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Copper(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Delta(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Delta(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Echo(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Echo(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -191,22 +234,16 @@ const openInBrowser: any = undefined;
 const parseUrlOrFallback: any = undefined;
 const useChromeAndCodeThemeSync: any = undefined;
 function prism(wheat) {
-  let {
-      hostId
-    } = wheat,
+  let { hostId } = wheat,
     yarn = CodexPluginActionType(appScopeAtom),
     zephyr = useIntl(),
     acorn = CodexPluginActionResult(normalizeAppIconThemeEntries),
-    {
-      data
-    } = CodexPluginActionResult(DeferredUiAP2),
+    { data } = CodexPluginActionResult(DeferredUiAP2),
     bloom = CodexPluginActionResult(AppInitialMP),
     coral = {
-      hostId
+      hostId,
     };
-  let {
-      data: _data
-    } = findProcessManagerRow(coral),
+  let { data: _data } = findProcessManagerRow(coral),
     drift,
     eagle,
     frost,
@@ -223,113 +260,202 @@ function prism(wheat) {
     quest;
   iris = Symbol.for("react.early_return_sentinel");
   bb0: {
-    let wave = dusk => dusk === "max" ? _data?.hasModelSupportingMaxReasoningEffort === true : _data?.hasModelSupportingUltraReasoningEffort === true;
+    let wave = (dusk) =>
+      dusk === "max"
+        ? _data?.hasModelSupportingMaxReasoningEffort === true
+        : _data?.hasModelSupportingUltraReasoningEffort === true;
     let apex = topaz.filter(wave);
     if (_data == null || apex.length === 0) {
       iris = null;
       break bb0;
     }
-    let brook = elm => acorn.has(elm);
+    let brook = (elm) => acorn.has(elm);
     let cliff = AppInitialEX.length + apex.filter(brook).length;
     honey = useChromeAndCodeThemeSync;
-    quest = <UseChromeAndCodeThemeSync.Header {...{
-      title: <MemoizedFormattedMessage {...{
-        id: "settings.agent.modelFeatures.title",
-        defaultMessage: "Model features",
-        description: "Title for model feature settings"
-      }} />
-    }} />;
+    quest = (
+      <UseChromeAndCodeThemeSync.Header
+        {...{
+          title: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.agent.modelFeatures.title",
+                defaultMessage: "Model features",
+                description: "Title for model feature settings",
+              }}
+            />
+          ),
+        }}
+      />
+    );
     glide = useChromeAndCodeThemeSync.Content;
     frost = parseUrlOrFallback;
     eagle = ensurePersonalizationCInit;
-    orbit = <MemoizedFormattedMessage {...{
-      id: "settings.agent.modelFeatures.reasoningEfforts.label",
-      defaultMessage: "Available reasoning efforts",
-      description: "Label for the available reasoning efforts setting"
-    }} />;
-    pine = <MemoizedFormattedMessage {...{
-      id: "settings.agent.modelFeatures.reasoningEfforts.description",
-      defaultMessage: "Choose which reasoning effort levels appear in model controls. Availability varies by model",
-      description: "Description for the available reasoning efforts setting"
-    }} />;
+    orbit = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.agent.modelFeatures.reasoningEfforts.label",
+          defaultMessage: "Available reasoning efforts",
+          description: "Label for the available reasoning efforts setting",
+        }}
+      />
+    );
+    pine = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.agent.modelFeatures.reasoningEfforts.description",
+          defaultMessage:
+            "Choose which reasoning effort levels appear in model controls. Availability varies by model",
+          description:
+            "Description for the available reasoning efforts setting",
+        }}
+      />
+    );
     drift = DropdownMenuPopover;
     jewel = "end";
     knoll = "menuWide";
-    lunar = <DropdownTriggerButton>
-        {<MemoizedFormattedMessage {...{
-        id: "settings.agent.modelFeatures.reasoningEfforts.selectedCount",
-        defaultMessage: "{count, plural, one {# selected} other {# selected}}",
-        description: "Number of available reasoning efforts selected",
-        values: {
-          count: cliff
+    lunar = (
+      <DropdownTriggerButton>
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.agent.modelFeatures.reasoningEfforts.selectedCount",
+              defaultMessage:
+                "{count, plural, one {# selected} other {# selected}}",
+              description: "Number of available reasoning efforts selected",
+              values: {
+                count: cliff,
+              },
+            }}
+          />
         }
-      }} />}
-      </DropdownTriggerButton>;
+      </DropdownTriggerButton>
+    );
     moss = AppInitialEX.map(quill);
-    north = apex.map(item => <DropdownMenu.CheckboxItem key={item} {...{
-      checked: acorn.has(item),
-      onCheckedChange: fern => {
-        AppInitialRX(yarn, {
-          enabled: fern,
-          hostId,
-          listModelsData: _data,
-          reasoningEffort: item
-        });
-      },
-      children: <IsBlankAutomationDraft {...{
-        effort: item
-      }} />
-    }} />);
+    north = apex.map((item) => (
+      <DropdownMenu.CheckboxItem
+        key={item}
+        {...{
+          checked: acorn.has(item),
+          onCheckedChange: (fern) => {
+            AppInitialRX(yarn, {
+              enabled: fern,
+              hostId,
+              listModelsData: _data,
+              reasoningEffort: item,
+            });
+          },
+          children: (
+            <IsBlankAutomationDraft
+              {...{
+                effort: item,
+              }}
+            />
+          ),
+        }}
+      />
+    ));
   }
   if (iris !== Symbol.for("react.early_return_sentinel")) return iris;
-  let ridge = <Alpha {...{
-    align: jewel,
-    contentWidth: knoll,
-    triggerButton: lunar,
-    children: [moss, north]
-  }} />;
-  let storm = <Bravo {...{
-    label: orbit,
-    description: pine,
-    control: ridge
-  }} />;
-  let tide = _data.hasModelSupportingUltraReasoningEffort ? <EnsurePersonalizationCInit {...{
-    label: <MemoizedFormattedMessage {...{
-      id: "settings.agent.modelFeatures.modelPickerSliderUltra.label",
-      defaultMessage: "Ultra in model picker slider",
-      description: "Label for the setting that adds Ultra to the model picker slider"
-    }} />,
-    description: <MemoizedFormattedMessage {...{
-      id: "settings.agent.modelFeatures.modelPickerSliderUltra.description",
-      defaultMessage: "Show Ultra as the highest slider option",
-      description: "Description for the setting that adds Ultra to the model picker slider"
-    }} />,
-    control: <AppInitialYC aria-busy={bloom.isPending || undefined} checked={data?.ultraEffortEnabled === true} disabled={data == null || bloom.isPending} onChange={grove => {
-      bloom.mutate(grove);
-    }} ariaLabel={zephyr.formatMessage({
-      id: "settings.agent.modelFeatures.modelPickerSliderUltra.ariaLabel",
-      defaultMessage: "Show Ultra in the model picker slider",
-      description: "Accessible label for the Ultra model picker slider setting toggle"
-    })} />
-  }} /> : null;
-  let unity = <Copper {...{
-    children: [storm, tide]
-  }} />;
-  let vale = <Delta {...{
-    children: unity
-  }} />;
-  return <Echo {...{
-    children: [quest, vale]
-  }} />;
+  let ridge = (
+    <Alpha
+      {...{
+        align: jewel,
+        contentWidth: knoll,
+        triggerButton: lunar,
+        children: [moss, north],
+      }}
+    />
+  );
+  let storm = (
+    <Bravo
+      {...{
+        label: orbit,
+        description: pine,
+        control: ridge,
+      }}
+    />
+  );
+  let tide = _data.hasModelSupportingUltraReasoningEffort ? (
+    <EnsurePersonalizationCInit
+      {...{
+        label: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.agent.modelFeatures.modelPickerSliderUltra.label",
+              defaultMessage: "Ultra in model picker slider",
+              description:
+                "Label for the setting that adds Ultra to the model picker slider",
+            }}
+          />
+        ),
+        description: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.agent.modelFeatures.modelPickerSliderUltra.description",
+              defaultMessage: "Show Ultra as the highest slider option",
+              description:
+                "Description for the setting that adds Ultra to the model picker slider",
+            }}
+          />
+        ),
+        control: (
+          <AppInitialYC
+            aria-busy={bloom.isPending || undefined}
+            checked={data?.ultraEffortEnabled === true}
+            disabled={data == null || bloom.isPending}
+            onChange={(grove) => {
+              bloom.mutate(grove);
+            }}
+            ariaLabel={zephyr.formatMessage({
+              id: "settings.agent.modelFeatures.modelPickerSliderUltra.ariaLabel",
+              defaultMessage: "Show Ultra in the model picker slider",
+              description:
+                "Accessible label for the Ultra model picker slider setting toggle",
+            })}
+          />
+        ),
+      }}
+    />
+  ) : null;
+  let unity = (
+    <Copper
+      {...{
+        children: [storm, tide],
+      }}
+    />
+  );
+  let vale = (
+    <Delta
+      {...{
+        children: unity,
+      }}
+    />
+  );
+  return (
+    <Echo
+      {...{
+        children: [quest, vale],
+      }}
+    />
+  );
 }
 function quill(hill) {
-  return <DropdownMenu.CheckboxItem key={hill} {...{
-    checked: true,
-    disabled: true,
-    children: <IsBlankAutomationDraft {...{
-      effort: hill
-    }} />
-  }} />;
+  return (
+    <DropdownMenu.CheckboxItem
+      key={hill}
+      {...{
+        checked: true,
+        disabled: true,
+        children: (
+          <IsBlankAutomationDraft
+            {...{
+              effort: hill,
+            }}
+          />
+        ),
+      }}
+    />
+  );
 }
 var reef,
   sage,
@@ -352,164 +478,326 @@ var reef,
     topaz = ["max", "ultra"];
   });
 export function AgentSettings() {
-  let {
-      selectedHostId
-    } = useSelectedHost(),
+  let { selectedHostId } = useSelectedHost(),
     isle = ensureSteeringUserMessageClusterInit(selectedHostId),
     juniper = AppInitialGX(selectedHostId),
     lagoon = CodexPluginActionResult(AppInitialZ7),
     meadow = NativeContextMenuSurface(ensureUseSelectedAvatarInit),
     nest = NativeContextMenuSurface("2106641128"),
     oak = NativeContextMenuSurface("3693343337");
-  return <>
-      {<OpenInBrowser {...{
-      title: <SettingsSectionTitle slug="agent" />,
-      subtitle: <MemoizedFormattedMessage {...{
-        id: "settings.agent.configuration.subtitle.summary",
-        defaultMessage: "Configure approval policy and sandbox settings <a>Learn more</a>",
-        description: "Summary text for the configuration settings subtitle",
-        values: {
-          a: petal => <a className="inline-flex text-token-text-link-foreground" href={DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL} target="_blank" rel="noreferrer">
+  return (
+    <>
+      {
+        <OpenInBrowser
+          {...{
+            title: <SettingsSectionTitle slug="agent" />,
+            subtitle: (
+              <MemoizedFormattedMessage
+                {...{
+                  id: "settings.agent.configuration.subtitle.summary",
+                  defaultMessage:
+                    "Configure approval policy and sandbox settings <a>Learn more</a>",
+                  description:
+                    "Summary text for the configuration settings subtitle",
+                  values: {
+                    a: (petal) => (
+                      <a
+                        className="inline-flex text-token-text-link-foreground"
+                        href={DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         {petal}
                       </a>
-        }
-      }} />,
-      children: [lagoon ? <UseChromeAndCodeThemeSync {...{
-        children: [<UseChromeAndCodeThemeSync.Header {...{
-          title: <MemoizedFormattedMessage {...{
-            ...olive.customConfig
-          }} />
-        }} />, <UseChromeAndCodeThemeSync.Content {...{
-          children: [juniper.map((item, index) => <ResolveBrowserTabPanelSide key={`${index}:${item.kind}:${item.summary}:${item.path ?? ""}`} {...{
-            content: <>
-                                      {<AreVisualizationFeatureGatesEnabled {...{
-                cwd: null,
-                className: "[&>p]:my-0",
-                textStyle: {
-                  kind: "small"
-                },
-                children: item.summary
-              }} />}
-                                      {item.details != null && item.details.length > 0 ? <AreVisualizationFeatureGatesEnabled {...{
-                cwd: null,
-                className: "[&>p]:my-0",
-                textStyle: {
-                  kind: "small"
-                },
-                children: item.details
-              }} /> : null}
-                                      {item.path == null ? null : <MemoizedFormattedMessage {...{
-                id: "settings.agent.configuration.notice.fileContext",
-                defaultMessage: "File: {path}{location}",
-                description: "File path and optional location for a config or rules warning shown in settings",
-                values: {
-                  path: <code>{item.path}</code>,
-                  location: item.range == null ? "" : <MemoizedFormattedMessage {...{
-                    id: "settings.agent.configuration.notice.fileLocationSuffix",
-                    defaultMessage: " (line {line}, column {column})",
-                    description: "Suffix showing the line and column for a config warning in settings",
-                    values: {
-                      line: item.range.start.line,
-                      column: item.range.start.column
-                    }
-                  }} />
-                }
-              }} />}
-                                    </>,
-            Icon: isXcodeLicenseError,
-            onPrimaryCtaClick: () => {
-              item.path != null && useIsLoginMethodAvailable({
-                hostId: selectedHostId,
-                path: item.path,
-                ...(item.range == null ? {} : {
-                  range: item.range
-                })
-              });
-            },
-            primaryCtaText: item.path == null ? undefined : <MemoizedFormattedMessage {...{
-              id: "settings.agent.configuration.notice.openFile",
-              defaultMessage: "Open file",
-              description: "Button label to open the file associated with a config or rules warning"
-            }} />,
-            role: "alert",
-            type: "warning"
-          }} />), <ElectronOnly {...{
-            electron: true,
-            children: <AgentSettingsHelper20 {...{
-              hostId: selectedHostId
-            }} />
-          }} />, <ElectronOnly {...{
-            extension: true,
-            children: <ParseUrlOrFallback {...{
-              children: <EnsurePersonalizationCInit {...{
-                label: <MemoizedFormattedMessage {...{
-                  id: "settings.agent.configuration.configToml",
-                  defaultMessage: "config.toml",
-                  description: "Label for config.toml open button"
-                }} />,
-                description: <>
-                                                {<MemoizedFormattedMessage {...{
-                    id: "settings.agent.configuration.configToml.description",
-                    defaultMessage: "Edit your config to customize agent behavior",
-                    description: "Description for config.toml open row"
-                  }} />}{" "}
+                    ),
+                  },
+                }}
+              />
+            ),
+            children: [
+              lagoon ? (
+                <UseChromeAndCodeThemeSync
+                  {...{
+                    children: [
+                      <UseChromeAndCodeThemeSync.Header
+                        {...{
+                          title: (
+                            <MemoizedFormattedMessage
+                              {...{
+                                ...olive.customConfig,
+                              }}
+                            />
+                          ),
+                        }}
+                      />,
+                      <UseChromeAndCodeThemeSync.Content
+                        {...{
+                          children: [
+                            juniper.map((item, index) => (
+                              <ResolveBrowserTabPanelSide
+                                key={`${index}:${item.kind}:${item.summary}:${item.path ?? ""}`}
+                                {...{
+                                  content: (
+                                    <>
+                                      {
+                                        <AreVisualizationFeatureGatesEnabled
+                                          {...{
+                                            cwd: null,
+                                            className: "[&>p]:my-0",
+                                            textStyle: {
+                                              kind: "small",
+                                            },
+                                            children: item.summary,
+                                          }}
+                                        />
+                                      }
+                                      {item.details != null &&
+                                      item.details.length > 0 ? (
+                                        <AreVisualizationFeatureGatesEnabled
+                                          {...{
+                                            cwd: null,
+                                            className: "[&>p]:my-0",
+                                            textStyle: {
+                                              kind: "small",
+                                            },
+                                            children: item.details,
+                                          }}
+                                        />
+                                      ) : null}
+                                      {item.path == null ? null : (
+                                        <MemoizedFormattedMessage
+                                          {...{
+                                            id: "settings.agent.configuration.notice.fileContext",
+                                            defaultMessage:
+                                              "File: {path}{location}",
+                                            description:
+                                              "File path and optional location for a config or rules warning shown in settings",
+                                            values: {
+                                              path: <code>{item.path}</code>,
+                                              location:
+                                                item.range == null ? (
+                                                  ""
+                                                ) : (
+                                                  <MemoizedFormattedMessage
+                                                    {...{
+                                                      id: "settings.agent.configuration.notice.fileLocationSuffix",
+                                                      defaultMessage:
+                                                        " (line {line}, column {column})",
+                                                      description:
+                                                        "Suffix showing the line and column for a config warning in settings",
+                                                      values: {
+                                                        line: item.range.start
+                                                          .line,
+                                                        column:
+                                                          item.range.start
+                                                            .column,
+                                                      },
+                                                    }}
+                                                  />
+                                                ),
+                                            },
+                                          }}
+                                        />
+                                      )}
+                                    </>
+                                  ),
+                                  Icon: isXcodeLicenseError,
+                                  onPrimaryCtaClick: () => {
+                                    item.path != null &&
+                                      useIsLoginMethodAvailable({
+                                        hostId: selectedHostId,
+                                        path: item.path,
+                                        ...(item.range == null
+                                          ? {}
+                                          : {
+                                              range: item.range,
+                                            }),
+                                      });
+                                  },
+                                  primaryCtaText:
+                                    item.path == null ? undefined : (
+                                      <MemoizedFormattedMessage
+                                        {...{
+                                          id: "settings.agent.configuration.notice.openFile",
+                                          defaultMessage: "Open file",
+                                          description:
+                                            "Button label to open the file associated with a config or rules warning",
+                                        }}
+                                      />
+                                    ),
+                                  role: "alert",
+                                  type: "warning",
+                                }}
+                              />
+                            )),
+                            <ElectronOnly
+                              {...{
+                                electron: true,
+                                children: (
+                                  <AgentSettingsHelper20
+                                    {...{
+                                      hostId: selectedHostId,
+                                    }}
+                                  />
+                                ),
+                              }}
+                            />,
+                            <ElectronOnly
+                              {...{
+                                extension: true,
+                                children: (
+                                  <ParseUrlOrFallback
+                                    {...{
+                                      children: (
+                                        <EnsurePersonalizationCInit
+                                          {...{
+                                            label: (
+                                              <MemoizedFormattedMessage
+                                                {...{
+                                                  id: "settings.agent.configuration.configToml",
+                                                  defaultMessage: "config.toml",
+                                                  description:
+                                                    "Label for config.toml open button",
+                                                }}
+                                              />
+                                            ),
+                                            description: (
+                                              <>
+                                                {
+                                                  <MemoizedFormattedMessage
+                                                    {...{
+                                                      id: "settings.agent.configuration.configToml.description",
+                                                      defaultMessage:
+                                                        "Edit your config to customize agent behavior",
+                                                      description:
+                                                        "Description for config.toml open row",
+                                                    }}
+                                                  />
+                                                }{" "}
                                                 <span className="block" />
-                                                {<MemoizedFormattedMessage {...{
-                    id: "settings.agent.configuration.configToml.restartNote",
-                    defaultMessage: "Restart ChatGPT after editing to apply changes",
-                    description: "Note that config.toml changes require a restart"
-                  }} />}{" "}
-                                                <a className="inline-flex items-center gap-1 text-token-text-secondary hover:text-token-text-primary" href={DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL} target="_blank" rel="noreferrer" onClick={quiet => {
-                    deferredUiEnt({
-                      event: quiet,
-                      href: DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL,
-                      initiator: "open_in_browser_bridge"
-                    });
-                  }}>
-                                                  {<MemoizedFormattedMessage {...{
-                      id: "settings.agent.configuration.configToml.docs",
-                      defaultMessage: "Docs",
-                      description: "Link label for config documentation"
-                    }} />}
-                                                  {<HostFeatureConfigToggles {...{
-                      href: DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL,
-                      className: "icon-xxs"
-                    }} />}
+                                                {
+                                                  <MemoizedFormattedMessage
+                                                    {...{
+                                                      id: "settings.agent.configuration.configToml.restartNote",
+                                                      defaultMessage:
+                                                        "Restart ChatGPT after editing to apply changes",
+                                                      description:
+                                                        "Note that config.toml changes require a restart",
+                                                    }}
+                                                  />
+                                                }{" "}
+                                                <a
+                                                  className="inline-flex items-center gap-1 text-token-text-secondary hover:text-token-text-primary"
+                                                  href={
+                                                    DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL
+                                                  }
+                                                  target="_blank"
+                                                  rel="noreferrer"
+                                                  onClick={(quiet) => {
+                                                    deferredUiEnt({
+                                                      event: quiet,
+                                                      href: DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL,
+                                                      initiator:
+                                                        "open_in_browser_bridge",
+                                                    });
+                                                  }}
+                                                >
+                                                  {
+                                                    <MemoizedFormattedMessage
+                                                      {...{
+                                                        id: "settings.agent.configuration.configToml.docs",
+                                                        defaultMessage: "Docs",
+                                                        description:
+                                                          "Link label for config documentation",
+                                                      }}
+                                                    />
+                                                  }
+                                                  {
+                                                    <HostFeatureConfigToggles
+                                                      {...{
+                                                        href: DEVELOPERS_OPENAI_COM_CODEX_CONFIG_BASIC_URL,
+                                                        className: "icon-xxs",
+                                                      }}
+                                                    />
+                                                  }
                                                 </a>
-                                              </>,
-                control: <McpGlobalCapabilityCatalogAtom {...{
-                  hostId: selectedHostId
-                }} />
-              }} />
-            }} />
-          }} />]
-        }} />]
-      }} /> : null, oak ? <AgentSettingsHelper15 {...{
-        hostId: selectedHostId
-      }} /> : null, <ElectronOnly {...{
-        electron: true,
-        children: nest ? <div>
-                      {<AgentSettingsHelper11 {...{
-            hostId: selectedHostId
-          }} />}
-                    </div> : null
-      }} />, <ElectronOnly {...{
-        electron: true,
-        children: meadow && isle.kind === "local" ? <AgentSettingsHelper17 {...{
-          hostId: selectedHostId
-        }} /> : null
-      }} />]
-    }} />}
-    </>;
+                                              </>
+                                            ),
+                                            control: (
+                                              <McpGlobalCapabilityCatalogAtom
+                                                {...{
+                                                  hostId: selectedHostId,
+                                                }}
+                                              />
+                                            ),
+                                          }}
+                                        />
+                                      ),
+                                    }}
+                                  />
+                                ),
+                              }}
+                            />,
+                          ],
+                        }}
+                      />,
+                    ],
+                  }}
+                />
+              ) : null,
+              oak ? (
+                <AgentSettingsHelper15
+                  {...{
+                    hostId: selectedHostId,
+                  }}
+                />
+              ) : null,
+              <ElectronOnly
+                {...{
+                  electron: true,
+                  children: nest ? (
+                    <div>
+                      {
+                        <AgentSettingsHelper11
+                          {...{
+                            hostId: selectedHostId,
+                          }}
+                        />
+                      }
+                    </div>
+                  ) : null,
+                }}
+              />,
+              <ElectronOnly
+                {...{
+                  electron: true,
+                  children:
+                    meadow && isle.kind === "local" ? (
+                      <AgentSettingsHelper17
+                        {...{
+                          hostId: selectedHostId,
+                        }}
+                      />
+                    ) : null,
+                }}
+              />,
+            ],
+          }}
+        />
+      }
+    </>
+  );
 }
 function vapor(rain) {
-  let {
-      hostId
-    } = rain,
+  let { hostId } = rain,
     seed = appServices.primaryRuntime;
   if (seed == null) return null;
-  return <AgentSettingsHelper18 {...{
-    hostId,
-    primaryRuntime: seed
-  }} />;
+  return (
+    <AgentSettingsHelper18
+      {...{
+        hostId,
+        primaryRuntime: seed,
+      }}
+    />
+  );
 }

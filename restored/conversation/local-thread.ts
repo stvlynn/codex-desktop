@@ -23,6 +23,6 @@ export function localThread() {
   }
 
   return peers.e(() => {
-    wnu = `3026692602`, Tnu = `3502101112`;
+    ((wnu = `3026692602`), (Tnu = `3502101112`));
   });
 }

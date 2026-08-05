@@ -43,7 +43,9 @@ export function setActivityItemNormalizer(fn: NormalizeFn): void {
 export function setMcpStandaloneChecker(fn: McpStandaloneFn): void {
   isMcpStandalone = fn;
 }
-export function setDynamicToolCallRendererResolver(fn: DynamicRendererFn): void {
+export function setDynamicToolCallRendererResolver(
+  fn: DynamicRendererFn,
+): void {
   resolveDynamicRenderer = fn;
 }
 export function setOpenAiFormFieldsChecker(fn: HasOpenAiFormFieldsFn): void {

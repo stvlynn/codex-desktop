@@ -11,7 +11,9 @@ export type BindClosedAgentSendFailedPeers = {
 let peers: BindClosedAgentSendFailedPeers | null = null;
 
 /** Wire bindClosedAgentSendFailed peers once companions land. */
-export function setBindClosedAgentSendFailedPeers(next: BindClosedAgentSendFailedPeers): void {
+export function setBindClosedAgentSendFailedPeers(
+  next: BindClosedAgentSendFailedPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function bindClosedAgentSendFailed() {
   }
 
   return peers.e(() => {
-    peers.eQe(), peers.Gf(), Qet = `closed_agent_send_failed`;
+    (peers.eQe(), peers.Gf(), (Qet = `closed_agent_send_failed`));
   });
 }

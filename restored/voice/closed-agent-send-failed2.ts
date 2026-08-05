@@ -9,7 +9,9 @@ export type BindClosedAgentSendFailed2Peers = {
 let peers: BindClosedAgentSendFailed2Peers | null = null;
 
 /** Wire bindClosedAgentSendFailed2 peers once companions land. */
-export function setBindClosedAgentSendFailed2Peers(next: BindClosedAgentSendFailed2Peers): void {
+export function setBindClosedAgentSendFailed2Peers(
+  next: BindClosedAgentSendFailed2Peers,
+): void {
   peers = next;
 }
 

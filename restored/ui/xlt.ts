@@ -27,6 +27,6 @@ export function xlt() {
   }
 
   return peers.e(() => {
-    Pet = peers.c(), peers.sd(), peers.jet(), Fet = peers.J();
+    ((Pet = peers.c()), peers.sd(), peers.jet(), (Fet = peers.J()));
   });
 }

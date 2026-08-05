@@ -10,14 +10,21 @@ export type ResolveBranchOrFallbackPathPeers = {
 let peers: ResolveBranchOrFallbackPathPeers | null = null;
 
 /** Wire resolveBranchOrFallbackPath peers once companions land. */
-export function setResolveBranchOrFallbackPathPeers(next: ResolveBranchOrFallbackPathPeers): void {
+export function setResolveBranchOrFallbackPathPeers(
+  next: ResolveBranchOrFallbackPathPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `nm` / internal `j1`.
  */
-export function resolveBranchOrFallbackPath(e: unknown, t: unknown, n: unknown, r: unknown) {
+export function resolveBranchOrFallbackPath(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+  r: unknown,
+) {
   if (peers == null) {
     throw new Error("resolveBranchOrFallbackPath peers are not configured");
   }

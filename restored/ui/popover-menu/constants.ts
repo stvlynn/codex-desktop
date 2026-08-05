@@ -15,11 +15,13 @@ export const ITEM_BASE_CLASS =
 export const ITEM_INTERACTIVE_BACKGROUND_CLASS =
   "cursor-interaction before:absolute before:inset-y-0 before:-inset-x-2 before:-z-10 before:rounded-sm before:content-[''] hover:before:bg-token-list-hover-background";
 
-export const ITEM_INTERACTION_CLASS: Record<PopoverMenuItemInteraction, string> =
-  {
-    background: ITEM_INTERACTIVE_BACKGROUND_CLASS,
-    foreground: "cursor-interaction hover:text-token-foreground",
-  };
+export const ITEM_INTERACTION_CLASS: Record<
+  PopoverMenuItemInteraction,
+  string
+> = {
+  background: ITEM_INTERACTIVE_BACKGROUND_CLASS,
+  foreground: "cursor-interaction hover:text-token-foreground",
+};
 
 export const FOCUS_RING_CLASS =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-token-focus-border";

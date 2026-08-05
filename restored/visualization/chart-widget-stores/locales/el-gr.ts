@@ -16,27 +16,34 @@ const messages: Record<string, string> = {
   "widgets.baseCarousel.previousItems": "Προηγούμενα στοιχεία καρουζέλ",
   "widgets.cardCarousel.goToArticle": "Μετάβαση στο άρθρο",
   "widgets.cardCarousel.nextCards": "Επόμενες κάρτες",
-  "widgets.cardCarousel.nextCardsInCarousel": "Επόμενες κάρτες στο {carouselLabel}",
+  "widgets.cardCarousel.nextCardsInCarousel":
+    "Επόμενες κάρτες στο {carouselLabel}",
   "widgets.cardCarousel.previousCards": "Προηγούμενες κάρτες",
-  "widgets.cardCarousel.previousCardsInCarousel": "Προηγούμενες κάρτες στο {carouselLabel}",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "Προηγούμενες κάρτες στο {carouselLabel}",
   "widgets.debug.hideCurrentState": "Απόκρυψη τρέχουσας κατάστασης",
   "widgets.debug.nextState": "Επόμενη κατάσταση",
   "widgets.debug.previousState": "Προηγούμενη κατάσταση",
   "widgets.debug.selectedState": "Επιλεγμένη κατάσταση",
   "widgets.debug.showCurrentState": "Εμφάνιση τρέχουσας κατάστασης",
   "widgets.debug.state": "Κατάσταση",
-  "widgets.debug.unableToSerializeSelectedState": "Δεν είναι δυνατή η σειριοποίηση της επιλεγμένης κατάστασης.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "Δεν είναι δυνατή η σειριοποίηση της επιλεγμένης κατάστασης.",
   "widgets.hermes.artifact.viewMore": "Δείτε {count} ακόμη",
   "widgets.hermes.calendarEvent.moreAttendees": "+{count} ακόμη",
   "widgets.hermes.calendarEvent.singleTime": "{date} στις {time}",
-  "widgets.hermes.calendarEvent.timeRange": "{date} στις {startTime} - {endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "Ο/Η {agentName} χρειάζεται πρόσβαση για να συνεχίσει",
-  "widgets.hermes.elicitation.toolApproval.title": "Ο/Η {agentName} χρειάζεται την άδειά σας για να συνεχίσει",
+  "widgets.hermes.calendarEvent.timeRange":
+    "{date} στις {startTime} - {endTime}",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "Ο/Η {agentName} χρειάζεται πρόσβαση για να συνεχίσει",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "Ο/Η {agentName} χρειάζεται την άδειά σας για να συνεχίσει",
   "widgets.hermes.genericResponse.viewFullscreen": "Προβολή σε πλήρη οθόνη",
   "widgets.hermes.genericTool.details": "Λεπτομέρειες",
   "widgets.hermes.genericTool.read": "Ανάγνωση",
   "widgets.hermes.genericTool.request": "Αίτημα",
-  "widgets.hermes.genericTool.runToolDescription": "Ο/Η {agentName} θέλει να χρησιμοποιήσει το {connectorName} για να εκτελέσει το {toolName}.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "Ο/Η {agentName} θέλει να χρησιμοποιήσει το {connectorName} για να εκτελέσει το {toolName}.",
   "widgets.hermes.genericTool.viewFullscreen": "Προβολή σε πλήρη οθόνη",
   "widgets.hermes.genericTool.write": "Εγγραφή",
   "widgets.hermes.googleCalendarCreate.create": "Δημιουργία",
@@ -49,7 +56,8 @@ const messages: Record<string, string> = {
   "widgets.hermes.permission.moreInformation": "Περισσότερες πληροφορίες",
   "widgets.hermes.permission.notNow": "Όχι τώρα",
   "widgets.hermes.permission.reconnect": "Συνδεθείτε ξανά",
-  "widgets.hermes.permission.reconnectToConnector": "Επανασύνδεση με το {connectorName}",
+  "widgets.hermes.permission.reconnectToConnector":
+    "Επανασύνδεση με το {connectorName}",
   "widgets.hermes.sendEmail.approveAction": "Έγκριση ενέργειας",
   "widgets.hermes.sendEmail.bcc": "Κρυφή κοιν.",
   "widgets.hermes.sendEmail.cc": "Κοιν.",
@@ -62,79 +70,143 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "εμφάνιση λιγότερων",
   "widgets.hermes.taskStatus.canceled": "Εργασία ακυρώθηκε",
   "widgets.hermes.taskStatus.canceling": "Ακυρώνεται",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Έλεγχος προηγούμενων μηνυμάτων",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Ψάχνω σε παλιότερα μηνύματα",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Ανασκόπηση προηγούμενων μηνυμάτων",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Έλεγχος προηγούμενων μηνυμάτων",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Έλεγχος προηγούμενων μηνυμάτων",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Διαβάζοντας προηγούμενα μηνύματα",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Έλεγχος προηγούμενων μηνυμάτων",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Ανατρέχει σε προηγούμενα μηνύματα",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Σάρωση προηγούμενων μηνυμάτων",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Εξετάζοντας προηγούμενα μηνύματα",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Εξετάζοντας προηγούμενα μηνύματα",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Έλεγχος συμφραζομένων",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Έλεγχος συμφραζομένων",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Έλεγχος συμφραζομένων",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Ανάγνωση συμφραζομένων",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Έλεγχος συμφραζομένων",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Επανεξέταση συμφραζομένων",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Σάρωση συμφραζομένων",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Εξετάζοντας τα συμφραζόμενα",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Ενεργοποίηση πράκτορα",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Εκκίνηση πράκτορα",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Εκκίνηση πράκτορα",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Κλήση πράκτορα",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Σύνδεση με τον βοηθό AI",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "Γίνεται σύνδεση με τον βοηθό AI",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Ξυπνάμε τον πράκτορα",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Αρχικοποίηση πράκτορα",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Ξυπνώντας τον agent",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Εκκίνηση πράκτορα",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "Κλήση πράκτορα",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Ενεργοποίηση υπολογιστή",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Εκκίνηση υπολογιστή",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Σύνδεση υπολογιστή",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Αρχικοποίηση υπολογιστή",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Εκκίνηση υπολογιστή",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Εκκίνηση υπολογιστή",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Εκκίνηση υπολογιστή",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Αφύπνιση υπολογιστή",
-  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Χαράζοντας πορεία",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Καταρτίζω σχέδιο",
-  "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Κατάρτιση σχεδίου",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Σχεδιάζω τα επόμενα βήματα",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Σχεδιάζοντας τα βήματα",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Οργάνωση επόμενων βημάτων",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Έλεγχος προηγούμενων μηνυμάτων",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Ψάχνω σε παλιότερα μηνύματα",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Ανασκόπηση προηγούμενων μηνυμάτων",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Έλεγχος προηγούμενων μηνυμάτων",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Έλεγχος προηγούμενων μηνυμάτων",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Διαβάζοντας προηγούμενα μηνύματα",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Έλεγχος προηγούμενων μηνυμάτων",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Ανατρέχει σε προηγούμενα μηνύματα",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Σάρωση προηγούμενων μηνυμάτων",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Εξετάζοντας προηγούμενα μηνύματα",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Εξετάζοντας προηγούμενα μηνύματα",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Έλεγχος συμφραζομένων",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Έλεγχος συμφραζομένων",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Έλεγχος συμφραζομένων",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Ανάγνωση συμφραζομένων",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Έλεγχος συμφραζομένων",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Επανεξέταση συμφραζομένων",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Σάρωση συμφραζομένων",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Εξετάζοντας τα συμφραζόμενα",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Ενεργοποίηση πράκτορα",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Εκκίνηση πράκτορα",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Εκκίνηση πράκτορα",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Κλήση πράκτορα",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Σύνδεση με τον βοηθό AI",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "Γίνεται σύνδεση με τον βοηθό AI",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Ξυπνάμε τον πράκτορα",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Αρχικοποίηση πράκτορα",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Ξυπνώντας τον agent",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Εκκίνηση πράκτορα",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "Κλήση πράκτορα",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Ενεργοποίηση υπολογιστή",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Εκκίνηση υπολογιστή",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Σύνδεση υπολογιστή",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Αρχικοποίηση υπολογιστή",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Εκκίνηση υπολογιστή",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Εκκίνηση υπολογιστή",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Εκκίνηση υπολογιστή",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Αφύπνιση υπολογιστή",
+  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse":
+    "Χαράζοντας πορεία",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "Καταρτίζω σχέδιο",
+  "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan":
+    "Κατάρτιση σχεδίου",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Σχεδιάζω τα επόμενα βήματα",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "Σχεδιάζοντας τα βήματα",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Οργάνωση επόμενων βημάτων",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Σχεδιάζει",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Καθορίζοντας κατεύθυνση",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Καθορισμός πορείας",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Χαράσσοντας πλάνο",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Εξετάζοντας προσεγγίσεις",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Σχεδιάζω προσέγγιση",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Συλλογή λεπτομερειών",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Συλλογή λεπτομερειών",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Συμπλήρωση στοιχείων",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Συλλογή λεπτομερειών",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Συνθέτει τα στοιχεία",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Συγκεντρώνοντας λεπτομέρειες",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Συλλογή λεπτομερειών",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Τακτοποιεί λεπτομέρειες",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Επισκόπηση λεπτομερειών",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Αναζήτηση λεπτομερειών",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Χρειάζεται περισσότερο χρόνο από το συνηθισμένο",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Ακόμα το επεξεργάζεται",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Μπορείτε να ελέγξετε ξανά σε λίγο",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Καθορίζοντας κατεύθυνση",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Καθορισμός πορείας",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Χαράσσοντας πλάνο",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Εξετάζοντας προσεγγίσεις",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Σχεδιάζω προσέγγιση",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Συλλογή λεπτομερειών",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Συλλογή λεπτομερειών",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Συμπλήρωση στοιχείων",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Συλλογή λεπτομερειών",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Συνθέτει τα στοιχεία",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Συγκεντρώνοντας λεπτομέρειες",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Συλλογή λεπτομερειών",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Τακτοποιεί λεπτομέρειες",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Επισκόπηση λεπτομερειών",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Αναζήτηση λεπτομερειών",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Χρειάζεται περισσότερο χρόνο από το συνηθισμένο",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Ακόμα το επεξεργάζεται",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Μπορείτε να ελέγξετε ξανά σε λίγο",
   "widgets.hermes.workflow.canceled": "Η εργασία ακυρώθηκε",
   "widgets.hermes.workflow.canceledItemLabel": "Ακυρωμένη",
   "widgets.hermes.workflow.codeBlock.hideLines": "Κρύψτε τις γραμμές",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Δείτε όλες τις {lineCount} γραμμές",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Δείτε όλες τις {lineCount} γραμμές",
   "widgets.hermes.workflow.customWorked": "Έτρεξε για λίγο",
   "widgets.hermes.workflow.customWorking": "Σε εξέλιξη",
   "widgets.hermes.workflow.fileWorked": "Σαρωμένο έγγραφο",
   "widgets.hermes.workflow.fileWorking": "Σάρωση εγγράφου",
   "widgets.hermes.workflow.group.readingConnector": "Ανάγνωση {connectorName}",
-  "widgets.hermes.workflow.group.writingConnector": "Εγγραφή σε {connectorName}",
+  "widgets.hermes.workflow.group.writingConnector":
+    "Εγγραφή σε {connectorName}",
   "widgets.hermes.workflow.imageWorked": "Η εικόνα αναλύθηκε",
   "widgets.hermes.workflow.imageWorking": "Ανάλυση εικόνας",
   "widgets.hermes.workflow.preparingResponse": "Προετοιμασία απάντησης",
@@ -148,7 +220,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Εμφάνιση λιγότερων",
   "widgets.listView.showMore": "Εμφάνιση άλλων {count}",
   "widgets.radioGroup.options": "επιλογές",
-  "widgets.segmentedControl.selectAnOption": "Επιλέξτε μια επιλογή"
+  "widgets.segmentedControl.selectAnOption": "Επιλέξτε μια επιλογή",
 };
 
 export default messages;

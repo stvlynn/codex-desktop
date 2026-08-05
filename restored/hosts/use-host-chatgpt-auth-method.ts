@@ -19,7 +19,9 @@ export type UseHostChatgptAuthMethodPeers = {
 let peers: UseHostChatgptAuthMethodPeers | null = null;
 
 /** Wire useHostChatgptAuthMethod peers once companions land. */
-export function setUseHostChatgptAuthMethodPeers(next: UseHostChatgptAuthMethodPeers): void {
+export function setUseHostChatgptAuthMethodPeers(
+  next: UseHostChatgptAuthMethodPeers,
+): void {
   peers = next;
 }
 

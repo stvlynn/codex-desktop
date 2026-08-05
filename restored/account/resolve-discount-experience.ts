@@ -78,7 +78,9 @@ function maxDiscountPercentForQuantity(
 /**
  * Extra auto-reload discount vs one-time at shared quantity breakpoints (`cTs`).
  */
-export function additionalAutoReloadDiscountPercent(offer: NonNullable<CreditDiscountOffer>): number | null {
+export function additionalAutoReloadDiscountPercent(
+  offer: NonNullable<CreditDiscountOffer>,
+): number | null {
   const quantities = [
     ...new Set([
       1,

@@ -9,7 +9,9 @@ export type BindBindDeferredZYPeers = {
 let peers: BindBindDeferredZYPeers | null = null;
 
 /** Wire bindBindDeferredZY peers once companions land. */
-export function setBindBindDeferredZYPeers(next: BindBindDeferredZYPeers): void {
+export function setBindBindDeferredZYPeers(
+  next: BindBindDeferredZYPeers,
+): void {
   peers = next;
 }
 

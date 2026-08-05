@@ -30,6 +30,10 @@ export function deferredUiff() {
   }
 
   return peers.e(() => {
-    oFc = peers.c(), sFc = peers.r(peers.o(), 1), peers.RH(), cFc = peers.J(), lFc = 2500;
+    ((oFc = peers.c()),
+      (sFc = peers.r(peers.o(), 1)),
+      peers.RH(),
+      (cFc = peers.J()),
+      (lFc = 2500));
   });
 }

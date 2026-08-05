@@ -20,5 +20,7 @@ export function useSelectedHost(e: unknown, t: unknown) {
     throw new Error("useSelectedHost peers are not configured");
   }
 
-  return t == null || e === `local` || t.some(t => t.hostId === e) ? e : peers.H_;
+  return t == null || e === `local` || t.some((t) => t.hostId === e)
+    ? e
+    : peers.H_;
 }

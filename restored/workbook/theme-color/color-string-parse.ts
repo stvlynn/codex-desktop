@@ -29,9 +29,7 @@ function parseOpacityToken(token: string | undefined): number | undefined {
   }
   const num = Number(trimmed);
   if (!Number.isNaN(num))
-    return clampUnitInterval(
-      num > 1 && num <= 100 ? num / 100 : num,
-    );
+    return clampUnitInterval(num > 1 && num <= 100 ? num / 100 : num);
 }
 
 function isThemeSchemeColorNameLocal(name: string): boolean {
@@ -71,7 +69,6 @@ export function resolveNamedCssColor(
 }
 
 function parseHexColor(colorCfg2553: string) {
-
   if (!colorCfg2553.startsWith("#")) return null;
   let workbookBinding9920 = colorCfg2553.slice(1);
   if (!hexDigitsPattern.test(workbookBinding9920)) return null;
@@ -114,7 +111,6 @@ function parseHexColor(colorCfg2553: string) {
 }
 
 function parseRgbaColor(colorCfg7337: string) {
-
   let workbookBinding17721 = rgbaCssPattern.exec(colorCfg7337);
   if (!workbookBinding17721) return null;
   let workbookBinding17722 = clampByte(Number(workbookBinding17721[1])),
@@ -128,7 +124,6 @@ function parseRgbaColor(colorCfg7337: string) {
 }
 
 function parseNumericToken(colorCfg7436: string) {
-
   let workbookBinding17907 = colorCfg7436.trim();
   if (!workbookBinding17907) return;
   if (workbookBinding17907.endsWith("%")) {
@@ -144,7 +139,6 @@ function parseNumericToken(colorCfg7436: string) {
 }
 
 export function parseLightenDarkenSuffix(colorCfg3187: string) {
-
   let workbookBinding11359 = colorCfg3187.trim();
   if (!workbookBinding11359 || workbookBinding11359.includes("(")) return null;
   let workbookBinding11360 = workbookBinding11359,
@@ -186,11 +180,11 @@ export function parseLightenDarkenSuffix(colorCfg3187: string) {
 }
 
 export function parseColorString(colorCfg2584: string) {
-
   let workbookBinding9995 = colorCfg2584.trim();
   if (!workbookBinding9995) return null;
   let workbookBinding9996 = workbookBinding9995.toLowerCase(),
-    workbookBinding9997 = themeSchemeColorAliases[workbookBinding9996] ?? workbookBinding9996;
+    workbookBinding9997 =
+      themeSchemeColorAliases[workbookBinding9996] ?? workbookBinding9996;
   if (isThemeSchemeColorName(workbookBinding9997))
     return {
       type: colorTypeEnum.COLOR_TYPE_SCHEME,
@@ -240,12 +234,9 @@ export function parseColorString(colorCfg2584: string) {
 }
 
 export function normalizeHexColor(colorCfg10661: string): string {
-
   if (!colorCfg10661) return defaultHexBlack;
   let workbookBinding21163 = parseHexColor(
-    colorCfg10661.startsWith("#")
-      ? colorCfg10661
-      : `#${colorCfg10661}`,
+    colorCfg10661.startsWith("#") ? colorCfg10661 : `#${colorCfg10661}`,
   );
   return workbookBinding21163
     ? workbookBinding21163.hex
@@ -256,7 +247,6 @@ export function applyTransformToHex(
   colorCfg11072: string,
   colorCfg11073: Record<string, number> | null | undefined,
 ): string {
-
   let workbookBinding21584 = normalizeHexColor(colorCfg11072);
   return colorCfg11073
     ? rgbToHex(

@@ -23,7 +23,9 @@ export type ReferralInviteEligibilityPeers = {
 let peers: ReferralInviteEligibilityPeers | null = null;
 
 /** Wire ReferralInviteEligibility peers once companions land. */
-export function setReferralInviteEligibilityPeers(next: ReferralInviteEligibilityPeers): void {
+export function setReferralInviteEligibilityPeers(
+  next: ReferralInviteEligibilityPeers,
+): void {
   peers = next;
 }
 
@@ -35,6 +37,16 @@ export function ReferralInviteEligibility() {
     throw new Error("ReferralInviteEligibility peers are not configured");
   }
   return peers.e(() => {
-    oOs = peers.c(), peers.Hb(), peers.Ho(), sOs = peers.r(peers.o(), 1), peers.$u(), peers.aN(), peers.Kb(), peers.ed(), peers.tOs(), peers.iOs(), cOs = peers.J();
+    ((oOs = peers.c()),
+      peers.Hb(),
+      peers.Ho(),
+      (sOs = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.aN(),
+      peers.Kb(),
+      peers.ed(),
+      peers.tOs(),
+      peers.iOs(),
+      (cOs = peers.J()));
   });
 }

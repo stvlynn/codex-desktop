@@ -18,7 +18,10 @@ import { esmInit } from "../../runtime/rolldown-runtime";
 import { ensureCloudApiClientInit } from "../../settings/cloud-api-client";
 import { ensureSettingsQueryAtomsInit } from "../../settings/settings-ipc";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { decodeBase64ToBytes } from "../../utils/decode-base64-to-bytes";
 import { ensureAuthProviderInit, useAuth } from "../use-auth";
 import { useQuery } from "../use-query";
@@ -31,16 +34,27 @@ export function useWorkspaceUsersL(mint: unknown) {
     chipLabel: mint.email ?? undefined,
     id: `user:${mint.account_user_id}`,
     label: useWorkspaceUsersU(mint),
-    secondaryLabel: mint.email ?? undefined
+    secondaryLabel: mint.email ?? undefined,
   };
 }
 export function useWorkspaceUsersC({
   currentAccountUserId,
   existingAccountUserIds,
   selectedAccountUserIds,
-  workspaceUsers
-}: { currentAccountUserId?: unknown; existingAccountUserIds?: unknown; selectedAccountUserIds?: unknown; workspaceUsers?: unknown; [key: string]: unknown }) {
+  workspaceUsers,
+}: {
+  currentAccountUserId?: unknown;
+  existingAccountUserIds?: unknown;
+  selectedAccountUserIds?: unknown;
+  workspaceUsers?: unknown;
+  [key: string]: unknown;
+}) {
   let nova = new Set(existingAccountUserIds),
     olive = new Set(selectedAccountUserIds);
-  return workspaceUsers?.filter(prism => prism.account_user_id !== currentAccountUserId && !nova.has(prism.account_user_id) && !olive.has(prism.account_user_id));
+  return workspaceUsers?.filter(
+    (prism) =>
+      prism.account_user_id !== currentAccountUserId &&
+      !nova.has(prism.account_user_id) &&
+      !olive.has(prism.account_user_id),
+  );
 }

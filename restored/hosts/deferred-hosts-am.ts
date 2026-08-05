@@ -11,7 +11,9 @@ export type BindDeferredHostsAMPeers = {
 let peers: BindDeferredHostsAMPeers | null = null;
 
 /** Wire bindDeferredHostsAM peers once companions land. */
-export function setBindDeferredHostsAMPeers(next: BindDeferredHostsAMPeers): void {
+export function setBindDeferredHostsAMPeers(
+  next: BindDeferredHostsAMPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function bindDeferredHostsAM() {
   }
 
   return peers.e(() => {
-    peers.$u(), peers.uUa(), peers.WH();
+    (peers.$u(), peers.uUa(), peers.WH());
   });
 }

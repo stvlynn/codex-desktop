@@ -13,7 +13,9 @@ export type CloseBottomPanelOrOverlayPeers = {
 let peers: CloseBottomPanelOrOverlayPeers | null = null;
 
 /** Wire closeBottomPanelOrOverlay peers once companions land. */
-export function setCloseBottomPanelOrOverlayPeers(next: CloseBottomPanelOrOverlayPeers): void {
+export function setCloseBottomPanelOrOverlayPeers(
+  next: CloseBottomPanelOrOverlayPeers,
+): void {
   peers = next;
 }
 
@@ -27,7 +29,7 @@ export function closeBottomPanelOrOverlay(e: unknown, t: unknown) {
 
   if (t === `bottom`) {
     let t = e.get(peers.HD) === `bottom-panel` ? e.get(peers.Jir) : null;
-    peers.Ear(e, !1), t != null && peers.BD(e, t), peers.Bj();
+    (peers.Ear(e, !1), t != null && peers.BD(e, t), peers.Bj());
     return;
   }
   peers.jar(e, !1);

@@ -12,14 +12,19 @@ export type BuildAliasKeyedActivityIndexPeers = {
 let peers: BuildAliasKeyedActivityIndexPeers | null = null;
 
 /** Wire buildAliasKeyedActivityIndex peers once companions land. */
-export function setBuildAliasKeyedActivityIndexPeers(next: BuildAliasKeyedActivityIndexPeers): void {
+export function setBuildAliasKeyedActivityIndexPeers(
+  next: BuildAliasKeyedActivityIndexPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `_K` / internal `x5r`.
  */
-export function buildAliasKeyedActivityIndex(e: unknown, t: unknown = peers.JN) {
+export function buildAliasKeyedActivityIndex(
+  e: unknown,
+  t: unknown = peers.JN,
+) {
   if (peers == null) {
     throw new Error("buildAliasKeyedActivityIndex peers are not configured");
   }

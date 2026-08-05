@@ -4,7 +4,10 @@
 import type { FormatMessageIntl } from "./format-external-agent-import-provider-label";
 
 /** Localized label for an external-agent config migration item type. */
-export function formatExternalAgentConfigItemTypeLabel(intl: FormatMessageIntl, itemType: string): string | undefined {
+export function formatExternalAgentConfigItemTypeLabel(
+  intl: FormatMessageIntl,
+  itemType: string,
+): string | undefined {
   switch (itemType) {
     case "AGENTS_MD":
       return intl.formatMessage({

@@ -16,10 +16,29 @@ import { logProductEvent } from "../../analytics/log-product-event";
 import { AppInstallProgressDialog } from "../../apps/app-install-progress-dialog";
 import { ArtifactPreviewZoomToFitLabel } from "../../artifact/artifact-preview-zoom-to-fit-label";
 import { decayZoomPercent } from "../../artifact/clamp-zoom-percent";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { createPersistedAtom, ensurePersistedAtomInit } from "../../boundaries/persisted-atom";
-import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  createPersistedAtom,
+  ensurePersistedAtomInit,
+} from "../../boundaries/persisted-atom";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { WritingBlockRenderer } from "../../composer/writing-block-renderer";
 import { isOpenaiBundledId } from "../../config/is-openai-bundled-id";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
@@ -27,11 +46,17 @@ import { ensureClientCoordinationServiceInit } from "../../desktop/ensure-client
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { DEVELOPERS_OPENAI_COM_CODEX_APP_COMPUTER_USE_URL } from "../../docs/codex-doc-urls";
 import { CodexBuildEnvironment } from "../../env/codex-build-environment";
-import { MOBILE_MFA_SETUP_FEATURE_GATE_ID, REMOTE_CONTROL_PAIRING_FEATURE_GATE_ID } from "../../feature-gates/feature-gate-ids";
+import {
+  MOBILE_MFA_SETUP_FEATURE_GATE_ID,
+  REMOTE_CONTROL_PAIRING_FEATURE_GATE_ID,
+} from "../../feature-gates/feature-gate-ids";
 import { CONVERSATIONAL_ONBOARDING_COMPLETED_BY_ACCOUNT_ID_KEY } from "../../home/onboarding-storage-keys";
 import { ensureDebugPanelTurnFilesInit } from "../../hooks/debug-panel-turn-files";
 import { useEventCallback } from "../../hooks/use-event-callback";
-import { ensureUseHomeDirectoryInit, useHomeDirectory } from "../../hooks/use-home-directory";
+import {
+  ensureUseHomeDirectoryInit,
+  useHomeDirectory,
+} from "../../hooks/use-home-directory";
 import { useIsDarkAppearance } from "../../hooks/use-is-dark-appearance";
 import { UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { LOCAL_HOST_ID } from "../../hosts/local-host-id";
@@ -59,7 +84,10 @@ import { deferredT } from "../../ui/deferred-t";
 import { macOS4 } from "../../ui/mac-os4";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { noop } from "../../utils/noop";
-import { ensureSvgToDataUriInit, svgToDataUri } from "../../utils/svg-to-data-uri";
+import {
+  ensureSvgToDataUriInit,
+  svgToDataUri,
+} from "../../utils/svg-to-data-uri";
 import { codexMobileSetupDialogD } from "./part-1";
 import { codexMobileSetupDialogR } from "./part-4";
 /** split companion stub */
@@ -138,40 +166,66 @@ export function codexMobileSetupDialogT(falcon: unknown) {
       showStartSetupError,
       setupInProgress,
       step,
-      waitingHeading
+      waitingHeading,
     } = falcon,
     gamma = CodexPluginActionType(appScopeAtom),
     harbor = useIntl(),
-    {
-      platform
-    } = useHostPlatformModifierSymbol(),
+    { platform } = useHostPlatformModifierSymbol(),
     indigo = {
-      "aria-describedby": undefined
+      "aria-describedby": undefined,
     };
   let jade = copper(harbor, platform, step);
-  let kite = <RealtimeVoiceHostId className="sr-only">{jade}</RealtimeVoiceHostId>;
-  let lemon = onyx => {
+  let kite = (
+    <RealtimeVoiceHostId className="sr-only">{jade}</RealtimeVoiceHostId>
+  );
+  let lemon = (onyx) => {
     logProductEvent(gamma, CODEX_THREAD_OPEN_STREAM_ROLE_RESOLVED_TYPE, {
       action: "continue_on_chatgpt",
       step,
-      surface: "dialog"
+      surface: "dialog",
     });
     deferredUiEnt({
       event: onyx,
       href: "https://chatgpt.com/#settings/Security",
-      initiator: "open_in_browser_bridge"
+      initiator: "open_in_browser_bridge",
     });
   };
   let marble = () => {
     logProductEvent(gamma, CODEX_THREAD_OPEN_STREAM_ROLE_RESOLVED_TYPE, {
       action: "finish_setup",
       step,
-      surface: "dialog"
+      surface: "dialog",
     });
     onOpenChange(false);
   };
-  let nickel = <CodexMobileSetupDialogI hostId={hostId} onAllowHost={onAllowHost} onContinueOnChatGPT={lemon} onFinishSetup={marble} onSkip={onSkip} onStartSetup={onStartSetup} setupInProgress={setupInProgress} showAllowHostError={showAllowHostError} showStartSetupError={showStartSetupError} step={step} variant="dialog" waitingHeading={waitingHeading} />;
-  return <UsePointerSurfaceInteractionGate open={open} onOpenChange={onOpenChange} contentProps={indigo} contentClassName="max-h-[calc(100vh-32px)] overflow-y-auto" size="compact">{kite}{nickel}</UsePointerSurfaceInteractionGate>;
+  let nickel = (
+    <CodexMobileSetupDialogI
+      hostId={hostId}
+      onAllowHost={onAllowHost}
+      onContinueOnChatGPT={lemon}
+      onFinishSetup={marble}
+      onSkip={onSkip}
+      onStartSetup={onStartSetup}
+      setupInProgress={setupInProgress}
+      showAllowHostError={showAllowHostError}
+      showStartSetupError={showStartSetupError}
+      step={step}
+      variant="dialog"
+      waitingHeading={waitingHeading}
+    />
+  );
+  return (
+    <UsePointerSurfaceInteractionGate
+      open={open}
+      onOpenChange={onOpenChange}
+      contentProps={indigo}
+      contentClassName="max-h-[calc(100vh-32px)] overflow-y-auto"
+      size="compact"
+    >
+      {kite}
+      {nickel}
+    </UsePointerSurfaceInteractionGate>
+  );
 }
 function copper(pearl, quartz, river) {
   switch (river) {
@@ -179,35 +233,38 @@ function copper(pearl, quartz, river) {
       return pearl.formatMessage({
         id: "codexMobile.setupDialog.allowHost.title",
         defaultMessage: "Allow devices to control this computer?",
-        description: "Title for the Codex mobile allow host dialog state"
+        description: "Title for the Codex mobile allow host dialog state",
       });
     case "connected":
       return pearl.formatMessage({
         id: "codexMobile.setupDialog.connected.title",
         defaultMessage: "You’re connected",
-        description: "Title for the Codex mobile setup dialog connected state"
+        description: "Title for the Codex mobile setup dialog connected state",
       });
     case "initial":
-      return quartz === "windows" ? pearl.formatMessage({
-        id: "codexMobile.setupDialog.initial.title.windows",
-        defaultMessage: "Connect a device to this PC",
-        description: "Title for the Codex mobile setup dialog on Windows"
-      }) : pearl.formatMessage({
-        id: "codexMobile.setupDialog.initial.title.desktop",
-        defaultMessage: "Connect a device to this Mac",
-        description: "Title for the Codex mobile setup dialog on non-Windows desktop platforms"
-      });
+      return quartz === "windows"
+        ? pearl.formatMessage({
+            id: "codexMobile.setupDialog.initial.title.windows",
+            defaultMessage: "Connect a device to this PC",
+            description: "Title for the Codex mobile setup dialog on Windows",
+          })
+        : pearl.formatMessage({
+            id: "codexMobile.setupDialog.initial.title.desktop",
+            defaultMessage: "Connect a device to this Mac",
+            description:
+              "Title for the Codex mobile setup dialog on non-Windows desktop platforms",
+          });
     case "mfa-required":
       return pearl.formatMessage({
         id: "codexMobile.setupDialog.mfaRequired.title",
         defaultMessage: "Turn on Multi-Factor Authentication",
-        description: "Title for the Codex mobile MFA required dialog state"
+        description: "Title for the Codex mobile MFA required dialog state",
       });
     case "waiting":
       return pearl.formatMessage({
         id: "codexMobile.setupDialog.waiting.title",
         defaultMessage: "Approve on your device",
-        description: "Title for the Codex mobile setup dialog waiting state"
+        description: "Title for the Codex mobile setup dialog waiting state",
       });
   }
 }
@@ -225,7 +282,15 @@ export const codexMobileSetupDialogN = esmInit(() => {
   codexMobileSetupDialogA();
   echo = getJsxRuntime();
 });
-export { codexMobileSetupDialogA, codexMobileSetupDialogC, CodexMobileSetupDialogI, codexMobileSetupDialogL, codexMobileSetupDialogO, codexMobileSetupDialogS, codexMobileSetupDialogU };
+export {
+  codexMobileSetupDialogA,
+  codexMobileSetupDialogC,
+  CodexMobileSetupDialogI,
+  codexMobileSetupDialogL,
+  codexMobileSetupDialogO,
+  codexMobileSetupDialogS,
+  codexMobileSetupDialogU,
+};
 export { codexMobileSetupDialogA as ensureCodexMobileSetupDialogAtomsInit };
 export { codexMobileSetupDialogC as codexMobileSetupDialogConfig };
 export { codexMobileSetupDialogD as ensureCodexMobileSetupDialogDepsInit };

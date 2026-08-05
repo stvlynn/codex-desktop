@@ -13,7 +13,9 @@ export type BindDeferredConversationU3Peers = {
 let peers: BindDeferredConversationU3Peers | null = null;
 
 /** Wire bindDeferredConversationU3 peers once companions land. */
-export function setBindDeferredConversationU3Peers(next: BindDeferredConversationU3Peers): void {
+export function setBindDeferredConversationU3Peers(
+  next: BindDeferredConversationU3Peers,
+): void {
   peers = next;
 }
 
@@ -25,17 +27,17 @@ export function bindDeferredConversationU3() {
     throw new Error("bindDeferredConversationU3 peers are not configured");
   }
 
-  return peers.Ma(peers.hT, ({
-    get: e
-  }) => {
+  return peers.Ma(peers.hT, ({ get: e }) => {
     let t = e(peers.qFi),
       n = t.data ?? null;
-    return n == null ? peers.N3n(t) : e(peers.BFi, {
-      commonDir: n.commonDir,
-      enabled: !0,
-      hostConfig: e(peers.kI),
-      operationSource: `local_conversation_thread`,
-      root: n.root
-    });
+    return n == null
+      ? peers.N3n(t)
+      : e(peers.BFi, {
+          commonDir: n.commonDir,
+          enabled: !0,
+          hostConfig: e(peers.kI),
+          operationSource: `local_conversation_thread`,
+          root: n.root,
+        });
   });
 }

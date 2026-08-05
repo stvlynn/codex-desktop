@@ -11,6 +11,10 @@ export function bindThinCallWithUndefined(next: FourArgFn): void {
 }
 
 /** Call a 4-arg helper with an explicit `undefined` second argument. */
-export function thinCallWithUndefined(a: unknown, c: unknown, d: unknown): unknown {
+export function thinCallWithUndefined(
+  a: unknown,
+  c: unknown,
+  d: unknown,
+): unknown {
   return target?.(a, undefined, c, d);
 }

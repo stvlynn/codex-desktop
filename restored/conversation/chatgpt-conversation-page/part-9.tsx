@@ -8,7 +8,10 @@
 
 import { ensureAccountPlanQueryInit } from "../../account/ensure-account-plan-query-init";
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
-import { appActionSidebarProjectRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { CodexBrowserProfileImportCookieStatus } from "../../analytics/codex-browser-profile-import-cookie-status";
 import { CodexBrowserProfileImportPasswordStatus } from "../../analytics/codex-browser-profile-import-password-status";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
@@ -18,20 +21,116 @@ import { CodexPluginDirectoryEntrypoint } from "../../analytics/codex-plugin-dir
 import { CodexReferralInviteModalBackendErrorType } from "../../analytics/codex-referral-invite-modal-backend-error-type";
 import { shellPanelPinnedDerivedAtom } from "../../app-shell/shell-panel-pin";
 import { AppQueryClientProvider } from "../../app/app-query-client-provider";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { defaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationBranchAtom, chatgptConversationFlagsAtom, chatgptConversationLoadQueryAtom, chatgptConversationPreviewAtom, chatgptConversationServerIdAtom, chatgptConversationsGateAtom, chatgptConversationStatusAtom, chatgptConversationTitleAtom, chatgptThreadDerivedAtomBP, useStepsProseAtom, writingBlocksControllerAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_BF_Init, ensureComposerEsm_BI_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_II_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KF_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MF_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_Ytt_Init, ensureComposerEsm_ZI_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Jj_Init, ensureConversationPageEsm_Lo_Init, ensureConversationPageEsm_Mx_Init, ensureConversationPageEsm_Qa_Init, ensureConversationPageEsm_SP_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationBranchAtom,
+  chatgptConversationFlagsAtom,
+  chatgptConversationLoadQueryAtom,
+  chatgptConversationPreviewAtom,
+  chatgptConversationServerIdAtom,
+  chatgptConversationsGateAtom,
+  chatgptConversationStatusAtom,
+  chatgptConversationTitleAtom,
+  chatgptThreadDerivedAtomBP,
+  useStepsProseAtom,
+  writingBlocksControllerAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_AG_Init,
+  ensureComposerEsm_BF_Init,
+  ensureComposerEsm_BI_Init,
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_II_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_J0_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KF_Init,
+  ensureComposerEsm_M0_Init,
+  ensureComposerEsm_MF_Init,
+  ensureComposerEsm_ML_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_TI_Init,
+  ensureComposerEsm_XP_Init,
+  ensureComposerEsm_Ytt_Init,
+  ensureComposerEsm_ZI_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_FR_Init,
+  ensureConversationPageEsm_GS_Init,
+  ensureConversationPageEsm_GZ_Init,
+  ensureConversationPageEsm_Ist_Init,
+  ensureConversationPageEsm_Jj_Init,
+  ensureConversationPageEsm_Lo_Init,
+  ensureConversationPageEsm_Mx_Init,
+  ensureConversationPageEsm_Qa_Init,
+  ensureConversationPageEsm_SP_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { useSummaryContentShift } from "../conversation-source";
 import { isIterateeCall } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
-import { _useChatgptComposerControllerA, _useChatgptComposerControllerC, _useChatgptComposerControllerD, _useChatgptComposerControllerF, _useChatgptComposerControllerI, _useChatgptComposerControllerL, _useChatgptComposerControllerM, _useChatgptComposerControllerN, _useChatgptComposerControllerO, _useChatgptComposerControllerP, _useChatgptComposerControllerR, _useChatgptComposerControllerS, useChatgptComposerControllerA, useChatgptComposerControllerC, useChatgptComposerControllerD, useChatgptComposerControllerE, useChatgptComposerControllerF, useChatgptComposerControllerG, useChatgptComposerControllerH, useChatgptComposerControllerI, useChatgptComposerControllerJ, useChatgptComposerControllerK, useChatgptComposerControllerL, useChatgptComposerControllerM, useChatgptComposerControllerN, useChatgptComposerControllerO, useChatgptComposerControllerP, useChatgptComposerControllerR, useChatgptComposerControllerS, useChatgptComposerControllerT, useChatgptComposerControllerU, useChatgptComposerControllerUnderscore } from "../../composer/use-chatgpt-composer-controller";
+import {
+  _useChatgptComposerControllerA,
+  _useChatgptComposerControllerC,
+  _useChatgptComposerControllerD,
+  _useChatgptComposerControllerF,
+  _useChatgptComposerControllerI,
+  _useChatgptComposerControllerL,
+  _useChatgptComposerControllerM,
+  _useChatgptComposerControllerN,
+  _useChatgptComposerControllerO,
+  _useChatgptComposerControllerP,
+  _useChatgptComposerControllerR,
+  _useChatgptComposerControllerS,
+  useChatgptComposerControllerA,
+  useChatgptComposerControllerC,
+  useChatgptComposerControllerD,
+  useChatgptComposerControllerE,
+  useChatgptComposerControllerF,
+  useChatgptComposerControllerG,
+  useChatgptComposerControllerH,
+  useChatgptComposerControllerI,
+  useChatgptComposerControllerJ,
+  useChatgptComposerControllerK,
+  useChatgptComposerControllerL,
+  useChatgptComposerControllerM,
+  useChatgptComposerControllerN,
+  useChatgptComposerControllerO,
+  useChatgptComposerControllerP,
+  useChatgptComposerControllerR,
+  useChatgptComposerControllerS,
+  useChatgptComposerControllerT,
+  useChatgptComposerControllerU,
+  useChatgptComposerControllerUnderscore,
+} from "../../composer/use-chatgpt-composer-controller";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_CITATION_ID } from "../../chatgpt/chatgpt-citation-id";
 import { CHATGPT_CONTENT_REFERENCE_ID } from "../../chatgpt/chatgpt-content-reference-id";
@@ -50,7 +149,12 @@ import { ensureHasSeenRealtimeVoiceNuxAtomInit } from "../../home/realtime-voice
 import { ensureDebugPanelParsersInit } from "../../hooks/debug-panel-turn-files";
 import { ContextMenuRegistration } from "../../hooks/use-context-menu-registration";
 import { useEventCallback } from "../../hooks/use-event-callback";
-import { clampFloatingWindowRect, initFloatingWindowPointerDragConstants, resizeFloatingWindowRect, useFloatingWindowPointerDrag } from "../../hooks/use-floating-window-pointer-drag";
+import {
+  clampFloatingWindowRect,
+  initFloatingWindowPointerDragConstants,
+  resizeFloatingWindowRect,
+  useFloatingWindowPointerDrag,
+} from "../../hooks/use-floating-window-pointer-drag";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { HostFeatureConfigToggles } from "../../hosts/host-feature-config-toggles";
@@ -72,7 +176,11 @@ import { codexDirectiveMarkedExtensions } from "../../markdown/codex-directive-m
 import { markdownToPlainText } from "../../markdown/markdown-to-plain-text";
 import { rewriteFileCitationMarkers } from "../../markdown/rewrite-file-citation-markers";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
-import { findSidebarSectionElement, readScrollTop, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  readScrollTop,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
 import { NavigationAllowContext } from "../../navigation/navigation-allow-context";
@@ -94,16 +202,33 @@ import { openRightPanel } from "../../shell/open-right-panel";
 import { setRightPanelConversation } from "../../shell/set-right-panel-conversation";
 import { ProjectHoverCardBody } from "../../sidebar/project-hover-card-body";
 import { useBrowserExtensionPluginSetupQuery } from "../../skills/use-browser-extension-plugin-setup-query";
-import { initThreadPanelToggleButton, ThreadPanelToggleButton } from "../../thread/thread-panel-toggle-button";
+import {
+  initThreadPanelToggleButton,
+  ThreadPanelToggleButton,
+} from "../../thread/thread-panel-toggle-button";
 import { ThreadResourceCard } from "../../thread/thread-resource-card";
-import { initThreadScrollControllerContext, useThreadScrollController } from "../../thread/thread-scroll-controller-context";
-import { initThreadScrollLayout, ThreadScrollLayout } from "../../thread/thread-scroll-layout";
-import { initToggleThreadSummaryPanel, initToggleThreadSummaryPanelAtoms, toggleThreadSummaryPanel, ToggleThreadSummaryPanel } from "../../thread/toggle-thread-summary-panel";
+import {
+  initThreadScrollControllerContext,
+  useThreadScrollController,
+} from "../../thread/thread-scroll-controller-context";
+import {
+  initThreadScrollLayout,
+  ThreadScrollLayout,
+} from "../../thread/thread-scroll-layout";
+import {
+  initToggleThreadSummaryPanel,
+  initToggleThreadSummaryPanelAtoms,
+  toggleThreadSummaryPanel,
+  ToggleThreadSummaryPanel,
+} from "../../thread/toggle-thread-summary-panel";
 import { BrandedIcon } from "../../ui/branded-icon";
 import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { InsetBorderPanel } from "../../ui/inset-border-panel";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -124,11 +249,18 @@ import { slugifyLoose } from "../../utils/slugify-loose";
 import { sortedArrayFrom } from "../../utils/sorted-array-from";
 import { tryParseJsonText } from "../../utils/try-parse-json-text";
 import { waitForDoubleAnimationFrame } from "../../utils/wait-for-double-animation-frame";
-import { ensureImportSettingsCLInit, ensureSettingsGlyphI0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensureSettingsGlyphI0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { activateConversationSurface } from "../activate-conversation-surface";
 import { BrowserConversationPanel } from "../browser-conversation-panel";
 import { chatgptMessageFallbackId } from "../chatgpt-message-fallback-id";
-import { initChatgptTemporaryChatUi, TemporaryChatHeaderControl, TemporaryChatOnboarding } from "../chatgpt-temporary-chat-ui/index";
+import {
+  initChatgptTemporaryChatUi,
+  TemporaryChatHeaderControl,
+  TemporaryChatOnboarding,
+} from "../chatgpt-temporary-chat-ui/index";
 import { ConversationDiffSourceBridge } from "../conversation-diff-source-bridge";
 import { ensureConversationWorkRouteInit } from "../conversation-work-path";
 import { deferredConversationR } from "../deferred-conversation-r";
@@ -187,10 +319,7 @@ const kite: any = undefined;
 const lemon: any = undefined;
 const marble: any = undefined;
 function nickel(onyx) {
-  let {
-      conversationId,
-      isTemporaryChat
-    } = onyx,
+  let { conversationId, isTemporaryChat } = onyx,
     pearl = CodexPluginActionType(appScopeAtom),
     [quartz, river] = marble.useState(false),
     [slate, timber] = marble.useState(null),
@@ -199,41 +328,73 @@ function nickel(onyx) {
     xenon = AppInitialNR(),
     yellow = useNavigate(),
     zinc = useColdNavigate(),
-    amber = CodexBrowserSurfaceActionType(chatgptConversationServerIdAtom, conversationId);
+    amber = CodexBrowserSurfaceActionType(
+      chatgptConversationServerIdAtom,
+      conversationId,
+    );
   CodexBrowserSurfaceActionType(useChatgptComposerControllerK, amber);
   let basalt = CodexBrowserSurfaceActionType(isCustomAgentId, conversationId),
     cedar = amber ?? conversationId,
-    daisy = CodexBrowserSurfaceActionType(chatgptConversationBranchAtom, conversationId),
-    ember = CodexBrowserSurfaceActionType(chatgptConversationFlagsAtom, conversationId),
+    daisy = CodexBrowserSurfaceActionType(
+      chatgptConversationBranchAtom,
+      conversationId,
+    ),
+    ember = CodexBrowserSurfaceActionType(
+      chatgptConversationFlagsAtom,
+      conversationId,
+    ),
     flint = CodexBrowserSurfaceActionType(rebaseConversationId, conversationId),
-    garnet = CodexBrowserSurfaceActionType(chatgptThreadDerivedAtomBP, conversationId),
+    garnet = CodexBrowserSurfaceActionType(
+      chatgptThreadDerivedAtomBP,
+      conversationId,
+    ),
     hazel = CodexBrowserSurfaceActionType(AppInitialVP, conversationId),
-    ivory = CodexBrowserSurfaceActionType(chatgptConversationStatusAtom, conversationId),
+    ivory = CodexBrowserSurfaceActionType(
+      chatgptConversationStatusAtom,
+      conversationId,
+    ),
     jasper = CodexBrowserSurfaceActionType(AppInitialUP, conversationId),
     kelp = CodexBrowserSurfaceActionType(AppInitialKP, conversationId),
-    lotus = CodexBrowserSurfaceActionType(patchConversationMessage, conversationId),
-    mint = CodexPluginActionResult(DeferredNavigationFTStub(AppInitialOP, amber)),
+    lotus = CodexBrowserSurfaceActionType(
+      patchConversationMessage,
+      conversationId,
+    ),
+    mint = CodexPluginActionResult(
+      DeferredNavigationFTStub(AppInitialOP, amber),
+    ),
     nova = CodexBrowserSurfaceActionType(AppInitialMP, conversationId),
-    olive = CodexBrowserSurfaceActionType(branchConversationAtMessage, conversationId),
-    prism = CodexBrowserSurfaceActionType(chatgptConversationTitleAtom, conversationId),
-    quill = CodexBrowserSurfaceActionType(chatgptConversationServerIdAtom, conversationId),
-    reef = CodexBrowserSurfaceActionType(chatgptConversationPreviewAtom, conversationId),
+    olive = CodexBrowserSurfaceActionType(
+      branchConversationAtMessage,
+      conversationId,
+    ),
+    prism = CodexBrowserSurfaceActionType(
+      chatgptConversationTitleAtom,
+      conversationId,
+    ),
+    quill = CodexBrowserSurfaceActionType(
+      chatgptConversationServerIdAtom,
+      conversationId,
+    ),
+    reef = CodexBrowserSurfaceActionType(
+      chatgptConversationPreviewAtom,
+      conversationId,
+    ),
     sage = ivory === "streaming",
     topaz = useStepsProseAtom() === THREAD_DETAIL_LEVEL_STEPS_PROSE,
     ultra = useSummaryContentShift(conversationId),
-    vapor = ink => {
+    vapor = (ink) => {
       AppInitialDP(pearl, conversationId, ink);
       ensureConversationPageEsm_SP_Init(pearl, conversationId, {
-        isTemporaryChat
+        isTemporaryChat,
       });
     };
   let wheat = vapor,
-    yarn = jadeite => {
+    yarn = (jadeite) => {
       AppInitialXP(pearl, conversationId, jadeite, {
-        isTemporaryChat
+        isTemporaryChat,
       });
       ensureConversationPageEsm_SP_Init(pearl, conversationId, {
-        isTemporaryChat
+        isTemporaryChat,
       });
     };
   let zephyr = yarn,
@@ -241,7 +402,7 @@ function nickel(onyx) {
     bloom = mint.data,
     coral = () => AppInitialFN(pearl.queryClient, conversationId);
   let [drift] = marble.useState(coral),
-    _e = bloom == null ? drift?.projectId ?? null : AppInitialIN(bloom);
+    _e = bloom == null ? (drift?.projectId ?? null) : AppInitialIN(bloom);
   let eagle = _e,
     frost = eagle != null,
     glide = () => {
@@ -254,77 +415,104 @@ function nickel(onyx) {
     enabled: frost,
     queryFn: glide,
     queryKey: honey,
-    staleTime: readScrollTop.ONE_MINUTE
+    staleTime: readScrollTop.ONE_MINUTE,
   };
-  let {
-      data
-    } = useQuery(iris),
+  let { data } = useQuery(iris),
     jewel = data?.gizmo.display.name.trim() || null;
   let knoll = jewel,
     lunar = data?.gizmo.display.theme,
-    moss = <UseChronicleSettingsSection {...{
-      className: "icon-xs shrink-0"
-    }} />;
+    moss = (
+      <UseChronicleSettingsSection
+        {...{
+          className: "icon-xs shrink-0",
+        }}
+      />
+    );
   let north = data?.gizmo.display.emoji,
-    orbit = <BrandedIcon className="icon-xs" color={lunar} fallbackIcon={moss} icon={north} />;
+    orbit = (
+      <BrandedIcon
+        className="icon-xs"
+        color={lunar}
+        fallbackIcon={moss}
+        icon={north}
+      />
+    );
   let pine = orbit,
-    {
-      renderedConversation,
-      renderedTurns,
-      showPendingLoadingMessage
-    } = useChatgptComposerControllerJ({
-      conversation: bloom,
-      isStreaming: sage,
-      mode: "conversation",
-      moderationDisclaimersByMessageId: hazel,
-      pendingSubmission: quill ? {
-        attachments: olive,
-        prompt: nova,
-        selectedTextAttachments: prism
-      } : null,
-      threadCurrentNode: daisy,
-      threadMapping: garnet
-    }),
+    { renderedConversation, renderedTurns, showPendingLoadingMessage } =
+      useChatgptComposerControllerJ({
+        conversation: bloom,
+        isStreaming: sage,
+        mode: "conversation",
+        moderationDisclaimersByMessageId: hazel,
+        pendingSubmission: quill
+          ? {
+              attachments: olive,
+              prompt: nova,
+              selectedTextAttachments: prism,
+            }
+          : null,
+        threadCurrentNode: daisy,
+        threadMapping: garnet,
+      }),
     quest = echo({
-      messages: renderedConversation == null ? [] : walkChatgptMessageTree(renderedConversation),
+      messages:
+        renderedConversation == null
+          ? []
+          : walkChatgptMessageTree(renderedConversation),
       pendingAttachments: quill ? olive : [],
-      turns: renderedTurns
+      turns: renderedTurns,
     }),
     ridge = amber ?? conversationId,
     storm = (bloom?.conversation_origin ?? ember) === "tpp",
     tide = storm && lotus == null,
     unity = storm && renderedTurns.at(-1)?.turn.status === "in_progress",
-    vale = kelp ?? (bloom == null ? drift?.title ?? null : bloom.title?.trim() || null);
+    vale =
+      kelp ??
+      (bloom == null ? (drift?.title ?? null) : bloom.title?.trim() || null);
   let wave = vale,
-    apex = wave ?? willow.formatMessage({
-      id: "chatgptConversations.untitled",
-      defaultMessage: "Untitled conversation",
-      description: "Fallback title for a ChatGPT conversation without a title"
-    });
+    apex =
+      wave ??
+      willow.formatMessage({
+        id: "chatgptConversations.untitled",
+        defaultMessage: "Untitled conversation",
+        description:
+          "Fallback title for a ChatGPT conversation without a title",
+      });
   let brook = apex,
     cliff = flint ?? reef,
     dusk = amber ?? conversationId,
     elm = amber != null && mint.isLoading && !acorn,
     fern = amber ?? (isLocalChatgptId(conversationId) ? null : conversationId);
   let grove = fern,
-    hill = kernel => {
-      grove == null || slate != null || (timber(kernel), AppInitialPP(pearl, {
-        conversationId: grove,
-        messageId: kernel
-      }).then(value => {
-        let {
-          clientThreadId
-        } = value;
-        xenon() && yellow(rewriteFileCitationMarkers(clientThreadId, {
-          isTemporaryChat
-        }));
-      }).catch(() => {
-        xenon() && (timber(null), pearl.get(toastAtom).danger(willow.formatMessage({
-          id: "chatgptConversations.branchFailed",
-          defaultMessage: "Failed to create chat",
-          description: "Error shown when ChatGPT cannot continue a conversation in a new chat"
-        })));
-      }));
+    hill = (kernel) => {
+      grove == null ||
+        slate != null ||
+        (timber(kernel),
+        AppInitialPP(pearl, {
+          conversationId: grove,
+          messageId: kernel,
+        })
+          .then((value) => {
+            let { clientThreadId } = value;
+            xenon() &&
+              yellow(
+                rewriteFileCitationMarkers(clientThreadId, {
+                  isTemporaryChat,
+                }),
+              );
+          })
+          .catch(() => {
+            xenon() &&
+              (timber(null),
+              pearl.get(toastAtom).danger(
+                willow.formatMessage({
+                  id: "chatgptConversations.branchFailed",
+                  defaultMessage: "Failed to create chat",
+                  description:
+                    "Error shown when ChatGPT cannot continue a conversation in a new chat",
+                }),
+              ));
+          }));
     };
   let at = useEventCallback(hill),
     isle = async (leaf, maple) => {
@@ -333,36 +521,47 @@ function nickel(onyx) {
           conversationId,
           isTemporaryChat,
           messageId: leaf,
-          prompt: maple
+          prompt: maple,
         });
       } catch (nimbus) {
         let opal = nimbus;
-        throw pearl.get(toastAtom).danger(willow.formatMessage({
-          id: "chatgptConversations.editMessageFailed",
-          defaultMessage: "Failed to edit message",
-          description: "Toast shown in a Chat mode conversation when submitting an edit to the latest user message fails"
-        })), opal;
+        throw (
+          pearl.get(toastAtom).danger(
+            willow.formatMessage({
+              id: "chatgptConversations.editMessageFailed",
+              defaultMessage: "Failed to edit message",
+              description:
+                "Toast shown in a Chat mode conversation when submitting an edit to the latest user message fails",
+            }),
+          ),
+          opal
+        );
       }
     };
   let juniper = useEventCallback(isle),
     lagoon = () => {
-      umbra || (violet(true), useChatgptComposerControllerL(pearl, {
-        chatGptThreadId: conversationId,
-        conversationTitle: brook
-      }).then(value => {
-        if (xenon()) {
-          if (value != null) {
-            zinc(value);
-            return;
+      umbra ||
+        (violet(true),
+        useChatgptComposerControllerL(pearl, {
+          chatGptThreadId: conversationId,
+          conversationTitle: brook,
+        }).then((value) => {
+          if (xenon()) {
+            if (value != null) {
+              zinc(value);
+              return;
+            }
+            violet(false);
+            pearl.get(toastAtom).danger(
+              willow.formatMessage({
+                id: "chatgptConversations.handoffFailed",
+                defaultMessage: "Failed to create chat",
+                description:
+                  "Error shown when ChatGPT cannot hand off a conversation to a task",
+              }),
+            );
           }
-          violet(false);
-          pearl.get(toastAtom).danger(willow.formatMessage({
-            id: "chatgptConversations.handoffFailed",
-            defaultMessage: "Failed to create chat",
-            description: "Error shown when ChatGPT cannot hand off a conversation to a task"
-          }));
-        }
-      }));
+        }));
     };
   let meadow = lagoon,
     nest = useChatgptComposerControllerM({
@@ -370,160 +569,265 @@ function nickel(onyx) {
       conversationId,
       errorMessage: cliff,
       branchingMessageId: slate,
-      onEditLatestUserMessage: grove != null && !storm && !sage && !quill ? juniper : undefined,
+      onEditLatestUserMessage:
+        grove != null && !storm && !sage && !quill ? juniper : undefined,
       onFork: grove == null ? undefined : at,
       renderedTurns,
       safetyReview: jasper,
-      showPendingLoadingMessage
+      showPendingLoadingMessage,
     }),
     oak = daisy ?? bloom?.current_node ?? null,
     petal = willow.formatMessage({
       id: "chatgptConversations.loadingConversation",
       defaultMessage: "Loading ChatGPT conversation",
-      description: "Accessible loading status shown while a ChatGPT conversation is loading in Codex Desktop"
+      description:
+        "Accessible loading status shown while a ChatGPT conversation is loading in Codex Desktop",
     });
   let quiet = petal,
-    _t = <_useChatgptComposerControllerR {...{
-      conversationId
-    }} />;
-  let rain = <AppIconAZ.MainContentLayout {...{
-    layout: "thread-edge-scroll"
-  }} />;
-  let seed = <AppIconAZ.Header {...{
-    children: isTemporaryChat ? <TemporaryChatHeaderControl {...{
-      isIndicator: true,
-      isTemporaryChat
-    }} /> : <EnsureAppIconKhInit {...{
-      project: eagle == null ? undefined : {
-        hoverCardContent: <Alpha {...{
-          projectIcon: pine,
-          projectId: eagle,
-          projectName: knoll
-        }} />,
-        icon: pine,
-        name: knoll
-      },
-      start: <span className="min-w-0 truncate">
-                  {brook}
-                </span>,
-      startActions: <>
-                  {tide ? <OptionalTooltip {...{
-          side: "bottom",
-          sideOffset: 6,
-          tooltipContent: <MemoizedFormattedMessage {...{
-            id: "chatgptConversations.header.cloudTaskTooltip",
-            defaultMessage: "This chat was started in the cloud, so ChatGPT won't be able to access files on your computer unless you add them to your conversation",
-            description: "Tooltip explaining file access limitations for a ChatGPT task that was started in the cloud"
-          }} />,
-          children: <span aria-label={willow.formatMessage({
-            id: "chatgptConversations.header.cloudTask",
-            defaultMessage: "Cloud chat",
-            description: "Accessible label for the cloud task indicator in a ChatGPT conversation header"
-          })} className="pointer-events-auto inline-flex shrink-0" role="img">
+    _t = (
+      <_useChatgptComposerControllerR
+        {...{
+          conversationId,
+        }}
+      />
+    );
+  let rain = (
+    <AppIconAZ.MainContentLayout
+      {...{
+        layout: "thread-edge-scroll",
+      }}
+    />
+  );
+  let seed = (
+    <AppIconAZ.Header
+      {...{
+        children: isTemporaryChat ? (
+          <TemporaryChatHeaderControl
+            {...{
+              isIndicator: true,
+              isTemporaryChat,
+            }}
+          />
+        ) : (
+          <EnsureAppIconKhInit
+            {...{
+              project:
+                eagle == null
+                  ? undefined
+                  : {
+                      hoverCardContent: (
+                        <Alpha
+                          {...{
+                            projectIcon: pine,
+                            projectId: eagle,
+                            projectName: knoll,
+                          }}
+                        />
+                      ),
+                      icon: pine,
+                      name: knoll,
+                    },
+              start: <span className="min-w-0 truncate">{brook}</span>,
+              startActions: (
+                <>
+                  {tide ? (
+                    <OptionalTooltip
+                      {...{
+                        side: "bottom",
+                        sideOffset: 6,
+                        tooltipContent: (
+                          <MemoizedFormattedMessage
+                            {...{
+                              id: "chatgptConversations.header.cloudTaskTooltip",
+                              defaultMessage:
+                                "This chat was started in the cloud, so ChatGPT won't be able to access files on your computer unless you add them to your conversation",
+                              description:
+                                "Tooltip explaining file access limitations for a ChatGPT task that was started in the cloud",
+                            }}
+                          />
+                        ),
+                        children: (
+                          <span
+                            aria-label={willow.formatMessage({
+                              id: "chatgptConversations.header.cloudTask",
+                              defaultMessage: "Cloud chat",
+                              description:
+                                "Accessible label for the cloud task indicator in a ChatGPT conversation header",
+                            })}
+                            className="pointer-events-auto inline-flex shrink-0"
+                            role="img"
+                          >
                             <AppInitialD className="icon-2xs no-drag shrink-0 translate-x-px text-token-description-foreground" />
                           </span>
-        }} /> : null}
-                  {<Bravo {...{
-          isHandoffPending: umbra,
-          isPinned: bloom?.is_starred === true,
-          onHandoff: amber == null || basalt ? undefined : meadow,
-          onOpenInQuickChat: () => {
-            activateConversationSurface(pearl, conversationId, brook);
-          },
-          onTogglePin: bloom == null ? undefined : () => {
-            toggleConversationPinned({
-              scope: pearl,
-              conversation: {
-                gizmo_id: bloom.gizmo_id,
-                id: bloom.conversation_id,
-                is_archived: bloom.is_archived,
-                is_starred: bloom.is_starred,
-                title: bloom.title
-              }
-            }).catch(gamma);
-          },
-          onToggleDebugPanel: () => {
-            river(falcon);
-          },
-          serverConversationId: amber,
-          showHandoff: topaz && !storm
-        }} />}
+                        ),
+                      }}
+                    />
+                  ) : null}
+                  {
+                    <Bravo
+                      {...{
+                        isHandoffPending: umbra,
+                        isPinned: bloom?.is_starred === true,
+                        onHandoff: amber == null || basalt ? undefined : meadow,
+                        onOpenInQuickChat: () => {
+                          activateConversationSurface(
+                            pearl,
+                            conversationId,
+                            brook,
+                          );
+                        },
+                        onTogglePin:
+                          bloom == null
+                            ? undefined
+                            : () => {
+                                toggleConversationPinned({
+                                  scope: pearl,
+                                  conversation: {
+                                    gizmo_id: bloom.gizmo_id,
+                                    id: bloom.conversation_id,
+                                    is_archived: bloom.is_archived,
+                                    is_starred: bloom.is_starred,
+                                    title: bloom.title,
+                                  },
+                                }).catch(gamma);
+                              },
+                        onToggleDebugPanel: () => {
+                          river(falcon);
+                        },
+                        serverConversationId: amber,
+                        showHandoff: topaz && !storm,
+                      }}
+                    />
+                  }
                 </>
-    }} />
-  }} />;
-  let trail = isTemporaryChat ? null : <AppIconAZ.HeaderAction {...{
-    actionId: "chatgpt-conversation-share",
-    align: "end",
-    order: 100,
-    children: <Copper {...{
-      currentNodeId: oak,
-      isStreaming: sage,
-      serverConversationId: amber,
-      title: wave
-    }} />
-  }} />;
-  let urn = <Delta {...{
-    conversationId: ridge,
-    data: quest,
-    shouldBlockExternalEgress: basalt
-  }} />;
-  let vine = <Echo {...{
-    conversationId
-  }} />;
-  let wind = <ElectronOnly {...{
-    electron: true,
-    children: [rain, seed, trail, urn, vine]
-  }} />;
+              ),
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let trail = isTemporaryChat ? null : (
+    <AppIconAZ.HeaderAction
+      {...{
+        actionId: "chatgpt-conversation-share",
+        align: "end",
+        order: 100,
+        children: (
+          <Copper
+            {...{
+              currentNodeId: oak,
+              isStreaming: sage,
+              serverConversationId: amber,
+              title: wave,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let urn = (
+    <Delta
+      {...{
+        conversationId: ridge,
+        data: quest,
+        shouldBlockExternalEgress: basalt,
+      }}
+    />
+  );
+  let vine = (
+    <Echo
+      {...{
+        conversationId,
+      }}
+    />
+  );
+  let wind = (
+    <ElectronOnly
+      {...{
+        electron: true,
+        children: [rain, seed, trail, urn, vine],
+      }}
+    />
+  );
   let yarrow = sage || quill,
     azure = mint.isError && !acorn,
     birch = renderedTurns.length > 0,
-    canyon = <Falcon {...{
-      contentX: ultra.contentShift,
-      conversationId,
-      conversationLoadingLabel: quiet,
-      entries: nest,
-      errorMessage: cliff,
-      hasLoadError: azure,
-      hasRenderableTurns: birch,
-      isConversationLoading: elm,
-      disableSubmitForActiveTppTurn: unity,
-      isTemporaryChat,
-      scrollStateConversationId: cedar,
-      showPendingLoadingMessage,
-      onAddSelectedText: wheat
-    }} />;
-  let dew = <Gamma {...{
-    conversationId: ridge,
-    data: quest,
-    display: ultra,
-    shouldBlockExternalEgress: basalt
-  }} />;
-  let ever = quartz ? <Harbor {...{
-    conversation: renderedConversation,
-    conversationId: dusk,
-    onClose: () => {
-      river(false);
-    }
-  }} /> : null;
-  let field = <ConversationDiffSourceBridge {...{
-    children: <div className="flex h-full min-h-0 flex-col">
+    canyon = (
+      <Falcon
+        {...{
+          contentX: ultra.contentShift,
+          conversationId,
+          conversationLoadingLabel: quiet,
+          entries: nest,
+          errorMessage: cliff,
+          hasLoadError: azure,
+          hasRenderableTurns: birch,
+          isConversationLoading: elm,
+          disableSubmitForActiveTppTurn: unity,
+          isTemporaryChat,
+          scrollStateConversationId: cedar,
+          showPendingLoadingMessage,
+          onAddSelectedText: wheat,
+        }}
+      />
+    );
+  let dew = (
+    <Gamma
+      {...{
+        conversationId: ridge,
+        data: quest,
+        display: ultra,
+        shouldBlockExternalEgress: basalt,
+      }}
+    />
+  );
+  let ever = quartz ? (
+    <Harbor
+      {...{
+        conversation: renderedConversation,
+        conversationId: dusk,
+        onClose: () => {
+          river(false);
+        },
+      }}
+    />
+  ) : null;
+  let field = (
+    <ConversationDiffSourceBridge
+      {...{
+        children: (
+          <div className="flex h-full min-h-0 flex-col">
             {canyon}
             {dew}
             {ever}
           </div>
-  }} />;
-  let grain = <DeferredNavigationFTStub {...{
-    disabled: yarrow,
-    onFilesDropped: zephyr,
-    children: field
-  }} />;
-  let haven = <InitChatgptTemporaryChatUi {...{
-    isTemporaryChat
-  }} />;
-  return <>
+        ),
+      }}
+    />
+  );
+  let grain = (
+    <DeferredNavigationFTStub
+      {...{
+        disabled: yarrow,
+        onFilesDropped: zephyr,
+        children: field,
+      }}
+    />
+  );
+  let haven = (
+    <InitChatgptTemporaryChatUi
+      {...{
+        isTemporaryChat,
+      }}
+    />
+  );
+  return (
+    <>
       {_t}
       {wind}
       {grain}
       {haven}
-    </>;
+    </>
+  );
 }

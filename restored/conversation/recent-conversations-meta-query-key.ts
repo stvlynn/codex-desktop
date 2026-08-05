@@ -8,7 +8,9 @@ export type RecentConversationsMetaQueryKeyPeers = {
 let peers: RecentConversationsMetaQueryKeyPeers | null = null;
 
 /** Wire recentConversationsMetaQueryKey peers once companions land. */
-export function setRecentConversationsMetaQueryKeyPeers(next: RecentConversationsMetaQueryKeyPeers): void {
+export function setRecentConversationsMetaQueryKeyPeers(
+  next: RecentConversationsMetaQueryKeyPeers,
+): void {
   peers = next;
 }
 

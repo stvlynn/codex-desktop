@@ -16,7 +16,9 @@ export type BindDiffStatDigitStack0Peers = {
 let peers: BindDiffStatDigitStack0Peers | null = null;
 
 /** Wire bindDiffStatDigitStack0 peers once companions land. */
-export function setBindDiffStatDigitStack0Peers(next: BindDiffStatDigitStack0Peers): void {
+export function setBindDiffStatDigitStack0Peers(
+  next: BindDiffStatDigitStack0Peers,
+): void {
   peers = next;
 }
 
@@ -29,17 +31,22 @@ export function bindDiffStatDigitStack0() {
   }
 
   return peers.e(() => {
-    Kzo = peers.c(), peers.sd(), peers.$u(), Uq = peers.J(), qzo = [`0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`], Jzo = {
-      0: `diff-stat-digit-stack-0`,
-      1: `diff-stat-digit-stack-1`,
-      2: `diff-stat-digit-stack-2`,
-      3: `diff-stat-digit-stack-3`,
-      4: `diff-stat-digit-stack-4`,
-      5: `diff-stat-digit-stack-5`,
-      6: `diff-stat-digit-stack-6`,
-      7: `diff-stat-digit-stack-7`,
-      8: `diff-stat-digit-stack-8`,
-      9: `diff-stat-digit-stack-9`
-    };
+    ((Kzo = peers.c()),
+      peers.sd(),
+      peers.$u(),
+      (Uq = peers.J()),
+      (qzo = [`0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`]),
+      (Jzo = {
+        0: `diff-stat-digit-stack-0`,
+        1: `diff-stat-digit-stack-1`,
+        2: `diff-stat-digit-stack-2`,
+        3: `diff-stat-digit-stack-3`,
+        4: `diff-stat-digit-stack-4`,
+        5: `diff-stat-digit-stack-5`,
+        6: `diff-stat-digit-stack-6`,
+        7: `diff-stat-digit-stack-7`,
+        8: `diff-stat-digit-stack-8`,
+        9: `diff-stat-digit-stack-9`,
+      }));
   });
 }

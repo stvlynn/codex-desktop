@@ -6,7 +6,11 @@ import { EMU_TO_CSS_PX } from "../text-style";
 
 void EMU_TO_CSS_PX;
 
-export function pathCommandsToClipPoints(spIn1659: any, spIn1660: any, spIn1661: any) {
+export function pathCommandsToClipPoints(
+  spIn1659: any,
+  spIn1660: any,
+  spIn1661: any,
+) {
   let spBind7920 = [],
     spBind7921 = {
       x: 0,
@@ -15,14 +19,8 @@ export function pathCommandsToClipPoints(spIn1659: any, spIn1660: any, spIn1661:
   for (let spBind8417 of spIn1659)
     if (spBind8417.moveTo) {
       spBind7921 = {
-        x:
-          Number(spBind8417.moveTo.x ?? 0) *
-          EMU_TO_CSS_PX *
-          spIn1660,
-        y:
-          Number(spBind8417.moveTo.y ?? 0) *
-          EMU_TO_CSS_PX *
-          spIn1661,
+        x: Number(spBind8417.moveTo.x ?? 0) * EMU_TO_CSS_PX * spIn1660,
+        y: Number(spBind8417.moveTo.y ?? 0) * EMU_TO_CSS_PX * spIn1661,
       };
       spBind7920.push({
         cmd: "moveTo",

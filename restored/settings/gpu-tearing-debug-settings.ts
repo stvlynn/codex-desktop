@@ -50,7 +50,9 @@ export let gpuTearingDebugSettingsAtom: {
 });
 
 /** Bundle `mSu` / export `O` — ensure AppScope + atom defaults exist. */
-export function ensureGpuTearingDebugSettingsInit(_scope: AppScopeBrand = appScopeAtom): void {
+export function ensureGpuTearingDebugSettingsInit(
+  _scope: AppScopeBrand = appScopeAtom,
+): void {
   ensureAppScopeInit();
   if (gpuTearingDebugSettingsAtom?.get == null) {
     gpuTearingDebugSettingsAtom = createScopedSignal(appScopeAtom, {
@@ -63,7 +65,11 @@ export function ensureGpuTearingDebugSettingsInit(_scope: AppScopeBrand = appSco
  * Patch one GPU tearing debug flag through the AppScope store
  * (bundle `dSu` / export `k`).
  */
-export function setGpuTearingDebugSetting(store: GpuTearingDebugStore, key: GpuTearingDebugSettingKey, value: boolean): void {
+export function setGpuTearingDebugSetting(
+  store: GpuTearingDebugStore,
+  key: GpuTearingDebugSettingKey,
+  value: boolean,
+): void {
   store.set(gpuTearingDebugSettingsAtom, (prev) => ({
     ...prev,
     [key]: value,

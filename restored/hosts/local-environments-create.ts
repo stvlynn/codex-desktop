@@ -15,7 +15,9 @@ export type LocalEnvironmentsCreatePeers = {
 let peers: LocalEnvironmentsCreatePeers | null = null;
 
 /** Wire localEnvironmentsCreate peers once companions land. */
-export function setLocalEnvironmentsCreatePeers(next: LocalEnvironmentsCreatePeers): void {
+export function setLocalEnvironmentsCreatePeers(
+  next: LocalEnvironmentsCreatePeers,
+): void {
   peers = next;
 }
 
@@ -28,13 +30,20 @@ export function localEnvironmentsCreate() {
   }
 
   return peers.e(() => {
-    peers.Sl(), f5s = `local-environments/create`, p5s = `/settings/${peers.f5s}`, m5s = peers.sl({
-      hostId: peers.X().min(1),
-      reopenStableWorktreeId: peers.X().min(1).optional(),
-      returnTo: peers.X().startsWith(`/`).refine(e => !peers.e.startsWith(`//`))
-    }), h5s = peers.sl({
-      configPath: peers.X().min(1).nullable(),
-      workspaceRoot: peers.X().min(1)
-    });
+    (peers.Sl(),
+      (f5s = `local-environments/create`),
+      (p5s = `/settings/${peers.f5s}`),
+      (m5s = peers.sl({
+        hostId: peers.X().min(1),
+        reopenStableWorktreeId: peers.X().min(1).optional(),
+        returnTo: peers
+          .X()
+          .startsWith(`/`)
+          .refine((e) => !peers.e.startsWith(`//`)),
+      })),
+      (h5s = peers.sl({
+        configPath: peers.X().min(1).nullable(),
+        workspaceRoot: peers.X().min(1),
+      })));
   });
 }

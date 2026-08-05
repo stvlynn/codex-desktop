@@ -26,7 +26,4 @@ export {
   ratioToFixedPercent,
 } from "./vector-scale";
 
-export {
-  splitCubicBezier,
-  lerpPoint2D,
-} from "./split-cubic-bezier-impl";
+export { splitCubicBezier, lerpPoint2D } from "./split-cubic-bezier-impl";

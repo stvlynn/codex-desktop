@@ -10,7 +10,9 @@ export type BindDeferredConversationCPeers = {
 let peers: BindDeferredConversationCPeers | null = null;
 
 /** Wire bindDeferredConversationC peers once companions land. */
-export function setBindDeferredConversationCPeers(next: BindDeferredConversationCPeers): void {
+export function setBindDeferredConversationCPeers(
+  next: BindDeferredConversationCPeers,
+): void {
   peers = next;
 }
 

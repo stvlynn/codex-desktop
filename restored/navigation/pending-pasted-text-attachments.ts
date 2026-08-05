@@ -15,7 +15,9 @@ export type BindPendingPastedTextAttachmentsPeers = {
 let peers: BindPendingPastedTextAttachmentsPeers | null = null;
 
 /** Wire bindPendingPastedTextAttachments peers once companions land. */
-export function setBindPendingPastedTextAttachmentsPeers(next: BindPendingPastedTextAttachmentsPeers): void {
+export function setBindPendingPastedTextAttachmentsPeers(
+  next: BindPendingPastedTextAttachmentsPeers,
+): void {
   peers = next;
 }
 
@@ -24,13 +26,19 @@ export function setBindPendingPastedTextAttachmentsPeers(next: BindPendingPasted
  */
 export function bindPendingPastedTextAttachments() {
   if (peers == null) {
-    throw new Error("bindPendingPastedTextAttachments peers are not configured");
+    throw new Error(
+      "bindPendingPastedTextAttachments peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    gJs = peers.c(), peers.px(), peers.fr(), peers.dy(), _Js = peers.Pn({
-      activeOperationId: null,
-      operations: []
-    });
+    ((gJs = peers.c()),
+      peers.px(),
+      peers.fr(),
+      peers.dy(),
+      (_Js = peers.Pn({
+        activeOperationId: null,
+        operations: [],
+      })));
   });
 }

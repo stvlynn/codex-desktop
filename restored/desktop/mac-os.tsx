@@ -24,6 +24,15 @@ export function bindBindMacOS() {
   }
 
   return peers.e(() => {
-    peers.Rk(), peers.$Tr(), iEr = new Map([[`LeftOption+RightOption`, `⌥ + ⌥`], [`LeftAlt+RightAlt`, `⌥ + ⌥`], [`LeftCommand+RightCommand`, `⌘ + ⌘`], [`LeftCmd+RightCmd`, `⌘ + ⌘`], [`LeftMeta+RightMeta`, `⌘ + ⌘`], [`LeftShift+RightShift`, `⇧ + ⇧`]]);
+    (peers.Rk(),
+      peers.$Tr(),
+      (iEr = new Map([
+        [`LeftOption+RightOption`, `⌥ + ⌥`],
+        [`LeftAlt+RightAlt`, `⌥ + ⌥`],
+        [`LeftCommand+RightCommand`, `⌘ + ⌘`],
+        [`LeftCmd+RightCmd`, `⌘ + ⌘`],
+        [`LeftMeta+RightMeta`, `⌘ + ⌘`],
+        [`LeftShift+RightShift`, `⇧ + ⇧`],
+      ])));
   });
 }

@@ -16,7 +16,9 @@ export type BindBinddeferredHostsRQ3Peers = {
 let peers: BindBinddeferredHostsRQ3Peers | null = null;
 
 /** Wire bindBinddeferredHostsRQ3 peers once companions land. */
-export function setBindBinddeferredHostsRQ3Peers(next: BindBinddeferredHostsRQ3Peers): void {
+export function setBindBinddeferredHostsRQ3Peers(
+  next: BindBinddeferredHostsRQ3Peers,
+): void {
   peers = next;
 }
 
@@ -28,16 +30,19 @@ export function bindBinddeferredHostsRQ3() {
     throw new Error("bindBinddeferredHostsRQ3 peers are not configured");
   }
 
-  return peers.Ia(peers.Q, ({
-    get: e
-  }) => {
+  return peers.Ia(peers.Q, ({ get: e }) => {
     let t = e(peers.Eh, `2055603567`),
       n = e(peers.sE, `local`)?.environmentId ?? null;
     return {
       enabled: e(peers.R6n, `local`) && (!t || n != null),
       queryKey: [`codex-mobile-setup-resume-client`, t, n],
-      queryFn: async () => t ? n == null ? !1 : (await peers.Ojr(peers.H_, n)).length > 0 : peers.hjr(),
-      staleTime: 0
+      queryFn: async () =>
+        t
+          ? n == null
+            ? !1
+            : (await peers.Ojr(peers.H_, n)).length > 0
+          : peers.hjr(),
+      staleTime: 0,
     };
   });
 }

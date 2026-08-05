@@ -12,7 +12,9 @@ export type SerializeCharacterReferenceNodePeers = {
 let peers: SerializeCharacterReferenceNodePeers | null = null;
 
 /** Wire serializeCharacterReferenceNode peers once companions land. */
-export function setSerializeCharacterReferenceNodePeers(next: SerializeCharacterReferenceNodePeers): void {
+export function setSerializeCharacterReferenceNodePeers(
+  next: SerializeCharacterReferenceNodePeers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,9 @@ export function serializeCharacterReferenceNode() {
   }
 
   return peers.e(() => {
-    peers.h(), z = typeof window > `u` || `Deno` in globalThis, B = Object.prototype.hasOwnProperty, V = Symbol();
+    (peers.h(),
+      (z = typeof window > `u` || `Deno` in globalThis),
+      (B = Object.prototype.hasOwnProperty),
+      (V = Symbol()));
   });
 }

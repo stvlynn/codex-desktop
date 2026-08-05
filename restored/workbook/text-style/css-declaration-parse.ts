@@ -47,10 +47,7 @@ export function isCssDeclarationText(value: string): boolean {
 }
 
 /** Legacy `oae` — apply CSS `font:` shorthand onto a bag. */
-export function applyFontShorthand(
-  target: TextStyleCssBag,
-  raw: string,
-): void {
+export function applyFontShorthand(target: TextStyleCssBag, raw: string): void {
   const tokens = splitCssValueList(raw);
   if (tokens.length === 0) return;
   let sizeIndex = -1;

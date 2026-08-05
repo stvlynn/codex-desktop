@@ -29,6 +29,11 @@ export function bindNeedsApps() {
   }
 
   return peers.e(() => {
-    mgu = peers.c(), peers.$u(), peers.fh(), peers.Vm(), peers.Yrr(), D9 = peers.J();
+    ((mgu = peers.c()),
+      peers.$u(),
+      peers.fh(),
+      peers.Vm(),
+      peers.Yrr(),
+      (D9 = peers.J()));
   });
 }

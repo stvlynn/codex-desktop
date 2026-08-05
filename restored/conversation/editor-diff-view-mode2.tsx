@@ -9,7 +9,9 @@ export type BindBindEditorDiffViewMode2Peers = {
 let peers: BindBindEditorDiffViewMode2Peers | null = null;
 
 /** Wire bindBindEditorDiffViewMode2 peers once companions land. */
-export function setBindBindEditorDiffViewMode2Peers(next: BindBindEditorDiffViewMode2Peers): void {
+export function setBindBindEditorDiffViewMode2Peers(
+  next: BindBindEditorDiffViewMode2Peers,
+): void {
   peers = next;
 }
 

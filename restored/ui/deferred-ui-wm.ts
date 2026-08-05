@@ -29,6 +29,11 @@ export function bindDeferredUiWM() {
   }
 
   return peers.e(() => {
-    pWa = peers.c(), peers.sd(), peers.aWa(), peers.dWa(), mWa = peers.J(), eU = 4;
+    ((pWa = peers.c()),
+      peers.sd(),
+      peers.aWa(),
+      peers.dWa(),
+      (mWa = peers.J()),
+      (eU = 4));
   });
 }

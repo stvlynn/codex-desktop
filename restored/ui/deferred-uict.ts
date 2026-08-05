@@ -36,18 +36,25 @@ export function deferredUict() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.DD(), peers.Yul(), peers.OA(), peers.ed(), peers.K_(), Hvu = 60, Uvu = peers.Ma(peers.Q, ({
-      get: e
-    }) => {
-      let t = [];
-      for (let n of peers.e(peers.$E)) for (let r of peers.e(peers.aD, n)) t.push({
-        cwd: peers.e(peers.oD, r),
-        hostId: n,
-        id: r,
-        title: peers.e(peers.JAr, r),
-        turns: peers.e(peers.bD, r) ?? []
-      });
-      return t;
-    });
+    (peers.Ho(),
+      peers.DD(),
+      peers.Yul(),
+      peers.OA(),
+      peers.ed(),
+      peers.K_(),
+      (Hvu = 60),
+      (Uvu = peers.Ma(peers.Q, ({ get: e }) => {
+        let t = [];
+        for (let n of peers.e(peers.$E))
+          for (let r of peers.e(peers.aD, n))
+            t.push({
+              cwd: peers.e(peers.oD, r),
+              hostId: n,
+              id: r,
+              title: peers.e(peers.JAr, r),
+              turns: peers.e(peers.bD, r) ?? [],
+            });
+        return t;
+      })));
   });
 }

@@ -11,7 +11,9 @@ export type BindBindWslRemoteConnectionsPeers = {
 let peers: BindBindWslRemoteConnectionsPeers | null = null;
 
 /** Wire bindBindWslRemoteConnections peers once companions land. */
-export function setBindBindWslRemoteConnectionsPeers(next: BindBindWslRemoteConnectionsPeers): void {
+export function setBindBindWslRemoteConnectionsPeers(
+  next: BindBindWslRemoteConnectionsPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function bindBindWslRemoteConnections() {
   }
 
   return peers.e(() => {
-    peers.Au(), F1s = `wsl_remote_connections`, I1s = `3855399757`;
+    (peers.Au(), (F1s = `wsl_remote_connections`), (I1s = `3855399757`));
   });
 }

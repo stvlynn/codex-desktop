@@ -16,27 +16,34 @@ const messages: Record<string, string> = {
   "widgets.baseCarousel.previousItems": "ক্যারোসেলের আগের আইটেমগুলো",
   "widgets.cardCarousel.goToArticle": "আর্টিকেলে যান",
   "widgets.cardCarousel.nextCards": "পরবর্তী কার্ডগুলো",
-  "widgets.cardCarousel.nextCardsInCarousel": "{carouselLabel}-এর পরের কার্ডগুলো",
+  "widgets.cardCarousel.nextCardsInCarousel":
+    "{carouselLabel}-এর পরের কার্ডগুলো",
   "widgets.cardCarousel.previousCards": "আগের কার্ডগুলো",
-  "widgets.cardCarousel.previousCardsInCarousel": "{carouselLabel}-এর আগের কার্ডগুলো",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "{carouselLabel}-এর আগের কার্ডগুলো",
   "widgets.debug.hideCurrentState": "বর্তমান অবস্থা লুকান",
   "widgets.debug.nextState": "পরবর্তী অবস্থা",
   "widgets.debug.previousState": "আগের অবস্থা",
   "widgets.debug.selectedState": "নির্বাচিত অবস্থা",
   "widgets.debug.showCurrentState": "বর্তমান অবস্থা দেখান",
   "widgets.debug.state": "অবস্থা",
-  "widgets.debug.unableToSerializeSelectedState": "নির্বাচিত স্টেট সিরিয়ালাইজ করা যাচ্ছে না।",
+  "widgets.debug.unableToSerializeSelectedState":
+    "নির্বাচিত স্টেট সিরিয়ালাইজ করা যাচ্ছে না।",
   "widgets.hermes.artifact.viewMore": "আরও {count}টি দেখুন",
   "widgets.hermes.calendarEvent.moreAttendees": "+আরও {count} জন",
   "widgets.hermes.calendarEvent.singleTime": "{date} তারিখে {time}-এ",
-  "widgets.hermes.calendarEvent.timeRange": "{date} তারিখে {startTime} - {endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "চালিয়ে যেতে {agentName}-এর অ্যাক্সেস দরকার",
-  "widgets.hermes.elicitation.toolApproval.title": "চালিয়ে যেতে {agentName}-এর আপনার অনুমতি দরকার",
+  "widgets.hermes.calendarEvent.timeRange":
+    "{date} তারিখে {startTime} - {endTime}",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "চালিয়ে যেতে {agentName}-এর অ্যাক্সেস দরকার",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "চালিয়ে যেতে {agentName}-এর আপনার অনুমতি দরকার",
   "widgets.hermes.genericResponse.viewFullscreen": "পূর্ণস্ক্রিনে দেখুন",
   "widgets.hermes.genericTool.details": "বিস্তারিত",
   "widgets.hermes.genericTool.read": "পড়ুন",
   "widgets.hermes.genericTool.request": "অনুরোধ",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} {toolName} চালাতে {connectorName} ব্যবহার করতে চায়।",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} {toolName} চালাতে {connectorName} ব্যবহার করতে চায়।",
   "widgets.hermes.genericTool.viewFullscreen": "পূর্ণস্ক্রিনে দেখুন",
   "widgets.hermes.genericTool.write": "লিখুন",
   "widgets.hermes.googleCalendarCreate.create": "তৈরি করুন",
@@ -44,12 +51,14 @@ const messages: Record<string, string> = {
   "widgets.hermes.inlineResponse.accept": "স্বীকার করুন",
   "widgets.hermes.inlineResponse.decline": "বাতিল করুন",
   "widgets.hermes.permission.connect": "সংযুক্ত করুন",
-  "widgets.hermes.permission.connectToConnector": "{connectorName}-এ সংযুক্ত করুন",
+  "widgets.hermes.permission.connectToConnector":
+    "{connectorName}-এ সংযুক্ত করুন",
   "widgets.hermes.permission.connected": "সংযুক্ত করা হয়েছে",
   "widgets.hermes.permission.moreInformation": "আরও তথ্য",
   "widgets.hermes.permission.notNow": "এখন নয়",
   "widgets.hermes.permission.reconnect": "পুনরায় সংযুক্ত করুন",
-  "widgets.hermes.permission.reconnectToConnector": "{connectorName}-এ পুনরায় সংযোগ করুন",
+  "widgets.hermes.permission.reconnectToConnector":
+    "{connectorName}-এ পুনরায় সংযোগ করুন",
   "widgets.hermes.sendEmail.approveAction": "অ্যাকশন অনুমোদন করুন",
   "widgets.hermes.sendEmail.bcc": "Bcc",
   "widgets.hermes.sendEmail.cc": "Cc",
@@ -62,69 +71,130 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "কম দেখুন",
   "widgets.hermes.taskStatus.canceled": "টাস্ক বাতিল হয়েছে",
   "widgets.hermes.taskStatus.canceling": "বাতিল করা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "আগের বার্তাগুলো দেখা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "আগের বার্তাগুলো খতিয়ে দেখছে",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "আগের বার্তাগুলো দেখা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "আগের বার্তাগুলো দেখছে",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "আগের বার্তাগুলো দেখা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "আগের বার্তাগুলো পড়া হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "আগের বার্তাগুলো পর্যালোচনা করা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "আগের বার্তাগুলো পর্যালোচনা করছে",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "আগের বার্তাগুলো স্ক্যান করা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "পুরোনো বার্তাগুলো ঘেঁটে দেখছে",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "পুরোনো বার্তাগুলো খতিয়ে দেখা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "প্রসঙ্গ যাচাই করা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "প্রসঙ্গ পর্যালোচনা করা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "প্রসঙ্গ পর্যালোচনা করা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "প্রসঙ্গ পড়া হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "প্রসঙ্গ পর্যালোচনা",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "প্রেক্ষাপট পুনরায় পর্যালোচনা করা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "প্রেক্ষাপট পর্যালোচনা করা হচ্ছে",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "প্রসঙ্গ পর্যালোচনা করা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "এজেন্ট সক্রিয় করা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "এজেন্ট চালু হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "এজেন্ট অনলাইনে আনা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "এজেন্টকে ডাকা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "এজেন্টের সাথে সংযোগ হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "এজেন্টের সঙ্গে সংযোগ স্থাপন করা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "এজেন্টকে ঘুম থেকে তোলা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "এজেন্ট প্রস্তুত করা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "এজেন্টকে জাগানো হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "এজেন্ট প্রস্তুত করা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "এজেন্টকে ডাকা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "কম্পিউটার সক্রিয় করা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "কম্পিউটার চালু হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "কম্পিউটার অনলাইনে আনা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "কম্পিউটার প্রস্তুত করা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "কম্পিউটার চালু করা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "কম্পিউটার চালু করা হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "কম্পিউটার চালু হচ্ছে",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "কম্পিউটার জাগানো হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "আগের বার্তাগুলো দেখা হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "আগের বার্তাগুলো খতিয়ে দেখছে",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "আগের বার্তাগুলো দেখা হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "আগের বার্তাগুলো দেখছে",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "আগের বার্তাগুলো দেখা হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "আগের বার্তাগুলো পড়া হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "আগের বার্তাগুলো পর্যালোচনা করা হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "আগের বার্তাগুলো পর্যালোচনা করছে",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "আগের বার্তাগুলো স্ক্যান করা হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "পুরোনো বার্তাগুলো ঘেঁটে দেখছে",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "পুরোনো বার্তাগুলো খতিয়ে দেখা হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "প্রসঙ্গ যাচাই করা হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "প্রসঙ্গ পর্যালোচনা করা হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "প্রসঙ্গ পর্যালোচনা করা হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "প্রসঙ্গ পড়া হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "প্রসঙ্গ পর্যালোচনা",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "প্রেক্ষাপট পুনরায় পর্যালোচনা করা হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "প্রেক্ষাপট পর্যালোচনা করা হচ্ছে",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "প্রসঙ্গ পর্যালোচনা করা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "এজেন্ট সক্রিয় করা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "এজেন্ট চালু হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "এজেন্ট অনলাইনে আনা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "এজেন্টকে ডাকা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "এজেন্টের সাথে সংযোগ হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "এজেন্টের সঙ্গে সংযোগ স্থাপন করা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "এজেন্টকে ঘুম থেকে তোলা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "এজেন্ট প্রস্তুত করা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "এজেন্টকে জাগানো হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "এজেন্ট প্রস্তুত করা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "এজেন্টকে ডাকা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "কম্পিউটার সক্রিয় করা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "কম্পিউটার চালু হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "কম্পিউটার অনলাইনে আনা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "কম্পিউটার প্রস্তুত করা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "কম্পিউটার চালু করা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "কম্পিউটার চালু করা হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "কম্পিউটার চালু হচ্ছে",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "কম্পিউটার জাগানো হচ্ছে",
   "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "পথ ঠিক করছে",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "পরিকল্পনা সাজানো",
-  "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "পরিকল্পনা করা হচ্ছে",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "রূপরেখা তৈরি করছে",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "পরবর্তী ধাপ ঠিক করছে",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "পরবর্তী পদক্ষেপ সাজানো",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "পরিকল্পনা সাজানো",
+  "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan":
+    "পরিকল্পনা করা হচ্ছে",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "রূপরেখা তৈরি করছে",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "পরবর্তী ধাপ ঠিক করছে",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "পরবর্তী পদক্ষেপ সাজানো",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "পরিকল্পনা করছে",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "দিক নির্ধারণ করা হচ্ছে",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "দিক নির্ধারণ",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "পরিকল্পনা করছে",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "পন্থা নিয়ে ভাবছে",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "পদ্ধতি ঠিক করা হচ্ছে",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "বিস্তারিত সংগ্রহ করা হচ্ছে",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "বিস্তারিত তথ্য সংগ্রহ করা হচ্ছে",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "বিস্তারিত পূরণ করা হচ্ছে",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "বিস্তারিত সংগ্রহ করা হচ্ছে",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "খুঁটিনাটি জোড়া লাগানো",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "বিস্তারিত একত্র করা হচ্ছে",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "বিস্তারিত সংগ্রহ করা হচ্ছে",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "খুঁটিনাটি গুছানো হচ্ছে",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "বিস্তারিত যাচাই",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "বিস্তারিত খোঁজা হচ্ছে",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "স্বাভাবিকের চেয়ে বেশি সময় লাগছে",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "এখনও কাজ চলছে",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "চাইলে একটু পর আবার দেখে নিতে পারেন",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "দিক নির্ধারণ করা হচ্ছে",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "দিক নির্ধারণ",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "পরিকল্পনা করছে",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "পন্থা নিয়ে ভাবছে",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "পদ্ধতি ঠিক করা হচ্ছে",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "বিস্তারিত সংগ্রহ করা হচ্ছে",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "বিস্তারিত তথ্য সংগ্রহ করা হচ্ছে",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "বিস্তারিত পূরণ করা হচ্ছে",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "বিস্তারিত সংগ্রহ করা হচ্ছে",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "খুঁটিনাটি জোড়া লাগানো",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "বিস্তারিত একত্র করা হচ্ছে",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "বিস্তারিত সংগ্রহ করা হচ্ছে",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "খুঁটিনাটি গুছানো হচ্ছে",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "বিস্তারিত যাচাই",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "বিস্তারিত খোঁজা হচ্ছে",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "স্বাভাবিকের চেয়ে বেশি সময় লাগছে",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "এখনও কাজ চলছে",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "চাইলে একটু পর আবার দেখে নিতে পারেন",
   "widgets.hermes.workflow.canceled": "টাস্ক বাতিল হয়েছে",
   "widgets.hermes.workflow.canceledItemLabel": "বাতিল",
   "widgets.hermes.workflow.codeBlock.hideLines": "লাইন লুকান",
@@ -148,7 +218,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "কম দেখান",
   "widgets.listView.showMore": "আরও {count}টি দেখান",
   "widgets.radioGroup.options": "বিকল্পসমূহ",
-  "widgets.segmentedControl.selectAnOption": "একটি বিকল্প বাছুন"
+  "widgets.segmentedControl.selectAnOption": "একটি বিকল্প বাছুন",
 };
 
 export default messages;

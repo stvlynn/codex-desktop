@@ -3,11 +3,5 @@
 // Bundle JXe = commonJsInit(...); DO_NOT_EXPORT_BESSEL gate matches stock bessel.js.
 // Call-sites: toEsm(JXe(), 1).default.{besselj,bessely,besseli,besselk}.
 
-export {
-  besseli,
-  besselj,
-  besselk,
-  bessely,
-  version,
-} from "bessel";
+export { besseli, besselj, besselk, bessely, version } from "bessel";
 export { default } from "bessel";

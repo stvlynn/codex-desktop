@@ -20,7 +20,9 @@ export type BindCoerceStringOrPassthroughPeers = {
 let peers: BindCoerceStringOrPassthroughPeers | null = null;
 
 /** Wire bindCoerceStringOrPassthrough peers once companions land. */
-export function setBindCoerceStringOrPassthroughPeers(next: BindCoerceStringOrPassthroughPeers): void {
+export function setBindCoerceStringOrPassthroughPeers(
+  next: BindCoerceStringOrPassthroughPeers,
+): void {
   peers = next;
 }
 
@@ -33,6 +35,13 @@ export function bindCoerceStringOrPassthrough() {
   }
 
   return peers.e(() => {
-    H7o = peers.c(), peers.sd(), peers.XH(), U7o = peers.r(peers.o(), 1), peers.$m(), peers.F7o(), dX = peers.J(), W7o = 100;
+    ((H7o = peers.c()),
+      peers.sd(),
+      peers.XH(),
+      (U7o = peers.r(peers.o(), 1)),
+      peers.$m(),
+      peers.F7o(),
+      (dX = peers.J()),
+      (W7o = 100));
   });
 }

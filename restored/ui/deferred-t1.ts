@@ -22,30 +22,38 @@ export function deferredT1() {
   }
 
   return peers.e(() => {
-    Ak = (...e) => t => {
-      if (t == null) {
-        peers.e.forEach(e => {
-          if (typeof peers.e == `function`) peers.e(null);else if (peers.e) {
-            let t = peers.e;
-            t.current = null;
-          }
-        });
-        return;
-      }
-      let n = [];
-      if (peers.e.forEach(e => {
-        if (typeof peers.e == `function`) {
-          let r = peers.e(t);
-          typeof r == `function` ? n.push(r) : n.push(() => peers.e(null));
-        } else if (peers.e) {
-          let r = peers.e;
-          r.current = t, n.push(() => {
-            r.current = null;
+    Ak =
+      (...e) =>
+      (t) => {
+        if (t == null) {
+          peers.e.forEach((e) => {
+            if (typeof peers.e == `function`) peers.e(null);
+            else if (peers.e) {
+              let t = peers.e;
+              t.current = null;
+            }
           });
+          return;
         }
-      }), n.length !== 0) return () => {
-        n.forEach(e => peers.e());
+        let n = [];
+        if (
+          (peers.e.forEach((e) => {
+            if (typeof peers.e == `function`) {
+              let r = peers.e(t);
+              typeof r == `function` ? n.push(r) : n.push(() => peers.e(null));
+            } else if (peers.e) {
+              let r = peers.e;
+              ((r.current = t),
+                n.push(() => {
+                  r.current = null;
+                }));
+            }
+          }),
+          n.length !== 0)
+        )
+          return () => {
+            n.forEach((e) => peers.e());
+          };
       };
-    };
   });
 }

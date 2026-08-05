@@ -29,9 +29,13 @@ export function bindDeferredX() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers._p(), peers.yKr(), peers.ed(), Iqr = peers.Ra(peers.Q, () => ({
-      mutationFn: peers.Fqr,
-      networkMode: `always`
-    }));
+    (peers.Ho(),
+      peers._p(),
+      peers.yKr(),
+      peers.ed(),
+      (Iqr = peers.Ra(peers.Q, () => ({
+        mutationFn: peers.Fqr,
+        networkMode: `always`,
+      }))));
   });
 }

@@ -1,10 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Gn,
-  Bn as _presentationBn,
-} from "../presentation-protobuf";
+import { Gn, Bn as _presentationBn } from "../presentation-protobuf";
 
 export const parentLabelLayoutProtoToName = {
   [Gn.PARENT_LABEL_LAYOUT_NONE]: "none",

@@ -12,13 +12,37 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useAppgenScreenshotDataUrlQuery } from "../../apps/use-appgen-screenshot-data-url-query";
-import { ArtifactFilePreviewIcon, ensureArtifactFilePreviewIconInit } from "../../artifact/artifact-file-preview-icon";
+import {
+  ArtifactFilePreviewIcon,
+  ensureArtifactFilePreviewIconInit,
+} from "../../artifact/artifact-file-preview-icon";
 import { ArtifactPreviewDownloadButton } from "../../artifact/artifact-preview-download-button";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KM_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KM_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { cloneTypedArray } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 } from "../../browser/chatgpt2";
@@ -79,14 +103,20 @@ import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { deferredUiYV } from "../../ui/deferred-ui-yv";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { EmptyMemoSlot } from "../../ui/empty-memo-slot";
 import { ensureShapeColorTokenClusterInit } from "../../ui/ensure-shape-color-token-cluster-init";
 import { macOS4 } from "../../ui/mac-os4";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { SearchableDetailPageLayout } from "../../ui/searchable-detail-page-layout";
-import { ensureUseSearchablePageTitleVisibilityInit, useSearchablePageTitleVisibility } from "../../ui/use-searchable-page-title-visibility";
+import {
+  ensureUseSearchablePageTitleVisibilityInit,
+  useSearchablePageTitleVisibility,
+} from "../../ui/use-searchable-page-title-visibility";
 import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { formatUrlHostPath } from "../../utils/format-url-host-path";
 import { hvtBindableHelper } from "../../utils/hvt-bindable-helper";
@@ -94,18 +124,37 @@ import { identity } from "../../utils/identity";
 import { isIndeterminate } from "../../utils/is-indeterminate";
 import { lerpIfFinite } from "../../utils/lerp-if-finite";
 import { slugifyLoose } from "../../utils/slugify-loose";
-import { ensureImportSettingsCLInit, ensurePersonalizationK0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensurePersonalizationK0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { ensureNewThreadBhInit } from "../../utils/wave-av-gap-ensure-inits";
 import { keysIn } from "../../vendor/lodash-cjs-predicates";
-import { appgenShareDialogT, ensureAppgenShareDialogInit } from "../appgen-share-dialog";
+import {
+  appgenShareDialogT,
+  ensureAppgenShareDialogInit,
+} from "../appgen-share-dialog";
 import { ensureChatgptSiteSuffixesInit } from "../chatgpt-site-suffixes";
-import { createAppgenConversation, dismissAppgenConversationPrompt, ensureStartAppgenConversationHelpersInit, ensureStartAppgenConversationInit, formatAppgenConversationPrefill, listAppgenConversationActions, prepareAppgenConversation, startAppgenConversation, startAppgenConversationFromLibrary, useStartAppgenConversation } from "../start-appgen-conversation";
+import {
+  createAppgenConversation,
+  dismissAppgenConversationPrompt,
+  ensureStartAppgenConversationHelpersInit,
+  ensureStartAppgenConversationInit,
+  formatAppgenConversationPrefill,
+  listAppgenConversationActions,
+  prepareAppgenConversation,
+  startAppgenConversation,
+  startAppgenConversationFromLibrary,
+  useStartAppgenConversation,
+} from "../start-appgen-conversation";
 
 // Wave5d soft JSX companions.
-function Alpha1(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha1(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -140,110 +189,186 @@ function marble(violet) {
       fileFilter,
       localSourcesEnabled,
       onContentTypeChange,
-      onFileFilterChange
+      onFileFilterChange,
     } = violet,
     willow = useIsDarkAppearance() ? delta : falcon,
-    xenon = acorn => {
+    xenon = (acorn) => {
       onContentTypeChange("all");
       onFileFilterChange(acorn);
     };
   let yellow = xenon,
-    zinc = <DropdownMenu.Title {...{
-      children: <MemoizedFormattedMessage {...{
-        id: "appgenPage.filter.library",
-        defaultMessage: "View",
-        description: "Heading for content filters in the Library"
-      }} />
-    }} />;
-  let amber = contentType === "all" && fileFilter === "all" ? AppIconZlt : undefined,
+    zinc = (
+      <DropdownMenu.Title
+        {...{
+          children: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "appgenPage.filter.library",
+                defaultMessage: "View",
+                description: "Heading for content filters in the Library",
+              }}
+            />
+          ),
+        }}
+      />
+    );
+  let amber =
+      contentType === "all" && fileFilter === "all" ? AppIconZlt : undefined,
     basalt = () => yellow("all");
-  let cedar = <MemoizedFormattedMessage {...{
-    id: "appgenPage.filter.allFiles",
-    defaultMessage: "All",
-    description: "Filter option that shows every Library item"
-  }} />;
-  let daisy = <DropdownMenu.Item {...{
-    LeftIcon: AppInitialIs,
-    RightIcon: amber,
-    onSelect: basalt,
-    children: cedar
-  }} />;
-  let ember = localSourcesEnabled ? <DropdownMenu.Item {...{
-    LeftIcon: AppIconHG,
-    RightIcon: contentType === "sites" ? AppIconZlt : undefined,
-    onSelect: () => onContentTypeChange("sites"),
-    children: <MemoizedFormattedMessage {...{
-      id: "appgenPage.filter.sites",
-      defaultMessage: "Sites",
-      description: "Filter option that shows sites in the Library"
-    }} />
-  }} /> : null;
+  let cedar = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.filter.allFiles",
+        defaultMessage: "All",
+        description: "Filter option that shows every Library item",
+      }}
+    />
+  );
+  let daisy = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppInitialIs,
+        RightIcon: amber,
+        onSelect: basalt,
+        children: cedar,
+      }}
+    />
+  );
+  let ember = localSourcesEnabled ? (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppIconHG,
+        RightIcon: contentType === "sites" ? AppIconZlt : undefined,
+        onSelect: () => onContentTypeChange("sites"),
+        children: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "appgenPage.filter.sites",
+              defaultMessage: "Sites",
+              description: "Filter option that shows sites in the Library",
+            }}
+          />
+        ),
+      }}
+    />
+  ) : null;
   let flint = contentType === "images" ? AppIconZlt : undefined,
     garnet = () => onContentTypeChange("images");
-  let hazel = <MemoizedFormattedMessage {...{
-    id: "appgenPage.filter.images",
-    defaultMessage: "Images",
-    description: "Filter option that shows images in the Library"
-  }} />;
-  let ivory = <DropdownMenu.Item {...{
-    LeftIcon: willow,
-    RightIcon: flint,
-    onSelect: garnet,
-    children: hazel
-  }} />;
-  let jasper = contentType === "all" && fileFilter === "document" ? AppIconZlt : undefined,
+  let hazel = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.filter.images",
+        defaultMessage: "Images",
+        description: "Filter option that shows images in the Library",
+      }}
+    />
+  );
+  let ivory = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: willow,
+        RightIcon: flint,
+        onSelect: garnet,
+        children: hazel,
+      }}
+    />
+  );
+  let jasper =
+      contentType === "all" && fileFilter === "document"
+        ? AppIconZlt
+        : undefined,
     kelp = () => yellow("document");
-  let lotus = <MemoizedFormattedMessage {...{
-    id: "appgenPage.filter.documents",
-    defaultMessage: "Documents",
-    description: "Filter option that shows documents in the Library"
-  }} />;
-  let mint = <DropdownMenu.Item {...{
-    LeftIcon: AppIconJG,
-    RightIcon: jasper,
-    onSelect: kelp,
-    children: lotus
-  }} />;
-  let nova = contentType === "all" && fileFilter === "spreadsheet" ? AppIconZlt : undefined,
+  let lotus = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.filter.documents",
+        defaultMessage: "Documents",
+        description: "Filter option that shows documents in the Library",
+      }}
+    />
+  );
+  let mint = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppIconJG,
+        RightIcon: jasper,
+        onSelect: kelp,
+        children: lotus,
+      }}
+    />
+  );
+  let nova =
+      contentType === "all" && fileFilter === "spreadsheet"
+        ? AppIconZlt
+        : undefined,
     olive = () => yellow("spreadsheet");
-  let prism = <MemoizedFormattedMessage {...{
-    id: "appgenPage.filter.spreadsheets",
-    defaultMessage: "Spreadsheets",
-    description: "Filter option that shows spreadsheets in the Library"
-  }} />;
-  let quill = <DropdownMenu.Item {...{
-    LeftIcon: AppIconXG,
-    RightIcon: nova,
-    onSelect: olive,
-    children: prism
-  }} />;
-  let reef = contentType === "all" && fileFilter === "presentation" ? AppIconZlt : undefined,
+  let prism = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.filter.spreadsheets",
+        defaultMessage: "Spreadsheets",
+        description: "Filter option that shows spreadsheets in the Library",
+      }}
+    />
+  );
+  let quill = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppIconXG,
+        RightIcon: nova,
+        onSelect: olive,
+        children: prism,
+      }}
+    />
+  );
+  let reef =
+      contentType === "all" && fileFilter === "presentation"
+        ? AppIconZlt
+        : undefined,
     sage = () => yellow("presentation");
-  let topaz = <MemoizedFormattedMessage {...{
-    id: "appgenPage.filter.presentations",
-    defaultMessage: "Presentations",
-    description: "Filter option that shows presentations in the Library"
-  }} />;
-  let ultra = <DropdownMenu.Item {...{
-    LeftIcon: AppIconQG,
-    RightIcon: reef,
-    onSelect: sage,
-    children: topaz
-  }} />;
-  let vapor = contentType === "all" && fileFilter === "pdf" ? AppIconZlt : undefined,
+  let topaz = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.filter.presentations",
+        defaultMessage: "Presentations",
+        description: "Filter option that shows presentations in the Library",
+      }}
+    />
+  );
+  let ultra = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppIconQG,
+        RightIcon: reef,
+        onSelect: sage,
+        children: topaz,
+      }}
+    />
+  );
+  let vapor =
+      contentType === "all" && fileFilter === "pdf" ? AppIconZlt : undefined,
     wheat = () => yellow("pdf");
-  let yarn = <MemoizedFormattedMessage {...{
-    id: "appgenPage.filter.pdfs",
-    defaultMessage: "PDFs",
-    description: "Filter option that shows PDFs in the Library"
-  }} />;
-  let zephyr = <DropdownMenu.Item {...{
-    LeftIcon: AppInitialEK,
-    RightIcon: vapor,
-    onSelect: wheat,
-    children: yarn
-  }} />;
-  return <>
+  let yarn = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.filter.pdfs",
+        defaultMessage: "PDFs",
+        description: "Filter option that shows PDFs in the Library",
+      }}
+    />
+  );
+  let zephyr = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppInitialEK,
+        RightIcon: vapor,
+        onSelect: wheat,
+        children: yarn,
+      }}
+    />
+  );
+  return (
+    <>
       {zinc}
       {daisy}
       {ember}
@@ -253,53 +378,69 @@ function marble(violet) {
       {quill}
       {ultra}
       {zephyr}
-    </>;
+    </>
+  );
 }
 function nickel(bloom) {
-  let {
-      onViewModeChange,
-      viewMode
-    } = bloom,
+  let { onViewModeChange, viewMode } = bloom,
     coral = useIntl(),
     drift = coral.formatMessage({
       id: "appgenPage.view.list",
       defaultMessage: "List view",
-      description: "Accessible label for showing Library items in a list"
+      description: "Accessible label for showing Library items in a list",
     });
   let eagle = drift,
     frost = coral.formatMessage({
       id: "appgenPage.view.grid",
       defaultMessage: "Grid view",
-      description: "Accessible label for showing Library items in a grid"
+      description: "Accessible label for showing Library items in a grid",
     });
   let glide = frost,
     honey = coral.formatMessage({
       id: "appgenPage.view.ariaLabel",
       defaultMessage: "Library view",
-      description: "Accessible label for the Library view selector"
+      description: "Accessible label for the Library view selector",
     });
-  let iris = <_i {...{
-    "aria-hidden": true,
-    className: "icon-xs"
-  }} />;
+  let iris = (
+    <_i
+      {...{
+        "aria-hidden": true,
+        className: "icon-xs",
+      }}
+    />
+  );
   let jewel = {
     id: "list",
     ariaLabel: eagle,
     label: iris,
-    tooltipContent: eagle
+    tooltipContent: eagle,
   };
-  let knoll = <Alpha1 {...{
-    "aria-hidden": true,
-    className: "icon-xs"
-  }} />;
+  let knoll = (
+    <Alpha1
+      {...{
+        "aria-hidden": true,
+        className: "icon-xs",
+      }}
+    />
+  );
   let lunar = {
     id: "grid",
     ariaLabel: glide,
     label: knoll,
-    tooltipContent: glide
+    tooltipContent: glide,
   };
   let moss = [jewel, lunar];
-  return <AppInitialPl ariaLabel={honey} className="justify-self-end" options={moss} selectedId={viewMode} size="toolbar" uniform={true} onSelect={onViewModeChange} />;
+  return (
+    <AppInitialPl
+      ariaLabel={honey}
+      className="justify-self-end"
+      options={moss}
+      selectedId={viewMode}
+      size="toolbar"
+      uniform={true}
+      onSelect={onViewModeChange}
+    />
+  );
 }
 var onyx,
   pearl,
@@ -325,33 +466,30 @@ var onyx,
     ensureAppIconHGInit();
     AppIconJG();
   });
-async function river({
-  file,
-  fileName,
-  refetch,
-  rename
-}) {
+async function river({ file, fileName, refetch, rename }) {
   let north = fileName.trim();
-  return north.length === 0 || north === file.name ? false : (await rename(file, north), await refetch(), true);
+  return north.length === 0 || north === file.name
+    ? false
+    : (await rename(file, north), await refetch(), true);
 }
-async function slate({
-  download,
-  files
-}) {
+async function slate({ download, files }) {
   return {
-    failedCount: (await Promise.allSettled(files.map(download))).filter(item => item.status === "rejected").length
+    failedCount: (await Promise.allSettled(files.map(download))).filter(
+      (item) => item.status === "rejected",
+    ).length,
   };
 }
-async function timber({
-  deleteFile,
-  files,
-  refetch
-}) {
+async function timber({ deleteFile, files, refetch }) {
   let orbit = await Promise.allSettled(files.map(deleteFile));
-  return await refetch().catch(() => undefined), {
-    deletedFileIds: files.filter((item, index) => orbit[index]?.status === "fulfilled").map(item => item.id),
-    failedCount: orbit.filter(item => item.status === "rejected").length
-  };
+  return (
+    await refetch().catch(() => undefined),
+    {
+      deletedFileIds: files
+        .filter((item, index) => orbit[index]?.status === "fulfilled")
+        .map((item) => item.id),
+      failedCount: orbit.filter((item) => item.status === "rejected").length,
+    }
+  );
 }
 var umbra = esmInit(() => {});
 export type AppgenLibraryPageIconProps = {
@@ -370,17 +508,14 @@ export function AppgenLibraryPageIcon({
   cloudFileUploader,
   cloudPreviewRenderer,
   initialViewMode = "list",
-  localSourcesEnabled = true
+  localSourcesEnabled = true,
 }: AppgenLibraryPageIconProps) {
   let pine = CodexPluginActionType(ensureComposerEsm_S8_Init),
     quest = useIntl(),
     ridge = useNavigate(),
     [storm, tide] = kite.useState(""),
-    {
-      scrollContainerRef,
-      showTitleInToolbar,
-      titleRef
-    } = useSearchablePageTitleVisibility(),
+    { scrollContainerRef, showTitleInToolbar, titleRef } =
+      useSearchablePageTitleVisibility(),
     [unity, vale] = kite.useState(initialViewMode),
     [wave, apex] = kite.useState("all"),
     [brook, cliff] = kite.useState("all"),
@@ -395,54 +530,66 @@ export function AppgenLibraryPageIcon({
     [trail, urn] = kite.useState(0),
     [vine, wind] = kite.useState([]),
     yarrow = kite.useRef(null),
-    azure = localSourcesEnabled && (dusk === "sites" || dusk === "all" && elm === "all"),
+    azure =
+      localSourcesEnabled &&
+      (dusk === "sites" || (dusk === "all" && elm === "all")),
     birch = localSourcesEnabled && (dusk === "files" || dusk === "all"),
-    canyon = localSourcesEnabled && (dusk === "images" || dusk === "all" && elm === "all"),
+    canyon =
+      localSourcesEnabled &&
+      (dusk === "images" || (dusk === "all" && elm === "all")),
     dew = alpha(dusk, elm),
     ever = Chatgpt2(storm.trim(), 300),
     field = hvtBindableHelper({
       queryKey: ["appgen-library-cloud-files", dusk, elm, ever],
       initialPageParam: null,
-      queryFn: ({
-        pageParam
-      }) => {
-        if (cloudFilesApi == null || dew === undefined) throw Error("Cloud Library files are unavailable");
+      queryFn: ({ pageParam }) => {
+        if (cloudFilesApi == null || dew === undefined)
+          throw Error("Cloud Library files are unavailable");
         return cloudFilesApi.search({
           categories: dew,
           cursor: pageParam,
           limit: lemon,
-          query: ever
+          query: ever,
         });
       },
       enabled: cloudFilesApi != null && dew !== undefined,
-      getNextPageParam: maple => maple.cursor ?? null,
+      getNextPageParam: (maple) => maple.cursor ?? null,
       retry: false,
-      select: nimbus => nimbus.pages.flatMap(item => item.items),
-      staleTime: readScrollTop.FIVE_SECONDS
+      select: (nimbus) => nimbus.pages.flatMap((item) => item.items),
+      staleTime: readScrollTop.FIVE_SECONDS,
     }),
-    grain = petal.length === 0 ? field.data : field.data?.filter(opal => !petal.includes(opal.id)),
-    haven = cloudFilesApi == null || dew === undefined ? undefined : {
-      files: grain,
-      fetchNextPage: field.fetchNextPage,
-      hasLoadError: field.isError || field.isFetchNextPageError,
-      hasNextPage: field.hasNextPage === true && !field.isFetchNextPageError,
-      isEnabled: true,
-      isFetchingNextPage: field.isFetchingNextPage,
-      isLoading: field.isLoading,
-      isRefetching: field.isRefetching,
-      refetch: field.refetch
-    },
-    ink = grain?.filter(plume => nest.includes(plume.id)),
+    grain =
+      petal.length === 0
+        ? field.data
+        : field.data?.filter((opal) => !petal.includes(opal.id)),
+    haven =
+      cloudFilesApi == null || dew === undefined
+        ? undefined
+        : {
+            files: grain,
+            fetchNextPage: field.fetchNextPage,
+            hasLoadError: field.isError || field.isFetchNextPageError,
+            hasNextPage:
+              field.hasNextPage === true && !field.isFetchNextPageError,
+            isEnabled: true,
+            isFetchingNextPage: field.isFetchingNextPage,
+            isLoading: field.isLoading,
+            isRefetching: field.isRefetching,
+            refetch: field.refetch,
+          },
+    ink = grain?.filter((plume) => nest.includes(plume.id)),
     _e = ink?.length ?? 0,
-    jadeite = cloudFileUploader != null && cloudFilesApi != null && dew !== undefined,
+    jadeite =
+      cloudFileUploader != null && cloudFilesApi != null && dew !== undefined,
     kernel = vine.length > 0,
-    {
-      setSelectedMode
-    } = AnnotationFocusMode(),
+    { setSelectedMode } = AnnotationFocusMode(),
     leaf = composerNavigation();
-  kite.useLayoutEffect(() => () => {
-    pine.set(ensurePersonalizationK0Init, false);
-    bravo(pine, false);
-  }, [pine]);
+  kite.useLayoutEffect(
+    () => () => {
+      pine.set(ensurePersonalizationK0Init, false);
+      bravo(pine, false);
+    },
+    [pine],
+  );
   return undefined as any;
 }

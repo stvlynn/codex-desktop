@@ -7,7 +7,10 @@ export type TranscriptDeltaMessage = {
 };
 
 /** Parse `user:` / `assistant:` transcript lines, ensuring trailing user text. */
-export function parseTranscriptDeltaMessages(transcriptDelta: string | null | undefined, userText: string): TranscriptDeltaMessage[] {
+export function parseTranscriptDeltaMessages(
+  transcriptDelta: string | null | undefined,
+  userText: string,
+): TranscriptDeltaMessage[] {
   if (transcriptDelta == null) return [{ role: "user", text: userText }];
   const messages: TranscriptDeltaMessage[] = [];
   let current: TranscriptDeltaMessage | null = null;

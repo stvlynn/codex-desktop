@@ -14,7 +14,9 @@ export type BindApplyRoundedFullPeers = {
 let peers: BindApplyRoundedFullPeers | null = null;
 
 /** Wire bindApplyRoundedFull peers once companions land. */
-export function setBindApplyRoundedFullPeers(next: BindApplyRoundedFullPeers): void {
+export function setBindApplyRoundedFullPeers(
+  next: BindApplyRoundedFullPeers,
+): void {
   peers = next;
 }
 
@@ -27,6 +29,6 @@ export function bindApplyRoundedFull() {
   }
 
   return peers.e(() => {
-    ZQe = peers.c(), peers.sd(), peers.$u(), QQe = peers.J();
+    ((ZQe = peers.c()), peers.sd(), peers.$u(), (QQe = peers.J()));
   });
 }

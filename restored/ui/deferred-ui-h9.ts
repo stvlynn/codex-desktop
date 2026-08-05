@@ -26,6 +26,10 @@ export function bindDeferredUiH9() {
   }
 
   return peers.e(() => {
-    peers.Hb(), peers.Kb(), peers.z_(), peers.S0t(), T0t = new Set([`disconnected`, `connecting`, `error`, `connected`]);
+    (peers.Hb(),
+      peers.Kb(),
+      peers.z_(),
+      peers.S0t(),
+      (T0t = new Set([`disconnected`, `connecting`, `error`, `connected`])));
   });
 }

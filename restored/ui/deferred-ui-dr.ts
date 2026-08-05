@@ -27,6 +27,6 @@ export function bindDeferredUiDR() {
   }
 
   return peers.e(() => {
-    f5i = peers.c(), peers.sd(), peers.$u(), p5i = peers.J();
+    ((f5i = peers.c()), peers.sd(), peers.$u(), (p5i = peers.J()));
   });
 }

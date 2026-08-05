@@ -15,24 +15,24 @@ export let workbookBinding1995: any;
 
 export const svt = esmInit(() => {
   ensureViteModulepreloadRuntime();
-      workbookBinding1993 = null;
-      ovt = () => (
-        (workbookBinding1993 ??= vitePreload(
-          () => import("../../workbook/lazy-workbook-from-markdown"),
-          [] /* vite mapDeps stripped */,
-          import.meta.url,
-        )),
-        workbookBinding1993
-      );
-      workbookBinding1994 = null;
-      workbookBinding1995 = () => (
-        (workbookBinding1994 ??= vitePreload(
-          () => import("../../workbook/plan-csv-import"),
-          [] /* vite mapDeps stripped */,
-          import.meta.url,
-        )),
-        workbookBinding1994
-      );
+  workbookBinding1993 = null;
+  ovt = () => (
+    (workbookBinding1993 ??= vitePreload(
+      () => import("../../workbook/lazy-workbook-from-markdown"),
+      [] /* vite mapDeps stripped */,
+      import.meta.url,
+    )),
+    workbookBinding1993
+  );
+  workbookBinding1994 = null;
+  workbookBinding1995 = () => (
+    (workbookBinding1994 ??= vitePreload(
+      () => import("../../workbook/plan-csv-import"),
+      [] /* vite mapDeps stripped */,
+      import.meta.url,
+    )),
+    workbookBinding1994
+  );
 });
 
 export function ensureLazyWorkbookLoadersInit(): void {

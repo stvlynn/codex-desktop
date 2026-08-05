@@ -26,6 +26,6 @@ export function dit2() {
   }
 
   return peers.e(() => {
-    peers.HLt(), peers.mLt(), peers.QLt(), peers.eRt(), peers.Pv();
+    (peers.HLt(), peers.mLt(), peers.QLt(), peers.eRt(), peers.Pv());
   });
 }

@@ -33,9 +33,6 @@ export {
   LEGEND_INSET_BOTTOM,
 } from "./legend-marker-size-impl";
 
-export {
-  workbookFn387,
-  workbookFn487,
-} from "./legend-typeface-helpers-impl";
+export { workbookFn387, workbookFn487 } from "./legend-typeface-helpers-impl";
 
 export { workbookFn486 } from "./legend-position-normalize-impl";

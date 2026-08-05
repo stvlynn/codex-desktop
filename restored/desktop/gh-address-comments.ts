@@ -42,7 +42,9 @@ export type BindGhAddressCommentsPeers = {
 let peers: BindGhAddressCommentsPeers | null = null;
 
 /** Wire bindGhAddressComments peers once companions land. */
-export function setBindGhAddressCommentsPeers(next: BindGhAddressCommentsPeers): void {
+export function setBindGhAddressCommentsPeers(
+  next: BindGhAddressCommentsPeers,
+): void {
   peers = next;
 }
 
@@ -55,13 +57,37 @@ export function bindGhAddressComments() {
   }
 
   return peers.e(() => {
-    Mna = peers.c(), peers.sd(), peers.Au(), wB = peers.r(peers.o(), 1), peers.zta(), peers.Vta(), peers.Wta(), peers.qta(), peers.Bti(), peers.Xta(), peers.$ta(), peers.xB(), peers.rna(), peers.ona(), peers.X9r(), peers.$9r(), peers.LD(), peers.CB(), peers.una(), peers.pna(), peers.yna(), peers.jf(), Nna = /^[a-zA-Z][a-zA-Z0-9+.-]*:/, Pna = `[data-codex-window-type="electron"]`, Fna = {
-      "gh-address-comments": peers.ana,
-      "buildkite-fix-ci": peers.Yta,
-      "sentry-observability": peers.lna,
-      "linear-implement-ticket": peers.Y9r,
-      "figma-implement-design": peers.Rta,
-      "skill-creator": peers.Dna
-    };
+    ((Mna = peers.c()),
+      peers.sd(),
+      peers.Au(),
+      (wB = peers.r(peers.o(), 1)),
+      peers.zta(),
+      peers.Vta(),
+      peers.Wta(),
+      peers.qta(),
+      peers.Bti(),
+      peers.Xta(),
+      peers.$ta(),
+      peers.xB(),
+      peers.rna(),
+      peers.ona(),
+      peers.X9r(),
+      peers.$9r(),
+      peers.LD(),
+      peers.CB(),
+      peers.una(),
+      peers.pna(),
+      peers.yna(),
+      peers.jf(),
+      (Nna = /^[a-zA-Z][a-zA-Z0-9+.-]*:/),
+      (Pna = `[data-codex-window-type="electron"]`),
+      (Fna = {
+        "gh-address-comments": peers.ana,
+        "buildkite-fix-ci": peers.Yta,
+        "sentry-observability": peers.lna,
+        "linear-implement-ticket": peers.Y9r,
+        "figma-implement-design": peers.Rta,
+        "skill-creator": peers.Dna,
+      }));
   });
 }

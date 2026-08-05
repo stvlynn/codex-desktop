@@ -34,6 +34,14 @@ export function bindDeferredUiO() {
   }
 
   return peers.e(() => {
-    xAo = peers.c(), peers.sd(), SAo = peers.r(peers.o(), 1), peers._Ao(), peers.Pp(), CAo = peers.J(), wAo = 10, TAo = 15, EAo = `border-token-charts-blue/40 bg-[var(--annotation-mode-button-annotation-background)] !text-token-text-link-foreground enabled:hover:bg-[var(--annotation-mode-button-annotation-hover-background)]`;
+    ((xAo = peers.c()),
+      peers.sd(),
+      (SAo = peers.r(peers.o(), 1)),
+      peers._Ao(),
+      peers.Pp(),
+      (CAo = peers.J()),
+      (wAo = 10),
+      (TAo = 15),
+      (EAo = `border-token-charts-blue/40 bg-[var(--annotation-mode-button-annotation-background)] !text-token-text-link-foreground enabled:hover:bg-[var(--annotation-mode-button-annotation-hover-background)]`));
   });
 }

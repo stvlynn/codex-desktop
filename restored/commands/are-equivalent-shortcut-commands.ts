@@ -10,7 +10,10 @@ const EQUIVALENT_SHORTCUT_GROUPS: ReadonlyArray<ReadonlyArray<string>> = [
 ];
 
 /** True when command ids are equal or in the same equivalence group. */
-export function areEquivalentShortcutCommands(left: string, right: string): boolean {
+export function areEquivalentShortcutCommands(
+  left: string,
+  right: string,
+): boolean {
   return (
     left === right ||
     EQUIVALENT_SHORTCUT_GROUPS.some(

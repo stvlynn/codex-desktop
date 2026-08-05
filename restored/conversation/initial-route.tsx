@@ -12,7 +12,9 @@ export type BindBindInitialRoutePeers = {
 let peers: BindBindInitialRoutePeers | null = null;
 
 /** Wire bindBindInitialRoute peers once companions land. */
-export function setBindBindInitialRoutePeers(next: BindBindInitialRoutePeers): void {
+export function setBindBindInitialRoutePeers(
+  next: BindBindInitialRoutePeers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,6 @@ export function bindBindInitialRoute() {
   }
 
   return peers.e(() => {
-    Xra = peers.r(peers.o(), 1), Zra = (0, peers.Xra.createContext)(null);
+    ((Xra = peers.r(peers.o(), 1)), (Zra = (0, peers.Xra.createContext)(null)));
   });
 }

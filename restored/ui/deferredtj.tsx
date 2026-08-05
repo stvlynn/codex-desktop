@@ -32,6 +32,14 @@ export function bindDeferredtj() {
   }
 
   return peers.e(() => {
-    Tho = peers.r(peers.o(), 1), peers.UD(), peers.ZL(), peers.C2i(), peers.vho(), peers.Cho(), peers.nL(), peers.bho(), peers.jf();
+    ((Tho = peers.r(peers.o(), 1)),
+      peers.UD(),
+      peers.ZL(),
+      peers.C2i(),
+      peers.vho(),
+      peers.Cho(),
+      peers.nL(),
+      peers.bho(),
+      peers.jf());
   });
 }

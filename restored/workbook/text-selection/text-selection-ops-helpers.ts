@@ -67,9 +67,7 @@ export function firstParagraphFromPayload(value: unknown): any | undefined {
 export function copyParagraphStyleFields(target: any, source: any): void {
   target.styleId = source.styleId;
   const textStyle = source.textStyle;
-  target.textStyle = textStyle
-    ? new TextStyle(textStyle.toProto())
-    : undefined;
+  target.textStyle = textStyle ? new TextStyle(textStyle.toProto()) : undefined;
   target.bulletCharacter = source.bulletCharacter;
   target.marginLeft = source.marginLeft;
   target.indent = source.indent;

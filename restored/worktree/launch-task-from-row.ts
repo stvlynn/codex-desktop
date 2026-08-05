@@ -30,7 +30,11 @@ export type LaunchTaskFromRowHandlers = {
 /**
  * Dispatches the default click action for a worktree / conversation task row.
  */
-export function launchTaskFromRow(store: unknown, task: LaunchableSidebarTask, handlers: LaunchTaskFromRowHandlers): void {
+export function launchTaskFromRow(
+  store: unknown,
+  task: LaunchableSidebarTask,
+  handlers: LaunchTaskFromRowHandlers,
+): void {
   switch (task.launchMode) {
     case "create-stable-worktree":
       handlers.openStableWorktreeStatusDialog(store, task.id);

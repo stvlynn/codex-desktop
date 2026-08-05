@@ -19,7 +19,9 @@ export type BindArtifactTemplatePeers = {
 let peers: BindArtifactTemplatePeers | null = null;
 
 /** Wire bindArtifactTemplate peers once companions land. */
-export function setBindArtifactTemplatePeers(next: BindArtifactTemplatePeers): void {
+export function setBindArtifactTemplatePeers(
+  next: BindArtifactTemplatePeers,
+): void {
   peers = next;
 }
 
@@ -32,16 +34,28 @@ export function bindArtifactTemplate() {
   }
 
   return peers.e(() => {
-    F4n = peers.r(peers.Il(), 1), peers.Sl(), peers.jf(), I4n = `artifact-template-`, L4n = peers.sl({
-      schemaVersion: peers.ml(1),
-      kind: peers.pl([`document`, `presentation`, `spreadsheet`, `google-docs`, `google-slides`, `google-sheets`])
-    }), R4n = {
-      document: `docx`,
-      presentation: `pptx`,
-      spreadsheet: `xlsx`,
-      "google-docs": `pdf`,
-      "google-slides": `pdf`,
-      "google-sheets": `pdf`
-    };
+    ((F4n = peers.r(peers.Il(), 1)),
+      peers.Sl(),
+      peers.jf(),
+      (I4n = `artifact-template-`),
+      (L4n = peers.sl({
+        schemaVersion: peers.ml(1),
+        kind: peers.pl([
+          `document`,
+          `presentation`,
+          `spreadsheet`,
+          `google-docs`,
+          `google-slides`,
+          `google-sheets`,
+        ]),
+      })),
+      (R4n = {
+        document: `docx`,
+        presentation: `pptx`,
+        spreadsheet: `xlsx`,
+        "google-docs": `pdf`,
+        "google-slides": `pdf`,
+        "google-sheets": `pdf`,
+      }));
   });
 }

@@ -18,11 +18,16 @@ export const CODEX_CHATGPT_PINNED_CONVERSATIONS_STORAGE_KEY =
   "codex.chatgpt-pinned-conversations";
 
 /** Bundle `Wja` / export `RN`. */
-export function chatgptProjectQueryKey(projectId: string): readonly [string, string] {
+export function chatgptProjectQueryKey(
+  projectId: string,
+): readonly [string, string] {
   return [CHATGPT_PROJECT_CONVERSATIONS_QUERY_KEY, projectId];
 }
 
 /** Bundle `Gja` (co-located). */
-export function chatgptProjectConversationSearchQueryKey(projectId: string, query: string): readonly [string, string, string] {
+export function chatgptProjectConversationSearchQueryKey(
+  projectId: string,
+  query: string,
+): readonly [string, string, string] {
   return [CHATGPT_PROJECT_CONVERSATION_SEARCH_QUERY_KEY, projectId, query];
 }

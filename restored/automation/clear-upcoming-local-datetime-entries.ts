@@ -8,7 +8,9 @@ export type ClearUpcomingLocalDatetimeEntriesPeers = {
 let peers: ClearUpcomingLocalDatetimeEntriesPeers | null = null;
 
 /** Wire clearUpcomingLocalDatetimeEntries peers once companions land. */
-export function setClearUpcomingLocalDatetimeEntriesPeers(next: ClearUpcomingLocalDatetimeEntriesPeers): void {
+export function setClearUpcomingLocalDatetimeEntriesPeers(
+  next: ClearUpcomingLocalDatetimeEntriesPeers,
+): void {
   peers = next;
 }
 

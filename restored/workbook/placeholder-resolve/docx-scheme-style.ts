@@ -27,7 +27,10 @@ export {
 
 /** Legacy `oce` — alphanumeric-only lowercase color token key. */
 export function normalizeColorTokenKey(raw: string): string {
-  return raw.trim().toLowerCase().replace(/[^a-z0-9]+/g, "");
+  return raw
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "");
 }
 
 /** Legacy `uce` — DOCX caps scheme flag is truthy (1/true/yes/on). */
@@ -35,9 +38,7 @@ export function schemeFlagEnabled(scheme: string | null | undefined): boolean {
   const raw = readSchemeCssValue(scheme, DOCX_CAPS_PREFIX);
   if (!raw) return false;
   const lower = raw.toLowerCase();
-  return (
-    lower === "1" || lower === "true" || lower === "yes" || lower === "on"
-  );
+  return lower === "1" || lower === "true" || lower === "yes" || lower === "on";
 }
 
 /** Legacy `cce` — highlight color from scheme (hex or named). */
@@ -63,7 +64,10 @@ export function alignmentFromScheme(
 }
 
 /** Legacy `dce` — uppercase when scheme caps flag set. */
-export function applySchemeCaps(text: string, scheme: string | null | undefined): string {
+export function applySchemeCaps(
+  text: string,
+  scheme: string | null | undefined,
+): string {
   return schemeFlagEnabled(scheme) ? text.toUpperCase() : text;
 }
 
@@ -124,7 +128,9 @@ export function typefaceFromScheme(
 export function fontSizeFromStyleOrScheme(
   textStyle: { fontSize?: number; scheme?: string } | null | undefined,
 ): number | undefined {
-  return textStyle?.fontSize ?? complexScriptFontSizeFromScheme(textStyle?.scheme);
+  return (
+    textStyle?.fontSize ?? complexScriptFontSizeFromScheme(textStyle?.scheme)
+  );
 }
 
 /** Legacy `r_` — typeface from style fields or scheme. */
@@ -135,7 +141,9 @@ export function typefaceFromStyleOrScheme(
     | undefined,
 ): string | undefined {
   return (
-    textStyle?.typeface ?? textStyle?.name ?? typefaceFromScheme(textStyle?.scheme)
+    textStyle?.typeface ??
+    textStyle?.name ??
+    typefaceFromScheme(textStyle?.scheme)
   );
 }
 

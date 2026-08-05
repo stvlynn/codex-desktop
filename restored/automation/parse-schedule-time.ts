@@ -2,7 +2,9 @@
 // Bundle `eQc` companion for weekly rrule building.
 
 /** Parse `HH:MM` into hour/minute parts. */
-export function parseScheduleTime(value: string): { hour: number; minute: number } | null {
+export function parseScheduleTime(
+  value: string,
+): { hour: number; minute: number } | null {
   const [hours, minutes] = value.split(":");
   const hour = Number(hours);
   const minute = Number(minutes);

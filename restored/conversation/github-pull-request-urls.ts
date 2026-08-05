@@ -65,7 +65,9 @@ type PullRequestRouteParams = {
 };
 
 /** Parse / validate PR route params (`O8s` / `Fm`) without zod runtime. */
-export function parsePullRequestRouteParams(input: PullRequestRouteParams):
+export function parsePullRequestRouteParams(
+  input: PullRequestRouteParams,
+):
   | { type: "pull_request"; pullRequest: GithubPullRequestRef }
   | { type: "invalid" } {
   const hostname = normalizeGithubHostname(String(input.githubHost ?? ""));
@@ -95,7 +97,9 @@ export function parsePullRequestRouteParams(input: PullRequestRouteParams):
 }
 
 /** Parse a GitHub pull URL into a PR ref (`k8s` / `Im`). */
-export function parseGithubPullRequestUrl(url: string): GithubPullRequestRef | null {
+export function parseGithubPullRequestUrl(
+  url: string,
+): GithubPullRequestRef | null {
   try {
     const parsed = new URL(url);
     if (parsed.protocol !== "https:" && parsed.protocol !== "http:")

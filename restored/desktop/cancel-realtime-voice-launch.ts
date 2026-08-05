@@ -12,7 +12,9 @@ export type CancelRealtimeVoiceLaunchPeers = {
 let peers: CancelRealtimeVoiceLaunchPeers | null = null;
 
 /** Wire cancelRealtimeVoiceLaunch peers once companions land. */
-export function setCancelRealtimeVoiceLaunchPeers(next: CancelRealtimeVoiceLaunchPeers): void {
+export function setCancelRealtimeVoiceLaunchPeers(
+  next: CancelRealtimeVoiceLaunchPeers,
+): void {
   peers = next;
 }
 

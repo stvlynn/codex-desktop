@@ -12,7 +12,9 @@ export type BindComputerUseAppApprovalsPeers = {
 let peers: BindComputerUseAppApprovalsPeers | null = null;
 
 /** Wire bindComputerUseAppApprovals peers once companions land. */
-export function setBindComputerUseAppApprovalsPeers(next: BindComputerUseAppApprovalsPeers): void {
+export function setBindComputerUseAppApprovalsPeers(
+  next: BindComputerUseAppApprovalsPeers,
+): void {
   peers = next;
 }
 

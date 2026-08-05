@@ -9,7 +9,9 @@ export type GetConversationalOnboardingTaskPeers = {
 let peers: GetConversationalOnboardingTaskPeers | null = null;
 
 /** Wire getConversationalOnboardingTask peers once companions land. */
-export function setGetConversationalOnboardingTaskPeers(next: GetConversationalOnboardingTaskPeers): void {
+export function setGetConversationalOnboardingTaskPeers(
+  next: GetConversationalOnboardingTaskPeers,
+): void {
   peers = next;
 }
 
@@ -23,8 +25,11 @@ export function getConversationalOnboardingTask(e: unknown, t: unknown) {
 
   let n = e.get(peers.GMl, t);
   if (n == null) throw Error(`Unknown conversational onboarding task: ${t}`);
-  return e.set(peers.zMl, {
-    entry: n,
-    taskId: t
-  }), n;
+  return (
+    e.set(peers.zMl, {
+      entry: n,
+      taskId: t,
+    }),
+    n
+  );
 }

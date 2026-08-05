@@ -9,7 +9,9 @@ export type IsTunAtomEqualToNSPeers = {
 let peers: IsTunAtomEqualToNSPeers | null = null;
 
 /** Wire isTunAtomEqualToNS peers once companions land. */
-export function setIsTunAtomEqualToNSPeers(next: IsTunAtomEqualToNSPeers): void {
+export function setIsTunAtomEqualToNSPeers(
+  next: IsTunAtomEqualToNSPeers,
+): void {
   peers = next;
 }
 

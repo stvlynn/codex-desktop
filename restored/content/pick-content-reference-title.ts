@@ -4,7 +4,9 @@
 import { nonEmptyStringOrNull } from "../utils/non-empty-string-or-null";
 import { asRecord } from "../utils/as-record";
 
-export function pickContentReferenceTitle(ref: Record<string, unknown>): string | null {
+export function pickContentReferenceTitle(
+  ref: Record<string, unknown>,
+): string | null {
   const item = asRecord(ref.item);
   return (
     nonEmptyStringOrNull(ref.alt) ??

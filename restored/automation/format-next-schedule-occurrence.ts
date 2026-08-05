@@ -17,12 +17,17 @@ type OccurrenceFormatter = (
 let occurrenceFormatter: OccurrenceFormatter | null = null;
 
 /** Bind the RRULE → human label implementation (bundle `BZc`/`MZc` cluster). */
-export function bindScheduleOccurrenceFormatter(formatter: OccurrenceFormatter): void {
+export function bindScheduleOccurrenceFormatter(
+  formatter: OccurrenceFormatter,
+): void {
   occurrenceFormatter = formatter;
 }
 
 /** Format the next occurrence label for a schedule config. */
-export function formatNextScheduleOccurrence(config: ScheduleConfigForRrule, intl: ScheduleOccurrenceIntl): string | null {
+export function formatNextScheduleOccurrence(
+  config: ScheduleConfigForRrule,
+  intl: ScheduleOccurrenceIntl,
+): string | null {
   if (occurrenceFormatter == null) return null;
   const rrule = scheduleConfigToRrule(config);
   return occurrenceFormatter(rrule, intl);

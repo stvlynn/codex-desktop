@@ -13,7 +13,9 @@ export type BindBindDeferredHooksKXPeers = {
 let peers: BindBindDeferredHooksKXPeers | null = null;
 
 /** Wire bindBindDeferredHooksKX peers once companions land. */
-export function setBindBindDeferredHooksKXPeers(next: BindBindDeferredHooksKXPeers): void {
+export function setBindBindDeferredHooksKXPeers(
+  next: BindBindDeferredHooksKXPeers,
+): void {
   peers = next;
 }
 

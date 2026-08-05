@@ -2,10 +2,7 @@
 // Joystick feedback state reducer for Codex Micro gesture HUD.
 // Stage 3: Gw/Ww → joystick-geometry; Fft/Ift/M_t/ivt AppScope already mapped.
 
-import {
-  appScopeAtom,
-  createScopedSignal,
-} from "../runtime/app-scope-runtime";
+import { appScopeAtom, createScopedSignal } from "../runtime/app-scope-runtime";
 import {
   analogDirectionFromJoystick,
   ensureCodexMicroJoystickGeometryInit,
@@ -134,7 +131,11 @@ export function updateJoystickFeedback(
 }
 
 /** Bundle export `o` — apply a mini-game activation gesture update. */
-export function updateJoystickGameGesture(store: StoreLike, event: AnalogJoystickEvent, progress: number): void {
+export function updateJoystickGameGesture(
+  store: StoreLike,
+  event: AnalogJoystickEvent,
+  progress: number,
+): void {
   store.set(
     joystickFeedbackAtom,
     gameGesture(store.get(joystickFeedbackAtom), event, progress),

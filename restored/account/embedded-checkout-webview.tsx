@@ -16,7 +16,9 @@ export type EmbeddedCheckoutWebviewPeers = {
 let peers: EmbeddedCheckoutWebviewPeers | null = null;
 
 /** Wire EmbeddedCheckoutWebview peers once companions land. */
-export function setEmbeddedCheckoutWebviewPeers(next: EmbeddedCheckoutWebviewPeers): void {
+export function setEmbeddedCheckoutWebviewPeers(
+  next: EmbeddedCheckoutWebviewPeers,
+): void {
   peers = next;
 }
 
@@ -28,7 +30,9 @@ export type EmbeddedCheckoutWebviewProps = {
   [key: string]: unknown;
 };
 
-export function EmbeddedCheckoutWebview(props: EmbeddedCheckoutWebviewProps): ReactElement {
+export function EmbeddedCheckoutWebview(
+  props: EmbeddedCheckoutWebviewProps,
+): ReactElement {
   if (peers == null) {
     throw new Error("EmbeddedCheckoutWebview peers are not configured");
   }

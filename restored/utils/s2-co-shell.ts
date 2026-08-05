@@ -21,9 +21,8 @@ export function bindS2CoShell() {
     throw new Error("bindS2CoShell peers are not configured");
   }
 
-  return peers.JE(({
-    ephemeral: e,
-    sideConversation: t,
-    threadRuntimeStatus: n
-  }) => e === !0 && t === !0 && n?.type === `notLoaded`);
+  return peers.JE(
+    ({ ephemeral: e, sideConversation: t, threadRuntimeStatus: n }) =>
+      e === !0 && t === !0 && n?.type === `notLoaded`,
+  );
 }

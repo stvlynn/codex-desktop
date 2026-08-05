@@ -26,7 +26,12 @@ export function bindReset() {
     var n = peers.tQr(),
       r = peers.yo();
     function i(e, t, i, a) {
-      return e == null ? [] : (r(t) || (t = t == null ? [] : [t]), i = a ? void 0 : peers.i, r(peers.i) || (i = peers.i == null ? [] : [peers.i]), n(e, t, peers.i));
+      return e == null
+        ? []
+        : (r(t) || (t = t == null ? [] : [t]),
+          (i = a ? void 0 : peers.i),
+          r(peers.i) || (i = peers.i == null ? [] : [peers.i]),
+          n(e, t, peers.i));
     }
     t.exports = peers.i;
   });

@@ -21,7 +21,9 @@ export type BindRealtimeVoiceCatalogPeers = {
 let peers: BindRealtimeVoiceCatalogPeers | null = null;
 
 /** Wire bindRealtimeVoiceCatalog peers once companions land. */
-export function setBindRealtimeVoiceCatalogPeers(next: BindRealtimeVoiceCatalogPeers): void {
+export function setBindRealtimeVoiceCatalogPeers(
+  next: BindRealtimeVoiceCatalogPeers,
+): void {
   peers = next;
 }
 
@@ -34,19 +36,24 @@ export function bindRealtimeVoiceCatalog() {
   }
 
   return peers.e(() => {
-    peers.Qt(), peers.Ho(), peers.NV(), peers.yE(), peers.Hts(), peers.ed(), peers.Uf(), peers.grt(), peers.Bns(), Wns = peers.ka(peers.Q, ({
-      enabled: e,
-      hostId: t
-    }, {
-      scope: n
-    }) => ({
-      ...peers.Vns(n, t),
-      enabled: peers.e
-    }), {
-      key: ({
-        enabled: e,
-        hostId: t
-      }) => `${t}:${peers.e}`
-    });
+    (peers.Qt(),
+      peers.Ho(),
+      peers.NV(),
+      peers.yE(),
+      peers.Hts(),
+      peers.ed(),
+      peers.Uf(),
+      peers.grt(),
+      peers.Bns(),
+      (Wns = peers.ka(
+        peers.Q,
+        ({ enabled: e, hostId: t }, { scope: n }) => ({
+          ...peers.Vns(n, t),
+          enabled: peers.e,
+        }),
+        {
+          key: ({ enabled: e, hostId: t }) => `${t}:${peers.e}`,
+        },
+      )));
   });
 }

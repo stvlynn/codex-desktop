@@ -12,7 +12,9 @@ export type ComposerBrowserTabMentionsContextLimitExceededPeers = {
 let peers: ComposerBrowserTabMentionsContextLimitExceededPeers | null = null;
 
 /** Wire composerBrowserTabMentionsContextLimitExceeded peers once companions land. */
-export function setComposerBrowserTabMentionsContextLimitExceededPeers(next: ComposerBrowserTabMentionsContextLimitExceededPeers): void {
+export function setComposerBrowserTabMentionsContextLimitExceededPeers(
+  next: ComposerBrowserTabMentionsContextLimitExceededPeers,
+): void {
   peers = next;
 }
 
@@ -21,10 +23,12 @@ export function setComposerBrowserTabMentionsContextLimitExceededPeers(next: Com
  */
 export function composerBrowserTabMentionsContextLimitExceeded() {
   if (peers == null) {
-    throw new Error("composerBrowserTabMentionsContextLimitExceeded peers are not configured");
+    throw new Error(
+      "composerBrowserTabMentionsContextLimitExceeded peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Au(), peers.Vf(), peers.ap(), peers.Zg();
+    (peers.Au(), peers.Vf(), peers.ap(), peers.Zg());
   });
 }

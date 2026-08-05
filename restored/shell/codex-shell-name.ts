@@ -32,6 +32,12 @@ export function codexShellName() {
   }
 
   return peers.e(() => {
-    t5c = peers.c(), n5c = peers.r(peers.q8c(), 1), peers.sd(), peers.Y8c(), peers.X8c(), r5c = peers.J(), i5c = RegExp(`[^\\n]\b`, `gm`);
+    ((t5c = peers.c()),
+      (n5c = peers.r(peers.q8c(), 1)),
+      peers.sd(),
+      peers.Y8c(),
+      peers.X8c(),
+      (r5c = peers.J()),
+      (i5c = RegExp(`[^\\n]\b`, `gm`)));
   });
 }

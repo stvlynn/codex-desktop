@@ -34,7 +34,9 @@ export type BindBindGhCliStatusPeers = {
 let peers: BindBindGhCliStatusPeers | null = null;
 
 /** Wire bindBindGhCliStatus peers once companions land. */
-export function setBindBindGhCliStatusPeers(next: BindBindGhCliStatusPeers): void {
+export function setBindBindGhCliStatusPeers(
+  next: BindBindGhCliStatusPeers,
+): void {
   peers = next;
 }
 

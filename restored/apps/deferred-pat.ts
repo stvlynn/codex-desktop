@@ -25,6 +25,6 @@ export function deferredPat() {
   }
 
   return peers.e(() => {
-    peers.ov(), peers.dv(), peers.lv(), peers.zNt();
+    (peers.ov(), peers.dv(), peers.lv(), peers.zNt());
   });
 }

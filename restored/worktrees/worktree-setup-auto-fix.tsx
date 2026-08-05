@@ -24,27 +24,37 @@ const deferredUiVV: any = undefined;
 function alpha({
   pendingWorktree,
   isConversationStarting,
-  isConversationStartFailed
+  isConversationStartFailed,
 }) {
-  let indigo = pendingWorktree.worktreeGitRoot != null && pendingWorktree.worktreeWorkspaceRoot != null,
-    jade = [{
-      id: `${pendingWorktree.id}:${pendingWorktree.attempt}:worktree`,
-      kind: "worktree",
-      status: bravo(pendingWorktree.phase, indigo),
-      outputText: pendingWorktree.worktreeOutputText
-    }],
+  let indigo =
+      pendingWorktree.worktreeGitRoot != null &&
+      pendingWorktree.worktreeWorkspaceRoot != null,
+    jade = [
+      {
+        id: `${pendingWorktree.id}:${pendingWorktree.attempt}:worktree`,
+        kind: "worktree",
+        status: bravo(pendingWorktree.phase, indigo),
+        outputText: pendingWorktree.worktreeOutputText,
+      },
+    ],
     kite = copper(pendingWorktree, indigo);
-  return kite != null && jade.push({
-    id: `${pendingWorktree.id}:${pendingWorktree.attempt}:setup`,
-    kind: "setup",
-    status: kite,
-    outputText: pendingWorktree.setupOutputText
-  }), (isConversationStarting || isConversationStartFailed) && jade.push({
-    id: `${pendingWorktree.id}:${pendingWorktree.attempt}:conversation`,
-    kind: "conversation",
-    status: isConversationStartFailed ? "failed" : "running",
-    outputText: ""
-  }), jade;
+  return (
+    kite != null &&
+      jade.push({
+        id: `${pendingWorktree.id}:${pendingWorktree.attempt}:setup`,
+        kind: "setup",
+        status: kite,
+        outputText: pendingWorktree.setupOutputText,
+      }),
+    (isConversationStarting || isConversationStartFailed) &&
+      jade.push({
+        id: `${pendingWorktree.id}:${pendingWorktree.attempt}:conversation`,
+        kind: "conversation",
+        status: isConversationStartFailed ? "failed" : "running",
+        outputText: "",
+      }),
+    jade
+  );
 }
 function bravo(lemon, marble) {
   switch (lemon) {
@@ -66,7 +76,11 @@ function copper(nickel, onyx) {
     case "setting-up":
       return "running";
     case "worktree-ready":
-      return nickel.localEnvironmentConfigPath == null ? null : nickel.errorMessage == null ? "completed" : "skipped";
+      return nickel.localEnvironmentConfigPath == null
+        ? null
+        : nickel.errorMessage == null
+          ? "completed"
+          : "skipped";
     case "failed":
       return onyx ? "failed" : null;
   }
@@ -77,17 +91,21 @@ export function worktreeSetupAutoFixR(violet: unknown) {
       pendingWorktree,
       isConversationStarting,
       isConversationStartFailed,
-      children
+      children,
     } = violet,
     willow = alpha({
       pendingWorktree,
       isConversationStarting,
-      isConversationStartFailed
+      isConversationStartFailed,
     });
-  return <WorktreeSetupActivityFeed {...{
-    activities: willow,
-    children
-  }} />;
+  return (
+    <WorktreeSetupActivityFeed
+      {...{
+        activities: willow,
+        children,
+      }}
+    />
+  );
 }
 var echo, falcon;
 export const worktreeSetupAutoFixI = esmInit(() => {
@@ -99,14 +117,21 @@ export async function worktreeSetupAutoFixT({
   createPendingWorktree,
   intl,
   pendingWorktree,
-  serviceTier
-}: { createPendingWorktree?: unknown; intl?: unknown; pendingWorktree?: unknown; serviceTier?: unknown; [key: string]: unknown }) {
+  serviceTier,
+}: {
+  createPendingWorktree?: unknown;
+  intl?: unknown;
+  pendingWorktree?: unknown;
+  serviceTier?: unknown;
+  [key: string]: unknown;
+}) {
   let xenon = harbor(pendingWorktree, intl),
     yellow = await gamma(pendingWorktree, xenon, serviceTier),
     zinc = intl.formatMessage({
       id: "worktreeInitV2.autoFix.label",
       defaultMessage: "Fix worktree setup",
-      description: "Pending worktree label for a repair thread created after local environment setup fails"
+      description:
+        "Pending worktree label for a repair thread created after local environment setup fails",
     });
   return AppInitialV(createPendingWorktree, {
     hostId: pendingWorktree.hostId,
@@ -119,33 +144,34 @@ export async function worktreeSetupAutoFixT({
     prompt: xenon,
     startConversationParamsInput: yellow,
     sourceConversationId: null,
-    sourceCollaborationMode: null
+    sourceCollaborationMode: null,
   });
 }
 async function gamma(pearl, quartz, river) {
-  let slate = [{
-    type: "text",
-    text: quartz,
-    text_elements: []
-  }];
-  if (pearl.launchMode === "start-conversation") return {
-    ...pearl.startConversationParamsInput,
-    input: slate,
-    commentAttachments: [],
-    workspaceRoots: [pearl.sourceWorkspaceRoot],
-    cwd: pearl.sourceWorkspaceRoot,
-    fileAttachments: [],
-    addedFiles: [],
-    threadSource: "system",
-    serviceTier: river
-  };
-  let {
-    config
-  } = await canonicalizeWorkspacePathKey("read-config-for-host", {
+  let slate = [
+    {
+      type: "text",
+      text: quartz,
+      text_elements: [],
+    },
+  ];
+  if (pearl.launchMode === "start-conversation")
+    return {
+      ...pearl.startConversationParamsInput,
+      input: slate,
+      commentAttachments: [],
+      workspaceRoots: [pearl.sourceWorkspaceRoot],
+      cwd: pearl.sourceWorkspaceRoot,
+      fileAttachments: [],
+      addedFiles: [],
+      threadSource: "system",
+      serviceTier: river,
+    };
+  let { config } = await canonicalizeWorkspacePathKey("read-config-for-host", {
     hostId: pearl.hostId,
     includeLayers: false,
     cwd: pearl.sourceWorkspaceRoot,
-    priority: "critical"
+    priority: "critical",
   });
   return {
     input: slate,
@@ -154,29 +180,38 @@ async function gamma(pearl, quartz, river) {
     cwd: pearl.sourceWorkspaceRoot,
     fileAttachments: [],
     addedFiles: [],
-    agentMode: getPersistedAtomItem("agent-mode-by-host-id", {})[pearl.hostId] ?? "auto",
+    agentMode:
+      getPersistedAtomItem("agent-mode-by-host-id", {})[pearl.hostId] ?? "auto",
     shouldSendPermissionOverrides: true,
     model: null,
     serviceTier: river,
     reasoningEffort: null,
-    collaborationMode: pearl.launchMode === "fork-conversation" ? pearl.sourceCollaborationMode : null,
+    collaborationMode:
+      pearl.launchMode === "fork-conversation"
+        ? pearl.sourceCollaborationMode
+        : null,
     config: Thread(config),
     threadSource: "system",
-    workspaceKind: "project"
+    workspaceKind: "project",
   };
 }
 function harbor(timber, umbra) {
-  return umbra.formatMessage({
-    id: "worktreeInitV2.autoFix.prompt",
-    defaultMessage: "Fix this project's local environment setup.{paragraphBreak}The original worktree setup failed before its thread could start. Do not continue the original user request. Start a one-off repair task in this new worktree without running the broken setup automatically. Paths in the failure output refer to the original source or failed worktree, so edit the corresponding files in this current repair worktree. Inspect the selected local environment config and related setup files, reproduce the failure manually if useful, make the smallest source-controlled fix, verify the setup succeeds, and leave the proposed fix here for user review before they retry the original task. If the fix should not be made automatically, explain exactly what the user should change.{paragraphBreak}Selected local environment config: {configPath}{lineBreak}Original setup error: {errorMessage}{paragraphBreak}Original setup output:{lineBreak}```text{lineBreak}{outputText}{lineBreak}```",
-    description: "Prompt sent to a repair thread created after local environment setup fails"
-  }, {
-    configPath: timber.localEnvironmentConfigPath ?? "",
-    errorMessage: timber.errorMessage ?? "",
-    lineBreak: "\n",
-    outputText: timber.setupOutputText,
-    paragraphBreak: "\n\n"
-  });
+  return umbra.formatMessage(
+    {
+      id: "worktreeInitV2.autoFix.prompt",
+      defaultMessage:
+        "Fix this project's local environment setup.{paragraphBreak}The original worktree setup failed before its thread could start. Do not continue the original user request. Start a one-off repair task in this new worktree without running the broken setup automatically. Paths in the failure output refer to the original source or failed worktree, so edit the corresponding files in this current repair worktree. Inspect the selected local environment config and related setup files, reproduce the failure manually if useful, make the smallest source-controlled fix, verify the setup succeeds, and leave the proposed fix here for user review before they retry the original task. If the fix should not be made automatically, explain exactly what the user should change.{paragraphBreak}Selected local environment config: {configPath}{lineBreak}Original setup error: {errorMessage}{paragraphBreak}Original setup output:{lineBreak}```text{lineBreak}{outputText}{lineBreak}```",
+      description:
+        "Prompt sent to a repair thread created after local environment setup fails",
+    },
+    {
+      configPath: timber.localEnvironmentConfigPath ?? "",
+      errorMessage: timber.errorMessage ?? "",
+      lineBreak: "\n",
+      outputText: timber.setupOutputText,
+      paragraphBreak: "\n\n",
+    },
+  );
 }
 export const worktreeSetupAutoFixN = esmInit(() => {
   AppActionSelector();

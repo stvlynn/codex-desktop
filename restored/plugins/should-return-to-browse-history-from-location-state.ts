@@ -8,7 +8,9 @@ export type ShouldReturnToBrowseHistoryFromLocationStatePeers = {
 let peers: ShouldReturnToBrowseHistoryFromLocationStatePeers | null = null;
 
 /** Wire shouldReturnToBrowseHistoryFromLocationState peers once companions land. */
-export function setShouldReturnToBrowseHistoryFromLocationStatePeers(next: ShouldReturnToBrowseHistoryFromLocationStatePeers): void {
+export function setShouldReturnToBrowseHistoryFromLocationStatePeers(
+  next: ShouldReturnToBrowseHistoryFromLocationStatePeers,
+): void {
   peers = next;
 }
 

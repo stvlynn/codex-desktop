@@ -26,25 +26,28 @@ export function transcription2() {
   }
 
   return peers.e(() => {
-    peers.Sl(), zit = peers.sl({
-      detail: peers.ul([peers.X().transform(e => ({
-        type: null,
-        message: peers.e
-      })), peers.sl({
-        type: peers.X(),
-        message: peers.X()
-      }), peers.sl({
-        error_code: peers.X().optional(),
-        message: peers.X(),
-        type: peers.X().optional()
-      }).transform(({
-        error_code: e,
-        message: t,
-        type: n
-      }) => ({
-        type: n ?? peers.e ?? null,
-        message: t
-      }))])
-    });
+    (peers.Sl(),
+      (zit = peers.sl({
+        detail: peers.ul([
+          peers.X().transform((e) => ({
+            type: null,
+            message: peers.e,
+          })),
+          peers.sl({
+            type: peers.X(),
+            message: peers.X(),
+          }),
+          peers
+            .sl({
+              error_code: peers.X().optional(),
+              message: peers.X(),
+              type: peers.X().optional(),
+            })
+            .transform(({ error_code: e, message: t, type: n }) => ({
+              type: n ?? peers.e ?? null,
+              message: t,
+            })),
+        ]),
+      })));
   });
 }

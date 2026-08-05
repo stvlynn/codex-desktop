@@ -37,14 +37,50 @@ export function bindBindBrowser() {
   }
 
   return peers.e(() => {
-    x_e = peers.r(peers.Il()), peers.Sl(), peers.p_e(), peers.m_e(), S_e = `browser`, C_e = `codex-internal-plugins`, w_e = peers.X().trim().min(1).refine(e => peers.e !== `.` && peers.e !== `..` && !peers.e.includes(`/`) && !peers.e.includes(`\\`), `Expected a single path segment.`), T_e = peers.X().trim().regex(/^[a-fA-F0-9]{64}$/), E_e = peers.X().trim().url().refine(e => {
-      let t = new peers.URL(peers.e);
-      return t.origin === `https://chatgpt.com` && t.pathname.startsWith(`/codex/app/updates/plugins/`);
-    }), D_e = peers.sl({
-      internalCdnUrl: peers.E_e.optional(),
-      sha256: peers.T_e,
-      url: peers.X().trim().min(1),
-      version: peers.w_e
-    }), O_e = [`failed to back up plugin cache entry`, `failed to activate updated plugin cache entry`, `failed to activate plugin cache entry`, `failed to remove existing plugin cache entry`];
+    ((x_e = peers.r(peers.Il())),
+      peers.Sl(),
+      peers.p_e(),
+      peers.m_e(),
+      (S_e = `browser`),
+      (C_e = `codex-internal-plugins`),
+      (w_e = peers
+        .X()
+        .trim()
+        .min(1)
+        .refine(
+          (e) =>
+            peers.e !== `.` &&
+            peers.e !== `..` &&
+            !peers.e.includes(`/`) &&
+            !peers.e.includes(`\\`),
+          `Expected a single path segment.`,
+        )),
+      (T_e = peers
+        .X()
+        .trim()
+        .regex(/^[a-fA-F0-9]{64}$/)),
+      (E_e = peers
+        .X()
+        .trim()
+        .url()
+        .refine((e) => {
+          let t = new peers.URL(peers.e);
+          return (
+            t.origin === `https://chatgpt.com` &&
+            t.pathname.startsWith(`/codex/app/updates/plugins/`)
+          );
+        })),
+      (D_e = peers.sl({
+        internalCdnUrl: peers.E_e.optional(),
+        sha256: peers.T_e,
+        url: peers.X().trim().min(1),
+        version: peers.w_e,
+      })),
+      (O_e = [
+        `failed to back up plugin cache entry`,
+        `failed to activate updated plugin cache entry`,
+        `failed to activate plugin cache entry`,
+        `failed to remove existing plugin cache entry`,
+      ]));
   });
 }

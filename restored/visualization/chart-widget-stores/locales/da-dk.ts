@@ -18,25 +18,31 @@ const messages: Record<string, string> = {
   "widgets.cardCarousel.nextCards": "Næste kort",
   "widgets.cardCarousel.nextCardsInCarousel": "Næste kort i {carouselLabel}",
   "widgets.cardCarousel.previousCards": "Forrige kort",
-  "widgets.cardCarousel.previousCardsInCarousel": "Forrige kort i {carouselLabel}",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "Forrige kort i {carouselLabel}",
   "widgets.debug.hideCurrentState": "Skjul aktuel tilstand",
   "widgets.debug.nextState": "Næste tilstand",
   "widgets.debug.previousState": "Forrige tilstand",
   "widgets.debug.selectedState": "Valgt tilstand",
   "widgets.debug.showCurrentState": "Vis aktuel tilstand",
   "widgets.debug.state": "Status",
-  "widgets.debug.unableToSerializeSelectedState": "Kan ikke serialisere valgt tilstand.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "Kan ikke serialisere valgt tilstand.",
   "widgets.hermes.artifact.viewMore": "Se {count} mere",
   "widgets.hermes.calendarEvent.moreAttendees": "+{count} flere",
   "widgets.hermes.calendarEvent.singleTime": "{date} kl. {time}",
-  "widgets.hermes.calendarEvent.timeRange": "{date} kl. {startTime} - {endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "{agentName} skal have adgang for at fortsætte",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName} har brug for din tilladelse for at fortsætte",
+  "widgets.hermes.calendarEvent.timeRange":
+    "{date} kl. {startTime} - {endTime}",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "{agentName} skal have adgang for at fortsætte",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName} har brug for din tilladelse for at fortsætte",
   "widgets.hermes.genericResponse.viewFullscreen": "Vis fuld skærm",
   "widgets.hermes.genericTool.details": "Detaljer",
   "widgets.hermes.genericTool.read": "Læs",
   "widgets.hermes.genericTool.request": "Anmodning",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} vil bruge {connectorName} til at køre {toolName}.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} vil bruge {connectorName} til at køre {toolName}.",
   "widgets.hermes.genericTool.viewFullscreen": "Se i fuld skærm",
   "widgets.hermes.genericTool.write": "Skriv",
   "widgets.hermes.googleCalendarCreate.create": "Opret",
@@ -44,12 +50,14 @@ const messages: Record<string, string> = {
   "widgets.hermes.inlineResponse.accept": "Godkend",
   "widgets.hermes.inlineResponse.decline": "Annuller",
   "widgets.hermes.permission.connect": "Opret forbindelse",
-  "widgets.hermes.permission.connectToConnector": "Opret forbindelse til {connectorName}",
+  "widgets.hermes.permission.connectToConnector":
+    "Opret forbindelse til {connectorName}",
   "widgets.hermes.permission.connected": "Forbundet",
   "widgets.hermes.permission.moreInformation": "Flere oplysninger",
   "widgets.hermes.permission.notNow": "Ikke nu",
   "widgets.hermes.permission.reconnect": "Forbind igen",
-  "widgets.hermes.permission.reconnectToConnector": "Opret forbindelse til {connectorName} igen",
+  "widgets.hermes.permission.reconnectToConnector":
+    "Opret forbindelse til {connectorName} igen",
   "widgets.hermes.sendEmail.approveAction": "Godkend handling",
   "widgets.hermes.sendEmail.bcc": "Bcc",
   "widgets.hermes.sendEmail.cc": "Cc",
@@ -62,79 +70,141 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "Vis mindre",
   "widgets.hermes.taskStatus.canceled": "Opgave annulleret",
   "widgets.hermes.taskStatus.canceling": "Annullerer",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Tjekker tidligere beskeder",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Gennemgår tidligere beskeder",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Gennemgår tidligere beskeder",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Gennemgår tidligere beskeder",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Gennemgår tidligere beskeder",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Gennemgår tidligere beskeder",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Gennemgår tidligere beskeder",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Gennemgår tidligere beskeder",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Gennemgår tidligere beskeder",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Gennemgår tidligere beskeder",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Gennemgår tidligere beskeder",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Tjekker kontekst",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Gennemgår kontekst",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Undersøger kontekst",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Gennemgår kontekst",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Gennemgår kontekst",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Gennemgår konteksten igen",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Scanner kontekst",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Gennemgår kontekst",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Aktiverer agent",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Starter agent",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Starter agenten",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Tilkalder agent",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Opretter forbindelse til agenten",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "Opretter forbindelse til agent",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Får agenten ud af sengen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Initialiserer agent",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Vækker agenten",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Initialiserer agent",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "Tilkalder agent",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Aktiverer computeren",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Starter computeren",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Bringer computeren online",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Initialiserer computer",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Starter computeren",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Starter computeren",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Starter computeren",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Vækker computeren",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Tjekker tidligere beskeder",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Gennemgår tidligere beskeder",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Gennemgår tidligere beskeder",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Gennemgår tidligere beskeder",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Gennemgår tidligere beskeder",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Gennemgår tidligere beskeder",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Gennemgår tidligere beskeder",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Gennemgår tidligere beskeder",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Gennemgår tidligere beskeder",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Gennemgår tidligere beskeder",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Gennemgår tidligere beskeder",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Tjekker kontekst",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Gennemgår kontekst",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Undersøger kontekst",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Gennemgår kontekst",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Gennemgår kontekst",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Gennemgår konteksten igen",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Scanner kontekst",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Gennemgår kontekst",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Aktiverer agent",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Starter agent",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Starter agenten",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Tilkalder agent",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Opretter forbindelse til agenten",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "Opretter forbindelse til agent",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Får agenten ud af sengen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Initialiserer agent",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Vækker agenten",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Initialiserer agent",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "Tilkalder agent",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Aktiverer computeren",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Starter computeren",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Bringer computeren online",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Initialiserer computer",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Starter computeren",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Starter computeren",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Starter computeren",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Vækker computeren",
   "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Sætter kurs",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Lægger en plan",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "Lægger en plan",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Lægger en plan",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Lægger en plan",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Lægger en plan",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Planlægger næste skridt",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Lægger en plan",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "Lægger en plan",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Planlægger næste skridt",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Planlægger",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Fastlægger retning",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Fastlægger retning",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Skitserer planen",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Overvejer fremgangsmåder",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Overvejer fremgangsmåde",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Samler oplysninger",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Indsamler oplysninger",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Indsamler detaljer",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Indsamler detaljer",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Samler detaljerne",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Indsamler detaljer",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Indsamler oplysninger",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Afklarer detaljer",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Gennemgår detaljer",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Finder detaljer",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Det tager længere tid end normalt",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Arbejder stadig på det",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Kig gerne tilbage om lidt",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Fastlægger retning",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Fastlægger retning",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Skitserer planen",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Overvejer fremgangsmåder",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Overvejer fremgangsmåde",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Samler oplysninger",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Indsamler oplysninger",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Indsamler detaljer",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Indsamler detaljer",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Samler detaljerne",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Indsamler detaljer",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Indsamler oplysninger",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Afklarer detaljer",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Gennemgår detaljer",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Finder detaljer",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Det tager længere tid end normalt",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Arbejder stadig på det",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Kig gerne tilbage om lidt",
   "widgets.hermes.workflow.canceled": "Opgave annulleret",
   "widgets.hermes.workflow.canceledItemLabel": "Annulleret",
   "widgets.hermes.workflow.codeBlock.hideLines": "Skjul linjer",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Se alle {lineCount} linjer",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Se alle {lineCount} linjer",
   "widgets.hermes.workflow.customWorked": "Kørte et stykke tid",
   "widgets.hermes.workflow.customWorking": "I gang",
   "widgets.hermes.workflow.fileWorked": "Scannet dokument",
   "widgets.hermes.workflow.fileWorking": "Scanner dokument",
   "widgets.hermes.workflow.group.readingConnector": "Læser {connectorName}",
-  "widgets.hermes.workflow.group.writingConnector": "Skriver til {connectorName}",
+  "widgets.hermes.workflow.group.writingConnector":
+    "Skriver til {connectorName}",
   "widgets.hermes.workflow.imageWorked": "Analyseret billede",
   "widgets.hermes.workflow.imageWorking": "Analyserer billede",
   "widgets.hermes.workflow.preparingResponse": "Forbereder svar",
@@ -148,7 +218,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Vis mindre",
   "widgets.listView.showMore": "Vis {count} mere",
   "widgets.radioGroup.options": "valgmuligheder",
-  "widgets.segmentedControl.selectAnOption": "Vælg en mulighed"
+  "widgets.segmentedControl.selectAnOption": "Vælg en mulighed",
 };
 
 export default messages;

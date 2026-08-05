@@ -31,6 +31,15 @@ export function bindDeferredUiHit() {
   }
 
   return peers.e(() => {
-    peers.hv(), peers.DPt(), peers.MPt(), peers.FPt(), peers.RPt(), peers.HPt(), peers.iFt(), peers.sFt(), peers.cFt(), peers.mFt();
+    (peers.hv(),
+      peers.DPt(),
+      peers.MPt(),
+      peers.FPt(),
+      peers.RPt(),
+      peers.HPt(),
+      peers.iFt(),
+      peers.sFt(),
+      peers.cFt(),
+      peers.mFt());
   });
 }

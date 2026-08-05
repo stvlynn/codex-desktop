@@ -38,9 +38,21 @@ export function bindDeferredUiRa() {
   }
 
   return peers.e(() => {
-    pql = peers.c(), peers.sd(), peers.Ho(), mql = peers.r(peers.o(), 1), peers.Mp(), peers.PA(), peers.I5(), peers.zVl(), peers.qHl(), peers.lql(), peers.QHl(), z5 = peers.J(), hql = {
-      hasMore: !1,
-      isLoading: !1
-    };
+    ((pql = peers.c()),
+      peers.sd(),
+      peers.Ho(),
+      (mql = peers.r(peers.o(), 1)),
+      peers.Mp(),
+      peers.PA(),
+      peers.I5(),
+      peers.zVl(),
+      peers.qHl(),
+      peers.lql(),
+      peers.QHl(),
+      (z5 = peers.J()),
+      (hql = {
+        hasMore: !1,
+        isLoading: !1,
+      }));
   });
 }

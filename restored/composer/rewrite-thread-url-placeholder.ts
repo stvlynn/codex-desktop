@@ -3,7 +3,10 @@
 
 import { THREAD_URL_PLACEHOLDER } from "./thread-url-placeholder";
 
-export function rewriteThreadUrlPlaceholder(template: string, threadId: string): string {
+export function rewriteThreadUrlPlaceholder(
+  template: string,
+  threadId: string,
+): string {
   return template.replaceAll(
     THREAD_URL_PLACEHOLDER,
     `codex://threads/${threadId}`,

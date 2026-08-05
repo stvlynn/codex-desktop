@@ -6,7 +6,10 @@ import { scrollLocalConversationItemIntoView } from "./scroll-local-conversation
 const SCROLL_WAIT_TIMEOUT_MS = 1000;
 
 /** Scroll now, or rAF-poll until the item appears / timeout (bundle `t1s` / `$h`). */
-export function waitForLocalConversationItemScroll(targetId: string, behavior?: ScrollBehavior): Promise<boolean> {
+export function waitForLocalConversationItemScroll(
+  targetId: string,
+  behavior?: ScrollBehavior,
+): Promise<boolean> {
   if (scrollLocalConversationItemIntoView(targetId, behavior))
     return Promise.resolve(true);
   return new Promise((resolve) => {

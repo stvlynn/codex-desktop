@@ -30,6 +30,12 @@ export function bindDeferredUiCm() {
   }
 
   return peers.e(() => {
-    $8s = peers.c(), peers.sd(), peers.af(), peers.QWr(), peers.GD(), peers.Y8s(), p1 = peers.J();
+    (($8s = peers.c()),
+      peers.sd(),
+      peers.af(),
+      peers.QWr(),
+      peers.GD(),
+      peers.Y8s(),
+      (p1 = peers.J()));
   });
 }

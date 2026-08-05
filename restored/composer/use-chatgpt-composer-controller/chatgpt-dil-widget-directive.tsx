@@ -55,9 +55,7 @@ import {
 
 const _appInitial8 = appInitialFft;
 
-function useChatgptComposerControllerHelper93(
-  request399,
-) {
+function useChatgptComposerControllerHelper93(request399) {
   const UseChatgptComposerControllerHelper79 =
     useChatgptComposerControllerHelper79;
   const Suspense = chatgptDilReact.Suspense;
@@ -69,21 +67,12 @@ function useChatgptComposerControllerHelper93(
   const AppInitialG1 = appInitialG1;
   let { attributes, rawText } = request399,
     slot2371 = appInitialLT(_appInitial8),
-    slot2372 =
-      useChatgptComposerControllerHelper31(),
+    slot2372 = useChatgptComposerControllerHelper31(),
     slot2373 = _AppInitialNl("electron");
-  let slot2374 =
-      slot2373,
-    slot2375 =
-      chatgptDilReact.useContext(appInitialIL),
-    slot2376 =
-      chatgptDilReact.useContext(
-        useChatgptComposerControllerB,
-      ),
-    slot2377 =
-      chatgptDilReact.useContext(
-        useChatgptComposerControllerV,
-      ),
+  let slot2374 = slot2373,
+    slot2375 = chatgptDilReact.useContext(appInitialIL),
+    slot2376 = chatgptDilReact.useContext(useChatgptComposerControllerB),
+    slot2377 = chatgptDilReact.useContext(useChatgptComposerControllerV),
     slot2378 = appInitialJft(),
     { widget, widgetName, widgetRefId } = useChatgptComposerControllerHelper96({
       attributes,
@@ -91,27 +80,20 @@ function useChatgptComposerControllerHelper93(
     }),
     slot2379 = appInitialFI(widgetName, widget),
     slot2380 = appInitialYU(appInitialVU()),
-    slot2381 =
-      chatgptDilReact.useRef(null),
-    slot2382 =
-      chatgptDilReact.useRef(null),
+    slot2381 = chatgptDilReact.useRef(null),
+    slot2382 = chatgptDilReact.useRef(null),
     slot2383 =
       slot2372?.dilViewState?.root ??
       (widgetRefId
-        ? slot2372?.dilViewState?.widgets?.[
-            widgetRefId
-          ]
+        ? slot2372?.dilViewState?.widgets?.[widgetRefId]
         : undefined),
-    slot2384 =
-      widgetRefId?.match(/^(.+):\d+$/s)?.[1] ??
-      slot2372?.messageId,
+    slot2384 = widgetRefId?.match(/^(.+):\d+$/s)?.[1] ?? slot2372?.messageId,
     slot2385 = {
       launch: (request5386) => {
         if (slot2372 == null)
           throw Error("Cannot launch an app outside a conversation.");
         let slot11627 =
-          slot2372.browserConversationId ??
-          slot2372.conversationId;
+          slot2372.browserConversationId ?? slot2372.conversationId;
         if (appInitialVI(slot11627))
           throw Error(
             "Wait for this conversation to finish saving, then try again.",
@@ -125,10 +107,7 @@ function useChatgptComposerControllerHelper93(
       },
       onError: useChatgptComposerControllerHelper94,
     };
-  let slot2386 =
-      useChatgptComposerControllerHelper92(
-        slot2385,
-      ),
+  let slot2386 = useChatgptComposerControllerHelper92(slot2385),
     slot2387,
     slot2388;
   if (
@@ -139,42 +118,23 @@ function useChatgptComposerControllerHelper93(
         slot2382,
       );
     }),
-    (slot2388 = [
-      slot2383,
-    ]),
-    chatgptDilReact.useEffect(
-      slot2387,
-      slot2388,
-    ),
+    (slot2388 = [slot2383]),
+    chatgptDilReact.useEffect(slot2387, slot2388),
     widget == null ||
-      slot2372?.shouldBlockExternalEgress ===
-        true ||
+      slot2372?.shouldBlockExternalEgress === true ||
       slot2375 === "restricted")
   )
     return null;
   if (slot2379 != null) {
     let slot15023;
-    return (
-      <UseChatgptComposerControllerHelper79
-        reference={slot2379}
-      />
-    );
+    return <UseChatgptComposerControllerHelper79 reference={slot2379} />;
   }
-  let slot2389 = (
-    request11231,
-  ) => {
-    slot2381.current =
-      request11231;
-    useChatgptComposerControllerHelper95(
-      request11231,
-      slot2383,
-      slot2382,
-    );
+  let slot2389 = (request11231) => {
+    slot2381.current = request11231;
+    useChatgptComposerControllerHelper95(request11231, slot2383, slot2382);
   };
   let slot2390 = widget,
-    slot2391 = (
-      request9132,
-    ) => {
+    slot2391 = (request9132) => {
       appInitialDdt.error("ChatGPT DIL renderer error", {
         safe: {
           widgetName: widget.type,
@@ -184,61 +144,40 @@ function useChatgptComposerControllerHelper93(
         },
       });
     };
-  let slot2392 = (
-    request2821,
-  ) => {
-    return useChatgptComposerControllerHelper38(
-      request2821,
-      {
-        issueNewTurn: async (request5978) => {
-          let { appendToCurrentLeaf, messageMetadata, query } =
-            request5978;
-          if (slot2372 == null)
-            throw Error("ChatGPT DIL follow-up requires a turn context");
-          await appInitialN(slot2371, {
-            conversationId:
-              slot2372.conversationId,
-            messageMetadata,
-            parentMessageId: appendToCurrentLeaf
-              ? undefined
-              : slot2384,
-            prompt: query,
-          });
-        },
-        launchEcosystemWidget: slot2374
-          ? slot2386.launch
-          : undefined,
-        openEntityDetail: async (request4832) => {
-          let { category, extraParams, query } =
-            request4832;
-          if (
-            slot2372 == null ||
-            slot2384 == null
-          )
-            throw Error("ChatGPT DIL entity detail requires a turn context");
-          let slot10953 = {
-            category,
-            extraParams: extraParams ?? null,
-            locale: slot2378.locale,
-            messageId: slot2384,
-            query,
-            sourceConversationId:
-              slot2372.conversationId,
-          };
-          if (slot2376 != null) {
-            slot2376(
-              slot10953,
-            );
-            return;
-          }
-          await useChatgptComposerControllerHelper91(
-            slot2371,
-            slot10953,
-          );
-        },
-        openImageLightbox: slot2377 ?? undefined,
+  let slot2392 = (request2821) => {
+    return useChatgptComposerControllerHelper38(request2821, {
+      issueNewTurn: async (request5978) => {
+        let { appendToCurrentLeaf, messageMetadata, query } = request5978;
+        if (slot2372 == null)
+          throw Error("ChatGPT DIL follow-up requires a turn context");
+        await appInitialN(slot2371, {
+          conversationId: slot2372.conversationId,
+          messageMetadata,
+          parentMessageId: appendToCurrentLeaf ? undefined : slot2384,
+          prompt: query,
+        });
       },
-    );
+      launchEcosystemWidget: slot2374 ? slot2386.launch : undefined,
+      openEntityDetail: async (request4832) => {
+        let { category, extraParams, query } = request4832;
+        if (slot2372 == null || slot2384 == null)
+          throw Error("ChatGPT DIL entity detail requires a turn context");
+        let slot10953 = {
+          category,
+          extraParams: extraParams ?? null,
+          locale: slot2378.locale,
+          messageId: slot2384,
+          query,
+          sourceConversationId: slot2372.conversationId,
+        };
+        if (slot2376 != null) {
+          slot2376(slot10953);
+          return;
+        }
+        await useChatgptComposerControllerHelper91(slot2371, slot10953);
+      },
+      openImageLightbox: slot2377 ?? undefined,
+    });
   };
   let slot2393 = (
     <Suspense fallback={null}>
@@ -255,27 +194,19 @@ function useChatgptComposerControllerHelper93(
       />
     </Suspense>
   );
-  let slot2394 = (
-    <UseChatgptComposerControllerHelper46 />
-  );
+  let slot2394 = <UseChatgptComposerControllerHelper46 />;
   let slot2395 =
-    slot2386.dialog == null ||
-    slot2372 == null ? null : (
+    slot2386.dialog == null || slot2372 == null ? null : (
       <UseChatgptComposerControllerHelper52
         conversationId={appInitialVgt(
-          slot2372.browserConversationId ??
-            slot2372.conversationId,
+          slot2372.browserConversationId ?? slot2372.conversationId,
         )}
         hostId={slot2372.hostId}
         onClose={slot2386.close}
         state={slot2386.dialog}
       />
     );
-  let slot2396 = (
-    <AppInitialG1 electron={true}>
-      {slot2395}
-    </AppInitialG1>
-  );
+  let slot2396 = <AppInitialG1 electron={true}>{slot2395}</AppInitialG1>;
   return (
     <div
       className="my-3 w-full max-w-[760px]"
@@ -288,20 +219,14 @@ function useChatgptComposerControllerHelper93(
     </div>
   );
 }
-function useChatgptComposerControllerHelper102(
-  request6196,
-) {
+function useChatgptComposerControllerHelper102(request6196) {
   const UseChatgptComposerControllerHelper93 =
     useChatgptComposerControllerHelper93;
   let { reference, widgetRefId } = request6196,
-    slot12532 =
-      useChatgptComposerControllerHelper103(reference, widgetRefId);
-  let slot12533 =
-    slot12532;
+    slot12532 = useChatgptComposerControllerHelper103(reference, widgetRefId);
+  let slot12533 = slot12532;
   return slot12533 == null ? null : (
-    <UseChatgptComposerControllerHelper93
-      rawText={slot12533}
-    />
+    <UseChatgptComposerControllerHelper93 rawText={slot12533} />
   );
 }
 
@@ -309,4 +234,3 @@ export {
   useChatgptComposerControllerHelper93,
   useChatgptComposerControllerHelper102,
 };
-

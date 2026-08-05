@@ -7,4 +7,3 @@
 /** Wave FY: bind no longer required after full body promote */
 export function bindPdfPreviewPanel(_next: unknown): void {}
 export function ensurePdfPreviewPanelInit(): void {}
-

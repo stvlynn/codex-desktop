@@ -11,7 +11,9 @@ export type UseMarketplacePluginsEnabledAtomPeers = {
 let peers: UseMarketplacePluginsEnabledAtomPeers | null = null;
 
 /** Wire UseMarketplacePluginsEnabledAtom peers once companions land. */
-export function setUseMarketplacePluginsEnabledAtomPeers(next: UseMarketplacePluginsEnabledAtomPeers): void {
+export function setUseMarketplacePluginsEnabledAtomPeers(
+  next: UseMarketplacePluginsEnabledAtomPeers,
+): void {
   peers = next;
 }
 

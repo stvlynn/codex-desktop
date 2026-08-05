@@ -6,10 +6,13 @@ export type BindBindElectronConversationalOnboardingConversation2Peers = {
   Q: (...args: unknown[]) => unknown;
 };
 
-let peers: BindBindElectronConversationalOnboardingConversation2Peers | null = null;
+let peers: BindBindElectronConversationalOnboardingConversation2Peers | null =
+  null;
 
 /** Wire bindBindElectronConversationalOnboardingConversation2 peers once companions land. */
-export function setBindBindElectronConversationalOnboardingConversation2Peers(next: BindBindElectronConversationalOnboardingConversation2Peers): void {
+export function setBindBindElectronConversationalOnboardingConversation2Peers(
+  next: BindBindElectronConversationalOnboardingConversation2Peers,
+): void {
   peers = next;
 }
 
@@ -18,13 +21,12 @@ export function setBindBindElectronConversationalOnboardingConversation2Peers(ne
  */
 export function bindBindElectronConversationalOnboardingConversation2() {
   if (peers == null) {
-    throw new Error("bindBindElectronConversationalOnboardingConversation2 peers are not configured");
+    throw new Error(
+      "bindBindElectronConversationalOnboardingConversation2 peers are not configured",
+    );
   }
 
-  return peers.Da(peers.Q, e => null, void 0, {
-    key: ({
-      hostId: e,
-      threadId: t
-    }) => `${e}:${t}`
+  return peers.Da(peers.Q, (e) => null, void 0, {
+    key: ({ hostId: e, threadId: t }) => `${e}:${t}`,
   });
 }

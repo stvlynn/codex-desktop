@@ -15,10 +15,24 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wlt_Init, ensureComposerEsm_Ytt_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Wlt_Init,
+  ensureComposerEsm_Ytt_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { USER_CONFIG_PATH } from "../../config/user-config-path";
@@ -50,7 +64,10 @@ import { codexCommandTheme } from "../../ui/codex-command-theme";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { isRestoring } from "../../ui/is-restoring";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -58,15 +75,23 @@ import { SearchableDetailPageLayout } from "../../ui/searchable-detail-page-layo
 import { identity } from "../../utils/identity";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
-import { applyChronicleConfigFeature, ensureChronicleConfigQueriesInit } from "../chronicle-config-queries";
+import {
+  applyChronicleConfigFeature,
+  ensureChronicleConfigQueriesInit,
+} from "../chronicle-config-queries";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 
 // Wave5d soft JSX companions.
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -164,176 +189,263 @@ const openInBrowser: any = undefined;
 const parseUrlOrFallback: any = undefined;
 const useChromeAndCodeThemeSync: any = undefined;
 function apex(nest) {
-  let {
-      behavior,
-      children,
-      kind,
-      onBehaviorChange
-    } = nest,
-    oak = <ChronicleSettingsPageHelper14 {...{
-      behavior,
-      kind
-    }} />;
-  let petal = <AppIconSft {...{
-    className: "icon-2xs text-token-text-tertiary"
-  }} />;
-  let quiet = <ReadLoginRouteQuerySnapshot {...{
-    color: "ghostActive",
-    className: "!h-5 gap-[7px] self-start !rounded-none !border-0 !px-0 !py-0 !text-[14px] !leading-5 !font-medium tracking-normal enabled:hover:!bg-transparent data-[state=open]:!bg-transparent",
-    children: [oak, petal]
-  }} />;
+  let { behavior, children, kind, onBehaviorChange } = nest,
+    oak = (
+      <ChronicleSettingsPageHelper14
+        {...{
+          behavior,
+          kind,
+        }}
+      />
+    );
+  let petal = (
+    <AppIconSft
+      {...{
+        className: "icon-2xs text-token-text-tertiary",
+      }}
+    />
+  );
+  let quiet = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "ghostActive",
+        className:
+          "!h-5 gap-[7px] self-start !rounded-none !border-0 !px-0 !py-0 !text-[14px] !leading-5 !font-medium tracking-normal enabled:hover:!bg-transparent data-[state=open]:!bg-transparent",
+        children: [oak, petal],
+      }}
+    />
+  );
   let rain = behavior === "observe" ? AppIconZlt : undefined,
     seed = () => onBehaviorChange("observe");
-  let trail = <ChronicleSettingsPageHelper14 {...{
-    behavior: "observe",
-    kind
-  }} />;
-  let urn = <DropdownMenu.Item {...{
-    RightIcon: rain,
-    onSelect: seed,
-    children: trail
-  }} />;
+  let trail = (
+    <ChronicleSettingsPageHelper14
+      {...{
+        behavior: "observe",
+        kind,
+      }}
+    />
+  );
+  let urn = (
+    <DropdownMenu.Item
+      {...{
+        RightIcon: rain,
+        onSelect: seed,
+        children: trail,
+      }}
+    />
+  );
   let vine = behavior === "do_not_observe" ? AppIconZlt : undefined,
     wind = () => onBehaviorChange("do_not_observe");
-  let yarrow = <ChronicleSettingsPageHelper14 {...{
-    behavior: "do_not_observe",
-    kind
-  }} />;
-  let azure = <DropdownMenu.Item {...{
-    RightIcon: vine,
-    onSelect: wind,
-    children: yarrow
-  }} />;
-  let birch = <DropdownMenuPopover {...{
-    contentWidth: "menu",
-    triggerButton: quiet,
-    children: [urn, azure]
-  }} />;
-  let canyon = <p className="mt-0.5 mb-2.5 text-[13px] leading-[18px] text-token-text-secondary">
-      {<ChronicleSettingsPageHelper15 {...{
-      behavior,
-      kind
-    }} />}
-    </p>;
-  let dew = <div className="flex h-[250px] min-h-0 flex-col overflow-visible rounded-xl border border-token-border bg-token-foreground/[0.025]">
+  let yarrow = (
+    <ChronicleSettingsPageHelper14
+      {...{
+        behavior: "do_not_observe",
+        kind,
+      }}
+    />
+  );
+  let azure = (
+    <DropdownMenu.Item
+      {...{
+        RightIcon: vine,
+        onSelect: wind,
+        children: yarrow,
+      }}
+    />
+  );
+  let birch = (
+    <DropdownMenuPopover
+      {...{
+        contentWidth: "menu",
+        triggerButton: quiet,
+        children: [urn, azure],
+      }}
+    />
+  );
+  let canyon = (
+    <p className="mt-0.5 mb-2.5 text-[13px] leading-[18px] text-token-text-secondary">
+      {
+        <ChronicleSettingsPageHelper15
+          {...{
+            behavior,
+            kind,
+          }}
+        />
+      }
+    </p>
+  );
+  let dew = (
+    <div className="flex h-[250px] min-h-0 flex-col overflow-visible rounded-xl border border-token-border bg-token-foreground/[0.025]">
       {children}
-    </div>;
-  return <section className="flex min-h-0 flex-col">
+    </div>
+  );
+  return (
+    <section className="flex min-h-0 flex-col">
       {birch}
       {canyon}
       {dew}
-    </section>;
+    </section>
+  );
 }
 function brook(ever) {
-  let {
-      icon,
-      label,
-      onRemove,
-      subtitle
-    } = ever,
+  let { icon, label, onRemove, subtitle } = ever,
     field = useIntl(),
     grain = <span className="truncate">{label}</span>;
-  let haven = subtitle == null ? null : <span className="truncate text-[11px] leading-[15px] text-token-text-secondary">
+  let haven =
+    subtitle == null ? null : (
+      <span className="truncate text-[11px] leading-[15px] text-token-text-secondary">
         {subtitle}
-      </span>;
-  let ink = <div className="flex min-w-0 flex-col">
+      </span>
+    );
+  let ink = (
+    <div className="flex min-w-0 flex-col">
       {grain}
       {haven}
-    </div>;
+    </div>
+  );
   let jadeite = field.formatMessage({
     id: "settings.chronicle.permissions.remove",
     defaultMessage: "Remove",
-    description: "Remove a Computer history permission item"
+    description: "Remove a Computer history permission item",
   });
   let kernel = <Chatgpt2 {...{}} />;
-  let leaf = <ReadLoginRouteQuerySnapshot {...{
-    color: "ghost",
-    size: "iconSm",
-    uniform: true,
-    className: "!size-6 !rounded-lg !p-0 !text-token-text-secondary opacity-0 transition-opacity group-focus-within/permission:opacity-100 group-hover/permission:opacity-100 focus-visible:opacity-100 enabled:hover:!text-token-text-primary [&>svg]:!size-3",
-    "aria-label": jadeite,
-    onClick: onRemove,
-    children: kernel
-  }} />;
-  return <div className="group/permission grid min-h-10 grid-cols-[24px_minmax(0,1fr)_24px] items-center gap-2.5 rounded-lg px-2 py-1.5 text-[13px] leading-[17px] focus-within:bg-token-list-hover-background hover:bg-token-list-hover-background">
+  let leaf = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "ghost",
+        size: "iconSm",
+        uniform: true,
+        className:
+          "!size-6 !rounded-lg !p-0 !text-token-text-secondary opacity-0 transition-opacity group-focus-within/permission:opacity-100 group-hover/permission:opacity-100 focus-visible:opacity-100 enabled:hover:!text-token-text-primary [&>svg]:!size-3",
+        "aria-label": jadeite,
+        onClick: onRemove,
+        children: kernel,
+      }}
+    />
+  );
+  return (
+    <div className="group/permission grid min-h-10 grid-cols-[24px_minmax(0,1fr)_24px] items-center gap-2.5 rounded-lg px-2 py-1.5 text-[13px] leading-[17px] focus-within:bg-token-list-hover-background hover:bg-token-list-hover-background">
       {icon}
       {ink}
       {leaf}
-    </div>;
+    </div>
+  );
 }
 function cliff(maple) {
-  let {
-      application
-    } = maple,
-    nimbus = application.iconDataURL == null ? <span className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-token-foreground/5 text-[10px]" aria-hidden="true">
+  let { application } = maple,
+    nimbus =
+      application.iconDataURL == null ? (
+        <span
+          className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-token-foreground/5 text-[10px]"
+          aria-hidden="true"
+        >
           {application.displayName.slice(0, 1)}
-        </span> : <img className="size-6 shrink-0 object-contain" src={application.iconDataURL} alt="" />;
+        </span>
+      ) : (
+        <img
+          className="size-6 shrink-0 object-contain"
+          src={application.iconDataURL}
+          alt=""
+        />
+      );
   let opal = <span className="truncate">{application.displayName}</span>;
-  return <span className="flex min-w-0 items-center gap-2.5">
+  return (
+    <span className="flex min-w-0 items-center gap-2.5">
       {nimbus}
       {opal}
-    </span>;
+    </span>
+  );
 }
 function dusk(plume) {
-  let {
-      application,
-      onRemove,
-      subtitle
-    } = plume,
+  let { application, onRemove, subtitle } = plume,
     quillow = {
       kind: "appId",
-      appId: application.bundleIdentifier
+      appId: application.bundleIdentifier,
     };
   let root = AppInitialNd(quillow),
-    silk = application.iconDataURL == null ? root?.appPath ?? null : null,
+    silk = application.iconDataURL == null ? (root?.appPath ?? null) : null,
     thorn = {
-      appPath: silk
+      appPath: silk,
     };
-  let {
-      iconSmall
-    } = MarkdownContentCssClass(thorn),
+  let { iconSmall } = MarkdownContentCssClass(thorn),
     upland = application.iconDataURL ?? iconSmall,
-    vista = upland ? <img className="size-6 shrink-0 object-contain" src={upland} alt="" /> : <span className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-token-foreground/5 text-[10px]" aria-hidden="true">
+    vista = upland ? (
+      <img className="size-6 shrink-0 object-contain" src={upland} alt="" />
+    ) : (
+      <span
+        className="flex size-6 shrink-0 items-center justify-center rounded-lg bg-token-foreground/5 text-[10px]"
+        aria-hidden="true"
+      >
         {(root?.displayName ?? application.displayName).slice(0, 1)}
-      </span>;
+      </span>
+    );
   let wisp = root?.displayName ?? application.displayName;
-  return <ChronicleSettingsPageHelper41 {...{
-    icon: vista,
-    label: wisp,
-    subtitle,
-    onRemove
-  }} />;
+  return (
+    <ChronicleSettingsPageHelper41
+      {...{
+        icon: vista,
+        label: wisp,
+        subtitle,
+        onRemove,
+      }}
+    />
+  );
 }
 function elm(yonder, zenith) {
-  return yonder === "observe" ? zenith === 0 ? <MemoizedFormattedMessage {...{
-    id: "settings.chronicle.permissions.allWebsites",
-    defaultMessage: "All websites",
-    description: "Browser permission subtitle when every website is included"
-  }} /> : <MemoizedFormattedMessage {...{
-    id: "settings.chronicle.permissions.allButWebsites",
-    defaultMessage: "All but {count, plural, one {# website} other {# websites}}",
-    description: "Browser permission subtitle when some websites are excluded",
-    values: {
-      count: zenith
-    }
-  }} /> : zenith === 0 ? <MemoizedFormattedMessage {...{
-    id: "settings.chronicle.permissions.noWebsites",
-    defaultMessage: "No websites",
-    description: "Browser permission subtitle when no websites are included"
-  }} /> : <MemoizedFormattedMessage {...{
-    id: "settings.chronicle.permissions.onlyWebsites",
-    defaultMessage: "Only {count, plural, one {# website} other {# websites}}",
-    description: "Browser permission subtitle when only some websites are included",
-    values: {
-      count: zenith
-    }
-  }} />;
+  return yonder === "observe" ? (
+    zenith === 0 ? (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.chronicle.permissions.allWebsites",
+          defaultMessage: "All websites",
+          description:
+            "Browser permission subtitle when every website is included",
+        }}
+      />
+    ) : (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.chronicle.permissions.allButWebsites",
+          defaultMessage:
+            "All but {count, plural, one {# website} other {# websites}}",
+          description:
+            "Browser permission subtitle when some websites are excluded",
+          values: {
+            count: zenith,
+          },
+        }}
+      />
+    )
+  ) : zenith === 0 ? (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.chronicle.permissions.noWebsites",
+        defaultMessage: "No websites",
+        description:
+          "Browser permission subtitle when no websites are included",
+      }}
+    />
+  ) : (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.chronicle.permissions.onlyWebsites",
+        defaultMessage:
+          "Only {count, plural, one {# website} other {# websites}}",
+        description:
+          "Browser permission subtitle when only some websites are included",
+        values: {
+          count: zenith,
+        },
+      }}
+    />
+  );
 }
 function fern(anvil) {
   let beacon = anvil.trim().toLowerCase();
   if (beacon === "") return null;
   try {
-    return new URL(beacon.includes("://") ? beacon : `https://${beacon}`).hostname;
+    return new URL(beacon.includes("://") ? beacon : `https://${beacon}`)
+      .hostname;
   } catch {
     return null;
   }
@@ -367,13 +479,11 @@ var grove,
   });
 export function ChronicleSettingsPage() {
   let crag = CodexPluginActionType(appScopeAtom),
-    {
-      selectedHostId
-    } = useSelectedHost(),
-    {
-      data,
-      isLoading
-    } = CodexBrowserSurfaceActionType(homeDirectoryQueryAtom, selectedHostId),
+    { selectedHostId } = useSelectedHost(),
+    { data, isLoading } = CodexBrowserSurfaceActionType(
+      homeDirectoryQueryAtom,
+      selectedHostId,
+    ),
     [dome, eddy] = vale.useState(false),
     [fjord, glen] = vale.useState(null),
     hearth = appServices.chronicle,
@@ -384,13 +494,13 @@ export function ChronicleSettingsPage() {
     mire = AppInitialYgt(ledge, "chronicle");
   let nook = mire === true,
     oxbow = {
-      enabled: nook
+      enabled: nook,
     };
   let {
       data: _data,
       dataUpdatedAt,
       errorUpdatedAt,
-      isError
+      isError,
     } = CodexPluginActionResult(timber, oxbow),
     pond = CodexPluginActionResult(kelp),
     quarry = CodexPluginActionResult(lotus),
@@ -401,97 +511,163 @@ export function ChronicleSettingsPage() {
     verge = isError || errorUpdatedAt > dataUpdatedAt,
     weir = hearth == null || isLoading || pond.isPending || quarry.isPending,
     yard = () => {
-      _data?.enabled !== false || !nook || (AppInitialC3(crag.queryClient, USER_CONFIG_PATH), AppInitialC3(crag.queryClient, ["user-saved-config"]));
+      _data?.enabled !== false ||
+        !nook ||
+        (AppInitialC3(crag.queryClient, USER_CONFIG_PATH),
+        AppInitialC3(crag.queryClient, ["user-saved-config"]));
     };
   let anchor = _data?.enabled,
     bolt;
   bolt = [nook, crag, anchor];
   vale.useEffect(yard, bolt);
-  let cog = latch => {
-    pond.mutate({
-      enabled: latch,
-      hostId: selectedHostId
-    }, {
-      onSuccess: motor => {
-        latch && !motor.enabled && crag.get(toastAtom).danger(<MemoizedFormattedMessage {...{
-          id: "settings.chronicle.permissionsDeniedToast",
-          defaultMessage: "Computer history wasn’t turned on because required permissions weren’t granted",
-          description: "Toast shown when Computer history setup is closed before required permissions are granted"
-        }} />);
+  let cog = (latch) => {
+    pond.mutate(
+      {
+        enabled: latch,
+        hostId: selectedHostId,
       },
-      onError: () => {
-        crag.get(toastAtom).danger(latch ? <MemoizedFormattedMessage {...{
-          id: "settings.chronicle.enableErrorToast",
-          defaultMessage: "Computer history could not be turned on",
-          description: "Toast shown when Computer history enablement fails"
-        }} /> : <MemoizedFormattedMessage {...{
-          id: "settings.chronicle.disableErrorToast",
-          defaultMessage: "Computer history could not be turned off",
-          description: "Toast shown when Computer history disablement fails"
-        }} />);
-      }
-    });
+      {
+        onSuccess: (motor) => {
+          latch &&
+            !motor.enabled &&
+            crag.get(toastAtom).danger(
+              <MemoizedFormattedMessage
+                {...{
+                  id: "settings.chronicle.permissionsDeniedToast",
+                  defaultMessage:
+                    "Computer history wasn’t turned on because required permissions weren’t granted",
+                  description:
+                    "Toast shown when Computer history setup is closed before required permissions are granted",
+                }}
+              />,
+            );
+        },
+        onError: () => {
+          crag.get(toastAtom).danger(
+            latch ? (
+              <MemoizedFormattedMessage
+                {...{
+                  id: "settings.chronicle.enableErrorToast",
+                  defaultMessage: "Computer history could not be turned on",
+                  description:
+                    "Toast shown when Computer history enablement fails",
+                }}
+              />
+            ) : (
+              <MemoizedFormattedMessage
+                {...{
+                  id: "settings.chronicle.disableErrorToast",
+                  defaultMessage: "Computer history could not be turned off",
+                  description:
+                    "Toast shown when Computer history disablement fails",
+                }}
+              />
+            ),
+          );
+        },
+      },
+    );
   };
   let disc = cog,
     edge = () => {
       quarry.mutate(undefined, {
         onError: () => {
-          crag.get(toastAtom).danger(<MemoizedFormattedMessage {...{
-            id: "settings.chronicle.retryActivationErrorToast",
-            defaultMessage: "Computer history could not be resumed",
-            description: "Toast shown when retrying Computer history activation fails"
-          }} />);
-        }
+          crag.get(toastAtom).danger(
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.chronicle.retryActivationErrorToast",
+                defaultMessage: "Computer history could not be resumed",
+                description:
+                  "Toast shown when retrying Computer history activation fails",
+              }}
+            />,
+          );
+        },
       });
     };
   let forge = edge,
     gear = <SettingsSectionTitle slug="chronicle" />;
-  let hinge = !knob && !isLoading ? <ChronicleSettingsPageHelper46 {...{}} /> : updraft ? <ChronicleSettingsPageHelper47 {...{
-    activationInProgress: tor,
-    currentState: spur,
-    isServiceUnavailable: verge,
-    onClearRequest: glen,
-    onOpenPermissions: () => {
-      crag.query.invalidate(ember);
-      eddy(true);
-    },
-    onRetryActivation: forge,
-    onToggle: disc,
-    toggleDisabled: weir
-  }} /> : <_t {...{
-    disabled: weir,
-    onTurnOn: () => disc(true)
-  }} />;
-  let iron = <ChronicleSettingsPageHelper36 {...{
-    open: dome,
-    onOpenChange: eddy
-  }} />;
-  let joint = nut => {
+  let hinge =
+    !knob && !isLoading ? (
+      <ChronicleSettingsPageHelper46 {...{}} />
+    ) : updraft ? (
+      <ChronicleSettingsPageHelper47
+        {...{
+          activationInProgress: tor,
+          currentState: spur,
+          isServiceUnavailable: verge,
+          onClearRequest: glen,
+          onOpenPermissions: () => {
+            crag.query.invalidate(ember);
+            eddy(true);
+          },
+          onRetryActivation: forge,
+          onToggle: disc,
+          toggleDisabled: weir,
+        }}
+      />
+    ) : (
+      <_t
+        {...{
+          disabled: weir,
+          onTurnOn: () => disc(true),
+        }}
+      />
+    );
+  let iron = (
+    <ChronicleSettingsPageHelper36
+      {...{
+        open: dome,
+        onOpenChange: eddy,
+      }}
+    />
+  );
+  let joint = (nut) => {
     nut || glen(null);
   };
-  let keystone = <ChronicleSettingsPageHelper49 {...{
-    request: fjord,
-    onOpenChange: joint
-  }} />;
-  return <OpenInBrowser {...{
-    title: gear,
-    children: [hinge, iron, keystone]
-  }} />;
+  let keystone = (
+    <ChronicleSettingsPageHelper49
+      {...{
+        request: fjord,
+        onOpenChange: joint,
+      }}
+    />
+  );
+  return (
+    <OpenInBrowser
+      {...{
+        title: gear,
+        children: [hinge, iron, keystone],
+      }}
+    />
+  );
 }
 function meadow() {
-  let piston = <AppIconKA {...{
-    className: "icon-lg text-token-text-tertiary"
-  }} />;
-  let rivet = <div className="text-base font-medium text-token-text-primary">
+  let piston = (
+    <AppIconKA
+      {...{
+        className: "icon-lg text-token-text-tertiary",
+      }}
+    />
+  );
+  let rivet = (
+    <div className="text-base font-medium text-token-text-primary">
       {<ChronicleSettingsPageHelper3 {...{}} />}
-    </div>;
-  return <ParseUrlOrFallback {...{
-    children: <div className="flex min-h-64 flex-col items-center justify-center gap-3 px-8 py-10 text-center">
+    </div>
+  );
+  return (
+    <ParseUrlOrFallback
+      {...{
+        children: (
+          <div className="flex min-h-64 flex-col items-center justify-center gap-3 px-8 py-10 text-center">
             {piston}
             {rivet}
             <div className="max-w-md text-sm text-token-text-secondary">
               {<ChronicleSettingsPageHelper4 {...{}} />}
             </div>
           </div>
-  }} />;
+        ),
+      }}
+    />
+  );
 }

@@ -4,7 +4,9 @@
 import { esmInit } from "../../runtime/rolldown-runtime";
 import { I, Vn as spreadsheetVn } from "../spreadsheet-protobuf";
 export function isListValidationWithoutDropdown(props: unknown) {
-  return props.type === I.DATA_VALIDATION_TYPE_LIST && props.showDropDown !== true;
+  return (
+    props.type === I.DATA_VALIDATION_TYPE_LIST && props.showDropDown !== true
+  );
 }
 export function clampDropdownInsetPx(afIn13768: unknown) {
   return Math.min(8, Math.max(0, afIn13768 - 8));

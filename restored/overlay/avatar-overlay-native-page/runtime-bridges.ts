@@ -9,4 +9,3 @@
 export function bindAvatarOverlayNativePage(_next: unknown): void {}
 
 export function ensureAvatarOverlayNativePageInit(): void {}
-

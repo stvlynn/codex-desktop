@@ -10,15 +10,34 @@ import { ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payl
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { getAppSurfaceDisplayName } from "../../app/app-surface-display-name";
-import { ensureArtifactAnalyticsInit, logArtifactAnnotationSubmitted, logArtifactRefreshClicked } from "../../artifact/artifact-analytics";
-import { buildArtifactAnnotationCommentForTarget, collectRemovedArtifactAnnotationIds, nextArtifactAnnotationCommentLine } from "../../artifact/artifact-annotation-comment";
+import {
+  ensureArtifactAnalyticsInit,
+  logArtifactAnnotationSubmitted,
+  logArtifactRefreshClicked,
+} from "../../artifact/artifact-analytics";
+import {
+  buildArtifactAnnotationCommentForTarget,
+  collectRemovedArtifactAnnotationIds,
+  nextArtifactAnnotationCommentLine,
+} from "../../artifact/artifact-annotation-comment";
 import { ArtifactPreviewDownloadButton } from "../../artifact/artifact-preview-download-button";
 import { artifactTabLoading } from "../../artifact/artifact-tab-loading";
 import { hypotDistance } from "../../artifact/hypot-distance";
 import { QueueAutomationRun } from "../../automation/queue-automation-run";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Z8_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Z8_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { deferredComposerBV } from "../../composer/deferred-composer-bv";
 import { DesignComposerSurface } from "../../composer/design-composer-surface";
 import { filterConversationTimelineItems } from "../../conversation/filter-conversation-timeline-items";
@@ -40,7 +59,10 @@ import { newConversationEntrypointId } from "../../navigation/new-conversation-e
 import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import { ensureViteModulepreloadRuntime } from "../../runtime/vite-preload";
-import { ArtifactPreviewStatus, ensureArtifactPreviewStatusInit } from "../../ui/artifact-preview-status";
+import {
+  ArtifactPreviewStatus,
+  ensureArtifactPreviewStatusInit,
+} from "../../ui/artifact-preview-status";
 import { deferredT1 } from "../../ui/deferred-t1";
 import { getIconPixelSize } from "../../ui/icon-pixel-size";
 import { MemoizedValueBridge } from "../../ui/memoized-value-bridge";
@@ -91,67 +113,90 @@ const AppInitialXg: any = undefined;
 const deferredUiXR: any = undefined;
 /** Wave FY unresolved companion (jsx-collision:identity@utils/identity.ts) */
 const AppInitialZO: any = undefined;
-const __vite__mapDeps = (apex, brook = __vite__mapDeps, cliff = brook.f || (brook.f = ["docx-preview", "./rolldown-runtime-BG2f4sTM.js"])) => apex.map(item => cliff[item]);
+const __vite__mapDeps = (
+  apex,
+  brook = __vite__mapDeps,
+  cliff = brook.f ||
+    (brook.f = ["docx-preview", "./rolldown-runtime-BG2f4sTM.js"]),
+) => apex.map((item) => cliff[item]);
 var alpha = esmInit(() => {});
-function bravo({
-  anchor,
-  editorScale,
-  layer,
-  pageSize
-}) {
-  return anchor.kind === "region" && anchor.selectionKind != null ? useOpenLocatorInMainWindow({
-    editorScale,
-    layer,
-    pageSize,
-    rect: anchor.rect
-  }) : OperationStatusOverlay({
-    editorScale,
-    layer,
-    markerPoint: anchor.kind === "region" ? AppIconYg(anchor.rect) : anchor.point,
-    pageSize
-  });
+function bravo({ anchor, editorScale, layer, pageSize }) {
+  return anchor.kind === "region" && anchor.selectionKind != null
+    ? useOpenLocatorInMainWindow({
+        editorScale,
+        layer,
+        pageSize,
+        rect: anchor.rect,
+      })
+    : OperationStatusOverlay({
+        editorScale,
+        layer,
+        markerPoint:
+          anchor.kind === "region" ? AppIconYg(anchor.rect) : anchor.point,
+        pageSize,
+      });
 }
 var copper = esmInit(() => {
   ToWorktree();
 });
 function delta(event, dusk) {
   let elm = event.currentTarget.getBoundingClientRect();
-  return elm.width <= 0 || elm.height <= 0 ? null : {
-    x: marble((event.clientX - elm.left) / elm.width * dusk.width, 0, dusk.width),
-    y: marble((event.clientY - elm.top) / elm.height * dusk.height, 0, dusk.height)
-  };
+  return elm.width <= 0 || elm.height <= 0
+    ? null
+    : {
+        x: marble(
+          ((event.clientX - elm.left) / elm.width) * dusk.width,
+          0,
+          dusk.width,
+        ),
+        y: marble(
+          ((event.clientY - elm.top) / elm.height) * dusk.height,
+          0,
+          dusk.height,
+        ),
+      };
 }
-function echo({
-  clientRects,
-  pageElement,
-  pageSize
-}) {
+function echo({ clientRects, pageElement, pageSize }) {
   let fern = pageElement.getBoundingClientRect();
   if (fern.width <= 0 || fern.height <= 0) return null;
   let grove = quartz(clientRects);
   if (grove == null) return null;
-  let hill = marble((grove.left - fern.left) / fern.width * pageSize.width, 0, pageSize.width),
-    isle = marble((grove.top - fern.top) / fern.height * pageSize.height, 0, pageSize.height),
-    juniper = marble((grove.right - fern.left) / fern.width * pageSize.width, 0, pageSize.width),
-    lagoon = marble((grove.bottom - fern.top) / fern.height * pageSize.height, 0, pageSize.height);
-  return juniper <= hill || lagoon <= isle ? null : {
-    x: hill,
-    y: isle,
-    width: juniper - hill,
-    height: lagoon - isle
-  };
+  let hill = marble(
+      ((grove.left - fern.left) / fern.width) * pageSize.width,
+      0,
+      pageSize.width,
+    ),
+    isle = marble(
+      ((grove.top - fern.top) / fern.height) * pageSize.height,
+      0,
+      pageSize.height,
+    ),
+    juniper = marble(
+      ((grove.right - fern.left) / fern.width) * pageSize.width,
+      0,
+      pageSize.width,
+    ),
+    lagoon = marble(
+      ((grove.bottom - fern.top) / fern.height) * pageSize.height,
+      0,
+      pageSize.height,
+    );
+  return juniper <= hill || lagoon <= isle
+    ? null
+    : {
+        x: hill,
+        y: isle,
+        width: juniper - hill,
+        height: lagoon - isle,
+      };
 }
-function falcon({
-  clientRects,
-  pageElement,
-  pageSize
-}) {
+function falcon({ clientRects, pageElement, pageSize }) {
   let meadow = [];
   for (let nest of nickel(clientRects)) {
     let oak = echo({
       clientRects: [nest],
       pageElement,
-      pageSize
+      pageSize,
     });
     oak != null && meadow.push(oak);
   }
@@ -160,14 +205,10 @@ function falcon({
 function gamma(petal) {
   return petal.askForEditAnchor?.point ?? pearl(petal.rect);
 }
-function harbor({
-  clientRects,
-  pageElement,
-  pageSize,
-  selection
-}) {
+function harbor({ clientRects, pageElement, pageSize, selection }) {
   let quiet = pageElement.getBoundingClientRect();
-  if (quiet.width <= 0 || quiet.height <= 0 || clientRects.length === 0) return null;
+  if (quiet.width <= 0 || quiet.height <= 0 || clientRects.length === 0)
+    return null;
   let rain = quartz(clientRects);
   if (rain == null) return null;
   let seed = river(selection),
@@ -184,41 +225,49 @@ function harbor({
       clientX: seed ? trail.right : trail.left,
       clientY: azure === "above" ? trail.top : trail.bottom,
       pageElement,
-      pageSize
-    })
+      pageSize,
+    }),
   };
 }
-function indigo({
-  clientX,
-  clientY,
-  pageElement,
-  pageSize
-}) {
+function indigo({ clientX, clientY, pageElement, pageSize }) {
   let birch = pageElement.getBoundingClientRect();
   return {
-    x: marble((clientX - birch.left) / birch.width * pageSize.width, 0, pageSize.width),
-    y: marble((clientY - birch.top) / birch.height * pageSize.height, 0, pageSize.height)
+    x: marble(
+      ((clientX - birch.left) / birch.width) * pageSize.width,
+      0,
+      pageSize.width,
+    ),
+    y: marble(
+      ((clientY - birch.top) / birch.height) * pageSize.height,
+      0,
+      pageSize.height,
+    ),
   };
 }
 function jade(canyon) {
-  return Math.abs(canyon.clientCurrent.x - canyon.clientStart.x) >= 3 || Math.abs(canyon.clientCurrent.y - canyon.clientStart.y) >= 3;
+  return (
+    Math.abs(canyon.clientCurrent.x - canyon.clientStart.x) >= 3 ||
+    Math.abs(canyon.clientCurrent.y - canyon.clientStart.y) >= 3
+  );
 }
 function kite(dew, ever = false) {
   let field = lemon(dew.start, dew.current);
-  return !ever && field.width < 8 && field.height < 8 ? {
-    kind: "point",
-    point: dew.current
-  } : {
-    kind: "region",
-    rect: field
-  };
+  return !ever && field.width < 8 && field.height < 8
+    ? {
+        kind: "point",
+        point: dew.current,
+      }
+    : {
+        kind: "region",
+        rect: field,
+      };
 }
 function lemon(grain, haven) {
   return {
     x: Math.min(grain.x, haven.x),
     y: Math.min(grain.y, haven.y),
     width: Math.abs(grain.x - haven.x),
-    height: Math.abs(grain.y - haven.y)
+    height: Math.abs(grain.y - haven.y),
   };
 }
 function marble(ink, jadeite, kernel) {
@@ -226,9 +275,11 @@ function marble(ink, jadeite, kernel) {
 }
 function nickel(leaf) {
   let maple = [],
-    nimbus = leaf.filter(item => item.width > 0 && item.height > 0).sort((opal, plume) => opal.top - plume.top || opal.left - plume.left);
+    nimbus = leaf
+      .filter((item) => item.width > 0 && item.height > 0)
+      .sort((opal, plume) => opal.top - plume.top || opal.left - plume.left);
   for (let quillow of nimbus) {
-    let root = maple.find(item => onyx(item, quillow));
+    let root = maple.find((item) => onyx(item, quillow));
     if (root == null) {
       maple.push({
         bottom: quillow.bottom,
@@ -236,7 +287,7 @@ function nickel(leaf) {
         left: quillow.left,
         right: quillow.right,
         top: quillow.top,
-        width: quillow.width
+        width: quillow.width,
       });
       continue;
     }
@@ -250,12 +301,15 @@ function nickel(leaf) {
   return maple;
 }
 function onyx(silk, thorn) {
-  return Math.min(silk.bottom, thorn.bottom) - Math.max(silk.top, thorn.top) >= Math.min(silk.height, thorn.height) * 0.5;
+  return (
+    Math.min(silk.bottom, thorn.bottom) - Math.max(silk.top, thorn.top) >=
+    Math.min(silk.height, thorn.height) * 0.5
+  );
 }
 function pearl(upland) {
   return {
     x: upland.x + upland.width / 2,
-    y: upland.y
+    y: upland.y,
   };
 }
 function quartz(vista) {
@@ -263,21 +317,35 @@ function quartz(vista) {
     yonder = 1 / 0,
     zenith = -1 / 0,
     anvil = -1 / 0;
-  for (let beacon of vista) beacon.width <= 0 || beacon.height <= 0 || (wisp = Math.min(wisp, beacon.left), yonder = Math.min(yonder, beacon.top), zenith = Math.max(zenith, beacon.right), anvil = Math.max(anvil, beacon.bottom));
-  return !Number.isFinite(wisp) || !Number.isFinite(yonder) || !Number.isFinite(zenith) || !Number.isFinite(anvil) ? null : {
-    bottom: anvil,
-    height: anvil - yonder,
-    left: wisp,
-    right: zenith,
-    top: yonder,
-    width: zenith - wisp
-  };
+  for (let beacon of vista)
+    beacon.width <= 0 ||
+      beacon.height <= 0 ||
+      ((wisp = Math.min(wisp, beacon.left)),
+      (yonder = Math.min(yonder, beacon.top)),
+      (zenith = Math.max(zenith, beacon.right)),
+      (anvil = Math.max(anvil, beacon.bottom)));
+  return !Number.isFinite(wisp) ||
+    !Number.isFinite(yonder) ||
+    !Number.isFinite(zenith) ||
+    !Number.isFinite(anvil)
+    ? null
+    : {
+        bottom: anvil,
+        height: anvil - yonder,
+        left: wisp,
+        right: zenith,
+        top: yonder,
+        width: zenith - wisp,
+      };
 }
 function river(crag) {
   if (crag.anchorNode == null || crag.focusNode == null) return true;
-  if (crag.anchorNode === crag.focusNode) return crag.focusOffset >= crag.anchorOffset;
+  if (crag.anchorNode === crag.focusNode)
+    return crag.focusOffset >= crag.anchorOffset;
   let dome = crag.anchorNode.compareDocumentPosition(crag.focusNode);
-  return dome === Node.DOCUMENT_POSITION_FOLLOWING ? true : dome !== Node.DOCUMENT_POSITION_PRECEDING;
+  return dome === Node.DOCUMENT_POSITION_FOLLOWING
+    ? true
+    : dome !== Node.DOCUMENT_POSITION_PRECEDING;
 }
 var slate = esmInit(() => {
   alpha();
@@ -291,17 +359,44 @@ function timber({
   pageSize,
   path,
   target,
-  title
+  title,
 }) {
-  let eddy = anchor.kind === "region" ? anchor.rect : {
-      x: anchor.point.x,
-      y: anchor.point.y,
-      width: 1,
-      height: 1
-    },
-    fjord = anchor.kind === "region" ? anchor.selectionKind == null ? AppIconYg(anchor.rect) : gamma(anchor) : anchor.point;
+  let eddy =
+      anchor.kind === "region"
+        ? anchor.rect
+        : {
+            x: anchor.point.x,
+            y: anchor.point.y,
+            width: 1,
+            height: 1,
+          },
+    fjord =
+      anchor.kind === "region"
+        ? anchor.selectionKind == null
+          ? AppIconYg(anchor.rect)
+          : gamma(anchor)
+        : anchor.point;
   return {
-    sessionId: target.mode === "edit" ? `docx-comment-edit:${target.commentId}` : anchor.kind === "region" ? ["docx-comment", pageNumber, "region", anchor.rect.x, anchor.rect.y, anchor.rect.width, anchor.rect.height].join(":") : ["docx-comment", pageNumber, "point", anchor.point.x, anchor.point.y].join(":"),
+    sessionId:
+      target.mode === "edit"
+        ? `docx-comment-edit:${target.commentId}`
+        : anchor.kind === "region"
+          ? [
+              "docx-comment",
+              pageNumber,
+              "region",
+              anchor.rect.x,
+              anchor.rect.y,
+              anchor.rect.width,
+              anchor.rect.height,
+            ].join(":")
+          : [
+              "docx-comment",
+              pageNumber,
+              "point",
+              anchor.point.x,
+              anchor.point.y,
+            ].join(":"),
     conversationId,
     target,
     anchorState: {
@@ -312,8 +407,8 @@ function timber({
         title,
         elementPath: `docx-page-${pageNumber}`,
         point: {
-          xPercent: pageSize.width === 0 ? 0 : fjord.x / pageSize.width * 100,
-          y: fjord.y
+          xPercent: pageSize.width === 0 ? 0 : (fjord.x / pageSize.width) * 100,
+          y: fjord.y,
         },
         rect: eddy,
         isFixed: false,
@@ -321,98 +416,123 @@ function timber({
         name: null,
         selector: null,
         framePath: [],
-        nearbyText: null
+        nearbyText: null,
       },
       viewportRect: eddy,
       viewportPoint: fjord,
-      viewportSize: pageSize
+      viewportSize: pageSize,
     },
     body,
     cwd: null,
     placementStrategy: "anchored",
     previewAlignment: "end",
-    surfaceMode: "editor"
+    surfaceMode: "editor",
   };
 }
-function umbra({
-  anchor,
-  pageCount,
-  pageNumber,
-  pageSize
-}) {
-  return anchor.kind === "region" ? anchor.selectionKind == null ? {
-    target: {
-      type: "document-page-region",
-      anchorPoint: AppIconYg(anchor.rect),
-      pageCount,
-      pageNumber,
-      pageSize,
-      rect: anchor.rect
-    }
-  } : {
-    contentPreview: anchor.contentPreview,
-    target: {
-      type: "document-element-selection",
-      selectionKind: anchor.selectionKind,
-      anchorPoint: gamma(anchor),
-      pageCount,
-      pageNumber,
-      pageSize,
-      rect: anchor.rect,
-      selectionRects: anchor.selectionRects,
-      selectedText: anchor.selectedText,
-      nearbyText: anchor.nearbyText
-    }
-  } : {
-    target: {
-      type: "document-page-point",
-      pageCount,
-      pageNumber,
-      pageSize,
-      point: anchor.point
-    }
-  };
+function umbra({ anchor, pageCount, pageNumber, pageSize }) {
+  return anchor.kind === "region"
+    ? anchor.selectionKind == null
+      ? {
+          target: {
+            type: "document-page-region",
+            anchorPoint: AppIconYg(anchor.rect),
+            pageCount,
+            pageNumber,
+            pageSize,
+            rect: anchor.rect,
+          },
+        }
+      : {
+          contentPreview: anchor.contentPreview,
+          target: {
+            type: "document-element-selection",
+            selectionKind: anchor.selectionKind,
+            anchorPoint: gamma(anchor),
+            pageCount,
+            pageNumber,
+            pageSize,
+            rect: anchor.rect,
+            selectionRects: anchor.selectionRects,
+            selectedText: anchor.selectedText,
+            nearbyText: anchor.nearbyText,
+          },
+        }
+    : {
+        target: {
+          type: "document-page-point",
+          pageCount,
+          pageNumber,
+          pageSize,
+          point: anchor.point,
+        },
+      };
 }
 function violet(glen, hearth) {
-  return glen.kind === "region" && glen.selectionKind != null ? `Page ${hearth} ${glen.selectionKind}` : glen.kind === "region" ? `Page ${hearth} region` : `Page ${hearth} point`;
+  return glen.kind === "region" && glen.selectionKind != null
+    ? `Page ${hearth} ${glen.selectionKind}`
+    : glen.kind === "region"
+      ? `Page ${hearth} region`
+      : `Page ${hearth} point`;
 }
 function willow(inlet) {
   let jetty = inlet.localArtifactAnnotationMetadata?.target;
-  return jetty?.type === "document-page-point" || jetty?.type === "document-page-region" || jetty?.type === "document-element-selection" ? jetty.pageNumber : null;
+  return jetty?.type === "document-page-point" ||
+    jetty?.type === "document-page-region" ||
+    jetty?.type === "document-element-selection"
+    ? jetty.pageNumber
+    : null;
 }
 function $e(knob) {
   let ledge = knob.localArtifactAnnotationMetadata?.target;
-  return ledge?.type === "document-page-point" || ledge?.type === "document-page-region" || ledge?.type === "document-element-selection" ? ledge.pageSize : null;
+  return ledge?.type === "document-page-point" ||
+    ledge?.type === "document-page-region" ||
+    ledge?.type === "document-element-selection"
+    ? ledge.pageSize
+    : null;
 }
 function xenon(mire) {
   let nook = mire.localArtifactAnnotationMetadata?.target;
-  return nook?.type === "document-page-region" ? {
-    kind: "region",
-    rect: nook.rect
-  } : nook?.type === "document-element-selection" ? {
-    kind: "region",
-    ...(nook.selectionKind === "text" ? {
-      askForEditAnchor: {
-        placement: "above",
-        point: nook.anchorPoint
+  return nook?.type === "document-page-region"
+    ? {
+        kind: "region",
+        rect: nook.rect,
       }
-    } : {}),
-    rect: nook.rect,
-    contentPreview: mire.localArtifactAnnotationMetadata?.contentPreview,
-    selectionRects: nook.selectionRects,
-    selectionKind: nook.selectionKind,
-    selectedText: nook.selectedText,
-    nearbyText: nook.nearbyText
-  } : nook?.type === "document-page-point" ? {
-    kind: "point",
-    point: nook.point
-  } : null;
+    : nook?.type === "document-element-selection"
+      ? {
+          kind: "region",
+          ...(nook.selectionKind === "text"
+            ? {
+                askForEditAnchor: {
+                  placement: "above",
+                  point: nook.anchorPoint,
+                },
+              }
+            : {}),
+          rect: nook.rect,
+          contentPreview: mire.localArtifactAnnotationMetadata?.contentPreview,
+          selectionRects: nook.selectionRects,
+          selectionKind: nook.selectionKind,
+          selectedText: nook.selectedText,
+          nearbyText: nook.nearbyText,
+        }
+      : nook?.type === "document-page-point"
+        ? {
+            kind: "point",
+            point: nook.point,
+          }
+        : null;
 }
 function yellow(oxbow) {
-  return oxbow.content.flatMap(item => item.content_type === "text" ? [item.text] : []).join("\n");
+  return oxbow.content
+    .flatMap((item) => (item.content_type === "text" ? [item.text] : []))
+    .join("\n");
 }
 function zinc(pond) {
-  return [pond.position.path, pond.position.line, pond.localArtifactAnnotationContext?.label ?? ""].join(":");
+  return [
+    pond.position.path,
+    pond.position.line,
+    pond.localArtifactAnnotationContext?.label ?? "",
+  ].join(":");
 }
 var amber = esmInit(() => {
   slate();
@@ -427,30 +547,28 @@ function DocxPreviewPanelHelper24(quarry) {
       paddingY,
       pageSize,
       rect,
-      testId
+      testId,
     } = quarry,
     rapids = borderWidth === undefined ? +!!bordered : borderWidth,
     spur = paddingX === undefined ? paddingPx : paddingX,
     tor = paddingY === undefined ? paddingPx : paddingY;
-  return <QueueAutomationRun {...{
-    bordered: bordered,
-    borderWidth: rapids,
-    paddingPx: paddingPx,
-    paddingX: spur,
-    paddingY: tor,
-    pageSize,
-    rect,
-    testId
-  }} />;
+  return (
+    <QueueAutomationRun
+      {...{
+        bordered: bordered,
+        borderWidth: rapids,
+        paddingPx: paddingPx,
+        paddingX: spur,
+        paddingY: tor,
+        pageSize,
+        rect,
+        testId,
+      }}
+    />
+  );
 }
 function at(updraft) {
-  let {
-      comment,
-      isSelected,
-      onEdit,
-      onPreviewChange,
-      zoomScale
-    } = updraft,
+  let { comment, isSelected, onEdit, onPreviewChange, zoomScale } = updraft,
     verge = useIntl(),
     weir,
     yard,
@@ -462,7 +580,7 @@ function at(updraft) {
   bb0: {
     weir = xenon(comment);
     let nut;
-    if (nut = $e(comment), cog = nut, weir == null || cog == null) {
+    if (((nut = $e(comment)), (cog = nut), weir == null || cog == null)) {
       edge = null;
       break bb0;
     }
@@ -470,13 +588,16 @@ function at(updraft) {
     piston = zinc(comment);
     bolt = piston;
     let rivet;
-    rivet = verge.formatMessage({
-      id: "artifactDocxPreview.commentMarkerLabel",
-      defaultMessage: "Document annotation {commentNumber}",
-      description: "Accessible label for a placed DOCX annotation marker"
-    }, {
-      commentNumber: comment.position.line
-    });
+    rivet = verge.formatMessage(
+      {
+        id: "artifactDocxPreview.commentMarkerLabel",
+        defaultMessage: "Document annotation {commentNumber}",
+        description: "Accessible label for a placed DOCX annotation marker",
+      },
+      {
+        commentNumber: comment.position.line,
+      },
+    );
     yard = rivet;
     disc = weir.kind === "region" ? AppIconYg(weir.rect) : weir.point;
   }
@@ -486,46 +607,60 @@ function at(updraft) {
   let hinge = gear,
     iron = () => onPreviewChange(null);
   let joint = iron,
-    keystone = weir.kind === "region" ? weir.selectionKind == null ? <ResolveWorktreeHandoffDirection {...{
-      pageSize: cog,
-      rect: weir.rect,
-      testId: "artifact-docx-comment-region-outline"
-    }} /> : <DocxPreviewPanelHelper27 {...{
-      bordered: true,
-      pageSize: cog,
-      anchor: weir,
-      testId: "artifact-docx-comment-region-outline"
-    }} /> : null;
+    keystone =
+      weir.kind === "region" ? (
+        weir.selectionKind == null ? (
+          <ResolveWorktreeHandoffDirection
+            {...{
+              pageSize: cog,
+              rect: weir.rect,
+              testId: "artifact-docx-comment-region-outline",
+            }}
+          />
+        ) : (
+          <DocxPreviewPanelHelper27
+            {...{
+              bordered: true,
+              pageSize: cog,
+              anchor: weir,
+              testId: "artifact-docx-comment-region-outline",
+            }}
+          />
+        )
+      ) : null;
   let latch = () => onEdit(bolt);
-  let motor = <AppIconUg {...{
-    ariaLabel: yard,
-    isSelected,
-    label: comment.position.line,
-    pageSize: cog,
-    point: forge,
-    testId: "artifact-docx-comment-marker",
-    zoomScale,
-    onClick: latch,
-    onPreviewHide: joint,
-    onPreviewShow: hinge
-  }} />;
-  return <>
+  let motor = (
+    <AppIconUg
+      {...{
+        ariaLabel: yard,
+        isSelected,
+        label: comment.position.line,
+        pageSize: cog,
+        point: forge,
+        testId: "artifact-docx-comment-marker",
+        zoomScale,
+        onClick: latch,
+        onPreviewHide: joint,
+        onPreviewShow: hinge,
+      }}
+    />
+  );
+  return (
+    <>
       {keystone}
       {motor}
-    </>;
+    </>
+  );
 }
 function DocxPreviewPanelHelper25(screw) {
-  let {
-      comment,
-      layer
-    } = screw,
+  let { comment, layer } = screw,
     torque,
     valve,
     axle;
   axle = Symbol.for("react.early_return_sentinel");
   bb0: {
     let engine = xenon(comment);
-    if (torque = $e(comment), engine == null || torque == null) {
+    if (((torque = $e(comment)), engine == null || torque == null)) {
       axle = null;
       break bb0;
     }
@@ -535,84 +670,114 @@ function DocxPreviewPanelHelper25(screw) {
   let bracket = valve,
     clamp = zinc(comment);
   let drill = yellow(comment);
-  return <AppInitialCg key={clamp} body={drill} layer={layer} pageSize={torque} point={bracket} testId="artifact-docx-comment-preview" />;
+  return (
+    <AppInitialCg
+      key={clamp}
+      body={drill}
+      layer={layer}
+      pageSize={torque}
+      point={bracket}
+      testId="artifact-docx-comment-preview"
+    />
+  );
 }
 function DocxPreviewPanelHelper26(frame) {
-  let {
-    anchor,
-    label,
-    pageSize,
-    zoomScale
-  } = frame;
+  let { anchor, label, pageSize, zoomScale } = frame;
   if (anchor.kind === "region") {
-    let gasket = anchor.selectionKind == null ? <ResolveWorktreeHandoffDirection {...{
-      pageSize,
-      rect: anchor.rect,
-      testId: "artifact-docx-comment-region-outline"
-    }} /> : <DocxPreviewPanelHelper27 {...{
-      bordered: true,
-      pageSize,
-      anchor,
-      testId: "artifact-docx-comment-region-outline"
-    }} />;
+    let gasket =
+      anchor.selectionKind == null ? (
+        <ResolveWorktreeHandoffDirection
+          {...{
+            pageSize,
+            rect: anchor.rect,
+            testId: "artifact-docx-comment-region-outline",
+          }}
+        />
+      ) : (
+        <DocxPreviewPanelHelper27
+          {...{
+            bordered: true,
+            pageSize,
+            anchor,
+            testId: "artifact-docx-comment-region-outline",
+          }}
+        />
+      );
     let handle = AppIconYg(anchor.rect);
-    let insert = <AppIconUg {...{
-      draft: true,
-      draftTestId: "artifact-docx-comment-draft-marker",
-      label,
-      pageSize,
-      point: handle,
-      testId: "artifact-docx-comment-marker",
-      zoomScale
-    }} />;
+    let insert = (
+      <AppIconUg
+        {...{
+          draft: true,
+          draftTestId: "artifact-docx-comment-draft-marker",
+          label,
+          pageSize,
+          point: handle,
+          testId: "artifact-docx-comment-marker",
+          zoomScale,
+        }}
+      />
+    );
     let jacket;
-    return <>
+    return (
+      <>
         {gasket}
         {insert}
-      </>;
+      </>
+    );
   }
-  return <AppIconUg {...{
-    draft: true,
-    draftTestId: "artifact-docx-comment-draft-marker",
-    label,
-    pageSize,
-    point: anchor.point,
-    testId: "artifact-docx-comment-marker",
-    zoomScale
-  }} />;
+  return (
+    <AppIconUg
+      {...{
+        draft: true,
+        draftTestId: "artifact-docx-comment-draft-marker",
+        label,
+        pageSize,
+        point: anchor.point,
+        testId: "artifact-docx-comment-marker",
+        zoomScale,
+      }}
+    />
+  );
 }
 function DocxPreviewPanelHelper27(knurl) {
-  let {
-    bordered = false,
-    pageSize,
-    anchor,
-    testId
-  } = knurl;
+  let { bordered = false, pageSize, anchor, testId } = knurl;
   if (anchor.selectionKind === "text") {
-    let mount = anchor.selectionRects == null || anchor.selectionRects.length === 0 ? [anchor.rect] : anchor.selectionRects;
+    let mount =
+      anchor.selectionRects == null || anchor.selectionRects.length === 0
+        ? [anchor.rect]
+        : anchor.selectionRects;
     let nozzle = mount,
       platen;
     {
       let shim;
-      shim = (tappet, arbor) => <DocxPreviewPanelHelper24 key={`${tappet.x}:${tappet.y}:${tappet.width}:${tappet.height}:${arbor}`} {...{
-        paddingX: 4,
-        paddingY: 0,
-        pageSize,
-        rect: tappet,
-        testId
-      }} />;
+      shim = (tappet, arbor) => (
+        <DocxPreviewPanelHelper24
+          key={`${tappet.x}:${tappet.y}:${tappet.width}:${tappet.height}:${arbor}`}
+          {...{
+            paddingX: 4,
+            paddingY: 0,
+            pageSize,
+            rect: tappet,
+            testId,
+          }}
+        />
+      );
       platen = nozzle.map(shim);
     }
     let ratchet;
     return <>{platen}</>;
   }
-  let lever = bordered ? anchor.selectionKind === "paragraph" ? 2 : 1 : 0;
-  return <DocxPreviewPanelHelper24 {...{
-    bordered: bordered,
-    borderWidth: lever,
-    paddingPx: 4,
-    pageSize,
-    rect: anchor.rect,
-    testId
-  }} />;
+  let lever = bordered ? (anchor.selectionKind === "paragraph" ? 2 : 1) : 0;
+  return (
+    <DocxPreviewPanelHelper24
+      {...{
+        bordered: bordered,
+        borderWidth: lever,
+        paddingPx: 4,
+        pageSize,
+        rect: anchor.rect,
+        testId,
+      }}
+    />
+  );
 }

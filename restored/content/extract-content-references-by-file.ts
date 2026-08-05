@@ -6,7 +6,9 @@ type MessageByFileParser = (message: unknown) => unknown[];
 
 let parseByFile: MessageByFileParser | null = null;
 
-export function setContentReferencesByFileParser(parser: MessageByFileParser): void {
+export function setContentReferencesByFileParser(
+  parser: MessageByFileParser,
+): void {
   parseByFile = parser;
 }
 

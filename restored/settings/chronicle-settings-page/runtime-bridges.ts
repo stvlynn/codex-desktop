@@ -9,4 +9,3 @@
 export function bindChronicleSettingsPage(_next: unknown): void {}
 
 export function ensureChronicleSettingsPageInit(): void {}
-

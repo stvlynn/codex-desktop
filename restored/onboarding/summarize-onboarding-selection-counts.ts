@@ -10,14 +10,19 @@ export type SummarizeOnboardingSelectionCountsPeers = {
 let peers: SummarizeOnboardingSelectionCountsPeers | null = null;
 
 /** Wire summarizeOnboardingSelectionCounts peers once companions land. */
-export function setSummarizeOnboardingSelectionCountsPeers(next: SummarizeOnboardingSelectionCountsPeers): void {
+export function setSummarizeOnboardingSelectionCountsPeers(
+  next: SummarizeOnboardingSelectionCountsPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `dn` / internal `$su`.
  */
-export function summarizeOnboardingSelectionCounts(e: unknown, t: unknown, n: unknown = peers.acu(e),
+export function summarizeOnboardingSelectionCounts(
+  e: unknown,
+  t: unknown,
+  n: unknown = peers.acu(e),
 ) {
   if (peers == null) {
     throw new Error(

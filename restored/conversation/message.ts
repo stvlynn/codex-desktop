@@ -26,9 +26,10 @@ export function bindMessage() {
   }
 
   return peers.e(() => {
-    peers.Sl(), Een = peers.sl({
-      code: peers.rl().optional(),
-      message: peers.X().optional()
-    });
+    (peers.Sl(),
+      (Een = peers.sl({
+        code: peers.rl().optional(),
+        message: peers.X().optional(),
+      })));
   });
 }

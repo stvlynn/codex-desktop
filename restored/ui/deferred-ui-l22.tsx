@@ -13,7 +13,9 @@ export type BindBindDeferredUiL22Peers = {
 let peers: BindBindDeferredUiL22Peers | null = null;
 
 /** Wire bindBindDeferredUiL22 peers once companions land. */
-export function setBindBindDeferredUiL22Peers(next: BindBindDeferredUiL22Peers): void {
+export function setBindBindDeferredUiL22Peers(
+  next: BindBindDeferredUiL22Peers,
+): void {
   peers = next;
 }
 
@@ -25,7 +27,11 @@ export function bindBindDeferredUiL22() {
     throw new Error("bindBindDeferredUiL22 peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => e == null || t(peers.mrr, e) ? !1 : !t(peers.iD, e) || t(peers.hD, e) === `needs_resume` || t(peers.TD, e) == null);
+  return peers.Oa(peers.Q, (e, { get: t }) =>
+    e == null || t(peers.mrr, e)
+      ? !1
+      : !t(peers.iD, e) ||
+        t(peers.hD, e) === `needs_resume` ||
+        t(peers.TD, e) == null,
+  );
 }

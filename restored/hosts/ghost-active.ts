@@ -26,6 +26,6 @@ export function ghostActive() {
   }
 
   return peers.e(() => {
-    FJs = peers.c(), peers.NJs(), IJs = peers.J();
+    ((FJs = peers.c()), peers.NJs(), (IJs = peers.J()));
   });
 }

@@ -54,9 +54,7 @@ const React = rolldownRuntimeS(react(), 1) as {
   useEffectEvent: (fn: (...args: any[]) => void) => (...args: any[]) => void;
 };
 
-function useChatgptComposerControllerHelper269(
-  request538,
-) {
+function useChatgptComposerControllerHelper269(request538) {
   const SafetyMarkdown = slot2909;
   const SafetyBannerFrame = slot2907;
   const SafetyReviewProvider = slot2904;
@@ -74,16 +72,10 @@ function useChatgptComposerControllerHelper269(
     { data, isPlaceholderData } = appInitialRT(_AppInitialKP),
     slot2889;
   {
-    let slot12725 =
-        modelSlugSchema.safeParse(value),
-      slot12726 =
-        slot12725.success
-          ? slot12725.data.model_slug
-          : null,
+    let slot12725 = modelSlugSchema.safeParse(value),
+      slot12726 = slot12725.success ? slot12725.data.model_slug : null,
       slot12727 =
-        isPlaceholderData ||
-        slot12726 == null ||
-        slot12726 === requestModel
+        isPlaceholderData || slot12726 == null || slot12726 === requestModel
           ? undefined
           : AppInitialEI(data, {
               slug: slot12726,
@@ -93,27 +85,17 @@ function useChatgptComposerControllerHelper269(
     slot2889 =
       slot12727 == null
         ? null
-        : AppInitialDI(
-            slot12727,
-            AppInitialOI(data, slot12727.slug),
-          );
+        : AppInitialDI(slot12727, AppInitialOI(data, slot12727.slug));
   }
-  let slot2890 =
-      slot2889,
+  let slot2890 = slot2889,
     {
       body,
       learnMoreLabel,
       learnMoreUrl: slot2891,
     } = useChatgptComposerControllerHelper273(message),
-    slot2892 =
-      slot2890 != null &&
-      message.includes(SAFETY_FASTER_MODEL_SCHEME);
-  let slot2893 =
-      slot2892,
-    slot2894 = (
-      request5556,
-      request5557,
-    ) => {
+    slot2892 = slot2890 != null && message.includes(SAFETY_FASTER_MODEL_SCHEME);
+  let slot2893 = slot2892,
+    slot2894 = (request5556, request5557) => {
       appInitialJ9(slot2888, appInitialE8, {
         actionType: request5557,
         clientRequestId: requestId,
@@ -128,66 +110,39 @@ function useChatgptComposerControllerHelper269(
         targetModelSlug: slot2890?.slug,
       });
     };
-  let slot2895 =
-      slot2894,
+  let slot2895 = slot2894,
     slot2896 = () => {
       slot2895(
         appInitialI8.CHATGPT_SAFETY_LINK_TYPE_SAFETY_REVIEW_FASTER_MODEL,
         appInitialT8.CHATGPT_SAFETY_LINK_INTERACTION_ACTION_TYPE_SHOWN,
       );
     };
-  let slot2897 =
-      React.useEffectEvent(
-        slot2896,
-      ),
+  let slot2897 = React.useEffectEvent(slot2896),
     slot2898 = () => {
-      slot2893 &&
-        slot2897();
+      slot2893 && slot2897();
     };
   let slot2899;
-  slot2899 = [
-    slot2893,
-    requestId,
-  ];
-  React.useEffect(
-    slot2898,
-    slot2899,
-  );
+  slot2899 = [slot2893, requestId];
+  React.useEffect(slot2898, slot2899);
   let slot2900 = () => {
     slot2895(
       appInitialI8.CHATGPT_SAFETY_LINK_TYPE_SAFETY_REVIEW_LEARN_MORE,
       appInitialT8.CHATGPT_SAFETY_LINK_INTERACTION_ACTION_TYPE_SHOWN,
     );
   };
-  let slot2901 =
-    React.useEffectEvent(
-      slot2900,
-    );
+  let slot2901 = React.useEffectEvent(slot2900);
   React.useEffect(() => {
-    slot2891 != null &&
-      slot2901();
+    slot2891 != null && slot2901();
   }, [slot2891, requestId]);
-  let slot2902 = (
-    request11196,
-  ) => {
-    AppInitialBP(
-      slot2888,
-      conversationId,
-      request11196,
+  let slot2902 = (request11196) => {
+    AppInitialBP(slot2888, conversationId, request11196);
+    _appInitialRP(slot2888, conversationId, request11196).catch(
+      useChatgptComposerControllerHelper270,
     );
-    _appInitialRP(
-      slot2888,
-      conversationId,
-      request11196,
-    ).catch(useChatgptComposerControllerHelper270);
   };
-  let slot2903 =
-      slot2902,
-    slot2904 =
-      safetyReviewContext,
-    slot2905 = (
-      request10694,
-    ) => {
+  let slot2903 = slot2902,
+    slot2904 = safetyReviewContext,
+    slot2905 = (request10694) => {
       slot2895(
         request10694,
         appInitialT8.CHATGPT_SAFETY_LINK_INTERACTION_ACTION_TYPE_CLICKED,
@@ -199,8 +154,7 @@ function useChatgptComposerControllerHelper269(
     onRetry: slot2903,
     retryPending,
   };
-  let slot2907 =
-      useChatgptComposerControllerHelper268,
+  let slot2907 = useChatgptComposerControllerHelper268,
     slot2908 = () => {
       slot2895(
         appInitialI8.CHATGPT_SAFETY_LINK_TYPE_SAFETY_REVIEW_LEARN_MORE,
@@ -214,10 +168,7 @@ function useChatgptComposerControllerHelper269(
       SAFETY_FASTER_MODEL_HREF,
     ),
     slot2912 = (
-      <SafetyMarkdown
-        className="contents !text-inherit"
-        components={slot2910}
-      >
+      <SafetyMarkdown className="contents !text-inherit" components={slot2910}>
         {slot2911}
       </SafetyMarkdown>
     );
@@ -232,11 +183,7 @@ function useChatgptComposerControllerHelper269(
     </SafetyBannerFrame>
   );
   return (
-    <SafetyReviewProvider
-      value={slot2906}
-    >
-      {slot2913}
-    </SafetyReviewProvider>
+    <SafetyReviewProvider value={slot2906}>{slot2913}</SafetyReviewProvider>
   );
 }
 

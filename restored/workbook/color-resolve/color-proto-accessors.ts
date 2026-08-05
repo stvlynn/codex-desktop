@@ -25,7 +25,9 @@ export function normalizeRgbHex(
 }
 
 /** True when value is a WorkbookColor instance (legacy color VO guard). */
-export function isWorkbookColorInstance(value: unknown): value is WorkbookColor {
+export function isWorkbookColorInstance(
+  value: unknown,
+): value is WorkbookColor {
   return value instanceof WorkbookColor;
 }
 

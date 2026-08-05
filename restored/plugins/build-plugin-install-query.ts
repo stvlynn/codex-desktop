@@ -3,7 +3,9 @@
 
 export type BuildPluginInstallQueryPeers = {
   /** Extra query fields from plugin record. Bundle `GN`. */
-  pluginQueryExtras: (plugin: PluginInstallQueryPlugin) => Record<string, unknown>;
+  pluginQueryExtras: (
+    plugin: PluginInstallQueryPlugin,
+  ) => Record<string, unknown>;
   /** Build install route query object. Bundle `Iwe`. */
   buildInstallQuery: (args: {
     hostId?: string;

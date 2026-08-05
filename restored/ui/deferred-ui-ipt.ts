@@ -25,12 +25,18 @@ export function bindDeferredUiIpt() {
 
   return peers.i((e, t) => {
     function n() {
-      if (!(typeof peers.__REACT_DEVTOOLS_GLOBAL_HOOK__ > `u` || typeof peers.__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE != `function`)) try {
-        peers.__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(peers.n);
-      } catch (e) {
-        console.error(e);
-      }
+      if (
+        !(
+          typeof peers.__REACT_DEVTOOLS_GLOBAL_HOOK__ > `u` ||
+          typeof peers.__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE != `function`
+        )
+      )
+        try {
+          peers.__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(peers.n);
+        } catch (e) {
+          console.error(e);
+        }
     }
-    peers.n(), t.exports = peers.mOe();
+    (peers.n(), (t.exports = peers.mOe()));
   });
 }

@@ -11,7 +11,9 @@ export type BindBindDeferredUiX232Peers = {
 let peers: BindBindDeferredUiX232Peers | null = null;
 
 /** Wire bindBindDeferredUiX232 peers once companions land. */
-export function setBindBindDeferredUiX232Peers(next: BindBindDeferredUiX232Peers): void {
+export function setBindBindDeferredUiX232Peers(
+  next: BindBindDeferredUiX232Peers,
+): void {
   peers = next;
 }
 
@@ -23,17 +25,15 @@ export function bindBindDeferredUiX232() {
     throw new Error("bindBindDeferredUiX232 peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => null, {
+  return peers.Da(peers.Q, (e) => null, {
     onMount: (e, t) => {
-      let {
-        key: n
-      } = t;
-      if (n != null) return t.watch(({
-        get: t
-      }) => {
-        let r = t(peers.CD, n);
-        if (e(r?.getStreamRole(n) ?? null), r != null) return r.addStreamRoleCallback(n, e);
-      });
-    }
+      let { key: n } = t;
+      if (n != null)
+        return t.watch(({ get: t }) => {
+          let r = t(peers.CD, n);
+          if ((e(r?.getStreamRole(n) ?? null), r != null))
+            return r.addStreamRoleCallback(n, e);
+        });
+    },
   });
 }

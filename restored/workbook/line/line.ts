@@ -71,8 +71,7 @@ export class Line {
     if ("type" in lineCfg && lineCfg.type === "proto") {
       this.#c = lineCfg.proto !== undefined;
       let widthEmu = lineCfg.proto?.widthEmu;
-      this.#e =
-        widthEmu === undefined ? undefined : emuToPoints(widthEmu);
+      this.#e = widthEmu === undefined ? undefined : emuToPoints(widthEmu);
       this.#t = new Fill({
         type: "proto",
         proto: lineCfg.proto?.fill,
@@ -195,8 +194,7 @@ export class Line {
       typeof value == "string" ? parseCompoundStyle(value) : undefined;
     let dash =
       typeof value == "string"
-        ? (parseDashStyle(value) ??
-          (compoundFromStyle ? "solid" : undefined))
+        ? (parseDashStyle(value) ?? (compoundFromStyle ? "solid" : undefined))
         : value;
     this.#n = dash;
     this.#r = dash ? dashStyleNameToProto[dash] : undefined;
@@ -212,8 +210,7 @@ export class Line {
   }
 
   set compound(value: CompoundStyleName | string | undefined) {
-    let compound =
-      typeof value == "string" ? parseCompoundStyle(value) : value;
+    let compound = typeof value == "string" ? parseCompoundStyle(value) : value;
     this.#i = compound;
     this.#a = compound ? compoundStyleNameToProto[compound] : undefined;
     this.#o?.(this);
@@ -257,9 +254,7 @@ export class Line {
     };
   }
 
-  toConfig(
-    options: LineToConfigOptions = {},
-  ):
+  toConfig(options: LineToConfigOptions = {}):
     | { type: "proto"; proto: LineProto | undefined }
     | {
         style: DashStyleName | "solid";

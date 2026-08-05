@@ -20,7 +20,9 @@ export type CodexReviewNoDiffGitRepoRequiredTitlePeers = {
 let peers: CodexReviewNoDiffGitRepoRequiredTitlePeers | null = null;
 
 /** Wire codexReviewNoDiffGitRepoRequiredTitle peers once companions land. */
-export function setCodexReviewNoDiffGitRepoRequiredTitlePeers(next: CodexReviewNoDiffGitRepoRequiredTitlePeers): void {
+export function setCodexReviewNoDiffGitRepoRequiredTitlePeers(
+  next: CodexReviewNoDiffGitRepoRequiredTitlePeers,
+): void {
   peers = next;
 }
 
@@ -29,10 +31,22 @@ export function setCodexReviewNoDiffGitRepoRequiredTitlePeers(next: CodexReviewN
  */
 export function codexReviewNoDiffGitRepoRequiredTitle() {
   if (peers == null) {
-    throw new Error("codexReviewNoDiffGitRepoRequiredTitle peers are not configured");
+    throw new Error(
+      "codexReviewNoDiffGitRepoRequiredTitle peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    xRo = peers.c(), peers.Qt(), peers.Ho(), peers.Au(), peers.$u(), peers.ih(), peers.QT(), peers.eE(), peers.ed(), peers.ap(), peers.ZT();
+    ((xRo = peers.c()),
+      peers.Qt(),
+      peers.Ho(),
+      peers.Au(),
+      peers.$u(),
+      peers.ih(),
+      peers.QT(),
+      peers.eE(),
+      peers.ed(),
+      peers.ap(),
+      peers.ZT());
   });
 }

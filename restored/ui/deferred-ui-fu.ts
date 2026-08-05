@@ -60,6 +60,52 @@ export function bindDeferredUiFu() {
   }
 
   return peers.e(() => {
-    d$c = peers.c(), peers.sd(), peers.Au(), f$c = peers.r(peers.o(), 1), peers.$u(), peers.JQc(), peers.Pp(), peers.SU(), peers.qR(), peers.hcs(), peers.$m(), peers.kBa(), peers.cJa(), peers.gta(), peers.uJa(), peers.n$c(), peers.OAs(), peers.KJa(), peers.qna(), peers.rQ(), peers.MM(), peers.Vm(), peers.ld(), peers.iO(), peers.YN(), peers.FQa(), peers.tP(), peers.PM(), peers.K_(), peers.wz(), p3 = peers.J(), p$c = `text-token-input-foreground placeholder:text-token-input-placeholder-foreground m-0 w-full min-w-0 appearance-none bg-transparent p-0 text-lg leading-tight outline-none`, m$c = peers.$(`text-token-input-foreground placeholder:text-token-input-placeholder-foreground w-full text-base outline-none`, `max-h-[32rem]`, `[&_.ProseMirror]:leading-relaxed`, `extension:[&_.ProseMirror]:leading-normal`, `[&_.ProseMirror]:px-0`, `[&_.ProseMirror]:py-0`), h$c = peers.$(`text-token-input-foreground placeholder:text-token-input-placeholder-foreground w-full text-base outline-none`, `max-h-64`, `[&_.ProseMirror]:leading-relaxed`, `extension:[&_.ProseMirror]:leading-normal`, `[&_.ProseMirror]:p-4`);
+    ((d$c = peers.c()),
+      peers.sd(),
+      peers.Au(),
+      (f$c = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.JQc(),
+      peers.Pp(),
+      peers.SU(),
+      peers.qR(),
+      peers.hcs(),
+      peers.$m(),
+      peers.kBa(),
+      peers.cJa(),
+      peers.gta(),
+      peers.uJa(),
+      peers.n$c(),
+      peers.OAs(),
+      peers.KJa(),
+      peers.qna(),
+      peers.rQ(),
+      peers.MM(),
+      peers.Vm(),
+      peers.ld(),
+      peers.iO(),
+      peers.YN(),
+      peers.FQa(),
+      peers.tP(),
+      peers.PM(),
+      peers.K_(),
+      peers.wz(),
+      (p3 = peers.J()),
+      (p$c = `text-token-input-foreground placeholder:text-token-input-placeholder-foreground m-0 w-full min-w-0 appearance-none bg-transparent p-0 text-lg leading-tight outline-none`),
+      (m$c = peers.$(
+        `text-token-input-foreground placeholder:text-token-input-placeholder-foreground w-full text-base outline-none`,
+        `max-h-[32rem]`,
+        `[&_.ProseMirror]:leading-relaxed`,
+        `extension:[&_.ProseMirror]:leading-normal`,
+        `[&_.ProseMirror]:px-0`,
+        `[&_.ProseMirror]:py-0`,
+      )),
+      (h$c = peers.$(
+        `text-token-input-foreground placeholder:text-token-input-placeholder-foreground w-full text-base outline-none`,
+        `max-h-64`,
+        `[&_.ProseMirror]:leading-relaxed`,
+        `extension:[&_.ProseMirror]:leading-normal`,
+        `[&_.ProseMirror]:p-4`,
+      )));
   });
 }

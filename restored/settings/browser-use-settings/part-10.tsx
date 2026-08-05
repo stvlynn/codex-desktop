@@ -157,10 +157,12 @@ import {
 import { useSettingValue } from "../use-setting-value";
 
 // Wave5d soft JSX companions.
-function Or(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Or(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 function Alpha(

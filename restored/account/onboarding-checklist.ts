@@ -14,7 +14,9 @@ export type OnboardingChecklistPeers = {
 let peers: OnboardingChecklistPeers | null = null;
 
 /** Wire onboardingChecklist peers once companions land. */
-export function setOnboardingChecklistPeers(next: OnboardingChecklistPeers): void {
+export function setOnboardingChecklistPeers(
+  next: OnboardingChecklistPeers,
+): void {
   peers = next;
 }
 
@@ -26,6 +28,9 @@ export function onboardingChecklist() {
     throw new Error("onboardingChecklist peers are not configured");
   }
   return peers.e(() => {
-    peers.Ho(), peers.ed(), peers.Bsc(), Wsc = peers.Ta(peers.Q, `not-determined`);
+    (peers.Ho(),
+      peers.ed(),
+      peers.Bsc(),
+      (Wsc = peers.Ta(peers.Q, `not-determined`)));
   });
 }

@@ -2,10 +2,7 @@
 // Bundle `q3r` / export `KK` — host feature-list gate probe.
 
 import { requireBrowserUseGatePeers } from "./peers";
-import type {
-  HostFeatureGateArgs,
-  HostFeatureGateResult,
-} from "./types";
+import type { HostFeatureGateArgs, HostFeatureGateResult } from "./types";
 
 export function useHostFeatureGate(
   args: HostFeatureGateArgs,

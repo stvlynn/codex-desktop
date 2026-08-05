@@ -16,20 +16,49 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CodexPluginPageName } from "../../analytics/codex-plugin-page-name";
 import { NOOP_ANALYTICS_CLIENT } from "../../analytics/noop-analytics-client";
 import { APP_VERSION } from "../../app/app-version";
-import { avatarOverlayNativeFrame_a, avatarOverlayNativeFrame_i, avatarOverlayNativeFrame_n, avatarOverlayNativeFrame_o, avatarOverlayNativeFrame_r, avatarOverlayNativeFrame_t } from "../../artifact/avatar-overlay-native-frame";
-import { AvatarOverlayPillDismissButton, ensureAvatarOverlayPillDismissButtonUiInit } from "../../artifact/avatar-overlay-pill-dismiss-button";
+import {
+  avatarOverlayNativeFrame_a,
+  avatarOverlayNativeFrame_i,
+  avatarOverlayNativeFrame_n,
+  avatarOverlayNativeFrame_o,
+  avatarOverlayNativeFrame_r,
+  avatarOverlayNativeFrame_t,
+} from "../../artifact/avatar-overlay-native-frame";
+import {
+  AvatarOverlayPillDismissButton,
+  ensureAvatarOverlayPillDismissButtonUiInit,
+} from "../../artifact/avatar-overlay-pill-dismiss-button";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { AUTOMATION_MISSING_IN_APP_ERROR } from "../../automations/automation-missing-error";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
 import { getPersistedAtomItem } from "../../boundaries/persisted-atom-store";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { buildMcpToolApprovalResult } from "../../composer/mcp-tool-approval-result";
 import { recentConversationsMetaQueryKey } from "../../conversation/recent-conversations-meta-query-key";
-import { avatarOverlayMascotAspectRatio, defaultAvatarOverlayMascotWidthPx, ensureAvatarOverlayMascotSizeInit, useAvatarOverlayMascotSize } from "../../desktop/avatar-overlay-mascot-size";
+import {
+  avatarOverlayMascotAspectRatio,
+  defaultAvatarOverlayMascotWidthPx,
+  ensureAvatarOverlayMascotSizeInit,
+  useAvatarOverlayMascotSize,
+} from "../../desktop/avatar-overlay-mascot-size";
 import { ensureRemoteSshConnectionEventInit } from "../../environments/ensure-remote-ssh-connection-event-init";
-import { ensureUseFloatingWindowPointerInteractivityInit, useFloatingWindowPointerInteractivity } from "../../hooks/use-floating-window-pointer-interactivity";
+import {
+  ensureUseFloatingWindowPointerInteractivityInit,
+  useFloatingWindowPointerInteractivity,
+} from "../../hooks/use-floating-window-pointer-interactivity";
 import { useIsDarkAppearance } from "../../hooks/use-is-dark-appearance";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { LOCAL_HOST_ID } from "../../hosts/local-host-id";
@@ -38,7 +67,10 @@ import { AppIconJG } from "../../icons/app-icon-jg";
 import { AppIconMlt } from "../../icons/app-icon-mlt";
 import { AppIconPlt } from "../../icons/app-icon-plt";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { findSidebarSectionElement, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
@@ -54,7 +86,27 @@ import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { REALTIME_VOICE_MODE_ID } from "../../voice/realtime-voice-mode-id";
 import { AVATAR_OVERLAY_SURFACE_STACK_IDS } from "../avatar-overlay-surface-stack-ids";
 import { buildAvatarOverlayAnalyticsPayload } from "../build-avatar-overlay-analytics-payload";
-import { avatarOverlaySelectionB, avatarOverlaySelectionD, avatarOverlaySelectionF, avatarOverlaySelectionG, avatarOverlaySelectionH, avatarOverlaySelectionI, avatarOverlaySelectionL, avatarOverlaySelectionM, avatarOverlaySelectionN, avatarOverlaySelectionO, avatarOverlaySelectionP, avatarOverlaySelectionR, avatarOverlaySelectionT, avatarOverlaySelectionU, avatarOverlaySelectionUpperC, avatarOverlaySelectionUpperS, avatarOverlaySelectionV, avatarOverlaySelectionX, avatarOverlaySelectionY } from "../use-avatar-overlay-selection";
+import {
+  avatarOverlaySelectionB,
+  avatarOverlaySelectionD,
+  avatarOverlaySelectionF,
+  avatarOverlaySelectionG,
+  avatarOverlaySelectionH,
+  avatarOverlaySelectionI,
+  avatarOverlaySelectionL,
+  avatarOverlaySelectionM,
+  avatarOverlaySelectionN,
+  avatarOverlaySelectionO,
+  avatarOverlaySelectionP,
+  avatarOverlaySelectionR,
+  avatarOverlaySelectionT,
+  avatarOverlaySelectionU,
+  avatarOverlaySelectionUpperC,
+  avatarOverlaySelectionUpperS,
+  avatarOverlaySelectionV,
+  avatarOverlaySelectionX,
+  avatarOverlaySelectionY,
+} from "../use-avatar-overlay-selection";
 
 // Wave5d soft stubs.
 const Dusk: any = undefined;
@@ -138,43 +190,61 @@ function delta({
   activityStackPresentation,
   isNotificationStackExpanded,
   measuredSurfaces,
-  policies
+  policies,
 }) {
   let cedar = avatarOverlayNativeFrame_a({
-    caption: measuredSurfaces.find(({
-      id
-    }) => id === "realtime-caption")?.rect ?? null,
-    status: measuredSurfaces.find(({
-      id
-    }) => id === "voice-status")?.rect ?? null
+    caption:
+      measuredSurfaces.find(({ id }) => id === "realtime-caption")?.rect ??
+      null,
+    status:
+      measuredSurfaces.find(({ id }) => id === "voice-status")?.rect ?? null,
   });
-  return measuredSurfaces.flatMap(item => {
-    let daisy = policies.find(_item => _item.id === item.id);
+  return measuredSurfaces.flatMap((item) => {
+    let daisy = policies.find((_item) => _item.id === item.id);
     if (daisy == null) return [];
-    let ember = activityStackPresentation.slots.find(_item => _item.slotId === item.id);
-    if (ember == null) return [{
-      ...item,
-      ...daisy,
-      chromiumPresentationRect: item.rect,
-      edgeZone: null,
-      opacity: item.id !== "voice-controls" && (AUTOMATION_MISSING_IN_APP_ERROR(item.id) || item.id === "mascot-badge") ? item.opacity : 1,
-      platterRect: item.rect,
-      presentationOffset: item.id === "realtime-caption" ? {
-        x: daisy.presentationOffset.x,
-        y: daisy.presentationOffset.y + cedar
-      } : daisy.presentationOffset,
-      presentationRect: item.rect
-    }];
+    let ember = activityStackPresentation.slots.find(
+      (_item) => _item.slotId === item.id,
+    );
+    if (ember == null)
+      return [
+        {
+          ...item,
+          ...daisy,
+          chromiumPresentationRect: item.rect,
+          edgeZone: null,
+          opacity:
+            item.id !== "voice-controls" &&
+            (AUTOMATION_MISSING_IN_APP_ERROR(item.id) ||
+              item.id === "mascot-badge")
+              ? item.opacity
+              : 1,
+          platterRect: item.rect,
+          presentationOffset:
+            item.id === "realtime-caption"
+              ? {
+                  x: daisy.presentationOffset.x,
+                  y: daisy.presentationOffset.y + cedar,
+                }
+              : daisy.presentationOffset,
+          presentationRect: item.rect,
+        },
+      ];
     let flint = echo(item.rect, ember.visibleRect, ember.presentationRect);
-    return [{
-      ...item,
-      ...daisy,
-      chromiumPresentationRect: isNotificationStackExpanded ? item.rect : echo(item.rect, ember.contentRect, ember.presentationRect),
-      edgeZone: ember.edgeZone,
-      opacity: +(!isNotificationStackExpanded || ember.visibleRect.height > 0),
-      platterRect: item.rect,
-      presentationRect: flint
-    }];
+    return [
+      {
+        ...item,
+        ...daisy,
+        chromiumPresentationRect: isNotificationStackExpanded
+          ? item.rect
+          : echo(item.rect, ember.contentRect, ember.presentationRect),
+        edgeZone: ember.edgeZone,
+        opacity: +(
+          !isNotificationStackExpanded || ember.visibleRect.height > 0
+        ),
+        platterRect: item.rect,
+        presentationRect: flint,
+      },
+    ];
   });
 }
 function echo(garnet, hazel, ivory) {
@@ -182,39 +252,38 @@ function echo(garnet, hazel, ivory) {
     height: hazel.height,
     left: garnet.left + hazel.left - ivory.left,
     top: garnet.top + hazel.top - ivory.top,
-    width: hazel.width
+    width: hazel.width,
   };
 }
 var falcon = esmInit(() => {
   strongMarkerFromOptions();
   avatarOverlayNativeFrame_o();
 });
-function gamma(jasper, {
-  includeInertSurfaces = false
-} = {}) {
+function gamma(jasper, { includeInertSurfaces = false } = {}) {
   if (jasper == null) return null;
   let kelp = jade(jasper.querySelector(onyx)),
     lotus = lemon(jasper.querySelector(pearl), includeInertSurfaces);
-  return kelp == null ? null : {
-    mascot: kelp,
-    tray: lotus
-  };
+  return kelp == null
+    ? null
+    : {
+        mascot: kelp,
+        tray: lotus,
+      };
 }
-function harbor(mint, nova, {
-  includeInert = false
-} = {}) {
+function harbor(mint, nova, { includeInert = false } = {}) {
   if (mint == null) return [];
-  let olive = Array.from(mint.querySelectorAll(violet)).flatMap(item => {
-    if (!includeInert && item.closest("[inert]") != null || marble(item)) return [];
+  let olive = Array.from(mint.querySelectorAll(violet)).flatMap((item) => {
+    if ((!includeInert && item.closest("[inert]") != null) || marble(item))
+      return [];
     let prism = item.dataset.avatarOverlayNativeSurfaceId,
-      quill = nova.find(_item => _item === prism),
+      quill = nova.find((_item) => _item === prism),
       reef = item.getBoundingClientRect();
     if (quill == null || reef.width <= 0 || reef.height <= 0) return [];
     let sage = {
         height: reef.height,
         left: reef.left,
         top: reef.top,
-        width: reef.width
+        width: reef.width,
       },
       topaz = Number(item.dataset.avatarOverlayNativeCornerRadius),
       ultra = nickel(item);
@@ -223,34 +292,50 @@ function harbor(mint, nova, {
       wheat = vapor?.getBoundingClientRect(),
       yarn = item.querySelector(yellow),
       zephyr = yarn?.getBoundingClientRect();
-    return [{
-      ...(vapor != null && wheat != null && !marble(vapor) && wheat.width > 0 && wheat.height > 0 ? {
-        chromiumOverflowCornerRadius: Math.min(wheat.width, wheat.height) / 2,
-        chromiumOverflowRect: {
-          height: wheat.height,
-          left: wheat.left,
-          top: wheat.top,
-          width: wheat.width
-        }
-      } : {}),
-      ...(yarn?.dataset.avatarOverlayTrailingAccessory === "success" && zephyr != null && zephyr.width > 0 && zephyr.height > 0 ? {
-        trailingAccessory: {
-          kind: "success",
-          rect: {
-            height: zephyr.height,
-            left: zephyr.left,
-            top: zephyr.top,
-            width: zephyr.width
-          }
-        }
-      } : {}),
-      cornerRadius: topaz,
-      id: quill,
-      opacity: ultra,
-      rect: sage
-    }];
+    return [
+      {
+        ...(vapor != null &&
+        wheat != null &&
+        !marble(vapor) &&
+        wheat.width > 0 &&
+        wheat.height > 0
+          ? {
+              chromiumOverflowCornerRadius:
+                Math.min(wheat.width, wheat.height) / 2,
+              chromiumOverflowRect: {
+                height: wheat.height,
+                left: wheat.left,
+                top: wheat.top,
+                width: wheat.width,
+              },
+            }
+          : {}),
+        ...(yarn?.dataset.avatarOverlayTrailingAccessory === "success" &&
+        zephyr != null &&
+        zephyr.width > 0 &&
+        zephyr.height > 0
+          ? {
+              trailingAccessory: {
+                kind: "success",
+                rect: {
+                  height: zephyr.height,
+                  left: zephyr.left,
+                  top: zephyr.top,
+                  width: zephyr.width,
+                },
+              },
+            }
+          : {}),
+        cornerRadius: topaz,
+        id: quill,
+        opacity: ultra,
+        rect: sage,
+      },
+    ];
   });
-  return Array.from(new Map(olive.map(item => [item.id, item])).values()).sort((acorn, bloom) => nova.indexOf(acorn.id) - nova.indexOf(bloom.id));
+  return Array.from(
+    new Map(olive.map((item) => [item.id, item])).values(),
+  ).sort((acorn, bloom) => nova.indexOf(acorn.id) - nova.indexOf(bloom.id));
 }
 function indigo(coral) {
   return Array.from(coral.querySelectorAll(zinc.join(", ")));
@@ -258,34 +343,57 @@ function indigo(coral) {
 function jade(drift) {
   if (drift == null || marble(drift)) return null;
   let eagle = drift.getBoundingClientRect();
-  return eagle.width <= 0 || eagle.height <= 0 ? null : {
-    width: Math.ceil(eagle.width),
-    height: Math.ceil(eagle.height)
-  };
+  return eagle.width <= 0 || eagle.height <= 0
+    ? null
+    : {
+        width: Math.ceil(eagle.width),
+        height: Math.ceil(eagle.height),
+      };
 }
 function kite(frost) {
   return {
     backing: jade(frost?.querySelector(timber) ?? null)?.height ?? 0,
-    visible: jade(frost?.querySelector(umbra) ?? null)?.height ?? 0
+    visible: jade(frost?.querySelector(umbra) ?? null)?.height ?? 0,
   };
 }
 function lemon(glide, honey) {
   if (glide == null || marble(glide)) return null;
   let iris = glide.getBoundingClientRect();
   if (iris.width <= 0 || iris.height <= 0) return null;
-  let jewel = Array.from(glide.querySelectorAll(violet)).filter(item => (honey || item.closest("[inert]") == null) && !marble(item) && item.dataset.avatarOverlayNativeSurfaceId !== "activity-slot-8").map(item => item.getBoundingClientRect()),
-    knoll = Math.ceil(Math.max(glide.offsetWidth > 0 ? glide.offsetWidth : iris.width, Math.max(iris.right, ...jewel.map(item => item.right)) - Math.min(iris.left, ...jewel.map(item => item.left)))),
+  let jewel = Array.from(glide.querySelectorAll(violet))
+      .filter(
+        (item) =>
+          (honey || item.closest("[inert]") == null) &&
+          !marble(item) &&
+          item.dataset.avatarOverlayNativeSurfaceId !== "activity-slot-8",
+      )
+      .map((item) => item.getBoundingClientRect()),
+    knoll = Math.ceil(
+      Math.max(
+        glide.offsetWidth > 0 ? glide.offsetWidth : iris.width,
+        Math.max(iris.right, ...jewel.map((item) => item.right)) -
+          Math.min(iris.left, ...jewel.map((item) => item.left)),
+      ),
+    ),
     lunar = glide.querySelector(quartz),
     moss = glide.querySelector(river);
-  if (lunar == null || moss == null) return {
-    height: Math.ceil(iris.height),
-    width: knoll
-  };
+  if (lunar == null || moss == null)
+    return {
+      height: Math.ceil(iris.height),
+      width: knoll,
+    };
   let north = moss.getBoundingClientRect(),
-    orbit = Math.max(0, ...Array.from(moss.querySelectorAll(xenon)).map(item => item.getBoundingClientRect().bottom - north.bottom));
+    orbit = Math.max(
+      0,
+      ...Array.from(moss.querySelectorAll(xenon)).map(
+        (item) => item.getBoundingClientRect().bottom - north.bottom,
+      ),
+    );
   return {
-    height: Math.ceil(lunar.getBoundingClientRect().height + moss.scrollHeight - orbit),
-    width: knoll
+    height: Math.ceil(
+      lunar.getBoundingClientRect().height + moss.scrollHeight - orbit,
+    ),
+    width: knoll,
   };
 }
 function marble(pine) {
@@ -293,7 +401,8 @@ function marble(pine) {
 }
 function nickel(quest) {
   let ridge = 1;
-  for (let storm = quest; storm != null; storm = storm.parentElement) ridge *= Number(window.getComputedStyle(storm).opacity || "1");
+  for (let storm = quest; storm != null; storm = storm.parentElement)
+    ridge *= Number(window.getComputedStyle(storm).opacity || "1");
   return ridge;
 }
 var onyx,
@@ -321,35 +430,68 @@ var onyx,
     willow = "[data-avatar-overlay-chromium-overflow='true']";
     xenon = "[data-avatar-overlay-backing-canvas='true']";
     yellow = "[data-avatar-overlay-trailing-accessory]";
-    zinc = [onyx, pearl, quartz, river, slate, timber, umbra, violet, willow, yellow];
+    zinc = [
+      onyx,
+      pearl,
+      quartz,
+      river,
+      slate,
+      timber,
+      umbra,
+      violet,
+      willow,
+      yellow,
+    ];
   });
 export function AvatarOverlayNativePage() {
-  let {
-      selectedAvatar,
-      selectedAvatarId
-    } = avatarOverlaySelectionN(),
+  let { selectedAvatar, selectedAvatarId } = avatarOverlaySelectionN(),
     tide = selectedAvatar == null,
     unity,
     vale;
   unity = () => {
-    tide && ensureAppActionPayloadSchemasInit.dispatchMessage("avatar-overlay-pointer-interaction-changed", {
-      isInteractive: false
-    });
+    tide &&
+      ensureAppActionPayloadSchemasInit.dispatchMessage(
+        "avatar-overlay-pointer-interaction-changed",
+        {
+          isInteractive: false,
+        },
+      );
   };
   vale = [tide];
   copper.useEffect(unity, vale);
   let wave, apex;
-  if (wave = () => (tide && ensureAppActionPayloadSchemasInit.dispatchMessage("avatar-overlay-composition-changed", {
-    state: null
-  }), basalt), apex = [tide], copper.useLayoutEffect(wave, apex), selectedAvatar == null) return null;
+  if (
+    ((wave = () => (
+      tide &&
+        ensureAppActionPayloadSchemasInit.dispatchMessage(
+          "avatar-overlay-composition-changed",
+          {
+            state: null,
+          },
+        ),
+      basalt
+    )),
+    (apex = [tide]),
+    copper.useLayoutEffect(wave, apex),
+    selectedAvatar == null)
+  )
+    return null;
   let brook = bravo(selectedAvatar, selectedAvatarId);
-  return <Dusk key={brook} {...{
-    selectedAvatar,
-    selectedAvatarId
-  }} />;
+  return (
+    <Dusk
+      key={brook}
+      {...{
+        selectedAvatar,
+        selectedAvatarId,
+      }}
+    />
+  );
 }
 function basalt() {
-  ensureAppActionPayloadSchemasInit.dispatchMessage("avatar-overlay-composition-changed", {
-    state: null
-  });
+  ensureAppActionPayloadSchemasInit.dispatchMessage(
+    "avatar-overlay-composition-changed",
+    {
+      state: null,
+    },
+  );
 }

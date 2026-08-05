@@ -16,7 +16,8 @@ export function setDetailDefinitionRow(impl: ComponentType<RowProps>): void {
 }
 
 /** Wire string→nodes splitter (`kFs`/`jFs`/`AFs` in the bundle). */
-export function setDetailStringChildrenRenderer(fn: (value: string) => ReactNode,
+export function setDetailStringChildrenRenderer(
+  fn: (value: string) => ReactNode,
 ): void {
   splitStringChildren = fn;
 }

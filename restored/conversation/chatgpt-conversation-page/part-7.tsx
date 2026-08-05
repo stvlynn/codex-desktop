@@ -8,7 +8,10 @@
 
 import { ensureAccountPlanQueryInit } from "../../account/ensure-account-plan-query-init";
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
-import { appActionSidebarProjectRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { CodexBrowserProfileImportCookieStatus } from "../../analytics/codex-browser-profile-import-cookie-status";
 import { CodexBrowserProfileImportPasswordStatus } from "../../analytics/codex-browser-profile-import-password-status";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
@@ -18,23 +21,119 @@ import { CodexPluginDirectoryEntrypoint } from "../../analytics/codex-plugin-dir
 import { CodexReferralInviteModalBackendErrorType } from "../../analytics/codex-referral-invite-modal-backend-error-type";
 import { shellPanelPinnedDerivedAtom } from "../../app-shell/shell-panel-pin";
 import { AppQueryClientProvider } from "../../app/app-query-client-provider";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { defaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationBranchAtom, chatgptConversationFlagsAtom, chatgptConversationLoadQueryAtom, chatgptConversationPreviewAtom, chatgptConversationServerIdAtom, chatgptConversationsGateAtom, chatgptConversationStatusAtom, chatgptConversationTitleAtom, chatgptThreadDerivedAtomBP, useStepsProseAtom, writingBlocksControllerAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_BF_Init, ensureComposerEsm_BI_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_II_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KF_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MF_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_Ytt_Init, ensureComposerEsm_ZI_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Jj_Init, ensureConversationPageEsm_Lo_Init, ensureConversationPageEsm_Mx_Init, ensureConversationPageEsm_Qa_Init, ensureConversationPageEsm_SP_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationBranchAtom,
+  chatgptConversationFlagsAtom,
+  chatgptConversationLoadQueryAtom,
+  chatgptConversationPreviewAtom,
+  chatgptConversationServerIdAtom,
+  chatgptConversationsGateAtom,
+  chatgptConversationStatusAtom,
+  chatgptConversationTitleAtom,
+  chatgptThreadDerivedAtomBP,
+  useStepsProseAtom,
+  writingBlocksControllerAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_AG_Init,
+  ensureComposerEsm_BF_Init,
+  ensureComposerEsm_BI_Init,
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_II_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_J0_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KF_Init,
+  ensureComposerEsm_M0_Init,
+  ensureComposerEsm_MF_Init,
+  ensureComposerEsm_ML_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_TI_Init,
+  ensureComposerEsm_XP_Init,
+  ensureComposerEsm_Ytt_Init,
+  ensureComposerEsm_ZI_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_FR_Init,
+  ensureConversationPageEsm_GS_Init,
+  ensureConversationPageEsm_GZ_Init,
+  ensureConversationPageEsm_Ist_Init,
+  ensureConversationPageEsm_Jj_Init,
+  ensureConversationPageEsm_Lo_Init,
+  ensureConversationPageEsm_Mx_Init,
+  ensureConversationPageEsm_Qa_Init,
+  ensureConversationPageEsm_SP_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import {
   ensureSummaryPanelDisplayAtomInit,
   ensureSummaryPanelDisplayRuntimeInit,
 } from "../conversation-source";
 import { isIterateeCall } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
-import { _useChatgptComposerControllerA, _useChatgptComposerControllerC, _useChatgptComposerControllerD, _useChatgptComposerControllerF, _useChatgptComposerControllerI, _useChatgptComposerControllerL, _useChatgptComposerControllerM, _useChatgptComposerControllerN, _useChatgptComposerControllerO, _useChatgptComposerControllerP, _useChatgptComposerControllerR, _useChatgptComposerControllerS, useChatgptComposerControllerA, useChatgptComposerControllerC, useChatgptComposerControllerD, useChatgptComposerControllerE, useChatgptComposerControllerF, useChatgptComposerControllerG, useChatgptComposerControllerH, useChatgptComposerControllerI, useChatgptComposerControllerJ, useChatgptComposerControllerK, useChatgptComposerControllerL, useChatgptComposerControllerM, useChatgptComposerControllerN, useChatgptComposerControllerO, useChatgptComposerControllerP, useChatgptComposerControllerR, useChatgptComposerControllerS, useChatgptComposerControllerT, useChatgptComposerControllerU, useChatgptComposerControllerUnderscore } from "../../composer/use-chatgpt-composer-controller";
+import {
+  _useChatgptComposerControllerA,
+  _useChatgptComposerControllerC,
+  _useChatgptComposerControllerD,
+  _useChatgptComposerControllerF,
+  _useChatgptComposerControllerI,
+  _useChatgptComposerControllerL,
+  _useChatgptComposerControllerM,
+  _useChatgptComposerControllerN,
+  _useChatgptComposerControllerO,
+  _useChatgptComposerControllerP,
+  _useChatgptComposerControllerR,
+  _useChatgptComposerControllerS,
+  useChatgptComposerControllerA,
+  useChatgptComposerControllerC,
+  useChatgptComposerControllerD,
+  useChatgptComposerControllerE,
+  useChatgptComposerControllerF,
+  useChatgptComposerControllerG,
+  useChatgptComposerControllerH,
+  useChatgptComposerControllerI,
+  useChatgptComposerControllerJ,
+  useChatgptComposerControllerK,
+  useChatgptComposerControllerL,
+  useChatgptComposerControllerM,
+  useChatgptComposerControllerN,
+  useChatgptComposerControllerO,
+  useChatgptComposerControllerP,
+  useChatgptComposerControllerR,
+  useChatgptComposerControllerS,
+  useChatgptComposerControllerT,
+  useChatgptComposerControllerU,
+  useChatgptComposerControllerUnderscore,
+} from "../../composer/use-chatgpt-composer-controller";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_CITATION_ID } from "../../chatgpt/chatgpt-citation-id";
 import { CHATGPT_CONTENT_REFERENCE_ID } from "../../chatgpt/chatgpt-content-reference-id";
@@ -53,7 +152,12 @@ import { ensureHasSeenRealtimeVoiceNuxAtomInit } from "../../home/realtime-voice
 import { ensureDebugPanelParsersInit } from "../../hooks/debug-panel-turn-files";
 import { ContextMenuRegistration } from "../../hooks/use-context-menu-registration";
 import { useEventCallback } from "../../hooks/use-event-callback";
-import { clampFloatingWindowRect, initFloatingWindowPointerDragConstants, resizeFloatingWindowRect, useFloatingWindowPointerDrag } from "../../hooks/use-floating-window-pointer-drag";
+import {
+  clampFloatingWindowRect,
+  initFloatingWindowPointerDragConstants,
+  resizeFloatingWindowRect,
+  useFloatingWindowPointerDrag,
+} from "../../hooks/use-floating-window-pointer-drag";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { HostFeatureConfigToggles } from "../../hosts/host-feature-config-toggles";
@@ -75,7 +179,11 @@ import { codexDirectiveMarkedExtensions } from "../../markdown/codex-directive-m
 import { markdownToPlainText } from "../../markdown/markdown-to-plain-text";
 import { rewriteFileCitationMarkers } from "../../markdown/rewrite-file-citation-markers";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
-import { findSidebarSectionElement, readScrollTop, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  readScrollTop,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
 import { NavigationAllowContext } from "../../navigation/navigation-allow-context";
@@ -97,16 +205,33 @@ import { openRightPanel } from "../../shell/open-right-panel";
 import { setRightPanelConversation } from "../../shell/set-right-panel-conversation";
 import { ProjectHoverCardBody } from "../../sidebar/project-hover-card-body";
 import { useBrowserExtensionPluginSetupQuery } from "../../skills/use-browser-extension-plugin-setup-query";
-import { initThreadPanelToggleButton, ThreadPanelToggleButton } from "../../thread/thread-panel-toggle-button";
+import {
+  initThreadPanelToggleButton,
+  ThreadPanelToggleButton,
+} from "../../thread/thread-panel-toggle-button";
 import { ThreadResourceCard } from "../../thread/thread-resource-card";
-import { initThreadScrollControllerContext, useThreadScrollController } from "../../thread/thread-scroll-controller-context";
-import { initThreadScrollLayout, ThreadScrollLayout } from "../../thread/thread-scroll-layout";
-import { initToggleThreadSummaryPanel, initToggleThreadSummaryPanelAtoms, toggleThreadSummaryPanel, ToggleThreadSummaryPanel } from "../../thread/toggle-thread-summary-panel";
+import {
+  initThreadScrollControllerContext,
+  useThreadScrollController,
+} from "../../thread/thread-scroll-controller-context";
+import {
+  initThreadScrollLayout,
+  ThreadScrollLayout,
+} from "../../thread/thread-scroll-layout";
+import {
+  initToggleThreadSummaryPanel,
+  initToggleThreadSummaryPanelAtoms,
+  toggleThreadSummaryPanel,
+  ToggleThreadSummaryPanel,
+} from "../../thread/toggle-thread-summary-panel";
 import { BrandedIcon } from "../../ui/branded-icon";
 import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { InsetBorderPanel } from "../../ui/inset-border-panel";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -127,11 +252,18 @@ import { slugifyLoose } from "../../utils/slugify-loose";
 import { sortedArrayFrom } from "../../utils/sorted-array-from";
 import { tryParseJsonText } from "../../utils/try-parse-json-text";
 import { waitForDoubleAnimationFrame } from "../../utils/wait-for-double-animation-frame";
-import { ensureImportSettingsCLInit, ensureSettingsGlyphI0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensureSettingsGlyphI0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { activateConversationSurface } from "../activate-conversation-surface";
 import { BrowserConversationPanel } from "../browser-conversation-panel";
 import { chatgptMessageFallbackId } from "../chatgpt-message-fallback-id";
-import { initChatgptTemporaryChatUi, TemporaryChatHeaderControl, TemporaryChatOnboarding } from "../chatgpt-temporary-chat-ui/index";
+import {
+  initChatgptTemporaryChatUi,
+  TemporaryChatHeaderControl,
+  TemporaryChatOnboarding,
+} from "../chatgpt-temporary-chat-ui/index";
 import { ConversationDiffSourceBridge } from "../conversation-diff-source-bridge";
 import { ensureConversationWorkRouteInit } from "../conversation-work-path";
 import { deferredConversationR } from "../deferred-conversation-r";
@@ -185,46 +317,60 @@ const river: any = undefined;
 const slate: any = undefined;
 const timber: any = undefined;
 function umbra(ivory) {
-  let {
-    status
-  } = ivory;
+  let { status } = ivory;
   switch (status) {
-    case "waiting":
-      {
-        let jasper;
-        return <MemoizedFormattedMessage {...{
-          id: "chatgptConversations.summaryPanel.subagents.status.waiting",
-          defaultMessage: "Waiting",
-          description: "Short status label for a delegated agent waiting to start in the Work task details panel. Sibling statuses are Working, Done, and Failed."
-        }} />;
-      }
-    case "working":
-      {
-        let kelp;
-        return <MemoizedFormattedMessage {...{
-          id: "chatgptConversations.summaryPanel.subagents.status.working",
-          defaultMessage: "Working",
-          description: "Short status label for a delegated agent currently working in the Work task details panel. Sibling statuses are Waiting, Done, and Failed."
-        }} />;
-      }
-    case "done":
-      {
-        let lotus;
-        return <MemoizedFormattedMessage {...{
-          id: "chatgptConversations.summaryPanel.subagents.status.done",
-          defaultMessage: "Done",
-          description: "Short status label for a completed delegated agent in the Work task details panel. Sibling statuses are Waiting, Working, and Failed."
-        }} />;
-      }
-    case "failed":
-      {
-        let mint;
-        return <MemoizedFormattedMessage {...{
-          id: "chatgptConversations.summaryPanel.subagents.status.failed",
-          defaultMessage: "Failed",
-          description: "Short status label for a failed delegated agent in the Work task details panel. Sibling statuses are Waiting, Working, and Done."
-        }} />;
-      }
+    case "waiting": {
+      let jasper;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "chatgptConversations.summaryPanel.subagents.status.waiting",
+            defaultMessage: "Waiting",
+            description:
+              "Short status label for a delegated agent waiting to start in the Work task details panel. Sibling statuses are Working, Done, and Failed.",
+          }}
+        />
+      );
+    }
+    case "working": {
+      let kelp;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "chatgptConversations.summaryPanel.subagents.status.working",
+            defaultMessage: "Working",
+            description:
+              "Short status label for a delegated agent currently working in the Work task details panel. Sibling statuses are Waiting, Done, and Failed.",
+          }}
+        />
+      );
+    }
+    case "done": {
+      let lotus;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "chatgptConversations.summaryPanel.subagents.status.done",
+            defaultMessage: "Done",
+            description:
+              "Short status label for a completed delegated agent in the Work task details panel. Sibling statuses are Waiting, Working, and Failed.",
+          }}
+        />
+      );
+    }
+    case "failed": {
+      let mint;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "chatgptConversations.summaryPanel.subagents.status.failed",
+            defaultMessage: "Failed",
+            description:
+              "Short status label for a failed delegated agent in the Work task details panel. Sibling statuses are Waiting, Working, and Done.",
+          }}
+        />
+      );
+    }
   }
 }
 var violet,
@@ -268,8 +414,9 @@ var violet,
       sources: {
         id: "chatgptConversations.summaryPanel.sources.title",
         defaultMessage: "Sources",
-        description: "Title for the sources section in the ChatGPT summary panel"
-      }
+        description:
+          "Title for the sources section in the ChatGPT summary panel",
+      },
     });
   });
 function amber(nova) {
@@ -283,18 +430,23 @@ function amber(nova) {
     vapor = garnet(nova);
   for (let zephyr of nova) {
     let acorn = chatgptMessageFallbackId(zephyr);
-    zephyr.author.role === "assistant" && ultra.push(messageContentToPlainText(zephyr));
+    zephyr.author.role === "assistant" &&
+      ultra.push(messageContentToPlainText(zephyr));
     for (let eagle of basalt(zephyr)) olive.upsert(eagle);
-    let bloom = codexDirectiveMarkedExtensions(zephyr.metadata).map(item => alpha({
-      downloadUrl: item.downloadUrl,
-      fileId: item.fileId,
-      libraryFileId: item.libraryFileId,
-      messageId: acorn,
-      mimeType: item.mimeType,
-      name: item.name,
-      sizeBytes: item.sizeBytes
-    }));
-    if (zephyr.author.role === "user") for (let frost of bloom) olive.upsert(frost);else if (zephyr.author.role === "assistant") {
+    let bloom = codexDirectiveMarkedExtensions(zephyr.metadata).map((item) =>
+      alpha({
+        downloadUrl: item.downloadUrl,
+        fileId: item.fileId,
+        libraryFileId: item.libraryFileId,
+        messageId: acorn,
+        mimeType: item.mimeType,
+        name: item.name,
+        sizeBytes: item.sizeBytes,
+      }),
+    );
+    if (zephyr.author.role === "user")
+      for (let frost of bloom) olive.upsert(frost);
+    else if (zephyr.author.role === "assistant") {
       for (let glide of bloom) prism.upsert(glide);
       for (let honey of $s(zephyr)) prism.upsert(honey);
     }
@@ -303,37 +455,49 @@ function amber(nova) {
       let jewel = iris.file.libraryFileId;
       if (jewel == null) continue;
       let knoll = iris.versionNumber ?? -1;
-      knoll < (sage.get(jewel) ?? -1) || (sage.set(jewel, knoll), topaz.add(jewel), prism.upsert(iris.file));
+      knoll < (sage.get(jewel) ?? -1) ||
+        (sage.set(jewel, knoll), topaz.add(jewel), prism.upsert(iris.file));
     }
-    if (coral.length === 0) for (let lunar of flint(zephyr)) quill.upsert(lunar);
+    if (coral.length === 0)
+      for (let lunar of flint(zephyr)) quill.upsert(lunar);
     let drift = hazel(zephyr, vapor);
     if (drift != null) {
       let moss = reef.get(drift.key);
-      reef.set(drift.key, moss == null ? drift : {
-        ...moss,
-        connectorId: drift.connectorId ?? moss.connectorId,
-        label: drift.label,
-        logoUrl: drift.logoUrl ?? moss.logoUrl,
-        pluginId: drift.pluginId ?? moss.pluginId,
-        resourceUri: drift.resourceUri ?? moss.resourceUri
-      });
+      reef.set(
+        drift.key,
+        moss == null
+          ? drift
+          : {
+              ...moss,
+              connectorId: drift.connectorId ?? moss.connectorId,
+              label: drift.label,
+              logoUrl: drift.logoUrl ?? moss.logoUrl,
+              pluginId: drift.pluginId ?? moss.pluginId,
+              resourceUri: drift.resourceUri ?? moss.resourceUri,
+            },
+      );
     }
   }
   let wheat = ultra.join("\n").toLocaleLowerCase();
-  for (let north of quill.values()) (bravo(north).some(item => olive.hasAlias(item)) || wheat.includes(north.name.toLocaleLowerCase())) && olive.upsert(north);
+  for (let north of quill.values())
+    (bravo(north).some((item) => olive.hasAlias(item)) ||
+      wheat.includes(north.name.toLocaleLowerCase())) &&
+      olive.upsert(north);
   let yarn = prism.values();
   for (let orbit of topaz) olive.deleteAlias(`library:${orbit}`);
   return {
     inputs: olive.values(),
     outputs: yarn,
-    pluginSources: [...reef.values()]
+    pluginSources: [...reef.values()],
   };
 }
 function basalt(pine) {
   let quest = lemon.safeParse(pine.metadata);
   if (!quest.success) return [];
   let ridge = [...(quest.data.content_references ?? [])];
-  for (let unity of Object.values(quest.data.content_references_by_file ?? {})) {
+  for (let unity of Object.values(
+    quest.data.content_references_by_file ?? {},
+  )) {
     let vale = Array.isArray(unity) ? unity : [unity];
     ridge.push(...vale);
   }
@@ -346,13 +510,20 @@ function basalt(pine) {
       continue;
     }
     let brook = kite.safeParse(wave);
-    if (brook.success) for (let cliff of brook.data.items) {
-      let dusk = jade.safeParse(cliff);
-      dusk.success && storm.push(cedar({
-        ...dusk.data,
-        type: "file"
-      }, tide));
-    }
+    if (brook.success)
+      for (let cliff of brook.data.items) {
+        let dusk = jade.safeParse(cliff);
+        dusk.success &&
+          storm.push(
+            cedar(
+              {
+                ...dusk.data,
+                type: "file",
+              },
+              tide,
+            ),
+          );
+      }
   }
   return storm;
 }
@@ -364,27 +535,36 @@ function cedar(elm, fern) {
     messageId: fern,
     mimeType: elm.mime_type ?? null,
     name: elm.name,
-    sizeBytes: elm.size ?? elm.file_size_bytes ?? null
+    sizeBytes: elm.size ?? elm.file_size_bytes ?? null,
   });
 }
 function $s(grove) {
   let hill = asRecord(grove.metadata),
     isle = asRecord(hill?.__internal),
     juniper = asRecord(hill?._internal),
-    lagoon = [hill?.code_interpreter_file_links, isle?.code_interpreter_file_links, juniper?.code_interpreter_file_links],
+    lagoon = [
+      hill?.code_interpreter_file_links,
+      isle?.code_interpreter_file_links,
+      juniper?.code_interpreter_file_links,
+    ],
     meadow = [];
   for (let nest of lagoon) {
     let oak = _c.safeParse(nest);
-    if (oak.success) for (let [petal, quiet] of Object.entries(oak.data)) {
-      let rain = delta(quiet),
-        seed = copper(petal);
-      rain == null || seed == null || meadow.push(alpha({
-        fileId: rain,
-        messageId: chatgptMessageFallbackId(grove),
-        name: seed,
-        sandboxPath: petal
-      }));
-    }
+    if (oak.success)
+      for (let [petal, quiet] of Object.entries(oak.data)) {
+        let rain = delta(quiet),
+          seed = copper(petal);
+        rain == null ||
+          seed == null ||
+          meadow.push(
+            alpha({
+              fileId: rain,
+              messageId: chatgptMessageFallbackId(grove),
+              name: seed,
+              sandboxPath: petal,
+            }),
+          );
+      }
   }
   return meadow;
 }
@@ -403,10 +583,14 @@ function daisy(trail) {
     dew = chatgptMessageFallbackId(trail);
   if (vine === "create_library_file" && Array.isArray(yarrow.results)) {
     let grain = azure?.files;
-    return !Array.isArray(grain) || grain.length !== yarrow.results.length ? [] : yarrow.results.flatMap((item, index) => {
-      let haven = nickel.safeParse(item);
-      return !haven.success || haven.data.operation !== vine ? [] : [ember(haven.data, dew, delta(grain[index]))];
-    });
+    return !Array.isArray(grain) || grain.length !== yarrow.results.length
+      ? []
+      : yarrow.results.flatMap((item, index) => {
+          let haven = nickel.safeParse(item);
+          return !haven.success || haven.data.operation !== vine
+            ? []
+            : [ember(haven.data, dew, delta(grain[index]))];
+        });
   }
   let ever = nickel.safeParse(yarrow);
   if (!ever.success || ever.data.operation !== vine) return [];
@@ -422,9 +606,9 @@ function ember(ink, jadeite, kernel) {
       mimeType: ink.mime_type ?? null,
       name: ink.file_name,
       sandboxPath: kernel,
-      sizeBytes: ink.file_size_bytes ?? null
+      sizeBytes: ink.file_size_bytes ?? null,
     }),
-    versionNumber: ink.current_version_number ?? null
+    versionNumber: ink.current_version_number ?? null,
   };
 }
 function flint(leaf) {
@@ -434,38 +618,65 @@ function flint(leaf) {
   let nimbus = asRecord(tryParseJsonText(leaf));
   if (nimbus == null) return [];
   let opal = asRecord(asRecord(nimbus.result)?.structuredContent) ?? nimbus;
-  return !(maple.data.invoked_resource?.resource_uri === "/library/search" || opal.api_tool_source === "files/search") || !Array.isArray(opal.results) ? [] : opal.results.flatMap(item => {
-    let plume = onyx.safeParse(item);
-    if (!plume.success) return [];
-    let quillow = plume.data;
-    return [alpha({
-      fileId: quillow.file_id,
-      libraryFileId: quillow.library_file_id,
-      messageId: chatgptMessageFallbackId(leaf),
-      mimeType: quillow.mime_type ?? null,
-      name: quillow.name,
-      sizeBytes: quillow.file_size_bytes ?? null
-    })];
-  });
+  return !(
+    maple.data.invoked_resource?.resource_uri === "/library/search" ||
+    opal.api_tool_source === "files/search"
+  ) || !Array.isArray(opal.results)
+    ? []
+    : opal.results.flatMap((item) => {
+        let plume = onyx.safeParse(item);
+        if (!plume.success) return [];
+        let quillow = plume.data;
+        return [
+          alpha({
+            fileId: quillow.file_id,
+            libraryFileId: quillow.library_file_id,
+            messageId: chatgptMessageFallbackId(leaf),
+            mimeType: quillow.mime_type ?? null,
+            name: quillow.name,
+            sizeBytes: quillow.file_size_bytes ?? null,
+          }),
+        ];
+      });
 }
 function garnet(root) {
   let silk = new Set();
   for (let thorn of root) {
     let upland = quartz.safeParse(thorn.metadata);
-    if (upland.success) for (let vista of upland.data.selected_mcp_sources ?? []) {
-      let wisp = pearl.safeParse(vista);
-      !wisp.success || wisp.data.connector_type !== "MCP" || wisp.data.status !== "ONLY_ME" && wisp.data.app_metadata?.review?.status !== "DEVELOPMENT" || silk.add(wisp.data.id);
-    }
+    if (upland.success)
+      for (let vista of upland.data.selected_mcp_sources ?? []) {
+        let wisp = pearl.safeParse(vista);
+        !wisp.success ||
+          wisp.data.connector_type !== "MCP" ||
+          (wisp.data.status !== "ONLY_ME" &&
+            wisp.data.app_metadata?.review?.status !== "DEVELOPMENT") ||
+          silk.add(wisp.data.id);
+      }
   }
   return silk;
 }
 function hazel(yonder, zenith) {
-  if (yonder.author.role !== "tool" || yonder.status === "in_progress" || yonder.status === "finished_partial_completion") return null;
+  if (
+    yonder.author.role !== "tool" ||
+    yonder.status === "in_progress" ||
+    yonder.status === "finished_partial_completion"
+  )
+    return null;
   let anvil = slate.safeParse(yonder.metadata);
   if (!anvil.success) return null;
   let beacon = anvil.data,
     crag = beacon.chatgpt_sdk?.tool_response_metadata?.status;
-  if (beacon.is_error === true || beacon.chatgpt_sdk?.is_error === true || crag === "error" || crag === "cancelled" || beacon.__internal?.api_tool_error?.error_code != null || beacon._internal?.api_tool_error?.error_code != null || beacon.invoked_resource?.publish_status === "private" || beacon.chatgpt_sdk?.distribution_channel === "only_me") return null;
+  if (
+    beacon.is_error === true ||
+    beacon.chatgpt_sdk?.is_error === true ||
+    crag === "error" ||
+    crag === "cancelled" ||
+    beacon.__internal?.api_tool_error?.error_code != null ||
+    beacon._internal?.api_tool_error?.error_code != null ||
+    beacon.invoked_resource?.publish_status === "private" ||
+    beacon.chatgpt_sdk?.distribution_channel === "only_me"
+  )
+    return null;
   let dome = beacon.invoked_plugin?.http_response_status;
   if (dome != null) {
     let inlet = Number(dome);
@@ -475,14 +686,19 @@ function hazel(yonder, zenith) {
   if (eddy == null || zenith.has(eddy)) return null;
   let fjord = beacon.invoked_plugin?.plugin_id ?? null,
     glen = beacon.invoked_resource?.resource_uri ?? null,
-    hearth = beacon.invoked_plugin?.connector_name ?? beacon.invoked_resource?.app_name ?? fjord ?? echo(glen) ?? eddy;
+    hearth =
+      beacon.invoked_plugin?.connector_name ??
+      beacon.invoked_resource?.app_name ??
+      fjord ??
+      echo(glen) ??
+      eddy;
   return {
     connectorId: eddy,
     key: `plugin:${eddy}`,
     kind: "plugin",
     label: hearth,
-    logoUrl: beacon.tool_icons?.find(jetty => harbor.test(jetty)) ?? null,
+    logoUrl: beacon.tool_icons?.find((jetty) => harbor.test(jetty)) ?? null,
     pluginId: fjord,
-    resourceUri: glen
+    resourceUri: glen,
   };
 }

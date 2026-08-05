@@ -20,10 +20,25 @@ import { CODEX_MEMORY_SETTING_TOGGLED_TYPE } from "../../analytics/codex-memory-
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { chatgptConversationsGateAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
 import { composerNavigation } from "../../composer/composer-navigation";
@@ -52,7 +67,10 @@ import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { PanelWidthIcon } from "../../icons/panel-width-icon";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { resolveBrowserTabPanelSide as ResolveBrowserTabPanelSide } from "../../navigation/resolve-browser-tab-panel-side";
@@ -65,7 +83,10 @@ import { codexCommandTheme } from "../../ui/codex-command-theme";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -74,13 +95,25 @@ import { identity } from "../../utils/identity";
 import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { posixPathBasename } from "../../utils/posix-path-basename";
-import { ensurePersonalizationCInit as EnsurePersonalizationCInit, ensurePersonalizationG0Init, ensurePersonalizationJutInit, ensurePersonalizationK0Init, ensurePersonalizationM6Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+  ensurePersonalizationG0Init,
+  ensurePersonalizationJutInit,
+  ensurePersonalizationK0Init,
+  ensurePersonalizationM6Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { buildMemoryFeatureFlags } from "../build-memory-feature-flags";
-import { ensureChronicleConfigQueriesInit, useChronicleConfigQuery } from "../chronicle-config-queries";
+import {
+  ensureChronicleConfigQueriesInit,
+  useChronicleConfigQuery,
+} from "../chronicle-config-queries";
 import { gpuTearingDebugSettingsAtom } from "../gpu-tearing-debug-settings";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { buildVscodeQueryKey } from "../vscode-query-key";
 
 // Wave5d soft stubs.
@@ -109,78 +142,99 @@ const marble: any = undefined;
 const nickel: any = undefined;
 const useChromeAndCodeThemeSync: any = undefined;
 function $t(amber) {
-  let {
-    isChecking,
-    status
-  } = amber;
+  let { isChecking, status } = amber;
   if (isChecking) {
     let basalt;
-    return <MemoizedFormattedMessage {...{
-      id: "settings.general.experimentalFeatures.chronicle.permissionStatus.checking",
-      defaultMessage: "Checking",
-      description: "Chronicle permission status while checking native state"
-    }} />;
+    return (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.general.experimentalFeatures.chronicle.permissionStatus.checking",
+          defaultMessage: "Checking",
+          description:
+            "Chronicle permission status while checking native state",
+        }}
+      />
+    );
   }
   if (status == null) {
     let cedar;
-    return <MemoizedFormattedMessage {...{
-      id: "settings.general.experimentalFeatures.chronicle.permissionStatus.unknown",
-      defaultMessage: "Unknown",
-      description: "Chronicle permission status when native state cannot be read"
-    }} />;
-  }
-  switch (status) {
-    case "granted":
-      {
-        let daisy;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.general.experimentalFeatures.chronicle.permissionStatus.granted",
-          defaultMessage: "Granted",
-          description: "Chronicle permission status when granted"
-        }} />;
-      }
-    case "not-determined":
-      {
-        let ember;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.general.experimentalFeatures.chronicle.permissionStatus.notDetermined",
-          defaultMessage: "Not requested",
-          description: "Chronicle permission status before the user has been prompted"
-        }} />;
-      }
-    case "denied":
-      {
-        let flint;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.general.experimentalFeatures.chronicle.permissionStatus.denied",
-          defaultMessage: "Denied",
-          description: "Chronicle permission status when denied"
-        }} />;
-      }
-    case "restricted":
-      {
-        let garnet;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.general.experimentalFeatures.chronicle.permissionStatus.restricted",
-          defaultMessage: "Restricted",
-          description: "Chronicle permission status when blocked by policy"
-        }} />;
-      }
-    case "unknown":
-      {
-        let hazel;
-        return <MemoizedFormattedMessage {...{
+    return (
+      <MemoizedFormattedMessage
+        {...{
           id: "settings.general.experimentalFeatures.chronicle.permissionStatus.unknown",
           defaultMessage: "Unknown",
-          description: "Chronicle permission status when native state cannot be read"
-        }} />;
-      }
+          description:
+            "Chronicle permission status when native state cannot be read",
+        }}
+      />
+    );
+  }
+  switch (status) {
+    case "granted": {
+      let daisy;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.general.experimentalFeatures.chronicle.permissionStatus.granted",
+            defaultMessage: "Granted",
+            description: "Chronicle permission status when granted",
+          }}
+        />
+      );
+    }
+    case "not-determined": {
+      let ember;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.general.experimentalFeatures.chronicle.permissionStatus.notDetermined",
+            defaultMessage: "Not requested",
+            description:
+              "Chronicle permission status before the user has been prompted",
+          }}
+        />
+      );
+    }
+    case "denied": {
+      let flint;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.general.experimentalFeatures.chronicle.permissionStatus.denied",
+            defaultMessage: "Denied",
+            description: "Chronicle permission status when denied",
+          }}
+        />
+      );
+    }
+    case "restricted": {
+      let garnet;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.general.experimentalFeatures.chronicle.permissionStatus.restricted",
+            defaultMessage: "Restricted",
+            description: "Chronicle permission status when blocked by policy",
+          }}
+        />
+      );
+    }
+    case "unknown": {
+      let hazel;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.general.experimentalFeatures.chronicle.permissionStatus.unknown",
+            defaultMessage: "Unknown",
+            description:
+              "Chronicle permission status when native state cannot be read",
+          }}
+        />
+      );
+    }
   }
 }
-function onyx({
-  isChecking,
-  status
-}) {
+function onyx({ isChecking, status }) {
   if (isChecking || status == null) return "text-token-description-foreground";
   switch (status) {
     case "granted":
@@ -193,11 +247,12 @@ function onyx({
       return "text-token-description-foreground";
   }
 }
-function pearl({
-  accessibilityStatus,
-  screenRecordingStatus
-}) {
-  return screenRecordingStatus === "denied" ? "screen-recording" : screenRecordingStatus === "granted" && accessibilityStatus === "denied" ? "accessibility" : null;
+function pearl({ accessibilityStatus, screenRecordingStatus }) {
+  return screenRecordingStatus === "denied"
+    ? "screen-recording"
+    : screenRecordingStatus === "granted" && accessibilityStatus === "denied"
+      ? "accessibility"
+      : null;
 }
 function quartz(ivory) {
   return ivory instanceof Error ? ivory.message : "Failed to enable Chronicle";
@@ -237,31 +292,36 @@ function on({
   chronicleResearchPreviewEnabled,
   chronicleResearchPreviewVisible,
   isMemoryFeatureEnabled,
-  memoryConfig
+  memoryConfig,
 }) {
   return {
     chronicleResearchPreviewEnabled,
     chronicleResearchPreviewVisible,
     ...AppInitialUt({
       isMemoryFeatureEnabled,
-      memoryConfig
+      memoryConfig,
     }),
-    skipToolAssistedChatsEnabled: memoryConfig.disableOnExternalContext
+    skipToolAssistedChatsEnabled: memoryConfig.disableOnExternalContext,
   };
 }
-function violet(jasper, {
-  chronicleResearchPreviewEnabled,
-  isMemoryFeatureEnabled,
-  memoryConfigPatch
-} = {}) {
+function violet(
+  jasper,
+  {
+    chronicleResearchPreviewEnabled,
+    isMemoryFeatureEnabled,
+    memoryConfigPatch,
+  } = {},
+) {
   return on({
-    chronicleResearchPreviewEnabled: chronicleResearchPreviewEnabled ?? jasper.chronicleResearchPreviewEnabled,
+    chronicleResearchPreviewEnabled:
+      chronicleResearchPreviewEnabled ?? jasper.chronicleResearchPreviewEnabled,
     chronicleResearchPreviewVisible: jasper.chronicleResearchPreviewVisible,
-    isMemoryFeatureEnabled: isMemoryFeatureEnabled ?? jasper.isMemoryFeatureEnabled,
+    isMemoryFeatureEnabled:
+      isMemoryFeatureEnabled ?? jasper.isMemoryFeatureEnabled,
     memoryConfig: {
       ...jasper.memoryConfig,
-      ...memoryConfigPatch
-    }
+      ...memoryConfigPatch,
+    },
   });
 }
 function willow({
@@ -269,20 +329,16 @@ function willow({
   previousEnabled,
   selectedEnabled,
   settingName,
-  state
+  state,
 }) {
   productLogger.logProductEvent(CODEX_MEMORY_SETTING_TOGGLED_TYPE, {
     settingName,
     previousEnabled,
     selectedEnabled,
-    ...state
+    ...state,
   });
 }
-async function xenon({
-  productLogger,
-  write,
-  ...rest
-}) {
+async function xenon({ productLogger, write, ...rest }) {
   try {
     await write();
   } catch {
@@ -290,7 +346,7 @@ async function xenon({
   }
   willow({
     productLogger,
-    ...rest
+    ...rest,
   });
 }
 async function yellow({
@@ -299,27 +355,44 @@ async function yellow({
   selectedEnabled,
   featureWrite,
   configWrite,
-  chronicleDisable
+  chronicleDisable,
 }) {
-  let [kelp, lotus, mint] = await Promise.allSettled([featureWrite(), configWrite(), chronicleDisable?.() ?? Promise.resolve()]),
-    nova = kelp.status === "fulfilled" ? selectedEnabled : previousState.memoryFeatureEnabled,
-    olive = lotus.status === "fulfilled" ? selectedEnabled : previousState.generateMemoriesEnabled,
-    prism = lotus.status === "fulfilled" ? selectedEnabled : previousState.useMemoriesEnabled,
+  let [kelp, lotus, mint] = await Promise.allSettled([
+      featureWrite(),
+      configWrite(),
+      chronicleDisable?.() ?? Promise.resolve(),
+    ]),
+    nova =
+      kelp.status === "fulfilled"
+        ? selectedEnabled
+        : previousState.memoryFeatureEnabled,
+    olive =
+      lotus.status === "fulfilled"
+        ? selectedEnabled
+        : previousState.generateMemoriesEnabled,
+    prism =
+      lotus.status === "fulfilled"
+        ? selectedEnabled
+        : previousState.useMemoriesEnabled,
     quill = {
       ...previousState,
-      chronicleResearchPreviewEnabled: chronicleDisable != null && mint.status === "fulfilled" ? false : previousState.chronicleResearchPreviewEnabled,
+      chronicleResearchPreviewEnabled:
+        chronicleDisable != null && mint.status === "fulfilled"
+          ? false
+          : previousState.chronicleResearchPreviewEnabled,
       memoryFeatureEnabled: nova,
       generateMemoriesEnabled: olive,
       useMemoriesEnabled: prism,
-      memoriesEnabled: nova && olive && prism
+      memoriesEnabled: nova && olive && prism,
     };
-  quill.memoriesEnabled !== previousState.memoriesEnabled && willow({
-    productLogger,
-    previousEnabled: previousState.memoriesEnabled,
-    selectedEnabled,
-    settingName: "memories",
-    state: quill
-  });
+  quill.memoriesEnabled !== previousState.memoriesEnabled &&
+    willow({
+      productLogger,
+      previousEnabled: previousState.memoriesEnabled,
+      selectedEnabled,
+      settingName: "memories",
+      state: quill,
+    });
 }
 var zinc = esmInit(() => {
   protobufAnalyticsEventsV1CodexMemorySettingToggled();

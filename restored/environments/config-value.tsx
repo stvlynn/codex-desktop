@@ -47,6 +47,27 @@ export function bindConfigValue() {
   }
 
   return peers.e(() => {
-    _K = peers.r(peers.Il(), 1), peers.Ho(), peers.Au(), peers.nGi(), peers.jD(), peers.zj(), peers.UD(), peers.nO(), peers.$D(), peers.dxo(), peers.DWi(), peers.ed(), peers.oT(), peers.Pf(), peers.Eho(), peers.oL(), peers.CT(), peers.hBi(), peers.bho(), peers.jf(), zxo = peers.Da(peers.Q, e => null), Bxo = peers.Da(peers.Q, e => null);
+    ((_K = peers.r(peers.Il(), 1)),
+      peers.Ho(),
+      peers.Au(),
+      peers.nGi(),
+      peers.jD(),
+      peers.zj(),
+      peers.UD(),
+      peers.nO(),
+      peers.$D(),
+      peers.dxo(),
+      peers.DWi(),
+      peers.ed(),
+      peers.oT(),
+      peers.Pf(),
+      peers.Eho(),
+      peers.oL(),
+      peers.CT(),
+      peers.hBi(),
+      peers.bho(),
+      peers.jf(),
+      (zxo = peers.Da(peers.Q, (e) => null)),
+      (Bxo = peers.Da(peers.Q, (e) => null)));
   });
 }

@@ -60,6 +60,40 @@ export function bindDeferredUiXD() {
   }
 
   return peers.e(() => {
-    mKo = peers.c(), peers.XH(), peers.Ho(), peers.Au(), hKo = peers.r(peers.o(), 1), peers.$u(), peers.WHo(), peers.DD(), peers.PR(), peers.eA(), peers.qR(), peers.qm(), peers.Mp(), peers.$m(), peers.Wq(), peers.qHo(), peers.oJ(), peers.aP(), peers.Vm(), peers.ld(), peers.iUo(), peers.mh(), peers.oUo(), peers.Bk(), peers.ed(), peers.wp(), peers.nN(), peers.fUo(), peers.fWo(), peers.vJ(), peers.EJ(), peers.tKo(), peers.oKo(), peers.lKo(), MJ = peers.J();
+    ((mKo = peers.c()),
+      peers.XH(),
+      peers.Ho(),
+      peers.Au(),
+      (hKo = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.WHo(),
+      peers.DD(),
+      peers.PR(),
+      peers.eA(),
+      peers.qR(),
+      peers.qm(),
+      peers.Mp(),
+      peers.$m(),
+      peers.Wq(),
+      peers.qHo(),
+      peers.oJ(),
+      peers.aP(),
+      peers.Vm(),
+      peers.ld(),
+      peers.iUo(),
+      peers.mh(),
+      peers.oUo(),
+      peers.Bk(),
+      peers.ed(),
+      peers.wp(),
+      peers.nN(),
+      peers.fUo(),
+      peers.fWo(),
+      peers.vJ(),
+      peers.EJ(),
+      peers.tKo(),
+      peers.oKo(),
+      peers.lKo(),
+      (MJ = peers.J()));
   });
 }

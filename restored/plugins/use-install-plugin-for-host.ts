@@ -19,7 +19,9 @@ export type UseInstallPluginForHostPeers = {
 let peers: UseInstallPluginForHostPeers | null = null;
 
 /** Wire UseInstallPluginForHost peers once companions land. */
-export function setUseInstallPluginForHostPeers(next: UseInstallPluginForHostPeers): void {
+export function setUseInstallPluginForHostPeers(
+  next: UseInstallPluginForHostPeers,
+): void {
   peers = next;
 }
 

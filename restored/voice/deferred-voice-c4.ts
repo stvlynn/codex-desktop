@@ -10,7 +10,9 @@ export type BindDeferredVoiceC4Peers = {
 let peers: BindDeferredVoiceC4Peers | null = null;
 
 /** Wire bindDeferredVoiceC4 peers once companions land. */
-export function setBindDeferredVoiceC4Peers(next: BindDeferredVoiceC4Peers): void {
+export function setBindDeferredVoiceC4Peers(
+  next: BindDeferredVoiceC4Peers,
+): void {
   peers = next;
 }
 

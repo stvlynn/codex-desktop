@@ -28,6 +28,6 @@ export function bindDeferredUiVa() {
   }
 
   return peers.e(() => {
-    LZl = peers.c(), peers.sd(), peers.$u(), peers.q9s(), o7 = peers.J();
+    ((LZl = peers.c()), peers.sd(), peers.$u(), peers.q9s(), (o7 = peers.J()));
   });
 }

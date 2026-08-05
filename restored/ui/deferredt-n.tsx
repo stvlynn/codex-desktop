@@ -31,6 +31,15 @@ export function bindDeferredtN() {
   }
 
   return peers.e(() => {
-    qRa = peers.c_t(), JRa = /<details(\s+open)?>([\s\S]*?)<\/details>/gi, YRa = /(^|\n)(`{3,}|~{3,})[^\n]*\n[\s\S]*?\n\2(?=\n|$)/g, XRa = /(^|\n)(>[ \t]*)\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]([ \t]*(?=\n|$))/gi, ZRa = /<!--[\s\S]*?-->/g, QRa = /^\s*<summary>([\s\S]*?)<\/summary>\s*([\s\S]*)$/i, $Ra = /<[^>]+>/g, eza = /<(?:ol|ul|li|p)(?:\s[^>]*)?>/i, tza = `@@CODEX_FENCED_CODE_BLOCK_`;
+    ((qRa = peers.c_t()),
+      (JRa = /<details(\s+open)?>([\s\S]*?)<\/details>/gi),
+      (YRa = /(^|\n)(`{3,}|~{3,})[^\n]*\n[\s\S]*?\n\2(?=\n|$)/g),
+      (XRa =
+        /(^|\n)(>[ \t]*)\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]([ \t]*(?=\n|$))/gi),
+      (ZRa = /<!--[\s\S]*?-->/g),
+      (QRa = /^\s*<summary>([\s\S]*?)<\/summary>\s*([\s\S]*)$/i),
+      ($Ra = /<[^>]+>/g),
+      (eza = /<(?:ol|ul|li|p)(?:\s[^>]*)?>/i),
+      (tza = `@@CODEX_FENCED_CODE_BLOCK_`));
   });
 }

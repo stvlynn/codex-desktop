@@ -17,12 +17,26 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
 import { ARTIFACT_GENERATION_STAGE_IDS } from "../../artifacts/artifact-generation-ids";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { BrowserWebviewPanel } from "../../browser/browser-webview-panel";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { composerConnectorauthReconnectMessages } from "../../composer/composer-connectorauth-reconnect-messages";
@@ -31,8 +45,15 @@ import { getPluginShortDescription } from "../../composer/get-plugin-short-descr
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { collaborationModeFromTurnOrParams } from "../../conversation/collaboration-mode-fields";
 import { recentConversationsMetaQueryKey } from "../../conversation/recent-conversations-meta-query-key";
-import { ensureCodexMicroAnalogActionTitleInit, getAnalogActionTitle } from "../../desktop/codex-micro-analog-action-title";
-import { ensureCodexMicroWebviewCommandsInit, findCodexMicroWebviewCommand, getCodexMicroWebviewCommands } from "../../desktop/codex-micro-webview-commands";
+import {
+  ensureCodexMicroAnalogActionTitleInit,
+  getAnalogActionTitle,
+} from "../../desktop/codex-micro-analog-action-title";
+import {
+  ensureCodexMicroWebviewCommandsInit,
+  findCodexMicroWebviewCommand,
+  getCodexMicroWebviewCommands,
+} from "../../desktop/codex-micro-webview-commands";
 import { appServices } from "../../desktop/desktop-services";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { DiffLinesStatsBadge } from "../../diff/diff-lines-stats-badge";
@@ -41,7 +62,10 @@ import { ensureDebugPanelTurnFilesInit } from "../../hooks/debug-panel-turn-file
 import { usePointerSurfaceInteractionGate as UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { LOCAL_HOST_ID } from "../../hosts/local-host-id";
-import { ensureRemoteConnectionsFeatureInit, getEnabledRemoteConnectionState } from "../../hosts/remote-connections-feature";
+import {
+  ensureRemoteConnectionsFeatureInit,
+  getEnabledRemoteConnectionState,
+} from "../../hosts/remote-connections-feature";
 import { useHostPlatformModifierSymbol } from "../../hotkeys/use-host-platform-modifier-symbol";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
@@ -73,61 +97,107 @@ import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { deferredVM } from "../../ui/deferred-vm";
 import { deferredZft as DeferredZft } from "../../ui/deferred-zft";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { macOS4 } from "../../ui/mac-os4";
 import { MenuBorderSeparator } from "../../ui/menu-border-separator";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { remote } from "../../ui/remote";
-import { ensureSelectableListRowActivationInit, ensureSelectableListRowInit as EnsureSelectableListRowInit } from "../../ui/selectable-list-row";
+import {
+  ensureSelectableListRowActivationInit,
+  ensureSelectableListRowInit as EnsureSelectableListRowInit,
+} from "../../ui/selectable-list-row";
 import { sortable } from "../../ui/sortable";
 import { VerticalScrollFadeMask } from "../../ui/vertical-scroll-fade-mask";
 import { findByModel as FindByModel } from "../../utils/find-by-model";
 import { identity } from "../../utils/identity";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { thinCallWithUndefined } from "../../utils/thin-call-with-undefined";
-import { ensureKeyboardShortcutsGtInit as EnsureKeyboardShortcutsGtInit, ensureKeyboardShortcutsHMInit, ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureKeyboardShortcutsGtInit as EnsureKeyboardShortcutsGtInit,
+  ensureKeyboardShortcutsHMInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { pendingWorktreeConversationStartApi } from "../../worktree/pending-worktree-conversation-start-api";
-import { CodexMicroKeyboardSurface, codexMicroKeyboardSurfaceFlags, CodexMicroKeyboardSurfaceLabel, CodexMicroKeyboardSurfaceOverlay, CodexMicroKeyboardSurfacePanel, codexMicroKeyboardSurfaceState, CodexMicroKeyboardSurfaceTile, ensureCodexMicroKeyboardSurfaceAtomsInit, ensureCodexMicroKeyboardSurfaceHelpersInit, ensureCodexMicroKeyboardSurfaceInit, ensureCodexMicroKeyboardSurfaceUiInit, renderCodexMicroKeyboardSurface as RenderCodexMicroKeyboardSurface, useCodexMicroKeyboardSurface as UseCodexMicroKeyboardSurface } from "../codex-micro-keyboard-surface";
-import { ensureCodexMicroLayoutInit, parseStreamDeckLayout } from "../codex-micro-layout";
-import { codexMicroSlotSignalC, codexMicroSlotSignalF, codexMicroSlotSignalO, codexMicroSlotSignalR, codexMicroSlotSignalU, ensureCodexMicroSlotSignalsInit } from "../codex-micro-slot-signals";
+import {
+  CodexMicroKeyboardSurface,
+  codexMicroKeyboardSurfaceFlags,
+  CodexMicroKeyboardSurfaceLabel,
+  CodexMicroKeyboardSurfaceOverlay,
+  CodexMicroKeyboardSurfacePanel,
+  codexMicroKeyboardSurfaceState,
+  CodexMicroKeyboardSurfaceTile,
+  ensureCodexMicroKeyboardSurfaceAtomsInit,
+  ensureCodexMicroKeyboardSurfaceHelpersInit,
+  ensureCodexMicroKeyboardSurfaceInit,
+  ensureCodexMicroKeyboardSurfaceUiInit,
+  renderCodexMicroKeyboardSurface as RenderCodexMicroKeyboardSurface,
+  useCodexMicroKeyboardSurface as UseCodexMicroKeyboardSurface,
+} from "../codex-micro-keyboard-surface";
+import {
+  ensureCodexMicroLayoutInit,
+  parseStreamDeckLayout,
+} from "../codex-micro-layout";
+import {
+  codexMicroSlotSignalC,
+  codexMicroSlotSignalF,
+  codexMicroSlotSignalO,
+  codexMicroSlotSignalR,
+  codexMicroSlotSignalU,
+  ensureCodexMicroSlotSignalsInit,
+} from "../codex-micro-slot-signals";
 
 // Wave5d soft JSX companions.
-function Alpha(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Bravo(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Bravo(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function DeferredUiU(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function DeferredUiU(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function RealtimeVoiceHostId(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function RealtimeVoiceHostId(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function SetRemoteControlEnabledForHost(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function SetRemoteControlEnabledForHost(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -203,13 +273,7 @@ const deferredZft: any = undefined;
 const parseUrlOrFallback: any = undefined;
 const useChromeAndCodeThemeSync: any = undefined;
 function lunar(fern) {
-  let {
-      action,
-      direction,
-      isSelected,
-      skills,
-      onSelect
-    } = fern,
+  let { action, direction, isSelected, skills, onSelect } = fern,
     grove = useIntl(),
     hill,
     isle,
@@ -219,128 +283,170 @@ function lunar(fern) {
     nest,
     oak;
   {
-    juniper = action == null ? grove.formatMessage(unity.none) : ensureCodexMicroAnalogActionTitleInit(action, skills, grove);
+    juniper =
+      action == null
+        ? grove.formatMessage(unity.none)
+        : ensureCodexMicroAnalogActionTitleInit(action, skills, grove);
     let wind = grove.formatMessage(unity[direction]);
     isle = OptionalTooltip;
     nest = "trigger-overflows";
     oak = juniper;
     hill = ensureSelectableListRowInit;
     lagoon = isSelected ? "true" : undefined;
-    meadow = grove.formatMessage({
-      id: "settings.codexMicro.analog.direction.mapping",
-      defaultMessage: "{direction}: {action}",
-      description: "Accessible label for a Codex Micro analog direction and its assigned action"
-    }, {
-      action: juniper,
-      direction: wind
-    });
+    meadow = grove.formatMessage(
+      {
+        id: "settings.codexMicro.analog.direction.mapping",
+        defaultMessage: "{direction}: {action}",
+        description:
+          "Accessible label for a Codex Micro analog direction and its assigned action",
+      },
+      {
+        action: juniper,
+        direction: wind,
+      },
+    );
   }
   let petal = tide[direction],
     quiet = IntlProvider("size-4 shrink-0", petal);
-  let rain = <AppIconPlt {...{
-    className: quiet
-  }} />;
+  let rain = (
+    <AppIconPlt
+      {...{
+        className: quiet,
+      }}
+    />
+  );
   let seed = action == null,
-    trail = <CodexMicroSettingsHelper6 {...{
-      compact: true,
-      title: juniper,
-      unassigned: seed
-    }} />;
-  let urn = <CodexMicroSettingsHelper7 {...{
-    direction
-  }} />;
-  let vine = <Alpha {...{
-    ariaCurrent: lagoon,
-    ariaLabel: meadow,
-    density: "compact",
-    icon: rain,
-    isSelected,
-    onSelect,
-    rightText: trail,
-    title: urn
-  }} />;
-  return <Bravo {...{
-    openWhen: nest,
-    tooltipContent: oak,
-    children: vine
-  }} />;
+    trail = (
+      <CodexMicroSettingsHelper6
+        {...{
+          compact: true,
+          title: juniper,
+          unassigned: seed,
+        }}
+      />
+    );
+  let urn = (
+    <CodexMicroSettingsHelper7
+      {...{
+        direction,
+      }}
+    />
+  );
+  let vine = (
+    <Alpha
+      {...{
+        ariaCurrent: lagoon,
+        ariaLabel: meadow,
+        density: "compact",
+        icon: rain,
+        isSelected,
+        onSelect,
+        rightText: trail,
+        title: urn,
+      }}
+    />
+  );
+  return (
+    <Bravo
+      {...{
+        openWhen: nest,
+        tooltipContent: oak,
+        children: vine,
+      }}
+    />
+  );
 }
 function moss(yarrow) {
-  let {
-      description,
-      isSelected,
-      onSelect,
-      title
-    } = yarrow,
+  let { description, isSelected, onSelect, title } = yarrow,
     azure = isSelected ? "true" : undefined,
-    birch = isSelected ? <AppIconTv className="size-4 shrink-0 text-token-text-link-foreground" /> : null;
-  let canyon = description == null ? null : <span className="block truncate">{description}</span>;
-  return <EnsureSelectableListRowInit {...{
-    ariaCurrent: azure,
-    compactSecondLine: true,
-    density: "compact",
-    isSelected,
-    onSelect,
-    rightText: birch,
-    secondLine: canyon,
-    title
-  }} />;
+    birch = isSelected ? (
+      <AppIconTv className="size-4 shrink-0 text-token-text-link-foreground" />
+    ) : null;
+  let canyon =
+    description == null ? null : (
+      <span className="block truncate">{description}</span>
+    );
+  return (
+    <EnsureSelectableListRowInit
+      {...{
+        ariaCurrent: azure,
+        compactSecondLine: true,
+        density: "compact",
+        isSelected,
+        onSelect,
+        rightText: birch,
+        secondLine: canyon,
+        title,
+      }}
+    />
+  );
 }
 function north(dew) {
-  let {
-      compact = false,
-      title,
-      unassigned
-    } = dew,
+  let { compact = false, title, unassigned } = dew,
     ever = compact || undefined,
     field = compact ? "max-w-56 text-xs" : "max-w-full",
     grain = unassigned && "text-token-description-foreground",
     haven = IntlProvider("block truncate", field, grain);
-  return <span data-tooltip-overflow-target={ever} className={haven}>
+  return (
+    <span data-tooltip-overflow-target={ever} className={haven}>
       {title}
-    </span>;
+    </span>
+  );
 }
 function orbit(ink) {
-  let {
-    direction,
-    lowercase
-  } = ink;
+  let { direction, lowercase } = ink;
   if (!(lowercase !== undefined && lowercase)) {
     let jadeite = unity[direction],
       kernel;
-    return <MemoizedFormattedMessage {...{
-      ...jadeite
-    }} />;
+    return (
+      <MemoizedFormattedMessage
+        {...{
+          ...jadeite,
+        }}
+      />
+    );
   }
   switch (direction) {
-    case "up":
-      {
-        let leaf;
-        return <MemoizedFormattedMessage {...{
-          ...unity.upLowercase
-        }} />;
-      }
-    case "right":
-      {
-        let maple;
-        return <MemoizedFormattedMessage {...{
-          ...unity.rightLowercase
-        }} />;
-      }
-    case "down":
-      {
-        let nimbus;
-        return <MemoizedFormattedMessage {...{
-          ...unity.downLowercase
-        }} />;
-      }
-    case "left":
-      {
-        let opal;
-        return <MemoizedFormattedMessage {...{
-          ...unity.leftLowercase
-        }} />;
-      }
+    case "up": {
+      let leaf;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            ...unity.upLowercase,
+          }}
+        />
+      );
+    }
+    case "right": {
+      let maple;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            ...unity.rightLowercase,
+          }}
+        />
+      );
+    }
+    case "down": {
+      let nimbus;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            ...unity.downLowercase,
+          }}
+        />
+      );
+    }
+    case "left": {
+      let opal;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            ...unity.leftLowercase,
+          }}
+        />
+      );
+    }
   }
 }
 var pine,
@@ -376,54 +482,63 @@ var pine,
       up: "",
       right: "rotate-90",
       down: "rotate-180",
-      left: "-rotate-90"
+      left: "-rotate-90",
     };
     unity = identity({
       none: {
         id: "settings.codexMicro.analog.none",
         defaultMessage: "None",
-        description: "Short label for a Codex Micro analog direction with no action assigned"
+        description:
+          "Short label for a Codex Micro analog direction with no action assigned",
       },
       up: {
         id: "settings.codexMicro.analog.direction.up",
         defaultMessage: "Up",
-        description: "Up direction label in the Codex Micro analog action dialog"
+        description:
+          "Up direction label in the Codex Micro analog action dialog",
       },
       right: {
         id: "settings.codexMicro.analog.direction.right",
         defaultMessage: "Right",
-        description: "Right direction label in the Codex Micro analog action dialog"
+        description:
+          "Right direction label in the Codex Micro analog action dialog",
       },
       down: {
         id: "settings.codexMicro.analog.direction.down",
         defaultMessage: "Down",
-        description: "Down direction label in the Codex Micro analog action dialog"
+        description:
+          "Down direction label in the Codex Micro analog action dialog",
       },
       left: {
         id: "settings.codexMicro.analog.direction.left",
         defaultMessage: "Left",
-        description: "Left direction label in the Codex Micro analog action dialog"
+        description:
+          "Left direction label in the Codex Micro analog action dialog",
       },
       upLowercase: {
         id: "settings.codexMicro.analog.direction.up.lowercase",
         defaultMessage: "up",
-        description: "Lowercase up direction label in the Codex Micro analog action dialog"
+        description:
+          "Lowercase up direction label in the Codex Micro analog action dialog",
       },
       rightLowercase: {
         id: "settings.codexMicro.analog.direction.right.lowercase",
         defaultMessage: "right",
-        description: "Lowercase right direction label in the Codex Micro analog action dialog"
+        description:
+          "Lowercase right direction label in the Codex Micro analog action dialog",
       },
       downLowercase: {
         id: "settings.codexMicro.analog.direction.down.lowercase",
         defaultMessage: "down",
-        description: "Lowercase down direction label in the Codex Micro analog action dialog"
+        description:
+          "Lowercase down direction label in the Codex Micro analog action dialog",
       },
       leftLowercase: {
         id: "settings.codexMicro.analog.direction.left.lowercase",
         defaultMessage: "left",
-        description: "Lowercase left direction label in the Codex Micro analog action dialog"
-      }
+        description:
+          "Lowercase left direction label in the Codex Micro analog action dialog",
+      },
     });
   });
 function wave(plume) {
@@ -434,116 +549,201 @@ function wave(plume) {
       selectedAction,
       skills,
       triggerButton,
-      onActionSelect
+      onActionSelect,
     } = plume,
     quillow = useIntl(),
     [root, silk] = brook.useState(""),
     thorn;
   {
     let upland = copper(commands, root, quillow),
-      vista = fjord => root.trim().length === 0 || [fjord.name, getPluginDisplayName(fjord), getPluginShortDescription(fjord)].some(item => ensureKeyboardShortcutsHMInit(item, root) > 0);
+      vista = (fjord) =>
+        root.trim().length === 0 ||
+        [
+          fjord.name,
+          getPluginDisplayName(fjord),
+          getPluginShortDescription(fjord),
+        ].some((item) => ensureKeyboardShortcutsHMInit(item, root) > 0);
     let wisp = delta(skills).filter(vista),
-      yonder = root.trim().length === 0 || ensureKeyboardShortcutsHMInit(noActionLabel, root) > 0;
+      yonder =
+        root.trim().length === 0 ||
+        ensureKeyboardShortcutsHMInit(noActionLabel, root) > 0;
     let zenith = yonder,
-      anvil = glen => {
+      anvil = (glen) => {
         glen || silk("");
       };
     let beacon = quillow.formatMessage({
       id: "settings.codexMicro.editor.customShortcut.search.label",
       defaultMessage: "Search shortcuts and skills for keycap",
-      description: "Accessible label for searching shortcuts and skills assignable to a Codex Micro keycap"
+      description:
+        "Accessible label for searching shortcuts and skills assignable to a Codex Micro keycap",
     });
     let crag = quillow.formatMessage({
       id: "settings.codexMicro.editor.customShortcut.search.placeholder",
       defaultMessage: "Search shortcuts or skills",
-      description: "Placeholder for searching shortcuts and skills assignable to a Codex Micro keycap"
+      description:
+        "Placeholder for searching shortcuts and skills assignable to a Codex Micro keycap",
     });
-    let dome = event => {
+    let dome = (event) => {
       silk(event.currentTarget.value);
     };
     let eddy;
-    eddy = <DropdownMenu.SearchInput {...{
-      className: "shrink-0",
-      "aria-label": beacon,
-      placeholder: crag,
-      value: root,
-      onChange: dome
-    }} />;
-    thorn = <DropdownMenuPopover {...{
-      align: "end",
-      side: "top",
-      contentClassName: "overflow-hidden",
-      contentMaxHeight: "tall",
-      contentWidth: "panelWide",
-      portalContainer,
-      onOpenChange: anvil,
-      triggerButton,
-      children: [eddy, zenith || wisp.length > 0 || upland.length > 0 ? <DropdownMenu.Section {...{
-        className: "min-h-0 flex-1 overflow-y-auto",
-        children: [zenith ? <DropdownMenu.Item {...{
-          rightIcon: selectedAction == null ? <AppIconTv className="icon-xs text-token-text-link-foreground" /> : null,
-          onSelect: () => {
-            onActionSelect(undefined);
-          },
-          children: noActionLabel
-        }} /> : null, upland.map((item, index) => <>
-                        {zenith || index > 0 ? <DropdownMenu.Separator {...{}} /> : null}
-                        {<DropdownMenu.SectionLabel {...{
-            children: item.label
-          }} />}
-                        {item.options.map(_item => {
-            let {
-              command,
-              description,
-              title
-            } = _item;
-            return <DropdownMenu.Item key={command.id} {...{
-              rightIcon: selectedAction?.type === "command" && command.id === selectedAction.commandId ? <AppIconTv className="icon-xs text-token-text-link-foreground" /> : null,
-              SubText: description.length === 0 ? null : <span className="text-xs text-token-description-foreground">
+    eddy = (
+      <DropdownMenu.SearchInput
+        {...{
+          className: "shrink-0",
+          "aria-label": beacon,
+          placeholder: crag,
+          value: root,
+          onChange: dome,
+        }}
+      />
+    );
+    thorn = (
+      <DropdownMenuPopover
+        {...{
+          align: "end",
+          side: "top",
+          contentClassName: "overflow-hidden",
+          contentMaxHeight: "tall",
+          contentWidth: "panelWide",
+          portalContainer,
+          onOpenChange: anvil,
+          triggerButton,
+          children: [
+            eddy,
+            zenith || wisp.length > 0 || upland.length > 0 ? (
+              <DropdownMenu.Section
+                {...{
+                  className: "min-h-0 flex-1 overflow-y-auto",
+                  children: [
+                    zenith ? (
+                      <DropdownMenu.Item
+                        {...{
+                          rightIcon:
+                            selectedAction == null ? (
+                              <AppIconTv className="icon-xs text-token-text-link-foreground" />
+                            ) : null,
+                          onSelect: () => {
+                            onActionSelect(undefined);
+                          },
+                          children: noActionLabel,
+                        }}
+                      />
+                    ) : null,
+                    upland.map((item, index) => (
+                      <>
+                        {zenith || index > 0 ? (
+                          <DropdownMenu.Separator {...{}} />
+                        ) : null}
+                        {
+                          <DropdownMenu.SectionLabel
+                            {...{
+                              children: item.label,
+                            }}
+                          />
+                        }
+                        {item.options.map((_item) => {
+                          let { command, description, title } = _item;
+                          return (
+                            <DropdownMenu.Item
+                              key={command.id}
+                              {...{
+                                rightIcon:
+                                  selectedAction?.type === "command" &&
+                                  command.id === selectedAction.commandId ? (
+                                    <AppIconTv className="icon-xs text-token-text-link-foreground" />
+                                  ) : null,
+                                SubText:
+                                  description.length === 0 ? null : (
+                                    <span className="text-xs text-token-description-foreground">
                                       {description}
-                                    </span>,
-              onSelect: () => {
-                onActionSelect({
-                  type: "command",
-                  commandId: command.id
-                });
-              },
-              children: title
-            }} />;
-          })}
-                      </>), wisp.length === 0 ? null : <>
-                        {zenith || upland.length > 0 ? <DropdownMenu.Separator {...{}} /> : null}
-                        {<DropdownMenu.SectionLabel {...{
-            children: <MemoizedFormattedMessage {...{
-              id: "settings.codexMicro.editor.customShortcut.skills",
-              defaultMessage: "Skills",
-              description: "Section heading for skills assignable to a Codex Micro keycap"
-            }} />
-          }} />}
-                        {wisp.map(item => <DropdownMenu.Item key={item.path} {...{
-            rightIcon: selectedAction?.type === "skill" && selectedAction.skillPath === item.path ? <AppIconTv className="icon-xs text-token-text-link-foreground" /> : null,
-            SubText: <span className="text-xs text-token-description-foreground">
+                                    </span>
+                                  ),
+                                onSelect: () => {
+                                  onActionSelect({
+                                    type: "command",
+                                    commandId: command.id,
+                                  });
+                                },
+                                children: title,
+                              }}
+                            />
+                          );
+                        })}
+                      </>
+                    )),
+                    wisp.length === 0 ? null : (
+                      <>
+                        {zenith || upland.length > 0 ? (
+                          <DropdownMenu.Separator {...{}} />
+                        ) : null}
+                        {
+                          <DropdownMenu.SectionLabel
+                            {...{
+                              children: (
+                                <MemoizedFormattedMessage
+                                  {...{
+                                    id: "settings.codexMicro.editor.customShortcut.skills",
+                                    defaultMessage: "Skills",
+                                    description:
+                                      "Section heading for skills assignable to a Codex Micro keycap",
+                                  }}
+                                />
+                              ),
+                            }}
+                          />
+                        }
+                        {wisp.map((item) => (
+                          <DropdownMenu.Item
+                            key={item.path}
+                            {...{
+                              rightIcon:
+                                selectedAction?.type === "skill" &&
+                                selectedAction.skillPath === item.path ? (
+                                  <AppIconTv className="icon-xs text-token-text-link-foreground" />
+                                ) : null,
+                              SubText: (
+                                <span className="text-xs text-token-description-foreground">
                                   {getPluginShortDescription(item)}
-                                </span>,
-            onSelect: () => {
-              onActionSelect({
-                type: "skill",
-                skillName: item.name,
-                skillPath: item.path
-              });
-            },
-            children: getPluginDisplayName(item)
-          }} />)}
-                      </>]
-      }} /> : <DropdownMenu.Message {...{
-        centered: true,
-        children: <MemoizedFormattedMessage {...{
-          id: "settings.codexMicro.editor.customShortcut.search.noResults",
-          defaultMessage: "No matching shortcuts or skills",
-          description: "Empty state shown when searching shortcuts and skills assignable to a Codex Micro keycap"
-        }} />
-      }} />]
-    }} />;
+                                </span>
+                              ),
+                              onSelect: () => {
+                                onActionSelect({
+                                  type: "skill",
+                                  skillName: item.name,
+                                  skillPath: item.path,
+                                });
+                              },
+                              children: getPluginDisplayName(item),
+                            }}
+                          />
+                        ))}
+                      </>
+                    ),
+                  ],
+                }}
+              />
+            ) : (
+              <DropdownMenu.Message
+                {...{
+                  centered: true,
+                  children: (
+                    <MemoizedFormattedMessage
+                      {...{
+                        id: "settings.codexMicro.editor.customShortcut.search.noResults",
+                        defaultMessage: "No matching shortcuts or skills",
+                        description:
+                          "Empty state shown when searching shortcuts and skills assignable to a Codex Micro keycap",
+                      }}
+                    />
+                  ),
+                }}
+              />
+            ),
+          ],
+        }}
+      />
+    );
   }
   return thorn;
 }
@@ -562,79 +762,137 @@ var apex,
     kelp();
   });
 function elm(hearth) {
-  let {
-      onClose,
-      onConfirm
-    } = hearth,
-    inlet = <MemoizedFormattedMessage {...{
-      id: "settings.codexMicro.keyboardLayout.resetConfirmation.title",
-      defaultMessage: "Reset keyboard layout?",
-      description: "Title for the dialog confirming a Codex Micro keyboard layout reset"
-    }} />;
+  let { onClose, onConfirm } = hearth,
+    inlet = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.codexMicro.keyboardLayout.resetConfirmation.title",
+          defaultMessage: "Reset keyboard layout?",
+          description:
+            "Title for the dialog confirming a Codex Micro keyboard layout reset",
+        }}
+      />
+    );
   let jetty = inlet,
-    knob = <MemoizedFormattedMessage {...{
-      id: "settings.codexMicro.keyboardLayout.resetConfirmation.description",
-      defaultMessage: "This restores the command keys and analog stick to their default assignments without changing your agent key mode or custom chat assignments",
-      description: "Explanation shown before resetting the Codex Micro keyboard layout"
-    }} />;
+    knob = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.codexMicro.keyboardLayout.resetConfirmation.description",
+          defaultMessage:
+            "This restores the command keys and analog stick to their default assignments without changing your agent key mode or custom chat assignments",
+          description:
+            "Explanation shown before resetting the Codex Micro keyboard layout",
+        }}
+      />
+    );
   let ledge = knob,
-    mire = weir => {
+    mire = (weir) => {
       weir || onClose();
     };
-  let nook = event => {
+  let nook = (event) => {
     event.preventDefault();
     onConfirm();
     onClose();
   };
   let oxbow, pond;
-  oxbow = <RealtimeVoiceHostId {...{
-    className: "sr-only",
-    children: jetty
-  }} />;
-  pond = <IsStartingProcessExpired {...{
-    className: "sr-only",
-    children: ledge
-  }} />;
-  let quarry = <DeferredUiU {...{
-    children: <DeferredUiH {...{
-      title: jetty,
-      subtitle: ledge
-    }} />
-  }} />;
-  let rapids = <MemoizedFormattedMessage {...{
-    id: "settings.codexMicro.keyboardLayout.resetConfirmation.cancel",
-    defaultMessage: "Cancel",
-    description: "Button that cancels resetting the Codex Micro keyboard layout"
-  }} />;
-  let spur = <ReadLoginRouteQuerySnapshot {...{
-    color: "secondary",
-    onClick: onClose,
-    children: rapids
-  }} />;
-  let tor = <ReadLoginRouteQuerySnapshot {...{
-    color: "danger",
-    type: "submit",
-    children: <MemoizedFormattedMessage {...{
-      id: "settings.codexMicro.keyboardLayout.resetConfirmation.confirm",
-      defaultMessage: "Reset layout",
-      description: "Button that confirms resetting the Codex Micro keyboard layout"
-    }} />
-  }} />;
-  let updraft = <DeferredUiU {...{
-    children: <SetRemoteControlEnabledForHost {...{
-      children: [spur, tor]
-    }} />
-  }} />;
-  let verge = <DeferredUiB {...{
-    as: "form",
-    onSubmit: nook,
-    children: [oxbow, pond, quarry, updraft]
-  }} />;
-  return <UsePointerSurfaceInteractionGate {...{
-    open: true,
-    showDialogClose: false,
-    size: "compact",
-    onOpenChange: mire,
-    children: verge
-  }} />;
+  oxbow = (
+    <RealtimeVoiceHostId
+      {...{
+        className: "sr-only",
+        children: jetty,
+      }}
+    />
+  );
+  pond = (
+    <IsStartingProcessExpired
+      {...{
+        className: "sr-only",
+        children: ledge,
+      }}
+    />
+  );
+  let quarry = (
+    <DeferredUiU
+      {...{
+        children: (
+          <DeferredUiH
+            {...{
+              title: jetty,
+              subtitle: ledge,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let rapids = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.codexMicro.keyboardLayout.resetConfirmation.cancel",
+        defaultMessage: "Cancel",
+        description:
+          "Button that cancels resetting the Codex Micro keyboard layout",
+      }}
+    />
+  );
+  let spur = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "secondary",
+        onClick: onClose,
+        children: rapids,
+      }}
+    />
+  );
+  let tor = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "danger",
+        type: "submit",
+        children: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.codexMicro.keyboardLayout.resetConfirmation.confirm",
+              defaultMessage: "Reset layout",
+              description:
+                "Button that confirms resetting the Codex Micro keyboard layout",
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let updraft = (
+    <DeferredUiU
+      {...{
+        children: (
+          <SetRemoteControlEnabledForHost
+            {...{
+              children: [spur, tor],
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let verge = (
+    <DeferredUiB
+      {...{
+        as: "form",
+        onSubmit: nook,
+        children: [oxbow, pond, quarry, updraft],
+      }}
+    />
+  );
+  return (
+    <UsePointerSurfaceInteractionGate
+      {...{
+        open: true,
+        showDialogClose: false,
+        size: "compact",
+        onOpenChange: mire,
+        children: verge,
+      }}
+    />
+  );
 }

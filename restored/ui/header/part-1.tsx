@@ -7,17 +7,46 @@
 // Wave5d careful split 1/4
 /* split-lane-import-depth:1 */
 
-import { appActionSidebarProjectRefSchema, appActionSidebarSectionRefSchema } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  appActionSidebarSectionRefSchema,
+} from "../../actions/app-action-payload-schemas";
 import { ensureReviewFileAppActionAttrsInit } from "../../actions/ensure-review-file-app-action-attrs-init";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_Ist_Init } from "../../conversation/conversation-page-esm-inits";
-import { createPersistedAtom, ensurePersistedAtomInit, useAtomPair } from "../../boundaries/persisted-atom";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { useLocation, useMatch, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_Ist_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  createPersistedAtom,
+  ensurePersistedAtomInit,
+  useAtomPair,
+} from "../../boundaries/persisted-atom";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  useLocation,
+  useMatch,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { getChromeGlobal } from "../../browser/get-chrome-global";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
@@ -29,7 +58,10 @@ import { ConversationNavListItem } from "../../conversation/conversation-nav-lis
 import { deferredConversationN } from "../../conversation/deferred-conversation-n";
 import { deferredConversationSQ } from "../../conversation/deferred-conversation-sq-2";
 import { ensurePinnedConversationsQueryInit } from "../../conversation/ensure-pinned-conversations-query-init";
-import { ensureSidebarThreadKeyPrefixesInit, toLocalSidebarThreadKey } from "../../conversation/sidebar-thread-keys";
+import {
+  ensureSidebarThreadKeyPrefixesInit,
+  toLocalSidebarThreadKey,
+} from "../../conversation/sidebar-thread-keys";
 import { ensureChromeRuntimeMessagingInit } from "../../desktop/ensure-chrome-runtime-messaging-init";
 import { isRemoteControlConnectionFailedError } from "../../desktop/remote-control-connection-failed-error";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
@@ -44,7 +76,10 @@ import { AppIconSft, ensureAppIconSftInit } from "../../icons/app-icon-sft";
 import { AppIconTk, ensureAppIconTkInit } from "../../icons/app-icon-tk";
 import { AppIconYm } from "../../icons/app-icon-ym";
 import { AppIconZlt } from "../../icons/app-icon-zlt";
-import { DockIcon, ensureDockIconInit as EnsureDockIconInit } from "../../icons/dock-icon";
+import {
+  DockIcon,
+  ensureDockIconInit as EnsureDockIconInit,
+} from "../../icons/dock-icon";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { resolveScienceModelLabel } from "../../models/resolve-science-model-label";
 import { PdfPermissionFlag } from "../../pdf/pdf-permission-flag";
@@ -64,17 +99,22 @@ import { ensureHotkeyThreadN8Init } from "../../utils/wave-av-gap-ensure-inits";
 import { StableWorktreeStatusDialog } from "../../worktrees/stable-worktree-status-dialog-view";
 import { deferredT } from "../deferred-t";
 import { DropdownMenu, ensureDropdownMenuInit } from "../dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../dropdown-menu-popover";
 import { ElectronOnly } from "../electron-only";
 import { inProgress2 } from "../in-progress2";
 import { InsetBorderPanel } from "../inset-border-panel";
 import { OptionalTooltip } from "../optional-tooltip";
 const AppInitialBo: any = undefined;
 // Wave5d soft JSX companions.
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -211,76 +251,137 @@ const AppInitialYX: any = undefined;
 /** Wave FY unresolved companion (missing-export:conversation/windows-show-home.ts) */
 const windowsShowHome: any = undefined;
 function olive(unity) {
-  let {
-      conversationId
-    } = unity,
+  let { conversationId } = unity,
     vale = useIntl(),
     wave = getChromeGlobal()?.runtime?.getManifest?.().version ?? null;
   let apex = wave,
     brook = quill,
     cliff = prism,
-    dusk = <MemoizedFormattedMessage {...{
-      ...wheat.moreActionsTrigger
-    }} />;
+    dusk = (
+      <MemoizedFormattedMessage
+        {...{
+          ...wheat.moreActionsTrigger,
+        }}
+      />
+    );
   let elm = vale.formatMessage(wheat.moreActionsTrigger);
-  let fern = <AppIconQI {...{
-    className: "icon-xs"
-  }} />;
-  let grove = <OptionalTooltip {...{
-    tooltipContent: dusk,
-    children: <ReadLoginRouteQuerySnapshot {...{
-      color: "ghost",
-      size: "icon",
-      "aria-label": elm,
-      children: fern
-    }} />
-  }} />;
-  let hill = conversationId == null ? null : <DropdownMenu.Item {...{
-    RightIcon: AppIconTk,
-    onSelect: () => {
-      reef(`codex://threads/${conversationId}`);
-    },
-    children: <MemoizedFormattedMessage {...{
-      id: "header.openInApp",
-      defaultMessage: "Open in app",
-      description: "Menu item label for opening the active Chrome extension thread in the ChatGPT desktop app"
-    }} />
-  }} />;
-  let isle = <DropdownMenu.Item {...{
-    RightIcon: AppIconTk,
-    onSelect: brook,
-    children: <MemoizedFormattedMessage {...{
-      ...wheat.appSettings
-    }} />
-  }} />;
-  let juniper = <DropdownMenu.Item {...{
-    RightIcon: AppIconTk,
-    onSelect: cliff,
-    children: <MemoizedFormattedMessage {...{
-      ...wheat.chromeComputerUseSettings
-    }} />
-  }} />;
-  let lagoon = <DropdownMenu.Title {...{
-    className: "gap-4",
-    children: [<span className="min-w-0 flex-1 truncate">
-            {<MemoizedFormattedMessage {...{
-        ...wheat.codexForChrome
-      }} />}
-          </span>, apex == null ? null : <span className="shrink-0">
-              {<MemoizedFormattedMessage {...{
-        ...wheat.extensionVersion,
-        values: {
-          version: apex
-        }
-      }} />}
-            </span>]
-  }} />;
-  return <DropdownMenuPopover {...{
-    align: "end",
-    contentWidth: "menuBounded",
-    triggerButton: grove,
-    children: [hill, isle, juniper, lagoon]
-  }} />;
+  let fern = (
+    <AppIconQI
+      {...{
+        className: "icon-xs",
+      }}
+    />
+  );
+  let grove = (
+    <OptionalTooltip
+      {...{
+        tooltipContent: dusk,
+        children: (
+          <ReadLoginRouteQuerySnapshot
+            {...{
+              color: "ghost",
+              size: "icon",
+              "aria-label": elm,
+              children: fern,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let hill =
+    conversationId == null ? null : (
+      <DropdownMenu.Item
+        {...{
+          RightIcon: AppIconTk,
+          onSelect: () => {
+            reef(`codex://threads/${conversationId}`);
+          },
+          children: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "header.openInApp",
+                defaultMessage: "Open in app",
+                description:
+                  "Menu item label for opening the active Chrome extension thread in the ChatGPT desktop app",
+              }}
+            />
+          ),
+        }}
+      />
+    );
+  let isle = (
+    <DropdownMenu.Item
+      {...{
+        RightIcon: AppIconTk,
+        onSelect: brook,
+        children: (
+          <MemoizedFormattedMessage
+            {...{
+              ...wheat.appSettings,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let juniper = (
+    <DropdownMenu.Item
+      {...{
+        RightIcon: AppIconTk,
+        onSelect: cliff,
+        children: (
+          <MemoizedFormattedMessage
+            {...{
+              ...wheat.chromeComputerUseSettings,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let lagoon = (
+    <DropdownMenu.Title
+      {...{
+        className: "gap-4",
+        children: [
+          <span className="min-w-0 flex-1 truncate">
+            {
+              <MemoizedFormattedMessage
+                {...{
+                  ...wheat.codexForChrome,
+                }}
+              />
+            }
+          </span>,
+          apex == null ? null : (
+            <span className="shrink-0">
+              {
+                <MemoizedFormattedMessage
+                  {...{
+                    ...wheat.extensionVersion,
+                    values: {
+                      version: apex,
+                    },
+                  }}
+                />
+              }
+            </span>
+          ),
+        ],
+      }}
+    />
+  );
+  return (
+    <DropdownMenuPopover
+      {...{
+        align: "end",
+        contentWidth: "menuBounded",
+        triggerButton: grove,
+        children: [hill, isle, juniper, lagoon],
+      }}
+    />
+  );
 }
 function prism() {
   reef(vapor);
@@ -291,7 +392,7 @@ function quill() {
 function reef(meadow) {
   PdfPermissionFlag({
     href: meadow,
-    initiator: "open_in_browser_bridge"
+    initiator: "open_in_browser_bridge",
   });
 }
 var sage,
@@ -315,57 +416,78 @@ var sage,
       moreActionsTrigger: {
         id: "header.moreActionsTrigger",
         defaultMessage: "More actions",
-        description: "Button label for opening more actions from the Chrome extension side panel header"
+        description:
+          "Button label for opening more actions from the Chrome extension side panel header",
       },
       appSettings: {
         id: "header.appSettings",
         defaultMessage: "App settings",
-        description: "Menu item label for opening app settings in the ChatGPT desktop app from the Chrome extension"
+        description:
+          "Menu item label for opening app settings in the ChatGPT desktop app from the Chrome extension",
       },
       chromeComputerUseSettings: {
         id: "header.chromeComputerUseSettings",
         defaultMessage: "Chrome computer use settings",
-        description: "Menu item label for opening Chrome computer use settings in the ChatGPT desktop app from the Chrome extension"
+        description:
+          "Menu item label for opening Chrome computer use settings in the ChatGPT desktop app from the Chrome extension",
       },
       codexForChrome: {
         id: "header.codexForChrome",
         defaultMessage: "ChatGPT for Chrome",
-        description: "Footer label for the Chrome extension in the more actions menu"
+        description:
+          "Footer label for the Chrome extension in the more actions menu",
       },
       extensionVersion: {
         id: "header.extensionVersion",
         defaultMessage: "v{version}",
-        description: "Footer label for the Chrome extension version in the settings menu"
-      }
+        description:
+          "Footer label for the Chrome extension version in the settings menu",
+      },
     });
   });
 function zephyr() {
   let nest = composerNavigation(),
     oak = useIntl(),
     petal = CodexBrowserSurfaceActionType(deferredUiE1, "newTask"),
-    quiet = wind => {
+    quiet = (wind) => {
       wind.defaultPrevented || nest();
     };
   let rain = quiet,
-    seed = <MemoizedFormattedMessage {...{
-      ...coral.newChat
-    }} />;
+    seed = (
+      <MemoizedFormattedMessage
+        {...{
+          ...coral.newChat,
+        }}
+      />
+    );
   let trail = oak.formatMessage(coral.newChat);
-  let urn = <AppIconYm {...{
-    className: "icon-xs"
-  }} />;
-  let vine = <ReadLoginRouteQuerySnapshot {...{
-    color: "ghost",
-    size: "icon",
-    onClick: rain,
-    "aria-label": trail,
-    children: urn
-  }} />;
-  return <OptionalTooltip {...{
-    tooltipContent: seed,
-    shortcut: petal,
-    children: vine
-  }} />;
+  let urn = (
+    <AppIconYm
+      {...{
+        className: "icon-xs",
+      }}
+    />
+  );
+  let vine = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "ghost",
+        size: "icon",
+        onClick: rain,
+        "aria-label": trail,
+        children: urn,
+      }}
+    />
+  );
+  return (
+    <OptionalTooltip
+      {...{
+        tooltipContent: seed,
+        shortcut: petal,
+        children: vine,
+      }}
+    />
+  );
 }
 var acorn,
   bloom,
@@ -383,47 +505,58 @@ var acorn,
       newChat: {
         id: "localConversationPage.newChat",
         defaultMessage: "New chat",
-        description: "Label for starting a new task"
-      }
+        description: "Label for starting a new task",
+      },
     });
   });
 function eagle(yarrow) {
-  let {
-      mergedTasks,
-      tasksQuery
-    } = yarrow,
+  let { mergedTasks, tasksQuery } = yarrow,
     azure = useNavigate(),
     birch = composerNavigation(),
     canyon = useLocation(),
-    {
-      cancelPendingWorktree
-    } = StableWorktreeStatusDialog();
+    { cancelPendingWorktree } = StableWorktreeStatusDialog();
   if (tasksQuery.isLoading && mergedTasks.length === 0) return null;
-  let dew = tasksQuery.error instanceof ensureReviewFileAppActionAttrsInit && tasksQuery.error.status === 404;
+  let dew =
+    tasksQuery.error instanceof ensureReviewFileAppActionAttrsInit &&
+    tasksQuery.error.status === 404;
   if (tasksQuery.isError && mergedTasks.length === 0 && !dew) {
-    let haven = <MemoizedFormattedMessage {...{
-      id: "codex.recentTasksMenu.errorCloud.inline",
-      defaultMessage: "Failed to load cloud chats.",
-      description: "Inline error indicator for cloud tasks in recent feed"
-    }} />;
+    let haven = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.recentTasksMenu.errorCloud.inline",
+          defaultMessage: "Failed to load cloud chats.",
+          description: "Inline error indicator for cloud tasks in recent feed",
+        }}
+      />
+    );
     let ink = () => {
       tasksQuery.refetch();
     };
-    let jadeite = <MemoizedFormattedMessage {...{
-      id: "codex.common.retry",
-      defaultMessage: "Retry",
-      description: "Retry button"
-    }} />;
+    let jadeite = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "codex.common.retry",
+          defaultMessage: "Retry",
+          description: "Retry button",
+        }}
+      />
+    );
     let kernel;
-    return <div className="mb-2 flex items-center gap-2 text-base text-token-input-placeholder-foreground">
+    return (
+      <div className="mb-2 flex items-center gap-2 text-base text-token-input-placeholder-foreground">
         {haven}
-        {<ReadLoginRouteQuerySnapshot {...{
-        size: "default",
-        color: "outline",
-        onClick: ink,
-        children: jadeite
-      }} />}
-      </div>;
+        {
+          <ReadLoginRouteQuerySnapshot
+            {...{
+              size: "default",
+              color: "outline",
+              onClick: ink,
+              children: jadeite,
+            }}
+          />
+        }
+      </div>
+    );
   }
   if (mergedTasks.length === 0) return null;
   let ever;
@@ -433,34 +566,81 @@ function eagle(yarrow) {
     grain;
   {
     let leaf;
-    leaf = event => {
+    leaf = (event) => {
       switch (event.kind) {
         case "remote":
-          return <AppInitialYo key={event.key} useStableTrailingRail={true} isActive={canyon.pathname === `/remote/${event.task.id}`} task={event.task} onClose={frost} />;
+          return (
+            <AppInitialYo
+              key={event.key}
+              useStableTrailingRail={true}
+              isActive={canyon.pathname === `/remote/${event.task.id}`}
+              task={event.task}
+              onClose={frost}
+            />
+          );
         case "local":
-          return event.conversation == null ? <AppInitialHo key={event.key} useStableTrailingRail={true} task={event.pendingWorktree} hasAttention={event.pendingWorktree.needsAttention} statusIndicatorReplacesMeta={true} onArchive={() => {
-            cancelPendingWorktree(event.pendingWorktree.id);
-          }} /> : <ConversationNavListItem key={event.key} useStableTrailingRail={true} isActive={canyon.pathname === `/local/${event.conversation.id}`} conversationId={event.conversation.id} statusIndicatorReplacesMeta={true} metaContent={event.conversation.createdAt == null ? undefined : <INLINE_MENTION_GROUP_CLASS {...{
-            dateString: new Date(event.conversation.createdAt).toISOString()
-          }} />} onActiveArchiveStart={birch} onClick={() => {
-            azure(`/local/${event.conversation.id}`);
-          }} />;
+          return event.conversation == null ? (
+            <AppInitialHo
+              key={event.key}
+              useStableTrailingRail={true}
+              task={event.pendingWorktree}
+              hasAttention={event.pendingWorktree.needsAttention}
+              statusIndicatorReplacesMeta={true}
+              onArchive={() => {
+                cancelPendingWorktree(event.pendingWorktree.id);
+              }}
+            />
+          ) : (
+            <ConversationNavListItem
+              key={event.key}
+              useStableTrailingRail={true}
+              isActive={canyon.pathname === `/local/${event.conversation.id}`}
+              conversationId={event.conversation.id}
+              statusIndicatorReplacesMeta={true}
+              metaContent={
+                event.conversation.createdAt == null ? undefined : (
+                  <INLINE_MENTION_GROUP_CLASS
+                    {...{
+                      dateString: new Date(
+                        event.conversation.createdAt,
+                      ).toISOString(),
+                    }}
+                  />
+                )
+              }
+              onActiveArchiveStart={birch}
+              onClick={() => {
+                azure(`/local/${event.conversation.id}`);
+              }}
+            />
+          );
       }
     };
     grain = field.map(leaf);
   }
-  return <div className="group/inline -mx-[var(--padding-row-x)] flex flex-col gap-px rounded-xl pb-1 transition-colors [--task-row-trailing-inset:calc(var(--spacing)*1.5)]">
+  return (
+    <div className="group/inline -mx-[var(--padding-row-x)] flex flex-col gap-px rounded-xl pb-1 transition-colors [--task-row-trailing-inset:calc(var(--spacing)*1.5)]">
       {grain}
       {false}
-    </div>;
+    </div>
+  );
 }
 function frost() {}
 function glide(maple) {
   if (maple.kind === "remote") {
-    let nimbus = maple.task.task_status_display?.latest_turn_status_display?.turn_status;
-    return maple.task.has_unread_turn === true || nimbus === "in_progress" || nimbus === "pending";
+    let nimbus =
+      maple.task.task_status_display?.latest_turn_status_display?.turn_status;
+    return (
+      maple.task.has_unread_turn === true ||
+      nimbus === "in_progress" ||
+      nimbus === "pending"
+    );
   }
-  return maple.kind === "local" ? maple.conversation == null || maple.conversation.hasUnreadTurn ? true : ensureComposerEsm_K9_Init(maple.conversation) : false;
+  return maple.kind === "local"
+    ? maple.conversation == null || maple.conversation.hasUnreadTurn
+      ? true
+      : ensureComposerEsm_K9_Init(maple.conversation)
+    : false;
 }
 var honey,
   iris,
@@ -485,45 +665,66 @@ var honey,
     knoll = createPersistedAtom("cloudTasksEnvironmentFilterId", null);
   });
 function $t(opal) {
-  let {
-      searchQuery,
-      onQueryChange,
-      autoFocus = false
-    } = opal,
+  let { searchQuery, onQueryChange, autoFocus = false } = opal,
     plume = useIntl(),
-    quillow = <label className="sr-only" htmlFor="recent-tasks-search">
-        {<MemoizedFormattedMessage {...{
-        id: "codex.recentTasksMenu.search",
-        defaultMessage: "Search recent chats",
-        description: "Label for the recent tasks menu search input"
-      }} />}
-      </label>;
-  let root = event => onQueryChange(event.target.value);
+    quillow = (
+      <label className="sr-only" htmlFor="recent-tasks-search">
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "codex.recentTasksMenu.search",
+              defaultMessage: "Search recent chats",
+              description: "Label for the recent tasks menu search input",
+            }}
+          />
+        }
+      </label>
+    );
+  let root = (event) => onQueryChange(event.target.value);
   let silk = plume.formatMessage({
     id: "codex.recentTasksMenu.search",
     defaultMessage: "Search recent chats",
-    description: "Label for the recent tasks menu search input"
+    description: "Label for the recent tasks menu search input",
   });
-  let thorn = searchQuery.length > 0 ? <button type="button" className="flex items-center justify-center text-token-input-placeholder-foreground transition-colors hover:text-token-foreground" onClick={() => onQueryChange("")} aria-label={plume.formatMessage({
-    id: "codex.recentTasksMenu.clearSearch",
-    defaultMessage: "Clear search",
-    description: "Button label to clear the recent tasks menu search input"
-  })}>
-        {<Chatgpt2 {...{
-      className: "icon-2xs"
-    }} />}
-      </button> : null;
-  return <div>
+  let thorn =
+    searchQuery.length > 0 ? (
+      <button
+        type="button"
+        className="flex items-center justify-center text-token-input-placeholder-foreground transition-colors hover:text-token-foreground"
+        onClick={() => onQueryChange("")}
+        aria-label={plume.formatMessage({
+          id: "codex.recentTasksMenu.clearSearch",
+          defaultMessage: "Clear search",
+          description:
+            "Button label to clear the recent tasks menu search input",
+        })}
+      >
+        {
+          <Chatgpt2
+            {...{
+              className: "icon-2xs",
+            }}
+          />
+        }
+      </button>
+    ) : null;
+  return (
+    <div>
       {quillow}
-      {<InsetBorderPanel {...{
-      id: "recent-tasks-search",
-      autoFocus: autoFocus,
-      value: searchQuery,
-      onChange: root,
-      placeholder: silk,
-      trailingContent: thorn
-    }} />}
-    </div>;
+      {
+        <InsetBorderPanel
+          {...{
+            id: "recent-tasks-search",
+            autoFocus: autoFocus,
+            value: searchQuery,
+            onChange: root,
+            placeholder: silk,
+            trailingContent: thorn,
+          }}
+        />
+      }
+    </div>
+  );
 }
 var moss,
   north,
@@ -534,13 +735,19 @@ var moss,
     ensureConversationPageEsm_Act_Init();
   });
 function pine() {
-  return <AppInitialLj className="h-48 text-token-input-placeholder-foreground">
-      {<MemoizedFormattedMessage {...{
-      id: "codex.recentTasksMenu.empty",
-      defaultMessage: "No chats yet",
-      description: "Empty state for recent tasks menu"
-    }} />}
-    </AppInitialLj>;
+  return (
+    <AppInitialLj className="h-48 text-token-input-placeholder-foreground">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "codex.recentTasksMenu.empty",
+            defaultMessage: "No chats yet",
+            description: "Empty state for recent tasks menu",
+          }}
+        />
+      }
+    </AppInitialLj>
+  );
 }
 var quest,
   on,
@@ -551,5 +758,6 @@ var quest,
   }),
   storm,
   tide = esmInit(() => {
-    storm = "w-full justify-between !px-[var(--padding-row-x)] !py-[var(--padding-row-y)] text-left";
+    storm =
+      "w-full justify-between !px-[var(--padding-row-x)] !py-[var(--padding-row-y)] text-left";
   });

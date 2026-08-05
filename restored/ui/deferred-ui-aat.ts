@@ -26,10 +26,18 @@ export function bindDeferredUiAat() {
   }
 
   return peers.e(() => {
-    peers.hv(), peers.jPt(), bv = peers.mv(e => {
-      peers.e.setTime(peers.e - peers.e.getMilliseconds());
-    }, (e, t) => {
-      peers.e.setTime(+peers.e + t * peers.gv);
-    }, (e, t) => (t - peers.e) / peers.gv, e => peers.e.getUTCSeconds()), peers.bv.range;
+    (peers.hv(),
+      peers.jPt(),
+      (bv = peers.mv(
+        (e) => {
+          peers.e.setTime(peers.e - peers.e.getMilliseconds());
+        },
+        (e, t) => {
+          peers.e.setTime(+peers.e + t * peers.gv);
+        },
+        (e, t) => (t - peers.e) / peers.gv,
+        (e) => peers.e.getUTCSeconds(),
+      )),
+      peers.bv.range);
   });
 }

@@ -12,13 +12,37 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useAppgenScreenshotDataUrlQuery } from "../../apps/use-appgen-screenshot-data-url-query";
-import { ArtifactFilePreviewIcon, ensureArtifactFilePreviewIconInit } from "../../artifact/artifact-file-preview-icon";
+import {
+  ArtifactFilePreviewIcon,
+  ensureArtifactFilePreviewIconInit,
+} from "../../artifact/artifact-file-preview-icon";
 import { ArtifactPreviewDownloadButton } from "../../artifact/artifact-preview-download-button";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KM_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KM_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { cloneTypedArray } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 } from "../../browser/chatgpt2";
@@ -79,14 +103,20 @@ import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { deferredUiYV } from "../../ui/deferred-ui-yv";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { EmptyMemoSlot } from "../../ui/empty-memo-slot";
 import { ensureShapeColorTokenClusterInit } from "../../ui/ensure-shape-color-token-cluster-init";
 import { macOS4 } from "../../ui/mac-os4";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { SearchableDetailPageLayout } from "../../ui/searchable-detail-page-layout";
-import { ensureUseSearchablePageTitleVisibilityInit, useSearchablePageTitleVisibility } from "../../ui/use-searchable-page-title-visibility";
+import {
+  ensureUseSearchablePageTitleVisibilityInit,
+  useSearchablePageTitleVisibility,
+} from "../../ui/use-searchable-page-title-visibility";
 import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { formatUrlHostPath } from "../../utils/format-url-host-path";
 import { hvtBindableHelper } from "../../utils/hvt-bindable-helper";
@@ -94,102 +124,149 @@ import { identity } from "../../utils/identity";
 import { isIndeterminate } from "../../utils/is-indeterminate";
 import { lerpIfFinite } from "../../utils/lerp-if-finite";
 import { slugifyLoose } from "../../utils/slugify-loose";
-import { ensureImportSettingsCLInit, ensurePersonalizationK0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensurePersonalizationK0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { ensureNewThreadBhInit } from "../../utils/wave-av-gap-ensure-inits";
 import { keysIn } from "../../vendor/lodash-cjs-predicates";
-import { appgenShareDialogT, ensureAppgenShareDialogInit } from "../appgen-share-dialog";
+import {
+  appgenShareDialogT,
+  ensureAppgenShareDialogInit,
+} from "../appgen-share-dialog";
 import { ensureChatgptSiteSuffixesInit } from "../chatgpt-site-suffixes";
-import { createAppgenConversation, dismissAppgenConversationPrompt, ensureStartAppgenConversationHelpersInit, ensureStartAppgenConversationInit, formatAppgenConversationPrefill, listAppgenConversationActions, prepareAppgenConversation, startAppgenConversation, startAppgenConversationFromLibrary, useStartAppgenConversation } from "../start-appgen-conversation";
+import {
+  createAppgenConversation,
+  dismissAppgenConversationPrompt,
+  ensureStartAppgenConversationHelpersInit,
+  ensureStartAppgenConversationInit,
+  formatAppgenConversationPrefill,
+  listAppgenConversationActions,
+  prepareAppgenConversation,
+  startAppgenConversation,
+  startAppgenConversationFromLibrary,
+  useStartAppgenConversation,
+} from "../start-appgen-conversation";
 
 // Wave5d soft JSX companions.
-function CreateAppgenConversation(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function CreateAppgenConversation(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function FormatAppgenConversationPrefill(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function FormatAppgenConversationPrefill(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Iris(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Iris(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Jewel(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Jewel(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function KeysIn(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function KeysIn(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Knoll(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Knoll(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Lunar(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Lunar(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Moss(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Moss(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function StartAppgenConversation(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function StartAppgenConversation(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function StartAppgenConversationB(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function StartAppgenConversationB(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function StartAppgenConversationUnderscore(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function StartAppgenConversationUnderscore(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function StartAppgenConversationV(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function StartAppgenConversationV(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function StartAppgenConversationW(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function StartAppgenConversationW(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function StartAppgenConversationX(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function StartAppgenConversationX(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function StartAppgenConversationY(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function StartAppgenConversationY(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -213,13 +290,7 @@ const startAppgenConversationW: any = undefined;
 const startAppgenConversationX: any = undefined;
 const startAppgenConversationY: any = undefined;
 function delta(lemon) {
-  let {
-      item,
-      onEdit,
-      onOpenPreview,
-      src,
-      viewMode
-    } = lemon,
+  let { item, onEdit, onOpenPreview, src, viewMode } = lemon,
     marble = useIntl(),
     nickel,
     onyx,
@@ -228,96 +299,191 @@ function delta(lemon) {
     river;
   {
     let ember = item.image.name.lastIndexOf(".");
-    onyx = appgen3(ember === -1 ? item.image.name : item.image.name.slice(0, ember), {
-      style: "sentence"
-    });
+    onyx = appgen3(
+      ember === -1 ? item.image.name : item.image.name.slice(0, ember),
+      {
+        style: "sentence",
+      },
+    );
     nickel = startAppgenConversationX;
     quartz = "group/image-row";
     river = viewMode;
-    pearl = marble.formatMessage({
-      id: "appgenPage.image.open",
-      defaultMessage: "Open {imageName}",
-      description: "Accessible label for opening a generated Library image"
-    }, {
-      imageName: onyx
-    });
+    pearl = marble.formatMessage(
+      {
+        id: "appgenPage.image.open",
+        defaultMessage: "Open {imageName}",
+        description: "Accessible label for opening a generated Library image",
+      },
+      {
+        imageName: onyx,
+      },
+    );
   }
   let slate = IntlProvider(startAppgenConversationG, "z-0");
   let timber = () => onOpenPreview(item);
-  let umbra = <button aria-label={pearl} className={slate} type="button" onClick={timber} />;
+  let umbra = (
+    <button
+      aria-label={pearl}
+      className={slate}
+      type="button"
+      onClick={timber}
+    />
+  );
   let violet = viewMode === "list" ? "gap-6" : "justify-center",
-    willow = IntlProvider("pointer-events-none relative z-[1] flex min-w-0 items-center", violet);
-  let xenon = IntlProvider(alpha(viewMode), viewMode === "grid" ? "max-h-[72%] max-w-[72%]" : "max-h-full max-w-full", "object-contain");
+    willow = IntlProvider(
+      "pointer-events-none relative z-[1] flex min-w-0 items-center",
+      violet,
+    );
+  let xenon = IntlProvider(
+    alpha(viewMode),
+    viewMode === "grid" ? "max-h-[72%] max-w-[72%]" : "max-h-full max-w-full",
+    "object-contain",
+  );
   let yellow = <img alt="" className={xenon} loading="lazy" src={src} />;
-  let zinc = <StartAppgenConversationB {...{
-    className: "flex items-center justify-center",
-    viewMode,
-    children: yellow
-  }} />;
-  let amber = viewMode === "list" ? <div className="min-w-0">
-        {<StartAppgenConversation {...{
-      viewMode,
-      children: onyx
-    }} />}
-        {<StartAppgenConversationY {...{
-      className: "truncate",
-      children: item.image.relativePath
-    }} />}
-      </div> : null;
-  let basalt = <div className={willow}>
+  let zinc = (
+    <StartAppgenConversationB
+      {...{
+        className: "flex items-center justify-center",
+        viewMode,
+        children: yellow,
+      }}
+    />
+  );
+  let amber =
+    viewMode === "list" ? (
+      <div className="min-w-0">
+        {
+          <StartAppgenConversation
+            {...{
+              viewMode,
+              children: onyx,
+            }}
+          />
+        }
+        {
+          <StartAppgenConversationY
+            {...{
+              className: "truncate",
+              children: item.image.relativePath,
+            }}
+          />
+        }
+      </div>
+    ) : null;
+  let basalt = (
+    <div className={willow}>
       {zinc}
       {amber}
-    </div>;
-  let cedar = viewMode === "list" ? <>
-        {<StartAppgenConversationW {...{
-      className: "pointer-events-none relative z-[1]",
-      children: <INLINE_MENTION_GROUP_CLASS {...{
-        dateString: item.modifiedAt
-      }} />
-    }} />}
-        {<StartAppgenConversationW {...{
-      className: "pointer-events-none relative z-[1]",
-      hideWhenCompact: true,
-      children: $n(item.image.sizeBytes)
-    }} />}
-      </> : <StartAppgenConversationV {...{
-    actions: <StartAppgenConversationUnderscore {...{
-      disabled: item.image.threadId == null,
-      itemName: item.image.name,
-      viewMode,
-      onContinue: () => onEdit(item)
-    }} />,
-    children: <div className="min-w-0 px-3 py-3">
-              {<StartAppgenConversation {...{
-        viewMode,
-        children: onyx
-      }} />}
-              {<StartAppgenConversationY {...{
-        className: "flex items-center gap-1.5",
-        children: [<MemoizedFormattedMessage {...{
-          id: "appgenPage.image.type",
-          defaultMessage: "Image",
-          description: "Type label for a generated image in the Library"
-        }} />, <span aria-hidden={true} className="size-0.5 shrink-0 rounded-full bg-token-text-tertiary" />, <INLINE_MENTION_GROUP_CLASS {...{
-          dateString: item.modifiedAt
-        }} />]
-      }} />}
+    </div>
+  );
+  let cedar =
+    viewMode === "list" ? (
+      <>
+        {
+          <StartAppgenConversationW
+            {...{
+              className: "pointer-events-none relative z-[1]",
+              children: (
+                <INLINE_MENTION_GROUP_CLASS
+                  {...{
+                    dateString: item.modifiedAt,
+                  }}
+                />
+              ),
+            }}
+          />
+        }
+        {
+          <StartAppgenConversationW
+            {...{
+              className: "pointer-events-none relative z-[1]",
+              hideWhenCompact: true,
+              children: $n(item.image.sizeBytes),
+            }}
+          />
+        }
+      </>
+    ) : (
+      <StartAppgenConversationV
+        {...{
+          actions: (
+            <StartAppgenConversationUnderscore
+              {...{
+                disabled: item.image.threadId == null,
+                itemName: item.image.name,
+                viewMode,
+                onContinue: () => onEdit(item),
+              }}
+            />
+          ),
+          children: (
+            <div className="min-w-0 px-3 py-3">
+              {
+                <StartAppgenConversation
+                  {...{
+                    viewMode,
+                    children: onyx,
+                  }}
+                />
+              }
+              {
+                <StartAppgenConversationY
+                  {...{
+                    className: "flex items-center gap-1.5",
+                    children: [
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "appgenPage.image.type",
+                          defaultMessage: "Image",
+                          description:
+                            "Type label for a generated image in the Library",
+                        }}
+                      />,
+                      <span
+                        aria-hidden={true}
+                        className="size-0.5 shrink-0 rounded-full bg-token-text-tertiary"
+                      />,
+                      <INLINE_MENTION_GROUP_CLASS
+                        {...{
+                          dateString: item.modifiedAt,
+                        }}
+                      />,
+                    ],
+                  }}
+                />
+              }
             </div>
-  }} />;
-  let daisy = viewMode === "list" ? <CreateAppgenConversation {...{
-    className: "justify-end",
-    children: <StartAppgenConversationUnderscore {...{
-      disabled: item.image.threadId == null,
-      itemName: item.image.name,
-      viewMode,
-      onContinue: () => onEdit(item)
-    }} />
-  }} /> : null;
-  return <Iris {...{
-    className: quartz,
-    viewMode: river,
-    children: [umbra, basalt, cedar, daisy]
-  }} />;
+          ),
+        }}
+      />
+    );
+  let daisy =
+    viewMode === "list" ? (
+      <CreateAppgenConversation
+        {...{
+          className: "justify-end",
+          children: (
+            <StartAppgenConversationUnderscore
+              {...{
+                disabled: item.image.threadId == null,
+                itemName: item.image.name,
+                viewMode,
+                onContinue: () => onEdit(item),
+              }}
+            />
+          ),
+        }}
+      />
+    ) : null;
+  return (
+    <Iris
+      {...{
+        className: quartz,
+        viewMode: river,
+        children: [umbra, basalt, cedar, daisy],
+      }}
+    />
+  );
 }
 var echo,
   falcon,
@@ -332,179 +498,319 @@ var echo,
     copper();
   });
 function harbor(flint) {
-  let {
-      onEdit,
-      project,
-      viewMode
-    } = flint,
+  let { onEdit, project, viewMode } = flint,
     garnet = useIntl(),
     hazel = project.current_live_url,
-    {
-      data
-    } = useAppgenScreenshotDataUrlQuery(project.screenshot_url),
-    ivory = hazel == null ? null : <button aria-label={garnet.formatMessage({
-      id: "appgenPage.visit",
-      defaultMessage: "Visit {siteTitle}",
-      description: "Accessible label for opening a live site from the sites list"
-    }, {
-      siteTitle: project.title
-    })} className={IntlProvider(startAppgenConversationG, "peer/appgen-row")} onClick={prism => {
-      deferredUiEnt({
-        event: prism,
-        href: hazel,
-        initiator: "mcp_app_resource"
-      });
-    }} type="button" />;
-  let jasper = viewMode === "list" ? "items-center gap-6" : "flex-col items-stretch",
-    kelp = IntlProvider("pointer-events-none relative z-10 flex min-w-0 peer-hover/appgen-row:[&_.appgen-row-default-subtitle]:hidden peer-hover/appgen-row:[&_.appgen-row-hover-subtitle]:inline-flex", jasper);
-  let lotus = data == null ? <Jewel {...{
-    viewMode
-  }} /> : <StartAppgenConversationB {...{
-    className: "flex items-center justify-center",
-    viewMode,
-    children: <img alt="" className={IntlProvider(indigo(viewMode), viewMode === "grid" ? "max-h-[72%] max-w-[72%]" : "max-h-full max-w-full", "object-contain")} loading="lazy" src={data} />
-  }} />;
-  let mint = viewMode === "list" ? <div className="flex min-w-0 flex-col gap-px">
-        {<StartAppgenConversation {...{
-      viewMode,
-      children: project.title
-    }} />}
-        {<StartAppgenConversationY {...{
-      className: "flex min-w-0 items-center gap-1.5",
-      children: [<span className="appgen-row-default-subtitle min-w-0 truncate">
+    { data } = useAppgenScreenshotDataUrlQuery(project.screenshot_url),
+    ivory =
+      hazel == null ? null : (
+        <button
+          aria-label={garnet.formatMessage(
+            {
+              id: "appgenPage.visit",
+              defaultMessage: "Visit {siteTitle}",
+              description:
+                "Accessible label for opening a live site from the sites list",
+            },
+            {
+              siteTitle: project.title,
+            },
+          )}
+          className={IntlProvider(startAppgenConversationG, "peer/appgen-row")}
+          onClick={(prism) => {
+            deferredUiEnt({
+              event: prism,
+              href: hazel,
+              initiator: "mcp_app_resource",
+            });
+          }}
+          type="button"
+        />
+      );
+  let jasper =
+      viewMode === "list" ? "items-center gap-6" : "flex-col items-stretch",
+    kelp = IntlProvider(
+      "pointer-events-none relative z-10 flex min-w-0 peer-hover/appgen-row:[&_.appgen-row-default-subtitle]:hidden peer-hover/appgen-row:[&_.appgen-row-hover-subtitle]:inline-flex",
+      jasper,
+    );
+  let lotus =
+    data == null ? (
+      <Jewel
+        {...{
+          viewMode,
+        }}
+      />
+    ) : (
+      <StartAppgenConversationB
+        {...{
+          className: "flex items-center justify-center",
+          viewMode,
+          children: (
+            <img
+              alt=""
+              className={IntlProvider(
+                indigo(viewMode),
+                viewMode === "grid"
+                  ? "max-h-[72%] max-w-[72%]"
+                  : "max-h-full max-w-full",
+                "object-contain",
+              )}
+              loading="lazy"
+              src={data}
+            />
+          ),
+        }}
+      />
+    );
+  let mint =
+    viewMode === "list" ? (
+      <div className="flex min-w-0 flex-col gap-px">
+        {
+          <StartAppgenConversation
+            {...{
+              viewMode,
+              children: project.title,
+            }}
+          />
+        }
+        {
+          <StartAppgenConversationY
+            {...{
+              className: "flex min-w-0 items-center gap-1.5",
+              children: [
+                <span className="appgen-row-default-subtitle min-w-0 truncate">
                   {formatUrlHostPath(hazel) ?? project.slug}
-                </span>, <span className="appgen-row-hover-subtitle hidden items-center gap-1">
-                  {<MemoizedFormattedMessage {...{
-          id: "appgenPage.openInBrowserSubtitle",
-          defaultMessage: "Open in browser",
-          description: "Hover subtitle for opening a live site"
-        }} />}
-                  {hazel == null ? null : <HostFeatureConfigToggles {...{
-          className: "icon-2xs",
-          ExternalIcon: usePluginNavigationTelemetry,
-          href: hazel
-        }} />}
-                </span>]
-    }} />}
-      </div> : null;
-  let nova = <div className={kelp}>
+                </span>,
+                <span className="appgen-row-hover-subtitle hidden items-center gap-1">
+                  {
+                    <MemoizedFormattedMessage
+                      {...{
+                        id: "appgenPage.openInBrowserSubtitle",
+                        defaultMessage: "Open in browser",
+                        description: "Hover subtitle for opening a live site",
+                      }}
+                    />
+                  }
+                  {hazel == null ? null : (
+                    <HostFeatureConfigToggles
+                      {...{
+                        className: "icon-2xs",
+                        ExternalIcon: usePluginNavigationTelemetry,
+                        href: hazel,
+                      }}
+                    />
+                  )}
+                </span>,
+              ],
+            }}
+          />
+        }
+      </div>
+    ) : null;
+  let nova = (
+    <div className={kelp}>
       {lotus}
       {mint}
-    </div>;
-  let olive = viewMode === "list" ? <>
-        {<StartAppgenConversationW {...{
-      children: <INLINE_MENTION_GROUP_CLASS {...{
-        dateString: project.updated_at
-      }} />
-    }} />}
-        {<StartAppgenConversationW {...{
-      hideWhenCompact: true,
-      children: $n(null)
-    }} />}
-        {<FormatAppgenConversationPrefill {...{
-      projectId: project.id,
-      projectTitle: project.title,
-      surface: "library",
-      viewMode,
-      onEdit: () => onEdit(project.id, project.title, hazel)
-    }} />}
-      </> : <StartAppgenConversationV {...{
-    actions: <FormatAppgenConversationPrefill {...{
-      projectId: project.id,
-      projectTitle: project.title,
-      surface: "library",
-      viewMode,
-      onEdit: () => onEdit(project.id, project.title, hazel)
-    }} />,
-    children: <div className="min-w-0">
-              {<StartAppgenConversation {...{
-        className: "px-3 pt-3",
-        viewMode,
-        children: project.title
-      }} />}
-              {<Knoll {...{
-        accessPolicy: project.access_policy,
-        projectId: project.id,
-        projectTitle: project.title,
-        updatedAt: project.updated_at
-      }} />}
+    </div>
+  );
+  let olive =
+    viewMode === "list" ? (
+      <>
+        {
+          <StartAppgenConversationW
+            {...{
+              children: (
+                <INLINE_MENTION_GROUP_CLASS
+                  {...{
+                    dateString: project.updated_at,
+                  }}
+                />
+              ),
+            }}
+          />
+        }
+        {
+          <StartAppgenConversationW
+            {...{
+              hideWhenCompact: true,
+              children: $n(null),
+            }}
+          />
+        }
+        {
+          <FormatAppgenConversationPrefill
+            {...{
+              projectId: project.id,
+              projectTitle: project.title,
+              surface: "library",
+              viewMode,
+              onEdit: () => onEdit(project.id, project.title, hazel),
+            }}
+          />
+        }
+      </>
+    ) : (
+      <StartAppgenConversationV
+        {...{
+          actions: (
+            <FormatAppgenConversationPrefill
+              {...{
+                projectId: project.id,
+                projectTitle: project.title,
+                surface: "library",
+                viewMode,
+                onEdit: () => onEdit(project.id, project.title, hazel),
+              }}
+            />
+          ),
+          children: (
+            <div className="min-w-0">
+              {
+                <StartAppgenConversation
+                  {...{
+                    className: "px-3 pt-3",
+                    viewMode,
+                    children: project.title,
+                  }}
+                />
+              }
+              {
+                <Knoll
+                  {...{
+                    accessPolicy: project.access_policy,
+                    projectId: project.id,
+                    projectTitle: project.title,
+                    updatedAt: project.updated_at,
+                  }}
+                />
+              }
             </div>
-  }} />;
-  return <StartAppgenConversationX {...{
-    "data-appgen-row": true,
-    viewMode,
-    children: [ivory, nova, olive]
-  }} />;
+          ),
+        }}
+      />
+    );
+  return (
+    <StartAppgenConversationX
+      {...{
+        "data-appgen-row": true,
+        viewMode,
+        children: [ivory, nova, olive],
+      }}
+    />
+  );
 }
 function indigo(quill) {
-  return IntlProvider("border border-token-border-light shadow-md", quill === "list" ? "rounded-md" : "rounded-xl");
+  return IntlProvider(
+    "border border-token-border-light shadow-md",
+    quill === "list" ? "rounded-md" : "rounded-xl",
+  );
 }
 function jade(reef) {
-  let {
-      viewMode
-    } = reef,
-    {
-      platform
-    } = useHostPlatformModifierSymbol(),
-    sage = platform === "windows" ? useStartAppgenConversation : createAppgenConversation,
-    topaz = IntlProvider(indigo(viewMode), viewMode === "list" ? "size-full" : "h-auto w-[72%]");
-  let ultra = <Lunar {...{
-    "aria-hidden": true,
-    className: topaz
-  }} />;
-  return <StartAppgenConversationB {...{
-    className: "flex items-center justify-center",
-    viewMode,
-    children: ultra
-  }} />;
+  let { viewMode } = reef,
+    { platform } = useHostPlatformModifierSymbol(),
+    sage =
+      platform === "windows"
+        ? useStartAppgenConversation
+        : createAppgenConversation,
+    topaz = IntlProvider(
+      indigo(viewMode),
+      viewMode === "list" ? "size-full" : "h-auto w-[72%]",
+    );
+  let ultra = (
+    <Lunar
+      {...{
+        "aria-hidden": true,
+        className: topaz,
+      }}
+    />
+  );
+  return (
+    <StartAppgenConversationB
+      {...{
+        className: "flex items-center justify-center",
+        viewMode,
+        children: ultra,
+      }}
+    />
+  );
 }
 function kite(vapor) {
-  let {
-      accessPolicy,
-      projectId,
-      projectTitle,
-      updatedAt
-    } = vapor,
+  let { accessPolicy, projectId, projectTitle, updatedAt } = vapor,
     wheat = AppInitialPO(accessPolicy),
     yarn = CodexPluginActionType(appScopeAtom),
-    zephyr = () => chatProcessRegister(yarn, appgenShareDialogT, {
-      projectId
-    });
-  let acorn = <KeysIn {...{
-    className: "icon-xs shrink-0",
-    accessPolicy,
-    "aria-hidden": true
-  }} />;
+    zephyr = () =>
+      chatProcessRegister(yarn, appgenShareDialogT, {
+        projectId,
+      });
+  let acorn = (
+    <KeysIn
+      {...{
+        className: "icon-xs shrink-0",
+        accessPolicy,
+        "aria-hidden": true,
+      }}
+    />
+  );
   let bloom = MemoizedFormattedMessage,
     coral = deferredRf(wheat),
-    drift = <span className="sr-only">
-        {<Moss {...{
-        ...coral,
-        values: wheat
-      }} />}
-      </span>;
-  let eagle = <span className="sr-only">
-      {<MemoizedFormattedMessage {...{
-      id: "appgenPage.openSharingSettings",
-      defaultMessage: ", open sharing settings for {siteTitle}",
-      description: "Additional accessible button label for opening site sharing settings from the sites list access status",
-      values: {
-        siteTitle: projectTitle
+    drift = (
+      <span className="sr-only">
+        {
+          <Moss
+            {...{
+              ...coral,
+              values: wheat,
+            }}
+          />
+        }
+      </span>
+    );
+  let eagle = (
+    <span className="sr-only">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "appgenPage.openSharingSettings",
+            defaultMessage: ", open sharing settings for {siteTitle}",
+            description:
+              "Additional accessible button label for opening site sharing settings from the sites list access status",
+            values: {
+              siteTitle: projectTitle,
+            },
+          }}
+        />
       }
-    }} />}
-    </span>;
-  let frost = <button className="pointer-events-auto relative z-10 flex min-w-0 cursor-interaction items-center gap-1.5 justify-self-start border-0 bg-transparent p-0 text-left text-xs leading-[18px] text-token-foreground underline-offset-2 hover:underline focus-visible:underline" type="button" onClick={zephyr}>
+    </span>
+  );
+  let frost = (
+    <button
+      className="pointer-events-auto relative z-10 flex min-w-0 cursor-interaction items-center gap-1.5 justify-self-start border-0 bg-transparent p-0 text-left text-xs leading-[18px] text-token-foreground underline-offset-2 hover:underline focus-visible:underline"
+      type="button"
+      onClick={zephyr}
+    >
       {acorn}
       {drift}
       {eagle}
-    </button>;
-  let glide = <span aria-hidden={true} className="size-0.5 shrink-0 rounded-full bg-token-text-tertiary" />;
-  let honey = <INLINE_MENTION_GROUP_CLASS {...{
-    dateString: updatedAt
-  }} />;
-  return <div className="flex min-w-0 items-center gap-1.5 px-3 pt-0 pb-3 text-xs leading-[18px] text-token-text-secondary">
+    </button>
+  );
+  let glide = (
+    <span
+      aria-hidden={true}
+      className="size-0.5 shrink-0 rounded-full bg-token-text-tertiary"
+    />
+  );
+  let honey = (
+    <INLINE_MENTION_GROUP_CLASS
+      {...{
+        dateString: updatedAt,
+      }}
+    />
+  );
+  return (
+    <div className="flex min-w-0 items-center gap-1.5 px-3 pt-0 pb-3 text-xs leading-[18px] text-token-text-secondary">
       {frost}
       {glide}
       {honey}
-    </div>;
+    </div>
+  );
 }

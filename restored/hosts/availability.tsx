@@ -21,7 +21,9 @@ export type BindBindAvailabilityPeers = {
 let peers: BindBindAvailabilityPeers | null = null;
 
 /** Wire bindBindAvailability peers once companions land. */
-export function setBindBindAvailabilityPeers(next: BindBindAvailabilityPeers): void {
+export function setBindBindAvailabilityPeers(
+  next: BindBindAvailabilityPeers,
+): void {
   peers = next;
 }
 

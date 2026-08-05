@@ -12,7 +12,9 @@ export type BindDeferredHostsYCPeers = {
 let peers: BindDeferredHostsYCPeers | null = null;
 
 /** Wire bindDeferredHostsYC peers once companions land. */
-export function setBindDeferredHostsYCPeers(next: BindDeferredHostsYCPeers): void {
+export function setBindDeferredHostsYCPeers(
+  next: BindDeferredHostsYCPeers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,6 @@ export function bindDeferredHostsYC() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.$x(), peers.Fh(), peers.VE();
+    (peers.Ho(), peers.$x(), peers.Fh(), peers.VE());
   });
 }

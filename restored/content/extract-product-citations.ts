@@ -10,6 +10,8 @@ export function setProductCitationsParser(parser: CitationsParser): void {
   parseCitations = parser;
 }
 
-export function extractProductCitations(ref: Record<string, unknown>): unknown[] {
+export function extractProductCitations(
+  ref: Record<string, unknown>,
+): unknown[] {
   return parseCitations?.(ref) ?? [];
 }

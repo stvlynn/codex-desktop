@@ -11,15 +11,35 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CodexPluginClickTarget } from "../../analytics/codex-plugin-click-target";
 import { CodexProfileInlinePhotoChangeAction } from "../../analytics/codex-profile-inline-photo-change-action";
 import { logProductEvent } from "../../analytics/log-product-event";
-import { ensureArtifactAnalyticsInit, logArtifactAnnotationModeEnabled, logArtifactAnnotationSubmitted, logArtifactRefreshClicked } from "../../artifact/artifact-analytics";
+import {
+  ensureArtifactAnalyticsInit,
+  logArtifactAnnotationModeEnabled,
+  logArtifactAnnotationSubmitted,
+  logArtifactRefreshClicked,
+} from "../../artifact/artifact-analytics";
 import { ArtifactPreviewDownloadButton } from "../../artifact/artifact-preview-download-button";
 import { ArtifactPreviewPageNav } from "../../artifact/artifact-preview-page-nav";
 import { artifactTabLoading } from "../../artifact/artifact-tab-loading";
 import { queueAutomationRun as QueueAutomationRun } from "../../automation/queue-automation-run";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Z8_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+  ensureComposerEsm_Z8_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { deferredComposerBV } from "../../composer/deferred-composer-bv";
 import { DesignComposerSurface } from "../../composer/design-composer-surface";
@@ -46,7 +66,10 @@ import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import { ensureViteModulepreloadRuntime } from "../../runtime/vite-preload";
 import { ensureSettingsQueryAtomsInit } from "../../settings/settings-ipc";
-import { ArtifactPreviewStatus, ensureArtifactPreviewStatusInit } from "../../ui/artifact-preview-status";
+import {
+  ArtifactPreviewStatus,
+  ensureArtifactPreviewStatusInit,
+} from "../../ui/artifact-preview-status";
 import { deferredW1 } from "../../ui/deferred-w1";
 import { ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
 import { MemoizedValueBridge } from "../../ui/memoized-value-bridge";
@@ -71,7 +94,8 @@ const xenon: any = undefined;
 function apex(prismSecond, quillSecond) {
   let reefSecond = brook(prismSecond);
   if (quillSecond === "in") {
-    for (let sageSecond of lagoon) if (sageSecond > reefSecond + hill) return sageSecond;
+    for (let sageSecond of lagoon)
+      if (sageSecond > reefSecond + hill) return sageSecond;
     return lagoon[lagoon.length - 1];
   }
   for (let topazSecond = lagoon.length - 1; topazSecond >= 0; --topazSecond) {
@@ -97,17 +121,42 @@ var cliff,
     dusk = commonJsInit(react(), 1);
     elm = {
       height: 792,
-      width: 612
+      width: 612,
     };
     fern = 0.3;
     grove = 8;
     hill = 1e-4;
     isle = 5;
     juniper = 200;
-    lagoon = [fern, 0.4, 0.5, 0.67, 0.75, 0.9, 1, 1.1, 1.25, 1.5, 1.75, 2, 2.5, 3, 4, 5, 6, 7, grove];
+    lagoon = [
+      fern,
+      0.4,
+      0.5,
+      0.67,
+      0.75,
+      0.9,
+      1,
+      1.1,
+      1.25,
+      1.5,
+      1.75,
+      2,
+      2.5,
+      3,
+      4,
+      5,
+      6,
+      7,
+      grove,
+    ];
   });
 function nest(wheatSecond) {
-  return typeof wheatSecond == "object" && !!wheatSecond && "name" in wheatSecond && wheatSecond.name === "RenderingCancelledException";
+  return (
+    typeof wheatSecond == "object" &&
+    !!wheatSecond &&
+    "name" in wheatSecond &&
+    wheatSecond.name === "RenderingCancelledException"
+  );
 }
 var oak,
   petal,
@@ -138,7 +187,7 @@ var oak,
           onRenderError,
           onRendered,
           onViewportReady,
-          zoomEndTick: zephyrSecond
+          zoomEndTick: zephyrSecond,
         } = yarnSecond,
         acornSecond = petal.useRef(null),
         bloomSecond = petal.useRef(null),
@@ -152,10 +201,13 @@ var oak,
         mossSecond = wave({
           pageViewportSize: lunarSecond,
           pageWidth,
-          resize
+          resize,
         });
       let northSecond = mossSecond,
-        orbitSecond = knollSecond != null && knollSecond.width > 0 ? northSecond.width / knollSecond.width : 1,
+        orbitSecond =
+          knollSecond != null && knollSecond.width > 0
+            ? northSecond.width / knollSecond.width
+            : 1,
         pineSecond = Math.abs(currentPage - pageNumber),
         questSecond = glideSecond || pineSecond <= 2,
         ridgeSecond = glideSecond || pineSecond <= 2,
@@ -163,36 +215,50 @@ var oak,
         tideSecond = stormSecond + pineSecond * 60,
         unitySecond = () => {
           let petalSecond = false;
-          return driftSecond(null), frostSecond(null), async function () {
-            try {
-              let quietSecond = await pdfDocument.getPage(pageNumber);
-              if (petalSecond) return;
-              let rainSecond = quietSecond.getViewport({
-                scale: 1
-              });
-              driftSecond({
-                page: quietSecond,
-                pdfDocument,
-                viewportSize: {
-                  height: rainSecond.height,
-                  width: rainSecond.width
-                }
-              });
-            } catch {
-              petalSecond || (driftSecond(null), frostSecond(pdfDocument));
+          return (
+            driftSecond(null),
+            frostSecond(null),
+            (async function () {
+              try {
+                let quietSecond = await pdfDocument.getPage(pageNumber);
+                if (petalSecond) return;
+                let rainSecond = quietSecond.getViewport({
+                  scale: 1,
+                });
+                driftSecond({
+                  page: quietSecond,
+                  pdfDocument,
+                  viewportSize: {
+                    height: rainSecond.height,
+                    width: rainSecond.width,
+                  },
+                });
+              } catch {
+                petalSecond || (driftSecond(null), frostSecond(pdfDocument));
+              }
+            })(),
+            () => {
+              petalSecond = true;
             }
-          }(), () => {
-            petalSecond = true;
-          };
+          );
         };
       let valeSecond;
       valeSecond = [pageNumber, pdfDocument, renderRequestKey];
       petal.useEffect(unitySecond, valeSecond);
       let waveSecond, apexSecond;
       waveSecond = () => {
-        eagleSecond !== pdfDocument || !glideSecond && currentPage !== pageNumber || onRenderError?.();
+        eagleSecond !== pdfDocument ||
+          (!glideSecond && currentPage !== pageNumber) ||
+          onRenderError?.();
       };
-      apexSecond = [currentPage, eagleSecond, glideSecond, onRenderError, pageNumber, pdfDocument];
+      apexSecond = [
+        currentPage,
+        eagleSecond,
+        glideSecond,
+        onRenderError,
+        pageNumber,
+        pdfDocument,
+      ];
       petal.useEffect(waveSecond, apexSecond);
       let brookSecond, cliffSecond;
       brookSecond = () => {
@@ -208,17 +274,26 @@ var oak,
           honeySecond(true);
           return;
         }
-        let trailSecond = new IntersectionObserver(urnSecond => {
-          let vineSecond = urnSecond[0];
-          vineSecond != null && honeySecond(vineSecond.isIntersecting || vineSecond.intersectionRatio > 0);
-        }, {
-          root: scrollRootRef.current,
-          rootMargin: "200px 0px",
-          threshold: 0.01
-        });
-        return trailSecond.observe(seedSecond), () => {
-          trailSecond.disconnect();
-        };
+        let trailSecond = new IntersectionObserver(
+          (urnSecond) => {
+            let vineSecond = urnSecond[0];
+            vineSecond != null &&
+              honeySecond(
+                vineSecond.isIntersecting || vineSecond.intersectionRatio > 0,
+              );
+          },
+          {
+            root: scrollRootRef.current,
+            rootMargin: "200px 0px",
+            threshold: 0.01,
+          },
+        );
+        return (
+          trailSecond.observe(seedSecond),
+          () => {
+            trailSecond.disconnect();
+          }
+        );
       };
       duskSecond = [scrollRootRef];
       petal.useEffect(elmSecond, duskSecond);
@@ -232,9 +307,14 @@ var oak,
         }
         if (isZooming) return;
         let yarrowSecond = jewelSecond.getViewport({
-          scale: 1
+          scale: 1,
         });
-        if (yarrowSecond.width <= 0 || northSecond.width <= 0 || northSecond.height <= 0) return;
+        if (
+          yarrowSecond.width <= 0 ||
+          northSecond.width <= 0 ||
+          northSecond.height <= 0
+        )
+          return;
         let azureSecond = false,
           birchSecond = null,
           canyonSecond = window.devicePixelRatio || 1,
@@ -247,14 +327,20 @@ var oak,
           birchSecond = jewelSecond.render({
             canvas: windSecond,
             viewport: jewelSecond.getViewport({
-              scale: dewSecond / yarrowSecond.width
-            })
+              scale: dewSecond / yarrowSecond.width,
+            }),
           });
-          birchSecond.promise.then(() => {
-            !azureSecond && glideSecond && onRendered?.();
-          }, fieldSecond => {
-            !azureSecond && glideSecond && !nest(fieldSecond) && onRenderError?.();
-          });
+          birchSecond.promise.then(
+            () => {
+              !azureSecond && glideSecond && onRendered?.();
+            },
+            (fieldSecond) => {
+              !azureSecond &&
+                glideSecond &&
+                !nest(fieldSecond) &&
+                onRenderError?.();
+            },
+          );
         } catch (grainSecond) {
           glideSecond && !nest(grainSecond) && onRenderError?.();
           return;
@@ -265,7 +351,18 @@ var oak,
         };
       };
       let groveSecond;
-      groveSecond = [northSecond.height, northSecond.width, glideSecond, isZooming, onRenderError, onRendered, jewelSecond, renderRequestKey, questSecond, zephyrSecond];
+      groveSecond = [
+        northSecond.height,
+        northSecond.width,
+        glideSecond,
+        isZooming,
+        onRenderError,
+        onRendered,
+        jewelSecond,
+        renderRequestKey,
+        questSecond,
+        zephyrSecond,
+      ];
       petal.useEffect(fernSecond, groveSecond);
       let hillSecond = knollSecond == null ? undefined : "",
         isleSecond = jewelSecond?.userUnit ?? 1,
@@ -273,45 +370,75 @@ var oak,
           "--scale-factor": orbitSecond,
           "--user-unit": isleSecond,
           height: northSecond.height,
-          width: northSecond.width
+          width: northSecond.width,
         };
       let lagoonSecond = juniperSecond,
-        meadowSecond = <canvas ref={acornSecond} className="absolute inset-0 size-full" />;
-      let nestSecond = jewelSecond == null || isZooming || !ridgeSecond ? null : <>
-              {<PdfPreviewPanelHelper50 {...{
-          page: jewelSecond,
-          deferMs: stormSecond
-        }} />}
-              {<PdfPreviewPanelHelper8 {...{
-          deferMs: tideSecond,
-          linkNavigation,
-          page: jewelSecond,
-          pageSelector,
-          pdfDocument,
-          scrollRootRef
-        }} />}
-            </>;
-      let oakSecond = jewelSecond == null || knollSecond == null || commentLayer == null ? null : <PdfPreviewPanelHelper32 key={commentLayer.isCommentMode ? "comment" : "browse"} {...{
-        comments: commentLayer.comments,
-        conversationId: commentLayer.conversationId,
-        isCommentMode: commentLayer.isCommentMode,
-        nextCommentNumber: commentLayer.nextCommentNumber,
-        onCommentsChange: commentLayer.onCommentsChange,
-        onDraftActiveChange: commentLayer.onDraftActiveChange,
-        page: jewelSecond,
-        pageCount: commentLayer.pageCount,
-        pageNumber,
-        pageSize: knollSecond,
-        path: commentLayer.path,
-        tabId: commentLayer.tabId,
-        threadId: commentLayer.threadId,
-        title: commentLayer.title
-      }} />;
-      return <div ref={bloomSecond} className="pdfPreviewPage relative shrink-0 overflow-hidden border border-token-border-default bg-white shadow-sm" data-artifact-pdf-page={true} data-page-number={pageNumber} data-page-viewport-ready={hillSecond} style={lagoonSecond}>
-            {meadowSecond}
-            {nestSecond}
-            {oakSecond}
-          </div>;
+        meadowSecond = (
+          <canvas ref={acornSecond} className="absolute inset-0 size-full" />
+        );
+      let nestSecond =
+        jewelSecond == null || isZooming || !ridgeSecond ? null : (
+          <>
+            {
+              <PdfPreviewPanelHelper50
+                {...{
+                  page: jewelSecond,
+                  deferMs: stormSecond,
+                }}
+              />
+            }
+            {
+              <PdfPreviewPanelHelper8
+                {...{
+                  deferMs: tideSecond,
+                  linkNavigation,
+                  page: jewelSecond,
+                  pageSelector,
+                  pdfDocument,
+                  scrollRootRef,
+                }}
+              />
+            }
+          </>
+        );
+      let oakSecond =
+        jewelSecond == null ||
+        knollSecond == null ||
+        commentLayer == null ? null : (
+          <PdfPreviewPanelHelper32
+            key={commentLayer.isCommentMode ? "comment" : "browse"}
+            {...{
+              comments: commentLayer.comments,
+              conversationId: commentLayer.conversationId,
+              isCommentMode: commentLayer.isCommentMode,
+              nextCommentNumber: commentLayer.nextCommentNumber,
+              onCommentsChange: commentLayer.onCommentsChange,
+              onDraftActiveChange: commentLayer.onDraftActiveChange,
+              page: jewelSecond,
+              pageCount: commentLayer.pageCount,
+              pageNumber,
+              pageSize: knollSecond,
+              path: commentLayer.path,
+              tabId: commentLayer.tabId,
+              threadId: commentLayer.threadId,
+              title: commentLayer.title,
+            }}
+          />
+        );
+      return (
+        <div
+          ref={bloomSecond}
+          className="pdfPreviewPage relative shrink-0 overflow-hidden border border-token-border-default bg-white shadow-sm"
+          data-artifact-pdf-page={true}
+          data-page-number={pageNumber}
+          data-page-viewport-ready={hillSecond}
+          style={lagoonSecond}
+        >
+          {meadowSecond}
+          {nestSecond}
+          {oakSecond}
+        </div>
+      );
     });
   });
 function PdfPreviewPanelHelper57(havenSecond) {
@@ -322,44 +449,46 @@ function PdfPreviewPanelHelper57(havenSecond) {
       onOpenExternalLink,
       pageViewportSize,
       pdfDocument,
-      title
+      title,
     } = havenSecond,
     inkSecond = useIntl(),
     jadeiteSecond = wind.useRef(null),
     kernelSecond = urn(initialPage, numPages);
   let [leafSecond, mapleSecond] = wind.useState(kernelSecond),
     [nimbusSecond, opalSecond] = wind.useState(null),
-    plumeSecond = cogSecond => {
+    plumeSecond = (cogSecond) => {
       opalSecond({
         height: Math.floor(cogSecond.contentRect.height),
-        width: Math.floor(cogSecond.contentRect.width)
+        width: Math.floor(cogSecond.contentRect.width),
       });
     };
   let quillowSecond = useResizeObserver(plumeSecond),
-    rootSecond = discSecond => {
+    rootSecond = (discSecond) => {
       jadeiteSecond.current = discSecond;
       quillowSecond(discSecond);
     };
   let silkSecond = rootSecond,
-    thornSecond = edgeSecond => {
+    thornSecond = (edgeSecond) => {
       mapleSecond(urn(edgeSecond, numPages));
     };
   let uplandSecond = thornSecond,
     vistaSecond = {
       onExternalLink: onOpenExternalLink,
-      onPageChange: uplandSecond
+      onPageChange: uplandSecond,
     };
   let wispSecond = vistaSecond,
     yonderSecond = inkSecond.formatMessage({
       id: "artifactTab.preview.previousPage",
       defaultMessage: "Previous page",
-      description: "Tooltip for navigating to the previous page in an artifact preview"
+      description:
+        "Tooltip for navigating to the previous page in an artifact preview",
     });
   let zenithSecond = yonderSecond,
     anvilSecond = inkSecond.formatMessage({
       id: "artifactTab.preview.nextPage",
       defaultMessage: "Next page",
-      description: "Tooltip for navigating to the next page in an artifact preview"
+      description:
+        "Tooltip for navigating to the next page in an artifact preview",
     });
   let beaconSecond = anvilSecond,
     cragSecond = urn(leafSecond, numPages),
@@ -371,7 +500,7 @@ function PdfPreviewPanelHelper57(havenSecond) {
       uplandSecond(cragSecond + 1);
     };
   let glenSecond = fjordSecond,
-    hearthSecond = event => {
+    hearthSecond = (event) => {
       if (event.key === "Escape") {
         event.preventDefault();
         onClose();
@@ -382,7 +511,11 @@ function PdfPreviewPanelHelper57(havenSecond) {
         eddySecond();
         return;
       }
-      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
+      if (
+        event.key === "ArrowRight" ||
+        event.key === "PageDown" ||
+        event.key === " "
+      ) {
         event.preventDefault();
         glenSecond();
         return;
@@ -395,91 +528,141 @@ function PdfPreviewPanelHelper57(havenSecond) {
       event.key === "End" && (event.preventDefault(), uplandSecond(numPages));
     };
   let inletSecond = hearthSecond,
-    jettySecond = event => {
-      if (event.defaultPrevented || event.target instanceof Element && event.target.closest("a,button,input,select,textarea,[role='button']") != null) return;
+    jettySecond = (event) => {
+      if (
+        event.defaultPrevented ||
+        (event.target instanceof Element &&
+          event.target.closest(
+            "a,button,input,select,textarea,[role='button']",
+          ) != null)
+      )
+        return;
       let forgeSecond = event.currentTarget.getBoundingClientRect();
-      event.clientX < forgeSecond.left + forgeSecond.width / 2 ? eddySecond() : glenSecond();
+      event.clientX < forgeSecond.left + forgeSecond.width / 2
+        ? eddySecond()
+        : glenSecond();
     };
   let knobSecond = jettySecond,
     ledgeSecond = trail({
       pageViewportSize,
-      presentationSize: nimbusSecond
+      presentationSize: nimbusSecond,
     });
   let mireSecond = {
-    kind: "page-width"
+    kind: "page-width",
   };
-  let nookSecond = <div className="flex min-h-0 flex-1 items-center justify-center px-8 py-10">
-      {<Rain {...{
-      currentPage: cragSecond,
-      isZooming: false,
-      linkNavigation: wispSecond,
-      pageNumber: cragSecond,
-      pageSelector: "[data-artifact-pdf-page]",
-      pageViewportSize,
-      pageWidth: ledgeSecond,
-      pdfDocument,
-      resize: mireSecond,
-      scrollRootRef: jadeiteSecond,
-      zoomEndTick: 0
-    }} />}
-    </div>;
-  let oxbowSecond = cragSecond <= 1,
-    pondSecond = <AppIconYlt {...{
-      className: "icon-2xs rotate-180"
-    }} />;
-  let quarrySecond = <ReadLoginRouteQuerySnapshot {...{
-    "aria-label": zenithSecond,
-    color: "ghost",
-    disabled: oxbowSecond,
-    size: "toolbar",
-    uniform: true,
-    className: "text-white hover:text-white",
-    onClick: eddySecond,
-    children: pondSecond
-  }} />;
-  let rapidsSecond = <span className="min-w-14 px-2 text-center text-sm tabular-nums">
-      {<MemoizedFormattedMessage {...{
-      id: "artifactTab.preview.pageIndicator",
-      defaultMessage: "{current}/{total}",
-      description: "Current page indicator in an artifact preview header",
-      values: {
-        current: cragSecond,
-        total: numPages
+  let nookSecond = (
+    <div className="flex min-h-0 flex-1 items-center justify-center px-8 py-10">
+      {
+        <Rain
+          {...{
+            currentPage: cragSecond,
+            isZooming: false,
+            linkNavigation: wispSecond,
+            pageNumber: cragSecond,
+            pageSelector: "[data-artifact-pdf-page]",
+            pageViewportSize,
+            pageWidth: ledgeSecond,
+            pdfDocument,
+            resize: mireSecond,
+            scrollRootRef: jadeiteSecond,
+            zoomEndTick: 0,
+          }}
+        />
       }
-    }} />}
-    </span>;
+    </div>
+  );
+  let oxbowSecond = cragSecond <= 1,
+    pondSecond = (
+      <AppIconYlt
+        {...{
+          className: "icon-2xs rotate-180",
+        }}
+      />
+    );
+  let quarrySecond = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        "aria-label": zenithSecond,
+        color: "ghost",
+        disabled: oxbowSecond,
+        size: "toolbar",
+        uniform: true,
+        className: "text-white hover:text-white",
+        onClick: eddySecond,
+        children: pondSecond,
+      }}
+    />
+  );
+  let rapidsSecond = (
+    <span className="min-w-14 px-2 text-center text-sm tabular-nums">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "artifactTab.preview.pageIndicator",
+            defaultMessage: "{current}/{total}",
+            description: "Current page indicator in an artifact preview header",
+            values: {
+              current: cragSecond,
+              total: numPages,
+            },
+          }}
+        />
+      }
+    </span>
+  );
   let spurSecond = cragSecond >= numPages,
-    torSecond = <AppIconYlt {...{
-      className: "icon-2xs"
-    }} />;
-  let updraftSecond = <ReadLoginRouteQuerySnapshot {...{
-    "aria-label": beaconSecond,
-    color: "ghost",
-    disabled: spurSecond,
-    size: "toolbar",
-    uniform: true,
-    className: "text-white hover:text-white",
-    onClick: glenSecond,
-    children: torSecond
-  }} />;
+    torSecond = (
+      <AppIconYlt
+        {...{
+          className: "icon-2xs",
+        }}
+      />
+    );
+  let updraftSecond = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        "aria-label": beaconSecond,
+        color: "ghost",
+        disabled: spurSecond,
+        size: "toolbar",
+        uniform: true,
+        className: "text-white hover:text-white",
+        onClick: glenSecond,
+        children: torSecond,
+      }}
+    />
+  );
   let vergeSecond = <div className="mx-1 h-4 w-px bg-white/25" />;
   let weirSecond, yardSecond;
-  weirSecond = <Chatgpt2 {...{
-    className: "icon-2xs"
-  }} />;
-  yardSecond = <MemoizedFormattedMessage {...{
-    id: "artifactTab.preview.exitPresentation",
-    defaultMessage: "Exit",
-    description: "Button label that exits PDF presentation mode"
-  }} />;
-  let anchorSecond = <ReadLoginRouteQuerySnapshot {...{
-    color: "ghost",
-    size: "toolbar",
-    className: "gap-1 px-2 text-white hover:text-white",
-    onClick: onClose,
-    children: [weirSecond, yardSecond]
-  }} />;
-  let boltSecond = <div className="pointer-events-none absolute right-6 bottom-6 left-6 flex justify-center">
+  weirSecond = (
+    <Chatgpt2
+      {...{
+        className: "icon-2xs",
+      }}
+    />
+  );
+  yardSecond = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "artifactTab.preview.exitPresentation",
+        defaultMessage: "Exit",
+        description: "Button label that exits PDF presentation mode",
+      }}
+    />
+  );
+  let anchorSecond = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "ghost",
+        size: "toolbar",
+        className: "gap-1 px-2 text-white hover:text-white",
+        onClick: onClose,
+        children: [weirSecond, yardSecond],
+      }}
+    />
+  );
+  let boltSecond = (
+    <div className="pointer-events-none absolute right-6 bottom-6 left-6 flex justify-center">
       <div className="pointer-events-auto flex items-center gap-1 rounded-md bg-black/75 px-2 py-1 text-white shadow-lg">
         {quarrySecond}
         {rapidsSecond}
@@ -487,22 +670,34 @@ function PdfPreviewPanelHelper57(havenSecond) {
         {vergeSecond}
         {anchorSecond}
       </div>
-    </div>;
-  return <div ref={silkSecond} aria-label={title} autoFocus={true} className="relative flex h-full min-h-0 flex-col overflow-hidden bg-black text-white outline-none" data-testid="artifact-pdf-presentation" onClick={knobSecond} onKeyDown={inletSecond} tabIndex={-1}>
+    </div>
+  );
+  return (
+    <div
+      ref={silkSecond}
+      aria-label={title}
+      autoFocus={true}
+      className="relative flex h-full min-h-0 flex-col overflow-hidden bg-black text-white outline-none"
+      data-testid="artifact-pdf-presentation"
+      onClick={knobSecond}
+      onKeyDown={inletSecond}
+      tabIndex={-1}
+    >
       {nookSecond}
       {boltSecond}
-    </div>;
+    </div>
+  );
 }
-function trail({
-  pageViewportSize,
-  presentationSize
-}) {
+function trail({ pageViewportSize, presentationSize }) {
   let gearSecond = pageViewportSize?.width ?? 612,
     hingeSecond = pageViewportSize?.height ?? 792;
-  if (presentationSize == null || gearSecond <= 0 || hingeSecond <= 0) return gearSecond;
+  if (presentationSize == null || gearSecond <= 0 || hingeSecond <= 0)
+    return gearSecond;
   let ironSecond = Math.max(1, presentationSize.width - 64),
     jointSecond = Math.max(1, presentationSize.height - 112);
-  return Math.floor(Math.min(ironSecond, gearSecond / hingeSecond * jointSecond));
+  return Math.floor(
+    Math.min(ironSecond, (gearSecond / hingeSecond) * jointSecond),
+  );
 }
 function urn(keystoneSecond, latchSecond) {
   return Math.min(Math.max(keystoneSecond, 1), Math.max(latchSecond, 1));
@@ -520,41 +715,41 @@ var vine,
     deferredUiJ1();
     seed();
   });
-function birch({
-  anchor,
-  container,
-  pageSelector
-}) {
+function birch({ anchor, container, pageSelector }) {
   let motorSecond = container.getBoundingClientRect(),
-    nutSecond = anchor.kind === "point" ? anchor.clientX : motorSecond.left + motorSecond.width / 2,
-    pistonSecond = anchor.kind === "point" ? anchor.clientY : motorSecond.top + motorSecond.height / 2,
+    nutSecond =
+      anchor.kind === "point"
+        ? anchor.clientX
+        : motorSecond.left + motorSecond.width / 2,
+    pistonSecond =
+      anchor.kind === "point"
+        ? anchor.clientY
+        : motorSecond.top + motorSecond.height / 2,
     rivetSecond = dew({
       anchorClientX: nutSecond,
       anchorClientY: pistonSecond,
       container,
-      pageSelector
+      pageSelector,
     });
   if (rivetSecond == null) return null;
   let screwSecond = Number(rivetSecond.dataset.pageNumber);
   if (!Number.isFinite(screwSecond)) return null;
   let torqueSecond = rivetSecond.getBoundingClientRect();
-  return torqueSecond.width <= 0 || torqueSecond.height <= 0 ? null : {
-    anchorContainerOffsetX: nutSecond - motorSecond.left,
-    anchorContainerOffsetY: pistonSecond - motorSecond.top,
-    pageNumber: screwSecond,
-    ratioX: haven((nutSecond - torqueSecond.left) / torqueSecond.width),
-    ratioY: haven((pistonSecond - torqueSecond.top) / torqueSecond.height)
-  };
+  return torqueSecond.width <= 0 || torqueSecond.height <= 0
+    ? null
+    : {
+        anchorContainerOffsetX: nutSecond - motorSecond.left,
+        anchorContainerOffsetY: pistonSecond - motorSecond.top,
+        pageNumber: screwSecond,
+        ratioX: haven((nutSecond - torqueSecond.left) / torqueSecond.width),
+        ratioY: haven((pistonSecond - torqueSecond.top) / torqueSecond.height),
+      };
 }
-function canyon({
-  anchorState,
-  container,
-  pageSelector
-}) {
+function canyon({ anchorState, container, pageSelector }) {
   let valveSecond = ever({
     container,
     pageNumber: anchorState.pageNumber,
-    pageSelector
+    pageSelector,
   });
   if (valveSecond == null) return false;
   let axleSecond = container.getBoundingClientRect(),
@@ -563,52 +758,56 @@ function canyon({
     drillSecond = bracketSecond.top + bracketSecond.height * anchorState.ratioY,
     engineSecond = axleSecond.left + anchorState.anchorContainerOffsetX,
     frameSecond = axleSecond.top + anchorState.anchorContainerOffsetY;
-  return container.scrollLeft += clampSecond - engineSecond, container.scrollTop += drillSecond - frameSecond, true;
+  return (
+    (container.scrollLeft += clampSecond - engineSecond),
+    (container.scrollTop += drillSecond - frameSecond),
+    true
+  );
 }
-function dew({
-  anchorClientX,
-  anchorClientY,
-  container,
-  pageSelector
-}) {
+function dew({ anchorClientX, anchorClientY, container, pageSelector }) {
   let gasketSecond = document.elementFromPoint(anchorClientX, anchorClientY),
-    handleSecond = gasketSecond instanceof HTMLElement ? gasketSecond.closest(pageSelector) : null;
-  if (handleSecond != null && container.contains(handleSecond)) return handleSecond;
+    handleSecond =
+      gasketSecond instanceof HTMLElement
+        ? gasketSecond.closest(pageSelector)
+        : null;
+  if (handleSecond != null && container.contains(handleSecond))
+    return handleSecond;
   let insertSecond = null,
     jacketSecond = 1 / 0;
   for (let knurlSecond of field(container, pageSelector)) {
     let leverSecond = knurlSecond.getBoundingClientRect(),
-      mountSecond = grain({
-        max: leverSecond.bottom,
-        min: leverSecond.top,
-        value: anchorClientY
-      }) + grain({
-        max: leverSecond.right,
-        min: leverSecond.left,
-        value: anchorClientX
-      });
-    mountSecond < jacketSecond && (jacketSecond = mountSecond, insertSecond = knurlSecond);
+      mountSecond =
+        grain({
+          max: leverSecond.bottom,
+          min: leverSecond.top,
+          value: anchorClientY,
+        }) +
+        grain({
+          max: leverSecond.right,
+          min: leverSecond.left,
+          value: anchorClientX,
+        });
+    mountSecond < jacketSecond &&
+      ((jacketSecond = mountSecond), (insertSecond = knurlSecond));
   }
   return insertSecond;
 }
-function ever({
-  container,
-  pageNumber,
-  pageSelector
-}) {
-  return field(container, pageSelector).find(item => Number(item.dataset.pageNumber) === pageNumber) ?? null;
+function ever({ container, pageNumber, pageSelector }) {
+  return (
+    field(container, pageSelector).find(
+      (item) => Number(item.dataset.pageNumber) === pageNumber,
+    ) ?? null
+  );
 }
 function field(nozzleSecond, platenSecond) {
   return Array.from(nozzleSecond.querySelectorAll(platenSecond));
 }
-function grain({
-  max,
-  min,
-  value
-}) {
+function grain({ max, min, value }) {
   return value < min ? min - value : value > max ? value - max : 0;
 }
 function haven(ratchetSecond) {
-  return Number.isFinite(ratchetSecond) ? Math.min(1, Math.max(0, ratchetSecond)) : 0;
+  return Number.isFinite(ratchetSecond)
+    ? Math.min(1, Math.max(0, ratchetSecond))
+    : 0;
 }
 var ink = esmInit(() => {});

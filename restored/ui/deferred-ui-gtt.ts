@@ -24,10 +24,10 @@ export function bindDeferredUiGtt() {
     throw new Error("bindDeferredUiGtt peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => peers.dXt({
-    ctrlKey: e(peers.EXt),
-    metaKey: e(peers.DXt)
-  }));
+  return peers.Ma(peers.Q, ({ get: e }) =>
+    peers.dXt({
+      ctrlKey: e(peers.EXt),
+      metaKey: e(peers.DXt),
+    }),
+  );
 }

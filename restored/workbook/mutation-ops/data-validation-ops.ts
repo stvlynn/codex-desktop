@@ -14,8 +14,7 @@ export function buildDataValidationSetOp(props: LooseBag) {
   opBind13498 && (opBind13497.prompt = opBind13498);
   let opBind13499 = serializeDataValidationErrorAlert(record);
   return (
-    opBind13499 &&
-      (opBind13497.errorAlert = opBind13499),
+    opBind13499 && (opBind13497.errorAlert = opBind13499),
     record.allowBlank !== undefined &&
       (opBind13497.ignoreBlanks = record.allowBlank),
     record.showDropDown !== undefined &&
@@ -35,16 +34,12 @@ export function serializeDataValidationRule(props: LooseBag) {
       type: mapDataValidationType(props.type),
     },
     opBind16213 = mapDataValidationOperator(props.operator);
-  opBind16213 !== undefined &&
-    (opBind16212.operator = opBind16213);
+  opBind16213 !== undefined && (opBind16212.operator = opBind16213);
   let opBind16214 = parseDataValidationListValues(props);
   return opBind16214
-    ? ((opBind16212.values = opBind16214),
-      opBind16212)
-    : (props.formula1 !== undefined &&
-        (opBind16212.formula1 = props.formula1),
-      props.formula2 !== undefined &&
-        (opBind16212.formula2 = props.formula2),
+    ? ((opBind16212.values = opBind16214), opBind16212)
+    : (props.formula1 !== undefined && (opBind16212.formula1 = props.formula1),
+      props.formula2 !== undefined && (opBind16212.formula2 = props.formula2),
       opBind16212);
 }
 export function serializeDataValidationPrompt(props: LooseBag) {
@@ -56,8 +51,7 @@ export function serializeDataValidationPrompt(props: LooseBag) {
     return;
   let opBind14620 = {};
   return (
-    props.promptTitle !== undefined &&
-      (opBind14620.title = props.promptTitle),
+    props.promptTitle !== undefined && (opBind14620.title = props.promptTitle),
     props.promptMessage !== undefined &&
       (opBind14620.message = props.promptMessage),
     props.showInputMessage !== undefined &&
@@ -80,15 +74,18 @@ export function serializeDataValidationErrorAlert(opIn4034: LooseBag) {
     (opBind12982.message = opIn4034.errorMessage);
   let opBind12983 = mapDataValidationErrorStyle(opIn4034.errorStyle);
   return (
-    opBind12983 !== undefined &&
-      (opBind12982.style = opBind12983),
+    opBind12983 !== undefined && (opBind12982.style = opBind12983),
     opIn4034.showErrorMessage !== undefined &&
       (opBind12982.show = opIn4034.showErrorMessage),
     opBind12982
   );
 }
 export function parseDataValidationListValues(props: LooseBag) {
-  if (mapDataValidationType(props.type) !== "list" || props.formula2 !== undefined) return;
+  if (
+    mapDataValidationType(props.type) !== "list" ||
+    props.formula2 !== undefined
+  )
+    return;
   let opBind17409 = props.formula1?.trim();
   if (
     !opBind17409 ||

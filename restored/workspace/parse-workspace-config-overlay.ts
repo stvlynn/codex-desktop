@@ -9,7 +9,9 @@ export type ParseWorkspaceConfigOverlayPeers = {
 let peers: ParseWorkspaceConfigOverlayPeers | null = null;
 
 /** Wire parseWorkspaceConfigOverlay peers once companions land. */
-export function setParseWorkspaceConfigOverlayPeers(next: ParseWorkspaceConfigOverlayPeers): void {
+export function setParseWorkspaceConfigOverlayPeers(
+  next: ParseWorkspaceConfigOverlayPeers,
+): void {
   peers = next;
 }
 

@@ -41,21 +41,28 @@ export function bindRemote3() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.Au(), peers.ed(), peers.KM(), peers.Im(), F$r = peers.Pm(`last-used-continue-in-mode`, `local`), I$r = peers.Fm(e => `composer-mode-by-project:${peers.e}`, void 0), L$r = peers.Ta(peers.GM, () => null), cN = peers.Ta(peers.Q, () => null), R$r = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => {
-      let n = t(peers.cN);
-      return n != null && n.key === peers.e ? n.mode : null;
-    }), z$r = peers.Ma(peers.Q, ({
-      get: e
-    }) => {
-      let t = peers.e(peers.F$r);
-      return t === `remote` ? `local` : t ?? `local`;
-    }), B$r = peers.Oa(peers.GM, (e, {
-      get: t
-    }) => {
-      let n = t(peers.L$r);
-      return n?.projectKey === peers.e ? n.mode : t(peers.I$r, peers.e) ?? `local`;
-    });
+    (peers.Ho(),
+      peers.Au(),
+      peers.ed(),
+      peers.KM(),
+      peers.Im(),
+      (F$r = peers.Pm(`last-used-continue-in-mode`, `local`)),
+      (I$r = peers.Fm((e) => `composer-mode-by-project:${peers.e}`, void 0)),
+      (L$r = peers.Ta(peers.GM, () => null)),
+      (cN = peers.Ta(peers.Q, () => null)),
+      (R$r = peers.Oa(peers.Q, (e, { get: t }) => {
+        let n = t(peers.cN);
+        return n != null && n.key === peers.e ? n.mode : null;
+      })),
+      (z$r = peers.Ma(peers.Q, ({ get: e }) => {
+        let t = peers.e(peers.F$r);
+        return t === `remote` ? `local` : (t ?? `local`);
+      })),
+      (B$r = peers.Oa(peers.GM, (e, { get: t }) => {
+        let n = t(peers.L$r);
+        return n?.projectKey === peers.e
+          ? n.mode
+          : (t(peers.I$r, peers.e) ?? `local`);
+      })));
   });
 }

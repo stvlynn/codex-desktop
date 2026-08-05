@@ -11,7 +11,9 @@ export type BindBindAuthElicitationPeers = {
 let peers: BindBindAuthElicitationPeers | null = null;
 
 /** Wire bindBindAuthElicitation peers once companions land. */
-export function setBindBindAuthElicitationPeers(next: BindBindAuthElicitationPeers): void {
+export function setBindBindAuthElicitationPeers(
+  next: BindBindAuthElicitationPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,15 @@ export function bindBindAuthElicitation() {
   }
 
   return peers.e(() => {
-    Rbe = `features.`, zbe = new Set([`auth_elicitation`, `plugins`, `apps`, `tool_suggest`, `tool_call_mcp_elicitation`, `writing_blocks`]), Bbe = `workspace_dependencies`;
+    ((Rbe = `features.`),
+      (zbe = new Set([
+        `auth_elicitation`,
+        `plugins`,
+        `apps`,
+        `tool_suggest`,
+        `tool_call_mcp_elicitation`,
+        `writing_blocks`,
+      ])),
+      (Bbe = `workspace_dependencies`));
   });
 }

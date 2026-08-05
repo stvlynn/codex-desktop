@@ -34,6 +34,17 @@ export function deferredVV() {
   }
 
   return peers.e(() => {
-    ZKi = peers.c(), peers.Ho(), peers.Au(), peers.dy(), peers.TKi(), peers.Yf(), peers.ed(), peers.z_(), peers.K_(), peers.V_(), peers.FKi(), QKi = [];
+    ((ZKi = peers.c()),
+      peers.Ho(),
+      peers.Au(),
+      peers.dy(),
+      peers.TKi(),
+      peers.Yf(),
+      peers.ed(),
+      peers.z_(),
+      peers.K_(),
+      peers.V_(),
+      peers.FKi(),
+      (QKi = []));
   });
 }

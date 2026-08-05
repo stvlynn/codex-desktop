@@ -10,7 +10,9 @@ export type BindDeferredConversationGWPeers = {
 let peers: BindDeferredConversationGWPeers | null = null;
 
 /** Wire bindDeferredConversationGW peers once companions land. */
-export function setBindDeferredConversationGWPeers(next: BindDeferredConversationGWPeers): void {
+export function setBindDeferredConversationGWPeers(
+  next: BindDeferredConversationGWPeers,
+): void {
   peers = next;
 }
 
@@ -22,7 +24,5 @@ export function bindDeferredConversationGW() {
     throw new Error("bindDeferredConversationGW peers are not configured");
   }
 
-  return peers.Ma(peers.hT, ({
-    get: e
-  }) => e(peers.pFi).cwd);
+  return peers.Ma(peers.hT, ({ get: e }) => e(peers.pFi).cwd);
 }

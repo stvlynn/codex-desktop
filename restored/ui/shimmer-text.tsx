@@ -13,7 +13,9 @@ type ShimmerSpanProps = ComponentPropsWithoutRef<"span"> & {
 let ShimmerSpan: ComponentType<ShimmerSpanProps> | null = null;
 
 /** Wire animated shimmer span (`_oc` in the bundle). */
-export function setShimmerSpanImpl(impl: ComponentType<ShimmerSpanProps>): void {
+export function setShimmerSpanImpl(
+  impl: ComponentType<ShimmerSpanProps>,
+): void {
   ShimmerSpan = impl;
 }
 

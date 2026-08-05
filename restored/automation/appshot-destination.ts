@@ -15,7 +15,9 @@ export type AppshotDestinationPeers = {
 let peers: AppshotDestinationPeers | null = null;
 
 /** Wire appshotDestination peers once companions land. */
-export function setAppshotDestinationPeers(next: AppshotDestinationPeers): void {
+export function setAppshotDestinationPeers(
+  next: AppshotDestinationPeers,
+): void {
   peers = next;
 }
 
@@ -28,26 +30,31 @@ export function appshotDestination() {
   }
 
   return peers.e(() => {
-    peers.Sl(), peers._u(), peers.xu(), EEe = {
-      destination: peers.vu({
-        agentAccess: `read-write`,
-        default: `automatic`,
-        description: `Where global shortcut appshots are attached`,
-        key: `appshotDestination`,
-        schema: peers.pl([`automatic`, `last-chat`, `new-chat`])
-      }),
-      soundEnabled: peers.vu({
-        agentAccess: `read-write`,
-        default: !0,
-        description: `Whether appshots play a sound effect`,
-        key: `appshotSoundEnabled`,
-        mirrors: [{
-          domain: `com.openai.sky.CUAService`,
+    (peers.Sl(),
+      peers._u(),
+      peers.xu(),
+      (EEe = {
+        destination: peers.vu({
+          agentAccess: `read-write`,
+          default: `automatic`,
+          description: `Where global shortcut appshots are attached`,
+          key: `appshotDestination`,
+          schema: peers.pl([`automatic`, `last-chat`, `new-chat`]),
+        }),
+        soundEnabled: peers.vu({
+          agentAccess: `read-write`,
+          default: !0,
+          description: `Whether appshots play a sound effect`,
           key: `appshotSoundEnabled`,
-          kind: `macos-user-defaults`
-        }],
-        schema: peers.hu
-      })
-    };
+          mirrors: [
+            {
+              domain: `com.openai.sky.CUAService`,
+              key: `appshotSoundEnabled`,
+              kind: `macos-user-defaults`,
+            },
+          ],
+          schema: peers.hu,
+        }),
+      }));
   });
 }

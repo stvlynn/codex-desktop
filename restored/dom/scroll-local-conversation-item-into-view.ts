@@ -4,7 +4,10 @@
 import { findLocalConversationItemByTargetId } from "./find-local-conversation-item-by-target-id";
 
 /** Scroll/focus a local conversation item by target id. */
-export function scrollLocalConversationItemIntoView(targetId: string, behavior?: ScrollBehavior): boolean {
+export function scrollLocalConversationItemIntoView(
+  targetId: string,
+  behavior?: ScrollBehavior,
+): boolean {
   const node = findLocalConversationItemByTargetId(targetId);
   if (node == null) return false;
   node.scrollIntoView({ block: "center", behavior });

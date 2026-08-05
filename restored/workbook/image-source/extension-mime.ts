@@ -17,9 +17,7 @@ export function stripUrlPath(url: string): string {
 }
 
 /** Legacy `Ide` — mime from path/uri extension when known. */
-export function mimeFromPathExtension(
-  url: string,
-): string | undefined {
+export function mimeFromPathExtension(url: string): string | undefined {
   const pathPart = stripUrlPath(url);
   for (const [ext, mime] of Object.entries(imageExtensionMimeMap)) {
     if (pathPart.endsWith(ext)) return mime;

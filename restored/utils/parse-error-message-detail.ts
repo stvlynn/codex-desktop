@@ -8,7 +8,9 @@ export type ParseErrorMessageDetailPeers = {
 let peers: ParseErrorMessageDetailPeers | null = null;
 
 /** Wire parseErrorMessageDetail peers once companions land. */
-export function setParseErrorMessageDetailPeers(next: ParseErrorMessageDetailPeers): void {
+export function setParseErrorMessageDetailPeers(
+  next: ParseErrorMessageDetailPeers,
+): void {
   peers = next;
 }
 

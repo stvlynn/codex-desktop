@@ -26,7 +26,9 @@ const settingsLocationStateSchema = zodObject({
  * True when a settings section is beta-gated and should stay hidden
  * from the default nav (export `a`).
  */
-export function isSettingsBetaSectionHidden(section: SettingsBetaSection): boolean {
+export function isSettingsBetaSectionHidden(
+  section: SettingsBetaSection,
+): boolean {
   if (section.stage !== "beta") return false;
   const { name } = section;
   return (

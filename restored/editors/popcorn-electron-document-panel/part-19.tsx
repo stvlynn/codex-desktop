@@ -7,218 +7,300 @@
 /* split-lane-import-depth:1 */
 
 import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { jsxRuntime as getJsxRuntime, react } from "../../boundaries/react-cjs-runtime";
-import { __workbookT, _workbookT, workbookA, workbookB, workbookC, workbookD, workbookE, workbookF, workbookG, WorkbookI, workbookIt, workbookJ, workbookK, workbookL, workbookLt, workbookM, workbookN, workbookNt, workbookO, workbookOt, workbookP, workbookQ, WorkbookR, workbookRt, workbookS, workbookSt, workbookU, workbookUnderscore, workbookV, workbookW, WorkbookW, workbookX, workbookY, workbookZ } from "../../workbook/editor-compat";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  __workbookT,
+  _workbookT,
+  workbookA,
+  workbookB,
+  workbookC,
+  workbookD,
+  workbookE,
+  workbookF,
+  workbookG,
+  WorkbookI,
+  workbookIt,
+  workbookJ,
+  workbookK,
+  workbookL,
+  workbookLt,
+  workbookM,
+  workbookN,
+  workbookNt,
+  workbookO,
+  workbookOt,
+  workbookP,
+  workbookQ,
+  WorkbookR,
+  workbookRt,
+  workbookS,
+  workbookSt,
+  workbookU,
+  workbookUnderscore,
+  workbookV,
+  workbookW,
+  WorkbookW,
+  workbookX,
+  workbookY,
+  workbookZ,
+} from "../../workbook/editor-compat";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
-import { ensureFeatureCatalogAtomsInit, ensureFeatureCatalogInit, getFeatureCatalogEntries, PopcornFindBar } from "../feature-catalog";
-import { ensurePopcornPageNumberNavigationInit, PopcornPageNumberNavigation } from "../popcorn-page-number-navigation";
-import { ensureRemoteTextEditSessionInit, RemoteTextEditSessionA, RemoteTextEditSessionB, RemoteTextEditSessionC, RemoteTextEditSessionChrome, RemoteTextEditSessionE, RemoteTextEditSessionF, RemoteTextEditSessionH, RemoteTextEditSessionI, RemoteTextEditSessionLowerT, RemoteTextEditSessionM, RemoteTextEditSessionN, RemoteTextEditSessionO, RemoteTextEditSessionP, RemoteTextEditSessionR, RemoteTextEditSessionS, RemoteTextEditSessionSurfaceKind, RemoteTextEditSessionU, RemoteTextEditSessionV, RemoteTextEditSessionW, RemoteTextEditSessionX, RemoteTextEditSessionY, RemoteTextEditSessionZoomControl } from "../remote-text-edit-session/index";
+import {
+  ensureFeatureCatalogAtomsInit,
+  ensureFeatureCatalogInit,
+  getFeatureCatalogEntries,
+  PopcornFindBar,
+} from "../feature-catalog";
+import {
+  ensurePopcornPageNumberNavigationInit,
+  PopcornPageNumberNavigation,
+} from "../popcorn-page-number-navigation";
+import {
+  ensureRemoteTextEditSessionInit,
+  RemoteTextEditSessionA,
+  RemoteTextEditSessionB,
+  RemoteTextEditSessionC,
+  RemoteTextEditSessionChrome,
+  RemoteTextEditSessionE,
+  RemoteTextEditSessionF,
+  RemoteTextEditSessionH,
+  RemoteTextEditSessionI,
+  RemoteTextEditSessionLowerT,
+  RemoteTextEditSessionM,
+  RemoteTextEditSessionN,
+  RemoteTextEditSessionO,
+  RemoteTextEditSessionP,
+  RemoteTextEditSessionR,
+  RemoteTextEditSessionS,
+  RemoteTextEditSessionSurfaceKind,
+  RemoteTextEditSessionU,
+  RemoteTextEditSessionV,
+  RemoteTextEditSessionW,
+  RemoteTextEditSessionX,
+  RemoteTextEditSessionY,
+  RemoteTextEditSessionZoomControl,
+} from "../remote-text-edit-session/index";
 
 // Wave5d soft stubs.
 const marbleR23: any = undefined;
 
 esmInit(() => {
-    Object.assign(marbleR23, {
-      "List Table 7 Colorful": {
-        styleId: "ListTable7Colorful",
-        name: "List Table 7 Colorful",
-        basedOn: "TableNormal",
-        uiPriority: "52",
-        pPr: {
-          spacing: {
-            after: "0",
-            line: "240",
-            lineRule: "auto"
-          }
+  Object.assign(marbleR23, {
+    "List Table 7 Colorful": {
+      styleId: "ListTable7Colorful",
+      name: "List Table 7 Colorful",
+      basedOn: "TableNormal",
+      uiPriority: "52",
+      pPr: {
+        spacing: {
+          after: "0",
+          line: "240",
+          lineRule: "auto",
         },
-        rPr: {
-          color: {
-            val: "000000",
-            themeColor: "text1"
-          }
-        },
-        tblPr: {
-          rowBandSize: "1",
-          colBandSize: "1"
-        },
-        tblStylePr: [{
-          type: "firstRow",
-          rPr: {
-            italic: true
-          },
-          tcPr: {
-            borders: {
-              bottom: {
-                val: "single",
-                sz: "4",
-                space: "0",
-                color: "000000",
-                themeColor: "text1"
-              }
-            },
-            shading: {
-              val: "clear",
-              color: "auto",
-              fill: "FFFFFF",
-              themeFill: "background1"
-            }
-          }
-        }, {
-          type: "lastRow",
-          rPr: {
-            italic: true
-          },
-          tcPr: {
-            borders: {
-              top: {
-                val: "single",
-                sz: "4",
-                space: "0",
-                color: "000000",
-                themeColor: "text1"
-              }
-            },
-            shading: {
-              val: "clear",
-              color: "auto",
-              fill: "FFFFFF",
-              themeFill: "background1"
-            }
-          }
-        }, {
-          type: "firstCol",
-          pPr: {
-            alignment: "right"
-          },
-          rPr: {
-            italic: true
-          },
-          tcPr: {
-            borders: {
-              right: {
-                val: "single",
-                sz: "4",
-                space: "0",
-                color: "000000",
-                themeColor: "text1"
-              }
-            },
-            shading: {
-              val: "clear",
-              color: "auto",
-              fill: "FFFFFF",
-              themeFill: "background1"
-            }
-          }
-        }, {
-          type: "lastCol",
-          rPr: {
-            italic: true
-          },
-          tcPr: {
-            borders: {
-              left: {
-                val: "single",
-                sz: "4",
-                space: "0",
-                color: "000000",
-                themeColor: "text1"
-              }
-            },
-            shading: {
-              val: "clear",
-              color: "auto",
-              fill: "FFFFFF",
-              themeFill: "background1"
-            }
-          }
-        }, {
-          type: "band1Vert",
-          tcPr: {
-            shading: {
-              val: "clear",
-              color: "auto",
-              fill: "CCCCCC",
-              themeFill: "text1",
-              themeFillTint: "33"
-            }
-          }
-        }, {
-          type: "band1Horz",
-          tcPr: {
-            shading: {
-              val: "clear",
-              color: "auto",
-              fill: "CCCCCC",
-              themeFill: "text1",
-              themeFillTint: "33"
-            }
-          }
-        }, {
-          type: "neCell",
-          tcPr: {
-            borders: {
-              left: {
-                val: "nil"
-              }
-            }
-          }
-        }, {
-          type: "nwCell",
-          tcPr: {
-            borders: {
-              right: {
-                val: "nil"
-              }
-            }
-          }
-        }, {
-          type: "seCell",
-          tcPr: {
-            borders: {
-              left: {
-                val: "nil"
-              }
-            }
-          }
-        }, {
-          type: "swCell",
-          tcPr: {
-            borders: {
-              right: {
-                val: "nil"
-              }
-            }
-          }
-        }]
       },
-      "List Table 7 Colorful Accent 1": {
-        styleId: "ListTable7Colorful-Accent1",
-        name: "List Table 7 Colorful Accent 1",
-        basedOn: "TableNormal",
-        uiPriority: "52",
-        pPr: {
-          spacing: {
-            after: "0",
-            line: "240",
-            lineRule: "auto"
-          }
+      rPr: {
+        color: {
+          val: "000000",
+          themeColor: "text1",
         },
-        rPr: {
-          color: {
-            val: "0F4761",
-            themeColor: "accent1",
-            themeShade: "BF"
-          }
-        },
-        tblPr: {
-          rowBandSize: "1",
-          colBandSize: "1"
-        },
-        tblStylePr: [{
+      },
+      tblPr: {
+        rowBandSize: "1",
+        colBandSize: "1",
+      },
+      tblStylePr: [
+        {
           type: "firstRow",
           rPr: {
-            italic: true
+            italic: true,
+          },
+          tcPr: {
+            borders: {
+              bottom: {
+                val: "single",
+                sz: "4",
+                space: "0",
+                color: "000000",
+                themeColor: "text1",
+              },
+            },
+            shading: {
+              val: "clear",
+              color: "auto",
+              fill: "FFFFFF",
+              themeFill: "background1",
+            },
+          },
+        },
+        {
+          type: "lastRow",
+          rPr: {
+            italic: true,
+          },
+          tcPr: {
+            borders: {
+              top: {
+                val: "single",
+                sz: "4",
+                space: "0",
+                color: "000000",
+                themeColor: "text1",
+              },
+            },
+            shading: {
+              val: "clear",
+              color: "auto",
+              fill: "FFFFFF",
+              themeFill: "background1",
+            },
+          },
+        },
+        {
+          type: "firstCol",
+          pPr: {
+            alignment: "right",
+          },
+          rPr: {
+            italic: true,
+          },
+          tcPr: {
+            borders: {
+              right: {
+                val: "single",
+                sz: "4",
+                space: "0",
+                color: "000000",
+                themeColor: "text1",
+              },
+            },
+            shading: {
+              val: "clear",
+              color: "auto",
+              fill: "FFFFFF",
+              themeFill: "background1",
+            },
+          },
+        },
+        {
+          type: "lastCol",
+          rPr: {
+            italic: true,
+          },
+          tcPr: {
+            borders: {
+              left: {
+                val: "single",
+                sz: "4",
+                space: "0",
+                color: "000000",
+                themeColor: "text1",
+              },
+            },
+            shading: {
+              val: "clear",
+              color: "auto",
+              fill: "FFFFFF",
+              themeFill: "background1",
+            },
+          },
+        },
+        {
+          type: "band1Vert",
+          tcPr: {
+            shading: {
+              val: "clear",
+              color: "auto",
+              fill: "CCCCCC",
+              themeFill: "text1",
+              themeFillTint: "33",
+            },
+          },
+        },
+        {
+          type: "band1Horz",
+          tcPr: {
+            shading: {
+              val: "clear",
+              color: "auto",
+              fill: "CCCCCC",
+              themeFill: "text1",
+              themeFillTint: "33",
+            },
+          },
+        },
+        {
+          type: "neCell",
+          tcPr: {
+            borders: {
+              left: {
+                val: "nil",
+              },
+            },
+          },
+        },
+        {
+          type: "nwCell",
+          tcPr: {
+            borders: {
+              right: {
+                val: "nil",
+              },
+            },
+          },
+        },
+        {
+          type: "seCell",
+          tcPr: {
+            borders: {
+              left: {
+                val: "nil",
+              },
+            },
+          },
+        },
+        {
+          type: "swCell",
+          tcPr: {
+            borders: {
+              right: {
+                val: "nil",
+              },
+            },
+          },
+        },
+      ],
+    },
+    "List Table 7 Colorful Accent 1": {
+      styleId: "ListTable7Colorful-Accent1",
+      name: "List Table 7 Colorful Accent 1",
+      basedOn: "TableNormal",
+      uiPriority: "52",
+      pPr: {
+        spacing: {
+          after: "0",
+          line: "240",
+          lineRule: "auto",
+        },
+      },
+      rPr: {
+        color: {
+          val: "0F4761",
+          themeColor: "accent1",
+          themeShade: "BF",
+        },
+      },
+      tblPr: {
+        rowBandSize: "1",
+        colBandSize: "1",
+      },
+      tblStylePr: [
+        {
+          type: "firstRow",
+          rPr: {
+            italic: true,
           },
           tcPr: {
             borders: {
@@ -227,20 +309,21 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "156082",
-                themeColor: "accent1"
-              }
+                themeColor: "accent1",
+              },
             },
             shading: {
               val: "clear",
               color: "auto",
               fill: "FFFFFF",
-              themeFill: "background1"
-            }
-          }
-        }, {
+              themeFill: "background1",
+            },
+          },
+        },
+        {
           type: "lastRow",
           rPr: {
-            italic: true
+            italic: true,
           },
           tcPr: {
             borders: {
@@ -249,23 +332,24 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "156082",
-                themeColor: "accent1"
-              }
+                themeColor: "accent1",
+              },
             },
             shading: {
               val: "clear",
               color: "auto",
               fill: "FFFFFF",
-              themeFill: "background1"
-            }
-          }
-        }, {
+              themeFill: "background1",
+            },
+          },
+        },
+        {
           type: "firstCol",
           pPr: {
-            alignment: "right"
+            alignment: "right",
           },
           rPr: {
-            italic: true
+            italic: true,
           },
           tcPr: {
             borders: {
@@ -274,20 +358,21 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "156082",
-                themeColor: "accent1"
-              }
+                themeColor: "accent1",
+              },
             },
             shading: {
               val: "clear",
               color: "auto",
               fill: "FFFFFF",
-              themeFill: "background1"
-            }
-          }
-        }, {
+              themeFill: "background1",
+            },
+          },
+        },
+        {
           type: "lastCol",
           rPr: {
-            italic: true
+            italic: true,
           },
           tcPr: {
             borders: {
@@ -296,17 +381,18 @@ esmInit(() => {
                 sz: "4",
                 space: "0",
                 color: "156082",
-                themeColor: "accent1"
-              }
+                themeColor: "accent1",
+              },
             },
             shading: {
               val: "clear",
               color: "auto",
               fill: "FFFFFF",
-              themeFill: "background1"
-            }
-          }
-        }, {
+              themeFill: "background1",
+            },
+          },
+        },
+        {
           type: "band1Vert",
           tcPr: {
             shading: {
@@ -314,10 +400,11 @@ esmInit(() => {
               color: "auto",
               fill: "C1E4F5",
               themeFill: "accent1",
-              themeFillTint: "33"
-            }
-          }
-        }, {
+              themeFillTint: "33",
+            },
+          },
+        },
+        {
           type: "band1Horz",
           tcPr: {
             shading: {
@@ -325,48 +412,53 @@ esmInit(() => {
               color: "auto",
               fill: "C1E4F5",
               themeFill: "accent1",
-              themeFillTint: "33"
-            }
-          }
-        }, {
+              themeFillTint: "33",
+            },
+          },
+        },
+        {
           type: "neCell",
           tcPr: {
             borders: {
               left: {
-                val: "nil"
-              }
-            }
-          }
-        }, {
+                val: "nil",
+              },
+            },
+          },
+        },
+        {
           type: "nwCell",
           tcPr: {
             borders: {
               right: {
-                val: "nil"
-              }
-            }
-          }
-        }, {
+                val: "nil",
+              },
+            },
+          },
+        },
+        {
           type: "seCell",
           tcPr: {
             borders: {
               left: {
-                val: "nil"
-              }
-            }
-          }
-        }, {
+                val: "nil",
+              },
+            },
+          },
+        },
+        {
           type: "swCell",
           tcPr: {
             borders: {
               right: {
-                val: "nil"
-              }
-            }
-          }
-        }]
-      }
-    });
+                val: "nil",
+              },
+            },
+          },
+        },
+      ],
+    },
+  });
 })();
 
 var ivoryR23;

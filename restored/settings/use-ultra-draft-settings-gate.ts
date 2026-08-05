@@ -13,7 +13,9 @@ export type UseUltraDraftSettingsGatePeers = {
 let peers: UseUltraDraftSettingsGatePeers | null = null;
 
 /** Wire useUltraDraftSettingsGate peers once companions land. */
-export function setUseUltraDraftSettingsGatePeers(next: UseUltraDraftSettingsGatePeers): void {
+export function setUseUltraDraftSettingsGatePeers(
+  next: UseUltraDraftSettingsGatePeers,
+): void {
   peers = next;
 }
 

@@ -26,7 +26,11 @@ export function setAppendSelectedTextAttachmentDeps(next: AppendDeps): void {
 }
 
 /** Bundle `Cka` / export `dP`. */
-export function appendSelectedTextAttachment(scope: ScopeLike, conversationId: string, text: string): void {
+export function appendSelectedTextAttachment(
+  scope: ScopeLike,
+  conversationId: string,
+  text: string,
+): void {
   if (deps == null) {
     throw new Error(
       "appendSelectedTextAttachment deps have not been configured",

@@ -31,10 +31,28 @@ import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../ap
 import { normalizeAppIconThemeEntries } from "../../apps/normalize-app-icon-theme-entries";
 import { automationsNotShallowEqual } from "../../automation/automations-not-shallow-equal";
 import { isBlankAutomationDraft as IsBlankAutomationDraft } from "../../automation/is-blank-automation-draft";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useLocation } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
@@ -73,7 +91,10 @@ import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { mcpGlobalCapabilityCatalogAtom as McpGlobalCapabilityCatalogAtom } from "../../mcp/mcp-capability-host";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { resolveBrowserTabPanelSide as ResolveBrowserTabPanelSide } from "../../navigation/resolve-browser-tab-panel-side";
@@ -88,7 +109,10 @@ import { codexCommandTheme } from "../../ui/codex-command-theme";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiYn } from "../../ui/deferred-ui-yn";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { FloatingSurfaceCssClass } from "../../ui/floating-surface-css-classes";
@@ -100,14 +124,23 @@ import { isXcodeLicenseError } from "../../utils/is-xcode-license-error";
 import { lerpIfFinite as LerpIfFinite } from "../../utils/lerp-if-finite";
 import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
-import { ensureImportSettingsGctInit, ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsGctInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { identityCwd } from "../../utils/workspace-paths";
 import { pendingWorktreeConversationStartApi } from "../../worktree/pending-worktree-conversation-start-api";
 import { readCodexHomeFromQuery } from "../read-codex-home-from-query";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { initSettingsLoadingRow, SettingsLoadingRow } from "../settings-loading-row";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  initSettingsLoadingRow,
+  SettingsLoadingRow,
+} from "../settings-loading-row";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 
 // Wave5d soft stubs.
 const AppInitialBC: any = undefined;
@@ -143,38 +176,42 @@ const openInBrowser: any = undefined;
 const parseUrlOrFallback: any = undefined;
 const useChromeAndCodeThemeSync: any = undefined;
 function river(garnet) {
-  let {
-      onSelect,
-      scopeOption,
-      selected
-    } = garnet,
+  let { onSelect, scopeOption, selected } = garnet,
     hazel = selected ? AppIconZlt : undefined,
     ivory = <span className="truncate text-sm">{scopeOption.label}</span>;
-  return <DropdownMenu.Item {...{
-    RightIcon: hazel,
-    tooltipText: scopeOption.tooltipText,
-    tooltipSide: "right",
-    onSelect,
-    children: ivory
-  }} />;
+  return (
+    <DropdownMenu.Item
+      {...{
+        RightIcon: hazel,
+        tooltipText: scopeOption.tooltipText,
+        tooltipSide: "right",
+        onSelect,
+        children: ivory,
+      }}
+    />
+  );
 }
 function slate(jasper) {
-  let {
-      children,
-      error,
-      lockReason
-    } = jasper,
+  let { children, error, lockReason } = jasper,
     kelp = <div>{children}</div>;
-  let lotus = lockReason == null ? null : <div className="inline-flex items-center gap-1 text-sm text-token-editor-warning-foreground">
+  let lotus =
+    lockReason == null ? null : (
+      <div className="inline-flex items-center gap-1 text-sm text-token-editor-warning-foreground">
         <AppIconL0 className="icon-2xs" />
         <span>{lockReason}</span>
-      </div>;
-  let mint = error == null ? null : <div className="text-sm text-token-error-foreground">{error}</div>;
-  return <div className="flex flex-col gap-1">
+      </div>
+    );
+  let mint =
+    error == null ? null : (
+      <div className="text-sm text-token-error-foreground">{error}</div>
+    );
+  return (
+    <div className="flex flex-col gap-1">
       {kelp}
       {lotus}
       {mint}
-    </div>;
+    </div>
+  );
 }
 function timber(nova, olive) {
   if (nova == null) return [];
@@ -185,53 +222,78 @@ function timber(nova, olive) {
     prism.push({
       key: `project:${reef ?? quill.name.dotCodexFolder}`,
       kind: "project",
-      label: olive.formatMessage({
-        id: "settings.agent.configuration.scope.project",
-        defaultMessage: "{repoName}",
-        description: "Label for a project config scope in configuration settings"
-      }, {
-        repoName: violet(reef ?? quill.name.dotCodexFolder)
-      }),
-      tooltipText: managedConfigFilePath(quill.name) ?? quill.name.dotCodexFolder,
+      label: olive.formatMessage(
+        {
+          id: "settings.agent.configuration.scope.project",
+          defaultMessage: "{repoName}",
+          description:
+            "Label for a project config scope in configuration settings",
+        },
+        {
+          repoName: violet(reef ?? quill.name.dotCodexFolder),
+        },
+      ),
+      tooltipText:
+        managedConfigFilePath(quill.name) ?? quill.name.dotCodexFolder,
       filePath: managedConfigFilePath(quill.name),
       expectedVersion: quill.version,
       workspaceRoot: reef,
-      layer: quill
+      layer: quill,
     });
   }
   return prism;
 }
 function umbra(sage) {
-  return sage.endsWith("/.codex") || sage.endsWith("\\.codex") ? sage.slice(0, -7) : null;
+  return sage.endsWith("/.codex") || sage.endsWith("\\.codex")
+    ? sage.slice(0, -7)
+    : null;
 }
 function violet(topaz) {
   return topaz.split(/[/\\]/).at(-1) || topaz;
 }
 function willow(ultra) {
-  if (typeof ultra != "object" || !ultra || Array.isArray(ultra)) return {
-    approvalPolicy: null,
-    sandboxMode: null,
-    networkAccess: null
-  };
+  if (typeof ultra != "object" || !ultra || Array.isArray(ultra))
+    return {
+      approvalPolicy: null,
+      sandboxMode: null,
+      networkAccess: null,
+    };
   let vapor = ultra.approval_policy,
     wheat = ultra.sandbox_mode,
     yarn = ultra.sandbox_workspace_write;
   return {
     approvalPolicy: basalt(vapor ?? null),
-    sandboxMode: wheat === "read-only" || wheat === "workspace-write" || wheat === "danger-full-access" ? wheat : null,
-    networkAccess: typeof yarn == "object" && yarn && !Array.isArray(yarn) && typeof yarn.network_access == "boolean" ? yarn.network_access : null
+    sandboxMode:
+      wheat === "read-only" ||
+      wheat === "workspace-write" ||
+      wheat === "danger-full-access"
+        ? wheat
+        : null,
+    networkAccess:
+      typeof yarn == "object" &&
+      yarn &&
+      !Array.isArray(yarn) &&
+      typeof yarn.network_access == "boolean"
+        ? yarn.network_access
+        : null,
   };
 }
 function xenon(zephyr, acorn) {
-  return zephyr == null ? acorn.formatMessage({
-    id: "settings.agent.configuration.scope.unavailable",
-    defaultMessage: "Config scope unavailable.",
-    description: "Message shown when no config scope is available in configuration settings"
-  }) : zephyr.filePath == null ? acorn.formatMessage({
-    id: "settings.agent.configuration.scope.readOnly",
-    defaultMessage: "This config source cannot be edited here.",
-    description: "Message shown when the selected config scope cannot be edited"
-  }) : null;
+  return zephyr == null
+    ? acorn.formatMessage({
+        id: "settings.agent.configuration.scope.unavailable",
+        defaultMessage: "Config scope unavailable.",
+        description:
+          "Message shown when no config scope is available in configuration settings",
+      })
+    : zephyr.filePath == null
+      ? acorn.formatMessage({
+          id: "settings.agent.configuration.scope.readOnly",
+          defaultMessage: "This config source cannot be edited here.",
+          description:
+            "Message shown when the selected config scope cannot be edited",
+        })
+      : null;
 }
 function yellow({
   intl,
@@ -239,22 +301,39 @@ function yellow({
   origin,
   selectedScope,
   hasOptions,
-  restrictedMessage
+  restrictedMessage,
 }) {
-  return scopeLockReason ?? (hasOptions ? selectedScope?.kind !== "managed" && origin != null && AppInitialZ4(origin.name) ? intl.formatMessage({
-    id: "settings.agent.configuration.control.managed",
-    defaultMessage: "This value is managed by admin policy.",
-    description: "Message shown when a configuration control is managed by admin policy"
-  }) : null : restrictedMessage);
+  return (
+    scopeLockReason ??
+    (hasOptions
+      ? selectedScope?.kind !== "managed" &&
+        origin != null &&
+        AppInitialZ4(origin.name)
+        ? intl.formatMessage({
+            id: "settings.agent.configuration.control.managed",
+            defaultMessage: "This value is managed by admin policy.",
+            description:
+              "Message shown when a configuration control is managed by admin policy",
+          })
+        : null
+      : restrictedMessage)
+  );
 }
 function zinc(bloom) {
-  return bloom === $n.value ? $n : ember.find(item => item.value === bloom) ?? null;
+  return bloom === $n.value
+    ? $n
+    : (ember.find((item) => item.value === bloom) ?? null);
 }
 function amber(coral) {
-  return flint.find(item => item.value === coral) ?? null;
+  return flint.find((item) => item.value === coral) ?? null;
 }
 function basalt(drift) {
-  return drift === "untrusted" || drift === "on-request" || drift === "never" || drift === "on-failure" ? drift : null;
+  return drift === "untrusted" ||
+    drift === "on-request" ||
+    drift === "never" ||
+    drift === "on-failure"
+    ? drift
+    : null;
 }
 var cedar, daisy, $, ember, $n, flint;
 esmInit(() => {
@@ -320,35 +399,43 @@ esmInit(() => {
   ensureSkillsPageHelpersInit();
   ensureAuthProviderInit();
   dataAppActionReviewFileExpanded();
-  ember = [{
-    value: "untrusted",
-    label: nickel.untrusted,
-    description: "Always ask before taking action"
-  }, {
-    value: "on-request",
-    label: nickel.onRequest,
-    description: "Ask when escalation is requested"
-  }, {
-    value: "never",
-    label: nickel.never,
-    description: "Blocked actions fail instead of requesting approval"
-  }];
+  ember = [
+    {
+      value: "untrusted",
+      label: nickel.untrusted,
+      description: "Always ask before taking action",
+    },
+    {
+      value: "on-request",
+      label: nickel.onRequest,
+      description: "Ask when escalation is requested",
+    },
+    {
+      value: "never",
+      label: nickel.never,
+      description: "Blocked actions fail instead of requesting approval",
+    },
+  ];
   $n = {
     value: "on-failure",
     label: nickel.onFailure,
-    description: "Ask when a command fails"
+    description: "Ask when a command fails",
   };
-  flint = [{
-    value: "read-only",
-    label: nickel.readOnly,
-    description: "Can read files, but cannot edit them"
-  }, {
-    value: "workspace-write",
-    label: nickel.workspaceWrite,
-    description: "Can edit files, but only in this workspace"
-  }, {
-    value: "danger-full-access",
-    label: nickel.fullAccess,
-    description: "Can edit files outside this workspace"
-  }];
+  flint = [
+    {
+      value: "read-only",
+      label: nickel.readOnly,
+      description: "Can read files, but cannot edit them",
+    },
+    {
+      value: "workspace-write",
+      label: nickel.workspaceWrite,
+      description: "Can edit files, but only in this workspace",
+    },
+    {
+      value: "danger-full-access",
+      label: nickel.fullAccess,
+      description: "Can edit files outside this workspace",
+    },
+  ];
 })();

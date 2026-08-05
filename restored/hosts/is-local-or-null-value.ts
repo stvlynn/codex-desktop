@@ -26,7 +26,9 @@ export type IsLocalOrNullValuePeers = {
 let peers: IsLocalOrNullValuePeers | null = null;
 
 /** Wire isLocalOrNullValue peers once companions land. */
-export function setIsLocalOrNullValuePeers(next: IsLocalOrNullValuePeers): void {
+export function setIsLocalOrNullValuePeers(
+  next: IsLocalOrNullValuePeers,
+): void {
   peers = next;
 }
 
@@ -39,7 +41,21 @@ export function isLocalOrNullValue() {
   }
 
   return peers.e(() => {
-    J6i = peers.c(), peers.Qt(), peers.Ho(), peers.Au(), Y6i = peers.r(peers.o(), 1), peers.$u(), peers.ih(), peers.EM(), peers.Lqr(), peers.I6i(), peers.Kb(), peers.gT(), peers.U_(), peers.Uf(), peers.z6i();
+    ((J6i = peers.c()),
+      peers.Qt(),
+      peers.Ho(),
+      peers.Au(),
+      (Y6i = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.ih(),
+      peers.EM(),
+      peers.Lqr(),
+      peers.I6i(),
+      peers.Kb(),
+      peers.gT(),
+      peers.U_(),
+      peers.Uf(),
+      peers.z6i());
   });
 }
 

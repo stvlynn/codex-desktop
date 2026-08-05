@@ -11,10 +11,7 @@ import {
 import { AgentMigrationItemStep } from "./agent-migration-item-step";
 import { AgentMigrationSourceStep } from "./agent-migration-source-step";
 import { ConversationalOnboardingStep } from "./conversational-onboarding-step";
-import {
-  OnboardingLoadingProbe,
-  SafeContinuePanel,
-} from "./runtime-bridges";
+import { OnboardingLoadingProbe, SafeContinuePanel } from "./runtime-bridges";
 import { RoleSelectionStep } from "./role-selection-step";
 import { TeenInterestsStep } from "./teen-interests-step";
 import { TeenPromptsStep } from "./teen-prompts-step";
@@ -118,9 +115,7 @@ export function OnboardingStepRouter({
     case ONBOARDING_STEPS.AgentMigrationSourceSelection:
       return <AgentMigrationSourceStep {...props} />;
     case ONBOARDING_STEPS.AgentMigrationItemSelection:
-      return (
-        <AgentMigrationItemStep {...props} providerIds={providerIds} />
-      );
+      return <AgentMigrationItemStep {...props} providerIds={providerIds} />;
     case ONBOARDING_STEPS.Complete:
       return <CompleteStep {...props} />;
     case ONBOARDING_STEPS.Start:

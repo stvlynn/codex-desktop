@@ -22,5 +22,5 @@ export function deferredUiUJ(e: unknown, t: unknown, n: unknown) {
     throw new Error("deferredUiUJ peers are not configured");
   }
 
-  t == null ? peers.k$r(e, n) : peers.P$r(e, t, n), peers.h0r(e, n);
+  (t == null ? peers.k$r(e, n) : peers.P$r(e, t, n), peers.h0r(e, n));
 }

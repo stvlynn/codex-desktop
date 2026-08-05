@@ -15,7 +15,9 @@ export type BindBinddeferredUiQ43Peers = {
 let peers: BindBinddeferredUiQ43Peers | null = null;
 
 /** Wire bindBinddeferredUiQ43 peers once companions land. */
-export function setBindBinddeferredUiQ43Peers(next: BindBinddeferredUiQ43Peers): void {
+export function setBindBinddeferredUiQ43Peers(
+  next: BindBinddeferredUiQ43Peers,
+): void {
   peers = next;
 }
 

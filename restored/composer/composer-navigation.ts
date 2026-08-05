@@ -9,7 +9,9 @@ export type ComposerNavigationPeers = {
 let peers: ComposerNavigationPeers | null = null;
 
 /** Wire composerNavigation peers once companions land. */
-export function setComposerNavigationPeers(next: ComposerNavigationPeers): void {
+export function setComposerNavigationPeers(
+  next: ComposerNavigationPeers,
+): void {
   peers = next;
 }
 

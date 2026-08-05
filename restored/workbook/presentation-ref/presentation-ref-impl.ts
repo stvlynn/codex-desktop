@@ -32,13 +32,8 @@ export function parseSchemeColorRef(prefIn4435: any) {
   if (!prefBind13671) return;
   let prefBind13672 = prefBind13671.indexOf(SCHEME_REF_SEP);
   if (prefBind13672 > 0) {
-    let prefBind20055 = prefBind13671.slice(
-        0,
-        prefBind13672,
-      ),
-      prefBind20056 = prefBind13671
-        .slice(prefBind13672 + 1)
-        .trim(),
+    let prefBind20055 = prefBind13671.slice(0, prefBind13672),
+      prefBind20056 = prefBind13671.slice(prefBind13672 + 1).trim(),
       prefBind20057 = Number(prefBind20055);
     if (Number.isFinite(prefBind20057))
       return {
@@ -68,16 +63,13 @@ export function elementToAid(prefIn4941: any) {
   }
   if (prefIn4941 instanceof ImageElement) {
     let prefBind22552 = prefIn4941.slideId;
-    return prefBind22552
-      ? `im/${prefBind22552}.${prefIn4941.id}`
-      : undefined;
+    return prefBind22552 ? `im/${prefBind22552}.${prefIn4941.id}` : undefined;
   }
   if (prefIn4941 instanceof prefH.NotesSlide) {
     let prefBind22695 = prefIn4941.slideId;
     return prefBind22695 ? `nt/${prefBind22695}` : undefined;
   }
-  if (prefIn4941 instanceof prefH.CommentThread)
-    return `th/${prefIn4941.id}`;
+  if (prefIn4941 instanceof prefH.CommentThread) return `th/${prefIn4941.id}`;
 }
 
 /** Legacy aliases (wave-126). */

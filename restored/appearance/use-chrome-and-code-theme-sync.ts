@@ -22,7 +22,9 @@ export type UseChromeAndCodeThemeSyncPeers = {
 let peers: UseChromeAndCodeThemeSyncPeers | null = null;
 
 /** Wire useChromeAndCodeThemeSync peers once companions land. */
-export function setUseChromeAndCodeThemeSyncPeers(next: UseChromeAndCodeThemeSyncPeers): void {
+export function setUseChromeAndCodeThemeSyncPeers(
+  next: UseChromeAndCodeThemeSyncPeers,
+): void {
   peers = next;
 }
 

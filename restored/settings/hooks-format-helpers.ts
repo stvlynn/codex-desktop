@@ -11,14 +11,20 @@ export const HOOKS_SETTINGS_BASE_PATH = "/settings";
 export function ensureHooksSettingsRouteInit(): void {}
 
 /** Bundle `XKc` / export `dd` — fallback "Hook {index}" title. */
-export function formatFallbackHookTitle(index: number, intl: HooksIntlShape): string {
+export function formatFallbackHookTitle(
+  index: number,
+  intl: HooksIntlShape,
+): string {
   return intl.formatMessage(hooksEventMessages.fallbackHookTitle, {
     index: index + 1,
   });
 }
 
 /** Bundle `JKc` / export `ud` — localized hook event label. */
-export function formatHookEventLabel(eventName: string, intl: HooksIntlShape): string {
+export function formatHookEventLabel(
+  eventName: string,
+  intl: HooksIntlShape,
+): string {
   switch (eventName) {
     case "preToolUse":
       return intl.formatMessage(hooksEventMessages.preToolUse);
@@ -48,7 +54,10 @@ export function formatHookEventLabel(eventName: string, intl: HooksIntlShape): s
 }
 
 /** Bundle `YKc` / export `ld` — localized hook event description. */
-export function formatHookEventDescription(eventName: string, intl: HooksIntlShape): string {
+export function formatHookEventDescription(
+  eventName: string,
+  intl: HooksIntlShape,
+): string {
   switch (eventName) {
     case "preToolUse":
       return intl.formatMessage(hooksEventMessages.preToolUseDescription);
@@ -80,7 +89,9 @@ export function formatHookEventDescription(eventName: string, intl: HooksIntlSha
 }
 
 /** Bundle `ZKc` / export `fd` — strip marketplace suffix from plugin id. */
-export function pluginIdBasename(pluginId: string | null | undefined): string | null {
+export function pluginIdBasename(
+  pluginId: string | null | undefined,
+): string | null {
   if (pluginId == null) return null;
   return pluginId.split("@")[0] || null;
 }
@@ -88,7 +99,10 @@ export function pluginIdBasename(pluginId: string | null | undefined): string | 
 /**
  * Bundle `QHs` / export `l_` — display basename for a path (or explicit name).
  */
-export function displayNameFromPath(path: string | null | undefined, explicitName?: string | null): string | null {
+export function displayNameFromPath(
+  path: string | null | undefined,
+  explicitName?: string | null,
+): string | null {
   if (explicitName && explicitName.trim().length > 0) {
     return explicitName.trim();
   }

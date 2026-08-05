@@ -16,7 +16,9 @@ export type UseWorkspaceOriginRootQueryPeers = {
 let peers: UseWorkspaceOriginRootQueryPeers | null = null;
 
 /** Wire useWorkspaceOriginRootQuery peers once companions land. */
-export function setUseWorkspaceOriginRootQueryPeers(next: UseWorkspaceOriginRootQueryPeers): void {
+export function setUseWorkspaceOriginRootQueryPeers(
+  next: UseWorkspaceOriginRootQueryPeers,
+): void {
   peers = next;
 }
 

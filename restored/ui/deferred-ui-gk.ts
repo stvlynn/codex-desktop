@@ -24,6 +24,6 @@ export function bindDeferredUiGk() {
   }
 
   return peers.e(() => {
-    peers.Qt(), peers.Gf(), MEo = 3e4;
+    (peers.Qt(), peers.Gf(), (MEo = 3e4));
   });
 }

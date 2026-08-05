@@ -32,16 +32,38 @@ export function bindCompleteQuery() {
   }
 
   return peers.e(() => {
-    zJa = peers.c(), BJa = peers.r(peers.o(), 1), peers.ani(), peers.lni(), sU = () => {
-      let e = (0, peers.BJa.useContext)(peers.ini);
-      if (!peers.e) throw Error(`useComposerController must be used within a ComposerControllerScope`);
-      return peers.e;
-    }, cU = (e, t) => {
-      let n = (0, peers.zJa.c)(6),
-        r;
-      n[0] === peers.e.view ? r = n[1] : (r = t => peers.SP(peers.e.view, t), n[0] = peers.e.view, n[1] = peers.r);
-      let i, a;
-      return n[2] !== peers.e || n[3] !== t ? (i = () => t(peers.e), a = () => t(peers.e), n[2] = peers.e, n[3] = t, n[4] = i, n[5] = a) : (i = n[4], a = n[5]), (0, peers.BJa.useSyncExternalStore)(peers.r, i, a);
-    };
+    ((zJa = peers.c()),
+      (BJa = peers.r(peers.o(), 1)),
+      peers.ani(),
+      peers.lni(),
+      (sU = () => {
+        let e = (0, peers.BJa.useContext)(peers.ini);
+        if (!peers.e)
+          throw Error(
+            `useComposerController must be used within a ComposerControllerScope`,
+          );
+        return peers.e;
+      }),
+      (cU = (e, t) => {
+        let n = (0, peers.zJa.c)(6),
+          r;
+        n[0] === peers.e.view
+          ? (r = n[1])
+          : ((r = (t) => peers.SP(peers.e.view, t)),
+            (n[0] = peers.e.view),
+            (n[1] = peers.r));
+        let i, a;
+        return (
+          n[2] !== peers.e || n[3] !== t
+            ? ((i = () => t(peers.e)),
+              (a = () => t(peers.e)),
+              (n[2] = peers.e),
+              (n[3] = t),
+              (n[4] = i),
+              (n[5] = a))
+            : ((i = n[4]), (a = n[5])),
+          (0, peers.BJa.useSyncExternalStore)(peers.r, i, a)
+        );
+      }));
   });
 }

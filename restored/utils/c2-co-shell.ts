@@ -22,5 +22,5 @@ export function bindC2CoShell() {
     throw new Error("bindC2CoShell peers are not configured");
   }
 
-  return peers.JE(e => peers.ug(e)?.status === `inProgress`);
+  return peers.JE((e) => peers.ug(e)?.status === `inProgress`);
 }

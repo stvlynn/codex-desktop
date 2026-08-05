@@ -12,7 +12,9 @@ export type ReadLoginRouteQuerySnapshotPeers = {
 let peers: ReadLoginRouteQuerySnapshotPeers | null = null;
 
 /** Wire readLoginRouteQuerySnapshot peers once companions land. */
-export function setReadLoginRouteQuerySnapshotPeers(next: ReadLoginRouteQuerySnapshotPeers): void {
+export function setReadLoginRouteQuerySnapshotPeers(
+  next: ReadLoginRouteQuerySnapshotPeers,
+): void {
   peers = next;
 }
 

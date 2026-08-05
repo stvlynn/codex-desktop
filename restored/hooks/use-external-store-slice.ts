@@ -12,7 +12,9 @@ export type UseExternalStoreSlicePeers = {
 let peers: UseExternalStoreSlicePeers | null = null;
 
 /** Wire useExternalStoreSlice peers once companions land. */
-export function setUseExternalStoreSlicePeers(next: UseExternalStoreSlicePeers): void {
+export function setUseExternalStoreSlicePeers(
+  next: UseExternalStoreSlicePeers,
+): void {
   peers = next;
 }
 

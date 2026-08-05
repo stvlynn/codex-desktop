@@ -16,7 +16,11 @@ export type TurnLikeForStopSource = {
 };
 
 /** Classify how a command-execution row should be stopped / restored. */
-export function commandExecutionStopSource(item: CommandExecutionLike, turn: TurnLikeForStopSource, isLatestInProgressTurn: boolean): CommandExecutionStopSource | null {
+export function commandExecutionStopSource(
+  item: CommandExecutionLike,
+  turn: TurnLikeForStopSource,
+  isLatestInProgressTurn: boolean,
+): CommandExecutionStopSource | null {
   if (turn.interruptedCommandExecutionItemIds?.includes(item.id)) return null;
   if (item.status === "inProgress") {
     return isLatestInProgressTurn

@@ -27,10 +27,7 @@ export function fillConfigWithoutProto(dtIn2919: any) {
   if (dtIn2919 !== undefined) {
     if (typeof dtIn2919 == "string") return dtIn2919;
     if (dtIn2919.type !== "proto") {
-      if (
-        dtIn2919.type === "none" ||
-        dtIn2919.type === "image"
-      )
+      if (dtIn2919.type === "none" || dtIn2919.type === "image")
         return dtIn2919;
       if (dtIn2919.type === "solid") {
         let dtBind20224 = colorConfigWithoutProto(dtIn2919.color);
@@ -64,11 +61,9 @@ export function fillConfigWithoutProto(dtIn2919: any) {
 
 export function outlineConfigWithoutProto(dtIn8448: any) {
   if (dtIn8448 === undefined) return;
-  let dtBind18950 = new Line(dtIn8448).toConfig(
-    {
-      preserveProto: false,
-    },
-  );
+  let dtBind18950 = new Line(dtIn8448).toConfig({
+    preserveProto: false,
+  });
   if (!(!dtBind18950 || "type" in dtBind18950))
     return {
       style: dtBind18950.style,
@@ -92,13 +87,9 @@ export function hasParagraphChrome(props: any) {
 export function runToConfig(props: any) {
   let dtBind7520 = props.textStyle,
     dtBind7521 = {},
-    dtBind7522 = dtBind7520
-      ? new TextStyle(dtBind7520)
-      : undefined;
-  dtBind7520?.bold !== undefined &&
-    (dtBind7521.bold = dtBind7520.bold);
-  dtBind7520?.italic !== undefined &&
-    (dtBind7521.italic = dtBind7520.italic);
+    dtBind7522 = dtBind7520 ? new TextStyle(dtBind7520) : undefined;
+  dtBind7520?.bold !== undefined && (dtBind7521.bold = dtBind7520.bold);
+  dtBind7520?.italic !== undefined && (dtBind7521.italic = dtBind7520.italic);
   dtBind7520?.underline !== undefined &&
     (dtBind7521.underline = dtBind7520.underline);
   dtBind7522?.fontSize !== undefined &&
@@ -110,22 +101,16 @@ export function runToConfig(props: any) {
       preserveProto: false,
     }),
   );
-  dtBind7523 !== undefined &&
-    (dtBind7521.fill = dtBind7523);
-  let dtBind7524 = colorConfigWithoutProto(
-    dtBind7522?.highlight?.toConfig(),
-  );
-  dtBind7524 !== undefined &&
-    (dtBind7521.highlight = dtBind7524);
+  dtBind7523 !== undefined && (dtBind7521.fill = dtBind7523);
+  let dtBind7524 = colorConfigWithoutProto(dtBind7522?.highlight?.toConfig());
+  dtBind7524 !== undefined && (dtBind7521.highlight = dtBind7524);
   let dtBind7525 = outlineConfigWithoutProto(
     dtBind7522?.outline?.toConfig({
       preserveProto: false,
     }),
   );
-  dtBind7525 !== undefined &&
-    (dtBind7521.outline = dtBind7525);
-  dtBind7520?.shadow !== undefined &&
-    (dtBind7521.shadow = "shadow");
+  dtBind7525 !== undefined && (dtBind7521.outline = dtBind7525);
+  dtBind7520?.shadow !== undefined && (dtBind7521.shadow = "shadow");
   let dtBind7526 = Object.keys(dtBind7521).length > 0,
     dtBind7527 = props.hyperlink !== undefined;
   return !dtBind7526 && !dtBind7527
@@ -144,9 +129,7 @@ export function runToConfig(props: any) {
 }
 
 export function paragraphToConfig(dtIn3588: any) {
-  let dtBind12107 = (dtIn3588.runs ?? []).map((item) =>
-    runToConfig(item),
-  );
+  let dtBind12107 = (dtIn3588.runs ?? []).map((item) => runToConfig(item));
   return hasParagraphChrome(dtIn3588)
     ? {
         runs: dtBind12107.length > 0 ? dtBind12107 : [""],
@@ -167,4 +150,3 @@ export function paragraphToConfig(dtIn3588: any) {
       ? dtBind12107
       : [""];
 }
-

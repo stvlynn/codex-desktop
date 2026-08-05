@@ -16,20 +16,49 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CodexPluginPageName } from "../../analytics/codex-plugin-page-name";
 import { NOOP_ANALYTICS_CLIENT } from "../../analytics/noop-analytics-client";
 import { APP_VERSION } from "../../app/app-version";
-import { avatarOverlayNativeFrame_a, avatarOverlayNativeFrame_i, avatarOverlayNativeFrame_n, avatarOverlayNativeFrame_o, avatarOverlayNativeFrame_r, avatarOverlayNativeFrame_t } from "../../artifact/avatar-overlay-native-frame";
-import { AvatarOverlayPillDismissButton, ensureAvatarOverlayPillDismissButtonUiInit } from "../../artifact/avatar-overlay-pill-dismiss-button";
+import {
+  avatarOverlayNativeFrame_a,
+  avatarOverlayNativeFrame_i,
+  avatarOverlayNativeFrame_n,
+  avatarOverlayNativeFrame_o,
+  avatarOverlayNativeFrame_r,
+  avatarOverlayNativeFrame_t,
+} from "../../artifact/avatar-overlay-native-frame";
+import {
+  AvatarOverlayPillDismissButton,
+  ensureAvatarOverlayPillDismissButtonUiInit,
+} from "../../artifact/avatar-overlay-pill-dismiss-button";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { AUTOMATION_MISSING_IN_APP_ERROR } from "../../automations/automation-missing-error";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
 import { getPersistedAtomItem } from "../../boundaries/persisted-atom-store";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { buildMcpToolApprovalResult } from "../../composer/mcp-tool-approval-result";
 import { recentConversationsMetaQueryKey } from "../../conversation/recent-conversations-meta-query-key";
-import { avatarOverlayMascotAspectRatio, defaultAvatarOverlayMascotWidthPx, ensureAvatarOverlayMascotSizeInit, useAvatarOverlayMascotSize } from "../../desktop/avatar-overlay-mascot-size";
+import {
+  avatarOverlayMascotAspectRatio,
+  defaultAvatarOverlayMascotWidthPx,
+  ensureAvatarOverlayMascotSizeInit,
+  useAvatarOverlayMascotSize,
+} from "../../desktop/avatar-overlay-mascot-size";
 import { ensureRemoteSshConnectionEventInit } from "../../environments/ensure-remote-ssh-connection-event-init";
-import { ensureUseFloatingWindowPointerInteractivityInit, useFloatingWindowPointerInteractivity } from "../../hooks/use-floating-window-pointer-interactivity";
+import {
+  ensureUseFloatingWindowPointerInteractivityInit,
+  useFloatingWindowPointerInteractivity,
+} from "../../hooks/use-floating-window-pointer-interactivity";
 import { useIsDarkAppearance } from "../../hooks/use-is-dark-appearance";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { LOCAL_HOST_ID } from "../../hosts/local-host-id";
@@ -38,7 +67,10 @@ import { AppIconJG } from "../../icons/app-icon-jg";
 import { AppIconMlt } from "../../icons/app-icon-mlt";
 import { AppIconPlt } from "../../icons/app-icon-plt";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { findSidebarSectionElement, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
@@ -54,7 +86,27 @@ import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { REALTIME_VOICE_MODE_ID } from "../../voice/realtime-voice-mode-id";
 import { AVATAR_OVERLAY_SURFACE_STACK_IDS } from "../avatar-overlay-surface-stack-ids";
 import { buildAvatarOverlayAnalyticsPayload } from "../build-avatar-overlay-analytics-payload";
-import { avatarOverlaySelectionB, avatarOverlaySelectionD, avatarOverlaySelectionF, avatarOverlaySelectionG, avatarOverlaySelectionH, avatarOverlaySelectionI, avatarOverlaySelectionL, avatarOverlaySelectionM, avatarOverlaySelectionN, avatarOverlaySelectionO, avatarOverlaySelectionP, avatarOverlaySelectionR, avatarOverlaySelectionT, avatarOverlaySelectionU, avatarOverlaySelectionUpperC, avatarOverlaySelectionUpperS, avatarOverlaySelectionV, avatarOverlaySelectionX, avatarOverlaySelectionY } from "../use-avatar-overlay-selection";
+import {
+  avatarOverlaySelectionB,
+  avatarOverlaySelectionD,
+  avatarOverlaySelectionF,
+  avatarOverlaySelectionG,
+  avatarOverlaySelectionH,
+  avatarOverlaySelectionI,
+  avatarOverlaySelectionL,
+  avatarOverlaySelectionM,
+  avatarOverlaySelectionN,
+  avatarOverlaySelectionO,
+  avatarOverlaySelectionP,
+  avatarOverlaySelectionR,
+  avatarOverlaySelectionT,
+  avatarOverlaySelectionU,
+  avatarOverlaySelectionUpperC,
+  avatarOverlaySelectionUpperS,
+  avatarOverlaySelectionV,
+  avatarOverlaySelectionX,
+  avatarOverlaySelectionY,
+} from "../use-avatar-overlay-selection";
 
 // Wave5d soft stubs.
 const $: any = undefined;
@@ -167,74 +219,96 @@ function avatarOverlayNativePageHelper18__splitRest2(__splitParams: any) {
             draft: "",
             notificationId: olive.id,
             submissionStatus: "idle",
-            turnKey: olive.turnKey
+            turnKey: olive.turnKey,
           });
           reef && isle(true);
           return;
         case "follow-up-editor-changed":
-          hill(topaz => topaz?.notificationId === olive.id && topaz.turnKey === olive.turnKey ? {
-            ...topaz,
-            caretPoint: prism.caretPoint,
-            draft: prism.draft
-          } : topaz);
+          hill((topaz) =>
+            topaz?.notificationId === olive.id &&
+            topaz.turnKey === olive.turnKey
+              ? {
+                  ...topaz,
+                  caretPoint: prism.caretPoint,
+                  draft: prism.draft,
+                }
+              : topaz,
+          );
           return;
         case "stop":
           if (sage == null) return;
           hill(null);
           reef && juniper != null && isle(false);
           Promise.resolve(onRunNotificationControl(olive, prism)).catch(() => {
-            lagoon.get(toastAtom).danger(meadow.formatMessage({
-              id: "avatarOverlay.stopNotificationError",
-              defaultMessage: "Unable to stop activity",
-              description: "Error shown when stopping a running activity from the floating avatar overlay fails"
-            }));
+            lagoon.get(toastAtom).danger(
+              meadow.formatMessage({
+                id: "avatarOverlay.stopNotificationError",
+                defaultMessage: "Unable to stop activity",
+                description:
+                  "Error shown when stopping a running activity from the floating avatar overlay fails",
+              }),
+            );
           });
           return;
-        case "submit-follow-up":
-          {
-            let ultra = prism.prompt.trim();
-            if (sage == null || ultra.length === 0) return;
-            hill(vapor => vapor?.notificationId === olive.id && vapor.turnKey === olive.turnKey ? {
-              ...vapor,
-              submissionStatus: "submitting"
-            } : vapor);
-            Promise.resolve(onRunNotificationControl(olive, {
+        case "submit-follow-up": {
+          let ultra = prism.prompt.trim();
+          if (sage == null || ultra.length === 0) return;
+          hill((vapor) =>
+            vapor?.notificationId === olive.id &&
+            vapor.turnKey === olive.turnKey
+              ? {
+                  ...vapor,
+                  submissionStatus: "submitting",
+                }
+              : vapor,
+          );
+          Promise.resolve(
+            onRunNotificationControl(olive, {
               type: "submit-follow-up",
-              prompt: ultra
-            })).then(() => {
-              let wheat = nest.find(item => {
-                let {
-                  notification
-                } = item;
+              prompt: ultra,
+            }),
+          )
+            .then(() => {
+              let wheat = nest.find((item) => {
+                let { notification } = item;
                 return notification.id === olive.id;
               });
               if (sage.type === "app-server-conversation" && wheat != null) {
                 let yarn = {
                   notificationId: olive.id,
-                  replacedSubtitle: wheat.copy.subtitle
+                  replacedSubtitle: wheat.copy.subtitle,
                 };
                 oak(yarn);
                 window.setTimeout(() => {
-                  oak(zephyr => zephyr === yarn ? null : zephyr);
+                  oak((zephyr) => (zephyr === yarn ? null : zephyr));
                 }, harbor);
               }
-              hill(acorn => acorn?.notificationId === olive.id && acorn.turnKey === olive.turnKey ? null : acorn);
+              hill((acorn) =>
+                acorn?.notificationId === olive.id &&
+                acorn.turnKey === olive.turnKey
+                  ? null
+                  : acorn,
+              );
               reef && isle(false);
-            }).catch(() => {
-              hill(bloom => bloom?.notificationId === olive.id && bloom.turnKey === olive.turnKey ? {
-                ...bloom,
-                submissionStatus: "error"
-              } : bloom);
+            })
+            .catch(() => {
+              hill((bloom) =>
+                bloom?.notificationId === olive.id &&
+                bloom.turnKey === olive.turnKey
+                  ? {
+                      ...bloom,
+                      submissionStatus: "error",
+                    }
+                  : bloom,
+              );
             });
-            return;
-          }
+          return;
+        }
       }
     };
   let kite = jade,
-    lemon = coral => {
-      let {
-        action
-      } = coral;
+    lemon = (coral) => {
+      let { action } = coral;
       switch (action.type) {
         case "activate-notification":
           petal(action.notificationId);
@@ -269,12 +343,14 @@ function avatarOverlayNativePageHelper18__splitRest2(__splitParams: any) {
           yarrow(action.isVisible);
           return;
         case "scroll-activity-stack":
-          quiet(drift => AppInitialLgt({
-            contentHeight: azure.contentHeight,
-            deltaY: action.deltaY,
-            scrollOffset: drift,
-            viewportHeight: azure.viewportRect.height
-          }));
+          quiet((drift) =>
+            AppInitialLgt({
+              contentHeight: azure.contentHeight,
+              deltaY: action.deltaY,
+              scrollOffset: drift,
+              viewportHeight: azure.viewportRect.height,
+            }),
+          );
           return;
         case "submit-quick-chat":
           birch(action.prompt);
@@ -297,101 +373,108 @@ function avatarOverlayNativePageHelper18__splitRest2(__splitParams: any) {
         case "toggle-voice-mute":
           dew.toggleMute();
           return;
-        case "dismiss-notification":
-          {
-            let eagle = notifications.find(item => {
-              let {
-                id
-              } = item;
-              return id === action.notificationId;
-            });
-            eagle != null && alpha1(eagle);
-            return;
-          }
-        case "open-notification-actions":
-          {
-            let frost = notifications.find(item => {
-              let {
-                id,
-                notificationPreferenceId
-              } = item;
-              return id === action.notificationId && notificationPreferenceId === action.notificationPreferenceId;
-            });
-            frost != null && _r(frost);
-            return;
-          }
-        case "run-notification-control":
-          {
-            let glide = notifications.find(item => {
-              let {
-                id
-              } = item;
-              return id === action.notificationId;
-            });
-            glide == null ? action.action.type === "close-follow-up" && hill(null) : kite(glide, action.action, false);
-            return;
-          }
-        case "run-notification-action":
-          {
-            let honey = notifications.find(item => {
-              let {
-                id
-              } = item;
-              return id === action.notificationId;
-            });
-            honey != null && bravo1(honey, action.action);
-            return;
-          }
-        case "submit-question-option":
-          {
-            let iris = notifications.find(item => {
-              let {
-                id
-              } = item;
-              return id === action.notificationId;
-            });
-            iris != null && copper1(iris, action.option);
-          }
+        case "dismiss-notification": {
+          let eagle = notifications.find((item) => {
+            let { id } = item;
+            return id === action.notificationId;
+          });
+          eagle != null && alpha1(eagle);
+          return;
+        }
+        case "open-notification-actions": {
+          let frost = notifications.find((item) => {
+            let { id, notificationPreferenceId } = item;
+            return (
+              id === action.notificationId &&
+              notificationPreferenceId === action.notificationPreferenceId
+            );
+          });
+          frost != null && _r(frost);
+          return;
+        }
+        case "run-notification-control": {
+          let glide = notifications.find((item) => {
+            let { id } = item;
+            return id === action.notificationId;
+          });
+          glide == null
+            ? action.action.type === "close-follow-up" && hill(null)
+            : kite(glide, action.action, false);
+          return;
+        }
+        case "run-notification-action": {
+          let honey = notifications.find((item) => {
+            let { id } = item;
+            return id === action.notificationId;
+          });
+          honey != null && bravo1(honey, action.action);
+          return;
+        }
+        case "submit-question-option": {
+          let iris = notifications.find((item) => {
+            let { id } = item;
+            return id === action.notificationId;
+          });
+          iris != null && copper1(iris, action.option);
+        }
       }
     };
   let marble;
-  marble = [delta1, notifications, dew.start, dew.stop, dew.toggleMicrophoneMute, dew.toggleMute];
+  marble = [
+    delta1,
+    notifications,
+    dew.start,
+    dew.stop,
+    dew.toggleMicrophoneMute,
+    dew.toggleMute,
+  ];
   writeScrollTop("avatar-overlay-composition-action", lemon, marble);
   let nickel, onyx;
-  nickel = jewel => {
+  nickel = (jewel) => {
     let {
       elementSizeRevision,
       isGlobalRealtimeVoicePresentation,
       layout,
       nativeCompositionState,
-      petOpenIntent
+      petOpenIntent,
     } = jewel;
-    elementSizeRevision != null && elementSizeRevision < echo1.current || falcon1.current != null && nativeCompositionState.revision < falcon1.current.revision || (elementSizeRevision === gamma1.current && (gamma1.current = null), falcon1.current = nativeCompositionState, harbor1(isGlobalRealtimeVoicePresentation), indigo1(layout), jade1(petOpenIntent), kite1(nativeCompositionState));
+    (elementSizeRevision != null && elementSizeRevision < echo1.current) ||
+      (falcon1.current != null &&
+        nativeCompositionState.revision < falcon1.current.revision) ||
+      (elementSizeRevision === gamma1.current && (gamma1.current = null),
+      (falcon1.current = nativeCompositionState),
+      harbor1(isGlobalRealtimeVoicePresentation),
+      indigo1(layout),
+      jade1(petOpenIntent),
+      kite1(nativeCompositionState));
   };
   onyx = [];
   writeScrollTop("avatar-overlay-layout-changed", nickel, onyx);
   let pearl, quartz;
-  pearl = knoll => {
-    let {
-      direction
-    } = knoll;
-    lemon1.current != null && (lemon1.current.usesWindowServerDrag = direction != null);
+  pearl = (knoll) => {
+    let { direction } = knoll;
+    lemon1.current != null &&
+      (lemon1.current.usesWindowServerDrag = direction != null);
     marble1(direction == null ? null : `running-${direction}`);
   };
   quartz = [];
   writeScrollTop("avatar-overlay-window-drag-state-changed", pearl, quartz);
   let river, slate;
   river = () => {
-    let lunar = north => {
+    let lunar = (north) => {
         $(north, true);
       },
-      moss = orbit => {
+      moss = (orbit) => {
         $(orbit, false);
       };
-    return window.addEventListener("pointerup", lunar), window.addEventListener("pointercancel", moss), () => {
-      window.removeEventListener("pointerup", lunar);
-      window.removeEventListener("pointercancel", moss);
-    };
+    return (
+      window.addEventListener("pointerup", lunar),
+      window.addEventListener("pointercancel", moss),
+      () => {
+        window.removeEventListener("pointerup", lunar);
+        window.removeEventListener("pointercancel", moss);
+      }
+    );
   };
   slate = [$];
   falcon.useEffect(river, slate);
@@ -409,11 +492,15 @@ function avatarOverlayNativePageHelper18__splitRest2(__splitParams: any) {
       ridge.observe(storm);
       for (let tide of echo(storm)) ridge.observe(tide);
     }
-    return window.addEventListener("resize", quest), quest(), () => {
-      pine != null && window.cancelAnimationFrame(pine);
-      ridge.disconnect();
-      window.removeEventListener("resize", quest);
-    };
+    return (
+      window.addEventListener("resize", quest),
+      quest(),
+      () => {
+        pine != null && window.cancelAnimationFrame(pine);
+        ridge.disconnect();
+        window.removeEventListener("resize", quest);
+      }
+    );
   };
   let umbra;
   umbra = [nickel1, selectedAvatar.id, pearl1];
@@ -455,110 +542,124 @@ function avatarOverlayNativePageHelper18__splitRest2(__splitParams: any) {
   let cedar = identity({
     id: "petOverlay.closePet",
     defaultMessage: "Close pet",
-    description: "Context menu item that closes the floating Codex pet"
+    description: "Context menu item that closes the floating Codex pet",
   });
-  let $r = [{
-    id: "close-avatar",
-    message: cedar,
-    onSelect: () => {
-      violet1(CODEX_LOGIN_SUCCESS_TYPE.CODEX_AVATAR_OVERLAY_ACTION_CLOSE_REQUESTED, CodexPluginPageName.CODEX_AVATAR_OVERLAY_SOURCE_CONTEXT_MENU);
-      dew.stop().catch(alpha);
-      onClosePet();
-    }
-  }];
+  let $r = [
+    {
+      id: "close-avatar",
+      message: cedar,
+      onSelect: () => {
+        violet1(
+          CODEX_LOGIN_SUCCESS_TYPE.CODEX_AVATAR_OVERLAY_ACTION_CLOSE_REQUESTED,
+          CodexPluginPageName.CODEX_AVATAR_OVERLAY_SOURCE_CONTEXT_MENU,
+        );
+        dew.stop().catch(alpha);
+        onClosePet();
+      },
+    },
+  ];
   let daisy = willow1 ? true : undefined,
     ember = avatarOverlayMascotAspectRatio(mascotWidthPx);
   let flint = {
     cleanupEnabled: dictationCleanupEnabled,
     streamingEnabled: dictationStreamingEnabled,
-    supportState: dictationSupportState
+    supportState: dictationSupportState,
   };
-  let garnet = apex => {
-    quiet(brook => AppInitialLgt({
-      contentHeight: azure.contentHeight,
-      deltaY: apex,
-      scrollOffset: brook,
-      viewportHeight: azure.viewportRect.height
-    }));
+  let garnet = (apex) => {
+    quiet((brook) =>
+      AppInitialLgt({
+        contentHeight: azure.contentHeight,
+        deltaY: apex,
+        scrollOffset: brook,
+        viewportHeight: azure.viewportRect.height,
+      }),
+    );
   };
   let hazel, ivory;
-  hazel = cliff => {
+  hazel = (cliff) => {
     $(cliff, false);
   };
-  ivory = dusk => {
+  ivory = (dusk) => {
     $(dusk, false);
   };
-  let jasper = elm => {
+  let jasper = (elm) => {
     $(elm, true);
   };
   let kelp = window.electronBridge?.showContextMenu == null ? undefined : _r,
     lotus = quickChatEnabled ? vine : undefined,
     mint = quickChatEnabled ? xenon1 : undefined,
-    ui = yellow1 ? {
-      activity: dew.voiceActivity,
-      canStart: dew.canStart,
-      caption: zinc1,
-      handoff: amber1 === "global-overlay" ? basalt1?.handoff ?? null : null,
-      isSessionActive: cedar1,
-      microphoneMuted: dew.isMicrophoneMuted,
-      muted: dew.isMuted,
-      petOpenIntent: voiceOverride?.petOpenIntent ?? daisy1,
-      phase: ember1 ? flint1 : "inactive",
-      presentationAnchorRef: garnet1,
-      statusText: hazel1,
-      willResume: dew.willResume,
-      onStart: dew.start,
-      onStop: dew.stop,
-      onToggleMicrophoneMute: dew.toggleMicrophoneMute,
-      onToggleMute: dew.toggleMute
-    } : undefined;
+    ui = yellow1
+      ? {
+          activity: dew.voiceActivity,
+          canStart: dew.canStart,
+          caption: zinc1,
+          handoff:
+            amber1 === "global-overlay" ? (basalt1?.handoff ?? null) : null,
+          isSessionActive: cedar1,
+          microphoneMuted: dew.isMicrophoneMuted,
+          muted: dew.isMuted,
+          petOpenIntent: voiceOverride?.petOpenIntent ?? daisy1,
+          phase: ember1 ? flint1 : "inactive",
+          presentationAnchorRef: garnet1,
+          statusText: hazel1,
+          willResume: dew.willResume,
+          onStart: dew.start,
+          onStop: dew.stop,
+          onToggleMicrophoneMute: dew.toggleMicrophoneMute,
+          onToggleMute: dew.toggleMute,
+        }
+      : undefined;
   let nova = {
-    type: "native-root"
+    type: "native-root",
   };
-  return <AvatarOverlayNativeFrameT {...{
-    activityCopies: basalt,
-    activityStackPresentation: azure,
-    areActivityPillsVisible: ivory1,
-    avatar: selectedAvatar,
-    avatarMenuItems: $r,
-    debugWindowBorderVisible: jasper1,
-    globalDictationOrbEnabled: globalDictationOrbEnabled,
-    interactiveRegionRef: onyx1,
-    isNotificationTrayOpen: delta1,
-    layout: quartz1,
-    mascotDragState: _AvatarOverlayNativePage,
-    nativeMaterialAttached: willow1,
-    expandedNotificationIds: kelp1,
-    notificationStackContentExpanded: daisy,
-    mascotStyle: ember,
-    notifications,
-    pointerSurfaceId: lotus1,
-    quickChatDictation: flint,
-    onActivityStackScroll: garnet,
-    onActivateNotification: petal,
-    onHideActivityPills: canyon,
-    onMascotLostPointerCapture: hazel,
-    onMascotPointerCancel: ivory,
-    onMascotPointerDown: mint1,
-    onMascotPointerMove: nova1,
-    onMascotPointerUp: jasper,
-    onNotificationExpansionChange: urn,
-    onDismissNotification: alpha1,
-    onOpenNotificationActions: kelp,
-    notificationFollowUp: juniper,
-    onQuickChatEditorActiveChange: isle,
-    onQuickChatDraftChange: lotus,
-    onQuickChatVisibilityChange: mint,
-    onRunNotificationControl: kite,
-    onRunNotificationAction: bravo1,
-    onSubmitQuestionOption: copper1,
-    onSubmitQuickChat: birch,
-    onShowActivityPills: indigo,
-    quickChatDraft: olive1,
-    quickChatEnabled,
-    quickChatVisible: prism1,
-    realtimeVoiceSurface: ui,
-    renderMode: nova
-  }} />;
+  return (
+    <AvatarOverlayNativeFrameT
+      {...{
+        activityCopies: basalt,
+        activityStackPresentation: azure,
+        areActivityPillsVisible: ivory1,
+        avatar: selectedAvatar,
+        avatarMenuItems: $r,
+        debugWindowBorderVisible: jasper1,
+        globalDictationOrbEnabled: globalDictationOrbEnabled,
+        interactiveRegionRef: onyx1,
+        isNotificationTrayOpen: delta1,
+        layout: quartz1,
+        mascotDragState: _AvatarOverlayNativePage,
+        nativeMaterialAttached: willow1,
+        expandedNotificationIds: kelp1,
+        notificationStackContentExpanded: daisy,
+        mascotStyle: ember,
+        notifications,
+        pointerSurfaceId: lotus1,
+        quickChatDictation: flint,
+        onActivityStackScroll: garnet,
+        onActivateNotification: petal,
+        onHideActivityPills: canyon,
+        onMascotLostPointerCapture: hazel,
+        onMascotPointerCancel: ivory,
+        onMascotPointerDown: mint1,
+        onMascotPointerMove: nova1,
+        onMascotPointerUp: jasper,
+        onNotificationExpansionChange: urn,
+        onDismissNotification: alpha1,
+        onOpenNotificationActions: kelp,
+        notificationFollowUp: juniper,
+        onQuickChatEditorActiveChange: isle,
+        onQuickChatDraftChange: lotus,
+        onQuickChatVisibilityChange: mint,
+        onRunNotificationControl: kite,
+        onRunNotificationAction: bravo1,
+        onSubmitQuestionOption: copper1,
+        onSubmitQuickChat: birch,
+        onShowActivityPills: indigo,
+        quickChatDraft: olive1,
+        quickChatEnabled,
+        quickChatVisible: prism1,
+        realtimeVoiceSurface: ui,
+        renderMode: nova,
+      }}
+    />
+  );
   return undefined as any;
 }

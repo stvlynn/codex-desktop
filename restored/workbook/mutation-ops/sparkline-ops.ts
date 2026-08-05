@@ -32,27 +32,19 @@ export function buildSparklineAddOp(props: LooseBag) {
 export function buildSparklineSelector(opIn10317: LooseBag, opIn10318: string) {
   return {
     uid: opIn10317.uid,
-    targetRange: sparklineRangeRef(
-      opIn10317.locationRange,
-      opIn10318,
-    ),
-    sourceData: sparklineRangeRef(
-      opIn10317.sourceData,
-      opIn10318,
-    ),
+    targetRange: sparklineRangeRef(opIn10317.locationRange, opIn10318),
+    sourceData: sparklineRangeRef(opIn10317.sourceData, opIn10318),
   };
 }
-export function buildSparklineProps(opIn899: LooseBag, opIn900: string, opIn901?: LooseBag) {
+export function buildSparklineProps(
+  opIn899: LooseBag,
+  opIn900: string,
+  opIn901?: LooseBag,
+) {
   let opBind5711 = {
     type: opIn899.type,
-    targetRange: sparklineRangeRef(
-      opIn899.locationRange,
-      opIn900,
-    ),
-    sourceData: sparklineRangeRef(
-      opIn899.sourceData,
-      opIn900,
-    ),
+    targetRange: sparklineRangeRef(opIn899.locationRange, opIn900),
+    sourceData: sparklineRangeRef(opIn899.sourceData, opIn900),
     lineWeight: opIn899.lineWeight,
     displayEmptyCellsAs: opIn899.displayEmptyCellsAs,
     displayHidden: opIn899.displayHidden,
@@ -81,55 +73,27 @@ export function buildSparklineProps(opIn899: LooseBag, opIn900: string, opIn901?
       negative: opIn899.markers.negative,
     },
   };
-  opIn901?.includeUid &&
-    (opBind5711.uid = opIn899.uid);
+  opIn901?.includeUid && (opBind5711.uid = opIn899.uid);
   let opBind5712 = opIn899.dateAxisRange;
   opBind5712 &&
-    (opBind5711.dateAxisRange = sparklineRangeRef(
-      opBind5712,
-      opIn900,
-    ));
-  let opBind5713 = colorInputToConfig(
-    opIn899.seriesColor?.toConfig(),
-  );
-  opBind5713 !== undefined &&
-    (opBind5711.seriesColor = opBind5713);
-  let opBind5714 = colorInputToConfig(
-    opIn899.negativeColor?.toConfig(),
-  );
-  opBind5714 !== undefined &&
-    (opBind5711.negativeColor = opBind5714);
-  let opBind5715 = colorInputToConfig(
-    opIn899.axisColor?.toConfig(),
-  );
-  opBind5715 !== undefined &&
-    (opBind5711.axisColor = opBind5715);
-  let opBind5716 = colorInputToConfig(
-    opIn899.markersColor?.toConfig(),
-  );
-  opBind5716 !== undefined &&
-    (opBind5711.markersColor = opBind5716);
-  let opBind5717 = colorInputToConfig(
-    opIn899.firstMarkerColor?.toConfig(),
-  );
-  opBind5717 !== undefined &&
-    (opBind5711.firstMarkerColor = opBind5717);
-  let opBind5718 = colorInputToConfig(
-    opIn899.lastMarkerColor?.toConfig(),
-  );
-  opBind5718 !== undefined &&
-    (opBind5711.lastMarkerColor = opBind5718);
-  let opBind5719 = colorInputToConfig(
-    opIn899.highMarkerColor?.toConfig(),
-  );
-  opBind5719 !== undefined &&
-    (opBind5711.highMarkerColor = opBind5719);
-  let opBind5720 = colorInputToConfig(
-    opIn899.lowMarkerColor?.toConfig(),
-  );
+    (opBind5711.dateAxisRange = sparklineRangeRef(opBind5712, opIn900));
+  let opBind5713 = colorInputToConfig(opIn899.seriesColor?.toConfig());
+  opBind5713 !== undefined && (opBind5711.seriesColor = opBind5713);
+  let opBind5714 = colorInputToConfig(opIn899.negativeColor?.toConfig());
+  opBind5714 !== undefined && (opBind5711.negativeColor = opBind5714);
+  let opBind5715 = colorInputToConfig(opIn899.axisColor?.toConfig());
+  opBind5715 !== undefined && (opBind5711.axisColor = opBind5715);
+  let opBind5716 = colorInputToConfig(opIn899.markersColor?.toConfig());
+  opBind5716 !== undefined && (opBind5711.markersColor = opBind5716);
+  let opBind5717 = colorInputToConfig(opIn899.firstMarkerColor?.toConfig());
+  opBind5717 !== undefined && (opBind5711.firstMarkerColor = opBind5717);
+  let opBind5718 = colorInputToConfig(opIn899.lastMarkerColor?.toConfig());
+  opBind5718 !== undefined && (opBind5711.lastMarkerColor = opBind5718);
+  let opBind5719 = colorInputToConfig(opIn899.highMarkerColor?.toConfig());
+  opBind5719 !== undefined && (opBind5711.highMarkerColor = opBind5719);
+  let opBind5720 = colorInputToConfig(opIn899.lowMarkerColor?.toConfig());
   return (
-    opBind5720 !== undefined &&
-      (opBind5711.lowMarkerColor = opBind5720),
+    opBind5720 !== undefined && (opBind5711.lowMarkerColor = opBind5720),
     opBind5711
   );
 }

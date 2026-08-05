@@ -15,10 +15,13 @@ export type ChatgptConversationsComposerProjectSlashCommandLoadingPeers = {
   yH: (...args: unknown[]) => unknown;
 };
 
-let peers: ChatgptConversationsComposerProjectSlashCommandLoadingPeers | null = null;
+let peers: ChatgptConversationsComposerProjectSlashCommandLoadingPeers | null =
+  null;
 
 /** Wire chatgptConversationsComposerProjectSlashCommandLoading peers once companions land. */
-export function setChatgptConversationsComposerProjectSlashCommandLoadingPeers(next: ChatgptConversationsComposerProjectSlashCommandLoadingPeers): void {
+export function setChatgptConversationsComposerProjectSlashCommandLoadingPeers(
+  next: ChatgptConversationsComposerProjectSlashCommandLoadingPeers,
+): void {
   peers = next;
 }
 
@@ -27,10 +30,19 @@ export function setChatgptConversationsComposerProjectSlashCommandLoadingPeers(n
  */
 export function chatgptConversationsComposerProjectSlashCommandLoading() {
   if (peers == null) {
-    throw new Error("chatgptConversationsComposerProjectSlashCommandLoading peers are not configured");
+    throw new Error(
+      "chatgptConversationsComposerProjectSlashCommandLoading peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    eos = peers.c(), peers.Ho(), peers.yH(), peers.SH(), peers.Jkr(), peers.qas(), peers.Zas(), tos = peers.J();
+    ((eos = peers.c()),
+      peers.Ho(),
+      peers.yH(),
+      peers.SH(),
+      peers.Jkr(),
+      peers.qas(),
+      peers.Zas(),
+      (tos = peers.J()));
   });
 }

@@ -11,14 +11,23 @@ export type CreateGitLiveQueryOptionsPeers = {
 let peers: CreateGitLiveQueryOptionsPeers | null = null;
 
 /** Wire createGitLiveQueryOptions peers once companions land. */
-export function setCreateGitLiveQueryOptionsPeers(next: CreateGitLiveQueryOptionsPeers): void {
+export function setCreateGitLiveQueryOptionsPeers(
+  next: CreateGitLiveQueryOptionsPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `k3` / internal `rE`.
  */
-export function createGitLiveQueryOptions(e: unknown, t: unknown, n: unknown, r: unknown, i: unknown, a: unknown) {
+export function createGitLiveQueryOptions(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+  r: unknown,
+  i: unknown,
+  a: unknown,
+) {
   if (peers == null) {
     throw new Error("createGitLiveQueryOptions peers are not configured");
   }

@@ -15,7 +15,9 @@ export type ResolveStableWorktreeStatusPeers = {
 let peers: ResolveStableWorktreeStatusPeers | null = null;
 
 /** Wire resolveStableWorktreeStatus peers once companions land. */
-export function setResolveStableWorktreeStatusPeers(next: ResolveStableWorktreeStatusPeers): void {
+export function setResolveStableWorktreeStatusPeers(
+  next: ResolveStableWorktreeStatusPeers,
+): void {
   peers = next;
 }
 

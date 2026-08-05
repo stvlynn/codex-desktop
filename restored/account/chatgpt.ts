@@ -31,8 +31,15 @@ export function chatgpt() {
     throw new Error("chatgpt peers are not configured");
   }
   return peers.e(() => {
-    peers.Ho(), peers.TN(), peers.KM(), peers.bXr(), peers.kXr(), l2r = peers.Ma(peers.GM, ({
-      get: e
-    }) => peers.e(peers.qM) && peers.gXr(peers.e(peers.xN)) != null);
+    (peers.Ho(),
+      peers.TN(),
+      peers.KM(),
+      peers.bXr(),
+      peers.kXr(),
+      (l2r = peers.Ma(
+        peers.GM,
+        ({ get: e }) =>
+          peers.e(peers.qM) && peers.gXr(peers.e(peers.xN)) != null,
+      )));
   });
 }

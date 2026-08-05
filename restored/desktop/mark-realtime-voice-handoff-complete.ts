@@ -9,7 +9,9 @@ export type MarkRealtimeVoiceHandoffCompletePeers = {
 let peers: MarkRealtimeVoiceHandoffCompletePeers | null = null;
 
 /** Wire markRealtimeVoiceHandoffComplete peers once companions land. */
-export function setMarkRealtimeVoiceHandoffCompletePeers(next: MarkRealtimeVoiceHandoffCompletePeers): void {
+export function setMarkRealtimeVoiceHandoffCompletePeers(
+  next: MarkRealtimeVoiceHandoffCompletePeers,
+): void {
   peers = next;
 }
 
@@ -18,11 +20,20 @@ export function setMarkRealtimeVoiceHandoffCompletePeers(next: MarkRealtimeVoice
  */
 export function markRealtimeVoiceHandoffComplete(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("markRealtimeVoiceHandoffComplete peers are not configured");
+    throw new Error(
+      "markRealtimeVoiceHandoffComplete peers are not configured",
+    );
   }
 
-  e.set(peers.yX, e => e?.request === t ? t.source === `composer_button_existing_thread` && e.phase === `connected` ? null : {
-    ...e,
-    handoffComplete: !0
-  } : e);
+  e.set(peers.yX, (e) =>
+    e?.request === t
+      ? t.source === `composer_button_existing_thread` &&
+        e.phase === `connected`
+        ? null
+        : {
+            ...e,
+            handoffComplete: !0,
+          }
+      : e,
+  );
 }

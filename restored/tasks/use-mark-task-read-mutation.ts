@@ -11,7 +11,9 @@ export type UseMarkTaskReadMutationPeers = {
 let peers: UseMarkTaskReadMutationPeers | null = null;
 
 /** Wire useMarkTaskReadMutation peers once companions land. */
-export function setUseMarkTaskReadMutationPeers(next: UseMarkTaskReadMutationPeers): void {
+export function setUseMarkTaskReadMutationPeers(
+  next: UseMarkTaskReadMutationPeers,
+): void {
   peers = next;
 }
 

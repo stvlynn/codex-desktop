@@ -16,7 +16,9 @@ export type BindBindDeferredUiMQPeers = {
 let peers: BindBindDeferredUiMQPeers | null = null;
 
 /** Wire bindBindDeferredUiMQ peers once companions land. */
-export function setBindBindDeferredUiMQPeers(next: BindBindDeferredUiMQPeers): void {
+export function setBindBindDeferredUiMQPeers(
+  next: BindBindDeferredUiMQPeers,
+): void {
   peers = next;
 }
 
@@ -28,18 +30,15 @@ export function bindBindDeferredUiMQ() {
     throw new Error("bindBindDeferredUiMQ peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     let n = peers.zA(e);
     switch (n?.kind) {
-      case `local`:
-        {
-          let e = peers.pNr(t, n.threadId);
-          if (e != null) return t(peers.KNr, e.clientThreadId);
-          let r = peers.dNr(t, n.threadId);
-          return r == null ? null : t(t(peers.WNr, r));
-        }
+      case `local`: {
+        let e = peers.pNr(t, n.threadId);
+        if (e != null) return t(peers.KNr, e.clientThreadId);
+        let r = peers.dNr(t, n.threadId);
+        return r == null ? null : t(t(peers.WNr, r));
+      }
       case `remote`:
         return t(peers.GNr, n.taskId);
       case void 0:

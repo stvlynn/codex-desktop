@@ -26,6 +26,10 @@ export function bindDeferredo7() {
   }
 
   return peers.e(() => {
-    peers.WIn(), sLn = `style_variants`, cLn = `tone`, lLn = 3, uLn = /^---tone\s+(.+?)\s*$/;
+    (peers.WIn(),
+      (sLn = `style_variants`),
+      (cLn = `tone`),
+      (lLn = 3),
+      (uLn = /^---tone\s+(.+?)\s*$/));
   });
 }

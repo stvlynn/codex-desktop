@@ -9,7 +9,9 @@ export type BindDeferredFilesXGPeers = {
 let peers: BindDeferredFilesXGPeers | null = null;
 
 /** Wire bindDeferredFilesXG peers once companions land. */
-export function setBindDeferredFilesXGPeers(next: BindDeferredFilesXGPeers): void {
+export function setBindDeferredFilesXGPeers(
+  next: BindDeferredFilesXGPeers,
+): void {
   peers = next;
 }
 

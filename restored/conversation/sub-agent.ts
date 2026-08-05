@@ -27,6 +27,6 @@ export function bindSubAgent() {
   }
 
   return peers.e(() => {
-    Aot = peers.r(peers.cu(), 1), peers.got(), peers.og(), peers.xot();
+    ((Aot = peers.r(peers.cu(), 1)), peers.got(), peers.og(), peers.xot());
   });
 }

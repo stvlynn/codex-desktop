@@ -18,7 +18,10 @@ import { esmInit } from "../../runtime/rolldown-runtime";
 import { ensureCloudApiClientInit } from "../../settings/cloud-api-client";
 import { ensureSettingsQueryAtomsInit } from "../../settings/settings-ipc";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { decodeBase64ToBytes } from "../../utils/decode-base64-to-bytes";
 import { ensureAuthProviderInit, useAuth } from "../use-auth";
 import { useQuery } from "../use-query";

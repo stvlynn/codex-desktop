@@ -29,9 +29,18 @@ export function bindDesktopNote() {
   }
 
   return peers.e(() => {
-    peers.Sl(), lsc = [`desktop_note`, `csv_chart`, `hold_next_free_hour`, `send_message_to_self`], usc = peers.X().min(1), dsc = peers.pl([`desktop_note`, `csv_chart`]), fsc = peers.sl({
-      iconAppId: peers.X().min(1).optional(),
-      label: peers.X().min(1)
-    });
+    (peers.Sl(),
+      (lsc = [
+        `desktop_note`,
+        `csv_chart`,
+        `hold_next_free_hour`,
+        `send_message_to_self`,
+      ]),
+      (usc = peers.X().min(1)),
+      (dsc = peers.pl([`desktop_note`, `csv_chart`])),
+      (fsc = peers.sl({
+        iconAppId: peers.X().min(1).optional(),
+        label: peers.X().min(1),
+      })));
   });
 }

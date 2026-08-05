@@ -13,7 +13,9 @@ export type ComposerBackgroundSubagentsSummaryPeers = {
 let peers: ComposerBackgroundSubagentsSummaryPeers | null = null;
 
 /** Wire composerBackgroundSubagentsSummary peers once companions land. */
-export function setComposerBackgroundSubagentsSummaryPeers(next: ComposerBackgroundSubagentsSummaryPeers): void {
+export function setComposerBackgroundSubagentsSummaryPeers(
+  next: ComposerBackgroundSubagentsSummaryPeers,
+): void {
   peers = next;
 }
 
@@ -22,10 +24,12 @@ export function setComposerBackgroundSubagentsSummaryPeers(next: ComposerBackgro
  */
 export function composerBackgroundSubagentsSummary() {
   if (peers == null) {
-    throw new Error("composerBackgroundSubagentsSummary peers are not configured");
+    throw new Error(
+      "composerBackgroundSubagentsSummary peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    SCs = peers.c(), peers.sd(), CCs = peers.J();
+    ((SCs = peers.c()), peers.sd(), (CCs = peers.J()));
   });
 }

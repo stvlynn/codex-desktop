@@ -22,7 +22,9 @@ export type PullRequestLastAccountPeers = {
 let peers: PullRequestLastAccountPeers | null = null;
 
 /** Wire pullRequestLastAccount peers once companions land. */
-export function setPullRequestLastAccountPeers(next: PullRequestLastAccountPeers): void {
+export function setPullRequestLastAccountPeers(
+  next: PullRequestLastAccountPeers,
+): void {
   peers = next;
 }
 
@@ -35,15 +37,24 @@ export function pullRequestLastAccount() {
   }
 
   return peers.e(() => {
-    peers.Sl(), peers.Im(), peers.B8s(), fac = `/pull-requests`, pac = /^\/pull-requests\/([^/]+)\/([^/]+)\/([^/]+)\/([^/]+)$/u, mac = peers.sl({
-      route: peers.X().nullable()
-    }), hac = peers.sl({
-      hostId: peers.X().min(1),
-      hostname: peers.X().min(1),
-      login: peers.X().min(1)
-    }), gac = peers.sl({
-      hostId: peers.X().min(1),
-      hostname: peers.X().min(1)
-    }), _ac = peers.Fm(e => `pull-request-view:${peers.e}`, null), vac = peers.Pm(`pull-request-last-account`, null);
+    (peers.Sl(),
+      peers.Im(),
+      peers.B8s(),
+      (fac = `/pull-requests`),
+      (pac = /^\/pull-requests\/([^/]+)\/([^/]+)\/([^/]+)\/([^/]+)$/u),
+      (mac = peers.sl({
+        route: peers.X().nullable(),
+      })),
+      (hac = peers.sl({
+        hostId: peers.X().min(1),
+        hostname: peers.X().min(1),
+        login: peers.X().min(1),
+      })),
+      (gac = peers.sl({
+        hostId: peers.X().min(1),
+        hostname: peers.X().min(1),
+      })),
+      (_ac = peers.Fm((e) => `pull-request-view:${peers.e}`, null)),
+      (vac = peers.Pm(`pull-request-last-account`, null)));
   });
 }

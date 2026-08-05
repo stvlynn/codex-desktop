@@ -9,7 +9,9 @@ export type BindDeferredConversationPfPeers = {
 let peers: BindDeferredConversationPfPeers | null = null;
 
 /** Wire bindDeferredConversationPf peers once companions land. */
-export function setBindDeferredConversationPfPeers(next: BindDeferredConversationPfPeers): void {
+export function setBindDeferredConversationPfPeers(
+  next: BindDeferredConversationPfPeers,
+): void {
   peers = next;
 }
 
@@ -22,6 +24,6 @@ export function bindDeferredConversationPf() {
   }
 
   return peers.wa(`ConversationalOnboardingTaskScope`, {
-    parent: peers.Q
+    parent: peers.Q,
   });
 }

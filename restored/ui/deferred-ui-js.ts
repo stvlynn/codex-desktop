@@ -23,11 +23,9 @@ export function bindDeferredUiJs() {
     throw new Error("bindDeferredUiJs peers are not configured");
   }
 
-  return peers.Ma(peers.j2, ({
-    get: e
-  }) => {
+  return peers.Ma(peers.j2, ({ get: e }) => {
     let t = e(peers.D8).visibleTaskIds,
       n = e(peers.VMl);
-    return t == null || n == null ? null : t.filter(e => !n.includes(e));
+    return t == null || n == null ? null : t.filter((e) => !n.includes(e));
   });
 }

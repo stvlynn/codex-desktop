@@ -10,7 +10,9 @@ export type NormalizedWebpageContentReference = {
   sources: WebpageSource[];
 };
 
-export function normalizeWebpageContentReference(value: unknown): NormalizedWebpageContentReference | null {
+export function normalizeWebpageContentReference(
+  value: unknown,
+): NormalizedWebpageContentReference | null {
   const item = asRecord(value);
   if (item == null) return null;
   const primary = buildWebpageSource(item, "primary");

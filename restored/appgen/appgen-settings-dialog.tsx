@@ -13,61 +13,88 @@ import { useOpenLocatorInMainWindow } from "../navigation/use-open-locator-in-ma
 import { esmInit } from "../runtime/rolldown-runtime";
 import { DeferredUiB } from "../ui/deferred-ui-b";
 import { DeferredUiH } from "../ui/deferred-ui-h";
-import { AppgenSettingsPageContent, ensureAppgenSettingsPageInit } from "./appgen-settings-page";
+import {
+  AppgenSettingsPageContent,
+  ensureAppgenSettingsPageInit,
+} from "./appgen-settings-page";
 
 /** Wave FY unresolved companion (missing-export:conversation/realtime-voice-host-id.tsx) */
 const RealtimeVoiceHostId: any = undefined;
 export function AppgenSettingsDialog(copper: unknown) {
-  let {
-      onClose,
-      projectId
-    } = copper,
+  let { onClose, projectId } = copper,
     delta = useIntl(),
-    echo = <MemoizedFormattedMessage {...{
-      id: "appgenSettings.dialog.title",
-      defaultMessage: "Site settings",
-      description: "Title for the Site settings dialog"
-    }} />;
+    echo = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "appgenSettings.dialog.title",
+          defaultMessage: "Site settings",
+          description: "Title for the Site settings dialog",
+        }}
+      />
+    );
   let falcon = echo,
     _AppgenSettingsDialog = {
-      "aria-describedby": undefined
+      "aria-describedby": undefined,
     };
   let gamma = delta.formatMessage({
     id: "appgenSettings.dialog.close",
     defaultMessage: "Close Site settings",
-    description: "Accessible label for closing the Site settings dialog"
+    description: "Accessible label for closing the Site settings dialog",
   });
-  let harbor = kite => {
+  let harbor = (kite) => {
     kite || onClose();
   };
-  let indigo = <div className="flex w-full flex-col px-4 pt-3">
-      {<RealtimeVoiceHostId {...{
-      className: "sr-only",
-      children: falcon
-    }} />}
-      {<DeferredUiH {...{
-      title: falcon,
-      titleClassName: "truncate pr-8"
-    }} />}
-    </div>;
-  let jade = <DeferredUiB {...{
-    className: "!px-1 !py-1",
-    size: "full",
-    children: [indigo, <AppgenSettingsPageContent {...{
-      projectId,
-      showHeader: false,
-      onDeleted: onClose
-    }} />]
-  }} />;
-  return <UsePointerSurfaceInteractionGate {...{
-    open: true,
-    contentClassName: "h-[720px] max-h-[92vh]",
-    contentProps: _AppgenSettingsDialog,
-    dialogCloseLabel: gamma,
-    size: "xwide",
-    onOpenChange: harbor,
-    children: jade
-  }} />;
+  let indigo = (
+    <div className="flex w-full flex-col px-4 pt-3">
+      {
+        <RealtimeVoiceHostId
+          {...{
+            className: "sr-only",
+            children: falcon,
+          }}
+        />
+      }
+      {
+        <DeferredUiH
+          {...{
+            title: falcon,
+            titleClassName: "truncate pr-8",
+          }}
+        />
+      }
+    </div>
+  );
+  let jade = (
+    <DeferredUiB
+      {...{
+        className: "!px-1 !py-1",
+        size: "full",
+        children: [
+          indigo,
+          <AppgenSettingsPageContent
+            {...{
+              projectId,
+              showHeader: false,
+              onDeleted: onClose,
+            }}
+          />,
+        ],
+      }}
+    />
+  );
+  return (
+    <UsePointerSurfaceInteractionGate
+      {...{
+        open: true,
+        contentClassName: "h-[720px] max-h-[92vh]",
+        contentProps: _AppgenSettingsDialog,
+        dialogCloseLabel: gamma,
+        size: "xwide",
+        onOpenChange: harbor,
+        children: jade,
+      }}
+    />
+  );
 }
 var alpha, bravo;
 esmInit(() => {

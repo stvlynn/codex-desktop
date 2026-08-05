@@ -40,9 +40,7 @@ export function EmptyState({
         .join(" ")}
     >
       {illustration != null && (
-        <div
-          className={illustrationSize === "icon" ? "size-10" : "size-24"}
-        >
+        <div className={illustrationSize === "icon" ? "size-10" : "size-24"}>
           {illustration}
         </div>
       )}
@@ -72,7 +70,9 @@ export type BindSkillsPageHelpersPeers = {
 let peers: BindSkillsPageHelpersPeers | null = null;
 
 /** Wire bindSkillsPageHelpers peers once companions land. */
-export function setBindSkillsPageHelpersPeers(next: BindSkillsPageHelpersPeers): void {
+export function setBindSkillsPageHelpersPeers(
+  next: BindSkillsPageHelpersPeers,
+): void {
   peers = next;
 }
 
@@ -134,8 +134,7 @@ export function EmptyState(props: EmptyStateProps): ReactNode {
   }
   const containerClassName = peers.cn(
     "flex w-full flex-col items-center justify-center px-3 py-6",
-    layout === "page" &&
-      "min-h-[var(--height-token-empty-state-page)] flex-1",
+    layout === "page" && "min-h-[var(--height-token-empty-state-page)] flex-1",
     className,
   );
   const contentGap = spacing === "compact" ? "gap-3" : "gap-4";

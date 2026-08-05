@@ -93,7 +93,9 @@ export function buildMeasureFontShorthand(
 
 /** Legacy `xoe` — stable cache key for a font face. */
 export function fontFaceCacheKey(face: FontMatchQuery): string {
-  return `${face.style?.trim().toLowerCase() || "normal"}|${String(face.weight ?? "normal")
+  return `${face.style?.trim().toLowerCase() || "normal"}|${String(
+    face.weight ?? "normal",
+  )
     .trim()
     .toLowerCase()}|${face.stretch?.trim().toLowerCase() || "normal"}|${face.family}`;
 }

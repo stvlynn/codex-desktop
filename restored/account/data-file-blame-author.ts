@@ -12,7 +12,9 @@ export type DataFileBlameAuthorPeers = {
 let peers: DataFileBlameAuthorPeers | null = null;
 
 /** Wire dataFileBlameAuthor peers once companions land. */
-export function setDataFileBlameAuthorPeers(next: DataFileBlameAuthorPeers): void {
+export function setDataFileBlameAuthorPeers(
+  next: DataFileBlameAuthorPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function dataFileBlameAuthor() {
     throw new Error("dataFileBlameAuthor peers are not configured");
   }
   return peers.e(() => {
-    yyo = 12, byo = 18, xyo = peers.hyo(peers.yyo);
+    ((yyo = 12), (byo = 18), (xyo = peers.hyo(peers.yyo)));
   });
 }

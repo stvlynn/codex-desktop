@@ -16,7 +16,9 @@ type HomeAmbientSuggestionsContentImpl = (
 ) => ReactNode;
 let impl: HomeAmbientSuggestionsContentImpl | null = null;
 
-export function bindHomeAmbientSuggestionsContent(next: HomeAmbientSuggestionsContentImpl): void {
+export function bindHomeAmbientSuggestionsContent(
+  next: HomeAmbientSuggestionsContentImpl,
+): void {
   impl = next;
 }
 

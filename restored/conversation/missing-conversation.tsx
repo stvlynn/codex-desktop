@@ -24,7 +24,9 @@ export type BindBindMissingConversationPeers = {
 let peers: BindBindMissingConversationPeers | null = null;
 
 /** Wire bindBindMissingConversation peers once companions land. */
-export function setBindBindMissingConversationPeers(next: BindBindMissingConversationPeers): void {
+export function setBindBindMissingConversationPeers(
+  next: BindBindMissingConversationPeers,
+): void {
   peers = next;
 }
 
@@ -37,17 +39,23 @@ export function bindBindMissingConversation() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.DD(), peers.ed(), peers.oRc(), z8l = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => t(peers.mD, peers.e)?.type ?? null), B8l = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => peers.R8l({
-      hasConversation: t(peers.iD, peers.e),
-      hostId: t(peers.rD, peers.e),
-      latestTurnId: t(peers.Xnr, peers.e),
-      latestTurnStatus: t(peers.Znr, peers.e),
-      pendingRequestType: t(peers.z8l, peers.e),
-      resumeState: t(peers.hD, peers.e)
-    }));
+    (peers.Ho(),
+      peers.DD(),
+      peers.ed(),
+      peers.oRc(),
+      (z8l = peers.Oa(
+        peers.Q,
+        (e, { get: t }) => t(peers.mD, peers.e)?.type ?? null,
+      )),
+      (B8l = peers.Oa(peers.Q, (e, { get: t }) =>
+        peers.R8l({
+          hasConversation: t(peers.iD, peers.e),
+          hostId: t(peers.rD, peers.e),
+          latestTurnId: t(peers.Xnr, peers.e),
+          latestTurnStatus: t(peers.Znr, peers.e),
+          pendingRequestType: t(peers.z8l, peers.e),
+          resumeState: t(peers.hD, peers.e),
+        }),
+      )));
   });
 }

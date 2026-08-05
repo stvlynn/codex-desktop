@@ -93,7 +93,8 @@ export function UserMessage(props: UserMessageProps): ReactNode {
   const alwaysShowActions = props.alwaysShowActions ?? false;
   const compactActions = props.compactActions ?? false;
   const hideActions = props.hideActions ?? false;
-  const referencesPriorConversation = props.referencesPriorConversation ?? false;
+  const referencesPriorConversation =
+    props.referencesPriorConversation ?? false;
   const reviewMode = props.reviewMode ?? false;
   const pullRequestFixMode = props.pullRequestFixMode ?? false;
   const autoResolveSync = props.autoResolveSync ?? false;
@@ -294,9 +295,15 @@ export function UserMessage(props: UserMessageProps): ReactNode {
     );
 
   const bubbleRow =
-    compactActions && !hideActions && hasVisibleText && !isEditing && !isEditingThisTurn ? (
+    compactActions &&
+    !hideActions &&
+    hasVisibleText &&
+    !isEditing &&
+    !isEditingThisTurn ? (
       <div className={`flex w-full items-center justify-end gap-1`}>
-        <div className={`opacity-0 group-focus-within:opacity-100 group-hover:opacity-100`}>
+        <div
+          className={`opacity-0 group-focus-within:opacity-100 group-hover:opacity-100`}
+        >
           {copyButton}
         </div>
         {bubbleWithReaction}
@@ -370,7 +377,11 @@ export function UserMessage(props: UserMessageProps): ReactNode {
   );
 
   const actionsChip =
-    hasVisibleText && !isEditing && !compactActions && !hideActions && !isEditingThisTurn ? (
+    hasVisibleText &&
+    !isEditing &&
+    !compactActions &&
+    !hideActions &&
+    !isEditingThisTurn ? (
       <div
         className={peers.$(
           `mr-1 ms-1 flex items-center gap-2`,
@@ -380,13 +391,18 @@ export function UserMessage(props: UserMessageProps): ReactNode {
         )}
       >
         {sentAtMs == null ? null : (
-          <span className={`flex opacity-0 group-focus-within:opacity-100 group-hover:opacity-100`}>
+          <span
+            className={`flex opacity-0 group-focus-within:opacity-100 group-hover:opacity-100`}
+          >
             <peers.iJc sentAtMs={sentAtMs} />
           </span>
         )}
         <div className={`flex items-center gap-0.5`}>
           {hookStats == null ? null : (
-            <peers.Tqc stats={hookStats} threadDetailLevel={threadDetailLevel} />
+            <peers.Tqc
+              stats={hookStats}
+              threadDetailLevel={threadDetailLevel}
+            />
           )}
           {copyButton}
           {canEdit ? (

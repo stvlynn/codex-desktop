@@ -10,7 +10,9 @@ export type BindBinddeferredUiV43Peers = {
 let peers: BindBinddeferredUiV43Peers | null = null;
 
 /** Wire bindBinddeferredUiV43 peers once companions land. */
-export function setBindBinddeferredUiV43Peers(next: BindBinddeferredUiV43Peers): void {
+export function setBindBinddeferredUiV43Peers(
+  next: BindBinddeferredUiV43Peers,
+): void {
   peers = next;
 }
 
@@ -22,5 +24,5 @@ export function bindBinddeferredUiV43() {
     throw new Error("bindBinddeferredUiV43 peers are not configured");
   }
 
-  return peers.ka(peers.Q, e => peers.C5n(e, `full`));
+  return peers.ka(peers.Q, (e) => peers.C5n(e, `full`));
 }

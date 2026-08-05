@@ -8,4 +8,3 @@
 /** Wave FY: bind no longer required after full body promote */
 export function bindDocxPreviewPanel(_next: unknown): void {}
 export function ensureDocxPreviewPanelInit(): void {}
-

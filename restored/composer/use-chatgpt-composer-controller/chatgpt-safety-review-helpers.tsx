@@ -57,22 +57,15 @@ export const modelSlugSchema = appInitialXT({
 });
 export const safetyReviewContext = React.createContext(null);
 
-function useChatgptComposerControllerHelper268(
-  request1454,
-) {
+function useChatgptComposerControllerHelper268(request1454) {
   const AppInitialCv = appInitialCv;
   let { children, isShimmering, learnMoreLabel, learnMoreUrl, onLearnMore } =
       request1454,
-    slot5130 = (
-      <AppInitialCv className="icon-xs mt-0.5 shrink-0" />
-    );
+    slot5130 = <AppInitialCv className="icon-xs mt-0.5 shrink-0" />;
   let slot5131 =
       isShimmering &&
       "loading-shimmer-pure-text [--shimmer-contrast:rgba(255,255,255,0.52)] [background-size:36%_200%] dark:[--shimmer-contrast:rgba(0,0,0,0.42)]",
-    slot5132 = appInitialWft(
-      "min-w-0",
-      slot5131,
-    );
+    slot5132 = appInitialWft("min-w-0", slot5131);
   let slot5133 = (
     <div className="flex min-w-0 flex-1 items-start gap-2">
       {slot5130}
@@ -105,9 +98,7 @@ function useChatgptComposerControllerHelper268(
   );
 }
 
-function useChatgptComposerControllerHelper270(
-  request9483,
-) {
+function useChatgptComposerControllerHelper270(request9483) {
   appInitialDdt.error("Failed to retry ChatGPT safety-reviewed response", {
     safe: {},
     sensitive: {
@@ -116,27 +107,16 @@ function useChatgptComposerControllerHelper270(
   });
 }
 
-function useChatgptComposerControllerHelper273(
-  request5451,
-) {
-  let slot11715 =
-    LEARN_MORE_TAIL_RE.exec(
-      request5451,
-    );
-  if (
-    slot11715?.index == null ||
-    slot11715[1] == null ||
-    slot11715[2] == null
-  )
+function useChatgptComposerControllerHelper273(request5451) {
+  let slot11715 = LEARN_MORE_TAIL_RE.exec(request5451);
+  if (slot11715?.index == null || slot11715[1] == null || slot11715[2] == null)
     return {
       body: request5451,
       learnMoreLabel: null,
       learnMoreUrl: null,
     };
   try {
-    if (
-      new URL(slot11715[2]).protocol !== "https:"
-    )
+    if (new URL(slot11715[2]).protocol !== "https:")
       return {
         body: request5451,
         learnMoreLabel: null,
@@ -150,24 +130,16 @@ function useChatgptComposerControllerHelper273(
     };
   }
   return {
-    body: request5451
-      .slice(0, slot11715.index)
-      .trimEnd(),
+    body: request5451.slice(0, slot11715.index).trimEnd(),
     learnMoreLabel: slot11715[1],
     learnMoreUrl: slot11715[2],
   };
 }
 
-function useChatgptComposerControllerHelper271(
-  request2426,
-) {
+function useChatgptComposerControllerHelper271(request2426) {
   let { children, href } = request2426,
-    slot6972 =
-      React.useContext(
-        safetyReviewContext,
-      ),
-    slot6973 =
-      slot6972?.fasterModel;
+    slot6972 = React.useContext(safetyReviewContext),
+    slot6973 = slot6972?.fasterModel;
   if (
     href !== SAFETY_FASTER_MODEL_HREF ||
     slot6972 == null ||
@@ -180,9 +152,7 @@ function useChatgptComposerControllerHelper271(
     slot6972.logInteraction(
       appInitialI8.CHATGPT_SAFETY_LINK_TYPE_SAFETY_REVIEW_FASTER_MODEL,
     );
-    slot6972.onRetry(
-      slot6973,
-    );
+    slot6972.onRetry(slot6973);
   };
   return (
     <button
@@ -195,13 +165,10 @@ function useChatgptComposerControllerHelper271(
     </button>
   );
 }
-function useChatgptComposerControllerHelper272(
-  request7181,
-) {
+function useChatgptComposerControllerHelper272(request7181) {
   let { children } = request7181;
   return <span className="block not-first:mt-1">{children}</span>;
 }
-
 
 safetyMarkdownComponents = {
   a: useChatgptComposerControllerHelper271,
@@ -210,7 +177,7 @@ safetyMarkdownComponents = {
 
 export {
   useChatgptComposerControllerHelper268,
-    useChatgptComposerControllerHelper270,
+  useChatgptComposerControllerHelper270,
   useChatgptComposerControllerHelper271,
   useChatgptComposerControllerHelper272,
   useChatgptComposerControllerHelper273,

@@ -23,6 +23,6 @@ export function bindDeferredKv() {
   }
 
   return peers.e(() => {
-    peers.NZ(), peers.q_s();
+    (peers.NZ(), peers.q_s());
   });
 }

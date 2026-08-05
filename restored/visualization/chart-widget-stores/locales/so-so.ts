@@ -16,27 +16,33 @@ const messages: Record<string, string> = {
   "widgets.baseCarousel.previousItems": "Walxihii hore ee carousel-ka",
   "widgets.cardCarousel.goToArticle": "Tag maqaalka",
   "widgets.cardCarousel.nextCards": "Kaararka xiga",
-  "widgets.cardCarousel.nextCardsInCarousel": "Kaararka xiga ee {carouselLabel}",
+  "widgets.cardCarousel.nextCardsInCarousel":
+    "Kaararka xiga ee {carouselLabel}",
   "widgets.cardCarousel.previousCards": "Kaararradii hore",
-  "widgets.cardCarousel.previousCardsInCarousel": "Kaararka hore ee {carouselLabel}",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "Kaararka hore ee {carouselLabel}",
   "widgets.debug.hideCurrentState": "Qari xaaladda hadda jirta",
   "widgets.debug.nextState": "Xaaladda xigta",
   "widgets.debug.previousState": "Xaaladdii hore",
   "widgets.debug.selectedState": "Xaaladda la doortay",
   "widgets.debug.showCurrentState": "Muuji xaaladda hadda",
   "widgets.debug.state": "Xaalad",
-  "widgets.debug.unableToSerializeSelectedState": "Lama taxli karo xaaladda la doortay.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "Lama taxli karo xaaladda la doortay.",
   "widgets.hermes.artifact.viewMore": "Eeg {count} kale",
   "widgets.hermes.calendarEvent.moreAttendees": "+{count} kale oo badan",
   "widgets.hermes.calendarEvent.singleTime": "{date} saacadda {time}",
   "widgets.hermes.calendarEvent.timeRange": "{date} {startTime} - {endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "{agentName} wuxuu u baahan yahay gelitaan si uu u sii wado",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName} wuxuu u baahan yahay oggolaanshahaaga si uu u sii wado",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "{agentName} wuxuu u baahan yahay gelitaan si uu u sii wado",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName} wuxuu u baahan yahay oggolaanshahaaga si uu u sii wado",
   "widgets.hermes.genericResponse.viewFullscreen": "Eeg shaashad buuxa",
   "widgets.hermes.genericTool.details": "Faahfaahin",
   "widgets.hermes.genericTool.read": "Akhri",
   "widgets.hermes.genericTool.request": "Codsi",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} wuxuu rabaa inuu isticmaalo {connectorName} si uu u socodsiiyo {toolName}.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} wuxuu rabaa inuu isticmaalo {connectorName} si uu u socodsiiyo {toolName}.",
   "widgets.hermes.genericTool.viewFullscreen": "Daawo shaashad buuxda",
   "widgets.hermes.genericTool.write": "Qor",
   "widgets.hermes.googleCalendarCreate.create": "Samee",
@@ -49,7 +55,8 @@ const messages: Record<string, string> = {
   "widgets.hermes.permission.moreInformation": "Macluumaad dheeraad ah",
   "widgets.hermes.permission.notNow": "Hadda ma aha",
   "widgets.hermes.permission.reconnect": "Dib ugu xidh",
-  "widgets.hermes.permission.reconnectToConnector": "Dib ugu xidh {connectorName}",
+  "widgets.hermes.permission.reconnectToConnector":
+    "Dib ugu xidh {connectorName}",
   "widgets.hermes.sendEmail.approveAction": "Ficilka ansaxi",
   "widgets.hermes.sendEmail.bcc": "Bcc",
   "widgets.hermes.sendEmail.cc": "Cc",
@@ -62,73 +69,135 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "wax yar tus",
   "widgets.hermes.taskStatus.canceled": "Hawl la joojiyay",
   "widgets.hermes.taskStatus.canceling": "La joojinayo",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Hubinaya farriimihii hore",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Baadhaya farriimihii hore",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Dib u eegaya fariimihii hore",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Dib u eegaya fariimihii hore",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Dib u eegaya farriimihii hore",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Akhriyaya fariimihii hore",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Dib u eegaya farriimihii hore",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Dib u eegaya farriimihii hore",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Baadhaya farriimihii hore",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Kala shaandhaynaya farriimihii hore",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Dulmaraya farriimihii hore",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Hubinaya macnaha guud",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Dulmaraya macnaha guud",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Baadhaya macnaha guud",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Akhrinaya macnaha guud",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Macnaha guud dib loo eegayo",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Dib u eegaya macnaha guud",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Baadhaya macnaha guud",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Kala shaandhaynaya macnaha guud",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Hawlgelinta wakiilka",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Bilaabidda wakiilka",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Wakiilka waa la hawlgelinayaa",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Soo yeeraya wakiilka",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Ku xirmaya wakiilka",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "La samaynayo isku xirka wakiilka",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Wakiilka hurdada ka toosinaya",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Wakiilka waa la diyaarinayaa",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Toosinaya wakiilka",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Bilaabaya wakiilka",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "U yeeraya wakiilka",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Hawlgelinaya kombiyuutarka",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Bilaabaya kombiyuutarka",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Hawlgelinaya kumbuyuutarka",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Bilaabinta kombiyuutarka",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Shididda kombiyuutarka",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Diyaarinaya kombiyuutarka",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Bilaabidda kombiyuutarka",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Kicinta kombiyuutarka",
-  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Jidka qorshaynaya",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Qorshe dejinaya",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Hubinaya farriimihii hore",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Baadhaya farriimihii hore",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Dib u eegaya fariimihii hore",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Dib u eegaya fariimihii hore",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Dib u eegaya farriimihii hore",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Akhriyaya fariimihii hore",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Dib u eegaya farriimihii hore",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Dib u eegaya farriimihii hore",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Baadhaya farriimihii hore",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Kala shaandhaynaya farriimihii hore",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Dulmaraya farriimihii hore",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Hubinaya macnaha guud",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Dulmaraya macnaha guud",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Baadhaya macnaha guud",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Akhrinaya macnaha guud",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Macnaha guud dib loo eegayo",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Dib u eegaya macnaha guud",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Baadhaya macnaha guud",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Kala shaandhaynaya macnaha guud",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Hawlgelinta wakiilka",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Bilaabidda wakiilka",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Wakiilka waa la hawlgelinayaa",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Soo yeeraya wakiilka",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Ku xirmaya wakiilka",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "La samaynayo isku xirka wakiilka",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Wakiilka hurdada ka toosinaya",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Wakiilka waa la diyaarinayaa",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Toosinaya wakiilka",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Bilaabaya wakiilka",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "U yeeraya wakiilka",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Hawlgelinaya kombiyuutarka",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Bilaabaya kombiyuutarka",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Hawlgelinaya kumbuyuutarka",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Bilaabinta kombiyuutarka",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Shididda kombiyuutarka",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Diyaarinaya kombiyuutarka",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Bilaabidda kombiyuutarka",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Kicinta kombiyuutarka",
+  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse":
+    "Jidka qorshaynaya",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "Qorshe dejinaya",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Qorsheynaya",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Qorsheynaya",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Qorsheynaya",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Abaabulaya tallaabooyinka xiga",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Qorsheynaya",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "Qorsheynaya",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Abaabulaya tallaabooyinka xiga",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Qorshayn",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Jihada dejinaya",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Jihada dejinaya",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Qorshe dejinaya",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Ka fikiraya hababka",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Go'aaminaya habka",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Ururinaya faahfaahin",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Ururinta faahfaahinta",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Buuxinaya faahfaahinta",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Ururinta faahfaahinta",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Isku keenaya faahfaahinta",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Ururinaya faahfaahinta",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Ururinaya faahfaahinta",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Faahfaahinta hagaajinaya",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Ururinaya faahfaahinta",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Raadinaya faahfaahin",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Waxay qaadanaysaa waqti ka badan caadiga",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Weli waa lagu shaqaynayaa",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Wax yar ka dib mar kale soo noqo",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Jihada dejinaya",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Jihada dejinaya",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Qorshe dejinaya",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Ka fikiraya hababka",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Go'aaminaya habka",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Ururinaya faahfaahin",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Ururinta faahfaahinta",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Buuxinaya faahfaahinta",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Ururinta faahfaahinta",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Isku keenaya faahfaahinta",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Ururinaya faahfaahinta",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Ururinaya faahfaahinta",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Faahfaahinta hagaajinaya",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Ururinaya faahfaahinta",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Raadinaya faahfaahin",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Waxay qaadanaysaa waqti ka badan caadiga",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Weli waa lagu shaqaynayaa",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Wax yar ka dib mar kale soo noqo",
   "widgets.hermes.workflow.canceled": "Hawl waa la joojiyay",
   "widgets.hermes.workflow.canceledItemLabel": "La joojiyay",
   "widgets.hermes.workflow.codeBlock.hideLines": "Qari sadarrada",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Arag dhammaan {lineCount} sadar",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Arag dhammaan {lineCount} sadar",
   "widgets.hermes.workflow.customWorked": "Shaqeeyay muddo",
   "widgets.hermes.workflow.customWorking": "Shaqaynaya",
   "widgets.hermes.workflow.fileWorked": "Dukumenti la iskaangareeyay",
@@ -148,7 +217,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Qari wax ka yar",
   "widgets.listView.showMore": "Muuji {count} kale",
   "widgets.radioGroup.options": "ikhtiyaarro",
-  "widgets.segmentedControl.selectAnOption": "Dooro ikhtiyaar"
+  "widgets.segmentedControl.selectAnOption": "Dooro ikhtiyaar",
 };
 
 export default messages;

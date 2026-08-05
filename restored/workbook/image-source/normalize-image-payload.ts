@@ -49,8 +49,7 @@ export function normalizeImagePayload(
   if (out.data) {
     const sniffed = sniffImageMimeFromBytes(out.data);
     if (sniffed) out.contentType = sniffed;
-    else if (out.data.byteLength < 32 && !out.contentType)
-      out.data = undefined;
+    else if (out.data.byteLength < 32 && !out.contentType) out.data = undefined;
     else out.contentType ||= DEFAULT_OCTET_STREAM;
   }
   if (out.data && !out.contentType) out.contentType = DEFAULT_OCTET_STREAM;

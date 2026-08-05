@@ -39,25 +39,19 @@ export function coerceFillOrColor(dtIn11836: any) {
 export function textStyleProtoFromPartial(dtIn2298: any) {
   if (!dtIn2298) return;
   let dtBind9394 = new TextStyle();
-  dtIn2298.bold !== undefined &&
-    (dtBind9394.bold = dtIn2298.bold);
-  dtIn2298.italic !== undefined &&
-    (dtBind9394.italic = dtIn2298.italic);
+  dtIn2298.bold !== undefined && (dtBind9394.bold = dtIn2298.bold);
+  dtIn2298.italic !== undefined && (dtBind9394.italic = dtIn2298.italic);
   dtIn2298.underline !== undefined &&
     (dtBind9394.underline = dtIn2298.underline);
   dtIn2298.fontSize &&
     (dtBind9394.fontSize = parseFontSizeUnitString(dtIn2298.fontSize));
-  dtIn2298.typeface !== undefined &&
-    (dtBind9394.typeface = dtIn2298.typeface);
+  dtIn2298.typeface !== undefined && (dtBind9394.typeface = dtIn2298.typeface);
   let dtBind9395 = dtIn2298.fill ?? dtIn2298.color;
-  dtBind9395 !== undefined &&
-    (dtBind9394.fill = coerceFillOrColor(dtBind9395));
+  dtBind9395 !== undefined && (dtBind9394.fill = coerceFillOrColor(dtBind9395));
   dtIn2298.highlight !== undefined &&
     (dtBind9394.highlight = dtIn2298.highlight);
-  dtIn2298.outline !== undefined &&
-    (dtBind9394.outline = dtIn2298.outline);
-  dtIn2298.shadow !== undefined &&
-    (dtBind9394.shadow = dtIn2298.shadow);
+  dtIn2298.outline !== undefined && (dtBind9394.outline = dtIn2298.outline);
+  dtIn2298.shadow !== undefined && (dtBind9394.shadow = dtIn2298.shadow);
   let dtBind9396 = dtBind9394.toProto();
   return Object.values(dtBind9396).some((item) =>
     item == null
@@ -102,11 +96,7 @@ export function textRunFromRunLike(dtIn6649: any) {
       reviewMarkIds: [],
     },
     dtBind16945 = textStyleProtoFromPartial(dtIn6649.textStyle);
-  return (
-    dtBind16945 &&
-      (dtBind16944.textStyle = dtBind16945),
-    dtBind16944
-  );
+  return (dtBind16945 && (dtBind16944.textStyle = dtBind16945), dtBind16944);
 }
 
 export function mathDocumentFromInline(dtIn5677: any) {
@@ -175,9 +165,7 @@ export function normalizeInlineRuns(dtIn1825: any) {
       });
       continue;
     }
-    let dtBind17239 = textRunFromRunLike(
-      coerceRunLike(dtBind16793),
-    );
+    let dtBind17239 = textRunFromRunLike(coerceRunLike(dtBind16793));
     dtBind8391.push(dtBind17239);
     dtBind8392.push({
       textRun: cloneTextRunFields(dtBind17239),
@@ -228,8 +216,7 @@ export function paragraphFromPartial(dtIn4033: any) {
 }
 
 export function normalizeParagraphInputs(dtIn8509: any) {
-  if (Array.isArray(dtIn8509) && dtIn8509.length === 0)
-    return [];
+  if (Array.isArray(dtIn8509) && dtIn8509.length === 0) return [];
   let dtBind19018 =
     Array.isArray(dtIn8509) && !isPlainRunList(dtIn8509)
       ? dtIn8509
@@ -237,7 +224,8 @@ export function normalizeParagraphInputs(dtIn8509: any) {
   return dtBind19018.length === 0
     ? []
     : dtBind19018.map((item) =>
-        isPlainRunList(item) ? paragraphFromRunList(item) : paragraphFromPartial(item),
+        isPlainRunList(item)
+          ? paragraphFromRunList(item)
+          : paragraphFromPartial(item),
       );
 }
-

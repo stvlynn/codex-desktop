@@ -41,7 +41,9 @@ export type ToolbarCircleDashedButtonProps = {
  * Bundle export `r` — toolbar-sized Button with dashed-circle affordance.
  * When disabled, wraps in OptionalTooltip for the disabled reason.
  */
-export function ToolbarCircleDashedButton(props: ToolbarCircleDashedButtonProps): ReactElement {
+export function ToolbarCircleDashedButton(
+  props: ToolbarCircleDashedButtonProps,
+): ReactElement {
   const {
     ariaLabel,
     children,

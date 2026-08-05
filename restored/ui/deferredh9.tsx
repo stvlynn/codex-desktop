@@ -24,9 +24,7 @@ export function bindDeferredh9() {
     throw new Error("bindDeferredh9 peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => {
+  return peers.Ma(peers.Q, ({ get: e }) => {
     let t = e(peers.Ox);
     return t.phase === `inactive` ? peers.Vnn : e(peers.Hnn, t.locator);
   });

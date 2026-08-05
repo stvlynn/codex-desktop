@@ -22,10 +22,14 @@ export function bindBindRemote6() {
     throw new Error("bindBindRemote6 peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => new Map(e.flatMap(e => {
-    let n = t(peers.uYn, e);
-    return n == null ? [] : [[e, n]];
-  })));
+  return peers.Oa(
+    peers.Q,
+    (e, { get: t }) =>
+      new Map(
+        e.flatMap((e) => {
+          let n = t(peers.uYn, e);
+          return n == null ? [] : [[e, n]];
+        }),
+      ),
+  );
 }

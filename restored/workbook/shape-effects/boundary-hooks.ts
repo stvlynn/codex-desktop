@@ -3,4 +3,6 @@
 
 export type ShapeEffectsHooks = Record<string, never>;
 export const sefH: ShapeEffectsHooks = {} as ShapeEffectsHooks;
-export function wireShapeEffectsBoundaryHooks(_next: Partial<ShapeEffectsHooks> = {}): void {}
+export function wireShapeEffectsBoundaryHooks(
+  _next: Partial<ShapeEffectsHooks> = {},
+): void {}

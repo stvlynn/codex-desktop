@@ -14,7 +14,9 @@ export type UseCanPinThreadActionPeers = {
 let peers: UseCanPinThreadActionPeers | null = null;
 
 /** Wire useCanPinThreadAction peers once companions land. */
-export function setUseCanPinThreadActionPeers(next: UseCanPinThreadActionPeers): void {
+export function setUseCanPinThreadActionPeers(
+  next: UseCanPinThreadActionPeers,
+): void {
   peers = next;
 }
 

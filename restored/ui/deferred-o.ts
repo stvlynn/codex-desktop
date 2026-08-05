@@ -36,12 +36,24 @@ export function deferredO() {
   }
 
   return peers.e(() => {
-    Qkr = peers.c(), peers.Ho(), peers.Au(), peers.$u(), peers.lp(), peers.ND(), peers.ed(), peers.rOr(), peers.Jkr(), peers.Wkr(), peers.Xkr(), $kr = peers.J(), eAr = {
-      color: `black`,
-      marker: {
-        kind: `icon`,
-        icon: `folder`
-      }
-    };
+    ((Qkr = peers.c()),
+      peers.Ho(),
+      peers.Au(),
+      peers.$u(),
+      peers.lp(),
+      peers.ND(),
+      peers.ed(),
+      peers.rOr(),
+      peers.Jkr(),
+      peers.Wkr(),
+      peers.Xkr(),
+      ($kr = peers.J()),
+      (eAr = {
+        color: `black`,
+        marker: {
+          kind: `icon`,
+          icon: `folder`,
+        },
+      }));
   });
 }

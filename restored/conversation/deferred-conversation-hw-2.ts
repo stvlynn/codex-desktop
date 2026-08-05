@@ -11,7 +11,9 @@ export type DeferredConversationHWPeers = {
 let peers: DeferredConversationHWPeers | null = null;
 
 /** Wire deferredConversationHW peers once companions land. */
-export function setDeferredConversationHWPeers(next: DeferredConversationHWPeers): void {
+export function setDeferredConversationHWPeers(
+  next: DeferredConversationHWPeers,
+): void {
   peers = next;
 }
 
@@ -23,10 +25,7 @@ export function deferredConversationHW() {
     throw new Error("deferredConversationHW peers are not configured");
   }
 
-  return peers.Ma(peers.hT, ({
-    get: e,
-    scope: t
-  }) => {
+  return peers.Ma(peers.hT, ({ get: e, scope: t }) => {
     switch (t.value.routeKind) {
       case `home`:
       case `new-thread-panel`:

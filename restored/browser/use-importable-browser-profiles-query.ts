@@ -10,7 +10,9 @@ export type UseImportableBrowserProfilesQueryPeers = {
 let peers: UseImportableBrowserProfilesQueryPeers | null = null;
 
 /** Wire useImportableBrowserProfilesQuery peers once companions land. */
-export function setUseImportableBrowserProfilesQueryPeers(next: UseImportableBrowserProfilesQueryPeers): void {
+export function setUseImportableBrowserProfilesQueryPeers(
+  next: UseImportableBrowserProfilesQueryPeers,
+): void {
   peers = next;
 }
 

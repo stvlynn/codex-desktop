@@ -10,7 +10,9 @@ export type BindBindDeferredUiY2Peers = {
 let peers: BindBindDeferredUiY2Peers | null = null;
 
 /** Wire bindBindDeferredUiY2 peers once companions land. */
-export function setBindBindDeferredUiY2Peers(next: BindBindDeferredUiY2Peers): void {
+export function setBindBindDeferredUiY2Peers(
+  next: BindBindDeferredUiY2Peers,
+): void {
   peers = next;
 }
 
@@ -26,7 +28,12 @@ export function bindBindDeferredUiY2() {
     var n = peers.tQr(),
       r = peers.yo();
     function i(e, t, i, a) {
-      return e == null ? [] : (r(t) || (t = t == null ? [] : [t]), i = a ? void 0 : peers.i, r(peers.i) || (i = peers.i == null ? [] : [peers.i]), n(e, t, peers.i));
+      return e == null
+        ? []
+        : (r(t) || (t = t == null ? [] : [t]),
+          (i = a ? void 0 : peers.i),
+          r(peers.i) || (i = peers.i == null ? [] : [peers.i]),
+          n(e, t, peers.i));
     }
     t.exports = peers.i;
   });

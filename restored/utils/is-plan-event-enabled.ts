@@ -15,7 +15,10 @@ export type PlanEventEnablementOverride = {
  * Prefer an explicit `override.enabled` boolean; otherwise fall back to
  * `defaults.__default.enabled`, defaulting to `true` when unset.
  */
-export function isPlanEventEnabled(defaults: PlanEventEnablementDefaults | null | undefined, override: PlanEventEnablementOverride | null | undefined): boolean {
+export function isPlanEventEnabled(
+  defaults: PlanEventEnablementDefaults | null | undefined,
+  override: PlanEventEnablementOverride | null | undefined,
+): boolean {
   return typeof override?.enabled === "boolean"
     ? override.enabled
     : (defaults?.__default?.enabled ?? true);

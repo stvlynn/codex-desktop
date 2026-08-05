@@ -5,8 +5,14 @@
 
 import { CodexBrowserSurfaceActionType } from "../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../analytics/codex-plugin-action-result";
-import { ensureComposerEsm_M0_Init, ensureComposerEsm_MT_Init } from "../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_B0_Init } from "../conversation/conversation-page-esm-inits";
+import {
+  ensureComposerEsm_M0_Init,
+  ensureComposerEsm_MT_Init,
+} from "../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_B0_Init,
+} from "../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { MEMORIES_ID } from "../config/memories-id";
 import { filterProjectsByHost as FilterProjectsByHost } from "../environments/filter-projects-by-host";
@@ -37,18 +43,17 @@ const ensureOpenLinkTargetHelpersInit: any = undefined;
 /** Wave FY unresolved companion (missing-export:shell/normalize-presence-to-normal.ts) */
 const normalizePresenceToNormal: any = undefined;
 export function BrowserSidebarHiddenBrowserUseWebviewHost(marble: unknown) {
-  let {
-      browserUseTabIdsKey,
-      conversationId
-    } = marble,
+  let { browserUseTabIdsKey, conversationId } = marble,
     nickel = CodexBrowserSurfaceActionType(AppInitialD8, conversationId),
     onyx = CodexPluginActionResult(ensureAppIconL0Init.activeTab$),
-    pearl = CodexPluginActionResult(ensureConversationPageEsm_A0_Init.activeTab$),
+    pearl = CodexPluginActionResult(
+      ensureConversationPageEsm_A0_Init.activeTab$,
+    ),
     quartz = CodexPluginActionResult(AppIconF0),
     river = CodexPluginActionResult(ensureOpenLinkTargetHelpersInit),
     slate,
     timber;
-  slate = garnet => river.on("change", garnet);
+  slate = (garnet) => river.on("change", garnet);
   timber = () => river.get();
   let umbra = echo.useSyncExternalStore(slate, timber, bravo),
     violet = CodexPluginActionResult(ensureComposerEsm_M0_Init),
@@ -56,34 +61,48 @@ export function BrowserSidebarHiddenBrowserUseWebviewHost(marble: unknown) {
     xenon = CodexPluginActionResult(AppInitialP0),
     yellow,
     zinc;
-  yellow = hazel => xenon.on("change", hazel);
+  yellow = (hazel) => xenon.on("change", hazel);
   zinc = () => xenon.get();
   let amber = echo.useSyncExternalStore(yellow, zinc, alpha),
     _BrowserSidebarHiddenBrowserUseWebviewHost = quartz || umbra > 0,
-    basalt = violet && willow || amber > 0,
-    cedar = new Set(Cloud(conversationId, {
-      bottom: onyx,
-      right: pearl
-    }, {
-      bottom: _BrowserSidebarHiddenBrowserUseWebviewHost,
-      right: basalt
-    }));
+    basalt = (violet && willow) || amber > 0,
+    cedar = new Set(
+      Cloud(
+        conversationId,
+        {
+          bottom: onyx,
+          right: pearl,
+        },
+        {
+          bottom: _BrowserSidebarHiddenBrowserUseWebviewHost,
+          right: basalt,
+        },
+      ),
+    );
   let daisy = cedar;
   if (!nickel && daisy.size > 0) return null;
   let ember, flint;
   flint = Symbol.for("react.early_return_sentinel");
   bb0: {
-    let ivory = lotus => !daisy.has(lotus);
-    let jasper = browserUseTabIdsKey.split("\0").map(asBrowserTabId).filter(ivory);
+    let ivory = (lotus) => !daisy.has(lotus);
+    let jasper = browserUseTabIdsKey
+      .split("\0")
+      .map(asBrowserTabId)
+      .filter(ivory);
     if (jasper.length === 0) {
       flint = null;
       break bb0;
     }
     let kelp;
-    kelp = mint => <BrowserSidebarHiddenBrowserUseWebviewHostHelper3 key={mint} {...{
-      browserTabId: mint,
-      conversationId
-    }} />;
+    kelp = (mint) => (
+      <BrowserSidebarHiddenBrowserUseWebviewHostHelper3
+        key={mint}
+        {...{
+          browserTabId: mint,
+          conversationId,
+        }}
+      />
+    );
     ember = jasper.map(kelp);
   }
   if (flint !== Symbol.for("react.early_return_sentinel")) return flint;
@@ -96,29 +115,36 @@ function bravo() {
   return 0;
 }
 function BrowserSidebarHiddenBrowserUseWebviewHostHelper3(gamma) {
-  let {
-      browserTabId,
-      conversationId
-    } = gamma,
+  let { browserTabId, conversationId } = gamma,
     harbor = getIconPixelSize(),
     indigo = echo.useRef(null),
-    jade = () => normalizePresenceToNormal.getSnapshot(conversationId, browserTabId);
-  let kite = echo.useSyncExternalStore(normalizePresenceToNormal.subscribe, jade, copper);
-  if (kite != null && kite.tabType !== AGENT_MODE_BY_HOST_ID_STORAGE_KEY.WEB) return null;
+    jade = () =>
+      normalizePresenceToNormal.getSnapshot(conversationId, browserTabId);
+  let kite = echo.useSyncExternalStore(
+    normalizePresenceToNormal.subscribe,
+    jade,
+    copper,
+  );
+  if (kite != null && kite.tabType !== AGENT_MODE_BY_HOST_ID_STORAGE_KEY.WEB)
+    return null;
   let lemon = kite == null || kite.url.length === 0 ? "about:blank" : kite.url;
-  return <FilterProjectsByHost {...{
-    bounds: null,
-    browserTabId,
-    conversationId,
-    hostKind: "hidden-browser-use",
-    initialUrl: lemon,
-    isVisible: false,
-    scale: 1,
-    shouldBootstrapWhenHidden: true,
-    shouldPaint: false,
-    webviewRef: indigo,
-    windowZoom: harbor
-  }} />;
+  return (
+    <FilterProjectsByHost
+      {...{
+        bounds: null,
+        browserTabId,
+        conversationId,
+        hostKind: "hidden-browser-use",
+        initialUrl: lemon,
+        isVisible: false,
+        scale: 1,
+        shouldBootstrapWhenHidden: true,
+        shouldPaint: false,
+        webviewRef: indigo,
+        windowZoom: harbor,
+      }}
+    />
+  );
 }
 function copper() {
   return null;
@@ -143,6 +169,4 @@ export function bindHiddenBrowserUseWebviewHost(_next: unknown): void {}
 export function ensureHiddenBrowserUseWebviewHostInit(): void {}
 
 /** Bundle public export name (IMPORT_MAP / original `HiddenBrowserUseWebviewHost`). */
-export {
-  BrowserSidebarHiddenBrowserUseWebviewHost as HiddenBrowserUseWebviewHost,
-};
+export { BrowserSidebarHiddenBrowserUseWebviewHost as HiddenBrowserUseWebviewHost };

@@ -16,7 +16,9 @@ export type UseBrowserExtensionPluginSetupQueryPeers = {
 let peers: UseBrowserExtensionPluginSetupQueryPeers | null = null;
 
 /** Wire useBrowserExtensionPluginSetupQuery peers once companions land. */
-export function setUseBrowserExtensionPluginSetupQueryPeers(next: UseBrowserExtensionPluginSetupQueryPeers): void {
+export function setUseBrowserExtensionPluginSetupQueryPeers(
+  next: UseBrowserExtensionPluginSetupQueryPeers,
+): void {
   peers = next;
 }
 

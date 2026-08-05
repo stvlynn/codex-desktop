@@ -8,7 +8,9 @@ export type AtomValueFunctionalPeers = {
 let peers: AtomValueFunctionalPeers | null = null;
 
 /** Wire setAtomValueFunctional peers once companions land. */
-export function setAtomValueFunctionalPeers(next: AtomValueFunctionalPeers): void {
+export function setAtomValueFunctionalPeers(
+  next: AtomValueFunctionalPeers,
+): void {
   peers = next;
 }
 

@@ -30,9 +30,7 @@ import {
 import { ensureChatgptContentReferenceFootnotePeerInit as contentReferenceFootnoteInit } from "./ensure-chatgpt-composer-markdown-fanin-peers";
 import { ensureChatgptMapContentReferenceInit as mapboxMapWidgetInit } from "./chatgpt-map-content-reference";
 import { ensureChatgptImageGroupDirectiveInit as imageGroupDirectiveInit } from "./chatgpt-image-group-directive";
-import {
-  slot233 as sportsCodeSurfaceInit,
-} from "./chatgpt-client-defined-widget-charts";
+import { slot233 as sportsCodeSurfaceInit } from "./chatgpt-client-defined-widget-charts";
 
 /** Residual stub chrome peers previously owned by the open boundary. */
 const stubChromeA = rolldownRuntimeN(() => {});
@@ -63,4 +61,6 @@ setChatgptMarkdownRegistryPeerInits({
   titleCitationSurface: titleCitationSurfaceInit,
 });
 
-export const ensureChatgptComposerMarkdownPeerBootstrap = rolldownRuntimeN(() => {});
+export const ensureChatgptComposerMarkdownPeerBootstrap = rolldownRuntimeN(
+  () => {},
+);

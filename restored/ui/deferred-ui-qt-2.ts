@@ -21,5 +21,5 @@ export function bindDeferredUiQT() {
     throw new Error("bindDeferredUiQT peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => null);
+  return peers.Da(peers.Q, (e) => null);
 }

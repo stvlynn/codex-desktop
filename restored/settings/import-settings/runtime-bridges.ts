@@ -4,8 +4,6 @@
 // Residual companion stubs: 29 (verified 66/95).
 // Bind/ensure bridges.
 
-
 /** Wave FX: bind no longer required after full body promote */
 export function bindImportSettings(_next: unknown): void {}
 export function ensureImportSettingsInit(): void {}
-

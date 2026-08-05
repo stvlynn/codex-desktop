@@ -2,8 +2,4 @@
 // Stage-3 wave-126: fill-empty barrel.
 
 export { wireFillEmptyBoundaryHooks, fempH } from "./boundary-hooks";
-export {
-  isUnspecifiedColor,
-  isEmptyFill,
-  iCe
-} from "./fill-empty-impl";
+export { isUnspecifiedColor, isEmptyFill, iCe } from "./fill-empty-impl";

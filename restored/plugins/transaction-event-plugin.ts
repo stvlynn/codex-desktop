@@ -12,7 +12,9 @@ export type BindTransactionEventPluginPeers = {
 let peers: BindTransactionEventPluginPeers | null = null;
 
 /** Wire bindTransactionEventPlugin peers once companions land. */
-export function setBindTransactionEventPluginPeers(next: BindTransactionEventPluginPeers): void {
+export function setBindTransactionEventPluginPeers(
+  next: BindTransactionEventPluginPeers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,6 @@ export function bindTransactionEventPlugin() {
   }
 
   return peers.e(() => {
-    rni = peers.r(peers.o(), 1), ini = (0, peers.rni.createContext)(null);
+    ((rni = peers.r(peers.o(), 1)), (ini = (0, peers.rni.createContext)(null)));
   });
 }

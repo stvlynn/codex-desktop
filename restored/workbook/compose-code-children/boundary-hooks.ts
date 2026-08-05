@@ -3,4 +3,6 @@
 
 export type ComposeCodeChildrenHooks = Record<string, never>;
 export const cccH: ComposeCodeChildrenHooks = {} as ComposeCodeChildrenHooks;
-export function wireComposeCodeChildrenBoundaryHooks(_next: Partial<ComposeCodeChildrenHooks> = {}): void {}
+export function wireComposeCodeChildrenBoundaryHooks(
+  _next: Partial<ComposeCodeChildrenHooks> = {},
+): void {}

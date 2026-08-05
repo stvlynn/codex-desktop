@@ -20,7 +20,9 @@ export type BindBindGptRosalindPreviewPeers = {
 let peers: BindBindGptRosalindPreviewPeers | null = null;
 
 /** Wire bindBindGptRosalindPreview peers once companions land. */
-export function setBindBindGptRosalindPreviewPeers(next: BindBindGptRosalindPreviewPeers): void {
+export function setBindBindGptRosalindPreviewPeers(
+  next: BindBindGptRosalindPreviewPeers,
+): void {
   peers = next;
 }
 
@@ -33,20 +35,32 @@ export function bindBindGptRosalindPreview() {
   }
 
   return peers.e(() => {
-    peers.Sl(), dme = peers.pl([`pending`, `accepted`, `dismissed`]), peers.pl([`science`]).nullable(), fme = peers.sl({
-      id: peers.X().min(1),
-      title: peers.X(),
-      description: peers.X(),
-      prompt: peers.X(),
-      appIds: peers.ol(peers.X()),
-      status: peers.dme,
-      createdAtMs: peers.rl(),
-      updatedAtMs: peers.rl()
-    }), peers.sl({
-      projectRoot: peers.X().default(``),
-      generatedAtMs: peers.rl().nullable(),
-      currentSuggestionIds: peers.ol(peers.X()),
-      suggestions: peers.ol(peers.fme)
-    }), pme = 300 * 6e4, mme = 1440 * 6e4, hme = /rosalind/i, gme = new Set([`gpt-rosalind-preview`, `gpt-rosalind-5-5`, `heisenberg`]);
+    (peers.Sl(),
+      (dme = peers.pl([`pending`, `accepted`, `dismissed`])),
+      peers.pl([`science`]).nullable(),
+      (fme = peers.sl({
+        id: peers.X().min(1),
+        title: peers.X(),
+        description: peers.X(),
+        prompt: peers.X(),
+        appIds: peers.ol(peers.X()),
+        status: peers.dme,
+        createdAtMs: peers.rl(),
+        updatedAtMs: peers.rl(),
+      })),
+      peers.sl({
+        projectRoot: peers.X().default(``),
+        generatedAtMs: peers.rl().nullable(),
+        currentSuggestionIds: peers.ol(peers.X()),
+        suggestions: peers.ol(peers.fme),
+      }),
+      (pme = 300 * 6e4),
+      (mme = 1440 * 6e4),
+      (hme = /rosalind/i),
+      (gme = new Set([
+        `gpt-rosalind-preview`,
+        `gpt-rosalind-5-5`,
+        `heisenberg`,
+      ])));
   });
 }

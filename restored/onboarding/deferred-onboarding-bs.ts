@@ -8,7 +8,9 @@ export type DeferredOnboardingBsPeers = {
 let peers: DeferredOnboardingBsPeers | null = null;
 
 /** Wire deferredOnboardingBs peers once companions land. */
-export function setDeferredOnboardingBsPeers(next: DeferredOnboardingBsPeers): void {
+export function setDeferredOnboardingBsPeers(
+  next: DeferredOnboardingBsPeers,
+): void {
   peers = next;
 }
 
@@ -20,5 +22,5 @@ export function deferredOnboardingBs(e: unknown, t: unknown) {
     throw new Error("deferredOnboardingBs peers are not configured");
   }
 
-  e.set(peers.BMl, e => e.includes(t) ? e : [...e, t]);
+  e.set(peers.BMl, (e) => (e.includes(t) ? e : [...e, t]));
 }

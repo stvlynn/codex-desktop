@@ -10,7 +10,9 @@ export type BindBindCollabAgentToolCall2Peers = {
 let peers: BindBindCollabAgentToolCall2Peers | null = null;
 
 /** Wire bindBindCollabAgentToolCall2 peers once companions land. */
-export function setBindBindCollabAgentToolCall2Peers(next: BindBindCollabAgentToolCall2Peers): void {
+export function setBindBindCollabAgentToolCall2Peers(
+  next: BindBindCollabAgentToolCall2Peers,
+): void {
   peers = next;
 }
 
@@ -23,6 +25,7 @@ export function bindBindCollabAgentToolCall2() {
   }
 
   return peers.e(() => {
-    peers.Au(), Atn = /^(?:data:image\/|https?:\/\/|file:\/\/|app:\/\/|\/@fs)/i;
+    (peers.Au(),
+      (Atn = /^(?:data:image\/|https?:\/\/|file:\/\/|app:\/\/|\/@fs)/i));
   });
 }

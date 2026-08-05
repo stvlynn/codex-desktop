@@ -12,7 +12,9 @@ export type CloseDiffSidePanelIfOpenPeers = {
 let peers: CloseDiffSidePanelIfOpenPeers | null = null;
 
 /** Wire closeDiffSidePanelIfOpen peers once companions land. */
-export function setCloseDiffSidePanelIfOpenPeers(next: CloseDiffSidePanelIfOpenPeers): void {
+export function setCloseDiffSidePanelIfOpenPeers(
+  next: CloseDiffSidePanelIfOpenPeers,
+): void {
   peers = next;
 }
 

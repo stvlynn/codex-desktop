@@ -11,7 +11,9 @@ export type UseCreateTaskMutationPeers = {
 let peers: UseCreateTaskMutationPeers | null = null;
 
 /** Wire useCreateTaskMutation peers once companions land. */
-export function setUseCreateTaskMutationPeers(next: UseCreateTaskMutationPeers): void {
+export function setUseCreateTaskMutationPeers(
+  next: UseCreateTaskMutationPeers,
+): void {
   peers = next;
 }
 

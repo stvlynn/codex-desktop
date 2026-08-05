@@ -27,6 +27,11 @@ export function bindBindLineInfo() {
   }
 
   return peers.e(() => {
-    peers.Vca(), peers.ila(), peers.ula(), peers._la(), peers.Tla(), peers.Nla();
+    (peers.Vca(),
+      peers.ila(),
+      peers.ula(),
+      peers._la(),
+      peers.Tla(),
+      peers.Nla());
   });
 }

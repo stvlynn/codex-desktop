@@ -13,4 +13,3 @@ export function ensureHeaderInit(): void {}
 
 // re-export from "./part-4"
 export { headerT as Header } from "./part-4";
-

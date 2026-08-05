@@ -24,6 +24,6 @@ export function chatMessage() {
   }
 
   return peers.e(() => {
-    peers.yS(), peers.Gf(), uqn = /^::[a-zA-Z0-9-]+.*$/gm;
+    (peers.yS(), peers.Gf(), (uqn = /^::[a-zA-Z0-9-]+.*$/gm));
   });
 }

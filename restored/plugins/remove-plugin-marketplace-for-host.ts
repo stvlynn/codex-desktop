@@ -21,7 +21,9 @@ export type RemovePluginMarketplaceForHostPeers = {
 let peers: RemovePluginMarketplaceForHostPeers | null = null;
 
 /** Wire removePluginMarketplaceForHost peers once companions land. */
-export function setRemovePluginMarketplaceForHostPeers(next: RemovePluginMarketplaceForHostPeers): void {
+export function setRemovePluginMarketplaceForHostPeers(
+  next: RemovePluginMarketplaceForHostPeers,
+): void {
   peers = next;
 }
 

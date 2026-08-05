@@ -9,7 +9,9 @@ export type BindDeferredComposerLJPeers = {
 let peers: BindDeferredComposerLJPeers | null = null;
 
 /** Wire bindDeferredComposerLJ peers once companions land. */
-export function setBindDeferredComposerLJPeers(next: BindDeferredComposerLJPeers): void {
+export function setBindDeferredComposerLJPeers(
+  next: BindDeferredComposerLJPeers,
+): void {
   peers = next;
 }
 

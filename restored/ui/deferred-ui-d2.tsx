@@ -10,7 +10,9 @@ export type BindBindDeferredUiD2Peers = {
 let peers: BindBindDeferredUiD2Peers | null = null;
 
 /** Wire bindBindDeferredUiD2 peers once companions land. */
-export function setBindBindDeferredUiD2Peers(next: BindBindDeferredUiD2Peers): void {
+export function setBindBindDeferredUiD2Peers(
+  next: BindBindDeferredUiD2Peers,
+): void {
   peers = next;
 }
 
@@ -22,5 +24,5 @@ export function bindBindDeferredUiD2() {
     throw new Error("bindBindDeferredUiD2 peers are not configured");
   }
 
-  return peers.JE(e => peers.Utr(peers.sg(e)).cwd);
+  return peers.JE((e) => peers.Utr(peers.sg(e)).cwd);
 }

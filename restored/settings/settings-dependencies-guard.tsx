@@ -12,7 +12,9 @@ export type SettingsDependenciesGuardPeers = {
 let peers: SettingsDependenciesGuardPeers | null = null;
 
 /** Wire SettingsDependenciesGuard peers once companions land. */
-export function setSettingsDependenciesGuardPeers(next: SettingsDependenciesGuardPeers): void {
+export function setSettingsDependenciesGuardPeers(
+  next: SettingsDependenciesGuardPeers,
+): void {
   peers = next;
 }
 

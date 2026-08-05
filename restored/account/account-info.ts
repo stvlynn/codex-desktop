@@ -24,6 +24,6 @@ export function accountInfo() {
     throw new Error("accountInfo peers are not configured");
   }
   return peers.e(() => {
-    f2r = peers.c(), peers.ap(), peers.xM();
+    ((f2r = peers.c()), peers.ap(), peers.xM());
   });
 }

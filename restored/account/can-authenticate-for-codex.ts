@@ -13,7 +13,9 @@ export const CODEX_CHATGPT_AUTH_PLANS = [
 export type CodexChatGptAuthPlan = (typeof CODEX_CHATGPT_AUTH_PLANS)[number];
 
 /** Bundle `bme` (co-located). */
-export function isOpenAiEmployeeEmail(email: string | null | undefined): boolean {
+export function isOpenAiEmployeeEmail(
+  email: string | null | undefined,
+): boolean {
   return email?.toLowerCase().endsWith("@openai.com") === true;
 }
 

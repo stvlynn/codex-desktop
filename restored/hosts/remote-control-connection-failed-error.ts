@@ -22,7 +22,9 @@ export type BindRemoteControlConnectionFailedErrorPeers = {
 let peers: BindRemoteControlConnectionFailedErrorPeers | null = null;
 
 /** Wire bindRemoteControlConnectionFailedError peers once companions land. */
-export function setBindRemoteControlConnectionFailedErrorPeers(next: BindRemoteControlConnectionFailedErrorPeers): void {
+export function setBindRemoteControlConnectionFailedErrorPeers(
+  next: BindRemoteControlConnectionFailedErrorPeers,
+): void {
   peers = next;
 }
 
@@ -31,19 +33,31 @@ export function setBindRemoteControlConnectionFailedErrorPeers(next: BindRemoteC
  */
 export function bindRemoteControlConnectionFailedError() {
   if (peers == null) {
-    throw new Error("bindRemoteControlConnectionFailedError peers are not configured");
+    throw new Error(
+      "bindRemoteControlConnectionFailedError peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), peers.Gf(), P6n = class extends Error {
-      constructor() {
-        super(`Remote control failed to connect`), this.name = `RemoteControlConnectionFailedError`;
-      }
-    }, F6n = new WeakMap(), I6n = 5e3, sE = peers.Da(peers.Q, e => null), L6n = peers.Da(peers.Q, e => !1), R6n = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => {
-      let n = t(peers.sE, peers.e);
-      return !t(peers.L6n, peers.e) && (n?.status === `connecting` || n?.status === `connected`);
-    });
+    (peers.Ho(),
+      peers.ed(),
+      peers.Gf(),
+      (P6n = class extends Error {
+        constructor() {
+          (super(`Remote control failed to connect`),
+            (this.name = `RemoteControlConnectionFailedError`));
+        }
+      }),
+      (F6n = new WeakMap()),
+      (I6n = 5e3),
+      (sE = peers.Da(peers.Q, (e) => null)),
+      (L6n = peers.Da(peers.Q, (e) => !1)),
+      (R6n = peers.Oa(peers.Q, (e, { get: t }) => {
+        let n = t(peers.sE, peers.e);
+        return (
+          !t(peers.L6n, peers.e) &&
+          (n?.status === `connecting` || n?.status === `connected`)
+        );
+      })));
   });
 }

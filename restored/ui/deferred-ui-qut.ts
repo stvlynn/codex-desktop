@@ -24,13 +24,11 @@ export function bindDeferredUiQut() {
     throw new Error("bindDeferredUiQut peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     let n = t(peers.cp, e);
     return {
       ...n,
-      data: peers.BZe(e, n.data?.value)
+      data: peers.BZe(e, n.data?.value),
     };
   });
 }

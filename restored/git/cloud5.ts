@@ -33,6 +33,13 @@ export function cloud5() {
   }
 
   return peers.e(() => {
-    pQo = peers.c(), mQo = peers.r(peers.o(), 1), peers.$u(), peers.aP(), peers.Vm(), peers.qR(), peers.Mp(), lY = peers.J();
+    ((pQo = peers.c()),
+      (mQo = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.aP(),
+      peers.Vm(),
+      peers.qR(),
+      peers.Mp(),
+      (lY = peers.J()));
   });
 }

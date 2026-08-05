@@ -12,6 +12,8 @@ export function parseEnabledRemoteHostIdSet(serialized: string): Set<string> {
  * Bundle `wGr` (co-located).
  * Stable JSON key: sorted host ids.
  */
-export function serializeEnabledRemoteHostIdSet(hostIds: ReadonlySet<string>): string {
+export function serializeEnabledRemoteHostIdSet(
+  hostIds: ReadonlySet<string>,
+): string {
   return JSON.stringify(Array.from(hostIds).sort((a, b) => a.localeCompare(b)));
 }

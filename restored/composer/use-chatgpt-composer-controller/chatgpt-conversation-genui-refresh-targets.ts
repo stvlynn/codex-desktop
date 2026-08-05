@@ -9,13 +9,10 @@ import { chatgptGenUiRefreshMetadataSchema } from "./chatgpt-conversation-update
 export function useChatgptComposerControllerHelper9(request6167: any) {
   return appInitialPF(request6167).flatMap((item) => {
     let slot12948 = item.id,
-      slot12949 =
-        chatgptGenUiRefreshMetadataSchema.safeParse(item.metadata),
-      slot12950 =
-        slot12949.success
-          ? (slot12949.data.is_complete ??
-            item.status !== "in_progress")
-          : false;
+      slot12949 = chatgptGenUiRefreshMetadataSchema.safeParse(item.metadata),
+      slot12950 = slot12949.success
+        ? (slot12949.data.is_complete ?? item.status !== "in_progress")
+        : false;
     return item.author.role !== "assistant" ||
       slot12948 == null ||
       !slot12949.success ||

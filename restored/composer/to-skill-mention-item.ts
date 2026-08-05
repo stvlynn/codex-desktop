@@ -26,7 +26,9 @@ export type SkillMentionItem = {
 };
 
 /** Normalize a skill into composer mention-list fields (`M1r` / `gJ`). */
-export function toSkillMentionItem(skill: SkillMentionSource): SkillMentionItem {
+export function toSkillMentionItem(
+  skill: SkillMentionSource,
+): SkillMentionItem {
   return {
     name: skill.name,
     displayName: getPluginDisplayName(skill),

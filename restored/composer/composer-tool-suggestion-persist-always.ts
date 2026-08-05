@@ -13,7 +13,9 @@ export type ComposerToolSuggestionPersistAlwaysPeers = {
 let peers: ComposerToolSuggestionPersistAlwaysPeers | null = null;
 
 /** Wire composerToolSuggestionPersistAlways peers once companions land. */
-export function setComposerToolSuggestionPersistAlwaysPeers(next: ComposerToolSuggestionPersistAlwaysPeers): void {
+export function setComposerToolSuggestionPersistAlwaysPeers(
+  next: ComposerToolSuggestionPersistAlwaysPeers,
+): void {
   peers = next;
 }
 
@@ -22,10 +24,16 @@ export function setComposerToolSuggestionPersistAlwaysPeers(next: ComposerToolSu
  */
 export function composerToolSuggestionPersistAlways() {
   if (peers == null) {
-    throw new Error("composerToolSuggestionPersistAlways peers are not configured");
+    throw new Error(
+      "composerToolSuggestionPersistAlways peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Au(), peers.nni(), peers.yE(), peers.ap(), VIs = [null, `science`];
+    (peers.Au(),
+      peers.nni(),
+      peers.yE(),
+      peers.ap(),
+      (VIs = [null, `science`]));
   });
 }

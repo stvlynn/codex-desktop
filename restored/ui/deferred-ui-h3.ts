@@ -22,7 +22,5 @@ export function bindDeferredUiH3() {
     throw new Error("bindDeferredUiH3 peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => e(peers.gE) === `full`);
+  return peers.Ma(peers.Q, ({ get: e }) => e(peers.gE) === `full`);
 }

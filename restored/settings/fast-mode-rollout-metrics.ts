@@ -9,7 +9,9 @@ export type BindFastModeRolloutMetricsPeers = {
 let peers: BindFastModeRolloutMetricsPeers | null = null;
 
 /** Wire bindFastModeRolloutMetrics peers once companions land. */
-export function setBindFastModeRolloutMetricsPeers(next: BindFastModeRolloutMetricsPeers): void {
+export function setBindFastModeRolloutMetricsPeers(
+  next: BindFastModeRolloutMetricsPeers,
+): void {
   peers = next;
 }
 

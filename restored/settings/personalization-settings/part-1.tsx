@@ -14,10 +14,25 @@ import { CODEX_MEMORY_SETTING_TOGGLED_TYPE } from "../../analytics/codex-memory-
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { chatgptConversationsGateAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
 import { composerNavigation } from "../../composer/composer-navigation";
@@ -46,7 +61,10 @@ import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { PanelWidthIcon } from "../../icons/panel-width-icon";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { resolveBrowserTabPanelSide as ResolveBrowserTabPanelSide } from "../../navigation/resolve-browser-tab-panel-side";
@@ -59,7 +77,10 @@ import { codexCommandTheme } from "../../ui/codex-command-theme";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -68,13 +89,25 @@ import { identity } from "../../utils/identity";
 import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { posixPathBasename } from "../../utils/posix-path-basename";
-import { ensurePersonalizationCInit as EnsurePersonalizationCInit, ensurePersonalizationG0Init, ensurePersonalizationJutInit, ensurePersonalizationK0Init, ensurePersonalizationM6Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+  ensurePersonalizationG0Init,
+  ensurePersonalizationJutInit,
+  ensurePersonalizationK0Init,
+  ensurePersonalizationM6Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { buildMemoryFeatureFlags } from "../build-memory-feature-flags";
-import { ensureChronicleConfigQueriesInit, useChronicleConfigQuery } from "../chronicle-config-queries";
+import {
+  ensureChronicleConfigQueriesInit,
+  useChronicleConfigQuery,
+} from "../chronicle-config-queries";
 import { gpuTearingDebugSettingsAtom } from "../gpu-tearing-debug-settings";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { buildVscodeQueryKey } from "../vscode-query-key";
 const readLoginRouteQuerySnapshot: any = undefined;
 // Wave5d soft stubs.
@@ -210,12 +243,16 @@ var olive,
     ensureAppScopeInit();
     dataAppActionReviewFileExpanded();
     scrollAppActionTargetTo();
-    olive = buildMemoryFeatureFlags(appScopeAtom, "codex-agents-md", acorn => ({
-      params: {
-        hostId: acorn
-      },
-      staleTime: readScrollTop.FIVE_SECONDS
-    }));
+    olive = buildMemoryFeatureFlags(
+      appScopeAtom,
+      "codex-agents-md",
+      (acorn) => ({
+        params: {
+          hostId: acorn,
+        },
+        staleTime: readScrollTop.FIVE_SECONDS,
+      }),
+    );
   }),
   quill,
   reef = esmInit(() => {
@@ -224,88 +261,94 @@ var olive,
       personality: {
         id: "settings.personalization.personality.label",
         defaultMessage: "Personality",
-        description: "Label for personality selection in personalization settings"
+        description:
+          "Label for personality selection in personalization settings",
       },
       friendly: {
         id: "composer.personalitySlashCommand.label.friendly",
         defaultMessage: "Friendly",
-        description: "Label for the friendly personality"
+        description: "Label for the friendly personality",
       },
       pragmatic: {
         id: "composer.personalitySlashCommand.label.pragmatic",
         defaultMessage: "Pragmatic",
-        description: "Label for the pragmatic personality"
+        description: "Label for the pragmatic personality",
       },
       customInstructions: {
         id: "settings.personalization.agents.title",
         defaultMessage: "Custom instructions",
-        description: "Heading for personal agents settings section"
+        description: "Heading for personal agents settings section",
       },
       memory: {
         id: "settings.personalization.memory.title",
         defaultMessage: "Memory",
-        description: "Heading for memory settings in personalization"
+        description: "Heading for memory settings in personalization",
       },
       enableMemories: {
         id: "settings.memory.enableMemoriesLabel",
         defaultMessage: "Enable memories",
-        description: "Label for enabling memories"
+        description: "Label for enabling memories",
       },
       allowMemoryGenerationFromToolAssistedTasks: {
         id: "settings.memory.allowMemoryGenerationFromToolAssistedTasksLabel",
         defaultMessage: "Allow memory generation from tool-assisted chats",
-        description: "Label for allowing memory generation when MCP or web search is used"
+        description:
+          "Label for allowing memory generation when MCP or web search is used",
       },
       resetMemories: {
         id: "settings.memory.resetMemoriesLabel",
         defaultMessage: "Reset memories",
-        description: "Label for resetting memories"
-      }
+        description: "Label for resetting memories",
+      },
     });
   });
 function sage(bloom) {
   return ultra(bloom, topaz);
 }
 function topaz(coral) {
-  let {
-    edits
-  } = coral;
+  let { edits } = coral;
   return edits;
 }
 function ultra(drift, eagle) {
   let frost = useQueryClient(),
-    {
-      data
-    } = CodexBrowserSurfaceActionType(homeDirectoryQueryAtom, drift),
+    { data } = CodexBrowserSurfaceActionType(homeDirectoryQueryAtom, drift),
     glide = ensureGitRepoWatchAtomsInit(),
     honey = [...USER_CONFIG_PATH, drift];
   let iris = honey,
-    jewel = orbit => canonicalizeWorkspacePathKey("batch-write-config-value", {
-      hostId: drift,
-      edits: eagle(orbit).map(vapor),
-      filePath: data?.configWriteTarget?.filePath ?? null,
-      expectedVersion: null,
-      reloadUserConfig: true
-    });
-  let knoll = async pine => {
+    jewel = (orbit) =>
+      canonicalizeWorkspacePathKey("batch-write-config-value", {
+        hostId: drift,
+        edits: eagle(orbit).map(vapor),
+        filePath: data?.configWriteTarget?.filePath ?? null,
+        expectedVersion: null,
+        reloadUserConfig: true,
+      });
+  let knoll = async (pine) => {
     let quest = eagle(pine);
     await frost.cancelQueries({
-      queryKey: iris
+      queryKey: iris,
     });
     let ridge = frost.getQueryData(iris);
-    return frost.setQueryData(iris, storm => storm == null ? storm : {
-      ...storm,
-      config: AppInitialA9(storm.config, quest)
-    }), {
-      previousUserConfig: ridge
-    };
+    return (
+      frost.setQueryData(iris, (storm) =>
+        storm == null
+          ? storm
+          : {
+              ...storm,
+              config: AppInitialA9(storm.config, quest),
+            },
+      ),
+      {
+        previousUserConfig: ridge,
+      }
+    );
   };
   let lunar = (tide, unity, vale) => {
     appActionSidebarProjectRefSchema.error("Failed to update memory config", {
       safe: {},
       sensitive: {
-        error: tide
-      }
+        error: tide,
+      },
     });
     frost.setQueryData(iris, vale?.previousUserConfig);
   };
@@ -313,22 +356,22 @@ function ultra(drift, eagle) {
     await Promise.all([glide(USER_CONFIG_PATH), glide(["user-saved-config"])]);
   };
   let north;
-  return north = {
-    mutationFn: jewel,
-    onMutate: knoll,
-    onError: lunar,
-    onSettled: moss
-  }, noop(north);
+  return (
+    (north = {
+      mutationFn: jewel,
+      onMutate: knoll,
+      onError: lunar,
+      onSettled: moss,
+    }),
+    noop(north)
+  );
 }
 function vapor(wave) {
-  let {
-    keyPath,
-    value
-  } = wave;
+  let { keyPath, value } = wave;
   return {
     keyPath,
     value,
-    mergeStrategy: "upsert"
+    mergeStrategy: "upsert",
   };
 }
 var wheat,
@@ -342,23 +385,20 @@ var wheat,
     posixPathBasename();
     formatAgentMention();
   });
-function zephyr({
-  onChronicleResearchPreviewToggled
-} = {}) {
+function zephyr({ onChronicleResearchPreviewToggled } = {}) {
   let apex = CodexPluginActionType(appScopeAtom),
     brook = CodexPluginActionResult(DeferredUiF22),
     cliff = useIntl(),
     dusk = useQueryClient(),
     elm = composerNavigation(),
     fern = useChronicleConfigQuery(),
-    {
-      data,
-      isLoading
-    } = ensurePersonalizationK0Init(DesktopPersistenceKeys.CHRONICLE_CONSENT_ACCEPTED),
-    {
-      data: _data,
-      isLoading: _isLoading
-    } = CodexBrowserSurfaceActionType(homeDirectoryQueryAtom, brook),
+    { data, isLoading } = ensurePersonalizationK0Init(
+      DesktopPersistenceKeys.CHRONICLE_CONSENT_ACCEPTED,
+    ),
+    { data: _data, isLoading: _isLoading } = CodexBrowserSurfaceActionType(
+      homeDirectoryQueryAtom,
+      brook,
+    ),
     [grove, hill] = nova.useState(false),
     [isle, juniper] = nova.useState(false),
     [lagoon, meadow] = nova.useState(null),
@@ -367,8 +407,8 @@ function zephyr({
       queryConfig: {
         intervalMs: 1e3,
         refetchIntervalInBackground: true,
-        refetchOnMount: "always"
-      }
+        refetchOnMount: "always",
+      },
     }),
     quiet = AppInitialYgt(_data?.config, MEMORIES_ID) === true,
     rain = AppInitialYgt(_data?.config, AppInitialY) === true,
@@ -380,46 +420,63 @@ function zephyr({
       isSidecarPresent: petal.data?.chronicleSidecarPresent === true,
       isUpdatingChronicle: nest,
       processState: petal.data?.chronicleSidecarProcessState ?? "disabled",
-      screenRecordingStatus: petal.data?.screenRecording
+      screenRecordingStatus: petal.data?.screenRecording,
     }),
     vine = cliff.formatMessage({
       id: "settings.general.experimentalFeatures.chronicle.name",
       defaultMessage: "Chronicle research preview",
-      description: "Name of the Chronicle experimental feature"
+      description: "Name of the Chronicle experimental feature",
     });
   nova.useEffect(() => {
-    isle && deferredConversationP(urn.kind) && readLoginRouteQuerySnapshotStub(apex, DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING, true);
+    isle &&
+      deferredConversationP(urn.kind) &&
+      readLoginRouteQuerySnapshotStub(
+        apex,
+        DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING,
+        true,
+      );
   }, [isle, apex, urn.kind]);
-  let wind = async ({
-      rememberConsentAccepted,
-      showSetupDialog
-    }) => {
+  let wind = async ({ rememberConsentAccepted, showSetupDialog }) => {
       let azure = rain;
       oak(true);
       meadow(null);
       hill(false);
       juniper(showSetupDialog);
       try {
-        rememberConsentAccepted === true && (await readLoginRouteQuerySnapshotStub(apex, DesktopPersistenceKeys.CHRONICLE_CONSENT_ACCEPTED, true));
-        showSetupDialog || readLoginRouteQuerySnapshotStub(apex, DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING, false);
+        rememberConsentAccepted === true &&
+          (await readLoginRouteQuerySnapshotStub(
+            apex,
+            DesktopPersistenceKeys.CHRONICLE_CONSENT_ACCEPTED,
+            true,
+          ));
+        showSetupDialog ||
+          readLoginRouteQuerySnapshotStub(
+            apex,
+            DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING,
+            false,
+          );
         await fern.mutateAsync({
-          enabled: true
+          enabled: true,
         });
         onChronicleResearchPreviewToggled?.(azure, true);
         await dusk.invalidateQueries({
-          queryKey: buildVscodeQueryKey("chronicle-permissions")
+          queryKey: buildVscodeQueryKey("chronicle-permissions"),
         });
       } catch (birch) {
         let canyon = alpha(birch);
-        readLoginRouteQuerySnapshotStub(apex, DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING, false);
+        readLoginRouteQuerySnapshotStub(
+          apex,
+          DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING,
+          false,
+        );
         meadow(canyon);
         appActionSidebarProjectRefSchema.error("Failed to enable Chronicle", {
           safe: {
-            errorMessage: canyon
+            errorMessage: canyon,
           },
           sensitive: {
-            error: birch
-          }
+            error: birch,
+          },
         });
       } finally {
         oak(false);
@@ -429,79 +486,141 @@ function zephyr({
       let dew = rain;
       oak(true);
       meadow(null);
-      readLoginRouteQuerySnapshotStub(apex, DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING, false);
+      readLoginRouteQuerySnapshotStub(
+        apex,
+        DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING,
+        false,
+      );
       try {
         await fern.mutateAsync({
-          enabled: false
+          enabled: false,
         });
         onChronicleResearchPreviewToggled?.(dew, false);
-      } catch {} finally {
+      } catch {
+      } finally {
         oak(false);
       }
     };
-  return _isLoading ? <></> : <>
-      {<EnsurePersonalizationCInit {...{
-      label: vine,
-      description: <PersonalizationSettingsHelper11 {...{
-        isCheckingPermissions: petal.data == null && petal.isFetching,
-        permissions: petal.data,
-        chronicleFeatureEnabled: rain,
-        onOpenChronicleSetup: () => {
-          meadow(null);
-          juniper(true);
-        }
-      }} />,
-      control: <OptionalTooltip {...{
-        disabled: quiet,
-        tooltipContent: <MemoizedFormattedMessage {...{
-          id: "settings.general.experimentalFeatures.chronicle.memoriesRequiredTooltip",
-          defaultMessage: "Enable memories to use Chronicle",
-          description: "Tooltip shown when the Chronicle toggle is disabled because Memories is disabled"
-        }} />,
-        children: <span className={IntlProvider("inline-flex", !quiet && "cursor-not-allowed")} tabIndex={quiet ? undefined : 0}>
-                      <AppInitialYC checked={rain} className={quiet ? undefined : "pointer-events-none"} disabled={trail} onChange={ever => {
-            if (ever) {
-              if (data === true) {
-                wind({
-                  showSetupDialog: false
-                });
-                return;
-              }
-              hill(true);
-              return;
-            }
-            yarrow();
-          }} ariaLabel={cliff.formatMessage({
-            id: "settings.general.experimentalFeatures.chronicle.buttonAriaLabel",
-            defaultMessage: "Toggle {featureName}",
-            description: "Aria label for toggling the Chronicle experimental feature"
-          }, {
-            featureName: vine
-          })} />
+  return _isLoading ? (
+    <></>
+  ) : (
+    <>
+      {
+        <EnsurePersonalizationCInit
+          {...{
+            label: vine,
+            description: (
+              <PersonalizationSettingsHelper11
+                {...{
+                  isCheckingPermissions: petal.data == null && petal.isFetching,
+                  permissions: petal.data,
+                  chronicleFeatureEnabled: rain,
+                  onOpenChronicleSetup: () => {
+                    meadow(null);
+                    juniper(true);
+                  },
+                }}
+              />
+            ),
+            control: (
+              <OptionalTooltip
+                {...{
+                  disabled: quiet,
+                  tooltipContent: (
+                    <MemoizedFormattedMessage
+                      {...{
+                        id: "settings.general.experimentalFeatures.chronicle.memoriesRequiredTooltip",
+                        defaultMessage: "Enable memories to use Chronicle",
+                        description:
+                          "Tooltip shown when the Chronicle toggle is disabled because Memories is disabled",
+                      }}
+                    />
+                  ),
+                  children: (
+                    <span
+                      className={IntlProvider(
+                        "inline-flex",
+                        !quiet && "cursor-not-allowed",
+                      )}
+                      tabIndex={quiet ? undefined : 0}
+                    >
+                      <AppInitialYC
+                        checked={rain}
+                        className={quiet ? undefined : "pointer-events-none"}
+                        disabled={trail}
+                        onChange={(ever) => {
+                          if (ever) {
+                            if (data === true) {
+                              wind({
+                                showSetupDialog: false,
+                              });
+                              return;
+                            }
+                            hill(true);
+                            return;
+                          }
+                          yarrow();
+                        }}
+                        ariaLabel={cliff.formatMessage(
+                          {
+                            id: "settings.general.experimentalFeatures.chronicle.buttonAriaLabel",
+                            defaultMessage: "Toggle {featureName}",
+                            description:
+                              "Aria label for toggling the Chronicle experimental feature",
+                          },
+                          {
+                            featureName: vine,
+                          },
+                        )}
+                      />
                     </span>
-      }} />
-    }} />}
-      {<PersonalizationSettingsHelper6 {...{
-      open: grove,
-      onOpenChange: hill,
-      chronicleDisplayName: vine,
-      isPending: seed,
-      onContinue: () => {
-        wind({
-          rememberConsentAccepted: true,
-          showSetupDialog: true
-        });
+                  ),
+                }}
+              />
+            ),
+          }}
+        />
       }
-    }} />}
-      <AppInitialH open={isle} setupState={urn} onOpenChange={field => {
-      field || readLoginRouteQuerySnapshotStub(apex, DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING, false);
-      juniper(field);
-    }} onAskCodex={() => {
-      readLoginRouteQuerySnapshotStub(apex, DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING, false);
-      juniper(false);
-      elm({
-        prefillPrompt: remoteHostedPipHiddenThreadIds
-      });
-    }} />
-    </>;
+      {
+        <PersonalizationSettingsHelper6
+          {...{
+            open: grove,
+            onOpenChange: hill,
+            chronicleDisplayName: vine,
+            isPending: seed,
+            onContinue: () => {
+              wind({
+                rememberConsentAccepted: true,
+                showSetupDialog: true,
+              });
+            },
+          }}
+        />
+      }
+      <AppInitialH
+        open={isle}
+        setupState={urn}
+        onOpenChange={(field) => {
+          field ||
+            readLoginRouteQuerySnapshotStub(
+              apex,
+              DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING,
+              false,
+            );
+          juniper(field);
+        }}
+        onAskCodex={() => {
+          readLoginRouteQuerySnapshotStub(
+            apex,
+            DesktopPersistenceKeys.CHRONICLE_SETUP_COMPLETION_PENDING,
+            false,
+          );
+          juniper(false);
+          elm({
+            prefillPrompt: remoteHostedPipHiddenThreadIds,
+          });
+        }}
+      />
+    </>
+  );
 }

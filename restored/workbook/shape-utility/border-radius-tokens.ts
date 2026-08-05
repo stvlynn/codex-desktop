@@ -17,9 +17,7 @@ export const borderRadiusTokens: Record<string, number> = {
 };
 
 /** Legacy `hde` — resolve a border-radius utility token to px. */
-export function resolveBorderRadiusToken(
-  raw: string,
-): number | null {
+export function resolveBorderRadiusToken(raw: string): number | null {
   const trimmed = raw.trim();
   if (!trimmed) return null;
   const value = borderRadiusTokens[trimmed.toLowerCase()];

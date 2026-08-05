@@ -7,14 +7,20 @@ export type KeyedAtomValueWithCleanupPeers = {
 let peers: KeyedAtomValueWithCleanupPeers | null = null;
 
 /** Wire setKeyedAtomValueWithCleanup peers once companions land. */
-export function setKeyedAtomValueWithCleanupPeers(next: KeyedAtomValueWithCleanupPeers): void {
+export function setKeyedAtomValueWithCleanupPeers(
+  next: KeyedAtomValueWithCleanupPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `setKeyedAtomValueWithCleanup` / internal `Z$s`.
  */
-export function setKeyedAtomValueWithCleanup(e: unknown, t: unknown, n: unknown) {
+export function setKeyedAtomValueWithCleanup(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+) {
   if (peers == null) {
     throw new Error("setKeyedAtomValueWithCleanup peers are not configured");
   }

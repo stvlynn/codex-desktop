@@ -33,11 +33,18 @@ export function wtt() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), peers.pXt(), TXt = peers.Ta(peers.Q, !1), EXt = peers.Ta(peers.Q, !1), DXt = peers.Ta(peers.Q, !1), OXt = peers.Ta(peers.Q, !1), kXt = peers.Ma(peers.Q, ({
-      get: e
-    }) => peers.dXt({
-      ctrlKey: peers.e(peers.EXt),
-      metaKey: peers.e(peers.DXt)
-    }));
+    (peers.Ho(),
+      peers.ed(),
+      peers.pXt(),
+      (TXt = peers.Ta(peers.Q, !1)),
+      (EXt = peers.Ta(peers.Q, !1)),
+      (DXt = peers.Ta(peers.Q, !1)),
+      (OXt = peers.Ta(peers.Q, !1)),
+      (kXt = peers.Ma(peers.Q, ({ get: e }) =>
+        peers.dXt({
+          ctrlKey: peers.e(peers.EXt),
+          metaKey: peers.e(peers.DXt),
+        }),
+      )));
   });
 }

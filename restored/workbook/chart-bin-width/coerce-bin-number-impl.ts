@@ -12,4 +12,3 @@ export function coerceBinNumber(cbwIn7483: any) {
     if (Number.isFinite(cbwBind21198)) return cbwBind21198;
   }
 }
-

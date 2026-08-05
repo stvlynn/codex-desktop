@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Un,
-} from "../presentation-protobuf";
+import { Un } from "../presentation-protobuf";
 
 export const tickLabelPositionNameToProto = {
   high: Un.TICK_LABEL_POSITION_HIGH,

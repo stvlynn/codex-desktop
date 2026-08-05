@@ -10,7 +10,9 @@ export type GithubOriginRef = {
  * Extract `{ owner, repoName }` from SSH (`git@host:owner/repo.git`),
  * HTTPS, or path-like remotes. Returns null when the path is too short.
  */
-export function parseGithubOriginRef(originUrl: string): GithubOriginRef | null {
+export function parseGithubOriginRef(
+  originUrl: string,
+): GithubOriginRef | null {
   try {
     let value = originUrl.trim();
     const scp = /^(?<user>[^@]+)@(?<host>[^:]+):(?<path>.+)$/.exec(value);
@@ -48,7 +50,9 @@ export function parseGithubOriginRef(originUrl: string): GithubOriginRef | null 
  * Only accept github.com remotes (HTTPS / `github.com/...` / `git@github.com:…`).
  * Bundle `cQr` — wraps {@link parseGithubOriginRef} with a host check.
  */
-export function parseGithubComOrigin(originUrl: string): GithubOriginRef | null {
+export function parseGithubComOrigin(
+  originUrl: string,
+): GithubOriginRef | null {
   try {
     const trimmed = originUrl.trim();
     if (!trimmed) return null;

@@ -18,4 +18,3 @@ export function parseFontSizeUnitString(dtIn4689: any) {
   if (dtBind13969 === "pt") return (dtBind13968 * 96) / 72;
   throw Error(`Unsupported font size unit in "${dtIn4689}".`);
 }
-

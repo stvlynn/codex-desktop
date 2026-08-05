@@ -10,14 +10,19 @@ export type ResolvePanelSessionTargetPeers = {
 let peers: ResolvePanelSessionTargetPeers | null = null;
 
 /** Wire resolvePanelSessionTarget peers once companions land. */
-export function setResolvePanelSessionTargetPeers(next: ResolvePanelSessionTargetPeers): void {
+export function setResolvePanelSessionTargetPeers(
+  next: ResolvePanelSessionTargetPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `sU` / internal `Vzi`.
  */
-export function resolvePanelSessionTarget(e: unknown, t: unknown, n: unknown = peers.Xzi(e),
+export function resolvePanelSessionTarget(
+  e: unknown,
+  t: unknown,
+  n: unknown = peers.Xzi(e),
 ) {
   if (peers == null) {
     throw new Error("resolvePanelSessionTarget peers are not configured");

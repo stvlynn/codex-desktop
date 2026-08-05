@@ -42,7 +42,6 @@ export function hSe(chbIn6509: any, chbIn6510: any) {
       : [chbBind16723, chbBind16722];
 }
 
-
 export const valueExtent = hSe;
 /** Compat alias for barrels. */
 export const workbookHelper553 = binLabel;

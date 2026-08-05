@@ -33,7 +33,9 @@ export function contentSearchUnitKey(turnKey: string, unitId: string): string {
 }
 
 /** Bundle `_Bi` / export `QH`. */
-export function conversationMatchId(location: ConversationMatchLocation): string {
+export function conversationMatchId(
+  location: ConversationMatchLocation,
+): string {
   return `conversation:${location.turnKey}:${location.unitId}:${location.start}`;
 }
 
@@ -75,7 +77,11 @@ export function groupDiffMatchesByPath<
 }
 
 /** Bundle `VBi` / export `JH`. */
-export function findTextOffsets(haystack: string, needle: string, maxMatches: number): TextSearchResult {
+export function findTextOffsets(
+  haystack: string,
+  needle: string,
+  maxMatches: number,
+): TextSearchResult {
   const needleLower = needle.toLowerCase();
   const haystackLower = haystack.toLowerCase();
   const offsets: TextOffset[] = [];
@@ -95,7 +101,12 @@ export function findTextOffsets(haystack: string, needle: string, maxMatches: nu
 }
 
 /** Bundle `BBi` / export `qH`. */
-export function buildMatchSnippet(text: string, start: number, end: number, padding: number = 24): MatchSnippet {
+export function buildMatchSnippet(
+  text: string,
+  start: number,
+  end: number,
+  padding: number = 24,
+): MatchSnippet {
   const beforeStart = Math.max(0, start - padding);
   const afterEnd = Math.min(text.length, end + padding);
   return {

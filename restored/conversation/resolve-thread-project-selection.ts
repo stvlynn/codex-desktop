@@ -22,7 +22,9 @@ export type ThreadProjectSelectionInput =
     };
 
 /** Normalize composer/thread project picker values into a project locator. */
-export function resolveThreadProjectSelection(input: ThreadProjectSelectionInput): Record<string, unknown> | undefined {
+export function resolveThreadProjectSelection(
+  input: ThreadProjectSelectionInput,
+): Record<string, unknown> | undefined {
   switch (input.type) {
     case "local-project":
       return input.projectId == null || input.projectId === "~"

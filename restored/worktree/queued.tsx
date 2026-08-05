@@ -34,6 +34,16 @@ export function bindBindQueued() {
   }
 
   return peers.e(() => {
-    cJs = peers.c(), peers.$u(), peers.Pp(), peers.cA(), peers.Iqs(), peers.Vm(), peers.Eqs(), peers.kqs(), peers.E$(), peers.Yqs(), k$ = peers.J();
+    ((cJs = peers.c()),
+      peers.$u(),
+      peers.Pp(),
+      peers.cA(),
+      peers.Iqs(),
+      peers.Vm(),
+      peers.Eqs(),
+      peers.kqs(),
+      peers.E$(),
+      peers.Yqs(),
+      (k$ = peers.J()));
   });
 }

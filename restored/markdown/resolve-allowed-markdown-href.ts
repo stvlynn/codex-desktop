@@ -16,7 +16,9 @@ let isRelativeFilePath: IsRelativeFilePath | null = null;
 const specialPredicates: HrefPredicate[] = [];
 const specialMappers: HrefMapper[] = [];
 
-export function setAllowedMarkdownHrefFilePathResolver(resolver: FilePathFromHref): void {
+export function setAllowedMarkdownHrefFilePathResolver(
+  resolver: FilePathFromHref,
+): void {
   filePathFromHref = resolver;
 }
 export function setMarkdownHrefPartsParser(parser: ParseHrefParts): void {

@@ -21,5 +21,5 @@ export function bindBindRemote7() {
     throw new Error("bindBindRemote7 peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => null);
+  return peers.Da(peers.Q, (e) => null);
 }

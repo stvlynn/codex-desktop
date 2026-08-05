@@ -10,7 +10,9 @@ export type DeferredAccountJv3Peers = {
 let peers: DeferredAccountJv3Peers | null = null;
 
 /** Wire DeferredAccountJv3 peers once companions land. */
-export function setDeferredAccountJv3Peers(next: DeferredAccountJv3Peers): void {
+export function setDeferredAccountJv3Peers(
+  next: DeferredAccountJv3Peers,
+): void {
   peers = next;
 }
 
@@ -21,5 +23,5 @@ export function DeferredAccountJv3() {
   if (peers == null) {
     throw new Error("DeferredAccountJv3 peers are not configured");
   }
-  return peers.ka(peers.Q, e => peers.fOs(e, !1));
+  return peers.ka(peers.Q, (e) => peers.fOs(e, !1));
 }

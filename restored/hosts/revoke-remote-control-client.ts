@@ -9,7 +9,9 @@ export type RevokeRemoteControlClientPeers = {
 let peers: RevokeRemoteControlClientPeers | null = null;
 
 /** Wire revokeRemoteControlClient peers once companions land. */
-export function setRevokeRemoteControlClientPeers(next: RevokeRemoteControlClientPeers): void {
+export function setRevokeRemoteControlClientPeers(
+  next: RevokeRemoteControlClientPeers,
+): void {
   peers = next;
 }
 
@@ -24,14 +26,14 @@ async function revokeRemoteControlClient(e) {
   switch (e.revokeTarget.type) {
     case `browser`:
       await peers.djr({
-        clientId: e.clientId
+        clientId: e.clientId,
       });
       return;
     case `app-server`:
       await peers.Bf(`revoke-remote-control-client-for-host`, {
         hostId: e.revokeTarget.hostId,
         environmentId: e.revokeTarget.environmentId,
-        clientId: e.clientId
+        clientId: e.clientId,
       });
       return;
   }

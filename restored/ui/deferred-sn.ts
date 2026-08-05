@@ -31,6 +31,13 @@ export function deferredSn() {
   }
 
   return peers.e(() => {
-    Ssu = peers.c(), peers.sd(), peers.PR(), peers.gk(), peers.dk(), peers.LD(), c9 = peers.J(), Csu = `h-[18px] w-[18px] rounded-[3px] border-[1px]`;
+    ((Ssu = peers.c()),
+      peers.sd(),
+      peers.PR(),
+      peers.gk(),
+      peers.dk(),
+      peers.LD(),
+      (c9 = peers.J()),
+      (Csu = `h-[18px] w-[18px] rounded-[3px] border-[1px]`));
   });
 }

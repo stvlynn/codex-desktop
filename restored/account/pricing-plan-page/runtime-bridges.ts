@@ -9,4 +9,3 @@
 export function bindPricingPlanPage(_next: unknown): void {}
 
 export function ensurePricingPlanPageInit(): void {}
-

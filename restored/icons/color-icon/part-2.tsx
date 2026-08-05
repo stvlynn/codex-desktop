@@ -8,7 +8,10 @@
 // Companion imports rewritten via IMPORT_MAP + app-initial exportSources (5/5).
 // Split part 1/1 of icons/color-icon.tsx
 
-import { jsxRuntime as getJsxRuntime, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  jsxRuntime as getJsxRuntime,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useIsDarkAppearance } from "../../hooks/use-is-dark-appearance";
 import { esmInit } from "../../runtime/rolldown-runtime";
 import { AppIconJG } from "../app-icon-jg";

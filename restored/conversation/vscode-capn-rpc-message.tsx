@@ -9,7 +9,9 @@ export type BindBindVscodeCapnRpcMessagePeers = {
 let peers: BindBindVscodeCapnRpcMessagePeers | null = null;
 
 /** Wire bindBindVscodeCapnRpcMessage peers once companions land. */
-export function setBindBindVscodeCapnRpcMessagePeers(next: BindBindVscodeCapnRpcMessagePeers): void {
+export function setBindBindVscodeCapnRpcMessagePeers(
+  next: BindBindVscodeCapnRpcMessagePeers,
+): void {
   peers = next;
 }
 

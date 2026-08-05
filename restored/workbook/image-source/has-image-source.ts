@@ -2,14 +2,9 @@
 // Stage-3 wave-39: image source field guards (legacy Binding659/Ude).
 
 /** Legacy `workbookBinding659` — path/blob/dataUrl/uri present. */
-export function hasImageSourceFields(
-  value: Record<string, unknown>,
-): boolean {
+export function hasImageSourceFields(value: Record<string, unknown>): boolean {
   return (
-    "path" in value ||
-    "blob" in value ||
-    "dataUrl" in value ||
-    "uri" in value
+    "path" in value || "blob" in value || "dataUrl" in value || "uri" in value
   );
 }
 

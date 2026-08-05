@@ -8,7 +8,9 @@ export type BindBinddeferredPluginsVY3Peers = {
 let peers: BindBinddeferredPluginsVY3Peers | null = null;
 
 /** Wire bindBinddeferredPluginsVY3 peers once companions land. */
-export function setBindBinddeferredPluginsVY3Peers(next: BindBinddeferredPluginsVY3Peers): void {
+export function setBindBinddeferredPluginsVY3Peers(
+  next: BindBinddeferredPluginsVY3Peers,
+): void {
   peers = next;
 }
 

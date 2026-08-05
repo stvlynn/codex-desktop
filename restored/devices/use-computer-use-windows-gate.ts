@@ -14,7 +14,9 @@ export type UseComputerUseWindowsGatePeers = {
 let peers: UseComputerUseWindowsGatePeers | null = null;
 
 /** Wire useComputerUseWindowsGate peers once companions land. */
-export function setUseComputerUseWindowsGatePeers(next: UseComputerUseWindowsGatePeers): void {
+export function setUseComputerUseWindowsGatePeers(
+  next: UseComputerUseWindowsGatePeers,
+): void {
   peers = next;
 }
 

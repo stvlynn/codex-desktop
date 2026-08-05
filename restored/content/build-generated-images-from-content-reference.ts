@@ -16,7 +16,10 @@ export type GeneratedImageFromContentReference = {
   width: number | null;
 };
 
-export function buildGeneratedImagesFromContentReference(ref: Record<string, unknown>, groupKey: string | number): GeneratedImageFromContentReference[] {
+export function buildGeneratedImagesFromContentReference(
+  ref: Record<string, unknown>,
+  groupKey: string | number,
+): GeneratedImageFromContentReference[] {
   return collectContentReferenceImages(ref).flatMap((image, index) => {
     const src = pickContentReferenceImageSrc(image);
     if (src == null) return [];

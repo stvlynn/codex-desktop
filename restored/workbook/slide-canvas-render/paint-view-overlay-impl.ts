@@ -40,41 +40,40 @@ export function guideLineWidth(scrIn14393: any) {
   return Math.max(scalePx(1, scrIn14393), 0.25);
 }
 function emuToCssPx(scrIn10773: any) {
-  let scrBind21303 =
-    scrIn10773 === undefined ? 0 : Number(scrIn10773);
+  let scrBind21303 = scrIn10773 === undefined ? 0 : Number(scrIn10773);
   return !Number.isFinite(scrBind21303) || scrBind21303 <= 0
     ? MIN_EMU_PX
     : Math.max(MIN_GRID_PX, scrBind21303);
 }
 function scaleEmuSpacing(scrIn10589: any, scrIn10590: any) {
-  if (scrIn10590 === undefined || scrIn10590 <= 0)
-    return scrIn10589;
+  if (scrIn10590 === undefined || scrIn10590 <= 0) return scrIn10589;
   let scrBind21065 = scrIn10589 * scrIn10590;
   return scrBind21065 >= MIN_SPACING_PX
     ? scrIn10589
-    : scrIn10589 *
-        Math.ceil(MIN_SPACING_PX / scrBind21065);
+    : scrIn10589 * Math.ceil(MIN_SPACING_PX / scrBind21065);
 }
-function snapToGrid(scrIn13407: any, scrIn13408: any, scrIn13409: any, ) {
+function snapToGrid(scrIn13407: any, scrIn13408: any, scrIn13409: any) {
   return (
-    scrIn13408 +
-    Math.ceil((scrIn13407 - scrIn13408) / scrIn13409) *
-      scrIn13409
+    scrIn13408 + Math.ceil((scrIn13407 - scrIn13408) / scrIn13409) * scrIn13409
   );
 }
-export function isMajorGridLine(scrIn11417: any, scrIn11418: any, scrIn11419: any) {
-  let scrBind21866 = Math.round(
-    (scrIn11417 - scrIn11418) / scrIn11419,
-  );
+export function isMajorGridLine(
+  scrIn11417: any,
+  scrIn11418: any,
+  scrIn11419: any,
+) {
+  let scrBind21866 = Math.round((scrIn11417 - scrIn11418) / scrIn11419);
   return (
-    Math.abs(
-      scrIn11418 +
-        scrBind21866 * scrIn11419 -
-        scrIn11417,
-    ) < GRID_SNAP_EPS
+    Math.abs(scrIn11418 + scrBind21866 * scrIn11419 - scrIn11417) <
+    GRID_SNAP_EPS
   );
 }
-function paintGridDot(scrIn12557: any, scrIn12558: any, scrIn12559: any, scrIn12560: any, ) {
+function paintGridDot(
+  scrIn12557: any,
+  scrIn12558: any,
+  scrIn12559: any,
+  scrIn12560: any,
+) {
   let scrBind22439 = scrIn12560 / 2;
   scrIn12557.fillRect(
     scrIn12558 - scrBind22439,
@@ -83,33 +82,24 @@ function paintGridDot(scrIn12557: any, scrIn12558: any, scrIn12559: any, scrIn12
     scrIn12560,
   );
 }
-export function paintGridDots(scrIn4426: any, scrIn4427: any, scrIn4428: any, scrIn4429: any, scrIn4430: any, scrIn4431: any, scrIn4432: any, scrIn4433: any, scrIn4434: any, ) {
+export function paintGridDots(
+  scrIn4426: any,
+  scrIn4427: any,
+  scrIn4428: any,
+  scrIn4429: any,
+  scrIn4430: any,
+  scrIn4431: any,
+  scrIn4432: any,
+  scrIn4433: any,
+  scrIn4434: any,
+) {
   let scrBind13664 = scrIn4427.left + scrIn4427.width,
     scrBind13665 = scrIn4427.top + scrIn4427.height,
-    scrBind13666 = Math.max(
-      scalePx(GRID_DOT_SIZE, scrIn4434),
-      0.5,
-    ),
-    scrBind13667 = snapToGrid(
-      scrIn4427.left,
-      scrIn4432,
-      scrIn4430,
-    ),
-    scrBind13668 = snapToGrid(
-      scrIn4427.top,
-      scrIn4433,
-      scrIn4431,
-    ),
-    scrBind13669 = snapToGrid(
-      scrIn4427.left,
-      scrIn4432,
-      scrIn4428,
-    ),
-    scrBind13670 = snapToGrid(
-      scrIn4427.top,
-      scrIn4433,
-      scrIn4429,
-    );
+    scrBind13666 = Math.max(scalePx(GRID_DOT_SIZE, scrIn4434), 0.5),
+    scrBind13667 = snapToGrid(scrIn4427.left, scrIn4432, scrIn4430),
+    scrBind13668 = snapToGrid(scrIn4427.top, scrIn4433, scrIn4431),
+    scrBind13669 = snapToGrid(scrIn4427.left, scrIn4432, scrIn4428),
+    scrBind13670 = snapToGrid(scrIn4427.top, scrIn4433, scrIn4429);
   for (
     let scrBind22357 = scrBind13667;
     scrBind22357 <= scrBind13664;
@@ -120,12 +110,7 @@ export function paintGridDots(scrIn4426: any, scrIn4427: any, scrIn4428: any, sc
       scrBind22940 <= scrBind13665;
       scrBind22940 += scrIn4429
     )
-      paintGridDot(
-        scrIn4426,
-        scrBind22357,
-        scrBind22940,
-        scrBind13666,
-      );
+      paintGridDot(scrIn4426, scrBind22357, scrBind22940, scrBind13666);
   for (
     let scrBind21867 = scrBind13668;
     scrBind21867 <= scrBind13665;
@@ -137,12 +122,7 @@ export function paintGridDots(scrIn4426: any, scrIn4427: any, scrIn4428: any, sc
       scrBind22694 += scrIn4428
     )
       isMajorGridLine(scrBind22694, scrIn4432, scrIn4430) ||
-        paintGridDot(
-          scrIn4426,
-          scrBind22694,
-          scrBind21867,
-          scrBind13666,
-        );
+        paintGridDot(scrIn4426, scrBind22694, scrBind21867, scrBind13666);
 }
 export function guidePositionFrac(scrIn14616: any) {
   return (scrIn14616.position ?? 0) / GUIDE_EMU_DIV;
@@ -152,7 +132,13 @@ export function normalizeGuideOrientation(scrIn10214: any) {
     ? scrH.guideEnum.GUIDE_ORIENTATION_VERTICAL
     : scrIn10214.orientation;
 }
-export function paintSlideGuides(scrIn3121: any, scrIn3122: any, scrIn3123: any, scrIn3124: any, scrIn3125: any, ) {
+export function paintSlideGuides(
+  scrIn3121: any,
+  scrIn3122: any,
+  scrIn3123: any,
+  scrIn3124: any,
+  scrIn3125: any,
+) {
   let scrBind11236 = scrIn3123.left + scrIn3123.width,
     scrBind11237 = scrIn3123.top + scrIn3123.height;
   scrIn3121.lineWidth = guideLineWidth(scrIn3125);
@@ -184,41 +170,28 @@ export function paintSlideGuides(scrIn3121: any, scrIn3122: any, scrIn3123: any,
   }
   scrIn3121.setLineDash([]);
 }
-export function paintViewOverlay(scrIn1812: any, scrIn1813: any, scrIn1814: any, scrIn1815: any, scrIn1816: any, ) {
-  if (
-    !scrIn1813.view.gridlinesVisible &&
-    !scrIn1813.view.guidesVisible
-  )
-    return;
+export function paintViewOverlay(
+  scrIn1812: any,
+  scrIn1813: any,
+  scrIn1814: any,
+  scrIn1815: any,
+  scrIn1816: any,
+) {
+  if (!scrIn1813.view.gridlinesVisible && !scrIn1813.view.guidesVisible) return;
   let scrBind8339 = resolveSlideViewport(scrIn1814, scrIn1816);
   if (!(scrBind8339.width <= 0 || scrBind8339.height <= 0)) {
     if (
       (scrIn1812.save(),
       scrIn1816?.clipToSlide !== false &&
         (scrIn1812.beginPath(),
-        scrIn1812.rect(
-          0,
-          0,
-          scrIn1814.frame.width,
-          scrIn1814.frame.height,
-        ),
+        scrIn1812.rect(0, 0, scrIn1814.frame.width, scrIn1814.frame.height),
         scrIn1812.clip()),
       scrIn1813.view.gridlinesVisible)
     ) {
-      let scrBind15567 = emuToCssPx(
-          scrIn1813.view.gridSpacingCxEmu,
-        ),
-        scrBind15568 = emuToCssPx(
-          scrIn1813.view.gridSpacingCyEmu,
-        ),
-        scrBind15569 = scaleEmuSpacing(
-          scrBind15567,
-          scrIn1816?.scale,
-        ),
-        scrBind15570 = scaleEmuSpacing(
-          scrBind15568,
-          scrIn1816?.scale,
-        ),
+      let scrBind15567 = emuToCssPx(scrIn1813.view.gridSpacingCxEmu),
+        scrBind15568 = emuToCssPx(scrIn1813.view.gridSpacingCyEmu),
+        scrBind15569 = scaleEmuSpacing(scrBind15567, scrIn1816?.scale),
+        scrBind15570 = scaleEmuSpacing(scrBind15568, scrIn1816?.scale),
         scrBind15571 = scaleEmuSpacing(
           scrBind15567 * MAJOR_GRID_EVERY,
           scrIn1816?.scale,

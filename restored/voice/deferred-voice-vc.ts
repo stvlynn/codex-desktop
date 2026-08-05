@@ -10,7 +10,9 @@ export type BindDeferredVoiceVCPeers = {
 let peers: BindDeferredVoiceVCPeers | null = null;
 
 /** Wire bindDeferredVoiceVC peers once companions land. */
-export function setBindDeferredVoiceVCPeers(next: BindDeferredVoiceVCPeers): void {
+export function setBindDeferredVoiceVCPeers(
+  next: BindDeferredVoiceVCPeers,
+): void {
   peers = next;
 }
 
@@ -22,18 +24,14 @@ export function bindDeferredVoiceVC() {
     throw new Error("bindDeferredVoiceVC peers are not configured");
   }
 
-  return peers.ka(peers.Q, ({
-    enabled: e,
-    hostId: t
-  }, {
-    scope: n
-  }) => ({
-    ...peers.Vns(n, t),
-    enabled: e
-  }), {
-    key: ({
+  return peers.ka(
+    peers.Q,
+    ({ enabled: e, hostId: t }, { scope: n }) => ({
+      ...peers.Vns(n, t),
       enabled: e,
-      hostId: t
-    }) => `${t}:${e}`
-  });
+    }),
+    {
+      key: ({ enabled: e, hostId: t }) => `${t}:${e}`,
+    },
+  );
 }

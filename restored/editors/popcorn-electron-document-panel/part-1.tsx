@@ -7,12 +7,82 @@
 /* split-lane-import-depth:1 */
 
 import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { jsxRuntime as getJsxRuntime, react } from "../../boundaries/react-cjs-runtime";
-import { __workbookT, _workbookT, workbookA, workbookB, workbookC, workbookD, workbookE, workbookF, workbookG, WorkbookI, workbookIt, workbookJ, workbookK, workbookL, workbookLt, workbookM, workbookN, workbookNt, workbookO, workbookOt, workbookP, workbookQ, WorkbookR, workbookRt, workbookS, workbookSt, workbookU, workbookUnderscore, workbookV, workbookW, WorkbookW, workbookX, workbookY, workbookZ } from "../../workbook/editor-compat";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  __workbookT,
+  _workbookT,
+  workbookA,
+  workbookB,
+  workbookC,
+  workbookD,
+  workbookE,
+  workbookF,
+  workbookG,
+  WorkbookI,
+  workbookIt,
+  workbookJ,
+  workbookK,
+  workbookL,
+  workbookLt,
+  workbookM,
+  workbookN,
+  workbookNt,
+  workbookO,
+  workbookOt,
+  workbookP,
+  workbookQ,
+  WorkbookR,
+  workbookRt,
+  workbookS,
+  workbookSt,
+  workbookU,
+  workbookUnderscore,
+  workbookV,
+  workbookW,
+  WorkbookW,
+  workbookX,
+  workbookY,
+  workbookZ,
+} from "../../workbook/editor-compat";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
-import { ensureFeatureCatalogAtomsInit, ensureFeatureCatalogInit, getFeatureCatalogEntries, PopcornFindBar } from "../feature-catalog";
-import { ensurePopcornPageNumberNavigationInit, PopcornPageNumberNavigation } from "../popcorn-page-number-navigation";
-import { ensureRemoteTextEditSessionInit, RemoteTextEditSessionA, RemoteTextEditSessionB, RemoteTextEditSessionC, RemoteTextEditSessionChrome, RemoteTextEditSessionE, RemoteTextEditSessionF, RemoteTextEditSessionH, RemoteTextEditSessionI, RemoteTextEditSessionLowerT, RemoteTextEditSessionM, RemoteTextEditSessionN, RemoteTextEditSessionO, RemoteTextEditSessionP, RemoteTextEditSessionR, RemoteTextEditSessionS, RemoteTextEditSessionSurfaceKind, RemoteTextEditSessionU, RemoteTextEditSessionV, RemoteTextEditSessionW, RemoteTextEditSessionX, RemoteTextEditSessionY, RemoteTextEditSessionZoomControl } from "../remote-text-edit-session/index";
+import {
+  ensureFeatureCatalogAtomsInit,
+  ensureFeatureCatalogInit,
+  getFeatureCatalogEntries,
+  PopcornFindBar,
+} from "../feature-catalog";
+import {
+  ensurePopcornPageNumberNavigationInit,
+  PopcornPageNumberNavigation,
+} from "../popcorn-page-number-navigation";
+import {
+  ensureRemoteTextEditSessionInit,
+  RemoteTextEditSessionA,
+  RemoteTextEditSessionB,
+  RemoteTextEditSessionC,
+  RemoteTextEditSessionChrome,
+  RemoteTextEditSessionE,
+  RemoteTextEditSessionF,
+  RemoteTextEditSessionH,
+  RemoteTextEditSessionI,
+  RemoteTextEditSessionLowerT,
+  RemoteTextEditSessionM,
+  RemoteTextEditSessionN,
+  RemoteTextEditSessionO,
+  RemoteTextEditSessionP,
+  RemoteTextEditSessionR,
+  RemoteTextEditSessionS,
+  RemoteTextEditSessionSurfaceKind,
+  RemoteTextEditSessionU,
+  RemoteTextEditSessionV,
+  RemoteTextEditSessionW,
+  RemoteTextEditSessionX,
+  RemoteTextEditSessionY,
+  RemoteTextEditSessionZoomControl,
+} from "../remote-text-edit-session/index";
 
 const IntlProvider: any = undefined;
 /** Wave GA unresolved companion (sib-missing:workbook/presentation-protobuf.ts) */
@@ -54,7 +124,7 @@ var mossR13,
     mossR13 = class {
       #e;
       constructor(wheatR11 = []) {
-        this.#e = wheatR11.map(item => new riverR16(item));
+        this.#e = wheatR11.map((item) => new riverR16(item));
       }
       get items() {
         return [...this.#e];
@@ -65,15 +135,15 @@ var mossR13,
           tetherId: harborR6.tetherId ?? "",
           targetId: harborR6.targetId ?? "",
           type: harborR6.type ?? oStub.CONTENT_REFERENCE_TYPE_UNSPECIFIED,
-          ...harborR6
+          ...harborR6,
         });
-        return this.#e.push(mossR23), mossR23;
+        return (this.#e.push(mossR23), mossR23);
       }
       replace(duskR11) {
-        this.#e = duskR11.map(item => new riverR16(item));
+        this.#e = duskR11.map((item) => new riverR16(item));
       }
       toProto() {
-        return this.#e.map(item => item.toProto());
+        return this.#e.map((item) => item.toProto());
       }
     };
     riverR16 = class {
@@ -84,7 +154,7 @@ var mossR13,
           id: lunarR6.id ?? "",
           tetherId: lunarR6.tetherId ?? "",
           targetId: lunarR6.targetId ?? "",
-          type: lunarR6.type ?? oStub.CONTENT_REFERENCE_TYPE_UNSPECIFIED
+          type: lunarR6.type ?? oStub.CONTENT_REFERENCE_TYPE_UNSPECIFIED,
         };
       }
       get id() {
@@ -131,13 +201,15 @@ var mossR13,
 function alpha(copperR11) {
   if (!copperR11) return;
   let flintR14 = new __workbookT();
-  return __workbookT(flintR14, copperR11), flintR14.toProto();
+  return (__workbookT(flintR14, copperR11), flintR14.toProto());
 }
 function cedarR1(novaR5) {
-  let jadeR23 = novaR5.paragraphStyle ? {
-    ...novaR5.paragraphStyle,
-    tabStops: novaR5.paragraphStyle.tabStops ?? []
-  } : undefined;
+  let jadeR23 = novaR5.paragraphStyle
+    ? {
+        ...novaR5.paragraphStyle,
+        tabStops: novaR5.paragraphStyle.tabStops ?? [],
+      }
+    : undefined;
   return {
     id: novaR5.id,
     name: novaR5.name,
@@ -146,158 +218,179 @@ function cedarR1(novaR5) {
     paragraphStyle: jadeR23,
     spaceBefore: novaR5.spaceBefore,
     spaceAfter: novaR5.spaceAfter,
-    tags: []
+    tags: [],
   };
 }
 function driftR2() {
-  let nickelR26 = new workbookM({
-    stub: () => {}
-  }, undefined);
-  return nickelR26.colorScheme = {
-    name: "Office",
-    themeColors: {
-      ...waveR18
-    }
-  }, nickelR26.toProto();
+  let nickelR26 = new workbookM(
+    {
+      stub: () => {},
+    },
+    undefined,
+  );
+  return (
+    (nickelR26.colorScheme = {
+      name: "Office",
+      themeColors: {
+        ...waveR18,
+      },
+    }),
+    nickelR26.toProto()
+  );
 }
 function orbitR2() {
-  return [{
-    name: "Aptos",
-    family: "swiss",
-    embeddedFonts: []
-  }, {
-    name: "Aptos Display",
-    family: "swiss",
-    embeddedFonts: []
-  }, {
-    name: "Times New Roman",
-    family: "roman",
-    embeddedFonts: []
-  }, {
-    name: "Cambria Math",
-    family: "roman",
-    embeddedFonts: []
-  }];
+  return [
+    {
+      name: "Aptos",
+      family: "swiss",
+      embeddedFonts: [],
+    },
+    {
+      name: "Aptos Display",
+      family: "swiss",
+      embeddedFonts: [],
+    },
+    {
+      name: "Times New Roman",
+      family: "roman",
+      embeddedFonts: [],
+    },
+    {
+      name: "Cambria Math",
+      family: "roman",
+      embeddedFonts: [],
+    },
+  ];
 }
 function cliffR2() {
   return {
-    defaultTabStop: 720
+    defaultTabStop: 720,
   };
 }
 function echoR3() {
-  return [cedarR1({
-    id: "Normal",
-    name: "Normal",
-    textStyle: {
-      typeface: "Aptos",
-      fontSize: "12pt"
-    },
-    paragraphStyle: {
-      lineSpacingPercent: 115833
-    },
-    spaceAfter: 160
-  }), cedarR1({
-    id: "Title",
-    name: "Title",
-    basedOn: "Normal",
-    textStyle: {
-      typeface: "Aptos Display",
-      fontSize: "28pt",
-      color: "#1F1F1F"
-    },
-    paragraphStyle: {
-      lineSpacingPercent: 1e5
-    },
-    spaceAfter: 80
-  }), cedarR1({
-    id: "Subtitle",
-    name: "Subtitle",
-    basedOn: "Normal",
-    textStyle: {
-      typeface: "Aptos",
-      fontSize: "14pt",
-      color: "#6B7280"
-    },
-    paragraphStyle: {
-      lineSpacingPercent: 1e5
-    },
-    spaceAfter: 80
-  }), cedarR1({
-    id: "Heading1",
-    name: "Heading 1",
-    basedOn: "Normal",
-    textStyle: {
-      typeface: "Aptos Display",
-      fontSize: "20pt",
-      color: "#156082"
-    },
-    paragraphStyle: {
-      lineSpacingPercent: 1e5
-    },
-    spaceBefore: 360,
-    spaceAfter: 80
-  }), cedarR1({
-    id: "Heading2",
-    name: "Heading 2",
-    basedOn: "Normal",
-    textStyle: {
-      typeface: "Aptos Display",
-      fontSize: "16pt",
-      color: "#156082"
-    },
-    paragraphStyle: {
-      lineSpacingPercent: 1e5
-    },
-    spaceBefore: 160,
-    spaceAfter: 80
-  }), cedarR1({
-    id: "Quote",
-    name: "Quote",
-    basedOn: "Normal",
-    textStyle: {
-      italic: true,
-      color: "#6B7280"
-    },
-    paragraphStyle: {
-      lineSpacingPercent: 115833
-    },
-    spaceBefore: 80,
-    spaceAfter: 80
-  }), cedarR1({
-    id: "IntenseQuote",
-    name: "Intense Quote",
-    basedOn: "Quote",
-    textStyle: {
-      bold: true,
-      color: "#156082"
-    },
-    paragraphStyle: {
-      lineSpacingPercent: 115833
-    },
-    spaceBefore: 80,
-    spaceAfter: 80
-  }), cedarR1({
-    id: "ListParagraph",
-    name: "List Paragraph",
-    basedOn: "Normal",
-    paragraphStyle: {
-      marginLeft: 457200,
-      indent: -228600
-    }
-  }), cedarR1({
-    id: "Caption",
-    name: "Caption",
-    basedOn: "Normal",
-    textStyle: {
-      fontSize: "9pt",
-      italic: true,
-      color: "#6B7280"
-    },
-    paragraphStyle: {
-      lineSpacingPercent: 1e5
-    },
-    spaceAfter: 80
-  })];
+  return [
+    cedarR1({
+      id: "Normal",
+      name: "Normal",
+      textStyle: {
+        typeface: "Aptos",
+        fontSize: "12pt",
+      },
+      paragraphStyle: {
+        lineSpacingPercent: 115833,
+      },
+      spaceAfter: 160,
+    }),
+    cedarR1({
+      id: "Title",
+      name: "Title",
+      basedOn: "Normal",
+      textStyle: {
+        typeface: "Aptos Display",
+        fontSize: "28pt",
+        color: "#1F1F1F",
+      },
+      paragraphStyle: {
+        lineSpacingPercent: 1e5,
+      },
+      spaceAfter: 80,
+    }),
+    cedarR1({
+      id: "Subtitle",
+      name: "Subtitle",
+      basedOn: "Normal",
+      textStyle: {
+        typeface: "Aptos",
+        fontSize: "14pt",
+        color: "#6B7280",
+      },
+      paragraphStyle: {
+        lineSpacingPercent: 1e5,
+      },
+      spaceAfter: 80,
+    }),
+    cedarR1({
+      id: "Heading1",
+      name: "Heading 1",
+      basedOn: "Normal",
+      textStyle: {
+        typeface: "Aptos Display",
+        fontSize: "20pt",
+        color: "#156082",
+      },
+      paragraphStyle: {
+        lineSpacingPercent: 1e5,
+      },
+      spaceBefore: 360,
+      spaceAfter: 80,
+    }),
+    cedarR1({
+      id: "Heading2",
+      name: "Heading 2",
+      basedOn: "Normal",
+      textStyle: {
+        typeface: "Aptos Display",
+        fontSize: "16pt",
+        color: "#156082",
+      },
+      paragraphStyle: {
+        lineSpacingPercent: 1e5,
+      },
+      spaceBefore: 160,
+      spaceAfter: 80,
+    }),
+    cedarR1({
+      id: "Quote",
+      name: "Quote",
+      basedOn: "Normal",
+      textStyle: {
+        italic: true,
+        color: "#6B7280",
+      },
+      paragraphStyle: {
+        lineSpacingPercent: 115833,
+      },
+      spaceBefore: 80,
+      spaceAfter: 80,
+    }),
+    cedarR1({
+      id: "IntenseQuote",
+      name: "Intense Quote",
+      basedOn: "Quote",
+      textStyle: {
+        bold: true,
+        color: "#156082",
+      },
+      paragraphStyle: {
+        lineSpacingPercent: 115833,
+      },
+      spaceBefore: 80,
+      spaceAfter: 80,
+    }),
+    cedarR1({
+      id: "ListParagraph",
+      name: "List Paragraph",
+      basedOn: "Normal",
+      paragraphStyle: {
+        marginLeft: 457200,
+        indent: -228600,
+      },
+    }),
+    cedarR1({
+      id: "Caption",
+      name: "Caption",
+      basedOn: "Normal",
+      textStyle: {
+        fontSize: "9pt",
+        italic: true,
+        color: "#6B7280",
+      },
+      paragraphStyle: {
+        lineSpacingPercent: 1e5,
+      },
+      spaceAfter: 80,
+    }),
+  ];
 }
 var waveR18,
   quartzR20 = esmInit(() => {
@@ -319,23 +412,25 @@ var waveR18,
       dk2: "#0E2841",
       lt2: "#E8E8E8",
       hlink: "#467886",
-      folHlink: "#96607D"
+      folHlink: "#96607D",
     };
   });
 function pearlR3() {
   return {
     id: "doc-paragraph-1",
-    runs: [{
-      id: "doc-run-1",
-      text: "Start writing here...",
-      textStyle: undefined,
-      hyperlink: undefined,
-      citations: [],
-      reviewMarkIds: []
-    }],
+    runs: [
+      {
+        id: "doc-run-1",
+        text: "Start writing here...",
+        textStyle: undefined,
+        hyperlink: undefined,
+        citations: [],
+        reviewMarkIds: [],
+      },
+    ],
     inlineNodes: [],
     textStyle: undefined,
-    styleId: "Normal"
+    styleId: "Normal",
   };
 }
 function amberR3() {
@@ -365,7 +460,7 @@ function amberR3() {
     fontReference: undefined,
     hyperlink: undefined,
     textStyle: undefined,
-    citations: []
+    citations: [],
   };
 }
 function lotusR3() {
@@ -389,30 +484,32 @@ function lotusR3() {
     settings: cliffR2(),
     theme: driftR2(),
     fonts: orbitR2(),
-    sections: [{
-      id: "doc-section-1",
-      breakType: C.SECTION_BREAK_TYPE_UNSPECIFIED,
-      pageSetup: {
-        widthEmu: 12240,
-        heightEmu: 15840,
-        pageMargin: undefined
+    sections: [
+      {
+        id: "doc-section-1",
+        breakType: C.SECTION_BREAK_TYPE_UNSPECIFIED,
+        pageSetup: {
+          widthEmu: 12240,
+          heightEmu: 15840,
+          pageMargin: undefined,
+        },
+        columns: {
+          count: 1,
+          space: 0,
+          widths: [],
+          hasSeparatorLine: false,
+        },
+        elements: [sageR19],
+        header: undefined,
+        footer: undefined,
+        startsWithPageBreak: false,
+        differentFirstPage: undefined,
+        firstHeader: undefined,
+        firstFooter: undefined,
       },
-      columns: {
-        count: 1,
-        space: 0,
-        widths: [],
-        hasSeparatorLine: false
-      },
-      elements: [sageR19],
-      header: undefined,
-      footer: undefined,
-      startsWithPageBreak: false,
-      differentFirstPage: undefined,
-      firstHeader: undefined,
-      firstFooter: undefined
-    }],
+    ],
     numberingDefinitions: [],
-    paragraphNumberings: []
+    paragraphNumberings: [],
   };
 }
 var sageR21 = esmInit(() => {
@@ -439,17 +536,25 @@ var valeR22 = esmInit(() => {}),
       }
       getById(sageR9) {
         if (!sageR9) return;
-        let glideR26 = this.#e.find(item => item.id === sageR9);
+        let glideR26 = this.#e.find((item) => item.id === sageR9);
         return glideR26 ? bravo(glideR26) : undefined;
       }
       set(nickelR7) {
         let questR24 = bravo(nickelR7),
-          ridgeR24 = this.#e.findIndex(item => item.id === questR24.id);
-        return ridgeR24 >= 0 ? this.#e[ridgeR24] = questR24 : this.#e.push(questR24), this.#t?.(), bravo(questR24);
+          ridgeR24 = this.#e.findIndex((item) => item.id === questR24.id);
+        return (
+          ridgeR24 >= 0
+            ? (this.#e[ridgeR24] = questR24)
+            : this.#e.push(questR24),
+          this.#t?.(),
+          bravo(questR24)
+        );
       }
       delete(marbleR9) {
-        let ivoryR26 = this.#e.findIndex(item => item.id === marbleR9);
-        return ivoryR26 < 0 ? false : (this.#e.splice(ivoryR26, 1), this.#t?.(), true);
+        let ivoryR26 = this.#e.findIndex((item) => item.id === marbleR9);
+        return ivoryR26 < 0
+          ? false
+          : (this.#e.splice(ivoryR26, 1), this.#t?.(), true);
       }
       replace(harborR12) {
         this.#e = bravo(harborR12);
@@ -475,17 +580,25 @@ var valeR22 = esmInit(() => {}),
       }
       getByCommentId(lemonR9) {
         if (!lemonR9) return;
-        let hazelR26 = this.#e.find(item => item.commentId === lemonR9);
+        let hazelR26 = this.#e.find((item) => item.commentId === lemonR9);
         return hazelR26 ? bravo(hazelR26) : undefined;
       }
       set(stormR6) {
         let mintR24 = bravo(stormR6),
-          novaR24 = this.#e.findIndex(item => item.commentId === mintR24.commentId);
-        return novaR24 >= 0 ? this.#e[novaR24] = mintR24 : this.#e.push(mintR24), this.#t?.(), bravo(mintR24);
+          novaR24 = this.#e.findIndex(
+            (item) => item.commentId === mintR24.commentId,
+          );
+        return (
+          novaR24 >= 0 ? (this.#e[novaR24] = mintR24) : this.#e.push(mintR24),
+          this.#t?.(),
+          bravo(mintR24)
+        );
       }
       delete(alphaR9) {
-        let willowR26 = this.#e.findIndex(item => item.commentId === alphaR9);
-        return willowR26 < 0 ? false : (this.#e.splice(willowR26, 1), this.#t?.(), true);
+        let willowR26 = this.#e.findIndex((item) => item.commentId === alphaR9);
+        return willowR26 < 0
+          ? false
+          : (this.#e.splice(willowR26, 1), this.#t?.(), true);
       }
       replace(indigoR12) {
         this.#e = bravo(indigoR12);
@@ -507,7 +620,7 @@ var valeR22 = esmInit(() => {}),
       constructor(xenonR6) {
         this.#e = new workbookU({
           people: xenonR6.people ?? [],
-          threads: xenonR6.threads ?? []
+          threads: xenonR6.threads ?? [],
         });
         this.#t = xenonR6.documentId ?? "";
         this.#n = xenonR6.textElementId ?? "";
@@ -524,9 +637,13 @@ var valeR22 = esmInit(() => {}),
       }
       addThread(vaporR9, wheatR9, yarnR9 = {}) {
         let jewelR26 = this.#i(vaporR9.textRange);
-        return this.#e.addThread({
-          proto: jewelR26
-        }, wheatR9, yarnR9);
+        return this.#e.addThread(
+          {
+            proto: jewelR26,
+          },
+          wheatR9,
+          yarnR9,
+        );
       }
       toProto() {
         return this.#e.toProto();
@@ -540,12 +657,16 @@ var valeR22 = esmInit(() => {}),
             slideId: this.#t,
             elementId: this.#n,
             startCp: acornR23,
-            length: bloomR23
-          }
+            length: bloomR23,
+          },
         };
       }
     };
   });
 function marble(basaltR8, cedarR8) {
-  return cedarR8 instanceof ArrayBuffer ? `ArrayBuffer:${cedarR8.byteLength}` : ArrayBuffer.isView(cedarR8) ? `${cedarR8.constructor.name}:${cedarR8.byteLength}` : cedarR8;
+  return cedarR8 instanceof ArrayBuffer
+    ? `ArrayBuffer:${cedarR8.byteLength}`
+    : ArrayBuffer.isView(cedarR8)
+      ? `${cedarR8.constructor.name}:${cedarR8.byteLength}`
+      : cedarR8;
 }

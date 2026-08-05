@@ -32,7 +32,12 @@ export function bindDeferredUiUB() {
     t.exports = peers.i(function (e, t) {
       if (e == null) return [];
       var i = t.length;
-      return peers.i > 1 && a(e, t[0], t[1]) ? t = [] : peers.i > 2 && a(t[0], t[1], t[2]) && (t = [t[0]]), r(e, n(t, 1), []);
+      return (
+        peers.i > 1 && a(e, t[0], t[1])
+          ? (t = [])
+          : peers.i > 2 && a(t[0], t[1], t[2]) && (t = [t[0]]),
+        r(e, n(t, 1), [])
+      );
     });
   });
 }

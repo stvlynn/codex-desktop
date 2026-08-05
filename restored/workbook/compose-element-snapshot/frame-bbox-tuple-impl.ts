@@ -57,7 +57,6 @@ export function WDe(props: any) {
   );
 }
 
-
 export const resolveSlideFrameBbox = workbookHelper683;
 export const isPositiveBboxTuple = WDe;
 /** Compat alias for barrels. */

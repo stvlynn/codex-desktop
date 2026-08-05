@@ -11,7 +11,9 @@ export type ApplySystemMentionTemplatePeers = {
 let peers: ApplySystemMentionTemplatePeers | null = null;
 
 /** Wire applySystemMentionTemplate peers once companions land. */
-export function setApplySystemMentionTemplatePeers(next: ApplySystemMentionTemplatePeers): void {
+export function setApplySystemMentionTemplatePeers(
+  next: ApplySystemMentionTemplatePeers,
+): void {
   peers = next;
 }
 
@@ -24,11 +26,14 @@ export function applySystemMentionTemplate(e: unknown, t: unknown) {
   }
 
   peers.wti(e, {
-    templateId: t.scope === `system` ? peers.DGt(`${t.scope}:${t.name}`, peers.kti) : void 0,
+    templateId:
+      t.scope === `system`
+        ? peers.DGt(`${t.scope}:${t.name}`, peers.kti)
+        : void 0,
     templateOrigin: peers.Eti(t.scope),
     inclusion: {
       type: `mention`,
-      path: t.path
-    }
+      path: t.path,
+    },
   });
 }

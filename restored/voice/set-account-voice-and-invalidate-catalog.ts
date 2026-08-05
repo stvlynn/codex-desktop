@@ -22,5 +22,6 @@ async function HC(e, t) {
     throw new Error("HC peers are not configured");
   }
 
-  await e.get(peers.MV).setAccountVoice(peers.Ins(t)), await peers.U8n(e.queryClient, [`realtime-voice-catalog`]);
+  (await e.get(peers.MV).setAccountVoice(peers.Ins(t)),
+    await peers.U8n(e.queryClient, [`realtime-voice-catalog`]));
 }

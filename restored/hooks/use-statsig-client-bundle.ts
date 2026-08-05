@@ -9,7 +9,9 @@ export type UseStatsigClientBundlePeers = {
 let peers: UseStatsigClientBundlePeers | null = null;
 
 /** Wire useStatsigClientBundle peers once companions land. */
-export function setUseStatsigClientBundlePeers(next: UseStatsigClientBundlePeers): void {
+export function setUseStatsigClientBundlePeers(
+  next: UseStatsigClientBundlePeers,
+): void {
   peers = next;
 }
 

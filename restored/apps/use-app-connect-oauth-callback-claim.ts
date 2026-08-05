@@ -31,7 +31,9 @@ export type UseAppConnectOAuthCallbackClaimPeers = {
 let peers: UseAppConnectOAuthCallbackClaimPeers | null = null;
 
 /** Wire useAppConnectOAuthCallbackClaim peers once companions land. */
-export function setUseAppConnectOAuthCallbackClaimPeers(next: UseAppConnectOAuthCallbackClaimPeers): void {
+export function setUseAppConnectOAuthCallbackClaimPeers(
+  next: UseAppConnectOAuthCallbackClaimPeers,
+): void {
   peers = next;
 }
 

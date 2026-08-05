@@ -37,18 +37,21 @@ export function macOS3() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.DD(), peers.Gw(), peers.IE(), peers.ed(), peers.Dh(), H5n = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => {
-      if (t(peers.Ww) !== `macOS` || !t(peers.Eh, `1304276663`)) return !1;
-      let {
-        data: n
-      } = t(peers.PE, {
-        hostId: peers.e
-      });
-      return n != null && n.requirements?.allowAppshots !== !1;
-    }), U5n = peers.Ma(peers.Q, ({
-      get: e
-    }) => peers.e(peers.H5n, peers.e(peers.SD)));
+    (peers.Ho(),
+      peers.DD(),
+      peers.Gw(),
+      peers.IE(),
+      peers.ed(),
+      peers.Dh(),
+      (H5n = peers.Oa(peers.Q, (e, { get: t }) => {
+        if (t(peers.Ww) !== `macOS` || !t(peers.Eh, `1304276663`)) return !1;
+        let { data: n } = t(peers.PE, {
+          hostId: peers.e,
+        });
+        return n != null && n.requirements?.allowAppshots !== !1;
+      })),
+      (U5n = peers.Ma(peers.Q, ({ get: e }) =>
+        peers.e(peers.H5n, peers.e(peers.SD)),
+      )));
   });
 }

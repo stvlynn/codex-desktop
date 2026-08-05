@@ -10,7 +10,9 @@ export type ReferralInviteTrackingPeers = {
 let peers: ReferralInviteTrackingPeers | null = null;
 
 /** Wire ReferralInviteTracking peers once companions land. */
-export function setReferralInviteTrackingPeers(next: ReferralInviteTrackingPeers): void {
+export function setReferralInviteTrackingPeers(
+  next: ReferralInviteTrackingPeers,
+): void {
   peers = next;
 }
 
@@ -21,5 +23,5 @@ export function ReferralInviteTracking() {
   if (peers == null) {
     throw new Error("ReferralInviteTracking peers are not configured");
   }
-  return peers.ka(peers.Q, e => peers.fOs(e, !0));
+  return peers.ka(peers.Q, (e) => peers.fOs(e, !0));
 }

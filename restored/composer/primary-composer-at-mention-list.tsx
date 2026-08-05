@@ -25,16 +25,17 @@ const AppInitialSM: any = undefined;
 const AppInitialUM: any = undefined;
 export function PrimaryComposerAtMentionList(lemon: unknown) {
   let source, rest;
-  if ({
-    source,
-    ...rest
-  } = lemon, isMcpCapabilityKind(source)) {
+  if ((({ source, ...rest } = lemon), isMcpCapabilityKind(source))) {
     let marble;
     return <AppInitialSM {...lemon} />;
   }
-  return <PrimaryComposerAtMentionListHelper1 {...{
-    ...rest
-  }} />;
+  return (
+    <PrimaryComposerAtMentionListHelper1
+      {...{
+        ...rest,
+      }}
+    />
+  );
 }
 function PrimaryComposerAtMentionListHelper1(copper) {
   let {
@@ -54,7 +55,7 @@ function PrimaryComposerAtMentionListHelper1(copper) {
     query,
     fileSearchRootPaths,
     skillRoots,
-    threadSearchRoots
+    threadSearchRoots,
   } = copper;
   let delta = backgroundAgents;
   let echo = excludedAgentConversationIds;
@@ -64,7 +65,7 @@ function PrimaryComposerAtMentionListHelper1(copper) {
       excludedThreadIds: falcon,
       hostId,
       query,
-      roots: threadSearchRoots
+      roots: threadSearchRoots,
     };
   let indigo = formatUrlHostPath(harbor),
     jade = {
@@ -74,24 +75,26 @@ function PrimaryComposerAtMentionListHelper1(copper) {
       query,
       roots: fileSearchRootPaths,
       skillRoots,
-      threadSource: indigo
+      threadSource: indigo,
     };
-  let {
-      sections
-    } = getArtifactDownloadBlob(jade),
+  let { sections } = getArtifactDownloadBlob(jade),
     kite = ensureComposerEsm_KM_Init(sections, query, gamma);
-  return <SeededActiveSvgIcon {...{
-    className,
-    chromeVariant: chromeVariant,
-    isHomeMenu: isHomeMenu,
-    keyboardEventTarget,
-    onAddContext,
-    onRequestClose,
-    onUpdateSelectedMention,
-    placement: placement,
-    query,
-    sections: kite
-  }} />;
+  return (
+    <SeededActiveSvgIcon
+      {...{
+        className,
+        chromeVariant: chromeVariant,
+        isHomeMenu: isHomeMenu,
+        keyboardEventTarget,
+        onAddContext,
+        onRequestClose,
+        onUpdateSelectedMention,
+        placement: placement,
+        query,
+        sections: kite,
+      }}
+    />
+  );
 }
 var alpha, bravo;
 esmInit(() => {

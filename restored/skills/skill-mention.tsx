@@ -22,7 +22,9 @@ export type BindBindSkillMentionPeers = {
 let peers: BindBindSkillMentionPeers | null = null;
 
 /** Wire bindBindSkillMention peers once companions land. */
-export function setBindBindSkillMentionPeers(next: BindBindSkillMentionPeers): void {
+export function setBindBindSkillMentionPeers(
+  next: BindBindSkillMentionPeers,
+): void {
   peers = next;
 }
 
@@ -35,6 +37,17 @@ export function bindBindSkillMention() {
   }
 
   return peers.e(() => {
-    sJa = peers.c(), peers.sd(), peers.Ho(), peers.$u(), peers.MBa(), peers.bVa(), peers.DM(), peers.lUa(), peers._Ua(), peers.Tqa(), peers.Xqa(), rU = peers.J();
+    ((sJa = peers.c()),
+      peers.sd(),
+      peers.Ho(),
+      peers.$u(),
+      peers.MBa(),
+      peers.bVa(),
+      peers.DM(),
+      peers.lUa(),
+      peers._Ua(),
+      peers.Tqa(),
+      peers.Xqa(),
+      (rU = peers.J()));
   });
 }

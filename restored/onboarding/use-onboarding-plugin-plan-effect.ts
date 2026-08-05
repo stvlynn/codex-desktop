@@ -15,7 +15,9 @@ export type UseOnboardingPluginPlanEffectPeers = {
 let peers: UseOnboardingPluginPlanEffectPeers | null = null;
 
 /** Wire useOnboardingPluginPlanEffect peers once companions land. */
-export function setUseOnboardingPluginPlanEffectPeers(next: UseOnboardingPluginPlanEffectPeers): void {
+export function setUseOnboardingPluginPlanEffectPeers(
+  next: UseOnboardingPluginPlanEffectPeers,
+): void {
   peers = next;
 }
 

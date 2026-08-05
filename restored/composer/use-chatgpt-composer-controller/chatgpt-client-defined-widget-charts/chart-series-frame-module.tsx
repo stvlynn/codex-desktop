@@ -7,9 +7,7 @@ import {
   useAppScope as appInitialLT,
   ensureAppScopeHostInit as appInitialMT,
 } from "../../../runtime/app-scope-runtime";
-import {
-  writingBlocksControllerAtom as appInitialCI,
-} from "../../../composer/composer-appscope-atoms";
+import { writingBlocksControllerAtom as appInitialCI } from "../../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_FH_Init as appInitialFH,
   ensureComposerEsm_Hlt_Init as appInitialHlt,
@@ -33,7 +31,10 @@ import {
   ensureIntlFormattersInit as appInitialHft,
   useIntl as appInitialJft,
 } from "../../../i18n/use-intl";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../../runtime/rolldown-runtime";
 import { getAppearanceThemeMode as appInitialVU } from "../../../settings/get-appearance-theme-mode";
 import { Button as appInitialBut } from "../../../ui/button";
 import { CopyButton as appInitialAR } from "../../../ui/copy-button";
@@ -96,7 +97,6 @@ const {
   slot166,
 } = axisPeers;
 
-
 function useChatgptComposerControllerHelper148(request1093: any) {
   const ChartWidgetStoresS = _chartWidgetStoresS;
   const UseChatgptComposerControllerHelper147 =
@@ -118,17 +118,13 @@ function useChatgptComposerControllerHelper148(request1093: any) {
       xAxis,
       yAxis,
     } = request1093,
-    slot4412 =
-      barRadius === undefined
-        ? slot171
-        : barRadius,
+    slot4412 = barRadius === undefined ? slot171 : barRadius,
     slot4413 = appInitialWft(
       "box-border flex h-full min-h-0 flex-col",
       frameClassName,
     );
   let slot4414 = chart.layout,
-    slot4415 =
-      useChatgptComposerControllerHelper145(chart);
+    slot4415 = useChatgptComposerControllerHelper145(chart);
   let slot4416 = chart.series.length > 1,
     slot4417 = chart.chartType !== "scatter",
     slot4418 = {
@@ -194,54 +190,31 @@ var slot167,
     slot171 = 8;
   });
 function useChatgptComposerControllerHelper149(request9392: any) {
-  return useChatgptComposerControllerHelper151(
-    request9392,
-  ).map((item) => {
+  return useChatgptComposerControllerHelper151(request9392).map((item) => {
     let slot15710 = {};
-    for (let [
-      slot16028,
-      slot16029,
-    ] of Object.entries(item))
-      slot15710[
-        slot16028
-      ] = useChatgptComposerControllerHelper152(
-        slot16029,
-      );
+    for (let [slot16028, slot16029] of Object.entries(item))
+      slot15710[slot16028] = useChatgptComposerControllerHelper152(slot16029);
     return slot15710;
   });
 }
 function useChatgptComposerControllerHelper150(request8715: any) {
   return request8715.data.map((item, index) => {
     let slot15311 = {};
-    for (let [
-      slot16030,
-      slot16031,
-    ] of Object.entries(item))
-      slot15311[
-        slot16030
-      ] = useChatgptComposerControllerHelper153(
-        slot16031,
-      );
+    for (let [slot16030, slot16031] of Object.entries(item))
+      slot15311[slot16030] = useChatgptComposerControllerHelper153(slot16031);
     return (
-      (slot15311.fill =
-        useChatgptComposerControllerHelper144(index)),
-      (slot15311.stroke =
-        slot173),
+      (slot15311.fill = useChatgptComposerControllerHelper144(index)),
+      (slot15311.stroke = slot173),
       slot15311
     );
   });
 }
 function useChatgptComposerControllerHelper151(request8716: any) {
-  if (request8716.data.length > 0)
-    return request8716.data;
+  if (request8716.data.length > 0) return request8716.data;
   let slot14741 = {
-    [request8716.xKey]:
-      request8716.chartType === "scatter" ? 0 : "",
+    [request8716.xKey]: request8716.chartType === "scatter" ? 0 : "",
   };
-  for (let slot16100 of request8716.series)
-    slot14741[
-      slot16100.dataKey
-    ] = null;
+  for (let slot16100 of request8716.series) slot14741[slot16100.dataKey] = null;
   return [slot14741];
 }
 function useChatgptComposerControllerHelper152(request8138: any) {
@@ -251,14 +224,12 @@ function useChatgptComposerControllerHelper152(request8138: any) {
       ? Number.isFinite(request8138)
         ? request8138
         : null
-      : typeof request8138 == "string" ||
-          typeof request8138 == "boolean"
+      : typeof request8138 == "string" || typeof request8138 == "boolean"
         ? request8138
         : String(request8138);
 }
 function useChatgptComposerControllerHelper153(request9177: any) {
-  return (typeof request9177 == "number" &&
-    Number.isFinite(request9177)) ||
+  return (typeof request9177 == "number" && Number.isFinite(request9177)) ||
     typeof request9177 == "string"
     ? request9177
     : request9177 == null
@@ -268,14 +239,11 @@ function useChatgptComposerControllerHelper153(request9177: any) {
 var slot173,
   slot174 = rolldownRuntimeN(() => {
     slot161();
-    slot173 =
-      "var(--color-token-main-surface-primary)";
+    slot173 = "var(--color-token-main-surface-primary)";
   });
 
-
 function useChatgptComposerControllerHelper154(request997: any) {
-  const Slot4187 =
-    slot4187;
+  const Slot4187 = slot4187;
   let { ariaLabel, chart, theme } = request997,
     {
       barCategoryGapPx,
@@ -297,55 +265,36 @@ function useChatgptComposerControllerHelper154(request997: any) {
     slot4198,
     slot4199;
   {
-    let slot8660 =
-        useChatgptComposerControllerHelper149(chart),
+    let slot8660 = useChatgptComposerControllerHelper149(chart),
       slot8661 = chart.layout === "vertical",
-      slot8662 =
-        useChatgptComposerControllerHelper130({
-          dataLength: slot8660.length,
-          defaultGapPx: barCategoryGapPx,
-        }),
-      slot8663 =
-        useChatgptComposerControllerHelper132({
-          containerSize: slot8661
-            ? barContainerHeight
-            : barContainerWidth,
-          dataLength: slot8660.length,
-          series: chart.series,
-        });
-    slot4187 =
-      useChatgptComposerControllerHelper148;
-    slot4188 = ariaLabel;
-    slot4192 =
-      slot8661
-        ? slot176
-        : slot8662;
-    slot4193 =
-      slot8663;
-    slot4194 = chart;
-    slot4195 =
-      slot8660;
-    slot4196 =
-      slot8661 ? "py-5" : "pt-5 pb-[0.375rem]";
-    slot4197 =
-      useChatgptComposerControllerHelper131({
+      slot8662 = useChatgptComposerControllerHelper130({
         dataLength: slot8660.length,
-        isHorizontalBarChart: slot8661,
+        defaultGapPx: barCategoryGapPx,
+      }),
+      slot8663 = useChatgptComposerControllerHelper132({
+        containerSize: slot8661 ? barContainerHeight : barContainerWidth,
+        dataLength: slot8660.length,
         series: chart.series,
       });
+    slot4187 = useChatgptComposerControllerHelper148;
+    slot4188 = ariaLabel;
+    slot4192 = slot8661 ? slot176 : slot8662;
+    slot4193 = slot8663;
+    slot4194 = chart;
+    slot4195 = slot8660;
+    slot4196 = slot8661 ? "py-5" : "pt-5 pb-[0.375rem]";
+    slot4197 = useChatgptComposerControllerHelper131({
+      dataLength: slot8660.length,
+      isHorizontalBarChart: slot8661,
+      series: chart.series,
+    });
     slot4198 = setBarContainer;
     slot4199 = false;
     slot4189 = true;
     slot4190 = theme;
-    slot4191 =
-      useChatgptComposerControllerHelper137(
-        chart,
-        slot8660,
-        slot8662,
-      );
+    slot4191 = useChatgptComposerControllerHelper137(chart, slot8660, slot8662);
   }
-  let slot4200 =
-    useChatgptComposerControllerHelper138(chart);
+  let slot4200 = useChatgptComposerControllerHelper138(chart);
   return (
     <Slot4187
       ariaLabel={slot4188}
@@ -377,8 +326,7 @@ var slot175,
     slot176 = "12%";
   });
 function useChatgptComposerControllerHelper155(request1705: any) {
-  const Slot5663 =
-    slot5663;
+  const Slot5663 = slot5663;
   let { ariaLabel, chart, theme } = request1705,
     slot5663,
     slot5664,
@@ -392,30 +340,20 @@ function useChatgptComposerControllerHelper155(request1705: any) {
     slot5672,
     slot5673;
   {
-    let slot11487 =
-      useChatgptComposerControllerHelper149(chart);
-    slot5663 =
-      useChatgptComposerControllerHelper148;
+    let slot11487 = useChatgptComposerControllerHelper149(chart);
+    slot5663 = useChatgptComposerControllerHelper148;
     slot5664 = ariaLabel;
     slot5666 = chart;
-    slot5667 =
-      slot11487;
+    slot5667 = slot11487;
     slot5668 = chart.series.length > 1;
     slot5669 = "pt-5 pb-[0.375rem]";
-    slot5670 =
-      slot180;
+    slot5670 = slot180;
     slot5671 = true;
     slot5672 = true;
     slot5673 = theme;
-    slot5665 =
-      useChatgptComposerControllerHelper137(
-        chart,
-        slot11487,
-        0,
-      );
+    slot5665 = useChatgptComposerControllerHelper137(chart, slot11487, 0);
   }
-  let slot5674 =
-    useChatgptComposerControllerHelper139(chart);
+  let slot5674 = useChatgptComposerControllerHelper139(chart);
   return (
     <Slot5663
       ariaLabel={slot5664}
@@ -450,10 +388,8 @@ function useChatgptComposerControllerHelper165(request2261: any) {
     useChatgptComposerControllerHelper147;
   let { ariaLabel, chart, theme } = request2261;
   if (chart.series.length === 0) return null;
-  let slot6570 =
-    useChatgptComposerControllerHelper150(chart);
-  let slot6571 =
-    useChatgptComposerControllerHelper146(chart);
+  let slot6570 = useChatgptComposerControllerHelper150(chart);
+  let slot6571 = useChatgptComposerControllerHelper146(chart);
   let slot6572 = {
     x: false,
     y: true,
@@ -508,8 +444,7 @@ var slot198,
     slot201 = 0.5;
   });
 function useChatgptComposerControllerHelper166(request2100: any) {
-  const Slot6299 =
-    slot6299;
+  const Slot6299 = slot6299;
   let { ariaLabel, chart, theme } = request2100,
     slot6299,
     slot6300,
@@ -521,27 +456,18 @@ function useChatgptComposerControllerHelper166(request2100: any) {
     slot6306,
     slot6307;
   {
-    let slot12251 =
-      useChatgptComposerControllerHelper149(chart);
-    slot6299 =
-      useChatgptComposerControllerHelper148;
+    let slot12251 = useChatgptComposerControllerHelper149(chart);
+    slot6299 = useChatgptComposerControllerHelper148;
     slot6300 = ariaLabel;
     slot6301 = chart;
-    slot6302 =
-      slot12251;
+    slot6302 = slot12251;
     slot6303 = "pt-5 pb-[0.375rem]";
     slot6304 = true;
     slot6305 = false;
     slot6306 = theme;
-    slot6307 =
-      useChatgptComposerControllerHelper137(
-        chart,
-        slot12251,
-        0,
-      );
+    slot6307 = useChatgptComposerControllerHelper137(chart, slot12251, 0);
   }
-  let slot6308 =
-    useChatgptComposerControllerHelper139(chart);
+  let slot6308 = useChatgptComposerControllerHelper139(chart);
   return (
     <Slot6299
       ariaLabel={slot6300}
@@ -639,11 +565,7 @@ var slot206,
   slot216 = rolldownRuntimeN(() => {
     appInitialCT();
     slot209 = appInitialCT().nullable().optional();
-    slot210 = appInitialDT([
-      "compact",
-      "integer",
-      "raw",
-    ]);
+    slot210 = appInitialDT(["compact", "integer", "raw"]);
     slot211 = appInitialXT({
       dimension: appInitialDT(["x", "y"]).nullable().optional(),
       domain: appInitialWT([appInitialBT(), appInitialBT()]).optional(),
@@ -688,10 +610,7 @@ var slot206,
     }).passthrough();
     slot213 = appInitialXT({
       data: appInitialXT({
-        content: appInitialTT([
-          slot212,
-          appInitialCT(),
-        ]),
+        content: appInitialTT([slot212, appInitialCT()]),
         language: appInitialYT("recharts-json"),
         widget_type: appInitialYT("charts_widget_v2"),
       }).passthrough(),
@@ -716,14 +635,10 @@ var slot206,
       }).passthrough(),
       type: appInitialYT("client_defined_widget"),
     }).passthrough();
-    slot215 = appInitialGT("category", [
-      slot214,
-      _g,
-    ]);
+    slot215 = appInitialGT("category", [slot214, _g]);
   });
 function bg(request10749: any, request10750: any) {
-  return typeof request10749 == "string" &&
-    request10749.trim().length > 0
+  return typeof request10749 == "string" && request10749.trim().length > 0
     ? request10749
     : request10750;
 }
@@ -731,103 +646,55 @@ var slot217 = rolldownRuntimeN(() => {});
 function useChatgptComposerControllerHelper168(request5938: any) {
   let slot12252 = bg(
       request5938.xKey,
-      useChatgptComposerControllerHelper171(
-        request5938.data,
-      ),
+      useChatgptComposerControllerHelper171(request5938.data),
     ),
     slot12253 = bg(
       request5938.valueKey,
-      useChatgptComposerControllerHelper172(
-        request5938.data,
-        slot12252,
-      ),
+      useChatgptComposerControllerHelper172(request5938.data, slot12252),
     ),
     slot12254 = {
       chartType: request5938.chartType,
       data: request5938.data,
-      nameKey: bg(
-        request5938.nameKey,
-        slot12252,
-      ),
-      series: useChatgptComposerControllerHelper170(
-        request5938,
-        slot12253,
-      ),
+      nameKey: bg(request5938.nameKey, slot12252),
+      series: useChatgptComposerControllerHelper170(request5938, slot12253),
       valueKey: slot12253,
       xKey: slot12252,
     };
   return (
-    request5938.axes != null &&
-      (slot12254.axes =
-        request5938.axes),
-    request5938.layout === "vertical" &&
-      (slot12254.layout = "vertical"),
-    request5938.meta != null &&
-      (slot12254.meta =
-        request5938.meta),
+    request5938.axes != null && (slot12254.axes = request5938.axes),
+    request5938.layout === "vertical" && (slot12254.layout = "vertical"),
+    request5938.meta != null && (slot12254.meta = request5938.meta),
     slot12254
   );
 }
 function useChatgptComposerControllerHelper169(request8749: any) {
-  if (typeof request8749 != "string")
-    return request8749;
+  if (typeof request8749 != "string") return request8749;
   try {
-    let slot15843 =
-      slot212.safeParse(
-        JSON.parse(request8749),
-      );
-    return slot15843.success
-      ? slot15843.data
-      : null;
+    let slot15843 = slot212.safeParse(JSON.parse(request8749));
+    return slot15843.success ? slot15843.data : null;
   } catch {
     return null;
   }
 }
-function useChatgptComposerControllerHelper170(request4273: any, request4274: any) {
-  let slot10257 =
-      request4273.valueFormat ?? "compact",
-    slot10258 = bg(
-      request4273.valuePrefix,
-      "",
-    ),
-    slot10259 = bg(
-      request4273.valueSuffix,
-      "",
-    ),
-    slot10260 =
-      request4273.series?.map(
-        (request6832) => {
-          let slot13200 = bg(
-              request6832.stack,
-            ),
-            slot13201 = {
-              dataKey: request6832.dataKey,
-              label: bg(
-                request6832.label,
-                request6832.dataKey,
-              ),
-              valueFormat:
-                request6832.valueFormat ??
-                slot10257,
-              valuePrefix: bg(
-                request6832.valuePrefix,
-                slot10258,
-              ),
-              valueSuffix: bg(
-                request6832.valueSuffix,
-                slot10259,
-              ),
-            };
-          return (
-            slot13200 != null &&
-              (slot13201.stack =
-                slot13200),
-            slot13201
-          );
-        },
-      );
-  return slot10260 != null &&
-    slot10260.length > 0
+function useChatgptComposerControllerHelper170(
+  request4273: any,
+  request4274: any,
+) {
+  let slot10257 = request4273.valueFormat ?? "compact",
+    slot10258 = bg(request4273.valuePrefix, ""),
+    slot10259 = bg(request4273.valueSuffix, ""),
+    slot10260 = request4273.series?.map((request6832) => {
+      let slot13200 = bg(request6832.stack),
+        slot13201 = {
+          dataKey: request6832.dataKey,
+          label: bg(request6832.label, request6832.dataKey),
+          valueFormat: request6832.valueFormat ?? slot10257,
+          valuePrefix: bg(request6832.valuePrefix, slot10258),
+          valueSuffix: bg(request6832.valueSuffix, slot10259),
+        };
+      return (slot13200 != null && (slot13201.stack = slot13200), slot13201);
+    });
+  return slot10260 != null && slot10260.length > 0
     ? slot10260
     : [
         {
@@ -840,30 +707,20 @@ function useChatgptComposerControllerHelper170(request4273: any, request4274: an
       ];
 }
 function useChatgptComposerControllerHelper171(request8701: any) {
-  let slot14734 =
-    request8701[0];
+  let slot14734 = request8701[0];
   if (slot14734 == null) return "name";
-  for (let [
-    slot15876,
-    slot15877,
-  ] of Object.entries(slot14734))
-    if (typeof slot15877 == "string")
-      return slot15876;
+  for (let [slot15876, slot15877] of Object.entries(slot14734))
+    if (typeof slot15877 == "string") return slot15876;
   return Object.keys(slot14734)[0] ?? "name";
 }
-function useChatgptComposerControllerHelper172(request8111: any, request8112: any) {
-  let slot14318 =
-    request8111[0];
+function useChatgptComposerControllerHelper172(
+  request8111: any,
+  request8112: any,
+) {
+  let slot14318 = request8111[0];
   if (slot14318 == null) return "value";
-  for (let [
-    slot15803,
-    slot15804,
-  ] of Object.entries(slot14318))
-    if (
-      slot15803 !==
-        request8112 &&
-      typeof slot15804 == "number"
-    )
+  for (let [slot15803, slot15804] of Object.entries(slot14318))
+    if (slot15803 !== request8112 && typeof slot15804 == "number")
       return slot15803;
   return (
     Object.keys(slot14318).find((item) => {

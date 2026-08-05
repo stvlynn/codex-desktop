@@ -12,7 +12,9 @@ export type BindDeferredOnboardingAkPeers = {
 let peers: BindDeferredOnboardingAkPeers | null = null;
 
 /** Wire bindDeferredOnboardingAk peers once companions land. */
-export function setBindDeferredOnboardingAkPeers(next: BindDeferredOnboardingAkPeers): void {
+export function setBindDeferredOnboardingAkPeers(
+  next: BindDeferredOnboardingAkPeers,
+): void {
   peers = next;
 }
 

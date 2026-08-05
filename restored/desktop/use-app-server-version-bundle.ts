@@ -14,7 +14,9 @@ export type UseAppServerVersionBundlePeers = {
 let peers: UseAppServerVersionBundlePeers | null = null;
 
 /** Wire useAppServerVersionBundle peers once companions land. */
-export function setUseAppServerVersionBundlePeers(next: UseAppServerVersionBundlePeers): void {
+export function setUseAppServerVersionBundlePeers(
+  next: UseAppServerVersionBundlePeers,
+): void {
   peers = next;
 }
 

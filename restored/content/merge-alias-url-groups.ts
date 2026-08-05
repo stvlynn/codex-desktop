@@ -19,7 +19,9 @@ export type MergeAliasUrlGroupsPeers = {
 let peers: MergeAliasUrlGroupsPeers | null = null;
 
 /** Wire mergeAliasUrlGroups peers once companions land. */
-export function setMergeAliasUrlGroupsPeers(next: MergeAliasUrlGroupsPeers): void {
+export function setMergeAliasUrlGroupsPeers(
+  next: MergeAliasUrlGroupsPeers,
+): void {
   peers = next;
 }
 

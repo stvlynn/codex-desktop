@@ -23,11 +23,35 @@ import { AppSurfaceId } from "../../app/app-surface-ids";
 import { ensureCodeThemeRegistryInit } from "../../appearance/code-theme-catalog";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { resolveGuardianApprovalWorkspaceWriteMode } from "../../approvals/resolve-guardian-approval-workspace-write-mode";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationsGateAtom, localeMessagesAtom, useStepsProseAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_BU_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_ZE_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationsGateAtom,
+  localeMessagesAtom,
+  useStepsProseAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_BU_Init,
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+  ensureComposerEsm_ZE_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { Link } from "../../boundaries/react-router-link";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -73,7 +97,10 @@ import { AppIconVn } from "../../icons/app-icon-vn";
 import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
 import { resolveOnboardingCatalogKind } from "../../onboarding/resolve-onboarding-catalog-kind";
@@ -90,7 +117,10 @@ import { deferredRv } from "../../ui/deferred-rv";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { ensureContextMenuProviderInit } from "../../ui/ensure-context-menu-provider-init";
@@ -106,16 +136,30 @@ import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { setKeyedStoreAtomValueXU } from "../../utils/set-keyed-store-atom-value";
 import { toggleSortedIdList as ToggleSortedIdList } from "../../utils/toggle-sorted-id-list";
-import { ensureImportSettingsGctInit, ensurePersonalizationCInit as EnsurePersonalizationCInit, ensurePullRequestMediaGUInit, ensureSettingsGlyphNltInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsGctInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+  ensurePullRequestMediaGUInit,
+  ensureSettingsGlyphNltInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { CodeThemePreviewGlyph } from "../code-theme-preview-glyph";
 import { ensureGranularPermissionsClusterInit } from "../ensure-granular-permissions-cluster-init";
 import { generalDesktopSettingsDefinitions } from "../general-desktop-settings-definitions";
 import { ensureGpuTearingDebugSettingsInit } from "../gpu-tearing-debug-settings";
-import { hotkeySetterN, hotkeySetterT as HotkeySetterT } from "../hotkey-setter";
+import {
+  hotkeySetterN,
+  hotkeySetterT as HotkeySetterT,
+} from "../hotkey-setter";
 import { readCodexHomeFromQuery } from "../read-codex-home-from-query";
-import { ensureReviewDeliverySettingsRowInit, ReviewDeliverySettingsRow } from "../review-delivery-settings-row";
+import {
+  ensureReviewDeliverySettingsRowInit,
+  ReviewDeliverySettingsRow,
+} from "../review-delivery-settings-row";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { getSettingValue } from "../settings-values";
 import { useSettingValue } from "../use-setting-value";
 import { buildVscodeQueryKey } from "../vscode-query-key";
@@ -140,23 +184,38 @@ function GeneralSettingsHelper46() {
     copper = useSettingValue(OPENAI_PRIMARY_RUNTIME_ID.theme) ?? "system",
     delta = function (harbor) {
       setSettingValue(alpha, OPENAI_PRIMARY_RUNTIME_ID.theme, harbor, {
-        optimistic: false
+        optimistic: false,
       });
     };
   let echo = delta,
     falcon = bravo.formatMessage(echoFifth.theme);
-  let gamma = zincFifth.map(item => <GeneralSettingsHelper57 key={item.id} {...{
-    ariaLabel: bravo.formatMessage(item.label),
-    label: <MemoizedFormattedMessage {...{
-      ...item.label
-    }} />,
-    mode: item.id,
-    selected: copper === item.id,
-    onSelect: () => {
-      echo(item.id);
-    }
-  }} />);
-  return <div aria-label={falcon} className="grid w-full grid-cols-3 gap-3" role="radiogroup">
+  let gamma = zincFifth.map((item) => (
+    <GeneralSettingsHelper57
+      key={item.id}
+      {...{
+        ariaLabel: bravo.formatMessage(item.label),
+        label: (
+          <MemoizedFormattedMessage
+            {...{
+              ...item.label,
+            }}
+          />
+        ),
+        mode: item.id,
+        selected: copper === item.id,
+        onSelect: () => {
+          echo(item.id);
+        },
+      }}
+    />
+  ));
+  return (
+    <div
+      aria-label={falcon}
+      className="grid w-full grid-cols-3 gap-3"
+      role="radiogroup"
+    >
       {gamma}
-    </div>;
+    </div>
+  );
 }

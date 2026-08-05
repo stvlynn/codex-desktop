@@ -28,7 +28,10 @@ export function clearActivityEntries(): void {
 }
 
 /** Bundle `UEa` / export `fF`. */
-export function createActivityEntriesSnapshot(maxEntries: number = DEFAULT_MAX_ENTRIES, version: number = DEFAULT_VERSION): ActivityEntrySnapshot {
+export function createActivityEntriesSnapshot(
+  maxEntries: number = DEFAULT_MAX_ENTRIES,
+  version: number = DEFAULT_VERSION,
+): ActivityEntrySnapshot {
   return {
     entries: [...entries],
     generatedAtMs: Date.now(),

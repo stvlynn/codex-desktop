@@ -195,7 +195,8 @@ export const ShapeGeometry = {
   UNRECOGNIZED: -1,
 } as const;
 
-export type ShapeGeometryCode = (typeof ShapeGeometry)[keyof typeof ShapeGeometry];
+export type ShapeGeometryCode =
+  (typeof ShapeGeometry)[keyof typeof ShapeGeometry];
 
 let shapeGeometryInitialized = false;
 

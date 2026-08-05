@@ -27,6 +27,6 @@ export function bindDeferredUiQE() {
   }
 
   return peers.e(() => {
-    LJo = peers.c(), peers.$u(), peers.mGo(), RJo = peers.J();
+    ((LJo = peers.c()), peers.$u(), peers.mGo(), (RJo = peers.J()));
   });
 }

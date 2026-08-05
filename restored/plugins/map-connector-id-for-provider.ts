@@ -9,7 +9,10 @@ export const MICROSOFT_CONNECTOR_ID_MAP: Record<string, string> = {
 };
 
 /** Remap Google/Slack connector ids when the provider is Microsoft. */
-export function mapConnectorIdForProvider(connectorId: string, provider: string): string {
+export function mapConnectorIdForProvider(
+  connectorId: string,
+  provider: string,
+): string {
   return provider === "microsoft"
     ? (MICROSOFT_CONNECTOR_ID_MAP[connectorId] ?? connectorId)
     : connectorId;

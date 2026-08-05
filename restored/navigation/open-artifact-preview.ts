@@ -26,7 +26,9 @@ export type OpenArtifactPreviewPeers = {
 let peers: OpenArtifactPreviewPeers | null = null;
 
 /** Wire openArtifactPreview peers once companions land. */
-export function setOpenArtifactPreviewPeers(next: OpenArtifactPreviewPeers): void {
+export function setOpenArtifactPreviewPeers(
+  next: OpenArtifactPreviewPeers,
+): void {
   peers = next;
 }
 

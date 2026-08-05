@@ -5,7 +5,6 @@
 // AST split 2/2
 /* split-lane-import-depth:1 */
 
-
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { logProductEvent } from "../../analytics/log-product-event";
@@ -20,8 +19,14 @@ import {
   ensureComposerEsm_Utt_Init,
   ensureComposerEsm_Wlt_Init as EnsureComposerEsm_Wlt_Init,
 } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+} from "../../boundaries/react-router-navigation";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
 import { composerNavigation } from "../../composer/composer-navigation";
 import { getPluginDisplayName } from "../../composer/get-plugin-display-name";
@@ -122,7 +127,7 @@ export const skillsPageR = esmInit(() => {
   AppInitialWj();
   ensureSkillsPageHelpersInit();
   ensurePluginsPageInit();
-pluginDetailH();
+  pluginDetailH();
   ManagePluginDetailPage();
   pluginsPageI();
   pluginDetailH();

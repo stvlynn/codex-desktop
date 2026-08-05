@@ -18,7 +18,10 @@ import { esmInit } from "../../runtime/rolldown-runtime";
 import { ensureCloudApiClientInit } from "../../settings/cloud-api-client";
 import { ensureSettingsQueryAtomsInit } from "../../settings/settings-ipc";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { decodeBase64ToBytes } from "../../utils/decode-base64-to-bytes";
 import { ensureAuthProviderInit, useAuth } from "../use-auth";
 import { useQuery } from "../use-query";
@@ -31,36 +34,38 @@ const HasSeenKnowledgeWorkAnnouncement: any = undefined;
 const dataAppActionReviewFileExpanded: any = undefined;
 
 export function useWorkspaceUsersN(north: unknown) {
-  let {
-      accountId,
-      authMethod
-    } = useAuth(),
+  let { accountId, authMethod } = useAuth(),
     orbit = north.trim();
   let pine = Chatgpt2(orbit, 200),
     quest = ["workspace-groups", accountId, pine];
   let ridge = authMethod === "chatgpt" && accountId != null && pine.length > 0,
     storm = async () => {
       if (accountId == null) throw Error("account id is required");
-      return (await decodeBase64ToBytes.safeGet("/accounts/{account_id}/groups", {
-        parameters: {
-          path: {
-            account_id: accountId
+      return (
+        await decodeBase64ToBytes.safeGet("/accounts/{account_id}/groups", {
+          parameters: {
+            path: {
+              account_id: accountId,
+            },
+            query: {
+              limit: 10,
+              offset: 0,
+              query: pine,
+            },
           },
-          query: {
-            limit: 10,
-            offset: 0,
-            query: pine
-          }
-        }
-      })).items;
+        })
+      ).items;
     };
   let tide;
-  return tide = {
-    queryKey: quest,
-    enabled: ridge,
-    queryFn: storm,
-    staleTime: readScrollTop.ONE_MINUTE
-  }, useQuery(tide);
+  return (
+    (tide = {
+      queryKey: quest,
+      enabled: ridge,
+      queryFn: storm,
+      staleTime: readScrollTop.ONE_MINUTE,
+    }),
+    useQuery(tide)
+  );
 }
 export const useWorkspaceUsersT = esmInit(() => {
   indigo = reactCompilerRuntime();

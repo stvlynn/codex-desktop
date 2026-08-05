@@ -31,6 +31,15 @@ export function bindBindFile2() {
   }
 
   return peers.e(() => {
-    peers.tGt(), peers.Au(), peers.Uat(), peers.yS(), peers.BKn(), peers.oKn(), peers.KEo(), peers.aDo(), CDo = [`provided`, `read`, `created`, `updated`], wDo = /h\t*t\t*t\t*p|www\./iu;
+    (peers.tGt(),
+      peers.Au(),
+      peers.Uat(),
+      peers.yS(),
+      peers.BKn(),
+      peers.oKn(),
+      peers.KEo(),
+      peers.aDo(),
+      (CDo = [`provided`, `read`, `created`, `updated`]),
+      (wDo = /h\t*t\t*t\t*p|www\./iu));
   });
 }

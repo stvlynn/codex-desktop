@@ -83,7 +83,9 @@ export type BindCodexInlineVisualizationPeers = {
 let peers: BindCodexInlineVisualizationPeers | null = null;
 
 /** Wire bindCodexInlineVisualization peers once companions land. */
-export function setBindCodexInlineVisualizationPeers(next: BindCodexInlineVisualizationPeers): void {
+export function setBindCodexInlineVisualizationPeers(
+  next: BindCodexInlineVisualizationPeers,
+): void {
   peers = next;
 }
 

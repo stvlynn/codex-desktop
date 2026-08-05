@@ -3,4 +3,6 @@
 
 export type PresentationImagesHooks = Record<string, never>;
 export const pimH: PresentationImagesHooks = {} as PresentationImagesHooks;
-export function wirePresentationImagesBoundaryHooks(_next: Partial<PresentationImagesHooks> = {}): void {}
+export function wirePresentationImagesBoundaryHooks(
+  _next: Partial<PresentationImagesHooks> = {},
+): void {}

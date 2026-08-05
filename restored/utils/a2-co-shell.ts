@@ -20,7 +20,5 @@ export function bindA2CoShell() {
     throw new Error("bindA2CoShell peers are not configured");
   }
 
-  return peers.JE(({
-    latestReasoningEffort: e
-  }) => e);
+  return peers.JE(({ latestReasoningEffort: e }) => e);
 }

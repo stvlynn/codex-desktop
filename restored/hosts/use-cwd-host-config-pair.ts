@@ -12,14 +12,21 @@ export type UseCwdHostConfigPairPeers = {
 let peers: UseCwdHostConfigPairPeers | null = null;
 
 /** Wire useCwdHostConfigPair peers once companions land. */
-export function setUseCwdHostConfigPairPeers(next: UseCwdHostConfigPairPeers): void {
+export function setUseCwdHostConfigPairPeers(
+  next: UseCwdHostConfigPairPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `yD` / internal `_Ko`.
  */
-export function useCwdHostConfigPair(e: unknown, t: unknown, n: unknown, r: unknown) {
+export function useCwdHostConfigPair(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+  r: unknown,
+) {
   if (peers == null) {
     throw new Error("useCwdHostConfigPair peers are not configured");
   }

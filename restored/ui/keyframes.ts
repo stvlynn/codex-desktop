@@ -26,6 +26,6 @@ export function keyframes() {
   }
 
   return peers.e(() => {
-    AJe = peers.r(peers.o(), 1), peers.kUe(), peers.DUe();
+    ((AJe = peers.r(peers.o(), 1)), peers.kUe(), peers.DUe());
   });
 }

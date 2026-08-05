@@ -6,9 +6,16 @@
 /* split-lane-import-depth:1 */
 
 import { ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
-import { ensureComposerEsm_Qct_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_Qct_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { applyActive2 } from "../../conversation/apply-active2";
@@ -16,7 +23,10 @@ import { useEventCallback } from "../../hooks/use-event-callback";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
 import { AppIconAlt } from "../../icons/app-icon-alt";
-import { findSidebarSectionElement, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { ensureDynamicScriptLoadInit } from "../../runtime/ensure-dynamic-script-load-init";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import { ScrollingOrbBackdrop } from "../../ui/scrolling-orb-backdrop";
@@ -52,9 +62,11 @@ async function globalDictationOrbA(quartz, river, slate, timber) {
   let umbra = null;
   try {
     indigo = quartz;
-    await appServices.systemPermissions?.requestMicrophoneAccess().catch(() => {});
+    await appServices.systemPermissions
+      ?.requestMicrophoneAccess()
+      .catch(() => {});
     umbra = await ensureComposerEsm_Qct_Init({
-      channelCount: 1
+      channelCount: 1,
     });
     river.startWaveformCapture(umbra);
     let violet = new MediaRecorder(umbra),
@@ -68,28 +80,52 @@ async function globalDictationOrbA(quartz, river, slate, timber) {
         cleanupEnabled: slate,
         pendingStreamingSession: null,
         streamingSession: null,
-        controls: river
+        controls: river,
       };
-    if (violet.addEventListener("dataavailable", xenon => {
-      xenon.data.size > 0 && willow.chunks.push(xenon.data);
-    }), violet.start(), gamma = willow, indigo === quartz && (indigo = null), jade === quartz && (jade = null, globalDictationOrbO(quartz)), timber && !willow.isStopping) {
+    if (
+      (violet.addEventListener("dataavailable", (xenon) => {
+        xenon.data.size > 0 && willow.chunks.push(xenon.data);
+      }),
+      violet.start(),
+      (gamma = willow),
+      indigo === quartz && (indigo = null),
+      jade === quartz && ((jade = null), globalDictationOrbO(quartz)),
+      timber && !willow.isStopping)
+    ) {
       let yellow = new AppInitialYct();
       willow.pendingStreamingSession = yellow;
       try {
-        if (await yellow.start(umbra), willow.pendingStreamingSession !== yellow) return;
+        if (
+          (await yellow.start(umbra), willow.pendingStreamingSession !== yellow)
+        )
+          return;
         willow.pendingStreamingSession = null;
-        gamma === willow && !willow.isStopping ? willow.streamingSession = yellow : yellow.close();
+        gamma === willow && !willow.isStopping
+          ? (willow.streamingSession = yellow)
+          : yellow.close();
       } catch {
-        willow.pendingStreamingSession === yellow && (willow.pendingStreamingSession = null, yellow.close());
+        willow.pendingStreamingSession === yellow &&
+          ((willow.pendingStreamingSession = null), yellow.close());
       }
     }
   } catch (zinc) {
-    throw umbra?.getTracks().forEach(amber => {
-      amber.stop();
-    }), river.stopWaveformCapture(), river.resetWaveformDisplay(), indigo === quartz && (indigo = null), jade === quartz && (jade = null), ensureAppActionPayloadSchemasInit.dispatchMessage("global-dictation-failed", {
-      sessionId: quartz,
-      stage: "recording"
-    }), zinc;
+    throw (
+      umbra?.getTracks().forEach((amber) => {
+        amber.stop();
+      }),
+      river.stopWaveformCapture(),
+      river.resetWaveformDisplay(),
+      indigo === quartz && (indigo = null),
+      jade === quartz && (jade = null),
+      ensureAppActionPayloadSchemasInit.dispatchMessage(
+        "global-dictation-failed",
+        {
+          sessionId: quartz,
+          stage: "recording",
+        },
+      ),
+      zinc
+    );
   }
 }
 function globalDictationOrbO(basalt) {
@@ -98,9 +134,17 @@ function globalDictationOrbO(basalt) {
     jade = basalt;
     return;
   }
-  cedar.isStopping || (cedar.isStopping = true, cedar.pendingStreamingSession?.close(), cedar.pendingStreamingSession = null, ensureAppActionPayloadSchemasInit.dispatchMessage("global-dictation-recording-stopped", {
-    sessionId: basalt
-  }), alpha(cedar));
+  cedar.isStopping ||
+    ((cedar.isStopping = true),
+    cedar.pendingStreamingSession?.close(),
+    (cedar.pendingStreamingSession = null),
+    ensureAppActionPayloadSchemasInit.dispatchMessage(
+      "global-dictation-recording-stopped",
+      {
+        sessionId: basalt,
+      },
+    ),
+    alpha(cedar));
 }
 async function alpha(daisy) {
   let ember = null;
@@ -108,7 +152,7 @@ async function alpha(daisy) {
     try {
       await echo(daisy.recorder);
     } finally {
-      daisy.stream.getTracks().forEach(item => {
+      daisy.stream.getTracks().forEach((item) => {
         item.stop();
       });
       daisy.controls.stopWaveformCapture();
@@ -117,16 +161,19 @@ async function alpha(daisy) {
     }
     if (daisy.chunks.length === 0 || Date.now() - daisy.startedAtMs < falcon) {
       daisy.streamingSession?.close();
-      ensureAppActionPayloadSchemasInit.dispatchMessage("global-dictation-completed", {
-        sessionId: daisy.sessionId,
-        text: ""
-      });
+      ensureAppActionPayloadSchemasInit.dispatchMessage(
+        "global-dictation-completed",
+        {
+          sessionId: daisy.sessionId,
+          text: "",
+        },
+      );
       return;
     }
     ember = {
       sessionId: daisy.sessionId,
       audio: new Blob(daisy.chunks),
-      onTranscriptionFailed: daisy.controls.onTranscriptionFailed
+      onTranscriptionFailed: daisy.controls.onTranscriptionFailed,
     };
     await bravo(ember, daisy.cleanupEnabled, daisy.streamingSession);
   } catch (flint) {
@@ -136,26 +183,33 @@ async function alpha(daisy) {
 async function globalDictationOrbI(garnet, hazel) {
   if (kite === garnet) return;
   let ivory = harbor;
-  if (ivory == null || ivory.sessionId !== garnet) throw Error("No dictation audio to retry");
+  if (ivory == null || ivory.sessionId !== garnet)
+    throw Error("No dictation audio to retry");
   kite = garnet;
   try {
     await bravo(ivory, hazel);
   } catch (jasper) {
-    throw delta(garnet, ivory.onTranscriptionFailed, jasper, ivory), jasper;
+    throw (delta(garnet, ivory.onTranscriptionFailed, jasper, ivory), jasper);
   } finally {
     kite === garnet && (kite = null);
   }
 }
 async function bravo(kelp, lotus, mint = null) {
   let nova = await AppInitialRct({
-    transcript: mint == null ? await AppInitialIct(kelp.audio) : await copper(mint, kelp.audio),
-    cleanupEnabled: lotus
+    transcript:
+      mint == null
+        ? await AppInitialIct(kelp.audio)
+        : await copper(mint, kelp.audio),
+    cleanupEnabled: lotus,
   });
   harbor === kelp && (harbor = null);
-  ensureAppActionPayloadSchemasInit.dispatchMessage("global-dictation-completed", {
-    sessionId: kelp.sessionId,
-    text: nova
-  });
+  ensureAppActionPayloadSchemasInit.dispatchMessage(
+    "global-dictation-completed",
+    {
+      sessionId: kelp.sessionId,
+      text: nova,
+    },
+  );
 }
 async function copper(olive, prism) {
   try {
@@ -169,18 +223,24 @@ function delta(reef, sage, topaz, ultra) {
   sage(topaz);
   ensureAppActionPayloadSchemasInit.dispatchMessage("global-dictation-failed", {
     sessionId: reef,
-    stage: "transcription"
+    stage: "transcription",
   });
 }
 function echo(vapor) {
-  return vapor.state === "inactive" ? Promise.resolve() : new Promise(wheat => {
-    vapor.addEventListener("stop", () => {
-      wheat();
-    }, {
-      once: true
-    });
-    vapor.stop();
-  });
+  return vapor.state === "inactive"
+    ? Promise.resolve()
+    : new Promise((wheat) => {
+        vapor.addEventListener(
+          "stop",
+          () => {
+            wheat();
+          },
+          {
+            once: true,
+          },
+        );
+        vapor.stop();
+      });
 }
 var falcon,
   gamma,
@@ -207,7 +267,7 @@ var falcon,
   nickel = esmInit(() => {
     lemon = "_recordingOrb_1csnm_1";
     marble = {
-      recordingOrb: lemon
+      recordingOrb: lemon,
     };
   });
 export function globalDictationOrbT(ridge: unknown) {
@@ -217,7 +277,7 @@ export function globalDictationOrbT(ridge: unknown) {
       streamingEnabled,
       onActiveSessionIdChange,
       registerNativePetRenderer = true,
-      onVisibilityChange
+      onVisibilityChange,
     } = ridge,
     storm = useIntl(),
     [tide, unity] = pearl.useState(null),
@@ -226,13 +286,13 @@ export function globalDictationOrbT(ridge: unknown) {
     [cliff, dusk] = pearl.useState(false),
     elm = pearl.useRef(null),
     fern = {
-      variant: "orb"
+      variant: "orb",
     };
   let {
       waveformCanvasRef,
       startWaveformCapture,
       stopWaveformCapture,
-      resetWaveformDisplay
+      resetWaveformDisplay,
     } = ScrollingOrbBackdrop(fern),
     grove = (vine, wind) => {
       let yarrow = AppInitialTct(storm, vine, wind);
@@ -242,9 +302,13 @@ export function globalDictationOrbT(ridge: unknown) {
     };
   let hill = grove,
     isle = () => {
-      tide != null && (brook(null), dusk(false), wave("transcribing"), globalDictationOrbI(tide, cleanupEnabled).catch(error => {
-        hill("transcription", error);
-      }));
+      tide != null &&
+        (brook(null),
+        dusk(false),
+        wave("transcribing"),
+        globalDictationOrbI(tide, cleanupEnabled).catch((error) => {
+          hill("transcription", error);
+        }));
     };
   let juniper = isle,
     lagoon = () => {
@@ -259,7 +323,7 @@ export function globalDictationOrbT(ridge: unknown) {
   let meadow;
   meadow = [];
   writeScrollTop("global-dictation-idle", lagoon, meadow);
-  let nest = azure => {
+  let nest = (azure) => {
     elm.current = azure.sessionId;
     unity(azure.sessionId);
     onActiveSessionIdChange?.(azure.sessionId);
@@ -267,14 +331,19 @@ export function globalDictationOrbT(ridge: unknown) {
     dusk(false);
     wave("listening");
     onVisibilityChange?.(true);
-    globalDictationOrbA(azure.sessionId, {
-      startWaveformCapture,
-      stopWaveformCapture,
-      resetWaveformDisplay,
-      onTranscriptionFailed: birch => {
-        hill("transcription", birch);
-      }
-    }, cleanupEnabled, streamingEnabled).catch(error => {
+    globalDictationOrbA(
+      azure.sessionId,
+      {
+        startWaveformCapture,
+        stopWaveformCapture,
+        resetWaveformDisplay,
+        onTranscriptionFailed: (birch) => {
+          hill("transcription", birch);
+        },
+      },
+      cleanupEnabled,
+      streamingEnabled,
+    ).catch((error) => {
       hill("start", error);
     });
   };
@@ -282,7 +351,7 @@ export function globalDictationOrbT(ridge: unknown) {
   oak = [];
   writeScrollTop("global-dictation-start", nest, oak);
   let petal, quiet;
-  petal = canyon => {
+  petal = (canyon) => {
     brook(null);
     dusk(false);
     wave("transcribing");
@@ -293,48 +362,76 @@ export function globalDictationOrbT(ridge: unknown) {
   let rain, seed;
   rain = () => {
     let dew = true;
-    return registerNativePetRenderer && queueMicrotask(() => {
-      dew && ensureAppActionPayloadSchemasInit.dispatchMessage("global-dictation-pet-renderer-ready", {
-        ready: true
-      });
-    }), () => {
-      dew = false;
-      let ever = elm.current;
-      ever != null && globalDictationOrbO(ever);
-      onActiveSessionIdChange?.(null);
-      onVisibilityChange?.(false);
-      registerNativePetRenderer && ensureAppActionPayloadSchemasInit.dispatchMessage("global-dictation-pet-renderer-ready", {
-        ready: false
-      });
-    };
+    return (
+      registerNativePetRenderer &&
+        queueMicrotask(() => {
+          dew &&
+            ensureAppActionPayloadSchemasInit.dispatchMessage(
+              "global-dictation-pet-renderer-ready",
+              {
+                ready: true,
+              },
+            );
+        }),
+      () => {
+        dew = false;
+        let ever = elm.current;
+        ever != null && globalDictationOrbO(ever);
+        onActiveSessionIdChange?.(null);
+        onVisibilityChange?.(false);
+        registerNativePetRenderer &&
+          ensureAppActionPayloadSchemasInit.dispatchMessage(
+            "global-dictation-pet-renderer-ready",
+            {
+              ready: false,
+            },
+          );
+      }
+    );
   };
-  seed = [onActiveSessionIdChange, onVisibilityChange, registerNativePetRenderer];
+  seed = [
+    onActiveSessionIdChange,
+    onVisibilityChange,
+    registerNativePetRenderer,
+  ];
   pearl.useEffect(rain, seed);
   let trail = vale === "error" && cliff,
-    urn = event => {
-      if (event.stopPropagation(), vale === "listening" && tide != null) {
-        ensureAppActionPayloadSchemasInit.dispatchMessage("global-dictation-stop-requested", {
-          sessionId: tide
-        });
+    urn = (event) => {
+      if ((event.stopPropagation(), vale === "listening" && tide != null)) {
+        ensureAppActionPayloadSchemasInit.dispatchMessage(
+          "global-dictation-stop-requested",
+          {
+            sessionId: tide,
+          },
+        );
         return;
       }
       if (trail) {
         juniper();
         return;
       }
-      vale === "error" && tide != null && ensureAppActionPayloadSchemasInit.dispatchMessage("global-dictation-dismiss", {
-        sessionId: tide
-      });
+      vale === "error" &&
+        tide != null &&
+        ensureAppActionPayloadSchemasInit.dispatchMessage(
+          "global-dictation-dismiss",
+          {
+            sessionId: tide,
+          },
+        );
     };
   let _globalDictationOrbR = urn;
   if (vale === "idle") return null;
-  return <GlobalDictationOrbHelper6 {...{
-    canRetryError: cliff,
-    errorMessage: apex,
-    onClick: _globalDictationOrbR,
-    status: vale,
-    waveformCanvasRef
-  }} />;
+  return (
+    <GlobalDictationOrbHelper6
+      {...{
+        canRetryError: cliff,
+        errorMessage: apex,
+        onClick: _globalDictationOrbR,
+        status: vale,
+        waveformCanvasRef,
+      }}
+    />
+  );
 }
 export const globalDictationOrbN = esmInit(() => {
   onyx = reactCompilerRuntime();

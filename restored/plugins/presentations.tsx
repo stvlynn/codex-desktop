@@ -13,7 +13,9 @@ export type BindBindPresentationsPeers = {
 let peers: BindBindPresentationsPeers | null = null;
 
 /** Wire bindBindPresentations peers once companions land. */
-export function setBindBindPresentationsPeers(next: BindBindPresentationsPeers): void {
+export function setBindBindPresentationsPeers(
+  next: BindBindPresentationsPeers,
+): void {
   peers = next;
 }
 
@@ -26,6 +28,10 @@ export function bindBindPresentations() {
   }
 
   return peers.e(() => {
-    xta = `spreadsheets`, Sta = `presentations`, Cta = `1288674243`, wta = `1623794951`, Tta = `openai-primary-runtime`;
+    ((xta = `spreadsheets`),
+      (Sta = `presentations`),
+      (Cta = `1288674243`),
+      (wta = `1623794951`),
+      (Tta = `openai-primary-runtime`));
   });
 }

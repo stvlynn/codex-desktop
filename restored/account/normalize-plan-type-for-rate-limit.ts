@@ -12,7 +12,9 @@ export type RateLimitPlanType =
   | "unknown";
 
 /** Collapse ChatGPT plan ids into the rate-limit UI plan bucket. */
-export function normalizePlanTypeForRateLimit(plan: string | null | undefined): RateLimitPlanType | null {
+export function normalizePlanTypeForRateLimit(
+  plan: string | null | undefined,
+): RateLimitPlanType | null {
   if (!plan) return null;
   switch (plan) {
     case "free":

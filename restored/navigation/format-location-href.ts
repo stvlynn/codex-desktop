@@ -18,7 +18,9 @@ export type BindFormatLocationHrefPeers = {
 let peers: BindFormatLocationHrefPeers | null = null;
 
 /** Wire bindFormatLocationHref peers once companions land. */
-export function setBindFormatLocationHrefPeers(next: BindFormatLocationHrefPeers): void {
+export function setBindFormatLocationHrefPeers(
+  next: BindFormatLocationHrefPeers,
+): void {
   peers = next;
 }
 
@@ -31,6 +33,12 @@ export function bindFormatLocationHref() {
   }
 
   return peers.e(() => {
-    H2i = peers.c(), U2i = peers.r(peers.o(), 1), peers.Nw(), peers.R2i(), peers.fb(), peers.K_(), peers.Fh();
+    ((H2i = peers.c()),
+      (U2i = peers.r(peers.o(), 1)),
+      peers.Nw(),
+      peers.R2i(),
+      peers.fb(),
+      peers.K_(),
+      peers.Fh());
   });
 }

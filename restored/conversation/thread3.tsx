@@ -23,6 +23,6 @@ export function bindBindThread3() {
   }
 
   return peers.e(() => {
-    peers.Vf(), peers.oU();
+    (peers.Vf(), peers.oU());
   });
 }

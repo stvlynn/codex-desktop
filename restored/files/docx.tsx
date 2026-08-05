@@ -40,6 +40,39 @@ export function bindBindDocx() {
   }
 
   return peers.e(() => {
-    o2n = peers.r(peers.Il(), 1), peers.Au(), peers.XUn(), peers.HT(), peers.jf(), peers.N_(), peers.u0n(), peers.p0n(), peers.x0n(), peers.w0n(), s2n = new Set([`avif`, `csv`, `doc`, `docx`, `gif`, `jpeg`, `jpg`, `pdf`, `png`, `ppt`, `pptx`, `tsv`, `webp`, `xls`, `xlsm`, `xlsx`]), c2n = new Set([...peers.s2n, `md`, `mdx`]), l2n = [`work`, `.codex_scratch`], u2n = /\bhttps?:\/\/[^\s<>)"'`]+/gi, d2n = /[.,;!?]+$/u, f2n = /[()[\]]/u, p2n = new Set(` !"#$%&'()*+,-./:;<=>?@[\\]^_\`{|}~`);
+    ((o2n = peers.r(peers.Il(), 1)),
+      peers.Au(),
+      peers.XUn(),
+      peers.HT(),
+      peers.jf(),
+      peers.N_(),
+      peers.u0n(),
+      peers.p0n(),
+      peers.x0n(),
+      peers.w0n(),
+      (s2n = new Set([
+        `avif`,
+        `csv`,
+        `doc`,
+        `docx`,
+        `gif`,
+        `jpeg`,
+        `jpg`,
+        `pdf`,
+        `png`,
+        `ppt`,
+        `pptx`,
+        `tsv`,
+        `webp`,
+        `xls`,
+        `xlsm`,
+        `xlsx`,
+      ])),
+      (c2n = new Set([...peers.s2n, `md`, `mdx`])),
+      (l2n = [`work`, `.codex_scratch`]),
+      (u2n = /\bhttps?:\/\/[^\s<>)"'`]+/gi),
+      (d2n = /[.,;!?]+$/u),
+      (f2n = /[()[\]]/u),
+      (p2n = new Set(` !"#$%&'()*+,-./:;<=>?@[\\]^_\`{|}~`)));
   });
 }

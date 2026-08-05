@@ -11,7 +11,9 @@ export type BindKeyboardShortcutPeers = {
 let peers: BindKeyboardShortcutPeers | null = null;
 
 /** Wire bindKeyboardShortcut peers once companions land. */
-export function setBindKeyboardShortcutPeers(next: BindKeyboardShortcutPeers): void {
+export function setBindKeyboardShortcutPeers(
+  next: BindKeyboardShortcutPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function bindKeyboardShortcut() {
   }
 
   return peers.e(() => {
-    peers.Gk(), peers.Yf(), peers.DPr();
+    (peers.Gk(), peers.Yf(), peers.DPr());
   });
 }

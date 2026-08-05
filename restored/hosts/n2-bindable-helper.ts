@@ -9,7 +9,9 @@ export type BindN2BindableHelperPeers = {
 let peers: BindN2BindableHelperPeers | null = null;
 
 /** Wire bindN2BindableHelper peers once companions land. */
-export function setBindN2BindableHelperPeers(next: BindN2BindableHelperPeers): void {
+export function setBindN2BindableHelperPeers(
+  next: BindN2BindableHelperPeers,
+): void {
   peers = next;
 }
 

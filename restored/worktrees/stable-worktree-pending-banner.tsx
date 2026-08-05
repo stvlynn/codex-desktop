@@ -9,7 +9,9 @@ export type StableWorktreePendingBannerPeers = {
 let peers: StableWorktreePendingBannerPeers | null = null;
 
 /** Wire StableWorktreePendingBanner peers once companions land. */
-export function setStableWorktreePendingBannerPeers(next: StableWorktreePendingBannerPeers): void {
+export function setStableWorktreePendingBannerPeers(
+  next: StableWorktreePendingBannerPeers,
+): void {
   peers = next;
 }
 

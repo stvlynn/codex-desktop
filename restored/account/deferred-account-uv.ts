@@ -25,6 +25,9 @@ export function deferredAccountUv() {
     throw new Error("deferredAccountUv peers are not configured");
   }
   return peers.e(() => {
-    vEs = peers.c(), peers.rQ(), peers.Fh(), yEs = `show_logged_in_pricing_page`;
+    ((vEs = peers.c()),
+      peers.rQ(),
+      peers.Fh(),
+      (yEs = `show_logged_in_pricing_page`));
   });
 }

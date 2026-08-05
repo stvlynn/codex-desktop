@@ -40,6 +40,21 @@ export function transcription() {
   }
 
   return peers.e(() => {
-    Nit = peers.c(), Kh = peers.r(peers.o(), 1), peers._p(), peers.ttt(), peers.Fh(), peers.$nt(), peers.Gf(), peers.srt(), peers.Grt(), peers.Zrt(), peers.Gm(), peers.Yf(), peers.Qrt(), peers.kit(), Pit = 250, Fit = 595e3;
+    ((Nit = peers.c()),
+      (Kh = peers.r(peers.o(), 1)),
+      peers._p(),
+      peers.ttt(),
+      peers.Fh(),
+      peers.$nt(),
+      peers.Gf(),
+      peers.srt(),
+      peers.Grt(),
+      peers.Zrt(),
+      peers.Gm(),
+      peers.Yf(),
+      peers.Qrt(),
+      peers.kit(),
+      (Pit = 250),
+      (Fit = 595e3));
   });
 }

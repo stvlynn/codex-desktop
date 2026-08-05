@@ -27,6 +27,6 @@ export function bindRemote4() {
   }
 
   return peers.e(() => {
-    peers.DD(), peers.Yfs(), peers.onc(), peers.pS(), peers._p(), peers.Dh();
+    (peers.DD(), peers.Yfs(), peers.onc(), peers.pS(), peers._p(), peers.Dh());
   });
 }

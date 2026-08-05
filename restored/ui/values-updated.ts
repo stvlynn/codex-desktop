@@ -29,16 +29,24 @@ export function valuesUpdated() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), Th = peers.Ta(peers.Q, null), bnt = peers.Ta(peers.Q, []), Eh = peers.Da(peers.Q, e => !1, {
-      onMount: (e, t) => {
-        let {
-            key: n
-          } = t,
-          r = t.get(peers.Th);
-        return r != null && peers.e(r.checkGate(n)), t.set(peers.bnt, e => peers.e.includes(n) ? peers.e : [...peers.e, n]), () => {
-          t.set(peers.bnt, e => peers.e.filter(e => peers.e !== n));
-        };
-      }
-    });
+    (peers.Ho(),
+      peers.ed(),
+      (Th = peers.Ta(peers.Q, null)),
+      (bnt = peers.Ta(peers.Q, [])),
+      (Eh = peers.Da(peers.Q, (e) => !1, {
+        onMount: (e, t) => {
+          let { key: n } = t,
+            r = t.get(peers.Th);
+          return (
+            r != null && peers.e(r.checkGate(n)),
+            t.set(peers.bnt, (e) =>
+              peers.e.includes(n) ? peers.e : [...peers.e, n],
+            ),
+            () => {
+              t.set(peers.bnt, (e) => peers.e.filter((e) => peers.e !== n));
+            }
+          );
+        },
+      })));
   });
 }

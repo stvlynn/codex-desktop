@@ -33,8 +33,17 @@ export function bindBindBrowser2() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.Sl(), peers.ujr(), peers.Wh(), peers.Qf(), bjr = 100, xjr = peers.sl({
-      mfa_enabled_v2: peers.il()
-    }), Sjr = class extends Error {}, Cjr = class extends Error {}, wjr = class extends Error {};
+    (peers.Au(),
+      peers.Sl(),
+      peers.ujr(),
+      peers.Wh(),
+      peers.Qf(),
+      (bjr = 100),
+      (xjr = peers.sl({
+        mfa_enabled_v2: peers.il(),
+      })),
+      (Sjr = class extends Error {}),
+      (Cjr = class extends Error {}),
+      (wjr = class extends Error {}));
   });
 }

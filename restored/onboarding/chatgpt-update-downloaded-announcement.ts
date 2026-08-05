@@ -12,7 +12,9 @@ export type BindChatgptUpdateDownloadedAnnouncementPeers = {
 let peers: BindChatgptUpdateDownloadedAnnouncementPeers | null = null;
 
 /** Wire bindChatgptUpdateDownloadedAnnouncement peers once companions land. */
-export function setBindChatgptUpdateDownloadedAnnouncementPeers(next: BindChatgptUpdateDownloadedAnnouncementPeers): void {
+export function setBindChatgptUpdateDownloadedAnnouncementPeers(
+  next: BindChatgptUpdateDownloadedAnnouncementPeers,
+): void {
   peers = next;
 }
 
@@ -21,7 +23,9 @@ export function setBindChatgptUpdateDownloadedAnnouncementPeers(next: BindChatgp
  */
 export function bindChatgptUpdateDownloadedAnnouncement() {
   if (peers == null) {
-    throw new Error("bindChatgptUpdateDownloadedAnnouncement peers are not configured");
+    throw new Error(
+      "bindChatgptUpdateDownloadedAnnouncement peers are not configured",
+    );
   }
 
   return peers.e(() => {

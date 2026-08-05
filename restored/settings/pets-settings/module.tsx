@@ -5,7 +5,6 @@
 // AST split 1/1
 /* split-lane-import-depth:1 */
 
-
 import { openInBrowser as OpenInBrowser } from "../../account/open-in-browser";
 import { ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
 import { CODEX_LOGIN_SUCCESS_TYPE } from "../../analytics/codex-login-success-type";
@@ -15,18 +14,41 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CodexPluginPageName } from "../../analytics/codex-plugin-page-name";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
-import { CodexAvatar, ensureCodexAvatarInit as EnsureCodexAvatarInit } from "../../avatar/codex-avatar";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
+import {
+  CodexAvatar,
+  ensureCodexAvatarInit as EnsureCodexAvatarInit,
+} from "../../avatar/codex-avatar";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Sst_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_NZ_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
 import { buildSkillMentionMarkdown } from "../../composer/build-skill-mention-markdown";
 import { composerNavigation } from "../../composer/composer-navigation";
 import { THREAD_DETAIL_LEVEL_STEPS_COMMANDS } from "../../conversation/thread-detail-level-ids";
 import { defaultAvatarOverlayMascotWidthPx } from "../../desktop/avatar-overlay-mascot-size";
-import { customAvatarByIdQueryAtom, customAvatarsQueryKey, ensureCustomAvatarsQueryInit } from "../../desktop/custom-avatars-query";
+import {
+  customAvatarByIdQueryAtom,
+  customAvatarsQueryKey,
+  ensureCustomAvatarsQueryInit,
+} from "../../desktop/custom-avatars-query";
 import { invokeDesktopRpc } from "../../desktop/invoke-desktop-rpc";
 import { useSelectedAvatar } from "../../desktop/use-selected-avatar";
 import { ensureGitRepoWatchAtomsInit } from "../../hooks/git-method-query-atoms";
@@ -38,7 +60,10 @@ import { AppIconAlt } from "../../icons/app-icon-alt";
 import { AppIconOi } from "../../icons/app-icon-oi";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { toMarkdownLink } from "../../markdown/to-markdown-link";
-import { findSidebarSectionElement, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { OnboardingProviderContinuePanel } from "../../onboarding/onboarding-provider-continue-panel";
 import { buildAvatarOverlayAnalyticsPayload } from "../../overlay/build-avatar-overlay-analytics-payload";
@@ -46,7 +71,11 @@ import { mergeCodexCompanions } from "../../pets/merge-codex-companions";
 import { usePluginCategoryPageTelemetry } from "../../plugins/use-plugin-category-page-telemetry";
 import { usePluginNavigationTelemetry as UsePluginNavigationTelemetry } from "../../plugins/use-plugin-navigation-telemetry";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
-import { ensureRecommendedSkillStatsigOverridesInit, getRecommendedSkillStatsigOverride, useRecommendedSkillStatsigOverrides } from "../../skills/recommended-skill-statsig-overrides";
+import {
+  ensureRecommendedSkillStatsigOverridesInit,
+  getRecommendedSkillStatsigOverride,
+  useRecommendedSkillStatsigOverrides,
+} from "../../skills/recommended-skill-statsig-overrides";
 import { ensureSkillsPageHelpersInit } from "../../skills/skills-page-helpers";
 import { codexCommandTheme } from "../../ui/codex-command-theme";
 import { codex2 } from "../../ui/codex2-2";
@@ -56,8 +85,14 @@ import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { initSettingsLoadingRow, SettingsLoadingRow } from "../settings-loading-row";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  initSettingsLoadingRow,
+  SettingsLoadingRow,
+} from "../settings-loading-row";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { usePetsSettingsController } from "../use-pets-settings-controller";
 import { useSettingValue } from "../use-setting-value";
 
@@ -93,27 +128,33 @@ const deferredUiX9: any = undefined;
 /** Wave FX unresolved companion (missing-export:onboarding/read-login-route-query-snapshot.ts) */
 const ReadLoginRouteQuerySnapshot: any = undefined;
 function PetsSettingsHelper1(willow) {
-  let {
-      avatar,
-      className,
-      size = "md"
-    } = willow,
+  let { avatar, className, size = "md" } = willow,
     xenon = size === "sm" ? "size-8" : "size-16",
-    yellow = IntlProvider("flex shrink-0 items-center justify-center overflow-hidden rounded-lg", xenon, className);
+    yellow = IntlProvider(
+      "flex shrink-0 items-center justify-center overflow-hidden rounded-lg",
+      xenon,
+      className,
+    );
   let zinc = avatar?.id ?? "default",
     amber = avatar?.assetRef,
     basalt = size === "sm" ? "scale-[0.42]" : "scale-75",
     cedar = avatar?.spriteVersionNumber,
     daisy = avatar?.spritesheetUrl,
-    ember = <EnsureCodexAvatarInit {...{
-      assetRef: amber,
-      className: basalt,
-      spriteVersionNumber: cedar,
-      spritesheetUrl: daisy
-    }} />;
-  return <div className={yellow} data-avatar-id={zinc}>
+    ember = (
+      <EnsureCodexAvatarInit
+        {...{
+          assetRef: amber,
+          className: basalt,
+          spriteVersionNumber: cedar,
+          spritesheetUrl: daisy,
+        }}
+      />
+    );
+  return (
+    <div className={yellow} data-avatar-id={zinc}>
       {ember}
-    </div>;
+    </div>
+  );
 }
 var alpha,
   bravo,
@@ -123,60 +164,85 @@ var alpha,
     CodexAvatar();
   });
 function PetsSettingsHelper2(flint) {
-  let {
-      avatarDirectory
-    } = flint,
+  let { avatarDirectory } = flint,
     garnet = CodexPluginActionType(appScopeAtom),
     hazel = useIntl(),
     ivory = () => {
-      garnet.get(toastAtom).danger(hazel.formatMessage({
-        id: "settings.pets.custom.openFolderError",
-        defaultMessage: "Unable to open pet folder",
-        description: "Toast shown when opening the custom pet folder fails"
-      }));
+      garnet.get(toastAtom).danger(
+        hazel.formatMessage({
+          id: "settings.pets.custom.openFolderError",
+          defaultMessage: "Unable to open pet folder",
+          description: "Toast shown when opening the custom pet folder fails",
+        }),
+      );
     };
   let jasper = ivory,
-    kelp = <MemoizedFormattedMessage {...{
-      id: "settings.pets.custom.title",
-      defaultMessage: "Custom pets",
-      description: "Heading for custom pet settings"
-    }} />;
-  let lotus = <span className="font-mono text-xs [text-wrap:wrap] break-all">
+    kelp = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.pets.custom.title",
+          defaultMessage: "Custom pets",
+          description: "Heading for custom pet settings",
+        }}
+      />
+    );
+  let lotus = (
+    <span className="font-mono text-xs [text-wrap:wrap] break-all">
       {avatarDirectory}
-    </span>;
+    </span>
+  );
   let mint = () => {
-    garnet.get(AppInitialVX).mutate({
-      path: avatarDirectory,
-      cwd: null,
-      target: "fileManager",
-      openMode: "workspace"
-    }, {
-      onSuccess: quill => {
-        quill.success || jasper();
+    garnet.get(AppInitialVX).mutate(
+      {
+        path: avatarDirectory,
+        cwd: null,
+        target: "fileManager",
+        openMode: "workspace",
       },
-      onError: jasper
-    });
+      {
+        onSuccess: (quill) => {
+          quill.success || jasper();
+        },
+        onError: jasper,
+      },
+    );
   };
   let nova, olive;
-  nova = <MemoizedFormattedMessage {...{
-    id: "settings.pets.custom.openFolder",
-    defaultMessage: "Open folder",
-    description: "Button label to open the local custom pet folder"
-  }} />;
-  olive = <UsePluginNavigationTelemetry {...{
-    className: "icon-2xs"
-  }} />;
-  let prism = <ReadLoginRouteQuerySnapshot {...{
-    color: "ghost",
-    onClick: mint,
-    size: "toolbar",
-    children: [nova, olive]
-  }} />;
-  return <EnsurePersonalizationCInit {...{
-    label: kelp,
-    description: lotus,
-    control: prism
-  }} />;
+  nova = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.pets.custom.openFolder",
+        defaultMessage: "Open folder",
+        description: "Button label to open the local custom pet folder",
+      }}
+    />
+  );
+  olive = (
+    <UsePluginNavigationTelemetry
+      {...{
+        className: "icon-2xs",
+      }}
+    />
+  );
+  let prism = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "ghost",
+        onClick: mint,
+        size: "toolbar",
+        children: [nova, olive],
+      }}
+    />
+  );
+  return (
+    <EnsurePersonalizationCInit
+      {...{
+        label: kelp,
+        description: lotus,
+        control: prism,
+      }}
+    />
+  );
 }
 var delta,
   echo,
@@ -200,22 +266,30 @@ function PetsSettingsHelper3(reef) {
       isLoadingCustomAvatars = false,
       onCreateCustomAvatar,
       onRefreshCustomAvatars,
-      onUpgradeCustomAvatar
+      onUpgradeCustomAvatar,
     } = reef,
     sage = avatarOptions === undefined ? DropdownTriggerButton : avatarOptions;
-  return <ElectronOnly {...{
-    electron: true,
-    children: <PetsSettingsHelper4 {...{
-      avatarDirectory,
-      avatarOptions: sage,
-      isCreatingCustomAvatar: isCreatingCustomAvatar,
-      isCustomAvatarLoadError: isCustomAvatarLoadError,
-      isLoadingCustomAvatars: isLoadingCustomAvatars,
-      onCreateCustomAvatar,
-      onRefreshCustomAvatars,
-      onUpgradeCustomAvatar
-    }} />
-  }} />;
+  return (
+    <ElectronOnly
+      {...{
+        electron: true,
+        children: (
+          <PetsSettingsHelper4
+            {...{
+              avatarDirectory,
+              avatarOptions: sage,
+              isCreatingCustomAvatar: isCreatingCustomAvatar,
+              isCustomAvatarLoadError: isCustomAvatarLoadError,
+              isLoadingCustomAvatars: isLoadingCustomAvatars,
+              onCreateCustomAvatar,
+              onRefreshCustomAvatars,
+              onUpgradeCustomAvatar,
+            }}
+          />
+        ),
+      }}
+    />
+  );
 }
 function PetsSettingsHelper4(topaz) {
   let {
@@ -226,7 +300,7 @@ function PetsSettingsHelper4(topaz) {
       isLoadingCustomAvatars,
       onCreateCustomAvatar,
       onRefreshCustomAvatars,
-      onUpgradeCustomAvatar
+      onUpgradeCustomAvatar,
     } = topaz,
     ultra = useIntl(),
     vapor = CodexPluginActionResult(DeferredTZ),
@@ -235,11 +309,8 @@ function PetsSettingsHelper4(topaz) {
     zephyr = CodexPluginActionResult(deferredUiX9),
     acorn = CodexPluginActionType(appScopeAtom),
     bloom = useSettingValue(AppInitialSpt.petSize),
-    {
-      selectedAvatar,
-      setSelectedAvatarId
-    } = useSelectedAvatar(avatarOptions),
-    coral = (bloom - 80) / 144 * 100,
+    { selectedAvatar, setSelectedAvatarId } = useSelectedAvatar(avatarOptions),
+    coral = ((bloom - 80) / 144) * 100,
     drift,
     eagle,
     frost,
@@ -253,176 +324,338 @@ function PetsSettingsHelper4(topaz) {
       ridge = ultra.formatMessage({
         id: "settings.pets.custom.create.label",
         defaultMessage: "Create your own pet",
-        description: "Accessible label for creating a custom Codex pet from settings"
+        description:
+          "Accessible label for creating a custom Codex pet from settings",
       });
     let storm = ridge,
       tide = ultra.formatMessage({
         id: "settings.pets.refresh",
         defaultMessage: "Refresh",
-        description: "Button label to refresh custom pets from local manifests"
+        description: "Button label to refresh custom pets from local manifests",
       });
     let unity = tide,
       vale = (nest, oak) => {
-        zephyr.logProductEvent(CODEX_ONBOARDING_WORKSPACE_CONTINUE_CLICKED_TYPE, buildAvatarOverlayAnalyticsPayload({
-          action: nest,
-          selectedAvatar: oak,
-          source: CodexPluginPageName.CODEX_AVATAR_OVERLAY_SOURCE_SETTINGS
-        }));
+        zephyr.logProductEvent(
+          CODEX_ONBOARDING_WORKSPACE_CONTINUE_CLICKED_TYPE,
+          buildAvatarOverlayAnalyticsPayload({
+            action: nest,
+            selectedAvatar: oak,
+            source: CodexPluginPageName.CODEX_AVATAR_OVERLAY_SOURCE_SETTINGS,
+          }),
+        );
       };
     let wave = vale,
-      apex = petal => {
+      apex = (petal) => {
         setSelectedAvatarId(petal.id);
-        wave(CODEX_LOGIN_SUCCESS_TYPE.CODEX_AVATAR_OVERLAY_ACTION_PET_SELECTED, petal);
+        wave(
+          CODEX_LOGIN_SUCCESS_TYPE.CODEX_AVATAR_OVERLAY_ACTION_PET_SELECTED,
+          petal,
+        );
       };
     let brook = apex;
     frost = UseChromeAndCodeThemeSync;
-    let cliff = onRefreshCustomAvatars ? <OptionalTooltip {...{
-      delayDuration: 0,
-      tooltipContent: unity,
-      children: <ReadLoginRouteQuerySnapshot {...{
-        "aria-label": unity,
-        color: "ghost",
-        onClick: onRefreshCustomAvatars,
-        size: "icon",
-        children: <AppIconAlt {...{
-          className: "icon-xs"
-        }} />
-      }} />
-    }} /> : null;
-    let dusk = onCreateCustomAvatar ? <ReadLoginRouteQuerySnapshot {...{
-      "aria-label": storm,
-      color: "secondary",
-      loading: isCreatingCustomAvatar,
-      onClick: () => {
-        wave(CODEX_LOGIN_SUCCESS_TYPE.CODEX_AVATAR_OVERLAY_ACTION_CUSTOM_PET_CREATE_STARTED, selectedAvatar);
-        onCreateCustomAvatar();
-      },
-      size: "toolbar",
-      children: <MemoizedFormattedMessage {...{
-        id: "settings.pets.custom.create.title",
-        defaultMessage: "Create",
-        description: "Button label for creating a custom Codex pet from settings"
-      }} />
-    }} /> : null;
+    let cliff = onRefreshCustomAvatars ? (
+      <OptionalTooltip
+        {...{
+          delayDuration: 0,
+          tooltipContent: unity,
+          children: (
+            <ReadLoginRouteQuerySnapshot
+              {...{
+                "aria-label": unity,
+                color: "ghost",
+                onClick: onRefreshCustomAvatars,
+                size: "icon",
+                children: (
+                  <AppIconAlt
+                    {...{
+                      className: "icon-xs",
+                    }}
+                  />
+                ),
+              }}
+            />
+          ),
+        }}
+      />
+    ) : null;
+    let dusk = onCreateCustomAvatar ? (
+      <ReadLoginRouteQuerySnapshot
+        {...{
+          "aria-label": storm,
+          color: "secondary",
+          loading: isCreatingCustomAvatar,
+          onClick: () => {
+            wave(
+              CODEX_LOGIN_SUCCESS_TYPE.CODEX_AVATAR_OVERLAY_ACTION_CUSTOM_PET_CREATE_STARTED,
+              selectedAvatar,
+            );
+            onCreateCustomAvatar();
+          },
+          size: "toolbar",
+          children: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.pets.custom.create.title",
+                defaultMessage: "Create",
+                description:
+                  "Button label for creating a custom Codex pet from settings",
+              }}
+            />
+          ),
+        }}
+      />
+    ) : null;
     let elm = () => {
-      wave(vapor ? CODEX_LOGIN_SUCCESS_TYPE.CODEX_AVATAR_OVERLAY_ACTION_CLOSE_REQUESTED : CODEX_LOGIN_SUCCESS_TYPE.CODEX_AVATAR_OVERLAY_ACTION_OPEN_REQUESTED, selectedAvatar);
-      ensureAppActionPayloadSchemasInit.dispatchMessage("avatar-overlay-open", {});
+      wave(
+        vapor
+          ? CODEX_LOGIN_SUCCESS_TYPE.CODEX_AVATAR_OVERLAY_ACTION_CLOSE_REQUESTED
+          : CODEX_LOGIN_SUCCESS_TYPE.CODEX_AVATAR_OVERLAY_ACTION_OPEN_REQUESTED,
+        selectedAvatar,
+      );
+      ensureAppActionPayloadSchemasInit.dispatchMessage(
+        "avatar-overlay-open",
+        {},
+      );
     };
-    let fern = vapor ? <MemoizedFormattedMessage {...{
-      id: "settings.personalization.pets.tuckAwayPet",
-      defaultMessage: "Tuck Away Pet",
-      description: "Button that closes the floating pet overlay"
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "settings.personalization.pets.openPet",
-      defaultMessage: "Wake Pet",
-      description: "Button that opens the floating pet overlay"
-    }} />;
-    let grove = <ReadLoginRouteQuerySnapshot {...{
-      color: "secondary",
-      onClick: elm,
-      size: "toolbar",
-      children: fern
-    }} />;
-    let hill = <>
+    let fern = vapor ? (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.personalization.pets.tuckAwayPet",
+          defaultMessage: "Tuck Away Pet",
+          description: "Button that closes the floating pet overlay",
+        }}
+      />
+    ) : (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.personalization.pets.openPet",
+          defaultMessage: "Wake Pet",
+          description: "Button that opens the floating pet overlay",
+        }}
+      />
+    );
+    let grove = (
+      <ReadLoginRouteQuerySnapshot
+        {...{
+          color: "secondary",
+          onClick: elm,
+          size: "toolbar",
+          children: fern,
+        }}
+      />
+    );
+    let hill = (
+      <>
         {cliff}
         {dusk}
         {grove}
-      </>;
+      </>
+    );
     let isle, juniper;
-    isle = <MemoizedFormattedMessage {...{
-      id: "settings.pets.pickPet.title",
-      defaultMessage: "Pick a pet",
-      description: "Title for the Pets settings explainer"
-    }} />;
-    juniper = <MemoizedFormattedMessage {...{
-      id: "settings.pets.pickPet.description",
-      defaultMessage: "Pets manage threads and surface what needs attention",
-      description: "Description explaining what Codex pets do in settings"
-    }} />;
-    jewel = <UseChromeAndCodeThemeSync.Header {...{
-      actions: hill,
-      title: isle,
-      subtitle: juniper
-    }} />;
+    isle = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.pets.pickPet.title",
+          defaultMessage: "Pick a pet",
+          description: "Title for the Pets settings explainer",
+        }}
+      />
+    );
+    juniper = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.pets.pickPet.description",
+          defaultMessage:
+            "Pets manage threads and surface what needs attention",
+          description: "Description explaining what Codex pets do in settings",
+        }}
+      />
+    );
+    jewel = (
+      <UseChromeAndCodeThemeSync.Header
+        {...{
+          actions: hill,
+          title: isle,
+          subtitle: juniper,
+        }}
+      />
+    );
     eagle = UseChromeAndCodeThemeSync.Content;
     drift = ParseUrlOrFallback;
-    glide = isLoadingCustomAvatars ? <SettingsLoadingRow {...{
-      children: <MemoizedFormattedMessage {...{
-        id: "settings.pets.loadingCustom",
-        defaultMessage: "Loading custom pets…",
-        description: "Message shown while loading custom pet manifests"
-      }} />
-    }} /> : isCustomAvatarLoadError ? <EnsurePersonalizationCInit {...{
-      label: <MemoizedFormattedMessage {...{
-        id: "settings.pets.loadCustomError",
-        defaultMessage: "Unable to load custom pets",
-        description: "Message shown when custom pet manifests fail to load"
-      }} />,
-      control: null
-    }} /> : null;
+    glide = isLoadingCustomAvatars ? (
+      <SettingsLoadingRow
+        {...{
+          children: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.pets.loadingCustom",
+                defaultMessage: "Loading custom pets…",
+                description: "Message shown while loading custom pet manifests",
+              }}
+            />
+          ),
+        }}
+      />
+    ) : isCustomAvatarLoadError ? (
+      <EnsurePersonalizationCInit
+        {...{
+          label: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.pets.loadCustomError",
+                defaultMessage: "Unable to load custom pets",
+                description:
+                  "Message shown when custom pet manifests fail to load",
+              }}
+            />
+          ),
+          control: null,
+        }}
+      />
+    ) : null;
     let lagoon;
-    lagoon = quiet => <PetsSettingsHelper6 key={quiet.id} {...{
-      avatar: quiet,
-      isSelected: quiet.id === selectedAvatar.id,
-      onSelectAvatar: brook,
-      onUpgradeAvatar: wheat ? onUpgradeCustomAvatar : undefined
-    }} />;
+    lagoon = (quiet) => (
+      <PetsSettingsHelper6
+        key={quiet.id}
+        {...{
+          avatar: quiet,
+          isSelected: quiet.id === selectedAvatar.id,
+          onSelectAvatar: brook,
+          onUpgradeAvatar: wheat ? onUpgradeCustomAvatar : undefined,
+        }}
+      />
+    );
     honey = quest.map(lagoon);
     let meadow;
-    meadow = rain => <PetsSettingsHelper6 key={rain.id} {...{
-      avatar: rain,
-      isSelected: rain.id === selectedAvatar.id,
-      onSelectAvatar: brook
-    }} />;
+    meadow = (rain) => (
+      <PetsSettingsHelper6
+        key={rain.id}
+        {...{
+          avatar: rain,
+          isSelected: rain.id === selectedAvatar.id,
+          onSelectAvatar: brook,
+        }}
+      />
+    );
     iris = pine.map(meadow);
   }
-  let knoll = avatarDirectory == null ? null : <PetsSettingsHelper2 {...{
-    avatarDirectory
-  }} />;
-  let lunar = <ParseUrlOrFallback {...{
-    children: [glide, honey, iris, knoll]
-  }} />;
-  let moss = <ParseUrlOrFallback {...{
-    children: lunar
-  }} />;
-  let north = <ParseUrlOrFallback {...{
-    children: [jewel, moss]
-  }} />;
-  let orbit = yarn ? <UseChromeAndCodeThemeSync {...{
-    children: [<UseChromeAndCodeThemeSync.Header {...{
-      title: <MemoizedFormattedMessage {...{
-        id: "settings.pets.appearance.title",
-        defaultMessage: "Appearance",
-        description: "Heading above pet appearance settings"
-      }} />
-    }} />, <UseChromeAndCodeThemeSync.Content {...{
-      children: <ParseUrlOrFallback {...{
-        children: <EnsurePersonalizationCInit {...{
-          label: <label htmlFor="pet-size">
-                              {<MemoizedFormattedMessage {...{
-              id: "settings.pets.size",
-              defaultMessage: "Pet size",
-              description: "Label for the floating pet size setting"
-            }} />}
-                            </label>,
-          description: <MemoizedFormattedMessage {...{
-            id: "settings.pets.size.description",
-            defaultMessage: "Adjust the size of your pet",
-            description: "Description for the floating pet size setting"
-          }} />,
-          control: <input id="pet-size" className="h-0.5 w-40 cursor-interaction appearance-none rounded-full [&::-moz-range-thumb]:size-5 [&::-moz-range-thumb]:cursor-interaction [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border [&::-moz-range-thumb]:border-token-border-heavy [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:shadow-sm-stronger [&::-moz-range-track]:h-0.5 [&::-moz-range-track]:rounded-full [&::-webkit-slider-runnable-track]:h-0.5 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-thumb]:mt-[-9px] [&::-webkit-slider-thumb]:size-5 [&::-webkit-slider-thumb]:cursor-interaction [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-token-border-heavy [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-sm-stronger" max={224} min={80} onInput={event => {
-            setSettingValue(acorn, AppInitialSpt.petSize, Number(event.currentTarget.value));
-          }} style={{
-            background: `linear-gradient(to right, var(--color-token-primary) ${coral}%, var(--color-token-border-light) ${coral}%)`
-          }} type="range" value={bloom} />
-        }} />
-      }} />
-    }} />]
-  }} /> : null;
-  return <>
+  let knoll =
+    avatarDirectory == null ? null : (
+      <PetsSettingsHelper2
+        {...{
+          avatarDirectory,
+        }}
+      />
+    );
+  let lunar = (
+    <ParseUrlOrFallback
+      {...{
+        children: [glide, honey, iris, knoll],
+      }}
+    />
+  );
+  let moss = (
+    <ParseUrlOrFallback
+      {...{
+        children: lunar,
+      }}
+    />
+  );
+  let north = (
+    <ParseUrlOrFallback
+      {...{
+        children: [jewel, moss],
+      }}
+    />
+  );
+  let orbit = yarn ? (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [
+          <UseChromeAndCodeThemeSync.Header
+            {...{
+              title: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "settings.pets.appearance.title",
+                    defaultMessage: "Appearance",
+                    description: "Heading above pet appearance settings",
+                  }}
+                />
+              ),
+            }}
+          />,
+          <UseChromeAndCodeThemeSync.Content
+            {...{
+              children: (
+                <ParseUrlOrFallback
+                  {...{
+                    children: (
+                      <EnsurePersonalizationCInit
+                        {...{
+                          label: (
+                            <label htmlFor="pet-size">
+                              {
+                                <MemoizedFormattedMessage
+                                  {...{
+                                    id: "settings.pets.size",
+                                    defaultMessage: "Pet size",
+                                    description:
+                                      "Label for the floating pet size setting",
+                                  }}
+                                />
+                              }
+                            </label>
+                          ),
+                          description: (
+                            <MemoizedFormattedMessage
+                              {...{
+                                id: "settings.pets.size.description",
+                                defaultMessage: "Adjust the size of your pet",
+                                description:
+                                  "Description for the floating pet size setting",
+                              }}
+                            />
+                          ),
+                          control: (
+                            <input
+                              id="pet-size"
+                              className="h-0.5 w-40 cursor-interaction appearance-none rounded-full [&::-moz-range-thumb]:size-5 [&::-moz-range-thumb]:cursor-interaction [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border [&::-moz-range-thumb]:border-token-border-heavy [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:shadow-sm-stronger [&::-moz-range-track]:h-0.5 [&::-moz-range-track]:rounded-full [&::-webkit-slider-runnable-track]:h-0.5 [&::-webkit-slider-runnable-track]:rounded-full [&::-webkit-slider-thumb]:mt-[-9px] [&::-webkit-slider-thumb]:size-5 [&::-webkit-slider-thumb]:cursor-interaction [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-token-border-heavy [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:shadow-sm-stronger"
+                              max={224}
+                              min={80}
+                              onInput={(event) => {
+                                setSettingValue(
+                                  acorn,
+                                  AppInitialSpt.petSize,
+                                  Number(event.currentTarget.value),
+                                );
+                              }}
+                              style={{
+                                background: `linear-gradient(to right, var(--color-token-primary) ${coral}%, var(--color-token-border-light) ${coral}%)`,
+                              }}
+                              type="range"
+                              value={bloom}
+                            />
+                          ),
+                        }}
+                      />
+                    ),
+                  }}
+                />
+              ),
+            }}
+          />,
+        ],
+      }}
+    />
+  ) : null;
+  return (
+    <>
       {north}
       {orbit}
-    </>;
+    </>
+  );
 }
 function gamma(seed) {
   return seed.id.startsWith("custom:");
@@ -431,73 +664,111 @@ function $e(trail) {
   return !trail.id.startsWith("custom:");
 }
 function PetsSettingsHelper6(urn) {
-  let {
-      avatar,
-      isSelected,
-      onSelectAvatar,
-      onUpgradeAvatar
-    } = urn,
+  let { avatar, isSelected, onSelectAvatar, onUpgradeAvatar } = urn,
     vine = useIntl(),
     wind = avatar.upgradeDirectoryPath,
-    yarrow = vine.formatMessage({
-      id: "settings.pets.custom.update.accessibleLabel",
-      defaultMessage: "Update {petName}",
-      description: "Accessible label for updating an outdated custom pet"
-    }, {
-      petName: avatar.displayName
-    });
-  let azure = yarrow,
-    birch = <PetsSettingsHelper1 {...{
-      avatar
-    }} />;
-  let canyon = wind != null && onUpgradeAvatar != null ? <OptionalTooltip {...{
-    delayDuration: 0,
-    tooltipContent: azure,
-    children: <ReadLoginRouteQuerySnapshot {...{
-      "aria-label": azure,
-      color: "accent",
-      onClick: () => {
-        onUpgradeAvatar(avatar.displayName, wind);
+    yarrow = vine.formatMessage(
+      {
+        id: "settings.pets.custom.update.accessibleLabel",
+        defaultMessage: "Update {petName}",
+        description: "Accessible label for updating an outdated custom pet",
       },
-      size: "toolbar",
-      children: <MemoizedFormattedMessage {...{
-        id: "settings.pets.custom.update",
-        defaultMessage: "Update",
-        description: "Button label for updating an outdated custom pet"
-      }} />
-    }} />
-  }} /> : null;
-  let dew = isSelected ? <ReadLoginRouteQuerySnapshot {...{
-    color: "secondary",
-    disabled: true,
-    size: "toolbar",
-    children: <MemoizedFormattedMessage {...{
-      id: "settings.personalization.avatars.selected",
-      defaultMessage: "Selected",
-      description: "Label for the selected avatar"
-    }} />
-  }} /> : <ReadLoginRouteQuerySnapshot {...{
-    color: "secondary",
-    size: "toolbar",
-    onClick: () => {
-      onSelectAvatar(avatar);
-    },
-    children: <MemoizedFormattedMessage {...{
-      id: "settings.personalization.avatars.select",
-      defaultMessage: "Select",
-      description: "Button label to select an avatar"
-    }} />
-  }} />;
-  let ever = <>
+      {
+        petName: avatar.displayName,
+      },
+    );
+  let azure = yarrow,
+    birch = (
+      <PetsSettingsHelper1
+        {...{
+          avatar,
+        }}
+      />
+    );
+  let canyon =
+    wind != null && onUpgradeAvatar != null ? (
+      <OptionalTooltip
+        {...{
+          delayDuration: 0,
+          tooltipContent: azure,
+          children: (
+            <ReadLoginRouteQuerySnapshot
+              {...{
+                "aria-label": azure,
+                color: "accent",
+                onClick: () => {
+                  onUpgradeAvatar(avatar.displayName, wind);
+                },
+                size: "toolbar",
+                children: (
+                  <MemoizedFormattedMessage
+                    {...{
+                      id: "settings.pets.custom.update",
+                      defaultMessage: "Update",
+                      description:
+                        "Button label for updating an outdated custom pet",
+                    }}
+                  />
+                ),
+              }}
+            />
+          ),
+        }}
+      />
+    ) : null;
+  let dew = isSelected ? (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "secondary",
+        disabled: true,
+        size: "toolbar",
+        children: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.personalization.avatars.selected",
+              defaultMessage: "Selected",
+              description: "Label for the selected avatar",
+            }}
+          />
+        ),
+      }}
+    />
+  ) : (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "secondary",
+        size: "toolbar",
+        onClick: () => {
+          onSelectAvatar(avatar);
+        },
+        children: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.personalization.avatars.select",
+              defaultMessage: "Select",
+              description: "Button label to select an avatar",
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let ever = (
+    <>
       {canyon}
       {dew}
-    </>;
-  return <EnsurePersonalizationCInit {...{
-    icon: birch,
-    label: avatar.displayName,
-    description: avatar.description,
-    control: ever
-  }} />;
+    </>
+  );
+  return (
+    <EnsurePersonalizationCInit
+      {...{
+        icon: birch,
+        label: avatar.displayName,
+        description: avatar.description,
+        control: ever,
+      }}
+    />
+  );
 }
 var harbor,
   indigo,
@@ -535,17 +806,14 @@ async function lemon({
   forceReloadSkills,
   petDirectoryPath,
   petName,
-  skillStatsigOverride
+  skillStatsigOverride,
 }) {
   return `${await marble({
     forceReloadSkills,
-    skillStatsigOverride
+    skillStatsigOverride,
   })} upgrade the existing pet at ${toMarkdownLink(petName.replaceAll(/[\r\n]+/g, " "), petDirectoryPath)} to the latest pet version with looking directions`;
 }
-async function marble({
-  forceReloadSkills,
-  skillStatsigOverride
-}) {
+async function marble({ forceReloadSkills, skillStatsigOverride }) {
   let grain = await invokeDesktopRpc("install-recommended-skill", {
     params: {
       forceReinstall: true,
@@ -554,14 +822,18 @@ async function marble({
       repoPath: nickel,
       skillId: at,
       skillStatsigOverride,
-      source: "bundled"
-    }
+      source: "bundled",
+    },
   });
-  if (!grain.success || grain.destination == null) throw Error(grain.error ?? "Unable to install Hatch Pet");
-  return await forceReloadSkills(), buildSkillMentionMarkdown({
-    name: at,
-    path: WorkingDotsActionButton(grain.destination, "SKILL.md")
-  });
+  if (!grain.success || grain.destination == null)
+    throw Error(grain.error ?? "Unable to install Hatch Pet");
+  return (
+    await forceReloadSkills(),
+    buildSkillMentionMarkdown({
+      name: at,
+      path: WorkingDotsActionButton(grain.destination, "SKILL.md"),
+    })
+  );
 }
 var at,
   nickel,
@@ -575,12 +847,9 @@ var at,
     nickel = "skills/.curated/hatch-pet";
   });
 function pearl() {
-  let {
-      data,
-      isError,
-      isFetching,
-      isLoading
-    } = CodexPluginActionResult(customAvatarByIdQueryAtom),
+  let { data, isError, isFetching, isLoading } = CodexPluginActionResult(
+      customAvatarByIdQueryAtom,
+    ),
     haven = data?.avatarDirectory ?? null,
     ink = data?.avatars,
     jadeite = mergeCodexCompanions(ink);
@@ -589,7 +858,7 @@ function pearl() {
     avatarOptions: jadeite,
     isError,
     isFetching,
-    isLoading
+    isLoading,
   };
 }
 var quartz,
@@ -600,26 +869,26 @@ var quartz,
     customAvatarsQueryKey();
   });
 function PetsSettingsHelper11() {
-  return <ElectronOnly {...{
-    electron: true,
-    children: <PetsSettingsHelper12 {...{}} />
-  }} />;
+  return (
+    <ElectronOnly
+      {...{
+        electron: true,
+        children: <PetsSettingsHelper12 {...{}} />,
+      }}
+    />
+  );
 }
 function PetsSettingsHelper12() {
   let kernel = CodexPluginActionType(appScopeAtom),
     [leaf, maple] = timber.useState(false),
-    {
-      avatarDirectory,
-      avatarOptions,
-      isError,
-      isLoading
-    } = pearl(),
+    { avatarDirectory, avatarOptions, isError, isLoading } = pearl(),
     nimbus = ensureGitRepoWatchAtomsInit(),
     opal = composerNavigation(),
-    {
-      forceReload
-    } = usePetsSettingsController(undefined, LOCAL_HOST_ID),
-    plume = getRecommendedSkillStatsigOverride(useRecommendedSkillStatsigOverrides(), "hatch-pet"),
+    { forceReload } = usePetsSettingsController(undefined, LOCAL_HOST_ID),
+    plume = getRecommendedSkillStatsigOverride(
+      useRecommendedSkillStatsigOverrides(),
+      "hatch-pet",
+    ),
     quillow = async () => {
       await forceReload();
     },
@@ -628,20 +897,25 @@ function PetsSettingsHelper12() {
       try {
         let thorn = await kite({
           forceReloadSkills: quillow,
-          skillStatsigOverride: plume
+          skillStatsigOverride: plume,
         });
         await AppInitialI7(kernel, THREAD_DETAIL_LEVEL_STEPS_COMMANDS);
         opal({
           activeProject: null,
           prefillComposerMode: "local",
-          prefillPrompt: thorn
+          prefillPrompt: thorn,
         });
       } catch {
-        kernel.get(toastAtom).danger(<MemoizedFormattedMessage {...{
-          id: "settings.pets.createCustom.error",
-          defaultMessage: "Unable to start pet creation",
-          description: "Toast shown when the Hatch Pet skill cannot be installed"
-        }} />);
+        kernel.get(toastAtom).danger(
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.pets.createCustom.error",
+              defaultMessage: "Unable to start pet creation",
+              description:
+                "Toast shown when the Hatch Pet skill cannot be installed",
+            }}
+          />,
+        );
       } finally {
         maple(false);
       }
@@ -653,33 +927,42 @@ function PetsSettingsHelper12() {
             forceReloadSkills: quillow,
             petDirectoryPath: vista,
             petName: upland,
-            skillStatsigOverride: plume
-          })
+            skillStatsigOverride: plume,
+          }),
         });
       } catch {
-        kernel.get(toastAtom).danger(<MemoizedFormattedMessage {...{
-          id: "settings.pets.upgradeCustom.error",
-          defaultMessage: "Unable to start pet upgrade",
-          description: "Toast shown when the Hatch Pet skill cannot be installed for a pet upgrade"
-        }} />);
+        kernel.get(toastAtom).danger(
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.pets.upgradeCustom.error",
+              defaultMessage: "Unable to start pet upgrade",
+              description:
+                "Toast shown when the Hatch Pet skill cannot be installed for a pet upgrade",
+            }}
+          />,
+        );
       }
     };
-  return <PetsSettingsHelper3 {...{
-    avatarDirectory,
-    avatarOptions,
-    isCreatingCustomAvatar: leaf,
-    isCustomAvatarLoadError: isError,
-    isLoadingCustomAvatars: isLoading,
-    onCreateCustomAvatar: () => {
-      root();
-    },
-    onRefreshCustomAvatars: () => {
-      nimbus(ensureCustomAvatarsQueryInit);
-    },
-    onUpgradeCustomAvatar: (wisp, yonder) => {
-      silk(wisp, yonder);
-    }
-  }} />;
+  return (
+    <PetsSettingsHelper3
+      {...{
+        avatarDirectory,
+        avatarOptions,
+        isCreatingCustomAvatar: leaf,
+        isCustomAvatarLoadError: isError,
+        isLoadingCustomAvatars: isLoading,
+        onCreateCustomAvatar: () => {
+          root();
+        },
+        onRefreshCustomAvatars: () => {
+          nimbus(ensureCustomAvatarsQueryInit);
+        },
+        onUpgradeCustomAvatar: (wisp, yonder) => {
+          silk(wisp, yonder);
+        },
+      }}
+    />
+  );
 }
 var slate,
   timber,
@@ -704,10 +987,14 @@ var slate,
     river();
   });
 export function PetsSettings() {
-  return <OpenInBrowser {...{
-    title: <SettingsSectionTitle slug="pets" />,
-    children: <PetsSettingsHelper11 {...{}} />
-  }} />;
+  return (
+    <OpenInBrowser
+      {...{
+        title: <SettingsSectionTitle slug="pets" />,
+        children: <PetsSettingsHelper11 {...{}} />,
+      }}
+    />
+  );
 }
 var _t, violet;
 esmInit(() => {

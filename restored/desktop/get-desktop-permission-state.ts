@@ -11,7 +11,9 @@ export type GetDesktopPermissionStatePeers = {
 let peers: GetDesktopPermissionStatePeers | null = null;
 
 /** Wire getDesktopPermissionState peers once companions land. */
-export function setGetDesktopPermissionStatePeers(next: GetDesktopPermissionStatePeers): void {
+export function setGetDesktopPermissionStatePeers(
+  next: GetDesktopPermissionStatePeers,
+): void {
   peers = next;
 }
 

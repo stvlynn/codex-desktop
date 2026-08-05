@@ -8,7 +8,9 @@ export type UseStatsigClientLoadingPeers = {
 let peers: UseStatsigClientLoadingPeers | null = null;
 
 /** Wire useStatsigClientLoading peers once companions land. */
-export function setUseStatsigClientLoadingPeers(next: UseStatsigClientLoadingPeers): void {
+export function setUseStatsigClientLoadingPeers(
+  next: UseStatsigClientLoadingPeers,
+): void {
   peers = next;
 }
 

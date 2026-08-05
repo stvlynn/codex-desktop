@@ -26,18 +26,19 @@ export function deferredUiHT() {
     throw new Error("deferredUiHT peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     let n = t(peers.nj, e);
-    if (n?.kind === `local` && n.conversation == null) return n.pendingWorktree.isPinned;
+    if (n?.kind === `local` && n.conversation == null)
+      return n.pendingWorktree.isPinned;
     switch (peers.zA(e)?.kind) {
       case `local`:
-      case `remote`:
-        {
-          let r = n?.kind === `local` && n.conversation != null ? n.conversation.id : peers.VA(e);
-          return r != null && t(peers.E0o).includes(r);
-        }
+      case `remote`: {
+        let r =
+          n?.kind === `local` && n.conversation != null
+            ? n.conversation.id
+            : peers.VA(e);
+        return r != null && t(peers.E0o).includes(r);
+      }
       case void 0:
         return !1;
     }

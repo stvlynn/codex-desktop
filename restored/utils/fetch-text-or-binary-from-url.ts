@@ -10,7 +10,9 @@ export type FetchTextOrBinaryFromUrlPeers = {
 let peers: FetchTextOrBinaryFromUrlPeers | null = null;
 
 /** Wire fetchTextOrBinaryFromUrl peers once companions land. */
-export function setFetchTextOrBinaryFromUrlPeers(next: FetchTextOrBinaryFromUrlPeers): void {
+export function setFetchTextOrBinaryFromUrlPeers(
+  next: FetchTextOrBinaryFromUrlPeers,
+): void {
   peers = next;
 }
 
@@ -37,21 +39,24 @@ async function fetchTextOrBinaryFromUrl(e, t = `text`) {
   }
   return new Promise((n, r) => {
     let i = new peers.XMLHttpRequest();
-    i.open(`GET`, e, !0), i.responseType = t, i.onreadystatechange = () => {
-      if (i.readyState === peers.XMLHttpRequest.DONE) {
-        if (i.status === 200 || i.status === 0) {
-          switch (t) {
-            case `arraybuffer`:
-            case `blob`:
-            case `json`:
-              n(i.response);
-              return;
+    (i.open(`GET`, e, !0),
+      (i.responseType = t),
+      (i.onreadystatechange = () => {
+        if (i.readyState === peers.XMLHttpRequest.DONE) {
+          if (i.status === 200 || i.status === 0) {
+            switch (t) {
+              case `arraybuffer`:
+              case `blob`:
+              case `json`:
+                n(i.response);
+                return;
+            }
+            n(i.responseText);
+            return;
           }
-          n(i.responseText);
-          return;
+          r(Error(i.statusText));
         }
-        r(Error(i.statusText));
-      }
-    }, i.send(null);
+      }),
+      i.send(null));
   });
 }

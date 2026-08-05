@@ -8,4 +8,3 @@
 /** Wave FY: bind no longer required after full body promote */
 export function bindSelectWorkspacePage(_next: unknown): void {}
 export function ensureSelectWorkspacePageInit(): void {}
-

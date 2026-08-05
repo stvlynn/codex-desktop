@@ -10,7 +10,10 @@ import {
 } from "../math-plain-text";
 import { normalizeMathDocumentViaMathMl } from "../math-ml";
 
-export function normalizeMathDisplayMode(dtIn8976: any, dtIn8977: any= "inline") {
+export function normalizeMathDisplayMode(
+  dtIn8976: any,
+  dtIn8977: any = "inline",
+) {
   let dtBind19520 = dtIn8976 ?? dtIn8977;
   return dtBind19520 === "block"
     ? MathDisplayMode.MATH_DISPLAY_MODE_BLOCK
@@ -51,4 +54,3 @@ export function ensureMathDisplayHelpersInit(): void {
   ensurePresentationMathEnumsInit();
   mathDisplayReady = true;
 }
-

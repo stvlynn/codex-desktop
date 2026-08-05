@@ -16,7 +16,9 @@ export type BindDeferredConversationXpPeers = {
 let peers: BindDeferredConversationXpPeers | null = null;
 
 /** Wire bindDeferredConversationXp peers once companions land. */
-export function setBindDeferredConversationXpPeers(next: BindDeferredConversationXpPeers): void {
+export function setBindDeferredConversationXpPeers(
+  next: BindDeferredConversationXpPeers,
+): void {
   peers = next;
 }
 
@@ -28,23 +30,30 @@ export function bindDeferredConversationXp() {
     throw new Error("bindDeferredConversationXp peers are not configured");
   }
 
-  return peers.Ea(peers.Q, e => {
-    let t = e => ({
+  return peers.Ea(peers.Q, (e) => {
+    let t = (e) => ({
         isWorkspaceRootOptionsLoading: e.isWorkspaceRootOptionsLoading,
         pinnedProjectGroups: e.pinnedProjectGroups,
-        pinnedThreadKeys: e.pinnedThreadKeys
+        pinnedThreadKeys: e.pinnedThreadKeys,
       }),
       n = null;
-    return peers.Ma(peers.Q, ({
-      get: r
-    }) => {
+    return peers.Ma(peers.Q, ({ get: r }) => {
       let i = r(peers.F1, e),
         a = t(i);
-      return n = peers.Vrc(n, {
-        ...a,
-        pinnedProjectGroups: peers.zrc(n?.pinnedProjectGroups ?? [], a.pinnedProjectGroups),
-        pinnedThreadKeys: peers.P1(n?.pinnedThreadKeys ?? [], a.pinnedThreadKeys)
-      }), n;
+      return (
+        (n = peers.Vrc(n, {
+          ...a,
+          pinnedProjectGroups: peers.zrc(
+            n?.pinnedProjectGroups ?? [],
+            a.pinnedProjectGroups,
+          ),
+          pinnedThreadKeys: peers.P1(
+            n?.pinnedThreadKeys ?? [],
+            a.pinnedThreadKeys,
+          ),
+        })),
+        n
+      );
     });
   });
 }

@@ -26,6 +26,6 @@ export function bindStatus2() {
   }
 
   return peers.e(() => {
-    vhs = peers.c(), yhs = peers.r(peers.o(), 1);
+    ((vhs = peers.c()), (yhs = peers.r(peers.o(), 1)));
   });
 }

@@ -8,7 +8,9 @@ export type UseMergedCallbacksPeers = {
 let peers: UseMergedCallbacksPeers | null = null;
 
 /** Wire useMergedCallbacks peers once companions land. */
-export function setUseMergedCallbacksPeers(next: UseMergedCallbacksPeers): void {
+export function setUseMergedCallbacksPeers(
+  next: UseMergedCallbacksPeers,
+): void {
   peers = next;
 }
 

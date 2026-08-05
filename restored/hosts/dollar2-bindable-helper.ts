@@ -8,7 +8,9 @@ export type Dollar2BindableHelperPeers = {
 let peers: Dollar2BindableHelperPeers | null = null;
 
 /** Wire dollar2BindableHelper peers once companions land. */
-export function setDollar2BindableHelperPeers(next: Dollar2BindableHelperPeers): void {
+export function setDollar2BindableHelperPeers(
+  next: Dollar2BindableHelperPeers,
+): void {
   peers = next;
 }
 
@@ -20,7 +22,5 @@ export function dollar2BindableHelper() {
     throw new Error("dollar2BindableHelper peers are not configured");
   }
 
-  return peers.JE(({
-    threadSource: e
-  }) => e ?? null);
+  return peers.JE(({ threadSource: e }) => e ?? null);
 }

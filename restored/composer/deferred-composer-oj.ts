@@ -11,7 +11,9 @@ export type BindDeferredComposerOJPeers = {
 let peers: BindDeferredComposerOJPeers | null = null;
 
 /** Wire bindDeferredComposerOJ peers once companions land. */
-export function setBindDeferredComposerOJPeers(next: BindDeferredComposerOJPeers): void {
+export function setBindDeferredComposerOJPeers(
+  next: BindDeferredComposerOJPeers,
+): void {
   peers = next;
 }
 
@@ -23,10 +25,8 @@ export function bindDeferredComposerOJ() {
     throw new Error("bindDeferredComposerOJ peers are not configured");
   }
 
-  return peers.Ma(peers.GM, ({
-    get: e
-  }) => ({
+  return peers.Ma(peers.GM, ({ get: e }) => ({
     ...e(peers.yN),
-    prompt: e(peers.xN)
+    prompt: e(peers.xN),
   }));
 }

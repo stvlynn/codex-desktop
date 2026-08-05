@@ -11,7 +11,9 @@ export type UseCancelTaskMutationPeers = {
 let peers: UseCancelTaskMutationPeers | null = null;
 
 /** Wire useCancelTaskMutation peers once companions land. */
-export function setUseCancelTaskMutationPeers(next: UseCancelTaskMutationPeers): void {
+export function setUseCancelTaskMutationPeers(
+  next: UseCancelTaskMutationPeers,
+): void {
   peers = next;
 }
 

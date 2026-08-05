@@ -45,7 +45,8 @@ export function placeholderTypeToLevelStyleKey(
   placeholderType: string | undefined,
   hasPlaceholderIndex: boolean,
 ): LevelStyleKey {
-  if (placeholderType === undefined && !hasPlaceholderIndex) return "otherStyle";
+  if (placeholderType === undefined && !hasPlaceholderIndex)
+    return "otherStyle";
   switch (placeholderType) {
     case "title":
     case "ctrTitle":

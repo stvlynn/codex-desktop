@@ -9,59 +9,105 @@ const axis = getChatgptChartAxisTooltipSurfaces();
 const series = getChatgptChartSeriesFrameSurfaces();
 const client = getChatgptClientDefinedWidgetSurfaces();
 
-export const useChatgptComposerControllerHelper124 = axis.useChatgptComposerControllerHelper124;
-export const useChatgptComposerControllerHelper125 = axis.useChatgptComposerControllerHelper125;
-export const useChatgptComposerControllerHelper126 = axis.useChatgptComposerControllerHelper126;
-export const useChatgptComposerControllerHelper127 = axis.useChatgptComposerControllerHelper127;
-export const useChatgptComposerControllerHelper128 = axis.useChatgptComposerControllerHelper128;
-export const useChatgptComposerControllerHelper129 = axis.useChatgptComposerControllerHelper129;
-export const useChatgptComposerControllerHelper130 = axis.useChatgptComposerControllerHelper130;
-export const useChatgptComposerControllerHelper131 = axis.useChatgptComposerControllerHelper131;
-export const useChatgptComposerControllerHelper132 = axis.useChatgptComposerControllerHelper132;
-export const useChatgptComposerControllerHelper133 = axis.useChatgptComposerControllerHelper133;
-export const useChatgptComposerControllerHelper134 = axis.useChatgptComposerControllerHelper134;
-export const useChatgptComposerControllerHelper135 = axis.useChatgptComposerControllerHelper135;
-export const useChatgptComposerControllerHelper136 = axis.useChatgptComposerControllerHelper136;
-export const useChatgptComposerControllerHelper137 = axis.useChatgptComposerControllerHelper137;
-export const useChatgptComposerControllerHelper138 = axis.useChatgptComposerControllerHelper138;
-export const useChatgptComposerControllerHelper139 = axis.useChatgptComposerControllerHelper139;
-export const useChatgptComposerControllerHelper140 = axis.useChatgptComposerControllerHelper140;
-export const useChatgptComposerControllerHelper141 = axis.useChatgptComposerControllerHelper141;
-export const useChatgptComposerControllerHelper142 = axis.useChatgptComposerControllerHelper142;
-export const useChatgptComposerControllerHelper143 = axis.useChatgptComposerControllerHelper143;
-export const useChatgptComposerControllerHelper144 = axis.useChatgptComposerControllerHelper144;
-export const useChatgptComposerControllerHelper145 = axis.useChatgptComposerControllerHelper145;
-export const useChatgptComposerControllerHelper146 = axis.useChatgptComposerControllerHelper146;
-export const useChatgptComposerControllerHelper147 = axis.useChatgptComposerControllerHelper147;
+export const useChatgptComposerControllerHelper124 =
+  axis.useChatgptComposerControllerHelper124;
+export const useChatgptComposerControllerHelper125 =
+  axis.useChatgptComposerControllerHelper125;
+export const useChatgptComposerControllerHelper126 =
+  axis.useChatgptComposerControllerHelper126;
+export const useChatgptComposerControllerHelper127 =
+  axis.useChatgptComposerControllerHelper127;
+export const useChatgptComposerControllerHelper128 =
+  axis.useChatgptComposerControllerHelper128;
+export const useChatgptComposerControllerHelper129 =
+  axis.useChatgptComposerControllerHelper129;
+export const useChatgptComposerControllerHelper130 =
+  axis.useChatgptComposerControllerHelper130;
+export const useChatgptComposerControllerHelper131 =
+  axis.useChatgptComposerControllerHelper131;
+export const useChatgptComposerControllerHelper132 =
+  axis.useChatgptComposerControllerHelper132;
+export const useChatgptComposerControllerHelper133 =
+  axis.useChatgptComposerControllerHelper133;
+export const useChatgptComposerControllerHelper134 =
+  axis.useChatgptComposerControllerHelper134;
+export const useChatgptComposerControllerHelper135 =
+  axis.useChatgptComposerControllerHelper135;
+export const useChatgptComposerControllerHelper136 =
+  axis.useChatgptComposerControllerHelper136;
+export const useChatgptComposerControllerHelper137 =
+  axis.useChatgptComposerControllerHelper137;
+export const useChatgptComposerControllerHelper138 =
+  axis.useChatgptComposerControllerHelper138;
+export const useChatgptComposerControllerHelper139 =
+  axis.useChatgptComposerControllerHelper139;
+export const useChatgptComposerControllerHelper140 =
+  axis.useChatgptComposerControllerHelper140;
+export const useChatgptComposerControllerHelper141 =
+  axis.useChatgptComposerControllerHelper141;
+export const useChatgptComposerControllerHelper142 =
+  axis.useChatgptComposerControllerHelper142;
+export const useChatgptComposerControllerHelper143 =
+  axis.useChatgptComposerControllerHelper143;
+export const useChatgptComposerControllerHelper144 =
+  axis.useChatgptComposerControllerHelper144;
+export const useChatgptComposerControllerHelper145 =
+  axis.useChatgptComposerControllerHelper145;
+export const useChatgptComposerControllerHelper146 =
+  axis.useChatgptComposerControllerHelper146;
+export const useChatgptComposerControllerHelper147 =
+  axis.useChatgptComposerControllerHelper147;
 
-export const useChatgptComposerControllerHelper148 = series.useChatgptComposerControllerHelper148;
-export const useChatgptComposerControllerHelper149 = series.useChatgptComposerControllerHelper149;
-export const useChatgptComposerControllerHelper150 = series.useChatgptComposerControllerHelper150;
-export const useChatgptComposerControllerHelper151 = series.useChatgptComposerControllerHelper151;
-export const useChatgptComposerControllerHelper152 = series.useChatgptComposerControllerHelper152;
-export const useChatgptComposerControllerHelper153 = series.useChatgptComposerControllerHelper153;
-export const useChatgptComposerControllerHelper154 = series.useChatgptComposerControllerHelper154;
-export const useChatgptComposerControllerHelper155 = series.useChatgptComposerControllerHelper155;
-export const useChatgptComposerControllerHelper165 = series.useChatgptComposerControllerHelper165;
-export const useChatgptComposerControllerHelper166 = series.useChatgptComposerControllerHelper166;
-export const useChatgptComposerControllerHelper167 = series.useChatgptComposerControllerHelper167;
-export const useChatgptComposerControllerHelper168 = series.useChatgptComposerControllerHelper168;
-export const useChatgptComposerControllerHelper169 = series.useChatgptComposerControllerHelper169;
-export const useChatgptComposerControllerHelper170 = series.useChatgptComposerControllerHelper170;
-export const useChatgptComposerControllerHelper171 = series.useChatgptComposerControllerHelper171;
-export const useChatgptComposerControllerHelper172 = series.useChatgptComposerControllerHelper172;
+export const useChatgptComposerControllerHelper148 =
+  series.useChatgptComposerControllerHelper148;
+export const useChatgptComposerControllerHelper149 =
+  series.useChatgptComposerControllerHelper149;
+export const useChatgptComposerControllerHelper150 =
+  series.useChatgptComposerControllerHelper150;
+export const useChatgptComposerControllerHelper151 =
+  series.useChatgptComposerControllerHelper151;
+export const useChatgptComposerControllerHelper152 =
+  series.useChatgptComposerControllerHelper152;
+export const useChatgptComposerControllerHelper153 =
+  series.useChatgptComposerControllerHelper153;
+export const useChatgptComposerControllerHelper154 =
+  series.useChatgptComposerControllerHelper154;
+export const useChatgptComposerControllerHelper155 =
+  series.useChatgptComposerControllerHelper155;
+export const useChatgptComposerControllerHelper165 =
+  series.useChatgptComposerControllerHelper165;
+export const useChatgptComposerControllerHelper166 =
+  series.useChatgptComposerControllerHelper166;
+export const useChatgptComposerControllerHelper167 =
+  series.useChatgptComposerControllerHelper167;
+export const useChatgptComposerControllerHelper168 =
+  series.useChatgptComposerControllerHelper168;
+export const useChatgptComposerControllerHelper169 =
+  series.useChatgptComposerControllerHelper169;
+export const useChatgptComposerControllerHelper170 =
+  series.useChatgptComposerControllerHelper170;
+export const useChatgptComposerControllerHelper171 =
+  series.useChatgptComposerControllerHelper171;
+export const useChatgptComposerControllerHelper172 =
+  series.useChatgptComposerControllerHelper172;
 export const bg = series.bg;
 export const slot208 = series.slot208;
 export const slot215 = series.slot215;
 export const slot216 = series.slot216;
 export const slot217 = series.slot217;
 
-export const useChatgptComposerControllerHelper173 = client.useChatgptComposerControllerHelper173;
-export const useChatgptComposerControllerHelper174 = client.useChatgptComposerControllerHelper174;
-export const useChatgptComposerControllerHelper175 = client.useChatgptComposerControllerHelper175;
-export const useChatgptComposerControllerHelper176 = client.useChatgptComposerControllerHelper176;
-export const useChatgptComposerControllerHelper177 = client.useChatgptComposerControllerHelper177;
-export const useChatgptComposerControllerHelper178 = client.useChatgptComposerControllerHelper178;
+export const useChatgptComposerControllerHelper173 =
+  client.useChatgptComposerControllerHelper173;
+export const useChatgptComposerControllerHelper174 =
+  client.useChatgptComposerControllerHelper174;
+export const useChatgptComposerControllerHelper175 =
+  client.useChatgptComposerControllerHelper175;
+export const useChatgptComposerControllerHelper176 =
+  client.useChatgptComposerControllerHelper176;
+export const useChatgptComposerControllerHelper177 =
+  client.useChatgptComposerControllerHelper177;
+export const useChatgptComposerControllerHelper178 =
+  client.useChatgptComposerControllerHelper178;
 export const slot229 = client.slot229;
 export const slot233 = client.slot233;
 export const ensureChatgptSportsCodeSurfaceInit = client.slot233;

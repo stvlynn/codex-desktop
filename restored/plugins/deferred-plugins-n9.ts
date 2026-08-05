@@ -16,7 +16,9 @@ export type BindDeferredPluginsN9Peers = {
 let peers: BindDeferredPluginsN9Peers | null = null;
 
 /** Wire bindDeferredPluginsN9 peers once companions land. */
-export function setBindDeferredPluginsN9Peers(next: BindDeferredPluginsN9Peers): void {
+export function setBindDeferredPluginsN9Peers(
+  next: BindDeferredPluginsN9Peers,
+): void {
   peers = next;
 }
 

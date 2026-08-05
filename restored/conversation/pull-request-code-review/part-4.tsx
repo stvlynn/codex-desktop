@@ -10,8 +10,19 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { ensureCodeThemeRegistryInit } from "../../appearance/code-theme-catalog";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_LR_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wdt_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_LR_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Wdt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { OPENAI_PRIMARY_RUNTIME_ID } from "../../config/openai-primary-runtime-id";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { diffVirtualizationMetrics } from "../../diff/diff-virtualization-metrics";
@@ -81,7 +92,7 @@ var bravo,
     harbor = 150;
     indigo = {
       version: 0,
-      listeners: new Set()
+      listeners: new Set(),
     };
     at = copper.createContext(null);
   });
@@ -92,53 +103,80 @@ function kite() {
     xenon = CodexPluginActionResult(pullRequestMediaC),
     [yellow, zinc] = marble.useState(true),
     amber = AppInitialZD(zinc, "pull-request-review"),
-    basalt = xenon ? violet.formatMessage({
-      id: "pullRequestsPage.codeReview.hideFileTree",
-      defaultMessage: "Hide file tree",
-      description: "Tooltip to hide the pull request code review file tree"
-    }) : violet.formatMessage({
-      id: "pullRequestsPage.codeReview.showFileTree",
-      defaultMessage: "Show file tree",
-      description: "Tooltip to show the pull request code review file tree"
-    });
+    basalt = xenon
+      ? violet.formatMessage({
+          id: "pullRequestsPage.codeReview.hideFileTree",
+          defaultMessage: "Hide file tree",
+          description: "Tooltip to hide the pull request code review file tree",
+        })
+      : violet.formatMessage({
+          id: "pullRequestsPage.codeReview.showFileTree",
+          defaultMessage: "Show file tree",
+          description: "Tooltip to show the pull request code review file tree",
+        });
   let cedar = basalt,
     daisy = () => {
       amber(!yellow);
     };
-  let ember = <AppInitialEE expanded={yellow} onToggleExpanded={daisy} showHideWhitespace={false} showLoadFullFiles={false} />;
-  let flint = mint => {
+  let ember = (
+    <AppInitialEE
+      expanded={yellow}
+      onToggleExpanded={daisy}
+      showHideWhitespace={false}
+      showLoadFullFiles={false}
+    />
+  );
+  let flint = (mint) => {
     umbra.set(AppInitialLW, mint === "left" ? "unified" : "split");
   };
-  let garnet = <SwitchToSplitDiffButton {...{
-    diffMode: willow,
-    onSelectDiffMode: flint
-  }} />;
+  let garnet = (
+    <SwitchToSplitDiffButton
+      {...{
+        diffMode: willow,
+        onSelectDiffMode: flint,
+      }}
+    />
+  );
   let hazel = xenon ? "secondary" : "ghost",
     ivory = () => {
       pullRequestMediaB(umbra, !xenon);
     };
-  let jasper = <AppIconIR {...{
-    className: "icon-xs"
-  }} />;
-  let kelp = <ReadLoginRouteQuerySnapshot {...{
-    "aria-label": cedar,
-    "aria-pressed": xenon,
-    color: hazel,
-    size: "toolbar",
-    uniform: true,
-    onClick: ivory,
-    children: jasper
-  }} />;
-  let lotus = <OptionalTooltip {...{
-    tooltipContent: cedar,
-    delayOpen: true,
-    children: kelp
-  }} />;
-  return <div className="flex items-center gap-px">
+  let jasper = (
+    <AppIconIR
+      {...{
+        className: "icon-xs",
+      }}
+    />
+  );
+  let kelp = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        "aria-label": cedar,
+        "aria-pressed": xenon,
+        color: hazel,
+        size: "toolbar",
+        uniform: true,
+        onClick: ivory,
+        children: jasper,
+      }}
+    />
+  );
+  let lotus = (
+    <OptionalTooltip
+      {...{
+        tooltipContent: cedar,
+        delayOpen: true,
+        children: kelp,
+      }}
+    />
+  );
+  return (
+    <div className="flex items-center gap-px">
       {ember}
       {garnet}
       {lotus}
-    </div>;
+    </div>
+  );
 }
 var lemon,
   marble,
@@ -170,28 +208,28 @@ function pearl(nova) {
       reviewDiffMetrics,
       renderReadonlyCommentActions,
       renderReadonlyCommentBody,
-      onRequestChanges
+      onRequestChanges,
     } = nova,
     olive = CodexPluginActionType(ensureComposerEsm_S8_Init),
     prism = useIntl(),
     quill = {
       path,
-      request
+      request,
     };
   let reef = CodexBrowserSurfaceActionType(pullRequestMediaO, quill),
     sage = {
       path,
-      request
+      request,
     };
   let topaz = CodexBrowserSurfaceActionType(pullRequestMediaU, sage),
     ultra = {
       path,
-      request
+      request,
     };
   let vapor = CodexBrowserSurfaceActionType(pullRequestMediaM, ultra),
     wheat = {
       path,
-      request
+      request,
     };
   let yarn = CodexBrowserSurfaceActionType(pullRequestMediaP, wheat),
     zephyr = CodexPluginActionResult(AppInitialDW),
@@ -200,57 +238,107 @@ function pearl(nova) {
     drift;
   {
     let jewel;
-    jewel = knoll => {
-      let {
-        error,
-        submissionKey
-      } = knoll;
-      return <div key={`${submissionKey.revision}:${submissionKey.commentKey}`} className="bg-token-error-background/20 mx-1 flex items-center justify-between gap-3 rounded-lg border border-token-error-foreground/30 px-3 py-2 text-sm text-token-error-foreground" role="alert">
+    jewel = (knoll) => {
+      let { error, submissionKey } = knoll;
+      return (
+        <div
+          key={`${submissionKey.revision}:${submissionKey.commentKey}`}
+          className="bg-token-error-background/20 mx-1 flex items-center justify-between gap-3 rounded-lg border border-token-error-foreground/30 px-3 py-2 text-sm text-token-error-foreground"
+          role="alert"
+        >
           <span>
-            {error instanceof Error ? error.message : prism.formatMessage({
-            id: "pullRequestDetail.code.commentError",
-            defaultMessage: "GitHub could not post this comment",
-            description: "Fallback error for a pull request code comment"
-          })}
+            {error instanceof Error
+              ? error.message
+              : prism.formatMessage({
+                  id: "pullRequestDetail.code.commentError",
+                  defaultMessage: "GitHub could not post this comment",
+                  description: "Fallback error for a pull request code comment",
+                })}
           </span>
-          {<ReadLoginRouteQuerySnapshot {...{
-          color: "secondary",
-          size: "toolbar",
-          onClick: () => {
-            pullRequestMediaG(olive, request, path, submissionKey);
-          },
-          children: <MemoizedFormattedMessage {...{
-            id: "pullRequestDetail.code.retryComment",
-            defaultMessage: "Retry",
-            description: "Action to retry a failed pull request code comment"
-          }} />
-        }} />}
-        </div>;
+          {
+            <ReadLoginRouteQuerySnapshot
+              {...{
+                color: "secondary",
+                size: "toolbar",
+                onClick: () => {
+                  pullRequestMediaG(olive, request, path, submissionKey);
+                },
+                children: (
+                  <MemoizedFormattedMessage
+                    {...{
+                      id: "pullRequestDetail.code.retryComment",
+                      defaultMessage: "Retry",
+                      description:
+                        "Action to retry a failed pull request code comment",
+                    }}
+                  />
+                ),
+              }}
+            />
+          }
+        </div>
+      );
     };
     drift = yarn.map(jewel);
   }
-  let eagle = lunar => {
+  let eagle = (lunar) => {
     pullRequestMediaX(olive, request, path, lunar);
   };
-  let frost = moss => {
-    pullRequestMediaX(olive, request, path, [...reef, {
-      ...moss,
-      content: [{
-        content_type: "text",
-        text: ""
-      }],
-      replyToReviewThreadId: moss.reviewThreadId ?? null
-    }]);
+  let frost = (moss) => {
+    pullRequestMediaX(olive, request, path, [
+      ...reef,
+      {
+        ...moss,
+        content: [
+          {
+            content_type: "text",
+            text: "",
+          },
+        ],
+        replyToReviewThreadId: moss.reviewThreadId ?? null,
+      },
+    ]);
   };
   let glide = file.metadata.additionLines ? "line-info" : "metadata",
     honey = () => {
       olive.set(ensureCodeThemeRegistryInit, !acorn);
     };
-  let iris = <AppInitialJD cwd={cwd} diff={file} diffViewWrap={acorn} expandScope="pull-request-review" enableComments={true} comments={reef} readonlyComments={topaz} renderReadonlyCommentActions={renderReadonlyCommentActions} renderReadonlyCommentBody={renderReadonlyCommentBody} submittingCommentKeys={vapor} commentAuthorAvatarUrl={commentAuthorAvatarUrl} commentAuthorLabel={commentAuthorLabel} onCommentsChange={eagle} onOpenChange={coral} onRequestChanges={onRequestChanges} onReadonlyCommentReply={frost} hostConfig={hostConfig} hunkSeparators={glide} loadFullContent={false} open={bloom} metrics={reviewDiffMetrics} onToggleWrap={honey} richPreviewEnabled={zephyr} roundedCorners={true} stickyHeader={true} viewType={diffMode} />;
-  return <>
+  let iris = (
+    <AppInitialJD
+      cwd={cwd}
+      diff={file}
+      diffViewWrap={acorn}
+      expandScope="pull-request-review"
+      enableComments={true}
+      comments={reef}
+      readonlyComments={topaz}
+      renderReadonlyCommentActions={renderReadonlyCommentActions}
+      renderReadonlyCommentBody={renderReadonlyCommentBody}
+      submittingCommentKeys={vapor}
+      commentAuthorAvatarUrl={commentAuthorAvatarUrl}
+      commentAuthorLabel={commentAuthorLabel}
+      onCommentsChange={eagle}
+      onOpenChange={coral}
+      onRequestChanges={onRequestChanges}
+      onReadonlyCommentReply={frost}
+      hostConfig={hostConfig}
+      hunkSeparators={glide}
+      loadFullContent={false}
+      open={bloom}
+      metrics={reviewDiffMetrics}
+      onToggleWrap={honey}
+      richPreviewEnabled={zephyr}
+      roundedCorners={true}
+      stickyHeader={true}
+      viewType={diffMode}
+    />
+  );
+  return (
+    <>
       {drift}
       {iris}
-    </>;
+    </>
+  );
 }
 var quartz,
   river,

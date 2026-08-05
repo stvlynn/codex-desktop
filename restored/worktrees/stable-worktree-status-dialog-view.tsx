@@ -58,7 +58,9 @@ export type StableWorktreeStatusDialogPeers = {
 let peers: StableWorktreeStatusDialogPeers | null = null;
 
 /** Wire pending-worktree store/hooks once companions land. */
-export function setStableWorktreeStatusDialogPeers(next: StableWorktreeStatusDialogPeers): void {
+export function setStableWorktreeStatusDialogPeers(
+  next: StableWorktreeStatusDialogPeers,
+): void {
   peers = next;
 }
 

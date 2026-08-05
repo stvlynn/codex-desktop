@@ -10,18 +10,20 @@ export type OpenThreadReviewSidePanelTabPeers = {
 let peers: OpenThreadReviewSidePanelTabPeers | null = null;
 
 /** Wire openThreadReviewSidePanelTab peers once companions land. */
-export function setOpenThreadReviewSidePanelTabPeers(next: OpenThreadReviewSidePanelTabPeers): void {
+export function setOpenThreadReviewSidePanelTabPeers(
+  next: OpenThreadReviewSidePanelTabPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `_E` / internal `a1o`.
  */
-export function openThreadReviewSidePanelTab(e: unknown, t: unknown= {}) {
+export function openThreadReviewSidePanelTab(e: unknown, t: unknown = {}) {
   if (peers == null) {
     throw new Error("openThreadReviewSidePanelTab peers are not configured");
   }
   peers.Uri(e, t.conversationId ?? null);
   let n = peers.J$o(e);
-  return t.path != null && peers.RVi(e, t.path), n;
+  return (t.path != null && peers.RVi(e, t.path), n);
 }

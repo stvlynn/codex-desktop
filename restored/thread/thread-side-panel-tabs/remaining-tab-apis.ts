@@ -11,12 +11,20 @@ export function openSessionSandboxSidePanel(..._args: unknown[]): unknown {
   throw new Error("openSessionSandboxSidePanel peers are not configured");
 }
 
-export function openThreadBranchReviewSidePanelTab(..._args: unknown[]): unknown {
-  throw new Error("openThreadBranchReviewSidePanelTab peers are not configured");
+export function openThreadBranchReviewSidePanelTab(
+  ..._args: unknown[]
+): unknown {
+  throw new Error(
+    "openThreadBranchReviewSidePanelTab peers are not configured",
+  );
 }
 
-export function openThreadLastTurnReviewSidePanelTab(..._args: unknown[]): unknown {
-  throw new Error("openThreadLastTurnReviewSidePanelTab peers are not configured");
+export function openThreadLastTurnReviewSidePanelTab(
+  ..._args: unknown[]
+): unknown {
+  throw new Error(
+    "openThreadLastTurnReviewSidePanelTab peers are not configured",
+  );
 }
 
 export function openThreadMcpAppSidePanelTab(..._args: unknown[]): unknown {

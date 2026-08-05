@@ -20,7 +20,11 @@ export type LocalThreadSurfaceRoute = {
 };
 
 /** Build the local conversation surface route descriptor. */
-export function localThreadSurfaceRoute(conversationId: string, placement: string = "main", routeConversationId: string = conversationId, clientThreadId: string = toLocalClientThreadId(conversationId),
+export function localThreadSurfaceRoute(
+  conversationId: string,
+  placement: string = "main",
+  routeConversationId: string = conversationId,
+  clientThreadId: string = toLocalClientThreadId(conversationId),
 ): LocalThreadSurfaceRoute {
   return {
     browserTabMentionConversationId: isClientNewThreadId(clientThreadId)

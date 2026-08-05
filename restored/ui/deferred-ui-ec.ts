@@ -23,7 +23,7 @@ export function bindDeferredUiEc() {
     throw new Error("bindDeferredUiEc peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => e == null ? null : peers.tjl(t(peers.bD, e)));
+  return peers.Oa(peers.Q, (e, { get: t }) =>
+    e == null ? null : peers.tjl(t(peers.bD, e)),
+  );
 }

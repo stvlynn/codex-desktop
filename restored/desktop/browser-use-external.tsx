@@ -22,7 +22,9 @@ export type BindBrowserUseExternalPeers = {
 let peers: BindBrowserUseExternalPeers | null = null;
 
 /** Wire bindBrowserUseExternal peers once companions land. */
-export function setBindBrowserUseExternalPeers(next: BindBrowserUseExternalPeers): void {
+export function setBindBrowserUseExternalPeers(
+  next: BindBrowserUseExternalPeers,
+): void {
   peers = next;
 }
 
@@ -35,6 +37,16 @@ export function bindBrowserUseExternal() {
   }
 
   return peers.e(() => {
-    t6r = peers.c(), peers.Qt(), n6r = peers.r(peers.o(), 1), peers.HGr(), peers.DN(), peers.Fh(), peers.Uf(), peers.Wh(), peers.qx(), peers.dk(), peers.Y3r();
+    ((t6r = peers.c()),
+      peers.Qt(),
+      (n6r = peers.r(peers.o(), 1)),
+      peers.HGr(),
+      peers.DN(),
+      peers.Fh(),
+      peers.Uf(),
+      peers.Wh(),
+      peers.qx(),
+      peers.dk(),
+      peers.Y3r());
   });
 }

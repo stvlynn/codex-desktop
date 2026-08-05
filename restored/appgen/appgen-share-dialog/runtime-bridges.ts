@@ -4,11 +4,9 @@
 // Residual companion stubs: 33 (verified 51/83).
 // Bind/ensure bridges.
 
-
 /** Wave FY: bind no longer required after full body promote */
 export function bindAppgenShareDialog(_next: unknown): void {}
 export function ensureAppgenShareDialogInit(): void {}
 
 // Semantic export aliases (split/export lane)
 export { appgenShareDialogT as AppgenShareDialog } from "./part-1";
-

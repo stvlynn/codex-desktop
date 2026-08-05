@@ -9,7 +9,9 @@ export type UseGitActionsInlineVisibilityPeers = {
 let peers: UseGitActionsInlineVisibilityPeers | null = null;
 
 /** Wire useGitActionsInlineVisibility peers once companions land. */
-export function setUseGitActionsInlineVisibilityPeers(next: UseGitActionsInlineVisibilityPeers): void {
+export function setUseGitActionsInlineVisibilityPeers(
+  next: UseGitActionsInlineVisibilityPeers,
+): void {
   peers = next;
 }
 

@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Hn,
-} from "../presentation-protobuf";
+import { Hn } from "../presentation-protobuf";
 
 export const scatterStyleNameToProto = {
   line: Hn.SCATTER_STYLE_LINE,

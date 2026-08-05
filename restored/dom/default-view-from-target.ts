@@ -5,7 +5,9 @@ import { isNodeLike } from "./is-node-like";
 import { isWindowLike } from "./is-window-like";
 
 /** Resolve the Window for an event target (or global window). */
-export function defaultViewFromTarget(target: EventTarget | null | undefined): Window {
+export function defaultViewFromTarget(
+  target: EventTarget | null | undefined,
+): Window {
   if (!target) return window;
   if (isWindowLike(target)) return target;
   if (isNodeLike(target)) {

@@ -15,15 +15,34 @@ import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-res
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { logProductEvent } from "../../analytics/log-product-event";
 import { GuardianApprovals } from "../../apps/guardian-approvals";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_QN_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_Wdt_Init, ensureComposerEsm_Wlt_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_QN_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+  ensureComposerEsm_Wdt_Init,
+  ensureComposerEsm_Wlt_Init,
+} from "../../composer/composer-esm-inits";
 import { useAtomPair } from "../../boundaries/persisted-atom";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { deferredConversationR } from "../../conversation/deferred-conversation-r";
 import { deferredConversationSh } from "../../conversation/deferred-conversation-sh";
-import { ensureSidebarThreadKeyPrefixesInit, toLocalSidebarThreadKey } from "../../conversation/sidebar-thread-keys";
+import {
+  ensureSidebarThreadKeyPrefixesInit,
+  toLocalSidebarThreadKey,
+} from "../../conversation/sidebar-thread-keys";
 import { pathContainsWorktreesDir } from "../../files/path-contains-worktrees-dir";
 import { usePlatformAwareFeatureGate } from "../../hooks/use-platform-aware-feature-gate";
 import { LOCAL_HOST_ID } from "../../hosts/local-host-id";
@@ -32,7 +51,11 @@ import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
 import { AppIconVn } from "../../icons/app-icon-vn";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { findSidebarSectionElement, scrollAppActionTargetTo, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  scrollAppActionTargetTo,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { SIDEBAR_HIT_TEST_SELECTOR } from "../../navigation/sidebar-hit-test-selector";
 import { ensureEmptyXvtInit } from "../../runtime/ensure-empty-xvt-init";
@@ -108,41 +131,62 @@ function SelectWorkspacePageHelper1(timber) {
       onStartFromScratch,
       onUseExistingFolder,
       open,
-      triggerButton
+      triggerButton,
     } = timber,
     umbra = bravo.useRef(false),
-    violet = event => {
-      umbra.current && (umbra.current = false, event.preventDefault(), onStartFromScratch());
+    violet = (event) => {
+      umbra.current &&
+        ((umbra.current = false), event.preventDefault(), onStartFromScratch());
     };
-  let willow = <DropdownMenu.Item {...{
-    LeftIcon: ensureComposerEsm_Wlt_Init,
-    onSelect: () => {
-      umbra.current = true;
-    },
-    children: <MemoizedFormattedMessage {...{
-      id: "projectSetup.addProjectMenu.startFromScratch",
-      defaultMessage: "Start from scratch",
-      description: "Menu item that creates a new local project folder"
-    }} />
-  }} />;
-  let xenon = <MemoizedFormattedMessage {...{
-    id: "projectSetup.addProjectMenu.useExistingFolder",
-    defaultMessage: "Use an existing folder",
-    description: "Menu item that opens the existing folder picker"
-  }} />;
-  let yellow = <DropdownMenu.Item {...{
-    LeftIcon: useChronicleSettingsSection,
-    onSelect: onUseExistingFolder,
-    children: xenon
-  }} />;
-  return <DropdownMenuPopover {...{
-    triggerButton,
-    contentWidth: "menu",
-    onOpenChange,
-    onCloseAutoFocus: violet,
-    open,
-    children: [willow, yellow, children]
-  }} />;
+  let willow = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: ensureComposerEsm_Wlt_Init,
+        onSelect: () => {
+          umbra.current = true;
+        },
+        children: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "projectSetup.addProjectMenu.startFromScratch",
+              defaultMessage: "Start from scratch",
+              description: "Menu item that creates a new local project folder",
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let xenon = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "projectSetup.addProjectMenu.useExistingFolder",
+        defaultMessage: "Use an existing folder",
+        description: "Menu item that opens the existing folder picker",
+      }}
+    />
+  );
+  let yellow = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: useChronicleSettingsSection,
+        onSelect: onUseExistingFolder,
+        children: xenon,
+      }}
+    />
+  );
+  return (
+    <DropdownMenuPopover
+      {...{
+        triggerButton,
+        contentWidth: "menu",
+        onOpenChange,
+        onCloseAutoFocus: violet,
+        open,
+        children: [willow, yellow, children],
+      }}
+    />
+  );
 }
 var alpha,
   bravo,
@@ -161,35 +205,29 @@ export function SelectWorkspacePage() {
     basalt = useIntl(),
     [cedar, daisy] = useAtomPair(AppInitialPq),
     ember = identityValue(GuardianApprovals),
-    {
-      data = [],
-      isFetching
-    } = AppInitialYX(),
+    { data = [], isFetching } = AppInitialYX(),
     flint = AppInitialEM(),
-    garnet = juniper => !ensureSelectWorkspaceKstInit(juniper, flint);
+    garnet = (juniper) => !ensureSelectWorkspaceKstInit(juniper, flint);
   let hazel = data.filter(garnet).map(lemon),
-    {
-      data: _data,
-      isFetching: _isFetching
-    } = CodexPluginActionResult(ensureEnvironmentLabelsO3Init),
-    {
-      data: __data,
-      isFetching: __isFetching
-    } = CodexBrowserSurfaceActionType(collectUniqueMappedPresenceEntries, {
-      params: {
-        dirs: river.default(nickel(hazel), $e).sort(kite)
+    { data: _data, isFetching: _isFetching } = CodexPluginActionResult(
+      ensureEnvironmentLabelsO3Init,
+    ),
+    { data: __data, isFetching: __isFetching } = CodexBrowserSurfaceActionType(
+      collectUniqueMappedPresenceEntries,
+      {
+        params: {
+          dirs: river.default(nickel(hazel), $e).sort(kite),
+        },
+        source: "onboarding_workspace_select",
       },
-      source: "onboarding_workspace_select"
-    }),
-    {
-      data: ___data,
-      isFetching: ___isFetching
-    } = ensureSelectWorkspaceIXInit(),
+    ),
+    { data: ___data, isFetching: ___isFetching } =
+      ensureSelectWorkspaceIXInit(),
     {
       autoLaunchAction,
       isRemoteHost,
       setWorkspaceOnboardingAutoLaunchApplied,
-      workspaceOnboardingExperimentArm
+      workspaceOnboardingExperimentArm,
     } = AppInitialWh(),
     ivory = [];
   let [jasper, kelp] = slate.useState(ivory),
@@ -201,7 +239,8 @@ export function SelectWorkspacePage() {
     topaz = basalt.formatMessage({
       id: "electron.onboarding.workspace.skip.error.unknown",
       defaultMessage: "Unknown error",
-      description: "Fallback error message when onboarding skip fails without details"
+      description:
+        "Fallback error message when onboarding skip fails without details",
     });
   let ultra = topaz,
     vapor = slate.useRef(0),
@@ -210,30 +249,39 @@ export function SelectWorkspacePage() {
     zephyr = onyx({
       tasks: hazel,
       gitOrigins: __data?.origins,
-      codexHome: ___data?.codexHome
+      codexHome: ___data?.codexHome,
     }),
-    acorn = river.default([...(wheat ?? []), ...zephyr, ...jasper], jade).sort(indigo),
-    bloom = lagoon => {
+    acorn = river
+      .default([...(wheat ?? []), ...zephyr, ...jasper], jade)
+      .sort(indigo),
+    bloom = (lagoon) => {
       let meadow = _data?.labels?.[lagoon]?.trim();
-      return meadow ? {
-        root: lagoon,
-        label: meadow
-      } : {
-        root: lagoon,
-        label: pearl(lagoon)
-      };
+      return meadow
+        ? {
+            root: lagoon,
+            label: meadow,
+          }
+        : {
+            root: lagoon,
+            label: pearl(lagoon),
+          };
     };
   let coral = acorn.map(bloom),
     drift = coral.map(harbor),
-    _e = nest => !!mint[nest];
+    _e = (nest) => !!mint[nest];
   let eagle = drift.filter(_e),
-    frost = drift.length > 0 && eagle.length === drift.length ? true : eagle.length > 0 && eagle.length < drift.length ? "indeterminate" : false,
+    frost =
+      drift.length > 0 && eagle.length === drift.length
+        ? true
+        : eagle.length > 0 && eagle.length < drift.length
+          ? "indeterminate"
+          : false,
     glide;
-  glide = oak => {
-    kelp(trail => river.default([...trail, oak.root], gamma));
+  glide = (oak) => {
+    kelp((trail) => river.default([...trail, oak.root], gamma));
     let petal = {
       ...mint,
-      [oak.root]: true
+      [oak.root]: true,
     };
     nova(petal);
     let quiet = drift.includes(oak.root),
@@ -244,18 +292,18 @@ export function SelectWorkspacePage() {
       selectedWorkspacesCount: rain,
       totalWorkspacesCount: seed,
       experimentArm: workspaceOnboardingExperimentArm,
-      checked: true
+      checked: true,
     });
   };
   writeScrollTop("workspace-root-option-picked", glide);
   let honey;
-  honey = urn => {
-    if (prism(false), urn.success) {
+  honey = (urn) => {
+    if ((prism(false), urn.success)) {
       logProductEvent(zinc, CODEX_ONBOARDING_WORKSPACE_CONTINUE_CLICKED_TYPE, {
         selectedWorkspacesCount: 1,
         totalWorkspacesCount: drift.length,
         autoNavigated: false,
-        experimentArm: workspaceOnboardingExperimentArm
+        experimentArm: workspaceOnboardingExperimentArm,
       });
       reef(null);
       ember(Math.floor(Date.now() / 1e3));
@@ -271,11 +319,14 @@ export function SelectWorkspacePage() {
     logProductEvent(zinc, CODEX_ONBOARDING_WORKSPACE_ADD_CLICKED_TYPE, {
       hasExistingWorkspaces: yarn,
       source: "onboarding_modal",
-      experimentArm: workspaceOnboardingExperimentArm
+      experimentArm: workspaceOnboardingExperimentArm,
     });
-    ensureAppActionPayloadSchemasInit.dispatchMessage("electron-pick-workspace-root-option", {
-      allowMultiple: false
-    });
+    ensureAppActionPayloadSchemasInit.dispatchMessage(
+      "electron-pick-workspace-root-option",
+      {
+        allowMultiple: false,
+      },
+    );
   };
   let jewel = iris,
     knoll = () => {
@@ -283,9 +334,14 @@ export function SelectWorkspacePage() {
       reef(null);
       prism(true);
       let wind = AppInitialXh(workspaceOnboardingExperimentArm);
-      ensureAppActionPayloadSchemasInit.dispatchMessage("electron-onboarding-skip-workspace", wind == null ? {} : {
-        projectName: wind
-      });
+      ensureAppActionPayloadSchemasInit.dispatchMessage(
+        "electron-onboarding-skip-workspace",
+        wind == null
+          ? {}
+          : {
+              projectName: wind,
+            },
+      );
     };
   let lunar = knoll,
     moss = () => {
@@ -294,10 +350,10 @@ export function SelectWorkspacePage() {
   let north = slate.useEffectEvent(moss),
     orbit = (yarrow, azure) => {
       reef(null);
-      kelp(canyon => river.default([...canyon, yarrow], falcon));
+      kelp((canyon) => river.default([...canyon, yarrow], falcon));
       let birch = {
         ...mint,
-        [yarrow]: azure
+        [yarrow]: azure,
       };
       nova(birch);
       logProductEvent(zinc, CODEX_ONBOARDING_WORKSPACE_SELECTION_CHANGED_TYPE, {
@@ -305,14 +361,14 @@ export function SelectWorkspacePage() {
         checked: azure,
         selectedWorkspacesCount: marble(birch, drift),
         totalWorkspacesCount: drift.length,
-        experimentArm: workspaceOnboardingExperimentArm
+        experimentArm: workspaceOnboardingExperimentArm,
       });
     };
   let pine = orbit,
-    quest = dew => {
+    quest = (dew) => {
       reef(null);
       let ever = {
-        ...mint
+        ...mint,
       };
       for (let grain of drift) ever[grain] = dew;
       nova(ever);
@@ -322,22 +378,28 @@ export function SelectWorkspacePage() {
         checked: dew,
         selectedWorkspacesCount: field,
         totalWorkspacesCount: drift.length,
-        experimentArm: workspaceOnboardingExperimentArm
+        experimentArm: workspaceOnboardingExperimentArm,
       });
     };
   let ridge = quest,
     storm = {
-      queryKey: [VSCODE_EDITOR_ID, "paths-exist"]
+      queryKey: [VSCODE_EDITOR_ID, "paths-exist"],
     };
   let tide = ensureEmptyXvtInit(storm),
-    unity = isFetching || _isFetching || __isFetching || ___isFetching || tide > 0,
+    unity =
+      isFetching || _isFetching || __isFetching || ___isFetching || tide > 0,
     vale = coral.length > 0,
     wave = eagle.length > 0,
     apex = yarn || zephyr.length > 0,
     brook = !apex && !unity && !vale,
     _SelectWorkspacePage = slate.useRef(false),
     cliff = () => {
-      sage.current || unity || autoLaunchAction !== "select_workspace_skip_to_playground" || (sage.current = true, setWorkspaceOnboardingAutoLaunchApplied(true), north());
+      sage.current ||
+        unity ||
+        autoLaunchAction !== "select_workspace_skip_to_playground" ||
+        ((sage.current = true),
+        setWorkspaceOnboardingAutoLaunchApplied(true),
+        north());
     };
   let dusk;
   dusk = [unity, autoLaunchAction, setWorkspaceOnboardingAutoLaunchApplied];
@@ -347,29 +409,38 @@ export function SelectWorkspacePage() {
       selectedWorkspacesCount: haven.length,
       totalWorkspacesCount: drift.length,
       autoNavigated: ink,
-      experimentArm: workspaceOnboardingExperimentArm
+      experimentArm: workspaceOnboardingExperimentArm,
     });
     let jadeite = haven;
     ember(Math.floor(Date.now() / 1e3));
-    cedar === "workspace" && wheat != null && (jadeite = river.default([...wheat, ...haven], echo));
-    ensureAppActionPayloadSchemasInit.dispatchMessage("electron-update-workspace-root-options", {
-      roots: jadeite
-    });
+    cedar === "workspace" &&
+      wheat != null &&
+      (jadeite = river.default([...wheat, ...haven], echo));
+    ensureAppActionPayloadSchemasInit.dispatchMessage(
+      "electron-update-workspace-root-options",
+      {
+        roots: jadeite,
+      },
+    );
     daisy("auto");
     vapor.current += 1;
     ensureComposerEsm_QN_Init(zinc, "work");
     amber("/", {
       replace: true,
       state: {
-        focusComposerNonce: vapor.current
-      }
+        focusComposerNonce: vapor.current,
+      },
     });
   };
   let elm = at,
     fern,
     grove;
   fern = () => {
-    apex || _SelectWorkspacePage.current || unity || eagle.length !== 0 && (_SelectWorkspacePage.current = true, elm(eagle, true));
+    apex ||
+      _SelectWorkspacePage.current ||
+      unity ||
+      (eagle.length !== 0 &&
+        ((_SelectWorkspacePage.current = true), elm(eagle, true)));
   };
   grove = [elm, apex, unity, eagle];
   slate.useEffect(fern, grove);
@@ -378,33 +449,45 @@ export function SelectWorkspacePage() {
     elm(eagle, false);
   };
   let isle = hill;
-  return <IsUpdatePhaseInProgress {...{
-    children: brook ? <SelectWorkspacePageHelper11 {...{
-      workspaceOnboardingExperimentArm,
-      isRemoteHost,
-      handleOpenFolder: jewel,
-      handleSkip: lunar,
-      isSkipPending: olive,
-      skipErrorMessage: quill
-    }} /> : <SelectWorkspacePageHelper13 {...{
-      isLoadingRoots: unity,
-      hasAvailableRoots: vale,
-      availableOptions: coral,
-      selectedRoots: eagle,
-      selectAllState: frost === "indeterminate" ? false : frost,
-      handleToggleSelectAll: ridge,
-      handleToggleWorkspace: pine,
-      intl: basalt,
-      handleOpenFolder: jewel,
-      hasSelectedRoots: wave,
-      isRemoteHost,
-      handleSkip: lunar,
-      isSkipPending: olive,
-      skipErrorMessage: quill,
-      handleContinue: isle,
-      workspaceOnboardingExperimentArm
-    }} />
-  }} />;
+  return (
+    <IsUpdatePhaseInProgress
+      {...{
+        children: brook ? (
+          <SelectWorkspacePageHelper11
+            {...{
+              workspaceOnboardingExperimentArm,
+              isRemoteHost,
+              handleOpenFolder: jewel,
+              handleSkip: lunar,
+              isSkipPending: olive,
+              skipErrorMessage: quill,
+            }}
+          />
+        ) : (
+          <SelectWorkspacePageHelper13
+            {...{
+              isLoadingRoots: unity,
+              hasAvailableRoots: vale,
+              availableOptions: coral,
+              selectedRoots: eagle,
+              selectAllState: frost === "indeterminate" ? false : frost,
+              handleToggleSelectAll: ridge,
+              handleToggleWorkspace: pine,
+              intl: basalt,
+              handleOpenFolder: jewel,
+              hasSelectedRoots: wave,
+              isRemoteHost,
+              handleSkip: lunar,
+              isSkipPending: olive,
+              skipErrorMessage: quill,
+              handleContinue: isle,
+              workspaceOnboardingExperimentArm,
+            }}
+          />
+        ),
+      }}
+    />
+  );
 }
 function echo(kernel) {
   return deferredUiQdt(kernel);
@@ -435,37 +518,52 @@ function lemon(vista) {
     kind: "local",
     key: toLocalSidebarThreadKey(vista.id),
     at: vista.createdAt,
-    conversation: vista
+    conversation: vista,
   };
 }
 function SelectWorkspacePageHelper10(wisp) {
-  let {
-      children,
-      showIcon
-    } = wisp,
-    yonder = showIcon ? <DeferredT {...{
-      className: "h-10 w-10",
-      "aria-hidden": "true"
-    }} /> : null;
+  let { children, showIcon } = wisp,
+    yonder = showIcon ? (
+      <DeferredT
+        {...{
+          className: "h-10 w-10",
+          "aria-hidden": "true",
+        }}
+      />
+    ) : null;
   let zenith, anvil;
-  zenith = <MemoizedFormattedMessage {...{
-    id: "electron.onboarding.workspace.title",
-    defaultMessage: "Select a project",
-    description: "Title on the desktop onboarding workspace selection page"
-  }} />;
-  anvil = <MemoizedFormattedMessage {...{
-    id: "electron.onboarding.workspace.subtitle",
-    defaultMessage: "ChatGPT will be able to edit files and run commands in selected folders",
-    description: "Subtitle on the desktop onboarding workspace selection page"
-  }} />;
-  return <EnsureSettingsGlyphBnInit {...{
-    className: "max-w-[330px]",
-    icon: yonder,
-    textClassName: "gap-6",
-    title: zenith,
-    subtitle: anvil,
-    children
-  }} />;
+  zenith = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "electron.onboarding.workspace.title",
+        defaultMessage: "Select a project",
+        description: "Title on the desktop onboarding workspace selection page",
+      }}
+    />
+  );
+  anvil = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "electron.onboarding.workspace.subtitle",
+        defaultMessage:
+          "ChatGPT will be able to edit files and run commands in selected folders",
+        description:
+          "Subtitle on the desktop onboarding workspace selection page",
+      }}
+    />
+  );
+  return (
+    <EnsureSettingsGlyphBnInit
+      {...{
+        className: "max-w-[330px]",
+        icon: yonder,
+        textClassName: "gap-6",
+        title: zenith,
+        subtitle: anvil,
+        children,
+      }}
+    />
+  );
 }
 function SelectWorkspacePageHelper11(beacon) {
   let {
@@ -474,29 +572,45 @@ function SelectWorkspacePageHelper11(beacon) {
       handleOpenFolder,
       handleSkip,
       isSkipPending,
-      skipErrorMessage
+      skipErrorMessage,
     } = beacon,
-    crag = AppInitialOh(workspaceOnboardingExperimentArm) ? "outline" : "primary",
-    dome = <SelectWorkspacePageHelper12 {...{
-      className: "w-full justify-center py-2.5",
-      color: crag,
-      isRemoteHost,
-      onStartFromScratch: handleSkip,
-      onUseExistingFolder: handleOpenFolder
-    }} />;
-  let eddy = isRemoteHost ? null : <At {...{
-    handleSkip,
-    isSkipPending,
-    skipErrorMessage,
-    workspaceOnboardingExperimentArm
-  }} />;
-  return <SelectWorkspacePageHelper10 {...{
-    showIcon: true,
-    children: <div className="flex w-full flex-col gap-3">
+    crag = AppInitialOh(workspaceOnboardingExperimentArm)
+      ? "outline"
+      : "primary",
+    dome = (
+      <SelectWorkspacePageHelper12
+        {...{
+          className: "w-full justify-center py-2.5",
+          color: crag,
+          isRemoteHost,
+          onStartFromScratch: handleSkip,
+          onUseExistingFolder: handleOpenFolder,
+        }}
+      />
+    );
+  let eddy = isRemoteHost ? null : (
+    <At
+      {...{
+        handleSkip,
+        isSkipPending,
+        skipErrorMessage,
+        workspaceOnboardingExperimentArm,
+      }}
+    />
+  );
+  return (
+    <SelectWorkspacePageHelper10
+      {...{
+        showIcon: true,
+        children: (
+          <div className="flex w-full flex-col gap-3">
             {dome}
             {eddy}
           </div>
-  }} />;
+        ),
+      }}
+    />
+  );
 }
 function SelectWorkspacePageHelper12(fjord) {
   let {
@@ -505,28 +619,41 @@ function SelectWorkspacePageHelper12(fjord) {
       isRemoteHost,
       onStartFromScratch,
       onUseExistingFolder,
-      size
+      size,
     } = fjord,
     glen = isRemoteHost ? onUseExistingFolder : undefined,
-    hearth = <MemoizedFormattedMessage {...{
-      id: "electron.onboarding.workspace.openFolder",
-      defaultMessage: "Add project",
-      description: "Button label to add a workspace during desktop onboarding"
-    }} />;
-  let inlet = <ReadLoginRouteQuerySnapshot {...{
-    className,
-    color,
-    size,
-    onClick: glen,
-    children: hearth
-  }} />;
+    hearth = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "electron.onboarding.workspace.openFolder",
+          defaultMessage: "Add project",
+          description:
+            "Button label to add a workspace during desktop onboarding",
+        }}
+      />
+    );
+  let inlet = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        className,
+        color,
+        size,
+        onClick: glen,
+        children: hearth,
+      }}
+    />
+  );
   let jetty = inlet;
   if (isRemoteHost) return jetty;
-  return <SelectWorkspacePageHelper1 {...{
-    triggerButton: jetty,
-    onStartFromScratch,
-    onUseExistingFolder
-  }} />;
+  return (
+    <SelectWorkspacePageHelper1
+      {...{
+        triggerButton: jetty,
+        onStartFromScratch,
+        onUseExistingFolder,
+      }}
+    />
+  );
 }
 function SelectWorkspacePageHelper13(knob) {
   let {
@@ -545,163 +672,262 @@ function SelectWorkspacePageHelper13(knob) {
       handleSkip,
       isSkipPending,
       skipErrorMessage: ledge,
-      workspaceOnboardingExperimentArm
+      workspaceOnboardingExperimentArm,
     } = knob,
     mire = new Set(selectedRoots);
   let nook = mire,
-    oxbow = isLoadingRoots ? <div className="bg-token-surface-primary flex w-full items-center justify-center gap-2 rounded-2xl border border-token-border px-5 py-6">
-        {<VSCODE_EDITOR_ID {...{
-        className: "h-4 w-4 text-token-foreground"
-      }} />}
+    oxbow = isLoadingRoots ? (
+      <div className="bg-token-surface-primary flex w-full items-center justify-center gap-2 rounded-2xl border border-token-border px-5 py-6">
+        {
+          <VSCODE_EDITOR_ID
+            {...{
+              className: "h-4 w-4 text-token-foreground",
+            }}
+          />
+        }
         <span className="text-sm text-token-description-foreground">
-          {<MemoizedFormattedMessage {...{
-          id: "electron.onboarding.workspace.loading",
-          defaultMessage: "Loading projects…",
-          description: "Loading state while onboarding workspace options are fetched"
-        }} />}
+          {
+            <MemoizedFormattedMessage
+              {...{
+                id: "electron.onboarding.workspace.loading",
+                defaultMessage: "Loading projects…",
+                description:
+                  "Loading state while onboarding workspace options are fetched",
+              }}
+            />
+          }
         </span>
-      </div> : null;
-  let pond = hasAvailableRoots ? <AppIconVn {...{
-    className: IntlProvider(isLoadingRoots && "pointer-events-none opacity-50"),
-    ariaLabel: intl.formatMessage({
-      id: "electron.onboarding.workspace.listLabel",
-      defaultMessage: "Available projects",
-      description: "Aria label for the available workspaces list during onboarding"
-    }),
-    children: [<DeferredUiYn {...{
-      checkboxId: "workspace-root-select-all",
-      checkboxClassName: AppInitialN,
-      checked: selectAllState,
-      disabled: isLoadingRoots,
-      onCheckedChange: anchor => {
-        handleToggleSelectAll(anchor);
-      },
-      label: <MemoizedFormattedMessage {...{
-        id: "electron.onboarding.workspace.selectAll",
-        defaultMessage: "Select all",
-        description: "Checkbox label for selecting all workspaces during onboarding"
-      }} />
-    }} />, availableOptions.map((item, index) => <SelectWorkspacePageHelper14 key={item.root} {...{
-      index,
-      isDisabled: isLoadingRoots,
-      isSelected: nook.has(item.root),
-      skipExistenceCheck: isRemoteHost,
-      option: item,
-      onToggle: handleToggleWorkspace
-    }} />)]
-  }} /> : <div className="text-center text-sm text-token-description-foreground">
-      {<MemoizedFormattedMessage {...{
-      id: "electron.onboarding.workspace.empty",
-      defaultMessage: "Add a project to continue.",
-      description: "Empty state shown when no workspaces are selected during onboarding"
-    }} />}
-    </div>;
-  let quarry = <div className="flex w-full flex-col gap-2">
+      </div>
+    ) : null;
+  let pond = hasAvailableRoots ? (
+    <AppIconVn
+      {...{
+        className: IntlProvider(
+          isLoadingRoots && "pointer-events-none opacity-50",
+        ),
+        ariaLabel: intl.formatMessage({
+          id: "electron.onboarding.workspace.listLabel",
+          defaultMessage: "Available projects",
+          description:
+            "Aria label for the available workspaces list during onboarding",
+        }),
+        children: [
+          <DeferredUiYn
+            {...{
+              checkboxId: "workspace-root-select-all",
+              checkboxClassName: AppInitialN,
+              checked: selectAllState,
+              disabled: isLoadingRoots,
+              onCheckedChange: (anchor) => {
+                handleToggleSelectAll(anchor);
+              },
+              label: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "electron.onboarding.workspace.selectAll",
+                    defaultMessage: "Select all",
+                    description:
+                      "Checkbox label for selecting all workspaces during onboarding",
+                  }}
+                />
+              ),
+            }}
+          />,
+          availableOptions.map((item, index) => (
+            <SelectWorkspacePageHelper14
+              key={item.root}
+              {...{
+                index,
+                isDisabled: isLoadingRoots,
+                isSelected: nook.has(item.root),
+                skipExistenceCheck: isRemoteHost,
+                option: item,
+                onToggle: handleToggleWorkspace,
+              }}
+            />
+          )),
+        ],
+      }}
+    />
+  ) : (
+    <div className="text-center text-sm text-token-description-foreground">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "electron.onboarding.workspace.empty",
+            defaultMessage: "Add a project to continue.",
+            description:
+              "Empty state shown when no workspaces are selected during onboarding",
+          }}
+        />
+      }
+    </div>
+  );
+  let quarry = (
+    <div className="flex w-full flex-col gap-2">
       {oxbow}
       {pond}
-    </div>;
-  let rapids = <SelectWorkspacePageHelper12 {...{
-    className: "flex-1 justify-center border-token-button-border bg-transparent text-base leading-6 font-medium whitespace-nowrap enabled:hover:bg-token-foreground/5",
-    color: "outline",
-    size: "large",
-    isRemoteHost,
-    onStartFromScratch: handleSkip,
-    onUseExistingFolder: handleOpenFolder
-  }} />;
+    </div>
+  );
+  let rapids = (
+    <SelectWorkspacePageHelper12
+      {...{
+        className:
+          "flex-1 justify-center border-token-button-border bg-transparent text-base leading-6 font-medium whitespace-nowrap enabled:hover:bg-token-foreground/5",
+        color: "outline",
+        size: "large",
+        isRemoteHost,
+        onStartFromScratch: handleSkip,
+        onUseExistingFolder: handleOpenFolder,
+      }}
+    />
+  );
   let spur = !hasSelectedRoots || isLoadingRoots,
-    tor = <MemoizedFormattedMessage {...{
-      id: "electron.onboarding.workspace.continue",
-      defaultMessage: "Continue",
-      description: "Button label to continue after selecting workspaces during onboarding"
-    }} />;
-  let updraft = <ReadLoginRouteQuerySnapshot {...{
-    className: "flex-1 justify-center text-base leading-6 font-medium",
-    color: "primary",
-    size: "large",
-    disabled: spur,
-    onClick: handleContinue,
-    children: tor
-  }} />;
-  let verge = <div className="flex w-full items-center gap-4">
+    tor = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "electron.onboarding.workspace.continue",
+          defaultMessage: "Continue",
+          description:
+            "Button label to continue after selecting workspaces during onboarding",
+        }}
+      />
+    );
+  let updraft = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        className: "flex-1 justify-center text-base leading-6 font-medium",
+        color: "primary",
+        size: "large",
+        disabled: spur,
+        onClick: handleContinue,
+        children: tor,
+      }}
+    />
+  );
+  let verge = (
+    <div className="flex w-full items-center gap-4">
       {rapids}
       {updraft}
-    </div>;
-  let weir = isRemoteHost ? null : <At {...{
-    handleSkip,
-    isSkipPending,
-    skipErrorMessage: ledge,
-    workspaceOnboardingExperimentArm
-  }} />;
-  let yard = <div className="flex w-full flex-col gap-3">
+    </div>
+  );
+  let weir = isRemoteHost ? null : (
+    <At
+      {...{
+        handleSkip,
+        isSkipPending,
+        skipErrorMessage: ledge,
+        workspaceOnboardingExperimentArm,
+      }}
+    />
+  );
+  let yard = (
+    <div className="flex w-full flex-col gap-3">
       {verge}
       {weir}
-    </div>;
-  return <SelectWorkspacePageHelper10 {...{
-    showIcon: false,
-    children: <div className="flex w-full flex-col gap-4">
+    </div>
+  );
+  return (
+    <SelectWorkspacePageHelper10
+      {...{
+        showIcon: false,
+        children: (
+          <div className="flex w-full flex-col gap-4">
             {quarry}
             {yard}
           </div>
-  }} />;
+        ),
+      }}
+    />
+  );
 }
 function at(bolt) {
   let {
       handleSkip,
       isSkipPending,
       skipErrorMessage,
-      workspaceOnboardingExperimentArm
+      workspaceOnboardingExperimentArm,
     } = bolt,
     cog = AppInitialOh(workspaceOnboardingExperimentArm);
   let disc = cog,
-    edge = skipErrorMessage == null ? null : <div className="text-center text-sm text-token-error-foreground">
-          {<MemoizedFormattedMessage {...{
-        id: "electron.onboarding.workspace.skip.error",
-        defaultMessage: "Couldn't create a new project: {message}",
-        description: "Error shown when creating a new project fails during onboarding",
-        values: {
-          message: skipErrorMessage
-        }
-      }} />}
-        </div>;
-  let forge = isSkipPending ? disc ? <MemoizedFormattedMessage {...{
-    id: "electron.onboarding.workspace.skipping.playground",
-    defaultMessage: "Opening playground…",
-    description: "Button label shown while opening Playground during onboarding workspace flow"
-  }} /> : <MemoizedFormattedMessage {...{
-    id: "electron.onboarding.workspace.skipping",
-    defaultMessage: "Creating a new project…",
-    description: "Button label shown while creating a new project during onboarding"
-  }} /> : disc ? <MemoizedFormattedMessage {...{
-    id: "electron.onboarding.workspace.skip.playground",
-    defaultMessage: "Continue to playground",
-    description: "Button label to continue to Playground during onboarding"
-  }} /> : <MemoizedFormattedMessage {...{
-    id: "electron.onboarding.workspace.skip",
-    defaultMessage: "Skip",
-    description: "Button label to skip workspace selection during onboarding"
-  }} />;
-  let gear = <ReadLoginRouteQuerySnapshot {...{
-    className: "w-full justify-center text-base leading-6 font-medium",
-    color: "ghost",
-    size: "large",
-    disabled: isSkipPending,
-    onClick: handleSkip,
-    children: forge
-  }} />;
-  return <div className="flex w-full flex-col items-center gap-2">
+    edge =
+      skipErrorMessage == null ? null : (
+        <div className="text-center text-sm text-token-error-foreground">
+          {
+            <MemoizedFormattedMessage
+              {...{
+                id: "electron.onboarding.workspace.skip.error",
+                defaultMessage: "Couldn't create a new project: {message}",
+                description:
+                  "Error shown when creating a new project fails during onboarding",
+                values: {
+                  message: skipErrorMessage,
+                },
+              }}
+            />
+          }
+        </div>
+      );
+  let forge = isSkipPending ? (
+    disc ? (
+      <MemoizedFormattedMessage
+        {...{
+          id: "electron.onboarding.workspace.skipping.playground",
+          defaultMessage: "Opening playground…",
+          description:
+            "Button label shown while opening Playground during onboarding workspace flow",
+        }}
+      />
+    ) : (
+      <MemoizedFormattedMessage
+        {...{
+          id: "electron.onboarding.workspace.skipping",
+          defaultMessage: "Creating a new project…",
+          description:
+            "Button label shown while creating a new project during onboarding",
+        }}
+      />
+    )
+  ) : disc ? (
+    <MemoizedFormattedMessage
+      {...{
+        id: "electron.onboarding.workspace.skip.playground",
+        defaultMessage: "Continue to playground",
+        description: "Button label to continue to Playground during onboarding",
+      }}
+    />
+  ) : (
+    <MemoizedFormattedMessage
+      {...{
+        id: "electron.onboarding.workspace.skip",
+        defaultMessage: "Skip",
+        description:
+          "Button label to skip workspace selection during onboarding",
+      }}
+    />
+  );
+  let gear = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        className: "w-full justify-center text-base leading-6 font-medium",
+        color: "ghost",
+        size: "large",
+        disabled: isSkipPending,
+        onClick: handleSkip,
+        children: forge,
+      }}
+    />
+  );
+  return (
+    <div className="flex w-full flex-col items-center gap-2">
       {edge}
       {gear}
-    </div>;
+    </div>
+  );
 }
 function SelectWorkspacePageHelper14(hinge) {
-  let {
-      index,
-      isDisabled,
-      isSelected,
-      skipExistenceCheck,
-      option,
-      onToggle
-    } = hinge,
+  let { index, isDisabled, isSelected, skipExistenceCheck, option, onToggle } =
+      hinge,
     iron = option.root,
     joint = stripWinLongPathPrefix(iron);
   let keystone = joint,
@@ -710,37 +936,47 @@ function SelectWorkspacePageHelper14(hinge) {
     nut;
   motor = {
     hostId: LOCAL_HOST_ID,
-    paths: [iron]
+    paths: [iron],
   };
   nut = {
-    existingPaths: [iron]
+    existingPaths: [iron],
   };
   let piston = !skipExistenceCheck,
     rivet = {
-      enabled: piston
+      enabled: piston,
     };
   let screw = {
     params: motor,
     placeholderData: nut,
-    queryConfig: rivet
+    queryConfig: rivet,
   };
-  let {
-    data: torque
-  } = SIDEBAR_HIT_TEST_SELECTOR("paths-exist", screw);
-  if (!(skipExistenceCheck || (torque?.existingPaths ?? []).some(item => deferredUiQdt(item).replace(/\/+$/, "") === latch))) return null;
+  let { data: torque } = SIDEBAR_HIT_TEST_SELECTOR("paths-exist", screw);
+  if (
+    !(
+      skipExistenceCheck ||
+      (torque?.existingPaths ?? []).some(
+        (item) => deferredUiQdt(item).replace(/\/+$/, "") === latch,
+      )
+    )
+  )
+    return null;
   let valve = `workspace-root-${index}`,
-    axle = bracket => {
+    axle = (bracket) => {
       onToggle(iron, bracket);
     };
-  return <DeferredUiYn {...{
-    checkboxId: valve,
-    checkboxClassName: AppInitialN,
-    checked: isSelected,
-    disabled: isDisabled,
-    onCheckedChange: axle,
-    label: option.label,
-    description: keystone
-  }} />;
+  return (
+    <DeferredUiYn
+      {...{
+        checkboxId: valve,
+        checkboxClassName: AppInitialN,
+        checked: isSelected,
+        disabled: isDisabled,
+        onCheckedChange: axle,
+        label: option.label,
+        description: keystone,
+      }}
+    />
+  );
 }
 function marble(clamp, drill) {
   let engine = 0;
@@ -749,30 +985,50 @@ function marble(clamp, drill) {
 }
 function nickel(gasket) {
   let handle = [];
-  return (gasket ?? []).forEach(item => {
-    switch (item.kind) {
-      case "local":
-        {
-          let insert = item.conversation?.cwd ?? item.pendingWorktree?.startConversationParamsInput?.cwd ?? item.pendingWorktree?.sourceWorkspaceRoot;
+  return (
+    (gasket ?? []).forEach((item) => {
+      switch (item.kind) {
+        case "local": {
+          let insert =
+            item.conversation?.cwd ??
+            item.pendingWorktree?.startConversationParamsInput?.cwd ??
+            item.pendingWorktree?.sourceWorkspaceRoot;
           insert && handle.push(insert);
           return;
         }
-      case "remote":
-        return;
-    }
-  }), handle;
+        case "remote":
+          return;
+      }
+    }),
+    handle
+  );
 }
-function onyx({
-  tasks,
-  gitOrigins = [],
-  codexHome
-}) {
+function onyx({ tasks, gitOrigins = [], codexHome }) {
   let jacket = nickel(tasks);
   if (jacket.length === 0) return [];
-  return river.default(jacket.map(item => {
-    let knurl = AppInitialEB(item, gitOrigins);
-    return !knurl?.root || !pathContainsWorktreesDir(knurl.root, codexHome) ? item : gitOrigins.reduce((accumulator, current) => !knurl.originUrl || current.originUrl !== knurl.originUrl || pathContainsWorktreesDir(current.root, codexHome) ? accumulator : accumulator ? current.root.length > accumulator.length ? current.root : accumulator : current.root, null) ?? knurl.root;
-  }).filter(item => !!item), lever => deferredUiQdt(lever).replace(/\/+$/, ""));
+  return river.default(
+    jacket
+      .map((item) => {
+        let knurl = AppInitialEB(item, gitOrigins);
+        return !knurl?.root || !pathContainsWorktreesDir(knurl.root, codexHome)
+          ? item
+          : (gitOrigins.reduce(
+              (accumulator, current) =>
+                !knurl.originUrl ||
+                current.originUrl !== knurl.originUrl ||
+                pathContainsWorktreesDir(current.root, codexHome)
+                  ? accumulator
+                  : accumulator
+                    ? current.root.length > accumulator.length
+                      ? current.root
+                      : accumulator
+                    : current.root,
+              null,
+            ) ?? knurl.root);
+      })
+      .filter((item) => !!item),
+    (lever) => deferredUiQdt(lever).replace(/\/+$/, ""),
+  );
 }
 function pearl(mount) {
   return posixPathBasename(mount);

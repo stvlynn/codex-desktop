@@ -18,7 +18,9 @@ export type BindBindProjectKindPeers = {
 let peers: BindBindProjectKindPeers | null = null;
 
 /** Wire bindBindProjectKind peers once companions land. */
-export function setBindBindProjectKindPeers(next: BindBindProjectKindPeers): void {
+export function setBindBindProjectKindPeers(
+  next: BindBindProjectKindPeers,
+): void {
   peers = next;
 }
 
@@ -31,19 +33,24 @@ export function bindBindProjectKind() {
   }
 
   return peers.e(() => {
-    peers.Sl(), IDe = peers.dl(`projectKind`, [peers.sl({
-      projectKind: peers.ml(`local`),
-      projectId: peers.X(),
-      path: peers.X().optional(),
-      cwd: peers.X().optional(),
-      pendingCoreUpdate: peers.il()
-    }), peers.sl({
-      projectKind: peers.ml(`remote`),
-      projectId: peers.X(),
-      path: peers.X(),
-      cwd: peers.X().optional(),
-      hostId: peers.X().optional(),
-      pendingCoreUpdate: peers.il()
-    })]), LDe = peers.fl(peers.X(), peers.al());
+    (peers.Sl(),
+      (IDe = peers.dl(`projectKind`, [
+        peers.sl({
+          projectKind: peers.ml(`local`),
+          projectId: peers.X(),
+          path: peers.X().optional(),
+          cwd: peers.X().optional(),
+          pendingCoreUpdate: peers.il(),
+        }),
+        peers.sl({
+          projectKind: peers.ml(`remote`),
+          projectId: peers.X(),
+          path: peers.X(),
+          cwd: peers.X().optional(),
+          hostId: peers.X().optional(),
+          pendingCoreUpdate: peers.il(),
+        }),
+      ])),
+      (LDe = peers.fl(peers.X(), peers.al())));
   });
 }

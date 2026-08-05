@@ -16,7 +16,9 @@ export type ApplyFunctionHelper2Peers = {
 let peers: ApplyFunctionHelper2Peers | null = null;
 
 /** Wire applyFunctionHelper2 peers once companions land. */
-export function setApplyFunctionHelper2Peers(next: ApplyFunctionHelper2Peers): void {
+export function setApplyFunctionHelper2Peers(
+  next: ApplyFunctionHelper2Peers,
+): void {
   peers = next;
 }
 
@@ -29,6 +31,13 @@ export function applyFunctionHelper2() {
   }
 
   return peers.e(() => {
-    peers.Qn(), peers.Hn(), peers.ui(), peers.Oi(), peers.Qr(), peers.Ca(), peers.Ai(), peers.Ni();
+    (peers.Qn(),
+      peers.Hn(),
+      peers.ui(),
+      peers.Oi(),
+      peers.Qr(),
+      peers.Ca(),
+      peers.Ai(),
+      peers.Ni());
   });
 }

@@ -17,7 +17,9 @@ export type BindNormalizePresenceToNormalPeers = {
 let peers: BindNormalizePresenceToNormalPeers | null = null;
 
 /** Wire bindNormalizePresenceToNormal peers once companions land. */
-export function setBindNormalizePresenceToNormalPeers(next: BindNormalizePresenceToNormalPeers): void {
+export function setBindNormalizePresenceToNormalPeers(
+  next: BindNormalizePresenceToNormalPeers,
+): void {
   peers = next;
 }
 
@@ -30,6 +32,12 @@ export function bindNormalizePresenceToNormal() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), dFr = [], fFr = {}, fj = peers.Ta(peers.Q, !1), pFr = peers.Ta(peers.Q, peers.dFr), mFr = peers.Ta(peers.Q, peers.fFr);
+    (peers.Ho(),
+      peers.ed(),
+      (dFr = []),
+      (fFr = {}),
+      (fj = peers.Ta(peers.Q, !1)),
+      (pFr = peers.Ta(peers.Q, peers.dFr)),
+      (mFr = peers.Ta(peers.Q, peers.fFr)));
   });
 }

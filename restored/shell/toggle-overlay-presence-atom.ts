@@ -9,7 +9,9 @@ export type ToggleOverlayPresenceAtomPeers = {
 let peers: ToggleOverlayPresenceAtomPeers | null = null;
 
 /** Wire toggleOverlayPresenceAtom peers once companions land. */
-export function setToggleOverlayPresenceAtomPeers(next: ToggleOverlayPresenceAtomPeers): void {
+export function setToggleOverlayPresenceAtomPeers(
+  next: ToggleOverlayPresenceAtomPeers,
+): void {
   peers = next;
 }
 

@@ -11,7 +11,9 @@ export type NoopPlaceholderExportPeers = {
 let peers: NoopPlaceholderExportPeers | null = null;
 
 /** Wire noopPlaceholderExport peers once companions land. */
-export function setNoopPlaceholderExportPeers(next: NoopPlaceholderExportPeers): void {
+export function setNoopPlaceholderExportPeers(
+  next: NoopPlaceholderExportPeers,
+): void {
   peers = next;
 }
 
@@ -23,5 +25,5 @@ export function noopPlaceholderExport() {
     throw new Error("noopPlaceholderExport peers are not configured");
   }
 
-  peers.jqr(peers.fxo), peers.dHi(peers.f1o);
+  (peers.jqr(peers.fxo), peers.dHi(peers.f1o));
 }

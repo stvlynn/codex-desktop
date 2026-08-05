@@ -12,7 +12,9 @@ export type StartOnboardingCarouselJourneyPeers = {
 let peers: StartOnboardingCarouselJourneyPeers | null = null;
 
 /** Wire startOnboardingCarouselJourney peers once companions land. */
-export function setStartOnboardingCarouselJourneyPeers(next: StartOnboardingCarouselJourneyPeers): void {
+export function setStartOnboardingCarouselJourneyPeers(
+  next: StartOnboardingCarouselJourneyPeers,
+): void {
   peers = next;
 }
 
@@ -25,10 +27,10 @@ export function startOnboardingCarouselJourney(e: unknown, t: unknown) {
   }
 
   let n = peers.Tti(t);
-  if (n == null) return e.set(peers.bP, null), null;
+  if (n == null) return (e.set(peers.bP, null), null);
   let r = {
     journeyId: peers.uy(),
-    carouselKind: n
+    carouselKind: n,
   };
-  return e.set(peers.bP, r), peers.Ub(e, peers.QZn, r), r;
+  return (e.set(peers.bP, r), peers.Ub(e, peers.QZn, r), r);
 }

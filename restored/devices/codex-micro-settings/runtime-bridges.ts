@@ -9,4 +9,3 @@
 export function bindCodexMicroSettings(_next: unknown): void {}
 
 export function ensureCodexMicroSettingsInit(): void {}
-

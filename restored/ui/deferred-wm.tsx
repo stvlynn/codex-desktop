@@ -41,6 +41,20 @@ export function bindDeferredWm() {
   }
 
   return peers.e(() => {
-    W6s = peers.c(), peers.Ho(), peers.Au(), o1 = peers.r(peers.o(), 1), peers.DD(), peers.Vf(), peers.$D(), peers.p6n(), peers.gT(), peers.jI(), peers._E(), peers.KI(), peers.YI(), peers.WI(), G6s = peers.Ta(peers.hT, !1);
+    ((W6s = peers.c()),
+      peers.Ho(),
+      peers.Au(),
+      (o1 = peers.r(peers.o(), 1)),
+      peers.DD(),
+      peers.Vf(),
+      peers.$D(),
+      peers.p6n(),
+      peers.gT(),
+      peers.jI(),
+      peers._E(),
+      peers.KI(),
+      peers.YI(),
+      peers.WI(),
+      (G6s = peers.Ta(peers.hT, !1)));
   });
 }

@@ -29,6 +29,13 @@ export function bindDeferredQt() {
   }
 
   return peers.e(() => {
-    peers.Qn(), peers.Hn(), peers.ui(), peers.Oi(), peers.Qr(), peers.Ca(), peers.Ai(), peers.Ni();
+    (peers.Qn(),
+      peers.Hn(),
+      peers.ui(),
+      peers.Oi(),
+      peers.Qr(),
+      peers.Ca(),
+      peers.Ai(),
+      peers.Ni());
   });
 }

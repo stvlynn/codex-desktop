@@ -7,7 +7,9 @@ export type ClientThreadIdForConversationPeers = {
 let peers: ClientThreadIdForConversationPeers | null = null;
 
 /** Wire setClientThreadIdForConversation peers once companions land. */
-export function setClientThreadIdForConversationPeers(next: ClientThreadIdForConversationPeers): void {
+export function setClientThreadIdForConversationPeers(
+  next: ClientThreadIdForConversationPeers,
+): void {
   peers = next;
 }
 
@@ -19,7 +21,9 @@ export function setClientThreadIdForConversation(
   { clientThreadId, conversationId }: Record<string, unknown>,
 ) {
   if (peers == null) {
-    throw new Error("setClientThreadIdForConversation peers are not configured");
+    throw new Error(
+      "setClientThreadIdForConversation peers are not configured",
+    );
   }
   peers.JJn(e, conversationId, clientThreadId);
 }

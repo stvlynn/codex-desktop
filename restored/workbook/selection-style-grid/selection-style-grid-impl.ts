@@ -42,34 +42,24 @@ export function buildSelectionStyleGrid(props: any) {
     ssgBind4666 <= ssgBind3805.r2;
     ssgBind4666++
   ) {
-    let ssgBind4750 = sheet.rows.find(
-      (item) => item.index - 1 === ssgBind4666,
-    );
+    let ssgBind4750 = sheet.rows.find((item) => item.index - 1 === ssgBind4666);
     for (
       let ssgBind4817 = ssgBind3805.c1;
       ssgBind4817 <= ssgBind3805.c2;
       ssgBind4817++
     ) {
       let ssgBind4906 = ssgBind4750?.cells.find(
-          (ssgIn16132) =>
-            lettersToColIndex(ssgIn16132.address) ===
-            ssgBind4817,
+          (ssgIn16132) => lettersToColIndex(ssgIn16132.address) === ssgBind4817,
         ),
-        ssgBind4907 =
-          styleInfos[ssgBind4906?.styleIndex ?? 0] ?? {},
+        ssgBind4907 = styleInfos[ssgBind4906?.styleIndex ?? 0] ?? {},
         ssgBind4908 = ssgBind4666 - ssgBind3805.r1,
         ssgBind4909 = ssgBind4817 - ssgBind3805.c1,
         ssgBind4910 = {};
       ssgBind4910.v = ssgBind4906
-        ? ssgH.bh229(
-            ssgBind4906,
-            styleInfos,
-            ssgBind3804,
-          )
+        ? ssgH.bh229(ssgBind4906, styleInfos, ssgBind3804)
         : "";
       let ssgBind4911 =
-          typeof ssgBind4907.font?.size == "number" &&
-          ssgBind4907.font.size > 0
+          typeof ssgBind4907.font?.size == "number" && ssgBind4907.font.size > 0
             ? (ssgBind4907.font.size * 72) / 96
             : undefined,
         ssgBind4912 =
@@ -125,8 +115,7 @@ export function buildSelectionStyleGrid(props: any) {
             : undefined,
         },
         diagonal:
-          ssgBind4907.borderStyles?.diagonal ||
-          ssgBind4907.borders?.diagonal
+          ssgBind4907.borderStyles?.diagonal || ssgBind4907.borders?.diagonal
             ? {
                 style: ssgBind4907.borderStyles?.diagonal,
                 color: ssgBind4907.borders?.diagonal,
@@ -136,8 +125,7 @@ export function buildSelectionStyleGrid(props: any) {
             : undefined,
       };
       let ssgBind4914 = ssgBind3808[ssgBind4908];
-      ssgBind4914 &&
-        (ssgBind4914[ssgBind4909] = ssgBind4910);
+      ssgBind4914 && (ssgBind4914[ssgBind4909] = ssgBind4910);
     }
   }
   let ssgBind3809 = [];
@@ -158,27 +146,11 @@ export function buildSelectionStyleGrid(props: any) {
         rowTokenToIndex(ssgBind11350.startAddress),
         rowTokenToIndex(ssgBind11350.endAddress),
       ),
-      ssgBind11743 = Math.max(
-        ssgBind3805.r1,
-        ssgBind11741,
-      ),
-      ssgBind11744 = Math.min(
-        ssgBind3805.r2,
-        ssgBind11742,
-      ),
-      ssgBind11745 = Math.max(
-        ssgBind3805.c1,
-        ssgBind11739,
-      ),
-      ssgBind11746 = Math.min(
-        ssgBind3805.c2,
-        ssgBind11740,
-      );
-    if (
-      ssgBind11743 > ssgBind11744 ||
-      ssgBind11745 > ssgBind11746
-    )
-      continue;
+      ssgBind11743 = Math.max(ssgBind3805.r1, ssgBind11741),
+      ssgBind11744 = Math.min(ssgBind3805.r2, ssgBind11742),
+      ssgBind11745 = Math.max(ssgBind3805.c1, ssgBind11739),
+      ssgBind11746 = Math.min(ssgBind3805.c2, ssgBind11740);
+    if (ssgBind11743 > ssgBind11744 || ssgBind11745 > ssgBind11746) continue;
     let ssgBind11747 = ssgBind11743 - ssgBind3805.r1,
       ssgBind11748 = ssgBind11745 - ssgBind3805.c1,
       ssgBind11749 = ssgBind11744 - ssgBind11743 + 1,

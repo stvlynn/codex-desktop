@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  An,
-} from "../presentation-protobuf";
+import { An } from "../presentation-protobuf";
 
 export const errorBarValueTypeStandardNameToProto = {
   standardError: An.ERROR_BAR_VALUE_TYPE_STANDARD_ERROR,

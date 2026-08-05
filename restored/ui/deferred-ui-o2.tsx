@@ -11,7 +11,9 @@ export type BindBindDeferredUiO2Peers = {
 let peers: BindBindDeferredUiO2Peers | null = null;
 
 /** Wire bindBindDeferredUiO2 peers once companions land. */
-export function setBindBindDeferredUiO2Peers(next: BindBindDeferredUiO2Peers): void {
+export function setBindBindDeferredUiO2Peers(
+  next: BindBindDeferredUiO2Peers,
+): void {
   peers = next;
 }
 
@@ -23,25 +25,21 @@ export function bindBindDeferredUiO2() {
     throw new Error("bindBindDeferredUiO2 peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => [], {
+  return peers.Da(peers.Q, (e) => [], {
     onMount: (e, t) => {
-      let {
-        key: n
-      } = t;
-      return t.watch(({
-        get: t
-      }) => {
+      let { key: n } = t;
+      return t.watch(({ get: t }) => {
         let r = t(peers.eD, n),
           i = () => {
             e(peers.Atr(r));
           };
-        if (i(), r == null) return;
+        if ((i(), r == null)) return;
         let a = r.addAnyConversationCallback(i),
           o = r.addAnyConversationMetaCallback(i);
         return () => {
-          a(), o();
+          (a(), o());
         };
       });
-    }
+    },
   });
 }

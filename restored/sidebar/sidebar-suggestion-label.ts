@@ -13,7 +13,10 @@ export type SidebarSuggestionLike = {
 };
 
 /** Resolve sidebar suggestion label from string or intl descriptor. */
-export function sidebarSuggestionLabel(suggestion: SidebarSuggestionLike, intl: IntlLike): string {
+export function sidebarSuggestionLabel(
+  suggestion: SidebarSuggestionLike,
+  intl: IntlLike,
+): string {
   return typeof suggestion.message === "string"
     ? suggestion.message
     : intl.formatMessage(suggestion.message);

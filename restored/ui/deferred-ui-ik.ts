@@ -31,6 +31,13 @@ export function bindDeferredUiIk() {
   }
 
   return peers.e(() => {
-    wwo = peers.c(), peers.sd(), peers.Swo(), Two = peers.J(), Ewo = 12, Dwo = 120, Owo = 0, kwo = 100;
+    ((wwo = peers.c()),
+      peers.sd(),
+      peers.Swo(),
+      (Two = peers.J()),
+      (Ewo = 12),
+      (Dwo = 120),
+      (Owo = 0),
+      (kwo = 100));
   });
 }

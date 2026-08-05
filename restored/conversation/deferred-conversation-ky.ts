@@ -10,7 +10,9 @@ export type DeferredConversationKYPeers = {
 let peers: DeferredConversationKYPeers | null = null;
 
 /** Wire deferredConversationKY peers once companions land. */
-export function setDeferredConversationKYPeers(next: DeferredConversationKYPeers): void {
+export function setDeferredConversationKYPeers(
+  next: DeferredConversationKYPeers,
+): void {
   peers = next;
 }
 
@@ -23,10 +25,15 @@ export function deferredConversationKY() {
   }
 
   return peers.wa(`ComposerScope`, {
-    key: e => e.kind === `new` && e.entrypoint === `home` && e.focusComposerNonce != null ? `${peers.WM(e)}:${e.focusComposerNonce}` : peers.WM(e),
+    key: (e) =>
+      e.kind === `new` &&
+      e.entrypoint === `home` &&
+      e.focusComposerNonce != null
+        ? `${peers.WM(e)}:${e.focusComposerNonce}`
+        : peers.WM(e),
     parent: peers.hT,
     retain: {
-      max: 100
-    }
+      max: 100,
+    },
   });
 }

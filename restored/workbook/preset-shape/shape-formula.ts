@@ -25,10 +25,7 @@ export function rotationEmuToRadians(rotationEmu: number): number {
 }
 
 /** Legacy Fue — resolve a bare token against env + angle constants. */
-export function resolveFormulaToken(
-  token: string,
-  env: FormulaEnv,
-): number {
+export function resolveFormulaToken(token: string, env: FormulaEnv): number {
   return token in env
     ? env[token]!
     : token in shapeAngleConstants
@@ -39,10 +36,7 @@ export function resolveFormulaToken(
 }
 
 /** Legacy h293 — evaluate `op arg…` formula call. */
-export function evalShapeFormulaCall(
-  formula: string,
-  env: FormulaEnv,
-): number {
+export function evalShapeFormulaCall(formula: string, env: FormulaEnv): number {
   const tokens = formula.trim().split(/\s+/);
   const op = tokens[0];
   if (!op) return NaN;
@@ -50,9 +44,7 @@ export function evalShapeFormulaCall(
     const args = tokens
       .slice(1)
       .map((token) => resolveFormulaToken(token, env));
-    return args.some(
-      (value) => typeof value != "number" || Number.isNaN(value),
-    )
+    return args.some((value) => typeof value != "number" || Number.isNaN(value))
       ? NaN
       : shapeFormulaOps[op]!(...args);
   }
@@ -109,8 +101,7 @@ export const ensureShapeFormulaOpsInit = esmInit(() => {
     max: (...values) => Math.max(...values),
     abs: (value) => Math.abs(value),
     mid: (left, right) => (left + right) / 2,
-    mod: (...values) =>
-      values.length === 0 ? NaN : Math.hypot(...values),
+    mod: (...values) => (values.length === 0 ? NaN : Math.hypot(...values)),
     sqrt: (value) => Math.sqrt(Math.max(value, 0)),
     sin: (magnitudeOrAngle, angleEmu) =>
       angleEmu === undefined
@@ -143,7 +134,10 @@ export const ensureShapeFormulaOpsInit = esmInit(() => {
           !Number.isNaN(val) &&
           !Number.isNaN(high)
         ) {
-          return Math.min(Math.max(low, Math.min(val, high)), Math.max(val, high));
+          return Math.min(
+            Math.max(low, Math.min(val, high)),
+            Math.max(val, high),
+          );
         }
       }
       {
@@ -153,7 +147,10 @@ export const ensureShapeFormulaOpsInit = esmInit(() => {
           typeof val == "number" &&
           typeof high == "number"
         ) {
-          return Math.min(Math.max(low, Math.min(val, high)), Math.max(val, high));
+          return Math.min(
+            Math.max(low, Math.min(val, high)),
+            Math.max(val, high),
+          );
         }
       }
       return NaN;
@@ -162,8 +159,7 @@ export const ensureShapeFormulaOpsInit = esmInit(() => {
       condition > 0 ? whenTrue : whenFalse,
     "+/": (...values) => {
       if (values.length === 0) return NaN;
-      const divisor =
-        (values.length >= 2 ? values[values.length - 1] : 2) || 2;
+      const divisor = (values.length >= 2 ? values[values.length - 1] : 2) || 2;
       return (
         (values.length >= 2 ? values.slice(0, -1) : values).reduce(
           (acc, cur) => acc + cur,

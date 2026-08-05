@@ -13,7 +13,9 @@ export type BindBindConversationDetailModePeers = {
 let peers: BindBindConversationDetailModePeers | null = null;
 
 /** Wire bindBindConversationDetailMode peers once companions land. */
-export function setBindBindConversationDetailModePeers(next: BindBindConversationDetailModePeers): void {
+export function setBindBindConversationDetailModePeers(
+  next: BindBindConversationDetailModePeers,
+): void {
   peers = next;
 }
 
@@ -26,14 +28,20 @@ export function bindBindConversationDetailMode() {
   }
 
   return peers.e(() => {
-    peers.Sl(), peers.xu(), ZEe = {
-      conversationDetailMode: peers.vu({
-        agentAccess: `read-write`,
-        default: `STEPS_COMMANDS`,
-        description: `How much turn detail Codex shows`,
-        key: `conversationDetailMode`,
-        schema: peers.pl([`STEPS_PROSE`, `STEPS_COMMANDS`, `STEPS_EXECUTION`])
-      })
-    };
+    (peers.Sl(),
+      peers.xu(),
+      (ZEe = {
+        conversationDetailMode: peers.vu({
+          agentAccess: `read-write`,
+          default: `STEPS_COMMANDS`,
+          description: `How much turn detail Codex shows`,
+          key: `conversationDetailMode`,
+          schema: peers.pl([
+            `STEPS_PROSE`,
+            `STEPS_COMMANDS`,
+            `STEPS_EXECUTION`,
+          ]),
+        }),
+      }));
   });
 }

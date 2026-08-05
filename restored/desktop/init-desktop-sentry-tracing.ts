@@ -24,7 +24,9 @@ export type InitDesktopSentryTracingPeers = {
 let peers: InitDesktopSentryTracingPeers | null = null;
 
 /** Wire initDesktopSentryTracing peers once companions land. */
-export function setInitDesktopSentryTracingPeers(next: InitDesktopSentryTracingPeers): void {
+export function setInitDesktopSentryTracingPeers(
+  next: InitDesktopSentryTracingPeers,
+): void {
   peers = next;
 }
 

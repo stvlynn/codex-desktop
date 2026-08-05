@@ -71,9 +71,7 @@ export function applyTextStylePatch(
       (target.anchor =
         patch.verticalAlignment === undefined
           ? undefined
-          : verticalAlignmentNameToAnchor(
-              String(patch.verticalAlignment),
-            )),
+          : verticalAlignmentNameToAnchor(String(patch.verticalAlignment))),
     "vertical" in patch && (target.vertical = patch.vertical),
     "rotation" in patch && (target.rotation = patch.rotation),
     "bold" in patch && (target.bold = patch.bold),
@@ -88,15 +86,12 @@ export function applyTextStylePatch(
     "lineSpacing" in patch && (target.lineSpacing = patch.lineSpacing),
     "alignment" in patch && (target.alignment = patch.alignment),
     "underline" in patch && (target.underline = patch.underline),
-    "fill" in patch &&
-      patch.fill !== undefined &&
-      (target.fill = patch.fill),
+    "fill" in patch && patch.fill !== undefined && (target.fill = patch.fill),
     "color" in patch && (target.color = patch.color),
     "highlight" in patch && (target.highlight = patch.highlight),
     "outline" in patch && (target.outline = patch.outline),
     "shadow" in patch && (target.shadow = patch.shadow),
-    "capitalization" in patch &&
-      (target.capitalization = patch.capitalization),
+    "capitalization" in patch && (target.capitalization = patch.capitalization),
     "textTransform" in patch && (target.textTransform = patch.textTransform),
     "useParagraphSpacing" in patch &&
       (target.useParagraphSpacing = patch.useParagraphSpacing),

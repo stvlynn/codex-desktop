@@ -23,7 +23,9 @@ export type UseSubscriptionUpdatePreviewQueryPeers = {
 let peers: UseSubscriptionUpdatePreviewQueryPeers | null = null;
 
 /** Wire subscription preview query peers once companions land. */
-export function setUseSubscriptionUpdatePreviewQueryPeers(next: UseSubscriptionUpdatePreviewQueryPeers): void {
+export function setUseSubscriptionUpdatePreviewQueryPeers(
+  next: UseSubscriptionUpdatePreviewQueryPeers,
+): void {
   peers = next;
 }
 
@@ -31,7 +33,9 @@ export function setUseSubscriptionUpdatePreviewQueryPeers(next: UseSubscriptionU
  * Bundle export `Xb` / internal `Hgs`.
  * Preview a subscription plan update for an account.
  */
-export function useSubscriptionUpdatePreviewQuery(args: UseSubscriptionUpdatePreviewQueryArgs): unknown {
+export function useSubscriptionUpdatePreviewQuery(
+  args: UseSubscriptionUpdatePreviewQueryArgs,
+): unknown {
   if (peers == null) {
     throw new Error(
       "UseSubscriptionUpdatePreviewQuery peers are not configured",

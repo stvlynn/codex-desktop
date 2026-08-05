@@ -9,7 +9,9 @@ export type DeferredConversationSHPeers = {
 let peers: DeferredConversationSHPeers | null = null;
 
 /** Wire deferredConversationSH peers once companions land. */
-export function setDeferredConversationSHPeers(next: DeferredConversationSHPeers): void {
+export function setDeferredConversationSHPeers(
+  next: DeferredConversationSHPeers,
+): void {
   peers = next;
 }
 
@@ -21,5 +23,5 @@ export function deferredConversationSH() {
     throw new Error("deferredConversationSH peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => !1);
+  return peers.Da(peers.Q, (e) => !1);
 }

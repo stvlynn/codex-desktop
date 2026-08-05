@@ -26,6 +26,6 @@ export function turnDiff() {
   }
 
   return peers.e(() => {
-    sdl = peers.c(), peers.af(), cdl = peers.J();
+    ((sdl = peers.c()), peers.af(), (cdl = peers.J()));
   });
 }

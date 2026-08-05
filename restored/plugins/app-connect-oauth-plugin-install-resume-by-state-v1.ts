@@ -34,7 +34,9 @@ export type BindAppConnectOauthPluginInstallResumeByStateV1Peers = {
 let peers: BindAppConnectOauthPluginInstallResumeByStateV1Peers | null = null;
 
 /** Wire bindAppConnectOauthPluginInstallResumeByStateV1 peers once companions land. */
-export function setBindAppConnectOauthPluginInstallResumeByStateV1Peers(next: BindAppConnectOauthPluginInstallResumeByStateV1Peers): void {
+export function setBindAppConnectOauthPluginInstallResumeByStateV1Peers(
+  next: BindAppConnectOauthPluginInstallResumeByStateV1Peers,
+): void {
   peers = next;
 }
 
@@ -43,10 +45,33 @@ export function setBindAppConnectOauthPluginInstallResumeByStateV1Peers(next: Bi
  */
 export function bindAppConnectOauthPluginInstallResumeByStateV1() {
   if (peers == null) {
-    throw new Error("bindAppConnectOauthPluginInstallResumeByStateV1 peers are not configured");
+    throw new Error(
+      "bindAppConnectOauthPluginInstallResumeByStateV1 peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    M2i = peers.c(), peers.Hb(), peers.Qt(), peers.Ho(), peers.Vf(), peers.j_(), peers.Kb(), peers.tP(), peers.yE(), peers.ed(), peers.K_(), peers.Bit(), peers.Gf(), peers.od(), peers.Im(), peers.Wh(), N2i = {}, P2i = crypto.randomUUID(), F2i = new Set(), I2i = `app-connect-oauth-plugin-install-resume-by-state-v1`, yz = peers.Ta(peers.Q, peers.N2i), L2i = peers.Pm(peers.I2i, peers.N2i);
+    ((M2i = peers.c()),
+      peers.Hb(),
+      peers.Qt(),
+      peers.Ho(),
+      peers.Vf(),
+      peers.j_(),
+      peers.Kb(),
+      peers.tP(),
+      peers.yE(),
+      peers.ed(),
+      peers.K_(),
+      peers.Bit(),
+      peers.Gf(),
+      peers.od(),
+      peers.Im(),
+      peers.Wh(),
+      (N2i = {}),
+      (P2i = crypto.randomUUID()),
+      (F2i = new Set()),
+      (I2i = `app-connect-oauth-plugin-install-resume-by-state-v1`),
+      (yz = peers.Ta(peers.Q, peers.N2i)),
+      (L2i = peers.Pm(peers.I2i, peers.N2i)));
   });
 }

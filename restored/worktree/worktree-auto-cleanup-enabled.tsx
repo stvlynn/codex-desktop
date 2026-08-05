@@ -15,7 +15,9 @@ export type BindBindWorktreeAutoCleanupEnabledPeers = {
 let peers: BindBindWorktreeAutoCleanupEnabledPeers | null = null;
 
 /** Wire bindBindWorktreeAutoCleanupEnabled peers once companions land. */
-export function setBindBindWorktreeAutoCleanupEnabledPeers(next: BindBindWorktreeAutoCleanupEnabledPeers): void {
+export function setBindBindWorktreeAutoCleanupEnabledPeers(
+  next: BindBindWorktreeAutoCleanupEnabledPeers,
+): void {
   peers = next;
 }
 
@@ -24,25 +26,30 @@ export function setBindBindWorktreeAutoCleanupEnabledPeers(next: BindBindWorktre
  */
 export function bindBindWorktreeAutoCleanupEnabled() {
   if (peers == null) {
-    throw new Error("bindBindWorktreeAutoCleanupEnabled peers are not configured");
+    throw new Error(
+      "bindBindWorktreeAutoCleanupEnabled peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Sl(), peers._u(), peers.xu(), $Ee = {
-      autoCleanupEnabled: peers.yu({
-        agentAccess: `read-write`,
-        default: !0,
-        description: `Whether Codex automatically cleans up old worktrees`,
-        key: `worktree-auto-cleanup-enabled`,
-        schema: peers.hu
-      }),
-      keepCount: peers.yu({
-        agentAccess: `read-write`,
-        default: 15,
-        description: `How many recent worktrees Codex keeps`,
-        key: `worktree-keep-count`,
-        schema: peers.rl().int().min(1)
-      })
-    };
+    (peers.Sl(),
+      peers._u(),
+      peers.xu(),
+      ($Ee = {
+        autoCleanupEnabled: peers.yu({
+          agentAccess: `read-write`,
+          default: !0,
+          description: `Whether Codex automatically cleans up old worktrees`,
+          key: `worktree-auto-cleanup-enabled`,
+          schema: peers.hu,
+        }),
+        keepCount: peers.yu({
+          agentAccess: `read-write`,
+          default: 15,
+          description: `How many recent worktrees Codex keeps`,
+          key: `worktree-keep-count`,
+          schema: peers.rl().int().min(1),
+        }),
+      }));
   });
 }

@@ -21,5 +21,5 @@ export function deferredUiFJ(e: unknown, t: unknown) {
     throw new Error("deferredUiFJ peers are not configured");
   }
 
-  peers.A$r(e), peers.O0r(e, t);
+  (peers.A$r(e), peers.O0r(e, t));
 }

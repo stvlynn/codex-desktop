@@ -16,7 +16,10 @@ type DesktopAccessFlags = DesktopCommandCapabilityFlags & {
 };
 
 /** False when local access is required but denied; else capability gate. */
-export function isCommandEnabledForDesktopFlags(command: CommandAvailability, flags: DesktopAccessFlags): boolean {
+export function isCommandEnabledForDesktopFlags(
+  command: CommandAvailability,
+  flags: DesktopAccessFlags,
+): boolean {
   if (
     command.requiresCodexLocalAccess === true &&
     !flags.codexLocalAccessAllowed

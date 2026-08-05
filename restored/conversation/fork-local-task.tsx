@@ -22,7 +22,9 @@ export type BindBindForkLocalTaskPeers = {
 let peers: BindBindForkLocalTaskPeers | null = null;
 
 /** Wire bindBindForkLocalTask peers once companions land. */
-export function setBindBindForkLocalTaskPeers(next: BindBindForkLocalTaskPeers): void {
+export function setBindBindForkLocalTaskPeers(
+  next: BindBindForkLocalTaskPeers,
+): void {
   peers = next;
 }
 
@@ -35,6 +37,15 @@ export function bindBindForkLocalTask() {
   }
 
   return peers.e(() => {
-    ZAs = peers.c(), QAs = peers.r(peers.Mo(), 1), peers.Ho(), peers.Au(), $As = peers.r(peers.o(), 1), peers.SA(), peers.ap(), peers.Gf(), peers.lQr(), peers.PXr();
+    ((ZAs = peers.c()),
+      (QAs = peers.r(peers.Mo(), 1)),
+      peers.Ho(),
+      peers.Au(),
+      ($As = peers.r(peers.o(), 1)),
+      peers.SA(),
+      peers.ap(),
+      peers.Gf(),
+      peers.lQr(),
+      peers.PXr());
   });
 }

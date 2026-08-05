@@ -21,7 +21,10 @@ import { ensureDynamicScriptLoadInit } from "../runtime/ensure-dynamic-script-lo
 import { esmInit } from "../runtime/rolldown-runtime";
 import { readCodexHomeFromQuery } from "../settings/read-codex-home-from-query";
 import { buildSkillDiscoveryRoots } from "../skills/build-skill-discovery-roots";
-import { ensureSkillsPageHelpersInit, usePluginsFeatureEnabled } from "../skills/skills-page-helpers";
+import {
+  ensureSkillsPageHelpersInit,
+  usePluginsFeatureEnabled,
+} from "../skills/skills-page-helpers";
 import { extractColonPrefixedNamedTokens } from "../utils/extract-colon-prefixed-named-tokens";
 import { ensureDebugPanelTurnFilesInit } from "./debug-panel-turn-files";
 import { ensureAuthProviderInit } from "./use-auth";
@@ -48,24 +51,24 @@ function usePluginScheduledTasksHelper1({
   buildFlavor,
   codexHome,
   isOpenAICuratedRemoteMarketplaceEnabled,
-  workspaceRoots
+  workspaceRoots,
 }) {
   return {
     buildFlavor,
     cwds: buildSkillDiscoveryRoots({
       codexHome,
       hostId: LOCAL_HOST_ID,
-      workspaceRoots
+      workspaceRoots,
     }),
     hiddenMarketplaceNames: ensureBrowserUseGateInit({
       isOpenAICuratedRemoteMarketplaceEnabled,
-      shouldHideOpenAICuratedMarketplaces: AppInitialIK(authMethod)
+      shouldHideOpenAICuratedMarketplaces: AppInitialIK(authMethod),
     }),
     marketplaceKinds: AppInitialBK({
       additionalMarketplaceKinds: [],
       includeRemoteCatalog: true,
-      includeVerticalCatalog: !isOpenAICuratedRemoteMarketplaceEnabled
-    })
+      includeVerticalCatalog: !isOpenAICuratedRemoteMarketplaceEnabled,
+    }),
   };
 }
 var alpha,
@@ -78,41 +81,43 @@ var alpha,
     ensureAppShellAtomsInit();
     dataAppActionReviewFileExpanded();
     AppInitialFz();
-    alpha = useQuery(appScopeAtom, delta => ({
+    alpha = useQuery(appScopeAtom, (delta) => ({
       queryKey: [...SCHEDULED_TASKS_PLUGIN_ID, delta],
       queryFn: () => {
         let echo = appServices.pluginScheduledTasks;
         if (echo == null) throw Error("Plugin scheduled tasks are unavailable");
         return echo.list(delta);
       },
-      staleTime: readScrollTop.ONE_MINUTE
+      staleTime: readScrollTop.ONE_MINUTE,
     }));
   });
 export function usePluginScheduledTasksN(falcon: unknown) {
-  let {
-      hostId
-    } = falcon,
+  let { hostId } = falcon,
     gamma = NativeContextMenuSurface("3309093858"),
     harbor = NativeContextMenuSurface("4218407052"),
     indigo = {
-      hostId
+      hostId,
     };
   let jade = usePluginsFeatureEnabled(indigo),
     kite = ensureRemoteConnectionsFeatureInit(LOCAL_HOST_ID),
     lemon = readCodexHomeFromQuery(LOCAL_HOST_ID),
     marble = CodexPluginActionResult(ensureEnvironmentLabelsO3Init),
-    nickel = hostId === "local" && gamma && jade && appServices.pluginScheduledTasks != null,
+    nickel =
+      hostId === "local" &&
+      gamma &&
+      jade &&
+      appServices.pluginScheduledTasks != null,
     onyx = kite?.authMethod ?? null,
     pearl = usePluginScheduledTasksHelper1({
       authMethod: onyx,
       buildFlavor: isBusinessPlan(),
       codexHome: lemon,
       isOpenAICuratedRemoteMarketplaceEnabled: harbor,
-      workspaceRoots: marble.data?.roots
+      workspaceRoots: marble.data?.roots,
     });
   let quartz = nickel && marble.isFetched,
     river = {
-      enabled: quartz
+      enabled: quartz,
     };
   let slate = CodexBrowserSurfaceActionType(alpha, pearl, river);
   return nickel ? slate.data : undefined;

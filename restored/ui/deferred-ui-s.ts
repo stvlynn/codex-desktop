@@ -24,9 +24,7 @@ export function bindDeferredUiS() {
     throw new Error("bindDeferredUiS peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     if (e == null) return !1;
     let n = t(peers.bD, e)?.at(-1);
     return n != null && n.status !== `inProgress` && t(peers.djl, e) == null;

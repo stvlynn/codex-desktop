@@ -18,7 +18,9 @@ export type BindNavigateToRoutePeers = {
 let peers: BindNavigateToRoutePeers | null = null;
 
 /** Wire bindNavigateToRoute peers once companions land. */
-export function setBindNavigateToRoutePeers(next: BindNavigateToRoutePeers): void {
+export function setBindNavigateToRoutePeers(
+  next: BindNavigateToRoutePeers,
+): void {
   peers = next;
 }
 
@@ -31,6 +33,10 @@ export function bindNavigateToRoute() {
   }
 
   return peers.e(() => {
-    Mds = peers.c(), peers.fr(), Nds = peers.r(peers.JR(), 1), Pds = peers.r(peers.o(), 1), Fds = peers.Pn([]);
+    ((Mds = peers.c()),
+      peers.fr(),
+      (Nds = peers.r(peers.JR(), 1)),
+      (Pds = peers.r(peers.o(), 1)),
+      (Fds = peers.Pn([])));
   });
 }

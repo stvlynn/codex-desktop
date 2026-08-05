@@ -17,26 +17,23 @@ export function seriesHasVisibleMarker(csepIn8684: any) {
     csepBind19190 !== Bn.UNRECOGNIZED
   );
 }
-export function paintSeriesEndpoint(csepIn4705: any, csepIn4706: any, csepIn4707: any, csepIn4708: any, ) {
+export function paintSeriesEndpoint(
+  csepIn4705: any,
+  csepIn4706: any,
+  csepIn4707: any,
+  csepIn4708: any,
+) {
   if (
     (csepIn4705.save(),
     (csepIn4705.globalAlpha = csepIn4708.opacity),
     csepIn4708.lineVisible &&
-      (paintAxisGridlineStroke(
-        csepIn4705,
-        csepIn4706.stroke,
-        csepIn4707,
-        {
-          color: csepIn4708.color,
-          widthPx: csepIn4708.lineWidth,
-        },
-      ),
+      (paintAxisGridlineStroke(csepIn4705, csepIn4706.stroke, csepIn4707, {
+        color: csepIn4708.color,
+        widthPx: csepIn4708.lineWidth,
+      }),
       csepIn4705.beginPath(),
       csepIn4705.moveTo(csepIn4708.x, csepIn4708.y),
-      csepIn4705.lineTo(
-        csepIn4708.x + csepIn4708.width,
-        csepIn4708.y,
-      ),
+      csepIn4705.lineTo(csepIn4708.x + csepIn4708.width, csepIn4708.y),
       csepIn4705.stroke()),
     !seriesHasVisibleMarker(csepIn4706))
   ) {

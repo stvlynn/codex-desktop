@@ -6,7 +6,12 @@ import { wr } from "../presentation-protobuf";
 import { ensurePresentationMathEnumsInit } from "../math-plain-text/math-proto-enums";
 import { ensureMathPlainTextInit } from "../math-plain-text";
 import { ensureMathMlInit } from "../math-ml";
-import { ensureCssFontStackInit, ensureMathFontStackInit, ensureMathLayoutConstantsInit, ensureTypographyUnitsInit } from "../font-stack";
+import {
+  ensureCssFontStackInit,
+  ensureMathFontStackInit,
+  ensureMathLayoutConstantsInit,
+  ensureTypographyUnitsInit,
+} from "../font-stack";
 import { ensureStyleResolveInit } from "../text-style";
 import { ensureFontMetricsInit } from "../font-metrics";
 import { ensureCssNamedColorsInit } from "../presentation-theme";

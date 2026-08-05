@@ -10,14 +10,30 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { CODEX_UPGRADE_PLAN_MODAL_CTA_CLICKED_TYPE } from "../../analytics/codex-upgrade-plan-modal-cta-clicked-type";
 import { CODEX_UPGRADE_PLAN_MODAL_SHOWN_TYPE } from "../../analytics/codex-upgrade-plan-modal-shown-type";
 import { logProductEvent } from "../../analytics/log-product-event";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { normalizeGithubHostname } from "../../conversation/github-hostname";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { CHATGPT_CODEX_CLOUD_URL } from "../../docs/chatgpt-cloud-urls";
-import { CHATGPT_COM_CODEX_PURCHASE_CODEX_TEAM_URL, CHATGPT_COM_CODEX_PURCHASE_TEAM_URL } from "../../docs/codex-doc-urls";
+import {
+  CHATGPT_COM_CODEX_PURCHASE_CODEX_TEAM_URL,
+  CHATGPT_COM_CODEX_PURCHASE_TEAM_URL,
+} from "../../docs/codex-doc-urls";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
@@ -36,56 +52,80 @@ import { formatPlanPrice, initPlanPricing } from "../../utils/plan-pricing";
 import { reuseArrayIfShallowEqual } from "../../utils/reuse-array-if-shallow-equal";
 import { ChatGptPlanId, ensureChatGptPlanIdInit } from "../chatgpt-plan-ids";
 import { validateCreditTargetAgainstMinimum } from "../credit-auto-reload-validators";
-import { CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS, getCreditsPurchaseMinimumQuantity } from "../credits-purchase-field-validators";
+import {
+  CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS,
+  getCreditsPurchaseMinimumQuantity,
+} from "../credits-purchase-field-validators";
 import { DeferredAccountRy } from "../deferred-account-ry";
 import { deferredAccountUv } from "../deferred-account-uv";
 import { isStartingProcessExpired } from "../is-starting-process-expired";
-import { billingSlugToChatGptPlanId, chatGptPlanIdToBillingSlug, ensureChatGptPlanIdInit as ensureChatGptPlanIdInitAlias, ensureSubscriptionPlanSegmentInit, ensureSubscriptionUpdatePlanDialogInit, SubscriptionPlanSegment, SubscriptionUpdatePlanDialog } from "../subscription-update-plan";
+import {
+  billingSlugToChatGptPlanId,
+  chatGptPlanIdToBillingSlug,
+  ensureChatGptPlanIdInit as ensureChatGptPlanIdInitAlias,
+  ensureSubscriptionPlanSegmentInit,
+  ensureSubscriptionUpdatePlanDialogInit,
+  SubscriptionPlanSegment,
+  SubscriptionUpdatePlanDialog,
+} from "../subscription-update-plan";
 import { useCreditAutoReloadSettingsQuery } from "../use-credit-auto-reload-settings-query";
 import { useUpgradePlanCopyVariant } from "../use-upgrade-plan-copy-variant";
 
-
 // Wave5d soft JSX companions.
-function Alpha(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Bravo(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Bravo(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Copper(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Copper(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Delta(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Delta(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Echo(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Echo(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function UpgradePlanDialogUpgradePlanDialog(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function UpgradePlanDialogUpgradePlanDialog(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -109,7 +149,7 @@ export function upgradePlanDialogUpgradePlanDialogModal({
   currentPlan,
   defaultTab,
   onClose,
-  source
+  source,
 }: {
   currentPlan?: unknown;
   defaultTab?: unknown;
@@ -119,29 +159,21 @@ export function upgradePlanDialogUpgradePlanDialogModal({
   let lemon = CodexPluginActionType(appScopeAtom),
     marble = useIntl(),
     nickel = lemon.queryClient,
-    {
-      email
-    } = useAuth(),
+    { email } = useAuth(),
     onyx = AppIconAlt(),
-    {
-      data
-    } = reuseArrayIfShallowEqual(),
+    { data } = reuseArrayIfShallowEqual(),
     [pearl, quartz] = falcon.useState(null),
     [river, slate] = falcon.useState(null),
     [timber, umbra] = falcon.useState(false),
-    {
-      data: _data
-    } = AppInitialQb({
-      enabled: true
+    { data: _data } = AppInitialQb({
+      enabled: true,
     }),
-    {
-      data: __data
-    } = AppInitialIx({
+    { data: __data } = AppInitialIx({
       billingCurrency: _data,
-      enabled: true
+      enabled: true,
     }),
     violet = useUpgradePlanCopyVariant({
-      logExposure: false
+      logExposure: false,
     }),
     willow = data?.plan_type;
   falcon.useEffect(() => {
@@ -150,7 +182,7 @@ export function upgradePlanDialogUpgradePlanDialogModal({
   falcon.useEffect(() => {
     logProductEvent(lemon, CODEX_UPGRADE_PLAN_MODAL_SHOWN_TYPE, {
       defaultTab,
-      source
+      source,
     });
   }, [defaultTab, lemon, source]);
   let xenon = (basalt, cedar) => {
@@ -158,55 +190,71 @@ export function upgradePlanDialogUpgradePlanDialogModal({
         deferredUiEnt({
           event: cedar,
           href: basalt,
-          initiator: "open_in_browser_bridge"
+          initiator: "open_in_browser_bridge",
         });
         return;
       }
       PdfPermissionFlag({
         href: basalt,
-        initiator: "open_in_browser_bridge"
+        initiator: "open_in_browser_bridge",
       });
     },
     yellow = async (daisy, ember, flint) => {
       let garnet = AppInitialLy({
         loginHint: email,
         statsigClient: onyx,
-        url: daisy
+        url: daisy,
       });
       if (installModalBrowserExtensionMessages(flint)) {
         xenon(garnet, flint);
         return;
       }
-      if (data == null || currentPlan === ChatGptPlanId.FREE || ember !== ChatGptPlanId.PLUS && ember !== ChatGptPlanId.PROLITE && ember !== ChatGptPlanId.PRO) {
+      if (
+        data == null ||
+        currentPlan === ChatGptPlanId.FREE ||
+        (ember !== ChatGptPlanId.PLUS &&
+          ember !== ChatGptPlanId.PROLITE &&
+          ember !== ChatGptPlanId.PRO)
+      ) {
         xenon(garnet, flint);
         return;
       }
       let hazel = chatGptPlanIdToBillingSlug(ember),
         ivory = currentPlan === ChatGptPlanId.GO,
-        jasper = currentPlan === ChatGptPlanId.PLUS && (ember === ChatGptPlanId.PROLITE || ember === ChatGptPlanId.PRO),
-        kelp = currentPlan === ChatGptPlanId.PRO && ember === ChatGptPlanId.PROLITE,
-        lotus = currentPlan === ChatGptPlanId.PROLITE && ember === ChatGptPlanId.PRO;
+        jasper =
+          currentPlan === ChatGptPlanId.PLUS &&
+          (ember === ChatGptPlanId.PROLITE || ember === ChatGptPlanId.PRO),
+        kelp =
+          currentPlan === ChatGptPlanId.PRO && ember === ChatGptPlanId.PROLITE,
+        lotus =
+          currentPlan === ChatGptPlanId.PROLITE && ember === ChatGptPlanId.PRO;
       if (!ivory && !jasper && !kelp && !lotus) {
         xenon(garnet, flint);
         return;
       }
       slate(ember);
       try {
-        let mint = await nickel.fetchQuery(AppInitialXb({
-          accountId: data.id,
-          updatedPlan: hazel
-        }));
+        let mint = await nickel.fetchQuery(
+          AppInitialXb({
+            accountId: data.id,
+            updatedPlan: hazel,
+          }),
+        );
         if (kelp) {
           quartz({
             kind: "scheduled_downgrade",
             preview: mint,
             updatedPlan: "chatgptprolite",
-            webUrl: garnet
+            webUrl: garnet,
           });
           return;
         }
         let nova = mint.default_payment_method;
-        if (!nova?.card_last4?.trim() || __data?.minorUnitExponent == null || __data.currencyCode.toUpperCase() !== mint.currency.toUpperCase()) {
+        if (
+          !nova?.card_last4?.trim() ||
+          __data?.minorUnitExponent == null ||
+          __data.currencyCode.toUpperCase() !== mint.currency.toUpperCase()
+        ) {
           xenon(garnet, flint);
           return;
         }
@@ -216,7 +264,7 @@ export function upgradePlanDialogUpgradePlanDialogModal({
           paymentMethod: nova,
           preview: mint,
           updatedPlan: hazel,
-          webUrl: garnet
+          webUrl: garnet,
         });
       } catch {
         xenon(garnet, flint);
@@ -224,13 +272,14 @@ export function upgradePlanDialogUpgradePlanDialogModal({
         slate(null);
       }
     },
-    zinc = olive => {
-      pearl != null && logProductEvent(lemon, CODEX_UPGRADE_PLAN_MODAL_CTA_CLICKED_TYPE, {
-        ctaAction: olive,
-        modalType: pearl.kind,
-        source,
-        targetPlan: billingSlugToChatGptPlanId(pearl.updatedPlan)
-      });
+    zinc = (olive) => {
+      pearl != null &&
+        logProductEvent(lemon, CODEX_UPGRADE_PLAN_MODAL_CTA_CLICKED_TYPE, {
+          ctaAction: olive,
+          modalType: pearl.kind,
+          source,
+          targetPlan: billingSlugToChatGptPlanId(pearl.updatedPlan),
+        });
     },
     amber = async () => {
       if (!(pearl == null || data == null)) {
@@ -238,24 +287,32 @@ export function upgradePlanDialogUpgradePlanDialogModal({
         try {
           let prism = await AppInitialZb({
             accountId: data.id,
-            updatedPlan: pearl.updatedPlan
+            updatedPlan: pearl.updatedPlan,
           });
           if (prism.status == null || prism.status === "pending") {
             quartz(null);
-            prism.status == null && pearl.kind === "saved_card_upgrade" && (lemon.get(toastAtom).success(marble.formatMessage({
-              id: "settings.usage.pricingPlanPage.subscriptionUpdate.upgradeSucceeded",
-              defaultMessage: "Successfully upgraded plan",
-              description: "Toast shown after a plan upgrade succeeds"
-            })), onClose());
-            await Promise.all([nickel.invalidateQueries({
-              queryKey: ["accounts", "check"]
-            }), nickel.invalidateQueries({
-              queryKey: ["rate-limit-status"]
-            })]);
+            prism.status == null &&
+              pearl.kind === "saved_card_upgrade" &&
+              (lemon.get(toastAtom).success(
+                marble.formatMessage({
+                  id: "settings.usage.pricingPlanPage.subscriptionUpdate.upgradeSucceeded",
+                  defaultMessage: "Successfully upgraded plan",
+                  description: "Toast shown after a plan upgrade succeeds",
+                }),
+              ),
+              onClose());
+            await Promise.all([
+              nickel.invalidateQueries({
+                queryKey: ["accounts", "check"],
+              }),
+              nickel.invalidateQueries({
+                queryKey: ["rate-limit-status"],
+              }),
+            ]);
             return;
           }
           await useCreditAutoReloadSettingsQuery({
-            accountId: data.id
+            accountId: data.id,
           });
           xenon(pearl.webUrl);
           quartz(null);
@@ -267,55 +324,75 @@ export function upgradePlanDialogUpgradePlanDialogModal({
         }
       }
     };
-  return <>
-      {<UpgradePlanDialogUpgradePlanDialog {...{
-      open: pearl == null,
-      currentPlan,
-      defaultTab,
-      loadingTargetPlan: river,
-      pricingInfo: __data ?? null,
-      getPlansUrl: violet,
-      onCtaClick: (quill, reef) => {
-        reef === ChatGptPlanId.SELF_SERVE_BUSINESS_USAGE_BASED && CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS(lemon, {
-          audience: "workspace",
-          checkoutKind: "codex_team",
-          entryPoint: "upgrade_plan_modal"
-        });
-        logProductEvent(lemon, CODEX_UPGRADE_PLAN_MODAL_CTA_CLICKED_TYPE, {
-          ctaAction: quill,
-          source,
-          targetPlan: reef
-        });
-      },
-      onOpenChange: sage => {
-        !sage && pearl == null && onClose();
-      },
-      onOpenUrl: (topaz, ultra, vapor) => {
-        yellow(topaz, ultra, vapor);
+  return (
+    <>
+      {
+        <UpgradePlanDialogUpgradePlanDialog
+          {...{
+            open: pearl == null,
+            currentPlan,
+            defaultTab,
+            loadingTargetPlan: river,
+            pricingInfo: __data ?? null,
+            getPlansUrl: violet,
+            onCtaClick: (quill, reef) => {
+              reef === ChatGptPlanId.SELF_SERVE_BUSINESS_USAGE_BASED &&
+                CREDIT_PURCHASE_MIN_SPEND_MINOR_UNITS(lemon, {
+                  audience: "workspace",
+                  checkoutKind: "codex_team",
+                  entryPoint: "upgrade_plan_modal",
+                });
+              logProductEvent(
+                lemon,
+                CODEX_UPGRADE_PLAN_MODAL_CTA_CLICKED_TYPE,
+                {
+                  ctaAction: quill,
+                  source,
+                  targetPlan: reef,
+                },
+              );
+            },
+            onOpenChange: (sage) => {
+              !sage && pearl == null && onClose();
+            },
+            onOpenUrl: (topaz, ultra, vapor) => {
+              yellow(topaz, ultra, vapor);
+            },
+          }}
+        />
       }
-    }} />}
-      {pearl == null ? null : <SubscriptionUpdatePlanDialog {...{
-      isUpdating: timber,
-      pricingInfo: __data ?? null,
-      subscriptionUpdate: pearl,
-      onCancel: () => {
-        zinc("cancel");
-        quartz(null);
-      },
-      onConfirm: () => {
-        zinc(pearl.kind === "saved_card_upgrade" && pearl.preview.amount_due.amount > 0 ? "pay_now" : "confirm");
-        amber();
-      },
-      onGoToWeb: wheat => {
-        zinc("go_to_web");
-        xenon(pearl.webUrl, wheat);
-        quartz(null);
-      },
-      onOpenChange: yarn => {
-        yarn || (zinc("dismiss"), timber || quartz(null));
-      }
-    }} />}
-    </>;
+      {pearl == null ? null : (
+        <SubscriptionUpdatePlanDialog
+          {...{
+            isUpdating: timber,
+            pricingInfo: __data ?? null,
+            subscriptionUpdate: pearl,
+            onCancel: () => {
+              zinc("cancel");
+              quartz(null);
+            },
+            onConfirm: () => {
+              zinc(
+                pearl.kind === "saved_card_upgrade" &&
+                  pearl.preview.amount_due.amount > 0
+                  ? "pay_now"
+                  : "confirm",
+              );
+              amber();
+            },
+            onGoToWeb: (wheat) => {
+              zinc("go_to_web");
+              xenon(pearl.webUrl, wheat);
+              quartz(null);
+            },
+            onOpenChange: (yarn) => {
+              yarn || (zinc("dismiss"), timber || quartz(null));
+            },
+          }}
+        />
+      )}
+    </>
+  );
 }
 function gamma(zephyr) {
   let {
@@ -328,64 +405,99 @@ function gamma(zephyr) {
       planDetailsLabel,
       price,
       targetPlan,
-      title
+      title,
     } = zephyr,
     acorn = setRemoteControlEnabledForHost({
       currentPlan,
-      targetPlan
+      targetPlan,
     });
   let bloom = acorn,
     coral = validateCreditTargetAgainstMinimum({
       currentPlan,
-      targetPlan
+      targetPlan,
     });
   let drift = coral,
-    eagle = currentPlan === ChatGptPlanId.GO && targetPlan === ChatGptPlanId.PLUS || currentPlan === ChatGptPlanId.PLUS && targetPlan === ChatGptPlanId.PROLITE,
-    frost = planDetailsLabel == null ? null : <Alpha {...{
-      detailsLabel: planDetailsLabel,
-      getPlansUrl,
-      onOpenUrl
-    }} />;
+    eagle =
+      (currentPlan === ChatGptPlanId.GO && targetPlan === ChatGptPlanId.PLUS) ||
+      (currentPlan === ChatGptPlanId.PLUS &&
+        targetPlan === ChatGptPlanId.PROLITE),
+    frost =
+      planDetailsLabel == null ? null : (
+        <Alpha
+          {...{
+            detailsLabel: planDetailsLabel,
+            getPlansUrl,
+            onOpenUrl,
+          }}
+        />
+      );
   let glide = bloom === "upgrade" ? "primary" : "outline",
     honey = bloom === "current",
-    iris = lunar => {
-      drift == null || bloom === "current" || (onCtaClick(bloom, targetPlan), onOpenUrl(drift, targetPlan, lunar));
+    iris = (lunar) => {
+      drift == null ||
+        bloom === "current" ||
+        (onCtaClick(bloom, targetPlan), onOpenUrl(drift, targetPlan, lunar));
     };
-  let jewel = isLoading ? <MemoizedFormattedMessage {...{
-    id: "settings.usage.upgradePlan.loadingPlanChange",
-    defaultMessage: "Loading…",
-    description: "Label shown in an upgrade plan button while loading its confirmation dialog"
-  }} /> : bloom === "current" ? <MemoizedFormattedMessage {...{
-    id: "settings.usage.upgradePlan.current",
-    defaultMessage: "Current plan",
-    description: "Disabled CTA label for the user's current plan"
-  }} /> : bloom === "downgrade" ? <MemoizedFormattedMessage {...{
-    id: "settings.usage.upgradePlan.downgrade",
-    defaultMessage: "Downgrade",
-    description: "CTA label for moving to a lower-tier plan"
-  }} /> : <MemoizedFormattedMessage {...{
-    id: "settings.usage.upgradePlan.upgrade",
-    defaultMessage: "Upgrade plan",
-    description: "CTA label for moving to a higher-tier plan"
-  }} />;
-  let knoll = <ReadLoginRouteQuerySnapshot {...{
-    className: "w-full justify-center",
-    color: glide,
-    disabled: honey,
-    loading: isLoading,
-    size: "large",
-    onClick: iris,
-    children: jewel
-  }} />;
-  return <Bravo {...{
-    highlighted: eagle,
-    title,
-    priceLabel: price,
-    features,
-    featureSlotCount: 3,
-    detailsLink: frost,
-    footer: knoll
-  }} />;
+  let jewel = isLoading ? (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.usage.upgradePlan.loadingPlanChange",
+        defaultMessage: "Loading…",
+        description:
+          "Label shown in an upgrade plan button while loading its confirmation dialog",
+      }}
+    />
+  ) : bloom === "current" ? (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.usage.upgradePlan.current",
+        defaultMessage: "Current plan",
+        description: "Disabled CTA label for the user's current plan",
+      }}
+    />
+  ) : bloom === "downgrade" ? (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.usage.upgradePlan.downgrade",
+        defaultMessage: "Downgrade",
+        description: "CTA label for moving to a lower-tier plan",
+      }}
+    />
+  ) : (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.usage.upgradePlan.upgrade",
+        defaultMessage: "Upgrade plan",
+        description: "CTA label for moving to a higher-tier plan",
+      }}
+    />
+  );
+  let knoll = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        className: "w-full justify-center",
+        color: glide,
+        disabled: honey,
+        loading: isLoading,
+        size: "large",
+        onClick: iris,
+        children: jewel,
+      }}
+    />
+  );
+  return (
+    <Bravo
+      {...{
+        highlighted: eagle,
+        title,
+        priceLabel: price,
+        features,
+        featureSlotCount: 3,
+        detailsLink: frost,
+        footer: knoll,
+      }}
+    />
+  );
 }
 function harbor(moss) {
   let {
@@ -400,90 +512,133 @@ function harbor(moss) {
       priceLabel,
       subtitle,
       targetPlan,
-      title
+      title,
     } = moss,
     north = targetPlan === ChatGptPlanId.SELF_SERVE_BUSINESS,
-    orbit = <Alpha {...{
-      detailsLabel: planDetailsLabel,
-      getPlansUrl,
-      onOpenUrl
-    }} />;
-  let pine = ridge => {
+    orbit = (
+      <Alpha
+        {...{
+          detailsLabel: planDetailsLabel,
+          getPlansUrl,
+          onOpenUrl,
+        }}
+      />
+    );
+  let pine = (ridge) => {
     onCtaClick("upgrade", targetPlan);
     onClick(ridge);
   };
-  let quest = <ReadLoginRouteQuerySnapshot {...{
-    className: "w-full justify-center",
-    size: "large",
-    onClick: pine,
-    children: cta
-  }} />;
-  return <Bravo {...{
-    highlighted: north,
-    title,
-    subtitle,
-    priceLabel,
-    priceLabelSize: "compact",
-    description,
-    features,
-    featureSlotCount: 4,
-    detailsLink: orbit,
-    footer: quest
-  }} />;
+  let quest = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        className: "w-full justify-center",
+        size: "large",
+        onClick: pine,
+        children: cta,
+      }}
+    />
+  );
+  return (
+    <Bravo
+      {...{
+        highlighted: north,
+        title,
+        subtitle,
+        priceLabel,
+        priceLabelSize: "compact",
+        description,
+        features,
+        featureSlotCount: 4,
+        detailsLink: orbit,
+        footer: quest,
+      }}
+    />
+  );
 }
 function indigo(storm) {
-  let {
-      tier
-    } = storm,
-    tide = <MemoizedFormattedMessage {...{
-      id: "settings.usage.upgradePlan.personal.pro.title",
-      defaultMessage: "Pro",
-      description: "Title for the Pro personal plan card"
-    }} />;
-  return <div className="flex items-center gap-1">
+  let { tier } = storm,
+    tide = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.usage.upgradePlan.personal.pro.title",
+          defaultMessage: "Pro",
+          description: "Title for the Pro personal plan card",
+        }}
+      />
+    );
+  return (
+    <div className="flex items-center gap-1">
       {tide}
       <span className="font-normal text-token-text-secondary">{tier}</span>
-    </div>;
+    </div>
+  );
 }
 function jade(unity) {
-  return [{
-    icon: <Copper {...{}} />,
-    label: unity === ChatGptPlanId.PROLITE ? <MemoizedFormattedMessage {...{
-      id: "settings.usage.upgradePlan.personal.proLite.usage",
-      defaultMessage: "5x more usage than Plus",
-      description: "Usage feature for the Pro 5x plan card"
-    }} /> : <MemoizedFormattedMessage {...{
-      id: "settings.usage.upgradePlan.personal.pro.usage",
-      defaultMessage: "20x more usage than Plus",
-      description: "Usage feature for the Pro 20x plan card"
-    }} />
-  }, {
-    icon: <Delta {...{}} />,
-    label: <MemoizedFormattedMessage {...{
-      id: "settings.usage.upgradePlan.personal.pro.model",
-      defaultMessage: "GPT-5.5 Pro",
-      description: "Model feature on the Pro personal plan card"
-    }} />
-  }, {
-    icon: <Echo {...{}} />,
-    label: <MemoizedFormattedMessage {...{
-      id: "settings.usage.upgradePlan.personal.pro.workspace",
-      defaultMessage: "Connect to Google Workspace",
-      description: "Workspace feature on the Pro personal plan card"
-    }} />
-  }];
+  return [
+    {
+      icon: <Copper {...{}} />,
+      label:
+        unity === ChatGptPlanId.PROLITE ? (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.usage.upgradePlan.personal.proLite.usage",
+              defaultMessage: "5x more usage than Plus",
+              description: "Usage feature for the Pro 5x plan card",
+            }}
+          />
+        ) : (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.usage.upgradePlan.personal.pro.usage",
+              defaultMessage: "20x more usage than Plus",
+              description: "Usage feature for the Pro 20x plan card",
+            }}
+          />
+        ),
+    },
+    {
+      icon: <Delta {...{}} />,
+      label: (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.usage.upgradePlan.personal.pro.model",
+            defaultMessage: "GPT-5.5 Pro",
+            description: "Model feature on the Pro personal plan card",
+          }}
+        />
+      ),
+    },
+    {
+      icon: <Echo {...{}} />,
+      label: (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.usage.upgradePlan.personal.pro.workspace",
+            defaultMessage: "Connect to Google Workspace",
+            description: "Workspace feature on the Pro personal plan card",
+          }}
+        />
+      ),
+    },
+  ];
 }
 function kite(vale) {
-  let {
-    plan
-  } = vale;
-  return plan === ChatGptPlanId.PROLITE ? <MemoizedFormattedMessage {...{
-    id: "settings.usage.upgradePlan.more.proLite",
-    defaultMessage: "View more details for Pro 5x plan",
-    description: "Screen reader label for the Pro 5x plan details link"
-  }} /> : <MemoizedFormattedMessage {...{
-    id: "settings.usage.upgradePlan.more.pro",
-    defaultMessage: "View more details for Pro 20x plan",
-    description: "Screen reader label for the Pro 20x plan details link"
-  }} />;
+  let { plan } = vale;
+  return plan === ChatGptPlanId.PROLITE ? (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.usage.upgradePlan.more.proLite",
+        defaultMessage: "View more details for Pro 5x plan",
+        description: "Screen reader label for the Pro 5x plan details link",
+      }}
+    />
+  ) : (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.usage.upgradePlan.more.pro",
+        defaultMessage: "View more details for Pro 20x plan",
+        description: "Screen reader label for the Pro 20x plan details link",
+      }}
+    />
+  );
 }

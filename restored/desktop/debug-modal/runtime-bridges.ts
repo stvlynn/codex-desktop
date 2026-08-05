@@ -7,4 +7,3 @@
 
 /** Wave GA: bind no longer required after full body promote */
 export function bindDebugModal(_next: unknown): void {}
-

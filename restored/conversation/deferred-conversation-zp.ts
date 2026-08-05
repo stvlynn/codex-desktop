@@ -21,7 +21,9 @@ export type BindDeferredConversationZpPeers = {
 let peers: BindDeferredConversationZpPeers | null = null;
 
 /** Wire bindDeferredConversationZp peers once companions land. */
-export function setBindDeferredConversationZpPeers(next: BindDeferredConversationZpPeers): void {
+export function setBindDeferredConversationZpPeers(
+  next: BindDeferredConversationZpPeers,
+): void {
   peers = next;
 }
 
@@ -33,8 +35,8 @@ export function bindDeferredConversationZp() {
     throw new Error("bindDeferredConversationZp peers are not configured");
   }
 
-  return peers.Ea(peers.Q, e => {
-    let t = e => ({
+  return peers.Ea(peers.Q, (e) => {
+    let t = (e) => ({
         connectionGroups: e.connectionGroups,
         effectiveSidebarOrganizeMode: e.effectiveSidebarOrganizeMode,
         hasAnyProjectRows: e.hasAnyProjectRows,
@@ -51,23 +53,42 @@ export function bindDeferredConversationZp() {
         showRecentChatsSection: e.showRecentChatsSection,
         visibleCloudThreadKeys: e.visibleCloudThreadKeys,
         visibleRecentChatThreadKeys: e.visibleRecentChatThreadKeys,
-        visibleUnpinnedProjectGroups: e.visibleUnpinnedProjectGroups
+        visibleUnpinnedProjectGroups: e.visibleUnpinnedProjectGroups,
       }),
       n = null;
-    return peers.Ma(peers.Q, ({
-      get: r
-    }) => {
+    return peers.Ma(peers.Q, ({ get: r }) => {
       let i = r(peers.F1, e),
         a = t(i);
-      return n = peers.Vrc(n, {
-        ...a,
-        connectionGroups: peers.tZi(n?.connectionGroups ?? [], a.connectionGroups),
-        pendingStableWorktrees: peers.P1(n?.pendingStableWorktrees ?? [], a.pendingStableWorktrees),
-        recentRenderableThreadKeys: peers.P1(n?.recentRenderableThreadKeys ?? [], a.recentRenderableThreadKeys),
-        visibleRecentChatThreadKeys: peers.P1(n?.visibleRecentChatThreadKeys ?? [], a.visibleRecentChatThreadKeys),
-        visibleCloudThreadKeys: peers.P1(n?.visibleCloudThreadKeys ?? [], a.visibleCloudThreadKeys),
-        visibleUnpinnedProjectGroups: peers.zrc(n?.visibleUnpinnedProjectGroups ?? [], a.visibleUnpinnedProjectGroups)
-      }), n;
+      return (
+        (n = peers.Vrc(n, {
+          ...a,
+          connectionGroups: peers.tZi(
+            n?.connectionGroups ?? [],
+            a.connectionGroups,
+          ),
+          pendingStableWorktrees: peers.P1(
+            n?.pendingStableWorktrees ?? [],
+            a.pendingStableWorktrees,
+          ),
+          recentRenderableThreadKeys: peers.P1(
+            n?.recentRenderableThreadKeys ?? [],
+            a.recentRenderableThreadKeys,
+          ),
+          visibleRecentChatThreadKeys: peers.P1(
+            n?.visibleRecentChatThreadKeys ?? [],
+            a.visibleRecentChatThreadKeys,
+          ),
+          visibleCloudThreadKeys: peers.P1(
+            n?.visibleCloudThreadKeys ?? [],
+            a.visibleCloudThreadKeys,
+          ),
+          visibleUnpinnedProjectGroups: peers.zrc(
+            n?.visibleUnpinnedProjectGroups ?? [],
+            a.visibleUnpinnedProjectGroups,
+          ),
+        })),
+        n
+      );
     });
   });
 }

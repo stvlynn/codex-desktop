@@ -10,17 +10,24 @@ export type ClearActiveOverlayAfterNavigatePeers = {
 let peers: ClearActiveOverlayAfterNavigatePeers | null = null;
 
 /** Wire clearActiveOverlayAfterNavigate peers once companions land. */
-export function setClearActiveOverlayAfterNavigatePeers(next: ClearActiveOverlayAfterNavigatePeers): void {
+export function setClearActiveOverlayAfterNavigatePeers(
+  next: ClearActiveOverlayAfterNavigatePeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `ZT` / internal `J1o`.
  */
-export function clearActiveOverlayAfterNavigate(e: unknown, t: unknown, n: unknown, r: unknown) {
+export function clearActiveOverlayAfterNavigate(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+  r: unknown,
+) {
   if (peers == null) {
     throw new Error("clearActiveOverlayAfterNavigate peers are not configured");
   }
 
-  peers.Y1o(e, t, n ?? peers.zcn(r)), e.set(peers.EY, null);
+  (peers.Y1o(e, t, n ?? peers.zcn(r)), e.set(peers.EY, null));
 }

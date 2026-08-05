@@ -11,14 +11,20 @@ export type VacRouteForWorkspacePathPeers = {
 let peers: VacRouteForWorkspacePathPeers | null = null;
 
 /** Wire setVacRouteForWorkspacePath peers once companions land. */
-export function setVacRouteForWorkspacePathPeers(next: VacRouteForWorkspacePathPeers): void {
+export function setVacRouteForWorkspacePathPeers(
+  next: VacRouteForWorkspacePathPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `setVacRouteForWorkspacePath` / internal `cac`.
  */
-export function setVacRouteForWorkspacePath(e: unknown, t: unknown, n: unknown) {
+export function setVacRouteForWorkspacePath(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+) {
   if (peers == null) {
     throw new Error("setVacRouteForWorkspacePath peers are not configured");
   }

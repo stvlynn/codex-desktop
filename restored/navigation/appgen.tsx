@@ -30,6 +30,14 @@ export function bindAppgen() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.DD(), peers.Vf(), peers.tR(), peers.zbt(), peers.kx(), peers.Wnn(), peers.ONa(), peers.PNa();
+    (peers.Au(),
+      peers.DD(),
+      peers.Vf(),
+      peers.tR(),
+      peers.zbt(),
+      peers.kx(),
+      peers.Wnn(),
+      peers.ONa(),
+      peers.PNa());
   });
 }

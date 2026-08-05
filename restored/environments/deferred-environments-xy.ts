@@ -8,7 +8,9 @@ export type BindDeferredEnvironmentsXYPeers = {
 let peers: BindDeferredEnvironmentsXYPeers | null = null;
 
 /** Wire bindDeferredEnvironmentsXY peers once companions land. */
-export function setBindDeferredEnvironmentsXYPeers(next: BindDeferredEnvironmentsXYPeers): void {
+export function setBindDeferredEnvironmentsXYPeers(
+  next: BindDeferredEnvironmentsXYPeers,
+): void {
   peers = next;
 }
 

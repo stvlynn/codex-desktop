@@ -28,6 +28,10 @@ export function markdown() {
   }
 
   return peers.e(() => {
-    m2i = peers.r(peers.o(), 1), peers.vP(), peers.fR(), peers.f2i(), h2i = `asdk_app_69b1a0fe330c8191840342afb4edb2fd`;
+    ((m2i = peers.r(peers.o(), 1)),
+      peers.vP(),
+      peers.fR(),
+      peers.f2i(),
+      (h2i = `asdk_app_69b1a0fe330c8191840342afb4edb2fd`));
   });
 }

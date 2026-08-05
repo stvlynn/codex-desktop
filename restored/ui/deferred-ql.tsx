@@ -25,6 +25,6 @@ export function bindDeferredQL() {
   }
 
   return peers.e(() => {
-    Jna = peers.r(peers.o(), 1), Yna = (0, peers.Jna.createContext)(null);
+    ((Jna = peers.r(peers.o(), 1)), (Yna = (0, peers.Jna.createContext)(null)));
   });
 }

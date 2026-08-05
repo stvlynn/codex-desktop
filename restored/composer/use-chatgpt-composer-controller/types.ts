@@ -93,5 +93,4 @@ export type SeedChatgptComposerConversationOptions = {
 };
 
 /** Public composer-controller surface (semantic barrel; thin boundary is compat-only). */
-export type ChatgptComposerControllerRuntimeModule =
-  typeof import("./index");
+export type ChatgptComposerControllerRuntimeModule = typeof import("./index");

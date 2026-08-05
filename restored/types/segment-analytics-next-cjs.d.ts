@@ -30,7 +30,10 @@ declare module "@segment/analytics-next/dist/cjs/plugins/middleware" {
     middleware: DestinationMiddlewareFunction[],
   ): Promise<unknown | null>;
 
-  export function sourceMiddlewarePlugin(fn: MiddlewareFunction, integrations: Record<string, unknown> | undefined): Plugin;
+  export function sourceMiddlewarePlugin(
+    fn: MiddlewareFunction,
+    integrations: Record<string, unknown> | undefined,
+  ): Plugin;
 }
 
 declare module "@segment/analytics-next/dist/cjs/core/stats" {
@@ -83,7 +86,10 @@ declare module "@segment/analytics-next/dist/cjs/lib/p-while" {
 }
 
 declare module "@segment/analytics-next/dist/cjs/lib/merged-options" {
-  export function mergedOptions(cdnSettings: unknown, options: unknown): Record<string, unknown>;
+  export function mergedOptions(
+    cdnSettings: unknown,
+    options: unknown,
+  ): Record<string, unknown>;
 }
 
 declare module "@segment/analytics-next/dist/cjs/core/stats/metric-helpers" {

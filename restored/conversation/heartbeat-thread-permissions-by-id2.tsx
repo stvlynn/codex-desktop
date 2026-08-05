@@ -20,7 +20,9 @@ export type BindBindHeartbeatThreadPermissionsById2Peers = {
 let peers: BindBindHeartbeatThreadPermissionsById2Peers | null = null;
 
 /** Wire bindBindHeartbeatThreadPermissionsById2 peers once companions land. */
-export function setBindBindHeartbeatThreadPermissionsById2Peers(next: BindBindHeartbeatThreadPermissionsById2Peers): void {
+export function setBindBindHeartbeatThreadPermissionsById2Peers(
+  next: BindBindHeartbeatThreadPermissionsById2Peers,
+): void {
   peers = next;
 }
 
@@ -29,15 +31,20 @@ export function setBindBindHeartbeatThreadPermissionsById2Peers(next: BindBindHe
  */
 export function bindBindHeartbeatThreadPermissionsById2() {
   if (peers == null) {
-    throw new Error("bindBindHeartbeatThreadPermissionsById2 peers are not configured");
+    throw new Error(
+      "bindBindHeartbeatThreadPermissionsById2 peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.DD(), peers.ed(), peers.Im(), K8l = peers.Pm(`heartbeat-thread-permissions-by-id`, {}), q8l = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => {
-      let n = peers.U8l(t(peers.yD, peers.e), t(peers.dD, peers.e));
-      return n == null ? null : JSON.stringify(n);
-    });
+    (peers.Ho(),
+      peers.DD(),
+      peers.ed(),
+      peers.Im(),
+      (K8l = peers.Pm(`heartbeat-thread-permissions-by-id`, {})),
+      (q8l = peers.Oa(peers.Q, (e, { get: t }) => {
+        let n = peers.U8l(t(peers.yD, peers.e), t(peers.dD, peers.e));
+        return n == null ? null : JSON.stringify(n);
+      })));
   });
 }

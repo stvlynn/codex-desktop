@@ -26,18 +26,15 @@ export function bindDeferredUiGB() {
     throw new Error("bindDeferredUiGB peers are not configured");
   }
 
-  return peers.Ma(peers.hT, ({
-    get: e
-  }) => {
+  return peers.Ma(peers.hT, ({ get: e }) => {
     let t = e(peers.dz),
       n = e(peers.N$i);
     for (let r of e(peers.uz).values()) {
       if (!r.hostedInThreadScrollLayout) continue;
-      let {
-          mcpAppId: e
-        } = r,
+      let { mcpAppId: e } = r,
         i = t.get(e);
-      if (i?.isInlineExpanded === !0 || i?.isFullScreen === !0 || n.has(e)) return !0;
+      if (i?.isInlineExpanded === !0 || i?.isFullScreen === !0 || n.has(e))
+        return !0;
     }
     return !1;
   });

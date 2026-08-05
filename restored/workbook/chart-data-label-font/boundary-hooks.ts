@@ -3,4 +3,6 @@
 
 export type ChartDataLabelFontHooks = Record<string, never>;
 export const cdlfH: ChartDataLabelFontHooks = {} as ChartDataLabelFontHooks;
-export function wireChartDataLabelFontBoundaryHooks(_next: Partial<ChartDataLabelFontHooks> = {}): void {}
+export function wireChartDataLabelFontBoundaryHooks(
+  _next: Partial<ChartDataLabelFontHooks> = {},
+): void {}

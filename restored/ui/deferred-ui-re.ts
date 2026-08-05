@@ -29,6 +29,6 @@ export function bindDeferredUiRE() {
     Input: peers.ZYo,
     Item: peers.$Yo,
     List: peers.QYo,
-    Root: peers.XYo
+    Root: peers.XYo,
   };
 }

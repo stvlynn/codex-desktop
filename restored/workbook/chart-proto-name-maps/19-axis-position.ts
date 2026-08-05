@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Hn as _presentationHn,
-} from "../presentation-protobuf";
+import { Hn as _presentationHn } from "../presentation-protobuf";
 
 export const axisPositionNameToProto = {
   left: _presentationHn.AXIS_POSITION_LEFT,

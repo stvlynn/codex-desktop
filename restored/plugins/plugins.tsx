@@ -32,6 +32,15 @@ export function bindBindPlugins() {
   }
 
   return peers.e(() => {
-    V4i = peers.c(), peers.Qt(), peers.Vf(), peers.r6r(), peers.h6r(), peers.UN(), peers.YN(), peers.K_(), peers.Uf(), H4i = [`plugins`, `detail`];
+    ((V4i = peers.c()),
+      peers.Qt(),
+      peers.Vf(),
+      peers.r6r(),
+      peers.h6r(),
+      peers.UN(),
+      peers.YN(),
+      peers.K_(),
+      peers.Uf(),
+      (H4i = [`plugins`, `detail`]));
   });
 }

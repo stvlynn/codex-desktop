@@ -12,7 +12,9 @@ export type CreateInMemoryStorageAdapterPeers = {
 let peers: CreateInMemoryStorageAdapterPeers | null = null;
 
 /** Wire createInMemoryStorageAdapter peers once companions land. */
-export function setCreateInMemoryStorageAdapterPeers(next: CreateInMemoryStorageAdapterPeers): void {
+export function setCreateInMemoryStorageAdapterPeers(
+  next: CreateInMemoryStorageAdapterPeers,
+): void {
   peers = next;
 }
 

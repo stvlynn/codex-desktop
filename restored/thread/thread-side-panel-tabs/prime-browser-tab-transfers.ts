@@ -12,7 +12,9 @@ export type PrimeBrowserTabTransfersPeers = {
 let peers: PrimeBrowserTabTransfersPeers | null = null;
 
 /** Wire primeBrowserTabTransfers peers once companions land. */
-export function setPrimeBrowserTabTransfersPeers(next: PrimeBrowserTabTransfersPeers): void {
+export function setPrimeBrowserTabTransfersPeers(
+  next: PrimeBrowserTabTransfersPeers,
+): void {
   peers = next;
 }
 

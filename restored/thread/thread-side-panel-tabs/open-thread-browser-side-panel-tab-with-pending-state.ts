@@ -21,7 +21,9 @@ export type OpenThreadBrowserSidePanelTabWithPendingStatePeers = {
 let peers: OpenThreadBrowserSidePanelTabWithPendingStatePeers | null = null;
 
 /** Wire openThreadBrowserSidePanelTabWithPendingState peers once companions land. */
-export function setOpenThreadBrowserSidePanelTabWithPendingStatePeers(next: OpenThreadBrowserSidePanelTabWithPendingStatePeers): void {
+export function setOpenThreadBrowserSidePanelTabWithPendingStatePeers(
+  next: OpenThreadBrowserSidePanelTabWithPendingStatePeers,
+): void {
   peers = next;
 }
 

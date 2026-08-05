@@ -1,10 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-16: paragraph spaceBefore/After → CSS px (legacy Zse / workbookDollar cluster).
 
-import {
-  hundredthsPointToCssPxOrZero,
-  twipToCssPx,
-} from "../font-stack";
+import { hundredthsPointToCssPxOrZero, twipToCssPx } from "../font-stack";
 import { resolveParagraphSpacingOverrides } from "./theme-style-maps";
 
 /** Space to CSS px: space value → CSS px (twips or hundredths-of-a-point). */
@@ -13,7 +10,9 @@ export function spaceValueToCssPx(
   unit: "twips" | string | undefined,
 ): number {
   if (value === undefined) return 0;
-  return unit === "twips" ? twipToCssPx(value) : hundredthsPointToCssPxOrZero(value);
+  return unit === "twips"
+    ? twipToCssPx(value)
+    : hundredthsPointToCssPxOrZero(value);
 }
 
 /** Legacy `Zse` — spacing with element defaults fallback. */
@@ -29,7 +28,10 @@ export function resolveParagraphSpacingWithDefaults(args: {
     | undefined;
   defaults?: { spaceBefore?: unknown; spaceAfter?: unknown } | null;
 }): { spaceBefore?: unknown; spaceAfter?: unknown } {
-  const spacing = resolveParagraphSpacingOverrides(args.element as never, args.paragraph);
+  const spacing = resolveParagraphSpacingOverrides(
+    args.element as never,
+    args.paragraph,
+  );
   return {
     spaceBefore:
       spacing.spaceBefore === undefined
@@ -58,8 +60,14 @@ export function paragraphSpacingToCssPx(args: {
 }): { spaceBeforePx: number; spaceAfterPx: number } {
   const spacing = resolveParagraphSpacingWithDefaults(args);
   return {
-    spaceBeforePx: spaceValueToCssPx(spacing.spaceBefore as number | undefined, args.unit),
-    spaceAfterPx: spaceValueToCssPx(spacing.spaceAfter as number | undefined, args.unit),
+    spaceBeforePx: spaceValueToCssPx(
+      spacing.spaceBefore as number | undefined,
+      args.unit,
+    ),
+    spaceAfterPx: spaceValueToCssPx(
+      spacing.spaceAfter as number | undefined,
+      args.unit,
+    ),
   };
 }
 

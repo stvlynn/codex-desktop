@@ -27,6 +27,9 @@ export function bindBindTodoList() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ZYn(), peers.ed(), $Yn = peers.Da(peers.Q, e => null);
+    (peers.Ho(),
+      peers.ZYn(),
+      peers.ed(),
+      ($Yn = peers.Da(peers.Q, (e) => null)));
   });
 }

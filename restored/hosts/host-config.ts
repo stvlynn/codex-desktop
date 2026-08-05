@@ -23,6 +23,6 @@ export function hostConfig() {
   }
 
   return peers.e(() => {
-    H_ = `local`, lOt = peers.H_;
+    ((H_ = `local`), (lOt = peers.H_));
   });
 }

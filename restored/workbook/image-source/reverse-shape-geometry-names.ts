@@ -7,25 +7,16 @@ import { shapeGeometryNameToProto } from "../chart-proto-name-maps";
  * Legacy `Jde` — reverse of shapeGeometryNameToProto, skipping
  * custom / connector / textbox keys.
  */
-export function buildReverseShapeGeometryNameMap(): Record<
-  number,
-  string
-> {
+export function buildReverseShapeGeometryNameMap(): Record<number, string> {
   return Object.entries(shapeGeometryNameToProto).reduce(
     (acc, [name, proto]) => {
-      if (
-        name === "custom" ||
-        name === "connector" ||
-        name === "textbox"
-      )
+      if (name === "custom" || name === "connector" || name === "textbox")
         return acc;
-      if (acc[proto as number] === undefined)
-        acc[proto as number] = name;
+      if (acc[proto as number] === undefined) acc[proto as number] = name;
       return acc;
     },
     {} as Record<number, string>,
   );
 }
 
-export const reverseShapeGeometryNameMap =
-  buildReverseShapeGeometryNameMap();
+export const reverseShapeGeometryNameMap = buildReverseShapeGeometryNameMap();

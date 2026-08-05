@@ -9,10 +9,24 @@ import { ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payl
 import { CodexAutomationCapabilityOrigin } from "../../analytics/codex-automation-capability-origin";
 import { CodexAutomationFailureReason } from "../../analytics/codex-automation-failure-reason";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { localeMessagesAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_E4_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sst_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  ensureComposerEsm_E4_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Sst_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { ensurePluginMentionPromptInit } from "../../browser/browser-use-helpers";
 import { isAppUri } from "../../composer/app-plugin-uri";
@@ -23,7 +37,10 @@ import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
 import { AppIconDG } from "../../icons/app-icon-dg";
 import { AppIconYj } from "../../icons/app-icon-yj";
 import { ensureHooksFocusIconInit } from "../../icons/hooks-settings-icons";
-import { ensureTrendingTopicsIconInit, TrendingTopicsIcon } from "../../icons/trending-topics-icon";
+import {
+  ensureTrendingTopicsIconInit,
+  TrendingTopicsIcon,
+} from "../../icons/trending-topics-icon";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { toMarkdownLink } from "../../markdown/to-markdown-link";
 import { resolveScienceModelLabel } from "../../models/resolve-science-model-label";
@@ -42,7 +59,10 @@ import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-p
 import { hasInputItemsField } from "../../utils/has-input-items-field";
 import { isBareAllowedPermission } from "../../utils/is-bare-allowed-permission";
 import { ensureImportSettingsCLInit } from "../../utils/wave-as-gap-ensure-inits";
-import { appgenShareDialogT, ensureAppgenShareDialogInit } from "../appgen-share-dialog";
+import {
+  appgenShareDialogT,
+  ensureAppgenShareDialogInit,
+} from "../appgen-share-dialog";
 
 import { startAppgenConversationN } from "./module-g8";
 import { startAppgenConversationP } from "./module-g5";

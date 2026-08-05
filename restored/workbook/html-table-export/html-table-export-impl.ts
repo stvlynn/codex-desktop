@@ -21,18 +21,14 @@ export function escapeHtmlText(htIn9730: any) {
   };
   return String(htIn9730 ?? "").replace(
     /[&<>"]/g,
-    (htIn16488) =>
-      htBind20249[htIn16488] ?? htIn16488,
+    (htIn16488) => htBind20249[htIn16488] ?? htIn16488,
   );
 }
 export function buildExcelHtmlClipboard(htIn98: any, htIn99: any) {
   let htBind2718 = new Map(),
     htBind2719 = new Set();
   for (let htBind22989 of htIn99)
-    htBind2718.set(
-      `${htBind22989.r},${htBind22989.c}`,
-      htBind22989,
-    );
+    htBind2718.set(`${htBind22989.r},${htBind22989.c}`, htBind22989);
   let htBind2720 = htIn98.reduce(
       (accumulator, current) => Math.max(accumulator, current?.length ?? 0),
       0,
@@ -42,18 +38,9 @@ export function buildExcelHtmlClipboard(htIn98: any, htIn99: any) {
       let htBind21693 = htIn11219.length * 7 + 10;
       return Math.round(Math.max(20, Math.min(htBind21693, 360)));
     };
-  for (
-    let htBind10332 = 0;
-    htBind10332 < htIn98.length;
-    htBind10332++
-  ) {
-    let htBind10686 =
-      htIn98[htBind10332]?.length ?? 0;
-    for (
-      let htBind11115 = 0;
-      htBind11115 < htBind10686;
-      htBind11115++
-    ) {
+  for (let htBind10332 = 0; htBind10332 < htIn98.length; htBind10332++) {
+    let htBind10686 = htIn98[htBind10332]?.length ?? 0;
+    for (let htBind11115 = 0; htBind11115 < htBind10686; htBind11115++) {
       let htBind11390 = `${htBind10332},${htBind11115}`;
       if (htBind2719.has(htBind11390)) continue;
       let htBind11391 = htBind2718.get(htBind11390),
@@ -75,36 +62,27 @@ export function buildExcelHtmlClipboard(htIn98: any, htIn99: any) {
                 `${htBind10332 + htBind20790},${htBind11115 + htBind22247}`,
               );
       }
-      let htBind11393 =
-          htIn98[htBind10332]?.[htBind11115] ?? {},
+      let htBind11393 = htIn98[htBind10332]?.[htBind11115] ?? {},
         htBind11394 = String(htBind11393.v ?? "");
       if (!htBind2720) continue;
       let htBind11395 = htBind2722(htBind11394),
-        htBind11396 = Math.max(
-          1,
-          Math.round(htBind11395 / htBind11392),
-        );
+        htBind11396 = Math.max(1, Math.round(htBind11395 / htBind11392));
       for (
         let htBind21344 = 0;
-        htBind21344 < htBind11392 &&
-        htBind11115 + htBind21344 < htBind2720;
+        htBind21344 < htBind11392 && htBind11115 + htBind21344 < htBind2720;
         htBind21344++
       ) {
-        let htBind22500 =
-          htBind2721[htBind11115 + htBind21344] ?? 0;
-        htBind2721[htBind11115 + htBind21344] =
-          Math.max(htBind22500, htBind11396);
+        let htBind22500 = htBind2721[htBind11115 + htBind21344] ?? 0;
+        htBind2721[htBind11115 + htBind21344] = Math.max(
+          htBind22500,
+          htBind11396,
+        );
       }
     }
   }
-  for (
-    let htBind21881 = 0;
-    htBind21881 < htBind2721.length;
-    htBind21881++
-  ) {
+  for (let htBind21881 = 0; htBind21881 < htBind2721.length; htBind21881++) {
     let htBind22684 = htBind2721[htBind21881];
-    (!htBind22684 || !isFinite(htBind22684)) &&
-      (htBind2721[htBind21881] = 32);
+    (!htBind22684 || !isFinite(htBind22684)) && (htBind2721[htBind21881] = 32);
   }
   function toMsoColor(htIn4424: any) {
     if (!htIn4424) return "#000";
@@ -117,9 +95,7 @@ export function buildExcelHtmlClipboard(htIn98: any, htIn99: any) {
         htBind18194 = Number(htBind13650[2]),
         htBind18195 = Number(htBind13650[3]),
         htBind18196 = (htIn13374) =>
-          Math.max(0, Math.min(255, htIn13374))
-            .toString(16)
-            .padStart(2, "0");
+          Math.max(0, Math.min(255, htIn13374)).toString(16).padStart(2, "0");
       return `#${htBind18196(htBind18193)}${htBind18196(htBind18194)}${htBind18196(htBind18195)}`.toUpperCase();
     }
     return htIn4424;
@@ -128,38 +104,18 @@ export function buildExcelHtmlClipboard(htIn98: any, htIn99: any) {
     '<table style="table-layout:fixed;border-collapse:collapse;width:0px">';
   if (htBind2720 > 0) {
     htBind2723 += "<colgroup>";
-    for (
-      let htBind21251 = 0;
-      htBind21251 < htBind2720;
-      htBind21251++
-    ) {
-      let htBind22124 = Math.max(
-        1,
-        Math.round(htBind2721[htBind21251] ?? 0),
-      );
+    for (let htBind21251 = 0; htBind21251 < htBind2720; htBind21251++) {
+      let htBind22124 = Math.max(1, Math.round(htBind2721[htBind21251] ?? 0));
       htBind2723 += `<col width="${htBind22124}"/>`;
     }
     htBind2723 += "</colgroup>";
   }
-  for (
-    let htBind3193 = 0;
-    htBind3193 < htIn98.length;
-    htBind3193++
-  ) {
+  for (let htBind3193 = 0; htBind3193 < htIn98.length; htBind3193++) {
     htBind2723 += "<tr>";
     let htBind3210 = htIn98[htBind3193]?.length ?? 0;
-    for (
-      let htBind3262 = 0;
-      htBind3262 < htBind3210;
-      htBind3262++
-    ) {
-      if (
-        htBind2719.has(`${htBind3193},${htBind3262}`)
-      )
-        continue;
-      let htBind3288 = htBind2718.get(
-          `${htBind3193},${htBind3262}`,
-        ),
+    for (let htBind3262 = 0; htBind3262 < htBind3210; htBind3262++) {
+      if (htBind2719.has(`${htBind3193},${htBind3262}`)) continue;
+      let htBind3288 = htBind2718.get(`${htBind3193},${htBind3262}`),
         htBind3289 = "";
       if (htBind3288) {
         htBind3288.rowspan > 1 &&
@@ -181,23 +137,16 @@ export function buildExcelHtmlClipboard(htIn98: any, htIn99: any) {
                 `${htBind3193 + htBind20791},${htBind3262 + htBind22248}`,
               );
       }
-      let htBind3290 =
-          htIn98[htBind3193]?.[htBind3262] ?? {},
+      let htBind3290 = htIn98[htBind3193]?.[htBind3262] ?? {},
         htBind3291 = htBind3290.fmt ?? {},
         htBind3292 = [];
       if (
-        (htBind3291.bold &&
-          htBind3292.push("font-weight:bold"),
-        htBind3291.italic &&
-          htBind3292.push("font-style:italic"),
-        htBind3291.underline &&
-          htBind3292.push("text-decoration:underline"),
-        htBind3291.strike &&
-          htBind3292.push("text-decoration:line-through"),
+        (htBind3291.bold && htBind3292.push("font-weight:bold"),
+        htBind3291.italic && htBind3292.push("font-style:italic"),
+        htBind3291.underline && htBind3292.push("text-decoration:underline"),
+        htBind3291.strike && htBind3292.push("text-decoration:line-through"),
         htBind3291.color &&
-          htBind3292.push(
-            `color:${toMsoColor(htBind3291.color)}`,
-          ),
+          htBind3292.push(`color:${toMsoColor(htBind3291.color)}`),
         htBind3291.fontFamily)
       ) {
         let htBind21116 = /\s/.test(htBind3291.fontFamily)
@@ -219,16 +168,11 @@ export function buildExcelHtmlClipboard(htIn98: any, htIn99: any) {
         htBind3292.push(`background:${htBind20327}`);
         htBind3292.push("mso-pattern:black none");
       }
-      htBind3291.align &&
-        htBind3292.push(`text-align:${htBind3291.align}`);
+      htBind3291.align && htBind3292.push(`text-align:${htBind3291.align}`);
       htBind3291.valign &&
-        htBind3292.push(
-          `vertical-align:${htBind3291.valign}`,
-        );
-      htBind3291.wrap === false &&
-        htBind3292.push("white-space:nowrap");
-      htBind3291.wrap === true &&
-        htBind3292.push("white-space:normal");
+        htBind3292.push(`vertical-align:${htBind3291.valign}`);
+      htBind3291.wrap === false && htBind3292.push("white-space:nowrap");
+      htBind3291.wrap === true && htBind3292.push("white-space:normal");
       htBind3291.numFmt
         ? htBind3292.push(
             `mso-number-format:"${String(htBind3291.numFmt).replace(/"/g, '\\"')}"`,
@@ -308,22 +252,14 @@ export function buildExcelHtmlClipboard(htIn98: any, htIn99: any) {
               return null;
           }
         },
-        htBind3294 = (
-          htIn6014,
-          htIn6015,
-          htIn6016,
-        ) => {
+        htBind3294 = (htIn6014, htIn6015, htIn6016) => {
           let htBind16053 = htBind3293(htIn6015);
           if (!htBind16053) return;
           let htBind16054 = htIn6016 ?? "#000",
             htBind16055 = `${htBind16053.widthPx}px ${htBind16053.cssStyle} ${htBind16054}`,
             htBind16056 = `${(htBind16053.widthPx * 72) / 96}pt ${htBind16053.cssStyle} ${toMsoColor(htBind16054)}`;
-          htBind3292.push(
-            `border-${htIn6014}:${htBind16055}`,
-          );
-          htBind3292.push(
-            `mso-border-${htIn6014}-alt:${htBind16056}`,
-          );
+          htBind3292.push(`border-${htIn6014}:${htBind16055}`);
+          htBind3292.push(`mso-border-${htIn6014}-alt:${htBind16056}`);
         };
       if (
         (htBind3291.border?.top &&
@@ -360,9 +296,7 @@ export function buildExcelHtmlClipboard(htIn98: any, htIn99: any) {
           htBind3291.diagonal.up &&
             htBind3292.push(`mso-diagonal-up:${htBind18550}`);
           htBind3291.diagonal.down &&
-            htBind3292.push(
-              `mso-diagonal-down:${htBind18550}`,
-            );
+            htBind3292.push(`mso-diagonal-down:${htBind18550}`);
         }
       }
       let htBind3295 = htBind3292.length
@@ -384,4 +318,3 @@ export const Wpt = ensureHtmlTableExportInit;
 export const Gpt = escapeHtmlText;
 /** Legacy alias (`Kpt`). */
 export const Kpt = buildExcelHtmlClipboard;
-

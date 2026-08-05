@@ -11,7 +11,9 @@ export type UseHostHasMatchingEntriesPeers = {
 let peers: UseHostHasMatchingEntriesPeers | null = null;
 
 /** Wire useHostHasMatchingEntries peers once companions land. */
-export function setUseHostHasMatchingEntriesPeers(next: UseHostHasMatchingEntriesPeers): void {
+export function setUseHostHasMatchingEntriesPeers(
+  next: UseHostHasMatchingEntriesPeers,
+): void {
   peers = next;
 }
 

@@ -25,14 +25,17 @@ export function bindAppgen3() {
     throw new Error("bindAppgen3 peers are not configured");
   }
 
-  return peers.ja(peers.Q, e => ({
+  return peers.ja(peers.Q, (e) => ({
     mutationKey: [...peers.Vw, e, `title`, `update`],
-    mutationFn: t => peers.Bw(`sites_update_site_metadata`, {
-      project_id: e,
-      ...t
-    }, peers.yWn),
-    onSettled: (t, n, r, i, {
-      client: a
-    }) => peers.iWn(a, [e])
+    mutationFn: (t) =>
+      peers.Bw(
+        `sites_update_site_metadata`,
+        {
+          project_id: e,
+          ...t,
+        },
+        peers.yWn,
+      ),
+    onSettled: (t, n, r, i, { client: a }) => peers.iWn(a, [e]),
   }));
 }

@@ -10,7 +10,9 @@ export type SubscribeCustomEventTargetPeers = {
 let peers: SubscribeCustomEventTargetPeers | null = null;
 
 /** Wire subscribeCustomEventTarget peers once companions land. */
-export function setSubscribeCustomEventTargetPeers(next: SubscribeCustomEventTargetPeers): void {
+export function setSubscribeCustomEventTargetPeers(
+  next: SubscribeCustomEventTargetPeers,
+): void {
   peers = next;
 }
 

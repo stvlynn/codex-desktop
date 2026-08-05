@@ -38,9 +38,22 @@ export function bindMicrosoft() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.Gf(), peers.alc(), peers.Njl(), peers.pjl(), peers.LPc(), peers.BPc(), peers.Rjl(), peers.qjl(), sMl = `Conversational onboarding start was cancelled`, cMl = 2e3, lMl = {
-      app: null,
-      phase: `failed`
-    }, w8 = new WeakMap(), T8 = peers.Ta(peers.j2, peers.oMl());
+    (peers.Ho(),
+      peers.Gf(),
+      peers.alc(),
+      peers.Njl(),
+      peers.pjl(),
+      peers.LPc(),
+      peers.BPc(),
+      peers.Rjl(),
+      peers.qjl(),
+      (sMl = `Conversational onboarding start was cancelled`),
+      (cMl = 2e3),
+      (lMl = {
+        app: null,
+        phase: `failed`,
+      }),
+      (w8 = new WeakMap()),
+      (T8 = peers.Ta(peers.j2, peers.oMl())));
   });
 }

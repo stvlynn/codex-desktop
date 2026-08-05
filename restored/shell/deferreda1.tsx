@@ -11,7 +11,9 @@ export type BindBindDeferreda1Peers = {
 let peers: BindBindDeferreda1Peers | null = null;
 
 /** Wire bindBindDeferreda1 peers once companions land. */
-export function setBindBindDeferreda1Peers(next: BindBindDeferreda1Peers): void {
+export function setBindBindDeferreda1Peers(
+  next: BindBindDeferreda1Peers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,15 @@ export function bindBindDeferreda1() {
   }
 
   return peers.e(() => {
-    peers.Rk(), peers.$Tr(), iEr = new Map([[`LeftOption+RightOption`, `⌥ + ⌥`], [`LeftAlt+RightAlt`, `⌥ + ⌥`], [`LeftCommand+RightCommand`, `⌘ + ⌘`], [`LeftCmd+RightCmd`, `⌘ + ⌘`], [`LeftMeta+RightMeta`, `⌘ + ⌘`], [`LeftShift+RightShift`, `⇧ + ⇧`]]);
+    (peers.Rk(),
+      peers.$Tr(),
+      (iEr = new Map([
+        [`LeftOption+RightOption`, `⌥ + ⌥`],
+        [`LeftAlt+RightAlt`, `⌥ + ⌥`],
+        [`LeftCommand+RightCommand`, `⌘ + ⌘`],
+        [`LeftCmd+RightCmd`, `⌘ + ⌘`],
+        [`LeftMeta+RightMeta`, `⌘ + ⌘`],
+        [`LeftShift+RightShift`, `⇧ + ⇧`],
+      ])));
   });
 }

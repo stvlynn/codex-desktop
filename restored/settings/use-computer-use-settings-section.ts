@@ -13,7 +13,9 @@ export type UseComputerUseSettingsSectionPeers = {
 let peers: UseComputerUseSettingsSectionPeers | null = null;
 
 /** Wire UseComputerUseSettingsSection peers once companions land. */
-export function setUseComputerUseSettingsSectionPeers(next: UseComputerUseSettingsSectionPeers): void {
+export function setUseComputerUseSettingsSectionPeers(
+  next: UseComputerUseSettingsSectionPeers,
+): void {
   peers = next;
 }
 

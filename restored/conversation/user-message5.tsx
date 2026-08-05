@@ -10,7 +10,9 @@ export type BindBindUserMessage5Peers = {
 let peers: BindBindUserMessage5Peers | null = null;
 
 /** Wire bindBindUserMessage5 peers once companions land. */
-export function setBindBindUserMessage5Peers(next: BindBindUserMessage5Peers): void {
+export function setBindBindUserMessage5Peers(
+  next: BindBindUserMessage5Peers,
+): void {
   peers = next;
 }
 
@@ -23,8 +25,11 @@ export function bindBindUserMessage5() {
   }
 
   return peers.Ta(peers.Q, () => [], {
-    onMount: (e, t) => (t.set(peers.Vpu, !0), () => {
-      t.set(peers.Vpu, !1);
-    })
+    onMount: (e, t) => (
+      t.set(peers.Vpu, !0),
+      () => {
+        t.set(peers.Vpu, !1);
+      }
+    ),
   });
 }

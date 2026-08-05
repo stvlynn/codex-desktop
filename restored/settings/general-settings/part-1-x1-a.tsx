@@ -23,11 +23,35 @@ import { AppSurfaceId } from "../../app/app-surface-ids";
 import { ensureCodeThemeRegistryInit } from "../../appearance/code-theme-catalog";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { resolveGuardianApprovalWorkspaceWriteMode } from "../../approvals/resolve-guardian-approval-workspace-write-mode";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationsGateAtom, localeMessagesAtom, useStepsProseAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_BU_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init, ensureComposerEsm_ZE_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationsGateAtom,
+  localeMessagesAtom,
+  useStepsProseAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_BU_Init,
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+  ensureComposerEsm_ZE_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { Link } from "../../boundaries/react-router-link";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -73,7 +97,10 @@ import { AppIconVn } from "../../icons/app-icon-vn";
 import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
 import { resolveOnboardingCatalogKind } from "../../onboarding/resolve-onboarding-catalog-kind";
@@ -90,7 +117,10 @@ import { deferredRv } from "../../ui/deferred-rv";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { ensureContextMenuProviderInit } from "../../ui/ensure-context-menu-provider-init";
@@ -106,16 +136,30 @@ import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { setKeyedStoreAtomValueXU } from "../../utils/set-keyed-store-atom-value";
 import { toggleSortedIdList as ToggleSortedIdList } from "../../utils/toggle-sorted-id-list";
-import { ensureImportSettingsGctInit, ensurePersonalizationCInit as EnsurePersonalizationCInit, ensurePullRequestMediaGUInit, ensureSettingsGlyphNltInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsGctInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+  ensurePullRequestMediaGUInit,
+  ensureSettingsGlyphNltInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { CodeThemePreviewGlyph } from "../code-theme-preview-glyph";
 import { ensureGranularPermissionsClusterInit } from "../ensure-granular-permissions-cluster-init";
 import { generalDesktopSettingsDefinitions } from "../general-desktop-settings-definitions";
 import { ensureGpuTearingDebugSettingsInit } from "../gpu-tearing-debug-settings";
-import { hotkeySetterN, hotkeySetterT as HotkeySetterT } from "../hotkey-setter";
+import {
+  hotkeySetterN,
+  hotkeySetterT as HotkeySetterT,
+} from "../hotkey-setter";
 import { readCodexHomeFromQuery } from "../read-codex-home-from-query";
-import { ensureReviewDeliverySettingsRowInit, ReviewDeliverySettingsRow } from "../review-delivery-settings-row";
+import {
+  ensureReviewDeliverySettingsRowInit,
+  ReviewDeliverySettingsRow,
+} from "../review-delivery-settings-row";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { getSettingValue } from "../settings-values";
 import { useSettingValue } from "../use-setting-value";
 import { buildVscodeQueryKey } from "../vscode-query-key";
@@ -281,39 +325,68 @@ var alpha,
   bravo,
   copper = esmInit(() => {
     react();
-    bravo = lemon => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 120" {...lemon}>
+    bravo = (lemon) => (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 120" {...lemon}>
         <path fill="#9f9f9f" d="M49 26h72a3 3 0 0 1 0 6H49a3 3 0 0 1 0-6Z" />
         <path fill="#8f8f8f" d="M28 35h114a2 2 0 0 1 0 4H28a2 2 0 0 1 0-4Z" />
-        <path fill="#fff" d="M15 52a8 8 0 0 1 8-8h124a8 8 0 0 1 8 8v68H15V52Z" />
-        <path fill="#dfdfdf" d="M22 59a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z" />
+        <path
+          fill="#fff"
+          d="M15 52a8 8 0 0 1 8-8h124a8 8 0 0 1 8 8v68H15V52Z"
+        />
+        <path
+          fill="#dfdfdf"
+          d="M22 59a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z"
+        />
         <path fill="#f3f3f3" d="M22 67h65v2H22zM15 76h140v1H15z" />
-        <path fill="#dfdfdf" d="M22 83a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z" />
+        <path
+          fill="#dfdfdf"
+          d="M22 83a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z"
+        />
         <path fill="#f3f3f3" d="M22 91h65v2H22zM15 100h140v1H15z" />
-        <path fill="#dfdfdf" d="M22 107a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z" />
+        <path
+          fill="#dfdfdf"
+          d="M22 107a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z"
+        />
         <path fill="#f3f3f3" d="M22 115h65v2H22z" />
-      </svg>;
+      </svg>
+    );
   }),
   delta,
   echo,
   falcon = esmInit(() => {
     react();
-    echo = marble => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 120" {...marble}>
+    echo = (marble) => (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 120" {...marble}>
         <path fill="#cdcdcd" d="M49 26h72a3 3 0 0 1 0 6H49a3 3 0 0 1 0-6Z" />
         <path fill="#dfdfdf" d="M28 35h114a2 2 0 0 1 0 4H28a2 2 0 0 1 0-4Z" />
-        <path fill="#fff" d="M15 52a8 8 0 0 1 8-8h124a8 8 0 0 1 8 8v68H15V52Z" />
-        <path fill="#dfdfdf" d="M22 59a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z" />
+        <path
+          fill="#fff"
+          d="M15 52a8 8 0 0 1 8-8h124a8 8 0 0 1 8 8v68H15V52Z"
+        />
+        <path
+          fill="#dfdfdf"
+          d="M22 59a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z"
+        />
         <path fill="#f3f3f3" d="M22 67h65v2H22zM15 76h140v1H15z" />
-        <path fill="#dfdfdf" d="M22 83a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z" />
+        <path
+          fill="#dfdfdf"
+          d="M22 83a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z"
+        />
         <path fill="#f3f3f3" d="M22 91h65v2H22zM15 100h140v1H15z" />
-        <path fill="#dfdfdf" d="M22 107a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z" />
+        <path
+          fill="#dfdfdf"
+          d="M22 107a3 3 0 0 1 3-3h39a3 3 0 0 1 0 6H25a3 3 0 0 1-3-3Z"
+        />
         <path fill="#f3f3f3" d="M22 115h65v2H22z" />
-      </svg>;
+      </svg>
+    );
   }),
   gamma,
   harbor,
   indigo = esmInit(() => {
     react();
-    harbor = nickel => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 120" {...nickel}>
+    harbor = (nickel) => (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 120" {...nickel}>
         <defs>
           <clipPath id="system-preview-sheet">
             <path d="M7 42a8 8 0 0 1 8-8h140a8 8 0 0 1 8 8v78H7V42Z" />
@@ -328,14 +401,27 @@ var alpha,
           <path fill="#8f8f8f" d="M85 68h32v3H85z" />
           <path fill="#fff" d="M26 84a7 7 0 0 1 7-7h52v43H26V84Z" />
           <path fill="#4f4f4f" d="M85 77h52a7 7 0 0 1 7 7v36H85V77Z" />
-          <path fill="#dfdfdf" d="M32 88a3 3 0 0 1 3-3h29a3 3 0 0 1 0 6H35a3 3 0 0 1-3-3Z" />
-          <path fill="#767676" d="M103 88a3 3 0 0 1 3-3h29a3 3 0 0 1 0 6h-29a3 3 0 0 1-3-3Z" />
+          <path
+            fill="#dfdfdf"
+            d="M32 88a3 3 0 0 1 3-3h29a3 3 0 0 1 0 6H35a3 3 0 0 1-3-3Z"
+          />
+          <path
+            fill="#767676"
+            d="M103 88a3 3 0 0 1 3-3h29a3 3 0 0 1 0 6h-29a3 3 0 0 1-3-3Z"
+          />
           <path fill="#f3f3f3" d="M32 96h53v2H32zM26 105h59v1H26z" />
           <path fill="#767676" d="M85 96h53v2H85zM85 105h59v1H85z" />
-          <path fill="#dfdfdf" d="M32 114a3 3 0 0 1 3-3h29a3 3 0 0 1 0 6H35a3 3 0 0 1-3-3Z" />
-          <path fill="#767676" d="M103 114a3 3 0 0 1 3-3h29a3 3 0 0 1 0 6h-29a3 3 0 0 1-3-3Z" />
+          <path
+            fill="#dfdfdf"
+            d="M32 114a3 3 0 0 1 3-3h29a3 3 0 0 1 0 6H35a3 3 0 0 1-3-3Z"
+          />
+          <path
+            fill="#767676"
+            d="M103 114a3 3 0 0 1 3-3h29a3 3 0 0 1 0 6h-29a3 3 0 0 1-3-3Z"
+          />
         </g>
-      </svg>;
+      </svg>
+    );
   }),
   jade,
   kite = esmInit(() => {
@@ -344,112 +430,112 @@ var alpha,
       theme: {
         id: "settings.general.appearance.theme",
         defaultMessage: "Theme",
-        description: "Label for theme selector in appearance settings"
+        description: "Label for theme selector in appearance settings",
       },
       light: {
         id: "settings.general.appearance.theme.light",
         defaultMessage: "Light",
-        description: "Light theme option"
+        description: "Light theme option",
       },
       dark: {
         id: "settings.general.appearance.theme.dark",
         defaultMessage: "Dark",
-        description: "Dark theme option"
+        description: "Dark theme option",
       },
       themeSystem: {
         id: "settings.general.appearance.theme.system",
         defaultMessage: "System",
-        description: "System theme option"
+        description: "System theme option",
       },
       chromeThemeAccent: {
         id: "settings.general.appearance.chromeTheme.accent.short",
         defaultMessage: "Accent",
-        description: "Short label for the accent color picker"
+        description: "Short label for the accent color picker",
       },
       chromeThemeBackground: {
         id: "settings.general.appearance.chromeTheme.surface.short",
         defaultMessage: "Background",
-        description: "Short label for the background color picker"
+        description: "Short label for the background color picker",
       },
       chromeThemeForeground: {
         id: "settings.general.appearance.chromeTheme.ink.short",
         defaultMessage: "Foreground",
-        description: "Short label for the foreground color picker"
+        description: "Short label for the foreground color picker",
       },
       chromeThemeContrast: {
         id: "settings.general.appearance.chromeTheme.contrast.short",
         defaultMessage: "Contrast",
-        description: "Short label for the contrast slider"
+        description: "Short label for the contrast slider",
       },
       chromeThemeTranslucentSidebar: {
         id: "settings.general.appearance.chromeTheme.translucentSidebar.short",
         defaultMessage: "Translucent sidebar",
-        description: "Short label for the translucent sidebar toggle"
+        description: "Short label for the translucent sidebar toggle",
       },
       chromeThemeUiFont: {
         id: "settings.general.appearance.chromeTheme.uiFontFamily.short",
         defaultMessage: "UI font",
-        description: "Short label for the UI font input"
+        description: "Short label for the UI font input",
       },
       chromeThemeCodeFont: {
         id: "settings.general.appearance.chromeTheme.codeFontFamily.short",
         defaultMessage: "Code font",
-        description: "Short label for the code font input"
+        description: "Short label for the code font input",
       },
       pointerCursors: {
         id: "settings.general.appearance.usePointerCursors.label",
         defaultMessage: "Use pointer cursors",
-        description: "Label for pointer cursor interaction setting"
+        description: "Label for pointer cursor interaction setting",
       },
       diffMarkers: {
         id: "settings.general.appearance.diffMarkerStyle.label",
         defaultMessage: "Diff markers",
-        description: "Label for the diff marker style setting"
+        description: "Label for the diff marker style setting",
       },
       color: {
         id: "settings.general.appearance.diffMarkerStyle.color",
         defaultMessage: "Color",
-        description: "Color diff marker style option label"
+        description: "Color diff marker style option label",
       },
       plusMinus: {
         id: "settings.general.appearance.diffMarkerStyle.symbols",
         defaultMessage: "+/-",
-        description: "Plus and minus diff marker style option label"
+        description: "Plus and minus diff marker style option label",
       },
       reduceMotion: {
         id: "settings.general.appearance.reducedMotion.label",
         defaultMessage: "Reduce motion",
-        description: "Label for the reduced motion appearance setting"
+        description: "Label for the reduced motion appearance setting",
       },
       reducedMotionSystem: {
         id: "settings.general.appearance.reducedMotion.system",
         defaultMessage: "System",
-        description: "System reduced motion option"
+        description: "System reduced motion option",
       },
       on: {
         id: "settings.general.appearance.reducedMotion.on",
         defaultMessage: "On",
-        description: "On reduced motion option"
+        description: "On reduced motion option",
       },
       off: {
         id: "settings.general.appearance.reducedMotion.off",
         defaultMessage: "Off",
-        description: "Off reduced motion option"
+        description: "Off reduced motion option",
       },
       uiFontSize: {
         id: "settings.general.appearance.sansFontSize.row",
         defaultMessage: "UI font size",
-        description: "Label for UI font size setting"
+        description: "Label for UI font size setting",
       },
       codeFontSize: {
         id: "settings.general.appearance.codeFontSize.row",
         defaultMessage: "Code font size",
-        description: "Label for code font size controls"
+        description: "Label for code font size controls",
       },
       fontSmoothing: {
         id: "settings.general.appearance.fontSmoothing.label",
         defaultMessage: "Font smoothing",
-        description: "Label for the macOS font smoothing setting"
-      }
+        description: "Label for the macOS font smoothing setting",
+      },
     });
   });

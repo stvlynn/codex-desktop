@@ -7,4 +7,3 @@
 /** Wave FZ: bind no longer required after full body promote */
 export function bindThreadUserMessageNavigationRail(_next: unknown): void {}
 export function ensureThreadUserMessageNavigationRailInit(): void {}
-

@@ -8,7 +8,9 @@ export type DeferredAccountMi2Peers = {
 let peers: DeferredAccountMi2Peers | null = null;
 
 /** Wire deferredAccountMi2 peers once companions land. */
-export function setDeferredAccountMi2Peers(next: DeferredAccountMi2Peers): void {
+export function setDeferredAccountMi2Peers(
+  next: DeferredAccountMi2Peers,
+): void {
   peers = next;
 }
 

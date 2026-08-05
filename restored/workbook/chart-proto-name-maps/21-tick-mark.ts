@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Wn,
-} from "../presentation-protobuf";
+import { Wn } from "../presentation-protobuf";
 
 export const tickMarkNameToProto = {
   none: Wn.TICK_MARK_NONE,

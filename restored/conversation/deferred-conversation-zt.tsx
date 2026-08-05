@@ -15,7 +15,9 @@ export type BindBindDeferredConversationZTPeers = {
 let peers: BindBindDeferredConversationZTPeers | null = null;
 
 /** Wire bindBindDeferredConversationZT peers once companions land. */
-export function setBindBindDeferredConversationZTPeers(next: BindBindDeferredConversationZTPeers): void {
+export function setBindBindDeferredConversationZTPeers(
+  next: BindBindDeferredConversationZTPeers,
+): void {
   peers = next;
 }
 

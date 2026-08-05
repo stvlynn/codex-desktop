@@ -8,7 +8,9 @@ export type BindBindDeferredDLPeers = {
 let peers: BindBindDeferredDLPeers | null = null;
 
 /** Wire bindBindDeferredDL peers once companions land. */
-export function setBindBindDeferredDLPeers(next: BindBindDeferredDLPeers): void {
+export function setBindBindDeferredDLPeers(
+  next: BindBindDeferredDLPeers,
+): void {
   peers = next;
 }
 

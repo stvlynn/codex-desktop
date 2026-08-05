@@ -50,7 +50,9 @@ export type BindClientLocalThreadPeers = {
 let peers: BindClientLocalThreadPeers | null = null;
 
 /** Wire bindClientLocalThread peers once companions land. */
-export function setBindClientLocalThreadPeers(next: BindClientLocalThreadPeers): void {
+export function setBindClientLocalThreadPeers(
+  next: BindClientLocalThreadPeers,
+): void {
   peers = next;
 }
 

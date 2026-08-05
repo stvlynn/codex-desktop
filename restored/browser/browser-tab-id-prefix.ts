@@ -15,7 +15,9 @@ export function isBrowserTabId(value: string | null | undefined): boolean {
  * Bundle `hge` (co-located).
  * Strip the `browser:` prefix and brand the remainder as a tab id.
  */
-export function parseBrowserTabId(value: string | null | undefined): string | null {
+export function parseBrowserTabId(
+  value: string | null | undefined,
+): string | null {
   return isBrowserTabId(value)
     ? asBrowserTabId(value!.slice(BROWSER_TAB_ID_PREFIX.length))
     : null;

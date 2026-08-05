@@ -11,7 +11,9 @@ export type BindDeferredConversationG4Peers = {
 let peers: BindDeferredConversationG4Peers | null = null;
 
 /** Wire bindDeferredConversationG4 peers once companions land. */
-export function setBindDeferredConversationG4Peers(next: BindDeferredConversationG4Peers): void {
+export function setBindDeferredConversationG4Peers(
+  next: BindDeferredConversationG4Peers,
+): void {
   peers = next;
 }
 
@@ -23,10 +25,10 @@ export function bindDeferredConversationG4() {
     throw new Error("bindDeferredConversationG4 peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => {
+  return peers.Ma(peers.Q, ({ get: e }) => {
     let t = e(peers.Mer);
-    return t == null || !e(peers.aD, t.hostId).includes(t.conversationId) ? null : t;
+    return t == null || !e(peers.aD, t.hostId).includes(t.conversationId)
+      ? null
+      : t;
   });
 }

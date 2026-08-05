@@ -11,7 +11,9 @@ export type UseResolvedAppByIdOrDisplayNamePeers = {
 let peers: UseResolvedAppByIdOrDisplayNamePeers | null = null;
 
 /** Wire useResolvedAppByIdOrDisplayName peers once companions land. */
-export function setUseResolvedAppByIdOrDisplayNamePeers(next: UseResolvedAppByIdOrDisplayNamePeers): void {
+export function setUseResolvedAppByIdOrDisplayNamePeers(
+  next: UseResolvedAppByIdOrDisplayNamePeers,
+): void {
   peers = next;
 }
 
@@ -23,11 +25,10 @@ export function useResolvedAppByIdOrDisplayName(e: unknown) {
     throw new Error("useResolvedAppByIdOrDisplayName peers are not configured");
   }
 
-  let {
-      data: t
-    } = peers.Fo(peers.YHc, e?.kind === `appId` ? e.appId : null),
-    {
-      data: n
-    } = peers.Fo(peers.XHc, e?.kind === `displayName` ? e.displayName : null);
+  let { data: t } = peers.Fo(peers.YHc, e?.kind === `appId` ? e.appId : null),
+    { data: n } = peers.Fo(
+      peers.XHc,
+      e?.kind === `displayName` ? e.displayName : null,
+    );
   return t ?? n ?? null;
 }

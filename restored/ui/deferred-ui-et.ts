@@ -30,6 +30,10 @@ export function bindDeferredUiET() {
   }
 
   return peers.e(() => {
-    X5o = peers.c(), Z5o = peers.r(peers.ju(), 1), peers.FHa(), peers.SQa(), Q5o = peers.J();
+    ((X5o = peers.c()),
+      (Z5o = peers.r(peers.ju(), 1)),
+      peers.FHa(),
+      peers.SQa(),
+      (Q5o = peers.J()));
   });
 }

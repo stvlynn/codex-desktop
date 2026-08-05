@@ -26,26 +26,32 @@ export function bindBindRemote() {
   }
 
   return peers.e(() => {
-    peers.RFi(), zFi = peers.LFi({
-      method: `current-branch`,
-      getParams: e => ({
-        operationSource: peers.e.operationSource,
-        root: peers.e.root
-      }),
-      getOptions: e => {
-        let t = {
+    (peers.RFi(),
+      (zFi = peers.LFi({
+        method: `current-branch`,
+        getParams: (e) => ({
           operationSource: peers.e.operationSource,
-          root: peers.e.root
-        };
-        return {
-          liveQuery: peers.e.retainRepoWatch === !1 ? void 0 : {
-            method: `current-branch`,
-            params: t
-          },
-          select: e => peers.e.branch,
-          staleTime: 1 / 0
-        };
-      }
-    }), BFi = peers.zFi.fromMetadata$, VFi = peers.zFi.fromTarget$;
+          root: peers.e.root,
+        }),
+        getOptions: (e) => {
+          let t = {
+            operationSource: peers.e.operationSource,
+            root: peers.e.root,
+          };
+          return {
+            liveQuery:
+              peers.e.retainRepoWatch === !1
+                ? void 0
+                : {
+                    method: `current-branch`,
+                    params: t,
+                  },
+            select: (e) => peers.e.branch,
+            staleTime: 1 / 0,
+          };
+        },
+      })),
+      (BFi = peers.zFi.fromMetadata$),
+      (VFi = peers.zFi.fromTarget$));
   });
 }

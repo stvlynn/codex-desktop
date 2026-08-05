@@ -13,12 +13,26 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
 import { ARTIFACT_GENERATION_STAGE_IDS } from "../../artifacts/artifact-generation-ids";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { BrowserWebviewPanel } from "../../browser/browser-webview-panel";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { composerConnectorauthReconnectMessages } from "../../composer/composer-connectorauth-reconnect-messages";
@@ -27,8 +41,15 @@ import { getPluginShortDescription } from "../../composer/get-plugin-short-descr
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { collaborationModeFromTurnOrParams } from "../../conversation/collaboration-mode-fields";
 import { recentConversationsMetaQueryKey } from "../../conversation/recent-conversations-meta-query-key";
-import { ensureCodexMicroAnalogActionTitleInit, getAnalogActionTitle } from "../../desktop/codex-micro-analog-action-title";
-import { ensureCodexMicroWebviewCommandsInit, findCodexMicroWebviewCommand, getCodexMicroWebviewCommands } from "../../desktop/codex-micro-webview-commands";
+import {
+  ensureCodexMicroAnalogActionTitleInit,
+  getAnalogActionTitle,
+} from "../../desktop/codex-micro-analog-action-title";
+import {
+  ensureCodexMicroWebviewCommandsInit,
+  findCodexMicroWebviewCommand,
+  getCodexMicroWebviewCommands,
+} from "../../desktop/codex-micro-webview-commands";
 import { appServices } from "../../desktop/desktop-services";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { DiffLinesStatsBadge } from "../../diff/diff-lines-stats-badge";
@@ -37,7 +58,10 @@ import { ensureDebugPanelTurnFilesInit } from "../../hooks/debug-panel-turn-file
 import { usePointerSurfaceInteractionGate as UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { LOCAL_HOST_ID } from "../../hosts/local-host-id";
-import { ensureRemoteConnectionsFeatureInit, getEnabledRemoteConnectionState } from "../../hosts/remote-connections-feature";
+import {
+  ensureRemoteConnectionsFeatureInit,
+  getEnabledRemoteConnectionState,
+} from "../../hosts/remote-connections-feature";
 import { useHostPlatformModifierSymbol } from "../../hotkeys/use-host-platform-modifier-symbol";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
@@ -69,43 +93,83 @@ import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { deferredVM } from "../../ui/deferred-vm";
 import { deferredZft as DeferredZft } from "../../ui/deferred-zft";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { macOS4 } from "../../ui/mac-os4";
 import { MenuBorderSeparator } from "../../ui/menu-border-separator";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { remote } from "../../ui/remote";
-import { ensureSelectableListRowActivationInit, ensureSelectableListRowInit as EnsureSelectableListRowInit } from "../../ui/selectable-list-row";
+import {
+  ensureSelectableListRowActivationInit,
+  ensureSelectableListRowInit as EnsureSelectableListRowInit,
+} from "../../ui/selectable-list-row";
 import { sortable } from "../../ui/sortable";
 import { VerticalScrollFadeMask } from "../../ui/vertical-scroll-fade-mask";
 import { findByModel as FindByModel } from "../../utils/find-by-model";
 import { identity } from "../../utils/identity";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { thinCallWithUndefined } from "../../utils/thin-call-with-undefined";
-import { ensureKeyboardShortcutsGtInit as EnsureKeyboardShortcutsGtInit, ensureKeyboardShortcutsHMInit, ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureKeyboardShortcutsGtInit as EnsureKeyboardShortcutsGtInit,
+  ensureKeyboardShortcutsHMInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { pendingWorktreeConversationStartApi } from "../../worktree/pending-worktree-conversation-start-api";
-import { CodexMicroKeyboardSurface, codexMicroKeyboardSurfaceFlags, CodexMicroKeyboardSurfaceLabel, CodexMicroKeyboardSurfaceOverlay, CodexMicroKeyboardSurfacePanel, codexMicroKeyboardSurfaceState, CodexMicroKeyboardSurfaceTile, ensureCodexMicroKeyboardSurfaceAtomsInit, ensureCodexMicroKeyboardSurfaceHelpersInit, ensureCodexMicroKeyboardSurfaceInit, ensureCodexMicroKeyboardSurfaceUiInit, renderCodexMicroKeyboardSurface as RenderCodexMicroKeyboardSurface, useCodexMicroKeyboardSurface as UseCodexMicroKeyboardSurface } from "../codex-micro-keyboard-surface";
-import { ensureCodexMicroLayoutInit, parseStreamDeckLayout } from "../codex-micro-layout";
-import { codexMicroSlotSignalC, codexMicroSlotSignalF, codexMicroSlotSignalO, codexMicroSlotSignalR, codexMicroSlotSignalU, ensureCodexMicroSlotSignalsInit } from "../codex-micro-slot-signals";
+import {
+  CodexMicroKeyboardSurface,
+  codexMicroKeyboardSurfaceFlags,
+  CodexMicroKeyboardSurfaceLabel,
+  CodexMicroKeyboardSurfaceOverlay,
+  CodexMicroKeyboardSurfacePanel,
+  codexMicroKeyboardSurfaceState,
+  CodexMicroKeyboardSurfaceTile,
+  ensureCodexMicroKeyboardSurfaceAtomsInit,
+  ensureCodexMicroKeyboardSurfaceHelpersInit,
+  ensureCodexMicroKeyboardSurfaceInit,
+  ensureCodexMicroKeyboardSurfaceUiInit,
+  renderCodexMicroKeyboardSurface as RenderCodexMicroKeyboardSurface,
+  useCodexMicroKeyboardSurface as UseCodexMicroKeyboardSurface,
+} from "../codex-micro-keyboard-surface";
+import {
+  ensureCodexMicroLayoutInit,
+  parseStreamDeckLayout,
+} from "../codex-micro-layout";
+import {
+  codexMicroSlotSignalC,
+  codexMicroSlotSignalF,
+  codexMicroSlotSignalO,
+  codexMicroSlotSignalR,
+  codexMicroSlotSignalU,
+  ensureCodexMicroSlotSignalsInit,
+} from "../codex-micro-slot-signals";
 const AppInitialA: any = undefined;
 // Wave5d soft JSX companions.
-function DeferredUiU(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function DeferredUiU(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function SetRemoteControlEnabledForHost(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function SetRemoteControlEnabledForHost(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -282,30 +346,50 @@ const codexMicroLayoutS: any = undefined;
 const codexMicroLayoutU: any = undefined;
 function yarn(frost, glide, honey) {
   let iris = glide.trim(),
-    jewel = acorn.default(frost.flatMap(item => {
-      let {
-        description,
-        title
-      } = BrowserWebviewPanel(item, honey);
-      return iris.length > 0 && ![item.id, title, description].some(_item => ensureKeyboardShortcutsHMInit(_item, iris) > 0) ? [] : [{
-        command: item,
-        description,
-        group: "commandMenuGroupKey" in item ? item.commandMenuGroupKey ?? "app" : "app",
-        title
-      }];
-    }), knoll => knoll.title.toLowerCase());
-  return AppInitialU1.flatMap(item => {
-    let lunar = jewel.filter(_item => _item.group === item);
-    return lunar.length === 0 ? [] : [{
-      id: item,
-      label: honey.formatMessage(coral[item]),
-      options: lunar
-    }];
+    jewel = acorn.default(
+      frost.flatMap((item) => {
+        let { description, title } = BrowserWebviewPanel(item, honey);
+        return iris.length > 0 &&
+          ![item.id, title, description].some(
+            (_item) => ensureKeyboardShortcutsHMInit(_item, iris) > 0,
+          )
+          ? []
+          : [
+              {
+                command: item,
+                description,
+                group:
+                  "commandMenuGroupKey" in item
+                    ? (item.commandMenuGroupKey ?? "app")
+                    : "app",
+                title,
+              },
+            ];
+      }),
+      (knoll) => knoll.title.toLowerCase(),
+    );
+  return AppInitialU1.flatMap((item) => {
+    let lunar = jewel.filter((_item) => _item.group === item);
+    return lunar.length === 0
+      ? []
+      : [
+          {
+            id: item,
+            label: honey.formatMessage(coral[item]),
+            options: lunar,
+          },
+        ];
   });
 }
 function zephyr(moss) {
   let north = isBusinessPlan();
-  return acorn.default(bloom.default(moss.filter(item => item.enabled && deferredVM(item, north)), orbit => orbit.path), pine => getPluginDisplayName(pine).toLowerCase());
+  return acorn.default(
+    bloom.default(
+      moss.filter((item) => item.enabled && deferredVM(item, north)),
+      (orbit) => orbit.path,
+    ),
+    (pine) => getPluginDisplayName(pine).toLowerCase(),
+  );
 }
 var acorn,
   bloom,
@@ -324,38 +408,40 @@ var acorn,
       thread: {
         id: "settings.codexMicro.analog.commands.thread",
         defaultMessage: "Chat",
-        description: "Section heading for Codex Micro task action choices"
+        description: "Section heading for Codex Micro task action choices",
       },
       navigation: {
         id: "settings.codexMicro.analog.commands.navigation",
         defaultMessage: "Navigation",
-        description: "Section heading for Codex Micro navigation action choices"
+        description:
+          "Section heading for Codex Micro navigation action choices",
       },
       panels: {
         id: "settings.codexMicro.analog.commands.panels",
         defaultMessage: "Panels",
-        description: "Section heading for Codex Micro panel action choices"
+        description: "Section heading for Codex Micro panel action choices",
       },
       workspace: {
         id: "settings.codexMicro.analog.commands.workspace",
         defaultMessage: "Workspace",
-        description: "Section heading for Codex Micro workspace action choices"
+        description: "Section heading for Codex Micro workspace action choices",
       },
       skills: {
         id: "settings.codexMicro.analog.commands.skills",
         defaultMessage: "Skill actions",
-        description: "Section heading for Codex Micro skill management action choices"
+        description:
+          "Section heading for Codex Micro skill management action choices",
       },
       configure: {
         id: "settings.codexMicro.analog.commands.configure",
         defaultMessage: "Settings",
-        description: "Section heading for Codex Micro settings action choices"
+        description: "Section heading for Codex Micro settings action choices",
       },
       app: {
         id: "settings.codexMicro.analog.commands.app",
         defaultMessage: "App",
-        description: "Section heading for Codex Micro app action choices"
-      }
+        description: "Section heading for Codex Micro app action choices",
+      },
     });
   });
 function eagle(quest) {
@@ -367,7 +453,7 @@ function eagle(quest) {
       skills,
       onActionChange,
       onDirectionSelect,
-      onEditorOpenChange
+      onEditorOpenChange,
     } = quest,
     ridge = useIntl(),
     [storm, tide] = vapor.useState(false),
@@ -375,15 +461,30 @@ function eagle(quest) {
     wave = zephyr(skills),
     apex = unity.trim(),
     brook = mapping[selectedDirection],
-    cliff = brook?.type === "command" ? getCodexMicroWebviewCommands(brook.commandId)?.id : null,
-    dusk = brook == null ? ridge.formatMessage(alpha.none) : ensureCodexMicroAnalogActionTitleInit(brook, wave, ridge),
-    elm = wave.filter(item => apex.length === 0 || [item.name, getPluginDisplayName(item), getPluginShortDescription(item)].some(_item => ensureKeyboardShortcutsHMInit(_item, apex) > 0)),
+    cliff =
+      brook?.type === "command"
+        ? getCodexMicroWebviewCommands(brook.commandId)?.id
+        : null,
+    dusk =
+      brook == null
+        ? ridge.formatMessage(alpha.none)
+        : ensureCodexMicroAnalogActionTitleInit(brook, wave, ridge),
+    elm = wave.filter(
+      (item) =>
+        apex.length === 0 ||
+        [
+          item.name,
+          getPluginDisplayName(item),
+          getPluginShortDescription(item),
+        ].some((_item) => ensureKeyboardShortcutsHMInit(_item, apex) > 0),
+    ),
     fern = yarn(commands, apex, ridge),
     grove = elm.length > 0 || fern.length > 0,
     hill = ridge.formatMessage({
       id: "settings.codexMicro.analog.clearAssignment",
       defaultMessage: "Clear assignment",
-      description: "Accessible label and tooltip for clearing a Codex Micro analog direction assignment"
+      description:
+        "Accessible label and tooltip for clearing a Codex Micro analog direction assignment",
     });
   let isle = hill,
     juniper = () => {
@@ -405,205 +506,393 @@ function eagle(quest) {
     quiet = ridge.formatMessage({
       id: "settings.codexMicro.keyboardLayout.analog.configure",
       defaultMessage: "Configure analog stick actions",
-      description: "Accessible label for opening the Codex Micro analog stick action mapping editor"
+      description:
+        "Accessible label for opening the Codex Micro analog stick action mapping editor",
     });
-  let rain = <CodexMicroKeyboardSurfaceTile {...{
-    className: "size-full group-hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.82),0_0_12px_rgba(141,181,255,0.2)] dark:group-hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.14),0_0_12px_rgba(141,181,255,0.24)]",
-    joystick
-  }} />;
-  let seed = <button type="button" aria-label={quiet} className="group relative z-10 m-auto size-[92%] cursor-interaction">
+  let rain = (
+    <CodexMicroKeyboardSurfaceTile
+      {...{
+        className:
+          "size-full group-hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.82),0_0_12px_rgba(141,181,255,0.2)] dark:group-hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.14),0_0_12px_rgba(141,181,255,0.24)]",
+        joystick,
+      }}
+    />
+  );
+  let seed = (
+    <button
+      type="button"
+      aria-label={quiet}
+      className="group relative z-10 m-auto size-[92%] cursor-interaction"
+    >
       {rain}
-    </button>;
-  let trail = <RealtimeVoiceHostId {...{
-    children: <MemoizedFormattedMessage {...{
-      id: "settings.codexMicro.analog.title",
-      defaultMessage: "Analog stick",
-      description: "Title of the Codex Micro analog stick action mapping dialog"
-    }} />
-  }} />;
-  let urn = <DeferredUiU {...{
-    children: <DeferredUiH {...{
-      title: trail,
-      subtitle: <IsStartingProcessExpired {...{
-        children: <MemoizedFormattedMessage {...{
-          id: "settings.codexMicro.analog.description",
-          defaultMessage: "Choose what each direction triggers",
-          description: "Description of the Codex Micro analog stick action mapping dialog"
-        }} />
-      }} />
-    }} />
-  }} />;
-  let vine = <CodexMicroKeyboardSurfaceTile {...{
-    className: "size-20 justify-self-center",
-    joystick
-  }} />;
+    </button>
+  );
+  let trail = (
+    <RealtimeVoiceHostId
+      {...{
+        children: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.codexMicro.analog.title",
+              defaultMessage: "Analog stick",
+              description:
+                "Title of the Codex Micro analog stick action mapping dialog",
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let urn = (
+    <DeferredUiU
+      {...{
+        children: (
+          <DeferredUiH
+            {...{
+              title: trail,
+              subtitle: (
+                <IsStartingProcessExpired
+                  {...{
+                    children: (
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "settings.codexMicro.analog.description",
+                          defaultMessage: "Choose what each direction triggers",
+                          description:
+                            "Description of the Codex Micro analog stick action mapping dialog",
+                        }}
+                      />
+                    ),
+                  }}
+                />
+              ),
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let vine = (
+    <CodexMicroKeyboardSurfaceTile
+      {...{
+        className: "size-20 justify-self-center",
+        joystick,
+      }}
+    />
+  );
   let wind = ridge.formatMessage({
     id: "settings.codexMicro.analog.directionGroup.label",
     defaultMessage: "Analog direction mappings",
-    description: "Accessible label for the Codex Micro analog direction mapping group"
+    description:
+      "Accessible label for the Codex Micro analog direction mapping group",
   });
-  let yarrow = wheat.map(item => <CodexMicroSettingsHelper4 key={item} {...{
-      action: mapping[item],
-      direction: item,
-      isSelected: selectedDirection === item,
-      skills: wave,
-      onSelect: () => {
-        onDirectionSelect(item);
-      }
-    }} />),
-    azure = <div aria-label={wind} className="flex min-w-0 flex-col gap-1" role="group">
+  let yarrow = wheat.map((item) => (
+      <CodexMicroSettingsHelper4
+        key={item}
+        {...{
+          action: mapping[item],
+          direction: item,
+          isSelected: selectedDirection === item,
+          skills: wave,
+          onSelect: () => {
+            onDirectionSelect(item);
+          },
+        }}
+      />
+    )),
+    azure = (
+      <div
+        aria-label={wind}
+        className="flex min-w-0 flex-col gap-1"
+        role="group"
+      >
         {yarrow}
-      </div>;
-  let birch = <DeferredUiU {...{
-    children: <div className="grid grid-cols-[8rem_minmax(0,1fr)] items-center gap-5">
+      </div>
+    );
+  let birch = (
+    <DeferredUiU
+      {...{
+        children: (
+          <div className="grid grid-cols-[8rem_minmax(0,1fr)] items-center gap-5">
             {vine}
             {azure}
           </div>
-  }} />;
-  let canyon = <span className="font-medium">
-      {<MemoizedFormattedMessage {...{
-      id: "settings.codexMicro.analog.assignDirection",
-      defaultMessage: "Assign {direction}",
-      description: "Label above Codex Micro analog direction action choices",
-      values: {
-        direction: <CodexMicroSettingsHelper7 key={"direction"} {...{
-          direction: selectedDirection,
-          lowercase: true
-        }} />
+        ),
+      }}
+    />
+  );
+  let canyon = (
+    <span className="font-medium">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.codexMicro.analog.assignDirection",
+            defaultMessage: "Assign {direction}",
+            description:
+              "Label above Codex Micro analog direction action choices",
+            values: {
+              direction: (
+                <CodexMicroSettingsHelper7
+                  key={"direction"}
+                  {...{
+                    direction: selectedDirection,
+                    lowercase: true,
+                  }}
+                />
+              ),
+            },
+          }}
+        />
       }
-    }} />}
-    </span>;
+    </span>
+  );
   let dew = ridge.formatMessage({
     id: "settings.codexMicro.analog.currentAssignment",
     defaultMessage: "Current assignment",
-    description: "Accessible label for the current Codex Micro analog direction assignment"
+    description:
+      "Accessible label for the current Codex Micro analog direction assignment",
   });
-  let ever = brook == null ? null : <OptionalTooltip {...{
-    tooltipContent: isle,
-    children: <ReadLoginRouteQuerySnapshot {...{
-      uniform: true,
-      "aria-label": isle,
-      className: "shrink-0",
-      color: "ghost",
-      size: "iconMd",
-      onClick: () => {
-        onActionChange(selectedDirection, null);
-      },
-      children: <Chatgpt2 {...{
-        "aria-hidden": true
-      }} />
-    }} />
-  }} />;
+  let ever =
+    brook == null ? null : (
+      <OptionalTooltip
+        {...{
+          tooltipContent: isle,
+          children: (
+            <ReadLoginRouteQuerySnapshot
+              {...{
+                uniform: true,
+                "aria-label": isle,
+                className: "shrink-0",
+                color: "ghost",
+                size: "iconMd",
+                onClick: () => {
+                  onActionChange(selectedDirection, null);
+                },
+                children: (
+                  <Chatgpt2
+                    {...{
+                      "aria-hidden": true,
+                    }}
+                  />
+                ),
+              }}
+            />
+          ),
+        }}
+      />
+    );
   let field = ridge.formatMessage({
     id: "settings.codexMicro.analog.search.label",
     defaultMessage: "Search analog actions and skills",
-    description: "Accessible label for searching actions and skills in the Codex Micro analog mapping dialog"
+    description:
+      "Accessible label for searching actions and skills in the Codex Micro analog mapping dialog",
   });
   let grain = ridge.formatMessage({
     id: "settings.codexMicro.analog.search.placeholder",
     defaultMessage: "Search actions and skills",
-    description: "Placeholder for searching actions and skills in the Codex Micro analog mapping dialog"
+    description:
+      "Placeholder for searching actions and skills in the Codex Micro analog mapping dialog",
   });
-  let haven = <EnsureKeyboardShortcutsGtInit {...{
-    ariaLabel: field,
-    placeholder: grain,
-    value: unity,
-    onValueChange: vale
-  }} />;
-  let ink = grove ? <div className="flex flex-col gap-4">
-        {elm.length === 0 ? null : <UseChromeAndCodeThemeSync {...{
-        children: [<UseChromeAndCodeThemeSync.Header {...{
-          title: <MemoizedFormattedMessage {...{
-            id: "settings.codexMicro.analog.skills",
-            defaultMessage: "Skills",
-            description: "Section heading for Codex Micro analog skill choices"
-          }} />
-        }} />, <UseChromeAndCodeThemeSync.Content {...{
-          children: elm.map(item => <CodexMicroSettingsHelper5 key={item.path} {...{
-            description: getPluginShortDescription(item),
-            isSelected: brook?.type === "skill" && brook.skillName === item.name && brook.skillPath === item.path,
-            onSelect: () => {
-              onActionChange(selectedDirection, {
-                type: "skill",
-                skillName: item.name,
-                skillPath: item.path
-              });
-            },
-            title: getPluginDisplayName(item)
-          }} />)
-        }} />]
-      }} />}
-        {fern.map(item => <UseChromeAndCodeThemeSync key={item.id} {...{
-        children: [<UseChromeAndCodeThemeSync.Header {...{
-          title: item.label
-        }} />, <UseChromeAndCodeThemeSync.Content {...{
-          children: item.options.map(_item => {
-            let {
-              command,
-              description,
-              title
-            } = _item;
-            return <CodexMicroSettingsHelper5 key={command.id} {...{
-              description: description || null,
-              isSelected: cliff === command.id,
-              onSelect: () => {
-                onActionChange(selectedDirection, {
-                  type: "command",
-                  commandId: command.id
-                });
-              },
-              title
-            }} />;
-          })
-        }} />]
-      }} />)}
-      </div> : <div className="py-2 text-sm text-token-text-secondary">
-        {<MemoizedFormattedMessage {...{
-        id: "settings.codexMicro.analog.noResults",
-        defaultMessage: "No matching actions or skills",
-        description: "Empty search state for Codex Micro analog direction choices"
-      }} />}
-      </div>,
-    jadeite = <div className="vertical-scroll-fade-mask min-h-0 flex-1 overflow-y-auto pe-1 [--edge-fade-distance:1rem]">
+  let haven = (
+    <EnsureKeyboardShortcutsGtInit
+      {...{
+        ariaLabel: field,
+        placeholder: grain,
+        value: unity,
+        onValueChange: vale,
+      }}
+    />
+  );
+  let ink = grove ? (
+      <div className="flex flex-col gap-4">
+        {elm.length === 0 ? null : (
+          <UseChromeAndCodeThemeSync
+            {...{
+              children: [
+                <UseChromeAndCodeThemeSync.Header
+                  {...{
+                    title: (
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "settings.codexMicro.analog.skills",
+                          defaultMessage: "Skills",
+                          description:
+                            "Section heading for Codex Micro analog skill choices",
+                        }}
+                      />
+                    ),
+                  }}
+                />,
+                <UseChromeAndCodeThemeSync.Content
+                  {...{
+                    children: elm.map((item) => (
+                      <CodexMicroSettingsHelper5
+                        key={item.path}
+                        {...{
+                          description: getPluginShortDescription(item),
+                          isSelected:
+                            brook?.type === "skill" &&
+                            brook.skillName === item.name &&
+                            brook.skillPath === item.path,
+                          onSelect: () => {
+                            onActionChange(selectedDirection, {
+                              type: "skill",
+                              skillName: item.name,
+                              skillPath: item.path,
+                            });
+                          },
+                          title: getPluginDisplayName(item),
+                        }}
+                      />
+                    )),
+                  }}
+                />,
+              ],
+            }}
+          />
+        )}
+        {fern.map((item) => (
+          <UseChromeAndCodeThemeSync
+            key={item.id}
+            {...{
+              children: [
+                <UseChromeAndCodeThemeSync.Header
+                  {...{
+                    title: item.label,
+                  }}
+                />,
+                <UseChromeAndCodeThemeSync.Content
+                  {...{
+                    children: item.options.map((_item) => {
+                      let { command, description, title } = _item;
+                      return (
+                        <CodexMicroSettingsHelper5
+                          key={command.id}
+                          {...{
+                            description: description || null,
+                            isSelected: cliff === command.id,
+                            onSelect: () => {
+                              onActionChange(selectedDirection, {
+                                type: "command",
+                                commandId: command.id,
+                              });
+                            },
+                            title,
+                          }}
+                        />
+                      );
+                    }),
+                  }}
+                />,
+              ],
+            }}
+          />
+        ))}
+      </div>
+    ) : (
+      <div className="py-2 text-sm text-token-text-secondary">
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.codexMicro.analog.noResults",
+              defaultMessage: "No matching actions or skills",
+              description:
+                "Empty search state for Codex Micro analog direction choices",
+            }}
+          />
+        }
+      </div>
+    ),
+    jadeite = (
+      <div className="vertical-scroll-fade-mask min-h-0 flex-1 overflow-y-auto pe-1 [--edge-fade-distance:1rem]">
         {ink}
-      </div>;
+      </div>
+    );
   let kernel = () => {
     petal(false);
   };
-  let leaf = <MemoizedFormattedMessage {...{
-    id: "settings.codexMicro.analog.done",
-    defaultMessage: "Done",
-    description: "Button that closes the Codex Micro analog action mapping dialog"
-  }} />;
+  let leaf = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.codexMicro.analog.done",
+        defaultMessage: "Done",
+        description:
+          "Button that closes the Codex Micro analog action mapping dialog",
+      }}
+    />
+  );
   let maple;
-  return maple = <DeferredUiU {...{
-    children: <SetRemoteControlEnabledForHost {...{
-      children: <ReadLoginRouteQuerySnapshot {...{
-        color: "primary",
-        onClick: kernel,
-        children: leaf
-      }} />
-    }} />
-  }} />, <UsePointerSurfaceInteractionGate {...{
-    open: storm,
-    size: "wide",
-    onOpenChange: petal,
-    triggerContent: seed,
-    children: <DeferredUiB {...{
-      className: "max-h-[min(680px,calc(100vh-4rem))] min-h-0 gap-0 overflow-hidden",
-      children: [urn, birch, <DeferredUiU {...{
-        className: "flex min-h-0 flex-1 flex-col gap-3",
-        children: [<div className="flex items-center justify-between gap-4 text-sm">
+  return (
+    (maple = (
+      <DeferredUiU
+        {...{
+          children: (
+            <SetRemoteControlEnabledForHost
+              {...{
+                children: (
+                  <ReadLoginRouteQuerySnapshot
+                    {...{
+                      color: "primary",
+                      onClick: kernel,
+                      children: leaf,
+                    }}
+                  />
+                ),
+              }}
+            />
+          ),
+        }}
+      />
+    )),
+    (
+      <UsePointerSurfaceInteractionGate
+        {...{
+          open: storm,
+          size: "wide",
+          onOpenChange: petal,
+          triggerContent: seed,
+          children: (
+            <DeferredUiB
+              {...{
+                className:
+                  "max-h-[min(680px,calc(100vh-4rem))] min-h-0 gap-0 overflow-hidden",
+                children: [
+                  urn,
+                  birch,
+                  <DeferredUiU
+                    {...{
+                      className: "flex min-h-0 flex-1 flex-col gap-3",
+                      children: [
+                        <div className="flex items-center justify-between gap-4 text-sm">
                           {canyon}
-                          <div aria-label={dew} className="flex max-w-[60%] min-w-0 items-center gap-1" role="group">
-                            {<CodexMicroSettingsHelper6 {...{
-              title: dusk,
-              unassigned: brook == null
-            }} />}
+                          <div
+                            aria-label={dew}
+                            className="flex max-w-[60%] min-w-0 items-center gap-1"
+                            role="group"
+                          >
+                            {
+                              <CodexMicroSettingsHelper6
+                                {...{
+                                  title: dusk,
+                                  unassigned: brook == null,
+                                }}
+                              />
+                            }
                             {ever}
                           </div>
-                        </div>, haven, jadeite]
-      }} />, maple]
-    }} />
-  }} />;
+                        </div>,
+                        haven,
+                        jadeite,
+                      ],
+                    }}
+                  />,
+                  maple,
+                ],
+              }}
+            />
+          ),
+        }}
+      />
+    )
+  );
 }

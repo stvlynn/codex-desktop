@@ -8,7 +8,10 @@ type IntlShape = {
 };
 
 /** Format a rate-limit reset redemption error for the modal. */
-export function formatRateLimitResetError(code: string, intl: IntlShape): string | undefined {
+export function formatRateLimitResetError(
+  code: string,
+  intl: IntlShape,
+): string | undefined {
   switch (code) {
     case "already_redeemed":
       return intl.formatMessage({

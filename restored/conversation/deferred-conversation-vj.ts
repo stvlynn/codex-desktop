@@ -17,7 +17,9 @@ export type BindDeferredConversationVJPeers = {
 let peers: BindDeferredConversationVJPeers | null = null;
 
 /** Wire bindDeferredConversationVJ peers once companions land. */
-export function setBindDeferredConversationVJPeers(next: BindDeferredConversationVJPeers): void {
+export function setBindDeferredConversationVJPeers(
+  next: BindDeferredConversationVJPeers,
+): void {
   peers = next;
 }
 
@@ -29,12 +31,8 @@ export function bindDeferredConversationVJ() {
     throw new Error("bindDeferredConversationVJ peers are not configured");
   }
 
-  return peers.Ma(peers.hT, ({
-    get: e
-  }) => {
-    let {
-        data: t
-      } = e(peers.b$r),
+  return peers.Ma(peers.hT, ({ get: e }) => {
+    let { data: t } = e(peers.b$r),
       n = t?.current_assistant_turn;
     if (n && !n.discarded) return n;
     let r = e(peers.C$r);
@@ -42,6 +40,13 @@ export function bindDeferredConversationVJ() {
       let e = peers.h$r(peers.u$r(r), peers.d$r(r)).at(-1);
       return e ? peers.f$r(e.node.assistantTurns, e.activeId) : null;
     }
-    return peers.f$r(r.filter(e => !peers.c$r(e) && e.previous_turn_id === n.previous_turn_id), n.id) ?? n;
+    return (
+      peers.f$r(
+        r.filter(
+          (e) => !peers.c$r(e) && e.previous_turn_id === n.previous_turn_id,
+        ),
+        n.id,
+      ) ?? n
+    );
   });
 }

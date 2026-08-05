@@ -13,7 +13,9 @@ export type UseSearchBranchesQueryPeers = {
 let peers: UseSearchBranchesQueryPeers | null = null;
 
 /** Wire useSearchBranchesQuery peers once companions land. */
-export function setUseSearchBranchesQueryPeers(next: UseSearchBranchesQueryPeers): void {
+export function setUseSearchBranchesQueryPeers(
+  next: UseSearchBranchesQueryPeers,
+): void {
   peers = next;
 }
 

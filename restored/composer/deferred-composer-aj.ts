@@ -10,7 +10,9 @@ export type DeferredComposerAJPeers = {
 let peers: DeferredComposerAJPeers | null = null;
 
 /** Wire deferredComposerAJ peers once companions land. */
-export function setDeferredComposerAJPeers(next: DeferredComposerAJPeers): void {
+export function setDeferredComposerAJPeers(
+  next: DeferredComposerAJPeers,
+): void {
   peers = next;
 }
 
@@ -22,7 +24,8 @@ export function deferredComposerAJ() {
     throw new Error("deferredComposerAJ peers are not configured");
   }
 
-  return peers.Ma(peers.GM, ({
-    get: e
-  }) => e(peers.yN).pullRequestMergeConflict);
+  return peers.Ma(
+    peers.GM,
+    ({ get: e }) => e(peers.yN).pullRequestMergeConflict,
+  );
 }

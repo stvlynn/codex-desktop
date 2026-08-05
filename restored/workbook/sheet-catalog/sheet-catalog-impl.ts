@@ -7,9 +7,7 @@ export function normalizeSheetCatalog(scaIn3664: any) {
       .map((item, index) => {
         let scaBind18586 = item.sheetId?.trim(),
           scaBind18587 = item.name?.trim(),
-          scaBind18588 = Number.isFinite(item.index)
-            ? item.index
-            : index;
+          scaBind18588 = Number.isFinite(item.index) ? item.index : index;
         return !scaBind18586 || !scaBind18587
           ? null
           : {
@@ -19,10 +17,7 @@ export function normalizeSheetCatalog(scaIn3664: any) {
             };
       })
       .filter((item) => item != null)
-      .sort(
-        (scaIn16106, scaIn16107) =>
-          scaIn16106.index - scaIn16107.index,
-      ),
+      .sort((scaIn16106, scaIn16107) => scaIn16106.index - scaIn16107.index),
     scaBind12257 = new Set(),
     scaBind12258 = [];
   for (let scaBind20726 of scaBind12256)

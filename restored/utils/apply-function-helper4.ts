@@ -9,7 +9,9 @@ export type ApplyFunctionHelper4Peers = {
 let peers: ApplyFunctionHelper4Peers | null = null;
 
 /** Wire applyFunctionHelper4 peers once companions land. */
-export function setApplyFunctionHelper4Peers(next: ApplyFunctionHelper4Peers): void {
+export function setApplyFunctionHelper4Peers(
+  next: ApplyFunctionHelper4Peers,
+): void {
   peers = next;
 }
 

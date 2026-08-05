@@ -9,7 +9,9 @@ export type BindBindDeferredConversationV9Peers = {
 let peers: BindBindDeferredConversationV9Peers | null = null;
 
 /** Wire bindBindDeferredConversationV9 peers once companions land. */
-export function setBindBindDeferredConversationV9Peers(next: BindBindDeferredConversationV9Peers): void {
+export function setBindBindDeferredConversationV9Peers(
+  next: BindBindDeferredConversationV9Peers,
+): void {
   peers = next;
 }
 
@@ -23,7 +25,8 @@ export function bindBindDeferredConversationV9() {
 
   return class extends Error {
     constructor(e) {
-      super(`Unarchived conversation ${peers.e} could not be loaded`), this.name = `UnarchivedConversationLoadError`;
+      (super(`Unarchived conversation ${peers.e} could not be loaded`),
+        (this.name = `UnarchivedConversationLoadError`));
     }
   };
 }

@@ -23,6 +23,6 @@ export function bindDeferredUiG() {
   }
 
   return peers.e(() => {
-    peers.bHs(), peers.jHs();
+    (peers.bHs(), peers.jHs());
   });
 }

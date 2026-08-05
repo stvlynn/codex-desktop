@@ -15,7 +15,9 @@ export type UseWorkspaceAdminRequestsQueryPeers = {
 let peers: UseWorkspaceAdminRequestsQueryPeers | null = null;
 
 /** Wire useWorkspaceAdminRequestsQuery peers once companions land. */
-export function setUseWorkspaceAdminRequestsQueryPeers(next: UseWorkspaceAdminRequestsQueryPeers): void {
+export function setUseWorkspaceAdminRequestsQueryPeers(
+  next: UseWorkspaceAdminRequestsQueryPeers,
+): void {
   peers = next;
 }
 

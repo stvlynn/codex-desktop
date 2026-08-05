@@ -32,6 +32,12 @@ export function bindAriaLabel() {
   }
 
   return peers.e(() => {
-    Uus = peers.c(), Wus = peers.r(peers.o(), 1), peers.tY(), peers.qR(), peers.$m(), peers.Vos(), Gus = peers.J();
+    ((Uus = peers.c()),
+      (Wus = peers.r(peers.o(), 1)),
+      peers.tY(),
+      peers.qR(),
+      peers.$m(),
+      peers.Vos(),
+      (Gus = peers.J()));
   });
 }

@@ -22,7 +22,7 @@ export function bindDeferredUiQs() {
     throw new Error("bindDeferredUiQs peers are not configured");
   }
 
-  return peers.Ma(peers.j2, ({
-    get: e
-  }) => Array.from(new Set(e(peers.D8).pluginNames.values())));
+  return peers.Ma(peers.j2, ({ get: e }) =>
+    Array.from(new Set(e(peers.D8).pluginNames.values())),
+  );
 }

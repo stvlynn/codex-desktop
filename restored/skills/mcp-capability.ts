@@ -43,38 +43,60 @@ export function bindMcpCapability() {
   }
 
   return peers.e(() => {
-    peers.XS(), peers.US(), peers.Sl(), OJa = peers.sl({
-      kind: peers.ml(`mcp-capability`),
-      mentionSearchTool: peers.X(),
-      path: peers.ol(peers.sl({
-        id: peers.X(),
-        title: peers.X()
+    (peers.XS(),
+      peers.US(),
+      peers.Sl(),
+      (OJa = peers.sl({
+        kind: peers.ml(`mcp-capability`),
+        mentionSearchTool: peers.X(),
+        path: peers.ol(
+          peers.sl({
+            id: peers.X(),
+            title: peers.X(),
+          }),
+        ),
+        server: peers.X(),
+        title: peers.X(),
       })),
-      server: peers.X(),
-      title: peers.X()
-    }), kJa = peers.sl({
-      commandId: peers.X(),
-      dismissOnInput: peers.il().optional(),
-      kind: peers.ml(`slash-command`)
-    }), AJa = peers.dl(`kind`, [peers.OJa, peers.kJa]), jJa = peers.pl([`at-mention`, `skill-mention`, `slash-command`]), MJa = peers.dl(`type`, [peers.sl({
-      kind: peers.jJa,
-      type: peers.ml(`close`)
-    }), peers.sl({
-      action: peers.pl([`complete-query`, `insert-mention`]),
-      kind: peers.jJa,
-      type: peers.ml(`submit`)
-    })]), NJa = peers.dl(`type`, [peers.sl({
-      type: peers.ml(`close`)
-    }), peers.sl({
-      type: peers.ml(`dismiss`)
-    }), peers.sl({
-      from: peers.rl(),
-      kind: peers.pl([`at-mention`, `slash-command`]),
-      trigger: peers.pl([`+`, `/`]),
-      type: peers.ml(`open-synthetic`)
-    }), peers.sl({
-      source: peers.AJa.nullable(),
-      type: peers.ml(`set-source`)
-    })]), PJa = /(?:^|\s)([/@$])([\p{L}\p{N}\p{M}.:_/\\-]*)$/u, FJa = /(?:^|[\s([{])@([^@]*)$/u, IJa = /(?:^|[\s([{])\$([^$]*)$/u, aU = new peers.HS(`composer-suggestion-ui`);
+      (kJa = peers.sl({
+        commandId: peers.X(),
+        dismissOnInput: peers.il().optional(),
+        kind: peers.ml(`slash-command`),
+      })),
+      (AJa = peers.dl(`kind`, [peers.OJa, peers.kJa])),
+      (jJa = peers.pl([`at-mention`, `skill-mention`, `slash-command`])),
+      (MJa = peers.dl(`type`, [
+        peers.sl({
+          kind: peers.jJa,
+          type: peers.ml(`close`),
+        }),
+        peers.sl({
+          action: peers.pl([`complete-query`, `insert-mention`]),
+          kind: peers.jJa,
+          type: peers.ml(`submit`),
+        }),
+      ])),
+      (NJa = peers.dl(`type`, [
+        peers.sl({
+          type: peers.ml(`close`),
+        }),
+        peers.sl({
+          type: peers.ml(`dismiss`),
+        }),
+        peers.sl({
+          from: peers.rl(),
+          kind: peers.pl([`at-mention`, `slash-command`]),
+          trigger: peers.pl([`+`, `/`]),
+          type: peers.ml(`open-synthetic`),
+        }),
+        peers.sl({
+          source: peers.AJa.nullable(),
+          type: peers.ml(`set-source`),
+        }),
+      ])),
+      (PJa = /(?:^|\s)([/@$])([\p{L}\p{N}\p{M}.:_/\\-]*)$/u),
+      (FJa = /(?:^|[\s([{])@([^@]*)$/u),
+      (IJa = /(?:^|[\s([{])\$([^$]*)$/u),
+      (aU = new peers.HS(`composer-suggestion-ui`)));
   });
 }

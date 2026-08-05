@@ -21,7 +21,9 @@ let TooltipImpl: ComponentType<TooltipProps> | null = null;
 const DEFAULT_DELAY_MS = 700;
 
 /** Wire tooltip primitive (`$7e` in the bundle). */
-export function setOptionalTooltipImpl(impl: ComponentType<TooltipProps>): void {
+export function setOptionalTooltipImpl(
+  impl: ComponentType<TooltipProps>,
+): void {
   TooltipImpl = impl;
 }
 

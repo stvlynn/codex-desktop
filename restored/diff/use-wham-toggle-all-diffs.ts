@@ -11,7 +11,9 @@ export type UseWhamToggleAllDiffsPeers = {
 let peers: UseWhamToggleAllDiffsPeers | null = null;
 
 /** Wire useWhamToggleAllDiffs peers once companions land. */
-export function setUseWhamToggleAllDiffsPeers(next: UseWhamToggleAllDiffsPeers): void {
+export function setUseWhamToggleAllDiffsPeers(
+  next: UseWhamToggleAllDiffsPeers,
+): void {
   peers = next;
 }
 

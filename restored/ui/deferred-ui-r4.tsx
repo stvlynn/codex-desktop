@@ -8,7 +8,9 @@ export type BindBindDeferredUiR4Peers = {
 let peers: BindBindDeferredUiR4Peers | null = null;
 
 /** Wire bindBindDeferredUiR4 peers once companions land. */
-export function setBindBindDeferredUiR4Peers(next: BindBindDeferredUiR4Peers): void {
+export function setBindBindDeferredUiR4Peers(
+  next: BindBindDeferredUiR4Peers,
+): void {
   peers = next;
 }
 
@@ -20,7 +22,5 @@ export function bindBindDeferredUiR4() {
     throw new Error("bindBindDeferredUiR4 peers are not configured");
   }
 
-  return peers.JE(({
-    unreadMessageCount: e
-  }) => e ?? 0);
+  return peers.JE(({ unreadMessageCount: e }) => e ?? 0);
 }

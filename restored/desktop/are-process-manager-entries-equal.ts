@@ -12,7 +12,10 @@ export type ProcessManagerEntryLike = {
 };
 
 /** Equality for process-manager rows (id shortcut, else fieldwise). */
-export function areProcessManagerEntriesEqual(left: ProcessManagerEntryLike, right: ProcessManagerEntryLike): boolean {
+export function areProcessManagerEntriesEqual(
+  left: ProcessManagerEntryLike,
+  right: ProcessManagerEntryLike,
+): boolean {
   return left.id === right.id
     ? true
     : left.command === right.command &&

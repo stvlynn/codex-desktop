@@ -30,6 +30,12 @@ export function bindLocalThread() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.Au(), peers.kqr(), peers.ed(), peers.ap(), peers.DWi(), FWi = peers.Da(peers.Q, e => !1);
+    (peers.Ho(),
+      peers.Au(),
+      peers.kqr(),
+      peers.ed(),
+      peers.ap(),
+      peers.DWi(),
+      (FWi = peers.Da(peers.Q, (e) => !1)));
   });
 }

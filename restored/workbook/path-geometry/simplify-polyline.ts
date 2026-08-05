@@ -7,18 +7,10 @@ import { isAxisCollinear, pointsEqual, pointsNearEqual } from "./point-ops";
 /**
  * Legacy `xde` — insert an axis-aligned elbow between two non-aligned points.
  */
-export function insertAxisElbow(
-  a: Point2D,
-  b: Point2D,
-): Point2D[] {
+export function insertAxisElbow(a: Point2D, b: Point2D): Point2D[] {
   if (pointsNearEqual(a.x, b.x) || pointsNearEqual(a.y, b.y)) return [a, b];
   const midX = (a.x + b.x) / 2;
-  return [
-    a,
-    { x: midX, y: a.y },
-    { x: midX, y: b.y },
-    b,
-  ];
+  return [a, { x: midX, y: a.y }, { x: midX, y: b.y }, b];
 }
 
 /**

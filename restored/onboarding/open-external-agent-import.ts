@@ -12,7 +12,9 @@ export type OpenExternalAgentImportPeers = {
 let peers: OpenExternalAgentImportPeers | null = null;
 
 /** Wire openExternalAgentImport peers once companions land. */
-export function setOpenExternalAgentImportPeers(next: OpenExternalAgentImportPeers): void {
+export function setOpenExternalAgentImportPeers(
+  next: OpenExternalAgentImportPeers,
+): void {
   peers = next;
 }
 
@@ -24,7 +26,7 @@ export async function openExternalAgentImport(e: unknown, t: any) {
     throw new Error("openExternalAgentImport peers are not configured");
   }
 
-  let n = t.items.filter(e => peers.PNl(e.itemType));
+  let n = t.items.filter((e) => peers.PNl(e.itemType));
   if (n.length === 0 || peers._Er(e, peers.llu)) return !1;
   let r = {
       hostId: t.hostId,
@@ -32,14 +34,18 @@ export async function openExternalAgentImport(e: unknown, t: any) {
       onImportSuccess: t.onImportSuccess,
       restoreFocus: t.restoreFocus,
       sessionLimits: t.sessionLimits,
-      source: t.source
+      source: t.source,
     },
     i = peers.jlu;
-  return jlu += 1, peers.Wk(e, peers.llu, {
-    request: r,
-    reviewKey: i,
-    onClose: () => {
-      window.requestAnimationFrame(r.restoreFocus);
-    }
-  }), !0;
+  return (
+    (jlu += 1),
+    peers.Wk(e, peers.llu, {
+      request: r,
+      reviewKey: i,
+      onClose: () => {
+        window.requestAnimationFrame(r.restoreFocus);
+      },
+    }),
+    !0
+  );
 }

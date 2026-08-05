@@ -11,7 +11,9 @@ export type BindDeferredComposerNJPeers = {
 let peers: BindDeferredComposerNJPeers | null = null;
 
 /** Wire bindDeferredComposerNJ peers once companions land. */
-export function setBindDeferredComposerNJPeers(next: BindDeferredComposerNJPeers): void {
+export function setBindDeferredComposerNJPeers(
+  next: BindDeferredComposerNJPeers,
+): void {
   peers = next;
 }
 
@@ -23,7 +25,7 @@ export function bindDeferredComposerNJ() {
     throw new Error("bindDeferredComposerNJ peers are not configured");
   }
 
-  return peers.Oa(peers.GM, (e, {
-    get: t
-  }) => e == null ? t(peers.bN) : t(peers.B$r, e));
+  return peers.Oa(peers.GM, (e, { get: t }) =>
+    e == null ? t(peers.bN) : t(peers.B$r, e),
+  );
 }

@@ -9,7 +9,9 @@ export type BindDeferredConversationGdPeers = {
 let peers: BindDeferredConversationGdPeers | null = null;
 
 /** Wire bindDeferredConversationGd peers once companions land. */
-export function setBindDeferredConversationGdPeers(next: BindDeferredConversationGdPeers): void {
+export function setBindDeferredConversationGdPeers(
+  next: BindDeferredConversationGdPeers,
+): void {
   peers = next;
 }
 
@@ -22,9 +24,7 @@ export function bindDeferredConversationGd() {
   }
 
   return peers.wa(`ConversationTurnPresentationScope`, {
-    key: ({
-      turnKey: e
-    }) => e,
-    parent: peers.GM
+    key: ({ turnKey: e }) => e,
+    parent: peers.GM,
   });
 }

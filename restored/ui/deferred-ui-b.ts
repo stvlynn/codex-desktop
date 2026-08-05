@@ -23,7 +23,7 @@ export function deferredUiB() {
   }
 
   return peers.e(() => {
-    peers.cE(), peers.Vf();
+    (peers.cE(), peers.Vf());
   });
 }
 

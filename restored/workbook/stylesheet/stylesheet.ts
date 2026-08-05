@@ -33,7 +33,6 @@ export type FontRegistry = {
 };
 
 export class Stylesheet {
-
   #e;
   #t;
   #n;
@@ -47,16 +46,17 @@ export class Stylesheet {
   #u;
   #d = 0;
   #f;
-  constructor(styleCfg788?: Record<string, any> | null, styleCfg789?: FontRegistry | null) {
+  constructor(
+    styleCfg788?: Record<string, any> | null,
+    styleCfg789?: FontRegistry | null,
+  ) {
     let styleBind5387 = styleCfg788 ?? {};
     this.#f = styleCfg789;
     let styleBind5388 =
       styleBind5387.fonts && styleBind5387.fonts.length > 0
         ? styleBind5387.fonts
         : [defaultFont];
-    this.#e = styleBind5388.map(
-      (item) => new SpreadsheetFont(item),
-    );
+    this.#e = styleBind5388.map((item) => new SpreadsheetFont(item));
     let styleBind5389 = (() => {
       let styleBind14890 = styleBind5387.fills ?? [];
       if (styleBind14890.length === 0) return defaultPatternFills;
@@ -83,9 +83,7 @@ export class Stylesheet {
         ? styleBind5387.borders
         : [defaultBorders];
     if (
-      ((this.#n = styleBind5390.map(
-        (item) => new Borders(item),
-      )),
+      ((this.#n = styleBind5390.map((item) => new Borders(item))),
       (this.#i = deepCloneArray(styleBind5387.cellStyles)),
       (this.#a = deepCloneArray(styleBind5387.cellStyleXfs)),
       this.#i.length === 0 &&
@@ -116,8 +114,7 @@ export class Stylesheet {
     this.#r = styleBind5391.map((item) => {
       let styleBind19471 = new CellXf(item);
       this.#_(styleBind19471.fontId);
-      let styleBind19472 =
-        this.#a[styleBind19471.xfId ?? 0]?.format?.fontId;
+      let styleBind19472 = this.#a[styleBind19471.xfId ?? 0]?.format?.fontId;
       return (this.#_(styleBind19472), styleBind19471);
     });
     this.#o = deepCloneArray(styleBind5387.dxfs);
@@ -183,48 +180,41 @@ export class Stylesheet {
     styleBind7089.xfId = 0;
     styleBind7089.numberFormatId = styleBind7088;
     styleBind7089.wrapText = styleCfg1344.wrapText;
-    styleBind7089.horizontalAlignment =
-      styleCfg1344.horizontalAlignment;
-    styleBind7089.verticalAlignment =
-      styleCfg1344.verticalAlignment;
+    styleBind7089.horizontalAlignment = styleCfg1344.horizontalAlignment;
+    styleBind7089.verticalAlignment = styleCfg1344.verticalAlignment;
     styleBind7089.featurePropertyBagIndex =
       styleCfg1344.featurePropertyBagIndex;
     styleBind7089.applyFont = styleBind7085 !== undefined;
     styleBind7089.applyFill = styleBind7086 !== undefined;
     styleBind7089.applyBorder = styleBind7087 !== undefined;
-    styleBind7089.applyNumberFormat =
-      styleBind7088 !== undefined;
+    styleBind7089.applyNumberFormat = styleBind7088 !== undefined;
     (styleCfg1344.horizontalAlignment !== undefined ||
       styleCfg1344.verticalAlignment !== undefined ||
       styleCfg1344.wrapText !== undefined) &&
       (styleBind7089.applyAlignment = true);
     let styleBind7090 = this.#E(styleBind7089);
     return styleBind7090 === undefined
-      ? (this.#r.push(styleBind7089),
-        (this.#d += 1),
-        this.#r.length - 1)
+      ? (this.#r.push(styleBind7089), (this.#d += 1), this.#r.length - 1)
       : styleBind7090;
   }
-  resolveFeaturePropertyBagStyleIndex(styleCfg4053: number | undefined, styleCfg4054: number | undefined) {
+  resolveFeaturePropertyBagStyleIndex(
+    styleCfg4053: number | undefined,
+    styleCfg4054: number | undefined,
+  ) {
     let styleBind13018 =
         typeof styleCfg4053 == "number" &&
         styleCfg4053 >= 0 &&
         styleCfg4053 < this.#r.length
           ? styleCfg4053
           : 0,
-      styleBind13019 =
-        this.#r[styleBind13018] ?? new CellXf();
+      styleBind13019 = this.#r[styleBind13018] ?? new CellXf();
     if (styleBind13019.featurePropertyBagIndex === styleCfg4054)
       return styleBind13018;
-    let styleBind13020 = new CellXf(
-      styleBind13019.toProto(),
-    );
+    let styleBind13020 = new CellXf(styleBind13019.toProto());
     styleBind13020.featurePropertyBagIndex = styleCfg4054;
     let styleBind13021 = this.#E(styleBind13020);
     return styleBind13021 === undefined
-      ? (this.#r.push(styleBind13020),
-        (this.#d += 1),
-        this.#r.length - 1)
+      ? (this.#r.push(styleBind13020), (this.#d += 1), this.#r.length - 1)
       : styleBind13021;
   }
   toProto() {
@@ -232,8 +222,7 @@ export class Stylesheet {
       fonts: this.#e.map((item) => item.toProto()),
       fills: this.#t.map((item) => {
         let styleBind20135 = item.toProto();
-        if (!styleBind20135)
-          throw Error("Stored fill is missing proto data.");
+        if (!styleBind20135) throw Error("Stored fill is missing proto data.");
         return styleBind20135;
       }),
       cellXfs: this.#r.map((item) => item.toProto()),
@@ -246,7 +235,10 @@ export class Stylesheet {
       mruColors: deepCloneArray(this.#c),
     };
   }
-  registerDifferentialFormat(styleCfg1269: Record<string, any>, styleCfg1270?: unknown) {
+  registerDifferentialFormat(
+    styleCfg1269: Record<string, any>,
+    styleCfg1270?: unknown,
+  ) {
     let styleBind6900 = {};
     if (styleCfg1269.fill) {
       let styleBind20882 = (
@@ -277,10 +269,7 @@ export class Stylesheet {
         (styleBind6900.border = styleBind21699.toProto());
     }
     if (styleCfg1269.numberFormat) {
-      let styleBind19781 = this.#b(
-        undefined,
-        styleCfg1269.numberFormat,
-      );
+      let styleBind19781 = this.#b(undefined, styleCfg1269.numberFormat);
       styleBind19781 !== undefined &&
         (styleBind6900.numberFormat = {
           id: styleBind19781,
@@ -345,8 +334,7 @@ export class Stylesheet {
       let styleBind18041 = this.#l.find(
         (item) => item.formatCode === styleCfg6019,
       );
-      if (styleBind18041?.id !== undefined)
-        return styleBind18041.id;
+      if (styleBind18041?.id !== undefined) return styleBind18041.id;
       let styleBind18042 = this.#u++;
       return (
         this.#l.push(
@@ -364,15 +352,12 @@ export class Stylesheet {
     let styleBind19578 = this.#l
         .map((item) => item.id ?? 0)
         .filter((item) => item > 0),
-      styleBind19579 = styleBind19578.length
-        ? Math.max(...styleBind19578)
-        : 0;
+      styleBind19579 = styleBind19578.length ? Math.max(...styleBind19578) : 0;
     return Math.max(200, styleBind19579 + 1);
   }
   #S(styleCfg11510) {
     if (styleCfg11510 !== undefined)
-      return this.#l.find((item) => item.id === styleCfg11510)
-        ?.formatCode;
+      return this.#l.find((item) => item.id === styleCfg11510)?.formatCode;
   }
   #C(styleCfg9371) {
     for (
@@ -381,10 +366,7 @@ export class Stylesheet {
       styleBind20761 += 1
     ) {
       let styleBind22166 = this.#e[styleBind20761];
-      if (
-        styleBind22166 &&
-        styleBind22166.equals(styleCfg9371)
-      )
+      if (styleBind22166 && styleBind22166.equals(styleCfg9371))
         return styleBind20761;
     }
   }
@@ -414,10 +396,7 @@ export class Stylesheet {
       styleBind20762 += 1
     ) {
       let styleBind22167 = this.#n[styleBind20762];
-      if (
-        styleBind22167 &&
-        styleBind22167.equals(styleCfg9372)
-      )
+      if (styleBind22167 && styleBind22167.equals(styleCfg9372))
         return styleBind20762;
     }
   }
@@ -428,12 +407,8 @@ export class Stylesheet {
       styleBind20763 += 1
     ) {
       let styleBind22168 = this.#r[styleBind20763];
-      if (
-        styleBind22168 &&
-        styleBind22168.equals(styleCfg9373)
-      )
+      if (styleBind22168 && styleBind22168.equals(styleCfg9373))
         return styleBind20763;
     }
   }
-
 }

@@ -8,7 +8,10 @@
 
 import { ensureAccountPlanQueryInit } from "../../account/ensure-account-plan-query-init";
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
-import { appActionSidebarProjectRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { CodexBrowserProfileImportCookieStatus } from "../../analytics/codex-browser-profile-import-cookie-status";
 import { CodexBrowserProfileImportPasswordStatus } from "../../analytics/codex-browser-profile-import-password-status";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
@@ -18,19 +21,115 @@ import { CodexPluginDirectoryEntrypoint } from "../../analytics/codex-plugin-dir
 import { CodexReferralInviteModalBackendErrorType } from "../../analytics/codex-referral-invite-modal-backend-error-type";
 import { shellPanelPinnedDerivedAtom } from "../../app-shell/shell-panel-pin";
 import { AppQueryClientProvider } from "../../app/app-query-client-provider";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { defaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationBranchAtom, chatgptConversationFlagsAtom, chatgptConversationLoadQueryAtom, chatgptConversationPreviewAtom, chatgptConversationServerIdAtom, chatgptConversationsGateAtom, chatgptConversationStatusAtom, chatgptConversationTitleAtom, chatgptThreadDerivedAtomBP, useStepsProseAtom, writingBlocksControllerAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_BF_Init, ensureComposerEsm_BI_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_II_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KF_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MF_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_Ytt_Init, ensureComposerEsm_ZI_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Jj_Init, ensureConversationPageEsm_Lo_Init, ensureConversationPageEsm_Mx_Init, ensureConversationPageEsm_Qa_Init, ensureConversationPageEsm_SP_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationBranchAtom,
+  chatgptConversationFlagsAtom,
+  chatgptConversationLoadQueryAtom,
+  chatgptConversationPreviewAtom,
+  chatgptConversationServerIdAtom,
+  chatgptConversationsGateAtom,
+  chatgptConversationStatusAtom,
+  chatgptConversationTitleAtom,
+  chatgptThreadDerivedAtomBP,
+  useStepsProseAtom,
+  writingBlocksControllerAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_AG_Init,
+  ensureComposerEsm_BF_Init,
+  ensureComposerEsm_BI_Init,
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_II_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_J0_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KF_Init,
+  ensureComposerEsm_M0_Init,
+  ensureComposerEsm_MF_Init,
+  ensureComposerEsm_ML_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_TI_Init,
+  ensureComposerEsm_XP_Init,
+  ensureComposerEsm_Ytt_Init,
+  ensureComposerEsm_ZI_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_FR_Init,
+  ensureConversationPageEsm_GS_Init,
+  ensureConversationPageEsm_GZ_Init,
+  ensureConversationPageEsm_Ist_Init,
+  ensureConversationPageEsm_Jj_Init,
+  ensureConversationPageEsm_Lo_Init,
+  ensureConversationPageEsm_Mx_Init,
+  ensureConversationPageEsm_Qa_Init,
+  ensureConversationPageEsm_SP_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { isIterateeCall } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
-import { _useChatgptComposerControllerA, _useChatgptComposerControllerC, _useChatgptComposerControllerD, _useChatgptComposerControllerF, _useChatgptComposerControllerI, _useChatgptComposerControllerL, _useChatgptComposerControllerM, _useChatgptComposerControllerN, _useChatgptComposerControllerO, _useChatgptComposerControllerP, _useChatgptComposerControllerR, _useChatgptComposerControllerS, useChatgptComposerControllerA, useChatgptComposerControllerC, useChatgptComposerControllerD, useChatgptComposerControllerE, useChatgptComposerControllerF, useChatgptComposerControllerG, useChatgptComposerControllerH, useChatgptComposerControllerI, useChatgptComposerControllerJ, useChatgptComposerControllerK, useChatgptComposerControllerL, useChatgptComposerControllerM, useChatgptComposerControllerN, useChatgptComposerControllerO, useChatgptComposerControllerP, useChatgptComposerControllerR, useChatgptComposerControllerS, useChatgptComposerControllerT, useChatgptComposerControllerU, useChatgptComposerControllerUnderscore } from "../../composer/use-chatgpt-composer-controller";
+import {
+  _useChatgptComposerControllerA,
+  _useChatgptComposerControllerC,
+  _useChatgptComposerControllerD,
+  _useChatgptComposerControllerF,
+  _useChatgptComposerControllerI,
+  _useChatgptComposerControllerL,
+  _useChatgptComposerControllerM,
+  _useChatgptComposerControllerN,
+  _useChatgptComposerControllerO,
+  _useChatgptComposerControllerP,
+  _useChatgptComposerControllerR,
+  _useChatgptComposerControllerS,
+  useChatgptComposerControllerA,
+  useChatgptComposerControllerC,
+  useChatgptComposerControllerD,
+  useChatgptComposerControllerE,
+  useChatgptComposerControllerF,
+  useChatgptComposerControllerG,
+  useChatgptComposerControllerH,
+  useChatgptComposerControllerI,
+  useChatgptComposerControllerJ,
+  useChatgptComposerControllerK,
+  useChatgptComposerControllerL,
+  useChatgptComposerControllerM,
+  useChatgptComposerControllerN,
+  useChatgptComposerControllerO,
+  useChatgptComposerControllerP,
+  useChatgptComposerControllerR,
+  useChatgptComposerControllerS,
+  useChatgptComposerControllerT,
+  useChatgptComposerControllerU,
+  useChatgptComposerControllerUnderscore,
+} from "../../composer/use-chatgpt-composer-controller";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_CITATION_ID } from "../../chatgpt/chatgpt-citation-id";
 import { CHATGPT_CONTENT_REFERENCE_ID } from "../../chatgpt/chatgpt-content-reference-id";
@@ -49,7 +148,12 @@ import { ensureHasSeenRealtimeVoiceNuxAtomInit } from "../../home/realtime-voice
 import { ensureDebugPanelParsersInit } from "../../hooks/debug-panel-turn-files";
 import { ContextMenuRegistration } from "../../hooks/use-context-menu-registration";
 import { useEventCallback } from "../../hooks/use-event-callback";
-import { clampFloatingWindowRect, initFloatingWindowPointerDragConstants, resizeFloatingWindowRect, useFloatingWindowPointerDrag } from "../../hooks/use-floating-window-pointer-drag";
+import {
+  clampFloatingWindowRect,
+  initFloatingWindowPointerDragConstants,
+  resizeFloatingWindowRect,
+  useFloatingWindowPointerDrag,
+} from "../../hooks/use-floating-window-pointer-drag";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { HostFeatureConfigToggles } from "../../hosts/host-feature-config-toggles";
@@ -71,7 +175,11 @@ import { codexDirectiveMarkedExtensions } from "../../markdown/codex-directive-m
 import { markdownToPlainText } from "../../markdown/markdown-to-plain-text";
 import { rewriteFileCitationMarkers } from "../../markdown/rewrite-file-citation-markers";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
-import { findSidebarSectionElement, readScrollTop, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  readScrollTop,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
 import { NavigationAllowContext } from "../../navigation/navigation-allow-context";
@@ -93,16 +201,33 @@ import { openRightPanel } from "../../shell/open-right-panel";
 import { setRightPanelConversation } from "../../shell/set-right-panel-conversation";
 import { ProjectHoverCardBody } from "../../sidebar/project-hover-card-body";
 import { useBrowserExtensionPluginSetupQuery } from "../../skills/use-browser-extension-plugin-setup-query";
-import { initThreadPanelToggleButton, ThreadPanelToggleButton } from "../../thread/thread-panel-toggle-button";
+import {
+  initThreadPanelToggleButton,
+  ThreadPanelToggleButton,
+} from "../../thread/thread-panel-toggle-button";
 import { ThreadResourceCard } from "../../thread/thread-resource-card";
-import { initThreadScrollControllerContext, useThreadScrollController } from "../../thread/thread-scroll-controller-context";
-import { initThreadScrollLayout, ThreadScrollLayout } from "../../thread/thread-scroll-layout";
-import { initToggleThreadSummaryPanel, initToggleThreadSummaryPanelAtoms, toggleThreadSummaryPanel, ToggleThreadSummaryPanel } from "../../thread/toggle-thread-summary-panel";
+import {
+  initThreadScrollControllerContext,
+  useThreadScrollController,
+} from "../../thread/thread-scroll-controller-context";
+import {
+  initThreadScrollLayout,
+  ThreadScrollLayout,
+} from "../../thread/thread-scroll-layout";
+import {
+  initToggleThreadSummaryPanel,
+  initToggleThreadSummaryPanelAtoms,
+  toggleThreadSummaryPanel,
+  ToggleThreadSummaryPanel,
+} from "../../thread/toggle-thread-summary-panel";
 import { BrandedIcon } from "../../ui/branded-icon";
 import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { InsetBorderPanel } from "../../ui/inset-border-panel";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -123,11 +248,18 @@ import { slugifyLoose } from "../../utils/slugify-loose";
 import { sortedArrayFrom } from "../../utils/sorted-array-from";
 import { tryParseJsonText } from "../../utils/try-parse-json-text";
 import { waitForDoubleAnimationFrame } from "../../utils/wait-for-double-animation-frame";
-import { ensureImportSettingsCLInit, ensureSettingsGlyphI0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensureSettingsGlyphI0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { activateConversationSurface } from "../activate-conversation-surface";
 import { BrowserConversationPanel } from "../browser-conversation-panel";
 import { chatgptMessageFallbackId } from "../chatgpt-message-fallback-id";
-import { initChatgptTemporaryChatUi, TemporaryChatHeaderControl, TemporaryChatOnboarding } from "../chatgpt-temporary-chat-ui/index";
+import {
+  initChatgptTemporaryChatUi,
+  TemporaryChatHeaderControl,
+  TemporaryChatOnboarding,
+} from "../chatgpt-temporary-chat-ui/index";
 import { ConversationDiffSourceBridge } from "../conversation-diff-source-bridge";
 import { ensureConversationWorkRouteInit } from "../conversation-work-path";
 import { deferredConversationR } from "../deferred-conversation-r";
@@ -168,17 +300,22 @@ function delta({
   mimeType = null,
   name,
   sandboxPath = null,
-  sizeBytes = null
+  sizeBytes = null,
 }) {
   let cedar = useChatgptComposerControllerG(downloadUrl),
     daisy = {
-      downloadTarget: cedar == null ? fileId == null ? null : {
-        fileId,
-        type: "file-id"
-      } : {
-        downloadUrl: cedar,
-        type: "download-url"
-      },
+      downloadTarget:
+        cedar == null
+          ? fileId == null
+            ? null
+            : {
+                fileId,
+                type: "file-id",
+              }
+          : {
+              downloadUrl: cedar,
+              type: "download-url",
+            },
       fileId,
       key: "",
       kind: "file",
@@ -187,16 +324,25 @@ function delta({
       mimeType,
       name,
       sandboxPath,
-      sizeBytes
+      sizeBytes,
     };
   return {
     ...daisy,
-    key: echo(daisy)[0] ?? `message:${messageId}`
+    key: echo(daisy)[0] ?? `message:${messageId}`,
   };
 }
 function echo(ember) {
-  let flint = [ember.libraryFileId == null ? null : `library:${ember.libraryFileId}`, ember.sandboxPath == null ? null : `sandbox:${ember.sandboxPath}`, ember.fileId == null ? null : `file:${ember.fileId}`, ember.downloadTarget?.type === "download-url" ? `download:${ember.downloadTarget.downloadUrl}` : null].filter(item => item != null);
-  return flint.length > 0 ? flint : [`message:${ember.messageId}:name:${ember.name}`];
+  let flint = [
+    ember.libraryFileId == null ? null : `library:${ember.libraryFileId}`,
+    ember.sandboxPath == null ? null : `sandbox:${ember.sandboxPath}`,
+    ember.fileId == null ? null : `file:${ember.fileId}`,
+    ember.downloadTarget?.type === "download-url"
+      ? `download:${ember.downloadTarget.downloadUrl}`
+      : null,
+  ].filter((item) => item != null);
+  return flint.length > 0
+    ? flint
+    : [`message:${ember.messageId}:name:${ember.name}`];
 }
 function falcon(event, garnet) {
   return {
@@ -207,7 +353,7 @@ function falcon(event, garnet) {
     libraryFileId: garnet.libraryFileId ?? event.libraryFileId,
     mimeType: garnet.mimeType ?? event.mimeType,
     sandboxPath: garnet.sandboxPath ?? event.sandboxPath,
-    sizeBytes: garnet.sizeBytes ?? event.sizeBytes
+    sizeBytes: garnet.sizeBytes ?? event.sizeBytes,
   };
 }
 function gamma(hazel) {
@@ -219,7 +365,9 @@ function harbor(jasper) {
 }
 function indigo(kelp) {
   let lotus = kelp?.split("/").filter(Boolean).at(-1);
-  return lotus == null || lotus.length === 0 ? null : lotus.replaceAll("_", " ");
+  return lotus == null || lotus.length === 0
+    ? null
+    : lotus.replaceAll("_", " ");
 }
 var jade,
   kite,
@@ -244,8 +392,10 @@ var jade,
     jade = {
       "/library/create_library_file": "create_library_file",
       "/library/replace_library_file": "replace_library_file",
-      "/connector_openai_library/implicit_link::connector_openai_library/create_library_file": "create_library_file",
-      "/connector_openai_library/implicit_link::connector_openai_library/replace_library_file": "replace_library_file"
+      "/connector_openai_library/implicit_link::connector_openai_library/create_library_file":
+        "create_library_file",
+      "/connector_openai_library/implicit_link::connector_openai_library/replace_library_file":
+        "replace_library_file",
     };
     kite = /\/ecosystem\/apps\/[^/]+/;
     lemon = deferredUiXT({
@@ -257,31 +407,39 @@ var jade,
       mime_type: coalesceTruthy().trim().min(1).nullish(),
       name: coalesceTruthy().trim().min(1),
       size: remote().finite().nonnegative().nullish(),
-      type: sortedArrayFrom("file")
+      type: sortedArrayFrom("file"),
     });
-    marble = lemon.omit({
-      type: true
-    }).extend({
-      type: sortedArrayFrom("file").optional()
-    });
+    marble = lemon
+      .omit({
+        type: true,
+      })
+      .extend({
+        type: sortedArrayFrom("file").optional(),
+      });
     nickel = deferredUiXT({
       items: deferredNavigationFT(siteAnalyticsPath()),
-      type: sortedArrayFrom("file_navlist")
+      type: sortedArrayFrom("file_navlist"),
     });
     onyx = deferredUiXT({
       content_references: deferredNavigationFT(siteAnalyticsPath()).nullish(),
-      content_references_by_file: ensureAccountPlanQueryInit(coalesceTruthy(), siteAnalyticsPath()).nullish()
+      content_references_by_file: ensureAccountPlanQueryInit(
+        coalesceTruthy(),
+        siteAnalyticsPath(),
+      ).nullish(),
     });
     _c = ensureAccountPlanQueryInit(coalesceTruthy(), siteAnalyticsPath());
     pearl = deferredUiXT({
       invoked_plugin: deferredUiXT({
         parsed_function_call: deferredUiXT({
-          kwargs: ensureAccountPlanQueryInit(coalesceTruthy(), siteAnalyticsPath()).optional()
-        }).optional()
+          kwargs: ensureAccountPlanQueryInit(
+            coalesceTruthy(),
+            siteAnalyticsPath(),
+          ).optional(),
+        }).optional(),
       }).nullish(),
       invoked_resource: deferredUiXT({
-        resource_uri: coalesceTruthy()
-      })
+        resource_uri: coalesceTruthy(),
+      }),
     });
     quartz = deferredUiXT({
       current_version_number: remote().int().nonnegative().nullish(),
@@ -290,65 +448,73 @@ var jade,
       file_size_bytes: remote().finite().nonnegative().nullish(),
       library_file_id: coalesceTruthy().trim().min(1),
       mime_type: coalesceTruthy().trim().min(1).nullish(),
-      operation: buildSiteSettingsPath(["create_library_file", "replace_library_file"]),
-      status: sortedArrayFrom("succeeded")
+      operation: buildSiteSettingsPath([
+        "create_library_file",
+        "replace_library_file",
+      ]),
+      status: sortedArrayFrom("succeeded"),
     });
     river = deferredUiXT({
       file_id: coalesceTruthy().trim().min(1),
       file_size_bytes: remote().finite().nonnegative().nullish(),
       library_file_id: coalesceTruthy().trim().min(1),
       mime_type: coalesceTruthy().trim().min(1).nullish(),
-      name: coalesceTruthy().trim().min(1)
+      name: coalesceTruthy().trim().min(1),
     });
     slate = deferredUiXT({
       app_metadata: deferredUiXT({
         review: deferredUiXT({
-          status: coalesceTruthy().nullish()
-        }).nullish()
+          status: coalesceTruthy().nullish(),
+        }).nullish(),
       }).nullish(),
       connector_type: coalesceTruthy().nullish(),
       id: coalesceTruthy().trim().min(1),
-      status: coalesceTruthy().nullish()
+      status: coalesceTruthy().nullish(),
     });
     timber = deferredUiXT({
-      selected_mcp_sources: deferredNavigationFT(siteAnalyticsPath()).nullish()
+      selected_mcp_sources: deferredNavigationFT(siteAnalyticsPath()).nullish(),
     });
     umbra = deferredUiXT({
       invoked_resource: deferredUiXT({
-        resource_uri: coalesceTruthy().trim().min(1).nullish()
-      }).nullish()
+        resource_uri: coalesceTruthy().trim().min(1).nullish(),
+      }).nullish(),
     });
     violet = deferredUiXT({
       __internal: deferredUiXT({
         api_tool_error: deferredUiXT({
-          error_code: siteAnalyticsPath().optional()
-        }).nullish()
+          error_code: siteAnalyticsPath().optional(),
+        }).nullish(),
       }).nullish(),
       _internal: deferredUiXT({
         api_tool_error: deferredUiXT({
-          error_code: siteAnalyticsPath().optional()
-        }).nullish()
+          error_code: siteAnalyticsPath().optional(),
+        }).nullish(),
       }).nullish(),
       chatgpt_sdk: deferredUiXT({
         distribution_channel: coalesceTruthy().nullish(),
         is_error: ensureComposerEsm_MT_Init().nullish(),
         tool_response_metadata: deferredUiXT({
-          status: coalesceTruthy().nullish()
-        }).nullish()
+          status: coalesceTruthy().nullish(),
+        }).nullish(),
       }).nullish(),
       invoked_plugin: deferredUiXT({
         connector_name: coalesceTruthy().trim().min(1).nullish(),
-        http_response_status: siteAnalyticsEventsPath([coalesceTruthy(), remote()]).nullish(),
-        plugin_id: coalesceTruthy().trim().min(1).nullish()
+        http_response_status: siteAnalyticsEventsPath([
+          coalesceTruthy(),
+          remote(),
+        ]).nullish(),
+        plugin_id: coalesceTruthy().trim().min(1).nullish(),
       }).nullish(),
       invoked_resource: deferredUiXT({
         app_name: coalesceTruthy().trim().min(1).nullish(),
         connector_id: coalesceTruthy().trim().min(1).nullish(),
         publish_status: coalesceTruthy().nullish(),
-        resource_uri: coalesceTruthy().trim().min(1).nullish()
+        resource_uri: coalesceTruthy().trim().min(1).nullish(),
       }).nullish(),
       is_error: ensureComposerEsm_MT_Init().nullish(),
-      tool_icons: deferredNavigationFT(coalesceTruthy().trim().min(1)).nullish()
+      tool_icons: deferredNavigationFT(
+        coalesceTruthy().trim().min(1),
+      ).nullish(),
     });
     willow = class {
       files = [];
@@ -357,7 +523,8 @@ var jade,
         let nova = this.indexByAlias.get(mint);
         if (nova != null) {
           this.files[nova] = undefined;
-          for (let [olive, prism] of this.indexByAlias) prism === nova && this.indexByAlias.delete(olive);
+          for (let [olive, prism] of this.indexByAlias)
+            prism === nova && this.indexByAlias.delete(olive);
         }
       }
       hasAlias(quill) {
@@ -365,10 +532,14 @@ var jade,
       }
       upsert(reef) {
         let sage = echo(reef),
-          topaz = [...new Set(sage.flatMap(item => {
-            let yarn = this.indexByAlias.get(item);
-            return yarn == null ? [] : [yarn];
-          }))].sort((zephyr, acorn) => zephyr - acorn);
+          topaz = [
+            ...new Set(
+              sage.flatMap((item) => {
+                let yarn = this.indexByAlias.get(item);
+                return yarn == null ? [] : [yarn];
+              }),
+            ),
+          ].sort((zephyr, acorn) => zephyr - acorn);
         if (topaz.length === 0) {
           let bloom = this.files.length;
           this.files.push(reef);
@@ -386,97 +557,122 @@ var jade,
         vapor = falcon(vapor, reef);
         this.files[ultra] = vapor;
         let wheat = new Set(topaz);
-        for (let [frost, glide] of this.indexByAlias) wheat.has(glide) && this.indexByAlias.set(frost, ultra);
+        for (let [frost, glide] of this.indexByAlias)
+          wheat.has(glide) && this.indexByAlias.set(frost, ultra);
         for (let honey of echo(vapor)) this.indexByAlias.set(honey, ultra);
       }
       values() {
-        return this.files.filter(item => item != null);
+        return this.files.filter((item) => item != null);
       }
     };
   });
-function yellow({
-  messages,
-  pendingAttachments = [],
-  turns
-}) {
+function yellow({ messages, pendingAttachments = [], turns }) {
   let iris = bravo(messages),
     jewel = [...iris.inputs],
     knoll = new Map(),
     lunar = new Map(),
     moss = zinc(messages),
     north = [];
-  for (let orbit of pendingAttachments) jewel.some(item => item.fileId === orbit.id || orbit.libraryFileId != null && item.libraryFileId === orbit.libraryFileId) || jewel.push({
-    downloadTarget: {
-      fileId: orbit.id,
-      type: "file-id"
-    },
-    fileId: orbit.id,
-    key: `input:pending:${orbit.id}`,
-    kind: "file",
-    libraryFileId: orbit.libraryFileId ?? null,
-    messageId: "pending-submission",
-    mimeType: orbit.mimeType,
-    name: orbit.name,
-    sandboxPath: null,
-    sizeBytes: orbit.size ?? null
-  });
-  for (let {
-    id,
-    turn
-  } of turns) for (let pine of amber(turn.items)) {
-    if (pine.type === "assistant-message") {
-      for (let quest of pine.contentReferences) for (let ridge of ensureComposerEsm_II_Init(quest)) lunar.has(ridge.url) || lunar.set(ridge.url, {
-        key: ridge.url,
-        kind: "web",
-        label: ridge.label,
-        title: ridge.title,
-        url: ridge.url
+  for (let orbit of pendingAttachments)
+    jewel.some(
+      (item) =>
+        item.fileId === orbit.id ||
+        (orbit.libraryFileId != null &&
+          item.libraryFileId === orbit.libraryFileId),
+    ) ||
+      jewel.push({
+        downloadTarget: {
+          fileId: orbit.id,
+          type: "file-id",
+        },
+        fileId: orbit.id,
+        key: `input:pending:${orbit.id}`,
+        kind: "file",
+        libraryFileId: orbit.libraryFileId ?? null,
+        messageId: "pending-submission",
+        mimeType: orbit.mimeType,
+        name: orbit.name,
+        sandboxPath: null,
+        sizeBytes: orbit.size ?? null,
       });
-      continue;
+  for (let { id, turn } of turns)
+    for (let pine of amber(turn.items)) {
+      if (pine.type === "assistant-message") {
+        for (let quest of pine.contentReferences)
+          for (let ridge of ensureComposerEsm_II_Init(quest))
+            lunar.has(ridge.url) ||
+              lunar.set(ridge.url, {
+                key: ridge.url,
+                kind: "web",
+                label: ridge.label,
+                title: ridge.title,
+                url: ridge.url,
+              });
+        continue;
+      }
+      if (pine.type === "todo-list") {
+        north = pine.plan.map((item, index) => ({
+          key: `progress:${id}:${String(index)}`,
+          label: item.step,
+          status: moss ? "completed" : item.status,
+        }));
+        continue;
+      }
+      if (
+        pine.type === "generated-image" &&
+        pine.status === "completed" &&
+        pine.src != null
+      ) {
+        let storm = `image:${pine.id}`;
+        knoll.set(storm, {
+          height: pine.height ?? null,
+          imageId: pine.id,
+          key: storm,
+          kind: "generated-image",
+          src: pine.src,
+          width: pine.width ?? null,
+        });
+      }
     }
-    if (pine.type === "todo-list") {
-      north = pine.plan.map((item, index) => ({
-        key: `progress:${id}:${String(index)}`,
-        label: item.step,
-        status: moss ? "completed" : item.status
-      }));
-      continue;
-    }
-    if (pine.type === "generated-image" && pine.status === "completed" && pine.src != null) {
-      let storm = `image:${pine.id}`;
-      knoll.set(storm, {
-        height: pine.height ?? null,
-        imageId: pine.id,
-        key: storm,
-        kind: "generated-image",
-        src: pine.src,
-        width: pine.width ?? null
-      });
-    }
-  }
   return {
     inputs: jewel,
     outputs: [...iris.outputs, ...knoll.values()],
     progressSteps: north,
     sources: [...lunar.values(), ...iris.pluginSources],
-    subagents: fileAttachmentsFromMetadata(messages, {
-      isTurnLive: turns.at(-1)?.turn.status === "in_progress"
-    })?.subagents ?? []
+    subagents:
+      fileAttachmentsFromMetadata(messages, {
+        isTurnLive: turns.at(-1)?.turn.status === "in_progress",
+      })?.subagents ?? [],
   };
 }
 function zinc(tide) {
   let unity = -1;
   for (let vale = tide.length - 1; vale >= 0; vale--) {
     let wave = tide[vale];
-    if (wave?.recipient === "turn_plan.update_turn_plan" && CHATGPT_DIL_ID(wave)?.item?.type === "todo-list") {
+    if (
+      wave?.recipient === "turn_plan.update_turn_plan" &&
+      CHATGPT_DIL_ID(wave)?.item?.type === "todo-list"
+    ) {
       unity = vale;
       break;
     }
   }
-  return unity === -1 ? false : tide.slice(unity + 1).some(item => item.author.role === "assistant" && item.channel === "final" && item.recipient === "all" && item.status === "finished_successfully");
+  return unity === -1
+    ? false
+    : tide
+        .slice(unity + 1)
+        .some(
+          (item) =>
+            item.author.role === "assistant" &&
+            item.channel === "final" &&
+            item.recipient === "all" &&
+            item.status === "finished_successfully",
+        );
 }
 function amber(apex) {
-  return apex.flatMap(item => item.type === "chatgpt-reasoning-group" ? item.items : [item]);
+  return apex.flatMap((item) =>
+    item.type === "chatgpt-reasoning-group" ? item.items : [item],
+  );
 }
 var basalt = esmInit(() => {
   ThreadResourceCard();
@@ -485,35 +681,46 @@ var basalt = esmInit(() => {
   AppInitialTF();
 });
 export function ChatgptConversationPageIcon() {
-  let {
-      conversationId
-    } = AppInitialU5(),
-    {
-      search
-    } = useLocation();
+  let { conversationId } = AppInitialU5(),
+    { search } = useLocation();
   if (conversationId == null) {
     let juniper;
-    return <Navigate {...{
-      to: "/",
-      replace: true
-    }} />;
+    return (
+      <Navigate
+        {...{
+          to: "/",
+          replace: true,
+        }}
+      />
+    );
   }
   let brook = ensureComposerEsm_ZI_Init(conversationId);
   let cliff = brook,
     dusk = AppInitialW8(search);
   let elm = dusk,
     fern = <AppInitialLh.Surface />;
-  let grove = elm ? null : <Alpha {...{
-    conversationId: cliff
-  }} />;
+  let grove = elm ? null : (
+    <Alpha
+      {...{
+        conversationId: cliff,
+      }}
+    />
+  );
   let hill = `${cliff}:${elm}`,
-    isle = <Bravo key={hill} {...{
-      conversationId: cliff,
-      isTemporaryChat: elm
-    }} />;
-  return <>
+    isle = (
+      <Bravo
+        key={hill}
+        {...{
+          conversationId: cliff,
+          isTemporaryChat: elm,
+        }}
+      />
+    );
+  return (
+    <>
       {fern}
       {grove}
       {isle}
-    </>;
+    </>
+  );
 }

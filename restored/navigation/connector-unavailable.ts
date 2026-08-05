@@ -9,7 +9,9 @@ export type ConnectorUnavailablePeers = {
 let peers: ConnectorUnavailablePeers | null = null;
 
 /** Wire connectorUnavailable peers once companions land. */
-export function setConnectorUnavailablePeers(next: ConnectorUnavailablePeers): void {
+export function setConnectorUnavailablePeers(
+  next: ConnectorUnavailablePeers,
+): void {
   peers = next;
 }
 
@@ -22,6 +24,13 @@ export function connectorUnavailable() {
   }
 
   return peers.e(() => {
-    xcc = new Map([[`gmail`, `gmail`], [`google-calendar`, `google-calendar`], [`google-drive`, `google-drive`], [`connector_gmail`, `gmail`], [`connector_google_calendar`, `google-calendar`], [`connector_google_drive`, `google-drive`]]);
+    xcc = new Map([
+      [`gmail`, `gmail`],
+      [`google-calendar`, `google-calendar`],
+      [`google-drive`, `google-drive`],
+      [`connector_gmail`, `gmail`],
+      [`connector_google_calendar`, `google-calendar`],
+      [`connector_google_drive`, `google-drive`],
+    ]);
   });
 }

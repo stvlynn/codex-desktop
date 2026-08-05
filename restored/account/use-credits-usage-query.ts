@@ -24,7 +24,9 @@ export type UseCreditsUsageQueryPeers = {
 let peers: UseCreditsUsageQueryPeers | null = null;
 
 /** Wire credits-usage query peers once companions land. */
-export function setUseCreditsUsageQueryPeers(next: UseCreditsUsageQueryPeers): void {
+export function setUseCreditsUsageQueryPeers(
+  next: UseCreditsUsageQueryPeers,
+): void {
   peers = next;
 }
 

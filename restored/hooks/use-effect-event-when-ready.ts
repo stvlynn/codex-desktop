@@ -9,7 +9,9 @@ export type UseEffectEventWhenReadyPeers = {
 let peers: UseEffectEventWhenReadyPeers | null = null;
 
 /** Wire useEffectEventWhenReady peers once companions land. */
-export function setUseEffectEventWhenReadyPeers(next: UseEffectEventWhenReadyPeers): void {
+export function setUseEffectEventWhenReadyPeers(
+  next: UseEffectEventWhenReadyPeers,
+): void {
   peers = next;
 }
 

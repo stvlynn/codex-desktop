@@ -10,7 +10,9 @@ export type IsUnknownRpcMethodErrorPeers = {
 let peers: IsUnknownRpcMethodErrorPeers | null = null;
 
 /** Wire isUnknownRpcMethodError peers once companions land. */
-export function setIsUnknownRpcMethodErrorPeers(next: IsUnknownRpcMethodErrorPeers): void {
+export function setIsUnknownRpcMethodErrorPeers(
+  next: IsUnknownRpcMethodErrorPeers,
+): void {
   peers = next;
 }
 

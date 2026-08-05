@@ -24,6 +24,6 @@ export function bindBranch() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.jf(), Czl = `.codex/worktrees/`;
+    (peers.Au(), peers.jf(), (Czl = `.codex/worktrees/`));
   });
 }

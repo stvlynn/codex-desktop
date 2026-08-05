@@ -9,7 +9,9 @@ export type BindGitActionIncludeUnstagedChanges2Peers = {
 let peers: BindGitActionIncludeUnstagedChanges2Peers | null = null;
 
 /** Wire bindGitActionIncludeUnstagedChanges2 peers once companions land. */
-export function setBindGitActionIncludeUnstagedChanges2Peers(next: BindGitActionIncludeUnstagedChanges2Peers): void {
+export function setBindGitActionIncludeUnstagedChanges2Peers(
+  next: BindGitActionIncludeUnstagedChanges2Peers,
+): void {
   peers = next;
 }
 
@@ -18,8 +20,10 @@ export function setBindGitActionIncludeUnstagedChanges2Peers(next: BindGitAction
  */
 export function bindGitActionIncludeUnstagedChanges2() {
   if (peers == null) {
-    throw new Error("bindGitActionIncludeUnstagedChanges2 peers are not configured");
+    throw new Error(
+      "bindGitActionIncludeUnstagedChanges2 peers are not configured",
+    );
   }
 
-  return peers.Da(peers.Q, e => null);
+  return peers.Da(peers.Q, (e) => null);
 }

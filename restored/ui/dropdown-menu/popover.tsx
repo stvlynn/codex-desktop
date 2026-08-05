@@ -68,7 +68,10 @@ export function DropdownMenuPopover(
         onCloseAutoFocus={onCloseAutoFocus}
         onEscapeKeyDown={onEscapeKeyDown}
         surface={surface}
-        className={cx(dropdownMenuContentWidthClass(contentWidth), contentClassName)}
+        className={cx(
+          dropdownMenuContentWidthClass(contentWidth),
+          contentClassName,
+        )}
         style={{
           ...contentStyle,
           maxHeight:

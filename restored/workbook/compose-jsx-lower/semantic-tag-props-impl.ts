@@ -15,8 +15,8 @@ export let workbookBinding1529: symbol;
 export let workbookBinding1530: symbol;
 
 export const workbookBinding1531 = esmInit(() => {
-      workbookBinding1529 = Symbol.for("@oai/granola/presentation-jsx.element");
-      workbookBinding1530 = Symbol.for("@oai/granola/presentation-jsx.fragment");
+  workbookBinding1529 = Symbol.for("@oai/granola/presentation-jsx.element");
+  workbookBinding1530 = Symbol.for("@oai/granola/presentation-jsx.fragment");
 });
 
 export function ensureBinding1531Init(): void {
@@ -34,34 +34,34 @@ export const workbookBinding1544 = esmInit(() => {
   ensureStyleTokensInit();
   workbookBinding1531();
   ensureSemanticTagSetsInit();
-      workbookBinding1540 = {
-        fontSize: 14,
-        lineSpacing: 1.3,
-      };
-      workbookBinding1541 = new Set([
-        "runs",
-        "bulletCharacter",
-        "marginLeft",
-        "indent",
-        "spaceBefore",
-        "spaceAfter",
-        "styleId",
-        "paragraphStyle",
-      ]);
-      workbookBinding1542 = new Set([
-        ...workbookBinding1541,
-        "children",
-        "className",
-        "textStyle",
-      ]);
-      workbookBinding1543 = new Set([
-        "children",
-        "className",
-        "textStyle",
-        "href",
-        "link",
-        "underline",
-      ]);
+  workbookBinding1540 = {
+    fontSize: 14,
+    lineSpacing: 1.3,
+  };
+  workbookBinding1541 = new Set([
+    "runs",
+    "bulletCharacter",
+    "marginLeft",
+    "indent",
+    "spaceBefore",
+    "spaceAfter",
+    "styleId",
+    "paragraphStyle",
+  ]);
+  workbookBinding1542 = new Set([
+    ...workbookBinding1541,
+    "children",
+    "className",
+    "textStyle",
+  ]);
+  workbookBinding1543 = new Set([
+    "children",
+    "className",
+    "textStyle",
+    "href",
+    "link",
+    "underline",
+  ]);
 });
 
 export function ensureBinding1544Init(): void {
@@ -79,71 +79,71 @@ export const uke = esmInit(() => {
   workbookBinding1531();
   ensureSemanticTagSetsInit();
   workbookBinding1544();
-      workbookBinding1545 = new Set(
-        "name.id.className.children.ref.layout.display.contentLayout.surface.width.height.gap.align.justify.padding.columns.rows.autoRows.columnGap.rowGap.alignItems.justifyItems.columnSpan.rowSpan.fill.line.borderRadius.shadow".split(
-          ".",
-        ),
-      );
-      workbookBinding1546 = new Set([
-        "name",
-        "id",
-        "className",
-        "children",
-        "ref",
-        "width",
-        "height",
-        "columnSpan",
-        "rowSpan",
-        "style",
-        "transform",
-        "bulletCharacter",
-        "marginLeft",
-        "indent",
-        "spaceBefore",
-        "spaceAfter",
-        "styleId",
-        "paragraphStyle",
-      ]);
-      workbookBinding1547 = new Set([
-        "name",
-        "id",
-        "className",
-        "children",
-        "ref",
-        "width",
-        "height",
-        "columnSpan",
-        "rowSpan",
-        "src",
-        "path",
-        "dataUrl",
-        "blob",
-        "uri",
-        "prompt",
-        "contentType",
-        "fit",
-        "alt",
-        "geometry",
-        "borderRadius",
-        "crop",
-        "rotation",
-        "flipHorizontal",
-        "flipVertical",
-        "lockAspectRatio",
-      ]);
-      workbookBinding1548 = new Set([
-        "name",
-        "id",
-        "children",
-        "ref",
-        "width",
-        "height",
-        "columnSpan",
-        "rowSpan",
-        "stroke",
-        "opacity",
-        "weight",
-      ]);
+  workbookBinding1545 = new Set(
+    "name.id.className.children.ref.layout.display.contentLayout.surface.width.height.gap.align.justify.padding.columns.rows.autoRows.columnGap.rowGap.alignItems.justifyItems.columnSpan.rowSpan.fill.line.borderRadius.shadow".split(
+      ".",
+    ),
+  );
+  workbookBinding1546 = new Set([
+    "name",
+    "id",
+    "className",
+    "children",
+    "ref",
+    "width",
+    "height",
+    "columnSpan",
+    "rowSpan",
+    "style",
+    "transform",
+    "bulletCharacter",
+    "marginLeft",
+    "indent",
+    "spaceBefore",
+    "spaceAfter",
+    "styleId",
+    "paragraphStyle",
+  ]);
+  workbookBinding1547 = new Set([
+    "name",
+    "id",
+    "className",
+    "children",
+    "ref",
+    "width",
+    "height",
+    "columnSpan",
+    "rowSpan",
+    "src",
+    "path",
+    "dataUrl",
+    "blob",
+    "uri",
+    "prompt",
+    "contentType",
+    "fit",
+    "alt",
+    "geometry",
+    "borderRadius",
+    "crop",
+    "rotation",
+    "flipHorizontal",
+    "flipVertical",
+    "lockAspectRatio",
+  ]);
+  workbookBinding1548 = new Set([
+    "name",
+    "id",
+    "children",
+    "ref",
+    "width",
+    "height",
+    "columnSpan",
+    "rowSpan",
+    "stroke",
+    "opacity",
+    "weight",
+  ]);
 });
 
 export function ensureUkeInit(): void {

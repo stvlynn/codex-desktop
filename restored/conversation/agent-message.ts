@@ -41,18 +41,28 @@ export function agentMessage() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.Sl(), peers.oE(), peers.dqn(), peers.iE(), peers.k3n(), peers.eE(), peers.Xw(), peers.ap(), x6n = peers.sl({
-      cwd: peers.X().trim().min(1),
-      branch: peers.X().trim().min(1).optional(),
-      url: peers.X().trim().min(1).optional(),
-      isDraft: peers.vl(e => {
-        if (typeof peers.e == `boolean`) return peers.e;
-        if (typeof peers.e == `string`) {
-          let t = peers.e.trim().toLowerCase();
-          if (t === `true`) return !0;
-          if (t === `false`) return !1;
-        }
-      }, peers.il().optional())
-    }), S6n = [peers.Sqn, peers.Cqn, peers.wqn, peers.Tqn, peers.Eqn];
+    (peers.Au(),
+      peers.Sl(),
+      peers.oE(),
+      peers.dqn(),
+      peers.iE(),
+      peers.k3n(),
+      peers.eE(),
+      peers.Xw(),
+      peers.ap(),
+      (x6n = peers.sl({
+        cwd: peers.X().trim().min(1),
+        branch: peers.X().trim().min(1).optional(),
+        url: peers.X().trim().min(1).optional(),
+        isDraft: peers.vl((e) => {
+          if (typeof peers.e == `boolean`) return peers.e;
+          if (typeof peers.e == `string`) {
+            let t = peers.e.trim().toLowerCase();
+            if (t === `true`) return !0;
+            if (t === `false`) return !1;
+          }
+        }, peers.il().optional()),
+      })),
+      (S6n = [peers.Sqn, peers.Cqn, peers.wqn, peers.Tqn, peers.Eqn]));
   });
 }

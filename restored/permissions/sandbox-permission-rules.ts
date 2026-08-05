@@ -74,7 +74,9 @@ function formatSpecialSandboxPath(
  * Derive permission-rule chips from a sandbox policy: network grant plus
  * read / write / readWrite filesystem path groups.
  */
-export function buildSandboxPermissionRules(policy: SandboxPolicy): PermissionRule[] {
+export function buildSandboxPermissionRules(
+  policy: SandboxPolicy,
+): PermissionRule[] {
   const rules: PermissionRule[] = [];
 
   if (policy.network != null) {

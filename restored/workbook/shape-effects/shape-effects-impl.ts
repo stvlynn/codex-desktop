@@ -12,8 +12,7 @@ export function resolveShapeEffects(sefIn4333: any, sefIn4334: any) {
     (!sefBind13456 &&
       sefIn4333.effectReference &&
       (sefBind13456 =
-        sefIn4334.effectMap[sefIn4333.effectReference.index]
-          ?.outerShadow),
+        sefIn4334.effectMap[sefIn4333.effectReference.index]?.outerShadow),
     !sefBind13456)
   )
     return;

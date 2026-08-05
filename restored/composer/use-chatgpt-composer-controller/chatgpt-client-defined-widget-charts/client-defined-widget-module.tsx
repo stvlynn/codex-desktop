@@ -7,9 +7,7 @@ import {
   useAppScope as appInitialLT,
   ensureAppScopeHostInit as appInitialMT,
 } from "../../../runtime/app-scope-runtime";
-import {
-  writingBlocksControllerAtom as appInitialCI,
-} from "../../../composer/composer-appscope-atoms";
+import { writingBlocksControllerAtom as appInitialCI } from "../../../composer/composer-appscope-atoms";
 import {
   ensureComposerEsm_FH_Init as appInitialFH,
   ensureComposerEsm_Hlt_Init as appInitialHlt,
@@ -33,7 +31,10 @@ import {
   ensureIntlFormattersInit as appInitialHft,
   useIntl as appInitialJft,
 } from "../../../i18n/use-intl";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../../runtime/rolldown-runtime";
 import { getAppearanceThemeMode as appInitialVU } from "../../../settings/get-appearance-theme-mode";
 import { Button as appInitialBut } from "../../../ui/button";
 import { CopyButton as appInitialAR } from "../../../ui/copy-button";
@@ -98,7 +99,6 @@ const {
   bg,
 } = seriesPeers;
 
-
 /** Residual stub peers still referenced by language-learning / sportsCode inits. */
 const slot88 = rolldownRuntimeN(() => {});
 const slot92 = rolldownRuntimeN(() => {});
@@ -112,9 +112,7 @@ var slot218 = rolldownRuntimeN(() => {
   slot221 = rolldownRuntimeN(() => {
     appInitialLvt();
     slot219 = appInitialJvt();
-    slot220 = (
-      request3996,
-    ) => {
+    slot220 = (request3996) => {
       return (
         <svg
           width={20}
@@ -138,9 +136,7 @@ var slot218 = rolldownRuntimeN(() => {
   slot224 = rolldownRuntimeN(() => {
     appInitialLvt();
     slot222 = appInitialJvt();
-    slot223 = (
-      request1421,
-    ) => {
+    slot223 = (request1421) => {
       return (
         <svg
           width={20}
@@ -170,51 +166,33 @@ function useChatgptComposerControllerHelper173(request1906: any) {
   const UseChatgptComposerControllerHelper174 =
     useChatgptComposerControllerHelper174;
   let { reference } = request1906,
-    slot6025 =
-      reference.category === "language_learning_block",
-    slot6026 =
-      slot6025
-        ? null
-        : useChatgptComposerControllerHelper76(reference.data.content);
-  let slot6027 =
-      slot6026,
-    slot6028 =
-      useChatgptComposerControllerHelper76(
-        slot6025
-          ? reference.data.content
-          : reference.data.translated_text,
-      );
-  let slot6029 =
-      slot6028,
-    slot6030 =
-      slot6029 ??
-      slot6027;
-  if (slot6030 == null) return null;
-  let slot6031 =
-    slot6025
+    slot6025 = reference.category === "language_learning_block",
+    slot6026 = slot6025
       ? null
-      : useChatgptComposerControllerHelper76(reference.data.source_language);
-  let slot6032 =
-      slot6031,
-    slot6033 =
-      slot6032;
+      : useChatgptComposerControllerHelper76(reference.data.content);
+  let slot6027 = slot6026,
+    slot6028 = useChatgptComposerControllerHelper76(
+      slot6025 ? reference.data.content : reference.data.translated_text,
+    );
+  let slot6029 = slot6028,
+    slot6030 = slot6029 ?? slot6027;
+  if (slot6030 == null) return null;
+  let slot6031 = slot6025
+    ? null
+    : useChatgptComposerControllerHelper76(reference.data.source_language);
+  let slot6032 = slot6031,
+    slot6033 = slot6032;
   if (slot6029 != null) {
     let slot12320;
-    slot12320 =
-      slot6025
-        ? useChatgptComposerControllerHelper76(
-            reference.data.pronunciation_language,
-          )
-        : (useChatgptComposerControllerHelper76(
-            reference.data.target_language,
-          ) ?? "en");
-    slot6033 =
-      slot12320;
+    slot12320 = slot6025
+      ? useChatgptComposerControllerHelper76(
+          reference.data.pronunciation_language,
+        )
+      : (useChatgptComposerControllerHelper76(reference.data.target_language) ??
+        "en");
+    slot6033 = slot12320;
   }
-  let slot6034 =
-    slot6029 == null
-      ? null
-      : slot6027;
+  let slot6034 = slot6029 == null ? null : slot6027;
   return (
     <UseChatgptComposerControllerHelper174
       displayText={slot6030}
@@ -232,109 +210,85 @@ function useChatgptComposerControllerHelper174({
 }: any) {
   const SoundOnT = soundOnT;
   const AppInitialXut = appInitialXut;
-  const Slot220 =
-    slot220;
-  const Slot223 =
-    slot223;
+  const Slot220 = slot220;
+  const Slot223 = slot223;
   const AppInitialGft = appInitialGft;
   const AppInitialBlt = appInitialBlt;
   const AppInitialYut = appInitialYut;
   const AppInitialAR = appInitialAR;
   let slot1876 = appInitialJft(),
     slot1877 = appInitialLT(appInitialFft),
-    [
-      slot1878,
-      slot1879,
-    ] = slot226.useState("idle"),
-    slot1880 =
-      slot226.useRef(null),
-    slot1881 =
-      slot226.useRef(null),
-    slot1882 =
-      slot226.useRef(null),
-    slot1883 =
-      slot226.useRef(false);
+    [slot1878, slot1879] = slot226.useState("idle"),
+    slot1880 = slot226.useRef(null),
+    slot1881 = slot226.useRef(null),
+    slot1882 = slot226.useRef(null),
+    slot1883 = slot226.useRef(false);
   slot226.useEffect(() => {
     return () => {
       slot1880.current?.abort();
-      let slot13755 =
-        slot1881.current;
+      let slot13755 = slot1881.current;
       slot13755 != null &&
         ((slot13755.onended = null),
         (slot13755.onerror = null),
         (slot13755.onpause = null),
         slot13755.pause(),
-        useChatgptComposerControllerHelper176(
-          slot13755,
-        ));
-      slot1882.current != null &&
-        URL.revokeObjectURL(slot1882.current);
+        useChatgptComposerControllerHelper176(slot13755));
+      slot1882.current != null && URL.revokeObjectURL(slot1882.current);
     };
   }, []);
-  let slot1884,
-    slot1885;
+  let slot1884, slot1885;
   switch (slot1878) {
     case "idle":
       slot1884 = <SoundOnT className="icon-sm" />;
-      slot1885 =
-        slot1876.formatMessage(
-          {
-            id: "codex.chatgpt.contentReferences.translation.audio.play.ariaLabel",
-            defaultMessage: "Play audio for {displayText}",
-            description:
-              "Accessible label for the read-aloud button in a ChatGPT translation card shown inside Codex. Activating it plays synthesized speech for the translated text. Placeholder {displayText} is the exact translated text visible in the card and may contain any language or script.",
-          },
-          {
-            displayText,
-          },
-        );
+      slot1885 = slot1876.formatMessage(
+        {
+          id: "codex.chatgpt.contentReferences.translation.audio.play.ariaLabel",
+          defaultMessage: "Play audio for {displayText}",
+          description:
+            "Accessible label for the read-aloud button in a ChatGPT translation card shown inside Codex. Activating it plays synthesized speech for the translated text. Placeholder {displayText} is the exact translated text visible in the card and may contain any language or script.",
+        },
+        {
+          displayText,
+        },
+      );
       break;
     case "loading":
-      slot1884 = (
-        <AppInitialXut className="icon-sm" />
+      slot1884 = <AppInitialXut className="icon-sm" />;
+      slot1885 = slot1876.formatMessage(
+        {
+          id: "codex.chatgpt.contentReferences.translation.audio.loading.ariaLabel",
+          defaultMessage: "Loading audio for {displayText}",
+          description:
+            "Accessible label for the read-aloud button in a ChatGPT translation card shown inside Codex while translated text audio is loading. Placeholder {displayText} is the exact translated text visible in the card and may contain any language or script.",
+        },
+        {
+          displayText,
+        },
       );
-      slot1885 =
-        slot1876.formatMessage(
-          {
-            id: "codex.chatgpt.contentReferences.translation.audio.loading.ariaLabel",
-            defaultMessage: "Loading audio for {displayText}",
-            description:
-              "Accessible label for the read-aloud button in a ChatGPT translation card shown inside Codex while translated text audio is loading. Placeholder {displayText} is the exact translated text visible in the card and may contain any language or script.",
-          },
-          {
-            displayText,
-          },
-        );
       break;
     case "playing":
-      slot1884 = (
-        <Slot220 className="icon-sm" />
+      slot1884 = <Slot220 className="icon-sm" />;
+      slot1885 = slot1876.formatMessage(
+        {
+          id: "codex.chatgpt.contentReferences.translation.audio.stop.ariaLabel",
+          defaultMessage: "Stop audio for {displayText}",
+          description:
+            "Accessible label for the stop button in a ChatGPT translation card shown inside Codex while translated text audio is playing. Placeholder {displayText} is the exact translated text visible in the card and may contain any language or script.",
+        },
+        {
+          displayText,
+        },
       );
-      slot1885 =
-        slot1876.formatMessage(
-          {
-            id: "codex.chatgpt.contentReferences.translation.audio.stop.ariaLabel",
-            defaultMessage: "Stop audio for {displayText}",
-            description:
-              "Accessible label for the stop button in a ChatGPT translation card shown inside Codex while translated text audio is playing. Placeholder {displayText} is the exact translated text visible in the card and may contain any language or script.",
-          },
-          {
-            displayText,
-          },
-        );
       break;
   }
-  let slot1886 =
-    useChatgptComposerControllerHelper175(
-      sourceLanguage,
-      slot1876.locale,
-    );
+  let slot1886 = useChatgptComposerControllerHelper175(
+    sourceLanguage,
+    slot1876.locale,
+  );
   function useChatgptComposerControllerHelper1142() {
     slot1883.current ||
       ((slot1883.current = true),
-      useChatgptComposerControllerHelper176(
-        slot1881.current,
-      ),
+      useChatgptComposerControllerHelper176(slot1881.current),
       slot1879("idle"),
       slot1877.get(appInitialLlt).danger(
         slot1876.formatMessage({
@@ -345,16 +299,10 @@ function useChatgptComposerControllerHelper174({
         }),
       ));
   }
-  async function useChatgptComposerControllerHelper1143(
-    request8141,
-  ) {
+  async function useChatgptComposerControllerHelper1143(request8141) {
     slot1883.current = false;
-    slot228 != null &&
-      slot228 !==
-        request8141 &&
-      slot228.pause();
-    slot228 =
-      request8141;
+    slot228 != null && slot228 !== request8141 && slot228.pause();
+    slot228 = request8141;
     request8141.currentTime = 0;
     try {
       await request8141.play();
@@ -365,16 +313,13 @@ function useChatgptComposerControllerHelper174({
   }
   async function useChatgptComposerControllerHelper1144() {
     if (slot1881.current != null) {
-      await useChatgptComposerControllerHelper1143(
-        slot1881.current,
-      );
+      await useChatgptComposerControllerHelper1143(slot1881.current);
       return;
     }
     slot228?.pause();
     slot1879("loading");
     let slot8770 = new AbortController();
-    slot1880.current =
-      slot8770;
+    slot1880.current = slot8770;
     try {
       let { base64, contentType } = await slot1877
         .get(appInitialCI)
@@ -389,46 +334,29 @@ function useChatgptComposerControllerHelper174({
           type: contentType || "audio/mpeg",
         }),
       );
-      slot1882.current =
-        slot10448;
-      let slot10449 = new Audio(
-        slot10448,
-      );
-      slot1881.current =
-        slot10449;
+      slot1882.current = slot10448;
+      let slot10449 = new Audio(slot10448);
+      slot1881.current = slot10449;
       slot10449.onended = () => {
         slot10449.currentTime = 0;
-        useChatgptComposerControllerHelper176(
-          slot10449,
-        );
+        useChatgptComposerControllerHelper176(slot10449);
         slot1879("idle");
       };
-      slot10449.onerror =
-        useChatgptComposerControllerHelper1142;
+      slot10449.onerror = useChatgptComposerControllerHelper1142;
       slot10449.onpause = () => {
-        useChatgptComposerControllerHelper176(
-          slot10449,
-        );
+        useChatgptComposerControllerHelper176(slot10449);
         slot1879("idle");
       };
-      await useChatgptComposerControllerHelper1143(
-        slot10449,
-      );
+      await useChatgptComposerControllerHelper1143(slot10449);
     } catch {
-      slot8770.signal.aborted ||
-        useChatgptComposerControllerHelper1142();
+      slot8770.signal.aborted || useChatgptComposerControllerHelper1142();
     } finally {
-      slot1880.current ===
-        slot8770 &&
-        (slot1880.current = null);
+      slot1880.current === slot8770 && (slot1880.current = null);
     }
   }
   function useChatgptComposerControllerHelper1145() {
     if (slot1878 !== "loading") {
-      if (
-        slot1878 === "playing" &&
-        slot1881.current != null
-      ) {
+      if (slot1878 === "playing" && slot1881.current != null) {
         slot1881.current.pause();
         slot1881.current.currentTime = 0;
         return;
@@ -441,12 +369,7 @@ function useChatgptComposerControllerHelper174({
       <div className="rounded-2xl border border-token-border-light bg-token-main-surface-primary px-5 py-4 text-token-text-primary">
         <div className="flex items-center gap-3">
           <div className="flex min-w-0 items-center gap-2 text-sm font-medium text-token-text-secondary">
-            {
-              <Slot223
-                aria-hidden="true"
-                className="icon-base shrink-0"
-              />
-            }
+            {<Slot223 aria-hidden="true" className="icon-base shrink-0" />}
             {
               <AppInitialGft
                 id="chatgpt.contentReferences.translation.title"
@@ -457,18 +380,11 @@ function useChatgptComposerControllerHelper174({
           </div>
           <div className="ms-auto flex shrink-0 items-center gap-1">
             {
-              <AppInitialBlt
-                tooltipContent={slot1885}
-              >
+              <AppInitialBlt tooltipContent={slot1885}>
                 <AppInitialYut
-                  aria-busy={
-                    slot1878 === "loading" ||
-                    undefined
-                  }
+                  aria-busy={slot1878 === "loading" || undefined}
                   aria-label={slot1885}
-                  aria-pressed={
-                    slot1878 === "playing"
-                  }
+                  aria-pressed={slot1878 === "playing"}
                   color="ghost"
                   disabled={slot1878 === "loading"}
                   onClick={useChatgptComposerControllerHelper1145}
@@ -488,10 +404,7 @@ function useChatgptComposerControllerHelper174({
                 })}
                 iconOnly={true}
                 onCopy={(request11222) => {
-                  appInitialPH(
-                    displayText,
-                    request11222,
-                  );
+                  appInitialPH(displayText, request11222);
                 }}
               />
             }
@@ -526,27 +439,24 @@ function useChatgptComposerControllerHelper174({
     </div>
   );
 }
-function useChatgptComposerControllerHelper175(request7618: any, request7619: any) {
-  if (
-    request7618 == null ||
-    request7618.toLocaleLowerCase() === "auto"
-  )
+function useChatgptComposerControllerHelper175(
+  request7618: any,
+  request7619: any,
+) {
+  if (request7618 == null || request7618.toLocaleLowerCase() === "auto")
     return null;
   try {
     return (
       new Intl.DisplayNames([request7619], {
         type: "language",
-      }).of(request7618.replaceAll("_", "-")) ??
-      request7618
+      }).of(request7618.replaceAll("_", "-")) ?? request7618
     );
   } catch {
     return request7618;
   }
 }
 function useChatgptComposerControllerHelper176(request11321: any) {
-  slot228 ===
-    request11321 &&
-    (slot228 = null);
+  slot228 === request11321 && (slot228 = null);
 }
 var slot225,
   slot226,
@@ -579,17 +489,11 @@ function useChatgptComposerControllerHelper177(request5178: any) {
   const UseChatgptComposerControllerHelper178 =
     useChatgptComposerControllerHelper178;
   let { reference } = request5178,
-    slot11331 =
-      slot215.safeParse(reference);
-  let slot11332 =
-    slot11331;
+    slot11331 = slot215.safeParse(reference);
+  let slot11332 = slot11331;
   if (slot11332.success) {
     let slot14561;
-    return (
-      <UseChatgptComposerControllerHelper173
-        reference={slot11332.data}
-      />
-    );
+    return <UseChatgptComposerControllerHelper173 reference={slot11332.data} />;
   }
   return <UseChatgptComposerControllerHelper178 reference={reference} />;
 }
@@ -602,8 +506,7 @@ function useChatgptComposerControllerHelper178(request478: any) {
     useChatgptComposerControllerHelper124;
   let { reference } = request478,
     slot2619 = appInitialJft(),
-    slot2620 =
-      slot231.useId(),
+    slot2620 = slot231.useId(),
     slot2621 = appInitialYU(appInitialVU()),
     slot2622,
     slot2623,
@@ -615,114 +518,74 @@ function useChatgptComposerControllerHelper178(request478: any) {
     slot2629,
     slot2630,
     slot2631;
-  slot2630 = Symbol.for(
-    "react.early_return_sentinel",
-  );
+  slot2630 = Symbol.for("react.early_return_sentinel");
   bb0: {
-    let slot7176 =
-      slot213.safeParse(reference);
+    let slot7176 = slot213.safeParse(reference);
     if (!slot7176.success) {
       let slot14619;
       slot14619 = (
         <UseChatgptComposerControllerHelper68 reference={reference} />
       );
-      slot2630 =
-        slot14619;
+      slot2630 = slot14619;
       break bb0;
     }
-    let slot7177 =
-      useChatgptComposerControllerHelper169(
-        slot7176.data.data.content,
-      );
+    let slot7177 = useChatgptComposerControllerHelper169(
+      slot7176.data.data.content,
+    );
     if (slot7177 == null) {
       let slot14620;
       slot14620 = (
         <UseChatgptComposerControllerHelper68 reference={reference} />
       );
-      slot2630 =
-        slot14620;
+      slot2630 = slot14620;
       break bb0;
     }
-    slot2623 =
-      useChatgptComposerControllerHelper168(
-        slot7177,
-      );
-    slot2631 = bg(
-      slot2623.meta?.title,
+    slot2623 = useChatgptComposerControllerHelper168(slot7177);
+    slot2631 = bg(slot2623.meta?.title);
+    let slot7178 = slot2619.formatMessage({
+      id: "chatgpt.contentReferences.chart.title",
+      defaultMessage: "Chart",
+      description: "Fallback title for a ChatGPT chart content reference",
+    });
+    slot2624 = bg(slot2623.meta?.description);
+    slot2625 = bg(slot2623.meta?.footer);
+    slot2622 = slot2619.formatMessage(
+      {
+        id: "chatgpt.contentReferences.chart.ariaLabel",
+        defaultMessage: "{title} chart",
+        description: "ARIA label for a ChatGPT chart content reference",
+      },
+      {
+        title: slot2631 ?? slot7178,
+      },
     );
-    let slot7178 =
-      slot2619.formatMessage({
-        id: "chatgpt.contentReferences.chart.title",
-        defaultMessage: "Chart",
-        description: "Fallback title for a ChatGPT chart content reference",
-      });
-    slot2624 = bg(
-      slot2623.meta?.description,
-    );
-    slot2625 = bg(
-      slot2623.meta?.footer,
-    );
-    slot2622 =
-      slot2619.formatMessage(
-        {
-          id: "chatgpt.contentReferences.chart.ariaLabel",
-          defaultMessage: "{title} chart",
-          description: "ARIA label for a ChatGPT chart content reference",
-        },
-        {
-          title:
-            slot2631 ??
-            slot7178,
-        },
-      );
-    slot2626 =
-      slot2631 != null ||
-      slot2624 != null;
-    slot2627 =
-      "my-3 h-[27rem] w-full overflow-clip text-token-text-primary";
+    slot2626 = slot2631 != null || slot2624 != null;
+    slot2627 = "my-3 h-[27rem] w-full overflow-clip text-token-text-primary";
     slot2628 = "chatgpt-chart-content-reference";
-    slot2629 =
-      useChatgptComposerControllerHelper134(
-        slot2623,
-      );
+    slot2629 = useChatgptComposerControllerHelper134(slot2623);
   }
-  if (
-    slot2630 !==
-    Symbol.for("react.early_return_sentinel")
-  )
-    return slot2630;
-  let slot2632 =
-      slot2626
-        ? undefined
-        : slot2622,
-    slot2633 =
-      slot2631 == null
-        ? undefined
-        : slot2620,
-    slot2634 =
-      slot2626 ? (
-        <div className="min-h-[4.5rem] pe-12 pt-5">
-          {slot2631 == null ? null : (
-            <div
-              id={slot2620}
-              className="line-clamp-2 text-base font-semibold text-token-text-primary"
-            >
-              {slot2631}
-            </div>
-          )}
-          {slot2624 == null ? null : (
-            <p className="mt-1 line-clamp-2 text-sm text-token-text-secondary">
-              {slot2624}
-            </p>
-          )}
-        </div>
-      ) : null;
-  let slot2635 =
-      slot2625 == null ? "pb-4" : "pb-1",
-    slot2636 = appInitialWft(
-      "min-h-0 flex-1",
-      slot2635,
-    );
+  if (slot2630 !== Symbol.for("react.early_return_sentinel")) return slot2630;
+  let slot2632 = slot2626 ? undefined : slot2622,
+    slot2633 = slot2631 == null ? undefined : slot2620,
+    slot2634 = slot2626 ? (
+      <div className="min-h-[4.5rem] pe-12 pt-5">
+        {slot2631 == null ? null : (
+          <div
+            id={slot2620}
+            className="line-clamp-2 text-base font-semibold text-token-text-primary"
+          >
+            {slot2631}
+          </div>
+        )}
+        {slot2624 == null ? null : (
+          <p className="mt-1 line-clamp-2 text-sm text-token-text-secondary">
+            {slot2624}
+          </p>
+        )}
+      </div>
+    ) : null;
+  let slot2635 = slot2625 == null ? "pb-4" : "pb-1",
+    slot2636 = appInitialWft("min-h-0 flex-1", slot2635);
   let slot2637 = (
     <UseChatgptComposerControllerHelper167
       ariaLabel={slot2622}
@@ -730,16 +593,9 @@ function useChatgptComposerControllerHelper178(request478: any) {
       theme={slot2621}
     />
   );
-  let slot2638 = (
-    <div className={slot2636}>
-      {slot2637}
-    </div>
-  );
+  let slot2638 = <div className={slot2636}>{slot2637}</div>;
   let slot2639 = (
-    <UseChatgptComposerControllerHelper124
-      chart={slot2623}
-      intl={slot2619}
-    />
+    <UseChatgptComposerControllerHelper124 chart={slot2623} intl={slot2619} />
   );
   let slot2640 =
     slot2625 == null ? null : (
@@ -767,11 +623,7 @@ function useChatgptComposerControllerHelper178(request478: any) {
     </section>
   );
   return (
-    <div
-      className={slot2627}
-      data-testid={slot2628}
-      style={slot2629}
-    >
+    <div className={slot2627} data-testid={slot2628} style={slot2629}>
       {slot2642}
     </div>
   );

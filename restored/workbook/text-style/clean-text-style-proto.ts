@@ -23,7 +23,10 @@ export function cleanUnspecifiedTextStyleEnums<
     delete out.vertical;
   if (out.alignment === alignmentTypeEnum.ALIGNMENT_TYPE_UNSPECIFIED)
     delete out.alignment;
-  if (out.capitalization === textCapitalizationEnum.TEXT_CAPITALIZATION_UNSPECIFIED)
+  if (
+    out.capitalization ===
+    textCapitalizationEnum.TEXT_CAPITALIZATION_UNSPECIFIED
+  )
     delete out.capitalization;
   return out;
 }
@@ -32,7 +35,12 @@ export function cleanUnspecifiedTextStyleEnums<
  * Legacy `_p` — TextStyle instance → cleaned proto bag, or clean a plain bag.
  */
 export function textStyleToCleanProto(
-  value: TextStyle | TextStyleProto | Record<string, unknown> | null | undefined,
+  value:
+    | TextStyle
+    | TextStyleProto
+    | Record<string, unknown>
+    | null
+    | undefined,
 ): Record<string, unknown> | undefined {
   if (!value) return;
   if (value instanceof TextStyle) {

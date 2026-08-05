@@ -47,7 +47,9 @@ export type BindDeferredNavigationFTPeers = {
 let peers: BindDeferredNavigationFTPeers | null = null;
 
 /** Wire bindDeferredNavigationFT peers once companions land. */
-export function setBindDeferredNavigationFTPeers(next: BindDeferredNavigationFTPeers): void {
+export function setBindDeferredNavigationFTPeers(
+  next: BindDeferredNavigationFTPeers,
+): void {
   peers = next;
 }
 

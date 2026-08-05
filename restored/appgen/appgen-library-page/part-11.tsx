@@ -12,13 +12,37 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useAppgenScreenshotDataUrlQuery } from "../../apps/use-appgen-screenshot-data-url-query";
-import { ArtifactFilePreviewIcon, ensureArtifactFilePreviewIconInit } from "../../artifact/artifact-file-preview-icon";
+import {
+  ArtifactFilePreviewIcon,
+  ensureArtifactFilePreviewIconInit,
+} from "../../artifact/artifact-file-preview-icon";
 import { ArtifactPreviewDownloadButton } from "../../artifact/artifact-preview-download-button";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KM_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KM_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { cloneTypedArray } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 } from "../../browser/chatgpt2";
@@ -79,14 +103,20 @@ import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { deferredUiYV } from "../../ui/deferred-ui-yv";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { EmptyMemoSlot } from "../../ui/empty-memo-slot";
 import { ensureShapeColorTokenClusterInit } from "../../ui/ensure-shape-color-token-cluster-init";
 import { macOS4 } from "../../ui/mac-os4";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { SearchableDetailPageLayout } from "../../ui/searchable-detail-page-layout";
-import { ensureUseSearchablePageTitleVisibilityInit, useSearchablePageTitleVisibility } from "../../ui/use-searchable-page-title-visibility";
+import {
+  ensureUseSearchablePageTitleVisibilityInit,
+  useSearchablePageTitleVisibility,
+} from "../../ui/use-searchable-page-title-visibility";
 import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { formatUrlHostPath } from "../../utils/format-url-host-path";
 import { hvtBindableHelper } from "../../utils/hvt-bindable-helper";
@@ -94,18 +124,37 @@ import { identity } from "../../utils/identity";
 import { isIndeterminate } from "../../utils/is-indeterminate";
 import { lerpIfFinite } from "../../utils/lerp-if-finite";
 import { slugifyLoose } from "../../utils/slugify-loose";
-import { ensureImportSettingsCLInit, ensurePersonalizationK0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensurePersonalizationK0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { ensureNewThreadBhInit } from "../../utils/wave-av-gap-ensure-inits";
 import { keysIn } from "../../vendor/lodash-cjs-predicates";
-import { appgenShareDialogT, ensureAppgenShareDialogInit } from "../appgen-share-dialog";
+import {
+  appgenShareDialogT,
+  ensureAppgenShareDialogInit,
+} from "../appgen-share-dialog";
 import { ensureChatgptSiteSuffixesInit } from "../chatgpt-site-suffixes";
-import { createAppgenConversation, dismissAppgenConversationPrompt, ensureStartAppgenConversationHelpersInit, ensureStartAppgenConversationInit, formatAppgenConversationPrefill, listAppgenConversationActions, prepareAppgenConversation, startAppgenConversation, startAppgenConversationFromLibrary, useStartAppgenConversation } from "../start-appgen-conversation";
+import {
+  createAppgenConversation,
+  dismissAppgenConversationPrompt,
+  ensureStartAppgenConversationHelpersInit,
+  ensureStartAppgenConversationInit,
+  formatAppgenConversationPrefill,
+  listAppgenConversationActions,
+  prepareAppgenConversation,
+  startAppgenConversation,
+  startAppgenConversationFromLibrary,
+  useStartAppgenConversation,
+} from "../start-appgen-conversation";
 
 // Wave5d soft JSX companions.
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -135,93 +184,146 @@ const ensureSelectWorkspaceOhInit: any = undefined;
 const quickChatConversationTitleAtom: any = undefined;
 const readLoginRouteQuerySnapshot: any = undefined;
 function indigo(pearl) {
-  let {
-      canvasSource,
-      onCreateAsset
-    } = pearl,
+  let { canvasSource, onCreateAsset } = pearl,
     quartz = useIntl(),
     river = quartz.formatMessage({
       id: "appgenPage.createMenu.ariaLabel",
       defaultMessage: "Create",
-      description: "Accessible label for opening the Library create menu"
+      description: "Accessible label for opening the Library create menu",
     });
   let slate, timber;
-  slate = <MemoizedFormattedMessage {...{
-    id: "appgenPage.createMenu.trigger",
-    defaultMessage: "Create",
-    description: "Button label for opening the Library create menu"
-  }} />;
-  timber = <AppIconSft {...{
-    "aria-hidden": true,
-    className: "icon-xs text-token-text-secondary"
-  }} />;
-  let umbra = <ReadLoginRouteQuerySnapshot {...{
-    "aria-label": river,
-    color: "outline",
-    size: "toolbar",
-    children: [slate, timber]
-  }} />;
+  slate = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.createMenu.trigger",
+        defaultMessage: "Create",
+        description: "Button label for opening the Library create menu",
+      }}
+    />
+  );
+  timber = (
+    <AppIconSft
+      {...{
+        "aria-hidden": true,
+        className: "icon-xs text-token-text-secondary",
+      }}
+    />
+  );
+  let umbra = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        "aria-label": river,
+        color: "outline",
+        size: "toolbar",
+        children: [slate, timber],
+      }}
+    />
+  );
   let violet = () => onCreateAsset("document");
-  let willow = <MemoizedFormattedMessage {...{
-    id: "appgenPage.createMenu.document",
-    defaultMessage: "Create document",
-    description: "Menu item for creating a document from the Library"
-  }} />;
-  let xenon = <DropdownMenu.Item {...{
-    LeftIcon: AppIconJG,
-    onSelect: violet,
-    children: willow
-  }} />;
+  let willow = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.createMenu.document",
+        defaultMessage: "Create document",
+        description: "Menu item for creating a document from the Library",
+      }}
+    />
+  );
+  let xenon = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppIconJG,
+        onSelect: violet,
+        children: willow,
+      }}
+    />
+  );
   let yellow = () => onCreateAsset("spreadsheet");
-  let zinc = <MemoizedFormattedMessage {...{
-    id: "appgenPage.createMenu.spreadsheet",
-    defaultMessage: "Create spreadsheet",
-    description: "Menu item for creating a spreadsheet from the Library"
-  }} />;
-  let amber = <DropdownMenu.Item {...{
-    LeftIcon: AppIconXG,
-    onSelect: yellow,
-    children: zinc
-  }} />;
+  let zinc = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.createMenu.spreadsheet",
+        defaultMessage: "Create spreadsheet",
+        description: "Menu item for creating a spreadsheet from the Library",
+      }}
+    />
+  );
+  let amber = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppIconXG,
+        onSelect: yellow,
+        children: zinc,
+      }}
+    />
+  );
   let basalt = () => onCreateAsset("presentation");
-  let cedar = <MemoizedFormattedMessage {...{
-    id: "appgenPage.createMenu.presentation",
-    defaultMessage: "Create presentation",
-    description: "Menu item for creating a presentation from the Library"
-  }} />;
-  let daisy = <DropdownMenu.Item {...{
-    LeftIcon: AppIconQG,
-    onSelect: basalt,
-    children: cedar
-  }} />;
+  let cedar = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.createMenu.presentation",
+        defaultMessage: "Create presentation",
+        description: "Menu item for creating a presentation from the Library",
+      }}
+    />
+  );
+  let daisy = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppIconQG,
+        onSelect: basalt,
+        children: cedar,
+      }}
+    />
+  );
   let ember = () => onCreateAsset("pdf");
-  let flint = <MemoizedFormattedMessage {...{
-    id: "appgenPage.createMenu.pdf",
-    defaultMessage: "Create PDF",
-    description: "Menu item for creating a PDF from the Library"
-  }} />;
-  let garnet = <DropdownMenu.Item {...{
-    LeftIcon: AppInitialEK,
-    onSelect: ember,
-    children: flint
-  }} />;
+  let flint = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.createMenu.pdf",
+        defaultMessage: "Create PDF",
+        description: "Menu item for creating a PDF from the Library",
+      }}
+    />
+  );
+  let garnet = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: AppInitialEK,
+        onSelect: ember,
+        children: flint,
+      }}
+    />
+  );
   let hazel = () => onCreateAsset("image");
-  let ivory = <MemoizedFormattedMessage {...{
-    id: "appgenPage.createMenu.image",
-    defaultMessage: "Create image",
-    description: "Menu item for creating an image from the Library"
-  }} />;
-  let jasper = <DropdownMenu.Item {...{
-    LeftIcon: quickChatConversationTitleAtom,
-    onSelect: hazel,
-    children: ivory
-  }} />;
-  return <DropdownMenuPopover {...{
-    align: "end",
-    contentWidth: "menu",
-    triggerButton: umbra,
-    children: [xenon, amber, daisy, garnet, jasper, null]
-  }} />;
+  let ivory = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "appgenPage.createMenu.image",
+        defaultMessage: "Create image",
+        description: "Menu item for creating an image from the Library",
+      }}
+    />
+  );
+  let jasper = (
+    <DropdownMenu.Item
+      {...{
+        LeftIcon: quickChatConversationTitleAtom,
+        onSelect: hazel,
+        children: ivory,
+      }}
+    />
+  );
+  return (
+    <DropdownMenuPopover
+      {...{
+        align: "end",
+        contentWidth: "menu",
+        triggerButton: umbra,
+        children: [xenon, amber, daisy, garnet, jasper, null],
+      }}
+    />
+  );
 }
 var jade, kite, $, lemon, marble, nickel, onyx;
 esmInit(() => {
@@ -276,7 +378,7 @@ esmInit(() => {
     deleteError: {
       id: "appgenPage.cloudFile.deleteError",
       defaultMessage: "Unable to delete file",
-      description: "Toast shown when a cloud Library file delete fails"
-    }
+      description: "Toast shown when a cloud Library file delete fails",
+    },
   });
 })();

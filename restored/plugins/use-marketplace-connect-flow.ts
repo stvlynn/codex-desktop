@@ -16,7 +16,9 @@ export type UseMarketplaceConnectFlowPeers = {
 let peers: UseMarketplaceConnectFlowPeers | null = null;
 
 /** Wire useMarketplaceConnectFlow peers once companions land. */
-export function setUseMarketplaceConnectFlowPeers(next: UseMarketplaceConnectFlowPeers): void {
+export function setUseMarketplaceConnectFlowPeers(
+  next: UseMarketplaceConnectFlowPeers,
+): void {
   peers = next;
 }
 

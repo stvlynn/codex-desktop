@@ -8,7 +8,9 @@ export type FocusBottomPanelSessionPeers = {
 let peers: FocusBottomPanelSessionPeers | null = null;
 
 /** Wire focusBottomPanelSession peers once companions land. */
-export function setFocusBottomPanelSessionPeers(next: FocusBottomPanelSessionPeers): void {
+export function setFocusBottomPanelSessionPeers(
+  next: FocusBottomPanelSessionPeers,
+): void {
   peers = next;
 }
 

@@ -8,10 +8,13 @@ export type ProtobufAnalyticsEventsV1CodexMemorySettingToggledPeers = {
   p$n: (...args: unknown[]) => unknown;
 };
 
-let peers: ProtobufAnalyticsEventsV1CodexMemorySettingToggledPeers | null = null;
+let peers: ProtobufAnalyticsEventsV1CodexMemorySettingToggledPeers | null =
+  null;
 
 /** Wire protobufAnalyticsEventsV1CodexMemorySettingToggled peers once companions land. */
-export function setProtobufAnalyticsEventsV1CodexMemorySettingToggledPeers(next: ProtobufAnalyticsEventsV1CodexMemorySettingToggledPeers): void {
+export function setProtobufAnalyticsEventsV1CodexMemorySettingToggledPeers(
+  next: ProtobufAnalyticsEventsV1CodexMemorySettingToggledPeers,
+): void {
   peers = next;
 }
 
@@ -20,16 +23,20 @@ export function setProtobufAnalyticsEventsV1CodexMemorySettingToggledPeers(next:
  */
 export function protobufAnalyticsEventsV1CodexMemorySettingToggled() {
   if (peers == null) {
-    throw new Error("protobufAnalyticsEventsV1CodexMemorySettingToggled peers are not configured");
+    throw new Error(
+      "protobufAnalyticsEventsV1CodexMemorySettingToggled peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    p$n = {
-      $type: `protobuf_analytics_events.v1.CodexMemorySettingToggled`
-    }, m$n = {
-      $type: `protobuf_analytics_events.v1.CodexMemoryResetClicked`
-    }, h$n = {
-      $type: `protobuf_analytics_events.v1.CodexMemoryStateSnapshot`
-    };
+    ((p$n = {
+      $type: `protobuf_analytics_events.v1.CodexMemorySettingToggled`,
+    }),
+      (m$n = {
+        $type: `protobuf_analytics_events.v1.CodexMemoryResetClicked`,
+      }),
+      (h$n = {
+        $type: `protobuf_analytics_events.v1.CodexMemoryStateSnapshot`,
+      }));
   });
 }

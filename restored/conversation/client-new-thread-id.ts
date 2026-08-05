@@ -10,6 +10,8 @@ export function createClientNewThreadId(): string {
 }
 
 /** Bundle `Al` / export `bgt`. */
-export function isClientNewThreadId(conversationId: string | null | undefined): boolean {
+export function isClientNewThreadId(
+  conversationId: string | null | undefined,
+): boolean {
   return conversationId?.startsWith(CLIENT_NEW_THREAD_ID_PREFIX) === true;
 }

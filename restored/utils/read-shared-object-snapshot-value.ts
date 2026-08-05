@@ -15,6 +15,9 @@ export function bindSharedObjectSnapshotAtom(atom: unknown): void {
  * Bundle export `Mot`.
  * `get(sharedObjectSnapshotAtom, key)` in the original chunk.
  */
-export function readSharedObjectSnapshotValue(get: StoreGet, key: string): unknown {
+export function readSharedObjectSnapshotValue(
+  get: StoreGet,
+  key: string,
+): unknown {
   return get(sharedObjectSnapshotAtom, key);
 }

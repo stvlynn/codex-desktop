@@ -27,9 +27,7 @@ export function hundredthsPointToCssPxOrZero(
   hundredthsOfPoint: number | null | undefined,
 ): number {
   ensureTypographyUnitsInit();
-  return hundredthsOfPoint
-    ? (hundredthsOfPoint / 100) * CSS_PX_PER_POINT
-    : 0;
+  return hundredthsOfPoint ? (hundredthsOfPoint / 100) * CSS_PX_PER_POINT : 0;
 }
 
 /** Twips → CSS px. */

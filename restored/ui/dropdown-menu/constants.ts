@@ -51,12 +51,14 @@ export const CONTENT_WIDTH_CLASS: Record<DropdownMenuContentWidth, string> = {
   panelWide: "w-[360px]",
 };
 
-export const CONTENT_MAX_HEIGHT_PX: Record<DropdownMenuContentMaxHeight, number> =
-  {
-    compact: 200,
-    list: 250,
-    tall: 350,
-  };
+export const CONTENT_MAX_HEIGHT_PX: Record<
+  DropdownMenuContentMaxHeight,
+  number
+> = {
+  compact: 200,
+  list: 250,
+  tall: 350,
+};
 
 export const SUBMENU_COLLAPSE_TRANSITION = {
   duration: 0.3,

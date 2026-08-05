@@ -15,7 +15,9 @@ export type UseCreditPaymentMethodsQueryPeers = {
 let peers: UseCreditPaymentMethodsQueryPeers | null = null;
 
 /** Wire useCreditPaymentMethodsQuery peers once companions land. */
-export function setUseCreditPaymentMethodsQueryPeers(next: UseCreditPaymentMethodsQueryPeers): void {
+export function setUseCreditPaymentMethodsQueryPeers(
+  next: UseCreditPaymentMethodsQueryPeers,
+): void {
   peers = next;
 }
 

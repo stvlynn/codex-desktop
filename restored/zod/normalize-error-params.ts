@@ -8,7 +8,9 @@ type ErrorParams = {
 };
 
 /** Normalize Zod `message`/`error` option bags. */
-export function normalizeErrorParams(params: string | ErrorParams | null | undefined): Record<string, unknown> {
+export function normalizeErrorParams(
+  params: string | ErrorParams | null | undefined,
+): Record<string, unknown> {
   let value: string | ErrorParams | null | undefined = params;
   if (!value) return {};
   if (typeof value === "string") return { error: () => value as string };

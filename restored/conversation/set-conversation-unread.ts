@@ -23,7 +23,11 @@ export function setConversationUnreadDeps(args: {
   suppressUnreadAtom = args.suppressUnreadAtom;
 }
 
-export function setConversationUnread(scope: ScopeLike, conversationId: string, unread: boolean): void {
+export function setConversationUnread(
+  scope: ScopeLike,
+  conversationId: string,
+  unread: boolean,
+): void {
   const id = resolveId(scope.get, conversationId);
   if (id == null) return;
   scope.set(unreadAtom, id, unread);

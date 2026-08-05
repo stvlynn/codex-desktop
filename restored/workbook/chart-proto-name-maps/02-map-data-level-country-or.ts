@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Ln,
-} from "../presentation-protobuf";
+import { Ln } from "../presentation-protobuf";
 
 export const mapDataLevelCountryOrNameToProto = {
   countryOrRegion: Ln.MAP_DATA_LEVEL_COUNTRY_OR_REGION,

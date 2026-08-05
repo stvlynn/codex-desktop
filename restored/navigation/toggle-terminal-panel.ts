@@ -37,7 +37,9 @@ function isOpen(scope: AppActionScope, side: PanelSide): boolean {
 /**
  * Bundle `Yzi` / export `pU` — toggle terminal on preferred (or given) side.
  */
-export function toggleTerminalPanel(scope: AppActionScope, side: PanelSide = preferredSide(scope),
+export function toggleTerminalPanel(
+  scope: AppActionScope,
+  side: PanelSide = preferredSide(scope),
 ): void {
   if (isOpen(scope, side)) {
     ops.closeOn?.(scope, side);

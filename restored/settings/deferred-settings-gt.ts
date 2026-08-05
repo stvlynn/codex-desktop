@@ -12,7 +12,9 @@ export type BindDeferredSettingsGtPeers = {
 let peers: BindDeferredSettingsGtPeers | null = null;
 
 /** Wire bindDeferredSettingsGt peers once companions land. */
-export function setBindDeferredSettingsGtPeers(next: BindDeferredSettingsGtPeers): void {
+export function setBindDeferredSettingsGtPeers(
+  next: BindDeferredSettingsGtPeers,
+): void {
   peers = next;
 }
 

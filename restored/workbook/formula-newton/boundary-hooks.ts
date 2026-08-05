@@ -3,4 +3,6 @@
 
 export type FormulaNewtonHooks = Record<string, never>;
 export const fnwH: FormulaNewtonHooks = {} as FormulaNewtonHooks;
-export function wireFormulaNewtonBoundaryHooks(_next: Partial<FormulaNewtonHooks> = {}): void {}
+export function wireFormulaNewtonBoundaryHooks(
+  _next: Partial<FormulaNewtonHooks> = {},
+): void {}

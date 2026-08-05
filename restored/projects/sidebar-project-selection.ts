@@ -15,7 +15,9 @@ export type SidebarProjectSelection = {
  * Bundle `AAr` / export `p$`.
  * Atom / query project → sidebar selection ref.
  */
-export function toSidebarProjectSelection(project: SidebarProject | null | undefined): SidebarProjectSelection | null {
+export function toSidebarProjectSelection(
+  project: SidebarProject | null | undefined,
+): SidebarProjectSelection | null {
   return project == null
     ? null
     : { projectId: project.projectId, projectKind: project.type };
@@ -25,7 +27,9 @@ export function toSidebarProjectSelection(project: SidebarProject | null | undef
  * Bundle `jAr` / export `m$`.
  * Sidebar selection ref → atom project (`au` is identity in this bundle).
  */
-export function fromSidebarProjectSelection(selection: SidebarProjectSelection | null | undefined): SidebarProject | null {
+export function fromSidebarProjectSelection(
+  selection: SidebarProjectSelection | null | undefined,
+): SidebarProject | null {
   return selection == null
     ? null
     : { type: selection.projectKind, projectId: selection.projectId };

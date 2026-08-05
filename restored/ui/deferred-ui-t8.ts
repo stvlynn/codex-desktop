@@ -36,21 +36,26 @@ export function bindDeferredUiT8() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.Au(), peers._Yn(), peers.ed(), cT = peers.Ta(peers.Q, () => ({})), lT = peers.Ma(peers.Q, ({
-      get: e
-    }) => peers.e(peers.sT, peers.$Te).data === !0), uT = peers.lT, SYn = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => {
-      let n = t(peers.cT)[peers.e] ?? [];
-      return t(peers.uT) || n.length > 0;
-    }), CYn = peers.Oa(peers.Q, ({
-      browserTabId: e,
-      conversationId: t
-    }, {
-      get: n
-    }) => {
-      let r = n(peers.cT)[t] ?? [];
-      return n(peers.uT) || r.includes(peers.e);
-    });
+    (peers.Ho(),
+      peers.Au(),
+      peers._Yn(),
+      peers.ed(),
+      (cT = peers.Ta(peers.Q, () => ({}))),
+      (lT = peers.Ma(
+        peers.Q,
+        ({ get: e }) => peers.e(peers.sT, peers.$Te).data === !0,
+      )),
+      (uT = peers.lT),
+      (SYn = peers.Oa(peers.Q, (e, { get: t }) => {
+        let n = t(peers.cT)[peers.e] ?? [];
+        return t(peers.uT) || n.length > 0;
+      })),
+      (CYn = peers.Oa(
+        peers.Q,
+        ({ browserTabId: e, conversationId: t }, { get: n }) => {
+          let r = n(peers.cT)[t] ?? [];
+          return n(peers.uT) || r.includes(peers.e);
+        },
+      )));
   });
 }

@@ -11,7 +11,9 @@ export type UseIsComputerUseNativeAppAllowedPeers = {
 let peers: UseIsComputerUseNativeAppAllowedPeers | null = null;
 
 /** Wire useIsComputerUseNativeAppAllowed peers once companions land. */
-export function setUseIsComputerUseNativeAppAllowedPeers(next: UseIsComputerUseNativeAppAllowedPeers): void {
+export function setUseIsComputerUseNativeAppAllowedPeers(
+  next: UseIsComputerUseNativeAppAllowedPeers,
+): void {
   peers = next;
 }
 
@@ -20,7 +22,9 @@ export function setUseIsComputerUseNativeAppAllowedPeers(next: UseIsComputerUseN
  */
 export function useIsComputerUseNativeAppAllowed() {
   if (peers == null) {
-    throw new Error("useIsComputerUseNativeAppAllowed peers are not configured");
+    throw new Error(
+      "useIsComputerUseNativeAppAllowed peers are not configured",
+    );
   }
 
   let e = peers.kh(peers.wic),

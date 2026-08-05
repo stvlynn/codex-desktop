@@ -11,7 +11,9 @@ export type RegisterMicromarkMarkdownExtensionsPeers = {
 let peers: RegisterMicromarkMarkdownExtensionsPeers | null = null;
 
 /** Wire registerMicromarkMarkdownExtensions peers once companions land. */
-export function setRegisterMicromarkMarkdownExtensionsPeers(next: RegisterMicromarkMarkdownExtensionsPeers): void {
+export function setRegisterMicromarkMarkdownExtensionsPeers(
+  next: RegisterMicromarkMarkdownExtensionsPeers,
+): void {
   peers = next;
 }
 
@@ -20,14 +22,16 @@ export function setRegisterMicromarkMarkdownExtensionsPeers(next: RegisterMicrom
  */
 export function registerMicromarkMarkdownExtensions(e: unknown) {
   if (peers == null) {
-    throw new Error("registerMicromarkMarkdownExtensions peers are not configured");
+    throw new Error(
+      "registerMicromarkMarkdownExtensions peers are not configured",
+    );
   }
 
   let t = this,
     n = e || peers.Fkt,
     r = t.data(),
-    i = r.micromarkExtensions ||= [],
-    a = r.fromMarkdownExtensions ||= [],
-    o = r.toMarkdownExtensions ||= [];
-  i.push(peers.Bht(n)), a.push(peers.Pmt()), o.push(peers.Fmt(n));
+    i = (r.micromarkExtensions ||= []),
+    a = (r.fromMarkdownExtensions ||= []),
+    o = (r.toMarkdownExtensions ||= []);
+  (i.push(peers.Bht(n)), a.push(peers.Pmt()), o.push(peers.Fmt(n)));
 }

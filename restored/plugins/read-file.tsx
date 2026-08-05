@@ -26,6 +26,6 @@ export function bindBindReadFile() {
   }
 
   return peers.e(() => {
-    Ghu = peers.c(), peers.Qt(), peers.Uf(), peers.ap();
+    ((Ghu = peers.c()), peers.Qt(), peers.Uf(), peers.ap());
   });
 }

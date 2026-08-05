@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  En,
-} from "../presentation-protobuf";
+import { En } from "../presentation-protobuf";
 
 export const dataLabelPositionNameToProto = {
   center: En.DATA_LABEL_POSITION_CENTER,

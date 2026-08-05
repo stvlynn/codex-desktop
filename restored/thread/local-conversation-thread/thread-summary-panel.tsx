@@ -98,9 +98,7 @@ function ThreadSummarySections(props: {
         }
       >
         {onOpenPullRequestSidePanel != null ? (
-          <PopoverMenu.ItemButton
-            onClick={() => onOpenPullRequestSidePanel()}
-          >
+          <PopoverMenu.ItemButton onClick={() => onOpenPullRequestSidePanel()}>
             <PopoverMenu.ItemLabel>
               <MemoizedFormattedMessage
                 id="codex.localConversation.pullRequest.open"

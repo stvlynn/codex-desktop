@@ -36,7 +36,10 @@ export type BrowserUseMutationPeers = {
   /** Error logger. Bundle `Wf.error`. */
   logError: (
     message: string,
-    detail: { safe: Record<string, unknown>; sensitive: Record<string, unknown> },
+    detail: {
+      safe: Record<string, unknown>;
+      sensitive: Record<string, unknown>;
+    },
   ) => void;
   /** Open-link preference reader. Bundle `AQe(IEe.openLinkInTargetPreference)`. */
   readOpenLinkPreference: () => string | null | undefined;
@@ -81,9 +84,7 @@ function requirePeers(): BrowserUseMutationPeers {
   return peers;
 }
 
-async function clearBrowserBrowsingData(
-  dataTypes: unknown,
-): Promise<unknown> {
+async function clearBrowserBrowsingData(dataTypes: unknown): Promise<unknown> {
   const p = requirePeers();
   try {
     return await p.invokeHost("browser-browsing-data-clear", {

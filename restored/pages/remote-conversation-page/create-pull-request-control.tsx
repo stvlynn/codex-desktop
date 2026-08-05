@@ -39,10 +39,7 @@ export type CreatePullRequestControlProps = {
       mode?: "draft";
     }) => Promise<unknown>;
   };
-  onOpenPullRequest?: (args: {
-    href: string;
-    initiator: string;
-  }) => void;
+  onOpenPullRequest?: (args: { href: string; initiator: string }) => void;
   onError?: (messageId: string) => void;
 };
 
@@ -181,9 +178,7 @@ export function CreatePullRequestControl(
       externalPr?.number ?? extractPullRequestNumber(prUrl) ?? null;
     const status = externalPr
       ? mapPullRequestToSidebarStatus({
-          state: String(
-            (externalPr as { state?: string }).state ?? "OPEN",
-          ),
+          state: String((externalPr as { state?: string }).state ?? "OPEN"),
           draft: (externalPr as { draft?: boolean | null }).draft,
           merged: (externalPr as { merged?: boolean | null }).merged,
         })

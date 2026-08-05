@@ -5,7 +5,11 @@
 // AST split 3/3
 /* split-lane-import-depth:1 */
 
-import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 
 import { useAsciiEngineI, useAsciiEngineR } from "./part-1";

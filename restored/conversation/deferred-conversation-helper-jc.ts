@@ -12,7 +12,9 @@ export type BindDeferredConversationHelperJcPeers = {
 let peers: BindDeferredConversationHelperJcPeers | null = null;
 
 /** Wire bindDeferredConversationHelperJc peers once companions land. */
-export function setBindDeferredConversationHelperJcPeers(next: BindDeferredConversationHelperJcPeers): void {
+export function setBindDeferredConversationHelperJcPeers(
+  next: BindDeferredConversationHelperJcPeers,
+): void {
   peers = next;
 }
 
@@ -21,10 +23,12 @@ export function setBindDeferredConversationHelperJcPeers(next: BindDeferredConve
  */
 export function bindDeferredConversationHelperJc() {
   if (peers == null) {
-    throw new Error("bindDeferredConversationHelperJc peers are not configured");
+    throw new Error(
+      "bindDeferredConversationHelperJc peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Dut(), peers.hmt(), peers.hg(), Lsl = `<!--`;
+    (peers.Dut(), peers.hmt(), peers.hg(), (Lsl = `<!--`));
   });
 }

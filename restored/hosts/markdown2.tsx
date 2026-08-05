@@ -24,6 +24,6 @@ export function bindMarkdown2() {
   }
 
   return peers.e(() => {
-    peers.Vf(), peers.nO(), peers.bho();
+    (peers.Vf(), peers.nO(), peers.bho());
   });
 }

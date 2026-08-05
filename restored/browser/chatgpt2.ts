@@ -25,7 +25,7 @@ export function chatgpt2() {
   }
 
   return peers.e(() => {
-    peers.Au(), zh = `chatgpt`, Bh = peers.Ume(peers.zh);
+    (peers.Au(), (zh = `chatgpt`), (Bh = peers.Ume(peers.zh)));
   });
 }
 

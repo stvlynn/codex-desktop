@@ -16,80 +16,54 @@ import { TerminalFileIcon as appInitialSU } from "../../icons/terminal-file-icon
 import { AppLogoImage as appInitialKG } from "../../ui/app-logo-image";
 import { CopyButton as _appInitialAR } from "../../ui/copy-button";
 
-function useChatgptComposerControllerHelper265(
-  request2276,
-) {
-  let { resolvedApps, shouldBlockExternalEgress, toolIcons } =
-      request2276,
+function useChatgptComposerControllerHelper265(request2276) {
+  let { resolvedApps, shouldBlockExternalEgress, toolIcons } = request2276,
     slot6649 = toolIcons
-      ?.flatMap(
-        (
-          request3538,
-          request3539,
-        ) => {
-          const AppInitialKG = appInitialKG;
-          const AppInitialLV = appInitialLV;
-          let slot9172 =
-              request3538.trim(),
-            slot9173 =
-              useChatgptComposerControllerHelper266(
-                slot9172,
-                `${slot9172}-${String(request3539)}`,
+      ?.flatMap((request3538, request3539) => {
+        const AppInitialKG = appInitialKG;
+        const AppInitialLV = appInitialLV;
+        let slot9172 = request3538.trim(),
+          slot9173 = useChatgptComposerControllerHelper266(
+            slot9172,
+            `${slot9172}-${String(request3539)}`,
+          );
+        if (slot9173 != null) return [slot9173];
+        let slot9174 = resolvedApps.find((item) => {
+            return [item.logoUrl, item.logoUrlDark].some((_item) => {
+              return (
+                _item === slot9172 ||
+                (slot9172.startsWith("/") && _item?.endsWith(slot9172))
               );
-          if (slot9173 != null)
-            return [slot9173];
-          let slot9174 = resolvedApps.find(
-              (item) => {
-                return [item.logoUrl, item.logoUrlDark].some((_item) => {
-                  return (
-                    _item === slot9172 ||
-                    (slot9172.startsWith("/") &&
-                      _item?.endsWith(slot9172))
-                  );
-                });
-              },
-            ),
-            slot9175 =
-              slot9174 == null
-                ? useChatgptComposerControllerHelper267(
-                    slot9172,
-                    resolvedApps,
-                  )
-                : null;
-          return slot9174 == null &&
-            slot9175 == null
-            ? []
-            : [
-                <AppInitialKG
-                  key={`${slot9172}-${String(request3539)}`}
-                  alt=""
-                  appInfo={slot9174}
-                  className="size-5 shrink-0"
-                  fallback={<AppInitialLV aria-hidden={true} />}
-                  loadRemote={!shouldBlockExternalEgress}
-                  logoUrl={slot9175}
-                />,
-              ];
-        },
-      )
+            });
+          }),
+          slot9175 =
+            slot9174 == null
+              ? useChatgptComposerControllerHelper267(slot9172, resolvedApps)
+              : null;
+        return slot9174 == null && slot9175 == null
+          ? []
+          : [
+              <AppInitialKG
+                key={`${slot9172}-${String(request3539)}`}
+                alt=""
+                appInfo={slot9174}
+                className="size-5 shrink-0"
+                fallback={<AppInitialLV aria-hidden={true} />}
+                loadRemote={!shouldBlockExternalEgress}
+                logoUrl={slot9175}
+              />,
+            ];
+      })
       .slice(0, 2);
-  let slot6650 =
-    slot6649;
-  if (
-    slot6650 == null ||
-    slot6650.length === 0
-  )
-    return null;
+  let slot6650 = slot6649;
+  if (slot6650 == null || slot6650.length === 0) return null;
   return (
     <span className="mt-0.5 flex h-5 shrink-0 items-center -space-x-1">
       {slot6650}
     </span>
   );
 }
-function useChatgptComposerControllerHelper266(
-  request1631,
-  request1632,
-) {
+function useChatgptComposerControllerHelper266(request1631, request1632) {
   const AppInitialLV = appInitialLV;
   const AppInitialDb = appInitialDb;
   const AppInitialYl = appInitialYl;
@@ -212,28 +186,17 @@ function useChatgptComposerControllerHelper266(
       return null;
   }
 }
-function useChatgptComposerControllerHelper267(
-  request5407,
-  request5408,
-) {
-  if (
-    request5407.startsWith("/") &&
-    !request5407.startsWith("//")
-  ) {
-    let slot13534 =
-      request5408
-        .find((item) => {
-          return item.installUrl?.trim();
-        })
-        ?.installUrl?.trim();
+function useChatgptComposerControllerHelper267(request5407, request5408) {
+  if (request5407.startsWith("/") && !request5407.startsWith("//")) {
+    let slot13534 = request5408
+      .find((item) => {
+        return item.installUrl?.trim();
+      })
+      ?.installUrl?.trim();
     if (slot13534 == null) return null;
     try {
-      let slot15341 = new URL(
-        request5407,
-        slot13534,
-      );
-      return slot15341.protocol === "http:" ||
-        slot15341.protocol === "https:"
+      let slot15341 = new URL(request5407, slot13534);
+      return slot15341.protocol === "http:" || slot15341.protocol === "https:"
         ? slot15341.toString()
         : null;
     } catch {

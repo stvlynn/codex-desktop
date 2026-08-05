@@ -35,7 +35,9 @@ export function ceilToIncrement(value: number, increment: number): number {
  * Bundle `Gws` / export `Ny`.
  * Minimum purchasable credit quantity from pricing (floor 250, snapped).
  */
-export function getCreditsPurchaseMinimumQuantity(pricingInfo: CreditPricingInfo): number {
+export function getCreditsPurchaseMinimumQuantity(
+  pricingInfo: CreditPricingInfo,
+): number {
   if (
     pricingInfo == null ||
     pricingInfo.minorUnitExponent == null ||
@@ -128,7 +130,9 @@ export function parseFormattedCreditsQuantity({
  * Bundle `qws` / export `Ey`.
  * Like `parseFormattedCreditsQuantity`, but only when the result is integral.
  */
-export function parseFormattedCreditsQuantityString(props: ParseFormattedCreditsProps): string | null {
+export function parseFormattedCreditsQuantityString(
+  props: ParseFormattedCreditsProps,
+): string | null {
   const quantity = parseFormattedCreditsQuantity(props);
   if (quantity == null) return null;
   const rounded = Math.round(quantity);

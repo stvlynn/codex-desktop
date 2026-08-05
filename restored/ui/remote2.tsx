@@ -42,6 +42,25 @@ export function bindRemote2() {
   }
 
   return peers.e(() => {
-    wqa = peers.c(), peers.Ho(), peers.Au(), peers.$u(), peers.AUa(), peers.zUa(), peers.VUa(), peers.bVa(), peers.DM(), peers.IE(), peers.nN(), peers.uUa(), peers.UUa(), peers.hGa(), peers.xGa(), peers.BGa(), peers.cKa(), peers.TKa(), peers.aqa(), peers.gqa();
+    ((wqa = peers.c()),
+      peers.Ho(),
+      peers.Au(),
+      peers.$u(),
+      peers.AUa(),
+      peers.zUa(),
+      peers.VUa(),
+      peers.bVa(),
+      peers.DM(),
+      peers.IE(),
+      peers.nN(),
+      peers.uUa(),
+      peers.UUa(),
+      peers.hGa(),
+      peers.xGa(),
+      peers.BGa(),
+      peers.cKa(),
+      peers.TKa(),
+      peers.aqa(),
+      peers.gqa());
   });
 }

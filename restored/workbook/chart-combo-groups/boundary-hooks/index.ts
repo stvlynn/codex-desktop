@@ -27,7 +27,8 @@ export type ChartComboGroupsBoundaryHooks = {
 
 export const ccgH: ChartComboGroupsBoundaryHooks = {
   bh532: __call("../", "buildComboRenderGroups"),
-  paintSecondaryValueAxis: __call("../../chart-axis-ticks",
+  paintSecondaryValueAxis: __call(
+    "../../chart-axis-ticks",
     "paintSecondaryValueAxis",
   ),
   sliceGroupChart: __call("../", "pxe"),

@@ -8,14 +8,11 @@ import { useChatgptComposerControllerHelper251 } from "./chatgpt-trusted-contact
 
 const tx = { a: useChatgptComposerControllerHelper251 };
 
-function useChatgptComposerControllerHelper249(
-  request1588,
-) {
+function useChatgptComposerControllerHelper249(request1588) {
   const AppInitialT0 = appInitialT0;
   const UseChatgptComposerControllerHelper247 =
     useChatgptComposerControllerHelper247;
-  let { className, content, conversationId, footer, icon } =
-      request1588,
+  let { className, content, conversationId, footer, icon } = request1588,
     slot5373 = appInitialWft(
       "flex items-center gap-6 self-start rounded-2xl border border-token-border-default px-3 py-2.5 text-sm text-token-text-primary md:p-4",
       className,
@@ -43,8 +40,7 @@ function useChatgptComposerControllerHelper249(
       {content}
     </UseChatgptComposerControllerHelper247>
   );
-  let slot5377 =
-    footer == null ? null : <div className="mt-3">{footer}</div>;
+  let slot5377 = footer == null ? null : <div className="mt-3">{footer}</div>;
   let slot5378 = (
     <div className="min-w-0 grow pt-[2px]">
       {slot5376}
@@ -57,11 +53,7 @@ function useChatgptComposerControllerHelper249(
       {slot5378}
     </div>
   );
-  return (
-    <div className={slot5373}>
-      {slot5379}
-    </div>
-  );
+  return <div className={slot5373}>{slot5379}</div>;
 }
 
 export { useChatgptComposerControllerHelper249 };

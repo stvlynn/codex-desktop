@@ -44,25 +44,38 @@ export function bindCodexThemeV1() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.Au(), $7 = peers.r(peers.o(), 1), peers.Sl(), peers.ed(), peers.wp(), peers.Yni(), peers.FP(), Giu = `codex-theme-v1:`, Kiu = peers.gl(e => typeof peers.e == `string` && peers.$ni(peers.e)), qiu = peers.X().regex(/^#[0-9a-fA-F]{6}$/), Jiu = peers.X().nullable(), Yiu = peers.sl({
-      accent: peers.qiu,
-      contrast: peers.Jfe().int().min(0).max(100),
-      fonts: peers.sl({
-        code: peers.Jiu,
-        ui: peers.Jiu
-      }),
-      ink: peers.qiu,
-      opaqueWindows: peers.il(),
-      semanticColors: peers.sl({
-        diffAdded: peers.qiu,
-        diffRemoved: peers.qiu,
-        skill: peers.qiu
-      }),
-      surface: peers.qiu
-    }), Xiu = peers.sl({
-      codeThemeId: peers.Kiu,
-      theme: peers.Yiu,
-      variant: peers.pl([`light`, `dark`])
-    });
+    (peers.Ho(),
+      peers.Au(),
+      ($7 = peers.r(peers.o(), 1)),
+      peers.Sl(),
+      peers.ed(),
+      peers.wp(),
+      peers.Yni(),
+      peers.FP(),
+      (Giu = `codex-theme-v1:`),
+      (Kiu = peers.gl((e) => typeof peers.e == `string` && peers.$ni(peers.e))),
+      (qiu = peers.X().regex(/^#[0-9a-fA-F]{6}$/)),
+      (Jiu = peers.X().nullable()),
+      (Yiu = peers.sl({
+        accent: peers.qiu,
+        contrast: peers.Jfe().int().min(0).max(100),
+        fonts: peers.sl({
+          code: peers.Jiu,
+          ui: peers.Jiu,
+        }),
+        ink: peers.qiu,
+        opaqueWindows: peers.il(),
+        semanticColors: peers.sl({
+          diffAdded: peers.qiu,
+          diffRemoved: peers.qiu,
+          skill: peers.qiu,
+        }),
+        surface: peers.qiu,
+      })),
+      (Xiu = peers.sl({
+        codeThemeId: peers.Kiu,
+        theme: peers.Yiu,
+        variant: peers.pl([`light`, `dark`]),
+      })));
   });
 }

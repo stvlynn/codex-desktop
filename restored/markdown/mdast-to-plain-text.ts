@@ -21,7 +21,10 @@ export type MdastToPlainTextOptions = {
 };
 
 /** Convert an mdast node to plain text. */
-export function mdastToPlainText(node: unknown, options?: MdastToPlainTextOptions | null): string {
+export function mdastToPlainText(
+  node: unknown,
+  options?: MdastToPlainTextOptions | null,
+): string {
   const opts = options || defaultOptions;
   return (
     impl?.(

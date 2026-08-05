@@ -2,7 +2,13 @@
 // Semantic implementation: sparkline/series marker color resolve (legacy QCe).
 // Stage-3 wave-127.
 
-export function resolveMarkerColor(cmcIn3082: any, cmcIn3083: any, cmcIn3084: any, cmcIn3085: any, cmcIn3086: any, ) {
+export function resolveMarkerColor(
+  cmcIn3082: any,
+  cmcIn3083: any,
+  cmcIn3084: any,
+  cmcIn3085: any,
+  cmcIn3086: any,
+) {
   return Number.isFinite(cmcIn3083)
     ? cmcIn3084.markers.first &&
       cmcIn3086.firstIndex === cmcIn3082 &&
@@ -23,8 +29,7 @@ export function resolveMarkerColor(cmcIn3082: any, cmcIn3083: any, cmcIn3084: an
             : cmcIn3084.markers.negative &&
                 cmcIn3086.negativeIndices.has(cmcIn3082)
               ? cmcIn3085.negativeColor
-              : (cmcIn3085.markersColor ??
-                cmcIn3085.seriesColor)
+              : (cmcIn3085.markersColor ?? cmcIn3085.seriesColor)
     : null;
 }
 

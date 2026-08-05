@@ -16,9 +16,25 @@ import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-res
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { useResolvedAppByIdOrDisplayName } from "../../apps/use-resolved-app-by-id-or-display-name";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Cd_Init, ensureComposerEsm_Ed_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_RV_Init, ensureComposerEsm_Td_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Cd_Init,
+  ensureComposerEsm_Ed_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_RV_Init,
+  ensureComposerEsm_Td_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { Link } from "../../boundaries/react-router-link";
 import { useLocation } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
@@ -64,25 +80,38 @@ import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-
 import { resetStoreAtomValueSf as ResetStoreAtomValueSf } from "../../utils/set-store-atom-value";
 import { ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
 import { identityCwd } from "../../utils/workspace-paths";
-import { computeHookAttention, summarizeHooksByEvent } from "../hooks-event-helpers";
+import {
+  computeHookAttention,
+  summarizeHooksByEvent,
+} from "../hooks-event-helpers";
 import { listHooksForHostQueryAtom } from "../hooks-query-atoms";
 import { readCodexHomeFromQuery } from "../read-codex-home-from-query";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { initSettingsLoadingRow, SettingsLoadingRow } from "../settings-loading-row";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  initSettingsLoadingRow,
+  SettingsLoadingRow,
+} from "../settings-loading-row";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { useChronicleSettingsSection as UseChronicleSettingsSection } from "../use-chronicle-settings-section";
 
 // Wave5d soft JSX companions.
-function DeferredConversationWH3(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function DeferredConversationWH3(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function SetAccountVoiceAndInvalidateCatalog(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function SetAccountVoiceAndInvalidateCatalog(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -162,367 +191,555 @@ const openInBrowser: any = undefined;
 const parseUrlOrFallback: any = undefined;
 const useChromeAndCodeThemeSync: any = undefined;
 function eagle(apex) {
-  return <a key="learn-more" className="inline-flex text-token-text-link-foreground" href={DEVELOPERS_OPENAI_COM_CODEX_SKILLS_URL} target="_blank" rel="noreferrer">
+  return (
+    <a
+      key="learn-more"
+      className="inline-flex text-token-text-link-foreground"
+      href={DEVELOPERS_OPENAI_COM_CODEX_SKILLS_URL}
+      target="_blank"
+      rel="noreferrer"
+    >
       {apex}
-    </a>;
+    </a>
+  );
 }
 function frost() {
-  return <ParseUrlOrFallback {...{
-    children: <EnsurePersonalizationCInit {...{
-      label: <MemoizedFormattedMessage {...{
-        id: "settings.hooks.emptyHooks.label",
-        defaultMessage: "No hooks found",
-        description: "Label when known projects do not have hooks or hook load issues"
-      }} />,
-      description: <MemoizedFormattedMessage {...{
-        id: "settings.hooks.emptyHooks.description",
-        defaultMessage: "Configured hooks will appear here",
-        description: "Description when no hooks are configured"
-      }} />,
-      control: null
-    }} />
-  }} />;
+  return (
+    <ParseUrlOrFallback
+      {...{
+        children: (
+          <EnsurePersonalizationCInit
+            {...{
+              label: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "settings.hooks.emptyHooks.label",
+                    defaultMessage: "No hooks found",
+                    description:
+                      "Label when known projects do not have hooks or hook load issues",
+                  }}
+                />
+              ),
+              description: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "settings.hooks.emptyHooks.description",
+                    defaultMessage: "Configured hooks will appear here",
+                    description: "Description when no hooks are configured",
+                  }}
+                />
+              ),
+              control: null,
+            }}
+          />
+        ),
+      }}
+    />
+  );
 }
 function glide(brook) {
-  let {
-      sections,
-      title,
-      onSelectSourceSection
-    } = brook,
-    cliff = <UseChromeAndCodeThemeSync.Header {...{
-      title
-    }} />;
+  let { sections, title, onSelectSourceSection } = brook,
+    cliff = (
+      <UseChromeAndCodeThemeSync.Header
+        {...{
+          title,
+        }}
+      />
+    );
   let dusk;
   {
     let fern;
-    fern = grove => <HooksSettingsHelper20 key={grove.id} {...{
-      section: grove,
-      onSelectSourceSection
-    }} />;
+    fern = (grove) => (
+      <HooksSettingsHelper20
+        key={grove.id}
+        {...{
+          section: grove,
+          onSelectSourceSection,
+        }}
+      />
+    );
     dusk = sections.map(fern);
   }
-  let elm = <UseChromeAndCodeThemeSync.Content {...{
-    children: <ParseUrlOrFallback {...{
-      children: dusk
-    }} />
-  }} />;
-  return <UseChromeAndCodeThemeSync {...{
-    children: [cliff, elm]
-  }} />;
+  let elm = (
+    <UseChromeAndCodeThemeSync.Content
+      {...{
+        children: (
+          <ParseUrlOrFallback
+            {...{
+              children: dusk,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  return (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [cliff, elm],
+      }}
+    />
+  );
 }
 function honey(hill) {
-  let {
-      section,
-      onSelectSourceSection
-    } = hill,
-    isle = <UseChromeAndCodeThemeSync.Header {...{
-      title: <MemoizedFormattedMessage {...{
-        id: "settings.hooks.source.plugins",
-        defaultMessage: "From Plugins",
-        description: "Group heading for hooks installed by plugins"
-      }} />
-    }} />;
+  let { section, onSelectSourceSection } = hill,
+    isle = (
+      <UseChromeAndCodeThemeSync.Header
+        {...{
+          title: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.hooks.source.plugins",
+                defaultMessage: "From Plugins",
+                description: "Group heading for hooks installed by plugins",
+              }}
+            />
+          ),
+        }}
+      />
+    );
   let juniper;
   {
     let lagoon;
-    lagoon = meadow => <HooksSettingsHelper18 key={meadow.pluginId ?? "unknown-plugin"} {...{
-      pluginEntry: meadow,
-      onSelectSourceSection
-    }} />;
+    lagoon = (meadow) => (
+      <HooksSettingsHelper18
+        key={meadow.pluginId ?? "unknown-plugin"}
+        {...{
+          pluginEntry: meadow,
+          onSelectSourceSection,
+        }}
+      />
+    );
     juniper = section.pluginEntries.map(lagoon);
   }
-  return <UseChromeAndCodeThemeSync {...{
-    children: [isle, <UseChromeAndCodeThemeSync.Content {...{
-      children: <ParseUrlOrFallback {...{
-        children: juniper
-      }} />
-    }} />]
-  }} />;
+  return (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [
+          isle,
+          <UseChromeAndCodeThemeSync.Content
+            {...{
+              children: (
+                <ParseUrlOrFallback
+                  {...{
+                    children: juniper,
+                  }}
+                />
+              ),
+            }}
+          />,
+        ],
+      }}
+    />
+  );
 }
 function iris(nest) {
-  let {
-      pluginEntry,
-      onSelectSourceSection
-    } = nest,
+  let { pluginEntry, onSelectSourceSection } = nest,
     oak = useIntl(),
-    petal = AppInitialFd(pluginEntry.pluginId) ?? oak.formatMessage({
-      id: "settings.hooks.source.unknownPlugin",
-      defaultMessage: "Unknown plugin",
-      description: "Fallback label for plugin hooks without a plugin id"
-    });
+    petal =
+      AppInitialFd(pluginEntry.pluginId) ??
+      oak.formatMessage({
+        id: "settings.hooks.source.unknownPlugin",
+        defaultMessage: "Unknown plugin",
+        description: "Fallback label for plugin hooks without a plugin id",
+      });
   let quiet = petal,
     rain = computeHookAttention(pluginEntry.entry);
   let seed = rain,
-    trail = <AppIconLV {...{
-      className: "icon-sm text-token-text-secondary"
-    }} />;
+    trail = (
+      <AppIconLV
+        {...{
+          className: "icon-sm text-token-text-secondary",
+        }}
+      />
+    );
   let urn = <span className="block truncate">{quiet}</span>;
-  let vine = <HooksSettingsHelper24 {...{
-    count: pluginEntry.entry.hooks.length
-  }} />;
-  let wind = <HooksSettingsHelper25 {...{
-    summary: seed
-  }} />;
+  let vine = (
+    <HooksSettingsHelper24
+      {...{
+        count: pluginEntry.entry.hooks.length,
+      }}
+    />
+  );
+  let wind = (
+    <HooksSettingsHelper25
+      {...{
+        summary: seed,
+      }}
+    />
+  );
   let yarrow = () => {
     onSelectSourceSection({
       source: "plugin",
-      pluginId: pluginEntry.pluginId
+      pluginId: pluginEntry.pluginId,
     });
   };
-  return <SetAccountVoiceAndInvalidateCatalog {...{
-    icon: trail,
-    label: urn,
-    description: vine,
-    trailing: wind,
-    onClick: yarrow
-  }} />;
+  return (
+    <SetAccountVoiceAndInvalidateCatalog
+      {...{
+        icon: trail,
+        label: urn,
+        description: vine,
+        trailing: wind,
+        onClick: yarrow,
+      }}
+    />
+  );
 }
 function jewel(azure) {
-  let {
-      section,
-      projectRootLabels,
-      onSelectSourceSection
-    } = azure,
-    birch = <UseChromeAndCodeThemeSync.Header {...{
-      title: <MemoizedFormattedMessage {...{
-        id: "settings.hooks.source.projects",
-        defaultMessage: "From Projects",
-        description: "Group heading for hooks from project config files"
-      }} />
-    }} />;
+  let { section, projectRootLabels, onSelectSourceSection } = azure,
+    birch = (
+      <UseChromeAndCodeThemeSync.Header
+        {...{
+          title: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.hooks.source.projects",
+                defaultMessage: "From Projects",
+                description:
+                  "Group heading for hooks from project config files",
+              }}
+            />
+          ),
+        }}
+      />
+    );
   let canyon;
   {
     let dew;
-    dew = ever => <HooksSettingsHelper23 key={ever.cwd} {...{
-      entry: ever,
-      projectRootLabels,
-      onSelectSourceSection
-    }} />;
+    dew = (ever) => (
+      <HooksSettingsHelper23
+        key={ever.cwd}
+        {...{
+          entry: ever,
+          projectRootLabels,
+          onSelectSourceSection,
+        }}
+      />
+    );
     canyon = section.projectEntries.map(dew);
   }
-  return <UseChromeAndCodeThemeSync {...{
-    children: [birch, <UseChromeAndCodeThemeSync.Content {...{
-      children: <ParseUrlOrFallback {...{
-        children: canyon
-      }} />
-    }} />]
-  }} />;
+  return (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [
+          birch,
+          <UseChromeAndCodeThemeSync.Content
+            {...{
+              children: (
+                <ParseUrlOrFallback
+                  {...{
+                    children: canyon,
+                  }}
+                />
+              ),
+            }}
+          />,
+        ],
+      }}
+    />
+  );
 }
 function knoll(field) {
-  let {
-      section,
-      onSelectSourceSection
-    } = field,
+  let { section, onSelectSourceSection } = field,
     grain = section.id,
     haven = section.entry,
     ink = computeHookAttention(haven);
   let jadeite = ink,
     kernel = moss(grain);
-  let leaf = <HooksSettingsHelper21 {...{
-    source: grain
-  }} />;
-  let maple = <HooksSettingsHelper24 {...{
-    count: haven.hooks.length
-  }} />;
-  let nimbus = <HooksSettingsHelper25 {...{
-    summary: jadeite
-  }} />;
+  let leaf = (
+    <HooksSettingsHelper21
+      {...{
+        source: grain,
+      }}
+    />
+  );
+  let maple = (
+    <HooksSettingsHelper24
+      {...{
+        count: haven.hooks.length,
+      }}
+    />
+  );
+  let nimbus = (
+    <HooksSettingsHelper25
+      {...{
+        summary: jadeite,
+      }}
+    />
+  );
   let opal = () => {
     onSelectSourceSection({
-      source: grain
+      source: grain,
     });
   };
-  return <SetAccountVoiceAndInvalidateCatalog {...{
-    icon: kernel,
-    label: leaf,
-    description: maple,
-    trailing: nimbus,
-    onClick: opal
-  }} />;
+  return (
+    <SetAccountVoiceAndInvalidateCatalog
+      {...{
+        icon: kernel,
+        label: leaf,
+        description: maple,
+        trailing: nimbus,
+        onClick: opal,
+      }}
+    />
+  );
 }
 function lunar(plume) {
-  let {
-    source
-  } = plume;
+  let { source } = plume;
   switch (source) {
-    case "plugin":
-      {
-        let quillow;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.hooks.source.plugin",
-          defaultMessage: "Plugin",
-          description: "Source label for plugin hooks"
-        }} />;
-      }
-    case "user":
-      {
-        let root;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.hooks.source.userConfig",
-          defaultMessage: "User config",
-          description: "Source label for user hooks"
-        }} />;
-      }
-    case "admin":
-      {
-        let silk;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.hooks.source.adminConfig",
-          defaultMessage: "Admin config",
-          description: "Source label for admin-managed hooks"
-        }} />;
-      }
-    case "project":
-      {
-        let thorn;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.hooks.source.projectConfig",
-          defaultMessage: "Project config",
-          description: "Source label for project hooks"
-        }} />;
-      }
-    case "sessionFlags":
-      {
-        let upland;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.hooks.source.sessionFlags",
-          defaultMessage: "Session flags",
-          description: "Source label for session flag hooks"
-        }} />;
-      }
-    case "unknown":
-      {
-        let vista;
-        return <MemoizedFormattedMessage {...{
-          id: "settings.hooks.source.unknown",
-          defaultMessage: "Unknown source",
-          description: "Source label for hooks with unknown provenance"
-        }} />;
-      }
+    case "plugin": {
+      let quillow;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.hooks.source.plugin",
+            defaultMessage: "Plugin",
+            description: "Source label for plugin hooks",
+          }}
+        />
+      );
+    }
+    case "user": {
+      let root;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.hooks.source.userConfig",
+            defaultMessage: "User config",
+            description: "Source label for user hooks",
+          }}
+        />
+      );
+    }
+    case "admin": {
+      let silk;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.hooks.source.adminConfig",
+            defaultMessage: "Admin config",
+            description: "Source label for admin-managed hooks",
+          }}
+        />
+      );
+    }
+    case "project": {
+      let thorn;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.hooks.source.projectConfig",
+            defaultMessage: "Project config",
+            description: "Source label for project hooks",
+          }}
+        />
+      );
+    }
+    case "sessionFlags": {
+      let upland;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.hooks.source.sessionFlags",
+            defaultMessage: "Session flags",
+            description: "Source label for session flag hooks",
+          }}
+        />
+      );
+    }
+    case "unknown": {
+      let vista;
+      return (
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.hooks.source.unknown",
+            defaultMessage: "Unknown source",
+            description: "Source label for hooks with unknown provenance",
+          }}
+        />
+      );
+    }
   }
 }
 function moss(wisp) {
   switch (wisp) {
     case "plugin":
-      return <AppIconLV {...{
-        className: "icon-sm text-token-text-secondary"
-      }} />;
+      return (
+        <AppIconLV
+          {...{
+            className: "icon-sm text-token-text-secondary",
+          }}
+        />
+      );
     case "user":
-      return <DeferredConversationWH3 {...{
-        className: "icon-sm text-token-text-secondary"
-      }} />;
+      return (
+        <DeferredConversationWH3
+          {...{
+            className: "icon-sm text-token-text-secondary",
+          }}
+        />
+      );
     case "admin":
-      return <ResetStoreAtomValueSf {...{
-        className: "icon-sm text-token-text-secondary"
-      }} />;
+      return (
+        <ResetStoreAtomValueSf
+          {...{
+            className: "icon-sm text-token-text-secondary",
+          }}
+        />
+      );
     case "project":
-      return <UseChronicleSettingsSection {...{
-        className: "icon-sm text-token-text-secondary"
-      }} />;
+      return (
+        <UseChronicleSettingsSection
+          {...{
+            className: "icon-sm text-token-text-secondary",
+          }}
+        />
+      );
     case "sessionFlags":
     case "unknown":
-      return <NativeDesktopAppByBundleId className="icon-sm text-token-text-secondary" />;
+      return (
+        <NativeDesktopAppByBundleId className="icon-sm text-token-text-secondary" />
+      );
   }
 }
 function north(yonder) {
-  let {
-      entry,
-      projectRootLabels,
-      onSelectSourceSection
-    } = yonder,
+  let { entry, projectRootLabels, onSelectSourceSection } = yonder,
     zenith = computeHookAttention(entry);
   let anvil = zenith,
-    beacon = <UseChronicleSettingsSection {...{
-      className: "icon-sm text-token-text-secondary"
-    }} />;
+    beacon = (
+      <UseChronicleSettingsSection
+        {...{
+          className: "icon-sm text-token-text-secondary",
+        }}
+      />
+    );
   let crag = ridge(entry.cwd, projectRootLabels);
   let dome = <span className="block truncate">{crag}</span>;
-  let eddy = <HooksSettingsHelper24 {...{
-    count: entry.hooks.length
-  }} />;
-  let fjord = <HooksSettingsHelper25 {...{
-    summary: anvil
-  }} />;
+  let eddy = (
+    <HooksSettingsHelper24
+      {...{
+        count: entry.hooks.length,
+      }}
+    />
+  );
+  let fjord = (
+    <HooksSettingsHelper25
+      {...{
+        summary: anvil,
+      }}
+    />
+  );
   let glen = () => {
     onSelectSourceSection({
       source: "project",
-      projectRoot: entry.cwd
+      projectRoot: entry.cwd,
     });
   };
-  return <SetAccountVoiceAndInvalidateCatalog {...{
-    icon: beacon,
-    label: dome,
-    description: eddy,
-    trailing: fjord,
-    onClick: glen
-  }} />;
+  return (
+    <SetAccountVoiceAndInvalidateCatalog
+      {...{
+        icon: beacon,
+        label: dome,
+        description: eddy,
+        trailing: fjord,
+        onClick: glen,
+      }}
+    />
+  );
 }
 function orbit(hearth) {
-  let {
-    count
-  } = hearth;
-  return <MemoizedFormattedMessage {...{
-    id: "settings.hooks.source.hookCount",
-    defaultMessage: "{count, plural, one {# hook} other {# hooks}}",
-    description: "Short hook count shown under a hook source row",
-    values: {
-      count
-    }
-  }} />;
+  let { count } = hearth;
+  return (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.hooks.source.hookCount",
+        defaultMessage: "{count, plural, one {# hook} other {# hooks}}",
+        description: "Short hook count shown under a hook source row",
+        values: {
+          count,
+        },
+      }}
+    />
+  );
 }
 function pine(inlet) {
-  let {
-      summary
-    } = inlet,
-    jetty = <HooksSettingsHelper26 {...{
-      summary
-    }} />;
-  let knob = <AppIconSft {...{
-    className: "icon-2xs shrink-0 -rotate-90"
-  }} />;
-  return <div className="flex items-center gap-3">
+  let { summary } = inlet,
+    jetty = (
+      <HooksSettingsHelper26
+        {...{
+          summary,
+        }}
+      />
+    );
+  let knob = (
+    <AppIconSft
+      {...{
+        className: "icon-2xs shrink-0 -rotate-90",
+      }}
+    />
+  );
+  return (
+    <div className="flex items-center gap-3">
       {jetty}
       {knob}
-    </div>;
+    </div>
+  );
 }
 function quest(ledge) {
-  let {
-      summary
-    } = ledge,
+  let { summary } = ledge,
     mire = useIntl();
-  if (summary == null || summary.issueCount === 0 && summary.needsReview === 0) return null;
-  let nook = <ApplyActive {...{
-    className: "icon-2xs shrink-0 text-token-editor-warning-foreground"
-  }} />;
+  if (
+    summary == null ||
+    (summary.issueCount === 0 && summary.needsReview === 0)
+  )
+    return null;
+  let nook = (
+    <ApplyActive
+      {...{
+        className: "icon-2xs shrink-0 text-token-editor-warning-foreground",
+      }}
+    />
+  );
   let oxbow = alpha(summary, mire);
-  return <div className="flex shrink-0 items-center gap-3 text-sm whitespace-nowrap text-token-text-primary">
+  return (
+    <div className="flex shrink-0 items-center gap-3 text-sm whitespace-nowrap text-token-text-primary">
       {nook}
       <span className="max-[30rem]:hidden">{oxbow}</span>
-    </div>;
+    </div>
+  );
 }
 function ridge(pond, quarry) {
   return quarry?.[pond] ?? AppInitialL(pond) ?? pond;
 }
-function storm({
-  entry,
-  projectRootLabels,
-  selection
-}) {
+function storm({ entry, projectRootLabels, selection }) {
   if (selection == null) return null;
-  if (selection.source === "project") return ridge(selection.projectRoot, projectRootLabels);
+  if (selection.source === "project")
+    return ridge(selection.projectRoot, projectRootLabels);
   if (selection.source === "plugin") {
-    let rapids = selection.pluginId === undefined ? null : AppInitialFd(selection.pluginId);
-    if (rapids == null && entry != null && (rapids = tide(entry.hooks)), rapids != null) return rapids;
+    let rapids =
+      selection.pluginId === undefined
+        ? null
+        : AppInitialFd(selection.pluginId);
+    if (
+      (rapids == null && entry != null && (rapids = tide(entry.hooks)),
+      rapids != null)
+    )
+      return rapids;
   }
-  return <HooksSettingsHelper21 {...{
-    source: selection.source
-  }} />;
+  return (
+    <HooksSettingsHelper21
+      {...{
+        source: selection.source,
+      }}
+    />
+  );
 }
 function tide(spur) {
   let tor = null;
   for (let updraft of spur) {
     let verge = AppInitialFd(updraft.pluginId);
-    if (verge == null || tor != null && tor !== verge) return null;
+    if (verge == null || (tor != null && tor !== verge)) return null;
     tor = verge;
   }
   return tor;

@@ -7,7 +7,9 @@ type AncestorNode = {
 };
 
 /** Merge `value` objects from root ancestor down to `node`. */
-export function mergeAncestorValues(node: AncestorNode): Record<string, unknown> {
+export function mergeAncestorValues(
+  node: AncestorNode,
+): Record<string, unknown> {
   const parentMerged =
     node.parent == null ? undefined : mergeAncestorValues(node.parent);
   return parentMerged == null ? node.value : { ...parentMerged, ...node.value };

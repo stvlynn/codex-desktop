@@ -20,7 +20,6 @@ export var THEME_SCHEME_COLOR_ALIASES,
       bg2: "lt2",
       tx2: "dk2",
       hlink: "hlink",
-      folHlink: "folHlink"
+      folHlink: "folHlink",
     };
   });
-

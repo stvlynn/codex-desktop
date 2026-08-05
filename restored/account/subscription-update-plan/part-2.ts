@@ -6,7 +6,10 @@
 /* split-lane-import-depth:1 */
 
 import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { usePointerSurfaceInteractionGate as UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { FormattedDate } from "../../i18n/formatted-date";
@@ -18,8 +21,14 @@ import { ensureSettingsQueryAtomsInit } from "../../settings/settings-ipc";
 import { useBrowserExtensionPluginSetupQuery } from "../../skills/use-browser-extension-plugin-setup-query";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
-import { formatCurrency, initFormatCurrency } from "../../utils/format-currency";
-import { formatPlanPriceParts, initPlanPricing } from "../../utils/plan-pricing";
+import {
+  formatCurrency,
+  initFormatCurrency,
+} from "../../utils/format-currency";
+import {
+  formatPlanPriceParts,
+  initPlanPricing,
+} from "../../utils/plan-pricing";
 import { ChatGptPlanId, ensureChatGptPlanIdInit } from "../chatgpt-plan-ids";
 
 export function subscriptionUpdatePlanT(north: unknown) {

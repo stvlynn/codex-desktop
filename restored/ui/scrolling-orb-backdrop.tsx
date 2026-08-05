@@ -40,7 +40,9 @@ export type ScrollingOrbBackdropPeers = {
 let peers: ScrollingOrbBackdropPeers | null = null;
 
 /** Wire ScrollingOrbBackdrop peers once companions land. */
-export function setScrollingOrbBackdropPeers(next: ScrollingOrbBackdropPeers): void {
+export function setScrollingOrbBackdropPeers(
+  next: ScrollingOrbBackdropPeers,
+): void {
   peers = next;
 }
 
@@ -52,10 +54,7 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
     throw new Error("ScrollingOrbBackdrop peers are not configured");
   }
   let bravo = alpha === undefined ? {} : alpha;
-  let {
-      bufferDurationSecs = 10,
-      variant = "scrolling"
-    } = bravo,
+  let { bufferDurationSecs = 10, variant = "scrolling" } = bravo,
     [s, copper] = peers.Gh.useState(0),
     delta = peers.Gh.useRef(null),
     u = peers.Gh.useRef(null),
@@ -75,12 +74,23 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
   let onyx = peers.Gh.useRef(nickel),
     pearl = peers.Gh.useRef(1),
     quartz = peers.Gh.useRef(-1),
-    river = jasper => {
+    river = (jasper) => {
       if (jasper == null) return false;
       let kelp = peers.nit(jasper.clientWidth, variant);
-      return harbor.current = Array.from({
-        length: kelp
-      }, peers.eit), pearl.current = Math.max(1, Math.floor(peers.zet * bufferDurationSecs / kelp)), onyx.current = new peers.Float32Array(), true;
+      return (
+        (harbor.current = Array.from(
+          {
+            length: kelp,
+          },
+          peers.eit,
+        )),
+        (pearl.current = Math.max(
+          1,
+          Math.floor((peers.zet * bufferDurationSecs) / kelp),
+        )),
+        (onyx.current = new peers.Float32Array()),
+        true
+      );
     };
   let slate = river,
     timber = () => {
@@ -89,8 +99,11 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
     };
   let umbra = timber,
     violet = () => {
-      echo.current != null && (echo.current.onaudioprocess = null, echo.current.disconnect(), echo.current = null);
-      u.current != null && (u.current.disconnect(), u.current = null);
+      echo.current != null &&
+        ((echo.current.onaudioprocess = null),
+        echo.current.disconnect(),
+        (echo.current = null));
+      u.current != null && (u.current.disconnect(), (u.current = null));
       delta.current != null && delta.current.close();
       delta.current = null;
       falcon.current = null;
@@ -128,10 +141,7 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
       if (mint == null) return;
       let nova = mint.getContext("2d");
       if (nova == null) return;
-      let {
-        clientHeight,
-        clientWidth
-      } = mint;
+      let { clientHeight, clientWidth } = mint;
       if (clientWidth === 0 || clientHeight === 0) return;
       let i = peers.nit(clientWidth, variant);
       harbor.current.length !== i && slate(mint);
@@ -144,7 +154,11 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
       nova.clearRect(0, 0, mint.width, mint.height);
       nova.save();
       let olive = mint.height * 0.5;
-      if (nova.translate(0, olive), nova.fillStyle = peers.getComputedStyle(mint).color || "#000", variant === "orb") {
+      if (
+        (nova.translate(0, olive),
+        (nova.fillStyle = peers.getComputedStyle(mint).color || "#000"),
+        variant === "orb")
+      ) {
         let quill = peers.Cit * s,
           reef = quill + peers.wit * s,
           i = -reef * marble.current;
@@ -159,7 +173,14 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
           nova.roundRect(u, -vapor / 2, quill, vapor, wheat);
           nova.fill();
         }
-        let sage = nova.createRadialGradient(mint.width / 2, 0, 0, mint.width / 2, 0, mint.width / 2);
+        let sage = nova.createRadialGradient(
+          mint.width / 2,
+          0,
+          0,
+          mint.width / 2,
+          0,
+          mint.width / 2,
+        );
         sage.addColorStop(0, "rgb(0 0 0 / 1)");
         sage.addColorStop(peers.Tit, "rgb(0 0 0 / 1)");
         sage.addColorStop(peers.Eit, "rgb(0 0 0 / 0)");
@@ -196,17 +217,19 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
           let glide = a[frost] ?? 0,
             i = peers.rit(frost, a.length),
             honey = glide * 10 * olive;
-          nova.globalAlpha = glide <= 0.0025 ? 0.2 : Math.min(1, 0.35 + i * 0.45);
+          nova.globalAlpha =
+            glide <= 0.0025 ? 0.2 : Math.min(1, 0.35 + i * 0.45);
           nova.fillRect(frost * prism, -honey, eagle, honey * 2);
         }
         nova.restore();
         return;
       }
       let u = -1;
-      for (let iris = 0; iris < a.length; iris += 1) if ((a[iris] ?? 0) > 0.0025) {
-        u = iris;
-        break;
-      }
+      for (let iris = 0; iris < a.length; iris += 1)
+        if ((a[iris] ?? 0) > 0.0025) {
+          u = iris;
+          break;
+        }
       for (let jewel = 0; jewel < a.length; jewel += 1) {
         let knoll = a[jewel] ?? 0;
         knoll *= 10;
@@ -221,15 +244,26 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
     basalt = () => {
       let moss = () => {
         let north = b.current;
-        marble.current = north == null ? 0 : Math.min(1, Math.max(0, (performance.now() - north) / peers.Oit));
+        marble.current =
+          north == null
+            ? 0
+            : Math.min(1, Math.max(0, (performance.now() - north) / peers.Oit));
         amber();
         kite.current = peers.requestAnimationFrame(moss);
       };
       kite.current = peers.requestAnimationFrame(moss);
     };
   let cedar = basalt,
-    daisy = orbit => {
-      if (willow(), yellow(), slate(p.current), variant === "orb" && (b.current = performance.now(), cedar()), amber(), typeof peers.AudioContext > "u") return;
+    daisy = (orbit) => {
+      if (
+        (willow(),
+        yellow(),
+        slate(p.current),
+        variant === "orb" && ((b.current = performance.now()), cedar()),
+        amber(),
+        typeof peers.AudioContext > "u")
+      )
+        return;
       let pine = new peers.AudioContext();
       delta.current = pine;
       let quest = pine.createMediaStreamSource(orbit);
@@ -237,7 +271,7 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
       let ridge = pine.createScriptProcessor(2048, 1, 1);
       echo.current = ridge;
       falcon.current = performance.now();
-      ridge.onaudioprocess = storm => {
+      ridge.onaudioprocess = (storm) => {
         let tide = storm.inputBuffer.getChannelData(0),
           unity = 0;
         for (let wave = 0; wave < tide.length; wave += 1) {
@@ -254,7 +288,7 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
           let cliff = performance.now(),
             dusk = b.current ?? cliff,
             elm = false;
-          for (; cliff - dusk >= peers.Oit;) {
+          for (; cliff - dusk >= peers.Oit; ) {
             harbor.current.push(lemon.current);
             harbor.current.shift();
             lemon.current = brook;
@@ -271,7 +305,8 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
           jade.current = hill;
           value.current += peers.bit;
           for (let isle = 0; isle < vale; isle += 1) {
-            let juniper = 0.9 + (Math.sin(value.current - isle * 0.8) + 1) / 2 * 0.1,
+            let juniper =
+                0.9 + ((Math.sin(value.current - isle * 0.8) + 1) / 2) * 0.1,
               a = peers.iit(tide, isle, vale, i),
               s = Math.min(peers.yit, peers.Ret + hill * juniper * a),
               lagoon = harbor.current[isle] ?? 0.0025;
@@ -285,8 +320,15 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
             oak = nest * (1 - a) + meadow * a;
           indigo.current = oak;
           for (let petal = 0; petal < vale; petal += 1) {
-            let quiet = peers.ait(tide, Math.round(Math.abs(petal - (vale - 1) / 2)), i);
-            harbor.current[petal] = Math.min(peers.uit, peers.Ret + oak * peers.rit(petal, vale) * quiet);
+            let quiet = peers.ait(
+              tide,
+              Math.round(Math.abs(petal - (vale - 1) / 2)),
+              i,
+            );
+            harbor.current[petal] = Math.min(
+              peers.uit,
+              peers.Ret + oak * peers.rit(petal, vale) * quiet,
+            );
           }
           amber();
         } else {
@@ -297,22 +339,28 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
           let i = pearl.current,
             a = false,
             trail = 0;
-          if (vale > 0 && i > 0) for (; trail + i <= seed.length;) {
-            let urn = trail + i,
-              vine = 0;
-            for (let wind = trail; wind < urn; wind += 1) vine += seed[wind] ?? 0;
-            let s = vine / i;
-            harbor.current.push(s);
-            harbor.current.length > vale && harbor.current.shift();
-            trail = urn;
-            a = true;
-          }
+          if (vale > 0 && i > 0)
+            for (; trail + i <= seed.length; ) {
+              let urn = trail + i,
+                vine = 0;
+              for (let wind = trail; wind < urn; wind += 1)
+                vine += seed[wind] ?? 0;
+              let s = vine / i;
+              harbor.current.push(s);
+              harbor.current.length > vale && harbor.current.shift();
+              trail = urn;
+              a = true;
+            }
           onyx.current = seed.slice(trail);
           a && amber();
         }
         if (falcon.current != null) {
-          let yarrow = Math.max(0, Math.floor((performance.now() - falcon.current) / 1e3));
-          yarrow !== quartz.current && (quartz.current = yarrow, copper(yarrow * 1e3));
+          let yarrow = Math.max(
+            0,
+            Math.floor((performance.now() - falcon.current) / 1e3),
+          );
+          yarrow !== quartz.current &&
+            ((quartz.current = yarrow), copper(yarrow * 1e3));
         }
       };
       quest.connect(ridge);
@@ -320,7 +368,9 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
     };
   let ember = daisy,
     flint = () => {
-      return falcon.current == null ? s : Math.max(0, performance.now() - falcon.current);
+      return falcon.current == null
+        ? s
+        : Math.max(0, performance.now() - falcon.current);
     };
   let garnet = flint,
     hazel,
@@ -338,6 +388,6 @@ export function ScrollingOrbBackdrop(alpha: unknown) {
     waveformCanvasRef: p,
     startWaveformCapture: ember,
     stopWaveformCapture: willow,
-    resetWaveformDisplay: yellow
+    resetWaveformDisplay: yellow,
   };
 }

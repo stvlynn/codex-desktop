@@ -11,7 +11,9 @@ export type PatchNewThreadComposerDraftPeers = {
 let peers: PatchNewThreadComposerDraftPeers | null = null;
 
 /** Wire patchNewThreadComposerDraft peers once companions land. */
-export function setPatchNewThreadComposerDraftPeers(next: PatchNewThreadComposerDraftPeers): void {
+export function setPatchNewThreadComposerDraftPeers(
+  next: PatchNewThreadComposerDraftPeers,
+): void {
   peers = next;
 }
 
@@ -25,5 +27,10 @@ export function patchNewThreadComposerDraft(e: unknown, t: unknown) {
 
   let n = e.get(peers.yN),
     r = peers.fx(n, t);
-  r !== n && (e.value.kind === `new` && e.value.entrypoint === `home` && r.imageAttachments !== n.imageAttachments && e.set(peers.V0r, r.imageAttachments), e.set(peers.U0r, r));
+  r !== n &&
+    (e.value.kind === `new` &&
+      e.value.entrypoint === `home` &&
+      r.imageAttachments !== n.imageAttachments &&
+      e.set(peers.V0r, r.imageAttachments),
+    e.set(peers.U0r, r));
 }

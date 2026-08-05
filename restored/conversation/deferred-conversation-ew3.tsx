@@ -23,7 +23,9 @@ export type BindBinddeferredConversationEW3Peers = {
 let peers: BindBinddeferredConversationEW3Peers | null = null;
 
 /** Wire bindBinddeferredConversationEW3 peers once companions land. */
-export function setBindBinddeferredConversationEW3Peers(next: BindBinddeferredConversationEW3Peers): void {
+export function setBindBinddeferredConversationEW3Peers(
+  next: BindBinddeferredConversationEW3Peers,
+): void {
   peers = next;
 }
 
@@ -35,31 +37,43 @@ export function bindBinddeferredConversationEW3() {
     throw new Error("bindBinddeferredConversationEW3 peers are not configured");
   }
 
-  return peers.Ma(peers.hT, ({
-    get: e,
-    scope: t
-  }) => {
+  return peers.Ma(peers.hT, ({ get: e, scope: t }) => {
     let n = e(peers.YFi),
       r;
     switch (n.kind) {
       case `none`:
         r = null;
         break;
-      case `plain`:
-        {
-          let i = e(peers.kI),
-            a = t.value.routeKind === `local-thread` ? e(peers.EE)?.[t.value.conversationId] : null,
-            o = a?.projectKind === `local` ? e(peers.X8n, a.projectId) : null,
-            s = o?.length === 1 ? o[0] ?? null : a?.projectKind === `local` ? a.path ?? null : null,
-            c = a == null ? n.cwd : peers.ku({
-              assignment: a,
-              cwd: n.cwd
-            }),
-            l = t.value.routeKind !== `local-thread` && i.kind === `local` && i.id === n.hostId ? e(peers.CE) : null,
-            u = c != null && peers.Vl(c) ? c : null;
-          r = s ?? l ?? u;
-          break;
-        }
+      case `plain`: {
+        let i = e(peers.kI),
+          a =
+            t.value.routeKind === `local-thread`
+              ? e(peers.EE)?.[t.value.conversationId]
+              : null,
+          o = a?.projectKind === `local` ? e(peers.X8n, a.projectId) : null,
+          s =
+            o?.length === 1
+              ? (o[0] ?? null)
+              : a?.projectKind === `local`
+                ? (a.path ?? null)
+                : null,
+          c =
+            a == null
+              ? n.cwd
+              : peers.ku({
+                  assignment: a,
+                  cwd: n.cwd,
+                }),
+          l =
+            t.value.routeKind !== `local-thread` &&
+            i.kind === `local` &&
+            i.id === n.hostId
+              ? e(peers.CE)
+              : null,
+          u = c != null && peers.Vl(c) ? c : null;
+        r = s ?? l ?? u;
+        break;
+      }
       case `git`:
         r = n.git.root;
         break;
@@ -69,7 +83,7 @@ export function bindBinddeferredConversationEW3() {
       executionCwd: e(peers.DI),
       isWorktreeMode: !1,
       projectRootPaths: e(peers.UFi, e(peers.FI)),
-      workspaceBrowserRoot: r
+      workspaceBrowserRoot: r,
     });
   });
 }

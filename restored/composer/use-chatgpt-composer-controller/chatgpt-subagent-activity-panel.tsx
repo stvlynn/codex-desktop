@@ -22,68 +22,50 @@ function _useChatgptComposerControllerF(
   { conversationId, selectedThreadId = null },
 ) {
   const AppInitialEP2 = appInitialEP;
-  appInitialA0.openTab(
-    request4565,
-    useChatgptComposerControllerHelper275,
-    {
-      icon: <AppInitialEP2 className="icon-sm" />,
-      id: `chatgpt-subagents:${conversationId}`,
-      title: request4565
-        .get(appInitialD4)
-        .formatMessage({
-          id: "chatgptConversations.subagents.panel.title",
-          defaultMessage: "Subagents",
-          description:
-            "Short title for the Work subagents right side panel tab, which shows delegated agents and their results.",
-        }),
-      props: {
-        conversationId,
-        onSelect: (request10961) => {
-          _useChatgptComposerControllerF(
-            request4565,
-            {
-              conversationId,
-              selectedThreadId: request10961,
-            },
-          );
-        },
-        selectedThreadId,
+  appInitialA0.openTab(request4565, useChatgptComposerControllerHelper275, {
+    icon: <AppInitialEP2 className="icon-sm" />,
+    id: `chatgpt-subagents:${conversationId}`,
+    title: request4565.get(appInitialD4).formatMessage({
+      id: "chatgptConversations.subagents.panel.title",
+      defaultMessage: "Subagents",
+      description:
+        "Short title for the Work subagents right side panel tab, which shows delegated agents and their results.",
+    }),
+    props: {
+      conversationId,
+      onSelect: (request10961) => {
+        _useChatgptComposerControllerF(request4565, {
+          conversationId,
+          selectedThreadId: request10961,
+        });
       },
+      selectedThreadId,
     },
-  );
+  });
 }
 
-
-function useChatgptComposerControllerHelper284(
-  request1352,
-) {
+function useChatgptComposerControllerHelper284(request1352) {
   const AppInitialDc = _appInitialDc;
   let { conversationId, item } = request1352,
     slot4937 = appInitialLT(_appInitial8),
     slot4938 = appInitialJft(),
-    slot4939 = (
-      request10962,
-    ) => {
+    slot4939 = (request10962) => {
       _useChatgptComposerControllerF(slot4937, {
         conversationId,
         selectedThreadId: request10962,
       });
     };
-  let slot4940 =
-      slot4939,
-    slot4941 =
-      slot4938.formatMessage({
-        id: "chatgptConversations.subagents.inline.section.ariaLabel",
-        defaultMessage: "Subagent activity",
-        description:
-          "Accessible label for the inline Work subagent activity summary inside an assistant turn. The section contains compact agent-name buttons and an aggregate lifecycle status. This label is only announced by assistive technology.",
-      });
+  let slot4940 = slot4939,
+    slot4941 = slot4938.formatMessage({
+      id: "chatgptConversations.subagents.inline.section.ariaLabel",
+      defaultMessage: "Subagent activity",
+      description:
+        "Accessible label for the inline Work subagent activity summary inside an assistant turn. The section contains compact agent-name buttons and an aggregate lifecycle status. This label is only announced by assistive technology.",
+    });
   let slot4942;
   {
     let slot10165;
-    slot10165 = (
-      request5470,
-    ) => {
+    slot10165 = (request5470) => {
       const AppInitialGft = appInitialGft;
       return {
         id: request5470.threadId,
@@ -96,18 +78,13 @@ function useChatgptComposerControllerHelper284(
         ),
         seed: request5470.threadId,
         onClick: () => {
-          return slot4940(
-            request5470.threadId,
-          );
+          return slot4940(request5470.threadId);
         },
       };
     };
-    slot4942 = item.activities.map(
-      slot10165,
-    );
+    slot4942 = item.activities.map(slot10165);
   }
-  let slot4943 =
-    useChatgptComposerControllerHelper286(item);
+  let slot4943 = useChatgptComposerControllerHelper286(item);
   let slot4944 = () => {
     return slot4940(null);
   };

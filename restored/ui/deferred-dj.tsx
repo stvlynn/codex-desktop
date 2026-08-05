@@ -51,11 +51,34 @@ export function bindDeferredDj() {
   }
 
   return peers.e(() => {
-    ypo = peers.c(), peers.Ho(), peers.Au(), BG = peers.r(peers.o(), 1), peers.$u(), peers.c0a(), peers.M1a(), peers.ipo(), peers.f0a(), peers.opo(), peers.cpo(), peers.vWi(), peers.Lqr(), peers.yKa(), peers.gT(), peers.jf(), peers.Gm(), VG = peers.J(), bpo = `/`, xpo = [], Spo = 100, Cpo = {
-      expandedPaths: peers.xpo,
-      scrollTop: 0,
-      searchQuery: ``,
-      selectedPath: null
-    }, wpo = peers.Da(peers.hT, e => peers.Cpo), Tpo = peers.Da(peers.hT, e => null);
+    ((ypo = peers.c()),
+      peers.Ho(),
+      peers.Au(),
+      (BG = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.c0a(),
+      peers.M1a(),
+      peers.ipo(),
+      peers.f0a(),
+      peers.opo(),
+      peers.cpo(),
+      peers.vWi(),
+      peers.Lqr(),
+      peers.yKa(),
+      peers.gT(),
+      peers.jf(),
+      peers.Gm(),
+      (VG = peers.J()),
+      (bpo = `/`),
+      (xpo = []),
+      (Spo = 100),
+      (Cpo = {
+        expandedPaths: peers.xpo,
+        scrollTop: 0,
+        searchQuery: ``,
+        selectedPath: null,
+      }),
+      (wpo = peers.Da(peers.hT, (e) => peers.Cpo)),
+      (Tpo = peers.Da(peers.hT, (e) => null)));
   });
 }

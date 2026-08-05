@@ -30,7 +30,10 @@ export type SidebarComposerAction =
     };
 
 /** Map sidebar onboarding suggestion to composer action payload. */
-export function sidebarSuggestionToComposerAction(suggestion: SidebarSuggestion, intl: IntlLike): SidebarComposerAction {
+export function sidebarSuggestionToComposerAction(
+  suggestion: SidebarSuggestion,
+  intl: IntlLike,
+): SidebarComposerAction {
   if (suggestion.action === "import_claude") {
     return {
       type: "sidebar_claude_import",

@@ -28,7 +28,9 @@ export type BindBindLocalThreadPeers = {
 let peers: BindBindLocalThreadPeers | null = null;
 
 /** Wire bindBindLocalThread peers once companions land. */
-export function setBindBindLocalThreadPeers(next: BindBindLocalThreadPeers): void {
+export function setBindBindLocalThreadPeers(
+  next: BindBindLocalThreadPeers,
+): void {
   peers = next;
 }
 

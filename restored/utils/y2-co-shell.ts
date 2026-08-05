@@ -21,8 +21,8 @@ export function bindY2CoShell() {
     throw new Error("bindY2CoShell peers are not configured");
   }
 
-  return peers.JE(({
-    resumeState: e,
-    threadRuntimeStatus: t
-  }) => e === `needs_resume` && t?.type === `active`);
+  return peers.JE(
+    ({ resumeState: e, threadRuntimeStatus: t }) =>
+      e === `needs_resume` && t?.type === `active`,
+  );
 }

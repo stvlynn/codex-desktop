@@ -8,7 +8,10 @@
 
 import { ensureAccountPlanQueryInit } from "../../account/ensure-account-plan-query-init";
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
-import { appActionSidebarProjectRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { CodexBrowserProfileImportCookieStatus } from "../../analytics/codex-browser-profile-import-cookie-status";
 import { CodexBrowserProfileImportPasswordStatus } from "../../analytics/codex-browser-profile-import-password-status";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
@@ -18,19 +21,115 @@ import { CodexPluginDirectoryEntrypoint } from "../../analytics/codex-plugin-dir
 import { CodexReferralInviteModalBackendErrorType } from "../../analytics/codex-referral-invite-modal-backend-error-type";
 import { shellPanelPinnedDerivedAtom } from "../../app-shell/shell-panel-pin";
 import { AppQueryClientProvider } from "../../app/app-query-client-provider";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { defaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationBranchAtom, chatgptConversationFlagsAtom, chatgptConversationLoadQueryAtom, chatgptConversationPreviewAtom, chatgptConversationServerIdAtom, chatgptConversationsGateAtom, chatgptConversationStatusAtom, chatgptConversationTitleAtom, chatgptThreadDerivedAtomBP, useStepsProseAtom, writingBlocksControllerAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_BF_Init, ensureComposerEsm_BI_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_II_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KF_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MF_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_Ytt_Init, ensureComposerEsm_ZI_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Jj_Init, ensureConversationPageEsm_Lo_Init, ensureConversationPageEsm_Mx_Init, ensureConversationPageEsm_Qa_Init, ensureConversationPageEsm_SP_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationBranchAtom,
+  chatgptConversationFlagsAtom,
+  chatgptConversationLoadQueryAtom,
+  chatgptConversationPreviewAtom,
+  chatgptConversationServerIdAtom,
+  chatgptConversationsGateAtom,
+  chatgptConversationStatusAtom,
+  chatgptConversationTitleAtom,
+  chatgptThreadDerivedAtomBP,
+  useStepsProseAtom,
+  writingBlocksControllerAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_AG_Init,
+  ensureComposerEsm_BF_Init,
+  ensureComposerEsm_BI_Init,
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_II_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_J0_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KF_Init,
+  ensureComposerEsm_M0_Init,
+  ensureComposerEsm_MF_Init,
+  ensureComposerEsm_ML_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_TI_Init,
+  ensureComposerEsm_XP_Init,
+  ensureComposerEsm_Ytt_Init,
+  ensureComposerEsm_ZI_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_FR_Init,
+  ensureConversationPageEsm_GS_Init,
+  ensureConversationPageEsm_GZ_Init,
+  ensureConversationPageEsm_Ist_Init,
+  ensureConversationPageEsm_Jj_Init,
+  ensureConversationPageEsm_Lo_Init,
+  ensureConversationPageEsm_Mx_Init,
+  ensureConversationPageEsm_Qa_Init,
+  ensureConversationPageEsm_SP_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { isIterateeCall } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
-import { _useChatgptComposerControllerA, _useChatgptComposerControllerC, _useChatgptComposerControllerD, _useChatgptComposerControllerF, _useChatgptComposerControllerI, _useChatgptComposerControllerL, _useChatgptComposerControllerM, _useChatgptComposerControllerN, _useChatgptComposerControllerO, _useChatgptComposerControllerP, _useChatgptComposerControllerR, _useChatgptComposerControllerS, useChatgptComposerControllerA, useChatgptComposerControllerC, useChatgptComposerControllerD, useChatgptComposerControllerE, useChatgptComposerControllerF, useChatgptComposerControllerG, useChatgptComposerControllerH, useChatgptComposerControllerI, useChatgptComposerControllerJ, useChatgptComposerControllerK, useChatgptComposerControllerL, useChatgptComposerControllerM, useChatgptComposerControllerN, useChatgptComposerControllerO, useChatgptComposerControllerP, useChatgptComposerControllerR, useChatgptComposerControllerS, useChatgptComposerControllerT, useChatgptComposerControllerU, useChatgptComposerControllerUnderscore } from "../../composer/use-chatgpt-composer-controller";
+import {
+  _useChatgptComposerControllerA,
+  _useChatgptComposerControllerC,
+  _useChatgptComposerControllerD,
+  _useChatgptComposerControllerF,
+  _useChatgptComposerControllerI,
+  _useChatgptComposerControllerL,
+  _useChatgptComposerControllerM,
+  _useChatgptComposerControllerN,
+  _useChatgptComposerControllerO,
+  _useChatgptComposerControllerP,
+  _useChatgptComposerControllerR,
+  _useChatgptComposerControllerS,
+  useChatgptComposerControllerA,
+  useChatgptComposerControllerC,
+  useChatgptComposerControllerD,
+  useChatgptComposerControllerE,
+  useChatgptComposerControllerF,
+  useChatgptComposerControllerG,
+  useChatgptComposerControllerH,
+  useChatgptComposerControllerI,
+  useChatgptComposerControllerJ,
+  useChatgptComposerControllerK,
+  useChatgptComposerControllerL,
+  useChatgptComposerControllerM,
+  useChatgptComposerControllerN,
+  useChatgptComposerControllerO,
+  useChatgptComposerControllerP,
+  useChatgptComposerControllerR,
+  useChatgptComposerControllerS,
+  useChatgptComposerControllerT,
+  useChatgptComposerControllerU,
+  useChatgptComposerControllerUnderscore,
+} from "../../composer/use-chatgpt-composer-controller";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_CITATION_ID } from "../../chatgpt/chatgpt-citation-id";
 import { CHATGPT_CONTENT_REFERENCE_ID } from "../../chatgpt/chatgpt-content-reference-id";
@@ -49,7 +148,12 @@ import { ensureHasSeenRealtimeVoiceNuxAtomInit } from "../../home/realtime-voice
 import { ensureDebugPanelParsersInit } from "../../hooks/debug-panel-turn-files";
 import { ContextMenuRegistration } from "../../hooks/use-context-menu-registration";
 import { useEventCallback } from "../../hooks/use-event-callback";
-import { clampFloatingWindowRect, initFloatingWindowPointerDragConstants, resizeFloatingWindowRect, useFloatingWindowPointerDrag } from "../../hooks/use-floating-window-pointer-drag";
+import {
+  clampFloatingWindowRect,
+  initFloatingWindowPointerDragConstants,
+  resizeFloatingWindowRect,
+  useFloatingWindowPointerDrag,
+} from "../../hooks/use-floating-window-pointer-drag";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { HostFeatureConfigToggles } from "../../hosts/host-feature-config-toggles";
@@ -71,7 +175,11 @@ import { codexDirectiveMarkedExtensions } from "../../markdown/codex-directive-m
 import { markdownToPlainText } from "../../markdown/markdown-to-plain-text";
 import { rewriteFileCitationMarkers } from "../../markdown/rewrite-file-citation-markers";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
-import { findSidebarSectionElement, readScrollTop, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  readScrollTop,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
 import { NavigationAllowContext } from "../../navigation/navigation-allow-context";
@@ -93,16 +201,33 @@ import { openRightPanel } from "../../shell/open-right-panel";
 import { setRightPanelConversation } from "../../shell/set-right-panel-conversation";
 import { ProjectHoverCardBody } from "../../sidebar/project-hover-card-body";
 import { useBrowserExtensionPluginSetupQuery } from "../../skills/use-browser-extension-plugin-setup-query";
-import { initThreadPanelToggleButton, ThreadPanelToggleButton } from "../../thread/thread-panel-toggle-button";
+import {
+  initThreadPanelToggleButton,
+  ThreadPanelToggleButton,
+} from "../../thread/thread-panel-toggle-button";
 import { ThreadResourceCard } from "../../thread/thread-resource-card";
-import { initThreadScrollControllerContext, useThreadScrollController } from "../../thread/thread-scroll-controller-context";
-import { initThreadScrollLayout, ThreadScrollLayout } from "../../thread/thread-scroll-layout";
-import { initToggleThreadSummaryPanel, initToggleThreadSummaryPanelAtoms, toggleThreadSummaryPanel, ToggleThreadSummaryPanel } from "../../thread/toggle-thread-summary-panel";
+import {
+  initThreadScrollControllerContext,
+  useThreadScrollController,
+} from "../../thread/thread-scroll-controller-context";
+import {
+  initThreadScrollLayout,
+  ThreadScrollLayout,
+} from "../../thread/thread-scroll-layout";
+import {
+  initToggleThreadSummaryPanel,
+  initToggleThreadSummaryPanelAtoms,
+  toggleThreadSummaryPanel,
+  ToggleThreadSummaryPanel,
+} from "../../thread/toggle-thread-summary-panel";
 import { BrandedIcon } from "../../ui/branded-icon";
 import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { InsetBorderPanel } from "../../ui/inset-border-panel";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -123,11 +248,18 @@ import { slugifyLoose } from "../../utils/slugify-loose";
 import { sortedArrayFrom } from "../../utils/sorted-array-from";
 import { tryParseJsonText } from "../../utils/try-parse-json-text";
 import { waitForDoubleAnimationFrame } from "../../utils/wait-for-double-animation-frame";
-import { ensureImportSettingsCLInit, ensureSettingsGlyphI0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensureSettingsGlyphI0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { activateConversationSurface } from "../activate-conversation-surface";
 import { BrowserConversationPanel } from "../browser-conversation-panel";
 import { chatgptMessageFallbackId } from "../chatgpt-message-fallback-id";
-import { initChatgptTemporaryChatUi, TemporaryChatHeaderControl, TemporaryChatOnboarding } from "../chatgpt-temporary-chat-ui/index";
+import {
+  initChatgptTemporaryChatUi,
+  TemporaryChatHeaderControl,
+  TemporaryChatOnboarding,
+} from "../chatgpt-temporary-chat-ui/index";
 import { ConversationDiffSourceBridge } from "../conversation-diff-source-bridge";
 import { ensureConversationWorkRouteInit } from "../conversation-work-path";
 import { deferredConversationR } from "../deferred-conversation-r";
@@ -312,9 +444,7 @@ const AppInitialZE: any = undefined;
 /** Wave FZ unresolved companion (sib-missing:hooks/use-floating-window-pointer-drag.ts) */
 const useFloatingWindowPointerDragT: any = undefined;
 function alpha(basalt) {
-  let {
-      conversationId
-    } = basalt,
+  let { conversationId } = basalt,
     cedar = CodexPluginActionType(appScopeAtom),
     daisy,
     ember;
@@ -326,7 +456,12 @@ function alpha(basalt) {
   garnet = [conversationId, cedar];
   writeScrollTop("toggle-thread-pin", flint, garnet);
   let hazel, ivory;
-  return hazel = () => delta(cedar, conversationId), ivory = [conversationId, cedar], writeScrollTop("archive-thread", hazel, ivory), null;
+  return (
+    (hazel = () => delta(cedar, conversationId)),
+    (ivory = [conversationId, cedar]),
+    writeScrollTop("archive-thread", hazel, ivory),
+    null
+  );
 }
 function bravo(jasper, kelp) {
   let lotus = echo(jasper, kelp);
@@ -334,41 +469,46 @@ function bravo(jasper, kelp) {
   let mint = jasper.get(AppInitialKP, kelp) ?? lotus.title ?? "";
   chatProcessRegister(jasper, AppInitialWo, {
     initialValue: mint,
-    onSave: nova => {
+    onSave: (nova) => {
       AppInitialBN({
         scope: jasper,
         conversationId: lotus.conversation_id,
         previousTitle: mint,
-        title: nova
+        title: nova,
       });
     },
     requireNonEmpty: true,
-    trimOnSave: true
+    trimOnSave: true,
   });
 }
 function copper(olive, prism) {
   let quill = echo(olive, prism);
-  quill == null || olive.get(AppInitialMN, quill.conversation_id) || toggleConversationPinned({
-    scope: olive,
-    conversation: {
-      gizmo_id: quill.gizmo_id,
-      id: quill.conversation_id,
-      is_archived: quill.is_archived,
-      is_starred: quill.is_starred,
-      title: quill.title
-    }
-  }).catch(() => undefined);
+  quill == null ||
+    olive.get(AppInitialMN, quill.conversation_id) ||
+    toggleConversationPinned({
+      scope: olive,
+      conversation: {
+        gizmo_id: quill.gizmo_id,
+        id: quill.conversation_id,
+        is_archived: quill.is_archived,
+        is_starred: quill.is_starred,
+        title: quill.title,
+      },
+    }).catch(() => undefined);
 }
 function delta(reef, sage) {
   let topaz = echo(reef, sage);
-  topaz != null && AppInitialJN({
-    scope: reef,
-    conversationId: topaz.conversation_id
-  }).promise.catch(() => undefined);
+  topaz != null &&
+    AppInitialJN({
+      scope: reef,
+      conversationId: topaz.conversation_id,
+    }).promise.catch(() => undefined);
 }
 function echo(ultra, vapor) {
   let wheat = ultra.get(chatgptConversationServerIdAtom, vapor);
-  return wheat == null ? null : ultra.query.snapshot(AppInitialOP, wheat).getData() ?? null;
+  return wheat == null
+    ? null
+    : (ultra.query.snapshot(AppInitialOP, wheat).getData() ?? null);
 }
 var falcon,
   gamma = esmInit(() => {
@@ -383,46 +523,57 @@ var falcon,
     ensureMemoryScopeHelpersInit();
   });
 function harbor(yarn) {
-  let {
+  let { className, value } = yarn,
+    zephyr = IntlProvider(
+      "overflow-x-hidden overflow-y-auto font-mono text-[11px] leading-5 text-token-text-primary",
       className,
-      value
-    } = yarn,
-    zephyr = IntlProvider("overflow-x-hidden overflow-y-auto font-mono text-[11px] leading-5 text-token-text-primary", className);
-  let acorn = <Alpha {...{
-    value
-  }} />;
-  return <div className={zephyr}>
-      {acorn}
-    </div>;
+    );
+  let acorn = (
+    <Alpha
+      {...{
+        value,
+      }}
+    />
+  );
+  return <div className={zephyr}>{acorn}</div>;
 }
 function indigo(bloom) {
-  let {
-    name,
-    value
-  } = bloom;
+  let { name, value } = bloom;
   if (no(value)) {
     let eagle;
-    return <Bravo {...{
-      name,
-      value
-    }} />;
+    return (
+      <Bravo
+        {...{
+          name,
+          value,
+        }}
+      />
+    );
   }
-  let coral = name == null ? null : <Copper {...{
-    name
-  }} />;
-  let drift = <To {...{
-    value
-  }} />;
-  return <div className="flex min-w-0 gap-1 rounded-sm px-1">
+  let coral =
+    name == null ? null : (
+      <Copper
+        {...{
+          name,
+        }}
+      />
+    );
+  let drift = (
+    <To
+      {...{
+        value,
+      }}
+    />
+  );
+  return (
+    <div className="flex min-w-0 gap-1 rounded-sm px-1">
       {coral}
       {drift}
-    </div>;
+    </div>
+  );
 }
 function jade(frost) {
-  let {
-      name,
-      value
-    } = frost,
+  let { name, value } = frost,
     [glide, honey] = timber.useState(true),
     iris,
     jewel;
@@ -433,18 +584,27 @@ function jade(frost) {
       moss = lunar ? "[" : "{",
       north = lunar ? "]" : "}";
     if (knoll.length === 0) {
-      let brook = name == null ? null : <Copper {...{
-        name
-      }} />;
-      let cliff = <span className="text-token-text-primary">
+      let brook =
+        name == null ? null : (
+          <Copper
+            {...{
+              name,
+            }}
+          />
+        );
+      let cliff = (
+        <span className="text-token-text-primary">
           {moss}
           {north}
-        </span>;
+        </span>
+      );
       let dusk;
-      dusk = <div className="flex min-w-0 gap-1 rounded-sm px-1">
+      dusk = (
+        <div className="flex min-w-0 gap-1 rounded-sm px-1">
           {brook}
           {cliff}
-        </div>;
+        </div>
+      );
       jewel = dusk;
       break bb0;
     }
@@ -454,92 +614,136 @@ function jade(frost) {
       honey($a);
     };
     let ridge = glide && "rotate-90",
-      storm = IntlProvider("mt-1 icon-2xs shrink-0 text-token-text-tertiary transition-transform", ridge);
-    let tide = <AppIconYlt {...{
-      "aria-hidden": true,
-      className: storm
-    }} />;
-    let unity = name == null ? null : <Copper {...{
-      name
-    }} />;
-    let vale = <span className="shrink-0 text-token-text-primary">
-        {moss}
-      </span>;
-    let wave = glide ? null : <>
-          <span className="shrink-0 text-token-text-tertiary">
-            {willow}
-          </span>
-          <span className="shrink-0 text-token-text-primary">
-            {north}
-          </span>
-        </>;
+      storm = IntlProvider(
+        "mt-1 icon-2xs shrink-0 text-token-text-tertiary transition-transform",
+        ridge,
+      );
+    let tide = (
+      <AppIconYlt
+        {...{
+          "aria-hidden": true,
+          className: storm,
+        }}
+      />
+    );
+    let unity =
+      name == null ? null : (
+        <Copper
+          {...{
+            name,
+          }}
+        />
+      );
+    let vale = <span className="shrink-0 text-token-text-primary">{moss}</span>;
+    let wave = glide ? null : (
+      <>
+        <span className="shrink-0 text-token-text-tertiary">{willow}</span>
+        <span className="shrink-0 text-token-text-primary">{north}</span>
+      </>
+    );
     let apex;
-    apex = <button aria-expanded={glide} className="flex w-full min-w-0 cursor-interaction items-start gap-1 rounded-sm px-1 text-left hover:bg-token-foreground/5" type="button" onClick={quest}>
+    apex = (
+      <button
+        aria-expanded={glide}
+        className="flex w-full min-w-0 cursor-interaction items-start gap-1 rounded-sm px-1 text-left hover:bg-token-foreground/5"
+        type="button"
+        onClick={quest}
+      >
         {tide}
         {unity}
         {vale}
         {wave}
-      </button>;
-    iris = <div className={pine}>
+      </button>
+    );
+    iris = (
+      <div className={pine}>
         {apex}
-        {glide ? <div className="ml-2.5 min-w-0 border-l border-token-border-light pl-5">
+        {glide ? (
+          <div className="ml-2.5 min-w-0 border-l border-token-border-light pl-5">
             {knoll.map(kite)}
-            <div className="-ml-4 px-1 text-token-text-primary">
-              {north}
-            </div>
-          </div> : null}
-      </div>;
+            <div className="-ml-4 px-1 text-token-text-primary">{north}</div>
+          </div>
+        ) : null}
+      </div>
+    );
   }
   return jewel === Symbol.for("react.early_return_sentinel") ? iris : jewel;
 }
 function kite(event) {
-  return <Alpha key={event.key} {...{
-    name: event.key,
-    value: event.value
-  }} />;
+  return (
+    <Alpha
+      key={event.key}
+      {...{
+        name: event.key,
+        value: event.value,
+      }}
+    />
+  );
 }
 function $a(elm) {
   return !elm;
 }
 function lemon(fern) {
-  let {
-      name
-    } = fern,
+  let { name } = fern,
     grove = river(name);
-  return <span className="shrink-0 text-token-charts-blue">
-      {grove}
-    </span>;
+  return <span className="shrink-0 text-token-charts-blue">{grove}</span>;
 }
 function to(hill) {
-  let {
-      value
-    } = hill,
+  let { value } = hill,
     isle = IntlProvider("min-w-0 break-all", pearl(value));
   let juniper = nickel(value);
-  return <span className={isle}>
-      {juniper}
-    </span>;
+  return <span className={isle}>{juniper}</span>;
 }
 function no(lagoon) {
   return typeof lagoon == "object" && !!lagoon;
 }
 function marble(meadow) {
-  return Array.isArray(meadow) ? meadow.map((item, index) => ({
-    key: String(index),
-    value: item
-  })) : Object.entries(meadow).map(([nest, oak]) => ({
-    key: nest,
-    value: oak
-  }));
+  return Array.isArray(meadow)
+    ? meadow.map((item, index) => ({
+        key: String(index),
+        value: item,
+      }))
+    : Object.entries(meadow).map(([nest, oak]) => ({
+        key: nest,
+        value: oak,
+      }));
 }
 function nickel(petal) {
-  return typeof petal == "string" ? JSON.stringify(onyx(petal)) : petal === undefined ? "undefined" : typeof petal == "bigint" ? `${petal}n` : typeof petal == "function" ? `[Function ${petal.name || "anonymous"}]` : typeof petal == "symbol" ? petal.description == null ? "Symbol()" : `Symbol(${petal.description})` : petal == null ? "null" : typeof petal == "number" ? Number.isFinite(petal) ? `${petal}` : "null" : typeof petal == "boolean" ? petal ? "true" : "false" : "";
+  return typeof petal == "string"
+    ? JSON.stringify(onyx(petal))
+    : petal === undefined
+      ? "undefined"
+      : typeof petal == "bigint"
+        ? `${petal}n`
+        : typeof petal == "function"
+          ? `[Function ${petal.name || "anonymous"}]`
+          : typeof petal == "symbol"
+            ? petal.description == null
+              ? "Symbol()"
+              : `Symbol(${petal.description})`
+            : petal == null
+              ? "null"
+              : typeof petal == "number"
+                ? Number.isFinite(petal)
+                  ? `${petal}`
+                  : "null"
+                : typeof petal == "boolean"
+                  ? petal
+                    ? "true"
+                    : "false"
+                  : "";
 }
 function onyx(quiet) {
   return quiet.length <= violet ? quiet : `${quiet.slice(0, violet)}…`;
 }
 function pearl(rain) {
-  return typeof rain == "string" ? "text-token-charts-green" : typeof rain == "number" || typeof rain == "bigint" ? "text-token-charts-purple" : typeof rain == "boolean" ? "text-token-charts-orange" : "text-token-text-tertiary";
+  return typeof rain == "string"
+    ? "text-token-charts-green"
+    : typeof rain == "number" || typeof rain == "bigint"
+      ? "text-token-charts-purple"
+      : typeof rain == "boolean"
+        ? "text-token-charts-orange"
+        : "text-token-text-tertiary";
 }
 function quartz(seed) {
   return /^[a-zA-Z_$][\w$]*$/.test(seed) ? seed : JSON.stringify(seed);
@@ -560,12 +764,9 @@ var slate,
     violet = 120;
     willow = "…";
   });
-function yellow({
-  conversation,
-  conversationId
-}) {
+function yellow({ conversation, conversationId }) {
   let urn = new Blob([JSON.stringify(conversation, null, 2)], {
-      type: _o
+      type: _o,
     }),
     vine = URL.createObjectURL(urn),
     wind = document.createElement("a");

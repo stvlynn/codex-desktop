@@ -12,7 +12,9 @@ export type ResolveRepoCloneUrlForHostPeers = {
 let peers: ResolveRepoCloneUrlForHostPeers | null = null;
 
 /** Wire resolveRepoCloneUrlForHost peers once companions land. */
-export function setResolveRepoCloneUrlForHostPeers(next: ResolveRepoCloneUrlForHostPeers): void {
+export function setResolveRepoCloneUrlForHostPeers(
+  next: ResolveRepoCloneUrlForHostPeers,
+): void {
   peers = next;
 }
 

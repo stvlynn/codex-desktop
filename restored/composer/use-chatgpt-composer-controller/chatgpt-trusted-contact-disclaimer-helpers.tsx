@@ -3,26 +3,22 @@
 
 import { CHATGPT_DISCLAIMER_LINK_CLICKED_TYPE as appInitialO8 } from "../../analytics/chatgpt-disclaimer-link-clicked-type";
 import { logProductEvent as appInitialJ9 } from "../../analytics/log-product-event";
-import { appScopeAtom as appInitialFft, useAppScope as appInitialLT } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom as appInitialFft,
+  useAppScope as appInitialLT,
+} from "../../runtime/app-scope-runtime";
 import { cx as appInitialWft } from "../../ui/cx";
 import { useChatgptComposerControllerHelper65 } from "./chatgpt-composer-confirmation-link";
 
-function useChatgptComposerControllerHelper254(
-  request9629,
-) {
+function useChatgptComposerControllerHelper254(request9629) {
   return request9629 == null
     ? undefined
-    : Array.from(
-        request9629,
-        (request11382) => {
-          return `&#${String(request11382.codePointAt(0))};`;
-        },
-      ).join("");
+    : Array.from(request9629, (request11382) => {
+        return `&#${String(request11382.codePointAt(0))};`;
+      }).join("");
 }
 
-function useChatgptComposerControllerHelper253(
-  request6980,
-) {
+function useChatgptComposerControllerHelper253(request6980) {
   try {
     switch (new URL(request6980).protocol) {
       case "http:":
@@ -46,9 +42,7 @@ function useChatgptComposerControllerHelper252({
   intl,
   trustedContactName,
 }) {
-  let slot4996 = (
-    request7315,
-  ) => {
+  let slot4996 = (request7315) => {
     return `**${intl.formatMessage({
       id: "codex.chatgpt.trustedContactDisclaimer.addTrustedContactTitle",
       defaultMessage: "Would it help to have extra support?",
@@ -103,16 +97,10 @@ function useChatgptComposerControllerHelper252({
   }
 }
 
-function useChatgptComposerControllerHelper251(
-  request1736,
-) {
+function useChatgptComposerControllerHelper251(request1736) {
   const UseChatgptComposerControllerHelper65 =
     useChatgptComposerControllerHelper65;
-  let slot5759,
-    slot5760,
-    slot5761,
-    slot5762,
-    slot5763;
+  let slot5759, slot5760, slot5761, slot5762, slot5763;
   {
     let {
       children,
@@ -141,10 +129,7 @@ function useChatgptComposerControllerHelper251(
   );
   let slot5766 = (event) => {
     slot5762?.(event);
-    let slot13974 =
-      useChatgptComposerControllerHelper253(
-        slot5761,
-      );
+    let slot13974 = useChatgptComposerControllerHelper253(slot5761);
     slot13974 != null &&
       appInitialJ9(slot5764, appInitialO8, {
         disclaimerSource: "sh_disclaimer_notice",
@@ -167,7 +152,6 @@ function useChatgptComposerControllerHelper251(
 }
 
 const tx = { a: useChatgptComposerControllerHelper251 };
-
 
 export {
   useChatgptComposerControllerHelper251,

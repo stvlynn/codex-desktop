@@ -20,7 +20,11 @@ export function setConversationBooleanFlagDeps(args: {
   flagAtom = args.flagAtom;
 }
 
-export function setConversationBooleanFlag(scope: ScopeLike, conversationId: string, value: boolean): void {
+export function setConversationBooleanFlag(
+  scope: ScopeLike,
+  conversationId: string,
+  value: boolean,
+): void {
   const id = resolveId(scope.get, conversationId);
   if (id != null) scope.set(flagAtom, id, value);
 }

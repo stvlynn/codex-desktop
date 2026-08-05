@@ -135,11 +135,7 @@ export function parseAutofitCss(
 ): "none" | "shrinkText" | "resizeShapeToFitText" {
   const value = raw.trim().toLowerCase();
   if (value === "none") return "none";
-  if (
-    value === "shrink" ||
-    value === "shrinktext" ||
-    value === "shrink-text"
-  )
+  if (value === "shrink" || value === "shrinktext" || value === "shrink-text")
     return "shrinkText";
   if (
     value === "resize" ||

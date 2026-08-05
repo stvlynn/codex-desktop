@@ -8,7 +8,10 @@
 
 import { ensureAccountPlanQueryInit } from "../../account/ensure-account-plan-query-init";
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
-import { appActionSidebarProjectRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { CodexBrowserProfileImportCookieStatus } from "../../analytics/codex-browser-profile-import-cookie-status";
 import { CodexBrowserProfileImportPasswordStatus } from "../../analytics/codex-browser-profile-import-password-status";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
@@ -18,20 +21,116 @@ import { CodexPluginDirectoryEntrypoint } from "../../analytics/codex-plugin-dir
 import { CodexReferralInviteModalBackendErrorType } from "../../analytics/codex-referral-invite-modal-backend-error-type";
 import { shellPanelPinnedDerivedAtom } from "../../app-shell/shell-panel-pin";
 import { AppQueryClientProvider } from "../../app/app-query-client-provider";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
 import { ensureCodexSpriteAssetsInit } from "../../assets/ensure-codex-sprite-assets-init";
 import { defaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { chatgptConversationBranchAtom, chatgptConversationFlagsAtom, chatgptConversationLoadQueryAtom, chatgptConversationPreviewAtom, chatgptConversationServerIdAtom, chatgptConversationsGateAtom, chatgptConversationStatusAtom, chatgptConversationTitleAtom, chatgptThreadDerivedAtomBP, useStepsProseAtom, writingBlocksControllerAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_AG_Init, ensureComposerEsm_BF_Init, ensureComposerEsm_BI_Init, ensureComposerEsm_F7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_II_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_J0_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KF_Init, ensureComposerEsm_M0_Init, ensureComposerEsm_MF_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init, ensureComposerEsm_XP_Init, ensureComposerEsm_Ytt_Init, ensureComposerEsm_ZI_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_FR_Init, ensureConversationPageEsm_GS_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Ist_Init, ensureConversationPageEsm_Jj_Init, ensureConversationPageEsm_Lo_Init, ensureConversationPageEsm_Mx_Init, ensureConversationPageEsm_Qa_Init, ensureConversationPageEsm_SP_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  chatgptConversationBranchAtom,
+  chatgptConversationFlagsAtom,
+  chatgptConversationLoadQueryAtom,
+  chatgptConversationPreviewAtom,
+  chatgptConversationServerIdAtom,
+  chatgptConversationsGateAtom,
+  chatgptConversationStatusAtom,
+  chatgptConversationTitleAtom,
+  chatgptThreadDerivedAtomBP,
+  useStepsProseAtom,
+  writingBlocksControllerAtom,
+} from "../../composer/composer-appscope-atoms";
+import {
+  ensureComposerEsm_AG_Init,
+  ensureComposerEsm_BF_Init,
+  ensureComposerEsm_BI_Init,
+  ensureComposerEsm_F7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_II_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_J0_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KF_Init,
+  ensureComposerEsm_M0_Init,
+  ensureComposerEsm_MF_Init,
+  ensureComposerEsm_ML_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_TI_Init,
+  ensureComposerEsm_XP_Init,
+  ensureComposerEsm_Ytt_Init,
+  ensureComposerEsm_ZI_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_FR_Init,
+  ensureConversationPageEsm_GS_Init,
+  ensureConversationPageEsm_GZ_Init,
+  ensureConversationPageEsm_Ist_Init,
+  ensureConversationPageEsm_Jj_Init,
+  ensureConversationPageEsm_Lo_Init,
+  ensureConversationPageEsm_Mx_Init,
+  ensureConversationPageEsm_Qa_Init,
+  ensureConversationPageEsm_SP_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { useConversationFindHighlight } from "../conversation-source";
 import { isIterateeCall } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
-import { _useChatgptComposerControllerA, _useChatgptComposerControllerC, _useChatgptComposerControllerD, _useChatgptComposerControllerF, _useChatgptComposerControllerI, _useChatgptComposerControllerL, _useChatgptComposerControllerM, _useChatgptComposerControllerN, _useChatgptComposerControllerO, _useChatgptComposerControllerP, _useChatgptComposerControllerR, _useChatgptComposerControllerS, useChatgptComposerControllerA, useChatgptComposerControllerC, useChatgptComposerControllerD, useChatgptComposerControllerE, useChatgptComposerControllerF, useChatgptComposerControllerG, useChatgptComposerControllerH, useChatgptComposerControllerI, useChatgptComposerControllerJ, useChatgptComposerControllerK, useChatgptComposerControllerL, useChatgptComposerControllerM, useChatgptComposerControllerN, useChatgptComposerControllerO, useChatgptComposerControllerP, useChatgptComposerControllerR, useChatgptComposerControllerS, useChatgptComposerControllerT, useChatgptComposerControllerU, useChatgptComposerControllerUnderscore } from "../../composer/use-chatgpt-composer-controller";
+import {
+  _useChatgptComposerControllerA,
+  _useChatgptComposerControllerC,
+  _useChatgptComposerControllerD,
+  _useChatgptComposerControllerF,
+  _useChatgptComposerControllerI,
+  _useChatgptComposerControllerL,
+  _useChatgptComposerControllerM,
+  _useChatgptComposerControllerN,
+  _useChatgptComposerControllerO,
+  _useChatgptComposerControllerP,
+  _useChatgptComposerControllerR,
+  _useChatgptComposerControllerS,
+  useChatgptComposerControllerA,
+  useChatgptComposerControllerC,
+  useChatgptComposerControllerD,
+  useChatgptComposerControllerE,
+  useChatgptComposerControllerF,
+  useChatgptComposerControllerG,
+  useChatgptComposerControllerH,
+  useChatgptComposerControllerI,
+  useChatgptComposerControllerJ,
+  useChatgptComposerControllerK,
+  useChatgptComposerControllerL,
+  useChatgptComposerControllerM,
+  useChatgptComposerControllerN,
+  useChatgptComposerControllerO,
+  useChatgptComposerControllerP,
+  useChatgptComposerControllerR,
+  useChatgptComposerControllerS,
+  useChatgptComposerControllerT,
+  useChatgptComposerControllerU,
+  useChatgptComposerControllerUnderscore,
+} from "../../composer/use-chatgpt-composer-controller";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { CHATGPT_CITATION_ID } from "../../chatgpt/chatgpt-citation-id";
 import { CHATGPT_CONTENT_REFERENCE_ID } from "../../chatgpt/chatgpt-content-reference-id";
@@ -50,7 +149,12 @@ import { ensureHasSeenRealtimeVoiceNuxAtomInit } from "../../home/realtime-voice
 import { ensureDebugPanelParsersInit } from "../../hooks/debug-panel-turn-files";
 import { ContextMenuRegistration } from "../../hooks/use-context-menu-registration";
 import { useEventCallback } from "../../hooks/use-event-callback";
-import { clampFloatingWindowRect, initFloatingWindowPointerDragConstants, resizeFloatingWindowRect, useFloatingWindowPointerDrag } from "../../hooks/use-floating-window-pointer-drag";
+import {
+  clampFloatingWindowRect,
+  initFloatingWindowPointerDragConstants,
+  resizeFloatingWindowRect,
+  useFloatingWindowPointerDrag,
+} from "../../hooks/use-floating-window-pointer-drag";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { HostFeatureConfigToggles } from "../../hosts/host-feature-config-toggles";
@@ -72,7 +176,11 @@ import { codexDirectiveMarkedExtensions } from "../../markdown/codex-directive-m
 import { markdownToPlainText } from "../../markdown/markdown-to-plain-text";
 import { rewriteFileCitationMarkers } from "../../markdown/rewrite-file-citation-markers";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
-import { findSidebarSectionElement, readScrollTop, writeScrollTop } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  readScrollTop,
+  writeScrollTop,
+} from "../../navigation/app-action-dom";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { clearActiveOverlayAfterNavigate } from "../../navigation/clear-active-overlay-after-navigate";
 import { NavigationAllowContext } from "../../navigation/navigation-allow-context";
@@ -94,16 +202,33 @@ import { openRightPanel } from "../../shell/open-right-panel";
 import { setRightPanelConversation } from "../../shell/set-right-panel-conversation";
 import { ProjectHoverCardBody } from "../../sidebar/project-hover-card-body";
 import { useBrowserExtensionPluginSetupQuery } from "../../skills/use-browser-extension-plugin-setup-query";
-import { initThreadPanelToggleButton, ThreadPanelToggleButton } from "../../thread/thread-panel-toggle-button";
+import {
+  initThreadPanelToggleButton,
+  ThreadPanelToggleButton,
+} from "../../thread/thread-panel-toggle-button";
 import { ThreadResourceCard } from "../../thread/thread-resource-card";
-import { initThreadScrollControllerContext, useThreadScrollController } from "../../thread/thread-scroll-controller-context";
-import { initThreadScrollLayout, ThreadScrollLayout } from "../../thread/thread-scroll-layout";
-import { initToggleThreadSummaryPanel, initToggleThreadSummaryPanelAtoms, toggleThreadSummaryPanel, ToggleThreadSummaryPanel } from "../../thread/toggle-thread-summary-panel";
+import {
+  initThreadScrollControllerContext,
+  useThreadScrollController,
+} from "../../thread/thread-scroll-controller-context";
+import {
+  initThreadScrollLayout,
+  ThreadScrollLayout,
+} from "../../thread/thread-scroll-layout";
+import {
+  initToggleThreadSummaryPanel,
+  initToggleThreadSummaryPanelAtoms,
+  toggleThreadSummaryPanel,
+  ToggleThreadSummaryPanel,
+} from "../../thread/toggle-thread-summary-panel";
 import { BrandedIcon } from "../../ui/branded-icon";
 import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { InsetBorderPanel } from "../../ui/inset-border-panel";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -124,11 +249,18 @@ import { slugifyLoose } from "../../utils/slugify-loose";
 import { sortedArrayFrom } from "../../utils/sorted-array-from";
 import { tryParseJsonText } from "../../utils/try-parse-json-text";
 import { waitForDoubleAnimationFrame } from "../../utils/wait-for-double-animation-frame";
-import { ensureImportSettingsCLInit, ensureSettingsGlyphI0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensureSettingsGlyphI0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { activateConversationSurface } from "../activate-conversation-surface";
 import { BrowserConversationPanel } from "../browser-conversation-panel";
 import { chatgptMessageFallbackId } from "../chatgpt-message-fallback-id";
-import { initChatgptTemporaryChatUi, TemporaryChatHeaderControl, TemporaryChatOnboarding } from "../chatgpt-temporary-chat-ui/index";
+import {
+  initChatgptTemporaryChatUi,
+  TemporaryChatHeaderControl,
+  TemporaryChatOnboarding,
+} from "../chatgpt-temporary-chat-ui/index";
 import { ConversationDiffSourceBridge } from "../conversation-diff-source-bridge";
 import { ensureConversationWorkRouteInit } from "../conversation-work-path";
 import { deferredConversationR } from "../deferred-conversation-r";
@@ -180,19 +312,23 @@ function harbor(slate) {
 }
 function indigo() {}
 function jade(timber) {
-  let {
-      projectIcon,
-      projectId,
-      projectName
-    } = timber,
+  let { projectIcon, projectId, projectName } = timber,
     umbra = CodexBrowserSurfaceActionType(falcon, projectId);
-  return umbra == null ? <ThreadTitleRow {...{
-    projectIcon,
-    projectLabel: projectName,
-    sections: []
-  }} /> : <ProjectHoverCardBody {...{
-    group: umbra
-  }} />;
+  return umbra == null ? (
+    <ThreadTitleRow
+      {...{
+        projectIcon,
+        projectLabel: projectName,
+        sections: [],
+      }}
+    />
+  ) : (
+    <ProjectHoverCardBody
+      {...{
+        group: umbra,
+      }}
+    />
+  );
 }
 function kite({
   contentX,
@@ -207,7 +343,7 @@ function kite({
   isTemporaryChat,
   scrollStateConversationId,
   showPendingLoadingMessage,
-  onAddSelectedText
+  onAddSelectedText,
 }) {
   let violet = CodexPluginActionType(ensureComposerEsm_S8_Init),
     willow = copper.useRef(null),
@@ -215,152 +351,248 @@ function kite({
     yellow = copper.useRef(entries);
   yellow.current = entries;
   let [zinc, amber] = copper.useState(null),
-    [basalt] = copper.useState(() => violet.get(AppInitialVF, scrollStateConversationId)),
-    cedar = useEventCallback(garnet => {
-      violet.set(AppInitialVF, scrollStateConversationId, Math.max(0, garnet - (zinc?.getHeightPx() ?? 0)));
+    [basalt] = copper.useState(() =>
+      violet.get(AppInitialVF, scrollStateConversationId),
+    ),
+    cedar = useEventCallback((garnet) => {
+      violet.set(
+        AppInitialVF,
+        scrollStateConversationId,
+        Math.max(0, garnet - (zinc?.getHeightPx() ?? 0)),
+      );
     }),
-    daisy = useEventCallback(hazel => {
+    daisy = useEventCallback((hazel) => {
       xenon.current = hazel;
     }),
-    ember = copper.useMemo(() => ({
-      scrollToTurn: async (ivory, jasper) => {
-        if (jasper?.signal?.aborted) return;
-        let kelp = xenon.current;
-        if (kelp == null) throw Error("ChatGPT conversation search scroll requested before VirtualizedTurnList API was ready");
-        await kelp.scrollToKey(ivory);
-        !jasper?.signal?.aborted && (await waitForDoubleAnimationFrame());
-      },
-      getTurnContainer: lotus => willow.current?.querySelector(`[data-content-search-turn-key="${lotus}"]`) ?? null
-    }), []),
-    flint = copper.useMemo(() => bravo({
-      getTurns: () => yellow.current,
-      routeContextId: `chatgpt:${conversationId}`,
-      scrollAdapter: ember
-    }), [conversationId, ember]);
-  return useConversationFindHighlight({
-    containerRef: willow,
-    contextId: flint.contextId
-  }), <>
-        {isConversationLoading ? null : <ConversationDiffSourceBridge conversationSource={flint} />}
-        {<ThreadScrollLayout {...{
-      contentX,
-      initialOffset: basalt,
-      onScroll: cedar,
-      footer: <Alpha key={conversationId} {...{
-        conversationId,
-        disableSubmitForActiveTppTurn,
-        isTemporaryChat,
-        responseSpacerState: zinc
-      }} />,
-      children: [<div {...{
-        ref: willow,
-        [delta]: "true",
-        className: "flex min-h-full flex-1 flex-col gap-1.5 py-5",
-        "data-thread-find-target": "conversation",
-        onFocusCapture: () => {
-          setRightPanelConversation(violet, "conversation");
+    ember = copper.useMemo(
+      () => ({
+        scrollToTurn: async (ivory, jasper) => {
+          if (jasper?.signal?.aborted) return;
+          let kelp = xenon.current;
+          if (kelp == null)
+            throw Error(
+              "ChatGPT conversation search scroll requested before VirtualizedTurnList API was ready",
+            );
+          await kelp.scrollToKey(ivory);
+          !jasper?.signal?.aborted && (await waitForDoubleAnimationFrame());
         },
-        onMouseDownCapture: () => {
-          setRightPanelConversation(violet, "conversation");
-        },
-        children: [hasLoadError ? <div className="rounded-xl border border-token-border-default bg-token-bg-secondary p-4 text-sm text-token-foreground">
-                          {<MemoizedFormattedMessage {...{
-            id: "chatgptConversations.loadError",
-            defaultMessage: "Could not load this ChatGPT conversation",
-            description: "Error state when a ChatGPT conversation fetch fails"
-          }} />}
-                        </div> : isConversationLoading ? <div aria-busy="true" aria-label={conversationLoadingLabel} className="relative min-h-0 flex-1" role="status">
-                          {<EnsureComposerEsm_J0_Init {...{
-            debugName: "ChatGptConversationPage",
-            fillParent: true
-          }} />}
-                        </div> : hasRenderableTurns ? <Bravo {...{
-          entries,
-          onApiChange: daisy,
-          responseSpacerState: zinc
-        }} /> : <div className="rounded-xl border border-token-border-default bg-token-bg-secondary p-4 text-sm text-token-description-foreground">
-                          {<MemoizedFormattedMessage {...{
-            id: "chatgptConversations.emptyConversation",
-            defaultMessage: "No renderable ChatGPT messages were found in this conversation",
-            description: "Empty state when a ChatGPT conversation has no user or assistant text messages"
-          }} />}
-                        </div>, hasRenderableTurns ? null : <Copper {...{
-          errorMessage,
-          showPendingLoadingMessage
-        }} />, <Delta {...{
-          onResponseSpacerStateChange: amber
-        }} />]
-      }} />, <AppInitialGL targetSelector={echo}>
-                  {({
-          selectedText
-        }) => <SelectedTextOverlay {...{
-          conversationTerminology: "chat",
-          selectedText,
-          onAddSelectedText
-        }} />}
-                </AppInitialGL>]
-    }} />}
-      </>;
+        getTurnContainer: (lotus) =>
+          willow.current?.querySelector(
+            `[data-content-search-turn-key="${lotus}"]`,
+          ) ?? null,
+      }),
+      [],
+    ),
+    flint = copper.useMemo(
+      () =>
+        bravo({
+          getTurns: () => yellow.current,
+          routeContextId: `chatgpt:${conversationId}`,
+          scrollAdapter: ember,
+        }),
+      [conversationId, ember],
+    );
+  return (
+    useConversationFindHighlight({
+      containerRef: willow,
+      contextId: flint.contextId,
+    }),
+    (
+      <>
+        {isConversationLoading ? null : (
+          <ConversationDiffSourceBridge conversationSource={flint} />
+        )}
+        {
+          <ThreadScrollLayout
+            {...{
+              contentX,
+              initialOffset: basalt,
+              onScroll: cedar,
+              footer: (
+                <Alpha
+                  key={conversationId}
+                  {...{
+                    conversationId,
+                    disableSubmitForActiveTppTurn,
+                    isTemporaryChat,
+                    responseSpacerState: zinc,
+                  }}
+                />
+              ),
+              children: [
+                <div
+                  {...{
+                    ref: willow,
+                    [delta]: "true",
+                    className: "flex min-h-full flex-1 flex-col gap-1.5 py-5",
+                    "data-thread-find-target": "conversation",
+                    onFocusCapture: () => {
+                      setRightPanelConversation(violet, "conversation");
+                    },
+                    onMouseDownCapture: () => {
+                      setRightPanelConversation(violet, "conversation");
+                    },
+                    children: [
+                      hasLoadError ? (
+                        <div className="rounded-xl border border-token-border-default bg-token-bg-secondary p-4 text-sm text-token-foreground">
+                          {
+                            <MemoizedFormattedMessage
+                              {...{
+                                id: "chatgptConversations.loadError",
+                                defaultMessage:
+                                  "Could not load this ChatGPT conversation",
+                                description:
+                                  "Error state when a ChatGPT conversation fetch fails",
+                              }}
+                            />
+                          }
+                        </div>
+                      ) : isConversationLoading ? (
+                        <div
+                          aria-busy="true"
+                          aria-label={conversationLoadingLabel}
+                          className="relative min-h-0 flex-1"
+                          role="status"
+                        >
+                          {
+                            <EnsureComposerEsm_J0_Init
+                              {...{
+                                debugName: "ChatGptConversationPage",
+                                fillParent: true,
+                              }}
+                            />
+                          }
+                        </div>
+                      ) : hasRenderableTurns ? (
+                        <Bravo
+                          {...{
+                            entries,
+                            onApiChange: daisy,
+                            responseSpacerState: zinc,
+                          }}
+                        />
+                      ) : (
+                        <div className="rounded-xl border border-token-border-default bg-token-bg-secondary p-4 text-sm text-token-description-foreground">
+                          {
+                            <MemoizedFormattedMessage
+                              {...{
+                                id: "chatgptConversations.emptyConversation",
+                                defaultMessage:
+                                  "No renderable ChatGPT messages were found in this conversation",
+                                description:
+                                  "Empty state when a ChatGPT conversation has no user or assistant text messages",
+                              }}
+                            />
+                          }
+                        </div>
+                      ),
+                      hasRenderableTurns ? null : (
+                        <Copper
+                          {...{
+                            errorMessage,
+                            showPendingLoadingMessage,
+                          }}
+                        />
+                      ),
+                      <Delta
+                        {...{
+                          onResponseSpacerStateChange: amber,
+                        }}
+                      />,
+                    ],
+                  }}
+                />,
+                <AppInitialGL targetSelector={echo}>
+                  {({ selectedText }) => (
+                    <SelectedTextOverlay
+                      {...{
+                        conversationTerminology: "chat",
+                        selectedText,
+                        onAddSelectedText,
+                      }}
+                    />
+                  )}
+                </AppInitialGL>,
+              ],
+            }}
+          />
+        }
+      </>
+    )
+  );
 }
 function lemon(mint) {
-  let {
-      entries,
-      onApiChange,
-      responseSpacerState
-    } = mint,
+  let { entries, onApiChange, responseSpacerState } = mint,
     nova = responseSpacerState?.getHeightPx;
-  return <ConversationSourceC {...{
-    entries,
-    gapPx: 6,
-    getBottomScrollPaddingPx: nova,
-    onApiChange,
-    preserveMeasuredTurnViewport: true,
-    RowComponent: marble
-  }} />;
+  return (
+    <ConversationSourceC
+      {...{
+        entries,
+        gapPx: 6,
+        getBottomScrollPaddingPx: nova,
+        onApiChange,
+        preserveMeasuredTurnViewport: true,
+        RowComponent: marble,
+      }}
+    />
+  );
 }
 function marble(olive) {
-  let {
-      entry
-    } = olive,
-    prism = <_useChatgptComposerControllerL {...{
-      browserConversationId: entry.browserConversationId,
-      conversationId: entry.conversationId,
-      branchingMessageId: entry.branchingMessageId,
-      hostId: LOCAL_HOST_ID,
-      isMostRecentTurn: entry.isMostRecentTurn,
-      onEditLatestUserMessage: entry.onEditLatestUserMessage,
-      onFork: entry.onFork,
-      safetyReview: entry.safetyReview,
-      turn: entry.turn,
-      turnId: entry.id
-    }} />;
-  let quill = entry.isMostRecentTurn ? <Copper {...{
-    errorMessage: entry.errorMessage,
-    showPendingLoadingMessage: entry.showPendingLoadingMessage
-  }} /> : null;
-  return <div className="flex flex-col gap-1.5" data-content-search-turn-key={entry.turnKey}>
+  let { entry } = olive,
+    prism = (
+      <_useChatgptComposerControllerL
+        {...{
+          browserConversationId: entry.browserConversationId,
+          conversationId: entry.conversationId,
+          branchingMessageId: entry.branchingMessageId,
+          hostId: LOCAL_HOST_ID,
+          isMostRecentTurn: entry.isMostRecentTurn,
+          onEditLatestUserMessage: entry.onEditLatestUserMessage,
+          onFork: entry.onFork,
+          safetyReview: entry.safetyReview,
+          turn: entry.turn,
+          turnId: entry.id,
+        }}
+      />
+    );
+  let quill = entry.isMostRecentTurn ? (
+    <Copper
+      {...{
+        errorMessage: entry.errorMessage,
+        showPendingLoadingMessage: entry.showPendingLoadingMessage,
+      }}
+    />
+  ) : null;
+  return (
+    <div
+      className="flex flex-col gap-1.5"
+      data-content-search-turn-key={entry.turnKey}
+    >
       {prism}
       {quill}
-    </div>;
+    </div>
+  );
 }
 function nickel(reef) {
-  let {
-      errorMessage,
-      showPendingLoadingMessage
-    } = reef,
-    sage = showPendingLoadingMessage ? <_useChatgptComposerControllerS {...{}} /> : null;
-  let topaz = errorMessage == null ? null : <div className="rounded-xl border border-token-charts-red/30 bg-token-charts-red/10 p-4 text-sm text-token-foreground">
+  let { errorMessage, showPendingLoadingMessage } = reef,
+    sage = showPendingLoadingMessage ? (
+      <_useChatgptComposerControllerS {...{}} />
+    ) : null;
+  let topaz =
+    errorMessage == null ? null : (
+      <div className="rounded-xl border border-token-charts-red/30 bg-token-charts-red/10 p-4 text-sm text-token-foreground">
         {errorMessage}
-      </div>;
-  return <>
+      </div>
+    );
+  return (
+    <>
       {sage}
       {topaz}
-    </>;
+    </>
+  );
 }
 function onyx(ultra) {
-  let {
-      conversationId
-    } = ultra,
+  let { conversationId } = ultra,
     vapor = CodexPluginActionType(ensureComposerEsm_S8_Init),
     wheat = useIntl(),
     yarn = CodexPluginActionResult(ensureComposerEsm_M0_Init),
@@ -370,65 +602,96 @@ function onyx(ultra) {
         return;
       }
       if (vapor.get(ensureConversationPageEsm_A0_Init.tabs$).length === 0) {
-        vapor.get(ensureComposerEsm_J0_Init) && ensureAppActionPayloadSchemasInit.dispatchHostMessage({
-          type: "toggle-browser-panel",
-          open: true,
-          source: "manual",
-          initiator: "side_panel_menu"
-        });
+        vapor.get(ensureComposerEsm_J0_Init) &&
+          ensureAppActionPayloadSchemasInit.dispatchHostMessage({
+            type: "toggle-browser-panel",
+            open: true,
+            source: "manual",
+            initiator: "side_panel_menu",
+          });
         return;
       }
       openRightPanel(vapor, {
-        activateFallbackTab: true
+        activateFallbackTab: true,
       });
     };
   let acorn = zephyr,
-    bloom = <Echo {...{
-      conversationId
-    }} />;
-  let coral = <AppIconAZ.RightPanelOutlet {...{
-    children: <AppIconAZ.RightPanelTabs {...{}} />
-  }} />;
+    bloom = (
+      <Echo
+        {...{
+          conversationId,
+        }}
+      />
+    );
+  let coral = (
+    <AppIconAZ.RightPanelOutlet
+      {...{
+        children: <AppIconAZ.RightPanelTabs {...{}} />,
+      }}
+    />
+  );
   let drift = wheat.formatMessage(gamma.toggleSidePanel);
-  let eagle = yarn ? <AppIconAZ className="icon-xs rotate-180" /> : <AppIconMZ {...{
-    className: "icon-xs rotate-180"
-  }} />;
-  let frost = <AppIconAZ.HeaderAction {...{
-    actionId: "chatgpt-conversation-side-panel",
-    align: "end",
-    order: 300,
-    slotPosition: "right",
-    children: <InitThreadPanelToggleButton {...{
-      label: drift,
-      pressed: yarn,
-      onClick: acorn,
-      children: eagle
-    }} />
-  }} />;
-  return <>
+  let eagle = yarn ? (
+    <AppIconAZ className="icon-xs rotate-180" />
+  ) : (
+    <AppIconMZ
+      {...{
+        className: "icon-xs rotate-180",
+      }}
+    />
+  );
+  let frost = (
+    <AppIconAZ.HeaderAction
+      {...{
+        actionId: "chatgpt-conversation-side-panel",
+        align: "end",
+        order: 300,
+        slotPosition: "right",
+        children: (
+          <InitThreadPanelToggleButton
+            {...{
+              label: drift,
+              pressed: yarn,
+              onClick: acorn,
+              children: eagle,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  return (
+    <>
       {bloom}
       {coral}
       {frost}
-    </>;
+    </>
+  );
 }
 function pearl(glide) {
-  let {
-      conversationId
-    } = glide,
+  let { conversationId } = glide,
     honey = useIntl(),
     iris = CodexPluginActionResult(ensureConversationPageEsm_A0_Init.tabs$),
     jewel = honey.formatMessage({
       id: "chatgptConversations.sidePanel.emptyBrowserTab",
       defaultMessage: "New tab",
-      description: "Title for an empty browser tab in the ChatGPT conversation side panel"
+      description:
+        "Title for an empty browser tab in the ChatGPT conversation side panel",
     });
   let knoll = jewel,
     lunar;
   {
     let moss;
-    moss = north => {
+    moss = (north) => {
       let orbit = deferredConversationF83(north, conversationId);
-      return orbit == null ? null : <BrowserConversationPanel key={north.tabId} browserTabId={orbit} browserConversationId={conversationId} browserTabFallbackTitle={knoll} />;
+      return orbit == null ? null : (
+        <BrowserConversationPanel
+          key={north.tabId}
+          browserTabId={orbit}
+          browserConversationId={conversationId}
+          browserTabFallbackTitle={knoll}
+        />
+      );
     };
     lunar = iris.map(moss);
   }
@@ -436,34 +699,42 @@ function pearl(glide) {
 }
 function quartz(pine) {
   let quest = {
-    conversationId: pine.conversationId
+    conversationId: pine.conversationId,
   };
   let ridge = _useChatgptComposerControllerN(quest),
-    storm = CodexBrowserSurfaceActionType(useChatgptComposerControllerI, pine.conversationId),
+    storm = CodexBrowserSurfaceActionType(
+      useChatgptComposerControllerI,
+      pine.conversationId,
+    ),
     tide = CodexBrowserSurfaceActionType(isCustomAgentId, pine.conversationId);
-  return storm == null || tide ? <AppInitialTT>
-      {<ProjectMarkerIcon {...{
-      composerController: ridge,
-      conversationId: pine.conversationId,
-      disableSubmit: pine.disableSubmitForActiveTppTurn,
-      isTemporaryChat: pine.isTemporaryChat,
-      onSubmitAccepted: pine.responseSpacerState?.place,
-      onSubmitError: pine.responseSpacerState?.clear
-    }} />}
-    </AppInitialTT> : <UseChatgptComposerControllerP {...{
-    conversationId: pine.conversationId,
-    isTemporaryChat: pine.isTemporaryChat,
-    onContinueSuccess: undefined,
-    request: storm
-  }} />;
+  return storm == null || tide ? (
+    <AppInitialTT>
+      {
+        <ProjectMarkerIcon
+          {...{
+            composerController: ridge,
+            conversationId: pine.conversationId,
+            disableSubmit: pine.disableSubmitForActiveTppTurn,
+            isTemporaryChat: pine.isTemporaryChat,
+            onSubmitAccepted: pine.responseSpacerState?.place,
+            onSubmitError: pine.responseSpacerState?.clear,
+          }}
+        />
+      }
+    </AppInitialTT>
+  ) : (
+    <UseChatgptComposerControllerP
+      {...{
+        conversationId: pine.conversationId,
+        isTemporaryChat: pine.isTemporaryChat,
+        onContinueSuccess: undefined,
+        request: storm,
+      }}
+    />
+  );
 }
 function river(unity) {
-  let {
-      currentNodeId,
-      isStreaming,
-      serverConversationId,
-      title
-    } = unity,
+  let { currentNodeId, isStreaming, serverConversationId, title } = unity,
     vale = CodexPluginActionType(appScopeAtom),
     wave = useIntl(),
     apex = wave.formatMessage(gamma.share);
@@ -479,32 +750,49 @@ function river(unity) {
     cliff = meadow;
   }
   let dusk = () => {
-    serverConversationId == null || currentNodeId == null || chatProcessRegister(vale, os, {
-      currentNodeId,
-      serverConversationId,
-      title
-    });
+    serverConversationId == null ||
+      currentNodeId == null ||
+      chatProcessRegister(vale, os, {
+        currentNodeId,
+        serverConversationId,
+        title,
+      });
   };
   let elm = dusk,
     fern = cliff ?? brook,
     grove = cliff != null,
     hill = <AppInitialUO aria-hidden={true} className="icon-xs" />;
-  let isle = <span className="hidden electron:inline">
-      {<MemoizedFormattedMessage {...{
-      ...gamma.share
-    }} />}
-    </span>;
-  let juniper = <ReadLoginRouteQuerySnapshot {...{
-    "aria-label": brook,
-    className: "enabled:text-token-text-primary enabled:hover:text-token-text-primary",
-    color: "ghost",
-    disabled: grove,
-    size: "toolbar",
-    onClick: elm,
-    children: [hill, isle]
-  }} />;
-  return <OptionalTooltip {...{
-    tooltipContent: fern,
-    children: juniper
-  }} />;
+  let isle = (
+    <span className="hidden electron:inline">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            ...gamma.share,
+          }}
+        />
+      }
+    </span>
+  );
+  let juniper = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        "aria-label": brook,
+        className:
+          "enabled:text-token-text-primary enabled:hover:text-token-text-primary",
+        color: "ghost",
+        disabled: grove,
+        size: "toolbar",
+        onClick: elm,
+        children: [hill, isle],
+      }}
+    />
+  );
+  return (
+    <OptionalTooltip
+      {...{
+        tooltipContent: fern,
+        children: juniper,
+      }}
+    />
+  );
 }

@@ -10,7 +10,9 @@ export type BindBindDeferredUiRwPeers = {
 let peers: BindBindDeferredUiRwPeers | null = null;
 
 /** Wire bindBindDeferredUiRw peers once companions land. */
-export function setBindBindDeferredUiRwPeers(next: BindBindDeferredUiRwPeers): void {
+export function setBindBindDeferredUiRwPeers(
+  next: BindBindDeferredUiRwPeers,
+): void {
   peers = next;
 }
 

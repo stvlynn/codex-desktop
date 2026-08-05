@@ -8,7 +8,9 @@ export type BindPopoverPrimitivesPeers = {
 let peers: BindPopoverPrimitivesPeers | null = null;
 
 /** Wire bindPopoverPrimitives peers once companions land. */
-export function setBindPopoverPrimitivesPeers(next: BindPopoverPrimitivesPeers): void {
+export function setBindPopoverPrimitivesPeers(
+  next: BindPopoverPrimitivesPeers,
+): void {
   peers = next;
 }
 

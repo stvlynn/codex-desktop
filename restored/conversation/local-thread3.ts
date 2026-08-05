@@ -39,9 +39,18 @@ export function bindLocalThread3() {
   }
 
   return peers.e(() => {
-    VFc = peers.c(), peers.Ho(), HFc = peers.r(peers.o(), 1), peers.DD(), peers.vFs(), peers.Vf(), peers._p(), peers.gT(), peers.jI(), UFc = peers.J(), WFc = peers.Ma(peers.hT, ({
-      get: e,
-      scope: t
-    }) => t.value.routeKind === `local-thread` ? peers.e(peers.OI) : null);
+    ((VFc = peers.c()),
+      peers.Ho(),
+      (HFc = peers.r(peers.o(), 1)),
+      peers.DD(),
+      peers.vFs(),
+      peers.Vf(),
+      peers._p(),
+      peers.gT(),
+      peers.jI(),
+      (UFc = peers.J()),
+      (WFc = peers.Ma(peers.hT, ({ get: e, scope: t }) =>
+        t.value.routeKind === `local-thread` ? peers.e(peers.OI) : null,
+      )));
   });
 }

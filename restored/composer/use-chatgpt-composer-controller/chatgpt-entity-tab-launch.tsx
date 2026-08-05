@@ -13,7 +13,10 @@ import {
   ensureAppShellAtomsInit as appInitialI0,
   rightPanelController as appInitialA0,
 } from "../../navigation/app-shell-atoms";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../runtime/rolldown-runtime";
 import {
   ensureChatgptComposerControllerAuxInitS as useChatgptComposerControllerS,
   useChatgptComposerControllerHelper90,
@@ -39,29 +42,27 @@ var slot93,
     slot94 = appInitialJvt();
     _f = 30;
   });
-export function useChatgptComposerControllerHelper91(request6426: any, request6427: any) {
+export function useChatgptComposerControllerHelper91(
+  request6426: any,
+  request6427: any,
+) {
   const AppInitialP2 = ___AppInitialP;
   let { cancel, completion, conversationId } = useChatgptComposerControllerT(
       request6426,
       request6427,
     ),
-    slot12752 =
-      useChatgptComposerControllerHelper90();
+    slot12752 = useChatgptComposerControllerHelper90();
   return (
-    appInitialA0.openTab(
-      request6426,
-      slot12752,
-      {
-        activate: true,
-        icon: <AppInitialP2 className="icon-sm" />,
-        id: `chatgpt-entity:${conversationId}`,
-        onClose: cancel,
-        props: {
-          conversationId,
-        },
-        title: request6427.query,
+    appInitialA0.openTab(request6426, slot12752, {
+      activate: true,
+      icon: <AppInitialP2 className="icon-sm" />,
+      id: `chatgpt-entity:${conversationId}`,
+      onClose: cancel,
+      props: {
+        conversationId,
       },
-    ),
+      title: request6427.query,
+    }),
     Promise.resolve()
   );
 }
@@ -75,14 +76,9 @@ var slot97,
   });
 export function useChatgptComposerControllerHelper92(args: any) {
   let { launch, onError } = args;
-  let slot10118 =
-      slot101.useRef(0),
-    slot10119 =
-      slot101.useRef(null),
-    [
-      slot10120,
-      slot10121,
-    ] = slot101.useState(null);
+  let slot10118 = slot101.useRef(0),
+    slot10119 = slot101.useRef(null),
+    [slot10120, slot10121] = slot101.useState(null);
   return {
     close: () => {
       slot10118.current += 1;
@@ -92,39 +88,27 @@ export function useChatgptComposerControllerHelper92(args: any) {
     dialog: slot10120,
     launch: async (request5832) => {
       if (slot10119.current != null) return;
-      let slot12152 =
-        slot10118.current + 1;
-      slot10118.current =
-        slot12152;
-      slot10119.current =
-        slot12152;
+      let slot12152 = slot10118.current + 1;
+      slot10118.current = slot12152;
+      slot10119.current = slot12152;
       slot10121({
         kind: "loading",
       });
       try {
-        let slot15581 = await launch(
-          request5832,
-        );
-        if (
-          slot10118.current !==
-          slot12152
-        )
-          return;
+        let slot15581 = await launch(request5832);
+        if (slot10118.current !== slot12152) return;
         slot10121({
           kind: "ready",
           result: slot15581,
         });
       } catch (slot15872) {
         onError(slot15872);
-        slot10118.current ===
-          slot12152 &&
+        slot10118.current === slot12152 &&
           slot10121({
             kind: "error",
           });
       } finally {
-        slot10119.current ===
-          slot12152 &&
-          (slot10119.current = null);
+        slot10119.current === slot12152 && (slot10119.current = null);
       }
     },
   };

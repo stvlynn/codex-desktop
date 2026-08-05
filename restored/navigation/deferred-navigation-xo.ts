@@ -9,7 +9,9 @@ export type BindDeferredNavigationXOPeers = {
 let peers: BindDeferredNavigationXOPeers | null = null;
 
 /** Wire bindDeferredNavigationXO peers once companions land. */
-export function setBindDeferredNavigationXOPeers(next: BindDeferredNavigationXOPeers): void {
+export function setBindDeferredNavigationXOPeers(
+  next: BindDeferredNavigationXOPeers,
+): void {
   peers = next;
 }
 

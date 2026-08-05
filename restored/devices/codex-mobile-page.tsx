@@ -7,7 +7,10 @@
 import { CodexBrowserSurfaceActionType } from "../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionType } from "../analytics/codex-plugin-action-type-enum";
 import { appScopeAtom, ensureAppScopeInit } from "../runtime/app-scope-runtime";
-import { ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init } from "../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+} from "../composer/composer-esm-inits";
 import { useAtomPair } from "../boundaries/persisted-atom";
 import { react, reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { useNavigate } from "../boundaries/react-router-navigation";
@@ -19,8 +22,19 @@ import { serializeCharacterReferenceNode } from "../markdown/serialize-character
 import { ensureAppShellAtomsInit } from "../navigation/app-shell-atoms";
 import { commonJsInit, esmInit } from "../runtime/rolldown-runtime";
 import { countLeadingZeroBits32 } from "../utils/count-leading-zero-bits-32";
-import { codexMobileSetupDialogUtils, ensureCodexMobileSetupDialogAtomsInit, ensureCodexMobileSetupDialogDepsInit, RenderCodexMobileSetupDialog } from "./codex-mobile-setup-dialog";
-import { codexMobileSetupFlow_a, codexMobileSetupFlow_i, codexMobileSetupFlow_n, codexMobileSetupFlow_r, CodexMobileSetupFlow_t } from "./codex-mobile-setup-flow";
+import {
+  codexMobileSetupDialogUtils,
+  ensureCodexMobileSetupDialogAtomsInit,
+  ensureCodexMobileSetupDialogDepsInit,
+  RenderCodexMobileSetupDialog,
+} from "./codex-mobile-setup-dialog";
+import {
+  codexMobileSetupFlow_a,
+  codexMobileSetupFlow_i,
+  codexMobileSetupFlow_n,
+  codexMobileSetupFlow_r,
+  CodexMobileSetupFlow_t,
+} from "./codex-mobile-setup-flow";
 
 /** Wave FY unresolved companion (missing-export:hosts/codex-mobile-mfa-setup-required.tsx) */
 const AppInitialBQ: any = undefined;
@@ -35,20 +49,19 @@ export function CodexMobilePage() {
     marble = CodexBrowserSurfaceActionType(deferredHostsS3, LOCAL_HOST_ID),
     [nickel] = useAtomPair(codexMobileSetupDialogUtils),
     onyx = AppInitialZQ(lemon);
-  let {
-    data,
-    isError,
-    isFetching,
-    isPending
-  } = useQuery(onyx);
+  let { data, isError, isFetching, isPending } = useQuery(onyx);
   if (isPending || marble == null) return null;
-  return <CodexMobilePageHelper1 {...{
-    isMfaSetupRequiredError: isError,
-    isMfaSetupRequiredFetching: isFetching,
-    mfaSetupRequired: data,
-    remoteControlStatus: marble.status,
-    setupStepDebugOverride: nickel
-  }} />;
+  return (
+    <CodexMobilePageHelper1
+      {...{
+        isMfaSetupRequiredError: isError,
+        isMfaSetupRequiredFetching: isFetching,
+        mfaSetupRequired: data,
+        remoteControlStatus: marble.status,
+        setupStepDebugOverride: nickel,
+      }}
+    />
+  );
 }
 function CodexMobilePageHelper1(delta) {
   let {
@@ -56,50 +69,72 @@ function CodexMobilePageHelper1(delta) {
       isMfaSetupRequiredFetching,
       mfaSetupRequired,
       remoteControlStatus,
-      setupStepDebugOverride
+      setupStepDebugOverride,
     } = delta,
     echo = useNavigate(),
     [falcon] = bravo.useState(remoteControlStatus);
   if (isMfaSetupRequiredFetching) return null;
-  if (codexMobileSetupFlow_a({
-    isMfaSetupRequiredError,
-    mfaSetupRequired,
-    initialRemoteControlStatus: falcon,
-    remoteControlStatus,
-    setupStepDebugOverride
-  })) {
-    let harbor = <AppIconAZ.MainContentLayout {...{
-      layout: "full-bleed"
-    }} />;
+  if (
+    codexMobileSetupFlow_a({
+      isMfaSetupRequiredError,
+      mfaSetupRequired,
+      initialRemoteControlStatus: falcon,
+      remoteControlStatus,
+      setupStepDebugOverride,
+    })
+  ) {
+    let harbor = (
+      <AppIconAZ.MainContentLayout
+        {...{
+          layout: "full-bleed",
+        }}
+      />
+    );
     let indigo = codexMobileSetupFlow_r({
       isMfaSetupRequiredError,
       mfaSetupRequired,
-      remoteControlStatus
+      remoteControlStatus,
     });
     let jade = () => {
       echo("/");
     };
     let kite;
-    return <>
+    return (
+      <>
         {harbor}
-        {<CodexMobileSetupFlow_t {...{
-        initialStep: indigo,
-        onClose: jade,
-        variant: "page"
-      }} />}
-      </>;
+        {
+          <CodexMobileSetupFlow_t
+            {...{
+              initialStep: indigo,
+              onClose: jade,
+              variant: "page",
+            }}
+          />
+        }
+      </>
+    );
   }
-  let gamma = <AppIconAZ.MainContentLayout {...{
-    layout: "full-bleed"
-  }} />;
-  return <>
+  let gamma = (
+    <AppIconAZ.MainContentLayout
+      {...{
+        layout: "full-bleed",
+      }}
+    />
+  );
+  return (
+    <>
       {gamma}
-      {<RenderCodexMobileSetupDialog {...{
-      onManageConnections: () => {
-        echo("/settings/connections");
+      {
+        <RenderCodexMobileSetupDialog
+          {...{
+            onManageConnections: () => {
+              echo("/settings/connections");
+            },
+          }}
+        />
       }
-    }} />}
-    </>;
+    </>
+  );
 }
 var alpha, bravo, copper;
 esmInit(() => {

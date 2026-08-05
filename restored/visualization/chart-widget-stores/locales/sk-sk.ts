@@ -18,25 +18,30 @@ const messages: Record<string, string> = {
   "widgets.cardCarousel.nextCards": "Ďalšie karty",
   "widgets.cardCarousel.nextCardsInCarousel": "Ďalšie karty v {carouselLabel}",
   "widgets.cardCarousel.previousCards": "Predchádzajúce karty",
-  "widgets.cardCarousel.previousCardsInCarousel": "Predchádzajúce karty v {carouselLabel}",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "Predchádzajúce karty v {carouselLabel}",
   "widgets.debug.hideCurrentState": "Skryť aktuálny stav",
   "widgets.debug.nextState": "Ďalší stav",
   "widgets.debug.previousState": "Predchádzajúci stav",
   "widgets.debug.selectedState": "Vybraný stav",
   "widgets.debug.showCurrentState": "Zobraziť aktuálny stav",
   "widgets.debug.state": "Stav",
-  "widgets.debug.unableToSerializeSelectedState": "Vybraný stav sa nepodarilo serializovať.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "Vybraný stav sa nepodarilo serializovať.",
   "widgets.hermes.artifact.viewMore": "Zobraziť ešte {count}",
   "widgets.hermes.calendarEvent.moreAttendees": "+{count} ďalší",
   "widgets.hermes.calendarEvent.singleTime": "{date} o {time}",
   "widgets.hermes.calendarEvent.timeRange": "{date} o {startTime} – {endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "{agentName} potrebuje prístup, aby mohol pokračovať",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName} potrebuje vaše povolenie na pokračovanie",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "{agentName} potrebuje prístup, aby mohol pokračovať",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName} potrebuje vaše povolenie na pokračovanie",
   "widgets.hermes.genericResponse.viewFullscreen": "Zobraziť na celú obrazovku",
   "widgets.hermes.genericTool.details": "Podrobnosti",
   "widgets.hermes.genericTool.read": "Načítať",
   "widgets.hermes.genericTool.request": "Žiadosť",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} chce použiť {connectorName} na spustenie {toolName}.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} chce použiť {connectorName} na spustenie {toolName}.",
   "widgets.hermes.genericTool.viewFullscreen": "Zobraziť na celú obrazovku",
   "widgets.hermes.genericTool.write": "Zapísať",
   "widgets.hermes.googleCalendarCreate.create": "Vytvoriť",
@@ -49,7 +54,8 @@ const messages: Record<string, string> = {
   "widgets.hermes.permission.moreInformation": "Viac informácií",
   "widgets.hermes.permission.notNow": "Nie teraz",
   "widgets.hermes.permission.reconnect": "Znova pripojiť",
-  "widgets.hermes.permission.reconnectToConnector": "Obnoviť pripojenie k {connectorName}",
+  "widgets.hermes.permission.reconnectToConnector":
+    "Obnoviť pripojenie k {connectorName}",
   "widgets.hermes.sendEmail.approveAction": "Schváliť akciu",
   "widgets.hermes.sendEmail.bcc": "Skrytá kópia",
   "widgets.hermes.sendEmail.cc": "Kópia",
@@ -62,73 +68,135 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "zobraziť menej",
   "widgets.hermes.taskStatus.canceled": "Úloha zrušená",
   "widgets.hermes.taskStatus.canceling": "Ruší sa",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Kontrola predchádzajúcich správ",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Prehľadávanie starších správ",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Prechádzanie predchádzajúcich správ",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Prezerám predchádzajúce správy",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Prezeranie predchádzajúcich správ",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Prechádzanie starších správ",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Prezeranie predchádzajúcich správ",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Prechádzam predchádzajúce správy",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Prehľadávanie predchádzajúcich správ",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Prechádzam predchádzajúce správy",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Prezeranie starších správ",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Kontroluje sa kontext",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Prechádzanie kontextu",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Analyzuje sa kontext",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Čítanie kontextu",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Kontroluje kontext",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Znova kontroluje kontext",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Skenovanie kontextu",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Analyzuje kontext",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Aktivuje sa agent",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Spúšťanie agenta",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Spúšťanie agenta",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Privolávanie agenta",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Pripájanie k agentovi",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "Nadväzovanie spojenia s agentom",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Budíme agenta",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Inicializuje sa agent",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Prebúdzanie agenta",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Spúšťanie agenta",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "Privoláva sa agent",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Aktivuje sa počítač",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Spúšťanie počítača",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Spúšťanie počítača",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Inicializuje sa počítač",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Spúšťanie počítača",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Spúšťa sa počítač",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Spúšťanie počítača",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Prebúdzanie počítača",
-  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Plánovanie postupu",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Pripravuje plán",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Kontrola predchádzajúcich správ",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Prehľadávanie starších správ",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Prechádzanie predchádzajúcich správ",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Prezerám predchádzajúce správy",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Prezeranie predchádzajúcich správ",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Prechádzanie starších správ",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Prezeranie predchádzajúcich správ",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Prechádzam predchádzajúce správy",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Prehľadávanie predchádzajúcich správ",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Prechádzam predchádzajúce správy",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Prezeranie starších správ",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Kontroluje sa kontext",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Prechádzanie kontextu",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Analyzuje sa kontext",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Čítanie kontextu",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Kontroluje kontext",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Znova kontroluje kontext",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Skenovanie kontextu",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Analyzuje kontext",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Aktivuje sa agent",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Spúšťanie agenta",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Spúšťanie agenta",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Privolávanie agenta",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Pripájanie k agentovi",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "Nadväzovanie spojenia s agentom",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Budíme agenta",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Inicializuje sa agent",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Prebúdzanie agenta",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Spúšťanie agenta",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "Privoláva sa agent",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Aktivuje sa počítač",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Spúšťanie počítača",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Spúšťanie počítača",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Inicializuje sa počítač",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Spúšťanie počítača",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Spúšťa sa počítač",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Spúšťanie počítača",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Prebúdzanie počítača",
+  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse":
+    "Plánovanie postupu",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "Pripravuje plán",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Plánujem",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Plánujem postup",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Plánujem ďalšie kroky",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Organizujem ďalšie kroky",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Plánujem postup",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "Plánujem ďalšie kroky",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Organizujem ďalšie kroky",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Plánovanie",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Určovanie smeru",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Stanovovanie postupu",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Načrtáva plán",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Zvažovanie postupov",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Navrhovanie postupu",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Zhromažďovanie podrobností",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Zisťovanie podrobností",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Dopĺňanie podrobností",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Zisťovanie podrobností",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Zhromažďovanie podrobností",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Zhromažďovanie podrobností",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Zisťovanie detailov",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Upresňovanie podrobností",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Zisťovanie podrobností",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Zisťovanie podrobností",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Trvá to dlhšie ako zvyčajne",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Stále na tom pracujem",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Pokojne sa o chvíľu vráťte",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Určovanie smeru",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Stanovovanie postupu",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Načrtáva plán",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Zvažovanie postupov",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Navrhovanie postupu",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Zhromažďovanie podrobností",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Zisťovanie podrobností",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Dopĺňanie podrobností",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Zisťovanie podrobností",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Zhromažďovanie podrobností",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Zhromažďovanie podrobností",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Zisťovanie detailov",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Upresňovanie podrobností",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Zisťovanie podrobností",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Zisťovanie podrobností",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Trvá to dlhšie ako zvyčajne",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Stále na tom pracujem",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Pokojne sa o chvíľu vráťte",
   "widgets.hermes.workflow.canceled": "Úloha zrušená",
   "widgets.hermes.workflow.canceledItemLabel": "Zrušená",
   "widgets.hermes.workflow.codeBlock.hideLines": "Skryť riadky",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Zobraziť všetky riadky ({lineCount})",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Zobraziť všetky riadky ({lineCount})",
   "widgets.hermes.workflow.customWorked": "Istý čas bežalo",
   "widgets.hermes.workflow.customWorking": "Prebieha",
   "widgets.hermes.workflow.fileWorked": "Naskenovaný dokument",
@@ -148,7 +216,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Zobraziť menej",
   "widgets.listView.showMore": "Zobraziť ďalšie {count}",
   "widgets.radioGroup.options": "možnosti",
-  "widgets.segmentedControl.selectAnOption": "Vyberte možnosť"
+  "widgets.segmentedControl.selectAnOption": "Vyberte možnosť",
 };
 
 export default messages;

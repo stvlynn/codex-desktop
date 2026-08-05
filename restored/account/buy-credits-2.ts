@@ -32,14 +32,23 @@ export function buyCredits2() {
     throw new Error("buyCredits2 peers are not configured");
   }
   return peers.e(() => {
-    peers.Ho(), peers.gEs(), peers.ed(), peers.Fh(), peers.PZ(), peers.qx(), trc = {
-      personal: `3605558075`,
-      workspace_owner: `1385051397`,
-      workspace_member: `2673725514`
-    }, nrc = {
-      enabled: !1,
-      remainingThresholdPercent: 20,
-      ctaVariant: `default`
-    }, rrc = peers.Ta(peers.Q, () => new Set()), irc = peers.Ta(peers.Q, () => new Set());
+    (peers.Ho(),
+      peers.gEs(),
+      peers.ed(),
+      peers.Fh(),
+      peers.PZ(),
+      peers.qx(),
+      (trc = {
+        personal: `3605558075`,
+        workspace_owner: `1385051397`,
+        workspace_member: `2673725514`,
+      }),
+      (nrc = {
+        enabled: !1,
+        remainingThresholdPercent: 20,
+        ctaVariant: `default`,
+      }),
+      (rrc = peers.Ta(peers.Q, () => new Set())),
+      (irc = peers.Ta(peers.Q, () => new Set())));
   });
 }

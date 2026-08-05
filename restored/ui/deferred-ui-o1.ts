@@ -30,6 +30,10 @@ export function bindDeferredUiO1() {
   }
 
   return peers.e(() => {
-    gwr = peers.c(), _wr = peers.r(peers.o(), 1), peers.Pp(), vwr = peers.J(), ywr = (0, peers._wr.createContext)(!1);
+    ((gwr = peers.c()),
+      (_wr = peers.r(peers.o(), 1)),
+      peers.Pp(),
+      (vwr = peers.J()),
+      (ywr = (0, peers._wr.createContext)(!1)));
   });
 }

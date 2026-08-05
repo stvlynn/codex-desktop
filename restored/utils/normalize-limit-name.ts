@@ -2,7 +2,9 @@
 // Bundle `LZ` companion for rate-limit lookups.
 
 /** Lowercase kebab limit name; null when empty. */
-export function normalizeLimitName(value: string | null | undefined): string | null {
+export function normalizeLimitName(
+  value: string | null | undefined,
+): string | null {
   if (value == null) return null;
   const normalized = value
     .trim()

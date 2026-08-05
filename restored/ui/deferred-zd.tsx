@@ -35,6 +35,17 @@ export function bindDeferredZd() {
   }
 
   return peers.e(() => {
-    GIc = peers.c(), peers.Hb(), peers.sd(), peers.Ho(), peers.$u(), peers.zm(), peers.Um(), peers.Kb(), peers.Bzo(), peers._hs(), peers.HIc(), W2 = peers.J();
+    ((GIc = peers.c()),
+      peers.Hb(),
+      peers.sd(),
+      peers.Ho(),
+      peers.$u(),
+      peers.zm(),
+      peers.Um(),
+      peers.Kb(),
+      peers.Bzo(),
+      peers._hs(),
+      peers.HIc(),
+      (W2 = peers.J()));
   });
 }

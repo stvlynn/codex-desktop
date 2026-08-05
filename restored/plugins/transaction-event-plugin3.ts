@@ -8,7 +8,9 @@ export type BindTransactionEventPlugin3Peers = {
 let peers: BindTransactionEventPlugin3Peers | null = null;
 
 /** Wire bindTransactionEventPlugin3 peers once companions land. */
-export function setBindTransactionEventPlugin3Peers(next: BindTransactionEventPlugin3Peers): void {
+export function setBindTransactionEventPlugin3Peers(
+  next: BindTransactionEventPlugin3Peers,
+): void {
   peers = next;
 }
 

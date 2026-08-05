@@ -30,7 +30,9 @@ export type BindRealtimeVoiceConfigOverridePeers = {
 let peers: BindRealtimeVoiceConfigOverridePeers | null = null;
 
 /** Wire bindRealtimeVoiceConfigOverride peers once companions land. */
-export function setBindRealtimeVoiceConfigOverridePeers(next: BindRealtimeVoiceConfigOverridePeers): void {
+export function setBindRealtimeVoiceConfigOverridePeers(
+  next: BindRealtimeVoiceConfigOverridePeers,
+): void {
   peers = next;
 }
 

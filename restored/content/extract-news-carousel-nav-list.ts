@@ -18,7 +18,10 @@ export type NewsCarouselNavList = {
   type: "nav_list";
 };
 
-export function extractNewsCarouselNavList(type: unknown, payload: unknown): NewsCarouselNavList | null {
+export function extractNewsCarouselNavList(
+  type: unknown,
+  payload: unknown,
+): NewsCarouselNavList | null {
   if (nonEmptyStringOrNull(type) !== "news_carousel") return null;
   const root = asRecord(payload);
   const props = asRecord(root?.props);

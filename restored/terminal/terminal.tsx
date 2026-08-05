@@ -23,7 +23,7 @@ export function bindBindTerminal() {
     throw new Error("bindBindTerminal peers are not configured");
   }
 
-  return peers.Ma(peers.hT, ({
-    get: e
-  }) => e(peers.Kar) === !1 ? `right` : e(peers.pBi));
+  return peers.Ma(peers.hT, ({ get: e }) =>
+    e(peers.Kar) === !1 ? `right` : e(peers.pBi),
+  );
 }

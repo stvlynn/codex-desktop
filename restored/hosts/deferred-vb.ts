@@ -33,10 +33,16 @@ export function bindDeferredVB() {
   }
 
   return peers.e(() => {
-    PXi = peers.c(), FXi = peers.r(peers.JR(), 1), peers.Ho(), peers.DD(), peers.ed(), IXi = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => {
-      if (peers.e != null) return Object.fromEntries(peers.e.map(e => [peers.e, t(peers.QE, peers.e)]));
-    });
+    ((PXi = peers.c()),
+      (FXi = peers.r(peers.JR(), 1)),
+      peers.Ho(),
+      peers.DD(),
+      peers.ed(),
+      (IXi = peers.Oa(peers.Q, (e, { get: t }) => {
+        if (peers.e != null)
+          return Object.fromEntries(
+            peers.e.map((e) => [peers.e, t(peers.QE, peers.e)]),
+          );
+      })));
   });
 }

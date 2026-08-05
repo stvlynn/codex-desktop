@@ -29,6 +29,11 @@ export function bindDeferredUiBZ() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), NFr = peers.Ta(peers.Q, !1), PFr = peers.Ta(peers.Q, !1), FFr = peers.Ta(peers.Q, null), IFr = peers.Ta(peers.Q, null);
+    (peers.Ho(),
+      peers.ed(),
+      (NFr = peers.Ta(peers.Q, !1)),
+      (PFr = peers.Ta(peers.Q, !1)),
+      (FFr = peers.Ta(peers.Q, null)),
+      (IFr = peers.Ta(peers.Q, null)));
   });
 }

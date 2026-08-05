@@ -29,11 +29,14 @@ let Impl: (props: ExternalLinkIconButtonProps) => ReactNode = ({
   </a>
 );
 
-export function bindExternalLinkIconButton(impl: (props: ExternalLinkIconButtonProps) => ReactNode,
+export function bindExternalLinkIconButton(
+  impl: (props: ExternalLinkIconButtonProps) => ReactNode,
 ): void {
   Impl = impl;
 }
 
-export function ExternalLinkIconButton(props: ExternalLinkIconButtonProps): ReactNode {
+export function ExternalLinkIconButton(
+  props: ExternalLinkIconButtonProps,
+): ReactNode {
   return Impl(props);
 }

@@ -24,7 +24,11 @@ export type MutedNotificationPreferenceStore = {
  *   append the id (mute). Matches call sites that pass `true` for the
  *   "Unmute task" action. No-ops when the flag does not match list membership.
  */
-export function setMutedNotificationPreference(store: MutedNotificationPreferenceStore, notificationId: string, isCurrentlyMuted: boolean): void {
+export function setMutedNotificationPreference(
+  store: MutedNotificationPreferenceStore,
+  notificationId: string,
+  isCurrentlyMuted: boolean,
+): void {
   const mutedIds = store.getMutedIds();
   if (isCurrentlyMuted !== mutedIds.includes(notificationId)) {
     return;

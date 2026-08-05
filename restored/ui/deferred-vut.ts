@@ -56,44 +56,63 @@ export function deferredVut() {
   }
 
   return peers.e(() => {
-    peers.g0e(), peers.t0e(), peers.z0e(), f2e = peers.im(0), p2e = 25, m2e = new Set([`absolute`, `fixed`]), h2e = async function (e) {
-      let t = this.getOffsetParent || peers.s2e,
-        n = this.getDimensions,
-        r = await n(peers.e.floating);
-      return {
-        reference: peers.i2e(peers.e.reference, await t(peers.e.floating), peers.e.strategy),
-        floating: {
-          x: 0,
-          y: 0,
-          width: r.width,
-          height: r.height
-        }
-      };
-    }, g2e = {
-      convertOffsetParentRelativeRectToViewportRelativeRect: peers.J0e,
-      getDocumentElement: peers.om,
-      getClippingRect: peers.n2e,
-      getOffsetParent: peers.s2e,
-      getElementRects: peers.h2e,
-      getClientRects: peers.Y0e,
-      getDimensions: peers.r2e,
-      getScale: peers.H0e,
-      isElement: peers.sm,
-      isRTL: peers.c2e
-    }, _2e = peers.f0e, v2e = peers.p0e, y2e = peers.l0e, b2e = peers.h0e, x2e = peers.u0e, S2e = peers.c0e, C2e = peers.m0e, w2e = (e, t, n) => {
-      let r = new Map(),
-        i = {
-          platform: peers.g2e,
-          ...n
-        },
-        a = {
-          ...i.platform,
-          _c: r
+    (peers.g0e(),
+      peers.t0e(),
+      peers.z0e(),
+      (f2e = peers.im(0)),
+      (p2e = 25),
+      (m2e = new Set([`absolute`, `fixed`])),
+      (h2e = async function (e) {
+        let t = this.getOffsetParent || peers.s2e,
+          n = this.getDimensions,
+          r = await n(peers.e.floating);
+        return {
+          reference: peers.i2e(
+            peers.e.reference,
+            await t(peers.e.floating),
+            peers.e.strategy,
+          ),
+          floating: {
+            x: 0,
+            y: 0,
+            width: r.width,
+            height: r.height,
+          },
         };
-      return peers.s0e(peers.e, t, {
-        ...i,
-        platform: a
-      });
-    };
+      }),
+      (g2e = {
+        convertOffsetParentRelativeRectToViewportRelativeRect: peers.J0e,
+        getDocumentElement: peers.om,
+        getClippingRect: peers.n2e,
+        getOffsetParent: peers.s2e,
+        getElementRects: peers.h2e,
+        getClientRects: peers.Y0e,
+        getDimensions: peers.r2e,
+        getScale: peers.H0e,
+        isElement: peers.sm,
+        isRTL: peers.c2e,
+      }),
+      (_2e = peers.f0e),
+      (v2e = peers.p0e),
+      (y2e = peers.l0e),
+      (b2e = peers.h0e),
+      (x2e = peers.u0e),
+      (S2e = peers.c0e),
+      (C2e = peers.m0e),
+      (w2e = (e, t, n) => {
+        let r = new Map(),
+          i = {
+            platform: peers.g2e,
+            ...n,
+          },
+          a = {
+            ...i.platform,
+            _c: r,
+          };
+        return peers.s0e(peers.e, t, {
+          ...i,
+          platform: a,
+        });
+      }));
   });
 }

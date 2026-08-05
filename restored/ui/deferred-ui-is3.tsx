@@ -9,7 +9,9 @@ export type BindBinddeferredUiIS3Peers = {
 let peers: BindBinddeferredUiIS3Peers | null = null;
 
 /** Wire bindBinddeferredUiIS3 peers once companions land. */
-export function setBindBinddeferredUiIS3Peers(next: BindBinddeferredUiIS3Peers): void {
+export function setBindBinddeferredUiIS3Peers(
+  next: BindBinddeferredUiIS3Peers,
+): void {
   peers = next;
 }
 
@@ -21,5 +23,5 @@ export function bindBinddeferredUiIS3() {
     throw new Error("bindBinddeferredUiIS3 peers are not configured");
   }
 
-  return peers.Da(peers.Q, e => null);
+  return peers.Da(peers.Q, (e) => null);
 }

@@ -15,7 +15,9 @@ export type ResetTransientOverlayGlobalsPeers = {
 let peers: ResetTransientOverlayGlobalsPeers | null = null;
 
 /** Wire resetTransientOverlayGlobals peers once companions land. */
-export function setResetTransientOverlayGlobalsPeers(next: ResetTransientOverlayGlobalsPeers): void {
+export function setResetTransientOverlayGlobalsPeers(
+  next: ResetTransientOverlayGlobalsPeers,
+): void {
   peers = next;
 }
 
@@ -28,6 +30,10 @@ export function resetTransientOverlayGlobals() {
   }
 
   return peers.e(() => {
-    Ci = peers.r(peers.o(), 1), wi = new WeakMap(), Ti = new WeakMap(), Ei = new WeakMap(), Di = 0;
+    ((Ci = peers.r(peers.o(), 1)),
+      (wi = new WeakMap()),
+      (Ti = new WeakMap()),
+      (Ei = new WeakMap()),
+      (Di = 0));
   });
 }

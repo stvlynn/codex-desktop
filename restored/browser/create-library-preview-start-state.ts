@@ -11,7 +11,9 @@ export type LibraryPreviewStartState = {
 };
 
 /** Default composer/start state when opening from library preview. */
-export function createLibraryPreviewStartState(implicitAttachment: unknown): LibraryPreviewStartState {
+export function createLibraryPreviewStartState(
+  implicitAttachment: unknown,
+): LibraryPreviewStartState {
   return {
     aeonStartTarget: null,
     browserTabMentionConversationId: null,

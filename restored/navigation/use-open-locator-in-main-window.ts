@@ -11,7 +11,9 @@ export type UseOpenLocatorInMainWindowPeers = {
 let peers: UseOpenLocatorInMainWindowPeers | null = null;
 
 /** Wire useOpenLocatorInMainWindow peers once companions land. */
-export function setUseOpenLocatorInMainWindowPeers(next: UseOpenLocatorInMainWindowPeers): void {
+export function setUseOpenLocatorInMainWindowPeers(
+  next: UseOpenLocatorInMainWindowPeers,
+): void {
   peers = next;
 }
 

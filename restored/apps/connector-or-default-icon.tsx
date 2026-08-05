@@ -12,7 +12,9 @@ export type ConnectorOrDefaultIconPeers = {
 let peers: ConnectorOrDefaultIconPeers | null = null;
 
 /** Wire ConnectorOrDefaultIcon peers once companions land. */
-export function setConnectorOrDefaultIconPeers(next: ConnectorOrDefaultIconPeers): void {
+export function setConnectorOrDefaultIconPeers(
+  next: ConnectorOrDefaultIconPeers,
+): void {
   peers = next;
 }
 

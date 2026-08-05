@@ -26,6 +26,6 @@ export function installing() {
   }
 
   return peers.e(() => {
-    peers.Pxr(), peers.Au(), peers.$7t(), zxr = !1, Bxr = `prod`;
+    (peers.Pxr(), peers.Au(), peers.$7t(), (zxr = !1), (Bxr = `prod`));
   });
 }

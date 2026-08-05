@@ -33,19 +33,29 @@ export function bindDeferredSmt() {
   }
 
   return peers.e(() => {
-    peers.Sl(), vSe = peers.pl([`read`, `created`, `updated`]), ySe = peers.sl({
-      id: peers.X().min(1),
-      url: peers.X().refine(peers._Se),
-      title: peers.X().optional(),
-      mimeType: peers.X().optional(),
-      activities: peers.ol(peers.vSe).min(1)
-    }), bSe = peers.sl({
-      "openai/resourceActivities": peers.sl({
-        version: peers.ml(1),
-        resources: peers.ol(peers.ySe)
-      }).passthrough()
-    }).passthrough(), xSe = peers.sl({
-      "openai/resourceActivities": peers.al().optional()
-    }).passthrough();
+    (peers.Sl(),
+      (vSe = peers.pl([`read`, `created`, `updated`])),
+      (ySe = peers.sl({
+        id: peers.X().min(1),
+        url: peers.X().refine(peers._Se),
+        title: peers.X().optional(),
+        mimeType: peers.X().optional(),
+        activities: peers.ol(peers.vSe).min(1),
+      })),
+      (bSe = peers
+        .sl({
+          "openai/resourceActivities": peers
+            .sl({
+              version: peers.ml(1),
+              resources: peers.ol(peers.ySe),
+            })
+            .passthrough(),
+        })
+        .passthrough()),
+      (xSe = peers
+        .sl({
+          "openai/resourceActivities": peers.al().optional(),
+        })
+        .passthrough()));
   });
 }

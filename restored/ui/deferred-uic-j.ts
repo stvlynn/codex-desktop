@@ -22,5 +22,5 @@ export function deferredUicJ(e: unknown, t: unknown, n: unknown) {
     throw new Error("deferredUicJ peers are not configured");
   }
 
-  t == null ? peers.A$r(e) : peers.N$r(e, t, n), peers.O0r(e, n);
+  (t == null ? peers.A$r(e) : peers.N$r(e, t, n), peers.O0r(e, n));
 }

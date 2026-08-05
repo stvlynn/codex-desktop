@@ -31,25 +31,32 @@ export function bindDeferredma() {
   }
 
   return peers.e(() => {
-    EQl = class extends Error {
+    ((EQl = class extends Error {
       reason;
       constructor(e) {
-        super(peers.e), this.reason = peers.e;
+        (super(peers.e), (this.reason = peers.e));
       }
-    }, DQl = 52, OQl = `2025-07-13`, kQl = 3, AQl = 20, jQl = /^[a-z0-9._-]+$/, MQl = /\s/g, NQl = {
-      business: `Enterprise`,
-      enterprise: `Enterprise`,
-      enterprise_cbp_automation: `Enterprise`,
-      enterprise_cbp_usage_based: `Enterprise`,
-      free: `Free`,
-      free_workspace: `Free`,
-      go: `Go`,
-      guest: `Free`,
-      plus: `Plus`,
-      pro: `Pro`,
-      prolite: `Pro`,
-      self_serve_business_usage_based: `Business`,
-      team: `Business`
-    };
+    }),
+      (DQl = 52),
+      (OQl = `2025-07-13`),
+      (kQl = 3),
+      (AQl = 20),
+      (jQl = /^[a-z0-9._-]+$/),
+      (MQl = /\s/g),
+      (NQl = {
+        business: `Enterprise`,
+        enterprise: `Enterprise`,
+        enterprise_cbp_automation: `Enterprise`,
+        enterprise_cbp_usage_based: `Enterprise`,
+        free: `Free`,
+        free_workspace: `Free`,
+        go: `Go`,
+        guest: `Free`,
+        plus: `Plus`,
+        pro: `Pro`,
+        prolite: `Pro`,
+        self_serve_business_usage_based: `Business`,
+        team: `Business`,
+      }));
   });
 }

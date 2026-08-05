@@ -8,7 +8,11 @@ import { Dwe, Owe, kwe, Mwe } from "./svg-bitmap-helpers-impl";
 /** Legacy workbookBinding1253 — ImageBitmap promise cache keyed by size+mime. */
 const imageBitmapCache = new Map<string, Promise<ImageBitmap>>();
 
-export async function workbookHelper603(isdIn2413: any, isdIn2414: any, isdIn2415: any) {
+export async function workbookHelper603(
+  isdIn2413: any,
+  isdIn2414: any,
+  isdIn2415: any,
+) {
   let cacheKey = `${isdIn2413.data.byteLength}_${isdIn2413.contentType}`,
     cached = imageBitmapCache.get(cacheKey);
   if (cached) return cached;

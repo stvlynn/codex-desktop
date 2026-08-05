@@ -12,7 +12,9 @@ export type BindBindSettingsRow2Peers = {
 let peers: BindBindSettingsRow2Peers | null = null;
 
 /** Wire bindBindSettingsRow2 peers once companions land. */
-export function setBindBindSettingsRow2Peers(next: BindBindSettingsRow2Peers): void {
+export function setBindBindSettingsRow2Peers(
+  next: BindBindSettingsRow2Peers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,6 @@ export function bindBindSettingsRow2() {
   }
 
   return peers.e(() => {
-    Cmo = peers.r(peers.Jg(), 1), peers.c_();
+    ((Cmo = peers.r(peers.Jg(), 1)), peers.c_());
   });
 }

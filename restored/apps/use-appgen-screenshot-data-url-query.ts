@@ -12,7 +12,9 @@ export type UseAppgenScreenshotDataUrlQueryPeers = {
 let peers: UseAppgenScreenshotDataUrlQueryPeers | null = null;
 
 /** Wire useAppgenScreenshotDataUrlQuery peers once companions land. */
-export function setUseAppgenScreenshotDataUrlQueryPeers(next: UseAppgenScreenshotDataUrlQueryPeers): void {
+export function setUseAppgenScreenshotDataUrlQueryPeers(
+  next: UseAppgenScreenshotDataUrlQueryPeers,
+): void {
   peers = next;
 }
 

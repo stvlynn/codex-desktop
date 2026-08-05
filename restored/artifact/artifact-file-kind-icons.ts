@@ -67,6 +67,8 @@ const ARTIFACT_FILE_KIND_ICONS: Record<ArtifactFileKind, ArtifactFileKindIcon> =
   };
 
 /** Look up the icon component for a resolved artifact file kind. */
-export function getArtifactFileKindIcon(kind: ArtifactFileKind): ArtifactFileKindIcon {
+export function getArtifactFileKindIcon(
+  kind: ArtifactFileKind,
+): ArtifactFileKindIcon {
   return ARTIFACT_FILE_KIND_ICONS[kind];
 }

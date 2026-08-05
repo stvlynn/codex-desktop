@@ -30,7 +30,9 @@ export type HostConfig = {
  * Convert a remote shared-object connection into a host-config row
  * (inlined from `wxe` / SSH+WSL+remote-control mappers used by `G_`).
  */
-export function remoteConnectionToHostConfig(connection: RemoteConnection): HostConfig {
+export function remoteConnectionToHostConfig(
+  connection: RemoteConnection,
+): HostConfig {
   if (connection.source === "remote-control") {
     return {
       id: connection.hostId,

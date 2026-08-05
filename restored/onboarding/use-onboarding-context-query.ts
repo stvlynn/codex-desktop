@@ -12,7 +12,9 @@ export type UseOnboardingContextQueryPeers = {
 let peers: UseOnboardingContextQueryPeers | null = null;
 
 /** Wire useOnboardingContextQuery peers once companions land. */
-export function setUseOnboardingContextQueryPeers(next: UseOnboardingContextQueryPeers): void {
+export function setUseOnboardingContextQueryPeers(
+  next: UseOnboardingContextQueryPeers,
+): void {
   peers = next;
 }
 

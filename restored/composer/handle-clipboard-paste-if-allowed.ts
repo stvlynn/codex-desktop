@@ -8,7 +8,9 @@ export type HandleClipboardPasteIfAllowedPeers = {
 let peers: HandleClipboardPasteIfAllowedPeers | null = null;
 
 /** Wire handleClipboardPasteIfAllowed peers once companions land. */
-export function setHandleClipboardPasteIfAllowedPeers(next: HandleClipboardPasteIfAllowedPeers): void {
+export function setHandleClipboardPasteIfAllowedPeers(
+  next: HandleClipboardPasteIfAllowedPeers,
+): void {
   peers = next;
 }
 
@@ -20,5 +22,5 @@ export function handleClipboardPasteIfAllowed(e: unknown, t: unknown) {
     throw new Error("handleClipboardPasteIfAllowed peers are not configured");
   }
 
-  e.defaultPrevented || peers.Cua(t, e.clipboardData) && e.preventDefault();
+  e.defaultPrevented || (peers.Cua(t, e.clipboardData) && e.preventDefault());
 }

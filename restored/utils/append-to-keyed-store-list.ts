@@ -17,6 +17,10 @@ export function bindKeyedStoreListAtom(atom: unknown): void {
 }
 
 /** Bundle `MAr` / export `l$` — append an item to a keyed list. */
-export function appendToKeyedStoreList(store: StoreSet, key: unknown, item: unknown): void {
+export function appendToKeyedStoreList(
+  store: StoreSet,
+  key: unknown,
+  item: unknown,
+): void {
   store.set(keyedListAtom, key, (prev) => [...prev, item]);
 }

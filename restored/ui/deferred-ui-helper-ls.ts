@@ -50,7 +50,9 @@ export type BindDeferredUiHelperLsPeers = {
 let peers: BindDeferredUiHelperLsPeers | null = null;
 
 /** Wire bindDeferredUiHelperLs peers once companions land. */
-export function setBindDeferredUiHelperLsPeers(next: BindDeferredUiHelperLsPeers): void {
+export function setBindDeferredUiHelperLsPeers(
+  next: BindDeferredUiHelperLsPeers,
+): void {
   peers = next;
 }
 

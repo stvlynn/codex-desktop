@@ -12,7 +12,9 @@ let IntlContext: Context<IntlShape | null> | null = null;
 let assertIntl: ((value: IntlShape | null) => void) | null = null;
 
 /** Wire react-intl context (`wje` / `lje` in the bundle). */
-export function setIntlContext(context: Context<IntlShape | null>, assert?: (value: IntlShape | null) => void,
+export function setIntlContext(
+  context: Context<IntlShape | null>,
+  assert?: (value: IntlShape | null) => void,
 ): void {
   IntlContext = context;
   assertIntl = assert ?? null;

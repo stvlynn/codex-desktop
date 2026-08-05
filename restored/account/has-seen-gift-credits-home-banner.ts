@@ -12,7 +12,9 @@ export type HasSeenGiftCreditsHomeBannerPeers = {
 let peers: HasSeenGiftCreditsHomeBannerPeers | null = null;
 
 /** Wire hasSeenGiftCreditsHomeBanner peers once companions land. */
-export function setHasSeenGiftCreditsHomeBannerPeers(next: HasSeenGiftCreditsHomeBannerPeers): void {
+export function setHasSeenGiftCreditsHomeBannerPeers(
+  next: HasSeenGiftCreditsHomeBannerPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,8 @@ export function hasSeenGiftCreditsHomeBanner() {
     throw new Error("hasSeenGiftCreditsHomeBanner peers are not configured");
   }
   return peers.e(() => {
-    peers.Ap(), B$l = peers.kp(`has-seen-gift-credits-home-banner`, !1), V$l = peers.kp(`gift-credits-profile-coachmark-pending`, !1);
+    (peers.Ap(),
+      (B$l = peers.kp(`has-seen-gift-credits-home-banner`, !1)),
+      (V$l = peers.kp(`gift-credits-profile-coachmark-pending`, !1)));
   });
 }

@@ -11,7 +11,9 @@ export type CreateRateLimitCreditRedeemerPeers = {
 let peers: CreateRateLimitCreditRedeemerPeers | null = null;
 
 /** Wire createRateLimitCreditRedeemer peers once companions land. */
-export function setCreateRateLimitCreditRedeemerPeers(next: CreateRateLimitCreditRedeemerPeers): void {
+export function setCreateRateLimitCreditRedeemerPeers(
+  next: CreateRateLimitCreditRedeemerPeers,
+): void {
   peers = next;
 }
 

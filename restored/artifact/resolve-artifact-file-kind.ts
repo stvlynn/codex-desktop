@@ -145,7 +145,10 @@ export const ARTIFACT_MIME_KIND_PREFIXES: ReadonlyArray<{
  * Pass `mimeType` when known; otherwise path heuristics only
  * (bundle also consults `mime.lookup` via `qUi`).
  */
-export function resolveArtifactFileKind(filePath: string | null | undefined, mimeType?: string | false | null): ArtifactFileKind {
+export function resolveArtifactFileKind(
+  filePath: string | null | undefined,
+  mimeType?: string | false | null,
+): ArtifactFileKind {
   if (!filePath && !mimeType) return "file";
   if (filePath) {
     if (/[\\/]$/.test(filePath)) return "folder";

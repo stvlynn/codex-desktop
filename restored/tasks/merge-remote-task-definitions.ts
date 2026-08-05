@@ -11,7 +11,9 @@ export type MergeRemoteTaskDefinitionsPeers = {
 let peers: MergeRemoteTaskDefinitionsPeers | null = null;
 
 /** Wire mergeRemoteTaskDefinitions peers once companions land. */
-export function setMergeRemoteTaskDefinitionsPeers(next: MergeRemoteTaskDefinitionsPeers): void {
+export function setMergeRemoteTaskDefinitionsPeers(
+  next: MergeRemoteTaskDefinitionsPeers,
+): void {
   peers = next;
 }
 

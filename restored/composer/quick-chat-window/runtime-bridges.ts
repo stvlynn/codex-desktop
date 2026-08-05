@@ -4,7 +4,6 @@
 // Residual companion stubs: 36 (verified 102/137).
 // Bind/ensure bridges.
 
-
 /** Wave FZ: bind no longer required after full body promote */
 export function bindQuickChatWindow(_next: unknown): void {}
 export function ensureQuickChatWindowInit(): void {}
@@ -15,4 +14,3 @@ export type QuickChatWindowSession = {
   conversationId?: string | null;
   [key: string]: unknown;
 };
-

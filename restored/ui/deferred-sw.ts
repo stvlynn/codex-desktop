@@ -24,6 +24,8 @@ export function deferredSw() {
   }
 
   return peers.e(() => {
-    peers.Zes(), nts = 1500, rts = `Codex capabilities available this session:`;
+    (peers.Zes(),
+      (nts = 1500),
+      (rts = `Codex capabilities available this session:`));
   });
 }

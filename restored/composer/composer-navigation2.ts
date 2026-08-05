@@ -22,7 +22,9 @@ export type ComposerNavigation2Peers = {
 let peers: ComposerNavigation2Peers | null = null;
 
 /** Wire composerNavigation2 peers once companions land. */
-export function setComposerNavigation2Peers(next: ComposerNavigation2Peers): void {
+export function setComposerNavigation2Peers(
+  next: ComposerNavigation2Peers,
+): void {
   peers = next;
 }
 
@@ -35,6 +37,15 @@ export function composerNavigation2() {
   }
 
   return peers.e(() => {
-    zos = peers.c(), peers.sd(), Bos = peers.r(peers.o(), 1), peers.Pp(), peers.Mp(), peers.ld(), peers.Ek(), peers.Iet(), peers.jet(), GX = peers.J();
+    ((zos = peers.c()),
+      peers.sd(),
+      (Bos = peers.r(peers.o(), 1)),
+      peers.Pp(),
+      peers.Mp(),
+      peers.ld(),
+      peers.Ek(),
+      peers.Iet(),
+      peers.jet(),
+      (GX = peers.J()));
   });
 }

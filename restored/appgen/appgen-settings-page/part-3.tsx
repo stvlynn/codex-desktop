@@ -5,7 +5,6 @@
 // AST split 3/3
 /* split-lane-import-depth:1 */
 
-
 import { isStartingProcessExpired as IsStartingProcessExpired } from "../../account/is-starting-process-expired";
 import { openInBrowser as OpenInBrowser } from "../../account/open-in-browser";
 import { CodexAutomationCapabilityOrigin } from "../../analytics/codex-automation-capability-origin";
@@ -15,13 +14,33 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { ShellLayoutMetricsContext } from "../../app-shell/shell-layout-metrics-context";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { decayZoomPercent } from "../../artifact/clamp-zoom-percent";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_FH_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wlt_Init as EnsureComposerEsm_Wlt_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Wlt_Init as EnsureComposerEsm_Wlt_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_B0_Init } from "../../conversation/conversation-page-esm-inits";
 import { cloneTypedArray } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { ensureReactReduxInit } from "../../boundaries/react-redux-cjs";
-import { Navigate, useMatch, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  Navigate,
+  useMatch,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { ensurePluginMentionPromptInit } from "../../browser/browser-use-helpers";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
@@ -54,14 +73,22 @@ import { CopyButton } from "../../ui/copy-button";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { ElectronOnly } from "../../ui/electron-only";
-import { initToolbarBreadcrumb, ToolbarBreadcrumb } from "../../ui/toolbar-breadcrumb";
+import {
+  initToolbarBreadcrumb,
+  ToolbarBreadcrumb,
+} from "../../ui/toolbar-breadcrumb";
 import { formatUrlHostPath } from "../../utils/format-url-host-path";
 import { isBareAllowedPermission } from "../../utils/is-bare-allowed-permission";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { svgToDataUri } from "../../utils/svg-to-data-uri";
 import { ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
 import { keysIn as KeysIn } from "../../vendor/lodash-cjs-predicates";
-import { appgenShareDialogI, appgenShareDialogR as AppgenShareDialogR, appgenShareDialogT, ensureAppgenShareDialogInit } from "../appgen-share-dialog";
+import {
+  appgenShareDialogI,
+  appgenShareDialogR as AppgenShareDialogR,
+  appgenShareDialogT,
+  ensureAppgenShareDialogInit,
+} from "../appgen-share-dialog";
 import { ensureChatgptSiteSuffixesInit } from "../chatgpt-site-suffixes";
 
 /** app-initial companion (stub only; never promote) */

@@ -11,7 +11,9 @@ export type PluginMentionLabels = {
 };
 
 /** Format Browser / Computer Use labels via react-intl (`z1r` / `yJ`). */
-export function formatPluginMentionLabels(intl: Pick<IntlShape, "formatMessage">): PluginMentionLabels {
+export function formatPluginMentionLabels(
+  intl: Pick<IntlShape, "formatMessage">,
+): PluginMentionLabels {
   return {
     browserUse: intl.formatMessage(browserPluginMentionMessages.label),
     computerUse: intl.formatMessage(

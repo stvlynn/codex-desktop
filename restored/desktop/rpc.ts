@@ -27,7 +27,8 @@ export function bindAppHost(next: AppHost | undefined): void {
 }
 
 /** Wire the real initializeAppHostServices body. */
-export function bindInitializeAppHostServices(fn: (() => void | Promise<void>) | null,
+export function bindInitializeAppHostServices(
+  fn: (() => void | Promise<void>) | null,
 ): void {
   initializeImpl = fn;
 }

@@ -24,7 +24,9 @@ export type BindBindDeferredvzPeers = {
 let peers: BindBindDeferredvzPeers | null = null;
 
 /** Wire bindBindDeferredvz peers once companions land. */
-export function setBindBindDeferredvzPeers(next: BindBindDeferredvzPeers): void {
+export function setBindBindDeferredvzPeers(
+  next: BindBindDeferredvzPeers,
+): void {
   peers = next;
 }
 

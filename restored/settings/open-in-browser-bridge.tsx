@@ -18,7 +18,9 @@ export type BindBindOpenInBrowserBridgePeers = {
 let peers: BindBindOpenInBrowserBridgePeers | null = null;
 
 /** Wire bindBindOpenInBrowserBridge peers once companions land. */
-export function setBindBindOpenInBrowserBridgePeers(next: BindBindOpenInBrowserBridgePeers): void {
+export function setBindBindOpenInBrowserBridgePeers(
+  next: BindBindOpenInBrowserBridgePeers,
+): void {
   peers = next;
 }
 
@@ -31,9 +33,18 @@ export function bindBindOpenInBrowserBridge() {
   }
 
   return peers.e(() => {
-    peers.Hb(), peers.fb(), peers.rQ(), peers.Kb(), peers.Fh(), peers.qx(), peers.bTs(), OTs = {
-      personal: `2336405413`,
-      workspace: `3431030460`
-    }, kTs = `3291298264`, ATs = `allow_free_users_to_use_credits`;
+    (peers.Hb(),
+      peers.fb(),
+      peers.rQ(),
+      peers.Kb(),
+      peers.Fh(),
+      peers.qx(),
+      peers.bTs(),
+      (OTs = {
+        personal: `2336405413`,
+        workspace: `3431030460`,
+      }),
+      (kTs = `3291298264`),
+      (ATs = `allow_free_users_to_use_credits`));
   });
 }

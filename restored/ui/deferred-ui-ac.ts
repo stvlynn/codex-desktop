@@ -24,11 +24,11 @@ export function bindDeferredUiAC() {
     throw new Error("bindDeferredUiAC peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => {
+  return peers.Ma(peers.Q, ({ get: e }) => {
     let t = e(peers.Ox);
-    return t.phase === `inactive` || !t.outputMuted ? null : peers.lrs(e(peers.srs, t.locator));
+    return t.phase === `inactive` || !t.outputMuted
+      ? null
+      : peers.lrs(e(peers.srs, t.locator));
   });
 }
 

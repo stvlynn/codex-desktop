@@ -21,7 +21,11 @@ export function setFocusPanelHelper(fn: FocusPanelFn): void {
   focusPanel = fn;
 }
 
-export function activatePanelTab(store: StoreLike, side: PanelSide | string, tabId: string): boolean {
+export function activatePanelTab(
+  store: StoreLike,
+  side: PanelSide | string,
+  tabId: string,
+): boolean {
   const controller = panelControllerForSide(side);
   if (store.get(controller.tabById$, tabId) == null) return false;
   const activate = (

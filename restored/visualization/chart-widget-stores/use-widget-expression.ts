@@ -7,19 +7,10 @@ export {
   type EvaluateOptions,
 } from "./widget-expression-shared";
 
-export {
-  useWidgetEvaluate,
-  chartWidgetStoresS,
-} from "./use-widget-evaluate";
+export { useWidgetEvaluate, chartWidgetStoresS } from "./use-widget-evaluate";
 
-export {
-  resolveWidgetProps,
-  chartWidgetStoresC,
-} from "./resolve-widget-props";
+export { resolveWidgetProps, chartWidgetStoresC } from "./resolve-widget-props";
 
-export {
-  useResolveWidgetAction,
-  $_,
-} from "./use-resolve-widget-action";
+export { useResolveWidgetAction, $_ } from "./use-resolve-widget-action";
 
 export function ensureWidgetExpressionInit(): void {}

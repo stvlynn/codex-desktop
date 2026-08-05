@@ -17,7 +17,9 @@ export type TextTokenDescriptionForeground2Peers = {
 let peers: TextTokenDescriptionForeground2Peers | null = null;
 
 /** Wire textTokenDescriptionForeground2 peers once companions land. */
-export function setTextTokenDescriptionForeground2Peers(next: TextTokenDescriptionForeground2Peers): void {
+export function setTextTokenDescriptionForeground2Peers(
+  next: TextTokenDescriptionForeground2Peers,
+): void {
   peers = next;
 }
 
@@ -30,6 +32,10 @@ export function textTokenDescriptionForeground2() {
   }
 
   return peers.e(() => {
-    eHl = peers.c(), peers.sd(), tHl = peers.r(peers.o(), 1), peers.$m(), nHl = peers.J();
+    ((eHl = peers.c()),
+      peers.sd(),
+      (tHl = peers.r(peers.o(), 1)),
+      peers.$m(),
+      (nHl = peers.J()));
   });
 }

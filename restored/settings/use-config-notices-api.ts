@@ -11,7 +11,9 @@ export type UseConfigNoticesApiPeers = {
 let peers: UseConfigNoticesApiPeers | null = null;
 
 /** Wire useConfigNoticesApi peers once companions land. */
-export function setUseConfigNoticesApiPeers(next: UseConfigNoticesApiPeers): void {
+export function setUseConfigNoticesApiPeers(
+  next: UseConfigNoticesApiPeers,
+): void {
   peers = next;
 }
 

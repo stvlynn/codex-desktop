@@ -34,6 +34,14 @@ export function statusTone() {
   }
 
   return peers.e(() => {
-    kWc = peers.c(), peers.af(), AWc = peers.r(peers.o(), 1), peers.Nk(), peers._4(), peers.d4(), peers.K1(), peers.DWc(), jWc = peers.J();
+    ((kWc = peers.c()),
+      peers.af(),
+      (AWc = peers.r(peers.o(), 1)),
+      peers.Nk(),
+      peers._4(),
+      peers.d4(),
+      peers.K1(),
+      peers.DWc(),
+      (jWc = peers.J()));
   });
 }

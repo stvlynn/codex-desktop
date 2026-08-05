@@ -10,7 +10,11 @@ export type ParseUrlOptions = {
 };
 
 /** Parse a URL string with optional www→http and encoding recovery. */
-export function parseUrlWithOptions(value: string | null | undefined, base: string | null = null, options: ParseUrlOptions | null = null): URL | null {
+export function parseUrlWithOptions(
+  value: string | null | undefined,
+  base: string | null = null,
+  options: ParseUrlOptions | null = null,
+): URL | null {
   if (!value) return null;
   let input = value;
   if (options && typeof input === "string") {

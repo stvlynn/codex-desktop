@@ -29,7 +29,9 @@ export type BindSkipNativeModalAlwaysPeers = {
 let peers: BindSkipNativeModalAlwaysPeers | null = null;
 
 /** Wire bindSkipNativeModalAlways peers once companions land. */
-export function setBindSkipNativeModalAlwaysPeers(next: BindSkipNativeModalAlwaysPeers): void {
+export function setBindSkipNativeModalAlwaysPeers(
+  next: BindSkipNativeModalAlwaysPeers,
+): void {
   peers = next;
 }
 
@@ -42,6 +44,25 @@ export function bindSkipNativeModalAlways() {
   }
 
   return peers.e(() => {
-    HTs = peers.c(), peers.Hb(), peers.Ho(), peers.xM(), peers.fb(), peers.Gk(), peers.Kb(), peers.ed(), peers.Fh(), peers.zws(), peers.Wh(), peers.dTs(), peers.pTs(), peers.LTs(), peers.oQ(), UTs = `1721641661`, WTs = 2e3, GTs = `1112993408`, KTs = `skip_native_modal_always`, qTs = `skip_native_modal_if_no_auto_reload`;
+    ((HTs = peers.c()),
+      peers.Hb(),
+      peers.Ho(),
+      peers.xM(),
+      peers.fb(),
+      peers.Gk(),
+      peers.Kb(),
+      peers.ed(),
+      peers.Fh(),
+      peers.zws(),
+      peers.Wh(),
+      peers.dTs(),
+      peers.pTs(),
+      peers.LTs(),
+      peers.oQ(),
+      (UTs = `1721641661`),
+      (WTs = 2e3),
+      (GTs = `1112993408`),
+      (KTs = `skip_native_modal_always`),
+      (qTs = `skip_native_modal_if_no_auto_reload`));
   });
 }

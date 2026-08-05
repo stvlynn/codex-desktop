@@ -9,7 +9,9 @@ export type BindBindGitOriginsPeers = {
 let peers: BindBindGitOriginsPeers | null = null;
 
 /** Wire bindBindGitOrigins peers once companions land. */
-export function setBindBindGitOriginsPeers(next: BindBindGitOriginsPeers): void {
+export function setBindBindGitOriginsPeers(
+  next: BindBindGitOriginsPeers,
+): void {
   peers = next;
 }
 

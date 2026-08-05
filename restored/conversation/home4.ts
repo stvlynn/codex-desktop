@@ -56,91 +56,100 @@ export function bindHome4() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.Au(), peers.DD(), peers.eE(), peers.RM(), peers.oT(), peers.gT(), peers.OE(), pFi = peers.Ma(peers.hT, ({
-      get: e,
-      scope: t
-    }) => {
-      switch (t.value.routeKind) {
-        case `home`:
-        case `new-thread-panel`:
-          {
-            let n = t.value.routeKind !== `home` || t.value.projectContext == null ? null : peers.fFi({
-                defaultHostId: peers.e(peers.wD, null),
-                hostId: t.value.projectContext.hostId,
-                localProjects: peers.e(peers.t5n),
-                projectId: t.value.projectContext.projectId,
-                remoteProjects: peers.e(peers.$8n)
-              }),
+    (peers.Ho(),
+      peers.Au(),
+      peers.DD(),
+      peers.eE(),
+      peers.RM(),
+      peers.oT(),
+      peers.gT(),
+      peers.OE(),
+      (pFi = peers.Ma(peers.hT, ({ get: e, scope: t }) => {
+        switch (t.value.routeKind) {
+          case `home`:
+          case `new-thread-panel`: {
+            let n =
+                t.value.routeKind !== `home` || t.value.projectContext == null
+                  ? null
+                  : peers.fFi({
+                      defaultHostId: peers.e(peers.wD, null),
+                      hostId: t.value.projectContext.hostId,
+                      localProjects: peers.e(peers.t5n),
+                      projectId: t.value.projectContext.projectId,
+                      remoteProjects: peers.e(peers.$8n),
+                    }),
               r = peers.e(peers.wD, null),
-              {
-                cwd: i,
-                hostId: a
-              } = peers.gYr({
+              { cwd: i, hostId: a } = peers.gYr({
                 activeLocalProjectCwd: peers.e(peers.CE),
                 conversationCwd: null,
                 conversationHostId: null,
-                selectedRemoteProject: peers.e(peers.r5n)
+                selectedRemoteProject: peers.e(peers.r5n),
               });
             return {
               cwd: n?.cwd ?? i,
-              hostId: n?.hostId ?? (a || r)
+              hostId: n?.hostId ?? (a || r),
             };
           }
-        case `client-local-thread`:
-          return {
-            cwd: peers.e(peers.tYn) ?? peers.e(peers.CE) ?? null,
-            hostId: peers.e(peers.wD, null)
-          };
-        case `local-thread`:
-          {
-            let n = peers.e(peers.EE)?.[t.value.conversationId],
-              r = t.value.projectContext == null ? null : peers.fFi({
-                defaultHostId: peers.e(peers.wD, null),
-                hostId: t.value.projectContext.hostId,
-                localProjects: peers.e(peers.t5n),
-                projectId: t.value.projectContext.projectId,
-                remoteProjects: peers.e(peers.$8n)
-              });
+          case `client-local-thread`:
             return {
-              cwd: r?.cwd ?? peers.ku({
-                assignment: n,
-                cwd: peers.e(peers.oD, t.value.conversationId)
-              }) ?? peers.e(peers.CE),
-              hostId: r?.hostId ?? (n == null ? null : peers.PDe(n)) ?? peers.e(peers.rD, t.value.conversationId) ?? peers.e(peers.wD, t.value.conversationId)
+              cwd: peers.e(peers.tYn) ?? peers.e(peers.CE) ?? null,
+              hostId: peers.e(peers.wD, null),
+            };
+          case `local-thread`: {
+            let n = peers.e(peers.EE)?.[t.value.conversationId],
+              r =
+                t.value.projectContext == null
+                  ? null
+                  : peers.fFi({
+                      defaultHostId: peers.e(peers.wD, null),
+                      hostId: t.value.projectContext.hostId,
+                      localProjects: peers.e(peers.t5n),
+                      projectId: t.value.projectContext.projectId,
+                      remoteProjects: peers.e(peers.$8n),
+                    });
+            return {
+              cwd:
+                r?.cwd ??
+                peers.ku({
+                  assignment: n,
+                  cwd: peers.e(peers.oD, t.value.conversationId),
+                }) ??
+                peers.e(peers.CE),
+              hostId:
+                r?.hostId ??
+                (n == null ? null : peers.PDe(n)) ??
+                peers.e(peers.rD, t.value.conversationId) ??
+                peers.e(peers.wD, t.value.conversationId),
             };
           }
-        case `remote-thread`:
-        case `chatgpt-thread`:
-          return {
-            cwd: null,
-            hostId: peers.e(peers.wD, null)
-          };
-        case `other`:
-          throw Error(`Thread context is unavailable for non-thread routes`);
-      }
-    }), mFi = peers.Ma(peers.hT, ({
-      get: e,
-      scope: t
-    }) => {
-      switch (t.value.routeKind) {
-        case `home`:
-        case `new-thread-panel`:
-        case `client-local-thread`:
-        case `local-thread`:
-        case `remote-thread`:
-        case `chatgpt-thread`:
-          return peers.e(peers.J8n).data?.codexHome ?? null;
-        case `other`:
-          throw Error(`Thread context is unavailable for non-thread routes`);
-      }
-    }), DI = peers.Ma(peers.hT, ({
-      get: e
-    }) => peers.e(peers.pFi).cwd), OI = peers.Ma(peers.hT, ({
-      get: e
-    }) => peers.e(peers.pFi).hostId), kI = peers.Ma(peers.hT, ({
-      get: e
-    }) => peers.e(peers.DE, peers.e(peers.OI))), AI = peers.Ma(peers.hT, ({
-      get: e
-    }) => peers.$T(peers.e(peers.kI)));
+          case `remote-thread`:
+          case `chatgpt-thread`:
+            return {
+              cwd: null,
+              hostId: peers.e(peers.wD, null),
+            };
+          case `other`:
+            throw Error(`Thread context is unavailable for non-thread routes`);
+        }
+      })),
+      (mFi = peers.Ma(peers.hT, ({ get: e, scope: t }) => {
+        switch (t.value.routeKind) {
+          case `home`:
+          case `new-thread-panel`:
+          case `client-local-thread`:
+          case `local-thread`:
+          case `remote-thread`:
+          case `chatgpt-thread`:
+            return peers.e(peers.J8n).data?.codexHome ?? null;
+          case `other`:
+            throw Error(`Thread context is unavailable for non-thread routes`);
+        }
+      })),
+      (DI = peers.Ma(peers.hT, ({ get: e }) => peers.e(peers.pFi).cwd)),
+      (OI = peers.Ma(peers.hT, ({ get: e }) => peers.e(peers.pFi).hostId)),
+      (kI = peers.Ma(peers.hT, ({ get: e }) =>
+        peers.e(peers.DE, peers.e(peers.OI)),
+      )),
+      (AI = peers.Ma(peers.hT, ({ get: e }) => peers.$T(peers.e(peers.kI)))));
   });
 }

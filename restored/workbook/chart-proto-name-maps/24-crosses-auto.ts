@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Tn,
-} from "../presentation-protobuf";
+import { Tn } from "../presentation-protobuf";
 
 export const crossesAutoNameToProto = {
   autoZero: Tn.CROSSES_AUTO_ZERO,

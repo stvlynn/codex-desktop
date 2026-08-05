@@ -19,7 +19,9 @@ export type UseToggleMcpServerEnabledMutationPeers = {
 let peers: UseToggleMcpServerEnabledMutationPeers | null = null;
 
 /** Wire useToggleMcpServerEnabledMutation peers once companions land. */
-export function setUseToggleMcpServerEnabledMutationPeers(next: UseToggleMcpServerEnabledMutationPeers): void {
+export function setUseToggleMcpServerEnabledMutationPeers(
+  next: UseToggleMcpServerEnabledMutationPeers,
+): void {
   peers = next;
 }
 

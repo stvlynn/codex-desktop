@@ -25,6 +25,6 @@ export function Windows() {
     throw new Error("Windows peers are not configured");
   }
   return peers.e(() => {
-    Una = peers.c(), peers.dk(), peers.Uf(), peers.ap();
+    ((Una = peers.c()), peers.dk(), peers.Uf(), peers.ap());
   });
 }

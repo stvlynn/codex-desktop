@@ -38,16 +38,22 @@ export const etlH: ElementTextLayoutBoundaryHooks = {
       .SHAPE_GEOMETRY_UNSPECIFIED;
   },
   getFontMeasureContext: __call("../../font-metrics", "getFontMeasureContext"),
-  resolvePlaceholderTextStyle: __call("../../text-style",
+  resolvePlaceholderTextStyle: __call(
+    "../../text-style",
     "resolvePlaceholderTextStyle",
   ),
-  resolveMasterTextStyle: __call("../../text-box",
+  resolveMasterTextStyle: __call(
+    "../../text-box",
     "resolveMasterParagraphDefaults",
   ),
-  resolveElementFramePx: __call("../../geometry-transform",
+  resolveElementFramePx: __call(
+    "../../geometry-transform",
     "resolveElementFramePx",
   ),
-  computeTextBoxInset: __call("../../preset-shape", "resolveShapeTextFrameRect"),
+  computeTextBoxInset: __call(
+    "../../preset-shape",
+    "resolveShapeTextFrameRect",
+  ),
   layoutElementText: __call("../../text-box", "paintTextElement"),
 };
 

@@ -9,12 +9,15 @@ export type ToggleThreadSidePanelPeers = {
   qGi: (...args: unknown[]) => unknown;
   s1o: (...args: unknown[]) => unknown;
 
-  eO: any;};
+  eO: any;
+};
 
 let peers: ToggleThreadSidePanelPeers | null = null;
 
 /** Wire toggleThreadSidePanel peers once companions land. */
-export function setToggleThreadSidePanelPeers(next: ToggleThreadSidePanelPeers): void {
+export function setToggleThreadSidePanelPeers(
+  next: ToggleThreadSidePanelPeers,
+): void {
   peers = next;
 }
 
@@ -27,16 +30,18 @@ export function toggleThreadSidePanel(e: unknown, t: unknown) {
   }
   let n = e.get(peers.ZD);
   if (!(t ?? !n)) {
-    n && peers.gwo(e, peers.s1o(e)), peers.JGi(e);
+    (n && peers.gwo(e, peers.s1o(e)), peers.JGi(e));
     return;
   }
   if (e.get(peers.eO.tabs$).length === 0) {
-    peers.qGi(e, {
-      allowEmpty: !0
-    }), peers.c1o(e, n);
+    (peers.qGi(e, {
+      allowEmpty: !0,
+    }),
+      peers.c1o(e, n));
     return;
   }
-  peers.qGi(e, {
-    activateFallbackTab: !0
-  }), peers.c1o(e, n);
+  (peers.qGi(e, {
+    activateFallbackTab: !0,
+  }),
+    peers.c1o(e, n));
 }

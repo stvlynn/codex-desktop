@@ -24,7 +24,9 @@ export type BindBindUnarchivedConversationLoadErrorPeers = {
 let peers: BindBindUnarchivedConversationLoadErrorPeers | null = null;
 
 /** Wire bindBindUnarchivedConversationLoadError peers once companions land. */
-export function setBindBindUnarchivedConversationLoadErrorPeers(next: BindBindUnarchivedConversationLoadErrorPeers): void {
+export function setBindBindUnarchivedConversationLoadErrorPeers(
+  next: BindBindUnarchivedConversationLoadErrorPeers,
+): void {
   peers = next;
 }
 
@@ -33,18 +35,35 @@ export function setBindBindUnarchivedConversationLoadErrorPeers(next: BindBindUn
  */
 export function bindBindUnarchivedConversationLoadError() {
   if (peers == null) {
-    throw new Error("bindBindUnarchivedConversationLoadError peers are not configured");
+    throw new Error(
+      "bindBindUnarchivedConversationLoadError peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    xnn = peers.r(peers.cu(), 1), peers.Au(), peers.Sl(), peers.dg(), peers.lnn(), peers.Gf(), peers.pg(), Snn = class extends Error {
-      constructor(e) {
-        super(`Unarchived conversation ${peers.e} could not be loaded`), this.name = `UnarchivedConversationLoadError`;
-      }
-    }, Cnn = peers.sl({
-      message: peers.X()
-    }).passthrough(), wnn = peers.sl({
-      error: peers.Cnn
-    }).passthrough(), Tnn = new Map();
+    ((xnn = peers.r(peers.cu(), 1)),
+      peers.Au(),
+      peers.Sl(),
+      peers.dg(),
+      peers.lnn(),
+      peers.Gf(),
+      peers.pg(),
+      (Snn = class extends Error {
+        constructor(e) {
+          (super(`Unarchived conversation ${peers.e} could not be loaded`),
+            (this.name = `UnarchivedConversationLoadError`));
+        }
+      }),
+      (Cnn = peers
+        .sl({
+          message: peers.X(),
+        })
+        .passthrough()),
+      (wnn = peers
+        .sl({
+          error: peers.Cnn,
+        })
+        .passthrough()),
+      (Tnn = new Map()));
   });
 }

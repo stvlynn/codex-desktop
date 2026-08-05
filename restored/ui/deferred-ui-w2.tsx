@@ -11,7 +11,9 @@ export type BindBindDeferredUiW2Peers = {
 let peers: BindBindDeferredUiW2Peers | null = null;
 
 /** Wire bindBindDeferredUiW2 peers once companions land. */
-export function setBindBindDeferredUiW2Peers(next: BindBindDeferredUiW2Peers): void {
+export function setBindBindDeferredUiW2Peers(
+  next: BindBindDeferredUiW2Peers,
+): void {
   peers = next;
 }
 
@@ -24,19 +26,20 @@ export function bindBindDeferredUiW2() {
   }
 
   return peers.Ta(peers.Q, null, {
-    onMount: (e, t) => t.watch(({
-      get: t
-    }) => {
-      let n = t(peers.nD).map(t => t.addMcpLoginCallback(n => {
-        e(e => ({
-          ...n,
-          eventId: (e?.eventId ?? -1) + 1,
-          hostId: t.getHostId()
-        }));
-      }));
-      return () => {
-        for (let e of n) e();
-      };
-    })
+    onMount: (e, t) =>
+      t.watch(({ get: t }) => {
+        let n = t(peers.nD).map((t) =>
+          t.addMcpLoginCallback((n) => {
+            e((e) => ({
+              ...n,
+              eventId: (e?.eventId ?? -1) + 1,
+              hostId: t.getHostId(),
+            }));
+          }),
+        );
+        return () => {
+          for (let e of n) e();
+        };
+      }),
   });
 }

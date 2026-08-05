@@ -19,10 +19,25 @@ import { CODEX_MEMORY_SETTING_TOGGLED_TYPE } from "../../analytics/codex-memory-
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { chatgptConversationsGateAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
 import { composerNavigation } from "../../composer/composer-navigation";
@@ -51,7 +66,10 @@ import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { PanelWidthIcon } from "../../icons/panel-width-icon";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { resolveBrowserTabPanelSide as ResolveBrowserTabPanelSide } from "../../navigation/resolve-browser-tab-panel-side";
@@ -64,7 +82,10 @@ import { codexCommandTheme } from "../../ui/codex-command-theme";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -73,20 +94,34 @@ import { identity } from "../../utils/identity";
 import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { posixPathBasename } from "../../utils/posix-path-basename";
-import { ensurePersonalizationCInit as EnsurePersonalizationCInit, ensurePersonalizationG0Init, ensurePersonalizationJutInit, ensurePersonalizationK0Init, ensurePersonalizationM6Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+  ensurePersonalizationG0Init,
+  ensurePersonalizationJutInit,
+  ensurePersonalizationK0Init,
+  ensurePersonalizationM6Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { buildMemoryFeatureFlags } from "../build-memory-feature-flags";
-import { ensureChronicleConfigQueriesInit, useChronicleConfigQuery } from "../chronicle-config-queries";
+import {
+  ensureChronicleConfigQueriesInit,
+  useChronicleConfigQuery,
+} from "../chronicle-config-queries";
 import { gpuTearingDebugSettingsAtom } from "../gpu-tearing-debug-settings";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { buildVscodeQueryKey } from "../vscode-query-key";
 
 // Wave5d soft JSX companions.
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -156,136 +191,194 @@ const useChromeAndCodeThemeSync: any = undefined;
 function bloom() {
   let glide = useIntl(),
     honey = NativeContextMenuSurface("1444479692"),
-    {
-      selectedHostId
-    } = useSelectedHost(),
+    { selectedHostId } = useSelectedHost(),
     iris = {
-      hostId: selectedHostId
+      hostId: selectedHostId,
     };
-  let {
-      personality,
-      setPersonality
-    } = deferredUiE(iris),
+  let { personality, setPersonality } = deferredUiE(iris),
     jewel = glide.formatMessage(zephyr.friendly);
   let knoll = glide.formatMessage({
     id: "composer.personalitySlashCommand.description.friendly",
     defaultMessage: "Warm, collaborative, and helpful",
-    description: "Description for the friendly personality option"
+    description: "Description for the friendly personality option",
   });
   let lunar = {
     value: "friendly",
     label: jewel,
-    description: knoll
+    description: knoll,
   };
   let moss = glide.formatMessage(zephyr.pragmatic);
   let north = glide.formatMessage({
     id: "composer.personalitySlashCommand.description.pragmatic",
     defaultMessage: "Concise, task-focused, and direct",
-    description: "Description for the pragmatic personality option"
+    description: "Description for the pragmatic personality option",
   });
   let orbit = {
     value: "pragmatic",
     label: moss,
-    description: north
+    description: north,
   };
   let pine = [lunar, orbit];
   let quest = pine,
-    ridge = quest.find(item => item.value === personality) ?? quest[0];
+    ridge = quest.find((item) => item.value === personality) ?? quest[0];
   let storm = ridge,
-    tide = honey ? <UseChromeAndCodeThemeSync {...{
-      children: <UseChromeAndCodeThemeSync.Content {...{
-        children: [<ResolveBrowserTabPanelSide {...{
-          content: <MemoizedFormattedMessage {...{
-            id: "settings.personalization.personality.modelSupportNotice",
-            defaultMessage: "Personality settings are not supported by every model. Codex's tone can be customized in Custom instructions.",
-            description: "Notice explaining that availability of personality settings vary by model and custom instructions can control tone"
-          }} />,
-          Icon: applyActive,
-          type: "warning"
-        }} />, <ParseUrlOrFallback {...{
-          children: <EnsurePersonalizationCInit {...{
-            label: <MemoizedFormattedMessage {...{
-              ...zephyr.personality
-            }} />,
-            description: <MemoizedFormattedMessage {...{
-              id: "settings.personalization.personality.description",
-              defaultMessage: "Choose a default tone for ChatGPT responses",
-              description: "Description for personality selection in personalization settings"
-            }} />,
-            control: <DropdownMenuPopover {...{
-              triggerButton: <DropdownTriggerButton>
+    tide = honey ? (
+      <UseChromeAndCodeThemeSync
+        {...{
+          children: (
+            <UseChromeAndCodeThemeSync.Content
+              {...{
+                children: [
+                  <ResolveBrowserTabPanelSide
+                    {...{
+                      content: (
+                        <MemoizedFormattedMessage
+                          {...{
+                            id: "settings.personalization.personality.modelSupportNotice",
+                            defaultMessage:
+                              "Personality settings are not supported by every model. Codex's tone can be customized in Custom instructions.",
+                            description:
+                              "Notice explaining that availability of personality settings vary by model and custom instructions can control tone",
+                          }}
+                        />
+                      ),
+                      Icon: applyActive,
+                      type: "warning",
+                    }}
+                  />,
+                  <ParseUrlOrFallback
+                    {...{
+                      children: (
+                        <EnsurePersonalizationCInit
+                          {...{
+                            label: (
+                              <MemoizedFormattedMessage
+                                {...{
+                                  ...zephyr.personality,
+                                }}
+                              />
+                            ),
+                            description: (
+                              <MemoizedFormattedMessage
+                                {...{
+                                  id: "settings.personalization.personality.description",
+                                  defaultMessage:
+                                    "Choose a default tone for ChatGPT responses",
+                                  description:
+                                    "Description for personality selection in personalization settings",
+                                }}
+                              />
+                            ),
+                            control: (
+                              <DropdownMenuPopover
+                                {...{
+                                  triggerButton: (
+                                    <DropdownTriggerButton>
                                       <span className="flex items-center gap-1.5">
                                         {storm.label}
                                       </span>
-                                    </DropdownTriggerButton>,
-              align: "end",
-              children: <div className="w-[260px] max-w-xs space-y-1">
-                                      {quest.map(item => <DropdownMenu.Item key={item.value} {...{
-                  onSelect: () => {
-                    setPersonality(item.value);
-                  },
-                  RightIcon: personality === item.value ? AppIconZlt : undefined,
-                  children: <div className="flex flex-col items-start gap-0.5">
-                                                  <span className="text-sm">
-                                                    {item.label}
-                                                  </span>
-                                                  <span className="text-xs text-token-text-secondary">
-                                                    {item.description}
-                                                  </span>
-                                                </div>
-                }} />)}
+                                    </DropdownTriggerButton>
+                                  ),
+                                  align: "end",
+                                  children: (
+                                    <div className="w-[260px] max-w-xs space-y-1">
+                                      {quest.map((item) => (
+                                        <DropdownMenu.Item
+                                          key={item.value}
+                                          {...{
+                                            onSelect: () => {
+                                              setPersonality(item.value);
+                                            },
+                                            RightIcon:
+                                              personality === item.value
+                                                ? AppIconZlt
+                                                : undefined,
+                                            children: (
+                                              <div className="flex flex-col items-start gap-0.5">
+                                                <span className="text-sm">
+                                                  {item.label}
+                                                </span>
+                                                <span className="text-xs text-token-text-secondary">
+                                                  {item.description}
+                                                </span>
+                                              </div>
+                                            ),
+                                          }}
+                                        />
+                                      ))}
                                     </div>
-            }} />
-          }} />
-        }} />]
-      }} />
-    }} /> : null;
-  let unity = <PersonalizationSettingsHelper28 key={selectedHostId} {...{
-    hostId: selectedHostId
-  }} />;
-  return <>
+                                  ),
+                                }}
+                              />
+                            ),
+                          }}
+                        />
+                      ),
+                    }}
+                  />,
+                ],
+              }}
+            />
+          ),
+        }}
+      />
+    ) : null;
+  let unity = (
+    <PersonalizationSettingsHelper28
+      key={selectedHostId}
+      {...{
+        hostId: selectedHostId,
+      }}
+    />
+  );
+  return (
+    <>
       {tide}
       {unity}
-    </>;
+    </>
+  );
 }
 function coral(vale) {
-  let {
-      hostId
-    } = vale,
+  let { hostId } = vale,
     wave = CodexPluginActionType(appScopeAtom),
     apex = useIntl(),
     brook = useQueryClient(),
     [cliff, dusk] = frost.useState(null),
-    {
-      data,
-      error,
-      isFetching,
-      refetch
-    } = CodexBrowserSurfaceActionType(alpha, hostId),
+    { data, error, isFetching, refetch } = CodexBrowserSurfaceActionType(
+      alpha,
+      hostId,
+    ),
     elm = (haven, ink) => {
-      brook.setQueryData(buildVscodeQueryKey("codex-agents-md", {
-        hostId: ink.hostId
-      }), {
-        path: haven.path,
-        contents: ink.contents
-      });
+      brook.setQueryData(
+        buildVscodeQueryKey("codex-agents-md", {
+          hostId: ink.hostId,
+        }),
+        {
+          path: haven.path,
+          contents: ink.contents,
+        },
+      );
       dusk(null);
-      wave.get(toastAtom).success(apex.formatMessage({
-        id: "settings.personalization.agents.save.success",
-        defaultMessage: "Saved agents.md",
-        description: "Toast shown when agents.md is saved"
-      }));
+      wave.get(toastAtom).success(
+        apex.formatMessage({
+          id: "settings.personalization.agents.save.success",
+          defaultMessage: "Saved agents.md",
+          description: "Toast shown when agents.md is saved",
+        }),
+      );
     };
   let fern = () => {
-    wave.get(toastAtom).danger(apex.formatMessage({
-      id: "settings.personalization.agents.save.error",
-      defaultMessage: "Unable to save agents.md",
-      description: "Toast shown when agents.md save fails"
-    }));
+    wave.get(toastAtom).danger(
+      apex.formatMessage({
+        id: "settings.personalization.agents.save.error",
+        defaultMessage: "Unable to save agents.md",
+        description: "Toast shown when agents.md save fails",
+      }),
+    );
   };
   let grove = {
     onSuccess: elm,
-    onError: fern
+    onError: fern,
   };
   let hill = applyU0000U001FU007F2("codex-agents-md-save", grove),
     isle = data?.contents ?? "",
@@ -296,14 +389,17 @@ function coral(vale) {
     oak = hill.isPending,
     petal = error != null && data == null,
     quiet = () => {
-      !meadow || !lagoon || oak || hill.mutate({
-        hostId,
-        contents: juniper
-      });
+      !meadow ||
+        !lagoon ||
+        oak ||
+        hill.mutate({
+          hostId,
+          contents: juniper,
+        });
     };
   let rain = quiet,
     seed = meadow && lagoon && !oak,
-    trail = event => {
+    trail = (event) => {
       event.preventDefault();
       rain();
     };
@@ -311,92 +407,165 @@ function coral(vale) {
   urn = {
     accelerator: "CmdOrCtrl+S",
     enabled: seed,
-    onKeyDown: trail
+    onKeyDown: trail,
   };
   PanelWidthIcon(urn);
   let vine = apex.formatMessage({
     id: "settings.personalization.agents.placeholder",
     defaultMessage: "Add your custom instructions…",
-    description: "Placeholder text for personal agents editor"
+    description: "Placeholder text for personal agents editor",
   });
   let wind = vine,
     yarrow = apex.formatMessage(zephyr.customInstructions);
   let azure = yarrow,
-    birch = <MemoizedFormattedMessage {...{
-      ...zephyr.customInstructions
-    }} />;
-  let canyon = <MemoizedFormattedMessage {...{
-    id: "settings.personalization.agents.description",
-    defaultMessage: "Give ChatGPT extra instructions and context for all chats on this host. <a>Learn more</a>",
-    description: "Description for personal agents settings section",
-    values: {
-      a: drift
-    }
-  }} />;
-  let dew = !lagoon || !meadow,
-    ever = <MemoizedFormattedMessage {...{
-      id: "settings.personalization.agents.save",
-      defaultMessage: "Save",
-      description: "Save button label for personal agents editor"
-    }} />;
-  let field = <UseChromeAndCodeThemeSync.Header {...{
-    title: birch,
-    subtitle: canyon,
-    actions: <ReadLoginRouteQuerySnapshot {...{
-      color: "secondary",
-      disabled: dew,
-      loading: oak,
-      onClick: rain,
-      size: "toolbar",
-      children: ever
-    }} />
-  }} />;
-  let grain = <UseChromeAndCodeThemeSync.Content {...{
-    children: petal ? <div className="flex items-center justify-between gap-3">
-            <div className="text-sm text-token-text-secondary">
-              {<MemoizedFormattedMessage {...{
-          id: "settings.personalization.agents.loadError",
-          defaultMessage: "Unable to load agents.md.",
-          description: "Error message shown when agents.md fails to load"
-        }} />}
-            </div>
-            {<ReadLoginRouteQuerySnapshot {...{
-        className: "shrink-0",
-        color: "secondary",
-        onClick: () => {
-          refetch();
+    birch = (
+      <MemoizedFormattedMessage
+        {...{
+          ...zephyr.customInstructions,
+        }}
+      />
+    );
+  let canyon = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.personalization.agents.description",
+        defaultMessage:
+          "Give ChatGPT extra instructions and context for all chats on this host. <a>Learn more</a>",
+        description: "Description for personal agents settings section",
+        values: {
+          a: drift,
         },
-        size: "toolbar",
-        children: <MemoizedFormattedMessage {...{
-          id: "settings.personalization.agents.retry",
-          defaultMessage: "Retry",
-          description: "Button label to retry loading agents.md"
-        }} />
-      }} />}
-          </div> : <div className="flex flex-col gap-3">
-            {nest ? <div className="flex items-center gap-2 text-sm text-token-text-secondary">
-                {<VSCODE_EDITOR_ID {...{
-          className: "icon-xs"
-        }} />}
-                {<MemoizedFormattedMessage {...{
-          id: "settings.personalization.agents.loading",
-          defaultMessage: "Loading agents.md…",
-          description: "Loading label for agents.md editor"
-        }} />}
-              </div> : <textarea aria-label={azure} id="personal-agents-editor" className="min-h-[160px] w-full resize-y rounded-xl border border-token-border bg-token-input-background px-3 py-2 text-base text-token-input-foreground shadow-sm outline-none focus:ring-1 focus:ring-token-focus-border" disabled={!meadow || oak} placeholder={wind} value={juniper} onChange={event => {
-        let jadeite = event.target.value;
-        dusk(jadeite === isle ? null : jadeite);
-      }} />}
+      }}
+    />
+  );
+  let dew = !lagoon || !meadow,
+    ever = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.personalization.agents.save",
+          defaultMessage: "Save",
+          description: "Save button label for personal agents editor",
+        }}
+      />
+    );
+  let field = (
+    <UseChromeAndCodeThemeSync.Header
+      {...{
+        title: birch,
+        subtitle: canyon,
+        actions: (
+          <ReadLoginRouteQuerySnapshot
+            {...{
+              color: "secondary",
+              disabled: dew,
+              loading: oak,
+              onClick: rain,
+              size: "toolbar",
+              children: ever,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let grain = (
+    <UseChromeAndCodeThemeSync.Content
+      {...{
+        children: petal ? (
+          <div className="flex items-center justify-between gap-3">
+            <div className="text-sm text-token-text-secondary">
+              {
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "settings.personalization.agents.loadError",
+                    defaultMessage: "Unable to load agents.md.",
+                    description:
+                      "Error message shown when agents.md fails to load",
+                  }}
+                />
+              }
+            </div>
+            {
+              <ReadLoginRouteQuerySnapshot
+                {...{
+                  className: "shrink-0",
+                  color: "secondary",
+                  onClick: () => {
+                    refetch();
+                  },
+                  size: "toolbar",
+                  children: (
+                    <MemoizedFormattedMessage
+                      {...{
+                        id: "settings.personalization.agents.retry",
+                        defaultMessage: "Retry",
+                        description: "Button label to retry loading agents.md",
+                      }}
+                    />
+                  ),
+                }}
+              />
+            }
           </div>
-  }} />;
-  return <UseChromeAndCodeThemeSync {...{
-    children: [field, grain]
-  }} />;
+        ) : (
+          <div className="flex flex-col gap-3">
+            {nest ? (
+              <div className="flex items-center gap-2 text-sm text-token-text-secondary">
+                {
+                  <VSCODE_EDITOR_ID
+                    {...{
+                      className: "icon-xs",
+                    }}
+                  />
+                }
+                {
+                  <MemoizedFormattedMessage
+                    {...{
+                      id: "settings.personalization.agents.loading",
+                      defaultMessage: "Loading agents.md…",
+                      description: "Loading label for agents.md editor",
+                    }}
+                  />
+                }
+              </div>
+            ) : (
+              <textarea
+                aria-label={azure}
+                id="personal-agents-editor"
+                className="min-h-[160px] w-full resize-y rounded-xl border border-token-border bg-token-input-background px-3 py-2 text-base text-token-input-foreground shadow-sm outline-none focus:ring-1 focus:ring-token-focus-border"
+                disabled={!meadow || oak}
+                placeholder={wind}
+                value={juniper}
+                onChange={(event) => {
+                  let jadeite = event.target.value;
+                  dusk(jadeite === isle ? null : jadeite);
+                }}
+              />
+            )}
+          </div>
+        ),
+      }}
+    />
+  );
+  return (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [field, grain],
+      }}
+    />
+  );
 }
 function drift(kernel) {
-  return <a className="inline-flex text-token-text-link-foreground" href={DEVELOPERS_OPENAI_COM_CODEX_GUIDES_AGENTS_MD_URL} target="_blank" rel="noreferrer">
+  return (
+    <a
+      className="inline-flex text-token-text-link-foreground"
+      href={DEVELOPERS_OPENAI_COM_CODEX_GUIDES_AGENTS_MD_URL}
+      target="_blank"
+      rel="noreferrer"
+    >
       {kernel}
-    </a>;
+    </a>
+  );
 }
 var eagle, frost, $;
 esmInit(() => {

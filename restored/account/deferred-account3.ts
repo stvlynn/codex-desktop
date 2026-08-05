@@ -7,7 +7,10 @@ export type DeferredAccount3Peers = {
   Xf: (...args: unknown[]) => unknown;
   e: (...args: unknown[]) => unknown;
   Hf: { ONE_MINUTE: number; FIVE_MINUTES?: number; [k: string]: unknown };
-  Uh: { safeGet: (...args: unknown[]) => Promise<unknown>; [k: string]: unknown };
+  Uh: {
+    safeGet: (...args: unknown[]) => Promise<unknown>;
+    [k: string]: unknown;
+  };
 };
 
 let peers: DeferredAccount3Peers | null = null;
@@ -30,7 +33,13 @@ export function deferredAccount3() {
       try {
         return await peers.Uh.safeGet(`/wham/usage`);
       } catch (e) {
-        if (peers.e instanceof peers.Xf && (peers.e.status === 401 || peers.e.status === 403 || peers.e.status === 404)) return null;
+        if (
+          peers.e instanceof peers.Xf &&
+          (peers.e.status === 401 ||
+            peers.e.status === 403 ||
+            peers.e.status === 404)
+        )
+          return null;
         throw peers.e;
       }
     },
@@ -38,6 +47,6 @@ export function deferredAccount3() {
     refetchInterval: peers.Hf.ONE_MINUTE,
     refetchIntervalInBackground: !1,
     refetchOnWindowFocus: !0,
-    staleTime: peers.Hf.ONE_MINUTE
+    staleTime: peers.Hf.ONE_MINUTE,
   }));
 }

@@ -36,7 +36,12 @@ function preferredSide(
 /**
  * Bundle `eRi` / export `MU` — active browser-tab id for a conversation.
  */
-export function resolveBrowserTabPanelSide(conversationId: string, focusArea: string | null | undefined, tabs: PanelTabsBySide, open?: PanelOpenBySide | null): string | null {
+export function resolveBrowserTabPanelSide(
+  conversationId: string,
+  focusArea: string | null | undefined,
+  tabs: PanelTabsBySide,
+  open?: PanelOpenBySide | null,
+): string | null {
   const filtered: PanelTabsBySide =
     open == null
       ? tabs

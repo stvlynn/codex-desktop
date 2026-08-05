@@ -44,7 +44,8 @@ export const sgpH: ShapeGeometryPaintBoundaryHooks = {
   bh630: __call("../../bezier-stroke", "resolveLineStyleProto"),
   resolveShapeFill: (...args: any[]) => Gwe(...args),
   resolveShapeEffects: (...args: any[]) => Kwe(...args),
-  isConnectorGeometry: __call("../is-connector-geometry-impl",
+  isConnectorGeometry: __call(
+    "../is-connector-geometry-impl",
     "isConnectorGeometry",
   ),
   paintConnectorRoute: __call("../paint-connector-route-impl", "Qwe"),

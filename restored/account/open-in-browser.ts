@@ -23,7 +23,9 @@ export function openInBrowser() {
     throw new Error("openInBrowser peers are not configured");
   }
   return peers.e(() => {
-    peers.Yf(), L$l = `1728613635`, R$l = `https://chatgpt.com/gifts/credits`;
+    (peers.Yf(),
+      (L$l = `1728613635`),
+      (R$l = `https://chatgpt.com/gifts/credits`));
   });
 }
 

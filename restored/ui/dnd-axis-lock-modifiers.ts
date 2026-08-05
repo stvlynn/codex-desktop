@@ -53,7 +53,9 @@ export function restrictToVerticalAxis(args: DndModifierArgs): DndTransform {
 /**
  * Bundle export `n` — clamp the dragging node inside the first scroll ancestor.
  */
-export function restrictToFirstScrollableAncestor(args: DndModifierArgs): DndTransform {
+export function restrictToFirstScrollableAncestor(
+  args: DndModifierArgs,
+): DndTransform {
   const { draggingNodeRect, transform, scrollableAncestorRects } = args;
   const boundary = scrollableAncestorRects?.[0];
   if (!draggingNodeRect || !boundary) return transform;

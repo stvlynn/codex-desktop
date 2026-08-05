@@ -13,7 +13,9 @@ export type PullRequestsPageDetailCommentUnknownAuthorPeers = {
 let peers: PullRequestsPageDetailCommentUnknownAuthorPeers | null = null;
 
 /** Wire pullRequestsPageDetailCommentUnknownAuthor peers once companions land. */
-export function setPullRequestsPageDetailCommentUnknownAuthorPeers(next: PullRequestsPageDetailCommentUnknownAuthorPeers): void {
+export function setPullRequestsPageDetailCommentUnknownAuthorPeers(
+  next: PullRequestsPageDetailCommentUnknownAuthorPeers,
+): void {
   peers = next;
 }
 
@@ -22,10 +24,12 @@ export function setPullRequestsPageDetailCommentUnknownAuthorPeers(next: PullReq
  */
 export function pullRequestsPageDetailCommentUnknownAuthor() {
   if (peers == null) {
-    throw new Error("pullRequestsPageDetailCommentUnknownAuthor peers are not configured");
+    throw new Error(
+      "pullRequestsPageDetailCommentUnknownAuthor peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    Sza = peers.c(), peers.V9r(), Cza = peers.J();
+    ((Sza = peers.c()), peers.V9r(), (Cza = peers.J()));
   });
 }

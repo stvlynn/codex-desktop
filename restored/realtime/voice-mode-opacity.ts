@@ -5,7 +5,10 @@ export type VoiceModePhase = "inactive" | "starting" | "stopping" | "active";
 export type VoiceModeActivity = "idle" | "listening" | "thinking" | "speaking";
 
 /** Opacity triad for voice UI listen/speak/think layers. */
-export function voiceModeOpacity(phase: VoiceModePhase, activity: VoiceModeActivity): { listen: number; speak: number; think: number } | undefined {
+export function voiceModeOpacity(
+  phase: VoiceModePhase,
+  activity: VoiceModeActivity,
+): { listen: number; speak: number; think: number } | undefined {
   switch (phase) {
     case "inactive":
       return { listen: 0, speak: 0, think: 0 };

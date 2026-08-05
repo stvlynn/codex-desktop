@@ -6,13 +6,23 @@
 import { ensureAppActionPayloadSchemasInit } from "../actions/app-action-payload-schemas";
 import { CodexBrowserSurfaceActionType } from "../analytics/codex-browser-surface-action-type";
 import { ensureCodexSpriteAssetsInit } from "../assets/ensure-codex-sprite-assets-init";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init } from "../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+} from "../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../conversation/conversation-page-esm-inits";
 import { react, reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { chatgpt2 as Chatgpt2 } from "../browser/chatgpt2";
 import { ContextMenuRegistration } from "../hooks/use-context-menu-registration";
-import { ensureUseHotkeyWindowDetailLayoutInit, HotkeyWindowDetailLayoutContext } from "../hooks/use-hotkey-window-detail-layout";
-import { ensureUseHotkeyWindowDismissOnEscapeInit, useHotkeyWindowDismissOnEscape } from "../hooks/use-hotkey-window-dismiss-on-escape";
+import {
+  ensureUseHotkeyWindowDetailLayoutInit,
+  HotkeyWindowDetailLayoutContext,
+} from "../hooks/use-hotkey-window-detail-layout";
+import {
+  ensureUseHotkeyWindowDismissOnEscapeInit,
+  useHotkeyWindowDismissOnEscape,
+} from "../hooks/use-hotkey-window-dismiss-on-escape";
 import { MemoizedFormattedMessage } from "../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit, useIntl } from "../i18n/use-intl";
 import { AppIconYm } from "../icons/app-icon-ym";
@@ -47,7 +57,7 @@ function alpha(nickel) {
       onKeyUp,
       capture,
       ignoreWithin,
-      keyboardEventTarget
+      keyboardEventTarget,
     } = nickel,
     onyx = CodexBrowserSurfaceActionType(appInitialValue, commandId),
     pearl = onyx ?? "",
@@ -60,7 +70,7 @@ function alpha(nickel) {
     onKeyUp,
     capture,
     ignoreWithin,
-    keyboardEventTarget
+    keyboardEventTarget,
   };
   PanelWidthIcon(river);
 }
@@ -77,7 +87,7 @@ function HotkeyWindowDetailLayoutHelper2(slate) {
       onDismiss,
       showDismissButton = true,
       reserveWindowControlsSafeArea = false,
-      rightActions
+      rightActions,
     } = slate,
     timber = useIntl(),
     umbra = ContextMenuRegistration(),
@@ -89,94 +99,154 @@ function HotkeyWindowDetailLayoutHelper2(slate) {
     amber = yellow + 84,
     basalt = {
       left: zinc,
-      right: amber
+      right: amber,
     };
-  let cedar = <div className="absolute inset-y-0 flex items-center justify-center text-base font-medium text-token-foreground/60 select-none" style={basalt}>
+  let cedar = (
+    <div
+      className="absolute inset-y-0 flex items-center justify-center text-base font-medium text-token-foreground/60 select-none"
+      style={basalt}
+    >
       {title}
-    </div>;
-  let daisy = showDismissButton ? <div className="absolute flex items-center gap-0" style={{
-    left: xenon
-  }}>
-      {<OptionalTooltip {...{
-      tooltipContent: <MemoizedFormattedMessage {...{
-        ...harbor.dismiss
-      }} />,
-      delayOpen: true,
-      children: <ReadLoginRouteQuerySnapshot {...{
-        size: "toolbar",
-        color: "ghost",
-        "aria-label": timber.formatMessage(harbor.dismiss),
-        onClick: onDismiss,
-        children: <Chatgpt2 {...{
-          className: "icon-xs"
-        }} />
-      }} />
-    }} />}
-    </div> : null;
+    </div>
+  );
+  let daisy = showDismissButton ? (
+    <div
+      className="absolute flex items-center gap-0"
+      style={{
+        left: xenon,
+      }}
+    >
+      {
+        <OptionalTooltip
+          {...{
+            tooltipContent: (
+              <MemoizedFormattedMessage
+                {...{
+                  ...harbor.dismiss,
+                }}
+              />
+            ),
+            delayOpen: true,
+            children: (
+              <ReadLoginRouteQuerySnapshot
+                {...{
+                  size: "toolbar",
+                  color: "ghost",
+                  "aria-label": timber.formatMessage(harbor.dismiss),
+                  onClick: onDismiss,
+                  children: (
+                    <Chatgpt2
+                      {...{
+                        className: "icon-xs",
+                      }}
+                    />
+                  ),
+                }}
+              />
+            ),
+          }}
+        />
+      }
+    </div>
+  ) : null;
   let ember = {
-    right: yellow
+    right: yellow,
   };
-  let flint = <div className="absolute flex items-center gap-0" style={ember}>
+  let flint = (
+    <div className="absolute flex items-center gap-0" style={ember}>
       {rightActions}
-    </div>;
-  return <div className="draggable relative flex h-toolbar-sm items-center justify-center px-3">
+    </div>
+  );
+  return (
+    <div className="draggable relative flex h-toolbar-sm items-center justify-center px-3">
       {cedar}
       {daisy}
       {flint}
-    </div>;
+    </div>
+  );
 }
 function HotkeyWindowDetailLayoutHelper3(garnet) {
-  let {
-      title,
-      mainWindowPath,
-      canCollapseToHome = true
-    } = garnet,
+  let { title, mainWindowPath, canCollapseToHome = true } = garnet,
     hazel = useIntl(),
-    ivory = canCollapseToHome ? <OptionalTooltip {...{
-      tooltipContent: <MemoizedFormattedMessage {...{
-        ...harbor.newThread
-      }} />,
-      delayOpen: true,
-      children: <ReadLoginRouteQuerySnapshot {...{
-        size: "toolbar",
-        color: "ghost",
-        "aria-label": hazel.formatMessage(harbor.newThread),
-        onClick: delta,
-        children: <AppIconYm {...{
-          className: "icon-sm"
-        }} />
-      }} />
-    }} /> : null;
-  let jasper = <MemoizedFormattedMessage {...{
-    ...harbor.openInMainWindow
-  }} />;
+    ivory = canCollapseToHome ? (
+      <OptionalTooltip
+        {...{
+          tooltipContent: (
+            <MemoizedFormattedMessage
+              {...{
+                ...harbor.newThread,
+              }}
+            />
+          ),
+          delayOpen: true,
+          children: (
+            <ReadLoginRouteQuerySnapshot
+              {...{
+                size: "toolbar",
+                color: "ghost",
+                "aria-label": hazel.formatMessage(harbor.newThread),
+                onClick: delta,
+                children: (
+                  <AppIconYm
+                    {...{
+                      className: "icon-sm",
+                    }}
+                  />
+                ),
+              }}
+            />
+          ),
+        }}
+      />
+    ) : null;
+  let jasper = (
+    <MemoizedFormattedMessage
+      {...{
+        ...harbor.openInMainWindow,
+      }}
+    />
+  );
   let kelp = hazel.formatMessage(harbor.openInMainWindow);
   let lotus = () => {
     ensureAppActionPayloadSchemasInit.dispatchMessage("open-in-main-window", {
-      path: mainWindowPath
+      path: mainWindowPath,
     });
   };
   let mint = <AppInitialDr className="icon-sm" />;
-  let nova = <OptionalTooltip {...{
-    tooltipContent: jasper,
-    delayOpen: true,
-    children: <ReadLoginRouteQuerySnapshot {...{
-      size: "toolbar",
-      color: "ghost",
-      "aria-label": kelp,
-      onClick: lotus,
-      children: mint
-    }} />
-  }} />;
-  let olive = <>
+  let nova = (
+    <OptionalTooltip
+      {...{
+        tooltipContent: jasper,
+        delayOpen: true,
+        children: (
+          <ReadLoginRouteQuerySnapshot
+            {...{
+              size: "toolbar",
+              color: "ghost",
+              "aria-label": kelp,
+              onClick: lotus,
+              children: mint,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let olive = (
+    <>
       {ivory}
       {nova}
-    </>;
-  return <HotkeyWindowDetailLayoutHelper2 {...{
-    title,
-    onDismiss: echo,
-    rightActions: olive
-  }} />;
+    </>
+  );
+  return (
+    <HotkeyWindowDetailLayoutHelper2
+      {...{
+        title,
+        onDismiss: echo,
+        rightActions: olive,
+      }}
+    />
+  );
 }
 function delta() {
   appServices.hotkeyWindowHotkeys?.collapseToHome();
@@ -202,18 +272,20 @@ var falcon,
       dismiss: {
         id: "hotkeyWindow.dismiss",
         defaultMessage: "Dismiss Popout Window",
-        description: "Tooltip label for dismissing the hotkey window"
+        description: "Tooltip label for dismissing the hotkey window",
       },
       newThread: {
         id: "hotkeyWindow.threadPage.newButton",
         defaultMessage: "Start New Chat",
-        description: "Tooltip label for the hotkey window header button that returns to hotkey window home"
+        description:
+          "Tooltip label for the hotkey window header button that returns to hotkey window home",
       },
       openInMainWindow: {
         id: "hotkeyWindow.threadPage.openInMainWindow",
         defaultMessage: "Open in Main Window",
-        description: "Tooltip label for the hotkey window header button that opens the current page in the main app window"
-      }
+        description:
+          "Tooltip label for the hotkey window header button that opens the current page in the main app window",
+      },
     });
   });
 export function HotkeyWindowDetailLayout() {
@@ -224,22 +296,35 @@ export function HotkeyWindowDetailLayout() {
   sage = {
     commandId: "newTask",
     enabled: reef,
-    onKeyDown: jade
+    onKeyDown: jade,
   };
   alpha(sage);
-  let topaz = prism == null ? null : <HotkeyWindowDetailLayoutHelper3 {...{
-    title: prism.title,
-    mainWindowPath: prism.mainWindowPath,
-    canCollapseToHome: prism.canCollapseToHome !== false
-  }} />;
-  let ultra = <div className="min-h-0 flex-1">{<GetRouteContextValue {...{}} />}</div>;
-  return <ensureUseHotkeyWindowDetailLayoutInit.Provider {...{
-    value: quill,
-    children: <div className="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-token-border-light bg-token-main-surface-primary">
+  let topaz =
+    prism == null ? null : (
+      <HotkeyWindowDetailLayoutHelper3
+        {...{
+          title: prism.title,
+          mainWindowPath: prism.mainWindowPath,
+          canCollapseToHome: prism.canCollapseToHome !== false,
+        }}
+      />
+    );
+  let ultra = (
+    <div className="min-h-0 flex-1">{<GetRouteContextValue {...{}} />}</div>
+  );
+  return (
+    <ensureUseHotkeyWindowDetailLayoutInit.Provider
+      {...{
+        value: quill,
+        children: (
+          <div className="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-token-border-light bg-token-main-surface-primary">
             {topaz}
             {ultra}
           </div>
-  }} />;
+        ),
+      }}
+    />
+  );
 }
 function jade(event) {
   event.preventDefault();

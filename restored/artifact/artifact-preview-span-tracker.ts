@@ -160,7 +160,9 @@ export class ArtifactPreviewSpanTracker {
  */
 let artifactPreviewSpanTracker: ArtifactPreviewSpanTracker | null = null;
 
-export function setArtifactPreviewSpanTracker(tracker: ArtifactPreviewSpanTracker): void {
+export function setArtifactPreviewSpanTracker(
+  tracker: ArtifactPreviewSpanTracker,
+): void {
   artifactPreviewSpanTracker = tracker;
 }
 
@@ -174,7 +176,9 @@ export function getArtifactPreviewSpanTracker(): ArtifactPreviewSpanTracker {
 }
 
 /** `ZUi` / export `yH` */
-export function startArtifactPreviewSpan(input: ArtifactPreviewStartInput): void {
+export function startArtifactPreviewSpan(
+  input: ArtifactPreviewStartInput,
+): void {
   getArtifactPreviewSpanTracker().start(input);
 }
 
@@ -204,17 +208,26 @@ export function completeArtifactPreviewDataReady(requestKey: string): void {
 }
 
 /** `rWi` / export `dH` */
-export function completeArtifactPreviewRendererReady(requestKey: string, pageCount: number): void {
+export function completeArtifactPreviewRendererReady(
+  requestKey: string,
+  pageCount: number,
+): void {
   getArtifactPreviewSpanTracker().completeRendererReady(requestKey, pageCount);
 }
 
 /** `iWi` / export `pH` */
-export function failArtifactPreviewSpan(requestKey: string, reason: unknown): void {
+export function failArtifactPreviewSpan(
+  requestKey: string,
+  reason: unknown,
+): void {
   getArtifactPreviewSpanTracker().fail(requestKey, reason);
 }
 
 /** `aWi` (unexported sibling of `iWi`) */
-export function abortArtifactPreviewSpan(requestKey: string, reason: string): void {
+export function abortArtifactPreviewSpan(
+  requestKey: string,
+  reason: string,
+): void {
   getArtifactPreviewSpanTracker().abort(requestKey, reason);
 }
 

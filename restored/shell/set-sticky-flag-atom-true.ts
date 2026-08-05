@@ -8,7 +8,9 @@ export type StickyFlagAtomTruePeers = {
 let peers: StickyFlagAtomTruePeers | null = null;
 
 /** Wire setStickyFlagAtomTrue peers once companions land. */
-export function setStickyFlagAtomTruePeers(next: StickyFlagAtomTruePeers): void {
+export function setStickyFlagAtomTruePeers(
+  next: StickyFlagAtomTruePeers,
+): void {
   peers = next;
 }
 

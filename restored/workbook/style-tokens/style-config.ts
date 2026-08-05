@@ -79,9 +79,7 @@ export function outlineConfigFromValue(value: unknown): unknown {
 }
 
 /** Non-empty style id string. */
-export function normalizeStyleId(
-  partial: StylePartial,
-): string | undefined {
+export function normalizeStyleId(partial: StylePartial): string | undefined {
   const style = partial.style;
   if (typeof style !== "string") return;
   const trimmed = style.trim();

@@ -10,7 +10,9 @@ export type ParseCachedVacValuePeers = {
 let peers: ParseCachedVacValuePeers | null = null;
 
 /** Wire parseCachedVacValue peers once companions land. */
-export function setParseCachedVacValuePeers(next: ParseCachedVacValuePeers): void {
+export function setParseCachedVacValuePeers(
+  next: ParseCachedVacValuePeers,
+): void {
   peers = next;
 }
 

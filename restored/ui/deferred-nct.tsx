@@ -48,6 +48,29 @@ export function bindDeferredNct() {
   }
 
   return peers.e(() => {
-    sit = peers.c(), Gh = peers.r(peers.o(), 1), peers.Bet(), cit = 0.8, lit = 0.16, uit = 0.1, dit = 0.006, fit = 0.32, pit = 32, mit = 0.36, hit = 4, git = 0.5, _it = 0.48, vit = 0.28, yit = 0.085, bit = 0.05, xit = 0.1, Sit = 0.6, Cit = 3, wit = 2, Tit = 0.25, Eit = 0.95, Dit = 0.08, Oit = 200;
+    ((sit = peers.c()),
+      (Gh = peers.r(peers.o(), 1)),
+      peers.Bet(),
+      (cit = 0.8),
+      (lit = 0.16),
+      (uit = 0.1),
+      (dit = 0.006),
+      (fit = 0.32),
+      (pit = 32),
+      (mit = 0.36),
+      (hit = 4),
+      (git = 0.5),
+      (_it = 0.48),
+      (vit = 0.28),
+      (yit = 0.085),
+      (bit = 0.05),
+      (xit = 0.1),
+      (Sit = 0.6),
+      (Cit = 3),
+      (wit = 2),
+      (Tit = 0.25),
+      (Eit = 0.95),
+      (Dit = 0.08),
+      (Oit = 200));
   });
 }

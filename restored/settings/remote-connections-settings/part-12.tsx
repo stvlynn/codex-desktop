@@ -94,10 +94,20 @@ const WindFifth: any = undefined;
 /** split companion stub */
 const YarrowFifth: any = undefined;
 
-import { buildChatgptDesktopAuthUrl, ensureBuildChatgptDesktopAuthUrlInit, ensureChatgptDesktopAuthUrlInit, getCodexAppVersionFromScope, loginWithChatgptDeviceCode } from "../../account/chatgpt-desktop-auth-url";
+import {
+  buildChatgptDesktopAuthUrl,
+  ensureBuildChatgptDesktopAuthUrlInit,
+  ensureChatgptDesktopAuthUrlInit,
+  getCodexAppVersionFromScope,
+  loginWithChatgptDeviceCode,
+} from "../../account/chatgpt-desktop-auth-url";
 import { isStartingProcessExpired as IsStartingProcessExpired } from "../../account/is-starting-process-expired";
 import { openInBrowser as OpenInBrowser } from "../../account/open-in-browser";
-import { appActionSidebarProjectRefSchema, appActionSidebarSectionRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  appActionSidebarSectionRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { ensureReviewFileAppActionAttrsInit } from "../../actions/ensure-review-file-app-action-attrs-init";
 import { buildRemoteSshConnectionsRefreshedPayload } from "../../analytics/build-remote-ssh-connections-refreshed-payload";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
@@ -117,11 +127,34 @@ import { ShellWidthDeltaContext } from "../../app-shell/shell-width-delta-contex
 import { APP_VERSION } from "../../app/app-version";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { PULL_REQUEST_FIX_AUTOMATION_PROMPT_HEADER } from "../../automations/pull-request-fix-prompt-header";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_CU_Init, ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_CU_Init,
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { Chatgpt2 } from "../../browser/chatgpt2";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
@@ -137,11 +170,37 @@ import { appServices } from "../../desktop/desktop-services";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { invokeDesktopRpc } from "../../desktop/invoke-desktop-rpc";
 import { DesktopPersistenceKeys } from "../../desktop/persistence-keys";
-import { CodexMobileSetupDialog, codexMobileSetupDialogConfig as CodexMobileSetupDialogConfig, CodexMobileSetupDialogOption, ensureCodexMobileSetupDialogInit, ensureCodexMobileSetupDialogLayoutInit, ensureCodexMobileSetupDialogStylesInit } from "../../devices/codex-mobile-setup-dialog";
-import { codexMobileSetupFlowC, codexMobileSetupFlowD, codexMobileSetupFlowF, codexMobileSetupFlowL, codexMobileSetupFlowN, codexMobileSetupFlowO, codexMobileSetupFlowP, codexMobileSetupFlowS, codexMobileSetupFlowT as CodexMobileSetupFlowT, codexMobileSetupFlowU } from "../../devices/codex-mobile-setup-flow";
-import { isWslHostSource, remoteControlHostKey, remoteSshCodexManagedHostKey, remoteSshDiscoveredHostKey } from "../../environments/remote-host-keys";
+import {
+  CodexMobileSetupDialog,
+  codexMobileSetupDialogConfig as CodexMobileSetupDialogConfig,
+  CodexMobileSetupDialogOption,
+  ensureCodexMobileSetupDialogInit,
+  ensureCodexMobileSetupDialogLayoutInit,
+  ensureCodexMobileSetupDialogStylesInit,
+} from "../../devices/codex-mobile-setup-dialog";
+import {
+  codexMobileSetupFlowC,
+  codexMobileSetupFlowD,
+  codexMobileSetupFlowF,
+  codexMobileSetupFlowL,
+  codexMobileSetupFlowN,
+  codexMobileSetupFlowO,
+  codexMobileSetupFlowP,
+  codexMobileSetupFlowS,
+  codexMobileSetupFlowT as CodexMobileSetupFlowT,
+  codexMobileSetupFlowU,
+} from "../../devices/codex-mobile-setup-flow";
+import {
+  isWslHostSource,
+  remoteControlHostKey,
+  remoteSshCodexManagedHostKey,
+  remoteSshDiscoveredHostKey,
+} from "../../environments/remote-host-keys";
 import { MOBILE_MFA_SETUP_FEATURE_GATE_ID } from "../../feature-gates/feature-gate-ids";
-import { ensureTanstackReactFormApiInit, useTanstackForm } from "../../forms/tanstack-react-form";
+import {
+  ensureTanstackReactFormApiInit,
+  useTanstackForm,
+} from "../../forms/tanstack-react-form";
 import { ensureGitMetadataQueryInit } from "../../git/ensure-git-metadata-query-init";
 import { useEventCallback } from "../../hooks/use-event-callback";
 import { useGateEnabledWithAccountData } from "../../hooks/use-gate-enabled-with-account-data";
@@ -167,11 +226,17 @@ import { ensureHooksFocusIconInit } from "../../icons/hooks-settings-icons";
 import { TerminalFileIcon } from "../../icons/terminal-file-icon";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { findSidebarSectionElement, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { useOpenLocatorInMainWindow } from "../../navigation/use-open-locator-in-main-window";
-import { initOnboardingLoginContent, OnboardingLoginContent } from "../../onboarding/onboarding-login-content";
+import {
+  initOnboardingLoginContent,
+  OnboardingLoginContent,
+} from "../../onboarding/onboarding-login-content";
 import { useTeenOnboardingAgeGate } from "../../onboarding/use-teen-onboarding-age-gate";
 import { AVATAR_OVERLAY_SURFACE_STACK_IDS } from "../../overlay/avatar-overlay-surface-stack-ids";
 import { PdfPermissionFlag } from "../../pdf/pdf-permission-flag";
@@ -188,7 +253,10 @@ import { CopyButton } from "../../ui/copy-button";
 import { DeferredUiB } from "../../ui/deferred-ui-b";
 import { DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { iconXs } from "../../ui/icon-xs";
 import { macOS4 } from "../../ui/mac-os4";
@@ -205,11 +273,20 @@ import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { posixPathBasename } from "../../utils/posix-path-basename";
 import { svgToDataUri } from "../../utils/svg-to-data-uri";
-import { ensureImportSettingsCLInit, ensurePersonalizationCInit as EnsurePersonalizationCInit, ensurePersonalizationG0Init, ensurePersonalizationJutInit, ensurePersonalizationK0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+  ensurePersonalizationG0Init,
+  ensurePersonalizationJutInit,
+  ensurePersonalizationK0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { generalDesktopSettingsDefinitions } from "../general-desktop-settings-definitions";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { useChronicleSettingsSection } from "../use-chronicle-settings-section";
 import { useSettingValue } from "../use-setting-value";
 

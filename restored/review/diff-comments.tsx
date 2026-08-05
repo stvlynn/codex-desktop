@@ -21,7 +21,9 @@ export type BindBindDiffCommentsPeers = {
 let peers: BindBindDiffCommentsPeers | null = null;
 
 /** Wire bindBindDiffComments peers once companions land. */
-export function setBindBindDiffCommentsPeers(next: BindBindDiffCommentsPeers): void {
+export function setBindBindDiffCommentsPeers(
+  next: BindBindDiffCommentsPeers,
+): void {
   peers = next;
 }
 
@@ -34,21 +36,29 @@ export function bindBindDiffComments() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.c_(), peers.ed(), peers.oT(), peers.z_(), Vpo = [], Hpo = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => peers.e == null ? peers.Vpo : peers.R_(t, `diff_comments`)?.[peers.e] ?? peers.Vpo), peers.zJn((e, {
-      clientThreadId: t,
-      conversationId: n
-    }) => {
-      let r = peers.e.get(peers.Hpo, t);
-      r.length !== 0 && (peers.Bpo(peers.e, n, e => {
-        let t = new Set(peers.e.map(peers.a_)),
-          n = r.filter(e => {
-            let n = peers.a_(peers.e);
-            return t.has(n) ? !1 : (t.add(n), !0);
-          });
-        return n.length === 0 ? peers.e : [...peers.e, ...n];
-      }), peers.Bpo(peers.e, t, []));
-    });
+    (peers.Ho(),
+      peers.c_(),
+      peers.ed(),
+      peers.oT(),
+      peers.z_(),
+      (Vpo = []),
+      (Hpo = peers.Oa(peers.Q, (e, { get: t }) =>
+        peers.e == null
+          ? peers.Vpo
+          : (peers.R_(t, `diff_comments`)?.[peers.e] ?? peers.Vpo),
+      )),
+      peers.zJn((e, { clientThreadId: t, conversationId: n }) => {
+        let r = peers.e.get(peers.Hpo, t);
+        r.length !== 0 &&
+          (peers.Bpo(peers.e, n, (e) => {
+            let t = new Set(peers.e.map(peers.a_)),
+              n = r.filter((e) => {
+                let n = peers.a_(peers.e);
+                return t.has(n) ? !1 : (t.add(n), !0);
+              });
+            return n.length === 0 ? peers.e : [...peers.e, ...n];
+          }),
+          peers.Bpo(peers.e, t, []));
+      }));
   });
 }

@@ -19,7 +19,9 @@ export type UseDroppableResizeObserverPeers = {
 let peers: UseDroppableResizeObserverPeers | null = null;
 
 /** Wire useDroppableResizeObserver peers once companions land. */
-export function setUseDroppableResizeObserverPeers(next: UseDroppableResizeObserverPeers): void {
+export function setUseDroppableResizeObserverPeers(
+  next: UseDroppableResizeObserverPeers,
+): void {
   peers = next;
 }
 

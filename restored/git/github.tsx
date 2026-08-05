@@ -24,6 +24,34 @@ export function bindGithub() {
   }
 
   return peers.e(() => {
-    rKn = new Set([`GH`, `IA`, `MCP`, `API`, `CI`, `CLI`, `LLM`, `PDF`, `PR`, `UI`, `URL`, `SQL`, `TW`, `GPU`, `CPU`]), iKn = new Map([[`openai`, `OpenAI`], [`openaideveloperdocs`, `OpenAI Developer Docs`], [`openapi`, `OpenAPI`], [`github`, `GitHub`], [`pagerduty`, `PagerDuty`], [`datadog`, `DataDog`], [`sharepoint`, `SharePoint`], [`sqlite`, `SQLite`], [`fastapi`, `FastAPI`]]), aKn = new Set([`and`, `or`, `to`, `up`, `with`]);
+    ((rKn = new Set([
+      `GH`,
+      `IA`,
+      `MCP`,
+      `API`,
+      `CI`,
+      `CLI`,
+      `LLM`,
+      `PDF`,
+      `PR`,
+      `UI`,
+      `URL`,
+      `SQL`,
+      `TW`,
+      `GPU`,
+      `CPU`,
+    ])),
+      (iKn = new Map([
+        [`openai`, `OpenAI`],
+        [`openaideveloperdocs`, `OpenAI Developer Docs`],
+        [`openapi`, `OpenAPI`],
+        [`github`, `GitHub`],
+        [`pagerduty`, `PagerDuty`],
+        [`datadog`, `DataDog`],
+        [`sharepoint`, `SharePoint`],
+        [`sqlite`, `SQLite`],
+        [`fastapi`, `FastAPI`],
+      ])),
+      (aKn = new Set([`and`, `or`, `to`, `up`, `with`])));
   });
 }

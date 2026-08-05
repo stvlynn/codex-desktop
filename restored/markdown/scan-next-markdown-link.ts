@@ -9,7 +9,10 @@ export type MarkdownLinkMatch = {
 };
 
 /** Scan markdown text for the next `[label](path)` link starting at `from`. */
-export function scanNextMarkdownLink(text: string, from: number): MarkdownLinkMatch | null {
+export function scanNextMarkdownLink(
+  text: string,
+  from: number,
+): MarkdownLinkMatch | null {
   let n = from;
   scanLinks: for (; n < text.length; ) {
     const open = text.indexOf("[", n);

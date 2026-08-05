@@ -26,7 +26,9 @@ export type AutoTopUpSettingsLike = {
  * Bundle `Hws` / export `Ay`.
  * Empty when auto-reload is off; otherwise the trimmed monthly limit (or ``).
  */
-export function getRechargeMonthlyLimitInput(settings: AutoTopUpSettingsLike): string {
+export function getRechargeMonthlyLimitInput(
+  settings: AutoTopUpSettingsLike,
+): string {
   return settings.isEnabled
     ? settings.rechargeMonthlyLimit == null
       ? ""
@@ -47,7 +49,9 @@ export const CREDIT_BALANCE_MINIMUM = 125;
  * Bundle `Uws` / export `Dy`.
  * Validates a single credit balance field (target / threshold).
  */
-export function validateCreditBalanceField(value: string | null | undefined): CreditBalanceFieldError | null {
+export function validateCreditBalanceField(
+  value: string | null | undefined,
+): CreditBalanceFieldError | null {
   const parsed = parseWholeNumber(value);
   switch (parsed.kind) {
     case "missing":
@@ -88,7 +92,9 @@ export const VOLUME_DISCOUNT_POLICY_IDS = [
 ] as const;
 
 /** Bundle `nTs` / export `by`. */
-export function isVolumeDiscountPolicy(policy: string | null | undefined): boolean {
+export function isVolumeDiscountPolicy(
+  policy: string | null | undefined,
+): boolean {
   return (
     policy === "volume_discount_v1" ||
     policy === "volume_discount_with_auto_reload_incentive_v1"

@@ -29,6 +29,13 @@ export function bindBindCODEX() {
   }
 
   return peers.e(() => {
-    peers.Gf(), peers.Uf(), peers.Wh(), peers.ap(), i7r = `OAI-Product-Sku`, a7r = `CODEX`, o7r = `codex`, s7r = [`mcp-settings`, `app-connect`];
+    (peers.Gf(),
+      peers.Uf(),
+      peers.Wh(),
+      peers.ap(),
+      (i7r = `OAI-Product-Sku`),
+      (a7r = `CODEX`),
+      (o7r = `codex`),
+      (s7r = [`mcp-settings`, `app-connect`]));
   });
 }

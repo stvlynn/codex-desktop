@@ -10,7 +10,9 @@ export type BindBindXCodexGitSourcePeers = {
 let peers: BindBindXCodexGitSourcePeers | null = null;
 
 /** Wire bindBindXCodexGitSource peers once companions land. */
-export function setBindBindXCodexGitSourcePeers(next: BindBindXCodexGitSourcePeers): void {
+export function setBindBindXCodexGitSourcePeers(
+  next: BindBindXCodexGitSourcePeers,
+): void {
   peers = next;
 }
 
@@ -23,6 +25,17 @@ export function bindBindXCodexGitSource() {
   }
 
   return peers.e(() => {
-    rxe = `x-codex-git-source`, ixe = [`apply-patch`, `git-checkout-branch`, `git-create-branch`, `git-merge-base`, `git-origins`, `git-push`, `prepare-worktree-snapshot`, `upload-worktree-snapshot`], new Set(peers.ixe);
+    ((rxe = `x-codex-git-source`),
+      (ixe = [
+        `apply-patch`,
+        `git-checkout-branch`,
+        `git-create-branch`,
+        `git-merge-base`,
+        `git-origins`,
+        `git-push`,
+        `prepare-worktree-snapshot`,
+        `upload-worktree-snapshot`,
+      ]),
+      new Set(peers.ixe));
   });
 }

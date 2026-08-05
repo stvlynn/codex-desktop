@@ -25,6 +25,6 @@ export function deferredUiYat() {
   }
 
   return peers.e(() => {
-    peers.rjt(), peers.wjt(), peers.EAt(), peers.ojt();
+    (peers.rjt(), peers.wjt(), peers.EAt(), peers.ojt());
   });
 }

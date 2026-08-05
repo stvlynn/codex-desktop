@@ -19,7 +19,9 @@ export type BindBindDeferredUiWRPeers = {
 let peers: BindBindDeferredUiWRPeers | null = null;
 
 /** Wire bindBindDeferredUiWR peers once companions land. */
-export function setBindBindDeferredUiWRPeers(next: BindBindDeferredUiWRPeers): void {
+export function setBindBindDeferredUiWRPeers(
+  next: BindBindDeferredUiWRPeers,
+): void {
   peers = next;
 }
 
@@ -32,6 +34,12 @@ export function bindBindDeferredUiWR() {
   }
 
   return peers.e(() => {
-    s7i = peers.c(), peers.sd(), c7i = peers.r(peers.o(), 1), peers.gP(), peers.m5i(), peers.Jz(), l7i = peers.J();
+    ((s7i = peers.c()),
+      peers.sd(),
+      (c7i = peers.r(peers.o(), 1)),
+      peers.gP(),
+      peers.m5i(),
+      peers.Jz(),
+      (l7i = peers.J()));
   });
 }

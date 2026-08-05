@@ -34,11 +34,13 @@ export type UseApplyOrRevertDiffArgs = {
 
 export type ApplyOrRevertResultsState = {
   open: boolean;
-  result: (ApplyPatchToastResult & {
-    appliedPaths?: string[];
-    skippedPaths?: string[];
-    conflictedPaths?: string[];
-  }) | null;
+  result:
+    | (ApplyPatchToastResult & {
+        appliedPaths?: string[];
+        skippedPaths?: string[];
+        conflictedPaths?: string[];
+      })
+    | null;
 };
 
 export type UseApplyOrRevertDiffResult = {

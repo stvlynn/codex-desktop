@@ -13,14 +13,21 @@ export type UseInfiniteListQueryPeers = {
 let peers: UseInfiniteListQueryPeers | null = null;
 
 /** Wire useInfiniteListQuery peers once companions land. */
-export function setUseInfiniteListQueryPeers(next: UseInfiniteListQueryPeers): void {
+export function setUseInfiniteListQueryPeers(
+  next: UseInfiniteListQueryPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `LN` / internal `qja`.
  */
-export function useInfiniteListQuery(e: unknown, t: unknown, n: unknown = !0, r: unknown = `all`) {
+export function useInfiniteListQuery(
+  e: unknown,
+  t: unknown,
+  n: unknown = !0,
+  r: unknown = `all`,
+) {
   if (peers == null) {
     throw new Error("useInfiniteListQuery peers are not configured");
   }

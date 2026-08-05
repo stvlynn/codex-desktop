@@ -44,45 +44,62 @@ export function deferredUiH() {
   }
 
   return peers.e(() => {
-    Abu = peers.c(), peers.Ho(), V9 = peers.r(peers.o(), 1), peers.zm(), peers.ih(), peers.Yf(), peers._p(), peers.ed(), peers.Ebu(), peers.Fat(), peers.pp(), jbu = {
-      active: null
-    }, Mbu = peers.Ta(peers.Q, () => peers.jbu, {
-      onMount: e => {
-        let t = peers.gp?.realtimeVoicePresentation;
-        if (t == null) return;
-        let n = !0,
-          r = null;
-        return t.subscribe(t => {
-          n && peers.e(t);
-        }).then(e => {
-          if (!n) try {
-            var t = peers.fp();
-            let n = t.u(peers.e);
-            t.u(n.unsubscribe());
-            return;
-          } catch (e) {
-            t.e = peers.e;
-          } finally {
-            t.d();
-          }
-          r = () => {
-            try {
-              var t = peers.fp();
-              let n = t.u(peers.e);
-              t.u(n.unsubscribe());
-            } catch (e) {
-              t.e = peers.e;
-            } finally {
-              t.d();
+    ((Abu = peers.c()),
+      peers.Ho(),
+      (V9 = peers.r(peers.o(), 1)),
+      peers.zm(),
+      peers.ih(),
+      peers.Yf(),
+      peers._p(),
+      peers.ed(),
+      peers.Ebu(),
+      peers.Fat(),
+      peers.pp(),
+      (jbu = {
+        active: null,
+      }),
+      (Mbu = peers.Ta(peers.Q, () => peers.jbu, {
+        onMount: (e) => {
+          let t = peers.gp?.realtimeVoicePresentation;
+          if (t == null) return;
+          let n = !0,
+            r = null;
+          return (
+            t
+              .subscribe((t) => {
+                n && peers.e(t);
+              })
+              .then((e) => {
+                if (!n)
+                  try {
+                    var t = peers.fp();
+                    let n = t.u(peers.e);
+                    t.u(n.unsubscribe());
+                    return;
+                  } catch (e) {
+                    t.e = peers.e;
+                  } finally {
+                    t.d();
+                  }
+                r = () => {
+                  try {
+                    var t = peers.fp();
+                    let n = t.u(peers.e);
+                    t.u(n.unsubscribe());
+                  } catch (e) {
+                    t.e = peers.e;
+                  } finally {
+                    t.d();
+                  }
+                };
+              }),
+            () => {
+              ((n = !1), peers.r?.(), (r = null));
             }
-          };
-        }), () => {
-          n = !1, peers.r?.(), r = null;
-        };
-      }
-    }), Nbu = peers.Ma(peers.Q, ({
-      get: e
-    }) => peers.e(peers.Mbu).active);
+          );
+        },
+      })),
+      (Nbu = peers.Ma(peers.Q, ({ get: e }) => peers.e(peers.Mbu).active)));
   });
 }
 

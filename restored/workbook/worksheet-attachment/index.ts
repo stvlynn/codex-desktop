@@ -5,9 +5,7 @@ export type WorksheetLike = { name?: string };
 
 const worksheetOwnerMap = new WeakMap<object, WorksheetLike>();
 
-export function getAttachedWorksheet(
-  value: object,
-): WorksheetLike | undefined {
+export function getAttachedWorksheet(value: object): WorksheetLike | undefined {
   return worksheetOwnerMap.get(value);
 }
 

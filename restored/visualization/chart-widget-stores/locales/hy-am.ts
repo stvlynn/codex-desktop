@@ -18,25 +18,31 @@ const messages: Record<string, string> = {
   "widgets.cardCarousel.nextCards": "Հաջորդ քարտեր",
   "widgets.cardCarousel.nextCardsInCarousel": "Հաջորդ քարտերը՝ {carouselLabel}",
   "widgets.cardCarousel.previousCards": "Նախորդ քարտերը",
-  "widgets.cardCarousel.previousCardsInCarousel": "Նախորդ քարտերը {carouselLabel}-ում",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "Նախորդ քարտերը {carouselLabel}-ում",
   "widgets.debug.hideCurrentState": "Թաքցնել ընթացիկ վիճակը",
   "widgets.debug.nextState": "Հաջորդ վիճակ",
   "widgets.debug.previousState": "Նախորդ վիճակը",
   "widgets.debug.selectedState": "Ընտրված վիճակ",
   "widgets.debug.showCurrentState": "Ցույց տալ ընթացիկ վիճակը",
   "widgets.debug.state": "Վիճակ",
-  "widgets.debug.unableToSerializeSelectedState": "Ընտրված վիճակը չի հաջողվում սերիալացնել։",
+  "widgets.debug.unableToSerializeSelectedState":
+    "Ընտրված վիճակը չի հաջողվում սերիալացնել։",
   "widgets.hermes.artifact.viewMore": "Տեսնել ևս {count}-ը",
   "widgets.hermes.calendarEvent.moreAttendees": "Եվս +{count}",
   "widgets.hermes.calendarEvent.singleTime": "{date}, {time}",
-  "widgets.hermes.calendarEvent.timeRange": "{date}, {startTime}-ից մինչև {endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "{agentName}-ին շարունակելու համար հասանելիություն է պետք",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName}-ին շարունակելու համար անհրաժեշտ է ձեր թույլտվությունը",
+  "widgets.hermes.calendarEvent.timeRange":
+    "{date}, {startTime}-ից մինչև {endTime}",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "{agentName}-ին շարունակելու համար հասանելիություն է պետք",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName}-ին շարունակելու համար անհրաժեշտ է ձեր թույլտվությունը",
   "widgets.hermes.genericResponse.viewFullscreen": "Դիտել ամբողջ էկրանով",
   "widgets.hermes.genericTool.details": "Մանրամասներ",
   "widgets.hermes.genericTool.read": "Կարդալ",
   "widgets.hermes.genericTool.request": "Հարցում",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName}-ը ցանկանում է օգտագործել {connectorName}-ը՝ {toolName}-ը գործարկելու համար։",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName}-ը ցանկանում է օգտագործել {connectorName}-ը՝ {toolName}-ը գործարկելու համար։",
   "widgets.hermes.genericTool.viewFullscreen": "Դիտել ամբողջ էկրանով",
   "widgets.hermes.genericTool.write": "Գրել",
   "widgets.hermes.googleCalendarCreate.create": "Ստեղծել",
@@ -49,7 +55,8 @@ const messages: Record<string, string> = {
   "widgets.hermes.permission.moreInformation": "Ավելի շատ տեղեկություններ",
   "widgets.hermes.permission.notNow": "Ոչ հիմա",
   "widgets.hermes.permission.reconnect": "Վերամիացնել",
-  "widgets.hermes.permission.reconnectToConnector": "Վերամիացեք {connectorName}-ին",
+  "widgets.hermes.permission.reconnectToConnector":
+    "Վերամիացեք {connectorName}-ին",
   "widgets.hermes.sendEmail.approveAction": "Հաստատել գործողությունը",
   "widgets.hermes.sendEmail.bcc": "Թաքնված պատճեն",
   "widgets.hermes.sendEmail.cc": "Պատճեն",
@@ -62,73 +69,135 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "ցույց տալ ավելի քիչ",
   "widgets.hermes.taskStatus.canceled": "Առաջադրանքը չեղարկվել է",
   "widgets.hermes.taskStatus.canceling": "Չեղարկվում է",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Նախորդ հաղորդագրությունների ստուգում",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Ստուգում է նախորդ հաղորդագրությունները",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Նախորդ հաղորդագրությունների դիտում",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Նախորդ հաղորդագրությունների դիտում",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Նախորդ հաղորդագրությունների դիտում",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Վերանայում է նախորդ հաղորդագրությունները",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Նախորդ հաղորդագրությունների վերանայում",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Նախորդ հաղորդագրությունների վերանայում",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Նախորդ հաղորդագրությունների զննում",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Նախորդ հաղորդագրությունների զննում",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Նախորդ հաղորդագրությունների զննում",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Համատեքստի ստուգում",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Համատեքստի ուսումնասիրում",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Համատեքստի ստուգում",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Կարդում է համատեքստը",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Համատեքստի ուսումնասիրում",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Համատեքստի վերանայում",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Համատեքստի զննում",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Համատեքստի զննում",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Գործակալն ակտիվացվում է",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Գործակալի բեռնում",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Գործակալը միացվում է",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Գործակալին կանչում",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Միանում է օգնականին",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "Գործակալի հետ կապի հաստատում",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Գործակալին արթնացնում ենք",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Գործակալի նախապատրաստում",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Արթնացնում ենք գործակալին",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Գործարկվում է գործակալը",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "Գործակալի կանչում",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Համակարգիչն ակտիվացվում է",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Համակարգիչը բեռնվում է",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Համակարգիչը միացվում է",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Համակարգչի սկզբնավորում",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Համակարգիչը միացվում է",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Համակարգիչը գործարկվում է",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Համակարգչի գործարկում",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Համակարգչի արթնացում",
-  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Ուղին նախանշում",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Պլան է կազմում",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Նախորդ հաղորդագրությունների ստուգում",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Ստուգում է նախորդ հաղորդագրությունները",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Նախորդ հաղորդագրությունների դիտում",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Նախորդ հաղորդագրությունների դիտում",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Նախորդ հաղորդագրությունների դիտում",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Վերանայում է նախորդ հաղորդագրությունները",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Նախորդ հաղորդագրությունների վերանայում",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Նախորդ հաղորդագրությունների վերանայում",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Նախորդ հաղորդագրությունների զննում",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Նախորդ հաղորդագրությունների զննում",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Նախորդ հաղորդագրությունների զննում",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Համատեքստի ստուգում",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Համատեքստի ուսումնասիրում",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Համատեքստի ստուգում",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Կարդում է համատեքստը",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Համատեքստի ուսումնասիրում",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Համատեքստի վերանայում",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Համատեքստի զննում",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Համատեքստի զննում",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Գործակալն ակտիվացվում է",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Գործակալի բեռնում",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Գործակալը միացվում է",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Գործակալին կանչում",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Միանում է օգնականին",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "Գործակալի հետ կապի հաստատում",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Գործակալին արթնացնում ենք",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Գործակալի նախապատրաստում",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Արթնացնում ենք գործակալին",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Գործարկվում է գործակալը",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "Գործակալի կանչում",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Համակարգիչն ակտիվացվում է",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Համակարգիչը բեռնվում է",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Համակարգիչը միացվում է",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Համակարգչի սկզբնավորում",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Համակարգիչը միացվում է",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Համակարգիչը գործարկվում է",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Համակարգչի գործարկում",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Համակարգչի արթնացում",
+  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse":
+    "Ուղին նախանշում",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "Պլան է կազմում",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Պլանավորում",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Քայլերը պլանավորում",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Քայլերը մշակում",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Հաջորդ քայլերի կազմակերպում",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Քայլերը պլանավորում",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "Քայլերը մշակում",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Հաջորդ քայլերի կազմակերպում",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Պլանավորում",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Սահմանում է ուղղությունը",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Ուղղության որոշում",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Պլանը մշակում",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Մոտեցումներ է դիտարկում",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Մշակում է մոտեցումը",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Մանրամասների հավաքում",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Մանրամասների հավաքում",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Մանրամասների լրացում",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Մանրամասների հավաքում",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Մանրամասների հավաքում",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Մանրամասներ է հավաքում",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Մանրամասներ է հավաքում",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Մանրամասների հստակեցում",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Մանրամասների հավաքում",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Մանրամասների որոնում",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Սովորականից ավելի երկար է տևում",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Դեռ աշխատում ենք դրա վրա",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Կարող եք մի փոքր հետո նորից ստուգել",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Սահմանում է ուղղությունը",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Ուղղության որոշում",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Պլանը մշակում",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Մոտեցումներ է դիտարկում",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Մշակում է մոտեցումը",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Մանրամասների հավաքում",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Մանրամասների հավաքում",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Մանրամասների լրացում",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Մանրամասների հավաքում",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Մանրամասների հավաքում",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Մանրամասներ է հավաքում",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Մանրամասներ է հավաքում",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Մանրամասների հստակեցում",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Մանրամասների հավաքում",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Մանրամասների որոնում",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Սովորականից ավելի երկար է տևում",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Դեռ աշխատում ենք դրա վրա",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Կարող եք մի փոքր հետո նորից ստուգել",
   "widgets.hermes.workflow.canceled": "Առաջադրանքը չեղարկվել է",
   "widgets.hermes.workflow.canceledItemLabel": "Չեղարկված",
   "widgets.hermes.workflow.codeBlock.hideLines": "Թաքցնել տողերը",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Տեսնել բոլոր {lineCount} տողերը",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Տեսնել բոլոր {lineCount} տողերը",
   "widgets.hermes.workflow.customWorked": "Որոշ ժամանակ աշխատեց",
   "widgets.hermes.workflow.customWorking": "Աշխատում է",
   "widgets.hermes.workflow.fileWorked": "Սկանավորված փաստաթուղթ",
@@ -148,7 +217,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Ցույց տալ պակաս",
   "widgets.listView.showMore": "Ցույց տալ ևս {count}-ը",
   "widgets.radioGroup.options": "ընտրանքներ",
-  "widgets.segmentedControl.selectAnOption": "Ընտրեք տարբերակ"
+  "widgets.segmentedControl.selectAnOption": "Ընտրեք տարբերակ",
 };
 
 export default messages;

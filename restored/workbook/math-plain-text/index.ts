@@ -40,8 +40,6 @@ export type {
   MixedTextMathRun,
 } from "./math-node-plain-text";
 export { MathLatexParser } from "./math-latex-parser";
-export {
-  parseMathFromLatex,
-} from "./parse-math-from-latex";
+export { parseMathFromLatex } from "./parse-math-from-latex";
 export type { ParseMathFromLatexProps } from "./parse-math-from-latex";
 export { ensureMathPlainTextInit } from "./ensure-math-plain-text-init";

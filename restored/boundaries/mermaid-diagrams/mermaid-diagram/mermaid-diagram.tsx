@@ -21,10 +21,7 @@ import { cx } from "../../../ui/cx";
 import { ImagePreviewDialog } from "../../../ui/image-preview-dialog";
 import { MarkdownContentCssClass } from "../../../markdown/markdown-content-css-classes";
 import { svgToDataUri } from "../../../utils/svg-to-data-uri";
-import {
-  initializeMermaidHost,
-  renderMermaidSvg,
-} from "./render-mermaid";
+import { initializeMermaidHost, renderMermaidSvg } from "./render-mermaid";
 import type { MermaidDiagramProps, MermaidPreviewState } from "./types";
 
 const DIAGRAM_FRAME_CLASS =
@@ -121,10 +118,7 @@ export function MermaidDiagram({
         }
         frame.innerHTML = svg;
         frame.setAttribute("data-mermaid-diagram", "true");
-        frame.setAttribute(
-          "data-mermaid-theme",
-          isDark ? "dark" : "light",
-        );
+        frame.setAttribute("data-mermaid-theme", isDark ? "dark" : "light");
         const height = frame.getBoundingClientRect().height;
         onRendered?.(renderKey, height);
         resizeObserver = new ResizeObserver(() => {
@@ -219,8 +213,7 @@ export function MermaidDiagram({
           downloadAriaLabel={intl.formatMessage({
             id: "mermaidDiagram.download",
             defaultMessage: "Download Mermaid diagram",
-            description:
-              "Accessible label for downloading the Mermaid diagram",
+            description: "Accessible label for downloading the Mermaid diagram",
           })}
           downloadFileName="mermaid-diagram.svg"
           imageDraggable={false}

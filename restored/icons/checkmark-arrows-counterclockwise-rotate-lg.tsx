@@ -6,7 +6,9 @@ import type { ReactElement, SVGProps } from "react";
 export type CheckmarkArrowsCounterclockwiseRotateLgProps =
   SVGProps<SVGSVGElement>;
 
-export function CheckmarkArrowsCounterclockwiseRotateLg(props: CheckmarkArrowsCounterclockwiseRotateLgProps): ReactElement {
+export function CheckmarkArrowsCounterclockwiseRotateLg(
+  props: CheckmarkArrowsCounterclockwiseRotateLgProps,
+): ReactElement {
   return (
     <svg
       width={20}

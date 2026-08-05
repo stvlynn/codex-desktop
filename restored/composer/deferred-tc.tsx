@@ -17,7 +17,9 @@ export type BindBindDeferredTCPeers = {
 let peers: BindBindDeferredTCPeers | null = null;
 
 /** Wire bindBindDeferredTC peers once companions land. */
-export function setBindBindDeferredTCPeers(next: BindBindDeferredTCPeers): void {
+export function setBindBindDeferredTCPeers(
+  next: BindBindDeferredTCPeers,
+): void {
   peers = next;
 }
 
@@ -30,6 +32,11 @@ export function bindBindDeferredTC() {
   }
 
   return peers.e(() => {
-    Yrs = peers.c(), peers.Ho(), Xrs = peers.r(peers.o(), 1), peers.hj(), peers.Kj(), peers.KM();
+    ((Yrs = peers.c()),
+      peers.Ho(),
+      (Xrs = peers.r(peers.o(), 1)),
+      peers.hj(),
+      peers.Kj(),
+      peers.KM());
   });
 }

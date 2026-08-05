@@ -13,7 +13,9 @@ export type UsePetsSettingsQueryPeers = {
 let peers: UsePetsSettingsQueryPeers | null = null;
 
 /** Wire UsePetsSettingsQuery peers once companions land. */
-export function setUsePetsSettingsQueryPeers(next: UsePetsSettingsQueryPeers): void {
+export function setUsePetsSettingsQueryPeers(
+  next: UsePetsSettingsQueryPeers,
+): void {
   peers = next;
 }
 

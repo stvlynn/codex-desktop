@@ -11,7 +11,9 @@ export type BindDeferredHostsY4Peers = {
 let peers: BindDeferredHostsY4Peers | null = null;
 
 /** Wire bindDeferredHostsY4 peers once companions land. */
-export function setBindDeferredHostsY4Peers(next: BindDeferredHostsY4Peers): void {
+export function setBindDeferredHostsY4Peers(
+  next: BindDeferredHostsY4Peers,
+): void {
   peers = next;
 }
 

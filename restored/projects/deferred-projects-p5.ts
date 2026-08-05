@@ -13,7 +13,9 @@ export type BindDeferredProjectsP5Peers = {
 let peers: BindDeferredProjectsP5Peers | null = null;
 
 /** Wire bindDeferredProjectsP5 peers once companions land. */
-export function setBindDeferredProjectsP5Peers(next: BindDeferredProjectsP5Peers): void {
+export function setBindDeferredProjectsP5Peers(
+  next: BindDeferredProjectsP5Peers,
+): void {
   peers = next;
 }
 
@@ -25,18 +27,19 @@ export function bindDeferredProjectsP5() {
     throw new Error("bindDeferredProjectsP5 peers are not configured");
   }
 
-  return peers.ja(peers.Q, e => ({
+  return peers.ja(peers.Q, (e) => ({
     mutationKey: [...peers.fWn, e, `add`],
-    mutationFn: ({
-      hostname: t
-    }) => peers.Bw(`sites_add_custom_domain`, {
-      hostname: t,
-      project_id: e
-    }, peers.DWn),
-    onSuccess: (t, n, r, {
-      client: i
-    }) => {
+    mutationFn: ({ hostname: t }) =>
+      peers.Bw(
+        `sites_add_custom_domain`,
+        {
+          hostname: t,
+          project_id: e,
+        },
+        peers.DWn,
+      ),
+    onSuccess: (t, n, r, { client: i }) => {
       peers.oWn(i, e, t);
-    }
+    },
   }));
 }

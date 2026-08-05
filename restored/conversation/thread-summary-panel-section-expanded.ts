@@ -19,10 +19,7 @@ export const SECTION_AUTO_COLLAPSE_MS = 30_000;
 export const SECTION_EXPANDED_KEY_PREFIX =
   "thread-summary-panel-section-expanded-";
 
-export type SectionAutoCollapseStatus =
-  | "canceled"
-  | "collapsed"
-  | "pending";
+export type SectionAutoCollapseStatus = "canceled" | "collapsed" | "pending";
 
 /** Bundle `bJo` key factory — expanded boolean keyed by section id. */
 export function sectionExpandedStorageKey(sectionKey: string): string {

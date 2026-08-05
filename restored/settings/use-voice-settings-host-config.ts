@@ -21,7 +21,9 @@ export type UseVoiceSettingsHostConfigPeers = {
 let peers: UseVoiceSettingsHostConfigPeers | null = null;
 
 /** Wire useVoiceSettingsHostConfig peers once companions land. */
-export function setUseVoiceSettingsHostConfigPeers(next: UseVoiceSettingsHostConfigPeers): void {
+export function setUseVoiceSettingsHostConfigPeers(
+  next: UseVoiceSettingsHostConfigPeers,
+): void {
   peers = next;
 }
 

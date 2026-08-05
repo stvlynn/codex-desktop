@@ -48,7 +48,10 @@ export type DropdownMenuTriggerProps = {
   className?: string;
   disabled?: boolean;
   ref?: Ref<HTMLButtonElement>;
-} & Omit<HTMLAttributes<HTMLButtonElement>, "children" | "className" | "disabled" | "ref">;
+} & Omit<
+  HTMLAttributes<HTMLButtonElement>,
+  "children" | "className" | "disabled" | "ref"
+>;
 
 export type DropdownMenuContentProps = {
   align?: RadixContentProps["align"];
@@ -61,7 +64,12 @@ export type DropdownMenuContentProps = {
   surface?: DropdownMenuSurface;
 } & Omit<
   RadixContentProps,
-  "align" | "children" | "className" | "onKeyDownCapture" | "sideOffset" | "style"
+  | "align"
+  | "children"
+  | "className"
+  | "onKeyDownCapture"
+  | "sideOffset"
+  | "style"
 >;
 
 export type DropdownMenuItemProps = {
@@ -121,10 +129,7 @@ export type DropdownMenuSearchInputProps = {
   onKeyDown?: InputHTMLAttributes<HTMLInputElement>["onKeyDown"];
   trailingContent?: ReactNode;
   variant?: DropdownMenuSearchVariant;
-} & Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  "className" | "onKeyDown"
->;
+} & Omit<InputHTMLAttributes<HTMLInputElement>, "className" | "onKeyDown">;
 
 export type DropdownMenuSeparatorProps = {
   className?: string;
@@ -220,6 +225,8 @@ export type DropdownMenuCompound = {
   Message: (props: DropdownMenuMessageProps) => ReactElement;
   Title: (props: DropdownMenuTitleProps) => ReactElement;
   SubmenuItem: (props: DropdownMenuSubmenuItemProps) => ReactElement;
-  FlyoutSubmenuItem: (props: DropdownMenuFlyoutSubmenuItemProps) => ReactElement;
+  FlyoutSubmenuItem: (
+    props: DropdownMenuFlyoutSubmenuItemProps,
+  ) => ReactElement;
   Section: (props: DropdownMenuSectionProps) => ReactElement;
 };

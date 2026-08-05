@@ -2,42 +2,53 @@
 // Wave5d soft stubs.
 const getJsxRuntime: any = undefined;
 
-
 // Wave5d soft JSX companions.
-function DeferredUiB(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function DeferredUiB(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function DeferredUiH(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function DeferredUiH(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function IsStartingProcessExpired(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function IsStartingProcessExpired(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function SetRemoteControlEnabledForHost(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function SetRemoteControlEnabledForHost(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function UsePointerSurfaceInteractionGate(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function UsePointerSurfaceInteractionGate(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 // Wave FZ — full polished body from `appgen-library-page-CYrP5b8N/auto-polished.tsx` with companion import rewrite.
@@ -53,13 +64,37 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useAppgenScreenshotDataUrlQuery } from "../../apps/use-appgen-screenshot-data-url-query";
-import { ArtifactFilePreviewIcon, ensureArtifactFilePreviewIconInit } from "../../artifact/artifact-file-preview-icon";
+import {
+  ArtifactFilePreviewIcon,
+  ensureArtifactFilePreviewIconInit,
+} from "../../artifact/artifact-file-preview-icon";
 import { ArtifactPreviewDownloadButton } from "../../artifact/artifact-preview-download-button";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KM_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KM_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { cloneTypedArray } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 } from "../../browser/chatgpt2";
@@ -120,14 +155,20 @@ import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { deferredUiYV } from "../../ui/deferred-ui-yv";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { EmptyMemoSlot } from "../../ui/empty-memo-slot";
 import { ensureShapeColorTokenClusterInit } from "../../ui/ensure-shape-color-token-cluster-init";
 import { macOS4 } from "../../ui/mac-os4";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { SearchableDetailPageLayout } from "../../ui/searchable-detail-page-layout";
-import { ensureUseSearchablePageTitleVisibilityInit, useSearchablePageTitleVisibility } from "../../ui/use-searchable-page-title-visibility";
+import {
+  ensureUseSearchablePageTitleVisibilityInit,
+  useSearchablePageTitleVisibility,
+} from "../../ui/use-searchable-page-title-visibility";
 import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { formatUrlHostPath } from "../../utils/format-url-host-path";
 import { hvtBindableHelper } from "../../utils/hvt-bindable-helper";
@@ -135,12 +176,29 @@ import { identity } from "../../utils/identity";
 import { isIndeterminate } from "../../utils/is-indeterminate";
 import { lerpIfFinite } from "../../utils/lerp-if-finite";
 import { slugifyLoose } from "../../utils/slugify-loose";
-import { ensureImportSettingsCLInit, ensurePersonalizationK0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensurePersonalizationK0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { ensureNewThreadBhInit } from "../../utils/wave-av-gap-ensure-inits";
 import { keysIn } from "../../vendor/lodash-cjs-predicates";
-import { appgenShareDialogT, ensureAppgenShareDialogInit } from "../appgen-share-dialog";
+import {
+  appgenShareDialogT,
+  ensureAppgenShareDialogInit,
+} from "../appgen-share-dialog";
 import { ensureChatgptSiteSuffixesInit } from "../chatgpt-site-suffixes";
-import { createAppgenConversation, dismissAppgenConversationPrompt, ensureStartAppgenConversationHelpersInit, ensureStartAppgenConversationInit, formatAppgenConversationPrefill, listAppgenConversationActions, prepareAppgenConversation, startAppgenConversation, startAppgenConversationFromLibrary, useStartAppgenConversation } from "../start-appgen-conversation";
+import {
+  createAppgenConversation,
+  dismissAppgenConversationPrompt,
+  ensureStartAppgenConversationHelpersInit,
+  ensureStartAppgenConversationInit,
+  formatAppgenConversationPrefill,
+  listAppgenConversationActions,
+  prepareAppgenConversation,
+  startAppgenConversation,
+  startAppgenConversationFromLibrary,
+  useStartAppgenConversation,
+} from "../start-appgen-conversation";
 const RealtimeVoiceHostId: any = undefined;
 /** Wave FZ unresolved companion (missing-export:boundaries/browser-use-mutation-facades.ts) */
 const useClearBrowserBrowsingDataMutation: any = undefined;
@@ -271,186 +329,308 @@ var alpha = esmInit(() => {
   getJsxRuntime();
 });
 function bravo(kite) {
-  let {
-      action,
-      isMutating,
-      onDelete,
-      onOpenChange,
-      onRename
-    } = kite,
+  let { action, isMutating, onDelete, onOpenChange, onRename } = kite,
     lemon = useIntl(),
-    [marble, nickel] = echo.useState(action.type === "rename" ? action.file.name : ""),
+    [marble, nickel] = echo.useState(
+      action.type === "rename" ? action.file.name : "",
+    ),
     onyx = lemon.formatMessage({
       id: "appgenPage.cloudFile.dialog.close",
       defaultMessage: "Close",
-      description: "Accessible label for closing a cloud Library file dialog"
+      description: "Accessible label for closing a cloud Library file dialog",
     });
   let pearl = onyx;
   switch (action.type) {
-    case "rename":
-      {
-        let quartz = marble.trim();
-        let river = quartz,
-          slate = isMutating || river.length === 0 || river === action.file.name,
-          timber = {
-            "aria-describedby": undefined
-          };
-        let umbra = event => {
-          event.preventDefault();
-          slate || onRename(marble);
+    case "rename": {
+      let quartz = marble.trim();
+      let river = quartz,
+        slate = isMutating || river.length === 0 || river === action.file.name,
+        timber = {
+          "aria-describedby": undefined,
         };
-        let violet = <DeferredUiH {...{
-          title: <RealtimeVoiceHostId {...{
-            children: <MemoizedFormattedMessage {...{
-              id: "appgenPage.cloudFile.renameDialog.title",
-              defaultMessage: "Rename file",
-              description: "Title for renaming a cloud Library file"
-            }} />
-          }} />
-        }} />;
-        let willow = lemon.formatMessage({
-          id: "appgenPage.cloudFile.renameDialog.inputLabel",
-          defaultMessage: "File name",
-          description: "Accessible label for the cloud Library rename input"
-        });
-        let xenon = event => nickel(event.target.value);
-        let yellow = <input autoFocus={true} aria-label={willow} className="rounded-xl border border-token-border bg-token-input-background px-3 py-2 text-base text-token-input-foreground shadow-sm outline-none focus:ring-1 focus:ring-token-focus-border" value={marble} onChange={xenon} onFocus={copper} />;
-        let zinc = () => onOpenChange(false);
-        let amber = <MemoizedFormattedMessage {...{
-          id: "appgenPage.cloudFile.dialog.cancel",
-          defaultMessage: "Cancel",
-          description: "Cancel button in a cloud Library file action dialog"
-        }} />;
-        let basalt = <ReadLoginRouteQuerySnapshot {...{
-          color: "outline",
-          disabled: isMutating,
-          type: "button",
-          onClick: zinc,
-          children: amber
-        }} />;
-        let cedar = isMutating ? <MemoizedFormattedMessage {...{
-          id: "appgenPage.cloudFile.renameDialog.renaming",
-          defaultMessage: "Renaming…",
-          description: "Button label while renaming a cloud Library file"
-        }} /> : <MemoizedFormattedMessage {...{
-          id: "appgenPage.cloudFile.renameDialog.rename",
-          defaultMessage: "Rename",
-          description: "Button label for confirming a cloud Library file rename"
-        }} />;
-        let daisy = <ReadLoginRouteQuerySnapshot {...{
-          color: "primary",
-          disabled: slate,
-          type: "submit",
-          children: cedar
-        }} />;
-        let ember = <SetRemoteControlEnabledForHost {...{
-          children: [basalt, daisy]
-        }} />;
-        let flint = <DeferredUiB {...{
-          as: "form",
-          className: "gap-5",
-          onSubmit: umbra,
-          children: [violet, yellow, ember]
-        }} />;
-        let garnet;
-        return <UsePointerSurfaceInteractionGate {...{
-          open: true,
-          contentProps: timber,
-          dialogCloseLabel: pearl,
-          onOpenChange,
-          size: "wide",
-          children: flint
-        }} />;
-      }
-    case "delete":
-      {
-        let hazel = action.files.length > 1,
-          ivory = event => {
-            event.preventDefault();
-            isMutating || onDelete();
-          };
-        let jasper = hazel ? <RealtimeVoiceHostId {...{
-          children: <MemoizedFormattedMessage {...{
-            id: "appgenPage.cloudFile.deleteDialog.bulkTitle",
-            defaultMessage: "Delete files?",
-            description: "Title for deleting multiple cloud Library files"
-          }} />
-        }} /> : <RealtimeVoiceHostId {...{
-          children: <MemoizedFormattedMessage {...{
-            id: "appgenPage.cloudFile.deleteDialog.title",
-            defaultMessage: "Delete file?",
-            description: "Title for deleting one cloud Library file"
-          }} />
-        }} />;
-        let kelp = hazel ? <IsStartingProcessExpired {...{
-          children: <MemoizedFormattedMessage {...{
-            id: "appgenPage.cloudFile.deleteDialog.bulkSubtitle",
-            defaultMessage: "This will delete {count, plural, one {# file} other {# files}} from your Library",
-            description: "Description for deleting multiple cloud Library files",
-            values: {
-              count: action.files.length
-            }
-          }} />
-        }} /> : <IsStartingProcessExpired {...{
-          children: <MemoizedFormattedMessage {...{
-            id: "appgenPage.cloudFile.deleteDialog.subtitle",
-            defaultMessage: "This will delete {fileName} from your Library",
-            description: "Description for deleting one cloud Library file",
-            values: {
-              fileName: action.files[0]?.name
-            }
-          }} />
-        }} />;
-        let lotus = <DeferredUiH {...{
-          title: jasper,
-          subtitle: kelp
-        }} />;
-        let mint = () => onOpenChange(false);
-        let nova = <MemoizedFormattedMessage {...{
-          id: "appgenPage.cloudFile.dialog.cancel",
-          defaultMessage: "Cancel",
-          description: "Cancel button in a cloud Library file action dialog"
-        }} />;
-        let olive = <ReadLoginRouteQuerySnapshot {...{
-          color: "outline",
-          disabled: isMutating,
-          type: "button",
-          onClick: mint,
-          children: nova
-        }} />;
-        let prism = isMutating ? <MemoizedFormattedMessage {...{
-          id: "appgenPage.cloudFile.deleteDialog.deleting",
-          defaultMessage: "Deleting…",
-          description: "Button label while deleting cloud Library files"
-        }} /> : <MemoizedFormattedMessage {...{
-          id: "appgenPage.cloudFile.deleteDialog.delete",
-          defaultMessage: "Delete",
-          description: "Button label for confirming cloud Library file deletion"
-        }} />;
-        let quill = <ReadLoginRouteQuerySnapshot {...{
-          color: "danger",
-          disabled: isMutating,
-          type: "submit",
-          children: prism
-        }} />;
-        let reef = <SetRemoteControlEnabledForHost {...{
-          children: [olive, quill]
-        }} />;
-        let sage = <DeferredUiB {...{
-          as: "form",
-          className: "gap-5",
-          onSubmit: ivory,
-          children: [lotus, reef]
-        }} />;
-        let topaz;
-        return <UsePointerSurfaceInteractionGate {...{
-          open: true,
-          dialogCloseLabel: pearl,
-          onOpenChange,
-          size: "compact",
-          children: sage
-        }} />;
-      }
+      let umbra = (event) => {
+        event.preventDefault();
+        slate || onRename(marble);
+      };
+      let violet = (
+        <DeferredUiH
+          {...{
+            title: (
+              <RealtimeVoiceHostId
+                {...{
+                  children: (
+                    <MemoizedFormattedMessage
+                      {...{
+                        id: "appgenPage.cloudFile.renameDialog.title",
+                        defaultMessage: "Rename file",
+                        description: "Title for renaming a cloud Library file",
+                      }}
+                    />
+                  ),
+                }}
+              />
+            ),
+          }}
+        />
+      );
+      let willow = lemon.formatMessage({
+        id: "appgenPage.cloudFile.renameDialog.inputLabel",
+        defaultMessage: "File name",
+        description: "Accessible label for the cloud Library rename input",
+      });
+      let xenon = (event) => nickel(event.target.value);
+      let yellow = (
+        <input
+          autoFocus={true}
+          aria-label={willow}
+          className="rounded-xl border border-token-border bg-token-input-background px-3 py-2 text-base text-token-input-foreground shadow-sm outline-none focus:ring-1 focus:ring-token-focus-border"
+          value={marble}
+          onChange={xenon}
+          onFocus={copper}
+        />
+      );
+      let zinc = () => onOpenChange(false);
+      let amber = (
+        <MemoizedFormattedMessage
+          {...{
+            id: "appgenPage.cloudFile.dialog.cancel",
+            defaultMessage: "Cancel",
+            description: "Cancel button in a cloud Library file action dialog",
+          }}
+        />
+      );
+      let basalt = (
+        <ReadLoginRouteQuerySnapshot
+          {...{
+            color: "outline",
+            disabled: isMutating,
+            type: "button",
+            onClick: zinc,
+            children: amber,
+          }}
+        />
+      );
+      let cedar = isMutating ? (
+        <MemoizedFormattedMessage
+          {...{
+            id: "appgenPage.cloudFile.renameDialog.renaming",
+            defaultMessage: "Renaming…",
+            description: "Button label while renaming a cloud Library file",
+          }}
+        />
+      ) : (
+        <MemoizedFormattedMessage
+          {...{
+            id: "appgenPage.cloudFile.renameDialog.rename",
+            defaultMessage: "Rename",
+            description:
+              "Button label for confirming a cloud Library file rename",
+          }}
+        />
+      );
+      let daisy = (
+        <ReadLoginRouteQuerySnapshot
+          {...{
+            color: "primary",
+            disabled: slate,
+            type: "submit",
+            children: cedar,
+          }}
+        />
+      );
+      let ember = (
+        <SetRemoteControlEnabledForHost
+          {...{
+            children: [basalt, daisy],
+          }}
+        />
+      );
+      let flint = (
+        <DeferredUiB
+          {...{
+            as: "form",
+            className: "gap-5",
+            onSubmit: umbra,
+            children: [violet, yellow, ember],
+          }}
+        />
+      );
+      let garnet;
+      return (
+        <UsePointerSurfaceInteractionGate
+          {...{
+            open: true,
+            contentProps: timber,
+            dialogCloseLabel: pearl,
+            onOpenChange,
+            size: "wide",
+            children: flint,
+          }}
+        />
+      );
+    }
+    case "delete": {
+      let hazel = action.files.length > 1,
+        ivory = (event) => {
+          event.preventDefault();
+          isMutating || onDelete();
+        };
+      let jasper = hazel ? (
+        <RealtimeVoiceHostId
+          {...{
+            children: (
+              <MemoizedFormattedMessage
+                {...{
+                  id: "appgenPage.cloudFile.deleteDialog.bulkTitle",
+                  defaultMessage: "Delete files?",
+                  description:
+                    "Title for deleting multiple cloud Library files",
+                }}
+              />
+            ),
+          }}
+        />
+      ) : (
+        <RealtimeVoiceHostId
+          {...{
+            children: (
+              <MemoizedFormattedMessage
+                {...{
+                  id: "appgenPage.cloudFile.deleteDialog.title",
+                  defaultMessage: "Delete file?",
+                  description: "Title for deleting one cloud Library file",
+                }}
+              />
+            ),
+          }}
+        />
+      );
+      let kelp = hazel ? (
+        <IsStartingProcessExpired
+          {...{
+            children: (
+              <MemoizedFormattedMessage
+                {...{
+                  id: "appgenPage.cloudFile.deleteDialog.bulkSubtitle",
+                  defaultMessage:
+                    "This will delete {count, plural, one {# file} other {# files}} from your Library",
+                  description:
+                    "Description for deleting multiple cloud Library files",
+                  values: {
+                    count: action.files.length,
+                  },
+                }}
+              />
+            ),
+          }}
+        />
+      ) : (
+        <IsStartingProcessExpired
+          {...{
+            children: (
+              <MemoizedFormattedMessage
+                {...{
+                  id: "appgenPage.cloudFile.deleteDialog.subtitle",
+                  defaultMessage:
+                    "This will delete {fileName} from your Library",
+                  description:
+                    "Description for deleting one cloud Library file",
+                  values: {
+                    fileName: action.files[0]?.name,
+                  },
+                }}
+              />
+            ),
+          }}
+        />
+      );
+      let lotus = (
+        <DeferredUiH
+          {...{
+            title: jasper,
+            subtitle: kelp,
+          }}
+        />
+      );
+      let mint = () => onOpenChange(false);
+      let nova = (
+        <MemoizedFormattedMessage
+          {...{
+            id: "appgenPage.cloudFile.dialog.cancel",
+            defaultMessage: "Cancel",
+            description: "Cancel button in a cloud Library file action dialog",
+          }}
+        />
+      );
+      let olive = (
+        <ReadLoginRouteQuerySnapshot
+          {...{
+            color: "outline",
+            disabled: isMutating,
+            type: "button",
+            onClick: mint,
+            children: nova,
+          }}
+        />
+      );
+      let prism = isMutating ? (
+        <MemoizedFormattedMessage
+          {...{
+            id: "appgenPage.cloudFile.deleteDialog.deleting",
+            defaultMessage: "Deleting…",
+            description: "Button label while deleting cloud Library files",
+          }}
+        />
+      ) : (
+        <MemoizedFormattedMessage
+          {...{
+            id: "appgenPage.cloudFile.deleteDialog.delete",
+            defaultMessage: "Delete",
+            description:
+              "Button label for confirming cloud Library file deletion",
+          }}
+        />
+      );
+      let quill = (
+        <ReadLoginRouteQuerySnapshot
+          {...{
+            color: "danger",
+            disabled: isMutating,
+            type: "submit",
+            children: prism,
+          }}
+        />
+      );
+      let reef = (
+        <SetRemoteControlEnabledForHost
+          {...{
+            children: [olive, quill],
+          }}
+        />
+      );
+      let sage = (
+        <DeferredUiB
+          {...{
+            as: "form",
+            className: "gap-5",
+            onSubmit: ivory,
+            children: [lotus, reef],
+          }}
+        />
+      );
+      let topaz;
+      return (
+        <UsePointerSurfaceInteractionGate
+          {...{
+            open: true,
+            dialogCloseLabel: pearl,
+            onOpenChange,
+            size: "compact",
+            children: sage,
+          }}
+        />
+      );
+    }
   }
 }
 function copper(event) {
@@ -468,7 +648,10 @@ var delta,
     useOpenLocatorInMainWindow();
   });
 function harbor(ultra) {
-  return IntlProvider("border border-token-border-light shadow-md", ultra === "list" ? "rounded-md" : "rounded-xl");
+  return IntlProvider(
+    "border border-token-border-light shadow-md",
+    ultra === "list" ? "rounded-md" : "rounded-xl",
+  );
 }
 var indigo = esmInit(() => {
   ensureComposerEsm_Tft_Init();
@@ -479,7 +662,7 @@ function $n(vapor) {
   let wheat = ["KB", "MB", "GB", "TB"],
     yarn = vapor,
     zephyr = -1;
-  for (; yarn >= 1024 && zephyr < wheat.length - 1;) {
+  for (; yarn >= 1024 && zephyr < wheat.length - 1; ) {
     yarn /= 1024;
     zephyr += 1;
   }

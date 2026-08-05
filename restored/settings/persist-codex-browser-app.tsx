@@ -32,7 +32,9 @@ export type BindBindPersistCodexBrowserAppPeers = {
 let peers: BindBindPersistCodexBrowserAppPeers | null = null;
 
 /** Wire bindBindPersistCodexBrowserApp peers once companions land. */
-export function setBindBindPersistCodexBrowserAppPeers(next: BindBindPersistCodexBrowserAppPeers): void {
+export function setBindBindPersistCodexBrowserAppPeers(
+  next: BindBindPersistCodexBrowserAppPeers,
+): void {
   peers = next;
 }
 
@@ -45,6 +47,29 @@ export function bindBindPersistCodexBrowserApp() {
   }
 
   return peers.e(() => {
-    mve = `/settings/browser-use/downloads`, hve = `chrome://downloads/`, gve = `persist:codex-browser-app`, _ve = `chrome://extensions/`, vve = peers.gve, yve = `/settings/browser-use/extensions`, bve = `/settings/browser-use/history`, xve = `chrome://history/`, Sve = peers.gve, Cve = `chrome://settings/addresses`, wve = [peers.Cve, `chrome://settings/contactInfo`], Tve = `persist:codex-contact-info-settings`, Eve = `/settings/browser-use/contact-info`, Dve = `chrome://password-manager/passwords`, Ove = `chrome://password-manager/`, kve = `persist:codex-password-manager-settings`, Ave = `/settings/browser-use/passwords`, jve = `chrome://settings/content`, Mve = `${peers.jve}/siteDetails`, Nve = `chrome://settings/handlers`, Pve = `chrome://settings/cookies`, Fve = `persist:codex-site-settings`, Ive = `/settings/browser-use/site-settings`, Lve = `${peers.Ive}/*`;
+    ((mve = `/settings/browser-use/downloads`),
+      (hve = `chrome://downloads/`),
+      (gve = `persist:codex-browser-app`),
+      (_ve = `chrome://extensions/`),
+      (vve = peers.gve),
+      (yve = `/settings/browser-use/extensions`),
+      (bve = `/settings/browser-use/history`),
+      (xve = `chrome://history/`),
+      (Sve = peers.gve),
+      (Cve = `chrome://settings/addresses`),
+      (wve = [peers.Cve, `chrome://settings/contactInfo`]),
+      (Tve = `persist:codex-contact-info-settings`),
+      (Eve = `/settings/browser-use/contact-info`),
+      (Dve = `chrome://password-manager/passwords`),
+      (Ove = `chrome://password-manager/`),
+      (kve = `persist:codex-password-manager-settings`),
+      (Ave = `/settings/browser-use/passwords`),
+      (jve = `chrome://settings/content`),
+      (Mve = `${peers.jve}/siteDetails`),
+      (Nve = `chrome://settings/handlers`),
+      (Pve = `chrome://settings/cookies`),
+      (Fve = `persist:codex-site-settings`),
+      (Ive = `/settings/browser-use/site-settings`),
+      (Lve = `${peers.Ive}/*`));
   });
 }

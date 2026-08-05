@@ -7,4 +7,3 @@
 /** Wave FX: bind no longer required after full body promote */
 export function bindUsageSettings(_next: unknown): void {}
 export function ensureUsageSettingsInit(): void {}
-

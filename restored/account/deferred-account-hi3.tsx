@@ -10,7 +10,9 @@ export type DeferredAccountHi3Peers = {
 let peers: DeferredAccountHi3Peers | null = null;
 
 /** Wire DeferredAccountHi3 peers once companions land. */
-export function setDeferredAccountHi3Peers(next: DeferredAccountHi3Peers): void {
+export function setDeferredAccountHi3Peers(
+  next: DeferredAccountHi3Peers,
+): void {
   peers = next;
 }
 
@@ -24,7 +26,7 @@ export function DeferredAccountHi3() {
   return class extends Error {
     uploadError;
     constructor(e) {
-      super(`Profile photo upload failed`), this.uploadError = peers.e;
+      (super(`Profile photo upload failed`), (this.uploadError = peers.e));
     }
   };
 }

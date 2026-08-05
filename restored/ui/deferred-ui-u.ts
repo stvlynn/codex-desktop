@@ -22,9 +22,7 @@ export function bindDeferredUiU() {
     throw new Error("bindDeferredUiU peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => e(peers.Mbu).active);
+  return peers.Ma(peers.Q, ({ get: e }) => e(peers.Mbu).active);
 }
 
 // --- missing-relative-export aliases ---

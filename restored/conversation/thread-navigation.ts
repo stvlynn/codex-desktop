@@ -33,7 +33,9 @@ export type BindThreadNavigationPeers = {
 let peers: BindThreadNavigationPeers | null = null;
 
 /** Wire bindThreadNavigation peers once companions land. */
-export function setBindThreadNavigationPeers(next: BindThreadNavigationPeers): void {
+export function setBindThreadNavigationPeers(
+  next: BindThreadNavigationPeers,
+): void {
   peers = next;
 }
 

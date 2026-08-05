@@ -10,7 +10,9 @@ export type BindNewConversationPeers = {
 let peers: BindNewConversationPeers | null = null;
 
 /** Wire bindNewConversation peers once companions land. */
-export function setBindNewConversationPeers(next: BindNewConversationPeers): void {
+export function setBindNewConversationPeers(
+  next: BindNewConversationPeers,
+): void {
   peers = next;
 }
 
@@ -23,6 +25,6 @@ export function bindNewConversation() {
   }
 
   return peers.e(() => {
-    IJn = `new-conversation`, LJn = `panel-new-conversation`;
+    ((IJn = `new-conversation`), (LJn = `panel-new-conversation`));
   });
 }

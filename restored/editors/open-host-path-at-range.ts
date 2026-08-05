@@ -12,7 +12,9 @@ export type OpenHostPathAtRangePeers = {
 let peers: OpenHostPathAtRangePeers | null = null;
 
 /** Wire openHostPathAtRange peers once companions land. */
-export function setOpenHostPathAtRangePeers(next: OpenHostPathAtRangePeers): void {
+export function setOpenHostPathAtRangePeers(
+  next: OpenHostPathAtRangePeers,
+): void {
   peers = next;
 }
 
@@ -30,6 +32,6 @@ async function openHostPathAtRange(e) {
     hostId: e.hostId,
     target: await peers.dJr(e.hostId),
     line: e.range?.start.line,
-    column: e.range?.start.column
+    column: e.range?.start.column,
   });
 }

@@ -48,7 +48,9 @@ export type BindBindLocalConversationThreadPeers = {
 let peers: BindBindLocalConversationThreadPeers | null = null;
 
 /** Wire bindBindLocalConversationThread peers once companions land. */
-export function setBindBindLocalConversationThreadPeers(next: BindBindLocalConversationThreadPeers): void {
+export function setBindBindLocalConversationThreadPeers(
+  next: BindBindLocalConversationThreadPeers,
+): void {
   peers = next;
 }
 

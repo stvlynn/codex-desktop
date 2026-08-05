@@ -11,7 +11,9 @@ export type UseRateLimitResetCreditsQueryPeers = {
 let peers: UseRateLimitResetCreditsQueryPeers | null = null;
 
 /** Wire rate-limit reset credits query peers once companions land. */
-export function setUseRateLimitResetCreditsQueryPeers(next: UseRateLimitResetCreditsQueryPeers): void {
+export function setUseRateLimitResetCreditsQueryPeers(
+  next: UseRateLimitResetCreditsQueryPeers,
+): void {
   peers = next;
 }
 

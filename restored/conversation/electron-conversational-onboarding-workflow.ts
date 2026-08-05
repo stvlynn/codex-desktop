@@ -14,7 +14,9 @@ export type BindElectronConversationalOnboardingWorkflowPeers = {
 let peers: BindElectronConversationalOnboardingWorkflowPeers | null = null;
 
 /** Wire bindElectronConversationalOnboardingWorkflow peers once companions land. */
-export function setBindElectronConversationalOnboardingWorkflowPeers(next: BindElectronConversationalOnboardingWorkflowPeers): void {
+export function setBindElectronConversationalOnboardingWorkflowPeers(
+  next: BindElectronConversationalOnboardingWorkflowPeers,
+): void {
   peers = next;
 }
 
@@ -23,16 +25,22 @@ export function setBindElectronConversationalOnboardingWorkflowPeers(next: BindE
  */
 export function bindElectronConversationalOnboardingWorkflow() {
   if (peers == null) {
-    throw new Error("bindElectronConversationalOnboardingWorkflow peers are not configured");
+    throw new Error(
+      "bindElectronConversationalOnboardingWorkflow peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.od(), peers.Im(), FPc = `electron:conversational-onboarding-workflow`, IPc = {
-      declinedTasks: [],
-      phase: `role`,
-      selectedRole: null,
-      selectedTask: null,
-      permissionStatus: `not-requested`
-    }, A2 = peers.Pm(peers.FPc, peers.IPc);
+    (peers.od(),
+      peers.Im(),
+      (FPc = `electron:conversational-onboarding-workflow`),
+      (IPc = {
+        declinedTasks: [],
+        phase: `role`,
+        selectedRole: null,
+        selectedTask: null,
+        permissionStatus: `not-requested`,
+      }),
+      (A2 = peers.Pm(peers.FPc, peers.IPc)));
   });
 }

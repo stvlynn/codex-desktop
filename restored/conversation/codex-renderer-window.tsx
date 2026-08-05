@@ -13,7 +13,9 @@ export type BindCodexRendererWindowPeers = {
 let peers: BindCodexRendererWindowPeers | null = null;
 
 /** Wire bindCodexRendererWindow peers once companions land. */
-export function setBindCodexRendererWindowPeers(next: BindCodexRendererWindowPeers): void {
+export function setBindCodexRendererWindowPeers(
+  next: BindCodexRendererWindowPeers,
+): void {
   peers = next;
 }
 
@@ -26,21 +28,25 @@ export function bindCodexRendererWindow() {
   }
 
   return peers.e(() => {
-    Qhe = {
+    ((Qhe = {
       BATCH: `batch`,
-      QUICK: `quick`
-    }, $he = {
-      [peers.Qhe.BATCH]: {
-        defaultSubmitMode: `saved`,
-        persistent: !0
-      },
-      [peers.Qhe.QUICK]: {
-        defaultSubmitMode: `direct`,
-        persistent: !1
-      }
-    }, ege = 25, tge = peers.ege / 2, nge = {
-      width: 344,
-      height: 344
-    };
+      QUICK: `quick`,
+    }),
+      ($he = {
+        [peers.Qhe.BATCH]: {
+          defaultSubmitMode: `saved`,
+          persistent: !0,
+        },
+        [peers.Qhe.QUICK]: {
+          defaultSubmitMode: `direct`,
+          persistent: !1,
+        },
+      }),
+      (ege = 25),
+      (tge = peers.ege / 2),
+      (nge = {
+        width: 344,
+        height: 344,
+      }));
   });
 }

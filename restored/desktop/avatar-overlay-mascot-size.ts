@@ -59,7 +59,9 @@ export function useAvatarOverlayMascotSize(): {
 /**
  * Bundle export `i` — CSS custom-property map for the avatar width.
  */
-export function avatarOverlayMascotWidthStyle(widthPx: number | null | undefined): Record<string, string> | undefined {
+export function avatarOverlayMascotWidthStyle(
+  widthPx: number | null | undefined,
+): Record<string, string> | undefined {
   if (widthPx == null) return undefined;
   return {
     [AVATAR_WIDTH_CSS_VAR]: `${clampAvatarOverlayMascotWidthPx(widthPx)}px`,

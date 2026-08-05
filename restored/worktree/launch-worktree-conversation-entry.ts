@@ -15,7 +15,9 @@ export type LaunchWorktreeConversationEntryPeers = {
 let peers: LaunchWorktreeConversationEntryPeers | null = null;
 
 /** Wire launchWorktreeConversationEntry peers once companions land. */
-export function setLaunchWorktreeConversationEntryPeers(next: LaunchWorktreeConversationEntryPeers): void {
+export function setLaunchWorktreeConversationEntryPeers(
+  next: LaunchWorktreeConversationEntryPeers,
+): void {
   peers = next;
 }
 
@@ -25,7 +27,7 @@ export function setLaunchWorktreeConversationEntryPeers(next: LaunchWorktreeConv
 export async function launchWorktreeConversationEntry({
   entry: e,
   threadGoalObjective: t,
-  workspaceRoot: n
+  workspaceRoot: n,
 }: Record<string, unknown>) {
   if (peers == null) {
     throw new Error("launchWorktreeConversationEntry peers are not configured");
@@ -34,32 +36,47 @@ export async function launchWorktreeConversationEntry({
   if (e.launchMode === `fork-conversation`) {
     let t = [n, ...peers.PSe(e.sourceWorkspaceRoots)],
       i;
-    return i = e.targetTurnId == null ? await peers.Bf(`fork-conversation-from-latest`, {
-      hostId: e.hostId,
-      conversationId: e.sourceConversationId,
-      cwd: n,
-      workspaceRoots: t,
-      collaborationMode: e.sourceCollaborationMode,
-      threadSource: e.threadSource
-    }) : await peers.Bf(`fork-conversation-from-turn`, {
-      conversationId: e.sourceConversationId,
-      targetTurnId: e.targetTurnId,
-      cwd: n,
-      workspaceRoots: t,
-      collaborationMode: e.sourceCollaborationMode,
-      threadSource: e.threadSource
-    }), r != null && (await peers.Bf(`add-worktree-init-synthetic-turn`, {
-      conversationId: i,
-      worktreeInit: r
-    })), i;
+    return (
+      (i =
+        e.targetTurnId == null
+          ? await peers.Bf(`fork-conversation-from-latest`, {
+              hostId: e.hostId,
+              conversationId: e.sourceConversationId,
+              cwd: n,
+              workspaceRoots: t,
+              collaborationMode: e.sourceCollaborationMode,
+              threadSource: e.threadSource,
+            })
+          : await peers.Bf(`fork-conversation-from-turn`, {
+              conversationId: e.sourceConversationId,
+              targetTurnId: e.targetTurnId,
+              cwd: n,
+              workspaceRoots: t,
+              collaborationMode: e.sourceCollaborationMode,
+              threadSource: e.threadSource,
+            })),
+      r != null &&
+        (await peers.Bf(`add-worktree-init-synthetic-turn`, {
+          conversationId: i,
+          worktreeInit: r,
+        })),
+      i
+    );
   }
-  if (e.launchMode !== `start-conversation`) throw Error(`Unsupported launch mode: ${e.launchMode}`);
+  if (e.launchMode !== `start-conversation`)
+    throw Error(`Unsupported launch mode: ${e.launchMode}`);
   let i = peers.OEu(e),
-    a = t == null ? e.startConversationParamsInput : {
-      ...e.startConversationParamsInput,
-      fileAttachments: peers.EEu(e),
-      input: peers.kEu(e.startConversationParamsInput.input, peers.Gbt(t))
-    },
+    a =
+      t == null
+        ? e.startConversationParamsInput
+        : {
+            ...e.startConversationParamsInput,
+            fileAttachments: peers.EEu(e),
+            input: peers.kEu(
+              e.startConversationParamsInput.input,
+              peers.Gbt(t),
+            ),
+          },
     o = a.projectAssignment;
   return peers.Bf(`start-conversation`, {
     hostId: e.threadStartHostId ?? e.hostId,
@@ -67,13 +84,16 @@ export async function launchWorktreeConversationEntry({
       ...a,
       workspaceRoots: [n, ...peers.PSe(a.workspaceRoots)],
       cwd: n,
-      projectAssignment: o == null ? o : {
-        ...o,
-        cwd: n
-      }
+      projectAssignment:
+        o == null
+          ? o
+          : {
+              ...o,
+              cwd: n,
+            },
     }),
     initialTitle: i || void 0,
     skipAutoTitleGeneration: i.length > 0,
-    worktreeInit: r ?? void 0
+    worktreeInit: r ?? void 0,
   });
 }

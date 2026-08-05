@@ -11,7 +11,9 @@ type History = {
 const cache = new WeakMap<History, HistoryEntity[]>();
 
 /** Flatten island entry keys into entity values (memoized). */
-export function flattenHistoryIslandEntities(history: History): HistoryEntity[] {
+export function flattenHistoryIslandEntities(
+  history: History,
+): HistoryEntity[] {
   const hit = cache.get(history);
   if (hit != null) return hit;
   const entities = history.islands.flatMap((island) =>

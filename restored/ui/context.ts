@@ -37,6 +37,17 @@ export function context() {
   }
 
   return peers.e(() => {
-    g$a = peers.c(), peers.KB(), peers.Au(), _$a = peers.r(peers.o(), 1), peers.Vla(), peers.p$a(), peers.wp(), peers.FP(), peers.dL(), peers.gP(), v$a = peers.J(), y$a = `:is([data-diff], [data-file])`;
+    ((g$a = peers.c()),
+      peers.KB(),
+      peers.Au(),
+      (_$a = peers.r(peers.o(), 1)),
+      peers.Vla(),
+      peers.p$a(),
+      peers.wp(),
+      peers.FP(),
+      peers.dL(),
+      peers.gP(),
+      (v$a = peers.J()),
+      (y$a = `:is([data-diff], [data-file])`));
   });
 }

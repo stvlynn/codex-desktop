@@ -17,7 +17,9 @@ export type UseWorkspaceOnboardingExperimentPeers = {
 let peers: UseWorkspaceOnboardingExperimentPeers | null = null;
 
 /** Wire useWorkspaceOnboardingExperiment peers once companions land. */
-export function setUseWorkspaceOnboardingExperimentPeers(next: UseWorkspaceOnboardingExperimentPeers): void {
+export function setUseWorkspaceOnboardingExperimentPeers(
+  next: UseWorkspaceOnboardingExperimentPeers,
+): void {
   peers = next;
 }
 

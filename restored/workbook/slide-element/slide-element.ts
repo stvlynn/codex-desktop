@@ -34,9 +34,7 @@ export class SlideElement {
   constructor(elIn683, elIn684) {
     this.context = elIn683;
     this.context.fontFamilyCache?.addTextStyle(elIn684.textStyle);
-    this.context.fontFamilyCache?.addLevelStyles(
-      elIn684.levelsStyles,
-    );
+    this.context.fontFamilyCache?.addLevelStyles(elIn684.levelsStyles);
     this.context.fontFamilyCache?.addElements(elIn684.children);
     this.#r = FrameBbox.fromProto(elIn684.bbox);
     this.#r.setChangeHandler((elIn13589) => {
@@ -55,8 +53,7 @@ export class SlideElement {
       placement: elIn684.placement,
       placeholderIndex: elIn684.placeholderIndex,
       placeholderType: elIn684.placeholderType,
-      placeholderHasCustomPrompt:
-        elIn684.placeholderHasCustomPrompt,
+      placeholderHasCustomPrompt: elIn684.placeholderHasCustomPrompt,
       hyperlink: elIn684.hyperlink,
       fill: elIn684.fill,
       line: elIn684.line,
@@ -78,13 +75,8 @@ export class SlideElement {
       creationId: elIn684.creationId ?? bracedUuidUpper(),
       hidden: elIn684.hidden,
     };
-    this.#e = new Paragraphs(
-      this.#c(),
-      elIn684.paragraphs ?? [],
-    );
-    this.#n = elIn684.textStyle
-      ? new TextStyle(elIn684.textStyle)
-      : undefined;
+    this.#e = new Paragraphs(this.#c(), elIn684.paragraphs ?? []);
+    this.#n = elIn684.textStyle ? new TextStyle(elIn684.textStyle) : undefined;
   }
   get name() {
     return this.data.name ?? "";
@@ -131,9 +123,7 @@ export class SlideElement {
       : undefined;
   }
   set placement(elIn11039) {
-    this.data.placement = elIn11039
-      ? structuredClone(elIn11039)
-      : undefined;
+    this.data.placement = elIn11039 ? structuredClone(elIn11039) : undefined;
     this.#x();
   }
   get text() {
@@ -141,10 +131,7 @@ export class SlideElement {
       (this.#t ||= new DetachedText(this.#e, {
         getDefaultTextStyle: () => this.#n,
         setDefaultTextStyle: (elIn5828) => {
-          if (
-            elIn5828 instanceof TextStyle ||
-            elIn5828 === undefined
-          ) {
+          if (elIn5828 instanceof TextStyle || elIn5828 === undefined) {
             this.#n = elIn5828 ?? undefined;
             return;
           }
@@ -161,8 +148,7 @@ export class SlideElement {
         onLayoutInvalidated: () => this.#h(),
         onMutated: () => this.#x(),
         record: {
-          recordOp: (elIn15941) =>
-            this.recordPatchOp(elIn15941),
+          recordOp: (elIn15941) => this.recordPatchOp(elIn15941),
           getTargetRef: () => this.recordTargetRef(),
           getAnchorId: () => this.recordTargetRef(),
         },
@@ -265,14 +251,10 @@ export class SlideElement {
       return;
     }
     let elBind12747 = {};
-    elIn3890.left !== undefined &&
-      (elBind12747.left = elIn3890.left);
-    elIn3890.top !== undefined &&
-      (elBind12747.top = elIn3890.top);
-    elIn3890.width !== undefined &&
-      (elBind12747.width = elIn3890.width);
-    elIn3890.height !== undefined &&
-      (elBind12747.height = elIn3890.height);
+    elIn3890.left !== undefined && (elBind12747.left = elIn3890.left);
+    elIn3890.top !== undefined && (elBind12747.top = elIn3890.top);
+    elIn3890.width !== undefined && (elBind12747.width = elIn3890.width);
+    elIn3890.height !== undefined && (elBind12747.height = elIn3890.height);
     Object.keys(elBind12747).length !== 0 &&
       (this.#r.merge(elBind12747),
       this.#h(),
@@ -289,15 +271,13 @@ export class SlideElement {
   }
   commitPreviewFrame() {
     let elBind20699 = this.#r.getPreviewRect();
-    elBind20699 &&
-      ((this.frame = elBind20699), this.#r.clearPreview());
+    elBind20699 && ((this.frame = elBind20699), this.#r.clearPreview());
   }
   #s(elIn5010) {
     let elBind14442 = this.context.getSlide?.(),
       elBind14443 = [
-        ...(elBind14442?.elements?.items.map(
-          (elIn16626) => elIn16626.id,
-        ) ?? []),
+        ...(elBind14442?.elements?.items.map((elIn16626) => elIn16626.id) ??
+          []),
         ...(this.context.getExistingElementIds?.() ?? []),
       ];
     return elIn5010 &&
@@ -315,44 +295,28 @@ export class SlideElement {
       ...this.context,
       fontFamilyCache: this.context.fontFamilyCache,
       getResolvedParagraphTextStyle: (elIn12593) =>
-        this.context.getResolvedParagraphTextStyle?.(
-          elIn12593,
-          this.#n,
-        ),
+        this.context.getResolvedParagraphTextStyle?.(elIn12593, this.#n),
       getResolvedParagraphStyle: (elIn13478) =>
         this.context.getResolvedParagraphStyle?.(elIn13478),
       getResolvedRunTextStyle: (elIn12594, elIn12595) =>
-        this.context.getResolvedRunTextStyle?.(
-          elIn12594,
-          elIn12595,
-          this.#n,
-        ),
+        this.context.getResolvedRunTextStyle?.(elIn12594, elIn12595, this.#n),
     };
   }
   #l() {
     let elBind13653 = this.placeholderIndex,
       elBind13654 = new Set(this.placeholderTypeCandidates);
-    if (
-      elBind13653 === undefined &&
-      elBind13654.size === 0
-    )
-      return;
+    if (elBind13653 === undefined && elBind13654.size === 0) return;
     let elBind13655 = this.context.getPresentation?.(),
       elBind13656 = this.context.getSlide?.();
     if (!elBind13655 || !elBind13656) return;
-    let { layout, masterLayout } =
-      elBind13656.resolveRenderContext();
+    let { layout, masterLayout } = elBind13656.resolveRenderContext();
     return (
       this.#u(layout, elBind13653, elBind13654) ||
       this.#u(masterLayout, elBind13653, elBind13654)
     );
   }
   #u(elIn9303, elIn9304, elIn9305) {
-    let elBind19871 = this.#d(
-      elIn9303,
-      elIn9304,
-      elIn9305,
-    );
+    let elBind19871 = this.#d(elIn9303, elIn9304, elIn9305);
     if (!elBind19871) return;
     let elBind19872 = elBind19871.resolveFrame();
     return this.#m(elBind19872) ? elBind19872 : undefined;
@@ -367,9 +331,7 @@ export class SlideElement {
       }
       if (elIn5243.size !== 0)
         return elIn5241.elements.find((item) =>
-          item.placeholderTypeCandidates.some((_item) =>
-            elIn5243.has(_item),
-          ),
+          item.placeholderTypeCandidates.some((_item) => elIn5243.has(_item)),
         );
     }
   }
@@ -398,21 +360,16 @@ export class SlideElement {
       left: elBind12596.left ?? elIn3810.left,
       top: elBind12596.top ?? elIn3810.top,
       width:
-        elBind12596.width !== undefined &&
-        elBind12596.width > 0
+        elBind12596.width !== undefined && elBind12596.width > 0
           ? elBind12596.width
           : elIn3810.width,
       height:
-        elBind12596.height !== undefined &&
-        elBind12596.height > 0
+        elBind12596.height !== undefined && elBind12596.height > 0
           ? elBind12596.height
           : elIn3810.height,
       rotation: elBind12596.rotation ?? elIn3810.rotation,
-      horizontalFlip:
-        elBind12596.horizontalFlip ??
-        elIn3810.horizontalFlip,
-      verticalFlip:
-        elBind12596.verticalFlip ?? elIn3810.verticalFlip,
+      horizontalFlip: elBind12596.horizontalFlip ?? elIn3810.horizontalFlip,
+      verticalFlip: elBind12596.verticalFlip ?? elIn3810.verticalFlip,
     };
   }
   #m(elIn13590) {
@@ -428,8 +385,7 @@ export class SlideElement {
       },
       elBind15205 = this.#r.toProto();
     return (
-      elBind15205 &&
-        (elBind15204.bbox = elBind15205),
+      elBind15205 && (elBind15204.bbox = elBind15205),
       ensureElementStyleReferences(elBind15204),
       elBind15204
     );
@@ -501,21 +457,13 @@ export class SlideElement {
         paragraphs: this.#e.toProto(),
       },
       elBind16391 = this.#r.toProto();
-    return (
-      elBind16391 &&
-        (elBind16390.bbox = elBind16391),
-      elBind16390
-    );
+    return (elBind16391 && (elBind16390.bbox = elBind16391), elBind16390);
   }
   recordShapeSet(elIn5802) {
-    if (
-      !Object.values(elIn5802).some((item) => item !== undefined)
-    )
-      return;
+    if (!Object.values(elIn5802).some((item) => item !== undefined)) return;
     this.#x();
     let elBind15720 = this.#v();
-    if (!elBind15720 || !elBind15720.startsWith("sh/"))
-      return;
+    if (!elBind15720 || !elBind15720.startsWith("sh/")) return;
     let elBind15721 = this.recordTargetRef(elBind15720);
     elBind15721 &&
       this.recordPatchOp({
@@ -535,9 +483,7 @@ export class SlideElement {
   recordTargetRef(elIn7780) {
     let elBind18261 = elIn7780 ?? this.#v();
     if (!elBind18261) return;
-    let elBind18262 = this.context
-      .getPresentation?.()
-      ?.getRecorder?.();
+    let elBind18262 = this.context.getPresentation?.()?.getRecorder?.();
     return elBind18262
       ? elBind18262.targetRefForElement(this, elBind18261)
       : elBind18261;
@@ -554,11 +500,7 @@ export class SlideElement {
     if (!elBind19093) return;
     let elBind19094 = this.context.getSlide?.().id;
     if (!(!elBind19094 || !this.data.id))
-      return composeScopedId(
-        elBind19093,
-        elBind19094,
-        this.data.id,
-      );
+      return composeScopedId(elBind19093, elBind19094, this.data.id);
   }
   #y() {
     switch (this.data.type) {
@@ -581,32 +523,20 @@ export class SlideElement {
     }
   }
   #b(elIn2984) {
-    if (
-      !elIn2984 ||
-      elIn2984 instanceof FrameBbox
-    )
-      return;
+    if (!elIn2984 || elIn2984 instanceof FrameBbox) return;
     let elBind10990 = {};
     return (
-      elIn2984.left !== undefined &&
-        (elBind10990.left = elIn2984.left),
-      elIn2984.top !== undefined &&
-        (elBind10990.top = elIn2984.top),
-      elIn2984.width !== undefined &&
-        (elBind10990.width = elIn2984.width),
-      elIn2984.height !== undefined &&
-        (elBind10990.height = elIn2984.height),
+      elIn2984.left !== undefined && (elBind10990.left = elIn2984.left),
+      elIn2984.top !== undefined && (elBind10990.top = elIn2984.top),
+      elIn2984.width !== undefined && (elBind10990.width = elIn2984.width),
+      elIn2984.height !== undefined && (elBind10990.height = elIn2984.height),
       elIn2984.rotation !== undefined &&
         (elBind10990.rotation = elIn2984.rotation),
       elIn2984.horizontalFlip !== undefined &&
-        (elBind10990.horizontalFlip =
-          elIn2984.horizontalFlip),
+        (elBind10990.horizontalFlip = elIn2984.horizontalFlip),
       elIn2984.verticalFlip !== undefined &&
-        (elBind10990.verticalFlip =
-          elIn2984.verticalFlip),
-      Object.keys(elBind10990).length > 0
-        ? elBind10990
-        : undefined
+        (elBind10990.verticalFlip = elIn2984.verticalFlip),
+      Object.keys(elBind10990).length > 0 ? elBind10990 : undefined
     );
   }
   #x() {

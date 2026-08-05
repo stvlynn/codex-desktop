@@ -25,7 +25,9 @@ export type BindBindExternalAgentConfigPeers = {
 let peers: BindBindExternalAgentConfigPeers | null = null;
 
 /** Wire bindBindExternalAgentConfig peers once companions land. */
-export function setBindBindExternalAgentConfigPeers(next: BindBindExternalAgentConfigPeers): void {
+export function setBindBindExternalAgentConfigPeers(
+  next: BindBindExternalAgentConfigPeers,
+): void {
   peers = next;
 }
 

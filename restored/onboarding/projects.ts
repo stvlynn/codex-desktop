@@ -47,6 +47,30 @@ export function bindProjects() {
   }
 
   return peers.e(() => {
-    wcu = peers.c(), peers.Qt(), peers.Ho(), peers.Au(), peers.$u(), peers.Vf(), peers.Lsu(), peers.gPl(), peers.Woc(), peers.zsu(), peers.LNl(), peers.Wsu(), peers.$Nl(), peers.cPl(), peers.CPl(), peers.ed(), peers.K_(), peers.ZA(), peers.wz(), peers.Fh(), peers.i9t(), peers.Gf(), peers.jf(), peers.ap(), Tcu = 6;
+    ((wcu = peers.c()),
+      peers.Qt(),
+      peers.Ho(),
+      peers.Au(),
+      peers.$u(),
+      peers.Vf(),
+      peers.Lsu(),
+      peers.gPl(),
+      peers.Woc(),
+      peers.zsu(),
+      peers.LNl(),
+      peers.Wsu(),
+      peers.$Nl(),
+      peers.cPl(),
+      peers.CPl(),
+      peers.ed(),
+      peers.K_(),
+      peers.ZA(),
+      peers.wz(),
+      peers.Fh(),
+      peers.i9t(),
+      peers.Gf(),
+      peers.jf(),
+      peers.ap(),
+      (Tcu = 6));
   });
 }

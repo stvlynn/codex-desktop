@@ -26,7 +26,13 @@ export function bboxFromEmu(scrIn4423: any) {
       verticalFlip: scrBind13646.verticalFlip,
     };
 }
-export function paintSlideText(scrIn1291: any, scrIn1292: any, scrIn1293: any, scrIn1294: any, scrIn1295: any, ) {
+export function paintSlideText(
+  scrIn1291: any,
+  scrIn1292: any,
+  scrIn1293: any,
+  scrIn1294: any,
+  scrIn1295: any,
+) {
   let scrBind6979 = scrIn1291.toProto(),
     scrBind6980 = scrBind6979.children ?? [];
   if (scrBind6980.length === 0) return;
@@ -46,18 +52,10 @@ export function paintSlideText(scrIn1291: any, scrIn1292: any, scrIn1293: any, s
       let scrBind9057 = bboxFromEmu(scrBind8929);
       if (!scrBind9057) continue;
       let scrBind9058 = {
-        left:
-          (scrBind9057.x / scrBind6982) *
-          scrBind6981.width,
-        top:
-          (scrBind9057.y / scrBind6983) *
-          scrBind6981.height,
-        width:
-          (scrBind9057.width / scrBind6982) *
-          scrBind6981.width,
-        height:
-          (scrBind9057.height / scrBind6983) *
-          scrBind6981.height,
+        left: (scrBind9057.x / scrBind6982) * scrBind6981.width,
+        top: (scrBind9057.y / scrBind6983) * scrBind6981.height,
+        width: (scrBind9057.width / scrBind6982) * scrBind6981.width,
+        height: (scrBind9057.height / scrBind6983) * scrBind6981.height,
         rotation: scrBind9057.rotation,
         horizontalFlip: scrBind9057.horizontalFlip,
         verticalFlip: scrBind9057.verticalFlip,
@@ -78,30 +76,24 @@ export function paintSlideText(scrIn1291: any, scrIn1292: any, scrIn1293: any, s
         scrBind8929.type === scrH.elementTypes.ELEMENT_TYPE_TEXT_GROUP ||
         (scrBind8929.paragraphs?.length ?? 0) > 0) &&
         (scrH.applyFrameTransform(scrIn1292, scrBind9058),
-        scrH.paintTextElement(
-          scrBind8929,
-          scrIn1292,
-          scrIn1295,
-          undefined,
-          {
-            bboxPx: {
-              x: 0,
-              y: 0,
-              width: scrBind9058.width,
-              height: scrBind9058.height,
-            },
-            resolvedStyle: scrH.layoutPaintedText(
-              scrBind8929,
-              scrIn1293,
-              scrIn1294,
-            ),
-            masterDefaults: scrH.masterDefaults(
-              scrBind8929,
-              scrIn1293,
-              scrIn1294,
-            ),
+        scrH.paintTextElement(scrBind8929, scrIn1292, scrIn1295, undefined, {
+          bboxPx: {
+            x: 0,
+            y: 0,
+            width: scrBind9058.width,
+            height: scrBind9058.height,
           },
-        ),
+          resolvedStyle: scrH.layoutPaintedText(
+            scrBind8929,
+            scrIn1293,
+            scrIn1294,
+          ),
+          masterDefaults: scrH.masterDefaults(
+            scrBind8929,
+            scrIn1293,
+            scrIn1294,
+          ),
+        }),
         scrIn1292.restore());
     }
     scrIn1292.restore();

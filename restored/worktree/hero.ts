@@ -58,6 +58,39 @@ export function bindHero() {
   }
 
   return peers.e(() => {
-    peers.Hb(), peers.sd(), peers.Ho(), L6s = peers.r(peers.o(), 1), peers.$u(), peers.BXi(), peers.tY(), peers.qR(), peers.$m(), peers.C6s(), peers.Kj(), peers.zZ(), peers.ld(), peers.n1(), peers.mb(), peers.mh(), peers.hA(), peers.Kb(), peers.fZ(), peers.UX(), peers.TA(), peers.lj(), peers.mGr(), peers.CA(), peers.ed(), peers.OE(), peers.P6s(), peers.rz(), peers._6o(), peers.Fh(), peers.Vus(), peers.Vos(), peers.Xus(), i1 = peers.J();
+    (peers.Hb(),
+      peers.sd(),
+      peers.Ho(),
+      (L6s = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.BXi(),
+      peers.tY(),
+      peers.qR(),
+      peers.$m(),
+      peers.C6s(),
+      peers.Kj(),
+      peers.zZ(),
+      peers.ld(),
+      peers.n1(),
+      peers.mb(),
+      peers.mh(),
+      peers.hA(),
+      peers.Kb(),
+      peers.fZ(),
+      peers.UX(),
+      peers.TA(),
+      peers.lj(),
+      peers.mGr(),
+      peers.CA(),
+      peers.ed(),
+      peers.OE(),
+      peers.P6s(),
+      peers.rz(),
+      peers._6o(),
+      peers.Fh(),
+      peers.Vus(),
+      peers.Vos(),
+      peers.Xus(),
+      (i1 = peers.J()));
   });
 }

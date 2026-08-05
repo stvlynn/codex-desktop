@@ -8,7 +8,10 @@ export type ScopeBrandOptions = {
 };
 
 /** Create a branded scope handle used by store/scope wiring. */
-export function createScopeBrand(brand: unknown, options?: ScopeBrandOptions): {
+export function createScopeBrand(
+  brand: unknown,
+  options?: ScopeBrandOptions,
+): {
   __scopeBrand: unknown;
   getKey: unknown;
   id: symbol;

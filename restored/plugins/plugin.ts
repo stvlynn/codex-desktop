@@ -23,6 +23,6 @@ export function bindPlugin() {
   }
 
   return peers.e(() => {
-    peers.i_(), yXr = `plugin://`;
+    (peers.i_(), (yXr = `plugin://`));
   });
 }

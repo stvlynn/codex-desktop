@@ -59,9 +59,9 @@ export type GhPrStatusCacheEntry = {
  * Bundle: optimistic cache patch after a successful merge:
  * force merged / non-mergeable status shape.
  */
-export function markGhPrStatusMerged<T extends GhPrStatusCacheEntry | null | undefined>(
-  entry: T,
-): T {
+export function markGhPrStatusMerged<
+  T extends GhPrStatusCacheEntry | null | undefined,
+>(entry: T): T {
   if (entry == null || entry.status !== "success") return entry;
   return {
     ...entry,
@@ -192,10 +192,7 @@ export function resolveReviewerPickerOptions(args: {
     if (args.selectedReviewers.length > 0) return args.selectedReviewers;
     return args.query.length === 0 ? [] : undefined;
   }
-  return uniqueByLogin([
-    ...args.selectedReviewers,
-    ...args.availableReviewers,
-  ]);
+  return uniqueByLogin([...args.selectedReviewers, ...args.availableReviewers]);
 }
 
 /** Bundle: toggle a reviewer in the selection list. */

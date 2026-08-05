@@ -29,6 +29,11 @@ export function bindStatus() {
   }
 
   return peers.e(() => {
-    Vis = peers.c(), peers.$u(), peers.tti(), peers.zis(), peers.XR(), LX = peers.J();
+    ((Vis = peers.c()),
+      peers.$u(),
+      peers.tti(),
+      peers.zis(),
+      peers.XR(),
+      (LX = peers.J()));
   });
 }

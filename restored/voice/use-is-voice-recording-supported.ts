@@ -15,7 +15,9 @@ export type UseIsVoiceRecordingSupportedPeers = {
 let peers: UseIsVoiceRecordingSupportedPeers | null = null;
 
 /** Wire useIsVoiceRecordingSupported peers once companions land. */
-export function setUseIsVoiceRecordingSupportedPeers(next: UseIsVoiceRecordingSupportedPeers): void {
+export function setUseIsVoiceRecordingSupportedPeers(
+  next: UseIsVoiceRecordingSupportedPeers,
+): void {
   peers = next;
 }
 
@@ -30,5 +32,11 @@ export function useIsVoiceRecordingSupported(e: unknown) {
   let t = peers.bM(e),
     n = peers.kh(`4100906017`),
     r = peers.Oh();
-  return !peers.INo() || !peers.navigator?.mediaDevices?.getUserMedia || typeof peers.MediaRecorder > `u` ? !1 : t == null || t.isLoading || r ? null : n && t.authMethod === `chatgpt`;
+  return !peers.INo() ||
+    !peers.navigator?.mediaDevices?.getUserMedia ||
+    typeof peers.MediaRecorder > `u`
+    ? !1
+    : t == null || t.isLoading || r
+      ? null
+      : n && t.authMethod === `chatgpt`;
 }

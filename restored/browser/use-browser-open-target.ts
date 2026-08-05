@@ -16,7 +16,9 @@ export type UseBrowserOpenTargetPeers = {
 let peers: UseBrowserOpenTargetPeers | null = null;
 
 /** Wire useBrowserOpenTarget peers once companions land. */
-export function setUseBrowserOpenTargetPeers(next: UseBrowserOpenTargetPeers): void {
+export function setUseBrowserOpenTargetPeers(
+  next: UseBrowserOpenTargetPeers,
+): void {
   peers = next;
 }
 

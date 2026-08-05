@@ -20,12 +20,15 @@ export type CodexReferralConsumerDialogParts = {
 let parts: CodexReferralConsumerDialogParts | null = null;
 
 /** Wire full referral consumer dialog once companions land. */
-export function setCodexReferralConsumerDialogParts(next: CodexReferralConsumerDialogParts): void {
+export function setCodexReferralConsumerDialogParts(
+  next: CodexReferralConsumerDialogParts,
+): void {
   parts = next;
 }
 
 /** @deprecated Prefer setCodexReferralConsumerDialogParts */
-export function bindCodexReferralConsumerDialog(next: (props: CodexReferralConsumerDialogProps) => ReactNode,
+export function bindCodexReferralConsumerDialog(
+  next: (props: CodexReferralConsumerDialogProps) => ReactNode,
 ): void {
   parts = { render: next };
 }
@@ -34,7 +37,9 @@ export function bindCodexReferralConsumerDialog(next: (props: CodexReferralConsu
  * Bundle export `Cv` / internal `yks`.
  * Referral consumer eligibility / maxEmails dialog scaffold.
  */
-export function CodexReferralConsumerDialog(props: CodexReferralConsumerDialogProps): ReactElement {
+export function CodexReferralConsumerDialog(
+  props: CodexReferralConsumerDialogProps,
+): ReactElement {
   if (parts != null) return parts.render(props) as ReactElement;
   const { onClose, children } = props;
   return (

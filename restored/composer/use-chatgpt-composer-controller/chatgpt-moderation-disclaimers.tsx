@@ -6,9 +6,7 @@ import { tryParseJsonText as _appInitialLF } from "../../utils/try-parse-json-te
 import { useChatgptComposerControllerHelper249 } from "./chatgpt-moderation-disclaimer-card";
 import { useChatgptComposerControllerHelper250 } from "./chatgpt-trusted-contact-disclaimer-card";
 
-function useChatgptComposerControllerHelper248(
-  request1921,
-) {
+function useChatgptComposerControllerHelper248(request1921) {
   const Provider = appInitialIL.Provider;
   let {
     conversationId,
@@ -18,21 +16,13 @@ function useChatgptComposerControllerHelper248(
   } = request1921;
   if (moderationDisclaimers == null || moderationDisclaimers.length === 0)
     return null;
-  let slot6070 = shouldBlockExternalEgress
-      ? "restricted"
-      : "allow",
+  let slot6070 = shouldBlockExternalEgress ? "restricted" : "allow",
     slot6071;
   {
     let slot8644;
-    slot8644 = (
-      request4011,
-      request4012,
-    ) => {
-      let { disclaimers, disclaimerMetadata, disclaimerType } =
-          request4011,
-        slot9916 = _appInitialLF(disclaimerType)
-          ? disclaimerType
-          : undefined;
+    slot8644 = (request4011, request4012) => {
+      let { disclaimers, disclaimerMetadata, disclaimerType } = request4011,
+        slot9916 = _appInitialLF(disclaimerType) ? disclaimerType : undefined;
       return disclaimers.map((item, index) => {
         const UseChatgptComposerControllerHelper249 =
           useChatgptComposerControllerHelper249;
@@ -56,20 +46,10 @@ function useChatgptComposerControllerHelper248(
         );
       });
     };
-    slot6071 = moderationDisclaimers.flatMap(
-      slot8644,
-    );
+    slot6071 = moderationDisclaimers.flatMap(slot8644);
   }
-  let slot6072 = (
-    <div className="mt-3 flex flex-col gap-2">
-      {slot6071}
-    </div>
-  );
-  return (
-    <Provider value={slot6070}>
-      {slot6072}
-    </Provider>
-  );
+  let slot6072 = <div className="mt-3 flex flex-col gap-2">{slot6071}</div>;
+  return <Provider value={slot6070}>{slot6072}</Provider>;
 }
 
 export { useChatgptComposerControllerHelper248 };

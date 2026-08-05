@@ -1,10 +1,7 @@
 // Restored from ref/webview/assets/app-initial-C-fROkKo.js
 // Surface / width / max-height helpers (`HYi` / `UYi` / `WYi`).
 
-import {
-  CONTENT_MAX_HEIGHT_PX,
-  CONTENT_WIDTH_CLASS,
-} from "./constants";
+import { CONTENT_MAX_HEIGHT_PX, CONTENT_WIDTH_CLASS } from "./constants";
 import type {
   DropdownMenuContentMaxHeight,
   DropdownMenuContentWidth,

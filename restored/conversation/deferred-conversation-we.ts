@@ -18,7 +18,9 @@ export type BindDeferredConversationWEPeers = {
 let peers: BindDeferredConversationWEPeers | null = null;
 
 /** Wire bindDeferredConversationWE peers once companions land. */
-export function setBindDeferredConversationWEPeers(next: BindDeferredConversationWEPeers): void {
+export function setBindDeferredConversationWEPeers(
+  next: BindDeferredConversationWEPeers,
+): void {
   peers = next;
 }
 
@@ -41,6 +43,6 @@ export function bindDeferredConversationWE() {
     IconButton: peers.jYo,
     FileRow: peers.MYo,
     FileSection: peers.NYo,
-    Expanded: peers.PYo
+    Expanded: peers.PYo,
   };
 }

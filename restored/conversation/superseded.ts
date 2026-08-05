@@ -65,19 +65,23 @@ export function superseded() {
       start(copper, delta, echo, falcon, i) {
         let a = this.pendingByClientUserMessageId.get(peers.e);
         a != null && (this.clear(a), a.span.abort("superseded"));
-        let gamma = this.startSpan("turn_first_response_visible", {
-          submissionKind: peers.t
-        }, {
-          key: peers.e,
-          onTerminal: () => {
-            let harbor = this.pendingByClientUserMessageId.get(peers.e);
-            peers.t?.span === gamma && this.clear(peers.t);
+        let gamma = this.startSpan(
+          "turn_first_response_visible",
+          {
+            submissionKind: peers.t,
           },
-          startedAtMs: peers.i,
-          traceAttributes: {
-            "turn.submission_kind": peers.t
-          }
-        });
+          {
+            key: peers.e,
+            onTerminal: () => {
+              let harbor = this.pendingByClientUserMessageId.get(peers.e);
+              peers.t?.span === gamma && this.clear(peers.t);
+            },
+            startedAtMs: peers.i,
+            traceAttributes: {
+              "turn.submission_kind": peers.t,
+            },
+          },
+        );
         if (!gamma.isRecording()) return;
         let s = {
           clientUserMessageId: peers.e,
@@ -86,25 +90,34 @@ export function superseded() {
           routeThreadId: peers.r,
           span: gamma,
           submitPreparation: gamma.measure("turn.submit_preparation", {
-            startedAtMs: peers.i
+            startedAtMs: peers.i,
           }),
-          turnId: null
+          turnId: null,
         };
         this.pendingByClientUserMessageId.set(peers.e, s);
       }
       markRequestDispatched(indigo, jade) {
         let kite = this.pendingByClientUserMessageId.get(peers.e);
-        peers.n != null && (peers.n.submitPreparation?.end(), peers.n.submitPreparation = null, peers.n.span.mark("request_dispatched", {
-          traceAttributes: peers.t == null ? {} : {
-            "app_server.method": peers.t
-          }
-        }));
+        peers.n != null &&
+          (peers.n.submitPreparation?.end(),
+          (peers.n.submitPreparation = null),
+          peers.n.span.mark("request_dispatched", {
+            traceAttributes:
+              peers.t == null
+                ? {}
+                : {
+                    "app_server.method": peers.t,
+                  },
+          }));
       }
       getTrace(lemon) {
         return this.pendingByClientUserMessageId.get(peers.e)?.span.trace;
       }
       hasFirstDataReceived(marble) {
-        return this.pendingByClientUserMessageId.get(peers.e)?.firstDataReceived === true;
+        return (
+          this.pendingByClientUserMessageId.get(peers.e)?.firstDataReceived ===
+          true
+        );
       }
       bindConversation(nickel, onyx) {
         let pearl = this.pendingByClientUserMessageId.get(peers.e);
@@ -112,15 +125,25 @@ export function superseded() {
       }
       markTurnStarted(quartz, river, slate) {
         let timber = this.pendingByClientUserMessageId.get(peers.e);
-        peers.r != null && (peers.r.conversationId = peers.t, peers.r.turnId = peers.n, this.pendingByTurnId.set(peers.n, peers.r), peers.r.span.mark("turn_started"));
+        peers.r != null &&
+          ((peers.r.conversationId = peers.t),
+          (peers.r.turnId = peers.n),
+          this.pendingByTurnId.set(peers.n, peers.r),
+          peers.r.span.mark("turn_started"));
       }
       markFirstDataReceived(umbra) {
         let violet = this.pendingByTurnId.get(peers.e);
-        peers.t != null && (peers.t.firstDataReceived = true, peers.t.span.mark("first_data_received"));
+        peers.t != null &&
+          ((peers.t.firstDataReceived = true),
+          peers.t.span.mark("first_data_received"));
       }
       markFirstResponseVisible(willow) {
         let xenon = this.pendingByClientUserMessageId.get(peers.e);
-        peers.t != null && (this.clear(peers.t), peers.t.span.mark("first_response_visible"), peers.t.submitPreparation?.end(), peers.t.span.end());
+        peers.t != null &&
+          (this.clear(peers.t),
+          peers.t.span.mark("first_response_visible"),
+          peers.t.submitPreparation?.end(),
+          peers.t.span.end());
       }
       fail(yellow, zinc) {
         let amber = this.pendingByClientUserMessageId.get(peers.e);
@@ -132,34 +155,45 @@ export function superseded() {
       }
       finishTurn(ember, flint) {
         let garnet = this.pendingByTurnId.get(peers.e);
-        if (peers.n != null) switch (peers.t) {
-          case "failed":
-            this.fail(peers.n.clientUserMessageId, "turn_failed");
-            return;
-          case "interrupted":
-            this.abort(peers.n.clientUserMessageId, "user_interrupted");
-            return;
-          case "completed":
-            if (peers.n.firstDataReceived) return;
-            this.scheduleAfterPaint(() => {
-              let hazel = this.pendingByTurnId.get(peers.e);
-              peers.t != null && this.fail(peers.t.clientUserMessageId, "no_visible_response");
-            });
-            return;
-        }
+        if (peers.n != null)
+          switch (peers.t) {
+            case "failed":
+              this.fail(peers.n.clientUserMessageId, "turn_failed");
+              return;
+            case "interrupted":
+              this.abort(peers.n.clientUserMessageId, "user_interrupted");
+              return;
+            case "completed":
+              if (peers.n.firstDataReceived) return;
+              this.scheduleAfterPaint(() => {
+                let hazel = this.pendingByTurnId.get(peers.e);
+                peers.t != null &&
+                  this.fail(peers.t.clientUserMessageId, "no_visible_response");
+              });
+              return;
+          }
       }
       abortConversation(ivory) {
-        for (let jasper of this.pendingByClientUserMessageId.values()) peers.t.conversationId === peers.e && this.abort(peers.t.clientUserMessageId, "navigation_away");
+        for (let jasper of this.pendingByClientUserMessageId.values())
+          peers.t.conversationId === peers.e &&
+            this.abort(peers.t.clientUserMessageId, "navigation_away");
       }
       routeChanged(kelp) {
-        for (let lotus of this.pendingByClientUserMessageId.values()) peers.e != null && (peers.t.routeThreadId === peers.e || peers.t.conversationId === peers.e) || this.abort(peers.t.clientUserMessageId, "navigation_away");
+        for (let lotus of this.pendingByClientUserMessageId.values())
+          (peers.e != null &&
+            (peers.t.routeThreadId === peers.e ||
+              peers.t.conversationId === peers.e)) ||
+            this.abort(peers.t.clientUserMessageId, "navigation_away");
       }
       dispose() {
-        for (let mint of this.pendingByClientUserMessageId.values()) this.abort(peers.e.clientUserMessageId, "app_disposed");
+        for (let mint of this.pendingByClientUserMessageId.values())
+          this.abort(peers.e.clientUserMessageId, "app_disposed");
       }
       clear(nova) {
         this.pendingByClientUserMessageId.delete(peers.e.clientUserMessageId);
-        peers.e.turnId != null && this.pendingByTurnId.get(peers.e.turnId) === peers.e && this.pendingByTurnId.delete(peers.e.turnId);
+        peers.e.turnId != null &&
+          this.pendingByTurnId.get(peers.e.turnId) === peers.e &&
+          this.pendingByTurnId.delete(peers.e.turnId);
       }
     };
     Ux = new peers._ln((olive, prism, quill) => {

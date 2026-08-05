@@ -9,7 +9,10 @@ import {
 } from "./conversation-title-from-fields";
 
 /** Resolve + optionally truncate a conversation title (`rst`). */
-export function resolveConversationTitle(conversation: TitleConversationLike | null | undefined, collabItems?: unknown): string | null {
+export function resolveConversationTitle(
+  conversation: TitleConversationLike | null | undefined,
+  collabItems?: unknown,
+): string | null {
   return conversationTitleMaybeTruncated(
     conversationTitleSource(conversation),
     collabItems,
@@ -17,7 +20,10 @@ export function resolveConversationTitle(conversation: TitleConversationLike | n
 }
 
 /** Resolve conversation title without forced truncation (`nst`). */
-export function resolveConversationTitleRaw(conversation: TitleConversationLike | null | undefined, collabItems?: unknown): string | null {
+export function resolveConversationTitleRaw(
+  conversation: TitleConversationLike | null | undefined,
+  collabItems?: unknown,
+): string | null {
   return conversationTitleFromFields(
     conversationTitleSource(conversation),
     collabItems,

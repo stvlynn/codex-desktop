@@ -10,7 +10,9 @@ export type PatchNullAwareHostEntryAltPeers = {
 let peers: PatchNullAwareHostEntryAltPeers | null = null;
 
 /** Wire patchNullAwareHostEntryAlt peers once companions land. */
-export function setPatchNullAwareHostEntryAltPeers(next: PatchNullAwareHostEntryAltPeers): void {
+export function setPatchNullAwareHostEntryAltPeers(
+  next: PatchNullAwareHostEntryAltPeers,
+): void {
   peers = next;
 }
 
@@ -22,5 +24,5 @@ export function patchNullAwareHostEntryAlt(e: unknown, t: unknown, n: unknown) {
     throw new Error("patchNullAwareHostEntryAlt peers are not configured");
   }
 
-  t == null ? peers.k$r(e, n) : peers.P$r(e, t, n), peers.h0r(e, n);
+  (t == null ? peers.k$r(e, n) : peers.P$r(e, t, n), peers.h0r(e, n));
 }

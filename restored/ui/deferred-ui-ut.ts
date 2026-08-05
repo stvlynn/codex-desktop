@@ -22,7 +22,5 @@ export function bindDeferredUiUT() {
     throw new Error("bindDeferredUiUT peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => t(peers.O0o).get(e) ?? null);
+  return peers.Oa(peers.Q, (e, { get: t }) => t(peers.O0o).get(e) ?? null);
 }

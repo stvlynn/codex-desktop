@@ -14,7 +14,9 @@ const REMOTE_OR_DATA_PREFIXES = [
 ] as const;
 
 /** Coerce a trimmed local filesystem path; reject URLs / data URIs. */
-export function coerceLocalFilesystemPath(value: string | null | undefined): string | null {
+export function coerceLocalFilesystemPath(
+  value: string | null | undefined,
+): string | null {
   if (value == null) return null;
   const trimmed = value.trim();
   if (trimmed.length === 0) return null;

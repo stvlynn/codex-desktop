@@ -12,7 +12,9 @@ export type BindBindDeferredUiHQPeers = {
 let peers: BindBindDeferredUiHQPeers | null = null;
 
 /** Wire bindBindDeferredUiHQ peers once companions land. */
-export function setBindBindDeferredUiHQPeers(next: BindBindDeferredUiHQPeers): void {
+export function setBindBindDeferredUiHQPeers(
+  next: BindBindDeferredUiHQPeers,
+): void {
   peers = next;
 }
 
@@ -24,12 +26,17 @@ export function bindBindDeferredUiHQ() {
     throw new Error("bindBindDeferredUiHQ peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => e.length === 0 ? peers.ANr : e.flatMap(e => {
-    let n = t(peers.nj, e);
-    return n == null ? [] : [n];
-  }), {
-    isEqual: peers.QA
-  });
+  return peers.Oa(
+    peers.Q,
+    (e, { get: t }) =>
+      e.length === 0
+        ? peers.ANr
+        : e.flatMap((e) => {
+            let n = t(peers.nj, e);
+            return n == null ? [] : [n];
+          }),
+    {
+      isEqual: peers.QA,
+    },
+  );
 }

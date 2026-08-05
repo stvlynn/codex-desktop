@@ -19,7 +19,9 @@ export type BindEnableNotificationsPeers = {
 let peers: BindEnableNotificationsPeers | null = null;
 
 /** Wire bindEnableNotifications peers once companions land. */
-export function setBindEnableNotificationsPeers(next: BindEnableNotificationsPeers): void {
+export function setBindEnableNotificationsPeers(
+  next: BindEnableNotificationsPeers,
+): void {
   peers = next;
 }
 
@@ -32,22 +34,31 @@ export function bindEnableNotifications() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.$u(), peers.fN(), peers.i_(), peers.IN(), peers.KT(), peers.osc(), peers.Esc(), Fsc = {
-      id: `enable_notifications`,
-      action: `enable_notifications`,
-      message: peers.Zu({
-        id: `sidebarOnboardingChecklist.enableNotifications`,
-        defaultMessage: `Enable notifications`,
-        description: `Onboarding checklist item in the sidebar`
-      })
-    }, Isc = {
-      id: `claude_import`,
-      action: `import_claude`,
-      message: peers.Zu({
-        id: `sidebarOnboardingChecklist.importFromClaude`,
-        defaultMessage: `Import from Claude`,
-        description: `Claude import item in the sidebar onboarding checklist`
-      })
-    };
+    (peers.Au(),
+      peers.$u(),
+      peers.fN(),
+      peers.i_(),
+      peers.IN(),
+      peers.KT(),
+      peers.osc(),
+      peers.Esc(),
+      (Fsc = {
+        id: `enable_notifications`,
+        action: `enable_notifications`,
+        message: peers.Zu({
+          id: `sidebarOnboardingChecklist.enableNotifications`,
+          defaultMessage: `Enable notifications`,
+          description: `Onboarding checklist item in the sidebar`,
+        }),
+      }),
+      (Isc = {
+        id: `claude_import`,
+        action: `import_claude`,
+        message: peers.Zu({
+          id: `sidebarOnboardingChecklist.importFromClaude`,
+          defaultMessage: `Import from Claude`,
+          description: `Claude import item in the sidebar onboarding checklist`,
+        }),
+      }));
   });
 }

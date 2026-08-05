@@ -13,7 +13,10 @@ export type ShellPanelPinKey = boolean | { resetKey: string };
 /**
  * Bundle `xar` / export `y0` — whether pin state should stick across a key change.
  */
-export function shouldKeepPanelPinned(pinState: ShellPanelPinState, pinKey: ShellPanelPinKey): boolean {
+export function shouldKeepPanelPinned(
+  pinState: ShellPanelPinState,
+  pinKey: ShellPanelPinKey,
+): boolean {
   return (
     pinState.isPinned ||
     (typeof pinKey !== "boolean" && pinState.resetKey !== pinKey.resetKey)
@@ -23,7 +26,10 @@ export function shouldKeepPanelPinned(pinState: ShellPanelPinState, pinKey: Shel
 /**
  * Bundle `bar` / export `_0` — build pin state for a key + pinned flag.
  */
-export function createShellPanelPinState(pinKey: ShellPanelPinKey, isPinned: boolean): ShellPanelPinState {
+export function createShellPanelPinState(
+  pinKey: ShellPanelPinKey,
+  isPinned: boolean,
+): ShellPanelPinState {
   return {
     isPinned,
     resetKey: typeof pinKey === "boolean" ? null : pinKey.resetKey,

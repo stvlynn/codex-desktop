@@ -10,7 +10,9 @@ export type DismissAmbientSuggestionProductEventPeers = {
 let peers: DismissAmbientSuggestionProductEventPeers | null = null;
 
 /** Wire dismissAmbientSuggestionProductEvent peers once companions land. */
-export function setDismissAmbientSuggestionProductEventPeers(next: DismissAmbientSuggestionProductEventPeers): void {
+export function setDismissAmbientSuggestionProductEventPeers(
+  next: DismissAmbientSuggestionProductEventPeers,
+): void {
   peers = next;
 }
 
@@ -19,12 +21,16 @@ export function setDismissAmbientSuggestionProductEventPeers(next: DismissAmbien
  */
 export function dismissAmbientSuggestionProductEvent(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("dismissAmbientSuggestionProductEvent peers are not configured");
+    throw new Error(
+      "dismissAmbientSuggestionProductEvent peers are not configured",
+    );
   }
 
   let n = e.get(peers.bP);
-  n != null && (peers.Ub(e, peers.$Zn, {
-    ...n,
-    dismissReason: t
-  }), e.set(peers.bP, null));
+  n != null &&
+    (peers.Ub(e, peers.$Zn, {
+      ...n,
+      dismissReason: t,
+    }),
+    e.set(peers.bP, null));
 }

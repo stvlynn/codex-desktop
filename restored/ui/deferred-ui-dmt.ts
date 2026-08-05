@@ -34,7 +34,12 @@ export function bindDeferredUiDmt() {
       var c = e == null ? 0 : e.length;
       if (!c) return -1;
       var l = c - 1;
-      return peers.s !== void 0 && (l = peers.i(peers.s), l = peers.s < 0 ? a(c + l, 0) : o(l, c - 1)), n(e, r(t, 3), l, !0);
+      return (
+        peers.s !== void 0 &&
+          ((l = peers.i(peers.s)),
+          (l = peers.s < 0 ? a(c + l, 0) : o(l, c - 1))),
+        n(e, r(t, 3), l, !0)
+      );
     }
     t.exports = peers.s;
   });

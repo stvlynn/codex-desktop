@@ -51,6 +51,34 @@ export function bindUsageSettings() {
   }
 
   return peers.e(() => {
-    FZ = peers.c(), peers.Qt(), peers.Ho(), peers.xM(), peers.DN(), peers.aN(), peers.ed(), peers.Fh(), peers.Bit(), peers.Uf(), peers.Wh(), peers.kgs(), peers.hE(), d_s = [`usage-settings`, `auto-top-up`], f_s = [`usage-settings`, `auto-top-up-discount-offer`], p_s = [...peers.d_s, `include-payment-method`], m_s = [`usage-settings`, `payment-methods`], h_s = [`usage-settings`, `accounts-check`], g_s = [`usage-settings`, `auto-top-up-pricing`], __s = [`usage-settings`, `plan-pricing`], v_s = [`usage-settings`, `subscription-update-preview`], y_s = [`usage-settings`, `workspace-monthly-usage`], b_s = [`accounts`, `settings`], x_s = [`usage-settings`, `workspace-admin-requests`], S_s = 100, C_s = `US`, w_s = `Current user monthly cap is not available.`, T_s = [`usage-settings`, `add-credits-nudge-email`], E_s = `v4-2023-04-27`;
+    ((FZ = peers.c()),
+      peers.Qt(),
+      peers.Ho(),
+      peers.xM(),
+      peers.DN(),
+      peers.aN(),
+      peers.ed(),
+      peers.Fh(),
+      peers.Bit(),
+      peers.Uf(),
+      peers.Wh(),
+      peers.kgs(),
+      peers.hE(),
+      (d_s = [`usage-settings`, `auto-top-up`]),
+      (f_s = [`usage-settings`, `auto-top-up-discount-offer`]),
+      (p_s = [...peers.d_s, `include-payment-method`]),
+      (m_s = [`usage-settings`, `payment-methods`]),
+      (h_s = [`usage-settings`, `accounts-check`]),
+      (g_s = [`usage-settings`, `auto-top-up-pricing`]),
+      (__s = [`usage-settings`, `plan-pricing`]),
+      (v_s = [`usage-settings`, `subscription-update-preview`]),
+      (y_s = [`usage-settings`, `workspace-monthly-usage`]),
+      (b_s = [`accounts`, `settings`]),
+      (x_s = [`usage-settings`, `workspace-admin-requests`]),
+      (S_s = 100),
+      (C_s = `US`),
+      (w_s = `Current user monthly cap is not available.`),
+      (T_s = [`usage-settings`, `add-credits-nudge-email`]),
+      (E_s = `v4-2023-04-27`));
   });
 }

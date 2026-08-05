@@ -10,12 +10,18 @@ export type RateLimitBucket = {
 };
 
 /** True when a rate-limit bucket has a positive window. */
-export function hasPositiveRateLimitWindow(bucket: RateLimitBucket | null | undefined): boolean {
+export function hasPositiveRateLimitWindow(
+  bucket: RateLimitBucket | null | undefined,
+): boolean {
   return bucket != null && (bucket.windowDurationMins ?? 0) > 0;
 }
 
 /** Stable key for a rate-limit window bucket. */
-export function rateLimitBucketKey(bucket: RateLimitBucket, role: string, index: number): string {
+export function rateLimitBucketKey(
+  bucket: RateLimitBucket,
+  role: string,
+  index: number,
+): string {
   const minutes = bucket.windowDurationMins ?? 0;
   if (Math.abs(minutes - FIVE_HOUR_WINDOW_MINS) <= 1) return "five-hour";
   if (Math.abs(minutes - WEEKLY_WINDOW_MINS) <= 1) return "weekly";

@@ -4,7 +4,10 @@
 export const HOTKEY_WINDOW_PATH = "/hotkey-window";
 
 /** True when path equals or is nested under a prefix. */
-export function pathEqualsOrUnder(value: string | null | undefined, prefix: string): boolean {
+export function pathEqualsOrUnder(
+  value: string | null | undefined,
+  prefix: string,
+): boolean {
   return value ? value === prefix || value.startsWith(`${prefix}/`) : false;
 }
 

@@ -10,23 +10,54 @@ import { debugOverride } from "../../account/debug-override";
 import { ensureAccountPlanQueryInit } from "../../account/ensure-account-plan-query-init";
 import { isStartingProcessExpired } from "../../account/is-starting-process-expired";
 import { isBusinessPlan } from "../../account/plan-type-helpers";
-import { appActionSidebarProjectRefSchema, ensureAppActionPayloadSchemasInit } from "../../actions/app-action-payload-schemas";
+import {
+  appActionSidebarProjectRefSchema,
+  ensureAppActionPayloadSchemasInit,
+} from "../../actions/app-action-payload-schemas";
 import { CODEX_APPSHOT_SHORTCUT_CHANGED_TYPE } from "../../analytics/codex-appshot-shortcut-changed-type";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexConversationalOnboardingExecutionAction } from "../../analytics/codex-conversational-onboarding-execution-action";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { ShellLayoutMetricsContext } from "../../app-shell/shell-layout-metrics-context";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
-import { clampZoomPercent, decayZoomPercent } from "../../artifact/clamp-zoom-percent";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
+import {
+  clampZoomPercent,
+  decayZoomPercent,
+} from "../../artifact/clamp-zoom-percent";
 import { useUpdateAuthNonce } from "../../auth/use-update-auth-nonce";
 import { clearUpcomingLocalDatetimeEntries } from "../../automation/clear-upcoming-local-datetime-entries";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { writingBlocksControllerAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_E4_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_ML_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sp_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_TI_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_A0_Init, ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_Mx_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_E4_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_ML_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Sp_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_TI_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_A0_Init,
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_Mx_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { useAtomPair } from "../../boundaries/persisted-atom";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { chatgpt2 } from "../../browser/chatgpt2";
 import { ensureCommandQueueActiveHelpersInit } from "../../commands/ensure-command-queue-active-helpers-init";
@@ -39,15 +70,30 @@ import { GeneratedImageTabs } from "../../conversation/generated-image-tabs";
 import { CodexBuildEnvironment } from "../../env/codex-build-environment";
 import { ensureRemoteSshConnectionEventInit } from "../../environments/ensure-remote-ssh-connection-event-init";
 import { firstRepoMapEntry } from "../../environments/first-repo-map-entry";
-import { CLOUD_ENVIRONMENT_SELECTOR_FEATURE_GATE_ID, PLAYGROUND_ONBOARDING_FEATURE_GATE_ID } from "../../feature-gates/feature-gate-ids";
+import {
+  CLOUD_ENVIRONMENT_SELECTOR_FEATURE_GATE_ID,
+  PLAYGROUND_ONBOARDING_FEATURE_GATE_ID,
+} from "../../feature-gates/feature-gate-ids";
 import { filterOpenTargets } from "../../files/filter-open-targets";
 import { WorkspaceDirectoryTreeSearch } from "../../files/workspace-directory-tree-search";
 import { ONBOARDING_HIDE_GOOGLE_TILES_DEBUG_OVERRIDE_PREFERENCE_KEY } from "../../home/onboarding-preference-keys";
 import { ensureDebugPanelTurnFilesInit } from "../../hooks/debug-panel-turn-files";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
-import { ensureUseDebugPanelInit, ensureUseDebugPanelParsersInit, useDebugPanelEditedFilePaths, useDebugPanelEntries, useDebugPanelReferencedFilePaths } from "../../hooks/use-debug-panel";
+import {
+  ensureUseDebugPanelInit,
+  ensureUseDebugPanelParsersInit,
+  useDebugPanelEditedFilePaths,
+  useDebugPanelEntries,
+  useDebugPanelReferencedFilePaths,
+} from "../../hooks/use-debug-panel";
 import { useEventCallback } from "../../hooks/use-event-callback";
-import { clampFloatingWindowRect, getCenteredFloatingWindowRect, initFloatingWindowPointerDragConstants, resizeFloatingWindowRect, useFloatingWindowPointerDrag } from "../../hooks/use-floating-window-pointer-drag";
+import {
+  clampFloatingWindowRect,
+  getCenteredFloatingWindowRect,
+  initFloatingWindowPointerDragConstants,
+  resizeFloatingWindowRect,
+  useFloatingWindowPointerDrag,
+} from "../../hooks/use-floating-window-pointer-drag";
 import { useHostWorkspaceRoot } from "../../hooks/use-host-workspace-root";
 import { usePlatformAwareFeatureGate } from "../../hooks/use-platform-aware-feature-gate";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
@@ -71,7 +117,12 @@ import { serializeCharacterReferenceNode } from "../../markdown/serialize-charac
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
 import { codex3 } from "../../models/codex3";
 import { resolveScienceModelLabel } from "../../models/resolve-science-model-label";
-import { findSidebarSectionElement, readScrollTop, scrollAppActionTargetByTurn, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  findSidebarSectionElement,
+  readScrollTop,
+  scrollAppActionTargetByTurn,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { SIDEBAR_HIT_TEST_SELECTOR } from "../../navigation/sidebar-hit-test-selector";
@@ -99,7 +150,10 @@ import { deferredUiH } from "../../ui/deferred-ui-h";
 import { deferredUiYn } from "../../ui/deferred-ui-yn";
 import { deferredVM } from "../../ui/deferred-vm";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { ensureContextMenuProviderInit } from "../../ui/ensure-context-menu-provider-init";
 import { ght } from "../../ui/ght";
@@ -117,9 +171,20 @@ import { noop } from "../../utils/noop";
 import { posixPathBasename } from "../../utils/posix-path-basename";
 import { sortedArrayFrom } from "../../utils/sorted-array-from";
 import { svgToDataUri } from "../../utils/svg-to-data-uri";
-import { buildThreadVirtualizerLayout, initThreadVirtualizer, visibleRangeFromDistance } from "../../utils/thread-virtualizer";
+import {
+  buildThreadVirtualizerLayout,
+  initThreadVirtualizer,
+  visibleRangeFromDistance,
+} from "../../utils/thread-virtualizer";
 import { toggleSortedIdList } from "../../utils/toggle-sorted-id-list";
-import { ensureImportSettingsB4Init, ensureKeyboardShortcutsHMInit, ensurePersonalizationCInit, ensurePersonalizationG0Init, ensurePersonalizationJutInit, ensurePersonalizationK0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsB4Init,
+  ensureKeyboardShortcutsHMInit,
+  ensurePersonalizationCInit,
+  ensurePersonalizationG0Init,
+  ensurePersonalizationJutInit,
+  ensurePersonalizationK0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { identityCwd } from "../../utils/workspace-paths";
 import { getRecentConversationsQueryKey } from "../../worktrees/get-recent-conversations-query-key";
@@ -220,10 +285,10 @@ export const debugModalR = esmInit(() => {
   juniper4 = 1e3;
   lagoon4 = "debug-ambient-suggestion-threads";
   meadow4 = new Intl.RelativeTimeFormat(undefined, {
-    numeric: "auto"
+    numeric: "auto",
   });
   nest4 = scrollAppActionTargetByTurn(appScopeAtom, "is-packaged", {
-    staleTime: readScrollTop.FIVE_SECONDS
+    staleTime: readScrollTop.FIVE_SECONDS,
   });
 });
 export { debugModalN };

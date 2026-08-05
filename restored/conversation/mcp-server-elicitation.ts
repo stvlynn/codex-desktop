@@ -16,7 +16,9 @@ export type BindMcpServerElicitationPeers = {
 let peers: BindMcpServerElicitationPeers | null = null;
 
 /** Wire bindMcpServerElicitation peers once companions land. */
-export function setBindMcpServerElicitationPeers(next: BindMcpServerElicitationPeers): void {
+export function setBindMcpServerElicitationPeers(
+  next: BindMcpServerElicitationPeers,
+): void {
   peers = next;
 }
 
@@ -29,6 +31,11 @@ export function bindMcpServerElicitation() {
   }
 
   return peers.e(() => {
-    A1o = peers.c(), peers.$u(), peers.E1o(), peers.iO(), peers.Pp(), TY = peers.J();
+    ((A1o = peers.c()),
+      peers.$u(),
+      peers.E1o(),
+      peers.iO(),
+      peers.Pp(),
+      (TY = peers.J()));
   });
 }

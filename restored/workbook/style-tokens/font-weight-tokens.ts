@@ -19,9 +19,7 @@ export const FONT_WEIGHT_NON_BOLD_UTILITIES: ReadonlySet<string> = new Set([
 ]);
 
 /** Legacy Qle — map a single utility class to bold true/false, or null if unknown. */
-export function resolveFontWeightUtilityBold(
-  raw: string,
-): boolean | null {
+export function resolveFontWeightUtilityBold(raw: string): boolean | null {
   const trimmed = raw.trim();
   if (!trimmed) return null;
   const lower = trimmed.toLowerCase();

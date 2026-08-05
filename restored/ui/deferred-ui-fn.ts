@@ -33,6 +33,15 @@ export function bindDeferredUiFN() {
   }
 
   return peers.e(() => {
-    kH = peers.c(), peers.sd(), peers.$u(), peers.Mga(), peers.yS(), peers.dIa(), peers.Mp(), peers.bIa(), AH = peers.J(), OIa = `font-semibold`;
+    ((kH = peers.c()),
+      peers.sd(),
+      peers.$u(),
+      peers.Mga(),
+      peers.yS(),
+      peers.dIa(),
+      peers.Mp(),
+      peers.bIa(),
+      (AH = peers.J()),
+      (OIa = `font-semibold`));
   });
 }

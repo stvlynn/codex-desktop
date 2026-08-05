@@ -12,7 +12,9 @@ export type BindCodexAppServerVersionRestartAvailablePeers = {
 let peers: BindCodexAppServerVersionRestartAvailablePeers | null = null;
 
 /** Wire bindCodexAppServerVersionRestartAvailable peers once companions land. */
-export function setBindCodexAppServerVersionRestartAvailablePeers(next: BindCodexAppServerVersionRestartAvailablePeers): void {
+export function setBindCodexAppServerVersionRestartAvailablePeers(
+  next: BindCodexAppServerVersionRestartAvailablePeers,
+): void {
   peers = next;
 }
 
@@ -21,10 +23,16 @@ export function setBindCodexAppServerVersionRestartAvailablePeers(next: BindCode
  */
 export function bindCodexAppServerVersionRestartAvailable() {
   if (peers == null) {
-    throw new Error("bindCodexAppServerVersionRestartAvailable peers are not configured");
+    throw new Error(
+      "bindCodexAppServerVersionRestartAvailable peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    The = `0.141.0`, Ehe = `codex-app-server-version-restart-available:`, Dhe = `0.0.0`, Ohe = /^(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)(?:-(?<prerelease>[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/;
+    ((The = `0.141.0`),
+      (Ehe = `codex-app-server-version-restart-available:`),
+      (Dhe = `0.0.0`),
+      (Ohe =
+        /^(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)(?:-(?<prerelease>[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/));
   });
 }

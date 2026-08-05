@@ -10,7 +10,9 @@ export type DeferredConversationHJPeers = {
 let peers: DeferredConversationHJPeers | null = null;
 
 /** Wire deferredConversationHJ peers once companions land. */
-export function setDeferredConversationHJPeers(next: DeferredConversationHJPeers): void {
+export function setDeferredConversationHJPeers(
+  next: DeferredConversationHJPeers,
+): void {
   peers = next;
 }
 
@@ -22,7 +24,7 @@ export function deferredConversationHJ() {
     throw new Error("deferredConversationHJ peers are not configured");
   }
 
-  return peers.Ia(peers.hT, ({
-    scope: e
-  }) => peers.fQr(e.value.routeKind === `remote-thread` ? e.value.taskId : null));
+  return peers.Ia(peers.hT, ({ scope: e }) =>
+    peers.fQr(e.value.routeKind === `remote-thread` ? e.value.taskId : null),
+  );
 }

@@ -24,6 +24,6 @@ export function pit() {
   }
 
   return peers.e(() => {
-    peers.mLt(), peers.Pv(), peers.jLt();
+    (peers.mLt(), peers.Pv(), peers.jLt());
   });
 }

@@ -10,7 +10,9 @@ export type BindBindDeferredhXPeers = {
 let peers: BindBindDeferredhXPeers | null = null;
 
 /** Wire bindBindDeferredhX peers once companions land. */
-export function setBindBindDeferredhXPeers(next: BindBindDeferredhXPeers): void {
+export function setBindBindDeferredhXPeers(
+  next: BindBindDeferredhXPeers,
+): void {
   peers = next;
 }
 
@@ -23,6 +25,17 @@ export function bindBindDeferredhX() {
   }
 
   return peers.e(() => {
-    peers.HT(), Kqr = new Map([[`csv`, `csv`], [`docx`, `docx`], [`ipynb`, `ipynb`], [`pdf`, `pdf`], [`pptx`, `pptx`], [`tex`, `tex`], [`tsv`, `tsv`], [`xlsm`, `xlsx`], [`xlsx`, `xlsx`]]);
+    (peers.HT(),
+      (Kqr = new Map([
+        [`csv`, `csv`],
+        [`docx`, `docx`],
+        [`ipynb`, `ipynb`],
+        [`pdf`, `pdf`],
+        [`pptx`, `pptx`],
+        [`tex`, `tex`],
+        [`tsv`, `tsv`],
+        [`xlsm`, `xlsx`],
+        [`xlsx`, `xlsx`],
+      ])));
   });
 }

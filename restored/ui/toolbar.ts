@@ -36,6 +36,18 @@ export function toolbar() {
   }
 
   return peers.e(() => {
-    DFr = peers.c(), peers.Ho(), peers.$u(), peers.Uk(), peers.dj(), peers.hj(), peers.Pp(), peers.$m(), peers.xFr(), peers.wFr(), peers.gT(), peers.UD(), OFr = peers.J();
+    ((DFr = peers.c()),
+      peers.Ho(),
+      peers.$u(),
+      peers.Uk(),
+      peers.dj(),
+      peers.hj(),
+      peers.Pp(),
+      peers.$m(),
+      peers.xFr(),
+      peers.wFr(),
+      peers.gT(),
+      peers.UD(),
+      (OFr = peers.J()));
   });
 }

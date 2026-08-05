@@ -5,7 +5,10 @@ import type { ParsedDataUrl } from "./types";
 
 type GlobalWithCodec = typeof globalThis & {
   Buffer?: {
-    from: (data: string | Uint8Array, encoding?: string) => Uint8Array & {
+    from: (
+      data: string | Uint8Array,
+      encoding?: string,
+    ) => Uint8Array & {
       toString: (enc: string) => string;
     };
   };
@@ -19,16 +22,13 @@ export function decodeBase64ToBytes(base64: string): Uint8Array {
   const BufferCtor = g.Buffer;
   if (BufferCtor && typeof BufferCtor.from == "function") {
     const decoded = BufferCtor.from(base64, "base64");
-    return decoded instanceof Uint8Array
-      ? decoded
-      : new Uint8Array(decoded);
+    return decoded instanceof Uint8Array ? decoded : new Uint8Array(decoded);
   }
   const atobFn = g.atob;
   if (typeof atobFn == "function") {
     const binary = atobFn(base64);
     const out = new Uint8Array(binary.length);
-    for (let i = 0; i < binary.length; i += 1)
-      out[i] = binary.charCodeAt(i);
+    for (let i = 0; i < binary.length; i += 1) out[i] = binary.charCodeAt(i);
     return out;
   }
   return new Uint8Array();
@@ -57,17 +57,13 @@ export function isBinaryBuffer(
 }
 
 /** Legacy `Bde` — copy into a fresh Uint8Array. */
-export function copyUint8Array(
-  value: ArrayBuffer | Uint8Array,
-): Uint8Array {
+export function copyUint8Array(value: ArrayBuffer | Uint8Array): Uint8Array {
   void (value instanceof Uint8Array);
   return new Uint8Array(value);
 }
 
 /** Legacy `Vde` — parse `data:<mime>;base64,<payload>`. */
-export function parseDataUrlBase64(
-  dataUrl: string,
-): ParsedDataUrl | undefined {
+export function parseDataUrlBase64(dataUrl: string): ParsedDataUrl | undefined {
   const match = /^data:([^;,]+);base64,(.+)$/i.exec(dataUrl);
   if (!match) return;
   const contentType = match[1];

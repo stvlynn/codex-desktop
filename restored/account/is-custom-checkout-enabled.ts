@@ -29,7 +29,10 @@ export type StatsigClientLike = {
  * Bundle `STs` / export `dy`.
  * Reads `is_custom_checkout_enabled` from the audience-specific Statsig layer.
  */
-export function isCustomCheckoutEnabled(statsigClient: StatsigClientLike, audience: CustomCheckoutAudience): boolean {
+export function isCustomCheckoutEnabled(
+  statsigClient: StatsigClientLike,
+  audience: CustomCheckoutAudience,
+): boolean {
   return statsigClient
     .getLayer(CUSTOM_CHECKOUT_LAYER_IDS[audience], {
       disableExposureLog: false,

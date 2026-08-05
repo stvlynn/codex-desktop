@@ -11,7 +11,9 @@ export type UseChatgptCreditsUsageQueryPeers = {
 let peers: UseChatgptCreditsUsageQueryPeers | null = null;
 
 /** Wire useChatgptCreditsUsageQuery peers once companions land. */
-export function setUseChatgptCreditsUsageQueryPeers(next: UseChatgptCreditsUsageQueryPeers): void {
+export function setUseChatgptCreditsUsageQueryPeers(
+  next: UseChatgptCreditsUsageQueryPeers,
+): void {
   peers = next;
 }
 

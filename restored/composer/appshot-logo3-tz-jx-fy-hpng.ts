@@ -12,7 +12,9 @@ export type BindAppshotLogo3TzJxFyHPngPeers = {
 let peers: BindAppshotLogo3TzJxFyHPngPeers | null = null;
 
 /** Wire bindAppshotLogo3TzJxFyHPng peers once companions land. */
-export function setBindAppshotLogo3TzJxFyHPngPeers(next: BindAppshotLogo3TzJxFyHPngPeers): void {
+export function setBindAppshotLogo3TzJxFyHPngPeers(
+  next: BindAppshotLogo3TzJxFyHPngPeers,
+): void {
   peers = next;
 }
 

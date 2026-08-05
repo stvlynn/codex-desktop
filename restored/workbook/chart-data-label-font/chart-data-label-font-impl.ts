@@ -14,12 +14,8 @@ export function maxVisibleDataLabelFontPx(cdlfIn5192: any) {
       cdlfBind16227 < cdlfBind15604.values.length;
       cdlfBind16227 += 1
     ) {
-      let cdlfBind17324 =
-        cdlfBind15604.values[cdlfBind16227];
-      if (
-        cdlfBind17324 === undefined ||
-        !Number.isFinite(cdlfBind17324)
-      )
+      let cdlfBind17324 = cdlfBind15604.values[cdlfBind16227];
+      if (cdlfBind17324 === undefined || !Number.isFinite(cdlfBind17324))
         continue;
       let cdlfBind17325 = resolveDataLabelText(
         cdlfIn5192,
@@ -31,10 +27,7 @@ export function maxVisibleDataLabelFontPx(cdlfIn5192: any) {
       let cdlfBind17326 = cdlfBind17325.textStyle?.fontSize
         ? hundredthsPointToCssPx(cdlfBind17325.textStyle.fontSize)
         : 10;
-      cdlfBind14710 = Math.max(
-        cdlfBind14710 ?? 0,
-        cdlfBind17326,
-      );
+      cdlfBind14710 = Math.max(cdlfBind14710 ?? 0, cdlfBind17326);
     }
   return cdlfBind14710;
 }

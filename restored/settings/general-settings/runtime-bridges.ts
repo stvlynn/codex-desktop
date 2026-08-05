@@ -4,11 +4,9 @@
 // Residual companion stubs: 81 (verified 149/229).
 // Bind/ensure bridges.
 
-
 /** Wave FZ: bind no longer required after full body promote */
 export function bindGeneralSettings(_next: unknown): void {}
 export function ensureGeneralSettingsInit(): void {}
 
 // Semantic export aliases (split/export lane)
 export { generalSettingsI as GeneralSettings } from "./part-3";
-

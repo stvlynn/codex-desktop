@@ -10,6 +10,8 @@ export function setProductRationaleParser(parser: RationaleParser): void {
   parseRationale = parser;
 }
 
-export function extractProductRationale(ref: Record<string, unknown>): unknown | null {
+export function extractProductRationale(
+  ref: Record<string, unknown>,
+): unknown | null {
   return parseRationale?.(ref) ?? null;
 }

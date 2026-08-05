@@ -2,10 +2,7 @@
 // Stage-3 wave-91: named-ranges barrel (legacy IXe/LXe/RXe/zXe).
 
 export { wireNamedRangesBoundaryHooks, nrH } from "./boundary-hooks";
-export {
-  ensureNamedRangesInit,
-  zXe,
-} from "./ensure-named-ranges-init";
+export { ensureNamedRangesInit, zXe } from "./ensure-named-ranges-init";
 export {
   quoteSheetName,
   stripLeadingEquals,

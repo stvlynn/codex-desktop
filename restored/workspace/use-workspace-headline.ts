@@ -10,7 +10,9 @@ export type UseWorkspaceHeadlinePeers = {
 let peers: UseWorkspaceHeadlinePeers | null = null;
 
 /** Wire useWorkspaceHeadline peers once companions land. */
-export function setUseWorkspaceHeadlinePeers(next: UseWorkspaceHeadlinePeers): void {
+export function setUseWorkspaceHeadlinePeers(
+  next: UseWorkspaceHeadlinePeers,
+): void {
   peers = next;
 }
 

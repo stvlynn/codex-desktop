@@ -10,7 +10,9 @@ export type BindBindSelfServeBusinessUsageBasedPeers = {
 let peers: BindBindSelfServeBusinessUsageBasedPeers | null = null;
 
 /** Wire bindBindSelfServeBusinessUsageBased peers once companions land. */
-export function setBindBindSelfServeBusinessUsageBasedPeers(next: BindBindSelfServeBusinessUsageBasedPeers): void {
+export function setBindBindSelfServeBusinessUsageBasedPeers(
+  next: BindBindSelfServeBusinessUsageBasedPeers,
+): void {
   peers = next;
 }
 
@@ -19,10 +21,19 @@ export function setBindBindSelfServeBusinessUsageBasedPeers(next: BindBindSelfSe
  */
 export function bindBindSelfServeBusinessUsageBased() {
   if (peers == null) {
-    throw new Error("bindBindSelfServeBusinessUsageBased peers are not configured");
+    throw new Error(
+      "bindBindSelfServeBusinessUsageBased peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers._me(), xme = [`plus`, `pro`, `business`, `team`, `self_serve_business_usage_based`];
+    (peers._me(),
+      (xme = [
+        `plus`,
+        `pro`,
+        `business`,
+        `team`,
+        `self_serve_business_usage_based`,
+      ]));
   });
 }

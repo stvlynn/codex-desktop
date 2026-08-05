@@ -14,7 +14,9 @@ export type BindBindLocalThread2Peers = {
 let peers: BindBindLocalThread2Peers | null = null;
 
 /** Wire bindBindLocalThread2 peers once companions land. */
-export function setBindBindLocalThread2Peers(next: BindBindLocalThread2Peers): void {
+export function setBindBindLocalThread2Peers(
+  next: BindBindLocalThread2Peers,
+): void {
   peers = next;
 }
 
@@ -27,7 +29,7 @@ export function bindBindLocalThread2() {
   }
 
   return peers.e(() => {
-    N6i = peers.c(), peers.Ho(), peers.Uf(), peers.iE(), peers.HFi();
+    ((N6i = peers.c()), peers.Ho(), peers.Uf(), peers.iE(), peers.HFi());
   });
 }
 

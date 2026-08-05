@@ -9,7 +9,9 @@ export type UseToggleDiffPanelListenerPeers = {
 let peers: UseToggleDiffPanelListenerPeers | null = null;
 
 /** Wire useToggleDiffPanelListener peers once companions land. */
-export function setUseToggleDiffPanelListenerPeers(next: UseToggleDiffPanelListenerPeers): void {
+export function setUseToggleDiffPanelListenerPeers(
+  next: UseToggleDiffPanelListenerPeers,
+): void {
   peers = next;
 }
 

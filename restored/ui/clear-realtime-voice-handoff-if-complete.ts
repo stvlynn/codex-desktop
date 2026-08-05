@@ -9,7 +9,9 @@ export type ClearRealtimeVoiceHandoffIfCompletePeers = {
 let peers: ClearRealtimeVoiceHandoffIfCompletePeers | null = null;
 
 /** Wire clearRealtimeVoiceHandoffIfComplete peers once companions land. */
-export function setClearRealtimeVoiceHandoffIfCompletePeers(next: ClearRealtimeVoiceHandoffIfCompletePeers): void {
+export function setClearRealtimeVoiceHandoffIfCompletePeers(
+  next: ClearRealtimeVoiceHandoffIfCompletePeers,
+): void {
   peers = next;
 }
 
@@ -18,8 +20,14 @@ export function setClearRealtimeVoiceHandoffIfCompletePeers(next: ClearRealtimeV
  */
 export function clearRealtimeVoiceHandoffIfComplete(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("clearRealtimeVoiceHandoffIfComplete peers are not configured");
+    throw new Error(
+      "clearRealtimeVoiceHandoffIfComplete peers are not configured",
+    );
   }
 
-  e.set(peers.yX, e => e?.request !== t || e.phase !== `connected` || !e.handoffComplete ? e : null);
+  e.set(peers.yX, (e) =>
+    e?.request !== t || e.phase !== `connected` || !e.handoffComplete
+      ? e
+      : null,
+  );
 }

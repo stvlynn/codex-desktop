@@ -68,8 +68,7 @@ function createWidgetSliceStore(key: WidgetScopeSliceKey): WidgetSliceStore {
   const setState = (update: WidgetSliceUpdater, replace = false): void => {
     const prevRoot = signal.get();
     const prevSlice = prevRoot[key];
-    const nextSlice =
-      typeof update === "function" ? update(prevSlice) : update;
+    const nextSlice = typeof update === "function" ? update(prevSlice) : update;
     if (Object.is(nextSlice, prevSlice)) return;
     const nextRoot = produce(prevRoot, (draft) => {
       const draftSlice = draft[key] as Record<string, unknown>;
@@ -107,11 +106,7 @@ function createWidgetSliceStore(key: WidgetScopeSliceKey): WidgetSliceStore {
       selector == null ? getState() : selector(getState());
     const getServerSnapshot = (): unknown =>
       selector == null ? getInitialState() : selector(getInitialState());
-    return useSyncExternalStore(
-      subscribeStore,
-      getSnapshot,
-      getServerSnapshot,
-    );
+    return useSyncExternalStore(subscribeStore, getSnapshot, getServerSnapshot);
   }) as WidgetSliceStore;
 
   useStore.getInitialState = getInitialState;

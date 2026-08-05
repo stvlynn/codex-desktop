@@ -9,7 +9,9 @@ export type UseUpdateAuthNoncePeers = {
 let peers: UseUpdateAuthNoncePeers | null = null;
 
 /** Wire useUpdateAuthNonce peers once companions land. */
-export function setUseUpdateAuthNoncePeers(next: UseUpdateAuthNoncePeers): void {
+export function setUseUpdateAuthNoncePeers(
+  next: UseUpdateAuthNoncePeers,
+): void {
   peers = next;
 }
 

@@ -24,9 +24,7 @@ export function ensureTextSegmenterInit(): void {
 }
 
 /** Legacy `workbookPt` — split text into grapheme clusters (cached). */
-export function segmentGraphemes(
-  text: string | null | undefined,
-): string[] {
+export function segmentGraphemes(text: string | null | undefined): string[] {
   if (!text) return [];
   const hit = segmentCache.get(text);
   if (hit) return hit;

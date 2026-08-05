@@ -11,7 +11,9 @@ export type BindBindGitBashExePeers = {
 let peers: BindBindGitBashExePeers | null = null;
 
 /** Wire bindBindGitBashExe peers once companions land. */
-export function setBindBindGitBashExePeers(next: BindBindGitBashExePeers): void {
+export function setBindBindGitBashExePeers(
+  next: BindBindGitBashExePeers,
+): void {
   peers = next;
 }
 
@@ -24,7 +26,7 @@ export function bindBindGitBashExe() {
   }
 
   return peers.e(() => {
-    aDe = {
+    ((aDe = {
       bash: `bash`,
       "bash.exe": `bash`,
       cmd: `cmd`,
@@ -37,18 +39,20 @@ export function bindBindGitBashExe() {
       sh: `sh`,
       "sh.exe": `sh`,
       zsh: `zsh`,
-      "zsh.exe": `zsh`
-    }, oDe = {
-      bash: `bash`,
-      cmd: `cmd`,
-      powershell: `PowerShell`,
-      sh: `sh`,
-      zsh: `zsh`
-    }, sDe = {
-      powershell: `PowerShell`,
-      commandPrompt: `Command Prompt`,
-      gitBash: `Git Bash`,
-      wsl: `WSL`
-    };
+      "zsh.exe": `zsh`,
+    }),
+      (oDe = {
+        bash: `bash`,
+        cmd: `cmd`,
+        powershell: `PowerShell`,
+        sh: `sh`,
+        zsh: `zsh`,
+      }),
+      (sDe = {
+        powershell: `PowerShell`,
+        commandPrompt: `Command Prompt`,
+        gitBash: `Git Bash`,
+        wsl: `WSL`,
+      }));
   });
 }

@@ -9,7 +9,9 @@ type AnyProps = Record<string, unknown>;
 
 let CardImpl: ComponentType<AnyProps> | null = null;
 
-export function setApprovalRequestCardImpl(impl: ComponentType<AnyProps>): void {
+export function setApprovalRequestCardImpl(
+  impl: ComponentType<AnyProps>,
+): void {
   CardImpl = impl;
 }
 
@@ -26,7 +28,9 @@ export type ApprovalRequestCardProps = {
   [key: string]: unknown;
 };
 
-export function ApprovalRequestCard(props: ApprovalRequestCardProps): ReactNode {
+export function ApprovalRequestCard(
+  props: ApprovalRequestCardProps,
+): ReactNode {
   if (CardImpl != null) {
     return (
       <CardImpl

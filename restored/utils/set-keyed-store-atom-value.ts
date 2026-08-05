@@ -21,16 +21,28 @@ export function bindKeyedStoreWriterAtoms(args: {
 }
 
 /** Bundle `$Li` / export `PU`. */
-export function setKeyedStoreAtomValuePU(store: StoreSetKeyed, key: unknown, value: unknown): void {
+export function setKeyedStoreAtomValuePU(
+  store: StoreSetKeyed,
+  key: unknown,
+  value: unknown,
+): void {
   store.set(puAtom, key, value);
 }
 
 /** Bundle `DIi` / export `XU`. */
-export function setKeyedStoreAtomValueXU(store: StoreSetKeyed, key: unknown, value: unknown): void {
+export function setKeyedStoreAtomValueXU(
+  store: StoreSetKeyed,
+  key: unknown,
+  value: unknown,
+): void {
   store.set(xuAtom, key, value);
 }
 
 /** Bundle `ztr` / export `q2`. */
-export function setKeyedStoreAtomValueQ2(store: StoreSetKeyed, key: unknown, value: unknown): void {
+export function setKeyedStoreAtomValueQ2(
+  store: StoreSetKeyed,
+  key: unknown,
+  value: unknown,
+): void {
   store.set(q2Atom, key, value);
 }

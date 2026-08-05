@@ -10,14 +10,20 @@ export type HideConversationalOnboardingPluginTaskPeers = {
 let peers: HideConversationalOnboardingPluginTaskPeers | null = null;
 
 /** Wire hideConversationalOnboardingPluginTask peers once companions land. */
-export function setHideConversationalOnboardingPluginTaskPeers(next: HideConversationalOnboardingPluginTaskPeers): void {
+export function setHideConversationalOnboardingPluginTaskPeers(
+  next: HideConversationalOnboardingPluginTaskPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `Uf` / internal `Ucc`.
  */
-export function hideConversationalOnboardingPluginTask(e: unknown, t: unknown, n: unknown) {
+export function hideConversationalOnboardingPluginTask(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+) {
   if (peers == null) {
     throw new Error(
       "hideConversationalOnboardingPluginTask peers are not configured",

@@ -13,7 +13,11 @@ import {
   dvErrorStyleProtoMap,
 } from "./dv-proto-maps";
 
-export function buildDataValidationRecord(dvIn6283: unknown, dvIn6284: unknown, dvIn6285: unknown) {
+export function buildDataValidationRecord(
+  dvIn6283: unknown,
+  dvIn6284: unknown,
+  dvIn6285: unknown,
+) {
   let dvBind16392 = {
     sqref: resolveDvSqref(dvIn6283, dvIn6284),
   };

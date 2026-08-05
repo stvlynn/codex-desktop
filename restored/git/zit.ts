@@ -23,6 +23,6 @@ export function bindZit() {
   }
 
   return peers.e(() => {
-    peers.HIt(), peers.FIt();
+    (peers.HIt(), peers.FIt());
   });
 }

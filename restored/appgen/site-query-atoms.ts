@@ -13,7 +13,9 @@ export type BindSitesGetSiteQueryAtomPeers = {
 let peers: BindSitesGetSiteQueryAtomPeers | null = null;
 
 /** Wire bindSitesGetSiteQueryAtom peers once companions land. */
-export function setBindSitesGetSiteQueryAtomPeers(next: BindSitesGetSiteQueryAtomPeers): void {
+export function setBindSitesGetSiteQueryAtomPeers(
+  next: BindSitesGetSiteQueryAtomPeers,
+): void {
   peers = next;
 }
 

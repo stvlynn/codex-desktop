@@ -30,6 +30,12 @@ export function bindSetThreadGoal() {
   }
 
   return peers.e(() => {
-    QGi = peers.r(peers.o(), 1), peers.nO(), peers.vP(), peers.fR(), peers.KGi(), peers.YGi(), peers.vT();
+    ((QGi = peers.r(peers.o(), 1)),
+      peers.nO(),
+      peers.vP(),
+      peers.fR(),
+      peers.KGi(),
+      peers.YGi(),
+      peers.vT());
   });
 }

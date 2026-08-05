@@ -17,7 +17,9 @@ export type BindSetPrimaryRuntimeInstallReleasePeers = {
 let peers: BindSetPrimaryRuntimeInstallReleasePeers | null = null;
 
 /** Wire bindSetPrimaryRuntimeInstallRelease peers once companions land. */
-export function setBindSetPrimaryRuntimeInstallReleasePeers(next: BindSetPrimaryRuntimeInstallReleasePeers): void {
+export function setBindSetPrimaryRuntimeInstallReleasePeers(
+  next: BindSetPrimaryRuntimeInstallReleasePeers,
+): void {
   peers = next;
 }
 
@@ -26,10 +28,18 @@ export function setBindSetPrimaryRuntimeInstallReleasePeers(next: BindSetPrimary
  */
 export function bindSetPrimaryRuntimeInstallRelease() {
   if (peers == null) {
-    throw new Error("bindSetPrimaryRuntimeInstallRelease peers are not configured");
+    throw new Error(
+      "bindSetPrimaryRuntimeInstallRelease peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.ed(), peers.K_(), peers.Gf(), peers.riu(), uiu = peers.Ta(peers.Q, null), diu = peers.Ta(peers.Q, `latest`);
+    (peers.Ho(),
+      peers.ed(),
+      peers.K_(),
+      peers.Gf(),
+      peers.riu(),
+      (uiu = peers.Ta(peers.Q, null)),
+      (diu = peers.Ta(peers.Q, `latest`)));
   });
 }

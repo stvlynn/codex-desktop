@@ -11,14 +11,20 @@ export type ClassifyTranscriptionFetchErrorPeers = {
 let peers: ClassifyTranscriptionFetchErrorPeers | null = null;
 
 /** Wire classifyTranscriptionFetchError peers once companions land. */
-export function setClassifyTranscriptionFetchErrorPeers(next: ClassifyTranscriptionFetchErrorPeers): void {
+export function setClassifyTranscriptionFetchErrorPeers(
+  next: ClassifyTranscriptionFetchErrorPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `Tct` / internal `Vit`.
  */
-export function classifyTranscriptionFetchError(e: unknown, t: unknown, n: unknown) {
+export function classifyTranscriptionFetchError(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+) {
   if (peers == null) {
     throw new Error("classifyTranscriptionFetchError peers are not configured");
   }

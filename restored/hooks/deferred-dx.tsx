@@ -27,7 +27,9 @@ export type BindBindDeferredDXPeers = {
 let peers: BindBindDeferredDXPeers | null = null;
 
 /** Wire bindBindDeferredDX peers once companions land. */
-export function setBindBindDeferredDXPeers(next: BindBindDeferredDXPeers): void {
+export function setBindBindDeferredDXPeers(
+  next: BindBindDeferredDXPeers,
+): void {
   peers = next;
 }
 

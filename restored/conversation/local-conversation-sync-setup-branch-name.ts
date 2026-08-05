@@ -35,7 +35,9 @@ export type BindLocalConversationSyncSetupBranchNamePeers = {
 let peers: BindLocalConversationSyncSetupBranchNamePeers | null = null;
 
 /** Wire bindLocalConversationSyncSetupBranchName peers once companions land. */
-export function setBindLocalConversationSyncSetupBranchNamePeers(next: BindLocalConversationSyncSetupBranchNamePeers): void {
+export function setBindLocalConversationSyncSetupBranchNamePeers(
+  next: BindLocalConversationSyncSetupBranchNamePeers,
+): void {
   peers = next;
 }
 
@@ -44,22 +46,35 @@ export function setBindLocalConversationSyncSetupBranchNamePeers(next: BindLocal
  */
 export function bindLocalConversationSyncSetupBranchName() {
   if (peers == null) {
-    throw new Error("bindLocalConversationSyncSetupBranchName peers are not configured");
+    throw new Error(
+      "bindLocalConversationSyncSetupBranchName peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    KJ = peers.c(), peers.sd(), peers.af(), FYo = peers.r(peers.o(), 1), peers.Pp(), peers.cA(), peers.Mp(), peers.gk(), peers.Wq(), peers.c_(), qJ = peers.J(), JJ = {
-      Root: peers.wYo,
-      Header: peers.TYo,
-      Title: peers.EYo,
-      RowContainer: peers.DYo,
-      Footer: peers.OYo,
-      Row: peers.kYo,
-      KeyValueRow: peers.AYo,
-      IconButton: peers.jYo,
-      FileRow: peers.MYo,
-      FileSection: peers.NYo,
-      Expanded: peers.PYo
-    };
+    ((KJ = peers.c()),
+      peers.sd(),
+      peers.af(),
+      (FYo = peers.r(peers.o(), 1)),
+      peers.Pp(),
+      peers.cA(),
+      peers.Mp(),
+      peers.gk(),
+      peers.Wq(),
+      peers.c_(),
+      (qJ = peers.J()),
+      (JJ = {
+        Root: peers.wYo,
+        Header: peers.TYo,
+        Title: peers.EYo,
+        RowContainer: peers.DYo,
+        Footer: peers.OYo,
+        Row: peers.kYo,
+        KeyValueRow: peers.AYo,
+        IconButton: peers.jYo,
+        FileRow: peers.MYo,
+        FileSection: peers.NYo,
+        Expanded: peers.PYo,
+      }));
   });
 }

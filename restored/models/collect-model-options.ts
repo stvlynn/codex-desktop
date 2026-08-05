@@ -14,7 +14,9 @@ export type ModelOptionsCarrier = {
   versionOptions?: Array<{ options?: ModelOption[] | null }> | null;
 };
 
-export function collectModelOptions(carrier: ModelOptionsCarrier | null | undefined): ModelOption[] {
+export function collectModelOptions(
+  carrier: ModelOptionsCarrier | null | undefined,
+): ModelOption[] {
   return [
     ...(carrier?.options ?? []),
     ...(carrier?.internalOptions ?? []),

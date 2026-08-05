@@ -23,6 +23,6 @@ export function wvtBindableHelper() {
   }
 
   return peers.e(() => {
-    peers.Ze(), peers.At();
+    (peers.Ze(), peers.At());
   });
 }

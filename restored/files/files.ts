@@ -32,9 +32,17 @@ export function bindFiles() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.Sl(), peers.sBa(), peers.jf(), YYa = `Files`, XYa = [`text/uri-list`, `public.file-url`], ZYa = `DownloadURL`, QYa = `application/x-codex-image`, $Ya = peers.sl({
-      filename: peers.X().trim().min(1),
-      src: peers.X().trim().min(1)
-    });
+    (peers.Au(),
+      peers.Sl(),
+      peers.sBa(),
+      peers.jf(),
+      (YYa = `Files`),
+      (XYa = [`text/uri-list`, `public.file-url`]),
+      (ZYa = `DownloadURL`),
+      (QYa = `application/x-codex-image`),
+      ($Ya = peers.sl({
+        filename: peers.X().trim().min(1),
+        src: peers.X().trim().min(1),
+      })));
   });
 }

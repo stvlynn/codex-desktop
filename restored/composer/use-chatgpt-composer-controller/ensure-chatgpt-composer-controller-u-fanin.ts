@@ -63,7 +63,10 @@ import { ensureConversationWorkRouteInit as appInitialC8 } from "../../conversat
 import { markConversationError as _AppInitialYP } from "../../conversation/mark-conversation-error";
 import { ensureIntlFormattersInit as appInitialHft } from "../../i18n/use-intl";
 import { AppIconYlt as appInitialXlt } from "../../icons/app-icon-ylt";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../runtime/rolldown-runtime";
 import { ThreadResourceCard as _appInitialYI } from "../../thread/thread-resource-card";
 import { Button as appInitialBut } from "../../ui/button";
 import { zodString as __appInitialCT } from "../../vendor/zod";

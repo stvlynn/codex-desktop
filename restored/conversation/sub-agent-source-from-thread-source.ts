@@ -54,7 +54,9 @@ export function normalizeSubAgentSource(raw: unknown): SubAgentSourceFields {
 }
 
 /** Sub-agent fields from a conversation thread source. Bundle `fg` / `qst`. */
-export function subAgentSourceFromThreadSource(source: unknown): SubAgentSourceFields | null {
+export function subAgentSourceFromThreadSource(
+  source: unknown,
+): SubAgentSourceFields | null {
   const raw = subAgentFromThreadSource(source);
   if (raw == null) return null;
   return normalizeSubAgentSource(raw);

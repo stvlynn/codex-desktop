@@ -7,12 +7,82 @@
 /* split-lane-import-depth:1 */
 
 import { ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { jsxRuntime as getJsxRuntime, react } from "../../boundaries/react-cjs-runtime";
-import { __workbookT, _workbookT, workbookA, workbookB, workbookC, workbookD, workbookE, workbookF, workbookG, WorkbookI, workbookIt, workbookJ, workbookK, workbookL, workbookLt, workbookM, workbookN, workbookNt, workbookO, workbookOt, workbookP, workbookQ, WorkbookR, workbookRt, workbookS, workbookSt, workbookU, workbookUnderscore, workbookV, workbookW, WorkbookW, workbookX, workbookY, workbookZ } from "../../workbook/editor-compat";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  __workbookT,
+  _workbookT,
+  workbookA,
+  workbookB,
+  workbookC,
+  workbookD,
+  workbookE,
+  workbookF,
+  workbookG,
+  WorkbookI,
+  workbookIt,
+  workbookJ,
+  workbookK,
+  workbookL,
+  workbookLt,
+  workbookM,
+  workbookN,
+  workbookNt,
+  workbookO,
+  workbookOt,
+  workbookP,
+  workbookQ,
+  WorkbookR,
+  workbookRt,
+  workbookS,
+  workbookSt,
+  workbookU,
+  workbookUnderscore,
+  workbookV,
+  workbookW,
+  WorkbookW,
+  workbookX,
+  workbookY,
+  workbookZ,
+} from "../../workbook/editor-compat";
 import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
-import { ensureFeatureCatalogAtomsInit, ensureFeatureCatalogInit, getFeatureCatalogEntries, PopcornFindBar } from "../feature-catalog";
-import { ensurePopcornPageNumberNavigationInit, PopcornPageNumberNavigation } from "../popcorn-page-number-navigation";
-import { ensureRemoteTextEditSessionInit, RemoteTextEditSessionA, RemoteTextEditSessionB, RemoteTextEditSessionC, RemoteTextEditSessionChrome, RemoteTextEditSessionE, RemoteTextEditSessionF, RemoteTextEditSessionH, RemoteTextEditSessionI, RemoteTextEditSessionLowerT, RemoteTextEditSessionM, RemoteTextEditSessionN, RemoteTextEditSessionO, RemoteTextEditSessionP, RemoteTextEditSessionR, RemoteTextEditSessionS, RemoteTextEditSessionSurfaceKind, RemoteTextEditSessionU, RemoteTextEditSessionV, RemoteTextEditSessionW, RemoteTextEditSessionX, RemoteTextEditSessionY, RemoteTextEditSessionZoomControl } from "../remote-text-edit-session/index";
+import {
+  ensureFeatureCatalogAtomsInit,
+  ensureFeatureCatalogInit,
+  getFeatureCatalogEntries,
+  PopcornFindBar,
+} from "../feature-catalog";
+import {
+  ensurePopcornPageNumberNavigationInit,
+  PopcornPageNumberNavigation,
+} from "../popcorn-page-number-navigation";
+import {
+  ensureRemoteTextEditSessionInit,
+  RemoteTextEditSessionA,
+  RemoteTextEditSessionB,
+  RemoteTextEditSessionC,
+  RemoteTextEditSessionChrome,
+  RemoteTextEditSessionE,
+  RemoteTextEditSessionF,
+  RemoteTextEditSessionH,
+  RemoteTextEditSessionI,
+  RemoteTextEditSessionLowerT,
+  RemoteTextEditSessionM,
+  RemoteTextEditSessionN,
+  RemoteTextEditSessionO,
+  RemoteTextEditSessionP,
+  RemoteTextEditSessionR,
+  RemoteTextEditSessionS,
+  RemoteTextEditSessionSurfaceKind,
+  RemoteTextEditSessionU,
+  RemoteTextEditSessionV,
+  RemoteTextEditSessionW,
+  RemoteTextEditSessionX,
+  RemoteTextEditSessionY,
+  RemoteTextEditSessionZoomControl,
+} from "../remote-text-edit-session/index";
 
 // Wave5d soft stubs.
 const hazelR15: any = undefined;
@@ -30,31 +100,43 @@ function willowR2() {
   violetR17.header.text = ["Popcorn artifact engine"];
   violetR17.footer.text = ["Popcorn document demo"];
   umbraR17.body.paragraphs.add({
-    text: "Popcorn is growing into a unified artifact engine for workbook, presentation, and document editing."
+    text: "Popcorn is growing into a unified artifact engine for workbook, presentation, and document editing.",
   });
   umbraR17.body.paragraphs.add({
-    text: "Granola owns the document model and layout cache. Popcorn owns the editor shell, host integration, and worker-driven canvas presentation."
+    text: "Granola owns the document model and layout cache. Popcorn owns the editor shell, host integration, and worker-driven canvas presentation.",
   });
   umbraR17.body.paragraphs.add({
-    text: "This default document is both a manual demo and a deterministic feature corpus for the document route, its browser smoke, and agent-driven debugging loops."
+    text: "This default document is both a manual demo and a deterministic feature corpus for the document route, its browser smoke, and agent-driven debugging loops.",
   });
-  umbraR17.body.text.get("Popcorn is growing into a unified artifact engine for workbook, presentation, and document editing.").style = "title";
-  umbraR17.body.text.get("Granola owns the document model and layout cache. Popcorn owns the editor shell, host integration, and worker-driven canvas presentation.").style = "heading2";
-  umbraR17.body.text.get("This default document is both a manual demo and a deterministic feature corpus for the document route, its browser smoke, and agent-driven debugging loops.").spacingAfter = 320;
+  umbraR17.body.text.get(
+    "Popcorn is growing into a unified artifact engine for workbook, presentation, and document editing.",
+  ).style = "title";
+  umbraR17.body.text.get(
+    "Granola owns the document model and layout cache. Popcorn owns the editor shell, host integration, and worker-driven canvas presentation.",
+  ).style = "heading2";
+  umbraR17.body.text.get(
+    "This default document is both a manual demo and a deterministic feature corpus for the document route, its browser smoke, and agent-driven debugging loops.",
+  ).spacingAfter = 320;
   umbraR17.body.tables.add({
     rows: 5,
     columns: 4,
-    values: [["Artifact", "Primary surface", "Worker model", "Status"], ["Workbook", "Grid + formula chrome", "Granola workbook", "Advanced"], ["Presentation", "Slide stage", "Granola presentation", "Expanding"], ["Document", "Paged canvas", "Granola document", "Expanding"], ["Shared", "Worker split + devtools", "Popcorn shared", "Core"]],
+    values: [
+      ["Artifact", "Primary surface", "Worker model", "Status"],
+      ["Workbook", "Grid + formula chrome", "Granola workbook", "Advanced"],
+      ["Presentation", "Slide stage", "Granola presentation", "Expanding"],
+      ["Document", "Paged canvas", "Granola document", "Expanding"],
+      ["Shared", "Worker split + devtools", "Popcorn shared", "Core"],
+    ],
     style: {
       preset: "TableGrid",
-      headerRow: true
+      headerRow: true,
     },
     position: {
       left: 72,
       top: 260,
       width: 560,
-      height: 188
-    }
+      height: 188,
+    },
   });
   umbraR17.body.shapes.add({
     geometry: "roundRect",
@@ -62,50 +144,52 @@ function willowR2() {
       left: 666,
       top: 260,
       width: 280,
-      height: 168
+      height: 168,
     },
     fill: {
       type: "solid",
-      color: "#E0F2FE"
+      color: "#E0F2FE",
     },
     line: {
       style: "solid",
       fill: {
         type: "solid",
-        color: "#38BDF8"
+        color: "#38BDF8",
       },
-      width: 1
+      width: 1,
     },
-    text: "Shared object editing, find, and pagination-aware text sessions live in the same artifact-engine family now."
+    text: "Shared object editing, find, and pagination-aware text sessions live in the same artifact-engine family now.",
   });
   umbraR17.body.images.add({
     dataUrl: RemoteTextEditSessionA,
     alt: "Popcorn artifact marker",
     size: {
       width: 96,
-      height: 96
+      height: 96,
     },
     style: {
       wrap: "inline",
-      alignment: "center"
-    }
+      alignment: "center",
+    },
   });
   umbraR17.body.paragraphs.add({
-    text: "Feature highlights across the engine:"
+    text: "Feature highlights across the engine:",
   });
-  umbraR17.body.text.get("Feature highlights across the engine:").style = "heading1";
+  umbraR17.body.text.get("Feature highlights across the engine:").style =
+    "heading1";
   for (let questR14 of umbraR2()) umbraR17.body.paragraphs.add(questR14);
-  for (let flintR24 = 0; flintR24 < 70; flintR24 += 1) umbraR17.body.paragraphs.add({
-    text: `Artifact engine note ${flintR24 + 1}: Popcorn should keep artifact ownership explicit while Granola owns the document model, pagination, and reusable text-edit primitives.`
-  });
+  for (let flintR24 = 0; flintR24 < 70; flintR24 += 1)
+    umbraR17.body.paragraphs.add({
+      text: `Artifact engine note ${flintR24 + 1}: Popcorn should keep artifact ownership explicit while Granola owns the document model, pagination, and reusable text-edit primitives.`,
+    });
   let willowR17 = umbraR17.sections.add({
     pageSetup: willowR15,
-    columns: zincR15
+    columns: zincR15,
   });
   willowR17.header.text = ["Artifact catalog"];
   willowR17.footer.text = ["Sectioned feature catalog"];
   willowR17.body.paragraphs.add({
-    text: "Artifact feature catalog"
+    text: "Artifact feature catalog",
   });
   willowR17.body.text.get("Artifact feature catalog").style = "heading1";
   for (let groveR21 of getFeatureCatalogEntries()) {
@@ -113,71 +197,100 @@ function willowR2() {
       text: `${violetR2(groveR21.artifact)} / ${groveR21.area}`,
       style: {
         spaceBefore: 120,
-        spaceAfter: 60
-      }
+        spaceAfter: 60,
+      },
     });
-    willowR17.body.text.get(`${violetR2(groveR21.artifact)} / ${groveR21.area}`).style = "heading2";
+    willowR17.body.text.get(
+      `${violetR2(groveR21.artifact)} / ${groveR21.area}`,
+    ).style = "heading2";
     willowR17.body.paragraphs.add({
       text: `${groveR21.feature}: ${groveR21.summary}`,
       style: {
         bulletCharacter: "•",
         marginLeft: 720,
         indent: 360,
-        spaceAfter: 120
-      }
+        spaceAfter: 120,
+      },
     });
   }
   let yellowR17 = umbraR17.sections.add({
     pageSetup: willowR15,
-    columns: yellowR15
+    columns: yellowR15,
   });
-  return yellowR17.header.text = ["Document figures"], yellowR17.footer.text = ["Media and object coverage"], yellowR17.body.paragraphs.add({
-    text: "Embedded content and pagination coverage"
-  }), yellowR17.body.text.get("Embedded content and pagination coverage").style = "heading1", yellowR17.body.tables.add({
-    rows: 4,
-    columns: 3,
-    values: [["Coverage", "Example", "Why it matters"], ["Sections", "Headers, footers, and columns", "Tests pagination, structure, and exported layout."], ["Objects", "Shapes, images, and tables", "Exercises selection overlays and page-aware object hit testing."], ["Search", "Find over long note sequences", "Keeps human UI and agent inspection aligned."]],
-    style: {
-      preset: "TableGrid",
-      headerRow: true
-    },
-    position: {
-      left: 72,
-      top: 144,
-      width: 560,
-      height: 210
-    }
-  }), yellowR17.body.images.add({
-    dataUrl: RemoteTextEditSessionA,
-    alt: "Document figure placeholder",
-    position: {
-      left: 120,
-      top: 396,
-      width: 220,
-      height: 220
-    }
-  }), yellowR17.body.shapes.add({
-    geometry: "roundRect",
-    size: {
-      width: 300,
-      height: 120
-    },
-    position: {
-      left: 420,
-      top: 436
-    },
-    style: {
-      wrap: "square",
-      alignment: "center"
-    },
-    fill: "accent2",
-    line: {
-      style: "solid",
-      fill: "accent5",
-      width: 1
-    },
-    text: "Object selection in documents now follows the same model-backed controller pattern as workbook charts and slide objects."
-  }), umbraR17;
+  return (
+    (yellowR17.header.text = ["Document figures"]),
+    (yellowR17.footer.text = ["Media and object coverage"]),
+    yellowR17.body.paragraphs.add({
+      text: "Embedded content and pagination coverage",
+    }),
+    (yellowR17.body.text.get("Embedded content and pagination coverage").style =
+      "heading1"),
+    yellowR17.body.tables.add({
+      rows: 4,
+      columns: 3,
+      values: [
+        ["Coverage", "Example", "Why it matters"],
+        [
+          "Sections",
+          "Headers, footers, and columns",
+          "Tests pagination, structure, and exported layout.",
+        ],
+        [
+          "Objects",
+          "Shapes, images, and tables",
+          "Exercises selection overlays and page-aware object hit testing.",
+        ],
+        [
+          "Search",
+          "Find over long note sequences",
+          "Keeps human UI and agent inspection aligned.",
+        ],
+      ],
+      style: {
+        preset: "TableGrid",
+        headerRow: true,
+      },
+      position: {
+        left: 72,
+        top: 144,
+        width: 560,
+        height: 210,
+      },
+    }),
+    yellowR17.body.images.add({
+      dataUrl: RemoteTextEditSessionA,
+      alt: "Document figure placeholder",
+      position: {
+        left: 120,
+        top: 396,
+        width: 220,
+        height: 220,
+      },
+    }),
+    yellowR17.body.shapes.add({
+      geometry: "roundRect",
+      size: {
+        width: 300,
+        height: 120,
+      },
+      position: {
+        left: 420,
+        top: 436,
+      },
+      style: {
+        wrap: "square",
+        alignment: "center",
+      },
+      fill: "accent2",
+      line: {
+        style: "solid",
+        fill: "accent5",
+        width: 1,
+      },
+      text: "Object selection in documents now follows the same model-backed controller pattern as workbook charts and slide objects.",
+    }),
+    umbraR17
+  );
 }
 var willowR15,
   yellowR15,
@@ -196,28 +309,34 @@ var willowR15,
         right: 1267,
         header: 720,
         footer: 720,
-        gutter: 0
-      }
+        gutter: 0,
+      },
     };
     yellowR15 = {
       count: 1,
       space: 360,
       widths: [],
-      hasSeparatorLine: false
+      hasSeparatorLine: false,
     };
     zincR15 = {
       count: 2,
       space: 360,
       widths: [],
-      hasSeparatorLine: false
+      hasSeparatorLine: false,
     };
   }),
   basaltR15 = esmInit(() => {});
 function yellowR2() {
-  return new Worker(new URL("" + new URL("runtime.worker-CMXNKFNH.js", import.meta.url).href, "" + import.meta.url), {
-    type: "module",
-    name: "popcorn-document-worker"
-  });
+  return new Worker(
+    new URL(
+      "" + new URL("runtime.worker-CMXNKFNH.js", import.meta.url).href,
+      "" + import.meta.url,
+    ),
+    {
+      type: "module",
+      name: "popcorn-document-worker",
+    },
+  );
 }
 var cedarR15 = esmInit(() => {
     basaltR15();
@@ -243,7 +362,7 @@ var cedarR15 = esmInit(() => {
       findResultCount: 0,
       findActiveResultIndex: -1,
       findSummary: "",
-      findFocusToken: 0
+      findFocusToken: 0,
     };
   });
 function _l(deltaR13 = daisyR15) {
@@ -254,10 +373,19 @@ var flintR15 = esmInit(() => {
   emberR15();
 });
 function zincR2() {
-  return typeof window < "u" && typeof Worker < "u" && typeof HTMLCanvasElement < "u" && "transferControlToOffscreen" in HTMLCanvasElement.prototype;
+  return (
+    typeof window < "u" &&
+    typeof Worker < "u" &&
+    typeof HTMLCanvasElement < "u" &&
+    "transferControlToOffscreen" in HTMLCanvasElement.prototype
+  );
 }
 function amberR2(topazR9) {
-  return topazR9.documentProto ? topazR9.documentProto : topazR9.document ? topazR9.document.toProto() : willowR2().toProto();
+  return topazR9.documentProto
+    ? topazR9.documentProto
+    : topazR9.document
+      ? topazR9.document.toProto()
+      : willowR2().toProto();
 }
 function basaltR2() {
   return yellowR2();

@@ -29,6 +29,13 @@ export function webview() {
   }
 
   return peers.e(() => {
-    peers.CTr(), peers.TTr(), peers.DTr(), Lk = [...peers.OTr(peers.ETr, `webview`), ...peers.OTr(peers.wTr, `vscode-only`), ...peers.OTr(peers.STr, `electron-only`)];
+    (peers.CTr(),
+      peers.TTr(),
+      peers.DTr(),
+      (Lk = [
+        ...peers.OTr(peers.ETr, `webview`),
+        ...peers.OTr(peers.wTr, `vscode-only`),
+        ...peers.OTr(peers.STr, `electron-only`),
+      ]));
   });
 }

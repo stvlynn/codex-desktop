@@ -17,26 +17,43 @@ export type OpenThreadBrowserSidePanelTabWithoutAnimationPeers = {
 let peers: OpenThreadBrowserSidePanelTabWithoutAnimationPeers | null = null;
 
 /** Wire openThreadBrowserSidePanelTabWithoutAnimation peers once companions land. */
-export function setOpenThreadBrowserSidePanelTabWithoutAnimationPeers(next: OpenThreadBrowserSidePanelTabWithoutAnimationPeers): void {
+export function setOpenThreadBrowserSidePanelTabWithoutAnimationPeers(
+  next: OpenThreadBrowserSidePanelTabWithoutAnimationPeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `gE` / internal `G$o`.
  */
-export function openThreadBrowserSidePanelTabWithoutAnimation(e: unknown, t: unknown, n: unknown= `right`) {
+export function openThreadBrowserSidePanelTabWithoutAnimation(
+  e: unknown,
+  t: unknown,
+  n: unknown = `right`,
+) {
   if (peers == null) {
-    throw new Error("openThreadBrowserSidePanelTabWithoutAnimation peers are not configured");
+    throw new Error(
+      "openThreadBrowserSidePanelTabWithoutAnimation peers are not configured",
+    );
   }
   let r = t?.browserConversationId ?? peers.yT(e);
   if (r == null) return !1;
   let i = peers.Z$o(e, r, t?.browserTabId),
     a = peers.iL(e, r, i, n)?.target ?? n;
-  if (!peers.SY(e, !1, {
-    ...t,
-    browserConversationId: r,
-    browserTabId: i
-  }, a) || !peers.eL(e, a, i)) return !1;
+  if (
+    !peers.SY(
+      e,
+      !1,
+      {
+        ...t,
+        browserConversationId: r,
+        browserTabId: i,
+      },
+      a,
+    ) ||
+    !peers.eL(e, a, i)
+  )
+    return !1;
   let o = e.get(a === `bottom` ? peers.qar : peers.Jar);
-  return o.stop(), o.set(1), !0;
+  return (o.stop(), o.set(1), !0);
 }

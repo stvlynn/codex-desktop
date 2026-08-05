@@ -8,7 +8,9 @@ export type ClearPendingWorktreeConversationStartPeers = {
 let peers: ClearPendingWorktreeConversationStartPeers | null = null;
 
 /** Wire clearPendingWorktreeConversationStart peers once companions land. */
-export function setClearPendingWorktreeConversationStartPeers(next: ClearPendingWorktreeConversationStartPeers): void {
+export function setClearPendingWorktreeConversationStartPeers(
+  next: ClearPendingWorktreeConversationStartPeers,
+): void {
   peers = next;
 }
 
@@ -17,7 +19,9 @@ export function setClearPendingWorktreeConversationStartPeers(next: ClearPending
  */
 export function clearPendingWorktreeConversationStart(e: unknown, t: unknown) {
   if (peers == null) {
-    throw new Error("clearPendingWorktreeConversationStart peers are not configured");
+    throw new Error(
+      "clearPendingWorktreeConversationStart peers are not configured",
+    );
   }
 
   e.set(peers.Bxo, t, null);

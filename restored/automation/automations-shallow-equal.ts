@@ -18,7 +18,10 @@ type AutomationLike = {
 };
 
 /** Shallow equality for automation drafts / rows. */
-export function automationsShallowEqual(a: AutomationLike | null | undefined, b: AutomationLike | null | undefined): boolean {
+export function automationsShallowEqual(
+  a: AutomationLike | null | undefined,
+  b: AutomationLike | null | undefined,
+): boolean {
   return a == null || b == null
     ? a === b
     : a.id === b.id &&

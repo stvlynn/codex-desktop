@@ -39,6 +39,35 @@ export function bindDeferredUiGit() {
   }
 
   return peers.e(() => {
-    peers.hv(), peers.jPt(), GPt = peers.UPt(0), KPt = peers.UPt(1), qPt = peers.UPt(2), JPt = peers.UPt(3), xv = peers.UPt(4), YPt = peers.UPt(5), XPt = peers.UPt(6), peers.GPt.range, peers.KPt.range, peers.qPt.range, peers.JPt.range, peers.xv.range, peers.YPt.range, peers.XPt.range, ZPt = peers.WPt(0), QPt = peers.WPt(1), $Pt = peers.WPt(2), eFt = peers.WPt(3), tFt = peers.WPt(4), nFt = peers.WPt(5), rFt = peers.WPt(6), peers.ZPt.range, peers.QPt.range, peers.$Pt.range, peers.eFt.range, peers.tFt.range, peers.nFt.range, peers.rFt.range;
+    (peers.hv(),
+      peers.jPt(),
+      (GPt = peers.UPt(0)),
+      (KPt = peers.UPt(1)),
+      (qPt = peers.UPt(2)),
+      (JPt = peers.UPt(3)),
+      (xv = peers.UPt(4)),
+      (YPt = peers.UPt(5)),
+      (XPt = peers.UPt(6)),
+      peers.GPt.range,
+      peers.KPt.range,
+      peers.qPt.range,
+      peers.JPt.range,
+      peers.xv.range,
+      peers.YPt.range,
+      peers.XPt.range,
+      (ZPt = peers.WPt(0)),
+      (QPt = peers.WPt(1)),
+      ($Pt = peers.WPt(2)),
+      (eFt = peers.WPt(3)),
+      (tFt = peers.WPt(4)),
+      (nFt = peers.WPt(5)),
+      (rFt = peers.WPt(6)),
+      peers.ZPt.range,
+      peers.QPt.range,
+      peers.$Pt.range,
+      peers.eFt.range,
+      peers.tFt.range,
+      peers.nFt.range,
+      peers.rFt.range);
   });
 }

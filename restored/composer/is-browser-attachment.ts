@@ -16,7 +16,9 @@ export type BrowserAttachmentLike = LocalAttachmentLike & {
 };
 
 /** Heuristic browser attachment (no origin). Bundle `eyt`. */
-export function looksLikeBrowserAttachment(attachment: BrowserAttachmentLike): boolean {
+export function looksLikeBrowserAttachment(
+  attachment: BrowserAttachmentLike,
+): boolean {
   return (
     attachment.localBrowserContext != null ||
     attachment.localBrowserCommentMetadata != null ||
@@ -27,7 +29,9 @@ export function looksLikeBrowserAttachment(attachment: BrowserAttachmentLike): b
 }
 
 /** True when the attachment is (or looks like) a browser annotation. */
-export function isBrowserAttachment(attachment: BrowserAttachmentLike): boolean {
+export function isBrowserAttachment(
+  attachment: BrowserAttachmentLike,
+): boolean {
   const origin = resolveLocalAttachmentOrigin(attachment);
   return origin == null
     ? looksLikeBrowserAttachment(attachment)

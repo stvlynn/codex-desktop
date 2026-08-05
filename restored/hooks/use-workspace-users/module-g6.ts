@@ -18,7 +18,10 @@ import { esmInit } from "../../runtime/rolldown-runtime";
 import { ensureCloudApiClientInit } from "../../settings/cloud-api-client";
 import { ensureSettingsQueryAtomsInit } from "../../settings/settings-ipc";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { decodeBase64ToBytes } from "../../utils/decode-base64-to-bytes";
 import { ensureAuthProviderInit, useAuth } from "../use-auth";
 import { useQuery } from "../use-query";
@@ -30,34 +33,36 @@ export const useWorkspaceUsersA = esmInit(() => {
   gamma = reactCompilerRuntime();
 });
 export function useWorkspaceUsersR(glide: unknown) {
-  let {
-      accountId,
-      authMethod
-    } = useAuth(),
+  let { accountId, authMethod } = useAuth(),
     honey = glide.trim();
   let iris = Chatgpt2(honey, 200),
     jewel = ["workspace-users", accountId, iris];
   let knoll = authMethod === "chatgpt" && accountId != null && iris.length > 0,
     lunar = async () => {
       if (accountId == null) throw Error("account id is required");
-      return (await decodeBase64ToBytes.safeGet("/accounts/{account_id}/users", {
-        parameters: {
-          path: {
-            account_id: accountId
+      return (
+        await decodeBase64ToBytes.safeGet("/accounts/{account_id}/users", {
+          parameters: {
+            path: {
+              account_id: accountId,
+            },
+            query: {
+              limit: 10,
+              offset: 0,
+              query: iris,
+            },
           },
-          query: {
-            limit: 10,
-            offset: 0,
-            query: iris
-          }
-        }
-      })).items;
+        })
+      ).items;
     };
   let moss;
-  return moss = {
-    queryKey: jewel,
-    enabled: knoll,
-    queryFn: lunar,
-    staleTime: readScrollTop.ONE_MINUTE
-  }, useQuery(moss);
+  return (
+    (moss = {
+      queryKey: jewel,
+      enabled: knoll,
+      queryFn: lunar,
+      staleTime: readScrollTop.ONE_MINUTE,
+    }),
+    useQuery(moss)
+  );
 }

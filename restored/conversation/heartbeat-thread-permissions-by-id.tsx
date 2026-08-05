@@ -12,7 +12,9 @@ export type BindBindHeartbeatThreadPermissionsByIdPeers = {
 let peers: BindBindHeartbeatThreadPermissionsByIdPeers | null = null;
 
 /** Wire bindBindHeartbeatThreadPermissionsById peers once companions land. */
-export function setBindBindHeartbeatThreadPermissionsByIdPeers(next: BindBindHeartbeatThreadPermissionsByIdPeers): void {
+export function setBindBindHeartbeatThreadPermissionsByIdPeers(
+  next: BindBindHeartbeatThreadPermissionsByIdPeers,
+): void {
   peers = next;
 }
 
@@ -21,12 +23,12 @@ export function setBindBindHeartbeatThreadPermissionsByIdPeers(next: BindBindHea
  */
 export function bindBindHeartbeatThreadPermissionsById() {
   if (peers == null) {
-    throw new Error("bindBindHeartbeatThreadPermissionsById peers are not configured");
+    throw new Error(
+      "bindBindHeartbeatThreadPermissionsById peers are not configured",
+    );
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     let n = peers.U8l(t(peers.yD, e), t(peers.dD, e));
     return n == null ? null : JSON.stringify(n);
   });

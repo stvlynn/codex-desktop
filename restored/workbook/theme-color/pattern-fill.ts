@@ -14,7 +14,6 @@ for (const [name, code] of Object.entries(patternTypeNameToProto)) {
 }
 
 export class PatternFill {
-
   #e = {
     patternType: patternTypeEnum.PATTERN_TYPE_UNSPECIFIED,
   };
@@ -25,7 +24,8 @@ export class PatternFill {
       let workbookBinding15431 = colorCfg3693.proto;
       if (!workbookBinding15431) return;
       this.#e.patternType =
-        workbookBinding15431.patternType ?? patternTypeEnum.PATTERN_TYPE_UNSPECIFIED;
+        workbookBinding15431.patternType ??
+        patternTypeEnum.PATTERN_TYPE_UNSPECIFIED;
       this.#t = workbookBinding15431.color
         ? new WorkbookColor({
             type: "proto",
@@ -80,9 +80,9 @@ export class PatternFill {
   }
   #r() {
     this.#n =
-      this.#e.patternType !== patternTypeEnum.PATTERN_TYPE_UNSPECIFIED || !!this.#t;
+      this.#e.patternType !== patternTypeEnum.PATTERN_TYPE_UNSPECIFIED ||
+      !!this.#t;
   }
-
 }
 
 let patternFillInitialized = false;

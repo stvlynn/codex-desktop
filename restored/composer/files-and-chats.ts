@@ -40,24 +40,42 @@ export function filesAndChats() {
   }
 
   return peers.e(() => {
-    Gqa = peers.c(), peers.Qt(), peers.Au(), peers.$u(), peers.vM(), peers.Vf(), peers.Rqa(), peers.ND(), peers.tti(), peers.jf(), peers.Uf(), peers.nN(), peers.fN(), Kqa = 50, qqa = new WeakMap(), Jqa = {
-      sections: [{
-        id: `files-and-chats`,
-        title: peers.Zu({
-          id: `composer.atMentionList.filesAndChats`,
-          defaultMessage: `Files and chats`,
-          description: `Section header shown before the user searches files and tasks in the @ mention list.`
-        }),
-        items: [],
-        emptyState: peers.Zu({
-          id: `composer.atMentionList.filesAndChats.emptyQuery`,
-          defaultMessage: `Type to search files or chats`,
-          description: `Shown in the files and tasks section when the @ mention query is empty.`
-        }),
-        isLoading: !1
-      }]
-    }, Yqa = {
-      sections: []
-    };
+    ((Gqa = peers.c()),
+      peers.Qt(),
+      peers.Au(),
+      peers.$u(),
+      peers.vM(),
+      peers.Vf(),
+      peers.Rqa(),
+      peers.ND(),
+      peers.tti(),
+      peers.jf(),
+      peers.Uf(),
+      peers.nN(),
+      peers.fN(),
+      (Kqa = 50),
+      (qqa = new WeakMap()),
+      (Jqa = {
+        sections: [
+          {
+            id: `files-and-chats`,
+            title: peers.Zu({
+              id: `composer.atMentionList.filesAndChats`,
+              defaultMessage: `Files and chats`,
+              description: `Section header shown before the user searches files and tasks in the @ mention list.`,
+            }),
+            items: [],
+            emptyState: peers.Zu({
+              id: `composer.atMentionList.filesAndChats.emptyQuery`,
+              defaultMessage: `Type to search files or chats`,
+              description: `Shown in the files and tasks section when the @ mention query is empty.`,
+            }),
+            isLoading: !1,
+          },
+        ],
+      }),
+      (Yqa = {
+        sections: [],
+      }));
   });
 }

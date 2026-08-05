@@ -18,7 +18,9 @@ export type UseEnvironmentsSearchQueryPeers = {
 let peers: UseEnvironmentsSearchQueryPeers | null = null;
 
 /** Wire useEnvironmentsSearchQuery peers once companions land. */
-export function setUseEnvironmentsSearchQueryPeers(next: UseEnvironmentsSearchQueryPeers): void {
+export function setUseEnvironmentsSearchQueryPeers(
+  next: UseEnvironmentsSearchQueryPeers,
+): void {
   peers = next;
 }
 

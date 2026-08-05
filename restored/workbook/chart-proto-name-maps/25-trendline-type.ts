@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Kn,
-} from "../presentation-protobuf";
+import { Kn } from "../presentation-protobuf";
 
 export const trendlineTypeNameToProto = {
   linear: Kn.TRENDLINE_TYPE_LINEAR,

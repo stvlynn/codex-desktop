@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  dr as patternTypeEnum,
-} from "../presentation-protobuf";
+import { dr as patternTypeEnum } from "../presentation-protobuf";
 
 export const patternTypeNameToProto = {
   none: patternTypeEnum.PATTERN_TYPE_NONE,

@@ -53,8 +53,33 @@ export function bindBindChatgpt2() {
   }
 
   return peers.e(() => {
-    DYr = peers.c(), peers.Qt(), peers.Ho(), BM = peers.r(peers.o(), 1), peers.$u(), peers.DD(), peers.Vf(), peers.Kg(), peers.fM(), peers.xM(), peers.yJr(), peers.ih(), peers.DJr(), peers.lp(), peers.ND(), peers.MJr(), peers.IE(), peers.yE(), peers.PM(), peers.rYr(), peers.ed(), peers.Gf(), peers.oYr(), peers.IM(), peers.RM(), OYr = peers.Oa(peers.Q, (e, {
-      get: t
-    }) => t(peers.$E).includes(peers.e));
+    ((DYr = peers.c()),
+      peers.Qt(),
+      peers.Ho(),
+      (BM = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.DD(),
+      peers.Vf(),
+      peers.Kg(),
+      peers.fM(),
+      peers.xM(),
+      peers.yJr(),
+      peers.ih(),
+      peers.DJr(),
+      peers.lp(),
+      peers.ND(),
+      peers.MJr(),
+      peers.IE(),
+      peers.yE(),
+      peers.PM(),
+      peers.rYr(),
+      peers.ed(),
+      peers.Gf(),
+      peers.oYr(),
+      peers.IM(),
+      peers.RM(),
+      (OYr = peers.Oa(peers.Q, (e, { get: t }) =>
+        t(peers.$E).includes(peers.e),
+      )));
   });
 }

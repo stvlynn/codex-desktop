@@ -11,7 +11,9 @@ export type BindBindToggleDiffPanelPeers = {
 let peers: BindBindToggleDiffPanelPeers | null = null;
 
 /** Wire bindBindToggleDiffPanel peers once companions land. */
-export function setBindBindToggleDiffPanelPeers(next: BindBindToggleDiffPanelPeers): void {
+export function setBindBindToggleDiffPanelPeers(
+  next: BindBindToggleDiffPanelPeers,
+): void {
   peers = next;
 }
 
@@ -24,6 +26,6 @@ export function bindBindToggleDiffPanel() {
   }
 
   return peers.e(() => {
-    q4s = peers.c(), peers.Yf();
+    ((q4s = peers.c()), peers.Yf());
   });
 }

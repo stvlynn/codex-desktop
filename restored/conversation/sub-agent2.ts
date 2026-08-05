@@ -23,6 +23,6 @@ export function bindSubAgent2() {
   }
 
   return peers.e(() => {
-    peers.Au(), Not = [`final`];
+    (peers.Au(), (Not = [`final`]));
   });
 }

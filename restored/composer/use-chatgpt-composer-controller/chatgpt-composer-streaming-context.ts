@@ -5,7 +5,10 @@ import {
   react,
   reactCompilerRuntime,
 } from "../../boundaries/react-cjs-runtime";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../runtime/rolldown-runtime";
 
 reactCompilerRuntime();
 
@@ -22,6 +25,8 @@ export const chatgptComposerStreamingContextProvider =
   chatgptComposerStreamingContext.Provider;
 
 /** Value36 — bind streaming context for residual U/_O fan-in callers. */
-export const ensureChatgptComposerStreamingContextInit = rolldownRuntimeN(() => {
-  void chatgptComposerStreamingContext;
-});
+export const ensureChatgptComposerStreamingContextInit = rolldownRuntimeN(
+  () => {
+    void chatgptComposerStreamingContext;
+  },
+);

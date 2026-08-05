@@ -4,7 +4,8 @@
 
 export function normalizeCodeChildren(props: any) {
   if (!(props == null || props === false)) {
-    if (typeof props == "string") return isWhitespaceOnlyCodeChild(props) ? undefined : props;
+    if (typeof props == "string")
+      return isWhitespaceOnlyCodeChild(props) ? undefined : props;
     if (typeof props == "number") return String(props);
     if (Array.isArray(props)) {
       let cccBind11881 = [],

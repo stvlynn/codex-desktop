@@ -12,7 +12,10 @@ import { CODEX_MICRO_ONBOARDING_LIFECYCLE_STEP_TYPE } from "../analytics/codex-m
 import { CodexMicroOnboardingScreen } from "../analytics/codex-micro-onboarding-screen";
 import { logProductEvent } from "../analytics/log-product-event";
 import { appScopeAtom, ensureAppScopeInit } from "../runtime/app-scope-runtime";
-import { ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init } from "../composer/composer-esm-inits";
+import {
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+} from "../composer/composer-esm-inits";
 import { reactCompilerRuntime } from "../boundaries/react-cjs-runtime";
 import { esmInit } from "../runtime/rolldown-runtime";
 
@@ -20,33 +23,48 @@ import { esmInit } from "../runtime/rolldown-runtime";
 const CodexMicroDeviceLifecycleStepType: any = undefined;
 /** Wave FY unresolved companion (missing-export:ui/deferred-ui-xt.ts) */
 const deferredUiXT: any = undefined;
-export function codexMicroOnboardingAnimationS(quartz: unknown, river: unknown, slate: unknown, timber: unknown, umbra: unknown) {
-  umbra === false && (river.status === "detected" || river.status === "connected") && alpha(quartz, CodexMicroDeviceLifecycleStepType.CODEX_MICRO_DEVICE_LIFECYCLE_STEP_TYPE_FIRST_DETECTED, timber);
+export function codexMicroOnboardingAnimationS(
+  quartz: unknown,
+  river: unknown,
+  slate: unknown,
+  timber: unknown,
+  umbra: unknown,
+) {
+  umbra === false &&
+    (river.status === "detected" || river.status === "connected") &&
+    alpha(
+      quartz,
+      CodexMicroDeviceLifecycleStepType.CODEX_MICRO_DEVICE_LIFECYCLE_STEP_TYPE_FIRST_DETECTED,
+      timber,
+    );
   slate != null && alpha(quartz, bravo(slate), timber);
 }
-export function codexMicroOnboardingAnimationC(violet: unknown, {
-  flowId,
-  inputMonitoringPermissionState,
-  screen,
-  step
-}: {
-  flowId?: unknown;
-  inputMonitoringPermissionState?: unknown;
-  screen?: unknown;
-  step?: unknown;
-  [key: string]: unknown;
-}) {
+export function codexMicroOnboardingAnimationC(
+  violet: unknown,
+  {
+    flowId,
+    inputMonitoringPermissionState,
+    screen,
+    step,
+  }: {
+    flowId?: unknown;
+    inputMonitoringPermissionState?: unknown;
+    screen?: unknown;
+    step?: unknown;
+    [key: string]: unknown;
+  },
+) {
   logProductEvent(violet, CODEX_MICRO_ONBOARDING_LIFECYCLE_STEP_TYPE, {
     flowId,
     inputMonitoringPermissionState: falcon(inputMonitoringPermissionState),
     screen: echo(screen),
-    stepType: delta(step)
+    stepType: delta(step),
   });
 }
 function alpha(willow, xenon, yellow) {
   logProductEvent(willow, CODEX_MICRO_DEVICE_LIFECYCLE_STEP_TYPE, {
     connectionTransport: copper(yellow),
-    stepType: xenon
+    stepType: xenon,
   });
 }
 function bravo(zinc) {
@@ -119,9 +137,11 @@ export const codexMicroOnboardingAnimationO = esmInit(() => {
 export function codexMicroOnboardingAnimationA(ember: unknown, flint: unknown) {
   let garnet = globalThis.performance.now();
   ember.set(pearl, flint ? -1 : 0);
-  let hazel = flint ? null : globalThis.setInterval(() => {
-    ember.set(pearl, globalThis.performance.now() - garnet);
-  }, indigo);
+  let hazel = flint
+    ? null
+    : globalThis.setInterval(() => {
+        ember.set(pearl, globalThis.performance.now() - garnet);
+      }, indigo);
   return () => {
     hazel != null && globalThis.clearInterval(hazel);
     ember.set(pearl, null);
@@ -131,23 +151,40 @@ function codexMicroOnboardingAnimationR(ivory) {
   let jasper = ivory === -1,
     kelp = jasper ? 0 : ivory;
   return {
-    actionKeycapIds: onyx.map((item, index) => gamma(item, kelp, jasper ? 0 : (index + 1) * lemon)),
+    actionKeycapIds: onyx.map((item, index) =>
+      gamma(item, kelp, jasper ? 0 : (index + 1) * lemon),
+    ),
     agentSlots: nickel.map((item, index) => ({
       id: index,
       threadKey: null,
       title: null,
       status: gamma(item, kelp, jasper ? 0 : index * kite),
-      selected: false
-    }))
+      selected: false,
+    })),
   };
 }
 function gamma(lotus, mint, nova) {
   return lotus[harbor((mint + nova) % jade)];
 }
 function harbor(olive) {
-  return olive < marble[0] ? 0 : olive < marble[1] ? 1 : olive < marble[2] ? 2 : 0;
+  return olive < marble[0]
+    ? 0
+    : olive < marble[1]
+      ? 1
+      : olive < marble[2]
+        ? 2
+        : 0;
 }
-var indigo, jade, kite, lemon, marble, nickel, onyx, pearl, codexMicroOnboardingAnimationT, codexMicroOnboardingAnimationN;
+var indigo,
+  jade,
+  kite,
+  lemon,
+  marble,
+  nickel,
+  onyx,
+  pearl,
+  codexMicroOnboardingAnimationT,
+  codexMicroOnboardingAnimationN;
 export const codexMicroOnboardingAnimationI = esmInit(() => {
   ensureComposerEsm_MT_Init();
   ensureAppScopeInit();
@@ -155,21 +192,42 @@ export const codexMicroOnboardingAnimationI = esmInit(() => {
   jade = 12e3;
   kite = 800;
   lemon = 700;
-  marble = [[0.25, 0.33], [0.58, 0.66], [0.92, 1]].map(([prism, quill]) => Math.round((prism + quill) / 2 * jade));
-  nickel = [["working", "awaiting-approval", "error"], ["unread", "working", "idle"], ["awaiting-approval", "idle", "working"], ["idle", "error", "unread"], ["working", "unread", "awaiting-response"], ["awaiting-response", "working", "idle"]];
-  onyx = [["FAST", "PLAY", "BUG"], ["APPR", "SPLIT", "SETUP"], ["REJ", "NEW", "CODEX"], ["SPLIT", "BUG", "FAST"], ["MIC", "NEW", "PLAY"], ["CODEX", "APPR", "SETUP"]];
+  marble = [
+    [0.25, 0.33],
+    [0.58, 0.66],
+    [0.92, 1],
+  ].map(([prism, quill]) => Math.round(((prism + quill) / 2) * jade));
+  nickel = [
+    ["working", "awaiting-approval", "error"],
+    ["unread", "working", "idle"],
+    ["awaiting-approval", "idle", "working"],
+    ["idle", "error", "unread"],
+    ["working", "unread", "awaiting-response"],
+    ["awaiting-response", "working", "idle"],
+  ];
+  onyx = [
+    ["FAST", "PLAY", "BUG"],
+    ["APPR", "SPLIT", "SETUP"],
+    ["REJ", "NEW", "CODEX"],
+    ["SPLIT", "BUG", "FAST"],
+    ["MIC", "NEW", "PLAY"],
+    ["CODEX", "APPR", "SETUP"],
+  ];
   pearl = reactCompilerRuntime(appScopeAtom, null);
-  codexMicroOnboardingAnimationT = deferredUiXT(appScopeAtom, ({
-    get
-  }) => {
+  codexMicroOnboardingAnimationT = deferredUiXT(appScopeAtom, ({ get }) => {
     let reef = get(pearl);
     return reef == null ? null : codexMicroOnboardingAnimationR(reef);
   });
-  codexMicroOnboardingAnimationN = deferredUiXT(appScopeAtom, ({
-    get
-  }) => get(codexMicroOnboardingAnimationT)?.agentSlots ?? null);
+  codexMicroOnboardingAnimationN = deferredUiXT(
+    appScopeAtom,
+    ({ get }) => get(codexMicroOnboardingAnimationT)?.agentSlots ?? null,
+  );
 });
-export { codexMicroOnboardingAnimationN, codexMicroOnboardingAnimationR, codexMicroOnboardingAnimationT };
+export {
+  codexMicroOnboardingAnimationN,
+  codexMicroOnboardingAnimationR,
+  codexMicroOnboardingAnimationT,
+};
 
 /** Wave FY: bind no longer required after full body promote */
 export function bindTrackCodexMicroOnboardingLifecycle(_next: unknown): void {}

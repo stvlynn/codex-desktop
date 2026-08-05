@@ -15,7 +15,9 @@ export type BindBindDeferredRkPeers = {
 let peers: BindBindDeferredRkPeers | null = null;
 
 /** Wire bindBindDeferredRk peers once companions land. */
-export function setBindBindDeferredRkPeers(next: BindBindDeferredRkPeers): void {
+export function setBindBindDeferredRkPeers(
+  next: BindBindDeferredRkPeers,
+): void {
   peers = next;
 }
 
@@ -28,6 +30,10 @@ export function bindBindDeferredRk() {
   }
 
   return peers.e(() => {
-    lwo = peers.c(), peers.sd(), peers.iwo(), peers.swo(), uwo = peers.J();
+    ((lwo = peers.c()),
+      peers.sd(),
+      peers.iwo(),
+      peers.swo(),
+      (uwo = peers.J()));
   });
 }

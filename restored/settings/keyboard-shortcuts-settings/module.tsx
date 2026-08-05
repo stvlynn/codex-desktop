@@ -8,8 +8,15 @@
 import { isStartingProcessExpired as IsStartingProcessExpired } from "../../account/is-starting-process-expired";
 import { openInBrowser as OpenInBrowser } from "../../account/open-in-browser";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_MT_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { BrowserWebviewPanel } from "../../browser/browser-webview-panel";
 import { ensureWebviewMicroCommandsClusterInit } from "../../desktop/ensure-webview-micro-commands-cluster-init";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
@@ -45,11 +52,24 @@ import { moveArrayItem } from "../../utils/move-array-item";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { thinCallWithUndefined } from "../../utils/thin-call-with-undefined";
 import { toggleSortedIdList } from "../../utils/toggle-sorted-id-list";
-import { ensureKeyboardShortcutsGtInit as EnsureKeyboardShortcutsGtInit, ensureKeyboardShortcutsHMInit, ensureKeyboardShortcutsJZInit, ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureKeyboardShortcutsGtInit as EnsureKeyboardShortcutsGtInit,
+  ensureKeyboardShortcutsHMInit,
+  ensureKeyboardShortcutsJZInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { ensureHotkeyThreadB1Init } from "../../utils/wave-av-gap-ensure-inits";
-import { ensureHotkeySetterHelpersInit, ensureHotkeySetterInit, formatHotkeyLabel, HotkeySetter } from "../hotkey-setter";
+import {
+  ensureHotkeySetterHelpersInit,
+  ensureHotkeySetterInit,
+  formatHotkeyLabel,
+  HotkeySetter,
+} from "../hotkey-setter";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { buildVscodeQueryKey } from "../vscode-query-key";
 import { WorkspaceImportSettingsSection } from "../workspace-import-settings-section";
 const AppInitial1: any = undefined;
@@ -102,9 +122,7 @@ export function KeyboardShortcutsSettings() {
 }
 function KeyboardShortcutsSettingsHelper1() {
   let marble = useIntl(),
-    {
-      platform
-    } = useHostPlatformModifierSymbol(),
+    { platform } = useHostPlatformModifierSymbol(),
     nickel = useQueryClient(),
     onyx = CodexPluginActionResult(AppInitialZ7),
     pearl = CodexPluginActionResult(deferredUiXZ),
@@ -123,296 +141,449 @@ function KeyboardShortcutsSettingsHelper1() {
   let [flint, garnet] = kite.useState(ember),
     [hazel, ivory] = kite.useState(false),
     [jasper, kelp] = kite.useState(null),
-    {
-      data
-    } = CodexPluginActionResult(IsStartingProcessExpired),
+    { data } = CodexPluginActionResult(IsStartingProcessExpired),
     lotus = {
       onSuccess: (acorn, bloom) => {
-        let {
-            commandId
-          } = bloom,
+        let { commandId } = bloom,
           coral = buildVscodeQueryKey("codex-command-keymap-state");
         nickel.setQueryData(coral, acorn);
         let drift = [coral];
         commandId === "hotkeyWindow" && drift.push(toggleSortedIdList);
-        (commandId === "globalDictationHold" || commandId === "globalDictationToggle") && drift.push(buildVscodeQueryKey("global-dictation-hotkey-state"));
-        Promise.all(drift.map(item => quartz(item)));
-      }
+        (commandId === "globalDictationHold" ||
+          commandId === "globalDictationToggle") &&
+          drift.push(buildVscodeQueryKey("global-dictation-hotkey-state"));
+        Promise.all(drift.map((item) => quartz(item)));
+      },
     };
   let mint = applyU0000U001FU007F2("set-codex-command-keybinding", lotus),
     nova = {
-      onSuccess: eagle => {
+      onSuccess: (eagle) => {
         let frost = buildVscodeQueryKey("codex-command-keymap-state");
         nickel.setQueryData(frost, eagle);
-        Promise.all([frost, toggleSortedIdList, buildVscodeQueryKey("global-dictation-hotkey-state")].map(item => quartz(item)));
-      }
+        Promise.all(
+          [
+            frost,
+            toggleSortedIdList,
+            buildVscodeQueryKey("global-dictation-hotkey-state"),
+          ].map((item) => quartz(item)),
+        );
+      },
     };
   let olive = applyU0000U001FU007F2("reset-codex-command-keybindings", nova),
     prism,
     quill;
   {
-    let glide = jewel => AppInitialXt(jewel, {
-      codexLocalAccessAllowed: onyx,
-      modeSwitchAvailable: willow,
-      isGlobalDictationEnabled: river,
-      isHotkeyWindowEnabled: slate,
-      isPriorityFilterEnabled: xenon,
-      isProcessManagerEnabled: timber,
-      isRealtimeVoiceCommandEnabled: umbra,
-      isVoiceInputEnabled: violet
-    });
+    let glide = (jewel) =>
+      AppInitialXt(jewel, {
+        codexLocalAccessAllowed: onyx,
+        modeSwitchAvailable: willow,
+        isGlobalDictationEnabled: river,
+        isHotkeyWindowEnabled: slate,
+        isPriorityFilterEnabled: xenon,
+        isProcessManagerEnabled: timber,
+        isRealtimeVoiceCommandEnabled: umbra,
+        isVoiceInputEnabled: violet,
+      });
     let honey;
-    honey = knoll => ({
+    honey = (knoll) => ({
       command: knoll,
-      title: BrowserWebviewPanel(knoll, marble, ensureKeyboardShortcutsJZInit(pearl, knoll.id)).title
+      title: BrowserWebviewPanel(
+        knoll,
+        marble,
+        ensureKeyboardShortcutsJZInit(pearl, knoll.id),
+      ).title,
     });
     quill = lemon.filter(glide).map(honey).sort(copper);
     let iris = yellow.trim();
-    prism = iris.length === 0 ? quill : quill.filter(item => {
-      let {
-          command,
-          title
-        } = item,
-        lunar = BrowserWebviewPanel(command, marble, ensureKeyboardShortcutsJZInit(pearl, command.id)).description;
-      return amber ? deferredT1(command.id, data, platform).some(_item => {
-        let {
-          label
-        } = _item;
-        return delta(label, iris);
-      }) : [command.id, title, lunar].some(_item => ensureKeyboardShortcutsHMInit(_item, iris) > 0);
-    });
+    prism =
+      iris.length === 0
+        ? quill
+        : quill.filter((item) => {
+            let { command, title } = item,
+              lunar = BrowserWebviewPanel(
+                command,
+                marble,
+                ensureKeyboardShortcutsJZInit(pearl, command.id),
+              ).description;
+            return amber
+              ? deferredT1(command.id, data, platform).some((_item) => {
+                  let { label } = _item;
+                  return delta(label, iris);
+                })
+              : [command.id, title, lunar].some(
+                  (_item) => ensureKeyboardShortcutsHMInit(_item, iris) > 0,
+                );
+          });
   }
   let reef = prism,
-    sage = data == null ? null : <EnsureKeyboardShortcutsGtInit {...{
-      autoFocus: amber,
-      isSearchingByKeystrokes: amber,
-      variant: "page",
-      trailingContent: <OptionalTooltip {...{
-        tooltipContent: <MemoizedFormattedMessage {...{
-          id: "settings.keyboardShortcuts.searchByKeystrokes.tooltip",
-          defaultMessage: "Search by keystrokes",
-          description: "Tooltip label for the keyboard shortcut search mode button"
-        }} />,
-        children: <ReadLoginRouteQuerySnapshot {...{
-          "aria-label": marble.formatMessage({
-            id: "settings.keyboardShortcuts.searchByKeystrokes.ariaLabel",
-            defaultMessage: "Search by keystrokes",
-            description: "Accessible label for the keyboard shortcut search mode button"
-          }),
-          "aria-pressed": amber,
-          color: amber ? "secondary" : "ghost",
-          size: "toolbar",
-          uniform: true,
-          onMouseDown: bravo,
-          onClick: () => {
-            zinc("");
-            basalt(alpha);
-          },
-          children: <AppIconOi {...{
-            className: "icon-sm"
-          }} />
-        }} />
-      }} />,
-      value: yellow,
-      onKeyDown: amber ? event => {
-        if (event.repeat) return;
-        if (event.preventDefault(), event.stopPropagation(), event.key === "Escape") {
-          zinc("");
-          basalt(false);
-          return;
-        }
-        let moss = formatHotkeyLabel(event.nativeEvent);
-        if (moss != null) {
-          let north = moveArrayItem(moss, platform === "macOS", platform === "linux"),
-            orbit = yellow.length === 0 ? north : `${yellow} ${north}`,
-            pine = yellow.length > 0 && quill.some(item => {
-              let {
-                command
-              } = item;
-              return deferredT1(command.id, data, platform).some(_item => {
-                let {
-                  label
-                } = _item;
-                return delta(label, orbit);
-              });
-            });
-          zinc(pine ? orbit : north);
-        }
-      } : undefined,
-      onValueChange: zinc
-    }} />;
+    sage =
+      data == null ? null : (
+        <EnsureKeyboardShortcutsGtInit
+          {...{
+            autoFocus: amber,
+            isSearchingByKeystrokes: amber,
+            variant: "page",
+            trailingContent: (
+              <OptionalTooltip
+                {...{
+                  tooltipContent: (
+                    <MemoizedFormattedMessage
+                      {...{
+                        id: "settings.keyboardShortcuts.searchByKeystrokes.tooltip",
+                        defaultMessage: "Search by keystrokes",
+                        description:
+                          "Tooltip label for the keyboard shortcut search mode button",
+                      }}
+                    />
+                  ),
+                  children: (
+                    <ReadLoginRouteQuerySnapshot
+                      {...{
+                        "aria-label": marble.formatMessage({
+                          id: "settings.keyboardShortcuts.searchByKeystrokes.ariaLabel",
+                          defaultMessage: "Search by keystrokes",
+                          description:
+                            "Accessible label for the keyboard shortcut search mode button",
+                        }),
+                        "aria-pressed": amber,
+                        color: amber ? "secondary" : "ghost",
+                        size: "toolbar",
+                        uniform: true,
+                        onMouseDown: bravo,
+                        onClick: () => {
+                          zinc("");
+                          basalt(alpha);
+                        },
+                        children: (
+                          <AppIconOi
+                            {...{
+                              className: "icon-sm",
+                            }}
+                          />
+                        ),
+                      }}
+                    />
+                  ),
+                }}
+              />
+            ),
+            value: yellow,
+            onKeyDown: amber
+              ? (event) => {
+                  if (event.repeat) return;
+                  if (
+                    (event.preventDefault(),
+                    event.stopPropagation(),
+                    event.key === "Escape")
+                  ) {
+                    zinc("");
+                    basalt(false);
+                    return;
+                  }
+                  let moss = formatHotkeyLabel(event.nativeEvent);
+                  if (moss != null) {
+                    let north = moveArrayItem(
+                        moss,
+                        platform === "macOS",
+                        platform === "linux",
+                      ),
+                      orbit =
+                        yellow.length === 0 ? north : `${yellow} ${north}`,
+                      pine =
+                        yellow.length > 0 &&
+                        quill.some((item) => {
+                          let { command } = item;
+                          return deferredT1(command.id, data, platform).some(
+                            (_item) => {
+                              let { label } = _item;
+                              return delta(label, orbit);
+                            },
+                          );
+                        });
+                    zinc(pine ? orbit : north);
+                  }
+                }
+              : undefined,
+            onValueChange: zinc,
+          }}
+        />
+      );
   let _e = sage,
-    topaz = data != null && data.bindings.length > 0 ? <ReadLoginRouteQuerySnapshot {...{
-      color: "secondary",
-      disabled: olive.isPending,
-      size: "toolbar",
-      onClick: () => {
-        kelp(null);
-        ivory(true);
-      },
-      children: <MemoizedFormattedMessage {...{
-        id: "settings.keyboardShortcuts.resetAll",
-        defaultMessage: "Reset all to defaults",
-        description: "Button label to reset all customized keyboard shortcuts to their defaults"
-      }} />
-    }} /> : null;
+    topaz =
+      data != null && data.bindings.length > 0 ? (
+        <ReadLoginRouteQuerySnapshot
+          {...{
+            color: "secondary",
+            disabled: olive.isPending,
+            size: "toolbar",
+            onClick: () => {
+              kelp(null);
+              ivory(true);
+            },
+            children: (
+              <MemoizedFormattedMessage
+                {...{
+                  id: "settings.keyboardShortcuts.resetAll",
+                  defaultMessage: "Reset all to defaults",
+                  description:
+                    "Button label to reset all customized keyboard shortcuts to their defaults",
+                }}
+              />
+            ),
+          }}
+        />
+      ) : null;
   let ultra = <SettingsSectionTitle slug="keyboard-shortcuts" />;
-  let vapor = data == null ? <AppInitialNi>
-        {<MemoizedFormattedMessage {...{
-      id: "settings.keyboardShortcuts.loading",
-      defaultMessage: "Loading shortcuts…",
-      description: "Loading label while keyboard shortcuts are being fetched"
-    }} />}
-      </AppInitialNi> : <ParseUrlOrFallback {...{
-    children: reef.length === 0 ? <EnsurePersonalizationCInit {...{
-      control: null,
-      label: <span className="font-normal text-token-text-secondary">
-                      {<MemoizedFormattedMessage {...{
-          id: "settings.keyboardShortcuts.noMatches",
-          defaultMessage: "No matching shortcuts",
-          description: "Empty state shown when the keyboard shortcuts search has no matches"
-        }} />}
+  let vapor =
+    data == null ? (
+      <AppInitialNi>
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.keyboardShortcuts.loading",
+              defaultMessage: "Loading shortcuts…",
+              description:
+                "Loading label while keyboard shortcuts are being fetched",
+            }}
+          />
+        }
+      </AppInitialNi>
+    ) : (
+      <ParseUrlOrFallback
+        {...{
+          children:
+            reef.length === 0 ? (
+              <EnsurePersonalizationCInit
+                {...{
+                  control: null,
+                  label: (
+                    <span className="font-normal text-token-text-secondary">
+                      {
+                        <MemoizedFormattedMessage
+                          {...{
+                            id: "settings.keyboardShortcuts.noMatches",
+                            defaultMessage: "No matching shortcuts",
+                            description:
+                              "Empty state shown when the keyboard shortcuts search has no matches",
+                          }}
+                        />
+                      }
                     </span>
-    }} /> : reef.map(item => {
-      let {
-          command,
-          title
-        } = item,
-        quest = BrowserWebviewPanel(command, marble, ensureKeyboardShortcutsJZInit(pearl, command.id)).description,
-        ridge = flint[command.id],
-        storm = deferredT1(command.id, data, platform),
-        tide = data.bindings.some(_item => _item.command === command.id) && (command.id !== "searchChats" || storm.length > 0),
-        unity = harbor({
-          commandId: command.id,
-          hasCustomBinding: tide,
-          platform,
-          shortcutEntries: storm
-        }),
-        vale = cedar?.commandId === command.id && cedar.mode === "append",
-        wave = storm.length === 0 ? [null] : storm,
-        apex = vale && storm.length > 0 ? [...storm, null] : wave,
-        brook = `keyboard-shortcut-${command.id}-label`;
-      return <EnsurePersonalizationCInit key={command.id} {...{
-        className: "max-sm:flex-col max-sm:items-stretch max-sm:gap-2",
-        control: <div aria-labelledby={brook} className="flex w-96 max-w-full flex-col max-sm:w-full" role="group">
+                  ),
+                }}
+              />
+            ) : (
+              reef.map((item) => {
+                let { command, title } = item,
+                  quest = BrowserWebviewPanel(
+                    command,
+                    marble,
+                    ensureKeyboardShortcutsJZInit(pearl, command.id),
+                  ).description,
+                  ridge = flint[command.id],
+                  storm = deferredT1(command.id, data, platform),
+                  tide =
+                    data.bindings.some(
+                      (_item) => _item.command === command.id,
+                    ) &&
+                    (command.id !== "searchChats" || storm.length > 0),
+                  unity = harbor({
+                    commandId: command.id,
+                    hasCustomBinding: tide,
+                    platform,
+                    shortcutEntries: storm,
+                  }),
+                  vale =
+                    cedar?.commandId === command.id && cedar.mode === "append",
+                  wave = storm.length === 0 ? [null] : storm,
+                  apex = vale && storm.length > 0 ? [...storm, null] : wave,
+                  brook = `keyboard-shortcut-${command.id}-label`;
+                return (
+                  <EnsurePersonalizationCInit
+                    key={command.id}
+                    {...{
+                      className:
+                        "max-sm:flex-col max-sm:items-stretch max-sm:gap-2",
+                      control: (
+                        <div
+                          aria-labelledby={brook}
+                          className="flex w-96 max-w-full flex-col max-sm:w-full"
+                          role="group"
+                        >
                           {apex.map((_item, index) => {
-            let cliff = cedar?.commandId === command.id && (cedar.mode === "append" ? _item == null && index === storm.length : cedar.accelerator === (_item?.accelerator ?? null)),
-              dusk = `${brook}-binding-${index}`;
-            return <HotkeySetter key={`${command.id}-${_item?.accelerator ?? "unassigned"}`} {...{
-              accelerator: _item?.accelerator ?? null,
-              acceleratorLabel: _item?.label ?? null,
-              allowsBareModifiers: AppInitialP1(command),
-              allowsSequences: command.kind === "webview",
-              ariaLabelledBy: dusk,
-              canAppend: !ElectronOnly(command),
-              captureAriaLabel: marble.formatMessage({
-                id: "settings.keyboardShortcuts.captureAriaLabel",
-                defaultMessage: "Shortcut capture for {commandTitle}",
-                description: "Aria label for the shortcut capture input for a command"
-              }, {
-                commandTitle: title
-              }),
-              conflict: cliff ? cedar.conflictingCommandTitle : null,
-              disabled: mint.isPending,
-              hotkeyName: title,
-              isCapturing: cliff,
-              valueLabelId: dusk,
-              onCancelCapture: () => {
-                daisy(null);
-              },
-              onCapture: elm => {
-                if (_item != null && falcon(_item.accelerator, elm, platform === "macOS")) {
-                  daisy(null);
-                  return;
-                }
-                let fern = echo({
-                  accelerator: elm,
-                  commandId: command.id,
-                  intl: marble,
-                  keymapState: data,
-                  platform,
-                  registeredCommands: pearl
-                });
-                if (fern != null) {
-                  daisy(hill => hill?.commandId === command.id ? {
-                    ...hill,
-                    conflictingCommandTitle: fern
-                  } : hill);
-                  return;
-                }
-                let grove;
-                grove = cedar?.mode === "append" ? {
-                  type: "append",
-                  accelerator: elm
-                } : _item == null ? {
-                  type: "set",
-                  accelerator: elm
-                } : {
-                  type: "replace",
-                  previousAccelerator: _item.accelerator,
-                  accelerator: elm
-                };
-                indigo({
-                  commandId: command.id,
-                  intl: marble,
-                  setCommandKeybinding: mint,
-                  setErrorByCommandId: garnet,
-                  update: grove
-                }).finally(() => {
-                  daisy(isle => isle === cedar ? null : isle);
-                });
-              },
-              onClear: () => {
-                _item != null && indigo({
-                  commandId: command.id,
-                  intl: marble,
-                  setCommandKeybinding: mint,
-                  setErrorByCommandId: garnet,
-                  update: {
-                    type: "remove",
-                    accelerator: _item.accelerator
-                  }
-                });
-              },
-              onReset: index === unity && tide ? () => {
-                indigo({
-                  commandId: command.id,
-                  intl: marble,
-                  setCommandKeybinding: mint,
-                  setErrorByCommandId: garnet,
-                  update: {
-                    type: "reset"
-                  }
-                });
-              } : undefined,
-              onStartCapture: juniper => {
-                garnet(lagoon => ({
-                  ...lagoon,
-                  [command.id]: undefined
-                }));
-                daisy({
-                  commandId: command.id,
-                  accelerator: juniper === "append" ? null : _item?.accelerator ?? null,
-                  conflictingCommandTitle: null,
-                  mode: juniper
-                });
-              }
-            }} />;
-          })}
-                        </div>,
-        description: quest !== "" || ridge != null ? <>
+                            let cliff =
+                                cedar?.commandId === command.id &&
+                                (cedar.mode === "append"
+                                  ? _item == null && index === storm.length
+                                  : cedar.accelerator ===
+                                    (_item?.accelerator ?? null)),
+                              dusk = `${brook}-binding-${index}`;
+                            return (
+                              <HotkeySetter
+                                key={`${command.id}-${_item?.accelerator ?? "unassigned"}`}
+                                {...{
+                                  accelerator: _item?.accelerator ?? null,
+                                  acceleratorLabel: _item?.label ?? null,
+                                  allowsBareModifiers: AppInitialP1(command),
+                                  allowsSequences: command.kind === "webview",
+                                  ariaLabelledBy: dusk,
+                                  canAppend: !ElectronOnly(command),
+                                  captureAriaLabel: marble.formatMessage(
+                                    {
+                                      id: "settings.keyboardShortcuts.captureAriaLabel",
+                                      defaultMessage:
+                                        "Shortcut capture for {commandTitle}",
+                                      description:
+                                        "Aria label for the shortcut capture input for a command",
+                                    },
+                                    {
+                                      commandTitle: title,
+                                    },
+                                  ),
+                                  conflict: cliff
+                                    ? cedar.conflictingCommandTitle
+                                    : null,
+                                  disabled: mint.isPending,
+                                  hotkeyName: title,
+                                  isCapturing: cliff,
+                                  valueLabelId: dusk,
+                                  onCancelCapture: () => {
+                                    daisy(null);
+                                  },
+                                  onCapture: (elm) => {
+                                    if (
+                                      _item != null &&
+                                      falcon(
+                                        _item.accelerator,
+                                        elm,
+                                        platform === "macOS",
+                                      )
+                                    ) {
+                                      daisy(null);
+                                      return;
+                                    }
+                                    let fern = echo({
+                                      accelerator: elm,
+                                      commandId: command.id,
+                                      intl: marble,
+                                      keymapState: data,
+                                      platform,
+                                      registeredCommands: pearl,
+                                    });
+                                    if (fern != null) {
+                                      daisy((hill) =>
+                                        hill?.commandId === command.id
+                                          ? {
+                                              ...hill,
+                                              conflictingCommandTitle: fern,
+                                            }
+                                          : hill,
+                                      );
+                                      return;
+                                    }
+                                    let grove;
+                                    grove =
+                                      cedar?.mode === "append"
+                                        ? {
+                                            type: "append",
+                                            accelerator: elm,
+                                          }
+                                        : _item == null
+                                          ? {
+                                              type: "set",
+                                              accelerator: elm,
+                                            }
+                                          : {
+                                              type: "replace",
+                                              previousAccelerator:
+                                                _item.accelerator,
+                                              accelerator: elm,
+                                            };
+                                    indigo({
+                                      commandId: command.id,
+                                      intl: marble,
+                                      setCommandKeybinding: mint,
+                                      setErrorByCommandId: garnet,
+                                      update: grove,
+                                    }).finally(() => {
+                                      daisy((isle) =>
+                                        isle === cedar ? null : isle,
+                                      );
+                                    });
+                                  },
+                                  onClear: () => {
+                                    _item != null &&
+                                      indigo({
+                                        commandId: command.id,
+                                        intl: marble,
+                                        setCommandKeybinding: mint,
+                                        setErrorByCommandId: garnet,
+                                        update: {
+                                          type: "remove",
+                                          accelerator: _item.accelerator,
+                                        },
+                                      });
+                                  },
+                                  onReset:
+                                    index === unity && tide
+                                      ? () => {
+                                          indigo({
+                                            commandId: command.id,
+                                            intl: marble,
+                                            setCommandKeybinding: mint,
+                                            setErrorByCommandId: garnet,
+                                            update: {
+                                              type: "reset",
+                                            },
+                                          });
+                                        }
+                                      : undefined,
+                                  onStartCapture: (juniper) => {
+                                    garnet((lagoon) => ({
+                                      ...lagoon,
+                                      [command.id]: undefined,
+                                    }));
+                                    daisy({
+                                      commandId: command.id,
+                                      accelerator:
+                                        juniper === "append"
+                                          ? null
+                                          : (_item?.accelerator ?? null),
+                                      conflictingCommandTitle: null,
+                                      mode: juniper,
+                                    });
+                                  },
+                                }}
+                              />
+                            );
+                          })}
+                        </div>
+                      ),
+                      description:
+                        quest !== "" || ridge != null ? (
+                          <>
                             {quest}
-                            {ridge == null ? null : <span className="block text-xs text-token-error-foreground">
+                            {ridge == null ? null : (
+                              <span className="block text-xs text-token-error-foreground">
                                 {ridge}
-                              </span>}
-                          </> : undefined,
-        label: <span id={brook} className="block truncate">
+                              </span>
+                            )}
+                          </>
+                        ) : undefined,
+                      label: (
+                        <span id={brook} className="block truncate">
                           {title}
                         </span>
-      }} />;
-    })
-  }} />;
-  let wheat = meadow => {
+                      ),
+                    }}
+                  />
+                );
+              })
+            ),
+        }}
+      />
+    );
+  let wheat = (meadow) => {
     ivory(meadow);
     meadow || kelp(null);
   };
@@ -423,26 +594,39 @@ function KeyboardShortcutsSettingsHelper1() {
       ivory(false);
     } catch (nest) {
       let oak = nest;
-      kelp(oak instanceof Error ? oak.message : marble.formatMessage({
-        id: "settings.keyboardShortcuts.resetAllError",
-        defaultMessage: "Failed to reset keyboard shortcuts",
-        description: "Fallback error shown when resetting all customized keyboard shortcuts fails"
-      }));
+      kelp(
+        oak instanceof Error
+          ? oak.message
+          : marble.formatMessage({
+              id: "settings.keyboardShortcuts.resetAllError",
+              defaultMessage: "Failed to reset keyboard shortcuts",
+              description:
+                "Fallback error shown when resetting all customized keyboard shortcuts fails",
+            }),
+      );
     }
   };
-  let zephyr = <KeyboardShortcutsSettingsHelper5 {...{
-    error: jasper,
-    isPending: olive.isPending,
-    open: hazel,
-    onOpenChange: wheat,
-    onConfirm: yarn
-  }} />;
-  return <OpenInBrowser {...{
-    action: topaz,
-    stickyControls: _e,
-    title: ultra,
-    children: [vapor, zephyr]
-  }} />;
+  let zephyr = (
+    <KeyboardShortcutsSettingsHelper5
+      {...{
+        error: jasper,
+        isPending: olive.isPending,
+        open: hazel,
+        onOpenChange: wheat,
+        onConfirm: yarn,
+      }}
+    />
+  );
+  return (
+    <OpenInBrowser
+      {...{
+        action: topaz,
+        stickyControls: _e,
+        title: ultra,
+        children: [vapor, zephyr],
+      }}
+    />
+  );
 }
 function alpha(petal) {
   return !petal;
@@ -454,89 +638,149 @@ function copper(quiet, rain) {
   return WorkspaceImportSettingsSection(quiet.command, rain.command);
 }
 function KeyboardShortcutsSettingsHelper5(seed) {
-  let {
-      error,
-      isPending,
-      onConfirm,
-      onOpenChange,
-      open
-    } = seed,
-    trail = <MemoizedFormattedMessage {...{
-      id: "settings.keyboardShortcuts.resetAllConfirm.title",
-      defaultMessage: "Reset all keyboard shortcuts?",
-      description: "Title for the dialog confirming reset of all customized keyboard shortcuts"
-    }} />;
+  let { error, isPending, onConfirm, onOpenChange, open } = seed,
+    trail = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.keyboardShortcuts.resetAllConfirm.title",
+          defaultMessage: "Reset all keyboard shortcuts?",
+          description:
+            "Title for the dialog confirming reset of all customized keyboard shortcuts",
+        }}
+      />
+    );
   let urn = trail,
-    vine = <MemoizedFormattedMessage {...{
-      id: "settings.keyboardShortcuts.resetAllConfirm.description",
-      defaultMessage: "This will discard all custom shortcuts and restore the defaults",
-      description: "Warning shown before resetting all customized keyboard shortcuts"
-    }} />;
+    vine = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.keyboardShortcuts.resetAllConfirm.description",
+          defaultMessage:
+            "This will discard all custom shortcuts and restore the defaults",
+          description:
+            "Warning shown before resetting all customized keyboard shortcuts",
+        }}
+      />
+    );
   let wind = vine,
-    yarrow = event => {
+    yarrow = (event) => {
       event.preventDefault();
       onConfirm();
     };
   let azure, birch;
-  azure = <RealtimeVoiceHostId {...{
-    className: "sr-only",
-    children: urn
-  }} />;
-  birch = <IsStartingProcessExpired {...{
-    className: "sr-only",
-    children: wind
-  }} />;
-  let canyon = <DeferredUiU {...{
-    children: <DeferredUiH {...{
-      title: urn,
-      subtitle: wind
-    }} />
-  }} />;
-  let dew = error == null ? null : <DeferredUiU {...{
-    className: "text-token-error-foreground",
-    children: error
-  }} />;
+  azure = (
+    <RealtimeVoiceHostId
+      {...{
+        className: "sr-only",
+        children: urn,
+      }}
+    />
+  );
+  birch = (
+    <IsStartingProcessExpired
+      {...{
+        className: "sr-only",
+        children: wind,
+      }}
+    />
+  );
+  let canyon = (
+    <DeferredUiU
+      {...{
+        children: (
+          <DeferredUiH
+            {...{
+              title: urn,
+              subtitle: wind,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let dew =
+    error == null ? null : (
+      <DeferredUiU
+        {...{
+          className: "text-token-error-foreground",
+          children: error,
+        }}
+      />
+    );
   let ever = () => {
     onOpenChange(false);
   };
-  let field = <MemoizedFormattedMessage {...{
-    id: "settings.keyboardShortcuts.resetAllConfirm.cancel",
-    defaultMessage: "Cancel",
-    description: "Cancel button label for resetting all customized keyboard shortcuts"
-  }} />;
-  let grain = <ReadLoginRouteQuerySnapshot {...{
-    color: "secondary",
-    onClick: ever,
-    children: field
-  }} />;
-  let haven = <MemoizedFormattedMessage {...{
-    id: "settings.keyboardShortcuts.resetAllConfirm.confirm",
-    defaultMessage: "Reset all",
-    description: "Confirmation button label for resetting all customized keyboard shortcuts"
-  }} />;
-  let ink = <ReadLoginRouteQuerySnapshot {...{
-    color: "danger",
-    loading: isPending,
-    type: "submit",
-    children: haven
-  }} />;
-  let jadeite = <DeferredUiU {...{
-    children: <SetRemoteControlEnabledForHost {...{
-      children: [grain, ink]
-    }} />
-  }} />;
-  let kernel = <DeferredUiB {...{
-    as: "form",
-    onSubmit: yarrow,
-    children: [azure, birch, canyon, dew, jadeite]
-  }} />;
-  return <UsePointerSurfaceInteractionGate {...{
-    open,
-    onOpenChange,
-    showDialogClose: false,
-    size: "compact",
-    children: kernel
-  }} />;
+  let field = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.keyboardShortcuts.resetAllConfirm.cancel",
+        defaultMessage: "Cancel",
+        description:
+          "Cancel button label for resetting all customized keyboard shortcuts",
+      }}
+    />
+  );
+  let grain = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "secondary",
+        onClick: ever,
+        children: field,
+      }}
+    />
+  );
+  let haven = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.keyboardShortcuts.resetAllConfirm.confirm",
+        defaultMessage: "Reset all",
+        description:
+          "Confirmation button label for resetting all customized keyboard shortcuts",
+      }}
+    />
+  );
+  let ink = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "danger",
+        loading: isPending,
+        type: "submit",
+        children: haven,
+      }}
+    />
+  );
+  let jadeite = (
+    <DeferredUiU
+      {...{
+        children: (
+          <SetRemoteControlEnabledForHost
+            {...{
+              children: [grain, ink],
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let kernel = (
+    <DeferredUiB
+      {...{
+        as: "form",
+        onSubmit: yarrow,
+        children: [azure, birch, canyon, dew, jadeite],
+      }}
+    />
+  );
+  return (
+    <UsePointerSurfaceInteractionGate
+      {...{
+        open,
+        onOpenChange,
+        showDialogClose: false,
+        size: "compact",
+        children: kernel,
+      }}
+    />
+  );
 }
 function delta(leaf, maple) {
   return leaf === maple || leaf.startsWith(`${maple} `);
@@ -547,47 +791,68 @@ function echo({
   intl,
   keymapState,
   platform,
-  registeredCommands
+  registeredCommands,
 }) {
   let nimbus = useResizeObserver(accelerator, platform);
   switch (nimbus) {
     case "find":
     case "findNext":
     case "findPrevious":
-      return intl.formatMessage({
-        id: "settings.keyboardShortcuts.fixedFindCommand",
-        defaultMessage: "{command, select, find {Find} findNext {Find Next} other {Find Previous}}",
-        description: "Fixed Find command title shown for a shortcut conflict"
-      }, {
-        command: nimbus
-      });
+      return intl.formatMessage(
+        {
+          id: "settings.keyboardShortcuts.fixedFindCommand",
+          defaultMessage:
+            "{command, select, find {Find} findNext {Find Next} other {Find Previous}}",
+          description: "Fixed Find command title shown for a shortcut conflict",
+        },
+        {
+          command: nimbus,
+        },
+      );
     case null:
       break;
   }
-  for (let opal of lemon) if (opal.id !== commandId && !SortableContext(opal.id, commandId) && deferredT1(opal.id, keymapState, platform).some(item => gamma(item.accelerator, accelerator, platform === "macOS"))) return BrowserWebviewPanel(opal, intl, ensureKeyboardShortcutsJZInit(registeredCommands, opal.id)).title;
+  for (let opal of lemon)
+    if (
+      opal.id !== commandId &&
+      !SortableContext(opal.id, commandId) &&
+      deferredT1(opal.id, keymapState, platform).some((item) =>
+        gamma(item.accelerator, accelerator, platform === "macOS"),
+      )
+    )
+      return BrowserWebviewPanel(
+        opal,
+        intl,
+        ensureKeyboardShortcutsJZInit(registeredCommands, opal.id),
+      ).title;
   return null;
 }
 function falcon(plume, quillow, root) {
   return moveArrayItem(plume, root) === moveArrayItem(quillow, root);
 }
 function gamma(silk, thorn, upland) {
-  let vista = DEFAULT_MOTION_TRANSITION(silk).map(item => moveArrayItem(item, upland)),
-    wisp = DEFAULT_MOTION_TRANSITION(thorn).map(item => moveArrayItem(item, upland)),
+  let vista = DEFAULT_MOTION_TRANSITION(silk).map((item) =>
+      moveArrayItem(item, upland),
+    ),
+    wisp = DEFAULT_MOTION_TRANSITION(thorn).map((item) =>
+      moveArrayItem(item, upland),
+    ),
     yonder = Math.min(vista.length, wisp.length);
-  return yonder > 0 && (vista.length === yonder || wisp.length === yonder) && vista.slice(0, yonder).every((item, index) => item === wisp[index]);
+  return (
+    yonder > 0 &&
+    (vista.length === yonder || wisp.length === yonder) &&
+    vista.slice(0, yonder).every((item, index) => item === wisp[index])
+  );
 }
-function harbor({
-  commandId,
-  hasCustomBinding,
-  platform,
-  shortcutEntries
-}) {
+function harbor({ commandId, hasCustomBinding, platform, shortcutEntries }) {
   if (!hasCustomBinding) return null;
   let zenith = AppInitialM1({
       commandId,
-      isMacOS: platform === "macOS"
+      isMacOS: platform === "macOS",
     }),
-    anvil = shortcutEntries.findIndex((item, index) => item.accelerator !== zenith[index]);
+    anvil = shortcutEntries.findIndex(
+      (item, index) => item.accelerator !== zenith[index],
+    );
   return anvil === -1 ? 0 : anvil;
 }
 async function indigo({
@@ -595,25 +860,29 @@ async function indigo({
   intl,
   setCommandKeybinding,
   setErrorByCommandId,
-  update
+  update,
 }) {
-  setErrorByCommandId(beacon => ({
+  setErrorByCommandId((beacon) => ({
     ...beacon,
-    [commandId]: undefined
+    [commandId]: undefined,
   }));
   try {
     await setCommandKeybinding.mutateAsync({
       commandId,
-      update
+      update,
     });
   } catch (crag) {
-    setErrorByCommandId(dome => ({
+    setErrorByCommandId((dome) => ({
       ...dome,
-      [commandId]: crag instanceof Error ? crag.message : intl.formatMessage({
-        id: "settings.keyboardShortcuts.updateError",
-        defaultMessage: "Failed to update shortcut",
-        description: "Fallback error shown when updating an action shortcut fails"
-      })
+      [commandId]:
+        crag instanceof Error
+          ? crag.message
+          : intl.formatMessage({
+              id: "settings.keyboardShortcuts.updateError",
+              defaultMessage: "Failed to update shortcut",
+              description:
+                "Fallback error shown when updating an action shortcut fails",
+            }),
     }));
   }
 }
@@ -653,5 +922,7 @@ esmInit(() => {
   AppInitialHp();
   ensureSkillsPageHelpersInit();
   scrollAppActionTargetTo();
-  lemon = ensureHotkeyThreadB1Init.filter(item => AppInitial1(item) && item.id !== "findInThread");
+  lemon = ensureHotkeyThreadB1Init.filter(
+    (item) => AppInitial1(item) && item.id !== "findInThread",
+  );
 })();

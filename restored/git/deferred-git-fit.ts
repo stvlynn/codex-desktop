@@ -9,7 +9,9 @@ export type BindDeferredGitFitPeers = {
 let peers: BindDeferredGitFitPeers | null = null;
 
 /** Wire bindDeferredGitFit peers once companions land. */
-export function setBindDeferredGitFitPeers(next: BindDeferredGitFitPeers): void {
+export function setBindDeferredGitFitPeers(
+  next: BindDeferredGitFitPeers,
+): void {
   peers = next;
 }
 

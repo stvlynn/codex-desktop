@@ -8,7 +8,9 @@ export type CancelPrimaryRuntimeInstallArgs = {
 };
 
 /** Bundle `$ru` / export `Qn`. */
-export function cancelPrimaryRuntimeInstall(args: CancelPrimaryRuntimeInstallArgs): Promise<unknown> {
+export function cancelPrimaryRuntimeInstall(
+  args: CancelPrimaryRuntimeInstallArgs,
+): Promise<unknown> {
   const runtime = getDesktopServices()?.primaryRuntime as
     | { cancelInstall?: (a: { hostId: string }) => unknown }
     | undefined;

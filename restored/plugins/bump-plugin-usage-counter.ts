@@ -10,7 +10,9 @@ export type BumpPluginUsageCounterPeers = {
 let peers: BumpPluginUsageCounterPeers | null = null;
 
 /** Wire bumpPluginUsageCounter peers once companions land. */
-export function setBumpPluginUsageCounterPeers(next: BumpPluginUsageCounterPeers): void {
+export function setBumpPluginUsageCounterPeers(
+  next: BumpPluginUsageCounterPeers,
+): void {
   peers = next;
 }
 

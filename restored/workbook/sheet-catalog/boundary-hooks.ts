@@ -3,4 +3,6 @@
 
 export type SheetCatalogHooks = Record<string, never>;
 export const scaH: SheetCatalogHooks = {} as SheetCatalogHooks;
-export function wireSheetCatalogBoundaryHooks(_next: Partial<SheetCatalogHooks> = {}): void {}
+export function wireSheetCatalogBoundaryHooks(
+  _next: Partial<SheetCatalogHooks> = {},
+): void {}

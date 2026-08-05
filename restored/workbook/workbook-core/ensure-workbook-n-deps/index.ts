@@ -122,7 +122,14 @@ import {
   ensureSheetAutoHeightInit as workbookBinding1826,
   parseSheetColWidth,
 } from "../../sheet";
-import { Vn as spreadsheetVn, Ft, Z, d, yt, zt } from "../../spreadsheet-protobuf";
+import {
+  Vn as spreadsheetVn,
+  Ft,
+  Z,
+  d,
+  yt,
+  zt,
+} from "../../spreadsheet-protobuf";
 import { qht, Kht } from "../../spreadsheet-view-state";
 import {
   ensureStableIdConstantsInit as workbookH,

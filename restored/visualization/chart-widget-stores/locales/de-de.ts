@@ -12,31 +12,39 @@ const messages: Record<string, string> = {
   "widgets.audioPlayer.skipBack": "{seconds} Sekunden zurückspulen",
   "widgets.audioPlayer.skipForward": "{seconds} Sekunden vorspringen",
   "widgets.baseCarousel.label": "Karussell",
-  "widgets.baseCarousel.nextItems": "Weiter zu den nächsten Karussell-Elementen",
+  "widgets.baseCarousel.nextItems":
+    "Weiter zu den nächsten Karussell-Elementen",
   "widgets.baseCarousel.previousItems": "Vorherige Karussellelemente",
   "widgets.cardCarousel.goToArticle": "Zum Artikel",
   "widgets.cardCarousel.nextCards": "Nächste Karten",
-  "widgets.cardCarousel.nextCardsInCarousel": "Nächste Karten in {carouselLabel}",
+  "widgets.cardCarousel.nextCardsInCarousel":
+    "Nächste Karten in {carouselLabel}",
   "widgets.cardCarousel.previousCards": "Vorherige Karten",
-  "widgets.cardCarousel.previousCardsInCarousel": "Vorherige Karten in {carouselLabel}",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "Vorherige Karten in {carouselLabel}",
   "widgets.debug.hideCurrentState": "Aktuellen Status ausblenden",
   "widgets.debug.nextState": "Nächster Status",
   "widgets.debug.previousState": "Vorheriger Zustand",
   "widgets.debug.selectedState": "Ausgewählter Zustand",
   "widgets.debug.showCurrentState": "Aktuellen Status anzeigen",
   "widgets.debug.state": "Status",
-  "widgets.debug.unableToSerializeSelectedState": "Ausgewählter Status kann nicht serialisiert werden.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "Ausgewählter Status kann nicht serialisiert werden.",
   "widgets.hermes.artifact.viewMore": "{count} weitere anzeigen",
   "widgets.hermes.calendarEvent.moreAttendees": "+{count} weitere",
   "widgets.hermes.calendarEvent.singleTime": "{date} um {time}",
-  "widgets.hermes.calendarEvent.timeRange": "{date} von {startTime} bis {endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "{agentName} benötigt Zugriff, um fortzufahren",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName} braucht deine Erlaubnis, um fortzufahren",
+  "widgets.hermes.calendarEvent.timeRange":
+    "{date} von {startTime} bis {endTime}",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "{agentName} benötigt Zugriff, um fortzufahren",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName} braucht deine Erlaubnis, um fortzufahren",
   "widgets.hermes.genericResponse.viewFullscreen": "Vollbild anzeigen",
   "widgets.hermes.genericTool.details": "Details",
   "widgets.hermes.genericTool.read": "Lesen",
   "widgets.hermes.genericTool.request": "Anfrage",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} möchte {connectorName} verwenden, um {toolName} auszuführen.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} möchte {connectorName} verwenden, um {toolName} auszuführen.",
   "widgets.hermes.genericTool.viewFullscreen": "Vollbild anzeigen",
   "widgets.hermes.genericTool.write": "Schreiben",
   "widgets.hermes.googleCalendarCreate.create": "Erstellen",
@@ -44,12 +52,14 @@ const messages: Record<string, string> = {
   "widgets.hermes.inlineResponse.accept": "Bestätigen",
   "widgets.hermes.inlineResponse.decline": "Abbrechen",
   "widgets.hermes.permission.connect": "Verbinden",
-  "widgets.hermes.permission.connectToConnector": "Mit {connectorName} verbinden",
+  "widgets.hermes.permission.connectToConnector":
+    "Mit {connectorName} verbinden",
   "widgets.hermes.permission.connected": "Verbunden",
   "widgets.hermes.permission.moreInformation": "Weitere Informationen",
   "widgets.hermes.permission.notNow": "Nicht jetzt",
   "widgets.hermes.permission.reconnect": "Erneut verbinden",
-  "widgets.hermes.permission.reconnectToConnector": "Erneut mit {connectorName} verbinden",
+  "widgets.hermes.permission.reconnectToConnector":
+    "Erneut mit {connectorName} verbinden",
   "widgets.hermes.sendEmail.approveAction": "Aktion genehmigen",
   "widgets.hermes.sendEmail.bcc": "Bcc",
   "widgets.hermes.sendEmail.cc": "Cc",
@@ -62,79 +72,141 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "Weniger anzeigen",
   "widgets.hermes.taskStatus.canceled": "Aufgabe abgebrochen",
   "widgets.hermes.taskStatus.canceling": "Wird abgebrochen",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Frühere Nachrichten werden geprüft",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Suche in früheren Nachrichten",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Frühere Nachrichten durchsuchen",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Frühere Nachrichten prüfen",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Durchsucht frühere Nachrichten",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Frühere Nachrichten durchgehen",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Frühere Nachrichten prüfen",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Frühere Nachrichten erneut prüfen",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Frühere Nachrichten werden durchsucht",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Durchsuche frühere Nachrichten",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Frühere Nachrichten durchsehen",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Kontext wird geprüft",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Kontext wird geprüft",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Kontext wird geprüft",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Kontext wird gelesen",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Kontext wird geprüft",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Kontext erneut prüfen",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Kontext wird geprüft",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Kontext wird geprüft",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Agent wird aktiviert",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Agent wird gestartet",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Agent wird gestartet",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Agent wird aufgerufen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Verbindung zum Agenten wird hergestellt",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "Verbindung zum KI-Agenten wird hergestellt",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Agenten wecken",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Agent wird initialisiert",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Agent wird aufgeweckt",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Agent wird gestartet",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "Agent wird aufgerufen",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Computer wird aktiviert",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Computer wird hochgefahren",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Computer geht online",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Computer wird initialisiert",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Computer wird hochgefahren",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Computer wird hochgefahren",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Computer wird gestartet",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Computer wird aktiviert",
-  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Kurs abstecken",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Plan entwerfen",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Frühere Nachrichten werden geprüft",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Suche in früheren Nachrichten",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Frühere Nachrichten durchsuchen",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Frühere Nachrichten prüfen",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Durchsucht frühere Nachrichten",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Frühere Nachrichten durchgehen",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Frühere Nachrichten prüfen",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Frühere Nachrichten erneut prüfen",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Frühere Nachrichten werden durchsucht",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Durchsuche frühere Nachrichten",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Frühere Nachrichten durchsehen",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Kontext wird geprüft",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Kontext wird geprüft",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Kontext wird geprüft",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Kontext wird gelesen",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Kontext wird geprüft",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Kontext erneut prüfen",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Kontext wird geprüft",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Kontext wird geprüft",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Agent wird aktiviert",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Agent wird gestartet",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Agent wird gestartet",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Agent wird aufgerufen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Verbindung zum Agenten wird hergestellt",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "Verbindung zum KI-Agenten wird hergestellt",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Agenten wecken",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Agent wird initialisiert",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Agent wird aufgeweckt",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Agent wird gestartet",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "Agent wird aufgerufen",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Computer wird aktiviert",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Computer wird hochgefahren",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Computer geht online",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Computer wird initialisiert",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Computer wird hochgefahren",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Computer wird hochgefahren",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Computer wird gestartet",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Computer wird aktiviert",
+  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse":
+    "Kurs abstecken",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "Plan entwerfen",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Plant",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Plane die nächsten Schritte",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Plane die nächsten Schritte",
   "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Plant",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Nächste Schritte planen",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Nächste Schritte planen",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Plant",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Kurs festlegen",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Richtung festlegen",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Plant das Vorgehen",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Ansätze durchdenken",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Ansatz erarbeiten",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Details werden gesammelt",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Details werden erfasst",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Details ergänzen",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Details werden gesammelt",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Details werden zusammengetragen",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Details zusammentragen",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Details sammeln",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Details klären",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Details erfassen",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Details werden ermittelt",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Das dauert länger als üblich",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Wir arbeiten noch daran",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Schauen Sie gern gleich noch einmal vorbei",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Kurs festlegen",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Richtung festlegen",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Plant das Vorgehen",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Ansätze durchdenken",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Ansatz erarbeiten",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Details werden gesammelt",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Details werden erfasst",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Details ergänzen",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Details werden gesammelt",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Details werden zusammengetragen",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Details zusammentragen",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Details sammeln",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Details klären",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Details erfassen",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Details werden ermittelt",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Das dauert länger als üblich",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Wir arbeiten noch daran",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Schauen Sie gern gleich noch einmal vorbei",
   "widgets.hermes.workflow.canceled": "Aufgabe abgebrochen",
   "widgets.hermes.workflow.canceledItemLabel": "Abgebrochen",
   "widgets.hermes.workflow.codeBlock.hideLines": "Zeilen ausblenden",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Alle {lineCount} Zeilen anzeigen",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Alle {lineCount} Zeilen anzeigen",
   "widgets.hermes.workflow.customWorked": "Eine Weile gelaufen",
   "widgets.hermes.workflow.customWorking": "In Arbeit",
   "widgets.hermes.workflow.fileWorked": "Dokument fertig gescannt",
   "widgets.hermes.workflow.fileWorking": "Dokument wird gescannt",
   "widgets.hermes.workflow.group.readingConnector": "Aus {connectorName} lesen",
-  "widgets.hermes.workflow.group.writingConnector": "In {connectorName} schreiben",
+  "widgets.hermes.workflow.group.writingConnector":
+    "In {connectorName} schreiben",
   "widgets.hermes.workflow.imageWorked": "Bild fertig analysiert",
   "widgets.hermes.workflow.imageWorking": "Bild wird analysiert",
   "widgets.hermes.workflow.preparingResponse": "Antwort wird vorbereitet",
@@ -148,7 +220,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Weniger anzeigen",
   "widgets.listView.showMore": "{count} weitere anzeigen",
   "widgets.radioGroup.options": "Optionen",
-  "widgets.segmentedControl.selectAnOption": "Option auswählen"
+  "widgets.segmentedControl.selectAnOption": "Option auswählen",
 };
 
 export default messages;

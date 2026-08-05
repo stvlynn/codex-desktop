@@ -7,14 +7,36 @@
 /* split-lane-import-depth:1 */
 
 import { isStartingProcessExpired as IsStartingProcessExpired } from "../../account/is-starting-process-expired";
-import { ensureUsageSettingsAccessInit as EnsureUsageSettingsAccessInit, useUsageSettingsAccess } from "../../account/use-usage-settings-access";
+import {
+  ensureUsageSettingsAccessInit as EnsureUsageSettingsAccessInit,
+  useUsageSettingsAccess,
+} from "../../account/use-usage-settings-access";
 import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-surface-action-type";
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Wdt_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_GZ_Init, ensureConversationPageEsm_Lo_Init as EnsureConversationPageEsm_Lo_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Wdt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_GZ_Init,
+  ensureConversationPageEsm_Lo_Init as EnsureConversationPageEsm_Lo_Init,
+} from "../../conversation/conversation-page-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { findBrowserTabById } from "../../browser/find-browser-tab-by-id";
 import { writeCodexThreadDeeplink as WriteCodexThreadDeeplink } from "../../clipboard/write-codex-thread-deeplink";
@@ -57,7 +79,10 @@ import { commonJsInit, esmInit } from "../../runtime/rolldown-runtime";
 import { ensureViteModulepreloadRuntime } from "../../runtime/vite-preload";
 import { gitSettingsDefinitions } from "../../settings/git-settings-definitions";
 import { gpuTearingDebugSettingsAtom } from "../../settings/gpu-tearing-debug-settings";
-import { ensureHooksQueriesInit, writeHooksStateMutationAtom as WriteHooksStateMutationAtom } from "../../settings/hooks-query-atoms";
+import {
+  ensureHooksQueriesInit,
+  writeHooksStateMutationAtom as WriteHooksStateMutationAtom,
+} from "../../settings/hooks-query-atoms";
 import { ensureSettingsQueryAtomsInit } from "../../settings/settings-ipc";
 import { getSettingValue } from "../../settings/settings-values";
 import { usePluginsFeatureEnabled } from "../../skills/skills-page-helpers";
@@ -67,15 +92,29 @@ import { deferredT1 } from "../../ui/deferred-t1";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { deferredUiU as DeferredUiU } from "../../ui/deferred-ui-u";
-import { DETAIL_PAGE_STACK_CLASS, DetailPageSection, DetailPageSectionHeader, ensureDetailPageInit, ensureDetailPageSectionHeaderInit as EnsureDetailPageSectionHeaderInit } from "../../ui/detail-page";
+import {
+  DETAIL_PAGE_STACK_CLASS,
+  DetailPageSection,
+  DetailPageSectionHeader,
+  ensureDetailPageInit,
+  ensureDetailPageSectionHeaderInit as EnsureDetailPageSectionHeaderInit,
+} from "../../ui/detail-page";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ght } from "../../ui/ght";
 import { LazyValueChildrenProvider } from "../../ui/lazy-value-children-provider";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { PopoverMenu } from "../../ui/popover-menu";
 import { toolbar } from "../../ui/toolbar";
-import { CircleDashedIcon, ensureCircleDashedIconInit as EnsureCircleDashedIconInit, ensureToolbarCircleDashedButtonInit as EnsureToolbarCircleDashedButtonInit, ToolbarCircleDashedButton } from "../../ui/toolbar-circle-dashed-button";
+import {
+  CircleDashedIcon,
+  ensureCircleDashedIconInit as EnsureCircleDashedIconInit,
+  ensureToolbarCircleDashedButtonInit as EnsureToolbarCircleDashedButtonInit,
+  ToolbarCircleDashedButton,
+} from "../../ui/toolbar-circle-dashed-button";
 import { coerceLocalFilesystemPath as CoerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { identity } from "../../utils/identity";
 import { isIndeterminate } from "../../utils/is-indeterminate";
@@ -93,10 +132,18 @@ const harbor: any = undefined;
 const pullRequestDetailQueryA: any = undefined;
 const pullRequestDetailQueryJ: any = undefined;
 
-export function pullRequestDetailQueryP(storm1: unknown, tide1: unknown, unity1: unknown) {
+export function pullRequestDetailQueryP(
+  storm1: unknown,
+  tide1: unknown,
+  unity1: unknown,
+) {
   storm1.set(pullRequestDetailQueryA, AppInitialJm(tide1), unity1);
 }
-export function pullRequestDetailQueryF(vale1: unknown, wave1: unknown, apex1: unknown) {
+export function pullRequestDetailQueryF(
+  vale1: unknown,
+  wave1: unknown,
+  apex1: unknown,
+) {
   vale1.set(pullRequestDetailQueryJ, AppInitialJm(wave1), apex1);
 }
 function Gamma(brook1, cliff1) {

@@ -25,6 +25,6 @@ export function bindDeferredRf() {
   }
 
   return peers.e(() => {
-    peers.Hb(), peers.Kb(), peers.Gf(), ilc = new WeakMap();
+    (peers.Hb(), peers.Kb(), peers.Gf(), (ilc = new WeakMap()));
   });
 }

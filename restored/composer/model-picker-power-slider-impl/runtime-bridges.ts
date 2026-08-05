@@ -8,4 +8,3 @@
 /** Wave FY: bind no longer required after full body promote */
 export function bindModelPickerPowerSliderImpl(_next: unknown): void {}
 export function ensureModelPickerPowerSliderImplInit(): void {}
-

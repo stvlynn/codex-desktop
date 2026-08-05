@@ -12,13 +12,37 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useAppgenScreenshotDataUrlQuery } from "../../apps/use-appgen-screenshot-data-url-query";
-import { ArtifactFilePreviewIcon, ensureArtifactFilePreviewIconInit } from "../../artifact/artifact-file-preview-icon";
+import {
+  ArtifactFilePreviewIcon,
+  ensureArtifactFilePreviewIconInit,
+} from "../../artifact/artifact-file-preview-icon";
 import { ArtifactPreviewDownloadButton } from "../../artifact/artifact-preview-download-button";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_KM_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_S8_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { ensureConversationPageEsm_Act_Init, ensureConversationPageEsm_B0_Init, ensureConversationPageEsm_TP_Init } from "../../conversation/conversation-page-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_KM_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_S8_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  ensureConversationPageEsm_Act_Init,
+  ensureConversationPageEsm_B0_Init,
+  ensureConversationPageEsm_TP_Init,
+} from "../../conversation/conversation-page-esm-inits";
 import { cloneTypedArray } from "../../boundaries/lodash-clone-deep-guts";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { useNavigate } from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { chatgpt2 } from "../../browser/chatgpt2";
@@ -79,14 +103,20 @@ import { deferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH } from "../../ui/deferred-ui-h";
 import { deferredUiYV } from "../../ui/deferred-ui-yv";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { ElectronOnly } from "../../ui/electron-only";
 import { EmptyMemoSlot } from "../../ui/empty-memo-slot";
 import { ensureShapeColorTokenClusterInit } from "../../ui/ensure-shape-color-token-cluster-init";
 import { macOS4 } from "../../ui/mac-os4";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { SearchableDetailPageLayout } from "../../ui/searchable-detail-page-layout";
-import { ensureUseSearchablePageTitleVisibilityInit, useSearchablePageTitleVisibility } from "../../ui/use-searchable-page-title-visibility";
+import {
+  ensureUseSearchablePageTitleVisibilityInit,
+  useSearchablePageTitleVisibility,
+} from "../../ui/use-searchable-page-title-visibility";
 import { coerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { formatUrlHostPath } from "../../utils/format-url-host-path";
 import { hvtBindableHelper } from "../../utils/hvt-bindable-helper";
@@ -94,36 +124,61 @@ import { identity } from "../../utils/identity";
 import { isIndeterminate } from "../../utils/is-indeterminate";
 import { lerpIfFinite } from "../../utils/lerp-if-finite";
 import { slugifyLoose } from "../../utils/slugify-loose";
-import { ensureImportSettingsCLInit, ensurePersonalizationK0Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureImportSettingsCLInit,
+  ensurePersonalizationK0Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { ensureNewThreadBhInit } from "../../utils/wave-av-gap-ensure-inits";
 import { keysIn } from "../../vendor/lodash-cjs-predicates";
-import { appgenShareDialogT, ensureAppgenShareDialogInit } from "../appgen-share-dialog";
+import {
+  appgenShareDialogT,
+  ensureAppgenShareDialogInit,
+} from "../appgen-share-dialog";
 import { ensureChatgptSiteSuffixesInit } from "../chatgpt-site-suffixes";
-import { createAppgenConversation, dismissAppgenConversationPrompt, ensureStartAppgenConversationHelpersInit, ensureStartAppgenConversationInit, formatAppgenConversationPrefill, listAppgenConversationActions, prepareAppgenConversation, startAppgenConversation, startAppgenConversationFromLibrary, useStartAppgenConversation } from "../start-appgen-conversation";
+import {
+  createAppgenConversation,
+  dismissAppgenConversationPrompt,
+  ensureStartAppgenConversationHelpersInit,
+  ensureStartAppgenConversationInit,
+  formatAppgenConversationPrefill,
+  listAppgenConversationActions,
+  prepareAppgenConversation,
+  startAppgenConversation,
+  startAppgenConversationFromLibrary,
+  useStartAppgenConversation,
+} from "../start-appgen-conversation";
 
 // Wave5d soft JSX companions.
-function Kite1(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Kite1(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Lemon1(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Lemon1(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function LerpIfFinite(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function LerpIfFinite(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -183,13 +238,13 @@ export function AppgenLibraryPageIcon__splitRest1(__splitParams: any) {
   let marble = () => {
       ensureStartAppgenConversationHelpersInit(petal, quiet, {
         type: "create",
-        setSelectedMode
+        setSelectedMode,
       });
     },
-    nickel = kelp => {
+    nickel = (kelp) => {
       ensureStartAppgenConversationHelpersInit(petal, quiet, {
         type: "create-asset",
-        assetType: kelp
+        assetType: kelp,
       });
     },
     onyx = (lotus, mint, nova) => {
@@ -197,16 +252,28 @@ export function AppgenLibraryPageIcon__splitRest1(__splitParams: any) {
         type: "edit",
         liveUrl: nova,
         projectId: lotus,
-        projectTitle: mint
+        projectTitle: mint,
       });
     },
-    pearl = olive => {
-      _startAppgenConversationT(petal, rain, olive.file.name, olive.file.path, olive.file.threadId);
+    pearl = (olive) => {
+      _startAppgenConversationT(
+        petal,
+        rain,
+        olive.file.name,
+        olive.file.path,
+        olive.file.threadId,
+      );
     },
-    quartz = prism => {
-      _startAppgenConversationT(petal, rain, prism.image.name, prism.image.path, prism.image.threadId);
+    quartz = (prism) => {
+      _startAppgenConversationT(
+        petal,
+        rain,
+        prism.image.name,
+        prism.image.path,
+        prism.image.threadId,
+      );
     },
-    river = quill => {
+    river = (quill) => {
       seed(quill);
       petal.set(ensurePersonalizationK0Init, true);
       echo(petal, true);
@@ -216,35 +283,45 @@ export function AppgenLibraryPageIcon__splitRest1(__splitParams: any) {
       petal.set(ensurePersonalizationK0Init, false);
       echo(petal, false);
     },
-    timber = reef => {
-      trail(sage => sage.includes(reef) ? sage.filter(item => item !== reef) : [...sage, reef]);
+    timber = (reef) => {
+      trail((sage) =>
+        sage.includes(reef)
+          ? sage.filter((item) => item !== reef)
+          : [...sage, reef],
+      );
     },
-    umbra = async topaz => {
-      if (cloudFileActions != null) try {
-        await cloudFileActions.downloadFile(topaz);
-      } catch {
-        petal.get(toastAtom).danger(urn.formatMessage({
-          id: "appgenPage.cloudFile.downloadError",
-          defaultMessage: "Unable to download file",
-          description: "Toast shown when a cloud Library file download fails"
-        }));
-      }
+    umbra = async (topaz) => {
+      if (cloudFileActions != null)
+        try {
+          await cloudFileActions.downloadFile(topaz);
+        } catch {
+          petal.get(toastAtom).danger(
+            urn.formatMessage({
+              id: "appgenPage.cloudFile.downloadError",
+              defaultMessage: "Unable to download file",
+              description:
+                "Toast shown when a cloud Library file download fails",
+            }),
+          );
+        }
     },
     violet = async () => {
       if (!(cloudFileActions == null || vine == null || vine.length === 0)) {
         wind(true);
         try {
-          let {
-            failedCount
-          } = await bravo({
+          let { failedCount } = await bravo({
             download: cloudFileActions.downloadFile,
-            files: vine
+            files: vine,
           });
-          failedCount > 0 && petal.get(toastAtom).danger(urn.formatMessage({
-            id: "appgenPage.cloudFile.bulkDownloadError",
-            defaultMessage: "Unable to download some files",
-            description: "Toast shown when some selected cloud Library files fail to download"
-          }));
+          failedCount > 0 &&
+            petal.get(toastAtom).danger(
+              urn.formatMessage({
+                id: "appgenPage.cloudFile.bulkDownloadError",
+                defaultMessage: "Unable to download some files",
+                description:
+                  "Toast shown when some selected cloud Library files fail to download",
+              }),
+            );
         } finally {
           wind(false);
         }
@@ -258,101 +335,137 @@ export function AppgenLibraryPageIcon__splitRest1(__splitParams: any) {
             file: ultra,
             fileName: vapor,
             refetch: azure.refetch,
-            rename: cloudFileActions.renameFile
+            rename: cloudFileActions.renameFile,
           });
-          if (birch(null), wheat) {
+          if ((birch(null), wheat)) {
             let yarn = vapor.trim();
-            seed(zephyr => zephyr?.kind === "cloud-file" && zephyr.cloudFile.id === ultra.id ? {
-              ...zephyr,
-              cloudFile: {
-                ...zephyr.cloudFile,
-                name: yarn
-              }
-            } : zephyr);
-            petal.get(toastAtom).success(urn.formatMessage({
-              id: "appgenPage.cloudFile.renameSuccess",
-              defaultMessage: "File renamed",
-              description: "Toast shown after renaming a cloud Library file"
-            }));
+            seed((zephyr) =>
+              zephyr?.kind === "cloud-file" && zephyr.cloudFile.id === ultra.id
+                ? {
+                    ...zephyr,
+                    cloudFile: {
+                      ...zephyr.cloudFile,
+                      name: yarn,
+                    },
+                  }
+                : zephyr,
+            );
+            petal.get(toastAtom).success(
+              urn.formatMessage({
+                id: "appgenPage.cloudFile.renameSuccess",
+                defaultMessage: "File renamed",
+                description: "Toast shown after renaming a cloud Library file",
+              }),
+            );
           }
         } catch {
-          petal.get(toastAtom).danger(urn.formatMessage({
-            id: "appgenPage.cloudFile.renameError",
-            defaultMessage: "Unable to rename file",
-            description: "Toast shown when a cloud Library file rename fails"
-          }));
+          petal.get(toastAtom).danger(
+            urn.formatMessage({
+              id: "appgenPage.cloudFile.renameError",
+              defaultMessage: "Unable to rename file",
+              description: "Toast shown when a cloud Library file rename fails",
+            }),
+          );
         } finally {
           yarrow([]);
         }
       }
     },
-    xenon = async acorn => {
+    xenon = async (acorn) => {
       if (cloudFileActions == null || acorn.length === 0) return;
-      let bloom = acorn.map(item => item.id),
+      let bloom = acorn.map((item) => item.id),
         coral = acorn.length > 1;
       yarrow(bloom);
-      canyon(drift => Array.from(new Set([...drift, ...bloom])));
+      canyon((drift) => Array.from(new Set([...drift, ...bloom])));
       try {
-        let {
-            deletedFileIds,
-            failedCount
-          } = await copper({
+        let { deletedFileIds, failedCount } = await copper({
             deleteFile: cloudFileActions.deleteFile,
             files: acorn,
-            refetch: azure.refetch
+            refetch: azure.refetch,
           }),
-          eagle = bloom.filter(item => !deletedFileIds.includes(item));
-        if (canyon(frost => frost.filter(item => !eagle.includes(item))), trail(glide => glide.filter(item => !deletedFileIds.includes(item))), dew?.kind === "cloud-file" && deletedFileIds.includes(dew.cloudFile.id) && slate(), birch(null), failedCount > 0) {
-          petal.get(toastAtom).danger(coral ? urn.formatMessage({
-            id: "appgenPage.cloudFile.bulkDeleteError",
-            defaultMessage: "Unable to delete some files",
-            description: "Toast shown when some selected cloud Library files fail to delete"
-          }) : urn.formatMessage(lemon.deleteError));
+          eagle = bloom.filter((item) => !deletedFileIds.includes(item));
+        if (
+          (canyon((frost) => frost.filter((item) => !eagle.includes(item))),
+          trail((glide) =>
+            glide.filter((item) => !deletedFileIds.includes(item)),
+          ),
+          dew?.kind === "cloud-file" &&
+            deletedFileIds.includes(dew.cloudFile.id) &&
+            slate(),
+          birch(null),
+          failedCount > 0)
+        ) {
+          petal.get(toastAtom).danger(
+            coral
+              ? urn.formatMessage({
+                  id: "appgenPage.cloudFile.bulkDeleteError",
+                  defaultMessage: "Unable to delete some files",
+                  description:
+                    "Toast shown when some selected cloud Library files fail to delete",
+                })
+              : urn.formatMessage(lemon.deleteError),
+          );
           return;
         }
-        petal.get(toastAtom).success(coral ? urn.formatMessage({
-          id: "appgenPage.cloudFile.bulkDeleteSuccess",
-          defaultMessage: "Files deleted",
-          description: "Toast shown after deleting selected cloud Library files"
-        }) : urn.formatMessage({
-          id: "appgenPage.cloudFile.deleteSuccess",
-          defaultMessage: "File deleted",
-          description: "Toast shown after deleting a cloud Library file"
-        }));
+        petal.get(toastAtom).success(
+          coral
+            ? urn.formatMessage({
+                id: "appgenPage.cloudFile.bulkDeleteSuccess",
+                defaultMessage: "Files deleted",
+                description:
+                  "Toast shown after deleting selected cloud Library files",
+              })
+            : urn.formatMessage({
+                id: "appgenPage.cloudFile.deleteSuccess",
+                defaultMessage: "File deleted",
+                description: "Toast shown after deleting a cloud Library file",
+              }),
+        );
       } catch {
-        canyon(honey => honey.filter(item => !bloom.includes(item)));
+        canyon((honey) => honey.filter((item) => !bloom.includes(item)));
         petal.get(toastAtom).danger(urn.formatMessage(lemon.deleteError));
       } finally {
         yarrow([]);
       }
     },
-    yellow = event => {
+    yellow = (event) => {
       if (!(!alpha1 || !RealtimeVoiceHostIdStub(event.dataTransfer))) {
-        if (event.preventDefault(), event.stopPropagation(), bravo1) {
+        if ((event.preventDefault(), event.stopPropagation(), bravo1)) {
           event.dataTransfer.dropEffect = "none";
           return;
         }
         event.dataTransfer.dropEffect = "copy";
-        copper1(iris => iris + 1);
+        copper1((iris) => iris + 1);
       }
     },
-    zinc = event => {
-      !alpha1 || !RealtimeVoiceHostIdStub(event.dataTransfer) || (event.preventDefault(), event.stopPropagation(), event.dataTransfer.dropEffect = bravo1 ? "none" : "copy");
+    zinc = (event) => {
+      !alpha1 ||
+        !RealtimeVoiceHostIdStub(event.dataTransfer) ||
+        (event.preventDefault(),
+        event.stopPropagation(),
+        (event.dataTransfer.dropEffect = bravo1 ? "none" : "copy"));
     },
-    amber = event => {
-      !alpha1 || !RealtimeVoiceHostIdStub(event.dataTransfer) || copper1(jewel => Math.max(0, jewel - 1));
+    amber = (event) => {
+      !alpha1 ||
+        !RealtimeVoiceHostIdStub(event.dataTransfer) ||
+        copper1((jewel) => Math.max(0, jewel - 1));
     },
-    basalt = event => {
-      if (!alpha1 || !RealtimeVoiceHostIdStub(event.dataTransfer) || (event.preventDefault(), event.stopPropagation(), copper1(0), bravo1)) return;
+    basalt = (event) => {
+      if (
+        !alpha1 ||
+        !RealtimeVoiceHostIdStub(event.dataTransfer) ||
+        (event.preventDefault(), event.stopPropagation(), copper1(0), bravo1)
+      )
+        return;
       let knoll = delta(event.dataTransfer);
       knoll.length > 0 && daisy(knoll);
     },
-    cedar = event => {
+    cedar = (event) => {
       let lunar = Array.from(event.currentTarget.files ?? []);
       event.currentTarget.value = "";
       !(lunar.length === 0 || bravo1) && daisy(lunar);
     },
-    daisy = async moss => {
+    daisy = async (moss) => {
       if (cloudFileUploader == null) return;
       let north = moss.map((item, index) => ({
         category: falcon(item),
@@ -361,7 +474,7 @@ export function AppgenLibraryPageIcon__splitRest1(__splitParams: any) {
         modifiedAt: new Date().toISOString(),
         name: item.name,
         sizeBytes: item.size,
-        uploadedFileId: null
+        uploadedFileId: null,
       }));
       delta1(north);
       let orbit = 0,
@@ -371,23 +484,34 @@ export function AppgenLibraryPageIcon__splitRest1(__splitParams: any) {
         let unity = north[storm];
         try {
           let vale = await cloudFileUploader(tide);
-          if (pine += 1, unity != null && startAppgenConversationO({
-            contentType: echo1,
-            file: unity,
-            fileFilter: falcon1,
-            searchQuery: gamma1
-          })) {
+          if (
+            ((pine += 1),
+            unity != null &&
+              startAppgenConversationO({
+                contentType: echo1,
+                file: unity,
+                fileFilter: falcon1,
+                searchQuery: gamma1,
+              }))
+          ) {
             quest.push(vale.fileId);
-            delta1(wave => wave.map(item => item.id === unity.id ? {
-              ...item,
-              uploadedFileId: vale.fileId
-            } : item));
+            delta1((wave) =>
+              wave.map((item) =>
+                item.id === unity.id
+                  ? {
+                      ...item,
+                      uploadedFileId: vale.fileId,
+                    }
+                  : item,
+              ),
+            );
             continue;
           }
-          unity != null && delta1(apex => apex.filter(item => item.id !== unity.id));
+          unity != null &&
+            delta1((apex) => apex.filter((item) => item.id !== unity.id));
         } catch {
           orbit += 1;
-          delta1(brook => brook.filter(item => item.id !== unity?.id));
+          delta1((brook) => brook.filter((item) => item.id !== unity?.id));
         }
       }
       let ridge = quest.length === 0;
@@ -395,151 +519,256 @@ export function AppgenLibraryPageIcon__splitRest1(__splitParams: any) {
         let cliff = new Set(quest);
         for (let dusk = 0; dusk < kite; dusk += 1) {
           let elm = await azure.refetch(),
-            fern = new Set((elm.data ?? []).map(item => item.fileId).filter(item => cliff.has(item))),
-            grove = Math.min(quest.length, Math.max(elm.data?.length ?? 0, indigo)),
+            fern = new Set(
+              (elm.data ?? [])
+                .map((item) => item.fileId)
+                .filter((item) => cliff.has(item)),
+            ),
+            grove = Math.min(
+              quest.length,
+              Math.max(elm.data?.length ?? 0, indigo),
+            ),
             hill = fern.size >= grove,
             isle = hill ? cliff : fern;
-          if (delta1(juniper => juniper.filter(item => item.uploadedFileId == null || !isle.has(item.uploadedFileId))), hill) {
+          if (
+            (delta1((juniper) =>
+              juniper.filter(
+                (item) =>
+                  item.uploadedFileId == null || !isle.has(item.uploadedFileId),
+              ),
+            ),
+            hill)
+          ) {
             ridge = true;
             break;
           }
-          await new Promise(lagoon => {
+          await new Promise((lagoon) => {
             window.setTimeout(lagoon, jade);
           });
         }
-      } else pine > 0 && (await azure.refetch(), ridge = true);
-      if (ridge || delta1(meadow => meadow.filter(item => item.uploadedFileId == null)), orbit === 0) {
+      } else pine > 0 && (await azure.refetch(), (ridge = true));
+      if (
+        (ridge ||
+          delta1((meadow) =>
+            meadow.filter((item) => item.uploadedFileId == null),
+          ),
+        orbit === 0)
+      ) {
         if (!ridge) {
-          petal.get(toastAtom).warning(urn.formatMessage({
-            id: "appgenPage.cloudUpload.delayed",
-            defaultMessage: "Upload complete. Files may take a moment to appear",
-            description: "Toast shown when cloud Library uploads finish but the uploaded files are not visible in the refreshed Library list yet"
-          }));
+          petal.get(toastAtom).warning(
+            urn.formatMessage({
+              id: "appgenPage.cloudUpload.delayed",
+              defaultMessage:
+                "Upload complete. Files may take a moment to appear",
+              description:
+                "Toast shown when cloud Library uploads finish but the uploaded files are not visible in the refreshed Library list yet",
+            }),
+          );
           return;
         }
-        petal.get(toastAtom).success(urn.formatMessage({
-          id: "appgenPage.cloudUpload.success",
-          defaultMessage: "{count, plural, one {Added # file to Library} other {Added # files to Library}}",
-          description: "Toast shown after files are successfully uploaded to cloud Library"
-        }, {
-          count: pine
-        }));
+        petal.get(toastAtom).success(
+          urn.formatMessage(
+            {
+              id: "appgenPage.cloudUpload.success",
+              defaultMessage:
+                "{count, plural, one {Added # file to Library} other {Added # files to Library}}",
+              description:
+                "Toast shown after files are successfully uploaded to cloud Library",
+            },
+            {
+              count: pine,
+            },
+          ),
+        );
         return;
       }
       if (pine > 0) {
-        petal.get(toastAtom).warning(urn.formatMessage({
-          id: "appgenPage.cloudUpload.partialFailure",
-          defaultMessage: "{uploadedCount, plural, one {Added # file} other {Added # files}}, {failedCount} failed",
-          description: "Toast shown after a cloud Library upload partially succeeds"
-        }, {
-          failedCount: orbit,
-          uploadedCount: pine
-        }));
+        petal.get(toastAtom).warning(
+          urn.formatMessage(
+            {
+              id: "appgenPage.cloudUpload.partialFailure",
+              defaultMessage:
+                "{uploadedCount, plural, one {Added # file} other {Added # files}}, {failedCount} failed",
+              description:
+                "Toast shown after a cloud Library upload partially succeeds",
+            },
+            {
+              failedCount: orbit,
+              uploadedCount: pine,
+            },
+          ),
+        );
         return;
       }
-      petal.get(toastAtom).danger(urn.formatMessage({
-        id: "appgenPage.cloudUpload.failure",
-        defaultMessage: "Unable to upload files",
-        description: "Toast shown when every cloud Library upload fails"
-      }));
+      petal.get(toastAtom).danger(
+        urn.formatMessage({
+          id: "appgenPage.cloudUpload.failure",
+          defaultMessage: "Unable to upload files",
+          description: "Toast shown when every cloud Library upload fails",
+        }),
+      );
     },
-    ember = nest => {
+    ember = (nest) => {
       harbor1(nest);
       indigo1("all");
       trail([]);
     },
-    flint = oak => {
+    flint = (oak) => {
       harbor1("all");
       indigo1(oak);
       trail([]);
     },
-    garnet = alpha1 ? <>
-        <input ref={jade1} aria-label={urn.formatMessage({
-        id: "appgenPage.cloudUpload.inputLabel",
-        defaultMessage: "Upload library files",
-        description: "Accessible label for the hidden cloud Library file upload input"
-      })} className="hidden" disabled={bravo1} multiple={true} type="file" onChange={cedar} />
-        {<ReadLoginRouteQuerySnapshot {...{
-        color: "outline",
-        disabled: bravo1,
-        size: "toolbar",
-        onClick: () => {
-          jade1.current?.click();
-        },
-        children: [<AppIconUD {...{
-          className: "icon-sm"
-        }} />, <MemoizedFormattedMessage {...{
-          id: "appgenPage.cloudUpload.button",
-          defaultMessage: "Upload",
-          description: "Button label for uploading files to the cloud Library"
-        }} />]
-      }} />}
-      </> : null,
-    hazel = <Kite1 {...{
-      canvasSource: null,
-      onCreateAsset: nickel
-    }} />,
-    ivory = <Lemon1 {...{
-      canvasSource: null,
-      cloudSelectionActions: vine == null || _e === 0 ? null : <div className="flex items-center gap-2">
-                {<ReadLoginRouteQuerySnapshot {...{
-          color: "outline",
-          disabled: marble1.length > 0,
-          loading: nickel1,
-          size: "toolbar",
-          onClick: () => {
-            violet();
-          },
-          children: [<LerpIfFinite {...{
-            className: "icon-xs"
-          }} />, <MemoizedFormattedMessage {...{
-            id: "appgenPage.cloudFile.bulkDownload",
-            defaultMessage: "Download",
-            description: "Button for downloading selected cloud Library files"
-          }} />]
-        }} />}
-                {<ReadLoginRouteQuerySnapshot {...{
-          color: "danger",
-          disabled: nickel1,
-          loading: marble1.length > 0,
-          size: "toolbar",
-          onClick: () => birch({
-            type: "delete",
-            files: vine
-          }),
-          children: [<AppIconBO {...{
-            className: "icon-xs"
-          }} />, <MemoizedFormattedMessage {...{
-            id: "appgenPage.cloudFile.bulkDelete",
-            defaultMessage: "Delete",
-            description: "Button for deleting selected cloud Library files"
-          }} />]
-        }} />}
+    garnet = alpha1 ? (
+      <>
+        <input
+          ref={jade1}
+          aria-label={urn.formatMessage({
+            id: "appgenPage.cloudUpload.inputLabel",
+            defaultMessage: "Upload library files",
+            description:
+              "Accessible label for the hidden cloud Library file upload input",
+          })}
+          className="hidden"
+          disabled={bravo1}
+          multiple={true}
+          type="file"
+          onChange={cedar}
+        />
+        {
+          <ReadLoginRouteQuerySnapshot
+            {...{
+              color: "outline",
+              disabled: bravo1,
+              size: "toolbar",
+              onClick: () => {
+                jade1.current?.click();
+              },
+              children: [
+                <AppIconUD
+                  {...{
+                    className: "icon-sm",
+                  }}
+                />,
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "appgenPage.cloudUpload.button",
+                    defaultMessage: "Upload",
+                    description:
+                      "Button label for uploading files to the cloud Library",
+                  }}
+                />,
+              ],
+            }}
+          />
+        }
+      </>
+    ) : null,
+    hazel = (
+      <Kite1
+        {...{
+          canvasSource: null,
+          onCreateAsset: nickel,
+        }}
+      />
+    ),
+    ivory = (
+      <Lemon1
+        {...{
+          canvasSource: null,
+          cloudSelectionActions:
+            vine == null || _e === 0 ? null : (
+              <div className="flex items-center gap-2">
+                {
+                  <ReadLoginRouteQuerySnapshot
+                    {...{
+                      color: "outline",
+                      disabled: marble1.length > 0,
+                      loading: nickel1,
+                      size: "toolbar",
+                      onClick: () => {
+                        violet();
+                      },
+                      children: [
+                        <LerpIfFinite
+                          {...{
+                            className: "icon-xs",
+                          }}
+                        />,
+                        <MemoizedFormattedMessage
+                          {...{
+                            id: "appgenPage.cloudFile.bulkDownload",
+                            defaultMessage: "Download",
+                            description:
+                              "Button for downloading selected cloud Library files",
+                          }}
+                        />,
+                      ],
+                    }}
+                  />
+                }
+                {
+                  <ReadLoginRouteQuerySnapshot
+                    {...{
+                      color: "danger",
+                      disabled: nickel1,
+                      loading: marble1.length > 0,
+                      size: "toolbar",
+                      onClick: () =>
+                        birch({
+                          type: "delete",
+                          files: vine,
+                        }),
+                      children: [
+                        <AppIconBO
+                          {...{
+                            className: "icon-xs",
+                          }}
+                        />,
+                        <MemoizedFormattedMessage
+                          {...{
+                            id: "appgenPage.cloudFile.bulkDelete",
+                            defaultMessage: "Delete",
+                            description:
+                              "Button for deleting selected cloud Library files",
+                          }}
+                        />,
+                      ],
+                    }}
+                  />
+                }
                 <span className="text-sm text-token-description-foreground">
-                  {<MemoizedFormattedMessage {...{
-            id: "appgenPage.cloudFile.selectedCount",
-            defaultMessage: "{count, plural, one {# selected} other {# selected}}",
-            description: "Number of selected cloud Library files",
-            values: {
-              count: _e
-            }
-          }} />}
+                  {
+                    <MemoizedFormattedMessage
+                      {...{
+                        id: "appgenPage.cloudFile.selectedCount",
+                        defaultMessage:
+                          "{count, plural, one {# selected} other {# selected}}",
+                        description: "Number of selected cloud Library files",
+                        values: {
+                          count: _e,
+                        },
+                      }}
+                    />
+                  }
                 </span>
-              </div>,
-      cloudSource: onyx1,
-      cloudUploadAction: garnet,
-      createAction: hazel,
-      localSourcesEnabled,
-      showCanvases: false,
-      showTitle: showTitleInToolbar,
-      showFiles: pearl1,
-      showImages: quartz1,
-      showSites: river1
-    }} />,
+              </div>
+            ),
+          cloudSource: onyx1,
+          cloudUploadAction: garnet,
+          createAction: hazel,
+          localSourcesEnabled,
+          showCanvases: false,
+          showTitle: showTitleInToolbar,
+          showFiles: pearl1,
+          showImages: quartz1,
+          showSites: river1,
+        }}
+      />
+    ),
     jasper = urn.formatMessage({
       id: "appgenPage.search",
       defaultMessage: "Search library",
-      description: "Accessible label and placeholder for searching the Library"
+      description: "Accessible label and placeholder for searching the Library",
     });
   return undefined as any;
 }

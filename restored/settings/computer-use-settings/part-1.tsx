@@ -17,12 +17,32 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { AppInstallProgressDialog } from "../../apps/app-install-progress-dialog";
 import { isCustomAuthMethod } from "../../auth/is-custom-auth-method";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureBrowserUseGateInit, useExternalBrowserUseGate } from "../../boundaries/browser-use-gate-facades";
-import { ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureBrowserUseGateInit,
+  useExternalBrowserUseGate,
+} from "../../boundaries/browser-use-gate-facades";
+import {
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_MR_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useMatch, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useMatch,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { isCommandEnabledForDesktopFlags } from "../../commands/is-command-enabled-for-desktop-flags";
 import { ensureBrowserPluginMentionMessagesInit } from "../../composer/browser-plugin-mention-messages";
@@ -36,7 +56,10 @@ import { DEVELOPERS_OPENAI_COM_CODEX_APP_COMPUTER_USE_URL } from "../../docs/cod
 import { CodexBuildEnvironment } from "../../env/codex-build-environment";
 import { ensureDebugPanelTurnFilesInit } from "../../hooks/debug-panel-turn-files";
 import { useGateEnabledWithAccountData } from "../../hooks/use-gate-enabled-with-account-data";
-import { ensureUseHomeDirectoryInit, useHomeDirectory } from "../../hooks/use-home-directory";
+import {
+  ensureUseHomeDirectoryInit,
+  useHomeDirectory,
+} from "../../hooks/use-home-directory";
 import { usePointerSurfaceInteractionGate as UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useSelectedHost } from "../../hosts/use-selected-host";
 import { useHostPlatformModifierSymbol } from "../../hotkeys/use-host-platform-modifier-symbol";
@@ -63,19 +86,34 @@ import { deferredT } from "../../ui/deferred-t";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { macOS4 } from "../../ui/mac-os4";
-import { initToolbarBreadcrumb, ToolbarBreadcrumb } from "../../ui/toolbar-breadcrumb";
+import {
+  initToolbarBreadcrumb,
+  ToolbarBreadcrumb,
+} from "../../ui/toolbar-breadcrumb";
 import { identity } from "../../utils/identity";
 import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
-import { ensureKeyboardShortcutsGtInit, ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureKeyboardShortcutsGtInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { ensureBrowserUseSettingsInit } from "../browser-use-settings";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { initSettingsLoadingRow, SettingsLoadingRow } from "../settings-loading-row";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  initSettingsLoadingRow,
+  SettingsLoadingRow,
+} from "../settings-loading-row";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { useSettingValue } from "../use-setting-value";
 const AppInitialBC: any = undefined;
 // Wave5d soft stubs.
@@ -198,23 +236,39 @@ const browserUseSettingsV: any = undefined;
 const browserUseSettingsY: any = undefined;
 var daisy,
   ember = esmInit(() => {
-    daisy = "" + new URL("microsoft-excel-large-CY0bRHcJ.png", import.meta.url).href;
+    daisy =
+      "" + new URL("microsoft-excel-large-CY0bRHcJ.png", import.meta.url).href;
   }),
   flint,
   garnet = esmInit(() => {
-    flint = "" + new URL("microsoft-powerpoint-large-DlJg6gsJ.png", import.meta.url).href;
+    flint =
+      "" +
+      new URL("microsoft-powerpoint-large-DlJg6gsJ.png", import.meta.url).href;
   });
 function hazel(vapor) {
-  let {
-      computerImageDataUrl,
-      lockImageDataUrl
-    } = vapor,
-    wheat = <img alt="" className="absolute top-0 left-1 h-[53px] w-[53px] object-contain" draggable={false} src={computerImageDataUrl} />;
-  let yarn = <img alt="" className="absolute right-0 bottom-0 h-[33px] w-[27px] object-contain" draggable={false} src={lockImageDataUrl} />;
-  return <span className="relative inline-block h-[57px] w-[62px] shrink-0">
+  let { computerImageDataUrl, lockImageDataUrl } = vapor,
+    wheat = (
+      <img
+        alt=""
+        className="absolute top-0 left-1 h-[53px] w-[53px] object-contain"
+        draggable={false}
+        src={computerImageDataUrl}
+      />
+    );
+  let yarn = (
+    <img
+      alt=""
+      className="absolute right-0 bottom-0 h-[33px] w-[27px] object-contain"
+      draggable={false}
+      src={lockImageDataUrl}
+    />
+  );
+  return (
+    <span className="relative inline-block h-[57px] w-[62px] shrink-0">
       {wheat}
       {yarn}
-    </span>;
+    </span>
+  );
 }
 var ivory,
   jasper,
@@ -222,29 +276,45 @@ var ivory,
     ivory = reactCompilerRuntime();
   });
 function lotus(zephyr) {
-  let {
-    status
-  } = zephyr;
+  let { status } = zephyr;
   if (status.isLoading) {
     let eagle;
-    return <MemoizedFormattedMessage {...{
-      ...olive.loading
-    }} />;
+    return (
+      <MemoizedFormattedMessage
+        {...{
+          ...olive.loading,
+        }}
+      />
+    );
   }
-  let acorn = status.isConnected ? "bg-[var(--color-icon-success)]" : "bg-[var(--color-icon-error)]",
+  let acorn = status.isConnected
+      ? "bg-[var(--color-icon-success)]"
+      : "bg-[var(--color-icon-error)]",
     bloom = IntlProvider("h-2 w-2 shrink-0 rounded-full", acorn);
   let coral = <span className={bloom} />;
-  let drift = <span className="min-w-0 truncate">
-      {status.isConnected ? <MemoizedFormattedMessage {...{
-      ...olive.connected
-    }} /> : <MemoizedFormattedMessage {...{
-      ...olive.disconnected
-    }} />}
-    </span>;
-  return <span className="inline-flex max-w-full items-center gap-2">
+  let drift = (
+    <span className="min-w-0 truncate">
+      {status.isConnected ? (
+        <MemoizedFormattedMessage
+          {...{
+            ...olive.connected,
+          }}
+        />
+      ) : (
+        <MemoizedFormattedMessage
+          {...{
+            ...olive.disconnected,
+          }}
+        />
+      )}
+    </span>
+  );
+  return (
+    <span className="inline-flex max-w-full items-center gap-2">
       {coral}
       {drift}
-    </span>;
+    </span>
+  );
 }
 var mint,
   nova,
@@ -257,18 +327,21 @@ var mint,
       connected: {
         id: "plugins.browserExtension.connected",
         defaultMessage: "Connected to browser extension for additional control",
-        description: "Status text shown when the Chrome browser extension is installed"
+        description:
+          "Status text shown when the Chrome browser extension is installed",
       },
       disconnected: {
         id: "plugins.browserExtension.disconnected",
         defaultMessage: "Browser extension not connected",
-        description: "Status text shown when the Chrome browser extension is not installed"
+        description:
+          "Status text shown when the Chrome browser extension is not installed",
       },
       loading: {
         id: "plugins.browserExtension.loading",
         defaultMessage: "Use the browser extension for additional control",
-        description: "Status text shown while the Chrome browser extension install state is loading"
-      }
+        description:
+          "Status text shown while the Chrome browser extension install state is loading",
+      },
     });
   }),
   quill,
@@ -278,107 +351,116 @@ var mint,
       control: {
         id: "settings.computerUse.install.title",
         defaultMessage: "Control",
-        description: "Title for computer use plugin install settings section"
+        description: "Title for computer use plugin install settings section",
       },
       anyApp: {
         id: "settings.computerUse.anyApp.title",
         defaultMessage: "Any App",
-        description: "Label for the Computer Use plugin row that lets Codex control 'Any App' on the user's computer"
+        description:
+          "Label for the Computer Use plugin row that lets Codex control 'Any App' on the user's computer",
       },
       googleChrome: {
         id: "settings.computerUse.chrome.pluginTitle",
         defaultMessage: "Google Chrome",
-        description: "Title for the Google Chrome plugin control row"
+        description: "Title for the Google Chrome plugin control row",
       },
       microsoftExcel: {
         id: "settings.computerUse.microsoftExcel.pluginTitle",
         defaultMessage: "Microsoft Excel",
-        description: "Title for the Microsoft Excel plugin control row"
+        description: "Title for the Microsoft Excel plugin control row",
       },
       microsoftExcelDescription: {
         id: "settings.computerUse.microsoftExcel.description",
-        defaultMessage: "Let ChatGPT use Microsoft Excel add-in for additional control",
-        description: "Description for the Microsoft Excel plugin control row"
+        defaultMessage:
+          "Let ChatGPT use Microsoft Excel add-in for additional control",
+        description: "Description for the Microsoft Excel plugin control row",
       },
       microsoftExcelToggleAria: {
         id: "settings.computerUse.microsoftExcel.appToggleAria",
         defaultMessage: "Toggle Microsoft Excel live control",
-        description: "Accessible label for toggling Microsoft Excel live control from Computer Use settings"
+        description:
+          "Accessible label for toggling Microsoft Excel live control from Computer Use settings",
       },
       microsoftExcelDisableTooltip: {
         id: "settings.computerUse.microsoftExcel.disableToggleTooltip",
         defaultMessage: "Disable Microsoft Excel live control",
-        description: "Tooltip label for disabling Microsoft Excel live control"
+        description: "Tooltip label for disabling Microsoft Excel live control",
       },
       microsoftExcelEnableTooltip: {
         id: "settings.computerUse.microsoftExcel.enableToggleTooltip",
         defaultMessage: "Enable Microsoft Excel live control",
-        description: "Tooltip label for enabling Microsoft Excel live control"
+        description: "Tooltip label for enabling Microsoft Excel live control",
       },
       microsoftPowerPoint: {
         id: "settings.computerUse.microsoftPowerPoint.pluginTitle",
         defaultMessage: "Microsoft PowerPoint",
-        description: "Title for the Microsoft PowerPoint plugin control row"
+        description: "Title for the Microsoft PowerPoint plugin control row",
       },
       microsoftPowerPointDescription: {
         id: "settings.computerUse.microsoftPowerPoint.description",
-        defaultMessage: "Let ChatGPT use Microsoft PowerPoint add-in for additional control",
-        description: "Description for the Microsoft PowerPoint plugin control row"
+        defaultMessage:
+          "Let ChatGPT use Microsoft PowerPoint add-in for additional control",
+        description:
+          "Description for the Microsoft PowerPoint plugin control row",
       },
       microsoftPowerPointToggleAria: {
         id: "settings.computerUse.microsoftPowerPoint.appToggleAria",
         defaultMessage: "Toggle Microsoft PowerPoint live control",
-        description: "Accessible label for toggling Microsoft PowerPoint live control from Computer Use settings"
+        description:
+          "Accessible label for toggling Microsoft PowerPoint live control from Computer Use settings",
       },
       microsoftPowerPointDisableTooltip: {
         id: "settings.computerUse.microsoftPowerPoint.disableToggleTooltip",
         defaultMessage: "Disable Microsoft PowerPoint live control",
-        description: "Tooltip label for disabling Microsoft PowerPoint live control"
+        description:
+          "Tooltip label for disabling Microsoft PowerPoint live control",
       },
       microsoftPowerPointEnableTooltip: {
         id: "settings.computerUse.microsoftPowerPoint.enableToggleTooltip",
         defaultMessage: "Enable Microsoft PowerPoint live control",
-        description: "Tooltip label for enabling Microsoft PowerPoint live control"
+        description:
+          "Tooltip label for enabling Microsoft PowerPoint live control",
       },
       alwaysAllowedApps: {
         id: "settings.computerUse.allowedApps.title",
         defaultMessage: "Always-allowed apps",
-        description: "Title for computer use always allowed apps list"
+        description: "Title for computer use always allowed apps list",
       },
       foregroundClickSounds: {
         id: "settings.computerUse.sounds.foregroundClicks",
         defaultMessage: "Play sounds for foreground clicks",
-        description: "Computer use sound setting option for foreground click sounds"
+        description:
+          "Computer use sound setting option for foreground click sounds",
       },
       foregroundAndBackgroundClickSounds: {
         id: "settings.computerUse.sounds.foregroundAndBackgroundClicks",
         defaultMessage: "Play sounds for foreground and background clicks",
-        description: "Computer use sound setting option for foreground and background click sounds"
+        description:
+          "Computer use sound setting option for foreground and background click sounds",
       },
       noClickSounds: {
         id: "settings.computerUse.sounds.off",
         defaultMessage: "Don’t play sounds",
-        description: "Computer use sound setting option for no sounds"
-      }
+        description: "Computer use sound setting option for no sounds",
+      },
     });
   }),
   sage,
   topaz = esmInit(() => {
-    sage = "" + new URL("chrome-production-large-BLPyHeGg.png", import.meta.url).href;
+    sage =
+      "" +
+      new URL("chrome-production-large-BLPyHeGg.png", import.meta.url).href;
   });
 export function ComputerUseSettings() {
-  let {
-      selectedHostId
-    } = useSelectedHost(),
+  let { selectedHostId } = useSelectedHost(),
     frost = CodexBrowserSurfaceActionType(deferredHostsRt, selectedHostId),
     glide = {
-      hostId: selectedHostId
+      hostId: selectedHostId,
     };
   let honey = AppInitialWK(glide),
-    {
-      platform
-    } = useHostPlatformModifierSymbol(),
-    iris = ensureSteeringUserMessageClusterInit(selectedHostId).kind === "local",
+    { platform } = useHostPlatformModifierSymbol(),
+    iris =
+      ensureSteeringUserMessageClusterInit(selectedHostId).kind === "local",
     jewel = NativeContextMenuSurface("188145323");
   if (useMatch(_n) != null) {
     let ridge;
@@ -386,89 +468,196 @@ export function ComputerUseSettings() {
   }
   let knoll, lunar;
   knoll = <SettingsSectionTitle slug={umbra} />;
-  lunar = <MemoizedFormattedMessage {...{
-    id: "settings.computerUse.subtitle",
-    defaultMessage: "Manage how ChatGPT uses other applications on your computer",
-    description: "Subtitle for computer use settings"
-  }} />;
-  let moss = <UseChromeAndCodeThemeSync.Header {...{
-    title: <MemoizedFormattedMessage {...{
-      ...quill.control
-    }} />
-  }} />;
-  let north = <ComputerUseSettingsHelper4 {...{
-    computerUseAvailability: honey,
-    platform
-  }} />;
-  let orbit = platform === "macOS" && honey.available && frost ? <ComputerUseSettingsHelper13 {...{}} /> : null;
-  let pine = <UseChromeAndCodeThemeSync {...{
-    children: [moss, <UseChromeAndCodeThemeSync.Content {...{
-      children: [north, orbit]
-    }} />]
-  }} />;
-  let quest = honey.available ? <>
-      {platform === "macOS" && iris && jewel ? <ElectronOnly {...{
-      electron: true,
-      children: <ComputerUseSettingsHelper3 {...{}} />
-    }} /> : null}
-      {<UseChromeAndCodeThemeSync {...{
-      children: [<UseChromeAndCodeThemeSync.Header {...{
-        title: <MemoizedFormattedMessage {...{
-          ...quill.alwaysAllowedApps
-        }} />
-      }} />, <UseChromeAndCodeThemeSync.Content {...{
-        children: <ParseUrlOrFallback {...{
-          children: <ComputerUseSettingsHelper16 {...{}} />
-        }} />
-      }} />]
-    }} />}
+  lunar = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.computerUse.subtitle",
+        defaultMessage:
+          "Manage how ChatGPT uses other applications on your computer",
+        description: "Subtitle for computer use settings",
+      }}
+    />
+  );
+  let moss = (
+    <UseChromeAndCodeThemeSync.Header
+      {...{
+        title: (
+          <MemoizedFormattedMessage
+            {...{
+              ...quill.control,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let north = (
+    <ComputerUseSettingsHelper4
+      {...{
+        computerUseAvailability: honey,
+        platform,
+      }}
+    />
+  );
+  let orbit =
+    platform === "macOS" && honey.available && frost ? (
+      <ComputerUseSettingsHelper13 {...{}} />
+    ) : null;
+  let pine = (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [
+          moss,
+          <UseChromeAndCodeThemeSync.Content
+            {...{
+              children: [north, orbit],
+            }}
+          />,
+        ],
+      }}
+    />
+  );
+  let quest = honey.available ? (
+    <>
+      {platform === "macOS" && iris && jewel ? (
+        <ElectronOnly
+          {...{
+            electron: true,
+            children: <ComputerUseSettingsHelper3 {...{}} />,
+          }}
+        />
+      ) : null}
+      {
+        <UseChromeAndCodeThemeSync
+          {...{
+            children: [
+              <UseChromeAndCodeThemeSync.Header
+                {...{
+                  title: (
+                    <MemoizedFormattedMessage
+                      {...{
+                        ...quill.alwaysAllowedApps,
+                      }}
+                    />
+                  ),
+                }}
+              />,
+              <UseChromeAndCodeThemeSync.Content
+                {...{
+                  children: (
+                    <ParseUrlOrFallback
+                      {...{
+                        children: <ComputerUseSettingsHelper16 {...{}} />,
+                      }}
+                    />
+                  ),
+                }}
+              />,
+            ],
+          }}
+        />
+      }
       {<ComputerUseSettingsHelper12 {...{}} />}
-    </> : null;
-  return <OpenInBrowser {...{
-    title: knoll,
-    subtitle: lunar,
-    children: [pine, quest]
-  }} />;
+    </>
+  ) : null;
+  return (
+    <OpenInBrowser
+      {...{
+        title: knoll,
+        subtitle: lunar,
+        children: [pine, quest],
+      }}
+    />
+  );
 }
 function ultra() {
   let storm = CodexPluginActionType(appScopeAtom),
     tide = useIntl(),
-    unity = useSettingValue(LOCAL_CONVERSATION_ROUTE.alwaysHidePictureInPicture),
-    vale = <UseChromeAndCodeThemeSync.Header {...{
-      title: <MemoizedFormattedMessage {...{
-        id: "settings.computerUse.pictureInPicture.title",
-        defaultMessage: "Picture in picture",
-        description: "Title for Computer Use picture in picture settings"
-      }} />
-    }} />;
+    unity = useSettingValue(
+      LOCAL_CONVERSATION_ROUTE.alwaysHidePictureInPicture,
+    ),
+    vale = (
+      <UseChromeAndCodeThemeSync.Header
+        {...{
+          title: (
+            <MemoizedFormattedMessage
+              {...{
+                id: "settings.computerUse.pictureInPicture.title",
+                defaultMessage: "Picture in picture",
+                description:
+                  "Title for Computer Use picture in picture settings",
+              }}
+            />
+          ),
+        }}
+      />
+    );
   let wave, apex;
-  wave = <MemoizedFormattedMessage {...{
-    id: "settings.computerUse.pictureInPicture.alwaysHide.label",
-    defaultMessage: "Always hide picture in picture",
-    description: "Label for always hiding Computer Use picture in picture"
-  }} />;
-  apex = <MemoizedFormattedMessage {...{
-    id: "settings.computerUse.pictureInPicture.alwaysHide.description",
-    defaultMessage: "Prevent ChatGPT from showing computer use activity in picture in picture",
-    description: "Description for always hiding Computer Use picture in picture"
-  }} />;
+  wave = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.computerUse.pictureInPicture.alwaysHide.label",
+        defaultMessage: "Always hide picture in picture",
+        description: "Label for always hiding Computer Use picture in picture",
+      }}
+    />
+  );
+  apex = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.computerUse.pictureInPicture.alwaysHide.description",
+        defaultMessage:
+          "Prevent ChatGPT from showing computer use activity in picture in picture",
+        description:
+          "Description for always hiding Computer Use picture in picture",
+      }}
+    />
+  );
   let brook = tide.formatMessage({
     id: "settings.computerUse.pictureInPicture.alwaysHide.ariaLabel",
     defaultMessage: "Always hide picture in picture",
-    description: "Accessible label for always hiding Computer Use picture in picture"
+    description:
+      "Accessible label for always hiding Computer Use picture in picture",
   });
-  let cliff = dusk => {
-    setSettingValue(storm, LOCAL_CONVERSATION_ROUTE.alwaysHidePictureInPicture, dusk);
+  let cliff = (dusk) => {
+    setSettingValue(
+      storm,
+      LOCAL_CONVERSATION_ROUTE.alwaysHidePictureInPicture,
+      dusk,
+    );
   };
-  return <UseChromeAndCodeThemeSync {...{
-    children: [vale, <UseChromeAndCodeThemeSync.Content {...{
-      children: <ParseUrlOrFallback {...{
-        children: <EnsurePersonalizationCInit {...{
-          label: wave,
-          description: apex,
-          control: <AppInitialYC ariaLabel={brook} checked={unity} onChange={cliff} />
-        }} />
-      }} />
-    }} />]
-  }} />;
+  return (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [
+          vale,
+          <UseChromeAndCodeThemeSync.Content
+            {...{
+              children: (
+                <ParseUrlOrFallback
+                  {...{
+                    children: (
+                      <EnsurePersonalizationCInit
+                        {...{
+                          label: wave,
+                          description: apex,
+                          control: (
+                            <AppInitialYC
+                              ariaLabel={brook}
+                              checked={unity}
+                              onChange={cliff}
+                            />
+                          ),
+                        }}
+                      />
+                    ),
+                  }}
+                />
+              ),
+            }}
+          />,
+        ],
+      }}
+    />
+  );
 }

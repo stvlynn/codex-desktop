@@ -32,9 +32,7 @@ export function bindDeferredUiO2() {
     throw new Error("bindDeferredUiO2 peers are not configured");
   }
 
-  return peers.Oa(peers.Q, (e, {
-    get: t
-  }) => {
+  return peers.Oa(peers.Q, (e, { get: t }) => {
     let n = t(peers.vnr, e),
       r = t(peers.rD, e) ?? n?.hostId ?? `local`;
     return peers.UAr({
@@ -42,7 +40,7 @@ export function bindDeferredUiO2() {
       isResponseInProgress: t(peers.lD, e),
       resumeState: t(peers.hD, e) ?? (n == null ? null : `needs_resume`),
       threadRuntimeStatus: t(peers.Knr, e) ?? n?.threadRuntimeStatus ?? null,
-      latestTurnHasSystemError: t(peers.Qnr, e) === !0
+      latestTurnHasSystemError: t(peers.Qnr, e) === !0,
     });
   });
 }

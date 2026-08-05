@@ -27,6 +27,6 @@ export function bindDeferredtk() {
   }
 
   return peers.e(() => {
-    peers.NEo(), peers.Im(), peers.Fko(), Lko = peers.Pm(peers.Pko, !1);
+    (peers.NEo(), peers.Im(), peers.Fko(), (Lko = peers.Pm(peers.Pko, !1)));
   });
 }

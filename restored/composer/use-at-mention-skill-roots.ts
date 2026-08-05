@@ -12,7 +12,9 @@ export type UseAtMentionSkillRootsPeers = {
 let peers: UseAtMentionSkillRootsPeers | null = null;
 
 /** Wire UseAtMentionSkillRoots peers once companions land. */
-export function setUseAtMentionSkillRootsPeers(next: UseAtMentionSkillRootsPeers): void {
+export function setUseAtMentionSkillRootsPeers(
+  next: UseAtMentionSkillRootsPeers,
+): void {
   peers = next;
 }
 

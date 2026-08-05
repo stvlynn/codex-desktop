@@ -14,7 +14,9 @@ export type EnsureAvatarOverlaySessionInitPeers = {
 let peers: EnsureAvatarOverlaySessionInitPeers | null = null;
 
 /** Wire ensureAvatarOverlaySessionInit peers once companions land. */
-export function setEnsureAvatarOverlaySessionInitPeers(next: EnsureAvatarOverlaySessionInitPeers): void {
+export function setEnsureAvatarOverlaySessionInitPeers(
+  next: EnsureAvatarOverlaySessionInitPeers,
+): void {
   peers = next;
 }
 

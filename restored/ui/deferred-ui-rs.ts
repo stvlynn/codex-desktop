@@ -24,9 +24,7 @@ export function bindDeferredUiRs() {
     throw new Error("bindDeferredUiRs peers are not configured");
   }
 
-  return peers.Ma(peers.j2, ({
-    get: e
-  }) => {
+  return peers.Ma(peers.j2, ({ get: e }) => {
     let t = new Map(),
       n = e(peers.LMl);
     if (n == null) return t;
@@ -34,7 +32,9 @@ export function bindDeferredUiRs() {
       i = e(peers.D8);
     for (let [e, a] of i.pluginNames) {
       let o = i.pluginIds.get(e),
-        s = n.find(e => r ? o != null && e.plugin.remotePluginId === o : e.plugin.name === a);
+        s = n.find((e) =>
+          r ? o != null && e.plugin.remotePluginId === o : e.plugin.name === a,
+        );
       s != null && t.set(e, s);
     }
     return t;

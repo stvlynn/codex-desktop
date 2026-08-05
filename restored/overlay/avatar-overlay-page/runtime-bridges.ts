@@ -8,4 +8,3 @@
 export function bindAvatarOverlayPage(_next: unknown): void {}
 
 export function ensureAvatarOverlayPageInit(): void {}
-

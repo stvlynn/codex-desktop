@@ -19,7 +19,9 @@ export type UseAvailableModelsForHostQueryPeers = {
 let peers: UseAvailableModelsForHostQueryPeers | null = null;
 
 /** Wire useAvailableModelsForHostQuery peers once companions land. */
-export function setUseAvailableModelsForHostQueryPeers(next: UseAvailableModelsForHostQueryPeers): void {
+export function setUseAvailableModelsForHostQueryPeers(
+  next: UseAvailableModelsForHostQueryPeers,
+): void {
   peers = next;
 }
 

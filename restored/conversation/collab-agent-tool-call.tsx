@@ -9,7 +9,9 @@ export type BindCollabAgentToolCallPeers = {
 let peers: BindCollabAgentToolCallPeers | null = null;
 
 /** Wire bindCollabAgentToolCall peers once companions land. */
-export function setBindCollabAgentToolCallPeers(next: BindCollabAgentToolCallPeers): void {
+export function setBindCollabAgentToolCallPeers(
+  next: BindCollabAgentToolCallPeers,
+): void {
   peers = next;
 }
 

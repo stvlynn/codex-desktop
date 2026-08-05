@@ -43,6 +43,23 @@ export function deferredUiaN() {
   }
 
   return peers.e(() => {
-    LRa = peers.c(), RRa = peers.r(peers.o(), 1), peers.Xw(), peers.Fh(), peers.tIa(), peers.yk(), peers.Mga(), peers.$ga(), peers.nRa(), peers.r_a(), peers.LLa(), peers.yRa(), peers.ARa(), peers.yS(), peers.zga(), peers.Vga(), peers.Jz(), zRa = peers.J();
+    ((LRa = peers.c()),
+      (RRa = peers.r(peers.o(), 1)),
+      peers.Xw(),
+      peers.Fh(),
+      peers.tIa(),
+      peers.yk(),
+      peers.Mga(),
+      peers.$ga(),
+      peers.nRa(),
+      peers.r_a(),
+      peers.LLa(),
+      peers.yRa(),
+      peers.ARa(),
+      peers.yS(),
+      peers.zga(),
+      peers.Vga(),
+      peers.Jz(),
+      (zRa = peers.J()));
   });
 }

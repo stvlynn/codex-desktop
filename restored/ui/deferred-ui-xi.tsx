@@ -10,7 +10,9 @@ export type BindBindDeferredUiXiPeers = {
 let peers: BindBindDeferredUiXiPeers | null = null;
 
 /** Wire bindBindDeferredUiXi peers once companions land. */
-export function setBindBindDeferredUiXiPeers(next: BindBindDeferredUiXiPeers): void {
+export function setBindBindDeferredUiXiPeers(
+  next: BindBindDeferredUiXiPeers,
+): void {
   peers = next;
 }
 
@@ -25,7 +27,7 @@ export function bindBindDeferredUiXi() {
   return class extends Error {
     reason;
     constructor(e) {
-      super(peers.e), this.reason = peers.e;
+      (super(peers.e), (this.reason = peers.e));
     }
   };
 }

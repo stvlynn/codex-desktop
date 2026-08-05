@@ -36,13 +36,13 @@ import { identity as AppInitialWmt } from "../../utils/identity";
 import { identity as appInitialVft } from "../../utils/identity";
 import { DialogClose as appInitialJ } from "../../ui/dialog-close";
 import { DialogWithTrigger as appInitialK } from "../../ui/dialog-with-trigger";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../runtime/rolldown-runtime";
 
-function useChatgptComposerControllerHelper51(
-  request3233,
-) {
-  let { csp, domain, height_hint, html, prefers_border } =
-      request3233.widget,
+function useChatgptComposerControllerHelper51(request3233) {
+  let { csp, domain, height_hint, html, prefers_border } = request3233.widget,
     slot8604 = AppInitialCV({
       contents: [
         {
@@ -79,86 +79,49 @@ export function useChatgptComposerControllerHelper52(request867: any) {
   const UseChatgptComposerControllerHelper54 =
     useChatgptComposerControllerHelper54;
   const AppInitialK = appInitialK;
-  let { conversationId, hostId, onClose, state } =
-      request867,
+  let { conversationId, hostId, onClose, state } = request867,
     slot3929 = appInitialLT(_appInitial8),
     slot3930 = appInitialJft(),
-    [slot3931] =
-      slot65.useState(
-        useChatgptComposerControllerHelper53,
-      ),
+    [slot3931] = slot65.useState(useChatgptComposerControllerHelper53),
     slot3932,
     slot3933;
   slot3932 = () => {
     return () => {
-      AppInitialYB(
-        slot3929,
-        slot3931,
-      );
+      AppInitialYB(slot3929, slot3931);
     };
   };
-  slot3933 = [
-    slot3931,
-    slot3929,
-  ];
-  slot65.useLayoutEffect(
-    slot3932,
-    slot3933,
-  );
+  slot3933 = [slot3931, slot3929];
+  slot65.useLayoutEffect(slot3932, slot3933);
   let slot3934 = () => {
-    AppInitialYB(
-      slot3929,
-      slot3931,
-    );
+    AppInitialYB(slot3929, slot3931);
     onClose();
   };
-  let slot3935 =
-      slot3934,
+  let slot3935 = slot3934,
     slot3936 =
       state.kind === "ready" && state.result.request.mode === "fullscreen",
-    slot3937 =
-      slot3936
-        ? "h-full w-full bg-token-background"
-        : undefined,
-    slot3938 =
-      slot3930.formatMessage(
-        slot67.appTitle,
-      );
+    slot3937 = slot3936 ? "h-full w-full bg-token-background" : undefined,
+    slot3938 = slot3930.formatMessage(slot67.appTitle);
   let slot3939 = {
     "aria-label": slot3938,
   };
-  let slot3940 = (
-    request11429,
-  ) => {
-    request11429 ||
-      slot3935();
+  let slot3940 = (request11429) => {
+    request11429 || slot3935();
   };
-  let slot3941 =
-      slot3936 ? undefined : "editor",
+  let slot3941 = slot3936 ? undefined : "editor",
     slot3942 =
       state.kind === "loading" ? (
         <div className="flex h-full items-center justify-center" role="status">
-          {
-            <AppInitialGft
-              {...slot67.openingApp}
-            />
-          }
+          {<AppInitialGft {...slot67.openingApp} />}
         </div>
       ) : state.kind === "error" ? (
         <div className="flex h-full flex-col items-center justify-center gap-2 p-8 text-center">
           {
             <AppInitialJ2 className="text-lg font-medium">
-              <AppInitialGft
-                {...slot67.openAppError}
-              />
+              <AppInitialGft {...slot67.openAppError} />
             </AppInitialJ2>
           }
           <p className="text-token-description-foreground">
-            {
-              <AppInitialGft
-                {...slot67.openAppErrorDescription}
-              />
-            }
+            {<AppInitialGft {...slot67.openAppErrorDescription} />}
           </p>
         </div>
       ) : (
@@ -186,40 +149,23 @@ export function useChatgptComposerControllerHelper52(request867: any) {
 function useChatgptComposerControllerHelper53() {
   return AppInitialWmt(`chatgpt-ecosystem-launcher:${crypto.randomUUID()}`);
 }
-function useChatgptComposerControllerHelper54(
-  request634,
-) {
+function useChatgptComposerControllerHelper54(request634) {
   const AppInitialJ2 = appInitialJ;
   const AppInitialFB = appInitialFB;
-  let { conversationId, hostId, mcpAppId, result } =
-      request634,
+  let { conversationId, hostId, mcpAppId, result } = request634,
     slot3341 = appInitialJft(),
-    slot3342 =
-      useChatgptComposerControllerHelper51(result);
-  let slot3343 =
-      slot3342,
+    slot3342 = useChatgptComposerControllerHelper51(result);
+  let slot3343 = slot3342,
     slot3344 = appInitialAV({
       connectorId: useChatgptComposerControllerHelper55(result.request.appUri),
       instanceFallbackId: mcpAppId,
       server: "codex_apps",
     });
-  let slot3345 =
-      slot3344,
-    slot3346 =
-      result.widget.name ||
-      slot3341.formatMessage(
-        slot67.appTitle,
-      );
-  let slot3347 =
-      slot3346,
-    slot3348 = (
-      <AppInitialJ2 className="sr-only">
-        {slot3347}
-      </AppInitialJ2>
-    );
-  let slot3349 = (
-    <AppInitialFB isInlineExpanded={true} mcpAppId={mcpAppId} />
-  );
+  let slot3345 = slot3344,
+    slot3346 = result.widget.name || slot3341.formatMessage(slot67.appTitle);
+  let slot3347 = slot3346,
+    slot3348 = <AppInitialJ2 className="sr-only">{slot3347}</AppInitialJ2>;
+  let slot3349 = <AppInitialFB isInlineExpanded={true} mcpAppId={mcpAppId} />;
   let slot3350 = {
     originResourceUri: result.request.template,
     originTool: result.request.toolName,
@@ -251,10 +197,8 @@ function useChatgptComposerControllerHelper54(
       widgetDomain={slot3343.widgetDomain}
     />
   );
-  let slot3352 =
-      slot3343.heightHint ?? null,
-    slot3353 =
-      slot3343.minFrameHeight ?? null,
+  let slot3352 = slot3343.heightHint ?? null,
+    slot3353 = slot3343.minFrameHeight ?? null,
     slot3354 = (
       <AppInitialPB
         error={null}
@@ -266,9 +210,7 @@ function useChatgptComposerControllerHelper54(
         minFrameHeight={slot3353}
       />
     );
-  let slot3355 = (
-    <AppInitialUB mcpAppId={mcpAppId} />
-  );
+  let slot3355 = <AppInitialUB mcpAppId={mcpAppId} />;
   return (
     <div data-mcp-app-portal-target="true" className="h-full min-h-0">
       {slot3348}
@@ -279,13 +221,10 @@ function useChatgptComposerControllerHelper54(
     </div>
   );
 }
-function useChatgptComposerControllerHelper55(
-  request8986,
-) {
-  let slot14997 =
-    request8986.startsWith("connectors://")
-      ? request8986.slice(13).trim()
-      : request8986.trim();
+function useChatgptComposerControllerHelper55(request8986) {
+  let slot14997 = request8986.startsWith("connectors://")
+    ? request8986.slice(13).trim()
+    : request8986.trim();
   return slot14997.length === 0 ||
     slot14997 === "all" ||
     slot14997.includes("+")

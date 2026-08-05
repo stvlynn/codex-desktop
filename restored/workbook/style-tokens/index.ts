@@ -21,9 +21,7 @@ export {
   resolveFontSizeUtility,
   ensureFontSizeTokensInit,
 } from "./font-size-tokens";
-export {
-  parseUtilityClassStyles,
-} from "./parse-utility-class-styles";
+export { parseUtilityClassStyles } from "./parse-utility-class-styles";
 export type { UtilityClassStyle } from "./parse-utility-class-styles";
 export { ensureStyleTokensInit } from "./ensure-style-tokens-init";
 export { trimNonEmptyString } from "./trim-non-empty-string";

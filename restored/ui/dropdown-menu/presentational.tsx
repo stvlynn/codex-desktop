@@ -19,7 +19,13 @@ export function DropdownMenuSeparator(
 ): ReactElement {
   const { className, paddingClassName = "py-1" } = props;
   return (
-    <div className={cx("w-full px-[var(--padding-row-x)]", paddingClassName, className)}>
+    <div
+      className={cx(
+        "w-full px-[var(--padding-row-x)]",
+        paddingClassName,
+        className,
+      )}
+    >
       <div className="h-[1px] w-full bg-token-menu-border" />
     </div>
   );

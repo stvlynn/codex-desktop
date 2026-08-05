@@ -26,7 +26,9 @@ export type UseAtMentionThreadRootsPeers = {
 let peers: UseAtMentionThreadRootsPeers | null = null;
 
 /** Wire useAtMentionThreadRoots peers once companions land. */
-export function setUseAtMentionThreadRootsPeers(next: UseAtMentionThreadRootsPeers): void {
+export function setUseAtMentionThreadRootsPeers(
+  next: UseAtMentionThreadRootsPeers,
+): void {
   peers = next;
 }
 

@@ -61,16 +61,13 @@ const writeClipboardContents: any = undefined;
 
 function GeneralSettingsHelper1() {
   let sageFifth = activatePanelTabOrFallback(),
-    topazFifth =
-      useStepsProseAtom() === THREAD_DETAIL_LEVEL_STEPS_COMMANDS,
+    topazFifth = useStepsProseAtom() === THREAD_DETAIL_LEVEL_STEPS_COMMANDS,
     { data } = AppInitialQ1(),
     ultraFifth = data?.isSystemBackdropSupported !== false,
     vaporFifth,
     wheatFifth;
   {
-    let glideFifth = ensurePullRequestMediaGUInit(
-      sageFifth,
-    );
+    let glideFifth = ensurePullRequestMediaGUInit(sageFifth);
     vaporFifth = "flex flex-col gap-[var(--padding-panel)]";
     let honeyFifth;
     honeyFifth = (ratchetFourth) => (
@@ -83,13 +80,9 @@ function GeneralSettingsHelper1() {
         }}
       />
     );
-    wheatFifth = glideFifth.map(
-      honeyFifth,
-    );
+    wheatFifth = glideFifth.map(honeyFifth);
   }
-  return (
-    <div className={vaporFifth}>{wheatFifth}</div>
-  );
+  return <div className={vaporFifth}>{wheatFifth}</div>;
 }
 function GeneralSettingsHelper2() {
   return (
@@ -119,18 +112,10 @@ function GeneralSettingsHelper3({
 }) {
   let cedarFifth = CodexPluginActionType(appScopeAtom),
     daisyFifth = useIntl(),
-    emberFifth = daisyFifth.formatMessage(
-      echoFifth.chromeThemeAccent,
-    ),
-    flintFifth = daisyFifth.formatMessage(
-      echoFifth.chromeThemeBackground,
-    ),
-    garnetFifth = daisyFifth.formatMessage(
-      echoFifth.chromeThemeForeground,
-    ),
-    hazelFifth = daisyFifth.formatMessage(
-      echoFifth.chromeThemeContrast,
-    ),
+    emberFifth = daisyFifth.formatMessage(echoFifth.chromeThemeAccent),
+    flintFifth = daisyFifth.formatMessage(echoFifth.chromeThemeBackground),
+    garnetFifth = daisyFifth.formatMessage(echoFifth.chromeThemeForeground),
+    hazelFifth = daisyFifth.formatMessage(echoFifth.chromeThemeContrast),
     ivoryFifth = daisyFifth.formatMessage(
       echoFifth.chromeThemeTranslucentSidebar,
     ),
@@ -146,14 +131,9 @@ function GeneralSettingsHelper3({
       setThemePatch,
       theme,
     } = AppInitialRn(variant),
-    kelpFifth = frameFourth(
-      daisyFifth,
-      variant,
-    ),
-    [lotusFifth, novaFifth] =
-      gammaFifth.useState(false),
-    [oliveFifth, prismFifth] =
-      gammaFifth.useState(""),
+    kelpFifth = frameFourth(daisyFifth, variant),
+    [lotusFifth, novaFifth] = gammaFifth.useState(false),
+    [oliveFifth, prismFifth] = gammaFifth.useState(""),
     quillFifth = [
       {
         ariaLabel: daisyFifth.formatMessage(
@@ -215,9 +195,7 @@ function GeneralSettingsHelper3({
           },
         ),
         key: "ui",
-        label: daisyFifth.formatMessage(
-          echoFifth.chromeThemeUiFont,
-        ),
+        label: daisyFifth.formatMessage(echoFifth.chromeThemeUiFont),
         placeholder: $r,
       },
     ];
@@ -235,15 +213,10 @@ function GeneralSettingsHelper3({
         },
       ),
       key: "code",
-      label: daisyFifth.formatMessage(
-        echoFifth.chromeThemeCodeFont,
-      ),
+      label: daisyFifth.formatMessage(echoFifth.chromeThemeCodeFont),
       placeholder: ensureComposerEsm_BU_Init,
     });
-  let yarnFifth = (
-      nozzleFourth,
-      platenFourth,
-    ) => {
+  let yarnFifth = (nozzleFourth, platenFourth) => {
       switch (nozzleFourth) {
         case "accent":
           setThemePatch({
@@ -319,7 +292,7 @@ function GeneralSettingsHelper3({
   return (
     <GeneralSettingsHelper4
       {...{
-title: engineFourth(variant),
+        title: engineFourth(variant),
         headerControl: (
           <div className="flex items-center gap-2 max-sm:w-full max-sm:flex-wrap max-sm:justify-end">
             {
@@ -407,9 +380,7 @@ title: engineFourth(variant),
                   theme,
                   variant,
                   onSelect: (alphaFifth) => {
-                    setCodeThemeId(alphaFifth).catch(
-                      () => undefined,
-                    );
+                    setCodeThemeId(alphaFifth).catch(() => undefined);
                   },
                 }}
               />
@@ -428,10 +399,7 @@ title: engineFourth(variant),
                       ariaLabel: item.ariaLabel,
                       value: theme[item.role],
                       onChange: (bravoFifth) => {
-                        yarnFifth(
-                          item.role,
-                          bravoFifth,
-                        );
+                        yarnFifth(item.role, bravoFifth);
                       },
                     }}
                   />
@@ -563,9 +531,5 @@ function GeneralSettingsHelper4(mountFourth) {
       }}
     />
   );
-  return (
-    <section aria-labelledby={zephyrFifth}>
-      {driftFifth}
-    </section>
-  );
+  return <section aria-labelledby={zephyrFifth}>{driftFifth}</section>;
 }

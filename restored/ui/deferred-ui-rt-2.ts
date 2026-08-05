@@ -46,6 +46,6 @@ export function bindDeferredUiRT() {
     FooterExpandingControls: peers.g5o,
     FooterInlineControls: peers.h5o,
     FooterLabel: peers.v5o,
-    Input: peers.s5o
+    Input: peers.s5o,
   });
 }

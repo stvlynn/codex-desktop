@@ -1,9 +1,7 @@
 // Restored from ref/webview/assets/workbook-C49Dgk1_.js
 // Stage-3 wave-1: presentation/chart protobuf ↔ camelCase name bridges.
 
-import {
-  Pn,
-} from "../presentation-protobuf";
+import { Pn } from "../presentation-protobuf";
 
 export const layoutModeNameToProto = {
   edge: Pn.LAYOUT_MODE_EDGE,

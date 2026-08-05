@@ -10,7 +10,9 @@ export type RequestRealtimeVoicePresentationSurfacePeers = {
 let peers: RequestRealtimeVoicePresentationSurfacePeers | null = null;
 
 /** Wire requestRealtimeVoicePresentationSurface peers once companions land. */
-export function setRequestRealtimeVoicePresentationSurfacePeers(next: RequestRealtimeVoicePresentationSurfacePeers): void {
+export function setRequestRealtimeVoicePresentationSurfacePeers(
+  next: RequestRealtimeVoicePresentationSurfacePeers,
+): void {
   peers = next;
 }
 

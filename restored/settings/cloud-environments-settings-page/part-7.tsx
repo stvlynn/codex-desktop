@@ -21,16 +21,35 @@ import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
 import { defaultHourlyScheduleConfig as DefaultHourlyScheduleConfig } from "../../automation/default-hourly-schedule-config";
 import { normalizeCronScheduleFields } from "../../automation/normalize-cron-schedule-fields";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_P5_Init, ensureComposerEsm_Sut_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
-import { Navigate, useLocation, useNavigate } from "../../boundaries/react-router-navigation";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_P5_Init,
+  ensureComposerEsm_Sut_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "../../boundaries/react-router-navigation";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { WritingBlockRenderer } from "../../composer/writing-block-renderer";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { ensurePinnedConversationsQueryInit } from "../../conversation/ensure-pinned-conversations-query-init";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
-import { ensureTanstackReactFormApiInit, useTanstackForm } from "../../forms/tanstack-react-form";
+import {
+  ensureTanstackReactFormApiInit,
+  useTanstackForm,
+} from "../../forms/tanstack-react-form";
 import { ensureAuthProviderInit, useAuth } from "../../hooks/use-auth";
 import { useEventCallback } from "../../hooks/use-event-callback";
 import { useGateEnabledWithAccountData } from "../../hooks/use-gate-enabled-with-account-data";
@@ -54,11 +73,17 @@ import { CopyButton } from "../../ui/copy-button";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { isRestoring } from "../../ui/is-restoring";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
-import { initToolbarBreadcrumb, ToolbarBreadcrumb } from "../../ui/toolbar-breadcrumb";
+import {
+  initToolbarBreadcrumb,
+  ToolbarBreadcrumb,
+} from "../../ui/toolbar-breadcrumb";
 import { coerceLocalFilesystemPath as CoerceLocalFilesystemPath } from "../../utils/coerce-local-filesystem-path";
 import { decodeBase64ToBytes } from "../../utils/decode-base64-to-bytes";
 import { hvtBindableHelper } from "../../utils/hvt-bindable-helper";
@@ -68,39 +93,55 @@ import { isSvgHyphenatedTag } from "../../utils/is-svg-hyphenated-tag";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
 import { ensureCloudApiClientInit } from "../cloud-api-client";
-import { previewCloudFilenamePattern, useCloudUserPreferences } from "../cloud-preferences";
+import {
+  previewCloudFilenamePattern,
+  useCloudUserPreferences,
+} from "../cloud-preferences";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 
 // Wave5d soft JSX companions.
-function Alpha(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function DeferredWm(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function DeferredWm(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function InfiniteScrollSentinel(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function InfiniteScrollSentinel(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function SetAccountVoiceAndInvalidateCatalog(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function SetAccountVoiceAndInvalidateCatalog(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -191,16 +232,10 @@ const openInBrowser: any = undefined;
 const parseUrlOrFallback: any = undefined;
 const useChromeAndCodeThemeSync: any = undefined;
 function quest(brook) {
-  let {
-      onCreateEnvironment,
-      onEditEnvironment,
-      onSelectEnvironment
-    } = brook,
+  let { onCreateEnvironment, onEditEnvironment, onSelectEnvironment } = brook,
     cliff = CodexPluginActionType(appScopeAtom),
     dusk = useIntl(),
-    {
-      userId
-    } = useAuth(),
+    { userId } = useAuth(),
     [elm, fern] = unity.useState(""),
     grove = elm.trim();
   let hill = Chatgpt2(grove, 200),
@@ -212,7 +247,7 @@ function quest(brook) {
       isFetchNextPageError,
       isFetchingNextPage,
       isPending,
-      refetch
+      refetch,
     } = hvtBindableHelper(isle),
     lagoon = CodexPluginActionResult(yarn),
     meadow,
@@ -225,139 +260,240 @@ function quest(brook) {
       urn = trail.sort(bravo);
     meadow = openInBrowser;
     let vine;
-    vine = <MemoizedFormattedMessage {...{
-      id: "settings.cloudEnvironments.create.action",
-      defaultMessage: "Create environment",
-      description: "Button label for creating a cloud environment"
-    }} />;
-    nest = <ReadLoginRouteQuerySnapshot {...{
-      color: "primary",
-      onClick: onCreateEnvironment,
-      children: vine
-    }} />;
-    oak = trail.length > 0 || elm !== "" ? <DeferredWm {...{
-      id: "cloud-environments-search",
-      label: dusk.formatMessage({
-        id: "settings.cloudEnvironments.search.label",
-        defaultMessage: "Search cloud environments",
-        description: "Accessible label for cloud environment search"
-      }),
-      maxLength: 128,
-      onSearchQueryChange: fern,
-      placeholder: dusk.formatMessage({
-        id: "settings.cloudEnvironments.search.placeholder",
-        defaultMessage: "Search environments",
-        description: "Placeholder for cloud environment search"
-      }),
-      searchQuery: elm
-    }} /> : null;
+    vine = (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.cloudEnvironments.create.action",
+          defaultMessage: "Create environment",
+          description: "Button label for creating a cloud environment",
+        }}
+      />
+    );
+    nest = (
+      <ReadLoginRouteQuerySnapshot
+        {...{
+          color: "primary",
+          onClick: onCreateEnvironment,
+          children: vine,
+        }}
+      />
+    );
+    oak =
+      trail.length > 0 || elm !== "" ? (
+        <DeferredWm
+          {...{
+            id: "cloud-environments-search",
+            label: dusk.formatMessage({
+              id: "settings.cloudEnvironments.search.label",
+              defaultMessage: "Search cloud environments",
+              description: "Accessible label for cloud environment search",
+            }),
+            maxLength: 128,
+            onSearchQueryChange: fern,
+            placeholder: dusk.formatMessage({
+              id: "settings.cloudEnvironments.search.placeholder",
+              defaultMessage: "Search environments",
+              description: "Placeholder for cloud environment search",
+            }),
+            searchQuery: elm,
+          }}
+        />
+      ) : null;
     petal = <SettingsSectionTitle slug="cloud-environments" />;
-    quiet = isPending ? <AppInitialNi>
-        {elm === "" ? <MemoizedFormattedMessage {...{
-        id: "settings.cloudEnvironments.list.loading",
-        defaultMessage: "Loading cloud environments…",
-        description: "Loading state for the cloud environments list"
-      }} /> : <MemoizedFormattedMessage {...{
-        id: "settings.cloudEnvironments.list.searching",
-        defaultMessage: "Searching cloud environments…",
-        description: "Loading state while searching cloud environments"
-      }} />}
-      </AppInitialNi> : data == null ? <ParseUrlOrFallback {...{
-      children: <div className="flex items-center justify-between gap-3 p-3">
-              {<MemoizedFormattedMessage {...{
-          id: "settings.cloudEnvironments.list.error",
-          defaultMessage: "Unable to load cloud environments",
-          description: "Error state for the cloud environments list"
-        }} />}
-              {<ReadLoginRouteQuerySnapshot {...{
-          color: "secondary",
-          onClick: () => void refetch(),
-          size: "toolbar",
-          children: <MemoizedFormattedMessage {...{
-            id: "settings.cloudEnvironments.retry",
-            defaultMessage: "Retry",
-            description: "Button label to retry loading cloud environments"
-          }} />
-        }} />}
+    quiet = isPending ? (
+      <AppInitialNi>
+        {elm === "" ? (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.cloudEnvironments.list.loading",
+              defaultMessage: "Loading cloud environments…",
+              description: "Loading state for the cloud environments list",
+            }}
+          />
+        ) : (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.cloudEnvironments.list.searching",
+              defaultMessage: "Searching cloud environments…",
+              description: "Loading state while searching cloud environments",
+            }}
+          />
+        )}
+      </AppInitialNi>
+    ) : data == null ? (
+      <ParseUrlOrFallback
+        {...{
+          children: (
+            <div className="flex items-center justify-between gap-3 p-3">
+              {
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "settings.cloudEnvironments.list.error",
+                    defaultMessage: "Unable to load cloud environments",
+                    description: "Error state for the cloud environments list",
+                  }}
+                />
+              }
+              {
+                <ReadLoginRouteQuerySnapshot
+                  {...{
+                    color: "secondary",
+                    onClick: () => void refetch(),
+                    size: "toolbar",
+                    children: (
+                      <MemoizedFormattedMessage
+                        {...{
+                          id: "settings.cloudEnvironments.retry",
+                          defaultMessage: "Retry",
+                          description:
+                            "Button label to retry loading cloud environments",
+                        }}
+                      />
+                    ),
+                  }}
+                />
+              }
             </div>
-    }} /> : urn.length > 0 || !juniper ? <ParseUrlOrFallback {...{
-      children: urn.length === 0 ? <AppInitialLj layout="settings-row">
-                {hill === "" ? <MemoizedFormattedMessage {...{
-          id: "settings.cloudEnvironments.list.empty",
-          defaultMessage: "No cloud environments yet",
-          description: "Empty state for the cloud environments list"
-        }} /> : <MemoizedFormattedMessage {...{
-          id: "settings.cloudEnvironments.list.noResults",
-          defaultMessage: "No matching cloud environments",
-          description: "Search empty state for the cloud environments list"
-        }} />}
-              </AppInitialLj> : urn.map(item => <CloudEnvironmentsSettingsPageHelper51 key={item.id} {...{
-        environment: item,
-        isPinning: lagoon.isPending && lagoon.variables?.environmentId === item.id,
-        onEdit: () => onEditEnvironment(item.id),
-        onSelect: () => onSelectEnvironment(item.id),
-        onTogglePin: () => {
-          lagoon.mutate({
-            environmentId: item.id,
-            etag: item.etag,
-            isPinned: !item.is_pinned
-          }, {
-            onError: () => {
-              cliff.get(toastAtom).danger(dusk.formatMessage({
-                id: "settings.cloudEnvironments.pin.error",
-                defaultMessage: "Unable to update pinned environment",
-                description: "Toast shown when pinning a cloud environment fails"
-              }));
-            }
-          });
-        },
-        userId
-      }} />)
-    }} /> : null;
+          ),
+        }}
+      />
+    ) : urn.length > 0 || !juniper ? (
+      <ParseUrlOrFallback
+        {...{
+          children:
+            urn.length === 0 ? (
+              <AppInitialLj layout="settings-row">
+                {hill === "" ? (
+                  <MemoizedFormattedMessage
+                    {...{
+                      id: "settings.cloudEnvironments.list.empty",
+                      defaultMessage: "No cloud environments yet",
+                      description:
+                        "Empty state for the cloud environments list",
+                    }}
+                  />
+                ) : (
+                  <MemoizedFormattedMessage
+                    {...{
+                      id: "settings.cloudEnvironments.list.noResults",
+                      defaultMessage: "No matching cloud environments",
+                      description:
+                        "Search empty state for the cloud environments list",
+                    }}
+                  />
+                )}
+              </AppInitialLj>
+            ) : (
+              urn.map((item) => (
+                <CloudEnvironmentsSettingsPageHelper51
+                  key={item.id}
+                  {...{
+                    environment: item,
+                    isPinning:
+                      lagoon.isPending &&
+                      lagoon.variables?.environmentId === item.id,
+                    onEdit: () => onEditEnvironment(item.id),
+                    onSelect: () => onSelectEnvironment(item.id),
+                    onTogglePin: () => {
+                      lagoon.mutate(
+                        {
+                          environmentId: item.id,
+                          etag: item.etag,
+                          isPinned: !item.is_pinned,
+                        },
+                        {
+                          onError: () => {
+                            cliff.get(toastAtom).danger(
+                              dusk.formatMessage({
+                                id: "settings.cloudEnvironments.pin.error",
+                                defaultMessage:
+                                  "Unable to update pinned environment",
+                                description:
+                                  "Toast shown when pinning a cloud environment fails",
+                              }),
+                            );
+                          },
+                        },
+                      );
+                    },
+                    userId,
+                  }}
+                />
+              ))
+            ),
+        }}
+      />
+    ) : null;
   }
-  let rain = data == null ? null : <InfiniteScrollSentinel {...{
-    hasNextPage: juniper && !isFetchNextPageError,
-    isFetchingNextPage,
-    onLoadNextPage: () => void fetchNextPage()
-  }} />;
-  let seed = data != null && isFetchNextPageError ? <ParseUrlOrFallback {...{
-    children: <EnsurePersonalizationCInit {...{
-      control: <ReadLoginRouteQuerySnapshot {...{
-        color: "secondary",
-        onClick: () => void fetchNextPage(),
-        size: "toolbar",
-        children: <MemoizedFormattedMessage {...{
-          id: "settings.cloudEnvironments.pagination.retryButton",
-          defaultMessage: "Retry",
-          description: "Button label to retry cloud environment pagination"
-        }} />
-      }} />,
-      label: <MemoizedFormattedMessage {...{
-        id: "settings.cloudEnvironments.pagination.error",
-        defaultMessage: "Unable to load more cloud environments",
-        description: "Error shown when loading another page of cloud environments fails"
-      }} />
-    }} />
-  }} /> : null;
-  return <Alpha {...{
-    action: nest,
-    stickyControls: oak,
-    title: petal,
-    children: [quiet, rain, seed]
-  }} />;
+  let rain =
+    data == null ? null : (
+      <InfiniteScrollSentinel
+        {...{
+          hasNextPage: juniper && !isFetchNextPageError,
+          isFetchingNextPage,
+          onLoadNextPage: () => void fetchNextPage(),
+        }}
+      />
+    );
+  let seed =
+    data != null && isFetchNextPageError ? (
+      <ParseUrlOrFallback
+        {...{
+          children: (
+            <EnsurePersonalizationCInit
+              {...{
+                control: (
+                  <ReadLoginRouteQuerySnapshot
+                    {...{
+                      color: "secondary",
+                      onClick: () => void fetchNextPage(),
+                      size: "toolbar",
+                      children: (
+                        <MemoizedFormattedMessage
+                          {...{
+                            id: "settings.cloudEnvironments.pagination.retryButton",
+                            defaultMessage: "Retry",
+                            description:
+                              "Button label to retry cloud environment pagination",
+                          }}
+                        />
+                      ),
+                    }}
+                  />
+                ),
+                label: (
+                  <MemoizedFormattedMessage
+                    {...{
+                      id: "settings.cloudEnvironments.pagination.error",
+                      defaultMessage: "Unable to load more cloud environments",
+                      description:
+                        "Error shown when loading another page of cloud environments fails",
+                    }}
+                  />
+                ),
+              }}
+            />
+          ),
+        }}
+      />
+    ) : null;
+  return (
+    <Alpha
+      {...{
+        action: nest,
+        stickyControls: oak,
+        title: petal,
+        children: [quiet, rain, seed],
+      }}
+    />
+  );
 }
 function ridge(wind) {
   return wind.items;
 }
 function storm(yarrow) {
-  let {
-      environment,
-      isPinning,
-      onEdit,
-      onSelect,
-      onTogglePin,
-      userId
-    } = yarrow,
+  let { environment, isPinning, onEdit, onSelect, onTogglePin, userId } =
+      yarrow,
     azure = useIntl(),
     birch = environment.permissions?.can_write === true,
     canyon = userId != null && environment.creator_id.includes(userId);
@@ -369,7 +505,8 @@ function storm(yarrow) {
     quillow = azure.formatMessage({
       id: "settings.cloudEnvironments.list.pin.noPermission",
       defaultMessage: "You don't have permission to pin this environment",
-      description: "Tooltip explaining why a cloud environment cannot be pinned"
+      description:
+        "Tooltip explaining why a cloud environment cannot be pinned",
     });
     field = quillow;
   } else if (!dew) {
@@ -377,7 +514,8 @@ function storm(yarrow) {
     root = azure.formatMessage({
       id: "settings.cloudEnvironments.list.pin.notCreator",
       defaultMessage: "Only the creator can pin this environment",
-      description: "Tooltip explaining why a cloud environment cannot be pinned"
+      description:
+        "Tooltip explaining why a cloud environment cannot be pinned",
     });
     field = root;
   } else if (environment.is_pinned) {
@@ -385,7 +523,7 @@ function storm(yarrow) {
     silk = azure.formatMessage({
       id: "settings.cloudEnvironments.list.unpin",
       defaultMessage: "Unpin environment",
-      description: "Tooltip for unpinning a cloud environment"
+      description: "Tooltip for unpinning a cloud environment",
     });
     field = silk;
   } else {
@@ -393,78 +531,133 @@ function storm(yarrow) {
     thorn = azure.formatMessage({
       id: "settings.cloudEnvironments.list.pin",
       defaultMessage: "Pin environment",
-      description: "Tooltip for pinning a cloud environment"
+      description: "Tooltip for pinning a cloud environment",
     });
     field = thorn;
   }
-  let grain = birch ? <div className="invisible opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-        {<DropdownMenuPopover {...{
-      align: "end",
-      contentWidth: "menu",
-      triggerButton: <CoerceLocalFilesystemPath {...{
-        label: azure.formatMessage({
-          id: "settings.cloudEnvironments.list.actions",
-          defaultMessage: "Environment actions",
-          description: "Accessible label for cloud environment row actions"
-        }),
-        size: "icon"
-      }} />,
-      children: <DropdownMenu.Item {...{
-        LeftIcon: CopyButton,
-        onSelect: onEdit,
-        children: <MemoizedFormattedMessage {...{
-          id: "settings.cloudEnvironments.list.edit",
-          defaultMessage: "Edit environment",
-          description: "Menu item for editing a cloud environment"
-        }} />
-      }} />
-    }} />}
-      </div> : null;
-  let haven = environment.is_pinned ? undefined : "opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 focus-within:opacity-100",
+  let grain = birch ? (
+    <div className="invisible opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+      {
+        <DropdownMenuPopover
+          {...{
+            align: "end",
+            contentWidth: "menu",
+            triggerButton: (
+              <CoerceLocalFilesystemPath
+                {...{
+                  label: azure.formatMessage({
+                    id: "settings.cloudEnvironments.list.actions",
+                    defaultMessage: "Environment actions",
+                    description:
+                      "Accessible label for cloud environment row actions",
+                  }),
+                  size: "icon",
+                }}
+              />
+            ),
+            children: (
+              <DropdownMenu.Item
+                {...{
+                  LeftIcon: CopyButton,
+                  onSelect: onEdit,
+                  children: (
+                    <MemoizedFormattedMessage
+                      {...{
+                        id: "settings.cloudEnvironments.list.edit",
+                        defaultMessage: "Edit environment",
+                        description:
+                          "Menu item for editing a cloud environment",
+                      }}
+                    />
+                  ),
+                }}
+              />
+            ),
+          }}
+        />
+      }
+    </div>
+  ) : null;
+  let haven = environment.is_pinned
+      ? undefined
+      : "opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 focus-within:opacity-100",
     ink = !ever,
-    jadeite = environment.is_pinned ? <AppIconAo className="icon-xs" /> : <DefaultHourlyScheduleConfig {...{
-      className: "icon-xs"
-    }} />;
-  let kernel = <ReadLoginRouteQuerySnapshot {...{
-    "aria-label": field,
-    color: "ghost",
-    disabled: ink,
-    loading: isPinning,
-    onClick: onTogglePin,
-    size: "icon",
-    uniform: true,
-    children: jadeite
-  }} />;
-  let leaf = <span className={haven}>
-      {kernel}
-    </span>;
-  let maple = <OptionalTooltip {...{
-    tooltipContent: field,
-    children: leaf
-  }} />;
-  let nimbus = <>
+    jadeite = environment.is_pinned ? (
+      <AppIconAo className="icon-xs" />
+    ) : (
+      <DefaultHourlyScheduleConfig
+        {...{
+          className: "icon-xs",
+        }}
+      />
+    );
+  let kernel = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        "aria-label": field,
+        color: "ghost",
+        disabled: ink,
+        loading: isPinning,
+        onClick: onTogglePin,
+        size: "icon",
+        uniform: true,
+        children: jadeite,
+      }}
+    />
+  );
+  let leaf = <span className={haven}>{kernel}</span>;
+  let maple = (
+    <OptionalTooltip
+      {...{
+        tooltipContent: field,
+        children: leaf,
+      }}
+    />
+  );
+  let nimbus = (
+    <>
       {grain}
       {maple}
-    </>;
-  let opal = azure.formatMessage({
-    id: "settings.cloudEnvironments.list.open",
-    defaultMessage: "Open {environmentName}",
-    description: "Accessible label for opening a cloud environment"
-  }, {
-    environmentName: environment.label
-  });
-  let plume = environment.repos.length > 0 ? environment.repos.map(item => environment.repo_map?.[item]?.repository_full_name ?? item).join(", ") : <MemoizedFormattedMessage {...{
-    id: "settings.cloudEnvironments.list.noRepository",
-    defaultMessage: "No repository configured",
-    description: "Description for a cloud environment without a repository"
-  }} />;
-  return <SetAccountVoiceAndInvalidateCatalog {...{
-    actions: nimbus,
-    ariaLabel: opal,
-    description: plume,
-    label: environment.label,
-    onClick: onSelect
-  }} />;
+    </>
+  );
+  let opal = azure.formatMessage(
+    {
+      id: "settings.cloudEnvironments.list.open",
+      defaultMessage: "Open {environmentName}",
+      description: "Accessible label for opening a cloud environment",
+    },
+    {
+      environmentName: environment.label,
+    },
+  );
+  let plume =
+    environment.repos.length > 0 ? (
+      environment.repos
+        .map(
+          (item) => environment.repo_map?.[item]?.repository_full_name ?? item,
+        )
+        .join(", ")
+    ) : (
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.cloudEnvironments.list.noRepository",
+          defaultMessage: "No repository configured",
+          description:
+            "Description for a cloud environment without a repository",
+        }}
+      />
+    );
+  return (
+    <SetAccountVoiceAndInvalidateCatalog
+      {...{
+        actions: nimbus,
+        ariaLabel: opal,
+        description: plume,
+        label: environment.label,
+        onClick: onSelect,
+      }}
+    />
+  );
 }
 var tide,
   unity,
@@ -500,7 +693,7 @@ var tide,
 export function CloudEnvironmentsSettingsPage() {
   let upland = useLocation(),
     vista = useNavigate(),
-    wisp = fjord => {
+    wisp = (fjord) => {
       vista(fjord);
     };
   let yonder = wisp,
@@ -512,38 +705,58 @@ export function CloudEnvironmentsSettingsPage() {
     eddy = crag != null && anvil.length === 1;
   if (anvil.length === 0) {
     let glen;
-    return <CloudEnvironmentsSettingsPageHelper49 {...{
-      onCreateEnvironment: () => yonder(`${$}/new`),
-      onEditEnvironment: hearth => yonder(`${$}/${hearth}/edit`),
-      onSelectEnvironment: inlet => yonder(`${$}/${inlet}`)
-    }} />;
+    return (
+      <CloudEnvironmentsSettingsPageHelper49
+        {...{
+          onCreateEnvironment: () => yonder(`${$}/new`),
+          onEditEnvironment: (hearth) => yonder(`${$}/${hearth}/edit`),
+          onSelectEnvironment: (inlet) => yonder(`${$}/${inlet}`),
+        }}
+      />
+    );
   }
   if (beacon) {
-    let jetty = <CloudEnvironmentsSettingsPageHelper55 {...{
-      current: pine,
-      onRootClick: () => yonder($)
-    }} />;
-    let knob = <CloudEnvironmentsSettingsPageHelper45 {...{
-      environment: null,
-      onCancel: () => yonder($),
-      onSaved: mire => yonder(`${$}/${mire}`)
-    }} />;
+    let jetty = (
+      <CloudEnvironmentsSettingsPageHelper55
+        {...{
+          current: pine,
+          onRootClick: () => yonder($),
+        }}
+      />
+    );
+    let knob = (
+      <CloudEnvironmentsSettingsPageHelper45
+        {...{
+          environment: null,
+          onCancel: () => yonder($),
+          onSaved: (mire) => yonder(`${$}/${mire}`),
+        }}
+      />
+    );
     let ledge;
-    return <OpenInBrowser {...{
-      backSlot: jetty,
-      title: pine,
-      children: knob
-    }} />;
+    return (
+      <OpenInBrowser
+        {...{
+          backSlot: jetty,
+          title: pine,
+          children: knob,
+        }}
+      />
+    );
   }
   if (crag != null && dome) {
     let nook = () => yonder(`${$}/${crag}`);
     let oxbow = () => yonder($);
     let pond;
-    return <CloudEnvironmentsSettingsPageHelper54 {...{
-      environmentId: crag,
-      onBack: nook,
-      onRootClick: oxbow
-    }} />;
+    return (
+      <CloudEnvironmentsSettingsPageHelper54
+        {...{
+          environmentId: crag,
+          onBack: nook,
+          onRootClick: oxbow,
+        }}
+      />
+    );
   }
   if (crag != null && eddy) {
     let quarry, rapids;
@@ -551,17 +764,25 @@ export function CloudEnvironmentsSettingsPage() {
     rapids = () => yonder($);
     let spur = () => yonder(`${$}/${crag}/edit`);
     let tor;
-    return <CloudEnvironmentsSettingsPageHelper53 {...{
-      environmentId: crag,
-      onBack: quarry,
-      onDeleted: rapids,
-      onEdit: spur
-    }} />;
+    return (
+      <CloudEnvironmentsSettingsPageHelper53
+        {...{
+          environmentId: crag,
+          onBack: quarry,
+          onDeleted: rapids,
+          onEdit: spur,
+        }}
+      />
+    );
   }
-  return <Navigate {...{
-    to: $,
-    replace: true
-  }} />;
+  return (
+    <Navigate
+      {...{
+        to: $,
+        replace: true,
+      }}
+    />
+  );
 }
 function apex(updraft) {
   return updraft !== "";

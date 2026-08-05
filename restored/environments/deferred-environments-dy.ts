@@ -9,7 +9,9 @@ export type DeferredEnvironmentsDYPeers = {
 let peers: DeferredEnvironmentsDYPeers | null = null;
 
 /** Wire deferredEnvironmentsDY peers once companions land. */
-export function setDeferredEnvironmentsDYPeers(next: DeferredEnvironmentsDYPeers): void {
+export function setDeferredEnvironmentsDYPeers(
+  next: DeferredEnvironmentsDYPeers,
+): void {
   peers = next;
 }
 

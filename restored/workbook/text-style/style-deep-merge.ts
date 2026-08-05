@@ -56,6 +56,9 @@ export function mergeStyleLayers(
     (deepCloneStyleValue(primary) as Record<string, unknown> | null) ?? {},
   );
   for (const layer of layers)
-    deepMergeFillGaps(result, layer as Record<string, unknown> | null | undefined);
+    deepMergeFillGaps(
+      result,
+      layer as Record<string, unknown> | null | undefined,
+    );
   return result;
 }

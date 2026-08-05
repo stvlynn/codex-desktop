@@ -9,7 +9,9 @@ export type PluginShortDescriptionSource = {
 };
 
 /** Prefer `interface.shortDescription`, then snake/camel short fields, then `description`. */
-export function getPluginShortDescription(plugin: PluginShortDescriptionSource): string | null | undefined {
+export function getPluginShortDescription(
+  plugin: PluginShortDescriptionSource,
+): string | null | undefined {
   const fromInterface = plugin.interface?.shortDescription;
   if (fromInterface != null && fromInterface.trim().length > 0) {
     return fromInterface;

@@ -15,7 +15,9 @@ export type UseGitRepoLiveQueryPeers = {
 let peers: UseGitRepoLiveQueryPeers | null = null;
 
 /** Wire useGitRepoLiveQuery peers once companions land. */
-export function setUseGitRepoLiveQueryPeers(next: UseGitRepoLiveQueryPeers): void {
+export function setUseGitRepoLiveQueryPeers(
+  next: UseGitRepoLiveQueryPeers,
+): void {
   peers = next;
 }
 
@@ -32,7 +34,14 @@ export type GitRepoLiveQueryOptions = {
 /**
  * Bundle export `N3` / internal `t6n`.
  */
-export function useGitRepoLiveQuery(e: unknown, t: unknown, n: unknown, r: unknown, i: unknown, a: unknown) {
+export function useGitRepoLiveQuery(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+  r: unknown,
+  i: unknown,
+  a: unknown,
+) {
   if (peers == null) {
     throw new Error("useGitRepoLiveQuery peers are not configured");
   }

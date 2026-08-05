@@ -15,7 +15,9 @@ export type BindDeferredProjectsM5Peers = {
 let peers: BindDeferredProjectsM5Peers | null = null;
 
 /** Wire bindDeferredProjectsM5 peers once companions land. */
-export function setBindDeferredProjectsM5Peers(next: BindDeferredProjectsM5Peers): void {
+export function setBindDeferredProjectsM5Peers(
+  next: BindDeferredProjectsM5Peers,
+): void {
   peers = next;
 }
 

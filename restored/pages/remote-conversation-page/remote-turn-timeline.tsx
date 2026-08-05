@@ -193,7 +193,10 @@ export function RemoteTurnTimeline({
                     reportEntityType="task"
                     modelProvider={null}
                   >
-                    <span className="sr-only" data-event-count={merged.length} />
+                    <span
+                      className="sr-only"
+                      data-event-count={merged.length}
+                    />
                   </LiveAssistantTurn>
                 );
               }

@@ -30,10 +30,16 @@ export function deferredTO() {
   }
 
   return peers.e(() => {
-    Szo = peers.c(), peers.sd(), peers.hzo(), Czo = peers.J(), wzo = {
-      sm: `h-3`,
-      md: `h-3.5`,
-      lg: `h-4`
-    }, Tzo = 120, Ezo = 2147483647;
+    ((Szo = peers.c()),
+      peers.sd(),
+      peers.hzo(),
+      (Czo = peers.J()),
+      (wzo = {
+        sm: `h-3`,
+        md: `h-3.5`,
+        lg: `h-4`,
+      }),
+      (Tzo = 120),
+      (Ezo = 2147483647));
   });
 }

@@ -15,7 +15,9 @@ export type BindDataLocalConversationItemTargetIdsPeers = {
 let peers: BindDataLocalConversationItemTargetIdsPeers | null = null;
 
 /** Wire bindDataLocalConversationItemTargetIds peers once companions land. */
-export function setBindDataLocalConversationItemTargetIdsPeers(next: BindDataLocalConversationItemTargetIdsPeers): void {
+export function setBindDataLocalConversationItemTargetIdsPeers(
+  next: BindDataLocalConversationItemTargetIdsPeers,
+): void {
   peers = next;
 }
 
@@ -24,10 +26,16 @@ export function setBindDataLocalConversationItemTargetIdsPeers(next: BindDataLoc
  */
 export function bindDataLocalConversationItemTargetIds() {
   if (peers == null) {
-    throw new Error("bindDataLocalConversationItemTargetIds peers are not configured");
+    throw new Error(
+      "bindDataLocalConversationItemTargetIds peers are not configured",
+    );
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.gT(), o1s = `data-local-conversation-item-target-ids`, s1s = 1e3, c1s = peers.Da(peers.hT, e => null);
+    (peers.Ho(),
+      peers.gT(),
+      (o1s = `data-local-conversation-item-target-ids`),
+      (s1s = 1e3),
+      (c1s = peers.Da(peers.hT, (e) => null)));
   });
 }

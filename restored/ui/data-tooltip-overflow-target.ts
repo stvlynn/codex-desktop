@@ -12,7 +12,9 @@ export type DataTooltipOverflowTargetPeers = {
 let peers: DataTooltipOverflowTargetPeers | null = null;
 
 /** Wire dataTooltipOverflowTarget peers once companions land. */
-export function setDataTooltipOverflowTargetPeers(next: DataTooltipOverflowTargetPeers): void {
+export function setDataTooltipOverflowTargetPeers(
+  next: DataTooltipOverflowTargetPeers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,6 @@ export function dataTooltipOverflowTarget() {
   }
 
   return peers.e(() => {
-    vKo = peers.c(), peers.Ho(), peers.XHo();
+    ((vKo = peers.c()), peers.Ho(), peers.XHo());
   });
 }

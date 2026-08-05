@@ -16,27 +16,34 @@ const messages: Record<string, string> = {
   "widgets.baseCarousel.previousItems": "Item karusel sebelumnya",
   "widgets.cardCarousel.goToArticle": "Pergi ke artikel",
   "widgets.cardCarousel.nextCards": "Kad seterusnya",
-  "widgets.cardCarousel.nextCardsInCarousel": "Kad seterusnya dalam {carouselLabel}",
+  "widgets.cardCarousel.nextCardsInCarousel":
+    "Kad seterusnya dalam {carouselLabel}",
   "widgets.cardCarousel.previousCards": "Kad sebelumnya",
-  "widgets.cardCarousel.previousCardsInCarousel": "Kad sebelumnya dalam {carouselLabel}",
+  "widgets.cardCarousel.previousCardsInCarousel":
+    "Kad sebelumnya dalam {carouselLabel}",
   "widgets.debug.hideCurrentState": "Sembunyikan keadaan semasa",
   "widgets.debug.nextState": "Keadaan seterusnya",
   "widgets.debug.previousState": "Keadaan sebelumnya",
   "widgets.debug.selectedState": "Keadaan dipilih",
   "widgets.debug.showCurrentState": "Tunjukkan keadaan semasa",
   "widgets.debug.state": "Status",
-  "widgets.debug.unableToSerializeSelectedState": "Tidak dapat menserialkan keadaan yang dipilih.",
+  "widgets.debug.unableToSerializeSelectedState":
+    "Tidak dapat menserialkan keadaan yang dipilih.",
   "widgets.hermes.artifact.viewMore": "Lihat {count} lagi",
   "widgets.hermes.calendarEvent.moreAttendees": "+{count} lagi",
   "widgets.hermes.calendarEvent.singleTime": "{date} pada {time}",
-  "widgets.hermes.calendarEvent.timeRange": "{date} pada {startTime} - {endTime}",
-  "widgets.hermes.elicitation.connectorAuth.title": "{agentName} perlukan akses untuk teruskan",
-  "widgets.hermes.elicitation.toolApproval.title": "{agentName} perlukan kebenaran anda untuk teruskan",
+  "widgets.hermes.calendarEvent.timeRange":
+    "{date} pada {startTime} - {endTime}",
+  "widgets.hermes.elicitation.connectorAuth.title":
+    "{agentName} perlukan akses untuk teruskan",
+  "widgets.hermes.elicitation.toolApproval.title":
+    "{agentName} perlukan kebenaran anda untuk teruskan",
   "widgets.hermes.genericResponse.viewFullscreen": "Lihat skrin penuh",
   "widgets.hermes.genericTool.details": "Butiran",
   "widgets.hermes.genericTool.read": "Baca",
   "widgets.hermes.genericTool.request": "Permintaan",
-  "widgets.hermes.genericTool.runToolDescription": "{agentName} mahu menggunakan {connectorName} untuk menjalankan {toolName}.",
+  "widgets.hermes.genericTool.runToolDescription":
+    "{agentName} mahu menggunakan {connectorName} untuk menjalankan {toolName}.",
   "widgets.hermes.genericTool.viewFullscreen": "Lihat skrin penuh",
   "widgets.hermes.genericTool.write": "Tulis",
   "widgets.hermes.googleCalendarCreate.create": "Cipta",
@@ -49,7 +56,8 @@ const messages: Record<string, string> = {
   "widgets.hermes.permission.moreInformation": "Maklumat lanjut",
   "widgets.hermes.permission.notNow": "Bukan sekarang",
   "widgets.hermes.permission.reconnect": "Sambung semula",
-  "widgets.hermes.permission.reconnectToConnector": "Sambung semula ke {connectorName}",
+  "widgets.hermes.permission.reconnectToConnector":
+    "Sambung semula ke {connectorName}",
   "widgets.hermes.sendEmail.approveAction": "Luluskan tindakan",
   "widgets.hermes.sendEmail.bcc": "Skt",
   "widgets.hermes.sendEmail.cc": "Sk",
@@ -62,79 +70,142 @@ const messages: Record<string, string> = {
   "widgets.hermes.taskSources.showLess": "Tunjuk kurang",
   "widgets.hermes.taskStatus.canceled": "Tugas dibatalkan",
   "widgets.hermes.taskStatus.canceling": "Membatalkan",
-  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages": "Menyemak mesej terdahulu",
-  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages": "Menyemak mesej terdahulu",
-  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages": "Menyemak mesej terdahulu",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages": "Menyemak mesej terdahulu",
-  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages": "Menyemak mesej terdahulu",
-  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages": "Menyemak mesej terdahulu",
-  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages": "Menyemak mesej terdahulu",
-  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages": "Menyemak semula mesej terdahulu",
-  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages": "Mengimbas mesej terdahulu",
-  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages": "Meneliti mesej terdahulu",
-  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages": "Meneliti mesej terdahulu",
-  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext": "Menyemak konteks",
-  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext": "Meneliti konteks",
-  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext": "Memeriksa konteks",
-  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext": "Membaca konteks",
-  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext": "Menyemak konteks",
-  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext": "Menyemak semula konteks",
-  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext": "Mengimbas konteks",
-  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext": "Meneliti konteks",
-  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent": "Mengaktifkan ejen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent": "Memulakan ejen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline": "Mengaktifkan ejen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent": "Memanggil ejen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent": "Menyambung ke ejen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection": "Mewujudkan sambungan ke agen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed": "Membangunkan ejen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent": "Menyediakan ejen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake": "Membangunkan ejen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent": "Memulakan ejen",
-  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent": "Memanggil ejen",
-  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer": "Mengaktifkan komputer",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer": "Memulakan komputer",
-  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline": "Menyambungkan komputer",
-  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer": "Memulakan komputer",
-  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer": "Menghidupkan komputer",
-  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer": "Menghidupkan komputer",
-  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer": "Memulakan komputer",
-  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer": "Membangunkan komputer",
-  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse": "Merancang haluan",
-  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan": "Merangka rancangan",
+  "widgets.hermes.waitState.followUpMessagesInitialA.checkingPastMessages":
+    "Menyemak mesej terdahulu",
+  "widgets.hermes.waitState.followUpMessagesInitialA.diggingThroughPastMessages":
+    "Menyemak mesej terdahulu",
+  "widgets.hermes.waitState.followUpMessagesInitialA.goingThroughPastMessages":
+    "Menyemak mesej terdahulu",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingOverPastMessages":
+    "Menyemak mesej terdahulu",
+  "widgets.hermes.waitState.followUpMessagesInitialA.lookingThroughPastMessages":
+    "Menyemak mesej terdahulu",
+  "widgets.hermes.waitState.followUpMessagesInitialA.readingThroughPastMessages":
+    "Menyemak mesej terdahulu",
+  "widgets.hermes.waitState.followUpMessagesInitialA.reviewingPastMessages":
+    "Menyemak mesej terdahulu",
+  "widgets.hermes.waitState.followUpMessagesInitialA.revisitingPastMessages":
+    "Menyemak semula mesej terdahulu",
+  "widgets.hermes.waitState.followUpMessagesInitialA.scanningPastMessages":
+    "Mengimbas mesej terdahulu",
+  "widgets.hermes.waitState.followUpMessagesInitialA.siftingThroughPastMessages":
+    "Meneliti mesej terdahulu",
+  "widgets.hermes.waitState.followUpMessagesInitialA.sortingThroughPastMessages":
+    "Meneliti mesej terdahulu",
+  "widgets.hermes.waitState.followUpMessagesInitialB.checkingContext":
+    "Menyemak konteks",
+  "widgets.hermes.waitState.followUpMessagesInitialB.goingThroughContext":
+    "Meneliti konteks",
+  "widgets.hermes.waitState.followUpMessagesInitialB.inspectingContext":
+    "Memeriksa konteks",
+  "widgets.hermes.waitState.followUpMessagesInitialB.readingContext":
+    "Membaca konteks",
+  "widgets.hermes.waitState.followUpMessagesInitialB.reviewingContext":
+    "Menyemak konteks",
+  "widgets.hermes.waitState.followUpMessagesInitialB.revisitingContext":
+    "Menyemak semula konteks",
+  "widgets.hermes.waitState.followUpMessagesInitialB.scanningContext":
+    "Mengimbas konteks",
+  "widgets.hermes.waitState.followUpMessagesInitialB.sortingThroughContext":
+    "Meneliti konteks",
+  "widgets.hermes.waitState.loadingMessagesInitialA.activatingAgent":
+    "Mengaktifkan ejen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bootingUpAgent":
+    "Memulakan ejen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.bringingAgentOnline":
+    "Mengaktifkan ejen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.callingForthAgent":
+    "Memanggil ejen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.connectingToAgent":
+    "Menyambung ke ejen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.establishingAgentConnection":
+    "Mewujudkan sambungan ke agen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.gettingAgentOutOfBed":
+    "Membangunkan ejen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.initializingAgent":
+    "Menyediakan ejen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.nudgingAgentAwake":
+    "Membangunkan ejen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.spinningUpAgent":
+    "Memulakan ejen",
+  "widgets.hermes.waitState.loadingMessagesInitialA.summoningAgent":
+    "Memanggil ejen",
+  "widgets.hermes.waitState.loadingMessagesInitialB.activatingComputer":
+    "Mengaktifkan komputer",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bootingUpComputer":
+    "Memulakan komputer",
+  "widgets.hermes.waitState.loadingMessagesInitialB.bringingComputerOnline":
+    "Menyambungkan komputer",
+  "widgets.hermes.waitState.loadingMessagesInitialB.initializingComputer":
+    "Memulakan komputer",
+  "widgets.hermes.waitState.loadingMessagesInitialB.poweringUpComputer":
+    "Menghidupkan komputer",
+  "widgets.hermes.waitState.loadingMessagesInitialB.spinningUpComputer":
+    "Menghidupkan komputer",
+  "widgets.hermes.waitState.loadingMessagesInitialB.startingComputer":
+    "Memulakan komputer",
+  "widgets.hermes.waitState.loadingMessagesInitialB.wakingUpComputer":
+    "Membangunkan komputer",
+  "widgets.hermes.waitState.midLoadingMessagesB.chartingCourse":
+    "Merancang haluan",
+  "widgets.hermes.waitState.midLoadingMessagesB.layingOutAPlan":
+    "Merangka rancangan",
   "widgets.hermes.waitState.midLoadingMessagesB.makingAPlan": "Merancang",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut": "Merancang langkah",
-  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain": "Merancang langkah",
-  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves": "Menyusun langkah seterusnya",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOut":
+    "Merancang langkah",
+  "widgets.hermes.waitState.midLoadingMessagesB.mappingThingsOutAgain":
+    "Merancang langkah",
+  "widgets.hermes.waitState.midLoadingMessagesB.organizingNextMoves":
+    "Menyusun langkah seterusnya",
   "widgets.hermes.waitState.midLoadingMessagesB.plotting": "Merancang",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection": "Menentukan haluan",
-  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain": "Menentukan hala tuju",
-  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan": "Merangka pelan tindakan",
-  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches": "Menimbang pendekatan",
-  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach": "Merangka pendekatan",
-  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails": "Mengumpulkan butiran",
-  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails": "Mengumpul butiran",
-  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails": "Mengisi butiran",
-  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails": "Mengumpul butiran",
-  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails": "Mengumpul butiran",
-  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails": "Mengumpulkan butiran",
-  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails": "Mengumpul butiran",
-  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails": "Menyusun butiran",
-  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails": "Meneliti butiran",
-  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails": "Mencari butiran",
-  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual": "Ini mengambil masa lebih lama daripada biasa",
-  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater": "Masih diproses",
-  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater": "Sila semak semula sebentar lagi",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirection":
+    "Menentukan haluan",
+  "widgets.hermes.waitState.midLoadingMessagesB.settingDirectionAgain":
+    "Menentukan hala tuju",
+  "widgets.hermes.waitState.midLoadingMessagesB.sketchingGamePlan":
+    "Merangka pelan tindakan",
+  "widgets.hermes.waitState.midLoadingMessagesB.thinkingThroughApproaches":
+    "Menimbang pendekatan",
+  "widgets.hermes.waitState.midLoadingMessagesB.workingOutApproach":
+    "Merangka pendekatan",
+  "widgets.hermes.waitState.midLoadingMessagsA.assemblingDetails":
+    "Mengumpulkan butiran",
+  "widgets.hermes.waitState.midLoadingMessagsA.collectingDetails":
+    "Mengumpul butiran",
+  "widgets.hermes.waitState.midLoadingMessagsA.fillingInDetails":
+    "Mengisi butiran",
+  "widgets.hermes.waitState.midLoadingMessagsA.gatheringDetails":
+    "Mengumpul butiran",
+  "widgets.hermes.waitState.midLoadingMessagsA.piecingTogetherDetails":
+    "Mengumpul butiran",
+  "widgets.hermes.waitState.midLoadingMessagsA.pullingTogetherDetails":
+    "Mengumpulkan butiran",
+  "widgets.hermes.waitState.midLoadingMessagsA.roundingUpDetails":
+    "Mengumpul butiran",
+  "widgets.hermes.waitState.midLoadingMessagsA.sortingOutDetails":
+    "Menyusun butiran",
+  "widgets.hermes.waitState.midLoadingMessagsA.takingStockOfDetails":
+    "Meneliti butiran",
+  "widgets.hermes.waitState.midLoadingMessagsA.trackingDownDetails":
+    "Mencari butiran",
+  "widgets.hermes.waitState.outlierMessagesA.takingLongerThanUsual":
+    "Ini mengambil masa lebih lama daripada biasa",
+  "widgets.hermes.waitState.outlierMessagesB.closeThisTabAndComeBackLater":
+    "Masih diproses",
+  "widgets.hermes.waitState.outlierMessagesB.feelFreeToLeaveAndComeBackLater":
+    "Sila semak semula sebentar lagi",
   "widgets.hermes.workflow.canceled": "Tugas dibatalkan",
   "widgets.hermes.workflow.canceledItemLabel": "Dibatalkan",
   "widgets.hermes.workflow.codeBlock.hideLines": "Sembunyikan baris",
-  "widgets.hermes.workflow.codeBlock.showAllLines": "Lihat semua {lineCount} baris",
+  "widgets.hermes.workflow.codeBlock.showAllLines":
+    "Lihat semua {lineCount} baris",
   "widgets.hermes.workflow.customWorked": "Berjalan seketika",
   "widgets.hermes.workflow.customWorking": "Sedang berjalan",
   "widgets.hermes.workflow.fileWorked": "Dokumen diimbas",
   "widgets.hermes.workflow.fileWorking": "Mengimbas dokumen",
   "widgets.hermes.workflow.group.readingConnector": "Membaca {connectorName}",
-  "widgets.hermes.workflow.group.writingConnector": "Menulis ke {connectorName}",
+  "widgets.hermes.workflow.group.writingConnector":
+    "Menulis ke {connectorName}",
   "widgets.hermes.workflow.imageWorked": "Imej dianalisis",
   "widgets.hermes.workflow.imageWorking": "Menganalisis imej",
   "widgets.hermes.workflow.preparingResponse": "Sedang sediakan respons",
@@ -148,7 +219,7 @@ const messages: Record<string, string> = {
   "widgets.listView.showLess": "Tunjukkan kurang",
   "widgets.listView.showMore": "Tunjukkan {count} lagi",
   "widgets.radioGroup.options": "pilihan",
-  "widgets.segmentedControl.selectAnOption": "Pilih satu pilihan"
+  "widgets.segmentedControl.selectAnOption": "Pilih satu pilihan",
 };
 
 export default messages;

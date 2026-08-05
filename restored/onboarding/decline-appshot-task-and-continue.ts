@@ -9,7 +9,9 @@ export type DeclineAppshotTaskAndContinuePeers = {
 let peers: DeclineAppshotTaskAndContinuePeers | null = null;
 
 /** Wire declineAppshotTaskAndContinue peers once companions land. */
-export function setDeclineAppshotTaskAndContinuePeers(next: DeclineAppshotTaskAndContinuePeers): void {
+export function setDeclineAppshotTaskAndContinuePeers(
+  next: DeclineAppshotTaskAndContinuePeers,
+): void {
   peers = next;
 }
 
@@ -24,9 +26,10 @@ export function declineAppshotTaskAndContinue(e: unknown, t: unknown) {
   let n = peers.k2(e);
   e.set(peers.A2, {
     ...n,
-    declinedTasks: t == null ? n.declinedTasks : [...(n.declinedTasks ?? []), t],
+    declinedTasks:
+      t == null ? n.declinedTasks : [...(n.declinedTasks ?? []), t],
     phase: `task`,
     selectedTask: null,
-    permissionStatus: `not-requested`
+    permissionStatus: `not-requested`,
   });
 }

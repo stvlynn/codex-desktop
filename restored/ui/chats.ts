@@ -48,6 +48,28 @@ export function bindChats() {
   }
 
   return peers.e(() => {
-    DWl = peers.c(), peers.Qt(), peers.Ho(), x5 = peers.r(peers.o(), 1), peers.$u(), peers.eA(), peers.cA(), peers.ih(), peers.hU(), peers.ed(), peers.Uf(), peers.W8i(), peers._Ul(), peers.NV(), peers.J6o(), peers.fja(), peers.MUl(), peers.FUl(), peers.xWl(), OWl = peers.J(), kWl = 100, AWl = 50, jWl = 8e3;
+    ((DWl = peers.c()),
+      peers.Qt(),
+      peers.Ho(),
+      (x5 = peers.r(peers.o(), 1)),
+      peers.$u(),
+      peers.eA(),
+      peers.cA(),
+      peers.ih(),
+      peers.hU(),
+      peers.ed(),
+      peers.Uf(),
+      peers.W8i(),
+      peers._Ul(),
+      peers.NV(),
+      peers.J6o(),
+      peers.fja(),
+      peers.MUl(),
+      peers.FUl(),
+      peers.xWl(),
+      (OWl = peers.J()),
+      (kWl = 100),
+      (AWl = 50),
+      (jWl = 8e3));
   });
 }

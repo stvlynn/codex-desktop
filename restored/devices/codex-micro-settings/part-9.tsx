@@ -17,12 +17,26 @@ import { CodexBrowserSurfaceActionType } from "../../analytics/codex-browser-sur
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
-import { siteAnalyticsEventsPath, siteAnalyticsPath } from "../../appgen/site-analytics-paths";
+import {
+  siteAnalyticsEventsPath,
+  siteAnalyticsPath,
+} from "../../appgen/site-analytics-paths";
 import { ARTIFACT_GENERATION_STAGE_IDS } from "../../artifacts/artifact-generation-ids";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_Hlt_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
 import { ensureConversationPageEsm_Act_Init } from "../../conversation/conversation-page-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { BrowserWebviewPanel } from "../../browser/browser-webview-panel";
 import { chatgpt2 as Chatgpt2 } from "../../browser/chatgpt2";
 import { composerConnectorauthReconnectMessages } from "../../composer/composer-connectorauth-reconnect-messages";
@@ -31,8 +45,15 @@ import { getPluginShortDescription } from "../../composer/get-plugin-short-descr
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
 import { collaborationModeFromTurnOrParams } from "../../conversation/collaboration-mode-fields";
 import { recentConversationsMetaQueryKey } from "../../conversation/recent-conversations-meta-query-key";
-import { ensureCodexMicroAnalogActionTitleInit, getAnalogActionTitle } from "../../desktop/codex-micro-analog-action-title";
-import { ensureCodexMicroWebviewCommandsInit, findCodexMicroWebviewCommand, getCodexMicroWebviewCommands } from "../../desktop/codex-micro-webview-commands";
+import {
+  ensureCodexMicroAnalogActionTitleInit,
+  getAnalogActionTitle,
+} from "../../desktop/codex-micro-analog-action-title";
+import {
+  ensureCodexMicroWebviewCommandsInit,
+  findCodexMicroWebviewCommand,
+  getCodexMicroWebviewCommands,
+} from "../../desktop/codex-micro-webview-commands";
 import { appServices } from "../../desktop/desktop-services";
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { DiffLinesStatsBadge } from "../../diff/diff-lines-stats-badge";
@@ -41,7 +62,10 @@ import { ensureDebugPanelTurnFilesInit } from "../../hooks/debug-panel-turn-file
 import { usePointerSurfaceInteractionGate as UsePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { useQuery } from "../../hooks/use-query";
 import { LOCAL_HOST_ID } from "../../hosts/local-host-id";
-import { ensureRemoteConnectionsFeatureInit, getEnabledRemoteConnectionState } from "../../hosts/remote-connections-feature";
+import {
+  ensureRemoteConnectionsFeatureInit,
+  getEnabledRemoteConnectionState,
+} from "../../hosts/remote-connections-feature";
 import { useHostPlatformModifierSymbol } from "../../hotkeys/use-host-platform-modifier-symbol";
 import { MemoizedFormattedMessage } from "../../i18n/memoized-formatted-message";
 import { ensureIntlFormattersInit, useIntl } from "../../i18n/use-intl";
@@ -73,37 +97,75 @@ import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { deferredVM } from "../../ui/deferred-vm";
 import { deferredZft as DeferredZft } from "../../ui/deferred-zft";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { macOS4 } from "../../ui/mac-os4";
 import { MenuBorderSeparator } from "../../ui/menu-border-separator";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { remote } from "../../ui/remote";
-import { ensureSelectableListRowActivationInit, ensureSelectableListRowInit as EnsureSelectableListRowInit } from "../../ui/selectable-list-row";
+import {
+  ensureSelectableListRowActivationInit,
+  ensureSelectableListRowInit as EnsureSelectableListRowInit,
+} from "../../ui/selectable-list-row";
 import { sortable } from "../../ui/sortable";
 import { VerticalScrollFadeMask } from "../../ui/vertical-scroll-fade-mask";
 import { findByModel as FindByModel } from "../../utils/find-by-model";
 import { identity } from "../../utils/identity";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { thinCallWithUndefined } from "../../utils/thin-call-with-undefined";
-import { ensureKeyboardShortcutsGtInit as EnsureKeyboardShortcutsGtInit, ensureKeyboardShortcutsHMInit, ensurePersonalizationCInit as EnsurePersonalizationCInit } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensureKeyboardShortcutsGtInit as EnsureKeyboardShortcutsGtInit,
+  ensureKeyboardShortcutsHMInit,
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { pendingWorktreeConversationStartApi } from "../../worktree/pending-worktree-conversation-start-api";
-import { CodexMicroKeyboardSurface, codexMicroKeyboardSurfaceFlags, CodexMicroKeyboardSurfaceLabel, CodexMicroKeyboardSurfaceOverlay, CodexMicroKeyboardSurfacePanel, codexMicroKeyboardSurfaceState, CodexMicroKeyboardSurfaceTile, ensureCodexMicroKeyboardSurfaceAtomsInit, ensureCodexMicroKeyboardSurfaceHelpersInit, ensureCodexMicroKeyboardSurfaceInit, ensureCodexMicroKeyboardSurfaceUiInit, renderCodexMicroKeyboardSurface as RenderCodexMicroKeyboardSurface, useCodexMicroKeyboardSurface as UseCodexMicroKeyboardSurface } from "../codex-micro-keyboard-surface";
-import { ensureCodexMicroLayoutInit, parseStreamDeckLayout } from "../codex-micro-layout";
-import { codexMicroSlotSignalC, codexMicroSlotSignalF, codexMicroSlotSignalO, codexMicroSlotSignalR, codexMicroSlotSignalU, ensureCodexMicroSlotSignalsInit } from "../codex-micro-slot-signals";
+import {
+  CodexMicroKeyboardSurface,
+  codexMicroKeyboardSurfaceFlags,
+  CodexMicroKeyboardSurfaceLabel,
+  CodexMicroKeyboardSurfaceOverlay,
+  CodexMicroKeyboardSurfacePanel,
+  codexMicroKeyboardSurfaceState,
+  CodexMicroKeyboardSurfaceTile,
+  ensureCodexMicroKeyboardSurfaceAtomsInit,
+  ensureCodexMicroKeyboardSurfaceHelpersInit,
+  ensureCodexMicroKeyboardSurfaceInit,
+  ensureCodexMicroKeyboardSurfaceUiInit,
+  renderCodexMicroKeyboardSurface as RenderCodexMicroKeyboardSurface,
+  useCodexMicroKeyboardSurface as UseCodexMicroKeyboardSurface,
+} from "../codex-micro-keyboard-surface";
+import {
+  ensureCodexMicroLayoutInit,
+  parseStreamDeckLayout,
+} from "../codex-micro-layout";
+import {
+  codexMicroSlotSignalC,
+  codexMicroSlotSignalF,
+  codexMicroSlotSignalO,
+  codexMicroSlotSignalR,
+  codexMicroSlotSignalU,
+  ensureCodexMicroSlotSignalsInit,
+} from "../codex-micro-slot-signals";
 
 // Wave5d soft JSX companions.
-function Alpha(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Alpha(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function Bravo(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function Bravo(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -206,195 +268,321 @@ function brook(rain) {
       onEditSlot,
       onSetAnalogAction,
       onSelectAnalogDirection,
-      onSetAnalogEditorOpen
+      onSetAnalogEditorOpen,
     } = rain,
     seed = useIntl(),
     [trail, urn, vine, wind, yarrow, azure] = quiet,
-    birch = <CodexMicroSettingsHelper31 {...{
-      deviceName,
-      mode: layout.encoderMode,
-      pulse: previewState.knobPulse
-    }} />;
-  let canyon = ARTIFACT_GENERATION_STAGE_IDS.map((item, index) => <>
-        {index === 2 ? <CodexMicroSettingsHelper3 {...{
-      commands,
-      joystick: previewState.joystick,
-      mapping: layout.analogStick,
-      selectedDirection: previewState.selectedAnalogDirection,
-      skills,
-      onActionChange: onSetAnalogAction,
-      onDirectionSelect: onSelectAnalogDirection,
-      onEditorOpenChange: onSetAnalogEditorOpen
-    }} /> : null}
-        {<CodexMicroKeyboardSurfaceOverlay {...{
-      assignmentTitle: dusk(customAgentAssignments?.[item], skills, seed),
-      keycap: cliff(customAgentAssignments?.[item]),
-      position: index + 1,
-      isPressed: previewState.pressedKeys.includes(item),
-      slot: agentSlots[index],
-      onClick: onEditAgentKey == null ? undefined : () => onEditAgentKey(item)
-    }} />}
-      </>);
+    birch = (
+      <CodexMicroSettingsHelper31
+        {...{
+          deviceName,
+          mode: layout.encoderMode,
+          pulse: previewState.knobPulse,
+        }}
+      />
+    );
+  let canyon = ARTIFACT_GENERATION_STAGE_IDS.map((item, index) => (
+    <>
+      {index === 2 ? (
+        <CodexMicroSettingsHelper3
+          {...{
+            commands,
+            joystick: previewState.joystick,
+            mapping: layout.analogStick,
+            selectedDirection: previewState.selectedAnalogDirection,
+            skills,
+            onActionChange: onSetAnalogAction,
+            onDirectionSelect: onSelectAnalogDirection,
+            onEditorOpenChange: onSetAnalogEditorOpen,
+          }}
+        />
+      ) : null}
+      {
+        <CodexMicroKeyboardSurfaceOverlay
+          {...{
+            assignmentTitle: dusk(customAgentAssignments?.[item], skills, seed),
+            keycap: cliff(customAgentAssignments?.[item]),
+            position: index + 1,
+            isPressed: previewState.pressedKeys.includes(item),
+            slot: agentSlots[index],
+            onClick:
+              onEditAgentKey == null ? undefined : () => onEditAgentKey(item),
+          }}
+        />
+      }
+    </>
+  ));
   let dew = layout.slots[trail.slotId],
     ever = trail.slotId,
     field = grove(previewState.pressedKeys, trail.keys);
-  let grain = <CodexMicroSettingsHelper32 {...{
-    slot: dew,
-    slotId: ever,
-    isPressed: field,
-    skills,
-    voiceButtonMode,
-    onEditSlot
-  }} />;
+  let grain = (
+    <CodexMicroSettingsHelper32
+      {...{
+        slot: dew,
+        slotId: ever,
+        isPressed: field,
+        skills,
+        voiceButtonMode,
+        onEditSlot,
+      }}
+    />
+  );
   let haven = layout.slots[urn.slotId],
     ink = urn.slotId,
     jadeite = grove(previewState.pressedKeys, urn.keys);
-  let kernel = <CodexMicroSettingsHelper32 {...{
-    slot: haven,
-    slotId: ink,
-    isPressed: jadeite,
-    skills,
-    voiceButtonMode,
-    onEditSlot
-  }} />;
+  let kernel = (
+    <CodexMicroSettingsHelper32
+      {...{
+        slot: haven,
+        slotId: ink,
+        isPressed: jadeite,
+        skills,
+        voiceButtonMode,
+        onEditSlot,
+      }}
+    />
+  );
   let leaf = layout.slots[vine.slotId],
     maple = vine.slotId,
     nimbus = grove(previewState.pressedKeys, vine.keys);
-  let opal = <CodexMicroSettingsHelper32 {...{
-    slot: leaf,
-    slotId: maple,
-    isPressed: nimbus,
-    skills,
-    voiceButtonMode,
-    onEditSlot
-  }} />;
+  let opal = (
+    <CodexMicroSettingsHelper32
+      {...{
+        slot: leaf,
+        slotId: maple,
+        isPressed: nimbus,
+        skills,
+        voiceButtonMode,
+        onEditSlot,
+      }}
+    />
+  );
   let plume = layout.slots[wind.slotId],
     quillow = wind.slotId,
     root = grove(previewState.pressedKeys, wind.keys);
-  let silk = <CodexMicroSettingsHelper32 {...{
-    slot: plume,
-    slotId: quillow,
-    isPressed: root,
-    skills,
-    voiceButtonMode,
-    onEditSlot
-  }} />;
+  let silk = (
+    <CodexMicroSettingsHelper32
+      {...{
+        slot: plume,
+        slotId: quillow,
+        isPressed: root,
+        skills,
+        voiceButtonMode,
+        onEditSlot,
+      }}
+    />
+  );
   let thorn = <RenderCodexMicroKeyboardSurface {...{}} />;
   let upland = layout.slots[yarrow.slotId],
     vista = yarrow.slotId,
     wisp = grove(previewState.pressedKeys, yarrow.keys);
-  let yonder = <CodexMicroSettingsHelper32 {...{
-    slot: upland,
-    slotId: vista,
-    className: "col-span-2",
-    isPressed: wisp,
-    skills,
-    voiceButtonMode,
-    onEditSlot
-  }} />;
+  let yonder = (
+    <CodexMicroSettingsHelper32
+      {...{
+        slot: upland,
+        slotId: vista,
+        className: "col-span-2",
+        isPressed: wisp,
+        skills,
+        voiceButtonMode,
+        onEditSlot,
+      }}
+    />
+  );
   let zenith = layout.slots[azure.slotId],
     anvil = azure.slotId,
     beacon = grove(previewState.pressedKeys, azure.keys);
-  let crag = <CodexMicroSettingsHelper32 {...{
-    slot: zenith,
-    slotId: anvil,
-    isPressed: beacon,
-    skills,
-    voiceButtonMode,
-    onEditSlot
-  }} />;
-  return <div className="flex justify-center px-4 py-5">
-      {<UseCodexMicroKeyboardSurface {...{
-      children: [birch, canyon, grain, kernel, opal, silk, thorn, yonder, crag]
-    }} />}
-    </div>;
+  let crag = (
+    <CodexMicroSettingsHelper32
+      {...{
+        slot: zenith,
+        slotId: anvil,
+        isPressed: beacon,
+        skills,
+        voiceButtonMode,
+        onEditSlot,
+      }}
+    />
+  );
+  return (
+    <div className="flex justify-center px-4 py-5">
+      {
+        <UseCodexMicroKeyboardSurface
+          {...{
+            children: [
+              birch,
+              canyon,
+              grain,
+              kernel,
+              opal,
+              silk,
+              thorn,
+              yonder,
+              crag,
+            ],
+          }}
+        />
+      }
+    </div>
+  );
 }
 function cliff(dome) {
-  return dome != null && "type" in dome && dome.type === "keycap" ? codexMicroLayoutR(dome.keycapId) : undefined;
+  return dome != null && "type" in dome && dome.type === "keycap"
+    ? codexMicroLayoutR(dome.keycapId)
+    : undefined;
 }
 function dusk(eddy, fjord, glen) {
-  if (!(eddy == null || "threadKey" in eddy)) return eddy.type === "keycap" ? glen.formatMessage({
-    id: "settings.codexMicro.agentKeyPreview.keycap",
-    defaultMessage: "{keycapId} keycap",
-    description: "Title for a keycap assigned to a Codex Micro agent key"
-  }, {
-    keycapId: eddy.keycapId
-  }) : ensureCodexMicroAnalogActionTitleInit(eddy, fjord, glen);
+  if (!(eddy == null || "threadKey" in eddy))
+    return eddy.type === "keycap"
+      ? glen.formatMessage(
+          {
+            id: "settings.codexMicro.agentKeyPreview.keycap",
+            defaultMessage: "{keycapId} keycap",
+            description:
+              "Title for a keycap assigned to a Codex Micro agent key",
+          },
+          {
+            keycapId: eddy.keycapId,
+          },
+        )
+      : ensureCodexMicroAnalogActionTitleInit(eddy, fjord, glen);
 }
 function elm(hearth) {
-  let {
-      deviceName,
-      mode,
-      pulse
-    } = hearth,
+  let { deviceName, mode, pulse } = hearth,
     inlet = useIntl(),
     jetty = oak[mode],
-    knob = <span className="text-xs font-semibold text-token-text-primary">
-        {<MemoizedFormattedMessage {...{
-        id: "settings.codexMicro.keyboardLayout.knobTooltip.title",
-        defaultMessage: "Knob controls",
-        description: "Title for the tooltip describing Codex Micro encoder knob controls"
-      }} />}
-      </span>;
-  let ledge = <span className="text-xs text-token-text-secondary">
-      {<MemoizedFormattedMessage {...{
-      ...jetty.description
-    }} />}
-    </span>;
-  let mire = <dt className="font-medium whitespace-nowrap text-token-text-primary">
-      {<MemoizedFormattedMessage {...{
-      id: "settings.codexMicro.keyboardLayout.knobTooltip.turnRight",
-      defaultMessage: "Turn right",
-      description: "Label for turning the Codex Micro encoder knob clockwise"
-    }} />}
-    </dt>;
-  let nook = <dd className="text-token-text-secondary">
-      {<MemoizedFormattedMessage {...{
-      ...jetty.turnRightAction
-    }} />}
-    </dd>;
-  let oxbow = <dt className="font-medium whitespace-nowrap text-token-text-primary">
-      {<MemoizedFormattedMessage {...{
-      id: "settings.codexMicro.keyboardLayout.knobTooltip.turnLeft",
-      defaultMessage: "Turn left",
-      description: "Label for turning the Codex Micro encoder knob counterclockwise"
-    }} />}
-    </dt>;
-  let pond = <dd className="text-token-text-secondary">
-      {<MemoizedFormattedMessage {...{
-      ...jetty.turnLeftAction
-    }} />}
-    </dd>;
-  let quarry = <dt className="font-medium whitespace-nowrap text-token-text-primary">
-      {<MemoizedFormattedMessage {...{
-      id: "settings.codexMicro.keyboardLayout.knobTooltip.click",
-      defaultMessage: "Click",
-      description: "Label for clicking the Codex Micro encoder knob once"
-    }} />}
-    </dt>;
-  let rapids = <dd className="text-token-text-secondary">
-      {<MemoizedFormattedMessage {...{
-      ...jetty.clickAction
-    }} />}
-    </dd>;
-  let spur = <dt className="font-medium whitespace-nowrap text-token-text-primary">
-      {<MemoizedFormattedMessage {...{
-      id: "settings.codexMicro.keyboardLayout.knobTooltip.pressAndHold",
-      defaultMessage: "Press and hold",
-      description: "Label for pressing and holding the Codex Micro encoder knob"
-    }} />}
-    </dt>;
-  let tor = <dd className="text-token-text-secondary">
-      {<MemoizedFormattedMessage {...{
-      id: "settings.codexMicro.keyboardLayout.knobTooltip.pressAndHoldActionByDevice",
-      defaultMessage: "Open {deviceName} settings",
-      description: "Action performed when pressing and holding the Codex Micro or Creator Micro encoder knob",
-      values: {
-        deviceName
+    knob = (
+      <span className="text-xs font-semibold text-token-text-primary">
+        {
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.codexMicro.keyboardLayout.knobTooltip.title",
+              defaultMessage: "Knob controls",
+              description:
+                "Title for the tooltip describing Codex Micro encoder knob controls",
+            }}
+          />
+        }
+      </span>
+    );
+  let ledge = (
+    <span className="text-xs text-token-text-secondary">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            ...jetty.description,
+          }}
+        />
       }
-    }} />}
-    </dd>;
-  let updraft = <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2 text-xs leading-4">
+    </span>
+  );
+  let mire = (
+    <dt className="font-medium whitespace-nowrap text-token-text-primary">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.codexMicro.keyboardLayout.knobTooltip.turnRight",
+            defaultMessage: "Turn right",
+            description:
+              "Label for turning the Codex Micro encoder knob clockwise",
+          }}
+        />
+      }
+    </dt>
+  );
+  let nook = (
+    <dd className="text-token-text-secondary">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            ...jetty.turnRightAction,
+          }}
+        />
+      }
+    </dd>
+  );
+  let oxbow = (
+    <dt className="font-medium whitespace-nowrap text-token-text-primary">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.codexMicro.keyboardLayout.knobTooltip.turnLeft",
+            defaultMessage: "Turn left",
+            description:
+              "Label for turning the Codex Micro encoder knob counterclockwise",
+          }}
+        />
+      }
+    </dt>
+  );
+  let pond = (
+    <dd className="text-token-text-secondary">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            ...jetty.turnLeftAction,
+          }}
+        />
+      }
+    </dd>
+  );
+  let quarry = (
+    <dt className="font-medium whitespace-nowrap text-token-text-primary">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.codexMicro.keyboardLayout.knobTooltip.click",
+            defaultMessage: "Click",
+            description: "Label for clicking the Codex Micro encoder knob once",
+          }}
+        />
+      }
+    </dt>
+  );
+  let rapids = (
+    <dd className="text-token-text-secondary">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            ...jetty.clickAction,
+          }}
+        />
+      }
+    </dd>
+  );
+  let spur = (
+    <dt className="font-medium whitespace-nowrap text-token-text-primary">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.codexMicro.keyboardLayout.knobTooltip.pressAndHold",
+            defaultMessage: "Press and hold",
+            description:
+              "Label for pressing and holding the Codex Micro encoder knob",
+          }}
+        />
+      }
+    </dt>
+  );
+  let tor = (
+    <dd className="text-token-text-secondary">
+      {
+        <MemoizedFormattedMessage
+          {...{
+            id: "settings.codexMicro.keyboardLayout.knobTooltip.pressAndHoldActionByDevice",
+            defaultMessage: "Open {deviceName} settings",
+            description:
+              "Action performed when pressing and holding the Codex Micro or Creator Micro encoder knob",
+            values: {
+              deviceName,
+            },
+          }}
+        />
+      }
+    </dd>
+  );
+  let updraft = (
+    <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2 text-xs leading-4">
       {mire}
       {nook}
       {oxbow}
@@ -403,31 +591,46 @@ function elm(hearth) {
       {rapids}
       {spur}
       {tor}
-    </dl>;
-  let verge = <div className="flex w-64 flex-col gap-2.5 p-3">
+    </dl>
+  );
+  let verge = (
+    <div className="flex w-64 flex-col gap-2.5 p-3">
       {knob}
       {ledge}
       {updraft}
-    </div>;
-  let weir = inlet.formatMessage({
-    id: "settings.codexMicro.keyboardLayout.knobByDevice",
-    defaultMessage: "{deviceName} knob",
-    description: "Accessible label for the encoder knob in the Codex Micro or Creator Micro keyboard preview"
-  }, {
-    deviceName
-  });
-  let yard = <CodexMicroKeyboardSurface {...{
-    ariaLabel: weir,
-    pulse
-  }} />;
-  return <OptionalTooltip {...{
-    align: "start",
-    delayOpen: true,
-    disablePadding: true,
-    tooltipMaxWidth: "18rem",
-    tooltipContent: verge,
-    children: yard
-  }} />;
+    </div>
+  );
+  let weir = inlet.formatMessage(
+    {
+      id: "settings.codexMicro.keyboardLayout.knobByDevice",
+      defaultMessage: "{deviceName} knob",
+      description:
+        "Accessible label for the encoder knob in the Codex Micro or Creator Micro keyboard preview",
+    },
+    {
+      deviceName,
+    },
+  );
+  let yard = (
+    <CodexMicroKeyboardSurface
+      {...{
+        ariaLabel: weir,
+        pulse,
+      }}
+    />
+  );
+  return (
+    <OptionalTooltip
+      {...{
+        align: "start",
+        delayOpen: true,
+        disablePadding: true,
+        tooltipMaxWidth: "18rem",
+        tooltipContent: verge,
+        children: yard,
+      }}
+    />
+  );
 }
 function fern(anchor) {
   let {
@@ -437,13 +640,14 @@ function fern(anchor) {
       isPressed,
       skills,
       voiceButtonMode,
-      onEditSlot
+      onEditSlot,
     } = anchor,
     bolt = codexMicroLayoutR(slot.keycapId);
   let cog = bolt,
     disc = useIntl(),
     edge = slot.action?.type === "skill" ? slot.action : null,
-    forge = slot.action?.type === "command" ? slot.action.commandId : slot.commandId,
+    forge =
+      slot.action?.type === "command" ? slot.action.commandId : slot.commandId,
     gear,
     hinge,
     iron,
@@ -458,55 +662,99 @@ function fern(anchor) {
     let bracket = forge == null ? null : getCodexMicroWebviewCommands(forge);
     hinge = OptionalTooltip;
     piston = true;
-    rivet = <CodexMicroSettingsHelper26 {...{
-      keycap: cog,
-      skills,
-      slot,
-      voiceButtonMode
-    }} />;
+    rivet = (
+      <CodexMicroSettingsHelper26
+        {...{
+          keycap: cog,
+          skills,
+          slot,
+          voiceButtonMode,
+        }}
+      />
+    );
     latch = "button";
     let clamp = isPressed && "translate-y-px scale-[0.985]";
-    motor = IntlProvider("group relative z-10 cursor-interaction transition-transform duration-basic ease-out", clamp, className);
+    motor = IntlProvider(
+      "group relative z-10 cursor-interaction transition-transform duration-basic ease-out",
+      clamp,
+      className,
+    );
     nut = () => {
       onEditSlot(slotId);
     };
     gear = CodexMicroKeyboardSurfacePanel;
-    let drill = isPressed && "bg-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.92),0_0_12px_rgba(141,181,255,0.26)] dark:bg-[#282b34] dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.14),0_0_14px_rgba(141,181,255,0.28)]";
-    keystone = IntlProvider("size-full transition-[box-shadow,background-color] duration-basic ease-out group-hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.92),0_0_12px_rgba(141,181,255,0.18)] dark:group-hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12),0_0_12px_rgba(141,181,255,0.24)]", drill);
+    let drill =
+      isPressed &&
+      "bg-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.92),0_0_12px_rgba(141,181,255,0.26)] dark:bg-[#282b34] dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.14),0_0_14px_rgba(141,181,255,0.28)]";
+    keystone = IntlProvider(
+      "size-full transition-[box-shadow,background-color] duration-basic ease-out group-hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.92),0_0_12px_rgba(141,181,255,0.18)] dark:group-hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12),0_0_12px_rgba(141,181,255,0.24)]",
+      drill,
+    );
     iron = "sr-only";
-    joint = edge == null ? bracket == null ? <CodexMicroSettingsHelper25 {...{
-      keycap: cog,
-      voiceButtonMode
-    }} /> : collaborationModeFromTurnOrParams(bracket, disc) : ensureCodexMicroAnalogActionTitleInit(edge, skills, disc);
+    joint =
+      edge == null ? (
+        bracket == null ? (
+          <CodexMicroSettingsHelper25
+            {...{
+              keycap: cog,
+              voiceButtonMode,
+            }}
+          />
+        ) : (
+          collaborationModeFromTurnOrParams(bracket, disc)
+        )
+      ) : (
+        ensureCodexMicroAnalogActionTitleInit(edge, skills, disc)
+      );
   }
-  let screw = <span className={iron}>
-      {joint}
-    </span>;
-  let torque = <CodexMicroKeyboardSurfaceLabel {...{
-    keycap: cog,
-    className: "size-5"
-  }} />;
-  let valve = <Alpha {...{
-    className: keystone,
-    children: [screw, torque]
-  }} />;
-  let axle = <button type={latch} className={motor} onClick={nut}>
+  let screw = <span className={iron}>{joint}</span>;
+  let torque = (
+    <CodexMicroKeyboardSurfaceLabel
+      {...{
+        keycap: cog,
+        className: "size-5",
+      }}
+    />
+  );
+  let valve = (
+    <Alpha
+      {...{
+        className: keystone,
+        children: [screw, torque],
+      }}
+    />
+  );
+  let axle = (
+    <button type={latch} className={motor} onClick={nut}>
       {valve}
-    </button>;
-  return <Bravo {...{
-    delayOpen: piston,
-    tooltipContent: rivet,
-    children: axle
-  }} />;
+    </button>
+  );
+  return (
+    <Bravo
+      {...{
+        delayOpen: piston,
+        tooltipContent: rivet,
+        children: axle,
+      }}
+    />
+  );
 }
 function grove(engine, frame) {
-  return frame.some(item => engine.includes(item));
+  return frame.some((item) => engine.includes(item));
 }
 function hill(gasket, handle) {
   let insert = handle.trim().toLowerCase();
-  return insert.length === 0 ? true : [gasket.id, ...codexMicroLayoutU(gasket)].some(item => item.toLowerCase().includes(insert));
+  return insert.length === 0
+    ? true
+    : [gasket.id, ...codexMicroLayoutU(gasket)].some((item) =>
+        item.toLowerCase().includes(insert),
+      );
 }
 function isle(jacket) {
-  return jacket.id === "SPLIT" ? "FORK" : jacket.id === "BRCH" ? "DRAFT" : jacket.id;
+  return jacket.id === "SPLIT"
+    ? "FORK"
+    : jacket.id === "BRCH"
+      ? "DRAFT"
+      : jacket.id;
 }
 var juniper, lagoon, $, meadow, nest, oak, petal, quiet;

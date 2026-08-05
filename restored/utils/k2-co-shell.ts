@@ -20,7 +20,5 @@ export function bindK2CoShell() {
     throw new Error("bindK2CoShell peers are not configured");
   }
 
-  return peers.JE(({
-    latestModel: e
-  }) => e);
+  return peers.JE(({ latestModel: e }) => e);
 }

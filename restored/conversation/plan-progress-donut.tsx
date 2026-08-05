@@ -13,7 +13,9 @@ type DonutProps = {
 let DonutImpl: ComponentType<DonutProps> | null = null;
 
 /** Wire plan-progress donut (`Pcl` in the bundle). */
-export function setPlanProgressDonutImpl(impl: ComponentType<DonutProps>): void {
+export function setPlanProgressDonutImpl(
+  impl: ComponentType<DonutProps>,
+): void {
   DonutImpl = impl;
 }
 

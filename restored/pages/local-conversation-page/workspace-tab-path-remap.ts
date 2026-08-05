@@ -64,11 +64,10 @@ export function remapWorkspaceTabPath(
   const relativeWithCasing =
     relative === ""
       ? ""
-      : posixFile
-          .split("/")
-          .slice(-relative.split("/").length)
-          .join("/");
-  const joined = toPosixPath(posixJoin(targetWorkspaceRoot, relativeWithCasing));
+      : posixFile.split("/").slice(-relative.split("/").length).join("/");
+  const joined = toPosixPath(
+    posixJoin(targetWorkspaceRoot, relativeWithCasing),
+  );
   return isUncPath(targetWorkspaceRoot)
     ? `//${joined.replace(/^\/+/u, "")}`
     : joined;

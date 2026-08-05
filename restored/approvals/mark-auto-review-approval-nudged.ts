@@ -10,7 +10,9 @@ export type MarkAutoReviewApprovalNudgedPeers = {
 let peers: MarkAutoReviewApprovalNudgedPeers | null = null;
 
 /** Wire markAutoReviewApprovalNudged peers once companions land. */
-export function setMarkAutoReviewApprovalNudgedPeers(next: MarkAutoReviewApprovalNudgedPeers): void {
+export function setMarkAutoReviewApprovalNudgedPeers(
+  next: MarkAutoReviewApprovalNudgedPeers,
+): void {
   peers = next;
 }
 
@@ -22,6 +24,6 @@ export function markAutoReviewApprovalNudged(e: unknown, t: unknown) {
     throw new Error("markAutoReviewApprovalNudged peers are not configured");
   }
 
-  e.set(peers.WSs, !0), peers.BSs(e, t);
+  (e.set(peers.WSs, !0), peers.BSs(e, t));
   for (let t of e.get(peers.Iw)) peers.BSs(e, t);
 }

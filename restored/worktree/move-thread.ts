@@ -28,6 +28,11 @@ export function bindMoveThread() {
   }
 
   return peers.e(() => {
-    wJs = peers.c(), peers.Ho(), peers.Au(), peers.$u(), peers.SJs(), peers.ND();
+    ((wJs = peers.c()),
+      peers.Ho(),
+      peers.Au(),
+      peers.$u(),
+      peers.SJs(),
+      peers.ND());
   });
 }

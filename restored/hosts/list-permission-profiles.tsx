@@ -24,7 +24,9 @@ export type BindListPermissionProfilesPeers = {
 let peers: BindListPermissionProfilesPeers | null = null;
 
 /** Wire bindListPermissionProfiles peers once companions land. */
-export function setBindListPermissionProfilesPeers(next: BindListPermissionProfilesPeers): void {
+export function setBindListPermissionProfilesPeers(
+  next: BindListPermissionProfilesPeers,
+): void {
   peers = next;
 }
 
@@ -37,6 +39,18 @@ export function bindListPermissionProfiles() {
   }
 
   return peers.e(() => {
-    L2r = peers.c(), peers.fr(), peers.Ho(), R2r = peers.r(peers.o(), 1), peers.vM(), peers.DD(), peers.Vf(), peers.Kg(), peers.Ym(), peers.k2r(), peers.VM(), peers.I2r(), peers.Gf();
+    ((L2r = peers.c()),
+      peers.fr(),
+      peers.Ho(),
+      (R2r = peers.r(peers.o(), 1)),
+      peers.vM(),
+      peers.DD(),
+      peers.Vf(),
+      peers.Kg(),
+      peers.Ym(),
+      peers.k2r(),
+      peers.VM(),
+      peers.I2r(),
+      peers.Gf());
   });
 }

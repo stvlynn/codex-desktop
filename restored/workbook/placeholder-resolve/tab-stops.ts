@@ -18,9 +18,7 @@ export type TabStopPx = {
 };
 
 /** Legacy `rce` — tab-stop alignment proto → CSS-ish name. */
-export function tabStopAlignmentName(
-  alignment: unknown,
-): TabStopAlignmentName {
+export function tabStopAlignmentName(alignment: unknown): TabStopAlignmentName {
   switch (alignment) {
     case tabStopAlignmentEnum.TAB_STOP_ALIGNMENT_CENTER:
       return "center";

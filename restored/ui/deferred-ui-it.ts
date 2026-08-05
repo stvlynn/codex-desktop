@@ -29,14 +29,40 @@ export function bindDeferredUiIt() {
   }
 
   return peers.e(() => {
-    peers.hv(), peers.jPt(), zPt = peers.mv(e => peers.e.setHours(0, 0, 0, 0), (e, t) => peers.e.setDate(peers.e.getDate() + t), (e, t) => (t - peers.e - (t.getTimezoneOffset() - peers.e.getTimezoneOffset()) * peers._v) / peers.yv, e => peers.e.getDate() - 1), peers.zPt.range, BPt = peers.mv(e => {
-      peers.e.setUTCHours(0, 0, 0, 0);
-    }, (e, t) => {
-      peers.e.setUTCDate(peers.e.getUTCDate() + t);
-    }, (e, t) => (t - peers.e) / peers.yv, e => peers.e.getUTCDate() - 1), peers.BPt.range, VPt = peers.mv(e => {
-      peers.e.setUTCHours(0, 0, 0, 0);
-    }, (e, t) => {
-      peers.e.setUTCDate(peers.e.getUTCDate() + t);
-    }, (e, t) => (t - peers.e) / peers.yv, e => Math.floor(peers.e / peers.yv)), peers.VPt.range;
+    (peers.hv(),
+      peers.jPt(),
+      (zPt = peers.mv(
+        (e) => peers.e.setHours(0, 0, 0, 0),
+        (e, t) => peers.e.setDate(peers.e.getDate() + t),
+        (e, t) =>
+          (t -
+            peers.e -
+            (t.getTimezoneOffset() - peers.e.getTimezoneOffset()) * peers._v) /
+          peers.yv,
+        (e) => peers.e.getDate() - 1,
+      )),
+      peers.zPt.range,
+      (BPt = peers.mv(
+        (e) => {
+          peers.e.setUTCHours(0, 0, 0, 0);
+        },
+        (e, t) => {
+          peers.e.setUTCDate(peers.e.getUTCDate() + t);
+        },
+        (e, t) => (t - peers.e) / peers.yv,
+        (e) => peers.e.getUTCDate() - 1,
+      )),
+      peers.BPt.range,
+      (VPt = peers.mv(
+        (e) => {
+          peers.e.setUTCHours(0, 0, 0, 0);
+        },
+        (e, t) => {
+          peers.e.setUTCDate(peers.e.getUTCDate() + t);
+        },
+        (e, t) => (t - peers.e) / peers.yv,
+        (e) => Math.floor(peers.e / peers.yv),
+      )),
+      peers.VPt.range);
   });
 }

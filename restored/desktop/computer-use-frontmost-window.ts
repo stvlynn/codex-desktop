@@ -12,7 +12,9 @@ export type ComputerUseFrontmostWindowPeers = {
 let peers: ComputerUseFrontmostWindowPeers | null = null;
 
 /** Wire computerUseFrontmostWindow peers once companions land. */
-export function setComputerUseFrontmostWindowPeers(next: ComputerUseFrontmostWindowPeers): void {
+export function setComputerUseFrontmostWindowPeers(
+  next: ComputerUseFrontmostWindowPeers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,6 @@ export function computerUseFrontmostWindow() {
   }
 
   return peers.e(() => {
-    pfs = peers.c(), peers.Ho(), peers.DD();
+    ((pfs = peers.c()), peers.Ho(), peers.DD());
   });
 }

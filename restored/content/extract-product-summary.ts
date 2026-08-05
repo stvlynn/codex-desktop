@@ -10,6 +10,8 @@ export function setProductSummaryParser(parser: SummaryParser): void {
   parseSummary = parser;
 }
 
-export function extractProductSummary(ref: Record<string, unknown>): unknown | null {
+export function extractProductSummary(
+  ref: Record<string, unknown>,
+): unknown | null {
   return parseSummary?.(ref) ?? null;
 }

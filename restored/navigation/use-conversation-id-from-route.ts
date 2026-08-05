@@ -12,7 +12,9 @@ export type UseConversationIdFromRoutePeers = {
 let peers: UseConversationIdFromRoutePeers | null = null;
 
 /** Wire useConversationIdFromRoute peers once companions land. */
-export function setUseConversationIdFromRoutePeers(next: UseConversationIdFromRoutePeers): void {
+export function setUseConversationIdFromRoutePeers(
+  next: UseConversationIdFromRoutePeers,
+): void {
   peers = next;
 }
 

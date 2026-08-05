@@ -13,7 +13,9 @@ export type BindRemoteSshConnectionsPeers = {
 let peers: BindRemoteSshConnectionsPeers | null = null;
 
 /** Wire bindRemoteSshConnections peers once companions land. */
-export function setBindRemoteSshConnectionsPeers(next: BindRemoteSshConnectionsPeers): void {
+export function setBindRemoteSshConnectionsPeers(
+  next: BindRemoteSshConnectionsPeers,
+): void {
   peers = next;
 }
 
@@ -26,6 +28,6 @@ export function bindRemoteSshConnections() {
   }
 
   return peers.e(() => {
-    aOt = peers.c(), peers.Ho(), peers.ed(), peers.z_();
+    ((aOt = peers.c()), peers.Ho(), peers.ed(), peers.z_());
   });
 }

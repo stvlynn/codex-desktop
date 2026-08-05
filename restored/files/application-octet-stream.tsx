@@ -16,7 +16,9 @@ export type BindBindApplicationOctetStreamPeers = {
 let peers: BindBindApplicationOctetStreamPeers | null = null;
 
 /** Wire bindBindApplicationOctetStream peers once companions land. */
-export function setBindBindApplicationOctetStreamPeers(next: BindBindApplicationOctetStreamPeers): void {
+export function setBindBindApplicationOctetStreamPeers(
+  next: BindBindApplicationOctetStreamPeers,
+): void {
   peers = next;
 }
 
@@ -29,14 +31,19 @@ export function bindBindApplicationOctetStream() {
   }
 
   return peers.e(() => {
-    I8r = peers.r(peers.Il(), 1), peers.Au(), peers.Gf(), peers.Uf(), peers.ap(), L8r = {
-      ".svg": `image/svg+xml`,
-      ".png": `image/png`,
-      ".jpg": `image/jpeg`,
-      ".jpeg": `image/jpeg`,
-      ".webp": `image/webp`,
-      ".gif": `image/gif`,
-      ".avif": `image/avif`
-    };
+    ((I8r = peers.r(peers.Il(), 1)),
+      peers.Au(),
+      peers.Gf(),
+      peers.Uf(),
+      peers.ap(),
+      (L8r = {
+        ".svg": `image/svg+xml`,
+        ".png": `image/png`,
+        ".jpg": `image/jpeg`,
+        ".jpeg": `image/jpeg`,
+        ".webp": `image/webp`,
+        ".gif": `image/gif`,
+        ".avif": `image/avif`,
+      }));
   });
 }

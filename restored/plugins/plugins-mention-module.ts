@@ -10,7 +10,9 @@ export type BindPluginsMentionModulePeers = {
 let peers: BindPluginsMentionModulePeers | null = null;
 
 /** Wire bindPluginsMentionModule peers once companions land. */
-export function setBindPluginsMentionModulePeers(next: BindPluginsMentionModulePeers): void {
+export function setBindPluginsMentionModulePeers(
+  next: BindPluginsMentionModulePeers,
+): void {
   peers = next;
 }
 
@@ -23,6 +25,6 @@ export function bindPluginsMentionModule() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.JT();
+    (peers.Au(), peers.JT());
   });
 }

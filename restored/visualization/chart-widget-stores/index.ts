@@ -73,11 +73,7 @@ export {
 } from "./chart-intl-provider";
 export type { ChartIntlProviderProps } from "./chart-intl-provider";
 
-export {
-  Chart,
-  _chartWidgetStoresS,
-  ensureChartComponentInit,
-} from "./chart";
+export { Chart, _chartWidgetStoresS, ensureChartComponentInit } from "./chart";
 export type { CodexChartComponent } from "./chart";
 export { CodexChartBody } from "./chart";
 
@@ -126,10 +122,7 @@ export {
 } from "./use-chart-intl";
 export type { ChartIntlShape } from "./use-chart-intl";
 
-export {
-  classNames,
-  chartWidgetStoresV,
-} from "./widget-class-names";
+export { classNames, chartWidgetStoresV } from "./widget-class-names";
 
 export {
   BOX_CLASS_NAMES,

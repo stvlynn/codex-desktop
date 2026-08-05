@@ -11,7 +11,9 @@ export type UseInfiniteStaleHostQueryPeers = {
 let peers: UseInfiniteStaleHostQueryPeers | null = null;
 
 /** Wire useInfiniteStaleHostQuery peers once companions land. */
-export function setUseInfiniteStaleHostQueryPeers(next: UseInfiniteStaleHostQueryPeers): void {
+export function setUseInfiniteStaleHostQueryPeers(
+  next: UseInfiniteStaleHostQueryPeers,
+): void {
   peers = next;
 }
 

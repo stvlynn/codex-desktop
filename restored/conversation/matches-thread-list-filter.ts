@@ -4,7 +4,10 @@
 export type ThreadListFilter = "all" | "chats" | "tasks";
 
 /** Filter predicate for local thread list tabs (`tpp` = tasks). */
-export function matchesThreadListFilter(threadKind: string, filter: ThreadListFilter): boolean {
+export function matchesThreadListFilter(
+  threadKind: string,
+  filter: ThreadListFilter,
+): boolean {
   switch (filter) {
     case "all":
       return true;

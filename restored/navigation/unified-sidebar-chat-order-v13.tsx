@@ -11,7 +11,9 @@ export type BindBindUnifiedSidebarChatOrderV13Peers = {
 let peers: BindBindUnifiedSidebarChatOrderV13Peers | null = null;
 
 /** Wire bindBindUnifiedSidebarChatOrderV13 peers once companions land. */
-export function setBindBindUnifiedSidebarChatOrderV13Peers(next: BindBindUnifiedSidebarChatOrderV13Peers): void {
+export function setBindBindUnifiedSidebarChatOrderV13Peers(
+  next: BindBindUnifiedSidebarChatOrderV13Peers,
+): void {
   peers = next;
 }
 
@@ -20,10 +22,10 @@ export function setBindBindUnifiedSidebarChatOrderV13Peers(next: BindBindUnified
  */
 export function bindBindUnifiedSidebarChatOrderV13() {
   if (peers == null) {
-    throw new Error("bindBindUnifiedSidebarChatOrderV13 peers are not configured");
+    throw new Error(
+      "bindBindUnifiedSidebarChatOrderV13 peers are not configured",
+    );
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => e(peers.JRc) ?? peers.GRc);
+  return peers.Ma(peers.Q, ({ get: e }) => e(peers.JRc) ?? peers.GRc);
 }

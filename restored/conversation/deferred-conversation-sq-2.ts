@@ -10,7 +10,9 @@ export type DeferredConversationSQPeers = {
 let peers: DeferredConversationSQPeers | null = null;
 
 /** Wire deferredConversationSQ peers once companions land. */
-export function setDeferredConversationSQPeers(next: DeferredConversationSQPeers): void {
+export function setDeferredConversationSQPeers(
+  next: DeferredConversationSQPeers,
+): void {
   peers = next;
 }
 
@@ -22,7 +24,5 @@ export function deferredConversationSQ() {
     throw new Error("deferredConversationSQ peers are not configured");
   }
 
-  return peers.Ma(peers.Q, ({
-    get: e
-  }) => e(peers.GMr) ?? `updated_at`);
+  return peers.Ma(peers.Q, ({ get: e }) => e(peers.GMr) ?? `updated_at`);
 }

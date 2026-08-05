@@ -16,10 +16,29 @@ import { logProductEvent } from "../../analytics/log-product-event";
 import { AppInstallProgressDialog } from "../../apps/app-install-progress-dialog";
 import { ArtifactPreviewZoomToFitLabel } from "../../artifact/artifact-preview-zoom-to-fit-label";
 import { decayZoomPercent } from "../../artifact/clamp-zoom-percent";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
-import { ensureComposerEsm_FH_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Qtt_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init, ensureComposerEsm_Utt_Init } from "../../composer/composer-esm-inits";
-import { createPersistedAtom, ensurePersistedAtomInit } from "../../boundaries/persisted-atom";
-import { jsxRuntime as getJsxRuntime, react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
+import {
+  ensureComposerEsm_FH_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Qtt_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+  ensureComposerEsm_Utt_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  createPersistedAtom,
+  ensurePersistedAtomInit,
+} from "../../boundaries/persisted-atom";
+import {
+  jsxRuntime as getJsxRuntime,
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { WritingBlockRenderer } from "../../composer/writing-block-renderer";
 import { isOpenaiBundledId } from "../../config/is-openai-bundled-id";
 import { VSCODE_EDITOR_ID } from "../../config/vscode-editor-id";
@@ -27,11 +46,17 @@ import { ensureClientCoordinationServiceInit } from "../../desktop/ensure-client
 import { findProcessManagerRow } from "../../desktop/find-process-manager-row";
 import { DEVELOPERS_OPENAI_COM_CODEX_APP_COMPUTER_USE_URL } from "../../docs/codex-doc-urls";
 import { CodexBuildEnvironment } from "../../env/codex-build-environment";
-import { MOBILE_MFA_SETUP_FEATURE_GATE_ID, REMOTE_CONTROL_PAIRING_FEATURE_GATE_ID } from "../../feature-gates/feature-gate-ids";
+import {
+  MOBILE_MFA_SETUP_FEATURE_GATE_ID,
+  REMOTE_CONTROL_PAIRING_FEATURE_GATE_ID,
+} from "../../feature-gates/feature-gate-ids";
 import { CONVERSATIONAL_ONBOARDING_COMPLETED_BY_ACCOUNT_ID_KEY } from "../../home/onboarding-storage-keys";
 import { ensureDebugPanelTurnFilesInit } from "../../hooks/debug-panel-turn-files";
 import { useEventCallback } from "../../hooks/use-event-callback";
-import { ensureUseHomeDirectoryInit, useHomeDirectory } from "../../hooks/use-home-directory";
+import {
+  ensureUseHomeDirectoryInit,
+  useHomeDirectory,
+} from "../../hooks/use-home-directory";
 import { useIsDarkAppearance } from "../../hooks/use-is-dark-appearance";
 import { usePointerSurfaceInteractionGate } from "../../hooks/use-pointer-surface-interaction-gate";
 import { LOCAL_HOST_ID } from "../../hosts/local-host-id";
@@ -59,7 +84,10 @@ import { deferredT } from "../../ui/deferred-t";
 import { macOS4 } from "../../ui/mac-os4";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
 import { noop } from "../../utils/noop";
-import { ensureSvgToDataUriInit, svgToDataUri } from "../../utils/svg-to-data-uri";
+import {
+  ensureSvgToDataUriInit,
+  svgToDataUri,
+} from "../../utils/svg-to-data-uri";
 
 /** split companion stub */
 const hazelFourth: any = undefined;
@@ -84,10 +112,7 @@ const dowelThird: any = undefined;
 const flangeThird: any = undefined;
 /** split companion stub */
 const gibThird: any = undefined;
-function alpha({
-  onArtworkReady,
-  svgMarkup
-}) {
+function alpha({ onArtworkReady, svgMarkup }) {
   let juniper = usePrefersReducedMotion(),
     lagoon = marble.useId().replaceAll(":", ""),
     meadow = marble.useRef(null),
@@ -96,7 +121,7 @@ function alpha({
     petal = marble.useRef({
       current: null,
       lastSampledAt: 0,
-      trail: []
+      trail: [],
     }),
     quiet = marble.useRef(null),
     rain = marble.useRef(null),
@@ -105,7 +130,9 @@ function alpha({
       let dew = oak.current,
         ever = nest.current,
         field = quiet.current;
-      if (quiet.current = null, dew != null && ever != null && field != null) {
+      if (
+        ((quiet.current = null), dew != null && ever != null && field != null)
+      ) {
         let haven = ever.createSVGPoint();
         haven.x = field.x;
         haven.y = field.y;
@@ -113,11 +140,15 @@ function alpha({
         if (ink != null) {
           let jadeite = haven.matrixTransform(ink.inverse()),
             kernel = petal.current;
-          kernel.current != null && birch - kernel.lastSampledAt >= slate ? (kernel.trail.unshift({
-            sampledAt: birch,
-            x: kernel.current.x,
-            y: kernel.current.y
-          }), kernel.trail.length > quartz && kernel.trail.pop(), kernel.lastSampledAt = birch) : kernel.current ?? (kernel.lastSampledAt = birch);
+          kernel.current != null && birch - kernel.lastSampledAt >= slate
+            ? (kernel.trail.unshift({
+                sampledAt: birch,
+                x: kernel.current.x,
+                y: kernel.current.y,
+              }),
+              kernel.trail.length > quartz && kernel.trail.pop(),
+              (kernel.lastSampledAt = birch))
+            : (kernel.current ?? (kernel.lastSampledAt = birch));
           kernel.current = jadeite;
           jade(dew.brushSpot, jadeite, 1);
           dew.brushOverlay.setAttribute("opacity", "1");
@@ -125,14 +156,24 @@ function alpha({
       }
       if (dew != null) {
         let leaf = petal.current.trail;
-        for (; leaf.length > 0 && birch - leaf[leaf.length - 1].sampledAt >= pearl;) leaf.pop();
+        for (
+          ;
+          leaf.length > 0 && birch - leaf[leaf.length - 1].sampledAt >= pearl;
+        )
+          leaf.pop();
         for (let [maple, nimbus] of dew.trailSpots.entries()) {
           let opal = leaf[maple];
           if (opal == null) {
             nimbus.maskRect.setAttribute("opacity", "0");
             continue;
           }
-          jade(nimbus, opal, (1 - (birch - opal.sampledAt) / pearl) * (1 - maple / quartz) * river);
+          jade(
+            nimbus,
+            opal,
+            (1 - (birch - opal.sampledAt) / pearl) *
+              (1 - maple / quartz) *
+              river,
+          );
         }
       }
       let grain = seed.current;
@@ -146,30 +187,51 @@ function alpha({
         upland.setAttribute("offset", String(quillow / grain.maxRadius));
         vista.setAttribute("offset", String(silk / grain.maxRadius));
         dew.rippleOverlay.setAttribute("opacity", String(1 - plume * 0.18));
-        plume >= 1 && (seed.current = null, dew.rippleOverlay.setAttribute("opacity", "0"));
+        plume >= 1 &&
+          ((seed.current = null),
+          dew.rippleOverlay.setAttribute("opacity", "0"));
       }
-      rain.current = seed.current != null || quiet.current != null || dew != null && petal.current.trail.length > 0 ? requestAnimationFrame(canyon) : null;
+      rain.current =
+        seed.current != null ||
+        quiet.current != null ||
+        (dew != null && petal.current.trail.length > 0)
+          ? requestAnimationFrame(canyon)
+          : null;
     }, []),
     vine = marble.useCallback(() => {
       rain.current ??= requestAnimationFrame(urn);
     }, [urn]);
   marble.useEffect(() => {
-    juniper && (seed.current = null, quiet.current = null, kite(petal.current, oak.current), oak.current?.rippleOverlay.setAttribute("opacity", "0"), rain.current != null && (cancelAnimationFrame(rain.current), rain.current = null));
+    juniper &&
+      ((seed.current = null),
+      (quiet.current = null),
+      kite(petal.current, oak.current),
+      oak.current?.rippleOverlay.setAttribute("opacity", "0"),
+      rain.current != null &&
+        (cancelAnimationFrame(rain.current), (rain.current = null)));
   }, [juniper]);
   marble.useEffect(() => {
     let wisp = meadow.current?.querySelector("svg");
     if (wisp == null) return;
     let yonder = petal.current,
       zenith = bravo(wisp, lagoon);
-    return nest.current = wisp, oak.current = zenith, quiet.current = null, kite(yonder, zenith), onArtworkReady?.(), () => {
-      nest.current = null;
-      oak.current = null;
-      seed.current = null;
-      quiet.current = null;
-      kite(yonder, null);
-      rain.current != null && (cancelAnimationFrame(rain.current), rain.current = null);
-      lemon(wisp, zenith);
-    };
+    return (
+      (nest.current = wisp),
+      (oak.current = zenith),
+      (quiet.current = null),
+      kite(yonder, zenith),
+      onArtworkReady?.(),
+      () => {
+        nest.current = null;
+        oak.current = null;
+        seed.current = null;
+        quiet.current = null;
+        kite(yonder, null);
+        rain.current != null &&
+          (cancelAnimationFrame(rain.current), (rain.current = null));
+        lemon(wisp, zenith);
+      }
+    );
   }, [onArtworkReady, lagoon, svgMarkup]);
   let wind = marble.useCallback(() => {
     if (juniper) return;
@@ -178,15 +240,17 @@ function alpha({
     let beacon = anvil.viewBox.baseVal;
     seed.current = {
       maxRadius: Math.hypot(beacon.width / 2, beacon.height / 2),
-      startedAt: performance.now()
+      startedAt: performance.now(),
     };
     vine();
   }, [vine, juniper]);
   function yarrow(event) {
-    juniper || (quiet.current = {
-      x: event.clientX,
-      y: event.clientY
-    }, vine());
+    juniper ||
+      ((quiet.current = {
+        x: event.clientX,
+        y: event.clientY,
+      }),
+      vine());
   }
   function azure() {
     quiet.current = null;
@@ -196,95 +260,170 @@ function alpha({
     clearPaint: azure,
     paintDots: yarrow,
     rootRef: meadow,
-    triggerRipple: wind
+    triggerRipple: wind,
   };
 }
 function bravo(crag, dome) {
   let eddy = or("g"),
     fjord = `interactive-dots-${dome}`;
   eddy.id = fjord;
-  let glen = Array.from(crag.querySelectorAll(":scope > path")).map(item => {
+  let glen = Array.from(crag.querySelectorAll(":scope > path")).map((item) => {
       let pond = item.getAttribute("fill");
-      return item.removeAttribute("fill"), eddy.appendChild(item), {
-        fill: pond,
-        path: item
-      };
+      return (
+        item.removeAttribute("fill"),
+        eddy.appendChild(item),
+        {
+          fill: pond,
+          path: item,
+        }
+      );
     }),
     hearth = or("defs"),
     inlet = copper(crag, `interactive-brush-${dome}`),
-    jetty = Array.from({
-      length: quartz
-    }, (quarry, rapids) => copper(crag, `interactive-brush-trail-${rapids}-${dome}`)),
+    jetty = Array.from(
+      {
+        length: quartz,
+      },
+      (quarry, rapids) =>
+        copper(crag, `interactive-brush-trail-${rapids}-${dome}`),
+    ),
     knob = gamma(crag, `interactive-brush-${dome}-mask`);
-  knob.append(inlet.maskRect, ...jetty.map(({
-    maskRect
-  }) => maskRect));
-  let {
-      gradient,
-      stops
-    } = echo(crag, `interactive-ripple-${dome}`),
+  knob.append(inlet.maskRect, ...jetty.map(({ maskRect }) => maskRect));
+  let { gradient, stops } = echo(crag, `interactive-ripple-${dome}`),
     ledge = $n(crag, gradient);
-  hearth.append(eddy, inlet.gradient, ...jetty.map(({
-    gradient: _gradient
-  }) => _gradient), knob, gradient, ledge);
+  hearth.append(
+    eddy,
+    inlet.gradient,
+    ...jetty.map(({ gradient: _gradient }) => _gradient),
+    knob,
+    gradient,
+    ledge,
+  );
   crag.prepend(hearth);
   let mire = indigo(fjord, "currentColor", "1"),
     nook = indigo(fjord, "var(--color-token-charts-blue)", "0", knob.id, onyx),
-    oxbow = indigo(fjord, "var(--color-token-charts-blue)", "0", ledge.id, umbra);
-  return crag.append(mire, nook, oxbow), {
-    baseOverlay: mire,
-    brushOverlay: nook,
-    brushSpot: inlet,
-    defs: hearth,
-    originalPathFills: glen,
-    rippleOverlay: oxbow,
-    rippleStops: stops,
-    trailSpots: jetty
-  };
+    oxbow = indigo(
+      fjord,
+      "var(--color-token-charts-blue)",
+      "0",
+      ledge.id,
+      umbra,
+    );
+  return (
+    crag.append(mire, nook, oxbow),
+    {
+      baseOverlay: mire,
+      brushOverlay: nook,
+      brushSpot: inlet,
+      defs: hearth,
+      originalPathFills: glen,
+      rippleOverlay: oxbow,
+      rippleStops: stops,
+      trailSpots: jetty,
+    }
+  );
 }
 function copper(spur, tor) {
   let updraft = delta(tor),
     verge = harbor(spur);
-  return verge.setAttribute("fill", `url(#${updraft.id})`), verge.setAttribute("opacity", "0"), {
-    gradient: updraft,
-    maskRect: verge
-  };
+  return (
+    verge.setAttribute("fill", `url(#${updraft.id})`),
+    verge.setAttribute("opacity", "0"),
+    {
+      gradient: updraft,
+      maskRect: verge,
+    }
+  );
 }
 function delta(weir) {
   let yard = or("radialGradient");
-  return yard.id = weir, yard.setAttribute("gradientUnits", "userSpaceOnUse"), yard.setAttribute("cx", "-72"), yard.setAttribute("cy", "-72"), yard.setAttribute("r", String(nickel)), yard.append(falcon("0", "1"), falcon("0.58", "0.61"), falcon("0.99", "0.23"), falcon("1", "0")), yard;
+  return (
+    (yard.id = weir),
+    yard.setAttribute("gradientUnits", "userSpaceOnUse"),
+    yard.setAttribute("cx", "-72"),
+    yard.setAttribute("cy", "-72"),
+    yard.setAttribute("r", String(nickel)),
+    yard.append(
+      falcon("0", "1"),
+      falcon("0.58", "0.61"),
+      falcon("0.99", "0.23"),
+      falcon("1", "0"),
+    ),
+    yard
+  );
 }
 function echo(anchor, bolt) {
   let cog = or("radialGradient"),
     disc = anchor.viewBox.baseVal,
     edge = [falcon("0", "0"), falcon("0", "1"), falcon("0", "0")];
-  return cog.id = bolt, cog.setAttribute("gradientUnits", "userSpaceOnUse"), cog.setAttribute("cx", String(disc.x + disc.width / 2)), cog.setAttribute("cy", String(disc.y + disc.height / 2)), cog.setAttribute("r", String(Math.hypot(disc.width / 2, disc.height / 2))), cog.append(...edge), {
-    gradient: cog,
-    stops: edge
-  };
+  return (
+    (cog.id = bolt),
+    cog.setAttribute("gradientUnits", "userSpaceOnUse"),
+    cog.setAttribute("cx", String(disc.x + disc.width / 2)),
+    cog.setAttribute("cy", String(disc.y + disc.height / 2)),
+    cog.setAttribute("r", String(Math.hypot(disc.width / 2, disc.height / 2))),
+    cog.append(...edge),
+    {
+      gradient: cog,
+      stops: edge,
+    }
+  );
 }
 function falcon(forge, gear) {
   let hinge = or("stop");
-  return hinge.setAttribute("offset", forge), hinge.setAttribute("stop-color", "white"), hinge.setAttribute("stop-opacity", gear), hinge;
+  return (
+    hinge.setAttribute("offset", forge),
+    hinge.setAttribute("stop-color", "white"),
+    hinge.setAttribute("stop-opacity", gear),
+    hinge
+  );
 }
 function $n(iron, joint) {
   let keystone = gamma(iron, `${joint.id}-mask`),
     latch = harbor(iron);
-  return latch.setAttribute("fill", `url(#${joint.id})`), keystone.appendChild(latch), keystone;
+  return (
+    latch.setAttribute("fill", `url(#${joint.id})`),
+    keystone.appendChild(latch),
+    keystone
+  );
 }
 function gamma(motor, nut) {
   let piston = or("mask"),
     rivet = motor.viewBox.baseVal;
-  return piston.id = nut, piston.setAttribute("maskUnits", "userSpaceOnUse"), piston.setAttribute("x", String(rivet.x)), piston.setAttribute("y", String(rivet.y)), piston.setAttribute("width", String(rivet.width)), piston.setAttribute("height", String(rivet.height)), piston;
+  return (
+    (piston.id = nut),
+    piston.setAttribute("maskUnits", "userSpaceOnUse"),
+    piston.setAttribute("x", String(rivet.x)),
+    piston.setAttribute("y", String(rivet.y)),
+    piston.setAttribute("width", String(rivet.width)),
+    piston.setAttribute("height", String(rivet.height)),
+    piston
+  );
 }
 function harbor(screw) {
   let torque = or("rect"),
     valve = screw.viewBox.baseVal;
-  return torque.setAttribute("x", String(valve.x)), torque.setAttribute("y", String(valve.y)), torque.setAttribute("width", String(valve.width)), torque.setAttribute("height", String(valve.height)), torque;
+  return (
+    torque.setAttribute("x", String(valve.x)),
+    torque.setAttribute("y", String(valve.y)),
+    torque.setAttribute("width", String(valve.width)),
+    torque.setAttribute("height", String(valve.height)),
+    torque
+  );
 }
 function indigo(axle, bracket, clamp, drill, engine) {
   let frame = or("use");
-  return frame.setAttribute("href", `#${axle}`), frame.setAttribute("fill", bracket), frame.setAttribute("opacity", clamp), frame.setAttribute("pointer-events", "none"), drill != null && frame.setAttribute("mask", `url(#${drill})`), engine != null && (frame.setAttribute("stroke", bracket), frame.setAttribute("stroke-width", String(engine))), frame;
+  return (
+    frame.setAttribute("href", `#${axle}`),
+    frame.setAttribute("fill", bracket),
+    frame.setAttribute("opacity", clamp),
+    frame.setAttribute("pointer-events", "none"),
+    drill != null && frame.setAttribute("mask", `url(#${drill})`),
+    engine != null &&
+      (frame.setAttribute("stroke", bracket),
+      frame.setAttribute("stroke-width", String(engine))),
+    frame
+  );
 }
 function jade(gasket, handle, insert) {
   gasket.gradient.setAttribute("cx", String(handle.x));
@@ -299,11 +438,10 @@ function kite(jacket, knurl) {
 }
 function lemon(lever, mount) {
   if (mount.defs.parentNode === lever) {
-    for (let {
-      fill,
-      path
-    } of mount.originalPathFills) {
-      fill == null ? path.removeAttribute("fill") : path.setAttribute("fill", fill);
+    for (let { fill, path } of mount.originalPathFills) {
+      fill == null
+        ? path.removeAttribute("fill")
+        : path.setAttribute("fill", fill);
       lever.insertBefore(path, mount.baseOverlay);
     }
     mount.baseOverlay.remove();
@@ -341,32 +479,32 @@ var marble,
     willow = "http://www.w3.org/2000/svg";
   });
 function Xenon(platen) {
-  let {
-      onArtworkReady,
-      ref,
-      svgMarkup
-    } = platen,
+  let { onArtworkReady, ref, svgMarkup } = platen,
     ratchet = {
       onArtworkReady,
-      svgMarkup
+      svgMarkup,
     };
-  let {
-      clearPaint,
-      paintDots,
-      rootRef,
-      triggerRipple
-    } = alpha(ratchet),
+  let { clearPaint, paintDots, rootRef, triggerRipple } = alpha(ratchet),
     shim,
     tappet;
   shim = () => ({
-    triggerRipple
+    triggerRipple,
   });
   tappet = [triggerRipple];
   zinc.useImperativeHandle(ref, shim, tappet);
   let arbor = {
-    __html: svgMarkup
+    __html: svgMarkup,
   };
-  return <div ref={rootRef} aria-hidden="true" className="interactive-dots absolute inset-0 h-full w-full text-token-text-primary" onPointerLeave={clearPaint} onPointerMove={paintDots} dangerouslySetInnerHTML={arbor} />;
+  return (
+    <div
+      ref={rootRef}
+      aria-hidden="true"
+      className="interactive-dots absolute inset-0 h-full w-full text-token-text-primary"
+      onPointerLeave={clearPaint}
+      onPointerMove={paintDots}
+      dangerouslySetInnerHTML={arbor}
+    />
+  );
 }
 var yellow,
   zinc,
@@ -379,67 +517,106 @@ var yellow,
   }),
   cedar,
   daisy = esmInit(() => {
-    cedar = "" + new URL("codex-home-hero-dark-still-43PvFxTG.png", import.meta.url).href;
+    cedar =
+      "" +
+      new URL("codex-home-hero-dark-still-43PvFxTG.png", import.meta.url).href;
   }),
   ember,
   flint = esmInit(() => {
-    ember = "" + new URL("codex-home-hero-dark-_BGDEdk8.mp4", import.meta.url).href;
+    ember =
+      "" + new URL("codex-home-hero-dark-_BGDEdk8.mp4", import.meta.url).href;
   }),
   garnet,
   hazel = esmInit(() => {
-    garnet = "" + new URL("codex-home-hero-light-still-CQ7cy4qg.png", import.meta.url).href;
+    garnet =
+      "" +
+      new URL("codex-home-hero-light-still-CQ7cy4qg.png", import.meta.url).href;
   }),
   ivory,
   jasper = esmInit(() => {
-    ivory = "" + new URL("codex-home-hero-light-Cyip34F2.mp4", import.meta.url).href;
+    ivory =
+      "" + new URL("codex-home-hero-light-Cyip34F2.mp4", import.meta.url).href;
   }),
   kelp,
   lotus = esmInit(() => {
-    kelp = "<svg width=\"14\" height=\"14\" viewBox=\"0 0 14 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M5.80156 -4.86374e-05C6.69258 0.000117442 7.50897 0.323687 8.13906 0.857764C8.34796 0.820083 8.56404 0.799179 8.78359 0.79917C10.781 0.799774 12.4005 2.41954 12.4008 4.41714C12.4007 4.6366 12.3791 4.85173 12.3414 5.06011C12.8758 5.69048 13.1999 6.50778 13.2 7.39917C13.1997 8.96866 12.1997 10.3027 10.8039 10.8039C10.3028 12.1998 8.96867 13.1997 7.39922 13.2C6.50789 13.1999 5.69129 12.8758 5.06094 12.3414C4.8524 12.3791 4.63674 12.4007 4.41719 12.4007C2.41956 12.4005 0.80032 10.7805 0.8 8.78276C0.800026 8.56309 0.820863 8.34776 0.858594 8.13901C0.361897 7.55298 0.0471584 6.80587 0.00546875 5.98745L0 5.80073C0.000176183 4.23141 0.999616 2.89589 2.39531 2.39448C2.89683 0.998761 4.23227 -3.48408e-05 5.80156 -4.86374e-05Z\" fill=\"white\"/>\n</svg>\n";
+    kelp =
+      '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">\n<path fill-rule="evenodd" clip-rule="evenodd" d="M5.80156 -4.86374e-05C6.69258 0.000117442 7.50897 0.323687 8.13906 0.857764C8.34796 0.820083 8.56404 0.799179 8.78359 0.79917C10.781 0.799774 12.4005 2.41954 12.4008 4.41714C12.4007 4.6366 12.3791 4.85173 12.3414 5.06011C12.8758 5.69048 13.1999 6.50778 13.2 7.39917C13.1997 8.96866 12.1997 10.3027 10.8039 10.8039C10.3028 12.1998 8.96867 13.1997 7.39922 13.2C6.50789 13.1999 5.69129 12.8758 5.06094 12.3414C4.8524 12.3791 4.63674 12.4007 4.41719 12.4007C2.41956 12.4005 0.80032 10.7805 0.8 8.78276C0.800026 8.56309 0.820863 8.34776 0.858594 8.13901C0.361897 7.55298 0.0471584 6.80587 0.00546875 5.98745L0 5.80073C0.000176183 4.23141 0.999616 2.89589 2.39531 2.39448C2.89683 0.998761 4.23227 -3.48408e-05 5.80156 -4.86374e-05Z" fill="white"/>\n</svg>\n';
   });
 function Mint(bushing) {
-  let {
-      ariaLabel,
-      className,
-      onClick
-    } = bushing,
+  let { ariaLabel, className, onClick } = bushing,
     collar = usePrefersReducedMotion(),
     dowel = prism.useRef(null),
     flange = useIsDarkAppearance() === true,
     [gib, hub] = prism.useState(null),
     idler = flange ? "dark" : "light",
-    {
-      stillSrc,
-      videoSrc
-    } = reef[idler],
+    { stillSrc, videoSrc } = reef[idler],
     jig = () => {
       let boss = dowel.current;
-      boss != null && (boss.pause(), boss.currentTime = 0);
+      boss != null && (boss.pause(), (boss.currentTime = 0));
     };
   let keeper = jig,
     lug = () => {
       if (collar || gib === idler) return;
       let cam = dowel.current;
-      cam != null && cam.paused && (cam.currentTime = 0, cam.play()?.catch(nova));
+      cam != null &&
+        cam.paused &&
+        ((cam.currentTime = 0), cam.play()?.catch(nova));
     };
   let mandrel = lug,
     nipple = IntlProvider("size-full shrink-0 object-contain", className);
   let orifice = nipple;
   if (collar || gib === idler) {
     let detent = IntlProvider("cursor-interaction overflow-hidden", className);
-    let eccentric = <img alt="" aria-hidden="true" className={orifice} src={stillSrc} />;
+    let eccentric = (
+      <img alt="" aria-hidden="true" className={orifice} src={stillSrc} />
+    );
     let follower;
-    return <button type="button" aria-label={ariaLabel} className={detent} style={topaz} onClick={onClick}>{eccentric}</button>;
+    return (
+      <button
+        type="button"
+        aria-label={ariaLabel}
+        className={detent}
+        style={topaz}
+        onClick={onClick}
+      >
+        {eccentric}
+      </button>
+    );
   }
   let pin = IntlProvider("cursor-interaction overflow-hidden", className);
-  let race = event => {
+  let race = (event) => {
     event.pointerType === "mouse" && mandrel();
   };
   let sleeve = () => {
     hub(idler);
   };
-  let trunnion = <video key={idler} ref={dowel} aria-hidden="true" className={orifice} muted={true} playsInline={true} poster={stillSrc} preload="auto" src={videoSrc} onPointerEnter={race} onEnded={keeper} onError={sleeve} />;
-  return <button type="button" aria-label={ariaLabel} className={pin} style={topaz} onClick={onClick}>{trunnion}</button>;
+  let trunnion = (
+    <video
+      key={idler}
+      ref={dowel}
+      aria-hidden="true"
+      className={orifice}
+      muted={true}
+      playsInline={true}
+      poster={stillSrc}
+      preload="auto"
+      src={videoSrc}
+      onPointerEnter={race}
+      onEnded={keeper}
+      onError={sleeve}
+    />
+  );
+  return (
+    <button
+      type="button"
+      aria-label={ariaLabel}
+      className={pin}
+      style={topaz}
+      onClick={onClick}
+    >
+      {trunnion}
+    </button>
+  );
 }
 function nova() {}
 var olive,
@@ -464,12 +641,12 @@ var olive,
     reef = {
       dark: {
         stillSrc: cedar,
-        videoSrc: ember
+        videoSrc: ember,
       },
       light: {
         stillSrc: garnet,
-        videoSrc: ivory
-      }
+        videoSrc: ivory,
+      },
     };
     sage = `url(${svgToDataUri(kelp)})`;
     topaz = {
@@ -481,39 +658,50 @@ var olive,
       WebkitMaskImage: sage,
       WebkitMaskPosition: "calc(50% + 1px) calc(50% + 1px)",
       WebkitMaskRepeat: "no-repeat",
-      WebkitMaskSize: "90% 90%"
+      WebkitMaskSize: "90% 90%",
     };
   });
 function vapor(guide) {
   let helix = acorn.get(guide);
   if (helix != null) return helix;
-  let impeller = fetch(guide).then(value => {
+  let impeller = fetch(guide).then((value) => {
     if (!value.ok) throw Error("Failed to load QR dots artwork.");
     return value.text();
   });
-  return acorn.set(guide, impeller), impeller;
+  return (acorn.set(guide, impeller), impeller);
 }
 function wheat(journal) {
   let kingpin = {
     markup: "",
-    src: journal
+    src: journal,
   };
   let [land, mesh] = zephyr.useState(kingpin),
     neck,
     pad;
-  return neck = () => {
-    let quillshaft = true;
-    return vapor(journal).then(value => {
-      quillshaft && mesh({
-        markup: value,
-        src: journal
-      });
-    }).catch(() => {
-      acorn.delete(journal);
-    }), () => {
-      quillshaft = false;
-    };
-  }, pad = [journal], zephyr.useEffect(neck, pad), land.src === journal ? land.markup : "";
+  return (
+    (neck = () => {
+      let quillshaft = true;
+      return (
+        vapor(journal)
+          .then((value) => {
+            quillshaft &&
+              mesh({
+                markup: value,
+                src: journal,
+              });
+          })
+          .catch(() => {
+            acorn.delete(journal);
+          }),
+        () => {
+          quillshaft = false;
+        }
+      );
+    }),
+    (pad = [journal]),
+    zephyr.useEffect(neck, pad),
+    land.src === journal ? land.markup : ""
+  );
 }
 var yarn,
   zephyr,
@@ -530,13 +718,28 @@ function coral(roller) {
     fullscreen = false,
     pairingCode,
     platform,
-    size = "default"
+    size = "default",
   } = roller;
   if (pairingCode != null) {
     let spindle;
-    return <Drift ariaLabel={ariaLabel} centerLogoAriaLabel={centerLogoAriaLabel} fullscreen={fullscreen} pairingCode={pairingCode} size={size} />;
+    return (
+      <Drift
+        ariaLabel={ariaLabel}
+        centerLogoAriaLabel={centerLogoAriaLabel}
+        fullscreen={fullscreen}
+        pairingCode={pairingCode}
+        size={size}
+      />
+    );
   }
-  return <Frost ariaLabel={ariaLabel} centerLogoAriaLabel={centerLogoAriaLabel} platform={platform} size={size} />;
+  return (
+    <Frost
+      ariaLabel={ariaLabel}
+      centerLogoAriaLabel={centerLogoAriaLabel}
+      platform={platform}
+      size={size}
+    />
+  );
 }
 function Drift(thrust) {
   let {
@@ -544,7 +747,7 @@ function Drift(thrust) {
       centerLogoAriaLabel,
       fullscreen,
       pairingCode,
-      size = "default"
+      size = "default",
     } = thrust,
     yoke;
   {
@@ -557,98 +760,180 @@ function Drift(thrust) {
     let diaphragm;
     return <Eagle ariaLabel={ariaLabel} {...baffle} />;
   }
-  return <Honey ariaLabel={ariaLabel} centerLogoAriaLabel={centerLogoAriaLabel} size={size} {...baffle} />;
+  return (
+    <Honey
+      ariaLabel={ariaLabel}
+      centerLogoAriaLabel={centerLogoAriaLabel}
+      size={size}
+      {...baffle}
+    />
+  );
 }
 function Eagle(elbow) {
-  let {
-      ariaLabel,
-      cornersMarkup,
-      dotsMarkup
-    } = elbow,
-    ferrule = <div aria-hidden="true" className={"absolute inset-0 [&>svg]:block [&>svg]:h-full [&>svg]:w-full"} dangerouslySetInnerHTML={{
-      __html: cornersMarkup
-    }} />;
-  let grommet = <div aria-hidden="true" className={"absolute inset-0 [&>svg]:block [&>svg]:h-full [&>svg]:w-full"} dangerouslySetInnerHTML={{
-    __html: dotsMarkup
-  }} />;
-  return <div aria-label={ariaLabel} className="relative size-[min(640px,calc(100vw-48px),calc(100dvh-96px))] overflow-hidden rounded-[48px] bg-token-dropdown-background text-token-text-primary" role="img">{ferrule}{grommet}</div>;
+  let { ariaLabel, cornersMarkup, dotsMarkup } = elbow,
+    ferrule = (
+      <div
+        aria-hidden="true"
+        className={
+          "absolute inset-0 [&>svg]:block [&>svg]:h-full [&>svg]:w-full"
+        }
+        dangerouslySetInnerHTML={{
+          __html: cornersMarkup,
+        }}
+      />
+    );
+  let grommet = (
+    <div
+      aria-hidden="true"
+      className={"absolute inset-0 [&>svg]:block [&>svg]:h-full [&>svg]:w-full"}
+      dangerouslySetInnerHTML={{
+        __html: dotsMarkup,
+      }}
+    />
+  );
+  return (
+    <div
+      aria-label={ariaLabel}
+      className="relative size-[min(640px,calc(100vw-48px),calc(100dvh-96px))] overflow-hidden rounded-[48px] bg-token-dropdown-background text-token-text-primary"
+      role="img"
+    >
+      {ferrule}
+      {grommet}
+    </div>
+  );
 }
 function Frost(header) {
-  let {
-    ariaLabel,
-    centerLogoAriaLabel,
-    platform,
-    size = "default"
-  } = header;
+  let { ariaLabel, centerLogoAriaLabel, platform, size = "default" } = header;
   if (platform === "android") {
     let injector;
     return <Glide ariaLabel={ariaLabel} size={size} />;
   }
-  return <DollarR ariaLabel={ariaLabel} centerLogoAriaLabel={centerLogoAriaLabel} size={size} />;
+  return (
+    <DollarR
+      ariaLabel={ariaLabel}
+      centerLogoAriaLabel={centerLogoAriaLabel}
+      size={size}
+    />
+  );
 }
 function Glide(jumper) {
-  let {
-      ariaLabel,
-      size
-    } = jumper,
-    kerf = size === "compact" ? "size-[180px] rounded-[24px]" : "size-[270px] rounded-[32px]",
-    louver = IntlProvider("relative overflow-hidden bg-token-main-surface-primary", kerf);
-  let manifold = <div aria-hidden="true" className={"h-full w-full text-token-text-primary [&>svg]:block [&>svg]:h-full [&>svg]:w-full"} dangerouslySetInnerHTML={{
-    __html: xenonFourth
-  }} />;
-  return <div aria-label={ariaLabel} className={louver} role="img">{manifold}</div>;
+  let { ariaLabel, size } = jumper,
+    kerf =
+      size === "compact"
+        ? "size-[180px] rounded-[24px]"
+        : "size-[270px] rounded-[32px]",
+    louver = IntlProvider(
+      "relative overflow-hidden bg-token-main-surface-primary",
+      kerf,
+    );
+  let manifold = (
+    <div
+      aria-hidden="true"
+      className={
+        "h-full w-full text-token-text-primary [&>svg]:block [&>svg]:h-full [&>svg]:w-full"
+      }
+      dangerouslySetInnerHTML={{
+        __html: xenonFourth,
+      }}
+    />
+  );
+  return (
+    <div aria-label={ariaLabel} className={louver} role="img">
+      {manifold}
+    </div>
+  );
 }
 function DollarR(nip) {
-  let {
-      ariaLabel,
-      centerLogoAriaLabel,
-      size
-    } = nip,
+  let { ariaLabel, centerLogoAriaLabel, size } = nip,
     outlet = wheat(novaFourth.corners),
     packing = wheat(novaFourth.iosDots);
-  return <Honey ariaLabel={ariaLabel} centerLogoAriaLabel={centerLogoAriaLabel} cornersMarkup={outlet} dotsMarkup={packing} size={size} />;
+  return (
+    <Honey
+      ariaLabel={ariaLabel}
+      centerLogoAriaLabel={centerLogoAriaLabel}
+      cornersMarkup={outlet}
+      dotsMarkup={packing}
+      size={size}
+    />
+  );
 }
 function Honey(reducer) {
-  let {
-      ariaLabel,
-      centerLogoAriaLabel,
-      cornersMarkup,
-      dotsMarkup,
-      size
-    } = reducer,
+  let { ariaLabel, centerLogoAriaLabel, cornersMarkup, dotsMarkup, size } =
+      reducer,
     strainer = brook.useRef(null),
     tee = () => {
       strainer.current?.triggerRipple();
     };
   let union = tee,
-    vent = size === "compact" ? "size-[180px] rounded-[24px]" : "size-[270px] rounded-[32px]",
-    wye = IntlProvider("relative overflow-hidden bg-token-main-surface-primary", vent);
-  let zener = <div aria-hidden="true" className="mobile-qr-corners pointer-events-none absolute inset-0 z-10 h-full w-full text-token-text-primary" dangerouslySetInnerHTML={{
-    __html: cornersMarkup
-  }} />;
-  let alphaPrime = <Xenon ref={strainer} onArtworkReady={union} svgMarkup={dotsMarkup} />;
+    vent =
+      size === "compact"
+        ? "size-[180px] rounded-[24px]"
+        : "size-[270px] rounded-[32px]",
+    wye = IntlProvider(
+      "relative overflow-hidden bg-token-main-surface-primary",
+      vent,
+    );
+  let zener = (
+    <div
+      aria-hidden="true"
+      className="mobile-qr-corners pointer-events-none absolute inset-0 z-10 h-full w-full text-token-text-primary"
+      dangerouslySetInnerHTML={{
+        __html: cornersMarkup,
+      }}
+    />
+  );
+  let alphaPrime = (
+    <Xenon ref={strainer} onArtworkReady={union} svgMarkup={dotsMarkup} />
+  );
   let bravoPrime = size === "compact" ? "w-10" : "w-14",
     copperPrime = IntlProvider("pointer-events-auto aspect-square", bravoPrime);
-  let deltaPrime = <div className="pointer-events-none absolute inset-0 z-20 grid place-items-center">{<Mint ariaLabel={centerLogoAriaLabel} className={copperPrime} onClick={union} />}</div>;
-  return <div aria-label={ariaLabel} className={wye} role="img">{zener}{alphaPrime}{deltaPrime}</div>;
+  let deltaPrime = (
+    <div className="pointer-events-none absolute inset-0 z-20 grid place-items-center">
+      {
+        <Mint
+          ariaLabel={centerLogoAriaLabel}
+          className={copperPrime}
+          onClick={union}
+        />
+      }
+    </div>
+  );
+  return (
+    <div aria-label={ariaLabel} className={wye} role="img">
+      {zener}
+      {alphaPrime}
+      {deltaPrime}
+    </div>
+  );
 }
 function iris(echoPrime, falconPrime, gammaPrime) {
   let harborPrime = apex.create(echoPrime, {
-      errorCorrectionLevel: falconPrime
+      errorCorrectionLevel: falconPrime,
     }).modules,
     indigoPrime = _i / (harborPrime.size + grove * 2);
   return {
     cornersMarkup: knoll(harborPrime.size, indigoPrime),
-    dotsMarkup: jewel(harborPrime, indigoPrime, gammaPrime)
+    dotsMarkup: jewel(harborPrime, indigoPrime, gammaPrime),
   };
 }
 function jewel(jadePrime, kitePrime, lemonPrime) {
   let marblePrime = [];
-  for (let nickelPrime = 0; nickelPrime < jadePrime.size; nickelPrime += 1) for (let onyxPrime = 0; onyxPrime < jadePrime.size; onyxPrime += 1) !ridge(jadePrime, nickelPrime, onyxPrime) || storm(jadePrime.size, nickelPrime, onyxPrime) || lemonPrime && ui(jadePrime.size, kitePrime, nickelPrime, onyxPrime) || marblePrime.push(moss(onyxPrime, kitePrime, nickelPrime));
+  for (let nickelPrime = 0; nickelPrime < jadePrime.size; nickelPrime += 1)
+    for (let onyxPrime = 0; onyxPrime < jadePrime.size; onyxPrime += 1)
+      !ridge(jadePrime, nickelPrime, onyxPrime) ||
+        storm(jadePrime.size, nickelPrime, onyxPrime) ||
+        (lemonPrime && ui(jadePrime.size, kitePrime, nickelPrime, onyxPrime)) ||
+        marblePrime.push(moss(onyxPrime, kitePrime, nickelPrime));
   return orbit(marblePrime.join(""));
 }
 function knoll(pearlPrime, quartzPrime) {
-  return orbit([lunar(0, 0, quartzPrime), lunar(pearlPrime - fern, 0, quartzPrime), lunar(0, pearlPrime - fern, quartzPrime)].join(""));
+  return orbit(
+    [
+      lunar(0, 0, quartzPrime),
+      lunar(pearlPrime - fern, 0, quartzPrime),
+      lunar(0, pearlPrime - fern, quartzPrime),
+    ].join(""),
+  );
 }
 function lunar(riverPrime, slatePrime, timberPrime) {
   let umbraPrime = quest(riverPrime, timberPrime),
@@ -681,16 +966,28 @@ function quest(olivePrime, prismPrime) {
 function ui(quillPrime, reefPrime, sagePrime, topazPrime) {
   let ultraPrime = (quillPrime - 1) / 2,
     vaporPrime = (unity(Math.ceil(dusk / reefPrime)) - 1) / 2;
-  return Math.abs(sagePrime - ultraPrime) <= vaporPrime && Math.abs(topazPrime - ultraPrime) <= vaporPrime;
+  return (
+    Math.abs(sagePrime - ultraPrime) <= vaporPrime &&
+    Math.abs(topazPrime - ultraPrime) <= vaporPrime
+  );
 }
 function ridge(wheatPrime, yarnPrime, zephyrPrime) {
   return wheatPrime.data[yarnPrime * wheatPrime.size + zephyrPrime] === 1;
 }
 function storm(acornPrime, bloomPrime, coralPrime) {
-  return tide(bloomPrime, coralPrime, 0, 0) || tide(bloomPrime, coralPrime, 0, acornPrime - fern) || tide(bloomPrime, coralPrime, acornPrime - fern, 0);
+  return (
+    tide(bloomPrime, coralPrime, 0, 0) ||
+    tide(bloomPrime, coralPrime, 0, acornPrime - fern) ||
+    tide(bloomPrime, coralPrime, acornPrime - fern, 0)
+  );
 }
 function tide(driftPrime, eaglePrime, frostPrime, glidePrime) {
-  return driftPrime >= frostPrime && driftPrime < frostPrime + fern && eaglePrime >= glidePrime && eaglePrime < glidePrime + fern;
+  return (
+    driftPrime >= frostPrime &&
+    driftPrime < frostPrime + fern &&
+    eaglePrime >= glidePrime &&
+    eaglePrime < glidePrime + fern
+  );
 }
 function unity(honeyPrime) {
   return honeyPrime % 2 == 0 ? honeyPrime + 1 : honeyPrime;

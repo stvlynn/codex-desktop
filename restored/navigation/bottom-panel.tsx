@@ -30,6 +30,14 @@ export function bindBottomPanel() {
   }
 
   return peers.e(() => {
-    peers.DD(), peers.cnc(), peers.lia(), peers.pS(), peers.Wx(), peers.oT(), peers.K_(), peers.ZA(), peers.HA();
+    (peers.DD(),
+      peers.cnc(),
+      peers.lia(),
+      peers.pS(),
+      peers.Wx(),
+      peers.oT(),
+      peers.K_(),
+      peers.ZA(),
+      peers.HA());
   });
 }

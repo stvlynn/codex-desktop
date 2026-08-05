@@ -27,6 +27,6 @@ export function bindDeferredlO() {
   }
 
   return peers.e(() => {
-    Mq = peers.r(peers.o(), 1), SLo = peers.r(peers.ju(), 1), peers.zj();
+    ((Mq = peers.r(peers.o(), 1)), (SLo = peers.r(peers.ju(), 1)), peers.zj());
   });
 }

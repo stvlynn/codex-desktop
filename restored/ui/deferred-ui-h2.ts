@@ -26,6 +26,6 @@ export function bindDeferredUiH2() {
   }
 
   return peers.e(() => {
-    TFs = peers.c(), peers.sd(), EFs = peers.J();
+    ((TFs = peers.c()), peers.sd(), (EFs = peers.J()));
   });
 }

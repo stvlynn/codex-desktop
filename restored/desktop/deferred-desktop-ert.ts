@@ -9,7 +9,9 @@ export type BindDeferredDesktopErtPeers = {
 let peers: BindDeferredDesktopErtPeers | null = null;
 
 /** Wire bindDeferredDesktopErt peers once companions land. */
-export function setBindDeferredDesktopErtPeers(next: BindDeferredDesktopErtPeers): void {
+export function setBindDeferredDesktopErtPeers(
+  next: BindDeferredDesktopErtPeers,
+): void {
   peers = next;
 }
 

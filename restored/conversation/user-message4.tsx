@@ -12,7 +12,9 @@ export type BindBindUserMessage4Peers = {
 let peers: BindBindUserMessage4Peers | null = null;
 
 /** Wire bindBindUserMessage4 peers once companions land. */
-export function setBindBindUserMessage4Peers(next: BindBindUserMessage4Peers): void {
+export function setBindBindUserMessage4Peers(
+  next: BindBindUserMessage4Peers,
+): void {
   peers = next;
 }
 
@@ -25,6 +27,10 @@ export function bindBindUserMessage4() {
   }
 
   return peers.e(() => {
-    peers.Au(), peers.jf(), rDt = `diff --git `, iDt = /(?:^|[\\/])\.codex[\\/]visualizations[\\/]\d{4}[\\/]\d{2}[\\/]\d{2}[\\/]([a-zA-Z0-9_-]+)[\\/][a-z0-9]+(?:-[a-z0-9]+)*\.html$/;
+    (peers.Au(),
+      peers.jf(),
+      (rDt = `diff --git `),
+      (iDt =
+        /(?:^|[\\/])\.codex[\\/]visualizations[\\/]\d{4}[\\/]\d{2}[\\/]\d{2}[\\/]([a-zA-Z0-9_-]+)[\\/][a-z0-9]+(?:-[a-z0-9]+)*\.html$/));
   });
 }

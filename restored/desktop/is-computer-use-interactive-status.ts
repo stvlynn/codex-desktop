@@ -11,7 +11,9 @@ export type ComputerUseStatus =
   | string;
 
 /** True when computer-use UI can show interactive affordances. */
-export function isComputerUseInteractiveStatus(status: ComputerUseStatus | null | undefined): boolean | undefined {
+export function isComputerUseInteractiveStatus(
+  status: ComputerUseStatus | null | undefined,
+): boolean | undefined {
   switch (status) {
     case "screen-recording-permission-needed":
     case "accessibility-permission-needed":

@@ -32,7 +32,9 @@ export type BindBindEditorDiffViewModePeers = {
 let peers: BindBindEditorDiffViewModePeers | null = null;
 
 /** Wire bindBindEditorDiffViewMode peers once companions land. */
-export function setBindBindEditorDiffViewModePeers(next: BindBindEditorDiffViewModePeers): void {
+export function setBindBindEditorDiffViewModePeers(
+  next: BindBindEditorDiffViewModePeers,
+): void {
   peers = next;
 }
 
@@ -45,9 +47,29 @@ export function bindBindEditorDiffViewMode() {
   }
 
   return peers.e(() => {
-    peers.Ho(), peers.gT(), peers.Im(), _Fi = {}, vFi = `editorDiffViewMode`, yFi = `hideDiffWhitespace`, bFi = `wrapCodeDiff.2`, xFi = `fileSourceGitBlame`, SFi = `wordDiffsEnabled.2`, CFi = `diffRichPreview`, wFi = `diffViewThreadSettings`, TFi = peers.Pm(peers.vFi, `unified`), MI = peers.Pm(peers.bFi, !1), EFi = peers.Pm(peers.xFi, !1), NI = peers.Pm(peers.yFi, !1), DFi = peers.Pm(peers.SFi, !1), OFi = peers.Pm(peers.CFi, !1), kFi = peers.Pm(peers.wFi, {}), AFi = peers.Ma(peers.hT, ({
-      get: e,
-      scope: t
-    }) => (peers.e(peers.kFi) ?? peers._Fi)[peers.gFi(t.value)]?.richPreviewEnabled ?? !0);
+    (peers.Ho(),
+      peers.gT(),
+      peers.Im(),
+      (_Fi = {}),
+      (vFi = `editorDiffViewMode`),
+      (yFi = `hideDiffWhitespace`),
+      (bFi = `wrapCodeDiff.2`),
+      (xFi = `fileSourceGitBlame`),
+      (SFi = `wordDiffsEnabled.2`),
+      (CFi = `diffRichPreview`),
+      (wFi = `diffViewThreadSettings`),
+      (TFi = peers.Pm(peers.vFi, `unified`)),
+      (MI = peers.Pm(peers.bFi, !1)),
+      (EFi = peers.Pm(peers.xFi, !1)),
+      (NI = peers.Pm(peers.yFi, !1)),
+      (DFi = peers.Pm(peers.SFi, !1)),
+      (OFi = peers.Pm(peers.CFi, !1)),
+      (kFi = peers.Pm(peers.wFi, {})),
+      (AFi = peers.Ma(
+        peers.hT,
+        ({ get: e, scope: t }) =>
+          (peers.e(peers.kFi) ?? peers._Fi)[peers.gFi(t.value)]
+            ?.richPreviewEnabled ?? !0,
+      )));
   });
 }

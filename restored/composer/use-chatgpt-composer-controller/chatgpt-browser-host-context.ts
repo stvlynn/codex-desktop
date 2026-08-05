@@ -5,7 +5,10 @@ import {
   react,
   reactCompilerRuntime,
 } from "../../boundaries/react-cjs-runtime";
-import { rolldownRuntimeN, rolldownRuntimeS } from "../../runtime/rolldown-runtime";
+import {
+  rolldownRuntimeN,
+  rolldownRuntimeS,
+} from "../../runtime/rolldown-runtime";
 
 reactCompilerRuntime();
 
@@ -36,7 +39,6 @@ export function ensureChatgptBrowserHostContextInit(): void {
   ensureBrowserHostContextInitImpl?.();
 }
 
-
 var browserHostReactRuntime: any,
   browserHostContextAlias: any,
   browserHostContextEnsure = rolldownRuntimeN(() => {
@@ -47,7 +49,4 @@ var browserHostReactRuntime: any,
 
 setEnsureChatgptBrowserHostContextInit(browserHostContextEnsure);
 
-export {
-  browserHostContextEnsure as ensureChatgptBrowserHostContextInitSlot,
-};
-
+export { browserHostContextEnsure as ensureChatgptBrowserHostContextInitSlot };

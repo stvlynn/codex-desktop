@@ -11,14 +11,20 @@ export type UseLocalEnvironmentEditorStatePeers = {
 let peers: UseLocalEnvironmentEditorStatePeers | null = null;
 
 /** Wire UseLocalEnvironmentEditorState peers once companions land. */
-export function setUseLocalEnvironmentEditorStatePeers(next: UseLocalEnvironmentEditorStatePeers): void {
+export function setUseLocalEnvironmentEditorStatePeers(
+  next: UseLocalEnvironmentEditorStatePeers,
+): void {
   peers = next;
 }
 
 /**
  * Bundle export `M3` / internal `n6n`.
  */
-export function UseLocalEnvironmentEditorState(e: unknown, t: unknown, n: unknown) {
+export function UseLocalEnvironmentEditorState(
+  e: unknown,
+  t: unknown,
+  n: unknown,
+) {
   if (peers == null) {
     throw new Error("UseLocalEnvironmentEditorState peers are not configured");
   }

@@ -35,8 +35,20 @@ export function NoAuth2() {
     throw new Error("NoAuth2 peers are not configured");
   }
   return peers.e(() => {
-    peers.Ho(), peers.Au(), peers.DD(), peers.Vf(), peers.fM(), peers.MM(), peers.ed(), peers.wp(), peers.yp(), KJr = [`low`, `medium`, `high`, `xhigh`], qJr = peers.Ma(peers.Q, ({
-      get: e
-    }) => new Set(peers.xp(peers.e, peers.Tu.enabledReasoningEfforts)));
+    (peers.Ho(),
+      peers.Au(),
+      peers.DD(),
+      peers.Vf(),
+      peers.fM(),
+      peers.MM(),
+      peers.ed(),
+      peers.wp(),
+      peers.yp(),
+      (KJr = [`low`, `medium`, `high`, `xhigh`]),
+      (qJr = peers.Ma(
+        peers.Q,
+        ({ get: e }) =>
+          new Set(peers.xp(peers.e, peers.Tu.enabledReasoningEfforts)),
+      )));
   });
 }

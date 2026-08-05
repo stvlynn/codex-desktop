@@ -20,10 +20,25 @@ import { CODEX_MEMORY_SETTING_TOGGLED_TYPE } from "../../analytics/codex-memory-
 import { CodexPluginActionResult } from "../../analytics/codex-plugin-action-result";
 import { CodexPluginActionType } from "../../analytics/codex-plugin-action-type-enum";
 import { useChromeAndCodeThemeSync as UseChromeAndCodeThemeSync } from "../../appearance/use-chrome-and-code-theme-sync";
-import { appScopeAtom, ensureAppScopeInit } from "../../runtime/app-scope-runtime";
+import {
+  appScopeAtom,
+  ensureAppScopeInit,
+} from "../../runtime/app-scope-runtime";
 import { chatgptConversationsGateAtom } from "../../composer/composer-appscope-atoms";
-import { ensureComposerEsm_B7_Init, ensureComposerEsm_Hlt_Init, ensureComposerEsm_Ilt_Init, ensureComposerEsm_K1_Init, ensureComposerEsm_K9_Init, ensureComposerEsm_MT_Init, ensureComposerEsm_Sut_Init, ensureComposerEsm_Tft_Init } from "../../composer/composer-esm-inits";
-import { react, reactCompilerRuntime } from "../../boundaries/react-cjs-runtime";
+import {
+  ensureComposerEsm_B7_Init,
+  ensureComposerEsm_Hlt_Init,
+  ensureComposerEsm_Ilt_Init,
+  ensureComposerEsm_K1_Init,
+  ensureComposerEsm_K9_Init,
+  ensureComposerEsm_MT_Init,
+  ensureComposerEsm_Sut_Init,
+  ensureComposerEsm_Tft_Init,
+} from "../../composer/composer-esm-inits";
+import {
+  react,
+  reactCompilerRuntime,
+} from "../../boundaries/react-cjs-runtime";
 import { toastAtom } from "../../boundaries/toast-atom";
 import { conversationsSidebarMessages } from "../../chatgpt/conversations-sidebar-messages";
 import { composerNavigation } from "../../composer/composer-navigation";
@@ -52,7 +67,10 @@ import { AppIconZlt } from "../../icons/app-icon-zlt";
 import { PanelWidthIcon } from "../../icons/panel-width-icon";
 import { serializeCharacterReferenceNode } from "../../markdown/serialize-character-reference-node";
 import { strongMarkerFromOptions } from "../../markdown/strong-marker-from-options";
-import { readScrollTop, scrollAppActionTargetTo } from "../../navigation/app-action-dom";
+import {
+  readScrollTop,
+  scrollAppActionTargetTo,
+} from "../../navigation/app-action-dom";
 import { AppActionSelector } from "../../navigation/app-action-selectors";
 import { ensureAppShellAtomsInit } from "../../navigation/app-shell-atoms";
 import { resolveBrowserTabPanelSide as ResolveBrowserTabPanelSide } from "../../navigation/resolve-browser-tab-panel-side";
@@ -65,7 +83,10 @@ import { codexCommandTheme } from "../../ui/codex-command-theme";
 import { deferredUiB as DeferredUiB } from "../../ui/deferred-ui-b";
 import { deferredUiH as DeferredUiH } from "../../ui/deferred-ui-h";
 import { DropdownMenu, ensureDropdownMenuInit } from "../../ui/dropdown-menu";
-import { DropdownMenuPopover, ensureDropdownMenuPopoverInit } from "../../ui/dropdown-menu-popover";
+import {
+  DropdownMenuPopover,
+  ensureDropdownMenuPopoverInit,
+} from "../../ui/dropdown-menu-popover";
 import { DropdownTriggerButton } from "../../ui/dropdown-trigger-button";
 import { ElectronOnly } from "../../ui/electron-only";
 import { OptionalTooltip } from "../../ui/optional-tooltip";
@@ -74,32 +95,50 @@ import { identity } from "../../utils/identity";
 import { noop } from "../../utils/noop";
 import { parseUrlOrFallback as ParseUrlOrFallback } from "../../utils/parse-url-or-fallback";
 import { posixPathBasename } from "../../utils/posix-path-basename";
-import { ensurePersonalizationCInit as EnsurePersonalizationCInit, ensurePersonalizationG0Init, ensurePersonalizationJutInit, ensurePersonalizationK0Init, ensurePersonalizationM6Init } from "../../utils/wave-as-gap-ensure-inits";
+import {
+  ensurePersonalizationCInit as EnsurePersonalizationCInit,
+  ensurePersonalizationG0Init,
+  ensurePersonalizationJutInit,
+  ensurePersonalizationK0Init,
+  ensurePersonalizationM6Init,
+} from "../../utils/wave-as-gap-ensure-inits";
 import { canonicalizeWorkspacePathKey } from "../../utils/workspace-path-keys";
 import { buildMemoryFeatureFlags } from "../build-memory-feature-flags";
-import { ensureChronicleConfigQueriesInit, useChronicleConfigQuery } from "../chronicle-config-queries";
+import {
+  ensureChronicleConfigQueriesInit,
+  useChronicleConfigQuery,
+} from "../chronicle-config-queries";
 import { gpuTearingDebugSettingsAtom } from "../gpu-tearing-debug-settings";
 import { ensureSettingsQueryAtomsInit } from "../settings-ipc";
-import { ensureSettingsSectionTitleInit, SettingsSectionTitle } from "../settings-section-title";
+import {
+  ensureSettingsSectionTitleInit,
+  SettingsSectionTitle,
+} from "../settings-section-title";
 import { buildVscodeQueryKey } from "../vscode-query-key";
 
 // Wave5d soft JSX companions.
-function DeferredUiU(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function DeferredUiU(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function ReadLoginRouteQuerySnapshot(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function ReadLoginRouteQuerySnapshot(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
-function SetRemoteControlEnabledForHost(props: {
-  children?: unknown;
-  [key: string]: unknown;
-} = {}): unknown {
+function SetRemoteControlEnabledForHost(
+  props: {
+    children?: unknown;
+    [key: string]: unknown;
+  } = {},
+): unknown {
   return props.children ?? null;
 }
 
@@ -212,61 +251,70 @@ function isle() {
   let petal = CodexPluginActionType(appScopeAtom),
     quiet = useIntl(),
     rain = CodexPluginActionResult(deferredUiX9),
-    {
-      selectedHostId
-    } = useSelectedHost(),
+    { selectedHostId } = useSelectedHost(),
     seed = ensureSteeringUserMessageClusterInit(selectedHostId),
     [trail, urn] = meadow.useState(false),
     vine = AppInitialW(),
     wind = AppInitialS(),
-    {
-      data
-    } = CodexBrowserSurfaceActionType(homeDirectoryQueryAtom, selectedHostId),
-    {
-      data: _data = [],
-      isLoading
-    } = CodexBrowserSurfaceActionType(deferredBrowserY0, selectedHostId);
+    { data } = CodexBrowserSurfaceActionType(
+      homeDirectoryQueryAtom,
+      selectedHostId,
+    ),
+    { data: _data = [], isLoading } = CodexBrowserSurfaceActionType(
+      deferredBrowserY0,
+      selectedHostId,
+    );
   let yarrow = _data,
     azure = vine && !wind.isLoading && !wind.available,
     birch = {
       queryConfig: {
         enabled: azure,
         refetchOnMount: "always",
-        refetchOnWindowFocus: true
-      }
+        refetchOnWindowFocus: true,
+      },
     };
-  let {
-      data: __data
-    } = SIDEBAR_HIT_TEST_SELECTOR("chronicle-permissions", birch),
+  let { data: __data } = SIDEBAR_HIT_TEST_SELECTOR(
+      "chronicle-permissions",
+      birch,
+    ),
     canyon = alpha(selectedHostId),
     dew = {
-      hostId: selectedHostId
+      hostId: selectedHostId,
     };
   let ever = HostFeatureConfigToggles(dew),
     field = useChronicleConfigQuery(),
-    grain = () => canonicalizeWorkspacePathKey("reset-memories-for-host", {
-      hostId: selectedHostId
-    });
+    grain = () =>
+      canonicalizeWorkspacePathKey("reset-memories-for-host", {
+        hostId: selectedHostId,
+      });
   let haven, ink;
   haven = () => {
     urn(false);
-    petal.get(toastAtom).success(<MemoizedFormattedMessage {...{
-      id: "settings.memory.resetSuccess",
-      defaultMessage: "Memories reset",
-      description: "Toast shown after resetting memories"
-    }} />);
+    petal.get(toastAtom).success(
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.memory.resetSuccess",
+          defaultMessage: "Memories reset",
+          description: "Toast shown after resetting memories",
+        }}
+      />,
+    );
   };
   ink = () => {
-    petal.get(toastAtom).danger(<MemoizedFormattedMessage {...{
-      id: "settings.memory.resetError",
-      defaultMessage: "Unable to reset memories",
-      description: "Toast shown when resetting memories fails"
-    }} />);
+    petal.get(toastAtom).danger(
+      <MemoizedFormattedMessage
+        {...{
+          id: "settings.memory.resetError",
+          defaultMessage: "Unable to reset memories",
+          description: "Toast shown when resetting memories fails",
+        }}
+      />,
+    );
   };
   let jadeite = {
     mutationFn: grain,
     onSuccess: haven,
-    onError: ink
+    onError: ink,
   };
   let kernel = noop(jadeite),
     leaf = AppInitial0(yarrow);
@@ -279,54 +327,74 @@ function isle() {
     root = data?.config,
     silk = AppInitialYgt(root, AppInitialY);
   let thorn = silk === true,
-    upland = isLoading || canyon.isPending || ever.isPending || field.isPending || kernel.isPending,
+    upland =
+      isLoading ||
+      canyon.isPending ||
+      ever.isPending ||
+      field.isPending ||
+      kernel.isPending,
     vista = seed.kind === "local",
-    wisp = upland || vista && wind.isLoading,
+    wisp = upland || (vista && wind.isLoading),
     yonder = nimbus && quillow.generateMemories && quillow.useMemories,
-    zenith = vista && vine && !wind.isLoading && !wind.available && __data?.chronicleSidecarPresent === true,
+    zenith =
+      vista &&
+      vine &&
+      !wind.isLoading &&
+      !wind.available &&
+      __data?.chronicleSidecarPresent === true,
     anvil = {
       chronicleResearchPreviewEnabled: thorn,
       chronicleResearchPreviewVisible: zenith,
       isMemoryFeatureEnabled: nimbus,
-      memoryConfig: quillow
+      memoryConfig: quillow,
     };
   let beacon = anvil,
-    crag = motor => {
+    crag = (motor) => {
       let {
         chronicleResearchPreviewEnabled,
         isMemoryFeatureEnabled,
-        memoryConfigPatch
+        memoryConfigPatch,
       } = motor === undefined ? {} : motor;
       return bravo(beacon, {
         chronicleResearchPreviewEnabled,
         isMemoryFeatureEnabled,
-        memoryConfigPatch
+        memoryConfigPatch,
       });
     };
   let dome = crag,
-    eddy = nut => {
+    eddy = (nut) => {
       echo({
         productLogger: rain,
         previousState: dome(),
         selectedEnabled: nut,
-        featureWrite: () => ever.mutateAsync({
-          featureName: MEMORIES_ID,
-          enabled: nut
-        }),
-        configWrite: () => canyon.mutateAsync({
-          edits: [{
-            keyPath: "memories.generate_memories",
-            value: nut
-          }, {
-            keyPath: "memories.use_memories",
-            value: nut
-          }]
-        }),
-        ...(!nut && vista ? {
-          chronicleDisable: () => wind.available && appServices.chronicle != null ? appServices.chronicle.setEnabled(false) : field.mutateAsync({
-            enabled: false
-          })
-        } : {})
+        featureWrite: () =>
+          ever.mutateAsync({
+            featureName: MEMORIES_ID,
+            enabled: nut,
+          }),
+        configWrite: () =>
+          canyon.mutateAsync({
+            edits: [
+              {
+                keyPath: "memories.generate_memories",
+                value: nut,
+              },
+              {
+                keyPath: "memories.use_memories",
+                value: nut,
+              },
+            ],
+          }),
+        ...(!nut && vista
+          ? {
+              chronicleDisable: () =>
+                wind.available && appServices.chronicle != null
+                  ? appServices.chronicle.setEnabled(false)
+                  : field.mutateAsync({
+                      enabled: false,
+                    }),
+            }
+          : {}),
       });
     };
   let fjord = eddy,
@@ -334,69 +402,117 @@ function isle() {
       await kernel.mutateAsync();
     };
   let hearth = glen,
-    inlet = <MemoizedFormattedMessage {...{
-      ...timber.memory
-    }} />;
-  let jetty = <UseChromeAndCodeThemeSync.Header {...{
-    title: inlet,
-    subtitle: <MemoizedFormattedMessage {...{
-      id: "settings.personalization.memory.subtitle",
-      defaultMessage: "Configure how ChatGPT collects, retains, and consolidates memories. <a>Learn more</a>",
-      description: "Description for memory settings in personalization",
-      values: {
-        a: juniper
-      }
-    }} />
-  }} />;
+    inlet = (
+      <MemoizedFormattedMessage
+        {...{
+          ...timber.memory,
+        }}
+      />
+    );
+  let jetty = (
+    <UseChromeAndCodeThemeSync.Header
+      {...{
+        title: inlet,
+        subtitle: (
+          <MemoizedFormattedMessage
+            {...{
+              id: "settings.personalization.memory.subtitle",
+              defaultMessage:
+                "Configure how ChatGPT collects, retains, and consolidates memories. <a>Learn more</a>",
+              description: "Description for memory settings in personalization",
+              values: {
+                a: juniper,
+              },
+            }}
+          />
+        ),
+      }}
+    />
+  );
   let knob, ledge;
-  knob = <MemoizedFormattedMessage {...{
-    ...timber.enableMemories
-  }} />;
-  ledge = <MemoizedFormattedMessage {...{
-    id: "settings.memory.enableMemoriesDescription",
-    defaultMessage: "Generate new memories from chats and bring them into new chats",
-    description: "Description for enabling memories"
-  }} />;
+  knob = (
+    <MemoizedFormattedMessage
+      {...{
+        ...timber.enableMemories,
+      }}
+    />
+  );
+  ledge = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.memory.enableMemoriesDescription",
+        defaultMessage:
+          "Generate new memories from chats and bring them into new chats",
+        description: "Description for enabling memories",
+      }}
+    />
+  );
   let mire = quiet.formatMessage({
     id: "settings.memory.enableMemoriesAriaLabel",
     defaultMessage: "Enable memories",
-    description: "Accessible label for enabling memories"
+    description: "Accessible label for enabling memories",
   });
-  let nook = <EnsurePersonalizationCInit {...{
-    label: knob,
-    description: ledge,
-    control: <AppInitialYC checked={yonder} disabled={wisp} ariaLabel={mire} onChange={fjord} />
-  }} />;
-  let oxbow = zenith ? <PersonalizationSettingsHelper5 {...{
-    onChronicleResearchPreviewToggled: (piston, rivet) => {
-      copper({
-        productLogger: rain,
-        previousEnabled: piston,
-        selectedEnabled: rivet,
-        settingName: "chronicle_research_preview",
-        state: dome({
-          chronicleResearchPreviewEnabled: rivet
-        })
-      });
-    }
-  }} /> : null;
+  let nook = (
+    <EnsurePersonalizationCInit
+      {...{
+        label: knob,
+        description: ledge,
+        control: (
+          <AppInitialYC
+            checked={yonder}
+            disabled={wisp}
+            ariaLabel={mire}
+            onChange={fjord}
+          />
+        ),
+      }}
+    />
+  );
+  let oxbow = zenith ? (
+    <PersonalizationSettingsHelper5
+      {...{
+        onChronicleResearchPreviewToggled: (piston, rivet) => {
+          copper({
+            productLogger: rain,
+            previousEnabled: piston,
+            selectedEnabled: rivet,
+            settingName: "chronicle_research_preview",
+            state: dome({
+              chronicleResearchPreviewEnabled: rivet,
+            }),
+          });
+        },
+      }}
+    />
+  ) : null;
   let pond, quarry;
-  pond = <MemoizedFormattedMessage {...{
-    ...timber.allowMemoryGenerationFromToolAssistedTasks
-  }} />;
-  quarry = <MemoizedFormattedMessage {...{
-    id: "settings.memory.allowMemoryGenerationFromToolAssistedTasksDescription",
-    defaultMessage: "Generate memories from chats that used MCP tools or web search",
-    description: "Description for allowing memory generation when MCP or web search is used"
-  }} />;
+  pond = (
+    <MemoizedFormattedMessage
+      {...{
+        ...timber.allowMemoryGenerationFromToolAssistedTasks,
+      }}
+    />
+  );
+  quarry = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.memory.allowMemoryGenerationFromToolAssistedTasksDescription",
+        defaultMessage:
+          "Generate memories from chats that used MCP tools or web search",
+        description:
+          "Description for allowing memory generation when MCP or web search is used",
+      }}
+    />
+  );
   let rapids = !quillow.disableOnExternalContext,
     spur = upland || !nimbus,
     tor = quiet.formatMessage({
       id: "settings.memory.allowMemoryGenerationFromToolAssistedTasksAriaLabel",
       defaultMessage: "Allow memory generation from tool-assisted chats",
-      description: "Accessible label for allowing memory generation when MCP or web search is used"
+      description:
+        "Accessible label for allowing memory generation when MCP or web search is used",
     });
-  let updraft = screw => {
+  let updraft = (screw) => {
     let torque = !screw;
     delta({
       productLogger: rain,
@@ -405,129 +521,236 @@ function isle() {
       settingName: "skip_tool_assisted_chats",
       state: dome({
         memoryConfigPatch: {
-          disableOnExternalContext: torque
-        }
+          disableOnExternalContext: torque,
+        },
       }),
-      write: () => canyon.mutateAsync({
-        edits: [{
-          keyPath: "memories.disable_on_external_context",
-          value: torque
-        }, {
-          keyPath: "memories.no_memories_if_mcp_or_web_search",
-          value: null
-        }]
-      })
+      write: () =>
+        canyon.mutateAsync({
+          edits: [
+            {
+              keyPath: "memories.disable_on_external_context",
+              value: torque,
+            },
+            {
+              keyPath: "memories.no_memories_if_mcp_or_web_search",
+              value: null,
+            },
+          ],
+        }),
     });
   };
-  let verge = <EnsurePersonalizationCInit {...{
-    label: pond,
-    description: quarry,
-    control: <AppInitialYC checked={rapids} disabled={spur} ariaLabel={tor} onChange={updraft} />
-  }} />;
+  let verge = (
+    <EnsurePersonalizationCInit
+      {...{
+        label: pond,
+        description: quarry,
+        control: (
+          <AppInitialYC
+            checked={rapids}
+            disabled={spur}
+            ariaLabel={tor}
+            onChange={updraft}
+          />
+        ),
+      }}
+    />
+  );
   let weir, yard;
-  weir = <MemoizedFormattedMessage {...{
-    ...timber.resetMemories
-  }} />;
-  yard = <MemoizedFormattedMessage {...{
-    id: "settings.memory.resetMemoriesDescription",
-    defaultMessage: "Delete all ChatGPT memories",
-    description: "Description for resetting memories"
-  }} />;
+  weir = (
+    <MemoizedFormattedMessage
+      {...{
+        ...timber.resetMemories,
+      }}
+    />
+  );
+  yard = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.memory.resetMemoriesDescription",
+        defaultMessage: "Delete all ChatGPT memories",
+        description: "Description for resetting memories",
+      }}
+    />
+  );
   let anchor, bolt;
   anchor = () => {
     urn(true);
   };
-  bolt = <MemoizedFormattedMessage {...{
-    id: "settings.memory.resetMemoriesButton",
-    defaultMessage: "Reset",
-    description: "Button label for resetting memories"
-  }} />;
-  let cog = <EnsurePersonalizationCInit {...{
-    label: weir,
-    description: yard,
-    control: <ReadLoginRouteQuerySnapshot {...{
-      color: "danger",
-      disabled: kernel.isPending,
-      loading: kernel.isPending,
-      onClick: anchor,
-      children: bolt
-    }} />
-  }} />;
-  let disc = <UseChromeAndCodeThemeSync {...{
-    children: [jetty, <UseChromeAndCodeThemeSync.Content {...{
-      children: <ParseUrlOrFallback {...{
-        children: [nook, oxbow, verge, cog]
-      }} />
-    }} />]
-  }} />;
-  let edge = <DeferredUiU {...{
-    children: <DeferredUiH {...{
-      title: <MemoizedFormattedMessage {...{
-        id: "settings.memory.resetDialogTitle",
-        defaultMessage: "Reset all memories?",
-        description: "Title for reset memories confirmation dialog"
-      }} />,
-      subtitle: <MemoizedFormattedMessage {...{
-        id: "settings.memory.resetDialogSubtitle",
-        defaultMessage: "This deletes all ChatGPT memories",
-        description: "Subtitle for reset memories confirmation dialog"
-      }} />
-    }} />
-  }} />;
+  bolt = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.memory.resetMemoriesButton",
+        defaultMessage: "Reset",
+        description: "Button label for resetting memories",
+      }}
+    />
+  );
+  let cog = (
+    <EnsurePersonalizationCInit
+      {...{
+        label: weir,
+        description: yard,
+        control: (
+          <ReadLoginRouteQuerySnapshot
+            {...{
+              color: "danger",
+              disabled: kernel.isPending,
+              loading: kernel.isPending,
+              onClick: anchor,
+              children: bolt,
+            }}
+          />
+        ),
+      }}
+    />
+  );
+  let disc = (
+    <UseChromeAndCodeThemeSync
+      {...{
+        children: [
+          jetty,
+          <UseChromeAndCodeThemeSync.Content
+            {...{
+              children: (
+                <ParseUrlOrFallback
+                  {...{
+                    children: [nook, oxbow, verge, cog],
+                  }}
+                />
+              ),
+            }}
+          />,
+        ],
+      }}
+    />
+  );
+  let edge = (
+    <DeferredUiU
+      {...{
+        children: (
+          <DeferredUiH
+            {...{
+              title: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "settings.memory.resetDialogTitle",
+                    defaultMessage: "Reset all memories?",
+                    description: "Title for reset memories confirmation dialog",
+                  }}
+                />
+              ),
+              subtitle: (
+                <MemoizedFormattedMessage
+                  {...{
+                    id: "settings.memory.resetDialogSubtitle",
+                    defaultMessage: "This deletes all ChatGPT memories",
+                    description:
+                      "Subtitle for reset memories confirmation dialog",
+                  }}
+                />
+              ),
+            }}
+          />
+        ),
+      }}
+    />
+  );
   let forge, gear;
   forge = () => {
     urn(false);
   };
-  gear = <MemoizedFormattedMessage {...{
-    id: "settings.memory.resetDialogCancel",
-    defaultMessage: "Cancel",
-    description: "Cancel button label for reset memories dialog"
-  }} />;
-  let hinge = <ReadLoginRouteQuerySnapshot {...{
-    color: "ghost",
-    disabled: kernel.isPending,
-    onClick: forge,
-    children: gear
-  }} />;
+  gear = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.memory.resetDialogCancel",
+        defaultMessage: "Cancel",
+        description: "Cancel button label for reset memories dialog",
+      }}
+    />
+  );
+  let hinge = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "ghost",
+        disabled: kernel.isPending,
+        onClick: forge,
+        children: gear,
+      }}
+    />
+  );
   let iron = () => {
     rain.logProductEvent(ensurePersonalizationM6Init, {
-      resetScope: "all_memories"
+      resetScope: "all_memories",
     });
     hearth();
   };
-  let $e = <MemoizedFormattedMessage {...{
-    id: "settings.memory.resetDialogConfirm",
-    defaultMessage: "Reset",
-    description: "Confirm button label for reset memories dialog"
-  }} />;
-  let joint = <ReadLoginRouteQuerySnapshot {...{
-    color: "danger",
-    loading: kernel.isPending,
-    onClick: iron,
-    children: $e
-  }} />;
-  let keystone = <DeferredUiB {...{
-    children: [edge, <DeferredUiU {...{
-      children: <SetRemoteControlEnabledForHost {...{
-        children: [hinge, joint]
-      }} />
-    }} />]
-  }} />;
-  let latch = <UsePointerSurfaceInteractionGate {...{
-    open: trail,
-    onOpenChange: urn,
-    size: "compact",
-    children: keystone
-  }} />;
-  return <>
+  let $e = (
+    <MemoizedFormattedMessage
+      {...{
+        id: "settings.memory.resetDialogConfirm",
+        defaultMessage: "Reset",
+        description: "Confirm button label for reset memories dialog",
+      }}
+    />
+  );
+  let joint = (
+    <ReadLoginRouteQuerySnapshot
+      {...{
+        color: "danger",
+        loading: kernel.isPending,
+        onClick: iron,
+        children: $e,
+      }}
+    />
+  );
+  let keystone = (
+    <DeferredUiB
+      {...{
+        children: [
+          edge,
+          <DeferredUiU
+            {...{
+              children: (
+                <SetRemoteControlEnabledForHost
+                  {...{
+                    children: [hinge, joint],
+                  }}
+                />
+              ),
+            }}
+          />,
+        ],
+      }}
+    />
+  );
+  let latch = (
+    <UsePointerSurfaceInteractionGate
+      {...{
+        open: trail,
+        onOpenChange: urn,
+        size: "compact",
+        children: keystone,
+      }}
+    />
+  );
+  return (
+    <>
       {disc}
       {latch}
-    </>;
+    </>
+  );
 }
 function juniper(valve) {
-  return <a className="inline-flex text-token-text-link-foreground" href="https://developers.openai.com/codex/memories" target="_blank" rel="noreferrer">
+  return (
+    <a
+      className="inline-flex text-token-text-link-foreground"
+      href="https://developers.openai.com/codex/memories"
+      target="_blank"
+      rel="noreferrer"
+    >
       {valve}
-    </a>;
+    </a>
+  );
 }
 var lagoon,
   meadow,
@@ -570,12 +793,21 @@ var lagoon,
   });
 export function PersonalizationSettings() {
   let axle = CodexPluginActionResult(chatgptConversationsGateAtom);
-  return <OpenInBrowser {...{
-    title: <SettingsSectionTitle slug="personalization" />,
-    children: [axle ? <PersonalizationSettingsHelper27 {...{}} /> : null, <ElectronOnly {...{
-      electron: true,
-      extension: true,
-      children: <PersonalizationSettingsHelper25 {...{}} />
-    }} />]
-  }} />;
+  return (
+    <OpenInBrowser
+      {...{
+        title: <SettingsSectionTitle slug="personalization" />,
+        children: [
+          axle ? <PersonalizationSettingsHelper27 {...{}} /> : null,
+          <ElectronOnly
+            {...{
+              electron: true,
+              extension: true,
+              children: <PersonalizationSettingsHelper25 {...{}} />,
+            }}
+          />,
+        ],
+      }}
+    />
+  );
 }

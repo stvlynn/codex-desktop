@@ -9,7 +9,9 @@ export type BindNodeReplAccessPeers = {
 let peers: BindNodeReplAccessPeers | null = null;
 
 /** Wire bindNodeReplAccess peers once companions land. */
-export function setBindNodeReplAccessPeers(next: BindNodeReplAccessPeers): void {
+export function setBindNodeReplAccessPeers(
+  next: BindNodeReplAccessPeers,
+): void {
   peers = next;
 }
 
